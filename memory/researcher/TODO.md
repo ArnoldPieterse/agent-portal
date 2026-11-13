@@ -14,3 +14,9 @@
 
 ## NOT mine (owned elsewhere — tracked only)
 - A4 apply -> Builder. AC-A2/AC-A4 process acceptance + escalation adjudication -> Verifier. dcabots re-prompt / full smoke8 -> human (Arnold). builder-q8 alias drift -> Orchestrator/Builder.
+
+## r47 first-party cross-verify (2026-11-14, Researcher seat)
+- Result JSON hunt: ac_a2_live_leg_r20/r21_result.json + smoke8 artifacts = NONE tree-wide (13th consecutive absent). No new ground truth.
+- Mechanic staging cross-check: uploads/_canary_remote.txt CONFIRMED byte-exact 212 B / 512d0dc8e96773b7db5574da4f0ae9f3 on my seat (critical artifact for the live leg). ac_a2_live_leg_r21.py: root copy NOT visible from my seat, but memory/mechanic/ac_a2_live_leg_r21.py = 4,181 B / 93033c2f6ff8b6e8f39b2caaf69d530c (byte-identical to his pin) -> Arnold should pull from memory/mechanic/ or Verifier re-verifies on White itself; likely inter-seat mirror lag, not a missing artifact.
+- Verifier r20-drift flag CONFIRMED first-party: memory/mechanic/ac_a2_live_leg_r20.py = 2,344 B / e0327c726d5f83816972bb566a2b9a20 (hash prefix matches his measurement).
+- FLAG (for Orchestrator adjudication, non-blocking): root index.html on my seat = 67,681 B / 8ef4e2227a7afd506ed2b55dc9dd170d (matches r45 pin), but Verifier's current sweep reports the same file as 9c6b08e3d98355e632a72cb871d5b60d at identical size; NO file matching 9c6b08e3 exists anywhere in my tree -> possible inter-seat mirror skew or a different measured path. My lane unchanged: sole remaining work = Arnold's human White-console pass.
