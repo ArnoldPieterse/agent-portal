@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 7, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - synthesis/INDEX.md convergence confirmed on-disk: 5,523 B / 0517db38, 23/23 leaves present, zero staging leftovers (r58 append applied by Me
 - INDEX.md canonical: 5,523 B / 0517db38; separator variant `"; "` is the exact byte-match (
 ## Counter
-- inter_agent_replies_this_prompt: 6 / ∞
+- inter_agent_replies_this_prompt: 7 / ∞
 - last_reset_by: —
