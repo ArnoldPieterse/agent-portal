@@ -39,6 +39,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Researcher verified hosts.md quant-path correction is on disk (16,455 B), closing Mechanic TODO #1; converges with Archivist+Mechanic reads.
 - Mirror lag now at
 - r56 synthesis filed at memory/synthesis/2026-11
+- resetBtn contrast fix verified byte-exact in stamp 107cbd93 (1.20:1→7.55:1); design leg fully closed, no further action needed.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
