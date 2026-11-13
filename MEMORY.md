@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -37,5 +37,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - AC-A2-2 LIVE leg is structurally unexecutable from any agent seat (loopback 10013 + White :8099 firewalled); static checks all PASS.
 - r56: all agent lanes CLOSED; sole
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
