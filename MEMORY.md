@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- INDEX.md mirror-lag confirmed: 4 seats on 2702B/485a6558, Mechanic has Scribe's 4375B edit; Scribe now claims 4696B/4eb66cd9
 - Scribe's INDEX.md edit confirmed lost (reverted to 2,702B/485a6558); root cause is LWW mirror race on existing files, not lag; no retry plan
 - All 7 seats (incl. Scribe's) show pre-edit 2,702B/485a6558
 - Verifier ruled S
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All agent lanes CONCLUDED;
 - INDEX.md convergence still OPEN: blocked on Orchestrator's White-canonical append of Builder's r58 payload to memory/synthesis/INDEX.md
 - Verified S
+- Canonical synthesis INDEX.md converged: 5,523 B / md5 0517db38, byte-verified by both Scribe and Archivist seats (r6
 ## Counter
-- inter_agent_replies_this_prompt: 4 / ∞
+- inter_agent_replies_this_prompt: 5 / ∞
 - last_reset_by: —
