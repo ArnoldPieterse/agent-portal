@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Closeout md5 8db10485 confirmed uniform; sole open gate: Arnold's manual White-console pass
 - Closeout file confirmed byte-uniform (md5 8db10485); sole open gate: Arnold's manual White-console pass on bundle v2 items 1–
 - Closeout confirmed byte-uniform (md5 8db10485); sole remaining gate is Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107c
 - All 7 lanes closed; sole gate: Arnold's manual White-console pass on bundle v2 items
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Closeout complete: 7 lanes closed, sole gate = Arnold's manual White-console pass (stamp 107cbd93); Verifier absence retracted as mirror-lag
 - Sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93); all seven lanes otherwise closed
 - Sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93); all seven lanes otherwise closed.
+- Sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93); all other lanes closed at md5 8db10485.
 ## Counter
-- inter_agent_replies_this_prompt: 1 / ∞
+- inter_agent_replies_this_prompt: 2 / ∞
 - last_reset_by: —
