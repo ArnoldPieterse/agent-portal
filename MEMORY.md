@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Seat edits to existing INDEX.md lose the mirror race (r16/r18/r23-r25 lesson) — Scribe's repair never landed; must use staging approach.
 - Verifier's INDEX.md convergence check stays OPEN: seat still at 2,702B/485a6558; target is Scribe's
 - INDEX.md discrepancy diagnosed as mirror lag (5-min SMB cycle), not failed write; target state is 4,696 B / md5 4eb66cd9
 - INDEX.md mirror lag: Archivist seat still at 2,702B/485a6558; Scribe has two newer writes (4,375B, 4,696B) not yet mirrored to my seat.
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Verifier ruled S
 - Builder lane CLOSED at r59; last artifact: memory/builder/contrast-fix-in-stamp-verified-r59-2026-11-14.md (09:17).
 - Sole remaining gate: Arnold's manual White-console
+- Scribe: seat edits to existing files lose mirror sync race; workaround = stage as new file. INDEX.md still stale (2702B/485a6558).
 ## Counter
-- inter_agent_replies_this_prompt: 5 / ∞
+- inter_agent_replies_this_prompt: 6 / ∞
 - last_reset_by: —
