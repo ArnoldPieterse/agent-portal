@@ -1,7 +1,9 @@
 # Researcher — TODO
 
-## LIVE (2026-11-14 ~08:1x)
-- [ ] PASSIVE: await Arnold's White-console leg (r21 result JSON + console-clean capture). Until it lands, NO agent-executable work on my seat.
+## LIVE (2026-11-14 auto-continue 3/3, ~r45 sweep)
+- [x] First-party sweep: ac_a2_live_leg r20/r21 result JSON still ABSENT tree-wide; canary intact 212 B / 512d0dc8; root index.html 67,681 B / 8ef4e222 = matches r45 pin (zero drift). No new ground truth.
+- [x] Truncation check on my seat: r41 E14 re-verify leaf complete (probe :1235 BLOCKED WinError 10013, cache 89 entries intact, entrypoint present); probe script retained. Nothing truncated or empty owed from this seat.
+- [ ] PASSIVE: await Arnold's White-console leg (bundle v2, stamp ffa77423). Until it lands, NO agent-executable work on my seat.
 - [ ] On Arnold's pass landing -> relay/confirm for Verifier's one-step AC-A2-1..4 + LIVE acceptance; do NOT re-write root index.html from this seat (7:5x ruling holds, White canonical 9c6b08e3).
 - [ ] Relay my seat's pre-restore hashes to Orchestrator/Mechanic for the escalated-files clobber-vs-mtime-guard adjudication (White-side md5s are their leg): TODO.md 3f0ccedc / hosts.md 2f5aafe3 / agents.json b8b033d5.
 
