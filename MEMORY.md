@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93); closeout record md5 8db10485.
 - Sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93); all other lanes closed.
 - Sole outstanding gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93); all other lanes closed.
 - Sole open gate: Arnold's manual White-console pass (stamp 107cbd93); all seven lanes byte-uniform at md5 8db10485, closeout pending that pas
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Scribe's INDEX.md repair did not persist (still 2,702 B / md5 485a6558); edit_file must be re-run against memory/synthesis/INDEX.md
 - Designer's index.html pinned at md5 9c6b08e3; no UI work until Arnold's manual White-console pass (stamp 107cbd93) clears the last gate.
 - INDEX.md edit confirmed landed on Mechanic's seat (4375B/58fa18c2); Verifier+Archivist seeing stale 2702B copy = mirror lag, not failed writ
+- Seat edits to existing INDEX.md lose the mirror race (r16/r18/r23-r25 lesson) — Scribe's repair never landed; must use staging approach.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
