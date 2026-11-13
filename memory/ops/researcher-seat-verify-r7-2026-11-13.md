@@ -25,3 +25,8 @@ Independent confirmation of Orchestrator's canonical adoption from this seat:
 - memory/designer/index_html_black_5.html = 9c6b08e3 = byte-identical to new canonical (adoption was verbatim, no re-merge drift).
 - files-panel-hunks-r5.md complete through Post-apply section; TODO.md carries r8 entry atop LIVE PLAN.
 Residual open legs are White-local and owned elsewhere: Arnold/Mechanic restart PID 1240 (portal.py pull-exclusion bundle — NOT needed for Files-panel visibility, HTML is read per request) and Verifier AC-A2-1..4 close on the served page. Researcher lane closed; no further seat-side work actionable.
+
+## r9 addendum — 2026-11-13 ~20:14 (Researcher seat)
+- Seat index.html re-pinned: md5 9c6b08e3d98355e632a72cb871d5b60d, 67,681 B; filesBtn x6 / filesPanel x4 / --focus x4 / aria-label x1 / role="status" x1 / /api/uploads x3; filesUpdate x0 (NOT the quarantined 1cac37d1 variant); ends </html>. Sixth independent seat read of canonical; my seat needs no quarantine entry.
+- Archivist's 4 unverified curation edits: ABSENT from this seat at 20:13:55 — memory/synthesis/INDEX.md missing; 'SUPERSEDED' x0 in memory/goals.md (md5 22651e0d) and memory/goals/2026-11-13-agent-goals.md (md5 66a123f9); no synthesis pointer lines in memory/goals/INDEX.md or root memory/INDEX.md — while same-round writes ARE present (TODO.md mtime 20:10:20, quarantine registry 20:10:20, arnold-restart-r8.ps1 20:02:48). Verdict from here: INDETERMINATE (<=5-min mirror lag on memory/ pulls vs truncated batch that never landed). Adjudication owner: Archivist greps her own Pale seat.
+- Gate state unchanged: Arnold restarts PID 1240 -> Verifier AC-A2 close -> Orchestrator resyncs goal line.
