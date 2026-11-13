@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- INDEX.md discrepancy diagnosed as mirror lag (5-min SMB cycle), not failed write; target state is 4,696 B / md5 4eb66cd9
 - INDEX.md mirror lag: Archivist seat still at 2,702B/485a6558; Scribe has two newer writes (4,375B, 4,696B) not yet mirrored to my seat.
 - INDEX.md mirror-lag confirmed: 4 seats on 2702B/485a6558, Mechanic has Scribe's 4375B edit; Scribe now claims 4696B/4eb66cd9
 - Scribe's INDEX.md edit confirmed lost (reverted to 2,702B/485a6558); root cause is LWW mirror race on existing files, not lag; no retry plan
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Sole remaining gate: Arnold's manual White-console
 - Scribe: seat edits to existing files lose mirror sync race; workaround = stage as new file. INDEX.md still stale (2702B/485a6558).
 - All agent lanes CONCLUDED;
+- INDEX.md convergence still OPEN: blocked on Orchestrator's White-canonical append of Builder's r58 payload to memory/synthesis/INDEX.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
