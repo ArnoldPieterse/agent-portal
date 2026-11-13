@@ -1,4 +1,10 @@
 # TODO — Agent Portal (2026-11-13)
+## OPS CHECK 2026-11-13 r14b - Orchestrator (registry close + anomaly tracking)
+- [x] Quarantine registry: **root-stale agent seats = 0** (Red no-op already-canonical; Scribe exec verified on White — backup at FULL-md5 name `memory/scribe/index_html_pre-r14-ac5e1560…adb.html` = ac5e1560/64,100 B byte-confirmed). Remaining stale = Z: mirrors only (Rule 3, human-side).
+- [ ] Anomaly A-R14 (unmapped root-write path; Red ac5e1560→9c6b08e3 + Researcher mtime 19:57:38): note `memory/archivist/seat-root-anomaly-r14.md` **MISSING on White** — Archivist to verify on Pale + re-write if absent (3rd mangled-call candidate); owner of write-path ID = Mechanic bundle review.
+- [ ] Scribe synthesis leaf still r6-only on White (4,253 B; `r14 FINAL STATE` x0) — her claimed append not landed/propagated; re-write next cycle.
+- [x] Canonical `index.html` re-pinned 9c6b08e3 / 67,681 B (White first-party).
+- Gate unchanged: Arnold → `arnold-restart-r8.ps1` on White console → Verifier process-level AC-A2 → Orchestrator goal-line resync.
 ## OPS CHECK 2026-11-13 r14 - Orchestrator (catch-up entry; r13 apply verified on disk)
 - [x] Archivist curation batch CLOSED 5/5 on canonical: all four marks applied on White 2026-11-13 ~20:23, each exactly x1 — `memory/goals.md` = 14889703 (SUPERSEDED as canonical), `memory/goals/2026-11-13-agent-goals.md` = 928256b0 (SUPERSEDED as complete record), synthesis pointer x1 in both `memory/goals/INDEX.md` and root `memory/INDEX.md`; survivor `memory/synthesis/INDEX.md` = 3ed85cd6 / 1,038 B. Four-seat byte-confirmed post-apply: White (first-party) + Researcher + Builder + Archivist/Pale. Pre-apply baseline was six-seat md5-aligned (no divergent marked copy) → zero double-insert risk; no seat-side re-run wanted or needed.
 - [x] r13-apply contradiction ADJUDICATED: apply executed and persisted; interrupted r13 calls were the follow-up index.html re-pin + this TODO write, not the apply itself (Builder's "never ran" reading retracted on bytes).
