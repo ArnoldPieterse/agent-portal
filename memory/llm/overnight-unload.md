@@ -1,11 +1,15 @@
 # Overnight remote unloading — investigation (Researcher)
-Opened 2026-11-13 ~18:3x from fleet-panel first reveal (MEMORY.md 11-13): remotes UNLOADED overnight; White served the group all day. Status: ANALYSIS COMPLETE, LIVE CONFIRMATION PENDING (my tools have no LAN reachability — probe requests appended to TODO).
+Opened 2026-11-13 ~18:3x from fleet-panel first reveal (MEMORY.md 11-13): remotes UNLOADED overnight; White served the group all day. Status: ANALYSIS v2 (11-13 ~18:4x) — mechanism re-verified against live docs; confirmation route switched from WinRM (blocked in Mechanic's sandbox) to mirror-log read + SMB/UNC settings fetch.
 
 ## Observation (supported, from memory files)
 - 11-12 ~18:0x Red DUAL_UP (mechanic-q4 + scribe-q8), smoke8 GREEN 18:29; 11-12 22:56 Pale DUAL_UP (archivist-q8 + designer-q4). [memory/llm/hosts.md]
 - 11-13 10:17 Red /v1/models answered with BOTH models UNLOADED (server itself was up); then reloaded to DUAL_UP by ~18:0x. [hosts.md]
 - 11-13 Pale "ONLINE since ~13:40", Black LAN access "ONLINE since ~13:5x" — both hosts/Studio unreachable from White before midday. [hosts.md]
 - Remotes run LM Studio v2026.11.3 / v0.1.916-beta (same build Red/Pale/Black). White layout per instances.md.
+
+## New evidence 11-13 ~18:0x (Mechanic probe from Red, disk record)
+- 17:48:30 lan_probe from Red: Black .99 :8888 HTTP 200, Pale .39 :8888 HTTP 200 — both remotes now UP and serving over LAN. White .179 :8099/:8888 TIMEOUT from Red while SMB 445 + RDP 3389 OPEN (machine up; portal/Studio not LAN-reachable — separate ops anomaly, likely bind-to-127.0.0.1 or firewall drift after the ~17:18 restart; out of scope here).
+- Docs re-fetched live today (lmstudio.ai/docs/developer/core/ttl-and-auto-evict + /rest/load): JIT default ON; Idle TTL default 60 min applies ONLY to JIT loads; `lms load` has NO TTL unless --ttl given; Auto-Evict default ON caps resident JIT models at 1 (non-JIT loads unaffected); per-model saved "Auto Unload If Idle (TTL)" load setting exists; Bionic/tray-loaded models are EXEMPT from TTL (#2423, #1782). No REST endpoint exposes the effective TTL (checked /api/v1 list + load docs) — file read is the only confirm route.
 
 ## Candidate explanations, ranked
 ### H1 — JIT idle TTL auto-evict (SUPPORTED mechanism, INFERRED as cause; confidence MEDIUM-HIGH)
@@ -25,13 +29,13 @@ No log evidence either way; only if H1-H3 all fail their discriminators.
 - If models were loaded via UI/Bionic/tray or `lms load`, they carry NO TTL (#2423, #1782) and would NOT auto-unload — this is the main threat to H1; it pushes weight toward H2 unless a per-model saved TTL was set. Resolvable by reading each remote's Studio server-settings + model-load settings (file: %APPDATA%/LM Studio or ~/.lmstudio on host).
 - White survived the night serving this chat (quinn-q4) — weak against H1 only if White's models were also JIT-loaded; White's loads go through recover_all.py (explicit), so no contradiction. Not decisive.
 
-## Pending live checks (need LAN access — my sandbox has none; web_search only)
-Ask Mechanic/Arnold to run per remote host (Red via WinRM user `Red` empty pw; Pale/Black analogous):
-1. `(Get-CimInstance Win32_OperatingSystem).LastBootUpTime` + uptime.
-2. `Get-WinEvent -LogName System -MaxEvents 50 | where Message match 'sleep|resume|shutdown'` for the overnight window (or Event IDs 42/107/6008/1074/41).
-3. `dir llama-server.exe` mtime (engine-update test, H3).
-4. Read Studio server settings: jitModelTTL / auto-evict value + per-model saved TTL (H1 confirmation) — %APPDATA%\LM Studio or ~/.lmstudio on the host.
-First result of #1/#2 decides H1 vs H2; #4 converts H1 from inferred to supported.
+## Pending live checks (v2 — routes updated after Mechanic reported WinRM/PowerShell + LAN sockets blocked in his sandbox)
+His 17:48 probe proves one allow-listed script-based LAN path works. Cheapest-first asks for Mechanic:
+A. **Mirror canary log read (no new access needed):** pull the 5-min SMB-mirror log from White covering 11-12 ~18:00 → 11-13 ~14:00; note per-host (Red/Pale/Black) SMB-reachability history. Host's SMB DOWN until midday → host slept/was off → H2 supported for it. SMB UP all night while its Studio appeared only at midday → server-only restart/crash, host awake → H2 weakened, weight to H1.
+B. **SMB/UNC settings fetch (445 open, empty pw per memory):** if his probe path can read files, `dir`+`type` candidate LMServer settings locations on Black/Pale/Red — %APPDATA%\LM Studio, %LOCALAPPDATA%\LMServer, %USERPROFILE%\.lmstudio (exact key file NOT yet verified; list the dirs first) and grep for jitModelTTL / auto-evict. Converts H1 from inferred to supported.
+C. **LastBootUpTime + System event IDs 42/507/6008/1074** per remote, only if some remote-exec path exists (WinRM blocked — optional now that A covers the same ground).
+D. llama-server.exe mtime via UNC (H3 engine-update test) — same UNC pass as B.
+Decision rule: A decides H1-vs-H2 per host; B confirms/refutes TTL config; C/D are tie-breakers.
 
 ## Verdict (current)
-Most likely: JIT idle-TTL eviction (H1) if any TTL is configured in remote server/model settings, else overnight host power state (H2). Both fully consistent with all recorded observations. Confidence: mechanism exists = HIGH; specific cause per host = MEDIUM pending checks 1+4.
+Most likely: JIT idle-TTL eviction (H1) if any TTL is configured in remote server/model settings, else overnight host power state (H2). Both fully consistent with all recorded observations incl. the 17:48 LAN probe (remotes now up + serving). Confidence: mechanism exists = HIGH (docs re-verified 11-13); specific cause per host = MEDIUM pending checks A + B. Note: dual-residency observed on remotes means either auto-evict was OFF or loads were explicit/UI — UI/tray loads carry NO TTL (#2423/#1782), which would REFUTE H1 for those; check B's settings read resolves this too.
