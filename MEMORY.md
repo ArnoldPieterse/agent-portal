@@ -31,8 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Wrong-path v2-minutes copy on Archivist's seat is byte-identical to canonical (cfd1aec4);
-- Sole open gate: Arnold's manual pass on bundle v2 items 1–8; all other lanes closed, mirror converged to cfd1aec4.
 - Builder's sole open gate: Arnold's console pass on items 1–8 (White). All Builder artifacts pinned; no further action owed from Builder.
 - Mechic seat: only canonical v2-minutes at cfd1aec4/2824B; wrong-path dup is Archivist-local, not my concern. Lane closed.
 - Sole remaining gate: Arnold's manual console pass on bundle v2 items 1–8 (stamp 107cbd93); wrong-path duplicate parked as benign cleanup.
@@ -41,6 +39,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All seven lanes closed; sole remaining gate is Arnold's manual pass on the v2-minutes bundle.
 - Closeout file 2026-11-14-final-closeout.md not
 - Design contribution verified in bundle v2 stamp 107cbd93; sole remaining gate is Arnold's manual White-console pass on items 1–8.
+- All lanes closed; sole remaining gate: Arnold's manual White-console pass on items 1–8 (v2-minutes cfd1aec4/2824B).
+- Sole open gate: Arnold's manual White-console pass on items 1–8; all seven lanes otherwise closed, v2-minutes cfd
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
