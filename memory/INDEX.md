@@ -1,5 +1,5 @@
 # MEMORY INDEX — root dictionary (index of indexes). Grep by keyword; open ONE leaf per question.
-Last updated: 2026-11-13.
+Last updated: 2026-11-14.
 
 ## FILE ACCESS — link rule for ALL agents with tools
 - TODO.md, MEMORY.md, memory/, agents.json, agent_portal.py ARE in your working dir - read them with python/terminal tools. Kept fresh by White: per-chat-turn sync + 5-min SMB mirror (Red/Pale/Black); if stale/missing, ask Orchestrator/Researcher to relay.
@@ -12,6 +12,7 @@ Last updated: 2026-11-13.
 - -> memory/ops/INDEX.md      Windows ops: reboot recovery runbook, portal lifecycle, ground-truth checks, probe scripts
 - -> memory/goals/INDEX.md    fleet goal lists 2026-11-13: 8 agents x 10 goals verbatim (canonical = TODO.md AGENT GOALS section)
 - -> memory/synthesis/INDEX.md   Scribe synthesis leaves (supersession chain: upgrade-round < consolidated-state; planning-meeting < v102)
+- -> memory/projects/dcabots.md  project area: dcabots DCA bot — state, runbook, open items (added 2026-11-14)
 
 ## Global files (shared by all folders)
 - -> agent_portal.py          server :8099; /api/chat, /api/memory, /api/file(+raw)
