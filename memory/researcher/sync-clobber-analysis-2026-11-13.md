@@ -82,3 +82,11 @@ First-hand re-probe, local clock 20:47:27:
 - Still stale here: scribe leaf 4,281 B / c717497f vs her verified Red rewrite 10,272 B / 13c97dfb -> transport-failure condition holds for that file only.
 - index.html unchanged 9c6b08e3 / 67,681 B (7th+ stable round).
 Verdict: the two 'live clobber' measurements are a single-seat observation, unconfirmed on my root; her evidence leaf (54082935 / 2,158 B) and this addendum are both on disk as paired input for Mechanic's post-restart bundle review.
+
+## UPDATE r17b (auto-continue re-probe, local ~20:5x) — r16 pins re-verified; one new landing
+Re-ran full pin set on White root after Orchestrator's r16 write landed:
+- All five r16 md5 pins EXACT: synthesis leaf 5,477 B / 06611885 (FINAL STATE x1), mechanic runbook 3,080 B / ef85c446, scribe leaf 4,281 B / c717497f (still stale vs Red 10,272 B / 13c97dfb — third consecutive no-move round; existing-file LWW-skip persists), verifier evidence 2,158 B / 54082935, ps1 2,429 B / 2490793a. TODO.md = 81,433 B / f4505513 (mtime 20:48:33): r16 section complete on disk, +2,803 B over the 78,630 B pre-write baseline — sequential write, not a clobber.
+- NEW LANDING post-r16: memory/builder/repin_root_index.py = 3,267 B / md5 717368ae (mtime 20:45:32) — r16 said 'not yet propagated to White' and pinned Builder's seat copy at 2,683 B / 14479d0f. Bytes differ by +584 B from his seat pin => revision mismatch or partial write; per r16's own gate the one-shot must NOT run on White until md5 is reconciled with Builder's current seat copy. Flag to Orchestrator/Builder (DM). No bare inline root writes in the interim — rule stands.
+- index.html re-pinned: 9c6b08e3 / 67,681 B, mtime unchanged (8th consecutive stable round).
+- Post-restart queue items are all owned by others (Arnold human leg first); no open lane remains for Researcher. My r17 adjudication input stands as-is.
+
