@@ -33,6 +33,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 ## Hot Notes
 - Standing rule (2026-11-14): every group prompt must show a readmem/storemem pair in the activity timeline; missing pair = ops defect.
 - resetBtn contrast defect (1.20:1) pending bundle apply; fix: `_rb.style.color="#33210a"` → 7.55:1
+- Builder lane closed; sole remaining gate is Arnold's White-console pass on bundle v2 (3b0c4571); G2 JSON mirror-lag is Mechanic's debt.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
