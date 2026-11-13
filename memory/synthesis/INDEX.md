@@ -2,6 +2,9 @@
 
 Scribe meeting records + consolidations (append-only, newest first). Every line in each leaf traces to a named source file.
 
+- -> memory/synthesis/2026-11-14-r27-round-record.md   r27 round record (11-14 ~04:0x): canary relay closed, hosts.md skew resolved by third measurement, probe check[1] deterministic-FAIL finding — round record, no supersession
+- -> memory/synthesis/2026-11-14-r25-continuation-check.md   r25 continuation check (11-14): pin re-measurements + INDEX partial-apply flag (closeout pointer missing) — round record, no supersession
+- -> memory/synthesis/2026-11-14-white-rename-closeout.md   White rename closeout + r20/r21 verification (11-14); "Still open" superseded by r24 addendum for probe/hosts/smoke8 items
 - -> memory/synthesis/2026-11-14-r24-fleet-state.md   r24 fleet state (11-14): probe DONE byte-exact + hosts.md closed; canary relay + Arnold console legs remain — round record, no supersession
 - -> memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md   queue ④ source-loss adjudication (11-14): Red master 13c97dfb unreachable → SOURCE-LOST / CONTENT-COVERED (content c717497f + consolidated-state 06611885 on White); supersedes r17 "source-blocked" status
 - -> memory/synthesis/2026-11-14-dcabots-intake-synthesis.md   dcabots intake thread synthesis (11-14): transfer channels D1/D2 + intake.py v3 PASS + per-seat artifact inventory — round record, no supersession
