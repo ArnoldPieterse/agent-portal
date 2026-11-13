@@ -1,0 +1,27 @@
+# Designer r39b — A4+A5 reproduction audit: what surviving artifacts CAN and CANNOT prove (NEW file, 2026-11-14)
+
+Trigger: Verifier r39 found the on-disk transform (`a4a5_sim.py`) is draft-era (yields a22ec518/68,634 B) and the authoritative `apply_a4_a5_r35.py` is gone from the tree; asked @Builder to persist the authoritative transform or candidate. This leaf is my first-party audit of exactly which parts of the A4+A5 transform are byte-pinned by surviving artifacts (Pale seat, shared folder scan).
+
+## 1. A5 — FULLY BYTE-PINNED (reproduced this round)
+All 4 anchors verified UNIQUE against canonical base 9c6b08e3/67,681 B at their documented lines: A `--acc:#4f8cff;--ok:#3ddc84` L10, B `.seg button.on{…}` L37, C `#send{…}` L69, D `.btn.pri{…}` L102. `--acc-strong` pre-apply count = 0. Applying the 4 replacements in-process and hashing LF-normalized output yields **md5 473f4e925e63759d7d8291c4215f8e69 — byte-exact match to the fingerprint recorded in `a5-send-contrast-hunk-r28.md`**, and `--acc-strong` post-count = 5. Anchor A is identical in BOTH staged bases (--acc is #4f8cff in 9c6b08e3 and 8ef4e222 per r28 §0), so A5 re-derives byte-exactly from my leaf on either base. **A5 needs no further action; it is reproducible by anyone from `a5-send-contrast-hunk-r28.md` alone.**
+
+## 2. A4 Hunk A — FULLY BYTE-PINNED
+Anchor `$("filesRefresh").onclick=filesLoad;` = exactly ONE occurrence, L962, immediately before `</script>` (L963). JS block (16 lines / 724 chars) is in `panel-discipline-r20.md`. Builder r35 closeout pins the one insertion quirk: block inserted CRLF-terminated with trailing `\r` so the original `\n</script>` becomes CRLF (first-run bare-LF bug at offset 68602, fixed with `+ b"\r"`). No surviving ambiguity.
+
+## 3. A4 Hunk B — structure verified, 3 formatting DOFs unconstrained
+Structure re-verified against canonical this round: four panel divs are PLAIN `<div id="actPanel|fleetPanel|opsPanel|filesPanel">` at L188/193/197/212 (no class attr), spanning exactly 28 lines to the filesPanel close; stopBtn L186; modeBar close `</div>` L187; `#modeBar{display:flex;gap:8px;padding:8px 14px;border-bottom:1px solid var(--line);align-items:center;background:var(--panel)}` at L34. Verifier r38 §2 confirms the APPLIED file matched this spec (DOM order stopBtn < panelDock-open < actPanel < filesPanel-close < panelDock-close < modeBar-close < msgs; div balance 60/60→61/61). The unconstrained DOFs (not pinned by any surviving record):
+1. wrapper indentation of `<div id="panelDock">` / `</div>` lines;
+2. blank line(s) before/after the dock block inside #modeBar;
+3. where `position:relative;` lands in the L34 rule (start vs end, with/without leading space) + placement/indent of the new `#panelDock{…}` rule.
+
+Binary-exact 320-combo search over these DOFs (CRLF-true JS insertion per §2): several quadruples hit the target SIZE 68,633 B exactly (e.g. dock_sp=6 + posrel endsp + rule at end-of-`<style>`; dock_sp=4 + startsp + rule after L34 + blank before AND after dock), but **none reproduces md5 45323d09717ac3a9dc0e098015863d81**. Consistent with Builder r38: draft a22ec518/68,634 first diverges from final at byte 2459 — the CSS region — i.e. the authoritative-vs-draft difference sits inside exactly these DOFs.
+
+## 4. Full-tree absence scan (first-party, this seat)
+Walked the entire shared folder: **no file anywhere carries md5 prefix 45323d09 or a22ec518.** Large-HTML inventory: canonical 9c6b08e3 ×4 copies (root index.html, memory/mechanic/index_html_pre-r14-9c6b08e3.html, memory/designer/index_html_black_5.html, designer/staged/variant_9c6b08e3….html + audit-target.html), 8ef4e222 ×2 (memory/builder/variant_aa_8ef4e222.html, designer/staged/variant_8ef4e2227a7a.html), plus two older pre-r12/r14 snapshots. No `.bak`, no `a4a5_sim_out.html`, no `apply_a4_a5*.py` on this seat. Verifier r39's finding ("no file carrying those bytes anywhere on disk") is confirmed from a third seat.
+
+## 5. Hand-off + lane state
+- **@Builder**: your persistence item stands, now with tighter constraints — the authoritative candidate = canonical + A5 (§1, byte-pinned) + Hunk A (§2, byte-pinned) + Hunk B with formatting inside the §3 DOF space and total size exactly 68,633 B. If your r38 in-memory re-application (which DID reproduce 45323d09 at 06:1x) is reconstructable from your seat notes, re-running it against `.bak` and writing the output as a NEW shared file closes Verifier's gate; my §3 table tells you which quadruples to try if not.
+- **@Verifier**: the "single unsourced hash" concern is accurate and now triple-seated. My A5 fingerprint (473f4e92 LF) gives you one independently re-derivable sub-component of the candidate if you want a partial-trust path while Builder persists the whole.
+- **Designer lane**: unchanged — r19 FAILs #3/#4/#5 are fixed in code per Verifier r38 §2-4; my owed action remains "re-run design sheet against the new fingerprint AFTER Arnold stamps 45323d09 on White". No index.html writes from me (r16 ruling stands). #1 token-lock + #6 responsive remain open items for Builder/Orchestrator as before.
+
+Owner: Designer. Evidence: first-party binary reads + in-process transforms + full-tree md5 scan, Pale seat, 2026-11-14.
