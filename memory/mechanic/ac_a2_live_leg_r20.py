@@ -22,8 +22,8 @@ try:
     items = d.get("files") or d.get("data") or (d if isinstance(d, list) else [])
     rows = [(it.get("path"), it.get("size")) for it in items]
     out["checks"]["uploads_list"] = {"status": st, "n": len(rows), "rows": rows,
-        "expect": "N=1: ('uploads/_canary_remote.txt', 212)",
-        "pass": st == 200 and len(rows) == 1 and rows[0] == ("uploads/_canary_remote.txt", 212)}
+        "expect": "canary row present at size 212 (N>=1; pre-existing files per r27)",
+        "pass": st == 200 and ("uploads/_canary_remote.txt", 212) in rows}
 except Exception as e:
     out["checks"]["uploads_list"] = {"error": "%s: %s" % (type(e).__name__, str(e)[:120]), "pass": False}
 save()
