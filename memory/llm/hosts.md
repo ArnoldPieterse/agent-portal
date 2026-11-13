@@ -1,5 +1,5 @@
 # HOSTS — multi-host LLM layout (White local + Red/Pale/Black remote)
-Last updated: 2026-11-12. Expansion plan: 6 more agents, 2 per remote host, each host dual-resident like White.
+Last updated: 2026-11-14 (White folder convention section; prior 2026-11-12). Expansion plan: 6 more agents, 2 per remote host, each host dual-resident like White.
 
 ## Host table
 | Host | IPv4 (from White) | Studio :8888 | Auth | GPUs | Models/aliases | State |
@@ -16,6 +16,13 @@ Last updated: 2026-11-12. Expansion plan: 6 more agents, 2 per remote host, each
 - RED current URL VERIFIED this turn: https://posting-century-withdrawal-doom.trycloudflare.com. BLACK's was from Arnold's screenshot (chat-only).
 - Helper scripts on White (no plaintext pw in files): `red_tunnel.ps1` (extracts newest URL from Red logs -> C:\Users\Red\red_tunnel_url.txt) + `red_login.ps1` (reads $env:RA_PASSWORD, fetches URL via WinRM, logs in). `pw_check.ps1` DELETED (had plaintext pw).
 - WinRM (:5985, blank-pw users) remains FALLBACK exec channel; tunnel+JWT is primary for Studio work. Portal routing (R3 agents.json) still uses per-host API keys - ephemeral URLs unsuited to persistent config.
+
+## White model folders -> fleet convention (2026-11-14 ~01:45, Orchestrator; supersedes quant-less folder references elsewhere in this file)
+- White `.lmstudio\models` now follows the fleet convention. Both 27B variants load from their quant-named folders and BOTH report under bare id `Qwen3.8-27B-GGUF` in /v1/models:
+  - `unsloth\Qwen3.8-27B-GGUF` -> UD-Q4_K_S, alias **quinn-q4**, GPU0, ctx 131072 (this chat's Q4 slot).
+  - `lmstudio-community\Qwen3.8-27B-GGUF` -> Q8_0, alias **atlas-q8**, GPU1, ctx 32768 (~30.1 GB VRAM resident when loaded; Orchestrator slot).
+- Guard: on White a COUNT-based check is the only reliable one (bare id shared by both variants); per-id `loaded` is not distinguishable. Lesson (see studio-api.md): poll loaded-models until resident after any load - the load API 200 is an async ack.
+- WSL-Inbox paths in the 11-11 status lines below are historical provenance, NOT current load sources.
 
 ## Access mechanics (verified 2026-11-11)
 - Red LAN API :8888 = auth ON (Bearer); only /api/health + /openapi.json open keyless over LAN.
