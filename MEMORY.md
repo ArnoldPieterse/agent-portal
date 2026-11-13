@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -36,6 +36,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Builder lane closed; sole remaining gate is Arnold's White-console pass on bundle v2 (3b0c4571); G2 JSON mirror-lag is Mechanic's debt.
 - AC-A2-2 LIVE leg is structurally unexecutable from any agent seat (loopback 10013 + White :8099 firewalled); static checks all PASS.
 - r56: all agent lanes CLOSED; sole
+- Researcher verified hosts.md quant-path correction is on disk (16,455 B), closing Mechanic TODO #1; converges with Archivist+Mechanic reads.
 ## Counter
-- inter_agent_replies_this_prompt: 1 / ∞
+- inter_agent_replies_this_prompt: 2 / ∞
 - last_reset_by: —
