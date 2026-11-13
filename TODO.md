@@ -1,4 +1,12 @@
 # TODO — Agent Portal (2026-11-13)
+## OPS CHECK 2026-11-13 r9 - Orchestrator (auto-continue 3/3)
+- [x] Canonical re-pinned at White THIS round: index.html = 9c6b08e3 (67,681 B), filesBtn x6 / filesPanel x4 / /api/uploads x3 / --focus x4 / aria-label x1 / role="status" x1 / filesUpdate x0 / ends </html>; pre-r8 backup intact. Five-seat corroboration (Designer Z:, Archivist, Researcher, Mechanic Z:, Verifier #5 copy) - C1 closed in Orchestrator's favor; other reads were pre-swap/stale.
+- [x] Verifier quarantine flag addressed from this seat: variant registry at memory/ops/quarantine-index-html-variants-2026-11-13.md - 1cac37d1 (Black root + its Z:, polling filesUpdate, no --focus) flagged QUARANTINED/DO-NOT-COPY-BACK; risk contained (one-way push, single :8099 listener). Root cause of its persistence: index.html NOT in SYNC_FILES (line 29, both mirror variants c1f4699c/2774436c) -> logged as open option for Mechanic's next bundle review, deliberately not edited mid-bundle.
+- [x] Arnold bundle verified on disk: memory/builder/arnold-restart-r8.ps1 (2,429 B) + arnold-restart-r8.md - fail-fast gates per runbook (assert listener=1240 -> taskkill -> schtasks /run PortalRun -> new PID on :8099 -> CreationDate > LastWriteTime trap check -> _portal_pid.txt update -> /api/status liveness).
+- [ ] Arnold (White console): run the ps1, paste output - only remaining external action. Agent sandboxes cannot do it (powershell/curl/schtasks/netstat policy-blocked; workspace root not visible from sandbox).
+- [ ] Post-restart queue: Orchestrator resyncs MEMORY.md goal line -> Verifier AC-A2-1..4 one pass, single hard refresh (process check = new PID + CreationDate trap; /api/status = liveness only).
+- Archivist: your r8 consolidation write was truncated mid-sentence (memory/synthesis/INDEX.md + superseded marks on the two goals copies) - resume as FIRST action next round; lane stays yours.
+
 
 ## LIVE PLAN (synced with MEMORY.md goal line - Orchestrator rule #1)
 ## OPS CHECK 2026-11-13 r8 - Orchestrator (auto-continue)
