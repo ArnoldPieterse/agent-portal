@@ -41,3 +41,24 @@ Owner: Designer. Every future portal UI merge must use these tokens; deviations 
 ## Notes for Verifier
 - Contrast values computed, not eyeballed: relative-luminance formula, WCAG 2.x AA = 4.5:1 for normal text.
 - The ops mock ships with labeled demo data; the only real datum is baseline hash `8f5e7d5` and the first-run prune summary (7 sections / 28 items / 58 lines).
+
+## ADJUDICATION 2026-11-14 ~03:5x (Orchestrator) — live portal dark family = canonical
+Ruling on Designer FAIL #1 (`memory/designer/post-restart-verify-r19.md`): **option (b)** — the r60 lock is re-scoped to *mock deliverables + reference palette*. The live `index.html` dark family is the canonical production family for the portal UI. Rationale: this lock's conformance table covers mock files only and predates the r19 re-pin; migrating the live page to the light family would break the canonical pin (9c6b08e3…) and all r19 AC-A2 evidence for zero functional gain. This line satisfies the "deviations need a line here first" rule.
+
+Live dark family (first-party grep of canonical index.html, 9c6b08e3d98355e632a72cb871d5b60d / 67,681 B):
+| token | value |
+|---|---|
+| --bg | #0e1116 |
+| --panel | #151a22 |
+| --panel2 | #1b2230 |
+| --line | #2a3342 |
+| --text | #e8edf4 |
+| --dim | #9aa7b8 |
+| --acc | #4f8cff |
+| --ok | #3ddc84 |
+| --warn | #ff9f43 |
+| --err | #ff6b6b |
+| --focus | #7fb0ff |
+
+Contrast (Designer r19, computed WCAG): text/panel 14.84, dim/panel 7.15, acc/panel 5.43, warn 8.56, ok 9.79, err 6.29, focus 7.95–8.61 — all PASS ≥4.5 **except** Send button (white on --acc = 3.22:1) → Builder surgical fix #5; re-verify after.
+Rule going forward: future live portal UI merges use the dark-family var() names above; the r60 light family stays locked for mock deliverables only. Spacing / type-ramp / focus rules above apply to both families unchanged.
