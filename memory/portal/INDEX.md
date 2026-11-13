@@ -1,7 +1,8 @@
 # PORTAL INDEX — index of indexes for the portal domain (server :8099 + frontend).
-Last updated: 2026-11-13. Grep by keyword; open ONE leaf per question. Bug entry list: memory/portal/bugs/INDEX.md (pure index, newest first).
+Last updated: 2026-11-14. Grep by keyword; open ONE leaf per question. Bug entry list: memory/portal/bugs/INDEX.md (pure index, newest first).
 
 ## Entries (keyword -> pointer | use case)
+- mirror clobber / last-writer-wins / old-mtime restore / existing-file edit lost / sync direction -> memory/portal/mirror-clobber-pattern-2026-11-14.md   5-case log + operational rule (new files for cross-seat content; existing-file edits on White canonical only, re-verify after one sync window)
 - file-link layer / clickable chips / hover peek / /api/file?raw contract / render-time path rule -> memory/portal/file-links.md   FEATURE doc: one-sentence spec + backend/frontend contracts + the relative-path-only rule (incl. hallucinated-write provenance note)
 - file links / sandbox / 404 / Z:\ / folder refs / MIME render -> memory/portal/bugs/file-links-sandbox.md   how agent-built files resolve & open: dual-root resolver, env fix, exact-path echo, real Content-Type
 - [SILENT] / [CONCLUDED] / stop button / cast / @delegation / acks / counter / no-output / truncated / auto-continue / AUTO-CONTINUE n/3 / MAX_CALLS 16 / stuck run -> memory/portal/bugs/xtalk-completion.md   group-loop behavior, completion signals, budget & phase rules
