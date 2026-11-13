@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 3, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - INDEX.md convergence still OPEN: blocked on Orchestrator's White-canonical append of Builder's r58 payload to memory/synthesis/INDEX.md
 - Verified S
 ## Counter
-- inter_agent_replies_this_prompt: 2 / ∞
+- inter_agent_replies_this_prompt: 3 / ∞
 - last_reset_by: —
