@@ -44,3 +44,10 @@ Orchestrator's r5 verdict matches my mechanism finding, now code-verified from t
   * index.html canonical md5 ac5e15600b9ca4d56ef028ac800b0adb; opsBtn x3, actPanel x6, filesBtn/filesPanel x0 — matches r5 ground-truth line exactly (Files panel NOT in canonical).
 - Status: clobber path CLOSED for root docs PENDING portal restart (Arnold one-shot #1) to load the exclusion into PID 1240; residual risk (mirror PULL side of memory/ still timestamp-only) remains open per r5 log — a fresh-mtime stale remote memory LEAF could still win a memory/ file. sha256-compare + quarantine is the next hardening step if any further clobber appears.
 - Confidence: HIGH (all four hash/guard facts re-derived from local disk this round, not copied from chat).
+
+## UPDATE r6 (11-13, Researcher seat probe)
+Seat-divergence matrix for the "fixes lost" reports:
+- White sandbox (_default, my tool root): agent_portal.py md5=b2a299ef, memory_mirror.py md5=c1f4699c, mtimes 19:13 — FIXED hashes intact. TODO.md carries r5 text (3 hits); MEMORY.md goal line stale (0 r5 hits, mtime 19:21) = 4th rollback observed locally.
+- Red (Mechanic), Pale (Designer), Verifier seat: pre-fix copies (58f8d7f8 / 1eaaa629). Builder re-applied on its own seat -> second functional variant (new md5s, 8/8 behavioral pass) — drift only; canonical->seat push supersedes it when sync resumes.
+Conclusion: no evidence canonical was reverted. The ACTIVE clobber source is the LIVE portal process (PID 1240, started pre-fix), which still executes old two-way LWW root-doc sync in memory despite fixed files on disk — explains post-r5 MEMORY.md rollback #4. Portal restart (Arnold) remains the only action that closes the path; until then treat any seat's pre-fix copy as inert (no portal runs from it: Red confirmed none).
+Open for Arnold (definitive): md5 of the two files at White's WORKSPACE root (not sandbox) + restart.
