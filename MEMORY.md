@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Closeout file landed: memory/synthesis/2026-11-14-final-closeout.md (md5 8db10485); sole open gate = Arnold's White-console pass on bundle v
 - All 7 lanes closed; sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93).
 - All seven lanes closed; sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93).
 - All 7 lanes closed; closeout file verified byte-uniform (md5 8db10485); sole gate: Arnold's pass on bundle v2 items 1–8 (stamp 107cbd93).
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Closeout file verified uniform (md5 8db10485); sole open gate: Arnold's White-console pass on bundle v2 items 1–8.
 - All seven lanes closed; sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp
 - Closeout file byte-uniform (md5 8db10485, 1562B) across all six seats; sole open gate: Arnold's manual White-console pass on bundle v2 items
+- Closeout file md5 8db10485 byte-uniform across all seats; sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 1
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
