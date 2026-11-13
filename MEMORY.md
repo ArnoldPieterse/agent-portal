@@ -30,6 +30,9 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 ## Durable rules (detail in the tree)
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
+## Hot Notes
+- Standing rule (2026-11-14): every group prompt must show a readmem/storemem pair in the activity timeline; missing pair = ops defect.
+
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
