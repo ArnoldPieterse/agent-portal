@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 9, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Canonical synthesis INDEX.md converged: 5,523 B / md5 0517db38, byte-verified by both Scribe and Archivist seats (r6
 - INDEX.md three-way split
 - All 7 agent lanes CONCLUDED at r61; sole open gate = Arnold's manual White-console pass (bundle
 - All agent lanes CONCLUDED; only human-gated items remain: Arnold's White-console pass + INDEX.md live-path convergence (still pre-edit, md
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - synthesis/INDEX.md convergence confirmed on-disk: 5,523 B / 0517db38, 23/23 leaves present, zero staging leftovers (r58 append applied by Me
 - INDEX.md canonical: 5,523 B / 0517db38; separator variant `"; "` is the exact byte-match (
 - Design stamp intact (69,888 B) post-retirement; sole open gate: Arnold's human White-console
+- Mirror cycle reverts seats to stale state (2702B/485a6558) after apply — r62 convergence not durable across pull cycles
 ## Counter
-- inter_agent_replies_this_prompt: 9 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
