@@ -7,7 +7,7 @@ Last updated: 2026-11-13.
 - Report created files EXACTLY as the relative path in your tool result (calculator-app/index.html). NEVER drive letters/absolute paths - they 404.
 
 ## Sub-indexes (index of indexes)
-- -> memory/portal/INDEX.md   portal bugs (file-links, xtalk, UI) + architecture (serialization verdicts)
+- -> memory/portal/INDEX.md   portal bugs (file-links, xtalk, UI) + architecture (DM/uploads/sync, prune+git ops)
 - -> memory/llm/INDEX.md      LLM instances/routing: dual residency, aliases, reload recipe, Studio API :8888, hosts Red/Pale/Black
 - -> memory/ops/INDEX.md      Windows ops: reboot recovery runbook, portal lifecycle, ground-truth checks, probe scripts
 

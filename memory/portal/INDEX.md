@@ -8,6 +8,7 @@ Last updated: 2026-11-13. Grep by keyword; open ONE leaf per question. Bug entry
 - thinking bubble / reset button / busy hint / hard-refresh -> memory/portal/bugs/ui-frontend.md   frontend UI fixes & the hard-refresh rule
 - parallel / Promise.all / RLock / serialization / parallel_slots=1 / mount asymmetry / per-host sandbox / DM / private message / [DM @Name] / redaction / lock chip / uploads / workspace->sandbox sync / junctions -> memory/portal/architecture.md   how the portal runs (design notes: DM, uploads, multi-host, sync; Studio serialization verdict)
 - fleet / fleet status / per-host models / busy idle unknown / /api/fleet / active-generations / dead host -> memory/portal/fleet-status.md   Fleet Status panel: round-table decision, spec adaptation (on-demand probes), API contract, verification evidence
+- TODO pruning / prune / TODO_completed / auto-chunk / todo_done_parts / git repo / MinGit / mingit / commit / .gitignore allowlist / Ops panel / /api/git -> memory/portal/architecture.md   NEW OPS processes (2026-11-13): prune endpoint + chunk splitting, local git via portable MinGit, GET/POST /api/git, 🔧 Ops UI
 
 ## Global pointers (shared files)
 - -> agent_portal.py   server code: endpoints, _index_block, build_system_prompt, counter lock

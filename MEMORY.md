@@ -1,10 +1,13 @@
-<!-- state: {"inter_agent_replies": 16, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
 
 ## GOAL (live plan = TODO.md top; keep both in sync)
-**FLEET PANEL BUILT + DM COMPLETE + FILE-ACCESS DONE** (11-13 ~14:0x): /api/fleet live per-host view (models+quant, busy/idle/unknown, 5s refresh) via on-demand Studio probes - first reveal: remotes UNLOADED overnight; [DM @Name] private messaging live-verified; workspace→sandbox sync + SMB mirror live all 3 hosts (empty SMB passwords). Portal PID 21988 (one-shot schtask relaunch; wmic gone, start reaped by wrapper). NEXT: optional - mirror uploads/ to remote sandboxes; move Red .245 to wired NIC.
+**FLEET PANEL BUILT + DM COMPLETE + FILE-ACCESS DONE** (11-13 ~14:0x): /api/fleet live per-host view (models+quant, busy/idle/unknown, 5s refresh) via on-demand Studio probes - first reveal: remotes UNLOADED overnight; [DM @Name] private messaging live-verified; workspace→sandbox sync + SMB mirror live all 3 hosts (empty SMB passwords). Portal PID 1240 (relaunched 11-13 for git integration; single listener verified). NEXT: Orchestrator announces the two new ops processes (prune + git) and asks ALL agents to set 10 goals each; then: mirror uploads/ to remote sandboxes, move Red .245 to wired NIC.
+
+## 2026-11-13 ~17:0x - NEW OPS PROCESSES LIVE: TODO pruning + local git repo
+Built into agent_portal.py, live-verified (PID 1240): (1) `POST /api/todo/prune` moves all-[x] sections of TODO.md → TODO_completed.md, auto-chunks >240 lines into todo_done_parts/TODO_done_part_NNN.md (first run: 7 sections / 28 items); (2) local git repo via portable MinGit (`mingit/`), curated allowlist .gitignore (~43 files), GET/POST /api/git (commit|init), baseline commit `8f5e7d5`. UI: 🔧 Ops panel (status, commits, commit box, ✂ Prune). ORCHESTRATOR TODO queued: announce both processes to all agents + ask each to set 10 goals themselves. Detail: memory/portal/architecture.md (Ops section).
 
 ## 2026-11-13 ~13:2x - File-access plan COMPLETE (all 4 steps) + last DM gap closed
 Step 2 unblocked by Arnold's clarification: **SMB passwords are EMPTY on all hosts** - the `[REDACTED-CREDENTIAL]` string in smb_fix.ps1 is Unsloth Desktop remote access only, NOT an SMB password (hence Win error 86 on Pale/Black). Dropped empty passwords into memory_mirror_hosts.json (pending_creds -> ok); next mirror run pushed all 19 files to Pale (IP_PALE) + Black (IP_BLACK), 0 errors; verified on-disk mtimes match HERE; steady-state runs no-op. \MemoryMirrorRun (5 min, current-user task) already live - picked it up automatically. Human-typed [DM @X] redaction gap also closed in to_openai_messages (same per-viewer logic, fail-open). Remote sandboxes hold extra per-agent note dirs (memory/archivist/ etc.) the agents created themselves - mirror is push-only by design, never deletes remote files. Detail: TODO.md top + portal/architecture.md.
@@ -22,5 +25,5 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Counter
-- inter_agent_replies_this_prompt: 16 / ∞
+- inter_agent_replies_this_prompt: 4 / ∞
 - last_reset_by: —
