@@ -1,8 +1,8 @@
 # LLM instances & routing (dual residency)
-Last updated: 2026-11-11 (split from memory/llm-instances.md). Ground truth = nvidia-smi per-GPU VRAM, never /v1/models alone.
+Last updated: 2026-11-14 (White-rename convention patch; split from memory/llm-instances.md). Ground truth = nvidia-smi per-GPU VRAM, never /v1/models alone.
 STATUS 2026-11-10 18:38 - dual residency RESTORED (recover_all.py, verdict ALL_UP; wedge probe clean). Studio API on :8888 only.
 ## Current layout
-- Q4_K_S on GPU0 (~20.6 GB, ctx 65536) — Researcher's (ex-Quinn, renamed 11-12) EXCLUSIVE instance (unsloth path).
+- Q4_K_S on GPU0 (~20.6 GB, ctx 65536 → 131072 since 2026-11-14) — Researcher's (ex-Quinn, renamed 11-12) EXCLUSIVE instance (unsloth path).
 - Q8_0 on GPU1 (~30.1 GB, ctx 32768) — Orchestrator (ex-Atlas, renamed 11-12) + the Studio chat thread share it (lmstudio-community path).
 - MTP draft model (unsloth/Qwen3.5-4B-MTP-GGUF) currently UNLOADED; spec-decode ~104 tok/s when active.
 - Studio /v1/chat/completions SERIALIZES generations globally across models (parallel_slots=1):
@@ -10,8 +10,9 @@ STATUS 2026-11-10 18:38 - dual residency RESTORED (recover_all.py, verdict ALL_U
   group processing needs a Studio-side change, not portal/llama.cpp changes.
 
 ## Alias table (GET /api/settings/model-aliases on :8888) — how portal names resolve
-- atlas-q8 -> C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-GGUF (Q8_0, GPU1)
-- quinn-q4 -> C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-GGUF (UD-Q4_K_S, GPU0)
+- atlas-q8 -> C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0 (Q8_0, GPU1)
+- quinn-q4 -> C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S (UD-Q4_K_S, GPU0)
+- 2026-11-14 convention patch: alias paths above updated to post-rename quant-bearing folders (fleet convention; see hosts.md "White model folders → fleet convention"). Live /v1/models still reports both variants under bare id `Qwen3.8-27B-GGUF` per the artifact note below.
 - /v1/models alias artifact: Q8 instance shows loaded=true under bare id `Qwen3.8-27B-GGUF`, full id false. Route by local path + variant.
 - /v1/models COUNT is a listing artifact, NOT resident instances: one 27B GGUF appears 3x (bare id,
   community path, unsloth path) plus qwen3-asr-1.7b (unloaded ASR). "4 models" = normal. Resident

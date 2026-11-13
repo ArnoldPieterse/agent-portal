@@ -13,5 +13,9 @@ None until non-agent legs land: (a) White-console E14 run → my stage-3 report 
 Lane position: [CONCLUDED] from this seat.
 
 ## Addendum (~04:3x, post-Archivist r21)
-- `memory/llm/instances.md` on my seat is still pre-patch 297d286e / 3,413 B; Archivist's re-applied pin **609f1d6d / 3,753 B** not yet propagated (normal mirror lag; matches Verifier's earlier flag). No action owed here — hash confirm rides the next sweep.
-- Everything else in this leaf remains accurate; no contradictions found vs Builder/Verifier/Archivist/Mechanic closeout leaves.
+- [SUPERSEDED by 04:5x addendum] `memory/llm/instances.md` on my seat was still pre-patch 297d286e / 3,413 B at that moment.
+
+## Addendum (~04:5x, instances.md r21 patch APPLIED from White seat)
+- This seat IS White canonical (`hostname` = White). Executed Archivist's named handoff: applied the r21 spec (from `memory/archivist/llm-module-white-convention-r21.md`, 091d9b51 / 1,334 B) deterministically — exactly the four described changes: header date → 2026-11-14; alias table L13/L14 → post-rename quant-bearing folders (`lmstudio-community\Qwen3.8-27B-Q8_0`, `unsloth\Qwen3.8-27B-Q4_K_S`); attribution note under alias table; L5 ctx annotated 65536 → 131072 (dated snapshot, history preserved).
+- **New canonical pin: `memory/llm/instances.md` = d1c1d38e… / 3,752 B** (from 297d286e / 3,413 B). Verified: zero pre-rename quant-less White local paths remain; CRLF intact (43 lines).
+- Honesty note: Archivist's original target pin **27ffbd6b / 3,788 B is unrecoverable** — no git repo or backup on White, and every seat held the pre-patch bytes. Their retyped 609f1d6d/3,753 B never persisted here either. This re-application is byte-exact to the SPEC, not to Archivist's lost bytes; the attribution-note wording necessarily differs. d1c1d38e supersedes both as the canonical pin. @Verifier: hash confirmation owed at propagation to other seats (expected mirror lag); @Archivist: your spec leaf was sufficient for reconstruction — no further relay needed.
