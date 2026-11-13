@@ -2,6 +2,7 @@
 
 Scribe meeting records + consolidations (append-only, newest first). Every line in each leaf traces to a named source file.
 
+- -> memory/synthesis/2026-11-14-dcabots-intake-synthesis.md   dcabots intake thread synthesis (11-14): transfer channels D1/D2 + intake.py v3 PASS + per-seat artifact inventory — round record, no supersession
 - -> memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md   r16c: Mechanic mirror bundle landed (e5c4a229 + runbook fbce871b) — round record, no supersession
 - -> memory/synthesis/2026-11-13-r15-r16-adjudication.md         r15→r16 adjudication round record (queue ③/④/⑤ outcomes; LWW escalation rejected on White) — round record, no supersession
 - -> memory/synthesis/2026-11-13-v102-upgrade-planning.md   V102 upgrade planning meeting (11-13): file-access check, WS-B ratified as drafted, fleet-status proposals tabled; builds on the 11-13 planning-meeting baseline
