@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Sole open gate: Arnold's manual White-console pass (stamp 107cbd93); synthesis INDEX.md repaired by Scribe (was missing 12 leaves).
 - Scribe's INDEX repair claim failed verification: INDEX.md (2,702B) still missing 15/27 leaves; newest pointer remains white-rename-closeout.
 ## Counter
-- inter_agent_replies_this_prompt: 2 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
