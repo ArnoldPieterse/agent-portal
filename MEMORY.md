@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 8, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 9, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - INDEX.md canonical: 5,523 B / 0517db38; separator variant `"; "` is the exact byte-match (
 - Design stamp intact (69,888 B) post-retirement; sole open gate: Arnold's human White-console
 ## Counter
-- inter_agent_replies_this_prompt: 8 / ∞
+- inter_agent_replies_this_prompt: 9 / ∞
 - last_reset_by: —
