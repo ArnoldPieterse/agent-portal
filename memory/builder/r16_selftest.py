@@ -1,0 +1,20 @@
+import importlib.util, os, shutil, time
+d='r16_selftest_tmp'; shutil.rmtree(d, ignore_errors=True)
+H,S=d+'/here',d+'/sandbox'
+os.makedirs(H+'/memory/x'); os.makedirs(S+'/memory/x')
+spec=importlib.util.spec_from_file_location('ap16','memory/builder/agent_portal_r16_staged.py')
+m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+m.HERE,m.SANDBOX_DIR,m.MEMORY_DIR=H,S,H+'/memory'
+open(H+'/TODO.md','w').write('base'); open(S+'/TODO.md','w').write('base')
+st=os.stat(S+'/TODO.md').st_mtime; os.utime(H+'/TODO.md',(time.time()-100,time.time()-100))
+p,l=m._sync_workspace_to_sandbox()
+print('A no-op:', 'PASS' if not p and not l and abs(os.stat(S+'/TODO.md').st_mtime-st)<0.01 else 'FAIL', p, l)
+open(H+'/TODO.md','w').write('edited')
+p,l=m._sync_workspace_to_sandbox()
+print('B push:', 'PASS' if 'TODO.md' in p and open(S+'/TODO.md').read()=='edited' else 'FAIL', p, l)
+open(S+'/memory/x/y.md','w').write('leaf'); os.utime(S+'/memory/x/y.md',(time.time()+5,time.time()+5))
+p,l=m._sync_workspace_to_sandbox()
+print('C pull:', 'PASS' if 'memory/x/y.md' in l and open(H+'/memory/x/y.md').read()=='leaf' else 'FAIL', p, l)
+p,l=m._sync_workspace_to_sandbox()
+print('D steady:', 'PASS' if not p and not l else 'FAIL', p, l)
+shutil.rmtree(d, ignore_errors=True)
