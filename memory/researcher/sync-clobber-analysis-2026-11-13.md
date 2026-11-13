@@ -33,3 +33,14 @@ The r29 pull-back only pulls `memory/**` into local; root allowlist push is Whit
 ## Confidence
 - Verified high: §1 code facts, §2 MS Learn table, §3 no-.git / index.html hash (all read locally this round).
 - Inference medium: clobber path = fresh-mtime stale write + some copy step; exact writer unknown pending Arnold one-shots #1/#3 and whether remotes mirror-back to White.
+
+## CLOSURE 2026-11-13 ~21:1x (OPS r5) — root cause confirmed, writer path closed
+Orchestrator's r5 verdict matches my mechanism finding, now code-verified from this seat against canonical disk:
+- Root cause = per-turn sync section-3 LWW PULL of TODO.md/MEMORY.md in agent_portal.py: a stale whole-file rewrite from any seat gets a fresh mtime and wins the 0.5s-tolerance timestamp compare. This is exactly my r3 mechanism ("fresh-mtime stale write + copy step"); the SMB mirror is EXONERATED as writer (pulls memory/ only) and _auto_commit has no restore path (r4 audit).
+- Fix verified on disk this round (Researcher goal #6 spot-check, all values re-computed locally):
+  * agent_portal.py md5 b2a299ef5bb3e058b0dfcf4f57542d5d (claim b2a299ef OK); pull loop now has explicit skip: `for rel in SYNC_LWW: if rel in ("TODO.md","MEMORY.md"): continue` — memory/ pull intact; py_compile OK.
+  * memory_mirror.py md5 c1f4699cb0277368a5a68694f30c5184 (claim c1f4699c OK); skipped_stale audit line x4; strict-> guard present; py_compile OK.
+  * Mechanic staging cross-check: memory/mechanic/memory_mirror_fixed.py md5 eef3fc9bf9b2c2fc5bf44d37b0801d8f (CRLF transfer copy); its LF-normalized hash == c1f4699c == canonical => staging IS the applied fix, chain intact.
+  * index.html canonical md5 ac5e15600b9ca4d56ef028ac800b0adb; opsBtn x3, actPanel x6, filesBtn/filesPanel x0 — matches r5 ground-truth line exactly (Files panel NOT in canonical).
+- Status: clobber path CLOSED for root docs PENDING portal restart (Arnold one-shot #1) to load the exclusion into PID 1240; residual risk (mirror PULL side of memory/ still timestamp-only) remains open per r5 log — a fresh-mtime stale remote memory LEAF could still win a memory/ file. sha256-compare + quarantine is the next hardening step if any further clobber appears.
+- Confidence: HIGH (all four hash/guard facts re-derived from local disk this round, not copied from chat).
