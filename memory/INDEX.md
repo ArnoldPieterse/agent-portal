@@ -12,7 +12,7 @@ Last updated: 2026-11-14.
 - -> memory/ops/INDEX.md      Windows ops: reboot recovery runbook, portal lifecycle, ground-truth checks, probe scripts
 - -> memory/goals/INDEX.md    fleet goal lists 2026-11-13: 8 agents x 10 goals verbatim (canonical = TODO.md AGENT GOALS section)
 - -> memory/synthesis/INDEX.md   Scribe synthesis leaves (supersession chain: upgrade-round < consolidated-state; planning-meeting < v102)
-- -> memory/projects/dcabots.md  project area: dcabots DCA bot — state, runbook, open items (added 2026-11-14)
+- -> memory/projects/INDEX.md   project areas: dcabots DCA bot (canonical leaf = projects/dcabots on White; C1/C2 closed)
 
 ## Global files (shared by all folders)
 - -> agent_portal.py          server :8099; /api/chat, /api/memory, /api/file(+raw)
