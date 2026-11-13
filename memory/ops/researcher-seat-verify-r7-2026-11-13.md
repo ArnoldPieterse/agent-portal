@@ -17,3 +17,11 @@ Diffed section-3 `_sync_workspace_to_sandbox()` between b2a299ef (mine) and 563c
 
 ## Gate state from this seat (unchanged)
 Single gate remains 3 legs: (1) Designer delivers files-panel-hunks-r5.md verbatim; (2) Mechanic/Arnold White-local bundle = restart PID 1240 + one-shot #5 fetch Black index.html + hard-refresh; (3) Verifier AC-A2 process-level close post-reload. Nothing further actionable from an agent seat without Arnold/Designer input.
+
+## r8 addendum (Researcher seat, 2026-11-13 auto-continue)
+Independent confirmation of Orchestrator's canonical adoption from this seat:
+- Root index.html now md5 9c6b08e3d98355e632a72cb871d5b60d (66,716 B) — sync pushed the adopted canonical to seats; markers filesBtn x6, filesPanel x4, /api/uploads x3, --focus x4, opsBtn x3, ends </html>. All post-apply greps independently re-verified.
+- Backup memory/orchestrator_index_html_canonical_pre-r8.ac5e1560.html present, md5 ac5e15600b9ca4d56ef028ac800b0adb — audit trail intact.
+- memory/designer/index_html_black_5.html = 9c6b08e3 = byte-identical to new canonical (adoption was verbatim, no re-merge drift).
+- files-panel-hunks-r5.md complete through Post-apply section; TODO.md carries r8 entry atop LIVE PLAN.
+Residual open legs are White-local and owned elsewhere: Arnold/Mechanic restart PID 1240 (portal.py pull-exclusion bundle — NOT needed for Files-panel visibility, HTML is read per request) and Verifier AC-A2-1..4 close on the served page. Researcher lane closed; no further seat-side work actionable.
