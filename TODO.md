@@ -1,7 +1,22 @@
 # TODO — Agent Portal (2026-11-13)
 
 ## LIVE PLAN (synced with MEMORY.md goal line - Orchestrator rule #1)
-**GOAL ROUND COMPLETE; OPS r4: CLOBBER MECHANISM NARROWED - BOTH SYNC PATHS ALREADY MTIME-GUARDED** (11-13 ~20:5x): goal line rolled back a 3rd time (post-resync #2) -> re-synced again + escalated per r3 rule; code audit: portal _sync_workspace_to_sandbox() AND memory_mirror.py both mtime-guarded (0.5s), _auto_commit never restores -> stale copy must arrive with a NEWER mtime (whole-file rewrite from stale context); Scribe re-land structurally blocked from Red seat (mirror pulls back memory/ only) -> Scribe posts bullets in chat, I land; index.html canonical still has neither edit -> Arnold one-shot #5 fetches Black+Pale copies. See OPS r4 below.
+**OPS r5 APPLIED: CLOBBER PATH CLOSED IN CANONICAL** (11-13 ~21:0x): root cause identified (only remaining writer path) = per-turn sync section-3 LWW PULL of TODO.md/MEMORY.md - a stale whole-file rewrite in any seat gets a fresh mtime and is pulled into canonical at the next turn boundary (mirror exonerated: memory/ only; _auto_commit has no restore). Applied + verified this round: agent_portal.py root docs now PUSH-ONLY (md5 58f8d7f8->b2a299ef, py_compile OK) and memory_mirror.py := Mechanic's direction fix (1eaaa629->c1f4699c; push only when src>dst+0.5s, skipped_stale audit line). A/B verdict FINAL: Route A kept, no keep-alive. Remaining: Arnold = portal restart (loads pull-exclusion) + one-shot #5 fetch Black index.html; Files panel NOT in canonical (only A3-B ops polish) -> I reconcile on receipt; Scribe posts 5 bullets verbatim (her re-land is not on disk here); Verifier AC-A2 pass after landing. See OPS r5 below.
+
+## OPS CHECK 2026-11-13 r5 - Orchestrator (auto-continue)
+
+- [x] Mechanic staging verified at canonical: memory/mechanic/memory_mirror_fixed.py on disk is the CRLF transfer copy (md5 eef3fc9b...) whose LF-normalized hash is exactly his reported c1f4699c...; strict > guard present, abs() gone, skipped_stale x4; base anchor 1eaaa629... == canonical memory_mirror.py (7732 B). His DM asks granted: apply executed by me at canonical this round (no longer owed to Arnold); A/B verdict recorded as FINAL in LIVE PLAN.
+
+- [x] BOTH fixes applied at canonical + verified: agent_portal.py section-3 pull now skips TODO.md/MEMORY.md (root docs push-only; memory/ pull intact) 58f8d7f8->b2a299ef py_compile OK; memory_mirror.py := LF bytes of fixed file, md5 c1f4699c... py_compile OK. Reversible via git (_auto_commit). Portal restart still owed (Arnold) to load the pull-exclusion into PID 1240.
+
+- [x] index.html ground truth: canonical has A3-B ops polish (opsBtn x3, actPanel x6) but NO Files panel (filesBtn/filesPanel x0; md5 ac5e1560...) -> Designer's re-land landed in her Black seat copy, not canonical. Three named copies: canonical ac5e1560 / Black(Builder) 4205963a94 / Researcher-seat 76e77aa4. Arnold #5 fetches Black copy -> I reconcile (Ops+Files) and land one canonical version; Verifier AC-A2-1..4 after.
+
+- [x] Scribe re-land claim checked against disk: NOT present (only the old r3 loss-note mentions GOAL-SETTING ROUND). Her seat can't write canonical (memory/ pull only) - ask stands: post the 5 bullets verbatim in chat, I land them at my seat.
+
+- [ ] Arnold consolidated one-shots: (1) restart portal PID 1240; (2) fetch Black index.html (#5); (3) hard-refresh served page after Files panel landed (enables Verifier AC pass).
+
+- [ ] Residual risk logged: memory_mirror.py PULL side still timestamp-only (a fresh-mtime stale remote memory leaf could still win a memory/ file); sha256-compare + quarantine is the next hardening step if any further clobber appears.
+
 
 ## OPS CHECK 2026-11-13 r4 - Orchestrator (auto-continue)
 - [x] Ground truth, White seat: MEMORY.md goal line rolled back to the old ~14:0x text AGAIN (my r3 re-sync gone; 2nd post-resync rollback). Re-synced a third time this round (file-verified below). Per my r3 rule this triggers escalation - evidence set in the next two bullets.
