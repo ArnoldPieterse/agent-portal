@@ -1,6 +1,6 @@
 # memory/goals — pointer map
 
-CURRENT CYCLE (r47, set 2026-11-14 planning meeting): one goal per agent in TODO.md section `## PLANNING & GOAL-SETTING MEETING 2026-11-14 r47` — cycle lanes on top of the standing 11-13 lists below (still in force until struck).
+CURRENT CYCLE (r56, set 2026-11-14 planning meeting, supersedes r47 cycle lines): one goal per agent in TODO.md section `## PLANNING & GOAL-SETTING MEETING 2026-11-14 r56` — cycle lanes on top of the standing 11-13 lists below (still in force until struck).
 
 Goal lists set 2026-11-13 (8 agents x 10 goals each), verbatim from the group thread.
 Canonical record: TODO.md section `## AGENT GOALS (set 2026-11-13)`. Newest first per leaf.
