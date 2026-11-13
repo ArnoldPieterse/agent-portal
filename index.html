@@ -331,6 +331,43 @@ function setBusyHint(name){ if(name)busyNames.add(name); renderBusyHint(); if(bu
 function clearBusyHint(name){ busyNames.delete(name); renderBusyHint(); if(!busyNames.size)$("stopBtn").disabled=true; }
 
 function resetChat(){ history=[]; $("msgs").innerHTML=""; sessionId=null; }
+// ---- Sticky auto-scroll (2026-11-13): pin to bottom while streaming, but never yank the view
+// down while the user has scrolled up to re-read; re-pins at the bottom or on the next send.
+let stickOn=true;
+function stickScroll(force){ if(force)stickOn=true; if(stickOn)$("msgs").scrollTop=$("msgs").scrollHeight; }
+$("msgs").addEventListener("scroll",()=>{ const el=$("msgs"); stickOn=(el.scrollHeight-el.scrollTop-el.clientHeight)<60; });
+// ---- Per-mode message persistence (2026-11-13): refresh no longer clears the conversation.
+// A MutationObserver on #msgs serializes visible bubbles + history into localStorage per mode;
+// setMode restores the slot, \u21ba Reset clears it. Restored agent bubbles are re-linkified so
+// file-token hover peeks work exactly as in a live bubble.
+const LS_PREFIX="portal_msgs_";
+const lsKey=()=>LS_PREFIX+mode;
+let saveTimer=null;
+function scheduleSave(){ if(saveTimer)return; saveTimer=setTimeout(saveMsgs,400); }
+function saveMsgs(){
+  saveTimer=null;
+  try{
+    const bubbles=[...$("msgs").children].map(d=>{
+      const who=d.querySelector(".who"), body=d.querySelector(".body");
+      return {n:who?who.textContent:"",c:(who&&who.style.color)||"",y:d.classList.contains("you"),t:body?body.textContent:""};
+    }).slice(-200);
+    localStorage.setItem(lsKey(),JSON.stringify({bubbles,history:history.slice(-120),ts:Date.now()}));
+  }catch(e){} // quota/private mode - persistence is best-effort, never break chat
+}
+function restoreMsgs(){
+  let data=null; try{ data=JSON.parse(localStorage.getItem(lsKey())||"null"); }catch(e){}
+  if(!data||!Array.isArray(data.bubbles)||!data.bubbles.length)return false;
+  history=Array.isArray(data.history)?data.history:[];
+  for(const b of data.bubbles){
+    const d=document.createElement("div"); d.className="msg"+(b.y?" you":"");
+    if(!b.y){ const w=document.createElement("div"); w.className="who"; if(b.c)w.style.color=b.c; w.textContent=b.n||""; d.appendChild(w); }
+    const body=document.createElement("div"); body.className="body"; body.textContent=b.t||""; d.appendChild(body);
+    $("msgs").appendChild(d);
+    if(!b.y&&(b.t||"").trim())linkifyFiles(body,b.t); // re-wire file-link hover for restored bubbles
+  }
+  stickScroll(true);
+  return true;
+}
 $("stopBtn").onclick=()=>{ if(!busyNames.size)return; stopRequested=true; lastConcluded=true; activeCtrls.forEach(c=>c.abort()); }; // ■ Stop: close run as concluded, abort in-flight streams
 
 function addBubble(name, color, emoji, isYou){
@@ -338,7 +375,7 @@ function addBubble(name, color, emoji, isYou){
   d.className="msg"+(isYou?" you":"");
   d.innerHTML=(isYou?"":`<div class="who" style="color:${color||"#ccc"}">${esc(emoji||"")} ${esc(name)}</div>`);
   const body=document.createElement("div"); body.className="body"; d.appendChild(body);
-  $("msgs").appendChild(d); $("msgs").scrollTop=$("msgs").scrollHeight;
+  $("msgs").appendChild(d); stickScroll();
   return d;
 }
 
@@ -402,12 +439,12 @@ async function streamReplyCore(agent, kind, silentTarget){
            if(o.error){ body.textContent="⚠ "+o.error; return ""; }
            if(o.blocked){ body.textContent="\u23f8 "+o.blocked; return null; }
            if(o.meta){ if(typeof o.meta.inter_agent_replies==="number")setXtalk(o.meta.inter_agent_replies,o.meta.limit); if(o.meta.silent)metaSilent=true; if(o.meta.concluded)metaConcluded=true; }
-           if(o.content){ stopBusy(); full+=o.content; body.textContent=full; $("msgs").scrollTop=$("msgs").scrollHeight; }
+           if(o.content){ stopBusy(); full+=o.content; body.textContent=full; stickScroll(); }
            if(o.thinking){ // thinking stays in this agent's own bubble, per message (only silences are merged)
              if(!thinkEl){thinkEl=document.createElement("details");thinkEl.className="think";
                const s=document.createElement("summary");s.textContent="thinking";
                const tb=document.createElement("div");tb.className="tbody";thinkEl.append(s,tb);d.appendChild(thinkEl);}
-             stopBusy(); thinkEl.querySelector(".tbody").textContent+=o.thinking; $("msgs").scrollTop=$("msgs").scrollHeight; }
+             stopBusy(); thinkEl.querySelector(".tbody").textContent+=o.thinking; stickScroll(); }
            if(o.tool){ stopBusy(); if(!toolRow){toolRow=document.createElement("div");d.appendChild(toolRow);}
              const chip=document.createElement("span");chip.className="toolchip";
              const tn=o.tool.name||(o.tool.function&&o.tool.function.name)||"tool";
@@ -420,9 +457,9 @@ async function streamReplyCore(agent, kind, silentTarget){
    }finally{ stopBusy(); if(ctrl)activeCtrls.delete(ctrl); }
    if(metaSilent||isSilent(full)){ // silence is only knowable once the response is final (meta frame / full text)
      if(silentTarget){ d.remove(); silentTarget.note(agent.name); }   // group: merge into ONE shared pill
-     else{ d.classList.add("silentmsg"); body.textContent="\uD83D\uDD07 stayed silent"; $("msgs").scrollTop=$("msgs").scrollHeight; } // solo: small dim pill in place
+     else{ d.classList.add("silentmsg"); body.textContent="\uD83D\uDD07 stayed silent"; stickScroll(); } // solo: small dim pill in place
      return ""; }
-   if(metaConcluded){ lastConcluded=true; const s=stripConcluded(full); body.textContent=s; $("msgs").scrollTop=$("msgs").scrollHeight;
+   if(metaConcluded){ lastConcluded=true; const s=stripConcluded(full); body.textContent=s; stickScroll();
      const chip=document.createElement("span");chip.className="conclchip";chip.style.cssText="margin-left:auto;font-size:10px;color:#3ddc84";
      chip.textContent="\u2713 concluded"; chip.title="discussion reached a natural conclusion - round ended";
      d.querySelector(".who").appendChild(chip); if(!renderDms(body,s))linkifyFiles(body,s); return s; }
@@ -681,6 +718,7 @@ async function send(){
   pendingUploads=[]; renderChips();   // attachments captured into the message now
   const me=agents.find(a=>a.id===selectedId);
   if(mode==="solo"&&!me)return;
+  stickOn=true;   // re-pin auto-scroll on every human send
   history.push({speaker:"You",content:text});
   addBubble("You","",null,true).querySelector(".body").textContent=text;
   $("input").value=""; busy=true; $("send").disabled=true;
@@ -711,7 +749,7 @@ async function send(){
           const nt="\u21bb AUTO-CONTINUE "+nudges+"/"+MAX_NUDGES+": the previous round ended without conclusion. Continue the task - finish any truncated or empty work, pick up where the team left off, and say [CONCLUDED] when it is truly done.";
           history.push({speaker:"You",content:nt});
           addBubble("auto-continue","#8a63d2","\u21bb",false).querySelector(".body").textContent=nt;
-          $("msgs").scrollTop=$("msgs").scrollHeight;
+          stickScroll();
         }
         roundBubbles=[]; noOutputNames.clear(); lastConcluded=false; passAny=false;   // fresh per pass (passAny must reflect THIS pass only, else a silent pass re-nudges on stale activity)
       const roundSilent={names:new Set(),w:null,p:null};
@@ -719,7 +757,7 @@ async function send(){
         const p=document.createElement("div");p.className="silentpill";p.title="these agents had nothing new to add this round";
         w.appendChild(p);$("msgs").appendChild(w); this.w=w;this.p=p; }
         this.names.add(name); this.p.textContent="\uD83D\uDD07 "+[...this.names].join(", ")+" stayed silent";
-        $("msgs").scrollTop=$("msgs").scrollHeight; };
+        stickScroll(); };
       // PARALLEL prompt phase: every addressed agent thinks + replies at the same time
       // (each has its own LLM instance; the portal serves each stream in its own thread).
       const promptResults=await Promise.all(cast.map(a=>streamReply(a,"prompt",roundSilent)));
@@ -773,7 +811,7 @@ else if(lastConcluded){ note="\u2713 Concluded \u2014 task complete."; cls="ok";
       }
       if(note){ const w=document.createElement("div");w.className="thinkwrap";
         const p=document.createElement("div");p.className="roundend "+cls;p.textContent=note;
-        w.appendChild(p);$("msgs").appendChild(w);$("msgs").scrollTop=$("msgs").scrollHeight; }
+        w.appendChild(p);$("msgs").appendChild(w);stickScroll(); }
       }   // end auto-nudge pass loop (concluded / stopped / natural end / nudge budget spent)
     }
   }catch(e){ addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=String(e); }
@@ -849,8 +887,9 @@ $("edSave").onclick=async()=>{
 $("edClose").onclick=$("edCancel").onclick=()=>$("editor").close();
 $("addAgent").onclick=()=>openEditor(null);
 
-function setMode(m){mode=m;$("mSolo").classList.toggle("on",m==="solo");$("mGroup").classList.toggle("on",m==="group");updateHint();resetChat();}
+function setMode(m){mode=m;$("mSolo").classList.toggle("on",m==="solo");$("mGroup").classList.toggle("on",m==="group");updateHint();resetChat();restoreMsgs();}
 $("mSolo").onclick=()=>setMode("solo"); $("mGroup").onclick=()=>setMode("group");
+new MutationObserver(scheduleSave).observe($("msgs"),{childList:true,subtree:true,charData:true}); // per-mode persistence (2026-11-13)
 // Reset mechanism: one button clears ALL conversational state - client history + bubbles,
 // and the shared agent-to-agent counter (memory.md state line) via the existing endpoint.
 $("resetBtn").onclick=async()=>{
@@ -859,6 +898,7 @@ $("resetBtn").onclick=async()=>{
   try{ const r=await jpost("/api/memory",{action:"reset"}); xtalkMax=0; setXtalk(0,r.limit); }
   catch(e){ alert("Counter reset failed: "+e); return; }
   resetChat();
+  try{ localStorage.removeItem(lsKey()); }catch(e){} // \u21ba Reset clears this mode's persistence slot
 };
 
 async function pollStatus(){
