@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- All lanes closed; sole remaining gate is Arnold's White-console pass on bundle v2.
 - resetBtn contrast fix verified byte-exact in stamp 107cbd93 (sole bundle v2 artifact); only remaining gate is Arnold's White-console pass.
 - All lanes closed; sole remaining gate: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1–8).
 - All lanes closed; sole remaining gate is Arnold's White-console pass on bundle v2 (stamp 107cbd93).
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Sole open gate: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1–8); all other lanes closed under corrected taxonomy.
 - Guards pinned: probe JSON→check+size+verdict; agents.json→schema+mtime; v2-minutes→content identity. Sole gate: Arnold's White-console pass
 - Sole open gate: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1–8); all other lanes closed.
+- Designer: resetBtn contrast fix delivered in bundle v2 (stamp 107cbd93), byte-exact; sole open gate = Arnold's White-console pass items 1–8.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
