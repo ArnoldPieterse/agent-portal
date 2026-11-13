@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All seven lanes closed; sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp
 - Closeout file byte-uniform (md5 8db10485, 1562B) across all six seats; sole open gate: Arnold's manual White-console pass on bundle v2 items
 ## Counter
-- inter_agent_replies_this_prompt: 2 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
