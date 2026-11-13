@@ -278,6 +278,19 @@ XTALK_LIMIT = 6                                  # FINITE cap, used when infinit
 RESET_PHRASE = "counter reset"
 _lock = threading.RLock()  # reentrant: _bump_counter/_reset_counter hold it while calling _write_memory
 
+# ---- Per-message memory cycle (2026-11-14) --------------------------------------
+# Every /api/chat turn runs: READMEM -> ADDCONTEXT -> main reply (+tools) -> STOREMEM.
+# ReadMem/StoreMem are cheap auxiliary LLM rounds (low reasoning, tiny budget) that must
+# NEVER break the main turn - they degrade to a no-op on any failure.
+MEM_CYCLE_DEFAULT = True        # per-agent "mem_cycle": ReadMem before, StoreMem after
+FAST_FIRST_DEFAULT = True       # per-agent "fast_first_reply": first reply to a human...
+FIRST_REPLY_MAX_MSGS = 8        #   ...uses a low context window (last N messages)
+FIRST_REPLY_REASONING = "low"   #   ...and low reasoning when the agent setting is "default"
+MEM_LOOKUP_MAX_TOKENS = 250     # ReadMem routing call budget
+MEM_STORE_MAX_TOKENS = 200      # StoreMem call budget
+HOT_NOTE_MAX = 10               # keep only the newest N hot notes in memory.md
+HOT_NOTE_CHARS = 140            # hard cap per stored note
+
 # ---- Activity timeline (2026-11-12) --------------------------------------------
 # Per-session audit log: every /api/chat turn appends JSONL events to
 # activity/<session>.jsonl (start / tool / end / blocked / error / aborted).
@@ -391,7 +404,8 @@ def default_agent_fields():
     return {"temperature": 0.7, "max_tokens": 0, "reasoning": "default",
             "tools": [], "run_tools_locally": True, "max_tool_calls": 0,
             "rag": False, "rag_kb_id": "", "studio": "", "api_key": "",
-            "rag_studio": "", "rag_api_key": ""}
+            "rag_studio": "", "rag_api_key": "",
+            "mem_cycle": True, "fast_first_reply": True}
 
 
 def apply_agent_fields(agent, data):
@@ -435,6 +449,10 @@ def apply_agent_fields(agent, data):
         agent["rag_studio"] = str(data["rag_studio"] or "").strip()  # RAG host override (empty = chat host)
     if "rag_api_key" in data:
         agent["rag_api_key"] = str(data["rag_api_key"] or "")      # Bearer key for the RAG host
+    if "mem_cycle" in data:
+        agent["mem_cycle"] = bool(data["mem_cycle"])
+    if "fast_first_reply" in data:
+        agent["fast_first_reply"] = bool(data["fast_first_reply"])
 
 
 def studio_post(path, payload, timeout=30, agent=None):
@@ -533,23 +551,10 @@ def _fleet_snapshot():
     return {"ts": now, "ttl": FLEET_TTL, "hosts": rows}
 
 
-def rag_prefetch(agent, messages):
-    """If the agent has RAG on, pull relevant docs and fold them into the system
-    prompt. Never raises - a RAG hiccup must not break a chat turn."""
-    if not agent.get("rag"):
-        return ""
-    q = ""
-    for m in reversed(messages or []):
-        c = (m.get("content") or "").strip()
-        if c and (m.get("speaker") or "").strip().lower() == "you":
-            q = c
-            break
-    if not q:
-        for m in reversed(messages or []):
-            c = (m.get("content") or "").strip()
-            if c:
-                q = c
-                break
+def _rag_search(agent, query):
+    """Search the agent's RAG host for `query` and format the hits. Never raises -
+    a RAG hiccup must not break a chat turn. Reused by ReadMem (memory cycle)."""
+    q = (query or "").strip()
     if not q:
         return ""
     try:
@@ -579,6 +584,26 @@ def rag_prefetch(agent, messages):
         return ""
     return ("RETRIEVED CONTEXT (from your RAG knowledge base; use when relevant):\n"
             + "\n".join(blocks))
+
+
+def rag_prefetch(agent, messages):
+    """If the agent has RAG on, pull relevant docs and fold them into the system
+    prompt. Never raises - a RAG hiccup must not break a chat turn."""
+    if not agent.get("rag"):
+        return ""
+    q = ""
+    for m in reversed(messages or []):
+        c = (m.get("content") or "").strip()
+        if c and (m.get("speaker") or "").strip().lower() == "you":
+            q = c
+            break
+    if not q:
+        for m in reversed(messages or []):
+            c = (m.get("content") or "").strip()
+            if c:
+                q = c
+                break
+    return _rag_search(agent, q)
 
 
 def load_agents():
@@ -619,7 +644,8 @@ def get_agent(aid):
     return None
 
 
-def build_system_prompt(agent, mode, all_agents, rag_context="", shared_memory="", kind="prompt"):
+def build_system_prompt(agent, mode, all_agents, rag_context="", shared_memory="",
+                        kind="prompt", lookup_context=""):
     parts = [agent.get("persona", "").strip()]
     if mode == "group":
         others = [f"- {a['name']}: {a.get('blurb') or a.get('persona','')[:120]}"
@@ -680,6 +706,8 @@ def build_system_prompt(agent, mode, all_agents, rag_context="", shared_memory="
                      + shared_memory.strip())
     if rag_context:
         parts.append(rag_context)
+    if lookup_context:   # ReadMem output (2026-11-14): unlabelled, so solo/DM stays clean
+        parts.append(lookup_context)
     return "\n".join(parts)
 
 
@@ -729,9 +757,11 @@ def render_dm_view(segs, viewer_name, sender_name):
     return "\n".join(out).strip()
 
 
-def to_openai_messages(agent, messages, mode, all_agents, rag_context="", shared_memory="", kind="prompt"):
+def to_openai_messages(agent, messages, mode, all_agents, rag_context="", shared_memory="",
+                       kind="prompt", lookup_context=""):
     msgs = [{"role": "system",
-             "content": build_system_prompt(agent, mode, all_agents, rag_context, shared_memory, kind)}]
+             "content": build_system_prompt(agent, mode, all_agents, rag_context,
+                                            shared_memory, kind, lookup_context)}]
     def _human(m):
         spk = (m.get("speaker") or "").strip()
         # Leniency: raw API clients send role=="user" without a speaker field;
@@ -1004,6 +1034,167 @@ def _safe_workspace_file(rel):
     return None
 
 
+# ---------------------------------------------------------------- per-message memory cycle (2026-11-14)
+
+def _aux_chat(agent, system, user, max_tokens):
+    """One NON-streaming auxiliary LLM round on the agent's own Studio host
+    (low reasoning, tiny budget, short timeout). Returns content; "" on ANY failure."""
+    try:
+        body = {"model": agent["model_id"],
+                "messages": [{"role": "system", "content": system},
+                             {"role": "user", "content": user}],
+                "max_tokens": max_tokens,
+                "temperature": 0.0,
+                "stream": False,
+                "enable_thinking": True,
+                "reasoning_effort": FIRST_REPLY_REASONING}
+        req = urllib.request.Request(studio_base(agent) + "/v1/chat/completions",
+                                     data=json.dumps(body).encode(),
+                                     headers=studio_headers(agent))
+        with urllib.request.urlopen(req, timeout=30) as r:
+            res = json.load(r)
+        return ((res.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+    except Exception:
+        return ""
+
+
+def _mem_lookup_round(agent, messages):
+    """READMEM: one cheap aux round BEFORE the main reply. A router call sees the incoming
+    message + memory map + current hot notes and emits ONE search query (or NONE); the fetch
+    reuses _rag_search. Current hot notes are always included in the output so STOREMEM's
+    notes feed back into later rounds (closing the loop). Returns a context block or ""; any
+    failure degrades to "" - ReadMem must never break or hang the main turn."""
+    try:
+        latest = ""
+        for m in reversed(messages or []):
+            c = (m.get("content") or "").strip()
+            if c:
+                latest = c[:600]
+                break
+        if not latest:
+            return ""
+        idx = _index_block()[:800]
+        notes = _hot_notes_block()[:600]
+        parts = []
+        if notes:
+            parts.append("HOT NOTES (shared memory.md, newest last):\n" + notes)
+        sysp = ("You are the memory-lookup router for agent %s. Decide whether the incoming "
+                "message needs anything MORE from project memory than the hot notes shown. "
+                "Reply with EXACTLY ONE line: a short search query of at most 8 words, or "
+                'NONE if the hot notes and map already cover it.' % agent.get("name", "?"))
+        user = "MEMORY MAP:\n" + (idx or "(empty)")
+        if notes:
+            user += "\n\nHOT NOTES:\n" + notes
+        user += "\n\nINCOMING MESSAGE:\n" + latest
+        out = _aux_chat(agent, sysp, user, MEM_LOOKUP_MAX_TOKENS)
+        q = " ".join(out.split())[:120]
+        if q and not q.upper().startswith("NONE"):
+            ctx = _rag_search(agent, q)   # ReadMem reuses the RAG fetch path
+            if ctx:
+                parts.append(ctx.replace(
+                    "RETRIEVED CONTEXT (from your RAG knowledge base; use when relevant):",
+                    'LOOKED-UP MEMORY (query: "%s"): ' % q[:80]))
+        return "\n\n".join(parts)
+    except Exception:
+        return ""
+
+
+def _mem_store_round(agent, messages, reply):
+    """STOREMEM: one cheap aux round AFTER the main reply. Distills at most ONE durable note
+    (<= HOT_NOTE_CHARS chars) about what just happened; "" when nothing is worth storing or
+    on any failure."""
+    try:
+        tail = []
+        for m in (messages or [])[-6:]:
+            c = (m.get("content") or "").strip()
+            if c:
+                tail.append("%s: %s" % ((m.get("speaker") or "?")[:20], c[:300]))
+        sysp = ("You are the memory keeper for agent %s. From this exchange, decide whether "
+                "there is ONE fact worth remembering for future rounds (a decision made, a "
+                "task completed, an open question, a correction). Reply with EXACTLY ONE line: "
+                "the note in at most 140 characters, no preamble - or NONE if nothing is "
+                "durable enough to store." % agent.get("name", "?"))
+        user = ("\n".join(tail) if tail else "(no earlier messages)") + \
+               "\n\nYOUR REPLY:\n" + (reply or "")[:600]
+        out = _aux_chat(agent, sysp, user, MEM_STORE_MAX_TOKENS)
+        note = " ".join(out.split())
+        if not note or note.upper().startswith("NONE"):
+            return ""
+        return note[:HOT_NOTE_CHARS]
+    except Exception:
+        return ""
+
+
+def _hot_notes_block():
+    """The '## Hot Notes' section of memory.md (newest last), or "" if absent."""
+    with _lock:
+        text, _st = _read_state_unlocked()
+    m = re.search(r"## Hot Notes\n(.*?)(?=^## |\Z)", text, re.M | re.S)
+    return m.group(1).strip() if m else ""
+
+
+def _append_hot_note(note):
+    """Atomically append one hot note to memory.md: dedupe (case-insensitive), keep only the
+    newest HOT_NOTE_MAX, rewrite via _write_memory so the state line + Counter stay intact.
+    Returns True if stored, False on duplicate/empty. Never raises."""
+    body = " ".join((note or "").split()).lstrip("-").strip()[:HOT_NOTE_CHARS]
+    if not body:
+        return False
+    with _lock:
+        text, st = _read_state_unlocked()
+        m = re.search(r"## Hot Notes\n(.*?)(?=^## |\Z)", text, re.M | re.S)
+        existing = [l.strip() for l in (m.group(1).splitlines() if m else [])
+                    if l.strip().startswith("- ")]
+        if any(e.lstrip("-").strip().lower() == body.lower() for e in existing):
+            return False   # duplicate - skip
+        notes = existing + ["- " + body]
+        if len(notes) > HOT_NOTE_MAX:
+            notes = notes[-HOT_NOTE_MAX:]   # keep the newest
+        block = "## Hot Notes\n" + "\n".join(notes) + "\n"
+        if m:
+            text = text[:m.start()] + block + text[m.end():]
+        else:
+            # First-time insert: place BEFORE '## Counter' (not at the file end), so entries
+            # appended later by agents can't land inside/after the notes section.
+            cm = re.search(r"^## Counter\n", text, re.M)
+            if cm:
+                text = text[:cm.start()] + block + "\n" + text[cm.start():]
+            else:
+                text = text.rstrip() + "\n\n" + block
+        _write_memory(text, st)
+        return True
+
+
+def _group_round_summary(agent, messages, all_agents):
+    """CROSS-TALK ORIENTATION (2026-11-14): one line per OTHER agent - what they last said
+    since the human's latest message (private-to-you DMs flagged, foreign content excluded) -
+    so each cross-talk round starts knowing where everyone stands. Group mode only."""
+    msgs = messages or []
+    users = [i for i, m in enumerate(msgs) if (m.get("speaker") or "").strip().lower() == "you"]
+    start = users[-1] + 1 if users else 0
+    lines = ["GROUP ROSTER - where each agent stands RIGHT NOW (summary before your round):"]
+    for a in all_agents:
+        if a["id"] == agent.get("id"):
+            continue
+        name = a.get("name", "?")
+        said = ""
+        for m in reversed(msgs[start:]):
+            who = (m.get("speaker") or "").strip()
+            if not who or who.lower() != name.lower():
+                continue
+            c = (m.get("content") or "").strip()
+            if not c:
+                continue
+            segs = parse_dm_segments(c)
+            pub = " ".join(b for k, _t, b in segs if k == "public").strip()
+            said = (pub or "(private message to you)")[:150]
+            break
+        blurb = (a.get("blurb") or "")[:60]
+        lines.append("- %s (%s) just said: %s" % (name, blurb,
+                     ('"%s"' % said) if said else "no words yet this round"))
+    return "\n".join(lines)
+
+
 def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
     # Activity timeline: one JSONL event per phase into activity/<session>.jsonl.
     session = _safe_session(session)
@@ -1022,12 +1213,13 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
         nudge = _ack_nudge(agent, messages, kind, all_agents)
         if nudge:
             mem_block = (mem_block + "\n" if mem_block else "") + nudge
-    rag_context = rag_prefetch(agent, messages)
-    body = {"model": agent["model_id"],
-            "messages": to_openai_messages(agent, messages, mode, all_agents,
-                                           rag_context, mem_block, kind),
-            "stream": True,
-            "temperature": float(agent.get("temperature", 0.7))}
+        if kind == "cross-talk":
+            # CROSS-TALK ORIENTATION: one line per other agent on where they stand, so each
+            # round starts with the group's current state instead of a blank slate.
+            roster = _group_round_summary(agent, messages, all_agents)
+            if roster:
+                mem_block = (mem_block + "\n" if mem_block else "") + roster
+    # Blocked cross-talk rounds skip ReadMem entirely (checked BEFORE any aux round).
     if kind == "cross-talk" and not mem_st.get("infinite_budget", True) \
             and mem_st["inter_agent_replies"] >= XTALK_LIMIT:
         wfile.write(b"data: " + json.dumps(
@@ -1038,10 +1230,31 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
         wfile.write(b"data: [DONE]\n\n")
         wfile.flush()
         return
+    # READMEM (2026-11-14): cheap aux round fetches memory context for THIS message.
+    mem_cycle = bool(agent.get("mem_cycle", MEM_CYCLE_DEFAULT))
+    lookup_ctx = ""
+    if mem_cycle:
+        t_rm = time.time()
+        lookup_ctx = _mem_lookup_round(agent, messages)
+        _act_log(session, {"agent": who, "event": "readmem",
+                           "dur": round(time.time() - t_rm, 2), "chars": len(lookup_ctx)})
+    # FAST FIRST REPLY: the first reply to a human uses a low context window (last N
+    # messages) and low reasoning when the agent's setting is left at "default".
+    fast_first = kind == "prompt" and bool(agent.get("fast_first_reply", FAST_FIRST_DEFAULT))
+    msgs_llm = (messages[-FIRST_REPLY_MAX_MSGS:]
+                if fast_first and len(messages or []) > FIRST_REPLY_MAX_MSGS else (messages or []))
+    rag_context = rag_prefetch(agent, msgs_llm)
+    body = {"model": agent["model_id"],
+            "messages": to_openai_messages(agent, msgs_llm, mode, all_agents,
+                                           rag_context, mem_block, kind, lookup_ctx),
+            "stream": True,
+            "temperature": float(agent.get("temperature", 0.7))}
     mt = int(agent.get("max_tokens") or 0)
     if mt > 0:
         body["max_tokens"] = mt
     eff = agent.get("reasoning", "default")
+    if fast_first and eff == "default":
+        eff = FIRST_REPLY_REASONING
     if eff == "off":
         body["enable_thinking"] = False
     elif eff != "default":
@@ -1115,6 +1328,16 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
         return
     finally:
         resp.close()
+    # STOREMEM (2026-11-14): cheap aux round distills at most one hot note from the reply.
+    if mem_cycle and full.strip():
+        _txt, is_silent, _ = _effective_reply(full)
+        if not is_silent:
+            t_sm = time.time()
+            note = _mem_store_round(agent, messages, full)
+            stored = bool(note) and _append_hot_note(note)
+            _act_log(session, {"agent": who, "event": "storemem",
+                               "dur": round(time.time() - t_sm, 2),
+                               "stored": bool(stored), "note": note[:HOT_NOTE_CHARS]})
     silent, concluded = _finish_chat(wfile, agent, mode, kind, full)
     _act_log(session, {"agent": who, "event": "end", "dur": round(time.time() - t0, 2),
                        "chars": len(full), "silent": bool(silent), "concluded": bool(concluded)})
