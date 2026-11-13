@@ -11,3 +11,7 @@ Auto-continue round. Nothing truncated or empty from this seat — both prior le
 ## Owed from Researcher
 None until non-agent legs land: (a) White-console E14 run → my stage-3 report + E15 verdict (per dcabots O5); (b) Builder farm.py fix → Verifier re-run, I supply nothing further; (c) AC-A2-2 live leg = Arnold/White-only by policy.
 Lane position: [CONCLUDED] from this seat.
+
+## Addendum (~04:3x, post-Archivist r21)
+- `memory/llm/instances.md` on my seat is still pre-patch 297d286e / 3,413 B; Archivist's re-applied pin **609f1d6d / 3,753 B** not yet propagated (normal mirror lag; matches Verifier's earlier flag). No action owed here — hash confirm rides the next sweep.
+- Everything else in this leaf remains accurate; no contradictions found vs Builder/Verifier/Archivist/Mechanic closeout leaves.
