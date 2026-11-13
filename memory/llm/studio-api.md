@@ -9,19 +9,22 @@ Last updated: 2026-11-11 (split from memory/llm-instances.md). :3008 is GONE - e
   (alias artifact: Q8 instance shows loaded=true under bare id `Qwen3.8-27B-GGUF`)
 - GET /api/settings/model-aliases; first multi-load: PUT /api/settings/multi-model {"enabled":true,"mode":"fit"}
 
-## Folder rename 2026-11-14 (fleet-convention ids) — IN FLIGHT as of 01:26
-White's local model folders were quant-less (`...\lmstudio-community\Qwen3.8-27B-GGUF`, `...\unsloth\Qwen3.8-27B-GGUF`),
-so /v1/models deduped both resident variants under one bare id and the fleet panel showed no quant tags.
-TARGET end state (v2 run pending, verdict in white_realias_result.json):
+## Folder rename 2026-11-14 (fleet-convention ids) — DONE 01:45
+White's local model folders were quant-less, so /v1/models deduped both resident variants under one bare id and the
+fleet panel showed no quant tags. Renamed (white_realias_rename.py v2, verdict file white_realias_result.json):
   lmstudio-community\Qwen3.8-27B-Q8_0   (holds Qwen3.8-27B-Q8_0.gguf)
   unsloth\Qwen3.8-27B-Q4_K_S            (holds Qwen3.8-27B-UD-Q4_K_S.gguf + .part downloads for BF16/UD-Q8_K_XL)
-Aliases bind folder PATHS (GET/PUT /api/settings/model-aliases) and are re-pointed in the same run:
+Aliases bind folder PATHS (GET/PUT /api/settings/model-aliases), re-pointed in the same run:
 atlas-q8 -> ...\Qwen3.8-27B-Q8_0, quinn-q4 -> ...\Qwen3.8-27B-Q4_K_S.
-Contexts preserved from pre-rename residents: Q4 ctx 131072 GPU0, Q8 ctx 32768 GPU1.
+Contexts preserved: Q4 ctx 131072 GPU0 (~23.7 GB), Q8 ctx 32768 GPU1 (~30.1 GB). Fleet panel verified 01:45:
+White row = 'Qwen3.8-27B-Q4_K_S (Q4_K_S), Qwen3.8-27B-Q8_0 (Q8_0)' (+ the same Q4 instance also lists under its
+folder id unsloth/Qwen3.8-27B-Q4_K_S - cosmetic Studio dual-listing, same pattern as Red's row).
 HISTORY: v1 run (01:13) ABORT_unload — unload body sent {'id':...}, endpoint requires model_path (422).
-v2 fixes: unload by full path then by reported id; Q8-first + Q4 force_reload per recipe below;
-idempotent rename step; O_EXCL single-instance lock. v2 launched detached 01:26 (PID 8348,
-log white_realias_run_v2.log). DO NOT treat the target paths as existing until verdict = ALL_UP.
+v2 (01:26) verdict PARTIAL = FALSE ALARM on Q8: POST /api/inference/load returns 200 as an ASYNC ACK before the
+engine is resident; v2 probed atlas-q8 ~46 s after the ack -> 404 'downloaded but not loaded'. Q8 actually came up
+~4 min after its load request (Q8_0 = 29 GB mmap + engine init). Lesson: after any load, POLL /api/inference/
+loaded-models until the id is resident before probing aliases; never trust the 200 ack. Q8 was re-verified resident
++ atlas-q8 probe OK at 01:45 (manual load alongside running Q4 - safe, different GPU).
 NOTE: hub repo id `unsloth/Qwen3.8-27B-GGUF` (UD-Q8_K_XL download) is separate from the local folder; if that
 download resumes it may recreate a quant-less folder - rename again if so.
 
