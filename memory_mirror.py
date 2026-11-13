@@ -118,8 +118,9 @@ def mirror_host(h):
             ss = os.stat(sp)
             ds = os.stat(dp) if os.path.exists(dp) else None
             if ds is None or ss.st_mtime > ds.st_mtime + MTOL:
+                os.makedirs(os.path.dirname(dp), exist_ok=True)   # new subdirs (memory/<agent>/) may not exist remotely yet
                 shutil.copy2(sp, dp)
-                pushed.append(rel)
+                pushed.append(rel.replace(os.sep, "/"))
         except Exception as e:
             errors.append("%s: %s" % (rel, str(e)[:80]))
     p2, e2 = push_tree(os.path.join(HERE, "memory"), os.path.join(dst_root, "memory"))
