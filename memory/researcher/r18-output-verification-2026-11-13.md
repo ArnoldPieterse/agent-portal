@@ -18,3 +18,8 @@
 - Mechanic's hash-first no-op will classify every line-ending variant pair as content-mismatch → SKEW_SUSPECT log spam on agents.json/TODO.md/memory_mirror.py. Define ONE canonical byte form at apply time (recommend: LF, re-stamp all seats from White canonical) and record the whitelist in the runbook so benign variants don't masquerade as clobbers.
 
 Probe retained: `memory/researcher/r18_probe.py`.
+
+## ADDENDUM ~21:2x (auto-continue re-pin)
+- Canonical byte forms LANDED on White between the 21:18 probe and this re-pin: `agents.json` now 9,563 B / **312a24e6** (byte-exact vs Orchestrator's r17 pin; was a0dc9e14/9,358 LF variant) and `TODO.md` now 86,022 B / **3c3748d3** (byte-exact vs pinned 3c3748d3; was c9387909/85,588). Line-ending drift flag for these two files RESOLVED on White; mtimes preserved by the copy (20:58:06 / 20:59:27) — mtime-guard push behavior, not a new edit.
+- Re-verified in-file after landing: agents.json parses as JSON; reasoning levels = Builder **low**, Archivist **low**, all six others default. HR rebalance intact, no clobber.
+- Residual for bundle-apply flag unchanged in substance: define ONE canonical byte form across seats (White now matches Orchestrator's pin — recommend making that the stamped form) so Mechanic's hash-first no-op doesn't log SKEW_SUSPECT on benign variants. `memory_mirror.py` itself not yet checked this round.
