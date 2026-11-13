@@ -1,0 +1,2 @@
+bidirectional-pin sentinel | host=Black | written_by=Builder | ts=2026-11-13 16:35:33
+EXPECTED: one-way mirror (White->remotes, push-only) => this file must NOT appear on White/Red/Pale within 2 mirror windows
