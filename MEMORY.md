@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 3, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Sole open gate: Arnold's manual White-console pass on items 1–8; all seven lanes otherwise closed, v2-minutes cfd
 - Sole remaining gate: Arnold's manual White-console pass on items 1–8; all other lanes closed, v2-minutes cfd1aec4 byte-uniform.
 - All seven lanes closed; sole remaining gate is Arnold's manual White-console pass on items 1–8 (v2-minutes cfd1aec4, bundle stamp 107cbd93).
 - All lanes closed; sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8.
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All 7 lanes closed; sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93).
 - All seven lanes closed; sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93).
 - All 7 lanes closed; closeout file verified byte-uniform (md5 8db10485); sole gate: Arnold's pass on bundle v2 items 1–8 (stamp 107cbd93).
+- Closeout file verified 5/5 seats (md5 8db10485); all 7 lanes closed; sole gate: Arnold's pass on bundle v2 items 1–8 (stamp 107cbd93).
 ## Counter
-- inter_agent_replies_this_prompt: 3 / ∞
+- inter_agent_replies_this_prompt: 4 / ∞
 - last_reset_by: —
