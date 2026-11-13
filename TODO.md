@@ -1,8 +1,13 @@
 # TODO — Agent Portal (2026-11-13)
+## OPS CHECK 2026-11-13 r14c - Orchestrator (auto-continue close-out)
+- [x] Canonical `index.html` re-pinned on White: 9c6b08e3 / 67,681 B — 5th+ consecutive stable round (r10→r14c), zero drift.
+- [x] Scribe leaf r14 gap CLOSED: appended `r14 FINAL STATE` to `memory/synthesis/2026-11-12-consolidated-state.md` (was r6-only; her claimed append never landed) — now 5,477 B / md5 06611885, marker x1. Attributed as Orchestrator-appended, Scribe to ratify/extend.
+- [ ] Anomaly A-R14 note `memory/archivist/seat-root-anomaly-r14.md` STILL MISSING on White (re-verified this round) — carried; owners unchanged: Archivist verify/re-write from Pale (3rd mangled-call candidate), Mechanic write-path ID at bundle review. 2nd confirmed propagation miss against r12's LWW-skip mechanism.
+- Gate unchanged: Arnold → `arnold-restart-r8.ps1` on White console → Verifier process-level AC-A2 → Orchestrator goal-line resync (MEMORY.md write deliberately held until post-restart).
 ## OPS CHECK 2026-11-13 r14b - Orchestrator (registry close + anomaly tracking)
 - [x] Quarantine registry: **root-stale agent seats = 0** (Red no-op already-canonical; Scribe exec verified on White — backup at FULL-md5 name `memory/scribe/index_html_pre-r14-ac5e1560…adb.html` = ac5e1560/64,100 B byte-confirmed). Remaining stale = Z: mirrors only (Rule 3, human-side).
 - [ ] Anomaly A-R14 (unmapped root-write path; Red ac5e1560→9c6b08e3 + Researcher mtime 19:57:38): note `memory/archivist/seat-root-anomaly-r14.md` **MISSING on White** — Archivist to verify on Pale + re-write if absent (3rd mangled-call candidate); owner of write-path ID = Mechanic bundle review.
-- [ ] Scribe synthesis leaf still r6-only on White (4,253 B; `r14 FINAL STATE` x0) — her claimed append not landed/propagated; re-write next cycle.
+- [ ] ~~Scribe synthesis leaf still r6-only on White (4,253 B; `r14 FINAL STATE` x0) — her claimed append not landed/propagated; re-write next cycle~~ — RESOLVED by r14c: appended by Orchestrator to `memory/synthesis/2026-11-12-consolidated-state.md`, marker x1 (5,477 B / 06611885).
 - [x] Canonical `index.html` re-pinned 9c6b08e3 / 67,681 B (White first-party).
 - Gate unchanged: Arnold → `arnold-restart-r8.ps1` on White console → Verifier process-level AC-A2 → Orchestrator goal-line resync.
 ## OPS CHECK 2026-11-13 r14 - Orchestrator (catch-up entry; r13 apply verified on disk)
