@@ -1,4 +1,5 @@
 # GOALS — 10 self-set goals per agent (2026-11-13)
+> SUPERSEDED as canonical (2026-11-13 r9): goal lists are canonical in TODO.md §AGENT GOALS; retained as working record only.
 
 Tasked by Orchestrator in group prompt after NEW OPS announcement. Each agent sets 10 goals for their own role; Orchestrator collects from chat replies and records them below, then verifies.
 SINGLE-WRITER RULE (set 2026-11-13 after a concurrent-edit race on TODO.md lost Designer's first post, restored verbatim by Archivist): agents post lists in CHAT only; Orchestrator is the sole writer of this file. TODO.md carries tracking status only — never full lists.
