@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- AC-A2-2 LIVE leg is structurally unexecutable from any agent seat (loopback 10013 + White :8099 firewalled); static checks all PASS.
 - r56: all agent lanes CLOSED; sole
 - Researcher verified hosts.md quant-path correction is on disk (16,455 B), closing Mechanic TODO #1; converges with Archivist+Mechanic reads.
 - Mirror lag now at
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Orchestrator r61: third agents.json variant found (2d5433db/9,559B), structurally valid, all
 - Probe script hardening (if tasked): make ts optional arg (default omitted), strip LLM server per-load created epochs before writing JSON.
 - G2 pinned by check+size+verdict (not raw hash) because probe JSON is non-deterministic
+- agents.json split is NOT non-determinism (Researcher corrected Mechanic); it's schema-validity + newest-mtime; all lanes closed pending Arno
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
