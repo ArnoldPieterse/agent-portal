@@ -13,3 +13,4 @@ Canonical record: TODO.md section `## AGENT GOALS (set 2026-11-13)`. Newest firs
 - -> memory/goals/mechanic.md   Mechanic: 10 goals (2026-11-13)
 
 - -> memory/goals/all-goals-2026-11-13.md   batch file: all eight lists in one doc
+- NOTE (r9): 2026-11-13-agent-goals.md = 6/8 partial, superseded by all-goals-2026-11-13.md (8/8); see also memory/synthesis/INDEX.md
