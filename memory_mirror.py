@@ -2,23 +2,33 @@
 """memory_mirror.py - push shared project state into REMOTE host sandboxes over SMB.
 
 Companion to _sync_workspace_to_sandbox() in agent_portal.py (which two-way syncs HERE <-> White's
-own sandbox per chat turn). This script pushes the git-tracked allowlist HERE -> \\\\host\C$ for
+own sandbox per chat turn). This script pushes the git-tracked allowlist HERE -> \\host\C$ for
 Red/Pale/Black so remote agents can read TODO.md / MEMORY.md / code / memory/ with their own tools
-(2026-11-13 mount asymmetry), and PULLS BACK each host's memory/ tree (newer/new files only) so
-remote agent work lands in White (r29, 2026-11-13).
+(2026-11-13 mount asymmetry), and PULLS BACK each host's memory/ tree so remote agent work lands in
+White (r29, 2026-11-13).
 
-Design notes:
-  * mtime-guarded (0.5 s tolerance, copy2 preserves mtime) -> steady-state runs push nothing.
+Design notes (r16 bundle review, 2026-11-13 - supersedes OPS r3 strict-newer-only fix):
+  * Hash-first LWW: md5 both sides; equal -> skip and preserve mtime (steady-state runs are true
+    no-ops; re-runs idempotent; no mtime churn).
+  * Strict-newer mtime rule is trusted ONLY within SKEW_TOL (default 600 s, per-host override in
+    memory_mirror_hosts.json key "skew_tol"). Cross-host clock skew was observed up to ~35 min
+    (r15: White local 20:43 vs reported mtimes 19:57-21:18), so a large |dmtime| ordering may be a
+    skew inversion, not real age. Hash differs AND |dmtime| > SKEW_TOL -> action conflict_skew:
+    SKIP in both directions and log both hashes/sizes/mtimes (SKEW_SUSPECT) for Orchestrator
+    adjudication. Visible-stale beats invisible-wrong: no silent clobber, no silent loss.
+  * Root docs (git allowlist, not under memory/) are White-canonical: push on hash mismatch
+    regardless of mtime; pull never touches them (pull walks remote memory/ only).
   * Per-host net use with explicit creds (admin shares reject anonymous; WinError 1326).
   * Hosts are independent: one dead host never blocks the others.
   * Nothing raises out of main() - a scheduled task must never error-loop noisily.
-  * Every run appends one JSON line to memory_mirror.log (audit for the 5-min task).
+  * Every run appends one JSON line to memory_mirror.log (audit for the 5-min task; every
+    hash-differing decision is logged with both md5s so stuck files are adjudicable from the log).
 
 Credential status 2026-11-13: Red = empty password (works). Pale/Black password recorded in
 smb_fix.ps1 ('131991Apiet') was REJECTED by both hosts (error 86) -> status pending_creds;
 Arnold supplies the current passwords into memory_mirror_hosts.json, no code change needed.
 """
-import json, os, shutil, subprocess, sys, datetime
+import json, os, shutil, subprocess, sys, datetime, hashlib
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CFG_FILE = os.path.join(HERE, "memory_mirror_hosts.json")
@@ -38,7 +48,16 @@ def _allowlist():
     except Exception:
         pass
     return list(SYNC_FILES)
-MTOL = 0.5  # seconds; matches _sync_workspace_to_sandbox tolerance
+
+MTOL = 0.5      # seconds; matches _sync_workspace_to_sandbox tolerance (same-clock-domain edits)
+SKEW_TOL = 600  # seconds; default cross-host skew band (observed up to ~35 min; tune via hosts.json)
+
+def _md5(path):
+    h = hashlib.md5()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 16), b""):
+            h.update(chunk)
+    return h.hexdigest()[:8]
 
 def log(line):
     try:
@@ -47,8 +66,32 @@ def log(line):
     except Exception:
         pass
 
+def _decide(sp, dp, skew_tol, root_canonical=False):
+    """LWW decision for one file pair (sp=source, dp=dest). Returns (action, meta).
+    action in {copy, skip_same, skip_stale, conflict_skew}. See module docstring for the rules."""
+    ss = os.stat(sp)
+    if not os.path.exists(dp):
+        return "copy", {"reason": "new"}
+    ds = os.stat(dp)
+    hs, hd = _md5(sp), _md5(dp)
+    if hs == hd:
+        return "skip_same", {}
+    if root_canonical:
+        # White is authoritative for root docs; mtime never blocks a canonical push.
+        return "copy", {"reason": "white-canonical", "hs": hs, "hd": hd}
+    dm = ss.st_mtime - ds.st_mtime
+    if abs(dm) > skew_tol:
+        meta = {"hs": hs, "hd": hd, "ssz": ss.st_size, "dsz": ds.st_size,
+                "src_mt": datetime.datetime.fromtimestamp(ss.st_mtime).strftime("%H:%M:%S"),
+                "dst_mt": datetime.datetime.fromtimestamp(ds.st_mtime).strftime("%H:%M:%S"),
+                "dm_s": round(dm, 1)}
+        return "conflict_skew", meta
+    if dm > MTOL:
+        return "copy", {"reason": "lww-newer"}
+    return "skip_stale", {}
+
 def ensure_conn(ip, user, pw):
-    """Make sure \\\\ip\C$ is reachable; try net use with creds if not. Returns (ok, note)."""
+    """Make sure \\ip\C$ is reachable; try net use with creds if not. Returns (ok, note)."""
     root = r"\\%s\C$" % ip
     try:
         os.stat(root)
@@ -72,30 +115,9 @@ def ensure_conn(ip, user, pw):
             return False, "net use rc=0 but stat failed: %s" % str(e)[:80]
     return False, (r.stderr or r.stdout).strip()[:120]
 
-def push_tree(src_root, dst_root):
-    """mtime-guarded mirror of src_root -> dst_root. Returns (pushed, errors)."""
-    pushed, errors = [], []
-    for root, dirs, files in os.walk(src_root):
-        dirs[:] = [d for d in dirs if not d.startswith(".")]
-        for f in files:
-            if f.startswith("."):
-                continue
-            sp = os.path.join(root, f)
-            rel = os.path.relpath(sp, src_root)
-            dp = os.path.join(dst_root, rel)
-            try:
-                ss = os.stat(sp)
-                ds = os.stat(dp) if os.path.exists(dp) else None
-                if ds is None or abs(ss.st_mtime - ds.st_mtime) > MTOL:
-                    os.makedirs(os.path.dirname(dp), exist_ok=True)
-                    shutil.copy2(sp, dp)
-                    pushed.append(rel)
-            except Exception as e:
-                errors.append("%s: %s" % (rel, str(e)[:80]))
-    return pushed, errors
-
 def mirror_host(h):
     name, ip, user, pw = h["name"], h["ip"], h.get("user", ""), h.get("password", "")
+    skew_tol = float(h.get("skew_tol", SKEW_TOL))
     if h.get("status") != "ok":
         return {"host": name, "skipped": h.get("status", "disabled")}
     ok, note = ensure_conn(ip, user, pw)
@@ -106,7 +128,10 @@ def mirror_host(h):
         os.stat(dst_root)
     except Exception as e:
         return {"host": name, "error": "sandbox dir missing: %s" % str(e)[:80]}
-    pushed, errors = [], []
+
+    pushed, pulled, stale, same, conflicts, errors = [], [], 0, 0, [], []
+
+    # 1) push git allowlist (root docs) - White-canonical on hash mismatch
     for rel in _allowlist():
         if rel == ".gitignore":
             continue
@@ -115,20 +140,43 @@ def mirror_host(h):
             continue
         dp = os.path.join(dst_root, rel.replace("/", os.sep))
         try:
-            ss = os.stat(sp)
-            ds = os.stat(dp) if os.path.exists(dp) else None
-            if ds is None or ss.st_mtime > ds.st_mtime + MTOL:
-                os.makedirs(os.path.dirname(dp), exist_ok=True)   # new subdirs (memory/<agent>/) may not exist remotely yet
+            action, meta = _decide(sp, dp, skew_tol, root_canonical=True)
+            if action == "copy":
+                os.makedirs(os.path.dirname(dp), exist_ok=True)
                 shutil.copy2(sp, dp)
-                pushed.append(rel.replace(os.sep, "/"))
+                pushed.append(rel)
+            elif action == "skip_same":
+                same += 1
         except Exception as e:
             errors.append("%s: %s" % (rel, str(e)[:80]))
-    p2, e2 = push_tree(os.path.join(HERE, "memory"), os.path.join(dst_root, "memory"))
-    pushed += ["memory/" + r for r in p2]
-    errors += e2
-    # r29 (2026-11-13): pull back the remote memory/ tree - newer/new files only, never overwrite a
-    # newer local copy (so e.g. Scribe's goal batches on Red land in White).
-    pulled, perrors = [], []
+
+    # 2) push White memory/ tree (read-view for remotes) - LWW within skew band only
+    msrc = os.path.join(HERE, "memory")
+    if os.path.isdir(msrc):
+        for root, dirs, files in os.walk(msrc):
+            dirs[:] = [d for d in dirs if not d.startswith(".")]
+            for f in files:
+                if f.startswith("."):
+                    continue
+                sp = os.path.join(root, f)
+                rel = "memory/" + os.path.relpath(sp, msrc).replace(os.sep, "/")
+                dp = os.path.join(dst_root, "memory", os.path.relpath(sp, msrc).replace(os.sep, os.sep))
+                try:
+                    action, meta = _decide(sp, dp, skew_tol)
+                    if action == "copy":
+                        os.makedirs(os.path.dirname(dp), exist_ok=True)
+                        shutil.copy2(sp, dp)
+                        pushed.append(rel)
+                    elif action == "skip_same":
+                        same += 1
+                    elif action == "skip_stale":
+                        stale += 1
+                    else:
+                        conflicts.append({"dir": "push", "path": rel, **meta})
+                except Exception as e:
+                    errors.append("%s: %s" % (rel, str(e)[:80]))
+
+    # 3) pull back remote memory/ tree - LWW within skew band; large-dm mismatches are SKEW_SUSPECT
     rm = os.path.join(dst_root, "memory")
     if os.path.isdir(rm):
         for root, dirs, files in os.walk(rm):
@@ -140,19 +188,27 @@ def mirror_host(h):
                 rel = "memory/" + os.path.relpath(sp, rm).replace(os.sep, "/")
                 dp = os.path.join(HERE, rel.replace("/", os.sep))
                 try:
-                    ss = os.stat(sp)
-                    ds = os.stat(dp) if os.path.exists(dp) else None
-                    if ds is None or ss.st_mtime > ds.st_mtime + MTOL:
+                    action, meta = _decide(sp, dp, skew_tol)
+                    if action == "copy":
                         os.makedirs(os.path.dirname(dp), exist_ok=True)
                         shutil.copy2(sp, dp)
                         pulled.append(rel)
+                    elif action == "skip_same":
+                        same += 1
+                    elif action == "skip_stale":
+                        stale += 1
+                    else:
+                        conflicts.append({"dir": "pull", "path": rel, **meta})
                 except Exception as e:
-                    perrors.append("%s: %s" % (rel, str(e)[:80]))
-    res = {"host": name, "pushed": len(pushed), "files": pushed[:12], "errors": errors}
-    if pulled or perrors:
-        res["pulled"] = len(pulled)
-        res["pulled_files"] = pulled[:12]
-        res["pull_errors"] = perrors
+                    perrors_note = "%s: %s" % (rel, str(e)[:80])
+                    errors.append("pull " + perrors_note)
+
+    res = {"host": name, "pushed": len(pushed), "files": pushed[:12],
+           "pulled": len(pulled), "pulled_files": pulled[:12],
+           "unchanged": same, "skipped_stale": stale,
+           "conflicts": len(conflicts), "errors": errors}
+    if conflicts:
+        res["conflict_detail"] = conflicts[:8]   # SKEW_SUSPECT entries for adjudication
     return res
 
 def main():
