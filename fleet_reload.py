@@ -72,11 +72,12 @@ def white():
     if not wait_up(B, 'WHITE'):
         return
     ids = loaded_ids(B)
-    if len(ids) >= 2:
-        return log('WHITE', 'SKIP_dual_resident', ids=ids)  # both variants report under folder id; count is the check (11-13)
+    up = [i.upper() for i in ids]
+    if (any('Q8_0' in i for i in up) and any('Q4_K_S' in i for i in up)) or len(ids) >= 2:
+        return log('WHITE', 'SKIP_dual_resident', ids=ids)  # 11-14: folders renamed to fleet convention (distinct quant-bearing ids); count check kept for pre-rename state
     st, _ = call(B, 'PUT', '/api/settings/multi-model', body={'mode': 'fit'})
     log('WHITE', 'multi_model', status=st)
-    body = {'model_path': r'C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-GGUF',
+    body = {'model_path': r'C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0',
             'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 32768,
             'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': True}
     ok = load_with_retry(B, None, 'WHITE_q8', body)
@@ -86,8 +87,9 @@ def white():
     dl = time.time() + 25 * 60
     while time.time() < dl:
         ids = loaded_ids(B)
+        up = [i.upper() for i in ids]
         log('WHITE', 'poll', ids=ids)
-        if len(ids) >= 2:  # Q4 + Q8 both report as 'Qwen3.8-27B-GGUF'; count, not variant substring (11-13 fix)
+        if any('Q8_0' in i for i in up) and any('Q4_K_S' in i for i in up):  # post-rename (11-14): distinct quant-bearing ids
             return log('WHITE', 'DONE')
         time.sleep(20)
     log('WHITE', 'TIMEOUT')
