@@ -1,0 +1,35 @@
+# Researcher analysis — OPS r3 sync clobber (2026-11-13)
+For Mechanic (mtime guard + UNC A/B) and Orchestrator (escalation evidence). Seat: White sandbox; all code findings verified by reading local files this round.
+
+## 1. The mtime guard ALREADY exists — the clobber must bypass it via content-stale/fresh-mtime
+`memory_mirror.py` (runs on White, pushes to Red/Pale/Black `\\ip\\C$\\Users\\<user>\.unsloth\studio\sandbox\_default`, pulls back remote `memory/`):
+- Root allowlist push (line ~120): `if ds is None or ss.st_mtime > ds.st_mtime + MTOL` — direction-correct.
+- **`push_tree()` for the memory/ tree (line ~89): `abs(ss.st_mtime - ds.st_mtime) > MTOL`** — asymmetric bug: if the LOCAL file is OLDER than the remote copy by >0.5s it still re-copies local→remote, overwriting newer remote content.
+- r29 pull-back (line ~145): `ss.st_mtime > ds.st_mtime + MTOL` (remote newer only) — direction-correct, but **memory/** only; it cannot touch root files like MEMORY.md/TODO.md/index.html.
+- All copies use `shutil.copy2` (preserves mtime), MTOL=0.5s.
+
+**Structural weakness:** every guard compares timestamps, never content. Any in-place rewrite on any host — portal `/api/memory` write, an agent's `edit_file`, a git checkout/reset, or even opening+resaving — resets that copy's mtime to "now" while its CONTENT is stale. A fresh-mtime stale file passes every guard and wins last-writer-wins. This matches both observed events (Scribe compression section lost; goal line rolled back to 14:0x text) without requiring mirror lag.
+**Recommendation:** sha256 compare in the guard (copy only on hash mismatch); on genuine conflict (hashes differ, both mtimes fresh) do NOT silently last-writer-wins — quarantine (`<name>.stale-<host>-<ts>`) + log line. Also flip push_tree's `abs()` to direction-correct. The r13 union spec's "newest mtime wins" has the same blind spot.
+
+## 2. TTL-vs-sleep: SMB client cache cannot explain multi-minute staleness (MS Learn, authoritative)
+Windows SMB client defaults (HKLM\\SYSTEM\\CurrentControlSet\\Services\\LanmanWorkstation\\Parameters):
+| setting | default |
+|---|---|
+| FileInfoCacheLifetime (file metadata) | 10 s |
+| DirectoryCacheLifetime (directory metadata, absent leases) | 10 s |
+| FileNotFoundCacheLifetime | 5 s |
+| CacheFileTimeout (cached file data after last handle closes) | 10 s |
+
+Source: https://learn.microsoft.com/en-us/windows-server/administration/performance-tuning/role/file-server/ (last updated 2025-02-24)
+
+**Consequence for the A/B test:** on a live connection, any client-side stale read is bounded to ~10 s. Our mirror runs every 300 s — so staleness observed across cycles is NOT SMB cache TTL. Remaining candidates: (a) host sleep/hibernate window straddling a run (server unreachable → `ensure_conn` should log an error; half-open TCP after wake is the exotic case — [MS-SMB2] connection-loss handling re-validates durable handles on reconnect, server stays source of truth); (b) fresh-mtime stale content per §1. Suggested route design: A = `\\ip\\C$` direct admin share vs B = mapped drive / named share, BUT add **route C = "who else writes the destination"** — see §3; without it, A/B may test the wrong variable.
+
+## 3. Root MEMORY.md clobber is NOT explainable by this mirror script (negative result)
+The r29 pull-back only pulls `memory/**` into local; root allowlist push is White→remotes with direction guard. So for a STALE goal line to appear at the White-canonical root MEMORY.md, one of:
+1. A remote host runs its own mirror WITH White as a destination and pushed a fresh-mtime stale MEMORY.md (line ~120 guard passes if the remote copy's mtime is newer). Not verifiable from this seat — no visibility into remote host configs.
+2. A White-local write: git ops (milestone commit/reset; `.git` unverified from any seat — one-shot #1), portal `/api/memory`, or an agent edit that was later reverted.
+**Note:** my sandbox has NO `.git` (checked) and index.html here is 64,100 bytes, sha256 `76e77aa4cdf57400…`, containing neither `filesPanel` nor A3-B anchors — confirms "White copy has neither edit" from my seat for Verifier's line-exact check.
+
+## Confidence
+- Verified high: §1 code facts, §2 MS Learn table, §3 no-.git / index.html hash (all read locally this round).
+- Inference medium: clobber path = fresh-mtime stale write + some copy step; exact writer unknown pending Arnold one-shots #1/#3 and whether remotes mirror-back to White.
