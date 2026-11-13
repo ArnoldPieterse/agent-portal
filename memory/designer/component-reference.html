@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portal component reference — live dark tokens (9c6b08e3)</title>
+<style>
+/* Tokens copied VERBATIM from canonical index.html :root L9-10 (md5 9c6b08e3d98355e632a72cb871d5b60d)
+   + --acc-strong per fix pack r51 Hunk A (pending merge). Source of truth: memory/portal/ui-tokens.md */
+:root{--bg:#0e1116;--panel:#151a22;--panel2:#1b2230;--line:#2a3342;--text:#e8edf4;--dim:#9aa7b8;
+--acc:#4f8cff;--acc-strong:#2f6fe0;--ok:#3ddc84;--warn:#ff9f43;--err:#ff6b6b;--focus:#7fb0ff;}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.45 system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);padding:24px;max-width:960px;margin:0 auto}
+h1{font-size:16px;font-weight:600;margin:0 0 4px}
+.sub{font-size:12px;color:var(--dim);margin-bottom:24px}
+section{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
+h2{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);margin:0 0 12px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+td,th{padding:4px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+.sw{display:inline-block;width:14px;height:14px;border-radius:4px;border:1px solid var(--line);vertical-align:-2px;margin-right:6px}
+.mono{font-family:ui-monospace,Consolas,monospace;font-size:13px}
+.pass{color:var(--ok)} .fail{color:var(--err)}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:8px}
+/* --- components below mirror live CSS rule-for-rule (line refs in comments) --- */
+#send{background:var(--acc-strong);border:none;color:#fff;border-radius:10px;padding:0 18px;height:40px;cursor:pointer;font-size:14px}   /* L69 + Hunk A3 */
+#send:disabled{opacity:.5;cursor:default}
+.btn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:12px}      /* L112/#actBtn */
+.btn:hover,.btn.on{border-color:var(--acc);color:var(--text)}
+.danger{background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:12px}
+.danger:hover{border-color:var(--err);color:var(--text)}
+.armed{border-color:var(--warn)!important;color:var(--text)!important}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}          /* L35-37 + Hunk A2 */
+.seg button{background:none;border:none;color:var(--dim);padding:5px 14px;cursor:pointer;font-size:13px}
+.seg button.on{background:var(--acc-strong);color:#fff}
+textarea,input[type=text]{background:var(--panel2);border:1px solid var(--line);color:var(--text);border-radius:8px;padding:8px 10px;font:inherit;font-size:13px;width:100%}
+.ph{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:13px;border-bottom:1px solid var(--line)}   /* L118 fleetHead pattern */
+.hint{font-size:12px;color:var(--dim);margin-left:auto}
+.fdot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;background:#888}               /* L122-125 data colors */
+.fdot.busy{background:#ffb454}.fdot.idle{background:var(--ok)}.fdot.unknown{background:#e05252}
+.bubble{max-width:78%;padding:9px 13px;border-radius:14px;background:var(--panel2);border:1px solid var(--line)}   /* L42 */
+.bubble.you{background:#243b63;border-color:#33507f}                                                             /* L44 */
+#toast{position:relative;top:auto;left:auto;transform:none;opacity:1;pointer-events:auto;margin-top:8px;background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:8px 14px;border-radius:10px;font-size:13px;width:fit-content}
+#toast.warn{border-left:3px solid var(--warn)} #toast.err{border-left:3px solid var(--err)} #toast.ok{border-left:3px solid var(--ok)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,.seg button:focus-visible{outline:2px solid var(--focus);outline-offset:2px}   /* r19-verified live rule */
+button,input,select{transition:border-color .12s,color .12s,background-color .12s}  /* Hunk D */
+</style>
+</head>
+<body>
+<h1>Portal component reference</h1>
+<div class="sub">Goal 8 (2026-11-13 list) · built from the LIVE dark family — tokens verbatim from canonical index.html 9c6b08e3d98355e632a72cb871d5b60d / 67,681 B. Dark = production canonical (Orchestrator adjudication 2026-11-14 ~03:5x). SSoT: memory/portal/ui-tokens.md. Owner: Designer.</div>
+
+<section><h2>Color tokens + contrast ledger (computed WCAG, on stated bg)</h2>
+<table>
+<tr><th>token</th><th>value</th><th>role</th><th>contrast</th></tr>
+<tr><td>--text</td><td><span class="sw" style="background:#e8edf4"></span>#e8edf4</td><td>primary text</td><td class="pass">14.84 on --panel · 13.54 on --panel2 PASS</td></tr>
+<tr><td>--dim</td><td><span class="sw" style="background:#9aa7b8"></span>#9aa7b8</td><td>secondary, hints, labels</td><td class="pass">7.15 on --panel · 6.52 on --panel2 PASS</td></tr>
+<tr><td>--acc</td><td><span class="sw" style="background:#4f8cff"></span>#4f8cff</td><td>borders / links / "on" chrome — NEVER a fill behind text</td><td class="pass">5.43 on --panel PASS (as text)</td></tr>
+<tr><td>--acc-strong</td><td><span class="sw" style="background:#2f6fe0"></span>#2f6fe0</td><td>primary-action fill (Hunk A, pending merge)</td><td class="pass">4.70 with white text PASS</td></tr>
+<tr><td>--ok</td><td><span class="sw" style="background:#3ddc84"></span>#3ddc84</td><td>success, idle dot</td><td class="pass">9.79 on --panel PASS</td></tr>
+<tr><td>--warn</td><td><span class="sw" style="background:#ff9f43"></span>#ff9f43</td><td>warnings, armed-confirm border</td><td class="pass">8.56 on --panel PASS</td></tr>
+<tr><td>--err</td><td><span class="sw" style="background:#ff6b6b"></span>#ff6b6b</td><td>errors, offline dot</td><td class="pass">6.29 on --panel PASS</td></tr>
+<tr><td>--focus</td><td><span class="sw" style="background:#7fb0ff"></span>#7fb0ff</td><td>focus ring only (functional)</td><td class="pass">7.95 on --panel · 7.25 on --panel2 PASS</td></tr>
+<tr><td>--bg / --panel / --panel2 / --line</td><td>#0e1116 / #151a22 / #1b2230 / #2a3342</td><td>surfaces + borders</td><td>non-text</td></tr>
+<tr><td colspan="4" class="fail">KNOWN-FAIL until Hunk A: white on --acc = 3.22:1 (currently #send + .seg button.on)</td></tr>
+</table>
+<p style="font-size:11px;color:var(--dim);margin:8px 0 0">Data colors (chips/dots only, max-2-accent rule): busy #ffb454 · unknown #e05252 (non-token) · "you" bubble #243b63/#33507f · Stop label #ff8f8f.</p></section>
+
+<section><h2>Buttons</h2>
+<div class="row">
+  <button id="send">Send</button>
+  <button class="btn on">🛰 Fleet (on)</button>
+  <button class="btn">🔧 Ops</button>
+  <button class="danger" id="armDemo">↺ Reset</button>
+  <span class="seg"><button class="on">Solo</button><button>Group</button></span>
+</div>
+<div style="font-size:11px;color:var(--dim)">Primary fill = --acc-strong (Hunk A). Ghost = .btn/#actBtn rule. Seg "on" = --acc-strong (Hunk A2). Click the Reset button once → armed state (two-step confirm, 4s disarm — Hunk B); click again to fire.</div></section>
+
+<section><h2>Panel header (fleetHead pattern, L118)</h2>
+<div class="ph"><span>4-host fleet · live while open (5s refresh)</span><span class="hint">loading…</span></div></section>
+
+<section><h2>Status dots + model line (data colors, L120-127)</h2>
+<div style="font-size:12.5px">
+  <div><span class="fdot busy"></span>busy — White <span class="mono" style="margin-left:8px;color:var(--text)">Qwen3.8-27B-Q4_K_S (Q4_K_S), Qwen3.8-27B-Q8_0 (Q8_0)</span></div>
+  <div><span class="fdot idle"></span>idle — Red</div>
+  <div><span class="fdot unknown"></span>unknown — Pale</div>
+</div></section>
+
+<section><h2>Inputs + toast banner (Hunk B)</h2>
+<textarea rows="2" placeholder="Type a message… (Enter send, Shift+Enter newline)"></textarea>
+<div style="height:8px"></div>
+<input type="text" placeholder="commit message…" aria-label="Commit message">
+<div id="toast" class="warn" role="status" aria-live="polite">A reply is still streaming — wait for it to finish, then reset.</div></section>
+
+<section><h2>Message bubbles (L42-44)</h2>
+<div class="bubble"><div style="font-size:11px;font-weight:600;margin-bottom:3px">🤖 Builder</div>Fix pack r51 applied, new pin 9c6b….</div>
+<div style="height:8px"></div>
+<div class="bubble you" style="margin-left:auto"><div style="font-size:11px;font-weight:600;margin-bottom:3px">🧑 You</div>Run the planning meeting, then run it.</div></section>
+
+<script>
+// armed two-step demo (mirrors Hunk B armedAsk)
+const b=document.getElementById("armDemo");let t=null;
+b.onclick=()=>{ if(b.classList.contains("armed")){clearTimeout(t);b.classList.remove("armed");b.textContent="↺ Reset";return;} b.classList.add("armed");b.textContent="Confirm reset?";t=setTimeout(()=>{b.classList.remove("armed");b.textContent="↺ Reset";},4000); };
+</script>
+</body>
+</html>
