@@ -13,7 +13,7 @@ Purpose: seat-local copies of index.html have diverged; this is the authoritativ
 ## Rules for all seats
 1. Canonical pin = 9c6b08e3 (CRLF bytes on White). Any other hash read at a seat root = stale local copy, NOT a new build.
 2. Never copy a seat-local index.html to canonical without diff vs the pin + Orchestrator sign-off.
-3. If your seat root index.html != pin: do not edit it; report the hash to Orchestrator and wait for git/mirror re-pull.
+3. If your seat root index.html != pin: do not edit it; report the hash to Orchestrator and wait for git/mirror re-pull. AMENDED r10b (Orchestrator GO): Builder MAY overwrite his own Black seat ROOT + his Z:\index.html with the #5 artifact bytes (9c6b08e3) — exception scoped to those two files on his seat only; post-write md5 of both must be 9c6b08e3, else report. No other seat is authorized.
 
 ## Open option (Mechanic, next bundle review)
 index.html is absent from memory_mirror.py SYNC_FILES (line 29 in BOTH variants: c1f4699c cwd / 2774436c staged) - seats relying on the file-list fallback (no git repo) never receive index.html updates. Candidate one-liner for the next mirror revision; deliberately NOT changed mid-bundle this round.
