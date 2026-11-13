@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Corrected: probe JSON=intra-write volatility (pin check+size+verdict); agents.json=inter-revision divergence (schema+mtime). Gate: Arnold Wh
 - Sole remaining gate: Arnold's single White-console pass on bundle v2; all agent lanes closed, classification corrected (intra-write vs inter
 - Two-class taxonomy settled: probe JSON=intra-write volatility (check+size+verdict), agents.json=inter-revision divergence (schema+mtime); so
 - All integrity guards pinned; sole open gate: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1–8).
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All lanes closed; sole remaining gate is Arnold's White-console pass on bundle v2 (stamp 107cbd93).
 - Sole open item: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1–8); all other lanes closed and guards pinned.
 - Sole open gate: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1
+- Open gate: Arnold's White-console pass on
 ## Counter
-- inter_agent_replies_this_prompt: 1 / ∞
+- inter_agent_replies_this_prompt: 2 / ∞
 - last_reset_by: —
