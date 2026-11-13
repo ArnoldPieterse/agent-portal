@@ -7,7 +7,7 @@
 <title>Agent Portal</title>
 <style>
 :root{--bg:#0e1116;--panel:#151a22;--panel2:#1b2230;--line:#2a3342;--text:#e8edf4;--dim:#9aa7b8;
---acc:#4f8cff;--ok:#3ddc84;--warn:#ff9f43;--err:#ff6b6b;}
+--acc:#4f8cff;--ok:#3ddc84;--warn:#ff9f43;--err:#ff6b6b;--focus:#7fb0ff;}
 *{box-sizing:border-box}
 body{margin:0;font:14px/1.45 system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column}
 header{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
@@ -140,6 +140,24 @@ textarea{resize:vertical;min-height:64px}
 .aev .at{color:#6b7688;flex:none;width:64px}
 .aev .an{font-weight:600;flex:none}
 .aev .ax{color:var(--dim);overflow:hidden;text-overflow:ellipsis}
+/* A3 ops-polish 11-13 (Designer): functional focus ring + status-line semantics */
+#opsPanel button:focus-visible,#opsPanel input:focus-visible,
+#modeBar button:focus-visible,.seg button:focus-visible{
+  outline:2px solid var(--focus);outline-offset:2px}
+#gitMsg{border-color:var(--line)}
+#gitMsg:focus{border-color:var(--focus);outline:none}
+/* A2 files-panel 11-13 (Designer): uploads/ listing; load-on-open + ↻ only, no polling */
+#filesBtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:12px}
+#filesBtn:hover,#filesBtn.on{border-color:var(--acc);color:var(--text)}
+#filesPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:280px;flex-direction:column}
+#filesPanel.open{display:flex}
+#filesHead{display:flex;align-items:center;padding:6px 10px;border-bottom:1px solid var(--line)}
+#filesList{list-style:none;margin:0;padding:0;overflow:auto;font-size:12px}
+#filesList li{padding:5px 10px;border-bottom:1px solid var(--line)}
+#filesList a{color:var(--focus);text-decoration:none;display:block}
+#filesList a:hover{text-decoration:underline}
+.fs-meta{color:var(--dim);font-size:11px;white-space:nowrap;margin-left:8px}
+.fs-empty{padding:10px;color:var(--dim)}
 </style>
 </head>
 <body>
@@ -162,6 +180,7 @@ textarea{resize:vertical;min-height:64px}
       <span id="modeHint">Chatting with —</span><span id="xtalk" class="hint"></span><span id="busyHint" class="busyspan"></span>
       <button id="actBtn" title="Activity timeline: every turn + tool call of each run, persisted per session (survives restarts)">⏱ Activity</button>
       <button id="fleetBtn" title="Fleet status: per-host loaded models + busy/idle/unknown; live while open">🛰 Fleet</button>
+      <button id="filesBtn" title="Uploaded files (uploads/): humans' drop zone; lists on open, ↻ to re-list">📁 Files</button>
       <button id="opsBtn" title="Ops: local git status + commit, and prune fully-completed TODO sections into TODO_completed.md">🔧 Ops</button>
       <button id="resetBtn" title="Reset conversation: clears chat history and the agent-to-agent counter">↺ Reset</button>
       <button id="stopBtn" disabled style="color:#ff8f8f" title="Stop this run now: aborts in-flight replies and closes the round as concluded">■ Stop</button>
@@ -183,12 +202,16 @@ textarea{resize:vertical;min-height:64px}
         <div style="font-size:12px;color:var(--dim);margin-top:6px">Recent commits:</div>
         <div class="opsbox" id="gitLog">—</div>
         <div class="opsrow">
-          <input id="gitMsg" placeholder="commit message…">
+          <input id="gitMsg" placeholder="commit message…" aria-label="Commit message">
           <button class="btn" id="gitCommit">⬆ Commit all</button>
           <button class="btn" id="todoPrune" title="Moves TODO.md sections whose items are all [x] into TODO_completed.md (splits into numbered parts as it grows)">✂ Prune done TODO</button>
         </div>
-        <div id="opsMsg" class="hint" style="margin-top:6px;font-size:12px"></div>
+        <div id="opsMsg" class="hint" role="status" aria-live="polite" style="margin-top:6px;font-size:12px"></div>
       </div>
+    </div>
+    <div id="filesPanel">
+      <div id="filesHead"><span>uploads/ — humans' drop zone (shared agent folder)</span><button class="btn" id="filesRefresh" style="margin-left:auto;padding:2px 10px;font-size:12px" title="Re-list uploads/">↻ refresh</button></div>
+      <ul id="filesList"></ul>
     </div>
     <div id="msgs"></div>
     <div id="composer">
@@ -656,6 +679,7 @@ $("gitCommit").onclick=async()=>{
     opsSay(r.committed?"✓ committed: "+m:(r.note||r.err||"done")); if(r.committed)$("gitMsg").value="";
   }catch(e){ opsSay("⚠ "+e); } finally{ opsLoad(); }
 };
+$("gitMsg").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("gitCommit").click();}});
 $("todoPrune").onclick=async()=>{
   opsSay("pruning…");
   try{ const r=await (await fetch("/api/todo/prune",{method:"POST",headers:{"Content-Type":"application/json"},body:"{}"})).json();
@@ -915,6 +939,27 @@ refresh().catch(e=>console.error("refresh failed",e)).finally(updateHint);
 pollStatus();
 setInterval(pollStatus,15000);
 setInterval(()=>{refresh().catch(()=>{});},30000);
+// ---- Files panel (/api/uploads, A2 11-13 Designer): load-on-open + ↻ only (no polling) ----
+function fsFmtSize(b){return b==null?"":b<1024?b+" B":b<1048576?(b/1024).toFixed(1)+" KB":(b/1048576).toFixed(1)+" MB";}
+function fsFmtTime(t){const d=new Date(t*1000),n=new Date();let s=d.toTimeString().slice(0,5);if(d.toDateString()!==n.toDateString())s=d.toLocaleDateString();return s;}
+async function filesLoad(){
+  const list=$("filesList");list.innerHTML='<li class="fs-empty">loading…</li>';
+  try{
+    const j=await (await fetch("/api/uploads")).json();
+    const files=(j&&j.files)||[];
+    if(!files.length){list.innerHTML='<li class="fs-empty">No uploads yet — drop files into uploads/ on White.</li>';return;}
+    list.innerHTML='';
+    for(const f of files){
+      const li=document.createElement("li");
+      const a=document.createElement("a");a.href="/api/file/raw?path="+encodeURIComponent(f.path);a.target="_blank";a.textContent=f.path.replace(/^uploads\//,"");
+      const m=document.createElement("span");m.className="fs-meta";m.textContent=fsFmtSize(f.size)+" · "+fsFmtTime(f.mtime);
+      li.appendChild(a);li.appendChild(m);list.appendChild(li);
+    }
+    if(j.count>files.length){const e=document.createElement("li");e.className="fs-empty";e.textContent="… "+(j.count-files.length)+" more (cap 2000)";list.appendChild(e);}
+  }catch(err){list.innerHTML='<li class="fs-empty">/api/uploads unreachable — portal down?</li>';}
+}
+$("filesBtn").onclick=()=>{const open=$("filesPanel").classList.toggle("open");$("filesBtn").classList.toggle("on",open);if(open)filesLoad();};
+$("filesRefresh").onclick=filesLoad;
 </script>
 </body>
 </html>

@@ -5,7 +5,7 @@ The portal is a thin web UI + proxy. Every LLM call goes to the local
 Unsloth Studio /v1/chat/completions endpoint (the full harness: reasoning,
 skills, RAG, tool execution). Nothing here loads models directly.
 """
-import json, mimetypes, os, re, shutil, threading, time, urllib.request, urllib.error, urllib.parse, uuid
+import hashlib, json, mimetypes, os, re, shutil, threading, time, urllib.request, urllib.error, urllib.parse, uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PORT = 8099
@@ -77,8 +77,10 @@ MAX_UPLOAD_BYTES = 4 * 1024 * 1024 * 1024            # 4 GB per file (streamed t
 # state must exist THERE so agents can read it with their own python/terminal tools (2026-11-13:
 # mount asymmetry). r29 (2026-11-13): the mirror is now TWO-WAY so agent work lands in HERE (and
 # therefore in git) instead of being clobbered by the next push:
-#   * LWW set - TODO.md, MEMORY.md + every memory/ leaf: last-writer-wins BOTH directions
-#     (mtime decides; 0.5 s tolerance).
+#   * Root docs - TODO.md, MEMORY.md: PUSH-ONLY from HERE. OPS r5 (2026-11-13): an LWW pull of
+#     these let a stale whole-file rewrite in any seat (fresh mtime) clobber canonical at the next
+#     turn boundary - the only remaining writer path after the SMB mirror was exonerated.
+#   * memory/ leaves: last-writer-wins BOTH directions (mtime decides; 0.5 s tolerance).
 #   * Code/config - the rest of the git-tracked allowlist: PUSH-ONLY from HERE (merge-queue rule:
 #     sandbox edits to code are experiments until merged via upgrade-plan.md).
 #   * Everything else in the sandbox: NEW-ONLY pull - a file absent from HERE is copied home,
@@ -86,7 +88,7 @@ MAX_UPLOAD_BYTES = 4 * 1024 * 1024 * 1024            # 4 GB per file (streamed t
 #     (mingit copies, project clones, uploads) out of the workspace.
 # mtime-guarded (copy2 preserves mtime -> steady state touches nothing); every error swallowed -
 # a sync hiccup must never break chat.
-SYNC_LWW = ["TODO.md", "MEMORY.md"]   # + whole memory/ tree: last-writer-wins both directions
+SYNC_LWW = ["TODO.md", "MEMORY.md"]   # root docs: LWW push only (OPS r5); memory/ leaves stay LWW both ways
 PUSH_FALLBACK_ALLOWLIST = ["TODO.md", "MEMORY.md", "agents.json", "agent_portal.py", "index.html"]
 PULL_EXCLUDE_DIRS = {"mingit", "uploads", "__pycache__", ".unsloth_sandbox", "node_modules",
                      "agentportal_v1-git", "_boot2", "_bootstrap_test", "gapfix-test"}
@@ -106,6 +108,22 @@ def _git_allowlist():
     except Exception:
         pass
     return list(PUSH_FALLBACK_ALLOWLIST)
+
+
+def _same_file(a, b):
+    """r16 structural fix (Builder 2026-11-13): byte-identical check (size + md5).
+    Lets the sync no-op on identical content regardless of mtime noise - foreign-stamped
+    copies, CRLF/LF rewrites, backup restores - so steady state touches nothing and the
+    destination mtime is preserved. Any read error -> False (fall back to mtime LWW)."""
+    try:
+        sa, sb = os.stat(a), os.stat(b)
+        if sa.st_size != sb.st_size:
+            return False
+        ha = hashlib.md5(open(a, 'rb').read()).hexdigest()
+        hb = hashlib.md5(open(b, 'rb').read()).hexdigest()
+        return ha == hb
+    except OSError:
+        return False
 
 
 def _sync_workspace_to_sandbox():
@@ -133,6 +151,8 @@ def _sync_workspace_to_sandbox():
             try:
                 ss = os.stat(src)
                 ds = os.stat(dst) if os.path.exists(dst) else None
+                if ds is not None and _same_file(src, dst):
+                    continue   # r16 structural fix: byte-identical -> no-op, preserve mtime
                 if ds is None or ss.st_mtime > ds.st_mtime + 0.5:
                     os.makedirs(os.path.dirname(dst), exist_ok=True)
                     shutil.copy2(src, dst)
@@ -150,26 +170,17 @@ def _sync_workspace_to_sandbox():
             try:
                 ss = os.stat(src)
                 ds = os.stat(dst) if os.path.exists(dst) else None
+                if ds is not None and _same_file(src, dst):
+                    continue   # r16 structural fix: byte-identical -> no-op, preserve mtime
                 if ds is None or ss.st_mtime > ds.st_mtime + 0.5:
                     os.makedirs(os.path.dirname(dst), exist_ok=True)
                     shutil.copy2(src, dst)
                     pushed.append(rel)
             except OSError:
                 pass
-        # 3) LWW pull: sandbox copies of TODO.md / MEMORY.md / memory leaves newer than HERE come home
-        for rel in SYNC_LWW:
-            src = os.path.join(SANDBOX_DIR, rel)
-            dst = os.path.join(HERE, rel)
-            try:
-                if not os.path.isfile(src):
-                    continue
-                ss = os.stat(src)
-                ds = os.stat(dst) if os.path.exists(dst) else None
-                if ds is None or ss.st_mtime > ds.st_mtime + 0.5:
-                    shutil.copy2(src, dst)
-                    pulled.append(rel)
-            except OSError:
-                pass
+        # 3) Pull back to HERE: memory/ leaves ONLY. OPS r5 (2026-11-13): TODO.md / MEMORY.md are
+        # PUSH-ONLY - a stale whole-file rewrite in any seat gets a fresh mtime and an LWW pull
+        # would clobber canonical at the next turn boundary. memory/ leaves stay LWW (agent work).
         sb_mem = os.path.join(SANDBOX_DIR, "memory")
         if os.path.isdir(sb_mem):
             for root, dirs, files in os.walk(sb_mem):
@@ -183,6 +194,8 @@ def _sync_workspace_to_sandbox():
                     try:
                         ss = os.stat(sp)
                         ds = os.stat(dst) if os.path.exists(dst) else None
+                        if ds is not None and _same_file(sp, dst):
+                            continue   # r16 structural fix: byte-identical -> no-op, preserve mtime
                         if ds is None or ss.st_mtime > ds.st_mtime + 0.5:
                             os.makedirs(os.path.dirname(dst), exist_ok=True)
                             shutil.copy2(sp, dst)
