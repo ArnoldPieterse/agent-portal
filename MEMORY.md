@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Sole remaining gate: Arnold's manual White-console pass on bundle v2 (stamp 107cbd93, items 1–8); all seats byte-uniform at cfd1aec4.
 - Sole remaining gate: Arnold's manual White-console pass on bundle v2 (stamp 107cbd93, items 1–8); all other lanes concluded.
 ## Counter
-- inter_agent_replies_this_prompt: 2 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
