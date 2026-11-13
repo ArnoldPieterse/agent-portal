@@ -1,0 +1,224 @@
+"""Fleet reload 11-12 ~18:2x: White/Black/Pale lost resident models (all Studios up,
+loaded=[]). Reload each host's proven dual pair, in parallel threads:
+  WHITE: Q8_0 GPU1 ctx 32768 alongside XL (white_load_q8.py recipe)
+  BLACK: UD-Q4_K_S GPU0 ctx 65536 + Q8_0 GPU1 ctx 32768 alongside (black_dual_load2.py;
+         auth = LAN JWT login, chat key 401s on /api/*)
+  PALE : Q8_0 GPU1 ctx 32768 first (bumped 11-13: archivist-q8 truncated
+         tool calls at 16384; vram_fit 54528), then UD-Q4_K_S GPU0 ctx 65536
+         (fallback 32768) alongside (pale_q4s_load.py + DUAL_UP memory; key from pale_dl.py)
+Aliases persist in Studio settings - verify via portal smoke after, not here.
+Writes fleet_reload_result.json incrementally. Run detached."""
+import json, re, threading, time, urllib.request, urllib.error
+
+OUT = {'started': time.strftime('%H:%M:%S'), 'hosts': {}}
+def log(host, step, **kw):
+    OUT['hosts'].setdefault(host, {'steps': []})
+    OUT['hosts'][host]['steps'].append({'step': step, 't': time.strftime('%H:%M:%S'), **kw})
+    json.dump(OUT, open('fleet_reload_result.json', 'w'))
+    print(host, step, kw, flush=True)
+
+def call(base, method, path, body=None, key=None, timeout=1800):
+    data = json.dumps(body).encode() if body is not None else None
+    r = urllib.request.Request(base + path, data=data, method=method)
+    if key:
+        r.add_header('Authorization', 'Bearer ' + key)
+    if data:
+        r.add_header('Content-Type', 'application/json')
+    try:
+        with urllib.request.urlopen(r, timeout=timeout) as resp:
+            return resp.status, resp.read().decode()
+    except urllib.error.HTTPError as e:
+        return e.code, e.read().decode()[:1200]
+    except Exception as e:
+        return 'EXC', str(e)[:300]
+
+def loaded_ids(base, key=None):
+    st, b = call(base, 'GET', '/api/inference/loaded-models', key=key, timeout=60)
+    try:
+        d = json.loads(b)
+        items = d if isinstance(d, list) else d.get('data', d.get('models', []))
+        return [m.get('id') for m in items if m.get('loaded')]
+    except Exception:
+        return []
+
+def wait_up(base, host, minutes=20):
+    """Poll /api/health until the Studio backend answers (post-reboot boot window). Keyless on all hosts."""
+    dl = time.time() + minutes * 60
+    while time.time() < dl:
+        st, b = call(base, 'GET', '/api/health', timeout=30)
+        if st == 200:
+            log(host, 'up')
+            return True
+        log(host, 'waiting_up', status=str(st)[:6])
+        time.sleep(15)
+    log(host, 'NEVER_UP')
+    return False
+
+def load_with_retry(base, key, label, body, tries=12):
+    for a in range(tries):
+        st, resp = call(base, 'POST', '/api/inference/load', body=body, key=key)
+        log('W' if key is None else 'X', label + '_a%d' % (a + 1), status=st, resp=resp[:300])
+        if st in (200, 201):
+            return True
+        if str(st) == '409':
+            time.sleep(15)
+            continue
+        return False
+    return False
+
+# ---------- WHITE ----------
+def white():
+    B = 'http://127.0.0.1:8888'
+    if not wait_up(B, 'WHITE'):
+        return
+    ids = loaded_ids(B)
+    if len(ids) >= 2:
+        return log('WHITE', 'SKIP_dual_resident', ids=ids)  # both variants report under folder id; count is the check (11-13)
+    st, _ = call(B, 'PUT', '/api/settings/multi-model', body={'mode': 'fit'})
+    log('WHITE', 'multi_model', status=st)
+    body = {'model_path': r'C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-GGUF',
+            'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 32768,
+            'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': True}
+    ok = load_with_retry(B, None, 'WHITE_q8', body)
+    log('WHITE', 'load_ok', ok=ok)
+    if not ok:
+        return
+    dl = time.time() + 25 * 60
+    while time.time() < dl:
+        ids = loaded_ids(B)
+        log('WHITE', 'poll', ids=ids)
+        if len(ids) >= 2:  # Q4 + Q8 both report as 'Qwen3.8-27B-GGUF'; count, not variant substring (11-13 fix)
+            return log('WHITE', 'DONE')
+        time.sleep(20)
+    log('WHITE', 'TIMEOUT')
+
+# ---------- BLACK ----------
+def black():
+    B = 'http://192.168.1.99:8888'
+    if not wait_up(B, 'BLACK'):
+        return
+    st, b = call(B, 'POST', '/api/auth/login', body={'username': 'unsloth', 'password': '131991Apiet'})
+    if st != 200:
+        return log('BLACK', 'login_fail', status=st, body=b[:200])
+    key = json.loads(b)['access_token']
+    log('BLACK', 'login_ok')
+    ids = loaded_ids(B, key)  # idempotency guard (11-12: re-runs must not reload)
+    if any('Q8_0' in i.upper() for i in ids) and any('Q4_K_S' in i.upper() for i in ids):
+        return log('BLACK', 'SKIP_both_loaded', ids=ids)
+    st, _ = call(B, 'PUT', '/api/settings/multi-model', body={'mode': 'fit'}, key=key)
+    log('BLACK', 'multi_model', status=st)
+    for p in (r'C:\Users\black\models\Qwen3.8-27B-Q4_K_S', r'C:\Users\black\models\Qwen3.8-27B-Q8_0'):
+        st, b = call(B, 'POST', '/api/hub/scan-folders', body={'path': p}, key=key)
+        log('BLACK', 'scan', path=p, status=st, resp=b[:200])
+    ok_s = load_with_retry(B, key, 'BLACK_q4s', {'model_path': r'C:\Users\black\models\Qwen3.8-27B-Q4_K_S',
+        'gguf_variant': 'UD-Q4_K_S', 'gpu_ids': [0], 'max_seq_length': 65536,
+        'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False})
+    log('BLACK', 'load_q4s_ok', ok=ok_s)
+    if not ok_s:
+        return
+    ok_q = load_with_retry(B, key, 'BLACK_q8', {'model_path': r'C:\Users\black\models\Qwen3.8-27B-Q8_0',
+        'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 32768,
+        'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': True})
+    log('BLACK', 'load_q8_ok', ok=ok_q)
+    if not ok_q:
+        return
+    dl = time.time() + 25 * 60
+    while time.time() < dl:
+        ids = loaded_ids(B, key)
+        log('BLACK', 'poll', ids=ids)
+        if any('Q8_0' in i.upper() for i in ids) and any('Q4_K_S' in i.upper() for i in ids):
+            return log('BLACK', 'DONE')
+        time.sleep(20)
+    log('BLACK', 'TIMEOUT')
+
+# ---------- PALE ----------
+def pale():
+    B = 'http://192.168.1.39:8888'
+    if not wait_up(B, 'PALE'):
+        return
+    src = open('pale_dl.py', encoding='utf-8').read()
+    key = re.search(r"Bearer ([A-Za-z0-9_\-\.]+)", src).group(1)
+    ids = loaded_ids(B, key)  # idempotency guard (11-12: re-runs must not reload)
+    if any('Q8_0' in i.upper() for i in ids) and any('Q4_K_S' in i.upper() for i in ids):
+        return log('PALE', 'SKIP_both_loaded', ids=ids)
+    st, _ = call(B, 'PUT', '/api/settings/multi-model', body={'mode': 'fit'}, key=key)
+    log('PALE', 'multi_model', status=st)
+    for p in (r'C:\Users\pale\models\Qwen3.8-27B-Q8_0', r'C:\Users\pale\models\Qwen3.8-27B-Q4_K_S'):
+        st, b = call(B, 'POST', '/api/hub/scan-folders', body={'path': p}, key=key)
+        log('PALE', 'scan', path=p, status=st, resp=b[:200])
+    ok_q = load_with_retry(B, key, 'PALE_q8', {'model_path': r'C:\Users\pale\models\Qwen3.8-27B-Q8_0',
+        'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 32768,  # was 16384; bumped 11-13 (archivist truncation)
+        'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False})
+    log('PALE', 'load_q8_ok', ok=ok_q)
+    if not ok_q:
+        return
+    for ctx in (65536, 32768):
+        ok_s = load_with_retry(B, key, 'PALE_q4s_ctx%d' % ctx, {'model_path': r'C:\Users\pale\models\Qwen3.8-27B-Q4_K_S',
+            'gguf_variant': 'UD-Q4_K_S', 'gpu_ids': [0], 'max_seq_length': ctx,
+            'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': True}, tries=3)
+        if ok_s:
+            break
+    log('PALE', 'load_q4s_ok', ok=ok_s)
+    if not ok_s:
+        return
+    dl = time.time() + 25 * 60
+    while time.time() < dl:
+        ids = loaded_ids(B, key)
+        log('PALE', 'poll', ids=ids)
+        if any('Q8_0' in i.upper() for i in ids) and any('Q4_K_S' in i.upper() for i in ids):
+            return log('PALE', 'DONE')
+        time.sleep(20)
+    log('PALE', 'TIMEOUT')
+# ---------- RED (added 11-12 pre-reboot: red_dual_load.py recipe, Bearer key) ----------
+def red():
+    B = 'http://192.168.1.245:8888'
+    import host_api
+    key = host_api.load_key('RED')
+    if not wait_up(B, 'RED'):
+        return
+    ids = loaded_ids(B, key)
+    up = [i.upper() for i in ids]
+    have_q8 = any('Q8_0' in i for i in up)
+    have_xl = any('GGUF' in i and 'Q8_0' not in i for i in up)  # XL reports as 'unsloth/Qwen3.8-27B-GGUF', no variant suffix (11-13 fix)
+    if have_q8 and have_xl:
+        return log('RED', 'SKIP_both_loaded', ids=ids)  # Studio auto-restore covered it
+    st, _ = call(B, 'PUT', '/api/settings/multi-model', body={'mode': 'fit'}, key=key)
+    log('RED', 'multi_model', status=st)
+    al = have_xl or have_q8  # load alongside whatever Studio auto-restored
+    if not have_q8:
+        ok_q = load_with_retry(B, key, 'RED_q8', {'model_path': r'C:\Users\Red\models\Qwen3.8-27B-Q8_0',
+            'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 32768,
+            'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': al}, tries=4)
+        if not ok_q:
+            load_with_retry(B, key, 'RED_q8_ctx16k', {'model_path': r'C:\Users\Red\models\Qwen3.8-27B-Q8_0',
+                'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 16384,
+                'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': al}, tries=4)
+        log('RED', 'load_q8_ok', ok=bool(ok_q))
+    if not have_xl:
+        ok_x = load_with_retry(B, key, 'RED_xl', {'model_path': r'C:\Users\Red\.cache\huggingface\hub\models--unsloth--Qwen3.8-27B-GGUF\snapshots\4ca720788d1e01f1bff70c033e0d0028fd02e502',
+            'gguf_variant': 'UD-Q4_K_XL', 'gpu_ids': [0], 'max_seq_length': 65536,
+            'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': True}, tries=4)
+        log('RED', 'load_xl_ok', ok=bool(ok_x))
+    dl = time.time() + 25 * 60
+    while time.time() < dl:
+        up = [i.upper() for i in loaded_ids(B, key)]
+        if any('Q8_0' in i for i in up) and any('GGUF' in i and 'Q8_0' not in i for i in up):
+            return log('RED', 'DONE')  # count/variant fix 11-13: XL id has no Q4_K_XL suffix
+        time.sleep(20)
+    log('RED', 'TIMEOUT')
+
+
+for fn in (white, red, black, pale):
+    threading.Thread(target=fn, daemon=True).start()
+time.sleep(2)
+print('fleet_reload started', flush=True)
+# keep main alive until all threads finish
+deadline = time.time() + 50 * 60
+while time.time() < deadline:
+    alive = any(t.is_alive() for t in threading.enumerate() if t is not threading.main_thread())
+    if not alive:
+        break
+    time.sleep(10)
+OUT['finished'] = time.strftime('%H:%M:%S')
+json.dump(OUT, open('fleet_reload_result.json', 'w'), indent=1)
+print('FLEET_RELOAD DONE', flush=True)

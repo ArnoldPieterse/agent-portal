@@ -1,0 +1,8 @@
+{
+  "note": "status 'ok' = mirror enabled; anything else = skipped (logged). SMB passwords are EMPTY on all hosts (2026-11-13, Arnold: the 131991Apiet string in smb_fix.ps1 is Unsloth Desktop remote-access only, NOT an SMB password) - net use with an empty quoted password works on all three.",
+  "hosts": [
+    {"name": "Red",   "ip": "192.168.1.245", "user": "Red",   "password": "", "status": "ok"},
+    {"name": "Pale",  "ip": "192.168.1.39",  "user": "pale",  "password": "", "status": "ok"},
+    {"name": "Black", "ip": "192.168.1.99",  "user": "black", "password": "", "status": "ok"}
+  ]
+}

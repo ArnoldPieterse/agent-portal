@@ -1,0 +1,5 @@
+@echo off
+cd /d C:\Projects\Workspace
+echo === started %date% %time% === > recover_task.log
+C:\Users\White\.unsloth\studio\unsloth_studio\Scripts\python.exe -u C:\Projects\Workspace\recover_all.py >> recover_task.log 2>&1
+echo === exitcode %errorlevel% at %date% %time% === >> recover_task.log
