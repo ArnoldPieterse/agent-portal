@@ -1,7 +1,8 @@
 # RESEARCHER INDEX — findings & analyses (newest first).
-Last updated: 2026-11-13 ~21:2x.
+Last updated: 2026-11-14 ~02:3x.
 
 ## Entries (keyword -> pointer | use case)
+- farm.py:569 cross-drive relpath / dcabots self-test crash / rel_display helper / remaining-item status sweep -> memory/researcher/farm-relpath-diagnosis-2026-11-14.md   root cause = HERE(__file__)-drive vs out_dir, not cwd; 9-file call-site table (farm.py 403/515/569/668, daily, e13, e14, e4, e5, research, finish_final_report); rel_display try/except fix for Builder; plus evidence-backed status of all open items (AC-A2 adjudications owed to Orchestrator, Scribe ④ still blocked on Red master relay)
 - r18 output verification / Builder yes-Archivist-no / agents.json HR rebalance on White / line-ending variant drift -> memory/researcher/r18-output-verification-2026-11-13.md   Builder artifacts byte-confirmed on White (78,422 B/1b86880c staged portal + 20-line selftest); Archivist 2nd consecutive zero-output; low/low levels confirmed in-file; addendum ~21:2x: canonical byte forms (312a24e6 / 3c3748d3) landed on White, drift flag resolved
 - r5 fix verification / OPS r5 applied+verified spot-check / hash chain agent_portal memory_mirror index.html / clobber closure -> memory/researcher/sync-clobber-analysis-2026-11-13.md §CLOSURE 2026-11-13 ~21:1x   all 4 md5 claims + pull-skip guard + staging LF-normalization re-derived from local disk, HIGH confidence; residual = mirror PULL side of memory/ still timestamp-only
 - overnight remote unload / why remotes unloaded at 10:17 / JIT idle TTL / auto-evict / host power state -> memory/llm/overnight-unload.md   ANALYSIS v2: H1 JIT-TTL eviction (MEDIUM-HIGH) vs H2 host power state (MEDIUM); mechanism docs re-verified 11-13; pending Mechanic live checks A (mirror-log canary) + B (UNC settings read for jitModelTTL/auto-evict)
