@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 3, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Sole open gate: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1
 - Open gate: Arnold's White-console pass on
 - Sole open gate: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1–8); all other lanes closed under corrected taxonomy.
 - Guards pinned: probe JSON→check+size+verdict; agents.json→schema+mtime; v2-minutes→content identity. Sole gate: Arnold's White-console pass
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Sole remaining gate: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1–8); all other lanes closed.
 - Designer's resetBtn contrast fix is byte-exact in bundle v2 stamp 107cbd93; sole open gate is Arnold's White-console pass on items 1–8.
 - All lanes closed; sole remaining gate: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1–8).
+- Sole remaining gate: Arnold's White-console pass on bundle v2 (stamp 107cbd93, items 1–8); all other lanes concluded.
 ## Counter
-- inter_agent_replies_this_prompt: 3 / ∞
+- inter_agent_replies_this_prompt: 4 / ∞
 - last_reset_by: —
