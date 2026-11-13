@@ -1,10 +1,13 @@
-<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
 
 ## GOAL (live plan = TODO.md top; keep both in sync)
 **FLEET PANEL BUILT + DM COMPLETE + FILE-ACCESS DONE** (11-13 ~14:0x): /api/fleet live per-host view (models+quant, busy/idle/unknown, 5s refresh) via on-demand Studio probes - first reveal: remotes UNLOADED overnight; [DM @Name] private messaging live-verified; workspace→sandbox sync + SMB mirror live all 3 hosts (empty SMB passwords). Portal PID 1240 (relaunched 11-13 for git integration; single listener verified). NEXT: Orchestrator announces the two new ops processes (prune + git) and asks ALL agents to set 10 goals each; then: mirror uploads/ to remote sandboxes, move Red .245 to wired NIC.
+
+## 2026-11-13 ~18:1x - r29: TWO-WAY sync + per-mode UI persistence + Archivist PDF function
+Fixed "agent work not landing" (root cause: two one-way pipes). (1) Portal sync is now TWO-WAY - TODO.md/MEMORY.md/memory leaves last-writer-wins both directions, code/config allowlist push-only (merge-queue rule), every other sandbox file new-only pull with junk exclusions (Mingit/, MinGit.zip, project clones, uploads/); `_auto_commit()` after each chat turn keeps repo drift <= 1 turn (Builder goal #5 delivered). First sync pulled `memory/goals.md` (Orchestrator's 8x10 record) from the sandbox into workspace + git. (2) memory_mirror.py pushes the full git-tracked allowlist (~43 files) AND pulls back remote memory/ trees (newer/new only) - Red/Pale/Black work lands in White. (3) index.html: refresh no longer clears messages - per-mode localStorage persistence (MutationObserver save, restore on load/mode-switch, Reset clears the slot, file-link hover re-wired for restored bubbles) + sticky auto-scroll (off while scrolled up, re-pins at bottom / on send). (4) Archivist gained the PDF-reporting function (recipe: memory/ops/pdf-reporting.md); Researcher directed to prefer live web_search - multiple targeted searches, cite URLs. Detail: memory/portal/architecture.md.
 
 ## 2026-11-13 ~17:0x - NEW OPS PROCESSES LIVE: TODO pruning + local git repo
 Built into agent_portal.py, live-verified (PID 1240): (1) `POST /api/todo/prune` moves all-[x] sections of TODO.md → TODO_completed.md, auto-chunks >240 lines into todo_done_parts/TODO_done_part_NNN.md (first run: 7 sections / 28 items); (2) local git repo via portable MinGit (`mingit/`), curated allowlist .gitignore (~43 files), GET/POST /api/git (commit|init), baseline commit `8f5e7d5`. UI: 🔧 Ops panel (status, commits, commit box, ✂ Prune). ORCHESTRATOR TODO queued: announce both processes to all agents + ask each to set 10 goals themselves. Detail: memory/portal/architecture.md (Ops section).
@@ -25,5 +28,5 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Counter
-- inter_agent_replies_this_prompt: 4 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —

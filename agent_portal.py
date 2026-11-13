@@ -72,46 +72,166 @@ SANDBOX_DIR = _find_sandbox_dir()
 UPLOAD_DIR = os.path.join(SANDBOX_DIR, "uploads")   # human uploads land in the shared agent folder
 MAX_UPLOAD_BYTES = 4 * 1024 * 1024 * 1024            # 4 GB per file (streamed to disk, never buffered)
 
-# ---------------------------------------------------------------- workspace -> sandbox sync
+# ---------------------------------------------------------------- workspace <-> sandbox sync (two-way)
 # Agent tools run in Studio's shared _default sandbox (SANDBOX_DIR), not HERE. Shared project
 # state must exist THERE so agents can read it with their own python/terminal tools (2026-11-13:
-# mount asymmetry - remote sandboxes held only .unsloth_sandbox). One-way mirror HERE -> sandbox,
-# mtime-guarded, run on every /api/chat. Canonical copies stay in HERE (portal endpoints read/write
-# HERE); an agent edit made directly in the sandbox is overwritten on the next chat turn.
-SYNC_FILES = ["TODO.md", "MEMORY.md", "agents.json", "agent_portal.py"]
+# mount asymmetry). r29 (2026-11-13): the mirror is now TWO-WAY so agent work lands in HERE (and
+# therefore in git) instead of being clobbered by the next push:
+#   * LWW set - TODO.md, MEMORY.md + every memory/ leaf: last-writer-wins BOTH directions
+#     (mtime decides; 0.5 s tolerance).
+#   * Code/config - the rest of the git-tracked allowlist: PUSH-ONLY from HERE (merge-queue rule:
+#     sandbox edits to code are experiments until merged via upgrade-plan.md).
+#   * Everything else in the sandbox: NEW-ONLY pull - a file absent from HERE is copied home,
+#     an existing workspace file is NEVER overwritten. Junk exclusions keep agent experiments
+#     (mingit copies, project clones, uploads) out of the workspace.
+# mtime-guarded (copy2 preserves mtime -> steady state touches nothing); every error swallowed -
+# a sync hiccup must never break chat.
+SYNC_LWW = ["TODO.md", "MEMORY.md"]   # + whole memory/ tree: last-writer-wins both directions
+PUSH_FALLBACK_ALLOWLIST = ["TODO.md", "MEMORY.md", "agents.json", "agent_portal.py", "index.html"]
+PULL_EXCLUDE_DIRS = {"mingit", "uploads", "__pycache__", ".unsloth_sandbox", "node_modules",
+                     "agentportal_v1-git", "_boot2", "_bootstrap_test", "gapfix-test"}
+PULL_EXCLUDE_FILES = {"mingit.zip"}
+PULL_MAX_BYTES = 20 * 1024 * 1024     # size guard for new-only pulls
+
+
+def _git_allowlist():
+    """The git-tracked file set (curated .gitignore allowlist, ~43 files). Fallback list when
+    the repo is missing so sync degrades gracefully."""
+    try:
+        import subprocess
+        r = subprocess.run([GIT_EXE, "ls-files"], cwd=HERE, capture_output=True, text=True, timeout=15)
+        out = [l.strip().replace("\\", "/") for l in (r.stdout or "").splitlines() if l.strip()]
+        if out:
+            return out
+    except Exception:
+        pass
+    return list(PUSH_FALLBACK_ALLOWLIST)
+
 
 def _sync_workspace_to_sandbox():
-    """Copy changed shared files (SYNC_FILES + memory/ tree) from HERE into SANDBOX_DIR.
-    mtime-guarded with 0.5 s tolerance so unchanged files are never touched; all errors are
-    swallowed - a sync hiccup must never break chat."""
+    """Two-way sync HERE <-> SANDBOX_DIR (semantics in the header above).
+    Returns (pushed, pulled) relative-path lists; both empty in steady state."""
+    pushed, pulled = [], []
     try:
         if not os.path.isdir(SANDBOX_DIR):
-            return
+            return pushed, pulled
+        # 1) LWW push: TODO.md / MEMORY.md + the whole memory/ tree (HERE wins only when newer)
         jobs = []
-        for rel in SYNC_FILES:
-            src = os.path.join(HERE, rel)
-            if os.path.isfile(src):
-                jobs.append((src, os.path.join(SANDBOX_DIR, rel)))
-        mem_src = MEMORY_DIR
-        if os.path.isdir(mem_src):
-            for root, dirs, files in os.walk(mem_src):
+        for rel in SYNC_LWW:
+            sp = os.path.join(HERE, rel)
+            if os.path.isfile(sp):
+                jobs.append((sp, os.path.join(SANDBOX_DIR, rel)))
+        if os.path.isdir(MEMORY_DIR):
+            for root, dirs, files in os.walk(MEMORY_DIR):
                 dirs[:] = [d for d in dirs if not d.startswith(".")]
                 for f in files:
                     if f.startswith("."):
                         continue
                     sp = os.path.join(root, f)
-                    jobs.append((sp, os.path.join(SANDBOX_DIR, "memory", os.path.relpath(sp, mem_src))))
+                    jobs.append((sp, os.path.join(SANDBOX_DIR, "memory", os.path.relpath(sp, MEMORY_DIR))))
         for src, dst in jobs:
             try:
                 ss = os.stat(src)
                 ds = os.stat(dst) if os.path.exists(dst) else None
-                if ds is None or abs(ss.st_mtime - ds.st_mtime) > 0.5:
+                if ds is None or ss.st_mtime > ds.st_mtime + 0.5:
                     os.makedirs(os.path.dirname(dst), exist_ok=True)
-                    shutil.copy2(src, dst)   # copy2 preserves mtime -> next check is a no-op
+                    shutil.copy2(src, dst)
+                    pushed.append(os.path.relpath(src, HERE).replace(os.sep, "/"))
             except OSError:
                 pass
+        # 2) Push-only code/config: rest of the git allowlist (never pulled back - merge queue)
+        for rel in _git_allowlist():
+            if rel in SYNC_LWW or rel.startswith("memory/") or rel == ".gitignore":
+                continue
+            src = os.path.join(HERE, rel.replace("/", os.sep))
+            dst = os.path.join(SANDBOX_DIR, rel.replace("/", os.sep))
+            if not os.path.isfile(src):
+                continue
+            try:
+                ss = os.stat(src)
+                ds = os.stat(dst) if os.path.exists(dst) else None
+                if ds is None or ss.st_mtime > ds.st_mtime + 0.5:
+                    os.makedirs(os.path.dirname(dst), exist_ok=True)
+                    shutil.copy2(src, dst)
+                    pushed.append(rel)
+            except OSError:
+                pass
+        # 3) LWW pull: sandbox copies of TODO.md / MEMORY.md / memory leaves newer than HERE come home
+        for rel in SYNC_LWW:
+            src = os.path.join(SANDBOX_DIR, rel)
+            dst = os.path.join(HERE, rel)
+            try:
+                if not os.path.isfile(src):
+                    continue
+                ss = os.stat(src)
+                ds = os.stat(dst) if os.path.exists(dst) else None
+                if ds is None or ss.st_mtime > ds.st_mtime + 0.5:
+                    shutil.copy2(src, dst)
+                    pulled.append(rel)
+            except OSError:
+                pass
+        sb_mem = os.path.join(SANDBOX_DIR, "memory")
+        if os.path.isdir(sb_mem):
+            for root, dirs, files in os.walk(sb_mem):
+                dirs[:] = [d for d in dirs if not d.startswith(".")]
+                for f in files:
+                    if f.startswith("."):
+                        continue
+                    sp = os.path.join(root, f)
+                    rel = "memory/" + os.path.relpath(sp, sb_mem).replace(os.sep, "/")
+                    dst = os.path.join(HERE, rel.replace("/", os.sep))
+                    try:
+                        ss = os.stat(sp)
+                        ds = os.stat(dst) if os.path.exists(dst) else None
+                        if ds is None or ss.st_mtime > ds.st_mtime + 0.5:
+                            os.makedirs(os.path.dirname(dst), exist_ok=True)
+                            shutil.copy2(sp, dst)
+                            pulled.append(rel)
+                    except OSError:
+                        pass
+        # 4) New-only pull: any other sandbox file absent from HERE comes home (junk excluded)
+        for root, dirs, files in os.walk(SANDBOX_DIR):
+            relroot = os.path.relpath(root, SANDBOX_DIR).replace(os.sep, "/")
+            dirs[:] = [d for d in dirs if not d.startswith(".") and d.lower() not in PULL_EXCLUDE_DIRS]
+            for f in files:
+                if f.startswith(".") or f.lower() in PULL_EXCLUDE_FILES:
+                    continue
+                sp = os.path.join(root, f)
+                rel = (relroot + "/" + f) if relroot != "." else f
+                dst = os.path.join(HERE, rel.replace("/", os.sep))
+                try:
+                    if os.path.exists(dst):
+                        continue   # NEW-ONLY: never overwrite an existing workspace file
+                    if os.path.getsize(sp) > PULL_MAX_BYTES:
+                        continue
+                    os.makedirs(os.path.dirname(dst), exist_ok=True)
+                    shutil.copy2(sp, dst)
+                    pulled.append(rel)
+                except OSError:
+                    pass
     except Exception:
         pass
+    return pushed, pulled
+
+
+def _auto_commit():
+    """Post-turn drift guard (Builder goal #5, 2026-11-13): commit whatever the two-way sync just
+    moved so repo lag stays <= 1 turn. No-op when the tree is clean; errors swallowed."""
+    try:
+        if not os.path.isdir(os.path.join(HERE, ".git")):
+            return None
+        st = _git(["status", "--porcelain"])
+        if not st["ok"] or not st["out"].strip():
+            return None
+        _git(["add", "-A"])
+        c = _git(["commit", "-m", "auto: post-turn sync %s" % time.strftime("%Y-%m-%d %H:%M:%S")])
+        if c["ok"] and "nothing to commit" not in (c["out"] + c["err"]).lower():
+            head = _git(["log", "--oneline", "-1"])
+            if head["ok"]:
+                return head["out"].split(" ", 1)[0]
+    except Exception:
+        pass
+    return None
 
 def _safe_upload_path(rel):
     """Resolve an upload target inside UPLOAD_DIR. Returns (abs_path, clean_rel) or None.
@@ -1366,7 +1486,7 @@ class Handler(BaseHTTPRequestHandler):
         except Exception as e:
             return self._json(400, {"error": f"bad json: {e}"})
         if p == "/api/chat":
-            _sync_workspace_to_sandbox()   # keep sandbox copies of shared state fresh (mtime-guarded)
+            _sync_workspace_to_sandbox()   # two-way: push shared state, pull agent work home (LWW + new-only)
             aid = body.get("agent_id") or ""
             mode = body.get("mode", "solo")
             agent = get_agent(aid)
@@ -1387,6 +1507,8 @@ class Handler(BaseHTTPRequestHandler):
                 stream_chat(self.wfile, agent, msgs, mode, kind, body.get("session"))
             except OSError:   # client gone (■ Stop / tab closed) - nothing left to deliver
                 pass
+            _sync_workspace_to_sandbox()   # same-turn sandbox work lands in HERE before the commit
+            _auto_commit()                 # post-turn auto-commit: repo drift <= 1 turn (Builder goal #5)
         elif p == "/api/memory":
             action = body.get("action") or ""
             if action == "budget":
@@ -1414,8 +1536,10 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/todo/prune":
             # Ops: move fully-completed TODO sections into TODO_completed.md (chunk-splitting).
             try:
-                _sync_workspace_to_sandbox()   # prune result is shared state; keep sandboxes fresh
-                return self._json(200, _prune_todo())
+                _sync_workspace_to_sandbox()   # two-way sync first: agent TODO/MEMORY edits land before pruning
+                res = _prune_todo()
+                _auto_commit()                 # prune result is shared state - commit it (drift <= 1 turn)
+                return self._json(200, res)
             except Exception as e:
                 return self._json(500, {"error": str(e)})
         elif p == "/api/git":

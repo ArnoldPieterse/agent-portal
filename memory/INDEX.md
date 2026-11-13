@@ -10,6 +10,7 @@ Last updated: 2026-11-13.
 - -> memory/portal/INDEX.md   portal bugs (file-links, xtalk, UI) + architecture (DM/uploads/sync, prune+git ops)
 - -> memory/llm/INDEX.md      LLM instances/routing: dual residency, aliases, reload recipe, Studio API :8888, hosts Red/Pale/Black
 - -> memory/ops/INDEX.md      Windows ops: reboot recovery runbook, portal lifecycle, ground-truth checks, probe scripts
+- -> memory/goals/INDEX.md    fleet goal lists 2026-11-13: 8 agents x 10 goals verbatim (canonical = TODO.md AGENT GOALS section)
 
 ## Global files (shared by all folders)
 - -> agent_portal.py          server :8099; /api/chat, /api/memory, /api/file(+raw)

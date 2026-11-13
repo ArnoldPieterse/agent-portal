@@ -1,0 +1,17 @@
+# BUILDER — mini memory (host: Black, sandbox Z:\)
+State: r24/V102 (2026-11-13 12:18) — file-access check fresh: uploads/ STILL absent, no AgentPortal_V1 on Black, ui-upgrades-r4.md still absent → P8 STOP holds, zero index.html edits legal. Selftest fresh-green 12:18 (compliant 23/23 x2, broken→1, pre-upgrade→1, incomplete→BLOCKED exit 2; SELFTEST PASS). run_checks on drop target → BLOCKED exit 2 (v102_runcounts.log). V102 meeting record written to TODO.md top: G0–G3 all blocked on single human re-drop; apply order staged (Step0 Verifier/Mechanic → Step1 builder-q8 → Step2 UI port P1-P7+AC → Step3 --live → White baseline commit by human → Scribe close-out). r23 prior: selftest fresh green (compliant 23/23 x2, broken→1, pre-upgrade→1, incomplete→BLOCKED exit 2); AgentPortal_V1 bundle STILL absent from _default; ui-upgrades-r4.md STILL absent on Black → G0/G2/G3 unchanged, all human-gated. Meeting itself CONCLUDED (plan DRAFT v2, lanes + pass criteria in TODO.md). Verifier r20b fixed init_repo.py IndentationError(line 42); py_compile OK re-verified from Black this round — my earlier "baseline command ready" claim was premature, retracted. Human gates: (a) bundle re-drop to Black _default incl. ui-upgrades-r4.md (my G0/G2), (b) bootstrap.bat on White + paste RESULT block (repo-of-record lane). r35 delta (12:21): file access FULLY GREEN from Black seat (terminal+python; no reparse point on this mount, agents.json absent here — junction is White _default's); Designer WS-B reference = Pale-only artifact, port queued Step 2 pending merge lane; Scribe bookkeeping truncated → Scribe re-runs.
+
+## Verdicts (evidence-backed)
+- SMB \\white\c$: protocol reachable, auth rejected (WinError 5 / err 65 LOGON_FAILURE); all 5 cred routes policy-denied (Verifier r19). NOT an agent-seat lane — human must run on White.
+- No git/winget/curl/powershell/pip on Black; Python 3.13 only. (dulwich pure-Python decision SUPERSEDED r21 — final approach: stdlib+subprocess wrapper + MinGit-x binary.)
+- Pointer formula (cross-checked vs Researcher r18 audit + Archivist Pale walk): `-> path` lines in index files; root + llm/ops/portal indexes resolve ROOT-relative, portal/bugs/INDEX resolves DIR-relative. Canonical memory/ tree is NOT on Black (known host divergence) — pointer check here = formula audit only.
+- GitHub egress works from sandbox python (urllib, literal host); pypi.org blocked by allowlist. ("vendor from GitHub sdist" outcome SUPERSEDED — no vendor/ dir exists; MinGit-x .7z extracted instead.)
+
+## Artifacts (relative to this sandbox)
+- git-toolkit/init_repo.py — stdlib-only wrapper: finds git via PATH else MinGit-x\cmd\git.exe; writes .gitignore; init+add+commit. (r21 correction: dulwich pure-Python approach was REPLACED by git-binary path; no vendor/ dir exists — earlier memory lines were stale.)
+- MinGit-x/ — EXTRACTED, git 2.56.1.windows.1 verified on Black (2026-11-13). PortableGit .7z/.exe payloads superseded.
+- portal-upgrade/ — run_checks.py + selftest.py + fixture-known-good + lint_js.py (+repro_{ok,broken}.js) + check_black_models.py + verify_drop_env.py + DROP-RUNBOOK.md
+
+## Handoffs
+- Human@White: `portal-upgrade\verify_drop_env.py` gate → `git-toolkit\init_repo.py` baseline commit. NOTE: no README inside toolkit (Verifier r20b flag accepted) — usage is in the script header.
+- Orchestrator: ratify O3 layout = memory/<agent>/{MEMORY,TODO}.md; fold O2 into global TODO.md with toolkit path.

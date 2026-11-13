@@ -55,3 +55,13 @@ Status: **RESOLVED** - RecoverAll fired 21:5x, verdict ALL_UP verified 22:38 (se
 ## V1 packaged (2026-11-11 latest)
 - [x] Curated snapshot `AgentPortal_V1_2026-11-11.zip` (82 KB, 38 entries, zip integrity verified): app code (agent_portal.py, agents.json, index.html), full memory tree, docs (README manifest + DESIGN/SETUP_HISTORY/TODO/MEMORY), portal_start.bat + recover_all.*, 14 named probes in probes/. Excluded: screenshots/logs/pycache/scratch dumps/host-specific model-load scripts.
 - [x] README.md inside = V1 manifest: what's in it, how to run (PortalRun task or `python agent_portal.py`), current state, known limits (relative asset paths via /api/file/raw; Studio serialization parallel_slots=1; non-streaming tool probes hang).
+
+<!-- pruned from TODO.md on 2026-11-13 18:40 -->
+
+## NEW OPS PROCESSES LIVE: TODO pruning + local git repo (2026-11-13 ~17:0x)
+Status: **LIVE + verified.** Two processes built into agent_portal.py, tested against the running portal (PID 1240):
+1. **TODO pruning** — `POST /api/todo/prune` moves any TODO.md section whose items are ALL [x] into `TODO_completed.md`; when that file outgrows 240 lines its oldest 200 lines split off into `todo_done_parts/TODO_done_part_NNN.md`. Sections with open items stay put. First live run: 7 sections / 28 items moved.
+2. **Local git repo** — portable MinGit in `mingit/` (no system install); curated allowlist `.gitignore` (~43 tracked files: portal code, memory tree, TODO/MEMORY, ops scripts). `GET /api/git` = status + last 12 commits; `POST /api/git {action: commit|init}` = add -A + commit. Baseline commit `8f5e7d5`.
+UI: new **🔧 Ops** panel next to Fleet — git status, recent commits, commit box, ✂ Prune button. Detail: memory/portal/architecture.md (Ops section).
+- [x] Both endpoints live-tested against the running portal
+- [x] ORCHESTRATOR: announce both new processes to ALL agents in a group prompt (TODO pruning + auto-chunking; local git repo + 🔧 Ops panel), and ask EACH agent to set themselves 10 goals — DONE 2026-11-13: announced, all 8 lists collected verbatim in `## AGENT GOALS (set 2026-11-13)` above; Scribe compression bullets still owed.

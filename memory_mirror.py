@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """memory_mirror.py - push shared project state into REMOTE host sandboxes over SMB.
 
-Companion to _sync_workspace_to_sandbox() in agent_portal.py (which mirrors HERE -> White's
-own sandbox per chat turn). This script does the same one-way mirror HERE -> \\\\host\C$ for
-Red/Pale/Black so remote agents can read TODO.md / MEMORY.md / agents.json / memory/ with their
-own tools (2026-11-13 mount asymmetry: remote sandboxes held only .unsloth_sandbox).
+Companion to _sync_workspace_to_sandbox() in agent_portal.py (which two-way syncs HERE <-> White's
+own sandbox per chat turn). This script pushes the git-tracked allowlist HERE -> \\\\host\C$ for
+Red/Pale/Black so remote agents can read TODO.md / MEMORY.md / code / memory/ with their own tools
+(2026-11-13 mount asymmetry), and PULLS BACK each host's memory/ tree (newer/new files only) so
+remote agent work lands in White (r29, 2026-11-13).
 
 Design notes:
   * mtime-guarded (0.5 s tolerance, copy2 preserves mtime) -> steady-state runs push nothing.
@@ -22,7 +23,21 @@ import json, os, shutil, subprocess, sys, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 CFG_FILE = os.path.join(HERE, "memory_mirror_hosts.json")
 LOG_FILE = os.path.join(HERE, "memory_mirror.log")
-SYNC_FILES = ["TODO.md", "MEMORY.md", "agents.json", "agent_portal.py"]   # same set as the portal
+SYNC_FILES = ["TODO.md", "MEMORY.md", "agents.json", "agent_portal.py"]   # fallback if the git repo is missing
+GIT_EXE = os.path.join(HERE, "mingit", "cmd", "git.exe")
+
+def _allowlist():
+    """The git-tracked file set (curated .gitignore allowlist, ~43 files) - what gets pushed to the
+    remotes. Falls back to SYNC_FILES when the repo is missing so the mirror degrades safely."""
+    import subprocess
+    try:
+        r = subprocess.run([GIT_EXE, "ls-files"], cwd=HERE, capture_output=True, text=True, timeout=20)
+        out = [l.strip().replace("\\", "/") for l in (r.stdout or "").splitlines() if l.strip()]
+        if out:
+            return out
+    except Exception:
+        pass
+    return list(SYNC_FILES)
 MTOL = 0.5  # seconds; matches _sync_workspace_to_sandbox tolerance
 
 def log(line):
@@ -92,15 +107,17 @@ def mirror_host(h):
     except Exception as e:
         return {"host": name, "error": "sandbox dir missing: %s" % str(e)[:80]}
     pushed, errors = [], []
-    for rel in SYNC_FILES:
-        sp = os.path.join(HERE, rel)
+    for rel in _allowlist():
+        if rel == ".gitignore":
+            continue
+        sp = os.path.join(HERE, rel.replace("/", os.sep))
         if not os.path.isfile(sp):
             continue
-        dp = os.path.join(dst_root, rel)
+        dp = os.path.join(dst_root, rel.replace("/", os.sep))
         try:
             ss = os.stat(sp)
             ds = os.stat(dp) if os.path.exists(dp) else None
-            if ds is None or abs(ss.st_mtime - ds.st_mtime) > MTOL:
+            if ds is None or ss.st_mtime > ds.st_mtime + MTOL:
                 shutil.copy2(sp, dp)
                 pushed.append(rel)
         except Exception as e:
@@ -108,7 +125,34 @@ def mirror_host(h):
     p2, e2 = push_tree(os.path.join(HERE, "memory"), os.path.join(dst_root, "memory"))
     pushed += ["memory/" + r for r in p2]
     errors += e2
-    return {"host": name, "pushed": len(pushed), "files": pushed[:12], "errors": errors}
+    # r29 (2026-11-13): pull back the remote memory/ tree - newer/new files only, never overwrite a
+    # newer local copy (so e.g. Scribe's goal batches on Red land in White).
+    pulled, perrors = [], []
+    rm = os.path.join(dst_root, "memory")
+    if os.path.isdir(rm):
+        for root, dirs, files in os.walk(rm):
+            dirs[:] = [d for d in dirs if not d.startswith(".")]
+            for f in files:
+                if f.startswith("."):
+                    continue
+                sp = os.path.join(root, f)
+                rel = "memory/" + os.path.relpath(sp, rm).replace(os.sep, "/")
+                dp = os.path.join(HERE, rel.replace("/", os.sep))
+                try:
+                    ss = os.stat(sp)
+                    ds = os.stat(dp) if os.path.exists(dp) else None
+                    if ds is None or ss.st_mtime > ds.st_mtime + MTOL:
+                        os.makedirs(os.path.dirname(dp), exist_ok=True)
+                        shutil.copy2(sp, dp)
+                        pulled.append(rel)
+                except Exception as e:
+                    perrors.append("%s: %s" % (rel, str(e)[:80]))
+    res = {"host": name, "pushed": len(pushed), "files": pushed[:12], "errors": errors}
+    if pulled or perrors:
+        res["pulled"] = len(pulled)
+        res["pulled_files"] = pulled[:12]
+        res["pull_errors"] = perrors
+    return res
 
 def main():
     try:

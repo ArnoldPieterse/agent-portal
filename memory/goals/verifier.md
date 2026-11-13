@@ -1,0 +1,14 @@
+# Verifier — 10 goals (set 2026-11-13)
+
+Source: group goal-setting thread, collected by Orchestrator; verbatim. Canonical record: TODO.md `## AGENT GOALS (set 2026-11-13)`.
+
+1. Smoke-test every new /api endpoint in agent_portal.py with recorded curl output before its TODO item is marked [x].
+2. Verify TODO pruning end-to-end: craft an all-[x] test section, POST /api/todo/prune, assert the move to TODO_completed.md and confirm 240-line chunking fires at the threshold.
+3. Verify git integration: GET /api/git returns status + last commit (baseline 8f5e7d5 or later) and POST {action:'commit'} produces a new hash — both captured as proof.
+4. Run a daily portal health check (PID alive, :8099 single listener, /api/git reachable) and log results to memory/ops/.
+5. Reproduce every reported bug once with exact commands before accepting it; file non-reproductions with the evidence.
+6. Cross-check /api/fleet: assert a status field for all 3 hosts within the 5s refresh window, fail on timeout or missing host.
+7. Audit .gitignore allowlist after each commit cycle — tracked file count stays ~43; flag drift immediately.
+8. Maintain a verification log (date + command + output snippet) for every claim labeled "live-verified" in MEMORY.md/TODO.md.
+9. Run a 5-point regression pass (chat, file links, DM markers, prune, git) after any agent_portal.py edit; no edit ships untested.
+10. Within 2 days: deliver a written pass/fail test report covering both new ops processes with zero untested endpoints remaining.
