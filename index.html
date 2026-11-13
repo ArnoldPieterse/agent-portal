@@ -280,6 +280,10 @@ textarea{resize:vertical;min-height:64px}
       <label class="toggle" style="margin-bottom:4px"><input type="checkbox" id="f_rag" style="width:auto"> Enable RAG for this agent</label>
       <select id="f_kb"><option value="">(any / default knowledge base)</option></select>
     </div>
+    <div><label>Memory cycle <span class="hint">(ReadMem before · StoreMem after each message)</span></label>
+      <label class="toggle" style="margin-bottom:4px"><input type="checkbox" id="f_memcycle" style="width:auto"> Memory lookup + store around every message</label>
+      <label class="toggle"><input type="checkbox" id="f_fastfirst" style="width:auto"> First reply to human: low reasoning + low context</label>
+    </div>
   </div>
   <div class="dfoot">
     <button class="btn" id="edCancel">Cancel</button>
@@ -571,7 +575,7 @@ function linkifyFiles(el,text){
 
 // ---- Activity timeline (per-session audit log, /api/activity, 2026-11-12) ----
 let actTimer=null;
-const actIcons={start:"▶",tool:"🔧",end:"✓",blocked:"⛔",error:"⚠",aborted:"■"};
+const actIcons={start:"▶",tool:"🔧",end:"✓",blocked:"⛔",error:"⚠",aborted:"■",readmem:"📖",storemem:"💾"};
 function actRender(evts){
   const body=$("actBody"); if(!body)return;
   body.innerHTML="";
@@ -584,6 +588,8 @@ function actRender(evts){
     else if(e.event==="blocked")x="blocked: "+(e.detail||"agent-to-agent limit");
     else if(e.event==="error")x="error: "+(e.error||"?");
     else if(e.event==="aborted")x="aborted (client stop)";
+    else if(e.event==="readmem")x="memory lookup · "+(e.chars??0)+" chars in "+(e.dur??0)+"s";
+    else if(e.event==="storemem")x=(e.stored?"note stored: ":"no note: ")+esc(e.note||"(none)")+" ("+(e.dur??0)+"s)";
     const div=document.createElement("div"); div.className="aev";
     const col=(agents.find(a=>a.name===e.agent)||{}).color||"#ccc";
     div.innerHTML=`<span class="at">${new Date(e.ts*1000).toLocaleTimeString([],{hour12:false})}</span><span class="an" style="color:${col}">${esc(e.agent||"?")}</span><span>${actIcons[e.event]||"•"}</span><span class="ax">${esc(x)}</span>`;
@@ -861,6 +867,7 @@ function openEditor(a){
     c.type="checkbox";c.value=t;c.checked=(a?.tools||[]).includes(t);l.append(c,document.createTextNode(t));tc.appendChild(l);}
   $("f_runlocal").checked=a?!!(a.run_tools_local??true):true;
   $("f_rag").checked=!!a?.rag;
+  $("f_memcycle").checked=(a?.mem_cycle??true); $("f_fastfirst").checked=(a?.fast_first_reply??true);
   const kb=$("f_kb"); kb.innerHTML='<option value="">(any / default knowledge base)</option>';
   for(const k of kbs){const o=document.createElement("option");o.value=k.id||k.kb_id||"";
     o.textContent=k.name||k.title||o.value;if(a?.rag_kb_id&&o.value===a.rag_kb_id)o.selected=true;kb.appendChild(o);}
@@ -899,6 +906,7 @@ $("edSave").onclick=async()=>{
     max_tokens:parseInt($("f_maxtok").value)||0,reasoning:$("f_reasoning").value,max_tool_calls:parseInt($("f_maxtools").value)||0,
     tools:[...document.querySelectorAll("#f_tools input:checked")].map(i=>i.value),run_tools_locally:$("f_runlocal").checked,
     rag:$("f_rag").checked,rag_kb_id:$("f_kb").value,
+    mem_cycle:$("f_memcycle").checked,fast_first_reply:$("f_fastfirst").checked,
     studio:$("f_net").checked?$("f_studio").value.trim():"",
     api_key:$("f_net").checked?$("f_key").value.trim():"",
     rag_studio:$("f_net").checked?$("f_ragstudio").value.trim():"",
