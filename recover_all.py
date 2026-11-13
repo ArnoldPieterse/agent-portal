@@ -1,12 +1,20 @@
 # recover_all.py — investigate Q4 wedge, then reload ALL models per memory/llm-instances.md recipe.
 # Runs DETACHED (schtask RecoverAll). Waits for the current turn to finish before touching Q4,
 # because this very conversation is served by Q4 (thread __LOCALID_0Ueu8kG bound to unsloth UD-Q4_K_S).
-import json, time, urllib.request, urllib.error, subprocess, datetime
+import json, time, urllib.request, urllib.error, subprocess, datetime, os
 
 API   = "http://127.0.0.1:8888"
 PORTAL= "http://127.0.0.1:8099"
-Q4P   = r"C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-GGUF"
-Q8P   = r"C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-GGUF"
+def _resolve(base_dir, *names):
+    """11-14: White folders may be pre- or post-rename (fleet convention = quant in name);
+    prefer the new name, fall back to the old one so boot recovery works in either state."""
+    for n in names:
+        p = os.path.join(base_dir, n)
+        if os.path.isdir(p):
+            return p
+    return os.path.join(base_dir, names[0])
+Q4P   = _resolve(r"C:\Users\White\.lmstudio\models\unsloth", "Qwen3.8-27B-Q4_K_S", "Qwen3.8-27B-GGUF")
+Q8P   = _resolve(r"C:\Users\White\.lmstudio\models\lmstudio-community", "Qwen3.8-27B-Q8_0", "Qwen3.8-27B-GGUF")
 LOG   = r"C:\Projects\Workspace\recover_run.log"
 RES   = r"C:\Projects\Workspace\recover_result.json"
 
@@ -138,8 +146,10 @@ result["verify"] = verify
 def dual_ok():
     v = verify["vram"]
     sv = verify["servers"]
-    return (len(v) >= 2 and v[0][1] > 18000 and v[1][1] > 25000
-            and "unsloth\\Qwen3.8-27B-GGUF" in sv and "lmstudio-community\\Qwen3.8-27B-GGUF" in sv)
+    # 11-14: accept pre- or post-rename folder names in the llama-server command lines
+    q4_in  = ("unsloth\\Qwen3.8-27B-Q4_K_S" in sv) or ("unsloth\\Qwen3.8-27B-GGUF" in sv)
+    q8_in  = ("lmstudio-community\\Qwen3.8-27B-Q8_0" in sv) or ("lmstudio-community\\Qwen3.8-27B-GGUF" in sv)
+    return (len(v) >= 2 and v[0][1] > 18000 and v[1][1] > 25000 and q4_in and q8_in)
 result["dual_ok"] = dual_ok()
 
 # ---------- 5) functional probes via the SAME aliases the portal uses ----------
