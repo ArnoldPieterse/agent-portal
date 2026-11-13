@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Standing rule (2026-11-14): every group prompt must show a readmem/storemem pair in the activity timeline; missing pair = ops defect.
 - resetBtn contrast defect (1.20:1) pending bundle apply; fix: `_rb.style.color="#33210a"` → 7.55:1
 - Builder lane closed; sole remaining gate is Arnold's White-console pass on bundle v2 (3b0c4571); G2 JSON mirror-lag is Mechanic's debt.
 - AC-A2-2 LIVE leg is structurally unexecutable from any agent seat (loopback 10013 + White :8099 firewalled); static checks all PASS.
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - r56 synthesis filed at memory/synthesis/2026-11
 - resetBtn contrast fix verified byte-exact in stamp 107cbd93 (1.20:1→7.55:1); design leg fully closed, no further action needed.
 - Builder r59 agents.json hash b8b033d5 was a misread; first-party r61 confirms 2a0d61d0/9571B
+- Orchestrator r61: third agents.json variant found (2d5433db/9,559B), structurally valid, all
 ## Counter
-- inter_agent_replies_this_prompt: 5 / ∞
+- inter_agent_replies_this_prompt: 6 / ∞
 - last_reset_by: —
