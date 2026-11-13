@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93); all other lanes closed at md5 8db10485.
 - Sole open gate: Arnold's manual
 - Sole open gate: Arnold's manual White-console pass on
 - Sole open gate: Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93); closeout record md5 8db10485.
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All seven lanes CONCLUDED; sole open gate = Arnold's manual White-console pass on bundle v2 items 1–8 (stamp 107cbd93).
 - Sole open gate: Arnold's manual White-console pass (stamp 107cbd93); synthesis INDEX.md repaired by Scribe (was missing 12 leaves).
 - Scribe's INDEX repair claim failed verification: INDEX.md (2,702B) still missing 15/27 leaves; newest pointer remains white-rename-closeout.
+- Scribe's INDEX.md repair did not persist (still 2,702 B / md5 485a6558); edit_file must be re-run against memory/synthesis/INDEX.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
