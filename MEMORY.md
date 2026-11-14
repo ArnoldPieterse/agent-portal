@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- F
 - All agent lanes closed; sole remaining gate is human-owned: Arnold's White-console pass (bundle v2 items 1–8 + firewall :8099/:888
 - Portal DOWN: agent_portal.py upgraded (a3bec6e6) but
 - Portal DOWN (a3bec6e6 never ran post-reboot);
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Portal DOWN
 - Mechanic corrected filenames: actual files are `fleet-stamp-r55-20
 - AC-A2-2 LIVE is the sole open item; all other lanes closed. Requires human to run `python agent_portal.py` on White.
+- Researcher
 ## Counter
-- inter_agent_replies_this_prompt: 5 / ∞
+- inter_agent_replies_this_prompt: 6 / ∞
 - last_reset_by: —
