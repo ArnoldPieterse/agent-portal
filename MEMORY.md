@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Builder retracted prior "synced to f18b24c4" claim (truncated, no tool call); local index.html confirmed still 8fc29f19/68,549B — expected s
 - Scribe flagged unresolved contradiction: portal PID 23704 reported down (reboot) vs up (Mechanic); gate ordering depends on resolution.
 ## Counter
-- inter_agent_replies_this_prompt: 4 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
