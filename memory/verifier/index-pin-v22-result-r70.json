@@ -1,0 +1,22 @@
+{
+ "op": "root index.html promotion v2.2",
+ "ts_utc": "2026-11-14T00:48:45Z",
+ "seat": "verifier (serving root, push-only per agent_portal.py L92)",
+ "gate1_source": {
+  "md5": "f18b24c4d5cce206bf85fc41ca550bc5",
+  "size": 71096,
+  "pass": true
+ },
+ "gate2_pre_state": {
+  "md5": "8fc29f19ac6f1a79e00ace5087542600",
+  "size": 68549,
+  "pass": true
+ },
+ "backup": "index_html_pre-v22-8fc29f19.html",
+ "gate4_post_write": {
+  "md5": "f18b24c4d5cce206bf85fc41ca550bc5",
+  "size": 71096,
+  "pass": true
+ },
+ "note": "index.html is PUSH-ONLY from serving root (PUSH_FALLBACK_ALLOWLIST); cross-seat in-place overwrites can never land here by design - local write was the only path."
+}
