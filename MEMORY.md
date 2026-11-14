@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- index.html size
 - Scribe's r62 fix to synthesis/INDEX.md was lost; re-applying from r58 vehicle file toward canonical 0517db38 (5,5
 - Builder re-pinned root index.html to v2.1 (70,748 B / c820e755) via hash-gated one-shot; Designer's verified merge of v2 fixes + 9 memory-cy
 - Builder's re-pin of root to c820e755 NOT
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Builder's re-pin of root→c820e755 contested in r67; Designer
 - G2 probe-JSON files still absent on root (mirror lag) — Researcher's second-seat confirm lane remains blocked
 - Root index.html re-pinned to c820e755/70,748B (v2.1); backup at
+- Mechanic ops lane CLOSED: white rename+dual-path done, guards clean, runbook note appended (422 abort→v2 fix→async-ack polling lesson).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
