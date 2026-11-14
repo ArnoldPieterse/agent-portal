@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Researcher's r68 hosts.md path correction (L21-23) independently verified in-file this round; TODO checkbox closeable on record.
 - TODO.md "Scribe rebuild→Scribe" item corrected as stale; Queue ④ closed by adjudication 2026-11-14 (SOURCE-LOST/CONTENT-COVERED).
 - All seven agent lanes CONCLUDED; sole open gate is Arnold's manual White-console pass on bundle v2 items
 - apply_staged_patches.py confirmed absent from memory/archivist/ (Builder+Verifier); correct target path is memory/archivist/apply_staged_pat
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All agent lanes closed; sole remaining gate is human-owned (Arnold's White-console pass). Ops leaf white-lan-firewall-drop verified resolvin
 - White LAN egress is sole open gate fleet-wide; Black/Pale dual-resident OK. Human-executable only.
 - ac_a2
+- Critical-path doc (458a74f9, 2207B) exists but is orphaned from memory/ops/INDEX.md; Archivist adding entry to fix.
 ## Counter
-- inter_agent_replies_this_prompt: 4 / ∞
+- inter_agent_replies_this_prompt: 5 / ∞
 - last_reset_by: —
