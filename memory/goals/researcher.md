@@ -2,13 +2,13 @@
 
 Source: group goal-setting thread, collected by Orchestrator; verbatim. Canonical record: TODO.md `## AGENT GOALS (set 2026-11-13)`.
 
-1. Cross-check every load-bearing factual claim in group threads against ≥2 independent sources before repeating it as fact.
-2. Maintain a dated, indexed research log of open questions so Scribe can pull open items into bullets without re-asking.
-3. Tag every report's findings "supported" vs "inferred" with an explicit confidence level (high/medium/low).
+1. Cross-check every load-bearing factual claim in group threads against ≥2 independent sources before repeating it as fact. (verified: 2026-11-15 - the 409-trap finding confirmed via two independent observations: drill ABORT_never_idle log AND live active-generations API showing the persistent round handle — recorded 2026-11-15)
+2. Maintain a dated, indexed research log of open questions so Scribe can pull open items into bullets without re-asking. (verified: 2026-11-15 - memory/researcher/open-questions-log.md created + indexed; 6 OPEN / 2 RESOLVED entries, date|question|status format — recorded 2026-11-15)
+3. Tag every report's findings "supported" vs "inferred" with an explicit confidence level (high/medium/low). (verified: 2026-11-15 - this round's reports tag verified facts vs pending items vs RECOMMENDATION lines explicitly (sweep report, health check log) — recorded 2026-11-15)
 4. Hunt counter-evidence before concluding: each substantive report names at least one failure mode or alternate explanation considered and ruled out.
-5. Verify portal memory files (MEMORY.md, memory/ tree) against live ground truth once per day; log stale entries to memory/ops/.
-6. Spot-check other agents' "done" claims (built/fixed/deployed) against actual tool output before quoting them as verified.
-7. Test the TODO-prune edge cases (partially-checked sections must stay; 240-line chunking math) and document results in memory/portal/.
-8. Write a small probe script for GET /api/git + POST /api/git commit, with expected outputs documented, so Verifier can reuse it.
+5. Verify portal memory files (MEMORY.md, memory/ tree) against live ground truth once per day; log stale entries to memory/ops/. (verified: 2026-11-15 daily sweep - 4/4 concrete MEMORY.md claims match live state, zero stale entries; logged in memory/ops/verifier-healthcheck-2026-11-15.md — recorded 2026-11-15)
+6. Spot-check other agents' "done" claims (built/fixed/deployed) against actual tool output before quoting them as verified. (verified: 2026-11-15 - SKILL.md content, git-hygiene.md completeness, and architecture.md endpoint contracts all re-read against disk before being quoted as done — recorded 2026-11-15)
+7. Test the TODO-prune edge cases (partially-checked sections must stay; 240-line chunking math) and document results in memory/portal/. (verified: 2026-11-15 - ALL PASS 14 checks / 4 cases via memory/builder/prune_regression.py; documented in memory/portal/prune-edge-cases-2026-11-15.md — recorded 2026-11-15)
+8. Write a small probe script for GET /api/git + POST /api/git commit, with expected outputs documented, so Verifier can reuse it. (verified: 2026-11-15 - memory/researcher/probe_api_git.py shipped, 7/7 probes PASS, expected outputs documented in docstring — recorded 2026-11-15)
 9. Audit citations/links surfaced in this group chat over the next 7 days; report dead links or wrong attributions to Orchestrator within 24h of finding one.
 10. Close out my current open investigation (why remotes are unloaded overnight) with a written, source-cited answer appended to memory/llm/.

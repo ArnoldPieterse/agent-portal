@@ -1,3 +1,4 @@
+# Provenance: header added 2026-11-15 by Orchestrator (Archivist goal 6 audit). Original: fleet-ops scripts (Arnold + agent legs); purpose in the docstring/comments below.
 # recover_all.py — investigate Q4 wedge, then reload ALL models per memory/llm-instances.md recipe.
 # Runs DETACHED (schtask RecoverAll). Waits for the current turn to finish before touching Q4,
 # because this very conversation is served by Q4 (thread __LOCALID_0Ueu8kG bound to unsloth UD-Q4_K_S).

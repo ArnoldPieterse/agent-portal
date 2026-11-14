@@ -1,3 +1,4 @@
+# Provenance: header added 2026-11-15 by Orchestrator (Archivist goal 6 audit). Original: fleet-ops scripts (Arnold + agent legs); purpose in the docstring/comments below.
 """White: load Q8_0 -> GPU1 alongside quinn-q4 (GPU0). Probe atlas-q8 alias.
 Writes white_load_q8_result.json. Run detached; poll the result file."""
 import json, time, urllib.request, urllib.error

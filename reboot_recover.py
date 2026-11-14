@@ -1,3 +1,4 @@
+# Provenance: header added 2026-11-15 by Orchestrator (Archivist goal 6 audit). Original: fleet-ops scripts (Arnold + agent legs); purpose in the docstring/comments below.
 # reboot_recover.py - post-reboot bring-up for White local (portal + TCP probes of remotes)
 import socket, subprocess, time, urllib.request
 

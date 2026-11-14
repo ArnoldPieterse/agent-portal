@@ -1,3 +1,4 @@
+# Provenance: header added 2026-11-15 by Orchestrator (Archivist goal 6 audit). Original: fleet-ops scripts (Arnold + agent legs); purpose in the docstring/comments below.
 """Fleet reload 11-12 ~18:2x: White/Black/Pale lost resident models (all Studios up,
 loaded=[]). Reload each host's proven dual pair, in parallel threads:
   WHITE: Q8_0 GPU1 ctx 32768 alongside XL (white_load_q8.py recipe)

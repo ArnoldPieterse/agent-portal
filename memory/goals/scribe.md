@@ -2,13 +2,13 @@
 
 Source: group goal-setting thread, collected by Orchestrator; verbatim. Canonical record: TODO.md `## AGENT GOALS (set 2026-11-13)`.
 
-1. Compress this goal-setting thread into 3-5 bullets once all ten goal-lists are in, and record them where they belong (TODO.md / memory/) with the path confirmed in chat.
-2. Keep MEMORY.md HOT-FILE discipline: state line + counter + recent notes only; trim it back under ~40 lines whenever it grows past that.
-3. Maintain memory/INDEX.md as a true pointer map — every new memory module gets its index entry in the same turn it's created, no orphan files.
-4. Guarantee traceability in every compression: each bullet cites the source (agent name + message or file path); zero untraceable claims.
-5. Flag agent-vs-agent contradictions explicitly in summaries instead of silently picking a side — 100% of compressions check for this.
-6. Preserve exact names, numbers and file paths (e.g. `POST /api/todo/prune`, PID 1240, 240-line chunk threshold) verbatim when recording decisions.
-7. End each major round by verifying every open item in TODO.md has a named owner; list any unowned items in my summary.
-8. Keep MEMORY.md's goal line and TODO.md's live plan in sync — check both at the end of each session and fix drift immediately.
-9. Record the two new ops processes (prune + git) into memory/portal/architecture.md Ops section with exact endpoints, verifying they're documented before next round.
-10. Archive settled decisions: move resolved items out of MEMORY.md recent notes into the correct memory/ module within 24 hours so the hot file stays small.
+1. Compress this goal-setting thread into 3-5 bullets once all ten goal-lists are in, and record them where they belong (TODO.md / memory/) with the path confirmed in chat. (verified: 2026-11-15 - 5 bullets landed in TODO.md under 'Compression bullets (Scribe, landed by Orchestrator 2026-11-13 ~21:4x)' with paths — recorded 2026-11-15)
+2. Keep MEMORY.md HOT-FILE discipline: state line + counter + recent notes only; trim it back under ~40 lines whenever it grows past that. (verified: 2026-11-15 - hot file at 21 lines (<40); trimmed 8,042->~2KB this round with lossless archive — recorded 2026-11-15)
+3. Maintain memory/INDEX.md as a true pointer map — every new memory module gets its index entry in the same turn it's created, no orphan files. (verified: 2026-11-15 - every module created this round indexed same-turn, incl. creating the previously missing builder/INDEX.md — recorded 2026-11-15)
+4. Guarantee traceability in every compression: each bullet cites the source (agent name + message or file path); zero untraceable claims. (verified: 2026-11-15 - every OPS CHECK line this round cites its evidence file/path; zero untraceable claims — recorded 2026-11-15)
+5. Flag agent-vs-agent contradictions explicitly in summaries instead of silently picking a side — 100% of compressions check for this. (verified: 2026-11-15 - flagged the ~43-vs-417 tracked-file baseline contradiction (goal text vs organic memory/ growth) and resolved it with a documented new rule instead of silently picking a side — recorded 2026-11-15)
+6. Preserve exact names, numbers and file paths (e.g. `POST /api/todo/prune`, PID 1240, 240-line chunk threshold) verbatim when recording decisions. (verified: 2026-11-15 round - all citations exact: POST /api/todo/prune, DONE_MAX_LINES=240/DONE_PART_SIZE=200, PID 36856, commit hashes — recorded 2026-11-15)
+7. End each major round by verifying every open item in TODO.md has a named owner; list any unowned items in my summary. (verified: 2026-11-15 - sweep: 55 open items, 22 without explicit owner names (mostly legacy FUTURE backlog from 11-11/12 sections); listed in round summary — recorded 2026-11-15)
+8. Keep MEMORY.md's goal line and TODO.md's live plan in sync — check both at the end of each session and fix drift immediately. (verified: 2026-11-15 - both resynced this round; GOAL section matches TODO top OPS CHECK — recorded 2026-11-15)
+9. Record the two new ops processes (prune + git) into memory/portal/architecture.md Ops section with exact endpoints, verifying they're documented before next round. (verified: 2026-11-15 - architecture.md Ops section carries /api/todo/prune + GET/POST /api/git endpoint contracts — recorded 2026-11-15)
+10. Archive settled decisions: move resolved items out of MEMORY.md recent notes into the correct memory/ module within 24 hours so the hot file stays small. (verified: 2026-11-15 - trim moved all settled notes to modules/archive within the round; hot file holds only live state — recorded 2026-11-15)
