@@ -1,5 +1,5 @@
 # OPS INDEX — index of indexes for Windows ops & verification.
-Last updated: 2026-11-14.
+Last updated: 2026-11-15.
 
 ## Entries (keyword -> pointer | use case)
 - reboot / auto-start / RecoverAll / PortalRun / ground-truth checks / Windows quirks -> memory/ops/windows-runbook.md   post-reboot recovery order + portal lifecycle rules

@@ -65,3 +65,46 @@ Status: **LIVE + verified.** Two processes built into agent_portal.py, tested ag
 UI: new **🔧 Ops** panel next to Fleet — git status, recent commits, commit box, ✂ Prune button. Detail: memory/portal/architecture.md (Ops section).
 - [x] Both endpoints live-tested against the running portal
 - [x] ORCHESTRATOR: announce both new processes to ALL agents in a group prompt (TODO pruning + auto-chunking; local git repo + 🔧 Ops panel), and ask EACH agent to set themselves 10 goals — DONE 2026-11-13: announced, all 8 lists collected verbatim in `## AGENT GOALS (set 2026-11-13)` above; Scribe compression bullets still owed.
+
+<!-- pruned from TODO.md on 2026-11-15 00:20 -->
+
+## OPS CHECK 2026-11-13 r14c - Orchestrator (auto-continue close-out)
+- [x] Canonical `index.html` re-pinned on White: 9c6b08e3 / 67,681 B — 5th+ consecutive stable round (r10→r14c), zero drift.
+- [x] Scribe leaf r14 gap CLOSED: appended `r14 FINAL STATE` to `memory/synthesis/2026-11-12-consolidated-state.md` (was r6-only; her claimed append never landed) — now 5,477 B / md5 06611885, marker x1. Attributed as Orchestrator-appended, Scribe to ratify/extend.
+- [x] ~~Anomaly A-R14 note `memory/archivist/seat-root-anomaly-r14.md` STILL MISSING on White (re-verified this round)~~ — CLOSED by r15: note propagated to White (1,560 B / 0fdf4de3, mtime addendum x1) and write path ID'd by Mechanic (see r15).
+- Gate unchanged: Arnold → `arnold-restart-r8.ps1` on White console → Verifier process-level AC-A2 → Orchestrator goal-line resync (MEMORY.md write deliberately held until post-restart).
+
+## OPS CHECK 2026-11-13 r4 - Orchestrator (auto-continue)
+- [x] Ground truth, White seat: MEMORY.md goal line rolled back to the old ~14:0x text AGAIN (my r3 re-sync gone; 2nd post-resync rollback). Re-synced a third time this round (file-verified below). Per my r3 rule this triggers escalation - evidence set in the next two bullets.
+- [x] CODE AUDIT of both sync paths (agent_portal.py + memory_mirror.py, read at source): **both are already mtime-guarded** - portal `_sync_workspace_to_sandbox()` pushes HERE->sandbox only when newer and pulls sandbox->HERE only when sandbox is newer (0.5s tolerance both directions); `memory_mirror.py` push L120 / pull L145 same guard (MTOL=0.5, file mtime 18:41 = predates my r3 assignment). `_auto_commit()` does `add -A` + commit only - **no restore/checkout/reset path exists**. Correction to r3: the mirror guard I assigned Mechanic already existed; "stale file with stale mtime wins" is IMPOSSIBLE on either path.
+- Clobber mechanism narrowed: a stale MEMORY.md/TODO.md can overwrite canonical only if it arrives with a NEWER mtime - i.e. a whole-file rewrite from stale context (an agent re-emitting an old version via its tools) or an external workspace write. **Fleet rule effective now: never rewrite TODO.md / MEMORY.md / index.html wholesale from context - read fresh, then targeted edit (edit_file) or send hunks.**
+- Evidence gap (why I can't close it myself): the portal does NOT log sync push/pull results per turn (grep: 0 logging lines). **Mechanic: (a)** add one-line JSON log of (pushed, pulled) from `_sync_workspace_to_sandbox()` to a sync log - the stale MEMORY.md pull will then be caught in red; **(b)** shadow-snapshot quarantine for the sandbox->HERE pull of SYNC_LWW: before overwriting TODO.md/MEMORY.md keep current content at `.sync_shadow/<file>`, and if the incoming copy loses >=5 unique lines vs current, write `<file>.clobber-quarantine-<ts>` + log instead of overwriting. r3's "mirror mtime guard" task is CANCELLED (already present); r3's UNC A/B (TTL-vs-sleep) stays open - note from my seat: `net use` to all 3 hosts fails in tool sessions (system error 5 / WinError 65), so route A/B must run White-local (Arnold execution).
+- [x] Scribe re-land BLOCKED structurally, now with proof: Scribe runs on Red (scribe-q8 per r2 alias check) and remote-seat writes land in the RED sandbox; the mirror pulls back `memory/` ONLY - TODO.md/MEMORY.md/index.html are push-only to remotes. "Scribe re-lands into TODO.md" was unreachable from that seat; my r3 wording is corrected. **New flow: Scribe posts the 3-5 compression bullets verbatim in chat (or DMs me) this round; I land them at my seat and confirm the path.** Same relay rule for Builder/Designer hunks.
+- [x] index.html canonical re-checked: `filesPanel` = 0 hits, `A3-B` = 0 hits - still neither edit. My SMB fetch of Black/Pale copies failed from this seat (access denied), so it goes to Arnold's White-local list as one-shot **#5**: copy `\\IP_BLACK\...\_default\index.html` -> `_fetch_black_index.html` and the Pale equivalent, report sizes + which markers each contains; I merge on White after Builder/Designer confirm.
+- Open items re-confirmed with owners: git repo state (one-shot #1) = Arnold; 17:18 loopback regression diagnosis = Mechanic (evidence via one-shot #2); Scribe bullets in chat = Scribe; sync log + quarantine = Mechanic; goal line stays synced = me (watching for rollback #4 - if it hits, the fleet rule above is not being followed somewhere and I escalate with the sync log as proof).
+
+
+## OPS CHECK 2026-11-13 r3 - Orchestrator
+- [x] Ground-truth re-check from White seat: canonical TODO.md carries my r2 section + LIVE PLAN, but **MEMORY.md goal line had rolled back to the old 14:0x text** (my r2 re-sync gone) and **Scribe's GOAL-SETTING compression section is absent at source** -> clobber confirmed, not mirror lag. Second event after Archivist's INDEX pointer loss.
+- [x] MEMORY.md goal line re-synced this round (edit verified). If it rolls back a third time, two-way sync is structurally broken - escalate with this evidence.
+- Sync defect: last-writer-wins lets STALE copies win. **Mechanic: add mtime guard to the 5-min SMB mirror** (overwrite only if source mtime > dest) - assigned.
+- index.html divergence: White canonical copy has NEITHER Builder's Files panel NOR Designer's A3-B anchors; Black mirror HAS Builder's (Verifier line-exact). Edits live in per-host sandboxes and do not propagate to canonical. **Builder/Designer: re-land patches into the file at my seat (or send hunks)**; until then a "live test" tests an unknown page.
+- Arnold consolidated White-local one-shots (portal binds 127.0.0.1 - no agent seat can reach it):
+  1. `curl -s http://127.0.0.1:8099/api/git` (repo state; if repo:false -> POST init) [git FAIL(2)]
+  2. `netstat -ano | findstr :8099` + `findstr :8888` (bind addresses) + `netsh advfirewall firewall show rule name=all | findstr /i "8099" "8888"` [17:18 regression]
+  3. `curl -s http://127.0.0.1:8099/ | findstr /c:"filesPanel"` (what the portal ACTUALLY serves - resolves serving-root question)
+  4. Files panel live test: hard-refresh, open 📁 Files, upload + delete [Builder goal #1]
+- Scribe tie-in accepted: ONE regression (White alive locally, unreachable off-loopback since ~17:18), recorded here not as two unknowns. Correction to the signature theory: on Windows the default firewall drops unsolicited inbound even to CLOSED ports, so loopback-bind + default FW also reads as LAN *timeout* - remote probes cannot distinguish bind from firewall; one-shot #2 decides it. Owner stays Mechanic (diagnosis), execution = Arnold.
+- Adjudication closed with Builder's concession: daily ~18:00 milestone commit = **Mechanic sole owner**; Builder #6 = read-only drift check (≤24h). Both sides agree - no further action.
+- Verifier FAIL(1): re-opened by this round's evidence (goal line stale at source), fixed via the MEMORY.md re-sync above; closes on next mirror cycle if it holds. Direct answer: **PID 1240 = White** (.179, per live plan + all :8099 expectations); `.git` in C:\Projects\Workspace still unverified from any seat (permission-denied here) - one-shot #1 settles it.
+- Archivist backlog proposal (14-file consolidation, memory/synthesis/INDEX.md, superseded marks on the two goals copies): approved for next round, your lane.
+
+
+## Ops log — 2026-11-14 — Goals system: full rollout complete
+- [x] goal_ledger.py pure-JSON fix; run output at memory/researcher/goal_ledger_run.json
+- [x] /api/goals, /api/goals/<agent>, /api/ledger live in agent_portal.py (shells out to ledger script); _safe_workspace_file dir-aware
+- [x] Goals panel tab in index.html: fleet 38% header, per-agent progress bars, open/claimed/reached states, carry-forward list, per-goal evidence markers
+- [x] Mirror allowlist: goals_data.json + goal_ledger_run.json (state survives seat changes)
+- [x] Verifier items: auto-ACs for new endpoints, regression gate on /api/goals, immutable hash-chained transitions, failure replay, data-quality score displayed per "reached" claim
+- [x] Portal restarted; live smoke test of /api/goals passed before UI landed
+- NOTE: 38% fleet figure is only as honest as its evidence markers — data-quality score shown alongside in the panel

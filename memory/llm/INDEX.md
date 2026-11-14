@@ -1,5 +1,5 @@
 # LLM INDEX — index of indexes for LLM instances & routing.
-Last updated: 2026-11-14. Ground truth = nvidia-smi per-GPU VRAM, never /v1/models alone.
+Last updated: 2026-11-15. Ground truth = nvidia-smi per-GPU VRAM, never /v1/models alone.
 
 ## Entries (keyword -> pointer | use case)
 - dual residency / Q4 GPU0 / Q8 GPU1 / aliases atlas-q8|quinn-q4 / engine update kills instances / wedge / thread rebind / memory fit -> memory/llm/instances.md   current layout + durable rules

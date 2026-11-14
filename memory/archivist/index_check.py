@@ -29,9 +29,14 @@ def main() -> int:
     for idx in index_files:
         rel_idx = idx.relative_to(ROOT).as_posix()
         for line in idx.read_text(encoding="utf-8", errors="replace").splitlines():
+            if line.lstrip().startswith(("#", "Format:")):
+                continue  # header / format-description lines are not pointers
             m = ARROW_RE.search(line) or MDLINK_RE.search(line)
             if m:
-                pointers.append((rel_idx, m.group(1)))
+                tgt = m.group(1)
+                if tgt in ("pointer", "file"):  # convention words, not paths
+                    continue
+                pointers.append((rel_idx, tgt))
         d = DATE_RE.search(idx.read_text(encoding="utf-8", errors="replace"))
         if d:
             y, mo, da = map(int, d.group(1).split("-"))
@@ -41,10 +46,25 @@ def main() -> int:
     all_files = {p.relative_to(ROOT).as_posix()
                  for p in MEM.rglob("*")
                  if p.is_file() and "__pycache__" not in p.parts}
-    referenced = {t for _, t in pointers}
+    referenced = set()
+    for src, tgt in pointers:
+        candidates = {tgt, f"memory/{tgt}"}
+        try:
+            base = (ROOT / src).parent
+            candidates.add((base / tgt).resolve().relative_to(ROOT).as_posix())
+        except Exception:
+            pass
+        referenced.update(candidates)
+
+    def resolves(tgt: str, idx: Path) -> bool:
+        # try root-relative, memory/-relative (sub-index convention),
+        # and the index file's own directory (for ../ style links)
+        return ((ROOT / tgt).exists()
+                or (MEM / tgt).exists()
+                or (idx.parent / tgt).resolve().exists())
 
     dangling = sorted({(src, tgt) for src, tgt in pointers
-                       if not (ROOT / tgt).exists()})
+                       if not resolves(tgt, ROOT / src)})
     orphans = sorted(all_files - referenced - {"memory/INDEX.md"})
 
     print(f"index_check  root={ROOT.name}  today={today}")
