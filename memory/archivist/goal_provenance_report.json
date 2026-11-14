@@ -1,0 +1,11 @@
+{
+  "generated": "2026-11-14T16:13:23.738309",
+  "agents": {},
+  "fleet_summary": {
+    "total_goals": 0,
+    "evidenced_done": 0,
+    "claimed_only": 0,
+    "open_or_in_progress": 0,
+    "evidence_rate": 0.0
+  }
+}
