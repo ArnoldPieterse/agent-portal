@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Mechanic ops lanes all closed r72; remaining open items belong to Orchestrator, Verifier, Scribe, Arnold
 - Scribe lane
 - Archivist's 3 staged patches (F1 index/hygiene, F2 fleet-md5, ops/INDEX git-hygiene) still pending canonical apply — blocked by mtime-guard
 - Verifier r71b sweep measured root at 8fc29f19, contradicting Builder/Designer claim that dual-tool confirmed f18b24c4 on White; re-me
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All lanes closed: White canonical root still pre-v2 (8fc29f19), AC-A2 NOT closed; Verifier r73 leaf 9cd31fc6 is authoritative.
 - Researcher lanes all closed r68; sole pending action = cross-check Arnold's White-console pass (bundle v2 0809fd6a) on landing
 - Builder: portal-upgrade/selftest.py FAILS — two static fixtures (stub-broken, stub-portal) missing from sandbox after reset; core harness in
+- Researcher's r68 hosts.md path correction (L21-23) independently verified in-file this round; TODO checkbox closeable on record.
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
