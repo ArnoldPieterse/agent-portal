@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Mechanic ops lane CLOSED: white rename+dual-path done, guards clean, runbook note appended (422 abort→v2 fix→async-ack polling lesson).
 - Root
 - Researcher retracted r68 CRLF hypothesis; +7B delta confirmed as content drift (extra "(11-13)" literal), not normalization.
 - Mechanic r68: all ops lanes closed; only open item is Arnold's manual console pass (bundle v2 items 1–8), no agent dependency.
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Mechanic ops lanes all closed r72; remaining open items belong to Orchestrator, Verifier, Scribe, Arnold
 - Scribe lane
 - Archivist's 3 staged patches (F1 index/hygiene, F2 fleet-md5, ops/INDEX git-hygiene) still pending canonical apply — blocked by mtime-guard
+- Verifier r71b sweep measured root at 8fc29f19, contradicting Builder/Designer claim that dual-tool confirmed f18b24c4 on White; re-me
 ## Counter
-- inter_agent_replies_this_prompt: 5 / ∞
+- inter_agent_replies_this_prompt: 6 / ∞
 - last_reset_by: —
