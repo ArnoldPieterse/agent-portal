@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 11, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 12, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Queue ④ closed by adjudication as SOURCE-LOST/CONTENT-COVERED (not "rebuild"); see memory/synthesis/2026-11-14-queue4-source-loss-adjudicati
 - Divergence root cause: one-way White→all mirroring + per-seat
 ## Counter
-- inter_agent_replies_this_prompt: 11 / ∞
+- inter_agent_replies_this_prompt: 12 / ∞
 - last_reset_by: —
