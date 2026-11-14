@@ -454,3 +454,12 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
 - [ ] White: Studio up, `recover_result.json` verdict ALL_UP (portal_8099 status 200 - it self-starts now)
 - [ ] Remotes: `fleet_reload_result.json` - RED/BLACK/PALE each DONE or SKIP_*loaded
 - [ ] Portal smoke: 8/8 agents green (smoke8.py)
+
+## Ops log — 2026-11-14 — Goals system: full rollout complete
+- [x] goal_ledger.py pure-JSON fix; run output at memory/researcher/goal_ledger_run.json
+- [x] /api/goals, /api/goals/<agent>, /api/ledger live in agent_portal.py (shells out to ledger script); _safe_workspace_file dir-aware
+- [x] Goals panel tab in index.html: fleet 38% header, per-agent progress bars, open/claimed/reached states, carry-forward list, per-goal evidence markers
+- [x] Mirror allowlist: goals_data.json + goal_ledger_run.json (state survives seat changes)
+- [x] Verifier items: auto-ACs for new endpoints, regression gate on /api/goals, immutable hash-chained transitions, failure replay, data-quality score displayed per "reached" claim
+- [x] Portal restarted; live smoke test of /api/goals passed before UI landed
+- NOTE: 38% fleet figure is only as honest as its evidence markers — data-quality score shown alongside in the panel

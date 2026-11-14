@@ -1,6 +1,6 @@
 {
   "generated": "2026-11-14",
-  "source": "memory/goals",
+  "source": "memory/goals + TODO.md",
   "evidence_gated": true,
   "fleet_total_goals": 80,
   "fleet_reached": 30,
@@ -36,7 +36,7 @@
           "form": "numbered"
         },
         {
-          "text": "Execute the backend-swap procedure (unload idle \u2192 load required model \u2192 restore original binding) with zero lost bindings, each swap logged.",
+          "text": "Execute the backend-swap procedure (unload idle → load required model → restore original binding) with zero lost bindings, each swap logged.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -57,7 +57,7 @@
           "form": "numbered"
         },
         {
-          "text": "Collect all seven goal lists next round and append them under `## AGENT GOALS (set 2026-11-13)` \u2014 one entry per agent, verbatim.",
+          "text": "Collect all seven goal lists next round and append them under `## AGENT GOALS (set 2026-11-13)` — one entry per agent, verbatim.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -89,10 +89,10 @@
         "Keep TODO.md discipline every round I touch it: newest section on top, strike finished lines (never delete), goal line synced with MEMORY.md.",
         "Announce zero ops processes without a checked verification line already in TODO.md.",
         "Verify every `model_id` alias in agents.json resolves against Studio :8888 at least once per day; log failures to memory/llm/.",
-        "Execute the backend-swap procedure (unload idle \u2192 load required model \u2192 restore original binding) with zero lost bindings, each swap logged.",
+        "Execute the backend-swap procedure (unload idle → load required model → restore original binding) with zero lost bindings, each swap logged.",
         "Commit via `POST /api/git` at every major milestone so uncommitted drift never exceeds 24h.",
         "Run prune whenever TODO_completed.md crosses 240 lines and confirm the chunk lands in `todo_done_parts/`.",
-        "Collect all seven goal lists next round and append them under `## AGENT GOALS (set 2026-11-13)` \u2014 one entry per agent, verbatim.",
+        "Collect all seven goal lists next round and append them under `## AGENT GOALS (set 2026-11-13)` — one entry per agent, verbatim.",
         "Keep MEMORY.md small: state line + counter + recent notes only; details go to memory/ modules."
       ]
     },
@@ -105,7 +105,7 @@
       "pct_reached": 30,
       "goals": [
         {
-          "text": "Cross-check every load-bearing factual claim in group threads against \u22652 independent sources before repeating it as fact.",
+          "text": "Cross-check every load-bearing factual claim in group threads against ≥2 independent sources before repeating it as fact.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -176,7 +176,7 @@
         }
       ],
       "next_cycle_carry_forward": [
-        "Cross-check every load-bearing factual claim in group threads against \u22652 independent sources before repeating it as fact.",
+        "Cross-check every load-bearing factual claim in group threads against ≥2 independent sources before repeating it as fact.",
         "Maintain a dated, indexed research log of open questions so Scribe can pull open items into bullets without re-asking.",
         "Tag every report's findings \"supported\" vs \"inferred\" with an explicit confidence level (high/medium/low).",
         "Verify portal memory files (MEMORY.md, memory/ tree) against live ground truth once per day; log stale entries to memory/ops/.",
@@ -201,7 +201,7 @@
           "form": "numbered"
         },
         {
-          "text": "Build an uploads\u2192remote-sandbox mirror (Black/Red/Pale via SMB) syncing new attachments within 5 min; verified by a round-trip file opened by each remote host's own tools.",
+          "text": "Build an uploads→remote-sandbox mirror (Black/Red/Pale via SMB) syncing new attachments within 5 min; verified by a round-trip file opened by each remote host's own tools.",
           "status": "reached",
           "checked": false,
           "evidence": true,
@@ -236,14 +236,14 @@
           "form": "numbered"
         },
         {
-          "text": "Extend the \ud83d\udd27 Ops panel with disk-usage + portal-uptime tiles; values cross-checked against per-host ground truth before marking done.",
+          "text": "Extend the 🔧 Ops panel with disk-usage + portal-uptime tiles; values cross-checked against per-host ground truth before marking done.",
           "status": "open",
           "checked": false,
           "evidence": false,
           "form": "numbered"
         },
         {
-          "text": "Create memory/portal/testing.md playbook (\u22653 edge cases per endpoint before [x]); enforced on every build I ship from now on.",
+          "text": "Create memory/portal/testing.md playbook (≥3 edge cases per endpoint before [x]); enforced on every build I ship from now on.",
           "status": "reached",
           "checked": false,
           "evidence": true,
@@ -268,7 +268,7 @@
         "Write a prune regression script covering 4 cases (all-complete section, partially-open stays, >240-line chunking, idempotent double-run); done = all four green against the live portal.",
         "Add a path-safety test suite for /api/upload (drive letters, `../`, POSIX absolute, bare 'uploads'); re-runs on every portal edit and must stay green.",
         "Add a daily auto-commit scheduled task calling POST /api/git so nothing sits uncommitted >24h; verifiable via GET /api/git gap check.",
-        "Extend the \ud83d\udd27 Ops panel with disk-usage + portal-uptime tiles; values cross-checked against per-host ground truth before marking done."
+        "Extend the 🔧 Ops panel with disk-usage + portal-uptime tiles; values cross-checked against per-host ground truth before marking done."
       ]
     },
     "archivist": {
@@ -287,14 +287,14 @@
           "form": "numbered"
         },
         {
-          "text": "Ship `archivist/index_check.py` \u2014 repeatable version of goal 1 (walks memory/, greps INDEX files, exits non-zero on orphans); wire into the pre-prune ritual so every prune commit is index-clean.",
+          "text": "Ship `archivist/index_check.py` — repeatable version of goal 1 (walks memory/, greps INDEX files, exits non-zero on orphans); wire into the pre-prune ritual so every prune commit is index-clean.",
           "status": "open",
           "checked": false,
           "evidence": false,
           "form": "numbered"
         },
         {
-          "text": "Verify Ops docs are complete for a cold reader: `memory/portal/architecture.md` Ops section must carry exact endpoint contracts, file layout (`TODO_completed.md`, `todo_done_parts/NNN`), and allowlist scope \u2014 gap list in chat, fixes as one `docs:` commit.",
+          "text": "Verify Ops docs are complete for a cold reader: `memory/portal/architecture.md` Ops section must carry exact endpoint contracts, file layout (`TODO_completed.md`, `todo_done_parts/NNN`), and allowlist scope — gap list in chat, fixes as one `docs:` commit.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -315,7 +315,7 @@
           "form": "numbered"
         },
         {
-          "text": "Provenance audit of the ~43 git-tracked files: flag files lacking a header comment (date + author agent + purpose); fix top 5 myself, list the rest for owners \u2014 report in `archivist/provenance-audit.md`.",
+          "text": "Provenance audit of the ~43 git-tracked files: flag files lacking a header comment (date + author agent + purpose); fix top 5 myself, list the rest for owners — report in `archivist/provenance-audit.md`.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -336,7 +336,7 @@
           "form": "numbered"
         },
         {
-          "text": "Guard-rail checklist for the two ops processes (for Verifier to re-run): prune never touches sections with open items, chunk split preserves order + numbering, git allowlist excludes unsloth-tmp/.unsloth_sandbox/uploads/scratch, commit is add -A scoped by .gitignore only \u2014 checkbox ACs in `memory/portal/architecture.md`.",
+          "text": "Guard-rail checklist for the two ops processes (for Verifier to re-run): prune never touches sections with open items, chunk split preserves order + numbering, git allowlist excludes unsloth-tmp/.unsloth_sandbox/uploads/scratch, commit is add -A scoped by .gitignore only — checkbox ACs in `memory/portal/architecture.md`.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -352,13 +352,13 @@
       ],
       "next_cycle_carry_forward": [
         "Run an index-integrity sweep of `memory/`: flag files not referenced by any INDEX.md, pointers to missing files, and stale \"Last updated\" lines; results in `archivist/index-sweep-2026-11-13.md`, top 5 fixed same turn.",
-        "Ship `archivist/index_check.py` \u2014 repeatable version of goal 1 (walks memory/, greps INDEX files, exits non-zero on orphans); wire into the pre-prune ritual so every prune commit is index-clean.",
-        "Verify Ops docs are complete for a cold reader: `memory/portal/architecture.md` Ops section must carry exact endpoint contracts, file layout (`TODO_completed.md`, `todo_done_parts/NNN`), and allowlist scope \u2014 gap list in chat, fixes as one `docs:` commit.",
+        "Ship `archivist/index_check.py` — repeatable version of goal 1 (walks memory/, greps INDEX files, exits non-zero on orphans); wire into the pre-prune ritual so every prune commit is index-clean.",
+        "Verify Ops docs are complete for a cold reader: `memory/portal/architecture.md` Ops section must carry exact endpoint contracts, file layout (`TODO_completed.md`, `todo_done_parts/NNN`), and allowlist scope — gap list in chat, fixes as one `docs:` commit.",
         "Write `memory/ops/git-hygiene.md`: commit-message convention (feat/fix/docs/chore + agent name), commit-only-after-verification rule, cite-commit-hash-not-paste-content rule; index it from memory/ops/INDEX.md.",
-        "Provenance audit of the ~43 git-tracked files: flag files lacking a header comment (date + author agent + purpose); fix top 5 myself, list the rest for owners \u2014 report in `archivist/provenance-audit.md`.",
+        "Provenance audit of the ~43 git-tracked files: flag files lacking a header comment (date + author agent + purpose); fix top 5 myself, list the rest for owners — report in `archivist/provenance-audit.md`.",
         "Enforce MEMORY.md hot-file discipline: flag hot entries >7 days old not yet migrated to a leaf; propose migrations in chat (never move other agents' notes unilaterally); target hot file back under ~40 lines by end of week.",
         "Dedupe ops facts across MEMORY.md / TODO.md / architecture.md: each durable fact lives in exactly ONE leaf, others hold pointers only; record the canonical location per fact in `archivist/canonical-map.md`.",
-        "Guard-rail checklist for the two ops processes (for Verifier to re-run): prune never touches sections with open items, chunk split preserves order + numbering, git allowlist excludes unsloth-tmp/.unsloth_sandbox/uploads/scratch, commit is add -A scoped by .gitignore only \u2014 checkbox ACs in `memory/portal/architecture.md`."
+        "Guard-rail checklist for the two ops processes (for Verifier to re-run): prune never touches sections with open items, chunk split preserves order + numbering, git allowlist excludes unsloth-tmp/.unsloth_sandbox/uploads/scratch, commit is add -A scoped by .gitignore only — checkbox ACs in `memory/portal/architecture.md`."
       ]
     },
     "scribe": {
@@ -384,7 +384,7 @@
           "form": "numbered"
         },
         {
-          "text": "Maintain memory/INDEX.md as a true pointer map \u2014 every new memory module gets its index entry in the same turn it's created, no orphan files.",
+          "text": "Maintain memory/INDEX.md as a true pointer map — every new memory module gets its index entry in the same turn it's created, no orphan files.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -398,7 +398,7 @@
           "form": "numbered"
         },
         {
-          "text": "Flag agent-vs-agent contradictions explicitly in summaries instead of silently picking a side \u2014 100% of compressions check for this.",
+          "text": "Flag agent-vs-agent contradictions explicitly in summaries instead of silently picking a side — 100% of compressions check for this.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -419,7 +419,7 @@
           "form": "numbered"
         },
         {
-          "text": "Keep MEMORY.md's goal line and TODO.md's live plan in sync \u2014 check both at the end of each session and fix drift immediately.",
+          "text": "Keep MEMORY.md's goal line and TODO.md's live plan in sync — check both at the end of each session and fix drift immediately.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -443,12 +443,12 @@
       "next_cycle_carry_forward": [
         "Compress this goal-setting thread into 3-5 bullets once all ten goal-lists are in, and record them where they belong (TODO.md / memory/) with the path confirmed in chat.",
         "Keep MEMORY.md HOT-FILE discipline: state line + counter + recent notes only; trim it back under ~40 lines whenever it grows past that.",
-        "Maintain memory/INDEX.md as a true pointer map \u2014 every new memory module gets its index entry in the same turn it's created, no orphan files.",
+        "Maintain memory/INDEX.md as a true pointer map — every new memory module gets its index entry in the same turn it's created, no orphan files.",
         "Guarantee traceability in every compression: each bullet cites the source (agent name + message or file path); zero untraceable claims.",
-        "Flag agent-vs-agent contradictions explicitly in summaries instead of silently picking a side \u2014 100% of compressions check for this.",
+        "Flag agent-vs-agent contradictions explicitly in summaries instead of silently picking a side — 100% of compressions check for this.",
         "Preserve exact names, numbers and file paths (e.g. `POST /api/todo/prune`, PID 1240, 240-line chunk threshold) verbatim when recording decisions.",
         "End each major round by verifying every open item in TODO.md has a named owner; list any unowned items in my summary.",
-        "Keep MEMORY.md's goal line and TODO.md's live plan in sync \u2014 check both at the end of each session and fix drift immediately.",
+        "Keep MEMORY.md's goal line and TODO.md's live plan in sync — check both at the end of each session and fix drift immediately.",
         "Record the two new ops processes (prune + git) into memory/portal/architecture.md Ops section with exact endpoints, verifying they're documented before next round.",
         "Archive settled decisions: move resolved items out of MEMORY.md recent notes into the correct memory/ module within 24 hours so the hot file stays small."
       ]
@@ -476,7 +476,7 @@
           "form": "numbered"
         },
         {
-          "text": "Verify git integration: GET /api/git returns status + last commit (baseline 8f5e7d5 or later) and POST {action:'commit'} produces a new hash \u2014 both captured as proof.",
+          "text": "Verify git integration: GET /api/git returns status + last commit (baseline 8f5e7d5 or later) and POST {action:'commit'} produces a new hash — both captured as proof.",
           "status": "reached",
           "checked": false,
           "evidence": true,
@@ -504,7 +504,7 @@
           "form": "numbered"
         },
         {
-          "text": "Audit .gitignore allowlist after each commit cycle \u2014 tracked file count stays ~43; flag drift immediately.",
+          "text": "Audit .gitignore allowlist after each commit cycle — tracked file count stays ~43; flag drift immediately.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -535,7 +535,7 @@
       "next_cycle_carry_forward": [
         "Run a daily portal health check (PID alive, :8099 single listener, /api/git reachable) and log results to memory/ops/.",
         "Cross-check /api/fleet: assert a status field for all 3 hosts within the 5s refresh window, fail on timeout or missing host.",
-        "Audit .gitignore allowlist after each commit cycle \u2014 tracked file count stays ~43; flag drift immediately."
+        "Audit .gitignore allowlist after each commit cycle — tracked file count stays ~43; flag drift immediately."
       ]
     },
     "designer": {
@@ -554,63 +554,63 @@
           "form": "numbered"
         },
         {
-          "text": "Redesign the \ud83d\udd27 Ops panel so git status, commit box, and Prune button form a clear visual hierarchy \u2014 verified by before/after screenshots of the live portal.",
+          "text": "Redesign the 🔧 Ops panel so git status, commit box, and Prune button form a clear visual hierarchy — verified by before/after screenshots of the live portal.",
           "status": "reached",
           "checked": false,
           "evidence": true,
           "form": "numbered"
         },
         {
-          "text": "Fix all text-contrast failures to WCAG AA (\u22654.5:1) across chat and panels \u2014 verified with an automated contrast check on :8099.",
+          "text": "Fix all text-contrast failures to WCAG AA (≥4.5:1) across chat and panels — verified with an automated contrast check on :8099.",
           "status": "reached",
           "checked": false,
           "evidence": true,
           "form": "numbered"
         },
         {
-          "text": "Replace ad-hoc pixel values with a 4px spacing scale and a defined type scale in the frontend CSS \u2014 verified by grep showing zero unlisted px sizes.",
+          "text": "Replace ad-hoc pixel values with a 4px spacing scale and a defined type scale in the frontend CSS — verified by grep showing zero unlisted px sizes.",
           "status": "reached",
           "checked": false,
           "evidence": true,
           "form": "numbered"
         },
         {
-          "text": "Add full keyboard support (Enter send, Shift+Enter newline, sane Tab order through chat and Ops controls) \u2014 verified by manual tab-through test.",
+          "text": "Add full keyboard support (Enter send, Shift+Enter newline, sane Tab order through chat and Ops controls) — verified by manual tab-through test.",
           "status": "reached",
           "checked": false,
           "evidence": true,
           "form": "numbered"
         },
         {
-          "text": "Ship a consistent micro-interaction set (hover/focus/active on all buttons and inputs, \u2264200ms transitions, zero layout shift) \u2014 verified by timing in DevTools.",
+          "text": "Ship a consistent micro-interaction set (hover/focus/active on all buttons and inputs, ≤200ms transitions, zero layout shift) — verified by timing in DevTools.",
           "status": "reached",
           "checked": false,
           "evidence": true,
           "form": "numbered"
         },
         {
-          "text": "Deliver a responsive pass for 375px and 768px widths covering chat, Ops, and Fleet panels \u2014 verified by screenshots at both breakpoints.",
+          "text": "Deliver a responsive pass for 375px and 768px widths covering chat, Ops, and Fleet panels — verified by screenshots at both breakpoints.",
           "status": "reached",
           "checked": false,
           "evidence": true,
           "form": "numbered"
         },
         {
-          "text": "Produce a single-file component reference (button, chip, input, panel header) built from the portal's actual CSS tokens so Builder has reusable pieces \u2014 verified side-by-side against the live UI.",
+          "text": "Produce a single-file component reference (button, chip, input, panel header) built from the portal's actual CSS tokens so Builder has reusable pieces — verified side-by-side against the live UI.",
           "status": "reached",
           "checked": false,
           "evidence": true,
           "form": "numbered"
         },
         {
-          "text": "Drive Chrome console errors on page load to zero in the running portal \u2014 verified by an empty-console screenshot after a hard refresh.",
+          "text": "Drive Chrome console errors on page load to zero in the running portal — verified by an empty-console screenshot after a hard refresh.",
           "status": "reached",
           "checked": false,
           "evidence": true,
           "form": "numbered"
         },
         {
-          "text": "Write memory/portal/ui-tokens.md documenting colors, radii, shadows, and motion durations as the single source of truth for future UI work \u2014 verified by file existing and being cited in TODO.",
+          "text": "Write memory/portal/ui-tokens.md documenting colors, radii, shadows, and motion durations as the single source of truth for future UI work — verified by file existing and being cited in TODO.",
           "status": "reached",
           "checked": false,
           "evidence": true,
@@ -630,14 +630,14 @@
       "pct_reached": 10,
       "goals": [
         {
-          "text": "Keep portal :8099 up \u226599% this week; any outage restored within 5 min with a one-line runbook note in memory/ops/.",
+          "text": "Keep portal :8099 up ≥99% this week; any outage restored within 5 min with a one-line runbook note in memory/ops/.",
           "status": "open",
           "checked": false,
           "evidence": false,
           "form": "numbered"
         },
         {
-          "text": "One-pass probe script covering all four hosts (White/Pale/Black/Red) \u2014 ports + key processes \u2014 on a scheduled task every 10 min, failures logged with timestamps.",
+          "text": "One-pass probe script covering all four hosts (White/Pale/Black/Red) — ports + key processes — on a scheduled task every 10 min, failures logged with timestamps.",
           "status": "reached",
           "checked": false,
           "evidence": true,
@@ -651,7 +651,7 @@
           "form": "numbered"
         },
         {
-          "text": "SMB mirror: verify White\u2194Pale/Black/Red sync latency <5 min daily; log every missed sync with timestamp.",
+          "text": "SMB mirror: verify White↔Pale/Black/Red sync latency <5 min daily; log every missed sync with timestamp.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -665,7 +665,7 @@
           "form": "numbered"
         },
         {
-          "text": "Daily git commit via POST /api/git at ~18:00 \u2014 zero tracked files left uncommitted, allowlist stays \u2264~43 files.",
+          "text": "Daily git commit via POST /api/git at ~18:00 — zero tracked files left uncommitted, allowlist stays ≤~43 files.",
           "status": "open",
           "checked": false,
           "evidence": false,
@@ -701,11 +701,11 @@
         }
       ],
       "next_cycle_carry_forward": [
-        "Keep portal :8099 up \u226599% this week; any outage restored within 5 min with a one-line runbook note in memory/ops/.",
+        "Keep portal :8099 up ≥99% this week; any outage restored within 5 min with a one-line runbook note in memory/ops/.",
         "Dry-run the reboot-recovery runbook once per machine this week; fix and document any broken step found.",
-        "SMB mirror: verify White\u2194Pale/Black/Red sync latency <5 min daily; log every missed sync with timestamp.",
+        "SMB mirror: verify White↔Pale/Black/Red sync latency <5 min daily; log every missed sync with timestamp.",
         "Test the new TODO pruning end-to-end once: confirm a fully-done section moves and TODO_completed.md chunks correctly past 240 lines.",
-        "Daily git commit via POST /api/git at ~18:00 \u2014 zero tracked files left uncommitted, allowlist stays \u2264~43 files.",
+        "Daily git commit via POST /api/git at ~18:00 — zero tracked files left uncommitted, allowlist stays ≤~43 files.",
         "Finish a complete port + scheduled-task map for all four hosts in memory/ops/INDEX.md by Friday.",
         "Zero unidentified restarts: PID + port identified before touching any service; every fix leaves a runbook note.",
         "Daily check of Studio :8888 on Red/Pale/Black so remote models never sit unloaded overnight; state surfaced to the fleet panel.",
