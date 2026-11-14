@@ -15,3 +15,4 @@ Last updated: 2026-11-14. Grep by keyword; open ONE leaf per question. Bug entry
 - -> agent_portal.py   server code: endpoints, _index_block, build_system_prompt, counter lock
 - -> index.html        frontend code: cross-talk loop, linkifyFiles, ■ Stop, ↺ Reset
 - -> MEMORY.md         hot state;  -> TODO.md  work plan
+- prune edge cases tested / chunking math 240+200 / live e2e via API -> memory/portal/prune-edge-cases-2026-11-15.md   2026-11-15: unit ALL PASS + live 4 sections pruned (110 lines, no chunk due)

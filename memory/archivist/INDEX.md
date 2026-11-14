@@ -14,3 +14,4 @@ Last updated: 2026-11-14.
 - instances-md-pin-reconcile-2026-11-14.md -> memory/archivist\instances-md-pin-reconcile-2026-11-14.md   (auto-pointed 11-14 by Orchestrator on canonical)
 - llm-module-white-convention-r21.md -> memory/archivist\llm-module-white-convention-r21.md   (auto-pointed 11-14 by Orchestrator on canonical)
 - seat-root-anomaly-r14.md -> memory/archivist\seat-root-anomaly-r14.md   (auto-pointed 11-14 by Orchestrator on canonical)
+- index integrity sweep / dangling + orphans + stale dates / index_check.py hardened -> memory/archivist/index-integrity-2026-11-15.md   2026-11-15: 0 dangling after fixes; 308 orphans = organic round logs

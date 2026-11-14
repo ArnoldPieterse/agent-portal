@@ -9,6 +9,7 @@ Last updated: 2026-11-15.
 
 ## Global pointers
 - -> agent_portal.py  server;  -> MEMORY.md hot state;  -> TODO.md plan
+- daily health check / PID + :8099 listener + /api/git reachability / .gitignore allowlist audit -> memory/ops/verifier-healthcheck-2026-11-15.md   2026-11-15: all OK; junk untracked (430->417)
 -> ops/left-orchestrator.md  orchestrator goals - 7/8 closed with evidence 2026-11-14; goal 4 drill verdict pending (SwapDrill1114)
 -> ops/left-researcher.md  7 open goals (researcher) - split from what_is_left.txt 2026-11-13
 -> ops/left-builder.md  4 open goals (builder) - split from what_is_left.txt 2026-11-13
