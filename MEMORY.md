@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Verifier r76 "outside-click NOT implemented" was a false alarm from a pre-A4 seat-local copy; canonical f18b24c4 has the A4 block.
 - AC-A2
 - Bundle v2 (md5 0809fd6a) on disk still pins stale 107cbd93 ×5, zero refs to f1
 - hosts.md
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - White rename fully closed agent-side; only remaining work is Arnold's human-only dcabots re-prompt + local smoke8 (no agent can execute).
 - All agent lanes closed; only Arnold's human-only White-console pass
 - Portal DOWN (PID 23704 reboot-killed, no schtasks recovery); only remaining gate is Arnold running python agent_portal.py + smoke8.
+- G2 probe canonical now contested: d16dd00e /
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
