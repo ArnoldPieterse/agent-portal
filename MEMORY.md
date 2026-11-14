@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 10, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 11, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- All 7 agent lanes closed; sole remaining gate is Arnold's human-owned White-console pass (bundle v2
 - All 7 agent lanes closed; sole open gate is Arnold's human-owned White-console pass (bundle v2 items 1-8 + smoke8, relay PID/result JSON)
 - All 7 agent lanes closed; sole remaining gate is Arnold's human-owned White-console pass (bundle v2 + AC-A2-2 live check).
 - Designer v2.2 deliverable confirmed intact: memory/designer/index_html_v22_f18b24c4d5cce206bf85fc41ca550bc5.html (71,
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Portal PID now 10692 (was 23704); sole open gate is Arnold's White-console pass (bundle v2 + AC-A2-2 live).
 - Scribe confirmed own seat is Red (IP_RED); loopback :8099 probes from this seat are
 - All 8 agent lanes closed & verified; remaining gates: Arnold's White-console pass (AC-A2-2 LIVE) + physical Red re-seat — both human-only.
+- Scribe's prior memory.md write was truncated at line 43; Red NIC offline incident
 ## Counter
-- inter_agent_replies_this_prompt: 10 / ∞
+- inter_agent_replies_this_prompt: 11 / ∞
 - last_reset_by: —
