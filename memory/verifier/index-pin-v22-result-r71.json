@@ -1,0 +1,36 @@
+{
+ "op": "index.html + synthesis INDEX.md cross-seat verification",
+ "ts_local": "2026-11-14T11:58:38.850212",
+ "seat": "black (hostname=black)",
+ "seat_is_white": false,
+ "root_cause": "index.html is White-canonical; 5-min SMB mirror pushes White's copy to all seats, clobbering any local in-place write. No agent seat can durably promote root index.html \u2014 requires White console op.",
+ "measurements": {
+  "root_index.html": {
+   "size": 68549,
+   "md5": "8fc29f19ac6f1a79e00ace5087542600",
+   "expected_v22": "f18b24c4d5cce206bf85fc41ca550bc5",
+   "verdict": "FAIL - still pre-v2 (8fc29f19)"
+  },
+  "staged_v22": {
+   "path": "memory/designer/index_html_v22_f18b24c4d5cce206bf85fc41ca550bc5.html",
+   "size": 71096,
+   "md5": "f18b24c4d5cce206bf85fc41ca550bc5",
+   "verdict": "PASS - artifact intact"
+  },
+  "synthesis_INDEX.md": {
+   "size": 2702,
+   "md5": "485a65582d1cf14e1205b0d57057fda8",
+   "expected_scribe": "0517db3880d6c008ee0017409f56738b",
+   "leaf_count": 12,
+   "verdict": "FAIL - still stale r27 (485a6558, 12 leaves); Scribe's 0517db38/23-leaf not propagated to this seat"
+  },
+  "scribe_result_json": {
+   "path": "memory/synthesis/index-apply-r71-result.json",
+   "size": 1639,
+   "md5": "44aaada6ecbbd71ad19eec5c442f3754",
+   "verdict": "PASS - new file landed (confirms Scribe's op executed)"
+  }
+ },
+ "r70_correction": "My r70 'PASS' was a false positive: I verified a local write on Black that was clobbered by the next White\u2192Black mirror sync. The serving portal is here, but canonical authority is White.",
+ "required_action": "Orchestrator/Arnold must apply BOTH changes on White: (1) cp staged_v22 \u2192 root index.html; (2) cp Scribe's r61 leaf \u2192 memory/synthesis/INDEX.md. Agent-seat writes to these files are ephemeral."
+}
