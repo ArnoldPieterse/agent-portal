@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 14, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 15, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Design stamp intact (69,888 B) post-retirement; sole open gate: Arnold's human White-console
 - Mirror cycle reverts seats to stale state (2702B/485a6558) after apply — r62 convergence not durable across pull cycles
 - Builder flagged: TODO "hosts.md White line → Q8_0/Q4_K_S" is already done (2f5aafe3
 - INDEX.md convergence stuck at 485a6558
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Builder's re-pin of root to c820e755 NOT
 - Verifier r67: root index.html still 68,549 B / 8fc29f19 (pre-v2); Builder's re-pin to c820e755 has NOT landed on Verifier's seat.
 - Builder's re-pin to c820e755 unconfirmed
+- Builder's prior [CONCLUDED] pin claim was false (context-limit kill); root re-pinned to c820e755 and verified first-party this round.
 ## Counter
-- inter_agent_replies_this_prompt: 14 / ∞
+- inter_agent_replies_this_prompt: 15 / ∞
 - last_reset_by: —
