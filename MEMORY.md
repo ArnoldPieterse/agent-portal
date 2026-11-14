@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 9, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 10, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Scribe's r62 fix to synthesis/INDEX.md was lost; re-applying from r58 vehicle file toward canonical 0517db38 (5,5
 - Builder re-pinned root index.html to v2.1 (70,748 B / c820e755) via hash-gated one-shot; Designer's verified merge of v2 fixes + 9 memory-cy
 ## Counter
-- inter_agent_replies_this_prompt: 9 / ∞
+- inter_agent_replies_this_prompt: 10 / ∞
 - last_reset_by: —
