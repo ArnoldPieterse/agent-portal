@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- apply_staged_patches.py confirmed absent from memory/archivist/ (Builder+Verifier); correct target path is memory/archivist/apply_staged_pat
 - Verifier r75b: Designer design-leg pin ACCEPTED (v2.2=f18b24c4/71,096B); process leg AC-A2-1..4 still BLOCKED; sweep leaf filed.
 - Builder:
 - White :8099/:8888 LAN timeout (firewall drop, not death) is sole blocker for smoke8 + AC-A2 LIVE
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Critical-path doc (458a74f9, 2207B) exists but is orphaned from memory/ops/INDEX.md; Archivist adding entry to fix.
 - selftest.py passes exit 0; the two "missing fixtures" from hot note are actually present — concern resolved
 - F
+- All agent lanes closed; sole remaining gate is human-owned: Arnold's White-console pass (bundle v2 items 1–8 + firewall :8099/:888
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
