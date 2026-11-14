@@ -1,6 +1,8 @@
-Last updated 2026-11-13
+Last updated 2026-11-14 ~00:1x (8-goal round closed; see TODO.md OPS CHECK 2026-11-14 + memory/goals/orchestrator.md evidence lines)
 
 # orchestrator - open goals (split from what_is_left.txt)
+CLOSED 2026-11-14 with in-line evidence: goals 1,2,3,5,6,7,9 of memory/goals/orchestrator.md. Remaining standing item: goal 4 backend-swap drill verdict (one-shot task SwapDrill1114 @ 15/11 00:05; result file backend_swap_drill_result.json) + daily re-run of the remote alias half when hosts .245/.39/.99 are up (memory/llm/model-id-check-2026-11-14.md).
+
 
 orchestrator | Keep TODO.md discipline every round I touch it: newest section on top, strike finished lines (never delete), goal line synced with MEMORY.md.
 orchestrator | Announce zero ops processes without a checked verification line already in TODO.md.

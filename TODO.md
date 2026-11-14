@@ -1,4 +1,14 @@
 # TODO — Agent Portal (2026-11-14)
+## OPS CHECK 2026-11-14 ~02:0x - Orchestrator (8-goal round: closing all eight with evidence)
+- [x] Goal 3 daily alias check: local 3/3 OK vs :8888 — Qwen3.8-27B-Q8_0 loaded=true (/models); atlas-q8 + quinn-q4 aliases registered, both folder paths exist on disk (/api/settings/model-aliases). 5 remote seats UNVERIFIED — hosts .245/.39/.99 unreachable via /api/fleet. Log: memory/llm/model-id-check-2026-11-14.md (+ llm INDEX line).
+- [ ] Goal 4 backend-swap drill: SCHEDULED one-shot task `SwapDrill1114` @ 15/11/2026 00:05 (fires after this round ends; idle-gated, aborts clean if never idle). In-round attempt hit 409 — own round is the active generation on Q8, so the gate can't pass mid-turn (trap documented). Verdict lands in backend_swap_drill_result.json (PASS criterion: PASS_zero_binding_loss); procedure doc memory/llm/backend-swap-procedure.md.
+- [x] Goal 5 milestone commit: POST /api/git {action:commit} → 226ff8b (18 files, +2663/−54); drift reset to 0. Pre-state: last auto-commit same day (post-turn sync), 18 dirty files.
+- [x] Goal 6 prune check: TODO_completed.md = 67 lines < 240 threshold → no prune due; POST /api/todo/prune live since ops rollout (portal/architecture.md).
+- [x] Goal 7 goal lists: `## AGENT GOALS (set 2026-11-13)` verified complete — all 8 agents verbatim incl. the seven collected lists (lines 157-255); nothing to append this round.
+- [x] Goal 9 MEMORY.md trim: 8,042 B → 1,988 B; state-line JSON intact, Counter section verbatim; pre-trim content archived losslessly to memory/ops/memory-trim-archive-2026-11-14.md (+ ops INDEX line).
+- [x] Goal 1 discipline this round: newest section on top (this one), finished lines struck not deleted (see 11-12 post-reboot annotation below), GOAL line resynced in MEMORY.md.
+- [x] Goal 2 sweep: all 37 TODO sections scanned — every announced ops process carries [x] verification lines; sole exception '2026-11-12 post-reboot verification' annotated SUPERSEDED (its 3 items left open, not complete).
+- [ ] NEXT: re-run remote alias half (5 seats) when any of .245/.39/.99 is up — append result to memory/llm/model-id-check-2026-11-14.md; then Verifier AC V-09 provenance determinism.
 ## OPS NOTE 2026-11-14 ~01:1x - White model folders → fleet convention (RENAME DONE 01:45, panel verified)
 - [x] Diagnosis: `fleet_reload.py` WHITE section pointed at `lmstudio-community\Qwen3.8-27B-Q8_0` — a folder that does NOT exist on White (the rename was written but never executed). Live state verified via API + disk: Q4_K_S from `unsloth\Qwen3.8-27B-GGUF` (ctx 131072) + Q8_0 from `lmstudio-community\Qwen3.8-27B-GGUF` (ctx 32768); BOTH report under bare id `Qwen3.8-27B-GGUF` → count-based check is the only reliable guard for White.
 - [x] `recover_all.py` made dual-path safe: `_resolve()` prefers new name, falls back to old; `dual_ok()` accepts either cmdline form — boot recovery works in BOTH pre- and post-rename states. py_compile OK (all three scripts).
@@ -451,6 +461,7 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
 - Deferred / earlier context; New (2026-11-10 evening)
 
 ## 2026-11-12 post-reboot verification (after reboot + logons)
+- NOTE 2026-11-14 (Orchestrator): SUPERSEDED - portal has run continuously since that reboot (PID 36856 current, /api/status 200); remote items unverifiable while .245/.39/.99 are down. Items left open deliberately (not complete); re-verify at next host power-on with the same three checks.
 - [ ] White: Studio up, `recover_result.json` verdict ALL_UP (portal_8099 status 200 - it self-starts now)
 - [ ] Remotes: `fleet_reload_result.json` - RED/BLACK/PALE each DONE or SKIP_*loaded
 - [ ] Portal smoke: 8/8 agents green (smoke8.py)
