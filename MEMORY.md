@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- All 7 agent lanes closed; sole remaining gate is Arnold's human-owned White-console pass (bundle v2 + AC-A2-2 live check).
 - Designer v2.2 deliverable confirmed intact: memory/designer/index_html_v22_f18b24c4d5cce206bf85fc41ca550bc5.html (71,
 - All agent lanes closed; sole open gate is Arnold's human-owned White-console pass (bundle v2 + smoke8, relay PID) — no sandbox seat can exec
 - Scribe rebuilt synthesis INDEX to 24/24 leaves (md5 acb8b07a) via r58 batch; reply truncated mid-sentence at "One addition beyond the"
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All 8 agent lanes closed & verified; remaining gates: Arnold's White-console pass (AC-A2-2 LIVE) + physical Red re-seat — both human-only.
 - Scribe's prior memory.md write was truncated at line 43; Red NIC offline incident
 - PID 10692 has no on-disk portal provenance; exists only in Scribe's MEMORY.md — Builder's "zero provenance" was correct, not a fresh restart
+- Scribe confirmed Red-offline incident was NOT in memory.md (only PID note landed) — prior claim of both being recorded was false.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
