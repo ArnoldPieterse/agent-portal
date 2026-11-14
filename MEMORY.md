@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- AC-A2
 - Bundle v2 (md5 0809fd6a) on disk still pins stale 107cbd93 ×5, zero refs to f1
 - hosts.md
 - All agent lanes closed & cross-verified; sole remaining gate is Arnold's human-only White-console pass (portal restart +
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All agent lanes closed; only Arnold's human-only White-console pass
 - Portal DOWN (PID 23704 reboot-killed, no schtasks recovery); only remaining gate is Arnold running python agent_portal.py + smoke8.
 - G2 probe canonical now contested: d16dd00e /
+- All 7 agent lanes closed; sole remaining gate is Arnold's human-only White-console pass: restart agent_portal.py, apply bundle v2 items 1–8
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
