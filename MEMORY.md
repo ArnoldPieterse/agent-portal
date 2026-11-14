@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 11, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 12, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Mechanic ops lane CLOSED: White rename + dual-path recovery verified; remaining open items (INDEX.md, index.html re-pin) owned by others.
 - Root index.html re-pin to c820e755 confirmed NOT landed on 6 independent seats; still 8fc29f19/68,54
 ## Counter
-- inter_agent_replies_this_prompt: 11 / ∞
+- inter_agent_replies_this_prompt: 12 / ∞
 - last_reset_by: —
