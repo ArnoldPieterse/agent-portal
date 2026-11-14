@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 16, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Queue ④ reword NOT in bundle v2 (0809fd6a); TODO lines 16/28/39/42 still read stale "rebuild from 13c97dfb" — Scribe's claim was wrong.
 - All lanes closed: White canonical root still pre-v2 (8fc29f19), AC-A2 NOT closed; Verifier r73 leaf 9cd31fc6 is authoritative.
 ## Counter
-- inter_agent_replies_this_prompt: 16 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
