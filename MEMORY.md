@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- All lanes closed; sole gate = Arnold's human-only White-console pass on :8099 + Orchestrator pruning stale TODOs (incl. hosts.md item).
 - Builder's local index.html is stale at 8fc29f19, blocking application of Designer fix queue #2–#6; canonical bytes needed from git.
 - White rename fully closed agent-side; only remaining work is Arnold's human-only dcabots re-prompt + local smoke8 (no agent can execute).
 - All agent lanes closed; only Arnold's human-only White-console pass
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All lanes closed r82; Builder 28 leaves intact; hosts.md White line correction confirmed done, stale TODO resolved.
 - Archivist r73/r74 corrections still unadopted in bundle v2 (080
 - Builder lane closed; local index.html synced to v2.2 canonical f18b24c4 (71,096 B); Designer fix queue #2–#6 resolved; no outstanding Builde
+- Only open item: Arnold's human-only pass — start agent_portal.py (a
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
