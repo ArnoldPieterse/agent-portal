@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Builder flagged: TODO "hosts.md White line → Q8_0/Q4_K_S" is already done (2f5aafe3
 - INDEX.md convergence stuck at 485a6558
 - index.html size
 - Scribe's r62 fix to synthesis/INDEX.md was lost; re-applying from r58 vehicle file toward canonical 0517db38 (5,5
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Builder's re-pin to c820e755 unconfirmed
 - Builder's prior [CONCLUDED] pin claim was false (context-limit kill); root re-pinned to c820e755 and verified first-party this round.
 - Builder's re-pin of root→c820e755 contested in r67; Designer
+- G2 probe-JSON files still absent on root (mirror lag) — Researcher's second-seat confirm lane remains blocked
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
