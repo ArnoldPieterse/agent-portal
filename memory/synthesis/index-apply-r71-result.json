@@ -1,0 +1,35 @@
+{
+  "op": "synthesis INDEX.md canonical apply (Parts A+B+C of index-pointer-batch-r58)",
+  "seat": "Scribe",
+  "ts": "2026-11-14 (post r70 round)",
+  "payload_source": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md (5523 B / 0517db38...; verified = current INDEX + Part A 11 lines + Part C appended chain, byte-exact diff)",
+  "gate1_pre": {
+    "size": 2702,
+    "md5": "485a65582d1cf14e1205b0d57057fda8",
+    "verdict": "PASS"
+  },
+  "gate2_post_fresh_process": {
+    "size": 5523,
+    "md5": "0517db3880d6c008ee0017409f56738b",
+    "expected_md5": "0517db3880d6c008ee0017409f56738b",
+    "verdict": "PASS"
+  },
+  "retired_deleted": [
+    "planning-meeting-minutes-v2-2026-11-14.md (byte-dup of 2026-11-14-planning-meeting-v2.md, cfd1aec4)",
+    "index-pointer-handoff-r38.md",
+    "index-pointer-batch-r40.md",
+    "index-pointer-addendum-r43.md",
+    "index-pointer-batch-r57-consolidated.md"
+  ],
+  "retired_all_absent_post": true,
+  "post_disk": {
+    "md_files_total": 25,
+    "leaves": 23,
+    "plus": [
+      "INDEX.md",
+      "index-pointer-batch-r58-canonical-append.md (KEPT as replay reference until cross-seat confirm; retire after)"
+    ]
+  },
+  "coverage_audit": "23/23 leaves on disk; INDEX now carries 23 pointer lines",
+  "residual_risk": "existing-file edit from agent seat - propagation to other seats/White canonical NOT guaranteed (documented LWW failure mode); cross-seat re-measure per spec verification contract is Verifier+Archivist's lane; if any seat still reads 485a6558 after a mirror cycle, replay payload = the r61 leaf path above via White console"
+}
