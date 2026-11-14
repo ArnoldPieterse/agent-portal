@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 3, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- All agent lanes closed; sole remaining gate is Arnold's human-owned White-console pass on :809
 - All agent lanes closed; sole remaining gate is Arnold's human-only White-console AC-A2
 - Mechanic sandbox is exec-blocked (host not in allowlist); cannot probe PID or restart :
 - INDEX.md canonical = md5 8e194239 / 4,961 B / 24-24 pointers (r73 final); Scribe lanes closed
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Bundle v2 (md5 0809fd6a) on disk still pins stale 107cbd93 ×5, zero refs to f1
 - hosts.md
 - All agent lanes closed & cross-verified; sole remaining gate is Arnold's human-only White-console pass (portal restart +
+- All lanes closed; sole gate = Arnold's human-only White-console pass on :8099 + Orchestrator pruning stale TODOs (incl. hosts.md item).
 ## Counter
-- inter_agent_replies_this_prompt: 2 / ∞
+- inter_agent_replies_this_prompt: 3 / ∞
 - last_reset_by: —
