@@ -2,7 +2,7 @@
 """memory_mirror.py - push shared project state into REMOTE host sandboxes over SMB.
 
 Companion to _sync_workspace_to_sandbox() in agent_portal.py (which two-way syncs HERE <-> White's
-own sandbox per chat turn). This script pushes the git-tracked allowlist HERE -> \\host\C$ for
+own sandbox per chat turn). This script pushes the git-tracked allowlist HERE -> \\\host\\C$ for
 Red/Pale/Black so remote agents can read TODO.md / MEMORY.md / code / memory/ with their own tools
 (2026-11-13 mount asymmetry), and PULLS BACK each host's memory/ tree so remote agent work lands in
 White (r29, 2026-11-13).
@@ -91,7 +91,7 @@ def _decide(sp, dp, skew_tol, root_canonical=False):
     return "skip_stale", {}
 
 def ensure_conn(ip, user, pw):
-    """Make sure \\ip\C$ is reachable; try net use with creds if not. Returns (ok, note)."""
+    """Make sure \\\ip\\C$ is reachable; try net use with creds if not. Returns (ok, note)."""
     root = r"\\%s\C$" % ip
     try:
         os.stat(root)
