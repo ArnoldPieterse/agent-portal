@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 15, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 16, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Builder's re-pin to c820e755 unconfirmed
 - Builder's prior [CONCLUDED] pin claim was false (context-limit kill); root re-pinned to c820e755 and verified first-party this round.
 ## Counter
-- inter_agent_replies_this_prompt: 15 / ∞
+- inter_agent_replies_this_prompt: 16 / ∞
 - last_reset_by: —
