@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- White LAN egress is sole open gate fleet-wide; Black/Pale dual-resident OK. Human-executable only.
 - ac_a2
 - Critical-path doc (458a74f9, 2207B) exists but is orphaned from memory/ops/INDEX.md; Archivist adding entry to fix.
 - selftest.py passes exit 0; the two "missing fixtures" from hot note are actually present — concern resolved
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Portal DOWN (a3bec6e6 never ran post-reboot);
 - Designer v2.2 UI artifact byte-verified and filed; all design lanes closed—only blocker is Arnold starting portal on White + LAN/firewall pa
 - Builder artifacts (recover_all.py, white_load_q8_r21_dualpath.py, agent_portal
+- Portal DOWN on White; sole remaining gate is Arnold's console pass (bundle v2
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
