@@ -132,8 +132,14 @@ def main():
 
     total = sum(len(v) for v in all_goals.values())
     evidenced = sum(1 for v in all_goals.values() for g in v if g["status"] == "evidenced")
+    # AC V-09 (Verifier, 2026-11-15): derive 'generated' from the input tree
+    # (max mtime of the goal files) instead of wall clock, so the report
+    # regenerates byte-identical from the same file tree.
+    mtimes = [os.path.getmtime(os.path.join(GOALS_DIR, a + ".md"))
+              for a in AGENTS if os.path.exists(os.path.join(GOALS_DIR, a + ".md"))]
+    generated = datetime.fromtimestamp(max(mtimes) if mtimes else 0).isoformat(timespec="seconds")
     report = {
-        "generated": datetime.now().isoformat(),
+        "generated": generated,
         "generator": "Archivist / goal_provenance.py",
         "wish": "Provenance-Linked Goal Audit: every goal carries an unbroken evidence chain to its proving artifact",
         "summary": {

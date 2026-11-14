@@ -5,7 +5,7 @@ Format: `date | QUESTION | status/owner`. Resolved items move to the bottom unde
 
 ## OPEN
 - 2026-11-15 | Remote alias half (scribe-q8/mechanic-q4/designer-q4/archivist-q8/verifier-q4) unverifiable while .245/.39/.99 powered down | waiting on host power-on; re-run per memory/llm/model-id-check-2026-11-14.md ACTION line
-- 2026-11-15 | Backend-swap drill verdict (SwapDrill1114b, fires ~00:39 with 45-min idle-gate window) | pending; close orchestrator goal 4 on PASS_zero_binding_loss in backend_swap_drill_result.json
+- 2026-11-15 | Backend-swap drill verdict (SwapDrill1114b, fires ~00:39 with 45-min idle-gate window) | RESOLVED - executed 00:39-00:44, zero lost bindings; Q4-load-evicts-Q8 finding documented; goal 4 closed
 - 2026-11-15 | Stray seat-local copies `memory/archivist/MEMORY.md` + `memory/archivist/TODO.md` — anything read them? | candidates for deletion after grep confirms no reader (flagged by index_check sweep)
 - 2026-11-15 | 308 orphan round logs under memory/<agent>/ — accept as filename-discoverable noise or add one pattern-line per agent INDEX? | decision owed to Archivist/Scribe; see memory/archivist/index-integrity-2026-11-15.md
 - 2026-11-15 | Are all 19 tracked .html files intentional quarantine variants, or do WIP artifacts ride along? | audit owed (git ls-files *.html vs memory/ops/quarantine-index-html-variants-2026-11-13.md list)

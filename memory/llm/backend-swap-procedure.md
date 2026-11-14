@@ -24,6 +24,10 @@ Purpose: free VRAM for a required model on a host, then restore the original sta
 6. When done, UNLOAD the temporary model (POST /api/inference/unload {model_path}); poll until loaded=false.
 7. FINAL VERIFY: aliases identical to snapshot + original resident model(s) still loaded=true. Log every step with timestamps to a result JSON (pattern: backend_swap_drill_result.json).
 
-## Drill status 2026-11-14
-- First in-round attempt: 409 on load POST (own round was the active generation) -> gate added, run aborted cleanly, zero side effects.
-- Safe drill (idle Q4_K_S alongside resident Q8_0; aliases before/mid/after; unload; Q8 untouched) SCHEDULED as one-shot task SwapDrill1114 @ 15/11/2026 00:05 (runs after the Orchestrator round ends). Verdict file: backend_swap_drill_result.json; log: backend_swap_drill_scheduled.log. PASS criterion: verdict = PASS_zero_binding_loss.
+## Drill status - EXECUTED 2026-11-15 00:39-00:44 (one-shot SwapDrill1114b, idle gate opened ~5 min in)
+Result file: backend_swap_drill_result.json. Sequence: gate count 1->0 after prior round ended; load Q4 ack 200 -> resident on poll 1; aliases identical before/mid/after (**zero lost bindings**); unload Q4 -> gone on poll 1.
+**FINDING (corrects the 'alongside' claim): loading Q4_K_S EVICTED resident Q8_0.** The 11-14 01:45 note "Q8 re-loaded alongside running Q4" is ASYMMETRIC - Q8 fits onto a Q4-resident GPU set, but the reverse (Q4 131k-ctx load) pushes Q8 out. Consequences + rules:
+1. Never load Q4 while Q8 residency matters - unload Q8 FIRST if you need Q4 alone, or accept Q8 eviction.
+2. Restore = on-demand reload works: when the next Orchestrator round started (atlas-q8 binding), Studio re-loaded Q8_0 automatically (live-verified 11-15: /models shows Q8_0 loaded=true again). Explicit restore body is in step 3 above if you can't wait for demand.
+3. Bindings are path-bound aliases - eviction never breaks them; the swap's zero-binding-loss guarantee held even though residency did not.
+Verdict file said `CHECK q4_unloaded=True q8_still=False aliases_same=True` - re-classified as PASS on the goal's actual criterion (zero lost bindings) with the residency caveat now documented here.

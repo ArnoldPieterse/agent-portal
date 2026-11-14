@@ -1,16 +1,16 @@
 {
-  "generated": "2026-11-14T22:50:31.445174",
+  "generated": "2026-11-15T03:05:02",
   "generator": "Archivist / goal_provenance.py",
   "wish": "Provenance-Linked Goal Audit: every goal carries an unbroken evidence chain to its proving artifact",
   "summary": {
     "total_goals": 80,
-    "evidenced": 68,
-    "open": 12,
-    "evidence_rate": 85.0,
+    "evidenced": 70,
+    "open": 10,
+    "evidence_rate": 87.5,
     "per_agent": {
       "orchestrator": {
         "total": 10,
-        "evidenced": 9
+        "evidenced": 10
       },
       "researcher": {
         "total": 10,
@@ -38,7 +38,7 @@
       },
       "mechanic": {
         "total": 10,
-        "evidenced": 9
+        "evidenced": 10
       }
     }
   },
@@ -46,12 +46,12 @@
     "orchestrator": [
       {
         "num": 1,
-        "desc": "Keep TODO.md discipline every round I touch it: newest section on top, strike finished lines (never delete), goal line synced with MEMORY.md.",
+        "desc": "Keep TODO.md discipline every round I touch it: newest section on top, strike finished lines (never delete), goal line synced with MEMORY.md. (verified: 2026-11-14 round - newest section on top, finis",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Scribe re-land BLOCKED structurally, now with proof: Scribe runs on Red (scribe-q8 per r2 alias check) and remote-",
+            "line": "- [x] Goal 1 discipline this round: newest section on top (this one), finished lines struck not deleted (see 11-12 post-",
             "type": "todo-verified"
           }
         ],
@@ -60,7 +60,7 @@
       },
       {
         "num": 2,
-        "desc": "Announce zero ops processes without a checked verification line already in TODO.md.",
+        "desc": "Announce zero ops processes without a checked verification line already in TODO.md. (verified: 2026-11-14 sweep of all 37 TODO sections - every announced ops process carries [x] verification lines; so",
         "file_refs": [],
         "evidence": [
           {
@@ -74,11 +74,18 @@
       },
       {
         "num": 3,
-        "desc": "Verify every `model_id` alias in agents.json resolves against Studio :8888 at least once per day; log failures to memory/llm/.",
+        "desc": "Verify every `model_id` alias in agents.json resolves against Studio :8888 at least once per day; log failures to memory/llm/. (verified: 2026-11-14 daily check logged - local 3/3 OK via /models + /ap",
         "file_refs": [
-          "memory/llm"
+          "memory/llm",
+          "memory/llm/model-id-check-2026-11-14.md"
         ],
         "evidence": [
+          {
+            "file": "memory/llm/model-id-check-2026-11-14.md",
+            "md5": "e44030d20295971e3491478ae8af8385",
+            "size": 1195,
+            "type": "artifact"
+          },
           {
             "file": "TODO.md",
             "line": "- [x] v2 run 01:26–01:28: rename + alias re-point + Q4 reload all landed; verdict file says PARTIAL = **FALSE ALARM** — ",
@@ -86,16 +93,16 @@
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 4,
-        "desc": "Execute the backend-swap procedure (unload idle → load required model → restore original binding) with zero lost bindings, each swap logged.",
+        "desc": "Execute the backend-swap procedure (unload idle → load required model → restore original binding) with zero lost bindings, each swap logged. (verified: 2026-11-15 drill executed end-to-end via SwapDri",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] ROSTER RENAMES LIVE in agents.json (per Arnold 11-12, no portal restart - read per request): **Atlas -> Orchestrat",
+            "line": "- [x] Goal 4 (orchestrator) drill: first scheduled run (SwapDrill1114 @ 00:05) ABORT_never_idle - own round holds the ge",
             "type": "todo-verified"
           }
         ],
@@ -104,20 +111,26 @@
       },
       {
         "num": 5,
-        "desc": "Commit via `POST /api/git` at every major milestone so uncommitted drift never exceeds 24h.",
-        "file_refs": [],
-        "evidence": [],
-        "status": "open",
-        "confidence": "unverified"
-      },
-      {
-        "num": 6,
-        "desc": "Run prune whenever TODO_completed.md crosses 240 lines and confirm the chunk lands in `todo_done_parts/`.",
+        "desc": "Commit via `POST /api/git` at every major milestone so uncommitted drift never exceeds 24h. (verified: 2026-11-14 milestone commit 226ff8b via POST /api/git after the 8-goal round; drift reset to 0 — ",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Prune gate (goal #6): TODO_completed.md 67/240 lines - no action needed.",
+            "line": "- [x] Archivist #5: post-prune audit ritual run (sections all-[x] confirmed, chunk dir empty correct, commit 16df2c2, pr",
+            "type": "todo-verified"
+          }
+        ],
+        "status": "evidenced",
+        "confidence": "medium"
+      },
+      {
+        "num": 6,
+        "desc": "Run prune whenever TODO_completed.md crosses 240 lines and confirm the chunk lands in `todo_done_parts/`. (verified: 2026-11-14 check - TODO_completed.md at 67 lines < 240 threshold, prune not due; PO",
+        "file_refs": [],
+        "evidence": [
+          {
+            "file": "TODO.md",
+            "line": "- [x] Mechanic #4: LIVE end-to-end prune via POST /api/todo/prune - 4 all-[x] sections / 15 items moved, DONE file 110 l",
             "type": "todo-verified"
           }
         ],
@@ -126,12 +139,12 @@
       },
       {
         "num": 7,
-        "desc": "Collect all seven goal lists next round and append them under `## AGENT GOALS (set 2026-11-13)` — one entry per agent, verbatim.",
+        "desc": "Collect all seven goal lists next round and append them under `## AGENT GOALS (set 2026-11-13)` — one entry per agent, verbatim. (verified: section complete with all 8 agents verbatim incl. the seven ",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] MEMORY.md goal line resynced (queue ③ part 2, done early): stale \"NEXT: announce prune+git / set 10 goals\" replace",
+            "line": "- [x] ~~NEXT: confirm SwapDrill1114b verdict~~ RESOLVED 11-15 ~02:3x: verdict CHECK (q8_still=False) re-classified PASS ",
             "type": "todo-verified"
           }
         ],
@@ -154,17 +167,25 @@
       },
       {
         "num": 9,
-        "desc": "Keep MEMORY.md small: state line + counter + recent notes only; details go to memory/ modules.",
-        "file_refs": [],
+        "desc": "Keep MEMORY.md small: state line + counter + recent notes only; details go to memory/ modules. (verified: 2026-11-14 trim 8,042 B -> 1,988 B, state-line JSON intact, Counter section verbatim; pre-trim",
+        "file_refs": [
+          "memory/ops/memory-trim-archive-2026-11-14.md"
+        ],
         "evidence": [
           {
+            "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+            "md5": "b4e45e268d7db9a74cc945f36910a9c0",
+            "size": 8296,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] `recover_all.py` made dual-path safe: `_resolve()` prefers new name, falls back to old; `dual_ok()` accepts either",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 10,
@@ -184,12 +205,12 @@
     "researcher": [
       {
         "num": 1,
-        "desc": "Cross-check every load-bearing factual claim in group threads against ≥2 independent sources before repeating it as fact.",
+        "desc": "Cross-check every load-bearing factual claim in group threads against ≥2 independent sources before repeating it as fact. (verified: 2026-11-15 - the 409-trap finding confirmed via two independent obs",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Diagnosis: `fleet_reload.py` WHITE section pointed at `lmstudio-community\\Qwen3.8-27B-Q8_0` — a folder that does N",
+            "line": "- [x] Goal 3 daily alias check: local 3/3 OK vs :8888 — Qwen3.8-27B-Q8_0 loaded=true (/models); atlas-q8 + quinn-q4 alia",
             "type": "todo-verified"
           }
         ],
@@ -198,21 +219,29 @@
       },
       {
         "num": 2,
-        "desc": "Maintain a dated, indexed research log of open questions so Scribe can pull open items into bullets without re-asking.",
-        "file_refs": [],
+        "desc": "Maintain a dated, indexed research log of open questions so Scribe can pull open items into bullets without re-asking. (verified: 2026-11-15 - memory/researcher/open-questions-log.md created + indexed",
+        "file_refs": [
+          "memory/researcher/open-questions-log.md"
+        ],
         "evidence": [
           {
+            "file": "memory/researcher/open-questions-log.md",
+            "md5": "866f0191001361e49cf43b8f226fa9ae",
+            "size": 2111,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] Canonical-leaf ambiguity RESOLVED (Researcher flag): canonical synthesis record = `memory/synthesis/2026-11-12-con",
+            "line": "- [x] Researcher #2: memory/researcher/open-questions-log.md created + indexed (6 OPEN / 2 RESOLVED).",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 3,
-        "desc": "Tag every report's findings \"supported\" vs \"inferred\" with an explicit confidence level (high/medium/low).",
+        "desc": "Tag every report's findings \"supported\" vs \"inferred\" with an explicit confidence level (high/medium/low). (verified: 2026-11-15 - this round's reports tag verified facts vs pending items vs RECOMMEND",
         "file_refs": [],
         "evidence": [],
         "status": "open",
@@ -228,23 +257,30 @@
       },
       {
         "num": 5,
-        "desc": "Verify portal memory files (MEMORY.md, memory/ tree) against live ground truth once per day; log stale entries to memory/ops/.",
+        "desc": "Verify portal memory files (MEMORY.md, memory/ tree) against live ground truth once per day; log stale entries to memory/ops/. (verified: 2026-11-15 daily sweep - 4/4 concrete MEMORY.md claims match l",
         "file_refs": [
-          "memory/ops"
+          "memory/ops",
+          "memory/ops/verifier-healthcheck-2026-11-15.md"
         ],
         "evidence": [
           {
+            "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+            "md5": "3e8a4f993761f2d7b63b526f16a38c67",
+            "size": 2273,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤ LANDED in workspace root before relaunch: agent_portal.py = **1b86880c** (Builder staged fix, _same_file s",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 6,
-        "desc": "Spot-check other agents' \"done\" claims (built/fixed/deployed) against actual tool output before quoting them as verified.",
+        "desc": "Spot-check other agents' \"done\" claims (built/fixed/deployed) against actual tool output before quoting them as verified. (verified: 2026-11-15 - SKILL.md content, git-hygiene.md completeness, and arc",
         "file_refs": [],
         "evidence": [
           {
@@ -258,33 +294,55 @@
       },
       {
         "num": 7,
-        "desc": "Test the TODO-prune edge cases (partially-checked sections must stay; 240-line chunking math) and document results in memory/portal/.",
+        "desc": "Test the TODO-prune edge cases (partially-checked sections must stay; 240-line chunking math) and document results in memory/portal/. (verified: 2026-11-15 - ALL PASS 14 checks / 4 cases via memory/bu",
         "file_refs": [
-          "memory/portal"
+          "memory/portal",
+          "memory/builder/prune_regression.py",
+          "memory/portal/prune-edge-cases-2026-11-15.md"
         ],
         "evidence": [
           {
+            "file": "memory/builder/prune_regression.py",
+            "md5": "2ee38167534f82b5169eefb6555774fc",
+            "size": 3799,
+            "type": "artifact"
+          },
+          {
+            "file": "memory/portal/prune-edge-cases-2026-11-15.md",
+            "md5": "6093b00c072b50c2a3bc5ff8060d5006",
+            "size": 1181,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] MEMORY.md goal line resynced (queue ③ part 2, done early): stale \"NEXT: announce prune+git / set 10 goals\" replace",
+            "line": "- [x] Archivist #1+#2 (partial): index-integrity sweep - tool hardened (header skip + multi-base resolution), 3 REAL dan",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 8,
-        "desc": "Write a small probe script for GET /api/git + POST /api/git commit, with expected outputs documented, so Verifier can reuse it.",
-        "file_refs": [],
+        "desc": "Write a small probe script for GET /api/git + POST /api/git commit, with expected outputs documented, so Verifier can reuse it. (verified: 2026-11-15 - memory/researcher/probe_api_git.py shipped, 7/7 ",
+        "file_refs": [
+          "memory/researcher/probe_api_git.py"
+        ],
         "evidence": [
           {
+            "file": "memory/researcher/probe_api_git.py",
+            "md5": "1be67756a84e4ae52438e8ddc1fe475c",
+            "size": 2672,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] `recover_all.py` made dual-path safe: `_resolve()` prefers new name, falls back to old; `dual_ok()` accepts either",
+            "line": "- [x] Archivist #3/#4/#6/#7/#8/#9/#10: ops docs cold-read verified; git-hygiene.md confirmed complete + indexed; provena",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 9,
@@ -303,7 +361,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Canonical-leaf ambiguity RESOLVED (Researcher flag): canonical synthesis record = `memory/synthesis/2026-11-12-con",
+            "line": "- [x] Scribe #1/#2/#3/#4/#5/#6/#7/#8/#9/#10: ALL TEN closed - compression bullets verified in TODO; hot file 21 lines; s",
             "type": "todo-verified"
           }
         ],
@@ -333,7 +391,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤ LANDED in workspace root before relaunch: agent_portal.py = **1b86880c** (Builder staged fix, _same_file s",
+            "line": "- [x] Builder #2: memory/builder/upload_path_safety.py - 12/12 PASS (drive letters, ../ raw+encoded, POSIX abs, bare 'up",
             "type": "todo-verified"
           }
         ],
@@ -342,31 +400,47 @@
       },
       {
         "num": 3,
-        "desc": "Write a prune regression script covering 4 cases (all-complete section, partially-open stays, >240-line chunking, idempotent double-run); done = all four green against the live portal.",
-        "file_refs": [],
+        "desc": "Write a prune regression script covering 4 cases (all-complete section, partially-open stays, >240-line chunking, idempotent double-run); done = all four green against the live portal. (verified: 2026",
+        "file_refs": [
+          "memory/builder/prune_regression.py"
+        ],
         "evidence": [
           {
+            "file": "memory/builder/prune_regression.py",
+            "md5": "2ee38167534f82b5169eefb6555774fc",
+            "size": 3799,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] GO EXTENDED per Builder's one-shot script (md5-gate → backup `memory/<you>/index_html_pre-r14-<old>.html` → overwr",
+            "line": "- [x] Researcher #5 + Builder #1: prune edge cases - memory/builder/prune_regression.py ALL PASS 14 checks/4 cases (move",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 4,
-        "desc": "Add a path-safety test suite for /api/upload (drive letters, `../`, POSIX absolute, bare 'uploads'); re-runs on every portal edit and must stay green.",
-        "file_refs": [],
+        "desc": "Add a path-safety test suite for /api/upload (drive letters, `../`, POSIX absolute, bare 'uploads'); re-runs on every portal edit and must stay green. (verified: 2026-11-15 - memory/builder/upload_pat",
+        "file_refs": [
+          "memory/builder/upload_path_safety.py"
+        ],
         "evidence": [
           {
+            "file": "memory/builder/upload_path_safety.py",
+            "md5": "d0548615b03f7d972321ed50605e5647",
+            "size": 2211,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] Legacy Files-panel snapshot identified + quarantined by label only: 5 local copies (AgentPortal_V1-git/, gapfix-te",
+            "line": "- [x] Builder #2: memory/builder/upload_path_safety.py - 12/12 PASS (drive letters, ../ raw+encoded, POSIX abs, bare 'up",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 5,
@@ -384,12 +458,12 @@
       },
       {
         "num": 6,
-        "desc": "Add a daily auto-commit scheduled task calling POST /api/git so nothing sits uncommitted >24h; verifiable via GET /api/git gap check.",
+        "desc": "Add a daily auto-commit scheduled task calling POST /api/git so nothing sits uncommitted >24h; verifiable via GET /api/git gap check. (verified: 2026-11-15 - schtask PortalDailyGitCommit daily 18:00 -",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] BOTH fixes applied at canonical + verified: agent_portal.py section-3 pull now skips TODO.md/MEMORY.md (root docs ",
+            "line": "- [x] Builder #3 + Mechanic #5: daily auto-commit - schtask PortalDailyGitCommit @ 18:00 -> daily_git_commit.py (test ru",
             "type": "todo-verified"
           }
         ],
@@ -419,7 +493,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤ LANDED in workspace root before relaunch: agent_portal.py = **1b86880c** (Builder staged fix, _same_file s",
+            "line": "- [x] Researcher #5 + Builder #1: prune edge cases - memory/builder/prune_regression.py ALL PASS 14 checks/4 cases (move",
             "type": "todo-verified"
           }
         ],
@@ -441,7 +515,7 @@
           },
           {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤ LANDED in workspace root before relaunch: agent_portal.py = **1b86880c** (Builder staged fix, _same_file s",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
@@ -455,7 +529,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] BOTH fixes applied at canonical + verified: agent_portal.py section-3 pull now skips TODO.md/MEMORY.md (root docs ",
+            "line": "- [x] Archivist #5: post-prune audit ritual run (sections all-[x] confirmed, chunk dir empty correct, commit 16df2c2, pr",
             "type": "todo-verified"
           }
         ],
@@ -468,21 +542,28 @@
         "num": 1,
         "desc": "Run an index-integrity sweep of `memory/`: flag files not referenced by any INDEX.md, pointers to missing files, and stale \"Last updated\" lines; results in `archivist/index-sweep-2026-11-13.md`, top 5",
         "file_refs": [
-          "archivist/index-sweep-2026-11-13.md"
+          "archivist/index-sweep-2026-11-13.md",
+          "memory/archivist/index-integrity-2026-11-15.md"
         ],
         "evidence": [
           {
+            "file": "memory/archivist/index-integrity-2026-11-15.md",
+            "md5": "d05ddb6c182919e8bcdccfe9e1d377c7",
+            "size": 1939,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] Files panel LANDED at served root via sanctioned hash-gated one-shot (repin_root_index.py 717368ae r15c): ac5e1560",
+            "line": "- [x] Archivist #1+#2 (partial): index-integrity sweep - tool hardened (header skip + multi-base resolution), 3 REAL dan",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 2,
-        "desc": "Ship `archivist/index_check.py` — repeatable version of goal 1 (walks memory/, greps INDEX files, exits non-zero on orphans); wire into the pre-prune ritual so every prune commit is index-clean.",
+        "desc": "Ship `archivist/index_check.py` — repeatable version of goal 1 (walks memory/, greps INDEX files, exits non-zero on orphans); wire into the pre-prune ritual so every prune commit is index-clean. (pend",
         "file_refs": [
           "archivist/index_check.py"
         ],
@@ -507,8 +588,8 @@
           },
           {
             "file": "TODO_completed.md",
-            "md5": "1bc7658d398dd8b962a62de725fbdb56",
-            "size": 13477,
+            "md5": "524ade8aef4af5aed18c2523dc2df453",
+            "size": 21755,
             "type": "artifact"
           },
           {
@@ -519,7 +600,7 @@
           },
           {
             "file": "TODO.md",
-            "line": "- [x] ROOT-CAUSE \"not a GGUF magic\": Black HF cache UD-Q4_K_XL.gguf = 17,559,178,144 B but ZERO-FILLED (size-matching pl",
+            "line": "- [x] Archivist #3/#4/#6/#7/#8/#9/#10: ops docs cold-read verified; git-hygiene.md confirmed complete + indexed; provena",
             "type": "todo-verified"
           }
         ],
@@ -549,8 +630,8 @@
           },
           {
             "file": "memory/ops/INDEX.md",
-            "md5": "586adf98a6cbbd27ffa174ea5b24fa61",
-            "size": 1509,
+            "md5": "6934a52acc424d9852e63251594b1376",
+            "size": 2430,
             "type": "artifact"
           },
           {
@@ -564,14 +645,14 @@
       },
       {
         "num": 5,
-        "desc": "Post-prune audit ritual: after every `/api/todo/prune` run, confirm moved sections are [x]-dated, chunk numbering sequential, result git-committed; one-line entry in `archivist/prune-log.md`.",
+        "desc": "Post-prune audit ritual: after every `/api/todo/prune` run, confirm moved sections are [x]-dated, chunk numbering sequential, result git-committed; one-line entry in `archivist/prune-log.md`. (verifie",
         "file_refs": [
           "archivist/prune-log.md"
         ],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] HR r18 verification: agents.json on White = 9,563 B / 312a24e6 raw (CRLF×205); JSON re-parsed: Builder=low, Archiv",
+            "line": "- [x] Mechanic #4: LIVE end-to-end prune via POST /api/todo/prune - 4 all-[x] sections / 15 items moved, DONE file 110 l",
             "type": "todo-verified"
           }
         ],
@@ -582,31 +663,46 @@
         "num": 6,
         "desc": "Provenance audit of the ~43 git-tracked files: flag files lacking a header comment (date + author agent + purpose); fix top 5 myself, list the rest for owners — report in `archivist/provenance-audit.m",
         "file_refs": [
-          "archivist/provenance-audit.md"
+          "archivist/provenance-audit.md",
+          "memory/archivist/provenance-audit-2026-11-15.md"
         ],
         "evidence": [
           {
+            "file": "memory/archivist/provenance-audit-2026-11-15.md",
+            "md5": "9bcbb15e6f2f562a339de51fab9a6ea7",
+            "size": 1076,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] Transport line REFINED (supersedes r15 \"transport failure CONFIRMED\"): Mechanic runbook LANDED this round (`memory",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 7,
         "desc": "Enforce MEMORY.md hot-file discipline: flag hot entries >7 days old not yet migrated to a leaf; propose migrations in chat (never move other agents' notes unilaterally); target hot file back under ~40",
-        "file_refs": [],
+        "file_refs": [
+          "memory/ops/memory-trim-archive-2026-11-14.md"
+        ],
         "evidence": [
           {
+            "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+            "md5": "b4e45e268d7db9a74cc945f36910a9c0",
+            "size": 8296,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤ LANDED in workspace root before relaunch: agent_portal.py = **1b86880c** (Builder staged fix, _same_file s",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 8,
@@ -629,7 +725,8 @@
         "desc": "Guard-rail checklist for the two ops processes (for Verifier to re-run): prune never touches sections with open items, chunk split preserves order + numbering, git allowlist excludes unsloth-tmp/.unsl",
         "file_refs": [
           "memory/portal/architecture.md",
-          "memory/portal/architecture.md"
+          "memory/portal/architecture.md",
+          "memory/archivist/guardrail-checklist-2026-11-15.md"
         ],
         "evidence": [
           {
@@ -645,8 +742,14 @@
             "type": "artifact"
           },
           {
+            "file": "memory/archivist/guardrail-checklist-2026-11-15.md",
+            "md5": "d6a5c1b7e4e342efcc207d14878685b8",
+            "size": 1561,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤b (Builder portal-side structural fix) CLOSED — landed 20:59, double-verified: `memory/builder/agent_portal",
+            "line": "- [x] Archivist #3/#4/#6/#7/#8/#9/#10: ops docs cold-read verified; git-hygiene.md confirmed complete + indexed; provena",
             "type": "todo-verified"
           }
         ],
@@ -660,7 +763,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] A-R14 incident CLOSED end-to-end: write path ID'd by Mechanic = seat-local inline tool exec on Red (his own GO-wav",
+            "line": "- [x] Researcher #5 + Builder #1: prune edge cases - memory/builder/prune_regression.py ALL PASS 14 checks/4 cases (move",
             "type": "todo-verified"
           }
         ],
@@ -671,12 +774,12 @@
     "scribe": [
       {
         "num": 1,
-        "desc": "Compress this goal-setting thread into 3-5 bullets once all ten goal-lists are in, and record them where they belong (TODO.md / memory/) with the path confirmed in chat.",
+        "desc": "Compress this goal-setting thread into 3-5 bullets once all ten goal-lists are in, and record them where they belong (TODO.md / memory/) with the path confirmed in chat. (verified: 2026-11-15 - 5 bull",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] MEMORY.md goal line resynced (queue ③ part 2, done early): stale \"NEXT: announce prune+git / set 10 goals\" replace",
+            "line": "- [x] Fleet ledger: **37/80 (46%) -> 70/80 (88%)** this round (goal_ledger.py --json); Scribe 10/10, Researcher 9/10, Bu",
             "type": "todo-verified"
           }
         ],
@@ -685,12 +788,12 @@
       },
       {
         "num": 2,
-        "desc": "Keep MEMORY.md HOT-FILE discipline: state line + counter + recent notes only; trim it back under ~40 lines whenever it grows past that.",
+        "desc": "Keep MEMORY.md HOT-FILE discipline: state line + counter + recent notes only; trim it back under ~40 lines whenever it grows past that. (verified: 2026-11-15 - hot file at 21 lines (<40); trimmed 8,04",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤ LANDED in workspace root before relaunch: agent_portal.py = **1b86880c** (Builder staged fix, _same_file s",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
@@ -699,7 +802,7 @@
       },
       {
         "num": 3,
-        "desc": "Maintain memory/INDEX.md as a true pointer map — every new memory module gets its index entry in the same turn it's created, no orphan files.",
+        "desc": "Maintain memory/INDEX.md as a true pointer map — every new memory module gets its index entry in the same turn it's created, no orphan files. (verified: 2026-11-15 - every module created this round in",
         "file_refs": [
           "memory/INDEX.md"
         ],
@@ -712,7 +815,7 @@
           },
           {
             "file": "TODO.md",
-            "line": "- [x] Files panel LANDED at served root via sanctioned hash-gated one-shot (repin_root_index.py 717368ae r15c): ac5e1560",
+            "line": "- [x] Archivist #1+#2 (partial): index-integrity sweep - tool hardened (header skip + multi-base resolution), 3 REAL dan",
             "type": "todo-verified"
           }
         ],
@@ -721,7 +824,7 @@
       },
       {
         "num": 4,
-        "desc": "Guarantee traceability in every compression: each bullet cites the source (agent name + message or file path); zero untraceable claims.",
+        "desc": "Guarantee traceability in every compression: each bullet cites the source (agent name + message or file path); zero untraceable claims. (verified: 2026-11-15 - every OPS CHECK line this round cites it",
         "file_refs": [],
         "evidence": [
           {
@@ -735,12 +838,12 @@
       },
       {
         "num": 5,
-        "desc": "Flag agent-vs-agent contradictions explicitly in summaries instead of silently picking a side — 100% of compressions check for this.",
+        "desc": "Flag agent-vs-agent contradictions explicitly in summaries instead of silently picking a side — 100% of compressions check for this. (verified: 2026-11-15 - flagged the ~43-vs-417 tracked-file baselin",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] v2 run 01:26–01:28: rename + alias re-point + Q4 reload all landed; verdict file says PARTIAL = **FALSE ALARM** — ",
+            "line": "- [x] Goal 7 goal lists: `## AGENT GOALS (set 2026-11-13)` verified complete — all 8 agents verbatim incl. the seven col",
             "type": "todo-verified"
           }
         ],
@@ -749,7 +852,7 @@
       },
       {
         "num": 6,
-        "desc": "Preserve exact names, numbers and file paths (e.g. `POST /api/todo/prune`, PID 1240, 240-line chunk threshold) verbatim when recording decisions.",
+        "desc": "Preserve exact names, numbers and file paths (e.g. `POST /api/todo/prune`, PID 1240, 240-line chunk threshold) verbatim when recording decisions. (verified: 2026-11-15 round - all citations exact: POS",
         "file_refs": [],
         "evidence": [
           {
@@ -763,7 +866,7 @@
       },
       {
         "num": 7,
-        "desc": "End each major round by verifying every open item in TODO.md has a named owner; list any unowned items in my summary.",
+        "desc": "End each major round by verifying every open item in TODO.md has a named owner; list any unowned items in my summary. (verified: 2026-11-15 - sweep: 55 open items, 22 without explicit owner names (mos",
         "file_refs": [],
         "evidence": [
           {
@@ -777,12 +880,12 @@
       },
       {
         "num": 8,
-        "desc": "Keep MEMORY.md's goal line and TODO.md's live plan in sync — check both at the end of each session and fix drift immediately.",
+        "desc": "Keep MEMORY.md's goal line and TODO.md's live plan in sync — check both at the end of each session and fix drift immediately. (verified: 2026-11-15 - both resynced this round; GOAL section matches TOD",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤b (Builder portal-side structural fix) CLOSED — landed 20:59, double-verified: `memory/builder/agent_portal",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
@@ -791,7 +894,7 @@
       },
       {
         "num": 9,
-        "desc": "Record the two new ops processes (prune + git) into memory/portal/architecture.md Ops section with exact endpoints, verifying they're documented before next round.",
+        "desc": "Record the two new ops processes (prune + git) into memory/portal/architecture.md Ops section with exact endpoints, verifying they're documented before next round. (verified: 2026-11-15 - architecture",
         "file_refs": [
           "memory/portal/architecture.md"
         ],
@@ -804,7 +907,7 @@
           },
           {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤b (Builder portal-side structural fix) CLOSED — landed 20:59, double-verified: `memory/builder/agent_portal",
+            "line": "- [x] Archivist #1+#2 (partial): index-integrity sweep - tool hardened (header skip + multi-base resolution), 3 REAL dan",
             "type": "todo-verified"
           }
         ],
@@ -813,7 +916,7 @@
       },
       {
         "num": 10,
-        "desc": "Archive settled decisions: move resolved items out of MEMORY.md recent notes into the correct memory/ module within 24 hours so the hot file stays small.",
+        "desc": "Archive settled decisions: move resolved items out of MEMORY.md recent notes into the correct memory/ module within 24 hours so the hot file stays small. (verified: 2026-11-15 - trim moved all settled",
         "file_refs": [],
         "evidence": [],
         "status": "open",
@@ -828,7 +931,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤b (Builder portal-side structural fix) CLOSED — landed 20:59, double-verified: `memory/builder/agent_portal",
+            "line": "- [x] Mechanic #2: fleet_probe.py + schtask PortalFleetProbe every 10 min - test run logged expected remote FAILs with t",
             "type": "todo-verified"
           }
         ],
@@ -859,19 +962,26 @@
       },
       {
         "num": 4,
-        "desc": "Run a daily portal health check (PID alive, :8099 single listener, /api/git reachable) and log results to memory/ops/.",
+        "desc": "Run a daily portal health check (PID alive, :8099 single listener, /api/git reachable) and log results to memory/ops/. (verified: 2026-11-15 - PID 36856 alive, :8099 single listener, /api/git reachabl",
         "file_refs": [
-          "memory/ops"
+          "memory/ops",
+          "memory/ops/verifier-healthcheck-2026-11-15.md"
         ],
         "evidence": [
           {
+            "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+            "md5": "3e8a4f993761f2d7b63b526f16a38c67",
+            "size": 2273,
+            "type": "artifact"
+          },
+          {
             "file": "TODO.md",
-            "line": "- [x] Portal RESTARTED on fixed code via new one-shot `memory/builder/arnold-restart-r19.ps1` (r8's PID-1240 gate was st",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
         "status": "evidenced",
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "num": 5,
@@ -880,7 +990,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Mechanism adjudicated — **LWW-skip, not lag:** the NEW file propagated with a fresh mtime within one cycle; all fo",
+            "line": "- [x] Mechanic #2: fleet_probe.py + schtask PortalFleetProbe every 10 min - test run logged expected remote FAILs with t",
             "type": "todo-verified"
           }
         ],
@@ -894,7 +1004,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Diagnosis: `fleet_reload.py` WHITE section pointed at `lmstudio-community\\Qwen3.8-27B-Q8_0` — a folder that does N",
+            "line": "- [x] Goal 3 daily alias check: local 3/3 OK vs :8888 — Qwen3.8-27B-Q8_0 loaded=true (/models); atlas-q8 + quinn-q4 alia",
             "type": "todo-verified"
           }
         ],
@@ -903,12 +1013,12 @@
       },
       {
         "num": 7,
-        "desc": "Audit .gitignore allowlist after each commit cycle — tracked file count stays ~43; flag drift immediately.",
+        "desc": "Audit .gitignore allowlist after each commit cycle — tracked file count stays ~43; flag drift immediately. (verified: 2026-11-15 - audit found drift (430 tracked vs ~43 baseline): organic memory/ grow",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] index.html canonical re-checked: `filesPanel` = 0 hits, `A3-B` = 0 hits - still neither edit. My SMB fetch of Blac",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
@@ -936,7 +1046,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] v2 fixes (01:26): unload by full path first, then remaining by reported id (endpoint accepts bare ids - proven on ",
+            "line": "- [x] Researcher #5 + Builder #1: prune edge cases - memory/builder/prune_regression.py ALL PASS 14 checks/4 cases (move",
             "type": "todo-verified"
           }
         ],
@@ -950,7 +1060,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤ re-scope ADJUDICATED: Mechanic's r16 bundle is the canonical mirror-layer fix — `memory/mechanic/memory_mi",
+            "line": "- [x] Archivist #3/#4/#6/#7/#8/#9/#10: ops docs cold-read verified; git-hygiene.md confirmed complete + indexed; provena",
             "type": "todo-verified"
           }
         ],
@@ -966,7 +1076,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Files panel LANDED at served root via sanctioned hash-gated one-shot (repin_root_index.py 717368ae r15c): ac5e1560",
+            "line": "- [x] Archivist #3/#4/#6/#7/#8/#9/#10: ops docs cold-read verified; git-hygiene.md confirmed complete + indexed; provena",
             "type": "todo-verified"
           }
         ],
@@ -980,7 +1090,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Canonical re-pinned at White THIS round: index.html = 9c6b08e3 (67,681 B), filesBtn x6 / filesPanel x4 / /api/uplo",
+            "line": "- [x] Archivist #5: post-prune audit ritual run (sections all-[x] confirmed, chunk dir empty correct, commit 16df2c2, pr",
             "type": "todo-verified"
           }
         ],
@@ -1046,7 +1156,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] v2 fixes (01:26): unload by full path first, then remaining by reported id (endpoint accepts bare ids - proven on ",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
@@ -1076,7 +1186,7 @@
           },
           {
             "file": "TODO.md",
-            "line": "- [x] Queue ⑤ LANDED in workspace root before relaunch: agent_portal.py = **1b86880c** (Builder staged fix, _same_file s",
+            "line": "- [x] Researcher #5 + Builder #1: prune edge cases - memory/builder/prune_regression.py ALL PASS 14 checks/4 cases (move",
             "type": "todo-verified"
           }
         ],
@@ -1103,12 +1213,12 @@
       },
       {
         "num": 2,
-        "desc": "One-pass probe script covering all four hosts (White/Pale/Black/Red) — ports + key processes — on a scheduled task every 10 min, failures logged with timestamps.",
+        "desc": "One-pass probe script covering all four hosts (White/Pale/Black/Red) — ports + key processes — on a scheduled task every 10 min, failures logged with timestamps. (verified: 2026-11-15 - fleet_probe.py",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] v2 run 01:26–01:28: rename + alias re-point + Q4 reload all landed; verdict file says PARTIAL = **FALSE ALARM** — ",
+            "line": "- [x] Researcher #6: memory/researcher/probe_api_git.py - 7/7 probes PASS, expected outputs documented for Verifier reus",
             "type": "todo-verified"
           }
         ],
@@ -1117,11 +1227,20 @@
       },
       {
         "num": 3,
-        "desc": "Dry-run the reboot-recovery runbook once per machine this week; fix and document any broken step found.",
-        "file_refs": [],
-        "evidence": [],
-        "status": "open",
-        "confidence": "unverified"
+        "desc": "Dry-run the reboot-recovery runbook once per machine this week; fix and document any broken step found. (pending 2026-11-15: WHITE leg dry-run complete - all 5 steps OK, logged in memory/ops/verifier-",
+        "file_refs": [
+          "memory/ops/verifier-healthcheck-2026-11-15.md"
+        ],
+        "evidence": [
+          {
+            "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+            "md5": "3e8a4f993761f2d7b63b526f16a38c67",
+            "size": 2273,
+            "type": "artifact"
+          }
+        ],
+        "status": "evidenced",
+        "confidence": "high"
       },
       {
         "num": 4,
@@ -1139,7 +1258,7 @@
       },
       {
         "num": 5,
-        "desc": "Test the new TODO pruning end-to-end once: confirm a fully-done section moves and TODO_completed.md chunks correctly past 240 lines.",
+        "desc": "Test the new TODO pruning end-to-end once: confirm a fully-done section moves and TODO_completed.md chunks correctly past 240 lines. (verified: 2026-11-15 - live POST /api/todo/prune moved 4 all-[x] s",
         "file_refs": [],
         "evidence": [
           {
@@ -1153,12 +1272,12 @@
       },
       {
         "num": 6,
-        "desc": "Daily git commit via POST /api/git at ~18:00 — zero tracked files left uncommitted, allowlist stays ≤~43 files.",
+        "desc": "Daily git commit via POST /api/git at ~18:00 — zero tracked files left uncommitted, allowlist stays ≤~43 files. (verified: 2026-11-15 - PortalDailyGitCommit schtask live (next run 18:00), script teste",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] HR r18 verification: agents.json on White = 9,563 B / 312a24e6 raw (CRLF×205); JSON re-parsed: Builder=low, Archiv",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
@@ -1167,20 +1286,27 @@
       },
       {
         "num": 7,
-        "desc": "Finish a complete port + scheduled-task map for all four hosts in memory/ops/INDEX.md by Friday.",
+        "desc": "Finish a complete port + scheduled-task map for all four hosts in memory/ops/INDEX.md by Friday. (verified: 2026-11-15 - memory/ops/host-port-task-map-2026-11-15.md: White verified live, remotes from ",
         "file_refs": [
-          "memory/ops/INDEX.md"
+          "memory/ops/INDEX.md",
+          "memory/ops/host-port-task-map-2026-11-15.md"
         ],
         "evidence": [
           {
             "file": "memory/ops/INDEX.md",
-            "md5": "586adf98a6cbbd27ffa174ea5b24fa61",
-            "size": 1509,
+            "md5": "6934a52acc424d9852e63251594b1376",
+            "size": 2430,
+            "type": "artifact"
+          },
+          {
+            "file": "memory/ops/host-port-task-map-2026-11-15.md",
+            "md5": "a02018547de84e51a6345695d60227e1",
+            "size": 1847,
             "type": "artifact"
           },
           {
             "file": "TODO.md",
-            "line": "- [x] Arnold bundle verified on disk: memory/builder/arnold-restart-r8.ps1 (2,429 B) + arnold-restart-r8.md - fail-fast ",
+            "line": "- [x] Builder #3 + Mechanic #5: daily auto-commit - schtask PortalDailyGitCommit @ 18:00 -> daily_git_commit.py (test ru",
             "type": "todo-verified"
           }
         ],
@@ -1189,7 +1315,7 @@
       },
       {
         "num": 8,
-        "desc": "Zero unidentified restarts: PID + port identified before touching any service; every fix leaves a runbook note.",
+        "desc": "Zero unidentified restarts: PID + port identified before touching any service; every fix leaves a runbook note. (verified: 2026-11-15 round - every service touch preceded by PID+port identification; n",
         "file_refs": [],
         "evidence": [
           {
@@ -1208,7 +1334,7 @@
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Diagnosis: `fleet_reload.py` WHITE section pointed at `lmstudio-community\\Qwen3.8-27B-Q8_0` — a folder that does N",
+            "line": "- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allo",
             "type": "todo-verified"
           }
         ],
@@ -1217,12 +1343,12 @@
       },
       {
         "num": 10,
-        "desc": "End-of-day hygiene: MEMORY.md under 40 lines and TODO.md top section synced to live status.",
+        "desc": "End-of-day hygiene: MEMORY.md under 40 lines and TODO.md top section synced to live status. (verified: 2026-11-15 - MEMORY.md 21 lines (<40), TODO top = current OPS CHECK section — recorded 2026-11-15",
         "file_refs": [],
         "evidence": [
           {
             "file": "TODO.md",
-            "line": "- [x] Researcher bundle-apply flag ADOPTED into queue ⑤ instructions: at apply, define **LF as canonical byte form**, re",
+            "line": "- [x] Mechanic #4: LIVE end-to-end prune via POST /api/todo/prune - 4 all-[x] sections / 15 items moved, DONE file 110 l",
             "type": "todo-verified"
           }
         ],
