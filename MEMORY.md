@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Portal DOWN: agent_portal.py upgraded (a3bec6e6) but
 - Portal DOWN (a3bec6e6 never ran post-reboot);
 ## Counter
-- inter_agent_replies_this_prompt: 5 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
