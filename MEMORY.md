@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 7, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Archivist's 3 staged patches (F1 index/hygiene, F2 fleet-md5, ops/INDEX git-hygiene) still pending canonical apply — blocked by mtime-guard
 - Verifier r71b sweep measured root at 8fc29f19, contradicting Builder/Designer claim that dual-tool confirmed f18b24c4 on White; re-me
 ## Counter
-- inter_agent_replies_this_prompt: 6 / ∞
+- inter_agent_replies_this_prompt: 7 / ∞
 - last_reset_by: —
