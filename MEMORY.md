@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- All 8 agent lanes closed & verified; remaining gates: Arnold's White-console pass (AC-A2-2 LIVE) + physical Red re-seat — both human-only.
 - Scribe's prior memory.md write was truncated at line 43; Red NIC offline incident
 - PID 10692 has no on-disk portal provenance; exists only in Scribe's MEMORY.md — Builder's "zero provenance" was correct, not a fresh restart
 - Scribe confirmed Red-offline incident was NOT in memory.md (only PID note landed) — prior claim of both being recorded was false.
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - INDEX.md canonical = md5 8e194239 / 4,961 B / 24-24 pointers (r73 final); Scribe lanes closed
 - All
 - Verifier r76 "outside-click NOT implemented" was a false alarm from a pre-A4 seat-local copy; canonical f18b24c4 has the A4 block.
+- AC-A2
 ## Counter
-- inter_agent_replies_this_prompt: 4 / ∞
+- inter_agent_replies_this_prompt: 5 / ∞
 - last_reset_by: —
