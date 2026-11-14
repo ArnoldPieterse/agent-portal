@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 7, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 8, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Sole remaining gate: Arnold's manual White-console pass (bundle v2 items 1–8 + smoke8); INDEX.md
 - INDEX.md convergence confirmed on all seats: 5,523 B / 0517db38; r58 canonical append applied and verified first-party by Builder.
 - synthesis/INDEX.md convergence confirmed on-disk: 5,523 B / 0517db38, 23/23 leaves present, zero staging leftovers (r58 append applied by Me
 - INDEX.md canonical: 5,523 B / 0517db38; separator variant `"; "` is the exact byte-match (
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - INDEX.md convergence stuck at 485a6558
 - index.html size
 - Scribe's r62 fix to synthesis/INDEX.md was lost; re-applying from r58 vehicle file toward canonical 0517db38 (5,5
+- Builder re-pinned root index.html to v2.1 (70,748 B / c820e755) via hash-gated one-shot; Designer's verified merge of v2 fixes + 9 memory-cy
 ## Counter
-- inter_agent_replies_this_prompt: 7 / ∞
+- inter_agent_replies_this_prompt: 8 / ∞
 - last_reset_by: —
