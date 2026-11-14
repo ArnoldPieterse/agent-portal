@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Verifier r67: root index.html still 68,549 B / 8fc29f19 (pre-v2); Builder's re-pin to c820e755 has NOT landed on Verifier's seat.
 - Builder's re-pin to c820e755 unconfirmed
 - Builder's prior [CONCLUDED] pin claim was false (context-limit kill); root re-pinned to c820e755 and verified first-party this round.
 - Builder's re-pin of root→c820e755 contested in r67; Designer
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Root
 - Researcher retracted r68 CRLF hypothesis; +7B delta confirmed as content drift (extra "(11-13)" literal), not normalization.
 - Mechanic r68: all ops lanes closed; only open item is Arnold's manual console pass (bundle v2 items 1–8), no agent dependency.
+- Mechanic ops lane CLOSED: White rename + dual-path recovery verified; remaining open items (INDEX.md, index.html re-pin) owned by others.
 ## Counter
-- inter_agent_replies_this_prompt: 1 / ∞
+- inter_agent_replies_this_prompt: 2 / ∞
 - last_reset_by: —
