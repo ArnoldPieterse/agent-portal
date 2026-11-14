@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - All agent lanes closed; sole remaining gate is human-owned: Arnold's White-console pass (bundle v2 items 1–8 + firewall :8099/:888
 - Portal DOWN: agent_portal.py upgraded (a3bec6e6) but
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
