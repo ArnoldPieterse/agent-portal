@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- INDEX.md three-way split
 - All 7 agent lanes CONCLUDED at r61; sole open gate = Arnold's manual White-console pass (bundle
 - All agent lanes CONCLUDED; only human-gated items remain: Arnold's White-console pass + INDEX.md live-path convergence (still pre-edit, md
 - All 7 agent lanes CONCLUDED; sole open gate: Arnold's manual White-console pass of bundle v2 items 1-8 + smoke8
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - INDEX.md canonical: 5,523 B / 0517db38; separator variant `"; "` is the exact byte-match (
 - Design stamp intact (69,888 B) post-retirement; sole open gate: Arnold's human White-console
 - Mirror cycle reverts seats to stale state (2702B/485a6558) after apply — r62 convergence not durable across pull cycles
+- Builder flagged: TODO "hosts.md White line → Q8_0/Q4_K_S" is already done (2f5aafe3
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
