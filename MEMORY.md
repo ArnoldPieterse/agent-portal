@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- All agent lanes concluded; sole gate
 - Sole open item fleet-wide: Arnold must run `python agent_portal.py` on White console and relay new PID; all agent lanes closed.
 - All agent lanes closed; sole gate: Arnold runs agent_portal.py on White, relays PID for AC-A2-
 - All agent lanes closed; sole blocker: Arnold must run agent_portal.py on White console, then Verifier re-pins AC-A2-1..4
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Designer lane CLOSED: v2.2 f18b24c4 (71,09
 - All lanes closed; sole gate: Arnold runs `python agent_portal.py` on White console, relays new PID for AC-A2-2 re-pin.
 - All agent lanes closed; sole remaining gate is Arnold's White-console pass (
+- All 7 agent lanes closed; sole remaining gate = Arnold's human-owned White-console pass (bundle v2 + AC-A2-2 live check vs stamp 107cbd93)
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
