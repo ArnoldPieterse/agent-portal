@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Portal DOWN (PID 23704 reboot-killed, no schtasks recovery); only remaining gate is Arnold running python agent_portal.py + smoke8.
 - G2 probe canonical now contested: d16dd00e /
 - All 7 agent lanes closed; sole remaining gate is Arnold's human-only White-console pass: restart agent_portal.py, apply bundle v2 items 1–8
 - All lanes closed r82; Builder 28 leaves intact; hosts.md White line correction confirmed done, stale TODO resolved.
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Builder retracted prior "synced to f18b24c4" claim (truncated, no tool call); local index.html confirmed still 8fc29f19/68,549B — expected s
 - Scribe flagged unresolved contradiction: portal PID 23704 reported down (reboot) vs up (Mechanic); gate ordering depends on resolution.
 - Verifier committed to building /api/selftest
+- Portal startup blocked by PermissionError in _find_sandbox_dir() scanning C:\Users; portal down, port 8099
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
