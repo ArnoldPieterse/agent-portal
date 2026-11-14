@@ -1,3 +1,4 @@
+# Provenance: header added 2026-11-15 by Orchestrator (Archivist goal 6 audit). Original: fleet-ops scripts (Arnold + agent legs); purpose in the docstring/comments below.
 """Smoke all EIGHT agents through the portal /api/chat (solo mode), expect <TAG>-OK.
 White: orchestrator (Q8_0) + researcher (Q4). Black .99: builder + verifier.
 Pale .39: designer + archivist. Red .245: scribe + mechanic.

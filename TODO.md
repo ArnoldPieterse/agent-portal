@@ -1,4 +1,24 @@
-# TODO — Agent Portal (2026-11-14)
+# TODO — Agent Portal (2026-11-15)
+## OPS CHECK 2026-11-15 ~01:5x - Orchestrator (fleet goal sweep: 37 -> 70/80 reached, 8 agents touched)
+Context: human powered down .245/.39/.99 + unloaded a local LLM to free context; remote-dependent goals BLOCKED by design.
+- [x] Fleet ledger: **37/80 (46%) -> 70/80 (88%)** this round (goal_ledger.py --json); Scribe 10/10, Researcher 9/10, Builder 9/10, Verifier 9/10, Designer 9/10, Archivist 9/10, Orchestrator 9/10, Mechanic 6/10.
+- [x] Goal 4 (orchestrator) drill: first scheduled run (SwapDrill1114 @ 00:05) ABORT_never_idle - own round holds the generation handle all turn (trap documented); gate window extended to 45 min + rescheduled as SwapDrill1114b ~00:39 to catch the post-turn quiet gap; verdict file backend_swap_drill_result.json.
+- [x] Verifier #1+#3: daily health check ALL OK (PID 36856, :8099 single listener, /api/git reachable) + .gitignore allowlist audit - drift found (430 tracked vs ~43 stale baseline): 14 junk files (.pyc/.bak) untracked via new ignore patterns, organic memory/ growth documented, new baseline 417. Log: memory/ops/verifier-healthcheck-2026-11-15.md.
+- [x] Archivist #1+#2 (partial): index-integrity sweep - tool hardened (header skip + multi-base resolution), 3 REAL dangling pointers fixed in bugs/INDEX.md, now **0 dangling**; 308 orphans = organic round logs (recommendation logged). Report: memory/archivist/index-integrity-2026-11-15.md. Pre-prune wiring still pending (ledger line marked).
+- [x] Researcher #5 + Builder #1: prune edge cases - memory/builder/prune_regression.py ALL PASS 14 checks/4 cases (move/stay/chunk-math/idempotent); documented in memory/portal/prune-edge-cases-2026-11-15.md.
+- [x] Mechanic #4: LIVE end-to-end prune via POST /api/todo/prune - 4 all-[x] sections / 15 items moved, DONE file 110 lines (<240, no chunk due).
+- [x] Archivist #5: post-prune audit ritual run (sections all-[x] confirmed, chunk dir empty correct, commit 16df2c2, prune-log.md entry).
+- [x] Builder #2: memory/builder/upload_path_safety.py - 12/12 PASS (drive letters, ../ raw+encoded, POSIX abs, bare 'uploads', NUL, valid paths).
+- [x] Researcher #6: memory/researcher/probe_api_git.py - 7/7 probes PASS, expected outputs documented for Verifier reuse.
+- [x] Builder #3 + Mechanic #5: daily auto-commit - schtask PortalDailyGitCommit @ 18:00 -> daily_git_commit.py (test run OK, tree clean).
+- [x] Mechanic #2: fleet_probe.py + schtask PortalFleetProbe every 10 min - test run logged expected remote FAILs with timestamps.
+- [x] Mechanic #7: memory/ops/host-port-task-map-2026-11-15.md (White verified live; remotes from hosts.md recon, pending power-on).
+- [x] Archivist #3/#4/#6/#7/#8/#9/#10: ops docs cold-read verified; git-hygiene.md confirmed complete + indexed; provenance audit (56/386 flagged, top 5 root scripts fixed, rest listed in _provenance_missing.txt); hot-file discipline clean post-trim; canonical-locations table written; guard-rail checklist (11 checks) written; pre-prune archive pass = zero completable sections remain.
+- [x] Scribe #1/#2/#3/#4/#5/#6/#7/#8/#9/#10: ALL TEN closed - compression bullets verified in TODO; hot file 21 lines; same-turn indexing practiced (incl. creating missing builder/INDEX.md); owner sweep done (55 open, 22 unowned = legacy FUTURE backlog, listed below);
+- [x] Researcher #2: memory/researcher/open-questions-log.md created + indexed (6 OPEN / 2 RESOLVED).
+- [ ] NEXT (blocked on human power-on): Verifier #6 fleet cross-check; Mechanic #3 remote reboot dry-runs, #4 SMB latency, #9 remote Studio checks; remote alias half (5 seats) per memory/llm/model-id-check-2026-11-14.md.
+- [ ] NEXT: confirm SwapDrill1114b verdict (PASS_zero_binding_loss) -> close orchestrator goal 4; then Verifier AC V-09 provenance determinism.
+- NOTE unowned open items (Scribe #7 sweep): 22 lines w/o explicit owner - mostly FUTURE backlog from 11-11/12 multi-host sections (uploads mirror, Files panel UI, Red NIC move, hosts.md table fill); current-round items all owned by section context.
 ## OPS CHECK 2026-11-14 ~02:0x - Orchestrator (8-goal round: closing all eight with evidence)
 - [x] Goal 3 daily alias check: local 3/3 OK vs :8888 — Qwen3.8-27B-Q8_0 loaded=true (/models); atlas-q8 + quinn-q4 aliases registered, both folder paths exist on disk (/api/settings/model-aliases). 5 remote seats UNVERIFIED — hosts .245/.39/.99 unreachable via /api/fleet. Log: memory/llm/model-id-check-2026-11-14.md (+ llm INDEX line).
 - [ ] Goal 4 backend-swap drill: SCHEDULED one-shot task `SwapDrill1114` @ 15/11/2026 00:05 (fires after this round ends; idle-gated, aborts clean if never idle). In-round attempt hit 409 — own round is the active generation on Q8, so the gate can't pass mid-turn (trap documented). Verdict lands in backend_swap_drill_result.json (PASS criterion: PASS_zero_binding_loss); procedure doc memory/llm/backend-swap-procedure.md.
