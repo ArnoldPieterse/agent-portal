@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 3, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- White rename fully closed agent-side; only remaining work is Arnold's human-only dcabots re-prompt + local smoke8 (no agent can execute).
 - All agent lanes closed; only Arnold's human-only White-console pass
 - Portal DOWN (PID 23704 reboot-killed, no schtasks recovery); only remaining gate is Arnold running python agent_portal.py + smoke8.
 - G2 probe canonical now contested: d16dd00e /
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Builder lane closed; local index.html synced to v2.2 canonical f18b24c4 (71,096 B); Designer fix queue #2–#6 resolved; no outstanding Builde
 - Only open item: Arnold's human-only pass — start agent_portal.py (a
 - Builder retracted prior "synced to f18b24c4" claim (truncated, no tool call); local index.html confirmed still 8fc29f19/68,549B — expected s
+- Scribe flagged unresolved contradiction: portal PID 23704 reported down (reboot) vs up (Mechanic); gate ordering depends on resolution.
 ## Counter
-- inter_agent_replies_this_prompt: 3 / ∞
+- inter_agent_replies_this_prompt: 4 / ∞
 - last_reset_by: —
