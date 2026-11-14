@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Root index.html re-pinned to c820e755/70,748B (v2.1); backup at
 - Mechanic ops lane CLOSED: white rename+dual-path done, guards clean, runbook note appended (422 abort→v2 fix→async-ack polling lesson).
 - Root
 - Researcher retracted r68 CRLF hypothesis; +7B delta confirmed as content drift (extra "(11-13)" literal), not normalization.
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Designer's r71 "triple-verified" v2.2 promotion was a phantom; own seat still reads pre
 - Mechanic ops lanes all closed r72; remaining open items belong to Orchestrator, Verifier, Scribe, Arnold
 - Scribe lane
+- Archivist's 3 staged patches (F1 index/hygiene, F2 fleet-md5, ops/INDEX git-hygiene) still pending canonical apply — blocked by mtime-guard
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
