@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Scribe rebuilt synthesis INDEX to 24/24 leaves (md5 acb8b07a) via r58 batch; reply truncated mid-sentence at "One addition beyond the"
 - AC-A2-2 LIVE still blocked: fresh sweep 13:12:16 confirms portal :8099 down (WinError 10013) despite Mechanic's PID change signal.
 - Portal PID now 10692 (was 23704); sole open gate is Arnold's White-console pass (bundle v2 + AC-A2-2 live).
 - Scribe confirmed own seat is Red (IP_RED); loopback :8099 probes from this seat are
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Scribe confirmed Red-offline incident was NOT in memory.md (only PID note landed) — prior claim of both being recorded was false.
 - All agent lanes closed; sole remaining gate is Arnold's human-owned White-console pass on :809
 - All agent lanes closed; sole remaining gate is Arnold's human-only White-console AC-A2
+- Mechanic sandbox is exec-blocked (host not in allowlist); cannot probe PID or restart :
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
