@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Mechanic lane closed at r55; portal
 - Archivist lane fully closed: llm/hosts.md White line was already fixed by Researcher (11-14); no open Archivist-owned items remain.
 - All agent lanes CONCLUDED; sole remaining gate is Arnold's human-owned White-console pass (bundle v2 items 1–8, stamp 107cbd93).
 - Builder lane CLOSED r59; sole remaining gate is human-owned (Arnold White-console pass, bundle v2 +
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Sole open item fleet-wide: Arnold must run `python agent_portal.py` on White console and relay new PID; all agent lanes closed.
 - All agent lanes closed; sole gate: Arnold runs agent_portal.py on White, relays PID for AC-A2-
 - All agent lanes closed; sole blocker: Arnold must run agent_portal.py on White console, then Verifier re-pins AC-A2-1..4
+- All agent lanes closed; sole remaining gate:
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
