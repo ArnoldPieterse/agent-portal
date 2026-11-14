@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-14",
+  "system": "goals",
+  "status": "complete",
+  "endpoints": {
+    "/api/goals": "ok",
+    "/api/goals/<agent>": "ok",
+    "/api/ledger": "ok"
+  },
+  "ui": "Goals panel tab live in index.html (fleet 38%, per-agent bars, states, carry-forward, evidence markers)",
+  "mirror_allowlist_added": [
+    "goals_data.json",
+    "goal_ledger_run.json"
+  ],
+  "verifier_items_done": [
+    "auto-ACs for new endpoints",
+    "regression gate on /api/goals",
+    "hash-chained immutable transitions",
+    "failure replay",
+    "data-quality score per reached claim"
+  ],
+  "restart_smoke_test": "passed 2026-11-14",
+  "caveat": "38% fleet progress is evidence-gated; data-quality score displayed in panel"
+}

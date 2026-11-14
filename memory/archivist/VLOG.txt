@@ -1,0 +1,4 @@
+V-09 provenance-report check 2026-11-14  
+ - determinism PASS: 3 runs byte-identical after stripping generated ts (sha c14064fb)  
+ - content-addressing PASS: each evidence entry {file,line,type,md5}; md5_file() digests source at capture; ledger has hash chain  
+ - hardening note: MD5 fine for local integrity; use SHA-256 if tamper-proof vs adversary required  

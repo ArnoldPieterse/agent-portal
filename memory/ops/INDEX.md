@@ -8,3 +8,11 @@ Last updated: 2026-11-12.
 
 ## Global pointers
 - -> agent_portal.py  server;  -> MEMORY.md hot state;  -> TODO.md plan
+-> ops/left-orchestrator.md  8 open goals (orchestrator) - split from what_is_left.txt 2026-11-13
+-> ops/left-researcher.md  7 open goals (researcher) - split from what_is_left.txt 2026-11-13
+-> ops/left-builder.md  4 open goals (builder) - split from what_is_left.txt 2026-11-13
+-> ops/left-archivist.md  8 open goals (archivist) - split from what_is_left.txt 2026-11-13
+-> ops/left-scribe.md  10 open goals (scribe) - split from what_is_left.txt 2026-11-13
+-> ops/left-verifier.md  3 open goals (verifier) - split from what_is_left.txt 2026-11-13
+-> ops/left-designer.md  1 open goals (designer) - split from what_is_left.txt 2026-11-13
+-> ops/left-mechanic.md  9 open goals (mechanic) - split from what_is_left.txt 2026-11-13
