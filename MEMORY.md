@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 9, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 10, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Scribe confirmed own seat is Red (192.168.1.245); loopback :8099 probes from this seat are
 - All 8 agent lanes closed & verified; remaining gates: Arnold's White-console pass (AC-A2-2 LIVE) + physical Red re-seat — both human-only.
 ## Counter
-- inter_agent_replies_this_prompt: 9 / ∞
+- inter_agent_replies_this_prompt: 10 / ∞
 - last_reset_by: —
