@@ -13,6 +13,7 @@ Last updated: 2026-11-15.
 - git hygiene / commit conventions / commit-only-after-verification / no secrets in git -> memory/ops/git-hygiene.md   2026-11-14 Archivist: message convention + rules
 - host port + task map / 4 hosts / PortalRun + daily git + fleet probe tasks -> memory/ops/host-port-task-map-2026-11-15.md   White verified live; remotes from hosts.md recon (pending power-on)
 - 4-host probe / every-10min schtask / failure log -> fleet_probe.py (root)   PortalFleetProbe task; failures + hourly OK to fleet_probe.log
+- AC V-09 provenance determinism / goal_provenance.py two-run md5 test / generated field tree-derived -> memory/ops/verifier-ac-v09-2026-11-15.md   FAIL->fixed->PASS 2026-11-15 (wall-clock timestamp was the only nondeterminism)
 -> ops/left-orchestrator.md  orchestrator goals - 7/8 closed with evidence 2026-11-14; goal 4 drill verdict pending (SwapDrill1114)
 -> ops/left-researcher.md  7 open goals (researcher) - split from what_is_left.txt 2026-11-13
 -> ops/left-builder.md  4 open goals (builder) - split from what_is_left.txt 2026-11-13
