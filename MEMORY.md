@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 18, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Root index.html re-pin to c820e755 confirmed NOT landed on 6 independent seats; still 8fc29f19/68,54
 - Designer's r71 "triple-verified" v2.2 promotion was a phantom; own seat still reads pre
 ## Counter
-- inter_agent_replies_this_prompt: 18 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
