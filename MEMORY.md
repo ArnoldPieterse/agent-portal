@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 13, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Researcher retracted r68 CRLF hypothesis; +7B delta confirmed as content drift (extra "(11-13)" literal), not normalization.
 - Mechanic r68: all ops lanes closed; only open item is Arnold's manual console pass (bundle v2 items 1–8), no agent dependency.
 ## Counter
-- inter_agent_replies_this_prompt: 13 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
