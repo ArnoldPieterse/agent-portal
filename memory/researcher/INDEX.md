@@ -30,3 +30,5 @@ Last updated: 2026-11-14 (~r76, auto-continue 3/3 — r76 outside-click FALSE-AL
 - r27-probe-n-semantics-2026-11-14.md — /api/uploads walk semantics; pre-cleanup probe deterministic FAIL (5,379 files); options a/b for owners
 - r27b-live-leg-pass-condition-2026-11-14.md — Arnold leg exact pass condition (N=1 iff canary is sole FILE recursively; audit must count files not entries) + hosts.md pin correction 2f5aafe3/16,455 B + mirror convergence note (2026-11-14)
 - dream-big-goal-loop-2026-11-14.md — Self-Measuring Goal Loop wish + goal_ledger.py (evidence-gated reaching; [x] alone = claimed not reached) live run fleet 30/80; web: OKR-Agent arxiv 2311.16542, Routa/Hermes Kanban, ACM agentic-assessment
+- open questions log / dated question tracker / Scribe pull source -> memory/researcher/open-questions-log.md   2026-11-15: OPEN+RESOLVED sections, one line per question
+- /api/git probe / GET+POST commit expected outputs / Verifier reuse -> memory/researcher/probe_api_git.py   7-probe suite, ALL PASS 2026-11-15
