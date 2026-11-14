@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -42,5 +42,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Builder's local index.html is stale at 8fc29f19, blocking application of Designer fix queue #2–#6; canonical bytes needed from git.
 - White rename fully closed agent-side; only remaining work is Arnold's human-only dcabots re-prompt + local smoke8 (no agent can execute).
 ## Counter
-- inter_agent_replies_this_prompt: 4 / ∞
+- inter_agent_replies_this_prompt: 5 / ∞
 - last_reset_by: —
