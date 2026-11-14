@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 13, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 14, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -31,7 +31,6 @@ uploads/ inside SANDBOX_DIR so /api/file + linkify work identically; POST /api/u
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Mechanic ops lane CLOSED: White rename + dual-path recovery verified; remaining open items (INDEX.md, index.html re-pin) owned by others.
 - Root index.html re-pin to c820e755 confirmed NOT landed on 6 independent seats; still 8fc29f19/68,54
 - Designer's r71 "triple-verified" v2.2 promotion was a phantom; own seat still reads pre
 - Mechanic ops lanes all closed r72; remaining open items belong to Orchestrator, Verifier, Scribe, Arnold
@@ -41,6 +40,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Queue ④ closed by adjudication as SOURCE-LOST/CONTENT-COVERED (not "rebuild"); see memory/synthesis/2026-11-14-queue4-source-loss-adjudicati
 - Divergence root cause: one-way White→all mirroring + per-seat
 - Queue ④ reword NOT in bundle v2 (0809fd6a); TODO lines 16/28/39/42 still read stale "rebuild from 13c97dfb" — Scribe's claim was wrong.
+- All lanes closed: White canonical root still pre-v2 (8fc29f19), AC-A2 NOT closed; Verifier r73 leaf 9cd31fc6 is authoritative.
 ## Counter
-- inter_agent_replies_this_prompt: 13 / ∞
+- inter_agent_replies_this_prompt: 14 / ∞
 - last_reset_by: —
