@@ -5,7 +5,7 @@ The portal is a thin web UI + proxy. Every LLM call goes to the local
 Unsloth Studio /v1/chat/completions endpoint (the full harness: reasoning,
 skills, RAG, tool execution). Nothing here loads models directly.
 """
-import hashlib, json, mimetypes, os, re, shutil, threading, time, urllib.request, urllib.error, urllib.parse, uuid
+import hashlib, json, mimetypes, os, re, shutil, subprocess, sys, threading, time, urllib.request, urllib.error, urllib.parse, uuid
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PORT = 8099
@@ -1392,6 +1392,22 @@ DONE_PART_SIZE = 200   # lines moved per split (oldest first)
 GIT_EXE = os.path.join(HERE, "mingit", "cmd", "git.exe")
 
 
+def _run_index_check():
+    """Pre-prune ritual (Archivist goal 2): run memory/archivist/index_check.py so
+    every prune commit is index-clean. Returns (rc, output). rc: 0=clean,
+    1=dangling INDEX pointers (hard fail - block), 2=orphans only (soft - accepted
+    noise per archivist ruling 2026-11-15, proceed with warning), >=3=tool error
+    (fail-closed - block)."""
+    script = os.path.join(HERE, "memory", "archivist", "index_check.py")
+    try:
+        r = subprocess.run([sys.executable, script], capture_output=True,
+                           text=True, timeout=120)
+        out = (r.stdout or "") + (("\n[stderr] " + r.stderr) if r.stderr else "")
+        return r.returncode, out
+    except Exception as e:
+        return 3, "index_check failed to run: %s" % e
+
+
 def _prune_todo():
     """Move TODO.md sections whose items are ALL [x] (and at least one [x]) into
     TODO_completed.md. When the completed file outgrows DONE_MAX_LINES, its oldest
@@ -1773,7 +1789,18 @@ class Handler(BaseHTTPRequestHandler):
             # Ops: move fully-completed TODO sections into TODO_completed.md (chunk-splitting).
             try:
                 _sync_workspace_to_sandbox()   # two-way sync first: agent TODO/MEMORY edits land before pruning
+                rc, ic_out = _run_index_check()  # pre-prune ritual: every prune commit is index-clean
+                if rc == 1 or rc >= 3:
+                    why = ("DANGLING INDEX pointers found - repair the INDEX.md target(s) and retry"
+                           if rc == 1 else "index_check itself failed (fail-closed)")
+                    return self._json(409, {"ok": False,
+                                             "error": "prune blocked: %s (index_check rc=%d)" % (why, rc),
+                                             "index_check": ic_out[-2000:]})
                 res = _prune_todo()
+                res["index_check"] = {"rc": rc,
+                                      "note": "clean" if rc == 0
+                                      else "orphans only - accepted noise, prune proceeded (soft)",
+                                      "output_tail": ic_out[-800:]}
                 _auto_commit()                 # prune result is shared state - commit it (drift <= 1 turn)
                 return self._json(200, res)
             except Exception as e:
