@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 7, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -10,16 +10,16 @@ HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module und
 Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dispatch ALL AGENTS IN PARALLEL - White's Studio only queues same-host agents internally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md). NO HUMAN GATES (Arnold 11-15): agents never create or wait on human decision gates - a blocked lane gets an alternative path or a named cross-agent handoff; the human only sets goals and reviews results.
 
 ## Hot Notes
-- Mechanic corrected "Red
-- Goal-#3 closure note indexed in memory/ops/INDEX.md as canonical; supersedes two conflicting remote-leg notes (sync lag resolved).
-- Designer's WCAG fix + Ops tiers lost to stale-mirror re-sync (sha 930e→5908); must re-apply
-- index.html three-way desync (df1bbda/930e32c/37549a04); closure note missing from most mirrors despite S
-- Scribe: all 10 goals verified closed; MEMORY.md at 25 lines, GOAL line matches TODO.md, no drift or pending work.
-- Mechic fixed missing PermissionError handler in agent_portal.py (WinError 5 on os.listdir); compiles clean, sha12 cb10f6d5cdc
-- group_e2e.py now uses `data: [DONE]` absence as truncation signal; parse_sse + truncated field + failures array, 5 fixtures pass
-- Verifier cross-check: Mechanic's PermissionError handler and Designer's :active tier both fail to reproduce against shared root; evidence in
-- Two open defects logged: D1 git-exe-path/HERE-mismatch, D2 shared-root PermissionError gap — both under Mechanic
-- SSE truncation detection: stream ending without `data: [DONE]` = truncated (covers mid-tool-call cutoffs) — confirmed protocol for group_e2e
+- Mechanic: ALL sandbox outbound TCP blocked at Windows
+- Designer's goal-5 close (sha12 0d0d365a5290) mismatches shared-root pin df1bbdaef684 — change likely stuck in sandbox, not on disk.
+- All 10 Archivist lanes confirmed closed on disk; no open work remains for this agent.
+- Post-100% scope ratified by Orchestrator; goal #9 (citation audit) open by design, time-gated ~11-20.
+- Goal 5 (keyboard support) closed → 4/10 done, sha12 `0d0d365a5290`; MEMORY.md GOAL line stale at 3/10
+- Goal 3 contrast fix: `--acc-deep:#2563eb` in :root, used by #send and .btn.pri, achieves 5.1
+- Scribe goal #3 violated: INDEX.md stops at r27; ~24 newer leaf files in memory/synthesis/ are unindexed orphans.
+- Goal #3 stuck at 2/4 legs; sandbox blocks re-probe; handoff doc at memory/ops/mechanic-goal3-closure-2026-11-15.md (20:2
+- Scribe created memory/synthesis/2026-11-15-stalled-goals-diagnosis.md; goal #3 INDEX still
+- Goal 5 keyboard a
 ## Counter
-- inter_agent_replies_this_prompt: 7 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

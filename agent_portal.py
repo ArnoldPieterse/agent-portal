@@ -1485,6 +1485,12 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
     eff = agent.get("reasoning", "default")
     if fast_first and eff == "default":
         eff = FIRST_REPLY_REASONING
+    if mode == "group" and eff == "default":
+        # 2026-11-15: unbounded default thinking is fatal in group mode - the prompt already
+        # holds ~17k tokens on a 32k window, so deep reasoning eats the whole window and Studio
+        # returns "spent the whole of its 32768-token window on reasoning" with NO answer
+        # (Builder/Verifier/Archivist, runs of 11-15). Cap it like the fast-first path.
+        eff = FIRST_REPLY_REASONING
     if eff == "off":
         body["enable_thinking"] = False
     elif eff != "default":
@@ -1508,10 +1514,32 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
     req = urllib.request.Request(studio_base(agent) + "/v1/chat/completions",
                                  data=json.dumps(body).encode(),
                                  headers=studio_headers(agent))
+
+    def _open_upstream():
+        # 2026-11-15: transient remote-Studio hiccups killed whole turns instantly - empty-body
+        # HTTP 400s (model swap/unload on Black, runs g-1a1de52..g-1a1debfa) and later full host
+        # unreachability (Black .99 asleep: WinError 10060, run g-1a1def4). Retry before giving
+        # up; longer backoff for connection-level failures since a sleeping host takes time to wake.
+        for attempt in range(3):
+            try:
+                r = urllib.request.urlopen(req, timeout=300)
+                if umq_ids:  # request reached Studio => queued messages are now in this context
+                    umq_check(umq_ids, who)
+                return r
+            except Exception as e:
+                code = getattr(e, "code", None)
+                http_transient = isinstance(e, urllib.error.HTTPError) and \
+                    code in (400, 408, 425, 429, 500, 502, 503, 504)
+                conn_transient = isinstance(e, (urllib.error.URLError, ConnectionError, TimeoutError))
+                if not (http_transient or conn_transient) or attempt == 2:
+                    raise
+                wait_s = (10 * (attempt + 1)) if http_transient else (30 * (attempt + 1))
+                _act_log(session, {"agent": who, "event": "retry", "error": str(e)[:200],
+                                   "wait": wait_s, "attempt": attempt + 1})
+                time.sleep(wait_s)
+
     try:
-        resp = urllib.request.urlopen(req, timeout=300)
-        if umq_ids:  # request reached Studio => queued messages are now in this context
-            umq_check(umq_ids, who)
+        resp = _open_upstream()
     except Exception as e:
         # Surface the upstream error BODY (e.g. "No model loaded. Call POST /inference/load
         # first."), not just "HTTP Error 400: Bad Request" - that bare text hid the Black
@@ -1863,6 +1891,7 @@ def _group_run_worker(run_id):
     agents_by_name = {a.get("name", "?"): a for a in load_agents()["agents"]}
     cast = [n for n in (run.get("cast") or []) if n in agents_by_name]
     settled, no_output = set(), []
+    err_streak, errored = {}, set()   # 2026-11-15: per-agent consecutive error passes; names that ever errored
     last_concluded = pass_any = truncated = False
     nudges = 0
     verdict = None
@@ -1899,6 +1928,8 @@ def _group_run_worker(run_id):
             results = [r for r in _parallel_turns(run_id, cast, "prompt", hist, stop_event) if r]
             entries = []
             for r in results:
+                if r["error"]:
+                    errored.add(r["name"])   # keep the verdict honest even when others conclude
                 if r["blocked"] or r["error"]:
                     continue
                 if r["full"].strip() and not r["silent"]:
@@ -1930,6 +1961,7 @@ def _group_run_worker(run_id):
                     if r["blocked"]:
                         continue
                     if r["full"].strip() and not r["silent"]:
+                        err_streak.pop(r["name"], None)
                         _append_history("group", [{"speaker": r["name"], "content": r["full"]}])
                         any_new = True
                         pass_any = True
@@ -1937,16 +1969,33 @@ def _group_run_worker(run_id):
                             last_concluded = True
                         expand_mentions(r["full"])
                     else:
-                        settled.add(r["name"])
                         if not r["full"].strip():
                             no_output.append(r["name"])
+                        if r["error"]:
+                            # 2026-11-15: an errored turn (HTTP 400 / context exhaustion) is NOT
+                            # "settled" - the agent retries on the next pass. Only settle after 3
+                            # consecutive error passes, so one bad host hiccup can't silence an
+                            # agent for the whole run (Builder/Verifier vanished mid-run on 11-15,
+                            # and the remaining agents concluded without them).
+                            err_streak[r["name"]] = err_streak.get(r["name"], 0) + 1
+                            errored.add(r["name"])
+                            if err_streak[r["name"]] >= 3:
+                                settled.add(r["name"])
+                        else:
+                            settled.add(r["name"])
                 guard += 1
                 if last_concluded or not any_new:
                     break
             run["settled"] = sorted(settled)
             _save_group_run(run)
             if last_concluded:
-                verdict = {"note": "\u2713 Concluded \u2014 task complete.", "cls": "ok"}
+                # 2026-11-15: a clean conclusion while agents were erroring is NOT "task complete"
+                note = "\u2713 Concluded \u2014 task complete."
+                cls = "ok"
+                if errored:
+                    note += " (note: %s failed this run - their lane may be incomplete)" % ", ".join(sorted(errored))
+                    cls = "warn"
+                verdict = {"note": note, "cls": cls}
                 break
             if pass_any and nudges < NUDGE_MAX_RUN:  # task incomplete -> AUTO-NUDGE next pass
                 nudges += 1
