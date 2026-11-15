@@ -201,6 +201,11 @@ textarea{resize:vertical;min-height:64px}
         <div class="opsbox" id="gitStatus">—</div>
         <div style="font-size:12px;color:var(--dim);margin-top:6px">Recent commits:</div>
         <div class="opsbox" id="gitLog">—</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:8px">Host tiles · this portal's host (GET /api/ops):</div>
+        <div class="opsrow" style="align-items:stretch">
+          <div class="opsbox" id="diskTile" style="flex:1;max-height:none" aria-label="Disk usage">—</div>
+          <div class="opsbox" id="uptimeTile" style="flex:1;max-height:none" aria-label="Portal uptime">—</div>
+        </div>
         <div class="opsrow">
           <input id="gitMsg" placeholder="commit message…" aria-label="Commit message">
           <button class="btn" id="gitCommit">⬆ Commit all</button>
@@ -674,6 +679,15 @@ async function opsLoad(){
     $("gitLog").textContent=o.log||"(no commits yet)";
     $("opsStat").textContent=(o.changed?o.changed+" changed":"clean")+(o.log?(" · "+o.log.split("\n").length+" shown"):"");
   }catch(e){ $("opsStat").textContent="⚠ "+e; }
+  opsTiles();   // host tiles refresh with the panel (2026-11-15)
+}
+async function opsTiles(){
+  try{
+    const o=await (await fetch("/api/ops")).json();
+    const d=o.disk||{};
+    $("diskTile").textContent=(d.total_gb!=null)?`disk ${d.drive} · ${d.used_gb} GB used / ${d.total_gb} GB (${Math.round(100*d.used_gb/d.total_gb)}%)\nfree ${d.free_gb} GB`:"⚠ "+(d.error||"no disk data");
+    $("uptimeTile").textContent=`portal up · ${o.uptime_hm}\npid ${o.pid} · since ${o.started}`;
+  }catch(e){ $("diskTile").textContent="⚠ "+e; $("uptimeTile").textContent="⚠ "+e; }
 }
 $("opsBtn").onclick=()=>{ const open=$("opsPanel").classList.toggle("open"); $("opsBtn").classList.toggle("on",open); if(open)opsLoad(); };
 async function opsSay(t){ $("opsMsg").textContent=t; }

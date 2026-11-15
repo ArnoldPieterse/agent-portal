@@ -1,0 +1,41 @@
+{
+ "ok": true,
+ "elapsed_s": 0.04,
+ "failures": [],
+ "hosts": [
+  {
+   "host": "White (local)",
+   "base": "http://127.0.0.1:8888",
+   "state": "busy",
+   "reason": "",
+   "models": [
+    "Qwen3.8-27B-Q8_0"
+   ],
+   "status_field_ok": true
+  },
+  {
+   "host": "IP_BLACK",
+   "base": "http://IP_BLACK:8888",
+   "state": "unknown",
+   "reason": "unreachable",
+   "models": [],
+   "status_field_ok": true
+  },
+  {
+   "host": "IP_PALE",
+   "base": "http://IP_PALE:8888",
+   "state": "unknown",
+   "reason": "unreachable",
+   "models": [],
+   "status_field_ok": true
+  },
+  {
+   "host": "IP_RED",
+   "base": "http://IP_RED:8888",
+   "state": "idle",
+   "reason": "",
+   "models": [],
+   "status_field_ok": true
+  }
+ ]
+}

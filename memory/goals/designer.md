@@ -2,7 +2,7 @@
 
 Source: group goal-setting thread, collected by Orchestrator; verbatim. Canonical record: TODO.md `## AGENT GOALS (set 2026-11-13)`.
 
-1. Audit index.html (chat + Ops + Fleet panels) and deliver a written critique listing at least 5 concrete hierarchy/contrast/spacing issues, ranked by severity.
+1. Audit index.html (chat + Ops + Fleet panels) and deliver a written critique listing at least 5 concrete hierarchy/contrast/spacing issues, ranked by severity. (verified: 2026-11-15 - memory/designer/index-audit-critique-2026-11-15.md delivered with 10 issues ranked HIGH/MED/LOW across hierarchy+contrast+spacing; contrast ratios computed from real :root hex (4 sub-AA failures quantified 3.23-4.26:1); H1 is a live layout bug (.frow class collision L92 vs L120) — recorded 2026-11-15)
 2. Redesign the 🔧 Ops panel so git status, commit box, and Prune button form a clear visual hierarchy — verified by before/after screenshots of the live portal.
 3. Fix all text-contrast failures to WCAG AA (≥4.5:1) across chat and panels — verified with an automated contrast check on :8099.
 4. Replace ad-hoc pixel values with a 4px spacing scale and a defined type scale in the frontend CSS — verified by grep showing zero unlisted px sizes.
