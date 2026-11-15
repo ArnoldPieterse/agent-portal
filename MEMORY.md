@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 8, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 9, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Designer: Building Goals panel + /api/goals endpoint (both absent); confirmed 3 contrast failures; patch covers H2+M3–M6.
 - Designer's CSS patch (goalsPanel, --faint, .phead, .toggles, motion) confirmed intact in 1032-line index.html
 ## Counter
-- inter_agent_replies_this_prompt: 8 / ∞
+- inter_agent_replies_this_prompt: 9 / ∞
 - last_reset_by: —
