@@ -18,14 +18,18 @@ Post-reboot verification order:
    probing it from inside a turn deadlocks behind itself; see memory/llm/instances.md (Wedge incident)).
 
 ## Portal lifecycle
-- Portal :8099 = agent_portal.py, started detached via scheduled task `PortalRun` -> portal_start.bat.
-  The task's Status stays "Running" for the portal's WHOLE lifetime (python runs as the task process).
+- Portal :8099 = agent_portal.py, started detached via scheduled task `PortalRun` -> **portal_hidden.vbs** (2026-11-15) -> hidden cmd -> portal_start.bat -> **pythonw.exe**.
+  WINDOWLESS: wscript + WshShell.Run style 0 + pythonw = zero console popups (user-critical complaint 2026-11-15; old direct-.bat task left a visible cmd for the portal's whole life, and MemoryMirrorRun's `cmd /c` wrapper popped a visible window every 5 min with the title flipping to `net.` while it ran `net use` against dead hosts). The periodic tasks (MemoryMirrorRun 5-min, PortalFleetProbe 10-min, PortalDailyGitCommit daily) now run pythonw DIRECTLY as the task action - no cmd wrapper, and their scripts use absolute log paths because schtask has no WorkingDirectory.
+  The task's Status stays "Running" for the portal's WHOLE lifetime (the waiting vbs keeps it alive).
 - Restart TRAP: `schtasks /run /tn PortalRun` reports SUCCESS but NO-OPS while Status is Running — the old
-  PID keeps :8099 and serves STALE code. Correct restart: `taskkill /pid <PID from _portal_pid.txt> /f`,
+  PID keeps :8099 and serves STALE code (the duplicate pythonw dies on bind-fail 10048, visible only in
+  portal_run_err.log). Correct restart: `taskkill /pid <PID from _portal_pid.txt> /f`,
   THEN `schtasks /run /tn PortalRun`, then confirm a NEW PID listens on :8099 (Get-NetTCPConnection
   -LocalPort 8099) and PROVE it postdates the edit: process CreationDate > agent_portal.py LastWriteTime.
-  Write the new PID to _portal_pid.txt. (2026-11-11 MIME incident: fix on disk ~20 min while the live
-  server still served text/plain for .html.)
+  Write the new PID to _portal_pid.txt. The hidden cmd hosting the portal exits automatically when the
+  pythonw child dies; if a stale HIDDEN cmd ever lingers, `tasklist` shows it but no window does -
+  kill by PID. (2026-11-11 MIME incident: fix on disk ~20 min while the live server still served
+  text/plain for .html.)
 - Logs: portal_run.log / portal_run_err.log.
 - After editing index.html: user must HARD-REFRESH (Ctrl+Shift+R) — stale tabs keep old JS.
 - After editing agent_portal.py: restart as above, then verify with GET /api/memory + a probe script.

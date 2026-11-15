@@ -1,6 +1,6 @@
 {
  "ok": true,
- "elapsed_s": 0.04,
+ "elapsed_s": 0.89,
  "failures": [],
  "hosts": [
   {
@@ -16,16 +16,16 @@
   {
    "host": "IP_BLACK",
    "base": "http://IP_BLACK:8888",
-   "state": "unknown",
-   "reason": "unreachable",
+   "state": "idle",
+   "reason": "",
    "models": [],
    "status_field_ok": true
   },
   {
    "host": "IP_PALE",
    "base": "http://IP_PALE:8888",
-   "state": "unknown",
-   "reason": "unreachable",
+   "state": "idle",
+   "reason": "",
    "models": [],
    "status_field_ok": true
   },
