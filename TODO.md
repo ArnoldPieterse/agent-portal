@@ -1,3 +1,10 @@
+## HOTLINE 2026-11-15 ~23:0x (Orchestrator, non-sandboxed - supersedes older status lines)
+- FLEET GOALS 62/80 (77.5 pct): +Verifier#10 report, +Researcher#9 audit closed; timed items now minutes-max per user directive
+- OUTBOUND NETWORK CAPABILITY LIVE: netcmd.py (NetworkCMD-style) - GET /api/net/fleet (3/3 hosts up), POST /api/net/{probe,latency,dns,http}; egress guard 403s public without allow_public; evidence log memory/ops/netcmd-ops.jsonl
+- EVIDENCE MARKERS: strict ledger now accepts validated (pointer:) markers (leaf must exist + be index-linked) and auto-sweeps open goals for indexed leaves at run end; POST /api/goals/<agent>/evidence to record manually
+- OPEN FINDING: Researcher alias (model_id per agents.json) times out 90-120s on its chat host (7/8 aliases live) - Mechanic to check model load state; Orchestrator#3 stays open until 8/8
+- WEDGE WATCH: g-1a1def4 prompt-phase hang seen 22:47 - verify run recovered post-restart
+
 - [ ] WEDGE SEEN 22:47 (run g-1a1def4): prompt phase hung ~12min after ALL 8 turns completed their frames (5 metas + Builder/Verifier conn errors) - ThreadPoolExecutor exit never returned; no py-spy available to capture stacks. STALL_KILL_S=900 is the safety net. NEXT: add per-turn wall-clock timeout in _parallel_turns (e.g. future.result(timeout=600)) so one stuck worker can't wedge a pass.
 
 ## HOTLINE 2026-11-15 ~22:3x (Orchestrator seat, non-sandboxed - supersedes older status lines)

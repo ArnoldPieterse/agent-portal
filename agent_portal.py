@@ -2048,9 +2048,22 @@ def _group_run_worker(run_id):
         _run_event(run_id, {"run": "end", "status": run["status"], "verdict": verdict})
         try:
             _sync_workspace_to_sandbox()
+            # Evidence sweep (2026-11-15): auto-write (pointer:) markers for open goals whose
+            # evidence leaf already exists AND is linked from an index - so completed work
+            # stops being invisible to /api/goals. Runs BEFORE _auto_commit so markers commit.
+            _gl = _goal_ledger_mod()
+            sweep_ch = _gl.sweep_evidence(HERE) if hasattr(_gl, "sweep_evidence") else []
+            run["evidence_sweep"] = sweep_ch
+            if sweep_ch:
+                verdict["note"] += ("  [evidence] %d marker(s) auto-written (%s)"
+                                    % (len(sweep_ch), ", ".join(c["leaf"].split("/")[-1] for c in sweep_ch[:4])))
+                run["verdict"] = verdict
             _auto_commit()
         except Exception:
             pass
+        if run.get("evidence_sweep"):
+            _save_group_run(run)
+            _run_event(run_id, {"run": "end", "status": run["status"], "verdict": run["verdict"]})
         _active_run_id = None
 
 
@@ -2365,6 +2378,38 @@ def _evolution_mod():
     return _EVOLUTION
 
 
+_NETCMD = None
+
+
+def _netcmd_mod():
+    """Outbound network capability (2026-11-15, NetworkCMD-style port in netcmd.py):
+    probe / latency / dns / http / fleet. Loaded once; gives sandboxed seats real egress
+    through the portal host. Egress policy + audit log live inside netcmd.py."""
+    global _NETCMD
+    if _NETCMD is None:
+        import importlib.util as _ilu
+        _spec = _ilu.spec_from_file_location("_netcmd", os.path.join(HERE, "netcmd.py"))
+        _mod = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_mod)
+        _NETCMD = _mod
+    return _NETCMD
+
+
+_GOAL_LEDGER = None
+
+
+def _goal_ledger_mod():
+    """Strict evidence-gated goal ledger (memory/researcher/goal_ledger.py), loaded once.
+    Same module /api/goals parses with - single source of truth for pointer validation,
+    record_evidence and the post-run evidence sweep."""
+    global _GOAL_LEDGER
+    if _GOAL_LEDGER is None:
+        import importlib.util as _ilu
+        _spec = _ilu.spec_from_file_location("_goal_ledger_strict", os.path.join(HERE, "memory", "researcher", "goal_ledger.py"))
+        _mod = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_mod)
+        _GOAL_LEDGER = _mod
+    return _GOAL_LEDGER
+
+
 def _evolution_snapshot():
     """Evolution layer island state (CHG-0002, gen 1): population table + graveyard as JSON.
     Thin read over evolution.py - same counts as `python evolution.py stats`."""
@@ -2672,6 +2717,12 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/goals":
             # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
             return self._json(200, _goals_snapshot())
+        elif p == "/api/net/fleet":
+            # Outbound network capability (2026-11-15): one-pass probe of all known fleet hosts.
+            try:
+                return self._json(200, _netcmd_mod().fleet_probe())
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/provenance":
             # Goal provenance report (2026-11-15, Builder).
             try:
@@ -3018,6 +3069,64 @@ class Handler(BaseHTTPRequestHandler):
         elif p in ("/api/evolution/accept", "/api/evolution/reject"):
             # Evolution layer (CHG-0002, gen 1): thin wrappers over evolution.cmd_accept/reject.
             return self._evolution_mutate(body)
+        elif p == "/api/net/probe":
+            # Outbound network capability (2026-11-15, NetworkCMD-style): TCP port scan.
+            host = (body.get("host") or "").strip()
+            ports = body.get("ports") or []
+            if isinstance(ports, str):
+                ports = [x for x in re.split(r"[,\s]+", ports) if x]
+            try:
+                ports_i = [int(x) for x in ports][:200]
+            except Exception:
+                return self._json(400, {"error": "ports must be numbers or '80,443'"})
+            if not host or not ports_i:
+                return self._json(400, {"error": "host + ports required"})
+            try:
+                res = _netcmd_mod().tcp_probe(host, ports_i, timeout_ms=int(body.get("timeout_ms") or 1500),
+                                              allow_public=bool(body.get("allow_public")))
+                return self._json(200 if "error" not in res else 403, res)
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
+        elif p == "/api/net/latency":
+            target = (body.get("target") or "").strip()
+            if not target:
+                return self._json(400, {"error": "target required"})
+            try:
+                res = _netcmd_mod().latency(target, port=int(body.get("port") or 0) or None,
+                                            count=int(body.get("count") or 4), allow_public=bool(body.get("allow_public")))
+                return self._json(200 if "error" not in res else 403, res)
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
+        elif p == "/api/net/dns":
+            name = (body.get("name") or "").strip()
+            if not name:
+                return self._json(400, {"error": "name required"})
+            try:
+                res = _netcmd_mod().dns_lookup(name, rtype=(body.get("type") or "A").upper(),
+                                               allow_public=bool(body.get("allow_public")))
+                return self._json(200 if "error" not in res else 403, res)
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
+        elif p == "/api/net/http":
+            url = (body.get("url") or "").strip()
+            if not url.startswith(("http://", "https://")):
+                return self._json(400, {"error": "url must start with http:// or https://"})
+            try:
+                res = _netcmd_mod().http_fetch(url, method=(body.get("method") or "GET").upper(),
+                                               headers=body.get("headers"), body=body.get("body"),
+                                               timeout=float(body.get("timeout") or 15), allow_public=bool(body.get("allow_public")))
+                return self._json(200 if "error" not in res else 403, res)
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
+        elif p.startswith("/api/goals/") and p.endswith("/evidence"):
+            # Evidence markers (2026-11-15): close a goal with (verified:) or a VALIDATED
+            # (pointer: leaf) marker - leaf must exist AND be linked from an index file.
+            agent = p[len("/api/goals/"):-len("/evidence")].strip().lower()
+            ref = body.get("goal")
+            if not ref:
+                return self._json(400, {"error": "goal (number or text) required"})
+            ok, msg = _goal_ledger_mod().record_evidence(agent, ref, note=body.get("note", ""), leaf=body.get("leaf"))
+            return self._json(200 if ok else 400, {"ok": ok, "msg": msg})
         else:
             self._json(404, {"error": "not found"})
 

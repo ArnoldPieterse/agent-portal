@@ -1,0 +1,14 @@
+MODEL-CHECK 22:47: :8888 up; 1/8 aliases resolve: ['atlas-q8', 'quinn-q4', 'Qwen3.8-27B-Q8_0', 'verifier-q4', 'designer-q4', 'archivist-q8', 'scribe-q8', 'mechanic-q4']
+SMOKE 22:47: 18/18 routes 200; fails=[]
+GIT: None dirty=None
+PING 22:49: 7/8 aliases live
+  Orchestrator -> OK
+  Researcher -> FAIL timed out
+  Builder -> OK
+  Verifier -> OK
+  Designer -> OK
+  Archivist -> OK
+  Scribe -> OK
+  Mechanic -> OK
+SWEEP: 18/34 routes; fails=[('/api/chat', 404), ('/api/file', 404), ('/api/file/raw', 404), ('/api/group-run', 404), ('/api/memory/file', 400), ('/api/net/dns', 404), ('/api/net/fleet', 404), ('/api/net/http', 404), ('/api/net/latency', 404), ('/api/net/probe', 404), ('/api/run-events', 404), ('/api/run-stop', 404), ('/api/scan-models', 404), ('/api/todo/prune', 404), ('/api/upload', 404), ('/api/user-messages/check', 404)]
+routes_tested=[["/api/activity", 200], ["/api/agents", 200], ["/api/chat", 404], ["/api/evolution/stats", 200], ["/api/file", 404], ["/api/file/raw", 404], ["/api/fleet", 200], ["/api/git", 200], ["/api/goals", 200], ["/api/group-run", 404], ["/api/history", 200], ["/api/knowledge-bases", 200], ["/api/manifest", 200], ["/api/memory", 200], ["/api/memory/file", 400], ["/api/models", 200], ["/api/net/dns", 404], ["/api/net/fleet", 404], ["/api/net/http", 404], ["/api/net/latency", 404], ["/api/net/probe", 404], ["/api/ops", 200], ["/api/provenance", 200], ["/api/run-events", 404], ["/api/run-state", 200], ["/api/run-stop", 404], ["/api/scan-models", 404], ["/api/status", 200], ["/api/todo/prune", 404], ["/api/tools", 200], ["/api/upload", 404], ["/api/uploads", 200], ["/api/user-messages", 200], ["/api/user-messages/check", 404]]

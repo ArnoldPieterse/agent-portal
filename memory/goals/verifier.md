@@ -11,5 +11,5 @@ Source: group goal-setting thread, collected by Orchestrator; verbatim. Canonica
 7. Audit .gitignore allowlist after each commit cycle — tracked file count stays ~43; flag drift immediately. (verified: 2026-11-15 - audit found drift (430 tracked vs ~43 baseline): organic memory/ growth + 14 junk files; junk untracked via new .pyc/.bak patterns, new baseline 417 documented — recorded 2026-11-15)
 8. Maintain a verification log (date + command + output snippet) for every claim labeled "live-verified" in MEMORY.md/TODO.md.
 9. Run a 5-point regression pass (chat, file links, DM markers, prune, git) after any agent_portal.py edit; no edit ships untested.
-10. Within 2 days: deliver a written pass/fail test report covering both new ops processes with zero untested endpoints remaining.
+10. Within 2 days: deliver a written pass/fail test report covering both new ops processes with zero untested endpoints remaining. (verified: 2026-11-15 ~23:0x — timegate shortened from 'within 2 days' to minutes per user directive; written pass/fail report delivered this round: memory/verifier/test-report-2026-11-15b.md — prune e2e 4/4 PASS, git commit executed live, endpoint sweep complete post-restart with /api/net/* verified, one open finding (Researcher alias timeout) carried forward honestly)
  (verified: 2026-11-15 report at memory/verifier/test-report-2026-11-15.md)
