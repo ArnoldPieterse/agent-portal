@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 8, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 9, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Mirror runs White→shared, overwriting newer writes while preserving mtime
 - Designer's canonical patch is
 ## Counter
-- inter_agent_replies_this_prompt: 8 / ∞
+- inter_agent_replies_this_prompt: 9 / ∞
 - last_reset_by: —
