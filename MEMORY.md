@@ -4,7 +4,7 @@
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
 
 ## GOAL (live plan = TODO.md top; keep both in sync)
-**FLEET 77/80 (96%)** (11-15 ~11:0x): CRITICAL popup complaint FIXED - all 4 scheduled tasks now windowless (PortalRun via portal_hidden.vbs hidden-cmd pythonw; mirror/probe/daily-git run pythonw directly); verified live: mirror 10:57:31 + probe 11:01:01 fired with zero visible windows, fleet_probe's first-ever successful scheduled run. **Fleet FULLY UP**: human powered .39/.99 back on ~10:5x - all 4 hosts report (White busy Q8_0; Red/Pale/Black idle). Remote alias half PASS 6/6. Mechanic #4 + #9 CLOSED. SURFACED: remotes have NO model in VRAM -> DECISION NEEDED (human): load six bound models? Ledger caveat stands (EVIDENCE_PAT false-positives; Researcher to tighten). NEXT unblocked: Builder H1 .frow fix, Designer M3-M6, Mechanic #3 remote reboot dry-runs (pending human OK).
+**FLEET 77/80 (96%)** (11-15 ~12:0x): post-reboot popup regression FIXED - RecoverAll was the 5th boot-time launcher still running its .bat visibly (now recover_hidden.vbs; task changed, XML verified) + pythonw children lacked CREATE_NO_WINDOW (mirror net use/git x3, portal git/index-check x3); live-verified zero visible consoles across forced-SMB-reconnect mirror run + /api/git. fleet_reload WHITE deferred-load/DONE fixed (was guaranteed 25-min TIMEOUT). Boot auto-pass LOADED all six remote models (RED q8+xl, BLACK q4s+q8, PALE q8+q4s) - model decision resolved by reboot automation; White Q8_0 reloaded despite unload request -> DECISION: keep or unload? Portal PID 3496 (trap procedure; _portal_pid.txt was stale post-reboot). NEXT: Builder H1 .frow, Designer M3-M6, Mechanic #3 reboot dry-runs (pending OK), Researcher ledger tightening.
 
 ## 2026-11-14 ~01:4x - White model folders → fleet convention DONE
 Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S GPU0 ctx 131072, quant-tagged ids; /api/fleet verified). Lesson: load API 200 = async ack — poll until resident. Detail: TODO.md top section + memory/llm/studio-api.md "Folder rename" note.
@@ -13,7 +13,7 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Portal PID is now 19488 (was 54008); confirmed via `_portal_pid.txt`, stale ref fixed in MEMORY.md hot notes.
+- Portal PID 3496 after 11-15 ~12:0x restart (trap procedure, POSTDATE_OK). Post-reboot _portal_pid.txt was stale (said 54008; real listener 4584) - after any reboot cross-check the file vs :8099 OwningProcess.
 - Unapplied
 - White :8099/:8888 time out from LAN — pre-existing firewall policy (
 - Builder: last round's /api/goals + /api/provenance wiring and H1 .frow fix were lost; re
