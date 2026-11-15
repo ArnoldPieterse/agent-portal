@@ -6,6 +6,7 @@ Unsloth Studio /v1/chat/completions endpoint (the full harness: reasoning,
 skills, RAG, tool execution). Nothing here loads models directly.
 """
 import hashlib, json, mimetypes, os, re, shutil, subprocess, sys, threading, time, urllib.request, urllib.error, urllib.parse, uuid
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PORT = 8099
@@ -484,13 +485,22 @@ def scan_remote_models(base_url, api_key="", timeout=20):
 
 # ---- Fleet Status panel (2026-11-13, 8-agent round-table decision) ----
 FLEET_TTL = 15          # seconds; last_seen older than this => "unknown"
+FLEET_PROBE_TIMEOUT = 2 # seconds per sub-probe; parallel probes keep a full snapshot < 5s
+                        # even with all remotes down (a dead host fails its first sub-probe)
+FLEET_MODELS_TTL = 30   # seconds; /v1/models refetch interval - the loaded-model list
+                        # changes rarely, and Studio's /v1/models can stall >2s while a
+                        # generation is active (observed 2026-11-15), so fetch on TTL and
+                        # fall back to the last known list rather than failing the host.
 _fleet_cache = {}       # base -> ts of last successful probe (stale aging)
+_fleet_dead = {}        # base -> ts of last FAILED probe (negative cache: no re-probe within FLEET_TTL)
+_fleet_models_cache = {}  # base -> (ts, [models]) - survives transient /v1/models stalls
 _fleet_lock = threading.Lock()
 
 def _fleet_probe(base, api_key="", timeout=3):
     """One lightweight per-host probe: active-generations + /v1/models (metadata only,
     no inference load; runs only when a human refreshes the panel). Short timeout so a
-    dead host can't hang /api/fleet. Returns {generations, models} or None."""
+    dead host can't hang /api/fleet. Returns {generations, models} when the host's
+    Studio answers its liveness endpoint, else None (= unknown)."""
     b = base.rstrip("/")
     h = {}
     if api_key:
@@ -500,23 +510,37 @@ def _fleet_probe(base, api_key="", timeout=3):
             gen = int(json.load(r).get("count", 0))
     except Exception:
         return None
-    code, payload = scan_remote_models(b, api_key, timeout=timeout)
-    if code != 200:
-        return None
-    models = []
-    for m in (payload or {}).get("data", []):
-        mid = str(m.get("id", ""))
-        if "loaded" in m and not m["loaded"]:
-            continue
-        qm = re.search(r"(UD-)?(Q\d+[A-Z0-9_]*|F16|BF16)", mid)
-        models.append({"id": mid, "quant": qm.group(2) if qm else ""})
+    # AG answered => the host IS reachable; state derives from generations. The model
+    # list is display-only: fetch on TTL, fall back to the last known list (or empty)
+    # when /v1/models stalls - never demote a live host to unknown for it.
+    now = time.time()
+    cached = _fleet_models_cache.get(b)
+    if cached and now - cached[0] < FLEET_MODELS_TTL:
+        models = cached[1]
+    else:
+        code, payload = scan_remote_models(b, api_key, timeout=timeout)
+        if code != 200:
+            models = cached[1] if cached else []
+        else:
+            models = []
+            for m in (payload or {}).get("data", []):
+                mid = str(m.get("id", ""))
+                if "loaded" in m and not m["loaded"]:
+                    continue
+                qm = re.search(r"(UD-)?(Q\d+[A-Z0-9_]*|F16|BF16)", mid)
+                models.append({"id": mid, "quant": qm.group(2) if qm else ""})
+            _fleet_models_cache[b] = (now, models)
     return {"generations": gen, "models": models}
 
 def _fleet_snapshot():
     """GET /api/fleet: live view of every host in agents.json (+ local Studio).
     State definitions (locked in round-table): busy = >=1 active generation on that
     Studio; idle = reachable with none; unknown = probe failed (last_seen then ages
-    from cache; client renders stale/unknown, never green/idle)."""
+    from cache; client renders stale/unknown, never green/idle).
+    Budget: probes run IN PARALLEL with FLEET_PROBE_TIMEOUT and dead hosts are
+    negatively cached for FLEET_TTL, so a full snapshot stays inside the panel's 5s
+    refresh window even with every remote powered down (verified 2026-11-15 by
+    memory/verifier/fleet_crosscheck.py)."""
     hosts, order = {}, []
     for a in load_agents().get("agents", []):
         b = studio_base(a).rstrip("/")
@@ -529,17 +553,40 @@ def _fleet_snapshot():
         hosts[local] = {"key": "", "agents": []}
         order.insert(0, local)
     now = time.time()
+
+    def probe(b):
+        with _fleet_lock:
+            cached_dead = (now - _fleet_dead.get(b, 0)) < FLEET_TTL
+        if cached_dead:
+            return None
+        res = _fleet_probe(b, hosts[b]["key"], timeout=FLEET_PROBE_TIMEOUT)
+        with _fleet_lock:
+            if res is not None:
+                _fleet_cache[b] = time.time()
+                _fleet_dead.pop(b, None)
+            else:
+                _fleet_dead[b] = time.time()
+        return res
+
+    results = {}
+    with ThreadPoolExecutor(max_workers=max(1, len(order))) as ex:
+        futs = {ex.submit(probe, b): b for b in order}
+        for f in as_completed(futs):
+            b = futs[f]
+            try:
+                results[b] = f.result()
+            except Exception:
+                results[b] = None
+
     rows = []
     for b in order:
         h = hosts[b]
         name = "White (local)" if b == local else b.split("//")[-1].split(":")[0]
         row = {"host": name, "base": b, "agents": h["agents"], "models": [],
                "generations": 0, "state": "unknown", "last_seen": None, "reason": ""}
-        res = _fleet_probe(b, h["key"])
+        res = results.get(b)
         with _fleet_lock:
-            if res is not None:
-                _fleet_cache[b] = now
-            else:
+            if res is None:
                 row["last_seen"] = _fleet_cache.get(b)
                 row["reason"] = ("unreachable" if row["last_seen"] is None else
                                  "stale (%ds)" % int(now - row["last_seen"]))
@@ -1390,6 +1437,28 @@ DONE_PART_DIR = os.path.join(HERE, "todo_done_parts")
 DONE_MAX_LINES = 240   # completed file splits into numbered parts above this
 DONE_PART_SIZE = 200   # lines moved per split (oldest first)
 GIT_EXE = os.path.join(HERE, "mingit", "cmd", "git.exe")
+PORTAL_START = time.time()   # process start - ground truth for the Ops panel uptime tile
+
+
+def _ops_snapshot():
+    """Ops panel host tiles (2026-11-15): disk usage of the workspace drive +
+    portal uptime since this process started. Cross-checkable against
+    Win32_LogicalDisk / Win32_Process CreationDate."""
+    try:
+        drive = os.environ.get("SystemDrive", "C:")
+        du = shutil.disk_usage(drive)
+        disk = {"drive": drive,
+                "total_gb": round(du.total / 2 ** 30, 1),
+                "free_gb": round(du.free / 2 ** 30, 1),
+                "used_gb": round((du.total - du.free) / 2 ** 30, 1)}
+    except Exception as e:
+        disk = {"error": str(e)}
+    up = int(time.time() - PORTAL_START)
+    hh, rem = divmod(up, 3600); mm, ss = divmod(rem, 60)
+    return {"ok": True, "pid": os.getpid(),
+            "uptime_s": up, "uptime_hm": "%dh %02dm %02ds" % (hh, mm, ss),
+            "started": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(PORTAL_START)),
+            "disk": disk}
 
 
 def _run_index_check():
@@ -1549,6 +1618,9 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/git":
             # Local git repo status + recent log (Ops panel, 2026-11-13).
             return self._json(200, _git_status())
+        elif p == "/api/ops":
+            # Ops panel host tiles (2026-11-15): disk usage + portal uptime.
+            return self._json(200, _ops_snapshot())
         elif p == "/api/knowledge-bases":
             return self._json(200, self._proxy_get("/api/rag/knowledge-bases"))
         elif p == "/api/tools":

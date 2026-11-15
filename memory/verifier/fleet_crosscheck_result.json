@@ -1,0 +1,41 @@
+{
+ "ok": true,
+ "elapsed_s": 0.04,
+ "failures": [],
+ "hosts": [
+  {
+   "host": "White (local)",
+   "base": "http://127.0.0.1:8888",
+   "state": "busy",
+   "reason": "",
+   "models": [
+    "Qwen3.8-27B-Q8_0"
+   ],
+   "status_field_ok": true
+  },
+  {
+   "host": "192.168.1.99",
+   "base": "http://192.168.1.99:8888",
+   "state": "unknown",
+   "reason": "unreachable",
+   "models": [],
+   "status_field_ok": true
+  },
+  {
+   "host": "192.168.1.39",
+   "base": "http://192.168.1.39:8888",
+   "state": "unknown",
+   "reason": "unreachable",
+   "models": [],
+   "status_field_ok": true
+  },
+  {
+   "host": "192.168.1.245",
+   "base": "http://192.168.1.245:8888",
+   "state": "idle",
+   "reason": "",
+   "models": [],
+   "status_field_ok": true
+  }
+ ]
+}
