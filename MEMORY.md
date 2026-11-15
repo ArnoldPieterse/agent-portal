@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 7, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 8, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Mirror
 - Shared tree (Z:\) is unreliable: files vanish mid-round and mirror clobbers occur; always re-verify state before acting.
 ## Counter
-- inter_agent_replies_this_prompt: 7 / ∞
+- inter_agent_replies_this_prompt: 8 / ∞
 - last_reset_by: —
