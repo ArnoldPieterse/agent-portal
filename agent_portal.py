@@ -1441,6 +1441,9 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
             ul.append("Rule: act on them in your reply. Private entries are for you alone - do not quote them publicly unless asked.")
             mem_block = (mem_block + "\n\n" if mem_block else "") + "\n".join(ul)
             umq_ids = [m["id"] for m in pend]
+        gb = _agent_goals_block(who)   # goal-drift fix: every group turn sees this agent's open goals
+        if gb:
+            mem_block = (mem_block + "\n\n" if mem_block else "") + gb
     # Blocked cross-talk rounds skip ReadMem entirely (checked BEFORE any aux round).
     if kind == "cross-talk" and not mem_st.get("infinite_budget", True) \
             and mem_st["inter_agent_replies"] >= XTALK_LIMIT:
@@ -1606,6 +1609,397 @@ def _finish_chat(wfile, agent, mode, kind, full):
     wfile.flush()
     return is_silent, concluded
 
+
+# ---- Group run engine (2026-11-15): backend-owned group orchestration ----
+# The cross-talk / auto-nudge loop used to live in the browser (index.html send()); a hard
+# refresh killed every in-flight stream and lost the whole run. Now a daemon thread owns
+# each group run: state persists in group_run.json, every SSE frame is journaled into
+# runs/<run_id>.journal, and ANY client (including one that just reloaded) replays from
+# seq 0 via /api/run-events and keeps watching live. Queued human messages ride the UMQ
+# (user_messages.json) and are injected by stream_chat itself - refresh-proof.
+
+GROUP_RUN_FILE = os.path.join(HERE, "group_run.json")
+RUNS_DIR = os.path.join(HERE, "runs")
+RUN_MAX_EVENTS = 4000      # per-run journal cap (a full run is normally a few hundred)
+RUN_KEEP = 5               # keep the N newest journals on disk
+NUDGE_MAX_RUN = 3          # auto-continue passes (mirrors the old frontend cap)
+XTALK_GUARD_RUN = 8        # max cross-talk rounds per pass
+MAX_CALLS_RUN = 16         # max agent calls per pass
+
+_group_run_lock = threading.Lock()
+_history_lock = threading.Lock()
+_journal_lock = threading.Lock()
+_active_run_id = None      # at most one live group run
+_run_stops = {}            # run_id -> threading.Event (■ Stop)
+_run_seq = {}              # run_id -> next seq
+
+
+class _RunStopped(OSError):
+    """Raised by the run sink when ■ Stop is requested. stream_chat's existing
+    `except OSError` branch catches it, so a stopped turn tears down cleanly."""
+
+
+def _load_group_run():
+    try:
+        with open(GROUP_RUN_FILE, encoding="utf-8") as f:
+            d = json.load(f)
+        return d if isinstance(d, dict) else {}
+    except Exception:
+        return {}
+
+
+def _save_group_run(run):
+    tmp = GROUP_RUN_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(run, f, ensure_ascii=False)
+    os.replace(tmp, GROUP_RUN_FILE)
+
+
+def _append_history(mode, entries):
+    """Append messages to the mode history (backend-owned group runs). Atomic RMW."""
+    if not entries or mode not in CHAT_HISTORY_FILES:
+        return
+    with _history_lock:
+        h = _load_history(mode)
+        h.extend(entries)
+        _save_history(mode, h)
+
+
+def _run_event(run_id, obj):
+    """Journal one seq-numbered event into the run's JSONL log (the replay source)."""
+    with _journal_lock:
+        nxt = _run_seq.get(run_id)
+        if nxt is None:  # first event for this run in this process: resume from disk
+            nxt = 1
+            try:
+                with open(os.path.join(RUNS_DIR, run_id + ".journal"), encoding="utf-8") as f:
+                    last = None
+                    for ln in f:
+                        last = ln
+                if last:
+                    nxt = int(json.loads(last).get("seq", 0)) + 1
+            except Exception:
+                pass
+        if nxt > RUN_MAX_EVENTS:
+            return
+        _run_seq[run_id] = nxt + 1
+        line = json.dumps({"seq": nxt, **obj}, ensure_ascii=False) + "\n"
+        try:
+            os.makedirs(RUNS_DIR, exist_ok=True)
+            with open(os.path.join(RUNS_DIR, run_id + ".journal"), "a", encoding="utf-8") as f:
+                f.write(line)
+        except Exception:
+            pass
+
+
+class _FrameSink:
+    """File-like stand-in for wfile: journals the SSE frames of one backend turn.
+
+    stream_chat only needs .write/.flush, so the ENTIRE turn pipeline (counter bump,
+    UMQ injection, ReadMem/StoreMem aux rounds, activity log) runs unchanged."""
+
+    def __init__(self, on_frame=None, stop_event=None):
+        self.on_frame = on_frame
+        self.stop_event = stop_event
+        self.buf = b""
+        self.content = ""
+        self.meta = {}
+        self.error = None
+        self.blocked = None
+
+    def write(self, data):
+        if self.stop_event is not None and self.stop_event.is_set():
+            raise _RunStopped("run stopped")
+        self.buf += data
+        while b"\n\n" in self.buf:
+            chunk, self.buf = self.buf.split(b"\n\n", 1)
+            line = chunk.strip()
+            if not line.startswith(b"data:"):
+                continue
+            payload = line[5:].strip()
+            if payload == b"[DONE]":
+                continue
+            try:
+                obj = json.loads(payload)
+            except Exception:
+                continue
+            if obj.get("content"):
+                self.content += obj["content"]
+            if "meta" in obj:
+                self.meta = obj["meta"]
+            if obj.get("error"):
+                self.error = str(obj["error"])[:300]
+            if obj.get("blocked"):
+                self.blocked = str(obj["blocked"])[:300]
+            if self.on_frame:
+                try:
+                    self.on_frame(obj)
+                except Exception:
+                    pass
+        return len(data)
+
+    def flush(self):
+        pass
+
+
+def run_turn_captured(agent, messages, mode, kind, session, on_frame=None, stop_event=None):
+    """Run one agent turn exactly like /api/chat but capture the SSE frames instead of
+    streaming them to a browser. Returns the sink (.content/.meta/.error/.blocked)."""
+    sink = _FrameSink(on_frame, stop_event)
+    stream_chat(sink, agent, messages, mode, kind, session)
+    return sink
+
+
+def _parallel_turns(run_id, names, kind, hist, stop_event):
+    """Fire one turn per agent in parallel (same semantics as the old frontend Promise.all).
+    Returns result dicts in `names` order: {name, full, silent, concluded, error, blocked}."""
+    agents_by_name = {a.get("name", "?"): a for a in load_agents()["agents"]}
+    out = [None] * len(names)
+
+    def work(i, nm):
+        ag = agents_by_name.get(nm)
+        if not ag:
+            return
+        _run_event(run_id, {"agent": nm, "kind": kind, "turn": True})  # frontend opens a bubble here
+        sink = run_turn_captured(ag, hist, "group", kind, run_id,
+                                 on_frame=lambda o: _run_event(
+                                     run_id, {"agent": nm, "kind": kind, "frame": o}),
+                                 stop_event=stop_event)
+        if sink.content.strip():
+            _, is_silent, concluded = _effective_reply(sink.content)
+        else:
+            is_silent, concluded = False, False
+        out[i] = {"name": nm, "full": sink.content, "silent": bool(is_silent),
+                  "concluded": bool(concluded), "error": sink.error, "blocked": sink.blocked}
+
+    threads = [threading.Thread(target=work, args=(i, nm), daemon=True)
+               for i, nm in enumerate(names)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+    for r in out:  # terminal event per turn - the frontend finalizes each bubble on this
+        if r:
+            _run_event(run_id, {"agent": r["name"], "kind": kind, "done": True})
+    return out
+
+
+def _group_run_worker(run_id):
+    """Backend port of the frontend group loop: parallel prompt phase -> cross-talk rounds
+    (settled / budget / guard caps) -> auto-nudge passes -> verdict. Every frame is journaled;
+    state survives tab refreshes, and a portal restart marks the run interrupted."""
+    global _active_run_id
+    run = _load_group_run()
+    stop_event = _run_stops.get(run_id) or threading.Event()
+    agents_by_name = {a.get("name", "?"): a for a in load_agents()["agents"]}
+    cast = [n for n in (run.get("cast") or []) if n in agents_by_name]
+    settled, no_output = set(), []
+    last_concluded = pass_any = truncated = False
+    nudges = 0
+    verdict = None
+
+    def expand_mentions(text):
+        nonlocal cast
+        for nm in agents_by_name:
+            if nm not in cast and re.search(r"@" + re.escape(nm), text or "", re.I):
+                cast.append(nm)
+                run["cast"] = list(cast)
+                _save_group_run(run)
+
+    try:
+        while True:
+            if stop_event.is_set():
+                verdict = {"note": "\u25a0 Stopped by user \u2014 round closed as concluded.", "cls": "ok"}
+                break
+            if nudges > 0:
+                nt = ("\u21bb AUTO-CONTINUE %d/%d: the previous pass ended without [CONCLUDED]. Keep going: "
+                      "finish in-flight work, then either reply [CONCLUDED] when the task is done or go "
+                      "[SILENT] if there is nothing left to do.") % (nudges, NUDGE_MAX_RUN)
+                _append_history("group", [{"speaker": "You", "content": nt}])
+                _run_event(run_id, {"run": "nudge", "text": nt})
+            hist = _load_history("group")
+            run["phase"] = "prompt"
+            _save_group_run(run)
+            _run_event(run_id, {"run": "phase", "phase": "prompt"})
+            results = [r for r in _parallel_turns(run_id, cast, "prompt", hist, stop_event) if r]
+            entries = []
+            for r in results:
+                if r["blocked"] or r["error"]:
+                    continue
+                if r["full"].strip() and not r["silent"]:
+                    entries.append({"speaker": r["name"], "content": r["full"]})
+                    pass_any = True
+                    if re.search(r"stopped before completing its tool calls", r["full"], re.I):
+                        truncated = True
+                else:
+                    no_output.append(r["name"])
+            _append_history("group", entries)
+            for r in results:  # @-mention expansion (same rule as the old frontend loop)
+                expand_mentions(r["full"])
+            guard = calls = 0
+            while (not stop_event.is_set() and guard < XTALK_GUARD_RUN and calls < MAX_CALLS_RUN):
+                _, st = load_memory()
+                if not st.get("infinite_budget", True) and st["inter_agent_replies"] >= XTALK_LIMIT:
+                    break
+                active = [nm for nm in cast if nm not in settled]
+                if not active:
+                    break
+                calls += len(active)
+                hist = _load_history("group")
+                run["phase"] = "cross-talk"
+                _save_group_run(run)
+                _run_event(run_id, {"run": "phase", "phase": "cross-talk"})
+                results = [r for r in _parallel_turns(run_id, active, "cross-talk", hist, stop_event) if r]
+                any_new = False
+                for r in results:
+                    if r["blocked"]:
+                        continue
+                    if r["full"].strip() and not r["silent"]:
+                        _append_history("group", [{"speaker": r["name"], "content": r["full"]}])
+                        any_new = True
+                        pass_any = True
+                        if r["concluded"]:
+                            last_concluded = True
+                        expand_mentions(r["full"])
+                    else:
+                        settled.add(r["name"])
+                        if not r["full"].strip():
+                            no_output.append(r["name"])
+                guard += 1
+                if last_concluded or not any_new:
+                    break
+            run["settled"] = sorted(settled)
+            _save_group_run(run)
+            if last_concluded:
+                verdict = {"note": "\u2713 Concluded \u2014 task complete.", "cls": "ok"}
+                break
+            if pass_any and nudges < NUDGE_MAX_RUN:  # task incomplete -> AUTO-NUDGE next pass
+                nudges += 1
+                run["nudges"] = nudges
+                _save_group_run(run)
+                continue
+            _, st = load_memory()
+            spent = ("\u26a0 Auto-continue limit reached (%d/%d) \u2014 " % (nudges, NUDGE_MAX_RUN)) \
+                if nudges >= NUDGE_MAX_RUN else ""
+            if not st.get("infinite_budget", True) and st["inter_agent_replies"] >= XTALK_LIMIT:
+                verdict = {"note": spent + "\u23f8 Agent-to-agent budget exhausted (%d/%d) with NO conclusion \u2014 task not confirmed complete. Send a follow-up to continue." % (st["inter_agent_replies"], XTALK_LIMIT), "cls": "warn"}
+            elif truncated:
+                verdict = {"note": (spent or "") + "\u26a0 Round ended with NO conclusion and truncated tool calls \u2014 the task is incomplete.", "cls": "warn"}
+            else:
+                tail = (" \u2014 %s produced no output" % ", ".join(sorted(set(no_output)))) if no_output else ""
+                verdict = {"note": (spent or "\u2014 ") + "Round ended with NO conclusion. Task state unconfirmed%s. Send a follow-up to continue." % tail, "cls": "dim"}
+            break
+    except Exception as e:
+        verdict = {"note": "Run error: %s" % str(e)[:200], "cls": "warn"}
+        run["error"] = str(e)[:300]
+    finally:
+        run["status"] = "stopped" if stop_event.is_set() else ("concluded" if last_concluded else "done")
+        run["verdict"] = verdict
+        run["ended"] = time.time()
+        _save_group_run(run)
+        _run_event(run_id, {"run": "end", "status": run["status"], "verdict": verdict})
+        try:
+            _sync_workspace_to_sandbox()
+            _auto_commit()
+        except Exception:
+            pass
+        _active_run_id = None
+
+
+def start_group_run(text):
+    """Create + launch a backend-owned group run. Returns (run, error)."""
+    global _active_run_id
+    with _group_run_lock:
+        if _active_run_id:
+            return None, "a group run is already in progress (%s)" % _active_run_id
+        agents = load_agents()["agents"]
+        names = [a.get("name", "") for a in agents]
+        mentioned = [n for n in names if re.search(r"@" + re.escape(n), text or "", re.I)]
+        rid = "g-%x-%s" % (int(time.time() * 1000), os.urandom(3).hex())
+        hist = _load_history("group")
+        run = {"id": rid, "status": "running", "prompt": text[:4000], "cast": (mentioned or names),
+               "settled": [], "nudges": 0, "phase": "prompt",
+               "started": time.time(), "ended": None, "verdict": None, "error": None,
+               "hist_start": len(hist)}
+        _save_group_run(run)
+        _append_history("group", [{"speaker": "You", "content": text}])
+        _run_stops[rid] = threading.Event()
+        _active_run_id = rid
+    _run_event(rid, {"run": "start", "prompt": text[:4000]})
+    _save_run_state({"busy": True, "mode": "group", "phase": "prompt",
+                     "ts": int(time.time() * 1000), "run_id": rid})
+    threading.Thread(target=_group_run_worker, args=(rid,), daemon=True).start()
+    return run, None
+
+
+def _agent_goals_block(name):
+    """One short nudge per agent: its own open goals from memory/goals/<slug>.md, so group
+    turns push toward progress instead of re-verification (2026-11-15 goal-drift fix)."""
+    try:
+        with open(os.path.join(HERE, "memory", "goals", name.lower() + ".md"), encoding="utf-8") as f:
+            txt = f.read(4000)
+        items = []
+        for ln in txt.splitlines():
+            m = re.match(r"^\s*\d+[.)]\s+(.*)", ln) or re.match(r"^\s*[-*]\s*\[ \]\s*(.*)", ln)
+            if not m:
+                continue
+            it = m.group(1).strip()
+            if not it or "[x]" in ln.lower():
+                continue
+            items.append(it[:200])
+            if len(items) >= 5:
+                break
+        if not items:
+            return ""
+        return ("YOUR OPEN GOALS (memory/goals/%s.md \u2014 make progress on these; verify evidence on disk before claiming any done):\n%s"
+                % (name.lower(), "\n".join(items))[:900])
+    except Exception:
+        return ""
+
+
+def _reap_stale_group_run():
+    """Portal restarted mid-run: the worker thread is gone. Mark the run interrupted so the
+    UI shows what happened; queued UMQ messages survive and ride the next run."""
+    try:
+        run = _load_group_run()
+        if run.get("id") and run.get("status") == "running":
+            run["status"] = "interrupted"
+            run["verdict"] = {"note": "\u26a0 Portal restarted mid-run \u2014 this run was interrupted. Queued messages were kept; send a follow-up to continue.", "cls": "warn"}
+            run["ended"] = time.time()
+            _save_group_run(run)
+            _run_event(run["id"], {"run": "end", "status": "interrupted", "verdict": run["verdict"]})
+    except Exception:
+        pass
+
+
+def _prune_run_journals():
+    try:
+        os.makedirs(RUNS_DIR, exist_ok=True)
+        files = sorted((f for f in os.listdir(RUNS_DIR) if f.endswith(".journal")), reverse=True)
+        for f in files[RUN_KEEP:]:
+            os.remove(os.path.join(RUNS_DIR, f))
+    except Exception:
+        pass
+
+
+_reap_stale_group_run()
+
+
+def _clear_stale_busy():
+    """A dead process leaves run_state.json with busy:true. If no group run is live, that flag
+    is a lie - clear it so a fresh tab never thinks the portal is mid-run."""
+    try:
+        st = _load_run_state() or {}
+        run = _load_group_run()
+        if st.get("busy") and not (run.get("id") and run.get("status") == "running"):
+            st["busy"] = False
+            _save_run_state(st)
+    except Exception:
+        pass
+
+
+_clear_stale_busy()
+_prune_run_journals()
 
 # ---- Ops (2026-11-13): TODO pruning + local git repo management ----
 TODO_FILE = os.path.join(HERE, "TODO.md")
@@ -1907,6 +2301,65 @@ class Handler(BaseHTTPRequestHandler):
                                 "candidates": snap.get("candidates"),
                                 "dead": snap.get("dead")})
 
+    def _stream_run_events(self):
+        """SSE: replay the journaled events of a group run from ?cursor=, then live-tail
+        until the run's terminal 'end' event. This is what makes hard-refreshes harmless -
+        a reloaded tab re-attaches and sees exactly where the backend left off."""
+        q = urllib.parse.parse_qs(self.path.split("?", 1)[1] if "?" in self.path else "")
+        rid = (q.get("run") or [""])[0]
+        try:
+            cursor = int((q.get("cursor") or ["0"])[0])
+        except ValueError:
+            cursor = 0
+        run = _load_group_run()
+        if not rid or run.get("id") != rid:
+            return self._json(404, {"error": "unknown run"})
+        self.send_response(200)
+        self.send_header("Content-Type", "text/event-stream")
+        self.send_header("Cache-Control", "no-cache")
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.end_headers()
+        path = os.path.join(RUNS_DIR, rid + ".journal")
+        state = {"pos": 0, "fh": None, "sent_end": False}
+        deadline = time.time() + 3600 * 2
+
+        def drain():
+            data = state["fh"].read()
+            if not data:
+                return
+            i = data.rfind(b"\n")
+            full, rest = (data[:i + 1], data[i + 1:]) if i >= 0 else (b"", data)
+            for line in full.splitlines():
+                try:
+                    ev = json.loads(line)
+                except Exception:
+                    continue
+                if int(ev.get("seq", 0)) <= cursor:
+                    continue
+                self.wfile.write(b"data: " + line + b"\n\n")
+                self.wfile.flush()
+                if ev.get("run") == "end":
+                    state["sent_end"] = True
+            state["pos"] += len(full)
+
+        try:
+            while not state["sent_end"] and time.time() < deadline:
+                if state["fh"] is None:
+                    if os.path.exists(path):
+                        state["fh"] = open(path, "rb")
+                    else:
+                        st = _load_group_run()
+                        if st.get("status") != "running":
+                            break
+                        time.sleep(0.25)
+                        continue
+                drain()
+                time.sleep(0.25)
+            if state["fh"] is not None:
+                state["fh"].close()
+        except OSError:
+            pass  # client gone (refresh / tab closed) - the run keeps going on the backend
+
     def do_GET(self):
         p = self.path.split("?")[0]
         if p in ("/", "/index.html"):
@@ -1920,7 +2373,22 @@ class Handler(BaseHTTPRequestHandler):
             m2 = (q.get("mode") or ["group"])[0]
             return self._json(200, {"ok": True, "history": _load_history(m2) if m2 in CHAT_HISTORY_FILES else []})
         elif p == "/api/run-state":
-            return self._json(200, _load_run_state())
+            base = dict(_load_run_state() or {})
+            run = _load_group_run()
+            if run.get("id"):
+                if run.get("status") == "running":
+                    base.update({"busy": True, "mode": "group", "phase": run.get("phase", ""),
+                                 "run_id": run["id"], "cast": run.get("cast", []),
+                                 "settled": run.get("settled", []), "nudges": run.get("nudges", 0),
+                                 "hist_start": run.get("hist_start"),
+                                 "prompt": (run.get("prompt") or "")[:300]})
+                else:
+                    base.update({"busy": False, "mode": "group", "run_id": run["id"],
+                                 "status": run["status"], "verdict": run.get("verdict"),
+                                 "hist_start": run.get("hist_start")})
+            return self._json(200, base)
+        elif p == "/api/run-events":
+            return self._stream_run_events()
         elif p == "/api/models":
             return self._json(200, self._proxy_get("/v1/models"))
         elif p == "/api/status":
@@ -2153,6 +2621,10 @@ class Handler(BaseHTTPRequestHandler):
             m2 = (body.get("mode") or "").strip()
             if m2 not in CHAT_HISTORY_FILES:
                 return self._json(400, {"error": "mode must be 'group' or 'solo'"})
+            if m2 == "group":
+                # 2026-11-15: group history is backend-owned (the run engine appends to it);
+                # client pushes are ignored so a stale tab can never clobber a live run.
+                return self._json(200, {"ok": True, "ignored": "group history is backend-owned"})
             _save_history(m2, body.get("history"))
             return self._json(200, {"ok": True})
         elif p == "/api/run-state":
@@ -2160,6 +2632,21 @@ class Handler(BaseHTTPRequestHandler):
                              "mode": str(body.get("mode") or "")[:16],
                              "phase": str(body.get("phase") or "")[:40],
                              "ts": int(body.get("ts") or 0)})
+            return self._json(200, {"ok": True})
+        elif p == "/api/group-run":
+            text = (body.get("text") or "").strip()
+            if not text:
+                return self._json(400, {"error": "text required"})
+            run, err = start_group_run(text)
+            if err:
+                return self._json(409, {"error": err})
+            return self._json(200, {"ok": True, "run_id": run["id"], "cast": run["cast"]})
+        elif p == "/api/run-stop":
+            rid = (body.get("run_id") or "").strip()
+            ev = _run_stops.get(rid)
+            if not ev:
+                return self._json(404, {"error": "no such run"})
+            ev.set()
             return self._json(200, {"ok": True})
         elif p == "/api/chat":
             _sync_workspace_to_sandbox()   # two-way: push shared state, pull agent work home (LWW + new-only)
