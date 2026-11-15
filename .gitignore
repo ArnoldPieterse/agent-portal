@@ -35,3 +35,8 @@
 **/__pycache__/
 *.pyc
 *.bak
+
+# 2026-11-15: internal LAN host table (IPs, auth notes) - removed from the PUBLIC repo by human;
+# local copy kept for fleet ops but must never be tracked again. Still mirrored to internal remotes
+# via memory_mirror.py INTERNAL_ONLY.
+/memory/llm/hosts.md
