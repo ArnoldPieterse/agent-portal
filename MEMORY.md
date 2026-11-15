@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -19,5 +19,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Trim 2026-11-14: pre-trim content archived losslessly to memory/ops/memory-trim-archive-2026-11-14.md.
 - Fleet 77/80 (96%); popup fix verified
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
