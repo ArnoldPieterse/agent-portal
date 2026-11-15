@@ -1516,6 +1516,50 @@ def _goals_snapshot():
             "fleet_done": done_all, "fleet_total": total, "agents": agents}
 
 
+_EVOLUTION = None
+
+
+def _evolution_mod():
+    """Load the evolution engine (portal-root evolution.py) once. EVOLUTION_HOME is pinned
+    to HERE/evolution via setdefault, so the island never depends on the portal's launch cwd;
+    a pre-set env var still wins (scratch-island tests)."""
+    global _EVOLUTION
+    if _EVOLUTION is None:
+        os.environ.setdefault("EVOLUTION_HOME", os.path.join(HERE, "evolution"))
+        import importlib.util as _ilu
+        _spec = _ilu.spec_from_file_location("_evolution_engine", os.path.join(HERE, "evolution.py"))
+        _mod = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_mod)
+        _EVOLUTION = _mod
+    return _EVOLUTION
+
+
+def _evolution_snapshot():
+    """Evolution layer island state (CHG-0002, gen 1): population table + graveyard as JSON.
+    Thin read over evolution.py - same counts as `python evolution.py stats`."""
+    try:
+        ev = _evolution_mod()
+    except Exception as e:
+        return {"ok": False, "error": "evolution engine not loadable: %s" % e}
+    data = ev.load_pop()
+    grave = ev.load_grave()
+    ch = data["changes"]
+    living = [c for c in ch if c["status"] == "living"]
+    cand = [c for c in ch if c["status"] == "candidate"]
+    dead_all = len(grave["deaths"])
+    born_total = len(ch) + dead_all
+    gens = [c["generation"] for c in ch] + [c["generation"] for c in grave["deaths"]]
+    return {"ok": True,
+            "island": data["meta"].get("island"),
+            "started": data["meta"].get("started"),
+            "cap": data["meta"].get("max_population", ev.MAX_POPULATION),
+            "living": len(living), "candidates": len(cand), "dead": dead_all,
+            "born_total": born_total,
+            "survival_pct": round(100.0 * len(living) / born_total, 1) if born_total else 0.0,
+            "max_generation": max(gens) if gens else 0,
+            "changes": sorted(ch, key=lambda x: x["id"]),
+            "graveyard": grave["deaths"]}
+
+
 def _run_index_check():
     """Pre-prune ritual (Archivist goal 2): run memory/archivist/index_check.py so
     every prune commit is index-clean. Returns (rc, output). rc: 0=clean,
@@ -1659,6 +1703,35 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Headers", "Content-Type")
         self.end_headers()
 
+    def _evolution_mutate(self, body):
+        """POST /api/evolution/accept {id, note} | /api/evolution/reject {id, cause, note}.
+        Thin wrappers over evolution.cmd_accept / cmd_reject (CHG-0002, gen 1). Engine
+        rejections arrive as SystemExit and map to 409; the response carries the resulting
+        change record plus fresh island counts."""
+        action = self.path.split("?")[0].rsplit("/", 1)[-1]
+        cid = (body.get("id") or "").strip()
+        if not re.match(r"^CHG-\d{4}$", cid):
+            return self._json(400, {"error": "id must look like CHG-0001"})
+        ev = _evolution_mod()
+        import types as _t
+        ns = _t.SimpleNamespace(id=cid, note=(body.get("note") or ""), cause=(body.get("cause") or ""))
+        try:
+            if action == "accept":
+                ev.cmd_accept(ns)
+            else:
+                ev.cmd_reject(ns)
+        except SystemExit as e:
+            msg = e.code if isinstance(e.code, str) else str(e)
+            return self._json(409, {"error": msg, "id": cid})
+        snap = _evolution_snapshot()
+        rec = next((c for c in snap.get("changes", []) if c["id"] == cid), None)
+        if rec is None:
+            rec = next((d for d in snap.get("graveyard", []) if d["id"] == cid), None)
+        return self._json(200, {"ok": True, "action": action, "change": rec,
+                                "living": snap.get("living"),
+                                "candidates": snap.get("candidates"),
+                                "dead": snap.get("dead")})
+
     def do_GET(self):
         p = self.path.split("?")[0]
         if p in ("/", "/index.html"):
@@ -1691,6 +1764,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, {"ok": False, "error": str(e)})
             # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
             return self._json(200, _goals_snapshot())
+        elif p == "/api/evolution/stats":
+            # Evolution layer island (CHG-0002, gen 1): population table + graveyard JSON.
+            return self._json(200, _evolution_snapshot())
         elif p == "/api/knowledge-bases":
             return self._json(200, self._proxy_get("/api/rag/knowledge-bases"))
         elif p == "/api/tools":
@@ -1980,6 +2056,9 @@ class Handler(BaseHTTPRequestHandler):
             data["agents"].append(agent)
             save_agents(data)
             self._json(200, {"ok": True, "agent": agent})
+        elif p in ("/api/evolution/accept", "/api/evolution/reject"):
+            # Evolution layer (CHG-0002, gen 1): thin wrappers over evolution.cmd_accept/reject.
+            return self._evolution_mutate(body)
         else:
             self._json(404, {"error": "not found"})
 
