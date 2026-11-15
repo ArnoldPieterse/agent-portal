@@ -62,10 +62,15 @@ NUM_RE = re.compile(r"^\s*(\d+)[.)]\s+(.*)$")
 
 def repo_root():
     """Repo root, independent of where this module copy lives
-    (memory/researcher/goal_ledger.py -> two up; portal-root copy -> itself)."""
+    (memory/researcher/goal_ledger.py -> two up; portal-root copy -> itself).
+    2026-11-16 FIX: old check tested <root>/memory/memory (never exists) and returned
+    the researcher dir as root, so EVERY (pointer:) leaf validated as 'leaf missing'."""
     d = os.path.dirname(os.path.abspath(__file__))
-    if os.path.basename(d) == "researcher" and os.path.isdir(os.path.join(os.path.dirname(d), "memory")):
-        return os.path.dirname(d)
+    if os.path.basename(d) == "researcher":
+        memdir = os.path.dirname(d)          # <root>/memory
+        root = os.path.dirname(memdir)       # <root>
+        if os.path.isdir(os.path.join(root, "memory")):
+            return root
     return d
 
 
