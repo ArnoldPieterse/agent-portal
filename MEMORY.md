@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Verifier found its stopgap and Designer's script patch the same line with different replacements — deployment conflict unresolved.
 - Portal confirmed DOWN (port 8099 closed), cannot restart from sandbox; /api/provenance missing from agent_portal.py
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
