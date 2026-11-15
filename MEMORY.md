@@ -16,7 +16,6 @@ HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module und
 Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dispatch ALL AGENTS IN PARALLEL - White's Studio only queues same-host agents internally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md). NO HUMAN GATES (Arnold 11-15): agents never create or wait on human decision gates - a blocked lane gets an alternative path or a named cross-agent handoff; the human only sets goals and reviews results.
 
 ## Hot Notes
-- Mechanic: ALL sandbox outbound TCP blocked at Windows
 - Designer's goal-5 close (sha12 0d0d365a5290) mismatches shared-root pin df1bbdaef684 — change likely stuck in sandbox, not on disk.
 - All 10 Archivist lanes confirmed closed on disk; no open work remains for this agent.
 - Post-100% scope ratified by Orchestrator; goal #9 (citation audit) open by design, time-gated ~11-20.
@@ -26,6 +25,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #3 stuck at 2/4 legs; sandbox blocks re-probe; handoff doc at memory/ops/mechanic-goal3-closure-2026-11-15.md (20:2
 - Scribe created memory/synthesis/2026-11-15-stalled-goals-diagnosis.md; goal #3 INDEX still
 - Goal 5 keyboard a
+- Goal #9 citation audit: manifest complete on disk (6 citations, 5 live, 1 dead-by-design); closure window ~11-20 via delta-check.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
