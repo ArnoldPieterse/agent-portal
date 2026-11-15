@@ -440,7 +440,8 @@ function restoreMsgs(){
   stickScroll(true);
   return true;
 }
-$("stopBtn").onclick=()=>{ if(!busyNames.size)return; stopRequested=true; lastConcluded=true; activeCtrls.forEach(c=>c.abort()); }; // ■ Stop: close run as concluded, abort in-flight streams
+$("stopBtn").onclick=()=>{ if(!busyNames.size&&mode!=="group")return; stopRequested=true; lastConcluded=true; activeCtrls.forEach(c=>c.abort());
+  if(runId){ jpost('/api/run-stop',{run_id:runId}).catch(()=>{}); } }; // ■ Stop: abort solo streams / tell the backend run engine to stop cleanly (it finishes teardown + verdict)
 
 function addBubble(name, color, emoji, isYou){
   const d=document.createElement("div");
@@ -814,92 +815,120 @@ async function send(){
       const full=await streamReply(me);
       if(full)history.push({speaker:me.name,content:full});
     }else{
-      const mentionRe=a=>new RegExp("@\s*"+a.name.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),"i");
-      const mentioned=agents.filter(a=>mentionRe(a).test(text));
-      let cast=(mentioned.length?mentioned:[...agents]); // @-mention scopes the FIRST reply only; addressed agents join below
-      const inCast=new Set(cast.map(a=>a.id));
-      const expandCast=t=>{ for(const a of agents){ if(!inCast.has(a.id)&&mentionRe(a).test(t||"")){ inCast.add(a.id); cast.push(a);} } }; // @-addressed mid-run -> enters the conversation next round
-      roundBubbles=[]; noOutputNames.clear(); lastConcluded=false;
-      // Thinking bubbles stay with each agent's own message (per-message, as normal) -
-      // only the ending [SILENT] replies are merged into ONE shared pill below.
-      // ONE shared silence pill per prompt: every [SILENT] reply of the round merges here
-      // (created lazily at the first silence, so it sits where silences actually happen).
-      // AUTO-NUDGE (2026-11-12): a pass that ends without [CONCLUDED] means the task is
-      // not done - continue automatically with a fresh budget, up to MAX_NUDGES times.
-      // A pass where nobody says anything new is a natural end (no nudge).
-      const MAX_NUDGES=3; let nudges=0, passAny=false;
-      for(;;){
-        if(nudges>0){
-          const nt="\u21bb AUTO-CONTINUE "+nudges+"/"+MAX_NUDGES+": the previous round ended without conclusion. Continue the task - finish any truncated or empty work, pick up where the team left off, and say [CONCLUDED] when it is truly done.";
-          history.push({speaker:"You",content:nt});
-          addBubble("auto-continue","#8a63d2","\u21bb",false).querySelector(".body").textContent=nt;
-          stickScroll();
-        }
-        roundBubbles=[]; noOutputNames.clear(); lastConcluded=false; passAny=false;   // fresh per pass (passAny must reflect THIS pass only, else a silent pass re-nudges on stale activity)
-      const roundSilent={names:new Set(),w:null,p:null};
-      roundSilent.note=function(name){ if(!this.w){ const w=document.createElement("div");w.className="thinkwrap silentwrap";
-        const p=document.createElement("div");p.className="silentpill";p.title="these agents had nothing new to add this round";
-        w.appendChild(p);$("msgs").appendChild(w); this.w=w;this.p=p; }
-        this.names.add(name); this.p.textContent="\uD83D\uDD07 "+[...this.names].join(", ")+" stayed silent";
-        stickScroll(); };
-      // PARALLEL prompt phase: every addressed agent thinks + replies at the same time
-      // (each has its own LLM instance; the portal serves each stream in its own thread).
-      const promptResults=await Promise.all(cast.map(a=>streamReply(a,"prompt",roundSilent)));
-      cast.forEach((a,i)=>{ if(promptResults[i])history.push({speaker:a.name,content:promptResults[i]}); }); // cast order
-      promptResults.forEach(r=>expandCast(r)); // a delegation in a first reply pulls the addressed agent into the cast
-      // Agent-to-agent replies: fresh budget per human prompt (global counter in memory.md).
-      // Robust termination: an agent that goes [SILENT] is marked "settled" and NOT re-prompted
-      // this turn, so a run of silences can't ping-pong forever; hard caps bound total calls.
-      const settled=new Set(); let guard=0, calls=0; const MAX_CALLS=16;
-      while(!stopRequested && guard++<8 && calls<MAX_CALLS){
-        const mem=await api("/api/memory");
-        if(mem.limit!=null&&mem.inter_agent_replies>=mem.limit)break;   // FINITE budget exhausted (limit null = ∞ -> never breaks here)
-        let any=false;
-        const active=cast.filter(a=>!settled.has(a.id));  // already silent -> skip (saves GPU)
-        calls+=active.length;
-        // PARALLEL within a round: everyone reacts to the same context (end of previous
-        // round) at once; intra-round reactions happen in the NEXT round. Same settled/any/
-        // concluded semantics as before - only the waiting is gone.
-        const results=await Promise.all(active.map(a=>streamReply(a,"cross-talk",roundSilent)));
-        active.forEach((a,i)=>{
-          const full=results[i];
-          if(full===null)return;                       // limit reached server-side (no state change)
-          if(full){history.push({speaker:a.name,content:full});any=true;passAny=true;expandCast(full);}
-          else settled.add(a.id);                      // silent -> won't re-prompt this prompt
-        });
-        if(lastConcluded||!any)break;                  // concluded or nothing new -> round over
-      }
-      if(lastConcluded){                               // the whole round is over: tag every agent in it
-        for(const b of roundBubbles){
-          const who=b.querySelector(".who"); if(!who||b.querySelector(".conclchip"))continue;
-          const chip=document.createElement("span");chip.className="conclchip";
-          chip.style.cssText="margin-left:auto;font-size:10px;color:#3ddc84";
-          chip.textContent="\u2713 concluded"; chip.title="round ended by [CONCLUDED] - discussion reached a natural conclusion";
-          who.appendChild(chip); }
-      }
-      if(!lastConcluded&&!stopRequested&&passAny&&nudges<MAX_NUDGES){ nudges++; continue; }  // task incomplete -> AUTO-NUDGE next pass (fresh budget)
-      // Round-end verdict: [CONCLUDED] is THE completion signal. Every other way the loop can stop
-      // gets a visible note, so "task complete" and "round just stopped" never look the same.
-      let note=null,cls="";
-      if(stopRequested){ note="\u25a0 Stopped by user \u2014 round closed as concluded."; cls="ok"; }
-else if(lastConcluded){ note="\u2713 Concluded \u2014 task complete."; cls="ok"; }
-      else{
-        const memEnd=await api("/api/memory");
-        const spent=nudges>=MAX_NUDGES?("\u26A0 Auto-continue limit reached ("+nudges+"/"+MAX_NUDGES+") \u2014 "):""; // nudge budget spent -> say so in the verdict
-        if(memEnd.limit!=null&&memEnd.inter_agent_replies>=memEnd.limit)
-          { note=spent+"\u23F8 Agent-to-agent budget exhausted ("+memEnd.inter_agent_replies+"/"+memEnd.limit+") with NO conclusion \u2014 task not confirmed complete. Say \u201Ccounter reset\u201D or send a follow-up to continue."; cls="warn"; }
-        else if(roundBubbles.some(b=>b.querySelector(".warnchip")))
-          { note=spent+"\u26A0 Round ended with NO conclusion and truncated tool calls \u2014 the task is incomplete."; cls="warn"; }
-        else if(noOutputNames.size)
-          { note=(spent||"\u2014 ")+"Round ended with NO conclusion: "+[...noOutputNames].join(", ")+" produced no output. Task state unconfirmed \u2014 send a follow-up to continue."; cls="dim"; }
-      }
-      if(note){ const w=document.createElement("div");w.className="thinkwrap";
-        const p=document.createElement("div");p.className="roundend "+cls;p.textContent=note;
-        w.appendChild(p);$("msgs").appendChild(w);stickScroll(); }
-      }   // end auto-nudge pass loop (concluded / stopped / natural end / nudge budget spent)
+      // GROUP RUNS ARE BACKEND-OWNED (2026-11-15): the whole pass/cross-talk/nudge loop runs in a
+      // portal daemon thread; we only attach to its journaled SSE stream. A hard refresh no longer
+      // cancels anything - bootRestore re-attaches below and replays from the journal.
+      const resp=await fetch("/api/group-run",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text})});
+      const j=await resp.json().catch(()=>({}));
+      if(!resp.ok){ throw new Error((j&&j.error)||("group run start failed (HTTP "+resp.status+")")); }
+      sessionId=j.run_id; actFollow();
+      await attachRun(j.run_id);
     }
-  }catch(e){ addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=String(e); }
+  }catch(e){  }catch(e){ addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=String(e); }
   busy=false; busyNames.clear(); renderBusyHint(); $("send").disabled=false; $("input").focus(); stopHeartbeat(); saveHistoryServer(true); umqPoll(); renderQueue();
+}
+
+// ---- Backend group-run attachment (2026-11-15) ----
+// The run engine lives in agent_portal.py; /api/run-events replays the journaled SSE frames
+// from seq 0 and live-tails them. Re-rendering here mirrors streamReplyCore's bubble semantics.
+let runId=null, runCtrl=null;
+const runTurns={};   // agent name -> per-turn render state for the current phase
+function runTurn(agentName,kind){
+  const ag=agents.find(a=>a.name===agentName);
+  const d=addBubble(ag?ag.name:agentName,ag?ag.color:'#8b949e',ag?ag.emoji:'\ud83e\udd16',false);
+  if(kind==="cross-talk"){
+    const chip=document.createElement("span");
+    chip.style.cssText="margin-left:auto;font-size:10px;color:var(--dim)";
+    chip.textContent="\u21bb agent-to-agent"; chip.title="reply to another group member";
+    d.querySelector(".who").appendChild(chip); }
+  const body=d.querySelector(".body");
+  let busyT=null,secs=0;
+  const sp=document.createElement("span");sp.className="busyspan";sp.textContent="\u23f3 working\u2026 0s";body.appendChild(sp);
+  busyT=setInterval(()=>{secs++;if(sp.isConnected)sp.textContent="\u23f3 working\u2026 "+secs+"s";},1000);
+  const t={d,body,thinkEl:null,toolRow:null,full:"",stopBusy(){ if(busyT){clearInterval(busyT);busyT=null;} const s=body.querySelector(".busyspan"); if(s)s.remove(); }};
+  runTurns[agentName]=t; return t;
+}
+function runFinishTurn(agentName,kind){
+  const t=runTurns[agentName]; if(!t)return "";
+  t.stopBusy();
+  const full=t.full;
+  delete runTurns[agentName];
+  if(isSilent(full)){ t.d.remove(); return ""; }   // silence: merge out (round-end notes cover it)
+  if(/stopped before completing its tool calls/i.test(full)){
+    const chip=document.createElement("span");chip.className="warnchip";
+    chip.style.cssText="margin-left:auto;font-size:10px;color:var(--warn)";
+    chip.textContent="\u26a0 tool calls truncated - task incomplete";
+    t.d.querySelector(".who").appendChild(chip); }
+  if(!full.trim()){ t.body.textContent="\u2014 (no output) \u2014"; t.body.style.color="var(--dim)"; return ""; }
+  const s=stripConcluded(full);
+  t.body.textContent=s;
+  if(!renderDms(t.body,s))linkifyFiles(t.body,s);
+  history.push({speaker:agentName,content:full});
+  return full;
+}
+function handleRunEvent(ev){
+  if(ev.run==="start")return;   // human prompt bubble already exists (local send) or came from restored history
+  if(ev.run==="nudge"){
+    history.push({speaker:"You",content:ev.text});
+    addBubble("auto-continue","#8a63d2","\u21bb",false).querySelector(".body").textContent=ev.text; stickScroll(); return; }
+  if(ev.run==="phase")return;
+  if(ev.run==="end"){
+    const v=ev.verdict||{};
+    if(v.note){ const w=document.createElement("div");w.className="thinkwrap";
+      const p=document.createElement("div");p.className="roundend "+(v.cls||"dim");p.textContent=v.note;
+      w.appendChild(p);$("msgs").appendChild(w);stickScroll(); }
+    return; }
+  if(ev.turn){ runTurn(ev.agent,ev.kind); return; }
+  if(ev.done){ runFinishTurn(ev.agent,ev.kind); return; }
+  if(ev.frame){
+    const t=runTurns[ev.agent]; if(!t)return;
+    const o=ev.frame;
+    if(o.error){ t.stopBusy(); t.body.textContent="\u26a0 "+o.error; delete runTurns[ev.agent]; return; }
+    if(o.blocked){ t.stopBusy(); t.body.textContent="\u23f8 "+o.blocked; delete runTurns[ev.agent]; return; }
+    if(o.meta){ if(typeof o.meta.inter_agent_replies==="number")setXtalk(o.meta.inter_agent_replies,o.meta.limit);
+      if(o.meta.concluded){ lastConcluded=true;
+        const chip=document.createElement("span");chip.className="conclchip";
+        chip.style.cssText="margin-left:auto;font-size:10px;color:#3ddc84";chip.textContent="\u2713 concluded";
+        t.d.querySelector(".who").appendChild(chip); } }
+    if(o.content){ t.stopBusy(); t.full+=o.content; t.body.textContent=t.full; stickScroll(); }
+    if(o.thinking){ if(!t.thinkEl){t.thinkEl=document.createElement("details");t.thinkEl.className="think";
+      const s=document.createElement("summary");s.textContent="thinking";
+      const tb=document.createElement("div");tb.className="tbody";t.thinkEl.append(s,tb);t.d.appendChild(t.thinkEl);}
+      t.stopBusy(); t.thinkEl.querySelector(".tbody").textContent+=o.thinking; stickScroll(); }
+    if(o.tool){ t.stopBusy(); if(!t.toolRow){t.toolRow=document.createElement("div");t.d.appendChild(t.toolRow);}
+      const chip=document.createElement("span");chip.className="toolchip";
+      const tn=o.tool.name||(o.tool.function&&o.tool.function.name)||"tool";
+      chip.textContent="\ud83d\udee0 "+tn; t.toolRow.appendChild(chip); }
+    return; }
+}
+async function attachRun(rid){
+  runId=rid;
+  if(runCtrl){try{runCtrl.abort();}catch(e){}}
+  runCtrl=new AbortController();
+  await new Promise(res=>{
+    (async()=>{
+      try{
+        const resp=await fetch("/api/run-events?run="+encodeURIComponent(rid)+"&cursor=0",{signal:runCtrl.signal});
+        if(!resp.ok)throw new Error("run stream HTTP "+resp.status);
+        const reader=resp.body.getReader();const dec=new TextDecoder();let buf="";
+        while(true){
+          const {done,value}=await reader.read();if(done)break;
+          buf+=dec.decode(value,{stream:true});
+          let idx;
+          while((idx=buf.indexOf("\n\n"))>=0){
+            const chunk=buf.slice(0,idx);buf=buf.slice(idx+2);
+            for(const line of chunk.split("\n")){
+              if(!line.startsWith("data: "))continue;
+              let ev;try{ev=JSON.parse(line.slice(6));}catch(e){continue;}
+              handleRunEvent(ev);
+            }
+          }
+        }
+      }catch(e){ if(!(e&&e.name==="AbortError"))addBubble("error","#ff6b6b","\u26a0",false).querySelector(".body").textContent="run stream lost: "+e; }
+      finally{ res(); }
+    })();
+  });
+  runId=null;
 }
 
 let editingId=null;
@@ -1106,11 +1135,28 @@ async function restoreFromServer(){
   }catch(e){}
 }
 function checkInterruptedRun(){
+  // 2026-11-15: group runs are backend-owned. If one is live, RE-ATTACH and replay from the
+  // journal (hard refresh no longer cancels anything). A finished/interrupted run gets its verdict shown.
   api('/api/run-state').then(r=>{
-    if(r&&r.busy&&r.ts&&(Date.now()-r.ts<15000)){
-      $('intText').textContent='A run was in progress when this page reloaded \u2014 live streams were interrupted. Saved messages above are intact.';
-      $('intBanner').classList.add('show');
-    }else{jpost('/api/run-state',{busy:false,mode:mode,ts:Date.now()}).catch(()=>{});}
+    if(!r||!r.run_id)return;
+    if(r.busy&&r.status!=="interrupted"){
+      $('msgs').innerHTML=''; history.length=0;
+      api('/api/history?mode=group').then(h=>{
+        const hist=(h&&Array.isArray(h.history))?h.history:[];
+        const start=(typeof r.hist_start==="number")?Math.min(r.hist_start,hist.length):hist.length;
+        for(const e of hist.slice(0,start)){
+          if(e.speaker==='You'){addBubble('You','',null,true).querySelector('.body').textContent=e.content||'';}
+          else{const a=agents.find(x=>x.name===e.speaker);addBubble(a?a.name:e.speaker,a?a.color:'#8b949e',a?a.emoji:'\ud83e\udd16',false).querySelector('.body').textContent=e.content||'';}
+        }
+        busy=true;$('send').disabled=true;startHeartbeat();
+        attachRun(r.run_id);
+      }).catch(()=>{});
+    }else if(r.status&&r.status!=="running"){
+      const v=r.verdict||{};
+      if(v.note){const w=document.createElement("div");w.className="thinkwrap";
+        const p=document.createElement("div");p.className="roundend "+(v.cls||"dim");p.textContent=v.note;
+        w.appendChild(p);$("msgs").appendChild(w);stickScroll();}
+    }
   }).catch(()=>{});
 }
 function clearRunState(){jpost('/api/run-state',{busy:false,mode:mode,ts:Date.now()}).catch(()=>{});}

@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Post-100%: evolution layer becomes operational mode (Builder proposes, Verifier gates on tests, human accepts/rejects) replacing one-shot go
 - evolution.py diver
 - evolution.py has a confirmed hash fork: Archivist's local copy ≠ Mechan
 - CHG-0002 pending human accept; evolution.py has unresolved divergence between Archivist and Mechanic builds — must pin ground truth first
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Mirror keeps clobbering CHG-0002 portal fix (3rd re-apply); pinned backup at agent_portal_fixed_47876fd1.py
 - Designer: M3–M6 scope shrank — H1 & M6 already fixed in live index.html; only
 - Ledger tightened by Researcher at 12:33 today; 52/80 (evidence-g
+- Designer's M3/M4 index.html edits clobbered by mirror (sha12 b59e528fe
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
