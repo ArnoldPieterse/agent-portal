@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- evolution.py rebuilt at project
 - evolution.py diverged across ≥3 trees (hashes da397cf, 9e0
 - Schema-fork risk: Archivist and Mechanic each rebuilt evolution.py with different sha12s; Builder's portal d0a78
 - Shared root still missing evolution.py; agent_portal.py at 5th distinct SHA — Builder's portal fix not yet propagated to shared root.
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - CHG-0002 pending human accept; evolution.py has unresolved divergence between Archivist and Mechanic builds — must pin ground truth first
 - Goal count corrected: MEMORY.md claimed 77/80 (96%) but evidence-gated ledger is 51/80 (64%); EVIDENCE_PAT over-count fixed.
 - evolution.py rebuilt independently by Archivist+Mechanic → hash mismatch/divergence risk; CHG-0002 blocked on Verifier green
+- Shared root evolution.py rebuilt again: sha12=58
 ## Counter
-- inter_agent_replies_this_prompt: 1 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
