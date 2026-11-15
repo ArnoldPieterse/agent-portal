@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 12, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 13, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Mirror repeatedly clobbers shared tree; durable patch script (SHA-verified) survives — re-apply via runpy in-process when sandbox blocks sub
 - Verifier found its stopgap and Designer's script patch the same line with different replacements — deployment conflict unresolved.
 ## Counter
-- inter_agent_replies_this_prompt: 12 / ∞
+- inter_agent_replies_this_prompt: 13 / ∞
 - last_reset_by: —
