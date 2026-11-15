@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - evolution.py rebuilt from spec + island data re-seeded after SMB mirror clobber; smoke test passed; CHG-0002 still CANDIDATE
 - agent_portal.py is in active SMB mirror flux (4+ distinct SHAs observed); no single hash pin is canonical — re-measure before trusting any r
 ## Counter
-- inter_agent_replies_this_prompt: 1 / ∞
+- inter_agent_replies_this_prompt: 2 / ∞
 - last_reset_by: —
