@@ -25,7 +25,7 @@ def jget(path):
 def portal_chat(agent_id, messages, kind, timeout=600):
     body = {'agent_id': agent_id, 'mode': 'group', 'kind': kind, 'messages': messages}
     req = urllib.request.Request(PORTAL + '/api/chat', data=json.dumps(body).encode(), method='POST')
-    content, thinking, meta, err = [], [], None, None
+    content, thinking, meta, err, finish = [], [], None, None, None
     t0 = time.time()
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
@@ -46,11 +46,21 @@ def portal_chat(agent_id, messages, kind, timeout=600):
                     thinking.append(d['thinking'])
                 if d.get('meta'):
                     meta = d['meta']
+                if d.get('finish_reason'):
+                    finish = d['finish_reason']
+                if isinstance(meta, dict) and meta.get('finish_reason'):
+                    finish = meta['finish_reason']
                 if d.get('error'):
                     err = str(d['error'])[:200]
     except Exception as e:
         err = err or repr(e)[:200]
     text = ''.join(content).strip()
+    # 2026-11-16 (goal B5): truncation detection - finish_reason='length' from the
+    # model, or unbalanced function-call tags (stream cut mid-tag). Flagged so the
+    # e2e report shows TRUNCATED instead of counting a partial answer as valid.
+    truncated = (finish == 'length') or (
+        text.count('<tool_call>') != text.count('</tool_call>')
+        or '<function=' in text.replace(' ', '') and '</function>' not in text)
     silent = concluded = False
     low = text.lower()
     if low.startswith('[silent]'):
@@ -62,6 +72,7 @@ def portal_chat(agent_id, messages, kind, timeout=600):
         rest = text[len('[concluded]'):].lstrip(' :-').strip()
         text = rest or '(concluded)'
     return {'text': text, 'silent': silent, 'concluded': concluded,
+            'truncated': truncated, 'finish': finish,
             'meta': meta, 'err': err, 'dt': round(time.time() - t0, 1),
             'think_len': sum(len(x) for x in thinking)}
 
@@ -87,7 +98,7 @@ P("== PHASE 1: parallel prompt (all 6 agents) ==")
 r1 = parallel_call(AGENTS, history, 'prompt')
 for a in AGENTS:
     r = r1[a]
-    tag = 'SILENT' if r['silent'] else ('CONCLUDED' if r['concluded'] else '')
+    tag = 'SILENT' if r['silent'] else ('CONCLUDED' if r['concluded'] else ('TRUNCATED' if r['truncated'] else ''))
     P(f"  {names[a]:9s} {r['dt']:5.1f}s think={r['think_len']:5d} {tag:9s} err={r['err']} :: {r['text'][:160]!r}")
 for a in AGENTS:
     if r1[a]['text'] and not r1[a]['silent']:
@@ -98,6 +109,7 @@ P(f"counter after prompt phase: {mem1.get('inter_agent_replies')} (prompt phase 
 
 # ---- Phase 2: cross-talk rounds ----
 settled, guard, calls, lastConcluded = set(), 0, 0, False
+trunc_agents = []   # 2026-11-16 (goal B5): agents with truncated replies, any phase
 MAX_CALLS = 20  # 8 agents: phase-1 alone is 8 calls (was 12 for the 6-agent roster)
 while not lastConcluded and guard < 8 and calls < MAX_CALLS:
     mem = jget('/api/memory')
@@ -117,8 +129,10 @@ while not lastConcluded and guard < 8 and calls < MAX_CALLS:
         if r['text'] and not r['silent']:
             history.append({'speaker': names[a], 'content': r['text']})
             any_reply = True
-            tag = 'CONCLUDED' if r['concluded'] else ''
+            tag = 'CONCLUDED' if r['concluded'] else ('TRUNCATED' if r['truncated'] else '')
             P(f"  {names[a]:9s} {r['dt']:5.1f}s think={r['think_len']:5d} {tag:9s} err={r['err']} :: {r['text'][:160]!r}")
+            if r['truncated']:
+                trunc_agents.append(names[a])
             if r['concluded']:
                 lastConcluded = True
         else:
@@ -133,6 +147,8 @@ P(f"rounds={guard} calls={calls} concluded={lastConcluded} settled={[names[a] fo
 json.dump({'prompt': PROMPT, 'history': history,
            'phase1': {a: r1[a] for a in AGENTS},
            'final_counter': memF, 'rounds': guard, 'calls': calls,
-           'concluded': lastConcluded},
+           'concluded': lastConcluded,
+           'truncated_agents': sorted(set([names[a] for a in AGENTS if r1[a]['truncated']] + trunc_agents)),
+           'has_truncation': bool([a for a in AGENTS if r1[a]['truncated']] or trunc_agents)},
           open('group_e2e_result_8agent.json', 'w'), indent=1)
 P("saved group_e2e_result_8agent.json")

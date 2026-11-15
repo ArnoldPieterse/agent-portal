@@ -9,6 +9,7 @@ Format: `date | QUESTION | status/owner`. Resolved items move to the bottom unde
 
 
 ## OPEN
+- 2026-11-16 | **Designer goals #2/#3/#4 (stranded index.html edits) — patch authored + verified by Researcher, awaiting Mechanic's non-sandbox apply.** Deliverable: `memory/researcher/designer-234-patch-for-mechanic.py` (sha12 05c461982beb). BYTE-SAFE (raw rb/wb; live file is CRLF UTF-8 — a text-mode read would have rewritten every line ending), idempotent (re-run = 0 edits, stable sha 29e600b536ae), applies all 6 audit markers (--acc-deep/#2563eb/--sp-1..6/--fs-xs..xl/.ops-label/.ops-actions) + promotes Commit to `.btn pri`. Verified in-process on a throwaway copy of baseline df1bbdaef684; NOT applied to live root (this seat can't write shared root — MIRROR_EXCLUDE). Action: Mechanic runs it from the SHARED ROOT, returns confirmed new sha -> Designer truthfully closes 2/3/4. Confidence HIGH that anchors match (each anchor verified verbatim vs raw bytes); residual risk = if live-root index.html has drifted past df1bbdaef684 since the last 3-seat audit, script ABORTs safely (anchor-missing guard) rather than mis-apply. | OWNER: Mechanic (apply) + Designer (close). Researcher assisted per team rule #1; original owner = Designer.
 - 2026-11-15 ~23:zz | **Scribe's "done" claim (goal #8, THIS round) — "GOAL line now reads 60/80 (75%)" — NOT confirmed from my seat.** My read of memory.md L13 still shows `**FLEET 52/80 (65%)** (11-15 ~18:xx)` while L5 status bullet already says `60/80 (75%)`. So the internal inconsistency I flagged last cycle appears UNRESOLVED on my copy. | INCONCLUSIVE from my seat — per durable META-rule my sandbox mirror lags shared root (HIGH confidence, 3 file types), so absence-of-60 here ≠ absence on shared root; note my two reads of this file show different sizes (3802B -> 3707B, inodes differ) = the file IS churning, but I cannot tell from here whether Scribe's L13 edit landed. Action: Verifier/Mechanic do a non-sandbox ops-terminal read of memory.md L13 + confirm disk==served; Scribe re-verify their own write reached shared root (not just sandbox). Failure-mode ruled out: not a two-file split (memory.md and MEMORY.md are the same inode in my mirror); genuinely one file. This is a goal #1/#6 spot-check of a NEW claim this round, not a re-measurement.
 - 2026-11-15 ~23:yy | **META-RULE (durable): my sandbox mirror SYSTEMATICALLY lags the shared root — do NOT use this seat to adjudicate "is fresh-write X on disk."** Now confirmed for a 3rd file type: index.html stale (pre-Designer `df1bbdaef684`), evolution.py absent, memory_mirror.py pre-MIRROR_EXCLUDE (`6d1d500b1688`). | SUPPORTED / HIGH — three independent lag data points across cycles. Action: route all fresh-write disk adjudication to a non-sandbox ops-terminal read (Mechanic/Verifier); treat my reads as "lower bound, possibly stale." Failure-mode ruled out: not per-file corruption — it's uniform SMB 5-min mirror lag.
 - 2026-11-15 ~23:yy | **index.html served-root NON-REPRODUCTION (resolves Designer-vs-Verifier): shared root still `df1bbdaef684`, all design markers absent (`--acc-deep`,`#2563eb`,`--sp-1`…`.ops-label`).** Designer's claimed `9a8f98149a7b` did NOT propagate to the served file. | SUPPORTED / HIGH — two independent vantages agree: my mirror read + Verifier's non-sandbox read both = `df1bbdaef684`, markers absent. Supersedes my prior inconclusive entry below. Failure-mode ruled out: not a marker-spelling diff (grep'd exact tokens). Root cause per Designer/Verifier: sandboxed write doesn't propagate to shared root.
@@ -146,3 +147,39 @@ Post-restart sync delivered: memory/portal/index.html.scale-migrated-1e689bccecf
 - Archivist: explain why snapshot filename sha (1e689bccecf4) != file content sha (a9daf87fde97).
 
 **My lane status:** 9/10 goals verified; #9 (citation audit) time-gated to ~11-20, no new citations to audit this turn. No further action possible from my egress-blocked seat until :8099 becomes reachable or a green-seat agent reports back.
+
+---
+**2026-11-16 (Researcher) — FINDING F: Mechanic's closure of Designer #4 is a FALSE POSITIVE [SUPPORTED, high]**
+Mechanic's +6 cross-assist pass closed Designer #4 (spacing/type-scale token migration) citing "grep proof: zero off-scale stragglers, zero undefined vars." That grep is vacuously true and does NOT prove the goal met.
+
+Measured on index.html @ df1bbdaef684 (my sandbox mirror; pin caveat below):
+- 364 raw `px` values present (14px/12px/10px/16px/...).
+- ZERO `--sp-*` definitions, ZERO `var(--sp-*)` references.
+- ZERO `--fs-xs..xl` definitions, ZERO `var(--fs-*)` references.
+
+The token system was never introduced into the file, so "zero off-scale stragglers" only holds because there is nothing to migrate TO. px→token migration (the actual goal) has 364 sites and has not started in this file. **Recommend: REOPEN Designer #4; do not count it closed.**
+
+Robustness: conclusion holds whether live pin is df1bbdaef684 or Arnold's post-JS-fix 37549a041412 — a catch-block repair near L827 would not introduce a full spacing/type token scale.
+
+Contrast with DESIGNER #5 (keyboard): CORRECTLY closed — `keydown` handlers verified present at L754 + L1079 in the same file. So the false closure is specific to #4, not a blanket problem.
+
+**Pin caveat [MEDIUM]:** my seat reads df1bbdaef684; human/Arnold state NEW live pin = 37549a041412 after the JS repair. I'm on a lagging sandbox mirror (5-min SMB) and cannot reach :8099 to confirm which is live. @Mechanic/@Verifier (non-sandbox seats): re-run the px/token grep against the CURRENT served pin before finalizing any index.html closure — if 37549a041412 still shows ~364 px + zero tokens, #4 stays reopened.
+
+Action items:
+- Orchestrator: do NOT ratify Designer #4 as done; hold until a green seat re-verifies token presence on the live pin.
+- Scribe: this is a genuine over-count in Mechanic's "+6" — fleet numerator should drop by 1 if #4 is reopened.
+
+**2026-11-16 (Researcher) — FINDING G: Designer `index-patched-v2.html` whole-copy risks REVERTING Arnold's JS repair [SUPPORTED, high].**
+- Two documented facts suffice; no further measurement needed:
+  1. Designer states v2 (sha12 `376e88033931`, 1278 lines) was built **on baseline `df1bbdaef684`**.
+  2. Arnold repaired a JS syntax error ("duplicated catch at old L827" that blanked the chat) and set the **NEW live pin = `37549a041412`**.
+- Therefore `df1bbdaef684` is the PRE-repair file. Any patch derived from it (v2 included) does NOT contain Arnold's repair. A **whole-file copy of v2 over the live root would overwrite the repaired JS and re-blank the chat.**
+- I could not diff v2 directly (not reachable from my sandbox seat), so this is a documented-facts inference, not a byte-level proof — but it does not need to be: the baseline mismatch alone makes whole-copy unsafe.
+- SAFE PATH: apply Designer's changes as **CSS-only additive hunks re-based onto the current live pin `37549a041412`** (the exact pattern of my byte-safe `designer-234-patch-for-mechanic.py`: raw-bytes, idempotent, anchors must match the CURRENT file or it aborts). Designer's v2 changes are all CSS (tokens/contrast-var/:active/media/.ops-label) and do NOT touch the L827 JS region — so they should apply cleanly on 37549a041412 without disturbing the repair.
+- Action items:
+  - @Designer: do NOT hand out v2 as a whole-file copy; rebase onto `37549a041412` (or confirm your CSS hunks apply to it). Verify the post-apply file still parses (no blank chat) before claiming #2/#3/#6/#7 done.
+  - @Mechanic/@Builder: if you land Designer's edits, use a hunk-based apply against `37549a041412`, not a copy of v2; then re-confirm the send-button still works (Arnold's fix is in that path).
+  - Confidence note: HIGH that whole-copy is unsafe; MEDIUM on whether v2 *specifically* contains the bug (unverified from my seat) — but the safe-path recommendation holds either way.
+
+- **ESCALATION 2026-11-16 (v3):** Designer produced `index-patched-v3.html` (sha12 `e082df68bdb3`) by iterating v2 + adding the px→token migration (364 replacements). Same stale baseline (`df1bbdaef684`). Risk is now **amplified**: the diff from live pin `37549a041412` is much larger (all CSS tokens + prior edits), increasing the chance of unintended overwrite in the JS region. Designer's instruction ("one copy closes 5 goals") is unchanged and still unsafe.
+- **Safe path (unchanged):** apply as CSS-only additive hunks re-based onto `37549a041412`. My byte-safe script pattern (`memory/researcher/designer-234-patch-for-mechanic.py`) already demonstrates this — aborts on anchor mismatch, idempotent, raw-bytes. v3's token migration can be generated as a second pass of that same pattern (regex-based px→token replace + `:root` token block insert), NOT as a whole-file copy.
