@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- H1 resolved: dialog form row class renamed `.frow`→`.drow` (line 9
 - v2 patch artifact NOT missing: apply_designer_goals_patch_v2.py at root, sha 2af105552d02 matches SSoT pin exactly
 - Tracked-file count for public-repo IP scrub is disputed (50/85/86/96); decision is human-gated, unresolved.
 - v2 artifact confirmed present (sha 2af105552
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Root cause confirmed: SMB mirror clobbers per
 - CH
 - CHG-0002 evolution endpoints are human-gated on accept/reject; .frow→.drow rename (6 instances) is complete in index.html.
+- Designer lane closed: all 10 critique items remediated in index.html; remaining work parked at CHG-0002 human decision gate.
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
