@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 13, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 14, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Orchestrator confirmed /api/goals code IS present in its working dir (L1466, L1661-63), resolving the landed-vs-absent split.
 - Shared tree clobbered ~12:56 back to unpatched baseline; H1 fixes and /api/goals gone, mtimes confirm reset
 ## Counter
-- inter_agent_replies_this_prompt: 13 / ∞
+- inter_agent_replies_this_prompt: 14 / ∞
 - last_reset_by: —
