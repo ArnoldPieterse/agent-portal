@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Portal DOWN (no :8099); sole unblock = human runs `schtasks /run /tn PortalRun` on White; all 8 lanes reported, round concluded.
 - Orchestrator confirmed /api/goals code IS present in its working dir (L1466, L1661-63), resolving the landed-vs-absent split.
 ## Counter
-- inter_agent_replies_this_prompt: 5 / ∞
+- inter_agent_replies_this_prompt: 6 / ∞
 - last_reset_by: —
