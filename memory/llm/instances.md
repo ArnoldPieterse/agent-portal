@@ -30,6 +30,12 @@ Client abort mid-stream left one model's request queue stuck (slot idle, request
 Pre-reload probe on 2026-11-10 was CLEAN (quinn-q4 answered in 0.2 s) - not reproduced at probe time; force-reload of the
 model's engine remains the proven remedy. If it recurs: run recover_all.py (RecoverAll task).
 
+## Wedge recurrence (2026-11-15 ~17:52) - second confirmed occurrence
+- Symptoms: portal group run g-1a1de312535-a23478 went silent at 17:52 (journal mtime frozen, GPU idle); all agents showed "thinking"; /api/run-stop could NOT drain it (stop is checked only when frames arrive).
+- Diagnosis: per-model probe via /v1/chat/completions - quinn-q4 timed out at 40 s while atlas-q8 answered in 0.4 s => Q4-only wedge, same signature as 2026-11-10 (cancel -> cancelled:0).
+- PITFALL: active-generations reported only THIS Studio chat's own thread (__LOCALID_0Ueu8kG) as active - the harness keeps a turn "active" across tool-call gaps, so recover_all.py's idle-wait deadlocks while an agent is mid-turn. Use wedge_force_recover.py instead (no idle-wait; skips healthy models; launch via schtask \WedgeQ4Recover so it survives terminal exit).
+- Recovery: Q4 force-reload (UD-Q4_K_S, GPU0) started 18:23; Q8 untouched (probe OK). Remedy confirmed again.
+
 ## Thread rebind (this Studio chat)
 - PATCH /api/chat/threads/{id} on :8888 {modelId, modelGgufVariant}, no auth needed locally.
 - Currently bound to Q4 (unsloth UD-Q4_K_S) - verified live 2026-11-10 (earlier note said Q8; that was wrong).

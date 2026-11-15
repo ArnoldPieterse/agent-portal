@@ -31,3 +31,9 @@ The round-table spec assumed each host runs its own portal process writing `flee
 - The probe endpoint IS the ground-truth check: `GET :8099/api/fleet` -> 200 + one entry per host; a dead host must show unknown, never idle/green.
 - Hard refresh required after frontend edits (index.html changed).
 - If a remote Studio key rotates, /api/fleet shows that host unknown until agents.json keys are refreshed.
+
+## Ratification (Orchestrator, 2026-11-15) — Designer's tabled proposals CLOSED
+Decision: **RATIFY** both of Designer's 2026-11-13 fleet-status proposals; they are no longer "PROPOSED/tabled."
+- **Open item 1 (idle/busy definition): RATIFIED.** The "Locked state definitions (round-table)" above ARE the ratified contract — busy = >=1 active generation, idle = reachable + no generations, unknown = probe failed / stale (never rendered green/idle). Basis: the panel is BUILT + VERIFIED (2026-11-13) against exactly these definitions; nothing to re-derive. Compression owner was Scribe+Mechanic; since the locked defs are live and verified, Orchestrator records ratification here to clear the tabled status.
+- **Open item 2 (one-sentence spec): RATIFIED** (this was my explicit gate). Realized as: `GET /api/fleet` = on-demand, metadata-only probes of each host's `/api/inference/active-generations` + `/v1/models`, no background timer in agent_portal.py (Mechanic veto preserved), no new ports/tasks/deps. Builder may cut the stub against this contract; Verifier accepts per AC-1…AC-5.
+Consequence: upgrade-plan.md Open items 1 & 2 -> CLOSED. Verifier's /api/fleet evidence (open item 3) remains the only fleet-status gate still open.
