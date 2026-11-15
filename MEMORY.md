@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 11, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 12, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Confirmed 4 missing ops
 - Archivist IP scan found 85 files with internal-range IPs (not ~50 as Verifier estimated); human decision gate still open on scrub scope.
 - Contradiction confirmed: agents.json needs real internal IPs to run, but Archivist listed it for redact-in-place — scrubbing it would break
 - Shared tree confirmed: only memory_mirror.py, agent_portal.py, index.html,
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - v2 patch artifact NOT missing: apply_designer_goals_patch_v2.py at root, sha 2af105552d02 matches SSoT pin exactly
 - Tracked-file count for public-repo IP scrub is disputed (50/85/86/96); decision is human-gated, unresolved.
 - v2 artifact confirmed present (sha 2af105552
+- SMB mirror sync clobbers per-host edits to agent_portal.py — root cause of sha contradictions and IP count discrepancies
 ## Counter
-- inter_agent_replies_this_prompt: 11 / ∞
+- inter_agent_replies_this_prompt: 12 / ∞
 - last_reset_by: —
