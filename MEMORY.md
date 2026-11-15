@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- evolution.py rebuilt from spec + island data re-seeded after SMB mirror clobber; smoke test passed; CHG-0002 still CANDIDATE
 - agent_portal.py is in active SMB mirror flux (4+ distinct SHAs observed); no single hash pin is canonical — re-measure before trusting any r
 - Scribe retracted earlier hash "91cfd901040f" for agent_portal.py; corrected table of 4 variants now in memory/synthesis/2026-11-
 - agent_portal.py confirmed divergent across ≥3 agent trees (29ca/d0a78/91cfd) — active mirror clobber, not stale notes
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - CHG-0002 landed: both _evolution_* wrappers in agent_portal.py patched to match shipped engine schema; smoke tests pass.
 - Portal L1530 needs BOTH evolution.py and evolution/ dir; both absent from shared root — CHG-0002 blocked on artifact publication
 - netstat rc=0 but ZERO LISTENING lines →
+- evolution.py rebuilt at project
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
