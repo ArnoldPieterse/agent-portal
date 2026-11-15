@@ -34,6 +34,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 CFG_FILE = os.path.join(HERE, "memory_mirror_hosts.json")
 LOG_FILE = os.path.join(HERE, "memory_mirror.log")
 SYNC_FILES = ["TODO.md", "MEMORY.md", "agents.json", "agent_portal.py"]   # fallback if the git repo is missing
+# 2026-11-15: files that stay OFF the public GitHub repo (untracked, see .gitignore) but are still
+# mirrored to internal fleet remotes - they hold private LAN detail and must never be pushed publicly.
+INTERNAL_ONLY = ["memory/llm/hosts.md"]
 GIT_EXE = os.path.join(HERE, "mingit", "cmd", "git.exe")
 CREATE_NO_WINDOW = 0x08000000  # runs under pythonw (no console): without this flag every child (net use / git) allocates a VISIBLE console window - user-critical popup complaint, fixed 2026-11-15 post-reboot
 
@@ -46,10 +49,10 @@ def _allowlist():
                            creationflags=CREATE_NO_WINDOW)
         out = [l.strip().replace("\\", "/") for l in (r.stdout or "").splitlines() if l.strip()]
         if out:
-            return out
+            return out + INTERNAL_ONLY   # internal-only files keep mirroring though untracked (public-repo hygiene)
     except Exception:
         pass
-    return list(SYNC_FILES)
+    return list(SYNC_FILES) + INTERNAL_ONLY
 
 MTOL = 0.5      # seconds; matches _sync_workspace_to_sandbox tolerance (same-clock-domain edits)
 SKEW_TOL = 600  # seconds; default cross-host skew band (observed up to ~35 min; tune via hosts.json)
