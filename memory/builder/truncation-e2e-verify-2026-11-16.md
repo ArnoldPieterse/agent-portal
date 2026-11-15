@@ -1,0 +1,1 @@
+Goal #5 evidence: parse_sse + is_failure functions added to group_e2e.py (importable, no network at import time). test_group_e2e_truncation.py run 2026-11-16: PASS 5/5 fixtures (complete, truncated-mid-stream, empty-cut, explicit-error, noisy-tolerance). Output: "PASS: 5 fixtures - truncated/cut/empty/error/noisy streams all classified correctly; explicit failure field verified" 
