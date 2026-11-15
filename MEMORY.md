@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Mechic removed dead code (lines 1692-1693) from /api/provenance in agent_portal.py; new sha 29ca92639845, portal restart pending
 - H1 resolved: dialog form row class renamed `.frow`→`.drow` (line 9
 - v2 patch artifact NOT missing: apply_designer_goals_patch_v2.py at root, sha 2af105552d02 matches SSoT pin exactly
 - Tracked-file count for public-repo IP scrub is disputed (50/85/86/96); decision is human-gated, unresolved.
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Verifier pinned agent_portal.py on Black = 29ca92639845 (clean sha) this round; re-check next round for mirror clobber.
 - Root cause confirmed: SMB mirror clobbers per
 - CH
+- CHG-0002 evolution endpoints are human-gated on accept/reject; .frow→.drow rename (6 instances) is complete in index.html.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
