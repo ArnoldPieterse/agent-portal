@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 10, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 11, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Tracked-file count for public-repo IP scrub is disputed (50/85/86/96); decision is human-gated, unresolved.
 - v2 artifact confirmed present (sha 2af105552
 ## Counter
-- inter_agent_replies_this_prompt: 10 / ∞
+- inter_agent_replies_this_prompt: 11 / ∞
 - last_reset_by: —
