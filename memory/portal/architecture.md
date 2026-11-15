@@ -98,3 +98,14 @@ folder holds only .unsloth_sandbox (+ unsloth-tmp) - no memory/, TODO.md, or por
 listing fails (WinError 5). Remote agents therefore read project state via the portal (/api/memory,
 /api/memory/file) + the INDEX block injected into every group prompt. Consequence for file-link
 features: per-host path resolution stays on White's resolver (see llm/hosts.md durable rules).
+
+## User message queue + refresh-safe state (BUILT 2026-11-15)
+Problems fixed: (1) refreshing the portal wiped the conversation and lost in-flight runs; (2) send() early-returned while busy, so the user could not message a working group.
+- user_messages.json: {messages:[{id,ts,text,mentions[],checked{agent:bool}}]} - UMQ_MAX cap, atomic os.replace writes under _umq_lock. Global index pointer added in memory/INDEX.md (all agents check via portal auto-injection or the CLI).
+- Endpoints: POST /api/user-messages {text,mentions} -> entry; GET /api/user-messages -> last 50 + derived processed (every in-scope agent checked); POST /api/user-messages/check {id,agent|'*'} flips booleans. Scope: empty mentions = broadcast to all agents; @Name entries are private to that agent.
+- stream_chat: per-agent prompt build calls umq_pending_for(who) and injects a USER MESSAGE QUEUE block (PRIVATE vs broadcast tag + rule: act on them, keep private ones private); once the request reaches Studio, umq_check(ids, who) marks THAT agent seen. Solo mode unaffected.
+- Frontend: send() while busy now queues via POST and renders #queuePanel rows with spinner "n/N seen" (umqPoll every 1.5s); when idle, umqDeliver auto-sends pending entries in ts order - settleMsg marks all checked first so the triggered run never double-injects them. @Name regex reused for private scope.
+- Refresh fix root cause: the 2026-11-13 localStorage restore (restoreMsgs) was only wired to mode-button clicks, never to page load - so refreshes looked like a reset even though saves happened. bootRestore() is now chained onto the initial refresh(): setMode(mode) restores the LS slot; restoreFromServer() falls back to GET /api/history?mode= when LS is empty (re-seeds LS); saveHistoryServer() POSTs history at run end.
+- Run heartbeat: startHeartbeat/stopHeartbeat POST /api/run-state {busy,mode,ts} every 5s while busy; on load checkInterruptedRun() shows #intBanner if a run was in progress <15s ago, with "send continue prompt" (queues a continue instruction) or dismiss.
+- CLI: user_messages.py list / pending <Agent> / check <id> <Agent|*> - API-based, for audit and for agents working outside the portal.
+- Verified e2e (umq_test.py): add -> processed=false; check '*' -> n=8 (full roster); processed=true. Portal restart REQUIRED after backend edits (PortalRun trap: taskkill the real :8099 PID - _portal_pid.txt can be stale - then schtasks /run /tn PortalRun, confirm new owner via Get-NetTCPConnection).

@@ -18,5 +18,6 @@ Last updated: 2026-11-14.
 - -> agent_portal.py          server :8099; /api/chat, /api/memory, /api/file(+raw)
 - -> agents.json              agent profiles: model_id alias, temperature, reasoning, tools[], max_tool_calls
 - -> index.html               frontend: Solo/Group, cross-talk loop, ■ Stop, ↺ Reset; HARD-REFRESH after edits
+- -> user_messages.json       USER MESSAGE QUEUE (2026-11-15): messages sent while the group is working; ts+text+mentions+per-agent checked{}; portal auto-injects each agent's pending entries into its next prompt and flips that agent's flag on sight; @Name = private to that agent. Inspect: python user_messages.py list / pending <Agent> / check <id> <Agent>. Endpoints + protocol -> memory/portal/architecture.md
 - -> MEMORY.md                HOT FILE ONLY (state line + counter + recent notes); keep it small
 - -> TODO.md                  work plan, newest section at top
