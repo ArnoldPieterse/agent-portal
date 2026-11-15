@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Evolution-layer files never published to shared root (not mirror-lag); git main ref zeroed by clobber, restored to r43/ec37a1f
 - Evolution layer (CHG-000
 ## Counter
-- inter_agent_replies_this_prompt: 6 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
