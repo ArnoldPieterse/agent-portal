@@ -1,6 +1,6 @@
 {
  "ok": true,
- "elapsed_s": 0.04,
+ "elapsed_s": 0.89,
  "failures": [],
  "hosts": [
   {
@@ -16,16 +16,16 @@
   {
    "host": "192.168.1.99",
    "base": "http://192.168.1.99:8888",
-   "state": "unknown",
-   "reason": "unreachable",
+   "state": "idle",
+   "reason": "",
    "models": [],
    "status_field_ok": true
   },
   {
    "host": "192.168.1.39",
    "base": "http://192.168.1.39:8888",
-   "state": "unknown",
-   "reason": "unreachable",
+   "state": "idle",
+   "reason": "",
    "models": [],
    "status_field_ok": true
   },
