@@ -102,7 +102,9 @@ def _git_allowlist():
     the repo is missing so sync degrades gracefully."""
     try:
         import subprocess
-        r = subprocess.run([GIT_EXE, "ls-files"], cwd=HERE, capture_output=True, text=True, timeout=15)
+        # 2026-11-15: portal runs under pythonw - CREATE_NO_WINDOW keeps child git consoles invisible (popup complaint)
+        r = subprocess.run([GIT_EXE, "ls-files"], cwd=HERE, capture_output=True, text=True, timeout=15,
+                           creationflags=0x08000000)
         out = [l.strip().replace("\\", "/") for l in (r.stdout or "").splitlines() if l.strip()]
         if out:
             return out
@@ -1469,8 +1471,9 @@ def _run_index_check():
     (fail-closed - block)."""
     script = os.path.join(HERE, "memory", "archivist", "index_check.py")
     try:
+        # 2026-11-15: CREATE_NO_WINDOW - child python console must not pop up (portal runs under pythonw)
         r = subprocess.run([sys.executable, script], capture_output=True,
-                           text=True, timeout=120)
+                           text=True, timeout=120, creationflags=0x08000000)
         out = (r.stdout or "") + (("\n[stderr] " + r.stderr) if r.stderr else "")
         return r.returncode, out
     except Exception as e:
@@ -1545,7 +1548,9 @@ def _prune_todo():
 def _git(args, timeout=90):
     import subprocess
     try:
-        r = subprocess.run([GIT_EXE] + args, cwd=HERE, capture_output=True, text=True, timeout=timeout)
+        # 2026-11-15: CREATE_NO_WINDOW - child git console must not pop up (portal runs under pythonw)
+        r = subprocess.run([GIT_EXE] + args, cwd=HERE, capture_output=True, text=True, timeout=timeout,
+                           creationflags=0x08000000)
         return {"ok": r.returncode == 0, "out": (r.stdout or "").strip()[:8000],
                 "err": (r.stderr or "").strip()[:2000]}
     except Exception as e:

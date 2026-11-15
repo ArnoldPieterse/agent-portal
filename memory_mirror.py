@@ -35,13 +35,15 @@ CFG_FILE = os.path.join(HERE, "memory_mirror_hosts.json")
 LOG_FILE = os.path.join(HERE, "memory_mirror.log")
 SYNC_FILES = ["TODO.md", "MEMORY.md", "agents.json", "agent_portal.py"]   # fallback if the git repo is missing
 GIT_EXE = os.path.join(HERE, "mingit", "cmd", "git.exe")
+CREATE_NO_WINDOW = 0x08000000  # runs under pythonw (no console): without this flag every child (net use / git) allocates a VISIBLE console window - user-critical popup complaint, fixed 2026-11-15 post-reboot
 
 def _allowlist():
     """The git-tracked file set (curated .gitignore allowlist, ~43 files) - what gets pushed to the
     remotes. Falls back to SYNC_FILES when the repo is missing so the mirror degrades safely."""
     import subprocess
     try:
-        r = subprocess.run([GIT_EXE, "ls-files"], cwd=HERE, capture_output=True, text=True, timeout=20)
+        r = subprocess.run([GIT_EXE, "ls-files"], cwd=HERE, capture_output=True, text=True, timeout=20,
+                           creationflags=CREATE_NO_WINDOW)
         out = [l.strip().replace("\\", "/") for l in (r.stdout or "").splitlines() if l.strip()]
         if out:
             return out
@@ -100,13 +102,14 @@ def ensure_conn(ip, user, pw):
         pass
     # Drop any stale/broken connection for this server first (net use is per-session;
     # a scheduled task may run in a different session than the one that made it).
-    subprocess.run(["net", "use", root, "/delete", "/y"], capture_output=True, text=True)
+    subprocess.run(["net", "use", root, "/delete", "/y"], capture_output=True, text=True,
+                   creationflags=CREATE_NO_WINDOW)
     cmd = ["net", "use", root, "/user:%s" % user]
     if pw:
         cmd.append(pw)
     else:
         cmd.append("")   # empty arg -> net sees a quoted empty password (Red's case)
-    r = subprocess.run(cmd, capture_output=True, text=True)
+    r = subprocess.run(cmd, capture_output=True, text=True, creationflags=CREATE_NO_WINDOW)
     if r.returncode == 0:
         try:
             os.stat(root)

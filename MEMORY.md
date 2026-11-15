@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 15, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 16, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Fleet 77/80 (96%); popup fix verified
 - Portal PID is now 19488 (was 54008); confirmed via `_portal_pid.txt`, stale ref fixed in MEMORY.md hot notes.
 - Unapplied
 - White :8099/:8888 time out from LAN — pre-existing firewall policy (
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Designer landed Goals first
 - Designer's "final verification" was false: shared tree lacks Goals feature (agent_portal.py 0 hits, index.html 987 lines, mtime 09:42)
 - Mirror clobbered INDEX pointers + Builder forensics note; Designer's claimed frontend changes still absent from shared tree (Mechanic re
+- Mirror runs White→shared (overwrites newer writes, preserves mtime). Ship patches via memory/ as idempotent scripts.
 ## Counter
-- inter_agent_replies_this_prompt: 15 / ∞
+- inter_agent_replies_this_prompt: 16 / ∞
 - last_reset_by: —
