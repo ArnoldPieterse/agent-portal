@@ -1,6 +1,6 @@
 # Citation manifest (goal #9) — consolidated external-link audit
 
-Last updated: 2026-11-15 ~21:0x (Researcher). Purpose: turn the 7-day citation audit (window set 11-13, closes ~11-20) from "re-scan 418 files each time" into "diff new external URLs against this 6-entry manifest." Delta-check only; do NOT re-resolve entries already marked verified unless a file changed.
+Last updated: 2026-11-15 post-restart (delta-check pass: 434 files scanned, 0 new URLs, all mtimes stable). Original consolidation: 2026-11-15 ~21:0x. Purpose: turn the 7-day citation audit (window set 11-13, closes ~11-20) from "re-scan 418 files each time" into "diff new external URLs against this 6-entry manifest." Delta-check only; do NOT re-resolve entries already marked verified unless a file changed.
 
 ## SCOPE RULE (what counts as an auditable citation)
 - IN SCOPE = external PUBLIC internet URLs (resolvable by anyone, e.g. arxiv.org, github.com, lmstudio.ai, learn.microsoft.com).
