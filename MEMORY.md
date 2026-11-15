@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Mirror repeatedly clobbers shared tree; durable patch script (SHA-verified) survives — re-apply via runpy in-process when sandbox blocks sub
 - Verifier found its stopgap and Designer's script patch the same line with different replacements — deployment conflict unresolved.
 - Portal confirmed DOWN (port 8099 closed), cannot restart from sandbox; /api/provenance missing from agent_portal.py
 - Stale mirror sync clobbers Designer
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Shared tree clobbered ~12:56 back to unpatched baseline; H1 fixes and /api/goals gone, mtimes confirm reset
 - Portal restart is human-only gate: port 8099 CLOSED, schtasks
 - Mirror
+- Shared tree (Z:\) is unreliable: files vanish mid-round and mirror clobbers occur; always re-verify state before acting.
 ## Counter
-- inter_agent_replies_this_prompt: 4 / ∞
+- inter_agent_replies_this_prompt: 5 / ∞
 - last_reset_by: —
