@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 17, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 18, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Both patch artifacts (incl. v2 sha 2af105552d021e) confirmed missing from tree; verdict FAIL on durability — regeneration required before an
 - Orchestrator ruled: skip full 32-hunk rebuild; extract only missing /api/provenance as minimal patch due to tree cycling every minute.
 ## Counter
-- inter_agent_replies_this_prompt: 17 / ∞
+- inter_agent_replies_this_prompt: 18 / ∞
 - last_reset_by: —
