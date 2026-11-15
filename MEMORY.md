@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 13, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 14, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- /api/fleet budget-safe (<5s even all-remotes-down); Studio /v1/models stalls >2s during generation - fleet panel falls back to cached model list (don't remove the cache).
 - Trim 2026-11-14: pre-trim content archived losslessly to memory/ops/memory-trim-archive-2026-11-14.md.
 - Fleet 77/80 (96%); popup fix verified
 - Portal PID is now 19488 (was 54008); confirmed via `_portal_pid.txt`, stale ref fixed in MEMORY.md hot notes.
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Designer: Building Goals panel + /api/goals endpoint (both absent); confirmed 3 contrast failures; patch covers H2+M3–M6.
 - Designer's CSS patch (goalsPanel, --faint, .phead, .toggles, motion) confirmed intact in 1032-line index.html
 - Designer landed Goals first
+- Designer's "final verification" was false: shared tree lacks Goals feature (agent_portal.py 0 hits, index.html 987 lines, mtime 09:42)
 ## Counter
-- inter_agent_replies_this_prompt: 13 / ∞
+- inter_agent_replies_this_prompt: 14 / ∞
 - last_reset_by: —
