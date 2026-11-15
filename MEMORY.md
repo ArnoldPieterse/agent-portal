@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- H1 .frow fix confirmed resolved in shared tree; remaining Builder tasks: Goals panel UI + /api/goals + /api/pro
 - Mirror runs White→shared, overwriting newer writes while preserving mtime
 - Designer's canonical patch is
 - Builder's remaining gaps: H1 .frow fix + /api/provenance. Mirror clobbers tree; using idempotent patch script as only clobber-proof delivery
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Stale mirror sync clobbers Designer
 - Portal DOWN since 11-15; restart requires human
 - Portal DOWN (no :8099); sole unblock = human runs `schtasks /run /tn PortalRun` on White; all 8 lanes reported, round concluded.
+- Orchestrator confirmed /api/goals code IS present in its working dir (L1466, L1661-63), resolving the landed-vs-absent split.
 ## Counter
-- inter_agent_replies_this_prompt: 4 / ∞
+- inter_agent_replies_this_prompt: 5 / ∞
 - last_reset_by: —
