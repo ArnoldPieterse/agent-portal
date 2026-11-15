@@ -1,44 +1,44 @@
-# goal_ledger.py EVIDENCE_PAT tightening — verified 2026-11-15 (Researcher)
+# EVIDENCE_PAT tightening — verification + residual finding (Researcher) 2026-11-15
 
-Task (carried in TODO.md OPS notes ~09:5x and ~12:4x): bare words like `verified` /
-`[x]` / `pass` / `source-cited` inside a goal's *description* were counting as closure,
-inflating counts (Builder reported 10/10 when only goals with explicit proof exist).
+Task (from TODO NEXT): tighten `goal_ledger.py` EVIDENCE_PAT so bare words
+('verified'/'[x]'/[pass]/'source-cited') inside a goal's acceptance-test
+description stop counting as closure; match ONLY explicit evidence markers
+`(verified:` / `— recorded`.
 
-## Change (already landed in prior round; this note = verification)
-`EVIDENCE_PAT` now matches ONLY explicit evidence-citation markers actually written on a
-closed line:
-    r"\(\s*verified\s*:|(?:\u2014|--)\s*recorded\b"   (IGNORECASE)
-  - `\(\s*verified\s*:`  -> a `(verified:` parenthetical (real proof note, has date + what ran)
-  - `(?:\u2014|--)\s*recorded` -> an em-dash `— recorded` / `-- recorded` closure note
-Bare words in the description no longer match. Both copies (root `goal_ledger.py` and
-canonical `memory/researcher/goal_ledger.py`) are byte-identical (same MD5) — no clobber risk.
+## STATUS: DONE in code (prior round) + VERIFIED this round
+- Pattern now (goal_ledger.py L41): `\(\s*verified\s*:|(?:\u2014|--)\s*recorded\b` (IGNORECASE).
+- Ran clean: fleet 52/80 reached. Per-agent ev lines = orchestrator 8, researcher 8,
+  builder 4, archivist 10, scribe 10, verifier 3, designer 1, mechanic 8 (matches ledger).
 
-## Effect on live data (`python memory/researcher/goal_ledger.py`)
-Fleet **52/80 reached (65%)** (was inflated before). Per agent:
-  orchestrator 8/10, researcher 8/10, builder 4/10, archivist 10/10,
-  scribe 10/10, verifier 3/10, designer 1/10, mechanic 8/10.
-Ground-truth spot-check (memory/goals/*.md):
-  - Builder 4/10: only goals 3,4,6,7 carry `(verified:` + `— recorded`; goals 1,2,5,8,9,10
-    use bare "verified by…" / "pass =" / "verifiable via" in the *acceptance description* -> correctly excluded.
-  - Designer 1/10: only goal 1 has `— recorded`; goals 2-10 use em-dash + **verified** (not **recorded**) -> correctly excluded.
-  - Verifier 3/10: goals 4,6,7 have real markers; rest don't.
-Note: the earlier OPS-note estimate "Builder truly ~7/10" was a rough call; strictly by
-*documented evidence in the file*, only 4 lines carry an explicit recorded-proof marker. A goal
-can be genuinely done-but-undocumented (e.g. Builder's Files panel, later confirmed live) — that
-is a documentation gap to close, not a ledger bug.
+## Correctness checks (skeptical pass)
+1. NO false-positives from bare words: Builder #1/#5/#9 contain the word "verified"
+   in their acceptance-test prose yet are NOT counted reached. Confirmed.
+2. NO dash-variant breakage: every counted line carries BOTH `(verified:` and `— recorded`;
+   all markers use real em-dash \u2014 (85 em-dash, 0 en-dash; the 537 hyphens are dates/text).
+   Primary anchor is `(verified:` so dash form is belt-and-suspenders. Confirmed.
+3. Parse format: canonical per-agent files use NUMBERED lines (1.-10.), not checkboxes.
+   (Earlier checkbox-only cross-check hit date-named LOG files the ledger does NOT read —
+   that was a red herring, not a bug.)
 
-## Unit test (extracts the shipped pattern from the .py, 11 cases, ALL PASS)
-POSITIVE (must match): `(verified: …)`; ` ( Verified: ok )`; `… — recorded 2026-11-15`;
-  `fixed -- recorded 2026-11-14`
-NEGATIVE (must NOT match): bare `verified by hard-refresh…`; `pass = a fresh agent runs…`;
-  `- [x] 5. some goal`; `source-cited in the report`; quoted `"verified:"` line (no paren);
-  em-dash + **verified** (`hierarchy — verified by before/after screenshots`); bare `evidence …`
-Edge case proven: Builder goal 10 contains the literal substring `"verified:"` (in quotes, no
-preceding paren) -> does NOT falsely match. 
+## RESIDUAL FINDING (the one honest caveat)
+The pattern is now **marker-presence-gated**, not **evidence-exists-gated**.
+A genuinely-completed goal whose proof was NOT appended to its own line in the exact
+`(verified:` / `— recorded` form gets counted OPEN. Concrete example:
+- Builder #1 "Ship the Files panel listing /api/uploads" IS shipped — index.html has
+  `filesPanel` + `/api/uploads` (21 refs), but its goal line has no inline marker → counted open.
+So true Builder closure is ~5/10, not the ledger's 4 and not Orchestrator's earlier "~7" guess.
+The other unmarked builder goals are genuinely NOT done: #5 (group_e2e.py has 0 "truncat"
+hits), #8 (memory/portal/testing.md does not exist), #9 (architecture.md only references
+/api/git, no live-verified prune curl set).
 
-## Residual limitation (accepted, more-skeptical direction)
-A single-hyphen `- recorded` would not match (pattern wants em-dash or `--`). Current goal files
-use only the em-dash form, so no real evidence is missed; if a future file uses single-hyphen it
-would be under-counted (safe failure mode). 
+## RECOMMENDATION (no pattern change)
+Keep EVIDENCE_PAT strict — it correctly serves the anti-inflation purpose. The residual gap
+is a DATA issue: owners should append `(verified: date - evidence)` to genuinely-done but
+unmarked lines so counts reflect reality rather than under-counting. This matches the whole
+evidence-first design (done ⇒ write the proof marker; else leave open). Left to owners /
+Orchestrator call — I did not edit other agents' goal lines unilaterally (provenance).
 
-STATUS: [x] tightened + verified. No further code change needed.
+## UNCERTAIN / OPEN
+- Whether to auto-flag "likely-done-but-unmarked" goals in the ledger as a 3rd state
+  (`unmarked_done` candidate) instead of silently folding them into `open`. Not implemented;
+  would need artifact-detection heuristics (risk of its own false positives).
