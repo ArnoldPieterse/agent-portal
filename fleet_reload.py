@@ -59,6 +59,8 @@ def load_with_retry(base, key, label, body, tries=12):
     for a in range(tries):
         st, resp = call(base, 'POST', '/api/inference/load', body=body, key=key)
         log('W' if key is None else 'X', label + '_a%d' % (a + 1), status=st, resp=resp[:300])
+        if st in (200, 201) and '_deferred_error' in resp:
+            return 'deferred'   # 11-15: Studio defers the load while a generation is active; it lands when idle - do not poll 25 min
         if st in (200, 201):
             return True
         if str(st) == '409':
@@ -83,6 +85,8 @@ def white():
             'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': True}
     ok = load_with_retry(B, None, 'WHITE_q8', body)
     log('WHITE', 'load_ok', ok=ok)
+    if ok == 'deferred':
+        return log('WHITE', 'DEFERRED (active generation; loads when idle)')
     if not ok:
         return
     dl = time.time() + 25 * 60
@@ -90,7 +94,7 @@ def white():
         ids = loaded_ids(B)
         up = [i.upper() for i in ids]
         log('WHITE', 'poll', ids=ids)
-        if any('Q8_0' in i for i in up) and any('Q4_K_S' in i for i in up):  # post-rename (11-14): distinct quant-bearing ids
+        if any('Q8_0' in i for i in up) or len(ids) >= 2:  # 11-15: this section only loads Q8 (Q4 is recover_all's job); count check kept pre-rename-safe
             return log('WHITE', 'DONE')
         time.sleep(20)
     log('WHITE', 'TIMEOUT')
