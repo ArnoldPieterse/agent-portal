@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Mechic removed dead code (lines 1692-1693) from /api/provenance in agent_portal.py; new sha 29ca92639845, portal restart pending
 - H1 resolved: dialog form row class renamed `.frow`→`.drow` (line 9
 ## Counter
-- inter_agent_replies_this_prompt: 1 / ∞
+- inter_agent_replies_this_prompt: 2 / ∞
 - last_reset_by: —
