@@ -1,28 +1,25 @@
-<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 8, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
 
 ## GOAL (live plan = TODO.md top; keep both in sync)
-**FLEET 77/80 (96%)** (11-15 ~12:0x): post-reboot popup regression FIXED - RecoverAll was the 5th boot-time launcher still running its .bat visibly (now recover_hidden.vbs; task changed, XML verified) + pythonw children lacked CREATE_NO_WINDOW (mirror net use/git x3, portal git/index-check x3); live-verified zero visible consoles across forced-SMB-reconnect mirror run + /api/git. fleet_reload WHITE deferred-load/DONE fixed (was guaranteed 25-min TIMEOUT). Boot auto-pass LOADED all six remote models (RED q8+xl, BLACK q4s+q8, PALE q8+q4s) - model decision resolved by reboot automation; White Q8_0 reloaded despite unload request -> DECISION: keep or unload? Portal PID 3496 (trap procedure; _portal_pid.txt was stale post-reboot). PUBLIC REPO LIVE (ArnoldPieterse/agent-portal) - tracked files publish automatically, no secrets (ops/public-repo-agent-portal-2026-11-15.md). NEXT: Builder H1 .frow, Designer M3-M6, Mechanic #3 reboot dry-runs (pending OK), Researcher ledger tightening.
-
-## 2026-11-14 ~01:4x - White model folders → fleet convention DONE
-Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S GPU0 ctx 131072, quant-tagged ids; /api/fleet verified). Lesson: load API 200 = async ack — poll until resident. Detail: TODO.md top section + memory/llm/studio-api.md "Folder rename" note.
+**FLEET 52/80 (65%)** (11-15 ~17:xx) — evidence-gated; /api/goals is the SINGLE SOURCE OF TRUTH, do not re-derive or re-reconcile counts in chat (hot notes over-counted to 77 today). Open lanes: Builder 4/10, Verifier 3/10, Designer 1/10, Mechanic 8/10 (#3 reboot dry-runs = HUMAN GATE, **OK'd by Arnold 17:xx** — remote legs Red/Pale/Black now unblocked), Orchestrator+Researcher 8/10. evolution.py pinned at shared root (sha1 7c20402e; live-verified via /api/evolution/stats, CHG-0001 living); **CHG-0002 ACCEPTED** (island: status=living, accepted 14:50, all 3 pre-written tests green; endpoints live on PID 26288). PUBLIC REPO LIVE (ArnoldPieterse/agent-portal). White Q8_0 = **KEEP** (Arnold 17:xx; reversible if VRAM needed).
 
 ## Durable rules (detail in the tree)
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- evolution.py diver
-- evolution.py has a confirmed hash fork: Archivist's local copy ≠ Mechan
-- CHG-0002 pending human accept; evolution.py has unresolved divergence between Archivist and Mechanic builds — must pin ground truth first
-- Goal count corrected: MEMORY.md claimed 77/80 (96%) but evidence-gated ledger is 51/80 (64%); EVIDENCE_PAT over-count fixed.
-- evolution.py rebuilt independently by Archivist+Mechanic → hash mismatch/divergence risk; CHG-0002 blocked on Verifier green
-- Shared root evolution.py rebuilt again: sha12=58
-- Mirror keeps clobbering CHG-0002 portal fix (3rd re-apply); pinned backup at agent_portal_fixed_47876fd1.py
-- Designer: M3–M6 scope shrank — H1 & M6 already fixed in live index.html; only
-- Ledger tightened by Researcher at 12:33 today; 52/80 (evidence-g
-- Designer's M3/M4 index.html edits clobbered by mirror (sha12 b59e528fe
+- 11-15 evolution.py divergence RESOLVED: shared-root copy pinned sha1 7c20402e, live API verified. If a sandbox mirror shows a different sha, the mirror is stale — trust this pin.
+- Mirror clobber still live for index.html/agent_portal.py (multiple shas observed across sandboxes). Rule: verify against shared-root pins, not local mirror reads; re-apply from pinned backups when clobbered.
+- Arnold cleared all human gates 17:xx; Mechanic #3 reboot dry-runs (Red/Pale/Black) unblocked;
+- RED reboot dry-run blocked: Windows Firewall on White blocks outbound to .2x (WinError 10013); PALE fixed via JWT; BLACK green.
+- Designer local index.html is stale (b59e528fe540); canonical is 37549a041412 — sync
+- Human gates cleared (Arnold 17:xx
+- Archivist added missing ops INDEX pointer for mechanic-reboot-dryrun-remotes-2026-11-15.md (was absent from mirror).
+- index.html pin confirmed PASS at shared root: sha12
+- Shared root Z:\index.html was stale (b59e528fe540, L827 dup-catch); Orchestrator applied fix, now byte-exact at canonical pin 37549a041412.
+- Designer's local index.html confirmed at 37549a041412 (fixed pin); L827 dup-catch bug resolved on disk.
 ## Counter
-- inter_agent_replies_this_prompt: 1 / ∞
+- inter_agent_replies_this_prompt: 8 / ∞
 - last_reset_by: —

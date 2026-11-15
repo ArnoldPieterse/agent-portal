@@ -109,3 +109,13 @@ Problems fixed: (1) refreshing the portal wiped the conversation and lost in-fli
 - Run heartbeat: startHeartbeat/stopHeartbeat POST /api/run-state {busy,mode,ts} every 5s while busy; on load checkInterruptedRun() shows #intBanner if a run was in progress <15s ago, with "send continue prompt" (queues a continue instruction) or dismiss.
 - CLI: user_messages.py list / pending <Agent> / check <id> <Agent|*> - API-based, for audit and for agents working outside the portal.
 - Verified e2e (umq_test.py): add -> processed=false; check '*' -> n=8 (full roster); processed=true. Portal restart REQUIRED after backend edits (PortalRun trap: taskkill the real :8099 PID - _portal_pid.txt can be stale - then schtasks /run /tn PortalRun, confirm new owner via Get-NetTCPConnection).
+
+## Group run engine (2026-11-15) — runs are BACKEND-owned; refresh-proof
+Hard refresh used to cancel group runs because the whole pass/cross-talk/nudge loop lived in the tab's JS. Now:
+- `start_group_run(text)` spawns a daemon thread: parallel prompt pass (`ThreadPoolExecutor`, one `stream_chat` per agent into a `_FrameSink`) -> cross-talk rounds (only agents with new content) -> nudge loop (max 3, no [CONCLUDED] yet). Verdict is journaled at the end.
+- Every SSE frame is journaled seq'd to `runs/<id>.jsonl` (`_journal_event`). `/api/run-events?run=<id>&cursor=N` replays from any cursor; live frames tail the journal. GET `/api/run-state` merges the live run (run_id + status) over the heartbeat state.
+- Frontend: `send()` POSTs `/api/group-run` then `attachRun(run_id)` streams `/api/run-events`; on boot, `checkInterruptedRun()` finds a running run via GET /api/run-state and re-attaches from cursor 0 (replaying history). Stop button -> POST `/api/run-stop` (clean verdict, no "interrupted" lie).
+- Group history is backend-owned: the engine appends each turn to `chat_history_group.json`; client POSTs of group history are ignored (200 {ignored}).
+- `_clear_stale_busy()` at portal start clears a stale busy:true in run_state.json when no group run is live.
+- Goal injection: `_agent_goals_block(name)` appends the agent's open goals from `memory/goals/<name>.md` to every group turn (prompt + cross-talk + nudge) — the goal-drift fix; solo turns unchanged.
+- Restart trap still applies: taskkill real :8099 PID, schtasks /run /tn PortalRun.
