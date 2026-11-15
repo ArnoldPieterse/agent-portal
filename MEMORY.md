@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Schema-fork risk: Archivist and Mechanic each rebuilt evolution.py with different sha12s; Builder's portal d0a78
 - Shared root still missing evolution.py; agent_portal.py at 5th distinct SHA — Builder's portal fix not yet propagated to shared root.
 - Post-100%: evolution layer becomes operational mode (Builder proposes, Verifier gates on tests, human accepts/rejects) replacing one-shot go
 - evolution.py diver
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - evolution.py rebuilt independently by Archivist+Mechanic → hash mismatch/divergence risk; CHG-0002 blocked on Verifier green
 - Shared root evolution.py rebuilt again: sha12=58
 - Mirror keeps clobbering CHG-0002 portal fix (3rd re-apply); pinned backup at agent_portal_fixed_47876fd1.py
+- Designer: M3–M6 scope shrank — H1 & M6 already fixed in live index.html; only
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
