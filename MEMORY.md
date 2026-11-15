@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 11, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 12, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - 4th portal variant d124fbd4 (99,691B) has /api/go
 - Orchestrator sandbox blocks all socket/host resolution; Studio :8888 dispatch is human-gated, not agent-doable.
 ## Counter
-- inter_agent_replies_this_prompt: 11 / ∞
+- inter_agent_replies_this_prompt: 12 / ∞
 - last_reset_by: —
