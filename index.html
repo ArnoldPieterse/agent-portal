@@ -824,7 +824,7 @@ async function send(){
       sessionId=j.run_id; actFollow();
       await attachRun(j.run_id);
     }
-  }catch(e){  }catch(e){ addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=String(e); }
+  }catch(e){ addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=String(e); }
   busy=false; busyNames.clear(); renderBusyHint(); $("send").disabled=false; $("input").focus(); stopHeartbeat(); saveHistoryServer(true); umqPoll(); renderQueue();
 }
 
