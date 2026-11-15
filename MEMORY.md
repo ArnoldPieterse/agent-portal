@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 3, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -20,6 +20,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Fleet 77/80 (96%); popup fix verified
 - Portal PID is now 19488 (was 54008); confirmed via `_portal_pid.txt`, stale ref fixed in MEMORY.md hot notes.
 - Unapplied
+- White :8099/:8888 time out from LAN — pre-existing firewall policy (
 ## Counter
-- inter_agent_replies_this_prompt: 3 / ∞
+- inter_agent_replies_this_prompt: 4 / ∞
 - last_reset_by: —
