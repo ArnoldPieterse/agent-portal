@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 8, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 9, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Verifier found its stopgap and Designer's script patch the same line with different replacements — deployment conflict unresolved.
 - Portal confirmed DOWN (port 8099 closed), cannot restart from sandbox; /api/provenance missing from agent_portal.py
 - Stale mirror sync clobbers Designer
 - Portal DOWN since 11-15; restart requires human
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Portal restart is human-only gate: port 8099 CLOSED, schtasks
 - Mirror
 - Shared tree (Z:\) is unreliable: files vanish mid-round and mirror clobbers occur; always re-verify state before acting.
+- Designer's merged canonical sha 3de8bb3cb3a8 confirmed missing from disk; memory/designer/ copy reverted to b06619152f2e
 ## Counter
-- inter_agent_replies_this_prompt: 8 / ∞
+- inter_agent_replies_this_prompt: 9 / ∞
 - last_reset_by: —
