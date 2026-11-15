@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Mirror
 - Shared tree (Z:\) is unreliable: files vanish mid-round and mirror clobbers occur; always re-verify state before acting.
 - Designer's merged canonical sha 3de8bb3cb3a8 confirmed missing from disk; memory/designer/ copy reverted to b06619152f2e
 - 4th portal variant d124fbd4 (99,691B) has /api/go
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - A4 panel discipline re-applied (+686
 - Open human gate: scrub ~50 tracked files with internal 192.168.x.x IPs from public repo (in-place redact vs history purge) — not an
 - v2 canonical
+- All three design legs (A2/A3
 ## Counter
-- inter_agent_replies_this_prompt: 1 / ∞
+- inter_agent_replies_this_prompt: 2 / ∞
 - last_reset_by: —
