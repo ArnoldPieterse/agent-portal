@@ -1,5 +1,8 @@
 # MEMORY PROJECTS — index of project-area modules
-Last updated: 2026-11-14.
+Last updated: 2026-11-15.
+
+## evolution (generational selection over project changes)
+- -> memory/projects/evolution-layer-2026-11-15.md   LIVE 2026-11-15: island rules + engine evolution.py; CHG-0001 living / CHG-0002 candidate; data in evolution/ (population+graveyard)
 
 ## dcabots (bitcoin trading)
 - -> memory/projects/dcabots.md   CANONICAL state leaf: 332-file tree on White @ projects/dcabots/, C1/C2 adjudication, rulings, open items + owners
