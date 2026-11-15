@@ -1,4 +1,10 @@
 # TODO — Agent Portal (2026-11-15)
+## OPS NOTE 2026-11-15 ~13:2x - Orchestrator (public GitHub upload reconciled + verified; repo is LIVE and PUBLIC)
+Context: human asked to upload current state to public GitHub, then deleted `memory/llm/hosts.md` on GitHub themselves (internal LAN host table). Local was 7 auto-sync commits ahead AND behind (their delete) - divergent.
+- [x] Merged their deletion (21c2627); restored hosts.md locally but UNTRACKED (.gitignore `/memory/llm/hosts.md`) so auto-sync can never re-publish it.
+- [x] `memory_mirror.py` INTERNAL_ONLY keeps hosts.md mirroring to internal fleet remotes despite being untracked (allowlist is git-derived) - ef5e890.
+- [x] Pushed all pending commits; local/remote in sync (rev-list 0/0). Unauthenticated verification: API 200 private=False, raw README 200, hosts.md 404. Detail: memory/ops/public-repo-agent-portal-2026-11-15.md.
+- [ ] DECISION NEEDED (human): ~50 OTHER tracked files still contain internal 192.168.x.x IPs (you deleted only hosts.md). Scrub the rest (in-place redact / history purge) or leave as-is?
 ## OPS NOTE 2026-11-15 ~12:0x - Orchestrator (post-reboot popup regression FIXED at both remaining sources; boot auto-load resolved the model decision)
 Context: human rebooted all systems and still saw terminal popups ("They should be running hidden.."). Round-1 fix (four tasks windowless) held, but the boot path had two more sources.
 - [x] Root cause #4: **RecoverAll** task - the fifth boot-time launcher, missed by round 1. Startup `_boot_recover.vbs` fires it at logon+3min; action was `recover_all.bat` DIRECTLY under an InteractiveToken -> Task Scheduler spawned a visible cmd for the whole ~6.5-min recovery run (today 11:19:23-11:25:55). Only fires at logon, which is why round-1 daytime verification saw nothing.

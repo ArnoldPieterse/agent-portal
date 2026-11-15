@@ -23,3 +23,4 @@ Last updated: 2026-11-15.
 -> ops/left-designer.md  1 open goals (designer) - split from what_is_left.txt 2026-11-13
 -> ops/left-mechanic.md  9 open goals (mechanic) - split from what_is_left.txt 2026-11-13
 -> memory/ops/fleet-state-2026-11-15.md  fleet state change (Red .245 UP idle no-models; Pale/Black down) + 5 planned portal restarts (~10 s each, PID 7032) + /api/fleet 5s-budget fix record 2026-11-15
+-> memory/ops/public-repo-agent-portal-2026-11-15.md  PUBLIC repo live (ArnoldPieterse/agent-portal); hosts.md untracked+INTERNAL_ONLY mirror; tracked files = public, no secrets; ~50 files w/ LAN IPs pending human scrub decision
