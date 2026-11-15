@@ -7,7 +7,7 @@
 <title>Agent Portal</title>
 <style>
 :root{--bg:#0e1116;--panel:#151a22;--panel2:#1b2230;--line:#2a3342;--text:#e8edf4;--dim:#9aa7b8;
---acc:#4f8cff;--ok:#3ddc84;--warn:#ff9f43;--err:#ff6b6b;--focus:#7fb0ff;}
+--acc:#4f8cff;--ok:#3ddc84;--warn:#ff9f43;--err:#ff6b6b;--focus:#7fb0ff;--faint:#8b98ab;}
 *{box-sizing:border-box}
 body{margin:0;font:14px/1.45 system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column}
 header{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
@@ -34,7 +34,7 @@ aside .ah{display:flex;align-items:center;padding:10px 12px;font-size:12px;color
 #modeBar{display:flex;gap:8px;padding:8px 14px;border-bottom:1px solid var(--line);align-items:center;background:var(--panel)}
 .seg{display:flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
 .seg button{background:none;border:none;color:var(--dim);padding:5px 14px;cursor:pointer;font-size:13px}
-.seg button.on{background:var(--acc);color:#fff}
+.seg button.on{background:#3a6fd6;color:#fff}
 #modeHint{font-size:12px;color:var(--dim)}
 #resetBtn{margin-left:auto;background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:12px}
 #resetBtn:hover{border-color:var(--warn);color:var(--text)}
@@ -43,20 +43,20 @@ aside .ah{display:flex;align-items:center;padding:10px 12px;font-size:12px;color
 .msg .who{font-size:11px;font-weight:600;margin-bottom:3px;display:flex;gap:6px;align-items:center}
 .msg.you{align-self:flex-end;background:#243b63;border-color:#33507f}
 .think{margin-top:5px;font-size:11px;color:var(--dim);border-left:2px solid var(--line);padding-left:7px;white-space:pre-wrap}
-.think summary{cursor:pointer;font-size:10.5px;font-style:italic;opacity:.75;user-select:none;list-style:none}
+.think summary{cursor:pointer;font-size:11px;font-style:italic;color:var(--faint);user-select:none;list-style:none}
 .think summary::-webkit-details-marker{display:none}
 .think .tbody{max-height:120px;overflow-y:auto;margin-top:2px}
 .thinkwrap{align-self:flex-start;max-width:62%;padding:3px 10px;border:1px dashed var(--line);border-radius:10px}
-.silentpill{font-size:10.5px;color:var(--dim);opacity:.85;white-space:nowrap}
+.silentpill{font-size:11px;color:var(--dim);opacity:.85;white-space:nowrap}
 .roundend{font-size:11px;padding:5px 10px;border-radius:8px;margin-top:6px}
 .roundend.ok{color:#3ddc84;background:rgba(61,220,132,.08);border:1px solid rgba(61,220,132,.25)}
 .roundend.warn{color:var(--warn);background:rgba(255,159,67,.08);border:1px solid rgba(255,159,67,.3)}
 .roundend.dim{color:var(--dim);background:var(--panel2);border:1px solid var(--line)}
 .msg.silentmsg .who{opacity:.6}
-.msg.silentmsg .body{font-size:10.5px;color:var(--dim);opacity:.7;font-style:italic}
+.msg.silentmsg .body{font-size:11px;color:var(--faint);font-style:italic}
 .tsec{margin-top:5px;padding-left:7px;border-left:1px solid var(--line)}
 .tsec:first-child{margin-top:2px}
-.tsec b{display:block;font-size:10.5px;font-weight:600;color:var(--text);opacity:.8;margin-bottom:1px}
+.tsec b{display:block;font-size:11px;font-weight:600;color:var(--text);opacity:.8;margin-bottom:1px}
 .msg .toolchip{display:inline-block;margin:4px 4px 0 0;font-size:11px;background:#2a3342;border-radius:6px;padding:1px 7px;color:var(--warn)}
 .dmpub{white-space:pre-wrap}
 .dmseg{margin-top:6px;border:1px solid #4a3f6b;background:rgba(138,99,210,.10);border-radius:8px;padding:5px 9px;font-size:12px}
@@ -115,10 +115,10 @@ textarea{resize:vertical;min-height:64px}
 #actPanel.open{display:flex}
 #fleetPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:280px;flex-direction:column}
 #fleetPanel.open{display:flex}
-#fleetHead{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:13px;border-bottom:1px solid var(--line)}
-#fleetBody{overflow-y:auto;padding:6px 14px}
-.frow{padding:7px 0;border-bottom:1px dashed var(--line);font-size:12.5px}
-.frow:last-child{border-bottom:none}
+#fleetHead{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:12px;color:var(--dim);border-bottom:1px solid var(--line)}
+#fleetBody{overflow-y:auto;padding:8px 14px}
+.frow-h{padding:7px 0;border-bottom:1px dashed var(--line);font-size:12px}
+.frow-h:last-child{border-bottom:none}
 .fdot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;background:#888}
 .fdot.busy{background:#ffb454}
 .fdot.idle{background:var(--ok)}
@@ -128,16 +128,16 @@ textarea{resize:vertical;min-height:64px}
 #fleetBtn:hover,#fleetBtn.on{border-color:var(--acc);color:var(--text)}
 #opsPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:360px;flex-direction:column}
 #opsPanel.open{display:flex}
-#opsHead{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:13px;border-bottom:1px solid var(--line)}
-#opsBody{overflow-y:auto;padding:6px 14px 10px}
-.opsbox{font:11.5px/1.6 ui-monospace,Consolas,monospace;white-space:pre-wrap;color:var(--dim);max-height:84px;overflow-y:auto;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:4px 8px;margin-top:6px}
+#opsHead{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:12px;color:var(--dim);border-bottom:1px solid var(--line)}
+#opsBody{overflow-y:auto;padding:8px 14px}
+.opsbox{font:12px/1.6 ui-monospace,Consolas,monospace;white-space:pre-wrap;color:var(--dim);max-height:none;overflow:visible;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:4px 8px;margin-top:6px}
 #gitMsg{flex:1;padding:4px 8px;font-size:12px;background:var(--bg);border:1px solid var(--line);border-radius:6px;color:var(--text)}
 .opsrow{display:flex;gap:8px;margin-top:8px;align-items:center}
-#actHead{display:flex;align-items:center;gap:8px;padding:6px 14px;font-size:12px;color:var(--dim)}
+#actHead{display:flex;align-items:center;gap:8px;padding:8px 14px;font-size:12px;color:var(--dim);border-bottom:1px solid var(--line)}
 #actSel{width:auto;max-width:360px;padding:3px 8px;font-size:12px}
-#actBody{overflow-y:auto;padding:4px 14px 10px;font:11.5px/1.7 ui-monospace,Consolas,monospace}
+#actBody{overflow-y:auto;padding:8px 14px;font:12px/1.7 ui-monospace,Consolas,monospace}
 .aev{display:flex;gap:8px;align-items:baseline;white-space:nowrap}
-.aev .at{color:#6b7688;flex:none;width:64px}
+.aev .at{color:var(--faint);flex:none;width:64px}
 .aev .an{font-weight:600;flex:none}
 .aev .ax{color:var(--dim);overflow:hidden;text-overflow:ellipsis}
 /* A3 ops-polish 11-13 (Designer): functional focus ring + status-line semantics */
@@ -151,13 +151,33 @@ textarea{resize:vertical;min-height:64px}
 #filesBtn:hover,#filesBtn.on{border-color:var(--acc);color:var(--text)}
 #filesPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:280px;flex-direction:column}
 #filesPanel.open{display:flex}
-#filesHead{display:flex;align-items:center;padding:6px 10px;border-bottom:1px solid var(--line)}
+#filesHead{display:flex;align-items:center;gap:8px;padding:8px 14px;font-size:12px;color:var(--dim);border-bottom:1px solid var(--line)}
 #filesList{list-style:none;margin:0;padding:0;overflow:auto;font-size:12px}
 #filesList li{padding:5px 10px;border-bottom:1px solid var(--line)}
 #filesList a{color:var(--focus);text-decoration:none;display:block}
 #filesList a:hover{text-decoration:underline}
 .fs-meta{color:var(--dim);font-size:11px;white-space:nowrap;margin-left:8px}
 .fs-empty{padding:10px;color:var(--dim)}
+/* Goal Velocity dashboard (2026-11-15, Designer): /api/goals -> per-agent SVG rings */
+#goalsBtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:4px 10px;cursor:pointer;font-size:12px}
+#goalsBtn:hover,#goalsBtn.on{border-color:var(--acc);color:var(--text)}
+#goalsPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:300px;flex-direction:column}
+#goalsPanel.open{display:flex}
+#goalsHead{display:flex;align-items:center;gap:8px;padding:8px 14px;font-size:12px;color:var(--dim);border-bottom:1px solid var(--line)}
+#goalsBody{overflow-y:auto;padding:8px 14px;display:flex;flex-wrap:wrap;gap:10px}
+.gtile{display:flex;align-items:center;gap:10px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:170px}
+.gring{position:relative;width:44px;height:44px;flex:none}
+.gring svg{transform:rotate(-90deg)}
+.gring .pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600}
+.gname{font-size:12px;font-weight:600}
+.gmeta{font-size:11px;color:var(--dim)}
+.gblock{color:var(--warn);font-size:11px}
+/* Motion spec (2026-11-15, Designer): 150-200ms on interactive elements only */
+#modeBar button,.seg button,.btn,#send{transition:border-color .15s,color .15s,background-color .15s,opacity .15s}
+.dot{transition:background-color .2s}
+.flink{transition:color .15s,border-bottom-color .15s}
+.toggles{display:inline-flex;gap:6px}
+.vdiv{width:1px;height:18px;background:var(--line);margin:0 4px}
 </style>
 </head>
 <body>
@@ -178,12 +198,12 @@ textarea{resize:vertical;min-height:64px}
         <button id="mGroup">Group</button>
       </div>
       <span id="modeHint">Chatting with —</span><span id="xtalk" class="hint"></span><span id="busyHint" class="busyspan"></span>
-      <button id="actBtn" title="Activity timeline: every turn + tool call of each run, persisted per session (survives restarts)">⏱ Activity</button>
+      <span class="toggles"><button id="goalsBtn" title="Goal velocity: per-agent progress rings from memory/goals/">🎯 Goals</button><button id="actBtn" title="Activity timeline: every turn + tool call of each run, persisted per session (survives restarts)">⏱ Activity</button>
       <button id="fleetBtn" title="Fleet status: per-host loaded models + busy/idle/unknown; live while open">🛰 Fleet</button>
       <button id="filesBtn" title="Uploaded files (uploads/): humans' drop zone; lists on open, ↻ to re-list">📁 Files</button>
-      <button id="opsBtn" title="Ops: local git status + commit, and prune fully-completed TODO sections into TODO_completed.md">🔧 Ops</button>
+      <button id="opsBtn" title="Ops: local git status + commit, and prune fully-completed TODO sections into TODO_completed.md">🔧 Ops</button></span><span class="vdiv"></span>
       <button id="resetBtn" title="Reset conversation: clears chat history and the agent-to-agent counter">↺ Reset</button>
-      <button id="stopBtn" disabled style="color:#ff8f8f" title="Stop this run now: aborts in-flight replies and closes the round as concluded">■ Stop</button>
+      <button id="stopBtn" disabled style="color:var(--err)" title="Stop this run now: aborts in-flight replies and closes the round as concluded">■ Stop</button>
     </div>
     <div id="actPanel">
       <div id="actHead"><span>session</span><select id="actSel"></select><span id="actStat" class="hint"></span>
@@ -217,6 +237,10 @@ textarea{resize:vertical;min-height:64px}
     <div id="filesPanel">
       <div id="filesHead"><span>uploads/ — humans' drop zone (shared agent folder)</span><button class="btn" id="filesRefresh" style="margin-left:auto;padding:2px 10px;font-size:12px" title="Re-list uploads/">↻ refresh</button></div>
       <ul id="filesList"></ul>
+    </div>
+    <div id="goalsPanel">
+      <div id="goalsHead"><span>Goal velocity · live parse of memory/goals/</span><span id="goalsStat" class="hint">loading…</span></div>
+      <div id="goalsBody"></div>
     </div>
     <div id="msgs"></div>
     <div id="composer">
@@ -653,7 +677,7 @@ async function fleetUpdate(){
       const age=h.last_seen?Math.max(0,Math.round(now-h.last_seen)):"–";
       const st=h.state==="busy"?"busy":h.state==="idle"?"idle":"UNKNOWN";
       const models=h.models.length?h.models.map(m=>m.id+(m.quant?" ("+m.quant+")":"")).join(", "):"— none loaded —";
-      html+='<div class="frow"><span class="fdot '+h.state+'"></span><b>'+h.host+'</b>'+
+      html+='<div class="frow-h"><span class="fdot '+h.state+'"></span><b>'+h.host+'</b>'+
         '<span class="hint"> · '+st+(h.reason?" · "+h.reason:"")+" · last seen "+age+"s ago</span>"+
         '<div class="fmodels">'+models+'</div>'+
         '<div class="hint" style="margin-left:16px">agents: '+(h.agents.length?h.agents.join(", "):"none")+'</div></div>';
@@ -981,6 +1005,28 @@ async function filesLoad(){
   }catch(err){list.innerHTML='<li class="fs-empty">/api/uploads unreachable — portal down?</li>';}
 }
 $("filesBtn").onclick=()=>{const open=$("filesPanel").classList.toggle("open");$("filesBtn").classList.toggle("on",open);if(open)filesLoad();};
+// ---- Goals panel (2026-11-15, Designer): Goal Velocity dashboard ----
+async function goalsLoad(){
+  try{
+    const o=await (await fetch("/api/goals")).json();
+    if(!o.ok){ $("goalsStat").textContent="⚠ "+(o.error||"error"); return; }
+    const C=119.38; let html="";
+    for(const a of o.agents){
+      const pct=a.total?Math.round(100*a.done/a.total):0;
+      const off=(C*(1-pct/100)).toFixed(1);
+      html+='<div class="gtile"><div class="gring"><svg width="44" height="44" viewBox="0 0 44 44">'
+        +'<circle cx="22" cy="22" r="19" fill="none" stroke="var(--line)" stroke-width="4"/>'
+        +'<circle cx="22" cy="22" r="19" fill="none" stroke="'+(pct>=100?'var(--ok)':'var(--acc)')+'" stroke-width="4" stroke-linecap="round" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'"/>'
+        +'</svg><span class="pct">'+pct+'%</span></div>'
+        +'<div><div class="gname">'+a.agent+'</div><div class="gmeta">'+a.done+'/'+a.total+' done · '+a.open+' open'
+        +(a.blocked?' · <span class="gblock">⚠ '+a.blocked+' blocked</span>':'')+'</div></div></div>';
+    }
+    $("goalsBody").innerHTML=html||'<div class="hint">no goal files</div>';
+    $("goalsStat").textContent=o.fleet_done+"/"+o.fleet_total+" · fleet "+(o.fleet_pct||0)+"%";
+  }catch(e){ $("goalsStat").textContent="⚠ "+e; }
+}
+$("goalsBtn").onclick=()=>{ const open=$("goalsPanel").classList.toggle("open"); $("goalsBtn").classList.toggle("on",open); if(open)goalsLoad(); };
+
 $("filesRefresh").onclick=filesLoad;
 </script>
 </body>

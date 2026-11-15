@@ -11,6 +11,9 @@ then the portal restarted. It is shipped via memory/designer/ so it survives mir
 Usage on White:  python apply_designer_goals_patch.py [dir-with-portal-files]
 Re-runs are safe: every hunk is guarded by its done-marker; already-applied hunks skip.
 """
+# v2 REBUILD 2026-11-15 ~15:4x (Orchestrator, per Designer spec + Researcher fix):
+# supersedes lost sha 3de8bb3cb3a8. Adds H1 trio (.frow->.frow-h), H2e seg AA,
+# B4 /api/provenance route; GOALS_FN -> evidence-gated v2 (strict ledger by path).
 import os, sys, hashlib, re
 
 def sha(p):
@@ -37,14 +40,36 @@ def patch(path, name, guard, anchor, replacement):
 
 # ================= BACKEND: agent_portal.py =================
 GOALS_FN = '''def _goals_snapshot():
-    """Goal Velocity dashboard (2026-11-15, Designer): parses memory/goals/<agent>.md.
-    Item format: 'N. text' — done if it contains '(verified:' or '[x]'; blocked = open
-    item mentioning 'blocked'. Returns per-agent counts + fleet percentage."""
+    """Goal Velocity dashboard (2026-11-15, Designer; Researcher evidence-gated v2).
+    Counts a goal DONE only when an acceptance/evidence marker is present. Delegates to
+    goal_ledger.parse_agent_file (single source of truth) so the portal can NEVER diverge
+    from the evidence-honest ledger: closure is evidence-gated, a literal '[x]' substring
+    in a goal's DESCRIPTION no longer counts, and an em-dash '— recorded' note IS counted.
+    Import is location-independent: memory/researcher/goal_ledger.py first (the strict,
+    verified variant), then portal-root goal_ledger.py only as last resort (its EVIDENCE_PAT
+    is loose - it matches '[x]' itself - so it must never be preferred). Response schema
+    unchanged. blocked = not-done item mentioning 'blocked'. Per-agent counts + fleet %."""
     gdir = os.path.join(HERE, "memory", "goals")
     try:
         names = {(a.get("name") or "").lower() for a in load_agents().get("agents", [])}
     except Exception:
         names = set()
+    parse = None
+    import importlib.util as _ilu
+    for _cand in (os.path.join(HERE, "memory", "researcher", "goal_ledger.py"),):
+        try:
+            _spec = _ilu.spec_from_file_location("_gl_strict", _cand)
+            _mod = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_mod)
+            parse = _mod.parse_agent_file
+            break
+        except Exception:
+            continue
+    if parse is None:
+        try:
+            import goal_ledger as _gl
+            parse = _gl.parse_agent_file
+        except Exception:
+            return {"ok": False, "error": "goal_ledger module not found (memory/researcher or portal root)", "agents": []}
     agents = []
     try:
         for fn in sorted(os.listdir(gdir)):
@@ -52,13 +77,12 @@ GOALS_FN = '''def _goals_snapshot():
                 continue
             if names and fn[:-3].lower() not in names:
                 continue  # skip summary/dated rollup files (all-goals-*, *-agent-goals, etc.)
-            txt = open(os.path.join(gdir, fn), encoding="utf-8").read()
-            items = re.findall(r"^\\s*\\d+\\.\\s+(.*)$", txt, re.M)
-            done = sum(1 for it in items if "(verified:" in it or "[x]" in it)
-            open_items = [it for it in items if "(verified:" not in it and "[x]" not in it]
-            blocked = sum(1 for it in open_items if "blocked" in it.lower())
-            agents.append({"agent": fn[:-3], "total": len(items), "done": done,
-                           "open": len(open_items), "blocked": blocked})
+            goals = parse(os.path.join(gdir, fn))
+            done = sum(1 for g in goals if g["status"] == "reached")
+            not_done = [g["text"] for g in goals if g["status"] != "reached"]
+            blocked = sum(1 for t in not_done if "blocked" in t.lower())
+            agents.append({"agent": fn[:-3], "total": len(goals), "done": done,
+                           "open": len(not_done), "blocked": blocked})
     except Exception as e:
         return {"ok": False, "error": str(e), "agents": []}
     total = sum(a["total"] for a in agents)
@@ -73,20 +97,24 @@ GOALS_FN = '''def _goals_snapshot():
 _praw = open(PORTAL, "rb").read()
 _peol = b"\r\n" if _praw.count(b"\r\n") > _praw.count(b"\n") // 2 else b"\n"
 _portal = _praw.decode("utf-8").replace("\r\n", "\n")
-if "fn[:-3].lower() not in names" in _portal:
-    skipped.append("B1 _goals_snapshot fn")
+if "Researcher evidence-gated v2" in _portal:
+    skipped.append("B1 _goals_snapshot fn (evidence-gated v2 present)")
 elif "def _goals_snapshot():" in _portal:
     i, j = _portal.index("def _goals_snapshot():"), _portal.index("def _run_index_check():")
     out = (_portal[:i] + GOALS_FN + _portal[j:]).replace("\n", _peol.decode())
     open(PORTAL, "wb").write(out.encode("utf-8"))
     applied.append("B1b _goals_snapshot fn (replaced old version)")
 else:
-    patch(PORTAL, "B1 _goals_snapshot fn", "fn[:-3].lower() not in names",
+    patch(PORTAL, "B1 _goals_snapshot fn", "Researcher evidence-gated",
           "def _run_index_check():",
           GOALS_FN + "def _run_index_check():")
 patch(PORTAL, "B2 /api/goals route", '"/api/goals"',
       '        elif p == "/api/ops":\n            # Ops panel host tiles (2026-11-15): disk usage + portal uptime.\n            return self._json(200, _ops_snapshot())',
       '        elif p == "/api/ops":\n            # Ops panel host tiles (2026-11-15): disk usage + portal uptime.\n            return self._json(200, _ops_snapshot())\n        elif p == "/api/goals":\n            # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.\n            return self._json(200, _goals_snapshot())')
+patch(PORTAL, "B4 /api/provenance route", '"/api/provenance"',
+      '        elif p == "/api/goals":',
+      '        elif p == "/api/goals":\n            # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.\n            return self._json(200, _goals_snapshot())\n        elif p == "/api/provenance":\n            # Goal provenance report (2026-11-15, Builder).\n            try:\n                with open(os.path.join(HERE, "memory", "archivist", "goal_provenance_report.json"), encoding="utf-8") as f:\n                    return self._json(200, {"ok": True, **json.load(f)})\n            except Exception as e:\n                return self._json(200, {"ok": False, "error": str(e)})')
+
 
 # ================= FRONTEND: index.html =================
 I = INDEX
@@ -110,9 +138,23 @@ patch(I, "M3a .silentpill 10.5->11", ".silentpill{font-size:11px",
 patch(I, "M3b .tsec b 10.5->11", ".tsec b{display:block;font-size:11px;",
       ".tsec b{display:block;font-size:10.5px;",
       ".tsec b{display:block;font-size:11px;")
-patch(I, "M3c fleet .frow 12.5->12", 'dashed var(--line);font-size:12px}',
+patch(I, "H2e seg active-tab AA", ".seg button.on{background:#3a6fd6",
+      ".seg button.on{background:var(--acc);color:#fff}",
+      ".seg button.on{background:#3a6fd6;color:#fff}")
+# H1 — fleet-row rename .frow -> .frow-h (supersedes Verifier scoping + Scribe .ffrow)
+patch(I, "H1a CSS .frow->.frow-h", ".frow-h{padding:7px 0",
       ".frow{padding:7px 0;border-bottom:1px dashed var(--line);font-size:12.5px}",
-      ".frow{padding:7px 0;border-bottom:1px dashed var(--line);font-size:12px}")
+      ".frow-h{padding:7px 0;border-bottom:1px dashed var(--line);font-size:12.5px}")
+_h1r = ".frow-h{" in open(I,"rb").read().decode("utf-8")
+_m3o = (".frow-h{padding:7px 0;border-bottom:1px dashed var(--line);font-size:12.5px}" if _h1r
+        else ".frow{padding:7px 0;border-bottom:1px dashed var(--line);font-size:12.5px}")
+patch(I, "H1b JS fleet template", 'class="frow-h"',
+      'html+=\'<div class="frow"><span class="fdot \'',
+      'html+=\'<div class="frow-h"><span class="fdot \'')
+patch(I, "H1c .frow:last-child rename", ".frow-h:last-child",
+      ".frow:last-child{border-bottom:none}",
+      ".frow-h:last-child{border-bottom:none}")
+patch(I, "M3c fleet .frow 12.5->12", 'dashed var(--line);font-size:12px}', _m3o, _m3o.replace("12.5px","12px"))
 # M3 — unified panel headers (4 variants -> one look: 8px 14px / 12px / dim)
 patch(I, "M3d #fleetHead", '#fleetHead{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:12px;color:var(--dim)',
       "#fleetHead{display:flex;align-items:center;gap:10px;padding:8px 14px;font-size:13px;border-bottom:1px solid var(--line)}",
@@ -238,6 +280,15 @@ checks = {
     "no off-scale 12.5px": "12.5px" not in html,
     "no #ff8f8f literal": "#ff8f8f" not in html,
 }
+_pt = open(PORTAL,"rb").read().decode("utf-8")
+checks["/api/goals route"] = "/api/goals" in _pt
+checks["/api/provenance route"] = "/api/provenance" in _pt
+checks["evidence-gated parser v2"] = "Researcher evidence-gated" in _pt
+checks["single bare .frow CSS rule"] = html.count(".frow{") == 1
+checks[".frow-h fleet rule"] = ".frow-h{padding:7px 0" in html
+checks["fleet JS uses frow-h"] = 'class="frow-h"' in html
+checks[".frow-h:last-child"] = ".frow-h:last-child" in html
+checks["seg active tab AA #3a6fd6"] = ".seg button.on{background:#3a6fd6;color:#fff}" in html
 for k, v in checks.items():
     print(("PASS " if v else "FAIL ") + k)
     if not v: failed.append((k, "check failed"))

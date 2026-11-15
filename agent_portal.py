@@ -1463,6 +1463,59 @@ def _ops_snapshot():
             "disk": disk}
 
 
+def _goals_snapshot():
+    """Goal Velocity dashboard (2026-11-15, Designer; Researcher evidence-gated v2).
+    Counts a goal DONE only when an acceptance/evidence marker is present. Delegates to
+    goal_ledger.parse_agent_file (single source of truth) so the portal can NEVER diverge
+    from the evidence-honest ledger: closure is evidence-gated, a literal '[x]' substring
+    in a goal's DESCRIPTION no longer counts, and an em-dash '— recorded' note IS counted.
+    Import is location-independent: memory/researcher/goal_ledger.py first (the strict,
+    verified variant), then portal-root goal_ledger.py only as last resort (its EVIDENCE_PAT
+    is loose - it matches '[x]' itself - so it must never be preferred). Response schema
+    unchanged. blocked = not-done item mentioning 'blocked'. Per-agent counts + fleet %."""
+    gdir = os.path.join(HERE, "memory", "goals")
+    try:
+        names = {(a.get("name") or "").lower() for a in load_agents().get("agents", [])}
+    except Exception:
+        names = set()
+    parse = None
+    import importlib.util as _ilu
+    for _cand in (os.path.join(HERE, "memory", "researcher", "goal_ledger.py"),):
+        try:
+            _spec = _ilu.spec_from_file_location("_gl_strict", _cand)
+            _mod = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_mod)
+            parse = _mod.parse_agent_file
+            break
+        except Exception:
+            continue
+    if parse is None:
+        try:
+            import goal_ledger as _gl
+            parse = _gl.parse_agent_file
+        except Exception:
+            return {"ok": False, "error": "goal_ledger module not found (memory/researcher or portal root)", "agents": []}
+    agents = []
+    try:
+        for fn in sorted(os.listdir(gdir)):
+            if not fn.endswith(".md") or fn[:-3] == "INDEX":
+                continue
+            if names and fn[:-3].lower() not in names:
+                continue  # skip summary/dated rollup files (all-goals-*, *-agent-goals, etc.)
+            goals = parse(os.path.join(gdir, fn))
+            done = sum(1 for g in goals if g["status"] == "reached")
+            not_done = [g["text"] for g in goals if g["status"] != "reached"]
+            blocked = sum(1 for t in not_done if "blocked" in t.lower())
+            agents.append({"agent": fn[:-3], "total": len(goals), "done": done,
+                           "open": len(not_done), "blocked": blocked})
+    except Exception as e:
+        return {"ok": False, "error": str(e), "agents": []}
+    total = sum(a["total"] for a in agents)
+    done_all = sum(a["done"] for a in agents)
+    return {"ok": True, "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
+            "fleet_pct": round(100.0 * done_all / total, 1) if total else 0.0,
+            "fleet_done": done_all, "fleet_total": total, "agents": agents}
+
+
 def _run_index_check():
     """Pre-prune ritual (Archivist goal 2): run memory/archivist/index_check.py so
     every prune commit is index-clean. Returns (rc, output). rc: 0=clean,
@@ -1626,6 +1679,18 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/ops":
             # Ops panel host tiles (2026-11-15): disk usage + portal uptime.
             return self._json(200, _ops_snapshot())
+        elif p == "/api/goals":
+            # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
+            return self._json(200, _goals_snapshot())
+        elif p == "/api/provenance":
+            # Goal provenance report (2026-11-15, Builder).
+            try:
+                with open(os.path.join(HERE, "memory", "archivist", "goal_provenance_report.json"), encoding="utf-8") as f:
+                    return self._json(200, {"ok": True, **json.load(f)})
+            except Exception as e:
+                return self._json(200, {"ok": False, "error": str(e)})
+            # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
+            return self._json(200, _goals_snapshot())
         elif p == "/api/knowledge-bases":
             return self._json(200, self._proxy_get("/api/rag/knowledge-bases"))
         elif p == "/api/tools":
