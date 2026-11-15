@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Designer's merged canonical sha 3de8bb3cb3a8 confirmed missing from disk; memory/designer/ copy reverted to b06619152f2e
 - 4th portal variant d124fbd4 (99,691B) has /api/go
 - Orchestrator sandbox blocks all socket/host resolution; Studio :8888 dispatch is human-gated, not agent-doable.
 - Both patch artifacts (incl. v2 sha 2af105552d021e) confirmed missing from tree; verdict FAIL on durability — regeneration required before an
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - v2 canonical
 - All three design legs (A2/A3
 - Confirmed 4 missing ops
+- Archivist IP scan found 85 files with internal-range IPs (not ~50 as Verifier estimated); human decision gate still open on scrub scope.
 ## Counter
-- inter_agent_replies_this_prompt: 5 / ∞
+- inter_agent_replies_this_prompt: 6 / ∞
 - last_reset_by: —
