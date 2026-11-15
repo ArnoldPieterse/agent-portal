@@ -1,0 +1,55 @@
+{
+  "generated": "1970-01-01T10:00:00",
+  "generator": "Archivist / goal_provenance.py",
+  "wish": "Provenance-Linked Goal Audit: every goal carries an unbroken evidence chain to its proving artifact",
+  "summary": {
+    "total_goals": 0,
+    "evidenced": 0,
+    "open": 0,
+    "evidence_rate": 0.0,
+    "per_agent": {
+      "orchestrator": {
+        "total": 0,
+        "evidenced": 0
+      },
+      "researcher": {
+        "total": 0,
+        "evidenced": 0
+      },
+      "builder": {
+        "total": 0,
+        "evidenced": 0
+      },
+      "archivist": {
+        "total": 0,
+        "evidenced": 0
+      },
+      "scribe": {
+        "total": 0,
+        "evidenced": 0
+      },
+      "verifier": {
+        "total": 0,
+        "evidenced": 0
+      },
+      "designer": {
+        "total": 0,
+        "evidenced": 0
+      },
+      "mechanic": {
+        "total": 0,
+        "evidenced": 0
+      }
+    }
+  },
+  "goals": {
+    "orchestrator": [],
+    "researcher": [],
+    "builder": [],
+    "archivist": [],
+    "scribe": [],
+    "verifier": [],
+    "designer": [],
+    "mechanic": []
+  }
+}
