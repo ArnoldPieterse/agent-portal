@@ -739,7 +739,12 @@ def build_system_prompt(agent, mode, all_agents, rag_context="", shared_memory="
              "- Project memory is modular: memory/INDEX.md is the pointer map. With python/terminal tools",
              "  (if enabled), grep it and read only the module you need - never paste whole modules into chat.",
              "- Keep replies short (2-4 sentences) unless asked to expand.",
-             "- Address other agents by name when replying to them."]
+             "- Address other agents by name when replying to them.",
+             "- NO HUMAN GATES: never mark a lane 'blocked pending human action' or create a decision",
+             "  gate for the human. If something is blocked, state the exact unblock step ONCE, then take",
+             "  the best available alternative (different path, different tool, or delegate to another",
+             "  agent by name) and keep working. The human only sets goals and reviews results -",
+             "  they do not unblock lanes."]
         parts.append("\n".join(lines))
     if agent.get("tools"):
         # 2026-11-10: group test "build a calculator app" - both agents CLAIMED builds ("Built and
@@ -1504,12 +1509,23 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
                                  data=json.dumps(body).encode(),
                                  headers=studio_headers(agent))
     try:
-        resp = urllib.request.urlopen(req, timeout=600)
+        resp = urllib.request.urlopen(req, timeout=300)
         if umq_ids:  # request reached Studio => queued messages are now in this context
             umq_check(umq_ids, who)
     except Exception as e:
-        _act_log(session, {"agent": who, "event": "error", "error": str(e)[:300]})
-        wfile.write(b"data: " + json.dumps({"error": str(e)}).encode() + b"\n\n")
+        # Surface the upstream error BODY (e.g. "No model loaded. Call POST /inference/load
+        # first."), not just "HTTP Error 400: Bad Request" - that bare text hid the Black
+        # overnight-unload incident for a full group cycle (2026-11-15).
+        detail = str(e)
+        if isinstance(e, urllib.error.HTTPError):
+            try:
+                body_txt = e.read().decode("utf-8", "replace")[:400]
+                if body_txt:
+                    detail += " - " + body_txt
+            except Exception:
+                pass
+        _act_log(session, {"agent": who, "event": "error", "error": detail[:500]})
+        wfile.write(b"data: " + json.dumps({"error": detail}).encode() + b"\n\n")
         wfile.write(b"data: [DONE]\n\n")
         return
     buf = b""
@@ -1620,7 +1636,7 @@ def _finish_chat(wfile, agent, mode, kind, full):
 
 GROUP_RUN_FILE = os.path.join(HERE, "group_run.json")
 RUNS_DIR = os.path.join(HERE, "runs")
-RUN_MAX_EVENTS = 4000      # per-run journal cap (a full run is normally a few hundred)
+RUN_MAX_EVENTS = 150000   # per-run journal cap (2026-11-15: 30k was hit in minutes by per-token frames, after which ALL output was silently dropped and invisible to every client; with token coalescing below this is ~10h of headroom)
 RUN_KEEP = 5               # keep the N newest journals on disk
 NUDGE_MAX_RUN = 3          # auto-continue passes (mirrors the old frontend cap)
 XTALK_GUARD_RUN = 8        # max cross-talk rounds per pass
@@ -1632,6 +1648,11 @@ _journal_lock = threading.Lock()
 _active_run_id = None      # at most one live group run
 _run_stops = {}            # run_id -> threading.Event (■ Stop)
 _run_seq = {}              # run_id -> next seq
+_run_last_frame = {}       # run_id -> wall time of last journaled frame (stall watchdog)
+RUN_STALL_S = 240          # no frames for this long => /api/run-state flags stalled=True
+STALL_KILL_S = 900         # (2026-11-15) no frames for THIS long => watchdog kills the run (wedge guard)
+AUTO_RESUME_MAX = 5        # (2026-11-15) consecutive auto-resumes before a human follow-up is required
+AUTO_RESUME_DELAY_S = 45   # settle time after a run ends before the watchdog starts the continuation
 
 
 class _RunStopped(OSError):
@@ -1683,7 +1704,9 @@ def _run_event(run_id, obj):
         if nxt > RUN_MAX_EVENTS:
             return
         _run_seq[run_id] = nxt + 1
-        line = json.dumps({"seq": nxt, **obj}, ensure_ascii=False) + "\n"
+        if obj.get("kind") == "frame":
+            _run_last_frame[run_id] = time.time()
+        line = json.dumps({"seq": nxt, "ts": int(time.time() * 1000), **obj}, ensure_ascii=False) + "\n"
         try:
             os.makedirs(RUNS_DIR, exist_ok=True)
             with open(os.path.join(RUNS_DIR, run_id + ".journal"), "a", encoding="utf-8") as f:
@@ -1706,6 +1729,23 @@ class _FrameSink:
         self.meta = {}
         self.error = None
         self.blocked = None
+        self._pend = None      # coalesced token frame in flight (see write)
+        self._pend_t = 0.0
+
+    def _emit_pend(self):
+        if not self._pend:
+            return
+        p, self._pend = self._pend, None
+        obj = {"agent": p.get("agent")}
+        if p["thinking"]:
+            obj["thinking"] = p["thinking"]
+        if p["content"]:
+            obj["content"] = p["content"]
+        if self.on_frame:
+            try:
+                self.on_frame(obj)
+            except Exception:
+                pass
 
     def write(self, data):
         if self.stop_event is not None and self.stop_event.is_set():
@@ -1731,7 +1771,22 @@ class _FrameSink:
                 self.error = str(obj["error"])[:300]
             if obj.get("blocked"):
                 self.blocked = str(obj["blocked"])[:300]
-            if self.on_frame:
+            if not self.on_frame:
+                continue
+            # Coalesce (2026-11-15): batch consecutive thinking/content token frames into ONE
+            # journaled event every ~300ms. Per-token journaling filled the run cap in minutes,
+            # after which every frame was dropped - live progress became invisible to ALL clients.
+            if (obj.get("thinking") or obj.get("content")) and not (
+                    obj.get("tool") or "meta" in obj or obj.get("error") or obj.get("blocked")):
+                if self._pend is None:
+                    self._pend = {"agent": obj.get("agent"), "thinking": "", "content": ""}
+                    self._pend_t = time.time()
+                self._pend["thinking"] += obj.get("thinking") or ""
+                self._pend["content"] += obj.get("content") or ""
+                if time.time() - self._pend_t >= 0.3:
+                    self._emit_pend()
+            else:
+                self._emit_pend()   # flush tokens before the structural frame
                 try:
                     self.on_frame(obj)
                 except Exception:
@@ -1739,7 +1794,7 @@ class _FrameSink:
         return len(data)
 
     def flush(self):
-        pass
+        self._emit_pend()
 
 
 def run_turn_captured(agent, messages, mode, kind, session, on_frame=None, stop_event=None):
@@ -1747,12 +1802,22 @@ def run_turn_captured(agent, messages, mode, kind, session, on_frame=None, stop_
     streaming them to a browser. Returns the sink (.content/.meta/.error/.blocked)."""
     sink = _FrameSink(on_frame, stop_event)
     stream_chat(sink, agent, messages, mode, kind, session)
+    sink.flush()   # ensure the final token batch is journaled before the turn's done event
     return sink
 
 
 def _parallel_turns(run_id, names, kind, hist, stop_event):
-    """Fire one turn per agent in parallel (same semantics as the old frontend Promise.all).
-    Returns result dicts in `names` order: {name, full, silent, concluded, error, blocked}."""
+    """Run one turn per agent, ALL AGENTS IN PARALLEL (2026-11-15, Arnold: async,
+    not turn-taking). Returns result dicts in `names` order:
+    {name, full, silent, concluded, error, blocked}.
+
+    One worker thread per agent. Agents on DIFFERENT Studio hosts truly overlap;
+    the two local agents (Orchestrator+Researcher) are queued by White's Studio
+    internally (parallel_slots=1) and simply start a beat apart - harmless. Bubbles
+    open on each agent's `turn` event before its stream starts, and token frames are
+    journaled as they arrive, so live progress shows from the first host that answers.
+    Concurrency is safe: journal writes take _journal_lock per event, memory RMWs take
+    _lock, UMQ takes _umq_lock - no lock is ever held across a generation."""
     agents_by_name = {a.get("name", "?"): a for a in load_agents()["agents"]}
     out = [None] * len(names)
 
@@ -1760,24 +1825,28 @@ def _parallel_turns(run_id, names, kind, hist, stop_event):
         ag = agents_by_name.get(nm)
         if not ag:
             return
-        _run_event(run_id, {"agent": nm, "kind": kind, "turn": True})  # frontend opens a bubble here
-        sink = run_turn_captured(ag, hist, "group", kind, run_id,
-                                 on_frame=lambda o: _run_event(
-                                     run_id, {"agent": nm, "kind": kind, "frame": o}),
-                                 stop_event=stop_event)
-        if sink.content.strip():
-            _, is_silent, concluded = _effective_reply(sink.content)
-        else:
-            is_silent, concluded = False, False
-        out[i] = {"name": nm, "full": sink.content, "silent": bool(is_silent),
-                  "concluded": bool(concluded), "error": sink.error, "blocked": sink.blocked}
+        try:
+            _run_event(run_id, {"agent": nm, "kind": kind, "turn": True})  # frontend opens a bubble here
+            sink = run_turn_captured(ag, hist, "group", kind, run_id,
+                                     on_frame=lambda o: _run_event(
+                                         run_id, {"agent": nm, "kind": kind, "frame": o}),
+                                     stop_event=stop_event)
+            if sink.content.strip():
+                _, is_silent, concluded = _effective_reply(sink.content)
+            else:
+                is_silent, concluded = False, False
+            out[i] = {"name": nm, "full": sink.content, "silent": bool(is_silent),
+                      "concluded": bool(concluded), "error": sink.error, "blocked": sink.blocked}
+        except Exception as e:  # one agent's crash must not kill the other parallel turns
+            out[i] = {"name": nm, "full": "", "silent": False, "concluded": False,
+                      "error": str(e)[:300], "blocked": None}
 
-    threads = [threading.Thread(target=work, args=(i, nm), daemon=True)
-               for i, nm in enumerate(names)]
-    for t in threads:
-        t.start()
-    for t in threads:
-        t.join()
+    if stop_event.is_set():
+        return out
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(max_workers=max(1, len(names))) as pool:
+        for i, nm in enumerate(names):
+            pool.submit(work, i, nm)   # context exit waits for all turns; stop_event tears each down cleanly
     for r in out:  # terminal event per turn - the frontend finalizes each bubble on this
         if r:
             _run_event(run_id, {"agent": r["name"], "kind": kind, "done": True})
@@ -1817,6 +1886,12 @@ def _group_run_worker(run_id):
                       "[SILENT] if there is nothing left to do.") % (nudges, NUDGE_MAX_RUN)
                 _append_history("group", [{"speaker": "You", "content": nt}])
                 _run_event(run_id, {"run": "nudge", "text": nt})
+            try:
+                _sync_workspace_to_sandbox()   # per-pass mirror (2026-11-15): goal progress reaches HERE
+                                               # WHILE the run is alive, not only at run end - a crashed or
+                                               # interrupted run no longer strands 80 min of work in the sandbox
+            except Exception:
+                pass
             hist = _load_history("group")
             run["phase"] = "prompt"
             _save_group_run(run)
@@ -1893,9 +1968,33 @@ def _group_run_worker(run_id):
         verdict = {"note": "Run error: %s" % str(e)[:200], "cls": "warn"}
         run["error"] = str(e)[:300]
     finally:
-        run["status"] = "stopped" if stop_event.is_set() else ("concluded" if last_concluded else "done")
+        try:  # pick up out-of-band flags written by the stall killer while we were blocked
+            disk = _load_group_run()
+            if disk.get("id") == run_id:
+                for k in ("stalled", "auto_resume_count"):
+                    if k in disk:
+                        run[k] = disk[k]
+        except Exception:
+            pass
+        stalled = bool(run.get("stalled"))
+        if last_concluded:
+            status = "concluded"
+        elif stalled:
+            status = "stalled"
+        elif stop_event.is_set():
+            status = "stopped"
+        else:
+            status = "done"
+        run["status"] = status
+        if verdict is None:
+            if stalled:
+                verdict = {"note": "\u26a0 Stalled \u2014 no model output for %d min; watchdog stopped the run. Auto-continuing shortly." % (STALL_KILL_S // 60), "cls": "warn"}
+            else:
+                verdict = {"note": "Round closed.", "cls": "dim"}
         run["verdict"] = verdict
         run["ended"] = time.time()
+        if status == "concluded":
+            run["auto_resume_count"] = 0   # clean conclusion resets the auto-resume budget
         _save_group_run(run)
         _run_event(run_id, {"run": "end", "status": run["status"], "verdict": verdict})
         try:
@@ -1906,8 +2005,9 @@ def _group_run_worker(run_id):
         _active_run_id = None
 
 
-def start_group_run(text):
-    """Create + launch a backend-owned group run. Returns (run, error)."""
+def start_group_run(text, extra=None):
+    """Create + launch a backend-owned group run. Returns (run, error).
+    `extra` is merged into the run record BEFORE the first save (e.g. the auto-resume budget)."""
     global _active_run_id
     with _group_run_lock:
         if _active_run_id:
@@ -1940,6 +2040,8 @@ def start_group_run(text):
                "settled": [], "nudges": 0, "phase": "prompt",
                "started": time.time(), "ended": None, "verdict": None, "error": None,
                "hist_start": len(hist)}
+        if extra:
+            run.update(extra)
         _save_group_run(run)
         _append_history("group", [{"speaker": "You", "content": full_text}])
         _run_stops[rid] = threading.Event()
@@ -1948,6 +2050,7 @@ def start_group_run(text):
     _save_run_state({"busy": True, "mode": "group", "phase": "prompt",
                      "ts": int(time.time() * 1000), "run_id": rid})
     threading.Thread(target=_group_run_worker, args=(rid,), daemon=True).start()
+    threading.Thread(target=_stall_killer, args=(rid,), daemon=True).start()
     return run, None
 
 
@@ -1982,6 +2085,74 @@ def _agent_goals_block(name):
         return ""
 
 
+_portal_live = False          # (2026-11-15) True once THIS process has bound the port; only it may mutate run state
+AUTO_RESUME_WINDOW_S = 6 * 3600   # resume interrupted/stalled runs ended within this window
+
+
+def _stall_killer(run_id):
+    """Wall-clock wedge guard (2026-11-15): a socket timeout only bounds idle reads - a model that
+    trickles one token per minute never trips it, and a wedged turn x 8 agents froze the fleet for
+    71 min. If NO frame is journaled for STALL_KILL_S, stop the run; the auto-resume watchdog then
+    restarts it (a fresh process/model state usually clears the wedge)."""
+    while True:
+        time.sleep(30)
+        if _active_run_id != run_id:
+            return
+        last = _run_last_frame.get(run_id)
+        if last and time.time() - last > STALL_KILL_S:
+            try:
+                run = _load_group_run()
+                if run.get("id") == run_id:
+                    run["stalled"] = True
+                    _save_group_run(run)
+            except Exception:
+                pass
+            ev = _run_stops.get(run_id)
+            if ev:
+                ev.set()
+            return
+
+
+def _auto_resume_watchdog():
+    """Backend-owned continuity (2026-11-15): when a group run ends interrupted/stalled - or ends
+    without [CONCLUDED] while goals are still open - start the continuation automatically. Nothing
+    waits on the frontend; a hard refresh or a portal crash no longer idles the fleet.
+    Capped at AUTO_RESUME_MAX consecutive auto-resumes (reset by a clean conclusion); after that a
+    human follow-up is required, per the run verdict."""
+    while True:
+        time.sleep(20)
+        if not _portal_live or _active_run_id:
+            continue
+        try:
+            run = _load_group_run()
+            rid = run.get("id")
+            if not rid:
+                continue
+            status = run.get("status")
+            age = time.time() - (run.get("ended") or 0)
+            resumable = ((status in ("interrupted", "stalled") and age < AUTO_RESUME_WINDOW_S)
+                         or (status == "done" and age < 1800))
+            if not resumable:
+                continue
+            n = int(run.get("auto_resume_count") or 0) + 1
+            if n > AUTO_RESUME_MAX:
+                continue   # budget spent - wait for a human follow-up
+            time.sleep(AUTO_RESUME_DELAY_S)
+            if _active_run_id:   # a human may have started one in the meantime
+                continue
+            why = {"interrupted": "interrupted by a portal restart",
+                   "stalled": "stalled (no model output for %d min)" % (STALL_KILL_S // 60),
+                   "done": "ended without [CONCLUDED]"}.get(status, status)
+            prompt = ("\u21bb AUTO-RESUME %d/%d (backend watchdog): the previous group run was %s. "
+                      "Continue exactly where it left off - do NOT re-read closed work or restate plans. "
+                      "Each agent: take ONE concrete next step on your open goal lanes, update "
+                      "memory/goals/<you>.md with evidence as you go, then reply [CONCLUDED] when the "
+                      "cycle's tasks are done." % (n, AUTO_RESUME_MAX, why))
+            start_group_run(prompt, extra={"auto_resume_count": n})   # budget persisted atomically with the run
+        except Exception:
+            pass
+
+
 def _reap_stale_group_run():
     """Portal restarted mid-run: the worker thread is gone. Mark the run interrupted so the
     UI shows what happened; queued UMQ messages survive and ride the next run."""
@@ -2007,7 +2178,10 @@ def _prune_run_journals():
         pass
 
 
-_reap_stale_group_run()
+# NOTE (2026-11-15): _reap_stale_group_run / _clear_stale_busy / _prune_run_journals are NO LONGER
+# called at import time. Any stray instance (or a debug import of this module) used to mark the
+# LIVE run interrupted and clear busy - corrupting state while the real portal kept running.
+# They now run in __main__ AFTER the port bind succeeds, so only the actual port owner mutates state.
 
 
 def _clear_stale_busy():
@@ -2022,9 +2196,6 @@ def _clear_stale_busy():
     except Exception:
         pass
 
-
-_clear_stale_busy()
-_prune_run_journals()
 
 # ---- Ops (2026-11-13): TODO pruning + local git repo management ----
 TODO_FILE = os.path.join(HERE, "TODO.md")
@@ -2425,6 +2596,9 @@ class Handler(BaseHTTPRequestHandler):
                                  "settled": run.get("settled", []), "nudges": run.get("nudges", 0),
                                  "hist_start": run.get("hist_start"),
                                  "prompt": (run.get("prompt") or "")[:300]})
+                    lf = _run_last_frame.get(run["id"])
+                    base["last_frame_ts"] = int(lf * 1000) if lf else None
+                    base["stalled"] = bool(lf and time.time() - lf > RUN_STALL_S)
                 else:
                     base.update({"busy": False, "mode": "group", "run_id": run["id"],
                                  "status": run["status"], "verdict": run.get("verdict"),
@@ -2833,7 +3007,12 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
+    srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)   # bind FIRST: only the port owner may mutate run state
+    _portal_live = True
+    _reap_stale_group_run()
+    _clear_stale_busy()
+    _prune_run_journals()
+    threading.Thread(target=_auto_resume_watchdog, daemon=True).start()
     print(f"Agent portal -> http://127.0.0.1:{PORT}  (backed by Studio at {STUDIO})")
     try:
         srv.serve_forever()

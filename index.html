@@ -401,6 +401,17 @@ function renderBusyHint(){ const b=$("busyHint"); if(!b)return;
   else{ b.textContent=""; b.style.display="none"; } }
 function setBusyHint(name){ if(name)busyNames.add(name); renderBusyHint(); if(busyNames.size)$("stopBtn").disabled=false; }
 function clearBusyHint(name){ busyNames.delete(name); renderBusyHint(); if(!busyNames.size)$("stopBtn").disabled=true; }
+// Send is NEVER disabled while a run is active: send() routes to the user-message queue
+// (user_messages.json) which each agent picks up on its next prompt build. The button just
+// relabels to "Queue" so the behavior is visible (2026-11-15: was greyed out = dead end).
+function setSendQueued(q){const b=$("send");b.disabled=false;b.textContent=q?"Queue":"Send";}
+let stallTimer=null;
+async function stallPoll(){try{const r=await api('/api/run-state');
+  if(r&&r.busy&&r.stalled){const b=$("busyHint");if(b){b.style.display="inline";
+    b.textContent="\u26a0 no output for "+Math.max(1,Math.round((Date.now()-(r.last_frame_ts||Date.now()))/60000))+" min - possible Studio wedge (try \u25a0 Stop or \\RecoverAll)";}}
+}catch(e){}}
+function startStallPoll(){if(stallTimer)return;stallPoll();stallTimer=setInterval(stallPoll,15000);}
+function stopStallPoll(){if(stallTimer){clearInterval(stallTimer);stallTimer=null;}}
 
 function resetChat(){ history=[]; $("msgs").innerHTML=""; sessionId=null; }
 // ---- Sticky auto-scroll (2026-11-13): pin to bottom while streaming, but never yank the view
@@ -806,10 +817,11 @@ async function send(){
   stickOn=true;   // re-pin auto-scroll on every human send
   history.push({speaker:"You",content:text});
   addBubble("You","",null,true).querySelector(".body").textContent=text;
-  $("input").value=""; busy=true; $("send").disabled=true; startHeartbeat();
+  $("input").value=""; busy=true; setSendQueued(true); startHeartbeat(); startStallPoll();
   roundBubbles=[]; // fresh per human prompt (also bounds memory in solo mode)
   sessionId=(mode==="group"?"g":"s")+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7); actFollow();
   noOutputNames.clear(); stopRequested=false; activeCtrls.clear();
+  let adopted=false;   // true if we adopt an already-live backend run instead of starting one
   try{
     if(mode==="solo"){
       const full=await streamReply(me);
@@ -824,8 +836,23 @@ async function send(){
       sessionId=j.run_id; actFollow();
       await attachRun(j.run_id);
     }
-  }catch(e){ addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=String(e); }
-  busy=false; busyNames.clear(); renderBusyHint(); $("send").disabled=false; $("input").focus(); stopHeartbeat(); saveHistoryServer(true); umqPoll(); renderQueue();
+  }catch(e){
+    const em=String(e);
+    const m2=/group run is already in progress \((g-[a-z0-9]+-[a-f0-9]+)\)/i.exec(em);
+    if(mode==="group"&&m2){
+      // A backend run is already live (scheduled task / another tab started it while this one
+      // was idle): adopt it instead of showing a dead-end error, and route the message through
+      // the UMQ where agents pick it up on their next prompt build.
+      adopted=true;
+      adoptLiveRun({run_id:m2[1],busy:true},()=>{
+        addBubble("queued","#8a63d2","\u2709",false).querySelector(".body").textContent=
+          "group run already in progress - attached to its live output; your message is queued and the agents will pick it up";
+      });
+      queueMsg(text);
+    }else{ addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=em; }
+  }
+  if(adopted){ umqPoll(); renderQueue(); return; }   // keep busy/heartbeat for the adopted run
+  busy=false; busyNames.clear(); renderBusyHint(); setSendQueued(false); stopStallPoll(); $("input").focus(); stopHeartbeat(); saveHistoryServer(true); umqPoll(); renderQueue();
 }
 
 // ---- Backend group-run attachment (2026-11-15) ----
@@ -901,16 +928,24 @@ function handleRunEvent(ev){
       chip.textContent="\ud83d\udee0 "+tn; t.toolRow.appendChild(chip); }
     return; }
 }
-async function attachRun(rid){
+let runLastSeq=0, attachedRunId=null; // cursor continuity across re-attaches (2026-11-15)
+async function attachRun(rid, startCursor){
   runId=rid;
   if(runCtrl){try{runCtrl.abort();}catch(e){}}
   runCtrl=new AbortController();
   await new Promise(res=>{
     (async()=>{
       try{
-        const resp=await fetch("/api/run-events?run="+encodeURIComponent(rid)+"&cursor=0",{signal:runCtrl.signal});
+        const resp=await fetch("/api/run-events?run="+encodeURIComponent(rid)+"&cursor="+(startCursor||0),{signal:runCtrl.signal});
         if(!resp.ok)throw new Error("run stream HTTP "+resp.status);
         const reader=resp.body.getReader();const dec=new TextDecoder();let buf="";
+        // Fast-forward (2026-11-15): re-attaching to a run that's been going a while used to
+        // replay every token frame from seq 0 (multi-MB journal -> minutes of frozen UI, no
+        // visible "current progress"). Now frames older than ~60s are skipped for DOM purposes
+        // (their text is kept in history) and the live turn's bubble is recreated, so CURRENT
+        // output shows within seconds.
+        const cutoff=Date.now()-60000;
+        let fast=true, skipped=0, ffText={}, pendingTurn={};
         while(true){
           const {done,value}=await reader.read();if(done)break;
           buf+=dec.decode(value,{stream:true});
@@ -920,6 +955,22 @@ async function attachRun(rid){
             for(const line of chunk.split("\n")){
               if(!line.startsWith("data: "))continue;
               let ev;try{ev=JSON.parse(line.slice(6));}catch(e){continue;}
+              if(typeof ev.seq==="number"&&ev.seq>runLastSeq)runLastSeq=ev.seq;
+              const old=fast&&typeof ev.ts==="number"&&ev.ts<cutoff&&ev.run!=="end";
+              if(old){
+                skipped++;
+                if(ev.turn)pendingTurn[ev.agent]=ev.kind;
+                else if(ev.done){const tx=ffText[ev.agent]||"";if(!isSilent(tx))history.push({speaker:ev.agent,content:tx});delete pendingTurn[ev.agent];delete ffText[ev.agent];}
+                else if(ev.frame&&ev.frame.content)ffText[ev.agent]=(ffText[ev.agent]||"")+ev.frame.content;
+                continue;
+              }
+              fast=false;
+              if(skipped>0){const w=document.createElement("div");w.className="thinkwrap";
+                const p=document.createElement("div");p.className="roundend dim";
+                p.textContent="\u23e9 fast-forwarded "+skipped+" earlier frames - showing recent + live output";
+                w.appendChild(p);$("msgs").appendChild(w);stickScroll();skipped=0;}
+              if(ev.frame&&ev.agent&&!runTurns[ev.agent]&&pendingTurn[ev.agent]){
+                runTurn(ev.agent,pendingTurn[ev.agent]);delete pendingTurn[ev.agent];}
               handleRunEvent(ev);
             }
           }
@@ -1134,24 +1185,48 @@ async function restoreFromServer(){
     saveMsgs(); // re-seed the localStorage slot from the server copy
   }catch(e){}
 }
+function adoptLiveRun(r, after){
+  // Adopt a backend-owned group run that is ALREADY LIVE: restore history up to its start,
+  // then attach to its journaled SSE stream (fast-forward + live-tail). Shared by page-load
+  // re-attach, the idle watcher, and send()'s "already in progress" fallback.
+  if(runId)return;
+  if(mode!=="group"){ mode="group"; $("mSolo").classList.remove("on"); $("mGroup").classList.add("on"); updateHint(); }
+  $('msgs').innerHTML=''; history.length=0;
+  api('/api/history?mode=group').then(h=>{
+    const hist=(h&&Array.isArray(h.history))?h.history:[];
+    const start=(typeof r.hist_start==="number")?Math.min(r.hist_start,hist.length):hist.length;
+    for(const e of hist.slice(0,start)){
+      if(e.speaker==='You'){addBubble('You','',null,true).querySelector('.body').textContent=e.content||'';}
+      else{const a=agents.find(x=>x.name===e.speaker);addBubble(a?a.name:e.speaker,a?a.color:'#8b949e',a?a.emoji:'\ud83e\udd16',false).querySelector('.body').textContent=e.content||'';}
+    }
+    stickScroll(true); // pin to bottom after history re-render - no top-scroll flash on re-attach (2026-11-15)
+    const resume=(attachedRunId===r.run_id)?runLastSeq:0; // same run already watched: skip the multi-MB replay
+    if(attachedRunId!==r.run_id){ attachedRunId=r.run_id; runLastSeq=0; }
+    busy=true;setSendQueued(true);startHeartbeat();startStallPoll();
+    if(after)try{after();}catch(e){}
+    attachRun(r.run_id,resume).then(()=>{   // stream ended (run finished/stopped): release UI state
+      if(runId===null){ busy=false; setSendQueued(false); stopStallPoll(); stopHeartbeat(); saveHistoryServer(true); umqPoll(); renderQueue(); }
+    });
+  }).catch(()=>{});
+}
+let runWatchT=null;
+async function runWatch(){
+  // Idle watcher (2026-11-15): a group run can start while this tab is idle - scheduled task,
+  // another tab, or the backend auto-continue. Poll run-state and adopt it so live progress
+  // appears without a reload (previously re-attach only happened once at page load).
+  if(busy||runId)return;
+  try{const r=await api('/api/run-state');
+    if(r&&r.busy&&r.run_id)adoptLiveRun(r);
+  }catch(e){}
+}
+function startRunWatch(){if(runWatchT)return;runWatch();runWatchT=setInterval(runWatch,5000);}
 function checkInterruptedRun(){
   // 2026-11-15: group runs are backend-owned. If one is live, RE-ATTACH and replay from the
   // journal (hard refresh no longer cancels anything). A finished/interrupted run gets its verdict shown.
   api('/api/run-state').then(r=>{
     if(!r||!r.run_id)return;
-    if(r.busy&&r.status!=="interrupted"){
-      $('msgs').innerHTML=''; history.length=0;
-      api('/api/history?mode=group').then(h=>{
-        const hist=(h&&Array.isArray(h.history))?h.history:[];
-        const start=(typeof r.hist_start==="number")?Math.min(r.hist_start,hist.length):hist.length;
-        for(const e of hist.slice(0,start)){
-          if(e.speaker==='You'){addBubble('You','',null,true).querySelector('.body').textContent=e.content||'';}
-          else{const a=agents.find(x=>x.name===e.speaker);addBubble(a?a.name:e.speaker,a?a.color:'#8b949e',a?a.emoji:'\ud83e\udd16',false).querySelector('.body').textContent=e.content||'';}
-        }
-        busy=true;$('send').disabled=true;startHeartbeat();
-        attachRun(r.run_id);
-      }).catch(()=>{});
-    }else if(r.status&&r.status!=="running"){
+    if(r.busy&&r.status!=="interrupted"){ adoptLiveRun(r); }
+    else if(r.status&&r.status!=="running"){
       const v=r.verdict||{};
       if(v.note){const w=document.createElement("div");w.className="thinkwrap";
         const p=document.createElement("div");p.className="roundend "+(v.cls||"dim");p.textContent=v.note;
@@ -1164,7 +1239,7 @@ $('intResume').onclick=()=>{ $('intBanner').classList.remove('show');clearRunSta
   const t='Continue where you left off \u2014 pick up any unfinished work and say [CONCLUDED] when done.';
   if(busy){queueMsg(t);}else{$('input').value=t;send();} };
 $('intDismiss').onclick=()=>{ $('intBanner').classList.remove('show');clearRunState(); };
-function bootRestore(){ try{setMode(mode);}catch(e){} restoreFromServer(); umqPoll(); setInterval(()=>{umqPoll();umqDeliver();},1500); checkInterruptedRun(); }
+function bootRestore(){ try{setMode(mode);}catch(e){} restoreFromServer(); umqPoll(); setInterval(()=>{umqPoll();umqDeliver();},1500); checkInterruptedRun(); startRunWatch(); }
 
 </script>
 </body>

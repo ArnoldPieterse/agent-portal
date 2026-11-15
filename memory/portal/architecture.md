@@ -112,10 +112,22 @@ Problems fixed: (1) refreshing the portal wiped the conversation and lost in-fli
 
 ## Group run engine (2026-11-15) — runs are BACKEND-owned; refresh-proof
 Hard refresh used to cancel group runs because the whole pass/cross-talk/nudge loop lived in the tab's JS. Now:
-- `start_group_run(text)` spawns a daemon thread: parallel prompt pass (`ThreadPoolExecutor`, one `stream_chat` per agent into a `_FrameSink`) -> cross-talk rounds (only agents with new content) -> nudge loop (max 3, no [CONCLUDED] yet). Verdict is journaled at the end.
+- `start_group_run(text)` spawns a daemon thread: SEQUENTIAL prompt pass (one `stream_chat` per agent into a `_FrameSink`, agents dispatched one after another - see 2026-11-15 evening note) -> cross-talk rounds (only agents with new content) -> nudge loop (max 3, no [CONCLUDED] yet). Verdict is journaled at the end.
 - Every SSE frame is journaled seq'd to `runs/<id>.jsonl` (`_journal_event`). `/api/run-events?run=<id>&cursor=N` replays from any cursor; live frames tail the journal. GET `/api/run-state` merges the live run (run_id + status) over the heartbeat state.
 - Frontend: `send()` POSTs `/api/group-run` then `attachRun(run_id)` streams `/api/run-events`; on boot, `checkInterruptedRun()` finds a running run via GET /api/run-state and re-attaches from cursor 0 (replaying history). Stop button -> POST `/api/run-stop` (clean verdict, no "interrupted" lie).
 - Group history is backend-owned: the engine appends each turn to `chat_history_group.json`; client POSTs of group history are ignored (200 {ignored}).
 - `_clear_stale_busy()` at portal start clears a stale busy:true in run_state.json when no group run is live.
 - Goal injection: `_agent_goals_block(name)` appends the agent's open goals from `memory/goals/<name>.md` to every group turn (prompt + cross-talk + nudge) — the goal-drift fix; solo turns unchanged.
 - Restart trap still applies: taskkill real :8099 PID, schtasks /run /tn PortalRun.
+
+## 2026-11-15 evening - "all agents stuck / send greyed" incident fixes
+Symptom the user saw: all 8 bubbles on "thinking", 0 goal progress, Send disabled. Root causes + fixes:
+- SEQUENTIAL DISPATCH (`_parallel_turns`): Studio serializes generations GLOBALLY (parallel_slots=1 across models), so firing all agents at once only piled N requests into one queue - everyone looked stuck for minutes and a single hung request wedged the whole pass. Now turns run one agent after another: same wall time, each agent visibly completes before the next starts.
+- SEND NEVER DISABLED: the button was `disabled` while busy = dead end. It now stays enabled and relabels to "Queue"; send() already routes busy-mode messages into user_messages.json (UMQ) which every agent picks up on its next prompt build. Frontend helpers: setSendQueued/startStallPoll/stopStallPoll.
+- STALL WATCHDOG: `_run_event` now stamps each journal line with `ts`; `/api/run-state` reports `last_frame_ts` + `stalled` (no frame for 240 s while busy). Frontend polls it every 15 s while busy and shows a wedge warning banner (Stop / RecoverAll hint).
+- Journal cap raised 4000 -> 30000 (`RUN_MAX_EVENTS`) - 4000 silently dropped frames mid-run.
+- The actual stall that day was a Q4 WEDGE (see memory/llm/instances.md): run-stop cannot drain a hung request because the stop event is only checked when frames arrive; kill portal + wedge_force_recover.py was the fix.
+
+## 2026-11-15 - Parallel group dispatch + no-human-gates (supersedes any sequential-dispatch note)
+Arnold directive: agents run in parallel async, not turn-taking. `_parallel_turns` now submits one worker thread per agent (ThreadPoolExecutor, context exit waits for all). Cross-host agents (Builder/Verifier .99, Designer/Archivist .39, Scribe/Mechanic .245) truly overlap; the two White-local agents are queued by Studio internally (parallel_slots=1) and start a beat apart - harmless. Concurrency safety: journal writes take _journal_lock per event, memory RMWs take _lock, UMQ takes _umq_lock; no lock is held across a generation.
+Same day: NO HUMAN GATES - system prompt forbids agents from creating human decision gates; all existing gates removed from MEMORY.md/TODO.md (see TODO.md top section).
