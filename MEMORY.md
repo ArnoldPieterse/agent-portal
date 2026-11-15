@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Portal L1530 needs BOTH evolution.py and evolution/ dir; both absent from shared root — CHG-0002 blocked on artifact publication
 - netstat rc=0 but ZERO LISTENING lines →
 - evolution.py rebuilt at project
 - evolution.py diverged across ≥3 trees (hashes da397cf, 9e0
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - evolution.py diver
 - evolution.py has a confirmed hash fork: Archivist's local copy ≠ Mechan
 - CHG-0002 pending human accept; evolution.py has unresolved divergence between Archivist and Mechanic builds — must pin ground truth first
+- Goal count corrected: MEMORY.md claimed 77/80 (96%) but evidence-gated ledger is 51/80 (64%); EVIDENCE_PAT over-count fixed.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
