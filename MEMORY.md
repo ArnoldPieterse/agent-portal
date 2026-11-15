@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 16, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -24,5 +24,5 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Verifier pinned agent_portal.py on Black = 29ca92639845 (clean sha) this round; re-check next round for mirror clobber.
 - Root cause confirmed: SMB mirror clobbers per
 ## Counter
-- inter_agent_replies_this_prompt: 16 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
