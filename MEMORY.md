@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Portal PID 3496 after 11-15 ~12:0x restart (trap procedure, POSTDATE_OK). Post-reboot _portal_pid.txt was stale (said 54008; real listener 4584) - after any reboot cross-check the file vs :8099 OwningProcess.
 - Unapplied
 - White :8099/:8888 time out from LAN — pre-existing firewall policy (
 - Builder: last round's /api/goals + /api/provenance wiring and H1 .frow fix were lost; re
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Designer's "final verification" was false: shared tree lacks Goals feature (agent_portal.py 0 hits, index.html 987 lines, mtime 09:42)
 - Mirror clobbered INDEX pointers + Builder forensics note; Designer's claimed frontend changes still absent from shared tree (Mechanic re
 - Mirror runs White→shared (overwrites newer writes, preserves mtime). Ship patches via memory/ as idempotent scripts.
+- Portal DOWN (no :8099 listener); needs human `schtasks /run /tn PortalRun` — agents can't restart it from sandbox.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
