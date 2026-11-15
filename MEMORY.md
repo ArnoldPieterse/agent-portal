@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Evolution layer (CHG-000
 - CHG-0002 blocked: agent_portal.py L1530 loads HERE/evolution.py but file is absent from all sandboxes; endpoints return ok:false at runtime
 - CHG-0002 doc says "awaiting human accept" but
 - evolution.py rebuilt from spec + island data re-seeded after SMB mirror clobber; smoke test passed; CHG-0002 still CANDIDATE
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Verifier's FAIL (schema mismatch) independently confirmed by Mechanic; this now gates the accept/reject decision for the portal artifact
 - CHG-0002 blocked: evolution.py absent from Z:\ shared root, exists only on
 - M3 header treatment was stranded in index.m3m6.html; Designer confirmed it's a pure superset and landed it into canonical index.html.
+- CHG-0002 landed: both _evolution_* wrappers in agent_portal.py patched to match shipped engine schema; smoke tests pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
