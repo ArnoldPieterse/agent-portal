@@ -2,7 +2,7 @@
 
 Source: group goal-setting thread, collected by Orchestrator; verbatim. Canonical record: TODO.md `## AGENT GOALS (set 2026-11-13)`.
 
-1. Ship the "Files" panel in index.html listing /api/uploads; verified by hard-refresh and seeing a test upload appear, then removing it.
+1. Ship the "Files" panel in index.html listing /api/uploads; verified by hard-refresh and seeing a test upload appear, then removing it. (verified: 2026-11-15 upload round-trip PASS; evidence memory/builder/uploads-panel-verify-2026-11-15.md)
 2. Build an uploads→remote-sandbox mirror (Black/Red/Pale via SMB) syncing new attachments within 5 min; verified by a round-trip file opened by each remote host's own tools.
 3. Write a prune regression script covering 4 cases (all-complete section, partially-open stays, >240-line chunking, idempotent double-run); done = all four green against the live portal. (verified: 2026-11-15 - memory/builder/prune_regression.py, ALL PASS 4/4 cases on fixtures, exit non-zero on FAIL — recorded 2026-11-15)
 4. Add a path-safety test suite for /api/upload (drive letters, `../`, POSIX absolute, bare 'uploads'); re-runs on every portal edit and must stay green. (verified: 2026-11-15 - memory/builder/upload_path_safety.py, 12/12 PASS incl. drive letters, ../ raw+encoded, POSIX abs, bare 'uploads' — recorded 2026-11-15)
