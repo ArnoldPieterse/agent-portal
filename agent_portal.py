@@ -1915,17 +1915,36 @@ def start_group_run(text):
         agents = load_agents()["agents"]
         names = [a.get("name", "") for a in agents]
         mentioned = [n for n in names if re.search(r"@" + re.escape(n), text or "", re.I)]
+        # Goal-cycle upgrade (2026-11-15): when every agent's goals are 100% reached, the
+        # backend armed memory/goals/GOAL_RESET_PENDING.json. Consume it here: this run MUST
+        # open a NEW goal-setting round before any other work.
+        reset_note = ""
+        try:
+            _gf = os.path.join(HERE, "memory", "goals", "GOAL_RESET_PENDING.json")
+            with open(_gf, encoding="utf-8") as _f:
+                if json.load(_f).get("armed"):
+                    reset_note = ("\n\n[GOAL CYCLE COMPLETE - 100% REACHED FOR ALL AGENTS] This run MUST begin "
+                                  "with a NEW GOAL-SETTING round: Orchestrator chairs; each agent proposes ~10 new "
+                                  "goals for the next cycle; collect them verbatim into TODO.md '## AGENT GOALS' and "
+                                  "memory/goals/<name>.md (move old files to memory/goals/archive/ first). Old goal "
+                                  "files are replaced, not appended to.")
+                    with open(_gf, "w", encoding="utf-8") as _f:
+                        json.dump({"armed": False, "consumed_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                   "run_id": rid}, _f)
+        except Exception:
+            pass
+        full_text = (text or "") + reset_note
         rid = "g-%x-%s" % (int(time.time() * 1000), os.urandom(3).hex())
         hist = _load_history("group")
-        run = {"id": rid, "status": "running", "prompt": text[:4000], "cast": (mentioned or names),
+        run = {"id": rid, "status": "running", "prompt": full_text[:4000], "cast": (mentioned or names),
                "settled": [], "nudges": 0, "phase": "prompt",
                "started": time.time(), "ended": None, "verdict": None, "error": None,
                "hist_start": len(hist)}
         _save_group_run(run)
-        _append_history("group", [{"speaker": "You", "content": text}])
+        _append_history("group", [{"speaker": "You", "content": full_text}])
         _run_stops[rid] = threading.Event()
         _active_run_id = rid
-    _run_event(rid, {"run": "start", "prompt": text[:4000]})
+    _run_event(rid, {"run": "start", "prompt": full_text[:4000]})
     _save_run_state({"busy": True, "mode": "group", "phase": "prompt",
                      "ts": int(time.time() * 1000), "run_id": rid})
     threading.Thread(target=_group_run_worker, args=(rid,), daemon=True).start()
@@ -1949,10 +1968,16 @@ def _agent_goals_block(name):
             items.append(it[:200])
             if len(items) >= 5:
                 break
-        if not items:
-            return ""
-        return ("YOUR OPEN GOALS (memory/goals/%s.md \u2014 make progress on these; verify evidence on disk before claiming any done):\n%s"
-                % (name.lower(), "\n".join(items))[:900])
+        # Team rules (2026-11-15): cross-assist + anti-spiral, shown on EVERY group turn so
+        # idle agents help open lanes and no agent re-verifies in circles.
+        items_txt = ("\n".join(items) if items else "(none open - you are at 100%; assist other agents' open goals)")
+        base = ("YOUR OPEN GOALS (memory/goals/%s.md \u2014 make progress on these; verify evidence on disk before claiming any done):\n%s"
+                % (name.lower(), items_txt))
+        base += ("\nTEAM RULES: (1) You may ASSIST another agent's open goal when you can unblock it - "
+                 "coordinate in cross-talk and credit the original owner in the evidence note. "
+                 "(2) ANTI-LOOP: if your last two turns produced no new file change, measurement or evidence, "
+                 "stop re-verifying and take ONE concrete next step (or hand off / assist).")
+        return base[:1400]
     except Exception:
         return ""
 
@@ -2080,9 +2105,27 @@ def _goals_snapshot():
         return {"ok": False, "error": str(e), "agents": []}
     total = sum(a["total"] for a in agents)
     done_all = sum(a["done"] for a in agents)
-    return {"ok": True, "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
+    resp = {"ok": True, "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
             "fleet_pct": round(100.0 * done_all / total, 1) if total else 0.0,
             "fleet_done": done_all, "fleet_total": total, "agents": agents}
+    # Goal-cycle upgrade (2026-11-15): at 100% for ALL agents the backend arms a persistent
+    # flag; start_group_run() consumes it and forces a new goal-setting round. Idempotent:
+    # re-arming refreshes 'at' while armed, never resurrects a consumed flag.
+    if total and done_all >= total:
+        gf = os.path.join(HERE, "memory", "goals", "GOAL_RESET_PENDING.json")
+        try:
+            with open(gf, encoding="utf-8") as f:
+                d = json.load(f)
+            if not d.get("armed"):
+                raise ValueError("consumed")
+        except Exception:
+            with open(gf, "w", encoding="utf-8") as f:
+                json.dump({"armed": True, "at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                           "note": "All agent goals 100% reached - next group run starts a new goal-setting round."}, f)
+        resp["goal_reset_pending"] = True
+    else:
+        resp["goal_reset_pending"] = False
+    return resp
 
 
 _EVOLUTION = None
