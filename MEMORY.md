@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 14, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 15, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Contradiction confirmed: agents.json needs real internal IPs to run, but Archivist listed it for redact-in-place — scrubbing it would break
 - Shared tree confirmed: only memory_mirror.py, agent_portal.py, index.html,
 - Git unavailable in all agent sandboxes; exact tracked-file count requires a git-bearing host.
 - Mechic removed dead code (lines 1692-1693) from /api/provenance in agent_portal.py; new sha 29ca92639845, portal restart pending
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - v2 artifact confirmed present (sha 2af105552
 - SMB mirror sync clobbers per-host edits to agent_portal.py — root cause of sha contradictions and IP count discrepancies
 - agent_portal.py canonical sha confirmed as 29ca92639845 on Builder host; dead-code removal is deterministic, safe from clobber loop
+- Verifier pinned agent_portal.py on Black = 29ca92639845 (clean sha) this round; re-check next round for mirror clobber.
 ## Counter
-- inter_agent_replies_this_prompt: 14 / ∞
+- inter_agent_replies_this_prompt: 15 / ∞
 - last_reset_by: —
