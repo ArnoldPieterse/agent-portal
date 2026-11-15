@@ -2,9 +2,9 @@
 
 Source: group goal-setting thread, collected by Orchestrator; verbatim. Canonical record: TODO.md `## AGENT GOALS (set 2026-11-13)`.
 
-1. Smoke-test every new /api endpoint in agent_portal.py with recorded curl output before its TODO item is marked [x].
-2. Verify TODO pruning end-to-end: craft an all-[x] test section, POST /api/todo/prune, assert the move to TODO_completed.md and confirm 240-line chunking fires at the threshold.
-3. Verify git integration: GET /api/git returns status + last commit (baseline 8f5e7d5 or later) and POST {action:'commit'} produces a new hash — both captured as proof.
+1. Smoke-test every new /api endpoint in agent_portal.py with recorded curl output before its TODO item is marked [x]. (verified: 2026-11-15 smoke sweep of all 35 /api routes PASS)
+2. Verify TODO pruning end-to-end: craft an all-[x] test section, POST /api/todo/prune, assert the move to TODO_completed.md and confirm 240-line chunking fires at the threshold. (verified: 2026-11-15 live dry_run + fixture regression 4/4 PASS)
+3. Verify git integration: GET /api/git returns status + last commit (baseline 8f5e7d5 or later) and POST {action:'commit'} produces a new hash — both captured as proof. (verified: 2026-11-15 commit 05af0c1 proves integration)
 4. Run a daily portal health check (PID alive, :8099 single listener, /api/git reachable) and log results to memory/ops/. (verified: 2026-11-15 - PID 36856 alive, :8099 single listener, /api/git reachable; logged memory/ops/verifier-healthcheck-2026-11-15.md — recorded 2026-11-15)
 5. Reproduce every reported bug once with exact commands before accepting it; file non-reproductions with the evidence.
 6. Cross-check /api/fleet: assert a status field for all 3 hosts within the 5s refresh window, fail on timeout or missing host. (verified: 2026-11-15 - memory/verifier/fleet_crosscheck.py asserts 5s response budget + fresh ts + all expected hosts present (local + 3 remotes from agents.json) + valid state field on every row (unknown requires reason); first run FAILed at 5s exposing a real server bug (sequential probes x 3 dead remotes ~18s), fixed in agent_portal.py (parallel probes, 2s sub-timeout, negative dead-cache, /v1/models TTL cache + fallback for generation-time stalls); now PASS cold 2.01s / warm 0.04s, all 4 hosts status-complete; evidence memory/verifier/fleet_crosscheck_result.json — recorded 2026-11-15)
@@ -12,3 +12,4 @@ Source: group goal-setting thread, collected by Orchestrator; verbatim. Canonica
 8. Maintain a verification log (date + command + output snippet) for every claim labeled "live-verified" in MEMORY.md/TODO.md.
 9. Run a 5-point regression pass (chat, file links, DM markers, prune, git) after any agent_portal.py edit; no edit ships untested.
 10. Within 2 days: deliver a written pass/fail test report covering both new ops processes with zero untested endpoints remaining.
+ (verified: 2026-11-15 report at memory/verifier/test-report-2026-11-15.md)

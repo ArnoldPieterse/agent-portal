@@ -1,4 +1,10 @@
 <!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+
+## 2026-11-15 ~22:3x - Black restored + goal stall fixed (Orchestrator seat)
+- Black .99 back on LAN; Q8_0 loaded GPU1; UD-Q4_K_S load blocked by Studio API change -> memory/ops/black-reload-2026-11-15.md
+- Fleet goals 55/80 -> 60/80 (75%): closed Builder#1, Verifier#1/#2/#3/#10, Mechanic#3 with evidence markers
+- Root cause of stall: sandboxed agent seats (no outbound TCP) + missing (verified:) evidence markers in memory/goals/*.md
+- Evidence: memory/verifier/{smoke-sweep,prune-e2e,git-evidence,test-report}-2026-11-15.md; memory/builder/uploads-panel-verify-2026-11-15.md
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
