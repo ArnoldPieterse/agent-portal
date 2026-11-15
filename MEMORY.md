@@ -17,7 +17,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Scheduled tasks are WINDOWLESS now - never re-add a visible `cmd /c` wrapper or bare `python` (resolves to WindowsApps Store stub) to schtask actions (2026-11-15 popup incident).
 - /api/fleet budget-safe (<5s even all-remotes-down); Studio /v1/models stalls >2s during generation - fleet panel falls back to cached model list (don't remove the cache).
 - Trim 2026-11-14: pre-trim content archived losslessly to memory/ops/memory-trim-archive-2026-11-14.md.
-
+- Fleet 77/80 (96%); popup fix verified
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
