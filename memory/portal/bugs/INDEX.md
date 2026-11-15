@@ -3,6 +3,7 @@ Format: [status] symptom keywords -> file | one-line use case. Grep by symptom, 
 Last updated: 2026-11-15 (pointer paths normalized to root-relative; index_check sweep).
 
 ## Entries
+- [FIXED] terminal popups after reboot / visible cmd or net windows / pythonw child console -> memory/portal/bugs/popup-pythonw-children-recoverall-2026-11-15.md   CREATE_NO_WINDOW on all pythonw children + RecoverAll task via recover_hidden.vbs; verify by forcing the trigger path while polling EnumWindows
 - [DONE] raw link shows source / HTML not rendered / MIME type / fix on disk but not live -> memory/portal/bugs/file-links-sandbox.md   /api/file/raw serves the real type (.html RENDERS); stale-process trap: schtasks /run no-ops on a Running task - kill PID first, prove CreationDate > LastWriteTime
 - [DONE] sandbox refs 404 / folder refs / link echo / USERPROFILE env -> memory/portal/bugs/file-links-sandbox.md   _find_sandbox_dir() C:\Users\* scan + exact-path echo + folder peek/listing
 - [DONE] agent files in Studio _default / Z:\ hallucination -> memory/portal/bugs/file-links-sandbox.md   no session_id -> shared sandbox; dual-root resolver + FILE ACCESS rule in shared memory
