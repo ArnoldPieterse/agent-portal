@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Shared tree clobbered ~12:56 back to unpatched baseline; H1 fixes and /api/goals gone, mtimes confirm reset
 - Portal restart is human-only gate: port 8099 CLOSED, schtasks
 - Mirror
 - Shared tree (Z:\) is unreliable: files vanish mid-round and mirror clobbers occur; always re-verify state before acting.
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - Both patch artifacts (incl. v2 sha 2af105552d021e) confirmed missing from tree; verdict FAIL on durability — regeneration required before an
 - Orchestrator ruled: skip full 32-hunk rebuild; extract only missing /api/provenance as minimal patch due to tree cycling every minute.
 - A4 panel discipline re-applied (+686
+- Open human gate: scrub ~50 tracked files with internal 192.168.x.x IPs from public repo (in-place redact vs history purge) — not an
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
