@@ -24,6 +24,7 @@
 !/group_e2e.py
 !/e2e_test.py
 !/verify_e2e.py
+!/user_messages.py
 !/red_chain.py
 !/pale_dl.py
 !/black_dual_load2.py

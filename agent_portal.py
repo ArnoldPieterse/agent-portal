@@ -51,6 +51,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 AGENTS_FILE = os.path.join(HERE, "agents.json")
 MEMORY_FILE = os.path.join(HERE, "memory.md")   # HOT shared file (state line + counter + hot notes)
 MEMORY_DIR = os.path.join(HERE, "memory")      # modular memory tree: INDEX.md pointer map + topic modules
+# 2026-11-15: human message queue + per-mode chat history + run state (refresh-safe portal).
+# LOCAL-ONLY runtime state - the .gitignore allowlist keeps these out of the public repo.
+USER_MSGS_FILE = os.path.join(HERE, "user_messages.json")      # ts + text + per-agent checked booleans
+CHAT_HISTORY_FILES = {"group": os.path.join(HERE, "chat_history_group.json"),
+                      "solo": os.path.join(HERE, "chat_history_solo.json")}
+RUN_STATE_FILE = os.path.join(HERE, "run_state.json")
+UMQ_MAX = 200           # queue cap (oldest entries drop first)
+HIST_MAX = 200          # persisted history cap per mode
 # 2026-11-11: agent tool calls execute in Studio's shared sandbox, NOT in HERE. Portal API requests
 # pass no session_id (spec: session_id scopes the "tool execution sandbox"), so everything lands in
 # the "_default" sandbox - that is where agents' built files actually live and must be servable from.
@@ -865,6 +873,158 @@ def to_openai_messages(agent, messages, mode, all_agents, rag_context="", shared
 
 # ---------------------------------------------------------------- shared memory
 
+# ---------------------------------------------------------------- user message queue (2026-11-15)
+# Human messages sent while the group is working land in USER_MSGS_FILE instead of being
+# dropped. Every group prompt build (prompt phase AND cross-talk rounds) injects this
+# agent's pending in-scope entries into its system prompt and marks them seen for that
+# agent once the request reaches Studio. @Name entries are private: only the named agent
+# sees/checks them. The frontend polls /api/user-messages for the spinner state.
+_umq_lock = threading.Lock()
+
+def _umq_read():
+    try:
+        with open(USER_MSGS_FILE, encoding="utf-8") as fh:
+            d = json.load(fh)
+        if isinstance(d, dict) and isinstance(d.get("messages"), list):
+            return d
+    except Exception:
+        pass
+    return {"messages": []}
+
+def _umq_write(d):
+    tmp = USER_MSGS_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(d, fh, ensure_ascii=False)
+    os.replace(tmp, USER_MSGS_FILE)
+
+def _umq_scope(m, all_names):
+    """Agents an entry is addressed to (empty mentions = broadcast). Unknown names drop out."""
+    names = m.get("mentions") or list(all_names)
+    return [n for n in names if n in all_names]
+
+def umq_add(text, mentions=None):
+    text = (text or "").strip()[:20000]
+    if not text:
+        return None
+    with _umq_lock:
+        d = _umq_read()
+        entry = {"id": "um-%s-%s" % (time.strftime("%Y%m%d-%H%M%S"), uuid.uuid4().hex[:6]),
+                 "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                 "text": text,
+                 "mentions": [str(x).strip() for x in (mentions or []) if str(x).strip()],
+                 "checked": {}}
+        d["messages"].append(entry)
+        while len(d["messages"]) > UMQ_MAX:
+            d["messages"].pop(0)
+        _umq_write(d)
+    return entry
+
+def umq_pending_for(name, all_names):
+    """Entries addressed to `name` that it has not seen yet."""
+    with _umq_lock:
+        d = _umq_read()
+        out = []
+        for m in d["messages"]:
+            if name not in _umq_scope(m, all_names):
+                continue
+            if (m.get("checked") or {}).get(name):
+                continue
+            out.append(m)
+    return out
+
+def umq_check(ids, name, all_names=None):
+    """Mark entries seen. name='*' marks every in-scope agent (frontend delivery pass)."""
+    ids = [i for i in (ids or []) if isinstance(i, str)]
+    if not ids:
+        return 0
+    with _umq_lock:
+        d = _umq_read()
+        n = 0
+        for m in d["messages"]:
+            if m.get("id") not in ids:
+                continue
+            if name == "*":
+                if all_names:
+                    targets = _umq_scope(m, all_names)
+                else:
+                    targets = m.get("mentions") or list((m.get("checked") or {}).keys())
+            else:
+                targets = [name]
+            for t in targets:
+                if not (m.get("checked") or {}).get(t):
+                    m.setdefault("checked", {})[t] = True
+                    n += 1
+        if n:
+            _umq_write(d)
+    return n
+
+def umq_view(all_names):
+    """Latest entries + derived `processed` (every in-scope agent has seen it)."""
+    with _umq_lock:
+        d = _umq_read()
+        out = []
+        for m in d["messages"][-50:]:
+            scope = _umq_scope(m, all_names)
+            chk = m.get("checked") or {}
+            mm = dict(m)
+            mm["processed"] = (not scope) or all(chk.get(n2) for n2 in scope)
+            out.append(mm)
+    return out
+
+# ---------------------------------------------------------------- chat history + run state (2026-11-15)
+# Per-mode history persisted server-side so a browser refresh does not wipe the conversation;
+# run_state.json carries a heartbeat while a run is busy so a reload can offer resume.
+def _load_history(mode):
+    path = CHAT_HISTORY_FILES.get(mode)
+    if not path:
+        return []
+    try:
+        with open(path, encoding="utf-8") as fh:
+            d = json.load(fh)
+        h = d.get("history") if isinstance(d, dict) else d
+        if isinstance(h, list):
+            return [x for x in h if isinstance(x, dict) and x.get("speaker")]
+    except Exception:
+        pass
+    return []
+
+def _save_history(mode, history):
+    path = CHAT_HISTORY_FILES.get(mode)
+    if not path:
+        return False
+    try:
+        clean = []
+        for x in (history or [])[-HIST_MAX:]:
+            if isinstance(x, dict) and x.get("speaker"):
+                clean.append({"speaker": str(x["speaker"])[:100],
+                              "content": str(x.get("content", ""))[:20000]})
+        tmp = path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
+            json.dump({"history": clean}, fh, ensure_ascii=False)
+        os.replace(tmp, path)
+        return True
+    except Exception:
+        return False
+
+def _load_run_state():
+    try:
+        with open(RUN_STATE_FILE, encoding="utf-8") as fh:
+            d = json.load(fh)
+        if isinstance(d, dict):
+            return d
+    except Exception:
+        pass
+    return {"busy": False}
+
+def _save_run_state(d):
+    try:
+        tmp = RUN_STATE_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
+            json.dump(d if isinstance(d, dict) else {"busy": bool(d)}, fh)
+        os.replace(tmp, RUN_STATE_FILE)
+    except Exception:
+        pass
+
 def load_memory():
     """Return (file_text, state) for the global memory.md. Creates it if missing."""
     with _lock:
@@ -1268,6 +1428,19 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
             roster = _group_round_summary(agent, messages, all_agents)
             if roster:
                 mem_block = (mem_block + "\n" if mem_block else "") + roster
+    # USER MESSAGE QUEUE (2026-11-15): human messages sent while the group was working.
+    # Injected into THIS agent's prompt now; marked seen for it once the request reaches Studio.
+    umq_ids = []
+    if mode == "group":
+        pend = umq_pending_for(who, [a.get("name", "") for a in all_agents])
+        if pend:
+            ul = ["USER MESSAGE QUEUE (user_messages.json - human messages that arrived while the group was working; they ARE part of this turn):"]
+            for m in pend:
+                tag = "PRIVATE, addressed only to you" if m.get("mentions") else "broadcast to all agents"
+                ul.append("- [%s] %s (%s) You: %s" % (m["id"], m["ts"], tag, m["text"][:4000]))
+            ul.append("Rule: act on them in your reply. Private entries are for you alone - do not quote them publicly unless asked.")
+            mem_block = (mem_block + "\n\n" if mem_block else "") + "\n".join(ul)
+            umq_ids = [m["id"] for m in pend]
     # Blocked cross-talk rounds skip ReadMem entirely (checked BEFORE any aux round).
     if kind == "cross-talk" and not mem_st.get("infinite_budget", True) \
             and mem_st["inter_agent_replies"] >= XTALK_LIMIT:
@@ -1329,6 +1502,8 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
                                  headers=studio_headers(agent))
     try:
         resp = urllib.request.urlopen(req, timeout=600)
+        if umq_ids:  # request reached Studio => queued messages are now in this context
+            umq_check(umq_ids, who)
     except Exception as e:
         _act_log(session, {"agent": who, "event": "error", "error": str(e)[:300]})
         wfile.write(b"data: " + json.dumps({"error": str(e)}).encode() + b"\n\n")
@@ -1738,6 +1913,14 @@ class Handler(BaseHTTPRequestHandler):
             return self._html("index.html")
         if p == "/api/agents":
             return self._json(200, load_agents())
+        elif p == "/api/user-messages":
+            return self._json(200, {"ok": True, "messages": umq_view([a["name"] for a in load_agents()["agents"]])})
+        elif p == "/api/history":
+            q = urllib.parse.parse_qs(self.path.split("?", 1)[1] if "?" in self.path else "")
+            m2 = (q.get("mode") or ["group"])[0]
+            return self._json(200, {"ok": True, "history": _load_history(m2) if m2 in CHAT_HISTORY_FILES else []})
+        elif p == "/api/run-state":
+            return self._json(200, _load_run_state())
         elif p == "/api/models":
             return self._json(200, self._proxy_get("/v1/models"))
         elif p == "/api/status":
@@ -1955,7 +2138,30 @@ class Handler(BaseHTTPRequestHandler):
             body = self._body()
         except Exception as e:
             return self._json(400, {"error": f"bad json: {e}"})
-        if p == "/api/chat":
+        if p == "/api/user-messages":
+            entry = umq_add(body.get("text"), body.get("mentions"))
+            if not entry:
+                return self._json(400, {"error": "text required"})
+            return self._json(200, {"ok": True, "message": entry})
+        elif p == "/api/user-messages/check":
+            names = [a["name"] for a in load_agents()["agents"]]
+            mid = body.get("id") or ""
+            n = umq_check([mid] if isinstance(mid, str) and mid else [],
+                          (body.get("agent") or "").strip() or "*", names)
+            return self._json(200, {"ok": True, "checked": n})
+        elif p == "/api/history":
+            m2 = (body.get("mode") or "").strip()
+            if m2 not in CHAT_HISTORY_FILES:
+                return self._json(400, {"error": "mode must be 'group' or 'solo'"})
+            _save_history(m2, body.get("history"))
+            return self._json(200, {"ok": True})
+        elif p == "/api/run-state":
+            _save_run_state({"busy": bool(body.get("busy")),
+                             "mode": str(body.get("mode") or "")[:16],
+                             "phase": str(body.get("phase") or "")[:40],
+                             "ts": int(body.get("ts") or 0)})
+            return self._json(200, {"ok": True})
+        elif p == "/api/chat":
             _sync_workspace_to_sandbox()   # two-way: push shared state, pull agent work home (LWW + new-only)
             aid = body.get("agent_id") or ""
             mode = body.get("mode", "solo")

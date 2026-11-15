@@ -178,6 +178,20 @@ textarea{resize:vertical;min-height:64px}
 .flink{transition:color .15s,border-bottom-color .15s}
 .toggles{display:inline-flex;gap:6px}
 .vdiv{width:1px;height:18px;background:var(--line);margin:0 4px}
+
+/* ---- User message queue + interrupted-run banner (2026-11-15) ---- */
+#queuePanel{display:none;border-top:1px solid var(--line);background:#0d1117;padding:6px 12px;max-height:140px;overflow-y:auto}
+#queuePanel.has{display:block}
+#queueHead{font-size:11px;color:#8b949e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.qrow{display:flex;align-items:center;gap:8px;padding:3px 0;font-size:13px}
+.qspin{width:12px;height:12px;border:2px solid #30363d;border-top-color:#58a6ff;border-radius:50%;flex:none;animation:qspin .9s linear infinite}
+@keyframes qspin{to{transform:rotate(360deg)}}
+.qts{color:#8b949e;font-size:11px;flex:none}
+.qtxt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#c9d1d9}
+.qc{margin-left:auto;color:#8b949e;font-size:11px;flex:none}
+#intBanner{display:none;margin:6px 12px;border:1px solid #d29922;background:#2d2000;color:#e3b341;border-radius:6px;padding:8px 12px;font-size:13px;align-items:center;gap:10px}
+#intBanner.show{display:flex}
+#intBanner .iact{margin-left:auto}
 </style>
 </head>
 <body>
@@ -243,7 +257,9 @@ textarea{resize:vertical;min-height:64px}
       <div id="goalsBody"></div>
     </div>
     <div id="msgs"></div>
-    <div id="composer">
+        <div id="intBanner"><span id="intText"></span><button id="intResume" class="iact">send continue prompt</button><button id="intDismiss">dismiss</button></div>
+    <div id="queuePanel"><div id="queueHead">queued - waiting for agents to pick up</div><div id="queueList"></div></div>
+<div id="composer">
       <textarea id="input" placeholder="Type a message…  (in Group mode, use @Name to address one agent; + or drag &amp; drop to attach files/folders)"></textarea>
       <div id="attachWrap">
         <button id="attach" title="Upload files or a folder to the shared agent folder (uploads/)">+</button>
@@ -778,7 +794,7 @@ function attachLine(){ const done=pendingUploads.filter(u=>u.state==="done"); if
   const failed=pendingUploads.filter(u=>u.state==="error").length; if(failed)s+=(" ("+failed+" upload(s) failed - not attached)"); return s; }
 
 async function send(){
-  if(busy)return;
+  if(busy){ const t=$("input").value.trim(); if(t){queueMsg(t); $("input").value="";} return; }
   let text=$("input").value.trim();
   const attLine=attachLine();
   if(!text&&!attLine)return;
@@ -789,7 +805,7 @@ async function send(){
   stickOn=true;   // re-pin auto-scroll on every human send
   history.push({speaker:"You",content:text});
   addBubble("You","",null,true).querySelector(".body").textContent=text;
-  $("input").value=""; busy=true; $("send").disabled=true;
+  $("input").value=""; busy=true; $("send").disabled=true; startHeartbeat();
   roundBubbles=[]; // fresh per human prompt (also bounds memory in solo mode)
   sessionId=(mode==="group"?"g":"s")+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7); actFollow();
   noOutputNames.clear(); stopRequested=false; activeCtrls.clear();
@@ -883,7 +899,7 @@ else if(lastConcluded){ note="\u2713 Concluded \u2014 task complete."; cls="ok";
       }   // end auto-nudge pass loop (concluded / stopped / natural end / nudge budget spent)
     }
   }catch(e){ addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=String(e); }
-  busy=false; busyNames.clear(); renderBusyHint(); $("send").disabled=false; $("input").focus();
+  busy=false; busyNames.clear(); renderBusyHint(); $("send").disabled=false; $("input").focus(); stopHeartbeat(); saveHistoryServer(true); umqPoll(); renderQueue();
 }
 
 let editingId=null;
@@ -981,7 +997,7 @@ async function pollStatus(){
 
 $("send").onclick=send;
 $("input").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send();}});
-refresh().catch(e=>console.error("refresh failed",e)).finally(updateHint);
+refresh().catch(e=>console.error("refresh failed",e)).finally(updateHint).finally(bootRestore);
 pollStatus();
 setInterval(pollStatus,15000);
 setInterval(()=>{refresh().catch(()=>{});},30000);
@@ -1028,6 +1044,82 @@ async function goalsLoad(){
 $("goalsBtn").onclick=()=>{ const open=$("goalsPanel").classList.toggle("open"); $("goalsBtn").classList.toggle("on",open); if(open)goalsLoad(); };
 
 $("filesRefresh").onclick=filesLoad;
+
+// ================= USER MESSAGE QUEUE + REFRESH-SAFE STATE (2026-11-15) =================
+// Human messages sent while the group is working are queued in user_messages.json
+// (backend /api/user-messages). Each agent's portal prompt build injects its pending
+// entries and flips its own checked flag once the request reaches Studio. The panel
+// below spins per message until every in-scope agent has seen it; when idle, pending
+// messages are delivered automatically as normal sends.
+let lastUmq={messages:[]}; let delivering=false; let _histSig='';
+function umqScope(m){const all=agents.map(a=>a.name);return ((m.mentions&&m.mentions.length)?m.mentions:all).filter(n=>all.includes(n));}
+function umqDone(m){const s=umqScope(m);return !s.length||s.every(n=>(m.checked||{})[n]);}
+function renderQueue(){
+  const panel=$('queuePanel'),list=$('queueList');if(!panel)return;
+  const rows=(lastUmq.messages||[]).filter(m=>!umqDone(m)).slice(-12);
+  panel.classList.toggle('has',rows.length>0);list.innerHTML='';
+  for(const m of rows){
+    const s=umqScope(m),seen=s.filter(n=>(m.checked||{})[n]).length;
+    const row=document.createElement('div');row.className='qrow';
+    const spin=document.createElement('span');spin.className='qspin';
+    const ts=document.createElement('span');ts.className='qts';ts.textContent=m.ts?m.ts.slice(11,16):'';
+    const txt=document.createElement('span');txt.className='qtxt';txt.textContent=m.text;
+    const c=document.createElement('span');c.className='qc';
+    c.textContent=seen+'/'+s.length+' seen'+(m.mentions&&m.mentions.length?' \u00b7 @'+m.mentions.join(','):'');
+    row.append(spin,ts,txt,c);list.appendChild(row);
+  }
+}
+async function umqPoll(){try{const r=await api('/api/user-messages');if(r&&Array.isArray(r.messages)){lastUmq.messages=r.messages;renderQueue();}}catch(e){}}
+function queueMsg(t){
+  let mentions=null;const ms=[...new Set((t.match(/@\w+/g)||[]).map(s=>s.slice(1)))];
+  if(ms.length)mentions=ms.filter(n=>agents.some(a=>a.name===n));
+  api('/api/user-messages',{method:'POST',body:JSON.stringify({text:t,mode:mode,mentions:mentions})})
+    .then(r=>{if(r&&r.message){lastUmq.messages=(lastUmq.messages||[]).concat([r.message]);}}).catch(()=>{});
+  umqPoll();renderQueue();
+}
+async function settleMsg(m){
+  try{await jpost('/api/user-messages/check',{id:m.id,agent:'*'});}catch(e){}
+  m.checked=m.checked||{};umqScope(m).forEach(n=>m.checked[n]=true);renderQueue();
+}
+async function umqDeliver(){
+  if(delivering)return;
+  const pend=(lastUmq.messages||[]).filter(m=>!umqDone(m)).sort((a,b)=>a.ts<b.ts?-1:1);
+  if(!pend.length||busy)return;
+  delivering=true;
+  try{for(const m of pend){if(busy)break;await settleMsg(m);$('input').value=m.text;await send();}}
+  finally{delivering=false;}
+}
+function startHeartbeat(){jpost('/api/run-state',{busy:true,mode:mode,ts:Date.now()}).catch(()=>{});if(window.__hbT)clearInterval(window.__hbT);window.__hbT=setInterval(()=>jpost('/api/run-state',{busy:true,mode:mode,ts:Date.now()}).catch(()=>{}),5000);}
+function stopHeartbeat(){if(window.__hbT)clearInterval(window.__hbT);window.__hbT=null;jpost('/api/run-state',{busy:false,mode:mode,ts:Date.now()}).catch(()=>{});}
+function saveHistoryServer(force){const sig=JSON.stringify(history.slice(-200));if(!force&&sig===_histSig)return;_histSig=sig;jpost('/api/history',{mode:mode,history:history.slice(-200)}).catch(()=>{});}
+async function restoreFromServer(){
+  if($('msgs').children.length)return; // localStorage restore already happened
+  try{
+    const r=await api('/api/history?mode='+encodeURIComponent(mode));
+    const h=(r&&Array.isArray(r.history))?r.history:[];
+    if(!h.length)return;
+    for(const e of h){
+      if(e.speaker==='You'){addBubble('You','',null,true).querySelector('.body').textContent=e.content||'';}
+      else{const a=agents.find(x=>x.name===e.speaker);addBubble(a?a.name:e.speaker,a?a.color:'#8b949e',a?a.emoji:'\ud83e\udd16',false).querySelector('.body').textContent=e.content||'';}
+    }
+    saveMsgs(); // re-seed the localStorage slot from the server copy
+  }catch(e){}
+}
+function checkInterruptedRun(){
+  api('/api/run-state').then(r=>{
+    if(r&&r.busy&&r.ts&&(Date.now()-r.ts<15000)){
+      $('intText').textContent='A run was in progress when this page reloaded \u2014 live streams were interrupted. Saved messages above are intact.';
+      $('intBanner').classList.add('show');
+    }else{jpost('/api/run-state',{busy:false,mode:mode,ts:Date.now()}).catch(()=>{});}
+  }).catch(()=>{});
+}
+function clearRunState(){jpost('/api/run-state',{busy:false,mode:mode,ts:Date.now()}).catch(()=>{});}
+$('intResume').onclick=()=>{ $('intBanner').classList.remove('show');clearRunState();
+  const t='Continue where you left off \u2014 pick up any unfinished work and say [CONCLUDED] when done.';
+  if(busy){queueMsg(t);}else{$('input').value=t;send();} };
+$('intDismiss').onclick=()=>{ $('intBanner').classList.remove('show');clearRunState(); };
+function bootRestore(){ try{setMode(mode);}catch(e){} restoreFromServer(); umqPoll(); setInterval(()=>{umqPoll();umqDeliver();},1500); checkInterruptedRun(); }
+
 </script>
 </body>
 </html>
