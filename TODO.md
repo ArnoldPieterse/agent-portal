@@ -1,4 +1,12 @@
 # TODO — Agent Portal (2026-11-15)
+## EVOLUTION LAYER 2026-11-15 - generational selection over project changes (NEW, live)
+Human directive (rabbit/fox evolution video): evolve CHANGES, not code. Entities: code_block/file/folder/project change. Survives on human accept; dies/archived on reject with autopsy; offspring = mutated variants of survivors. Island rules written before first birth: evolution/README.md.
+- [x] Engine: evolution.py (stdlib CLI: propose/accept/reject/breed/stats/autopsy/lineage/cull; EVOLUTION_HOME scratch override) - smoke-passed on scratch island
+- [x] Gen 0: CHG-0001 (this feature, project type) LIVING - island eats its own dogfood
+- [ ] DECISION (human): CHG-0002 candidate = /api/evolution endpoints in agent_portal.py (3 pre-written tests on record incl. restart trap). accept -> Builder implements + Verifier runs tests; reject -> autopsy
+- [ ] Round-table wiring: Builder proposes candidates, Verifier runs pre-written tests before any accept ask
+- [ ] Decision: evolution CLI as agents.json tool for Builder/Verifier lanes
+Detail: memory/projects/evolution-layer-2026-11-15.md
 ## OPS NOTE 2026-11-15 ~13:2x - Orchestrator (public GitHub upload reconciled + verified; repo is LIVE and PUBLIC)
 Context: human asked to upload current state to public GitHub, then deleted `memory/llm/hosts.md` on GitHub themselves (internal LAN host table). Local was 7 auto-sync commits ahead AND behind (their delete) - divergent.
 - [x] Merged their deletion (21c2627); restored hosts.md locally but UNTRACKED (.gitignore `/memory/llm/hosts.md`) so auto-sync can never re-publish it.

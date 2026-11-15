@@ -27,3 +27,29 @@ Scope: resolve the 85/96/~50 discrepancy on "tracked files with internal IPs" an
 The human deleted `memory/llm/hosts.md` on GitHub to stop the leak, but if `memory_mirror_hosts.json` is tracked, **the same host table (IPs + usernames) is still public through a different file**. The scrub decision should explicitly include: untrack+gitignore `memory_mirror_hosts.json` and token-ize `agents.json`, not just redact doc .md files. History note: if any commit ever carried these, in-place redaction leaves them in history (purge = force-push rewrite).
 
 Confidence: high on local-tree measurements (direct file reads); medium on "≈84 tracked" (API-confirmed root subset + memory/ proxy; untracked-vs-tracked per-file not verified without live git).
+
+---
+## 2026-11-15 ~14:4x — LIVE REMOTE VERIFICATION (Researcher, via public GitHub API/raw)
+
+Closed the two verification gaps flagged by Archivist/Orchestrator without needing a git-bearing host:
+
+1. **`.gitignore` IS tracked upstream** (blob ab3e89d0, 887 B on main). Contains `/memory/llm/hosts.md`
+   (comment: "removed from the PUBLIC repo by human; local copy kept for fleet ops but must never be
+   tracked again"). Sandbox view of "no root .gitignore" = SMB mirror dotfile exclusion, confirmed.
+   => Archivist gap #2 RESOLVED: hosts.md cannot re-publish via auto-sync.
+
+2. **NEW LEAK CONFIRMED for the scrub gate: `memory_mirror_hosts.json` is PUBLIC** (raw 200 on main).
+   Content = fleet host table: Red IP_RED, Pale IP_PALE, Black IP_BLACK + per-host
+   usernames + note that "[REDACTED-CREDENTIAL]" is Unsloth Desktop remote-access only (not an SMB password).
+   It is explicitly allowlisted in .gitignore (`!/memory_mirror_hosts.json`) — intentionally tracked for
+   memory_mirror.py's internal operation, but therefore also published to public GitHub. Deleting
+   hosts.md did NOT close this leak class. Gate must cover it: same fix pattern as agents.json
+   (placeholders + gitignored local override) OR move to a private/internal-only repo.
+
+3. **Tracked-count precision:** remote root listing (main) contains NO per-host junk dirs
+   (gapfix-test / _boot2 / Mingit absent from case-insensitive order), so tracked-with-IPs ~= full-tree
+   count. Archivist's canonical 85f/173o stands as the decision number; my earlier "~84 tracked" is
+   within 1 file of it. Exact `git grep` on White remains optional polish, not a blocker for the gate.
+
+Sources: api.github.com/repos/ArnoldPieterse/agent-portal/git/trees/main?recursive=1 (truncated view),
+raw.githubusercontent.com/.../main/.gitignore, raw .../main/memory_mirror_hosts.json (all fetched live).
