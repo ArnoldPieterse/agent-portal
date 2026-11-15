@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 3, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 4, "last_reset_by": "", "infinite_budget": true} -->
 # Project Memory — Agent Portal (White)
 
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
@@ -13,7 +13,6 @@ Rename + alias re-point + dual residency resolved (Q8_0 GPU1 ctx 32768 + Q4_K_S 
 Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializes globally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md).
 
 ## Hot Notes
-- Root cause confirmed: SMB mirror clobbers per
 - CH
 - CHG-0002 evolution endpoints are human-gated on accept/reject; .frow→.drow rename (6 instances) is complete in index.html.
 - Designer lane closed: all 10 critique items remediated in index.html; remaining work parked at CHG-0002 human decision gate.
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 - CHG-0002 doc says "awaiting human accept" but
 - evolution.py rebuilt from spec + island data re-seeded after SMB mirror clobber; smoke test passed; CHG-0002 still CANDIDATE
 - agent_portal.py is in active SMB mirror flux (4+ distinct SHAs observed); no single hash pin is canonical — re-measure before trusting any r
+- Scribe retracted earlier hash "91cfd901040f" for agent_portal.py; corrected table of 4 variants now in memory/synthesis/2026-11-
 ## Counter
-- inter_agent_replies_this_prompt: 3 / ∞
+- inter_agent_replies_this_prompt: 4 / ∞
 - last_reset_by: —
