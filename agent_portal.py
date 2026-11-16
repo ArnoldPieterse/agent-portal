@@ -2713,43 +2713,54 @@ def _autoloop_behaviour_hint(name):
     """Behaviour analysis (2026-11-17): read this agent's LAST substantive group-chat reply and
     derive a one-line context for its next auto-loop task, so the batch pass continues where the
     agent actually left off instead of re-running what it already did.
-    Returns '' or 'BEHAVIOUR: ...' - remaining-work lines beat blocker claims (work beats waiting),
-    and [SILENT]-only tails are ignored (nothing to continue)."""
+    Signals, in priority order: (1) remaining-work lines ('Remaining open: ...', 'next step: ...')
+    -> continue, don't redo; (2) blocker claims (unreachable / blocked by / powered off / must run
+    on X) -> work AROUND it, don't re-probe the same wall; (3) an auto-loop pass that ended WITHOUT
+    [CONCLUDED] -> finish the in-flight work first. [SILENT]-only tails are ignored."""
     try:
         hist = _load_history("group")
     except Exception:
         return ""
-    last = None
+    last_text, last_concluded, was_autoloop = None, False, False
     for m in reversed(hist):
-        if (m.get("speaker") or "").strip().lower() != name.lower():
-            continue
+        who = (m.get("speaker") or "").strip().lower()
         content = (m.get("content") or "").strip()
         if not content:
             continue
-        _, is_silent, _ = _effective_reply(content)
+        if who == "you":
+            if last_text is None:   # the human message immediately before this agent's reply
+                was_autoloop = content.lower().startswith("auto-loop")
+            continue
+        if who != name.lower():
+            continue
+        _, is_silent, concluded = _effective_reply(content)
         if is_silent:
             continue
-        last = content
+        last_text = content
+        # agents often put the marker at the END of the reply, not the start - count both
+        last_concluded = concluded or "[concluded]" in content.lower()
         break
-    if not last:
+    if not last_text:
         return ""
-    tail = last[-1200:]
-    rem = blk = None
-    for ln in tail.splitlines():
-        s = ln.strip()
-        if not s:
-            continue
-        low = s.lower()
-        if low.startswith(("remaining", "next step", "still open", "open:", "todo")) and len(s) >= 15:
-            rem = s.lstrip("-#* ").replace("**", "")[:200]
-            break
-        if blk is None and ("blocked by" in low or low.startswith("blocked")):
-            blk = s.strip("*-").replace("**", "")[:160]
-    if rem:
-        return "BEHAVIOUR: your last pass ended with remaining work - continue from there, do NOT redo it: %s" % rem
-    if blk:
-        return ("BEHAVIOUR: you reported a blocker last pass (%s) - take ONE step that does NOT depend on "
-                "it (another open goal, evidence/ledger upkeep, or assist another agent's lane); do not re-probe the same wall.") % blk
+    tail = last_text[-1400:]
+    # a real remaining-work line is 'Remaining open: ...' / 'Next step (...): ...' - keyword
+    # followed by a colon; narration like 'styles remain. Now I need...' has no colon and must not match
+    mrem = re.search(r"\b(remaining|next step|still open)\s+[(a-z) ]{0,20}:[^\n]{0,160}", tail, re.I)
+    if mrem:
+        frag = mrem.group(0).replace("**", "").strip()[:200]
+        return ("BEHAVIOUR: your last pass left remaining work - continue from there, do NOT redo it: %s"
+                % frag)
+    mblk = re.search(r"[^\n]*(blocked by|unreachable|can'?t be started|must run on|powered off)[^\n]*",
+                     tail, re.I)
+    if mblk:
+        frag = mblk.group(0).strip(" *#-").replace("**", "")[:160]
+        return ("BEHAVIOUR: you reported a blocker last pass (%s) - take ONE step that does NOT depend "
+                "on it (another open goal, evidence/ledger upkeep, or assist another agent's lane); do "
+                "not re-probe the same wall.") % frag
+    if was_autoloop and not last_concluded:
+        return ("BEHAVIOUR: your last auto-loop pass ended WITHOUT [CONCLUDED] - first finish whatever "
+                "was in flight (check your evidence/ledger state), then take one more step on your "
+                "oldest open goal.")
     return ""
 
 
