@@ -1,0 +1,68 @@
+{
+  "ts": "2026-11-17T00:00:00 (synthetic test)",
+  "days": 5,
+  "threshold_pct": 30,
+  "status": "REGRESSION_DETECTED",
+  "findings": [
+    {
+      "concurrency": 10,
+      "days_observed": 5,
+      "latest_ts": "2026-11-21 08:00:00",
+      "median_p95_ms": 194.0,
+      "median_p99_ms": 195.5,
+      "latest_p95_ms": 196.0,
+      "latest_p99_ms": 197.0,
+      "p95_ratio": 1.01,
+      "p99_ratio": 1.008,
+      "regression": false,
+      "details": []
+    },
+    {
+      "concurrency": 50,
+      "days_observed": 5,
+      "latest_ts": "2026-11-21 08:00:00",
+      "median_p95_ms": 747.5,
+      "median_p99_ms": 751.5,
+      "latest_p95_ms": 1050.0,
+      "latest_p99_ms": 1080.0,
+      "p95_ratio": 1.405,
+      "p99_ratio": 1.437,
+      "regression": true,
+      "details": [
+        "p95 1050.0ms vs median 747.5ms (+40%)",
+        "p99 1080.0ms vs median 751.5ms (+44%)"
+      ]
+    },
+    {
+      "concurrency": 200,
+      "days_observed": 5,
+      "latest_ts": "2026-11-21 08:00:00",
+      "median_p95_ms": 3490.0,
+      "median_p99_ms": 3525.0,
+      "latest_p95_ms": 3520.0,
+      "latest_p99_ms": 3535.0,
+      "p95_ratio": 1.009,
+      "p99_ratio": 1.003,
+      "regression": false,
+      "details": []
+    }
+  ],
+  "regressions": [
+    {
+      "concurrency": 50,
+      "days_observed": 5,
+      "latest_ts": "2026-11-21 08:00:00",
+      "median_p95_ms": 747.5,
+      "median_p99_ms": 751.5,
+      "latest_p95_ms": 1050.0,
+      "latest_p99_ms": 1080.0,
+      "p95_ratio": 1.405,
+      "p99_ratio": 1.437,
+      "regression": true,
+      "details": [
+        "p95 1050.0ms vs median 747.5ms (+40%)",
+        "p99 1080.0ms vs median 751.5ms (+44%)"
+      ]
+    }
+  ]
+}

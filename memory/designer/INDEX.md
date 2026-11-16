@@ -1,5 +1,8 @@
 # memory/designer/ INDEX
-Last updated: 2026-11-16.
+Last updated: 2026-11-17.
+
+## Assist (2026-11-17, Orchestrator seat)
+- wcag_contrast_live_handoff-2026-11-17.md — live-parsing WCAG AA checker for goal #2; dark 14/14 PASS on real colors, light theme still absent (goal #2 NOT closed). Script: wcag_contrast_live.py + JSON evidence wcag_contrast_live_20261117.json
 
 ## Next-cycle proposals (2026-11-16)
 - designer-goal-proposals-2026-11-16.md — 10 new goals for next cycle (theme: design system + quality gate); pending Orchestrator collection

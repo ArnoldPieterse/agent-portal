@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-17",
+  "source": "ui/app.css",
+  "thresholds": {
+    "AA_normal": 4.5,
+    "AA_large": 3.0
+  },
+  "themes": {
+    "dark": {
+      "tokens": 12,
+      "pairs_tested": 14,
+      "pass": true,
+      "rows": [
+        {
+          "pair": "text/bg",
+          "ratio": 16.08,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "dim/bg",
+          "ratio": 7.74,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "faint/bg",
+          "ratio": 6.46,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "acc/bg",
+          "ratio": 5.88,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "ok/bg",
+          "ratio": 10.6,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "warn/bg",
+          "ratio": 9.27,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "err/bg",
+          "ratio": 6.81,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "text/panel",
+          "ratio": 14.84,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "dim/panel",
+          "ratio": 7.15,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "faint/panel",
+          "ratio": 5.97,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "acc/panel",
+          "ratio": 5.43,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "ok/panel",
+          "ratio": 9.79,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "warn/panel",
+          "ratio": 8.56,
+          "aa_normal": true,
+          "aa_large": true
+        },
+        {
+          "pair": "err/panel",
+          "ratio": 6.29,
+          "aa_normal": true,
+          "aa_large": true
+        }
+      ]
+    }
+  },
+  "note": "light theme tokens not present in ui/app.css yet (goal #1 token layer); only dark checked."
+}

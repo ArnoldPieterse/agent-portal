@@ -2815,12 +2815,10 @@ def _autoloop_watchdog():
                 mls = _model_load_status()
             except Exception:
                 mls = {}
-            batch = [n for n in idle if not mls.get(n, {}).get("status") or mls[n]["status"] == "ok"]
-            if not batch:
-                continue   # every idle seat's model is down - nothing to fire at yet
-            batch = batch[:AUTOLOOP_BATCH_MAX]
+            ready = [n for n in idle if not mls.get(n, {}).get("status") or mls[n]["status"] == "ok"]
+            ready = ready[:AUTOLOOP_BATCH_MAX]
             sections, why_bits = [], []
-            for n in batch:   # per-agent task, steered by behaviour analysis of their last reply
+            for n in ready:   # per-agent task, steered by behaviour analysis of their last reply
                 try:
                     pend = umq_pending_for(n, names)
                 except Exception:
@@ -2843,15 +2841,18 @@ def _autoloop_watchdog():
                             "goal). If nothing is worth doing, reply [SILENT].")
                 else:
                     continue   # at 100% inside maintenance cooldown - no task for this seat yet
-                sections.append("@%s (idle %d s): %s%s" % (
-                    n, idle_s, body, (" " + hint) if hint else ""))
+                sections.append((n, "@%s (idle %d s): %s%s" % (
+                    n, idle_s, body, (" " + hint) if hint else "")))
             if not sections:
                 continue   # all at 100% inside cooldown - genuinely nothing to do yet
+            # cast = the seats that ACTUALLY got a task section. Firing a seat with no section only
+            # burns a full turn on [SILENT] (2026-11-17: batch #2 fired 7, only 3 had sections).
+            batch = [n for n, _ in sections]
             why = ", ".join(why_bits)
             prompt = ("AUTO-LOOP (batch pass, %d agents in parallel) - you have been idle. Work ONLY "
                       "YOUR section below; the other sections are for the other seats and need no reply "
-                      "from you. Record evidence via the ledger as you go, then reply [CONCLUDED].\n" +
-                      "\n".join(sections))
+                      "from you. Record evidence via the ledger as you go, then reply [CONCLUDED].\n"
+                      % len(batch)) + "\n".join(t for _, t in sections)
             run, err = start_group_run(prompt, extra={"solo": True, "autoloop_why": why,
                                                       "cast_override": batch})
             if not err:
