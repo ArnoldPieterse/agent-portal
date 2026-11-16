@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 3, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-16 ~17:xx - file-modularity rule + UI split + 15-min git net (Studio seat)
 - NEW FLEET RULE: working/project files follow memory/ modularity (small files, header pointers to parent) -> memory/portal/file-modularity.md. Root INDEX trimmed 2435->1395 chars (was over the 1600 _index_block budget - tail was truncated from every prompt).
@@ -13,9 +13,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mirror wiped cycle-2 work again; re-applied dark tokens, status-dot, typography, focus rings, theme toggle
-- Portal cycle 2 at 27.5%; UI split + modularity rule + goal-stall fix shipped; next: agent_portal.py split.
-- Cycle 2 at 27.5%; next in queue is `agent_portal.py` split. UI split (index.html→shell
 - Token layer done: 28 CSS custom props in :root, all 29 hardcoded radius/shadow/duration values replaced; dark mode (goal 2) unblocked.
 - Fixed 3 false-positive orphaned-superseded files (state-line annotations misread as file-level markers); count reduced 10→7.
 - Verifier reproduced design-check: clobber-#3 note claims 0 violations but actual run shows FAIL with 5 hard violations — discrepancy confirm
@@ -23,6 +20,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder 10/10 [OK] closed; fleet now 67/80 (84%). Pin e998e75a0ae4. Perf SLO tiles shipped to ui/core.js.
 - Design-check now PASSES 0 violations; fixed 5 gaps (reduced-motion, light theme, color-scheme fallback, .status-dot, toggle JS) in one pass.
 - Goal 9 (memory-health dashboard) closed: added /api/memory-health endpoint + Memory Health tab to portal dashboard.
+- agent_portal.py is 183 KB (187344 bytes), exceeding the 150 KB must-split threshold; Researcher flagged it as top open item
+- Goal 5: 10 orphaned_superseded files need successor pointers; Goal 9: endpoint shipped but
+- Designer: :root=dark (default), [data-theme="light"]=override; goals 2&6 wiped by mirror, re
 ## Counter
-- inter_agent_replies_this_prompt: 3 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
