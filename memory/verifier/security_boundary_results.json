@@ -1,0 +1,84 @@
+{
+  "ts": "2026-11-16T04:35:06.594225+00:00",
+  "total_tests": 10,
+  "passed": 10,
+  "failed": 0,
+  "results": [
+    {
+      "id": "T1",
+      "category": "DM_isolation",
+      "test": "DM marker pattern exists in source",
+      "evidence": "pattern matched: [DM @Name]",
+      "pass": true
+    },
+    {
+      "id": "T2",
+      "category": "DM_isolation",
+      "test": "DM content filtered by recipient agent",
+      "evidence": "filter logic found: segs.append((\"dm",
+      "pass": true
+    },
+    {
+      "id": "T3",
+      "category": "auth",
+      "test": "Endpoints have auth mechanism or bind to localhost",
+      "evidence": "auth_pattern=True (api_key), localhost_bind=True",
+      "pass": true
+    },
+    {
+      "id": "T4",
+      "category": "egress_guard",
+      "test": "External calls are guarded (timeout + whitelist) or absent",
+      "evidence": "egress_calls=13, has_timeout=True, has_whitelist=True",
+      "pass": true
+    },
+    {
+      "id": "T5",
+      "category": "egress_guard",
+      "test": "File endpoints guard against path traversal",
+      "evidence": "path_guard pattern: sandbox",
+      "pass": true
+    },
+    {
+      "id": "T6",
+      "category": "auth",
+      "test": "No eval/exec of potentially user-controlled input",
+      "evidence": "eval/exec occurrences: 0; none found",
+      "pass": true
+    },
+    {
+      "id": "T7",
+      "category": "auth",
+      "test": "POST bodies validated with JSON parse + error handling",
+      "evidence": "json_parse=True, error_handling=True",
+      "pass": true
+    },
+    {
+      "id": "T8",
+      "category": "auth",
+      "test": "No hardcoded secrets (passwords, keys, tokens) in source",
+      "evidence": "secret-like assignments found: 0; clean",
+      "pass": true
+    },
+    {
+      "id": "T9",
+      "category": "egress_guard",
+      "test": "CORS not set to wildcard (*) on API routes",
+      "evidence": "wildcard CORS found: False",
+      "pass": true
+    },
+    {
+      "id": "T10",
+      "category": "egress_guard",
+      "test": "Rate limiting present OR service is localhost-only (acceptable)",
+      "evidence": "rate_limit_pattern=False, localhost_bind=True",
+      "pass": true
+    }
+  ],
+  "verdict": "PASS",
+  "categories": {
+    "DM_isolation": 2,
+    "auth": 4,
+    "egress_guard": 4
+  }
+}

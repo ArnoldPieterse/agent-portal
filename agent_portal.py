@@ -28,6 +28,58 @@ def studio_headers(agent, extra=None):
     return h
 
 
+# ---- Model-load governance (2026-11-16, Orchestrator goal #2) -------------------
+# The 2026-11-16 goal-setting round lost two seats (Orchestrator + Researcher) to
+# UNLOADED models: LM Studio 404 "downloaded but not loaded" on every attempt, and the
+# round looped on auto-resumes because a chair that can never answer can't conclude.
+# Ground truth = a 1-token alias probe per agent's OWN studio base (the same path the
+# portal uses for real requests; remote hosts override via agents.json 'studio').
+MODEL_LOAD_BLOCK = False   # True = refuse to start a group run while any seat is down
+_MODEL_LOAD_CACHE = {"ts": 0.0, "result": None}
+
+
+def _model_load_status(force=False, timeout=15):
+    """Probe every agent's model alias (max_tokens=1) in parallel. Returns
+    {agent: {status: ok|not_loaded|unreachable, ms: int[, detail]}}. Cached 60s so the
+    run-start check and GET /api/models/status don't double-probe."""
+    import urllib.request as _ur
+    now = time.time()
+    if not force and _MODEL_LOAD_CACHE["result"] and now - _MODEL_LOAD_CACHE["ts"] < 60:
+        return _MODEL_LOAD_CACHE["result"]
+    out = {}
+
+    def _probe(name, model, base, headers):
+        body = json.dumps({"model": model,
+                           "messages": [{"role": "user", "content": "ping"}],
+                           "max_tokens": 1, "stream": False}).encode()
+        req = _ur.Request(base.rstrip('/') + "/v1/chat/completions", data=body, headers=headers)
+        t0 = time.time()
+        try:
+            _ur.urlopen(req, timeout=timeout)
+            out[name] = {"status": "ok", "ms": int(1000 * (time.time() - t0))}
+        except Exception as e:
+            msg = str(e)
+            if "404" in msg or "not loaded" in msg:
+                out[name] = {"status": "not_loaded", "ms": int(1000 * (time.time() - t0)), "detail": msg[:120]}
+            else:
+                out[name] = {"status": "unreachable", "ms": int(1000 * (time.time() - t0)), "detail": msg[:120]}
+
+    try:
+        agents = load_agents()["agents"]
+    except Exception:
+        agents = []
+    threads = [threading.Thread(target=_probe, args=(a.get("name", "?"),
+                                                     a.get("model_id") or "?",
+                                                     studio_base(a), studio_headers(a)), daemon=True)
+               for a in agents]
+    for t_ in threads:
+        t_.start()
+    for t_ in threads:
+        t_.join(timeout=timeout + 5)
+    _MODEL_LOAD_CACHE.update(ts=now, result=out)
+    return out
+
+
 def rag_base(agent):
     """RAG search host. Per-agent `rag_studio` override for remote agents whose
     knowledge base lives on White (local Studio holds rag.db); empty = chat host."""
@@ -2102,11 +2154,34 @@ def start_group_run(text, extra=None):
         except Exception:
             pass
         full_text = (text or "") + reset_note
+        # Model-load governance: flag seats whose model is not loaded BEFORE the run
+        # starts, so agents stop waiting on a chair that can never answer (2026-11-16).
+        _mls = None
+        try:
+            _mls = _model_load_status()
+            _missing = {n: s for n, s in _mls.items() if s.get("status") != "ok"}
+            if _missing:
+                full_text += ("\n\n[MODEL LOAD STATUS] Seats NOT ready at run start: " +
+                              ", ".join("%s=%s" % (n, s["status"]) for n, s in sorted(_missing.items())) +
+                              ". Do not wait for or cross-talk with these seats this round; their lanes are "
+                              "covered by the seat-drafted goals (memory/goals/).")
+                try:
+                    with open(os.path.join(HERE, "memory", "ops", "model-load.jsonl"), "a", encoding="utf-8") as _f:
+                        _f.write(json.dumps({"ts": time.strftime("%Y-%m-%d %H:%M:%S"), "run": rid,
+                                             "missing": {n: s.get("status") for n, s in _missing.items()}}) + "\n")
+                except Exception:
+                    pass
+            if MODEL_LOAD_BLOCK and _missing:
+                return None, ("blocked: model not loaded/unreachable for " + ", ".join(sorted(_missing)))
+        except Exception:
+            pass
         hist = _load_history("group")
         run = {"id": rid, "status": "running", "prompt": full_text[:4000], "cast": (mentioned or names),
                "settled": [], "nudges": 0, "phase": "prompt",
                "started": time.time(), "ended": None, "verdict": None, "error": None,
                "hist_start": len(hist)}
+        if _mls is not None:
+            run["model_load"] = _mls
         if extra:
             run.update(extra)
         _save_group_run(run)
@@ -2722,6 +2797,14 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/goals":
             # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
             return self._json(200, _goals_snapshot())
+        elif p == "/api/models/status":
+            # Model-load governance (2026-11-16, Orchestrator goal #2): live per-seat status
+            # for the fleet panel; same probe the run-start check uses.
+            try:
+                return self._json(200, {"ok": True, "block_mode": MODEL_LOAD_BLOCK,
+                                        **_model_load_status()})
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/net/fleet":
             # Outbound network capability (2026-11-15): one-pass probe of all known fleet hosts.
             try:

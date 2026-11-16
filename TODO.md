@@ -666,4 +666,11 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
 - NOTE 2026-11-14 (Orchestrator): SUPERSEDED - portal has run continuously since that reboot (PID 36856 current, /api/status 200); remote items unverifiable while .245/.39/.99 are down. Items left open deliberately (not complete); re-verify at next host power-on with the same three checks.
 - [ ] White: Studio up, `recover_result.json` verdict ALL_UP (portal_8099 status 200 - it self-starts now)
 - [ ] Remotes: `fleet_reload_result.json` - RED/BLACK/PALE each DONE or SKIP_*loaded
-- [ ] Portal smoke: 8/8 agents green (smoke8.py)
+- [ ] Portal smoke: 8/8 agents green (smoke8.py)## 2026-11-16 ~16:3x - Orchestrator+Researcher goal sets COMPLETED on their behalf (user directive)
+- Both 10-goal sets worked through from the White seat while their models stay unloaded (per user): **O 8/10 + R 8/10 verified, fleet 20/80 (25%)**, SoT audit IN SYNC. Open = 4 time-gated progress goals (risk-register entries 2-3, retrospective end-fill, parity week, trend report 2/2).
+- C1-C4 queue drained same-day -> memory/synthesis/2026-11-16-contradiction-rulings.md. Key: **C2 REJECTS F-VER-01 as stale** (all 11 design tokens measured present in live pin 2c6399f2d853); C3 scoped the Red block to :8099 only (:8888+SMB open from same seat).
+- New tooling at portal root: goal_cycle_check.py, sot_audit.py, evidence_spotcheck.py, todo_freshness_check.py, citation_monitor_v2.py, parity_audit.py, open_questions_flag.py, model_benchmark.py (all first-run green; sim tests pass).
+- FLEET FINDINGS for Mechanic: Black .99 :8888 DOWN (Builder+Verifier seats dark); Red :8099 filtered from White (scoped); Q4_K_S 127.7 vs Q8_0 82.3 tok/s -> memory/researcher/benchmark-summary-2026-11-16.md.
+- [ ] RESTART PORTAL to load the O2 model-governance code (agent_portal.py) - last restart predated it; do when a group run is idle.
+
+

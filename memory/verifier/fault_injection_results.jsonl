@@ -1,0 +1,5 @@
+{"ts": "2026-11-16T04:33:54.583427+00:00", "scenario": "S1_kill_mid_request", "passed": true, "evidence": "truncated 526->263 bytes; parser rejected corrupt data (recovery=re-sync triggered); hash_before=91466f21b6f5f41a"}
+{"ts": "2026-11-16T04:33:54.591063+00:00", "scenario": "S2_corrupt_jsonl", "passed": true, "evidence": "3 lines -> corrupted line 1; reader recovered 2 good entries, flagged [1]"}
+{"ts": "2026-11-16T04:33:55.860412+00:00", "scenario": "S3_drop_smb_leg", "passed": true, "evidence": "remote=\\\\NONEXISTENT-SERVER\\share\\memory unreachable; local_hash=f76ebd0179c51c51; status=DROPPED_LEG (alert would fire)"}
+{"ts": "2026-11-16T04:33:55.861173+00:00", "scenario": "S4_malformed_post", "passed": true, "evidence": "5 test bodies; statuses=[200, 400, 400, 400, 400] (expected [200, 400, 400, 400, 400]); all malformed -> 400"}
+{"ts": "2026-11-16T04:33:55.861449+00:00", "scenario": "S5_write_failure", "passed": true, "evidence": "write failed as expected: FileNotFoundError: [Errno 2] No such file or directory: 'memory\\\\verifier\\\\__nonexistent_dir__\\\\file.txt'; exception caught, logged for retry"}

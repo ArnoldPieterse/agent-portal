@@ -1,0 +1,42 @@
+[
+  {
+    "seq": 0,
+    "timestamp": "2026-11-16T04:08:07Z",
+    "event": "GENESIS",
+    "detail": "Evidence hash chain initialized for Verifier verification logs",
+    "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "fbef3bf220d3003ff2d69929351f044524372de33695dfc235414c523fe0a314"
+  },
+  {
+    "seq": 1,
+    "timestamp": "2026-11-16T04:08:08Z",
+    "event": "REGRESSION_5PT_PASS",
+    "detail": "5-point regression PASS on agent_portal.py sha1=418a57eec190 (2026-11-16); all 38 routes intact, WEDGE guard active",
+    "prev_hash": "fbef3bf220d3003ff2d69929351f044524372de33695dfc235414c523fe0a314",
+    "hash": "460f6e96321a9c411734eda3f0029392cb4d79cad697a531c60a5efcfc0efb09"
+  },
+  {
+    "seq": 2,
+    "timestamp": "2026-11-16T04:08:08Z",
+    "event": "SELF_CERT_AUDIT",
+    "detail": "Self-cert audit 2026-11-16: 28/60 markers clean (47%); Scribe 1/10, Designer 3/8 flagged; evidence memory/verifier/self-cert-audit-2026-11-16.md",
+    "prev_hash": "460f6e96321a9c411734eda3f0029392cb4d79cad697a531c60a5efcfc0efb09",
+    "hash": "3e1157954e30a2ce228994bb7156350b6e7924a3762d0adba9fda0820302bfb7"
+  },
+  {
+    "seq": 3,
+    "timestamp": "2026-11-16T04:16:33Z",
+    "event": "regression_daemon_built",
+    "detail": "Goal #1: regression_daemon.py (3982B) built+tested. 5/5 PASS on sha1=43fe918bd2cd. Mtime touch detection proven. Log: regression-daemon-log.jsonl",
+    "prev_hash": "3e1157954e30a2ce228994bb7156350b6e7924a3762d0adba9fda0820302bfb7",
+    "hash": "c421e4e9959db0c641e4e3c7a3ce6a99c83065e4f81589c4dea1318e16a6feb5"
+  },
+  {
+    "seq": 4,
+    "timestamp": "2026-11-16T04:17:52Z",
+    "event": "self_cert_audit_v2",
+    "detail": "Fleet-wide evidence re-scan: 71/147=48% (baseline 47%). Per-agent breakdown in report. Delta +1pp. Target >=90% by cycle end.",
+    "prev_hash": "c421e4e9959db0c641e4e3c7a3ce6a99c83065e4f81589c4dea1318e16a6feb5",
+    "hash": "ea437b38b84a9da8a547f095bdc64809f9e7a2ac3c5547d1726df8e78c8ff9a7"
+  }
+]

@@ -1,0 +1,31 @@
+{
+ "model": "mechanic-q4",
+ "base": "http://192.168.1.245:8888",
+ "prompt_chars": 165,
+ "runs": [
+  {
+   "wall_s": 2.08,
+   "completion_tokens": 244,
+   "tokens_per_s": 117.2,
+   "finish": "stop",
+   "text_head": "Fleet is healthy\u2014portal up on :8099, two mirrors synced within 5 minutes, and one goal closed with evidence; next, verif",
+   "run": 1
+  },
+  {
+   "wall_s": 1.17,
+   "completion_tokens": 156,
+   "tokens_per_s": 133.0,
+   "finish": "stop",
+   "text_head": "Fleet is healthy with portal up on :8099, mirrors synced within 5 minutes, and one goal closed with evidence; next actio",
+   "run": 2
+  },
+  {
+   "wall_s": 1.3,
+   "completion_tokens": 173,
+   "tokens_per_s": 132.8,
+   "finish": "stop",
+   "text_head": "Fleet healthy: portal up on :8099, two mirrors synced within 5 minutes, and one goal closed with evidence \u2014 next action:",
+   "run": 3
+  }
+ ]
+}

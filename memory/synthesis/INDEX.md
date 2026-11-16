@@ -17,3 +17,7 @@ Scribe meeting records + consolidations (append-only, newest first). Every line 
 
 Supersession chains: upgrade-round < consolidated-state (11-12); planning-meeting < v102-upgrade-planning (11-13).
 Open-item gate status: see TODO.md LIVE PLAN (do not duplicate it here).
+
+## 2026-11-16 cycle-2 kickoff (Orchestrator, on-behalf per user directive)
+- -> memory/synthesis/2026-11-16-contradiction-rulings.md | C1-C4 queue drained: C2 ratifies Designer#4 (tokens live at pin 2c6399f2d853), C3 scopes Red block to :8099
+- -> memory/synthesis/2026-cycle2-retrospective.md | cycle-2 retro (living doc; end-of-cycle sections scheduled)

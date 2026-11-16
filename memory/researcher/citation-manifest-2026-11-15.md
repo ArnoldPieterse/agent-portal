@@ -31,3 +31,11 @@ Discovered in same sweep (20 distinct internal URLs): 127.0.0.1:{8099,8888} + lo
 4. Do NOT re-resolve the 6 rows in step-2; only re-check a row if its source file's mtime is newer than its last-checked date.
 
 Owner: Researcher. Closure gate: time-gated to ~11-20 OR earlier if any finding owed to Orchestrator.
+
+## ADDED BY citation_monitor_v2 (2026-11-16)
+| URL | Location(s) | Status | Last checked | Attribution check |
+|-----|-----------|--------|--------------|-------------------|
+
+## ADDED BY citation_monitor_v2 (2026-11-16)
+| URL | Location(s) | Status | Last checked | Attribution check |
+|-----|-----------|--------|--------------|-------------------|

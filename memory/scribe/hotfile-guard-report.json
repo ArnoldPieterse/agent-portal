@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-11-16T14:08:49.319539",
+  "memory_md_lines": 31,
+  "trim_action": {
+    "within_limit": true,
+    "lines": 31,
+    "limit": 40
+  },
+  "drift_report": {
+    "drift": true,
+    "missing_in_todo": [
+      "OPENED"
+    ],
+    "missing_in_memory": [],
+    "mem_facts": [
+      "CLOSED",
+      "LIVE",
+      "OPENED",
+      "PENDING",
+      "cycle1",
+      "cycle2",
+      "goals:0",
+      "goals:80"
+    ],
+    "todo_facts": [
+      "CLOSED",
+      "LIVE",
+      "PENDING",
+      "cycle1",
+      "cycle2",
+      "goals:0",
+      "goals:80"
+    ]
+  },
+  "status": "DRIFT_DETECTED"
+}

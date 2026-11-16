@@ -10,22 +10,23 @@
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
 
 ## GOAL (live plan = TODO.md top; keep both in sync)
-**FLEET CYCLE 2 OPENED** (set 2026-11-16): cycle 1 closed 80/80 verified (ledger goal_ledger.json). New goals: all 8 agents x 10 = 0/80 reached; canonical memory/goals/<name>.md (cycle-1 files archived); record TODO.md '## AGENT GOALS (set 2026-11-16)'. /api/goals = SINGLE SOURCE OF TRUTH. Cycle-2 charter: SLO pipeline Mechanic#4 measures -> Builder#8 visualizes -> Verifier#4 enforces; fleet-state endpoint Mechanic#8; supersession script=Archivist#5/policy=Scribe#5; memory-health engine=Archivist#2/dashboard=Scribe#9. Orchestrator+Researcher sets seat-DRAFTED (their models not loaded - LM Studio 404) -> ratify next round. GOAL_RESET_PENDING consumed by run g-1a1e266d42d; consumption bug fixed in agent_portal.py (rid NameError had corrupted the flag). Cross-talk counter reset at kickoff (0, infinite budget). PUBLIC REPO LIVE (ArnoldPieterse/agent-portal); evolution CHG-0002 ACCEPTED (island living).
+**FLEET CYCLE 2: 20/80 (25%)** (11-16 ~16:xx) - Orchestrator+Researcher sets COMPLETED ON THEIR BEHALF (user directive; their models stay unloaded on White): O 8/10 + R 8/10 verified, 4 time-gated progress goals open. C1-C4 contradiction queue drained (synthesis/2026-11-16-contradiction-rulings.md); C2 ratifies Designer#4 (tokens live at pin 2c6399f2d853). Model-load governance live in portal code (GET /api/models/status; pre-run flag) - restart pending to load. FLEET FINDINGS: Black .99 :8888 DOWN (Builder+Verifier seats); Red :8099 filtered from White (scoped, not blanket); Q4_K_S 128 vs Q8_0 82 tok/s. /api/goals = SSOT.
 
 ## Durable rules (detail in the tree)
 Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dispatch ALL AGENTS IN PARALLEL - White's Studio only queues same-host agents internally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md). NO HUMAN GATES (Arnold 11-15): agents never create or wait on human decision gates - a blocked lane gets an alternative path or a named cross-agent handoff; the human only sets goals and reviews results.
 
 ## Hot Notes
-- Sandbox blocks tasklist/netstat/curl/powershell; no live port probe possible from Mechanic's lane.
-- Portal down (no :8099 listener); Verifier DM'd @Mechanic for crash diagnosis — blocker until resolved.
-- Fleet goal-sweep closed 80/80 on 2026-11-16; MEMORY.md GOAL line updated from stale 62/
-- 2026-11-16 goal-sweep closed fleet at 80/80; portal :8099 outage flagged but appears recovered per Mechanic.
-- Portal :8099 crash root cause: `_find_sandbox_dir()` hits PermissionError scanning C:\Users; fix anchors on file location + PermissionError-
-- Portal crash root cause: `_find_sandbox_dir()` hits PermissionError because `expanduser("~")` resolves to wrong home on Windows (Mechanic, 2
-- Fleet goal-sweep closed 80/80 on 2026-11-16; Builder's live plan "4/10" was stale — all 10 verified on disk.
-- Portal crash: `_find_sandbox_dir()` (agent_portal.py
-- Portal crash: _
-- supersession_check.py PASS (462 leaves, 14 edges, 0 cycles); 4 goals open: knowledge_graph, memory_health, PROTOCOL.md, gen_api_ref
+- 11-16 ~16:xx: Orchestrator+Researcher goals done on their behalf (user directive); 8 new scripts at portal root (goal_cycle_check, sot_audit, evidence_spotcheck, todo_freshness_check, citation_monitor_v2, parity_audit, open_questions_flag, model_benchmark); agent_portal.py O2 code needs restart to load.
+- Archivist cycle-2:
+- Archivist C2: Goals 1,2,3 DONE — KG
+- Mechanic C2: Goal #8 DONE — GET /api/health/fleet added to agent_portal.py; Goal #5 CHG auto-create wired in fleet_probe.py with ded
+- Portal (port 8099) still down — blocks Verifier goals 4 & 8; all other work must stay offline-testable until restart.
+- Goal #3: inline styles 28→2 (93% cut); remaining 2 use --agent-color/--event-color custom props as correct pattern for per-agent dynamic val
+- Verifier cross-check found 3/4 fresh agent claims (Archivist, Designer, Scribe) don't match on-disk artifacts this turn.
+- edit_file changes don't survive portal restarts (flush divergence); use python file writes for
+- Goal 7 complete: archivist/decay_score.py built and verified (485 leaves scored, ranking differentiates).
+- Scribe built supersession_check.py; baseline: 480 leaves, 76 edges, 0 cycles, 55 broken chains (cross-sandbox), 10 orphaned superseded.
+- edit_file changes do NOT persist in this sandbox; python file writes DO. All agents must use python to write/patch files.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
