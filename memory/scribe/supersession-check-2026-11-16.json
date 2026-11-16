@@ -1,0 +1,13 @@
+{
+  "run_date": "2026-11-16",
+  "policy_ref": "memory/synthesis/supersession-policy-baseline.md",
+  "files_scanned": 56,
+  "superseded_refs": {
+    "consolidated-state": "2026-11-12-consolidated-state.md (exists)",
+    "r24": "2026-11-14-r24-fleet-state.md (exists)"
+  },
+  "orphaned_superseded": [],
+  "unresolved_heads": [],
+  "verdict": "PASS - 0 orphaned, chain clean",
+  "note": "Both INDEX-marked superseded refs resolve to existing living leaves. No self-declared SUPERSEDED markers found in file headers. Chain is acyclic with unambiguous heads."
+}
