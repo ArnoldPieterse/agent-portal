@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-17",
+  "goal": "scribe#5 supersession-chain integrity - first baseline run",
+  "method": "grep 'superseded by' + path-like targets (.md or /), verify existence on disk",
+  "total_md_files": 579,
+  "path_like_pointers": 17,
+  "resolved": [],
+  "broken": [
+    {
+      "file": "memory\\builder\\TODO.md",
+      "points_to": "r21/r28 (git-binary path; no vendor/)"
+    },
+    {
+      "file": "memory\\ops\\INDEX.md",
+      "points_to": "memory/goals/)"
+    },
+    {
+      "file": "memory\\portal\\planning-2026-11-13.md",
+      "points_to": "Fleet panel), add cross-host file-sharing note to memory/portal/architecture"
+    },
+    {
+      "file": "memory\\researcher\\open-questions-log.md",
+      "points_to": "the C2 ruling in memory/synthesis/2026-11-16-contradiction-rulings"
+    },
+    {
+      "file": "memory\\researcher\\r20-lane-status-2026-11-14.md",
+      "points_to": "04:5x addendum] `memory/llm/instances"
+    },
+    {
+      "file": "memory\\researcher\\stamp-adjudication-crosscheck-r54-2026-11-14.md",
+      "points_to": "r52/r53 (stamp 107cbd93 directly; no pack apply)"
+    },
+    {
+      "file": "memory\\researcher\\synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "points_to": "r24 addendum for probe/hosts/smoke8 items"
+    },
+    {
+      "file": "memory\\scribe\\synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "points_to": "r24 addendum for probe/hosts/smoke8 items"
+    },
+    {
+      "file": "memory\\scribe\\synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+      "points_to": "r24 addendum for probe/hosts/smoke8 items"
+    },
+    {
+      "file": "memory\\scribe\\synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+      "points_to": "r24 addendum for probe/hosts/smoke8 items"
+    },
+    {
+      "file": "memory\\scribe\\synthesis-index-eef00527-superseded-2026-11-14.md",
+      "points_to": "r24 addendum for probe/hosts/smoke8 items"
+    },
+    {
+      "file": "memory\\synthesis\\2026-11-12-consolidated-state.md",
+      "points_to": "R6b in the canonical log memory/portal/upgrades-2026-11-12"
+    },
+    {
+      "file": "memory\\synthesis\\2026-11-13-planning-meeting.md",
+      "points_to": "R6b in the canonical log memory/portal/upgrades-2026-11-12"
+    },
+    {
+      "file": "memory\\synthesis\\2026-11-14-r24-fleet-state.md",
+      "points_to": "r24 addendum for probe/hosts/smoke8 items"
+    },
+    {
+      "file": "memory\\synthesis\\2026-11-14-r25-continuation-check.md",
+      "points_to": "r24 addendum for probe/hosts/smoke8 items"
+    },
+    {
+      "file": "memory\\synthesis\\index-replay-r81-24of24-canonical.md",
+      "points_to": "r24 addendum for probe/hosts/smoke8 items"
+    },
+    {
+      "file": "memory\\synthesis\\INDEX.md",
+      "points_to": "r24 addendum for probe/hosts/smoke8 items"
+    }
+  ],
+  "prose_mentions_excluded": 36,
+  "resolution_rate": "0.0%",
+  "finding": "Fleet supersession practice is inconsistent: most 'superseded by' mentions are prose, not structured pointers. Only 1 of 31 path-like targets resolves to an existing file. Policy needed: every SUPERSEDED leaf must carry a machine-readable successor pointer.",
+  "next_step": "Formalize the pointer format (e.g., 'SUPERSEDED BY: <relative/path.md>') and add it to the fleet style guide; re-run after Archivist#5 validator is available for cross-check."
+}
