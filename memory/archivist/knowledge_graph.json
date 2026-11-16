@@ -1,0 +1,1935 @@
+{
+ "root": "Workspace",
+ "node_count": 742,
+ "edge_count": 159,
+ "supersession_edges": 226,
+ "edges": [
+  {
+   "from": "memory/archivist/index-pointer-batch-r42.md",
+   "to": "memory/archivist/f1-index-patch-20261113.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/index-pointer-batch-r42.md",
+   "to": "memory/archivist/fleet-md5-discrepancy-note-20261113.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/index-pointer-batch-r42.md",
+   "to": "memory/archivist/goals-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/index-pointer-batch-r42.md",
+   "to": "memory/archivist/index-integrity-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/index-sweep-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/history-r7-r36.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/dcabots-intake-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/history-r7-r36.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/index-sweep-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/index-integrity-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/guardrail-checklist-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/canonical-locations-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/index-repin-r24-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/a11y-repin-farm569-closeout-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/ci-gate-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/ci-gate-acceptance-evidence-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/canary_deploy.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/evolution_fitness_test.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/goal4_fitness_evidence.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/hotpatch.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/designer/INDEX.md",
+   "to": "memory/designer/goal3-component-abstraction-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/builder.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/designer.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/archivist.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/cycle2-kickoff-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/cycle2-dependency-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/all-goals-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/llm/INDEX.md",
+   "to": "memory/llm/hosts.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/llm/INDEX.md",
+   "to": "memory/llm/backend-swap-procedure.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/fleet-probe-v2-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/goal1_adaptive_probe_verified.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/host-port-task-map-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/hotline-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/agent-onboarding-playbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/fleet-state-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "to": "memory/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/file-modularity.md",
+   "to": "memory/ops/windows-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/file-modularity.md",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/file-links.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/fleet-status.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/merge-pack.md",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/merge-pack.md",
+   "to": "memory/llm/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/merge-pack.md",
+   "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "to": "memory/archivist/llm-module-white-convention-r21.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "to": "memory/archivist/instances-md-pin-reconcile-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "to": "memory/archivist/dcabots-intake-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "to": "memory/archivist/seat-root-anomaly-r14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
+   "to": "memory/builder/pre_commit_gate.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/file-links-sandbox.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/file-links-sandbox.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/file-links-sandbox.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/projects/INDEX.md",
+   "to": "memory/projects/evolution-layer-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/projects/INDEX.md",
+   "to": "memory/projects/dcabots.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/projects/INDEX.md",
+   "to": "memory/projects/dcabots-setup-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/clobber-mechanism-and-final-ip-count-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/citation-audit-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/index-md5-reconciliation-r61-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/dcabots-reprompt-atlasq8-gate-r49.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/dcabots-reprompt-precheck-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/e14-r41-reverify-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/a4a5-crossseat-verify-r39b-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/ac-a2-r26-convergence-check-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/ac-a2-r25-oscillation-consolidated-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/ac-a2-r24b-adjudication-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/ac-a2-live-leg-status-final-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/hosts-ctx-correction-and-rename-script-state-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/ac-a2-r24-disk-reconcile-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/farm-relpath-diagnosis-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/llm/overnight-unload.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/claim-reverification-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/failure-mode-indicators-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/evidence-quality-trend-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/contradiction-detector-evidence-2026-11-16.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/g3-hotfile-guard-evidence-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/compression_lint.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-addendum-r43.md",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-addendum-r43.md",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r40.md",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r40.md",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r40.md",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r40.md",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/index-pointer-addendum-r43.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/index-pointer-batch-r40.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-handoff-r38.md",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-handoff-r38.md",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-handoff-r38.md",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-portal-down-state-change.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-11-16-contradiction-rulings.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/2026-cycle2-retrospective.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+   "to": "memory/synthesis/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/fault-injection-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/evolution-validator-2026-11-16.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/idempotency_proof.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/workspace/INDEX.md",
+   "to": "memory/portal/bugs/INDEX.md",
+   "kind": "pointer"
+  }
+ ],
+ "supersessions": [
+  {
+   "from": "memory/archivist/bundle-v2-item1-staleness-r73-2026-11-14.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/archivist/bundle-v2-item1-staleness-r73-2026-11-14.md",
+   "target": "bundle",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/archivist/dream-big-wishes-2026-11-14.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+   "target": "v2.1",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/archivist/run1_baseline.json",
+   "target": "r15",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/archivist/seat-root-anomaly-r14.md",
+   "target": "Mechanic",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/archivist/supersession_check.py",
+   "target": "Y",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/builder/anomaly-ar14-writepath-evidence.md",
+   "target": "the",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/builder/arnold-restart-r19.ps1",
+   "target": "r8",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/builder/builder-exec-sweep-2026-11-14.md",
+   "target": "ffa77423",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/builder/index-repin-r25-rollback.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/builder/index-repin-r65-v21-2026-11-14.md",
+   "target": "this",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/builder/index-v22-surgical-fixes-confirmed-2026-11-14.md",
+   "target": "nothing",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/builder/MEMORY.md",
+   "target": "git-binary",
+   "marker": "REPLACED by"
+  },
+  {
+   "from": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+   "target": "bundle",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/builder/TODO.md",
+   "target": "earlier-pasted",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/builder/TODO.md",
+   "target": "r21/r28",
+   "marker": "SUPERSEDED by"
+  },
+  {
+   "from": "memory/builder/truncation-e2e-verify-2026-11-16.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/builder/truncation-e2e-verify-2026-11-16.md",
+   "target": "e2e-truncation-integration-2026-11-15.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/builder/white-rename-consistency-r20.md",
+   "target": "quant-less",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/builder/white-rename-consistency-r21-addendum.md",
+   "target": "one",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/designer/a4-dual-base-verify-r27.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/designer/a6b-candidate-diff-r47-2026-11-14.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/designer/conflict-resolution-merged-canonical-2026-11-15.md",
+   "target": "my",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/designer/files-panel-hunks-r5.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/designer/goal3-component-abstraction-2026-11-16.md",
+   "target": "e0679e5f0844",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/designer/goals-patch-apply-2026-11-15.py",
+   "target": "lost",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/designer/goals-patch-apply-2026-11-15.py",
+   "target": "Verifier",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/designer/index-v22-promotion-r71-2026-11-14.md",
+   "target": "r70",
+   "marker": "SUPERSEDES"
+  },
+  {
+   "from": "memory/designer/INDEX.md",
+   "target": "reland",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/designer/live-root-not-v2-r62-2026-11-14.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/designer/panel-discipline-r20.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/designer/planning-meeting-2026-11-14.md",
+   "target": "design-tokens.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/designer/px-scale-spec-2026-11-15.md",
+   "target": "tokens",
+   "marker": "replaced by"
+  },
+  {
+   "from": "memory/designer/stamp-verify-r61-107cbd93-2026-11-14.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/designer/token-refactor-2026-11-15.md",
+   "target": "a",
+   "marker": "replaced by"
+  },
+  {
+   "from": "memory/designer/v21-merge-c820e755-r64-2026-11-14.md",
+   "target": "re-pin",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/goals/2026-11-13-agent-goals.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/goals/cycle2-proposals-raw-2026-11-16.txt",
+   "target": "the",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/goals/designer.md",
+   "target": "var",
+   "marker": "replaced by"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "target": "all-goals-2026-11-13.md",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/goals/archive/orchestrator-2026-11-13.md",
+   "target": "sandbox-isolation",
+   "marker": "SUPERSEDED by"
+  },
+  {
+   "from": "memory/goals/archive/README.md",
+   "target": "live",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/llm/hosts.md",
+   "target": "quant-less",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/llm/hosts.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/llm/hosts.md",
+   "target": "race",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/mechanic/ac_a2_live_leg_r21.py",
+   "target": "ac_a2_live_leg_r20.py",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/mechanic/memory_mirror_r16.py",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/mechanic/__pycache__/ac_a2_live_leg_r21.cpython-313.pyc",
+   "target": "ac_a2_live_leg_r20.py",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/mechanic/__pycache__/memory_mirror_r16.cpython-313.pyc",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "target": "memory/goals/",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "target": "these",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/ops/verifier-healthcheck-2026-11-14.md",
+   "target": "per",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/verifier-pin-crosscheck-2026-11-15.md",
+   "target": "my",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.0e026c89c0",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.0e026c89c0",
+   "target": "2c6399f2d853.",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/orchestrator/white-apply-bundle-v2-r45.md",
+   "target": "all",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/portal/architecture.md",
+   "target": "any",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/portal/file-links.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/portal/planning-2026-11-13.md",
+   "target": "Fleet",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/portal/upgrade-plan.md",
+   "target": "Builder",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/portal/upgrade-plan.md",
+   "target": "my",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/portal/upgrade-plan.md",
+   "target": "4e7a19b43779",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/portal/upgrade-plan.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/portal/upgrade-plan.md",
+   "target": "Builder",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/portal/v1-inventory.md",
+   "target": "",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/portal/v1-inventory.md",
+   "target": "decision",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/portal/v1-upgrades-decisions.md",
+   "target": "uploads/AgentPortal_V1/UPGRADES.md",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/projects/INDEX.md",
+   "target": "dcabots.md",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/ac-a2-r25-oscillation-consolidated-2026-11-14.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/researcher/clobber-mechanism-and-final-ip-count-2026-11-15.md",
+   "target": "the",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/index-md5-reconciliation-r61-2026-11-14.md",
+   "target": "a",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "target": "ac-a2-live-leg-status-final",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/open-questions-log.md",
+   "target": "my",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/researcher/open-questions-log.md",
+   "target": "the",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/outside-click-false-alarm-r76-2026-11-14.md",
+   "target": "implementation",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/probe-canonical-pin-correction-2026-11-14.md",
+   "target": "ONLY",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/researcher/r20-lane-status-2026-11-14.md",
+   "target": "04",
+   "marker": "SUPERSEDED by"
+  },
+  {
+   "from": "memory/researcher/r20-lane-status-2026-11-14.md",
+   "target": "both",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/r27-probe-n-semantics-2026-11-14.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/researcher/r27b-live-leg-pass-condition-2026-11-14.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/r61-reconcile-2026-11-14.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/researcher/stamp-adjudication-crosscheck-r54-2026-11-14.md",
+   "target": "r52/r53",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/stamp-target-correction-r75-2026-11-14.md",
+   "target": "my",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/sync-clobber-analysis-2026-11-13.md",
+   "target": "it",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/sync-clobber-analysis-2026-11-13.md",
+   "target": "this",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "target": "r56",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "target": "r36-lane-closeout",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "target": "r31",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "target": "2026-11-13-v102-upgrade-planning",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "target": "this",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "target": "r24",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "target": "r17",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "target": "2026-11-12-upgrade-round.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "target": "consolidated-state",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/two-pin-index-adjudication-r32.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "target": "r73",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "target": "r72",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/supersession_check.py",
+   "target": "X",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/supersession_check.py",
+   "target": "targets",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/supersession_check.py",
+   "target": "others",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/supersession_check.py",
+   "target": "something",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/scribe/supersession_check.py",
+   "target": "something",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "target": "r56",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "target": "r36-lane-closeout",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "target": "r31",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "target": "2026-11-13-v102-upgrade-planning",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "target": "this",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "target": "r24",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "target": "r17",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "target": "2026-11-12-upgrade-round.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "target": "consolidated-state",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "target": "r24",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "target": "r17",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "target": "2026-11-12-upgrade-round.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "target": "consolidated-state",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "target": "r24",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "target": "r17",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "target": "2026-11-12-upgrade-round.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "target": "consolidated-state",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "target": "r56",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "target": "r36-lane-closeout",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "target": "r31",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "target": "2026-11-13-v102-upgrade-planning",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "target": "this",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "target": "r24",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "target": "r17",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "target": "2026-11-12-upgrade-round.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "target": "consolidated-state",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/TODO.md",
+   "target": "4e7a19b43779",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/__pycache__/supersession_check.cpython-313.pyc",
+   "target": "X",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/__pycache__/supersession_check.cpython-313.pyc",
+   "target": "targets",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "target": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "target": "R6b",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "target": "R6b",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "target": "r15",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md",
+   "target": "old",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md",
+   "target": "107cbd93",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md",
+   "target": "decision",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md",
+   "target": "the",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-dream-big-r58-final.md",
+   "target": "r57-closeout",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-final-closeout-supersession.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-final-closeout.md",
+   "target": "r56",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "target": "v102",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "target": "bundle-pinned",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "target": "with",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "target": "that",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "target": "r24",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "target": "r24",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "target": "note",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "target": "Verifier",
+   "marker": "Superseded by"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "target": "ffa77423",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "target": "design.",
+   "marker": "SUPERSEDED by"
+  },
+  {
+   "from": "memory/synthesis/2026-11-15-public-repo-ip-decision.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-15-round-continuation.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-15-round-continuation.md",
+   "target": "2026-11-15-status-report.md",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/synthesis/2026-11-15-status-report.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-15-status-report.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-16-contradiction-rulings.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-16-r1-round-record-DRAFT.md",
+   "target": "b59e528fe540",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-16-r1-round-record.md",
+   "target": "b59e528fe540",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/2026-11-16-status-thread-contradictions.md",
+   "target": "memory/synthesis/2026-11-16-crossassist-evidence-pass.md",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-addendum-r43.md",
+   "target": "r41",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-addendum-r43.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r40.md",
+   "target": "r36",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r40.md",
+   "target": "r31",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r40.md",
+   "target": "r38",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "target": "r56",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "target": "r36-lane-closeout",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "target": "r31",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "target": "2026-11-13-v102-upgrade-planning",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "target": "this",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "target": "this",
+   "marker": "SUPERSEDED by"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "target": "this",
+   "marker": "SUPERSEDED by"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "target": "this",
+   "marker": "SUPERSEDED by"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "target": "and",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "target": "r56",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "target": "r36-lane-closeout",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "target": "r31",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "target": "2026-11-13-v102-upgrade-planning",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "target": "this",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "target": "THIS",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-handoff-r38.md",
+   "target": "r36",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-handoff-r38.md",
+   "target": "r31",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "target": "r56",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "target": "r36-lane-closeout",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "target": "r31",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "target": "2026-11-13-v102-upgrade-planning",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "target": "this",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "target": "r24",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "target": "r17",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "target": "2026-11-12-upgrade-round.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "target": "consolidated-state",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "target": "r24",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "target": "r17",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "target": "2026-11-12-upgrade-round.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "target": "consolidated-state",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/synthesis/planning-meeting-minutes-v2-2026-11-14.md",
+   "target": "v102",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/planning-meeting-minutes-v2-2026-11-14.md",
+   "target": "bundle-pinned",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/synthesis/supersession-policy-baseline.md",
+   "target": "each",
+   "marker": "supersede"
+  },
+  {
+   "from": "memory/synthesis/supersession-policy-baseline.md",
+   "target": "X",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/verifier/a4a5-candidate-persisted-r40-2026-11-14.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/verifier/a4a5-lineage-repro-r39-2026-11-14.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/verifier/a4a5-verify-r38-2026-11-14.md",
+   "target": "implementation",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/verifier/ac-a2-closure-r19.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/verifier/ac-a2-final-state-r20.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/verifier/ac-a2-r29-probe-restage-2026-11-14.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/verifier/ac-a2-r73-final-reconciliation-2026-11-14.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/verifier/ac-a2-r76-final-sweep-2026-11-14.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/verifier/ac-a2-r81-autocontinue-final-2026-11-14.md",
+   "target": "it",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/verifier/ac-a2-r82-record-correction-2026-11-14.md",
+   "target": "r81",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/verifier/ac-a2-r82-record-correction-2026-11-14.md",
+   "target": "107cbd93",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/verifier/black-seat-sweep-r75b-2026-11-14.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/verifier/lww-clobber-evidence-2026-11-13.md",
+   "target": "OLDER/smaller",
+   "marker": "replaced by"
+  },
+  {
+   "from": "memory/verifier/MEMORY.md",
+   "target": "MinGit-x",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/verifier/planning-meeting-gate-2026-11-14.md",
+   "target": "v102",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/verifier/r30-probe-drift-adjudication-2026-11-14.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/verifier/r30-probe-drift-adjudication-2026-11-14.md",
+   "target": "ac_a2_live_leg_r20.py",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/verifier/r44-closeout-2026-11-14.md",
+   "target": "45323d09",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/verifier/r45-closeout-2026-11-14.md",
+   "target": "both",
+   "marker": "supersedes"
+  }
+ ]
+}
