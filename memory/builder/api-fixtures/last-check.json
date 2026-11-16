@@ -1,0 +1,235 @@
+{
+  "checked_at": "2026-11-16T07:38:40.141231+00:00",
+  "total_routes": 45,
+  "ok": 0,
+  "drifts": [
+    {
+      "route": "/api/activity",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/agents",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/chat",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/evolution/accept",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/evolution/reject",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/evolution/stats",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/file",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/file/raw",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/fleet",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/git",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/goals",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/goals/",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/goals/history",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/group-run",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/history",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/inference/active-generations",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/inference/status",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/knowledge-bases",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/manifest",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/memory",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/memory/file",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/merge",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/merge-queue",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/models",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/models/status",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/net/dns",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/net/fleet",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/net/http",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/net/latency",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/net/probe",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/ops",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/provenance",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/rag/knowledge-bases",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/rag/search",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/run-events",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/run-state",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/run-stop",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/scan-models",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/status",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/todo/prune",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/tools",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/upload",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/uploads",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/user-messages",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    },
+    {
+      "route": "/api/user-messages/check",
+      "type": "UNREACHABLE",
+      "detail": "[WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions"
+    }
+  ],
+  "new_endpoints": [],
+  "removed_routes": [],
+  "passed": false
+}

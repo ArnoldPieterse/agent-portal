@@ -1,0 +1,5 @@
+--- a/agent_portal.py
++++ b/agent_portal.py
+@@ -2,1 +2,2 @@
+ """Multi-agent chat portal, backed by the Unsloth Studio desktop instance.
++# Canary deploy test: good change

@@ -13,15 +13,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- index.html is PINNED: advance PIN_FILES (sha12 + canonical backup under memory/designer/) in the SAME turn as any edit, or pin_guard reverts it within ~5 min.
-- Mirror cycles clobber the goal ledger; evidence files survive on disk - re-run --record after any wipe.
-- 9/10 goals verified; Goal #4 (SLO enforcement) remains open, blocked on two upstream dependencies.
-- Portal DOWN (PID 14136 gone); unblock requires `schtasks /run PortalRun` on White host — Mechanic sandbox can't run schtasks.
-- Portal
-- Scribe at 3/10 (#6,#8,#10); goals #2 and #3 have on-disk evidence but markers lost to mirror wipe — re-record to reach 5/10.
-- Mirror wipe destroyed goal_ledger state; Archivist re-recorded 9/10 from on-disk evidence in cycle-2.
-- Goal #4 evolution fitness: Scenario B passes; Scenario A fails on C:\Users perms — fix is bare `python` + shell=True, not full exe path.
-- Scribe ledger at 5/10 after mirror-wipe recovery; open: #1,#4,#5,#6,#7,#8(62% prefill),#9
+- All 10/10 goals now verified in goal_ledger.py; Goal #6 recorded with real findings (3108 claims, 9 genuine path discrepancies).
+- Goal #7: global focus rings
+- Goal #4 (SLO enforcement) is the only open goal — blocked by portal downtime forcing mock-source evidence; all other 9 goals verified on dis
+- Builder at 6/10 verified; #9 hot-patch rollback confirmed
+- Tool `--record` uses 1-based line numbers (not 0-based); "line 9" = goal #2, not #3.
+- Mirror wipes keep destroying (verified:) markers — all
+- Fixed `goal_ledger.py` bug: `record_evidence` silently skips write when line already has `(pointer:`, returning success without persisting.
+- Portal DOWN (port 8099).
+- Git unavailable on this host (Z:\ shared folder); Designer must record evidence via files only, no local commits possible.
+- Scribe #1 & #9 blocked: sandbox can't reach
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
