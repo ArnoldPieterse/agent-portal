@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-17",
+  "goal": "Scribe#5 supersession-chain integrity",
+  "action": "Migrated 8 legacy pointers to canonical SUPERSEDED BY: format",
+  "files_modified": [
+    {
+      "file": "memory/archivist/index-integrity-r69-2026-11-14.md",
+      "pointer_to": "memory/archivist/index-integrity-r72-2026-11-14.md"
+    },
+    {
+      "file": "memory/archivist/portal-baseline-clobber-2026-11-15.md",
+      "pointer_to": "memory/archivist/portal-state-pin-2026-11-15-r2.md"
+    },
+    {
+      "file": "memory/designer/live-root-not-v2-r62-2026-11-14.md",
+      "pointer_to": "memory/designer/v21-merge-c820e755-r64-2026-11-14.md"
+    },
+    {
+      "file": "uploads/AgentPortal_V1/UPGRADES.md",
+      "pointer_to": "memory/portal/v1-upgrades-decisions.md",
+      "note": "not counted by v3 script (outside memory/)"
+    },
+    {
+      "file": "memory/synthesis/2026-11-12-upgrade-round.md",
+      "pointer_to": "memory/synthesis/2026-11-12-consolidated-state.md"
+    },
+    {
+      "file": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "pointer_to": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md"
+    },
+    {
+      "file": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "pointer_to": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md"
+    },
+    {
+      "file": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+      "pointer_to": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md"
+    }
+  ],
+  "before": {
+    "canonical": 0,
+    "legacy": 17,
+    "compliance_pct": 0.0
+  },
+  "after": {
+    "canonical": 7,
+    "legacy": 17,
+    "compliance_pct": 29.2,
+    "dangling": 0,
+    "cycles": 0
+  },
+  "remaining_work": [
+    "17 legacy mentions remain in NEWER files (forward references like 'Supersedes: X') - semantically correct but not canonical-form",
+    "4 are false positives (prose mentions, NOT supersession pointers): planning-meeting-2026-11-14.md, 2026-11-15-round-continuation.md, 2026-11-16-status-thread-contradictions.md, synthesis/INDEX.md",
+    "To reach 100%: either (a) accept forward references as compliant by spec amendment, or (b) add canonical pointers in the same files that contain legacy text"
+  ],
+  "verdict": "PASS (no dangling, no cycles)"
+}
