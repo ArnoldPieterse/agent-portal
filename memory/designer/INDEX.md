@@ -38,3 +38,7 @@ Last updated: 2026-11-15.
 
 ## Orphan count: ~70 files total; 15 active (11-15) indexed above; remainder = round logs + backups.
 Recommendation: archive r21-r71 round logs to memory/designer/archive-2026-11-14/ at next prune.
+- canonical pin backup ac3ca7a6a264 (D4 spacing pass, superseded same day)
+  -> memory/designer/index_html_CANONICAL_ac3ca7a6a264_2026-11-16b.html   PIN_FILES restore source (history)
+- canonical pin backup 2c6399f2d853 (D4 tokenized: --sp-*/--fs-* in :root, D7 breakpoints)
+  -> memory/designer/index_html_CANONICAL_2c6399f2d853_2026-11-16c.html   ACTIVE PIN_FILES restore source 2026-11-16
