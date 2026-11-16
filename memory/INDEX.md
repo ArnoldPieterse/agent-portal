@@ -2,7 +2,7 @@
 Updated: 2026-11-16.
 
 ## FILE ACCESS
-- TODO.md, MEMORY.md, memory/, agents.json, agent_portal.py ARE in your working dir - read via python/terminal tools; White keeps fresh. Stale -> ask Orchestrator/Researcher to relay. Tool writes land in the SHARED AGENT FOLDER (sandbox); portal serves BOTH roots by relative path. Report created files EXACTLY as that relative path - never drive letters (404).
+- TODO.md, MEMORY.md, memory/, agents.json, agent_portal.py ARE in your working dir - read via python/terminal tools; White keeps fresh; if stale, ask Orchestrator/Researcher to relay. Tool writes land in the SHARED AGENT FOLDER (sandbox); portal serves BOTH roots by relative path. Report created files EXACTLY as that relative path - never drive letters (404).
 
 ## Sub-indexes
 - -> memory/portal/INDEX.md   portal bugs + architecture (DM/uploads/sync, prune+git)

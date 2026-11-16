@@ -17,7 +17,7 @@ are push-only and were silently destroyed by the next HERE->sandbox push. Now:
   edit was captured, restore it (or tell the owning agent to re-apply on top of the snapshot).
 
 ## 2. Git-based goal progress (goals ARE registered in git)
-memory/goals/*.md is tracked + auto-committed every turn (post-turn sync + daily 18:00 net), so
+memory/goals/*.md is tracked + auto-committed every turn (post-turn sync + 15-min safety net since 2026-11-16), so
 git history IS the goal-progress record:
 - **GET /api/goals/history**: checkpoints = recent commits touching memory/goals/ (thinned to 8);
   at each, the 8 agent files are read from that commit and marker-bearing goal lines counted
