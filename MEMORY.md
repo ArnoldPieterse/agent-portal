@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- PortalWatchdog schtask does not exist on this host — root cause of portal not auto-recovering after crashes.
 - Goal 9 (memory-health) close is INVALID: /api/memory-health absent from live agent_portal.py, contradicting Scribe's cited evidence.
 - Scribe closed Goal 9 (memory-health) but endpoint still absent from live agent_portal.py post-restart
 - /api/memory-health confirmed ABSENT from live agent_portal.py (0 occurrences); Scribe's "confirmed live" claim was false
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Standing instruction (Arnold): when all goals hit 100%, dream 10 new goals, Orchestrator sets them, complete them; repeat indefinitely until
 - Designer Goal #1 done: ui/app.css has 63 tokens, zero hardcoded colors/radii/durations, reduced-motion guard added.
 - Goal 2: deploy_boot_task.py written; blocked — schtasks COM unavailable in sandbox, Red .245 off; unblock via WinRM/RDP per host.
+- Portal down: PermissionError fix applied but restart blocked by broken schtasks COM ("Class not registered"); 100% errors since 11-17
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
