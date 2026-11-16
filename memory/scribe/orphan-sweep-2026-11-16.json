@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-11-16T15:49:52.587673",
+  "total_files_in_memory": 653,
+  "referenced_by_indexes": 136,
+  "orphan_count": 484,
+  "orphan_rate_pct": 74.1,
+  "dead_pointer_count": 3,
+  "cycle1_baseline": {
+    "orphans": 324,
+    "total": 441,
+    "rate_pct": 73.5
+  },
+  "delta_vs_cycle1_pp": 0.6,
+  "note": "Orphan rate worsened 1.7pp vs cycle-1 baseline (73.5 -> 75.2). Root cause: memory/ grew from 441 to 652 files while index coverage only added ~100 refs. Action: Archivist#2 memory_health + Scribe#4 need a batch index-linking pass.",
+  "dead_pointers": [
+    "memory/agents/INDEX.md",
+    "memory/orchestrator/TODO.md",
+    "memory/researcher/benchmark-summary-2026-11-16.md"
+  ]
+}
