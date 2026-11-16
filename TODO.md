@@ -1,3 +1,11 @@
+## CYCLE 2 KICKOFF 2026-11-16 (Orchestrator seat) - supersedes older status lines
+- [x] Goal-cycle transition completed: cycle 1 closed 80/80 verified; new goals set for all 8 agents x 10 (set 2026-11-16) - canonical memory/goals/<name>.md, record below in `## AGENT GOALS (set 2026-11-16)`; cycle-1 files archived to memory/goals/archive/
+- [x] Proposals collected from goal-setting round g-1a1e266d42d (+ auto-resumes): 6 of 8 agents submitted; Orchestrator + Researcher models NOT loaded on White (LM Studio 404) -> their sets seat-drafted, flagged for ratification next round. Verbatim: memory/goals/cycle2-proposals-raw-2026-11-16.txt
+- [x] Coherence pass applied (SLO pipeline Mechanic#4->Builder#8->Verifier#4; fleet endpoint Mechanic#8; supersession Archivist#5/Scribe#5; memory-health Archivist#2/Scribe#9; Designer#5 replaced - responsive already shipped) - detail: memory/goals/cycle2-kickoff-2026-11-16.md
+- [x] Goal-logic bug fixed in agent_portal.py (rid NameError corrupted GOAL_RESET_PENDING.json on consumption); flag repaired with true consumed record; /api/goals live: 0/80, goal_reset_pending=false
+- [ ] **PENDING: restart portal** to load the fixed agent_portal.py - WAIT for active group run g-1a1e27ebd18 to end (was in progress at write time); then taskkill PID (_portal_pid.txt) -> schtasks /run PortalRun -> verify new PID on :8099 -> update _portal_pid.txt
+- [ ] NEXT ROUND: load Orchestrator + Researcher models on White (LM Studio), then have both agents ratify/revise their seat-drafted goal sets
+
 ## HOTLINE 2026-11-15 ~23:0x (Orchestrator, non-sandboxed - supersedes older status lines)
 - FLEET GOALS 62/80 (77.5 pct): +Verifier#10 report, +Researcher#9 audit closed; timed items now minutes-max per user directive
 - OUTBOUND NETWORK CAPABILITY LIVE: netcmd.py (NetworkCMD-style) - GET /api/net/fleet (3/3 hosts up), POST /api/net/{probe,latency,dns,http}; egress guard 403s public without allow_public; evidence log memory/ops/netcmd-ops.jsonl
