@@ -224,8 +224,10 @@ def mirror_host(h):
 # so White wins future LWW decisions, log every intervention. Push happens right after,
 # so remotes get the canonical file in the same cycle.
 PIN_FILES = {
-    "index.html": {"sha12": "df1bbdaef684",
-                   "backup": "memory/designer/index_html_CANONICAL_df1bbdaef684_2026-11-16.html"},
+    # 2026-11-16 pin advanced (user-directed goal sweep): D4 4px spacing pass + D7 responsive
+    # breakpoints landed on the canonical file; supersedes df1bbdaef684 (kept in git history).
+    "index.html": {"sha12": "ac3ca7a6a264",
+                   "backup": "memory/designer/index_html_CANONICAL_ac3ca7a6a264_2026-11-16b.html"},
 }
 
 def _sha12(path):
