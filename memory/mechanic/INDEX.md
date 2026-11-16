@@ -9,3 +9,4 @@ Last updated: 2026-11-13.
 ## Cycle-2 evidence (indexed 2026-11-16, Orchestrator seat - unblocks end-of-run sweep)
 - -> memory/mechanic/fleet-probe-v2-2026-11-16.md   cycle-2 goal 1: adaptive fleet probe (v2) build + verification
 - -> memory/mechanic/goal1_adaptive_probe_verified.json   cycle-2 goal 1: escalation test output (severity over N runs)
+- -> memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md   cycle-2 goal 5: probe->CHG entity integration evidence
