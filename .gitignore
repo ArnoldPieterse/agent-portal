@@ -2,6 +2,7 @@
 !/.gitignore
 !/agent_portal.py
 !/index.html
+!/ui/
 !/agents.json
 !/TODO.md
 !/TODO_completed.md
