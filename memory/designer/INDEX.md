@@ -1,5 +1,9 @@
 # memory/designer/ INDEX
-Last updated: 2026-11-15.
+Last updated: 2026-11-16.
+
+## Next-cycle proposals (2026-11-16)
+- designer-goal-proposals-2026-11-16.md — 10 new goals for next cycle (theme: design system + quality gate); pending Orchestrator collection
+- orphan fix 2026-11-16: added memory/designer/ sub-index pointer to root INDEX.md (flagged by Archivist)
 
 ## Active evidence (2026-11-15)
 - reland-2-3-4-live-2026-11-15.md — goals 2/3/4 surgically applied to live root; new sha12 9a8f98149a7b

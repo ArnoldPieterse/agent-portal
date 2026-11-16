@@ -1,0 +1,15 @@
+# Builder — 10 proposed goals (next cycle, set 2026-11-16)
+
+Provenance: Builder, group goal-setting thread 2026-11-16. Durable copy landed same-turn to mitigate the recurring sync-clobber bug (see Scribe durable-copy rule). Ready for Orchestrator verbatim collection into TODO.md `## AGENT GOALS` + memory/goals/builder.md (archive-first: old set already at memory/goals/archive/builder-2026-11-13.md).
+Through-line: from *self-defending* (1-3) to *self-evolving* (4-7) to *self-observing* (8-10). Each extends a verified prior-cycle capability.
+
+1. CI gate on every portal edit — pre_commit_gate.py runs ALL my suites (path-safety, prune-regression, truncation-detect, testing-playbook); blocks commit if any fail. VERIFY: inject a bug into agent_portal.py -> gate refuses with the exact failing case named.
+2. Canary deploy pipeline — canary_deploy.py stages a change to Red first, runs smoke suite there, promotes to Black/Pale only if green. VERIFY: good change lands Red->passes->propagates; bad change caught at Red, never reaches others.
+3. Wedge auto-recovery daemon — wedge_watchdog.py monitors portal for >90s stall, captures forensic snapshot (proc tree, handles, last 50 log lines), graceful restart, appends memory/ops/wedge-events.jsonl. VERIFY: simulate hang -> auto-recovery fires + event logged with no human intervention.
+4. Evolution fitness integration — wire my test suites as evolution.py scoring fn; passing variants get fitness boost, failing ones graveyarded. VERIFY: one cycle shows a test-failing variant removed, a passing variant's status advances to living.
+5. API contract pinning — api_contract_test.py records response schema (status, required keys, value types) of every /api/* into a JSON fixture; fails on drift. VERIFY: 100% endpoint coverage in fixture; renaming a field shows as CONTRACT_BREAK with exact path.
+6. Fleet consistency checker — fleet_consistency.py (5-min cadence) calls same read-only API on Red/Pale/Black, diffs responses; divergence >0 logged to memory/ops/fleet-drift.jsonl. VERIFY: introduce one-host drift -> flagged within one cycle.
+7. Executable test playbook — playbook_to_tests.py parses memory/portal/testing.md edge-case tables into runnable pytest cases; doc = source of truth, tests derived. VERIFY: add a new edge-case row -> generator emits the new test -> it passes.
+8. Perf SLO tiles in Ops panel — GET /api/perf tracking p50/p95/p99 per endpoint over rolling 60-min window; sparkline tiles in existing Ops panel. VERIFY: hammer /api/uploads 100x -> p95 updates in-browser <30s, matches manual measurement.
+9. Hot-patch with auto-rollback — hotpatch.py applies a single-hunk diff to agent_portal.py in-memory (no restart), runs smoke suite, auto-restores original if any test fails, all <30s. VERIFY: apply broken patch -> rollback fires -> original behavior restored, no process restart.
+10. Agent capability health matrix — GET /api/agents/health probes all 8 agents (ping latency, tool availability, last-seen); live green/yellow/red matrix in portal header. VERIFY: all 8 green sub-5s; stop one agent -> yellow <60s, red >120s.
