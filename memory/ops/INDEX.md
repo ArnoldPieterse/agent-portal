@@ -60,3 +60,4 @@ Last updated: 2026-11-16 ~16:30 (Mechic cycle-2 consolidation, goal #10).
 - white-lan-firewall-drop-2026-11-14.md — historical firewall incident
 - -> memory/ops/merge-queue-git-progress-2026-11-16.md | sandbox merge queue + git goal-progress runbook (/api/merge-queue, /api/merge, /api/goals/history; goal-closure procedure; pin lineage)
 - -> memory/ops/black-studio-failover-2026-11-16.md   Black Studio hung; Builder+Verifier failover to White (rollback record)
+- -> memory/ops/autoloop.md | AUTO-LOOP: idle agents re-enter the work queue within ~1 min (solo passes, UMQ-first priority, streak cap)
