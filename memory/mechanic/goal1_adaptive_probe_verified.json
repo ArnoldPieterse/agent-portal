@@ -1,0 +1,10 @@
+{
+  "goal": 1,
+  "title": "Adaptive fleet probe",
+  "tested_at": "2026-11-16T07:23:50.864685+00:00",
+  "test": "sim_fleet_probe_degrade.py - degrading host simulation",
+  "result": "PASS",
+  "detail": "Severity escalated OK->WARN->CRIT over 6 runs (10ms->32.5ms, baseline 10ms). Thresholds: WARN>50% drift, CRIT>200% drift.",
+  "artifact": "sim_fleet_probe_degrade.py",
+  "evidence_log": "memory/ops/probe-evidence.jsonl (4 real runs with warn_streak escalation 0->4)"
+}

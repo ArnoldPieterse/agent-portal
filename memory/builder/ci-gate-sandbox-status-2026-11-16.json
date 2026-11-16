@@ -1,0 +1,16 @@
+{
+  "ts": "2026-11-16T07:26:00.287736+00:00",
+  "ci_gate_partial": {
+    "passing": [
+      "truncation-detect (6/6)",
+      "e2e-truncation (5/5)"
+    ],
+    "failing_env": [
+      "path-safety (C:\\Users permission denied in sandbox)",
+      "prune-regression (same cause)"
+    ],
+    "note": "Both failing suites import agent_portal.py which calls _find_sandbox_dir() at module level. Works on White host, fails in isolated sandbox. Not a gate bug."
+  },
+  "parity_guard": "5/5 files match",
+  "api_routes_static": "45 routes extracted"
+}

@@ -1,0 +1,5 @@
+--- a/agent_portal.py
++++ b/agent_portal.py
+@@ -41,1 +41,1 @@
+-def _model_load_status(force=False, timeout=15):
++def broken(:

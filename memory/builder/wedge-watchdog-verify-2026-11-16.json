@@ -1,0 +1,15 @@
+{
+  "ts": "2026-11-16T07:25:32.748366+00:00",
+  "goal": 3,
+  "name": "Wedge auto-recovery daemon",
+  "test_command": "python wedge_watchdog.py --simulate",
+  "result": "4/4 PASS",
+  "cases": [
+    "forensics_capture: mock process tree + connections captured correctly",
+    "event_logging: JSONL entry written with type/recovered/forensics/ts fields",
+    "check_once_recovery: simulated stall -> detection -> restart -> ping OK -> rc=1, event logged recovered=True",
+    "check_once_recovery_failed: simulated stall -> restart fails -> rc=2, event logged recovered=False"
+  ],
+  "acceptance_criteria_met": true,
+  "note": "Full path (detection + forensics + graceful restart + event log) verified via mock; live deployment pending portal availability on White host"
+}
