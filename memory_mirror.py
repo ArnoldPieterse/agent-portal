@@ -224,10 +224,11 @@ def mirror_host(h):
 # so White wins future LWW decisions, log every intervention. Push happens right after,
 # so remotes get the canonical file in the same cycle.
 PIN_FILES = {
-    # 2026-11-16 pin advanced (goal sweep): D4 tokenized - --sp-*/--fs-* scale tokens in :root,
-    # all spacing/font-size declarations use var(); supersedes ac3ca7a6a264.
-    "index.html": {"sha12": "2c6399f2d853",
-                   "backup": "memory/designer/index_html_CANONICAL_2c6399f2d853_2026-11-16c.html"},
+    # 2026-11-16 pin advanced (goal-stall fix): Goals panel gains git-progress curve row
+    # (/api/goals/history) + Ops panel gains sandbox merge-queue section (/api/merge-queue,
+    # /api/merge). Supersedes 2c6399f2d853. Advanced BEFORE commit so pin_guard accepts it.
+    "index.html": {"sha12": "e0679e5f0844",
+                   "backup": "memory/designer/index_html_CANONICAL_e0679e5f0844_2026-11-16d.html"},
 }
 
 def _sha12(path):

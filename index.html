@@ -261,6 +261,8 @@ textarea{resize:vertical;min-height:64px}
         <div class="opsbox" id="gitStatus">—</div>
         <div style="font-size:12px;color:var(--dim);margin-top:6px">Recent commits:</div>
         <div class="opsbox" id="gitLog">—</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:6px">Sandbox merge queue (agent code edits captured before push-clobber):</div>
+        <div class="opsbox" id="mergeQueue">—</div>
         <div style="font-size:12px;color:var(--dim);margin-top:8px">Host tiles · this portal's host (GET /api/ops):</div>
         <div class="opsrow" style="align-items:stretch">
           <div class="opsbox" id="diskTile" style="flex:1;max-height:none" aria-label="Disk usage">—</div>
@@ -281,6 +283,7 @@ textarea{resize:vertical;min-height:64px}
     <div id="goalsPanel">
       <div id="goalsHead"><span>Goal velocity · live parse of memory/goals/</span><span id="goalsStat" class="hint">loading…</span></div>
       <div id="goalsBody"></div>
+      <div id="goalsGit" class="hint" style="margin-top:6px;font-size:12px"></div>
     </div>
     <div id="msgs"></div>
         <div id="intBanner"><span id="intText"></span><button id="intResume" class="iact">send continue prompt</button><button id="intDismiss">dismiss</button></div>
@@ -758,6 +761,7 @@ async function opsLoad(){
     $("opsStat").textContent=(o.changed?o.changed+" changed":"clean")+(o.log?(" · "+o.log.split("\n").length+" shown"):"");
   }catch(e){ $("opsStat").textContent="⚠ "+e; }
   opsTiles();   // host tiles refresh with the panel (2026-11-15)
+  mergeQueueLoad();   // sandbox merge queue (2026-11-16)
 }
 async function opsTiles(){
   try{
@@ -766,6 +770,24 @@ async function opsTiles(){
     $("diskTile").textContent=(d.total_gb!=null)?`disk ${d.drive} · ${d.used_gb} GB used / ${d.total_gb} GB (${Math.round(100*d.used_gb/d.total_gb)}%)\nfree ${d.free_gb} GB`:"⚠ "+(d.error||"no disk data");
     $("uptimeTile").textContent=`portal up · ${o.uptime_hm}\npid ${o.pid} · since ${o.started}`;
   }catch(e){ $("diskTile").textContent="⚠ "+e; $("uptimeTile").textContent="⚠ "+e; }
+}
+async function mergeQueueLoad(){
+  const el=$("mergeQueue"); if(!el)return;
+  try{
+    const q=await (await fetch("/api/merge-queue")).json();
+    if(!q.ok){ el.textContent="⚠ "+(q.error||"error"); return; }
+    const evs=(q.events||[]).slice(0,5);
+    if(!evs.length){ el.textContent="(empty - no diverged sandbox code files captured)"; return; }
+    const esc=s=>String(s).replace(/[&<>\"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+    el.innerHTML=evs.map(e=>'<div style="margin:2px 0">'+esc(e.ts.slice(5))+' · <b>'+esc(e.file)+'</b> sha '+esc(e.sha)+' ('+e.size+' B)'
+      +' <button class="btn" data-mq="'+esc(e.file)+'" style="padding:1px 8px;font-size:11px">↩ restore</button></div>').join("");
+    el.querySelectorAll("button[data-mq]").forEach(b=>b.onclick=async()=>{
+      opsSay("restoring "+b.dataset.mq+"…");
+      try{ const r=await (await fetch("/api/merge",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({file:b.dataset.mq})})).json();
+        opsSay(r.ok?"✓ restored "+r.file+" from snapshot "+r.snapshot+(r.committed?" (committed)":""):"⚠ "+(r.error||"restore failed"));
+      }catch(e2){ opsSay("⚠ "+e2); } finally{ mergeQueueLoad(); }
+    });
+  }catch(e){ el.textContent="⚠ "+e; }
 }
 $("opsBtn").onclick=()=>{ const open=$("opsPanel").classList.toggle("open"); $("opsBtn").classList.toggle("on",open); if(open)opsLoad(); };
 async function opsSay(t){ $("opsMsg").textContent=t; }
@@ -1145,6 +1167,19 @@ async function goalsLoad(){
     }
     $("goalsBody").innerHTML=html||'<div class="hint">no goal files</div>';
     $("goalsStat").textContent=o.fleet_done+"/"+o.fleet_total+" · fleet "+(o.fleet_pct||0)+"%";
+    // Git-based progress curve + stall signal (2026-11-16): goals are registered in git,
+    // so the history IS the progress tracker.
+    fetch("/api/goals/history").then(r=>r.json()).then(h=>{
+      const el=$("goalsGit"); if(!el)return;
+      if(!h.ok){ el.textContent="git progress: n/a ("+(h.error||"no repo")+")"; return; }
+      const s=h.series||[]; let t="git progress (last "+(h.commits_scanned||0)+" commits): ";
+      if(s.length){
+        t+=s.map(x=>x.fleet_reached).join(" \u2192 ")+" \u2192 "+o.fleet_done+"/"+o.fleet_total;
+        if(h.last_change_commit) t+=" \u00b7 last goal change "+h.last_change_commit.sha+" "+String(h.last_change_commit.ts).slice(5,16);
+      } else t+="no goal-file changes in window";
+      if((h.stall_commits||0)>3) t+=" \u00b7 \u26a0 stalled: "+h.stall_commits+" commits since last goal change";
+      el.textContent=t;
+    }).catch(()=>{});
   }catch(e){ $("goalsStat").textContent="⚠ "+e; }
 }
 $("goalsBtn").onclick=()=>{ const open=$("goalsPanel").classList.toggle("open"); $("goalsBtn").classList.toggle("on",open); if(open)goalsLoad(); };

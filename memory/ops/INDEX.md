@@ -28,3 +28,4 @@ Last updated: 2026-11-15.
 ## 2026-11-16 (cycle-2 kickoff)
 - -> memory/ops/risk-register-cycle2.md | milestone risk register (O5, living doc)
 - -> memory/ops/hotline-v2.md | HOTLINE protocol v2 + exercise log (M1 model residency, M2 Black down, R1 Red :8099)
+- -> memory/ops/merge-queue-git-progress-2026-11-16.md | sandbox merge queue + git goal-progress runbook (/api/merge-queue, /api/merge, /api/goals/history; goal-closure procedure; pin lineage)

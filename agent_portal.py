@@ -196,6 +196,7 @@ def _sync_workspace_to_sandbox():
     try:
         if not os.path.isdir(SANDBOX_DIR):
             return pushed, pulled
+        _merge_queue_scan()   # 2026-11-16: capture diverged push-only files BEFORE the push can clobber them
         # 1) LWW push: TODO.md / MEMORY.md + the whole memory/ tree (HERE wins only when newer)
         jobs = []
         for rel in SYNC_LWW:
@@ -308,6 +309,118 @@ def _auto_commit():
     except Exception:
         pass
     return None
+
+MERGE_QUEUE_DIR = os.path.join(HERE, "memory", "ops", "merge-queue")
+MERGE_QUEUE_LOG = os.path.join(HERE, "memory", "ops", "merge-queue.jsonl")
+
+
+def _merge_queue_scan():
+    """2026-11-16 (goal-stall fix): snapshot diverged push-only files BEFORE the sync can clobber them.
+    Agent tools run in the sandbox; their edits to code/config files never pull back (push-only rule),
+    so the next HERE->sandbox push silently destroys work that was never committed anywhere. Each new
+    divergence is captured once per content hash: a snapshot under memory/ops/merge-queue/ plus a jsonl
+    event - both inside memory/, so _auto_commit preserves them and POST /api/merge can restore."""
+    events = []
+    try:
+        if not os.path.isdir(SANDBOX_DIR):
+            return events
+        allow = [r for r in _git_allowlist()
+                 if not r.startswith("memory/") and r != ".gitignore" and r not in SYNC_LWW]
+        for rel in sorted(allow):
+            sp = os.path.join(SANDBOX_DIR, rel.replace("/", os.sep))
+            hp = os.path.join(HERE, rel.replace("/", os.sep))
+            if not (os.path.isfile(sp) and os.path.isfile(hp)) or _same_file(sp, hp):
+                continue
+            try:
+                sha = hashlib.sha256(open(sp, "rb").read()).hexdigest()[:10]
+                size = os.path.getsize(sp)
+            except OSError:
+                continue
+            snap_name = rel.replace(os.sep, "__") + "." + sha
+            snap_rel = "memory/ops/merge-queue/" + snap_name
+            if not os.path.exists(os.path.join(HERE, snap_rel)):
+                try:
+                    os.makedirs(MERGE_QUEUE_DIR, exist_ok=True)
+                    shutil.copy2(sp, os.path.join(HERE, snap_rel))
+                except OSError:
+                    snap_rel = None
+            ev = {"ts": time.strftime("%Y-%m-%d %H:%M:%S"), "file": rel, "sha": sha,
+                  "size": size, "snapshot": snap_rel}
+            dup = False   # log each file+content once (the scan runs every sync)
+            try:
+                if os.path.isfile(MERGE_QUEUE_LOG):
+                    tail = open(MERGE_QUEUE_LOG, encoding="utf-8", errors="replace").readlines()[-80:]
+                    for l in tail:
+                        try:
+                            d = json.loads(l)
+                        except Exception:
+                            continue
+                        if d.get("file") == rel and d.get("sha") == sha:
+                            dup = True
+                            break
+            except OSError:
+                pass
+            if not dup:
+                try:
+                    os.makedirs(os.path.dirname(MERGE_QUEUE_LOG), exist_ok=True)
+                    with open(MERGE_QUEUE_LOG, "a", encoding="utf-8") as f:
+                        f.write(json.dumps(ev) + "\n")
+                    events.append(ev)
+                except OSError:
+                    pass
+    except Exception:
+        pass
+    return events
+
+
+def _merge_queue_status():
+    """GET /api/merge-queue: recent divergence events (newest first) + snapshot inventory."""
+    out = {"ok": True, "events": [], "snapshots": []}
+    try:
+        if os.path.isfile(MERGE_QUEUE_LOG):
+            lines = [l for l in open(MERGE_QUEUE_LOG, encoding="utf-8", errors="replace").readlines() if l.strip()]
+            evs = []
+            for l in lines[-40:]:
+                try:
+                    evs.append(json.loads(l))
+                except Exception:
+                    pass
+            out["events"] = list(reversed(evs))
+        if os.path.isdir(MERGE_QUEUE_DIR):
+            out["snapshots"] = sorted(os.listdir(MERGE_QUEUE_DIR))[-40:]
+    except Exception as e:
+        out["ok"] = False
+        out["error"] = str(e)[:200]
+    return out
+
+
+def _restore_merge_queue(body):
+    """POST /api/merge {file, sha?}: restore a captured sandbox snapshot onto the root + commit.
+    Only git-allowlisted files are restorable; latest snapshot for that file wins unless sha given."""
+    rel = str((body or {}).get("file") or "").strip().replace("\\", "/")
+    want_sha = str((body or {}).get("sha") or "").strip()[:10]
+    if rel not in set(_git_allowlist()):
+        return {"ok": False, "error": "file not in git allowlist: %s" % rel}
+    prefix = rel.replace(os.sep, "__") + "."
+    cands = []
+    if os.path.isdir(MERGE_QUEUE_DIR):
+        for fn in sorted(os.listdir(MERGE_QUEUE_DIR)):
+            if fn.startswith(prefix) and (not want_sha or fn.endswith("." + want_sha)):
+                cands.append(fn)
+    if not cands:
+        return {"ok": False, "error": "no snapshot for %s%s" % (rel, (" sha " + want_sha) if want_sha else "")}
+    src = os.path.join(MERGE_QUEUE_DIR, cands[-1])
+    dst = os.path.join(HERE, rel.replace("/", os.sep))
+    try:
+        shutil.copy2(src, dst)
+    except OSError as e:
+        return {"ok": False, "error": "copy failed: %s" % e}
+    _git(["add", "-A"])
+    c = _git(["commit", "-m", "merge: %s restored from sandbox snapshot %s" % (rel, cands[-1])])
+    combined = (c["out"] + c["err"]).lower()
+    return {"ok": True, "file": rel, "snapshot": cands[-1],
+            "committed": c["ok"] and "nothing to commit" not in combined}
+
 
 def _safe_upload_path(rel):
     """Resolve an upload target inside UPLOAD_DIR. Returns (abs_path, clean_rel) or None.
@@ -814,7 +927,7 @@ def build_system_prompt(agent, mode, all_agents, rag_context="", shared_memory="
             " created files, use exactly that relative form as shown in your tool results - never"
             " invent drive letters or absolute paths. If you ever reported an absolute path or a"
             " drive letter (e.g. Z:\\...), it was wrong: restate that file by its relative path from"
-            " your working directory.")
+            " your working directory. PINNED FILES (2026-11-16): index.html is pinned in memory_mirror.py"            " (PIN_FILES) - edits to it are REVERTED on the next mirror cycle unless you advance the pin:"            " copy the new file to memory/designer/index_html_CANONICAL_<sha12>_YYYY-MM-DDx.html, update"            " PIN_FILES in memory_mirror.py to the new sha12 (first 12 of sha1) + backup path, and commit."            " Never re-apply reverted work without repinning - that is the clobber loop.")
     if shared_memory:
         parts.append("SHARED GROUP MEMORY (global file memory.md, visible to all agents):\n"
                      + shared_memory.strip())
@@ -2198,31 +2311,46 @@ def start_group_run(text, extra=None):
 
 def _agent_goals_block(name):
     """One short nudge per agent: its own open goals from memory/goals/<slug>.md, so group
-    turns push toward progress instead of re-verification (2026-11-15 goal-drift fix)."""
+    turns push toward progress instead of re-verification (2026-11-15 goal-drift fix).
+    2026-11-16 (goal-stall fix): parses with the STRICT ledger so evidence-closed goals no longer
+    show as open - the old naive regex re-listed them every turn and agents kept re-verifying
+    finished work. Also spells out the closure procedure: chat claims do not count, only a
+    (verified:)/(pointer:) marker on the goal line does."""
     try:
-        with open(os.path.join(HERE, "memory", "goals", name.lower() + ".md"), encoding="utf-8") as f:
-            txt = f.read(4000)
-        items = []
-        for ln in txt.splitlines():
-            m = re.match(r"^\s*\d+[.)]\s+(.*)", ln) or re.match(r"^\s*[-*]\s*\[ \]\s*(.*)", ln)
-            if not m:
-                continue
-            it = m.group(1).strip()
-            if not it or "[x]" in ln.lower():
-                continue
-            items.append(it[:200])
-            if len(items) >= 5:
-                break
-        # Team rules (2026-11-15): cross-assist + anti-spiral, shown on EVERY group turn so
-        # idle agents help open lanes and no agent re-verifies in circles.
+        path = os.path.join(HERE, "memory", "goals", name.lower() + ".md")
+        items, reached_n = [], 0
+        try:
+            for g in _goal_ledger_mod().parse_agent_file(path):
+                if g["status"] == "reached":
+                    reached_n += 1
+                    continue
+                it = g["text"].replace("\n", " ")
+                items.append(it[:160])
+                if len(items) >= 5:
+                    break
+        except Exception:
+            with open(path, encoding="utf-8") as f:      # ledger import failed - naive fallback
+                for ln in f.read(8000).splitlines():
+                    m = re.match(r"^\s*(?:\d+[.)]\s+|[-*]\s*\[ \]\s*)(.*)", ln)
+                    if not m or "(verified:" in ln:
+                        continue
+                    it = m.group(1).strip()
+                    if it and len(it) >= 12:
+                        items.append(it[:160])
+                        if len(items) >= 5:
+                            break
         items_txt = ("\n".join(items) if items else "(none open - you are at 100%; assist other agents' open goals)")
-        base = ("YOUR OPEN GOALS (memory/goals/%s.md \u2014 make progress on these; verify evidence on disk before claiming any done):\n%s"
-                % (name.lower(), items_txt))
+        base = ("YOUR OPEN GOALS (memory/goals/%s.md, %d/10 reached - make progress on these):\n%s"
+                % (name.lower(), reached_n, items_txt))
+        base += ("\nCLOSURE PROCEDURE (chat claims do NOT count): when a goal's acceptance test passes, run "
+                 "`python memory/researcher/goal_ledger.py --record %s <goal#> --note '<what ran + artifact path>'` - "
+                 "it appends the (verified:) marker the dashboard counts. Or write an evidence leaf in memory/%s/ "
+                 "AND add a line to that lane's INDEX.md - the end-of-run sweep auto-links it." % (name.lower(), name.lower()))
         base += ("\nTEAM RULES: (1) You may ASSIST another agent's open goal when you can unblock it - "
                  "coordinate in cross-talk and credit the original owner in the evidence note. "
                  "(2) ANTI-LOOP: if your last two turns produced no new file change, measurement or evidence, "
                  "stop re-verifying and take ONE concrete next step (or hand off / assist).")
-        return base[:1400]
+        return base[:1800]
     except Exception:
         return ""
 
@@ -2441,6 +2569,91 @@ def _goals_snapshot():
     return resp
 
 
+_GOALS_HIST_CACHE = {"head": None, "ts": 0.0, "resp": None}
+_GOAL_LINE_PAT = re.compile(r"^\s*(?:\d+[.)]\s+|[-*]\s*\[[ xX]\]\s*)")
+_GOAL_MARKER_PAT = re.compile(r"\(\s*verified\s*:|(?:\u2014|--)\s*recorded\b|\(\s*pointer\s*:", re.IGNORECASE)
+
+
+def _reached_at_commit(sha):
+    """True reached count at one commit: reads the 8 agent goal files via `git show` and counts
+    goal lines carrying an evidence marker (verified/recorded/pointer - presence, not re-validated
+    against today's indexes). Missing file = 0 goals. Returns int or None on git failure."""
+    total = 0
+    for agent in ("orchestrator", "researcher", "builder", "archivist",
+                  "scribe", "verifier", "designer", "mechanic"):
+        r = _git(["show", "%s:memory/goals/%s.md" % (sha, agent)], max_out=30000)
+        if not r["ok"] or not r["out"]:
+            continue
+        for ln in r["out"].splitlines():
+            if _GOAL_LINE_PAT.match(ln) and _GOAL_MARKER_PAT.search(ln):
+                total += 1
+    return total
+
+
+def _goals_history(max_commits=60, checkpoints=8):
+    """Git-based goal progress (2026-11-16): goals ARE registered in git (memory/goals/*.md is
+    tracked + auto-committed per turn) - this makes that history usable. Checkpoints = recent
+    commits that touched memory/goals/; at each, the 8 goal files are read from that commit and
+    marker-bearing goal lines counted (true count, not diff arithmetic - rewrites/marker churn
+    made net-diff reconstruction unreliable). Cached 30 s per HEAD so panel polls stay cheap.
+    stall_commits = consecutive recent commits with NO change to goal files (stall signal)."""
+    resp = {"ok": False, "series": [], "stall_commits": 0, "last_change_commit": None,
+            "commits_scanned": 0, "fleet_now": None}
+    try:
+        if not os.path.isdir(os.path.join(HERE, ".git")):
+            resp["error"] = "no git repo"
+            return resp
+        r_head = _git(["rev-parse", "HEAD"])
+        head = (r_head["out"] or "").strip().splitlines()[-1].strip() if r_head["ok"] else "?"
+        if (_GOALS_HIST_CACHE["resp"] and _GOALS_HIST_CACHE["head"] == head
+                and time.time() - _GOALS_HIST_CACHE["ts"] < 30):
+            return dict(_GOALS_HIST_CACHE["resp"])
+        # wider window for the timestamp lookup - goal-touching commits can be older than the
+        # last `max_commits` overall commits (auto-commits between goal changes)
+        r_all = _git(["log", "--format=%H|%cI", "-n", str(max(120, max_commits * 2))])
+        if not r_all["ok"]:
+            resp["error"] = "git log failed: " + (r_all["err"] or r_all["out"])[:120]
+            return resp
+        commits = [ln.split("|", 1) for ln in r_all["out"].splitlines() if "|" in ln]
+        resp["commits_scanned"] = len(commits)
+        # checkpoints: recent commits that touched goal files (newest first), thinned to `checkpoints`
+        r_goal = _git(["log", "--format=%H", "-n", str(max_commits), "--", "memory/goals/"])
+        goal_shas_full = [ln.strip() for ln in r_goal["out"].splitlines() if len(ln.strip()) == 40]
+        ts_by_sha = {sha: ts for sha, ts in commits}
+        goal_shas = goal_shas_full
+        if len(goal_shas) > checkpoints:   # thin to `checkpoints` evenly spaced (keep newest)
+            step = len(goal_shas) / float(checkpoints)
+            goal_shas = [goal_shas[int(i * step)] for i in range(checkpoints)]
+        series = []
+        for sha in reversed(goal_shas):   # oldest first
+            n = _reached_at_commit(sha)
+            if n is None:
+                continue
+            series.append({"sha": sha[:7], "ts": ts_by_sha.get(sha, ""), "fleet_reached": n})
+        resp["series"] = series
+        stall = 0
+        goal_set = set(goal_shas_full)    # FULL set - thinning is only for the curve
+        for sha, _ts in commits:          # newest first -> stall count + last change
+            if sha not in goal_set:
+                stall += 1
+            else:
+                resp["last_change_commit"] = {"sha": sha[:7], "ts": _ts}
+                break
+        resp["stall_commits"] = stall
+        try:
+            snap = _goals_snapshot()
+            resp["fleet_now"] = snap.get("fleet_done")
+            resp["fleet_total"] = snap.get("fleet_total")
+        except Exception:
+            pass
+        resp["ok"] = True
+        _GOALS_HIST_CACHE.update(head=head, ts=time.time(), resp=resp)
+        return resp
+    except Exception as e:
+        resp["error"] = str(e)[:200]
+        return resp
+
+
 _EVOLUTION = None
 
 
@@ -2599,14 +2812,18 @@ def _prune_todo():
             "completed_lines": len(dlines), "chunks_split": chunks}
 
 
-def _git(args, timeout=90):
+def _git(args, timeout=90, max_out=8000):
     import subprocess
     try:
         # 2026-11-15: CREATE_NO_WINDOW - child git console must not pop up (portal runs under pythonw)
-        r = subprocess.run([GIT_EXE] + args, cwd=HERE, capture_output=True, text=True, timeout=timeout,
+        r = subprocess.run([GIT_EXE] + args, cwd=HERE, capture_output=True, timeout=timeout,
                            creationflags=0x08000000)
-        return {"ok": r.returncode == 0, "out": (r.stdout or "").strip()[:8000],
-                "err": (r.stderr or "").strip()[:2000]}
+        # 2026-11-16: decode leniently - `git log -p` output can carry non-UTF-8 bytes from tracked
+        # binaries/legacy files; strict text=True crashed the reader thread and lost the whole result.
+        out = (r.stdout or b"").decode("utf-8", "replace")
+        err = (r.stderr or b"").decode("utf-8", "replace")
+        return {"ok": r.returncode == 0, "out": out.strip()[:max_out],
+                "err": err.strip()[:2000]}
     except Exception as e:
         return {"ok": False, "out": "", "err": str(e)[:300]}
 
@@ -2818,8 +3035,18 @@ class Handler(BaseHTTPRequestHandler):
                     return self._json(200, {"ok": True, **json.load(f)})
             except Exception as e:
                 return self._json(200, {"ok": False, "error": str(e)})
-            # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
-            return self._json(200, _goals_snapshot())
+        elif p == "/api/goals/history":
+            # Git-based goal progress curve + stall detection (2026-11-16).
+            try:
+                return self._json(200, _goals_history())
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
+        elif p == "/api/merge-queue":
+            # Sandbox merge queue (2026-11-16): agent code edits captured before push-clobber.
+            try:
+                return self._json(200, _merge_queue_status())
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/evolution/stats":
             # Evolution layer island (CHG-0002, gen 1): population table + graveyard JSON.
             return self._json(200, _evolution_snapshot())
@@ -3142,6 +3369,12 @@ class Handler(BaseHTTPRequestHandler):
                                         "out": c["out"], "err": c["err"],
                                         "status": _git_status()})
             return self._json(400, {"error": "unknown action (use 'commit' or 'init')"})
+        elif p == "/api/merge":
+            # Sandbox merge queue (2026-11-16): restore a captured sandbox edit onto the root + commit.
+            try:
+                return self._json(200, _restore_merge_queue(body))
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/agents":
             name = (body.get("name") or "").strip()
             if not name:

@@ -1,0 +1,34 @@
+{
+  "ts": "2026-11-16T16:xxZ",
+  "source": "static analysis of agent_portal.py do_POST (L3214-L3435)",
+  "total_post_endpoints": 20,
+  "routes": [
+    "/api/agents",
+    "/api/chat",
+    "/api/evolution/accept",
+    "/api/git",
+    "/api/goals/",
+    "/api/group-run",
+    "/api/history",
+    "/api/memory",
+    "/api/merge",
+    "/api/net/dns",
+    "/api/net/http",
+    "/api/net/latency",
+    "/api/net/probe",
+    "/api/run-state",
+    "/api/run-stop",
+    "/api/scan-models",
+    "/api/todo/prune",
+    "/api/upload",
+    "/api/user-messages",
+    "/api/user-messages/check"
+  ],
+  "tested_in_idempotency_proof": [
+    "/api/chat",
+    "/api/todo/prune",
+    "/api/git"
+  ],
+  "coverage": "3/20",
+  "note": "Live run blocked on portal restart. Static coverage table ready for immediate execution once portal is up."
+}

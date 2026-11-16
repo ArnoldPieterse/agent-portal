@@ -315,19 +315,28 @@ def sweep_evidence(root=None):
         cands = []
         if os.path.isdir(cdir):
             for lf in sorted(os.listdir(cdir)):
-                if not lf.endswith(".md") or lf == "INDEX.md":
+                # 2026-11-16 (goal-stall fix): artifacts count too, not just .md leaves -
+                # Builder's cycle-2 work is .py scripts; they count when index-linked like any leaf.
+                if lf == "INDEX.md" or lf.startswith(".") or lf.endswith((".bak", ".pyc")):
+                    continue
+                if not lf.endswith((".md", ".py", ".jsonl", ".json", ".html", ".css")):
                     continue
                 rel = "memory/%s/%s" % (agent, lf)
                 if not leaf_is_indexed(root, rel):
                     continue
-                h1 = ""
+                head = ""
                 try:
-                    for l2 in open(os.path.join(cdir, lf), encoding="utf-8", errors="replace"):
-                        if l2.strip().startswith("# "):
-                            h1 = l2.strip(); break
+                    with open(os.path.join(cdir, lf), encoding="utf-8", errors="replace") as fh:
+                        for l2 in fh:
+                            s = l2.strip()
+                            if s.startswith("# "):
+                                head = s[2:]
+                                break
+                            if not head and lf.endswith(".py") and s and not s.startswith(("#!", '"""', "'''")):
+                                head = s[:120]   # first real line (docstring text) for scripts
                 except Exception:
                     pass
-                cands.append((rel, (os.path.splitext(lf)[0] + " " + h1).lower()))
+                cands.append((rel, (os.path.splitext(lf)[0] + " " + head).lower()))
         if not cands:
             continue
         changed = False

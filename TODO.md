@@ -1,3 +1,14 @@
+## GOAL-STALL FIX 2026-11-16 ~16:2x (Studio seat, on user request) - supersedes older status lines
+Status: **code complete + unit-verified; portal restart PENDING** (kill PID from _portal_pid.txt -> schtasks /run PortalRun -> verify new PID on :8099 postdates agent_portal.py edit).
+Investigation of "agents not making progress" found three compounding bugs (full detail: memory/portal/bugs/goal-stall-loop-2026-11-16.md, runbook: memory/ops/merge-queue-git-progress-2026-11-16.md):
+- [x] BUG 1: per-turn prompt listed CLOSED goals as open (naive regex ignored evidence markers) -> agents re-verified finished work every turn. FIXED: _agent_goals_block now uses the strict ledger + spells out the CLOSURE PROCEDURE (--record command); truncation budget fixed (team rules were cut off at 1400 chars).
+- [x] BUG 2: agent code edits in the Studio sandbox silently destroyed by push-only sync; index.html additionally reverted by PIN_GUARD every mirror cycle (observed live on my own edit today). FIXED: merge queue snapshots diverged files BEFORE clobber (memory/ops/merge-queue/) + GET /api/merge-queue + POST /api/merge restore+commit + Ops panel UI; TOOLS prompt now teaches the repin procedure; pin advanced 2c6399f2d853 -> e0679e5f0844 (2026-11-16d).
+- [x] BUG 3: real progress never registered as evidence markers; sweep only matched .md leaves so Builder's .py artifacts could never count. FIXED: sweep now matches index-linked artifacts; first run auto-linked Builder#1 + Designer#1 (legit on-disk scripts).
+- [x] GIT AS PROGRESS TRACKER: goals ARE registered in git (memory/goals/*.md tracked, auto-committed per turn) - new GET /api/goals/history reads goal files at recent commits (true counts, not diff arithmetic) + stall detection; Goals panel renders the curve. Verified history: cycle-1 0->7->49->52->60->66 -> cycle-2 reset 5 -> live ~22/80.
+- [x] _git() hardened: lenient utf-8 decode (binary bytes crashed reader thread) + max_out param (8 KB cap truncated goal diffs).
+- [ ] RESTART portal to load all of the above; then live-verify /api/goals, /api/goals/history, /api/merge-queue and confirm Goals panel renders git-progress row.
+- NOTE: root memory/INDEX.md is 2435 chars (over the 1600 budget) - pre-existing; Archivist to trim at next index pass.
+
 ## CYCLE 2 KICKOFF 2026-11-16 (Orchestrator seat) - supersedes older status lines
 - [x] Goal-cycle transition completed: cycle 1 closed 80/80 verified; new goals set for all 8 agents x 10 (set 2026-11-16) - canonical memory/goals/<name>.md, record below in `## AGENT GOALS (set 2026-11-16)`; cycle-1 files archived to memory/goals/archive/
 - [x] Proposals collected from goal-setting round g-1a1e266d42d (+ auto-resumes): 6 of 8 agents submitted; Orchestrator + Researcher models NOT loaded on White (LM Studio 404) -> their sets seat-drafted, flagged for ratification next round. Verbatim: memory/goals/cycle2-proposals-raw-2026-11-16.txt

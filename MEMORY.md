@@ -16,16 +16,16 @@ HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module und
 Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dispatch ALL AGENTS IN PARALLEL - White's Studio only queues same-host agents internally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md). NO HUMAN GATES (Arnold 11-15): agents never create or wait on human decision gates - a blocked lane gets an alternative path or a named cross-agent handoff; the human only sets goals and reviews results.
 
 ## Hot Notes
-- Verifier's own goal tracker on disk has zero status markers — prior "5/10 done" claim was unbacked; must re-verify before reporting progress
-- Mechanic Goal 1 (adaptive fleet probe) closed: sim shows OK→WARN→CRIT escalation; evidence at memory/ops/mechanic-goal1-adaptive-probe-evide
-- Scribe's recurring bug: evidence-on-disk-but-not-appended causes /api undercount
-- Goal #3 done: 0 inline styles (was 27), 18 named classes added; dynamic agent colors still pending migration.
-- Builder: 6/10 goals on-disk verified (1,4,5,7,8-mock,10); remaining 4 (#2,#3,#6,#9) need live multi-host access
-- fleet_probe.py on disk (278 lines); load-baseline.jsonl not started; portal restart still pending per LIVE PLAN
-- G7 done: 57 open items, 35 owned (61.4%), 22 unowned legacy; ledger at memory/scribe/owner-coverage-ledger-20
-- All
-- Verifier re-verified 3/10 goals with on-disk evidence (G2 fault injection 6
-- All 5 Builder goals verified on disk: pre_commit_gate.py, canary_deploy.py,
+- All 5 Archivist goals verified on-disk and passing; goal 4 API ref doc was stale, regenerated via gen_api_ref.py
+- Verifier confirmed goal4-microinteraction-evidence-
+- G8 auto-synthesis: owner extraction too narrow (first 60 chars
+- All 5 Archivist goals verified on disk (16 Nov 03:54): knowledge graph, freshness SLA, handoff protocol, API ref,
+- Mechic: Goal #3 self-healing SMB mirror done — post-push verify + auto-repair added to memory_mirror.py, compiles clean.
+- load_probe.py confirmed on disk (6,527 B, 175 lines, py_compile clean) — resolves post-C1–C4 contradiction; Scribe G8 pre-fill stuck at 65%
+- Goal 8 (idempotency) blocked on portal restart; 3/20 POST endpoints tested, coverage table at memory/verifier/idempotency_coverage.json
+- Goal 4 pre-prune gate fixed: api-reference.md regenerated via gen_api_ref.py, now documents 39 endpoints (was 36), gate PASS.
+- SMB mirror clobbered index.html (sha12 dbfe78e9→e109764d); Designer re-applied all cycle-2 tokens/states, goal #4 & #8 complete.
+- r1 round record finalized: 14 DECIDED items owned, INDEX updated (5 entries), DRAFT superseded at memory/synthesis/2026-11-16-r1-round-recor
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
