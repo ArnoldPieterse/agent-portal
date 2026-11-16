@@ -2021,6 +2021,7 @@ STALL_KILL_S = 900         # (2026-11-15) no frames for THIS long => watchdog ki
 AUTO_RESUME_MAX = 5        # (2026-11-15) consecutive auto-resumes before a human follow-up is required
 AUTO_RESUME_DELAY_S = 45   # settle time after a run ends before the watchdog starts the continuation
 AUTOLOOP_IDLE_S = 60       # (2026-11-16, Arnold) max seconds an agent may sit idle before re-entering the work queue
+AUTOLOOP_BATCH_MAX = 8     # (2026-11-17) auto-loop fires ALL idle agents at once; cap on seats per batch pass
 AUTOLOOP_TICK_S = 15       # autoloop scheduler tick
 AUTOLOOP_MAX_STREAK = 40   # consecutive auto passes without human input before the loop pauses (GPU budget)
 AUTOLOOP_MAINT_COOLDOWN_S = 1800   # min gap between maintenance passes for an agent at 100%
@@ -2644,12 +2645,15 @@ def _auto_resume_watchdog():
             pass
 
 
-# ---- AUTO-LOOP (2026-11-16, Arnold): idle agents re-enter the work queue within ~1 minute ----
-# Rule: an agent that is idle must NOT wait for everyone else to finish. After AUTOLOOP_IDLE_S of
-# idleness it re-enters the queue as FIRST PRIORITY - (1) queued human messages, (2) its own open
-# goals (one concrete step + ledger evidence), (3) a rare maintenance sweep at 100% ("what else can
-# I do while we wait"). Solo passes run through the normal group-run machinery (one turn each), so
-# every pass is journaled, stall-guarded, evidence-swept and auto-committed. Detail: memory/ops/autoloop.md
+# ---- AUTO-LOOP (2026-11-16, Arnold; 2026-11-17 batch fire): idle agents re-enter the work queue
+# within ~1 minute. Rule: an agent that is idle must NOT wait for everyone else to finish.
+# Per-agent task priority: (1) queued human messages, (2) its own open goals (one concrete step +
+# ledger evidence), (3) a rare maintenance sweep at 100% ("what else can I do while we wait").
+# 2026-11-17: the watchdog no longer picks ONE agent per tick - it fires ALL idle agents AT ONCE:
+# one solo group run whose cast is every idle seat, with a per-agent task section in the broadcast
+# (each seat acts only on its own section; behaviour analysis of their last reply steers the task).
+# The pass runs through the normal group-run machinery (one parallel turn per seat), so it is
+# journaled, stall-guarded, evidence-swept and auto-committed. Detail: memory/ops/autoloop.md
 _agent_last_active = {}      # name -> epoch of last completed turn (in-memory truth)
 _autoloop_lock = threading.Lock()
 
@@ -2705,6 +2709,50 @@ def _agent_open_goal_count(name):
         return 0
 
 
+def _autoloop_behaviour_hint(name):
+    """Behaviour analysis (2026-11-17): read this agent's LAST substantive group-chat reply and
+    derive a one-line context for its next auto-loop task, so the batch pass continues where the
+    agent actually left off instead of re-running what it already did.
+    Returns '' or 'BEHAVIOUR: ...' - remaining-work lines beat blocker claims (work beats waiting),
+    and [SILENT]-only tails are ignored (nothing to continue)."""
+    try:
+        hist = _load_history("group")
+    except Exception:
+        return ""
+    last = None
+    for m in reversed(hist):
+        if (m.get("speaker") or "").strip().lower() != name.lower():
+            continue
+        content = (m.get("content") or "").strip()
+        if not content:
+            continue
+        _, is_silent, _ = _effective_reply(content)
+        if is_silent:
+            continue
+        last = content
+        break
+    if not last:
+        return ""
+    tail = last[-1200:]
+    rem = blk = None
+    for ln in tail.splitlines():
+        s = ln.strip()
+        if not s:
+            continue
+        low = s.lower()
+        if low.startswith(("remaining", "next step", "still open", "open:", "todo")) and len(s) >= 15:
+            rem = s.lstrip("-#* ").replace("**", "")[:200]
+            break
+        if blk is None and ("blocked by" in low or low.startswith("blocked")):
+            blk = s.strip("*-").replace("**", "")[:160]
+    if rem:
+        return "BEHAVIOUR: your last pass ended with remaining work - continue from there, do NOT redo it: %s" % rem
+    if blk:
+        return ("BEHAVIOUR: you reported a blocker last pass (%s) - take ONE step that does NOT depend on "
+                "it (another open goal, evidence/ledger upkeep, or assist another agent's lane); do not re-probe the same wall.") % blk
+    return ""
+
+
 def _autoloop_state():
     """GET /api/autoloop - live view of the idle re-entry loop."""
     with _autoloop_lock:
@@ -2725,8 +2773,11 @@ def _autoloop_state():
 
 
 def _autoloop_watchdog():
-    """One scheduler tick every AUTOLOOP_TICK_S: when NO group run is active, the most-waiting idle
-    agent gets a solo pass - first priority = queued human messages (oldest wins), else oldest-idle."""
+    """One scheduler tick every AUTOLOOP_TICK_S: when NO group run is active, ALL idle agents are
+    fired at once (2026-11-17) - one solo pass whose cast is every idle seat, each with its own task
+    section. Per-agent priority inside the broadcast: queued human messages first (UMQ injects them),
+    else their oldest open goal, else a maintenance sweep at 100%. Seats whose model is not ready are
+    excluded from the batch (their lanes stay covered by seat-drafted goals)."""
     while True:
         time.sleep(AUTOLOOP_TICK_S)
         if not _portal_live or _active_run_id:
@@ -2745,45 +2796,56 @@ def _autoloop_watchdog():
             idle = [n for n in names if now - la[n] >= AUTOLOOP_IDLE_S]
             if not idle:
                 continue
-            pick, why, prompt, best_ts = None, None, None, None
-            for n in idle:   # first priority: queued human messages (oldest wins)
+            # 2026-11-17 batch fire: For(allThatsIdle) giveTask - every idle seat gets its task in
+            # ONE parallel pass instead of one serial agent per tick. Seats whose model is not ready
+            # are excluded (firing a dead seat only wastes a turn; the run-start check already notes
+            # them for everyone else).
+            try:
+                mls = _model_load_status()
+            except Exception:
+                mls = {}
+            batch = [n for n in idle if not mls.get(n, {}).get("status") or mls[n]["status"] == "ok"]
+            if not batch:
+                continue   # every idle seat's model is down - nothing to fire at yet
+            batch = batch[:AUTOLOOP_BATCH_MAX]
+            sections, why_bits = [], []
+            for n in batch:   # per-agent task, steered by behaviour analysis of their last reply
                 try:
                     pend = umq_pending_for(n, names)
                 except Exception:
                     pend = []
+                og = _agent_open_goal_count(n)
+                idle_s = int(now - la[n])
+                hint = _autoloop_behaviour_hint(n)
                 if pend:
-                    ts0 = min(float(m.get("ts") or 0) for m in pend)
-                    if best_ts is None or ts0 < best_ts:
-                        best_ts, pick = ts0, n
-            if pick:
-                why = "queued human message(s)"
-                prompt = ("AUTO-LOOP (first priority): a queued human message is waiting and will be "
-                          "injected below - handle it first, then take ONE concrete step on your open goals.")
-            else:
-                og = {n: _agent_open_goal_count(n) for n in idle}
-                withg = [n for n in idle if og[n] > 0]
-                pick = max(withg, key=lambda n: (og[n], -la[n])) if withg else None   # most-starved lane first
-                if pick is not None:
-                    why = "open goals (%d)" % og[pick]
-                    prompt = ("AUTO-LOOP (idle re-entry): you have been idle for %d s. Do NOT wait for "
-                              "the other agents - take ONE concrete next step on your oldest open goal "
-                              "(memory/goals/%s.md), record evidence via the ledger as you go, then reply "
-                              "[CONCLUDED]." % (int(now - la[pick]), pick.lower()))
+                    why_bits.append("%s:queued-msg" % n.lower())
+                    body = ("a queued human message is waiting and will be injected below - handle it "
+                            "FIRST, then take ONE concrete step on your open goals.")
+                elif og > 0:
+                    why_bits.append("%s:%d-open" % (n.lower(), og))
+                    body = ("take ONE concrete next step on your oldest open goal "
+                            "(memory/goals/%s.md, %d open)." % (n.lower(), og))
+                elif now - la[n] >= AUTOLOOP_MAINT_COOLDOWN_S:
+                    why_bits.append("%s:maint" % n.lower())
+                    body = ("your goals are 100%% reached - do ONE useful check only (verify a recent "
+                            "evidence claim, fix a stale INDEX pointer, or assist another agent's open "
+                            "goal). If nothing is worth doing, reply [SILENT].")
                 else:
-                    cand = [n for n in idle if now - la[n] >= AUTOLOOP_MAINT_COOLDOWN_S]
-                    if not cand:
-                        continue   # all at 100% inside cooldown - genuinely nothing to do yet
-                    pick = min(cand, key=lambda n: la[n])
-                    why = "maintenance sweep"
-                    prompt = ("AUTO-LOOP (maintenance): your goals are 100%% reached. Use this pass for "
-                              "ONE useful check only (verify a recent evidence claim, fix a stale INDEX "
-                              "pointer, or assist another agent's open goal), then reply [CONCLUDED]. If "
-                              "nothing is worth doing, reply [SILENT].")
+                    continue   # at 100% inside maintenance cooldown - no task for this seat yet
+                sections.append("@%s (idle %d s): %s%s" % (
+                    n, idle_s, body, (" " + hint) if hint else ""))
+            if not sections:
+                continue   # all at 100% inside cooldown - genuinely nothing to do yet
+            why = ", ".join(why_bits)
+            prompt = ("AUTO-LOOP (batch pass, %d agents in parallel) - you have been idle. Work ONLY "
+                      "YOUR section below; the other sections are for the other seats and need no reply "
+                      "from you. Record evidence via the ledger as you go, then reply [CONCLUDED].\n" +
+                      "\n".join(sections))
             run, err = start_group_run(prompt, extra={"solo": True, "autoloop_why": why,
-                                                      "cast_override": [pick]})
+                                                      "cast_override": batch})
             if not err:
                 d["streak"] = int(d.get("streak", 0)) + 1
-                d["last_pass"] = {"agent": pick, "why": why,
+                d["last_pass"] = {"agent": ", ".join(batch), "batch": len(batch), "why": why,
                                   "ts": time.strftime("%Y-%m-%d %H:%M:%S")}
                 with _autoloop_lock:
                     _autoloop_save(d)
