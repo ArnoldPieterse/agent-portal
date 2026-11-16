@@ -5,3 +5,7 @@ Last updated: 2026-11-13.
 - mirror mtime guard / push_tree abs() fix / skipped_stale audit / apply bundle / hash-verify steps -> memory/mechanic/mirror-mtime-guard-2026-11-13.md   OPS r3 drop-in fix for memory_mirror.py (copy only when src > dst + 0.5s); 7 hunks + md5 verify; apply is White-local (Arnold), no restart needed
 - fixed mirror script (staged) -> memory/mechanic/memory_mirror_fixed.py   canonical target md5 c1f4699cb0277368a5a68694f30c5184 (LF, 8669B); NOTE 11-13: mirrored copy at other seats was CRLF 8854B md5 eef3fc9bf9b2c2fc5bf44d37b0801d8f (= +1B/line, pre-final-rewrite) - hash-verify at White before applying
 - UNC A/B / TTL vs sleep / C$ denied from Red / hosts awake -> memory/ops/runbook-notes.md   verdict: Route A (reconnect-on-fail) sufficient; probe scripts/results (probe_unc_ab*) NOT yet under memory/ - they will not pull back to White unless moved there
+
+## Cycle-2 evidence (indexed 2026-11-16, Orchestrator seat - unblocks end-of-run sweep)
+- -> memory/mechanic/fleet-probe-v2-2026-11-16.md   cycle-2 goal 1: adaptive fleet probe (v2) build + verification
+- -> memory/mechanic/goal1_adaptive_probe_verified.json   cycle-2 goal 1: escalation test output (severity over N runs)

@@ -46,3 +46,6 @@ Recommendation: archive r21-r71 round logs to memory/designer/archive-2026-11-14
   -> memory/designer/index_html_CANONICAL_ac3ca7a6a264_2026-11-16b.html   PIN_FILES restore source (history)
 - canonical pin backup 2c6399f2d853 (D4 tokenized: --sp-*/--fs-* in :root, D7 breakpoints)
   -> memory/designer/index_html_CANONICAL_2c6399f2d853_2026-11-16c.html   ACTIVE PIN_FILES restore source 2026-11-16
+
+## Cycle-2 evidence (indexed 2026-11-16, Orchestrator seat - unblocks end-of-run sweep)
+- -> memory/designer/goal3-component-abstraction-2026-11-16.md   cycle-2 goal 3: component abstraction evidence
