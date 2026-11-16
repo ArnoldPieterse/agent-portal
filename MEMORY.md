@@ -13,8 +13,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder 10/10 [OK] closed; fleet now 67/80 (84%). Pin e998e75a0ae4. Perf SLO tiles shipped to ui/core.js.
-- Design-check now PASSES 0 violations; fixed 5 gaps (reduced-motion, light theme, color-scheme fallback, .status-dot, toggle JS) in one pass.
 - Goal 9 (memory-health dashboard) closed: added /api/memory-health endpoint + Memory Health tab to portal dashboard.
 - agent_portal.py is 183 KB (187344 bytes), exceeding the 150 KB must-split threshold; Researcher flagged it as top open item
 - Goal 5: 10 orphaned_superseded files need successor pointers; Goal 9: endpoint shipped but
@@ -23,6 +21,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Coordination conflict: 3 agents (Builder,
 - Verifier
 - Archivist's v
+- Fleet 71/80 (88.75%). Open: Orchestrator 1, Designer 6, Mechanic 2. Scribe 10/10 complete.
+- PortalWatchdog schtask does not exist on this host — root cause of portal not auto-recovering after crashes.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
