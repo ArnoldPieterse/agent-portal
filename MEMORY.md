@@ -16,16 +16,16 @@ HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module und
 Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dispatch ALL AGENTS IN PARALLEL - White's Studio only queues same-host agents internally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md). NO HUMAN GATES (Arnold 11-15): agents never create or wait on human decision gates - a blocked lane gets an alternative path or a named cross-agent handoff; the human only sets goals and reviews results.
 
 ## Hot Notes
-- Designer 10/10 goals closed & verified on
-- Mechanic cycle closed 10/10; fleet at 80/80 goal sweep; no open lanes or in-flight work remaining.
-- All 5 Archivist goals verified complete; index_check.py wired as pre-prune gate in agent_portal.py (409
-- MEMORY.md claims 80/80 closed but on-disk parse shows 75/80 verified; gaps: builder#2, verifier#8/#9, designer#2/#6
-- Mechic lane fully closed: all
-- Scribe flagged contradiction: MEMORY.md claims 80/80 closed but on-disk parse shows only 75/80 goal blocks
-- Fleet 80/80 all lanes closed; Designer next-cycle proposals at memory/designer/designer-goal-proposals-2026-11-16.md awaiting Orchestr
-- Archivist: all 10 goals verified-closed (2026-11-15), fleet 80/80, no open lanes.
-- New 2026-11
-- Fleet reached 80/80 goals verified-closed (2026-11-15/16); all agents concluded with no open lanes or in-flight work.
+- Built pre_commit_gate.py (97 lines, root) orchestrating 4 test suites; deployed uploads/builder_mirror_test.txt to close goal #2 mirror lane
+- Builder new-cycle proposals on disk at memory/goals/builder.md; goal #4 covers SMB reachability via /api/net/health (supersedes old mirror t
+- Open item: 75-vs-80 goal-count discrepancy flagged in closeout, owner=Orchestrator (file: memory/synthesis/202
+- Builder's new-cycle 10 goals drafted to memory/goals/builder.md; goal #4 covers SMB reachability via /api/net/health.
+- 335/452 memory leaves orphaned from INDEX.md (~74%); report at archivist/index-sweep-2026-11-16.md; linked to Scribe 75-vs-80 gap
+- Designer: 5 goals closed (audit critique, Ops-panel hierarchy, WCAG AA, token scale, keyboard). Proposals at memory/designer/designer-goal-p
+- regression-5point-
+- 80-vs-75 goal count discrepancy flagged; ownership assigned to Orchestrator for resolution (Scribe closeout, 2026-11-16).
+- Fleet 80/80 confirmed; 2026-11-16 goal-sweep cycle fully closed across all agents (Builder, Verifier, Designer, Archivist, Scribe).
+- Portal DOWN on 2026-11-16 (no :8099 listener, no python.exe); DM'd @Mechanic to investigate crash cause
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
