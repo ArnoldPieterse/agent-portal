@@ -10,22 +10,22 @@
 HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module under memory/ ; pointer map -> memory/INDEX.md.
 
 ## GOAL (live plan = TODO.md top; keep both in sync)
-**FLEET 62/80 (77.5%)** (11-15 ~23:0x; was 52/80 @18:xx, 60/80 @21:3x) — evidence-gated; /api/goals is the SINGLE SOURCE OF TRUTH, do not re-derive or re-reconcile counts in chat (hot notes over-counted to 77 today). Open lanes: Builder 4/10, Verifier 3/10, Designer 1/10, Mechanic 8/10 (#3 reboot dry-runs OK'd 17:xx - remote legs Red/Pale/Black in progress), Orchestrator+Researcher 8/10. evolution.py pinned at shared root (sha1 7c20402e; live-verified via /api/evolution/stats, CHG-0001 living); **CHG-0002 ACCEPTED** (island: status=living, accepted 14:50, all 3 pre-written tests green; endpoints live on PID 26288). PUBLIC REPO LIVE (ArnoldPieterse/agent-portal). White Q8_0 = **KEEP** (Arnold 17:xx; reversible if VRAM needed). GOAL-CYCLE UPGRADE applied 18:xx: /api/goals arms memory/goals/GOAL_RESET_PENDING.json at 100% for ALL agents -> next group run auto-starts a NEW goal-setting round (Orchestrator chairs); cross-assist + anti-loop team rules injected into every turn; loop audit clean, all logs zero errors.
+**FLEET CYCLE 2 OPENED** (set 2026-11-16): cycle 1 closed 80/80 verified (ledger goal_ledger.json). New goals: all 8 agents x 10 = 0/80 reached; canonical memory/goals/<name>.md (cycle-1 files archived); record TODO.md '## AGENT GOALS (set 2026-11-16)'. /api/goals = SINGLE SOURCE OF TRUTH. Cycle-2 charter: SLO pipeline Mechanic#4 measures -> Builder#8 visualizes -> Verifier#4 enforces; fleet-state endpoint Mechanic#8; supersession script=Archivist#5/policy=Scribe#5; memory-health engine=Archivist#2/dashboard=Scribe#9. Orchestrator+Researcher sets seat-DRAFTED (their models not loaded - LM Studio 404) -> ratify next round. GOAL_RESET_PENDING consumed by run g-1a1e266d42d; consumption bug fixed in agent_portal.py (rid NameError had corrupted the flag). Cross-talk counter reset at kickoff (0, infinite budget). PUBLIC REPO LIVE (ArnoldPieterse/agent-portal); evolution CHG-0002 ACCEPTED (island living).
 
 ## Durable rules (detail in the tree)
 Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dispatch ALL AGENTS IN PARALLEL - White's Studio only queues same-host agents internally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md). NO HUMAN GATES (Arnold 11-15): agents never create or wait on human decision gates - a blocked lane gets an alternative path or a named cross-agent handoff; the human only sets goals and reviews results.
 
 ## Hot Notes
-- Built pre_commit_gate.py (97 lines, root) orchestrating 4 test suites; deployed uploads/builder_mirror_test.txt to close goal #2 mirror lane
-- Builder new-cycle proposals on disk at memory/goals/builder.md; goal #4 covers SMB reachability via /api/net/health (supersedes old mirror t
-- Open item: 75-vs-80 goal-count discrepancy flagged in closeout, owner=Orchestrator (file: memory/synthesis/202
-- Builder's new-cycle 10 goals drafted to memory/goals/builder.md; goal #4 covers SMB reachability via /api/net/health.
-- 335/452 memory leaves orphaned from INDEX.md (~74%); report at archivist/index-sweep-2026-11-16.md; linked to Scribe 75-vs-80 gap
-- Designer: 5 goals closed (audit critique, Ops-panel hierarchy, WCAG AA, token scale, keyboard). Proposals at memory/designer/designer-goal-p
-- regression-5point-
-- 80-vs-75 goal count discrepancy flagged; ownership assigned to Orchestrator for resolution (Scribe closeout, 2026-11-16).
-- Fleet 80/80 confirmed; 2026-11-16 goal-sweep cycle fully closed across all agents (Builder, Verifier, Designer, Archivist, Scribe).
-- Portal DOWN on 2026-11-16 (no :8099 listener, no python.exe); DM'd @Mechanic to investigate crash cause
+- Sandbox blocks tasklist/netstat/curl/powershell; no live port probe possible from Mechanic's lane.
+- Portal down (no :8099 listener); Verifier DM'd @Mechanic for crash diagnosis — blocker until resolved.
+- Fleet goal-sweep closed 80/80 on 2026-11-16; MEMORY.md GOAL line updated from stale 62/
+- 2026-11-16 goal-sweep closed fleet at 80/80; portal :8099 outage flagged but appears recovered per Mechanic.
+- Portal :8099 crash root cause: `_find_sandbox_dir()` hits PermissionError scanning C:\Users; fix anchors on file location + PermissionError-
+- Portal crash root cause: `_find_sandbox_dir()` hits PermissionError because `expanduser("~")` resolves to wrong home on Windows (Mechanic, 2
+- Fleet goal-sweep closed 80/80 on 2026-11-16; Builder's live plan "4/10" was stale — all 10 verified on disk.
+- Portal crash: `_find_sandbox_dir()` (agent_portal.py
+- Portal crash: _
+- supersession_check.py PASS (462 leaves, 14 edges, 0 cycles); 4 goals open: knowledge_graph, memory_health, PROTOCOL.md, gen_api_ref
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

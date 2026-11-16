@@ -2080,6 +2080,10 @@ def start_group_run(text, extra=None):
         # Goal-cycle upgrade (2026-11-15): when every agent's goals are 100% reached, the
         # backend armed memory/goals/GOAL_RESET_PENDING.json. Consume it here: this run MUST
         # open a NEW goal-setting round before any other work.
+        # 2026-11-16 fix: rid must exist BEFORE the consumption write (was referenced in
+        # json.dump before its assignment -> NameError swallowed by except, which truncated
+        # GOAL_RESET_PENDING.json to 0 bytes via open("w") and left the flag corrupted).
+        rid = "g-%x-%s" % (int(time.time() * 1000), os.urandom(3).hex())
         reset_note = ""
         try:
             _gf = os.path.join(HERE, "memory", "goals", "GOAL_RESET_PENDING.json")
@@ -2090,13 +2094,14 @@ def start_group_run(text, extra=None):
                                   "goals for the next cycle; collect them verbatim into TODO.md '## AGENT GOALS' and "
                                   "memory/goals/<name>.md (move old files to memory/goals/archive/ first). Old goal "
                                   "files are replaced, not appended to.")
+                    _rec = json.dumps({"armed": False,
+                                       "consumed_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                       "run_id": rid})   # serialize BEFORE truncating the file
                     with open(_gf, "w", encoding="utf-8") as _f:
-                        json.dump({"armed": False, "consumed_at": time.strftime("%Y-%m-%d %H:%M:%S"),
-                                   "run_id": rid}, _f)
+                        _f.write(_rec)
         except Exception:
             pass
         full_text = (text or "") + reset_note
-        rid = "g-%x-%s" % (int(time.time() * 1000), os.urandom(3).hex())
         hist = _load_history("group")
         run = {"id": rid, "status": "running", "prompt": full_text[:4000], "cast": (mentioned or names),
                "settled": [], "nudges": 0, "phase": "prompt",
