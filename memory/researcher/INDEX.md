@@ -38,7 +38,7 @@ Last updated: 2026-11-15 (FINAL: mirror-clobber mechanism resolved w/ config evi
 
 ## Cycle-2 leaves (2026-11-16, worked on-behalf of Researcher per user directive)
 - -> memory/researcher/claim-reverification-2026-11-16.md | R1: 6 claims re-run from White seat (4 SUPPORTED / 1 DRIFT / 1 stale)
-- -> memory/researcher/benchmark-summary-2026-11-16.md | R3: Q4_K_S 127.7 vs Q8_0 82.3 tok/s + per-role model recommendation
+- -> memory/researcher/model-benchmark-2026-11-16.md | R3: Q4_K_S 127.7 vs Q8_0 82.3 tok/s + per-role model recommendation (2026-11-16 pointer fix: file was renamed benchmark-summary -> model-benchmark; dangling ptr unblocked the prune gate)
 - -> memory/researcher/failure-mode-indicators-2026-11-16.md | R4: 4 ranked leading indicators from 93 mined gaps
 - -> memory/researcher/lit-review-goal-cycling-2026-11-16.md | R5: OKR-Agent + Benchmark Self-Evolving + Reflexion mapped to cycle machinery
 - -> memory/researcher/sync-semantics-options-2026-11-16.md | R7: single-writer + epoch stamps recommended over vector clocks on SMB
