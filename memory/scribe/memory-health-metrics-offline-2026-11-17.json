@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-17",
+  "mode": "offline (portal down)",
+  "metrics": {
+    "hot_file_lines": 30,
+    "orphan_rate": 98.5,
+    "orphan_count": 572,
+    "total_files": 581,
+    "contradiction_count": "n/a",
+    "supersession_validity": "PASS",
+    "supersession_orphans": 0,
+    "owner_coverage_pct": 77.2,
+    "todo_total_items": 237,
+    "durable_copy_integrity": {
+      "scribe_files_in_memory": 38,
+      "status": "PASS"
+    }
+  }
+}

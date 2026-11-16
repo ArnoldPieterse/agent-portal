@@ -1,0 +1,30 @@
+{
+  "audit_date": "2026-11-17",
+  "goal": "Scribe#5 supersession-chain integrity",
+  "files_scanned": 581,
+  "orphaned_superseded": [],
+  "valid_chains": [
+    {
+      "file": "memory\\archivist\\index-integrity-2026-11-14.md",
+      "successor_hint": "-> memory/ops/git-hygiene.md"
+    },
+    {
+      "file": "memory\\goals\\archive\\README.md",
+      "successor_hint": "superseded by live researcher.md."
+    },
+    {
+      "file": "memory\\ops\\INDEX.md",
+      "successor_hint": "-> memory/ops/windows-runbook.md"
+    },
+    {
+      "file": "memory\\scribe\\supersession-run-2026-11-16.md",
+      "successor_hint": "canonical head per topic is unambiguous. (core integrity property HOLDS)"
+    }
+  ],
+  "summary": {
+    "total_superseded": 4,
+    "with_successor_pointer": 4,
+    "orphaned_no_pointer": 0,
+    "verdict": "PASS"
+  }
+}
