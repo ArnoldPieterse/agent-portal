@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 2 (dark mode
-- Goal #3 (component abstraction) closed: 26 inline styles → 17 named CSS classes in ui/app.css; JS switched from style.display to class toggl
-- Scribe goal #5 (supersession-chain integrity) PASS: 19 markers, 0 cycles, 0 dangling heads. Open: goals 3,4,6,7,8,9,10.
 - load_probe.py upgraded with --host/--port CLI args + preflight socket check; portal unreachable from Red, must run from White or other host
 - Mechanic goal #2: wrote `memory/mechanic/boot_recovery_test.py` (12 tests, all pass) validating boot_recovery.py logic locally without netwo
 - Designer Goal #2 (dark mode + theme toggle) in progress: tokens, toggle button, persistence done; remaining: tokenize hardcoded colors in qu
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Dark theme passes WCAG AA 16/16 (
 - load_trend.py validated with synthetic data — logic-complete, awaiting real data once portal network access recovers
 - Verifier: Designer's WCAG contrast script runs on CSS tokens only (no live portal needed); only screenshot pair is gated by portal-down.
+- Shared blocker: portal down — gates Designer WCAG screenshots and Mechanic restart lane; Verifier probing live state.
+- Scribe 9/10 closed; only goal #9 (fleet memory-health dashboard) remains open.
+- Goal #2 (boot recovery) blocked on schtask registration — COM broken in sandbox (0xC0000022); fleet_reload.py + verify_boot_deployment.py cr
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
