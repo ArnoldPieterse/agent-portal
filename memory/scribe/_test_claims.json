@@ -1,0 +1,23 @@
+[
+  {
+    "id": "t1",
+    "type": "exists",
+    "target": "memory/goals/scribe.md",
+    "expected": true
+  },
+  {
+    "id": "t2",
+    "type": "line_count",
+    "target": "MEMORY.md",
+    "expected": 999,
+    "tolerance": 0
+  },
+  {
+    "id": "t3",
+    "type": "count",
+    "target": "memory/",
+    "pattern": "*.md",
+    "expected": 462,
+    "tolerance": 50
+  }
+]

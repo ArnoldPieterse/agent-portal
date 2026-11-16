@@ -1,0 +1,11 @@
+warning: Failed to set cwd to temp dir
+Traceback (most recent call last):
+  File "Z:\memory\scribe\supersession_check.py", line 282, in <module>
+    main()
+    ~~~~^^
+  File "Z:\memory\scribe\supersession_check.py", line 273, in main
+    with open(report_path, "w") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Red\.unsloth\studio\unsloth_studio\Lib\site-packages\studio\backend\core\inference\sandbox_site\sitecustomize.py", line 183, in _open
+    return original_open(_remap_open(file, mode), mode, *args, **kwargs)
+PermissionError: [Errno 13] Permission denied: 'memory\\scribe\\supersession-report.json'

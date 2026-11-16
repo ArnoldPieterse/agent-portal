@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-11-16T15:06:21.589407",
+  "goal": "Scribe #2 - Contradiction detector",
+  "acceptance_criterion": "seeding a false claim in a test run -> flagged pre-record",
+  "test_claims_file": "memory/scribe/_test_claims.json",
+  "results": {
+    "total": 3,
+    "passed": 2,
+    "failed": 1,
+    "seeded_false_claim": {
+      "id": "t2",
+      "type": "line_count",
+      "target": "MEMORY.md",
+      "expected": 999,
+      "actual": 31,
+      "pass": false,
+      "note": "Deliberately wrong line count (999 vs actual 31) correctly flagged as FAIL"
+    },
+    "exit_code": 1,
+    "note": "Exit code 1 confirms the detector signals failure when a claim contradicts disk ground truth"
+  },
+  "status": "PASS - acceptance criteria met"
+}

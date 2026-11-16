@@ -1,0 +1,49 @@
+{
+  "recorded_at": "2026-11-16T05:20:32Z",
+  "files": {
+    "agent_portal.py": {
+      "sha256": "b104b10066f0de683390bf0046941700ec50fae385ae8ad69a13cf51bba17f8d",
+      "size": 163717
+    },
+    "evolution.py": {
+      "sha256": "6216f22e4f6173ecca7717aca3c42d55f4371ed6ee30701950adecfa7919187c",
+      "size": 15922
+    },
+    "index.html": {
+      "sha256": "130cde888573b18568890caa5aae1ad7c0fe1bb25f8317c48ab3689ebc50af66",
+      "size": 88557
+    },
+    "memory/INDEX.md": {
+      "sha256": "4075dd0b0b6561bb1640be1f1017436dae22d0c0165076bd0c30dafd9bdd71d9",
+      "size": 2466
+    },
+    "memory/goals/builder.md": {
+      "sha256": "0704b55e4c2f5ce63bf7a149a8631b7ba2cc9802b01b61d8271e70c7d2a9df53",
+      "size": 3480
+    },
+    "memory/goals/designer.md": {
+      "sha256": "7e6be26ab70df77af1aff6cbd32957e7c5e5aa8fb4c9ab23cb185f0a51d2b590",
+      "size": 3712
+    },
+    "memory/goals/archivist.md": {
+      "sha256": "faac678007b51adf0d58bd53d05821fab52933de93fb625723d50cc2a4c768a8",
+      "size": 3716
+    },
+    "memory/goals/scribe.md": {
+      "sha256": "838e7e9651c9c1595a517c28a94f2df5764617c04cd0500a93abc1db4c7195b0",
+      "size": 3590
+    },
+    "memory/goals/mechanic.md": {
+      "sha256": "1cde6f3a68495c008be092228f88e2f1852ec013a99fe4b369ed6acb08ff5a0a",
+      "size": 3591
+    },
+    "memory/goals/verifier.md": {
+      "sha256": "2d48bbac8fcf45448093c125338d2d5b3027b42178d0ea529fa29442faa6ef21",
+      "size": 2631
+    },
+    "TODO.md": {
+      "sha256": "3194403bcf6f8b6acb4ebd599f8f3ee51611699d63ea7d4b89ff185bf3b5dc95",
+      "size": 144685
+    }
+  }
+}

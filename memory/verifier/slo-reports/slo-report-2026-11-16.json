@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-16",
+  "ts": "2026-11-16T05:40:21.772056+00:00",
+  "slo_thresholds": {
+    "p95_s": 2.0,
+    "p99_s": 5.0
+  },
+  "source": "mock",
+  "verdict": "PASS",
+  "endpoints_tested": 5,
+  "endpoints_pass": 5,
+  "breaches": [],
+  "details": {
+    "/api/git": {
+      "p95": 0.2215,
+      "p99": 0.3545,
+      "count": 470,
+      "p95_ok": true,
+      "p99_ok": true,
+      "status": "PASS"
+    },
+    "/api/fleet": {
+      "p95": 0.3579,
+      "p99": 0.5726,
+      "count": 428,
+      "p95_ok": true,
+      "p99_ok": true,
+      "status": "PASS"
+    },
+    "/api/perf": {
+      "p95": 0.3616,
+      "p99": 0.5785,
+      "count": 371,
+      "p95_ok": true,
+      "p99_ok": true,
+      "status": "PASS"
+    },
+    "/api/goals": {
+      "p95": 0.0703,
+      "p99": 0.1125,
+      "count": 124,
+      "p95_ok": true,
+      "p99_ok": true,
+      "status": "PASS"
+    },
+    "/api/models/status": {
+      "p95": 0.3483,
+      "p99": 0.5572,
+      "count": 166,
+      "p95_ok": true,
+      "p99_ok": true,
+      "status": "PASS"
+    }
+  }
+}

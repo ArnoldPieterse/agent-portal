@@ -1,0 +1,11 @@
+{
+  "check": "api_contract_consistency",
+  "date": "2026-11-16",
+  "fixture_endpoints": 43,
+  "source_routes": 42,
+  "missing_from_fixture": [],
+  "extra_in_fixture": [
+    "_meta"
+  ],
+  "status": "PASS"
+}

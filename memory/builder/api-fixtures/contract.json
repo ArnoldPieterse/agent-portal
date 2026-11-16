@@ -1,0 +1,285 @@
+{
+  "/api/activity": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "sessions": "list"
+    }
+  },
+  "/api/agents": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "Returns list of agent objects"
+  },
+  "/api/chat": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool"
+    },
+    "_note": "POST only in practice but route exists for GET error"
+  },
+  "/api/evolution/accept": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool"
+    }
+  },
+  "/api/evolution/reject": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool"
+    }
+  },
+  "/api/evolution/stats": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool"
+    }
+  },
+  "/api/file": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "Returns file content; 404 on error"
+  },
+  "/api/file/raw": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "Returns raw bytes, not JSON"
+  },
+  "/api/fleet": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ts": "str",
+      "ttl": "int",
+      "hosts": "list"
+    }
+  },
+  "/api/git": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "repo": "bool"
+    },
+    "_note": "Conditional: changed(list), status(str), log(str)"
+  },
+  "/api/goals": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool",
+      "agents": "list"
+    }
+  },
+  "/api/group-run": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool",
+      "run_id": "str",
+      "cast": "list"
+    }
+  },
+  "/api/history": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool",
+      "history": "list"
+    }
+  },
+  "/api/inference/active-generations": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "Proxied to LLM"
+  },
+  "/api/inference/status": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "Proxied to LLM"
+  },
+  "/api/knowledge-bases": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "Proxied to RAG"
+  },
+  "/api/manifest": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "count": "int",
+      "files": "list"
+    }
+  },
+  "/api/memory": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)"
+  },
+  "/api/memory/file": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "404 on error"
+  },
+  "/api/models": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "Proxied to LLM /v1/models"
+  },
+  "/api/models/status": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool"
+    },
+    "_note": "500 on error"
+  },
+  "/api/net/dns": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "POST; 500 on error"
+  },
+  "/api/net/fleet": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "500 on error"
+  },
+  "/api/net/http": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "POST; 500 on error"
+  },
+  "/api/net/latency": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "POST; 500 on error"
+  },
+  "/api/net/probe": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "POST; 500 on error"
+  },
+  "/api/ops": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool",
+      "pid": "int"
+    }
+  },
+  "/api/provenance": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool",
+      "agents": "list"
+    },
+    "_note": "Alias for /api/goals"
+  },
+  "/api/rag/knowledge-bases": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "Proxied to RAG"
+  },
+  "/api/rag/search": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "POST; proxied to RAG"
+  },
+  "/api/run-events": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "events": "list"
+    }
+  },
+  "/api/run-state": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)"
+  },
+  "/api/run-stop": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool"
+    }
+  },
+  "/api/scan-models": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool"
+    },
+    "_note": "POST"
+  },
+  "/api/status": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "Proxied to LLM"
+  },
+  "/api/todo/prune": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool"
+    },
+    "_note": "POST; 500 on error"
+  },
+  "/api/tools": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "local_tools": "list",
+      "reasoning_levels": "list"
+    }
+  },
+  "/api/upload": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool"
+    },
+    "_note": "POST; 400 on bad JSON"
+  },
+  "/api/uploads": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "count": "int",
+      "files": "list"
+    }
+  },
+  "/api/user-messages": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool",
+      "messages": "list"
+    }
+  },
+  "/api/user-messages/check": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "schema": {
+      "ok": "bool",
+      "checked": "int"
+    },
+    "_note": "POST"
+  },
+  "_meta": {
+    "recorded_at": "2026-11-16T00:00:00Z",
+    "endpoint_count": 42,
+    "ok": 40,
+    "errors": [],
+    "method": "static-analysis",
+    "note": "Schema types are inferred from source. Re-run --record when portal is live to get actual response shapes."
+  },
+  "/api/goals/": {
+    "status": 200,
+    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "_note": "Trailing-slash variant; same handler as /api/goals"
+  }
+}
