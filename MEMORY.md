@@ -18,6 +18,10 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - 9/10 goals verified; Goal #4 (SLO enforcement) remains open, blocked on two upstream dependencies.
 - Portal DOWN (PID 14136 gone); unblock requires `schtasks /run PortalRun` on White host — Mechanic sandbox can't run schtasks.
 - Portal
+- Scribe at 3/10 (#6,#8,#10); goals #2 and #3 have on-disk evidence but markers lost to mirror wipe — re-record to reach 5/10.
+- Mirror wipe destroyed goal_ledger state; Archivist re-recorded 9/10 from on-disk evidence in cycle-2.
+- Goal #4 evolution fitness: Scenario B passes; Scenario A fails on C:\Users perms — fix is bare `python` + shell=True, not full exe path.
+- Scribe ledger at 5/10 after mirror-wipe recovery; open: #1,#4,#5,#6,#7,#8(62% prefill),#9
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

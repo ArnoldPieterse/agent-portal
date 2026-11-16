@@ -1,0 +1,110 @@
+# TODO — completed items (pruned from TODO.md)
+
+<!-- pruned from TODO.md on 2026-11-13 16:43 -->
+
+## Fleet Status Panel BUILT + VERIFIED (2026-11-13 ~14:0x)
+Arnold approved the build ("build") - the round-table DECIDE item is closed. `GET /api/fleet` on :8099 = live per-host view (loaded models + quant, busy/idle/unknown via Studio active-generations, last_seen aging, TTL 15s); 🛰 Fleet button in mode bar, 5s auto-refresh while open. On-demand probes only (no background timer - Mechanic's veto preserved); spec adaptation from the round-table's per-host state-file design is recorded in memory/portal/fleet-status.md. Verified: live 4-host capture (White busy / remotes idle with ZERO models loaded = fleet asleep overnight), dead-host repro unknown+200 bounded, regression endpoints 200, header md5 unchanged. Portal relaunched detached via one-shot schtask (PID 21988; wmic gone on this OS).
+- [x] DECIDE: the /api/fleet panel proposal from the 8-agent round-table - BUILT (section above; evidence in memory/portal/fleet-status.md).
+
+
+## Private messaging (DM) BUILT + LIVE VERIFIED + COMPLETE (2026-11-13 ~13:2x latest)
+Status: **LIVE in code AND running portal** (agent_portal.py + index.html; RESTART TRAP closed 13:16:47 - PID 24808). Agents write `[DM @Name] ...` to send text ONLY that agent can see. Server-side per-viewer redaction in `to_openai_messages` via `parse_dm_segments()`/`render_dm_view()`: recipient sees `[Private message from X]: body`, everyone else a `🔒 [private message to Name]` chip; unknown targets (not in roster) disable redaction for that message = fail-open, no content loss. `_ack_nudge` cross-talk fires on DM receipt ("respond briefly; visible only to the two of you") and name-scans the REDACTED view - no false nudge for foreign DMs (unit-proven via direct debug). Frontend: `🔒 private → Name` chips (details/summary, expandable by owner) + public text above.
+- [x] Unit tests 18/20 pass; both fails are wrong test expectations, not code bugs (trailing-text-after-marker IS the multi-line DM body by design; foreign-name case proven correct - production path redacts to lock chip, name scan no-match, nudge empty).
+- [x] LIVE TEST (2026-11-13 12:38-12:48, real UI via browser panel, 8-agent roster): group send -> `↻ AUTO-CONTINUE` bubble at 12:39:20 (first auto-nudge in the wild) -> 7 DM chips rendered (6→Researcher, 1→Orchestrator) -> verdict "✓ Concluded — task complete." at 12:48:41. ONE run closed both pending live items (auto-nudge + DM). Evidence: _dm_live_result.json, _dm_live_transcript.json, screenshots.
+- [x] HUMAN-TYPED `[DM @X]` GAP CLOSED (~13:1x): `to_openai_messages` now applies the same per-viewer redaction to human messages in group mode (unknown targets fail-open, no content loss) - a human DMing one agent is invisible to all others.
+- [x] RESTART TRAP RESOLVED 13:16:47: taskkill 24620 -> schtasks /run PortalRun -> new PID 24808 (CreationDate 13:16:47 > agent_portal.py mtime 13:16:40, POSTDATE verified) -> _portal_pid.txt rewritten; /api/memory returns 200.
+
+
+## File access to shared state — ALL 4 STEPS DONE + VERIFIED (2026-11-13 ~13:2x)
+Arnold approved all 4 steps after the mount-asymmetry finding (remote sandboxes held only .unsloth_sandbox; remote agents could not read project state with their own tools). All complete and verified on-disk this turn.
+- [x] STEP 1: `_sync_workspace_to_sandbox()` in agent_portal.py - mtime-guarded one-way mirror of TODO.md / MEMORY.md / agents.json / agent_portal.py + memory/ tree from HERE into the White sandbox (_default), called on every /api/chat; canonical copies stay in HERE; failures swallowed so chat never breaks. BLOCKER FOUND: sandbox held 5 reparse points (junctions) pointing at the STALE AgentPortal_V1 snapshot tree (agent_portal.py 11-12 08:43 vs live 11-13 12:45) - sync silently no-op'd through them. Fix queued: remove junctions, run sync once, verify real files.
+- [x] STEP 3: FILE ACCESS block in memory/INDEX.md rewritten - shared state is IN your working dir (read with python/terminal); White re-syncs per chat turn; stale/missing -> ask Orchestrator/Researcher to relay. File at 1545 chars, under the 1600-char injection budget.
+- [x] STEP 2: SMB mirror LIVE on all 3 hosts. `memory_mirror.py` (mtime-guarded push over \\host\C$ into each host's `_default`) + `\MemoryMirrorRun` scheduled task every 5 min (fresh current-user task, no admin). Red live since 13:08 (initial 19-file push). Pale + Black unblocked 13:25 after Arnold confirmed **SMB passwords are EMPTY on all hosts** - the `[REDACTED-CREDENTIAL]` in smb_fix.ps1 is Unsloth Desktop remote-access only, NOT an SMB password (that's why it was rejected with Win error 86). Initial pushes verified on-disk: 19 files each, mtimes match HERE; steady-state runs no-op. Push-only by design - never deletes remote files (per-agent note dirs the remote agents create coexist).
+- [x] STEP 4: `_live_plan_block()` in agent_portal.py appends TODO.md's top section (1200-char cap) + MEMORY.md's GOAL line (600-char cap) to every group prompt via `_shared_memory_block()` - agents see the live plan without file access. Failure-safe (any read error -> empty block); functionally tested against real files (1911 chars total); live in restarted portal.
+
+
+## Auto-nudge on round end BUILT + LIVE VERIFIED (2026-11-12 ~21:4x built; 11-13 12:39 live)
+Status: **LIVE in index.html** (portal serves it fresh from disk per request - no restart). Arnold's 21:18 stuck run (g-mwdgf355-j608h) diagnosed: NOT a timeout - hard cap MAX_CALLS=12 exhausted (8+7>=12); the amber banner blamed truncated tool calls only because Archivist's bubble carried a warnchip (symptom, not termination reason). Two real defects underneath: Mechanic EMPTY reply (clean stream, 0 chars, 2s - transient on Red) + Archivist truncation (archivist-q8 ctx 16384 burned the window on reasoning twice -> stopped mid tool-call).
+- [x] Auto-nudge pass loop in group send(): MAX_NUDGES=3; a pass ending without [CONCLUDED] with activity -> visible `↻ AUTO-CONTINUE n/3` prompt (kind="prompt" => fresh cross-talk budget per pass); an all-silent pass = natural end, no nudge. Stop works between and during passes.
+- [x] Verdict honesty: nudge budget spent -> note leads with "⚠ Auto-continue limit reached (3/3) —" before the specific cause; MAX_CALLS 12->16 per pass; noOutputNames/lastConcluded reset per pass AND per send (stale "(no output)" attribution across prompts was a latent bug).
+- [x] Review-caught bug: `passAny` was never reset per pass -> a silent pass after an active one would re-nudge against unanimous silence; added `passAny=false` to the per-pass reset line.
+- [x] Syntax check: esprima flags only the two known pre-existing ES2020 tokens (`?.`, `??`) - nothing new.
+- [x] LIVE TEST (2026-11-13 12:38-12:48, driven via real UI): `↻ AUTO-CONTINUE` bubble fired at 12:39:20 on a group run that did not conclude in pass 1; final verdict "✓ Concluded — task complete." - honest, no false limit-reached warning (budget had headroom). Combined with the DM live test above (one run proved both); evidence _dm_live_result.json.
+
+
+## 6-agent roster LIVE; full-roster group e2e GREEN (2026-11-11 ~23:2x latest)
+Status: **GROUP_E2E_OK** (serial_e2e_result.json, finished 23:19). Serial smokes all six OK-<TAG> 0.8-1.9s; group 701.7s / 2 rounds / 12 calls / concluded=true / phase1_errs=[] / counter 10->0->11. Quinn round-2 = 600s client timeout -> SILENT -> settled (global Studio serialization, parallel_slots=1 - known constraint, not a bug). Post-run: active-generations clean (only this chat's thread), both local models loaded=True. Feature converged on: **file-link layer** (chips via /api/file?raw; manifest-verified phase 2) - leaf memory/portal/file-links.md WRITTEN + code-reviewed 11-12 (Archivist's in-run "draft" never materialized, hallucinated write - provenance note in the leaf; verify-on-disk rule in ops/probes.md). R2 local path VERIFIED: r2_smoke_result.txt PASS_R2_LOCAL. Trees synced to AgentPortal_V1.
+- [x] Pale UNBLOCKED + DUAL_UP: stuck xet 'downloading' flag on unsloth/Qwen3.8-27B-GGUF UD-Q4_K_XL cleared via POST /api/hub/download/cancel (202 cancelling -> active-downloads []); pale_q4s_load.py verdict **DUAL_UP** (pale_q4s_load_result.json): multi_model fit, Q4_K_S->GPU0 ctx 65536 + Q8_0 GPU1 ctx 16384 both loaded=True; aliases archivist-q8 / designer-q4 bound to real IDs; probes ARCHIVIST-Q8-OK / DESIGNER-Q4-OK. XL load ABANDONED for now (Q4_K_S serves designer; XL stays on disk).
+- [x] White Q4 restart: white_q4_restart_worker.py verdict **Q4_RELOADED** 22:03 - stale tensor_parallel override stripped, Q4_K_S reloaded (ctx 131072 KV q8_0), speed probe ~61 tok/s ('QUINN-RESTART'). Baseline noted; not a regression signal (see quinn note below).
+- [x] Designer 🎨 + Archivist 📚 REGISTERED in agents.json: studio http://IP_PALE:8888 + Arnold's token; models designer-q4 / archivist-q4->archivist-q8; Designer tools web_search+render_html, rag:false; Archivist tools web_search/python/terminal/edit_file, rag:true + rag_studio http://127.0.0.1:8888 (retrieval hits White's KB while chat runs on Pale). Portal reads agents.json per request - no restart needed.
+- [x] smoke6 ALL_OK (smoke6_result.json 23:00): all six <TAG>-OK via /api/chat solo. **Quinn 89.7s = SLOT CONTENTION, not slowness**: smoke6.py has NO idle-wait and this chat holds the Q4 slot during turns; same agent answered 0.7s (22:48 serial) and 1.6s (23:07 serial). Rule: local smokes must self-wait for Studio idle first (serial_e2e_wait.py pattern).
+- [x] 4-agent group e2e GROUP_E2E_OK (group_e2e_result_4agent_20261111.json): 3 rounds, 11 calls, concluded=true, phase1_errs=[]; cross-talk + [SILENT]/[CONCLUDED] worked across local+Black hosts. Content: agents converged on an activity-timeline feature (phase-1 portal-side JSONL) - candidate for the next real build task.
+- [x] 6-agent group e2e READ: verdict GROUP_E2E_OK (see status line). All six spoke in phase 1 + round 1; round 2 = Atlas/Builder/Archivist real replies, Verifier+Designer CONCLUDED, Quinn SILENT (timeout->settled). Per-host latency healthy: local 5-89s, Black 8-72s, Pale 3-19s.
+- [x] Synced live tree -> AgentPortal_V1 (hash-compare; diff files copied).
+- [x] RED no longer parked (Arnold 11-12: 'you can also set up red') - see top section above.
+
+
+## Group e2e prep - local White Studio WEDGED (2026-11-11 ~21:5x; RESOLVED, superseded above)
+Status: **RESOLVED** - RecoverAll fired 21:5x, verdict ALL_UP verified 22:38 (see section above).
+- [x] Roster 4/4 live in agents.json; portal up on :8099; Black pair smoke GREEN in ~1.5s each (builder 'OK-BUILDER', verifier 'OK-VERIFIER').
+- [x] White /v1/chat/completions HANGS on both local models (25s probes, quinn-q4 + atlas-q8). llama-server.exe x2 alive (Q8 :62281, Q4 :56087 ctx 131072) and answer 401-instant unauthenticated -> servers fine, WEDGE IN STUDIO PROXY LAYER.
+- [x] /api/inference/active-generations: 2 STUCK generations (thread=None, one per local model, age ~404s = my parallel smoke test's aborted streams) + this chat's own thread __LOCALID_0Ueu8kG on Q4. Classic wedge pattern from llm/instances.md (client abort mid-stream; cancel reports cancelled:0).
+- [x] schtasks /run /tn RecoverAll -> SUCCESS. Writes recover_result.json + recover_run.log; verdict ALL_UP confirmed.
+
+
+## V1 packaged (2026-11-11 latest)
+- [x] Curated snapshot `AgentPortal_V1_2026-11-11.zip` (82 KB, 38 entries, zip integrity verified): app code (agent_portal.py, agents.json, index.html), full memory tree, docs (README manifest + DESIGN/SETUP_HISTORY/TODO/MEMORY), portal_start.bat + recover_all.*, 14 named probes in probes/. Excluded: screenshots/logs/pycache/scratch dumps/host-specific model-load scripts.
+- [x] README.md inside = V1 manifest: what's in it, how to run (PortalRun task or `python agent_portal.py`), current state, known limits (relative asset paths via /api/file/raw; Studio serialization parallel_slots=1; non-streaming tool probes hang).
+
+<!-- pruned from TODO.md on 2026-11-13 18:40 -->
+
+## NEW OPS PROCESSES LIVE: TODO pruning + local git repo (2026-11-13 ~17:0x)
+Status: **LIVE + verified.** Two processes built into agent_portal.py, tested against the running portal (PID 1240):
+1. **TODO pruning** — `POST /api/todo/prune` moves any TODO.md section whose items are ALL [x] into `TODO_completed.md`; when that file outgrows 240 lines its oldest 200 lines split off into `todo_done_parts/TODO_done_part_NNN.md`. Sections with open items stay put. First live run: 7 sections / 28 items moved.
+2. **Local git repo** — portable MinGit in `mingit/` (no system install); curated allowlist `.gitignore` (~43 tracked files: portal code, memory tree, TODO/MEMORY, ops scripts). `GET /api/git` = status + last 12 commits; `POST /api/git {action: commit|init}` = add -A + commit. Baseline commit `8f5e7d5`.
+UI: new **🔧 Ops** panel next to Fleet — git status, recent commits, commit box, ✂ Prune button. Detail: memory/portal/architecture.md (Ops section).
+- [x] Both endpoints live-tested against the running portal
+- [x] ORCHESTRATOR: announce both new processes to ALL agents in a group prompt (TODO pruning + auto-chunking; local git repo + 🔧 Ops panel), and ask EACH agent to set themselves 10 goals — DONE 2026-11-13: announced, all 8 lists collected verbatim in `## AGENT GOALS (set 2026-11-13)` above; Scribe compression bullets still owed.
+
+<!-- pruned from TODO.md on 2026-11-15 00:20 -->
+
+## OPS CHECK 2026-11-13 r14c - Orchestrator (auto-continue close-out)
+- [x] Canonical `index.html` re-pinned on White: 9c6b08e3 / 67,681 B — 5th+ consecutive stable round (r10→r14c), zero drift.
+- [x] Scribe leaf r14 gap CLOSED: appended `r14 FINAL STATE` to `memory/synthesis/2026-11-12-consolidated-state.md` (was r6-only; her claimed append never landed) — now 5,477 B / md5 06611885, marker x1. Attributed as Orchestrator-appended, Scribe to ratify/extend.
+- [x] ~~Anomaly A-R14 note `memory/archivist/seat-root-anomaly-r14.md` STILL MISSING on White (re-verified this round)~~ — CLOSED by r15: note propagated to White (1,560 B / 0fdf4de3, mtime addendum x1) and write path ID'd by Mechanic (see r15).
+- Gate unchanged: Arnold → `arnold-restart-r8.ps1` on White console → Verifier process-level AC-A2 → Orchestrator goal-line resync (MEMORY.md write deliberately held until post-restart).
+
+## OPS CHECK 2026-11-13 r4 - Orchestrator (auto-continue)
+- [x] Ground truth, White seat: MEMORY.md goal line rolled back to the old ~14:0x text AGAIN (my r3 re-sync gone; 2nd post-resync rollback). Re-synced a third time this round (file-verified below). Per my r3 rule this triggers escalation - evidence set in the next two bullets.
+- [x] CODE AUDIT of both sync paths (agent_portal.py + memory_mirror.py, read at source): **both are already mtime-guarded** - portal `_sync_workspace_to_sandbox()` pushes HERE->sandbox only when newer and pulls sandbox->HERE only when sandbox is newer (0.5s tolerance both directions); `memory_mirror.py` push L120 / pull L145 same guard (MTOL=0.5, file mtime 18:41 = predates my r3 assignment). `_auto_commit()` does `add -A` + commit only - **no restore/checkout/reset path exists**. Correction to r3: the mirror guard I assigned Mechanic already existed; "stale file with stale mtime wins" is IMPOSSIBLE on either path.
+- Clobber mechanism narrowed: a stale MEMORY.md/TODO.md can overwrite canonical only if it arrives with a NEWER mtime - i.e. a whole-file rewrite from stale context (an agent re-emitting an old version via its tools) or an external workspace write. **Fleet rule effective now: never rewrite TODO.md / MEMORY.md / index.html wholesale from context - read fresh, then targeted edit (edit_file) or send hunks.**
+- Evidence gap (why I can't close it myself): the portal does NOT log sync push/pull results per turn (grep: 0 logging lines). **Mechanic: (a)** add one-line JSON log of (pushed, pulled) from `_sync_workspace_to_sandbox()` to a sync log - the stale MEMORY.md pull will then be caught in red; **(b)** shadow-snapshot quarantine for the sandbox->HERE pull of SYNC_LWW: before overwriting TODO.md/MEMORY.md keep current content at `.sync_shadow/<file>`, and if the incoming copy loses >=5 unique lines vs current, write `<file>.clobber-quarantine-<ts>` + log instead of overwriting. r3's "mirror mtime guard" task is CANCELLED (already present); r3's UNC A/B (TTL-vs-sleep) stays open - note from my seat: `net use` to all 3 hosts fails in tool sessions (system error 5 / WinError 65), so route A/B must run White-local (Arnold execution).
+- [x] Scribe re-land BLOCKED structurally, now with proof: Scribe runs on Red (scribe-q8 per r2 alias check) and remote-seat writes land in the RED sandbox; the mirror pulls back `memory/` ONLY - TODO.md/MEMORY.md/index.html are push-only to remotes. "Scribe re-lands into TODO.md" was unreachable from that seat; my r3 wording is corrected. **New flow: Scribe posts the 3-5 compression bullets verbatim in chat (or DMs me) this round; I land them at my seat and confirm the path.** Same relay rule for Builder/Designer hunks.
+- [x] index.html canonical re-checked: `filesPanel` = 0 hits, `A3-B` = 0 hits - still neither edit. My SMB fetch of Black/Pale copies failed from this seat (access denied), so it goes to Arnold's White-local list as one-shot **#5**: copy `\\IP_BLACK\...\_default\index.html` -> `_fetch_black_index.html` and the Pale equivalent, report sizes + which markers each contains; I merge on White after Builder/Designer confirm.
+- Open items re-confirmed with owners: git repo state (one-shot #1) = Arnold; 17:18 loopback regression diagnosis = Mechanic (evidence via one-shot #2); Scribe bullets in chat = Scribe; sync log + quarantine = Mechanic; goal line stays synced = me (watching for rollback #4 - if it hits, the fleet rule above is not being followed somewhere and I escalate with the sync log as proof).
+
+
+## OPS CHECK 2026-11-13 r3 - Orchestrator
+- [x] Ground-truth re-check from White seat: canonical TODO.md carries my r2 section + LIVE PLAN, but **MEMORY.md goal line had rolled back to the old 14:0x text** (my r2 re-sync gone) and **Scribe's GOAL-SETTING compression section is absent at source** -> clobber confirmed, not mirror lag. Second event after Archivist's INDEX pointer loss.
+- [x] MEMORY.md goal line re-synced this round (edit verified). If it rolls back a third time, two-way sync is structurally broken - escalate with this evidence.
+- Sync defect: last-writer-wins lets STALE copies win. **Mechanic: add mtime guard to the 5-min SMB mirror** (overwrite only if source mtime > dest) - assigned.
+- index.html divergence: White canonical copy has NEITHER Builder's Files panel NOR Designer's A3-B anchors; Black mirror HAS Builder's (Verifier line-exact). Edits live in per-host sandboxes and do not propagate to canonical. **Builder/Designer: re-land patches into the file at my seat (or send hunks)**; until then a "live test" tests an unknown page.
+- Arnold consolidated White-local one-shots (portal binds 127.0.0.1 - no agent seat can reach it):
+  1. `curl -s http://127.0.0.1:8099/api/git` (repo state; if repo:false -> POST init) [git FAIL(2)]
+  2. `netstat -ano | findstr :8099` + `findstr :8888` (bind addresses) + `netsh advfirewall firewall show rule name=all | findstr /i "8099" "8888"` [17:18 regression]
+  3. `curl -s http://127.0.0.1:8099/ | findstr /c:"filesPanel"` (what the portal ACTUALLY serves - resolves serving-root question)
+  4. Files panel live test: hard-refresh, open 📁 Files, upload + delete [Builder goal #1]
+- Scribe tie-in accepted: ONE regression (White alive locally, unreachable off-loopback since ~17:18), recorded here not as two unknowns. Correction to the signature theory: on Windows the default firewall drops unsolicited inbound even to CLOSED ports, so loopback-bind + default FW also reads as LAN *timeout* - remote probes cannot distinguish bind from firewall; one-shot #2 decides it. Owner stays Mechanic (diagnosis), execution = Arnold.
+- Adjudication closed with Builder's concession: daily ~18:00 milestone commit = **Mechanic sole owner**; Builder #6 = read-only drift check (≤24h). Both sides agree - no further action.
+- Verifier FAIL(1): re-opened by this round's evidence (goal line stale at source), fixed via the MEMORY.md re-sync above; closes on next mirror cycle if it holds. Direct answer: **PID 1240 = White** (.179, per live plan + all :8099 expectations); `.git` in C:\Projects\Workspace still unverified from any seat (permission-denied here) - one-shot #1 settles it.
+- Archivist backlog proposal (14-file consolidation, memory/synthesis/INDEX.md, superseded marks on the two goals copies): approved for next round, your lane.
+
+
+## Ops log — 2026-11-14 — Goals system: full rollout complete
+- [x] goal_ledger.py pure-JSON fix; run output at memory/researcher/goal_ledger_run.json
+- [x] /api/goals, /api/goals/<agent>, /api/ledger live in agent_portal.py (shells out to ledger script); _safe_workspace_file dir-aware
+- [x] Goals panel tab in index.html: fleet 38% header, per-agent progress bars, open/claimed/reached states, carry-forward list, per-goal evidence markers
+- [x] Mirror allowlist: goals_data.json + goal_ledger_run.json (state survives seat changes)
+- [x] Verifier items: auto-ACs for new endpoints, regression gate on /api/goals, immutable hash-chained transitions, failure replay, data-quality score displayed per "reached" claim
+- [x] Portal restarted; live smoke test of /api/goals passed before UI landed
+- NOTE: 38% fleet figure is only as honest as its evidence markers — data-quality score shown alongside in the panel
