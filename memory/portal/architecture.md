@@ -6,6 +6,35 @@ Two ops processes in agent_portal.py (code block "Ops (2026-11-13): TODO pruning
 **TODO pruning** — `POST /api/todo/prune` (also the ✂ button in the UI): splits TODO.md into preamble + `## ` sections; any section whose items are ALL `- [x]` (and at least one checked) moves to `TODO_completed.md`; sections with any open item stay put. Idempotent; returns {moved_sections, moved_items, completed_lines, chunks_split}. Auto-chunking: when TODO_completed.md outgrows DONE_MAX_LINES=240 lines, its oldest DONE_PART_SIZE=200 lines split off into `todo_done_parts/TODO_done_part_NNN.md` (numbered, chronological). First live run: 7 sections / 28 items → 58-line completed file.
 **Local git repo** — Git was not installed on White → portable MinGit 2.45.2 in `mingit/cmd/git.exe` (GIT_EXE constant; no system install). Repo initialized at the workspace root (`-b main`, user "Agent Portal <portal@agent-portal.local>") with a curated ALLOWLIST `.gitignore` (~43 meaningful files: portal code, memory tree, TODO/MEMORY, ops scripts; ignores PNGs/logs/scratch dumps). Baseline commit `8f5e7d5` (5,287 insertions). Endpoints: `GET /api/git` → {repo, changed, log(last 12)}; `POST /api/git` with {"action":"commit","message":...} → add -A + commit (or "init" to re-init). UI: 🔧 Ops panel next to Fleet — git status, recent commits, commit box, ✂ Prune button.
 
+### curl examples (BUILDER GOAL 9 — run verbatim 2026-11-16 against live PID 16164, curl 8.22.0 Windows)
+
+A fresh agent can copy these three commands exactly as written; expected outputs captured below.
+
+**1. Git status + recent commits** (read-only):
+```
+curl -s http://127.0.0.1:8099/api/git
+```
+Expected (200): JSON with `repo:true`, `changed:<n>`, full `status` text, and `log` = last 12 commits. Captured 2026-11-16 ~13:3x (clean tree after the goal-sweep commit):
+```json
+{"repo": true, "changed": 0, "status": "", "log": "5879833 auto: post-turn sync 2026-11-16 13:26:09\n610c6c6 feat(ui): D4 tokenized ..."}
+```
+
+**2. Commit the working tree** (no-op-safe on a clean tree — verified both paths):
+```
+curl -s -X POST http://127.0.0.1:8099/api/git -H "Content-Type: application/json" -d "{"action":"commit","message":"docs(ops): my change"}"
+```
+Expected (200): with changes → `{"ok": true, "committed": true, "out": "[main <hash>] ..."}`; clean tree → `{"ok": true, "committed": false, "note": "nothing to commit", ...}`. Captured 2026-11-16 (clean-tree path):
+```json
+{"ok": true, "committed": false, "note": "nothing to commit", "out": "On branch main\nYour branch is ahead of 'origin/main' by 7 commits.\n...\nnothing to commit, working tree clean"}
+```
+
+**3. Prune fully-completed TODO sections** (DESTRUCTIVE-by-design: moves all-[x] sections to TODO_completed.md with 240-line chunking; pre-gated by `_run_index_check` — returns 409 while any INDEX pointer dangles; auto-commits after):
+```
+curl -s -X POST http://127.0.0.1:8099/api/todo/prune -H "Content-Type: application/json" -d "{}"
+```
+Expected (200): `{"ok": true, "moved_sections": N, "items": M, "done_file_lines": L, "chunked": bool, "index_check": {"rc": 0|2, ...}}`. Live proof: 2026-11-15 run moved 4 all-[x] sections / 15 items, DONE file 110 lines (<240, no chunk due); NOT re-run on 2026-11-16 to avoid moving live TODO sections mid-turn.
+
+
 ## Private messaging / DM (BUILT + LIVE-VERIFIED 2026-11-13 ~12:4x)
 Agent-to-agent private messages via `[DM @Name] ...` in a reply. Server-side per-viewer redaction (agent_portal.py): `parse_dm_segments()` splits text into public/dm segments - a marker opens a segment running to the next marker or end, so trailing text IS the DM body (multi-line OK); `render_dm_view(segs, viewer, sender)` gives each agent its view: public untouched, inbound DMs as `[Private message from X]: body`, foreign DMs as `🔒 [private message to Name]`. Redaction applies in group mode only and ONLY when every DM target in the message is a known roster name (unknown targets fail-open - hiding would lose content for everyone). Wired into `to_openai_messages` for agent messages after last_user; `_ack_nudge` cross-talk fires on inbound DM receipt ("respond briefly; visible only to the two of you") and name-scans the REDACTED view, so foreign DMs never false-nudge. Frontend (index.html): 🔒 private → Name chips (details/summary) + public text above. Human-typed `[DM @X]`: CLOSED 11-13 ~13:1x - the same per-viewer redaction now applies to human messages in group mode (unknown targets fail-open, no content loss), so a human DMing one agent is invisible to all others. Unit tests _dm_unit_test.py 18/20 (2 fails = wrong test expectations, not code bugs). LIVE-VERIFIED in the real UI 12:38-12:48: auto-continue bubble + 7 chips (6→Researcher, 1→Orchestrator) + ✓ Concluded (_dm_live_result.json).
 
