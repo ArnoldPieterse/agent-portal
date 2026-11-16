@@ -13,8 +13,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Portal crash root cause: `_find_sandbox_dir()` calls `os.listdir('
-- Fleet 29/80 (36%). Scribe
 - Mirror wipe clobbered Designer's CSS/JS work; re-applied goals 2,6,7,8,10 with evidence recorded in app.css + core.js
 - Scribe: supersession_check.py fixed (orphans 10→4); open bug in find_heads — orphaned check should use `not in sources` not `not in targets`
 - design_breakpoint_check.py (CDP-based, Goal 5)
@@ -23,6 +21,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mirror clobber #3: cycle-2 design work wiped again; re-applied to ui/app.css + ui/core.js, design_check passes 0 violations.
 - Portal DOWN on White :8099; root cause _
 - Mechanic built egress guard rules engine (goal 6): 5 ALLOW/5 DENY matrix passed, audit logged to memory/ops
+- Mechanic lane 8/10; Goal 2 blocked by Red (.245) powered off
+- Mirror wiped cycle-2 work again; re-applied dark tokens, status-dot, typography, focus rings, theme toggle
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
