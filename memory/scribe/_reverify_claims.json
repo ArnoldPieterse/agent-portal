@@ -1,0 +1,20 @@
+[
+  {
+    "id": "c_true_lines",
+    "type": "line_count",
+    "target": "MEMORY.md",
+    "expected": 31
+  },
+  {
+    "id": "c_true_exists",
+    "type": "exists",
+    "target": "memory/goals/scribe.md",
+    "expected": true
+  },
+  {
+    "id": "c_FALSE_size",
+    "type": "file_size",
+    "target": "agent_portal.py",
+    "expected": 123456789
+  }
+]

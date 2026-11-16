@@ -1,0 +1,107 @@
+{
+  "date": "2026-11-16",
+  "total_open": 63,
+  "active": 57,
+  "future_quarantined": 6,
+  "active_owned": 35,
+  "active_unowned": 22,
+  "active_coverage_pct": 61.4,
+  "owner_breakdown_active": {
+    "Orchestrator": 14,
+    "Builder": 5,
+    "Researcher": 7,
+    "Verifier": 6,
+    "Archivist": 1,
+    "Mechanic": 2
+  },
+  "active_unowned_items": [
+    {
+      "line": 41,
+      "text": "- [ ] VERIFY after 18:30: recover_force_result.json post-probe quinn-q4 ok + trigger_group_run.log shows group-run POST "
+    },
+    {
+      "line": 42,
+      "text": "- [ ] Watch first sequential pass: each agent should complete visibly one-by-one; if any single agent hangs, the stall b"
+    },
+    {
+      "line": 74,
+      "text": "- [ ] DECISION NEEDED (human): ~50 OTHER tracked files still contain internal 192.168.x.x IPs (you deleted only hosts.md"
+    },
+    {
+      "line": 363,
+      "text": "- [ ] Git milestone commit (goal #5): BLOCKED at seat level - portal binds 127.0.0.1 (agent_portal.py:1616, code-verifie"
+    },
+    {
+      "line": 527,
+      "text": "- [ ] NEXT TURN: read serial_e2e_result.json -> expect verdict GROUP_E2E_OK. Check group_e2e.log: cross-talk rounds, [SI"
+    },
+    {
+      "line": 528,
+      "text": "- [ ] Then PALE: Q8 copy done -> scan-folders -> dual load -> Pale agents (names from Arnold)."
+    },
+    {
+      "line": 539,
+      "text": "- [ ] Group e2e: prompt in group mode with all 4 agents (atlas/quinn local + builder/verifier remote) - watch cross-talk"
+    },
+    {
+      "line": 540,
+      "text": "- [ ] PALE next: Q8 copy DONE 15:19 -> POST /api/hub/scan-folders {\"path\":\"C:\\Users\\pale\\models\\Qwen3.8-27B-Q8_0\"} (Arno"
+    },
+    {
+      "line": 568,
+      "text": "- [ ] BLOCKED: Arnold POSTPONED Red's llama.cpp install (2026-11-11, was 242 MB download in progress) -> R1 parked until"
+    },
+    {
+      "line": 572,
+      "text": "- [ ] Arnold call: Red has ONLY Q4 variants today (UD-Q4_K_XL + Q4_K_M, no Q8) -> load both Q4s (GPU0+GPU1) or fetch a Q"
+    },
+    {
+      "line": 573,
+      "text": "- [ ] Resume llama.cpp runtime install on Red (was 242 MB, 1 of 2) - now via WinRM, no RDP needed."
+    },
+    {
+      "line": 574,
+      "text": "- [ ] Load Q4 GGUF -> GPU0 + Q8 GGUF -> GPU1 (Q8 first per proven recipe), aliases red-a-q4 / red-b-q8 (final names pend"
+    },
+    {
+      "line": 575,
+      "text": "- [ ] Verify: nvidia-smi shows both GPUs ~full; streaming chat to EACH alias works via LAN (adapt probe_quinn.py with ba"
+    },
+    {
+      "line": 585,
+      "text": "- [ ] Black R1-equivalent (PARKED like Red): llama.cpp runtime install + load UD-Q4_K_S (+2nd model? only ONE on Black t"
+    },
+    {
+      "line": 596,
+      "text": "- [ ] Arnold: names + personas for the 6 new agents (2 per host). Placeholders red-a/red-b until then."
+    },
+    {
+      "line": 597,
+      "text": "- [ ] Solo-test each Red agent through portal; then group e2e incl. remote agents (cross-talk, stop/reset, budget, file "
+    },
+    {
+      "line": 600,
+      "text": "- [ ] memory/llm/hosts.md host table: fill GPUs/models/state per host as they come up."
+    },
+    {
+      "line": 601,
+      "text": "- [ ] ops/windows-runbook.md: Red auto-start task + recovery order (mirror White PortalRun/RecoverAll pattern) once mode"
+    },
+    {
+      "line": 602,
+      "text": "- [ ] Pale & Black: repeat R0-R4. BLACK R0 ~90% done (see B0 above); PALE (.39) still offline as of 2026-11-11 02:15 - r"
+    },
+    {
+      "line": 616,
+      "text": "- [ ] 7. USER: click a .html link (e.g. timer-app/index.html) in the portal tab - expect a RENDERED page, not source; .j"
+    },
+    {
+      "line": 633,
+      "text": "- [ ] 6. Arnold HARD-REFRESHES the portal tab (Ctrl+Shift+R) to load the new linkify JS, then checks: file AND"
+    },
+    {
+      "line": 653,
+      "text": "- [ ] 5. USER: send \"build a calculator app\" again - expect REAL files this time (file links + hover peek"
+    }
+  ]
+}
