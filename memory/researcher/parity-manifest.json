@@ -1,0 +1,11 @@
+{
+ "ts": "2026-11-16 14:46:02",
+ "files": {
+  "index.html": "2c6399f2d853",
+  "agent_portal.py": "631ddce78cf7",
+  "evolution.py": "7c20402eaf5d",
+  "agents.json": "9b9cd8c75475",
+  "TODO.md": "bb2bd19c7bae",
+  "MEMORY.md": "dbe49de7efc9"
+ }
+}

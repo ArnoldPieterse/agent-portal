@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-11-16T04:36:15.143198+00:00",
+  "total_tests": 7,
+  "passed": 7,
+  "failed": 0,
+  "all_pass": true,
+  "state_machine": {
+    "states": [
+      "CANDIDATE",
+      "LIVING",
+      "DEAD"
+    ],
+    "legal_transitions": [
+      "CANDIDATE -> LIVING (accept)",
+      "any -> DEAD (reject)",
+      "LIVING -> new CANDIDATE child (breed)"
+    ],
+    "illegal_rejected": [
+      "accept on LIVING",
+      "accept on DEAD",
+      "breed on CANDIDATE",
+      "breed on DEAD"
+    ]
+  },
+  "results": [
+    {
+      "test": "T1_legal_accept_candidate",
+      "command": "evolution.py accept CHG-0003",
+      "expected": "rejection",
+      "got_rc": 1,
+      "output_snippet": "warning: Failed to set cwd to temp dir\nERROR: CHG-0003 not found in population",
+      "pass": true
+    },
+    {
+      "test": "T2_illegal_accept_living",
+      "command": "evolution.py accept CHG-0002",
+      "expected": "rejection",
+      "got_rc": 1,
+      "output_snippet": "warning: Failed to set cwd to temp dir\nERROR: CHG-0002 is LIVING, not CANDIDATE",
+      "pass": true
+    },
+    {
+      "test": "T3_illegal_accept_dead",
+      "command": "evolution.py accept CHG-0001",
+      "expected": "rejection",
+      "got_rc": 1,
+      "output_snippet": "warning: Failed to set cwd to temp dir\nERROR: CHG-0001 not found in population",
+      "pass": true
+    },
+    {
+      "test": "T4_illegal_breed_candidate",
+      "command": "evolution.py breed CHG-0003",
+      "expected": "rejection",
+      "got_rc": 1,
+      "output_snippet": "warning: Failed to set cwd to temp dir\nERROR: CHG-0003 not found",
+      "pass": true
+    },
+    {
+      "test": "T5_illegal_breed_dead",
+      "command": "evolution.py breed CHG-0001",
+      "expected": "rejection",
+      "got_rc": 1,
+      "output_snippet": "warning: Failed to set cwd to temp dir\nERROR: CHG-0001 not found",
+      "pass": true
+    },
+    {
+      "test": "T6_legal_breed_living",
+      "command": "evolution.py breed CHG-0002",
+      "expected": "success",
+      "got_rc": 0,
+      "output_snippet": "CHG-0003 bred from CHG-0002: gen 2, params jittered \u00c2\u00b110%\n  new params: {}\nwarning: Failed to set cwd to temp dir",
+      "pass": true
+    },
+    {
+      "test": "T7_illegal_accept_after_dead",
+      "command": "evolution.py accept CHG-0001",
+      "expected": "rejection",
+      "got_rc": 1,
+      "output_snippet": "warning: Failed to set cwd to temp dir\nERROR: CHG-0001 not found in population",
+      "pass": true
+    }
+  ]
+}

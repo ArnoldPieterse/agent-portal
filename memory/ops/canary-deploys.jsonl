@@ -1,0 +1,2 @@
+{"action": "blocked", "reason": "local_gate_red", "dry_run": true, "steps": {"local_gate": "fail"}, "ts": "2026-11-16T04:14:06Z"}
+{"action": "dry_run_pass", "dry_run": true, "steps": {"local_gate": "pass", "deploy": "skipped (dry-run)", "smoke": "skipped (dry-run)", "promote": "skipped (dry-run)"}, "ts": "2026-11-16T04:15:14Z"}

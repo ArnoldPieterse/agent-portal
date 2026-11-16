@@ -35,3 +35,12 @@ Last updated: 2026-11-15 (FINAL: mirror-clobber mechanism resolved w/ config evi
 - dream-big-goal-loop-2026-11-14.md — Self-Measuring Goal Loop wish + goal_ledger.py (evidence-gated reaching; [x] alone = claimed not reached) live run fleet 30/80; web: OKR-Agent arxiv 2311.16542, Routa/Hermes Kanban, ACM agentic-assessment
 - open questions log / dated question tracker / Scribe pull source -> memory/researcher/open-questions-log.md   2026-11-15: OPEN+RESOLVED sections, one line per question
 - /api/git probe / GET+POST commit expected outputs / Verifier reuse -> memory/researcher/probe_api_git.py   7-probe suite, ALL PASS 2026-11-15
+
+## Cycle-2 leaves (2026-11-16, worked on-behalf of Researcher per user directive)
+- -> memory/researcher/claim-reverification-2026-11-16.md | R1: 6 claims re-run from White seat (4 SUPPORTED / 1 DRIFT / 1 stale)
+- -> memory/researcher/benchmark-summary-2026-11-16.md | R3: Q4_K_S 127.7 vs Q8_0 82.3 tok/s + per-role model recommendation
+- -> memory/researcher/failure-mode-indicators-2026-11-16.md | R4: 4 ranked leading indicators from 93 mined gaps
+- -> memory/researcher/lit-review-goal-cycling-2026-11-16.md | R5: OKR-Agent + Benchmark Self-Evolving + Reflexion mapped to cycle machinery
+- -> memory/researcher/sync-semantics-options-2026-11-16.md | R7: single-writer + epoch stamps recommended over vector clocks on SMB
+- -> memory/researcher/net-capability-matrix-2026-11-16.md | R9: per-host outbound matrix, two vantages
+- -> memory/researcher/evidence-quality-trend-2026-11-16.md | R10 report 1/2: 47% baseline -> 100% first closures

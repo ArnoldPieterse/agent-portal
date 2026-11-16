@@ -1,0 +1,49 @@
+{
+  "seeded_test": {
+    "ts": "2026-11-16T04:37:16.736927+00:00",
+    "test_type": "seeded_drift",
+    "check_file": "verifier/INDEX.md",
+    "local_hash": "033ec90cf499e8da",
+    "simulated": {
+      "leg": "remote_1",
+      "hash": "deadbeefdeadbeefdeadbeefdeadbeef"
+    },
+    "expected_detection": true,
+    "detected": true,
+    "status": "DRIFT_DETECTED"
+  },
+  "live_check": {
+    "ts": "2026-11-16T04:37:16.737131+00:00",
+    "check_file": "verifier/INDEX.md",
+    "local_hash": "033ec90cf499e8da",
+    "max_drift_s": 60,
+    "legs": [
+      {
+        "leg": "remote_1",
+        "path": "\\\\Red\\agent_share\\memory",
+        "status": "UNREACHABLE",
+        "hash": null
+      },
+      {
+        "leg": "remote_2",
+        "path": "\\\\Pale\\agent_share\\memory",
+        "status": "UNREACHABLE",
+        "hash": null
+      },
+      {
+        "leg": "remote_3",
+        "path": "\\\\Black\\agent_share\\memory",
+        "status": "UNREACHABLE",
+        "hash": null
+      }
+    ],
+    "drift_detected": true,
+    "drift_legs": [
+      "remote_1 (unreachable)",
+      "remote_2 (unreachable)",
+      "remote_3 (unreachable)"
+    ],
+    "status": "DRIFT"
+  },
+  "all_pass": true
+}

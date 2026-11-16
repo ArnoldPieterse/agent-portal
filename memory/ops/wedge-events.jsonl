@@ -1,0 +1,1 @@
+{"ts": "2026-11-16T04:19:15.080191+00:00", "type": "wedge_detected", "recovered": false, "detail": "portal unresponsive; no portal process found | restart: portal launched but not responding after 3s", "forensics": {"captured_at": "2026-11-16T04:19:12.056716+00:00", "pid": null, "process_tree": [], "connections": [], "log_tail": []}}

@@ -1,0 +1,31 @@
+{
+ "model": "archivist-q8",
+ "base": "http://IP_PALE:8888",
+ "prompt_chars": 165,
+ "runs": [
+  {
+   "wall_s": 2.68,
+   "completion_tokens": 206,
+   "tokens_per_s": 77.0,
+   "finish": "stop",
+   "text_head": "Summary: Fleet is healthy \u2014 portal up on :8099, two mirrors synced within 5 minutes, and one goal closed with evidence. ",
+   "run": 1
+  },
+  {
+   "wall_s": 3.04,
+   "completion_tokens": 255,
+   "tokens_per_s": 83.9,
+   "finish": "stop",
+   "text_head": "Fleet healthy \u2014 portal up on :8099, two mirrors synced within 5 minutes, and one goal closed with evidence; next action:",
+   "run": 2
+  },
+  {
+   "wall_s": 2.35,
+   "completion_tokens": 202,
+   "tokens_per_s": 86.0,
+   "finish": "stop",
+   "text_head": "All systems healthy\u2014portal up on :8099, two mirrors synced within 5 minutes, and one goal closed with evidence; next act",
+   "run": 3
+  }
+ ]
+}

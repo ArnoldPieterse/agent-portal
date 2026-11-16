@@ -24,3 +24,7 @@ Last updated: 2026-11-15.
 -> ops/left-mechanic.md  9 open goals (mechanic) - split from what_is_left.txt 2026-11-13
 -> memory/ops/fleet-state-2026-11-15.md  fleet state change (Red .245 UP idle no-models; Pale/Black down) + 5 planned portal restarts (~10 s each, PID 7032) + /api/fleet 5s-budget fix record 2026-11-15
 -> memory/ops/public-repo-agent-portal-2026-11-15.md  PUBLIC repo live (ArnoldPieterse/agent-portal); hosts.md untracked+INTERNAL_ONLY mirror; tracked files = public, no secrets; ~50 files w/ LAN IPs pending human scrub decision
+
+## 2026-11-16 (cycle-2 kickoff)
+- -> memory/ops/risk-register-cycle2.md | milestone risk register (O5, living doc)
+- -> memory/ops/hotline-v2.md | HOTLINE protocol v2 + exercise log (M1 model residency, M2 Black down, R1 Red :8099)
