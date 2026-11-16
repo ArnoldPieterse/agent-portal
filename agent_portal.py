@@ -773,6 +773,173 @@ def _fleet_snapshot():
     return {"ts": now, "ttl": FLEET_TTL, "hosts": rows}
 
 
+# ---------------------------------------------------------------------------
+# 2026-11-16 (cycle-2 SLO pipeline + fleet endpoint + decision trace):
+# perf ring buffer, fleet health snapshot, decisions API. Read-only/in-memory,
+# no new dependencies.
+# ---------------------------------------------------------------------------
+import collections as _collections
+
+_PERF = _collections.deque(maxlen=20000)   # (ts, path, ms)
+_SERVER_START = time.time()
+
+
+def _perf_record(path, ms):
+    try:
+        if "/api/run-events" not in path:   # SSE stream - not request latency
+            _PERF.append((time.time(), path, ms))
+    except Exception:
+        pass
+
+
+def _percentile(vals, pct):
+    if not vals:
+        return None
+    vs = sorted(vals)
+    k = (len(vs) - 1) * pct / 100.0
+    f = int(k)
+    c = min(f + 1, len(vs) - 1)
+    return round(vs[f] + (vs[c] - vs[f]) * (k - f), 2)
+
+
+def _perf_snapshot():
+    """GET /api/perf (Builder cycle-2 goal 8): p50/p95/p99 per endpoint over a rolling
+    60-min window. Feeds Ops sparkline tiles + Verifier SLO enforcement."""
+    now = time.time()
+    cutoff = now - 3600
+    per = {}
+    for ts, path, ms in _PERF:
+        if ts >= cutoff:
+            per.setdefault(path, []).append(ms)
+    out = []
+    for path, vals in sorted(per.items(), key=lambda kv: -len(kv[1])):
+        out.append({"path": path, "n": len(vals),
+                    "p50_ms": _percentile(vals, 50), "p95_ms": _percentile(vals, 95),
+                    "p99_ms": _percentile(vals, 99)})
+    return {"ok": True, "window_s": 3600, "endpoints": out}
+
+
+def _fleet_health_snapshot():
+    """GET /api/health/fleet (Mechanic cycle-2 goal 8): single call = full fleet picture.
+    Per host: latest structured probe state + SMB sync age; plus last plain-text probe
+    line, git commit freshness (overall + memory/goals/) and portal uptime. All local
+    file reads - no outbound calls (fast, safe when remotes are down)."""
+    hosts_cfg = []
+    try:
+        cfg = json.load(open(os.path.join(HERE, "memory_mirror_hosts.json"), encoding="utf-8"))
+        hosts_cfg = {h["name"]: h for h in cfg.get("hosts", [])}
+    except Exception:
+        pass
+    host_order = list(hosts_cfg) or ["Red", "Pale", "Black"]
+    probe = {}
+    for cand in ("memory/ops/probe-evidence.jsonl", "memory/ops/fleet-probe-history.jsonl"):
+        p = os.path.join(HERE, *cand.split("/"))
+        if not os.path.isfile(p):
+            continue
+        try:
+            for line in open(p, encoding="utf-8"):
+                try:
+                    d = json.loads(line)
+                except Exception:
+                    continue
+                for r in d.get("results", []):
+                    name = r.get("host") or next(
+                        (n for n, h in hosts_cfg.items() if h.get("ip") == r.get("ip")), None)
+                    if name:
+                        probe[name] = {"ts": d.get("ts"), "port": r.get("port"),
+                                       "status": r.get("status"), "severity": r.get("severity")}
+        except OSError:
+            continue
+    last_probe_line = None
+    lp = os.path.join(HERE, "fleet_probe.log")
+    if os.path.isfile(lp):
+        try:
+            lines = [l for l in open(lp, encoding="utf-8", errors="ignore").read().splitlines() if l.strip()]
+            last_probe_line = lines[-1][:200] if lines else None
+        except OSError:
+            pass
+    sync_ts = {}
+    ml = os.path.join(HERE, "memory_mirror.log")
+    if os.path.isfile(ml):
+        try:
+            for line in open(ml, encoding="utf-8"):
+                if '"results"' not in line:
+                    continue
+                try:
+                    d = json.loads(line)
+                    tdt = time.mktime(time.strptime(d.get("t", ""), "%Y-%m-%d %H:%M:%S"))
+                except Exception:
+                    continue
+                for h in d.get("results", []):
+                    if h.get("host"):
+                        sync_ts[h["host"]] = tdt   # later lines overwrite -> newest wins
+        except OSError:
+            pass
+    now = time.time()
+    out_hosts = {}
+    for name in host_order + ["White"]:
+        if name in out_hosts:
+            continue
+        e = {"probe": probe.get(name), "last_sync": None, "sync_age_s": None}
+        if name in sync_ts:
+            e["sync_age_s"] = int(now - sync_ts[name])
+            e["last_sync"] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(sync_ts[name]))
+        out_hosts[name] = e
+    git_head, git_goals = None, None
+    try:
+        import subprocess
+        r = subprocess.run([GIT_EXE, "log", "-1", "--pretty=%h %ad", "--date=format:%Y-%m-%d %H:%M"],
+                           cwd=HERE, capture_output=True, text=True, timeout=10, creationflags=0x08000000)
+        git_head = r.stdout.strip() or None
+        r2 = subprocess.run([GIT_EXE, "log", "-1", "--pretty=%h %ad", "--date=format:%Y-%m-%d %H:%M",
+                             "--", "memory/goals"],
+                            cwd=HERE, capture_output=True, text=True, timeout=10, creationflags=0x08000000)
+        git_goals = r2.stdout.strip() or None
+    except Exception:
+        pass
+    return {"ok": True, "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
+            "hosts": out_hosts, "last_probe_line": last_probe_line,
+            "git_head": git_head, "git_goals_last_change": git_goals,
+            "portal_uptime_s": int(now - _SERVER_START)}
+
+
+def _decisions_snapshot():
+    """GET /api/decisions (Scribe cycle-2 goal 1): trace 'what did we decide about X' to the
+    exact source line. Scans TODO.md + memory/synthesis/ leaves for decision-keyword lines;
+    returns newest 50 with file, section, line no, detected owner(s) and date context."""
+    try:
+        owners = [a.get("name", "") for a in load_agents().get("agents", [])]
+    except Exception:
+        owners = []
+    kw = re.compile(r"(?i)\b(decision|decided|ruling|ratified|ratify(ies)?d?|veto(ed)?|superseded by|approved|rejected)\b")
+    out = []
+    sources = [os.path.join(HERE, "TODO.md")]
+    syn = os.path.join(HERE, "memory", "synthesis")
+    if os.path.isdir(syn):
+        sources += [os.path.join(syn, f) for f in sorted(os.listdir(syn)) if f.endswith(".md")]
+    for src in sources:
+        if not os.path.isfile(src):
+            continue
+        rel = os.path.relpath(src, HERE).replace(os.sep, "/")
+        section = ""
+        try:
+            mtime = time.strftime("%Y-%m-%d %H:%M", time.localtime(os.path.getmtime(src)))
+        except OSError:
+            mtime = ""
+        for i, line in enumerate(open(src, encoding="utf-8", errors="replace"), 1):
+            s = line.strip()
+            if s.startswith("## "):
+                section = s[3:80]
+            if not s or s.startswith("#") and len(s) < 4:
+                continue
+            if kw.search(s):
+                found = [o for o in owners if o and re.search(r"\b" + re.escape(o) + r"\b", s)]
+                out.append({"file": rel, "line": i, "section": section, "mtime": mtime,
+                            "owners": found, "text": s[:300]})
+    out.sort(key=lambda d: (d["mtime"], d["line"]), reverse=True)
+    return {"ok": True, "count": len(out), "decisions": out[:50]}
+
+
 def _rag_search(agent, query):
     """Search the agent's RAG host for `query` and format the hits. Never raises -
     a RAG hiccup must not break a chat turn. Reused by ReadMem (memory cycle)."""
@@ -2992,6 +3159,14 @@ class Handler(BaseHTTPRequestHandler):
             pass  # client gone (refresh / tab closed) - the run keeps going on the backend
 
     def do_GET(self):
+        # 2026-11-16: perf ring buffer hook (Builder cycle-2 goal 8) - timing wrapper.
+        _t0 = time.time()
+        try:
+            return self._do_GET()
+        finally:
+            _perf_record(self.path.split("?")[0], (time.time() - _t0) * 1000)
+
+    def _do_GET(self):
         p = self.path.split("?")[0]
         if p in ("/", "/index.html"):
             return self._html("index.html")
@@ -3267,6 +3442,13 @@ class Handler(BaseHTTPRequestHandler):
         return self._json(201, {"ok": True, "path": rel_clean.replace("\\", "/"), "size": written})
 
     def do_POST(self):
+        _t0 = time.time()
+        try:
+            return self._do_POST()
+        finally:
+            _perf_record(self.path.split("?")[0], (time.time() - _t0) * 1000)
+
+    def _do_POST(self):
         p = self.path.split("?")[0]
         if p == "/api/upload":
             return self._upload()
@@ -3384,6 +3566,12 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, res)
             except Exception as e:
                 return self._json(500, {"error": str(e)})
+        elif p == "/api/perf":
+            return self._json(200, _perf_snapshot())
+        elif p == "/api/health/fleet":
+            return self._json(200, _fleet_health_snapshot())
+        elif p == "/api/decisions":
+            return self._json(200, _decisions_snapshot())
         elif p == "/api/git":
             # Ops: local git management (commit / init) for the project workspace.
             action = (body.get("action") or "").strip()

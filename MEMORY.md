@@ -13,8 +13,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #7: global focus rings
-- Goal #4 (SLO enforcement) is the only open goal — blocked by portal downtime forcing mock-source evidence; all other 9 goals verified on dis
 - Builder at 6/10 verified; #9 hot-patch rollback confirmed
 - Tool `--record` uses 1-based line numbers (not 0-based); "line 9" = goal #2, not #3.
 - Mirror wipes keep destroying (verified:) markers — all
@@ -23,6 +21,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Git unavailable on this host (Z:\ shared folder); Designer must record evidence via files only, no local commits possible.
 - Scribe #1 & #9 blocked: sandbox can't reach
 - Archivist at 7/10; remaining: #2 add /api/memory/health to agent_portal.py, #6 per-clai..., #10 TBD
+- Git is NOT on PATH on Designer's host — cannot commit; use alternative or flag to Mechanic for fix
+- Mirror-wipe keeps destroying goal_ledger markers even when artifacts exist on disk; re-recording needed each pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
