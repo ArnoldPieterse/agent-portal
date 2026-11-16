@@ -30,12 +30,12 @@ white-on-#acc = **3.22:1 FAIL** — currently used as fill behind white text on 
 #ffb454 busy dot, #e05252 unknown dot, #8b93a7/#9ccaff/#aab2c5 peek-pane text, #243b63/#33507f "you" bubble, #ff8f8f Stop label.
 
 ## Spacing scale (both families)
-4 / 8 / 12 / 16 / 24 px. **Normalized 2026-11-16 (goal 4 spacing pass, canonical pin ac3ca7a6a264):** all padding/margin/gap/offset values in live CSS are on-scale (92 ad-hoc values snapped: 5,6,7,9,10,13,14,15,18 -> nearest scale step; prior documented exceptions toolbar-gap-14 / .frow-7 / header-10 resolved). Hairlines: 1-3px borders, dividers, focus outlines only.
+4 / 8 / 12 / 16 / 24 px as CSS custom properties `--sp-4/--sp-8/--sp-12/--sp-16/--sp-24` in :root (canonical pin 2c6399f2d853). **Tokenized 2026-11-16 (goal 4, closes F-VER-01 reopen recommendation):** all padding/margin/gap/offset values in live CSS are on-scale (92 ad-hoc values snapped: 5,6,7,9,10,13,14,15,18 -> nearest scale step; prior documented exceptions toolbar-gap-14 / .frow-7 / header-10 resolved). Hairlines: 1-3px borders, dividers, focus outlines only.
 Border radii: 8 / 12 px (+50% circles) — snapped from 6/9/10/14 in the same pass.
 
 ## Type ramp (both families)
 base 14px/1.45 system-ui stack (live) — r60 mocks use 15px/1.45; h2 panel title 16px/600; section label 12px/600 uppercase ls .08em --dim; mono 13px ui-monospace/Consolas for git log/status/results; pills/tags 11–13px.
-Listed font sizes (grep-allowlist, 2026-11-16): 11 / 12 / 13 / 14 / 15 (header h1) / 16 (h2 panel titles) px; glyph sizes: 18px emoji (.acard .em), 22px attach icon (#attach).
+Type scale as CSS custom properties `--fs-11/--fs-12/--fs-13/--fs-14/--fs-15/--fs-16` in :root; listed font sizes (grep-allowlist, 2026-11-16): 11 / 12 / 13 / 14 / 15 (header h1) / 16 (h2 panel titles) px; glyph sizes: 18px emoji (.acard .em), 22px attach icon (#attach).
 Component dimensions (listed, not spacing): status dots 8px (.dot/.fdot); spinner 12px (.qspin); emoji box 26px wide; control height 44px (#input, #attach, .gring); textarea min-height 64px; event time column 64px (.aev .at); think max-height 120px; queue list max-height 140px; agent card min-width 160px (<=375px only); goal tile min-width 170px; attach menu min-width 180px + peek body max-height 180px; #actPanel max-height 240px; aside 250px wide; fleet/files panels max-height 280px; goals panel 300px; ops panel 360px = .chipfile/#actSel max-width 360px; #peek max-width 340px (<=768px: calc(100vw - 24px)); dialog min(560px, 92vw/96vw).
 Shadow (single spec): #peek `0 8px 24px rgba(0,0,0,.5)`. Focus: outline 2px solid var(--focus), offset 2px (4px on #composer.dragover).
 Responsive breakpoints (goal 7, added 2026-11-16): max-width 768px (aside 180px, header/modeBar/opsrow/composer wrap, peek full-width-ish) and max-width 375px (main stacks: agent list becomes horizontal strip <=26vh, .frow columns, ops boxes full-width).
