@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe 9/10; only open goal #9 (memory-health) still blocked on /api/memory-health endpoint absent from live agent_portal.py
-- Standing instruction (Arnold): when all goals hit 100%, dream 10 new goals, Orchestrator sets them, complete them; repeat indefinitely until
-- Designer Goal #1 done: ui/app.css has 63 tokens, zero hardcoded colors/radii/durations, reduced-motion guard added.
 - Goal 2: deploy_boot_task.py written; blocked — schtasks COM unavailable in sandbox, Red .245 off; unblock via WinRM/RDP per host.
 - Portal down: PermissionError fix applied but restart blocked by broken schtasks COM ("Class not registered"); 100% errors since 11-17
 - Goal 9: `_memory_health_snapshot()` + `/api/memory-health` route implemented in agent_portal.py; next: portal restart to go live, then rende
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #3 (component abstraction) closed: 26 inline styles → 17 named CSS classes in ui/app.css; JS switched from style.display to class toggl
 - Scribe goal #5 (supersession-chain integrity) PASS: 19 markers, 0 cycles, 0 dangling heads. Open: goals 3,4,6,7,8,9,10.
 - load_probe.py upgraded with --host/--port CLI args + preflight socket check; portal unreachable from Red, must run from White or other host
+- Mechanic goal #2: wrote `memory/mechanic/boot_recovery_test.py` (12 tests, all pass) validating boot_recovery.py logic locally without netwo
+- Designer Goal #2 (dark mode + theme toggle) in progress: tokens, toggle button, persistence done; remaining: tokenize hardcoded colors in qu
+- Scribe goal 9: /api/memory-health re-applied to agent_portal.py (was clobbered); code-complete, blocked on portal restart via RDP/WinRM (san
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
