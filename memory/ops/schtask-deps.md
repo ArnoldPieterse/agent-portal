@@ -8,7 +8,7 @@ Source: memory/ops/host-port-task-map-2026-11-15.md + fleet_probe_v2.py target s
 |---|---|---|---|
 | PortalRun | White, Red, Pale, Black | At logon | agent_portal.py (PID in _portal_pid.txt) |
 | MemoryMirrorRun | White only | Every 5 min | memory_mirror.py (push/pull allowlist to remotes) |
-| PortalDailyGitCommit | White only | Daily 18:00 | POST /api/git (safety-net commit) |
+| PortalDailyGitCommit | White only | every 15 min (was Daily 18:00, 2026-11-16) | POST /api/git (safety-net commit) |
 | PortalFleetProbe | White only | Every 10 min | fleet_probe_v2.py (4-host port + latency) |
 | RecoverAll | White, Red, Pale, Black | On demand / boot | recover_all.py (model reload per llm recipe) |
 

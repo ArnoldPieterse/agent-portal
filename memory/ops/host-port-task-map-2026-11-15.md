@@ -15,7 +15,7 @@ White rows VERIFIED live 2026-11-15 (probe + schtasks query). Remote rows from m
 |---|---|---|
 | PortalRun | at logon | start portal (TRAP: no-ops while Running - kill PID first, windows-runbook.md) |
 | MemoryMirrorRun | every 5 min | memory_mirror.py push/pull allowlist |
-| PortalDailyGitCommit | daily 18:00 | POST /api/git safety-net commit (drift <=24h) |
+| PortalDailyGitCommit | every 15 min (was daily 18:00, 2026-11-16) | POST /api/git safety-net commit (drift <=15 min idle) |
 | PortalFleetProbe | every 10 min | fleet_probe.py 4-host port probe, failures -> fleet_probe.log |
 | RecoverAll | on demand / boot | recover_all.py model reload per llm recipe |
 
