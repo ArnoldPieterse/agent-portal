@@ -13,16 +13,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- design_breakpoint_check.py (CDP-based, Goal 5)
-- Scribe: supersession_check.py fixed — orphaned_superseded=0; known limits remain (broken_chains=65 truncated paths, head_target_overlaps via
-- Archivist lane complete: all 10 goals closed with (verified:) markers, ledger confirms 10/10 open=0. Fleet at 65/
-- Mirror clobber #3: cycle-2 design work wiped again; re-applied to ui/app.css + ui/core.js, design_check passes 0 violations.
 - Portal DOWN on White :8099; root cause _
 - Mechanic built egress guard rules engine (goal 6): 5 ALLOW/5 DENY matrix passed, audit logged to memory/ops
 - Mechanic lane 8/10; Goal 2 blocked by Red (.245) powered off
 - Mirror wiped cycle-2 work again; re-applied dark tokens, status-dot, typography, focus rings, theme toggle
 - Portal cycle 2 at 27.5%; UI split + modularity rule + goal-stall fix shipped; next: agent_portal.py split.
 - Cycle 2 at 27.5%; next in queue is `agent_portal.py` split. UI split (index.html→shell
+- Token layer done: 28 CSS custom props in :root, all 29 hardcoded radius/shadow/duration values replaced; dark mode (goal 2) unblocked.
+- Fixed 3 false-positive orphaned-superseded files (state-line annotations misread as file-level markers); count reduced 10→7.
+- Verifier reproduced design-check: clobber-#3 note claims 0 violations but actual run shows FAIL with 5 hard violations — discrepancy confirm
+- Portal fix: _find_sandbox_dir() crashed on PermissionError when HOME=sandbox; goals 1,6,10 closed (8/10 verified).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
