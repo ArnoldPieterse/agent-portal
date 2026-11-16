@@ -32,3 +32,14 @@ Last updated: 2026-11-15.
 
 ## Orphan count: ~85 files total; 14 active (11-15) indexed above; remainder = sweep series + scripts.
 Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2026-11-14/ at next prune.
+
+## Cycle-2 evidence (indexed 2026-11-16, Orchestrator seat - unblocks end-of-run sweep)
+- -> memory/verifier/regression-daemon-log.jsonl   cycle-2 goal: continuous regression daemon log
+- -> memory/verifier/fault-injection-2026-11-16.md   cycle-2 goal: fault injection suite results
+- -> memory/verifier/evidence-chain.jsonl   cycle-2 goal: SHA256-chained evidence log
+- -> memory/verifier/self-cert-audit-v2-2026-11-16.md   cycle-2 goal: self-certification audit v2
+- -> memory/verifier/smb_drift_detector.py   cycle-2 goal: SMB mirror drift detector script
+- -> memory/verifier/evolution-validator-2026-11-16.json   cycle-2 goal: evolution state-machine validator output
+- -> memory/verifier/idempotency_proof.py   cycle-2 goal: idempotency proof suite script
+- -> memory/verifier/security-matrix-2026-11-16.md   cycle-2 goal: security boundary test matrix
+- -> memory/verifier/scorecard-2026-11-16.md   cycle-2 goal: verification quality scorecard

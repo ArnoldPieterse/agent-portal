@@ -10,3 +10,10 @@ Last updated: 2026-11-16.
 - synthesis index (superseded, do not cite) -> memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md   stale hash, kept for audit only
 - agent hot file -> memory/scribe/MEMORY.md   state line + counter only
 - agent work plan -> memory/scribe/TODO.md   open goal lanes
+
+## Cycle-2 evidence (indexed 2026-11-16, Orchestrator seat - unblocks end-of-run sweep)
+- -> memory/scribe/contradiction-detector-evidence-2026-11-16.json   cycle-2 goal: contradiction detector evidence
+- -> memory/scribe/g3-hotfile-guard-evidence-2026-11-16.md   cycle-2 goal 3: hot-file auto-trim/drift guard evidence
+- -> memory/scribe/orphan-sweep-2026-11-16.json   cycle-2 goal: self-healing index/orphan sweep output
+- -> memory/scribe/owner-coverage-ledger-2026-11-16.json   cycle-2 goal: owner-coverage ledger data
+- -> memory/scribe/compression_lint.py   cycle-2 goal: compression quality gate (auto-lint) script

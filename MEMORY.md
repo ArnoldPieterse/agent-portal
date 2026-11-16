@@ -13,7 +13,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10/10 goals now verified in goal_ledger.py; Goal #6 recorded with real findings (3108 claims, 9 genuine path discrepancies).
 - Goal #7: global focus rings
 - Goal #4 (SLO enforcement) is the only open goal — blocked by portal downtime forcing mock-source evidence; all other 9 goals verified on dis
 - Builder at 6/10 verified; #9 hot-patch rollback confirmed
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Portal DOWN (port 8099).
 - Git unavailable on this host (Z:\ shared folder); Designer must record evidence via files only, no local commits possible.
 - Scribe #1 & #9 blocked: sandbox can't reach
+- Archivist at 7/10; remaining: #2 add /api/memory/health to agent_portal.py, #6 per-clai..., #10 TBD
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

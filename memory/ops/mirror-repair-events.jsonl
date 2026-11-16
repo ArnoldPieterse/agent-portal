@@ -1,0 +1,3 @@
+{"ts": "2026-11-16T07:38:30.029673+00:00", "type": "dry_run", "detail": "stale detection fired, no action taken"}
+{"ts": "2026-11-16T07:39:19.175149+00:00", "type": "repair_ok", "detail": "auto-repair successful, all hosts synced"}
+{"ts": "2026-11-16T07:40:18.594884+00:00", "type": "repair_crit", "detail": "MULTI-LEG CASCADE: {'Red': 'error: connect: System error 5 has occurred.\\n\\nAccess is denied.', 'Pale': 'error: connect: System error 5 has occurred.\\n\\nAccess is denied.', 'Black': 'error: connect: System error 5 has occurred.\\n\\nAccess is denied.'}, verify=[]", "hosts": ["Red", "Pale", "Black"]}
