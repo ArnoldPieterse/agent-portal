@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 10, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-16 ~17:xx - file-modularity rule + UI split + 15-min git net (Studio seat)
 - NEW FLEET RULE: working/project files follow memory/ modularity (small files, header pointers to parent) -> memory/portal/file-modularity.md. Root INDEX trimmed 2435->1395 chars (was over the 1600 _index_block budget - tail was truncated from every prompt).
@@ -13,16 +13,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 9 (memory-health dashboard) closed: added /api/memory-health endpoint + Memory Health tab to portal dashboard.
-- agent_portal.py is 183 KB (187344 bytes), exceeding the 150 KB must-split threshold; Researcher flagged it as top open item
-- Goal 5: 10 orphaned_superseded files need successor pointers; Goal 9: endpoint shipped but
-- Designer: :root=dark (default), [data-theme="light"]=override; goals 2&6 wiped by mirror, re
 - Verifier confirmed own 10/10; stamped Builder to 5/10 and Mechanic to 8/10 with evidence-backed goals this round.
 - Coordination conflict: 3 agents (Builder,
 - Verifier
 - Archivist's v
 - Fleet 71/80 (88.75%). Open: Orchestrator 1, Designer 6, Mechanic 2. Scribe 10/10 complete.
 - PortalWatchdog schtask does not exist on this host — root cause of portal not auto-recovering after crashes.
+- Goal 9 (memory-health) close is INVALID: /api/memory-health absent from live agent_portal.py, contradicting Scribe's cited evidence.
+- Scribe closed Goal 9 (memory-health) but endpoint still absent from live agent_portal.py post-restart
+- /api/memory-health confirmed ABSENT from live agent_portal.py (0 occurrences); Scribe's "confirmed live" claim was false
+- Designer lane 6/10; Goal 8
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 10 / ∞
 - last_reset_by: —

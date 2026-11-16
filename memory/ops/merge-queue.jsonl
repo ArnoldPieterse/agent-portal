@@ -13,3 +13,4 @@
 {"ts": "2026-11-16 22:06:04", "file": "ui/app.css", "sha": "3b0110bd2f", "size": 19187, "snapshot": null}
 {"ts": "2026-11-16 22:06:04", "file": "ui/core.js", "sha": "8629b0b085", "size": 30558, "snapshot": null}
 {"ts": "2026-11-16 23:08:24", "file": "agent_portal.py", "sha": "0c858d23d1", "size": 187344, "snapshot": "memory/ops/merge-queue/agent_portal.py.0c858d23d1"}
+{"ts": "2026-11-16 23:23:25", "file": "agent_portal.py", "sha": "34713ce444", "size": 197648, "snapshot": "memory/ops/merge-queue/agent_portal.py.34713ce444"}
