@@ -1,0 +1,15 @@
+{
+  "ts": "2026-11-16T06:43:08.269506+00:00",
+  "scenario_a": {
+    "entity": "FIT-A-001",
+    "result": "MISMATCH",
+    "tests_run": 4,
+    "detail": "pre_commit_gate.py 4 suites wired as evolution scoring function; all passed -> VALIDATED"
+  },
+  "scenario_b": {
+    "entity": "FIT-B-001",
+    "result": "GRAVEYARD",
+    "detail": "deliberate failing test -> automatically graveyarded by evolution.py score"
+  },
+  "all_passed": false
+}

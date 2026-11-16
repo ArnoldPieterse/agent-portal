@@ -909,7 +909,14 @@ def build_system_prompt(agent, mode, all_agents, rag_context="", shared_memory="
              "  gate for the human. If something is blocked, state the exact unblock step ONCE, then take",
              "  the best available alternative (different path, different tool, or delegate to another",
              "  agent by name) and keep working. The human only sets goals and reviews results -",
-             "  they do not unblock lanes."]
+             "  they do not unblock lanes.",
+             "- Project files follow the memory/ modularity rule (memory/portal/file-modularity.md):",
+             "  keep every working file small enough for a small-context model to read whole; split big",
+             "  ones into modules with header pointers to parent/sibling. index.html is markup-only -",
+             "  its UI lives in ui/app.css, ui/core.js, ui/uploads.js (edit those, then advance the pin).",
+             "- Goal lines: the ONLY form the Goals dashboard counts as blocked is an explicit",
+             "  '(blocked: exact unblock step)' tag or [BLOCKED] on that line - plain prose containing",
+             "  the word 'blocked' does not count."]
         parts.append("\n".join(lines))
     if agent.get("tools"):
         # 2026-11-10: group test "build a calculator app" - both agents CLAIMED builds ("Built and
@@ -2507,7 +2514,11 @@ def _goals_snapshot():
     Import is location-independent: memory/researcher/goal_ledger.py first (the strict,
     verified variant), then portal-root goal_ledger.py only as last resort (its EVIDENCE_PAT
     is loose - it matches '[x]' itself - so it must never be preferred). Response schema
-    unchanged. blocked = not-done item mentioning 'blocked'. Per-agent counts + fleet %."""
+    unchanged. blocked = not-done item carrying an EXPLICIT marker: '(blocked: ...)' or
+    '[BLOCKED]' on the goal line (2026-11-16: plain prose containing the word no longer
+    counts - Mechanic cycle-2 goal 6 'outbound blocked + logged' was a false positive).
+    Per-agent counts + fleet %."""
+    GOAL_BLOCKED_PAT = re.compile(r"(?i)(\[BLOCKED\]|\bblocked\s*[:)])")
     gdir = os.path.join(HERE, "memory", "goals")
     try:
         names = {(a.get("name") or "").lower() for a in load_agents().get("agents", [])}
@@ -2539,7 +2550,7 @@ def _goals_snapshot():
             goals = parse(os.path.join(gdir, fn))
             done = sum(1 for g in goals if g["status"] == "reached")
             not_done = [g["text"] for g in goals if g["status"] != "reached"]
-            blocked = sum(1 for t in not_done if "blocked" in t.lower())
+            blocked = sum(1 for t in not_done if GOAL_BLOCKED_PAT.search(t))
             agents.append({"agent": fn[:-3], "total": len(goals), "done": done,
                            "open": len(not_done), "blocked": blocked})
     except Exception as e:
@@ -2862,6 +2873,21 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def _static(self, name, ctype):
+        """2026-11-16 (file-modularity rule): serve one small UI module from ui/ by exact
+        name. Basename + extension whitelist only - no traversal; anything else is 404."""
+        try:
+            data = open(os.path.join(HERE, "ui", name), "rb").read()
+        except Exception:
+            return self._json(404, {"error": "not found: ui/" + name})
+        self.send_response(200)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Cache-Control", "no-cache")
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
     def _proxy_get(self, path):
         # Global proxy stays on LOCAL Studio (model picker); per-agent routing is studio_base().
         try:
@@ -2969,6 +2995,16 @@ class Handler(BaseHTTPRequestHandler):
         p = self.path.split("?")[0]
         if p in ("/", "/index.html"):
             return self._html("index.html")
+        if p.startswith("/ui/"):
+            # UI modules (2026-11-16 file-modularity split of index.html): ui/app.css,
+            # ui/core.js, ui/uploads.js. Small files so small-context models can edit one
+            # panel without loading the whole frontend.
+            name = os.path.basename(p[4:])
+            if re.match(r"^[A-Za-z0-9_\-]+\.(css|js)$", name or ""):
+                ctype = ("text/css; charset=utf-8" if name.endswith(".css")
+                         else "application/javascript; charset=utf-8")
+                return self._static(name, ctype)
+            return self._json(404, {"error": "bad ui path"})
         if p == "/api/agents":
             return self._json(200, load_agents())
         elif p == "/api/user-messages":

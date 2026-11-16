@@ -224,11 +224,12 @@ def mirror_host(h):
 # so White wins future LWW decisions, log every intervention. Push happens right after,
 # so remotes get the canonical file in the same cycle.
 PIN_FILES = {
-    # 2026-11-16 pin advanced (goal-stall fix): Goals panel gains git-progress curve row
-    # (/api/goals/history) + Ops panel gains sandbox merge-queue section (/api/merge-queue,
-    # /api/merge). Supersedes 2c6399f2d853. Advanced BEFORE commit so pin_guard accepts it.
-    "index.html": {"sha12": "e0679e5f0844",
-                   "backup": "memory/designer/index_html_CANONICAL_e0679e5f0844_2026-11-16d.html"},
+    # 2026-11-16 pin advanced (file-modularity rule, Studio seat): index.html split into a
+    # markup-only shell + ui/ modules (ui/app.css, ui/core.js, ui/uploads.js) served by the
+    # new GET /ui/* route. Supersedes e0679e5f0844 (2026-11-16d) and designer sandbox pins
+    # c0629a5b7cee/289a101ccdf5. Advanced in the SAME turn as the edit so pin_guard accepts it.
+    "index.html": {"sha12": "10bbd8ddf982",
+                   "backup": "memory/designer/index_html_CANONICAL_10bbd8ddf982_2026-11-16h.html"},
 }
 
 def _sha12(path):
