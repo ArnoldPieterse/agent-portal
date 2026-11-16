@@ -1,3 +1,5 @@
+<934 chars of arguments you sent, already written to TODO.md; elided to save room. Not tool output; the file on disk holds it.>
+
 ## FILE-MODULARITY RULE + UI SPLIT + 15-MIN GIT NET 2026-11-16 ~17:xx (Studio seat, on user request) - supersedes older status lines
 Status: **DONE + verified 17:2x** - portal restarted (PID 36992, created 17:22:13 > agent_portal.py edit 17:06:25); watchdog auto-resumed the interrupted round (run g-1a1e33d284a). UI hard-refresh = Ctrl+Shift+R.
 - [x] NEW FLEET RULE codified: working/project files follow memory/ index-pointer rules (small/minimal, header pointers to parent, ultimate modularization) so small-context LLMs can apply changes. Canonical: memory/portal/file-modularity.md; standing rule in group prompts (build_system_prompt); root INDEX line + portal/INDEX pointer.

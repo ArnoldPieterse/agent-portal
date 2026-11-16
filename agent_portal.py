@@ -2020,6 +2020,10 @@ RUN_STALL_S = 240          # no frames for this long => /api/run-state flags sta
 STALL_KILL_S = 900         # (2026-11-15) no frames for THIS long => watchdog kills the run (wedge guard)
 AUTO_RESUME_MAX = 5        # (2026-11-15) consecutive auto-resumes before a human follow-up is required
 AUTO_RESUME_DELAY_S = 45   # settle time after a run ends before the watchdog starts the continuation
+AUTOLOOP_IDLE_S = 60       # (2026-11-16, Arnold) max seconds an agent may sit idle before re-entering the work queue
+AUTOLOOP_TICK_S = 15       # autoloop scheduler tick
+AUTOLOOP_MAX_STREAK = 40   # consecutive auto passes without human input before the loop pauses (GPU budget)
+AUTOLOOP_MAINT_COOLDOWN_S = 1800   # min gap between maintenance passes for an agent at 100%
 
 
 class _RunStopped(OSError):
@@ -2217,6 +2221,7 @@ def _parallel_turns(run_id, names, kind, hist, stop_event):
     for r in out:  # terminal event per turn - the frontend finalizes each bubble on this
         if r:
             _run_event(run_id, {"agent": r["name"], "kind": kind, "done": True})
+            autoloop_touch(r["name"])   # AUTO-LOOP: last activity for idle tracking
     return out
 
 
@@ -2283,6 +2288,13 @@ def _group_run_worker(run_id):
             _append_history("group", entries)
             for r in results:  # @-mention expansion (same rule as the old frontend loop)
                 expand_mentions(r["full"])
+            if run.get("solo"):
+                # AUTO-LOOP solo pass (2026-11-16): ONE turn is the whole pass - no self cross-talk,
+                # no nudges. The autoloop watchdog re-queues the next idle agent; the evidence sweep
+                # + _auto_commit in `finally` persist this pass's work before the next one starts.
+                last_concluded = True
+                verdict = {"note": "\u21bb Auto-loop solo pass (%s) complete." % (run.get("autoloop_why") or "idle re-entry"), "cls": "dim"}
+                break
             guard = calls = 0
             while (not stop_event.is_set() and guard < XTALK_GUARD_RUN and calls < MAX_CALLS_RUN):
                 _, st = load_memory()
@@ -2487,7 +2499,8 @@ def start_group_run(text, extra=None):
         except Exception:
             pass
         hist = _load_history("group")
-        run = {"id": rid, "status": "running", "prompt": full_text[:4000], "cast": (mentioned or names),
+        run = {"id": rid, "status": "running", "prompt": full_text[:4000],
+               "cast": ((extra or {}).get("cast_override") or mentioned or names),
                "settled": [], "nudges": 0, "phase": "prompt",
                "started": time.time(), "ended": None, "verdict": None, "error": None,
                "hist_start": len(hist)}
@@ -2627,6 +2640,153 @@ def _auto_resume_watchdog():
                       "memory/goals/<you>.md with evidence as you go, then reply [CONCLUDED] when the "
                       "cycle's tasks are done." % (n, AUTO_RESUME_MAX, why))
             start_group_run(prompt, extra={"auto_resume_count": n})   # budget persisted atomically with the run
+        except Exception:
+            pass
+
+
+# ---- AUTO-LOOP (2026-11-16, Arnold): idle agents re-enter the work queue within ~1 minute ----
+# Rule: an agent that is idle must NOT wait for everyone else to finish. After AUTOLOOP_IDLE_S of
+# idleness it re-enters the queue as FIRST PRIORITY - (1) queued human messages, (2) its own open
+# goals (one concrete step + ledger evidence), (3) a rare maintenance sweep at 100% ("what else can
+# I do while we wait"). Solo passes run through the normal group-run machinery (one turn each), so
+# every pass is journaled, stall-guarded, evidence-swept and auto-committed. Detail: memory/ops/autoloop.md
+_agent_last_active = {}      # name -> epoch of last completed turn (in-memory truth)
+_autoloop_lock = threading.Lock()
+
+
+def _autoloop_file():
+    return os.path.join(HERE, "memory", "ops", "autoloop.json")
+
+
+def _autoloop_load():
+    try:
+        with open(_autoloop_file(), encoding="utf-8") as f:
+            d = json.load(f)
+        return d if isinstance(d, dict) else {}
+    except Exception:
+        return {}
+
+
+def _autoloop_save(d):
+    try:
+        os.makedirs(os.path.dirname(_autoloop_file()), exist_ok=True)
+        tmp = _autoloop_file() + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(d, f, ensure_ascii=False)
+        os.replace(tmp, _autoloop_file())
+    except Exception:
+        pass
+
+
+def autoloop_touch(name, ts=None):
+    """Record that an agent just finished a turn (its idle clock restarts)."""
+    with _autoloop_lock:
+        _agent_last_active[name] = ts or time.time()
+        d = _autoloop_load()
+        d.setdefault("last_active", {})[name] = _agent_last_active[name]
+        _autoloop_save(d)
+
+
+def autoloop_note_human():
+    """Any human input (queued message or run) resets the auto-pass streak budget."""
+    with _autoloop_lock:
+        d = _autoloop_load()
+        if d.get("streak"):
+            d["streak"] = 0
+            d["last_human_ts"] = time.strftime("%Y-%m-%d %H:%M:%S")
+            _autoloop_save(d)
+
+
+def _agent_open_goal_count(name):
+    try:
+        path = os.path.join(HERE, "memory", "goals", name.lower() + ".md")
+        return sum(1 for g in _goal_ledger_mod().parse_agent_file(path) if g["status"] != "reached")
+    except Exception:
+        return 0
+
+
+def _autoloop_state():
+    """GET /api/autoloop - live view of the idle re-entry loop."""
+    with _autoloop_lock:
+        d = dict(_autoloop_load())
+        la = {k: float(v) for k, v in _agent_last_active.items()}
+        la.update({k: float(v) for k, v in (d.get("last_active") or {}).items() if k not in la})
+    now = time.time()
+    out = {"ok": True, "idle_s": AUTOLOOP_IDLE_S, "tick_s": AUTOLOOP_TICK_S,
+           "streak": int(d.get("streak", 0)), "max_streak": AUTOLOOP_MAX_STREAK,
+           "paused": int(d.get("streak", 0)) >= AUTOLOOP_MAX_STREAK,
+           "last_human_ts": d.get("last_human_ts"), "last_pass": d.get("last_pass"),
+           "agents": {}}
+    for a in load_agents()["agents"]:
+        n = a.get("name", "?")
+        ts = float(la.get(n) or PORTAL_START)
+        out["agents"][n] = {"idle_s": int(now - ts), "open_goals": _agent_open_goal_count(n)}
+    return out
+
+
+def _autoloop_watchdog():
+    """One scheduler tick every AUTOLOOP_TICK_S: when NO group run is active, the most-waiting idle
+    agent gets a solo pass - first priority = queued human messages (oldest wins), else oldest-idle."""
+    while True:
+        time.sleep(AUTOLOOP_TICK_S)
+        if not _portal_live or _active_run_id:
+            continue
+        try:
+            with _autoloop_lock:
+                d = dict(_autoloop_load())
+                la = {k: float(v) for k, v in (d.get("last_active") or {}).items()}
+                la.update({k: float(v) for k, v in _agent_last_active.items()})
+            now = time.time()
+            names = [a.get("name", "") for a in load_agents()["agents"] if a.get("name")]
+            for n in names:
+                la.setdefault(n, PORTAL_START)   # fresh restart: no burst of passes
+            if int(d.get("streak", 0)) >= AUTOLOOP_MAX_STREAK:
+                continue   # budget spent - wait for human input (autoloop_note_human resets)
+            idle = [n for n in names if now - la[n] >= AUTOLOOP_IDLE_S]
+            if not idle:
+                continue
+            pick, why, prompt, best_ts = None, None, None, None
+            for n in idle:   # first priority: queued human messages (oldest wins)
+                try:
+                    pend = umq_pending_for(n, names)
+                except Exception:
+                    pend = []
+                if pend:
+                    ts0 = min(float(m.get("ts") or 0) for m in pend)
+                    if best_ts is None or ts0 < best_ts:
+                        best_ts, pick = ts0, n
+            if pick:
+                why = "queued human message(s)"
+                prompt = ("AUTO-LOOP (first priority): a queued human message is waiting and will be "
+                          "injected below - handle it first, then take ONE concrete step on your open goals.")
+            else:
+                og = {n: _agent_open_goal_count(n) for n in idle}
+                withg = [n for n in idle if og[n] > 0]
+                pick = max(withg, key=lambda n: (og[n], -la[n])) if withg else None   # most-starved lane first
+                if pick is not None:
+                    why = "open goals (%d)" % og[pick]
+                    prompt = ("AUTO-LOOP (idle re-entry): you have been idle for %d s. Do NOT wait for "
+                              "the other agents - take ONE concrete next step on your oldest open goal "
+                              "(memory/goals/%s.md), record evidence via the ledger as you go, then reply "
+                              "[CONCLUDED]." % (int(now - la[pick]), pick.lower()))
+                else:
+                    cand = [n for n in idle if now - la[n] >= AUTOLOOP_MAINT_COOLDOWN_S]
+                    if not cand:
+                        continue   # all at 100% inside cooldown - genuinely nothing to do yet
+                    pick = min(cand, key=lambda n: la[n])
+                    why = "maintenance sweep"
+                    prompt = ("AUTO-LOOP (maintenance): your goals are 100%% reached. Use this pass for "
+                              "ONE useful check only (verify a recent evidence claim, fix a stale INDEX "
+                              "pointer, or assist another agent's open goal), then reply [CONCLUDED]. If "
+                              "nothing is worth doing, reply [SILENT].")
+            run, err = start_group_run(prompt, extra={"solo": True, "autoloop_why": why,
+                                                      "cast_override": [pick]})
+            if not err:
+                d["streak"] = int(d.get("streak", 0)) + 1
+                d["last_pass"] = {"agent": pick, "why": why,
+                                  "ts": time.strftime("%Y-%m-%d %H:%M:%S")}
+                with _autoloop_lock:
+                    _autoloop_save(d)
         except Exception:
             pass
 
@@ -3222,6 +3382,8 @@ class Handler(BaseHTTPRequestHandler):
             q = urllib.parse.parse_qs(self.path.split("?", 1)[1] if "?" in self.path else "")
             m2 = (q.get("mode") or ["group"])[0]
             return self._json(200, {"ok": True, "history": _load_history(m2) if m2 in CHAT_HISTORY_FILES else []})
+        elif p == "/api/autoloop":
+            return self._json(200, _autoloop_state())
         elif p == "/api/run-state":
             base = dict(_load_run_state() or {})
             run = _load_group_run()
@@ -3497,6 +3659,7 @@ class Handler(BaseHTTPRequestHandler):
         except Exception as e:
             return self._json(400, {"error": f"bad json: {e}"})
         if p == "/api/user-messages":
+            autoloop_note_human()   # AUTO-LOOP: a queued human message resets the streak budget
             entry = umq_add(body.get("text"), body.get("mentions"))
             if not entry:
                 return self._json(400, {"error": "text required"})
@@ -3527,6 +3690,7 @@ class Handler(BaseHTTPRequestHandler):
             text = (body.get("text") or "").strip()
             if not text:
                 return self._json(400, {"error": "text required"})
+            autoloop_note_human()   # AUTO-LOOP: human input resets the auto-pass streak budget
             run, err = start_group_run(text)
             if err:
                 return self._json(409, {"error": err})
@@ -3750,6 +3914,11 @@ if __name__ == "__main__":
     _clear_stale_busy()
     _prune_run_journals()
     threading.Thread(target=_auto_resume_watchdog, daemon=True).start()
+    try:
+        _agent_last_active.update({k: float(v) for k, v in (_autoloop_load().get("last_active") or {}).items()})
+    except Exception:
+        pass
+    threading.Thread(target=_autoloop_watchdog, daemon=True).start()   # AUTO-LOOP (2026-11-16)
     print(f"Agent portal -> http://127.0.0.1:{PORT}  (backed by Studio at {STUDIO})")
     try:
         srv.serve_forever()
