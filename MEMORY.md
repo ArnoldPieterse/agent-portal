@@ -13,7 +13,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder at 6/10 verified; #9 hot-patch rollback confirmed
 - Tool `--record` uses 1-based line numbers (not 0-based); "line 9" = goal #2, not #3.
 - Mirror wipes keep destroying (verified:) markers — all
 - Fixed `goal_ledger.py` bug: `record_evidence` silently skips write when line already has `(pointer:`, returning success without persisting.
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist at 7/10; remaining: #2 add /api/memory/health to agent_portal.py, #6 per-clai..., #10 TBD
 - Git is NOT on PATH on Designer's host — cannot commit; use alternative or flag to Mechanic for fix
 - Mirror-wipe keeps destroying goal_ledger markers even when artifacts exist on disk; re-recording needed each pass.
+- Portal crash root cause: `_find_sandbox_dir()` calls `os.listdir('
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -228,8 +228,10 @@ PIN_FILES = {
     # markup-only shell + ui/ modules (ui/app.css, ui/core.js, ui/uploads.js) served by the
     # new GET /ui/* route. Supersedes e0679e5f0844 (2026-11-16d) and designer sandbox pins
     # c0629a5b7cee/289a101ccdf5. Advanced in the SAME turn as the edit so pin_guard accepts it.
-    "index.html": {"sha12": "10bbd8ddf982",
-                   "backup": "memory/designer/index_html_CANONICAL_10bbd8ddf982_2026-11-16h.html"},
+    # 2026-11-16j pin advanced (Designer cycle-2 goal 4, Studio seat): <nav aria-label="Chat mode">
+    # landmark + aside aria-label for screen readers; :focus-visible ring already in ui/app.css.
+    "index.html": {"sha12": "2a3ffa6ac79c",
+                   "backup": "memory/designer/index_html_CANONICAL_2a3ffa6ac79c_2026-11-16j.html"},
 }
 
 def _sha12(path):

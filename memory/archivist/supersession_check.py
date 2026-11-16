@@ -8,12 +8,20 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 MEM = os.path.join(ROOT, "memory")
 SUP = re.compile(r"(?i)\b(supersedes?|replaced by|superseded by)\s*[:\-]?\s*([A-Za-z0-9_./\\-]+)")
 
-def norm(x): return x.replace("\\", "/").lstrip("./")
+def norm(x):
+    x = x.replace("\\", "/")
+    while x.startswith("./"): x = x[2:]
+    return x
 
 files = set()
 for r, d, fs in os.walk(MEM):
     d[:] = [x for x in d if not x.startswith(".")]
     for f in fs: files.add(norm(os.path.relpath(os.path.join(r, f), ROOT)))
+
+bybase = {}
+for f in files:
+    b2 = f.rsplit("/", 1)[-1]
+    bybase.setdefault(b2, f)
 
 edges = []   # (older -> newer) : "X supersedes Y" means X is newer head
 for rel in files:
@@ -42,7 +50,13 @@ def dfs(n):
 for n in list(adj): 
     if not state.get(n): dfs(n)
 
-dangling = [(a, b) for a, b in edges if b not in files and not os.path.exists(os.path.join(ROOT, *b.split("/")))]
+resolved_edges = []
+for a, b in edges:
+    if b in files or os.path.exists(os.path.join(ROOT, *b.split("/"))):
+        resolved_edges.append((a, b))
+    elif bybase.get(b.rsplit("/", 1)[-1]):   # renamed file: resolve by basename
+        resolved_edges.append((a, bybase[b.rsplit("/", 1)[-1]]))
+dangling = [(a, b) for a, b in edges if (a, b) not in set(resolved_edges)]
 print("supersession_check: %d markers, %d cycles, %d dangling heads" % (len(edges), len(bad), len(dangling)))
 for a, b in bad[:5]: print("  CYCLE: %s <-> %s" % (a, b))
 for a, b in dangling[:5]: print("  DANGLING head: %s -> %s" % (a, b))

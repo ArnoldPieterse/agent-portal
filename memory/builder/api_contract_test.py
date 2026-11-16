@@ -25,6 +25,8 @@ def validate_structure(contract):
     """Every endpoint entry must have: status (int), schema (dict)."""
     errors = []
     for ep, data in contract.items():
+        if ep.startswith("_"):   # metadata sections are not endpoints
+            continue
         if not isinstance(data, dict):
             errors.append("%s: not a dict" % ep)
             continue
@@ -61,7 +63,7 @@ def cmd_check():
     """Offline verification: fixture integrity + source coverage."""
     print("=== API CONTRACT CHECK (offline) ===")
     contract = load_fixture()
-    n_eps = len(contract)
+    n_eps = sum(1 for k in contract if not k.startswith("_"))
     print("  Endpoints in fixture: %d" % n_eps)
 
     # Structure validation
@@ -109,6 +111,7 @@ def cmd_check():
 def cmd_record():
     """Online: hit live portal, record schemas."""
     import urllib.request
+    import urllib.error
     print("=== API CONTRACT RECORD (online: %s) ===" % PORTAL_URL)
     contract = load_fixture()
     updated = 0
@@ -122,6 +125,11 @@ def cmd_record():
             # Extract top-level keys as schema
             schema = {k: type(v).__name__ for k, v in body.items()} if isinstance(body, dict) else {"_body": type(body).__name__}
             contract[ep] = {"status": status, "checked_at": datetime.now(timezone.utc).isoformat(), "schema": schema}
+            updated += 1
+        except urllib.error.HTTPError as e:
+            # bare-GET 4xx is legitimate contract behavior for param-requiring endpoints
+            contract[ep] = {"status": e.code, "checked_at": datetime.now(timezone.utc).isoformat(),
+                            "schema": {"_error_on_bare_get": True}}
             updated += 1
         except Exception as e:
             print("  [SKIP] %s: %s" % (ep, str(e)[:60]))

@@ -18,3 +18,14 @@ Last updated: 2026-11-14.
 - guard-rail checklist prune+git / Verifier re-run list / 240-200 chunking rules -> memory/archivist/guardrail-checklist-2026-11-15.md   11 checks, post-change re-run
 - canonical locations / dedupe record / one-leaf-per-fact -> memory/archivist/canonical-locations-2026-11-15.md   ops facts table + pointer-only rule
 - prune log / one line per /api/todo/prune run -> memory/archivist/prune-log.md   ritual evidence (archivist goal 5)
+- -> memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md   ingested 2026-11-16 (confidence=medium ttl=60d)
+- -> memory/archivist/knowledge_graph.py   cycle-2 goal 1: cross-ref graph builder (json output alongside)
+- -> memory/archivist/memory_health.py   cycle-2 goal 2: freshness SLA monitor (freshness-report.md)
+- -> memory/archivist/gen_api_ref.py   cycle-2 goal 4: API reference generator (writes memory/portal/api-reference.md)
+- -> memory/archivist/supersession_check.py   cycle-2 goal 5: supersession chain validator
+- -> memory/archivist/supersession-findings-2026-11-16.md   53 dangling heads documented (cycle-3 repoint)
+- -> memory/archivist/decay_score.py   cycle-2 goal 7: knowledge decay scorer (decay-report.md)
+- -> memory/archivist/snapshot.py   cycle-2 goal 9: versioned leaf snapshots + --diff
+- -> memory/archivist/ingest.py   cycle-2 goal 10: external ingestion w/ provenance headers
+- -> memory/archivist/hostdoc-consistency-2026-11-16.md   cycle-2 goal 6: live host:port claim checks
+- -> memory/handoffs/HO-20261116-file-modularity.md   real handoff instance (goal 3)

@@ -1,115 +1,144 @@
 {
   "/api/activity": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:54:19.474105+00:00",
     "schema": {
       "sessions": "list"
     }
   },
   "/api/agents": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "Returns list of agent objects"
+    "checked_at": "2026-11-16T08:54:21.523222+00:00",
+    "schema": {
+      "agents": "list"
+    }
   },
   "/api/chat": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "status": 404,
+    "checked_at": "2026-11-16T08:54:23.579148+00:00",
     "schema": {
-      "ok": "bool"
-    },
-    "_note": "POST only in practice but route exists for GET error"
+      "_error_on_bare_get": true
+    }
   },
   "/api/evolution/accept": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "status": 404,
+    "checked_at": "2026-11-16T08:54:27.733222+00:00",
     "schema": {
-      "ok": "bool"
+      "_error_on_bare_get": true
     }
   },
   "/api/evolution/reject": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "status": 404,
+    "checked_at": "2026-11-16T08:54:29.777692+00:00",
     "schema": {
-      "ok": "bool"
+      "_error_on_bare_get": true
     }
   },
   "/api/evolution/stats": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:54:31.839944+00:00",
     "schema": {
-      "ok": "bool"
+      "ok": "bool",
+      "island": "str",
+      "started": "str",
+      "cap": "int",
+      "living": "int",
+      "candidates": "int",
+      "dead": "int",
+      "born_total": "int",
+      "survival_pct": "float",
+      "max_generation": "int",
+      "changes": "list",
+      "graveyard": "list"
     }
   },
   "/api/file": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "Returns file content; 404 on error"
+    "status": 404,
+    "checked_at": "2026-11-16T08:54:33.900163+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/file/raw": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "Returns raw bytes, not JSON"
+    "status": 404,
+    "checked_at": "2026-11-16T08:54:35.949192+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/fleet": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:54:40.045697+00:00",
     "schema": {
-      "ts": "str",
+      "ts": "float",
       "ttl": "int",
       "hosts": "list"
     }
   },
   "/api/git": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:54:42.193651+00:00",
     "schema": {
-      "repo": "bool"
-    },
-    "_note": "Conditional: changed(list), status(str), log(str)"
+      "repo": "bool",
+      "changed": "int",
+      "status": "str",
+      "log": "str"
+    }
   },
   "/api/goals": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:54:44.263514+00:00",
     "schema": {
       "ok": "bool",
-      "agents": "list"
+      "generated": "str",
+      "fleet_pct": "float",
+      "fleet_done": "int",
+      "fleet_total": "int",
+      "agents": "list",
+      "goal_reset_pending": "bool"
     }
   },
   "/api/group-run": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "status": 404,
+    "checked_at": "2026-11-16T08:54:52.847173+00:00",
     "schema": {
-      "ok": "bool",
-      "run_id": "str",
-      "cast": "list"
+      "_error_on_bare_get": true
     }
   },
   "/api/history": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:54:57.016346+00:00",
     "schema": {
       "ok": "bool",
       "history": "list"
     }
   },
   "/api/inference/active-generations": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "Proxied to LLM"
+    "status": 404,
+    "checked_at": "2026-11-16T08:54:59.073840+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/inference/status": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "Proxied to LLM"
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:01.135665+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/knowledge-bases": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "Proxied to RAG"
+    "checked_at": "2026-11-16T08:55:03.193149+00:00",
+    "schema": {
+      "knowledgeBases": "list",
+      "ragAvailable": "bool",
+      "ragUnavailableReason": "NoneType"
+    }
   },
   "/api/manifest": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:55:05.577263+00:00",
     "schema": {
       "count": "int",
       "files": "list"
@@ -117,17 +146,29 @@
   },
   "/api/memory": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)"
+    "checked_at": "2026-11-16T08:55:07.628457+00:00",
+    "schema": {
+      "text": "str",
+      "limit": "NoneType",
+      "infinite_budget": "bool",
+      "inter_agent_replies": "int",
+      "last_reset_by": "str"
+    }
   },
   "/api/memory/file": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "404 on error"
+    "status": 400,
+    "checked_at": "2026-11-16T08:55:09.674895+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/models": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "Proxied to LLM /v1/models"
+    "checked_at": "2026-11-16T08:55:18.622610+00:00",
+    "schema": {
+      "object": "str",
+      "data": "list"
+    }
   },
   "/api/models/status": {
     "status": 200,
@@ -138,115 +179,280 @@
     "_note": "500 on error"
   },
   "/api/net/dns": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "POST; 500 on error"
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:27.726133+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/net/fleet": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "500 on error"
+    "checked_at": "2026-11-16T08:55:34.293580+00:00",
+    "schema": {
+      "ok": "bool",
+      "hosts": "list",
+      "up": "int",
+      "total": "int"
+    }
   },
   "/api/net/http": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "POST; 500 on error"
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:36.357459+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/net/latency": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "POST; 500 on error"
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:38.432436+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/net/probe": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "POST; 500 on error"
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:40.482796+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/ops": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:55:42.533718+00:00",
     "schema": {
       "ok": "bool",
-      "pid": "int"
+      "pid": "int",
+      "uptime_s": "int",
+      "uptime_hm": "str",
+      "started": "str",
+      "disk": "dict"
     }
   },
   "/api/provenance": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:55:46.630602+00:00",
     "schema": {
       "ok": "bool",
-      "agents": "list"
-    },
-    "_note": "Alias for /api/goals"
+      "generated": "str",
+      "generator": "str",
+      "wish": "str",
+      "summary": "dict",
+      "goals": "dict"
+    }
   },
   "/api/rag/knowledge-bases": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "Proxied to RAG"
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:48.692766+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/rag/search": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "POST; proxied to RAG"
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:50.745589+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
   },
   "/api/run-events": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:52.824998+00:00",
     "schema": {
-      "events": "list"
+      "_error_on_bare_get": true
     }
   },
   "/api/run-state": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)"
+    "checked_at": "2026-11-16T08:55:54.893895+00:00",
+    "schema": {
+      "busy": "bool",
+      "mode": "str",
+      "phase": "str",
+      "ts": "int",
+      "run_id": "str",
+      "status": "str",
+      "verdict": "dict",
+      "hist_start": "int"
+    }
   },
   "/api/run-stop": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:56.964141+00:00",
     "schema": {
-      "ok": "bool"
+      "_error_on_bare_get": true
     }
   },
   "/api/scan-models": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:59.029783+00:00",
     "schema": {
-      "ok": "bool"
-    },
-    "_note": "POST"
+      "_error_on_bare_get": true
+    }
   },
   "/api/status": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "Proxied to LLM"
+    "checked_at": "2026-11-16T08:56:01.106189+00:00",
+    "schema": {
+      "engine_parallelism": "str",
+      "engine_precision": "str",
+      "engine_kv_cache_dtype": "str",
+      "engine_seed": "NoneType",
+      "engine_gpu_memory_utilization": "NoneType",
+      "engine": "str",
+      "is_vision": "bool",
+      "is_diffusion": "bool",
+      "diffusion_requested_ngl": "NoneType",
+      "is_audio": "bool",
+      "audio_type": "NoneType",
+      "has_audio_input": "bool",
+      "speaks": "bool",
+      "audio_family": "NoneType",
+      "audio_options": "NoneType",
+      "audio_workflows": "list",
+      "audio_reference_text": "NoneType",
+      "audio_required_inputs": "NoneType",
+      "audio_request_inputs": "NoneType",
+      "audio_device_fallback": "NoneType",
+      "audio_music": "NoneType",
+      "audio_options_by_workflow": "NoneType",
+      "audio_workflow_tasks": "NoneType",
+      "audio_server_task": "NoneType",
+      "audio_convert": "NoneType",
+      "audio_convert_route": "NoneType",
+      "audio_clone": "NoneType",
+      "has_video_input": "bool",
+      "requires_trust_remote_code": "bool",
+      "context_length": "int",
+      "max_context_length": "int",
+      "native_context_length": "int",
+      "context_length_enforced": "bool",
+      "context_unbounded_when_batched": "bool",
+      "context_length_fitted": "NoneType",
+      "mlx_context_budget": "NoneType",
+      "supports_reasoning": "bool",
+      "reasoning_style": "str",
+      "reasoning_effort_levels": "list",
+      "reasoning_always_on": "bool",
+      "reasoning_budget": "int",
+      "reasoning_budget_message": "str",
+      "requested_reasoning_budget": "int",
+      "requested_reasoning_budget_message": "str",
+      "supports_preserve_thinking": "bool",
+      "preserve_thinking_default": "bool",
+      "supports_tools": "bool",
+      "cache_type_kv": "NoneType",
+      "is_mlx": "bool",
+      "is_npu": "bool",
+      "mlx_kv_quant": "NoneType",
+      "mlx_kv_quant_requested": "NoneType",
+      "mlx_kv_bits": "NoneType",
+      "mlx_kv_bits_requested": "NoneType",
+      "chat_template_override": "NoneType",
+      "chat_template_override_reason": "NoneType",
+      "mlx_kv_quant_eligibility": "NoneType",
+      "mlx_kv_quant_reason": "NoneType",
+      "mlx_kv_quant_note": "NoneType",
+      "mlx_int8_prefill": "NoneType",
+      "mlx_int8_prefill_requested": "NoneType",
+      "mlx_int8_prefill_reason": "NoneType",
+      "mlx_ane_prefill": "NoneType",
+      "mlx_ane_prefill_requested": "NoneType",
+      "mlx_ane_prefill_reason": "NoneType",
+      "mlx_fast_verify": "NoneType",
+      "mlx_fast_verify_requested": "NoneType",
+      "mlx_fast_verify_reason": "NoneType",
+      "mlx_offload": "NoneType",
+      "chat_template": "str",
+      "speculative_type": "str",
+      "spec_draft_n_max": "int",
+      "spec_draft_model": "NoneType",
+      "spec_drafter_kind": "str",
+      "spec_fallback_reason": "NoneType",
+      "tensor_parallel": "bool",
+      "disable_vision": "bool",
+      "vision_disabled_by_user": "bool",
+      "gpu_memory_mode": "str",
+      "gpu_layers": "int",
+      "offloaded_layers": "int",
+      "offload_total_layers": "int",
+      "overflow_layers": "NoneType",
+      "expert_cache_mib": "NoneType",
+      "gpu_weights_mib": "float",
+      "host_weights_mib": "float",
+      "gpu_backend_unavailable": "bool",
+      "offload_overridden": "bool",
+      "cpu_fallback_reason": "NoneType",
+      "mmproj_fallback_reason": "NoneType",
+      "n_cpu_moe": "int",
+      "tensor_split": "NoneType",
+      "n_layers": "int",
+      "n_moe_layers": "int",
+      "gpu_ids": "NoneType",
+      "requested_gpu_ids": "NoneType",
+      "requested_parallel_slots": "int",
+      "parallel_slots": "int",
+      "requested_n_batch": "NoneType",
+      "requested_n_ubatch": "NoneType",
+      "requested_load_mode": "NoneType",
+      "requested_spec_draft_cache_type": "NoneType",
+      "requested_ctx_checkpoints": "NoneType",
+      "requested_cache_ram": "NoneType",
+      "requested_llama_extra_args": "list",
+      "resident_mib": "int",
+      "resident_on_gpu": "bool",
+      "active_model": "str",
+      "model_identifier": "str",
+      "is_gguf": "bool",
+      "is_local_model": "bool",
+      "gguf_variant": "str",
+      "memory_warning": "NoneType",
+      "loading": "list",
+      "loaded": "list",
+      "multi_model_mode": "str",
+      "serving": "list",
+      "serving_checkpoints": "list",
+      "inference": "dict",
+      "requested_context_length": "int",
+      "load_in_4bit": "NoneType",
+      "llama_cpp_supports_mtp": "bool",
+      "spec_fallback_binary_changed": "NoneType",
+      "spec_probe_retry_pending": "bool",
+      "spec_dflash_retry_pending": "bool",
+      "spec_dspark_sidecar_absent": "bool",
+      "tensor_parallel_dropped_by_arch_gate": "bool",
+      "gpu_placement_paravirtual": "bool",
+      "audio_probe_pending": "bool",
+      "diffusion_split_supported": "NoneType",
+      "llama_cpp_prebuilt_stale": "bool",
+      "llama_cpp_installed_tag": "str",
+      "llama_cpp_latest_tag": "str"
+    }
   },
   "/api/todo/prune": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "status": 404,
+    "checked_at": "2026-11-16T08:56:03.157433+00:00",
     "schema": {
-      "ok": "bool"
-    },
-    "_note": "POST; 500 on error"
+      "_error_on_bare_get": true
+    }
   },
   "/api/tools": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:56:05.222018+00:00",
     "schema": {
       "local_tools": "list",
       "reasoning_levels": "list"
     }
   },
   "/api/upload": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "status": 404,
+    "checked_at": "2026-11-16T08:56:07.265096+00:00",
     "schema": {
-      "ok": "bool"
-    },
-    "_note": "POST; 400 on bad JSON"
+      "_error_on_bare_get": true
+    }
   },
   "/api/uploads": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:56:09.454370+00:00",
     "schema": {
       "count": "int",
       "files": "list"
@@ -254,20 +460,18 @@
   },
   "/api/user-messages": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "checked_at": "2026-11-16T08:56:11.493514+00:00",
     "schema": {
       "ok": "bool",
       "messages": "list"
     }
   },
   "/api/user-messages/check": {
-    "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
+    "status": 404,
+    "checked_at": "2026-11-16T08:56:13.567524+00:00",
     "schema": {
-      "ok": "bool",
-      "checked": "int"
-    },
-    "_note": "POST"
+      "_error_on_bare_get": true
+    }
   },
   "_meta": {
     "recorded_at": "2026-11-16T00:00:00Z",
@@ -278,8 +482,70 @@
     "note": "Schema types are inferred from source. Re-run --record when portal is live to get actual response shapes."
   },
   "/api/goals/": {
+    "status": 404,
+    "checked_at": "2026-11-16T08:54:46.326330+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
+  },
+  "/api/perf": {
     "status": 200,
-    "checked_at": "2026-11-16T00:00:00Z (static)",
-    "_note": "Trailing-slash variant; same handler as /api/goals"
+    "checked_at": "2026-11-16T08:55:44.595907+00:00",
+    "schema": {
+      "ok": "bool",
+      "window_s": "int",
+      "endpoints": "list"
+    }
+  },
+  "/api/health/fleet": {
+    "status": 200,
+    "checked_at": "2026-11-16T08:54:54.974722+00:00",
+    "schema": {
+      "ok": "bool",
+      "generated": "str",
+      "hosts": "dict",
+      "last_probe_line": "str",
+      "git_head": "str",
+      "git_goals_last_change": "str",
+      "portal_uptime_s": "int"
+    }
+  },
+  "/api/decisions": {
+    "status": 200,
+    "checked_at": "2026-11-16T08:54:25.668577+00:00",
+    "schema": {
+      "ok": "bool",
+      "count": "int",
+      "decisions": "list"
+    }
+  },
+  "/api/goals/history": {
+    "status": 200,
+    "checked_at": "2026-11-16T08:54:50.791732+00:00",
+    "schema": {
+      "ok": "bool",
+      "series": "list",
+      "stall_commits": "int",
+      "last_change_commit": "dict",
+      "commits_scanned": "int",
+      "fleet_now": "int",
+      "fleet_total": "int"
+    }
+  },
+  "/api/merge": {
+    "status": 404,
+    "checked_at": "2026-11-16T08:55:11.721125+00:00",
+    "schema": {
+      "_error_on_bare_get": true
+    }
+  },
+  "/api/merge-queue": {
+    "status": 200,
+    "checked_at": "2026-11-16T08:55:13.769069+00:00",
+    "schema": {
+      "ok": "bool",
+      "events": "list",
+      "snapshots": "list"
+    }
   }
 }

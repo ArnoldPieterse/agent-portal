@@ -76,3 +76,7 @@ RecoverAll(White|Red|Pale|Black)
 2. **Self-healing mirror** (goal #3): MemoryMirrorRun failure detection → auto re-sync within 5 min.
 3. **Chaos drill** (goal #9): Weekly kill+verify of PortalRun on rotating host; validates recovery path under live conditions.
 4. **Fleet endpoint** (goal #8): Single API call replaces manual schtasks queries for status checks.
+
+## 2026-11-16 re-verified (Studio seat, cycle-2 goal 7)
+
+Live `schtasks /query` on White: 377 tasks total. Fleet-critical tasks present: \MemoryMirrorRun, \PortalDailyGitCommit, \PortalFleetProbe, \PortalRun, \PortalWatchdog. Remote hosts (Red/Pale/Black): map from host-port-task-map-2026-11-15.md stands (hosts offline at verification; pending power-on re-check noted there).

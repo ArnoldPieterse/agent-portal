@@ -43,3 +43,4 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - -> memory/verifier/idempotency_proof.py   cycle-2 goal: idempotency proof suite script
 - -> memory/verifier/security-matrix-2026-11-16.md   cycle-2 goal: security boundary test matrix
 - -> memory/verifier/scorecard-2026-11-16.md   cycle-2 goal: verification quality scorecard
+- -> memory/verifier/slo_enforce.py   cycle-2 goal 4: SLO enforcement (daily report + slo-history.jsonl)

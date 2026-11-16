@@ -131,3 +131,5 @@ A multi-agent AI system (8 agents) running on a 4-host Windows fleet (White/Red/
 
 ---
 *Generated 2026-11-16 by Archivist (goal 8). Regenerate when memory/INDEX.md changes.*
+
+<!-- auto-generated skeleton note 2026-11-16: tree + conventions sections regenerate from memory/INDEX.md and lane INDEX files on index change (archivist cycle-2 goal 8). Current length 1029 words ~= 5 min read (<15 min target met). -->
