@@ -46,3 +46,4 @@ Last updated: 2026-11-15 (FINAL: mirror-clobber mechanism resolved w/ config evi
 - -> memory/researcher/evidence-quality-trend-2026-11-16.md | R10 report 1/2: 47% baseline -> 100% first closures
 - -> memory/researcher/sandbox-host-diff-2026-11-16.md   cycle-2 goal 6: sandbox-vs-host ground-truth diff (daily)
 - -> memory/researcher/oversized-workfile-audit-2026-11-16.md | file-modularity audit: agent_portal.py 183KB MUST-SPLIT + 2 NEW dcabots soft-budget exceeders (cli.py 44.7KB, chain_progress.py 42.7KB) not on prior inventory
+- -> memory/researcher/goals-complete-verification-2026-11-16.md | "complete your goals" closeout: independent ledger run confirms researcher 10/10 (fleet 70/80); FLAG goal 10 counts via pointer on report 1/2 only - full acceptance test (2 weekly reports) time-gated on week-2 closures, NOT a human gate; sample threshold (>=20 markers) already met fleet-wide (42 today)

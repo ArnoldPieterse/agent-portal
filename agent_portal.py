@@ -2246,7 +2246,9 @@ def _group_run_worker(run_id):
     try:
         while True:
             if stop_event.is_set():
-                verdict = {"note": "\u25a0 Stopped by user \u2014 round closed as concluded.", "cls": "ok"}
+                # (2026-11-16) honest stop: a user stop is NOT a conclusion - the previous wording
+                # showed a green "concluded" while goals were still open and agents had produced no output.
+                verdict = {"note": "\u25a0 Stopped by user \u2014 round ended without [CONCLUDED]; task state unconfirmed.", "cls": "warn"}
                 break
             if nudges > 0:
                 nt = ("\u21bb AUTO-CONTINUE %d/%d: the previous pass ended without [CONCLUDED]. Keep going: "
@@ -2380,6 +2382,20 @@ def _group_run_worker(run_id):
             else:
                 verdict = {"note": "Round closed.", "cls": "dim"}
         run["verdict"] = verdict
+        # Goal-aware verdict (2026-11-16): the fleet's evidence-gated count is appended to EVERY
+        # round-end note, so "concluded" can never silently coexist with an open goal cycle - the
+        # pill says whether the CYCLE is done too, not just this round's task. This is how the UI
+        # answers "how can we reach a conclusion if the goals are not completed?": it can't be green.
+        try:
+            _gs = _goals_snapshot()
+            if _gs.get("ok") and _gs.get("fleet_total"):
+                _gsum = "%d/%d goals reached" % (_gs["fleet_done"], _gs["fleet_total"])
+                if status == "concluded" and _gs["fleet_done"] < _gs["fleet_total"]:
+                    verdict["note"] += ("  [goals] %s - cycle NOT complete; conclusion covers this round's task only." % _gsum)
+                elif status != "concluded":
+                    verdict["note"] += ("  [goals] %s" % _gsum) + ("" if _gs["fleet_done"] >= _gs["fleet_total"] else " - cycle not complete")
+        except Exception:
+            pass
         run["ended"] = time.time()
         if status == "concluded":
             run["auto_resume_count"] = 0   # clean conclusion resets the auto-resume budget
@@ -2397,6 +2413,14 @@ def _group_run_worker(run_id):
                 verdict["note"] += ("  [evidence] %d marker(s) auto-written (%s)"
                                     % (len(sweep_ch), ", ".join(c["leaf"].split("/")[-1] for c in sweep_ch[:4])))
                 run["verdict"] = verdict
+            # Keep the root goal_ledger.json snapshot current (2026-11-16: it went stale - still showed
+            # cycle-1 80/80 while the cycle-2 files were open, so anyone reading the file saw a fake 100%).
+            try:
+                _gl.GOALS_DIR = os.path.join(HERE, "memory", "goals")
+                with open(os.path.join(HERE, "goal_ledger.json"), "w", encoding="utf-8") as _gjf:
+                    json.dump(_gl.build_ledger(), _gjf, indent=1)
+            except Exception:
+                pass
             _auto_commit()
         except Exception:
             pass

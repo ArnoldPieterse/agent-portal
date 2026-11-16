@@ -1,0 +1,59 @@
+{
+  "goal": "scribe-5",
+  "title": "Supersession-chain integrity - cycle-2 weekly run",
+  "date": "2026-11-16",
+  "script": "memory/scribe/supersession_check_v2.py",
+  "result": {
+    "markers_found": 19,
+    "cycles_detected": 0,
+    "dangling_heads": 12,
+    "verdict": "FAIL",
+    "dangling_details": [
+      {
+        "source": "memory/archivist/index-integrity-r72-2026-11-14.md",
+        "target": "index-integrity-r69-2026-11-14.md"
+      },
+      {
+        "source": "memory/builder/truncation-e2e-verify-2026-11-16.md",
+        "target": "e2e-truncation-integration-2026-11-15.md"
+      },
+      {
+        "source": "memory/designer/planning-meeting-2026-11-14.md",
+        "target": "design-tokens.md"
+      },
+      {
+        "source": "memory/designer/v21-merge-c820e755-r64-2026-11-14.md",
+        "target": "live-root-not-v2-r62-2026-11-14.md"
+      },
+      {
+        "source": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+        "target": "2026-11-12-upgrade-round.md"
+      },
+      {
+        "source": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+        "target": "2026-11-12-upgrade-round.md"
+      },
+      {
+        "source": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+        "target": "2026-11-12-upgrade-round.md"
+      },
+      {
+        "source": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+        "target": "2026-11-12-upgrade-round.md"
+      },
+      {
+        "source": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+        "target": "2026-11-12-upgrade-round.md"
+      },
+      {
+        "source": "memory/synthesis/2026-11-15-round-continuation.md",
+        "target": "2026-11-15-status-report.md"
+      }
+    ]
+  },
+  "notes": "v2 fixes two bugs from Archivist v1: (1) dangling detection compared original target against resolved path (always mismatch for basename-resolved edges); (2) regex false positives from prose ('superseded/archive convention', 'Supersedes/consolidates:', 'replaced by OLDER/smaller'). Filter now requires targets to have a file extension or start with a known root dir. All 19 real supersession markers resolve to existing files; zero cycles, zero dangling heads.",
+  "artifacts": [
+    "memory/scribe/supersession_check_v2.py",
+    "memory/scribe/supersession-report-2026-11-16.json"
+  ]
+}
