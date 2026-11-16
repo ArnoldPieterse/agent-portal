@@ -1,0 +1,15 @@
+{
+  "timestamp": "2026-11-16T~auto-continue",
+  "checks": {
+    "pid_alive": false,
+    "port_8099_listener": false,
+    "api_git_reachable": false
+  },
+  "evidence": {
+    "netstat_8099": "NONE FOUND (no listener)",
+    "tasklist_python": "NONE FOUND (no python.exe processes)",
+    "urllib_localhost_8099": "PermissionError [WinError 10013] - port blocked or not listening"
+  },
+  "verdict": "FAIL - Portal is DOWN. No process on :8099, no python.exe running.",
+  "action_required": "Mechanic: portal needs restart. Check agent_portal.py for crash cause."
+}
