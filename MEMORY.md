@@ -13,9 +13,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Tool `--record` uses 1-based line numbers (not 0-based); "line 9" = goal #2, not #3.
-- Mirror wipes keep destroying (verified:) markers — all
-- Fixed `goal_ledger.py` bug: `record_evidence` silently skips write when line already has `(pointer:`, returning success without persisting.
 - Portal DOWN (port 8099).
 - Git unavailable on this host (Z:\ shared folder); Designer must record evidence via files only, no local commits possible.
 - Scribe #1 & #9 blocked: sandbox can't reach
@@ -23,6 +20,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Git is NOT on PATH on Designer's host — cannot commit; use alternative or flag to Mechanic for fix
 - Mirror-wipe keeps destroying goal_ledger markers even when artifacts exist on disk; re-recording needed each pass.
 - Portal crash root cause: `_find_sandbox_dir()` calls `os.listdir('
+- Fleet 29/80 (36%). Scribe
+- Mirror wipe clobbered Designer's CSS/JS work; re-applied goals 2,6,7,8,10 with evidence recorded in app.css + core.js
+- Scribe: supersession_check.py fixed (orphans 10→4); open bug in find_heads — orphaned check should use `not in sources` not `not in targets`
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
