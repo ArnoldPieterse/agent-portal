@@ -1,0 +1,149 @@
+{
+  "goal": "mechanic-1",
+  "test": "severity_escalation_simulation",
+  "ts": "2026-11-16T16:32:00+00:00",
+  "scenarios": {
+    "A_sudden_spike": {
+      "latencies": [
+        2.0,
+        2.1,
+        1.9,
+        2.0,
+        2.2,
+        45.0
+      ],
+      "results": [
+        {
+          "run": 1,
+          "latency_ms": 2.0,
+          "baseline_ms": null,
+          "drift_ratio": null,
+          "warn_streak": 0,
+          "severity": "OK"
+        },
+        {
+          "run": 2,
+          "latency_ms": 2.1,
+          "baseline_ms": null,
+          "drift_ratio": null,
+          "warn_streak": 0,
+          "severity": "OK"
+        },
+        {
+          "run": 3,
+          "latency_ms": 1.9,
+          "baseline_ms": null,
+          "drift_ratio": null,
+          "warn_streak": 0,
+          "severity": "OK"
+        },
+        {
+          "run": 4,
+          "latency_ms": 2.0,
+          "baseline_ms": 2.0,
+          "drift_ratio": 1.0,
+          "warn_streak": 0,
+          "severity": "OK"
+        },
+        {
+          "run": 5,
+          "latency_ms": 2.2,
+          "baseline_ms": 2.0,
+          "drift_ratio": 1.1,
+          "warn_streak": 0,
+          "severity": "OK"
+        },
+        {
+          "run": 6,
+          "latency_ms": 45.0,
+          "baseline_ms": 2.0,
+          "drift_ratio": 22.5,
+          "warn_streak": 0,
+          "severity": "CRIT"
+        }
+      ],
+      "pass": true
+    },
+    "B_gradual_climb": {
+      "latencies": [
+        2.0,
+        2.1,
+        1.9,
+        2.0,
+        8.0,
+        9.5,
+        11.0,
+        13.0
+      ],
+      "results": [
+        {
+          "run": 1,
+          "latency_ms": 2.0,
+          "baseline_ms": null,
+          "drift_ratio": null,
+          "warn_streak": 0,
+          "severity": "OK"
+        },
+        {
+          "run": 2,
+          "latency_ms": 2.1,
+          "baseline_ms": null,
+          "drift_ratio": null,
+          "warn_streak": 0,
+          "severity": "OK"
+        },
+        {
+          "run": 3,
+          "latency_ms": 1.9,
+          "baseline_ms": null,
+          "drift_ratio": null,
+          "warn_streak": 0,
+          "severity": "OK"
+        },
+        {
+          "run": 4,
+          "latency_ms": 2.0,
+          "baseline_ms": 2.0,
+          "drift_ratio": 1.0,
+          "warn_streak": 0,
+          "severity": "OK"
+        },
+        {
+          "run": 5,
+          "latency_ms": 8.0,
+          "baseline_ms": 2.0,
+          "drift_ratio": 4.0,
+          "warn_streak": 0,
+          "severity": "WARN"
+        },
+        {
+          "run": 6,
+          "latency_ms": 9.5,
+          "baseline_ms": 2.0,
+          "drift_ratio": 4.75,
+          "warn_streak": 1,
+          "severity": "WARN"
+        },
+        {
+          "run": 7,
+          "latency_ms": 11.0,
+          "baseline_ms": 2.05,
+          "drift_ratio": 5.37,
+          "warn_streak": 2,
+          "severity": "WARN"
+        },
+        {
+          "run": 8,
+          "latency_ms": 13.0,
+          "baseline_ms": 2.1,
+          "drift_ratio": 6.19,
+          "warn_streak": 3,
+          "severity": "WARN"
+        }
+      ],
+      "pass": true
+    }
+  },
+  "verdict": "PASS",
+  "note": "Scenario A: stable 2ms baseline, run 6 spikes to 45ms (22.5x) -> immediate CRIT via ratio threshold. Confirms escalation before hard failure."
+}
