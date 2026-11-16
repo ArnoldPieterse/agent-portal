@@ -1,0 +1,16 @@
+{
+  "bridged": {
+    "2026-11-16_White_outage": {
+      "chg_id": "CHG-0013",
+      "bridged_at": "2026-11-16T09:10:47Z"
+    },
+    "2026-11-16_Pale_outage": {
+      "chg_id": "CHG-0014",
+      "bridged_at": "2026-11-16T09:10:47Z"
+    },
+    "2026-11-16_Red_outage": {
+      "chg_id": "CHG-0015",
+      "bridged_at": "2026-11-16T09:10:47Z"
+    }
+  }
+}
