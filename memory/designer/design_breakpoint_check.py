@@ -26,6 +26,9 @@ CHROME_CANDIDATES = [
 ]
 
 def find_chrome():
+    env_path = os.environ.get("CHROME_PATH")
+    if env_path and os.path.isfile(env_path):
+        return env_path
     for c in CHROME_CANDIDATES:
         try:
             if os.path.isfile(c): return c
@@ -98,7 +101,9 @@ async def main():
             try:
                 req = urllib.request.urlopen("http://127.0.0.1:%d/json" % port)
                 tabs = json.loads(req.read())
-                if tabs: ws_url = tabs[0]["webSocketDebuggerUrl"]
+                pages = [x for x in tabs if x.get("type") == "page"
+                         and not x.get("url", "").startswith("chrome-extension://")]
+                if pages: ws_url = pages[0]["webSocketDebuggerUrl"]
                 break
             except Exception:
                 await asyncio.sleep(0.5)
