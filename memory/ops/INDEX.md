@@ -1,31 +1,61 @@
-# OPS INDEX — index of indexes for Windows ops & verification.
-Last updated: 2026-11-15.
+# OPS INDEX — fleet ops knowledge base. One-stop for any agent new to the fleet.
+Last updated: 2026-11-16 ~16:30 (Mechic cycle-2 consolidation, goal #10).
 
-## Entries (keyword -> pointer | use case)
-- reboot / auto-start / RecoverAll / PortalRun / ground-truth checks / Windows quirks -> memory/ops/windows-runbook.md   post-reboot recovery order + portal lifecycle rules
-- probe scripts / schtasks / e2e / result files / detached workers / stale chain summaries / hash-verify copies -> memory/ops/probes.md   verification tooling inventory (what each script proves)
-- PDF reports / fpdf2 / _gen_report.py pattern / report layout pitfalls / PNG verify step -> memory/ops/pdf-reporting.md   Archivist's repeatable PDF-reporting recipe
-- MEMORY.md trim 2026-11-14 / pre-trim content archive / lossless hot-file shrink -> memory/ops/memory-trim-archive-2026-11-14.md   full pre-trim MEMORY.md (8,042 B) preserved verbatim
+## QUICK START (read these first if you're new)
+1. memory/ops/windows-runbook.md — post-reboot recovery order, portal lifecycle, ground-truth checks
+2. memory/ops/host-port-task-map-2026-11-15.md — 4 hosts, their IPs, ports, scheduled tasks
+3. memory/ops/schtask-deps.md — full dependency graph + blast-radius scenarios for all 5 tasks
+4. memory/ops/hotline-v2.md — escalation protocol when something breaks (M1/M2/R1 triggers)
 
-## Global pointers
-- -> agent_portal.py  server;  -> MEMORY.md hot state;  -> TODO.md plan
-- daily health check / PID + :8099 listener + /api/git reachability / .gitignore allowlist audit -> memory/ops/verifier-healthcheck-2026-11-15.md   2026-11-15: all OK; junk untracked (430->417)
-- git hygiene / commit conventions / commit-only-after-verification / no secrets in git -> memory/ops/git-hygiene.md   2026-11-14 Archivist: message convention + rules
-- host port + task map / 4 hosts / PortalRun + daily git + fleet probe tasks -> memory/ops/host-port-task-map-2026-11-15.md   White verified live; remotes from hosts.md recon (pending power-on)
-- 4-host probe / every-10min schtask / failure log -> fleet_probe.py (root)   PortalFleetProbe task; failures + hourly OK to fleet_probe.log
-- AC V-09 provenance determinism / goal_provenance.py two-run md5 test / generated field tree-derived -> memory/ops/verifier-ac-v09-2026-11-15.md   FAIL->fixed->PASS 2026-11-15 (wall-clock timestamp was the only nondeterminism)
--> ops/left-orchestrator.md  orchestrator goals - 7/8 closed with evidence 2026-11-14; goal 4 drill verdict pending (SwapDrill1114)
--> ops/left-researcher.md  7 open goals (researcher) - split from what_is_left.txt 2026-11-13
--> ops/left-builder.md  4 open goals (builder) - split from what_is_left.txt 2026-11-13
--> ops/left-archivist.md  8 open goals (archivist) - split from what_is_left.txt 2026-11-13
--> ops/left-scribe.md  10 open goals (scribe) - split from what_is_left.txt 2026-11-13
--> ops/left-verifier.md  3 open goals (verifier) - split from what_is_left.txt 2026-11-13
--> ops/left-designer.md  1 open goals (designer) - split from what_is_left.txt 2026-11-13
--> ops/left-mechanic.md  9 open goals (mechanic) - split from what_is_left.txt 2026-11-13
--> memory/ops/fleet-state-2026-11-15.md  fleet state change (Red .245 UP idle no-models; Pale/Black down) + 5 planned portal restarts (~10 s each, PID 7032) + /api/fleet 5s-budget fix record 2026-11-15
--> memory/ops/public-repo-agent-portal-2026-11-15.md  PUBLIC repo live (ArnoldPieterse/agent-portal); hosts.md untracked+INTERNAL_ONLY mirror; tracked files = public, no secrets; ~50 files w/ LAN IPs pending human scrub decision
+## CORE RUNBOOKS
+- Post-reboot / auto-start / PortalRun / RecoverAll / ground-truth -> memory/ops/windows-runbook.md
+- Host inventory (IPs, ports, tasks per host) -> memory/ops/host-port-task-map-2026-11-15.md
+- Scheduled-task dependency graph + blast radius -> memory/ops/schtask-deps.md
+- HOTLINE escalation protocol v2 -> memory/ops/hotline-v2.md
+- Git hygiene / commit conventions -> memory/ops/git-hygiene.md
+- Memory sync spec (what gets mirrored where) -> memory/ops/memory-sync-spec-r13.md
 
-## 2026-11-16 (cycle-2 kickoff)
-- -> memory/ops/risk-register-cycle2.md | milestone risk register (O5, living doc)
-- -> memory/ops/hotline-v2.md | HOTLINE protocol v2 + exercise log (M1 model residency, M2 Black down, R1 Red :8099)
+## PROBE & MONITORING SCRIPTS (root dir)
+- fleet_probe_v2.py — trend-aware 4-host probe; drift-based severity (OK/WARN/CRIT); runs every 10 min via PortalFleetProbe task
+- load_probe.py — portal load test at 10/50/200 concurrency; p50/p95/p99 per endpoint; writes memory/ops/load-baseline.jsonl
+- memory_mirror.py — SMB push/pull sync with post-push verify + auto-repair (goal #3, DONE)
+- fleet_health_check.py — quick 4-host reachability check
+- recover_all.py — model reload on all hosts (LM Studio :8888)
+- portal_watchdog.py — monitors portal process; restarts if dead
+- sim_fleet_probe_degrade.py — verification simulation for adaptive probe severity escalation
+
+## EVIDENCE & LOGS (jsonl files in memory/ops/)
+- fleet-probe-history.jsonl — every probe run with per-host latency + status
+- probe-evidence.jsonl — structured probe events (WARN/CRIT escalations)
+- load-baseline.jsonl — daily load test results (goal #4, accumulating)
+- model-load.jsonl — model residency events per host
+- clobber-events.jsonl — file overwrite/clobber detection events
+- wedge-events.jsonl — portal/process wedge events
+- canary-deploys.jsonl — canary deployment tracking
+- hotpatch-events.jsonl — hot-patch application log
+- net-egress-log.jsonl — outbound network audit (goal #6)
+
+## CYCLE-2 ARTIFACTS (2026-11-16+)
+- risk-register-cycle2.md — milestone risk register (O5, living doc)
+- goal-progress-2026-11-16.md — per-agent goal progress snapshot
+- mechanic-goal1-adaptive-probe-evidence-2026-11-16.md — adaptive probe simulation PASS evidence
+- mechanic-goal3-closure-2026-11-15.md — self-healing mirror closure record
+- reboot-dryrun-remote-legs-2026-11-16.md — Pale/Black/Red reboot dry-run results
+- portal-down-2026-11-16.md — today's portal outage + recovery log
+
+## REFERENCE (less frequently needed)
+- Agent onboarding playbook -> memory/ops/agent-onboarding-playbook.md
+- PDF reporting recipe -> memory/ops/pdf-reporting.md
+- Ingestion spec -> memory/ops/ingestion-spec.md
+- Fleet state snapshot 11-15 -> memory/ops/fleet-state-2026-11-15.md
+- Public repo status -> memory/ops/public-repo-agent-portal-2026-11-15.md
+- Verifier health checks (daily) -> memory/ops/verifier-healthcheck-2026-11-15.md
+- AC V-09 provenance determinism -> memory/ops/verifier-ac-v09-2026-11-15.md
+- Memory trim archive (pre-11-14 MEMORY.md) -> memory/ops/memory-trim-archive-2026-11-14.md
+
+## ARCHIVED (cycle-1, superseded by memory/goals/)
+- left-*.md files are cycle-1 goal trackers; canonical goals now live in memory/goals/<agent>.md
+- builder-fleet-8099-sweep-r80-2026-11-14.md — historical sweep record
+- quarantine-index-html-variants-2026-11-13.md — PIN_GUARD quarantine history
+- white-lan-firewall-drop-2026-11-14.md — historical firewall incident
 - -> memory/ops/merge-queue-git-progress-2026-11-16.md | sandbox merge queue + git goal-progress runbook (/api/merge-queue, /api/merge, /api/goals/history; goal-closure procedure; pin lineage)
