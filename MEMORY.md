@@ -13,8 +13,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mirror wipe clobbered Designer's CSS/JS work; re-applied goals 2,6,7,8,10 with evidence recorded in app.css + core.js
-- Scribe: supersession_check.py fixed (orphans 10→4); open bug in find_heads — orphaned check should use `not in sources` not `not in targets`
 - design_breakpoint_check.py (CDP-based, Goal 5)
 - Scribe: supersession_check.py fixed — orphaned_superseded=0; known limits remain (broken_chains=65 truncated paths, head_target_overlaps via
 - Archivist lane complete: all 10 goals closed with (verified:) markers, ledger confirms 10/10 open=0. Fleet at 65/
@@ -23,6 +21,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic built egress guard rules engine (goal 6): 5 ALLOW/5 DENY matrix passed, audit logged to memory/ops
 - Mechanic lane 8/10; Goal 2 blocked by Red (.245) powered off
 - Mirror wiped cycle-2 work again; re-applied dark tokens, status-dot, typography, focus rings, theme toggle
+- Portal cycle 2 at 27.5%; UI split + modularity rule + goal-stall fix shipped; next: agent_portal.py split.
+- Cycle 2 at 27.5%; next in queue is `agent_portal.py` split. UI split (index.html→shell
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

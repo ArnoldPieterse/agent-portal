@@ -2543,6 +2543,16 @@ def _stall_killer(run_id):
         if _active_run_id != run_id:
             return
         last = _run_last_frame.get(run_id)
+        if last is None:
+            # 2026-11-16 zero-frame guard: a hang BEFORE the first token never sets
+            # _run_last_frame, so the old check could never fire (fleet wedged 2x today).
+            # Fall back to run start time as the reference.
+            try:
+                r0 = _load_group_run()
+                if r0.get("id") == run_id and r0.get("started"):
+                    last = r0["started"]
+            except Exception:
+                pass
         if last and time.time() - last > STALL_KILL_S:
             try:
                 run = _load_group_run()
