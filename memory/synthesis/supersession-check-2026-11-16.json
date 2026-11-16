@@ -1,0 +1,18 @@
+{
+  "run_date": "2026-11-16",
+  "policy_ref": "memory/synthesis/supersession-policy-baseline.md",
+  "files_scanned": 56,
+  "actually_superseded": [
+    "2026-11-14-white-rename-closeout.md",
+    "2026-11-12-upgrade-round.md"
+  ],
+  "superseded_by_map": {
+    "2026-11-14-white-rename-closeout.md": "r24 addendum for probe/hosts/smoke8 items",
+    "2026-11-12-upgrade-round.md": "consolidated-state"
+  },
+  "orphaned_superseded": [
+    "2026-11-14-white-rename-closeout.md -> 'r24 addendum for probe/hosts/smoke8 items' (NO MATCH ON DISK)"
+  ],
+  "unresolved_heads": [],
+  "verdict": "FAIL - 1 orphaned"
+}
