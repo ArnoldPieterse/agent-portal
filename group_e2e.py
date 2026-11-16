@@ -22,6 +22,18 @@ PROMPT = ("Round-table planning, one sentence each: Orchestrator, propose our ne
 def jget(path):
     return json.load(urllib.request.urlopen(PORTAL + path, timeout=30))
 
+def _is_truncated(text, finish):
+    """2026-11-16 (goal B5): True when a streamed reply was cut off - model signalled
+    finish_reason='length', or the stream died mid function-call tag (unbalanced)."""
+    if finish == 'length':
+        return True
+    t = text.replace(' ', '')
+    if t.count('< tool_call>') != t.count('< /tool_call>'):
+        return True
+    if '<function=' in t and '< /function>' not in t:
+        return True
+    return False
+
 def portal_chat(agent_id, messages, kind, timeout=600):
     body = {'agent_id': agent_id, 'mode': 'group', 'kind': kind, 'messages': messages}
     req = urllib.request.Request(PORTAL + '/api/chat', data=json.dumps(body).encode(), method='POST')
@@ -55,12 +67,9 @@ def portal_chat(agent_id, messages, kind, timeout=600):
     except Exception as e:
         err = err or repr(e)[:200]
     text = ''.join(content).strip()
-    # 2026-11-16 (goal B5): truncation detection - finish_reason='length' from the
-    # model, or unbalanced function-call tags (stream cut mid-tag). Flagged so the
-    # e2e report shows TRUNCATED instead of counting a partial answer as valid.
-    truncated = (finish == 'length') or (
-        text.count('<tool_call>') != text.count('</tool_call>')
-        or '<function=' in text.replace(' ', '') and '</function>' not in text)
+    # 2026-11-16 (goal B5): truncation detection via _is_truncated() - pure fn,
+    # unit-tested by test_truncation_detect.py (no live SSE needed to verify it).
+    truncated = _is_truncated(text, finish)
     silent = concluded = False
     low = text.lower()
     if low.startswith('[silent]'):

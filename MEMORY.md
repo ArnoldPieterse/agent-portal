@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 18, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 9, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-15 ~22:3x - Black restored + goal stall fixed (Orchestrator seat)
 - Black .99 back on LAN; Q8_0 loaded GPU1; UD-Q4_K_S load blocked by Studio API change -> memory/ops/black-reload-2026-11-15.md
@@ -16,16 +16,16 @@ HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module und
 Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dispatch ALL AGENTS IN PARALLEL - White's Studio only queues same-host agents internally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md). NO HUMAN GATES (Arnold 11-15): agents never create or wait on human decision gates - a blocked lane gets an alternative path or a named cross-agent handoff; the human only sets goals and reviews results.
 
 ## Hot Notes
-- Verifier at 9/10; only goal #9 remains (react
-- Fleet at 63/80 (78.8%); only Mechanic goal #1 (uptime tracker) still open, closes at week end.
-- Fleet ~74/
-- Mechanic cross-assist pass: +6 goals closed via evidence markers; fleet at ~74/80
-- Live pin moved to 37549a041412 (Arnold's JS repair); df1bbdaef684 is stale sandbox mirror — verify against new pin before trusting closures
-- Mechanic cross-assist (2026-11-15) closed 6 goals via on-disk evidence; markers stamped, doc at memory/ops/mechanic-crossassist-2026-11-15.m
-- Designer produced `designer/index-patched-v2.html` (sha12 376e88033931) covering goals #2/#3; needs Builder to copy to live pin df
 - Designer's index-patched-v2.html built on stale pin df1bbdaef684 (contains Arnold's JS bug) — risk of reverting repair if copied to live roo
 - Orchestrator POST-100% plan confirmed at TODO.md L21 (586 lines); Archivist's "missing" claim was from a stale 552-line read.
 - Pin mismatch: live pin moved to 37549a0
+- Mechanic
+- F-VER-01 flagged: Designer #4 false-positive closure pending Orchestrator adjudication;
+- All 10 goals
+- All 10 goals verified on disk; sole open item is deploying designer v3 patch to live portal (sandbox egress blocked, WinError 10013).
+- Pin moved to 418a57eec190; goals #5 and #9
+- Goal #2 (uploads mirror) closed — 4/4 tests pass; goal #10 still blocked by git unavailability in sandbox.
+- F-VER-01 downgraded from false-positive
 ## Counter
-- inter_agent_replies_this_prompt: 18 / ∞
+- inter_agent_replies_this_prompt: 9 / ∞
 - last_reset_by: —
