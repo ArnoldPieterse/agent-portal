@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-15 ~22:3x - Black restored + goal stall fixed (Orchestrator seat)
 - Black .99 back on LAN; Q8_0 loaded GPU1; UD-Q4_K_S load blocked by Studio API change -> memory/ops/black-reload-2026-11-15.md
@@ -16,16 +16,16 @@ HOT FILE ONLY (kept small on purpose). Newest first. Durable facts -> module und
 Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dispatch ALL AGENTS IN PARALLEL - White's Studio only queues same-host agents internally, parallel_slots=1 (portal/architecture.md); Stop + [CONCLUDED] + budget (portal/bugs/xtalk-completion.md); smoke agents SERIALLY - parallel aborts wedge the local Studio (llm/instances.md Wedge incident); restart trap: taskkill PID before schtasks /run (ops/windows-runbook.md); multi-GB LAN copies: full-hash verify on the destination disk, never size+magic (ops/probes.md). NO HUMAN GATES (Arnold 11-15): agents never create or wait on human decision gates - a blocked lane gets an alternative path or a named cross-agent handoff; the human only sets goals and reviews results.
 
 ## Hot Notes
-- Goal 8 (idempotency) blocked on portal restart; 3/20 POST endpoints tested, coverage table at memory/verifier/idempotency_coverage.json
-- Goal 4 pre-prune gate fixed: api-reference.md regenerated via gen_api_ref.py, now documents 39 endpoints (was 36), gate PASS.
-- SMB mirror clobbered index.html (sha12 dbfe78e9→e109764d); Designer re-applied all cycle-2 tokens/states, goal #4 & #8 complete.
-- r1 round record finalized: 14 DECIDED items owned, INDEX updated (5 entries), DRAFT superseded at memory/synthesis/2026-11-16-r1-round-recor
-- Portal :809
-- Goal #2 screenshot pair still blocked: portal :8099 down (lives on Red, fleet-wide restart pending); goals #1 & #4 closed/verified.
-- Builder: Goals 4,6,7,9 verified on-disk (evolution graveyard, parity guard, playbook tests, hot-patch rollback).
-- Designer pivoted from portal-blocked goal #2 to unblocked goals #3/#4 (index.html); noted live hash≠pin but token work intact
-- Builder Goal 6: Fixed PIN_FILES in memory_mirror.py from e0679e5f0844→4ec560fc9749; live index.html was still
-- Escalation sim bug: ratio check returns before streak check, so streak
+- Goal 8 pre-fill: 62%→95% (61/64) after signal-based owner-inference; passes ≥80 bar; accuracy check on inferred owners still open.
+- Goal 1 (CI gate) COMPLETED: all 4 suites pass; sse_parse.py created as standalone SSE module extracted from group_e2e.py
+- Goal 3 done: 25 inline styles → named classes in index.html; pin e0679e5f→c0629a5b
+- evolution.py subprocess.run lacks explicit cwd; nested sandbox processes lose working dir — fix: add cwd="." to those calls
+- Goal 7 (focus rings + ARIA landmarks
+- Verifier confirmed 8/10 goals verified & batch-re-recorded after mirror cycle wiped ledger; Goals 9-10
+- Portal restart PENDING:
+- Goal 7 (focus rings + ARIA landmarks) COMPLETED: universal :focus-visible rule in index.html, all interactive elements covered.
+- Mirror cycles repeatedly clobber the goal ledger; evidence files survive on disk,
+- Builder has evidence files on disk for all 10 goals but never ran --record; ledger shows 0/10. Mirror cycles keep
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —

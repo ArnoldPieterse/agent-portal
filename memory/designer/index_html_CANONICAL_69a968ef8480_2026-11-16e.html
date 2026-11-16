@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+<title>Agent Portal</title>
+<style>
+:root{--bg:#0e1116;--panel:#151a22;--panel2:#1b2230;--line:#2a3342;--text:#e8edf4;--dim:#9aa7b8;
+--acc:#4f8cff;--ok:#3ddc84;--warn:#ff9f43;--err:#ff6b6b;--focus:#7fb0ff;--faint:#8b98ab;--sp-4:4px;--sp-8:8px;--sp-12:12px;--sp-16:16px;--sp-24:24px;--fs-11:11px;--fs-12:12px;--fs-13:13px;--fs-14:14px;--fs-15:15px;--fs-16:16px;}
+*{box-sizing:border-box}
+body{margin:0;font-size:var(--fs-14);line-height:1.45;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:var(--sp-12);padding:var(--sp-8) var(--sp-16);border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{font-size:var(--fs-15);margin:0;font-weight:600}
+#status{margin-left:auto;display:flex;align-items:center;gap:var(--sp-8);color:var(--dim);font-size:var(--fs-12)}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;flex:none;vertical-align:middle}
+.status-dot--ok{background:var(--ok)}
+.status-dot--warn{background:var(--warn)}
+.status-dot--err{background:var(--err)}
+.status-dot--unknown{background:#8b949e}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--err)}
+.dot.on{background:var(--ok)}
+main{flex:1;display:flex;min-height:0}
+aside{width:250px;border-right:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;min-height:0}
+aside .ah{display:flex;align-items:center;padding:var(--sp-8) var(--sp-12);font-size:var(--fs-12);color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
+#addAgent{margin-left:auto;background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:3px var(--sp-8);cursor:pointer}
+#addAgent:hover{border-color:var(--acc)}
+#agentList{flex:1;overflow-y:auto;padding:var(--sp-4) var(--sp-8)}
+.acard{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8);border-radius:8px;cursor:pointer;border:1px solid transparent;margin-bottom:var(--sp-4);background:var(--panel2)}
+.acard:hover{border-color:var(--line)}
+.acard.sel{border-color:var(--acc);background:#20304d}
+.acard .em{font-size:18px;width:26px;text-align:center}
+.acard .nm{flex:1;min-width:0}
+.acard .nm b{display:block;font-size:var(--fs-13);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.acard .nm span{font-size:var(--fs-11);color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.acard button{background:none;border:none;color:var(--dim);cursor:pointer;font-size:var(--fs-13);padding:2px var(--sp-4);border-radius:8px}
+.acard button:hover{color:var(--text);background:#2a3342}
+#chatCol{flex:1;display:flex;flex-direction:column;min-width:0}
+#modeBar{display:flex;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);border-bottom:1px solid var(--line);align-items:center;background:var(--panel)}
+.seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg button{background:none;border:none;color:var(--dim);padding:var(--sp-4) var(--sp-16);cursor:pointer;font-size:var(--fs-13)}
+.seg button.on{background:#3a6fd6;color:#fff}
+#modeHint{font-size:var(--fs-12);color:var(--dim)}
+#resetBtn{margin-left:auto;background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:var(--sp-4) var(--sp-8);cursor:pointer;font-size:var(--fs-12)}
+#resetBtn:hover{border-color:var(--warn);color:var(--text)}
+#msgs{flex:1;overflow-y:auto;padding:var(--sp-16) var(--sp-16);display:flex;flex-direction:column;gap:var(--sp-12)}
+.msg{max-width:78%;padding:var(--sp-8) var(--sp-12);border-radius:12px;background:var(--panel2);border:1px solid var(--line);white-space:pre-wrap;word-wrap:break-word}
+.msg .who{font-size:var(--fs-11);font-weight:600;margin-bottom:3px;display:flex;gap:var(--sp-8);align-items:center}
+.msg.you{align-self:flex-end;background:#243b63;border-color:#33507f}
+.think{margin-top:var(--sp-4);font-size:var(--fs-11);color:var(--dim);border-left:2px solid var(--line);padding-left:var(--sp-8);white-space:pre-wrap}
+.think summary{cursor:pointer;font-size:var(--fs-11);font-style:italic;color:var(--faint);user-select:none;list-style:none}
+.think summary::-webkit-details-marker{display:none}
+.think .tbody{max-height:120px;overflow-y:auto;margin-top:2px}
+.thinkwrap{align-self:flex-start;max-width:62%;padding:3px var(--sp-8);border:1px dashed var(--line);border-radius:8px}
+.silentpill{font-size:var(--fs-11);color:var(--dim);opacity:.85;white-space:nowrap}
+.roundend{font-size:var(--fs-11);padding:var(--sp-4) var(--sp-8);border-radius:8px;margin-top:var(--sp-8)}
+.roundend.ok{color:var(--ok);background:rgba(61,220,132,.08);border:1px solid rgba(61,220,132,.25)}
+.roundend.warn{color:var(--warn);background:rgba(255,159,67,.08);border:1px solid rgba(255,159,67,.3)}
+.roundend.dim{color:var(--dim);background:var(--panel2);border:1px solid var(--line)}
+.msg.silentmsg .who{opacity:.6}
+.msg.silentmsg .body{font-size:var(--fs-11);color:var(--faint);font-style:italic}
+.tsec{margin-top:var(--sp-4);padding-left:var(--sp-8);border-left:1px solid var(--line)}
+.tsec:first-child{margin-top:2px}
+.tsec b{display:block;font-size:var(--fs-11);font-weight:600;color:var(--text);opacity:.8;margin-bottom:1px}
+.msg .toolchip{display:inline-block;margin:var(--sp-4) var(--sp-4) 0 0;font-size:var(--fs-11);background:#2a3342;border-radius:8px;padding:1px var(--sp-8);color:var(--warn)}
+.dmpub{white-space:pre-wrap}
+.dmseg{margin-top:var(--sp-8);border:1px solid #4a3f6b;background:rgba(138,99,210,.10);border-radius:8px;padding:var(--sp-4) var(--sp-8);font-size:var(--fs-12)}
+.dmseg summary{cursor:pointer;color:#b79ce0;user-select:none;font-weight:600}
+.dmseg .dmbody{margin-top:var(--sp-4);white-space:pre-wrap;color:var(--dim);font-size:var(--fs-12)}
+.typing{color:var(--dim);font-size:var(--fs-12);align-self:flex-start;padding:0 var(--sp-4)}
+#composer{display:flex;gap:var(--sp-8);padding:var(--sp-12) var(--sp-16);border-top:1px solid var(--line);background:var(--panel)}
+#input{flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:8px;color:var(--text);padding:var(--sp-8) var(--sp-12);font-size:var(--fs-14);resize:none;height:44px}
+#input:focus{outline:none;border-color:var(--acc)}
+#send{background:var(--acc);border:none;color:#fff;border-radius:8px;padding:0 var(--sp-16);cursor:pointer;font-size:var(--fs-14)}
+#send:disabled{opacity:.5;cursor:default}
+#attachWrap{position:relative}
+#attach{background:none;border:1px solid var(--line);color:var(--acc);border-radius:8px;width:44px;height:44px;font-size:22px;line-height:1;cursor:pointer}
+#attach:hover{border-color:var(--acc)}
+.amenu{position:absolute;bottom:calc(100% + var(--sp-8));left:0;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:var(--sp-8);display:flex;flex-direction:column;gap:var(--sp-4);z-index:60;min-width:180px}
+.amenu[hidden]{display:none}
+.amenu button{background:none;border:none;color:var(--text);text-align:left;padding:var(--sp-8) var(--sp-8);border-radius:8px;cursor:pointer;font-size:var(--fs-13)}
+.amenu button:hover{background:var(--panel)}
+#chips{display:flex;flex-wrap:wrap;gap:var(--sp-8)}
+#chips:not(:empty){padding:var(--sp-8) var(--sp-16) 0}
+.chipfile{display:flex;align-items:center;gap:var(--sp-8);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:var(--sp-4) var(--sp-8);font-size:var(--fs-12);max-width:360px}
+.chipfile .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chipfile .sz{opacity:.6;flex:none}
+.chipfile .st{color:var(--acc);flex:none}
+.chipfile .st.err{color:var(--err)}
+.chipfile button{background:none;border:none;color:var(--text);cursor:pointer;opacity:.7;flex:none}
+#composer.dragover{outline:2px dashed var(--acc);outline-offset:-4px}
+dialog{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:12px;width:min(560px,92vw);padding:0}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+.dhead{display:flex;align-items:center;padding:var(--sp-12) var(--sp-16);border-bottom:1px solid var(--line);font-weight:600}
+.dhead button{margin-left:auto;background:none;border:none;color:var(--dim);cursor:pointer;font-size:var(--fs-16)}
+.dbody{padding:var(--sp-16) var(--sp-16);display:flex;flex-direction:column;gap:var(--sp-8);max-height:70vh;overflow-y:auto}
+.frow{display:flex;gap:var(--sp-8)}.frow>div{flex:1}
+label{font-size:var(--fs-12);color:var(--dim);display:block;margin-bottom:3px}
+input[type=text],input[type=number],select,textarea{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:8px;color:var(--text);padding:var(--sp-8) var(--sp-8);font-size:var(--fs-13)}
+textarea{resize:vertical;min-height:64px}
+.hint{font-size:var(--fs-11);color:var(--dim)}
+.checks{display:flex;flex-wrap:wrap;gap:var(--sp-8)}
+.checks label{display:flex;align-items:center;gap:var(--sp-4);font-size:var(--fs-12);color:var(--text);margin:0;background:var(--panel2);border:1px solid var(--line);padding:var(--sp-4) var(--sp-8);border-radius:8px;cursor:pointer}
+.checks input{width:auto;margin:0}
+.dfoot{display:flex;justify-content:flex-end;gap:var(--sp-8);padding:var(--sp-12) var(--sp-16);border-top:1px solid var(--line)}
+.btn{border:1px solid var(--line);background:var(--panel2);color:var(--text);border-radius:8px;padding:var(--sp-8) var(--sp-16);cursor:pointer;font-size:var(--fs-13)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}
+.toggle{display:flex;align-items:center;gap:var(--sp-8);font-size:var(--fs-13);color:var(--text)}
+.busyspan{color:#8b93a7;font-style:italic;animation:pulse 1.3s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.4}}
+.flink{color:#6db1ff;text-decoration:none;border-bottom:1px dashed rgba(109,177,255,.5)}
+.flink:hover{color:#9ccaff;border-bottom-style:solid}
+#peek{position:fixed;z-index:99;display:none;max-width:340px;background:#141a26;border:1px solid #2c3548;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.5);font-size:var(--fs-11);color:#cdd3e0}
+#peek .pk-h{padding:var(--sp-8) var(--sp-8);font-weight:600;border-bottom:1px solid #2c3548;color:#9ccaff}
+#peek .pk-sz{color:#8b93a7;font-weight:400;margin-left:var(--sp-8)}
+#peek .pk-body{margin:0;padding:var(--sp-8) var(--sp-8);white-space:pre-wrap;word-break:break-word;max-height:180px;overflow:auto;font-family:ui-monospace,Consolas,monospace;color:#aab2c5}
+#actBtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:var(--sp-4) var(--sp-8);cursor:pointer;font-size:var(--fs-12)}
+#actBtn:hover,#actBtn.on{border-color:var(--acc);color:var(--text)}
+#actPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:240px;flex-direction:column}
+#actPanel.open{display:flex}
+#fleetPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:280px;flex-direction:column}
+#fleetPanel.open{display:flex}
+#fleetHead{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);color:var(--dim);border-bottom:1px solid var(--line)}
+#fleetBody{overflow-y:auto;padding:var(--sp-8) var(--sp-16)}
+.frow-h{padding:var(--sp-8) 0;border-bottom:1px dashed var(--line);font-size:var(--fs-12)}
+.frow-h:last-child{border-bottom:none}
+.fdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:var(--sp-8);background:#888}
+.fdot.busy{background:var(--warn)}
+.fdot.idle{background:var(--ok)}
+.fdot.unknown{background:var(--err)}
+.fmodels{color:var(--text);margin:3px 0 0 var(--sp-16);font-family:ui-monospace,Consolas,monospace;font-size:var(--fs-12)}
+#fleetBtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:var(--sp-4) var(--sp-8);cursor:pointer;font-size:var(--fs-12)}
+#fleetBtn:hover,#fleetBtn.on{border-color:var(--acc);color:var(--text)}
+#opsPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:360px;flex-direction:column}
+#opsPanel.open{display:flex}
+#opsHead{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);color:var(--dim);border-bottom:1px solid var(--line)}
+#opsBody{overflow-y:auto;padding:var(--sp-8) var(--sp-16)}
+.opsbox{font-size:var(--fs-12);line-height:1.6;font-family:ui-monospace,Consolas,monospace;white-space:pre-wrap;color:var(--dim);max-height:none;overflow:visible;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:var(--sp-4) var(--sp-8);margin-top:var(--sp-8)}
+#gitMsg{flex:1;padding:var(--sp-4) var(--sp-8);font-size:var(--fs-12);background:var(--bg);border:1px solid var(--line);border-radius:8px;color:var(--text)}
+.opsrow{display:flex;gap:var(--sp-8);margin-top:var(--sp-8);align-items:center}
+#actHead{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);color:var(--dim);border-bottom:1px solid var(--line)}
+#actSel{width:auto;max-width:360px;padding:3px var(--sp-8);font-size:var(--fs-12)}
+#actBody{overflow-y:auto;padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);line-height:1.7;font-family:ui-monospace,Consolas,monospace}
+.aev{display:flex;gap:var(--sp-8);align-items:baseline;white-space:nowrap}
+.aev .at{color:var(--faint);flex:none;width:64px}
+.aev .an{font-weight:600;flex:none}
+.aev .ax{color:var(--dim);overflow:hidden;text-overflow:ellipsis}
+/* A3 ops-polish 11-13 (Designer): functional focus ring + status-line semantics */
+#opsPanel button:focus-visible,#opsPanel input:focus-visible,
+#modeBar button:focus-visible,.seg button:focus-visible{
+  outline:2px solid var(--focus);outline-offset:2px}
+#gitMsg{border-color:var(--line)}
+#gitMsg:focus{border-color:var(--focus);outline:none}
+/* A2 files-panel 11-13 (Designer): uploads/ listing; load-on-open + ↻ only, no polling */
+#filesBtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:var(--sp-4) var(--sp-8);cursor:pointer;font-size:var(--fs-12)}
+#filesBtn:hover,#filesBtn.on{border-color:var(--acc);color:var(--text)}
+#filesPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:280px;flex-direction:column}
+#filesPanel.open{display:flex}
+#filesHead{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);color:var(--dim);border-bottom:1px solid var(--line)}
+#filesList{list-style:none;margin:0;padding:0;overflow:auto;font-size:var(--fs-12)}
+#filesList li{padding:var(--sp-4) var(--sp-8);border-bottom:1px solid var(--line)}
+#filesList a{color:var(--focus);text-decoration:none;display:block}
+#filesList a:hover{text-decoration:underline}
+.fs-meta{color:var(--dim);font-size:var(--fs-11);white-space:nowrap;margin-left:var(--sp-8)}
+.fs-empty{padding:var(--sp-8);color:var(--dim)}
+/* Goal Velocity dashboard (2026-11-15, Designer): /api/goals -> per-agent SVG rings */
+#goalsBtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:8px;padding:var(--sp-4) var(--sp-8);cursor:pointer;font-size:var(--fs-12)}
+#goalsBtn:hover,#goalsBtn.on{border-color:var(--acc);color:var(--text)}
+#goalsPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:300px;flex-direction:column}
+#goalsPanel.open{display:flex}
+#goalsHead{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);color:var(--dim);border-bottom:1px solid var(--line)}
+#goalsBody{overflow-y:auto;padding:var(--sp-8) var(--sp-16);display:flex;flex-wrap:wrap;gap:var(--sp-8)}
+.gtile{display:flex;align-items:center;gap:var(--sp-8);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:var(--sp-8) var(--sp-12);min-width:170px}
+.gring{position:relative;width:44px;height:44px;flex:none}
+.gring svg{transform:rotate(-90deg)}
+.gring .pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:var(--fs-11);font-weight:600}
+.gname{font-size:var(--fs-12);font-weight:600}
+.gmeta{font-size:var(--fs-11);color:var(--dim)}
+.gblock{color:var(--warn);font-size:var(--fs-11)}
+/* Motion spec (2026-11-15, Designer): 150-200ms on interactive elements only */
+#modeBar button,.seg button,.btn,#send{transition:border-color .15s,color .15s,background-color .15s,opacity .15s}
+.dot{transition:background-color .2s}
+.flink{transition:color .15s,border-bottom-color .15s}
+.toggles{display:inline-flex;gap:var(--sp-8)}
+.vdiv{width:1px;height:16px;background:var(--line);margin:0 var(--sp-4)}
+
+/* ---- User message queue + interrupted-run banner (2026-11-15) ---- */
+#queuePanel{display:none;border-top:1px solid var(--line);background:#0d1117;padding:var(--sp-8) var(--sp-12);max-height:140px;overflow-y:auto}
+#queuePanel.has{display:block}
+#queueHead{font-size:var(--fs-11);color:#8b949e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--sp-4)}
+.qrow{display:flex;align-items:center;gap:var(--sp-8);padding:3px 0;font-size:var(--fs-13)}
+.qspin{width:12px;height:12px;border:2px solid #30363d;border-top-color:#58a6ff;border-radius:50%;flex:none;animation:qspin .9s linear infinite}
+@keyframes qspin{to{transform:rotate(360deg)}}
+.qts{color:#8b949e;font-size:var(--fs-11);flex:none}
+.qtxt{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#c9d1d9}
+.qc{margin-left:auto;color:#8b949e;font-size:var(--fs-11);flex:none}
+#intBanner{display:none;margin:var(--sp-8) var(--sp-12);border:1px solid #d29922;background:#2d2000;color:#e3b341;border-radius:8px;padding:var(--sp-8) var(--sp-12);font-size:var(--fs-13);align-items:center;gap:var(--sp-8)}
+#intBanner.show{display:flex}
+#intBanner .iact{margin-left:auto}
+
+/* ---- Responsive pass (goal 7, set 2026-11-13): 768px + 375px breakpoints ---- */
+@media (max-width:768px){
+  aside{width:180px}
+  header{flex-wrap:wrap;gap:var(--sp-8);padding:var(--sp-8) var(--sp-12)}
+  #modeBar{flex-wrap:wrap;padding:var(--sp-8) var(--sp-12)}
+  .opsrow{flex-wrap:wrap}
+  #msgs{padding:var(--sp-12)}
+  #composer{flex-wrap:wrap;padding:var(--sp-8) var(--sp-12)}
+  #peek{max-width:calc(100vw - 24px)}
+  dialog{width:min(560px,96vw)}
+}
+@media (max-width:375px){
+  main{flex-direction:column}
+  aside{width:100%;max-height:26vh;border-right:0;border-bottom:1px solid var(--line)}
+  #agentList{display:flex;flex-direction:row;gap:var(--sp-4);overflow-x:auto;overflow-y:hidden}
+  .acard{flex:0 0 auto;min-width:160px;margin-bottom:0}
+  header h1{font-size:var(--fs-13)}
+  #status{margin-left:0;width:100%;order:2}
+  .opsbox{flex:1 1 100%}
+  #msgs{padding:var(--sp-8);gap:var(--sp-8)}
+  #composer{padding:var(--sp-8)}
+  .frow{flex-direction:column;gap:var(--sp-8)}
+  .dbody{padding:var(--sp-8) var(--sp-12)}
+  #send{padding:0 var(--sp-16)}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>🤖 Agent Portal</h1>
+  <span class="hint">backed by Unsloth Studio desktop harness · v3</span>
+  <div id="status"><span class="dot" id="sdot"></span><span id="stext">checking studio…</span></div>
+</header>
+<main>
+  <aside>
+    <div class="ah">Agents <button id="addAgent" title="Add agent">＋ Add</button></div>
+    <div id="agentList"></div>
+  </aside>
+  <div id="chatCol">
+    <div id="modeBar">
+      <div class="seg">
+        <button id="mSolo" class="on">Solo</button>
+        <button id="mGroup">Group</button>
+      </div>
+      <span id="modeHint">Chatting with —</span><span id="xtalk" class="hint"></span><span id="busyHint" class="busyspan"></span>
+      <span class="toggles"><button id="goalsBtn" title="Goal velocity: per-agent progress rings from memory/goals/">🎯 Goals</button><button id="actBtn" title="Activity timeline: every turn + tool call of each run, persisted per session (survives restarts)">⏱ Activity</button>
+      <button id="fleetBtn" title="Fleet status: per-host loaded models + busy/idle/unknown; live while open">🛰 Fleet</button>
+      <button id="filesBtn" title="Uploaded files (uploads/): humans' drop zone; lists on open, ↻ to re-list">📁 Files</button>
+      <button id="opsBtn" title="Ops: local git status + commit, and prune fully-completed TODO sections into TODO_completed.md">🔧 Ops</button></span><span class="vdiv"></span>
+      <button id="resetBtn" title="Reset conversation: clears chat history and the agent-to-agent counter">↺ Reset</button>
+      <button id="stopBtn" disabled style="color:var(--err)" title="Stop this run now: aborts in-flight replies and closes the round as concluded">■ Stop</button>
+    </div>
+    <div id="actPanel">
+      <div id="actHead"><span>session</span><select id="actSel"></select><span id="actStat" class="hint"></span>
+        <button class="btn" id="actRefresh" style="margin-left:auto;padding:2px 10px;font-size:12px">↻ refresh</button></div>
+      <div id="actBody"></div>
+    </div>
+    <div id="fleetPanel">
+      <div id="fleetHead"><span>4-host fleet · live while open (5s refresh)</span><span id="fleetStat" class="hint">loading…</span></div>
+      <div id="fleetBody"></div>
+    </div>
+    <div id="opsPanel">
+      <div id="opsHead"><span>Repo ops · local git in C:\Projects\Workspace</span><span id="opsStat" class="hint">loading…</span></div>
+      <div id="opsBody">
+        <div style="font-size:12px;color:var(--dim)">Working tree (uncommitted):</div>
+        <div class="opsbox" id="gitStatus"><span class="status-dot status-dot--unknown" id="gitDot"></span> —</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:6px">Recent commits:</div>
+        <div class="opsbox" id="gitLog">—</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:6px">Sandbox merge queue (agent code edits captured before push-clobber):</div>
+        <div class="opsbox" id="mergeQueue">—</div>
+        <div style="font-size:12px;color:var(--dim);margin-top:8px">Host tiles · this portal's host (GET /api/ops):</div>
+        <div class="opsrow" style="align-items:stretch">
+          <div class="opsbox" id="diskTile" style="flex:1;max-height:none" aria-label="Disk usage">—</div>
+          <div class="opsbox" id="uptimeTile" style="flex:1;max-height:none" aria-label="Portal uptime">—</div>
+        </div>
+        <div class="opsrow">
+          <input id="gitMsg" placeholder="commit message…" aria-label="Commit message">
+          <button class="btn" id="gitCommit">⬆ Commit all</button>
+          <button class="btn" id="todoPrune" title="Moves TODO.md sections whose items are all [x] into TODO_completed.md (splits into numbered parts as it grows)">✂ Prune done TODO</button>
+        </div>
+        <div id="opsMsg" class="hint" role="status" aria-live="polite" style="margin-top:6px;font-size:12px"></div>
+      </div>
+    </div>
+    <div id="filesPanel">
+      <div id="filesHead"><span>uploads/ — humans' drop zone (shared agent folder)</span><button class="btn" id="filesRefresh" style="margin-left:auto;padding:2px 10px;font-size:12px" title="Re-list uploads/">↻ refresh</button></div>
+      <ul id="filesList"></ul>
+    </div>
+    <div id="goalsPanel">
+      <div id="goalsHead"><span>Goal velocity · live parse of memory/goals/</span><span id="goalsStat" class="hint">loading…</span></div>
+      <div id="goalsBody"></div>
+      <div id="goalsGit" class="hint" style="margin-top:6px;font-size:12px"></div>
+    </div>
+    <div id="msgs"></div>
+        <div id="intBanner"><span id="intText"></span><button id="intResume" class="iact">send continue prompt</button><button id="intDismiss">dismiss</button></div>
+    <div id="queuePanel"><div id="queueHead">queued - waiting for agents to pick up</div><div id="queueList"></div></div>
+<div id="composer">
+      <textarea id="input" placeholder="Type a message…  (in Group mode, use @Name to address one agent; + or drag &amp; drop to attach files/folders)"></textarea>
+      <div id="attachWrap">
+        <button id="attach" title="Upload files or a folder to the shared agent folder (uploads/)">+</button>
+        <div id="attachMenu" class="amenu" hidden>
+          <button data-act="files">Upload files…</button>
+          <button data-act="folder">Upload folder…</button>
+        </div>
+      </div>
+      <button id="send">Send</button>
+    </div>
+    <input type="file" id="filePick" multiple hidden>
+    <input type="file" id="dirPick" webkitdirectory hidden>
+  </div>
+</main>
+<div id="peek"></div>
+
+<dialog id="editor">
+  <div class="dhead"><span id="edTitle">Edit agent</span><button id="edClose" title="Close">✕</button></div>
+  <div class="dbody">
+    <div class="frow">
+      <div><label>Name</label><input type="text" id="f_name"></div>
+      <div style="max-width:70px"><label>Emoji</label><input type="text" id="f_emoji" maxlength="4"></div>
+      <div style="max-width:90px"><label>Color</label><input type="color" id="f_color" style="height:32px;padding:2px"></div>
+    </div>
+    <div><label>Short blurb (shown to other agents)</label><input type="text" id="f_blurb"></div>
+    <div><label>Role / persona</label><textarea id="f_persona" rows="4" placeholder="You are …"></textarea></div>
+    <label class="toggle" style="margin-bottom:6px"><input type="checkbox" id="f_net" style="width:auto"> Networked host (Studio on another machine)</label>
+    <div id="netFields" style="display:none;margin-bottom:8px">
+      <div class="frow">
+        <div><label>Studio base URL</label><input type="text" id="f_studio" placeholder="http://192.168.1.99:8888"></div>
+        <div><label>API key (Bearer)</label><input type="password" id="f_key" placeholder="sk-unsloth-…"></div>
+      </div>
+      <div class="frow">
+        <button class="btn" id="f_scan" style="height:30px">Scan models</button>
+        <span id="f_scanstat" class="hint"></span>
+      </div>
+      <div class="frow">
+        <div><label>RAG host <span class="hint">(blank = chat host)</span></label><input type="text" id="f_ragstudio" placeholder="http://127.0.0.1:8888 (White's index)"></div>
+        <div><label>RAG API key <span class="hint">(blank = none / chat key)</span></label><input type="password" id="f_ragkey" placeholder="only if RAG host needs auth"></div>
+      </div>
+    </div>
+    <div><label>Model (managed by Studio)</label><select id="f_model"></select></div>
+    <div class="frow">
+      <div><label>Temperature</label><input type="number" id="f_temp" step="0.1" min="0" max="2"></div>
+      <div><label>Max tokens <span class="hint">(0 = Studio decides)</span></label><input type="number" id="f_maxtok" min="0" step="64"></div>
+    </div>
+    <div class="frow">
+      <div><label>Reasoning effort <span class="hint">(managed by Studio harness)</span></label>
+        <select id="f_reasoning">
+          <option value="default">Default (Studio decides)</option>
+          <option value="off">Off (no thinking)</option>
+          <option value="minimal">Minimal</option><option value="low">Low</option>
+          <option value="medium">Medium</option><option value="high">High</option>
+          <option value="max">Max</option><option value="xhigh">X-High</option>
+        </select></div>
+      <div><label>Max tool calls <span class="hint">(0 = Studio decides)</span></label><input type="number" id="f_maxtools" min="0"></div>
+    </div>
+    <div><label>Tools (executed by the desktop harness, not in a sandbox)</label>
+      <div class="checks" id="f_tools"></div>
+      <label class="toggle" style="margin-top:6px"><input type="checkbox" id="f_runlocal" style="width:auto"> Run tools locally on this machine</label>
+    </div>
+    <div><label>RAG knowledge base</label>
+      <label class="toggle" style="margin-bottom:4px"><input type="checkbox" id="f_rag" style="width:auto"> Enable RAG for this agent</label>
+      <select id="f_kb"><option value="">(any / default knowledge base)</option></select>
+    </div>
+    <div><label>Memory cycle <span class="hint">(ReadMem before · StoreMem after each message)</span></label>
+      <label class="toggle" style="margin-bottom:4px"><input type="checkbox" id="f_memcycle" style="width:auto"> Memory lookup + store around every message</label>
+      <label class="toggle"><input type="checkbox" id="f_fastfirst" style="width:auto"> First reply to human: low reasoning + low context</label>
+    </div>
+  </div>
+  <div class="dfoot">
+    <button class="btn" id="edCancel">Cancel</button>
+    <button class="btn pri" id="edSave">Save agent</button>
+  </div>
+</dialog>
+<script>
+const $ = id => document.getElementById(id);
+window.onerror=(m,src,l)=>{try{$("stext").textContent="JS ERROR line "+l+": "+String(m).slice(0,80);}catch(_){}};
+$("stext").textContent="js running…";
+let agents=[], models=[], netModels=[], kbs=[], localTools=[];
+let selectedId=null, mode="solo", busy=false;
+let sessionId=null; // current run's activity-timeline session (one per human prompt)
+let history=[]; // {speaker, content}
+
+async function api(path, opts){ const r=await fetch(path, opts); return r.json(); }
+const jpost=(p,b)=>api(p,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});
+const jput =(p,b)=>api(p,{method:"PUT" ,headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});
+
+function esc(s){ return (s||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+function shortModel(m){ return (m||"").split("/").pop().slice(0,26); }
+
+async function refresh(){
+  agents=((await api("/api/agents").catch(()=>({}))).agents)||[];
+  const m=await api("/api/models").catch(()=>({data:[]})); models=m.data||[];   // Studio's /v1/models can stall during a generation - never let it kill the rest of refresh
+  try{ kbs=(await api("/api/knowledge-bases")).knowledgeBases||[]; }catch(e){ kbs=[]; }
+  localTools=((await api("/api/tools").catch(()=>({}))).local_tools)||[];
+  if(!agents.find(a=>a.id===selectedId)) selectedId=agents[0]?.id||null;
+  try{ const mem=await api("/api/memory"); setXtalk(mem.inter_agent_replies, mem.limit); }catch(e){}
+  renderAgents();
+}
+
+function renderAgents(){
+  const el=$("agentList"); el.innerHTML="";
+  for(const a of agents){
+    const c=document.createElement("div");
+    c.className="acard"+(a.id===selectedId?" sel":"");
+    var _sd=a.loaded?"status-dot--ok":"status-dot--unknown";
+    c.innerHTML=`<span class="status-dot ${_sd}" title="${a.loaded?'loaded':'not loaded'}"></span><span class="em">${esc(a.emoji||"🤖")}</span>
+      <span class="nm"><b>${esc(a.name)}</b><span>${esc(shortModel(a.model_id))}</span></span>`;
+    const g=document.createElement("button"); g.textContent="⚙"; g.title="Edit profile";
+    g.onclick=e=>{e.stopPropagation();openEditor(a);};
+    const x=document.createElement("button"); x.textContent="✕"; x.title="Delete";
+    x.onclick=async e=>{e.stopPropagation();
+      if(!confirm(`Delete ${a.name}?`))return;
+      await fetch("/api/agents/"+a.id,{method:"DELETE"}); refresh();};
+    c.append(g,x);
+    c.onclick=()=>{ selectedId=a.id; renderAgents(); updateHint(); if(mode==="solo") resetChat(); };
+    el.appendChild(c);
+  }
+  $("modeHint").textContent="";
+}
+
+let xtalkMax=0; // high-water mark: parallel streams' meta frames arrive out of order, counter only rises within a prompt
+function setXtalk(n, limit){ if(typeof n==="number"&&n>xtalkMax)xtalkMax=n; $("xtalk").textContent = (mode==="group") ? (" \u00b7 "+xtalkMax+"/"+(limit==null?"\u221e":limit)+" agent\u2194agent this prompt") : ""; }
+
+function updateHint(){
+  const a=agents.find(x=>x.id===selectedId);
+  $("modeHint").textContent = mode==="solo"
+    ? (a?`Chatting with ${a.emoji||""} ${a.name}`:"")
+    : `${agents.length} agents in the room · @Name to address one`;
+}
+
+// Multi-agent busy hint: group streams run IN PARALLEL, so several agents can be
+// "working" at once - track the set, render a combined line, clear per stream end.
+const busyNames=new Set();
+function renderBusyHint(){ const b=$("busyHint"); if(!b)return;
+  if(busyNames.size){ const n=[...busyNames];
+    b.textContent="\u23f3 "+(n.length>1?n.join(", "):n[0])+(n.length>1?" are":" is")+" working\u2026";
+    b.style.display="inline"; }
+  else{ b.textContent=""; b.style.display="none"; } }
+function setBusyHint(name){ if(name)busyNames.add(name); renderBusyHint(); if(busyNames.size)$("stopBtn").disabled=false; }
+function clearBusyHint(name){ busyNames.delete(name); renderBusyHint(); if(!busyNames.size)$("stopBtn").disabled=true; }
+// Send is NEVER disabled while a run is active: send() routes to the user-message queue
+// (user_messages.json) which each agent picks up on its next prompt build. The button just
+// relabels to "Queue" so the behavior is visible (2026-11-15: was greyed out = dead end).
+function setSendQueued(q){const b=$("send");b.disabled=false;b.textContent=q?"Queue":"Send";}
+let stallTimer=null;
+async function stallPoll(){try{const r=await api('/api/run-state');
+  if(r&&r.busy&&r.stalled){const b=$("busyHint");if(b){b.style.display="inline";
+    b.textContent="\u26a0 no output for "+Math.max(1,Math.round((Date.now()-(r.last_frame_ts||Date.now()))/60000))+" min - possible Studio wedge (try \u25a0 Stop or \\RecoverAll)";}}
+}catch(e){}}
+function startStallPoll(){if(stallTimer)return;stallPoll();stallTimer=setInterval(stallPoll,15000);}
+function stopStallPoll(){if(stallTimer){clearInterval(stallTimer);stallTimer=null;}}
+
+function resetChat(){ history=[]; $("msgs").innerHTML=""; sessionId=null; }
+// ---- Sticky auto-scroll (2026-11-13): pin to bottom while streaming, but never yank the view
+// down while the user has scrolled up to re-read; re-pins at the bottom or on the next send.
+let stickOn=true;
+function stickScroll(force){ if(force)stickOn=true; if(stickOn)$("msgs").scrollTop=$("msgs").scrollHeight; }
+$("msgs").addEventListener("scroll",()=>{ const el=$("msgs"); stickOn=(el.scrollHeight-el.scrollTop-el.clientHeight)<60; });
+// ---- Per-mode message persistence (2026-11-13): refresh no longer clears the conversation.
+// A MutationObserver on #msgs serializes visible bubbles + history into localStorage per mode;
+// setMode restores the slot, \u21ba Reset clears it. Restored agent bubbles are re-linkified so
+// file-token hover peeks work exactly as in a live bubble.
+const LS_PREFIX="portal_msgs_";
+const lsKey=()=>LS_PREFIX+mode;
+let saveTimer=null;
+function scheduleSave(){ if(saveTimer)return; saveTimer=setTimeout(saveMsgs,400); }
+function saveMsgs(){
+  saveTimer=null;
+  try{
+    const bubbles=[...$("msgs").children].map(d=>{
+      const who=d.querySelector(".who"), body=d.querySelector(".body");
+      return {n:who?who.textContent:"",c:(who&&who.style.color)||"",y:d.classList.contains("you"),t:body?body.textContent:""};
+    }).slice(-200);
+    localStorage.setItem(lsKey(),JSON.stringify({bubbles,history:history.slice(-120),ts:Date.now()}));
+  }catch(e){} // quota/private mode - persistence is best-effort, never break chat
+}
+function restoreMsgs(){
+  let data=null; try{ data=JSON.parse(localStorage.getItem(lsKey())||"null"); }catch(e){}
+  if(!data||!Array.isArray(data.bubbles)||!data.bubbles.length)return false;
+  history=Array.isArray(data.history)?data.history:[];
+  for(const b of data.bubbles){
+    const d=document.createElement("div"); d.className="msg"+(b.y?" you":"");
+    if(!b.y){ const w=document.createElement("div"); w.className="who"; if(b.c)w.style.color=b.c; w.textContent=b.n||""; d.appendChild(w); }
+    const body=document.createElement("div"); body.className="body"; body.textContent=b.t||""; d.appendChild(body);
+    $("msgs").appendChild(d);
+    if(!b.y&&(b.t||"").trim())linkifyFiles(body,b.t); // re-wire file-link hover for restored bubbles
+  }
+  stickScroll(true);
+  return true;
+}
+$("stopBtn").onclick=()=>{ if(!busyNames.size&&mode!=="group")return; stopRequested=true; lastConcluded=true; activeCtrls.forEach(c=>c.abort());
+  if(runId){ jpost('/api/run-stop',{run_id:runId}).catch(()=>{}); } }; // ■ Stop: abort solo streams / tell the backend run engine to stop cleanly (it finishes teardown + verdict)
+
+function addBubble(name, color, emoji, isYou){
+  const d=document.createElement("div");
+  d.className="msg"+(isYou?" you":"");
+  d.innerHTML=(isYou?"":`<div class="who" style="color:${color||"#ccc"}">${esc(emoji||"")} ${esc(name)}</div>`);
+  const body=document.createElement("div"); body.className="body"; d.appendChild(body);
+  $("msgs").appendChild(d); stickScroll();
+  return d;
+}
+
+// Mirror of server _effective_reply: strip invisible chars Python's str.strip()
+// removes but JS trim() does not (e.g. U+0085), require leading [SILENT] with
+// nothing meaningful after it - so display-drop and counter-count always agree.
+// Fallback only - the backend meta.silent flag is authoritative. Lenient so a
+// stray "." / "ok" after [SILENT] still counts as silence rather than re-opening the loop.
+let lastConcluded=false; // set by streamReply when the server meta says the debate concluded
+let noOutputNames=new Set(); // agents whose FINAL reply was an empty completion this prompt (shown as "(no output)")
+let roundBubbles=[];    // agent bubbles created during the current send() - stamped with ✓concluded when the round ends on [CONCLUDED]
+let stopRequested=false; // ■ Stop clicked - closes the current run as concluded (user authority)
+const activeCtrls=new Set(); // in-flight /api/chat streams, aborted by ■ Stop
+const stripConcluded=t=>(t||"").replace(/^\[concluded\][\s:\-.\u2013\u2014]*/i,"");
+const isSilent=t=>{const s=((t||"").replace(/[\u0085\u180e\u200b-\u200f\u202a-\u202e\u2060\ufeff]/g,"")).trim();if(!/^\[silent\]/i.test(s))return false;const rest=s.slice(8).replace(/^[\s:.\-\u2013\u2014]+/,"").trim();return !rest||/^(ok|okay|sure|nothing|no|fine|cool|agree)[.!]*$/i.test(rest);};
+
+async function streamReply(agent, kind, silentTarget){
+   setBusyHint(agent.name);
+   try{ return await streamReplyCore(agent, kind, silentTarget); }
+   finally{ clearBusyHint(agent.name); } // parallel: this stream is done even if others still run
+}
+async function streamReplyCore(agent, kind, silentTarget){
+   const d=addBubble(agent.name, agent.color, agent.emoji, false);
+   let ctrl=null; // AbortController for this stream - ■ Stop aborts it
+   roundBubbles.push(d);
+   if(kind==="cross-talk"){
+     const chip=document.createElement("span");
+     chip.style.cssText="margin-left:auto;font-size:10px;color:var(--dim)";
+     chip.textContent="\u21bb agent-to-agent"; chip.title="reply to another group member (unlimited by default - finite cap only when budget OFF; ends early on [CONCLUDED])";
+     d.querySelector(".who").appendChild(chip);
+   }
+   const body=d.querySelector(".body");
+   lastConcluded=false;
+   // Busy indicator: ticking "working… Ns" until the first visible frame (content/thinking/tool).
+   let busyT=null, busySecs=0;
+   const startBusy=()=>{ if(busyT)return; busySecs=0;
+     const sp=document.createElement("span"); sp.className="busyspan"; sp.textContent="\u23f3 working\u2026 0s"; body.appendChild(sp);
+     busyT=setInterval(()=>{busySecs++; if(sp.isConnected)sp.textContent="\u23f3 working\u2026 "+busySecs+"s";},1000); };
+   const stopBusy=()=>{ if(busyT){clearInterval(busyT);busyT=null;} const sp=body.querySelector(".busyspan"); if(sp)sp.remove(); };
+   startBusy(); // modeBar busy-hint is owned by the streamReply wrapper above
+   let res;
+   try{
+     ctrl=new AbortController(); activeCtrls.add(ctrl);
+      res=await fetch("/api/chat",{signal:ctrl.signal,method:"POST",headers:{"Content-Type":"application/json"},
+       body:JSON.stringify({agent_id:agent.id, mode, kind:kind||"prompt", messages:history, session:sessionId||undefined})});
+   }catch(e){ if(ctrl&&(e.name==="AbortError"||stopRequested)){ stopBusy(); return ""; } stopBusy(); addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=String(e); return ""; }
+   const reader=res.body.getReader(); const dec=new TextDecoder(); let buf="";
+   let full="", thinkEl=null, toolRow=null, metaSilent=false, metaConcluded=false, stop=false;
+   try{
+     while(true){
+       const {done,value}=await reader.read(); if(done)break;
+       buf+=dec.decode(value,{stream:true});
+       let idx;
+       while((idx=buf.indexOf("\n\n"))>=0){
+         const frame=buf.slice(0,idx); buf=buf.slice(idx+2);
+         for(const line of frame.split("\n")){
+           if(!line.startsWith("data: "))continue;
+           const p=line.slice(6);
+           if(p==="[DONE]"){stop=true;break;} // NOT an early return - post-processing below (silent merge / concluded chip) must still run
+           let o; try{o=JSON.parse(p);}catch(e){continue;}
+           if(o.error){ body.textContent="⚠ "+o.error; return ""; }
+           if(o.blocked){ body.textContent="\u23f8 "+o.blocked; return null; }
+           if(o.meta){ if(typeof o.meta.inter_agent_replies==="number")setXtalk(o.meta.inter_agent_replies,o.meta.limit); if(o.meta.silent)metaSilent=true; if(o.meta.concluded)metaConcluded=true; }
+           if(o.content){ stopBusy(); full+=o.content; body.textContent=full; stickScroll(); }
+           if(o.thinking){ // thinking stays in this agent's own bubble, per message (only silences are merged)
+             if(!thinkEl){thinkEl=document.createElement("details");thinkEl.className="think";
+               const s=document.createElement("summary");s.textContent="thinking";
+               const tb=document.createElement("div");tb.className="tbody";thinkEl.append(s,tb);d.appendChild(thinkEl);}
+             stopBusy(); thinkEl.querySelector(".tbody").textContent+=o.thinking; stickScroll(); }
+           if(o.tool){ stopBusy(); if(!toolRow){toolRow=document.createElement("div");d.appendChild(toolRow);}
+             const chip=document.createElement("span");chip.className="toolchip";
+             const tn=o.tool.name||(o.tool.function&&o.tool.function.name)||"tool";
+             chip.textContent="🔧 "+tn; toolRow.appendChild(chip); }
+         }
+         if(stop)break;
+       }
+       if(stop)break;
+     }
+   }finally{ stopBusy(); if(ctrl)activeCtrls.delete(ctrl); }
+   if(metaSilent||isSilent(full)){ // silence is only knowable once the response is final (meta frame / full text)
+     if(silentTarget){ d.remove(); silentTarget.note(agent.name); }   // group: merge into ONE shared pill
+     else{ d.classList.add("silentmsg"); body.textContent="\uD83D\uDD07 stayed silent"; stickScroll(); } // solo: small dim pill in place
+     return ""; }
+   if(metaConcluded){ lastConcluded=true; const s=stripConcluded(full); body.textContent=s; stickScroll();
+     const chip=document.createElement("span");chip.className="conclchip";chip.style.cssText="margin-left:auto;font-size:10px;color:var(--ok)";
+     chip.textContent="\u2713 concluded"; chip.title="discussion reached a natural conclusion - round ended";
+     d.querySelector(".who").appendChild(chip); if(!renderDms(body,s))linkifyFiles(body,s); return s; }
+   if(/stopped before completing its tool calls/i.test(full)){ // Studio harness note = turn ended MID-TASK (promised edits never ran)
+     const chip=document.createElement("span");chip.className="warnchip";
+     chip.style.cssText="margin-left:auto;font-size:10px;color:var(--warn)";
+     chip.textContent="\u26A0 tool calls truncated - task incomplete";
+     chip.title="the model stopped before running its tool calls - the promised work was NOT done";
+     d.querySelector(".who").appendChild(chip); }
+   if(!full.trim()){ // empty completion: show it (blank bubbles hide who went quiet) and count as "nothing new"
+     body.textContent="\u2014 (no output) \u2014"; body.style.color="var(--dim)";
+     noOutputNames.add(agent.name); return ""; }
+   if(!renderDms(body,full))linkifyFiles(body,full);
+   return full;
+ }
+
+// File links: path-like tokens in a FINAL bubble that exist in the workspace become clickable
+// .flink anchors (hover = peek popover with first lines via /api/file; click = open /api/file/raw).
+function showPeek(e,path,info){ const pk=$("peek"); if(!pk)return;
+  pk.innerHTML=""; const h=document.createElement("div");h.className="pk-h";h.textContent=info.name||path;
+  if(info.size!=null){const sz=document.createElement("span");sz.className="pk-sz";sz.textContent=(info.size/1024).toFixed(1)+" KB";h.appendChild(sz);}
+  const b=document.createElement("pre");b.className="pk-body";
+  b.textContent=info.binary?"(binary file - click to open)":((info.head||"")+(info.truncated?"\u2026":""));
+  pk.append(h,b);pk.style.display="block";movePeek(e); }
+function movePeek(e){ const pk=$("peek"); if(!pk)return;
+  const r=pk.getBoundingClientRect(); let x=e.clientX+14,y=e.clientY+12;
+  if(x+r.width>innerWidth-8)x=Math.max(8,e.clientX-r.width-10);
+  if(y+r.height>innerHeight-8)y=Math.max(8,e.clientY-r.height-10);
+  pk.style.left=x+"px";pk.style.top=y+"px"; }
+function hidePeek(){ const pk=$("peek"); if(pk)pk.style.display="none"; }
+// ---- Private messaging between agents ([DM @Name]) ----
+// Privacy is enforced server-side (agent_portal.to_openai_messages redacts per viewer).
+// This only renders the HUMAN view: public text as-is, each DM as a collapsed lock chip
+// the operator can expand (the human owns every agent - transparency for debugging).
+function renderDms(body, full){
+  const re=/\[DM\b\s*@?\s*([^\]\n]+?)\s*\]/gi;
+  const marks=[]; let m;
+  while((m=re.exec(full)))marks.push({i:m.index,e:m.index+m[0].length,t:m[1].trim()});
+  if(!marks.length)return false;
+  body.textContent="";
+  let prev=0;
+  marks.forEach((mk,ix)=>{
+    const pub=full.slice(prev,mk.i);
+    if(pub.trim()){const d=document.createElement("div");d.className="dmpub";d.textContent=pub;body.appendChild(d);linkifyFiles(d,pub);}
+    const end=ix+1<marks.length?marks[ix+1].i:full.length;
+    const dmBody=full.slice(mk.e,end).trim();
+    const el=document.createElement("details");el.className="dmseg";
+    const s=document.createElement("summary");s.textContent="\uD83D\uDD12 private \u2192 "+mk.t;
+    s.title="private message - only "+mk.t+" can see this content in the group (other agents see a lock chip)";
+    const b=document.createElement("div");b.className="dmbody";b.textContent=dmBody;
+    el.append(s,b); body.appendChild(el); linkifyFiles(b,dmBody);
+    prev=end; });
+  return true;
+}
+function linkifyFiles(el,text){
+  if(!el||!text)return;
+  const rx=/[\w./\\-]+\.[A-Za-z0-9]{1,8}/g;        // file tokens (must end in an extension)
+  const rxf=/(?<![\w./\\-])(?:[\w-]+\/)+/g;      // folder tokens (end in /, no ext needed)
+  const cands=[],seen=new Set(); let m;
+  for(const r of [rx,rxf]) while((m=r.exec(text))&&cands.length<12){
+    const t=m[0]; if(/^(https?:|www\.)/i.test(t)||t.includes(" "))continue;
+    const clean=t.replace(/^[./\\]+/,""); if(!clean||seen.has(clean))continue; seen.add(clean); cands.push(clean); }
+  if(!cands.length)return;
+  Promise.all(cands.map(c=>fetch("/api/file?path="+encodeURIComponent(c)).then(r=>r.ok?r.json():null).catch(()=>null)))
+   .then(res=>{
+     if(!el.isConnected||el.textContent!==text)return; // bubble changed meanwhile -> skip
+     const byPath={}; res.forEach(o=>{if(o&&o.path)byPath[o.path]=o;});
+     const paths=Object.keys(byPath); if(!paths.length)return;
+     paths.sort((a,b)=>b.length-a.length);
+     el.textContent=""; let rest=text,guard=0;
+     while(rest&&guard++<64){
+       let best=null,bi=-1;
+       for(const p of paths){const i=rest.indexOf(p);if(i>=0&&(bi<0||i<bi||(i===bi&&p.length>best.length))){best=p;bi=i;}}
+       if(!best)break;
+       if(bi>0)el.appendChild(document.createTextNode(rest.slice(0,bi)));
+       const a=document.createElement("a");a.className="flink";a.href="/api/file/raw?path="+encodeURIComponent(best);
+       a.target="_blank";a.rel="noopener";a.textContent=best;
+       const info=byPath[best];
+       a.addEventListener("mouseenter",e=>showPeek(e,best,info));
+       a.addEventListener("mousemove",movePeek);
+       a.addEventListener("mouseleave",hidePeek);
+       el.appendChild(a); rest=rest.slice(bi+best.length); }
+     if(rest)el.appendChild(document.createTextNode(rest));
+   });
+}
+
+// ---- Activity timeline (per-session audit log, /api/activity, 2026-11-12) ----
+let actTimer=null;
+const actIcons={start:"▶",tool:"🔧",end:"✓",blocked:"⛔",error:"⚠",aborted:"■",readmem:"📖",storemem:"💾"};
+function actRender(evts){
+  const body=$("actBody"); if(!body)return;
+  body.innerHTML="";
+  if(!evts.length){ body.textContent="(no events yet for this session)"; return; }
+  for(const e of evts){
+    let x=e.event;
+    if(e.event==="start")x="started ("+e.kind+(e.mode==="group"?", group":"")+")";
+    else if(e.event==="tool")x="tool: "+(e.tool||"?");
+    else if(e.event==="end")x="done in "+(e.dur??0)+"s · "+(e.chars??0)+" chars"+(e.silent?" · silent":"")+(e.concluded?" · concluded":"");
+    else if(e.event==="blocked")x="blocked: "+(e.detail||"agent-to-agent limit");
+    else if(e.event==="error")x="error: "+(e.error||"?");
+    else if(e.event==="aborted")x="aborted (client stop)";
+    else if(e.event==="readmem")x="memory lookup · "+(e.chars??0)+" chars in "+(e.dur??0)+"s";
+    else if(e.event==="storemem")x=(e.stored?"note stored: ":"no note: ")+esc(e.note||"(none)")+" ("+(e.dur??0)+"s)";
+    const div=document.createElement("div"); div.className="aev";
+    const col=(agents.find(a=>a.name===e.agent)||{}).color||"#ccc";
+    div.innerHTML=`<span class="at">${new Date(e.ts*1000).toLocaleTimeString([],{hour12:false})}</span><span class="an" style="color:${col}">${esc(e.agent||"?")}</span><span>${actIcons[e.event]||"•"}</span><span class="ax">${esc(x)}</span>`;
+    body.appendChild(div);
+  }
+  body.scrollTop=body.scrollHeight;
+}
+async function actUpdate(){
+  const sel=$("actSel"); if(!sel)return;
+  try{
+    const o=await api(sel.value?"/api/activity?session="+encodeURIComponent(sel.value):"/api/activity");
+    if(sel.value){ actRender(o.events||[]); $("actStat").textContent=(o.events||[]).length+" events"; }
+    else{
+      const cur=sel.value;
+      sel.innerHTML="";
+      const op0=document.createElement("option"); op0.value=""; op0.textContent="(recent sessions)"; sel.appendChild(op0);
+      for(const s of o.sessions||[]){
+        const op=document.createElement("option"); op.value=s.session;
+        op.textContent=s.session+"  ("+s.events+" ev, "+new Date(s.last_ts*1000).toLocaleTimeString([],{hour12:false})+")";
+        sel.appendChild(op);
+      }
+      const s=(o.sessions||[])[0];
+      $("actStat").textContent=s?"newest: "+s.session:"";
+    }
+  }catch(e){ $("actStat").textContent="⚠ "+e; }
+}
+function actFollow(){ // panel open -> jump to the session this run just started
+  const sel=$("actSel"); if(!sel||!sessionId||!$("actPanel").classList.contains("open"))return;
+  if([...sel.options].some(o=>o.value===sessionId))sel.value=sessionId;
+  else{ const op=document.createElement("option");op.value=sessionId;op.textContent=sessionId+" (current)";sel.prepend(op);sel.value=sessionId; }
+  actUpdate();
+}
+$("actBtn").onclick=async()=>{
+  const open=$("actPanel").classList.toggle("open");
+  $("actBtn").classList.toggle("on",open);
+  if(open){
+    await actUpdate(); // fill the recent-sessions dropdown
+    if(!$("actSel").value&&sessionId){ // prefer the CURRENT run if it already has events
+      const o=await api("/api/activity?session="+encodeURIComponent(sessionId));
+      if((o.events||[]).length)actFollow(); else actUpdate();
+    }
+    if(actTimer)clearInterval(actTimer);
+    actTimer=setInterval(()=>{ if($("actPanel").classList.contains("open"))actUpdate(); },2000); // live while open
+  }else if(actTimer){ clearInterval(actTimer); actTimer=null; }
+};
+$("actRefresh").onclick=()=>actUpdate();
+$("actSel").onchange=()=>actUpdate();
+// ---- Fleet status panel (/api/fleet, 2026-11-13 round-table) ----
+let fleetTimer=null;
+async function fleetUpdate(){
+  try{
+    const o=await api("/api/fleet");
+    const now=o.ts||Date.now()/1000;
+    let html="";
+    for(const h of (o.hosts||[])){
+      const age=h.last_seen?Math.max(0,Math.round(now-h.last_seen)):"–";
+      const st=h.state==="busy"?"busy":h.state==="idle"?"idle":"UNKNOWN";
+      const models=h.models.length?h.models.map(m=>m.id+(m.quant?" ("+m.quant+")":"")).join(", "):"— none loaded —";
+      html+='<div class="frow-h"><span class="status-dot status-dot--'+(h.state==="busy"?"warn":h.state==="idle"?"ok":"err")+' fdot '+h.state+'"></span><b>'+h.host+'</b>'+
+        '<span class="hint"> · '+st+(h.reason?" · "+h.reason:"")+" · last seen "+age+"s ago</span>"+
+        '<div class="fmodels">'+models+'</div>'+
+        '<div class="hint" style="margin-left:16px">agents: '+(h.agents.length?h.agents.join(", "):"none")+'</div></div>';
+    }
+    $("fleetBody").innerHTML=html||'<div class="hint">no hosts</div>';
+    const up=(o.hosts||[]).filter(h=>h.state!=="unknown").length;
+    $("fleetStat").textContent=up+"/"+(o.hosts||[]).length+" reporting · ttl "+(o.ttl||15)+"s";
+  }catch(e){ $("fleetStat").textContent="⚠ "+e; }
+}
+$("fleetBtn").onclick=async()=>{
+  const open=$("fleetPanel").classList.toggle("open");
+  $("fleetBtn").classList.toggle("on",open);
+  if(open){ await fleetUpdate(); if(fleetTimer)clearInterval(fleetTimer);
+    fleetTimer=setInterval(()=>{ if($("fleetPanel").classList.contains("open"))fleetUpdate(); },5000); }
+  else if(fleetTimer){ clearInterval(fleetTimer); fleetTimer=null; }
+};
+// ---- Ops panel (2026-11-13): local git + TODO pruning ----
+async function opsLoad(){
+  try{
+    const o=await (await fetch("/api/git")).json();
+    if(!o.repo){ $("gitStatus").textContent="no repo yet — POST /api/git {action:'init'}"; $("opsStat").textContent="no repo"; return; }
+    $("gitStatus").textContent=o.status||(o.changed?"":"(clean)");
+    $("gitLog").textContent=o.log||"(no commits yet)";
+    $("opsStat").textContent=(o.changed?o.changed+" changed":"clean")+(o.log?(" · "+o.log.split("\n").length+" shown"):"");
+  }catch(e){ $("opsStat").textContent="⚠ "+e; }
+  opsTiles();   // host tiles refresh with the panel (2026-11-15)
+  mergeQueueLoad();   // sandbox merge queue (2026-11-16)
+}
+async function opsTiles(){
+  try{
+    const o=await (await fetch("/api/ops")).json();
+    const d=o.disk||{};
+    $("diskTile").textContent=(d.total_gb!=null)?`disk ${d.drive} · ${d.used_gb} GB used / ${d.total_gb} GB (${Math.round(100*d.used_gb/d.total_gb)}%)\nfree ${d.free_gb} GB`:"⚠ "+(d.error||"no disk data");
+    $("uptimeTile").textContent=`portal up · ${o.uptime_hm}\npid ${o.pid} · since ${o.started}`;
+  }catch(e){ $("diskTile").textContent="⚠ "+e; $("uptimeTile").textContent="⚠ "+e; }
+}
+async function mergeQueueLoad(){
+  const el=$("mergeQueue"); if(!el)return;
+  try{
+    const q=await (await fetch("/api/merge-queue")).json();
+    if(!q.ok){ el.textContent="⚠ "+(q.error||"error"); return; }
+    const evs=(q.events||[]).slice(0,5);
+    if(!evs.length){ el.textContent="(empty - no diverged sandbox code files captured)"; return; }
+    const esc=s=>String(s).replace(/[&<>\"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+    el.innerHTML=evs.map(e=>'<div style="margin:2px 0">'+esc(e.ts.slice(5))+' · <b>'+esc(e.file)+'</b> sha '+esc(e.sha)+' ('+e.size+' B)'
+      +' <button class="btn" data-mq="'+esc(e.file)+'" style="padding:1px 8px;font-size:11px">↩ restore</button></div>').join("");
+    el.querySelectorAll("button[data-mq]").forEach(b=>b.onclick=async()=>{
+      opsSay("restoring "+b.dataset.mq+"…");
+      try{ const r=await (await fetch("/api/merge",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({file:b.dataset.mq})})).json();
+        opsSay(r.ok?"✓ restored "+r.file+" from snapshot "+r.snapshot+(r.committed?" (committed)":""):"⚠ "+(r.error||"restore failed"));
+      }catch(e2){ opsSay("⚠ "+e2); } finally{ mergeQueueLoad(); }
+    });
+  }catch(e){ el.textContent="⚠ "+e; }
+}
+$("opsBtn").onclick=()=>{ const open=$("opsPanel").classList.toggle("open"); $("opsBtn").classList.toggle("on",open); if(open)opsLoad(); };
+async function opsSay(t){ $("opsMsg").textContent=t; }
+$("gitCommit").onclick=async()=>{
+  const m=$("gitMsg").value.trim(); if(!m){ opsSay("type a commit message first"); return; }
+  opsSay("committing…");
+  try{ const r=await (await fetch("/api/git",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"commit",message:m})})).json();
+    if(r.status&&r.status.repo){ $("gitStatus").textContent=r.status.status||"(clean)"; $("gitLog").textContent=r.status.log||"—"; }
+    opsSay(r.committed?"✓ committed: "+m:(r.note||r.err||"done")); if(r.committed)$("gitMsg").value="";
+  }catch(e){ opsSay("⚠ "+e); } finally{ opsLoad(); }
+};
+$("gitMsg").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("gitCommit").click();}});
+$("todoPrune").onclick=async()=>{
+  opsSay("pruning…");
+  try{ const r=await (await fetch("/api/todo/prune",{method:"POST",headers:{"Content-Type":"application/json"},body:"{}"})).json();
+    opsSay(r.moved_sections?`✓ moved ${r.moved_sections} section(s), ${r.moved_items} item(s) → TODO_completed.md (${r.completed_lines} lines${r.chunks_split?", split "+r.chunks_split+" part(s)":""})`:(r.note||"done"));
+  }catch(e){ opsSay("⚠ "+e); }
+};
+</script>
+
+<script>
+// ---- Uploads: files & folders -> shared agent folder (uploads/) via POST /api/upload ----
+const attachBtn=$("attach"), amenu=$("attachMenu"), filePick=$("filePick"), dirPick=$("dirPick");
+let pendingUploads=[];   // {rel, size, state:'uploading'|'done'|'error', pct, err, xhr}
+function fmtSize(n){ if(n==null)return""; if(n>=1048576)return (n/1048576).toFixed(1)+" MB"; if(n>=1024)return (n/1024).toFixed(1)+" KB"; return n+" B"; }
+function chipRow(){ let r=$("chips"); if(!r){ r=document.createElement("div"); r.id="chips"; $("composer").insertBefore(r,$("input")); } return r; }
+function renderChips(){ const r=chipRow(); r.innerHTML="";
+  for(const u of pendingUploads){ const c=document.createElement("span"); c.className="chipfile";
+    const nm=document.createElement("span"); nm.className="nm"; nm.textContent=u.rel; nm.title=u.rel;
+    const sz=document.createElement("span"); sz.className="sz"; sz.textContent=fmtSize(u.size);
+    const st=document.createElement("span"); st.className="st"+(u.state==="error"?" err":"");
+    st.textContent = u.state==="uploading" ? (u.pct??0)+"%" : (u.state==="done" ? "\u2713" : ("\u2717 "+(u.err||"failed")));
+    const x=document.createElement("button"); x.textContent="\u2715"; x.title="remove";
+    x.onclick=()=>{ if(u.xhr&&u.state==="uploading")u.xhr.abort(); pendingUploads=pendingUploads.filter(v=>v!==u); renderChips(); };
+    c.append(nm,sz,st,x); r.appendChild(c); }
+  if(!busy)$("send").disabled=pendingUploads.some(u=>u.state==="uploading"); }
+function uploadFile(rel, blob, size){ const u={rel,size:(size!=null?size:blob.size),state:"uploading",pct:0}; pendingUploads.push(u); renderChips();
+  const xhr=new XMLHttpRequest(); u.xhr=xhr;
+  xhr.upload.onprogress=e=>{ if(e.lengthComputable){ u.pct=Math.round(100*e.loaded/e.total); renderChips(); } };
+  xhr.onload=()=>{ if(xhr.status===201||xhr.status===200){ u.state="done"; u.pct=100; }
+    else { u.state="error"; try{u.err=JSON.parse(xhr.responseText).error||("HTTP "+xhr.status);}catch(_){u.err="HTTP "+xhr.status;} } renderChips(); };
+  xhr.onerror=()=>{ u.state="error"; u.err="network"; renderChips(); };
+  xhr.open("POST","/api/upload"); xhr.setRequestHeader("X-Rel-Path",encodeURIComponent(rel)); xhr.send(blob); }
+attachBtn.onclick=e=>{ e.stopPropagation(); amenu.hidden=!amenu.hidden; };
+document.addEventListener("click",e=>{ if(!e.target.closest("#attachWrap"))amenu.hidden=true; });
+amenu.querySelector('[data-act="files"]').onclick=()=>{ amenu.hidden=true; filePick.click(); };
+amenu.querySelector('[data-act="folder"]').onclick=()=>{ amenu.hidden=true; dirPick.click(); };
+filePick.onchange=()=>{ for(const f of filePick.files) uploadFile("uploads/"+f.name.replace(/\\/g,"/"), f, f.size); filePick.value=""; };
+dirPick.onchange=()=>{ for(const f of dirPick.files) uploadFile("uploads/"+f.webkitRelativePath.replace(/\\/g,"/"), f, f.size); dirPick.value=""; }
+// Drag & drop: files and folders (folders walked recursively via webkitGetAsEntry)
+const composerEl=$("composer");
+["dragenter","dragover"].forEach(ev=>composerEl.addEventListener(ev,e=>{ e.preventDefault(); composerEl.classList.add("dragover"); }));
+composerEl.addEventListener("dragleave",e=>{ if(e.relatedTarget&&composerEl.contains(e.relatedTarget))return; composerEl.classList.remove("dragover"); });
+composerEl.addEventListener("drop",async e=>{ e.preventDefault(); composerEl.classList.remove("dragover");
+  const entries=[...e.dataTransfer.items].map(i=>i.webkitGetAsEntry?i.webkitGetAsEntry():null).filter(Boolean);
+  if(!entries.length){ for(const f of e.dataTransfer.files) uploadFile("uploads/"+f.name.replace(/\\/g,"/"), f, f.size); return; }
+  for(const en of entries) await walkEntry(en, "uploads/"+en.name); });
+async function readAllEntries(rd){ const all=[]; let batch; do{ batch=[]; await new Promise(r=>rd.readEntries(batch,r)); all.push(...batch); }while(batch.length>0); return all; }
+async function walkEntry(en, rel){ if(en.isFile){ en.file(f=>uploadFile(rel, f, f.size), ()=>{}); }
+  else if(en.isDirectory){ const kids=await readAllEntries(en.createReader()); for(const k of kids) await walkEntry(k, rel+"/"+k.name); } }
+function attachLine(){ const done=pendingUploads.filter(u=>u.state==="done"); if(!done.length)return "";
+  const list=done.slice(0,15).map(u=>u.rel+(u.size!=null?" ("+fmtSize(u.size)+")":"") );
+  let s="\n\n[Attached in shared folder: "+list.join(", ")+(done.length>15?" \u2026and "+(done.length-15)+" more files":"")+"]";
+  const failed=pendingUploads.filter(u=>u.state==="error").length; if(failed)s+=(" ("+failed+" upload(s) failed - not attached)"); return s; }
+
+async function send(){
+  if(busy){ const t=$("input").value.trim(); if(t){queueMsg(t); $("input").value="";} return; }
+  let text=$("input").value.trim();
+  const attLine=attachLine();
+  if(!text&&!attLine)return;
+  if(attLine)text+=(text?"\n\n":"")+attLine;
+  pendingUploads=[]; renderChips();   // attachments captured into the message now
+  const me=agents.find(a=>a.id===selectedId);
+  if(mode==="solo"&&!me)return;
+  stickOn=true;   // re-pin auto-scroll on every human send
+  history.push({speaker:"You",content:text});
+  addBubble("You","",null,true).querySelector(".body").textContent=text;
+  $("input").value=""; busy=true; setSendQueued(true); startHeartbeat(); startStallPoll();
+  roundBubbles=[]; // fresh per human prompt (also bounds memory in solo mode)
+  sessionId=(mode==="group"?"g":"s")+"-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7); actFollow();
+  noOutputNames.clear(); stopRequested=false; activeCtrls.clear();
+  let adopted=false;   // true if we adopt an already-live backend run instead of starting one
+  try{
+    if(mode==="solo"){
+      const full=await streamReply(me);
+      if(full)history.push({speaker:me.name,content:full});
+    }else{
+      // GROUP RUNS ARE BACKEND-OWNED (2026-11-15): the whole pass/cross-talk/nudge loop runs in a
+      // portal daemon thread; we only attach to its journaled SSE stream. A hard refresh no longer
+      // cancels anything - bootRestore re-attaches below and replays from the journal.
+      const resp=await fetch("/api/group-run",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({text})});
+      const j=await resp.json().catch(()=>({}));
+      if(!resp.ok){ throw new Error((j&&j.error)||("group run start failed (HTTP "+resp.status+")")); }
+      sessionId=j.run_id; actFollow();
+      await attachRun(j.run_id);
+    }
+  }catch(e){
+    const em=String(e);
+    const m2=/group run is already in progress \((g-[a-z0-9]+-[a-f0-9]+)\)/i.exec(em);
+    if(mode==="group"&&m2){
+      // A backend run is already live (scheduled task / another tab started it while this one
+      // was idle): adopt it instead of showing a dead-end error, and route the message through
+      // the UMQ where agents pick it up on their next prompt build.
+      adopted=true;
+      adoptLiveRun({run_id:m2[1],busy:true},()=>{
+        addBubble("queued","#8a63d2","\u2709",false).querySelector(".body").textContent=
+          "group run already in progress - attached to its live output; your message is queued and the agents will pick it up";
+      });
+      queueMsg(text);
+    }else{ addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=em; }
+  }
+  if(adopted){ umqPoll(); renderQueue(); return; }   // keep busy/heartbeat for the adopted run
+  busy=false; busyNames.clear(); renderBusyHint(); setSendQueued(false); stopStallPoll(); $("input").focus(); stopHeartbeat(); saveHistoryServer(true); umqPoll(); renderQueue();
+}
+
+// ---- Backend group-run attachment (2026-11-15) ----
+// The run engine lives in agent_portal.py; /api/run-events replays the journaled SSE frames
+// from seq 0 and live-tails them. Re-rendering here mirrors streamReplyCore's bubble semantics.
+let runId=null, runCtrl=null;
+const runTurns={};   // agent name -> per-turn render state for the current phase
+function runTurn(agentName,kind){
+  const ag=agents.find(a=>a.name===agentName);
+  const d=addBubble(ag?ag.name:agentName,ag?ag.color:'#8b949e',ag?ag.emoji:'\ud83e\udd16',false);
+  if(kind==="cross-talk"){
+    const chip=document.createElement("span");
+    chip.style.cssText="margin-left:auto;font-size:10px;color:var(--dim)";
+    chip.textContent="\u21bb agent-to-agent"; chip.title="reply to another group member";
+    d.querySelector(".who").appendChild(chip); }
+  const body=d.querySelector(".body");
+  let busyT=null,secs=0;
+  const sp=document.createElement("span");sp.className="busyspan";sp.textContent="\u23f3 working\u2026 0s";body.appendChild(sp);
+  busyT=setInterval(()=>{secs++;if(sp.isConnected)sp.textContent="\u23f3 working\u2026 "+secs+"s";},1000);
+  const t={d,body,thinkEl:null,toolRow:null,full:"",stopBusy(){ if(busyT){clearInterval(busyT);busyT=null;} const s=body.querySelector(".busyspan"); if(s)s.remove(); }};
+  runTurns[agentName]=t; return t;
+}
+function runFinishTurn(agentName,kind){
+  const t=runTurns[agentName]; if(!t)return "";
+  t.stopBusy();
+  const full=t.full;
+  delete runTurns[agentName];
+  if(isSilent(full)){ t.d.remove(); return ""; }   // silence: merge out (round-end notes cover it)
+  if(/stopped before completing its tool calls/i.test(full)){
+    const chip=document.createElement("span");chip.className="warnchip";
+    chip.style.cssText="margin-left:auto;font-size:10px;color:var(--warn)";
+    chip.textContent="\u26a0 tool calls truncated - task incomplete";
+    t.d.querySelector(".who").appendChild(chip); }
+  if(!full.trim()){ t.body.textContent="\u2014 (no output) \u2014"; t.body.style.color="var(--dim)"; return ""; }
+  const s=stripConcluded(full);
+  t.body.textContent=s;
+  if(!renderDms(t.body,s))linkifyFiles(t.body,s);
+  history.push({speaker:agentName,content:full});
+  return full;
+}
+function handleRunEvent(ev){
+  if(ev.run==="start")return;   // human prompt bubble already exists (local send) or came from restored history
+  if(ev.run==="nudge"){
+    history.push({speaker:"You",content:ev.text});
+    addBubble("auto-continue","#8a63d2","\u21bb",false).querySelector(".body").textContent=ev.text; stickScroll(); return; }
+  if(ev.run==="phase")return;
+  if(ev.run==="end"){
+    const v=ev.verdict||{};
+    if(v.note){ const w=document.createElement("div");w.className="thinkwrap";
+      const p=document.createElement("div");p.className="roundend "+(v.cls||"dim");p.textContent=v.note;
+      w.appendChild(p);$("msgs").appendChild(w);stickScroll(); }
+    return; }
+  if(ev.turn){ runTurn(ev.agent,ev.kind); return; }
+  if(ev.done){ runFinishTurn(ev.agent,ev.kind); return; }
+  if(ev.frame){
+    const t=runTurns[ev.agent]; if(!t)return;
+    const o=ev.frame;
+    if(o.error){ t.stopBusy(); t.body.textContent="\u26a0 "+o.error; delete runTurns[ev.agent]; return; }
+    if(o.blocked){ t.stopBusy(); t.body.textContent="\u23f8 "+o.blocked; delete runTurns[ev.agent]; return; }
+    if(o.meta){ if(typeof o.meta.inter_agent_replies==="number")setXtalk(o.meta.inter_agent_replies,o.meta.limit);
+      if(o.meta.concluded){ lastConcluded=true;
+        const chip=document.createElement("span");chip.className="conclchip";
+        chip.style.cssText="margin-left:auto;font-size:10px;color:var(--ok)";chip.textContent="\u2713 concluded";
+        t.d.querySelector(".who").appendChild(chip); } }
+    if(o.content){ t.stopBusy(); t.full+=o.content; t.body.textContent=t.full; stickScroll(); }
+    if(o.thinking){ if(!t.thinkEl){t.thinkEl=document.createElement("details");t.thinkEl.className="think";
+      const s=document.createElement("summary");s.textContent="thinking";
+      const tb=document.createElement("div");tb.className="tbody";t.thinkEl.append(s,tb);t.d.appendChild(t.thinkEl);}
+      t.stopBusy(); t.thinkEl.querySelector(".tbody").textContent+=o.thinking; stickScroll(); }
+    if(o.tool){ t.stopBusy(); if(!t.toolRow){t.toolRow=document.createElement("div");t.d.appendChild(t.toolRow);}
+      const chip=document.createElement("span");chip.className="toolchip";
+      const tn=o.tool.name||(o.tool.function&&o.tool.function.name)||"tool";
+      chip.textContent="\ud83d\udee0 "+tn; t.toolRow.appendChild(chip); }
+    return; }
+}
+let runLastSeq=0, attachedRunId=null; // cursor continuity across re-attaches (2026-11-15)
+async function attachRun(rid, startCursor){
+  runId=rid;
+  if(runCtrl){try{runCtrl.abort();}catch(e){}}
+  runCtrl=new AbortController();
+  await new Promise(res=>{
+    (async()=>{
+      try{
+        const resp=await fetch("/api/run-events?run="+encodeURIComponent(rid)+"&cursor="+(startCursor||0),{signal:runCtrl.signal});
+        if(!resp.ok)throw new Error("run stream HTTP "+resp.status);
+        const reader=resp.body.getReader();const dec=new TextDecoder();let buf="";
+        // Fast-forward (2026-11-15): re-attaching to a run that's been going a while used to
+        // replay every token frame from seq 0 (multi-MB journal -> minutes of frozen UI, no
+        // visible "current progress"). Now frames older than ~60s are skipped for DOM purposes
+        // (their text is kept in history) and the live turn's bubble is recreated, so CURRENT
+        // output shows within seconds.
+        const cutoff=Date.now()-60000;
+        let fast=true, skipped=0, ffText={}, pendingTurn={};
+        while(true){
+          const {done,value}=await reader.read();if(done)break;
+          buf+=dec.decode(value,{stream:true});
+          let idx;
+          while((idx=buf.indexOf("\n\n"))>=0){
+            const chunk=buf.slice(0,idx);buf=buf.slice(idx+2);
+            for(const line of chunk.split("\n")){
+              if(!line.startsWith("data: "))continue;
+              let ev;try{ev=JSON.parse(line.slice(6));}catch(e){continue;}
+              if(typeof ev.seq==="number"&&ev.seq>runLastSeq)runLastSeq=ev.seq;
+              const old=fast&&typeof ev.ts==="number"&&ev.ts<cutoff&&ev.run!=="end";
+              if(old){
+                skipped++;
+                if(ev.turn)pendingTurn[ev.agent]=ev.kind;
+                else if(ev.done){const tx=ffText[ev.agent]||"";if(!isSilent(tx))history.push({speaker:ev.agent,content:tx});delete pendingTurn[ev.agent];delete ffText[ev.agent];}
+                else if(ev.frame&&ev.frame.content)ffText[ev.agent]=(ffText[ev.agent]||"")+ev.frame.content;
+                continue;
+              }
+              fast=false;
+              if(skipped>0){const w=document.createElement("div");w.className="thinkwrap";
+                const p=document.createElement("div");p.className="roundend dim";
+                p.textContent="\u23e9 fast-forwarded "+skipped+" earlier frames - showing recent + live output";
+                w.appendChild(p);$("msgs").appendChild(w);stickScroll();skipped=0;}
+              if(ev.frame&&ev.agent&&!runTurns[ev.agent]&&pendingTurn[ev.agent]){
+                runTurn(ev.agent,pendingTurn[ev.agent]);delete pendingTurn[ev.agent];}
+              handleRunEvent(ev);
+            }
+          }
+        }
+      }catch(e){ if(!(e&&e.name==="AbortError"))addBubble("error","#ff6b6b","\u26a0",false).querySelector(".body").textContent="run stream lost: "+e; }
+      finally{ res(); }
+    })();
+  });
+  runId=null;
+}
+
+let editingId=null;
+function openEditor(a){
+  editingId=a?a.id:null;
+  $("edTitle").textContent=a?("Edit "+a.name):"New agent";
+  $("f_name").value=a?.name||""; $("f_emoji").value=a?.emoji||"🤖"; $("f_color").value=a?.color||"#3ddc84";
+  $("f_blurb").value=a?.blurb||""; $("f_persona").value=a?.persona||"";
+  const net=!!a?.studio;                                  // networked = agent has a remote studio base URL
+  $("f_net").checked=net; $("f_studio").value=a?.studio||""; $("f_key").value=a?.api_key||"";
+  $("f_ragstudio").value=a?.rag_studio||""; $("f_ragkey").value=a?.rag_api_key||"";
+  $("f_scanstat").textContent=""; $("netFields").style.display=net?"":"none";
+  if(net){ netModels=[]; populateModelSelect([],a?.model_id||""); scanModels(true); }   // live rescan of that host
+  else { netModels=[]; populateModelSelect(models,a?.model_id||""); }
+  $("f_temp").value=a?.temperature??0.7; $("f_maxtok").value=a?.max_tokens??0;
+  $("f_reasoning").value=a?.reasoning||"default"; $("f_maxtools").value=a?.max_tool_calls??0;
+  const tc=$("f_tools"); tc.innerHTML="";
+  for(const t of localTools){const l=document.createElement("label");const c=document.createElement("input");
+    c.type="checkbox";c.value=t;c.checked=(a?.tools||[]).includes(t);l.append(c,document.createTextNode(t));tc.appendChild(l);}
+  $("f_runlocal").checked=a?!!(a.run_tools_local??true):true;
+  $("f_rag").checked=!!a?.rag;
+  $("f_memcycle").checked=(a?.mem_cycle??true); $("f_fastfirst").checked=(a?.fast_first_reply??true);
+  const kb=$("f_kb"); kb.innerHTML='<option value="">(any / default knowledge base)</option>';
+  for(const k of kbs){const o=document.createElement("option");o.value=k.id||k.kb_id||"";
+    o.textContent=k.name||k.title||o.value;if(a?.rag_kb_id&&o.value===a.rag_kb_id)o.selected=true;kb.appendChild(o);}
+  $("editor").showModal();
+}
+function populateModelSelect(list, cur){
+  const sel=$("f_model"); sel.innerHTML="";
+  for(const m of list){const o=document.createElement("option");o.value=m.id;o.textContent=m.id;if(m.id===cur)o.selected=true;sel.appendChild(o);}
+  if(cur&&!list.find(m=>m.id===cur)){const o=document.createElement("option");o.value=cur;o.textContent=cur+" (current)";o.selected=true;sel.appendChild(o);}
+}
+async function scanModels(){
+  const base=$("f_studio").value.trim(), key=$("f_key").value.trim();
+  const st=$("f_scanstat");
+  if(!base){ st.style.color="#ff9f43"; st.textContent="enter the Studio base URL first"; return; }
+  $("f_scan").disabled=true; st.style.color=""; st.textContent="scanning "+base+" …";
+  try{
+    const r=await jpost("/api/scan-models",{base_url:base,api_key:key});
+    const list=r.data||[];
+    if(r.error&&list.length===0){ throw new Error(r.error); }
+    netModels=list; populateModelSelect(list,$("f_model").value||"");
+    st.style.color="var(--ok)"; st.textContent="found "+list.length+" model(s) on that host";
+  }catch(e){ st.style.color="#ff6b6b"; st.textContent="scan failed: "+String(e).slice(0,90); }
+  $("f_scan").disabled=false;
+}
+$("f_net").onchange=()=>{
+  const net=$("f_net").checked;
+  $("netFields").style.display=net?"":"none";
+  if(net){ netModels=[]; populateModelSelect([],$("f_model").value||""); scanModels(); }
+  else { netModels=[]; $("f_scanstat").textContent=""; populateModelSelect(models,$("f_model").value||""); }
+};
+$("f_scan").onclick=()=>scanModels();
+
+$("edSave").onclick=async()=>{
+  const b={name:$("f_name").value,emoji:$("f_emoji").value,color:$("f_color").value,blurb:$("f_blurb").value,
+    persona:$("f_persona").value,model_id:$("f_model").value,temperature:parseFloat($("f_temp").value)||0,
+    max_tokens:parseInt($("f_maxtok").value)||0,reasoning:$("f_reasoning").value,max_tool_calls:parseInt($("f_maxtools").value)||0,
+    tools:[...document.querySelectorAll("#f_tools input:checked")].map(i=>i.value),run_tools_locally:$("f_runlocal").checked,
+    rag:$("f_rag").checked,rag_kb_id:$("f_kb").value,
+    mem_cycle:$("f_memcycle").checked,fast_first_reply:$("f_fastfirst").checked,
+    studio:$("f_net").checked?$("f_studio").value.trim():"",
+    api_key:$("f_net").checked?$("f_key").value.trim():"",
+    rag_studio:$("f_net").checked?$("f_ragstudio").value.trim():"",
+    rag_api_key:$("f_net").checked?$("f_ragkey").value.trim():""};
+  if(!b.name.trim())return alert("Name is required");
+  if(!b.model_id)return alert($("f_net").checked?"No model selected - click Scan models first":"No model available in the local Studio");
+  if(editingId)await jput("/api/agents/"+editingId,b); else await jpost("/api/agents",b);
+  $("editor").close(); refresh();
+};
+$("edClose").onclick=$("edCancel").onclick=()=>$("editor").close();
+$("addAgent").onclick=()=>openEditor(null);
+
+function setMode(m){mode=m;$("mSolo").classList.toggle("on",m==="solo");$("mGroup").classList.toggle("on",m==="group");updateHint();resetChat();restoreMsgs();}
+$("mSolo").onclick=()=>setMode("solo"); $("mGroup").onclick=()=>setMode("group");
+new MutationObserver(scheduleSave).observe($("msgs"),{childList:true,subtree:true,charData:true}); // per-mode persistence (2026-11-13)
+// Reset mechanism: one button clears ALL conversational state - client history + bubbles,
+// and the shared agent-to-agent counter (memory.md state line) via the existing endpoint.
+$("resetBtn").onclick=async()=>{
+  if(busy){ alert("A reply is still streaming - wait for it to finish (or reload the page), then reset."); return; }
+  if(!confirm("Reset conversation?\nClears chat history and the agent-to-agent counter."))return;
+  try{ const r=await jpost("/api/memory",{action:"reset"}); xtalkMax=0; setXtalk(0,r.limit); }
+  catch(e){ alert("Counter reset failed: "+e); return; }
+  resetChat();
+  try{ localStorage.removeItem(lsKey()); }catch(e){} // \u21ba Reset clears this mode's persistence slot
+};
+
+async function pollStatus(){
+  try{const s=await api("/api/status");
+    const on=!s.error;
+    $("sdot").classList.toggle("on",on);
+    $("stext").textContent=on?("studio connected"+(s.model?": "+String(s.model).slice(-30):"")):("studio offline: "+String(s.error||"").slice(0,60));
+  }catch(e){$("sdot").classList.remove("on");$("stext").textContent="studio unreachable: "+String(e).slice(0,50);}
+}
+
+$("send").onclick=send;
+$("input").addEventListener("keydown",e=>{if(e.key==="Enter"&&!e.shiftKey){e.preventDefault();send();}});
+refresh().catch(e=>console.error("refresh failed",e)).finally(updateHint).finally(bootRestore);
+pollStatus();
+setInterval(pollStatus,15000);
+setInterval(()=>{refresh().catch(()=>{});},30000);
+// ---- Files panel (/api/uploads, A2 11-13 Designer): load-on-open + ↻ only (no polling) ----
+function fsFmtSize(b){return b==null?"":b<1024?b+" B":b<1048576?(b/1024).toFixed(1)+" KB":(b/1048576).toFixed(1)+" MB";}
+function fsFmtTime(t){const d=new Date(t*1000),n=new Date();let s=d.toTimeString().slice(0,5);if(d.toDateString()!==n.toDateString())s=d.toLocaleDateString();return s;}
+async function filesLoad(){
+  const list=$("filesList");list.innerHTML='<li class="fs-empty">loading…</li>';
+  try{
+    const j=await (await fetch("/api/uploads")).json();
+    const files=(j&&j.files)||[];
+    if(!files.length){list.innerHTML='<li class="fs-empty">No uploads yet — drop files into uploads/ on White.</li>';return;}
+    list.innerHTML='';
+    for(const f of files){
+      const li=document.createElement("li");
+      const a=document.createElement("a");a.href="/api/file/raw?path="+encodeURIComponent(f.path);a.target="_blank";a.textContent=f.path.replace(/^uploads\//,"");
+      const m=document.createElement("span");m.className="fs-meta";m.textContent=fsFmtSize(f.size)+" · "+fsFmtTime(f.mtime);
+      li.appendChild(a);li.appendChild(m);list.appendChild(li);
+    }
+    if(j.count>files.length){const e=document.createElement("li");e.className="fs-empty";e.textContent="… "+(j.count-files.length)+" more (cap 2000)";list.appendChild(e);}
+  }catch(err){list.innerHTML='<li class="fs-empty">/api/uploads unreachable — portal down?</li>';}
+}
+$("filesBtn").onclick=()=>{const open=$("filesPanel").classList.toggle("open");$("filesBtn").classList.toggle("on",open);if(open)filesLoad();};
+// ---- Goals panel (2026-11-15, Designer): Goal Velocity dashboard ----
+async function goalsLoad(){
+  try{
+    const o=await (await fetch("/api/goals")).json();
+    if(!o.ok){ $("goalsStat").textContent="⚠ "+(o.error||"error"); return; }
+    const C=119.38; let html="";
+    for(const a of o.agents){
+      const pct=a.total?Math.round(100*a.done/a.total):0;
+      const off=(C*(1-pct/100)).toFixed(1);
+      html+='<div class="gtile"><div class="gring"><svg width="44" height="44" viewBox="0 0 44 44">'
+        +'<circle cx="22" cy="22" r="19" fill="none" stroke="var(--line)" stroke-width="4"/>'
+        +'<circle cx="22" cy="22" r="19" fill="none" stroke="'+(pct>=100?'var(--ok)':'var(--acc)')+'" stroke-width="4" stroke-linecap="round" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'"/>'
+        +'</svg><span class="pct">'+pct+'%</span></div>'
+        +'<div><div class="gname">'+a.agent+'</div><div class="gmeta">'+a.done+'/'+a.total+' done · '+a.open+' open'
+        +(a.blocked?' · <span class="gblock">⚠ '+a.blocked+' blocked</span>':'')+'</div></div></div>';
+    }
+    $("goalsBody").innerHTML=html||'<div class="hint">no goal files</div>';
+    $("goalsStat").textContent=o.fleet_done+"/"+o.fleet_total+" · fleet "+(o.fleet_pct||0)+"%";
+    // Git-based progress curve + stall signal (2026-11-16): goals are registered in git,
+    // so the history IS the progress tracker.
+    fetch("/api/goals/history").then(r=>r.json()).then(h=>{
+      const el=$("goalsGit"); if(!el)return;
+      if(!h.ok){ el.textContent="git progress: n/a ("+(h.error||"no repo")+")"; return; }
+      const s=h.series||[]; let t="git progress (last "+(h.commits_scanned||0)+" commits): ";
+      if(s.length){
+        t+=s.map(x=>x.fleet_reached).join(" \u2192 ")+" \u2192 "+o.fleet_done+"/"+o.fleet_total;
+        if(h.last_change_commit) t+=" \u00b7 last goal change "+h.last_change_commit.sha+" "+String(h.last_change_commit.ts).slice(5,16);
+      } else t+="no goal-file changes in window";
+      if((h.stall_commits||0)>3) t+=" \u00b7 \u26a0 stalled: "+h.stall_commits+" commits since last goal change";
+      el.textContent=t;
+    }).catch(()=>{});
+  }catch(e){ $("goalsStat").textContent="⚠ "+e; }
+}
+$("goalsBtn").onclick=()=>{ const open=$("goalsPanel").classList.toggle("open"); $("goalsBtn").classList.toggle("on",open); if(open)goalsLoad(); };
+
+$("filesRefresh").onclick=filesLoad;
+
+// ================= USER MESSAGE QUEUE + REFRESH-SAFE STATE (2026-11-15) =================
+// Human messages sent while the group is working are queued in user_messages.json
+// (backend /api/user-messages). Each agent's portal prompt build injects its pending
+// entries and flips its own checked flag once the request reaches Studio. The panel
+// below spins per message until every in-scope agent has seen it; when idle, pending
+// messages are delivered automatically as normal sends.
+let lastUmq={messages:[]}; let delivering=false; let _histSig='';
+function umqScope(m){const all=agents.map(a=>a.name);return ((m.mentions&&m.mentions.length)?m.mentions:all).filter(n=>all.includes(n));}
+function umqDone(m){const s=umqScope(m);return !s.length||s.every(n=>(m.checked||{})[n]);}
+function renderQueue(){
+  const panel=$('queuePanel'),list=$('queueList');if(!panel)return;
+  const rows=(lastUmq.messages||[]).filter(m=>!umqDone(m)).slice(-12);
+  panel.classList.toggle('has',rows.length>0);list.innerHTML='';
+  for(const m of rows){
+    const s=umqScope(m),seen=s.filter(n=>(m.checked||{})[n]).length;
+    const row=document.createElement('div');row.className='qrow';
+    const spin=document.createElement('span');spin.className='qspin';
+    const ts=document.createElement('span');ts.className='qts';ts.textContent=m.ts?m.ts.slice(11,16):'';
+    const txt=document.createElement('span');txt.className='qtxt';txt.textContent=m.text;
+    const c=document.createElement('span');c.className='qc';
+    c.textContent=seen+'/'+s.length+' seen'+(m.mentions&&m.mentions.length?' \u00b7 @'+m.mentions.join(','):'');
+    row.append(spin,ts,txt,c);list.appendChild(row);
+  }
+}
+async function umqPoll(){try{const r=await api('/api/user-messages');if(r&&Array.isArray(r.messages)){lastUmq.messages=r.messages;renderQueue();}}catch(e){}}
+function queueMsg(t){
+  let mentions=null;const ms=[...new Set((t.match(/@\w+/g)||[]).map(s=>s.slice(1)))];
+  if(ms.length)mentions=ms.filter(n=>agents.some(a=>a.name===n));
+  api('/api/user-messages',{method:'POST',body:JSON.stringify({text:t,mode:mode,mentions:mentions})})
+    .then(r=>{if(r&&r.message){lastUmq.messages=(lastUmq.messages||[]).concat([r.message]);}}).catch(()=>{});
+  umqPoll();renderQueue();
+}
+async function settleMsg(m){
+  try{await jpost('/api/user-messages/check',{id:m.id,agent:'*'});}catch(e){}
+  m.checked=m.checked||{};umqScope(m).forEach(n=>m.checked[n]=true);renderQueue();
+}
+async function umqDeliver(){
+  if(delivering)return;
+  const pend=(lastUmq.messages||[]).filter(m=>!umqDone(m)).sort((a,b)=>a.ts<b.ts?-1:1);
+  if(!pend.length||busy)return;
+  delivering=true;
+  try{for(const m of pend){if(busy)break;await settleMsg(m);$('input').value=m.text;await send();}}
+  finally{delivering=false;}
+}
+function startHeartbeat(){jpost('/api/run-state',{busy:true,mode:mode,ts:Date.now()}).catch(()=>{});if(window.__hbT)clearInterval(window.__hbT);window.__hbT=setInterval(()=>jpost('/api/run-state',{busy:true,mode:mode,ts:Date.now()}).catch(()=>{}),5000);}
+function stopHeartbeat(){if(window.__hbT)clearInterval(window.__hbT);window.__hbT=null;jpost('/api/run-state',{busy:false,mode:mode,ts:Date.now()}).catch(()=>{});}
+function saveHistoryServer(force){const sig=JSON.stringify(history.slice(-200));if(!force&&sig===_histSig)return;_histSig=sig;jpost('/api/history',{mode:mode,history:history.slice(-200)}).catch(()=>{});}
+async function restoreFromServer(){
+  if($('msgs').children.length)return; // localStorage restore already happened
+  try{
+    const r=await api('/api/history?mode='+encodeURIComponent(mode));
+    const h=(r&&Array.isArray(r.history))?r.history:[];
+    if(!h.length)return;
+    for(const e of h){
+      if(e.speaker==='You'){addBubble('You','',null,true).querySelector('.body').textContent=e.content||'';}
+      else{const a=agents.find(x=>x.name===e.speaker);addBubble(a?a.name:e.speaker,a?a.color:'#8b949e',a?a.emoji:'\ud83e\udd16',false).querySelector('.body').textContent=e.content||'';}
+    }
+    saveMsgs(); // re-seed the localStorage slot from the server copy
+  }catch(e){}
+}
+function adoptLiveRun(r, after){
+  // Adopt a backend-owned group run that is ALREADY LIVE: restore history up to its start,
+  // then attach to its journaled SSE stream (fast-forward + live-tail). Shared by page-load
+  // re-attach, the idle watcher, and send()'s "already in progress" fallback.
+  if(runId)return;
+  if(mode!=="group"){ mode="group"; $("mSolo").classList.remove("on"); $("mGroup").classList.add("on"); updateHint(); }
+  $('msgs').innerHTML=''; history.length=0;
+  api('/api/history?mode=group').then(h=>{
+    const hist=(h&&Array.isArray(h.history))?h.history:[];
+    const start=(typeof r.hist_start==="number")?Math.min(r.hist_start,hist.length):hist.length;
+    for(const e of hist.slice(0,start)){
+      if(e.speaker==='You'){addBubble('You','',null,true).querySelector('.body').textContent=e.content||'';}
+      else{const a=agents.find(x=>x.name===e.speaker);addBubble(a?a.name:e.speaker,a?a.color:'#8b949e',a?a.emoji:'\ud83e\udd16',false).querySelector('.body').textContent=e.content||'';}
+    }
+    stickScroll(true); // pin to bottom after history re-render - no top-scroll flash on re-attach (2026-11-15)
+    const resume=(attachedRunId===r.run_id)?runLastSeq:0; // same run already watched: skip the multi-MB replay
+    if(attachedRunId!==r.run_id){ attachedRunId=r.run_id; runLastSeq=0; }
+    busy=true;setSendQueued(true);startHeartbeat();startStallPoll();
+    if(after)try{after();}catch(e){}
+    attachRun(r.run_id,resume).then(()=>{   // stream ended (run finished/stopped): release UI state
+      if(runId===null){ busy=false; setSendQueued(false); stopStallPoll(); stopHeartbeat(); saveHistoryServer(true); umqPoll(); renderQueue(); }
+    });
+  }).catch(()=>{});
+}
+let runWatchT=null;
+async function runWatch(){
+  // Idle watcher (2026-11-15): a group run can start while this tab is idle - scheduled task,
+  // another tab, or the backend auto-continue. Poll run-state and adopt it so live progress
+  // appears without a reload (previously re-attach only happened once at page load).
+  if(busy||runId)return;
+  try{const r=await api('/api/run-state');
+    if(r&&r.busy&&r.run_id)adoptLiveRun(r);
+  }catch(e){}
+}
+function startRunWatch(){if(runWatchT)return;runWatch();runWatchT=setInterval(runWatch,5000);}
+function checkInterruptedRun(){
+  // 2026-11-15: group runs are backend-owned. If one is live, RE-ATTACH and replay from the
+  // journal (hard refresh no longer cancels anything). A finished/interrupted run gets its verdict shown.
+  api('/api/run-state').then(r=>{
+    if(!r||!r.run_id)return;
+    if(r.busy&&r.status!=="interrupted"){ adoptLiveRun(r); }
+    else if(r.status&&r.status!=="running"){
+      const v=r.verdict||{};
+      if(v.note){const w=document.createElement("div");w.className="thinkwrap";
+        const p=document.createElement("div");p.className="roundend "+(v.cls||"dim");p.textContent=v.note;
+        w.appendChild(p);$("msgs").appendChild(w);stickScroll();}
+    }
+  }).catch(()=>{});
+}
+function clearRunState(){jpost('/api/run-state',{busy:false,mode:mode,ts:Date.now()}).catch(()=>{});}
+$('intResume').onclick=()=>{ $('intBanner').classList.remove('show');clearRunState();
+  const t='Continue where you left off \u2014 pick up any unfinished work and say [CONCLUDED] when done.';
+  if(busy){queueMsg(t);}else{$('input').value=t;send();} };
+$('intDismiss').onclick=()=>{ $('intBanner').classList.remove('show');clearRunState(); };
+function bootRestore(){ try{setMode(mode);}catch(e){} restoreFromServer(); umqPoll(); setInterval(()=>{umqPoll();umqDeliver();},1500); checkInterruptedRun(); startRunWatch(); }
+
+</script>
+</body>
+</html>
