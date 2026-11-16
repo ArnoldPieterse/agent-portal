@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 9: `_memory_health_snapshot()` + `/api/memory-health` route implemented in agent_portal.py; next: portal restart to go live, then rende
 - Goal 2 (dark mode
 - Goal #3 (component abstraction) closed: 26 inline styles → 17 named CSS classes in ui/app.css; JS switched from style.display to class toggl
 - Scribe goal #5 (supersession-chain integrity) PASS: 19 markers, 0 cycles, 0 dangling heads. Open: goals 3,4,6,7,8,9,10.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goal 9: /api/memory-health re-applied to agent_portal.py (was clobbered); code-complete, blocked on portal restart via RDP/WinRM (san
 - Dark theme passes WCAG AA 16/16 (
 - load_trend.py validated with synthetic data — logic-complete, awaiting real data once portal network access recovers
+- Verifier: Designer's WCAG contrast script runs on CSS tokens only (no live portal needed); only screenshot pair is gated by portal-down.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-17",
+  "source": "ui/app.css (live)",
+  "scope": "white text on accent/button backgrounds (gap in wcag_contrast_live.py)",
+  "rows": [
+    {
+      "fg": "#fff",
+      "bg": "--acc(#4f8cff)",
+      "desc": "#send / .btn.pri label on --acc",
+      "ratio": 3.22,
+      "aa_normal": false,
+      "aa_large": true
+    },
+    {
+      "fg": "#fff",
+      "bg": "#3a6fd6(#3a6fd6)",
+      "desc": ".seg button.on label (hardcoded blue)",
+      "ratio": 4.75,
+      "aa_normal": true,
+      "aa_large": true
+    },
+    {
+      "fg": "#fff",
+      "bg": "--focus(#7fb0ff)",
+      "desc": "(informational) white on focus ring color",
+      "ratio": 2.2,
+      "aa_normal": false,
+      "aa_large": false
+    }
+  ],
+  "fails_normal": 2
+}
