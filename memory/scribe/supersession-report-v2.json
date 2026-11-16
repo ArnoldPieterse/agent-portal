@@ -1,0 +1,14 @@
+{
+  "run_at": "2026-11-16T22:52:25.786447",
+  "script": "memory/scribe/supersession_check_v2.py",
+  "policy_owner": "Scribe (goal 5)",
+  "notes": "v2 fixes over Archivist v1: (1) lookbehind prevents matching SUPERSEDED inside filenames, (2) is_real_target() filters prose fragments without extensions, (3) resolution bug fixed (basename-resolved edges no longer reported as dangling)",
+  "total_files_scanned": 816,
+  "supersession_markers_found": 19,
+  "resolved_edges": 19,
+  "dangling_heads": 0,
+  "cycles_detected": 0,
+  "dangling_detail": [],
+  "cycle_detail": [],
+  "verdict": "PASS"
+}

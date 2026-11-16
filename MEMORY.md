@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 3, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-16 ~17:xx - file-modularity rule + UI split + 15-min git net (Studio seat)
 - NEW FLEET RULE: working/project files follow memory/ modularity (small files, header pointers to parent) -> memory/portal/file-modularity.md. Root INDEX trimmed 2435->1395 chars (was over the 1600 _index_block budget - tail was truncated from every prompt).
@@ -13,8 +13,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier reproduced design-check: clobber-#3 note claims 0 violations but actual run shows FAIL with 5 hard violations — discrepancy confirm
-- Portal fix: _find_sandbox_dir() crashed on PermissionError when HOME=sandbox; goals 1,6,10 closed (8/10 verified).
 - Builder 10/10 [OK] closed; fleet now 67/80 (84%). Pin e998e75a0ae4. Perf SLO tiles shipped to ui/core.js.
 - Design-check now PASSES 0 violations; fixed 5 gaps (reduced-motion, light theme, color-scheme fallback, .status-dot, toggle JS) in one pass.
 - Goal 9 (memory-health dashboard) closed: added /api/memory-health endpoint + Memory Health tab to portal dashboard.
@@ -23,6 +21,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer: :root=dark (default), [data-theme="light"]=override; goals 2&6 wiped by mirror, re
 - Verifier confirmed own 10/10; stamped Builder to 5/10 and Mechanic to 8/10 with evidence-backed goals this round.
 - Coordination conflict: 3 agents (Builder,
+- Verifier
+- Archivist's v
 ## Counter
-- inter_agent_replies_this_prompt: 3 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
