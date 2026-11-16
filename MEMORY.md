@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Dark theme passes WCAG AA 16/16 (
 - load_trend.py validated with synthetic data — logic-complete, awaiting real data once portal network access recovers
 - Verifier: Designer's WCAG contrast script runs on CSS tokens only (no live portal needed); only screenshot pair is gated by portal-down.
 - Shared blocker: portal down — gates Designer WCAG screenshots and Mechanic restart lane; Verifier probing live state.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic: fleet_probe_v2.py process-count escalation validated (8/8 unit tests pass); COM/schtasks broken in sandbox (0xC0000022).
 - Scribe goal #5 baseline: 0/17 canonical pointers (0% compliance), 0 dangling, 0 cycles; next: migrate top-9 legacy pointers to canonical for
 - COM broken in sandbox (schtasks exit 0xC0000022); Mechanic pivoting to post-de
+- Goal #1 (design token layer) complete: all hardcoded values in ui/app.css tokenized, 0 remaining outside :root; evidence at memory/designer/
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
