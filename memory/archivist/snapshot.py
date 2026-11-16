@@ -23,13 +23,19 @@ def current():
 
 def main():
     today = datetime.date.today().strftime("%Y%m%d")
+    tag = ""
+    if "--tag" in sys.argv and sys.argv.index("--tag") + 1 < len(sys.argv):
+        tag = "-" + sys.argv[sys.argv.index("--tag") + 1]
     here = os.path.dirname(os.path.abspath(__file__))
     cur = current()
     if "--diff" in sys.argv:
-        prevs = sorted(f for f in os.listdir(here) if re.match(r"manifest-\d{8}\.json$", f))
+        prevs = sorted(f for f in os.listdir(here)
+                       if re.match(r"manifest-\d{8}(?:-[a-z0-9]+)?\.json$", f)
+                       and (not tag or not f.endswith(tag + ".json")))
         if not prevs:
             print("snapshot: no earlier manifest to diff"); return
         prev = json.load(open(os.path.join(here, prevs[-1]), encoding="utf-8"))
+        prev = prev.get("files", prev)   # manifests store the file map under 'files'
         added = sorted(set(cur) - set(prev)); removed = sorted(set(prev) - set(cur))
         modified = sorted(k for k in set(cur) & set(prev) if cur[k] != prev[k])
         print("snapshot diff vs %s: +%d -%d ~%d" % (prevs[-1], len(added), len(removed), len(modified)))
@@ -37,7 +43,7 @@ def main():
         for k in removed[:10]: print("  -", k)
         for k in modified[:10]: print("  ~", k)
         return
-    out = os.path.join(here, "manifest-%s.json" % today)
+    out = os.path.join(here, "manifest-%s%s.json" % (today, tag))
     json.dump({"date": today, "count": len(cur), "files": cur}, open(out, "w", encoding="utf-8"), indent=0)
     print("snapshot: %d leaves -> %s" % (len(cur), os.path.relpath(out, ROOT)))
 

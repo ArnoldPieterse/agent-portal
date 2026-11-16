@@ -43,9 +43,11 @@ def main() -> int:
             if date(y, mo, da) < today:
                 stale.append((rel_idx, d.group(1)))
 
+    META = {"INDEX.md", "MEMORY.md", "TODO.md", "VLOG.txt"}
     all_files = {p.relative_to(ROOT).as_posix()
                  for p in MEM.rglob("*")
-                 if p.is_file() and "__pycache__" not in p.parts}
+                 if p.is_file() and "__pycache__" not in p.parts
+                 and p.suffix != ".pyc" and p.name not in META}
     referenced = set()
     for src, tgt in pointers:
         candidates = {tgt, f"memory/{tgt}"}

@@ -44,3 +44,4 @@ Last updated: 2026-11-15 (FINAL: mirror-clobber mechanism resolved w/ config evi
 - -> memory/researcher/sync-semantics-options-2026-11-16.md | R7: single-writer + epoch stamps recommended over vector clocks on SMB
 - -> memory/researcher/net-capability-matrix-2026-11-16.md | R9: per-host outbound matrix, two vantages
 - -> memory/researcher/evidence-quality-trend-2026-11-16.md | R10 report 1/2: 47% baseline -> 100% first closures
+- -> memory/researcher/sandbox-host-diff-2026-11-16.md   cycle-2 goal 6: sandbox-vs-host ground-truth diff (daily)

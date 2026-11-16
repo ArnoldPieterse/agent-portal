@@ -3216,6 +3216,12 @@ class Handler(BaseHTTPRequestHandler):
             # Fleet Status panel (2026-11-13): per-host models + busy/idle/unknown.
             # On-demand probes only (no background timer); dead host => unknown, no hang.
             return self._json(200, _fleet_snapshot())
+        elif p == "/api/perf":
+            return self._json(200, _perf_snapshot())
+        elif p == "/api/health/fleet":
+            return self._json(200, _fleet_health_snapshot())
+        elif p == "/api/decisions":
+            return self._json(200, _decisions_snapshot())
         elif p == "/api/git":
             # Local git repo status + recent log (Ops panel, 2026-11-13).
             return self._json(200, _git_status())
@@ -3566,12 +3572,6 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, res)
             except Exception as e:
                 return self._json(500, {"error": str(e)})
-        elif p == "/api/perf":
-            return self._json(200, _perf_snapshot())
-        elif p == "/api/health/fleet":
-            return self._json(200, _fleet_health_snapshot())
-        elif p == "/api/decisions":
-            return self._json(200, _decisions_snapshot())
         elif p == "/api/git":
             # Ops: local git management (commit / init) for the project workspace.
             action = (body.get("action") or "").strip()

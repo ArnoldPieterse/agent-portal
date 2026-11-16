@@ -25,3 +25,4 @@ Last updated: 2026-11-15 (created - folder previously had no sub-index; gap flag
 - -> memory/builder/playbook_to_tests.py   cycle-2 goal: executable test playbook generator
 - -> memory/builder/hotpatch.py   cycle-2 goal: hot-patch with auto-rollback script
 - -> memory/builder/agent-health-checks.jsonl   cycle-2 goal: agent capability health matrix data
+- -> memory/builder/api_contract_test.py   cycle-2 goal 5: API contract pinning (--record/--check, fixtures in api-fixtures/)

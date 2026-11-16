@@ -14,3 +14,14 @@ Reviewed at each round end; >=3 dated updates required this cycle.
 | R7 | Sync clobbers | LWW mirror + 35-min clock skew; F-VER-01 showed a write can vanish from the served file | MED | HIGH | Three-layer defense live in charter (Builder#6 / Researcher#6 parity_audit.py disk==served / Scribe#6 durable copies); first parity run 2026-11-16: 0 findings |
 
 Next review: end of next group round (dated entry 2 required).
+
+## 2026-11-16 evening update (Studio seat)
+- [x] Chaos-drill gap CLOSED: PortalWatchdog task (5-min) auto-recovers portal in ~3s (drill logged memory/ops/watchdog.log).
+- [ ] Remote cold-boot legs (Pale/Black/Red reboot-recovery) still pending - needs host power cycles, scheduled with user.
+- [ ] 53 dangling supersession pointers documented (archivist findings leaf) - cycle-3 repoint batch.
+- [x] SLO pipeline live: /api/perf + /api/health/fleet + daily load baseline running.
+
+## 2026-11-16 nightly update (Studio seat)
+- [x] New endpoints live after restart: /api/perf, /api/health/fleet, /api/decisions (all 200 verified).
+- [x] SLO enforcement first run PASS (memory/verifier/slo-report-2026-11-16.md).
+- [ ] Watchdog covers White only - extend to remote portal hosts when their portal tasks exist.

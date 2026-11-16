@@ -18,16 +18,16 @@
   <div id="status"><span class="dot" id="sdot"></span><span id="stext">checking studio…</span></div>
 </header>
 <main>
-  <aside>
+  <aside aria-label="Agent roster">
     <div class="ah">Agents <button id="addAgent" title="Add agent">＋ Add</button></div>
     <div id="agentList"></div>
   </aside>
   <div id="chatCol">
     <div id="modeBar">
-      <div class="seg">
+      <nav class="seg" aria-label="Chat mode">
         <button id="mSolo" class="on">Solo</button>
         <button id="mGroup">Group</button>
-      </div>
+      </nav>
       <span id="modeHint">Chatting with —</span><span id="xtalk" class="hint"></span><span id="busyHint" class="busyspan"></span>
       <span class="toggles"><button id="goalsBtn" title="Goal velocity: per-agent progress rings from memory/goals/">🎯 Goals</button><button id="actBtn" title="Activity timeline: every turn + tool call of each run, persisted per session (survives restarts)">⏱ Activity</button>
       <button id="fleetBtn" title="Fleet status: per-host loaded models + busy/idle/unknown; live while open">🛰 Fleet</button>
