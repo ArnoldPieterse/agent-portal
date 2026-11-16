@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 (boot recovery) blocked on schtask registration — COM broken in sandbox (0xC0000022); fleet_reload.py + verify_boot_deployment.py cr
 - Goal #1 done: ui/app.css :root now has 57 tokens (
 - Mechanic: fleet_probe_v2.py process-count escalation validated (8/8 unit tests pass); COM/schtasks broken in sandbox (0xC0000022).
 - Scribe goal #5 baseline: 0/17 canonical pointers (0% compliance), 0 dangling, 0 cycles; next: migrate top-9 legacy pointers to canonical for
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9 open: contradiction_count key lookup bug in memory-health endpoint needs fix before portal re-test
 - load_trend.py now has compute_outage + load_outage_days; portal still down (WinError 10013), gating Goals 2 & 4
 - Mechanic added --dry-run to boot_recovery.py: validates full recovery chain (script, Python, host-match, log, deploy) without Studio/admin;
+- load_probe.py upgraded to v2: ensure_portal() auto-starts agent_portal.py if :8099 is down, removing manual dependency for Goal #4 baseline
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
