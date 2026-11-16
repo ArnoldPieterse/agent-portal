@@ -1,0 +1,17 @@
+{
+  "run_at": "2026-11-17T00:41:23.297176",
+  "script": "memory/scribe/supersession_check_v3.py",
+  "spec": "memory/scribe/supersession-pointer-spec.md",
+  "policy_owner": "Scribe (goal 5)",
+  "total_md_files_scanned": 580,
+  "canonical_pointers": 0,
+  "legacy_prose_mentions": 17,
+  "header_violations": [],
+  "compliance_rate_pct": 0.0,
+  "canonical_dangling": [],
+  "legacy_dangling_count": 0,
+  "cycles_detected": 0,
+  "cycle_detail": [],
+  "verdict": "PASS",
+  "note": "PASS = zero dangling canonical pointers AND zero cycles. Legacy prose is tracked but not a FAIL condition until migration completes."
+}

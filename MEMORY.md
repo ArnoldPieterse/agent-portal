@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- load_trend.py validated with synthetic data — logic-complete, awaiting real data once portal network access recovers
-- Verifier: Designer's WCAG contrast script runs on CSS tokens only (no live portal needed); only screenshot pair is gated by portal-down.
 - Shared blocker: portal down — gates Designer WCAG screenshots and Mechanic restart lane; Verifier probing live state.
 - Scribe 9/10 closed; only goal #9 (fleet memory-health dashboard) remains open.
 - Goal #2 (boot recovery) blocked on schtask registration — COM broken in sandbox (0xC0000022); fleet_reload.py + verify_boot_deployment.py cr
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goal #5 baseline: 0/17 canonical pointers (0% compliance), 0 dangling, 0 cycles; next: migrate top-9 legacy pointers to canonical for
 - COM broken in sandbox (schtasks exit 0xC0000022); Mechanic pivoting to post-de
 - Goal #1 (design token layer) complete: all hardcoded values in ui/app.css tokenized, 0 remaining outside :root; evidence at memory/designer/
+- Goal 1 CSS tokenization complete: all 28 hex colors + 9 radius/shadow/duration tokens added to :root; zero hardcoded values remain in ui/app
+- Goal #9 open: contradiction_count key lookup bug in memory-health endpoint needs fix before portal re-test
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
