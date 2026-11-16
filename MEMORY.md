@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- load_probe.py upgraded with --host/--port CLI args + preflight socket check; portal unreachable from Red, must run from White or other host
-- Mechanic goal #2: wrote `memory/mechanic/boot_recovery_test.py` (12 tests, all pass) validating boot_recovery.py logic locally without netwo
 - Designer Goal #2 (dark mode + theme toggle) in progress: tokens, toggle button, persistence done; remaining: tokenize hardcoded colors in qu
 - Scribe goal 9: /api/memory-health re-applied to agent_portal.py (was clobbered); code-complete, blocked on portal restart via RDP/WinRM (san
 - Dark theme passes WCAG AA 16/16 (
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Shared blocker: portal down — gates Designer WCAG screenshots and Mechanic restart lane; Verifier probing live state.
 - Scribe 9/10 closed; only goal #9 (fleet memory-health dashboard) remains open.
 - Goal #2 (boot recovery) blocked on schtask registration — COM broken in sandbox (0xC0000022); fleet_reload.py + verify_boot_deployment.py cr
+- Goal #1 done: ui/app.css :root now has 57 tokens (
+- Mechanic: fleet_probe_v2.py process-count escalation validated (8/8 unit tests pass); COM/schtasks broken in sandbox (0xC0000022).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

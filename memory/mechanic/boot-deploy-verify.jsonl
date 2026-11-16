@@ -1,0 +1,2 @@
+{"ts": "2026-11-17 00:34:52", "host": "Red", "checks": {"boot_script": true, "reload_script": false, "python": true, "schtask": false}, "verdict": "INCOMPLETE (2/4)"}
+{"ts": "2026-11-17 00:35:32", "host": "Red", "checks": {"boot_script": true, "reload_script": true, "python": true, "schtask": false}, "verdict": "INCOMPLETE (3/4)"}
