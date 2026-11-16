@@ -1,0 +1,10 @@
+{"ts": "2026-11-16T21:13:58", "target": "IP_BLACK", "port": 8888, "verdict": "ALLOW", "reason": "allow: Black:8888 in allowlist"}
+{"ts": "2026-11-16T21:13:58", "target": "IP_BLACK", "port": 445, "verdict": "ALLOW", "reason": "allow: Black:445 in allowlist"}
+{"ts": "2026-11-16T21:13:58", "target": "IP_BLACK", "port": 22, "verdict": "DENY", "reason": "deny: port 22 not allowed for Black (allowed: [445, 5985, 8099, 8888])"}
+{"ts": "2026-11-16T21:13:58", "target": "127.0.0.1", "port": 8099, "verdict": "ALLOW", "reason": "allow: Loopback:8099 in allowlist"}
+{"ts": "2026-11-16T21:13:58", "target": "127.0.0.1", "port": 8080, "verdict": "DENY", "reason": "deny: port 8080 not allowed for Loopback (allowed: [8099, 8888])"}
+{"ts": "2026-11-16T21:13:58", "target": "github.com", "port": 443, "verdict": "ALLOW", "reason": "allow: domain github.com:443 in allowlist"}
+{"ts": "2026-11-16T21:13:58", "target": "github.com", "port": 80, "verdict": "DENY", "reason": "deny: port 80 not allowed for domain github.com (allowed: [443])"}
+{"ts": "2026-11-16T21:13:59", "target": "evil.example.com", "port": 443, "verdict": "DENY", "reason": "deny: no allowlist entry for evil.example.com:443 (default_policy=deny)"}
+{"ts": "2026-11-16T21:13:59", "target": "IP_RED", "port": 8888, "verdict": "ALLOW", "reason": "allow: Red:8888 in allowlist"}
+{"ts": "2026-11-16T21:13:59", "target": "10.0.0.1", "port": 80, "verdict": "DENY", "reason": "deny: no allowlist entry for 10.0.0.1:80 (default_policy=deny)"}

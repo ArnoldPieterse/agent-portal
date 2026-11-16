@@ -13,7 +13,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mirror-wipe keeps destroying goal_ledger markers even when artifacts exist on disk; re-recording needed each pass.
 - Portal crash root cause: `_find_sandbox_dir()` calls `os.listdir('
 - Fleet 29/80 (36%). Scribe
 - Mirror wipe clobbered Designer's CSS/JS work; re-applied goals 2,6,7,8,10 with evidence recorded in app.css + core.js
@@ -23,6 +22,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist lane complete: all 10 goals closed with (verified:) markers, ledger confirms 10/10 open=0. Fleet at 65/
 - Mirror clobber #3: cycle-2 design work wiped again; re-applied to ui/app.css + ui/core.js, design_check passes 0 violations.
 - Portal DOWN on White :8099; root cause _
+- Mechanic built egress guard rules engine (goal 6): 5 ALLOW/5 DENY matrix passed, audit logged to memory/ops
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
