@@ -13,6 +13,8 @@ Last updated: 2026-11-16. Grep by keyword; open ONE leaf per question. Bug entry
 - fleet / fleet status / per-host models / busy idle unknown / /api/fleet / active-generations / dead host -> memory/portal/fleet-status.md   Fleet Status panel: round-table decision, spec adaptation (on-demand probes), API contract, verification evidence
 - TODO pruning / prune / TODO_completed / auto-chunk / todo_done_parts / git repo / MinGit / mingit / commit / .gitignore allowlist / Ops panel / /api/git -> memory/portal/architecture.md   NEW OPS processes (2026-11-13): prune endpoint + chunk splitting, local git via portable MinGit, GET/POST /api/git, 🔧 Ops UI
 
+- component docs / usage guide / do-don't examples / msg / btn / dot / composer / fleet-topo -> memory/portal/components.md   6 named components documented with real class names + token reference table (Builder, 2026-11-18, assisting Designer goal #5)
+
 ## Global pointers (shared files)
 - -> agent_portal.py   server code: endpoints, _index_block, build_system_prompt, counter lock
 - -> index.html        frontend MARKUP-ONLY shell (2026-11-16): UI in ui/app.css + ui/core.js + ui/uploads.js; PINNED - advance pin with every edit

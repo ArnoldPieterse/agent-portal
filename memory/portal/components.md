@@ -1,152 +1,120 @@
 # Portal UI Component Reference
 
-Owner: Designer | Updated: 2026-11-17
-Parent: memory/portal/INDEX.md
-Purpose: Onboard any agent's UI work from this file alone. Each component lists its selector, when to use it, and do/don't examples.
+Pointer: parent = memory/portal/INDEX.md | sibling = file-modularity.md
+Purpose: one-paragraph usage + do/don't for each named component in ui/app.css.
+Updated: 2026-11-18 (Builder, assisting Designer goal #5).
 
 ---
 
 ## 1. Message Bubble — `.msg`
 
-**Selector:** `.msg` (base), `.msg.you` (user-sent), `.msg.silentmsg` (suppressed/system)
+**How to use:** Wrap each chat message in `<div class="msg">`. Add `.you` for user-sent messages (right-aligned, accent background). Include a `.who` child for the sender label and optional timestamp. For silent/DM messages add `.silentmsg`. Tool-call chips go in a `.toolchip` span inside the body.
 
-**Usage:** Every chat message in the main panel. The container flexbox aligns `.you` to the right; others left.
-
-**Structure:**
+**Do:**
 ```html
-<div class="msg [you|silentmsg]">
-  <div class="who"><span>AgentName</span><time>12:04</time></div>
-  <div class="body">Message text here.</div>
-  <!-- optional tool chips -->
-  <span class="toolchip">web_search</span>
+<div class="msg you">
+  <div class="who">You <span>14:32</span></div>
+  <div class="body">Hello agent</div>
 </div>
 ```
 
-**Do:** Use `var(--panel2)` background, `var(--line)` border. Keep `max-width:78%` for readability.
-**Don't:** Don't add inline styles for margins — the flex parent handles spacing. Don't use `.msg.you` for agent messages.
+**Don't:** Don't set `max-width` or `padding` inline — the token layer handles it (`--sp-8`, `--sp-12`, `78%`). Don't use hex colors for backgrounds; use `var(--msg-you)` / `var(--panel2)`.
 
 ---
 
-## 2. Panel Head — `header` / `.dhead` / panel titlebar pattern
+## 2. Panel Header — pattern `#*Head` (fleetHead, opsHead, filesHead, goalsHead)
 
-**Selector:** Top-level `header` (app bar), `.dhead` (detail panel header), or the implicit first child of any `#*Panel` element.
+**How to use:** Each slide-out panel has a header row with the same structure: `display:flex`, centered items, 8px gap, 16px horizontal padding, bottom border. The header contains a title label and action buttons on the right (`margin-left:auto`). Use the existing ID pattern for new panels.
 
-**Usage:** Every collapsible panel (Goals, Fleet, Ops, Memory) has a clickable head row that toggles open/close. The pattern is: flex row with title on left, action button on right (`margin-left:auto`).
-
-**Structure:**
+**Do:**
 ```html
-<div class="dhead" role="button" tabindex="0" aria-expanded="false">
-  <span>Fleet Topology</span>
-  <button aria-label="Close panel">×</button>
+<div id="newHead" style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-bottom:1px solid var(--line)">
+  <span>New Panel</span>
+  <button class="btn" style="margin-left:auto">Close</button>
+</div>
+```
+(In practice, copy the CSS rule from `#fleetHead` and rename.)
+
+**Don't:** Don't use a different padding or border pattern per panel — all heads share the same visual rhythm. Don't use `font-size` literals; use `var(--fs-12)`.
+
+---
+
+## 3. Primary Button — `.btn.pri`
+
+**How to use:** Base button is `.btn` (outlined, panel background). Add `.pri` for the primary/accent variant (filled with `--acc`, white text). Use for the single most important action in a dialog or form. Secondary actions stay as plain `.btn`.
+
+**Do:**
+```html
+<button class="btn pri">Save</button>
+<button class="btn">Cancel</button>
+```
+
+**Don't:** Don't stack multiple `.pri` buttons in the same row — one primary per context. Don't override `background` or `color` inline; the tokens handle theme switching (light/dark).
+
+---
+
+## 4. Status Badge / Dot — `.dot` and `.fdot`
+
+**How to use:**
+- `.dot` (header status): 8px circle in `#status`. Add `.on` for connected (green), omit for disconnected (red via `--err`).
+- `.fdot` (fleet row): inline 8px circle before agent name. Variants: `.busy` (amber), `.idle` (green), `.unknown` (red).
+
+**Do:**
+```html
+<span class="dot on"></span>  <!-- connected -->
+<span class="fdot busy"></span>Builder   <!-- fleet row -->
+```
+
+**Don't:** Don't use a different size or shape for status indicators. Don't add text inside the dot — it's purely visual; pair with a label if needed.
+
+---
+
+## 5. Input Bar — `#composer` + `#input` + `#send`
+
+**How to use:** The composer is a flex row at the bottom of the chat column: textarea (`#input`, flex:1, 44px height) + send button (`#send`). Focus state on `#input` changes border to `--acc`. Send button disables (opacity 0.5) when input is empty. The drag-over state `.dragover` highlights the entire composer for file drops.
+
+**Do:**
+```html
+<div id="composer">
+  <textarea id="input" placeholder="Message…"></textarea>
+  <button id="send" disabled>Send</button>
 </div>
 ```
 
-**Do:** Always include `role="button"` + `tabindex="0"` on the head div for keyboard access. Keep font at `var(--fs-13)` weight 600.
-**Don't:** Don't nest interactive elements (links, inputs) inside the head — it breaks click-to-toggle.
+**Don't:** Don't add a separate submit form wrapper — the composer handles Enter-to-send in JS. Don't change `height` of `#input` from 44px without updating the responsive breakpoints (768px, 480px, 375px).
 
 ---
 
-## 3. Primary Button — `.btn` / `.btn.pri`
+## 6. Fleet Topology View — `#fleetTopo` + `.ft-*` classes
 
-**Selector:** `.btn` (secondary/neutral), `.btn.pri` (primary/accent)
+**How to use:** SVG-based topology showing hosts as rectangles, agents as circles, and links between them. States: `.ft-state` text label per node. Tooltip (`.ft-tooltip`) shows on hover/focus with model info. Detail panel (`.ft-detail`) appears below for the selected host. Use `var(--dot-idle)`, `var(--dot-busy)`, `var(--dot-err)` for node states.
 
-**Usage:** Action buttons that trigger a discrete operation (Send, Reset, Attach). The primary variant uses the accent token for high-visibility CTAs.
-
-**Structure:**
+**Do:**
 ```html
-<button class="btn pri" id="send">Send</button>
-<button class="btn" id="resetBtn">Reset</button>
+<svg class="ft-svg">
+  <rect class="ft-host" ...>
+  <circle class="ft-agent" style="fill:var(--dot-busy)" ...>
+</svg>
+<div class="ft-tooltip hidden">…</div>
 ```
 
-**Do:** Use `.btn.pri` for at most ONE button per visible panel (the main CTA). All other actions use plain `.btn`. Focus ring is automatic via `:focus-visible` rule.
-**Don't:** Don't use `.btn.pri` for destructive actions — those should use a custom danger variant (not yet defined; file an issue).
+**Don't:** Don't hard-code SVG colors — always use the CSS custom properties. Don't add transitions >200ms (motion budget). Respect `prefers-reduced-motion` (the global block at L293 handles this).
 
 ---
 
-## 4. Status Badge / Chip — `.toolchip` / `.chipfile`
+## Token Quick-Reference (used by all components above)
 
-**Selector:** `.toolchip` (inline tool-use indicator), `.chipfile` (attached file chip in input bar)
-
-**Usage:** Small inline labels that convey metadata without breaking text flow. Tool chips appear below messages to show which tools an agent called. File chips appear in the input area for uploaded attachments.
-
-**Structure:**
-```html
-<!-- tool chip (inside .msg) -->
-<span class="toolchip">web_search</span>
-
-<!-- file chip (in input bar) -->
-<span class="chipfile">
-  <span>report.pdf</span>
-  <button aria-label="Remove report.pdf">×</button>
-</span>
-```
-
-**Do:** Keep text at `var(--fs-11)` (smallest scale step). Use `var(--warn)` color for tool chips to signal non-textual metadata.
-**Don't:** Don't use chips for actionable content that needs a full button — they're too small for reliable tap targets (<32px).
-
----
-
-## 5. Input Bar — `#input` + send/attach row
-
-**Selector:** `#input` (textarea), the containing flex row with `#send` and `#attach` buttons.
-
-**Usage:** The main message composition area at the bottom of the chat panel. Auto-grows via JS (`resize:none` + height set dynamically). Enter sends; Shift+Enter newlines.
-
-**Structure:**
-```html
-<div class="ibar">
-  <button id="attach" aria-label="Attach file">📎</button>
-  <textarea id="input" placeholder="Type a message…" rows="1"></textarea>
-  <button class="btn pri" id="send">Send</button>
-</div>
-```
-
-**Do:** Keep `border-radius:8px` matching the token. Focus state uses `var(--acc)` border — don't override with outline.
-**Don't:** Don't add a visible placeholder in production if the input has content; it causes layout shift on first keystroke.
-
----
-
-## 6. Status Dot — `.dot` / `.fdot`
-
-**Selector:** `.dot` (global connection indicator, top-right), `.fdot` (per-host dot in fleet topology rows)
-
-**Usage:** Tiny 8px circles indicating live status. The global dot shows studio connectivity; fleet dots show per-host state (busy/idle/unknown).
-
-**Structure:**
-```html
-<!-- global connection dot (in header) -->
-<span class="dot on" id="sdot" aria-label="Connected"></span>
-
-<!-- fleet host dot -->
-<span class="fdot idle" aria-hidden="true"></span><b>host-01</b>
-```
-
-**States:** `.on` (green/ok), default (red/err) for global; `.busy` (amber), `.idle` (green), `.unknown` (red) for fleet.
-
-**Do:** Always pair with an `aria-label` on the dot itself or a visible text sibling. The color alone is not accessible.
-**Don't:** Don't make dots larger than 8px — they're indicators, not targets. If you need a clickable status element, use a full badge instead.
-
----
-
-## Token Quick-Reference (used by all components)
-
-| Token | Value | Used by |
-|-------|-------|---------|
-| `--sp-4` / `--sp-8` / `--sp-12` / `--sp-16` | 4/8/12/16px | All padding/gaps |
-| `--fs-11` / `--fs-13` / `--fs-14` | 11/13/14px | Text sizes (smallest→body) |
-| `--panel` / `--panel2` | Surface colors | Backgrounds |
-| `--line` | Border color | All borders |
-| `--acc` | Accent (blue) | Focus, primary btn, active states |
-| `--ok` / `--err` / `--warn` | Status colors | Dots, badges |
-| `--text` / `--dim` / `--faint` | Text hierarchy | Body / secondary / muted |
-
----
-
-## Onboarding Checklist (for new agents doing UI work)
-
-1. Read this file top-to-bottom.
-2. Open `ui/app.css` — the `:root` block at top has all tokens.
-3. For any new element, find the closest existing component and clone its pattern.
-4. Use ONLY `var(--*)` tokens for colors, spacing, font-sizes. No raw hex/px outside `:root`.
-5. Run `python memory/designer/design_check.py` after edits — it catches token violations + motion budget overruns.
-6. If you add a new component class, append a section here before committing.
+| Token | Dark value | Light value | Usage |
+|-------|-----------|-------------|-------|
+| `--bg` | #0e1116 | #f4f6fa | page background |
+| `--panel` | #151a22 | #ffffff | panel/composer bg |
+| `--panel2` | #1b2230 | #eef1f6 | raised surface (msg, input) |
+| `--line` | #2a3342 | #d5dbe5 | borders |
+| `--text` | #e8edf4 | #1a2030 | primary text |
+| `--dim` | #9aa5b5 | #5b6779 | secondary text |
+| `--acc` | #4f8cff | #2f6fe0 | accent/primary |
+| `--ok` | #3ddc84 | #1f9d5b | success/connected |
+| `--warn` | #ff9f43 | #c47a12 | warning/busy |
+| `--err` | #ff6b6b | #d64545 | error/disconnected |
+| `--sp-4/8/12/16` | 4/8/12/16px | same | spacing scale |
+| `--fs-11..14` | 11/12/13/14px | same | font-size scale |
