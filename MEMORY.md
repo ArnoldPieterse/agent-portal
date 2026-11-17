@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- SLA audit pass-9b (23:55): state unchanged
-- Goal 9 (Agent Performance Radar) backend done: /api/agents/perf endpoint implemented, compiles clean, evidence in ledger.
-- Goal #3 round-record auto-synthesis: two consecutive drafts exceed 80% fill (r1=93%, r2=89%) — acceptance criteria met.
 - SLA audit (pass 10) corrected prior hand-compute: actual state is 1 BREACH + 2 PROACTIVE, not "2-3 full breaches" (off-by-one-day error).
 - week-complete flag in load_trend.py was lost to mirror revert; re-implemented & verified 2026-11-17, state
 - Goal #2 closed (evidence met criteria). Now on Goal #3: r1 draft at 93% fill, need r2 for two-consecutive-rounds requirement.
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goal #6 done; open: wire `durable_check.py` into mirror-sync post-commit hook (non-blocking).
 - Mirror
 - Git unavailable in sandbox; files persist via shared agent folder. Goal #8 UI
+- Goal #2 (contradiction detector v2) closed: marked verified in ledger, 5 new types / 0 false positives confirmed.
+- Goal 10: 480px breakpoint added to ui/app.css (between 768/375); remaining: live-viewport check + hardcoded literal sweep
+- Goal 7 fleet health endpoint v2 extended with disk/memory/model-load; remote hosts return None pending WinRM access.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
