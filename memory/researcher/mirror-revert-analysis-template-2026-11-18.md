@@ -44,7 +44,8 @@ Effort: Low (one conditional in memory_mirror.py)
 ### Fix 2: Per-file epoch stamping (from goal #1 spec)
 Mechanism: [FILL. Expected: LWW conflict resolution causes legitimate edits to be reverted by a stale pull. Epoch stamps per file would make the mirror reject stale writes.]
 Implementation hint: See memory/researcher/sync-semantics-spec-2026-11-17.md, Data Model section (epoch field in .meta.json per file). Migration path: 4-phase, non-breaking.
-Effort: Medium (requires spec implementation by Mechanic)
+Status (as of 2026-11-18): BUILT + unit-tested (Mechanic Phase 1-4 on Red sandbox) but NOT promoted to canonical memory_mirror.py at this root. The live mirror still executes mtime-LWW. See: memory/researcher/mirror-revert-fix1-promotion-gap-2026-11-18.md
+Effort: Low for deployment (code exists + tested); Medium if integration gaps found during promotion
 
 ### Fix 3: [FILL if data reveals a third mechanism]
 Mechanism: [FILL]
@@ -61,6 +62,7 @@ Effort: [FILL]
 - Pipeline validation: memory/researcher/mirror-revert-pipeline-validation-2026-11-17.md
 - Closure runbook + contingency: memory/researcher/mirror-revert-closure-runbook-2026-11-17.md
 - Sync semantics spec (goal #1): memory/researcher/sync-semantics-spec-2026-11-17.md
+- Promotion-gap finding: memory/researcher/mirror-revert-fix1-promotion-gap-2026-11-18.md
 
 ## PRE-POPULATED HYPOTHESIS (from local pin-file forensics, 2026-11-18)
 
