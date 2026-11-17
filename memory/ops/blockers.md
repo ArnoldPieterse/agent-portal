@@ -54,3 +54,5 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - Conclusion: a one-off seed from an ephemeral sandbox session will NOT satisfy the "one-week LIVE dataset" anyway — that requires the mirror to run PERSISTENTLY on the persistent White host (C:\Projects\Workspace) where `net use` sessions + SMB creds persist, via its scheduled task / watchdog.
 - Unblock (persistent White host, owner = Mechanic or Orchestrator): confirm the MirrorSync schtask/watchdog is registered AND that `net use \\192.168.1.<ip>\C$` succeeds there with working creds; then it self-seeds + accumulates through 11-24. Closure = `python memory/researcher/parse_mirror_events.py <live-log>` per runbook.
 - Do NOT re-probe from a sandbox seat — auth wall confirmed, one probe spent this pass.
+- [00:11] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [00:11] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
