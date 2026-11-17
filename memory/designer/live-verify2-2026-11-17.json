@@ -1,0 +1,167 @@
+{
+ "ts": "2026-11-17 15:58:24",
+ "forced_overflow": {
+  "base": {
+   "sw": 375,
+   "iw": 375
+  },
+  "forced": {
+   "sw": 901,
+   "iw": 901
+  },
+  "gate_would_fail": false
+ },
+ "tabwalk": {
+  "count": 29,
+  "invisible": [],
+  "sample": [
+   {
+    "tag": "button",
+    "id": "addAgent",
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   },
+   {
+    "tag": "button",
+    "id": null,
+    "outlineW": "1px",
+    "outlineC": "rgb(16, 16, 16)",
+    "shadow": false
+   }
+  ]
+ },
+ "landmarks": {
+  "header": 1,
+  "nav": 1,
+  "main": 1,
+  "aside": 1,
+  "footer": 0,
+  "region_labeled": [
+   "Agent list",
+   "Chat"
+  ],
+  "maybe_cols": [
+   {
+    "id": "agentList",
+    "cls": "",
+    "role": "region",
+    "al": "Agent list"
+   },
+   {
+    "id": "chatCol",
+    "cls": "",
+    "role": "region",
+    "al": "Chat"
+   },
+   {
+    "id": "msgs",
+    "cls": "",
+    "role": null,
+    "al": null
+   }
+  ]
+ },
+ "visible_inputs": [
+  {
+   "id": "input",
+   "type": "textarea",
+   "visible": true,
+   "labeled": true,
+   "ph": "Type a message\u2026  (in Gro",
+   "title": ""
+  }
+ ],
+ "unlabeled_visible": []
+}

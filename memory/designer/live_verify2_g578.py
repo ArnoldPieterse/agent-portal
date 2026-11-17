@@ -60,6 +60,10 @@ JS_INPUTS = r'''
   }).filter(x => x.visible);
 })()'''
 
+JS_TABWALK = r'''(() => { const e=document.activeElement; if(!e||e===document.body) return null;
+  const s=getComputedStyle(e); return {tag:e.tagName.toLowerCase(), id:e.id||null,
+    outlineW:s.outlineWidth, outlineC:s.outlineColor, shadow:s.boxShadow!=="none"}; })()'''
+
 async def main():
     os.makedirs(UDIR, exist_ok=True)
     proc = subprocess.Popen([EDGE, "--headless", f"--remote-debugging-port={CDP_PORT}",
@@ -103,9 +107,7 @@ async def main():
             walk = []
             for _ in range(30):
                 await cdp.key("Tab"); await asyncio.sleep(0.12)
-                a = await cdp.js("(() => { const e=document.activeElement; if(!e||e===document.body) return null;
-                  const s=getComputedStyle(e); return {tag:e.tagName.toLowerCase(), id:e.id||null,
-                    outlineW:s.outlineWidth, outlineC:s.outlineColor, shadow:s.boxShadow!=="none"}; })()")
+                a = await cdp.js(JS_TABWALK)
                 if not a: break
                 walk.append(a)
             res["tabwalk"] = {"count": len(walk), "invisible": [w for w in walk if w["outlineW"]=="0px" and not w["shadow"]], "sample": walk[:15]}
