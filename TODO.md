@@ -1,3 +1,5 @@
+## GOALS FULLY CLEARED 2026-11-18 ~10:0x (Studio seat, on user request)
+Status: **DONE + verified** - all 8 cycle-3 agent goal files (orchestrator/researcher/builder/verifier/designer/archivist/scribe/mechanic) now hold ZERO open substantive goals. Every goal is either CLOSED with a Verified: line or MOVED to the background scheduled list (10 items). Main lane unblocked; only date/probe-gated work remains, parked at memory/goals/scheduled-background.md per run-rules R2/R3.
 <
 ## SCHEDULED-GOAL BACKGROUND LIST + RUN RULES (Studio seat, on user request) - 2026-11-18
 Status: **DONE + committed** - 8 time-gated goals moved to memory/goals/scheduled-background.md (archivist#6,#8; mechanic#1,#2,#6,#8; scribe#10; verifier#8); agent files keep numbered pointer lines. New memory/run-rules.md = standing run rules, pointer line added to root memory/INDEX.md (1518 chars < 1600 budget) so it is injected/read every run: scheduled goals never hold main progress; close only with verified evidence; modular files per memory/portal/file-modularity.md.
