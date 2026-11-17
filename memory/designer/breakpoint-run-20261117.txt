@@ -1,0 +1,5 @@
+  375px: PASS
+  768px: PASS
+
+========================================
+PASS: 0 horizontal overflow at both breakpoints
