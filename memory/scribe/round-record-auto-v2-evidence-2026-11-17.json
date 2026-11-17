@@ -1,0 +1,26 @@
+{
+  "goal": "Scribe #3 - Round-record auto-synthesis productionization",
+  "date": "2026-11-17",
+  "artifact": "memory/scribe/round_record_draft.py (enhanced with --auto mode + OWNER_SIGNALS inference)",
+  "changes": [
+    "Added auto_detect_round() - detects next round number from existing synthesis files",
+    "Added --auto flag: no manual --round/--date needed, script self-detects",
+    "Replaced naive owner extraction with OWNER_SIGNALS table + infer_owner() scoring function",
+    "Per-item signal matching (8 agents x 5-10 signals each) replaces whole-file name search"
+  ],
+  "test_results": {
+    "r1": {
+      "file": "memory/synthesis/2026-11-17-r1-round-record-DRAFT.md",
+      "fill_rate_pct": 93
+    },
+    "r2": {
+      "file": "memory/synthesis/2026-11-17-r2-round-record-DRAFT.md",
+      "fill_rate_pct": 89
+    }
+  },
+  "acceptance_criteria_met": {
+    "two_consecutive_rounds_auto_drafted": true,
+    "both_above_80pct": true,
+    "auto_mode_no_manual_params": true
+  }
+}

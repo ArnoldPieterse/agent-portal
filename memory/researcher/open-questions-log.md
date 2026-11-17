@@ -67,6 +67,18 @@ Fresh-artifact scan (last ~25m: mechanic goal7-fleet-health-v2-extended, ops/non
 
 **Delta vs pass-7: 0 new resolutions; all 3 confirmed still need NON-SANDBOX dispositions (none available from a sandbox seat). Still day ~1.5 of cycle — mid-cycle re-audit at ~11-20 is the correct checkpoint for the zero-breaches acceptance test. No false close recorded.**
 
+### PASS-STATUS CHECK — pass-10 (2026-11-17 23:50, auto-loop batch, Researcher seat)
+Concrete step: ran authoritative `sla_audit.py --ref 2026-11-17T23:50` (tool built pass-9) — this is the first use of the reproducible tool as a day-1.5 checkpoint data point.
+| Entry | Age (authoritative) | SLA class | Status |
+|---|---|---|---|
+| white-q4-ctx-mismatch | 83.8h | 🔴 BREACH ×1.75 | OPEN — no confirm/reject on 131072-vs-65k |
+| black99-unreachable | 32.2h | ⚠️ PROACTIVE (breaches 11-18 15:40) | PARTIAL — conflicting vantage |
+| designer-patch-apply | 32.2h | ⚠️ PROACTIVE (breaches 11-18 15:40) | OPEN — no apply confirmation |
+| red-portal-process | 28.2h | ✅ RESOLVED | :8099 alive PID 19988 |
+| orphan-round-logs | 67.8h | ✅ RESOLVED | option (a) accepted via prune gate |
+
+**Key finding: sla_audit.py CONFIRMS pass-9 regression — the correct picture is 1 BREACH + 2 PROACTIVE, NOT the "2-3 full breaches" reported in passes 5-8 (hand-computed ages overstated ~24h due to off-by-one-day from re-list dates vs first-open dates). The tool decouples sla_started clock from re-list events. Day-1.5 checkpoint recorded. Next: mid-cycle run at ~11-20 = `python memory/researcher/sla_audit.py --ref 2026-11-20T09:00`; zero-breaches acceptance test passes only if all 3 open items resolve before their breach-by timestamps.**
+
 ## OPEN
 - 2026-11-16 ~15:4x | **Black IP_BLACK :8888 UNREACHABLE from White today** (alias probes builder-q4/verifier-q4 timed out 15s; model-load status = unreachable) - new since 11-15 '3/3 up'. | OWNER: Mechanic (check Black Studio process; H-OUT line if down). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]
 - 2026-11-16 ~15:4x | **Is Red's portal process running?** (C3 follow-up - :8099 filtered while :8888 + SMB open) | OWNER: Mechanic (one check; scoped fix or document-and-move-on). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]

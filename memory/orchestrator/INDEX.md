@@ -2,6 +2,7 @@
 Last updated: 2026-11-17.
 
 ## Entries (keyword -> pointer | use case)
+- light theme functional (goal #10) -> memory/orchestrator/goal10-light-theme-functional-2026-11-17.md   [data-theme=light] 12-token block added + core.js inverted mapping fixed; light mode now renders (was a no-op); 480px bp + live-viewport check remain
 - fleet overview shape fix (goal #1) -> memory/orchestrator/fleet-overview-shape-fix-2026-11-17.md   /api/fleet/overview flat->nested; 8-agent JSON verified
 - retro draft auto-generator (goal #10) -> memory/orchestrator/retro_draft_cycle3_2026-11-17.md + retro_draft.py (root)   96% auto-fill; fleet 48/80; evidence trend 3 cycles
 - failover drill tooling (goal #8) -> failover_drill.py (root dir) + non-sandbox-queue entry   WinRM kill + probe loop + fleet-detection; queued for White execution 0/2 drills
