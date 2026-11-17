@@ -35,6 +35,27 @@ def load_live_events(path):
             events.append(ev)
     return events
 
+def classify_event(ev):
+    """Split each event into 'pin-mechanical' vs 'organic' (methodology note, runbook row 6).
+
+    Pin-advance procedure writes backup files named *_CANONICAL_<sha12>_<date>.html under
+    memory/designer/. A burst of those writes is a MECHANICAL re-pin signal, not an organic
+    content revert. Classifying them out keeps the 'top reverting files' table honest so the
+    day-7 analysis reports organic churn, not pin ceremony.
+    Returns ('pin-mechanical'|'organic', reason)."""
+    p = (ev.get('path') or ev.get('file') or '')
+    base = p.rsplit('/', 1)[-1].rsplit('\\', 1)[-1]
+    if 'CANONICAL' in base.upper():
+        return 'pin-mechanical', 'basename contains CANONICAL (pin-advance backup)'
+    # Pinned working files themselves, when a write is a re-pin of the canonical copy.
+    if (p.replace('\\', '/').split('/')[-1] == 'index.html'
+            and ev.get('kind') == 'write' and ev.get('reason') == 'white-canonical'):
+        return 'pin-mechanical', 'white-canonical re-pin of index.html'
+    return 'organic', 'not a pin-ceremony path'
+
+# Backward-compat alias so existing callers/tests keep working.
+classify = classify_event
+
 def build_analysis(events, log_path):
     ts = [ev['t'] for ev in events if 't' in ev]
     t_min, t_max = min(ts), max(ts)
@@ -95,7 +116,8 @@ def build_analysis(events, log_path):
     lines.append(f"|------|-------------|---------|-------|")
     for p, c in top3_reverting:
         trig = ' / '.join(f"{t}({n})" for t,n in revert_triggers_by_path.get(p,{}).most_common())
-        lines.append(f"| {p} | {c} | {trig} | [REVIEW] |")
+        _cls, _why = classify_event({'path': p})
+        lines.append(f"| {p} | {c} | {trig} | {_cls} |")
     if not top3_reverting:
         lines.append(f"| (no reverts observed) | 0 | - | - |")
     lines.append(f"\n### Hourly distribution")
@@ -114,6 +136,30 @@ def build_analysis(events, log_path):
     for t, c in trigger_dist.most_common():
         pct = 100*c/max(total_reverts,1)
         lines.append(f"- **{t}**: {c} ({pct:.1f}%)")
+    # Mechanical vs organic signal split (methodology note, runbook row 6)
+    class_counts = Counter()
+    class_paths = {'pin-mechanical': Counter(), 'organic': Counter()}
+    for ev in events:
+        cls, _why = classify_event(ev)
+        class_counts[cls] += 1
+        p = ev.get('path', ev.get('file', '?'))
+        class_paths[cls][p] += 1
+    total_c = sum(class_counts.values()) or 1
+    lines.append(f"\n## Signal Classification (mechanical vs organic)")
+    lines.append(f"Split per runbook methodology note (row 6): pin-advance bursts are ceremonial, not organic churn.")
+    lines.append(f"| class | count | pct |")
+    lines.append(f"|-------|-------|-----|")
+    for cls in ('pin-mechanical', 'organic'):
+        c = class_counts.get(cls, 0)
+        lines.append(f"| {cls} | {c} | {100*c/total_c:.1f}% |")
+    if class_counts.get('organic', 0) == 0 and total > 0:
+        lines.append(f"- NOTE: all observed events are pin-mechanical -> organic-revert signal is zero in this window; "
+                     f"frequency table below is ceremonial, [REVIEW] whether that is expected (no organic drift yet).")
+    op = class_paths.get('organic', Counter())
+    om = class_paths.get('pin-mechanical', Counter())
+    lines.append(f"- Top organic paths: " + (', '.join(f'`{p}`({c})' for p, c in op.most_common(3)) or '(none)'))
+    lines.append(f"- Top pin-mechanical paths: " + (', '.join(f'`{p}`({c})' for p, c in om.most_common(3)) or '(none)'))
+
     lines.append(f"\n## Mechanism Assessment")
     lines.append(f"- Pin_drift dominant? {'YES' if trigger_dist.get('pin_drift',0) > 0.5*sum(trigger_dist.values()) else 'NO'} (pin_drift = {trigger_dist.get('pin_drift',0)}/{sum(trigger_dist.values())} reverts)")
     lines.append(f"- NEW triggers beyond cycle-2 known set? [REVIEW: check list above vs cycle-2 baseline]")

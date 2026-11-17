@@ -1,0 +1,14 @@
+{"t": "2026-11-18 17:00:00", "kind": "write", "path": "memory/designer/index_html_CANONICAL_10bbd8ddf982_2026-11-18a.html", "reason": "white-canonical"}
+{"t": "2026-11-18 17:01:00", "kind": "write", "path": "memory/designer/index_html_CANONICAL_10bbd8ddf982_2026-11-18b.html", "reason": "white-canonical"}
+{"t": "2026-11-18 17:02:00", "kind": "write", "path": "memory/designer/index_html_CANONICAL_10bbd8ddf982_2026-11-18c.html", "reason": "white-canonical"}
+{"t": "2026-11-18 17:03:00", "kind": "write", "path": "memory/designer/index_html_CANONICAL_10bbd8ddf982_2026-11-18d.html", "reason": "white-canonical"}
+{"t": "2026-11-18 17:04:00", "kind": "write", "path": "memory/designer/index_html_CANONICAL_10bbd8ddf982_2026-11-18e.html", "reason": "white-canonical"}
+{"t": "2026-11-18 17:05:00", "kind": "write", "path": "memory/designer/index_html_CANONICAL_10bbd8ddf982_2026-11-18f.html", "reason": "white-canonical"}
+{"t": "2026-11-18 17:05:00", "kind": "write", "path": "index.html", "reason": "white-canonical"}
+{"t": "2026-11-18 09:00:00", "kind": "revert", "path": "memory_mirror.py", "trigger": "hash_mismatch"}
+{"t": "2026-11-19 09:00:00", "kind": "revert", "path": "memory_mirror.py", "trigger": "hash_mismatch"}
+{"t": "2026-11-20 09:00:00", "kind": "revert", "path": "memory_mirror.py", "trigger": "hash_mismatch"}
+{"t": "2026-11-18 14:00:00", "kind": "revert", "path": "ui/app.css", "trigger": "pin_drift"}
+{"t": "2026-11-19 14:00:00", "kind": "revert", "path": "ui/app.css", "trigger": "pin_drift"}
+{"t": "2026-11-19 10:30:00", "kind": "write", "path": "memory/ops/blockers.md", "reason": "lww-newer"}
+{"t": "2026-11-18 17:05:00", "kind": "revert", "path": "_test", "_test": true}
