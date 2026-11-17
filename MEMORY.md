@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 1 CSS tokenization complete: all 28 hex colors + 9 radius/shadow/duration tokens added to :root; zero hardcoded values remain in ui/app
 - Scribe#9 CLOSED 11-17: memory-health dashboard live (6/6 metrics non-null on :8099); UI container wired + render verified; marker stamped in goals/scribe.md
 - load_trend.py now has compute_outage + load_outage_days; portal still down (WinError 10013), gating Goals 2 & 4
 - Mechanic added --dry-run to boot_recovery.py: validates full recovery chain (script, Python, host-match, log, deploy) without Studio/admin;
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - WCAG AA contrast verified: 28/28 pairs ≥4.5:1 on both dark and light themes (Goal #2 acceptance met).
 - boot_recovery.py written + runbook with per-host schtasks commands; still needs registration on
 - Theme files (CSS/JS/HTML) were lost in a clobber/mirror cycle; re-landed, pin now 043ff4d68827
+- boot_recovery.py --dry-run added to Red (was missing despite hot note); 5/5 checks pass. schtask registration still pending.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
