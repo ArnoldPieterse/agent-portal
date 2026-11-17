@@ -80,6 +80,20 @@ def _model_load_status(force=False, timeout=15):
     return out
 
 
+_ELEVATED_CACHE = {'v': None}
+
+
+def _shell_elevated():
+    """True if this process runs elevated (all agent terminal tools inherit it). Cached."""
+    if _ELEVATED_CACHE['v'] is None:
+        try:
+            import ctypes
+            _ELEVATED_CACHE['v'] = bool(ctypes.windll.shell32.IsUserAnAdmin())
+        except Exception:
+            _ELEVATED_CACHE['v'] = False
+    return _ELEVATED_CACHE['v']
+
+
 def rag_base(agent):
     """RAG search host. Per-agent `rag_studio` override for remote agents whose
     knowledge base lives on White (local Studio holds rag.db); empty = chat host."""
@@ -2022,6 +2036,7 @@ AUTO_RESUME_MAX = 5        # (2026-11-15) consecutive auto-resumes before a huma
 AUTO_RESUME_DELAY_S = 45   # settle time after a run ends before the watchdog starts the continuation
 AUTOLOOP_IDLE_S = 60       # (2026-11-16, Arnold) max seconds an agent may sit idle before re-entering the work queue
 AUTOLOOP_BATCH_MAX = 8     # (2026-11-17) auto-loop fires ALL idle agents at once; cap on seats per batch pass
+AUTOLOOP_PROBE_TIMEOUT_S = 45  # (2026-11-17) model probe timeout in the autoloop; 27B models take >15s to load
 AUTOLOOP_TICK_S = 15       # autoloop scheduler tick
 AUTOLOOP_MAX_STREAK = 40   # consecutive auto passes without human input before the loop pauses (GPU budget)
 AUTOLOOP_MAINT_COOLDOWN_S = 1800   # min gap between maintenance passes for an agent at 100%
@@ -2477,7 +2492,15 @@ def start_group_run(text, extra=None):
                         _f.write(_rec)
         except Exception:
             pass
-        full_text = (text or "") + reset_note
+        full_text = (text or \"\") + reset_note
+        # 2026-11-17: tell every seat once per run whether admin-only commands can work at all,
+        # so agents stop burning passes re-probing the elevation wall.
+        try:
+            if not _shell_elevated():
+                full_text += (\"\n\n[SHELL] This shell is NOT elevated: admin-only commands (schtasks ONSTART/ATLOGON, services, firewall rules) will fail. \"
+                              \"Do not retry them - log each one once as NEEDS-HUMAN in memory/ops/blockers.md with the exact command + error, then move on.\")
+        except Exception:
+            pass
         # Model-load governance: flag seats whose model is not loaded BEFORE the run
         # starts, so agents stop waiting on a chair that can never answer (2026-11-16).
         _mls = None
@@ -2817,11 +2840,27 @@ def _autoloop_watchdog():
             # are excluded (firing a dead seat only wastes a turn; the run-start check already notes
             # them for everyone else).
             try:
-                mls = _model_load_status()
+                mls = _model_load_status(timeout=AUTOLOOP_PROBE_TIMEOUT_S)
             except Exception:
                 mls = {}
             ready = [n for n in idle if not mls.get(n, {}).get("status") or mls[n]["status"] == "ok"]
             ready = ready[:AUTOLOOP_BATCH_MAX]
+            # 2026-11-17: seats whose model stays unreachable are NOT silently skipped forever - after
+            # ~20 min (8 ticks) we file a NEEDS-HUMAN blocker so the user can reload/restart Studio.
+            down = [n for n in idle if mls.get(n, {}).get('status') not in (None, 'ok')]
+            streaks = d.setdefault('down_streak', {})
+            for _n in list(streaks):
+                if _n not in down:
+                    streaks.pop(_n, None)
+            for _n in down:
+                streaks[_n] = streaks.get(_n, 0) + 1
+                if streaks[_n] == 8:
+                    try:
+                        with open(os.path.join(HERE, 'memory', 'ops', 'blockers.md'), 'a', encoding='utf-8') as _bf:
+                            _bf.write('- [%s] NEEDS-HUMAN: seat %s model unreachable for 20+ min (%s). Reload the model in Studio or restart it elevated.\n'
+                                      % (time.strftime('%H:%M'), _n, mls[_n].get('status')))
+                    except Exception:
+                        pass
             sections, why_bits, productive = [], [], False
             for n in ready:   # per-agent task, steered by behaviour analysis of their last reply
                 try:
@@ -2843,9 +2882,7 @@ def _autoloop_watchdog():
                             "(memory/goals/%s.md, %d open)." % (n.lower(), og))
                 elif now - la[n] >= AUTOLOOP_MAINT_COOLDOWN_S:
                     why_bits.append("%s:maint" % n.lower())
-                    body = ("your goals are 100%% reached - do ONE useful check only (verify a recent "
-                            "evidence claim, fix a stale INDEX pointer, or assist another agent's open "
-                            "goal). If nothing is worth doing, reply [SILENT].")
+                    body = ("your goals are 100%% reached - contribute to the team while you wait - pick ONE of: (a) write a prediction/forecast for another agent's open goal into memory/goals/, (b) draft a solution or workflow improvement into memory/ops/, (c) verify and close one stale evidence claim in the ledger, (d) do one concrete step on another agent's oldest open goal. Reply [SILENT] only if you genuinely checked all four and found nothing actionable.")
                 else:
                     continue   # at 100% inside maintenance cooldown - no task for this seat yet
                 sections.append((n, "@%s (idle %d s): %s%s" % (
@@ -2866,6 +2903,7 @@ def _autoloop_watchdog():
             prompt = ("AUTO-LOOP (batch pass, %d agents in parallel) - you have been idle. Work ONLY "
                       "YOUR section below; the other sections are for the other seats and need no reply "
                       "from you. Record evidence via the ledger as you go, then reply [CONCLUDED].\n"
+                      "If a blocker has repeated across passes, do NOT re-probe it - record it once as NEEDS-HUMAN in memory/ops/blockers.md (exact command + error) and move to your next goal.\n"
                       % len(batch)) + "\n".join(t for _, t in sections)
             run, err = start_group_run(prompt, extra={"solo": True, "autoloop_why": why,
                                                       "cast_override": batch})
