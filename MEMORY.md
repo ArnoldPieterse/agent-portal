@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 remainder: 6 JS-generated inline styles in ui/core.js + ui/uploads.js; index.html is clean (0 inline), only index.html is pin-guarde
-- Designer at 7/10; remaining: dynamic inline styles in ui/core.js+ui/uploads.js, and breakpoint selftest screenshot needs
 - load_probe.py has NO all-error skip guard (mirror reverted it); verified by keyword scan 2026-11-17, ruling in memory/scribe/load-probe-guar
 - MEMORY.md:4 and :23 cite stale pin shas (superseded); flagged but not fixed — needs
 - load_probe.py regression detector fixed to parse both legacy ("levels"/"p95_ms") and current ("results"/"p95") baseline schemas
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Portal restart blocked: C:\Users perm denied in sandbox, elev.py not found — use synthetic data for goal #4 demos until resolved
 - Mechanic Goal #4: synthetic +40% p95 spike correctly flagged REGRESSION_DETECTED; acceptance criterion met (2026-11-17).
 - Hot note #1 (load_probe.py guard reverted) closed — verified no all-error skip guard exists on disk;
+- Outage guard in load_probe.py reverted by mirror 3x; re-applied + created register_daily_probe.bat for White schtask
+- Goal #9: fleet topology module built via edit_file (avoids escaping drift), JS validated, demo rendered successfully.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
