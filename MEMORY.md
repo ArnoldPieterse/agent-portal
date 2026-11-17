@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- E2E contract test for day-7 closure chain passes: pointed log_event's EVENT_LOG at temp file, drove real writer, verified byte-identical out
 - Goal #2 fleet panel: added loading skeleton, error fallback, and empty-hosts guard (nodes[0] crash fixed); JS now 152 lines.
 - Goal #8 (compression gate) is complete but unledgered; Scribe's next action is to record it in `scribe.md`.
 - Goal #10 Phases 2-4 done: memory_mirror_epoch.py created; push/pull loops now use sync_file() ownership gating, foreign pulls quarantined.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 (knowledge graph auto-update) CLOSED: incremental mtime delta + orphan detection verified, duplicate-edge bug fixed.
 - Scribe closed goals #2 (contradiction detector v2) and #3 (
 - Mechanic at 4/10 goals (was 1/10): #3 adaptive probe v2, #5 egress rules v2, #9 runbook gap analysis all verified this pass.
+- Goal #3 freq-table built from on-disk pins (46 CANONICAL, 12 re-pins 11-17); next checkpoint
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
