@@ -1,0 +1,1 @@
+Batch Tier-B consolidation: batch_tier_b.py extended from 5 Mechanic steps to 10 fleet-wide steps (added Verifier #2 SLO schtask, Orchestrator #8 failover drill x2, Designer #5+#7 browser verify). Dry-run PASS 2026-11-18T07:59. non-sandbox-queue.md updated with one-command entry point. 

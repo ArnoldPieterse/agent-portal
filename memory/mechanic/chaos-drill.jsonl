@@ -1,0 +1,2 @@
+{"host": "White", "ts": "2026-11-17T21:45:01Z", "mode": "dry-run", "plan": "Kill portal on White, wait up to 60s for recovery", "verdict": "DRY_RUN_OK"}
+{"host": "Red", "ts": "2026-11-17T21:45:03Z", "mode": "dry-run", "plan": "Kill portal on Red, wait up to 60s for recovery", "verdict": "DRY_RUN_OK"}

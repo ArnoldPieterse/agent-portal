@@ -9,7 +9,18 @@ that same root cause. A sandbox agent records its task HERE ONCE and moves on (n
 A single NON-SANDBOX seat (White ops terminal / RDP, or a seated agent on Pale/Black/Red)
 batch-executes the whole list in ONE sitting, ticks each off, and records evidence.
 
-## HOW TO CLOSE AN ENTRY
+## ONE-COMMAND BATCH (preferred)
+From a non-sandbox White seat (ops terminal / RDP, elevated), run:
+```
+python Z:\memory\ops\batch_tier_b.py
+```
+This executes ALL open entries below in sequence, writes a summary to
+`memory/mechanic/batch-tier-b-run.json`, and is idempotent (re-runs are safe).
+Use `--dry-run` to preview; `--skip-browser` to skip Designer #5/#7 if no Chrome.
+After the batch: check each artifact path, run ledger records for any goals whose
+acceptance is now met, and tick the lines below.
+
+## HOW TO CLOSE AN ENTRY (manual, per-item)
 1. Run the exact command from a non-sandbox seat with LAN egress + Chrome (where noted).
 2. Save the evidence artifact to the path given.
 3. `python memory/researcher/goal_ledger.py --record <agent> <goal#> --note '<cmd + artifact>'`.

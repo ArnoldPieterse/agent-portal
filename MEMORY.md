@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #8 closed: 4 state components (.state-loading/error/empty/conn-lost) in ui/app.css, wired into fleet+uploads panels, documented in comp
 - CSS bundle at 71,703b minified-est; ~10% headroom under 80KB target — budget measured and recorded.
 - Scribe: all 10 goals closed; next step = update cycle-3
 - chaos_drill.py built & dry-run tested (White+Red); goal #8 still needs live drill + schtask reg on White to close
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 5 open goals blocked by same root cause (sandbox can't run schtasks); Mechanic built `batch_tier_b.py` with `--check` mode
 - All 5 open goals blocked by one root cause: sandbox can't register schtasks; unblock = run consolidated script on White non-sandbox.
 - Mechanic: 6/
+- Mechanic's 4 open goals (#2,#4,#6,#8) all blocked by same sandbox root cause: schtasks COM unregistered + no SMB; do not re-probe, await Whi
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
