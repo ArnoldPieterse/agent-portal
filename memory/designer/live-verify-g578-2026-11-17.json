@@ -1,0 +1,275 @@
+{
+ "ts": "2026-11-17 15:55:11",
+ "portal": "http://127.0.0.1:8099/",
+ "readyState": "complete",
+ "g5_breakpoint_gate": {
+  "375": {
+   "scrollWidth": 375,
+   "innerWidth": 375,
+   "overflowPx": 0,
+   "header": true,
+   "agentList": true,
+   "chatCol": true,
+   "consoleErrors": [],
+   "pass": true,
+   "screenshot": "C:\\Projects\\Workspace\\memory\\designer\\breakpoint-evidence\\live-375.png"
+  },
+  "768": {
+   "scrollWidth": 768,
+   "innerWidth": 768,
+   "overflowPx": 0,
+   "header": true,
+   "agentList": true,
+   "chatCol": true,
+   "consoleErrors": [],
+   "pass": true,
+   "screenshot": "C:\\Projects\\Workspace\\memory\\designer\\breakpoint-evidence\\live-768.png"
+  },
+  "forced_overflow_375": {
+   "scrollWidth": 375,
+   "innerWidth": 375,
+   "overflowPx": 0,
+   "header": true,
+   "agentList": true,
+   "chatCol": true,
+   "expected": "FAIL",
+   "got_fail": false,
+   "screenshot": "C:\\Projects\\Workspace\\memory\\designer\\breakpoint-evidence\\live-375-forced-overflow.png"
+  }
+ },
+ "g7_focus_aria": {
+  "landmarks": {
+   "regions": [],
+   "navs": 1,
+   "inputsUnlabeled": [
+    "actSel",
+    "input",
+    "filePick",
+    "dirPick",
+    "f_name",
+    "f_emoji",
+    "f_color",
+    "f_blurb",
+    "f_persona",
+    "f_studio",
+    "f_key",
+    "f_ragstudio",
+    "f_ragkey",
+    "f_model",
+    "f_temp",
+    "f_maxtok",
+    "f_reasoning",
+    "f_maxtools",
+    "f_kb"
+   ],
+   "live": 1,
+   "btnsNoName": 0
+  },
+  "tabwalk_count": 0,
+  "tabwalk_invisible_focus": [],
+  "tabwalk_sample": []
+ },
+ "g8_typography": {
+  "rows_sampled": 24,
+  "violations": [],
+  "font_weights_seen": [
+   "400",
+   "600"
+  ],
+  "pass": false
+ },
+ "g8_rows": [
+  {
+   "sel": "body",
+   "fontSize": "14px",
+   "lineHeight": "20.3px",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "h1",
+   "fontSize": "15px",
+   "lineHeight": "21.75px",
+   "weight": "600",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "span.hint",
+   "fontSize": "11px",
+   "lineHeight": "15.95px",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "span#stext",
+   "fontSize": "12px",
+   "lineHeight": "17.4px",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "div.ah",
+   "fontSize": "12px",
+   "lineHeight": "17.4px",
+   "weight": "400",
+   "transform": "uppercase",
+   "letterSpacing": "0.72px"
+  },
+  {
+   "sel": "button#addAgent",
+   "fontSize": "13.3333px",
+   "lineHeight": "normal",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "span.em",
+   "fontSize": "18px",
+   "lineHeight": "26.1px",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "span.nm",
+   "fontSize": "14px",
+   "lineHeight": "20.3px",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "span",
+   "fontSize": "11px",
+   "lineHeight": "15.95px",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "button",
+   "fontSize": "13px",
+   "lineHeight": "normal",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "button#mGroup.on",
+   "fontSize": "13px",
+   "lineHeight": "normal",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "span.toggles",
+   "fontSize": "14px",
+   "lineHeight": "20.3px",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "button#goalsBtn",
+   "fontSize": "12px",
+   "lineHeight": "normal",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "button#actRefresh.btn",
+   "fontSize": "12px",
+   "lineHeight": "normal",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "button#gitCommit.btn",
+   "fontSize": "13px",
+   "lineHeight": "normal",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "div.msg",
+   "fontSize": "14px",
+   "lineHeight": "20.3px",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "div.msg.you",
+   "fontSize": "14px",
+   "lineHeight": "20.3px",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "button#intResume.iact",
+   "fontSize": "13.3333px",
+   "lineHeight": "normal",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "div#queueHead",
+   "fontSize": "11px",
+   "lineHeight": "15.95px",
+   "weight": "400",
+   "transform": "uppercase",
+   "letterSpacing": "0.66px"
+  },
+  {
+   "sel": "button#attach",
+   "fontSize": "22px",
+   "lineHeight": "22px",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "button#send",
+   "fontSize": "14px",
+   "lineHeight": "normal",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "span#edTitle",
+   "fontSize": "14px",
+   "lineHeight": "20.3px",
+   "weight": "600",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "button#edClose",
+   "fontSize": "16px",
+   "lineHeight": "normal",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  },
+  {
+   "sel": "button#edSave.btn.pri",
+   "fontSize": "13px",
+   "lineHeight": "normal",
+   "weight": "400",
+   "transform": "none",
+   "letterSpacing": "normal"
+  }
+ ]
+}
