@@ -999,6 +999,117 @@ def _rag_search(agent, query):
             + "\n".join(blocks))
 
 
+
+# ---------------------------------------------------------------- local memory index + recall (2026-11-18)
+_MEM_STOP = set("a an and are as at be but by for from had has have he her his i if in into is it its me my no not of on or our she so that the their them they this to was we were what when where which who will with you your about after again all also any because been before being between both can could did do does doing down during each few here how him herself himself more most other out over own same some such than then there those through too under until up very while within without would should may might must shall".split())
+_MEM_IDX_CACHE = {"sig": None, "idx": {}}
+
+def _mem_local_index():
+    """Inverted term->[(file,line)] index over MEMORY.md, TODO.md, memory/**/*.md.
+    Rebuilt only when the (mtime,size) signature changes. Never raises."""
+    try:
+        files = []
+        for cand in ("MEMORY.md", "TODO.md"):
+            p = os.path.join(HERE, cand)
+            if os.path.isfile(p):
+                files.append((cand, p))
+        mdir = os.path.join(HERE, "memory")
+        if os.path.isdir(mdir):
+            for root, _d, fs in os.walk(mdir):
+                for f in sorted(fs):
+                    if f.endswith(".md"):
+                        p = os.path.join(root, f)
+                        files.append((os.path.relpath(p, HERE).replace(os.sep, "/"), p))
+        sig, idx = [], {}
+        for rel, p in files:
+            try:
+                stt = os.stat(p)
+                sig.append(rel + ":" + str(int(stt.st_mtime)) + ":" + str(stt.st_size))
+                for n, line in enumerate(open(p, encoding="utf-8", errors="replace").read().splitlines(), 1):
+                    t = line.strip()
+                    if len(t) < 4:
+                        continue
+                    for w in set(re.findall(r"[a-z0-9_]{3,}", t.lower())):
+                        idx.setdefault(w, []).append((rel, n))
+            except Exception:
+                continue
+        s = "|".join(sorted(sig))
+        if _MEM_IDX_CACHE["sig"] != s:
+            _MEM_IDX_CACHE.update(sig=s, idx=idx)
+    except Exception:
+        pass
+    return _MEM_IDX_CACHE.get("idx") or {}
+
+
+def _mem_local_hits(messages, k=6):
+    """Look up every keyword of the latest prompt in the local index; score lines by
+    matched-term count; return a compact MEMORY INDEX HITS block (M1..Mk with file:line
+    refs) for pre-context, or '' when nothing matches. Never raises."""
+    try:
+        q = ""
+        for m in reversed(messages or []):
+            c = (m.get("content") or "").strip()
+            if c and (m.get("speaker") or "").strip().lower() == "you":
+                q = c
+                break
+        if not q:
+            for m in reversed(messages or []):
+                c = (m.get("content") or "").strip()
+                if c:
+                    q = c
+                    break
+        words = [w for w in re.findall(r"[a-z0-9_]{3,}", q.lower()) if w not in _MEM_STOP]
+        if not words:
+            return ""
+        score = {}
+        idx = _mem_local_index()
+        for w in set(words):
+            for key in idx.get(w, []):
+                score[key] = score.get(key, 0) + 1
+        top = sorted(score.items(), key=lambda kv: (-kv[1], kv[0]))[:k]
+        if not top:
+            return ""
+        out = ["MEMORY INDEX HITS (local memory files; fetch these refs with your tools when needed):"]
+        for i, ((rel, n), sc) in enumerate(top, 1):
+            try:
+                txt = open(os.path.join(HERE, rel.replace("/", os.sep)), encoding="utf-8", errors="replace").read().splitlines()[n - 1].strip()[:110]
+            except Exception:
+                txt = ""
+            out.append("M%d %s:%d (%dx) %s" % (i, rel, n, sc, txt))
+        return "\n".join(out)
+    except Exception:
+        return ""
+
+
+def _mem_recall_round(agent, messages, full):
+    """POST-PROMPT recall (2026-11-18): after the main reply, one cheap aux round asks the
+    LLM which MEMORY INDEX HITS (by M-number) actually matter for this prompt and distills
+    them into <=3 bullet facts; stored via _append_hot_note so later ReadMem rounds see it.
+    Never raises; degrades to a no-op."""
+    try:
+        block = _mem_local_hits(messages)
+        if not block or not (full or "").strip():
+            return
+        latest = ""
+        for m in reversed(messages or []):
+            c = (m.get("content") or "").strip()
+            if c and (m.get("speaker") or "").strip().lower() == "you":
+                latest = c[:300]
+                break
+        sysp = ("You are a memory-recall assistant. The HITS below are indexed lines from the "
+                "project's local memory files, tagged M1..Mn with file:line refs. Given the prompt "
+                "and the agent's reply, pick the hits genuinely relevant to this exchange and output "
+                "at most 3 bullet facts, each citing its M-number and ref. If none matter, output "
+                "exactly NONE.")
+        out = _aux_chat(agent, sysp, "PROMPT:\n" + latest + "\n\nAGENT REPLY:\n" + full[:500] + "\n\nHITS:\n" + block, 220).strip()
+        if not out or out.upper().startswith("NONE"):
+            return
+        _append_hot_note("RECALL: " + out[:400].replace("\n", " | "))
+    except Exception:
+        return
+
+
+
 def rag_prefetch(agent, messages):
     """If the agent has RAG on, pull relevant docs and fold them into the system
     prompt. Never raises - a RAG hiccup must not break a chat turn."""
@@ -1829,6 +1940,9 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
     if mem_cycle:
         t_rm = time.time()
         lookup_ctx = _mem_lookup_round(agent, messages)
+        _lh = _mem_local_hits(messages)
+        if _lh:
+            lookup_ctx = (lookup_ctx + "\n\n" + _lh) if lookup_ctx else _lh
         _act_log(session, {"agent": who, "event": "readmem",
                            "dur": round(time.time() - t_rm, 2), "chars": len(lookup_ctx)})
     # FAST FIRST REPLY: the first reply to a human uses a low context window (last N
@@ -1967,6 +2081,7 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
         _txt, is_silent, _ = _effective_reply(full)
         if not is_silent:
             t_sm = time.time()
+            _mem_recall_round(agent, messages, full)
             note = _mem_store_round(agent, messages, full)
             stored = bool(note) and _append_hot_note(note)
             _act_log(session, {"agent": who, "event": "storemem",
