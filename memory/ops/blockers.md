@@ -70,3 +70,5 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - [05:10] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (not_loaded). Reload the model in Studio or restart it elevated.
 - [05:11] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (not_loaded). Reload the model in Studio or restart it elevated.
 - [05:11] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (not_loaded). Reload the model in Studio or restart it elevated.
+- [07:50] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [07:51] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.

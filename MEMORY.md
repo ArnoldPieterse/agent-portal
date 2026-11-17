@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- cycle-narrative.md updated: fleet 61/80 (76%), Scribe lane confirmed 10/10 closed
 - Scribe lane fully closed 10/10 (open=0); Cycle 3 entry written to cycle-narrative.md, no remaining Scribe goals.
 - Goal 6 (dark mode sweep) closed; now 7/10 done, open: goals 8, 9, 10.
 - Goal #8 closed: 4 state components (.state-loading/error/empty/conn-lost) in ui/app.css, wired into fleet+uploads panels, documented in comp
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe open-goal count corrected to 0 (auto-loop's "1 open" was stale); fleet now 62/80, Mechanic 6/10.
 - All 5 open Mechanic goals share one root blocker: non-sandbox White session with working schtasks + LAN e
 - Mirror sync reverts CSS token fixes (recurring, same pattern as TZ bug) — re-apply after each sync; 23 hex literals remain
+- All 5 open goals blocked by same root cause (sandbox can't run schtasks); Mechanic built `batch_tier_b.py` with `--check` mode
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
