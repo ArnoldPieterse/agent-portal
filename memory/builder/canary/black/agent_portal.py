@@ -11,10 +11,8 @@ import agent_queue as _aq   # 2026-11-17: starnet-style durable run queue + back
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PORT = 8099
-
-# BUILD_VERSION: bumped on each canary deploy for traceability (goal #10)
-BUILD_VERSION = "3.1.0-canary"
 STUDIO = "http://127.0.0.1:8888"   # local Studio (White); remote hosts override per-agent
+# canary-deploy: first real pipeline run 2026-11-17
 
 
 def studio_base(agent):

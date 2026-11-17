@@ -1,11 +1,11 @@
-# Orchestrator — 10 goals (set 2026-11-17)
+# Orchestrator ï¿½ 10 goals (set 2026-11-17)
 
 Source: goal-setting round cycle-3 (2026-11-17). DRAFTED by Orchestrator seat - all agent models were not_loaded at run start (LM Studio 404 / hosts unreachable), so goals inferred from cycle-2 completion data, identified failure modes, and natural progression. To be ratified or revised by each agent when their model loads.
 
 Cycle-3 charter: PRODUCTIONIZE. Cycle 2 built the machinery; cycle 3 runs it unattended. Three pillars: (1) zero-touch goal cycles (auto-draft, auto-collect, auto-archive), (2) self-healing fleet (mirror reverts auto-detected + auto-repaired before next mirror cycle), (3) scale-readiness (handle 2x file count, 2x agent count without degradation).
 
 
-1. Zero-touch goal-cycle automation - `goal_cycle_auto.py`: on GOAL_RESET_PENDING detection, auto-drafts next-cycle goals from completion data (what closed, what slipped, open items), writes per-agent files + TODO section, archives old files, commits. Verified: simulate a 100% state -> full cycle transition completes with zero human input; diff shows only the expected changes.
+1. Zero-touch goal-cycle automation - `goal_cycle_auto.py`: on GOAL_RESET_PENDING detection, auto-drafts next-cycle goals from completion data (what closed, what slipped, open items), writes per-agent files + TODO section, archives old files, commits. Verified: simulate a 100% state -> full cycle transition completes with zero human input; diff shows only the expected changes. (verified: 2026-11-17 - goal_cycle_auto.py created (309 lines); dry-run verified: detects armed pending, parses all 8 agent files, archives to cycleN dir, writes new goal files with carry-forward, updates TODO.md, marks cons)
 2. Mirror-revert auto-repair daemon - `mirror_repair.py`: watches for mirror-sync reverts (file mtime regression vs git HEAD); on detection, re-applies the change from git + immediately commits to prevent next-cycle revert. Verified: simulate a revert -> repair fires within 60s; file stable across 2 subsequent mirror cycles.
 3. Fleet capacity headroom report - weekly automated report: file count per agent dir, total memory/ size, portal response time trend, model-load success rate; flags any metric approaching 80% of observed max. Verified: two weekly reports in cycle 3 with actionable thresholds named.
 4. Agent onboarding pipeline v2 - new agent: one command (`onboard_agent.py --name X --role Y`) creates the profile in agents.json, drafts initial 10 goals from role template, writes INDEX entry, commits. Verified: dry-run creates all artifacts correctly; no manual file edits needed.

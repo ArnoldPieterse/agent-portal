@@ -33,3 +33,12 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - [18:35] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
 - [18:36] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
 - [18:36] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+
+## [NEEDS-HUMAN 2026-11-17] Verifier goal #2 SLO scheduled task: schtasks COM unavailable + egress block in sandbox
+**Class:** sandbox limitation (COM "Class not registered" for schtasks; WinError 10013 for localhost:8099).
+**Blocks:** Registering the daily SLO report as a Windows scheduled task on White.
+**Exact commands that cannot succeed from this seat:**
+- `schtasks /create /tn VerifierSLO /tr "python Z:\memory\verifier\slo_enforce.py" /sc daily /st 06:00` -> "ERROR: Class not registered"
+- `python memory/verifier/slo_enforce.py` -> WinError 10013 (egress block to 127.0.0.1:8099)
+**Unblock (one-time, non-sandbox White seat):** run the schtasks command above from a seated agent on White ops terminal. After that, SLO reports auto-accumulate; closure needs 2 consecutive days of automated PASS with no human intervention.
+**Do NOT re-probe from this sandbox.**

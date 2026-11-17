@@ -1,0 +1,2 @@
+{"ts": "2026-11-17T10:26:26.832620+00:00", "type": "dry_run", "detail": "stale detection fired, no action taken"}
+{"ts": "2026-11-17T10:27:20.399825+00:00", "type": "repair_partial", "detail": "hosts={'Red': 'error: connect: System error 5 has occurred.\\n\\nAccess is denied.', 'Pale': 'error: connect: System error 5 has occurred.\\n\\nAccess is denied.', 'Black': 'error: connect: System error 5 has occurred.\\n\\nAccess is denied.'}, verify=[]", "hosts": ["Red", "Pale", "Black"]}

@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Created `memory/ops/loadtest/closure_runbook.md` with unblock command + closure one-liner for goal #4 (still blocked at 2/7 days).
 - Fleet evidence rate 8
 - Mechic wrote memory/ops/cycle-transition-checklist.md (5-min ops readiness runbook for goal-cycle transitions); pointer in ops INDEX
 - All 80/80 goals confirmed reached via ledger; no open work on Mechanic's lane as of cycle-3 readiness snapshot.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 1 done: 36 hardcoded hex → 23 semantic tokens in ui/app.css, 0 remaining outside :root.
 - Archivist goal #2 done: handoff PROTOCOL.md upgraded to v2 (two-tier Full/Light + authority field); LOG.md fixed; retroactive Mechanic→White
 - Scribe goal #1 done: /api/decisions now supports ?agent, ?since, ?q filters in agent_portal.py; 20ms perf, verified against 134 lines.
+- Builder goal #1 (canary deploy) complete: canary_deploy.py pipeline green (Red→smoke→Black+Pale), agent_portal.py untouched, evidence in mem
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

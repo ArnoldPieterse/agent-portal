@@ -1,0 +1,16 @@
+{
+  "type": "EVIDENCE_CHAIN_INTEGRITY_CERTIFICATE",
+  "date": "2026-11-17T10:30:24.278206+00:00",
+  "chain_file": "memory/verifier/evidence_chain.json",
+  "entries": 6,
+  "seq_range": [
+    0,
+    5
+  ],
+  "genesis_hash": "fbef3bf220d3003ff2d69929351f044524372de33695dfc235414c523fe0a314",
+  "tip_hash": "31242e5f11656d5da9fdad52c13e9df8e99b5735267720ef60128310c5803b19",
+  "chain_valid": true,
+  "errors": [],
+  "integrity_sha256": "b181635619688a0329454b4eefeecbafa8950676204c817478aa2fde453fd496",
+  "algorithm": "SHA256 over json.dumps(chain, sort_keys=True, indent=2)"
+}

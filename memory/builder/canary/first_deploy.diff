@@ -1,0 +1,7 @@
+--- a/agent_portal.py
++++ b/agent_portal.py
+@@ -13,3 +13,4 @@
+ PORT = 8099
+ STUDIO = "http://127.0.0.1:8888"   # local Studio (White); remote hosts override per-agent
++# canary-deploy: first real pipeline run 2026-11-17
+ 

@@ -1,1 +1,5 @@
-{"armed": false, "consumed_at": "2026-11-17 20:17:27", "run_id": "g-1a1e902f465-3b7ffa"}
+{
+  "armed": false,
+  "consumed_at": "2026-11-17 20:17:27",
+  "run_id": "g-1a1e902f465-3b7ffa"
+}
