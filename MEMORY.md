@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Pre-staged sla-goal8-closure-runbook at memory/researcher/sla-goal8-closure-runbook-2026-11-18.md; triggers 11-20 or on Mechanic/Builder
-- Cycle-3 narrative written at 36/80 (45%); hot-note claim of 56/80 was stale — actual goal files show 36/80.
-- Pin restores logged in memory_mirror.log (key "pin_guard"), NOT mirror_events.log — frequency tables undercount reverts if only checking the
 - Goal #5 closed: `memory/portal/components.md` verified complete (6/6 components); designer now at
 - Goal #2 (Fleet panel polish): loading/error/empty states added to ui/app.css + ui/core.js; hit mirror-revert, required atomic re-apply.
 - Mechanic goal #7 (fleet health dashboard v2): stats collector + /api/health/fleet endpoint extension written,
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9 done: Cycle-3 narrative written to memory/synthesis/cycle-narrative.md (33/80=41%), scribe.md line 14 verified.
 - Goal #9 runbook gap analysis complete: all 8 ops runbooks classified; post-sync sha256 verification added to mirror_heal.py
 - No headless browser (playwright/selenium/imgkit) exists; PIL present. Screenshot/viewport acceptance leg blocks Designer #2/#5/#6/#7/#10, Or
+- Scribe reached 10/10 goals complete; Goal #9 (cycle narrative) closed with Cycle 3 entry in `memory/synthesis/cycle-narrative.md`.
+- Goal #3 (CSS bundle perf budget) verified: 72.7 KB minified < 80 KB target, recorded in ledger this pass.
+- Mechic Goal #9 (runbook gap analysis) was already complete (14/14 steps) but unindexed; adding to INDEX.md moved score to 3/10.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
