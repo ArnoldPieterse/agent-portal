@@ -1,5 +1,5 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-15 (created - folder previously had no sub-index; gap flagged by Scribe #3 same-turn rule).
+Last updated: 2026-11-17 (Builder auto-loop: added portal-startup + css-tokens entries, verified token claim).
 
 ## Entries (keyword -> pointer | use case)
 - portal startup / import-time C:\\Users PermissionError fix + start probe / assists Mechanic#2+Designer WCAG -> memory/builder/portal-startup-fix-2026-11-17.md   2026-11-17 fixed crash (alive:true); serving pending host boot-task restart (sandbox denies socket bind 10013)
@@ -10,6 +10,9 @@ Last updated: 2026-11-15 (created - folder previously had no sub-index; gap flag
 
 - truncation detection / _is_truncated pure fn + 6-case unit fixture (B5)
   -> memory/builder/truncation-e2e-verify-2026-11-16.md   group_e2e.py sha12 9e4955611304; test_truncation_detect.py at root, PASS 6/6 2026-11-16
+- portal startup crash / import-time PermissionError on C:\Users + re-verify after mirror regression -> memory/builder/portal-startup-fix-2026-11-17.md   2026-11-17 fixed + alive:true; sandbox socket-bind 10013 still blocks :8099 here
+- CSS token extraction / all hexes -> :root vars (22 new) / ~35 component-specific hexes remain as one-off debt -> memory/builder/css-tokens-complete-2026-11-17.md   2026-11-17 407 var() uses; 30 in :root
+- theme toggle verification / dark-mode + light-mode computed styles -> memory/builder/verify_theme_toggle_2026-11-17.md   2026-11-17
 
 ## Global pointers
 - -> agent_portal.py  server;  -> index.html  frontend (pinned - see quarantine doc);  -> TODO.md plan

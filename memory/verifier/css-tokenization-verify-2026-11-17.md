@@ -50,3 +50,6 @@ Replace each hardcoded hex above with the corresponding --token from :root, or a
 
 ## Method
 `re.findall(r'#[0-9a-fA-F](3, 8)\b', content_outside_root)` on ui/app.css.
+
+---
+**UPDATE 2026-11-17 (auto-loop pass):** HOT NOTE claims "29 props / 6 categories" but actual :root count is now **47 custom properties** (single :root block, line 8 of ui/app.css). The note is stale - file grew after the note was written. Remaining hex debt still present (see table above).

@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic's sandbox blocks egress (errno=10013); Red .245 probe (SMB:445, Studio:8888) needs non-sandbox White session to close goal #2.
-- design_breakpoint_check.py: added consoleAPICalled assertion, compiles clean; needs runtime test on Studio + forced
-- Goal #1: expanded ui/app.css :root from 16→~30 tokens (radius, shadow, motion, spacing, fs, colors); added doc file.
 - Pale .39:445 now OPEN from Red sandbox (was noted down); load_probe.py upgraded with --seat/--target for multi-seat use.
 - Token layer complete: 29 props / 6 categories; ~30 component-specific hexes remain as one-off debt (DM borders, segmented-control, fleet-lin
 - Fixed load_trend.py: now handles per-endpoint records from load_probe.py (was crashing on new format).
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 token layer complete: 56 tokens in :root, all hardcoded hexes/radii/durations eliminated from ui/app.css
 - design_breakpoint_check.py now supports --file mode + screenshot-on-failure; forced-overflow fixture created as acceptance proof
 - Goal #4 NOT verified — ledger stamp was premature; still needs 7 days of baseline data. Outage guard added to load_probe.py.
+- index.html sha12 pinned at `2a3ffa6ac79c` (verified 2026-11-16j, matches memory_mirror.py PIN_FILES)
+- Scribe's /api/memory-health endpoint is absent from live agent_portal.py
+- HOT NOTE "29 props / 6 categories" is stale; actual :root count in ui/app.css is 47 custom properties (verified 2026-11-17).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
