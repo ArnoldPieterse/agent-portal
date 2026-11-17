@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-11-18",
+  "scanned": "TODO.md",
+  "method": "full-path match against superseded files (excluding generic stems)",
+  "superseded_files_checked": 37,
+  "stale_references_found": 6,
+  "violations": [
+    {
+      "line": 70,
+      "text": "Context: human asked to upload current state to public GitHub, then deleted `memory/llm/hosts.md` on GitHub themselves (internal LAN host table). Loca",
+      "superseded_file": "memory/llm/hosts.md",
+      "successor": "race v2 above.)"
+    },
+    {
+      "line": 71,
+      "text": "- [x] Merged their deletion (21c2627); restored hosts.md locally but UNTRACKED (.gitignore `/memory/llm/hosts.md`) so auto-sync can never re-publish i",
+      "superseded_file": "memory/llm/hosts.md",
+      "successor": "race v2 above.)"
+    },
+    {
+      "line": 112,
+      "text": "- [x] Researcher #2: memory/researcher/open-questions-log.md created + indexed (6 OPEN / 2 RESOLVED).",
+      "superseded_file": "memory/researcher/open-questions-log.md",
+      "successor": "the C2 ruling in memory/synthesis/2026-11-16-contradiction-rulings.md (closure stands)"
+    },
+    {
+      "line": 144,
+      "text": "- [x] Canonical `index.html` re-pinned on White: 9c6b08e3 / 67,681 B \u2014 6th consecutive stable round (r10\u2192r15), zero drift. My r14c append to `memory/s",
+      "superseded_file": "memory/synthesis/2026-11-12-consolidated-state.md",
+      "successor": "R6b in the canonical log memory/portal/upgrades-2026-11-12.md (rounds 0/5/6 + decision index)"
+    },
+    {
+      "line": 151,
+      "text": "- [ ] ~~Scribe synthesis leaf still r6-only on White (4,253 B; `r14 FINAL STATE` x0) \u2014 her claimed append not landed/propagated; re-write next cycle~~",
+      "superseded_file": "memory/synthesis/2026-11-12-consolidated-state.md",
+      "successor": "R6b in the canonical log memory/portal/upgrades-2026-11-12.md (rounds 0/5/6 + decision index)"
+    },
+    {
+      "line": 451,
+      "text": "- [ ] memory/llm/hosts.md host table: fill GPUs/models/state per host as they come up.",
+      "superseded_file": "memory/llm/hosts.md",
+      "successor": "race v2 above.)"
+    }
+  ]
+}

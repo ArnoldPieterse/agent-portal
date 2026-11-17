@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 (contradiction detector v2) closed: marked verified in ledger, 5 new types / 0 false positives confirmed.
-- Goal 10: 480px breakpoint added to ui/app.css (between 768/375); remaining: live-viewport check + hardcoded literal sweep
 - Goal 7 fleet health endpoint v2 extended with disk/memory/model-load; remote hosts return None pending WinRM access.
 - Researcher added partial-data contingency to mirror-revert runbook (mid-window seed scenarios, min viable dataset, extended fallback) — clos
 - mirror_heal.py
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9 done: runbook audit extended to all 11 runbooks (34 steps, 96% accounted). Artifact: memory/mechanic/runbook-gap-analysis-2026-11-17
 - Goal #7 fleet_health_snapshot patched (disk/memory/model_status); pending: live curl test post-White restart + Designer panel consumption.
 - Portal :8099 unreachable from Red (
+- Goal #1 done: /api/decisions in agent_portal.py now supports ?agent, ?since, ?q query params; verified locally, evidence in ledger.
+- Built memory/ops/restart_portal.py (5KB) — reads PID, kills, re-runs PortalRun task, verifies via port check; dry
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

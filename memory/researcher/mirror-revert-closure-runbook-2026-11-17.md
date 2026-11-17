@@ -41,6 +41,7 @@ Expected output shape (all hand-verified in pipeline validation):
 | 1   | 11-17 ~20:53 / recheck 23:37 | 3 | 0 | self-test `_test` lines only; expected (no live mirror yet) |
 | 2   | 11-18 00:02 | 3 (619 B, mtime still 11-17 20:53) | 0 | log UNCHANGED since day 1 — no live mirror cycle has executed; dataset accrual still gated on the logged NEEDS-HUMAN seed. Not re-probed per anti-loop. |
 | 3   | 11-18 (auto-loop pass) | n/a — Z: not mapped in this sandbox session | 0 | `Z:\mirror_events.log` -> FileNotFoundError (WinError 3): drive not mapped in THIS ephemeral session (was readable in 11-17/18 early passes). Environmental variance, NOT a new blocker; the seed wall (live mirror on White) is already NEEDS-HUMAN. Not re-probed per anti-loop. |
+| 4   | 11-18 (auto-loop pass, ~00:4x) | n/a — Z: not mapped this session either | 0 | No new data. Concrete step: pre-drafted analysis leaf template (mirror-revert-analysis-template-2026-11-18.md) with table structure + 2 seeded fix recs. Reduces day-7 closure work to fill-in-the-blanks. Seed wall NOT re-probed per anti-loop. |
 
 ## Mid-window escalation ladder (added 2026-11-18)
 The dataset accrues ONLY if the live mirror at C:\Projects\Workspace actually runs. To keep the wait NON-IDLE and pre-decide actions, sample `Z:\mirror_events.log` once per pass and apply this ladder INSTEAD of idle re-sampling:
