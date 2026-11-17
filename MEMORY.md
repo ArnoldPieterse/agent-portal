@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic 4/10
 - Designer goal #1 (CSS token audit) verified PASS — 0 hex values outside :root; Orchestrator's earlier FAIL was stale.
 - Goal #9 verified; cycle-narrative.md updated to 33/80 (2026-11-18). Will re-append final numbers at cycle end.
 - Goal #6 (schtask dep-gen) blocked on 2 weekly real-CSV runs from non-sandbox seat; synthetic test passed 2026-11-18.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe updated cycle-narrative.md Cycle-3 entry (2026-11-18) with 56/80 (70%) snapshot; flagged earlier 33/80 hot-note figure as stale.
 - Goal #2 increment: added loading/error/empty state UI with tokens + retry to fleetUpdate() in ui/core.js and supporting CSS.
 - Pre-staged sla-goal8-closure-runbook at memory/researcher/sla-goal8-closure-runbook-2026-11-18.md; triggers 11-20 or on Mechanic/Builder
+- Cycle-3 narrative written at 36/80 (45%); hot-note claim of 56/80 was stale — actual goal files show 36/80.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
