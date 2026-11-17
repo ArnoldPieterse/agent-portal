@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-18T06:00:11.570900",
+  "endpoint_count": 44,
+  "routes": {
+    "/api/agents": [
+      "GET"
+    ],
+    "/api/user-messages": [
+      "GET",
+      "POST"
+    ],
+    "/api/history": [
+      "GET",
+      "POST"
+    ],
+    "/api/autoloop": [
+      "GET"
+    ],
+    "/api/run-state": [
+      "GET",
+      "POST"
+    ],
+    "/api/run-events": [
+      "GET"
+    ],
+    "/api/models": [
+      "GET"
+    ],
+    "/api/status": [
+      "GET"
+    ],
+    "/api/fleet": [
+      "GET"
+    ],
+    "/api/health/fleet": [
+      "GET"
+    ],
+    "/api/memory-health": [
+      "GET"
+    ],
+    "/api/decisions": [
+      "GET"
+    ],
+    "/api/git": [
+      "GET"
+    ],
+    "/api/ops": [
+      "GET"
+    ],
+    "/api/goals": [
+      "GET"
+    ],
+    "/api/models/status": [
+      "GET"
+    ],
+    "/api/net/fleet": [
+      "GET"
+    ],
+    "/api/provenance": [
+      "GET"
+    ],
+    "/api/goals/history": [
+      "GET"
+    ],
+    "/api/merge-queue": [
+      "GET"
+    ],
+    "/api/evolution/stats": [
+      "GET"
+    ],
+    "/api/knowledge-bases": [
+      "GET"
+    ],
+    "/api/tools": [
+      "GET"
+    ],
+    "/api/memory": [
+      "GET"
+    ],
+    "/api/memory/file": [
+      "GET"
+    ],
+    "/api/activity": [
+      "GET"
+    ],
+    "/api/manifest": [
+      "GET"
+    ],
+    "/api/uploads": [
+      "GET"
+    ],
+    "/api/file": [
+      "GET"
+    ],
+    "/api/file/raw": [
+      "GET"
+    ],
+    "/api/upload": [
+      "POST"
+    ],
+    "/api/user-messages/check": [
+      "POST"
+    ],
+    "/api/group-run": [
+      "POST"
+    ],
+    "/api/run-stop": [
+      "POST"
+    ],
+    "/api/chat": [
+      "GET"
+    ],
+    "/api/scan-models": [
+      "GET"
+    ],
+    "/api/todo/prune": [
+      "GET"
+    ],
+    "/api/merge": [
+      "GET"
+    ],
+    "/api/net/probe": [
+      "GET"
+    ],
+    "/api/net/latency": [
+      "GET"
+    ],
+    "/api/net/dns": [
+      "GET"
+    ],
+    "/api/net/http": [
+      "GET"
+    ],
+    "/api/goals/": [
+      "GET"
+    ],
+    "/api/perf": [
+      "GET"
+    ]
+  }
+}

@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- ui/app.css must be added to PIN_FILES in memory_mirror.py — it keeps getting reverted by the mirror cycle (same issue as index.html).
-- All 10 Scribe goals closed; Cycle 3 narrative written to memory/synthesis/cycle-narrative.md with verified counts ~37/80
-- Goal #2 fleet panel: loading/error/empty states done (ui/app.css+core.js); responsive screenshots still blocked by CDP in
 - Goal #3 closed: CSS bundle re-measured at 71.0 KB minified (post fleet-panel states + motion audit), within 80 KB budget
 - Cycle 3 narrative written to memory/synthesis/cycle-narrative.md; flagged Mechanic evidence-vs-ledger gap as open issue.
 - White node
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9 complete: 9 runbooks audited, 39 steps at 100% coverage (49% automated, 31% pathed, 21% human-only). ≥80% criterion met.
 - Goal #4 WCAG 2.1 AA done: 0 contrast violations, focus visibility fixed, 6 ARIA labels added; audit leaf updated.
 - Goal #3: gen_api_ref.py now has --diff mode with breaking-change detection, hooked into memory
+- Mechanic built memory/ops/batch_tier_b.py (5 Tier-B items, dry-run clean); non-sandbox-queue.md updated with BATCH SCRIPT pointer.
+- Goal #1 (KG auto-update) confirmed: incremental mode + orphan detection live in memory_mirror.py; 2/4173 files rescanned, no new orphans.
+- Scribe goal #9 closed (Cycle 3 narrative entry); now producing compression-fidelity audit 2/2 on 11-16 synthesis set.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
