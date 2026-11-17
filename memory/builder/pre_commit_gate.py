@@ -9,6 +9,7 @@ SUITES = [
     ("prune-regression", "memory/builder/prune_regression.py"),
     ("truncation-detect", "verifier/truncation_detect_test.py"),
     ("playbook-tests", "builder/playbook_tests.py"),
+    ("goals-edge-cases", "memory/builder/test_goals_edge_cases.py"),
 ]
 
 # --- Performance budget config ---

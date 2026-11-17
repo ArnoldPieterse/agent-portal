@@ -1,8 +1,8 @@
 {
- "root": "Workspace",
- "node_count": 742,
- "edge_count": 159,
- "supersession_edges": 226,
+ "root": "",
+ "node_count": 1251,
+ "edge_count": 200,
+ "supersession_edges": 275,
  "edges": [
   {
    "from": "memory/archivist/index-pointer-batch-r42.md",
@@ -65,6 +65,21 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/gen_api_ref.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/decay_score.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/hostdoc-consistency-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/builder/INDEX.md",
    "to": "memory/builder/index-repin-r24-2026-11-14.md",
    "kind": "pointer"
@@ -72,6 +87,11 @@
   {
    "from": "memory/builder/INDEX.md",
    "to": "memory/builder/a11y-repin-farm569-closeout-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/css-tokens-complete-2026-11-17.md",
    "kind": "pointer"
   },
   {
@@ -105,8 +125,18 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/api_contract_test.py",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/designer/INDEX.md",
    "to": "memory/designer/goal3-component-abstraction-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/designer/INDEX.md",
+   "to": "memory/designer/cdp-unblock-2026-11-16.md",
    "kind": "pointer"
   },
   {
@@ -126,6 +156,11 @@
   },
   {
    "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/forecast-mechanic-g4.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
    "to": "memory/goals/cycle2-kickoff-2026-11-16.md",
    "kind": "pointer"
   },
@@ -140,6 +175,56 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/goals/archive/archivist-2026-11-16.md",
+   "to": "memory/archivist/knowledge_graph.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/archivist-2026-11-16.md",
+   "to": "memory/archivist/freshness-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/archivist-2026-11-16.md",
+   "to": "memory/archivist/hostdoc-consistency-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/archivist-2026-11-16.md",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/archivist-2026-11-16.md",
+   "to": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
+   "to": "memory/archivist/knowledge_graph.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
+   "to": "memory/archivist/freshness-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
+   "to": "memory/archivist/hostdoc-consistency-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
+   "to": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/llm/INDEX.md",
    "to": "memory/llm/hosts.md",
    "kind": "pointer"
@@ -147,6 +232,31 @@
   {
    "from": "memory/llm/INDEX.md",
    "to": "memory/llm/backend-swap-procedure.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/goal-ledger-current.json",
+   "to": "memory/archivist/knowledge_graph.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/goal-ledger-current.json",
+   "to": "memory/archivist/freshness-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/goal-ledger-current.json",
+   "to": "memory/archivist/hostdoc-consistency-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/goal-ledger-current.json",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/goal-ledger-current.json",
+   "to": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
    "kind": "pointer"
   },
   {
@@ -160,6 +270,16 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/goal4-load-baseline-day3-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/ops/INDEX.md",
    "to": "memory/ops/host-port-task-map-2026-11-15.md",
    "kind": "pointer"
@@ -167,6 +287,11 @@
   {
    "from": "memory/ops/INDEX.md",
    "to": "memory/ops/hotline-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/blockers.md",
    "kind": "pointer"
   },
   {
@@ -185,8 +310,28 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/black-studio-failover-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/autoloop.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/ops/memory-trim-archive-2026-11-14.md",
    "to": "memory/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/designer-qa-gate-unblock-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/appcss-hardcoded-colors-verify-2026-11-17.md",
    "kind": "pointer"
   },
   {
@@ -260,6 +405,16 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/portal/system-map.md",
+   "to": "memory/portal/file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/system-map.md",
+   "to": "memory/ops/windows-runbook.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
    "to": "memory/builder/pre_commit_gate.py",
    "kind": "pointer"
@@ -307,6 +462,11 @@
   {
    "from": "memory/projects/INDEX.md",
    "to": "memory/projects/dcabots-setup-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
    "kind": "pointer"
   },
   {
@@ -400,6 +560,26 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/goals-complete-verification-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/evidence_quality_trend.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/css-tokenization-verify-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/scribe/INDEX.md",
    "to": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
    "kind": "pointer"
@@ -417,6 +597,21 @@
   {
    "from": "memory/scribe/INDEX.md",
    "to": "memory/scribe/compression_lint.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/supersession-audit-2026-11-17.json",
+   "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/supersession-audit-2026-11-17.json",
+   "to": "memory/ops/windows-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/2026-cycle2-retrospective.md",
+   "to": "memory/synthesis/2026-11-16-contradiction-rulings.md",
    "kind": "pointer"
   },
   {
@@ -791,7 +986,17 @@
   },
   {
    "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/evolution-lifecycle-validator-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
    "to": "memory/verifier/idempotency_proof.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/agent-portal-size-verify-2026-11-16.md",
    "kind": "pointer"
   },
   {
@@ -932,6 +1137,11 @@
    "marker": "supersedes"
   },
   {
+   "from": "memory/designer/goals-1-2-3-6-10-evidence-2026-11-16.md",
+   "target": "prior",
+   "marker": "supersedes"
+  },
+  {
    "from": "memory/designer/goals-patch-apply-2026-11-15.py",
    "target": "lost",
    "marker": "supersedes"
@@ -982,8 +1192,18 @@
    "marker": "Supersedes"
   },
   {
+   "from": "memory/designer/token-gap-analysis-2026-11-17.md",
+   "target": "var",
+   "marker": "replaced by"
+  },
+  {
    "from": "memory/designer/token-refactor-2026-11-15.md",
    "target": "a",
+   "marker": "replaced by"
+  },
+  {
+   "from": "memory/designer/token_audit.py",
+   "target": "var",
    "marker": "replaced by"
   },
   {
@@ -992,8 +1212,18 @@
    "marker": "supersedes"
   },
   {
+   "from": "memory/designer/wcag_contrast_live.py",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
    "from": "memory/goals/2026-11-13-agent-goals.md",
    "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/goals/archivist.md",
+   "target": "X",
    "marker": "supersedes"
   },
   {
@@ -1002,9 +1232,9 @@
    "marker": "superseded by"
   },
   {
-   "from": "memory/goals/designer.md",
-   "target": "var",
-   "marker": "replaced by"
+   "from": "memory/goals/forecast-mechanic1-adaptive-probe-2026-11-17.md",
+   "target": "memory/mechanic/fleet-probe-v2-2026-11-16.md",
+   "marker": "Supersedes"
   },
   {
    "from": "memory/goals/INDEX.md",
@@ -1012,9 +1242,19 @@
    "marker": "superseded by"
   },
   {
+   "from": "memory/goals/mechanic-goal4-forecast-2026-11-17.md",
+   "target": "with",
+   "marker": "Supersede"
+  },
+  {
    "from": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
    "target": "the",
    "marker": "supersedes"
+  },
+  {
+   "from": "memory/goals/archive/designer-2026-11-16.md",
+   "target": "var",
+   "marker": "replaced by"
   },
   {
    "from": "memory/goals/archive/orchestrator-2026-11-13.md",
@@ -1025,6 +1265,36 @@
    "from": "memory/goals/archive/README.md",
    "target": "live",
    "marker": "superseded by"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/cycle2-proposals-raw-2026-11-16.txt",
+   "target": "the",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/designer.md",
+   "target": "var",
+   "marker": "replaced by"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/forecast-mechanic1-adaptive-probe-2026-11-17.md",
+   "target": "memory/mechanic/fleet-probe-v2-2026-11-16.md",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/mechanic-goal4-forecast-2026-11-17.md",
+   "target": "with",
+   "marker": "Supersede"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/researcher.md",
+   "target": "memory-health-endpoint-reverted-2026-11-16.md",
+   "marker": "supersedes"
   },
   {
    "from": "memory/llm/hosts.md",
@@ -1047,6 +1317,21 @@
    "marker": "Supersedes"
   },
   {
+   "from": "memory/mechanic/adaptive-probe-poller-2026-11-17.md",
+   "target": "",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/mechanic/goal-ledger-current.json",
+   "target": "var",
+   "marker": "replaced by"
+  },
+  {
+   "from": "memory/mechanic/goal2_mirror_heal_productionized-2026-11-17.md",
+   "target": "ALERT_THRESHOLD",
+   "marker": "replaced by"
+  },
+  {
    "from": "memory/mechanic/memory_mirror_r16.py",
    "target": "OPS",
    "marker": "supersedes"
@@ -1065,6 +1350,11 @@
    "from": "memory/ops/INDEX.md",
    "target": "memory/goals/",
    "marker": "superseded by"
+  },
+  {
+   "from": "memory/ops/pin-guard-extension-ui-files.md",
+   "target": "var",
+   "marker": "replaced by"
   },
   {
    "from": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
@@ -1090,6 +1380,86 @@
    "from": "memory/ops/merge-queue/memory_mirror.py.0e026c89c0",
    "target": "2c6399f2d853.",
    "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.39114dbdfa",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.39114dbdfa",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.56e34017e3",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.56e34017e3",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.75be858c9c",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.75be858c9c",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.77db23e68d",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.77db23e68d",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.d10e23eab7",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.d10e23eab7",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.d10e23eab7",
+   "target": "2a3ffa6ac79c",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.f5216f8a2a",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.f5216f8a2a",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.f5216f8a2a",
+   "target": "2a3ffa6ac79c",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/TODO_completed.md.73b7b5b6d3",
+   "target": "var",
+   "marker": "replaced by"
+  },
+  {
+   "from": "memory/ops/merge-queue/TODO_completed.md.73b7b5b6d3",
+   "target": "r15",
+   "marker": "supersedes"
   },
   {
    "from": "memory/orchestrator/white-apply-bundle-v2-r45.md",
@@ -1173,7 +1543,27 @@
   },
   {
    "from": "memory/researcher/INDEX.md",
+   "target": "2",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "target": "today",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
    "target": "ac-a2-live-leg-status-final",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "target": "the",
+   "marker": "SUPersedes"
+  },
+  {
+   "from": "memory/researcher/load-probe-current-diskstate-2026-11-17.md",
+   "target": "prior",
    "marker": "supersedes"
   },
   {
@@ -1189,6 +1579,11 @@
   {
    "from": "memory/researcher/outside-click-false-alarm-r76-2026-11-14.md",
    "target": "implementation",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/pin-consistency-check-2026-11-17.md",
+   "target": "2a3ffa6ac79c",
    "marker": "superseded by"
   },
   {
@@ -1297,6 +1692,21 @@
    "marker": "Supersedes"
   },
   {
+   "from": "memory/researcher/wcag-aa-and-tokenization-reverify-2026-11-17.md",
+   "target": "the",
+   "marker": "SUPERSEDES"
+  },
+  {
+   "from": "memory/researcher/wcag-aa-and-tokenization-reverify-2026-11-17.md",
+   "target": "earlier",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/cycle-narrative-thread-2026-11-17.md",
+   "target": "the",
+   "marker": "replaced by"
+  },
+  {
    "from": "memory/scribe/INDEX.md",
    "target": "r73",
    "marker": "superseded by"
@@ -1305,6 +1715,21 @@
    "from": "memory/scribe/INDEX.md",
    "target": "r72",
    "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/supersession-audit-2026-11-17.json",
+   "target": "live",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/supersession-pointer-spec.md",
+   "target": "r24",
+   "marker": "replaced by"
+  },
+  {
+   "from": "memory/scribe/supersession-report-2026-11-16.json",
+   "target": "OLDER/smaller",
+   "marker": "replaced by"
   },
   {
    "from": "memory/scribe/supersession_check.py",
@@ -1622,6 +2047,11 @@
    "marker": "Supersedes"
   },
   {
+   "from": "memory/synthesis/2026-11-16-portal-status-report.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
    "from": "memory/synthesis/2026-11-16-r1-round-record-DRAFT.md",
    "target": "b59e528fe540",
    "marker": "supersedes"
@@ -1634,6 +2064,11 @@
   {
    "from": "memory/synthesis/2026-11-16-status-thread-contradictions.md",
    "target": "memory/synthesis/2026-11-16-crossassist-evidence-pass.md",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/cycle-narrative.md",
+   "target": "nothing",
    "marker": "Supersedes"
   },
   {
@@ -1930,6 +2365,21 @@
    "from": "memory/verifier/r45-closeout-2026-11-14.md",
    "target": "both",
    "marker": "supersedes"
+  },
+  {
+   "from": "memory/verifier/theme-css-block-absent-2026-11-17.md",
+   "target": "",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/verifier/ui-slices-verify-2026-11-17.md",
+   "target": "theme-toggle-claim-verify-2026-11-17.md",
+   "marker": "SUPERSEDES"
+  },
+  {
+   "from": "memory/verifier/ui-slices-verify-2026-11-17.md",
+   "target": "status-dot.",
+   "marker": "replaced by"
   }
  ]
 }
