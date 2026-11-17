@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fleet evidence rate 8
-- Mechic wrote memory/ops/cycle-transition-checklist.md (5-min ops readiness runbook for goal-cycle transitions); pointer in ops INDEX
-- All 80/80 goals confirmed reached via ledger; no open work on Mechanic's lane as of cycle-3 readiness snapshot.
 - Mirror sync reverted cycle-3 goals file; re-wrote all 10 goals in memory/goals/archivist.md — watch for re-reversions next pass
 - Scribe creating `memory/s
 - Verifier c3 fault-injection passed (corrupt+truncate, MTTR<1ms); evidence at memory/verifier/fault-injection
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist goal #2 done: handoff PROTOCOL.md upgraded to v2 (two-tier Full/Light + authority field); LOG.md fixed; retroactive Mechanic→White
 - Scribe goal #1 done: /api/decisions now supports ?agent, ?since, ?q filters in agent_portal.py; 20ms perf, verified against 134 lines.
 - Builder goal #1 (canary deploy) complete: canary_deploy.py pipeline green (Red→smoke→Black+Pale), agent_portal.py untouched, evidence in mem
+- Goal #1 (Decision trace API v2) complete: _decisions_snapshot supports ?agent/?since/?status/?q filters; 3 tests pass, 0.8ms perf.
+- Group chat transcripts live in `chat_history_group.json` (capped 200) + `/api/history?mode=group`; no separate log store exists.
+- Goal #1 closed: all 36 hex colors in app.css replaced with var() tokens; 20 new tokens added
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
