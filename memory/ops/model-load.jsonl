@@ -92,3 +92,4 @@
 {"ts": "2026-11-17 22:11:33", "run": "g-1a1e96b696a-8474bf", "missing": {"Researcher": "unreachable"}}
 {"ts": "2026-11-17 22:16:33", "run": "g-1a1e96ffd6d-c1d6a6", "missing": {"Researcher": "unreachable"}}
 {"ts": "2026-11-17 23:46:36", "run": "g-1a1e9c2712a-6d05ce", "missing": {"Designer": "unreachable", "Archivist": "unreachable"}}
+{"ts": "2026-11-17 23:50:21", "run": "g-1a1e9c5e0c4-6ba3f6", "missing": {"Archivist": "unreachable", "Designer": "unreachable"}}
