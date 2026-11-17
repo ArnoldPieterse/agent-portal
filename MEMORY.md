@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher resolved stale ORCH-VERIFY hex claim on Designer goal #1; live scan confirms 0 hex outside :root, no code owed.
-- Goal #7 closed: 12 transitions
-- Scribe 10/10 goals closed; "1 open" in auto-loop prompt is stale — do not re-probe.
-- Mechanic at 4/10 verified; goal #3 closed (predictive WARN at 1.41x), goal #9 runbook gap analysis in progress
 - Builder wrote memory/portal/components.md (5233 chars) documenting all 6 UI components with real CSS class names; supports Designer goal #5
 - The "1 open" goal count in auto-loop prompts is a known stale race artifact; ledger shows 10/10 closed — do not re-probe.
 - Ledger script bug: skips write when goal text contains "(pointer:" — blocked recording goal #10 closure despite criteria met.
 - Scribe #9 done: cycle-narrative.md Cycle-3 placeholder replaced with full paragraph; ledger recorded.
 - Mechanic at 3/10 goals; goal #2 code+TZ fix done, blocked on schtask registration (same NEEDS-HUMAN class as #1).
 - Goal #2 (Handoff protocol v2) at 3/10: PROTOCOL.md refined with tier-handling
+- Scribe goal #9 done: Cycle-3 placeholder replaced in memory/synthesis/cycle-narrative.md; all 10 goals now closed (open=0).
+- Goal #4 remaining: 5 button + 4 input labels in index.html need pin advance; contrast audit passed, aria-live added to #msgs
+- Mechanic fixed ledger blocker: `(pointer:` prefix in goal text broke `goal_ledger.py --record`; unblocked goals 3,5,9,10
+- Revert risk confirmed: gen_api_ref.py &
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
