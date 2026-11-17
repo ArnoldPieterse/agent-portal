@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 closed: 8 runbooks audited, 14 manual steps found — 7 automatable (Nov20–Dec1), 6 human-only. Report at memory/mechanic/goal9-ops-ru
-- KG v2 shipped: incremental mode (content-hash diff) + orphan detection; hooked into mirror sync via _post_sync_tasks()
-- Goal #2 SLO scheduling blocked: schtasks COM error + PowerShell safety filter; NEEDS-HUMAN recorded in memory/ops/blockers.md
-- Goal #1 closed: 28 hex values tokenized in ui/app.css, 25 new :root tokens added, file 22.8KB. Next open: #2 (Flee...).
 - Goal #1 (Decision trace API v2) complete: ?agent/?since/?status/?q filters in agent_portal.py, verified 3 queries <500ms, ledger-recorded.
 - Goal #1 (Decision trace API v2): query param filters (?agent,?since,?q,?status) implemented in agent_portal.py, syntax+logic verified, evide
 - Goal #6 done: cross-agent comm patterns analyzed (52 files). Key: [CONCLUDED] discipline correlates with closure rate.
 - Goals #1 (load test) and #2 (mirror heal) share same blocker: sandbox egress — do not re
 - Goal #1 (design token audit) COMPLETE — all 36 hard-coded hex colors moved to :root; two bugs fixed mid-pass.
 - Goal #1 (KG Auto-Update) DONE: knowledge_graph.py v2 (hash-diff, orphan detect, delta report) + _post_sync_tasks() in memory_mirror.py; evid
+- Designer: Goal #2 fleet panel — added loading/error/empty states to ui/app.css + rewrote ui/core.js with dataset.loaded flag; production pol
+- Goal #1 KG v2 done (content-hash delta + orphan detection, 832 orphans). Remaining: hook into _post_sync_tasks() in memory_mirror.py.
+- Goal #6: durable_check.py built (85 lines);
+- Mirror LWW (step 3) overwrites local load_trend.py edits 6x; fix at mirror_host root, not re-apply. Goal #1 has 2/7 probe days.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

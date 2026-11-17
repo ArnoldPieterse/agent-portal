@@ -9,6 +9,7 @@ Reproducible: `python memory/researcher/evidence_quality_trend.py --min-markers 
 | 2026-11-17 am | 2 | 50 | 76% | full cycle-2 week, STABLE sample |
 | 2026-11-17 pm | 3 (reset) | 11 | 91% | fresh closures only; n<20 not yet stable |
 | 2026-11-17 pass-3 | 3 | 13 | 92% | +2 markers since pm; still below threshold |
+| 2026-11-17 pass-4 | 3 | 17 | 94% | +4 markers (builder, orchestrator, researcher all clean); verifier still 4/5. n=17, approaching n>=20 threshold; re-run ~11-18 for next point |
 
 Per-agent (cycle-3, pass-3 run): builder 3/3 (100%), orchestrator 3/3 (100%), researcher 2/2 (100%), verifier 4/5 (80%). All others 0 markers.
 
