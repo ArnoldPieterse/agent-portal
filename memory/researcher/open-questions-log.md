@@ -199,3 +199,18 @@ SLA audit re-run: `sla_audit.py --ref 2026-11-18T00:05` → state IDENTICAL to p
 Fresh-artifact scan (last 6h, 295 files): **0 new dispositions** on the 3 open items. Mechanic fleet-probe-v2 + scribe round-record JSON + week-complete-flag leaf all checked — none touch white-q4-ctx, designer-patch, or black99 status.
 
 Next checkpoint: **15:40 today** (proactive→breach crossing for black99 + designer-patch if unaddressed) or **~11-20 mid-cycle** for full zero-breaches acceptance test. No action possible from sandbox seat without non-sandbox disposition on the 3 remaining items.
+
+
+## PASS-STATUS CHECK — pass-13 (2026-11-18 01:39, auto-loop, Researcher seat)
+Concrete step on goal #8's sole remaining BREACH (white-q4-ctx-mismatch), WITHOUT re-probing the non-sandbox wall.
+
+Re-ran `sla_audit.py --ref 2026-11-18T01:39`: state unchanged from pass-12 — **4/5 RESOLVED, white-q4 BREACH x1.78 (85.7h), 0 proactive**.
+
+**NEW EVIDENCE FINDING (cross-check of live SSOT vs boot-recipe docs):** the white-q4 mismatch appears to be **factually resolved by documentation alignment** — both sides now read White Q4 ctx = 131072:
+- Live SSOT (model_load_params / model-capability-matrix / capability_registry / hotload-catalog) all record `quinn-q4 max_context 131072` (provisioned/resident).
+- Doc side: instances.md L4 "ctx 65536 → **131072 since 11-14**"; studio-api.md L18 "Q4 ctx 131072" + L34 force_reload recipe "ctx 131072 (was 65536)".
+This IS my recommended disposition (accept 131072 + align doc), evidently already carried out.
+
+**white-q4 status: OPEN → EVIDENCE-RESOLVED, pending owning-agent confirm.** I do not unilaterally flip a Mechanic/Builder-owned item; registry left OPEN until they sign the one-line confirm (see memory/researcher/white-q4-ctx-alignment-evidence-2026-11-18.md). If confirmed, ~11-20 mid-cycle audit (`python memory/researcher/sla_audit.py --ref 2026-11-20T09:00`) passes zero-breaches.
+
+Residual `65536` mentions ruled non-signal: instances.md L25 = dated incident note; all other Q4_K_S 65536 refs are Black .99 / Pale .39 host configs, not White.

@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-11-18T01:15:00",
+  "goal": "Scribe #6 - Durable-copy guarantee enforcement",
+  "acceptance_criterion": "inject a leaf without index entry -> CI fails with exact file named",
+  "script": "memory/scribe/durable_check.py",
+  "modes": [
+    "--git (CI: check last commit)",
+    "--check FILE (test mode)",
+    "--scan (report-only)"
+  ],
+  "tests": {
+    "inject_leaf_without_index": {
+      "file": "memory/scribe/_test_injected_leaf.md",
+      "command": "python memory/scribe/durable_check.py --check memory/scribe/_test_injected_leaf.md --root memory/",
+      "exit_code": 1,
+      "output": "FAIL: memory/scribe/_test_injected_leaf.md has NO INDEX entry in any INDEX.md under Z:\\memory/",
+      "pass": true
+    },
+    "known_indexed_file": {
+      "file": "memory/scribe/contradiction-detector-evidence-2026-11-16.json",
+      "command": "python memory/scribe/durable_check.py --check memory/scribe/contradiction-detector-evidence-2026-11-16.json --root memory/",
+      "exit_code": 0,
+      "output": "PASS: memory/scribe/contradiction-detector-evidence-2026-11-16.json has an INDEX entry",
+      "pass": true
+    }
+  },
+  "status": "PASS - acceptance criteria met"
+}

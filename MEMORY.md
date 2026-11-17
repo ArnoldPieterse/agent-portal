@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #8 (compression gate) is complete but unledgered; Scribe's next action is to record it in `scribe.md`.
 - Goal #10 Phases 2-4 done: memory_mirror_epoch.py created; push/pull loops now use sync_file() ownership gating, foreign pulls quarantined.
 - Builder goal #9 verified-marker is truncated mid-path (stale claim); audit script at memory/orchestrator/audit_verified_artifacts.py
 - Goal #10 Phases 2-4 done: `memory_mirror_epoch.py` (3.5 KB) gates push on ownership, enforces pull + quarantine.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic at 4/10 goals (was 1/10): #3 adaptive probe v2, #5 egress rules v2, #9 runbook gap analysis all verified this pass.
 - Goal #3 freq-table built from on-disk pins (46 CANONICAL, 12 re-pins 11-17); next checkpoint
 - Scribe reached 10/10 goals complete (2026-11-18); all open items closed including durable_check.py, compression gate, and cycle narrative.
+- Goal #8 white-q4 ctx mismatch resolved: all 4 SSOT files + 2 recipe docs now agree on 131072.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
