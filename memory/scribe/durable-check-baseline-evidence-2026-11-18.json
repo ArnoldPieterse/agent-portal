@@ -1,0 +1,17 @@
+{
+  "goal": "scribe#6 - Durable-copy guarantee enforcement",
+  "date": "2026-11-18",
+  "artifact": "memory/scribe/durable_check.py",
+  "description": "Added --baseline and --save-baseline flags to durable_check.py. Baseline mode compares current violations against a saved JSON baseline and fails only on NEW un-indexed leaves (exit 1 with exact filenames). Non-baseline mode unchanged (fails on all).",
+  "acceptance_test": {
+    "method": "Created minimal test tree (memory/scribe/_test_durable/) with INDEX.md referencing 1 of 2 files; ran durable_check.py against it",
+    "result": "PASS - exit code 1, exact orphan filename 'orphan_file.md' named in both JSON output and stderr; known file not flagged",
+    "output_line": "FAIL: 1 leaf(s) without INDEX entry\n  - memory/scribe/_test_durable/subdir/orphan_file.md"
+  },
+  "baseline_mode_test": {
+    "method": "Ran durable_check.py --baseline memory/scribe/durable_baseline.json against full memory tree",
+    "result": "PASS - correctly identified 43 NEW violations (files created after baseline), 14 resolved since baseline, exit code 1 with filenames",
+    "note": "43 new violations are real (agent evidence files from 11-18 without index entries); they will be resolved as agents add INDEX pointers"
+  },
+  "test_artifacts_cleaned": true
+}

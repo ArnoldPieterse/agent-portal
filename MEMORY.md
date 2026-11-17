@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4 load_trend.py validated (3 synthetic tests pass); remaining work is 2/7 days data, blocked by schtask on White (NEEDS-HUMAN).
-- Goal #1 (Decision trace API v2) closed: query-param filters (agent/since/status/q) added to agent_portal.py, verified at 26ms avg.
 - Goal 7: _fleet_health_snapshot() patched (disk/memory/model_load, stdlib only). Remaining: White restart + Designer panel.
 - Scribe upgraded durable_check.py with --baseline flag to fail only on new un-indexed leaves (goal #6
 - fill_analysis.py validated on sparse 48h edge case (13 events/2 days); runbook row 5 + goal #3 updated
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Incremental mode + __pycache__ exclusion implemented & verified
 - Goal #4: offline snapshot verified, 2 gaps fixed (INDEX.md +20 leaves, contradiction JSON +results field); remaining closure = live portal r
 - Scribe goal #2 claim contradicted: evidence JSON asserts 5 new v2 types but detector file only has original cycle-2 types (line_count, file_
+- Goal #1 (design token audit) verified complete: 0 hex colors outside :root in ui/app.css, ledger updated.
+- Goal #6 complete: added --baseline flag to script, acceptance test passed (inject orphan leaf → exit 1 → names exact file).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
