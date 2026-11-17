@@ -26,3 +26,11 @@ Artifact: memory/scribe/memory-health-metrics-offline-2026-11-17.json
 
 ## Remaining for closure
 - Live render check when portal is back up (visual verification of all 6 cards showing non-null values)
+
+## 2026-11-17 ~final - endpoint LIVE + verified, both fails fixed
+- Root cause of earlier 404: three stale portal instances (pre-edit code) held :8099; killed all, fresh instance (task-launched chain vbs->bat->pythonw, cwd=Workspace) now serves new routes.
+- Probe test passed: temp synthesis file w/ dangling cite moved supersession count 1->2 live (endpoint reads live tree, no restart needed for data changes).
+- supersession_validity fail -> pass: FP was documented-absence cite in synthesis/2026-11-14-r36-lane-closeout.md L11 (line says file intentionally absent); notation adjusted to memory/agents/INDEX (.md) so scanner skips it.
+- durable_copy_integrity fail(7) -> pass: deleted _lint_test_bad.md fixture; indexed 6 scribe leaves in scribe/INDEX.md catch-up section.
+- Final board: hot_file_lines=pass(30) orphan_rate=pass(0%) contradiction_count=warn(1) supersession_validity=pass owner_coverage_pct=warn(61.4) durable_copy_integrity=pass
+- Known caveat: metric uses HERE constant; direct-exec replication without HERE silently returns zero-defaults (broad excepts). Test via endpoint, not exec.

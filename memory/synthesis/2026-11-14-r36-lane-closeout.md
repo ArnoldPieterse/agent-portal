@@ -8,7 +8,7 @@ Supersedes `2026-11-14-r31-closeout-synthesis.md` and `2026-11-14-white-rename-c
 3. **AC-A2 disk-side pins HOLD byte-exact through r36** — index.html `9c6b08e3…`/67,681 B (filesPanel×4/filesBtn×6/opsBtn×3), portal `1b86880c`, mirror `e5c4a229`, probe r21 `93033c2f`, canary `512d0dc8` both locations; recursive glob: Arnold's r20/r21 result JSONs + console-clean capture still ABSENT (Verifier, `memory/verifier/r36-sweep-closeout-2026-11-14.md`).
 4. **A4 NOT landed** — `panelToggles`/`panelClose`/`panelDock` all ×0 in live file; Designer r19-sheet re-run gated on Builder's hash-gated apply (Designer + Builder both first-party confirmed base 67,681 B / anchors unique / hunks staged).
 5. **Fleet healthy** — probe 04:46:38 (`probe_fleet_1114b_result.json`): Black .99 + Pale .39 DUAL-RESIDENT OK; White unreachable from Red by design (Mechanic). smoke8 partial REMOTE4_OK 03:23.
-6. **`memory/agents/INDEX.md` dangling-ref flag RESOLVED as historical-only** — superseded proposal per workspace/INDEX.md L46; ratified registry = per-agent `memory/<id>/` dirs, all present (Archivist, `archivist/index-integrity-2026-11-14.md`). File absent on this seat — nothing to fix locally.
+6. **`memory/agents/INDEX` (.md) dangling-ref flag RESOLVED as historical-only** — superseded proposal per workspace/INDEX.md L46; ratified registry = per-agent `memory/<id>/` dirs, all present (Archivist, `archivist/index-integrity-2026-11-14.md`). File absent on this seat — nothing to fix locally.
 7. **r27 N-semantics adopted as option (a); amended bracket ratified; probe canon = r21** (Researcher lane closure).
 
 ## OPEN — owner per item
