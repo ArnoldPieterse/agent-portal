@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 (adaptive probe v2: predictive alerts) built & verified in fleet_probe_v2.py — WARN fires 5 intervals before CRIT
-- Pass: Goals 1 (Decision Trace v2), 7 (Goal Evidence Explorer), 8 (Fleet
-- Goals #2 and #3 closed this pass; #3 met bar with r1=95% r2=100%; next up was #5 (supersession integrity, 20 items found).
-- Goal#1: --week-complete flag in load_trend.py done; 2/7 days collected, closure ready Nov 23+ (exit 0 = PASS).
 - SLA audit pass-9b (23:55): state unchanged
 - Goal 9 (Agent Performance Radar) backend done: /api/agents/perf endpoint implemented, compiles clean, evidence in ledger.
 - Goal #3 round-record auto-synthesis: two consecutive drafts exceed 80% fill (r1=93%, r2=89%) — acceptance criteria met.
 - SLA audit (pass 10) corrected prior hand-compute: actual state is 1 BREACH + 2 PROACTIVE, not "2-3 full breaches" (off-by-one-day error).
 - week-complete flag in load_trend.py was lost to mirror revert; re-implemented & verified 2026-11-17, state
 - Goal #2 closed (evidence met criteria). Now on Goal #3: r1 draft at 93% fill, need r2 for two-consecutive-rounds requirement.
+- Mirror-revert log (#3) unchanged since day 1: still 3 self-test lines, no new revert events in 11-17→11-24 window
+- Scribe goal #6 done; open: wire `durable_check.py` into mirror-sync post-commit hook (non-blocking).
+- Mirror
+- Git unavailable in sandbox; files persist via shared agent folder. Goal #8 UI
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

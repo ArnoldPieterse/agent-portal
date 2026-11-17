@@ -35,6 +35,12 @@ Expected output shape (all hand-verified in pipeline validation):
 3. 2-3 targeted fixes BEYOND the auto-repair daemon (e.g. pin-stability guard, per-file epoch stamping from goal #1 spec, write-ordering fix).
 4. Confidence + any residual uncertainty.
 
+## Daily sampling log (window 11-17 -> 11-24)
+| Day | Sampled at | Log size (lines) | Live events | Note |
+|-----|-----------|------------------|-------------|------|
+| 1   | 11-17 ~20:53 / recheck 23:37 | 3 | 0 | self-test `_test` lines only; expected (no live mirror yet) |
+| 2   | 11-18 00:02 | 3 (619 B, mtime still 11-17 20:53) | 0 | log UNCHANGED since day 1 — no live mirror cycle has executed; dataset accrual still gated on the logged NEEDS-HUMAN seed. Not re-probed per anti-loop. |
+
 ## Closure record
 `python memory/researcher/goal_ledger.py --record researcher 3 --note '<one-week live dataset analyzed; artifact path>'`
 
