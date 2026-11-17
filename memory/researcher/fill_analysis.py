@@ -9,6 +9,18 @@ import json, sys, os, re
 from collections import Counter
 from datetime import datetime
 
+def _parse_ts(s):
+    """Tolerant timestamp parse for the confidence line. The writer currently emits
+    '%Y-%m-%d %H:%M:%S'; if a future mirror edit changes that (microseconds, ISO-T,
+    etc.) day-7 one-command closure must DEGRADE (confidence->LOW) not CRASH.
+    Returns None on any unparseable value."""
+    for fmt in ('%Y-%m-%d %H:%M:%S', '%Y-%m-%dT%H:%M:%S', '%Y-%m-%d %H:%M:%S.%f', '%Y-%m-%dT%H:%M:%S.%f'):
+        try:
+            return datetime.strptime(s, fmt)
+        except (ValueError, TypeError):
+            continue
+    return None
+
 def load_live_events(path):
     events = []
     with open(path, 'r') as f:
@@ -118,8 +130,15 @@ def build_analysis(events, log_path):
     lines.append(f"\n### Fix 3: [REVIEW if data reveals third mechanism]")
     lines.append(f"Mechanism: [FILL] | Implementation hint: [FILL] | Effort: [FILL]")
     lines.append(f"\n## Confidence + Residual Uncertainty")
-    days = (datetime.strptime(t_max,'%Y-%m-%d %H:%M:%S') - datetime.strptime(t_min,'%Y-%m-%d %H:%M:%S')).days + 1
-    conf = 'HIGH' if days >= 6 and total >= 50 else ('MEDIUM' if days >= 3 and total >= 20 else 'LOW')
+    d_max, d_min = _parse_ts(t_max), _parse_ts(t_min)
+    if d_max is not None and d_min is not None:
+        days = (d_max - d_min).days + 1
+        conf = 'HIGH' if days >= 6 and total >= 50 else ('MEDIUM' if days >= 3 and total >= 20 else 'LOW')
+    else:
+        # Unparseable timestamps: degrade, don't crash the single-command closure.
+        days = -1
+        conf = 'LOW'
+        lines.append(f"- WARN: timestamp format unrecognised ({t_min!r}); confidence forced LOW.")
     lines.append(f"- Dataset: {total} events / {days} days -> confidence: **{conf}**")
     lines.append(f"- Known limitations: [REVIEW - e.g. shorter than 7-day window]")
     lines.append(f"- What would change this analysis: [REVIEW]")

@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Incremental mode + __pycache__ exclusion implemented & verified
 - Goal #4: offline snapshot verified, 2 gaps fixed (INDEX.md +20 leaves, contradiction JSON +results field); remaining closure = live portal r
 - Scribe goal #2 claim contradicted: evidence JSON asserts 5 new v2 types but detector file only has original cycle-2 types (line_count, file_
 - Goal #1 (design token audit) verified complete: 0 hex colors outside :root in ui/app.css, ledger updated.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #10 mirror sync epoch: Phase 0+1 done (ownership map, manifest, 12 tests pass); NOT verified—still needs clock-skew sim + 10 test cycle
 - Goal 1 (design token audit) COMPLETE: 31 tokens added to :root in ui/app.css, zero hex colors outside :root confirmed via grep.
 - Goal #3 done: gen_api_ref.py --diff mode + mirror hook implemented; incremental bug fixed (full graph 463 edges, delta reported correctly).
+- E2E contract test for day-7 closure chain passes: pointed log_event's EVENT_LOG at temp file, drove real writer, verified byte-identical out
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
