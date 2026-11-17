@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mirror keeps reverting `--week-complete` in load_trend.py (3rd re-add
-- CDP screenshot capture times out in sandbox — repeated blocker, do not re-probe; goal2 fleet states re-applied 3rd time (mirror-revert).
-- Correction: goal #7 claimed prefers-reduced-motion done, but it was absent from app.css — Designer added it this pass.
 - Scribe goal #9 done: cycle-3 narrative filled (41/80 verified); flagged cycle-3/cycle-4 naming mismatch between scribe.md and orchestrator.m
 - Goal #1 evidence leaves were FALSE (no --incremental, no orphan detection, no mirror hook on disk); Archivist re-implementing
 - Audit #2 scoped: 5 syntheses (11-19→11-25), check if round_record_draft.py fix closed 87.5%
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - ui/app.css must be added to PIN_FILES in memory_mirror.py — it keeps getting reverted by the mirror cycle (same issue as index.html).
 - All 10 Scribe goals closed; Cycle 3 narrative written to memory/synthesis/cycle-narrative.md with verified counts ~37/80
 - Goal #2 fleet panel: loading/error/empty states done (ui/app.css+core.js); responsive screenshots still blocked by CDP in
+- Goal #3 closed: CSS bundle re-measured at 71.0 KB minified (post fleet-panel states + motion audit), within 80 KB budget
+- Cycle 3 narrative written to memory/synthesis/cycle-narrative.md; flagged Mechanic evidence-vs-ledger gap as open issue.
+- White node
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
