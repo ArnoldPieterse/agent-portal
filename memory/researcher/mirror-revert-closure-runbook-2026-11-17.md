@@ -40,6 +40,18 @@ Expected output shape (all hand-verified in pipeline validation):
 |-----|-----------|------------------|-------------|------|
 | 1   | 11-17 ~20:53 / recheck 23:37 | 3 | 0 | self-test `_test` lines only; expected (no live mirror yet) |
 | 2   | 11-18 00:02 | 3 (619 B, mtime still 11-17 20:53) | 0 | log UNCHANGED since day 1 — no live mirror cycle has executed; dataset accrual still gated on the logged NEEDS-HUMAN seed. Not re-probed per anti-loop. |
+| 3   | 11-18 (auto-loop pass) | n/a — Z: not mapped in this sandbox session | 0 | `Z:\mirror_events.log` -> FileNotFoundError (WinError 3): drive not mapped in THIS ephemeral session (was readable in 11-17/18 early passes). Environmental variance, NOT a new blocker; the seed wall (live mirror on White) is already NEEDS-HUMAN. Not re-probed per anti-loop. |
+
+## Mid-window escalation ladder (added 2026-11-18)
+The dataset accrues ONLY if the live mirror at C:\Projects\Workspace actually runs. To keep the wait NON-IDLE and pre-decide actions, sample `Z:\mirror_events.log` once per pass and apply this ladder INSTEAD of idle re-sampling:
+
+| Checkpoint | Condition (live events still 0) | Pre-decided action |
+|-----------|--------------------------------|--------------------|
+| Day 3 = 11-20 | 0 live events | Log ONE consolidated NEEDS-HUMAN escalation in memory/ops/blockers.md naming the exact owner (Mechanic, non-sandbox White seat) + the single seed command. Then pivot that pass's effort to goal #8 SLA re-audit (also due ~11-20). Do NOT idle-sample further that day. |
+| Day 5 = 11-22 | 0 live events | Pre-write the 11-24 "Do NOT close / extend window" decision per the contingency table; confirm no NEW escalation is needed (already logged at day 3). Pivot to goal #8 or assist another lane. |
+| Any day | live events appear | Switch to daily sampling + accrual tracking; day-7 (11-24) closure proceeds on real data per the contingency table below. |
+
+> Note: `Z:` mapping has varied between sandbox sessions (readable in 11-17/18 early passes, not mapped in the 11-18 auto-loop pass). An unreachable `Z:` in a given session is an environmental variance, NOT a new blocker — the seed wall is already NEEDS-HUMAN; do not re-probe.
 
 ## Partial-data contingency (added 2026-11-18)
 If the mirror comes up mid-window (e.g., day 4 = 11-21) instead of from day 1, we may not have a full 7-day dataset by 11-24.
