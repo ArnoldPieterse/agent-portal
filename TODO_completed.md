@@ -96,3 +96,4 @@
 ## New: ■ Stop button BUILT (2026-11-10 latest)
 - [x] 1. "Finished without reaching conclusion" fixed: ■ Stop in modeBar closes the run as concluded (aborts in-flight streams, stamps ✓, green verdict) - replaces reliance on turn-counter timeout; [CONCLUDED]/budget remain signal/backstops
 - [x] ~~ 2. Arnold hard-refreshes portal tab + live group test: ■ Stop AND @delegation reaching the delegate (cast expansion)~~ SUPERSEDED 11-15: no-human-gates policy (Arnold) - item retired, not owed.
+[x] 2026-11-17 Orphan cleanup executed - 14 stale one-shot tasks unregistered; 4,279 files / 736 MB archived to archive/ (orphaned_, one_shot_tasks_, run_logs_, caches_20261117); journals pruned to newest 5, activity to default+newest 10; portal verified alive on :8099. Manifest: archive/MANIFEST_20261117.txt
