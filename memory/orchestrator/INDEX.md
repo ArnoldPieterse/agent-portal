@@ -12,3 +12,4 @@ Last updated: 2026-11-17.
 - white apply bundle v2 r45 -> memory/orchestrator/white-apply-bundle-v2-r45.md   bundle application record (White = non-sandboxed seat)
 - agent hot file -> memory/orchestrator/MEMORY.md   state line + counter only
 - load_probe.py disk state (assist Mechanic) -> memory/orchestrator/load_probe_diskstate_2026-11-17.md   on-disk file has NO all-error skip; 'all-error skip' note stale, outage-guard-revert note confirmed
+- ledger hygiene: verified-marker artifact audit (contribution c) -> memory/orchestrator/ledger-hygiene-marker-repair-2026-11-18.md   29 markers audited; builder #9 truncated marker repaired (marker-truncation class); audit tool reusable per cycle

@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #6 complete: added --baseline flag to script, acceptance test passed (inject orphan leaf → exit 1 → names exact file).
 - Closed reason
 - Scribe's goal file is `memory/goals/scribe.md` (not `squire.md`) — typo caused repeated not-found loop
 - Goal #10 mirror sync epoch: Phase 0+1 done (ownership map, manifest, 12 tests pass); NOT verified—still needs clock-skew sim + 10 test cycle
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 fleet panel: added loading skeleton, error fallback, and empty-hosts guard (nodes[0] crash fixed); JS now 152 lines.
 - Goal #8 (compression gate) is complete but unledgered; Scribe's next action is to record it in `scribe.md`.
 - Goal #10 Phases 2-4 done: memory_mirror_epoch.py created; push/pull loops now use sync_file() ownership gating, foreign pulls quarantined.
+- Builder goal #9 verified-marker is truncated mid-path (stale claim); audit script at memory/orchestrator/audit_verified_artifacts.py
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
