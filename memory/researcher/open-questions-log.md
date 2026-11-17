@@ -14,6 +14,17 @@ SLA: 48h from OPEN date. Entries >24h get PROACTIVE-FLAG. Breaches marked ⚠️
 | Orphan round logs (11-15) | ~48h | 🔴 SLA-BREACH — escalated to Archivist/Scribe; needs decision by EOD 11-17 |
 | White Q4 ctx mismatch (11-14) | ~72h | 🔴 SLA-BREACH ×1.5 — already ESCALATED 11-16 with recommendation; Mechanic/Builder confirm-or-reject needed NOW |
 
+### PASS-STATUS CHECK (2026-11-17 pass, Researcher seat)
+| Entry | Resolved? | Notes |
+|---|---|---|
+| Black .99 unreachable | NO — still OPEN | No Mechanic disposition found in synthesis or ops/ today. Age now ~36h (crossing SLA boundary tonight). |
+| Red portal process | NO — still OPEN | Same as above; no check logged. |
+| Designer patch apply | NO — still OPEN | Patch file exists at memory/researcher/designer-234-patch-for-mechanic.py; Mechanic has not confirmed apply. |
+| Orphan round logs | NO — BREACH CONTINUES | No decision recorded by Archivist/Scribe as of this pass. Escalation stands. |
+| White Q4 ctx mismatch | NO — BREACH ×1.5 CONTINUES | No confirm/reject from Mechanic/Builder. Recommendation (accept 131072, update doc) still pending. |
+
+**Summary: 0 of 5 resolved. 2 in active breach (worsening), 3 approaching or at SLA boundary. Zero-breaches target will NOT be met at mid-cycle (~11-20) unless dispositions land within ~48h.**
+
 ## OPEN
 - 2026-11-16 ~15:4x | **Black IP_BLACK :8888 UNREACHABLE from White today** (alias probes builder-q4/verifier-q4 timed out 15s; model-load status = unreachable) - new since 11-15 '3/3 up'. | OWNER: Mechanic (check Black Studio process; H-OUT line if down). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]
 - 2026-11-16 ~15:4x | **Is Red's portal process running?** (C3 follow-up - :8099 filtered while :8888 + SMB open) | OWNER: Mechanic (one check; scoped fix or document-and-move-on). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]

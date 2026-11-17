@@ -33,5 +33,12 @@ For a clean week of data the instrumented mirror must actually EXECUTE on the li
 ## Next step (after 2026-11-24)
 Parse `mirror_events.log` -> frequency table: counts by (kind, path) + top-reverting files + trigger distribution; cross-cut pull_mem vs pin_drift vs push. Then write the analysis leaf with 2-3 targeted fixes beyond the auto-repair daemon (candidates already in sync-semantics-options/spec). Acceptance = one-week dataset + that leaf.
 
+## Observational data points (pre-instrumentation)
+| Date | Event | Source | Notes |
+|---|---|---|---|
+| 2026-11-17 | index.html reverted from `043ff4d68827` to `2a3ffa6ac79c` (last committed pin) | Scribe pin-consistency-check (memory/synthesis/2026-11-17-pin-consistency-check.md) | Confirms revert mechanism IS active on live system; trigger = mirror cycle restoring git-tracked allowlist sha. Backup file `index_html_CANONICAL_043ff4d68827_2026-11-17b.html` exists, confirming the edit was made and then reverted. |
+
+This confirms the root cause hypothesis: **pin/allowlist reverts are the dominant revert class** (not LWW push conflicts). The instrumentation log will quantify frequency once the live mirror runs.
+
 ## Confidence
-HIGH on instrumentation correctness (compiled + 2 functional smoke tests this turn). MEDIUM on data-collection cadence until Mechanic confirms the live schedule — flagged, not re-probed.
+HIGH on instrumentation correctness (compiled + 2 functional smoke tests this turn). MEDIUM on data-collection cadence until Mechanic confirms the live schedule — flagged, not re-probed. HIGH on mechanism-activity: one confirmed revert event observed from independent vantage (Scribe) today.
