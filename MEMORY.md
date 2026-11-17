@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic at 6/10; remaining 4 goals (load test,
-- Goal #3
 - Scribe goal #10: compression fidelity audit 1/2 done (93.8% retention, PASS); second audit due ~Nov 25 to close.
 - Archivist Goal #1
 - Mechanic goal #10 (mirror sync epoch) closed: 16/16 tests pass incl. clock-skew + 10-cycle no-loss; goal #1 blocked on sandbox egress (NEEDS
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #10 fix (3-signal agent detection in round_record_draft.py) deployed; second audit ~Nov 25 to confirm ≥90% score.
 - Mirror keeps reverting `--week-complete` in load_trend.py (3rd re-add
 - CDP screenshot capture times out in sandbox — repeated blocker, do not re-probe; goal2 fleet states re-applied 3rd time (mirror-revert).
+- Correction: goal #7 claimed prefers-reduced-motion done, but it was absent from app.css — Designer added it this pass.
+- Scribe goal #9 done: cycle-3 narrative filled (41/80 verified); flagged cycle-3/cycle-4 naming mismatch between scribe.md and orchestrator.m
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
