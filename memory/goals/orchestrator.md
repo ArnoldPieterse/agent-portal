@@ -6,7 +6,7 @@ Focus: every goal produces a visible feature in the portal UI, backed by a new o
 ## Pillar: DASHBOARD-LINKED FEATURES
 Each goal = backend data layer (endpoint) + frontend panel (ui/) + evidence of it rendering.
 
-1. **Agent Fleet Overview Panel** — `/api/fleet/overview` consolidates per-agent model status, goal progress (open/closed count), and capacity metrics into one JSON payload. UI: card grid in fleet tab showing each agent's health at a glance. Verified: endpoint returns valid JSON for all 8 agents; panel renders without JS errors.
+1. **Agent Fleet Overview Panel** — `/api/fleet/overview` consolidates per-agent model status, goal progress (open/closed count), and capacity metrics into one JSON payload. UI: card grid in fleet tab showing each agent's health at a glance. Verified: endpoint returns valid JSON for all 8 agents; panel renders without JS errors. (verified: 2026-11-17 - Fixed /api/fleet/overview shape mismatch (flat->nested) in agent_portal.py; verified 8-agent JSON matches core.js field access; evidence: memory/orchestrator/fleet-overview-shape-fix-2026-11-17.md)
 
 2. **Goal Cycle Timeline** — `/api/goals/timeline` returns structured timeline: per-cycle milestones (goals set, closed dates, slip events, evidence rate). UI: horizontal timeline strip above the goals panel with clickable cycle nodes. Verified: endpoint returns cycles 1-3+; timeline renders and clicking a node shows that cycle's stats.
 
