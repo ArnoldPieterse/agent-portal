@@ -34,3 +34,4 @@ Last updated: 2026-11-17 (Builder auto-loop: added portal-startup + css-tokens e
 
 - canary-goal1-first-real-deploy-2026-11-17.md � goal #1 first real canary deploy (BUILD_VERSION, all hosts green)
 - scribe-g4-memhealth-dom-node-2026-11-18.md — 2026-11-18 Builder cross-assist: added #memHealthBody to index.html (Scribe goal #4)
+- durable-check-scribe-goal6-2026-11-18.md — 2026-11-18 Builder cross-assist: durable_check.py built + CI-wired (Scribe goal #6)

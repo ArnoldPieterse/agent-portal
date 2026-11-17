@@ -11,6 +11,7 @@ SUITES = [
     ("playbook-tests", "builder/playbook_tests.py"),
     ("goals-edge-cases", "memory/builder/test_goals_edge_cases.py"),
     ("modularity-lint", "memory/builder/modularity_check.py"),
+    ("durable-check", "memory/builder/durable_check.py"),
 ]
 
 # --- Performance budget config ---
