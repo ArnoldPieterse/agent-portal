@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- fill_analysis.py validated on sparse 48h edge case (13 events/2 days); runbook row 5 + goal #3 updated
-- Goal7 fleet_health: disk field blocked by WinError 5 (sandbox); needs live curl from White post-restart to close.
-- Goal #4 (load test) blocked by Red→White:8099 egress; earliest closure 2026-11-22 if White schtask starts collecting.
 - Incremental mode + __pycache__ exclusion implemented & verified
 - Goal #4: offline snapshot verified, 2 gaps fixed (INDEX.md +20 leaves, contradiction JSON +results field); remaining closure = live portal r
 - Scribe goal #2 claim contradicted: evidence JSON asserts 5 new v2 types but detector file only has original cycle-2 types (line_count, file_
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #6 complete: added --baseline flag to script, acceptance test passed (inject orphan leaf → exit 1 → names exact file).
 - Closed reason
 - Scribe's goal file is `memory/goals/scribe.md` (not `squire.md`) — typo caused repeated not-found loop
+- Goal #10 mirror sync epoch: Phase 0+1 done (ownership map, manifest, 12 tests pass); NOT verified—still needs clock-skew sim + 10 test cycle
+- Goal 1 (design token audit) COMPLETE: 31 tokens added to :root in ui/app.css, zero hex colors outside :root confirmed via grep.
+- Goal #3 done: gen_api_ref.py --diff mode + mirror hook implemented; incremental bug fixed (full graph 463 edges, delta reported correctly).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
