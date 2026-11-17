@@ -1,0 +1,1092 @@
+{
+  "_comment": "Known modularity violations as of 2026-11-17. Linter fails only on NEW violations not in this list.",
+  "generated": "2026-11-17",
+  "total_files_scanned": 788,
+  "violations": [
+    {
+      "file": "memory/ONBOARDING.md",
+      "size": 7526,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/archivist/INDEX.md",
+      "size": 3314,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/archivist/REPAIR_2026-11-13.md",
+      "size": 4662,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/archivist/TODO.md",
+      "size": 17158,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/archivist/decay-report.md",
+      "size": 52175,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/archivist/history-r7-r36.md",
+      "size": 19798,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+      "size": 7861,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/builder/INDEX.md",
+      "size": 3645,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/builder/TODO.md",
+      "size": 12773,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/INDEX.md",
+      "size": 3654,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/designer/TODO.md",
+      "size": 16114,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/a4-dual-base-verify-r27.md",
+      "size": 4788,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/a4a5-repro-audit-r39b-2026-11-14.md",
+      "size": 5245,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/a5-send-contrast-hunk-r28.md",
+      "size": 4970,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/a6b-recon-r46-2026-11-14.md",
+      "size": 5401,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/conflict-resolution-merged-canonical-2026-11-15.md",
+      "size": 4372,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/design-sheet-rerun-45323d09-2026-11-14.md",
+      "size": 4747,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/designer-goal-proposals-2026-11-17.md",
+      "size": 4819,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/files-panel-hunks-r5.md",
+      "size": 4828,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/files-panel-patch.md",
+      "size": 6579,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/fix-hunks-r51-2026-11-14.md",
+      "size": 9685,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/index-audit-critique-2026-11-15.md",
+      "size": 7705,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/panel-discipline-r20.md",
+      "size": 5917,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/planning-meeting-2026-11-14.md",
+      "size": 5992,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/post-restart-verify-r19.md",
+      "size": 5249,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/designer/stamp-final-r52-2026-11-14.md",
+      "size": 4097,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals.md",
+      "size": 7106,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/2026-11-13-agent-goals.md",
+      "size": 12064,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/INDEX.md",
+      "size": 2181,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/goals/all-goals-2026-11-13.md",
+      "size": 12336,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+      "size": 12064,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/archivist-2026-11-13.md",
+      "size": 4716,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/archivist-2026-11-16.md",
+      "size": 5174,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+      "size": 12064,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+      "size": 12336,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
+      "size": 5174,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/builder.md",
+      "size": 4241,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/cycle2-kickoff-2026-11-16.md",
+      "size": 4394,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/designer.md",
+      "size": 5360,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/mechanic.md",
+      "size": 5766,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/orchestrator.md",
+      "size": 6083,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/researcher-log-2026-11-13.md",
+      "size": 6979,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/researcher.md",
+      "size": 10486,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/scribe.md",
+      "size": 4465,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/designer-2026-11-13.md",
+      "size": 4275,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/designer-2026-11-16.md",
+      "size": 5360,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/orchestrator-2026-11-13.md",
+      "size": 26534,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-13.md",
+      "size": 6979,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/archive/researcher-log-2026-11-13.md",
+      "size": 6979,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/builder.md",
+      "size": 4463,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/cycle2-kickoff-2026-11-16.md",
+      "size": 4394,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/orchestrator.md",
+      "size": 5282,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/researcher-log-2026-11-13.md",
+      "size": 6979,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/researcher.md",
+      "size": 5418,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/goals/verifier.md",
+      "size": 4628,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/handoffs/PROTOCOL.md",
+      "size": 4165,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/llm/INDEX.md",
+      "size": 1778,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/llm/backend-swap-procedure.md",
+      "size": 4187,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/llm/hosts.md",
+      "size": 16455,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/llm/instances.md",
+      "size": 4658,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/llm/overnight-unload.md",
+      "size": 9256,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/mechanic/bundle-review-r16-2026-11-13.md",
+      "size": 4341,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/mechanic/goal9-ops-gap-analysis-2026-11-17.md",
+      "size": 5299,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/mechanic/goal9-ops-runbook-gap-analysis-2026-11-17.md",
+      "size": 5981,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/mechanic/mirror-mtime-guard-2026-11-13.md",
+      "size": 4669,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "size": 5425,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/ops/INDEX.md",
+      "size": 4482,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/ops/blockers.md",
+      "size": 6609,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/ops/goal-progress-2026-11-16.md",
+      "size": 4656,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+      "size": 8242,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+      "size": 9489,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/ops/runbook-notes.md",
+      "size": 8195,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/ops/schtask-deps.md",
+      "size": 4650,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/ops/windows-runbook.md",
+      "size": 7687,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/orchestrator/white-apply-bundle-v2-r45.md",
+      "size": 4529,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/INDEX.md",
+      "size": 3602,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/portal/architecture.md",
+      "size": 24525,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/bugs/INDEX.md",
+      "size": 3452,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/portal/bugs/file-links-sandbox.md",
+      "size": 7118,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
+      "size": 4554,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/bugs/xtalk-completion.md",
+      "size": 11322,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/design-tokens-live.md",
+      "size": 6516,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/fleet-status.md",
+      "size": 4827,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/increment2.md",
+      "size": 8744,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/merge-pack.md",
+      "size": 4692,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/planning-2026-11-13.md",
+      "size": 8234,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/split-design-agent-portal-2026-11-16.md",
+      "size": 5889,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/testing.md",
+      "size": 4844,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/ui-tokens.md",
+      "size": 5496,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/ui-upgrades-r4.md",
+      "size": 6175,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/upgrade-plan.md",
+      "size": 15485,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "size": 14470,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/portal/v1-upgrades-round-5.md",
+      "size": 9904,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/projects/dcabots.md",
+      "size": 4268,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/INDEX.md",
+      "size": 20768,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/researcher/TODO.md",
+      "size": 4105,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/citation-audit-2026-11-15.md",
+      "size": 7455,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/citation-manifest-2026-11-15.md",
+      "size": 4738,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/cross-agent-comm-patterns-2026-11-17.md",
+      "size": 4721,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
+      "size": 5267,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
+      "size": 4523,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/farm-relpath-diagnosis-2026-11-14.md",
+      "size": 4580,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/goals-landing-arbitration-2026-11-15.md",
+      "size": 4438,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md",
+      "size": 4711,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-instrumentation-2026-11-17.md",
+      "size": 4550,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/open-questions-log.md",
+      "size": 25795,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/r20-lane-status-2026-11-14.md",
+      "size": 5305,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/r27-probe-n-semantics-2026-11-14.md",
+      "size": 4672,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/sync-clobber-analysis-2026-11-13.md",
+      "size": 15972,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/sync-semantics-spec-2026-11-17.md",
+      "size": 15359,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "size": 6517,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/researcher/tooling-landscape-scan-2026-11-17.md",
+      "size": 4572,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/scribe/INDEX.md",
+      "size": 2065,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/scribe/TODO.md",
+      "size": 16213,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/scribe/ops-r6-synthesis-2026-11-13.md",
+      "size": 4281,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "size": 5523,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+      "size": 4961,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "size": 5530,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-12-consolidated-state.md",
+      "size": 5477,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-13-planning-meeting.md",
+      "size": 7990,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+      "size": 4663,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+      "size": 9808,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md",
+      "size": 4285,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+      "size": 4882,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
+      "size": 4773,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+      "size": 5202,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r27-round-record.md",
+      "size": 5082,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+      "size": 4386,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+      "size": 4639,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "size": 5732,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r56-round-record.md",
+      "size": 5371,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "size": 5125,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-scribe-goal-proposals.md",
+      "size": 4964,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-portal-status-report.md",
+      "size": 4395,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-r1-round-record-DRAFT.md",
+      "size": 9858,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-r1-round-record.md",
+      "size": 9912,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-status-thread-contradictions.md",
+      "size": 4341,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/2026-cycle2-retrospective.md",
+      "size": 5124,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/INDEX.md",
+      "size": 3033,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+      "size": 4677,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+      "size": 5145,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/index-regen-r73-archivist-2026-11-14.md",
+      "size": 4392,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+      "size": 5760,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/verifier/INDEX.md",
+      "size": 4930,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    },
+    {
+      "file": "memory/verifier/a4a5-candidate-persisted-r40-2026-11-14.md",
+      "size": 4342,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/verifier/a4a5-verify-r38-2026-11-14.md",
+      "size": 5233,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r21-sweep-2026-11-14.md",
+      "size": 4784,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r23-sweep-2026-11-14.md",
+      "size": 4694,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r26-correction-and-canary-relay-2026-11-14.md",
+      "size": 5335,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r73-final-reconciliation-2026-11-14.md",
+      "size": 5115,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/verifier/black-seat-sweep-r75-2026-11-14.md",
+      "size": 4266,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/verifier/css-tokenization-verify-2026-11-17.md",
+      "size": 4640,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/verifier/r34-sweep-closeout-2026-11-14.md",
+      "size": 5084,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/verifier/self-cert-audit-v2-2026-11-16.md",
+      "size": 4813,
+      "limit": 4096,
+      "type": "leaf",
+      "unit": "bytes"
+    },
+    {
+      "file": "memory/workspace/INDEX.md",
+      "size": 49481,
+      "limit": 1600,
+      "type": "INDEX",
+      "unit": "chars"
+    }
+  ]
+}

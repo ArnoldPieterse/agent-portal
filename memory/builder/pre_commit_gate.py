@@ -10,6 +10,7 @@ SUITES = [
     ("truncation-detect", "verifier/truncation_detect_test.py"),
     ("playbook-tests", "builder/playbook_tests.py"),
     ("goals-edge-cases", "memory/builder/test_goals_edge_cases.py"),
+    ("modularity-lint", "memory/builder/modularity_check.py"),
 ]
 
 # --- Performance budget config ---

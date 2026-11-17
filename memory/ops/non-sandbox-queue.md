@@ -16,6 +16,11 @@ batch-executes the whole list in ONE sitting, ticks each off, and records eviden
 4. Strike the line here (`- [x]`) rather than deleting it.
 
 ## OPEN (batch in one sitting)
+- [ ] **Verifier #2** — register daily SLO-enforcement task on White so the report auto-runs + posts to group chat.
+  - cmd: `schtasks /create /tn VerifierSLODaily /tr "python Z:\\memory\\verifier\\slo_enforce.py" /sc daily /st 06:30 /f`
+    (absolute path; runs after PortalLoadProbe at 06:00 so perf buffer has data).
+  - then confirm one row appended to memory/verifier/slo-history.jsonl with today's date; closure = two consecutive days of automated rows + ledger record verifier 2.
+  - evidence target: slo-history.jsonl (day 1+ rows from task) or goal #2 leaf.
 - [ ] **Mechanic #4** — register daily load-probe task on NON-SANDBOX White so data auto-accumulates (now 2/7 days).
   - cmd: `schtasks /create /tn PortalLoadProbe /tr "python Z:\memory\ops\load_probe.py" /sc daily /st 06:00 /f`
     (absolute script path so SYSTEM runs it from any CWD; do NOT use the `.bat` — its trailing `pause` hangs non-interactive runs).
