@@ -1,0 +1,28 @@
+{
+ "console_errors": [],
+ "page_exceptions": [],
+ "checks": {
+  "topo_nodes": "svg:40",
+  "page_state": "{\"panelOpen\":true,\"topoVisible\":true,\"hosts\":[\"Portal :8099\",\"Portal :8099\",\"Portal :8099\",\"White (local)\",\"4 agents \u00b7 1 gen\",\"IP_PALE\",\"2 agents \u00b7 0 gen\",\"IP_RED\",\"2 agents \u00b7 1 gen\"],\"landmarks\":{\"nav\":1,\"main\":1,\"aside\":1,\"header\":1},\"ariaLabeled\":10}",
+  "axe_loaded": "object",
+  "axe_violations": "{\"n\":1,\"v\":[\"nested-interactive x2\"]}",
+  "topo_shot_err": "KeyError('data')"
+ },
+ "focus_chain": [
+  "{\"tag\":\"BUTTON\",\"id\":\"addAgent\",\"fv\":true,\"outline\":\"1px rgb(16, 16, 16)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"BUTTON\",\"id\":\"mSolo\",\"fv\":true,\"outline\":\"2px rgb(127, 176, 255)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"BUTTON\",\"id\":\"mGroup\",\"fv\":true,\"outline\":\"2px rgb(127, 176, 255)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"BUTTON\",\"id\":\"goalsBtn\",\"fv\":true,\"outline\":\"2px rgb(127, 176, 255)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"BUTTON\",\"id\":\"actBtn\",\"fv\":true,\"outline\":\"2px rgb(127, 176, 255)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"BUTTON\",\"id\":\"fleetBtn\",\"fv\":true,\"outline\":\"2px rgb(127, 176, 255)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"BUTTON\",\"id\":\"filesBtn\",\"fv\":true,\"outline\":\"2px rgb(127, 176, 255)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"BUTTON\",\"id\":\"opsBtn\",\"fv\":true,\"outline\":\"2px rgb(127, 176, 255)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"BUTTON\",\"id\":\"resetBtn\",\"fv\":true,\"outline\":\"2px rgb(127, 176, 255)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"g\",\"id\":null,\"fv\":true,\"outline\":\"3px rgb(0, 0, 0)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"g\",\"id\":null,\"fv\":true,\"outline\":\"3px rgb(0, 0, 0)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"g\",\"id\":null,\"fv\":true,\"outline\":\"3px rgb(0, 0, 0)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"TEXTAREA\",\"id\":\"input\",\"fv\":true,\"outline\":\"3px rgb(0, 0, 0)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"BUTTON\",\"id\":\"attach\",\"fv\":true,\"outline\":\"1px rgb(16, 16, 16)\",\"shadow\":\"none\"}",
+  "{\"tag\":\"BUTTON\",\"id\":\"send\",\"fv\":true,\"outline\":\"1px rgb(16, 16, 16)\",\"shadow\":\"none\"}"
+ ]
+}

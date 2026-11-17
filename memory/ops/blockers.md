@@ -12,6 +12,13 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - [18:04] NEEDS-HUMAN: seat Builder model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
 - [18:04] NEEDS-HUMAN: seat Verifier model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
 
+## [NEEDS-HUMAN 2026-11-17] Goal #4 load-probe: Red sandbox cannot reach White:8099 (repeated across passes)
+**Class:** sandbox egress block (WinError 10013). Portal runs on White; this agent seat is a Red sandbox with no LAN path to White.
+**Blocks:** Mechanic goal #4 daily data accumulation (currently 2/7 days; regression demo + week-complete mode already built).
+**Exact command that cannot succeed from here:** `python memory/ops/load_probe.py --host 127.0.0.1 --port 8099` -> "OUTAGE (all levels down)" due to egress block.
+**Unblock (one-time, non-sandbox White seat):** run `python elev.py --shell "memory\ops\loadtest\register_daily_probe.bat"` on White to register the PortalLoadProbe schtask at 06:00 daily. After that, data auto-accumulates for 5 more days. Closure = `python memory/ops/load_trend.py --week-complete` + `python memory/researcher/goal_ledger.py --record mechanic 4`.
+**Do NOT re-probe from this seat.**
+
 ## [NEEDS-HUMAN 2026-11-17] Live-browser verification unavailable from this sandbox seat (Designer #5 + #7)
 **Class:** no browser binary + sandbox egress block (WinError 10013 / socket blocked). Repeated across passes; do NOT re-probe from here.
 **Blocks the *verification legs* of two open Designer goals (the CSS/build work is done):**

@@ -14,7 +14,7 @@ def log(m): print(time.strftime("%H:%M:%S ") + str(m), flush=True)
 
 async def main():
     os.makedirs(UDIR, exist_ok=True); os.makedirs(EV, exist_ok=True)
-    proc = subprocess.Popen([EDGE, "--headless", f"--remote-debugging-port={CDP_PORT}",
+    proc = subprocess.Popen([EDGE, "--headless=new", f"--remote-debugging-port={CDP_PORT}",
         "--user-data-dir=" + UDIR, "--no-first-run", "--disable-gpu",
         "--window-size=1280,900", "about:blank"],
         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
