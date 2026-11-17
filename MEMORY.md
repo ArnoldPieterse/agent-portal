@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3: 26 inline styles → 17 CSS classes in ui/app.css; pin advanced to 8a36cc841
 - Mirror silently reverted load_probe.py outage guard; must verify file state on disk before trusting prior edits.
 - Goal #3 remainder: 6 JS-generated inline styles in ui/core.js + ui/uploads.js; index.html is clean (0 inline), only index.html is pin-guarde
 - Designer at 7/10; remaining: dynamic inline styles in ui/core.js+ui/uploads.js, and breakpoint selftest screenshot needs
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Baseline JSONL uses "levels"/"p95_ms" but load_probe.py expects "results"/"p95" — fixed to prevent silent zero-history trend reads
 - Schema fix: baseline
 - Portal restart blocked: C:\Users perm denied in sandbox, elev.py not found — use synthetic data for goal #4 demos until resolved
+- Mechanic Goal #4: synthetic +40% p95 spike correctly flagged REGRESSION_DETECTED; acceptance criterion met (2026-11-17).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
