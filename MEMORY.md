@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #10 audit 1/2 done: 90% fidelity (27/30), target met; second audit due next week to close goal.
-- Goal #10: T1–T12 all PASS; old `_decide()` still wired — Phase 4 cutover blocked on live remotes.
-- gen_api_ref.py --diff uses in-memory
-- Researcher asked Mechanic to confirm quinn-q4 live ctx=131072; sign-off flips white-q4 RESOLVED and closes goal #8.
 - Scribe: Goal #9 closed; cycle-narrative.md updated with full Cycle 3 entry. Ledger now shows 10/10 reached, open=0.
 - Phase 4 cutover done: mtime _decide() replaced with epoch sync_file() in memory_mirror.py; 12/12 unit + 6/6 integration tests pass.
 - Goal #5 done (docs pre-existed); goal #8 in progress — unified loading/empty/error states added to CSS :root tokens + components.md
 - Goal #4 supersession audit closed: fixed bybase resolution bug;
 - Researcher goal #3 (mirror-revert) gated on live data window to 11-24; Mechanic's epoch integration (goal #
 - Designer Goal 1 FAIL: 36 hex colors remain in component rules (evidence claimed 0). Full list at memory/orchestrator/designer-goal1-token-ve
+- Scribe 10/10 closed; next actionable: goal #10 second compression-fidelity audit due ~11-25
+- Goal #2 closed: 3 cycle-2 handoffs logged in memory/handoffs/LOG.md (Tier column added); PROTOCOL
+- Orchestrator verified Goal #1 FAIL: 36 hex colors remain in component rules; full list at memory/orchestrator/designer-goal1-token-verify-
+- Mechanic built `memory/ops/cycle_check.py` (Goal #9): 4 checks, stdlib-only, <30s; sandbox-tested all-FAIL as expected.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
