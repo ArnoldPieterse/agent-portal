@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 (token audit) passed: all 36 hardcoded hex values replaced with var() refs in ui/app.css; zero remain outside :root.
-- Scribe 10/10 all closed; narrative doc corrected to
 - Goal #1 (token audit) CLOSED — verified 0 hex values outside :root; orchestrator's FAIL was stale, do not re-probe.
 - Mechanic 4/10
 - Designer goal #1 (CSS token audit) verified PASS — 0 hex values outside :root; Orchestrator's earlier FAIL was stale.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #3: epoch module + sync_file/resolve_owner exist only on Red; canonical/live mirror still runs old mtime-LWW _decide() — Fix #1 not yet
 - Goal #3 (CSS bundle perf budget) CLOSED: 72.7 KB minified, under 80 KB target; comments removal gave 7.4 KB savings.
 - Goal #3: epoch cutover fix BUILT on Red sandbox but NOT promoted to canonical mirror (mtime-LWW still live); see mirror-revert-fix1-promotio
+- Scribe updated cycle-narrative.md Cycle-3 entry (2026-11-18) with 56/80 (70%) snapshot; flagged earlier 33/80 hot-note figure as stale.
+- Goal #2 increment: added loading/error/empty state UI with tokens + retry to fleetUpdate() in ui/core.js and supporting CSS.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
