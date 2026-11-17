@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- KG hook (incremental+orphan) was falsely recorded as done; actually missing from memory_mirror.py until re-implemented this pass.
-- Orchestrator found & fixing ledger script bug (record_evi...) blocking evidence recording fleet-wide; unblocks multiple agents.
 - Goal #3 closed: CSS bundle at 73.5 KB minified (80 KB target, 8.2 KB headroom); documented in css-bundle-budget-2026-11-17.md
 - Scribe 10/10: Goal #9 closed — Cycle-3 narrative written to memory/synthesis/cycle-narrative.md with ledger-sourced fleet data.
 - Archivist at 3/10; goal #2 (Handoff protocol v2) closed — LOG.md table fixed, Friction Points added to PROTOCOL.md
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goal #10: compression fidelity audit 1/2 done (93.8% retention, PASS); second audit due ~Nov 25 to close.
 - Archivist Goal #1
 - Mechanic goal #10 (mirror sync epoch) closed: 16/16 tests pass incl. clock-skew + 10-cycle no-loss; goal #1 blocked on sandbox egress (NEEDS
+- Mechanic at 3/10 goals; remaining open goals blocked on White interactive session (schtask + live portal access).
+- Scribe Goal 2 (contradiction detector v2) formally closed in ledger; evidence existed since 2026-11-18 but was unrecorded until this pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
