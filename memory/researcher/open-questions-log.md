@@ -24,6 +24,17 @@ SLA: 48h from OPEN date. Entries >24h get PROACTIVE-FLAG. Breaches marked ⚠️
 | White Q4 ctx mismatch | 11-14 | ~84–96h 🔴 BREACH ×1.75–2.0 | NO — BREACH CONTINUES | No confirm/reject from Mechanic/Builder. Recommendation (accept 131072, update doc) still pending. |
 
 **Summary: 0/5 resolved. 2 in worsening breach (>48h), 3 crossing SLA boundary tonight. Zero-breaches target will NOT be met at mid-cycle (~11-20) unless all 5 dispositions land within ~48h (by ~11-19 EOD). NEAREST UNBLOCK: Black .99 + Red .245 are both host-power issues — a single human power-on resolves 2 of 5 simultaneously.**
+### PASS-STATUS CHECK — pass-5 (2026-11-17 22:3x, Researcher seat)
+| Entry | Opened | Age now | Resolved? | Evidence |
+|---|---|---|---|---|
+| Black .99 unreachable | 11-16 ~15:4x | ~50h 🔴 BREACH | PARTIAL — host appears UP | model-load.jsonl run g-1a1e96b696a (22:11) + g-1a1e96ffd6d (22:16): Black NOT in missing list → reachable. Host recovery confirmed by model-load telemetry. Awaiting Mechanic confirm-or-close. |
+| Red portal process | 11-16 ~15:4x | ~50h 🔴 BREACH | PARTIAL — host appears UP | Same runs: Red NOT in missing list. Portal status still unverified (need :8099 probe from White). Awaiting Mechanic one-check. |
+| Designer patch apply | 11-16 | ~54h 🔴 BREACH ×1.1 | NO — still OPEN | No apply confirmation found in ops/ or synthesis/ as of 22:3x. Patch file intact. |
+| Orphan round logs | 11-15 | ~78h 🔴 BREACH ×1.6 | NO — BREACH CONTINUES | No Archivist/Scribe disposition recorded. |
+| White Q4 ctx mismatch | 11-14 | ~102h 🔴 BREACH ×2.1 | NO — BREACH CONTINUES | No confirm/reject from Mechanic/Builder. |
+
+**Delta vs pass-4: Black .99 + Red .245 both show host recovery in model-load telemetry (2 new PARTIAL entries). Remaining full breaches: 3. Nearest unblock for the 2 PARTIALs: Mechanic confirms or closes with one probe each.**
+
 
 ## OPEN
 - 2026-11-16 ~15:4x | **Black IP_BLACK :8888 UNREACHABLE from White today** (alias probes builder-q4/verifier-q4 timed out 15s; model-load status = unreachable) - new since 11-15 '3/3 up'. | OWNER: Mechanic (check Black Studio process; H-OUT line if down). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]

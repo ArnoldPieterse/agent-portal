@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- LLM Router: union of agent baseline caps + task caps too strict for specialized models (e.g. SDXL); relaxed to per-task override.
 - Scribe uses activation/ttl_minutes from hotload-catalog.json as round-planning signal; hot
 - Three agents shipped competing LLM selector implementations; consolidation (not a 4th) is the next required step.
 - Researcher's llm_selector.py (root, 27KB) has 2 verified defects (B1/B2) from Verifier; Researcher owns the fix.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe 9/10 closed; only Goal #9 (cross-cycle narrative thread) remains — cycle-3 entry pending at cycle end.
 - Goals #3 & #9 CLOSED. fleet_probe_v2.py rebuilt after mirror loss. Remaining: production deployment of predictive alerts.
 - Goal #2: test_slo_enforce.py built (8/8 pass), de-risks prod run; still blocked on sch
+- Goal #2: breakpoint gate extended to [375,768,1024,1920]; only screenshot leg remains (NEEDS-HUMAN, browser unavailable in sandbox).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
