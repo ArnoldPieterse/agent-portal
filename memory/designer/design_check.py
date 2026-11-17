@@ -21,7 +21,7 @@ else:
     info.append(f"focus-visible rules: {ring_count}")
 
 # 2. Motion budget: non-exempt transitions <=200ms
-transitions = re.findall(r'(?:transition|animation)[^;]*?([\d.]+)s', css)
+transitions = re.findall(r'(?:transition|animation)[^;]*?(\d+(?:\.\d+)?|\.\d+)s', css)
 exempted = []
 for t in transitions:
     if float(t) > 0.2:

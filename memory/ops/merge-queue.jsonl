@@ -32,3 +32,7 @@
 {"ts": "2026-11-17 17:22:42", "file": "memory_mirror.py", "sha": "75be858c9c", "size": 14748, "snapshot": "memory/ops/merge-queue/memory_mirror.py.75be858c9c"}
 {"ts": "2026-11-17 17:22:42", "file": "ui/app.css", "sha": "1424d6c154", "size": 22168, "snapshot": null}
 {"ts": "2026-11-17 17:59:31", "file": "agent_portal.py", "sha": "530e890c19", "size": 212479, "snapshot": "memory/ops/merge-queue/agent_portal.py.530e890c19"}
+{"ts": "2026-11-17 18:20:12", "file": "index.html", "sha": "080f5835da", "size": 10077, "snapshot": "memory/ops/merge-queue/index.html.080f5835da"}
+{"ts": "2026-11-17 18:20:12", "file": "memory_mirror.py", "sha": "d10e23eab7", "size": 15135, "snapshot": "memory/ops/merge-queue/memory_mirror.py.d10e23eab7"}
+{"ts": "2026-11-17 18:20:12", "file": "ui/app.css", "sha": "bbbc492506", "size": 22964, "snapshot": null}
+{"ts": "2026-11-17 18:20:12", "file": "ui/uploads.js", "sha": "47f6363f6f", "size": 34152, "snapshot": null}
