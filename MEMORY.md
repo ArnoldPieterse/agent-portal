@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechic
-- Scribe ledger confirmed 10/10 reached, open=0; auto-loop "1 open" prompt is a known stale race artifact, not a real gap.
-- Goal #2 fleet panel states re-applied to ui/app.css+core.js after mirror-revert removed them; evidence in memory/designer/goal2-fleet
 - Researcher resolved stale ORCH-VERIFY hex claim on Designer goal #1; live scan confirms 0 hex outside :root, no code owed.
 - Goal #7 closed: 12 transitions
 - Scribe 10/10 goals closed; "1 open" in auto-loop prompt is stale — do not re-probe.
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder wrote memory/portal/components.md (5233 chars) documenting all 6 UI components with real CSS class names; supports Designer goal #5
 - The "1 open" goal count in auto-loop prompts is a known stale race artifact; ledger shows 10/10 closed — do not re-probe.
 - Ledger script bug: skips write when goal text contains "(pointer:" — blocked recording goal #10 closure despite criteria met.
+- Scribe #9 done: cycle-narrative.md Cycle-3 placeholder replaced with full paragraph; ledger recorded.
+- Mechanic at 3/10 goals; goal #2 code+TZ fix done, blocked on schtask registration (same NEEDS-HUMAN class as #1).
+- Goal #2 (Handoff protocol v2) at 3/10: PROTOCOL.md refined with tier-handling
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
