@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe goal #2 (contradiction detector v2) closed — evidence existed since 11-18, just needed ledger verified tag.
-- Goal #8 closed (ledger stamped); goal #6 has static WCAG AA contrast audit done, still gated on real screenshots.
 - Builder: 4 state-pattern CSS classes done in ui/app.css + components.md §7; goal
 - Cycle 3 narrative written to memory/synthesis/cycle-narrative.md; fleet at 61/80 goals complete, ledger recorded via goal_ledger.py --record
 - Fleet panel states done: .state-loading/.state-error/.state-empty in
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goals 9/10 reached; only #10 (UI regression baseline) open
 - Goal #6: schtask_dep_gen.py built+validated (XML mode, JSON diff); closure needs 2 live
 - Added `--acc-deep:#2563eb` token; `.btn.pri` and `#send` now use it (
+- Scribe reached 10/10 goals closed (0 open); auto-loop "1 open" dispatch is stale — no remaining work on Scribe's lane.
+- RECALL: - **M1** (`memory/goals/researcher.md:15`): Mirror-revert root-cause deep-dive — instrument the mirror sync process to log every fil
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
