@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 done: runbook audit extended to all 11 runbooks (34 steps, 96% accounted). Artifact: memory/mechanic/runbook-gap-analysis-2026-11-17
-- Goal #7 fleet_health_snapshot patched (disk/memory/model_status); pending: live curl test post-White restart + Designer panel consumption.
 - Portal :8099 unreachable from Red (
 - Goal #1 done: /api/decisions in agent_portal.py now supports ?agent, ?since, ?q query params; verified locally, evidence in ledger.
 - Built memory/ops/restart_portal.py (5KB) — reads PID, kills, re-runs PortalRun task, verifies via port check; dry
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 (Decision trace API v2) closed: query-param filters (agent/since/status/q) added to agent_portal.py, verified at 26ms avg.
 - Goal 7: _fleet_health_snapshot() patched (disk/memory/model_load, stdlib only). Remaining: White restart + Designer panel.
 - Scribe upgraded durable_check.py with --baseline flag to fail only on new un-indexed leaves (goal #6
+- fill_analysis.py validated on sparse 48h edge case (13 events/2 days); runbook row 5 + goal #3 updated
+- Goal7 fleet_health: disk field blocked by WinError 5 (sandbox); needs live curl from White post-restart to close.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

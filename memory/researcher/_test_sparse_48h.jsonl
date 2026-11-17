@@ -1,0 +1,13 @@
+{"t": "2026-11-22 14:05:12", "kind": "push_root", "dir": "workspace", "path": "TODO.md"}
+{"t": "2026-11-22 14:05:13", "kind": "push_mem", "dir": "memory", "path": "memory/INDEX.md"}
+{"t": "2026-11-22 15:00:01", "kind": "pull_mem", "dir": "memory", "path": "memory/goals/researcher.md"}
+{"t": "2026-11-22 15:32:44", "kind": "revert", "dir": "workspace", "path": "index.html", "trigger": "pin_drift"}
+{"t": "2026-11-22 16:00:02", "kind": "push_root", "dir": "workspace", "path": "TODO.md"}
+{"t": "2026-11-22 17:45:30", "kind": "pull_mem", "dir": "memory", "path": "memory/MEMORY.md"}
+{"t": "2026-11-23 08:01:15", "kind": "push_root", "dir": "workspace", "path": "TODO.md"}
+{"t": "2026-11-23 09:12:44", "kind": "revert", "dir": "workspace", "path": "index.html", "trigger": "pin_drift"}
+{"t": "2026-11-23 10:00:03", "kind": "push_mem", "dir": "memory", "path": "memory/ops/blockers.md"}
+{"t": "2026-11-23 11:22:18", "kind": "pull_mem", "dir": "memory", "path": "memory/goals/mechanic.md"}
+{"t": "2026-11-23 13:45:09", "kind": "revert", "dir": "workspace", "path": "ui/core.js", "trigger": "hash_mismatch"}
+{"t": "2026-11-23 14:00:01", "kind": "push_root", "dir": "workspace", "path": "TODO.md"}
+{"t": "2026-11-23 15:30:22", "kind": "revert", "dir": "workspace", "path": "index.html", "trigger": "pin_drift"}
