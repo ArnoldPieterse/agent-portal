@@ -38,5 +38,13 @@
     "detail": "Fleet-wide evidence re-scan: 71/147=48% (baseline 47%). Per-agent breakdown in report. Delta +1pp. Target >=90% by cycle end.",
     "prev_hash": "c421e4e9959db0c641e4e3c7a3ce6a99c83065e4f81589c4dea1318e16a6feb5",
     "hash": "ea437b38b84a9da8a547f095bdc64809f9e7a2ac3c5547d1726df8e78c8ff9a7"
+  },
+  {
+    "seq": 5,
+    "timestamp": "2026-11-17T10:16:56Z",
+    "event": "STALE_CLAIM_CLOSED_THEME_CSS",
+    "detail": "dark-mode CSS override ABSENT in live ui/app.css sha1=13f934c983b6: 0 [data-theme=dark], 0 prefers-color-scheme media, 25 props in 1 :root; core.js JS present (initTheme/themeToggle). Refutes ui-slices-verify dark-mode PASS. Leaf: theme-css-block-absent-2026-11-17.md",
+    "prev_hash": "ea437b38b84a9da8a547f095bdc64809f9e7a2ac3c5547d1726df8e78c8ff9a7",
+    "hash": "31242e5f11656d5da9fdad52c13e9df8e99b5735267720ef60128310c5803b19"
   }
 ]

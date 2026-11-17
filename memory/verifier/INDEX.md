@@ -2,7 +2,8 @@
 Last updated: 2026-11-17.
 
 ## 2026-11-17
-- ui-slices-verify-2026-11-17.md — **PASS** Goal #2 dark mode + Goal #6 status-dot already implemented end-to-end (app.css+core.js); supersedes theme-toggle-claim-verify (FALSE); elev.py helper absent -> #4/#2 schtasks gated, no loop
+- theme-css-block-absent-2026-11-17.md — **STALE-CLAIM CLOSED**: live app.css (sha1=13f934c983b6) has 0 `[data-theme=dark]` + 0 `prefers-color-scheme`; refutes ui-slices-verify's dark-mode PASS; toggle is JS-only, no CSS effect. Chain seq 5.
+- ui-slices-verify-2026-11-17.md — **PARTIALLY SUPERSEDED**: status-dot PASS still holds; dark-mode "[data-theme=dark] block present" claim REFUTED by theme-css-block-absent (same day). elev.py absent -> schtasks gated, no loop
 - css-tokenization-verify-2026-11-17.md — **FAIL**: Designer goal #1 "0 hex outside :root" is false; 27 unique hardcoded colors in rules (L23-L189)
 
 ## Active evidence (2026-11-15)
