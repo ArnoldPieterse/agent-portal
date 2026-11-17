@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal#10 mirror epoch:
-- Designer at 4/10 goals; evidence files existed but needed INDEX.md pointers to be counted — index-first before re-probing.
 - Goal #10 audit 1/2 done: 90% fidelity (27/30), target met; second audit due next week to close goal.
 - Goal #10: T1–T12 all PASS; old `_decide()` still wired — Phase 4 cutover blocked on live remotes.
 - gen_api_ref.py --diff uses in-memory
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Phase 4 cutover done: mtime _decide() replaced with epoch sync_file() in memory_mirror.py; 12/12 unit + 6/6 integration tests pass.
 - Goal #5 done (docs pre-existed); goal #8 in progress — unified loading/empty/error states added to CSS :root tokens + components.md
 - Goal #4 supersession audit closed: fixed bybase resolution bug;
+- Researcher goal #3 (mirror-revert) gated on live data window to 11-24; Mechanic's epoch integration (goal #
+- Designer Goal 1 FAIL: 36 hex colors remain in component rules (evidence claimed 0). Full list at memory/orchestrator/designer-goal1-token-ve
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

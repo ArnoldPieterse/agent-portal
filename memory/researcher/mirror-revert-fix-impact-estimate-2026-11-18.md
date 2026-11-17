@@ -19,6 +19,8 @@ Mechanism: each file carries a monotonically increasing epoch; the mirror reject
 
 Impact: eliminates ~3/4 of the observed rapid-repin churn on peak days; index.html would stop being top-1 in the revert frequency table. PRIMARY recommended fix.
 
+STATUS (2026-11-18): **IMPLEMENTED** — Mechanic landed `test_sync_epoch_integration.py` (I1–I6, dry-run 6/6 PASS); semantics match my goal #1 spec 1:1. See `mirror-revert-fix1-epoch-landed-2026-11-18.md`. Pending live validation from persistent White seat (same seed dependency as day-7).
+
 ## Fix #2 - pin-stability guard (rate limiter on re-pin)
 Mechanism: reject a canonical re-advance that lands < N min after the previous one for the same sha-bucket (N=5), forcing the writer to batch or explicitly mark "forced." Catches BOTH classes regardless of root cause.
 Predicted prevented: 12/12 rapid events (upper bound - it is a guard, not a fix; converts silent clobber-loops into loud, reviewable rejections). Confidence: HIGH for detection, MEDIUM that it does not block legitimate burst work (tune N per file).
