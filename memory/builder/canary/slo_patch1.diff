@@ -1,0 +1,42 @@
+--- a/agent_portal.py
++++ b/agent_portal.py
+@@ -843,4 +843,35 @@
+-    return {"ok": True, "window_s": 3600, "endpoints": out}
+-
+-
+-def _fleet_health_snapshot():
++    return {"ok": True, "window_s": 3600, "endpoints": out}
++
++
++def _slo_check():
++    """GET /api/slo-status (Builder goal #2): SLO breach check over 10-min window.
++    Thresholds: p95 > 2000ms or p99 > 5000ms per endpoint.
++    On breach, appends HOTLINE line to memory/ops/slo-alerts.jsonl."""
++    now = time.time()
++    cutoff = now - 600
++    per = {}
++    for ts, path, ms in _PERF:
++        if ts >= cutoff:
++            per.setdefault(path, []).append(ms)
++    alerts = []
++    for path, vals in sorted(per.items()):
++        p95 = _percentile(vals, 95)
++        p99 = _percentile(vals, 99)
++        if p95 > 2000 or p99 > 5000:
++            alerts.append({"path": path, "p95_ms": p95, "p99_ms": p99, "n": len(vals)})
++    if alerts:
++        try:
++            log_path = os.path.join(HERE, "memory", "ops", "slo-alerts.jsonl")
++            os.makedirs(os.path.dirname(log_path), exist_ok=True)
++            ts_str = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
++            with open(log_path, "a", encoding="utf-8") as f:
++                for a in alerts:
++                    f.write(f"H-SLO | portal | {a['path']} p95={a['p95_ms']}ms p99={a['p99_ms']}ms "
++                            f"(n={a['n']}, window=600s) exceeds budget | Builder | ack-by {ts_str}\\n")
++        except OSError:
++            pass
++    return {"ok": True, "breached": bool(alerts), "alerts": alerts, "window_s": 600,
++            "thresholds_ms": {"p95": 2000, "p99": 5000}}
++
++
++def _fleet_health_snapshot():

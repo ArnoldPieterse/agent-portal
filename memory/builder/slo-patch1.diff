@@ -1,0 +1,42 @@
+--- a/agent_portal.py
++++ b/agent_portal.py
+@@ -843,4 +843,35 @@
+     return {"ok": True, "window_s": 3600, "endpoints": out}
+ 
+ 
++def _slo_check():
++    """GET /api/slo-status (Builder goal #2): SLO alert check over 10-min window.
++    Thresholds: p95 > 2000ms or p99 > 5000ms per endpoint.
++    On breach: writes HOTLINE line to memory/ops/slo-alerts.jsonl + sets flag."""
++    import json as _json, os as _os
++    now = time.time()
++    cutoff = now - 600
++    per = {}
++    for ts, path, ms in _PERF:
++        if ts >= cutoff:
++            per.setdefault(path, []).append(ms)
++    alerts = []
++    for path, vals in sorted(per.items()):
++        if len(vals) < 5:
++            continue
++        p95 = _percentile(vals, 95)
++        p99 = _percentile(vals, 99)
++        if p95 > 2000 or p99 > 5000:
++            alerts.append({"path": path, "p95_ms": p95, "p99_ms": p99, "n": len(vals)})
++    breached = bool(alerts)
++    if breached:
++        alert_file = _os.path.join(HERE, "memory", "ops", "slo-alerts.jsonl")
++        for a in alerts:
++            line = (f"H-SLO | portal | {a['path']} p95={a['p95_ms']}ms p99={a['p99_ms']}ms "
++                    f"(n={a['n']}, window=600s) exceeds budget (p95<2000ms, p99<5000ms) | Builder | "
++                    f"ack-by {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(now + 300))}")
++            try:
++                with open(alert_file, "a", encoding="utf-8") as f:
++                    f.write(line + "\n")
++            except OSError:
++                pass
++    return {"ok": True, "breached": breached, "alerts": alerts,
++            "window_s": 600, "thresholds_ms": {"p95": 2000, "p99": 5000}}
++
+ def _fleet_health_snapshot():
+     """GET /api/health/fleet (Mechanic cycle-2 goal 8): single call = full fleet picture.

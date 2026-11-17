@@ -1,0 +1,1 @@
+H-SLO | portal | /api/slow p95=5700.0ms p99=5700.0ms (n=60, window=600s) exceeds budget (p95<2000ms, p99<5000ms) | Builder | ack-by 2026-11-17T10:39:00Z
