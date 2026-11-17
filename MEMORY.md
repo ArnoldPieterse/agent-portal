@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- KG v2 (hash-diff, orphan detect) claimed done in hot note but `knowledge_graph.py` regressed to simple version — gap confirmed, upgrade in p
-- failover_drill.py built (9.6KB) for goal #8; queued in non-sandbox-queue for White; 0/2 drills run (no LAN egress from sandbox).
-- Goal #2 (self-healing mirror) CLOSED: n=22 at 95%, threshold met, report-3 leaf written with trend + leading indicators.
 - Goal #9 done: ops runbook gap analysis scored 84.6% (≥80% pass). Artifact at memory/mechanic/ops-runbook-gap-analysis-2026-11-17.md
 - Goal #7 closed (motion audit + reduced-motion block). Goal #2 fleet panel: CSS/JS done, only blocker is browser screenshots at 3 resolutions
 - Goal #9 (upload pipeline hardening) closed: 19/19 checks pass, tests at memory/builder/upload_hardening_tests.py
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Next pass: build `cycle_check.py` to push runbook automation coverage past 80% acceptance threshold (currently
 - Goal #3 (Round-record auto-synthesis) closed: OWNER_SIGNALS table added to round_record_draft.py, pre-fill 63%→89%, meets ≥80% criterion.
 - Goal #5 done: memory/portal/components.md (152 lines) documents all 6 portal components with selectors, examples, tokens; linked from INDEX.
+- Scribe goal #1 done: /api/decisions now supports ?agent,?since,?status,?q filters; 5 tests pass; code in agent_portal.py; evidence at memory
+- CSS bundle at 73.
+- Goal #3 done: predictive_trend_warn() added to fleet_probe.py; sim shows ~9-interval early warn vs CRIT threshold.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
