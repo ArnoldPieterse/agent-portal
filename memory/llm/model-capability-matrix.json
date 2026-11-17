@@ -1,0 +1,85 @@
+{
+  "_meta": {
+    "updated": "2026-11-17",
+    "owner": "Designer (UI) + Orchestrator (logic)",
+    "note": "SSOT for LLM router auto-select. Load times measured on White (2x RTX 5090). VRAM = weights + KV cache at stated ctx."
+  },
+  "models": [
+    {
+      "id": "Q4_K_S",
+      "display": "Qwen3.8-27B Q4_K_S",
+      "path": "C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+      "gguf_variant": "UD-Q4_K_S",
+      "vram_gb": 15.4,
+      "max_context": 131072,
+      "load_time_sec": 90,
+      "capabilities": ["text", "code", "long-ctx", "rag"],
+      "aliases": ["quinn-q4", "designer-q4", "mechanic-q4"],
+      "gpu_fit": [0, 1]
+    },
+    {
+      "id": "Q8_0",
+      "display": "Qwen3.8-27B Q8_0",
+      "path": "C:\\Users\\White\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "gguf_variant": "Q8_0",
+      "vram_gb": 30.1,
+      "max_context": 32768,
+      "load_time_sec": 240,
+      "capabilities": ["text", "code", "long-ctx", "rag"],
+      "aliases": ["atlas-q8", "scribe-q8", "archivist-q8"],
+      "gpu_fit": [1]
+    },
+    {
+      "id": "Qwen2.5-VL-72B",
+      "display": "Qwen2.5-VL-72B (multimodal)",
+      "path": null,
+      "gguf_variant": null,
+      "vram_gb": 45,
+      "max_context": 32768,
+      "load_time_sec": 600,
+      "capabilities": ["text", "code", "image-gen", "video", "3d-env", "long-ctx"],
+      "aliases": [],
+      "gpu_fit": [0, 1],
+      "note": "NOT YET DOWNLOADED - candidate for video/3D agent support"
+    },
+    {
+      "id": "SDXL",
+      "display": "Stable Diffusion XL (image)",
+      "path": null,
+      "gguf_variant": null,
+      "vram_gb": 6.9,
+      "max_context": null,
+      "load_time_sec": 15,
+      "capabilities": ["image-gen"],
+      "aliases": [],
+      "gpu_fit": [0, 1],
+      "note": "NOT YET DOWNLOADED - for image generation tasks"
+    },
+    {
+      "id": "CogVideoX-2B",
+      "display": "CogVideoX-2B (video gen)",
+      "path": null,
+      "gguf_variant": null,
+      "vram_gb": 5,
+      "max_context": null,
+      "load_time_sec": 30,
+      "capabilities": ["image-gen", "video"],
+      "aliases": [],
+      "gpu_fit": [0, 1],
+      "note": "NOT YET DOWNLOADED - lightweight video generation"
+    }
+  ],
+  "hosts": {
+    "White": { "gpus": 2, "vram_per_gpu_gb": 51, "studio_port": 8888 },
+    "Red": { "gpus": null, "vram_per_gpu_gb": null, "studio_port": 8888, "note": "recon pending" },
+    "Pale": { "gpus": null, "vram_per_gpu_gb": null, "studio_port": 8888, "note": "recon pending" },
+    "Black": { "gpus": null, "vram_per_gpu_gb": null, "studio_port": 8888, "note": "recon pending" }
+  },
+  "selection_weights": {
+    "capability_match": 0.6,
+    "residency_bonus": 0.2,
+    "context_fit": 0.1,
+    "cost_inverse": 0.1
+  },
+  "cascade_order": ["Q4_K_S", "Q8_0", "remote:Red", "remote:Pale"]
+}

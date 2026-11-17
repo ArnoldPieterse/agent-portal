@@ -1,0 +1,207 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "updated": "2026-11-17",
+    "description": "Model capability registry for auto-selector + hotload controller. Each entry describes a model's capabilities, resource needs, and which agent profiles it serves.",
+    "hosts": {
+      "white": {
+        "api": "http://127.0.0.1:8888",
+        "gpus": 2,
+        "vram_total_gb": 32
+      },
+      "pale": {
+        "api": "http://IP_PALE:8888",
+        "gpus": 1,
+        "vram_total_gb": 16
+      },
+      "black": {
+        "api": "http://IP_RED:8888",
+        "gpus": 1,
+        "vram_total_gb": 16
+      },
+      "red": {
+        "api": "http://IP_BLACK:8888",
+        "gpus": 1,
+        "vram_total_gb": 16
+      }
+    }
+  },
+  "models": [
+    {
+      "id": "qwen3-27b-q8",
+      "folder": "C:\\Users\\White\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "gguf_variant": "Q8_0",
+      "host": "white",
+      "gpu_ids": [
+        1
+      ],
+      "vram_gb": 30.1,
+      "max_context": 32768,
+      "modalities": [
+        "text",
+        "reasoning"
+      ],
+      "capabilities": [
+        "code",
+        "ops",
+        "planning",
+        "synthesis"
+      ],
+      "agent_profiles": [
+        "orchestrator",
+        "archivist",
+        "scribe"
+      ],
+      "load_time_s": 240,
+      "notes": "High quality; slower load. Primary for planning/synthesis agents."
+    },
+    {
+      "id": "qwen3-27b-q4",
+      "folder": "C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+      "gguf_variant": "UD-Q4_K_S",
+      "host": "white",
+      "gpu_ids": [
+        0
+      ],
+      "vram_gb": 23.7,
+      "max_context": 131072,
+      "modalities": [
+        "text",
+        "reasoning"
+      ],
+      "capabilities": [
+        "code",
+        "research",
+        "build",
+        "verify",
+        "design",
+        "ops"
+      ],
+      "agent_profiles": [
+        "researcher",
+        "builder",
+        "verifier",
+        "designer",
+        "mechanic"
+      ],
+      "load_time_s": 120,
+      "notes": "Large context (131k); fast inference with MTP spec-decode. EVICTS Q8 if loaded on same GPU set."
+    },
+    {
+      "id": "qwen3-5-4b-mtp",
+      "folder": "C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.5-4B-MTP-GGUF",
+      "gguf_variant": "MTP",
+      "host": "white",
+      "gpu_ids": [
+        0
+      ],
+      "vram_gb": 4.2,
+      "max_context": 32768,
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "speculative_draft"
+      ],
+      "agent_profiles": [],
+      "load_time_s": 15,
+      "notes": "Draft model for MTP speculative decoding; not a standalone agent backend."
+    }
+  ],
+  "planned_models": [
+    {
+      "id": "video-gen-model",
+      "status": "PLANNED",
+      "modalities": [
+        "video"
+      ],
+      "capabilities": [
+        "video_generation",
+        "text_to_video"
+      ],
+      "agent_profiles": [
+        "video_gen"
+      ],
+      "min_vram_gb": 24,
+      "notes": "Requires dedicated GPU; cannot share with text models. Candidate: CogVideoX or similar.",
+      "host": "white"
+    },
+    {
+      "id": "3d-env-model",
+      "status": "PLANNED",
+      "modalities": [
+        "3d"
+      ],
+      "capabilities": [
+        "3d_generation",
+        "environment_gen"
+      ],
+      "agent_profiles": [
+        "env_builder"
+      ],
+      "min_vram_gb": 16,
+      "notes": "For 3D environment generation. Candidate: TRELLIS or similar.",
+      "host": "white"
+    },
+    {
+      "id": "large-context-model",
+      "status": "PLANNED",
+      "modalities": [
+        "text"
+      ],
+      "capabilities": [
+        "long_document",
+        "codebase_analysis"
+      ],
+      "agent_profiles": [
+        "deep_researcher"
+      ],
+      "min_vram_gb": 48,
+      "max_context": 262144,
+      "notes": "256k+ context for whole-repo analysis. Needs dedicated host or full VRAM.",
+      "host": "white"
+    }
+  ],
+  "agent_profile_templates": [
+    {
+      "id": "video_gen",
+      "name": "VideoGen",
+      "blurb": "specialized video generation agent; loads on-demand for video tasks",
+      "model_id": "video-gen-model",
+      "tools": [
+        "python",
+        "terminal"
+      ],
+      "activation": "on_demand",
+      "ttl_minutes": 30,
+      "notes": "Not in group chat by default. Orchestrator/Scribe activates when video task detected."
+    },
+    {
+      "id": "env_builder",
+      "name": "EnvBuilder",
+      "blurb": "3D environment generation agent; specialized spatial reasoning + 3D output",
+      "model_id": "3d-env-model",
+      "tools": [
+        "python",
+        "terminal"
+      ],
+      "activation": "on_demand",
+      "ttl_minutes": 45,
+      "notes": "For procedural 3D environment tasks. High VRAM, short sessions."
+    },
+    {
+      "id": "deep_researcher",
+      "name": "DeepResearcher",
+      "blurb": "large-context researcher; ingests entire codebases or document sets",
+      "model_id": "large-context-model",
+      "tools": [
+        "web_search",
+        "python",
+        "terminal"
+      ],
+      "activation": "on_demand",
+      "ttl_minutes": 60,
+      "notes": "256k+ context. Activated for whole-repo or multi-doc analysis tasks."
+    }
+  ]
+}

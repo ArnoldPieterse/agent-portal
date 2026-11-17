@@ -1,0 +1,40 @@
+{
+  "agent": "orchestrator",
+  "model": {
+    "id": "qwen3-27b-q8",
+    "folder": "C:\\Users\\White\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+    "gguf_variant": "Q8_0",
+    "host": "white",
+    "gpu_ids": [
+      1
+    ],
+    "vram_gb": 30.1,
+    "max_context": 32768,
+    "modalities": [
+      "text",
+      "reasoning"
+    ],
+    "capabilities": [
+      "code",
+      "ops",
+      "planning",
+      "synthesis"
+    ],
+    "agent_profiles": [
+      "orchestrator",
+      "archivist",
+      "scribe"
+    ],
+    "load_time_s": 240,
+    "notes": "High quality; slower load. Primary for planning/synthesis agents."
+  },
+  "host": "white",
+  "already_loaded": false,
+  "steps": [
+    "1. Wait for idle gate on white (active-generations == 0)",
+    "3. POST /api/inference/load with Q8_0 on GPU[1]",
+    "4. Poll until resident (expected ~240s)",
+    "5. VERIFY aliases unchanged (binding integrity check)"
+  ],
+  "risks": []
+}

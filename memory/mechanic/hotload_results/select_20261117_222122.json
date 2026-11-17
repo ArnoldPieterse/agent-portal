@@ -1,0 +1,40 @@
+{
+  "matches": [
+    {
+      "model": {
+        "id": "qwen3-27b-q4",
+        "folder": "C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+        "gguf_variant": "UD-Q4_K_S",
+        "host": "white",
+        "gpu_ids": [
+          0
+        ],
+        "vram_gb": 23.7,
+        "max_context": 131072,
+        "modalities": [
+          "text",
+          "reasoning"
+        ],
+        "capabilities": [
+          "code",
+          "research",
+          "build",
+          "verify",
+          "design",
+          "ops"
+        ],
+        "agent_profiles": [
+          "researcher",
+          "builder",
+          "verifier",
+          "designer",
+          "mechanic"
+        ],
+        "load_time_s": 120,
+        "notes": "Large context (131k); fast inference with MTP spec-decode. EVICTS Q8 if loaded on same GPU set."
+      },
+      "score": 8.8,
+      "status": "ACTIVE"
+    }
+  ]
+}

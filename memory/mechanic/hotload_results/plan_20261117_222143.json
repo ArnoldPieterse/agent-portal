@@ -1,0 +1,29 @@
+{
+  "agent": "video_gen",
+  "model": {
+    "id": "video-gen-model",
+    "status": "PLANNED",
+    "modalities": [
+      "video"
+    ],
+    "capabilities": [
+      "video_generation",
+      "text_to_video"
+    ],
+    "agent_profiles": [
+      "video_gen"
+    ],
+    "min_vram_gb": 24,
+    "notes": "Requires dedicated GPU; cannot share with text models. Candidate: CogVideoX or similar.",
+    "host": "white"
+  },
+  "host": "white",
+  "already_loaded": false,
+  "steps": [
+    "1. Wait for idle gate on white (active-generations == 0)",
+    "3. [BLOCKED] Model not yet deployed - requires: min 24 GB VRAM, dedicated GPU"
+  ],
+  "risks": [
+    "Model is PLANNED - no load body available until model file is provisioned"
+  ]
+}

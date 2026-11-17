@@ -1,0 +1,22 @@
+{
+  "_comment": "Capability routing manifest (analog to A2A Agent Cards). SSOT for the auto-selector's routing DECISIONS; agents.json model_id stays the durable binding. Selector proposes, Orchestrator/Scribe approve+apply via llm_selector.py hotload skill. VRAM = planning estimate; ground truth = nvidia-smi per-GPU (memory/llm/instances.md rule).",
+  "version": "2026-11-17",
+  "hosts": {
+    "white": {"url": "http://127.0.0.1:8888", "auth": false, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "quinn-q4/Qwen3.8-27B-Q4_K_S@131k", "gpu1": "atlas-q8/Qwen3.8-27B-Q8_0@32k"}},
+    "red":   {"url": "http://IP_RED:8888", "auth": true, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "mechanic-q4/UD-Q4_K_XL@65k", "gpu1": "scribe-q8/Qwen3.8-27B-Q8_0@16k"}},
+    "pale":  {"url": "http://IP_PALE:8888", "auth": true, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "designer-q4/Qwen3.8-27B-Q4_K_S@65k", "gpu1": "archivist-q8/Qwen3.8-27B-Q8_0@32k"}},
+    "black": {"url": "http://IP_BLACK:8888", "auth": true, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "verifier-q4/Qwen3.8-27B-Q4_K_S@65k", "gpu1": "builder-q8/Qwen3.8-27B-Q8_0@32k"}}
+  },
+  "capabilities": {
+    "text-general": {"kind": "llm-chat", "provisioned": true, "min_vram_gb": 16, "note": "any resident Q4/Q8; use existing agents.json binding, no hotload needed",
+      "bindings": [{"host": "white", "alias": "atlas-q8", "gpu_id": 1}, {"host": "black", "alias": "builder-q8", "gpu_id": 1}]},
+    "long-context": {"kind": "llm-chat", "provisioned": true, "min_vram_gb": 24, "min_ctx": 65536, "note": "Q4_K_S has the big ctx (White 131k). Route here when task needs >32k context.",
+      "bindings": [{"host": "white", "alias": "quinn-q4", "gpu_id": 0, "ctx": 131072}, {"host": "pale", "alias": "designer-q4", "gpu_id": 0, "ctx": 65536}]},
+    "vision": {"kind": "llm-vision", "provisioned": true, "min_vram_gb": 24, "note": "needs mmproj (vision projector) co-loaded; Red Q8 has is_vision:true per hosts.md. Confirm mmproj present before routing.",
+      "bindings": [{"host": "red", "alias": "scribe-q8", "gpu_id": 1, "mmproj": true}]},
+    "video-gen": {"kind": "diffusion-video", "provisioned": false, "min_vram_gb": 28, "note": "TARGET (not on any host). Candidates: LTX-Video (~12GB low-res, most efficient), CogVideoX-5B (~16GB), Wan2.1-14B / HunyuanVideo-13B (~28GB+ short clips). Provision = download GGUF/safetensors to a host + register load body here.",
+      "bindings": [{"host": "pale", "alias": null, "gpu_id": 0, "candidate_models": ["LTX-Video-0.9", "CogVideoX-5B", "Wan2.1-T2V-14B"], "unblock_step": "download chosen model to pale + add verified load body (model_path/gguf_variant) here"}]},
+    "3d-env": {"kind": "diffusion-3d", "provisioned": false, "min_vram_gb": 16, "note": "TARGET (not on any host). Candidate: Tencent Hunyuan3D-2 (shape ~8GB + paint stage). Provision = download to a host + register load body.",
+      "bindings": [{"host": "black", "alias": null, "gpu_id": 0, "candidate_models": ["Hunyuan3D-2"], "unblock_step": "download Hunyuan3D-2 to black + add verified load body here"}]}
+  }
+}
