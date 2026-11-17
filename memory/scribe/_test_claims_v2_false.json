@@ -1,0 +1,37 @@
+[
+  {
+    "id": "f-1",
+    "type": "temporal_mismatch",
+    "target": "MEMORY.md",
+    "claimed_date": "2020-01-01",
+    "tolerance_days": 1
+  },
+  {
+    "id": "f-2",
+    "type": "cross_reference",
+    "file_a": "memory/INDEX.md",
+    "file_b": "memory/INDEX.md",
+    "pattern_a": "->\\s+memory/",
+    "pattern_b": "ZZZ_NONEXISTENT_PAT"
+  },
+  {
+    "id": "f-3",
+    "type": "stale_pointer",
+    "index_file": "memory/INDEX.md",
+    "pointer_pattern": "->\\s+(memory/[^\\s]+\\.md|memory/nonexistent_ghost_999\\.md)"
+  },
+  {
+    "id": "f-4",
+    "type": "size_drift",
+    "target": "MEMORY.md",
+    "claimed_kb": 100,
+    "pct_tolerance": 20
+  },
+  {
+    "id": "f-5",
+    "type": "duplicate_entry",
+    "target": "memory/INDEX.md",
+    "entry": "# MEMORY INDEX",
+    "max_occurrences": 0
+  }
+]

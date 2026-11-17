@@ -1,0 +1,46 @@
+{
+  "timestamp": "2026-11-18T00:51:26.219509",
+  "goal": "Scribe #2 - Contradiction detector v2 (temporal + cross-reference)",
+  "acceptance_criterion": ">=5 new contradiction types detected in a test corpus; zero false positives on clean data",
+  "detector_file": "memory/scribe/contradiction_detector.py",
+  "new_types_implemented": [
+    "temporal_mismatch",
+    "cross_reference",
+    "stale_pointer",
+    "size_drift",
+    "duplicate_entry"
+  ],
+  "clean_data_test": {
+    "file": "memory/scribe/_test_claims_v2.json",
+    "result": "5/5 PASS (zero false positives)",
+    "exit_code": 0
+  },
+  "false_claim_detection_test": {
+    "file": "memory/scribe/_test_claims_v2_false.json + _test_stale_claims.json",
+    "results": {
+      "temporal_mismatch": {
+        "flagged": true,
+        "detail": "claimed 2020-01-01 vs actual 2026-11-18 (diff=2513 days)"
+      },
+      "cross_reference": {
+        "flagged": true,
+        "detail": "file_a_count=6 vs file_b_count=0"
+      },
+      "stale_pointer": {
+        "flagged": true,
+        "detail": "memory/ghost/nonexistent_file_xyz.md not found on disk"
+      },
+      "size_drift": {
+        "flagged": true,
+        "detail": "claimed 100KB vs actual 4.1KB (drift=95.9%)"
+      },
+      "duplicate_entry": {
+        "flagged": true,
+        "detail": "occurrences=1 > max_allowed=0"
+      }
+    },
+    "total_detected": 5,
+    "exit_code": 1
+  },
+  "status": "PASS - all acceptance criteria met"
+}

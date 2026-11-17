@@ -109,3 +109,5 @@
 {"ts": "2026-11-18 00:43:25", "run": "g-1a1e9f675ea-a0b4ce", "missing": {"Designer": "unreachable", "Archivist": "unreachable"}}
 {"ts": "2026-11-18 00:45:40", "run": "g-1a1e9f885ab-5e3851", "missing": {"Archivist": "unreachable", "Designer": "unreachable"}}
 {"ts": "2026-11-18 00:50:11", "run": "g-1a1e9fca53d-93bcb8", "missing": {"Designer": "unreachable", "Archivist": "unreachable"}}
+{"ts": "2026-11-18 00:51:56", "run": "g-1a1e9fe3fbc-e261d1", "missing": {"Designer": "unreachable", "Archivist": "unreachable"}}
+{"ts": "2026-11-18 00:57:20", "run": "g-1a1ea03330e-11014a", "missing": {"Designer": "unreachable", "Verifier": "unreachable", "Orchestrator": "unreachable", "Builder": "unreachable", "Researcher": "unreachable", "Archivist": "unreachable"}}
