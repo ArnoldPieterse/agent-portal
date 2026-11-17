@@ -233,3 +233,10 @@ Fresh ACTUAL reading (not projected): `sla_audit.py --ref 2026-11-18T02:22` → 
 Steady-state hold ACTIVE (per pass-15 declaration). Re-ran sla_audit.py --ref 17:30 → state UNCHANGED (4/5 RESOLVED, white-q4 BREACH x2.11, 0 proactive). Fresh-artifact scan for Mechanic/Builder sign-off on white-q4 → **0 new dispositions**.
 
 **CONCRETE STEP: pre-staged the goal-#8 closure runbook** (memory/researcher/sla-goal8-closure-runbook-2026-11-18.md) so that at 11-20 mid-cycle (or on earlier sign-off), closure is a ZERO-deliberation 3-command sequence: (1) update sla_registry.json white-q4→RESOLVED, (2) run sla_audit.py --ref 2026-11-20T09:00 → expect exit 0 / zero-breaches, (3) record via goal_ledger. No re-probing the sign-off wall; next action = 11-20 or on-confirm.
+
+## PASS-STATUS CHECK — pass-17 (2026-11-18 ~17:35 auto-loop, Researcher seat)
+Re-ran sla_audit.py --ref 17:30 → state UNCHANGED from pass-16 (4/5 RESOLVED, white-q4 BREACH x2.11 @ 101.5h). Fresh-artifact scan of 12 new Mechanic files (goal3-goal10-closure + epoch work) → **0 new dispositions on white-q4**. Mechanic closed their own goals #3+#10 but did not sign off on the White Q4 ctx=131072 item.
+
+Goal #3 daily sample: Z:\mirror_events.log ACCESSIBLE, mtime unchanged (11-17 20:53:18). 0 live events. Window day 2/7.
+
+Both goals remain at steady-state hold with pre-staged closure runbooks. Next meaningful checkpoint = 11-20 (day-3 escalation for #3 + mid-cycle SLA acceptance audit for #8). No further action possible from sandbox seat until external sign-off or window progression.
