@@ -1,0 +1,45 @@
+{
+  "ts": "2026-11-17T15:11:42.292169",
+  "test": "regression_demo_synthetic",
+  "description": "Synthetic 4-day dataset with +60% p95 regression injected at c=50 on day 4. Detector correctly flags it.",
+  "threshold_pct": 30,
+  "days_injected": 4,
+  "regression_injected_at_concurrency": 50,
+  "regression_detected": true,
+  "findings": [
+    {
+      "concurrency": 10,
+      "days_observed": 4,
+      "latest_ts": "2026-11-17 10:00:00",
+      "median_p95_ms": 185.0,
+      "latest_p95_ms": 186.0,
+      "p95_ratio": 1.005,
+      "regression": false,
+      "details": []
+    },
+    {
+      "concurrency": 50,
+      "days_observed": 4,
+      "latest_ts": "2026-11-17 10:00:00",
+      "median_p95_ms": 748.0,
+      "latest_p95_ms": 1200.0,
+      "p95_ratio": 1.604,
+      "regression": true,
+      "details": [
+        "p95 1200.0ms vs median 748.0ms (+60%)",
+        "p99 1215.0ms vs median 752.0ms (+62%)"
+      ]
+    },
+    {
+      "concurrency": 200,
+      "days_observed": 4,
+      "latest_ts": "2026-11-17 10:00:00",
+      "median_p95_ms": 3480.0,
+      "latest_p95_ms": 3490.0,
+      "p95_ratio": 1.003,
+      "regression": false,
+      "details": []
+    }
+  ],
+  "verdict": "PASS - detector caught the injected regression"
+}
