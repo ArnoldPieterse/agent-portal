@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 complete: 9 runbooks audited, 39 steps at 100% coverage (49% automated, 31% pathed, 21% human-only). ≥80% criterion met.
-- Goal #4 WCAG 2.1 AA done: 0 contrast violations, focus visibility fixed, 6 ARIA labels added; audit leaf updated.
 - Goal #3: gen_api_ref.py now has --diff mode with breaking-change detection, hooked into memory
 - Mechanic built memory/ops/batch_tier_b.py (5 Tier-B items, dry-run clean); non-sandbox-queue.md updated with BATCH SCRIPT pointer.
 - Goal #1 (KG auto-update) confirmed: incremental mode + orphan detection live in memory_mirror.py; 2/4173 files rescanned, no new orphans.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - ui/ files pinned to stop mirror clobber loop (root cause of 4x fleet-state reverts); git unavailable in sandbox
 - Goal #3 (predictive alerts) CLOSED: fleet_probe_v2.py --test-predictive 5/5 PASS, simulate WARN
 - Scribe: Cycle 4 narrative entry (cycle-narrative.md) pending — will append once this batch pass outcomes settle; sequencing, not blocker.
+- Scribe: all 10 goals closed per ledger; auto-loop prompt's "1 open" is stale — trust ledger over prompt.
+- Goal #7 closed
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
