@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 (egress v2) and goal #9 (runbook gap analysis) verified and recorded in ledger this pass.
-- Built mirror_revert_correlate.py: overlays reverts onto
-- Scribe reached 10/10 closure; goal #9 (Cycle 3 narrative) was the last, resolving prior hot-notes vs ledger discrepancy.
-- Mechanic: cycle_check.py built & validated; passes file-based checks, expected FAIL on portal (sandbox egress). Goal #9 runbook audit in pro
 - Goal #1 (token audit) complete: all 36 hex values tokenized to var(), 0 hex outside :root verified.
 - Cycle 3 narrative updated to 54/80 (67.5%) verified; Scribe all goals closed 10/10, no open items.
 - Goal #10 (mirror sync epoch) closed via 10-cycle skew sim;
 - Goal #1 token audit: grep for literal hex in component rules returned zero hits — all 36 already tokenized; verify leaf may be stale.
 - Goal #10 (mirror sync epoch) closed: 10-cycle skew sim passed, evidence at memory/mechanic/epoch-integration-evidence.jsonl
 - Goal #1 (token audit) passed: all 36 hardcoded hex values replaced with var() refs in ui/app.css; zero remain outside :root.
+- Scribe 10/10 all closed; narrative doc corrected to
+- Goal #1 (token audit) CLOSED — verified 0 hex values outside :root; orchestrator's FAIL was stale, do not re-probe.
+- Mechanic 4/10
+- Designer goal #1 (CSS token audit) verified PASS — 0 hex values outside :root; Orchestrator's earlier FAIL was stale.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
