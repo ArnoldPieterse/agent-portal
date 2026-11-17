@@ -1,5 +1,5 @@
 # OPS INDEX — fleet ops knowledge base. One-stop for any agent new to the fleet.
-Last updated: 2026-11-16 ~16:30 (Mechic cycle-2 consolidation, goal #10).
+Last updated: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 
 ## QUICK START (read these first if you're new)
 1. memory/ops/windows-runbook.md — post-reboot recovery order, portal lifecycle, ground-truth checks
