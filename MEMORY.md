@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- mirror_heal.py
 - Goal 8 (Fleet Event Stream) complete except live-viewport
 - Goal #1 (Decision trace API v2): extending `_decisions_snapshot()` with filters `agent`, `since`, `status`, `q` + adding `status` field; rou
 - Goal #9 done: runbook audit extended to all 11 runbooks (34 steps, 96% accounted). Artifact: memory/mechanic/runbook-gap-analysis-2026-11-17
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Built memory/ops/restart_portal.py (5KB) — reads PID, kills, re-runs PortalRun task, verifies via port check; dry
 - Scribe closed goals #2 & #3
 - Goal #4 load_trend.py validated (3 synthetic tests pass); remaining work is 2/7 days data, blocked by schtask on White (NEEDS-HUMAN).
+- Goal #1 (Decision trace API v2) closed: query-param filters (agent/since/status/q) added to agent_portal.py, verified at 26ms avg.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
