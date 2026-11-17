@@ -374,6 +374,14 @@ async function goalsLoad(){
       if((h.stall_commits||0)>3) t+=" \u00b7 \u26a0 stalled: "+h.stall_commits+" commits since last goal change";
       el.textContent=t;
     }).catch(()=>{});
+    // Memory Health section (Scribe goal 9, re-landed 2026-11-17): six metric cards live from /api/memory-health.
+    fetch("/api/memory-health").then(r=>r.json()).then(o=>{
+      const el=$("memHealthBody"); if(!el||!o.ok)return;
+      const st={pass:"var(--ok)",warn:"#d9a514",fail:"#e0524d"};
+      el.innerHTML=Object.entries(o.metrics).map(([k,v])=>'<div class="mh-card" style="border-color:'+(st[v.status]||"var(--line)")+'">'
+        +'<div class="mh-k">'+k+'</div><div class="mh-v">'+(v.value==null?"n/a":v.value)+'</div>'
+        +'<div class="mh-d">'+(v.detail||"")+'</div></div>').join("");
+    }).catch(()=>{});
   }catch(e){ $("goalsStat").textContent="⚠ "+e; }
 }
 $("goalsBtn").onclick=()=>{ const open=$("goalsPanel").classList.toggle("open"); $("goalsBtn").classList.toggle("on",open); if(open)goalsLoad(); };
