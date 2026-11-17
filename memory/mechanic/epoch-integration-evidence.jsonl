@@ -1,0 +1,6 @@
+{"ts": "2026-11-18T01:43:20.529409", "test": "I1_owner_push", "passed": true, "detail": "file=memory/mechanic/epoch_itest_i1_1794930200.txt, owner=White"}
+{"ts": "2026-11-18T01:43:20.530362", "test": "I2_foreign_push_blocked", "passed": true, "detail": "lane=memory/mechanic/, foreign_write_skipped=True"}
+{"ts": "2026-11-18T01:43:20.530732", "test": "I3_owner_pull", "passed": true, "detail": "remote=simulated, direction=pull, is_owner=True -> accept"}
+{"ts": "2026-11-18T01:43:20.531991", "test": "I4_foreign_pull_quarantined", "passed": true, "detail": "quarantine=epoch_itest_i4_1794930200.txt, source=simulated"}
+{"ts": "2026-11-18T01:43:20.533882", "test": "I5_epoch_conflict", "passed": true, "detail": "white_epoch=5, red_epoch=3, winner=white"}
+{"ts": "2026-11-18T01:43:20.538788", "test": "I6_rebaseline", "passed": true, "detail": "entries_before=0, entries_after=0, version=2"}
