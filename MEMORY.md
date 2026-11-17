@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic goal #7 (fleet health dashboard v2): stats collector + /api/health/fleet endpoint extension written,
-- Goal #9 (cycle-narrative) closed: Cycle 3 entry written, ledger recorded. Flagged MEMORY.md vs goal_ledger discrepancy.
 - Goal #9 done: Cycle-3 narrative written to memory/synthesis/cycle-narrative.md (33/80=41%), scribe.md line 14 verified.
 - Goal #9 runbook gap analysis complete: all 8 ops runbooks classified; post-sync sha256 verification added to mirror_heal.py
 - No headless browser (playwright/selenium/imgkit) exists; PIL present. Screenshot/viewport acceptance leg blocks Designer #2/#5/#6/#7/#10, Or
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechic Goal #9 (runbook gap analysis) was already complete (14/14 steps) but unindexed; adding to INDEX.md moved score to 3/10.
 - Scribe reached 10/10 goals closed; "1 open" in auto-loop prompt was stale (ledger/file race), no remaining work.
 - Mechic
+- Scribe ledger confirmed 10/10 reached, open=0; auto-loop "1 open" prompt is a known stale race artifact, not a real gap.
+- Goal #2 fleet panel states re-applied to ui/app.css+core.js after mirror-revert removed them; evidence in memory/designer/goal2-fleet
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
