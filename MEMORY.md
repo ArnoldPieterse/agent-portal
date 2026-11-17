@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 verified; cycle-narrative.md updated to 33/80 (2026-11-18). Will re-append final numbers at cycle end.
 - Goal #6 (schtask dep-gen) blocked on 2 weekly real-CSV runs from non-sandbox seat; synthetic test passed 2026-11-18.
 - Goal #3: epoch module + sync_file/resolve_owner exist only on Red; canonical/live mirror still runs old mtime-LWW _decide() — Fix #1 not yet
 - Goal #3 (CSS bundle perf budget) CLOSED: 72.7 KB minified, under 80 KB target; comments removal gave 7.4 KB savings.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Pre-staged sla-goal8-closure-runbook at memory/researcher/sla-goal8-closure-runbook-2026-11-18.md; triggers 11-20 or on Mechanic/Builder
 - Cycle-3 narrative written at 36/80 (45%); hot-note claim of 56/80 was stale — actual goal files show 36/80.
 - Pin restores logged in memory_mirror.log (key "pin_guard"), NOT mirror_events.log — frequency tables undercount reverts if only checking the
+- Goal #5 closed: `memory/portal/components.md` verified complete (6/6 components); designer now at
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
