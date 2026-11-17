@@ -172,3 +172,4 @@
 {"ts": "2026-11-18 06:39:09", "run": "g-1a1eb3c22d8-6cba10", "missing": {"Researcher": "not_loaded"}}
 {"ts": "2026-11-18 06:49:10", "run": "g-1a1eb4550f0-0644b6", "missing": {"Researcher": "not_loaded", "Verifier": "unreachable", "Orchestrator": "unreachable", "Builder": "unreachable"}}
 {"ts": "2026-11-18 06:53:11", "run": "g-1a1eb48fcac-589d6f", "missing": {"Researcher": "not_loaded"}}
+{"ts": "2026-11-18 07:18:41", "run": "g-1a1eb60558d-cf5b98", "missing": {"Researcher": "not_loaded", "Archivist": "unreachable"}}
