@@ -18,3 +18,4 @@ Updated: 2026-11-16.
 - -> index.html               frontend shell (markup only); UI in ui/; HARD-REFRESH after edits
 - -> MEMORY.md                HOT FILE ONLY (state line + counter + notes); keep small
 - -> TODO.md                  work plan, newest section at top
+- -> memory/run-rules.md   STANDING RUN RULES - read every run (scheduled goals to background list; no main-goal holdups)

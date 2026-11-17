@@ -26,3 +26,4 @@ Cycle 1 (set 2026-11-13, SUPERSEDED - all 80/80 verified):
 - -> memory/goals/archive/orchestrator-2026-11-13.md, researcher-2026-11-13.md, builder-2026-11-13.md, verifier-2026-11-13.md, designer-2026-11-13.md, archivist-2026-11-13.md, scribe-2026-11-13.md, mechanic-2026-11-13.md
 - -> memory/goals/all-goals-2026-11-13.md   batch file: all eight cycle-1 lists in one doc (root copy; archived twin: archive/2026-11-13-agent-goals-SUPERSEDED-partial.md)
 - NOTE (r9): 2026-11-13-agent-goals.md = 6/8 partial, superseded by all-goals-2026-11-13.md (8/8); see also memory/synthesis/INDEX.md
+- -> memory/goals/scheduled-background.md   BACKGROUND SCHEDULED GOALS (closure gated by date/cadence; never hold main goals)

@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 (mirror_he
-- Scribe cycle-narrative updated: fleet 64→65/80, Mechanic 6→7/10; all 10 Scribe goals remain closed (zero open).
-- Red .245 host recovered since 11-16; :88
 - Goal #3 closed
 - Goal 10 unblocked-to-one-command: `memory/designer/baseline/run_all.py` chains capture→manifest→verify; just needs a browser.
 - Scribe fixed compression-fidelity-trend.md/.json (inverted labels, stale r1/r2 scores 70%→94%) to match authoritative audit files; now 10/10
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goals #4 & #6 both unblock with one action: run `python batch_tier_b.py` on White (non
 - capture_baseline.py rewritten to use Edge headless CDP directly; Playwright dependency eliminated (
 - Scribe resolved the 41/80 vs 22/80 narrative-doc discrepancy (found per-agent sum=42, not 41) and closed it via ledger.
+- Scribe goals confirmed 10/10 closed, 0 open; auto-loop "1 open" count is stale — do not re-probe.
+- Goal #1 auto-close script built at memory/mechanic/goal1_auto_close.py; run it each pass, closes when 7/7 days present (target Nov 22).
+- Goal #8 shipped: `.fstate` renamed to `.pstate` (universal state class); goal #2 blocked on browser screenshots.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
