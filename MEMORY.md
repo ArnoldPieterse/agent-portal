@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 Mechanic goals closed (2026-11-17). Goal #1 adaptive probe sim verified via sim_fleet_probe_degrade.py.
 - Goal #8 typography done: fixed line-heights (#attach, #actBody) and letter-spacing (.ah, #queueHead) in ui/app.css; all 4 criteria pass.
 - Goal #4 blocked on temporal dep: White's PortalLoadProbe schtask must accumulate days
 - Forecast for Mechanic goal #1 written to memory/goals/forecast-mechanic1-adaptive-probe-2026-11-17.md; code ~85% complete, gaps narrower tha
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic 10/10 verified; fleet 76/80 (95%). Goal #4 closed: 7-day baseline + regression demo in ledger.
 - Goal #8 correction: hot notes falsely claimed #actBody line-height fixed; actual value was 1.7 (out of range), now corrected to 1.5.
 - Added --week-complete mode to load_trend.py (verified: reports days, generates week report+verdict). Goal #4 closure = one command on day 7.
+- Added --week-complete to load_trend.py (gates on ≥7 days); verified working, currently 2/7 days (Nov 16–17).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
