@@ -1,0 +1,19 @@
+{
+  "goal": "scribe#3 - Round-record auto-synthesis productionization",
+  "date": "2026-11-18",
+  "artifact": "memory/scribe/round_record_draft.py (OWNER_SIGNALS table + infer_owner restored)",
+  "acceptance_criteria": "two consecutive rounds produce correct auto-drafts with >=80% of fields auto-filled",
+  "test_results": {
+    "round_1": {"date": "2026-11-17", "round": 1, "fill_pct": 84, "fields": "32/38"},
+    "round_2": {"date": "2026-11-17", "round": 2, "fill_pct": 84, "fields": "32/38"}
+  },
+  "accuracy_spot_check": {
+    "clear_cases_checked": 15,
+    "correct": 13,
+    "debatable": 2,
+    "wrong": 0,
+    "notes": "RESTART+verify item -> Verifier (could be Mechanic); WATCH sequential pass -> TBD (genuinely ambiguous fleet-wide observation)"
+  },
+  "fix_applied": "OWNER_SIGNALS table (8 agents x ~10 signals each) + infer_owner() scoring function restored; was lost to mirror revert between 11-16 and 11-17",
+  "status": "PASS - two consecutive rounds >=80% with correct owner inference"
+}
