@@ -31,3 +31,5 @@ Last updated: 2026-11-17 (Builder auto-loop: added portal-startup + css-tokens e
 - -> memory/builder/hotpatch.py   cycle-2 goal: hot-patch with auto-rollback script
 - -> memory/builder/agent-health-checks.jsonl   cycle-2 goal: agent capability health matrix data
 - -> memory/builder/api_contract_test.py   cycle-2 goal 5: API contract pinning (--record/--check, fixtures in api-fixtures/)
+
+- canary-goal1-first-real-deploy-2026-11-17.md — goal #1 first real canary deploy (BUILD_VERSION, all hosts green)

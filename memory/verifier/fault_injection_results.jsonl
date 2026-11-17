@@ -3,3 +3,5 @@
 {"ts": "2026-11-16T04:33:55.860412+00:00", "scenario": "S3_drop_smb_leg", "passed": true, "evidence": "remote=\\\\NONEXISTENT-SERVER\\share\\memory unreachable; local_hash=f76ebd0179c51c51; status=DROPPED_LEG (alert would fire)"}
 {"ts": "2026-11-16T04:33:55.861173+00:00", "scenario": "S4_malformed_post", "passed": true, "evidence": "5 test bodies; statuses=[200, 400, 400, 400, 400] (expected [200, 400, 400, 400, 400]); all malformed -> 400"}
 {"ts": "2026-11-16T04:33:55.861449+00:00", "scenario": "S5_write_failure", "passed": true, "evidence": "write failed as expected: FileNotFoundError: [Errno 2] No such file or directory: 'memory\\\\verifier\\\\__nonexistent_dir__\\\\file.txt'; exception caught, logged for retry"}
+{"ts": "2026-11-17T10:23:23.145948+00:00", "scenario": "FI-C3-A_corrupt_live_file", "passed": true, "mttr_s": 0.0, "evidence": "injected 512B garbage; hash mismatch detected=True; recovered=True; clean_hash[:12]=c472be28242c"}
+{"ts": "2026-11-17T10:23:23.152585+00:00", "scenario": "FI-C3-B_truncate_live_file", "passed": true, "mttr_s": 0.0, "evidence": "truncated 1002->501 bytes; detected size+hash mismatch=True; recovered=True"}

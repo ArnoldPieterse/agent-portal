@@ -7,9 +7,13 @@ skills, RAG, tool execution). Nothing here loads models directly.
 """
 import hashlib, json, mimetypes, os, re, shutil, subprocess, sys, threading, time, urllib.request, urllib.error, urllib.parse, uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import agent_queue as _aq   # 2026-11-17: starnet-style durable run queue + backpressure telemetry
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PORT = 8099
+
+# BUILD_VERSION: bumped on each canary deploy for traceability (goal #10)
+BUILD_VERSION = "3.1.0-canary"
 STUDIO = "http://127.0.0.1:8888"   # local Studio (White); remote hosts override per-agent
 
 
@@ -38,7 +42,7 @@ MODEL_LOAD_BLOCK = False   # True = refuse to start a group run while any seat i
 _MODEL_LOAD_CACHE = {"ts": 0.0, "result": None}
 
 
-def broken(:
+def _model_load_status(force=False, timeout=15):
     """Probe every agent's model alias (max_tokens=1) in parallel. Returns
     {agent: {status: ok|not_loaded|unreachable, ms: int[, detail]}}. Cached 60s so the
     run-start check and GET /api/models/status don't double-probe."""
@@ -46,7 +50,14 @@ def broken(:
     now = time.time()
     if not force and _MODEL_LOAD_CACHE["result"] and now - _MODEL_LOAD_CACHE["ts"] < 60:
         return _MODEL_LOAD_CACHE["result"]
-    out = {}
+    # Per-seat trust window (2026-11-17): a seat that answered OK within the last 15
+    # min is reused without re-ping. Re-probing every ~60s queues behind model loads
+    # on shared-VRAM Studios, so seats flapped in/out of the autoloop cast (2/8 seen)
+    # while GPUs thrashed. Failed seats are still probed every tick.
+    _per = _MODEL_LOAD_CACHE.get("per_seat") or {}
+    trust = {n: s for n, s in _per.items()
+             if not force and s["status"] == "ok" and now - s["ts"] < 900}
+    out = dict(trust)
 
     def _probe(name, model, base, headers):
         body = json.dumps({"model": model,
@@ -71,13 +82,29 @@ def broken(:
     threads = [threading.Thread(target=_probe, args=(a.get("name", "?"),
                                                      a.get("model_id") or "?",
                                                      studio_base(a), studio_headers(a)), daemon=True)
-               for a in agents]
+               for a in agents if a.get("name", "?") not in trust]
     for t_ in threads:
         t_.start()
     for t_ in threads:
         t_.join(timeout=timeout + 5)
-    _MODEL_LOAD_CACHE.update(ts=now, result=out)
+    _probed = {n: {"ts": now, "status": s["status"]} for n, s in out.items() if n not in trust}
+    _per2 = dict(_per); _per2.update(_probed)
+    _MODEL_LOAD_CACHE.update(ts=now, result=out, per_seat=_per2)
     return out
+
+
+_ELEVATED_CACHE = {'v': None}
+
+
+def _shell_elevated():
+    """True if this process runs elevated (all agent terminal tools inherit it). Cached."""
+    if _ELEVATED_CACHE['v'] is None:
+        try:
+            import ctypes
+            _ELEVATED_CACHE['v'] = bool(ctypes.windll.shell32.IsUserAnAdmin())
+        except Exception:
+            _ELEVATED_CACHE['v'] = False
+    return _ELEVATED_CACHE['v']
 
 
 def rag_base(agent):
@@ -771,6 +798,173 @@ def _fleet_snapshot():
             row["last_seen"] = now
         rows.append(row)
     return {"ts": now, "ttl": FLEET_TTL, "hosts": rows}
+
+
+# ---------------------------------------------------------------------------
+# 2026-11-16 (cycle-2 SLO pipeline + fleet endpoint + decision trace):
+# perf ring buffer, fleet health snapshot, decisions API. Read-only/in-memory,
+# no new dependencies.
+# ---------------------------------------------------------------------------
+import collections as _collections
+
+_PERF = _collections.deque(maxlen=20000)   # (ts, path, ms)
+_SERVER_START = time.time()
+
+
+def _perf_record(path, ms):
+    try:
+        if "/api/run-events" not in path:   # SSE stream - not request latency
+            _PERF.append((time.time(), path, ms))
+    except Exception:
+        pass
+
+
+def _percentile(vals, pct):
+    if not vals:
+        return None
+    vs = sorted(vals)
+    k = (len(vs) - 1) * pct / 100.0
+    f = int(k)
+    c = min(f + 1, len(vs) - 1)
+    return round(vs[f] + (vs[c] - vs[f]) * (k - f), 2)
+
+
+def _perf_snapshot():
+    """GET /api/perf (Builder cycle-2 goal 8): p50/p95/p99 per endpoint over a rolling
+    60-min window. Feeds Ops sparkline tiles + Verifier SLO enforcement."""
+    now = time.time()
+    cutoff = now - 3600
+    per = {}
+    for ts, path, ms in _PERF:
+        if ts >= cutoff:
+            per.setdefault(path, []).append(ms)
+    out = []
+    for path, vals in sorted(per.items(), key=lambda kv: -len(kv[1])):
+        out.append({"path": path, "n": len(vals),
+                    "p50_ms": _percentile(vals, 50), "p95_ms": _percentile(vals, 95),
+                    "p99_ms": _percentile(vals, 99)})
+    return {"ok": True, "window_s": 3600, "endpoints": out}
+
+
+def _fleet_health_snapshot():
+    """GET /api/health/fleet (Mechanic cycle-2 goal 8): single call = full fleet picture.
+    Per host: latest structured probe state + SMB sync age; plus last plain-text probe
+    line, git commit freshness (overall + memory/goals/) and portal uptime. All local
+    file reads - no outbound calls (fast, safe when remotes are down)."""
+    hosts_cfg = []
+    try:
+        cfg = json.load(open(os.path.join(HERE, "memory_mirror_hosts.json"), encoding="utf-8"))
+        hosts_cfg = {h["name"]: h for h in cfg.get("hosts", [])}
+    except Exception:
+        pass
+    host_order = list(hosts_cfg) or ["Red", "Pale", "Black"]
+    probe = {}
+    for cand in ("memory/ops/probe-evidence.jsonl", "memory/ops/fleet-probe-history.jsonl"):
+        p = os.path.join(HERE, *cand.split("/"))
+        if not os.path.isfile(p):
+            continue
+        try:
+            for line in open(p, encoding="utf-8"):
+                try:
+                    d = json.loads(line)
+                except Exception:
+                    continue
+                for r in d.get("results", []):
+                    name = r.get("host") or next(
+                        (n for n, h in hosts_cfg.items() if h.get("ip") == r.get("ip")), None)
+                    if name:
+                        probe[name] = {"ts": d.get("ts"), "port": r.get("port"),
+                                       "status": r.get("status"), "severity": r.get("severity")}
+        except OSError:
+            continue
+    last_probe_line = None
+    lp = os.path.join(HERE, "fleet_probe.log")
+    if os.path.isfile(lp):
+        try:
+            lines = [l for l in open(lp, encoding="utf-8", errors="ignore").read().splitlines() if l.strip()]
+            last_probe_line = lines[-1][:200] if lines else None
+        except OSError:
+            pass
+    sync_ts = {}
+    ml = os.path.join(HERE, "memory_mirror.log")
+    if os.path.isfile(ml):
+        try:
+            for line in open(ml, encoding="utf-8"):
+                if '"results"' not in line:
+                    continue
+                try:
+                    d = json.loads(line)
+                    tdt = time.mktime(time.strptime(d.get("t", ""), "%Y-%m-%d %H:%M:%S"))
+                except Exception:
+                    continue
+                for h in d.get("results", []):
+                    if h.get("host"):
+                        sync_ts[h["host"]] = tdt   # later lines overwrite -> newest wins
+        except OSError:
+            pass
+    now = time.time()
+    out_hosts = {}
+    for name in host_order + ["White"]:
+        if name in out_hosts:
+            continue
+        e = {"probe": probe.get(name), "last_sync": None, "sync_age_s": None}
+        if name in sync_ts:
+            e["sync_age_s"] = int(now - sync_ts[name])
+            e["last_sync"] = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(sync_ts[name]))
+        out_hosts[name] = e
+    git_head, git_goals = None, None
+    try:
+        import subprocess
+        r = subprocess.run([GIT_EXE, "log", "-1", "--pretty=%h %ad", "--date=format:%Y-%m-%d %H:%M"],
+                           cwd=HERE, capture_output=True, text=True, timeout=10, creationflags=0x08000000)
+        git_head = r.stdout.strip() or None
+        r2 = subprocess.run([GIT_EXE, "log", "-1", "--pretty=%h %ad", "--date=format:%Y-%m-%d %H:%M",
+                             "--", "memory/goals"],
+                            cwd=HERE, capture_output=True, text=True, timeout=10, creationflags=0x08000000)
+        git_goals = r2.stdout.strip() or None
+    except Exception:
+        pass
+    return {"ok": True, "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
+            "hosts": out_hosts, "last_probe_line": last_probe_line,
+            "git_head": git_head, "git_goals_last_change": git_goals,
+            "portal_uptime_s": int(now - _SERVER_START)}
+
+
+def _decisions_snapshot():
+    """GET /api/decisions (Scribe cycle-2 goal 1): trace 'what did we decide about X' to the
+    exact source line. Scans TODO.md + memory/synthesis/ leaves for decision-keyword lines;
+    returns newest 50 with file, section, line no, detected owner(s) and date context."""
+    try:
+        owners = [a.get("name", "") for a in load_agents().get("agents", [])]
+    except Exception:
+        owners = []
+    kw = re.compile(r"(?i)\b(decision|decided|ruling|ratified|ratify(ies)?d?|veto(ed)?|superseded by|approved|rejected)\b")
+    out = []
+    sources = [os.path.join(HERE, "TODO.md")]
+    syn = os.path.join(HERE, "memory", "synthesis")
+    if os.path.isdir(syn):
+        sources += [os.path.join(syn, f) for f in sorted(os.listdir(syn)) if f.endswith(".md")]
+    for src in sources:
+        if not os.path.isfile(src):
+            continue
+        rel = os.path.relpath(src, HERE).replace(os.sep, "/")
+        section = ""
+        try:
+            mtime = time.strftime("%Y-%m-%d %H:%M", time.localtime(os.path.getmtime(src)))
+        except OSError:
+            mtime = ""
+        for i, line in enumerate(open(src, encoding="utf-8", errors="replace"), 1):
+            s = line.strip()
+            if s.startswith("## "):
+                section = s[3:80]
+            if not s or s.startswith("#") and len(s) < 4:
+                continue
+            if kw.search(s):
+                found = [o for o in owners if o and re.search(r"\b" + re.escape(o) + r"\b", s)]
+                out.append({"file": rel, "line": i, "section": section, "mtime": mtime,
+                            "owners": found, "text": s[:300]})
+    out.sort(key=lambda d: (d["mtime"], d["line"]), reverse=True)
+    return {"ok": True, "count": len(out), "decisions": out[:50]}
 
 
 def _rag_search(agent, query):
@@ -1853,6 +2047,12 @@ RUN_STALL_S = 240          # no frames for this long => /api/run-state flags sta
 STALL_KILL_S = 900         # (2026-11-15) no frames for THIS long => watchdog kills the run (wedge guard)
 AUTO_RESUME_MAX = 5        # (2026-11-15) consecutive auto-resumes before a human follow-up is required
 AUTO_RESUME_DELAY_S = 45   # settle time after a run ends before the watchdog starts the continuation
+AUTOLOOP_IDLE_S = 60       # (2026-11-16, Arnold) max seconds an agent may sit idle before re-entering the work queue
+AUTOLOOP_BATCH_MAX = 8     # (2026-11-17) auto-loop fires ALL idle agents at once; cap on seats per batch pass
+AUTOLOOP_PROBE_TIMEOUT_S = 45  # (2026-11-17) model probe timeout in the autoloop; 27B models take >15s to load
+AUTOLOOP_TICK_S = 15       # autoloop scheduler tick
+AUTOLOOP_MAX_STREAK = 40   # consecutive auto passes without human input before the loop pauses (GPU budget)
+AUTOLOOP_MAINT_COOLDOWN_S = 1800   # min gap between maintenance passes for an agent at 100%
 
 
 class _RunStopped(OSError):
@@ -2050,6 +2250,7 @@ def _parallel_turns(run_id, names, kind, hist, stop_event):
     for r in out:  # terminal event per turn - the frontend finalizes each bubble on this
         if r:
             _run_event(run_id, {"agent": r["name"], "kind": kind, "done": True})
+            autoloop_touch(r["name"])   # AUTO-LOOP: last activity for idle tracking
     return out
 
 
@@ -2079,7 +2280,9 @@ def _group_run_worker(run_id):
     try:
         while True:
             if stop_event.is_set():
-                verdict = {"note": "\u25a0 Stopped by user \u2014 round closed as concluded.", "cls": "ok"}
+                # (2026-11-16) honest stop: a user stop is NOT a conclusion - the previous wording
+                # showed a green "concluded" while goals were still open and agents had produced no output.
+                verdict = {"note": "\u25a0 Stopped by user \u2014 round ended without [CONCLUDED]; task state unconfirmed.", "cls": "warn"}
                 break
             if nudges > 0:
                 nt = ("\u21bb AUTO-CONTINUE %d/%d: the previous pass ended without [CONCLUDED]. Keep going: "
@@ -2114,6 +2317,13 @@ def _group_run_worker(run_id):
             _append_history("group", entries)
             for r in results:  # @-mention expansion (same rule as the old frontend loop)
                 expand_mentions(r["full"])
+            if run.get("solo"):
+                # AUTO-LOOP solo pass (2026-11-16): ONE turn is the whole pass - no self cross-talk,
+                # no nudges. The autoloop watchdog re-queues the next idle agent; the evidence sweep
+                # + _auto_commit in `finally` persist this pass's work before the next one starts.
+                last_concluded = True
+                verdict = {"note": "\u21bb Auto-loop solo pass (%s) complete." % (run.get("autoloop_why") or "idle re-entry"), "cls": "dim"}
+                break
             guard = calls = 0
             while (not stop_event.is_set() and guard < XTALK_GUARD_RUN and calls < MAX_CALLS_RUN):
                 _, st = load_memory()
@@ -2213,6 +2423,20 @@ def _group_run_worker(run_id):
             else:
                 verdict = {"note": "Round closed.", "cls": "dim"}
         run["verdict"] = verdict
+        # Goal-aware verdict (2026-11-16): the fleet's evidence-gated count is appended to EVERY
+        # round-end note, so "concluded" can never silently coexist with an open goal cycle - the
+        # pill says whether the CYCLE is done too, not just this round's task. This is how the UI
+        # answers "how can we reach a conclusion if the goals are not completed?": it can't be green.
+        try:
+            _gs = _goals_snapshot()
+            if _gs.get("ok") and _gs.get("fleet_total"):
+                _gsum = "%d/%d goals reached" % (_gs["fleet_done"], _gs["fleet_total"])
+                if status == "concluded" and _gs["fleet_done"] < _gs["fleet_total"]:
+                    verdict["note"] += ("  [goals] %s - cycle NOT complete; conclusion covers this round's task only." % _gsum)
+                elif status != "concluded":
+                    verdict["note"] += ("  [goals] %s" % _gsum) + ("" if _gs["fleet_done"] >= _gs["fleet_total"] else " - cycle not complete")
+        except Exception:
+            pass
         run["ended"] = time.time()
         if status == "concluded":
             run["auto_resume_count"] = 0   # clean conclusion resets the auto-resume budget
@@ -2230,6 +2454,14 @@ def _group_run_worker(run_id):
                 verdict["note"] += ("  [evidence] %d marker(s) auto-written (%s)"
                                     % (len(sweep_ch), ", ".join(c["leaf"].split("/")[-1] for c in sweep_ch[:4])))
                 run["verdict"] = verdict
+            # Keep the root goal_ledger.json snapshot current (2026-11-16: it went stale - still showed
+            # cycle-1 80/80 while the cycle-2 files were open, so anyone reading the file saw a fake 100%).
+            try:
+                _gl.GOALS_DIR = os.path.join(HERE, "memory", "goals")
+                with open(os.path.join(HERE, "goal_ledger.json"), "w", encoding="utf-8") as _gjf:
+                    json.dump(_gl.build_ledger(), _gjf, indent=1)
+            except Exception:
+                pass
             _auto_commit()
         except Exception:
             pass
@@ -2237,6 +2469,25 @@ def _group_run_worker(run_id):
             _save_group_run(run)
             _run_event(run_id, {"run": "end", "status": run["status"], "verdict": run["verdict"]})
         _active_run_id = None
+        # 2026-11-17 (starnet): advance the belt - a run queued while we were busy starts now.
+        threading.Thread(target=_aq_pump, args=(run.get("status") != "stopped",), daemon=True).start()
+
+
+def _aq_pump(advance=True):
+    """Belt advance (starnet workitem.delivered): once we're free, start the oldest queued run.
+    E-STOP idiom: if a human stopped the finishing run, don't auto-advance - leave it parked."""
+    time.sleep(1.0)   # let the finishing run release locks/state
+    try:
+        if not advance:
+            print("[run-queue] parked after stop; %d waiting" % _aq.status()["queue_depth"], flush=True)
+            return
+        item = _aq.pop_next()
+        if not item:
+            return
+        run, err = start_group_run(item.get("text") or "", item.get("extra"))
+        print("[run-queue] advanced %s -> %s" % (item["id"], (run or {}).get("id", err)), flush=True)
+    except Exception as e:
+        print("[run-queue] pump error: %s" % e, flush=True)
 
 
 def start_group_run(text, extra=None):
@@ -2245,7 +2496,15 @@ def start_group_run(text, extra=None):
     global _active_run_id
     with _group_run_lock:
         if _active_run_id:
-            return None, "a group run is already in progress (%s)" % _active_run_id
+            # 2026-11-17 (starnet workitem.placed): busy no longer rejects - it ENQUEUES.
+            # The caller gets a queue receipt (position + depth); 'at-capacity' deferral
+            # is explicit, never silent (starnet NS-0).
+            wi, qerr = _aq.enqueue(text, extra)
+            if qerr:
+                return None, "a group run is already in progress (%s) and the queue is %s (cap %d)" % (
+                    _active_run_id, qerr, _aq.cap())
+            return {"queued": True, "id": wi["id"], "position": wi["position"],
+                    "depth": wi["depth"], "maxCapacity": wi["maxCapacity"], "cast": []}, None
         agents = load_agents()["agents"]
         names = [a.get("name", "") for a in agents]
         mentioned = [n for n in names if re.search(r"@" + re.escape(n), text or "", re.I)]
@@ -2274,6 +2533,17 @@ def start_group_run(text, extra=None):
         except Exception:
             pass
         full_text = (text or "") + reset_note
+        # 2026-11-17: admin is the DEFAULT for every agent (user directive). When this shell is
+        # not elevated, route admin commands through the elevated helper service (elev.py ->
+        # 127.0.0.1:8098, SYSTEM) instead of telling agents to give up.
+        try:
+            if not _shell_elevated():
+                full_text += ("\n\n[SHELL] Shell is not elevated, but admin commands DO work via the helper: run "
+                              "`python elev.py <cmd...>` or `python elev.py --shell \"cmd string\"` (auto-escalates to SYSTEM). "
+                              "Admin is the default for all agents - never treat elevation as a blocker. "
+                              "Only if elev.py exits 5 (helper down) log NEEDS-HUMAN in memory/ops/blockers.md once, then move on.")
+        except Exception:
+            pass
         # Model-load governance: flag seats whose model is not loaded BEFORE the run
         # starts, so agents stop waiting on a chair that can never answer (2026-11-16).
         _mls = None
@@ -2296,7 +2566,8 @@ def start_group_run(text, extra=None):
         except Exception:
             pass
         hist = _load_history("group")
-        run = {"id": rid, "status": "running", "prompt": full_text[:4000], "cast": (mentioned or names),
+        run = {"id": rid, "status": "running", "prompt": full_text[:4000],
+               "cast": ((extra or {}).get("cast_override") or mentioned or names),
                "settled": [], "nudges": 0, "phase": "prompt",
                "started": time.time(), "ended": None, "verdict": None, "error": None,
                "hist_start": len(hist)}
@@ -2376,6 +2647,16 @@ def _stall_killer(run_id):
         if _active_run_id != run_id:
             return
         last = _run_last_frame.get(run_id)
+        if last is None:
+            # 2026-11-16 zero-frame guard: a hang BEFORE the first token never sets
+            # _run_last_frame, so the old check could never fire (fleet wedged 2x today).
+            # Fall back to run start time as the reference.
+            try:
+                r0 = _load_group_run()
+                if r0.get("id") == run_id and r0.get("started"):
+                    last = r0["started"]
+            except Exception:
+                pass
         if last and time.time() - last > STALL_KILL_S:
             try:
                 run = _load_group_run()
@@ -2426,6 +2707,256 @@ def _auto_resume_watchdog():
                       "memory/goals/<you>.md with evidence as you go, then reply [CONCLUDED] when the "
                       "cycle's tasks are done." % (n, AUTO_RESUME_MAX, why))
             start_group_run(prompt, extra={"auto_resume_count": n})   # budget persisted atomically with the run
+        except Exception:
+            pass
+
+
+# ---- AUTO-LOOP (2026-11-16, Arnold; 2026-11-17 batch fire): idle agents re-enter the work queue
+# within ~1 minute. Rule: an agent that is idle must NOT wait for everyone else to finish.
+# Per-agent task priority: (1) queued human messages, (2) its own open goals (one concrete step +
+# ledger evidence), (3) a rare maintenance sweep at 100% ("what else can I do while we wait").
+# 2026-11-17: the watchdog no longer picks ONE agent per tick - it fires ALL idle agents AT ONCE:
+# one solo group run whose cast is every idle seat, with a per-agent task section in the broadcast
+# (each seat acts only on its own section; behaviour analysis of their last reply steers the task).
+# The pass runs through the normal group-run machinery (one parallel turn per seat), so it is
+# journaled, stall-guarded, evidence-swept and auto-committed. Detail: memory/ops/autoloop.md
+_agent_last_active = {}      # name -> epoch of last completed turn (in-memory truth)
+_autoloop_lock = threading.Lock()
+
+
+def _autoloop_file():
+    return os.path.join(HERE, "memory", "ops", "autoloop.json")
+
+
+def _autoloop_load():
+    try:
+        with open(_autoloop_file(), encoding="utf-8") as f:
+            d = json.load(f)
+        return d if isinstance(d, dict) else {}
+    except Exception:
+        return {}
+
+
+def _autoloop_save(d):
+    try:
+        os.makedirs(os.path.dirname(_autoloop_file()), exist_ok=True)
+        tmp = _autoloop_file() + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(d, f, ensure_ascii=False)
+        os.replace(tmp, _autoloop_file())
+    except Exception:
+        pass
+
+
+def autoloop_touch(name, ts=None):
+    """Record that an agent just finished a turn (its idle clock restarts)."""
+    with _autoloop_lock:
+        _agent_last_active[name] = ts or time.time()
+        d = _autoloop_load()
+        d.setdefault("last_active", {})[name] = _agent_last_active[name]
+        _autoloop_save(d)
+
+
+def autoloop_note_human():
+    """Any human input (queued message or run) resets the auto-pass streak budget."""
+    with _autoloop_lock:
+        d = _autoloop_load()
+        if d.get("streak"):
+            d["streak"] = 0
+            d["last_human_ts"] = time.strftime("%Y-%m-%d %H:%M:%S")
+            _autoloop_save(d)
+
+
+def _agent_open_goal_count(name):
+    try:
+        path = os.path.join(HERE, "memory", "goals", name.lower() + ".md")
+        return sum(1 for g in _goal_ledger_mod().parse_agent_file(path) if g["status"] != "reached")
+    except Exception:
+        return 0
+
+
+def _autoloop_behaviour_hint(name):
+    """Behaviour analysis (2026-11-17): read this agent's LAST substantive group-chat reply and
+    derive a one-line context for its next auto-loop task, so the batch pass continues where the
+    agent actually left off instead of re-running what it already did.
+    Signals, in priority order: (1) remaining-work lines ('Remaining open: ...', 'next step: ...')
+    -> continue, don't redo; (2) blocker claims (unreachable / blocked by / powered off / must run
+    on X) -> work AROUND it, don't re-probe the same wall; (3) an auto-loop pass that ended WITHOUT
+    [CONCLUDED] -> finish the in-flight work first. [SILENT]-only tails are ignored."""
+    try:
+        hist = _load_history("group")
+    except Exception:
+        return ""
+    last_text, last_concluded, was_autoloop = None, False, False
+    for m in reversed(hist):
+        who = (m.get("speaker") or "").strip().lower()
+        content = (m.get("content") or "").strip()
+        if not content:
+            continue
+        if who == "you":
+            if last_text is None:   # the human message immediately before this agent's reply
+                was_autoloop = content.lower().startswith("auto-loop")
+            continue
+        if who != name.lower():
+            continue
+        _, is_silent, concluded = _effective_reply(content)
+        if is_silent:
+            continue
+        last_text = content
+        # agents often put the marker at the END of the reply, not the start - count both
+        last_concluded = concluded or "[concluded]" in content.lower()
+        break
+    if not last_text:
+        return ""
+    tail = last_text[-1400:]
+    # a real remaining-work line is 'Remaining open: ...' / 'Next step (...): ...' - keyword
+    # followed by a colon; narration like 'styles remain. Now I need...' has no colon and must not match
+    mrem = re.search(r"\b(remaining|next step|still open)\s+[(a-z) ]{0,20}:[^\n]{0,160}", tail, re.I)
+    if mrem:
+        frag = mrem.group(0).replace("**", "").strip()[:200]
+        return ("BEHAVIOUR: your last pass left remaining work - continue from there, do NOT redo it: %s"
+                % frag)
+    mblk = re.search(r"[^\n]*(blocked by|unreachable|can'?t be started|must run on|powered off)[^\n]*",
+                     tail, re.I)
+    if mblk:
+        frag = mblk.group(0).strip(" *#-").replace("**", "")[:160]
+        return ("BEHAVIOUR: you reported a blocker last pass (%s) - take ONE step that does NOT depend "
+                "on it (another open goal, evidence/ledger upkeep, or assist another agent's lane); do "
+                "not re-probe the same wall.") % frag
+    if was_autoloop and not last_concluded:
+        return ("BEHAVIOUR: your last auto-loop pass ended WITHOUT [CONCLUDED] - first finish whatever "
+                "was in flight (check your evidence/ledger state), then take one more step on your "
+                "oldest open goal.")
+    return ""
+
+
+def _autoloop_state():
+    """GET /api/autoloop - live view of the idle re-entry loop."""
+    with _autoloop_lock:
+        d = dict(_autoloop_load())
+        la = {k: float(v) for k, v in _agent_last_active.items()}
+        la.update({k: float(v) for k, v in (d.get("last_active") or {}).items() if k not in la})
+    now = time.time()
+    agents = load_agents()["agents"]
+    open_by_name = {a.get("name", ""): _agent_open_goal_count(a.get("name", ""))
+                    for a in agents if a.get("name")}
+    # paused only when the maintenance budget is spent AND no seat has real work left -
+    # productive passes (queued msg / open goal) are exempt from the cap (2026-11-17 budget fix)
+    paused = int(d.get("streak", 0)) >= AUTOLOOP_MAX_STREAK and not any(open_by_name.values())
+    out = {"ok": True, "idle_s": AUTOLOOP_IDLE_S, "tick_s": AUTOLOOP_TICK_S,
+           "streak": int(d.get("streak", 0)), "max_streak": AUTOLOOP_MAX_STREAK,
+           "paused": paused,
+           "last_human_ts": d.get("last_human_ts"), "last_pass": d.get("last_pass"),
+           "agents": {}}
+    for a in agents:
+        n = a.get("name", "?")
+        ts = float(la.get(n) or PORTAL_START)
+        out["agents"][n] = {"idle_s": int(now - ts),
+                            "open_goals": open_by_name.get(n, 0)}
+    return out
+
+
+def _autoloop_watchdog():
+    """One scheduler tick every AUTOLOOP_TICK_S: when NO group run is active, ALL idle agents are
+    fired at once (2026-11-17) - one solo pass whose cast is every idle seat, each with its own task
+    section. Per-agent priority inside the broadcast: queued human messages first (UMQ injects them),
+    else their oldest open goal, else a maintenance sweep at 100%. Seats whose model is not ready are
+    excluded from the batch (their lanes stay covered by seat-drafted goals)."""
+    while True:
+        time.sleep(AUTOLOOP_TICK_S)
+        if not _portal_live or _active_run_id:
+            continue
+        try:
+            with _autoloop_lock:
+                d = dict(_autoloop_load())
+                la = {k: float(v) for k, v in (d.get("last_active") or {}).items()}
+                la.update({k: float(v) for k, v in _agent_last_active.items()})
+            now = time.time()
+            names = [a.get("name", "") for a in load_agents()["agents"] if a.get("name")]
+            for n in names:
+                la.setdefault(n, PORTAL_START)   # fresh restart: no burst of passes
+            idle = [n for n in names if now - la[n] >= AUTOLOOP_IDLE_S]
+            if not idle:
+                continue
+            # 2026-11-17 batch fire: For(allThatsIdle) giveTask - every idle seat gets its task in
+            # ONE parallel pass instead of one serial agent per tick. Seats whose model is not ready
+            # are excluded (firing a dead seat only wastes a turn; the run-start check already notes
+            # them for everyone else).
+            try:
+                mls = _model_load_status(timeout=AUTOLOOP_PROBE_TIMEOUT_S)
+            except Exception:
+                mls = {}
+            ready = [n for n in idle if not mls.get(n, {}).get("status") or mls[n]["status"] == "ok"]
+            ready = ready[:AUTOLOOP_BATCH_MAX]
+            # 2026-11-17: seats whose model stays unreachable are NOT silently skipped forever - after
+            # ~20 min (8 ticks) we file a NEEDS-HUMAN blocker so the user can reload/restart Studio.
+            down = [n for n in idle if mls.get(n, {}).get('status') not in (None, 'ok')]
+            streaks = d.setdefault('down_streak', {})
+            for _n in list(streaks):
+                if _n not in down:
+                    streaks.pop(_n, None)
+            for _n in down:
+                streaks[_n] = streaks.get(_n, 0) + 1
+                if streaks[_n] == 8:
+                    try:
+                        with open(os.path.join(HERE, 'memory', 'ops', 'blockers.md'), 'a', encoding='utf-8') as _bf:
+                            _bf.write('- [%s] NEEDS-HUMAN: seat %s model unreachable for 20+ min (%s). Reload the model in Studio or restart it elevated.\n'
+                                      % (time.strftime('%H:%M'), _n, mls[_n].get('status')))
+                    except Exception:
+                        pass
+            sections, why_bits, productive = [], [], False
+            for n in ready:   # per-agent task, steered by behaviour analysis of their last reply
+                try:
+                    pend = umq_pending_for(n, names)
+                except Exception:
+                    pend = []
+                og = _agent_open_goal_count(n)
+                idle_s = int(now - la[n])
+                hint = _autoloop_behaviour_hint(n)
+                if pend:
+                    productive = True
+                    why_bits.append("%s:queued-msg" % n.lower())
+                    body = ("a queued human message is waiting and will be injected below - handle it "
+                            "FIRST, then take ONE concrete step on your open goals.")
+                elif og > 0:
+                    productive = True
+                    why_bits.append("%s:%d-open" % (n.lower(), og))
+                    body = ("take ONE concrete next step on your oldest open goal "
+                            "(memory/goals/%s.md, %d open)." % (n.lower(), og))
+                elif now - la[n] >= AUTOLOOP_MAINT_COOLDOWN_S:
+                    why_bits.append("%s:maint" % n.lower())
+                    body = ("your goals are 100%% reached - contribute to the team while you wait - pick ONE of: (a) write a prediction/forecast for another agent's open goal into memory/goals/, (b) draft a solution or workflow improvement into memory/ops/, (c) verify and close one stale evidence claim in the ledger, (d) do one concrete step on another agent's oldest open goal. Reply [SILENT] only if you genuinely checked all four and found nothing actionable.")
+                else:
+                    continue   # at 100% inside maintenance cooldown - no task for this seat yet
+                sections.append((n, "@%s (idle %d s): %s%s" % (
+                    n, idle_s, body, (" " + hint) if hint else "")))
+            if not sections:
+                continue   # all at 100% inside cooldown - genuinely nothing to do yet
+            # 2026-11-17 budget fix: AUTOLOOP_MAX_STREAK exists to stop pointless maintenance
+            # sweeps at 100% (GPU cost). It must NEVER pause real work - a pass that hands any seat
+            # a queued human message or an open-goal task is productive and RESTARTS the counter;
+            # only all-maintenance batches consume it. (Before this fix, 40 consecutive passes
+            # paused the loop for hours while Designer/Scribe/Mechanic still held 9 open goals.)
+            if not productive and int(d.get("streak", 0)) >= AUTOLOOP_MAX_STREAK:
+                continue   # maintenance budget spent - wait for human input (autoloop_note_human resets)
+            # cast = the seats that ACTUALLY got a task section. Firing a seat with no section only
+            # burns a full turn on [SILENT] (2026-11-17: batch #2 fired 7, only 3 had sections).
+            batch = [n for n, _ in sections]
+            why = ", ".join(why_bits)
+            prompt = ("AUTO-LOOP (batch pass, %d agents in parallel) - you have been idle. Work ONLY "
+                      "YOUR section below; the other sections are for the other seats and need no reply "
+                      "from you. Record evidence via the ledger as you go, then reply [CONCLUDED].\n"
+                      "If a blocker has repeated across passes, do NOT re-probe it - record it once as NEEDS-HUMAN in memory/ops/blockers.md (exact command + error) and move to your next goal.\n"
+                      % len(batch)) + "\n".join(t for _, t in sections)
+            run, err = start_group_run(prompt, extra={"solo": True, "autoloop_why": why,
+                                                      "cast_override": batch})
+            if not err:
+                d["streak"] = 0 if productive else int(d.get("streak", 0)) + 1
+                d["last_pass"] = {"agent": ", ".join(batch), "batch": len(batch), "why": why,
+                                  "productive": productive,
+                                  "ts": time.strftime("%Y-%m-%d %H:%M:%S")}
+                with _autoloop_lock:
+                    _autoloop_save(d)
         except Exception:
             pass
 
@@ -2503,6 +3034,101 @@ def _ops_snapshot():
             "uptime_s": up, "uptime_hm": "%dh %02dm %02ds" % (hh, mm, ss),
             "started": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(PORTAL_START)),
             "disk": disk}
+
+
+def _memory_health_snapshot():
+    """GET /api/memory-health (Scribe goal 9, re-landed 2026-11-17 after clobber loss).
+    Six memory-system health metrics from existing evidence files + live scans.
+    Each metric: {value, status in pass|warn|fail, detail}. Never raises."""
+    def _latest(subdir, prefix):
+        try:
+            fs = [f for f in os.listdir(os.path.join(HERE, "memory", subdir))
+                  if f.startswith(prefix) and f.endswith(".json")]
+            return os.path.join(HERE, "memory", subdir, sorted(fs)[-1]) if fs else None
+        except Exception:
+            return None
+
+    def _jload(p):
+        try:
+            with open(p, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return None
+
+    m = {}
+    # 1/6 hot_file_lines - MEMORY.md size vs the 40-line pointer budget.
+    try:
+        n = len(open(os.path.join(HERE, "MEMORY.md"), encoding="utf-8", errors="replace").read().splitlines())
+        m["hot_file_lines"] = {"value": n, "status": "pass" if n <= 40 else ("warn" if n <= 60 else "fail"),
+                               "detail": "MEMORY.md lines vs 40-line pointer budget"}
+    except Exception as e:
+        m["hot_file_lines"] = {"value": None, "status": "fail", "detail": str(e)[:120]}
+    # 2/6 orphan_rate - latest orphan-sweep evidence (Scribe).
+    d = _jload(_latest("scribe", "orphan-sweep-")) or {}
+    if isinstance(d.get("orphan_rate_pct"), (int, float)):
+        v = float(d["orphan_rate_pct"])
+        m["orphan_rate"] = {"value": v, "status": "pass" if v == 0 else ("warn" if v <= 5 else "fail"),
+                            "detail": "%s/%s files referenced by indexes (sweep %s)" % (
+                                d.get("referenced_by_indexes", "?"), d.get("total_files_in_memory", "?"),
+                                str(d.get("timestamp", "?"))[:10])}
+    else:
+        m["orphan_rate"] = {"value": None, "status": "fail", "detail": "no orphan-sweep evidence or key mismatch"}
+    # 3/6 contradiction_count - latest detector run (Scribe).
+    d = _jload(_latest("scribe", "contradiction-detector-")) or {}
+    r = d.get("results") or {}
+    if isinstance(r.get("failed"), int):
+        m["contradiction_count"] = {"value": r["failed"], "status": "pass" if r["failed"] == 0 else "warn",
+                                    "detail": "%d/%s claims failed (run %s)" % (r["failed"], r.get("total", "?"), str(d.get("timestamp", "?"))[:10])}
+    else:
+        m["contradiction_count"] = {"value": None, "status": "fail", "detail": "no detector evidence or key mismatch"}
+    # 4/6 supersession_validity - every memory/*.md path cited on a SUPERSEDED line must exist.
+    cites, missing = 0, []
+    try:
+        for f in os.listdir(os.path.join(HERE, "memory", "synthesis")):
+            if not f.endswith(".md"):
+                continue
+            txt = open(os.path.join(HERE, "memory", "synthesis", f), encoding="utf-8", errors="replace").read()
+            for line in txt.splitlines():
+                if "SUPERSEDED" not in line.upper():
+                    continue
+                for pth in re.findall(r"memory/[A-Za-z0-9_\-./]+\.md", line):
+                    cites += 1
+                    if not os.path.isfile(os.path.join(HERE, pth)):
+                        missing.append(pth)
+    except Exception:
+        pass
+    m["supersession_validity"] = {"value": len(missing), "status": "pass" if not missing else "fail",
+                                  "detail": "%d path cites on SUPERSEDED lines, %d dangling" % (cites, len(missing))}
+    # 5/6 owner_coverage_pct - latest owner-coverage ledger (Scribe).
+    d = _jload(_latest("scribe", "owner-coverage-ledger-")) or {}
+    if isinstance(d.get("active_coverage_pct"), (int, float)):
+        v = float(d["active_coverage_pct"])
+        m["owner_coverage_pct"] = {"value": v, "status": "pass" if v >= 80 else ("warn" if v >= 50 else "fail"),
+                                   "detail": "%s/%s active goals owned (%s)" % (d.get("active_owned", "?"), d.get("active", "?"), d.get("date", "?"))}
+    else:
+        m["owner_coverage_pct"] = {"value": None, "status": "fail", "detail": "no owner-coverage ledger or key mismatch"}
+    # 6/6 durable_copy_integrity - every Scribe leaf referenced by some INDEX.md.
+    idx_txt = ""
+    try:
+        for root, _dirs, files in os.walk(os.path.join(HERE, "memory")):
+            if "INDEX.md" in files:
+                idx_txt += open(os.path.join(root, "INDEX.md"), encoding="utf-8", errors="replace").read()
+    except Exception:
+        pass
+    unref = []
+    try:
+        for f in sorted(os.listdir(os.path.join(HERE, "memory", "scribe"))):
+            if f.endswith(".md") and f not in idx_txt:
+                unref.append(f)
+    except Exception:
+        pass
+    m["durable_copy_integrity"] = {"value": len(unref), "status": "pass" if not unref else "fail",
+                                   "detail": "%d Scribe leaves unreferenced by any INDEX.md" % len(unref)}
+    try:
+        ts = time.strftime("%Y-%m-%d %H:%M:%S")
+    except Exception:
+        ts = "?"
+    return {"ok": True, "ts": ts, "metrics": m}
 
 
 def _goals_snapshot():
@@ -2992,6 +3618,14 @@ class Handler(BaseHTTPRequestHandler):
             pass  # client gone (refresh / tab closed) - the run keeps going on the backend
 
     def do_GET(self):
+        # 2026-11-16: perf ring buffer hook (Builder cycle-2 goal 8) - timing wrapper.
+        _t0 = time.time()
+        try:
+            return self._do_GET()
+        finally:
+            _perf_record(self.path.split("?")[0], (time.time() - _t0) * 1000)
+
+    def _do_GET(self):
         p = self.path.split("?")[0]
         if p in ("/", "/index.html"):
             return self._html("index.html")
@@ -3013,8 +3647,11 @@ class Handler(BaseHTTPRequestHandler):
             q = urllib.parse.parse_qs(self.path.split("?", 1)[1] if "?" in self.path else "")
             m2 = (q.get("mode") or ["group"])[0]
             return self._json(200, {"ok": True, "history": _load_history(m2) if m2 in CHAT_HISTORY_FILES else []})
+        elif p == "/api/autoloop":
+            return self._json(200, _autoloop_state())
         elif p == "/api/run-state":
             base = dict(_load_run_state() or {})
+            base.update(_aq.status())   # 2026-11-17 (starnet queue.status): backpressure HUD data
             run = _load_group_run()
             if run.get("id"):
                 if run.get("status") == "running":
@@ -3041,6 +3678,15 @@ class Handler(BaseHTTPRequestHandler):
             # Fleet Status panel (2026-11-13): per-host models + busy/idle/unknown.
             # On-demand probes only (no background timer); dead host => unknown, no hang.
             return self._json(200, _fleet_snapshot())
+        elif p == "/api/perf":
+            return self._json(200, _perf_snapshot())
+        elif p == "/api/health/fleet":
+            return self._json(200, _fleet_health_snapshot())
+        elif p == "/api/memory-health":
+            # Memory-system health (Scribe goal 9, re-landed 2026-11-17): six metrics.
+            return self._json(200, _memory_health_snapshot())
+        elif p == "/api/decisions":
+            return self._json(200, _decisions_snapshot())
         elif p == "/api/git":
             # Local git repo status + recent log (Ops panel, 2026-11-13).
             return self._json(200, _git_status())
@@ -3267,6 +3913,13 @@ class Handler(BaseHTTPRequestHandler):
         return self._json(201, {"ok": True, "path": rel_clean.replace("\\", "/"), "size": written})
 
     def do_POST(self):
+        _t0 = time.time()
+        try:
+            return self._do_POST()
+        finally:
+            _perf_record(self.path.split("?")[0], (time.time() - _t0) * 1000)
+
+    def _do_POST(self):
         p = self.path.split("?")[0]
         if p == "/api/upload":
             return self._upload()
@@ -3275,6 +3928,7 @@ class Handler(BaseHTTPRequestHandler):
         except Exception as e:
             return self._json(400, {"error": f"bad json: {e}"})
         if p == "/api/user-messages":
+            autoloop_note_human()   # AUTO-LOOP: a queued human message resets the streak budget
             entry = umq_add(body.get("text"), body.get("mentions"))
             if not entry:
                 return self._json(400, {"error": "text required"})
@@ -3305,6 +3959,7 @@ class Handler(BaseHTTPRequestHandler):
             text = (body.get("text") or "").strip()
             if not text:
                 return self._json(400, {"error": "text required"})
+            autoloop_note_human()   # AUTO-LOOP: human input resets the auto-pass streak budget
             run, err = start_group_run(text)
             if err:
                 return self._json(409, {"error": err})
@@ -3528,6 +4183,12 @@ if __name__ == "__main__":
     _clear_stale_busy()
     _prune_run_journals()
     threading.Thread(target=_auto_resume_watchdog, daemon=True).start()
+    _aq.recover()   # 2026-11-17 (starnet recover()): report pending runs that survived a restart
+    try:
+        _agent_last_active.update({k: float(v) for k, v in (_autoloop_load().get("last_active") or {}).items()})
+    except Exception:
+        pass
+    threading.Thread(target=_autoloop_watchdog, daemon=True).start()   # AUTO-LOOP (2026-11-16)
     print(f"Agent portal -> http://127.0.0.1:{PORT}  (backed by Studio at {STUDIO})")
     try:
         srv.serve_forever()

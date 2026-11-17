@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mirror sync reverts --week-complete in load_trend.py (5th occurrence); expect same pattern for any edits to that file
 - Mirror sync repeatedly reverts Mechanic's file edits (load_probe.py guard, --week-complete flag) — expect re-application each pass
 - goal4_closure.py built+tested: validates baseline, runs load_trend --week-complete, gates at 2/7 (
 - load_trend.py --week-complete implemented & verified; needs 5 more days of probe data before closure verdict fires
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 80/80 goals confirmed reached via ledger; no open work on Mechanic's lane as of cycle-3 readiness snapshot.
 - Mirror sync reverted cycle-3 goals file; re-wrote all 10 goals in memory/goals/archivist.md — watch for re-reversions next pass
 - Scribe creating `memory/s
+- Verifier c3 fault-injection passed (corrupt+truncate, MTTR<1ms); evidence at memory/verifier/fault-injection
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
