@@ -1,6 +1,8 @@
 /*
 !/.gitignore
 !/agent_portal.py
+# 2026-11-17: starnet-style run queue (imported by agent_portal)
+!/agent_queue.py
 !/index.html
 !/ui/
 !/agents.json

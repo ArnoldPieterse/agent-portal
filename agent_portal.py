@@ -7,6 +7,7 @@ skills, RAG, tool execution). Nothing here loads models directly.
 """
 import hashlib, json, mimetypes, os, re, shutil, subprocess, sys, threading, time, urllib.request, urllib.error, urllib.parse, uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
+import agent_queue as _aq   # 2026-11-17: starnet-style durable run queue + backpressure telemetry
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PORT = 8099
@@ -2465,6 +2466,25 @@ def _group_run_worker(run_id):
             _save_group_run(run)
             _run_event(run_id, {"run": "end", "status": run["status"], "verdict": run["verdict"]})
         _active_run_id = None
+        # 2026-11-17 (starnet): advance the belt - a run queued while we were busy starts now.
+        threading.Thread(target=_aq_pump, args=(run.get("status") != "stopped",), daemon=True).start()
+
+
+def _aq_pump(advance=True):
+    """Belt advance (starnet workitem.delivered): once we're free, start the oldest queued run.
+    E-STOP idiom: if a human stopped the finishing run, don't auto-advance - leave it parked."""
+    time.sleep(1.0)   # let the finishing run release locks/state
+    try:
+        if not advance:
+            print("[run-queue] parked after stop; %d waiting" % _aq.status()["queue_depth"], flush=True)
+            return
+        item = _aq.pop_next()
+        if not item:
+            return
+        run, err = start_group_run(item.get("text") or "", item.get("extra"))
+        print("[run-queue] advanced %s -> %s" % (item["id"], (run or {}).get("id", err)), flush=True)
+    except Exception as e:
+        print("[run-queue] pump error: %s" % e, flush=True)
 
 
 def start_group_run(text, extra=None):
@@ -2473,7 +2493,15 @@ def start_group_run(text, extra=None):
     global _active_run_id
     with _group_run_lock:
         if _active_run_id:
-            return None, "a group run is already in progress (%s)" % _active_run_id
+            # 2026-11-17 (starnet workitem.placed): busy no longer rejects - it ENQUEUES.
+            # The caller gets a queue receipt (position + depth); 'at-capacity' deferral
+            # is explicit, never silent (starnet NS-0).
+            wi, qerr = _aq.enqueue(text, extra)
+            if qerr:
+                return None, "a group run is already in progress (%s) and the queue is %s (cap %d)" % (
+                    _active_run_id, qerr, _aq.cap())
+            return {"queued": True, "id": wi["id"], "position": wi["position"],
+                    "depth": wi["depth"], "maxCapacity": wi["maxCapacity"], "cast": []}, None
         agents = load_agents()["agents"]
         names = [a.get("name", "") for a in agents]
         mentioned = [n for n in names if re.search(r"@" + re.escape(n), text or "", re.I)]
@@ -3620,6 +3648,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(200, _autoloop_state())
         elif p == "/api/run-state":
             base = dict(_load_run_state() or {})
+            base.update(_aq.status())   # 2026-11-17 (starnet queue.status): backpressure HUD data
             run = _load_group_run()
             if run.get("id"):
                 if run.get("status") == "running":
@@ -4151,6 +4180,7 @@ if __name__ == "__main__":
     _clear_stale_busy()
     _prune_run_journals()
     threading.Thread(target=_auto_resume_watchdog, daemon=True).start()
+    _aq.recover()   # 2026-11-17 (starnet recover()): report pending runs that survived a restart
     try:
         _agent_last_active.update({k: float(v) for k, v in (_autoloop_load().get("last_active") or {}).items()})
     except Exception:
