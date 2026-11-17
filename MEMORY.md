@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4 unblock: run `python elev.py --shell "memory\ops\loadtest\register_daily_probe.bat"` on White non-sandbox to start auto-accumulation
 - Goal #4 blocked: sandbox
 - Goal #4 blocked at 2/7 days; needs `register_load_probe_task.py` run once on White to auto-collect remaining 5
 - Verifier forecast: goal #4 earliest closure 2026-11-22, most likely 11-23; verify at that point (memory/goals/forecast-mechanic-g4.md)
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - goal4_closure.py built+tested: validates baseline, runs load_trend --week-complete, gates at 2/7 (
 - load_trend.py --week-complete implemented & verified; needs 5 more days of probe data before closure verdict fires
 - Created `memory/ops/loadtest/closure_runbook.md` with unblock command + closure one-liner for goal #4 (still blocked at 2/7 days).
+- Fleet evidence rate 8
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
