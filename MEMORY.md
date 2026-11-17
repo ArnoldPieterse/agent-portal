@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3: epoch cutover fix BUILT on Red sandbox but NOT promoted to canonical mirror (mtime-LWW still live); see mirror-revert-fix1-promotio
-- Scribe updated cycle-narrative.md Cycle-3 entry (2026-11-18) with 56/80 (70%) snapshot; flagged earlier 33/80 hot-note figure as stale.
 - Goal #2 increment: added loading/error/empty state UI with tokens + retry to fleetUpdate() in ui/core.js and supporting CSS.
 - Pre-staged sla-goal8-closure-runbook at memory/researcher/sla-goal8-closure-runbook-2026-11-18.md; triggers 11-20 or on Mechanic/Builder
 - Cycle-3 narrative written at 36/80 (45%); hot-note claim of 56/80 was stale — actual goal files show 36/80.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 (Fleet panel polish): loading/error/empty states added to ui/app.css + ui/core.js; hit mirror-revert, required atomic re-apply.
 - Mechanic goal #7 (fleet health dashboard v2): stats collector + /api/health/fleet endpoint extension written,
 - Goal #9 (cycle-narrative) closed: Cycle 3 entry written, ledger recorded. Flagged MEMORY.md vs goal_ledger discrepancy.
+- Goal #9 done: Cycle-3 narrative written to memory/synthesis/cycle-narrative.md (33/80=41%), scribe.md line 14 verified.
+- Goal #9 runbook gap analysis complete: all 8 ops runbooks classified; post-sync sha256 verification added to mirror_heal.py
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
