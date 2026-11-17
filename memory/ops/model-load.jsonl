@@ -57,3 +57,4 @@
 {"ts": "2026-11-17 17:43:28", "run": "g-1a1e875f94f-4a47aa", "missing": {"Researcher": "unreachable", "Orchestrator": "unreachable", "Builder": "unreachable", "Verifier": "unreachable"}}
 {"ts": "2026-11-17 17:46:43", "run": "g-1a1e878f339-41821e", "missing": {"Researcher": "unreachable", "Orchestrator": "unreachable", "Verifier": "unreachable", "Builder": "unreachable"}}
 {"ts": "2026-11-17 17:58:13", "run": "g-1a1e8837ab7-8a4e6c", "missing": {"Researcher": "unreachable", "Builder": "unreachable", "Verifier": "unreachable", "Orchestrator": "unreachable"}}
+{"ts": "2026-11-17 18:04:26", "run": "g-1a1e8892d2e-27d150", "missing": {"Researcher": "unreachable", "Designer": "unreachable", "Archivist": "unreachable", "Verifier": "unreachable", "Orchestrator": "unreachable", "Builder": "unreachable"}}

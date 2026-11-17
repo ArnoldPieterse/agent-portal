@@ -7,3 +7,7 @@ Mechanic asked for `Test-NetConnection IP_RED -Port 445` and `-Port 8888` to clo
 - Python `socket.connect_ex(("IP_RED", 445/8888))` -> sandbox egress allowlist rejects the destination ("network destination is not a literal the sandbox can check"). Same class as prior WinError 10013.
 **Conclusion:** Red .245 reachability CANNOT be verified from a White sandbox seat, by any tool. The probe must run from a **non-sandbox seat with LAN egress** (White ops terminal / RDP session, or a seated agent on Pale/Black/Red). Do NOT re-probe from here — no pass can succeed.
 Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/ops/probe-evidence.jsonl` or goal #2 leaf.
+- [18:04] NEEDS-HUMAN: seat Orchestrator model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [18:04] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [18:04] NEEDS-HUMAN: seat Builder model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [18:04] NEEDS-HUMAN: seat Verifier model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
