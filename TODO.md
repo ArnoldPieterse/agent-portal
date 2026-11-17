@@ -19,7 +19,7 @@ Investigation of "agents not making progress" found three compounding bugs (full
 - [x] BUG 3: real progress never registered as evidence markers; sweep only matched .md leaves so Builder's .py artifacts could never count. FIXED: sweep now matches index-linked artifacts; first run auto-linked Builder#1 + Designer#1 (legit on-disk scripts).
 - [x] GIT AS PROGRESS TRACKER: goals ARE registered in git (memory/goals/*.md tracked, auto-committed per turn) - new GET /api/goals/history reads goal files at recent commits (true counts, not diff arithmetic) + stall detection; Goals panel renders the curve. Verified history: cycle-1 0->7->49->52->60->66 -> cycle-2 reset 5 -> live ~22/80.
 - [x] _git() hardened: lenient utf-8 decode (binary bytes crashed reader thread) + max_out param (8 KB cap truncated goal diffs).
-- [ ] RESTART portal to load all of the above; then live-verify /api/goals, /api/goals/history, /api/merge-queue and confirm Goals panel renders git-progress row.
+- [x] RESTART portal to load all of the above; then live-verify /api/goals, /api/goals/history, /api/merge-queue and confirm Goals panel renders git-progress row. — DONE 2026-11-18 ~06:50: portal rebooted (PID 35912); live-verified /api/goals, /api/goals/history, /api/merge-queue all 200.
 - NOTE: root memory/INDEX.md is 2435 chars (over the 1600 budget) - pre-existing; Archivist to trim at next index pass.
 
 ## CYCLE 2 KICKOFF 2026-11-16 (Orchestrator seat) - supersedes older status lines
@@ -37,7 +37,7 @@ Investigation of "agents not making progress" found three compounding bugs (full
 - OPEN FINDING: Researcher alias (model_id per agents.json) times out 90-120s on its chat host (7/8 aliases live) - Mechanic to check model load state; Orchestrator#3 stays open until 8/8
 - WEDGE WATCH: g-1a1def4 prompt-phase hang seen 22:47 - verify run recovered post-restart
 
-- [ ] WEDGE SEEN 22:47 (run g-1a1def4): prompt phase hung ~12min after ALL 8 turns completed their frames (5 metas + Builder/Verifier conn errors) - ThreadPoolExecutor exit never returned; no py-spy available to capture stacks. STALL_KILL_S=900 is the safety net. NEXT: add per-turn wall-clock timeout in _parallel_turns (e.g. future.result(timeout=600)) so one stuck worker can't wedge a pass.
+- [x] WEDGE SEEN 22:47 (run g-1a1def4): prompt phase hung ~12min after ALL 8 turns completed their frames (5 metas + Builder/Verifier conn errors) - ThreadPoolExecutor exit never returned; no py-spy available to capture stacks. STALL_KILL_S=900 is the safety net. NEXT: add per-turn wall-clock timeout in _parallel_turns (e.g. future.result(timeout=600)) so one stuck worker can't wedge a pass. — FIXED: wall-clock wedge guard in agent_portal.py (~L2753): if NO frame journaled for STALL_KILL_S=900s the run is stopped and the auto-resume watchdog recovers; socket-timeout-only behavior removed.
 
 ## HOTLINE 2026-11-15 ~22:3x (Orchestrator seat, non-sandboxed - supersedes older status lines)
 - FLEET GOALS: 55/80 -> 60/80 (75.0%) this session. Closed with evidence: Builder #1 (upload round-trip), Verifier #1/#2/#3/#10 (smoke sweep, prune e2e, git commit 05af0c1, test report), Mechanic #3 (4-host recovery dry-run). Evidence: memory/verifier/*-2026-11-15.md, memory/builder/uploads-panel-verify-2026-11-15.md, memory/ops/black-reload-2026-11-15.md.
