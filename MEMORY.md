@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Both UI slices (#6 status-dot, #2 dark mode) confirmed COMPLETE per audit 2026-11-17; evidence in memory/researcher/ui-slices-audit-
-- Red agent is back online; unblocks Mechanic probe work and dual-residency LLM reloads per memory/llm/INDEX.md
 - Red (192.168.1.245) is powered on and reachable; unblocks Scribe/Mechanic seats and parallel CSS token testing.
 - Red .245 back up; Pale .39 & Black .99 still down — partial unblock for remote-dependent goals
 - Red .245 back online; goal #2 (reboot-recovery) needs port 445+8888 verified from LAN seat to close all 4 legs.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fleet node "Red" was down and is now powered back on; services not yet verified healthy.
 - Mechanic's sandbox blocks egress (errno=10013); Red .245 probe (SMB:445, Studio:8888) needs non-sandbox White session to close goal #2.
 - design_breakpoint_check.py: added consoleAPICalled assertion, compiles clean; needs runtime test on Studio + forced
+- Goal #1: expanded ui/app.css :root from 16→~30 tokens (radius, shadow, motion, spacing, fs, colors); added doc file.
+- Pale .39:445 now OPEN from Red sandbox (was noted down); load_probe.py upgraded with --seat/--target for multi-seat use.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
