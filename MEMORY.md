@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe uses activation/ttl_minutes from hotload-catalog.json as round-planning signal; hot
-- Three agents shipped competing LLM selector implementations; consolidation (not a 4th) is the next required step.
-- Researcher's llm_selector.py (root, 27KB) has 2 verified defects (B1/B2) from Verifier; Researcher owns the fix.
-- Goals #3,#9 CLOSED; #7 advanced: _fleet
 - Built memory/scribe/durable_check.py (goal #6): scans .md/.json under memory/, checks INDEX coverage, exits 1 naming orphans. Evidence: dura
 - Host recovery confirmed via model-load.jsonl: Black .99 & Red .245 no longer missing; 2/5 OQ entries now PARTIAL, awaiting Mechanic probe
 - Scribe 9/10 closed; only Goal #9 (cross-cycle narrative thread) remains — cycle-3 entry pending at cycle end.
 - Goals #3 & #9 CLOSED. fleet_probe_v2.py rebuilt after mirror loss. Remaining: production deployment of predictive alerts.
 - Goal #2: test_slo_enforce.py built (8/8 pass), de-risks prod run; still blocked on sch
 - Goal #2: breakpoint gate extended to [375,768,1024,1920]; only screenshot leg remains (NEEDS-HUMAN, browser unavailable in sandbox).
+- Goal #3 closed (5/5 tests, WARN at probe 5). Goal #4 blocked: needs LAN reachability unavailable from Red sandbox.
+- Fixed `_memory_health_snapshot()`: contradiction_count now reads `test_results.failed` (v2 format), not just `results.failed`.
+- Goal #1 (KG auto-update) CLOSED 2026-11-17: orphan-diff alerting live in knowledge_graph.py v2, mirror hook verified rc=0.
+- Goal #2 CSS/JS states+breakpoints re-landed; screenshot leg still NEEDS-HUMAN (no browser in sandbox) — do not re-probe.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
