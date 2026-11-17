@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mirror-revert log (#3) unchanged since day 1: still 3 self-test lines, no new revert events in 11-17→11-24 window
 - Scribe goal #6 done; open: wire `durable_check.py` into mirror-sync post-commit hook (non-blocking).
 - Mirror
 - Git unavailable in sandbox; files persist via shared agent folder. Goal #8 UI
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher added partial-data contingency to mirror-revert runbook (mid-window seed scenarios, min viable dataset, extended fallback) — clos
 - mirror_heal.py
 - Goal 8 (Fleet Event Stream) complete except live-viewport
+- Goal #1 (Decision trace API v2): extending `_decisions_snapshot()` with filters `agent`, `since`, `status`, `q` + adding `status` field; rou
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
