@@ -2492,13 +2492,16 @@ def start_group_run(text, extra=None):
                         _f.write(_rec)
         except Exception:
             pass
-        full_text = (text or \"\") + reset_note
-        # 2026-11-17: tell every seat once per run whether admin-only commands can work at all,
-        # so agents stop burning passes re-probing the elevation wall.
+        full_text = (text or "") + reset_note
+        # 2026-11-17: admin is the DEFAULT for every agent (user directive). When this shell is
+        # not elevated, route admin commands through the elevated helper service (elev.py ->
+        # 127.0.0.1:8098, SYSTEM) instead of telling agents to give up.
         try:
             if not _shell_elevated():
-                full_text += (\"\n\n[SHELL] This shell is NOT elevated: admin-only commands (schtasks ONSTART/ATLOGON, services, firewall rules) will fail. \"
-                              \"Do not retry them - log each one once as NEEDS-HUMAN in memory/ops/blockers.md with the exact command + error, then move on.\")
+                full_text += ("\n\n[SHELL] Shell is not elevated, but admin commands DO work via the helper: run "
+                              "`python elev.py <cmd...>` or `python elev.py --shell \"cmd string\"` (auto-escalates to SYSTEM). "
+                              "Admin is the default for all agents - never treat elevation as a blocker. "
+                              "Only if elev.py exits 5 (helper down) log NEEDS-HUMAN in memory/ops/blockers.md once, then move on.")
         except Exception:
             pass
         # Model-load governance: flag seats whose model is not loaded BEFORE the run

@@ -1,0 +1,2 @@
+{"ts": "2026-11-17 13:49:47", "workers": 8, "requests": 12, "p50_ms": 39.5, "p95_ms": 1089.9, "max_ms": 1089.9, "mean_ms": 139.7, "error_rate": 0.0, "slo_p95_ms": 500.0, "slo_pass": false}
+{"ts": "2026-11-17 13:50:08", "workers": 8, "requests": 12, "p50_ms": 39.1, "p95_ms": 62.0, "max_ms": 62.0, "mean_ms": 36.1, "error_rate": 0.0, "worst_request": {"endpoint": "/api/goals", "ms": 62.0}, "slo_p95_ms": 500.0, "slo_pass": true}

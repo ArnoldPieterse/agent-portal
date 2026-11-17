@@ -1,0 +1,70 @@
+{
+  "total": 43,
+  "exists": 31,
+  "rate": 72,
+  "per_agent": {
+    "archivist": [
+      10,
+      10
+    ],
+    "builder": [
+      2,
+      1
+    ],
+    "designer": [
+      1,
+      0
+    ],
+    "mechanic": [
+      7,
+      5
+    ],
+    "orchestrator": [
+      10,
+      5
+    ],
+    "researcher": [
+      9,
+      6
+    ],
+    "scribe": [
+      3,
+      3
+    ],
+    "verifier": [
+      1,
+      1
+    ]
+  },
+  "missing_named": [
+    {
+      "agent": "orchestrator",
+      "cite": "goal_cycle_check.py"
+    },
+    {
+      "agent": "orchestrator",
+      "cite": "cycle2-retrospective.md"
+    },
+    {
+      "agent": "orchestrator",
+      "cite": "todo_freshness_check.py"
+    },
+    {
+      "agent": "researcher",
+      "cite": "citation_monitor_v2.py"
+    },
+    {
+      "agent": "researcher",
+      "cite": "model_benchmark.py"
+    }
+  ],
+  "no_pointer": [
+    "builder",
+    "designer",
+    "mechanic",
+    "mechanic",
+    "orchestrator",
+    "orchestrator",
+    "researcher"
+  ]
+}
