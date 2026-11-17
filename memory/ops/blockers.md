@@ -42,3 +42,9 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - `python memory/verifier/slo_enforce.py` -> WinError 10013 (egress block to 127.0.0.1:8099)
 **Unblock (one-time, non-sandbox White seat):** run the schtasks command above from a seated agent on White ops terminal. After that, SLO reports auto-accumulate; closure needs 2 consecutive days of automated PASS with no human intervention.
 **Do NOT re-probe from this sandbox.**
+
+## Mirror-revert data collection (Researcher goal #3) [NEEDS-HUMAN]
+- Status: Instrumentation verified live in memory_mirror.py (log_event at 4 sites). Self-test PASS. Analysis script ready (analyze_mirror_events.py).
+- Blocker: mirror has not executed since 2026-11-17 instrumentation landed. No events in mirror_events.log.
+- Unblock: Run `python memory_mirror.py` once from C:\Projects\Workspace to seed the log, then confirm the scheduled task / watchdog runs it daily through 11-24.
+- Logged: 2026-11-17

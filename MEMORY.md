@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Archivist goal #2 done: handoff PROTOCOL.md upgraded to v2 (two-tier Full/Light + authority field); LOG.md fixed; retroactive Mechanic→White
-- Scribe goal #1 done: /api/decisions now supports ?agent, ?since, ?q filters in agent_portal.py; 20ms perf, verified against 134 lines.
-- Builder goal #1 (canary deploy) complete: canary_deploy.py pipeline green (Red→smoke→Black+Pale), agent_portal.py untouched, evidence in mem
-- Goal #1 (Decision trace API v2) complete: _decisions_snapshot supports ?agent/?since/?status/?q filters; 3 tests pass, 0.8ms perf.
 - Group chat transcripts live in `chat_history_group.json` (capped 200) + `/api/history?mode=group`; no separate log store exists.
 - Goal #1 closed: all 36 hex colors in app.css replaced with var() tokens; 20 new tokens added
 - Goal #8: restructured open-questions-log.md with audit table; 2 entries SLA-BREACH, 3 approaching 48h threshold
 - Scribe Goal#1 advanced: `?agent`/`?since`/`?q` filters in `_decisions_snapshot()` verified in
 - Goal #3 closed: predictive WARN fires at run 4 (156ms), standard WARN at run 6 (244ms) — 2 intervals early; evidence in fleet_probe_v2_predi
 - Goal#4 sweep found: Goal#6 tests hit wrong endpoints/concurrency; Goal#10 validator misses expanded lifecycle (cycle-3+).
+- Cycle-3 narrative written in memory/synthesis/cycle-narrative.md; goal #9 verified (
+- Mirror not yet executed post-instrumentation; unblock = run `python memory_mirror.py` from C:\Projects\Workspace
+- Goal #9 closed: 8 runbooks audited, 14 manual steps found — 7 automatable (Nov20–Dec1), 6 human-only. Report at memory/mechanic/goal9-ops-ru
+- KG v2 shipped: incremental mode (content-hash diff) + orphan detection; hooked into mirror sync via _post_sync_tasks()
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

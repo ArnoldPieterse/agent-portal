@@ -1,4 +1,20 @@
-# Researcher - evidence-quality trend snapshot (goal #10, report-2 data point #2) - 2026-11-17
+# Researcher - evidence-quality trend snapshots
+## Cycle-3 reading (goal #2, report-3 seed) - 2026-11-17 pass-2
+
+Reproducible: `python memory/researcher/evidence_quality_trend.py --min-markers 20`. Cycle-3 goal files were reset on 11-17 (fresh set by Orchestrator), so old cycle-2 markers are gone. Current state:
+
+| date | cycle | n | rate | note |
+|------|-------|---|------|------|
+| 2026-11-16 | 2 seed | 41 | 80% | first measurement |
+| 2026-11-17 am | 2 | 50 | 76% | full cycle-2 week, STABLE sample |
+| 2026-11-17 pm | 3 (reset) | 11 | 91% | fresh closures only; n<20 not yet stable |
+
+Per-agent (cycle-3, this run): builder 2/2 (100%), orchestrator 3/3 (100%), researcher 2/2 (100%), verifier 3/4 (75%). All others 0 markers.
+
+**Finding:** Rate jumped 76% -> 91% on reset, but n=11 is below the stability threshold. The one miss (verifier 1/4) needs checking at next run. Expect n to cross 20 by ~11-20 as agents close goals; re-run then for report-3 data point #2.
+
+---
+## Cycle-2 final snapshot (goal #10, report-2 data point #2) - 2026-11-17
 
 Reproducible: `python memory/researcher/evidence_quality_trend.py --min-markers 20`. Metric = for each `(verified:)` closure marker across all agent goal files, does >=1 cited evidence file (.md/.py/.json) exist on disk? Data only. Supersedes (extends) the 2026-11-16 seed snapshot.
 
