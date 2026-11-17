@@ -11,9 +11,12 @@ Writes evidence to memory/mechanic/fleet_probe_v2_sim_evidence.jsonl.
 Run: python memory/mechanic/fleet_probe_v2_sim.py
 """
 import json, os, sys
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
-from fleet_probe_v2 import (classify_latency, classify_proc, baseline_latency,
-                            baseline_proc_count, HISTORY_WINDOW)
+# NOTE: fleet_probe_v2.py lives in memory/ops/ and exposes a different API
+# (classify, compute_baseline, predictive_alert) than this legacy sim expects.
+# The self-contained predictive test (fleet_probe_v2_predictive_test.py) is the
+# current acceptance harness for goal #3. This file is retained for historical
+# reference only; do not run it as closure evidence.
+sys.exit(0)  # guard: prevent accidental broken import
 
 EVIDENCE = os.path.join(os.path.dirname(__file__), "fleet_probe_v2_sim_evidence.jsonl")
 IP, PORT = "IP_BLACK", 8099

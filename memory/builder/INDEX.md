@@ -37,3 +37,4 @@ Last updated: 2026-11-17 (Builder auto-loop: added portal-startup + css-tokens e
 - scribe-g4-memhealth-dom-node-2026-11-18.md — 2026-11-18 Builder cross-assist: added #memHealthBody to index.html (Scribe goal #4)
 - durable-check-scribe-goal6-2026-11-18.md — 2026-11-18 Builder cross-assist: durable_check.py built + CI-wired (Scribe goal #6)
 - designer-goal5-components-2026-11-18.md — 2026-11-18 Builder cross-assist: wrote memory/portal/components.md (6 components + token table) for Designer goal #5
+- designer-goal8-state-patterns-2026-11-18.md — 2026-11-18 Builder cross-assist: implemented .state-loading/.state-error/.state-empty/.state-conn-lost in ui/app.css (all tokens, 0 hex) + documented in components.md §7 (Designer goal #8)

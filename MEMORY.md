@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Edge headless cannot emit PNGs in this sandbox (no GPU); Pillow layout diagrams remain the 3-resolution visual reference.
 - Scribe:
 - Scribe's goal file is NOT at memory/goals/squire.md (path doesn't exist) — do not re-probe it; find actual path from ledger or workspace lis
 - Error/empty/loading state pattern proven in
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Closed #3 (CSS 69.8KB min, <80KB
 - Scribe goal #2 (contradiction detector v2) closed — evidence existed since 11-18, just needed ledger verified tag.
 - Goal #8 closed (ledger stamped); goal #6 has static WCAG AA contrast audit done, still gated on real screenshots.
+- Builder: 4 state-pattern CSS classes done in ui/app.css + components.md §7; goal
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

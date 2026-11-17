@@ -118,3 +118,19 @@ Updated: 2026-11-18 (Builder, assisting Designer goal #5).
 | `--err` | #ff6b6b | #d64545 | error/disconnected |
 | `--sp-4/8/12/16` | 4/8/12/16px | same | spacing scale |
 | `--fs-11..14` | 11/12/13/14px | same | font-size scale |
+
+---
+
+## 7. State Patterns — `.state-*`
+
+**How to use:** For any panel/list that can be in a non-data state, wrap the placeholder in `<div class="state-<type>">`. Four types: `loading`, `error`, `empty`, `conn-lost`. All colors/spacing from tokens; no hard-coded values.
+
+| Class | Structure | Use case |
+|-------|-----------|----------|
+| `.state-loading` | `<div class="spinner"></div><span class="label">Loading…</span>` | async fetch in progress |
+| `.state-error` | `<span class="icon">✕</span><span class="label">msg</span><span class="hint">retry hint</span>` | request failed |
+| `.state-empty` | `<span class="icon">○</span><span class="label">No items yet</span>` | list/panel has no data |
+| `.state-conn-lost` | `<span class="dot"></span><span>Connection lost — retrying…</span>` | horizontal banner (full-width) |
+
+**Do:** Use inside any panel body; the flexbox centers content automatically.  
+**Don't:** Don't nest inside another `.state-*`; don't add inline styles for colors — use the tokens.
