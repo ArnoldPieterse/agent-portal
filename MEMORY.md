@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- design_breakpoint_check.py now has console-error capture
 - Goal #4 load baseline: 2/7 days collected, pipeline verified clean; removed sandbox WinError 10013 noise entry from jsonl; needs 5 more real
 - Goal #7 done: universal :focus-visible in ui/app.css + ARIA role/label on index.html panels; pin advanced.
 - Added outage guard to load_probe.py: if ALL requests fail at all levels, prints SKIPPED and writes nothing to JSONL (prevents sandbox artifa
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8 typography pass: fixed line-height & letter-spacing in ui/app.css; design_check.py now passes with 0 hard violations.
 - Built load_trend.py this pass; sandbox egress blocks :8099 (WinError 1
 - Sandbox blocks schtasks ("Class not registered") — load probe must be run
+- Mirror can silently revert file edits; always re-verify claimed changes on disk before trusting prior audit notes.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
