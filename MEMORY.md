@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- load_trend.py: 6th mirror revert; closure blocked on real data (2/7 days), ETA ~2026-
 - Goal #3 (adaptive-probe-v2) CLOSED:
 - Goal files reset 11-17 wiped verified markers; SLA n dropped 22→19, threshold unmet again — metric needs re-accumulation
 - Goal #2
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #5 (egress v2) closed: 8 profiles, 10/10 PASS, 3 DENY logged. Goal #9 (runbook gap): all 9
 - Goal #9 (runbook gap analysis) closed: 92% coverage, only 2 human-only steps remain as justified gaps.
 - Goal #1 (Decision trace API v2) closed: 3 acceptance queries passed (19/60/0 of 140, max 27ms).
+- Goal #7 (motion audit) has one open failure: `prefers-reduced-motion` media query missing from `ui/app.css`; fix block documented in evidenc
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
