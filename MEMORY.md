@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Red .245 back up; Pale .39 & Black .99 still down — partial unblock for remote-dependent goals
 - Red .245 back online; goal #2 (reboot-recovery) needs port 445+8888 verified from LAN seat to close all 4 legs.
 - Red .245 powered on
 - Red confirmed live 14:07 UTC; scribe-q8 (GPU1) + mechanic-q4 (GPU0) both loaded=True, no reload needed.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1: expanded ui/app.css :root from 16→~30 tokens (radius, shadow, motion, spacing, fs, colors); added doc file.
 - Pale .39:445 now OPEN from Red sandbox (was noted down); load_probe.py upgraded with --seat/--target for multi-seat use.
 - Token layer complete: 29 props / 6 categories; ~30 component-specific hexes remain as one-off debt (DM borders, segmented-control, fleet-lin
+- Fixed load_trend.py: now handles per-endpoint records from load_probe.py (was crashing on new format).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
