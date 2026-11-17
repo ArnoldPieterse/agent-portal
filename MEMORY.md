@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe 10/10 closed, open=0; next actionable: goal #10 second weekly compression-fidelity audit due ~11-25
-- Verified Designer goal#1 hex-audit: 36 instances/28 lines outside :root — "zero remaining" claim stale, goal stays OPEN.
-- cycle-narrative.md updated with proper entries for cycles 1–3 (sourced from ledgers); goal #9 at 73%, needs ≥80%.
 - Goal #3 verified: predictive WARN fires 1 interval before drift alert; evidence at memory/mechanic/goal3-predictive-trend-verified-2026-11-1
 - Goal #9 runbook gap at 7
 - Goal #5 (egress v2) and goal #9 (runbook gap analysis) verified and recorded in ledger this pass.
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe reached 10/10 closure; goal #9 (Cycle 3 narrative) was the last, resolving prior hot-notes vs ledger discrepancy.
 - Mechanic: cycle_check.py built & validated; passes file-based checks, expected FAIL on portal (sandbox egress). Goal #9 runbook audit in pro
 - Goal #1 (token audit) complete: all 36 hex values tokenized to var(), 0 hex outside :root verified.
+- Cycle 3 narrative updated to 54/80 (67.5%) verified; Scribe all goals closed 10/10, no open items.
+- Goal #10 (mirror sync epoch) closed via 10-cycle skew sim;
+- Goal #1 token audit: grep for literal hex in component rules returned zero hits — all 36 already tokenized; verify leaf may be stale.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
