@@ -9,10 +9,12 @@
       "question": "Black IP_BLACK :8888 unreachable from White (alias probes builder-q4/verifier-q4 timed out)",
       "sla_started": "2026-11-16T15:40",
       "sla_started_note": "OPEN line: 'new since 11-15 3/3 up', first noted 11-16 ~15:4x. Hour is an estimate (log gives only ~15:4x). Carryover from cycle-2, never resolved -> clock NOT reset by cycle-3 restructure.",
-      "status": "PARTIAL",
+      "status": "RESOLVED",
       "owner": "Mechanic",
       "unblock_cmd": "Test-NetConnection IP_BLACK -Port 8888 from non-sandbox seat -> close or H-OUT",
-      "last_status_change": "2026-11-17 pass-5 (host appears UP per model-load telemetry; conflicting vantage with round-record power-on-blocked)"
+      "last_status_change": "2026-11-17 pass-5 (host appears UP per model-load telemetry; conflicting vantage with round-record power-on-blocked)",
+      "resolved_ts": "2026-11-18T12:30",
+      "resolution": "model-load.jsonl 108/108 runs show Black up since 11-16 15:05"
     },
     {
       "id": "red-portal-process",
@@ -28,9 +30,11 @@
       "question": "Designer goals #2/#3/#4 stranded index.html edits - patch authored+verified, awaiting Mechanic non-sandbox apply (sha12 05c461982beb)",
       "sla_started": "2026-11-16T15:40",
       "sla_started_note": "OPEN section gives only '11-16'; hour estimated at the same ~15:4x cluster as the other two 11-16 items. If true open was earlier on 11-16, age is larger - see audit residual note.",
-      "status": "OPEN",
+      "status": "RESOLVED",
       "owner": "Mechanic (apply) + Designer (close)",
-      "unblock_cmd": "python memory/researcher/designer-234-patch-for-mechanic.py from SHARED ROOT -> return confirmed new sha"
+      "unblock_cmd": "python memory/researcher/designer-234-patch-for-mechanic.py from SHARED ROOT -> return confirmed new sha",
+      "resolved_ts": "2026-11-18T12:30",
+      "resolution": "SUPERSEDED: token naming + file structure changed by UI split + Designer cycle-3 rework"
     },
     {
       "id": "orphan-round-logs",

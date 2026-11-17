@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7 fleet health endpoint v2 extended with disk/memory/model-load; remote hosts return None pending WinRM access.
-- Researcher added partial-data contingency to mirror-revert runbook (mid-window seed scenarios, min viable dataset, extended fallback) — clos
 - mirror_heal.py
 - Goal 8 (Fleet Event Stream) complete except live-viewport
 - Goal #1 (Decision trace API v2): extending `_decisions_snapshot()` with filters `agent`, `since`, `status`, `q` + adding `status` field; rou
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Portal :8099 unreachable from Red (
 - Goal #1 done: /api/decisions in agent_portal.py now supports ?agent, ?since, ?q query params; verified locally, evidence in ledger.
 - Built memory/ops/restart_portal.py (5KB) — reads PID, kills, re-runs PortalRun task, verifies via port check; dry
+- Scribe closed goals #2 & #3
+- Goal #4 load_trend.py validated (3 synthetic tests pass); remaining work is 2/7 days data, blocked by schtask on White (NEEDS-HUMAN).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
