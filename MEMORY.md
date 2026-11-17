@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- load_probe.py outage guard reverts via mirror (4th time); re-apply after each mirror sync before running probes
 - load_trend.py --week-complete validated end-to-end (2/7 days); pipeline ready, verdict expected ~Nov 23
 - Goal #4 unblock: run `python elev.py --shell "memory\ops\loadtest\register_daily_probe.bat"` on White non-sandbox to start auto-accumulation
 - Goal #4 blocked: sandbox
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mirror sync reverts --week-complete in load_trend.py (5th occurrence); expect same pattern for any edits to that file
 - Mirror sync repeatedly reverts Mechanic's file edits (load_probe.py guard, --week-complete flag) — expect re-application each pass
 - goal4_closure.py built+tested: validates baseline, runs load_trend --week-complete, gates at 2/7 (
+- load_trend.py --week-complete implemented & verified; needs 5 more days of probe data before closure verdict fires
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
