@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 21 token pairs pass WCAG AA contrast; reusable audit script saved for Goal #10 regression gate.
 - Goal #2 (dark mode): light tokens in ui/app.css done + WCAG AA verified; remaining = toggle button in index.html + screenshot pair.
 - Fixed deploy_startup_folder.py: create_vbs() leaked Python string-concat into VBS output; rewrote with .format() + quote-doubling.
 - Theme toggle implemented: button in index.html, localStorage+prefers-color-scheme logic in core.js; only screenshot pair remains for Goal #2
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Dark mode re-landed via JS-injected toggle in ui/app.css + ui/core.js; 16/16 WCAG AA pairs pass both themes (2026-11-17c).
 - deploy_boot_task.py now has --remote mode (schtasks /s via WinRM); IPs corrected from 10.0.0.x to 192.168.1.x; boot_recovery_test 12/12
 - HOT NOTE "theme toggle implemented" verified FALSE — zero theme-toggle code in index.html, core.js, or app.css. Goal #2 still fully open.
+- Designer: JS hexes tokenized (core.js, uploads.js clean); 36 hardcoded hexes remain in ui/app.css rules — next step is adding tokens to :roo
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
