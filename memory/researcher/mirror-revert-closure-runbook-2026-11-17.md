@@ -78,3 +78,5 @@ If the mirror comes up mid-window (e.g., day 4 = 11-21) instead of from day 1, w
 `python memory/researcher/goal_ledger.py --record researcher 3 --note '<one-week live dataset analyzed; artifact path>'`
 
 Acceptance: one-week data set + analysis leaf with concrete fix recommendations (matches goal #3 verified clause). Partial-close acceptable per contingency table above.
+
+[PROGRESS 2026-11-18 pass (auto-loop): Pin-file forensics added to analysis template (memory/researcher/mirror-revert-analysis-template-2026-11-18.md). Key finding: 49 CANONICAL pins total, index.html = 94% (46/49), burst pattern 24+21 in first 2 days vs 1 today. Three hypotheses pre-populated for the day-7 frequency table. This gives closure a cross-check baseline even if live log shape differs from expected. Window still day 2/7; next checkpoint = day-3 escalation (11-20) if live events still 0.]
