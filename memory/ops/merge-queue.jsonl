@@ -25,3 +25,4 @@
 {"ts": "2026-11-17 14:06:31", "file": "memory_mirror.py", "sha": "77db23e68d", "size": 14073, "snapshot": "memory/ops/merge-queue/memory_mirror.py.77db23e68d"}
 {"ts": "2026-11-17 14:06:31", "file": "ui/app.css", "sha": "c4d5dd67c7", "size": 21459, "snapshot": null}
 {"ts": "2026-11-17 14:06:31", "file": "ui/core.js", "sha": "c0ceaeb266", "size": 32185, "snapshot": null}
+{"ts": "2026-11-17 14:36:38", "file": "agent_portal.py", "sha": "7b91dfc02b", "size": 211774, "snapshot": "memory/ops/merge-queue/agent_portal.py.7b91dfc02b"}

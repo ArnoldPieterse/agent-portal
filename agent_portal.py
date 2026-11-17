@@ -46,7 +46,14 @@ def _model_load_status(force=False, timeout=15):
     now = time.time()
     if not force and _MODEL_LOAD_CACHE["result"] and now - _MODEL_LOAD_CACHE["ts"] < 60:
         return _MODEL_LOAD_CACHE["result"]
-    out = {}
+    # Per-seat trust window (2026-11-17): a seat that answered OK within the last 15
+    # min is reused without re-ping. Re-probing every ~60s queues behind model loads
+    # on shared-VRAM Studios, so seats flapped in/out of the autoloop cast (2/8 seen)
+    # while GPUs thrashed. Failed seats are still probed every tick.
+    _per = _MODEL_LOAD_CACHE.get("per_seat") or {}
+    trust = {n: s for n, s in _per.items()
+             if not force and s["status"] == "ok" and now - s["ts"] < 900}
+    out = dict(trust)
 
     def _probe(name, model, base, headers):
         body = json.dumps({"model": model,
@@ -71,12 +78,14 @@ def _model_load_status(force=False, timeout=15):
     threads = [threading.Thread(target=_probe, args=(a.get("name", "?"),
                                                      a.get("model_id") or "?",
                                                      studio_base(a), studio_headers(a)), daemon=True)
-               for a in agents]
+               for a in agents if a.get("name", "?") not in trust]
     for t_ in threads:
         t_.start()
     for t_ in threads:
         t_.join(timeout=timeout + 5)
-    _MODEL_LOAD_CACHE.update(ts=now, result=out)
+    _probed = {n: {"ts": now, "status": s["status"]} for n, s in out.items() if n not in trust}
+    _per2 = dict(_per); _per2.update(_probed)
+    _MODEL_LOAD_CACHE.update(ts=now, result=out, per_seat=_per2)
     return out
 
 
