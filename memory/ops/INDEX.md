@@ -14,6 +14,7 @@ Last updated: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - HOTLINE escalation protocol v2 -> memory/ops/hotline-v2.md
 - NON-SANDBOX EXECUTION QUEUE (batch network/browser/elevated tasks a sandbox seat can't run) -> memory/ops/non-sandbox-queue.md
 - BLOCKERS log (NEEDS-HUMAN, exact cmd + error) -> memory/ops/blockers.md
+- Goal-ledger record_evidence guard fix + dangling-pointer unblock recipe -> memory/ops/goal_ledger_record_fix-2026-11-18.md
 - Git hygiene / commit conventions -> memory/ops/git-hygiene.md
 - Memory sync spec (what gets mirrored where) -> memory/ops/memory-sync-spec-r13.md
 

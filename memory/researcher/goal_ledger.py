@@ -287,11 +287,22 @@ def record_evidence(agent, goal_ref, note="", leaf=None):
         else:
             note = (note or "evidence recorded").strip()[:200]
             marker = " (verified: %s - %s)" % (today, note)
-        if "(pointer:" not in lines[hit] and "(verified:" not in lines[hit]:
+        # 2026-11-18 FIX (Orchestrator): the old guard `if "(pointer:" not in line and
+        # "(verified:" not in line` treated ANY pre-existing marker as 'already closed', so a
+        # DANGLING pointer (which does NOT count as evidence) silently blocked a real
+        # --record --note from adding its verified marker -> goal stuck open, yet the fn
+        # returned success. Now: skip only when the SAME kind of marker is already present
+        # (true idempotency), and report a no-op explicitly instead of faking a write.
+        if leaf:
+            skip = ("(verified:" in lines[hit]) or ((" (pointer: %s)" % leaf) in lines[hit])
+        else:
+            skip = "(verified:" in lines[hit]
+        if not skip:
             lines[hit] = lines[hit].rstrip() + marker
             with open(path, "w", encoding="utf-8") as f:
                 f.write("\n".join(lines) + "\n")
-        return True, "%s.md line %d: %s" % (agent, hit + 1, marker)
+            return True, "%s.md line %d: %s" % (agent, hit + 1, marker)
+        return True, "%s.md line %d: already has equivalent marker, no change" % (agent, hit + 1)
     except Exception as e:
         return False, str(e)[:200]
 
