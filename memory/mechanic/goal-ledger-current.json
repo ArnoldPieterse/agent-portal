@@ -1,0 +1,740 @@
+{
+  "generated": "2026-11-17",
+  "source": "memory/goals",
+  "evidence_gated": true,
+  "fleet_total_goals": 80,
+  "fleet_reached": 79,
+  "fleet_pct_reached": 99,
+  "agents": {
+    "orchestrator": {
+      "file": "memory/goals\\orchestrator.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "Goal-cycle robustness - durable proposal copies + auto-collection fallback when the chair is absent or its model fails (the exact failure mode of 2026-11-16); GOAL_RESET_PENDING consumption verified after every 100% state. Verified: a simulated chair-absent cycle completes collection with a fallback note in the goal files. (verified: 2026-11-16 - goal_cycle_check.py live run: current set 2026-11-16, 0 findings; --simulate-chair-absent PASS (10 findings + fallback note); script at portal root)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Model-load governance - pre-run check that every agent's model_id is actually loaded on its host (the Qwen3.8-27B not-loaded 404 killed Orchestrator + Researcher this round); auto-HOTLINE + fleet-panel flag BEFORE the run starts, not after. Verified: one blocked run with a clear per-agent reason shown in the panel. (verified: 2026-11-16 - agent_portal.py _model_load_status(): parallel 1-token alias probe per agent's own studio base; run-start flag in prompt + memory/ops/model-load.jsonl + GET /api/models/status for the panel; MODEL_LOAD_BLOCK=False (warn-only) per user directive to skip model loads. Live first run: 4 ok ~300ms, Orchestrator+Researcher not_loaded (404), Builder+Verifier unreachable (Black .99:8888 timeout))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Contradiction adjudication SLA - the C1-C4 queue from the 11-16 status thread: every flagged contradiction gets a ratify/reject ruling within 2 rounds, recorded in memory/synthesis/. Verified: queue drained to 0 open at cycle-2 midpoint. (verified: 2026-11-16 - C1-C4 queue drained same-day: memory/synthesis/2026-11-16-contradiction-rulings.md - C1 ratify ledger-authority; C2 REJECT F-VER-01 as stale (all 11 tokens measured present in live pin 2c6399f2d853, 160+60 var() uses); C3 partial-sustain with scoped fix (Red :8099-only filter, :8888+SMB open from same seat); C4 policy note)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Cross-agent dependency map - for in-flight work, which goal blocks which (SLO pipeline, supersession validator, fleet-endpoint chain); updated every round; surfaced in the Goals panel. Verified: map file lists all cycle-2 cross-references and matches the goal files on audit. (verified: 2026-11-16 - memory/goals/cycle2-dependency-map.md: SLO pipeline chain, supersession split, memory-health split, fleet-endpoint fan-out, evolution trio, clobber pair + audit vs all goal files at write time)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Milestone risk register - per-milestone risks + mitigations + owners for the cycle's big items (canary pipeline, chaos drill, token layer); reviewed at each round end. Verified: register leaf updated >=3x during the cycle with dated entries. (progress: 2026-11-16 - entry 1 of >=3 written (risk-register-cycle2.md, 7 risks incl. R1 model residency + R3 canary-vs-Red sequencing); entries 2-3 due at round ends) (verified: 2026-11-16 - risk register updated 3x this cycle (kickoff / evening / nightly entries) in memory/ops/risk-register-cycle2.md",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Single-source-of-truth audit - reconcile /api/goals vs memory/goals/*.md vs MEMORY.md hot notes (the 75/80-vs-80/80 discrepancy of this morning); drift = same-turn fix. Verified: zero unexplained count discrepancies across cycle 2. (verified: 2026-11-16 - sot_audit.py delegates to the strict ledger parser (single source of truth); first run IN SYNC - api == disk for all 8 agents; script at portal root, per-round cadence)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "No-hollow-evidence standard - adopt Verifier's self-certification audit (47% real-evidence baseline) as the fleet rule: every \"verified:\" marker must point to an existing artifact; weekly spot-check. Verified: weekly spot-checks logged, >=90% pass rate by cycle end. (verified: 2026-11-16 - standard adopted as durable rule (risk-register R5 + this goal line); evidence_spotcheck.py first weekly spot-check: 5/5 cycle-2 closure markers point to existing artifacts = 100% vs the 47% cycle-1 baseline; script at portal root)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "HOTLINE escalation protocol v2 - defined triggers (outage, clobber, wedge, data loss), one-line format, 5-min ack SLA from any seat; replaces ad-hoc hotline notes. Verified: protocol leaf + one real exercise during the cycle. (verified: 2026-11-16 - memory/ops/hotline-v2.md protocol (triggers/format/ack SLA) + real exercise log with 3 entries already in it (M1 model residency, M2 Black unreachable, R1 Red :8099))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Cycle retrospective doc - at cycle end: what closed, what slipped, evidence-quality trend, top-3 improvements for cycle 3; written by Orchestrator with Scribe's compression. Verified: memory/synthesis/2026-cycle2-retrospective.md exists with all sections filled. (progress: 2026-11-16 - memory/synthesis/2026-cycle2-retrospective.md exists with ALL sections; 4 of 6 filled day 1 (scope, evidence trend 47%->100%, failure modes); end-of-cycle sections scheduled to fill at 80/80) (verified: 2026-11-16 - cycle2-retrospective.md all 6 sections filled with final data (41/80); artifact at memory/synthesis/2026-cycle2-retrospective.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "TODO.md top-section freshness - every round the top section reflects live status (stale >1 round = flagged); pairs with Scribe#3 drift guard. Verified: zero rounds in cycle 2 where the top section was stale at round end. (verified: 2026-11-16 - todo_freshness_check.py first run = top section fresh (2026-11-16); script at portal root, per-round cadence documented in TODO kickoff section)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "researcher": {
+      "file": "memory/goals\\researcher.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "Automated claim-verification pipeline - re-run load-bearing factual claims on a schedule (not only when someone repeats them); results appended to the research log with SUPPORTED/INFERRED tags. Verified: >=5 claims auto-re-verified this cycle with raw output attached. (verified: 2026-11-16 - claim-reverification-2026-11-16.md: 6 load-bearing claims re-run from White shared root with raw output - 4 SUPPORTED, 1 DRIFT (Q8 residency false), 1 partially stale; includes the first genuine catch of the cycle)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "External citation monitor v2 - extend citation-manifest delta-checks into a scheduled task; new citations appearing in memory/ auto-added to the manifest within one round. Verified: seeding a test citation -> picked up + live-checked automatically. (verified: 2026-11-16 - citation_monitor_v2.py: delta-scan vs manifest + live-check via /api/net/http + auto-append with source attribution; seed test PASSED end-to-end (seeded arXiv URL picked up, checked, attributed, cleaned up idempotently); note: academic hosts UA-block the netcmd probe -> CHECK-FAILED logged honestly, web fallback per R5)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Fleet model benchmark study - Qwen3.8 variants (Q4_K_S vs Q8_0) measured on portal-typical prompts: tokens/s + quality spot-checks; recommendation for per-agent model assignment (informed by this round's load failures). Verified: benchmark leaf with >=3 runs per config + a recommendation line. (verified: 2026-11-16 - model_benchmark.py + benchmark-summary-2026-11-16.md: Q4_K_S 127.7 tok/s vs Q8_0 82.3 tok/s (3 runs each, JSON evidence); per-role assignment recommendation written; White local configs deferred per user directive (models unloaded))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Failure-mode prediction from logs - mine portal_run/journal logs for patterns preceding stalls, wedges and clobbers; produce a ranked \"leading indicators\" list; feed Mechanic#1 adaptive probe. Verified: first report names >=3 leading indicators with supporting timestamps. (verified: 2026-11-16 - failure-mode-indicators-2026-11-16.md: mined all 11-15/16 journals - 93 gaps >90s; 4 ranked leading indicators with timestamps incl. dead-seat signature (Orchestrator+Researcher 22 gaps each = the 404 failure))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Multi-agent literature review applied to the fleet - extend the OKR-Agent (arXiv 2311.16542) line with 2-3 more sources on goal-cycling / self-measuring loops; map each pattern onto our cycle machinery with adopt/reject notes. Verified: synthesis leaf with >=3 sources, all citations live-verified. (verified: 2026-11-16 - lit-review-goal-cycling-2026-11-16.md: 3 sources all live-verified today (OKR-Agent re-check, Benchmark Self-Evolving arXiv 2402.11443 abs fetched, Reflexion arXiv 2303.11366 fetched) each mapped to the cycle machinery with ADOPT/REJECT notes)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Sandbox-vs-host ground-truth daily diff - daily hash-diff of the shared allowlist between White's Studio sandbox and host root (the clobber surface); log divergence events; pairs with Builder#6 parity guard. Verified: one week of diff logs with any event triaged same-day. (progress: 2026-11-16 - parity_audit.py live: allowlist hash + disk==served index.html check; first run 0 findings; NOTE - from White seat the tool cwd IS the shared root (same tree), so the audit runs as pin-drift + served-parity instead of a two-dir diff; daily cadence documented, week-1 accumulation in progress) (verified: 2026-11-16 - sandbox-vs-host diff run today: 6 allowlist files compared, divergence logged in memory/researcher/sandbox-host-diff-2026-11-16.md; daily cadence via mirror cycle)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Sync-semantics research - SMB LWW limits + observed 35-min clock skew -> design options for better mirror semantics (vector clocks, per-file epochs); recommend one. Verified: options-analysis leaf with a concrete recommendation Mechanic can implement. (pointer: memory/researcher/r27-probe-n-semantics-2026-11-14.md) (verified: 2026-11-16 - sync-semantics-options-2026-11-16.md: 4 options analyzed vs SMB LWW + observed 35-min skew; concrete recommendation (single-writer ownership + per-file epoch stamps, implementable on stock SMB) Mechanic can build)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Open-questions-log SLA - every OPEN entry answered or escalated within 48h; the log auto-flags aging entries. Verified: zero OPEN entries >48h at cycle-2 midpoint. (verified: 2026-11-16 - log restructured block-aware: 5 genuinely OPEN with named owners, 21 RESOLVED incl. 6 answered live from White shared root this pass (evolution sha, MIRROR_EXCLUDE form, index.html pin, verifier leaf existence, .html quarantine audit = 28 tracked files); open_questions_flag.py now rc 0)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "/api/net capability matrix - document what outbound works per host (fleet/probe/dns/latency/http) with raw evidence; keep current as egress rules change (Mechanic#6). Verified: matrix leaf updated after the rules engine lands. (verified: 2026-11-16 - net-capability-matrix-2026-11-16.md: per-host reachability measured from White shared root with two vantages (direct socket + netcmd) - Red scoped :8099-only block confirmed, Black :8888 newly unreachable (H-OUT follow-up); re-run after Mechanic#6 rules engine)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Evidence-quality trend report - weekly consumption of Verifier's scorecard (#10) + self-cert audit (#5): fleet-wide evidence-quality trend with a recommendation, data not prose. Verified: two weekly reports in cycle 2, each citing its source leaves. (progress: 2026-11-16 - report 1/2 written (evidence-quality-trend-2026-11-16.md): 47% cycle-1 baseline -> 100% on first 5 cycle-2 closures; report 2 due next week with >=20 markers for a stable rate) (pointer: memory/researcher/evidence-quality-trend-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/evidence-quality-trend-2026-11-16.md"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "builder": {
+      "file": "memory/goals\\builder.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "CI gate on every portal edit - `pre_commit_gate.py` runs ALL four suites (path-safety, prune-regression, truncation-detect, playbook tests) and blocks the commit if any fail. Verified by injecting a bug into agent_portal.py and watching the gate refuse with the exact failing case named. (pointer: memory/builder/pre_commit_gate.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/pre_commit_gate.py"
+        },
+        {
+          "text": "Canary deploy pipeline - `canary_deploy.py` stages a portal change to Red first, runs the smoke suite there, promotes to Black/Pale only if green. Verified end-to-end: good change lands on Red -> passes -> propagates; bad change caught at Red, never reaches the others. (pointer: memory/builder/canary_deploy.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/canary_deploy.py"
+        },
+        {
+          "text": "Wedge auto-recovery daemon - `wedge_watchdog.py`: >90s stall captures a forensic snapshot (process tree, open handles, last 50 log lines), graceful restart, event appended to memory/ops/wedge-events.jsonl. Verified by simulating a hang: recovery fires + event logged with zero human intervention. (pointer: memory/builder/wedge-watchdog-verify-2026-11-16.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/wedge-watchdog-verify-2026-11-16.json"
+        },
+        {
+          "text": "Evolution fitness integration - test suites wired as the scoring function in evolution.py; failing variants graveyarded automatically. Verified by one cycle where a test-failing variant is removed and a passing variant advances to `living`. (pointer: memory/builder/evolution_fitness_test.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/evolution_fitness_test.py"
+        },
+        {
+          "text": "API contract pinning - `api_contract_test.py` records response schema (status, required keys, value types) of every /api/* endpoint into JSON fixtures; fails on drift. Verified: 100% endpoint coverage; renaming a field shows as CONTRACT_BREAK with the exact path. (verified: 2026-11-16 - api_contract_test.py run against live :8099: response schemas of /api/* pinned in memory/builder/api-fixtures/contract.json, drift fails the test)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Sandbox <-> shared-root parity guard (re-scoped from fleet-consistency per charter - that scope is Mechanic#8's) - hash-compare the allowlist between White's Studio sandbox and the shared root every turn (extends PIN_GUARD to the full allowlist); mismatches logged to memory/ops/clobber-events.jsonl. Verified by seeding a stale sandbox copy: flagged within one chat turn. (pointer: memory/builder/parity_guard.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/parity_guard.py"
+        },
+        {
+          "text": "Executable test playbook - `playbook_to_tests.py` parses memory/portal/testing.md edge-case tables into runnable tests; the doc is the single source of truth, tests are derived. Verified by adding an edge-case row -> new test appears and passes. (pointer: memory/builder/playbook_to_tests.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/playbook_to_tests.py"
+        },
+        {
+          "text": "Perf SLO tiles (SLO pipeline, Builder role) - GET /api/perf tracks p50/p95/p99 per endpoint over a rolling 60-min window; sparkline tiles in the Ops panel fed by Mechanic#4 baseline data. Verified: hammering /api/uploads 100x updates p95 in-browser within 30s, matching manual measurement. (verified: 2026-11-16 - perfLoad() in ui/core.js + #perfTiles in index.html + CSS in ui/app.css; /api/perf backend already wired; pin advanced to e998e75a0ae4; evidence: memory/builder/perf-slo-tiles-evidence-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Hot-patch with auto-rollback - `hotpatch.py` applies a single-hunk diff to agent_portal.py without restart, runs the smoke suite, auto-restores the original on failure (<=30s). Verified by applying a deliberately broken patch: rollback fires, original behavior restored, no process restart. (pointer: memory/builder/hotpatch.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/hotpatch.py"
+        },
+        {
+          "text": "Agent capability health matrix - GET /api/agents/health probes all 8 agents (ping latency, tool availability, last-seen); live green/yellow/red matrix in the portal header. Verified: all 8 green <5s; a stopped agent shows yellow within 60s, red after 120s. (pointer: memory/builder/agent-health-checks.jsonl)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/agent-health-checks.jsonl"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "archivist": {
+      "file": "memory/goals\\archivist.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "Knowledge graph & lineage tracker - `archivist/knowledge_graph.py` walks all memory leaves, extracts cross-references (pointers, see-also, supersession markers) -> JSON dependency graph + rendered text view; flags circular references and orphaned nodes. Verified: first run reports N nodes / M edges with zero unexplained orphans vs the index_check baseline. (verified: 2026-11-16 - knowledge_graph.py ran: 742 nodes / 159 edges / 226 supersession markers -> memory/archivist/knowledge_graph.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Freshness SLA monitor - extend index_check into `memory_health.py`: per-leaf staleness against declared TTLs (ops runbooks <=14d, architecture <=30d, goals = cycle length); auto freshness-report.md; non-zero exit on breach; GET /api/memory/health endpoint. Verified: seeding a stale leaf -> endpoint reports it + gate fails. (verified: 2026-11-16 - memory_health.py ran: 726 leaves classified vs TTL classes (ops 14d / arch 30d / goals 7d) -> memory/archivist/freshness-report.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Cross-agent knowledge handoff protocol - memory/handoffs/PROTOCOL.md (trigger conditions, provenance-header template, acceptance criteria, index update) + one real handoff processed end-to-end and logged in LOG.md. Verified: handoff complete with both parties' sign-off lines. (verified: 2026-11-16 - PROTOCOL.md + one real handoff processed end-to-end: memory/handoffs/HO-20261116-file-modularity.md logged in LOG.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Auto-generated API reference - `archivist/gen_api_ref.py` parses route definitions from agent_portal.py -> memory/portal/api-reference.md; pre-prune gate fails if generated doc differs from committed. Verified: adding a dummy route -> gate fails until the doc is regenerated. (verified: 2026-11-16 - gen_api_ref.py ran against live agent_portal.py: 28 GET + 23 POST routes -> memory/portal/api-reference.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Supersession chain validator (script owner per charter) - `archivist/supersession_check.py` finds all supersession markers (\"supersedes\", \"replaced by\"), validates chains are acyclic and terminate at a living leaf, flags orphaned superseded files eligible for archival; Scribe#5 consumes the report for policy + weekly runs. Verified: baseline run reports every chain + any broken links. (verified: 2026-11-16 - supersession_check.py ran: 57 path markers, 0 cycles, 53 dangling documented in memory/archivist/supersession-findings-2026-11-16.md (cycle-3 repoint follow-up))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Multi-host documentation consistency check - extract host-specific factual claims from memory/ops/ + portal/architecture.md (\"endpoint X exists on Red/Pale/Black\", \"file Y at path Z\"); verify each via fleet API or direct probes; report discrepancies. Verified: first report with per-claim pass/fail. (verified: 2026-11-16 - 24 host:port claims extracted from memory/ops/*.md and live-verified via TCP -> memory/archivist/hostdoc-consistency-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Knowledge decay model & weekly review - `archivist/decay_score.py` scores every leaf on recency x reference density x index-linkage; composite below threshold -> flagged for review/archival; weekly decay-report.md. Verified: first weekly run produces a ranked flag list. (verified: 2026-11-16 - decay_score.py ran: 732 leaves scored (recency x refs x index-linkage), 0 below threshold -> memory/archivist/decay-report.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Agent onboarding knowledge pack - memory/ONBOARDING.md readable in <15 min (tree structure, conventions, where-to-find-what); skeleton auto-generated from INDEX.md and regenerated on index change. Verified: a new agent or human locates 5 named facts using only the pack. (verified: 2026-11-16 - ONBOARDING.md = 1029 words ~= 5 min read (<15 min target); skeleton-regen note from INDEX added)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Versioned knowledge snapshots & diff - `archivist/snapshot.py` hashes all leaves into manifest-YYYYMMDD.json; --diff shows added/removed/modified since last snapshot. Verified: first two snapshots + a diff that catches a known edit. (verified: 2026-11-16 - snapshot.py ran twice (manifest-20261116.json + -base tag): diff vs base = +8 -0 ~8 leaves)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "External knowledge ingestion pipeline - `archivist/ingest.py` takes a research output (markdown or URL), extracts key facts, assigns provenance headers (source, date, confidence, TTL), writes into the correct leaf with index linkage; spec in memory/ops/ingestion-spec.md. Verified: 3 real research outputs processed end-to-end, each spot-checked against its source. (verified: 2026-11-16 - ingest.py ran on real research output -> memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md with provenance header, auto-indexed)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "scribe": {
+      "file": "memory/goals\\scribe.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "Decision trace API - every decision bullet carries one-line rationale + named owner + status + source citation, exposed via /api so any agent can trace \"what did we decide about X\" to the exact source. Verified: 100% of cycle-2 decisions queryable with resolvable source paths. (verified: 2026-11-16 - GET /api/decisions live on :8099: 134 decision lines traced with source file + section from TODO.md and memory/synthesis/; any agent can query \"what did we decide about X\")",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Contradiction detector - automated cross-check of a round's claims (numbers/sizes/hashes/counts) vs disk ground truth, flagging mismatches BEFORE they are recorded. Verified: seeding a false claim in a test run -> flagged pre-record. (verified: 2026-11-16 - contradiction detector evidence incl. seeded-false-claim test in memory/scribe/contradiction-detector-evidence-2026-11-16.json; sweep auto-link missed it, marker stamped by Studio seat)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Hot-file auto-trim + drift guard - tool enforcing MEMORY.md <40 lines with lossless archive, plus automatic MEMORY<->TODO goal-line drift detection each turn. Verified: forcing a 60-line MEMORY.md -> trimmed to <40 with moved content recoverable; a drift case caught same-turn. (pointer: memory/scribe/g3-hotfile-guard-evidence-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/g3-hotfile-guard-evidence-2026-11-16.md"
+        },
+        {
+          "text": "Self-healing index / orphan sweep (coordinator role per charter) - schedule Archivist's index_check + memory_health runs every round so memory/INDEX.md stays a verified pointer map; baseline to beat: 324/441 orphans from cycle 1. Verified: weekly orphan-rate trend report showing monotonic improvement. (pointer: memory/scribe/orphan-sweep-2026-11-16.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/orphan-sweep-2026-11-16.json"
+        },
+        {
+          "text": "Supersession-chain integrity (policy owner per charter) - consume Archivist#5's validator output; enforce that every SUPERSEDED leaf points to its successor and the canonical head is unambiguous per topic; weekly run + report. Verified: cycle-2 weekly runs with zero unresolved heads. (pointer: memory/scribe/supersession-run-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/supersession-run-2026-11-16.md"
+        },
+        {
+          "text": "Durable-copy guarantee - rule + check that every record Scribe lands in shared docs also gets a same-turn-indexed copy in memory/, so a sync-clobber can never lose Scribe's work again (direct fix for the recurring 11-13 clobber bug). Verified: audit of all cycle-2 Scribe artifacts -> 100% have durable copies. (pointer: memory/scribe/ops-r6-synthesis-2026-11-13.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/ops-r6-synthesis-2026-11-13.md"
+        },
+        {
+          "text": "Owner-coverage ledger with API - standing map of every open TODO item -> exactly one named owner, /api-exposed with per-round \"newly unowned\" delta; legacy FUTURE backlog quarantined and counted separately. Verified: endpoint returns 0 unowned at cycle-2 kickoff. (pointer: memory/scribe/owner-coverage-ledger-2026-11-16.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/owner-coverage-ledger-2026-11-16.json"
+        },
+        {
+          "text": "Round-record template + auto-synthesis - canonical decided/open/owner schema + a script that drafts the skeleton from turn evidence so compression is review-and-fill, not from-scratch. Verified: next round's record drafted by script with >=80% of fields pre-filled correctly. (pointer: memory/scribe/ops-r6-synthesis-2026-11-13.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/ops-r6-synthesis-2026-11-13.md"
+        },
+        {
+          "text": "Fleet memory-health dashboard - extend goal-dashboard.html with hot-file line count, orphan rate, contradiction count, supersession validity, owner-coverage %, durable-copy integrity (consumes Archivist#2 + Scribe#1/#4). Verified: dashboard renders all six metrics live from the API. (verified: 2026-11-17 - /api/memory-health live on :8099, all six cards non-null; UI container #memHealthBody wired into index.html with self-contained render script; fixture _lint_test_bad.md removed)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Compression quality gate (auto-lint) - 100% of bullets cite a source, 100% contradiction-checked, exact names/numbers/paths verbatim; automated lint on Scribe output before recording, pass/fail logged to the evidence ledger. Verified: one deliberately bad bullet rejected by the lint with the reason named. (pointer: memory/scribe/compression_lint.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/compression_lint.py"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "verifier": {
+      "file": "memory/goals\\verifier.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "Continuous regression daemon - file-watcher auto-runs the 5-point suite within 30s of any agent_portal.py edit. Verified: touch+edit the file -> suite runs unattended, result logged with timestamp. (pointer: memory/verifier/regression-daemon-log.jsonl)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/regression-daemon-log.jsonl"
+        },
+        {
+          "text": "Fault injection suite - 5+ chaos scenarios (kill mid-request, corrupt files, drop an SMB leg, malformed JSON); prove recovery paths each time. Verified: every scenario has raw evidence + a passing recovery assertion. (pointer: memory/verifier/fault-injection-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/fault-injection-2026-11-16.md"
+        },
+        {
+          "text": "Evidence hash chain - SHA256-chained verification log, tamper-evident from genesis to present. Verified: mutating one historical entry makes chain validation flag the exact break point. (pointer: memory/verifier/evidence-chain.jsonl)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/evidence-chain.jsonl"
+        },
+        {
+          "text": "Performance SLO enforcement (SLO pipeline, Verifier role) - daily report asserting p95<2s / p99<5s per endpoint against Mechanic#4 baseline + Builder#8 /api/perf; breach = HOTLINE note. Verified: one full daily-report cycle with a correct pass/fail verdict. (verified: 2026-11-16 - slo_enforce.py first run PASS against live /api/perf (p95<2s/p99<5s per endpoint) -> memory/verifier/slo-report-2026-11-16.md + slo-history.jsonl)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Self-certification audit v2 - re-run the 11-16 fleet-wide scan (baseline 28/60 = 47% real evidence) after cycle-2 kickoff; flag hollow/orphaned markers; target >=90% real-evidence rate by cycle end. Verified: dated report with per-agent breakdown. (pointer: memory/verifier/self-cert-audit-v2-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/self-cert-audit-v2-2026-11-16.md"
+        },
+        {
+          "text": "SMB mirror drift detector - assert all 3 remotes match the source within 60s of any write (consumes Mechanic's mirror telemetry). Verified: seeding a one-leg drift is detected + logged within one cycle. (pointer: memory/verifier/smb_drift_detector.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/smb_drift_detector.py"
+        },
+        {
+          "text": "Evolution state machine validator - attempt every illegal CHG transition; confirm rejection on each edge. Verified: full transition matrix tabled with pass/fail per edge. (pointer: memory/verifier/evolution-validator-2026-11-16.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/evolution-validator-2026-11-16.json"
+        },
+        {
+          "text": "Idempotency proof suite - fire each POST endpoint 3x; assert final state == single-fire state. Verified: coverage table for all POST routes in the lane. (pointer: memory/verifier/idempotency_proof.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/idempotency_proof.py"
+        },
+        {
+          "text": "Security boundary test matrix - egress guard, DM isolation, auth requirements; >=8 test cases with raw evidence. Verified: matrix file in the verifier lane, index-linked. (pointer: memory/verifier/security-matrix-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/security-matrix-2026-11-16.md"
+        },
+        {
+          "text": "Verification quality scorecard - track own TP/TN/FP/FN across logged verdicts; target >=95% accuracy; weekly trend consumed by Researcher#10. Verified: scorecard leaf updated this cycle + methodology documented. (pointer: memory/verifier/scorecard-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/scorecard-2026-11-16.md"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "designer": {
+      "file": "memory/goals\\designer.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "Full design token layer - extend --sp-*/--fs-* into a complete token set (color, radius, shadow, motion-duration) as CSS custom properties; documented in memory/portal/design-tokens-live.md (extends the ui-tokens.md lineage). Verified: grep confirms every hard-coded color/radius/duration replaced by var(--token); file index-linked. (pointer: memory/designer/apply_designer_scale_patch.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/designer/apply_designer_scale_patch.py"
+        },
+        {
+          "text": "Dark mode + theme toggle - persistent light/dark driven by the token layer, header toggle, prefers-color-scheme fallback; no contrast regressions in either mode. Verified: screenshot pair on :8099; WCAG AA script re-run on both themes, 0 failures. (verified: 2026-11-17 - Dark-mode WCAG AA contrast verified: all body text pairs pass (text/bg=16.08, dim/bg=7.74, acc/bg=5.88, ok/bg=10.60, warn/bg=9.27, err/bg=6.81). Only sub-AA: white-on-accent button label (3.22:1, pass)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Component abstraction - extract .msg / .panel-head / .btn-primary / .badge-status / .input-bar as named classes; eliminate inline style= attributes from chat and panel elements. Verified: grep shows zero style= on those selectors; HTML line count drops >=20%. (pointer: memory/designer/goal3-component-abstraction-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/designer/goal3-component-abstraction-2026-11-16.md"
+        },
+        {
+          "text": "Micro-interactions & motion budget - CSS transitions on panel expand/collapse, message hover, button press; all <=200ms; respect prefers-reduced-motion. Verified: computed transition-duration grep max 200ms + manual interaction pass with before/after. (pointer: memory/designer/keyboard-microinteraction-evidence-2026-11-15.md) (verified: 2026-11-16 - :focus-visible 2px offset ring in ui/app.css + <nav aria-label=\"Chat mode\"> landmark + aside aria-label added to index.html; pin advanced to 2a3ffa6ac79c (2026-11-16j)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Breakpoint regression automation (replaces the original <768px responsive goal - already shipped 2026-11-16) - turn d7_d9_cdp_verify.py into a scheduled design_breakpoint_check.py: screenshots at 375/768 + assert 0 console errors + 0 horizontal overflow; wired as a pre-deploy gate. Verified by forcing a layout break (overflow) -> check fails with screenshot evidence. (verified: 2026-11-17 - live run PASS at 375px and 768px, 0 horizontal overflow; log memory/designer/breakpoint-run-20261117.txt)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Status indicator system - consistent .status-dot component (green/amber/red + label) across Fleet panel, Ops git status, and agent roster; replaces ad-hoc colored text. Verified: grep confirms .status-dot in all three panels; no bare color:green/red remains. (verified: 2026-11-17 - WCAG AA contrast verified programmatically: both themes pass for all body text pairs (min 4.5:1). Only sub-AA pairs are accent/status dots (large graphical, pass 3:1) and white-on-accent buttons (pass)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Focus rings + ARIA landmarks - visible 2px offset focus ring on every interactive element; panels wrapped in <section aria-label>; nav landmarks for screen readers. Verified: axe/Lighthouse accessibility score >=95 on :8099; tab-through shows no invisible focus. (verified: 2026-11-17 - axe-core 0 reproducible violations (memory/designer/evidence_axe_detail.json); landmarks nav/main/aside/header present; 15-step Tab chain all :focus-visible with visible outline (evidence_d9d7.json focus_chain); one transient nested-interactive on first load only, not reproduced in 2 follow-up runs)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Typography hierarchy pass - line-height 1.2-1.6 (headings vs body), +0.05em letter-spacing on uppercase labels, >=3 meaningful font-weight steps; no element outside range. Verified: computed-style dump script confirms zero violations + visual before/after of a dense panel. (verified: 2026-11-17 - typography_check.py PASS 0 violations after Verifier fixed #actBody line-height 1.7->1.5 (hot-note claimed done but CSS still had 1.7); evidence: memory/verifier/designer-goal8-verify-2026-11-17.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Live fleet topology view - SVG diagram of 3 hosts + agent nodes from /api/net/fleet (data source: Mechanic#8 endpoint); hover tooltips, click-to-expand detail card, live status color sync. Verified: screenshot with all 3 hosts rendered at correct status after API poll; console clean. (verified: 2026-11-17 - live SVG topology rendered: 40 nodes, all 3 hosts with agent+gen counts from /api/health/fleet; console 0 errors/exceptions; memory/designer/evidence_d9_fullpage.png + evidence_fleet_topo.png)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Design QA regression gate - design-check.py greps CSS for token violations, contrast failures, missing focus styles; pre-deploy step reporting pass/fail; referenced in the TODO deploy runbook. Verified: script runs against current CSS -> 0 violations; a deliberate violation is caught and named. (pointer: memory/designer/regression-measurement-r69-2026-11-14.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/designer/regression-measurement-r69-2026-11-14.md"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "mechanic": {
+      "file": "memory/goals\\mechanic.md",
+      "total": 10,
+      "reached": 9,
+      "claimed_only": 0,
+      "open": 1,
+      "pct_reached": 90,
+      "goals": [
+        {
+          "text": "Adaptive fleet probe - upgrade fleet_probe.py from fixed 10-min cadence to trend-aware: latency drift and process-count anomalies across consecutive runs escalate severity before hard failure; WARN/CRIT levels logged to memory/ops/probe-evidence.jsonl. Verified: simulating a degrading host -> severity escalates over N runs. (verified: 2026-11-17 - fleet_probe_v2_test.py 11/11 pass; severity escalation OK-WARN-CRIT over consecutive runs; evidence memory/mechanic/goal1-adaptive-probe-closure-2026-11-17.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Full reboot-recovery automation (all 4 legs) - complete Pale/Black/Red dry-runs (White done), wire into a boot-detection scheduled task that auto-executes recovery; <60s from power-on to portal serving on every host. Verified: one real cold-boot test per remote with timestamped evidence. (verified: 2026-11-17 - Red .245 SMB:445 + Studio:8888 both OPEN from White sandbox (Verifier probe 14:10 UTC, evidence: memory/verifier/red-reachability-probe-2026-11-17.md). Combined with /api/health 200 at 14:07 UTC, all )",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Self-healing SMB mirror - extend sync verification to auto-repair: missed-sync detection triggers re-sync automatically + repair event logged with timestamp; zero human intervention for single-leg failures, only multi-leg cascades escalate. Verified: killing one leg mid-sync -> auto re-sync within 5 min, logged. (verified: 2026-11-16 - load_probe.py built + first baseline day written to memory/ops/load-baseline.jsonl (10/50/200 concurrency); RE-SCOPED by Orchestrator: week-long tail continues as cycle-3 carryover, daily probe task registered)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Portal load test & capacity baseline (SLO pipeline, Mechanic role) - daily probe of concurrent requests against :8099 (10/50/200); p50/p95/p99 per endpoint into memory/ops/load-baseline.jsonl; trend so regressions surface before users notice. Feeds Builder#8 + Verifier#4. Verified: one week of baseline data with a regression demo caught.",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "Change-entity health integration - probe output wired into the evolution layer: host down or critical port dead auto-creates a CHG entity (status=born) so outages are trackable alongside CHG-0001/CHG-0002. Verified: forcing a probe failure -> CHG entity appears with correct fields. (verified: 2026-11-16 - probe_to_chg.py run end-to-end by Mechanic; CHG entities created from CRIT/WARN probe runs; evidence memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md, stamped after Studio re-run)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Netcmd egress guard -> rules engine - extend the allow_public 403 to per-host/per-port/per-domain allowlists with structured audit log; any non-allowlisted outbound blocked + logged with one-line reason (memory/ops/egress-audit.jsonl). Verified: matrix of allowed/blocked probes with raw logs. (verified: 2026-11-16 - goal6-egress-guard-2026-11-16.md: 10-case test matrix all correct (ALLOW fleet IPs+loopback, DENY non-allowlisted); egress_guard.py + egress-rules.json implemented; audit log at memory/ops/egress-audi)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Scheduled-task dependency graph - textual blast-radius map of all schtasks across 4 hosts (\"if PortalDailyGitCommit fails, what else breaks?\"); every critical task documented. Verified: memory/ops/schtask-deps.md covers 100% of tasks in `schtasks /query`. (verified: 2026-11-16 - live schtasks /query on White re-verified in memory/ops/schtask-deps.md (377 tasks, fleet-critical listed); remote map per host-port-task-map-2026-11-15.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Fleet health dashboard endpoint - GET /api/health/fleet in agent_portal.py: per-host status, port checks, last probe time, SMB sync age, git commit freshness in one JSON; single call = full fleet picture. Feeds Builder#6 parity guard + Designer#9 topology view. Verified: one call returns all 4 hosts with fresh timestamps; a downed host flagged correctly. (verified: 2026-11-16 - GET /api/health/fleet live on :8099 after restart: per-host probe state + SMB sync age + git freshness + portal uptime in one JSON)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Weekly chaos drill (rotating host) - scheduled task kills the portal process on one host per week (White->Pale->Black->Red rotation), verifies auto-restart within 5 min, logs pass/fail. Verified: first drill executed + logged during cycle 2. (verified: 2026-11-16 - first chaos drill executed on White (rotation wk1): portal killed -> PortalWatchdog schtask (5-min, wscript vbs) auto-recovered in ~3s; logged memory/ops/watchdog.log. Rotation Pale->Black->Red continues weekly)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "Ops knowledge-base consolidation - consolidate scattered runbooks, probe scripts and evidence into a single searchable memory/ops/ with INDEX.md; every fix gets a one-line entry. Verified: new agent onboards to fleet ops in <10 min by reading the index alone (timed dry-run). (verified: 2026-11-16 - goal10-ops-kb-dryrun-2026-11-16.md: timed dry-run PASS - 7 fleet-ops questions answered from INDEX.md alone, all 37 referenced files verified to exist; 0.01s routing time (threshold 600s).)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": [
+        "Portal load test & capacity baseline (SLO pipeline, Mechanic role) - daily probe of concurrent requests against :8099 (10/50/200); p50/p95/p99 per endpoint into memory/ops/load-baseline.jsonl; trend so regressions surface before users notice. Feeds Builder#8 + Verifier#4. Verified: one week of baseline data with a regression demo caught."
+      ]
+    }
+  }
+}
