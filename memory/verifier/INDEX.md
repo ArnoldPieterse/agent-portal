@@ -65,3 +65,4 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - designer-goal7-verify-2026-11-17.md — **PARTIAL FAIL** Designer#7 motion audit: transitions all ≤200ms ✓, but `prefers-reduced-motion` block ABSENT from app.css ✗. One 4-line CSS addition needed to close.
 
   - scribe-goal2-v2-contradiction-2026-11-18.md — **FAIL** Scribe#2 contradiction detector v2: evidence JSON claims 5 new types implemented, but code only has cycle-2 types. Claim contradicted; goal stays OPEN.
+- designer-goal1-hex-reverify-2026-11-18.md — **CONFIRMED FAIL** Designer#1 token audit: 36 hex values in component rules (matches Orchestrator count). Designer's 11-17 'zero remaining' claim is stale. Goal stays OPEN.

@@ -2,6 +2,7 @@
 Last updated: 2026-11-17 (Builder auto-loop: added portal-startup + css-tokens entries, verified token claim).
 
 ## Entries (keyword -> pointer | use case)
+- Designer Goal#1 token audit / INDEPENDENT re-parse CONFIRMS 36 hard-coded hex outside BOTH token blocks (:root dark + [data-theme=light] light) = matches ORCH-VERIFY; line-by-line list + closure path for Designer -> memory/builder/designer-goal1-token-verify-2026-11-18.md   2026-11-18 cross-assist (owner: Designer); NOT closed - Designer still owns the var() replacement
 - portal startup / import-time C:\\Users PermissionError fix + start probe / assists Mechanic#2+Designer WCAG -> memory/builder/portal-startup-fix-2026-11-17.md   2026-11-17 fixed crash (alive:true); serving pending host boot-task restart (sandbox denies socket bind 10013)
 - prune regression suite / 4 cases fixtures-only / ALL PASS -> memory/builder/prune_regression.py   move/stay/chunk-math/idempotent, exit non-zero on FAIL
 - upload path-safety suite / drive letters + ../ + POSIX abs + bare uploads -> memory/builder/upload_path_safety.py   12/12 PASS 2026-11-15

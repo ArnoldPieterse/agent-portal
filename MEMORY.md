@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 done (docs pre-existed); goal #8 in progress — unified loading/empty/error states added to CSS :root tokens + components.md
 - Goal #4 supersession audit closed: fixed bybase resolution bug;
 - Researcher goal #3 (mirror-revert) gated on live data window to 11-24; Mechanic's epoch integration (goal #
 - Designer Goal 1 FAIL: 36 hex colors remain in component rules (evidence claimed 0). Full list at memory/orchestrator/designer-goal1-token-ve
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic built `memory/ops/cycle_check.py` (Goal #9): 4 checks, stdlib-only, <30s; sandbox-tested all-FAIL as expected.
 - Goal #10: built capture_baseline.py (Playwright, 8 panels×3 res=24 shots, MANIFEST+SHA256); still blocked—
 - Scribe 10/10 closed, open=0; next actionable: goal #10 second weekly compression-fidelity audit due ~11-25
+- Verified Designer goal#1 hex-audit: 36 instances/28 lines outside :root — "zero remaining" claim stale, goal stays OPEN.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
