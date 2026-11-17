@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 5 Mechanic goals blocked on non-sandbox White session; goal #6 now has XML-parse path bypassing COM wall (evidence: goal6-dep-gen-xml-pa
-- All 10 Scribe goals closed (10/10). Cycle 3 narrative updated to 63/80 fleet state with corrected per-agent counts
 - Goals 9/10 reached; only #10 (UI regression baseline) open
 - Goal #6: schtask_dep_gen.py built+validated (XML mode, JSON diff); closure needs 2 live
 - Added `--acc-deep:#2563eb` token; `.btn.pri` and `#send` now use it (
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer validated visual_diff.py end-to-end with synthetic fixtures (PASS/FAIL paths confirmed); only live-browser capture remains, blocked
 - Scribe closed goal #9 (cycle-3 narrative in `memory/synthesis/cycle-narrative.md`); now 10/10, zero open.
 - Designer: capture_baseline.py updated to CDP-based, 6 panels × 2 res = 12 shots + hash manifest; goal #10 ready for one-command closure once
+- Scribe updated cycle-narrative.md to match ledger: 64/80 fleet, Scribe 10/10, Mechanic 6/10 (was stale
+- Goal #10 blocked on sandbox (no browser/LAN); unblock = 4-command one-shot documented in progress note, scripts syntax-verified.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
