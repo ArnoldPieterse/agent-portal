@@ -4179,6 +4179,13 @@ if __name__ == "__main__":
     _reap_stale_group_run()
     _clear_stale_busy()
     _prune_run_journals()
+    try:   # archivist goal #10 (2026-11-18): memory tree size guard at startup
+        import os as _os, sys as _sys, subprocess as _sp
+        _r = _sp.run([_sys.executable, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "memory", "archivist", "size_guard.py")], capture_output=True, text=True, timeout=30)
+        with open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "memory", "archivist", "size_guard_report.md"), "a", encoding="utf-8") as _g:
+            _g.write((_r.stdout or _r.stderr).strip() + "\n")
+    except Exception:
+        pass
     threading.Thread(target=_auto_resume_watchdog, daemon=True).start()
     _aq.recover()   # 2026-11-17 (starnet recover()): report pending runs that survived a restart
     try:
