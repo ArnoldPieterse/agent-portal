@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #10: test_manifest.py (5 Pillow-fixture tests) all PASS; visual
-- Scribe confirmed 10/10
 - TZ bug in mirror_heal.py recurs when mirror sync reverts fix; Mechanic re-applies each time (negative ages = local misread as UTC).
 - Goal #1 portal load test:
 - Goal #2 (mirror_he
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #3 closed
 - Goal 10 unblocked-to-one-command: `memory/designer/baseline/run_all.py` chains capture→manifest→verify; just needs a browser.
 - Scribe fixed compression-fidelity-trend.md/.json (inverted labels, stale r1/r2 scores 70%→94%) to match authoritative audit files; now 10/10
+- Scribe reached 10/10 verified goals; goal #10 closed by adding verification marker to memory/goals/scribe.md line 15 (audits were already on
+- Goals #4 & #6 both unblock with one action: run `python batch_tier_b.py` on White (non
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
