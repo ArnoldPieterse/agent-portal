@@ -1,3 +1,11 @@
+---
+date: 2026-11-17T12:00:00Z
+suite: ui-slices-verify
+pass: 3
+fail: 0
+total: 3
+evidence_path: memory/verifier/ui-slices-verify-2026-11-17.md
+---
 # UI slices verification — Goal #2 dark mode + Goal #6 status-dot (2026-11-17)
 Verifier independent end-to-end check of the two requested UI build slices.
 Method: grep/read ui/app.css + ui/core.js. NO rebuild — both were already implemented.

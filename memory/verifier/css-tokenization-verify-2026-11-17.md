@@ -1,9 +1,17 @@
-# Verification: CSS Tokenization Claim — FAIL (2026-11-17)
+---
+date: 2026-11-17T12:00:00Z
+suite: css-tokenization-verify
+pass: 0
+fail: 2
+total: 2
+evidence_path: memory/verifier/css-tokenization-verify-2026-11-17.md
+---
+# Verification: CSS Tokenization Claim â€” FAIL (2026-11-17)
 
 **Claim under test:** "Goal 1 CSS tokenization complete: all 28 hex colors + 9 radius/shadow/duration tokens added to :root; 0 remaining outside :root"
 **Source of claim:** HOT NOTES (group memory.md), most recent entry.
 
-## Result: FAIL — 33 unique hardcoded hex colors remain outside :root
+## Result: FAIL â€” 33 unique hardcoded hex colors remain outside :root
 
 | Line | Color | Context (truncated) |
 |------|-------|---------------------|

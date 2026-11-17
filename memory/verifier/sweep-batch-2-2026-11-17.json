@@ -1,0 +1,51 @@
+[
+  {
+    "id": "C3-SWEEP-004",
+    "agent": "Verifier",
+    "claim": "slo_enforce.py exists and is runnable (Goal #2 artifact)",
+    "actual": "File exists (1544 bytes), has main entry: True",
+    "pass": true
+  },
+  {
+    "id": "C3-SWEEP-005",
+    "agent": "Verifier",
+    "claim": "security_boundary_matrix.py covers egress, DM isolation, auth, path traversal (Goal #5)",
+    "actual": "Checks: {'egress': True, 'dm_isolation': True, 'auth': True, 'path_traversal': True}, all_present=True",
+    "pass": true
+  },
+  {
+    "id": "C3-SWEEP-006",
+    "agent": "Verifier",
+    "claim": "idempotency_proof.py tests 3 endpoints under 5x concurrency (Goal #6)",
+    "actual": "endpoints: user-messages=False, goals=False, upload=False; concurrency_mentioned=True",
+    "pass": false
+  },
+  {
+    "id": "C3-SWEEP-007",
+    "agent": "Verifier",
+    "claim": "smb_drift_detector.py exists and is runnable (Goal #8 artifact)",
+    "actual": "File exists (5303 bytes), has main entry: True",
+    "pass": true
+  },
+  {
+    "id": "C3-SWEEP-008",
+    "agent": "Verifier",
+    "claim": "evolution_validator.py covers full lifecycle: propose->test->select->merge->archive (Goal #10)",
+    "actual": "Stages found: {'propose': True, 'test': True, 'select': False, 'merge': False, 'archive': False}, all=False",
+    "pass": false
+  },
+  {
+    "id": "C3-SWEEP-009",
+    "agent": "Verifier",
+    "claim": "evidence-chain-certificate.json contains a SHA256 hash (Goal #3)",
+    "actual": "Keys: ['type', 'date', 'chain_file', 'entries', 'seq_range', 'genesis_hash', 'tip_hash', 'chain_valid', 'errors', 'integrity_sha256', 'algorithm'], has_hash_field=True",
+    "pass": true
+  },
+  {
+    "id": "C3-SWEEP-010",
+    "agent": "Verifier",
+    "claim": "fault_injection_results.jsonl contains C3 incidents with MTTR < 60s (Goal #1)",
+    "actual": "Total entries: 7, C3 entries: 2, all MTTR<60s: True",
+    "pass": true
+  }
+]

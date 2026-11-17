@@ -1,3 +1,11 @@
+---
+date: 2026-11-17T12:00:00Z
+suite: regression-detector-reverify
+pass: 2
+fail: 0
+total: 2
+evidence_path: memory/verifier/regression-detector-reverify-2026-11-17.md
+---
 # Regression-detector re-verification (assists Mechanic #4)
 
 Parent: memory/verifier/INDEX.md  |  Owner: **Mechanic** (goal #4, SLO pipeline "measures" leg)  |  Role here: Verifier = "enforces" leg

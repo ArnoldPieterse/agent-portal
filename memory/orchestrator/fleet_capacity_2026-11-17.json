@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-17 20:47",
+  "report_number": 1,
+  "memory_size_kb": 14156.5,
+  "portal_response_ms": null,
+  "agent_file_counts": {
+    "archivist": 79,
+    "builder": 134,
+    "designer": 249,
+    "goals": 54,
+    "handoffs": 6,
+    "llm": 12,
+    "mechanic": 122,
+    "ops": 159,
+    "orchestrator": 15,
+    "portal": 38,
+    "projects": 4,
+    "researcher": 75,
+    "scribe": 56,
+    "synthesis": 61,
+    "verifier": 153,
+    "workspace": 1
+  },
+  "agents_total": 1,
+  "agents_loaded": 0,
+  "flags": [],
+  "baseline": {
+    "memory_size_kb": 28313,
+    "portal_response_ms": 500,
+    "files_per_agent_dir": 498
+  },
+  "notes": [
+    "Portal response: needs live probe (sandbox has no outbound net)",
+    "Model load status: no _load_status field in agents.json yet - instrumentation needed"
+  ]
+}

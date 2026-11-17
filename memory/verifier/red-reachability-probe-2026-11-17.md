@@ -1,4 +1,12 @@
-# Red .245 reachability probe — 2026-11-17 14:10 UTC
+---
+date: 2026-11-17T12:00:00Z
+suite: red-reachability-probe
+pass: 1
+fail: 0
+total: 1
+evidence_path: memory/verifier/red-reachability-probe-2026-11-17.md
+---
+# Red .245 reachability probe â€” 2026-11-17 14:10 UTC
 
 **Assisting**: Mechanic goal #2 (reboot-recovery, all 4 hosts)
 **Probed from**: White sandbox seat (this agent)

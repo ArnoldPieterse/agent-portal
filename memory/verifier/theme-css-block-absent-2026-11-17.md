@@ -1,3 +1,11 @@
+---
+date: 2026-11-17T12:00:00Z
+suite: theme-css-block-absent
+pass: 4
+fail: 0
+total: 4
+evidence_path: memory/verifier/theme-css-block-absent-2026-11-17.md
+---
 # STALE-CLAIM CLOSURE: dark-mode CSS override block ABSENT from live ui/app.css (2026-11-17)
 
 **Claim closed:** `ui-slices-verify-2026-11-17.md` reported **PASS** for the dark-mode slice,

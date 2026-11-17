@@ -1,3 +1,11 @@
+---
+date: 2026-11-17T12:00:00Z
+suite: fault-injection-c3
+pass: 1
+fail: 0
+total: 1
+evidence_path: memory/verifier/fault-injection-c3-2026-11-17.md
+---
 # Fault Injection Cycle 3 — Real Incident Simulation
 **Date:** 2026-11-17T10:23:23Z
 **Suite:** fault_injection_c3.py

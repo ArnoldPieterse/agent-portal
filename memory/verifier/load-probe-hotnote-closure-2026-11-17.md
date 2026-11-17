@@ -1,3 +1,11 @@
+---
+date: 2026-11-17T12:00:00Z
+suite: load-probe-hotnote-closure
+pass: 1
+fail: 0
+total: 1
+evidence_path: memory/verifier/load-probe-hotnote-closure-2026-11-17.md
+---
 # Hot-note closure: load_probe.py disk state (2026-11-17)
 
 Parent: MEMORY.md Hot Notes

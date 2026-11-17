@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 1 done: 36 hardcoded hex → 23 semantic tokens in ui/app.css, 0 remaining outside :root.
 - Archivist goal #2 done: handoff PROTOCOL.md upgraded to v2 (two-tier Full/Light + authority field); LOG.md fixed; retroactive Mechanic→White
 - Scribe goal #1 done: /api/decisions now supports ?agent, ?since, ?q filters in agent_portal.py; 20ms perf, verified against 134 lines.
 - Builder goal #1 (canary deploy) complete: canary_deploy.py pipeline green (Red→smoke→Black+Pale), agent_portal.py untouched, evidence in mem
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8: restructured open-questions-log.md with audit table; 2 entries SLA-BREACH, 3 approaching 48h threshold
 - Scribe Goal#1 advanced: `?agent`/`?since`/`?q` filters in `_decisions_snapshot()` verified in
 - Goal #3 closed: predictive WARN fires at run 4 (156ms), standard WARN at run 6 (244ms) — 2 intervals early; evidence in fleet_probe_v2_predi
+- Goal#4 sweep found: Goal#6 tests hit wrong endpoints/concurrency; Goal#10 validator misses expanded lifecycle (cycle-3+).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
