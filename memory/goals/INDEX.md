@@ -10,6 +10,7 @@ CURRENT CYCLE: **set 2026-11-16 (cycle 2)** - 8 agents x 10 goals, canonical rec
 - -> memory/goals/archivist.md   Archivist: 10 goals (2026-11-16)
 - -> memory/goals/scribe.md   Scribe: 10 goals (2026-11-16)
 - -> memory/goals/mechanic.md   Mechanic: 10 goals (2026-11-16)
+- -> memory/goals/forecast-mechanic-g4.md   Verifier forecast for Mechanic#4 closure timing (2026-11-17)
 
 Cycle-2 kickoff provenance + verbatim proposals:
 - -> memory/goals/cycle2-kickoff-2026-11-16.md

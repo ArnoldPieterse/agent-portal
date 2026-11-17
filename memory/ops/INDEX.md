@@ -12,6 +12,8 @@ Last updated: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - Host inventory (IPs, ports, tasks per host) -> memory/ops/host-port-task-map-2026-11-15.md
 - Scheduled-task dependency graph + blast radius -> memory/ops/schtask-deps.md
 - HOTLINE escalation protocol v2 -> memory/ops/hotline-v2.md
+- NON-SANDBOX EXECUTION QUEUE (batch network/browser/elevated tasks a sandbox seat can't run) -> memory/ops/non-sandbox-queue.md
+- BLOCKERS log (NEEDS-HUMAN, exact cmd + error) -> memory/ops/blockers.md
 - Git hygiene / commit conventions -> memory/ops/git-hygiene.md
 - Memory sync spec (what gets mirrored where) -> memory/ops/memory-sync-spec-r13.md
 
