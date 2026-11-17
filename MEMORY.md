@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 done: ops runbook gap analysis scored 84.6% (≥80% pass). Artifact at memory/mechanic/ops-runbook-gap-analysis-2026-11-17.md
 - Goal #7 closed (motion audit + reduced-motion block). Goal #2 fleet panel: CSS/JS done, only blocker is browser screenshots at 3 resolutions
 - Goal #9 (upload pipeline hardening) closed: 19/19 checks pass, tests at memory/builder/upload_hardening_tests.py
 - Goal #1 KG auto-update done
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goal #1 done: /api/decisions now supports ?agent,?since,?status,?q filters; 5 tests pass; code in agent_portal.py; evidence at memory
 - CSS bundle at 73.
 - Goal #3 done: predictive_trend_warn() added to fleet_probe.py; sim shows ~9-interval early warn vs CRIT threshold.
+- Goal #2 SLO unblock: run `python memory/verifier/register_slo_task.py` from non-sandbox White seat; script registers schtask + fires slo_enf
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

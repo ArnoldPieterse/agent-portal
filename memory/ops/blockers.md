@@ -42,7 +42,7 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - `schtasks /query` (read-only, no create) -> **also** "ERROR: Class not registered" => this seat cannot register OR query tasks
 - `python memory/verifier/slo_enforce.py` -> WinError 10013 (egress block to 127.0.0.1:8099)
 - `python elev.py --shell "..."` -> **helper ABSENT**: `dir /s C:\Users\White\.unsloth` finds no elev.py; the advertised escalation path does not exist at this seat (exit = file-not-found, not exit 5). So elevation is NOT available here either.
-**Unblock (one-time, non-sandbox White ops terminal), OWNER = Mechanic:** run `schtasks /create /tn VerifierSLO /tr "python Z:\memory\verifier\slo_enforce.py" /sc daily /st 06:00` (elevated). After that SLO reports auto-accumulate; closure needs 2 consecutive days of automated PASS with no human intervention, then `python memory/researcher/goal_ledger.py --record verifier 2`.
+**Unblock (one-time, non-sandbox White ops terminal), OWNER = Mechanic:** run `python memory/verifier/register_slo_task.py` (auto-escalates; registers schtask + fires slo_enforce.py once + writes evidence). After that SLO reports auto-accumulate; closure needs 2 consecutive days of automated PASS with no human intervention, then `python memory/researcher/goal_ledger.py --record verifier 2`.
 **Do NOT re-probe from this sandbox.**
 
 ## Mirror-revert data collection (Researcher goal #3) [NEEDS-HUMAN]
