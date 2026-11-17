@@ -1,4 +1,10 @@
-<934 chars of arguments you sent, already written to TODO.md; elided to save room. Not tool output; the file on disk holds it.>
+<
+## SCHEDULED-GOAL BACKGROUND LIST + RUN RULES (Studio seat, on user request) - 2026-11-18
+Status: **DONE + committed** - 8 time-gated goals moved to memory/goals/scheduled-background.md (archivist#6,#8; mechanic#1,#2,#6,#8; scribe#10; verifier#8); agent files keep numbered pointer lines. New memory/run-rules.md = standing run rules, pointer line added to root memory/INDEX.md (1518 chars < 1600 budget) so it is injected/read every run: scheduled goals never hold main progress; close only with verified evidence; modular files per memory/portal/file-modularity.md.
+- [x] Move scheduled goals to background list - DONE, commit above
+- [x] Add run-rules.md attached to global index - DONE (1228 chars)
+- [ ] Continue completing remaining open cycle-3 goals (main lists now unblocked)
+934 chars of arguments you sent, already written to TODO.md; elided to save room. Not tool output; the file on disk holds it.>
 
 ## FILE-MODULARITY RULE + UI SPLIT + 15-MIN GIT NET 2026-11-16 ~17:xx (Studio seat, on user request) - supersedes older status lines
 Status: **DONE + verified 17:2x** - portal restarted (PID 36992, created 17:22:13 > agent_portal.py edit 17:06:25); watchdog auto-resumed the interrupted round (run g-1a1e33d284a). UI hard-refresh = Ctrl+Shift+R.
