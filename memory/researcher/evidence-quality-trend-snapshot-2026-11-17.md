@@ -10,8 +10,9 @@ Reproducible: `python memory/researcher/evidence_quality_trend.py --min-markers 
 | 2026-11-17 pm | 3 (reset) | 11 | 91% | fresh closures only; n<20 not yet stable |
 | 2026-11-17 pass-3 | 3 | 13 | 92% | +2 markers since pm; still below threshold |
 | 2026-11-17 pass-4 | 3 | 17 | 94% | +4 markers (builder, orchestrator, researcher all clean); verifier still 4/5. n=17, approaching n>=20 threshold; re-run ~11-18 for next point |
+| 2026-11-17 pass-5 | 3 | 18 | 94% | +1 marker (clean), rate HELD at 94%. Per-agent: builder 4/4, orchestrator 6/6, researcher 3/3 all 100%; verifier 4/5 (same #4 truncated-path miss). n=18 — TWO more clean closures to hit n>=20 stable threshold. |
 
-Per-agent (cycle-3, pass-3 run): builder 3/3 (100%), orchestrator 3/3 (100%), researcher 2/2 (100%), verifier 4/5 (80%). All others 0 markers.
+Per-agent (cycle-3, pass-5 run 2026-11-17): builder 4/4 (100%), orchestrator 6/6 (100%), researcher 3/3 (100%), verifier 4/5 (80%). All others 0 markers. Single miss is stable: verifier goal #4 marker says "Report at memory" with no full path; report DOES exist at memory/verifier/contradiction-sweep-2026-11-17.md — fix = Verifier appends the path to its #4 verified line, which would make rate 18/18 = 100%.
 
 **Finding (pass-3):** Rate 91% -> 92%, n up to 13. Single miss identified: verifier goal #4 marker truncated - says "Report at memory" without a full path, so no file token is extracted. The report DOES exist at `memory/verifier/contradiction-sweep-2026-11-17.md`. Fix: Verifier appends the path to its #4 verified line. Once fixed, rate = 13/13 = 100%. Still below n>=20 threshold; re-run ~11-20 for data point #2.
 

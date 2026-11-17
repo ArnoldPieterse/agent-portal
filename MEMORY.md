@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 (Decision trace API v2) complete: ?agent/?since/?status/?q filters in agent_portal.py, verified 3 queries <500ms, ledger-recorded.
-- Goal #1 (Decision trace API v2): query param filters (?agent,?since,?q,?status) implemented in agent_portal.py, syntax+logic verified, evide
-- Goal #6 done: cross-agent comm patterns analyzed (52 files). Key: [CONCLUDED] discipline correlates with closure rate.
-- Goals #1 (load test) and #2 (mirror heal) share same blocker: sandbox egress — do not re
 - Goal #1 (design token audit) COMPLETE — all 36 hard-coded hex colors moved to :root; two bugs fixed mid-pass.
 - Goal #1 (KG Auto-Update) DONE: knowledge_graph.py v2 (hash-diff, orphan detect, delta report) + _post_sync_tasks() in memory_mirror.py; evid
 - Designer: Goal #2 fleet panel — added loading/error/empty states to ui/app.css + rewrote ui/core.js with dataset.loaded flag; production pol
 - Goal #1 KG v2 done (content-hash delta + orphan detection, 832 orphans). Remaining: hook into _post_sync_tasks() in memory_mirror.py.
 - Goal #6: durable_check.py built (85 lines);
 - Mirror LWW (step 3) overwrites local load_trend.py edits 6x; fix at mirror_host root, not re-apply. Goal #1 has 2/7 probe days.
+- Goal #2 evidence-quality trend: n=18 at 94%, needs n≥20 + mid-cycle re-audit to close; single miss is verifier #4 truncated path.
+- Goal #3 closed: CSS bundle 71.7KB minified, under 80KB budget; no optimization needed; documented in css-bundle-budget-2026-11-17.md
+- Root cause of repeated --week-complete reverts: mirror_host step 3 LWW-pulls remote memory/ tree, overwriting local edits (6th occurrence).
+- Goal #1 closed: _post_sync_tasks() added to memory_mirror.py, runs knowledge_graph.py post-mirror (non-blocking, 30s timeout).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
