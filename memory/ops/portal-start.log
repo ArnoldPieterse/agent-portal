@@ -1,0 +1,10 @@
+warning: Failed to set cwd to temp dir
+Z:\agent_portal.py:119: SyntaxWarning: invalid escape sequence '\P'
+  elsewhere (2026-11-11: tool shell had USERPROFILE=C:\Projects\Workspace -> sandbox refs 404'd).
+Traceback (most recent call last):
+  File "Z:\agent_portal.py", line 132, in <module>
+    SANDBOX_DIR = _find_sandbox_dir()
+  File "Z:\agent_portal.py", line 126, in _find_sandbox_dir
+    for u in sorted(os.listdir(users)):
+                    ~~~~~~~~~~^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users'

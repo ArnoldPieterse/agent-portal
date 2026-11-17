@@ -21,3 +21,4 @@
 {"ts": "2026-11-17 00:23:55", "run": "g-1a1e4be3fae-3db5e6", "missing": {"Researcher": "unreachable"}}
 {"ts": "2026-11-17 00:34:10", "run": "g-1a1e4c7a29b-8d562c", "missing": {"Researcher": "unreachable"}}
 {"ts": "2026-11-17 11:41:05", "run": "g-1a1e72a33b9-44fb7b", "missing": {"Builder": "unreachable", "Orchestrator": "unreachable", "Verifier": "unreachable"}}
+{"ts": "2026-11-17 12:47:52", "run": "g-1a1e76757cb-c7c9d4", "missing": {"Verifier": "unreachable", "Orchestrator": "unreachable", "Builder": "unreachable"}}
