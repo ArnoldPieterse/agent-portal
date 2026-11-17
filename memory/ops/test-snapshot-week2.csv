@@ -1,0 +1,7 @@
+Task Name,Status,Schedule Type,Next Run Time,Last Result
+\\PortalRun,Ready,Logon Trigger,N/A,0x0
+\\MemoryMirrorRun,Ready,Time (repetition),2026/11/24 15:00:00,0x0
+\\PortalDailyGitCommit,Ready,Time (repetition),2026/11/24 15:15:00,0x0
+\\PortalFleetProbe,Ready,Time (repetition),2026/11/24 15:10:00,0x0
+\\RecoverAll,Disabled,One Time,N/A,0x0
+\\NewBackupTask,Ready,Daily,2026/11/24 03:00:00,0x0
