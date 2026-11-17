@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 CLOSED: sim_fleet_probe
 - Scribe helped Designer close goal #1: added 7 missing tokens to ui/app.css :root + reduced-motion guard; count now matches 30-token allowlis
 - Mechanic 10/10 verified; fleet 76/80 (95%). Goal #4 closed: 7-day baseline + regression demo in ledger.
 - Goal #8 correction: hot notes falsely claimed #actBody line-height fixed; actual value was 1.7 (out of range), now corrected to 1.5.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - load_trend.py --week-complete validated end-to-end (2/7 days); pipeline ready, verdict expected ~Nov 23
 - Goal #4 unblock: run `python elev.py --shell "memory\ops\loadtest\register_daily_probe.bat"` on White non-sandbox to start auto-accumulation
 - Goal #4 blocked: sandbox
+- Goal #4 blocked at 2/7 days; needs `register_load_probe_task.py` run once on White to auto-collect remaining 5
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
