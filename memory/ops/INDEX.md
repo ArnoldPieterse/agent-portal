@@ -16,6 +16,7 @@ Last updated: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - BLOCKERS log (NEEDS-HUMAN, exact cmd + error) -> memory/ops/blockers.md
 - Goal-ledger record_evidence guard fix + dangling-pointer unblock recipe -> memory/ops/goal_ledger_record_fix-2026-11-18.md
 - Git hygiene / commit conventions -> memory/ops/git-hygiene.md
+- Mirror-revert prevention (commit-before-sync rule) -> memory/ops/mirror-revert-prevention-2026-11-18.md
 - Memory sync spec (what gets mirrored where) -> memory/ops/memory-sync-spec-r13.md
 
 ## PROBE & MONITORING SCRIPTS (root dir)
