@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #8 typography pass: fixed line-height & letter-spacing in ui/app.css; design_check.py now passes with 0 hard violations.
 - Built load_trend.py this pass; sandbox egress blocks :8099 (WinError 1
 - Sandbox blocks schtasks ("Class not registered") — load probe must be run
 - Mirror can silently revert file edits; always re-verify claimed changes on disk before trusting prior audit notes.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #3: 26 inline styles → 17 CSS classes in ui/app.css; pin advanced to 8a36cc841
 - Mirror silently reverted load_probe.py outage guard; must verify file state on disk before trusting prior edits.
 - Goal #3 remainder: 6 JS-generated inline styles in ui/core.js + ui/uploads.js; index.html is clean (0 inline), only index.html is pin-guarde
+- Designer at 7/10; remaining: dynamic inline styles in ui/core.js+ui/uploads.js, and breakpoint selftest screenshot needs
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
