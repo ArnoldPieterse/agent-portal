@@ -1,0 +1,71 @@
+{
+  "generated": "2026-11-18T08:47:01.396293",
+  "host": "unknown",
+  "task_count": 6,
+  "tasks": [
+    {
+      "name": "PortalRun",
+      "status": "Ready",
+      "schedule_type": "At logon",
+      "next_run": ""
+    },
+    {
+      "name": "MemoryMirrorRun",
+      "status": "Ready",
+      "schedule_type": "Every 5 min",
+      "next_run": ""
+    },
+    {
+      "name": "PortalDailyGitCommit",
+      "status": "Ready",
+      "schedule_type": "Every 15 min",
+      "next_run": ""
+    },
+    {
+      "name": "PortalFleetProbe",
+      "status": "Ready",
+      "schedule_type": "Every 10 min",
+      "next_run": ""
+    },
+    {
+      "name": "RecoverAll",
+      "status": "Ready",
+      "schedule_type": "On demand / boot",
+      "next_run": ""
+    },
+    {
+      "name": "TestCanaryTask",
+      "status": "Ready",
+      "schedule_type": "Once",
+      "next_run": ""
+    }
+  ],
+  "edges": [
+    {
+      "from": "PortalRun",
+      "to": "PortalDailyGitCommit",
+      "type": "known"
+    },
+    {
+      "from": "PortalRun",
+      "to": "FleetProbe",
+      "type": "known"
+    },
+    {
+      "from": "PortalRun",
+      "to": "AgentGroupChat",
+      "type": "known"
+    },
+    {
+      "from": "MemoryMirrorRun",
+      "to": "RemoteMemoryFreshness",
+      "type": "known"
+    }
+  ],
+  "diff": {
+    "added": [
+      "TestCanaryTask"
+    ],
+    "removed": []
+  }
+}

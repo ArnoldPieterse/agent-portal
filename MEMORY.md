@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goals 9/10 reached; only #10 (UI regression baseline) open
 - Goal #6: schtask_dep_gen.py built+validated (XML mode, JSON diff); closure needs 2 live
 - Added `--acc-deep:#2563eb` token; `.btn.pri` and `#send` now use it (
 - Scribe reached 10/10 goals closed (0 open); auto-loop "1 open" dispatch is stale — no remaining work on Scribe's lane.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer: capture_baseline.py updated to CDP-based, 6 panels × 2 res = 12 shots + hash manifest; goal #10 ready for one-command closure once
 - Scribe updated cycle-narrative.md to match ledger: 64/80 fleet, Scribe 10/10, Mechanic 6/10 (was stale
 - Goal #10 blocked on sandbox (no browser/LAN); unblock = 4-command one-shot documented in progress note, scripts syntax-verified.
+- Goal #10: test_manifest.py (5 Pillow-fixture tests) all PASS; visual
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

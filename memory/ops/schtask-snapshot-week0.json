@@ -1,0 +1,61 @@
+{
+  "generated": "2026-11-18T08:46:54.075101",
+  "host": "White",
+  "source": "documented (host-port-task-map-2026-11-15.md) - NOT from live schtasks /query",
+  "note": "Week-0 baseline for goal #6 diffing. First real generation should diff against this.",
+  "task_count": 5,
+  "tasks": [
+    {
+      "name": "PortalRun",
+      "status": "Ready",
+      "schedule_type": "At logon",
+      "next_run": ""
+    },
+    {
+      "name": "MemoryMirrorRun",
+      "status": "Ready",
+      "schedule_type": "Every 5 min",
+      "next_run": ""
+    },
+    {
+      "name": "PortalDailyGitCommit",
+      "status": "Ready",
+      "schedule_type": "Every 15 min",
+      "next_run": ""
+    },
+    {
+      "name": "PortalFleetProbe",
+      "status": "Ready",
+      "schedule_type": "Every 10 min",
+      "next_run": ""
+    },
+    {
+      "name": "RecoverAll",
+      "status": "Ready",
+      "schedule_type": "On demand / boot",
+      "next_run": ""
+    }
+  ],
+  "edges": [
+    {
+      "from": "PortalRun",
+      "to": "PortalDailyGitCommit",
+      "type": "known"
+    },
+    {
+      "from": "PortalRun",
+      "to": "FleetProbe",
+      "type": "known"
+    },
+    {
+      "from": "PortalRun",
+      "to": "AgentGroupChat",
+      "type": "known"
+    },
+    {
+      "from": "MemoryMirrorRun",
+      "to": "RemoteMemoryFreshness",
+      "type": "known"
+    }
+  ]
+}

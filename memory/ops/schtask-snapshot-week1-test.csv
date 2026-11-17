@@ -1,0 +1,7 @@
+Task Name,Status,Schedule Type,Next Run Time  
+PortalRun,Ready,"At logon",  
+MemoryMirrorRun,Ready,"Every 5 min",  
+PortalDailyGitCommit,Ready,"Every 15 min",  
+PortalFleetProbe,Ready,"Every 10 min",  
+RecoverAll,Ready,"On demand / boot",  
+TestCanaryTask,Ready,Once,"2026-11-24 06:00:00" 
