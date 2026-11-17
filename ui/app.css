@@ -215,3 +215,10 @@ textarea{resize:vertical;min-height:64px}
   .dbody{padding:var(--sp-8) var(--sp-12)}
   #send{padding:0 var(--sp-16)}
 }
+
+/* Memory Health cards (Scribe goal 9, re-landed 2026-11-17) */
+#memHealthBody{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+.mh-card{border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:12px}
+.mh-k{font-weight:600;font-size:11px;opacity:.75}
+.mh-v{font-size:16px;font-weight:700;margin:2px 0}
+.mh-d{opacity:.6;font-size:11px;line-height:1.3}

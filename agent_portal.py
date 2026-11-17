@@ -2940,6 +2940,101 @@ def _ops_snapshot():
             "disk": disk}
 
 
+def _memory_health_snapshot():
+    """GET /api/memory-health (Scribe goal 9, re-landed 2026-11-17 after clobber loss).
+    Six memory-system health metrics from existing evidence files + live scans.
+    Each metric: {value, status in pass|warn|fail, detail}. Never raises."""
+    def _latest(subdir, prefix):
+        try:
+            fs = [f for f in os.listdir(os.path.join(HERE, "memory", subdir))
+                  if f.startswith(prefix) and f.endswith(".json")]
+            return os.path.join(HERE, "memory", subdir, sorted(fs)[-1]) if fs else None
+        except Exception:
+            return None
+
+    def _jload(p):
+        try:
+            with open(p, encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return None
+
+    m = {}
+    # 1/6 hot_file_lines - MEMORY.md size vs the 40-line pointer budget.
+    try:
+        n = len(open(os.path.join(HERE, "MEMORY.md"), encoding="utf-8", errors="replace").read().splitlines())
+        m["hot_file_lines"] = {"value": n, "status": "pass" if n <= 40 else ("warn" if n <= 60 else "fail"),
+                               "detail": "MEMORY.md lines vs 40-line pointer budget"}
+    except Exception as e:
+        m["hot_file_lines"] = {"value": None, "status": "fail", "detail": str(e)[:120]}
+    # 2/6 orphan_rate - latest orphan-sweep evidence (Scribe).
+    d = _jload(_latest("scribe", "orphan-sweep-")) or {}
+    if isinstance(d.get("orphan_rate_pct"), (int, float)):
+        v = float(d["orphan_rate_pct"])
+        m["orphan_rate"] = {"value": v, "status": "pass" if v == 0 else ("warn" if v <= 5 else "fail"),
+                            "detail": "%s/%s files referenced by indexes (sweep %s)" % (
+                                d.get("referenced_by_indexes", "?"), d.get("total_files_in_memory", "?"),
+                                str(d.get("timestamp", "?"))[:10])}
+    else:
+        m["orphan_rate"] = {"value": None, "status": "fail", "detail": "no orphan-sweep evidence or key mismatch"}
+    # 3/6 contradiction_count - latest detector run (Scribe).
+    d = _jload(_latest("scribe", "contradiction-detector-")) or {}
+    r = d.get("results") or {}
+    if isinstance(r.get("failed"), int):
+        m["contradiction_count"] = {"value": r["failed"], "status": "pass" if r["failed"] == 0 else "warn",
+                                    "detail": "%d/%s claims failed (run %s)" % (r["failed"], r.get("total", "?"), str(d.get("timestamp", "?"))[:10])}
+    else:
+        m["contradiction_count"] = {"value": None, "status": "fail", "detail": "no detector evidence or key mismatch"}
+    # 4/6 supersession_validity - every memory/*.md path cited on a SUPERSEDED line must exist.
+    cites, missing = 0, []
+    try:
+        for f in os.listdir(os.path.join(HERE, "memory", "synthesis")):
+            if not f.endswith(".md"):
+                continue
+            txt = open(os.path.join(HERE, "memory", "synthesis", f), encoding="utf-8", errors="replace").read()
+            for line in txt.splitlines():
+                if "SUPERSEDED" not in line.upper():
+                    continue
+                for pth in re.findall(r"memory/[A-Za-z0-9_\-./]+\.md", line):
+                    cites += 1
+                    if not os.path.isfile(os.path.join(HERE, pth)):
+                        missing.append(pth)
+    except Exception:
+        pass
+    m["supersession_validity"] = {"value": len(missing), "status": "pass" if not missing else "fail",
+                                  "detail": "%d path cites on SUPERSEDED lines, %d dangling" % (cites, len(missing))}
+    # 5/6 owner_coverage_pct - latest owner-coverage ledger (Scribe).
+    d = _jload(_latest("scribe", "owner-coverage-ledger-")) or {}
+    if isinstance(d.get("active_coverage_pct"), (int, float)):
+        v = float(d["active_coverage_pct"])
+        m["owner_coverage_pct"] = {"value": v, "status": "pass" if v >= 80 else ("warn" if v >= 50 else "fail"),
+                                   "detail": "%s/%s active goals owned (%s)" % (d.get("active_owned", "?"), d.get("active", "?"), d.get("date", "?"))}
+    else:
+        m["owner_coverage_pct"] = {"value": None, "status": "fail", "detail": "no owner-coverage ledger or key mismatch"}
+    # 6/6 durable_copy_integrity - every Scribe leaf referenced by some INDEX.md.
+    idx_txt = ""
+    try:
+        for root, _dirs, files in os.walk(os.path.join(HERE, "memory")):
+            if "INDEX.md" in files:
+                idx_txt += open(os.path.join(root, "INDEX.md"), encoding="utf-8", errors="replace").read()
+    except Exception:
+        pass
+    unref = []
+    try:
+        for f in sorted(os.listdir(os.path.join(HERE, "memory", "scribe"))):
+            if f.endswith(".md") and f not in idx_txt:
+                unref.append(f)
+    except Exception:
+        pass
+    m["durable_copy_integrity"] = {"value": len(unref), "status": "pass" if not unref else "fail",
+                                   "detail": "%d Scribe leaves unreferenced by any INDEX.md" % len(unref)}
+    try:
+        ts = time.strftime("%Y-%m-%d %H:%M:%S")
+    except Exception:
+        ts = "?"
+    return {"ok": True, "ts": ts, "metrics": m}
+
+
 def _goals_snapshot():
     """Goal Velocity dashboard (2026-11-15, Designer; Researcher evidence-gated v2).
     Counts a goal DONE only when an acceptance/evidence marker is present. Delegates to
@@ -3490,6 +3585,9 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(200, _perf_snapshot())
         elif p == "/api/health/fleet":
             return self._json(200, _fleet_health_snapshot())
+        elif p == "/api/memory-health":
+            # Memory-system health (Scribe goal 9, re-landed 2026-11-17): six metrics.
+            return self._json(200, _memory_health_snapshot())
         elif p == "/api/decisions":
             return self._json(200, _decisions_snapshot())
         elif p == "/api/git":
