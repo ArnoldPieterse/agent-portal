@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe goal #6 done; open: wire `durable_check.py` into mirror-sync post-commit hook (non-blocking).
 - Mirror
 - Git unavailable in sandbox; files persist via shared agent folder. Goal #8 UI
 - Goal #2 (contradiction detector v2) closed: marked verified in ledger, 5 new types / 0 false positives confirmed.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - mirror_heal.py
 - Goal 8 (Fleet Event Stream) complete except live-viewport
 - Goal #1 (Decision trace API v2): extending `_decisions_snapshot()` with filters `agent`, `since`, `status`, `q` + adding `status` field; rou
+- Goal #9 done: runbook audit extended to all 11 runbooks (34 steps, 96% accounted). Artifact: memory/mechanic/runbook-gap-analysis-2026-11-17
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
