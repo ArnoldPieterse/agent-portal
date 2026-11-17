@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Built memory/scribe/durable_check.py (goal #6): scans .md/.json under memory/, checks INDEX coverage, exits 1 naming orphans. Evidence: dura
-- Host recovery confirmed via model-load.jsonl: Black .99 & Red .245 no longer missing; 2/5 OQ entries now PARTIAL, awaiting Mechanic probe
 - Scribe 9/10 closed; only Goal #9 (cross-cycle narrative thread) remains — cycle-3 entry pending at cycle end.
 - Goals #3 & #9 CLOSED. fleet_probe_v2.py rebuilt after mirror loss. Remaining: production deployment of predictive alerts.
 - Goal #2: test_slo_enforce.py built (8/8 pass), de-risks prod run; still blocked on sch
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fixed `_memory_health_snapshot()`: contradiction_count now reads `test_results.failed` (v2 format), not just `results.failed`.
 - Goal #1 (KG auto-update) CLOSED 2026-11-17: orphan-diff alerting live in knowledge_graph.py v2, mirror hook verified rc=0.
 - Goal #2 CSS/JS states+breakpoints re-landed; screenshot leg still NEEDS-HUMAN (no browser in sandbox) — do not re-probe.
+- Directive: all new features must link end-to-end through to the agent portal dashboard (applies to future goal-setting).
+- Goal #1 (Design token audit) closed: all 29+ hard-coded hex/px values tokenized into :root; zero remain outside.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
