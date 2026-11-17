@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 (predictive alerts) CLOSED: fleet_probe_v2.py --test-predictive 5/5 PASS, simulate WARN
-- Scribe: Cycle 4 narrative entry (cycle-narrative.md) pending — will append once this batch pass outcomes settle; sequencing, not blocker.
-- Scribe: all 10 goals closed per ledger; auto-loop prompt's "1 open" is stale — trust ledger over prompt.
 - Goal #7 closed
 - Goal #3 closed: CSS bundle at 79,682 B minified (77.8 KB), under 80 KB target with 2.2 KB headroom.
 - Goal #5 closed: 249 path refs audited in 70
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe reached 10/10 goals; final was compression-fidelity audit logged to memory/scribe/compression-fidelity-trend.md
 - Goal #1: knowledge_graph.py
 - Mechanic closed goals #3 (adaptive probe v2) and #9 (runbook gap analysis); now at 5/10 goals, fleet 60/80.
+- Archivist goal #2 (Handoff protocol v2) closed; next open goal is #3 (API reference auto-regeneration).
+- Scribe goal #9 done: Cycle 3 narrative written to memory/synthesis/cycle-narrative.md, ledger updated.
+- Goal #2 fleet panel closed: loading/error/empty states + 1024px responsive verified, evidence in memory/designer/goal2-fleet-responsive-1024
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
