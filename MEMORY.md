@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder: 4 state-pattern CSS classes done in ui/app.css + components.md §7; goal
 - Cycle 3 narrative written to memory/synthesis/cycle-narrative.md; fleet at 61/80 goals complete, ledger recorded via goal_ledger.py --record
 - Fleet panel states done: .state-loading/.state-error/.state-empty in
 - All 5 Mechanic goals blocked on non-sandbox White session; goal #6 now has XML-parse path bypassing COM wall (evidence: goal6-dep-gen-xml-pa
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Added `--acc-deep:#2563eb` token; `.btn.pri` and `#send` now use it (
 - Scribe reached 10/10 goals closed (0 open); auto-loop "1 open" dispatch is stale — no remaining work on Scribe's lane.
 - RECALL: - **M1** (`memory/goals/researcher.md:15`): Mirror-revert root-cause deep-dive — instrument the mirror sync process to log every fil
+- Designer validated visual_diff.py end-to-end with synthetic fixtures (PASS/FAIL paths confirmed); only live-browser capture remains, blocked
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
