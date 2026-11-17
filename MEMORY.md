@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- load_probe.py regression detector fixed to parse both legacy ("levels"/"p95_ms") and current ("results"/"p95") baseline schemas
 - Baseline JSONL uses "levels"/"p95_ms" but load_probe.py expects "results"/"p95" — fixed to prevent silent zero-history trend reads
 - Schema fix: baseline
 - Portal restart blocked: C:\Users perm denied in sandbox, elev.py not found — use synthetic data for goal #4 demos until resolved
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9: fleet topology module built via edit_file (avoids escaping drift), JS validated, demo rendered successfully.
 - Data stuck at 2/
 - Goal #4: trend/regression detector built & verified (catches +167.8% spike, passes normal baseline)
+- Mirror daemon reverts ui/ files (app.css confirmed); Scribe wrote workflow fix doc to protect them from future reverts.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
