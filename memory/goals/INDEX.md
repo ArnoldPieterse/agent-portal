@@ -2,6 +2,8 @@
 
 CURRENT CYCLE: **set 2026-11-17 (cycle 3)** - 8 agents x 10 goals, canonical record TODO.md section `## AGENT GOALS (set 2026-11-17)`. Cycle-2 (2026-11-16) files archived in archive/cycle2-2026-11-17/; cycle-1 (2026-11-13) in archive/. Both SUPERSEDED.
 
+REVERIFICATION (2026-11-18, Orchestrator option-c): Designer Goal #1 token-audit stale FAIL resolved — fresh grep of ui/app.css = 0 true component-rule hex hardcodes (all 66 hex are `--var:` token definitions). Closure stands. Leaf: memory/orchestrator/token-audit-reverify-2026-11-18.md
+
 - -> memory/goals/orchestrator.md   Orchestrator: 10 goals (cycle-3, seat-drafted - ratify on first live round)
 - -> memory/goals/researcher.md   Researcher: 10 goals (cycle-3, seat-drafted)
 - -> memory/goals/builder.md   Builder: 10 goals (cycle-3, seat-drafted)

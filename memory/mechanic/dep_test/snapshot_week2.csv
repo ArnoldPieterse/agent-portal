@@ -1,0 +1,6 @@
+Task Name,Status,Schedule Type,Next Run Time
+\MemoryMirrorRun,Ready,Repetition: 15m,2026-11-19 03:00:00
+\FleetProbe,Ready,Daily,2026-11-20 00:00:00
+\PortalDailyGitCommit,Ready,Daily,2026-11-20 02:00:00
+\RecoverAll,Ready,At startup,
+\NewAgentTask,Ready,Daily,2026-11-20 04:00:00

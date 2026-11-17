@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #10 (mirror sync epoch) closed via 10-cycle skew sim;
 - Goal #1 token audit: grep for literal hex in component rules returned zero hits — all 36 already tokenized; verify leaf may be stale.
 - Goal #10 (mirror sync epoch) closed: 10-cycle skew sim passed, evidence at memory/mechanic/epoch-integration-evidence.jsonl
 - Goal #1 (token audit) passed: all 36 hardcoded hex values replaced with var() refs in ui/app.css; zero remain outside :root.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer goal #1 (CSS token audit) verified PASS — 0 hex values outside :root; Orchestrator's earlier FAIL was stale.
 - Goal #9 verified; cycle-narrative.md updated to 33/80 (2026-11-18). Will re-append final numbers at cycle end.
 - Goal #6 (schtask dep-gen) blocked on 2 weekly real-CSV runs from non-sandbox seat; synthetic test passed 2026-11-18.
+- Goal #3: epoch module + sync_file/resolve_owner exist only on Red; canonical/live mirror still runs old mtime-LWW _decide() — Fix #1 not yet
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
