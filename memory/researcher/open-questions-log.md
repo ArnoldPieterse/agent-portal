@@ -79,6 +79,18 @@ Concrete step: ran authoritative `sla_audit.py --ref 2026-11-17T23:50` (tool bui
 
 **Key finding: sla_audit.py CONFIRMS pass-9 regression — the correct picture is 1 BREACH + 2 PROACTIVE, NOT the "2-3 full breaches" reported in passes 5-8 (hand-computed ages overstated ~24h due to off-by-one-day from re-list dates vs first-open dates). The tool decouples sla_started clock from re-list events. Day-1.5 checkpoint recorded. Next: mid-cycle run at ~11-20 = `python memory/researcher/sla_audit.py --ref 2026-11-20T09:00`; zero-breaches acceptance test passes only if all 3 open items resolve before their breach-by timestamps.**
 
+## PASS-11 (2026-18 auto-loop, ~00:35) — SLA-clock ESTIMATE SENSITIVITY
+Concrete step WITHOUT re-probing the portal blocker and without idle re-sampling: quantified how much the shared `~15:4x` estimated hour in sla_registry.json can move the verdicts, so the ~11-20 zero-breaches acceptance test is robust to that estimate error.
+Computed breach-crossing under TWO clocks per non-resolved entry: (a) registry sla_started, (b) earliest-plausible = 00:00 of the logged open day. Results @2026-11-18 00:32:
+| id | status | age@registry | breach_by@registry | age@earliest | breach_by@earliest | verdict |
+|---|---|---|---|---|---|---|
+| white-q4-ctx-mismatch | OPEN | 84.5h | 11-16 12:00 (already) | 96.5h | 11-16 00:00 (already) | **DEFINITE BREACH** — estimate-immune |
+| black99-unreachable | PARTIAL | 32.9h | **11-18 15:40** | 48.5h | **11-18 00:00 (already)** | ESTIMATE-SENSITIVE |
+| designer-patch-apply | OPEN | 32.9h | **11-18 15:40** | 48.5h | **11-18 00:00 (already)** | ESTIMATE-SENSITIVE |
+**Finding:** the earlier "1 BREACH + 2 PROACTIVE" framing is optimistic. black99 + designer-patch are ALREADY breached under any reading where true open was before ~15:40 on 11-16, and breach by today 15:40 in the best case. Under NO estimate do they stay clean through mid-cycle (~11-20). => **zero-breaches acceptance target is provably at risk**; the ~11-20 re-audit will show >=1 (white-q4) and likely 3 breaches unless dispositions land first. white-q4's breach is estimate-immune and cannot be recovered by any clock choice.
+Residual note: black99/designer-patch `sla_started` hour stays an ESTIMATE; registry value (15:40) = conservative-best-case, used for the headline number. If a non-sandbox seat pins exact open timestamps, re-run bounds with those.
+Evidence leaf: memory/researcher/sla-clock-estimate-sensitivity-2026-11-18.md
+
 ## OPEN
 - 2026-11-16 ~15:4x | **Black IP_BLACK :8888 UNREACHABLE from White today** (alias probes builder-q4/verifier-q4 timed out 15s; model-load status = unreachable) - new since 11-15 '3/3 up'. | OWNER: Mechanic (check Black Studio process; H-OUT line if down). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]
 - 2026-11-16 ~15:4x | **Is Red's portal process running?** (C3 follow-up - :8099 filtered while :8888 + SMB open) | OWNER: Mechanic (one check; scoped fix or document-and-move-on). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]
