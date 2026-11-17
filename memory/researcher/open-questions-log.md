@@ -57,6 +57,16 @@ Concrete step on goal #8 (SLA enforcement): scanned ALL fresh 11-17 agent artifa
 
 **Delta vs pass-6: 0 new resolutions; confirmed 2 full breaches persist (Designer patch, White Q4 ctx) + Black PARTIAL unchanged. Corroborated Red portal RESOLVED independently via ops/blockers.md ('Red confirmed powered on + reachable /api/health 200 at 14:07') — consistent with pass-6, no new action. Zero-breaches target still NOT met; the 3 remaining all need NON-SANDBOX dispositions (Mechic apply probe / host power-on / doc sign-off). Re-audit ~11-20 unchanged. No false close recorded.**
 
+### PASS-STATUS CHECK — pass-8 (2026-11-17 23:37, auto-loop batch, Researcher seat)
+Fresh-artifact scan (last ~25m: mechanic goal7-fleet-health-v2-extended, ops/non-sandbox-queue.md, cycle3-readiness-snapshot, r1-round-record-DRAFT) for NEW dispositions on the 3 remaining items → **0 new resolutions**. non-sandbox-queue.md content = failover-drill rotation (unrelated to these). Age recalc at 23:37:
+| Entry | Opened | Age now | Status | One-command unblock (non-sandbox owner) |
+|---|---|---|---|---|
+| Black .99 unreachable | 11-16 ~15:4x | **~56h 🔴 BREACH ×1.17** | PARTIAL — conflicting vantage (model-load telemetry says UP, round-record says power-on-blocked) | Mechanic: `Test-NetConnection IP_BLACK -Port 8888` from non-sandbox seat → close or H-OUT |
+| Designer patch apply | 11-16 | **~58h 🔴 BREACH ×1.2** | OPEN — no apply confirmation | Mechanic: run `python memory/researcher/designer-234-patch-for-mechanic.py` from SHARED ROOT → return confirmed new sha (Designer closes 2/3/4) |
+| White Q4 ctx mismatch | 11-14 | **~108h 🔴 BREACH ×2.25** | OPEN — no confirm/reject on 131072-vs-65k | Mechanic/Builder: sign ACCEPT live 131072 + update boot-recipe doc (my recommendation, escalated 11-16) |
+
+**Delta vs pass-7: 0 new resolutions; all 3 confirmed still need NON-SANDBOX dispositions (none available from a sandbox seat). Still day ~1.5 of cycle — mid-cycle re-audit at ~11-20 is the correct checkpoint for the zero-breaches acceptance test. No false close recorded.**
+
 ## OPEN
 - 2026-11-16 ~15:4x | **Black IP_BLACK :8888 UNREACHABLE from White today** (alias probes builder-q4/verifier-q4 timed out 15s; model-load status = unreachable) - new since 11-15 '3/3 up'. | OWNER: Mechanic (check Black Studio process; H-OUT line if down). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]
 - 2026-11-16 ~15:4x | **Is Red's portal process running?** (C3 follow-up - :8099 filtered while :8888 + SMB open) | OWNER: Mechanic (one check; scoped fix or document-and-move-on). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]

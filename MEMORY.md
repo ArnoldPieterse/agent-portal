@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cycle 3 narrative written in `memory/synthesis/cycle-narrative.md` (8×10 goals, productionization theme); recorded to goal #9.
-- Goal #2 (Handoff protocol v2) still open: needs ≥3 handoffs logged with full provenance to close.
 - load_trend.py: 6th mirror revert; closure blocked on real data (2/7 days), ETA ~2026-
 - Goal #3 (adaptive-probe-v2) CLOSED:
 - Goal files reset 11-17 wiped verified markers; SLA n dropped 22→19, threshold unmet again — metric needs re-accumulation
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #4 (Agent Onboarding Wizard): backend `/api/agents/onboard` POST endpoint done; UI form still pending next pass.
 - Goal #2 fleet gate: 4 breakpoints validated browser-free; closure still needs live 1024/1920px screenshots from non-sandbox seat (WinError 1
 - Goal #5 (egress v2) closed: 8 profiles, 10/10 PASS, 3 DENY logged. Goal #9 (runbook gap): all 9
+- Goal #9 (runbook gap analysis) closed: 92% coverage, only 2 human-only steps remain as justified gaps.
+- Goal #1 (Decision trace API v2) closed: 3 acceptance queries passed (19/60/0 of 140, max 27ms).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

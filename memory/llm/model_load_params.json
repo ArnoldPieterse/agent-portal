@@ -1,0 +1,24 @@
+{
+  "atlas-q8": {
+    "model_path": "C:\\Users\\White\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+    "gguf_variant": "Q8_0",
+    "gpu_ids": [
+      1
+    ],
+    "max_seq_length": 32768,
+    "cache_type_kv": "q8_0",
+    "n_parallel": 1
+  },
+  "quinn-q4": {
+    "model_path": "C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+    "gguf_variant": "UD-Q4_K_S",
+    "gpu_ids": [
+      0
+    ],
+    "max_seq_length": 131072,
+    "cache_type_kv": "q8_0",
+    "n_parallel": 1,
+    "speculative_type": "mtp",
+    "spec_draft_n_max": 4
+  }
+}

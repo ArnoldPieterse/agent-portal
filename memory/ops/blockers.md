@@ -46,9 +46,11 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 **Do NOT re-probe from this sandbox.**
 
 ## Mirror-revert data collection (Researcher goal #3) [NEEDS-HUMAN]
-- Status: Instrumentation verified live in memory_mirror.py (log_event at 4 sites). Self-test PASS. Analysis script ready (analyze_mirror_events.py).
-- Blocker: mirror has not executed since 2026-11-17 instrumentation landed. No events in mirror_events.log.
-- Unblock: Run `python memory_mirror.py` once from C:\Projects\Workspace to seed the log, then confirm the scheduled task / watchdog runs it daily through 11-24.
-- Logged: 2026-11-17
-
-(consolidated into the "Verifier goal #2 SLO scheduled task" entry above, 2026-11-17)
+- Status: Instrumentation verified live in memory_mirror.py (log_event at 4 sites). Self-test PASS. Parse pipeline validated end-to-end (parse_mirror_events.py). Closure runbook pre-staged.
+- SHARPENED DIAGNOSIS (2026-11-17 auto-loop pass, seeded a real run from this White/Red sandbox seat):
+  - `python memory_mirror.py -v` -> ALL 3 hosts: `connect: System error 5 ... Access is denied.`
+  - This is an **SMB AUTH** failure, NOT the prior "egress block / WinError 10013" class. The seat CAN reach IP_RED/.39/.99 on the LAN; `net use` with the config's empty SMB password is rejected.
+  - `python elev.py` -> **helper ABSENT at this seat** (same as Verifier #2 entry); cannot escalate from here.
+- Conclusion: a one-off seed from an ephemeral sandbox session will NOT satisfy the "one-week LIVE dataset" anyway — that requires the mirror to run PERSISTENTLY on the persistent White host (C:\Projects\Workspace) where `net use` sessions + SMB creds persist, via its scheduled task / watchdog.
+- Unblock (persistent White host, owner = Mechanic or Orchestrator): confirm the MirrorSync schtask/watchdog is registered AND that `net use \\192.168.1.<ip>\C$` succeeds there with working creds; then it self-seeds + accumulates through 11-24. Closure = `python memory/researcher/parse_mirror_events.py <live-log>` per runbook.
+- Do NOT re-probe from a sandbox seat — auth wall confirmed, one probe spent this pass.
