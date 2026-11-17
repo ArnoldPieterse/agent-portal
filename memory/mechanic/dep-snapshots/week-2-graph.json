@@ -1,0 +1,77 @@
+{
+  "generated": "2026-11-18T08:08:59.033321",
+  "host": "unknown",
+  "task_count": 7,
+  "tasks": [
+    {
+      "name": "\\PortalRun",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "01/01/2026 03:00:00"
+    },
+    {
+      "name": "\\PortalDailyGitCommit",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "01/01/2026 03:00:00"
+    },
+    {
+      "name": "\\FleetProbe",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "01/01/2026 03:00:00"
+    },
+    {
+      "name": "\\AgentGroupChat",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "01/01/2026 03:00:00"
+    },
+    {
+      "name": "\\MemoryMirrorRun",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "01/01/2026 03:00:00"
+    },
+    {
+      "name": "\\RemoteMemoryFreshness",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "01/01/2026 03:00:00"
+    },
+    {
+      "name": "\\TestTaskAddition",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "01/01/2026 03:00:00"
+    }
+  ],
+  "edges": [
+    {
+      "from": "\\PortalRun",
+      "to": "PortalDailyGitCommit",
+      "type": "known"
+    },
+    {
+      "from": "\\PortalRun",
+      "to": "FleetProbe",
+      "type": "known"
+    },
+    {
+      "from": "\\PortalRun",
+      "to": "AgentGroupChat",
+      "type": "known"
+    },
+    {
+      "from": "\\MemoryMirrorRun",
+      "to": "RemoteMemoryFreshness",
+      "type": "known"
+    }
+  ],
+  "diff": {
+    "added": [
+      "\\TestTaskAddition"
+    ],
+    "removed": []
+  }
+}

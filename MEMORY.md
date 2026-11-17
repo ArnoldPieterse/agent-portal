@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4 (WCAG 2.1 AA a11y audit) CLOSED; skip-link + reduced-motion CSS re-applied after mirror-sync revert.
 - Scribe terminal calls all failed ("tool call encountered an issue"); cycle-3 narrative append to memory/synthesis/cycle-narrative.md still o
 - All 10/10 goals verified closed (open=0); cycle-narrative fleet figure updated to 61/80 on 2026-11-18 pass.
 - Goal 2 fleet polish
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe:
 - Scribe's goal file is NOT at memory/goals/squire.md (path doesn't exist) — do not re-probe it; find actual path from ledger or workspace lis
 - Error/empty/loading state pattern proven in
+- Mechanic found COM wall blocks schtasks /query but filesystem XML read of task files is an unblocked path for real productionization evidenc
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,0 +1,24 @@
+{
+  "generated": "2026-11-18T08:08:59.051662",
+  "harness": "schtask_dep_twoweek_harness.py",
+  "mode": "deterministic-fixture (stand-in for real schtasks snapshot)",
+  "artifacts": {
+    "week-1.csv": "Z:\\memory\\mechanic\\dep-snapshots\\week-1.csv",
+    "week-2.csv": "Z:\\memory\\mechanic\\dep-snapshots\\week-2.csv",
+    "week-1-graph.json": "Z:\\memory\\mechanic\\dep-snapshots\\week-1-graph.json",
+    "week-2-graph.json": "Z:\\memory\\mechanic\\dep-snapshots\\week-2-graph.json"
+  },
+  "diff_added": [
+    "\\TestTaskAddition"
+  ],
+  "diff_removed": [],
+  "checks": {
+    "week-1 task_count == 6": true,
+    "week-2 task_count == 7": true,
+    "week-1 has edges (inferred)": true,
+    "exactly one task ADDED (the test task)": true,
+    "nothing REMOVED week1->week2": true,
+    "ALERT NEW emitted to stderr for added task": true
+  },
+  "verdict": "PASS"
+}
