@@ -224,7 +224,13 @@ textarea{resize:vertical;min-height:64px}
 .mh-d{opacity:.6;font-size:11px;line-height:1.3}
 
 /* ---- FleetTopology diagram (Designer goal #9, 2026-11-17) — all values tokenized per :root layer ---- */
-:root{--bg:var(--bg);--panel:var(--panel);--panel2:var(--panel2);--line:var(--line);--text:var(--text);--dim:var(--dim);--acc:var(--acc);--ok:var(--ok);--warn:var(--warn);--err:var(--err);--faint:var(--faint);}
+/* 2026-11-17 (Studio seat): REMOVED a self-referential :root alias block that was here
+   (--bg:var(--bg) ... --faint:var(--faint), added with the FleetTopology section). A var()
+   cycle makes every token guaranteed-invalid at computed-value time, so ALL themed rules
+   fell back to browser defaults -> page rendered raw white ("too bright" report, 2026-11-17).
+   Canonical production family = the dark :root above (Orchestrator ruling 2026-11-14,
+   memory/portal/design-tokens.md). Do NOT re-add token aliases in a second :root; a
+   light theme belongs under [data-theme=light] with literal values only. */
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Segoe UI,Roboto,sans-serif;padding:20px}
 h1{font-size:16px;margin:0 0 4px;font-weight:650}
