@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #10 (Mirror sync epoch) closed 2026-11-18: clock-skew sim 10/10 PASS, 0 data loss. Now at 4/10 goals reached.
 - Scribe reached 10/10 goals; final was compression-fidelity audit logged to memory/scribe/compression-fidelity-trend.md
 - Goal #1: knowledge_graph.py
 - Mechanic closed goals #3 (adaptive probe v2) and #9 (runbook gap analysis); now at 5/10 goals, fleet 60/80.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe: all 10 goals confirmed closed (10/10); auto-loop "1 open" was a stale count, no action needed.
 - TZ fix in mirror_heal.py reverted by mirror sync 2x; test file memory/mechanic/test_mirror_heal_tz.py (6/6) now guards against regression
 - Goal #3: gen_api_ref.py extended with --diff/--check modes (exit 0=clean, 1=drift, 2=breaking); all three verified.
+- Goal #2 (Fleet panel production polish) closed via programmatic CSS overflow proof at 4 breakpoints; now at 3/10 goals.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
