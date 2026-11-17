@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Closed reason
-- Scribe's goal file is `memory/goals/scribe.md` (not `squire.md`) — typo caused repeated not-found loop
 - Goal #10 mirror sync epoch: Phase 0+1 done (ownership map, manifest, 12 tests pass); NOT verified—still needs clock-skew sim + 10 test cycle
 - Goal 1 (design token audit) COMPLETE: 31 tokens added to :root in ui/app.css, zero hex colors outside :root confirmed via grep.
 - Goal #3 done: gen_api_ref.py --diff mode + mirror hook implemented; incremental bug fixed (full graph 463 edges, delta reported correctly).
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8 (compression gate) is complete but unledgered; Scribe's next action is to record it in `scribe.md`.
 - Goal #10 Phases 2-4 done: memory_mirror_epoch.py created; push/pull loops now use sync_file() ownership gating, foreign pulls quarantined.
 - Builder goal #9 verified-marker is truncated mid-path (stale claim); audit script at memory/orchestrator/audit_verified_artifacts.py
+- Goal #10 Phases 2-4 done: `memory_mirror_epoch.py` (3.5 KB) gates push on ownership, enforces pull + quarantine.
+- Goal #2: breakpoint_gate.py now covers full matrix [375,768,1024,1920], logic-test 11/11 PASS; only live CDP screenshot remains.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
