@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Group chat transcripts live in `chat_history_group.json` (capped 200) + `/api/history?mode=group`; no separate log store exists.
 - Goal #1 closed: all 36 hex colors in app.css replaced with var() tokens; 20 new tokens added
 - Goal #8: restructured open-questions-log.md with audit table; 2 entries SLA-BREACH, 3 approaching 48h threshold
 - Scribe Goal#1 advanced: `?agent`/`?since`/`?q` filters in `_decisions_snapshot()` verified in
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mirror not yet executed post-instrumentation; unblock = run `python memory_mirror.py` from C:\Projects\Workspace
 - Goal #9 closed: 8 runbooks audited, 14 manual steps found — 7 automatable (Nov20–Dec1), 6 human-only. Report at memory/mechanic/goal9-ops-ru
 - KG v2 shipped: incremental mode (content-hash diff) + orphan detection; hooked into mirror sync via _post_sync_tasks()
+- Goal #2 SLO scheduling blocked: schtasks COM error + PowerShell safety filter; NEEDS-HUMAN recorded in memory/ops/blockers.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

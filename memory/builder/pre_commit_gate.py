@@ -11,6 +11,10 @@ SUITES = [
     ("playbook-tests", "builder/playbook_tests.py"),
 ]
 
+# --- Performance budget config ---
+PERF_BUDGET_BYTES = 120 * 1024  # 120KB total minified CSS+JS in ui/
+UI_DIR = "ui"
+
 def run_suite(name, path):
     if not os.path.exists(path):
         return False, f"NOT FOUND: {path}"
@@ -31,6 +35,76 @@ def run_suite(name, path):
     except Exception as e:
         return False, f"ERROR: {e}"
 
+def _minify_css(text):
+    """Simple CSS minification: strip comments, collapse whitespace."""
+    import re
+    text = re.sub(r'/\*.*?\*/', '', text, flags=re.DOTALL)
+    text = re.sub(r'\s+', ' ', text)
+    text = re.sub(r'\s*([{}:;,>])\s*', r'\1', text)
+    return text.strip()
+
+def _minify_js(text):
+    """Simple JS minification: strip comments, collapse whitespace."""
+    import re
+    # Remove block comments (but not URLs like http://)
+    text = re.sub(r'/\*.*?\*/', '', text, flags=re.DOTALL)
+    # Remove single-line comments (naive - may miss edge cases but good enough for budget check)
+    text = re.sub(r'(?<!:)//[^\n]*', '', text)
+    # Collapse whitespace
+    text = re.sub(r'[ \t]+', ' ', text)
+    text = re.sub(r'\n\s*\n', '\n', text)
+    return text.strip()
+
+def check_perf_budget():
+    """Check that ui/ CSS+JS bundle (minified) stays under PERF_BUDGET_BYTES.
+    Returns (passed: bool, report: str)."""
+    import re
+    if not os.path.isdir(UI_DIR):
+        return False, f"DIR NOT FOUND: {UI_DIR}/"
+    
+    files = []
+    for fname in sorted(os.listdir(UI_DIR)):
+        if fname.endswith(('.css', '.js')):
+            fpath = os.path.join(UI_DIR, fname)
+            if os.path.isfile(fpath):
+                files.append(fpath)
+    
+    if not files:
+        return False, f"NO CSS/JS FILES in {UI_DIR}/"
+    
+    total_minified = 0
+    per_file = []
+    for fpath in files:
+        with open(fpath, 'r', encoding='utf-8', errors='replace') as f:
+            raw = f.read()
+        if fpath.endswith('.css'):
+            minified = _minify_css(raw)
+        else:
+            minified = _minify_js(raw)
+        msize = len(minified.encode('utf-8'))
+        total_minified += msize
+        per_file.append((fpath, len(raw.encode('utf-8')), msize))
+    
+    passed = total_minified <= PERF_BUDGET_BYTES
+    overage = total_minified - PERF_BUDGET_BYTES
+    budget_pct = (total_minified / PERF_BUDGET_BYTES) * 100
+    
+    # Find largest contributor
+    per_file.sort(key=lambda x: x[2], reverse=True)
+    top_file, top_raw, top_min = per_file[0]
+    
+    lines = []
+    lines.append(f"  Bundle: {total_minified:,} / {PERF_BUDGET_BYTES:,} bytes minified ({budget_pct:.1f}% of budget)")
+    for fpath, raw_sz, min_sz in per_file:
+        pct_of_total = (min_sz / total_minified) * 100 if total_minified else 0
+        lines.append(f"    {fpath}: {raw_sz:,} raw -> {min_sz:,} min ({pct_of_total:.0f}% of bundle)")
+    
+    if not passed:
+        lines.append(f"  OVER BUDGET by {overage:,} bytes. Largest file: {top_file} ({top_min:,}B minified)")
+    
+    return passed, "\n".join(lines)
+
+
 def main():
     verbose = "--verbose" in sys.argv
     print("=== PRE-COMMIT GATE ===")
@@ -48,6 +122,15 @@ def main():
         status = "GREEN" if passed else "RED"
         results.append((name, passed, detail))
         print(f"  [{status}] {name:20s} {detail}")
+    
+    # Performance budget check
+    perf_passed, perf_report = check_perf_budget()
+    perf_status = "GREEN" if perf_passed else "RED"
+    results.append(("perf-budget", perf_passed, "OK" if perf_passed else "OVER BUDGET"))
+    print(f"  [{perf_status}] perf-budget          {perf_report.splitlines()[0]}")
+    if verbose or not perf_passed:
+        for line in perf_report.splitlines()[1:]:
+            print(f"                 {line}")
     
     green = sum(1 for _, p, _ in results if p)
     total = len(results)

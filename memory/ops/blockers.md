@@ -48,3 +48,11 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - Blocker: mirror has not executed since 2026-11-17 instrumentation landed. No events in mirror_events.log.
 - Unblock: Run `python memory_mirror.py` once from C:\Projects\Workspace to seed the log, then confirm the scheduled task / watchdog runs it daily through 11-24.
 - Logged: 2026-11-17
+
+## SLO Scheduled Task - COM Class Not Registered (2026-11-17, Verifier)
+
+**Command attempted:** `schtasks /create /tn "VerifierSLODaily" /tr "python Z:\slo_enforce.py" /sc daily /st 0800 /f`
+**Error:** `ERROR: Class not registered` (COM class for Task Scheduler unavailable in sandbox)
+**Also tried:** PowerShell Register-ScheduledTask -> blocked by safety filter
+**Impact:** Goal #2 (SLO enforcement productionization) cannot be completed from this seat until portal is reachable AND schtasks works.
+**Unblock step:** Run the schtasks command manually on White's local terminal (non-sandboxed).

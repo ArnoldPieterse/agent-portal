@@ -1,0 +1,946 @@
+[
+  {
+    "file": "memory/verifier\\a4a5-candidate-persisted-r40-2026-11-14.md",
+    "verdict_time": "2026-11-14T05:29:31.373281",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 5.5,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\a4a5-lineage-repro-r39-2026-11-14.md",
+    "verdict_time": "2026-11-14T05:19:17.269252",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 5.3,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\a4a5-verify-r38-2026-11-14.md",
+    "verdict_time": "2026-11-14T05:09:21.936442",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 5.2,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\a6b-candidate-diff-and-staging-audit-2026-11-14.md",
+    "verdict_time": "2026-11-14T06:10:06.661823",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 6.2,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-2-live-leg-r82-seat-correction-2026-11-14.md",
+    "verdict_time": "2026-11-14T12:16:29.287338",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 12.3,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-black-seat-r30.md",
+    "verdict_time": "2026-11-14T12:06:46.599072",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-closure-r19.md",
+    "verdict_time": "2026-11-14T02:31:51.073938",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-final-state-r20.md",
+    "verdict_time": "2026-11-14T02:46:31.564400",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-gate-state-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T06:04:05.399296",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 6.1,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r19-reverify.md",
+    "verdict_time": "2026-11-14T02:24:12.487895",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r19.md",
+    "verdict_time": "2026-11-14T02:13:19.262756",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r21-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T03:07:03.692735",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 3.1,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r22-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T03:20:07.479366",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 3.3,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r23-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T03:33:26.989110",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 3.6,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r24-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T03:36:55.683260",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 3.6,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r25-adjudication-2026-11-14.md",
+    "verdict_time": "2026-11-14T03:40:16.871433",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 3.7,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r26-correction-and-canary-relay-2026-11-14.md",
+    "verdict_time": "2026-11-14T03:53:56.351273",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 3.9,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r29-probe-restage-2026-11-14.md",
+    "verdict_time": "2026-11-14T04:12:37.564872",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 4.2,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r60-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T09:22:31.509135",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 9.4,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r61-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T09:37:49.307873",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 9.6,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r62-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T09:54:05.261404",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 9.9,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r65-closure-2026-11-14.md",
+    "verdict_time": "2026-11-14T10:00:25.893561",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 10.0,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r66-correction-2026-11-14.md",
+    "verdict_time": "2026-11-14T10:07:53.579043",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 10.1,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r67-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T10:24:06.550705",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 10.4,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r68-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T10:27:50.221189",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 10.5,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r69-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T10:31:42.726198",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 10.5,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r71b-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T11:07:25.587063",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 11.1,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r73-final-reconciliation-2026-11-14.md",
+    "verdict_time": "2026-11-14T11:11:40.502767",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 11.2,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r76-final-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T11:40:36.592553",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 11.7,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r77-sweep-r58-remeasure-2026-11-14.md",
+    "verdict_time": "2026-11-14T11:51:42.124555",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 11.9,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r78-final-confirmation-2026-11-14.md",
+    "verdict_time": "2026-11-14T11:57:43.206545",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 12.0,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r79-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T12:08:23.114630",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 12.1,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r80-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T12:18:16.350919",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 12.3,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r81-autocontinue-final-2026-11-14.md",
+    "verdict_time": "2026-11-14T12:48:01.347330",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 12.8,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r82-record-correction-2026-11-14.md",
+    "verdict_time": "2026-11-14T12:52:59.171814",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 12.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r83-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T12:59:38.435145",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 13.0,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-r84-final-sweep-2026-11-14.md",
+    "verdict_time": "2026-11-14T13:04:58.027610",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 13.1,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ac-a2-status-r58-2026-11-14.md",
+    "verdict_time": "2026-11-14T08:14:28.464303",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 8.2,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ac-a2-status-r59-2026-11-14.md",
+    "verdict_time": "2026-11-14T08:16:34.566499",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 8.3,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\agent-portal-size-verify-2026-11-16.md",
+    "verdict_time": "2026-11-16T23:10:09.540847",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 23.2,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\black-seat-sweep-r75-2026-11-14.md",
+    "verdict_time": "2026-11-14T11:32:21.701132",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 11.5,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\black-seat-sweep-r75b-2026-11-14.md",
+    "verdict_time": "2026-11-14T11:34:04.703848",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 11.6,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\bug-repro-and-finding-2026-11-16.md",
+    "verdict_time": "2026-11-16T07:58:51.492398",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 8.0,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\contradiction-sweep-2026-11-17.md",
+    "verdict_time": "2026-11-17T20:51:18.035559",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.9,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\css-tokenization-verify-2026-11-17.md",
+    "verdict_time": "2026-11-17T20:52:13.138362",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\design-check-reverify-2026-11-16.md",
+    "verdict_time": "2026-11-16T21:53:51.393147",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 21.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\designer-234-disk-audit-2026-11-15.md",
+    "verdict_time": "2026-11-15T22:27:19.551698",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 22.5,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\designer-goal8-verify-2026-11-17.md",
+    "verdict_time": "2026-11-17T20:52:22.308428",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\dream-big-wishes-2026-11-14.md",
+    "verdict_time": "2026-11-14T14:35:12.130237",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 14.6,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\evidence-chain-certificate.json",
+    "verdict_time": "2026-11-17T20:30:24.278080",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\evidence-hash-chain-2026-11-16.md",
+    "verdict_time": "2026-11-16T15:58:32.460120",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 16.0,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\evidence_chain.json",
+    "verdict_time": "2026-11-17T20:16:56.408698",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\evolution-validator-2026-11-16.json",
+    "verdict_time": "2026-11-16T14:36:15.143458",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 14.6,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\fault-injection-2026-11-16.md",
+    "verdict_time": "2026-11-16T16:03:20.828724",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 16.1,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\fault-injection-c3-2026-11-17.md",
+    "verdict_time": "2026-11-17T20:52:22.308928",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\final-gate-manifest-r74-2026-11-14.md",
+    "verdict_time": "2026-11-14T11:22:00.089781",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 11.4,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\fleet_crosscheck_result.json",
+    "verdict_time": "2026-11-15T11:03:14.403956",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\g2-mirror-lag-r57-2026-11-14.md",
+    "verdict_time": "2026-11-14T08:07:57.109239",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 8.1,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\goals-naming-ruling-2026-11-13.md",
+    "verdict_time": "2026-11-13T18:41:04.480346",
+    "claim_date": "2026-11-13T00:00:00",
+    "response_hours": 18.7,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\goals-patch-verified-2026-11-15.md",
+    "verdict_time": "2026-11-15T12:51:12.368940",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 12.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\hex_claim_verification.md",
+    "verdict_time": "2026-11-17T12:21:02.222941",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\idempotency_coverage.json",
+    "verdict_time": "2026-11-16T16:08:19.848191",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\index-pin-v22-result-r70.json",
+    "verdict_time": "2026-11-14T10:48:45.714117",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\index-pin-v22-result-r71.json",
+    "verdict_time": "2026-11-14T10:58:38.854556",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\live-state-pin-2026-11-15-r3.md",
+    "verdict_time": "2026-11-15T13:26:38.831623",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 13.4,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\live-verified-audit-2026-11-15.md",
+    "verdict_time": "2026-11-15T22:23:38.951362",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 22.4,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\load-probe-hotnote-closure-2026-11-17.md",
+    "verdict_time": "2026-11-17T20:52:22.308928",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\lww-clobber-evidence-2026-11-13.md",
+    "verdict_time": "2026-11-13T20:43:36.154891",
+    "claim_date": "2026-11-13T00:00:00",
+    "response_hours": 20.7,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\memory-health-endpoint-absent-verify-2026-11-16.md",
+    "verdict_time": "2026-11-16T23:17:40.648474",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 23.3,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\mirror-clobber-2026-11-15.md",
+    "verdict_time": "2026-11-15T11:43:11.557429",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 11.7,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ops-index-check-archivist-entry-2026-11-14.md",
+    "verdict_time": "2026-11-14T11:59:34.858360",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 12.0,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\planning-meeting-gate-2026-11-14.md",
+    "verdict_time": "2026-11-14T07:38:53.871892",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 7.6,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\prune-e2e-2026-11-15.md",
+    "verdict_time": "2026-11-15T22:18:49.255125",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 22.3,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r16-verification-r17.md",
+    "verdict_time": "2026-11-13T21:18:13.806569",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r17b-queue5-inputs-verified.md",
+    "verdict_time": "2026-11-13T21:25:08.434706",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r28-probe-check1-ratification.md",
+    "verdict_time": "2026-11-14T04:05:45.070376",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r30-probe-drift-adjudication-2026-11-14.md",
+    "verdict_time": "2026-11-14T04:21:23.942386",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 4.4,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r31-sweep-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T04:31:09.675441",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 4.5,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\r32-sweep-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T04:35:49.748427",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 4.6,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\r33-sweep-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T04:40:52.034413",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 4.7,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\r34-sweep-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T04:49:17.101454",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 4.8,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\r36-sweep-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T04:56:21.822781",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 4.9,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\r37-sweep-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T05:01:54.140618",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 5.0,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\r38b-mechanic-rebind-crosscheck-2026-11-14.md",
+    "verdict_time": "2026-11-14T05:11:24.129637",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 5.2,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r41-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T05:34:36.370886",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 5.6,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r42-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T05:42:10.846569",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 5.7,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r43-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T05:46:14.066800",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 5.8,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r44-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T05:53:40.733848",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 5.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r45-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T05:56:44.846532",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 5.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r46-closeout-2026-11-14.md",
+    "verdict_time": "2026-11-14T06:00:14.750537",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 6.0,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\r56-sweep-and-ratification-2026-11-14.md",
+    "verdict_time": "2026-11-14T08:04:41.999626",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 8.1,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\red-reachability-probe-2026-11-17.md",
+    "verdict_time": "2026-11-17T20:52:22.310931",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\regression-5point-2026-11-16.md",
+    "verdict_time": "2026-11-16T07:55:49.822741",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 7.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\regression-5point-2026-11-16b.md",
+    "verdict_time": "2026-11-16T13:20:28.106899",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\regression-detector-reverify-2026-11-17.json",
+    "verdict_time": "2026-11-17T17:21:55.756002",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 17.4,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\regression-detector-reverify-2026-11-17.md",
+    "verdict_time": "2026-11-17T20:52:22.310931",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\scorecard-2026-11-16.md",
+    "verdict_time": "2026-11-16T14:30:28.124417",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 14.5,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\security-matrix-2026-11-16.md",
+    "verdict_time": "2026-11-16T16:01:43.740607",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 16.0,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\security_boundary_results.json",
+    "verdict_time": "2026-11-16T14:35:06.595659",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\self-cert-audit-2026-11-16.md",
+    "verdict_time": "2026-11-16T13:32:38.536863",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 13.5,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\self-cert-audit-v2-2026-11-16.md",
+    "verdict_time": "2026-11-16T14:17:39.540730",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 14.3,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\self-cert-audit-v2-2026-11-16b.md",
+    "verdict_time": "2026-11-16T16:22:38.363837",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\shared-tree-claim-check-2026-11-15.md",
+    "verdict_time": "2026-11-15T14:14:42.685128",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 14.2,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\slo-report-2026-11-16.md",
+    "verdict_time": "2026-11-16T18:47:26.712215",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 18.8,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\smb-drift-2026-11-16.json",
+    "verdict_time": "2026-11-16T14:37:19.405273",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 14.6,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\smoke-sweep-2026-11-15.md",
+    "verdict_time": "2026-11-15T22:18:41.391417",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 22.3,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\ssot-reconciliation-2026-11-16.md",
+    "verdict_time": "2026-11-16T23:19:44.732292",
+    "claim_date": "2026-11-16T00:00:00",
+    "response_hours": 23.3,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\stamp-target-adjudication-r53-2026-11-14.md",
+    "verdict_time": "2026-11-14T07:45:53.110497",
+    "claim_date": "2026-11-14T00:00:00",
+    "response_hours": 7.8,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\sweep-batch-2-2026-11-17.json",
+    "verdict_time": "2026-11-17T20:50:41.015196",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.8,
+    "within_sla": true,
+    "sla_limit_hours": 24
+  },
+  {
+    "file": "memory/verifier\\task-path-resolution-2026-11-15.md",
+    "verdict_time": "2026-11-15T14:01:48.266091",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 14.0,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\test-report-2026-11-15.md",
+    "verdict_time": "2026-11-15T22:20:28.296033",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 22.3,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\test-report-2026-11-15b.md",
+    "verdict_time": "2026-11-15T22:54:09.309518",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\test-report-standard.md",
+    "verdict_time": "2026-11-17T20:51:46.640311",
+    "claim_date": null,
+    "response_hours": 0.5,
+    "within_sla": true,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\theme-css-block-absent-2026-11-17.md",
+    "verdict_time": "2026-11-17T20:52:22.310931",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\theme-toggle-claim-verify-2026-11-17.md",
+    "verdict_time": "2026-11-17T20:52:22.311938",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\ui-slices-verify-2026-11-17.md",
+    "verdict_time": "2026-11-17T20:52:22.312444",
+    "claim_date": "2026-11-17T00:00:00",
+    "response_hours": 20.9,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\v2-artifact-lost-2026-11-15.md",
+    "verdict_time": "2026-11-15T13:31:32.198563",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 13.5,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  },
+  {
+    "file": "memory/verifier\\wcag-contrast-ref-2026-11-15.md",
+    "verdict_time": "2026-11-15T22:27:19.552198",
+    "claim_date": "2026-11-15T00:00:00",
+    "response_hours": 22.5,
+    "within_sla": false,
+    "sla_limit_hours": 4
+  }
+]
