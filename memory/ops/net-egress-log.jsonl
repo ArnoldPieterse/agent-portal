@@ -12,3 +12,6 @@
 {"ts": "2026-11-16 18:50:23.097", "op": "fleet", "target": "IP_RED,IP_PALE,IP_BLACK", "ok": true, "ms": 0, "detail": "{'Red': [8099, 8888], 'Pale': [8099, 8888], 'Black': [8099, 8888]}"}
 {"ts": "2026-11-16 18:53:17.621", "op": "fleet", "target": "IP_RED,IP_PALE,IP_BLACK", "ok": true, "ms": 0, "detail": "{'Red': [8099, 8888], 'Pale': [8099, 8888], 'Black': [8099, 8888]}"}
 {"ts": "2026-11-16 18:55:34.292", "op": "fleet", "target": "IP_RED,IP_PALE,IP_BLACK", "ok": true, "ms": 0, "detail": "{'Red': [8099, 8888], 'Pale': [8099, 8888], 'Black': [8099, 8888]}"}
+{"ts": "2026-11-17 18:36:04.480", "op": "fleet", "target": "IP_RED,IP_PALE,IP_BLACK", "ok": true, "ms": 0, "detail": "{'Red': [8099, 8888], 'Pale': [8099, 8888], 'Black': [8099, 8888]}"}
+{"ts": "2026-11-17 18:36:23.555", "op": "fleet", "target": "IP_RED,IP_PALE,IP_BLACK", "ok": true, "ms": 0, "detail": "{'Red': [8099, 8888], 'Pale': [8099, 8888], 'Black': [8099, 8888]}"}
+{"ts": "2026-11-17 18:36:57.709", "op": "fleet", "target": "IP_RED,IP_PALE,IP_BLACK", "ok": true, "ms": 0, "detail": "{'Red': [8099, 8888], 'Pale': [8099, 8888], 'Black': [8099, 8888]}"}

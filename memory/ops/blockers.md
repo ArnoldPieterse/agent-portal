@@ -22,3 +22,7 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - `python memory/designer/d7_d9_cdp_verify.py` (CDP screenshots) - no Chrome + CDP socket blocked.
 **Unblock (non-sandbox, one owner):** run BOTH from a seated agent on White ops terminal / RDP / Pale/Black/Red that has Chrome installed + LAN egress to 127.0.0.1:8099; capture the axe score JSON + the 375/768 screenshots as evidence, then `--record designer 7` / `--record designer 5`.
 **Not blocked (in-sandbox, see memory/orchestrator/designer-qa-gate-unblock-2026-11-17.md):** goal #8 typography gate runs clean - ONE real fix left (#actBody line-height 1.7 -> <=1.6).
+- [18:35] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [18:35] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [18:36] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [18:36] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
