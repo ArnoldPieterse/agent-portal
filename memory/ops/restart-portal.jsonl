@@ -1,0 +1,2 @@
+{"ts": "2026-11-17T14:40:00Z", "msg": "TARGET: PID 19988 (from _portal_pid.txt)"}
+{"ts": "2026-11-17T14:40:00Z", "msg": "DRY-RUN: portal port 8099 closed; would kill PID 19988 and re-run PortalRun"}

@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 (Fleet Event Stream) complete except live-viewport
-- Goal #1 (Decision trace API v2): extending `_decisions_snapshot()` with filters `agent`, `since`, `status`, `q` + adding `status` field; rou
 - Goal #9 done: runbook audit extended to all 11 runbooks (34 steps, 96% accounted). Artifact: memory/mechanic/runbook-gap-analysis-2026-11-17
 - Goal #7 fleet_health_snapshot patched (disk/memory/model_status); pending: live curl test post-White restart + Designer panel consumption.
 - Portal :8099 unreachable from Red (
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe closed goals #2 & #3
 - Goal #4 load_trend.py validated (3 synthetic tests pass); remaining work is 2/7 days data, blocked by schtask on White (NEEDS-HUMAN).
 - Goal #1 (Decision trace API v2) closed: query-param filters (agent/since/status/q) added to agent_portal.py, verified at 26ms avg.
+- Goal 7: _fleet_health_snapshot() patched (disk/memory/model_load, stdlib only). Remaining: White restart + Designer panel.
+- Scribe upgraded durable_check.py with --baseline flag to fail only on new un-indexed leaves (goal #6
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
