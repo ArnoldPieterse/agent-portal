@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 closed: CSS bundle 71.7KB minified < 80KB budget; evidence in memory/designer/css-bundle-budget-2026-11-
 - Goal #6: built `memory/ops/schtasks_dep_capture.py` (captures schtasks CSV → graph + weekly diff + dated baseline); compiles clean.
 - Auto-loop "1 open" is stale; ledger confirms scribe 10/10 reached
 - Goal #4 closed: added --acc-btn:#3a6fd6 (4.75:1) for button contrast; prefers-reduced-motion block added
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - RECALL: -
 - Mirror sync reverts TZ fix in _last_sync_time() every run (3rd occurrence); needs structural fix, not re-apply
 - ui/app.css missing :focus-visible + prefers-reduced-motion (documented as fixed in audit but absent); Designer applied both CSS-only fixes
+- cycle-narrative.md updated: fleet 61/80 (76%), Scribe lane confirmed 10/10 closed
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
