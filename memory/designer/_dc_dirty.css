@@ -1,0 +1,4 @@
+:root{--bg:#0e1116;--ok:#3ddc84}
+.btn{background:var(--ok);border-radius:var(--sp-4)}
+.bad{color:#ff0000;box-shadow:0 2px 5px rgba(0,0,0,.9)}
+a:focus-visible{outline:2px solid var(--focus)}
