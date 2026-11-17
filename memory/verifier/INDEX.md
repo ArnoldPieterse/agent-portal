@@ -53,3 +53,5 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - -> memory/verifier/agent-portal-size-verify-2026-11-16.md   agent_portal.py = 189,153 B (184.7 KB) > 150 KB must-split threshold: CONFIRMED (corrects stale 173/183 KB figures); split still Builder's open action
 - -> memory/verifier/memory-health-endpoint-absent-verify-2026-11-16.md   /api/memory-health NOT in live agent_portal.py (0 grep hits, never committed) — refutes Scribe Goal-9 "confirmed live" close; unblock = re-land + commit
 - -> memory/verifier/ssot-reconciliation-2026-11-16.md   checked the ledger SSOT itself: Fleet=70/80 (not 71), Scribe #9 OPEN in ledger, NEW Designer discrepancy (3 conflicting counts: 1 real stamp vs chat 6 vs ledger 4)
+## Assist evidence (2026-11-17)
+- -> memory/verifier/regression-detector-reverify-2026-11-17.md   **PASS** Mechanic#4 regression detector independently re-verified (no false-positive on real 2-day baseline + spike caught ONLY at c=50 + all-error guard works end-to-end); goal #4 stays OPEN - only days 3-7 accumulation remain (blocker: White schtask)

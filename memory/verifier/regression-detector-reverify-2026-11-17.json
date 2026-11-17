@@ -1,0 +1,21 @@
+{
+  "ts": "2026-11-17T17:21:55.754497",
+  "checks": [
+    {
+      "name": "real_data_no_false_positive",
+      "passed": true,
+      "detail": "2 days; 3 levels; false-positives=0 (correct: no cry-wolf on normal data)"
+    },
+    {
+      "name": "synthetic_spike_detected_at_c50",
+      "passed": true,
+      "detail": "c=50 flagged=True (p95 ratio 1.4), c=10/c=200 clean=True -> expect spike caught ONLY at c=50"
+    },
+    {
+      "name": "all_error_day_skipped",
+      "passed": true,
+      "detail": "input 3 days -> guard keeps 2 (portal-down day excluded, no phantom baseline / no div-by-zero)"
+    }
+  ],
+  "verdict": "PASS - all 3 checks green"
+}
