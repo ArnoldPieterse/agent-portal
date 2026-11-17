@@ -13,6 +13,7 @@ Last updated: 2026-11-17 (Builder auto-loop: added portal-startup + css-tokens e
 - portal startup crash / import-time PermissionError on C:\Users + re-verify after mirror regression -> memory/builder/portal-startup-fix-2026-11-17.md   2026-11-17 fixed + alive:true; sandbox socket-bind 10013 still blocks :8099 here
 - CSS token extraction / all hexes -> :root vars (22 new) / ~35 component-specific hexes remain as one-off debt -> memory/builder/css-tokens-complete-2026-11-17.md   2026-11-17 407 var() uses; 30 in :root
 - theme toggle verification / dark-mode + light-mode computed styles -> memory/builder/verify_theme_toggle_2026-11-17.md   2026-11-17
+- pin-sha stale claim CLOSED / live pin 2a3ffa6ac79c three-way verified on disk (index.html sha == PIN_FILES == backup) -> memory/builder/pin-sha-stale-claim-closed-2026-11-17.md   2026-11-17 closes "flagged but not fixed" hot note
 
 ## Global pointers
 - -> agent_portal.py  server;  -> index.html  frontend (pinned - see quarantine doc);  -> TODO.md plan
