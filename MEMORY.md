@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #7 closed (motion audit + reduced-motion block). Goal #2 fleet panel: CSS/JS done, only blocker is browser screenshots at 3 resolutions
-- Goal #9 (upload pipeline hardening) closed: 19/19 checks pass, tests at memory/builder/upload_hardening_tests.py
-- Goal #1 KG auto-update done
 - Next pass: build `cycle_check.py` to push runbook automation coverage past 80% acceptance threshold (currently
 - Goal #3 (Round-record auto-synthesis) closed: OWNER_SIGNALS table added to round_record_draft.py, pre-fill 63%→89%, meets ≥80% criterion.
 - Goal #5 done: memory/portal/components.md (152 lines) documents all 6 portal components with selectors, examples, tokens; linked from INDEX.
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - CSS bundle at 73.
 - Goal #3 done: predictive_trend_warn() added to fleet_probe.py; sim shows ~9-interval early warn vs CRIT threshold.
 - Goal #2 SLO unblock: run `python memory/verifier/register_slo_task.py` from non-sandbox White seat; script registers schtask + fires slo_enf
+- Goal #1 done: ui/app.css had 36 hard-coded hex values, all mapped to :root tokens; zero remain outside :root.
+- Scribe goal #1 (Decision trace API v2) complete: `/api/decisions` now supports `?agent`, `?since`, `?q`, `?status`; 5 queries verified <50ms
+- Goal #6: `memory/ops/schtask_dep_gen.py` built+tested (4 tests pass); evidence at `memory/mechanic/goal6-dep-gen-built-2026-11-17.md`.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
