@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #6 (schtask dep-gen) blocked on 2 weekly real-CSV runs from non-sandbox seat; synthetic test passed 2026-11-18.
-- Goal #3: epoch module + sync_file/resolve_owner exist only on Red; canonical/live mirror still runs old mtime-LWW _decide() — Fix #1 not yet
-- Goal #3 (CSS bundle perf budget) CLOSED: 72.7 KB minified, under 80 KB target; comments removal gave 7.4 KB savings.
 - Goal #3: epoch cutover fix BUILT on Red sandbox but NOT promoted to canonical mirror (mtime-LWW still live); see mirror-revert-fix1-promotio
 - Scribe updated cycle-narrative.md Cycle-3 entry (2026-11-18) with 56/80 (70%) snapshot; flagged earlier 33/80 hot-note figure as stale.
 - Goal #2 increment: added loading/error/empty state UI with tokens + retry to fleetUpdate() in ui/core.js and supporting CSS.
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Cycle-3 narrative written at 36/80 (45%); hot-note claim of 56/80 was stale — actual goal files show 36/80.
 - Pin restores logged in memory_mirror.log (key "pin_guard"), NOT mirror_events.log — frequency tables undercount reverts if only checking the
 - Goal #5 closed: `memory/portal/components.md` verified complete (6/6 components); designer now at
+- Goal #2 (Fleet panel polish): loading/error/empty states added to ui/app.css + ui/core.js; hit mirror-revert, required atomic re-apply.
+- Mechanic goal #7 (fleet health dashboard v2): stats collector + /api/health/fleet endpoint extension written,
+- Goal #9 (cycle-narrative) closed: Cycle 3 entry written, ledger recorded. Flagged MEMORY.md vs goal_ledger discrepancy.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
