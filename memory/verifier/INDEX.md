@@ -2,6 +2,7 @@
 Last updated: 2026-11-17.
 
 ## 2026-11-17
+- ui-slices-verify-2026-11-17.md — **PASS** Goal #2 dark mode + Goal #6 status-dot already implemented end-to-end (app.css+core.js); supersedes theme-toggle-claim-verify (FALSE); elev.py helper absent -> #4/#2 schtasks gated, no loop
 - css-tokenization-verify-2026-11-17.md — **FAIL**: Designer goal #1 "0 hex outside :root" is false; 27 unique hardcoded colors in rules (L23-L189)
 
 ## Active evidence (2026-11-15)
