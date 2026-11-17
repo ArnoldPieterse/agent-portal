@@ -63,3 +63,5 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 
 - fleet-overview-verify-2026-11-17.md — VERIFIED Cycle-4 Goal 1 /api/fleet/overview: logic+capacity PASS; 2 findings (dead goals_blocked field; orchestrator.md not reflecting cycle-4 progress). Assists Orchestrator.
 - designer-goal7-verify-2026-11-17.md — **PARTIAL FAIL** Designer#7 motion audit: transitions all ≤200ms ✓, but `prefers-reduced-motion` block ABSENT from app.css ✗. One 4-line CSS addition needed to close.
+
+  - scribe-goal2-v2-contradiction-2026-11-18.md — **FAIL** Scribe#2 contradiction detector v2: evidence JSON claims 5 new types implemented, but code only has cycle-2 types. Claim contradicted; goal stays OPEN.

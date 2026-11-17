@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Portal :8099 unreachable from Red (
-- Goal #1 done: /api/decisions in agent_portal.py now supports ?agent, ?since, ?q query params; verified locally, evidence in ledger.
-- Built memory/ops/restart_portal.py (5KB) — reads PID, kills, re-runs PortalRun task, verifies via port check; dry
-- Scribe closed goals #2 & #3
 - Goal #4 load_trend.py validated (3 synthetic tests pass); remaining work is 2/7 days data, blocked by schtask on White (NEEDS-HUMAN).
 - Goal #1 (Decision trace API v2) closed: query-param filters (agent/since/status/q) added to agent_portal.py, verified at 26ms avg.
 - Goal 7: _fleet_health_snapshot() patched (disk/memory/model_load, stdlib only). Remaining: White restart + Designer panel.
 - Scribe upgraded durable_check.py with --baseline flag to fail only on new un-indexed leaves (goal #6
 - fill_analysis.py validated on sparse 48h edge case (13 events/2 days); runbook row 5 + goal #3 updated
 - Goal7 fleet_health: disk field blocked by WinError 5 (sandbox); needs live curl from White post-restart to close.
+- Goal #4 (load test) blocked by Red→White:8099 egress; earliest closure 2026-11-22 if White schtask starts collecting.
+- Incremental mode + __pycache__ exclusion implemented & verified
+- Goal #4: offline snapshot verified, 2 gaps fixed (INDEX.md +20 leaves, contradiction JSON +results field); remaining closure = live portal r
+- Scribe goal #2 claim contradicted: evidence JSON asserts 5 new v2 types but detector file only has original cycle-2 types (line_count, file_
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
