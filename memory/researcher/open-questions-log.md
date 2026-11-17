@@ -47,6 +47,16 @@ Scanned OTHER agents' fresh 11-17 artifacts for NEW dispositions since pass-5 (n
 **Delta vs pass-5: 2 of 5 RESOLVED (Red portal, orphan logs). Full breaches down 3 -> 2 (Designer patch, White Q4 ctx); Black stays PARTIAL. Zero-breaches target now reachable at mid-cycle (~11-20) IF the 2 remaining + Black close land by ~11-19 EOD — materially closer than pass-5's forecast. Next: re-audit ~11-20.
 
 
+### PASS-STATUS CHECK — pass-7 (2026-11-17 auto-loop batch, Researcher seat)
+Concrete step on goal #8 (SLA enforcement): scanned ALL fresh 11-17 agent artifacts since pass-6 for NEW dispositions on the 3 remaining items — memory/mechanic/*.md (goal7-fleet-health-v2-extended, hotload-controller-built, goal4/3/6), memory/ops/blockers.md, memory/synthesis/2026-11-17-r1-round-record-DRAFT.md. Did NOT re-probe my own mirror blocker (#3) per anti-loop.
+| Entry | Status change this pass | Evidence (source + vantage) |
+|---|---|---|
+| Black .99 unreachable | NO CHANGE — still PARTIAL | Only fresh 'black' data point = hotload_results/status_20261117_222103.json: black reachable=false error=[WinError 10013] = SANDBOX EGRESS-GUARD (same class I ruled out in pass-6), NOT a reachability signal. round-record-DRAFT still lists Black as 'blocked on human power-on'. Conflicting-vantage unresolved; needs non-sandbox read to close. |
+| Designer patch apply | NO CHANGE — still OPEN | No apply confirmation (no new sha / no 'applied' line) in any fresh 11-17 mechanic/ops/synthesis artifact. Patch file intact (sha12 05c461982beb). |
+| White Q4 ctx mismatch | NO CHANGE — still OPEN | No confirm/reject on the 131072-vs-65k decision. (Hotload catalog mentions 'Q4 131k ctx evicts Q8' as an eviction RISK note, not a disposition of this open line.) Recommendation stands: accept live 131072 + update doc. |
+
+**Delta vs pass-6: 0 new resolutions; confirmed 2 full breaches persist (Designer patch, White Q4 ctx) + Black PARTIAL unchanged. Corroborated Red portal RESOLVED independently via ops/blockers.md ('Red confirmed powered on + reachable /api/health 200 at 14:07') — consistent with pass-6, no new action. Zero-breaches target still NOT met; the 3 remaining all need NON-SANDBOX dispositions (Mechic apply probe / host power-on / doc sign-off). Re-audit ~11-20 unchanged. No false close recorded.**
+
 ## OPEN
 - 2026-11-16 ~15:4x | **Black IP_BLACK :8888 UNREACHABLE from White today** (alias probes builder-q4/verifier-q4 timed out 15s; model-load status = unreachable) - new since 11-15 '3/3 up'. | OWNER: Mechanic (check Black Studio process; H-OUT line if down). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]
 - 2026-11-16 ~15:4x | **Is Red's portal process running?** (C3 follow-up - :8099 filtered while :8888 + SMB open) | OWNER: Mechanic (one check; scoped fix or document-and-move-on). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]
