@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe open-goal count corrected to 0 (auto-loop's "1 open" was stale); fleet now 62/80, Mechanic 6/10.
-- All 5 open Mechanic goals share one root blocker: non-sandbox White session with working schtasks + LAN e
-- Mirror sync reverts CSS token fixes (recurring, same pattern as TZ bug) — re-apply after each sync; 23 hex literals remain
 - All 5 open goals blocked by same root cause (sandbox can't run schtasks); Mechanic built `batch_tier_b.py` with `--check` mode
 - All 5 open goals blocked by one root cause: sandbox can't register schtasks; unblock = run consolidated script on White non-sandbox.
 - Mechanic: 6/
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic wrote memory/mechanic/unblock-checklist-2026-11-18.md: one-shot runbook for all 5 open goals, all need non-sandbox White session
 - Goal #4 (WCAG 2.1 AA a11y audit) CLOSED; skip-link + reduced-motion CSS re-applied after mirror-sync revert.
 - Scribe terminal calls all failed ("tool call encountered an issue"); cycle-3 narrative append to memory/synthesis/cycle-narrative.md still o
+- All 10/10 goals verified closed (open=0); cycle-narrative fleet figure updated to 61/80 on 2026-11-18 pass.
+- Goal 2 fleet polish
+- Goal #6 dep-graph: synthetic 2-week harness built on schtask_dep_gen.py, 6 checks pass; still open pending real White snapshots for producti
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
