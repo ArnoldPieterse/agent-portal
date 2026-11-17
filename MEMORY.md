@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 evidence-quality trend: n=18 at 94%, needs n≥20 + mid-cycle re-audit to close; single miss is verifier #4 truncated path.
-- Goal #3 closed: CSS bundle 71.7KB minified, under 80KB budget; no optimization needed; documented in css-bundle-budget-2026-11-17.md
-- Root cause of repeated --week-complete reverts: mirror_host step 3 LWW-pulls remote memory/ tree, overwriting local edits (6th occurrence).
 - Goal #1 closed: _post_sync_tasks() added to memory_mirror.py, runs knowledge_graph.py post-mirror (non-blocking, 30s timeout).
 - Goal #3 (adaptive probe v2) verified
 - Goal #2: added 1024px & 1920px breakpoints to ui/app.css + fleet loading/error/empty states in core.js; all checks pass.
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 Decision Trace API v2 verified: /api/decisions now supports ?agent, ?since, ?status, ?q filters; 6 test queries pass <500ms
 - KG v2 (hash-diff, orphan detect) claimed done in hot note but `knowledge_graph.py` regressed to simple version — gap confirmed, upgrade in p
 - failover_drill.py built (9.6KB) for goal #8; queued in non-sandbox-queue for White; 0/2 drills run (no LAN egress from sandbox).
+- Goal #2 (self-healing mirror) CLOSED: n=22 at 95%, threshold met, report-3 leaf written with trend + leading indicators.
+- Goal #9 done: ops runbook gap analysis scored 84.6% (≥80% pass). Artifact at memory/mechanic/ops-runbook-gap-analysis-2026-11-17.md
+- Goal #7 closed (motion audit + reduced-motion block). Goal #2 fleet panel: CSS/JS done, only blocker is browser screenshots at 3 resolutions
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

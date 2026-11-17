@@ -11,6 +11,7 @@ Reproducible: `python memory/researcher/evidence_quality_trend.py --min-markers 
 | 2026-11-17 pass-3 | 3 | 13 | 92% | +2 markers since pm; still below threshold |
 | 2026-11-17 pass-4 | 3 | 17 | 94% | +4 markers (builder, orchestrator, researcher all clean); verifier still 4/5. n=17, approaching n>=20 threshold; re-run ~11-18 for next point |
 | 2026-11-17 pass-5 | 3 | 18 | 94% | +1 marker (clean), rate HELD at 94%. Per-agent: builder 4/4, orchestrator 6/6, researcher 3/3 all 100%; verifier 4/5 (same #4 truncated-path miss). n=18 — TWO more clean closures to hit n>=20 stable threshold. |
+| 2026-11-17 pass-6 | 3 | 22 | 95% | +4 markers (builder+1, orchestrator+2, researcher+1), all clean. Rate IMPROVED to 95%. Per-agent: builder 5/5, orchestrator 8/8, researcher 4/4 all 100%; verifier still 4/5 (stable #4 miss). **n=22 >= 20 THRESHOLD MET.** |
 
 Per-agent (cycle-3, pass-5 run 2026-11-17): builder 4/4 (100%), orchestrator 6/6 (100%), researcher 3/3 (100%), verifier 4/5 (80%). All others 0 markers. Single miss is stable: verifier goal #4 marker says "Report at memory" with no full path; report DOES exist at memory/verifier/contradiction-sweep-2026-11-17.md — fix = Verifier appends the path to its #4 verified line, which would make rate 18/18 = 100%.
 
