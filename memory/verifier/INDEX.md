@@ -1,5 +1,8 @@
 # memory/verifier/ INDEX
-Last updated: 2026-11-15.
+Last updated: 2026-11-17.
+
+## 2026-11-17
+- css-tokenization-verify-2026-11-17.md — **FAIL**: Designer goal #1 "0 hex outside :root" is false; 27 unique hardcoded colors in rules (L23-L189)
 
 ## Active evidence (2026-11-15)
 - test-report-2026-11-15.md — full test suite report
