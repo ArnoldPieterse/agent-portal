@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- HOT NOTE "theme toggle implemented" verified FALSE — zero theme-toggle code in index.html, core.js, or app.css. Goal #2 still fully open.
-- Designer: JS hexes tokenized (core.js, uploads.js clean); 36 hardcoded hexes remain in ui/app.css rules — next step is adding tokens to :roo
 - Goal #1 done: added --rad-6/8/12, --dur-150/200, --
 - Goal #2: Pale+Black WinRM upgraded to "service-verified" (401 Negotiate challenge received); NTLM exec blocked by sandbox ctypes SSPI crash.
 - Wrote memory/ops/deploy_boot_task_remotes.py: one-shot WinRM deploy of boot-recovery task to Pale(.39)+Black(.99) from White admin session.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Dark-mode toggle claim (2026-11-17c) verified FALSE — zero theme-switching code in ui/app.css, core.js, or index.html.
 - Portal fixed: wrapped os.listdir(users) in try/except(PermissionError,OSError) in agent_portal.py _find_sandbox_dir(); verified :8099 binds
 - Tokenization done: zero hardcoded colors in rule bodies, all 35 hex in :root. Next: build dark-mode toggle (Goal #2).
+- ui/app.css fully tokenized: 48 hexes → CSS custom props, 71 tokens total, 426 var() refs. Goal #1 (design token layer) complete.
+- Goal #2 (boot-recovery) blocked: deploy must run from White non-sandbox; all prereqs verified and SyntaxWarning fixed.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
