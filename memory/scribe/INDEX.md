@@ -17,3 +17,12 @@ Last updated: 2026-11-16.
 - -> memory/scribe/orphan-sweep-2026-11-16.json   cycle-2 goal: self-healing index/orphan sweep output
 - -> memory/scribe/owner-coverage-ledger-2026-11-16.json   cycle-2 goal: owner-coverage ledger data
 - -> memory/scribe/compression_lint.py   cycle-2 goal: compression quality gate (auto-lint) script
+
+
+## 2026-11-17 index catch-up (memory-health durable_copy_integrity fix)
+- g8-round-record-prefill-2026-11-16.md
+- memory-health-dashboard-progress-2026-11-16.md
+- memory-health-dashboard-progress-2026-11-17.md
+- memory-health-endpoint-2026-11-17.md
+- supersession-pointer-spec.md
+- supersession-run-2026-11-16.md
