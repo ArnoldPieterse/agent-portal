@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Closed #3 (CSS 69.8KB min, <80KB
 - Scribe goal #2 (contradiction detector v2) closed — evidence existed since 11-18, just needed ledger verified tag.
 - Goal #8 closed (ledger stamped); goal #6 has static WCAG AA contrast audit done, still gated on real screenshots.
 - Builder: 4 state-pattern CSS classes done in ui/app.css + components.md §7; goal
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 Scribe goals closed (10/10). Cycle 3 narrative updated to 63/80 fleet state with corrected per-agent counts
 - Goals 9/10 reached; only #10 (UI regression baseline) open
 - Goal #6: schtask_dep_gen.py built+validated (XML mode, JSON diff); closure needs 2 live
+- Added `--acc-deep:#2563eb` token; `.btn.pri` and `#send` now use it (
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
