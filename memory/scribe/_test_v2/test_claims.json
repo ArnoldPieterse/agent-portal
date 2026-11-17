@@ -1,0 +1,64 @@
+[
+  {
+    "id": "t1",
+    "type": "mtime_within_days",
+    "target": "memory\\scribe\\_test_v2\\report_a.md",
+    "claimed_date": "2026-11-16",
+    "max_days": 1
+  },
+  {
+    "id": "t2",
+    "type": "mtime_within_days",
+    "target": "memory\\scribe\\_test_v2\\report_c.md",
+    "claimed_date": "2026-11-17",
+    "max_days": 1
+  },
+  {
+    "id": "t3",
+    "type": "temporal_order",
+    "target": "memory\\scribe\\_test_v2\\report_a.md",
+    "other": "memory\\scribe\\_test_v2\\report_b.md",
+    "order": "before"
+  },
+  {
+    "id": "t4",
+    "type": "cross_ref_equal",
+    "target": "memory\\scribe\\_test_v2\\report_a.md",
+    "other": "memory\\scribe\\_test_v2\\report_b.md",
+    "pattern": "PID (\\d+)",
+    "group": 1
+  },
+  {
+    "id": "t5",
+    "type": "cross_ref_equal",
+    "target": "memory\\scribe\\_test_v2\\report_a.md",
+    "other": "memory\\scribe\\_test_v2\\report_c.md",
+    "pattern": "PID (\\d+)",
+    "group": 1
+  },
+  {
+    "id": "t6",
+    "type": "date_in_text",
+    "target": "memory\\scribe\\_test_v2\\report_a.md",
+    "date": "2026-11-16",
+    "present": true
+  },
+  {
+    "id": "t7",
+    "type": "numeric_range",
+    "target": "memory\\scribe\\_test_v2\\report_b.md",
+    "pattern": "Metric: ([\\d.]+)",
+    "group": 1,
+    "lo": 30,
+    "hi": 50
+  },
+  {
+    "id": "t8",
+    "type": "numeric_range",
+    "target": "memory\\scribe\\_test_v2\\report_c.md",
+    "pattern": "Metric: ([\\d.]+)",
+    "group": 1,
+    "lo": 40,
+    "hi": 50
+  }
+]

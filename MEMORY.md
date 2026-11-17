@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 (design token audit) COMPLETE — all 36 hard-coded hex colors moved to :root; two bugs fixed mid-pass.
-- Goal #1 (KG Auto-Update) DONE: knowledge_graph.py v2 (hash-diff, orphan detect, delta report) + _post_sync_tasks() in memory_mirror.py; evid
-- Designer: Goal #2 fleet panel — added loading/error/empty states to ui/app.css + rewrote ui/core.js with dataset.loaded flag; production pol
-- Goal #1 KG v2 done (content-hash delta + orphan detection, 832 orphans). Remaining: hook into _post_sync_tasks() in memory_mirror.py.
-- Goal #6: durable_check.py built (85 lines);
 - Mirror LWW (step 3) overwrites local load_trend.py edits 6x; fix at mirror_host root, not re-apply. Goal #1 has 2/7 probe days.
 - Goal #2 evidence-quality trend: n=18 at 94%, needs n≥20 + mid-cycle re-audit to close; single miss is verifier #4 truncated path.
 - Goal #3 closed: CSS bundle 71.7KB minified, under 80KB budget; no optimization needed; documented in css-bundle-budget-2026-11-17.md
 - Root cause of repeated --week-complete reverts: mirror_host step 3 LWW-pulls remote memory/ tree, overwriting local edits (6th occurrence).
 - Goal #1 closed: _post_sync_tasks() added to memory_mirror.py, runs knowledge_graph.py post-mirror (non-blocking, 30s timeout).
+- Goal #3 (adaptive probe v2) verified
+- Goal #2: added 1024px & 1920px breakpoints to ui/app.css + fleet loading/error/empty states in core.js; all checks pass.
+- Goal #4 done: residency matrix built from disk state (sandbox blocks outbound net); 6/8 match, builder+verifier misbound
+- Goal #1 Decision Trace API v2 verified: /api/decisions now supports ?agent, ?since, ?status, ?q filters; 6 test queries pass <500ms
+- KG v2 (hash-diff, orphan detect) claimed done in hot note but `knowledge_graph.py` regressed to simple version — gap confirmed, upgrade in p
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

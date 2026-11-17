@@ -1,0 +1,65 @@
+{
+  "goal": "scribe#2 - Contradiction detector v2: numeric + temporal claims",
+  "date": "2026-11-17",
+  "artifact": "memory/scribe/contradiction_detector.py (extended)",
+  "test_corpus": "memory/scribe/_test_v2/test_claims.json",
+  "new_types_implemented": [
+    "mtime_within_days - file mtime must be within N days of a claimed date",
+    "temporal_order - file A modified before/after file B",
+    "cross_ref_equal - two files must agree on a regex-extracted value",
+    "date_in_text - a specific date string must (or must not) appear in a file",
+    "numeric_range - a regex-extracted number must fall in [lo, hi]"
+  ],
+  "test_results": {
+    "total_claims": 8,
+    "passed": 5,
+    "failed_as_expected": 3,
+    "false_positives": 0,
+    "details": [
+      {
+        "id": "t1",
+        "type": "mtime_within_days",
+        "result": "PASS (correct)"
+      },
+      {
+        "id": "t2",
+        "type": "mtime_within_days",
+        "result": "FAIL (correct - delta=2d > 1d)"
+      },
+      {
+        "id": "t3",
+        "type": "temporal_order",
+        "result": "PASS (correct)"
+      },
+      {
+        "id": "t4",
+        "type": "cross_ref_equal",
+        "result": "PASS (correct - same PID)"
+      },
+      {
+        "id": "t5",
+        "type": "cross_ref_equal",
+        "result": "FAIL (correct - PID mismatch 36992 vs 99999)"
+      },
+      {
+        "id": "t6",
+        "type": "date_in_text",
+        "result": "PASS (correct)"
+      },
+      {
+        "id": "t7",
+        "type": "numeric_range",
+        "result": "PASS (correct - 42.5 in [30,50])"
+      },
+      {
+        "id": "t8",
+        "type": "numeric_range",
+        "result": "FAIL (correct - 38.0 not in [40,50])"
+      }
+    ]
+  },
+  "acceptance_criteria_met": {
+    ">=5_new_contradiction_types": true,
+    "zero_false_positives_on_clean_data": true
+  }
+}
