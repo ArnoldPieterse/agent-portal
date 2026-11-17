@@ -1,0 +1,171 @@
+{
+  "date": "2026-11-18",
+  "files_scanned": 70,
+  "refs_checked": 288,
+  "phantoms_found": 29,
+  "unique_phantoms": [
+    "memory/ops/load-baseline.json",
+    "memory/ops/agents.json",
+    "memory/ops/probe-evidence.json",
+    "elev.py",
+    "memory/designer/d7_d9_cdp_verify.py",
+    "memory/ops/boot-recovery-log.json",
+    "memory/ops/boot-recovery.json",
+    "memory/ops/clobber-events.json",
+    "memory/builder/test_truncation_detect.py",
+    "memory/ops/fleet-probe-history.json",
+    "memory/ops/verifier-healthcheck-white-2026-11-15.md",
+    "memory/ops/merge-queue.json",
+    "memory/verifier/slo-history.json",
+    "memory/llm/fleet-probe-alias-log.json",
+    "memory/ops/mirror-clobber-pattern-2026-11-14.md",
+    "memory/ops-windows.md"
+  ],
+  "details": [
+    {
+      "file": "memory/ops/INDEX.md",
+      "line": 24,
+      "ref": "memory/ops/load-baseline.json"
+    },
+    {
+      "file": "memory/ops/black-studio-failover-2026-11-16.md",
+      "line": 13,
+      "ref": "memory/ops/agents.json"
+    },
+    {
+      "file": "memory/ops/blockers.md",
+      "line": 9,
+      "ref": "memory/ops/probe-evidence.json"
+    },
+    {
+      "file": "memory/ops/blockers.md",
+      "line": 19,
+      "ref": "elev.py"
+    },
+    {
+      "file": "memory/ops/blockers.md",
+      "line": 29,
+      "ref": "memory/designer/d7_d9_cdp_verify.py"
+    },
+    {
+      "file": "memory/ops/blockers.md",
+      "line": 44,
+      "ref": "elev.py"
+    },
+    {
+      "file": "memory/ops/blockers.md",
+      "line": 44,
+      "ref": "elev.py"
+    },
+    {
+      "file": "memory/ops/blockers.md",
+      "line": 53,
+      "ref": "elev.py"
+    },
+    {
+      "file": "memory/ops/boot-deployment-runbook.md",
+      "line": 54,
+      "ref": "memory/ops/boot-recovery-log.json"
+    },
+    {
+      "file": "memory/ops/boot-detection-runbook.md",
+      "line": 7,
+      "ref": "memory/ops/boot-recovery.json"
+    },
+    {
+      "file": "memory/ops/boot-detection-runbook.md",
+      "line": 37,
+      "ref": "memory/ops/boot-recovery.json"
+    },
+    {
+      "file": "memory/ops/cycle-transition-checklist.md",
+      "line": 16,
+      "ref": "memory/ops/clobber-events.json"
+    },
+    {
+      "file": "memory/ops/goal-progress-2026-11-16.md",
+      "line": 23,
+      "ref": "memory/builder/test_truncation_detect.py"
+    },
+    {
+      "file": "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
+      "line": 8,
+      "ref": "memory/ops/fleet-probe-history.json"
+    },
+    {
+      "file": "memory/ops/mechanic-goal3-red-leg-blocked-2026-11-15.md",
+      "line": 13,
+      "ref": "memory/ops/verifier-healthcheck-white-2026-11-15.md"
+    },
+    {
+      "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+      "line": 10,
+      "ref": "memory/ops/merge-queue.json"
+    },
+    {
+      "file": "memory/ops/non-sandbox-queue.md",
+      "line": 7,
+      "ref": "elev.py"
+    },
+    {
+      "file": "memory/ops/non-sandbox-queue.md",
+      "line": 42,
+      "ref": "memory/verifier/slo-history.json"
+    },
+    {
+      "file": "memory/ops/non-sandbox-queue.md",
+      "line": 47,
+      "ref": "memory/ops/load-baseline.json"
+    },
+    {
+      "file": "memory/ops/non-sandbox-queue.md",
+      "line": 48,
+      "ref": "memory/ops/load-baseline.json"
+    },
+    {
+      "file": "memory/ops/non-sandbox-queue.md",
+      "line": 53,
+      "ref": "memory/designer/d7_d9_cdp_verify.py"
+    },
+    {
+      "file": "memory/ops/orch-fleetprobe-decision-2026-11-16.md",
+      "line": 7,
+      "ref": "memory/llm/fleet-probe-alias-log.json"
+    },
+    {
+      "file": "memory/ops/pin-guard-extension-ui-files.md",
+      "line": 61,
+      "ref": "memory/ops/mirror-clobber-pattern-2026-11-14.md"
+    },
+    {
+      "file": "memory/ops/probes.md",
+      "line": 2,
+      "ref": "memory/ops-windows.md"
+    },
+    {
+      "file": "memory/ops/schtask-sandbox-limitation.md",
+      "line": 20,
+      "ref": "memory/ops/load-baseline.json"
+    },
+    {
+      "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+      "line": 3,
+      "ref": "elev.py"
+    },
+    {
+      "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+      "line": 12,
+      "ref": "memory/ops/load-baseline.json"
+    },
+    {
+      "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+      "line": 20,
+      "ref": "memory/ops/load-baseline.json"
+    },
+    {
+      "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+      "line": 34,
+      "ref": "elev.py"
+    }
+  ]
+}
