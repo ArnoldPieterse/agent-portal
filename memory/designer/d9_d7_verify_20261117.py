@@ -95,6 +95,31 @@ async def main():
                 out["checks"]["axe_violations"] = r.get("result", {}).get("value")
             except Exception as e:
                 out["checks"]["axe_error"] = repr(e)[:200]
+            # element screenshot of #fleetTopo
+            try:
+                r = await cmd("Runtime.evaluate", expression="""(function(){
+                    var t = document.getElementById('fleetTopo'); if (!t) return null;
+                    var b = t.getBoundingClientRect();
+                    return JSON.stringify({x: Math.max(0,b.x-4), y: Math.max(0,b.y-4),
+                        w: Math.min(b.width+8, 1280), h: Math.min(b.height+8, 900)});})()""",
+                    returnByValue=True)
+                clip = json.loads(r.get("result", {}).get("value") or "null")
+                if clip:
+                    r = await cmd("Page.captureScreenshot", format="png", clip=clip)
+                    open(os.path.join(EV, "evidence_d9_topology.png"), "wb").write(base64.b64decode(r["data"]))
+                    out["checks"]["topo_screenshot"] = True
+            except Exception as e:
+                out["checks"]["topo_shot_err"] = repr(e)[:150]
+            # tab-focus visibility chain
+            for i in range(15):
+                await cmd("Input.dispatchKeyEvent", type="keyDown", key="Tab", code="Tab", windowsVirtualKeyCode=9)
+                await cmd("Input.dispatchKeyEvent", type="keyUp", key="Tab", code="Tab", windowsVirtualKeyCode=9)
+                js = ("(function(){var a=document.activeElement;if(!a)return JSON.stringify({i:%d,none:true});"
+                      "var cs=getComputedStyle(a);return JSON.stringify({tag:a.tagName,id:a.id||null,"
+                      "fv:a.matches(':focus-visible'),outline:cs.outlineWidth+' '+cs.outlineColor,"
+                      "shadow:cs.boxShadow.slice(0,40)});})()") % i
+                r = await cmd("Runtime.evaluate", expression=js, returnByValue=True)
+                out["focus_chain"].append(r.get("result", {}).get("value"))
             log("done-phase1"); json.dump(out, open(os.path.join(EV, "evidence_d9d7.json"), "w"), indent=1)
             rd.cancel()
     finally:
