@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-16 ~17:xx - file-modularity rule + UI split + 15-min git net (Studio seat)
 - NEW FLEET RULE: working/project files follow memory/ modularity (small files, header pointers to parent) -> memory/portal/file-modularity.md. Root INDEX trimmed 2435->1395 chars (was over the 1600 _index_block budget - tail was truncated from every prompt).
@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe 9/10 closed; only Goal #9 (cross-cycle narrative thread) remains — cycle-3 entry pending at cycle end.
-- Goals #3 & #9 CLOSED. fleet_probe_v2.py rebuilt after mirror loss. Remaining: production deployment of predictive alerts.
 - Goal #2: test_slo_enforce.py built (8/8 pass), de-risks prod run; still blocked on sch
 - Goal #2: breakpoint gate extended to [375,768,1024,1920]; only screenshot leg remains (NEEDS-HUMAN, browser unavailable in sandbox).
 - Goal #3 closed (5/5 tests, WARN at probe 5). Goal #4 blocked: needs LAN reachability unavailable from Red sandbox.
@@ -25,8 +23,10 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 CSS/JS states+breakpoints re-landed; screenshot leg still NEEDS-HUMAN (no browser in sandbox) — do not re-probe.
 - Directive: all new features must link end-to-end through to the agent portal dashboard (applies to future goal-setting).
 - Goal #1 (Design token audit) closed: all 29+ hard-coded hex/px values tokenized into :root; zero remain outside.
+- Builder: /api/goals/timeline backend done in agent_portal.py (cycle detect via >50% fleet_reached drop); UI strip pending next pass
+- Goal #1 (token audit): 29+ hard-coded hex colors outside :root found; tokenizing all now, verifying zero remain after.
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 1 / ∞
 - last_reset_by: —
 
 - 2026-11-17 13:5x ADMIN-BY-DEFAULT (user directive): every agent runs as admin, same as white. Elevated helper service built: elevated_helper.py (SYSTEM, 127.0.0.1:8098) + elev.py client + install_elevated_helper.bat (one UAC click). [SHELL] footer in agent_portal.py now tells all seats to route admin commands through `python elev.py ...` instead of giving up; takes effect on next portal restart. PENDING USER ACTION: double-click install_elevated_helper.bat once per host (files mirror to Pale/Black/Red automatically). Also fixed: agent_portal.py had 2 corrupted blocks (literal backslash-quote, syntax error) - repaired, compiles clean. Mechanic #4 load-test pipeline built + baseline captured (portal_loadtest.py, p95 ~60ms idle @8 workers). Designer (#6 status-dots, #2 dark mode) and Mechanic (#2 reboot-recovery dry-runs) tasks dispatched via /api/user-messages.

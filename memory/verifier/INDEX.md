@@ -57,3 +57,5 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - -> memory/verifier/ssot-reconciliation-2026-11-16.md   checked the ledger SSOT itself: Fleet=70/80 (not 71), Scribe #9 OPEN in ledger, NEW Designer discrepancy (3 conflicting counts: 1 real stamp vs chat 6 vs ledger 4)
 ## Assist evidence (2026-11-17)
 - -> memory/verifier/regression-detector-reverify-2026-11-17.md   **PASS** Mechanic#4 regression detector independently re-verified (no false-positive on real 2-day baseline + spike caught ONLY at c=50 + all-error guard works end-to-end); goal #4 stays OPEN - only days 3-7 accumulation remain (blocker: White schtask)
+
+- fleet-overview-verify-2026-11-17.md — VERIFIED Cycle-4 Goal 1 /api/fleet/overview: logic+capacity PASS; 2 findings (dead goals_blocked field; orchestrator.md not reflecting cycle-4 progress). Assists Orchestrator.

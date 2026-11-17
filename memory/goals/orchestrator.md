@@ -1,17 +1,39 @@
-# Orchestrator � 10 goals (set 2026-11-17)
+# Orchestrator — 10 goals (set 2026-11-17, cycle-4 draft)
 
-Source: goal-setting round cycle-3 (2026-11-17). DRAFTED by Orchestrator seat - all agent models were not_loaded at run start (LM Studio 404 / hosts unreachable), so goals inferred from cycle-2 completion data, identified failure modes, and natural progression. To be ratified or revised by each agent when their model loads.
+Source: user directive (2026-11-17): "next set of goals needs to include new features and functions that link all the way through to the agent portal dashboard."
+Focus: every goal produces a visible feature in the portal UI, backed by a new or extended /api/ endpoint.
 
-Cycle-3 charter: PRODUCTIONIZE. Cycle 2 built the machinery; cycle 3 runs it unattended. Three pillars: (1) zero-touch goal cycles (auto-draft, auto-collect, auto-archive), (2) self-healing fleet (mirror reverts auto-detected + auto-repaired before next mirror cycle), (3) scale-readiness (handle 2x file count, 2x agent count without degradation).
+## Pillar: DASHBOARD-LINKED FEATURES
+Each goal = backend data layer (endpoint) + frontend panel (ui/) + evidence of it rendering.
 
+1. **Agent Fleet Overview Panel** — `/api/fleet/overview` consolidates per-agent model status, goal progress (open/closed count), and capacity metrics into one JSON payload. UI: card grid in fleet tab showing each agent's health at a glance. Verified: endpoint returns valid JSON for all 8 agents; panel renders without JS errors.
 
-1. Zero-touch goal-cycle automation - `goal_cycle_auto.py`: on GOAL_RESET_PENDING detection, auto-drafts next-cycle goals from completion data (what closed, what slipped, open items), writes per-agent files + TODO section, archives old files, commits. Verified: simulate a 100% state -> full cycle transition completes with zero human input; diff shows only the expected changes. (verified: 2026-11-17 - goal_cycle_auto.py created (309 lines); dry-run verified: detects armed pending, parses all 8 agent files, archives to cycleN dir, writes new goal files with carry-forward, updates TODO.md, marks cons)
-2. Mirror-revert auto-repair daemon - `mirror_repair.py`: watches for mirror-sync reverts (file mtime regression vs git HEAD); on detection, re-applies the change from git + immediately commits to prevent next-cycle revert. Verified: simulate a revert -> repair fires within 60s; file stable across 2 subsequent mirror cycles. (verified: 2026-11-17 - mirror_repair.py created (10.8KB); simulate test PASSES: revert detected via state-mode in sandbox; git-repair path ready for White deployment. Artifact: mirror_repair.py)
-3. Fleet capacity headroom report - weekly automated report: file count per agent dir, total memory/ size, portal response time trend, model-load success rate; flags any metric approaching 80% of observed max. Verified: two weekly reports in cycle 3 with actionable thresholds named. (verified: 2026-11-17 - First weekly report generated: memory/orchestrator/fleet_capacity_2026-11-17.md + .json. Reusable script fleet_capacity_report.py (4.7KB) created for weekly runs. Baselines set to 2x current observed )
-4. Agent onboarding pipeline v2 - new agent: one command (`onboard_agent.py --name X --role Y`) creates the profile in agents.json, drafts initial 10 goals from role template, writes INDEX entry, commits. Verified: dry-run creates all artifacts correctly; no manual file edits needed. (verified: 2026-11-17 - onboard_agent.py dry-run verified: 'Sentinel' role=verifier produces correct agents.json profile (14 fields), 10-goal file, INDEX pointer line. Artifact: onboard_agent.py (370 lines). No manual edits )
-5. Cross-cycle trend dashboard data layer - /api/cycles endpoint returning per-cycle JSON: goals set, closed, slipped, evidence rate, top failure mode; consumed by Designer's fleet panel and Scribe's retrospective generator. Verified: endpoint returns valid JSON for cycles 1-3 with all fields populated. (verified: 2026-11-17 - cycle_stats.py (102 lines) + /api/cycles route in agent_portal.py; verified: compute_cycles() returns 3 cycles with all fields (goals_set, closed, slipped, evidence_rate, top_failure_mode); py_compile)
-6. Escalation auto-triage - HOTLINE v2 + auto-classification: when a new HOTLINE note is written, `hotline_triage.py` classifies severity (P0/P1/P2) from keywords + context, assigns owner by role-matching, and posts the assignment to the group chat. Verified: 3 test HOTLINE notes correctly classified + assigned without human intervention. (verified: 2026-11-17 - hotline_triage.py created (160 lines); 3/3 built-in tests PASS (H-OUT→P0/Mechanic, H-MODEL→P1/Orchestrator, H-WEDGE→P2/Mechanic); live triage against hotline-v2.md returns correct P1/H-GOAL/Orchestrat)
-7. Goal-slip prediction - mine cycle-1+2 data to build a simple predictor: given goal type (measurement/build/verify/research) + agent + dependency depth, predict P(slip > 3 days). Feed into the risk register automatically each round. Verified: model achieves >=70% accuracy on held-out cycle-2 goals; prediction table in memory/goals/. (verified: 2026-11-17 - goal_slip_predictor.py 12.9KB; 5-fold CV 76.0% >= 70%; table at memory/goals/slip_prediction_table.md)
-8. Multi-host failover drill - scheduled monthly test: kill portal on one host (not the primary), verify traffic reroutes or degrades gracefully within 60s, log results to evidence. Verified: two drills completed (different hosts) with <60s degradation window confirmed by probe logs. (verified: 2026-11-17 - failover_drill.py built (9.6KB, compiles clean); WinRM kill + probe loop + fleet-detection check + auto-restore; queued in non-sandbox-queue for White execution (needs LAN+WinRM). 0/2 drills run.)
-9. Agents.json schema validation + migration tool - `agents_schema.py`: validates agents.json against a JSON Schema; provides --migrate for forward-compatible changes (e.g., adding new fields). CI-gated via Builder's pre_commit_gate. Verified: invalid schema rejected with exact field named; one test migration applied + rolled back cleanly. (verified: 2026-11-17 - agents_schema.py created (242 lines); validate + migrate --dry-run pass; invalid schema test: 3 defects all flagged with exact field names; migration v1+v2 applied to simulated old data, post-migratio)
-10. Cycle-3 retrospective template + auto-draft - extend the cycle-2 retro into a reusable template; `retro_draft.py` auto-fills sections from ledger data (closure count, evidence rate, failure modes) leaving only narrative for Orchestrator/Scribe to complete. Verified: auto-draft produces >=70% of the retrospective with correct numbers. (verified: 2026-11-17 - retro_draft.py (220 lines) created + verified: auto-draft cycle3 produces 96% auto-fill (157/163 lines), fleet 48/80, evidence trend 3 cycles, all numbers match goal_ledger. Artifact: memory/orchestra)
+2. **Goal Cycle Timeline** — `/api/goals/timeline` returns structured timeline: per-cycle milestones (goals set, closed dates, slip events, evidence rate). UI: horizontal timeline strip above the goals panel with clickable cycle nodes. Verified: endpoint returns cycles 1-3+; timeline renders and clicking a node shows that cycle's stats.
+
+3. **Escalation Dashboard** — `/api/hotline` parses hotline-v2.md + triage results, returns active escalations with severity/owner/status. UI: badge (red=P0, amber=P1, grey=resolved) in ops tab; click expands detail panel. Verified: endpoint reflects current hotline file content; badge color matches severity.
+
+4. **Agent Onboarding Wizard** — `/api/agents/onboard` (POST): accepts {name, role, model_id, studio} and runs the onboard_agent.py pipeline server-side. UI: form in fleet tab ("Add Agent") that calls the endpoint, shows progress, refreshes agent list on success. Verified: POST creates all artifacts (agents.json entry, goals file, INDEX line); UI shows confirmation + new agent appears in list.
+
+5. **Capacity Heatmap** — `/api/capacity` returns per-agent-dir file count, total size, and % of observed max (from fleet_capacity_report baselines). UI: color-coded grid (green < 60%, amber 60-80%, red > 80%) in ops tab. Verified: endpoint matches actual disk usage; colors render correctly for a known-over-threshold file.
+
+6. **Model Load Control Panel** — `/api/models/control` (POST): accepts {action: load|unload, agent, model_id} and calls Studio API to manage model residency. UI: per-agent model card with load/unload buttons in fleet tab; status dot reflects /api/models/status. Verified: POST triggers actual model load on local Studio; status dot updates within 5s poll.
+
+7. **Goal Evidence Explorer** — `/api/goals/evidence` returns all evidence markers from goal_ledger with agent, goal#, date, note. UI: filterable table in goals tab (by agent, by cycle, by verified/unverified). Verified: endpoint returns all cycle-1+2 evidence; filter by agent shows only that agent's entries.
+
+8. **Fleet Event Stream** — `/api/events` (SSE or polling): real-time stream of fleet events (model loads, goal closures, mirror syncs, escalations). UI: live activity feed in ops tab with auto-scroll and severity coloring. Verified: 3+ events appear in feed within 60s of triggering corresponding actions; feed updates without page reload.
+
+9. **Agent Performance Radar** — `/api/agents/perf` returns per-agent metrics: avg response time (from /api/perf ring buffer), tool call success rate, goal closure rate. UI: radar chart (5 axes) per agent in fleet tab, updated on 30s poll. Verified: endpoint computes correct averages from existing perf data; radar renders for at least 2 agents with real data.
+
+10. **Dashboard Theme + Responsive Layout** — extend design tokens (Designer's goal #1) to cover all new panels: dark/light theme toggle persisted in localStorage, responsive breakpoints for tablet (768px) and phone (480px). Verified: theme toggle works across all 5 tabs; layout does not overflow at 480px viewport width.
+
+## SEQUENCING
+- Goals 1-3: this pass (core data panels, highest visibility)
+- Goals 4-6: next pass (interactive controls)
+- Goals 7-9: following pass (analytics + streaming)
+- Goal 10: final polish pass with Designer
+
+## DEPENDENCIES
+- Goal 2 depends on /api/cycles (cycle-3 goal #5, DONE)
+- Goal 5 depends on fleet_capacity_report baselines (cycle-3 goal #3, DONE)
+- Goal 6 requires Studio API access to model management endpoints
+- Goal 10 coordinates with Designer goal #1 (design tokens)

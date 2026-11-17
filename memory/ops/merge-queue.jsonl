@@ -42,3 +42,5 @@
 {"ts": "2026-11-17 20:52:43", "file": "agent_portal.py", "sha": "d73887c047", "size": 219717, "snapshot": "memory/ops/merge-queue/agent_portal.py.d73887c047"}
 {"ts": "2026-11-17 21:21:24", "file": "agent_portal.py", "sha": "be6c45eae8", "size": 219946, "snapshot": "memory/ops/merge-queue/agent_portal.py.be6c45eae8"}
 {"ts": "2026-11-17 21:47:07", "file": "agent_portal.py", "sha": "5562ca7d19", "size": 220709, "snapshot": "memory/ops/merge-queue/agent_portal.py.5562ca7d19"}
+{"ts": "2026-11-17 23:08:34", "file": "agent_portal.py", "sha": "aa32e8f441", "size": 229381, "snapshot": "memory/ops/merge-queue/agent_portal.py.aa32e8f441"}
+{"ts": "2026-11-17 23:08:34", "file": "ui/core.js", "sha": "76a93f3874", "size": 33410, "snapshot": null}
