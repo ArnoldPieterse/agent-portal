@@ -1,0 +1,37 @@
+{
+  "seeded": "2026-11-17",
+  "agents": {
+    "archivist": {
+      "max_files": 82,
+      "max_bytes": 852053
+    },
+    "builder": {
+      "max_files": 144,
+      "max_bytes": 3532899
+    },
+    "mechanic": {
+      "max_files": 149,
+      "max_bytes": 468793
+    },
+    "orchestrator": {
+      "max_files": 20,
+      "max_bytes": 125604
+    },
+    "scribe": {
+      "max_files": 72,
+      "max_bytes": 292190
+    },
+    "verifier": {
+      "max_files": 173,
+      "max_bytes": 713912
+    },
+    "designer": {
+      "max_files": 267,
+      "max_bytes": 3512254
+    },
+    "researcher": {
+      "max_files": 83,
+      "max_bytes": 424213
+    }
+  }
+}
