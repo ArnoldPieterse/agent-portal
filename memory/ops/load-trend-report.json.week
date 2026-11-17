@@ -1,0 +1,12 @@
+{
+  "check": "week_complete",
+  "days_observed": 2,
+  "target_days": 7,
+  "dates": [
+    "2026-11-16",
+    "2026-11-17"
+  ],
+  "passed": false,
+  "note": "2/7 unique days of valid data",
+  "ts": "2026-11-17T18:34:30.393774"
+}

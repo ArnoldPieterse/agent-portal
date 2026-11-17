@@ -230,8 +230,11 @@ PIN_FILES = {
     # c0629a5b7cee/289a101ccdf5. Advanced in the SAME turn as the edit so pin_guard accepts it.
     # 2026-11-16j pin advanced (Designer cycle-2 goal 4, Studio seat): <nav aria-label="Chat mode">
     # landmark + aside aria-label for screen readers; :focus-visible ring already in ui/app.css.
-    "index.html": {"sha12": "2a3ffa6ac79c",
-                   "backup": "memory/designer/index_html_CANONICAL_2a3ffa6ac79c_2026-11-16j.html"},
+    # 2026-11-17 pin advanced (Designer goal #9, Studio seat): #fleetTopo mount node +
+    # ui/fleet_topology.js script tag (live SVG fleet topology, tokenized CSS in ui/app.css).
+    # Supersedes 2a3ffa6ac79c (2026-11-16j). Advanced SAME turn per pin_guard rule.
+    "index.html": {"sha12": "815d64fa70b5",
+                   "backup": "memory/designer/index_html_CANONICAL_815d64fa70b5_2026-11-17x.html"},
 }
 
 def _sha12(path):
