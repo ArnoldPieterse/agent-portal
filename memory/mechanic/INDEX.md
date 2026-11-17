@@ -10,3 +10,4 @@ Last updated: 2026-11-13.
 - -> memory/mechanic/fleet-probe-v2-2026-11-16.md   cycle-2 goal 1: adaptive fleet probe (v2) build + verification
 - -> memory/mechanic/goal1_adaptive_probe_verified.json   cycle-2 goal 1: escalation test output (severity over N runs)
 - -> memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md   cycle-2 goal 5: probe->CHG entity integration evidence
+- -> memory/mechanic/goal4-load-baseline-day3-2026-11-17.md | day-3 load probe from White seat (holdup: seat error, not regression); 3/7 days
