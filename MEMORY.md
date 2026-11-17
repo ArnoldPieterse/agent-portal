@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 2, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-16 ~17:xx - file-modularity rule + UI split + 15-min git net (Studio seat)
 - NEW FLEET RULE: working/project files follow memory/ modularity (small files, header pointers to parent) -> memory/portal/file-modularity.md. Root INDEX trimmed 2435->1395 chars (was over the 1600 _index_block budget - tail was truncated from every prompt).
@@ -15,18 +15,18 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Tokenization done: zero hardcoded colors in rule bodies, all 35 hex in :root. Next: build dark-mode toggle (Goal #2).
-- ui/app.css fully tokenized: 48 hexes → CSS custom props, 71 tokens total, 426 var() refs. Goal #1 (design token layer) complete.
-- Goal #2 (boot-recovery) blocked: deploy must run from White non-sandbox; all prereqs verified and SyntaxWarning fixed.
-- Git unavailable in Designer sandbox — file-protection commits must be run from White; re-landed dark-mode toggle (4th pass)
-- Archivist assisting Mechanic#1 (process-count anomaly in fleet probe) and Designer#10 (design QA regression gate); own lane 10/10 complete
-- Both UI slices (status-dot system + dark-mode token layer with toggle) completed and written to disk this pass; no git binary on
-- Mirror cycle re
-- Hot notes claimed "51 tokens / zero hardcoded" but ui/app.css actually had 30+
 - Git is not available in this sandbox; commits must be skipped or handled differently.
 - Both UI slices (#6 status-dot, #2 dark mode) confirmed COMPLETE per audit 2026-11-17; evidence in memory/researcher/ui-slices-audit-
+- Red agent is back online; unblocks Mechanic probe work and dual-residency LLM reloads per memory/llm/INDEX.md
+- Red (IP_RED) is powered on and reachable; unblocks Scribe/Mechanic seats and parallel CSS token testing.
+- Red .245 back up; Pale .39 & Black .99 still down — partial unblock for remote-dependent goals
+- Red .245 back online; goal #2 (reboot-recovery) needs port 445+8888 verified from LAN seat to close all 4 legs.
+- Red .245 powered on
+- Red confirmed live 14:07 UTC; scribe-q8 (GPU1) + mechanic-q4 (GPU0) both loaded=True, no reload needed.
+- Fleet node "Red" was down and is now powered back on; services not yet verified healthy.
+- Mechanic's sandbox blocks egress (errno=10013); Red .245 probe (SMB:445, Studio:8888) needs non-sandbox White session to close goal #2.
 ## Counter
-- inter_agent_replies_this_prompt: 2 / ∞
+- inter_agent_replies_this_prompt: 6 / ∞
 - last_reset_by: —
 
 - 2026-11-17 13:5x ADMIN-BY-DEFAULT (user directive): every agent runs as admin, same as white. Elevated helper service built: elevated_helper.py (SYSTEM, 127.0.0.1:8098) + elev.py client + install_elevated_helper.bat (one UAC click). [SHELL] footer in agent_portal.py now tells all seats to route admin commands through `python elev.py ...` instead of giving up; takes effect on next portal restart. PENDING USER ACTION: double-click install_elevated_helper.bat once per host (files mirror to Pale/Black/Red automatically). Also fixed: agent_portal.py had 2 corrupted blocks (literal backslash-quote, syntax error) - repaired, compiles clean. Mechanic #4 load-test pipeline built + baseline captured (portal_loadtest.py, p95 ~60ms idle @8 workers). Designer (#6 status-dots, #2 dark mode) and Mechanic (#2 reboot-recovery dry-runs) tasks dispatched via /api/user-messages.
