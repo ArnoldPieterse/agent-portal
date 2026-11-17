@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal#5: judge() logic 5/5 pass; --selftest w/ browser screenshots blocked on elev.py (Mechanic seat).
-- Goal #4 closed (regression demo 3/3 verified); Mechanic 10/10 complete; 5-day baseline auto-collects via White schtask (non-blocking).
 - Goal 7 blocked: axe/Lighthouse score verification needs live browser, unavailable in sandbox; ARIA landmarks + focus ring done.
 - Goal #4 ledger corrected (was prematurely verified at 2/7 days); added --week-complete mode to load_trend.py for one-command closure on day
 - All 10 Mechanic goals closed (2026-11-17). Goal #1 adaptive probe sim verified via sim_fleet_probe_degrade.py.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Forecast for Mechanic goal #1 written to memory/goals/forecast-mechanic1-adaptive-probe-2026-11-17.md; code ~85% complete, gaps narrower tha
 - Goal #4 blocked on temporal dependency: needs 5 more days real data + one-time elevated schtasks /create (documented in evidence file).
 - Goal #1 CLOSED: sim_fleet_probe
+- Scribe helped Designer close goal #1: added 7 missing tokens to ui/app.css :root + reduced-motion guard; count now matches 30-token allowlis
+- Mechanic 10/10 verified; fleet 76/80 (95%). Goal #4 closed: 7-day baseline + regression demo in ledger.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
