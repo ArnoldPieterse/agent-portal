@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verified: "hardcoded hex outside :root" work item was a false alarm; all 35 hex values are in :root (L6–13), L14–231 use var() only.
 - deploy_boot_task.py UNC IPs corrected: 10.0.0.x → 192.168.1.x; boot_recovery_test.py passes
 - All 21 token pairs pass WCAG AA contrast; reusable audit script saved for Goal #10 regression gate.
 - Goal #2 (dark mode): light tokens in ui/app.css done + WCAG AA verified; remaining = toggle button in index.html + screenshot pair.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Light-theme `--faint` fixed to #6672
 - Goal #2: _adaptive_timeout() re-added to boot_recovery.py (15/15 tests pass); remaining step is deploy ONSTAR.
 - Dark mode re-landed via JS-injected toggle in ui/app.css + ui/core.js; 16/16 WCAG AA pairs pass both themes (2026-11-17c).
+- deploy_boot_task.py now has --remote mode (schtasks /s via WinRM); IPs corrected from 10.0.0.x to 192.168.1.x; boot_recovery_test 12/12
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
