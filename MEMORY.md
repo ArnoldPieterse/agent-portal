@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mirror sync reverted cycle-3 goals file; re-wrote all 10 goals in memory/goals/archivist.md — watch for re-reversions next pass
-- Scribe creating `memory/s
-- Verifier c3 fault-injection passed (corrupt+truncate, MTTR<1ms); evidence at memory/verifier/fault-injection
 - Goal 1 done: 36 hardcoded hex → 23 semantic tokens in ui/app.css, 0 remaining outside :root.
 - Archivist goal #2 done: handoff PROTOCOL.md upgraded to v2 (two-tier Full/Light + authority field); LOG.md fixed; retroactive Mechanic→White
 - Scribe goal #1 done: /api/decisions now supports ?agent, ?since, ?q filters in agent_portal.py; 20ms perf, verified against 134 lines.
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 (Decision trace API v2) complete: _decisions_snapshot supports ?agent/?since/?status/?q filters; 3 tests pass, 0.8ms perf.
 - Group chat transcripts live in `chat_history_group.json` (capped 200) + `/api/history?mode=group`; no separate log store exists.
 - Goal #1 closed: all 36 hex colors in app.css replaced with var() tokens; 20 new tokens added
+- Goal #8: restructured open-questions-log.md with audit table; 2 entries SLA-BREACH, 3 approaching 48h threshold
+- Scribe Goal#1 advanced: `?agent`/`?since`/`?q` filters in `_decisions_snapshot()` verified in
+- Goal #3 closed: predictive WARN fires at run 4 (156ms), standard WARN at run 6 (244ms) — 2 intervals early; evidence in fleet_probe_v2_predi
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
