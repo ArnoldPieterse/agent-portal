@@ -1,0 +1,48 @@
+{
+  "goal": "Decision trace API v2: search + filter",
+  "goal_number": 1,
+  "date": "2026-11-17",
+  "what_was_done": [
+    "Extended _decisions_snapshot() in agent_portal.py with query params: ?agent=X, ?since=DATE, ?status=open|closed, ?q=term",
+    "Added heuristic status field (open/closed/undetermined) based on line keywords",
+    "Updated route handler to parse and pass query string params",
+    "All 6 test queries verified correct subsets; max response time 34.7ms (<500ms limit)"
+  ],
+  "test_results": {
+    "test1_no_filter": {
+      "count": 140,
+      "time_ms": 34.7,
+      "pass": true
+    },
+    "test2_agent_scribe": {
+      "count": 19,
+      "time_ms": 24.9,
+      "pass": true
+    },
+    "test3_since_2026_11_17": {
+      "count": 9,
+      "time_ms": 24.6,
+      "pass": true
+    },
+    "test4_status_open": {
+      "count": 32,
+      "time_ms": 34.0,
+      "pass": true
+    },
+    "test5_q_goal": {
+      "count": 10,
+      "time_ms": 24.7,
+      "pass": true
+    },
+    "test6_combined_agent_status": {
+      "count": 7,
+      "time_ms": 24.5,
+      "pass": true
+    }
+  },
+  "file_modified": "agent_portal.py",
+  "acceptance_criteria_met": {
+    "3_test_queries_return_correct_subsets": true,
+    "response_under_500ms": true
+  }
+}
