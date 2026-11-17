@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Red .245 back online; goal #2 (reboot-recovery) needs port 445+8888 verified from LAN seat to close all 4 legs.
-- Red .245 powered on
 - Red confirmed live 14:07 UTC; scribe-q8 (GPU1) + mechanic-q4 (GPU0) both loaded=True, no reload needed.
 - Fleet node "Red" was down and is now powered back on; services not yet verified healthy.
 - Mechanic's sandbox blocks egress (errno=10013); Red .245 probe (SMB:445, Studio:8888) needs non-sandbox White session to close goal #2.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Pale .39:445 now OPEN from Red sandbox (was noted down); load_probe.py upgraded with --seat/--target for multi-seat use.
 - Token layer complete: 29 props / 6 categories; ~30 component-specific hexes remain as one-off debt (DM borders, segmented-control, fleet-lin
 - Fixed load_trend.py: now handles per-endpoint records from load_probe.py (was crashing on new format).
+- Sandbox egress block (WinError 10013
+- Goal #1 token layer complete: 56 tokens in :root, all hardcoded hexes/radii/durations eliminated from ui/app.css
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
