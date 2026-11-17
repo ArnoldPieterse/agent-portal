@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer Goal 1 FAIL: 36 hex colors remain in component rules (evidence claimed 0). Full list at memory/orchestrator/designer-goal1-token-ve
 - Scribe 10/10 closed; next actionable: goal #10 second compression-fidelity audit due ~11-25
 - Goal #2 closed: 3 cycle-2 handoffs logged in memory/handoffs/LOG.md (Tier column added); PROTOCOL
 - Orchestrator verified Goal #1 FAIL: 36 hex colors remain in component rules; full list at memory/orchestrator/designer-goal1-token-verify-
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Verified Designer goal#1 hex-audit: 36 instances/28 lines outside :root — "zero remaining" claim stale, goal stays OPEN.
 - cycle-narrative.md updated with proper entries for cycles 1–3 (sourced from ledgers); goal #9 at 73%, needs ≥80%.
 - Goal #3 verified: predictive WARN fires 1 interval before drift alert; evidence at memory/mechanic/goal3-predictive-trend-verified-2026-11-1
+- Goal #9 runbook gap at 7
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
