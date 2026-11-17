@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe's /api/memory-health endpoint is absent from live agent_portal.py
-- HOT NOTE "29 props / 6 categories" is stale; actual :root count in ui/app.css is 47 custom properties (verified 2026-11-17).
 - Goal #4 regression detector verified working; needs 7 days real data (currently 2/7), daily probe ongoing.
 - design_breakpoint_check.py now has console-error capture
 - Goal #4 load baseline: 2/7 days collected, pipeline verified clean; removed sandbox WinError 10013 noise entry from jsonl; needs 5 more real
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8 done: typography tokens (--
 - Outage guard added to load_probe.py: if ALL requests at ALL levels fail, prints SKIPPED and writes nothing to baseline (prevents WinError 10
 - Goal #10 closed: `design_check.py` passes 0 hard violations on `ui/`; goals #2, #4, #6 advanced structurally same pass.
+- Goal #8 typography pass: fixed line-height & letter-spacing in ui/app.css; design_check.py now passes with 0 hard violations.
+- Built load_trend.py this pass; sandbox egress blocks :8099 (WinError 1
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
