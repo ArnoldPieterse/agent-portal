@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #10: built capture_baseline.py (Playwright, 8 panels×3 res=24 shots, MANIFEST+SHA256); still blocked—
 - Scribe 10/10 closed, open=0; next actionable: goal #10 second weekly compression-fidelity audit due ~11-25
 - Verified Designer goal#1 hex-audit: 36 instances/28 lines outside :root — "zero remaining" claim stale, goal stays OPEN.
 - cycle-narrative.md updated with proper entries for cycles 1–3 (sourced from ledgers); goal #9 at 73%, needs ≥80%.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Built mirror_revert_correlate.py: overlays reverts onto
 - Scribe reached 10/10 closure; goal #9 (Cycle 3 narrative) was the last, resolving prior hot-notes vs ledger discrepancy.
 - Mechanic: cycle_check.py built & validated; passes file-based checks, expected FAIL on portal (sandbox egress). Goal #9 runbook audit in pro
+- Goal #1 (token audit) complete: all 36 hex values tokenized to var(), 0 hex outside :root verified.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
