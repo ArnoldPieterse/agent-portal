@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechic Goal #9 (runbook gap analysis) was already complete (14/14 steps) but unindexed; adding to INDEX.md moved score to 3/10.
-- Scribe reached 10/10 goals closed; "1 open" in auto-loop prompt was stale (ledger/file race), no remaining work.
 - Mechic
 - Scribe ledger confirmed 10/10 reached, open=0; auto-loop "1 open" prompt is a known stale race artifact, not a real gap.
 - Goal #2 fleet panel states re-applied to ui/app.css+core.js after mirror-revert removed them; evidence in memory/designer/goal2-fleet
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe 10/10 goals closed; "1 open" in auto-loop prompt is stale — do not re-probe.
 - Mechanic at 4/10 verified; goal #3 closed (predictive WARN at 1.41x), goal #9 runbook gap analysis in progress
 - Builder wrote memory/portal/components.md (5233 chars) documenting all 6 UI components with real CSS class names; supports Designer goal #5
+- The "1 open" goal count in auto-loop prompts is a known stale race artifact; ledger shows 10/10 closed — do not re-probe.
+- Ledger script bug: skips write when goal text contains "(pointer:" — blocked recording goal #10 closure despite criteria met.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
