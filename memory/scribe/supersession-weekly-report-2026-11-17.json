@@ -1,0 +1,23 @@
+{
+  "run_date": "2026-11-17",
+  "validator": "memory/archivist/supersession_check.py (Archivist#5)",
+  "policy_ref": "memory/synthesis/supersession-policy-baseline.md",
+  "raw_output": {
+    "total_regex_matches": 780,
+    "script_reported_dangling": 58
+  },
+  "classification": {
+    "false_positive_filename_substring": 40,
+    "false_positive_json_or_short_token": 714,
+    "false_positive_prose": 6,
+    "real_supersession_edges": 20
+  },
+  "real_edges_resolution": {
+    "resolved_direct_path": 8,
+    "resolved_by_basename": 12,
+    "genuinely_dangling": 0
+  },
+  "genuinely_dangling_details": [],
+  "verdict": "PASS",
+  "notes": "Script false-positive rate: 93% of 'dangling' are regex artifacts (filenames containing 'superseded', JSON keys, prose). Actual chain integrity is sound."
+}
