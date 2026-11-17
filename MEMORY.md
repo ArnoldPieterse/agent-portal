@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 (egress v2) closed: 8 profiles, 10/10 PASS, 3 DENY logged. Goal #9 (runbook gap): all 9
-- Goal #9 (runbook gap analysis) closed: 92% coverage, only 2 human-only steps remain as justified gaps.
-- Goal #1 (Decision trace API v2) closed: 3 acceptance queries passed (19/60/0 of 140, max 27ms).
-- Goal #7 (motion audit) has one open failure: `prefers-reduced-motion` media query missing from `ui/app.css`; fix block documented in evidenc
 - Goal #1 closed; live HTTP test on :8099 still pending — sandbox firewall blocks it, needs external verification next pass.
 - Goal #9 closed: audited last 3 runbooks (hotline-v2, git-h
 - SLA audit pass-10: white-q4-ctx active BREACH x1.75; black99+designer
 - Goal #3 (adaptive probe v2: predictive alerts) built & verified in fleet_probe_v2.py — WARN fires 5 intervals before CRIT
 - Pass: Goals 1 (Decision Trace v2), 7 (Goal Evidence Explorer), 8 (Fleet
 - Goals #2 and #3 closed this pass; #3 met bar with r1=95% r2=100%; next up was #5 (supersession integrity, 20 items found).
+- Goal#1: --week-complete flag in load_trend.py done; 2/7 days collected, closure ready Nov 23+ (exit 0 = PASS).
+- SLA audit pass-9b (23:55): state unchanged
+- Goal 9 (Agent Performance Radar) backend done: /api/agents/perf endpoint implemented, compiles clean, evidence in ledger.
+- Goal #3 round-record auto-synthesis: two consecutive drafts exceed 80% fill (r1=93%, r2=89%) — acceptance criteria met.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
