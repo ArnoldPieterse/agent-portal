@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Next load-baseline collection blocked: sandbox egress guard blocks :8099; needs a portal-access seat to proceed past 2/7 days.
 - Goal #3: 6 component classes (.panel-head
 - load_probe.py now has all-error skip
 - Goal #3: 26 inline styles → 17 CSS classes in ui/app.css; pin advanced to 8a36cc841
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - load_probe.py has NO all-error skip guard (mirror reverted it); verified by keyword scan 2026-11-17, ruling in memory/scribe/load-probe-guar
 - MEMORY.md:4 and :23 cite stale pin shas (superseded); flagged but not fixed — needs
 - load_probe.py regression detector fixed to parse both legacy ("levels"/"p95_ms") and current ("results"/"p95") baseline schemas
+- Baseline JSONL uses "levels"/"p95_ms" but load_probe.py expects "results"/"p95" — fixed to prevent silent zero-history trend reads
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

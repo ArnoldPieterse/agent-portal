@@ -47,3 +47,4 @@
 {"ts": "2026-11-17 15:33:48", "run": "g-1a1e7ff446f-e560b2", "missing": {"Orchestrator": "unreachable", "Verifier": "unreachable", "Builder": "unreachable"}}
 {"ts": "2026-11-17 15:45:48", "run": "g-1a1e80a412a-6ba1ff", "missing": {"Builder": "unreachable", "Orchestrator": "unreachable", "Verifier": "unreachable"}}
 {"ts": "2026-11-17 15:50:18", "run": "g-1a1e80e600a-33aba1", "missing": {"Verifier": "unreachable", "Builder": "unreachable", "Orchestrator": "unreachable"}}
+{"ts": "2026-11-17 16:07:27", "run": "g-1a1e81e134a-c121a1", "missing": {"Researcher": "not_loaded"}}
