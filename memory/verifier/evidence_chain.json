@@ -46,5 +46,15 @@
     "detail": "dark-mode CSS override ABSENT in live ui/app.css sha1=13f934c983b6: 0 [data-theme=dark], 0 prefers-color-scheme media, 25 props in 1 :root; core.js JS present (initTheme/themeToggle). Refutes ui-slices-verify dark-mode PASS. Leaf: theme-css-block-absent-2026-11-17.md",
     "prev_hash": "ea437b38b84a9da8a547f095bdc64809f9e7a2ac3c5547d1726df8e78c8ff9a7",
     "hash": "31242e5f11656d5da9fdad52c13e9df8e99b5735267720ef60128310c5803b19"
+  },
+  {
+    "seq": 6,
+    "date": "2026-11-17",
+    "agent": "verifier",
+    "goal": 4,
+    "artifact": "memory\\verifier\\contradiction-sweep-batch3-2026-11-17.md",
+    "summary": "Contradiction sweep batch3: 3 claims checked, 3 PASS (1 with note)",
+    "prev_hash": "31242e5f11656d5d",
+    "hash": "cfd9207370a8ae599e0d3010340878cfbdb7e1d495b89b2bfb7862973fe12aba"
   }
 ]

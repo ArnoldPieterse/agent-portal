@@ -8,3 +8,6 @@
 {"ts": "2026-11-17T10:32:10Z", "type": "canary-success", "detail": "all hosts green", "hosts": ["red", "black", "pale"]}
 {"ts": "2026-11-17T11:07:36Z", "type": "canary-fail-apply", "detail": "Mismatch at line 12", "hosts": ["red"]}
 {"ts": "2026-11-17T11:07:57Z", "type": "canary-success", "detail": "all hosts green", "hosts": ["red", "black", "pale"]}
+{"ts": "2026-11-17T11:44:11Z", "type": "canary-fail-apply", "detail": "Mismatch at line 3789", "hosts": ["red"]}
+{"ts": "2026-11-17T11:44:22Z", "type": "canary-success", "detail": "all hosts green", "hosts": ["red", "black", "pale"]}
+{"ts": "2026-11-17T11:44:29Z", "type": "canary-fail-apply", "detail": "Mismatch at line 3789", "hosts": ["red"]}

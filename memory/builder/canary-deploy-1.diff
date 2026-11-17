@@ -1,0 +1,21 @@
+--- a/agent_portal.py
++++ b/agent_portal.py
+@@ -3789,3 +3789,18 @@
+         elif p == "/api/slo-status":
+             return self._json(200, _slo_check())
++        elif p == "/api/canary-log":
++            # Canary deploy event log (Builder goal #1, 2026-11-17).
++            import json as _json
++            ev_file = os.path.join(HERE, "memory", "ops", "canary-events.jsonl")
++            events = []
++            if os.path.isfile(ev_file):
++                with open(ev_file, "r", encoding="utf-8") as f:
++                    for line in f:
++                        line = line.strip()
++                        if line:
++                            try:
++                                events.append(_json.loads(line))
++                            except _json.JSONDecodeError:
++                                pass
++            return self._json(200, {"ok": True, "events": events[-50:], "total": len(events)})
+         elif p == "/api/health/fleet":

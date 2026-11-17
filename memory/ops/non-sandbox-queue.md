@@ -16,6 +16,10 @@ batch-executes the whole list in ONE sitting, ticks each off, and records eviden
 4. Strike the line here (`- [x]`) rather than deleting it.
 
 ## OPEN (batch in one sitting)
+- [ ] **Orchestrator #8** — Multi-host failover drill (need WinRM + LAN). Run twice on different hosts.
+  - cmd: `python Z:\failover_drill.py --host red` then `python Z:\failover_drill.py --host black`
+  - evidence target: memory/ops/failover-drill-<host>-<date>.json (TTD < 60s, fleet detection < 120s);
+  - ledger record orchestrator 8.
 - [ ] **Verifier #2** — register daily SLO-enforcement task on White so the report auto-runs + posts to group chat.
   - cmd: `schtasks /create /tn VerifierSLODaily /tr "python Z:\\memory\\verifier\\slo_enforce.py" /sc daily /st 06:30 /f`
     (absolute path; runs after PortalLoadProbe at 06:00 so perf buffer has data).

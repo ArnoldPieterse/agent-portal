@@ -12,7 +12,6 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PORT = 8099
 STUDIO = "http://127.0.0.1:8888"   # local Studio (White); remote hosts override per-agent
-PORTAL_VERSION = "3.0-canary-1"   # 2026-11-17: canary deploy v1
 
 
 def studio_base(agent):
@@ -3789,6 +3788,21 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(200, _perf_snapshot())
         elif p == "/api/slo-status":
             return self._json(200, _slo_check())
+        elif p == "/api/canary-log":
+            # Canary deploy event log (Builder goal #1, 2026-11-17).
+            import json as _json
+            ev_file = os.path.join(HERE, "memory", "ops", "canary-events.jsonl")
+            events = []
+            if os.path.isfile(ev_file):
+                with open(ev_file, "r", encoding="utf-8") as f:
+                    for line in f:
+                        line = line.strip()
+                        if line:
+                            try:
+                                events.append(_json.loads(line))
+                            except _json.JSONDecodeError:
+                                pass
+            return self._json(200, {"ok": True, "events": events[-50:], "total": len(events)})
         elif p == "/api/health/fleet":
             return self._json(200, _fleet_health_snapshot())
         elif p == "/api/memory-health":
@@ -3805,6 +3819,10 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/goals":
             # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
             return self._json(200, _goals_snapshot())
+        elif p == "/api/cycles":
+            # Cross-cycle trend data (2026-11-17, Orchestrator goal 5): per-cycle JSON.
+            from cycle_stats import compute_cycles
+            return self._json(200, compute_cycles())
         elif p == "/api/models/status":
             # Model-load governance (2026-11-16, Orchestrator goal #2): live per-seat status
             # for the fleet panel; same probe the run-start check uses.
