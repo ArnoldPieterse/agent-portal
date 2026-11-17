@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fixed load_trend.py: now handles per-endpoint records from load_probe.py (was crashing on new format).
-- Sandbox egress block (WinError 10013
 - Goal #1 token layer complete: 56 tokens in :root, all hardcoded hexes/radii/durations eliminated from ui/app.css
 - design_breakpoint_check.py now supports --file mode + screenshot-on-failure; forced-overflow fixture created as acceptance proof
 - Goal #4 NOT verified — ledger stamp was premature; still needs 7 days of baseline data. Outage guard added to load_probe.py.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - HOT NOTE "29 props / 6 categories" is stale; actual :root count in ui/app.css is 47 custom properties (verified 2026-11-17).
 - Goal #4 regression detector verified working; needs 7 days real data (currently 2/7), daily probe ongoing.
 - design_breakpoint_check.py now has console-error capture
+- Goal #4 load baseline: 2/7 days collected, pipeline verified clean; removed sandbox WinError 10013 noise entry from jsonl; needs 5 more real
+- Goal #7 done: universal :focus-visible in ui/app.css + ARIA role/label on index.html panels; pin advanced.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
