@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 closed: _post_sync_tasks() added to memory_mirror.py, runs knowledge_graph.py post-mirror (non-blocking, 30s timeout).
 - Goal #3 (adaptive probe v2) verified
 - Goal #2: added 1024px & 1920px breakpoints to ui/app.css + fleet loading/error/empty states in core.js; all checks pass.
 - Goal #4 done: residency matrix built from disk state (sandbox blocks outbound net); 6/8 match, builder+verifier misbound
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 (self-healing mirror) CLOSED: n=22 at 95%, threshold met, report-3 leaf written with trend + leading indicators.
 - Goal #9 done: ops runbook gap analysis scored 84.6% (≥80% pass). Artifact at memory/mechanic/ops-runbook-gap-analysis-2026-11-17.md
 - Goal #7 closed (motion audit + reduced-motion block). Goal #2 fleet panel: CSS/JS done, only blocker is browser screenshots at 3 resolutions
+- Goal #9 (upload pipeline hardening) closed: 19/19 checks pass, tests at memory/builder/upload_hardening_tests.py
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

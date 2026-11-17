@@ -1,8 +1,9 @@
 ---
 date: 2026-11-17
 suite: contradiction-sweep
-pass_count: 2
-fail_count: 1
+pass: 3
+fail: 0
+total: 3
 evidence_path: memory/verifier/contradiction-sweep-batch3-2026-11-17.md
 ---
 

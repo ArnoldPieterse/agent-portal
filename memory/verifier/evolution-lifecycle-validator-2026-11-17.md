@@ -1,4 +1,4 @@
-# Evolution full-lifecycle validator — cycle 3 (goal #10)
+# Evolution full-lifecycle validator â€” cycle 3 (goal #10)
 
 - timestamp: 2026-11-17T11:10:22.770342+00:00
 - mode: **model** (engine in CWD: False)

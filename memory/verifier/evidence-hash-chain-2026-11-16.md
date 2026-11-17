@@ -16,9 +16,9 @@
 | 3 | Append entry seq=2 | hash=0c5e33f3a0a4b15c3c382a14... |
 | 4 | Append entry seq=3 | hash=9a3658da80eeaeb76ee00f0f... |
 | 5 | Validate intact chain | PASS (4/4 verified) |
-| 6 | Tamper seq=1 content | — |
+| 6 | Tamper seq=1 content | â€” |
 | 7 | Validate tampered chain | **FAIL at seq=1** (exact break point) |
-| 8 | Restore + recompute hash | — |
+| 8 | Restore + recompute hash | â€” |
 | 9 | Validate restored chain | PASS (4/4 verified) |
 
 ## Verdict: PASS

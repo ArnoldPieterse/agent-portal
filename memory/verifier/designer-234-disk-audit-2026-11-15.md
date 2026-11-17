@@ -1,4 +1,4 @@
-# Verifier: Designer Goals 2/3/4 Disk Audit — 2026-11-15 ~23:xx
+# Verifier: Designer Goals 2/3/4 Disk Audit â€” 2026-11-15 ~23:xx
 
 ## Claim under test
 Designer reported (this cycle): "Root now sha12 **9a8f98149a7b**, div balance 78/78, grep confirms all tokens/markup present."

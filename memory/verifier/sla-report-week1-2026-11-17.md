@@ -3,6 +3,7 @@ date: 2026-11-17
 suite: verification-sla-weekly
 pass: 56
 fail: 62
+total: 118
 evidence_path: memory/verifier/sla-tracking-data.json
 ---
 
