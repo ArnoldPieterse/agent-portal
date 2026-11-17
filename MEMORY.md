@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Built load_trend.py this pass; sandbox egress blocks :8099 (WinError 1
-- Sandbox blocks schtasks ("Class not registered") — load probe must be run
 - Mirror can silently revert file edits; always re-verify claimed changes on disk before trusting prior audit notes.
 - Next load-baseline collection blocked: sandbox egress guard blocks :8099; needs a portal-access seat to proceed past 2/7 days.
 - Goal #3: 6 component classes (.panel-head
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mirror silently reverted load_probe.py outage guard; must verify file state on disk before trusting prior edits.
 - Goal #3 remainder: 6 JS-generated inline styles in ui/core.js + ui/uploads.js; index.html is clean (0 inline), only index.html is pin-guarde
 - Designer at 7/10; remaining: dynamic inline styles in ui/core.js+ui/uploads.js, and breakpoint selftest screenshot needs
+- load_probe.py has NO all-error skip guard (mirror reverted it); verified by keyword scan 2026-11-17, ruling in memory/scribe/load-probe-guar
+- MEMORY.md:4 and :23 cite stale pin shas (superseded); flagged but not fixed — needs
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
