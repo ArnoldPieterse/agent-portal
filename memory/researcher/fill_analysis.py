@@ -52,8 +52,10 @@ def build_analysis(events, log_path):
                 dt = datetime.strptime(ev['t'], '%Y-%m-%d %H:%M:%S')
                 hourly[dt.strftime('%Y-%m-%d %H:00')] += 1
             except ValueError: pass
-    # Trigger distribution
+    # Trigger distribution (reverts)
     trigger_dist = Counter(ev.get('trigger','?') for ev in events if ev.get('kind')=='revert')
+    # Write-reason distribution (why copies happen: new / white-canonical / lww-newer)
+    reason_dist = Counter(ev.get('reason','?') for ev in events if ev.get('kind')=='write' and 'reason' in ev)
 
     # Build markdown
     today = datetime.now().strftime('%Y-%m-%d')
@@ -88,6 +90,13 @@ def build_analysis(events, log_path):
     for h, c in sorted(hourly.items()):
         bar = '#' * min(c, 40)
         lines.append(f"`{h}: {c:3d} {bar}`")
+    if reason_dist:
+        lines.append(f"\n## Write Reason Distribution")
+        total_w = sum(reason_dist.values())
+        lines.append(f"| reason | count | pct | notes |")
+        lines.append(f"|--------|-------|-----|-------|")
+        for r, c in reason_dist.most_common():
+            lines.append(f"| {r} | {c} | {100*c/total_w:.1f}% | [REVIEW] |")
     lines.append(f"\n## Revert Trigger Distribution")
     total_reverts = sum(trigger_dist.values())
     for t, c in trigger_dist.most_common():

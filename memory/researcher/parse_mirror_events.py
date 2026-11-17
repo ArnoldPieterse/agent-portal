@@ -78,7 +78,19 @@ def main():
         print(f"  {t:20s}: {c}")
     print()
 
-    # 4. Hourly activity
+    # 4. Write-reason breakdown (why files are copied)
+    reason_c = Counter()
+    for ev in events:
+        if ev.get('kind') == 'write' and 'reason' in ev:
+            reason_c[ev['reason']] += 1
+    if reason_c:
+        print("--- Write reasons (why copies happen) ---")
+        total_w = sum(reason_c.values())
+        for r, c in reason_c.most_common():
+            print(f"  {r:20s}: {c} ({100*c/total_w:.1f}%)")
+        print()
+
+    # 5. Hourly activity
     hourly = Counter()
     for ev in events:
         if 't' in ev:
