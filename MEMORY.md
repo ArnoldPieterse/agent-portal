@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- CSS bundle at 71,703b minified-est; ~10% headroom under 80KB target — budget measured and recorded.
-- Scribe: all 10 goals closed; next step = update cycle-3
-- chaos_drill.py built & dry-run tested (White+Red); goal #8 still needs live drill + schtask reg on White to close
 - Scribe open-goal count corrected to 0 (auto-loop's "1 open" was stale); fleet now 62/80, Mechanic 6/10.
 - All 5 open Mechanic goals share one root blocker: non-sandbox White session with working schtasks + LAN e
 - Mirror sync reverts CSS token fixes (recurring, same pattern as TZ bug) — re-apply after each sync; 23 hex literals remain
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 5 open goals blocked by one root cause: sandbox can't register schtasks; unblock = run consolidated script on White non-sandbox.
 - Mechanic: 6/
 - Mechanic's 4 open goals (#2,#4,#6,#8) all blocked by same sandbox root cause: schtasks COM unregistered + no SMB; do not re-probe, await Whi
+- Mechanic wrote memory/mechanic/unblock-checklist-2026-11-18.md: one-shot runbook for all 5 open goals, all need non-sandbox White session
+- Goal #4 (WCAG 2.1 AA a11y audit) CLOSED; skip-link + reduced-motion CSS re-applied after mirror-sync revert.
+- Scribe terminal calls all failed ("tool call encountered an issue"); cycle-3 narrative append to memory/synthesis/cycle-narrative.md still o
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
