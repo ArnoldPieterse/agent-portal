@@ -73,7 +73,6 @@
     </div>
     <div id="goalsPanel">
       <div id="goalsHead"><span>Goal velocity · live parse of memory/goals/</span><span id="goalsStat" class="hint">loading…</span></div>
-<div id="memHealth" style="margin:10px 4px"><b>Memory Health</b> <span style="opacity:.6;font-size:11px">(Scribe goal 9 - live from /api/memory-health)</span><div id="memHealthBody"></div></div>
       <div id="goalsBody"></div>
       <div id="goalsGit" class="hint" style="margin-top:6px;font-size:12px"></div>
     </div>
@@ -159,9 +158,5 @@
 <script src="ui/core.js"></script>
 
 <script src="ui/uploads.js"></script>
-<script>
-(function(){function mh(){fetch("/api/memory-health").then(function(r){return r.json()}).then(function(o){var el=document.getElementById("memHealthBody");if(!el||!o.ok)return;var st={pass:"var(--ok)",warn:"#d9a514",fail:"#e0524d"};el.innerHTML=Object.keys(o.metrics).map(function(k){var v=o.metrics[k];return '<div class="mh-card" style="border-color:'+(st[v.status]||"var(--line)")+'"><div class="mh-k">'+k+'</div><div class="mh-v">'+(v.value==null?"n/a":v.value)+'</div><div class="mh-d">'+(v.detail||"")+'</div></div>'}).join("")}).catch(function(){})}
-if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",function(){setTimeout(mh,1500)})}else{setTimeout(mh,1500)}})();
-</script>
 </body>
 </html>
