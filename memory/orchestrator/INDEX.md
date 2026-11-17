@@ -2,6 +2,7 @@
 Last updated: 2026-11-17.
 
 ## Entries (keyword -> pointer | use case)
+- retro draft auto-generator (goal #10) -> memory/orchestrator/retro_draft_cycle3_2026-11-17.md + retro_draft.py (root)   96% auto-fill; fleet 48/80; evidence trend 3 cycles
 - failover drill tooling (goal #8) -> failover_drill.py (root dir) + non-sandbox-queue entry   WinRM kill + probe loop + fleet-detection; queued for White execution 0/2 drills
 - pin-sha stale ref fix (MEMORY.md Hot Note closed) -> memory/orchestrator/pin-sha-stale-ref-fix-2026-11-17.md   live pin verified 2a3ffa6ac79c on disk; misdirected note corrected
 - designer QA-gate unblock (assist) -> memory/orchestrator/designer-qa-gate-unblock-2026-11-17.md   design_check.py crash fixed + 3 findings (#8 #actBody 1.7, 2 gate false-positives); browser/axe logged NEEDS-HUMAN
