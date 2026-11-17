@@ -2771,15 +2771,22 @@ def _autoloop_state():
         la = {k: float(v) for k, v in _agent_last_active.items()}
         la.update({k: float(v) for k, v in (d.get("last_active") or {}).items() if k not in la})
     now = time.time()
+    agents = load_agents()["agents"]
+    open_by_name = {a.get("name", ""): _agent_open_goal_count(a.get("name", ""))
+                    for a in agents if a.get("name")}
+    # paused only when the maintenance budget is spent AND no seat has real work left -
+    # productive passes (queued msg / open goal) are exempt from the cap (2026-11-17 budget fix)
+    paused = int(d.get("streak", 0)) >= AUTOLOOP_MAX_STREAK and not any(open_by_name.values())
     out = {"ok": True, "idle_s": AUTOLOOP_IDLE_S, "tick_s": AUTOLOOP_TICK_S,
            "streak": int(d.get("streak", 0)), "max_streak": AUTOLOOP_MAX_STREAK,
-           "paused": int(d.get("streak", 0)) >= AUTOLOOP_MAX_STREAK,
+           "paused": paused,
            "last_human_ts": d.get("last_human_ts"), "last_pass": d.get("last_pass"),
            "agents": {}}
-    for a in load_agents()["agents"]:
+    for a in agents:
         n = a.get("name", "?")
         ts = float(la.get(n) or PORTAL_START)
-        out["agents"][n] = {"idle_s": int(now - ts), "open_goals": _agent_open_goal_count(n)}
+        out["agents"][n] = {"idle_s": int(now - ts),
+                            "open_goals": open_by_name.get(n, 0)}
     return out
 
 
@@ -2802,8 +2809,6 @@ def _autoloop_watchdog():
             names = [a.get("name", "") for a in load_agents()["agents"] if a.get("name")]
             for n in names:
                 la.setdefault(n, PORTAL_START)   # fresh restart: no burst of passes
-            if int(d.get("streak", 0)) >= AUTOLOOP_MAX_STREAK:
-                continue   # budget spent - wait for human input (autoloop_note_human resets)
             idle = [n for n in names if now - la[n] >= AUTOLOOP_IDLE_S]
             if not idle:
                 continue
@@ -2817,7 +2822,7 @@ def _autoloop_watchdog():
                 mls = {}
             ready = [n for n in idle if not mls.get(n, {}).get("status") or mls[n]["status"] == "ok"]
             ready = ready[:AUTOLOOP_BATCH_MAX]
-            sections, why_bits = [], []
+            sections, why_bits, productive = [], [], False
             for n in ready:   # per-agent task, steered by behaviour analysis of their last reply
                 try:
                     pend = umq_pending_for(n, names)
@@ -2827,10 +2832,12 @@ def _autoloop_watchdog():
                 idle_s = int(now - la[n])
                 hint = _autoloop_behaviour_hint(n)
                 if pend:
+                    productive = True
                     why_bits.append("%s:queued-msg" % n.lower())
                     body = ("a queued human message is waiting and will be injected below - handle it "
                             "FIRST, then take ONE concrete step on your open goals.")
                 elif og > 0:
+                    productive = True
                     why_bits.append("%s:%d-open" % (n.lower(), og))
                     body = ("take ONE concrete next step on your oldest open goal "
                             "(memory/goals/%s.md, %d open)." % (n.lower(), og))
@@ -2845,6 +2852,13 @@ def _autoloop_watchdog():
                     n, idle_s, body, (" " + hint) if hint else "")))
             if not sections:
                 continue   # all at 100% inside cooldown - genuinely nothing to do yet
+            # 2026-11-17 budget fix: AUTOLOOP_MAX_STREAK exists to stop pointless maintenance
+            # sweeps at 100% (GPU cost). It must NEVER pause real work - a pass that hands any seat
+            # a queued human message or an open-goal task is productive and RESTARTS the counter;
+            # only all-maintenance batches consume it. (Before this fix, 40 consecutive passes
+            # paused the loop for hours while Designer/Scribe/Mechanic still held 9 open goals.)
+            if not productive and int(d.get("streak", 0)) >= AUTOLOOP_MAX_STREAK:
+                continue   # maintenance budget spent - wait for human input (autoloop_note_human resets)
             # cast = the seats that ACTUALLY got a task section. Firing a seat with no section only
             # burns a full turn on [SILENT] (2026-11-17: batch #2 fired 7, only 3 had sections).
             batch = [n for n, _ in sections]
@@ -2856,8 +2870,9 @@ def _autoloop_watchdog():
             run, err = start_group_run(prompt, extra={"solo": True, "autoloop_why": why,
                                                       "cast_override": batch})
             if not err:
-                d["streak"] = int(d.get("streak", 0)) + 1
+                d["streak"] = 0 if productive else int(d.get("streak", 0)) + 1
                 d["last_pass"] = {"agent": ", ".join(batch), "batch": len(batch), "why": why,
+                                  "productive": productive,
                                   "ts": time.strftime("%Y-%m-%d %H:%M:%S")}
                 with _autoloop_lock:
                     _autoloop_save(d)

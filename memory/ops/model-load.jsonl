@@ -20,3 +20,4 @@
 {"ts": "2026-11-17 00:19:25", "run": "g-1a1e4ba1fa0-af9d64", "missing": {"Researcher": "unreachable"}}
 {"ts": "2026-11-17 00:23:55", "run": "g-1a1e4be3fae-3db5e6", "missing": {"Researcher": "unreachable"}}
 {"ts": "2026-11-17 00:34:10", "run": "g-1a1e4c7a29b-8d562c", "missing": {"Researcher": "unreachable"}}
+{"ts": "2026-11-17 11:41:05", "run": "g-1a1e72a33b9-44fb7b", "missing": {"Builder": "unreachable", "Orchestrator": "unreachable", "Verifier": "unreachable"}}
