@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Next pass: build `cycle_check.py` to push runbook automation coverage past 80% acceptance threshold (currently
-- Goal #3 (Round-record auto-synthesis) closed: OWNER_SIGNALS table added to round_record_draft.py, pre-fill 63%→89%, meets ≥80% criterion.
 - Goal #5 done: memory/portal/components.md (152 lines) documents all 6 portal components with selectors, examples, tokens; linked from INDEX.
 - Scribe goal #1 done: /api/decisions now supports ?agent,?since,?status,?q filters; 5 tests pass; code in agent_portal.py; evidence at memory
 - CSS bundle at 73.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 done: ui/app.css had 36 hard-coded hex values, all mapped to :root tokens; zero remain outside :root.
 - Scribe goal #1 (Decision trace API v2) complete: `/api/decisions` now supports `?agent`, `?since`, `?q`, `?status`; 5 queries verified <50ms
 - Goal #6: `memory/ops/schtask_dep_gen.py` built+tested (4 tests pass); evidence at `memory/mechanic/goal6-dep-gen-built-2026-11-17.md`.
+- Archivist created `memory
+- LLM Router: union of agent baseline caps + task caps too strict for specialized models (e.g. SDXL); relaxed to per-task override.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
