@@ -1,0 +1,6 @@
+{"run": 1, "latency_ms": 10.0, "lat_baseline": null, "lat_sev": "OK", "proc_count": 100, "proc_baseline": null, "proc_sev": "OK", "overall": "OK"}
+{"run": 2, "latency_ms": 14.0, "lat_baseline": 10.0, "lat_sev": "OK", "proc_count": 135, "proc_baseline": 100, "proc_sev": "WARN", "overall": "WARN"}
+{"run": 3, "latency_ms": 19.6, "lat_baseline": 12.0, "lat_sev": "WARN", "proc_count": 182, "proc_baseline": 117.5, "proc_sev": "WARN", "overall": "WARN"}
+{"run": 4, "latency_ms": 27.4, "lat_baseline": 14.0, "lat_sev": "WARN", "proc_count": 246, "proc_baseline": 135, "proc_sev": "WARN", "overall": "WARN"}
+{"run": 5, "latency_ms": 38.4, "lat_baseline": 16.8, "lat_sev": "WARN", "proc_count": 332, "proc_baseline": 158.5, "proc_sev": "CRIT", "overall": "CRIT"}
+{"run": 6, "latency_ms": 53.8, "lat_baseline": 19.6, "lat_sev": "WARN", "proc_count": 448, "proc_baseline": 182, "proc_sev": "CRIT", "overall": "CRIT"}

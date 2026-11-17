@@ -1,0 +1,3 @@
+:root{--bg:#0e1116;--ok:#3ddc84;--r:8px}
+.btn{background:var(--ok);border-radius:var(--r)}
+a:focus-visible{outline:2px solid var(--ok)}
