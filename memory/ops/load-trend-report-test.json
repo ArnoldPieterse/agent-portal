@@ -1,0 +1,53 @@
+{
+  "ts": "2026-11-17T07:38:33+00:00",
+  "threshold_pct": 30.0,
+  "status": "REGRESSION",
+  "days": 7,
+  "findings": [
+    {
+      "concurrency": 10,
+      "days_observed": 7,
+      "latest_ts": "2026-11-23 06:00:00",
+      "median_p95_ms": 193.1,
+      "median_p99_ms": 196.2,
+      "latest_p95_ms": 191.7,
+      "latest_p99_ms": 186.9,
+      "p95_ratio": 0.9925,
+      "p99_ratio": 0.9526,
+      "regression": false,
+      "details": []
+    },
+    {
+      "concurrency": 50,
+      "days_observed": 7,
+      "latest_ts": "2026-11-23 06:00:00",
+      "median_p95_ms": 729.8,
+      "median_p99_ms": 747.6,
+      "latest_p95_ms": 714.2,
+      "latest_p99_ms": 759.9,
+      "p95_ratio": 0.9786,
+      "p99_ratio": 1.0165,
+      "regression": false,
+      "details": []
+    },
+    {
+      "concurrency": 200,
+      "days_observed": 7,
+      "latest_ts": "2026-11-23 06:00:00",
+      "median_p95_ms": 3570.4,
+      "median_p99_ms": 3489.3,
+      "latest_p95_ms": 6176.5,
+      "latest_p99_ms": 5914.7,
+      "p95_ratio": 1.7299,
+      "p99_ratio": 1.6951,
+      "regression": true,
+      "details": [
+        "p95 6176.5ms > 1.30x median 3570.4ms (ratio 1.730)",
+        "p99 5914.7ms > 1.30x median 3489.3ms (ratio 1.695)"
+      ]
+    }
+  ],
+  "regressions": [
+    "concurrency=200: p95 6176.5ms > 1.30x median 3570.4ms (ratio 1.730); p99 5914.7ms > 1.30x median 3489.3ms (ratio 1.695)"
+  ]
+}

@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Data stuck at 2/
 - Goal #4: trend/regression detector built & verified (catches +167.8% spike, passes normal baseline)
 - Mirror daemon reverts ui/ files (app.css confirmed); Scribe wrote workflow fix doc to protect them from future reverts.
 - Mirror reverts ui/app.css to 23 tokens; idempotent fix at memory/designer/reapply_tokens.py (re-expands to 36 tokens + var() refs).
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #4 ledger corrected (was prematurely verified at 2/7 days); added --week-complete mode to load_trend.py for one-command closure on day
 - All 10 Mechanic goals closed (2026-11-17). Goal #1 adaptive probe sim verified via sim_fleet_probe_degrade.py.
 - Goal #8 typography done: fixed line-heights (#attach, #actBody) and letter-spacing (.ah, #queueHead) in ui/app.css; all 4 criteria pass.
+- Goal #4 blocked on temporal dep: White's PortalLoadProbe schtask must accumulate days
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
