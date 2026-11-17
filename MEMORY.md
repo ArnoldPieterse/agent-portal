@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe updated cycle-narrative.md to match ledger: 64/80 fleet, Scribe 10/10, Mechanic 6/10 (was stale
-- Goal #10 blocked on sandbox (no browser/LAN); unblock = 4-command one-shot documented in progress note, scripts syntax-verified.
 - Goal #10: test_manifest.py (5 Pillow-fixture tests) all PASS; visual
 - Scribe confirmed 10/10
 - TZ bug in mirror_heal.py recurs when mirror sync reverts fix; Mechanic re-applies each time (negative ages = local misread as UTC).
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe cycle-narrative updated: fleet 64→65/80, Mechanic 6→7/10; all 10 Scribe goals remain closed (zero open).
 - Red .245 host recovered since 11-16; :88
 - Goal #3 closed
+- Goal 10 unblocked-to-one-command: `memory/designer/baseline/run_all.py` chains capture→manifest→verify; just needs a browser.
+- Scribe fixed compression-fidelity-trend.md/.json (inverted labels, stale r1/r2 scores 70%→94%) to match authoritative audit files; now 10/10
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
