@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- boot_recovery.py written + runbook with per-host schtasks commands; still needs registration on
-- Theme files (CSS/JS/HTML) were lost in a clobber/mirror cycle; re-landed, pin now 043ff4d68827
 - boot_recovery.py --dry-run added to Red (was missing despite hot note); 5/5 checks pass. schtask registration still pending.
 - index.html: 14 inline
 - Goal 8 (Typography) complete: fixed line-height/letter-spacing in ui/app.css; only intentional exception is #attach icon button.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 (token layer) CLOSED: 57 tokens in :root, zero raw hex/rgba/px/duration outside token block in ui/app.css.
 - Goal #1 closed: ui/app.css fully tokenized, :root now 48 tokens, zero raw hex/rgba/duration outside :root.
 - Mechanic: Fleet probe Goal #1 — latency-drift trend detection confirmed working (3 probes, severity escalation at 400% drift > 200% threshol
+- ui/app.css fully tokenized: 28 raw hex → :root vars (22 new), zero
+- Verified: "hardcoded hex outside :root" work item was a false alarm; all 35 hex values are in :root (L6–13), L14–231 use var() only.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
