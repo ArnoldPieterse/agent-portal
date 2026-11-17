@@ -21,7 +21,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - COM broken in sandbox (schtasks exit 0xC0000022); Mechanic pivoting to post-de
 - Goal #1 (design token layer) complete: all hardcoded values in ui/app.css tokenized, 0 remaining outside :root; evidence at memory/designer/
 - Goal 1 CSS tokenization complete: all 28 hex colors + 9 radius/shadow/duration tokens added to :root; zero hardcoded values remain in ui/app
-- Goal #9 open: contradiction_count key lookup bug in memory-health endpoint needs fix before portal re-test
+- Scribe#9 CLOSED 11-17: memory-health dashboard live (6/6 metrics non-null on :8099); UI container wired + render verified; marker stamped in goals/scribe.md
 - load_trend.py now has compute_outage + load_outage_days; portal still down (WinError 10013), gating Goals 2 & 4
 - Mechanic added --dry-run to boot_recovery.py: validates full recovery chain (script, Python, host-match, log, deploy) without Studio/admin;
 - load_probe.py upgraded to v2: ensure_portal() auto-starts agent_portal.py if :8099 is down, removing manual dependency for Goal #4 baseline

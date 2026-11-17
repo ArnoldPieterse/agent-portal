@@ -34,3 +34,7 @@ Artifact: memory/scribe/memory-health-metrics-offline-2026-11-17.json
 - durable_copy_integrity fail(7) -> pass: deleted _lint_test_bad.md fixture; indexed 6 scribe leaves in scribe/INDEX.md catch-up section.
 - Final board: hot_file_lines=pass(30) orphan_rate=pass(0%) contradiction_count=warn(1) supersession_validity=pass owner_coverage_pct=warn(61.4) durable_copy_integrity=pass
 - Known caveat: metric uses HERE constant; direct-exec replication without HERE silently returns zero-defaults (broad excepts). Test via endpoint, not exec.
+
+## CLOSED 2026-11-17 (Studio seat)
+- Live render check done: /api/memory-health on :8099 serves all six metrics non-null; index.html now carries #memHealthBody + self-contained mh() render script (uploads.js block was dead code - container element never existed in any HTML).
+- durable_copy_integrity fail(1) root cause: _lint_test_bad.md fixture still on disk (earlier "deleted" claim was lossy); removed. Board back to all-pass except documented warns (contradiction_count=1, owner_coverage_pct=61.4).
