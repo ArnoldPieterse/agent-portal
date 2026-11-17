@@ -1,0 +1,1 @@
+{"ts": "2026-11-17T15:20:19+00:00", "goal": 3, "test": "simulate_degrade(White, 8099, base=5.0ms)", "result": "PASS", "detail": "Predictive WARN fired at ratio 1.41x (threshold for CRIT: 10x). Trend slope 0.756ms/step = 11.3%/step over 4 consecutive rising readings. WARN fires one interval before CRIT would have.", "artifact": "fleet_probe.py --simulate-degrade White 8099 5.0"}

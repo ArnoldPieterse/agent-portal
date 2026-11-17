@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #10 mirror sync epoch: Phase 0+1 done (ownership map, manifest, 12 tests pass); NOT verified—still needs clock-skew sim + 10 test cycle
-- Goal 1 (design token audit) COMPLETE: 31 tokens added to :root in ui/app.css, zero hex colors outside :root confirmed via grep.
-- Goal #3 done: gen_api_ref.py --diff mode + mirror hook implemented; incremental bug fixed (full graph 463 edges, delta reported correctly).
 - E2E contract test for day-7 closure chain passes: pointed log_event's EVENT_LOG at temp file, drove real writer, verified byte-identical out
 - Goal #2 fleet panel: added loading skeleton, error fallback, and empty-hosts guard (nodes[0] crash fixed); JS now 152 lines.
 - Goal #8 (compression gate) is complete but unledgered; Scribe's next action is to record it in `scribe.md`.
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder goal #9 verified-marker is truncated mid-path (stale claim); audit script at memory/orchestrator/audit_verified_artifacts.py
 - Goal #10 Phases 2-4 done: `memory_mirror_epoch.py` (3.5 KB) gates push on ownership, enforces pull + quarantine.
 - Goal #2: breakpoint_gate.py now covers full matrix [375,768,1024,1920], logic-test 11/11 PASS; only live CDP screenshot remains.
+- Goal #1 (knowledge graph auto-update) CLOSED: incremental mtime delta + orphan detection verified, duplicate-edge bug fixed.
+- Scribe closed goals #2 (contradiction detector v2) and #3 (
+- Mechanic at 4/10 goals (was 1/10): #3 adaptive probe v2, #5 egress rules v2, #9 runbook gap analysis all verified this pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
