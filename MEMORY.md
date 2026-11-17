@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 done: ui/app.css had 36 hard-coded hex values, all mapped to :root tokens; zero remain outside :root.
-- Scribe goal #1 (Decision trace API v2) complete: `/api/decisions` now supports `?agent`, `?since`, `?q`, `?status`; 5 queries verified <50ms
-- Goal #6: `memory/ops/schtask_dep_gen.py` built+tested (4 tests pass); evidence at `memory/mechanic/goal6-dep-gen-built-2026-11-17.md`.
-- Archivist created `memory
 - LLM Router: union of agent baseline caps + task caps too strict for specialized models (e.g. SDXL); relaxed to per-task override.
 - Scribe uses activation/ttl_minutes from hotload-catalog.json as round-planning signal; hot
 - Three agents shipped competing LLM selector implementations; consolidation (not a 4th) is the next required step.
 - Researcher's llm_selector.py (root, 27KB) has 2 verified defects (B1/B2) from Verifier; Researcher owns the fix.
 - Goals #3,#9 CLOSED; #7 advanced: _fleet
 - Built memory/scribe/durable_check.py (goal #6): scans .md/.json under memory/, checks INDEX coverage, exits 1 naming orphans. Evidence: dura
+- Host recovery confirmed via model-load.jsonl: Black .99 & Red .245 no longer missing; 2/5 OQ entries now PARTIAL, awaiting Mechanic probe
+- Scribe 9/10 closed; only Goal #9 (cross-cycle narrative thread) remains — cycle-3 entry pending at cycle end.
+- Goals #3 & #9 CLOSED. fleet_probe_v2.py rebuilt after mirror loss. Remaining: production deployment of predictive alerts.
+- Goal #2: test_slo_enforce.py built (8/8 pass), de-risks prod run; still blocked on sch
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

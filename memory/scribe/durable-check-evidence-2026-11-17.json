@@ -1,0 +1,15 @@
+{
+  "goal": "scribe#6 - Durable-copy guarantee enforcement",
+  "date": "2026-11-17",
+  "artifact": "memory/scribe/durable_check.py",
+  "description": "Automated check that every .md/.json knowledge leaf under memory/ has a corresponding INDEX.md entry. Excludes __pycache__, backups, canary, evidence subdirs. Supports --new-only (last 24h) for per-commit CI use.",
+  "acceptance_test": {
+    "method": "Injected memory/scribe/_durable_check_test_orphan.md without INDEX entry; ran durable_check.py --new-only",
+    "result": "PASS - exact filename reported as ORPHAN, exit code 1",
+    "output_line": "ORPHAN: memory/scribe/_durable_check_test_orphan.md"
+  },
+  "current_baseline": {
+    "orphans_last_24h": 282,
+    "note": "Expected - rule just codified; agents will add INDEX entries going forward. Check is ready for CI integration."
+  }
+}
