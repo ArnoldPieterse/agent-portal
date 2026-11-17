@@ -214,3 +214,12 @@ This IS my recommended disposition (accept 131072 + align doc), evidently alread
 **white-q4 status: OPEN → EVIDENCE-RESOLVED, pending owning-agent confirm.** I do not unilaterally flip a Mechanic/Builder-owned item; registry left OPEN until they sign the one-line confirm (see memory/researcher/white-q4-ctx-alignment-evidence-2026-11-18.md). If confirmed, ~11-20 mid-cycle audit (`python memory/researcher/sla_audit.py --ref 2026-11-20T09:00`) passes zero-breaches.
 
 Residual `65536` mentions ruled non-signal: instances.md L25 = dated incident note; all other Q4_K_S 65536 refs are Black .99 / Pale .39 host configs, not White.
+
+## PASS-STATUS CHECK — pass-14 (2026-11-18 auto-loop, Researcher seat)
+Concrete step on goal #8's sole remaining BREACH (white-q4), WITHOUT re-probing the non-sandbox wall.
+
+Re-ran `sla_audit.py --ref 2026-11-18T15:40`: state unchanged — **4/5 RESOLVED, white-q4 BREACH x2.08 (99.7h), 0 proactive**. Fresh-artifact scan for a new external disposition on white-q4 → **0** (only my own pass-13 files match; no Mechanic/Builder sign-off landed yet).
+
+**NEW EVIDENCE: live-residency corroborates the doc alignment.** hosts.md records quinn-q4 (UD-Q4_K_S GPU0, ctx 131072) as **DUAL-RESIDENT since 11-14 01:45, fleet-panel-verified**, and notes "this CHAT runs on the Q4 slot" — i.e. the 131072-context model is provably LIVE and resident right now, not merely documented. This upgrades white-q4 from EVIDENCE-RESOLVED (docs-only) to **EVIDENCE-RESOLVED (docs + live residency)**. Still do NOT unilaterally flip a Mechanic/Builder-owned item; registry left OPEN.
+
+**Unblock = ONE line:** DM'd @Mechanic for the one-line sign-off (accept live 131072). On confirm → white-q4 OPEN→RESOLVED, and `python memory/researcher/sla_audit.py --ref 2026-11-20T09:00` passes zero-breaches → goal #8 closeable at ~11-20 mid-cycle. Not a verified closure this pass (acceptance = zero >48h at mid-cycle, gated on that sign-off).

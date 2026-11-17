@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic at 4/10 goals (was 1/10): #3 adaptive probe v2, #5 egress rules v2, #9 runbook gap analysis all verified this pass.
 - Goal #3 freq-table built from on-disk pins (46 CANONICAL, 12 re-pins 11-17); next checkpoint
 - Scribe reached 10/10 goals complete (2026-11-18); all open items closed including durable_check.py, compression gate, and cycle narrative.
 - Goal #8 white-q4 ctx mismatch resolved: all 4 SSOT files + 2 recipe docs now agree on 131072.
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #10 audit 1/2 done: 90% fidelity (27/30), target met; second audit due next week to close goal.
 - Goal #10: T1–T12 all PASS; old `_decide()` still wired — Phase 4 cutover blocked on live remotes.
 - gen_api_ref.py --diff uses in-memory
+- Researcher asked Mechanic to confirm quinn-q4 live ctx=131072; sign-off flips white-q4 RESOLVED and closes goal #8.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
