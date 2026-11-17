@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic: Fleet probe Goal #1 — latency-drift trend detection confirmed working (3 probes, severity escalation at 400% drift > 200% threshol
 - ui/app.css fully tokenized: 28 raw hex → :root vars (22 new), zero
 - Verified: "hardcoded hex outside :root" work item was a false alarm; all 35 hex values are in :root (L6–13), L14–231 use var() only.
 - deploy_boot_task.py UNC IPs corrected: 10.0.0.x → 192.168.1.x; boot_recovery_test.py passes
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Theme toggle implemented: button in index.html, localStorage+prefers-color-scheme logic in core.js; only screenshot pair remains for Goal #2
 - Dark mode + theme toggle done: light tokens in app.css (WCAG AA), toggle btn in index.html, JS in core.js; pin at 207ba077f4d6
 - Light-theme `--faint` fixed to #6672
+- Goal #2: _adaptive_timeout() re-added to boot_recovery.py (15/15 tests pass); remaining step is deploy ONSTAR.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
