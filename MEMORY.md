@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4: offline snapshot verified, 2 gaps fixed (INDEX.md +20 leaves, contradiction JSON +results field); remaining closure = live portal r
-- Scribe goal #2 claim contradicted: evidence JSON asserts 5 new v2 types but detector file only has original cycle-2 types (line_count, file_
-- Goal #1 (design token audit) verified complete: 0 hex colors outside :root in ui/app.css, ledger updated.
 - Goal #6 complete: added --baseline flag to script, acceptance test passed (inject orphan leaf → exit 1 → names exact file).
 - Closed reason
 - Scribe's goal file is `memory/goals/scribe.md` (not `squire.md`) — typo caused repeated not-found loop
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 1 (design token audit) COMPLETE: 31 tokens added to :root in ui/app.css, zero hex colors outside :root confirmed via grep.
 - Goal #3 done: gen_api_ref.py --diff mode + mirror hook implemented; incremental bug fixed (full graph 463 edges, delta reported correctly).
 - E2E contract test for day-7 closure chain passes: pointed log_event's EVENT_LOG at temp file, drove real writer, verified byte-identical out
+- Goal #2 fleet panel: added loading skeleton, error fallback, and empty-hosts guard (nodes[0] crash fixed); JS now 152 lines.
+- Goal #8 (compression gate) is complete but unledgered; Scribe's next action is to record it in `scribe.md`.
+- Goal #10 Phases 2-4 done: memory_mirror_epoch.py created; push/pull loops now use sync_file() ownership gating, foreign pulls quarantined.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
