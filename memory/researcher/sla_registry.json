@@ -1,0 +1,54 @@
+{
+  "_comment": "Authoritative SLA clock for goal #8 (open-questions cycle-3). Each entry carries an explicit sla_started timestamp SEPARATE from any re-list date. The markdown log (open-questions-log.md) is the human record; THIS file is the single source of truth for age math. Run: python memory/researcher/sla_audit.py  -> prints table + summary + exit code (0=zero-breaches, 1>=1 breach).",
+  "sla_hours": 48,
+  "proactive_hours": 24,
+  "cycle": "cycle-3",
+  "entries": [
+    {
+      "id": "black99-unreachable",
+      "question": "Black IP_BLACK :8888 unreachable from White (alias probes builder-q4/verifier-q4 timed out)",
+      "sla_started": "2026-11-16T15:40",
+      "sla_started_note": "OPEN line: 'new since 11-15 3/3 up', first noted 11-16 ~15:4x. Hour is an estimate (log gives only ~15:4x). Carryover from cycle-2, never resolved -> clock NOT reset by cycle-3 restructure.",
+      "status": "PARTIAL",
+      "owner": "Mechanic",
+      "unblock_cmd": "Test-NetConnection IP_BLACK -Port 8888 from non-sandbox seat -> close or H-OUT",
+      "last_status_change": "2026-11-17 pass-5 (host appears UP per model-load telemetry; conflicting vantage with round-record power-on-blocked)"
+    },
+    {
+      "id": "red-portal-process",
+      "question": "Is Red's portal process running? (:8099 filtered while :8888 + SMB open)",
+      "sla_started": "2026-11-16T15:40",
+      "status": "RESOLVED",
+      "resolved_at": "2026-11-17T19:50",
+      "resolution": "ALIVE on Red PID 19988 (_portal_pid.txt + watchdog.log 19:52 recovery). 'Filtered' symptom = sandbox egress-guard WinError 10013, NOT portal-down.",
+      "owner": "Mechanic"
+    },
+    {
+      "id": "designer-patch-apply",
+      "question": "Designer goals #2/#3/#4 stranded index.html edits - patch authored+verified, awaiting Mechanic non-sandbox apply (sha12 05c461982beb)",
+      "sla_started": "2026-11-16T15:40",
+      "sla_started_note": "OPEN section gives only '11-16'; hour estimated at the same ~15:4x cluster as the other two 11-16 items. If true open was earlier on 11-16, age is larger - see audit residual note.",
+      "status": "OPEN",
+      "owner": "Mechanic (apply) + Designer (close)",
+      "unblock_cmd": "python memory/researcher/designer-234-patch-for-mechanic.py from SHARED ROOT -> return confirmed new sha"
+    },
+    {
+      "id": "orphan-round-logs",
+      "question": "308 orphan round logs under memory/<agent>/ - accept as noise or add one pattern-line per agent INDEX?",
+      "sla_started": "2026-11-15T00:00",
+      "status": "RESOLVED",
+      "resolved_at": "2026-11-17T19:50",
+      "resolution": "Fleet chose option (a) 'accept as filename-discoverable noise' - operationalized by Archivist #2 in POST /api/todo/prune gate (rc=2 orphans-only proceeds WITH warning). Credit Archivist; original owner Researcher.",
+      "owner": "Archivist/Scribe"
+    },
+    {
+      "id": "white-q4-ctx-mismatch",
+      "question": "White Q4 live ctx 131072 vs boot recipe 65k - pre-existing mismatch, left as-is during rename",
+      "sla_started": "2026-11-14T12:00",
+      "sla_started_note": "OPEN section gives only '11-14'; described as PRE-EXISTING (predates 11-14). If true open was earlier, age is even larger -> breach multiplier under-estimated. Hour estimated.",
+      "status": "OPEN",
+      "owner": "Mechanic/Builder",
+      "unblock_cmd": "sign ACCEPT live 131072 + update boot-recipe doc (Researcher recommendation, escalated 11-16)"
+    }
+  ]
+}

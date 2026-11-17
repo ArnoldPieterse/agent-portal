@@ -1,0 +1,2 @@
+{"ts": "2026-11-17 23:48:00", "host": "Red", "disk": {"error": "[WinError 5] Access is denied"}, "mem": {"total_mb": 261855, "used_mb": 15822, "free_mb": 246033, "pct_used": 600}, "model": {"loaded": false}, "portal_up": false}
+{"ts": "2026-11-17 23:48:08", "host": "Red", "disk": {"total_gb": 1861.9, "used_gb": 816.3, "free_gb": 1045.6, "pct_used": 43.8}, "mem": {"total_mb": 261855, "used_mb": 15836, "free_mb": 246019, "pct_used": 6}, "model": {"loaded": false}, "portal_up": false}

@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 (adaptive-probe-v2) CLOSED:
-- Goal files reset 11-17 wiped verified markers; SLA n dropped 22→19, threshold unmet again — metric needs re-accumulation
 - Goal #2
 - Scribe closed goals #1 and #6 this pass; 9/10 done, only #8 (compression quality gate productionization) remains open.
 - Goal #4 (Agent Onboarding Wizard): backend `/api/agents/onboard` POST endpoint done; UI form still pending next pass.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9 (runbook gap analysis) closed: 92% coverage, only 2 human-only steps remain as justified gaps.
 - Goal #1 (Decision trace API v2) closed: 3 acceptance queries passed (19/60/0 of 140, max 27ms).
 - Goal #7 (motion audit) has one open failure: `prefers-reduced-motion` media query missing from `ui/app.css`; fix block documented in evidenc
+- Goal #1 closed; live HTTP test on :8099 still pending — sandbox firewall blocks it, needs external verification next pass.
+- Goal #9 closed: audited last 3 runbooks (hotline-v2, git-h
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -39,6 +39,7 @@ Last updated: 2026-11-15 (FINAL: mirror-clobber mechanism resolved w/ config evi
 - r27b-live-leg-pass-condition-2026-11-14.md — Arnold leg exact pass condition (N=1 iff canary is sole FILE recursively; audit must count files not entries) + hosts.md pin correction 2f5aafe3/16,455 B + mirror convergence note (2026-11-14)
 - dream-big-goal-loop-2026-11-14.md — Self-Measuring Goal Loop wish + goal_ledger.py (evidence-gated reaching; [x] alone = claimed not reached) live run fleet 30/80; web: OKR-Agent arxiv 2311.16542, Routa/Hermes Kanban, ACM agentic-assessment
 - open questions log / dated question tracker / Scribe pull source -> memory/researcher/open-questions-log.md   2026-11-15: OPEN+RESOLVED sections, one line per question
+- SLA audit tool + pass-8 age-regression finding (goal #8) -> memory/researcher/sla-audit-tool-and-pass8-age-regression-2026-11-17.md   2026-11-17 pass-9: reproducible one-command audit (sla_registry.json = authoritative sla_started clock + sla_audit.py --ref/--json). FINDING: pass-8 hand-computed ages overstated ~24h (off-by-one-day); corrected @ 11-17 23:48 = 2 RESOLVED / 1 genuine BREACH (White Q4 ctx only) / 2 PROACTIVE (Black .99 + Designer patch, breach-by 11-18 15:40). Mid-cycle re-audit = single command. NOT closed - zero-breaches @ ~11-20 still needs non-sandbox dispositions.
 - /api/git probe / GET+POST commit expected outputs / Verifier reuse -> memory/researcher/probe_api_git.py   7-probe suite, ALL PASS 2026-11-15
 
 ## Cycle-2 leaves (2026-11-16, worked on-behalf of Researcher per user directive)

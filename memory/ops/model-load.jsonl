@@ -91,3 +91,4 @@
 {"ts": "2026-11-17 19:53:51", "run": "g-1a1e8ed596e-d5d6d7", "missing": {"Builder": "not_loaded", "Orchestrator": "not_loaded", "Verifier": "not_loaded", "Mechanic": "not_loaded"}}
 {"ts": "2026-11-17 22:11:33", "run": "g-1a1e96b696a-8474bf", "missing": {"Researcher": "unreachable"}}
 {"ts": "2026-11-17 22:16:33", "run": "g-1a1e96ffd6d-c1d6a6", "missing": {"Researcher": "unreachable"}}
+{"ts": "2026-11-17 23:46:36", "run": "g-1a1e9c2712a-6d05ce", "missing": {"Designer": "unreachable", "Archivist": "unreachable"}}
