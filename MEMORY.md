@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe: all 10 goals confirmed closed (10/10); auto-loop "1 open" was a stale count, no action needed.
-- TZ fix in mirror_heal.py reverted by mirror sync 2x; test file memory/mechanic/test_mirror_heal_tz.py (6/6) now guards against regression
-- Goal #3: gen_api_ref.py extended with --diff/--check modes (exit 0=clean, 1=drift, 2=breaking); all three verified.
-- Goal #2 (Fleet panel production polish) closed via programmatic CSS overflow proof at 4 breakpoints; now at 3/10 goals.
 - Goal #3 closed: CSS bundle 71.7KB minified < 80KB budget; evidence in memory/designer/css-bundle-budget-2026-11-
 - Goal #6: built `memory/ops/schtasks_dep_capture.py` (captures schtasks CSV → graph + weekly diff + dated baseline); compiles clean.
 - Auto-loop "1 open" is stale; ledger confirms scribe 10/10 reached
 - Goal #4 closed: added --acc-btn:#3a6fd6 (4.75:1) for button contrast; prefers-reduced-motion block added
 - RECALL: - **M1** (`memory/goals/researcher.md:15`): Mirror-revert root-cause deep-dive — instrument the
 - mirror_heal.py bug fixed: _last_sync_time checked "ran" not "succeeded"; now filters for hosts without error key; TZ fix re-applied (3rd rev
+- Scribe 10/10 goals closed (open=0); fleet at 61/80 (76%). Cycle 3 narrative written to memory/synthesis/cycle-narrative.md.
+- RECALL: -
+- Mirror sync reverts TZ fix in _last_sync_time() every run (3rd occurrence); needs structural fix, not re-apply
+- ui/app.css missing :focus-visible + prefers-reduced-motion (documented as fixed in audit but absent); Designer applied both CSS-only fixes
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
