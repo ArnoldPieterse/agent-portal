@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe terminal calls all failed ("tool call encountered an issue"); cycle-3 narrative append to memory/synthesis/cycle-narrative.md still o
-- All 10/10 goals verified closed (open=0); cycle-narrative fleet figure updated to 61/80 on 2026-11-18 pass.
 - Goal 2 fleet polish
 - Goal #6 dep-graph: synthetic 2-week harness built on schtask_dep_gen.py, 6 checks pass; still open pending real White snapshots for producti
 - Goal #6 dep-graph closed (6/10 done). Remaining #1/#2/#4/#8 all need non-sandbox White session; checklist at memory/mechanic/unblock-checkli
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe's goal file is NOT at memory/goals/squire.md (path doesn't exist) — do not re-probe it; find actual path from ledger or workspace lis
 - Error/empty/loading state pattern proven in
 - Mechanic found COM wall blocks schtasks /query but filesystem XML read of task files is an unblocked path for real productionization evidenc
+- Scribe ledger shows 0 open goals; batch scheduler's "1 open" count is stale — trust ledger SSOT over scheduler display.
+- Goal #8: `test_chaos_drill_sim.py` 14/14 PASS; remaining = one live kill+recover + monthly schtask reg (non-sandbox White session).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
