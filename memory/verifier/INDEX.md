@@ -1,6 +1,9 @@
 # memory/verifier/ INDEX
 Last updated: 2026-11-17.
 
+## 2026-11-18
+- durable-check-reverify-2026-11-18.md — **CONFIRMED** Scribe#6 durable_check.py: injected test leaf, detected in full violations list (exit 1). Caveat: CLI truncates to 50 sample; baseline mechanism needed for "exact file named" in high-violation state.
+
 ## 2026-11-17
 - theme-css-block-absent-2026-11-17.md — **STALE-CLAIM CLOSED**: live app.css (sha1=13f934c983b6) has 0 `[data-theme=dark]` + 0 `prefers-color-scheme`; refutes ui-slices-verify's dark-mode PASS; toggle is JS-only, no CSS effect. Chain seq 5.
 - ui-slices-verify-2026-11-17.md — **PARTIALLY SUPERSEDED**: status-dot PASS still holds; dark-mode "[data-theme=dark] block present" claim REFUTED by theme-css-block-absent (same day). elev.py absent -> schtasks gated, no loop

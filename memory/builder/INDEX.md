@@ -32,4 +32,5 @@ Last updated: 2026-11-17 (Builder auto-loop: added portal-startup + css-tokens e
 - -> memory/builder/agent-health-checks.jsonl   cycle-2 goal: agent capability health matrix data
 - -> memory/builder/api_contract_test.py   cycle-2 goal 5: API contract pinning (--record/--check, fixtures in api-fixtures/)
 
-- canary-goal1-first-real-deploy-2026-11-17.md — goal #1 first real canary deploy (BUILD_VERSION, all hosts green)
+- canary-goal1-first-real-deploy-2026-11-17.md ï¿½ goal #1 first real canary deploy (BUILD_VERSION, all hosts green)
+- scribe-g4-memhealth-dom-node-2026-11-18.md â€” 2026-11-18 Builder cross-assist: added #memHealthBody to index.html (Scribe goal #4)
