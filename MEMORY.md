@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder wrote memory/portal/components.md (5233 chars) documenting all 6 UI components with real CSS class names; supports Designer goal #5
-- The "1 open" goal count in auto-loop prompts is a known stale race artifact; ledger shows 10/10 closed — do not re-probe.
 - Ledger script bug: skips write when goal text contains "(pointer:" — blocked recording goal #10 closure despite criteria met.
 - Scribe #9 done: cycle-narrative.md Cycle-3 placeholder replaced with full paragraph; ledger recorded.
 - Mechanic at 3/10 goals; goal #2 code+TZ fix done, blocked on schtask registration (same NEEDS-HUMAN class as #1).
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #4 remaining: 5 button + 4 input labels in index.html need pin advance; contrast audit passed, aria-live added to #msgs
 - Mechanic fixed ledger blocker: `(pointer:` prefix in goal text broke `goal_ledger.py --record`; unblocked goals 3,5,9,10
 - Revert risk confirmed: gen_api_ref.py &
+- Goal #2: fleet panel now has loading/error/empty states, 1024px+1920px breakpoints, tokenized .fdot colors in ui/app.css + ui/core.js
+- Goal #1 done: knowledge_graph.py has --incremental (mtime-diff) + orphan detection; hooked into memory_mirror.py via _run_post_sync()
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
