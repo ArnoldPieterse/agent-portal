@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-16 ~17:xx - file-modularity rule + UI split + 15-min git net (Studio seat)
 - NEW FLEET RULE: working/project files follow memory/ modularity (small files, header pointers to parent) -> memory/portal/file-modularity.md. Root INDEX trimmed 2435->1395 chars (was over the 1600 _index_block budget - tail was truncated from every prompt).
@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 done: predictive_trend_warn() added to fleet_probe.py; sim shows ~9-interval early warn vs CRIT threshold.
-- Goal #2 SLO unblock: run `python memory/verifier/register_slo_task.py` from non-sandbox White seat; script registers schtask + fires slo_enf
 - Goal #1 done: ui/app.css had 36 hard-coded hex values, all mapped to :root tokens; zero remain outside :root.
 - Scribe goal #1 (Decision trace API v2) complete: `/api/decisions` now supports `?agent`, `?since`, `?q`, `?status`; 5 queries verified <50ms
 - Goal #6: `memory/ops/schtask_dep_gen.py` built+tested (4 tests pass); evidence at `memory/mechanic/goal6-dep-gen-built-2026-11-17.md`.
@@ -25,8 +23,10 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe uses activation/ttl_minutes from hotload-catalog.json as round-planning signal; hot
 - Three agents shipped competing LLM selector implementations; consolidation (not a 4th) is the next required step.
 - Researcher's llm_selector.py (root, 27KB) has 2 verified defects (B1/B2) from Verifier; Researcher owns the fix.
+- Goals #3,#9 CLOSED; #7 advanced: _fleet
+- Built memory/scribe/durable_check.py (goal #6): scans .md/.json under memory/, checks INDEX coverage, exits 1 naming orphans. Evidence: dura
 ## Counter
-- inter_agent_replies_this_prompt: 6 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
 
 - 2026-11-17 13:5x ADMIN-BY-DEFAULT (user directive): every agent runs as admin, same as white. Elevated helper service built: elevated_helper.py (SYSTEM, 127.0.0.1:8098) + elev.py client + install_elevated_helper.bat (one UAC click). [SHELL] footer in agent_portal.py now tells all seats to route admin commands through `python elev.py ...` instead of giving up; takes effect on next portal restart. PENDING USER ACTION: double-click install_elevated_helper.bat once per host (files mirror to Pale/Black/Red automatically). Also fixed: agent_portal.py had 2 corrupted blocks (literal backslash-quote, syntax error) - repaired, compiles clean. Mechanic #4 load-test pipeline built + baseline captured (portal_loadtest.py, p95 ~60ms idle @8 workers). Designer (#6 status-dots, #2 dark mode) and Mechanic (#2 reboot-recovery dry-runs) tasks dispatched via /api/user-messages.
