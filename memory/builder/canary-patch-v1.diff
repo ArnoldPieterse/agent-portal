@@ -1,0 +1,10 @@
+--- a/agent_portal.py
++++ b/agent_portal.py
+@@ -11,6 +11,7 @@
+ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+ 
+ PORT = 8099
+ STUDIO = "http://127.0.0.1:8888"   # local Studio (White); remote hosts override per-agent
++PORTAL_VERSION = "3.0-canary-1"   # 2026-11-17: canary deploy v1
+ 
+ 

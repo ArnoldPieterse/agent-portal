@@ -1,0 +1,167 @@
+{
+  "timestamp": "2026-11-17T11:10:22.770342+00:00",
+  "mode": "model",
+  "engine_available_in_cwd": false,
+  "lifecycle": "propose -> test -> select -> merge -> archive",
+  "states": [
+    "PROPOSED",
+    "TEST_PASSED",
+    "TEST_FAILED",
+    "SELECTED",
+    "MERGED",
+    "ARCHIVED",
+    "REJECTED"
+  ],
+  "illegal_attempts": 10,
+  "total_tests": 12,
+  "passed": 12,
+  "failed": 0,
+  "all_pass": true,
+  "results": [
+    {
+      "test": "L1_select_on_proposed",
+      "op": "select",
+      "state_before": "PROPOSED",
+      "expected_reject_frag": "not TEST_PASSED",
+      "raised": true,
+      "error": "select illegal: CHG-0001 is PROPOSED, not TEST_PASSED",
+      "state_after": "PROPOSED",
+      "clean_state": true,
+      "illegal_rejected": true,
+      "pass": true
+    },
+    {
+      "test": "L2_select_on_test_failed",
+      "op": "select",
+      "state_before": "TEST_FAILED",
+      "expected_reject_frag": "not TEST_PASSED",
+      "raised": true,
+      "error": "select illegal: CHG-0001 is TEST_FAILED, not TEST_PASSED",
+      "state_after": "TEST_FAILED",
+      "clean_state": true,
+      "illegal_rejected": true,
+      "pass": true
+    },
+    {
+      "test": "L3_merge_on_proposed",
+      "op": "merge",
+      "state_before": "PROPOSED",
+      "expected_reject_frag": "not SELECTED",
+      "raised": true,
+      "error": "merge illegal: CHG-0001 is PROPOSED, not SELECTED",
+      "state_after": "PROPOSED",
+      "clean_state": true,
+      "illegal_rejected": true,
+      "pass": true
+    },
+    {
+      "test": "L4_merge_on_test_passed",
+      "op": "merge",
+      "state_before": "TEST_PASSED",
+      "expected_reject_frag": "not SELECTED",
+      "raised": true,
+      "error": "merge illegal: CHG-0001 is TEST_PASSED, not SELECTED",
+      "state_after": "TEST_PASSED",
+      "clean_state": true,
+      "illegal_rejected": true,
+      "pass": true
+    },
+    {
+      "test": "L5_archive_on_selected",
+      "op": "archive",
+      "state_before": "SELECTED",
+      "expected_reject_frag": "not MERGED",
+      "raised": true,
+      "error": "archive illegal: CHG-0001 is SELECTED, not MERGED",
+      "state_after": "SELECTED",
+      "clean_state": true,
+      "illegal_rejected": true,
+      "pass": true
+    },
+    {
+      "test": "L6_archive_on_proposed",
+      "op": "archive",
+      "state_before": "PROPOSED",
+      "expected_reject_frag": "not MERGED",
+      "raised": true,
+      "error": "archive illegal: CHG-0001 is PROPOSED, not MERGED",
+      "state_after": "PROPOSED",
+      "clean_state": true,
+      "illegal_rejected": true,
+      "pass": true
+    },
+    {
+      "test": "L7_test_on_merged",
+      "op": "test",
+      "state_before": "MERGED",
+      "expected_reject_frag": "not PROPOSED",
+      "raised": true,
+      "error": "test illegal: CHG-0001 is MERGED, not PROPOSED",
+      "state_after": "MERGED",
+      "clean_state": true,
+      "illegal_rejected": true,
+      "pass": true
+    },
+    {
+      "test": "L8_reject_on_archived",
+      "op": "reject",
+      "state_before": "ARCHIVED",
+      "expected_reject_frag": "terminal",
+      "raised": true,
+      "error": "reject illegal: CHG-0001 is ARCHIVED (terminal)",
+      "state_after": "ARCHIVED",
+      "clean_state": true,
+      "illegal_rejected": true,
+      "pass": true
+    },
+    {
+      "test": "L9_select_on_rejected",
+      "op": "select",
+      "state_before": "REJECTED",
+      "expected_reject_frag": "not TEST_PASSED",
+      "raised": true,
+      "error": "select illegal: CHG-0001 is REJECTED, not TEST_PASSED",
+      "state_after": "REJECTED",
+      "clean_state": true,
+      "illegal_rejected": true,
+      "pass": true
+    },
+    {
+      "test": "L10_merge_on_archived",
+      "op": "merge",
+      "state_before": "ARCHIVED",
+      "expected_reject_frag": "not SELECTED",
+      "raised": true,
+      "error": "merge illegal: CHG-0001 is ARCHIVED, not SELECTED",
+      "state_after": "ARCHIVED",
+      "clean_state": true,
+      "illegal_rejected": true,
+      "pass": true
+    },
+    {
+      "test": "H1_full_lifecycle",
+      "ops": [
+        "test",
+        "select",
+        "merge",
+        "archive"
+      ],
+      "final_state": "ARCHIVED",
+      "expected_final": "ARCHIVED",
+      "error": null,
+      "pass": true
+    },
+    {
+      "test": "H2_reject_from_selected",
+      "ops": [
+        "test",
+        "select",
+        "reject"
+      ],
+      "final_state": "REJECTED",
+      "expected_final": "REJECTED",
+      "error": null,
+      "pass": true
+    }
+  ]
+}

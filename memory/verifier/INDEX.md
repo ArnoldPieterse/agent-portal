@@ -45,6 +45,7 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - -> memory/verifier/self-cert-audit-v2-2026-11-16.md   cycle-2 goal: self-certification audit v2
 - -> memory/verifier/smb_drift_detector.py   cycle-2 goal: SMB mirror drift detector script
 - -> memory/verifier/evolution-validator-2026-11-16.json   cycle-2 goal: evolution state-machine validator output
+- -> memory/verifier/evolution-lifecycle-validator-2026-11-17.md   cycle-3 goal#10: FULL lifecycle (propose->test->select->merge->archive) validator; 10 illegal transitions rejected + clean state, 2 legal happy-paths; mode=model (adapter seam for live engine)
 - -> memory/verifier/idempotency_proof.py   cycle-2 goal: idempotency proof suite script
 - -> memory/verifier/security-matrix-2026-11-16.md   cycle-2 goal: security boundary test matrix
 - -> memory/verifier/scorecard-2026-11-16.md   cycle-2 goal: verification quality scorecard

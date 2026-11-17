@@ -6,3 +6,5 @@
 {"ts": "2026-11-17T10:31:16Z", "type": "canary-fail-apply", "detail": "Mismatch at line 12", "hosts": ["red"]}
 {"ts": "2026-11-17T10:31:42Z", "type": "canary-fail-apply", "detail": "Mismatch at line 13", "hosts": ["red"]}
 {"ts": "2026-11-17T10:32:10Z", "type": "canary-success", "detail": "all hosts green", "hosts": ["red", "black", "pale"]}
+{"ts": "2026-11-17T11:07:36Z", "type": "canary-fail-apply", "detail": "Mismatch at line 12", "hosts": ["red"]}
+{"ts": "2026-11-17T11:07:57Z", "type": "canary-success", "detail": "all hosts green", "hosts": ["red", "black", "pale"]}

@@ -12,7 +12,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PORT = 8099
 STUDIO = "http://127.0.0.1:8888"   # local Studio (White); remote hosts override per-agent
-# canary-deploy: first real pipeline run 2026-11-17
+PORTAL_VERSION = "3.0-canary-1"   # 2026-11-17: canary deploy v1
 
 
 def studio_base(agent):
@@ -447,6 +447,80 @@ def _restore_merge_queue(body):
             "committed": c["ok"] and "nothing to commit" not in combined}
 
 
+def _mirror_repair_apply(body):
+    """POST /api/mirror-repair {file, commit?}: atomically re-apply file from git commit.
+    Steps: restore content -> verify sha -> write+commit in one transaction.
+    On any failure: rollback (restore original) and return error."""
+    import subprocess, tempfile, time
+    rel = str((body or {}).get("file") or "").strip().replace("\\", "/")
+    commit = str((body or {}).get("commit") or "HEAD").strip()[:40]
+    if not rel:
+        return {"ok": False, "error": "file required"}
+    # Prevent path traversal
+    if ".." in rel.split("/") or rel.startswith("/"):
+        return {"ok": False, "error": "invalid file path (traversal blocked)"}
+    target = os.path.join(HERE, rel)
+
+    # Step 1: Get content from specified commit
+    r = _git(["show", f"{commit}:{rel}"])
+    if not r["ok"]:
+        return {"ok": False, "error": f"cannot read {commit}:{rel}", "detail": r["err"][:200]}
+    desired_bytes = (r["out"]).encode("utf-8")  # text mode; for binary use --raw later
+    desired_sha = hashlib.sha1(desired_bytes).hexdigest()[:12]
+
+    # Step 2: Capture current state for rollback
+    orig_bytes = b""
+    if os.path.isfile(target):
+        with open(target, "rb") as f:
+            orig_bytes = f.read()
+    orig_sha = hashlib.sha1(orig_bytes).hexdigest()[:12] if orig_bytes else None
+
+    # Step 3: Write to temp file in same dir (atomic rename on same volume)
+    dir_name = os.path.dirname(target) or HERE
+    tmp_path = target + ".mirror-repair-tmp"
+    try:
+        with open(tmp_path, "wb") as f:
+            f.write(desired_bytes)
+        # Verify written content
+        with open(tmp_path, "rb") as f:
+            verify_sha = hashlib.sha1(f.read()).hexdigest()[:12]
+        if verify_sha != desired_sha:
+            os.unlink(tmp_path)
+            return {"ok": False, "error": "hash mismatch after write",
+                    "expected": desired_sha, "got": verify_sha}
+        # Atomic rename
+        os.replace(tmp_path, target)
+    except Exception as e:
+        if os.path.exists(tmp_path):
+            os.unlink(tmp_path)
+        return {"ok": False, "error": f"write failed: {str(e)[:200]}"}
+
+    # Step 4: Commit (git add + commit as one logical unit)
+    c = _git(["add", "--", rel])
+    if not c["ok"]:
+        # Rollback
+        with open(target, "wb") as f:
+            f.write(orig_bytes)
+        return {"ok": False, "error": f"git add failed: {c['err'][:200]}", "rolled_back": True}
+    commit_msg = f"mirror-repair: restore {rel} from {commit}"
+    c2 = _git(["commit", "-m", commit_msg])
+    if not c2["ok"] and "nothing to commit" not in (c2["out"] + c2["err"]).lower():
+        # Rollback
+        with open(target, "wb") as f:
+            f.write(orig_bytes)
+        _git(["add", "--", rel])
+        _git(["commit", "-m", f"mirror-repair-rollback: {rel}"])
+        return {"ok": False, "error": f"commit failed: {c2['err'][:200]}", "rolled_back": True}
+
+    # Step 5: Verify post-commit state
+    r2 = _git(["show", f"HEAD:{rel}"])
+    post_sha = hashlib.sha1(r2["out"].encode("utf-8")).hexdigest()[:12] if r2["ok"] else None
+
+    return {"ok": True, "file": rel, "commit_source": commit,
+            "before_sha": orig_sha, "after_sha": desired_sha,
+            "post_commit_sha": post_sha,
+            "verified": post_sha == desired_sha,
+            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S")}
 def _safe_upload_path(rel):
     """Resolve an upload target inside UPLOAD_DIR. Returns (abs_path, clean_rel) or None.
     Anything is accepted as long as it stays under uploads/ - traversal, absolute paths,
@@ -842,6 +916,41 @@ def _perf_snapshot():
                     "p50_ms": _percentile(vals, 50), "p95_ms": _percentile(vals, 95),
                     "p99_ms": _percentile(vals, 99)})
     return {"ok": True, "window_s": 3600, "endpoints": out}
+
+
+def _slo_check():
+    """GET /api/slo-status (Builder goal #2): SLO alert check over 10-min window.
+    Thresholds: p95 > 2000ms or p99 > 5000ms per endpoint.
+    On breach: writes HOTLINE line to memory/ops/slo-alerts.jsonl + sets flag."""
+    import json as _json, os as _os
+    now = time.time()
+    cutoff = now - 600
+    per = {}
+    for ts, path, ms in _PERF:
+        if ts >= cutoff:
+            per.setdefault(path, []).append(ms)
+    alerts = []
+    for path, vals in sorted(per.items()):
+        if len(vals) < 5:
+            continue
+        p95 = _percentile(vals, 95)
+        p99 = _percentile(vals, 99)
+        if p95 > 2000 or p99 > 5000:
+            alerts.append({"path": path, "p95_ms": p95, "p99_ms": p99, "n": len(vals)})
+    breached = bool(alerts)
+    if breached:
+        alert_file = _os.path.join(HERE, "memory", "ops", "slo-alerts.jsonl")
+        for a in alerts:
+            line = (f"H-SLO | portal | {a['path']} p95={a['p95_ms']}ms p99={a['p99_ms']}ms "
+                    f"(n={a['n']}, window=600s) exceeds budget (p95<2000ms, p99<5000ms) | Builder | "
+                    f"ack-by {time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(now + 300))}")
+            try:
+                with open(alert_file, "a", encoding="utf-8") as f:
+                    f.write(line + "\n")
+            except OSError:
+                pass
+    return {"ok": True, "breached": breached, "alerts": alerts,
+            "window_s": 600, "thresholds_ms": {"p95": 2000, "p99": 5000}}
 
 
 def _fleet_health_snapshot():
@@ -3678,6 +3787,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(200, _fleet_snapshot())
         elif p == "/api/perf":
             return self._json(200, _perf_snapshot())
+        elif p == "/api/slo-status":
+            return self._json(200, _slo_check())
         elif p == "/api/health/fleet":
             return self._json(200, _fleet_health_snapshot())
         elif p == "/api/memory-health":
@@ -4058,6 +4169,12 @@ class Handler(BaseHTTPRequestHandler):
                                         "out": c["out"], "err": c["err"],
                                         "status": _git_status()})
             return self._json(400, {"error": "unknown action (use 'commit' or 'init')"})
+        elif p == "/api/mirror-repair":
+            # Builder goal #3: atomic re-apply file from commit (write+verify+commit).
+            try:
+                return self._json(200, _mirror_repair_apply(body))
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/merge":
             # Sandbox merge queue (2026-11-16): restore a captured sandbox edit onto the root + commit.
             try:
