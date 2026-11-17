@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #8 correction: hot notes falsely claimed #actBody line-height fixed; actual value was 1.7 (out of range), now corrected to 1.5.
 - Added --week-complete mode to load_trend.py (verified: reports days, generates week report+verdict). Goal #4 closure = one command on day 7.
 - Added --week-complete to load_trend.py (gates on ≥7 days); verified working, currently 2/7 days (Nov 16–17).
 - load_probe.py outage guard reverts via mirror (4th time); re-apply after each mirror sync before running probes
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #4 blocked at 2/7 days; needs `register_load_probe_task.py` run once on White to auto-collect remaining 5
 - Verifier forecast: goal #4 earliest closure 2026-11-22, most likely 11-23; verify at that point (memory/goals/forecast-mechanic-g4.md)
 - Goal #4 unblocked by running register_load_probe_task.py from non-sandbox White seat; then 5 auto-days + one --week-complete closes it.
+- Mirror sync reverts --week-complete in load_trend.py (5th occurrence); expect same pattern for any edits to that file
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
