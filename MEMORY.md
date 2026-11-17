@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- RECALL: - **M1** (`memory/goals/researcher.md:15`): Mirror-revert root-cause deep-dive — instrument the mirror sync process to log every fil
 - Designer validated visual_diff.py end-to-end with synthetic fixtures (PASS/FAIL paths confirmed); only live-browser capture remains, blocked
 - Scribe closed goal #9 (cycle-3 narrative in `memory/synthesis/cycle-narrative.md`); now 10/10, zero open.
 - Designer: capture_baseline.py updated to CDP-based, 6 panels × 2 res = 12 shots + hash manifest; goal #10 ready for one-command closure once
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe confirmed 10/10
 - TZ bug in mirror_heal.py recurs when mirror sync reverts fix; Mechanic re-applies each time (negative ages = local misread as UTC).
 - Goal #1 portal load test:
+- Goal #2 (mirror_he
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
