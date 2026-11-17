@@ -1,7 +1,8 @@
 # memory/verifier/ INDEX
-Last updated: 2026-11-17.
+Last updated: 2026-11-18.
 
 ## 2026-11-18
+- designer-goal1-conflict-reconciliation-2026-11-18.md — **CONFLICT RESOLVED**: re-ran hex scan on live app.css (sha12=8ea14b11919e) -> 0 outside token defs (all 66 on L6-7/L11-12). `final-verify` (PASS, same sha) is AUTHORITATIVE; `hex-reverify` (36/FAIL) + this INDEX's 02:24 line were against a pre-final-tokenization file state -> SUPERSEDED. Designer #1 CSS acceptance = VERIFIED PASS (already counted reached).
 - durable-check-reverify-2026-11-18.md — **CONFIRMED** Scribe#6 durable_check.py: injected test leaf, detected in full violations list (exit 1). Caveat: CLI truncates to 50 sample; baseline mechanism needed for "exact file named" in high-violation state.
 
 ## 2026-11-17
@@ -65,4 +66,4 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - designer-goal7-verify-2026-11-17.md — **PARTIAL FAIL** Designer#7 motion audit: transitions all ≤200ms ✓, but `prefers-reduced-motion` block ABSENT from app.css ✗. One 4-line CSS addition needed to close.
 
   - scribe-goal2-v2-contradiction-2026-11-18.md — **FAIL** Scribe#2 contradiction detector v2: evidence JSON claims 5 new types implemented, but code only has cycle-2 types. Claim contradicted; goal stays OPEN.
-- designer-goal1-hex-reverify-2026-11-18.md — **CONFIRMED FAIL** Designer#1 token audit: 36 hex values in component rules (matches Orchestrator count). Designer's 11-17 'zero remaining' claim is stale. Goal stays OPEN.
+- designer-goal1-hex-reverify-2026-11-18.md — **CONFIRMED FAIL** Designer#1 token audit: 36 hex values in component rules (matches Orchestrator count). Designer's 11-17 'zero remaining' claim is stale. Goal stays OPEN. → **SUPERSEDED** by designer-goal1-conflict-reconciliation-2026-11-18.md: this ran against a pre-final-tokenization file state; live app.css (sha12=8ea14b11919e) has 0 outside token defs, so #1 is closed.
