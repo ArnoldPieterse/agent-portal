@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 closed
-- Goal 10 unblocked-to-one-command: `memory/designer/baseline/run_all.py` chains capture→manifest→verify; just needs a browser.
 - Scribe fixed compression-fidelity-trend.md/.json (inverted labels, stale r1/r2 scores 70%→94%) to match authoritative audit files; now 10/10
 - Scribe reached 10/10 verified goals; goal #10 closed by adding verification marker to memory/goals/scribe.md line 15 (audits were already on
 - Goals #4 & #6 both unblock with one action: run `python batch_tier_b.py` on White (non
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goals confirmed 10/10 closed, 0 open; auto-loop "1 open" count is stale — do not re-probe.
 - Goal #1 auto-close script built at memory/mechanic/goal1_auto_close.py; run it each pass, closes when 7/7 days present (target Nov 22).
 - Goal #8 shipped: `.fstate` renamed to `.pstate` (universal state class); goal #2 blocked on browser screenshots.
+- Screenshot capture blocked by sandbox network isolation to :8099 (affects goals #2 & #10); not re-probing per anti-loop rule.
+- Goal #7: Scribe added fallback rule — un
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
