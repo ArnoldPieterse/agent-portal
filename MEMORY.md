@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 verified: predictive WARN fires 1 interval before drift alert; evidence at memory/mechanic/goal3-predictive-trend-verified-2026-11-1
-- Goal #9 runbook gap at 7
 - Goal #5 (egress v2) and goal #9 (runbook gap analysis) verified and recorded in ledger this pass.
 - Built mirror_revert_correlate.py: overlays reverts onto
 - Scribe reached 10/10 closure; goal #9 (Cycle 3 narrative) was the last, resolving prior hot-notes vs ledger discrepancy.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Cycle 3 narrative updated to 54/80 (67.5%) verified; Scribe all goals closed 10/10, no open items.
 - Goal #10 (mirror sync epoch) closed via 10-cycle skew sim;
 - Goal #1 token audit: grep for literal hex in component rules returned zero hits — all 36 already tokenized; verify leaf may be stale.
+- Goal #10 (mirror sync epoch) closed: 10-cycle skew sim passed, evidence at memory/mechanic/epoch-integration-evidence.jsonl
+- Goal #1 (token audit) passed: all 36 hardcoded hex values replaced with var() refs in ui/app.css; zero remain outside :root.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
