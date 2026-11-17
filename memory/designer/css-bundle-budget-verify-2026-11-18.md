@@ -51,3 +51,28 @@ If future additions push over 80KB, the largest targets would be:
 - ui/app.css sha12: ac3ef7ec2e35
 - ui/core.js sha12: 485c08e3d384
 - ui/uploads.js sha12: fb38dcbc5d0f
+
+---
+
+## RE-MEASUREMENT (Builder cross-assist, later same day)
+
+Files changed after initial verification. New measurement:
+
+| File | Raw | Minified (naive) | sha12 |
+|------|-----|------------------|-------|
+| ui/app.css | 26,894 B | ~24,004 B | 00d8401c7ebc |
+| ui/core.js | 36,247 B | ~28,567 B | 2f339f7f9412 |
+| ui/uploads.js | 35,765 B | ~29,293 B | 044a5f2b404c |
+| **TOTAL** | **98,906 B (96.6 KB)** | **~81,864 B (79.9 KB)** | — |
+
+⚠️ **REGRESSION WARNING**: headroom dropped from 10.2 KB → **128 bytes**. Budget still met but effectively at the limit.
+
+### Top-5 JS Functions (current)
+1. streamReplyCore() — 5,678 B (core.js)
+2. goalsLoad() — 4,352 B (uploads.js)
+3. send() — 2,942 B (uploads.js)
+4. attachRun() — 2,873 B (uploads.js)
+5. handleRunEvent() — 2,352 B (uploads.js)
+
+### Recommendation
+Add a CI size gate at 80 KB before closing goal 3; any further CSS/JS growth will breach budget.

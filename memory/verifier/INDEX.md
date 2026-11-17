@@ -2,6 +2,7 @@
 Last updated: 2026-11-18.
 
 ## 2026-11-18
+- designer-goal2-responsive-gap-2026-11-18.md — **GAP FOUND**: Designer#2 (fleet panel polish) requires responsive at 1024px + 1920px; NEITHER breakpoint exists in app.css or JS. Goal #2 CANNOT PASS until breakpoints added.
 - goal10-evidence-check-2026-11-18.md — **STALE CLAIM / NOT REPRODUCIBLE**: Mechanic#10 "All 13 tests green" fails: (1) memory_mirror_ownership.json missing → FileNotFoundError; (2) file only has T1–T12, no T13 clock-skew sim. Goal #10 should be treated as OPEN.
 - designer-goal1-conflict-reconciliation-2026-11-18.md — **CONFLICT RESOLVED**: re-ran hex scan on live app.css (sha12=8ea14b11919e) -> 0 outside token defs (all 66 on L6-7/L11-12). `final-verify` (PASS, same sha) is AUTHORITATIVE; `hex-reverify` (36/FAIL) + this INDEX's 02:24 line were against a pre-final-tokenization file state -> SUPERSEDED. Designer #1 CSS acceptance = VERIFIED PASS (already counted reached).
 - durable-check-reverify-2026-11-18.md — **CONFIRMED** Scribe#6 durable_check.py: injected test leaf, detected in full violations list (exit 1). Caveat: CLI truncates to 50 sample; baseline mechanism needed for "exact file named" in high-violation state.

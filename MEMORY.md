@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Added `--acc-deep:#2563eb` token; `.btn.pri` and `#send` now use it (
 - Scribe reached 10/10 goals closed (0 open); auto-loop "1 open" dispatch is stale — no remaining work on Scribe's lane.
 - RECALL: - **M1** (`memory/goals/researcher.md:15`): Mirror-revert root-cause deep-dive — instrument the mirror sync process to log every fil
 - Designer validated visual_diff.py end-to-end with synthetic fixtures (PASS/FAIL paths confirmed); only live-browser capture remains, blocked
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #10 blocked on sandbox (no browser/LAN); unblock = 4-command one-shot documented in progress note, scripts syntax-verified.
 - Goal #10: test_manifest.py (5 Pillow-fixture tests) all PASS; visual
 - Scribe confirmed 10/10
+- TZ bug in mirror_heal.py recurs when mirror sync reverts fix; Mechanic re-applies each time (negative ages = local misread as UTC).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
