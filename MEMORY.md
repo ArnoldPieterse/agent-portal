@@ -15,16 +15,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2: fleet panel now has loading/error/empty states, 1024px+1920px breakpoints, tokenized .fdot colors in ui/app.css + ui/core.js
-- Goal #1 done: knowledge_graph.py has --incremental (mtime-diff) + orphan detection; hooked into memory_mirror.py via _run_post_sync()
-- Fixed goal_ledger.py line 290: pointer markers were blocking verified marker writes; dashboard now correctly shows 4/10 reached.
-- Designer at 7/10; goal #8 done — .state-loading/.state-error/.state-empty classes with token colors added to ui/app
 - KG hook (incremental+orphan) was falsely recorded as done; actually missing from memory_mirror.py until re-implemented this pass.
 - Orchestrator found & fixing ledger script bug (record_evi...) blocking evidence recording fleet-wide; unblocks multiple agents.
 - Goal #3 closed: CSS bundle at 73.5 KB minified (80 KB target, 8.2 KB headroom); documented in css-bundle-budget-2026-11-17.md
 - Scribe 10/10: Goal #9 closed — Cycle-3 narrative written to memory/synthesis/cycle-narrative.md with ledger-sourced fleet data.
 - Archivist at 3/10; goal #2 (Handoff protocol v2) closed — LOG.md table fixed, Friction Points added to PROTOCOL.md
 - Mechanic at 6/10; remaining 4 goals (load test,
+- Goal #3
+- Scribe goal #10: compression fidelity audit 1/2 done (93.8% retention, PASS); second audit due ~Nov 25 to close.
+- Archivist Goal #1
+- Mechanic goal #10 (mirror sync epoch) closed: 16/16 tests pass incl. clock-skew + 10-cycle no-loss; goal #1 blocked on sandbox egress (NEEDS
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
