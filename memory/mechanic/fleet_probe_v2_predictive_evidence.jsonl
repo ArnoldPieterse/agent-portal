@@ -1,0 +1,10 @@
+{"run": 1, "latency_ms": 80.0, "standard_severity": "OK", "predictive_alert": null, "effective_severity": "OK", "history_len": 0}
+{"run": 2, "latency_ms": 100.0, "standard_severity": "OK", "predictive_alert": null, "effective_severity": "OK", "history_len": 1}
+{"run": 3, "latency_ms": 125.0, "standard_severity": "OK", "predictive_alert": null, "effective_severity": "OK", "history_len": 2}
+{"run": 4, "latency_ms": 156.25, "standard_severity": "OK", "predictive_alert": "PREDICTIVE_WARN", "effective_severity": "PREDICTIVE_WARN", "history_len": 3}
+{"run": 5, "latency_ms": 195.3, "standard_severity": "OK", "predictive_alert": "PREDICTIVE_WARN", "effective_severity": "PREDICTIVE_WARN", "history_len": 4}
+{"run": 6, "latency_ms": 244.1, "standard_severity": "WARN", "predictive_alert": "PREDICTIVE_WARN", "effective_severity": "PREDICTIVE_WARN", "history_len": 5}
+{"run": 7, "latency_ms": 305.2, "standard_severity": "WARN", "predictive_alert": "PREDICTIVE_WARN", "effective_severity": "PREDICTIVE_WARN", "history_len": 6}
+{"run": 8, "latency_ms": 381.5, "standard_severity": "WARN", "predictive_alert": "PREDICTIVE_WARN", "effective_severity": "PREDICTIVE_WARN", "history_len": 7}
+{"run": 9, "latency_ms": 476.9, "standard_severity": "WARN", "predictive_alert": "PREDICTIVE_WARN", "effective_severity": "PREDICTIVE_WARN", "history_len": 8}
+{"run": 10, "latency_ms": 596.1, "standard_severity": "CRIT", "predictive_alert": "PREDICTIVE_WARN", "effective_severity": "PREDICTIVE_WARN", "history_len": 9}
