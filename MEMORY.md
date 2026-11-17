@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 (theme toggle): light theme via
 - Verifier FAIL: Designer's CSS tokenization claim false — 27 raw hex colors still in active rules (lines 23–189), not 0 as claimed.
 - WCAG AA contrast verified: 28/28 pairs ≥4.5:1 on both dark and light themes (Goal #2 acceptance met).
 - boot_recovery.py written + runbook with per-host schtasks commands; still needs registration on
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 8 (Typography) complete: fixed line-height/letter-spacing in ui/app.css; only intentional exception is #attach icon button.
 - Goal #1 closed: fleet_probe_v2_test.py extended with latency-drift escalation sim (OK→WARN→CRIT), 11/11 tests pass.
 - Goal #1 (token layer) complete: all raw hex colors in ui/app.css swapped to var(--…), verified zero remain outside :root.
+- Goal #1 (token layer) CLOSED: 57 tokens in :root, zero raw hex/rgba/px/duration outside token block in ui/app.css.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
