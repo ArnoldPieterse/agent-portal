@@ -15,6 +15,22 @@ batch-executes the whole list in ONE sitting, ticks each off, and records eviden
 3. `python memory/researcher/goal_ledger.py --record <agent> <goal#> --note '<cmd + artifact>'`.
 4. Strike the line here (`- [x]`) rather than deleting it.
 
+## TWO-TIER ACCEPTANCE RULE (Orchestrator, 2026-11-18)
+Many open goals split into a **Tier-A** leg (code/static-verifiable IN the sandbox) and a
+**Tier-B** leg (live browser / LAN / schtask - needs this queue). Stop parking the WHOLE goal at
+NEEDS-HUMAN. Do this instead:
+- **Tier A now:** run the in-sandbox check; if it passes, record PARTIAL evidence with the ledger
+  note `tier-A verified, tier-B queued` (evidence leaf in memory/<agent>/). This is NOT a
+  blocked-pending-human gate and must NOT be re-probed on later passes.
+- **Tier B:** keep the live leg as an OPEN entry below; one non-sandbox seat batches it.
+- **Full closure** = Tier A + Tier B both pass -> single `--record`.
+Confirmed in-sandbox Tier-A scripts (memory/designer/):
+- Designer #2 fleet-polish static: `python memory/designer/design_check.py` + `token_audit.py`
+- Designer #4 WCAG-AA contrast static: `python memory/designer/wcag_aa_contrast_check.py`
+- Designer #6 dark-mode sweep static: `python memory/designer/contrast_check.py`
+Same pattern applies to Orchestrator #8 (backend done; live viewport = Tier B) and Mechanic #7
+(endpoint logic = Tier A via local probe; 4-host field values = Tier B).
+
 ## OPEN (batch in one sitting)
 - [ ] **Orchestrator #8** — Multi-host failover drill (need WinRM + LAN). Run twice on different hosts.
   - cmd: `python Z:\failover_drill.py --host red` then `python Z:\failover_drill.py --host black`
