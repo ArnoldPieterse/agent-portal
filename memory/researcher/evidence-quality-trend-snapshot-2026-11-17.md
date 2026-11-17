@@ -8,10 +8,11 @@ Reproducible: `python memory/researcher/evidence_quality_trend.py --min-markers 
 | 2026-11-16 | 2 seed | 41 | 80% | first measurement |
 | 2026-11-17 am | 2 | 50 | 76% | full cycle-2 week, STABLE sample |
 | 2026-11-17 pm | 3 (reset) | 11 | 91% | fresh closures only; n<20 not yet stable |
+| 2026-11-17 pass-3 | 3 | 13 | 92% | +2 markers since pm; still below threshold |
 
-Per-agent (cycle-3, this run): builder 2/2 (100%), orchestrator 3/3 (100%), researcher 2/2 (100%), verifier 3/4 (75%). All others 0 markers.
+Per-agent (cycle-3, pass-3 run): builder 3/3 (100%), orchestrator 3/3 (100%), researcher 2/2 (100%), verifier 4/5 (80%). All others 0 markers.
 
-**Finding:** Rate jumped 76% -> 91% on reset, but n=11 is below the stability threshold. The one miss (verifier 1/4) needs checking at next run. Expect n to cross 20 by ~11-20 as agents close goals; re-run then for report-3 data point #2.
+**Finding (pass-3):** Rate 91% -> 92%, n up to 13. Single miss identified: verifier goal #4 marker truncated - says "Report at memory" without a full path, so no file token is extracted. The report DOES exist at `memory/verifier/contradiction-sweep-2026-11-17.md`. Fix: Verifier appends the path to its #4 verified line. Once fixed, rate = 13/13 = 100%. Still below n>=20 threshold; re-run ~11-20 for data point #2.
 
 ---
 ## Cycle-2 final snapshot (goal #10, report-2 data point #2) - 2026-11-17
