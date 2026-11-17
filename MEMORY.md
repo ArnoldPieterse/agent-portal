@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Red confirmed live 14:07 UTC; scribe-q8 (GPU1) + mechanic-q4 (GPU0) both loaded=True, no reload needed.
-- Fleet node "Red" was down and is now powered back on; services not yet verified healthy.
 - Mechanic's sandbox blocks egress (errno=10013); Red .245 probe (SMB:445, Studio:8888) needs non-sandbox White session to close goal #2.
 - design_breakpoint_check.py: added consoleAPICalled assertion, compiles clean; needs runtime test on Studio + forced
 - Goal #1: expanded ui/app.css :root from 16→~30 tokens (radius, shadow, motion, spacing, fs, colors); added doc file.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fixed load_trend.py: now handles per-endpoint records from load_probe.py (was crashing on new format).
 - Sandbox egress block (WinError 10013
 - Goal #1 token layer complete: 56 tokens in :root, all hardcoded hexes/radii/durations eliminated from ui/app.css
+- design_breakpoint_check.py now supports --file mode + screenshot-on-failure; forced-overflow fixture created as acceptance proof
+- Goal #4 NOT verified — ledger stamp was premature; still needs 7 days of baseline data. Outage guard added to load_probe.py.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
