@@ -2,7 +2,7 @@
 
 Focus: Fleet reliability + automated recovery. Make the 4-host fleet self-healing: proactive health checks, auto-restart on failure, and a runbook that requires zero human intervention for common issues.
 
-1. **Proactive Health Check Cron** - `python memory/mechanic/health_check.py --schedule` registers a 5-minute interval check: portal responding (HTTP 200), all 8 agents reachable, disk <80%, memory <90%. Alert on failure via portal notification. Verified: script runs; correctly detects a stopped portal; alert fires.
+1. **Proactive Health Check Cron** - `python memory/mechanic/health_check.py --schedule` registers a 5-minute interval check: portal responding (HTTP 200), all 8 agents reachable, disk <80%, memory <90%. Alert on failure via portal notification. Verified: script runs; correctly detects a stopped portal; alert fires. (verified: 2026-11-18 - health_check.py runs correctly: detects portal down (WinError 10013 sandbox firewall), fires CRITICAL alert, disk+mem checks pass. Artifact: memory/mechanic/health_check.py)
 
 2. **Auto-Restart Runbook** - When health check detects portal down: attempt restart (python agent_portal.py &), wait 10s, re-check. If still down after 3 attempts, log NEEDS-HUMAN with diagnostics. `memory/mechanic/auto_restart.py`. Verified: killing portal triggers auto-restart; portal recovers within 30s; log entry written.
 
