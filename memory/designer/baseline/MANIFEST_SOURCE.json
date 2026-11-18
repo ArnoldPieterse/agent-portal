@@ -1,0 +1,32 @@
+{
+  "type": "source-baseline",
+  "note": "SHA256 of portal source files. Pixel-level screenshot baseline pending non-sandbox execution (Playwright). This manifest detects any source regression immediately.",
+  "captured_utc": "2026-11-18T02:35:41.027665Z",
+  "files": [
+    {
+      "file": "index.html",
+      "sha256": "f4f4939ed45fb0539f6858208086f30abd11688cdb8f3807fefd99b0eeb91c93",
+      "size_bytes": 10686,
+      "captured_utc": "2026-11-18T02:35:41.027168Z"
+    },
+    {
+      "file": "ui/app.css",
+      "sha256": "987056806d9208797ae50e0f0c6ac8d90e08f180a88d966c3f8eeafe7c28a382",
+      "size_bytes": 23696,
+      "captured_utc": "2026-11-18T02:35:41.027341Z"
+    },
+    {
+      "file": "ui/core.js",
+      "sha256": "1dc9b0878e01a69d27e63c0903a580d7f9f2705332e722e0929e9409fd261d5e",
+      "size_bytes": 29261,
+      "captured_utc": "2026-11-18T02:35:41.027494Z"
+    },
+    {
+      "file": "ui/uploads.js",
+      "sha256": "e873bb2d20d56157a6f1c34353c0413e774176c76099bb61f3eeb821e164dbfa",
+      "size_bytes": 34626,
+      "captured_utc": "2026-11-18T02:35:41.027647Z"
+    }
+  ],
+  "total_bytes": 98269
+}

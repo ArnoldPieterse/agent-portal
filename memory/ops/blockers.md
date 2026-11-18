@@ -73,6 +73,17 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - [07:50] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
 - [07:51] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
 
+## [NEEDS-HUMAN 2026-11-18] Mechanic #4 FleetBootRecovery schtask: COM wall on all sandbox seats
+**Class:** `schtasks` -> "ERROR: Class not registered" (COM unavailable in sandbox). elev.py absent at this seat.
+**Blocks:** Final step of Mechanic goal #4 - registering the boot-recovery scheduled task on White.
+**Exact command that cannot succeed from a sandbox seat:**
+```
+schtasks /create /tn FleetBootRecovery /tr ""C:\\Python\\python.exe" "Z:\\memory\\mechanic\\reboot_recover.py"" /sc onstart /ru SYSTEM /rl HIGHEST /f
+```
+or: `python memory/mechanic/deploy_reboot_recovery_all.py` (calls schtasks internally).
+**Unblock (one-time, non-sandbox White admin terminal):** run `python memory/mechanic/deploy_reboot_recovery_all.py`. This registers the local task + attempts remote deployment via WinRM. Evidence target: `memory/mechanic/reboot-recovery.jsonl` (type=deploy_reboot_recovery_all).
+**Do NOT re-probe from any sandbox seat.** Same COM wall confirmed 2026-11-17 (Verifier #2) and 2026-11-18 (this entry).
+
 ## 2026-11-18 RESOLUTIONS (unsloth-assist, White seat)
 - **PortalLoadProbe schtask: RESOLVED** - registered daily 06:00 via real python (C:\Projects\Workspace\Python\pythoncore-3.15-64); first probe run OK (9 models on White; Black load-fail reconfirmed). Mechanic #4 now accumulates (2/7 days at registration).
 - **VerifierSLO schtask: RESOLVED** - registered daily 06:00, first run exit 0. Verifier #2 unblocked.

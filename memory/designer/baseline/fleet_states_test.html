@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Fleet Panel States</title>
+<style>
+:root {
+  --bg:#1a1b26;--panel:#24283b;--acc:#7aa2f7;--err:#f7768e;
+  --dim:#565f89;--faint:#414868;--line:#2f3350;--txt:#c0caf5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'Segoe UI',system-ui,sans-serif;padding:2rem;display:flex;flex-direction:column;gap:1.5rem}
+h2{font-size:.85rem;color:var(--dim);text-transform:uppercase;letter-spacing:.05em;margin-bottom:.75rem}
+.state{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:1.25rem;min-height:120px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;width:100%}
+
+.fleet-loading{position:relative}
+.fleet-loading::before{content:'';width:24px;height:24px;border:3px solid var(--line);border-top-color:var(--acc);border-radius:50%;animation:fspin .7s linear infinite}
+@keyframes fspin{to{transform:rotate(360deg)}}
+.fleet-loading span{font-size:.8rem;color:var(--dim)}
+
+.fleet-error{border-left:3px solid var(--err);background:rgba(247,118,142,.08);padding:1rem 1.25rem;align-items:flex-start;text-align:left}
+.fleet-error .icon{font-size:1.2rem;color:var(--err)}
+.fleet-error p{font-size:.85rem;color:var(--txt)}
+
+.fleet-empty{text-align:center;opacity:.6}
+.fleet-empty svg{width:32px;height:32px;margin-bottom:.5rem;stroke:var(--dim);fill:none;stroke-width:1.5}
+.fleet-empty p{font-size:.85rem;color:var(--dim)}
+
+@media(prefers-reduced-motion:reduce){.fleet-loading::before{animation:none}}
+</style></head>
+<body>
+<h2>Loading State</h2>
+<div class="state fleet-loading"><span>Connecting to fleet...</span></div>
+
+<h2>Error State</h2>
+<div class="state fleet-error">
+  <span class="icon">&#9888;</span>
+  <p>Fleet API unreachable: connection refused (port 8099)</p>
+</div>
+
+<h2>Empty State</h2>
+<div class="state fleet-empty">
+  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+  <p>No hosts registered. Add a host in Ops - Fleet.</p>
+</div>
+</body></html>
