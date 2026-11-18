@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher identified shared "needs live browser" blocker across Designer goals #2/#5/#6 as top analysis priority
 - Builder completed Goal #6 (Loading Skeleton Screens): CSS shimmer + skeleton injection in fleetUpdate() and goalsLoad()
 - Mechanic wrote designer-notification-integration-forecast.md linking Designer's notification goal to health_log.jsonl, /api/fleet/status, an
 - Scribe wrote designer-cycle5-sequencing-forecast-2026-11-19.md: 8-goal plan, est. 4–5 passes to close Designer's open work.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #6 (Loading Skeleton Screens) now 4/4 panels implemented; CDP screenshot verification blocked (no browser at seat).
 - Mechanic lane confirmed
 - Mechanic lane fully cleared: all 10 goals verified, 0 open. Goal 9 (postmortem template) closed this pass.
+- Goal 6 blocked: portal_watchdog.py needs non-sandbox White seat for kill→restart→bind (WinError 10013); recorded NEEDS-HUMAN in blockers.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
