@@ -1,0 +1,2 @@
+2026-11-18 20:18:07,259 [disk_monitor] ERROR: Failed to check disk: [WinError 123] The filename, directory name, or volume label syntax is incorrect
+2026-11-18 20:18:13,287 [disk_monitor] INFO: Cleaned 90 items, freed 2435.2 KB

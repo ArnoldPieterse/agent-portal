@@ -8,7 +8,7 @@ Focus: Evidence pipeline automation + regression coverage. Make verification a o
 
 3. **Regression Guard** - Before any code change to agent_portal.py or ui/*, run a pre-commit check: existing endpoints still return 200, no JS syntax errors, CSS parses. `python memory/verifier/regression_guard.py --pre-commit`. Verified: script blocks a bad change (intentionally broken test) and passes a good one. (verified: 2026-11-18 - regression_guard.py built + tested: 6/6 pass on valid files, correctly blocks broken JS (exit 1). Evidence: memory/verifier/goal3-regression-guard-evidence-2026-11-18.md) (verified: 2026-11-18 - regression_guard.py built + tested: 6/6 pass on valid files, correctly blocks broken JS (exit 1). Evidence: memory/verifier/goal3-regression-guard-evidence-2026-11-18.md)
 
-4. **API Contract Tests** - For each /api/* endpoint, write a JSON Schema of the expected response. `python memory/verifier/contract_test.py` validates live responses against schemas. Verified: all 8+ endpoints have schemas; contract test passes on current API.
+4. **API Contract Tests** - For each /api/* endpoint, write a JSON Schema of the expected response. `python memory/verifier/contract_test.py` validates live responses against schemas. Verified: all 8+ endpoints have schemas; contract test passes on current API. (pointer: memory/verifier/contract_test.py)
 
 5. **Evidence Freshness Audit** - Weekly scan: for every (verified:) marker in goal files, check the referenced evidence file exists and is <7 days old. Flag stale/missing. `python memory/verifier/freshness_audit.py`. Verified: script runs; correctly flags a test-stale entry.
 

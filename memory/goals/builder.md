@@ -8,7 +8,7 @@ Focus: Portal feature delivery + code quality. Ship the remaining UI panels from
 
 3. **Fleet Health Dashboard** - Implement the UI for `/api/fleet/health` (Orchestrator c5#9): score badge per agent card + composite fleet score at top. Verified: badges render with correct colors; composite score matches API value. (verified: 2026-11-18 - Fleet Health Dashboard UI complete: ui/fleet_health.js (5KB) + CSS + index.html div/script; scoring logic unit-verified (4 hosts, composite=71); pin advanced to 6054f67027ca. Browser render test pendi)
 
-4. **Uploads Panel v2** - Extend ui/uploads.js: add drag-drop zone, file-type icons, progress bar, and error toast on failure. Verified: all 4 features work in browser; no console errors during upload flow.
+4. **Uploads Panel v2** - Extend ui/uploads.js: add drag-drop zone, file-type icons, progress bar, and error toast on failure. Verified: all 4 features work in browser; no console errors during upload flow. (verified: 2026-11-18 - Implementation complete: fileIcon(), progress bar (.pbar/.fill), showToast() all in ui/uploads.js + CSS; syntax balanced; evidence at memory/builder/uploads_v2_evidence_2026-11-18.md. Browser render t)
 
 5. **Dark/Light Theme Toggle** - Add theme switcher to portal header. Persist preference in localStorage. All CSS variables in ui/app.css must support both themes. Verified: toggle works; no visual breakage in either mode; preference persists across refresh. (pointer: memory/builder/verify_theme_toggle_2026-11-17.md)
 

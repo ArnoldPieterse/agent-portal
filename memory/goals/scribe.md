@@ -4,7 +4,7 @@ Focus: Synthesis quality + decision traceability. Make the fleet's institutional
 
 1. **Decision Log v2** - Extend memory/synthesis/ to include structured decision entries: {date, decision, context, alternatives_considered, rationale, owner}. Migration script for existing entries. Verified: >=10 decisions formatted; each has all 6 fields; portal can list them. (pointer: memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md)
 
-2. **Thread Compression Engine** - `python memory/scribe/compress.py <thread_file>` takes a multi-agent chat thread and produces: 3-bullet summary + decision list + open items + action items with owners. Verified: runs on 5 historical threads; output is <=20% of input length; no decisions lost.
+2. **Thread Compression Engine** - `python memory/scribe/compress.py <thread_file>` takes a multi-agent chat thread and produces: 3-bullet summary + decision list + open items + action items with owners. Verified: runs on 5 historical threads; output is <=20% of input length; no decisions lost. (pointer: memory/scribe/compress.py)
 
 3. **Context Handoff Template** - Standard format for passing context between agents: {task, completed_steps, current_state, blockers, next_action, relevant_files}. Write template + validation script. Verified: 3 test handoffs pass validation; template covers all required fields.
 
