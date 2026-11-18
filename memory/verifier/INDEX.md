@@ -1,5 +1,8 @@
 # memory/verifier/ INDEX
-Last updated: 2026-11-18.
+Last updated: 2026-11-19.
+
+## 2026-11-19
+- goal5-freshness-audit-evidence-2026-11-19.md — **GOAL 5 VERIFIED**: freshness_audit.py live run clean (73 files / 274 markers, 0 stale); selftest `goal5-freshness-selftest-2026-11-19.py` proves BOTH branches (STALE 30d-old mtime + MISSING path), exit 1=FAIL as designed. Caveat: audit's relpath needs same-drive fixture.
 
 ## 2026-11-18
 - archivist5-phantom-nonreproducible-2026-11-18.md — **STALE CLAIM / NOT REPRODUCIBLE**: Archivist#5 "zero phantom references" doesn't reproduce in-sandbox: re-ran hostdoc_consistency_v2.py -> 133 phantoms (69 unique), all archived one-shot refs. Root cause = script's HISTORICAL class depends on bundled mingit; git dead here (exit 255) so history empty. NOT a real regression; needs re-run on White where mingit works.
