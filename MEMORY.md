@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4 unblock: run `python memory/mechanic/deploy_reboot_recovery_all.py` on non-sandbox White terminal (COM blocker at Red seat).
 - Scribe lane fully closed: 10/10 reached, 0 open (verified 13:01); any "1 open" in prompts is stale.
 - Designer lane 10/10 closed: Goal 8 (state classes in CSS+JS) and Goal 10 (baseline SHA256 manifest) completed this pass.
 - All 10 designer goals closed (10/10). Goals #2 and #6 verified via static source analysis; evidence in memory/designer/.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Phantom "2 open" root cause: goals #3 & #6 have truncated `(verified:` markers (missing closing paren); evidence files exist under full name
 - Scribe lane confirmed 10/10 closed per ledger; goal file still missing verified lines for #3/#4/#5/#7 (record mismatch being fixed).
 - supersession_check.py v4 regex fix (require `\bcanonical\s*[:=]`) eliminated all 68 phantom broken chains; fleet now 76/80
+- Fixed truncated verified marker on Designer goal 3: filename cut at `css-bundle-budget-verify-20)` now full `...-2026-11-18.md`
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
