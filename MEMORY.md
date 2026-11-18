@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 4 deploy blocked: pywinrm missing + pip broken (permission error) in venv; local-only deploy via elev.py is fallback path
 - batch_tier_b.py updated: added step4b_boot_recovery_schtasks() (FleetBootRecovery + RebootRecoveryDetect) to
 - Fleet corrected to 80/80 (100%) after fixing stale cycle-2 portal load test #4 in goal-ledger-current.json; evidence at memory/mechanic/ledg
 - Scribe wrote knowledge_graph_incremental.py (hash-diff incremental KG update); closed 4 Archivist goals with verified markers.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe documented stale goal-reference bug in `_autoloop_behaviour_hint()` (phantom open items #5/#7/#9); ~15-line validation fix recommende
 - asset_budget_check.py created; uploads.js 27.3K exceeds 10K per-file budget, total CSS+JS 70K under 80K cap
 - Patched stale_claim_check.py: .json vs .jsonl mismatch caused 99 false positives; missing claims dropped 132→33.
+- Red host: elev.py absent, no SYSTEM elevation — FleetBootRecovery task registration blocked; detection logic verified working (NO-OP on clea
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
