@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 static CSS audit PASS (flex+fluid SVG, no fixed-width overflow
-- Goal #10: trend file drifted from authoritative audits (inverted labels, divergent r1/r2); reconciled into single canonical artifact.
-- Goals 2+10 unblocked by running `python memory/designer/close_g2_g10.py` on a LAN-connected host; CSS audit PASS (flex+fluid SVG, no overflo
 - Goal #5 closed (supersession scan 2026-11-18, 3 stale refs fixed); only open goal now is #7 (owner-coverage ledger v2).
 - Goal #8 CSS classes done; next: wire `.state-*` into ≥2 panels in core.js to close acceptance criterion.
 - Mechanic found ledger has 0 mechanic rows despite 5+ verified goals; needs to backfill ledger entries from existing evidence leaves.
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #6: portal confirmed dark-mode-only (no light-theme CSS block exists), so contrast audits only need dark tokens.
 - Goal #4 blocked by sandbox egress (WinError 10013); needs non-sandbox White seat to unblock — do not re-probe.
 - Goal #7 verified (65/65 coverage) but auto-loop still lists
+- Scribe at 9/10 goals closed; only #10 (BG-SCHED background item) remains open as of 2026-11-18 batch pass.
+- Goal #4: Red dry-run passed (ID 6008 detection OK); only remaining step is `elev.py boot_recovery_register.bat` per host — sandbox egress bl
+- Goal #9 (Typography scale) verified & ledgered — all font-sizes on token scale, line-height
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
