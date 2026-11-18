@@ -75,6 +75,12 @@ _THIS_DIR      = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT   = os.path.abspath(os.path.join(_THIS_DIR, "..", ".."))  # memory/researcher -> root
 DEFAULT_AGENTS_JSON = os.path.join(PROJECT_ROOT, "agents.json")
 
+# Goal #5 (Load-Trend Feed Integration): the SHARED load-trend feed. Latency-probe rows (no "kind")
+# and per-host load EVENT rows (kind="load") both live in this one file; memory/ops/load_trend.py
+# reads the latency rows for percentiles and SKIPS (but must PARSE) the kind="load" event rows, which
+# are exactly the input Goal #6 (overnight-unload correlation) histograms over. Single file, two feeds.
+BASELINE_FILE = os.path.join(PROJECT_ROOT, "memory", "ops", "load-baseline.jsonl")
+
 # ---------------------------------------------------------------------------
 # SINGLE HOST TABLE (the one source of truth for studio URL / auth / models).
 # ctx values are the PROVEN per-host SSOT from memory/llm/hosts.md (verified 11-14).
@@ -491,12 +497,23 @@ def execute(host_key, jreq_fn=None):
     res["eviction_aware"] = {"log": ev_log, "zero_loss": zero_loss}
     res["verdict"] = "ALL_UP" if all(e.get("ok", e.get("skipped") is True) for e in res["models"]) else "PARTIAL"
     res["end"] = datetime.datetime.now().isoformat()
+    # Goal #5: wall-clock time-to-resident (start->all-wanted-resident) for the load-trend feed.
+    try:
+        _t0 = datetime.datetime.fromisoformat(res["start"]); _t1 = datetime.datetime.fromisoformat(res["end"])
+        res["time_to_resident_s"] = round((_t1 - _t0).total_seconds(), 1)
+    except Exception:
+        res["time_to_resident_s"] = 0.0
     # one result JSON per host
     os.makedirs(RESULT_DIR, exist_ok=True)
     out = os.path.join(RESULT_DIR, f"{host_key}_result.json")
     with open(out, "w", encoding="utf-8") as f:
         json.dump(res, f, indent=1)
     res["result_path"] = out
+    # Goal #5: append this host's result to the shared load-trend feed (never let the feed break a live load).
+    try:
+        res["feed_row"] = record_load_result(res)
+    except Exception as _e:
+        res["feed_error"] = str(_e)
     return res
 
 
@@ -627,6 +644,77 @@ def bindings_selftest(agents_json_path=DEFAULT_AGENTS_JSON):
     return ok1 and ok2 and ok3
 
 
+# ---------------------------------------------------------------------------
+# GOAL #5 - LOAD-TREND FEED INTEGRATION (offline-provable; no :8888 vantage needed).
+# record_load_result() appends each execute() result as ONE kind='load' line to the shared feed;
+# load_trend.load_days() is tolerant of these rows (parses them, excludes them from the latency
+# percentile trend) so a full-outage run records one honest event row and never emits garbage stats.
+# ---------------------------------------------------------------------------
+def record_load_result(res, baseline_path=BASELINE_FILE):
+    """Append this host's execute() result as ONE kind='load' line to the shared load-trend feed."""
+    ts = res.get("end") or datetime.datetime.now().isoformat()
+    models = res.get("models", []) or []
+    ok = sum(1 for e in models if e.get("ok"))
+    skip = sum(1 for e in models if e.get("skipped"))
+    total = len(models)
+    row = {"kind": "load", "ts": ts, "host": res.get("host"), "verdict": res.get("verdict"),
+           "time_to_resident_s": res.get("time_to_resident_s", 0.0),
+           "models_total": total, "models_ok": ok, "models_skipped": skip,
+           "models_failed": max(0, total - ok - skip)}
+    os.makedirs(os.path.dirname(baseline_path), exist_ok=True)
+    with open(baseline_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(row) + "\n")
+    return row
+
+
+def feed_selftest(baseline_path=BASELINE_FILE):
+    """Goal #5 acceptance (offline): append ONE synthetic kind='load' event row to the shared feed,
+    prove memory/ops/load_trend.py's read path PARSES it without error and EXCLUDES it from the
+    latency percentile trend, and re-prove the all-error guard still skips a 100%-fail latency row.
+    Returns True on PASS. Idempotent (won't double-append the fixture); guard checked on a temp copy."""
+    import importlib.util, tempfile
+    already = False
+    if os.path.exists(baseline_path):
+        with open(baseline_path, encoding="utf-8") as f:
+            already = any("__feed_selftest__" in ln for ln in f)
+    fixture = {"kind": "load", "ts": datetime.datetime.now().isoformat(), "host": "__feed_selftest__",
+               "verdict": "ALL_UP", "time_to_resident_s": 12.3,
+               "models_total": 2, "models_ok": 2, "models_skipped": 0, "models_failed": 0}
+    if not already:
+        os.makedirs(os.path.dirname(baseline_path), exist_ok=True)
+        with open(baseline_path, "a", encoding="utf-8") as f:
+            f.write(json.dumps(fixture) + "\n")
+    lt_path = os.path.join(PROJECT_ROOT, "memory", "ops", "load_trend.py")
+    spec = importlib.util.spec_from_file_location("load_trend_under_test", lt_path)
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    prev = os.getcwd()
+    try:
+        os.chdir(PROJECT_ROOT)          # load_trend resolves BASELINE_FILE relative to CWD
+        days = mod.load_days()          # must NOT raise on the kind='load' row
+    finally:
+        os.chdir(prev)
+    assert all(d.get("host") != "__feed_selftest__" for d in days), \
+        "kind='load' event row leaked into the latency percentile trend"
+    # All-error guard proven against a TEMP copy so no junk accumulates in the real feed.
+    tmp = tempfile.NamedTemporaryFile("w", suffix=".jsonl", delete=False, dir=os.path.dirname(baseline_path))
+    with open(baseline_path, encoding="utf-8") as src:
+        tmp.write(src.read())
+    allerr = {"ts": datetime.datetime.now().isoformat(), "levels": [
+        {"concurrency": 1, "n": 3, "p50_ms": 0.0, "p95_ms": 0.0, "p99_ms": 0.0, "errors": 3}]}
+    tmp.write(json.dumps(allerr) + "\n"); tmp.close()
+    saved = mod.BASELINE_FILE
+    try:
+        mod.BASELINE_FILE = tmp.name
+        days2 = mod.load_days()
+    finally:
+        mod.BASELINE_FILE = saved
+        os.remove(tmp.name)
+    assert len(days2) == len(days), "all-error latency row was not skipped by the guard"
+    print(f"  feed: kind='load' host={fixture['host']} ttr={fixture['time_to_resident_s']}s appended; "
+          f"load_trend parsed {len(days)} latency day(s); fixture excluded from trend; all-error guard OK")
+    return True
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Unified host-aware LLM hot-loader")
     ap.add_argument("--plan", metavar="HOST", help="dry-run: print host table + load bodies (no network)")
@@ -637,6 +725,7 @@ def main(argv=None):
     ap.add_argument("--live", action="store_true", help="with --bindings: also GET /api/settings/model-aliases per host")
     ap.add_argument("--test-bindings", action="store_true", help="offline self-test of the binding matrix (no network)")
     ap.add_argument("--test-eviction", action="store_true", help="offline self-test of the eviction-awareness rule (Goal #4, no network)")
+    ap.add_argument("--test-feed", action="store_true", help="offline self-test of the load-trend feed integration (Goal #5): append one synthetic kind='load' row + prove load_trend parses it (no network)")
     args = ap.parse_args(argv)
 
     if args.plan:
@@ -653,6 +742,10 @@ def main(argv=None):
     if args.test_eviction:
         ok = eviction_selftest()
         print("EVICTION SELFTEST:", "PASS" if ok else "FAIL")
+        return 0 if ok else 1
+    if args.test_feed:
+        ok = feed_selftest()
+        print("FEED SELFTEST:", "PASS" if ok else "FAIL")
         return 0 if ok else 1
     if args.bindings:
         res = bindings_matrix(jreq_fn=jreq, live=args.live)

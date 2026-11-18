@@ -1,12 +1,48 @@
 {
-  "ts": "2026-11-18T05:41:54.973075",
-  "status": "INCOMPLETE",
-  "days_present": 2,
-  "need": 7,
-  "present_dates": [
-    "2026-11-16",
-    "2026-11-17"
+  "ts": "2026-11-18T22:56:29.786248",
+  "days": 4,
+  "threshold_pct": 30.0,
+  "status": "OK",
+  "findings": [
+    {
+      "concurrency": 10,
+      "days_observed": 4,
+      "latest_ts": "2026-11-18 10:19:44",
+      "median_p95_ms": 180.7,
+      "median_p99_ms": 181.1,
+      "latest_p95_ms": 151.8,
+      "latest_p99_ms": 152.2,
+      "p95_ratio": 0.84,
+      "p99_ratio": 0.84,
+      "regression": false,
+      "details": []
+    },
+    {
+      "concurrency": 50,
+      "days_observed": 4,
+      "latest_ts": "2026-11-18 10:19:44",
+      "median_p95_ms": 742.3,
+      "median_p99_ms": 743.2,
+      "latest_p95_ms": 673.7,
+      "latest_p99_ms": 674.5,
+      "p95_ratio": 0.908,
+      "p99_ratio": 0.908,
+      "regression": false,
+      "details": []
+    },
+    {
+      "concurrency": 200,
+      "days_observed": 4,
+      "latest_ts": "2026-11-18 10:19:44",
+      "median_p95_ms": 3124.2,
+      "median_p99_ms": 3131.2,
+      "latest_p95_ms": 2872.3,
+      "latest_p99_ms": 2877.8,
+      "p95_ratio": 0.919,
+      "p99_ratio": 0.919,
+      "regression": false,
+      "details": []
+    }
   ],
-  "missing_count": 5,
-  "note": "2/7 days of probe data; register the daily PortalLoadProbe schtask to accumulate the remaining 5 day(s)"
+  "regressions": []
 }

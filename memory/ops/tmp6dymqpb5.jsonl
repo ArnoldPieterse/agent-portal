@@ -1,0 +1,1 @@
+{"kind": "load", "ts": "2026-11-18T10:00:03.4", "host": "__record_test__", "verdict": "PARTIAL", "time_to_resident_s": 123.4, "models_total": 2, "models_ok": 1, "models_skipped": 0, "models_failed": 1}

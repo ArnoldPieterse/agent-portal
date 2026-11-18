@@ -12,7 +12,7 @@ Focus: Hotload productionization + fleet capacity orchestration. Turn the PLANNE
 
 5. **Specialized Task-Model Slots** - Extend hotload-catalog.json planned_models into loadable task models (video/3d/large-context) with `exclusive:true` semantics: scheduler evicts ALL other models on that GPU before loading an exclusive model. Verified: plan() for a video-gen target returns a full-eviction sequence; catalog schema validated by a loader check. (verified: 2026-11-18 - exclusive:true semantics BUILT+verified: hotload-catalog.json planned_models carry exclusive=True; model_scheduler.py plan() evicts ALL non-required residents before loading exclusive models (full-evi)
 
-6. **Hotload Capacity Gauge Panel** - Surface /api/fleet/status in the fleet tab: per-host VRAM bar (used/free), hot/cold agent chips, last load/unload event. Verified: panel renders for all 4 hosts without JS errors; data matches /api/fleet/status JSON.
+6. **Hotload Capacity Gauge Panel** - Surface /api/fleet/status in the fleet tab: per-host VRAM bar (used/free), hot/cold agent chips, last load/unload event. Verified: panel renders for all 4 hosts without JS errors; data matches /api/fleet/status JSON. (verified: 2026-11-18 - Hotload VRAM gauge UI BUILT: core.js renders per-host VRAM bar + hot/cold chips + last event from /api/fleet/status; agent_portal.py enhanced with last_event field; app.css .hl-* styles added. In-proc)
 
 7. **Load-Time Prediction** - From hotload-log.jsonl history, predict cold-load duration per model (median of past loads); expose in /api/fleet/plan as `eta_s`; alert if actual load exceeds 2x predicted. Verified: after >=3 real loads of a model, eta_s is within 50% of observed; overruns logged.
 

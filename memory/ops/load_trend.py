@@ -21,8 +21,16 @@ REGRESS_PCT_DEFAULT = 0.30  # 30% above median = regression
 MIN_DAYS = 2  # need at least 2 data points to compute a trend
 WEEK_DAYS = 7  # goal #1 closure threshold: 7 distinct calendar days of probes
 
+def _is_latency_row(d):
+    """Latency-probe rows carry a 'levels' list (kind absent or 'latency'). Per-host load EVENT rows
+    written by hot_load.record_load_result() carry kind='load' and no 'levels'; they parse fine here
+    but are EXCLUDED from the latency percentile trend (they feed Goal #6 - overnight-unload corr)."""
+    return d.get("kind", "latency") == "latency" and isinstance(d.get("levels"), list)
+
+
 def load_days():
-    """Load valid entries; skip portal-down runs (all levels 100% errors)."""
+    """Load valid LATENCY entries; skip portal-down runs (all levels 100% errors) AND skip non-latency
+    feed rows (kind='load') so the unified feed never breaks the trend reader."""
     days = []
     with open(BASELINE_FILE, "r", encoding="utf-8") as f:
         for line in f:
@@ -32,6 +40,8 @@ def load_days():
             try:
                 d = json.loads(line)
             except json.JSONDecodeError:
+                continue
+            if not _is_latency_row(d):          # kind='load' event rows: parsed, not trended
                 continue
             # Skip entries where every level had total failures (portal down)
             if all(lv["errors"] == lv["n"] for lv in d["levels"]):
