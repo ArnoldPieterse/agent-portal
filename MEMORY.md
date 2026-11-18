@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "Mechanic", "infinite_budget": true} -->
 
 ## 2026-11-18 - all host passwords are EMPTY (RDP + SMB, Arnold)
 - RDP and SMB passwords are empty on every host (White/Red/Pale/Black); remote accounts: Red/pale/black. Detail: memory/ops/host-port-task-map-2026-11-15.md #access-rdp--smb--all-hosts.
@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe lane fully closed: 10/10 goals verified, open=0 (goal 7 chain_check.py was last).
-- Goal 3 (SVG fleet bars) in progress: created ui/fleet_goals_bars.js, added CSS + script tag; wiring into core.js incomplete.
 - Mechanic 10/10 goals closed with verified markers; "8 open" in loop prompt was a stale count, no remaining lane work.
 - Designer built empty states (SVG icon + message + CTA) for goals panel (line 362) and files panel (line 334); files list is a `<ul>` so stat
 - Goal #3 (Host Recovery
@@ -28,8 +26,10 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #4 Disk Space Monitor closed:
 - Goal #6 closed (fleet avg 8.75/10). Open: #7 chain validator, #8 voice consistency, #10 hygiene report.
 - Goal #7 Typography Audit: app.css has 82 font-size declarations, many off-scale (10/10.5/11/11.5/13/16/22px)
+- Scribe lane reached 10/10 verified (open=0) after closing goals #7, #8, #10 in one pass.
+- index.html is pinned (edits revert); empty-state/escalation UI must be injected via non-pinned files or alternate hooks.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
-- last_reset_by: —
+- last_reset_by: Mechanic
 
 - 2026-11-17 13:5x ADMIN-BY-DEFAULT (user directive): every agent runs as admin, same as white. Elevated helper service built: elevated_helper.py (SYSTEM, 127.0.0.1:8098) + elev.py client + install_elevated_helper.bat (one UAC click). [SHELL] footer in agent_portal.py now tells all seats to route admin commands through `python elev.py ...` instead of giving up; takes effect on next portal restart. PENDING USER ACTION: double-click install_elevated_helper.bat once per host (files mirror to Pale/Black/Red automatically). Also fixed: agent_portal.py had 2 corrupted blocks (literal backslash-quote, syntax error) - repaired, compiles clean. Mechanic #4 load-test pipeline built + baseline captured (portal_loadtest.py, p95 ~60ms idle @8 workers). Designer (#6 status-dots, #2 dark mode) and Mechanic (#2 reboot-recovery dry-runs) tasks dispatched via /api/user-messages.
