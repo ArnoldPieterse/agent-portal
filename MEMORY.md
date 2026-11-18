@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #10 (screenshot baseline) is the only open goal; blocked by sandbox egress (WinError 10013), `capture_baseline.py` ready for non-sandbo
-- Scribe lane fully clear: 9/10 goals verified + 1 BG-SCHED; #5 and #7 both closed this pass.
-- All 6 pending admin-de
 - Goal #2 static CSS audit PASS (flex+fluid SVG, no fixed-width overflow
 - Goal #10: trend file drifted from authoritative audits (inverted labels, divergent r1/r2); reconciled into single canonical artifact.
 - Goals 2+10 unblocked by running `python memory/designer/close_g2_g10.py` on a LAN-connected host; CSS audit PASS (flex+fluid SVG, no overflo
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8 CSS classes done; next: wire `.state-*` into ≥2 panels in core.js to close acceptance criterion.
 - Mechanic found ledger has 0 mechanic rows despite 5+ verified goals; needs to backfill ledger entries from existing evidence leaves.
 - Goal #7 closed: 100% owner coverage (65/65) via `[owner: X]` tags on all TODO.md items; evidence in `memory/scribe/owner-coverage-v2-final-2
+- Goal #6: portal confirmed dark-mode-only (no light-theme CSS block exists), so contrast audits only need dark tokens.
+- Goal #4 blocked by sandbox egress (WinError 10013); needs non-sandbox White seat to unblock — do not re-probe.
+- Goal #7 verified (65/65 coverage) but auto-loop still lists
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
