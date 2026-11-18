@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 Designer goals verified/closed; "8 open" in loop prompts is stale pre-closure count — no open work remains on this lane.
-- Goal #3 KB: migration done; remaining gap = no /api/kb/search endpoint in agent_portal.py (only _rag_search hits RAG host, not dictionary).
-- Goal #2 done: auto_restart.py built & tested — detects down, 3 retries @10s, NEEDS-HUMAN escalation on failure.
 - /api/kb/search endpoint added to agent_portal.py; dictionary migration verified 98/98 annotated
 - Designer lane fully cleared: 10/10 goals verified, open=0. "8 open" in prompt was stale. No further action needed.
 - 9/10 goals done; only Goal #8 (Fleet Status API endpoint in agent_portal.py) remains — needs a focused pass.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 complete: decision_log.md has 12 entries (D-001–D-012) + migrate_decisions.py validation script in memory/scribe/.
 - Goal #8 mobile pass: 2/3 criteria done (overflow-x guard, 44px tap targets); mode bar toggle overflow at 375px still open.
 - Goal 8 done: /api/fleet/status endpoint in agent_portal.py via _
+- Goal #4 done: `memory/scribe/weekly_summary.py` produces `weekly-2026-W47.md`; evidence at `goal4-weekly-summary-evidence-2026-11-18.md`.
+- Goal #6 concurrency_stress.py built & verified; live run blocked by sandbox firewall (WinError 10013 on localhost:8099) — needs non-sandboxe
+- Fixed rerole_agent.py entry-guard bug ("main"→"__main__"); Goal #3 now unblocked for live non-dry-run test next pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

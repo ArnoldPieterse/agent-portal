@@ -14,7 +14,7 @@ Focus: Knowledge depth + verification rigor. Build the fleet's evidence backbone
 
 6. **Fleet Question Router** - `/api/research/route` accepts a free-text question and returns which agent(s) should answer based on topic matching against each agent's goal history + tool set. UI: "Ask the fleet" input in portal header that shows routing suggestion. Verified: endpoint routes 10 test questions to correct agents; UI shows suggestion. (pointer: memory/researcher/lit-review-goal-cycling-2026-11-16.md)
 
-7. **Evidence Chain Validator** - `python memory/researcher/chain_validator.py <evidence_file>` checks that every claim in an evidence file has >=2 independent sources, no circular references, and timestamps are monotonic. Verified: passes on 3 known-good files; fails correctly on a corrupted test file.
+7. **Evidence Chain Validator** - `python memory/researcher/chain_validator.py <evidence_file>` checks that every claim in an evidence file has >=2 independent sources, no circular references, and timestamps are monotonic. Verified: passes on 3 known-good files; fails correctly on a corrupted test file. (verified: 2026-11-18 - chain_validator.py built + tested: 3/3 good files PASS, corrupted file FAILs with 3 distinct issues (single-domain, same-domain, non-monotonic ts). Artifact: memory/researcher/chain_validator.py; evid)
 
 8. **Terminology Drift Monitor** - Track how key fleet terms (loop, agent, task, module, reply, record) are used across goal files + chat logs over time. Flag any term whose usage pattern shifts >20% from baseline. Verified: script produces drift report for cycle-4 data; flags at least 1 real shift.
 
