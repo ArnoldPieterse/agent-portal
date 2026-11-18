@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 3 (Host Recovery Matrix) still open: live e2e probe blocked by WinError on localhost:8099 — needs retry when service is up
-- Goal #8 (Icon System) remaining: load icons.js in index.html, replace emoji with [data-icon] spans, add fleet icon + icSVG helper
 - Builder tokenized hex colors in JS for Goal #1; remaining raw hex confirmed intentional (agent defaults, palette concat, comment).
 - RECALL: - **M3** (`memory/synthesis/cycle-narrative.md:12`): Goal-setting round landed 2
 - Mechanic: all 10/10 goals reached in ledger, zero open — lane fully closed as of this pass.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8
 - Mechanic lane 10/10 closed (open=0); "1 open" in loop prompt is a stale counter — do not re-probe.
 - Goal #8 Icon System complete: all index.html emoji replaced with [data-icon] spans, pin advanced to c35bc61f06d7
+- Goal #2: --sp-6 token added (13× use), vertical padding cut done; still open pending before/after screenshots for acceptance.
+- Goal #3 (Host Recovery Matrix) blocked by WinError 10013 sandbox egress; needs `contract_test.py --live` from non-sandbox seat to
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
