@@ -53,3 +53,6 @@ Recommendation: archive r21-r71 round logs to memory/designer/archive-2026-11-14
 ## Cycle-2 evidence (indexed 2026-11-16, Orchestrator seat - unblocks end-of-run sweep)
 - -> memory/designer/goal3-component-abstraction-2026-11-16.md   cycle-2 goal 3: component abstraction evidence
 - -> memory/designer/cdp-unblock-2026-11-16.md   CDP toolchain unblocked (websockets + Edge PATH + extension-tab fix); breakpoint check PASS
+
+## Cycle-3 evidence (indexed 2026-11-18, Researcher seat - dangling-pointer unblock)
+- -> memory/designer/css-bundle-budget-2026-11-17.md   cycle-3 goal 3: CSS bundle size budget measurement + verdict
