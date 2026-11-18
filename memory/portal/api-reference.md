@@ -2,10 +2,11 @@
 
 Regenerated 2026-11-18 17:26 from agent_portal.py. Do not edit by hand - fix the generator.
 
-## GET (32)
+## GET (33)
 
 - `/`
 - `/api/activity`
+- `/api/agents`
 - `/api/autoloop`
 - `/api/decisions`
 - `/api/evolution/stats`
