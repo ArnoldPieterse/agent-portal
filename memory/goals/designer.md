@@ -5,6 +5,7 @@ Focus: Visual system maturity + UX polish. Establish a design token system, impr
 1. **Design Token System** - Define all colors, spacing, typography, and border-radius values as CSS custom properties in `ui/tokens.css`. No hard-coded values in component CSS. Verified: grep for hex colors in ui/*.css returns 0 hits outside tokens.css; all components use var(--token). (pointer: memory/designer/apply_designer_scale_patch.py)
 
 2. **Information Density Pass** - Reduce vertical whitespace by 20% across all panels without hurting readability. Tighten line-height, reduce padding, consolidate related data into tables where appropriate. Verified: before/after screenshots show reduced height; no text overlap or clipping.
+   [PROGRESS 2026-11-19 (Orchestrator on White canonical): All 10 line-height values tokenized (--lh-tight/caption/base/loose/mono); zero hardcoded remain. Remaining: padding consolidation + before/after screenshots for acceptance test.]
 
 3. **Data Visualization Upgrade** - Replace plain-text stats in fleet panel with mini bar charts (goal completion per agent) using inline SVG (no external lib). Animated on load. Verified: 8 bars render correctly; animation completes <500ms; colors match design tokens.
 
