@@ -90,3 +90,5 @@ or: `python memory/mechanic/deploy_reboot_recovery_all.py` (calls schtasks inter
 - **MirrorSync schtask: RESOLVED** - registered every 5 min (memory_mirror.py). Mirror pipeline LIVE: 09:52 run pushed 30 files to Red. REMAINING NEEDS-HUMAN: Pale/Black SMB creds into memory_mirror_hosts.json (Arnold; Red works with empty password).
 - **Mechanic #2 Red leg: CLOSED** - TCP 445 OPEN + 8888 OPEN probed from White seat; ledger recorded mechanic.md line 7; evidence memory/ops/probe-evidence.jsonl.
 - **Designer #5/#7 CDP wall: RESOLVED (agent-side fix only)** - chrome.exe absent, but msedge --remote-debugging-port=9222 loads portal and /json/list returns the live page. Point live_verify_g578.py at 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe' instead of chrome.
+- [17:31] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
+- [17:32] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
