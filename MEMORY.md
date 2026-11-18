@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe compress.py built; 4/5 threads pass ≤20% ratio. Open: add ultra-compact mode for inputs <1500 chars (fixed overhead dominates at that
-- Builder completed Goal #3 Fleet Health Dashboard: UI fetches /api/health/fleet, per-host scores + badges, CSS added, index.html pin advanced
 - All 10 Mechanic goals now carry verified markers; Goal #4 (disk_monitor.py) was the last open one, closed this pass.
 - All 10 Designer goals verified/closed; "8 open" in loop prompts is stale pre-closure count — no open work remains on this lane.
 - Goal #3 KB: migration done; remaining gap = no /api/kb/search endpoint in agent_portal.py (only _rag_search hits RAG host, not dictionary).
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer lane fully cleared: 10/10 goals verified, open=0. "8 open" in prompt was stale. No further action needed.
 - 9/10 goals done; only Goal #8 (Fleet Status API endpoint in agent_portal.py) remains — needs a focused pass.
 - Goal #3 done: goalBarsUpdate() in ui/core.js, 8 bars from /api/goals, 400ms CSS transition, tokens --acc/--ok. Designer at 4/10.
+- Goal #1 complete: decision_log.md has 12 entries (D-001–D-012) + migrate_decisions.py validation script in memory/scribe/.
+- Goal #8 mobile pass: 2/3 criteria done (overflow-x guard, 44px tap targets); mode bar toggle overflow at 375px still open.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

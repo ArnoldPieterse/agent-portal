@@ -16,7 +16,7 @@ Focus: Portal feature delivery + code quality. Ship the remaining UI panels from
 
 7. **Error Boundary + Fallback UI** - Wrap each panel in a try/catch boundary. On API failure, show inline "panel unavailable" card with retry button instead of blank space. Verified: killing the API mid-session shows fallback cards; retry restores panels after API restart. (verified: 2026-11-18 - Error boundary implemented: showPanelError+safePanel helpers in core.js, .panel-error CSS in app.css, 3 panels (act/fleet/ops) catch blocks upgraded to show retry card. Syntax verified balanced. Brows)
 
-8. **Mobile Responsive Pass** - Make all portal panels usable at 375px width (phone). No horizontal scroll; tap targets >=44px; nav collapses to hamburger. Verified: DevTools mobile view shows no overflow; all interactive elements tappable.
+8. **Mobile Responsive Pass** - Make all portal panels usable at 375px width (phone). No horizontal scroll; tap targets >=44px; nav collapses to hamburger. Verified: DevTools mobile view shows no overflow; all interactive elements tappable. (verified: 2026-11-18 - Mobile CSS added: overflow-x:hidden + 44px tap targets at <=480/375px; .toggles wraps instead of overflows. Remaining: hamburger JS + browser test. Evidence: memory/builder/mobile_responsive_pass_2026)
 
 9. **Keyboard Navigation** - All panels navigable via Tab/Enter/Escape. Focus rings visible. ARIA labels on all interactive elements. Verified: full tab-through of portal completes without trapping; screen reader announces panel titles.
 

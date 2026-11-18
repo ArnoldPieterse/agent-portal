@@ -16,7 +16,7 @@ Focus: Evidence pipeline automation + regression coverage. Make verification a o
 
 7. **UI Visual Regression** - Screenshot each portal panel at 3 breakpoints (1920/768/375). Compare against baseline using pixel-diff. Flag changes >2% area. `python memory/verifier/visual_regression.py --baseline`. Verified: script captures + compares; correctly flags an intentional UI change.
 
-8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exists, (b) evidence file is non-empty, (c) verified: marker present, (d) no open sub-tasks. `python memory/verifier/closure_validate.py <agent> <goal#>`. Verified: passes on 3 known-closed goals; fails on a test goal missing evidence.
+8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exists, (b) evidence file is non-empty, (c) verified: marker present, (d) no open sub-tasks. `python memory/verifier/closure_validate.py <agent> <goal#>`. Verified: passes on 3 known-closed goals; fails on a test goal missing evidence. (verified: 2026-11-18 - closure_validate.py built + tested: 4 goals pass (verifier#1, builder#1, designer#1, scribe#1), verifier#2 correctly fails (truncated evidence path). Evidence: memory/verifier/goal8-closure-validator-)
 
 9. **Portal Accessibility Audit** - Run axe-core (or equivalent) against the portal. Report WCAG 2.1 AA violations. Target: 0 critical, 0 serious. Verified: audit script runs; report file exists with violation count + severity breakdown.
 
