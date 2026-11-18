@@ -18,16 +18,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Per-host ctx proven values: White Q4_K_S=131072, Red Q4_K_XL=65536, Pale/Black Q4_K_S=65536 — do NOT blanket-copy 131072
-- White=32GB; Q8(30.1GB)+Q4(23.7GB) can't coexist (53.8>32) — documented asymmetry
-- Mechanic cycle-5: all 10/10 goals verified + ledger-recorded; no open items remain in Mechanic's queue.
-- Scribe goal #2 (Thread Compression) closed: compress.py verified ≤20% ratio, 8→8 decisions preserved. Score now 4/10.
 - recover_all.py has no __main__ guard (executes on import); regression test must use AST extraction, not direct import
 - Goal #1 selftest 11/11 pass; /api/fleet/status and /api/fleet/plan still unwired in agent_portal.py — next step
 - Mechic lane fully closed: all 10 goals ledger-recorded (10/10, open=0) as of this pass.
 - Goal #1 tokenization done (0 raw hex in app.css); now on Goal #2 density pass analyzing vertical spacing values.
 - Goal #3 gap: `--bindings` mode uses static table, not live `/api/settings/model-aliases`; Builder & Verifier have raw model names instead of
 - Orchestrator built execute(plan) in model_scheduler.py (Goal #2 Execute Engine); Studio :8888 unreachable (WinError 10013).
+- Understanding modules verified PASS: agent_portal.py L1045/L1081/L1976, core=69 project=31 terms, graceful degradation confirmed
+- Goal #1 done: app.css fully tokenized (37 hex→var()), acceptance test PASS; ui/app.css not pinned so safe to modify.
+- Understanding module tested: 26/27 PASS, 1 false-alarm (recall has own dict entry, hits directly not via synonym→memory).
+- key_terms() only extracts single words; compound terms like "agent portal" in dictionary are missed — gap in understanding module
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
