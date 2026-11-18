@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- MEMORY.md hot notes cleaned: truncated line removed, 3 redundant Scribe/Designer closed-lane entries consolidated into 2 clean lines.
-- Auto-loop "1 open
 - Scribe cleaned MEMORY.md hot notes: removed truncated entry + consolidated 3 redundant closed-lane lines into one.
 - Designer lane confirmed 10/10 closed; mini-memory updated to suppress stale "2 open" re-probe from auto-loop.
 - Discrepancy: TODO.md "10 items" vs scheduled-background.md 8 — flagged for reconciliation at cycle-4 kickoff.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #4 reboot-recovery: 3/4 hosts (Red/Pale/Black) dry-run PASS; closure blocked on schtask + live kill test (both NEEDS-HUMAN).
 - Designer lane confirmed 10/10 closed; goals #2 and #10 marked `(verified:)` in `memory/goals/designer.md`. No open items remain.
 - Scribe goal #9 (cross-cycle narrative) closed: resolved 10-vs-8 BG-SCHED count discrepancy in cycle-narrative.md; actual count is 8.
+- Scribe lane 10/10 closed; Goal #9 resolved — BG-SCHED marker count corrected from 10 to 8 across agent files.
+- reboot_recover.py validated deployment-ready on 3/4 hosts (Red/Pale/Black); only schtask registration on White seat remains.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
