@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- shutil.disk_usage("C:\\") hits PermissionError in this env; use Win32 GetDiskFreeSpaceExW instead (same pattern as mem check).
-- Designer: Goal #8 Icon System ~70% done; remaining = okText helper (
-- Mechanic fixed `_local_disk_pct()`: `shutil.disk_usage("C:\\")` hits PermissionError; switched to Win32 API (same pattern as memory
 - Goal #8 (Icon System) complete: all chrome emoji replaced with SVG icons in core.js; 0 remaining per grep.
 - Goal #9 (Post-Mortem Template) was the stale "1 open" source; now closed with verified marker after running postmortem_gen.py.
 - Goal #8 (Icon System) complete: all system emoji replaced in ui/core.js; user-settable avatar emojis (L37, uploads L233) are out of scope.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #
 - Researcher identified shared "needs live browser" blocker across Designer goals #2/#5/#6 as top analysis priority
 - Builder completed Goal #6 (Loading Skeleton Screens): CSS shimmer + skeleton injection in fleetUpdate() and goalsLoad()
+- Mechanic wrote designer-notification-integration-forecast.md linking Designer's notification goal to health_log.jsonl, /api/fleet/status, an
+- Scribe wrote designer-cycle5-sequencing-forecast-2026-11-19.md: 8-goal plan, est. 4–5 passes to close Designer's open work.
+- Goal 5 Notification System was clobbered (0 code); re-implement via DOM injection from JS, no index.html edits.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
