@@ -160,9 +160,100 @@ def verify_only():
     print(f"\nSummary: {passed}/{total} hosts verified")
     return 0 if all_ok else 1
 
+def _run_test_safely(test_path, timeout=60):
+    try:
+        r = subprocess.run([sys.executable, str(test_path)], capture_output=True, text=True, timeout=timeout)
+        tail = (r.stdout.strip().splitlines() + r.stderr.strip().splitlines())[-3:]
+        return {"ran": True, "exit": r.returncode, "ok": r.returncode == 0, "tail": tail}
+    except subprocess.TimeoutExpired:
+        return {"ran": True, "exit": -1, "ok": False, "tail": ["TIMEOUT"]}
+    except Exception as e:
+        return {"ran": False, "ok": None, "tail": [str(e)[:120]]}
+
+def preflight():
+    """Deployment-readiness report. SAFE FROM ANY SEAT (no schtasks/WinRM writes).
+    Run this FIRST from the non-sandbox White seat before the one-shot deploy:
+        python memory/mechanic/deploy_reboot_recovery_all.py --preflight
+    Catches, up front: missing pywinrm (=> manual fallback), broken unit test,
+    bad host config, and running on a sandbox seat by mistake."""
+    ts = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    print(f"[{ts}] PREFLIGHT - reboot-recovery deployment readiness (read-only, no changes)\n")
+
+    checks = {}
+
+    # 1. python env
+    checks["python"] = {"ok": True, "detail": f"{platform.python_version()} @ {sys.executable}"}
+
+    # 2. recover script present + has a registration entrypoint
+    sp = SCRIPT_SRC
+    if sp.exists() and sp.stat().st_size > 0:
+        try:
+            src_txt = sp.read_text(encoding="utf-8", errors="replace")
+        except Exception:
+            src_txt = ""
+        has_register = ("--register-task" in src_txt) or ("argparse" in src_txt) or ("def main" in src_txt)
+        checks["script"] = {"ok": has_register,
+                            "detail": f"{sp.name} {sp.stat().st_size}B; register-task entrypoint={'yes' if has_register else 'NO'}"}
+    else:
+        checks["script"] = {"ok": False, "detail": f"MISSING or empty: {sp}"}
+
+    # 3. unit test (auto-detect the canonical one)
+    cands = ["reboot_recovery_test.py", "boot_recovery_test.py", "test_deploy_reboot_recovery.py"]
+    tpath = next((SCRIPT_SRC.parent / c for c in cands if (SCRIPT_SRC.parent / c).exists()), None)
+    if tpath:
+        tr = _run_test_safely(tpath)
+        checks["unit_test"] = {"ok": bool(tr.get("ok")),
+                               "detail": f"{tpath.name} exit={tr.get('exit')} tail={tr.get('tail')}"}
+    else:
+        checks["unit_test"] = {"ok": None, "detail": "SKIP - no test file found"}
+
+    # 4. pywinrm availability (missing => manual fallback path; warning, not fatal)
+    try:
+        import winrm  # noqa: F401
+        checks["pywinrm"] = {"ok": True, "detail": "available (remote auto-deploy will be attempted)"}
+    except ImportError:
+        checks["pywinrm"] = {"ok": False, "warning": True,
+                             "detail": "MISSING - remote hosts need manual copy + 'python reboot_recover.py --register-task' (deploy script prints steps)"}
+
+    # 5. host config sanity
+    bad = []
+    for name, cfg in HOSTS_REMOTE.items():
+        for k in ("ip", "user", "pw"):
+            if not cfg.get(k):
+                bad.append(f"{name}.{k}")
+    checks["hosts"] = {"ok": len(HOSTS_REMOTE) == 3 and not bad,
+                       "detail": f"{len(HOSTS_REMOTE)} remote hosts; missing fields: {bad or 'none'}"}
+
+    # 6. seat sandbox heuristic (read-only schtasks query; COM wall => sandbox)
+    try:
+        v = subprocess.run(["schtasks", "/query"], capture_output=True, text=True, timeout=15)
+        com_wall = (v.returncode != 0) and ("class not registered" in ((v.stderr or "") + (v.stdout or "")).lower())
+        checks["seat"] = {"ok": not com_wall,
+                          "detail": "non-sandbox (schtasks COM OK)" if not com_wall
+                                  else "SANDBOX DETECTED (schtasks COM unavailable) - run the real deploy from a non-sandbox White seat"}
+    except FileNotFoundError:
+        checks["seat"] = {"ok": None, "detail": "schtasks.exe not found on this seat (likely sandbox)"}
+    except Exception as e:
+        checks["seat"] = {"ok": None, "detail": f"seat check skipped ({str(e)[:80]})"}
+
+    ready = all(c.get("ok") for c in checks.values() if c.get("ok") is not None)
+    for name, c in checks.items():
+        mark = "PASS" if c.get("ok") else ("SKIP" if c.get("ok") is None else ("WARN" if c.get("warning") else "FAIL"))
+        print(f"  [{mark}] {name}: {c['detail']}")
+
+    note = " (remote deploy will use manual fallback - pywinrm missing)" if not checks["pywinrm"]["ok"] else ""
+    print(f"\nPREFLIGHT RESULT: {'READY' if ready else 'NOT READY'}{note}")
+
+    log_entry({"ts": ts, "type": "preflight_reboot_recovery", "by": "orchestrator-assist",
+               "ready": ready, "checks": checks})
+    print(f"  logged -> {LOG_FILE.name}")
+    return 0 if ready else 1
+
 def main():
     ts = datetime.datetime.now(datetime.timezone.utc).isoformat()
     
+    if "--preflight" in sys.argv:
+        sys.exit(preflight())
     if "--verify-only" in sys.argv:
         sys.exit(verify_only())
     
