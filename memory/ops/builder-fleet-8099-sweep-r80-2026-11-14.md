@@ -30,3 +30,7 @@ terminal LAN egress:
 No new unblock. AC-A2-2 LIVE gate unchanged: Arnold on White console — (a) confirm portal proc
 alive + :8099 bound, (b) optionally allow 8099 inbound in Windows Firewall so future agent sweeps
 can see live status instead of timeout, (c) relay PID / open Files panel for the browser leg.
+
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

@@ -78,7 +78,7 @@ A multi-agent AI system (8 agents) running on a 4-host Windows fleet (White/Red/
 - Each agent has 10 goals per cycle, stored in `memory/goals/<name>.md`.
 - Canonical goal list = TODO.md `## AGENT GOALS` section.
 - Mark progress with evidence: file paths, script outputs, verification results.
-- Cycle 3 is live (started 2026-11-17); cycle 2 in `memory/goals/archive/cycle-2/`, cycle 1 in `archive/`.
+- Cycle 3 is live (started 2026-11-17); cycle 2 in `memory/goals/archive/`, cycle 1 in `archive/`.
 - The 8 goal files: archivist, builder, designer, mechanic, orchestrator, researcher, scribe, verifier (one per agent).
 
 ## 4. Where to Find What (quick lookup)

@@ -15,7 +15,7 @@ From a non-sandbox White seat (ops terminal / RDP, elevated), run:
 python Z:\memory\ops\batch_tier_b.py
 ```
 This executes ALL open entries below in sequence, writes a summary to
-`memory/mechanic/batch-tier-b-run.json`, and is idempotent (re-runs are safe).
+`memory/mechanic/batch-tier-b-run.json` (never committed), and is idempotent (re-runs are safe).
 Use `--dry-run` to preview; `--skip-browser` to skip Designer #5/#7 if no Chrome.
 After the batch: check each artifact path, run ledger records for any goals whose
 acceptance is now met, and tick the lines below.
@@ -45,7 +45,7 @@ Same pattern applies to Orchestrator #8 (backend done; live viewport = Tier B) a
 ## OPEN (batch in one sitting)
 - [ ] **Orchestrator #8** — Multi-host failover drill (need WinRM + LAN). Run twice on different hosts.
   - cmd: `python Z:\failover_drill.py --host red` then `python Z:\failover_drill.py --host black`
-  - evidence target: memory/ops/failover-drill-<host>-<date>.json (TTD < 60s, fleet detection < 120s);
+  - evidence target: memory/ops/failover-drill-<host>-<date>.json (TTD < 60s, fleet detection < 120s); (template)
   - ledger record orchestrator 8.
 - [x] **Verifier #2** — RESOLVED 2026-11-18 (unsloth-assist, White seat): VerifierSLO schtask registered daily 06:00, first run exit 0.
 - [x] **Mechanic #4 load-probe leg** — RESOLVED 2026-11-18: PortalLoadProbe registered daily 06:00; accumulating (2/7 days at registration).

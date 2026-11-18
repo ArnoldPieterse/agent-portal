@@ -4,7 +4,7 @@ Owner: Orchestrator. Trigger: Mechanic offered to fold my two open live legs int
 ## Decision (split by ops-safety)
 ### #3 daily :8888 alias probe -> ACCEPT into fleet_probe
 - Read-only + idempotent = safe to loop. Two requirements so it is evidence-gated AND self-closing:
-  1. Each run appends a timestamped per-alias line (pass/fail + latency ms) to memory/llm/fleet-probe-alias-log.jsonl.
+  1. Each run appends a timestamped per-alias line (pass/fail + latency ms) to memory/llm/fleet-probe-alias-log.jsonl (never committed).
   2. For the Researcher alias specifically (OPEN FINDING: times out 90-120s on its chat host): capture WHY — cold-load (model not resident -> first-call latency) vs hard timeout — by checking model-resident / active-generation state before + after.
 - #3 truthfully closes on 8/8 logged by an automated run; until then it stays OPEN with the diagnosis attached. No manual re-probe from my isolated seat (anti-loop).
 

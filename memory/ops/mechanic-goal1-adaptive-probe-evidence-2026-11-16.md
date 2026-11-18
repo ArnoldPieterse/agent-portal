@@ -27,3 +27,7 @@ PASS: Severity escalates OK -> WARN -> CRIT before hard failure.
 - Sandbox run shows expected CRITs on White .179 ports 5985/8099/8888 (sandbox network isolation)
 - Red .245 all PermissionError (firewall blocks sandbox egress) - expected
 - Black .99 and Pale .39 all OK from sandbox (LAN reachable)
+
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

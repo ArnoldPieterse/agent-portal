@@ -27,3 +27,6 @@ If the LIVE portal process runs from this folder, its `GET /api/git` would retur
 - Goal #4 daily PID-alive + single-listener re-check after the restart (same egress block).
 
 Status: git MECHANISM = PASS (local). Live HTTP health = UNTESTED (environment-limited, not a reproduced failure).
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

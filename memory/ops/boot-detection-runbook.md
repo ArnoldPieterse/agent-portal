@@ -4,7 +4,7 @@ Updated: 2026-11-17 (Mechanic, goal #2)
 ## What it does
 `boot_recovery.py` runs at system startup on each host. If uptime < 5 min,
 it waits for Studio :8888 then invokes `fleet_reload.py` (idempotent).
-Logs to `memory/ops/boot-recovery.jsonl`.
+Logs to `memory/ops/boot-recovery-log.jsonl`.
 
 ## Registration (run ON EACH HOST, as the local user)
 
@@ -34,7 +34,7 @@ Set env var `FLEET_HOST=Red`.
 ## Verification
 1. On each host: `schtasks /query /tn FleetBootRecovery` — confirm it exists.
 2. Reboot one host (start with Pale, lowest risk).
-3. Within 5 min of boot: check `memory/ops/boot-recovery.jsonl` for a `reload_done` entry.
+3. Within 5 min of boot: check `memory/ops/boot-recovery-log.jsonl` for a `reload_done` entry.
 4. Confirm Studio :8888 has dual models loaded via portal smoke test.
 
 ## Notes

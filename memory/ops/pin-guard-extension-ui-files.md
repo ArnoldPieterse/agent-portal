@@ -22,7 +22,7 @@ Expected result: file size ≈ 20644 bytes, zero hard-coded hex/rgba/radius/dura
 ```bash
 python -c "import hashlib; h=hashlib.sha1(open('ui/app.css','rb').read()).hexdigest()[:12]; print(h)"
 # e.g. output: a1b2c3d4e5f6
-copy ui\app.css memory\designer\ui_app_css_CANONICAL_a1b2c3d4e5f6_2026-11-17x.html
+copy ui\app.css memory\designer\ui_app_css_CANONICAL_ac3ef7ec2e35_2026-11-17y.css
 ```
 
 ### Step 3: Add to PIN_FILES in memory_mirror.py (line ~233)

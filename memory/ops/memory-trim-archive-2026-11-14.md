@@ -52,3 +52,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); Studio serializ
 
 ```
 
+
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

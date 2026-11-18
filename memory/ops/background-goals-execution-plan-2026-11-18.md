@@ -35,9 +35,9 @@ Rule: these are date/probe-gated; do NOT force-close early. Execute when the gat
 **Action NOW:**
 1. On White: register schtask:
    ```
-   python elev.py --shell "schtasks /create /tn SchedTaskDepGraph /sc weekly /d MON /st 06:00 /tr \"python C:\\path\\to\\dep_graph_gen.py\""
+   python elev.py --shell "schtasks /create /tn SchedTaskDepGraph /sc weekly /d MON /st 06:00 /tr \"python C:\\path\\to\\dep_graph_gen.py (planned)\""
    ```
-2. Run once manually to seed baseline: `python memory/mechanic/dep_graph_gen.py --baseline`
+2. Run once manually to seed baseline: `python memory/mechanic/dep_graph_gen.py (planned) --baseline`
 3. Log registration in this file
 **Action when gate met (Dec 2+):**
 4. Confirm 2 weekly runs + 1 test flag (add a dummy task, verify it appears in diff)
@@ -92,7 +92,7 @@ Rule: these are date/probe-gated; do NOT force-close early. Execute when the gat
 **Action NOW:**
 1. Scribe needs to produce at least 2 syntheses in the next 2 weeks (natural cycle work)
 2. After each synthesis, Scribe spot-checks 5 key facts from source thread vs synthesis
-3. Log scores to `memory/scribe/compression_fidelity_trend.jsonl` (one JSON line per audit: {date, synthesis_id, facts_checked, facts_retained, score})
+3. Log scores to `memory/scribe/compression-fidelity-trend.json` (one JSON line per audit: {date, synthesis_id, facts_checked, facts_retained, score})
 **Action when gate met:**
 4. Two entries in trend file with score ≥0.9 → closure
 5. Record closure

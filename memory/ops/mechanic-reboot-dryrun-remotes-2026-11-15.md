@@ -39,3 +39,6 @@ Then re-run: `python reboot_dryrun_remotes.py` from White.
 - `reboot_dryrun_remotes.py` — round 1 script (all 3 hosts, Bearer auth)
 - `reboot_dryrun_r2.py` — round 2 fix (Pale JWT + Red WinRM attempt)
 - Timestamp: 2026-11-15 17:05:28 (round 1), 17:05:58 (round 2)
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

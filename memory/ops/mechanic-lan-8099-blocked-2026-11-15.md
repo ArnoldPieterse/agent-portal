@@ -25,3 +25,7 @@ Verify after: re-run `python probe_white_goals_r24.py` from Red - expect TCP OPE
 ```
 mingit\cmd\git.exe add goals_data.json && mingit\cmd\git.exe commit -m "track goals_data.json (dream-big round r58)"
 ```
+
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

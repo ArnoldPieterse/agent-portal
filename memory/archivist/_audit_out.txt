@@ -1,0 +1,3 @@
+scanned=80 refs=1202 counts={'OK': 905, 'MOVED': 245, 'DOCUMENTED-ABSENT': 13, 'OK-EXTERNAL': 2, 'ANNOTATED': 23, 'OK-PREFIX': 4, 'PROVENANCE': 9, 'OK-DOCUMENTED': 1}
+phantoms=0 unique=0
+reports: memory/archivist/hostdoc-consistency-v2-2026-11-18.{json,md}

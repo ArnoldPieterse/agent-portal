@@ -2,80 +2,19 @@
  "date": "2026-11-18",
  "script": "memory/archivist/hostdoc_consistency_v2.py",
  "files_scanned": 80,
- "refs_checked": 1344,
+ "refs_checked": 1202,
  "counts": {
-  "OK": 977,
-  "MOVED": 265,
-  "PHANTOM": 82,
-  "DOCUMENTED-ABSENT": 11,
-  "PROVENANCE": 9
+  "OK": 905,
+  "MOVED": 245,
+  "DOCUMENTED-ABSENT": 13,
+  "OK-EXTERNAL": 2,
+  "ANNOTATED": 23,
+  "OK-PREFIX": 4,
+  "PROVENANCE": 9,
+  "OK-DOCUMENTED": 1
  },
- "phantoms_found": 82,
- "unique_phantoms": [
-  "-2026-11-15.md",
-  "Archivist/Scribe",
-  "BUNDLE-SHA256.txt",
-  "SKILL.md",
-  "Users/White/.agents/skills/portal-memory-modular/SKILL.md",
-  "_2026-11-17x.html",
-  "_YYYY-MM-DDx.html",
-  "_result.json",
-  "adb.html",
-  "agent_portal.log",
-  "archivist/canonical-map.md",
-  "archivist/provenance-audit.md",
-  "boot-start.txt",
-  "dep_graph_gen.py",
-  "designer/index-patched-v2.html",
-  "firewall_fix.bat",
-  "fleet_health_check.py",
-  "goals_data.json",
-  "handler_api.py",
-  "handler_ui.py",
-  "json/.jsonl",
-  "json/.md",
-  "lan_probe.py",
-  "lan_probe_result.txt",
-  "memory/designer/index_html_CANONICAL_",
-  "memory/designer/ui_app_css_CANONICAL_",
-  "memory/designer/ui_app_css_CANONICAL_a1b2c3d4e5f6_2026-11-17x.html",
-  "memory/goals/archive/cycle-2",
-  "memory/llm/fleet-probe-alias-log.jsonl",
-  "memory/mechanic/batch-tier-b-run.json",
-  "memory/mechanic/dep_graph_gen.py",
-  "memory/memory",
-  "memory/ops/boot-recovery.jsonl",
-  "memory/ops/failover-drill-",
-  "memory/ops/netcmd-ops.jsonl",
-  "memory/ops/verifier-healthcheck-white-2026-11-15.md",
-  "memory/researcher/benchmark-summary-2026-11-16.md",
-  "memory/scribe/compression_fidelity_trend.jsonl",
-  "memory/scribe/index_html_pre-r14-ac5e1560",
-  "mirror_canary_result.json",
-  "portal/agents_prompt.py",
-  "portal/api_snapshots.py",
-  "portal/autoloop.py",
-  "portal/chat_stream.py",
-  "portal/fleet_perf.py",
-  "portal/memory_state.py",
-  "portal/rag.py",
-  "portal/safety.py",
-  "portal/sandbox_sync.py",
-  "portal/umq.py",
-  "portal_restart.log",
-  "probe_fleet_8099_r80.py",
-  "probe_white_goals_r24.py",
-  "probe_white_reach_result.json",
-  "probe_winrm_r17.txt",
-  "prompt_builder.py",
-  "pyc/.bak",
-  "reboot_dryrun_r2.py",
-  "reboot_dryrun_remotes.py",
-  "ref.json",
-  "ref.jsonl",
-  "sim_fleet_probe_degrade.py",
-  "todo_done_parts/TODO_done_part_NNN.md"
- ],
+ "phantoms_found": 0,
+ "unique_phantoms": [],
  "details": [
   {
    "file": "MEMORY.md",
@@ -449,8 +388,8 @@
   {
    "file": "TODO.md",
    "line": 43,
-   "ref": "memory/ops/netcmd-ops.jsonl",
-   "status": "PHANTOM"
+   "ref": "netcmd-ops.jsonl",
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "TODO.md",
@@ -469,12 +408,6 @@
    "line": 51,
    "ref": "memory/verifier",
    "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 51,
-   "ref": "-2026-11-15.md",
-   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -673,12 +606,6 @@
   },
   {
    "file": "TODO.md",
-   "line": 93,
-   "ref": "SKILL.md",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "TODO.md",
    "line": 95,
    "ref": "index_check.py",
    "status": "MOVED",
@@ -737,20 +664,8 @@
   {
    "file": "TODO.md",
    "line": 99,
-   "ref": "SKILL.md",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "TODO.md",
-   "line": 99,
    "ref": "Users/White/.agents/skills/portal-memory-modular/SKILL.md",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "TODO.md",
-   "line": 100,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
+   "status": "OK-EXTERNAL"
   },
   {
    "file": "TODO.md",
@@ -781,12 +696,6 @@
    "line": 107,
    "ref": "backend_swap_drill_result.json",
    "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 108,
-   "ref": "pyc/.bak",
-   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -880,12 +789,6 @@
    "actual": [
     "memory/ops/git-hygiene.md"
    ]
-  },
-  {
-   "file": "TODO.md",
-   "line": 118,
-   "ref": "_provenance_missing.txt",
-   "status": "OK"
   },
   {
    "file": "TODO.md",
@@ -1011,12 +914,6 @@
   },
   {
    "file": "TODO.md",
-   "line": 140,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
-  },
-  {
-   "file": "TODO.md",
    "line": 141,
    "ref": "repin_root_index.py",
    "status": "MOVED",
@@ -1135,14 +1032,8 @@
   {
    "file": "TODO.md",
    "line": 157,
-   "ref": "memory/scribe/index_html_pre-r14-ac5e1560",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "TODO.md",
-   "line": 157,
-   "ref": "adb.html",
-   "status": "PHANTOM"
+   "ref": "memory/scribe/index_html_pre-r14-ac5e15600b9ca4d56ef028ac800b0adb.html",
+   "status": "OK"
   },
   {
    "file": "TODO.md",
@@ -1194,12 +1085,6 @@
    "line": 163,
    "ref": "memory/synthesis/INDEX.md",
    "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 163,
-   "ref": "Archivist/Pale",
-   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "TODO.md",
@@ -1258,12 +1143,7 @@
    "file": "TODO.md",
    "line": 174,
    "ref": "Users/White/.unsloth/studio/sandbox/_default/index.html",
-   "status": "MOVED",
-   "actual": [
-    "index.html",
-    "AgentPortal_V1/index.html",
-    "calculator-app/index.html"
-   ]
+   "status": "OK-EXTERNAL"
   },
   {
    "file": "TODO.md",
@@ -1344,12 +1224,6 @@
    "actual": [
     "memory/builder/arnold-restart-r8.md"
    ]
-  },
-  {
-   "file": "TODO.md",
-   "line": 181,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
   },
   {
    "file": "TODO.md",
@@ -1810,8 +1684,8 @@
   {
    "file": "TODO.md",
    "line": 297,
-   "ref": "archivist/provenance-audit.md",
-   "status": "PHANTOM"
+   "ref": "memory/archivist/provenance-audit-2026-11-15.md",
+   "status": "OK"
   },
   {
    "file": "TODO.md",
@@ -1844,8 +1718,8 @@
   {
    "file": "TODO.md",
    "line": 299,
-   "ref": "archivist/canonical-map.md",
-   "status": "PHANTOM"
+   "ref": "memory/archivist/canonical-locations-2026-11-15.md",
+   "status": "OK"
   },
   {
    "file": "TODO.md",
@@ -1985,18 +1859,6 @@
   },
   {
    "file": "TODO.md",
-   "line": 343,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 346,
-   "ref": "Archivist/Scribe",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "TODO.md",
    "line": 349,
    "ref": "red_setup_result2.json",
    "status": "OK"
@@ -2005,12 +1867,6 @@
    "file": "TODO.md",
    "line": 349,
    "ref": "red_manual_verify.py",
-   "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 349,
-   "ref": "red_chain_result.json",
    "status": "OK"
   },
   {
@@ -2085,12 +1941,6 @@
   },
   {
    "file": "TODO.md",
-   "line": 356,
-   "ref": "red_chain_result.json",
-   "status": "OK"
-  },
-  {
-   "file": "TODO.md",
    "line": 358,
    "ref": "red_chain_result.json",
    "status": "OK"
@@ -2135,12 +1985,6 @@
    "file": "TODO.md",
    "line": 360,
    "ref": "red_chain.py",
-   "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 361,
-   "ref": "red_chain_result.json",
    "status": "OK"
   },
   {
@@ -2204,19 +2048,7 @@
   {
    "file": "TODO.md",
    "line": 369,
-   "ref": "smoke8.py",
-   "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 369,
    "ref": "smoke6.py",
-   "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 369,
-   "ref": "group_e2e.py",
    "status": "OK"
   },
   {
@@ -2331,12 +2163,6 @@
    "file": "TODO.md",
    "line": 374,
    "ref": "red_agents_ready.json",
-   "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 374,
-   "ref": "red_realias.py",
    "status": "OK"
   },
   {
@@ -2756,27 +2582,9 @@
   },
   {
    "file": "TODO.md",
-   "line": 473,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 474,
-   "ref": "SKILL.md",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "TODO.md",
    "line": 475,
    "ref": "timer-app/index.html",
    "status": "OK"
-  },
-  {
-   "file": "TODO.md",
-   "line": 475,
-   "ref": "json/.md",
-   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2896,7 +2704,7 @@
    "file": "TODO.md",
    "line": 528,
    "ref": "memory/researcher/benchmark-summary-2026-11-16.md",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "TODO.md",
@@ -3013,8 +2821,8 @@
   {
    "file": "memory/ONBOARDING.md",
    "line": 81,
-   "ref": "memory/goals/archive/cycle-2",
-   "status": "PHANTOM"
+   "ref": "memory/goals/archive",
+   "status": "OK"
   },
   {
    "file": "memory/ONBOARDING.md",
@@ -3375,7 +3183,7 @@
    "file": "memory/ops/INDEX.md",
    "line": 26,
    "ref": "fleet_health_check.py",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/INDEX.md",
@@ -3393,7 +3201,7 @@
    "file": "memory/ops/INDEX.md",
    "line": 29,
    "ref": "sim_fleet_probe_degrade.py",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/INDEX.md",
@@ -3799,13 +3607,13 @@
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
    "line": 38,
    "ref": "dep_graph_gen.py",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
    "line": 40,
    "ref": "memory/mechanic/dep_graph_gen.py",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
@@ -3858,8 +3666,8 @@
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
    "line": 95,
-   "ref": "memory/scribe/compression_fidelity_trend.jsonl",
-   "status": "PHANTOM"
+   "ref": "memory/scribe/compression-fidelity-trend.json",
+   "status": "OK"
   },
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
@@ -4247,7 +4055,13 @@
    "file": "memory/ops/boot-deployment-runbook.md",
    "line": 52,
    "ref": "boot-start.txt",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 52,
+   "ref": "boot-start.txt",
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/boot-deployment-runbook.md",
@@ -4321,8 +4135,8 @@
   {
    "file": "memory/ops/boot-detection-runbook.md",
    "line": 7,
-   "ref": "memory/ops/boot-recovery.jsonl",
-   "status": "PHANTOM"
+   "ref": "memory/ops/boot-recovery-log.jsonl",
+   "status": "OK"
   },
   {
    "file": "memory/ops/boot-detection-runbook.md",
@@ -4363,8 +4177,8 @@
   {
    "file": "memory/ops/boot-detection-runbook.md",
    "line": 37,
-   "ref": "memory/ops/boot-recovery.jsonl",
-   "status": "PHANTOM"
+   "ref": "memory/ops/boot-recovery-log.jsonl",
+   "status": "OK"
   },
   {
    "file": "memory/ops/boot-detection-runbook.md",
@@ -4376,7 +4190,7 @@
    "file": "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md",
    "line": 3,
    "ref": "probe_fleet_8099_r80.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md",
@@ -4386,12 +4200,6 @@
    "actual": [
     "memory/ops/white-lan-firewall-drop-2026-11-14.md"
    ]
-  },
-  {
-   "file": "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md",
-   "line": 23,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
   },
   {
    "file": "memory/ops/cycle-transition-checklist.md",
@@ -4538,12 +4346,6 @@
   {
    "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
    "line": 7,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
-   "line": 7,
    "ref": "watchdog.log",
    "status": "MOVED",
    "actual": [
@@ -4581,26 +4383,11 @@
   {
    "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
    "line": 14,
-   "ref": "load_trend.py",
-   "status": "MOVED",
-   "actual": [
-    "memory/ops/load_trend.py"
-   ]
-  },
-  {
-   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
-   "line": 14,
    "ref": "load_probe.py",
    "status": "MOVED",
    "actual": [
     "memory/ops/load_probe.py"
    ]
-  },
-  {
-   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
-   "line": 15,
-   "ref": "index.html",
-   "status": "OK"
   },
   {
    "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
@@ -4612,13 +4399,7 @@
    "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
    "line": 15,
    "ref": "memory/designer/index_html_CANONICAL_",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
-   "line": 16,
-   "ref": "agent_portal.py",
-   "status": "OK"
+   "status": "OK-PREFIX"
   },
   {
    "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
@@ -4669,18 +4450,6 @@
    "file": "memory/ops/fleet-state-2026-11-15.md",
    "line": 9,
    "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/fleet-state-2026-11-15.md",
-   "line": 9,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/fleet-state-2026-11-15.md",
-   "line": 10,
-   "ref": "_portal_pid.txt",
    "status": "OK"
   },
   {
@@ -4800,7 +4569,7 @@
    "file": "memory/ops/goal-progress-2026-11-16.md",
    "line": 5,
    "ref": "memory/memory",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/goal-progress-2026-11-16.md",
@@ -4823,15 +4592,6 @@
     "index.html",
     "AgentPortal_V1/index.html",
     "calculator-app/index.html"
-   ]
-  },
-  {
-   "file": "memory/ops/goal-progress-2026-11-16.md",
-   "line": 17,
-   "ref": "_idx_where.txt",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/_idx_where.txt"
    ]
   },
   {
@@ -4953,15 +4713,6 @@
   {
    "file": "memory/ops/goal-progress-2026-11-16.md",
    "line": 60,
-   "ref": "_idx_where.txt",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/_idx_where.txt"
-   ]
-  },
-  {
-   "file": "memory/ops/goal-progress-2026-11-16.md",
-   "line": 60,
    "ref": "index.html",
    "status": "OK"
   },
@@ -4980,60 +4731,6 @@
     "AgentPortal_V1/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
-  },
-  {
-   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
-   "line": 1,
-   "ref": "goal_ledger.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
-   "line": 5,
-   "ref": "goal_ledger.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
-   "line": 16,
-   "ref": "memory/researcher/goal_ledger.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
-   "line": 30,
-   "ref": "/does-not-exist.md",
-   "status": "DOCUMENTED-ABSENT"
-  },
-  {
-   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
-   "line": 42,
-   "ref": "goal_ledger.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
-   "line": 45,
-   "ref": "memory/designer/css-bundle-budget-2026-11-17.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
-   "line": 46,
-   "ref": "memory/mechanic/goal6-dep-gen-built-2026-11-17.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
-   "line": 47,
-   "ref": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
-   "line": 50,
-   "ref": "memory/goals",
-   "status": "OK"
   },
   {
    "file": "memory/ops/host-consistency-report.md",
@@ -5075,12 +4772,6 @@
    "file": "memory/ops/host-port-task-map-2026-11-15.md",
    "line": 13,
    "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/host-port-task-map-2026-11-15.md",
-   "line": 13,
-   "ref": "_portal_pid.txt",
    "status": "OK"
   },
   {
@@ -5286,8 +4977,8 @@
   {
    "file": "memory/ops/left-archivist.md",
    "line": 9,
-   "ref": "archivist/provenance-audit.md",
-   "status": "PHANTOM"
+   "ref": "memory/archivist/provenance-audit-2026-11-15.md",
+   "status": "OK"
   },
   {
    "file": "memory/ops/left-archivist.md",
@@ -5320,8 +5011,8 @@
   {
    "file": "memory/ops/left-archivist.md",
    "line": 11,
-   "ref": "archivist/canonical-map.md",
-   "status": "PHANTOM"
+   "ref": "memory/archivist/canonical-locations-2026-11-15.md",
+   "status": "OK"
   },
   {
    "file": "memory/ops/left-archivist.md",
@@ -5712,7 +5403,7 @@
    "file": "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
    "line": 7,
    "ref": "sim_fleet_probe_degrade.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
@@ -5724,7 +5415,7 @@
    "file": "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
    "line": 10,
    "ref": "sim_fleet_probe_degrade.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
@@ -5748,12 +5439,6 @@
    "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
    "line": 15,
    "ref": "recover_all.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
-   "line": 15,
-   "ref": "_portal_pid.txt",
    "status": "OK"
   },
   {
@@ -5797,49 +5482,43 @@
    "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
    "line": 26,
    "ref": "reboot_dryrun_remotes.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-goal3-red-leg-blocked-2026-11-15.md",
    "line": 13,
    "ref": "memory/ops/verifier-healthcheck-white-2026-11-15.md",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-goal3-red-leg-blocked-2026-11-15.md",
    "line": 21,
    "ref": "agent_portal.log",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
    "line": 7,
    "ref": "probe_white_goals_r24.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
    "line": 11,
    "ref": "lan_probe_result.txt",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
    "line": 11,
    "ref": "probe_winrm_r17.txt",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
-   "line": 14,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
    "line": 22,
    "ref": "probe_white_goals_r24.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
@@ -5855,19 +5534,19 @@
    "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
    "line": 24,
    "ref": "goals_data.json",
-   "status": "DOCUMENTED-ABSENT"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
    "line": 26,
    "ref": "goals_data.json",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
    "line": 26,
    "ref": "goals_data.json",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
@@ -5879,7 +5558,7 @@
    "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
    "line": 25,
    "ref": "reboot_dryrun_remotes.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
@@ -5919,13 +5598,13 @@
    "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
    "line": 39,
    "ref": "reboot_dryrun_remotes.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
    "line": 40,
    "ref": "reboot_dryrun_r2.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/mechanic-researcher-alias-diagnosis-2026-11-16.md",
@@ -5971,147 +5650,6 @@
    "actual": [
     "memory/ops/load_probe.py"
    ]
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 13,
-   "ref": "memory/portal/merge-pack.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 13,
-   "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 14,
-   "ref": "memory/portal/v1-inventory.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 15,
-   "ref": "memory/INDEX.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 19,
-   "ref": "memory/portal/upgrades-2026-11-12.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 20,
-   "ref": "memory/portal/v1-upgrade-state-2026-11-12.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 21,
-   "ref": "memory/portal/v1-upgrades-decisions.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 22,
-   "ref": "memory/portal/v1-upgrades-round-2.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 23,
-   "ref": "memory/portal/v1-upgrades-round-3.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 24,
-   "ref": "memory/portal/v1-upgrades-round-4.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 25,
-   "ref": "memory/portal/v1-upgrades-round-5.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 26,
-   "ref": "memory/portal/v1-upgrades.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 27,
-   "ref": "memory/synthesis/2026-11-12-consolidated-state.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 28,
-   "ref": "memory/synthesis/2026-11-12-upgrade-round.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 32,
-   "ref": "v1-upgrades-round-3.md",
-   "status": "MOVED",
-   "actual": [
-    "memory/portal/v1-upgrades-round-3.md"
-   ]
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 33,
-   "ref": "memory/INDEX.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 33,
-   "ref": "memory/llm",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 33,
-   "ref": "memory/ops",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 34,
-   "ref": "memory/portal/merge-pack.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 34,
-   "ref": "memory/portal/v1-inventory.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 36,
-   "ref": "TODO.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 36,
-   "ref": "BUNDLE-SHA256.txt",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/memory-sync-spec-r13.md",
-   "line": 36,
-   "ref": "agents.json",
-   "status": "OK"
   },
   {
    "file": "memory/ops/memory-trim-archive-2026-11-14.md",
@@ -6232,12 +5770,6 @@
    "line": 21,
    "ref": "TODO_completed.md",
    "status": "OK"
-  },
-  {
-   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
-   "line": 21,
-   "ref": "todo_done_parts/TODO_done_part_NNN.md",
-   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/memory-trim-archive-2026-11-14.md",
@@ -6404,7 +5936,7 @@
    "file": "memory/ops/memory-trim-archive-2026-11-14.md",
    "line": 48,
    "ref": "goals_data.json",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/memory-trim-archive-2026-11-14.md",
@@ -6476,13 +6008,7 @@
    "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
    "line": 43,
    "ref": "memory/designer/index_html_CANONICAL_",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
-   "line": 43,
-   "ref": "_YYYY-MM-DDx.html",
-   "status": "PHANTOM"
+   "status": "OK-PREFIX"
   },
   {
    "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
@@ -6596,7 +6122,7 @@
    "file": "memory/ops/non-sandbox-queue.md",
    "line": 18,
    "ref": "memory/mechanic/batch-tier-b-run.json",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/non-sandbox-queue.md",
@@ -6653,7 +6179,7 @@
    "file": "memory/ops/non-sandbox-queue.md",
    "line": 48,
    "ref": "memory/ops/failover-drill-",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/non-sandbox-queue.md",
@@ -6713,7 +6239,7 @@
    "file": "memory/ops/orch-fleetprobe-decision-2026-11-16.md",
    "line": 7,
    "ref": "memory/llm/fleet-probe-alias-log.jsonl",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/orch-fleetprobe-decision-2026-11-16.md",
@@ -6767,7 +6293,7 @@
    "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
    "line": 5,
    "ref": "designer/index-patched-v2.html",
-   "status": "PHANTOM"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
@@ -6797,24 +6323,6 @@
    "status": "MOVED",
    "actual": [
     "memory/ops/orch-reopen-designer4-2026-11-16.md"
-   ]
-  },
-  {
-   "file": "memory/ops/pdf-reporting.md",
-   "line": 3,
-   "ref": "_gen_report.py",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/_gen_report.py"
-   ]
-  },
-  {
-   "file": "memory/ops/pdf-reporting.md",
-   "line": 7,
-   "ref": "_gen_report.py",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/_gen_report.py"
    ]
   },
   {
@@ -6871,8 +6379,8 @@
   {
    "file": "memory/ops/pin-guard-extension-ui-files.md",
    "line": 25,
-   "ref": "memory/designer/ui_app_css_CANONICAL_a1b2c3d4e5f6_2026-11-17x.html",
-   "status": "PHANTOM"
+   "ref": "memory/designer/ui_app_css_CANONICAL_ac3ef7ec2e35_2026-11-17y.css",
+   "status": "OK"
   },
   {
    "file": "memory/ops/pin-guard-extension-ui-files.md",
@@ -6896,13 +6404,7 @@
    "file": "memory/ops/pin-guard-extension-ui-files.md",
    "line": 35,
    "ref": "memory/designer/ui_app_css_CANONICAL_",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/pin-guard-extension-ui-files.md",
-   "line": 35,
-   "ref": "_2026-11-17x.html",
-   "status": "PHANTOM"
+   "status": "OK-PREFIX"
   },
   {
    "file": "memory/ops/pin-guard-extension-ui-files.md",
@@ -6914,7 +6416,7 @@
    "file": "memory/ops/pin-guard-extension-ui-files.md",
    "line": 41,
    "ref": "memory/designer/ui_app_css_CANONICAL_",
-   "status": "PHANTOM"
+   "status": "OK-PREFIX"
   },
   {
    "file": "memory/ops/pin-guard-extension-ui-files.md",
@@ -6958,12 +6460,6 @@
   {
    "file": "memory/ops/portal-down-2026-11-15.md",
    "line": 21,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-down-2026-11-15.md",
-   "line": 21,
    "ref": "memory/ops/windows-runbook.md",
    "status": "OK"
   },
@@ -6989,12 +6485,6 @@
    "file": "memory/ops/portal-down-2026-11-15.md",
    "line": 28,
    "ref": "trigger_group_run.log",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-down-2026-11-16.md",
-   "line": 6,
-   "ref": "_portal_pid.txt",
    "status": "OK"
   },
   {
@@ -7030,12 +6520,6 @@
    "file": "memory/ops/portal-outage-2026-11-15-1825.md",
    "line": 5,
    "ref": "recover_force_result.json",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-outage-2026-11-15-1825.md",
-   "line": 18,
-   "ref": "_portal_pid.txt",
    "status": "OK"
   },
   {
@@ -7099,12 +6583,7 @@
    "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
    "line": 22,
    "ref": "Users/Red/.unsloth/studio/sandbox/_default/agent_portal.py",
-   "status": "MOVED",
-   "actual": [
-    "agent_portal.py",
-    "AgentPortal_V1/agent_portal.py",
-    "memory/builder/canary/black/agent_portal.py"
-   ]
+   "status": "OK-DOCUMENTED"
   },
   {
    "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
@@ -7120,188 +6599,6 @@
    "actual": [
     "AgentPortal_V1/memory/ops/windows-runbook.md",
     "memory/ops/windows-runbook.md"
-   ]
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 3,
-   "ref": "memory/ops/INDEX.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 4,
-   "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 7,
-   "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 13,
-   "ref": "portal/config.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 14,
-   "ref": "portal/umq.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 15,
-   "ref": "portal/safety.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 16,
-   "ref": "portal/rag.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 17,
-   "ref": "portal/fleet_perf.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 18,
-   "ref": "portal/memory_state.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 19,
-   "ref": "portal/sandbox_sync.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 20,
-   "ref": "portal/agents_prompt.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 21,
-   "ref": "portal/chat_stream.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 22,
-   "ref": "portal/group_run.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 23,
-   "ref": "portal/autoloop.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 24,
-   "ref": "portal/api_snapshots.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 25,
-   "ref": "portal/handler.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 27,
-   "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 30,
-   "ref": "agents.py",
-   "status": "MOVED",
-   "actual": [
-    "portal/agents.py"
-   ]
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 30,
-   "ref": "prompt_builder.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 32,
-   "ref": "portal/__init__.py",
-   "status": "MOVED",
-   "actual": [
-    "projects/dcabots/dcabots/__init__.py",
-    "Python/pythoncore-3.15-64/Lib/asyncio/__init__.py",
-    "Python/pythoncore-3.15-64/Lib/collections/__init__.py"
-   ]
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 33,
-   "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 34,
-   "ref": "api_contract_test.py",
-   "status": "MOVED",
-   "actual": [
-    "memory/builder/api_contract_test.py"
-   ]
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 34,
-   "ref": "pre_commit_gate.py",
-   "status": "MOVED",
-   "actual": [
-    "memory/builder/pre_commit_gate.py"
-   ]
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 37,
-   "ref": "handler_api.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 37,
-   "ref": "handler_ui.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 43,
-   "ref": "api_contract_test.py",
-   "status": "MOVED",
-   "actual": [
-    "memory/builder/api_contract_test.py"
-   ]
-  },
-  {
-   "file": "memory/ops/portal-split-seams-2026-11-17.md",
-   "line": 44,
-   "ref": "pre_commit_gate.py",
-   "status": "MOVED",
-   "actual": [
-    "memory/builder/pre_commit_gate.py"
    ]
   },
   {
@@ -7453,12 +6750,6 @@
    "line": 29,
    "ref": "red_smoke_result.json",
    "status": "OK"
-  },
-  {
-   "file": "memory/ops/probes.md",
-   "line": 31,
-   "ref": "_result.json",
-   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
@@ -7614,7 +6905,7 @@
    "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
    "line": 3,
    "ref": "reboot_dryrun_remotes.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
@@ -7635,13 +6926,13 @@
    "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
    "line": 17,
    "ref": "firewall_fix.bat",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
    "line": 21,
    "ref": "reboot_dryrun_remotes.py",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
@@ -7879,7 +7170,7 @@
    "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
    "line": 27,
    "ref": "portal.py",
-   "status": "DOCUMENTED-ABSENT"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
@@ -8121,208 +7412,6 @@
    "status": "OK"
   },
   {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 3,
-   "ref": "agents.json",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 3,
-   "ref": "agents.json",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 4,
-   "ref": "r13/r14/r15_red_probe.txt",
-   "status": "DOCUMENTED-ABSENT"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 7,
-   "ref": "MEMORY.md/TODO.md",
-   "status": "MOVED",
-   "actual": [
-    "TODO.md",
-    "AgentPortal_V1/TODO.md",
-    "agents/orchestrator/TODO.md"
-   ]
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 8,
-   "ref": "mirror_canary_result.json",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 9,
-   "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 11,
-   "ref": "lan_probe.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 17,
-   "ref": "mirror_canary_result.json",
-   "status": "DOCUMENTED-ABSENT"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 17,
-   "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 18,
-   "ref": "TODO.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 21,
-   "ref": "MEMORY.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 21,
-   "ref": "memory/goals/2026-11-13-agent-goals.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 21,
-   "ref": "mirror_canary_result.json",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 21,
-   "ref": "memory_mirror.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 22,
-   "ref": "TODO.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 26,
-   "ref": "mirror_canary_result.json",
-   "status": "DOCUMENTED-ABSENT"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 26,
-   "ref": "mirror_canary.py",
-   "status": "DOCUMENTED-ABSENT"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 26,
-   "ref": "MEMORY.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 26,
-   "ref": "probe_portal.py",
-   "status": "DOCUMENTED-ABSENT"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 29,
-   "ref": "lan_probe.py",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 31,
-   "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 31,
-   "ref": "memory/mechanic/r28-apply-bundle.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 32,
-   "ref": "TODO.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 36,
-   "ref": "mingit/.git/TODO_completed.md",
-   "status": "MOVED",
-   "actual": [
-    "TODO_completed.md"
-   ]
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 36,
-   "ref": "TODO/MEMORY/agents.json/agent_portal.py",
-   "status": "MOVED",
-   "actual": [
-    "agent_portal.py",
-    "AgentPortal_V1/agent_portal.py",
-    "memory/builder/canary/black/agent_portal.py"
-   ]
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 37,
-   "ref": "probe_winrm_r17.txt",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 38,
-   "ref": "memory/goals/2026-11-13-agent-goals.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 38,
-   "ref": "memory/goals.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 38,
-   "ref": "archivist/goals-2026-11-13.md",
-   "status": "MOVED",
-   "actual": [
-    "memory/archivist/goals-2026-11-13.md"
-   ]
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 38,
-   "ref": "TODO.md",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/runbook-notes.md",
-   "line": 39,
-   "ref": "MEMORY.md",
-   "status": "OK"
-  },
-  {
    "file": "memory/ops/schtask-deps.md",
    "line": 3,
    "ref": "memory/ops/host-port-task-map-2026-11-15.md",
@@ -8341,12 +7430,6 @@
    "file": "memory/ops/schtask-deps.md",
    "line": 9,
    "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/schtask-deps.md",
-   "line": 9,
-   "ref": "_portal_pid.txt",
    "status": "OK"
   },
   {
@@ -8457,42 +7540,6 @@
    "line": 29,
    "ref": "memory/goals/mechanic.md",
    "status": "OK"
-  },
-  {
-   "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
-   "line": 1,
-   "ref": "stale_claim_check.py",
-   "status": "MOVED",
-   "actual": [
-    "memory/ops/stale_claim_check.py"
-   ]
-  },
-  {
-   "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
-   "line": 1,
-   "ref": "json/.jsonl",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
-   "line": 6,
-   "ref": "stale_claim_check.py",
-   "status": "MOVED",
-   "actual": [
-    "memory/ops/stale_claim_check.py"
-   ]
-  },
-  {
-   "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
-   "line": 11,
-   "ref": "ref.json",
-   "status": "PHANTOM"
-  },
-  {
-   "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
-   "line": 12,
-   "ref": "ref.jsonl",
-   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/stale-claim-check-suffix-fix-2026-11-18.md",
@@ -8639,7 +7686,7 @@
    "file": "memory/ops/verifier-git-health-2026-11-15b.md",
    "line": 10,
    "ref": "portal_restart.log",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/verifier-healthcheck-2026-11-14.md",
@@ -8695,18 +7742,6 @@
   },
   {
    "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
-   "line": 6,
-   "ref": "_portal_pid.txt",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
-   "line": 15,
-   "ref": "md/.py/.json",
-   "status": "DOCUMENTED-ABSENT"
-  },
-  {
-   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
    "line": 19,
    "ref": "MEMORY.md",
    "status": "OK"
@@ -8733,12 +7768,6 @@
    "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
    "line": 26,
    "ref": "reboot_recover.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
-   "line": 27,
-   "ref": "_portal_pid.txt",
    "status": "OK"
   },
   {
@@ -8800,7 +7829,7 @@
    "file": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
    "line": 9,
    "ref": "probe_white_reach_result.json",
-   "status": "PHANTOM"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
@@ -8858,12 +7887,6 @@
   },
   {
    "file": "memory/ops/windows-runbook.md",
-   "line": 22,
-   "ref": "direct-.bat",
-   "status": "DOCUMENTED-ABSENT"
-  },
-  {
-   "file": "memory/ops/windows-runbook.md",
    "line": 26,
    "ref": "portal_run_err.log",
    "status": "OK"
@@ -8872,12 +7895,6 @@
    "file": "memory/ops/windows-runbook.md",
    "line": 28,
    "ref": "agent_portal.py",
-   "status": "OK"
-  },
-  {
-   "file": "memory/ops/windows-runbook.md",
-   "line": 29,
-   "ref": "_portal_pid.txt",
    "status": "OK"
   },
   {

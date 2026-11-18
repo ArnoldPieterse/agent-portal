@@ -27,3 +27,7 @@ Non-isolated re-probe of Red + Black requires either Arnold's interactive shell 
 **Alternative already taken (this note):** White closed with reliable local evidence; Pale closed with timestamped pre-wedge evidence; Black/Red marked INCONCLUSIVE with the exact re-probe command recorded — so no leg is silently left "blocked".
 
 ## Goal #3 status: 2/4 fully closed (White, Pale); 2/4 INCONCLUSIVE pending one non-isolated re-probe (Black, Red). No broken step left un-documented.
+
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

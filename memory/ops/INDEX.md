@@ -23,10 +23,10 @@ Last updated: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - fleet_probe_v2.py — trend-aware 4-host probe; drift-based severity (OK/WARN/CRIT); runs every 10 min via PortalFleetProbe task
 - load_probe.py — portal load test at 10/50/200 concurrency; p50/p95/p99 per endpoint; writes memory/ops/load-baseline.jsonl
 - memory_mirror.py — SMB push/pull sync with post-push verify + auto-repair (goal #3, DONE)
-- fleet_health_check.py — quick 4-host reachability check
+- fleet_health_check.py (never committed) — quick 4-host reachability check
 - recover_all.py — model reload on all hosts (LM Studio :8888)
 - portal_watchdog.py — monitors portal process; restarts if dead
-- sim_fleet_probe_degrade.py — verification simulation for adaptive probe severity escalation
+- sim_fleet_probe_degrade.py (never committed) — verification simulation for adaptive probe severity escalation
 
 ## EVIDENCE & LOGS (jsonl files in memory/ops/)
 - fleet-probe-history.jsonl — every probe run with per-host latency + status

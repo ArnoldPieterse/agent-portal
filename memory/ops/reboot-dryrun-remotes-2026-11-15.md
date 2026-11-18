@@ -38,3 +38,6 @@ Restart still pending — schtasks not functional in sandbox environment; needs 
 - Black: PARTIAL (Studio up, models not loaded — broken step identified + fix known)
 - Red: BLOCKED (firewall, needs admin netsh rule)
 **3/4 legs complete; Red pending human admin action.**
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

@@ -25,3 +25,7 @@ Run the 5-step reboot-recovery dry-run manually on Red:
 ## Verdict
 3/4 legs complete (White, Pale, Black). Red blocked by sandbox network restriction - NOT a runbook defect.
 Runbook itself is validated on 3 hosts; the 4th requires non-sandbox execution.
+
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

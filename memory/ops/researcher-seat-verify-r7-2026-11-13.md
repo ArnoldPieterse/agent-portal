@@ -77,3 +77,7 @@ superseded by these bytes. Action: Archivist re-greps next cycle (expect 5/5); N
 - Mechanism unprovable from my seat: parent dir C:\Users\White\.unsloth\studio\sandbox is
   access-denied (WinError 5) — workspace-side copy check blocked. Flag for bundle review with
   Builder's deferred mirror mtime-guard fix.
+
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

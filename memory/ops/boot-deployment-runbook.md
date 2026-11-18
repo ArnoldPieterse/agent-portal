@@ -49,7 +49,7 @@ Check log: `type memory\ops\boot-recovery-log.jsonl | findstr /i "COMPLETE"`
 
 ## Cold-boot test procedure (evidence for goal #2)
 1. Power off the target host completely (not restart - full power cycle).
-2. Power on, note timestamp: `echo %date% %time% > boot-start.txt`
+2. Power on, note timestamp: `echo %date% %time% > boot-start.txt` (boot-start.txt is seat-local, never committed)
 3. Wait for portal to respond: `python -c "import urllib.request,time; t=time.time(); urllib.request.urlopen('http://127.0.0.1:8099/api/goals'); print(f'{time.time()-t:.1f}s from probe')"`
 4. Record in memory/ops/boot-recovery-log.jsonl (automatic if boot_recovery.py ran).
 5. Screenshot or text evidence of the log entry with timestamps.

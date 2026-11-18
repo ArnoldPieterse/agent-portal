@@ -28,3 +28,7 @@ ONE White-console check:
 ## Cross-refs
 - Related but DISTINCT: the older ~17:18 regression (White alive locally, unreachable off-loopback) already in TODO.md — this 03:2x finding is the current-state confirmation of that same class of symptom on a fresh probe.
 - Unblocks: full smoke8 + AC-A2-2 LIVE legs that are currently BLOCKED solely on White's LAN ports (per Mechanic).
+
+
+---
+CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo.

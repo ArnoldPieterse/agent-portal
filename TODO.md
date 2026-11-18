@@ -40,7 +40,7 @@ Investigation of "agents not making progress" found three compounding bugs (full
 
 ## HOTLINE 2026-11-15 ~23:0x (Orchestrator, non-sandboxed - supersedes older status lines)
 - FLEET GOALS 62/80 (77.5 pct): +Verifier#10 report, +Researcher#9 audit closed; timed items now minutes-max per user directive
-- OUTBOUND NETWORK CAPABILITY LIVE: netcmd.py (NetworkCMD-style) - GET /api/net/fleet (3/3 hosts up), POST /api/net/{probe,latency,dns,http}; egress guard 403s public without allow_public; evidence log memory/ops/netcmd-ops.jsonl
+- OUTBOUND NETWORK CAPABILITY LIVE: netcmd.py (NetworkCMD-style) - GET /api/net/fleet (3/3 hosts up), POST /api/net/{probe,latency,dns,http}; egress guard 403s public without allow_public; evidence log netcmd-ops.jsonl (seat-local, never committed)
 - EVIDENCE MARKERS: strict ledger now accepts validated (pointer:) markers (leaf must exist + be index-linked) and auto-sweeps open goals for indexed leaves at run end; POST /api/goals/<agent>/evidence to record manually
 - OPEN FINDING: Researcher alias (model_id per agents.json) times out 90-120s on its chat host (7/8 aliases live) - Mechanic to check model load state; Orchestrator#3 stays open until 8/8
 - WEDGE WATCH: g-1a1def4 prompt-phase hang seen 22:47 - verify run recovered post-restart
@@ -154,7 +154,7 @@ Context: human powered down .245/.39/.99 + unloaded a local LLM to free context;
 - [ ] Sandbox degradation note (new, affects AC-A2): this White seat now also blocks tasklist (credential error) + localhost sockets (allowlist), same as Verifier's mid-round degradation → post-restart process-level evidence (PID≠1240, CreationDate trap) must come from the console side: Arnold pastes ps1 output / relays PID+CreationDate; Verifier signs AC-A2 on relayed evidence if her sandbox stays degraded.
 - Gate unchanged: Arnold → `arnold-restart-r8.ps1` on White console (output = AC-A2 input) → Verifier process-level AC-A2 → Orchestrator goal-line resync (MEMORY.md write deliberately held until post-restart).
 ## OPS CHECK 2026-11-13 r14b - Orchestrator (registry close + anomaly tracking)
-- [x] Quarantine registry: **root-stale agent seats = 0** (Red no-op already-canonical; Scribe exec verified on White — backup at FULL-md5 name `memory/scribe/index_html_pre-r14-ac5e1560…adb.html` = ac5e1560/64,100 B byte-confirmed). Remaining stale = Z: mirrors only (Rule 3, human-side).
+- [x] Quarantine registry: **root-stale agent seats = 0** (Red no-op already-canonical; Scribe exec verified on White — backup at FULL-md5 name `memory/scribe/index_html_pre-r14-ac5e15600b9ca4d56ef028ac800b0adb.html` = ac5e1560/64,100 B byte-confirmed). Remaining stale = Z: mirrors only (Rule 3, human-side).
 - [x] ~~Anomaly A-R14 (unmapped root-write path; Red ac5e1560→9c6b08e3 + Researcher mtime 19:57:38)~~ — CLOSED by r15: write path = Mechanic's own seat-local inline GO-wave exec on Red (stale Z: read caused the "unmapped" framing); note verified at Pale source and now present on White too.
 - [ ] ~~Scribe synthesis leaf still r6-only on White (4,253 B; `r14 FINAL STATE` x0) — her claimed append not landed/propagated; re-write next cycle~~ — RESOLVED by r14c: appended by Orchestrator to `memory/synthesis/2026-11-12-consolidated-state.md`, marker x1 (5,477 B / 06611885).
 - [x] Canonical `index.html` re-pinned 9c6b08e3 / 67,681 B (White first-party).
@@ -294,9 +294,9 @@ Collected by Orchestrator from group thread, all eight lists verbatim (8 agents 
 3. Verify Ops docs are complete for a cold reader: `memory/portal/architecture.md` Ops section must carry exact endpoint contracts, file layout (`TODO_completed.md`, `todo_done_parts/NNN`), and allowlist scope — gap list in chat, fixes as one `docs:` commit.
 4. Write `memory/ops/git-hygiene.md`: commit-message convention (feat/fix/docs/chore + agent name), commit-only-after-verification rule, cite-commit-hash-not-paste-content rule; index it from memory/ops/INDEX.md.
 5. Post-prune audit ritual: after every `/api/todo/prune` run, confirm moved sections are [x]-dated, chunk numbering sequential, result git-committed; one-line entry in `archivist/prune-log.md`.
-6. Provenance audit of the ~43 git-tracked files: flag files lacking a header comment (date + author agent + purpose); fix top 5 myself, list the rest for owners — report in `archivist/provenance-audit.md`.
+6. Provenance audit of the ~43 git-tracked files: flag files lacking a header comment (date + author agent + purpose); fix top 5 myself, list the rest for owners — report in `memory/archivist/provenance-audit-2026-11-15.md`.
 7. Enforce MEMORY.md hot-file discipline: flag hot entries >7 days old not yet migrated to a leaf; propose migrations in chat (never move other agents' notes unilaterally); target hot file back under ~40 lines by end of week.
-8. Dedupe ops facts across MEMORY.md / TODO.md / architecture.md: each durable fact lives in exactly ONE leaf, others hold pointers only; record the canonical location per fact in `archivist/canonical-map.md`.
+8. Dedupe ops facts across MEMORY.md / TODO.md / architecture.md: each durable fact lives in exactly ONE leaf, others hold pointers only; record the canonical location per fact in `memory/archivist/canonical-locations-2026-11-15.md`.
 9. Guard-rail checklist for the two ops processes (for Verifier to re-run): prune never touches sections with open items, chunk split preserves order + numbering, git allowlist excludes unsloth-tmp/.unsloth_sandbox/uploads/scratch, commit is add -A scoped by .gitignore only — checkbox ACs in `memory/portal/architecture.md`.
 10. End-of-day archive pass before any prune: confirm every completable TODO section has dated [x] items (lossless pruning), escalate ambiguous sections to Orchestrator instead of guessing; report state in one line.
 
@@ -525,5 +525,5 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
 - Both 10-goal sets worked through from the White seat while their models stay unloaded (per user): **O 8/10 + R 8/10 verified, fleet 20/80 (25%)**, SoT audit IN SYNC. Open = 4 time-gated progress goals (risk-register entries 2-3, retrospective end-fill, parity week, trend report 2/2).
 - C1-C4 queue drained same-day -> memory/synthesis/2026-11-16-contradiction-rulings.md. Key: **C2 REJECTS F-VER-01 as stale** (all 11 design tokens measured present in live pin 2c6399f2d853); C3 scoped the Red block to :8099 only (:8888+SMB open from same seat).
 - New tooling at portal root: goal_cycle_check.py, sot_audit.py, evidence_spotcheck.py, todo_freshness_check.py, citation_monitor_v2.py, parity_audit.py, open_questions_flag.py, model_benchmark.py (all first-run green; sim tests pass).
-- FLEET FINDINGS for Mechanic: Black .99 :8888 DOWN (Builder+Verifier seats dark); Red :8099 filtered from White (scoped); Q4_K_S 127.7 vs Q8_0 82.3 tok/s -> memory/researcher/benchmark-summary-2026-11-16.md.
+- FLEET FINDINGS for Mechanic: Black .99 :8888 DOWN (Builder+Verifier seats dark); Red :8099 filtered from White (scoped); Q4_K_S 127.7 vs Q8_0 82.3 tok/s -> memory/researcher/benchmark-summary-2026-11-16.md (never committed).
 - [ ] RESTART PORTAL to load the O2 model-governance code (agent_portal.py) - last restart predated it; do when a group run is idle.

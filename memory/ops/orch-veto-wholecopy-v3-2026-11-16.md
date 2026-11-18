@@ -2,7 +2,7 @@
 
 Lane: ratify/reject the apply path for index.html changes. Builds on Researcher FINDING G; does NOT re-measure index.html (mirror lags — anti-loop).
 
-## DECISION: VETO whole-file copy of `designer/index-patched-v2.html` AND `index-patched-v3.html`
+## DECISION: VETO whole-file copy of `designer/index-patched-v2.html` AND `index-patched-v3.html` (referenced artifact never committed)
 until their baseline is verified against the CURRENT served pin.
 
 - Arnold's JS repair moved the live pin to `37549a041412`. Designer built v2 on stale pre-repair `df1bbdaef684` (their own statement + Researcher FINDING G).
