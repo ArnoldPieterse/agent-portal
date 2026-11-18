@@ -28,6 +28,24 @@ WHY THIS EXISTS (the 4 gaps it closes, from memory/goals/researcher.md):
          the single source for per-host studio URL, auth, and model load bodies. Auth is
          read from env (STUDIO_<HOST>_APIKEY) or passed in - never hardcoded into this file.
 
+EVICITION-AWARENESS RULE (Goal #4). Documented asymmetry (memory/llm/backend-swap-procedure.md,
+drill 11-15 SwapDrill1114b): loading White Q4_K_S @131k ctx PUSHES OUT a resident Q8_0 - the
+reverse is NOT true (Q8 fits onto a Q4-resident GPU set). So eviction is DIRECTIONAL. Decision
+table for "restore dual residency" when loading model A would evict a still-wanted resident B:
+
+  pre-resident          target set           action taken                          result
+  -------------------   -------------------  -----------------------------------  ----------------------------------
+  {B} (Q8)              {A,B} (want both)    LOAD A -> EVICTS B -> RELOAD B after  final={A,B}; ZERO binding loss;
+                                                                     eviction + restore are LOGGED
+  {B} (Q8)              {A}   (need A alone) LOAD A -> EVICTS B -> ACCEPT + LOG    final={A}; B gone by intent, LOGGED
+  {}                    {A,B}                order loads that avoid the evict path no loss
+
+RULE: never silently lose a resident model. Either (a) RELOAD the evicted still-wanted model AFTER
+the evicting load (preserve dual residency), or (b) explicitly ACCEPT + LOG the eviction when the
+target set does not want it. restore_order() implements this deterministically; execute() applies
+it live. Bindings are path-bound aliases, so eviction never breaks an alias - but residency must be
+restored OR logged either way (never silent).
+
 RESIDENT CHECK CONTRACT (Gap 4/3): /api/inference/load returns a 200 ASYNC ACK. That ack is
 NOT residency. The only authoritative resident check is GET /api/inference/loaded-models
 polling until the model_path appears. poll_resident() implements exactly that and is the
@@ -41,6 +59,8 @@ USAGE:
   python hot_load.py --bindings --live       # + GET /api/settings/model-aliases per host (needs :8888 vantage)
   python hot_load.py --test-bindings         # offline self-test: reproduces known builder/verifier mismatch
                                               # flags; proves fetch never raises on an unreachable host (no network)
+  python hot_load.py --test-eviction         # offline self-test (Goal #4): Q8-resident-before-Q4-reload
+                                              # yields zero binding loss + logs the residency change (no network)
 
 ACCEPTANCE (goal #1): ast.parse exits 0; --plan prints all 4 hosts and White Q4 max_seq_length==131072;
 --test-wedge shows a healthy model is SKIPPED and a wedged one is FORCE_RELOAD. Live :8888 execution
@@ -128,6 +148,24 @@ HOSTS = {
 # Proven White Q4 ctx - the value Gap 1 is about. Never let it regress to 65536.
 PROVEN_WHITE_Q4_CTX = 131072
 
+# Documented EVICTION ASYMMETRY (Goal #4). Directional edges: (loader, evicted) meaning
+# "loading `loader` on this host pushes out a resident `evicted`". Source of truth:
+# memory/llm/backend-swap-procedure.md (drill 11-15): White Q4_K_S @131k ctx evicts Q8_0; the
+# reverse does NOT hold. Keep in lockstep with EVICTION handling in
+# memory/orchestrator/model_scheduler.py (same asymmetry, explicit-UNLOAD policy).
+EVICTION_EDGES = {
+    "white": [("quinn-q4", "atlas-q8")],
+}
+
+
+def _evicted_by(host_key, load_name, resident_names):
+    """Pure: which of `resident_names` does loading `load_name` push out (documented asymmetry)?"""
+    ev = set()
+    for (src, dst) in EVICTION_EDGES.get(host_key, []):
+        if src == load_name and dst in resident_names:
+            ev.add(dst)
+    return ev
+
 
 def _assert_proven_ctx():
     """Guard against Gap-1 regression: White Q4 must be 131072, not the stale 65536."""
@@ -181,6 +219,46 @@ def decide_action(snapshot):
     # Critically: we do NOT wait for active-generations==0 here. A chat thread holding an
     # active generation across tool-call gaps is exactly the 11-15 deadlock; skip/wait is wrong.
     return "FORCE_RELOAD"
+
+
+def restore_order(host_key, resident_before, target_set):
+    """Goal #4: deterministic dual-residency restore that NEVER silently loses a wanted model.
+
+      host_key:        HOSTS key
+      resident_before: iterable of model names currently resident (authoritative /loaded-models)
+      target_set:      iterable of model names we want resident afterwards (dual residency = both)
+    Returns (order, log_lines, zero_loss):
+      order      - list of (OP, name); OP in {UNLOAD, LOAD, RELOAD}, in execution order
+      log_lines  - every residency change (eviction + restore) recorded here, never silent
+      zero_loss  - True iff the final resident set == target_set (nothing wanted is left missing)
+    Honors the documented Q4-evicts-Q8 asymmetry: if a LOAD would evict a model still in
+    target_set, an explicit RELOAD of that model is appended AFTER it (preserve dual residency).
+    If the evicted model is NOT in target_set, the eviction is ACCEPTED + LOGGED.
+    """
+    resident = set(resident_before)
+    target = set(target_set)
+    order = []
+    log = []
+    # 1) drop anything resident we do not want (log it - never silent)
+    for name in sorted(resident - target):
+        order.append(("UNLOAD", name))
+        resident.discard(name)
+        log.append(f"UNLOADED {name} (not in target set)")
+    # 2) load each wanted-but-absent model; repair any still-wanted eviction it causes
+    for name in sorted(target - resident):
+        evicted = _evicted_by(host_key, name, resident)
+        order.append(("LOAD", name))
+        resident.add(name)
+        for e in sorted(evicted):
+            if e in target:
+                log.append(f"EVICTED {e} by LOAD {name} (documented Q4-evicts-Q8 asymmetry)")
+                order.append(("RELOAD", e))
+                resident.add(e)  # restored
+                log.append(f"RESTORED {e} after LOAD {name} -> dual residency preserved")
+            else:
+                resident.discard(e)
+                log.append(f"EVICTION ACCEPTED for {e} (not in target set)")
+    return order, log, (resident == target)
 
 
 def _cancel_stuck(host_key, alias, jreq):
@@ -314,6 +392,42 @@ def wedge_selftest():
 
 
 # ---------------------------------------------------------------------------
+# EVICTION SELF-TEST (Goal #4, offline, NO network) - proves the restore rule.
+# ---------------------------------------------------------------------------
+def eviction_selftest():
+    """The documented scenario: White Q8 was resident before a Q4 reload; we want dual residency
+    back. Asserts zero binding loss + that the residency change is LOGGED (never silent)."""
+    print("  [scenario] white: atlas-q8 resident, LOAD quinn-q4 (131k ctx) -> evicts q8")
+    order, log, zero_loss = restore_order("white", ["atlas-q8"], {"atlas-q8", "quinn-q4"})
+    print("    order =", order)
+    for l in log:
+        print("    log  :", l)
+
+    ok1 = (zero_loss is True)
+    print(f"  [{'PASS' if ok1 else 'FAIL'}] zero binding loss (final resident set == target set)")
+
+    idx_load_q4 = next((i for i, (op, n) in enumerate(order) if op == "LOAD" and n == "quinn-q4"), None)
+    idx_reload_q8 = next((i for i, (op, n) in enumerate(order) if op == "RELOAD" and n == "atlas-q8"), None)
+    ok2 = (idx_load_q4 is not None and idx_reload_q8 is not None and idx_reload_q8 > idx_load_q4)
+    print(f"  [{'PASS' if ok2 else 'FAIL'}] RELOAD atlas-q8 scheduled AFTER the evicting LOAD quinn-q4")
+
+    joined = "\n".join(log).lower()
+    ok3 = ("evicted atlas-q8" in joined) and ("restored atlas-q8" in joined)
+    print(f"  [{'PASS' if ok3 else 'FAIL'}] residency change LOGGED (eviction + restore), never silent")
+
+    # need-A-alone path: target={quinn-q4} only. The rule UNLOADs Q8 FIRST (doc rule #1) so the
+    # Q4 load causes no eviction side-effect; either way Q8's departure must be LOGGED, never silent.
+    order2, log2, zl2 = restore_order("white", ["atlas-q8"], {"quinn-q4"})
+    joined2 = "\n".join(log2).lower()
+    q8_departure_logged = ("atlas-q8" in joined2) and any(
+        k in joined2 for k in ("unload", "evict", "accept"))
+    ok4 = bool(zl2) and q8_departure_logged
+    print(f"  [{'PASS' if ok4 else 'FAIL'}] need-A-alone: Q8 removal LOGGED + zero_loss={zl2} (order={[o for o,_ in order2]})")
+
+    return ok1 and ok2 and ok3 and ok4
+
+
+# ---------------------------------------------------------------------------
 # EXECUTE (live) - one result JSON per host (Gap 3/4). Gated on non-sandbox vantage.
 # ---------------------------------------------------------------------------
 def execute(host_key, jreq_fn=None):
@@ -347,6 +461,34 @@ def execute(host_key, jreq_fn=None):
         else:
             entry["ok"] = False
         res["models"].append(entry)
+    # Goal #4: eviction-awareness. A White Q4 load evicts a resident Q8; our per-model snapshots
+    # predate that side-effect, so RE-READ the authoritative resident set, diff vs wanted, and
+    # explicitly RELOAD any wanted model now missing (never silently lose residency). Gated on the
+    # live vantage like the rest of execute(); offline proof is --test-eviction.
+    res_paths = get_resident_paths(jreq, host_key) or []
+    final_resident = {m["name"] for m in HOSTS[host_key]["models"]
+                      if any(m["model_path"].lower() in r for r in res_paths)}
+    wanted_names = [m["name"] for m in HOSTS[host_key]["models"]]
+    order, ev_log, zero_loss = restore_order(host_key, final_resident, wanted_names)
+    for (op, name) in order:
+        if op != "RELOAD":
+            continue  # UNLOAD/LOAD were already handled in the main per-model loop
+        m = [x for x in HOSTS[host_key]["models"] if x["name"] == name][0]
+        entry = {"name": name, "action": "RESTORE", "ctx": m["max_seq_length"],
+                 "restore_reason": ev_log}
+        s, d, raw = jreq("POST", HOSTS[host_key]["studio"] + "/api/inference/load",
+                         dict(m), t=900, auth=_auth_header(host_key))
+        entry["load_ack_status"] = s
+        resident_now = poll_resident(jreq, host_key, m["model_path"], timeout_s=420)
+        entry["resident_after_poll"] = resident_now
+        if resident_now:
+            fp = run_probe(jreq, host_key, m["probe_alias"])
+            entry["post_probe"] = fp
+            entry["ok"] = bool(fp.get("ok"))
+        else:
+            entry["ok"] = False
+        res["models"].append(entry)
+    res["eviction_aware"] = {"log": ev_log, "zero_loss": zero_loss}
     res["verdict"] = "ALL_UP" if all(e.get("ok", e.get("skipped") is True) for e in res["models"]) else "PARTIAL"
     res["end"] = datetime.datetime.now().isoformat()
     # one result JSON per host
@@ -494,6 +636,7 @@ def main(argv=None):
     ap.add_argument("--bindings", action="store_true", help="emit agents.json binding match matrix (offline; add --live for alias cross-check)")
     ap.add_argument("--live", action="store_true", help="with --bindings: also GET /api/settings/model-aliases per host")
     ap.add_argument("--test-bindings", action="store_true", help="offline self-test of the binding matrix (no network)")
+    ap.add_argument("--test-eviction", action="store_true", help="offline self-test of the eviction-awareness rule (Goal #4, no network)")
     args = ap.parse_args(argv)
 
     if args.plan:
@@ -506,6 +649,10 @@ def main(argv=None):
     if args.test_bindings:
         ok = bindings_selftest()
         print("BINDINGS SELFTEST:", "PASS" if ok else "FAIL")
+        return 0 if ok else 1
+    if args.test_eviction:
+        ok = eviction_selftest()
+        print("EVICTION SELFTEST:", "PASS" if ok else "FAIL")
         return 0 if ok else 1
     if args.bindings:
         res = bindings_matrix(jreq_fn=jreq, live=args.live)

@@ -128,7 +128,8 @@
       "min_vram_gb": 24,
       "notes": "Requires dedicated GPU; cannot share with text models. Candidate: CogVideoX or similar.",
       "host": "white",
-      "priority": 2
+      "priority": 2,
+      "exclusive": true
     },
     {
       "id": "3d-env-model",
@@ -146,7 +147,8 @@
       "min_vram_gb": 16,
       "notes": "For 3D environment generation. Candidate: TRELLIS or similar.",
       "host": "white",
-      "priority": 2
+      "priority": 2,
+      "exclusive": true
     },
     {
       "id": "large-context-model",
@@ -165,7 +167,8 @@
       "max_context": 262144,
       "notes": "256k+ context for whole-repo analysis. Needs dedicated host or full VRAM.",
       "host": "white",
-      "priority": 2
+      "priority": 2,
+      "exclusive": true
     }
   ],
   "agent_profile_templates": [

@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Orchestrator built execute(plan) in model_scheduler.py (Goal #2 Execute Engine); Studio :8888 unreachable (WinError 10013).
-- Understanding modules verified PASS: agent_portal.py L1045/L1081/L1976, core=69 project=31 terms, graceful degradation confirmed
 - Goal #1 done: app.css fully tokenized (37 hex→var()), acceptance test PASS; ui/app.css not pinned so safe to modify.
 - Understanding module tested: 26/27 PASS, 1 false-alarm (recall has own dict entry, hits directly not via synonym→memory).
 - key_terms() only extracts single words; compound terms like "agent portal" in dictionary are missed — gap in understanding module
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe lane closed 10/10; fleet total now 52/93 (56%). Goal #10 memory_hygiene.py built fresh this pass.
 - Bug found: log_rotate.py shift loop crashes with WinError 183 when .log.5 already exists; fix pending
 - WinError 10013 blocks all TCP (even localhost) in sandbox; Goal 5 closed via structural+simulated verification of net_probe.py
+- Designer: Goal 2 closed; next open goal is #3 Data Visualization Upgrade (inline SVG bar charts in fleet panel).
+- Scribe closed goals #3, #4, #5 in one pass (ledger now ≥6/10); next oldest open is #6.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

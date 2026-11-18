@@ -107,6 +107,23 @@ def plan(target_agents, resident, catalog=None):
         loaded = {m: float(mindex[m]["vram_gb"]) for m in res_now}
         actions = []
         pending = list(to_load)
+
+        # Goal-5: exclusive models require ALL non-required residents evicted first
+        exclusive_targets = [m for m in to_load if mindex[m].get("exclusive")]
+        if exclusive_targets:
+            for m in sorted(res_now):
+                if m not in req_here:
+                    actions.append({"op": "UNLOAD", "model": m, "host": host,
+                                    "reason": "exclusive model %s requires full eviction of non-required residents"
+                                              % exclusive_targets[0]})
+                    vpri = int(mindex.get(m, {}).get("priority", 2))
+                    if vpri == 1:
+                        alerts.append({"type": "PRIORITY_EVICTION", "host": host,
+                                       "evicted_model": m, "for_model": exclusive_targets[0],
+                                       "message": "Priority-1 model %s evicted from %s for exclusive model %s"
+                                                  % (m, host, exclusive_targets[0])})
+                    del loaded[m]
+
         guard = 0
         while pending and guard < 256:
             guard += 1
@@ -256,7 +273,20 @@ def selftest():
           all(h.get("fits") for h in p["hosts"].values()),
           str({"alerts": p.get("alerts"), "hosts_fits": {h: v.get("fits") for h, v in p["hosts"].items()}}))
 
-    print("\n%d/%d selftest checks passed" % (14 - len(failures), 14))
+    # Case O: exclusive model (video-gen) evicts ALL non-required residents on target host
+    p = plan(["video_gen"], {"white": ["qwen3-27b-q8", "qwen3-5-4b-mtp"]}, catalog)
+    w = p["hosts"].get("white", {})
+    # All non-required residents should be UNLOADed before the LOAD
+    unloads = [a for a in w.get("actions", []) if a["op"] == "UNLOAD"]
+    loads = [a for a in w.get("actions", []) if a["op"] == "LOAD"]
+    check("O exclusive evicts all non-required", len(unloads) >= 2 and len(loads) == 1,
+          "unloads=%d loads=%d actions=%s" % (len(unloads), len(loads), str(w.get("actions", []))))
+    # Verify eviction reason mentions exclusive
+    check("O eviction reason cites exclusive",
+          any("exclusive" in a.get("reason", "") for a in unloads),
+          str([a.get("reason", "") for a in unloads]))
+
+    print("\n%d/%d selftest checks passed" % (16 - len(failures), 16))
     if failures:
         print("FAILED:", failures)
         return 1

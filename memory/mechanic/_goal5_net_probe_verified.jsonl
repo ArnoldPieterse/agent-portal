@@ -1,0 +1,5 @@
+{"check": "ast_structure", "pass": true, "found_funcs": ["probe_host", "run_check", "main"], "missing": [], "ts": "2026-11-18T12:47:10.688891+00:00"}
+{"check": "constants", "pass": true, "details": {"FAIL_THRESHOLD_eq_3": true, "LATENCY_P95_ALERT_MS_eq_200": true, "INTERVAL_S_eq_600": true, "4_hosts_defined": true}, "ts": "2026-11-18T12:47:10.688891+00:00"}
+{"check": "alert_threshold_sim", "pass": true, "alerts_generated": ["white: 4 consecutive failures", "black: 4 consecutive failures", "red: 4 consecutive failures", "blue: 4 consecutive failures"], "ts": "2026-11-18T12:47:10.688891+00:00"}
+{"check": "p95_latency_sim", "pass": true, "p95_ms": 300.0, "threshold_ms": 200, "ts": "2026-11-18T12:47:10.688891+00:00"}
+{"check": "log_file_valid", "pass": true, "entries": 1, "first_ts": "2026-11-18T10:37:59.137527+00:00", "ts": "2026-11-18T12:47:10.688891+00:00"}
