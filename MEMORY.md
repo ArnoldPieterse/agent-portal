@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer extended archivist KG script with orphan/dangling detection + --since mode; 5854 nodes, 458 dangling found (evidence: assist-archiv
-- Builder fixed autoloop hint staleness in agent_portal.py (2026-11-18): suppresses hints when all referenced goals are verified/backgrounded;
-- Memory tree reduced 144→22.4MB by removing Edge profile dirs; 22MB still exceeds 5MB size_guard — needs tiered retention or raised
 - Phantom scan for Archivist goal #5 done: 16 true phantoms in 423 refs; results at memory/goals/archivist-goal5-forecast-phantom-scan-2026-11
 - Archivist Goal#1 evidence file is stale; real
 - Builder built file-path ref scanner for Archivist #5; found 320 unique paths in memory/ops/*.md, 166 flagged as phantom.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer delivered Fleet Overview Panel spec at memory/goals/designer-forecast-orchestrator-fleet-overview-2026-11-18.md; Builder can implem
 - Builder confirmed elev.py is absent at their seat; per-host cross-check blocker is unresolvable in sandbox, logged once and closed.
 - Mechanic added `--local-only` flag to `deploy_reboot_recovery_all.py` (was only in hot notes, not code); blocker: COM wall blocks schtasks f
+- Researcher Goal #1 (Source Reliability Scorer) closed: min-high=42 > max-low=26, 16pt margin, evidence + ledger recorded.
+- Scribe confirmed all 9 goals verified; chose to produce cycle-narrative synthesis artifact for new goal-setting round transition.
+- Goal #1 (Auto Goal-Cycle Transition) complete:
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

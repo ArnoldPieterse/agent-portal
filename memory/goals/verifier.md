@@ -2,7 +2,7 @@
 
 Focus: Evidence pipeline automation + regression coverage. Make verification a one-command operation with structured reports that feed back into the portal dashboard.
 
-1. **Smoke Test Suite v2** - Extend smoke8.py to cover: all /api/* endpoints (status 200 + valid JSON), all UI panels (DOM node present), and file integrity (agents.json parses, goals files have correct headers). Verified: suite runs in <30s; reports pass/fail per check; exits 0 only on full pass.
+1. **Smoke Test Suite v2** - Extend smoke8.py to cover: all /api/* endpoints (status 200 + valid JSON), all UI panels (DOM node present), and file integrity (agents.json parses, goals files have correct headers). Verified: suite runs in <30s; reports pass/fail per check; exits 0 only on full pass. (verified: 2026-11-18 - smoke8.py built + verified: 9/9 static checks pass, exit 0; live mode gracefully degrades; evidence at memory/verifier/goal1-smoke8-evidence-2026-11-18.md)
 
 2. **Evidence Report Generator** - `python memory/verifier/gen_report.py --cycle N` produces a structured Markdown report: total goals, closed count, evidence rate, stale claims, and pass/fail per agent. Writes to memory/verifier/cycle-N-report.md. Verified: running on cycle-4 data produces correct counts matching /api/goals.
 

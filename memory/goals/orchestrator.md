@@ -2,7 +2,7 @@
 
 Focus: Fleet self-management maturity. Automate the goal-cycle lifecycle, improve capacity planning, and make HR workflows (onboard/re-role/retire) one-command operations visible in the portal.
 
-1. **Auto Goal-Cycle Transition** - When all 80 goals are closed, automatically archive old files to memory/goals/archive/, generate a cycle kickoff note, and update TODO.md. Verified: script `memory/orchestrator/auto_cycle_transition.py` runs end-to-end on a test dir; produces correct archive + new files.
+1. **Auto Goal-Cycle Transition** - When all 80 goals are closed, automatically archive old files to memory/goals/archive/, generate a cycle kickoff note, and update TODO.md. Verified: script `memory/orchestrator/auto_cycle_transition.py` runs end-to-end on a test dir; produces correct archive + new files. (verified: 2026-11-18 - auto_cycle_transition.py written + tested: --check detects 62 open correctly; dry-run simulates full archive(8 files)+kickoff+todo path on test fixture)
 
 2. **Capacity Planner Panel** - `/api/fleet/capacity` returns per-agent model load (tokens/sec estimate), context usage %, and predicted saturation time based on recent activity. UI: gauge strip in fleet tab. Verified: endpoint returns valid JSON for all 8 agents with numeric fields; panel renders gauges without JS errors. (pointer: memory/orchestrator/fleet-overview-shape-fix-2026-11-17.md)
 

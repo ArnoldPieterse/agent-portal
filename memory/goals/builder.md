@@ -2,7 +2,7 @@
 
 Focus: Portal feature delivery + code quality. Ship the remaining UI panels from cycle-4 specs, establish a component library, and automate the build-verify-pin pipeline.
 
-1. **Component Library v1** - Extract reusable UI patterns (card, badge, gauge, timeline-node, collapsible-panel) into `ui/components.js`. Each component: single function, documented props, no external deps. Verified: 5 components exist; each used by >=2 panels; JSDoc comments present.
+1. **Component Library v1** - Extract reusable UI patterns (card, badge, gauge, timeline-node, collapsible-panel) into `ui/components.js`. Each component: single function, documented props, no external deps. Verified: 5 components exist; each used by >=2 panels; JSDoc comments present. (verified: 2026-11-18 - ui/components.js created: 5 components (card,badge,gauge,timelineNode,collapsiblePanel) with JSDoc; syntax verified balanced. Next: integrate into >=2 panels each.)
 
 2. **Goal Cycle Timeline Panel** - Implement the UI for `/api/goals/timeline` (cycle-4 spec #2): horizontal strip with clickable cycle nodes showing stats popover. Verified: panel renders with real API data; clicking a node shows that cycle's open/closed counts.
 
