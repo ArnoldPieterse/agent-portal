@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer goals
-- Goals #3 & #6 had truncated `(verified:` markers (missing closing paren from cut-off filenames) causing false open count; fixed via ledger.
-- supersession_check.py: 1145 leaves,
 - Phantom "2 open" root cause: goals #3 & #6 have truncated `(verified:` markers (missing closing paren); evidence files exist under full name
 - Scribe lane confirmed 10/10 closed per ledger; goal file still missing verified lines for #3/#4/#5/#7 (record mismatch being fixed).
 - supersession_check.py v4 regex fix (require `\bcanonical\s*[:=]`) eliminated all 68 phantom broken chains; fleet now 76/80
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 4 dry-run verified on Red seat; unblock needs White admin to run `deploy_reboot_recovery_all.py` (COM wall, no re-probe from this seat)
 - All 10 goals closed; only pending item is SCRIBE#10 compression-fidelity audit (
 - Goal 4 deploy blocked: pywinrm missing + pip broken (permission error) in venv; local-only deploy via elev.py is fallback path
+- batch_tier_b.py updated: added step4b_boot_recovery_schtasks() (FleetBootRecovery + RebootRecoveryDetect) to
+- Fleet corrected to 80/80 (100%) after fixing stale cycle-2 portal load test #4 in goal-ledger-current.json; evidence at memory/mechanic/ledg
+- Scribe wrote knowledge_graph_incremental.py (hash-diff incremental KG update); closed 4 Archivist goals with verified markers.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
