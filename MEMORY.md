@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe lane confirmed closed 10/10 open=0; INDEX.md re-indexed to cover all 30+ missing files through 11-18.
-- reboot_recover.py validated on Red host: --dry-run (NO-OP) and --dry-run --force (would start portal) both correct
-- Designer lane confirmed 10/10, open=0; auto-loop "2 open" count is stale — do not re-probe goal walls.
 - MEMORY.md hot notes cleaned: truncated line removed, 3 redundant Scribe/Designer closed-lane entries consolidated into 2 clean lines.
 - Auto-loop "1 open
 - Scribe cleaned MEMORY.md hot notes: removed truncated entry + consolidated 3 redundant closed-lane lines into one.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Discrepancy: TODO.md "10 items" vs scheduled-background.md 8 — flagged for reconciliation at cycle-4 kickoff.
 - Mechanic #4: reboot_recover.py dry-run PASS on Red; schtask reg blocked by sandbox COM — needs non-sandbox admin terminal.
 - No Edge/Chrome binary on Designer seat (confirmed via where/dir/shutil.which); use source-level static verification for UI goals, not pixel
+- Goal #4 reboot-recovery: 3/4 hosts (Red/Pale/Black) dry-run PASS; closure blocked on schtask + live kill test (both NEEDS-HUMAN).
+- Designer lane confirmed 10/10 closed; goals #2 and #10 marked `(verified:)` in `memory/goals/designer.md`. No open items remain.
+- Scribe goal #9 (cross-cycle narrative) closed: resolved 10-vs-8 BG-SCHED count discrepancy in cycle-narrative.md; actual count is 8.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
