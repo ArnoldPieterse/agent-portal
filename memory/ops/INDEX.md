@@ -18,6 +18,7 @@ Last updated: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - Git hygiene / commit conventions -> memory/ops/git-hygiene.md
 - Mirror-revert prevention (commit-before-sync rule) -> memory/ops/mirror-revert-prevention-2026-11-18.md
 - Memory sync spec (what gets mirrored where) -> memory/ops/memory-sync-spec-r13.md
+- scan_goals() scoping bug fix (whitelist canonical agent files, eliminates 33 false positives) -> memory/ops/scan_goals-scope-fix-2026-11-19.md
 
 ## PROBE & MONITORING SCRIPTS (root dir)
 - fleet_probe_v2.py — trend-aware 4-host probe; drift-based severity (OK/WARN/CRIT); runs every 10 min via PortalFleetProbe task
