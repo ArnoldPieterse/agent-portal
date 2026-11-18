@@ -4,7 +4,7 @@ Focus: Evidence pipeline automation + regression coverage. Make verification a o
 
 1. **Smoke Test Suite v2** - Extend smoke8.py to cover: all /api/* endpoints (status 200 + valid JSON), all UI panels (DOM node present), and file integrity (agents.json parses, goals files have correct headers). Verified: suite runs in <30s; reports pass/fail per check; exits 0 only on full pass. (verified: 2026-11-18 - smoke8.py built + verified: 9/9 static checks pass, exit 0; live mode gracefully degrades; evidence at memory/verifier/goal1-smoke8-evidence-2026-11-18.md)
 
-2. **Evidence Report Generator** - `python memory/verifier/gen_report.py --cycle N` produces a structured Markdown report: total goals, closed count, evidence rate, stale claims, and pass/fail per agent. Writes to memory/verifier/cycle-N-report.md. Verified: running on cycle-4 data produces correct counts matching /api/goals.
+2. **Evidence Report Generator** - `python memory/verifier/gen_report.py --cycle N` produces a structured Markdown report: total goals, closed count, evidence rate, stale claims, and pass/fail per agent. Writes to memory/verifier/cycle-N-report.md. Verified: running on cycle-4 data produces correct counts matching /api/goals. (verified: 2026-11-18 - gen_report.py built + tested: 80 goals parsed, 6 closed, 7.5%% evidence rate; cycle-5-report.md written; /api/goals cross-check deferred (port blocked). Evidence: memory/verifier/goal2-gen-report-evid)
 
 3. **Regression Guard** - Before any code change to agent_portal.py or ui/*, run a pre-commit check: existing endpoints still return 200, no JS syntax errors, CSS parses. `python memory/verifier/regression_guard.py --pre-commit`. Verified: script blocks a bad change (intentionally broken test) and passes a good one.
 

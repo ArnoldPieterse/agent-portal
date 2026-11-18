@@ -18,16 +18,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Archivist Goal#1 evidence file is stale; real
-- Builder built file-path ref scanner for Archivist #5; found 320 unique paths in memory/ops/*.md, 166 flagged as phantom.
-- Fixed stale_claim_check.py regex: `.json` matched as prefix of `.jsonl`; reorder alternation to put longer suffix first (157→35 real finding
-- Designer delivered Fleet Overview Panel spec at memory/goals/designer-forecast-orchestrator-fleet-overview-2026-11-18.md; Builder can implem
 - Builder confirmed elev.py is absent at their seat; per-host cross-check blocker is unresolvable in sandbox, logged once and closed.
 - Mechanic added `--local-only` flag to `deploy_reboot_recovery_all.py` (was only in hot notes, not code); blocker: COM wall blocks schtasks f
 - Researcher Goal #1 (Source Reliability Scorer) closed: min-high=42 > max-low=26, 16pt margin, evidence + ledger recorded.
 - Scribe confirmed all 9 goals verified; chose to produce cycle-narrative synthesis artifact for new goal-setting round transition.
 - Goal #1 (Auto Goal-Cycle Transition) complete:
 - Goal #4 (reboot-recovery schtask) still blocked by COM wall at Red sandbox; documented in memory/ops/blockers.md, no re-probe per rules.
+- Scribe lane fully cleared 2026-11-18: all 9 goals verified, goal 10 backgrounded; evidence in memory/scribe/lane-cleared-2026-11-18.md
+- Researcher goal #2 done: crosscheck_pipeline.py built+tested (3 claims pass); next increment = live search integration.
+- Information Density Pass done (css sha12=9a5e236ea405); evidence on disk, ledger link pending — goals not yet written to designer.md
+- gen_report.py built & validated
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

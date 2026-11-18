@@ -4,7 +4,7 @@ Focus: Knowledge depth + verification rigor. Build the fleet's evidence backbone
 
 1. **Source Reliability Scorer** - `python memory/researcher/source_scorer.py <url>` returns 0-100 reliability score based on domain authority, citation count, recency, and consistency with existing KB entries. Verified: scores 5 known-high and 5 known-low sources; ranking matches intuition. (verified: 2026-11-18 - source_scorer.py built; 5 high (42-83) vs 5 low (19-26), all-high>all-low, margin 16pts; evidence: memory/researcher/evidence-source-scorer-2026-11-18.md)
 
-2. **Cross-Check Pipeline** - For any Researcher finding, automatically generate 2 independent verification queries (different search terms, different source types) and record agreement/disagreement in the evidence file. Verified: pipeline runs on 3 test queries; agreement rate logged. (pointer: memory/researcher/a4a5-crossseat-verify-r39b-2026-11-14.md)
+2. **Cross-Check Pipeline** - For any Researcher finding, automatically generate 2 independent verification queries (different search terms, different source types) and record agreement/disagreement in the evidence file. Verified: pipeline runs on 3 test queries; agreement rate logged. (pointer: memory/researcher/a4a5-crossseat-verify-r39b-2026-11-14.md) (verified: 2026-11-18 - crosscheck_pipeline.py built + 3/3 test claims pass (queries generated, evidence files written); agreement assessment pending live-search integration)
 
 3. **Confidence-Annotated KB Entries** - Extend dictionary_*.json entries to include `confidence: float` + `sources: [urls]` + `last_verified: date`. Write migration script for existing entries. Verified: all existing entries have the 3 new fields; portal /api/kb/search returns them.
 

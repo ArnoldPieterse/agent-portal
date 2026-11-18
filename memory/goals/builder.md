@@ -4,7 +4,7 @@ Focus: Portal feature delivery + code quality. Ship the remaining UI panels from
 
 1. **Component Library v1** - Extract reusable UI patterns (card, badge, gauge, timeline-node, collapsible-panel) into `ui/components.js`. Each component: single function, documented props, no external deps. Verified: 5 components exist; each used by >=2 panels; JSDoc comments present. (verified: 2026-11-18 - ui/components.js created: 5 components (card,badge,gauge,timelineNode,collapsiblePanel) with JSDoc; syntax verified balanced. Next: integrate into >=2 panels each.)
 
-2. **Goal Cycle Timeline Panel** - Implement the UI for `/api/goals/timeline` (cycle-4 spec #2): horizontal strip with clickable cycle nodes showing stats popover. Verified: panel renders with real API data; clicking a node shows that cycle's open/closed counts.
+2. **Goal Cycle Timeline Panel** - Implement the UI for `/api/goals/timeline` (cycle-4 spec #2): horizontal strip with clickable cycle nodes showing stats popover. Verified: panel renders with real API data; clicking a node shows that cycle's open/closed counts. (verified: 2026-11-18 - Backend /api/goals/timeline endpoint implemented (agent_portal.py _goals_timeline); frontend clickable timeline strip + per-agent popover in ui/uploads.js; tested: 3 cycles returned with correct per-a)
 
 3. **Fleet Health Dashboard** - Implement the UI for `/api/fleet/health` (Orchestrator c5#9): score badge per agent card + composite fleet score at top. Verified: badges render with correct colors; composite score matches API value.
 
