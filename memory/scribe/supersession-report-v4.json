@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-11-18T13:57:45.662778",
+  "version": "v4",
+  "total_leaves_scanned": 1146,
+  "supersession_edges": 30,
+  "superseded_files_marked": 17,
+  "edges_resolved": 30,
+  "truly_broken_chains": 0,
+  "truly_broken_entries": [],
+  "cycles_detected": 0,
+  "orphaned_superseded": [
+    "memory/archivist/MEMORY.md",
+    "memory/archivist/history-r7-r36.md",
+    "memory/builder/index-repin-r65-v21-2026-11-14.md",
+    "memory/builder/pin-sha-stale-claim-closed-2026-11-17.md",
+    "memory/designer/files-panel-patch.md",
+    "memory/goals/2026-11-13-agent-goals.md",
+    "memory/goals/INDEX.md",
+    "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+    "memory/goals/archive/README.md",
+    "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+    "memory/researcher/MEMORY.md",
+    "memory/researcher/ac-a2-r26-convergence-check-2026-11-14.md",
+    "memory/scribe/supersession-pointer-spec.md",
+    "memory/verifier/scribe-goal2-v2-contradiction-2026-11-18.md"
+  ],
+  "canonical_heads_count": 24,
+  "healthy": true
+}

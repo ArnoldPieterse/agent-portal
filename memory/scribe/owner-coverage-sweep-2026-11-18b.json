@@ -1,0 +1,88 @@
+{
+  "timestamp": "2026-11-18T14:01:22.049506",
+  "check": "owner-coverage-sweep-open-only",
+  "total_unowned_open": 40,
+  "items": [
+    {
+      "line": 8,
+      "text": "- [ ] Continue completing remaining open cycle-3 goals (main lists now unblocked)"
+    },
+    {
+      "line": 18,
+      "text": "- [ ] SPLIT PENDING (cycle-2 work, decide seams first): agent_portal.py ~173 KB -> modules under a single importable ent"
+    },
+    {
+      "line": 20,
+      "text": "- [ ] Fleet to adopt: every future file edit follows memory/portal/file-modularity.md (header pointers + budgets); overs"
+    },
+    {
+      "line": 38,
+      "text": "- [ ] **PENDING: restart portal** to load the fixed agent_portal.py - WAIT for active group run g-1a1e27ebd18 to end (wa"
+    },
+    {
+      "line": 67,
+      "text": "- [ ] VERIFY after 18:30: recover_force_result.json post-probe quinn-q4 ok + trigger_group_run.log shows group-run POST "
+    },
+    {
+      "line": 68,
+      "text": "- [ ] Watch first sequential pass: each agent should complete visibly one-by-one; if any single agent hangs, the stall b"
+    },
+    {
+      "line": 82,
+      "text": "- [ ] DECISION NEEDED (human): ~50 OTHER tracked files still contain internal 192.168.x.x IPs (you deleted only hosts.md"
+    },
+    {
+      "line": 137,
+      "text": "- [ ] Cleanup candidates for Arnold (NOT touched): `lmstudio-community\\Qwen3.8-27B-GGUF - Copy` holds a 29.0 GB `.part` "
+    },
+    {
+      "line": 175,
+      "text": "- [ ] ~~expect remaining 4 within one mirror cycle~~ (r10b prediction too optimistic) \u2014 RESOLVED by r11: synthesis/INDEX"
+    },
+    {
+      "line": 182,
+      "text": "- [ ] Arnold (White console): run the ps1, paste output - only remaining external action. Agent sandboxes cannot do it ("
+    },
+    {
+      "line": 215,
+      "text": "- [ ] Residual risk logged: memory_mirror.py PULL side still timestamp-only (a fresh-mtime stale remote memory leaf coul"
+    },
+    {
+      "line": 220,
+      "text": "- [ ] Alias check r2 local 2/8 (atlas-q8, quinn-q4): loopback :8888 blocked from every agent sandbox - needs White-local"
+    },
+    {
+      "line": 222,
+      "text": "- [ ] Git milestone commit (goal #5): BLOCKED at seat level - portal binds 127.0.0.1 (agent_portal.py:1616, code-verifie"
+    },
+    {
+      "line": 337,
+      "text": "- [ ] FUTURE: mirror uploads into remote host sandboxes (Black/Red/Pale) so remote agents can open attachments with thei"
+    },
+    {
+      "line": 338,
+      "text": "- [ ] FUTURE (optional): small \"Files\" panel in UI listing /api/uploads (endpoint exists, no UI yet)."
+    },
+    {
+      "line": 345,
+      "text": "- [ ] FUTURE: move Red .245 to the wired NIC (WiFi 30 Mbps = root cause of the 2h copy) -> multi-GB transfers ~20 min."
+    },
+    {
+      "line": 379,
+      "text": "- [ ] After Red agents live: full 8-agent roster smoke + group e2e; update hosts.md Red row; sync trees to AgentPortal_V"
+    },
+    {
+      "line": 386,
+      "text": "- [ ] NEXT TURN: read serial_e2e_result.json -> expect verdict GROUP_E2E_OK. Check group_e2e.log: cross-talk rounds, [SI"
+    },
+    {
+      "line": 387,
+      "text": "- [ ] Then PALE: Q8 copy done -> scan-folders -> dual load -> Pale agents (names from Arnold)."
+    },
+    {
+      "line": 398,
+      "text": "- [ ] Group e2e: prompt in group mode with all 4 agents (atlas/quinn local + builder/verifier remote) - watch cross-talk"
+    }
+  ],
+  "note": "Proactive sweep; Scribe lane 10/10 closed. Most 'unowned' lines are general fleet notes, not individual task assignments."
+}

@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer lane 10/10 closed: Goal 8 (state classes in CSS+JS) and Goal 10 (baseline SHA256 manifest) completed this pass.
-- All 10 designer goals closed (10/10). Goals #2 and #6 verified via static source analysis; evidence in memory/designer/.
 - Designer goals
 - Goals #3 & #6 had truncated `(verified:` markers (missing closing paren from cut-off filenames) causing false open count; fixed via ledger.
 - supersession_check.py: 1145 leaves,
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - supersession_check.py v4 regex fix (require `\bcanonical\s*[:=]`) eliminated all 68 phantom broken chains; fleet now 76/80
 - Fixed truncated verified marker on Designer goal 3: filename cut at `css-bundle-budget-verify-20)` now full `...-2026-11-18.md`
 - Goal 4 dry-run verified on Red seat; unblock needs White admin to run `deploy_reboot_recovery_all.py` (COM wall, no re-probe from this seat)
+- All 10 goals closed; only pending item is SCRIBE#10 compression-fidelity audit (
+- Goal 4 deploy blocked: pywinrm missing + pip broken (permission error) in venv; local-only deploy via elev.py is fallback path
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
