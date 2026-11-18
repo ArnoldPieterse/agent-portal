@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 done: app.css fully tokenized (37 hex→var()), acceptance test PASS; ui/app.css not pinned so safe to modify.
-- Understanding module tested: 26/27 PASS, 1 false-alarm (recall has own dict entry, hits directly not via synonym→memory).
-- key_terms() only extracts single words; compound terms like "agent portal" in dictionary are missed — gap in understanding module
 - Goal #2 done: ~20% vertical whitespace cut (19.7% spacing + 4.8% line-height) in tokens.css & app.css
 - Goal #3 (Post-Load Binding-Verify) closed: hot_load.py --test-bindings PASS 3/3, offline path confirmed.
 - Scribe lane closed 10/10; fleet total now 52/93 (56%). Goal #10 memory_hygiene.py built fresh this pass.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - WinError 10013 blocks all TCP (even localhost) in sandbox; Goal 5 closed via structural+simulated verification of net_probe.py
 - Designer: Goal 2 closed; next open goal is #3 Data Visualization Upgrade (inline SVG bar charts in fleet panel).
 - Scribe closed goals #3, #4, #5 in one pass (ledger now ≥6/10); next oldest open is #6.
+- WinError 10013 (sandbox firewall) blocks port-bind verification; affects goals 1-2 and 6 — don't re-probe, escalate instead.
+- Scribe lane reached 10/10 (open=0) after recording goals 6/8/10; reconciliation note at memory/scribe/lane-cleared-ledger-reconcile-2026-11-
+- Goal 2 closed; Goal 3 (SVG bar charts in fleet panel) started — goals panel had no rendering JS, building from scratch in core.js + app.css
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
