@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer Goal #2 (Information Density Pass) complete: all padding/margin tokenized, 0 hardcoded px remain in app.css.
-- RECALL: - **M3** (`memory/synthesis/cycle-narrative.md:12`): Goal-setting round landed 2
-- Goal #2 (Density Pass) fully closed: quantitative measurement + rendered before/after visual canvas both produced as acceptance evidence.
 - Goal #2 (Info Density Pass): before/after visual canvas rendered; awaiting acceptance sign-off.
 - Mechanic lane fully closed (10/10 verified).
 - Goal #4 done: .empty-state CSS + UI.emptyState() wired to 4 panels (agents, fleet, goals, uploads) in core.js & uploads.js
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #4 (Empty State) CLOSED: UI
 - WinError 10013 on portal is a known sandbox egress restriction (documented in memory/ops/blockers.md), not a real failure.
 - Goal #4 Empty State CLOSED (19-pt verified); Goal #5 Notification System started — CSS tokens added, 4 trigger points being wired in core.js
+- Portal
+- Built /api/fleet/status endpoint (per-host reachable, latency_ms, disk_pct, mem_pct, portal_up); migrating UI strip from /
+- Goal #5 Notification System: code+CSS written; no display/Node for visual verify — plan is self-contained browser acceptance fixture.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -7,10 +7,10 @@ Mechanic asked for `Test-NetConnection IP_RED -Port 445` and `-Port 8888` to clo
 - Python `socket.connect_ex(("IP_RED", 445/8888))` -> sandbox egress allowlist rejects the destination ("network destination is not a literal the sandbox can check"). Same class as prior WinError 10013.
 **Conclusion:** Red .245 reachability CANNOT be verified from a White sandbox seat, by any tool. The probe must run from a **non-sandbox seat with LAN egress** (White ops terminal / RDP session, or a seated agent on Pale/Black/Red). Do NOT re-probe from here — no pass can succeed.
 Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/ops/probe-evidence.jsonl` or goal #2 leaf.
-- [18:04] NEEDS-HUMAN: seat Orchestrator model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [18:04] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [18:04] NEEDS-HUMAN: seat Builder model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [18:04] NEEDS-HUMAN: seat Verifier model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [18:04] ~~NEEDS-HUMAN: seat Orchestrator model unreachable~~ **RESOLVED 2026-11-19** (seat running, confirmed in auto-loop status)
+- [18:04] ~~NEEDS-HUMAN: seat Researcher model unreachable~~ **RESOLVED 2026-11-19** (seat running)
+- [18:04] ~~NEEDS-HUMAN: seat Builder model unreachable~~ **RESOLVED 2026-11-19** (seat running)
+- [18:04] ~~NEEDS-HUMAN: seat Verifier model unreachable~~ **RESOLVED 2026-11-19** (seat running)
 
 ## [NEEDS-HUMAN 2026-11-17] Goal #4 load-probe: Red sandbox cannot reach White:8099 (repeated across passes)
 **Class:** sandbox egress block (WinError 10013). Portal runs on White; this agent seat is a Red sandbox with no LAN path to White.
@@ -29,10 +29,10 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - `python memory/designer/d7_d9_cdp_verify.py` (CDP screenshots) - no Chrome + CDP socket blocked.
 **Unblock (non-sandbox, one owner):** run BOTH from a seated agent on White ops terminal / RDP / Pale/Black/Red that has Chrome installed + LAN egress to 127.0.0.1:8099; capture the axe score JSON + the 375/768 screenshots as evidence, then `--record designer 7` / `--record designer 5`.
 **Not blocked (in-sandbox, see memory/orchestrator/designer-qa-gate-unblock-2026-11-17.md):** goal #8 typography gate runs clean - ONE real fix left (#actBody line-height 1.7 -> <=1.6).
-- [18:35] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [18:35] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [18:36] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [18:36] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [18:35] ~~NEEDS-HUMAN: seat Designer model unreachable~~ **RESOLVED 2026-11-19** (seat running)
+- [18:35] ~~NEEDS-HUMAN: seat Archivist model unreachable~~ **STILL OPEN 2026-11-19** (Archivist=unreachable per current auto-loop status)
+- [18:36] ~~NEEDS-HUMAN: seat Designer model unreachable~~ **RESOLVED 2026-11-19** (seat running)
+- [18:36] ~~NEEDS-HUMAN: seat Archivist model unreachable~~ **STILL OPEN 2026-11-19** (Archivist=unreachable)
 
 ## [NEEDS-HUMAN 2026-11-17] Verifier goal #2 SLO scheduled task: schtasks COM unavailable + egress block in sandbox
 **Class:** sandbox limitation (COM "Class not registered" for schtasks; WinError 10013 for localhost:8099).
@@ -54,24 +54,9 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - Conclusion: a one-off seed from an ephemeral sandbox session will NOT satisfy the "one-week LIVE dataset" anyway — that requires the mirror to run PERSISTENTLY on the persistent White host (C:\Projects\Workspace) where `net use` sessions + SMB creds persist, via its scheduled task / watchdog.
 - Unblock (persistent White host, owner = Mechanic or Orchestrator): confirm the MirrorSync schtask/watchdog is registered AND that `net use \\192.168.1.<ip>\C$` succeeds there with working creds; then it self-seeds + accumulates through 11-24. Closure = `python memory/researcher/parse_mirror_events.py <live-log>` per runbook.
 - Do NOT re-probe from a sandbox seat — auth wall confirmed, one probe spent this pass.
-- [00:11] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [00:11] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [00:12] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [00:12] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [00:12] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [00:12] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [00:12] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [00:12] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [00:12] NEEDS-HUMAN: seat Designer model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [00:12] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [02:50] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [05:10] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (not_loaded). Reload the model in Studio or restart it elevated.
-- [05:10] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (not_loaded). Reload the model in Studio or restart it elevated.
-- [05:10] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (not_loaded). Reload the model in Studio or restart it elevated.
-- [05:11] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (not_loaded). Reload the model in Studio or restart it elevated.
-- [05:11] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (not_loaded). Reload the model in Studio or restart it elevated.
-- [07:50] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
-- [07:51] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+- [00:11-00:12] ~~NEEDS-HUMAN: seat Designer/Archivist model unreachable~~ **RESOLVED 2026-11-19** (Designer running; Archivist STILL OPEN per current status)
+- [02:50, 07:50-07:51] ~~NEEDS-HUMAN: seat Archivist model unreachable~~ **STILL OPEN 2026-11-19** (Archivist=unreachable per current auto-loop status)
+- [05:10-05:11] ~~NEEDS-HUMAN: seat Researcher model unreachable (not_loaded)~~ **RESOLVED 2026-11-19** (seat running)
 
 ## [NEEDS-HUMAN 2026-11-18] Mechanic #4 FleetBootRecovery schtask: COM wall on all sandbox seats
 **Class:** `schtasks` -> "ERROR: Class not registered" (COM unavailable in sandbox). elev.py absent at this seat.
@@ -101,9 +86,7 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - **MirrorSync schtask: RESOLVED** - registered every 5 min (memory_mirror.py). Mirror pipeline LIVE: 09:52 run pushed 30 files to Red. REMAINING NEEDS-HUMAN: Pale/Black SMB creds into memory_mirror_hosts.json (Arnold; Red works with empty password).
 - **Mechanic #2 Red leg: CLOSED** - TCP 445 OPEN + 8888 OPEN probed from White seat; ledger recorded mechanic.md line 7; evidence memory/ops/probe-evidence.jsonl.
 - **Designer #5/#7 CDP wall: RESOLVED (agent-side fix only)** - chrome.exe absent, but msedge --remote-debugging-port=9222 loads portal and /json/list returns the live page. Point live_verify_g578.py at 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe' instead of chrome.
-- [17:31] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
-- [17:32] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
-- [00:26] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
+- [17:31-17:32, 00:26] ~~NEEDS-HUMAN: seat Archivist model unreachable~~ **STILL OPEN 2026-11-19** (Archivist=unreachable; auto-reload has not resolved it)
 
 ## NEEDS-HUMAN: Portal auto-restart failed (auto_restart.py)
 - **Time:** 2026-11-19T02:51:50
