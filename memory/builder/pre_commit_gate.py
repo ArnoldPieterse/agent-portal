@@ -4,6 +4,10 @@ Usage: python memory/builder/pre_commit_gate.py [--verbose]
 """
 import sys, os, subprocess, time, json
 
+# A#3 (2026-11-18): API reference drift/breaking-change check. Wrapper because
+# run_suite() invokes paths with no arguments; gen_api_ref.py --diff exits 2 on
+# removed routes (breaking) which the gate treats as FAIL.
+
 SUITES = [
     ("path-safety", "memory/builder/upload_path_safety.py"),
     ("prune-regression", "memory/builder/prune_regression.py"),
@@ -12,6 +16,7 @@ SUITES = [
     ("goals-edge-cases", "memory/builder/test_goals_edge_cases.py"),
     ("modularity-lint", "memory/builder/modularity_check.py"),
     ("durable-check", "memory/builder/durable_check.py"),
+    ("api-ref-drift", "memory/builder/api_ref_gate.py"),
 ]
 
 # --- Performance budget config ---

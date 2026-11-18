@@ -63,9 +63,9 @@ Both lines must be present for the handoff to be considered complete.
 After RECEIVED sign-off:
 1. Sender updates `memory/INDEX.md` if a new leaf was created or an existing one's description changed.
 2. If the handoff created a new sub-index entry, add it to the relevant sub-index file.
-3. Append one line to `memory/handoffs/LOG.md`:
+3. Append ONE table row to `memory/handoffs/LOG.md` (always end with a newline):
    ```
-   HO-YYYYMMDD-slug | from -> to | accepted YYYY-MM-DD | target: memory/path.md
+   | HO-YYYYMMDD-slug | from -> to | subject | SENT:<ts> | RECEIVED:<ts> | accepted |
    ```
 
 ## Lifecycle
@@ -82,6 +82,23 @@ Stale handoffs (PENDING > 7 days) are flagged by `memory_health.py` for follow-u
 - Max 1 active (PENDING) handoff per agent pair at a time. If a second is needed, the first must be resolved.
 - Handoff files are append-only once ACCEPTED. Corrections go through a new HO with `supersedes`.
 - No handoff may exceed 200 lines of body content. Larger transfers should be split into multiple HOs or handled as a direct file move with index update.
+
+## Handoff Log (canonical tracking)
+`memory/handoffs/LOG.md` is the single source of truth for handoff state.
+1. EVERY handoff - including light-tier in-context ones - gets a LOG row, appended
+   within the same turn the RECEIVED sign-off is given.
+2. A row's Status stays `pending` until both SENT and RECEIVED timestamps exist;
+   memory_health.py flags pending rows older than 24h.
+3. Never edit a completed row; corrections go in a new HO file that supersedes it.
+
+## Friction points from real use (cycle-2 -> v2, 2026-11-18)
+Observed across the 4 cycle-2 handoffs; each maps to a rule above:
+- **F1 - missing receiver sign-off**: 2 of 4 handoffs had no RECEIVED line, so
+  "complete" was unverifiable. -> both sign-offs mandatory (Sign-off Format).
+- **F2 - light-tier handoffs never logged**: protocol predated them / felt optional,
+  forcing retroactive logging. -> every tier logs in-turn (Handoff Log #1).
+- **F3 - LOG.md append bug**: two entries merged into one line (missing trailing
+  newline), breaking one-line-per-handoff. -> newline rule + table format (Index Update #3).
 
 ## Example (real)
 See `HO-20261116-supersession-report.md` — Archivist -> Scribe, delivering the supersession_check.py baseline for policy consumption (charter: Scribe#5).
