@@ -6,7 +6,7 @@ Focus: Fleet reliability + automated recovery. Make the 4-host fleet self-healin
 
 2. **Auto-Restart Runbook** - When health check detects portal down: attempt restart (python agent_portal.py &), wait 10s, re-check. If still down after 3 attempts, log NEEDS-HUMAN with diagnostics. `memory/mechanic/auto_restart.py`. Verified: killing portal triggers auto-restart; portal recovers within 30s; log entry written.
 
-3. **Host Recovery Matrix** - Document recovery procedure per host (White/Black/Red/Blue): what to check, in what order, expected recovery time. `memory/mechanic/recovery-matrix.md`. Verified: matrix covers all 4 hosts; each has >=5 steps; tested on 1 host end-to-end.
+3. **Host Recovery Matrix** - Document recovery procedure per host (White/Black/Red/Blue): what to check, in what order, expected recovery time. `memory/mechanic/recovery-matrix.md`. Verified: matrix covers all 4 hosts; each has >=5 steps; tested on 1 host end-to-end. (pointer: memory/mechanic/recovery-matrix.md)
 
 4. **Disk Space Monitor + Auto-Clean** - Check disk usage every 30 min. If >85%, auto-clean: remove __pycache__, old log files (>7d), temp files. Log actions. Alert if still >90% after clean. Verified: script runs; correctly identifies cleanable files; never deletes .md or .json in memory/.
 

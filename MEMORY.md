@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4 Disk Space Monitor closed:
-- Goal #6 closed (fleet avg 8.75/10). Open: #7 chain validator, #8 voice consistency, #10 hygiene report.
-- Goal #7 Typography Audit: app.css has 82 font-size declarations, many off-scale (10/10.5/11/11.5/13/16/22px)
 - Scribe lane reached 10/10 verified (open=0) after closing goals #7, #8, #10 in one pass.
 - index.html is pinned (edits revert); empty-state/escalation UI must be injected via non-pinned files or alternate hooks.
 - Scribe lane fully complete: all 10 goals closed and verified in ledger; auto-loop prompts referencing open Scribe goals are stale.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #5 (Notifications): built ui/notifications.js + CSS in app.css, wired via core.js; triggers in fleetUpdate, goalsLoad, upload handler
 - Goal #
 - Scribe goal #1 (Decision Log v2) closed: migrate_decisions.py --validate PASS, 12 entries, all 6 fields present.
+- Mechic lane at 3/10; goal #3 (recovery-matrix.md) verified in ledger; next open: #4 Disk Space Monitor + Auto-Clean
+- The contradiction
+- icons.js is NOT loaded by index.html — UI.icon() exists but is unreachable at runtime; only core.js, fleet_topology.js, uploads.js are pinne
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
