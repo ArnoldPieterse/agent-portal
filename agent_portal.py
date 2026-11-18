@@ -1041,6 +1041,23 @@ def _mem_local_index():
     return _MEM_IDX_CACHE.get("idx") or {}
 
 
+_UNDERSTANDING = None
+def _understanding():
+    """Lazy-load memory/researcher/understanding.py (never raises)."""
+    global _UNDERSTANDING
+    if _UNDERSTANDING is None:
+        try:
+            import importlib.util
+            _p = os.path.join(HERE, "memory", "researcher", "understanding.py")
+            spec = importlib.util.spec_from_file_location("agent_understanding", _p)
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            _UNDERSTANDING = mod
+        except Exception:
+            _UNDERSTANDING = False
+    return _UNDERSTANDING or None
+
+
 def _mem_local_hits(messages, k=6):
     """Look up every keyword of the latest prompt in the local index; score lines by
     matched-term count; return a compact MEMORY INDEX HITS block (M1..Mk with file:line
@@ -1061,6 +1078,15 @@ def _mem_local_hits(messages, k=6):
         words = [w for w in re.findall(r"[a-z0-9_]{3,}", q.lower()) if w not in _MEM_STOP]
         if not words:
             return ""
+        # SYNONYMS (2026-11-18): expand each key term via the understanding module so
+        # index lookups also catch near-synonyms used in memory files.
+        _u = _understanding()
+        if _u is not None:
+            try:
+                for w in set(words):
+                    words.extend(x for x in _u.synonyms(w) if x not in _MEM_STOP)
+            except Exception:
+                pass
         score = {}
         idx = _mem_local_index()
         for w in set(words):
@@ -1943,6 +1969,17 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
         _lh = _mem_local_hits(messages)
         if _lh:
             lookup_ctx = (lookup_ctx + "\n\n" + _lh) if lookup_ctx else _lh
+        # UNDERSTANDING (2026-11-18): dictionary meaning + usage of the prompt's key
+        # terms (U-ref indexed, pointers into memory/researcher/dictionary_*.json)
+        # folded into pre-context before the main LLM prompt.
+        try:
+            _u = _understanding()
+            if _u is not None:
+                _ub = _u.understanding_block(messages)
+                if _ub:
+                    lookup_ctx = (lookup_ctx + "\n\n" + _ub) if lookup_ctx else _ub
+        except Exception:
+            pass
         _act_log(session, {"agent": who, "event": "readmem",
                            "dur": round(time.time() - t_rm, 2), "chars": len(lookup_ctx)})
     # FAST FIRST REPLY: the first reply to a human uses a low context window (last N

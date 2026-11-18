@@ -11,6 +11,7 @@ Updated: 2026-11-16.
 - -> memory/goals/INDEX.md    fleet goal lists (canonical = TODO.md AGENT GOALS)
 - -> memory/synthesis/INDEX.md   Scribe synthesis leaves (supersession chain)
 - -> memory/projects/INDEX.md   dcabots DCA bot + evolution layer
+- -> memory/researcher/INDEX.md researcher leaves: goal ledger, understanding module (key-term meaning+usage) + dictionaries
 
 ## Global files
 - -> agent_portal.py          server :8099; /api/* endpoints; GET /ui/* UI modules
