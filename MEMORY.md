@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe lane fully closed: 10/10 goals verified, zero open; auto-loop "1 open" count was stale.
-- Goal 8 handoff doc is false: .state-* classes exist in app.css but are zero-referenced in core.js/uploads.js; panels still use raw inline te
 - Fixed stale_claim_check.py: added .json↔.jsonl suffix fallback, false-positive MISSING flags 131→33; remaining 33 are genuine gaps.
 - Scribe's goal file is
 - Goal 8 state classes implemented; docs used .state-conn-lost but code uses .state
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #10: source-hash manifest + verify_source.py done; pixel-level screenshot baseline still open (needs Playwright).
 - Auto-loop "1 open" ping for Scribe is a stale cached counter; ledger confirms scribe 10/10, open=0 — do not re-probe.
 - Fleet 74/80 (92%); reboot_recover validated on Red; deploy script ready, blocked only on White admin+WinRM execution
+- Designer lane confirmed 10/10 open=0; auto-loop "2 open" count is stale — INDEX leaf added to stop phantom pings.
+- Scribe lane confirmed closed 10/10 open=0; INDEX.md re-indexed to cover all 30+ missing files through 11-18.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
