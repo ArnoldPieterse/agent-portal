@@ -1,0 +1,46 @@
+{
+  "generated": "2026-11-19T01:42:36",
+  "goal": "#2 Information Density Pass",
+  "method": "static css parse (tokens resolved from ui/tokens.css, values read from live ui/app.css)",
+  "target_pct": 20.0,
+  "panels": [
+    {
+      "selector": "body",
+      "kind": "base",
+      "before_line_height": 1.45,
+      "after_line_height": 1.3,
+      "after_source": "var(--lh-base)",
+      "reduction_pct": 10.3,
+      "meets_20pct_target": false,
+      "readability_floor": 1.2,
+      "readability_ok": true
+    },
+    {
+      "selector": ".opsbox",
+      "kind": "mono",
+      "before_line_height": 1.6,
+      "after_line_height": 1.35,
+      "after_source": "var(--lh-mono)",
+      "reduction_pct": 15.6,
+      "meets_20pct_target": false,
+      "readability_floor": 1.3,
+      "readability_ok": true
+    },
+    {
+      "selector": "#actBody",
+      "kind": "mono",
+      "before_line_height": 1.7,
+      "after_line_height": 1.35,
+      "after_source": "var(--lh-mono)",
+      "reduction_pct": 20.6,
+      "meets_20pct_target": true,
+      "readability_floor": 1.3,
+      "readability_ok": true
+    }
+  ],
+  "average_reduction_pct": 15.5,
+  "max_reduction_pct": 20.6,
+  "min_reduction_pct": 10.3,
+  "readability_floors_ok": true,
+  "verdict": "PARTIAL"
+}
