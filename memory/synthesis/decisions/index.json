@@ -1,0 +1,135 @@
+{
+  "generated": "2026-11-19T02:44:12.306292",
+  "total_decisions": 37,
+  "formatted": 15,
+  "fields_required": [
+    "date",
+    "decision",
+    "context",
+    "alternatives_considered",
+    "rationale",
+    "owner"
+  ],
+  "entries": [
+    {
+      "id": "D001",
+      "date": "2026-11-12",
+      "decision": "decided items were visible from this host at the time).",
+      "owner": "(unattributed)",
+      "source": "2026-11-12-consolidated-state.md",
+      "file": "decisions/2026-11-12-01-decided-items-were-visible-from-this-hos.md"
+    },
+    {
+      "id": "D002",
+      "date": "2026-11-12",
+      "decision": "- Gate unchanged (human-owned): Arnold \u2192 `memory/builder/arnold-restart-r8.ps1` on White console \u2192 V",
+      "owner": "(unattributed)",
+      "source": "2026-11-12-consolidated-state.md",
+      "file": "decisions/2026-11-12-02-gate-unchanged-human-owned-arnold-memory.md"
+    },
+    {
+      "id": "D003",
+      "date": "2026-11-12",
+      "decision": "- Orchestrator: confirm/correct the work plan in TODO.md; Scribe cannot edit it safely without read ",
+      "owner": "(unattributed)",
+      "source": "2026-11-12-upgrade-round.md",
+      "file": "decisions/2026-11-12-03-orchestrator-confirm-correct-the-work-pl.md"
+    },
+    {
+      "id": "D004",
+      "date": "2026-11-13",
+      "decision": "ratified pointer base-rule in-tree (checker spec gap since r15).",
+      "owner": "(unattributed)",
+      "source": "2026-11-13-planning-meeting.md",
+      "file": "decisions/2026-11-13-04-ratified-pointer-base-rule-in-tree-check.md"
+    },
+    {
+      "id": "D005",
+      "date": "2026-11-13",
+      "decision": "r15/r16 decisions are now recorded in memory/synthesis/ (this leaf) alongside the canonical state le",
+      "owner": "(unattributed)",
+      "source": "2026-11-13-r15-r16-adjudication.md",
+      "file": "decisions/2026-11-13-05-r15-r16-decisions-are-now-recorded-in-me.md"
+    },
+    {
+      "id": "D006",
+      "date": "2026-11-13",
+      "decision": "This leaf is a NEW file \u2192 propagates under current transport. Edits to existing files remain LWW-ski",
+      "owner": "(unattributed)",
+      "source": "2026-11-13-r16c-mechanic-bundle-landed.md",
+      "file": "decisions/2026-11-13-06-this-leaf-is-a-new-file-propagates-under.md"
+    },
+    {
+      "id": "D007",
+      "date": "2026-11-13",
+      "decision": "ratified pointer base-rule in-tree \u2014 blocked until the canonical tree is writable (post-bootstrap).",
+      "owner": "(unattributed)",
+      "source": "2026-11-13-v102-upgrade-planning.md",
+      "file": "decisions/2026-11-13-07-ratified-pointer-base-rule-in-tree-block.md"
+    },
+    {
+      "id": "D008",
+      "date": "2026-11-13",
+      "decision": "- Consumer-risk item (Black 0-byte `agents.json` stub): CLOSED-nil for today's gate scripts (code-pr",
+      "owner": "(unattributed)",
+      "source": "2026-11-13-v102-upgrade-planning.md",
+      "file": "decisions/2026-11-13-08-consumer-risk-item-black-0-byte-agents-j.md"
+    },
+    {
+      "id": "D009",
+      "date": "2026-11-14",
+      "decision": "- NEW: AC-A2-1 outside-click ratification/fix (Designer or Builder) \u2014 agent-executable, unassigned.",
+      "owner": "(unattributed)",
+      "source": "2026-11-14-ac-a2-sweep-closeout.md",
+      "file": "decisions/2026-11-14-09-new-ac-a2-1-outside-click-ratification-f.md"
+    },
+    {
+      "id": "D010",
+      "date": "2026-11-14",
+      "decision": "- Researcher seat (unconfirmed): `projects/dcabots/` 330 files / 197 MB (claim \u2014 see C1).",
+      "owner": "(unattributed)",
+      "source": "2026-11-14-dcabots-intake-synthesis.md",
+      "file": "decisions/2026-11-14-10-researcher-seat-unconfirmed-projects-dca.md"
+    },
+    {
+      "id": "D011",
+      "date": "2026-11-14",
+      "decision": "Round record, no further supersession expected for this task line.",
+      "owner": "(unattributed)",
+      "source": "2026-11-14-dream-big-r57-closeout.md",
+      "file": "decisions/2026-11-14-11-round-record-no-further-supersession-exp.md"
+    },
+    {
+      "id": "D012",
+      "date": "2026-11-14",
+      "decision": "adopted, Mechanic (ops) is natural owner, Arnold approval needed (machine-level task).",
+      "owner": "(unattributed)",
+      "source": "2026-11-14-portal-down-state-change.md",
+      "file": "decisions/2026-11-14-12-adopted-mechanic-ops-is-natural-owner-ar.md"
+    },
+    {
+      "id": "D013",
+      "date": "2026-11-14",
+      "decision": "- Hand off: **Orchestrator** applies both repairs at canonical.",
+      "owner": "(unattributed)",
+      "source": "2026-11-14-portal-down-state-change.md",
+      "file": "decisions/2026-11-14-13-hand-off-orchestrator-applies-both-repai.md"
+    },
+    {
+      "id": "D014",
+      "date": "2026-11-14",
+      "decision": "- Human/Arnold: dcabots re-prompt, E14 White-console run, arnold-restart ps1 leg(s).",
+      "owner": "(unattributed)",
+      "source": "2026-11-14-queue4-source-loss-adjudication.md",
+      "file": "decisions/2026-11-14-14-human-arnold-dcabots-re-prompt-e14-white.md"
+    },
+    {
+      "id": "D015",
+      "date": "2026-11-14",
+      "decision": "- memory/designer/a4-dual-base-verify-r27.md ABSENT on Scribe seat at sweep time",
+      "owner": "(unattributed)",
+      "source": "2026-11-14-r27-round-record.md",
+      "file": "decisions/2026-11-14-15-memory-designer-a4-dual-base-verify-r27-.md"
+    }
+  ]
+}
