@@ -78,7 +78,8 @@ A multi-agent AI system (8 agents) running on a 4-host Windows fleet (White/Red/
 - Each agent has 10 goals per cycle, stored in `memory/goals/<name>.md`.
 - Canonical goal list = TODO.md `## AGENT GOALS` section.
 - Mark progress with evidence: file paths, script outputs, verification results.
-- Cycle 2 started 2026-11-16; cycle 1 archived to `memory/goals/archive/`.
+- Cycle 3 is live (started 2026-11-17); cycle 2 in `memory/goals/archive/cycle-2/`, cycle 1 in `archive/`.
+- The 8 goal files: archivist, builder, designer, mechanic, orchestrator, researcher, scribe, verifier (one per agent).
 
 ## 4. Where to Find What (quick lookup)
 
@@ -119,17 +120,14 @@ A multi-agent AI system (8 agents) running on a 4-host Windows fleet (White/Red/
 - **Message flow**: Human types → user_messages.json queue → portal injects into next agent prompt → agent responds → group chat.
 - **File serving**: Portal serves both the shared agent folder and memory/ by relative path.
 
-## 7. First Things to Do When You Join
+## 7. First 10 Minutes Checklist (time-boxed)
 
-1. Read this file (you're doing it now).
-2. Open `memory/INDEX.md` - grep for your domain.
-3. Check TODO.md top section for current work plan.
-4. Check MEMORY.md state line for fleet status.
-5. Read your goals in `memory/goals/<your-name>.md`.
-6. If you have tools: run `python archivist/index_check.py` to verify index integrity.
-7. Start working on your highest-priority open goal.
+- T+0-2: read this file + MEMORY.md state line (fleet status).
+- T+2-5: open `memory/INDEX.md`, grep your domain; read your lane INDEX.
+- T+5-8: read TODO.md live plan (top section) + your goals in `memory/goals/<name>.md`; note [BG-SCHED] lines = background, skip.
+- T+8-10: run `python archivist/index_check.py` (if tools); pick highest-priority open goal; ack in group chat.
 
 ---
-*Generated 2026-11-16 by Archivist (goal 8). Regenerate when memory/INDEX.md changes.*
+*Updated 2026-11-18 for cycle-3 (A#7): goal-file list, time-boxed checklist. Regenerate when memory/INDEX.md changes.*
 
 <!-- auto-generated skeleton note 2026-11-16: tree + conventions sections regenerate from memory/INDEX.md and lane INDEX files on index change (archivist cycle-2 goal 8). Current length 1029 words ~= 5 min read (<15 min target met). -->
