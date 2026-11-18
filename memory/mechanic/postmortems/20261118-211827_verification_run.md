@@ -1,0 +1,20 @@
+# Incident Post-Mortem: Verification Run
+
+| Field | Value |
+|-------|-------|
+| **timestamp** | 2026-11-18T21:18:27.570795+00:00 |
+| **impact** | Testing auto-generation |
+| **root_cause** | (technical explanation) |
+| **detection_method** | (how we found out: alert, user report, health check) |
+| **resolution_steps** | (ordered list of what fixed it) |
+| **time_to_recovery** | (minutes from detection to resolution) |
+| **preventive_action** | (what we're adding to prevent recurrence) |
+
+## Timeline
+- {ts} Incident detected
+- {ts} Diagnosis complete
+- {ts} Fix applied
+- {ts} Recovery confirmed
+
+## Follow-ups
+- [ ] (action item with owner + due date)

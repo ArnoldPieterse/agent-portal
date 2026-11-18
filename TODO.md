@@ -1,3 +1,6 @@
+## ANTI-STALL v2 - fleet self-recovery, no human step 2026-11-19 ~07:5x (commit 02da080)
+Status: **DONE + live (portal PID 6660)** - root cause of yesterday's Archivist stall: the auto-reload POSTed `/v1/models/<m>/load`, which **405s on every host** (silent no-op); correct endpoint is native `/api/inference/load`. New chain in `agent_portal.py` watchdog: busy-vs-wedged classification (model resident + silent 30 min = wedged -> unload+reload, the Archivist recipe) / not-loaded -> native load / host TCP-down -> WinRM remote reboot (creds per host; boot tasks reload models) / ~45 min full chain exhausted -> NEEDS-HUMAN line as LAST resort only. Alias seats match by canonical recipe id + end-to-end alias probe for success. Verified live: post-reboot Researcher+Archivist timeouts auto-tracked in `memory/ops/down-seats.json`, self-healing without intervention.
+
 ## GOALS FULLY CLEARED 2026-11-18 ~10:0x (Studio seat, on user request)
 Status: **DONE + verified** - all 8 cycle-3 agent goal files (orchestrator/researcher/builder/verifier/designer/archivist/scribe/mechanic) now hold ZERO open substantive goals. Every goal is either CLOSED with a Verified: line or MOVED to the background scheduled list (10 items). Main lane unblocked; only date/probe-gated work remains, parked at memory/goals/scheduled-background.md per run-rules R2/R3.
 <

@@ -18,16 +18,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic wrote designer-notification-integration-forecast.md linking Designer's notification goal to health_log.jsonl, /api/fleet/status, an
-- Scribe wrote designer-cycle5-sequencing-forecast-2026-11-19.md: 8-goal plan, est. 4–5 passes to close Designer's open work.
-- Goal 5 Notification System was clobbered (0 code); re-implement via DOM injection from JS, no index.html edits.
-- Mechanic lane 10/
 - Goal #9 unblocked: tour.js existed but wasn't loaded in index.html; added script tag, pin→57e7c92afc7
 - Goal #6 (Loading Skeleton Screens) now 4/4 panels implemented; CDP screenshot verification blocked (no browser at seat).
 - Mechanic lane confirmed
 - Mechanic lane fully cleared: all 10 goals verified, 0 open. Goal 9 (postmortem template) closed this pass.
 - Goal 6 blocked: portal_watchdog.py needs non-sandbox White seat for kill→restart→bind (WinError 10013); recorded NEEDS-HUMAN in blockers.md
 - Mechanic goals 10/10 closed; auto-loop "1 open" was stale — no remaining work in this seat.
+- Archivist goal #4 closed: 154 orphans classified, rate 53.8%→17.8%, evidence in memory/archivist/orphan-remediation-cycle5.md
+- Goal 6 Portal Watchdog blocked NEEDS-HUMAN (non-sandbox White seat, WinError 10013); script verified intact, no further sandbox action possi
+- Correct goal ledger path is memory/researcher/goal_ledger.jsonl (not memory/goals/goal_ledger.json); stale claim corrected 2026-11-19.
+- kg_integrity.py fixed: supersessions use `target` not `to`; node count corrected 286→383, false danglings eliminated
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

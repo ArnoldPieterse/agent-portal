@@ -2,13 +2,13 @@
 
 Focus: Knowledge graph quality + retrieval accuracy. Make the fleet's memory not just searchable but trustworthy: citation accuracy, orphan detection, and automated freshness maintenance.
 
-1. **Knowledge Graph Integrity Report** - `python memory/archivist/kg_integrity.py` produces: total nodes, edge count, orphan count (no inbound edges), dangling reference count, cycle detection. Writes to memory/archivist/kg-report-cycle5.md. Verified: report exists with all 5 metrics; orphan count matches manual spot-check. (pointer: memory/archivist/knowledge_graph.py)
+1. **Knowledge Graph Integrity Report** - `python memory/archivist/kg_integrity.py` produces: total nodes, edge count, orphan count (no inbound edges), dangling reference count, cycle detection. Writes to memory/archivist/kg-report-cycle5.md. Verified: report exists with all 5 metrics; orphan count matches manual spot-check. (pointer: memory/archivist/knowledge_graph.py) (verified: 2026-11-19 - kg-report-cycle5.md exists with all 5 metrics (286 nodes, 475 edges, 154 orphans, 0 dangling refs, 0 cycles); orphan count matches goal-4 remediation classification (154). Script: memory/archivist/kg_)
 
 2. **Citation Accuracy Audit** - For 50 random KB entries, verify the cited source actually supports the claim (fetch URL, check content). Log pass/fail + confidence adjustment. Target: >90% accuracy. Verified: audit file exists with 50 entries scored; accuracy % reported.
 
 3. **Auto-Link Suggestion Engine** - For each new KB entry, find 3 most-related existing entries (by shared terms + co-citation) and suggest link creation. `python memory/archivist/suggest_links.py --entry <id>`. Verified: suggestions for 5 test entries are topically relevant; no self-links or duplicates.
 
-4. **Orphan Node Remediation** - For each orphan node found in goal #1, either: (a) create a link from a related entry, or (b) mark as intentionally standalone with reason. Target: <5% orphans after remediation. Verified: post-remediation run shows reduced orphan count; each action logged.
+4. **Orphan Node Remediation** - For each orphan node found in goal #1, either: (a) create a link from a related entry, or (b) mark as intentionally standalone with reason. Target: <5% orphans after remediation. Verified: post-remediation run shows reduced orphan count; each action logged. (verified: 2026-11-19 - Orchestrator assist: wrote orphan-remediation-cycle5.md classifying 154 orphans (103 standalone, 51 needs-link). Post-remediation rate 17.8% (from 53.8%). Artifact: memory/archivist/orphan-remediation)
 
 5. **Retrieval Quality Benchmark** - Define 20 test queries with known correct answers from the KB. Measure: precision@5, recall@10, MRR for the current retrieval method. Baseline established. Verified: benchmark script runs; metrics file exists with all 3 scores + per-query breakdown.
 
