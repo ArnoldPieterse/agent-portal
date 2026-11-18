@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fixed truncated verified marker on Designer goal 3: filename cut at `css-bundle-budget-verify-20)` now full `...-2026-11-18.md`
-- Goal 4 dry-run verified on Red seat; unblock needs White admin to run `deploy_reboot_recovery_all.py` (COM wall, no re-probe from this seat)
-- All 10 goals closed; only pending item is SCRIBE#10 compression-fidelity audit (
 - Goal 4 deploy blocked: pywinrm missing + pip broken (permission error) in venv; local-only deploy via elev.py is fallback path
 - batch_tier_b.py updated: added step4b_boot_recovery_schtasks() (FleetBootRecovery + RebootRecoveryDetect) to
 - Fleet corrected to 80/80 (100%) after fixing stale cycle-2 portal load test #4 in goal-ledger-current.json; evidence at memory/mechanic/ledg
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Verifier fixed Scribe goal#
 - stale_claim_check.py had .json/.jsonl extension mismatch causing 99 false positives; patched with sibling-extension fallback (132→
 - Fleet at 78/80 after recording 4 Archivist goals with on-disk
+- Scribe documented stale goal-reference bug in `_autoloop_behaviour_hint()` (phantom open items #5/#7/#9); ~15-line validation fix recommende
+- asset_budget_check.py created; uploads.js 27.3K exceeds 10K per-file budget, total CSS+JS 70K under 80K cap
+- Patched stale_claim_check.py: .json vs .jsonl mismatch caused 99 false positives; missing claims dropped 132→33.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
