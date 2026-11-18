@@ -177,6 +177,68 @@ def plan(target_agents, resident, catalog=None):
         }
         sequence.extend(actions)
 
+    # --- Goal 9: Multi-Host Load Balancer (host-affinity + remote fallback) ---
+    # After primary-host processing, any BLOCKED action means the model doesn't fit
+    # on its catalog-assigned host. Try routing to another host with sufficient free VRAM.
+    blocked_indices = [i for i, a in enumerate(sequence) if a["op"] == "BLOCKED"]
+    remote_placements = []  # track for reporting
+    for bi in reversed(blocked_indices):
+        blocked_action = sequence[bi]
+        mid = blocked_action["model"]
+        primary_host = blocked_action["host"]
+        need_gb = float(mindex[mid]["vram_gb"])
+        # Candidate hosts: all other hosts, sorted by free VRAM descending
+        candidates = []
+        for h in hosts_meta:
+            if h == primary_host:
+                continue
+            h_budget = float(hosts_meta[h].get("vram_total_gb", 0))
+            h_resident_vram = sum(float(mindex[m]["vram_gb"]) for m in resident.get(h, []) if m in mindex)
+            h_free = h_budget - h_resident_vram
+            if h_free >= need_gb:
+                candidates.append((h, h_free))
+        candidates.sort(key=lambda x: -x[1])  # most free VRAM first
+        if candidates:
+            target_host, target_free = candidates[0]
+            new_action = {"op": "LOAD", "model": mid, "host": target_host,
+                          "remote": True,
+                          "reason": "primary host %s full; routed to remote host %s (free %.1fGB >= need %.1fGB)"
+                                    % (primary_host, target_host, target_free, need_gb),
+                          "eta_s": predict_load_eta(mid, catalog)}
+            # Remove BLOCKED from primary host's actions (it's now a remote LOAD)
+            if primary_host in hosts_out:
+                hosts_out[primary_host]["actions"] = [
+                    a for a in hosts_out[primary_host]["actions"]
+                    if not (a["op"] == "BLOCKED" and a["model"] == mid)
+                ]
+                hosts_out[primary_host]["fits"] = not any(
+                    a["op"] == "BLOCKED" for a in hosts_out[primary_host]["actions"]
+                )
+            # Update hosts_out for the remote host
+            if target_host not in hosts_out:
+                h_budget = float(hosts_meta[target_host].get("vram_total_gb", 0))
+                h_res_now = [m for m in resident.get(target_host, []) if m in mindex]
+                hosts_out[target_host] = {
+                    "budget_gb": h_budget,
+                    "resident_before": h_res_now,
+                    "resident_after": sorted([m for m in h_res_now] + [mid]),
+                    "free_gb_before": round(max(0.0, h_budget - sum(float(mindex[m]["vram_gb"]) for m in h_res_now)), 2),
+                    "free_gb_after": round(max(0.0, h_free - need_gb), 2),
+                    "fits": True,
+                    "actions": [],
+                }
+            hosts_out[target_host]["actions"].append(new_action)
+            hosts_out[target_host]["resident_after"] = sorted(set(hosts_out[target_host]["resident_after"]) | {mid})
+            hosts_out[target_host]["free_gb_after"] = round(max(0.0, float(hosts_out[target_host]["free_gb_after"]) - need_gb), 2)
+            # Remove VRAM_EXCEEDED alert for this model (it's no longer blocked)
+            alerts[:] = [a for a in alerts if not (a.get("type") == "VRAM_EXCEEDED" and a.get("model") == mid)]
+            remote_placements.append({"model": mid, "from": primary_host, "to": target_host})
+
+    # Rebuild sequence from hosts_out to keep ordering consistent
+    sequence = []
+    for h in [h for h in hosts_meta if h in hosts_out]:
+        sequence.extend(hosts_out[h]["actions"])
+
     # Log alerts to hotload-log.jsonl (best-effort; don't fail plan on log error)
     if alerts:
         try:
@@ -192,6 +254,7 @@ def plan(target_agents, resident, catalog=None):
         "hosts": hosts_out,
         "sequence": sequence,
         "alerts": alerts,
+        "remote_placements": remote_placements,
     }
 
 
@@ -322,7 +385,25 @@ def selftest():
     check("R2 fewer than 3 samples -> None for unknown model", _eta2 is None, str(_eta2))
     HOTLOAD_LOG = _saved_log
 
-    print("\n%d/%d selftest checks passed" % (20 - len(failures), 20))
+    # --- Goal 9: Multi-Host Load Balancer (host-affinity + remote fallback) ---
+    # Case S: White full with required Q8 resident; 3d-env target BLOCKED on white,
+    #         routed to a remote host (pale/black/red).
+    p = plan(["orchestrator", "env_builder"], {"white": ["qwen3-27b-q8"]}, catalog)
+    remote_loads = [a for a in p["sequence"] if a["op"] == "LOAD" and a.get("remote")]
+    check("S 3d-env routed to remote host", len(remote_loads) >= 1,
+          "sequence=%s" % str(p["sequence"]))
+    # Case T: Remote LOAD action has remote=True flag and correct model
+    check("T remote=True on routed action",
+          any(a.get("remote") is True and a["model"] == "3d-env-model" for a in p["sequence"]),
+          "remote_loads=%s" % str(remote_loads))
+
+    # Case U: No false remote routing when model fits on primary (regression)
+    p2 = plan(["researcher"], {"white": []}, catalog)
+    check("U no false remote when fits locally",
+          all(not a.get("remote") for a in p2["sequence"] if a["op"] == "LOAD"),
+          str(p2["sequence"]))
+
+    print("\n%d/%d selftest checks passed" % (23 - len(failures), 23))
     if failures:
         print("FAILED:", failures)
         return 1
