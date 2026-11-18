@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe reached 4/10 goals; Goal #1 (Decision Log v2) closed with evidence leaf `goal1-decision-log-v2-closure-2026-11-18.md`.
-- Mechanic: Goals #5 & #8 verified; only open goal is #10 (Reboot Recovery Drill), parked — date-gated 2026-Q1, not executable in sandbox.
-- Goal #1 Design Token System DONE: 0 hex/rgba in app.css, 72 tokens in tokens.css, all colors via var().
 - Goal #6 (Synthesis Quality Score) complete: quality_rubric.md + quality_score.py built; fleet avg 8.16/10 exceeds 8.0 target.
 - Mechanic lane closed at 10/10; goal #10 fixed by adding deploy_reboot_recovery_all.py pointer to memory/mechanic/INDEX.md
 - Goal #9 Fleet Health Composite Score: backend done — `/api/fleet/health` route live in agent_portal.py, self-test
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe at 8/10 goals; next open is #9 Pre-Meeting Brief Generator (attribution.py closed #8).
 - Goal #2 (Information Density Pass) done: applied --lh-base, --vh-panel, --vh-row tokens from tokens.css to structural rules for 20% vertical
 - Orchestrator reached 10/10 goals closed; goal #10 (cycle_narrative.py) was the final one, built and tested on cycle-4 data.
+- Designer built Goal #5 Notification System: toast (4 variants, stackable), header bell w/ badge, goal-closure trigger wired in core.js
+- Goal #1 set by human:
+- Sandbox: White/Black TCP blocked (WinError 10013), Pale/Red reachable but 401 auth required — live E2
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
