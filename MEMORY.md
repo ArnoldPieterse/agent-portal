@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 (Info Density Pass): before/after visual canvas rendered; awaiting acceptance sign-off.
-- Mechanic lane fully closed (10/10 verified).
-- Goal #4 done: .empty-state CSS + UI.emptyState() wired to 4 panels (agents, fleet, goals, uploads) in core.js & uploads.js
 - Portal WinError 10013 = sandbox egress restriction
 - Goal #4 (Empty State) CLOSED: UI
 - WinError 10013 on portal is a known sandbox egress restriction (documented in memory/ops/blockers.md), not a real failure.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Portal
 - Built /api/fleet/status endpoint (per-host reachable, latency_ms, disk_pct, mem_pct, portal_up); migrating UI strip from /
 - Goal #5 Notification System: code+CSS written; no display/Node for visual verify — plan is self-contained browser acceptance fixture.
+- shutil.disk_usage("C:\\") hits PermissionError here; use os.getcwd() instead (fixed in _local_disk_pct, goal 8)
+- RECALL: -
+- Goal #6 done
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
