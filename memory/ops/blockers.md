@@ -72,3 +72,10 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - [05:11] NEEDS-HUMAN: seat Researcher model unreachable for 20+ min (not_loaded). Reload the model in Studio or restart it elevated.
 - [07:50] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
 - [07:51] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Reload the model in Studio or restart it elevated.
+
+## 2026-11-18 RESOLUTIONS (unsloth-assist, White seat)
+- **PortalLoadProbe schtask: RESOLVED** - registered daily 06:00 via real python (C:\Projects\Workspace\Python\pythoncore-3.15-64); first probe run OK (9 models on White; Black load-fail reconfirmed). Mechanic #4 now accumulates (2/7 days at registration).
+- **VerifierSLO schtask: RESOLVED** - registered daily 06:00, first run exit 0. Verifier #2 unblocked.
+- **MirrorSync schtask: RESOLVED** - registered every 5 min (memory_mirror.py). Mirror pipeline LIVE: 09:52 run pushed 30 files to Red. REMAINING NEEDS-HUMAN: Pale/Black SMB creds into memory_mirror_hosts.json (Arnold; Red works with empty password).
+- **Mechanic #2 Red leg: CLOSED** - TCP 445 OPEN + 8888 OPEN probed from White seat; ledger recorded mechanic.md line 7; evidence memory/ops/probe-evidence.jsonl.
+- **Designer #5/#7 CDP wall: RESOLVED (agent-side fix only)** - chrome.exe absent, but msedge --remote-debugging-port=9222 loads portal and /json/list returns the live page. Point live_verify_g578.py at 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe' instead of chrome.
