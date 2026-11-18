@@ -15,9 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe fixed compression-fidelity-trend.md/.json (inverted labels, stale r1/r2 scores 70%→94%) to match authoritative audit files; now 10/10
-- Scribe reached 10/10 verified goals; goal #10 closed by adding verification marker to memory/goals/scribe.md line 15 (audits were already on
-- Goals #4 & #6 both unblock with one action: run `python batch_tier_b.py` on White (non
 - capture_baseline.py rewritten to use Edge headless CDP directly; Playwright dependency eliminated (
 - Scribe resolved the 41/80 vs 22/80 narrative-doc discrepancy (found per-agent sum=42, not 41) and closed it via ledger.
 - Scribe goals confirmed 10/10 closed, 0 open; auto-loop "1 open" count is stale — do not re-probe.
@@ -25,6 +22,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8 shipped: `.fstate` renamed to `.pstate` (universal state class); goal #2 blocked on browser screenshots.
 - Screenshot capture blocked by sandbox network isolation to :8099 (affects goals #2 & #10); not re-probing per anti-loop rule.
 - Goal #7: Scribe added fallback rule — un
+- Goal #9 (typography scale) closed — evidence existed (PASS 2026-11-18) but ledger marker was missing; now properly marked done.
+- Goal #9 (cross-cycle narrative) completed: Cycle 3 placeholder replaced in memory/synthesis/cycle-narrative.md
+- Mechanic wrote & validated memory/mechanic/reboot_recover.py (160 lines): detects Event Log 6008, idempotent, starts portal + health check f
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
