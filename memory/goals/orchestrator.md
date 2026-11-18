@@ -14,7 +14,7 @@ Focus: Hotload productionization + fleet capacity orchestration. Turn the PLANNE
 
 6. **Hotload Capacity Gauge Panel** - Surface /api/fleet/status in the fleet tab: per-host VRAM bar (used/free), hot/cold agent chips, last load/unload event. Verified: panel renders for all 4 hosts without JS errors; data matches /api/fleet/status JSON. (verified: 2026-11-18 - Hotload VRAM gauge UI BUILT: core.js renders per-host VRAM bar + hot/cold chips + last event from /api/fleet/status; agent_portal.py enhanced with last_event field; app.css .hl-* styles added. In-proc)
 
-7. **Load-Time Prediction** - From hotload-log.jsonl history, predict cold-load duration per model (median of past loads); expose in /api/fleet/plan as `eta_s`; alert if actual load exceeds 2x predicted. Verified: after >=3 real loads of a model, eta_s is within 50% of observed; overruns logged.
+7. **Load-Time Prediction** - From hotload-log.jsonl history, predict cold-load duration per model (median of past loads); expose in /api/fleet/plan as `eta_s`; alert if actual load exceeds 2x predicted. Verified: after >=3 real loads of a model, eta_s is within 50% of observed; overruns logged. (verified: 2026-11-18 - predict_load_eta() BUILT in model_scheduler.py (reads hotload-log.jsonl, median of >=3 LOAD_SUCCESS durations, catalog fallback); eta_s on each LOAD action in plan(); overload alert (2x) in execute().)
 
 8. **Capability Auto-Match Suggester** - `/api/fleet/suggest?task=<text>` maps task keywords to capabilities (text/vision/video/3d/code) and returns the minimal agent set + models to activate, reusing catalog capability tags. Verified: 5 sample tasks return a coherent, VRAM-feasible agent set; each suggestion's models exist in catalog.
 

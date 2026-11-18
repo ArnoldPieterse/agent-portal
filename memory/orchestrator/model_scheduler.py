@@ -131,9 +131,11 @@ def plan(target_agents, resident, catalog=None):
             need = float(mindex[mid]["vram_gb"])
             used = sum(loaded.values())
             if used + need <= budget + 1e-9:
+                _eta = predict_load_eta(mid, catalog)
                 actions.append({"op": "LOAD", "model": mid, "host": host,
                                 "reason": "required; fits (used %.1f + need %.1f <= %d)"
-                                          % (used, need, budget)})
+                                          % (used, need, budget),
+                                "eta_s": _eta})
                 loaded[mid] = need
                 pending.pop(0)
             else:
@@ -286,7 +288,41 @@ def selftest():
           any("exclusive" in a.get("reason", "") for a in unloads),
           str([a.get("reason", "") for a in unloads]))
 
-    print("\n%d/%d selftest checks passed" % (16 - len(failures), 16))
+    # --- Goal 7: Load-Time Prediction (eta_s) ---
+    # Case P: plan() LOAD actions carry eta_s field
+    p = plan(["researcher"], {"white": []}, catalog)
+    load_actions = [a for a in p["sequence"] if a["op"] == "LOAD"]
+    check("P LOAD actions have eta_s key", all("eta_s" in a for a in load_actions),
+          str(load_actions))
+
+    # Case Q: predict_load_eta returns a number (from catalog fallback) or None
+    _q4_eta = predict_load_eta("qwen3-27b-q4", catalog)
+    check("Q eta is numeric or None", _q4_eta is None or isinstance(_q4_eta, (int, float)),
+          str(_q4_eta))
+
+    # Case R: median calculation from synthetic log data
+    import tempfile, os as _os
+    _tmp_log = _os.path.join(tempfile.gettempdir(), "test_hotload_log.jsonl")
+    with open(_tmp_log, "w") as _f:
+        for dur in [40.0, 50.0, 60.0]:
+            _f.write(json.dumps({"ts": "2026-11-18T00:00:00+00:00", "event": "LOAD_SUCCESS",
+                                  "host": "white", "model": "test-model", "detail": "%.1fs" % dur}) + "\n")
+    # Temporarily swap HOTLOAD_LOG for the test
+    global HOTLOAD_LOG
+    _saved_log = HOTLOAD_LOG
+    HOTLOAD_LOG = _tmp_log
+    _eta = predict_load_eta("test-model")
+    check("R median of [40,50,60] = 50.0", _eta == 50.0, str(_eta))
+    # Fewer than 3 samples -> fallback to catalog (test-model not in catalog -> None)
+    with open(_tmp_log, "w") as _f:
+        for dur in [40.0, 50.0]:
+            _f.write(json.dumps({"ts": "2026-11-18T00:00:00+00:00", "event": "LOAD_SUCCESS",
+                                  "host": "white", "model": "test-model-x", "detail": "%.1fs" % dur}) + "\n")
+    _eta2 = predict_load_eta("test-model-x")
+    check("R2 fewer than 3 samples -> None for unknown model", _eta2 is None, str(_eta2))
+    HOTLOAD_LOG = _saved_log
+
+    print("\n%d/%d selftest checks passed" % (20 - len(failures), 20))
     if failures:
         print("FAILED:", failures)
         return 1
@@ -328,6 +364,53 @@ def _log_event(event_type, host, model, detail=""):
     os.makedirs(os.path.dirname(HOTLOAD_LOG), exist_ok=True)
     with open(HOTLOAD_LOG, "a", encoding="utf-8") as f:
         f.write(json.dumps(row) + "\n")
+
+
+def predict_load_eta(model_id, catalog=None):
+    """Predict cold-load duration for a model from hotload-log.jsonl history.
+
+    Returns median of past LOAD_SUCCESS durations (seconds).
+    Requires >= 3 observations; falls back to catalog load_time_s if fewer.
+    Returns None if no data at all.
+    """
+    import statistics
+    durations = []
+    try:
+        with open(HOTLOAD_LOG, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    row = json.loads(line)
+                except (json.JSONDecodeError, ValueError):
+                    continue
+                if row.get("event") != "LOAD_SUCCESS":
+                    continue
+                if row.get("model") != model_id:
+                    continue
+                # detail field is like "45.3s"
+                detail = row.get("detail", "")
+                try:
+                    d = float(detail.replace("s", ""))
+                    durations.append(d)
+                except (ValueError, AttributeError):
+                    pass
+    except (OSError, FileNotFoundError):
+        pass
+
+    if len(durations) >= 3:
+        return round(statistics.median(durations), 1)
+
+    # Fallback to catalog load_time_s
+    if catalog is None:
+        catalog = load_catalog()
+    mindex = _model_index(catalog)
+    entry = mindex.get(model_id, {})
+    lt = entry.get("load_time_s")
+    if lt is not None:
+        return round(float(lt), 1)
+    return None
 
 
 def _studio_get(host_api, path, timeout=30):
@@ -517,6 +600,17 @@ def execute(plan_result, catalog=None, dry_run=False):
                 _log_event("LOAD_" + st, host, model_id, "%.1fs" % elapsed)
                 if not ok:
                     errors.append("load timeout: %s on %s (waited %.0fs)" % (model_id, host, load_timeout))
+                elif ok:
+                    # Goal-7: overrun alert if actual > 2x predicted
+                    _pred = predict_load_eta(model_id, catalog)
+                    if _pred and elapsed > 2.0 * _pred:
+                        _log_event("ALERT", host, model_id,
+                                   json.dumps({"type": "LOAD_OVERRUN", "model": model_id,
+                                               "host": host, "predicted_s": _pred,
+                                               "actual_s": round(elapsed, 1),
+                                               "ratio": round(elapsed / _pred, 2),
+                                               "message": "Load of %s took %.1fs (2x predicted %.1fs)"
+                                                          % (model_id, elapsed, _pred)}))
             elif status_code == 409:
                 results.append({"op": op, "model": model_id, "host": host,
                                 "status": "CONFLICT", "detail": "HTTP 409 - generation active"})
