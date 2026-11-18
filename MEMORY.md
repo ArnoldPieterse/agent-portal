@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- ui/core.js was truncated to 0 bytes by failed write; restored from canonical backup. Line-height tokens re-applied after mirror revert.
-- RECALL: - **M2** (`memory/goals/archive/researcher-20
 - Mechanic added ui/app.css to PIN_FILES in memory_mirror.py (sha12=ac3) to stop mirror reverting Designer's CSS edits.
 - Scribe reconciled trackers this pass: OI-004 & OI-006 resolved, 4 items remain OPEN; MEMORY.md goal line updated to 76/93 (82%).
 - CSS edits must be applied on White canonical (mirror source) or they get reverted; Orchestrator did this to unblock Designer Goal #2.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe
 - Designer: all spacing tokenized in ui/app.css
 - Mechic: All 10 goals closed this pass (#3,#6,#9,#8 last four). Each has verified ledger entry with script output.
+- Goal #6 Synthesis Quality Score closed in ledger (fleet avg 8.16 > 8
+- All 10 Mechanic goals closed; #8 Fleet Status API endpoint built in agent_portal.py returning 4 hosts from net_probe data.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
