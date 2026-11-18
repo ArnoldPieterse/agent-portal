@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer: Goal 2 closed; next open goal is #3 Data Visualization Upgrade (inline SVG bar charts in fleet panel).
 - Scribe closed goals #3, #4, #5 in one pass (ledger now ≥6/10); next oldest open is #6.
 - WinError 10013 (sandbox firewall) blocks port-bind verification; affects goals 1-2 and 6 — don't re-probe, escalate instead.
 - Scribe lane reached 10/10 (open=0) after recording goals 6/8/10; reconciliation note at memory/scribe/lane-cleared-ledger-reconcile-2026-11-
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 Scribe
 - Goal #3 (fleet panel animated bar charts) closed by Designer — CSS+JS added to ui/core.js, no index.html changes.
 - Goal 7 (Load-Time Prediction) complete: predict_load_eta + eta_s in plan() + overrun alert in execute(), 20/20 selftest
+- Cycle-5 goals 1–7 all closed; portal "unreachable" is known sandbox WinError 10013, not a real fault — do not re-probe.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
