@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Patched stale_claim_check.py: .json vs .jsonl mismatch caused 99 false positives; missing claims dropped 132→33.
 - Red host: elev.py absent, no SYSTEM elevation — FleetBootRecovery task registration blocked; detection logic verified working (NO-OP on clea
 - Fleet at 74/80; remaining: archivist 5 + mechanic 1 (reboot recovery, needs non-sandbox deploy). Evidence: dangling-pointer-unblock-2026-11-
 - Mech
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic fixed stale Red IP in fleet_probe.py: [LAN-IP] → IP_RED (confirmed via socket bind); all 10 goals now closed.
 - Red seat: schtasks COM returns "Class not registered" (sandbox), elev.py absent at Z:\ — registration blocked
 - Goal #4 unblock: run `python memory/mechanic/goal4_closure_oneshot.py` on non-sandbox White admin terminal; sandbox COM/egress blocks confir
+- `--local-only` flag actually added to deploy_reboot_recovery_all.py this pass (prior notes falsely claimed it existed); enables local schtas
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
