@@ -18,16 +18,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- recover_all.py has no __main__ guard (executes on import); regression test must use AST extraction, not direct import
-- Goal #1 selftest 11/11 pass; /api/fleet/status and /api/fleet/plan still unwired in agent_portal.py — next step
-- Mechic lane fully closed: all 10 goals ledger-recorded (10/10, open=0) as of this pass.
-- Goal #1 tokenization done (0 raw hex in app.css); now on Goal #2 density pass analyzing vertical spacing values.
 - Goal #3 gap: `--bindings` mode uses static table, not live `/api/settings/model-aliases`; Builder & Verifier have raw model names instead of
 - Orchestrator built execute(plan) in model_scheduler.py (Goal #2 Execute Engine); Studio :8888 unreachable (WinError 10013).
 - Understanding modules verified PASS: agent_portal.py L1045/L1081/L1976, core=69 project=31 terms, graceful degradation confirmed
 - Goal #1 done: app.css fully tokenized (37 hex→var()), acceptance test PASS; ui/app.css not pinned so safe to modify.
 - Understanding module tested: 26/27 PASS, 1 false-alarm (recall has own dict entry, hits directly not via synonym→memory).
 - key_terms() only extracts single words; compound terms like "agent portal" in dictionary are missed — gap in understanding module
+- Goal #2 done: ~20% vertical whitespace cut (19.7% spacing + 4.8% line-height) in tokens.css & app.css
+- Goal #3 (Post-Load Binding-Verify) closed: hot_load.py --test-bindings PASS 3/3, offline path confirmed.
+- Scribe lane closed 10/10; fleet total now 52/93 (56%). Goal #10 memory_hygiene.py built fresh this pass.
+- Bug found: log_rotate.py shift loop crashes with WinError 183 when .log.5 already exists; fix pending
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

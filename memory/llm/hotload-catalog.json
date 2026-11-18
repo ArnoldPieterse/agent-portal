@@ -53,7 +53,8 @@
         "scribe"
       ],
       "load_time_s": 240,
-      "notes": "High quality; slower load. Primary for planning/synthesis agents."
+      "notes": "High quality; slower load. Primary for planning/synthesis agents.",
+      "priority": 1
     },
     {
       "id": "qwen3-27b-q4",
@@ -85,7 +86,8 @@
         "mechanic"
       ],
       "load_time_s": 120,
-      "notes": "Large context (131k); fast inference with MTP spec-decode. EVICTS Q8 if loaded on same GPU set."
+      "notes": "Large context (131k); fast inference with MTP spec-decode. EVICTS Q8 if loaded on same GPU set.",
+      "priority": 2
     },
     {
       "id": "qwen3-5-4b-mtp",
@@ -105,7 +107,8 @@
       ],
       "agent_profiles": [],
       "load_time_s": 15,
-      "notes": "Draft model for MTP speculative decoding; not a standalone agent backend."
+      "notes": "Draft model for MTP speculative decoding; not a standalone agent backend.",
+      "priority": 2
     }
   ],
   "planned_models": [
@@ -124,7 +127,8 @@
       ],
       "min_vram_gb": 24,
       "notes": "Requires dedicated GPU; cannot share with text models. Candidate: CogVideoX or similar.",
-      "host": "white"
+      "host": "white",
+      "priority": 2
     },
     {
       "id": "3d-env-model",
@@ -141,7 +145,8 @@
       ],
       "min_vram_gb": 16,
       "notes": "For 3D environment generation. Candidate: TRELLIS or similar.",
-      "host": "white"
+      "host": "white",
+      "priority": 2
     },
     {
       "id": "large-context-model",
@@ -159,7 +164,8 @@
       "min_vram_gb": 48,
       "max_context": 262144,
       "notes": "256k+ context for whole-repo analysis. Needs dedicated host or full VRAM.",
-      "host": "white"
+      "host": "white",
+      "priority": 2
     }
   ],
   "agent_profile_templates": [

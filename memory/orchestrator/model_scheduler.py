@@ -97,6 +97,7 @@ def plan(target_agents, resident, catalog=None):
     # 2) per-host VRAM-driven eviction + load ordering (deterministic)
     hosts_out = {}
     sequence = []
+    alerts = []   # goal-4: VRAM conflict predictor alerts
     for host in [h for h in hosts_meta if h in required]:   # catalog order for determinism
         budget = float(hosts_meta[host].get("vram_total_gb", 0))
         res_now = [m for m in resident.get(host, []) if m in mindex]
@@ -124,6 +125,12 @@ def plan(target_agents, resident, catalog=None):
                     actions.append({"op": "BLOCKED", "model": mid, "host": host,
                                     "reason": "needs %.1fGB but only %.1fGB free; no non-required resident to evict"
                                               % (need, max(0.0, budget - used))})
+                    # ALERT: VRAM exceeded
+                    alerts.append({"type": "VRAM_EXCEEDED", "host": host,
+                                   "model": mid, "needed_gb": need,
+                                   "free_gb": round(max(0.0, budget - used), 2),
+                                   "message": "%s needs %.1fGB but only %.1fGB free on %s"
+                                              % (mid, need, max(0.0, budget - used), host)})
                     pending.pop(0)
                     continue
                 # evict lowest-priority (non-required) first = largest VRAM draw
@@ -131,6 +138,13 @@ def plan(target_agents, resident, catalog=None):
                 actions.append({"op": "UNLOAD", "model": victim, "host": host,
                                 "reason": "evict non-required resident (largest %.1fGB) to make room for %s"
                                           % (float(mindex[victim]["vram_gb"]), mid)})
+                # ALERT: priority-1 eviction
+                vpri = int(mindex.get(victim, {}).get("priority", 2))
+                if vpri == 1:
+                    alerts.append({"type": "PRIORITY_EVICTION", "host": host,
+                                   "evicted_model": victim, "for_model": mid,
+                                   "message": "Priority-1 model %s would be evicted from %s to load %s"
+                                              % (victim, host, mid)})
                 del loaded[victim]
 
         hosts_out[host] = {
@@ -144,12 +158,21 @@ def plan(target_agents, resident, catalog=None):
         }
         sequence.extend(actions)
 
+    # Log alerts to hotload-log.jsonl (best-effort; don't fail plan on log error)
+    if alerts:
+        try:
+            _log_event("ALERT", "multi", ",".join(a.get("model", a.get("evicted_model", "?")) for a in alerts),
+                       json.dumps(alerts))
+        except Exception:
+            pass
+
     return {
         "ok": True,
         "required_by_host": {h: sorted(v) for h, v in required.items()},
         "unresolved_agents": unresolved,
         "hosts": hosts_out,
         "sequence": sequence,
+        "alerts": alerts,
     }
 
 
@@ -209,7 +232,31 @@ def selftest():
     p = plan(["nonexistent_agent"], {"white": []}, catalog)
     check("K unresolved surfaced", p["unresolved_agents"] == ["nonexistent_agent"] and _ops(p) == [], str(p["unresolved_agents"]))
 
-    print("\n%d/%d selftest checks passed" % (11 - len(failures), 11))
+    # --- Goal 4: VRAM Conflict Predictor + Alert ---
+    # Case L: forcing a large model on a full 32GB host => fits=false + VRAM_EXCEEDED alert
+    # deep_researcher maps to large-context-model (planned, min_vram_gb likely >16)
+    p = plan(["deep_researcher"], {"white": ["qwen3-27b-q8"]}, catalog)
+    w = p["hosts"].get("white", {})
+    check("L fits=false on overflow", w.get("fits") is False, str(w.get("fits")))
+    check("L VRAM_EXCEEDED alert present", any(a["type"] == "VRAM_EXCEEDED" for a in p.get("alerts", [])),
+          str(p.get("alerts", [])))
+
+    # Case M: evicting priority-1 Q8 to load another model => PRIORITY_EVICTION alert
+    # orchestrator (Q8) resident + researcher (Q4) target on same host => Q8 gets evicted? No:
+    # Q4 needs ~15GB, Q8 is ~16GB; 32GB budget: used=16(Q8), need=15(Q4), 16+15=31<=32 fits!
+    # So no eviction. Let me use a scenario that forces it:
+    # deep_researcher (large-context, >16GB) with Q8 resident => must evict Q8
+    p = plan(["deep_researcher"], {"white": ["qwen3-27b-q8"]}, catalog)
+    check("M PRIORITY_EVICTION alert", any(a["type"] == "PRIORITY_EVICTION" and a.get("evicted_model") == "qwen3-27b-q8"
+          for a in p.get("alerts", [])), str(p.get("alerts", [])))
+
+    # Case N: proven dual-resident MTP(4.2)+Q4(23.7)=27.9<=32GB => NO alerts (no false alarm)
+    p = plan(["researcher", "mechanic"], {"white": ["qwen3-5-4b-mtp"]}, catalog)
+    check("N no false alarms on proven case", len(p.get("alerts", [])) == 0 and
+          all(h.get("fits") for h in p["hosts"].values()),
+          str({"alerts": p.get("alerts"), "hosts_fits": {h: v.get("fits") for h, v in p["hosts"].items()}}))
+
+    print("\n%d/%d selftest checks passed" % (14 - len(failures), 14))
     if failures:
         print("FAILED:", failures)
         return 1
