@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-11-18T07:37:51.907047+00:00",
+  "goal": "mechanic#4 reboot-recovery-full-automation",
+  "seat": "RED (sandbox)",
+  "findings": {
+    "white_reachable_from_red": false,
+    "pale_winrm_5985": "OPEN",
+    "pale_smb_445": "OPEN",
+    "black_winrm_5985": "OPEN",
+    "black_smb_445": "OPEN",
+    "reboot_recover_py_exists_on_shared": true,
+    "deploy_script_exists_on_shared": true,
+    "pywinrm_available": false,
+    "powershell_remoting": "BLOCKED by sandbox",
+    "smb_auth": "DENIED (sandbox restriction)",
+    "schtasks_com": "FAIL (Class not registered - sandbox)"
+  },
+  "conclusion": "Red sandbox cannot execute remote deployment. Pale+Black are reachable via WinRM+SMB but no client tools available in this environment. Deployment must be run from White seat where admin + pywinrm are available.",
+  "next_step": "Run `python memory/mechanic/deploy_reboot_recovery_all.py` from White seat (admin). Prereq: pip install pywinrm on White."
+}

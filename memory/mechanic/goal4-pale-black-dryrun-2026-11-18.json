@@ -1,0 +1,38 @@
+{
+  "goal": "mechanic#4",
+  "description": "Pale + Black dry-run for reboot-recovery deployment (run from Red)",
+  "date": "2026-11-18T07:17:40.823448+00:00",
+  "from_host": "RED",
+  "results": [
+    {
+      "timestamp": "2026-11-18T07:17:40.702501+00:00",
+      "host": "PALE",
+      "ip": "IP_PALE",
+      "dry_run": true,
+      "checks": {
+        "winrm_tcp_5985": "PASS",
+        "smb_tcp_445": "PASS",
+        "winrm_http_service": "PASS (HTTP 405 = service alive)"
+      },
+      "verdict": "DRY-RUN PASS"
+    },
+    {
+      "timestamp": "2026-11-18T07:17:40.757724+00:00",
+      "host": "BLACK",
+      "ip": "IP_BLACK",
+      "dry_run": true,
+      "checks": {
+        "winrm_tcp_5985": "PASS",
+        "smb_tcp_445": "PASS",
+        "winrm_http_service": "PASS (HTTP 405 = service alive)"
+      },
+      "verdict": "DRY-RUN PASS"
+    }
+  ],
+  "summary": "2/2 hosts dry-run PASS",
+  "remaining_for_full_deploy": [
+    "Install pywinrm on White (or target host)",
+    "Run deploy_reboot_recovery_all.py from White with admin privileges",
+    "Verify schtask FleetBootRecovery exists on all 4 hosts"
+  ]
+}
