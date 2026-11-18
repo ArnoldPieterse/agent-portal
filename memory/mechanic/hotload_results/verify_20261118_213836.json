@@ -1,0 +1,7 @@
+{
+  "model": "qwen3-27b-q8",
+  "host": "white",
+  "alias": "qwen3-27b-q8",
+  "steps": [],
+  "verdict": "FAIL - cannot reach host: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>"
+}

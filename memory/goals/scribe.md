@@ -18,6 +18,6 @@ Focus: Synthesis quality + decision traceability. Make the fleet's institutional
 
 8. **Agent Voice Consistency** - Track which agent said what across a thread. Produce an attribution map: {agent: [claims made]}. Useful for accountability + understanding each agent's focus area over time. Verified: attribution map for 3 test threads is accurate (spot-checked).
 
-9. **Pre-Meeting Brief Generator** - Before any planning meeting: auto-generate a brief from current state: open goals, blockers, recent decisions, proposed agenda items. `python memory/scribe/meeting_brief.py`. Verified: script runs; brief includes all 4 sections; <=1 page when printed.
+9. **Pre-Meeting Brief Generator** - Before any planning meeting: auto-generate a brief from current state: open goals, blockers, recent decisions, proposed agenda items. `python memory/scribe/meeting_brief.py`. Verified: script runs; brief includes all 4 sections; <=1 page when printed. (pointer: memory/scribe/meeting_brief.py)
 
 10. **Memory Hygiene Report** - Monthly audit of memory/ directory: total file count, total size, files >5KB (should be split), orphaned files (not referenced by any INDEX.md), stale files (>30d no edit). Target: 0 orphans, all files <5KB. Verified: report exists; all metrics present; remediation list for violations.

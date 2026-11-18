@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-11-18T21:39:31.162204",
+  "total_data_points": 7,
+  "models": {
+    "qwen3-27b-q4": {
+      "data_points": 3,
+      "median_s": 119.5,
+      "min_s": 118.3,
+      "max_s": 122.7,
+      "latest_s": 119.5,
+      "latest_ts": "2026-11-17T00:41:00"
+    },
+    "qwen3-27b-q8": {
+      "data_points": 4,
+      "median_s": 243.4,
+      "min_s": 238.2,
+      "max_s": 520.4,
+      "latest_s": 520.4,
+      "latest_ts": "2026-11-18T21:00:00",
+      "regression_alert": true
+    }
+  },
+  "alerts": [
+    {
+      "model": "qwen3-27b-q8",
+      "type": "REGRESSION",
+      "detail": "Latest load 520.4s exceeds 2x median (243.4s) - possible disk I/O or VRAM fragmentation",
+      "severity": "WARNING"
+    }
+  ]
+}

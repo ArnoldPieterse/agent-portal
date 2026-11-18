@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-18T21:23:44.594587",
+  "results": [
+    {
+      "file": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+      "completeness": 9,
+      "accuracy": 10,
+      "conciseness": 10,
+      "actionability": 3,
+      "composite": 8.0,
+      "word_count": 379,
+      "line_count": 14
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-contradiction-rulings.md",
+      "completeness": 9,
+      "accuracy": 10,
+      "conciseness": 10,
+      "actionability": 3,
+      "composite": 8.0,
+      "word_count": 400,
+      "line_count": 12
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-status-report.md",
+      "completeness": 10,
+      "accuracy": 10,
+      "conciseness": 10,
+      "actionability": 4,
+      "composite": 8.5,
+      "word_count": 571,
+      "line_count": 28
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-final-closeout.md",
+      "completeness": 8,
+      "accuracy": 10,
+      "conciseness": 10,
+      "actionability": 3,
+      "composite": 7.8,
+      "word_count": 224,
+      "line_count": 17
+    },
+    {
+      "file": "memory/synthesis/cycle-narrative.md",
+      "completeness": 9,
+      "accuracy": 10,
+      "conciseness": 10,
+      "actionability": 5,
+      "composite": 8.5,
+      "word_count": 479,
+      "line_count": 8
+    }
+  ],
+  "average": 8.16
+}

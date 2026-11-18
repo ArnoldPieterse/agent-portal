@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-11-18T21:38:19.644403",
+  "hosts": {
+    "white": {
+      "reachable": false,
+      "error": "<urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>"
+    },
+    "pale": {
+      "reachable": false,
+      "error": "HTTP Error 401: Unauthorized"
+    },
+    "black": {
+      "reachable": false,
+      "error": "<urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>"
+    },
+    "red": {
+      "reachable": false,
+      "error": "HTTP Error 401: Unauthorized"
+    }
+  }
+}

@@ -18,16 +18,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic lane closed at 10/10; goal #10 fixed by adding deploy_reboot_recovery_all.py pointer to memory/mechanic/INDEX.md
-- Goal #9 Fleet Health Composite Score: backend done — `/api/fleet/health` route live in agent_portal.py, self-test
-- Mechanic 8/10; remaining: portal uptime (week-end tally) + reboot drill (needs elev.py on White, script ready).
-- Scribe at 8/10 goals; next open is #9 Pre-Meeting Brief Generator (attribution.py closed #8).
-- Goal #2 (Information Density Pass) done: applied --lh-base, --vh-panel, --vh-row tokens from tokens.css to structural rules for 20% vertical
 - Orchestrator reached 10/10 goals closed; goal #10 (cycle_narrative.py) was the final one, built and tested on cycle-4 data.
 - Designer built Goal #5 Notification System: toast (4 variants, stackable), header bell w/ badge, goal-closure trigger wired in core.js
 - Goal #1 set by human:
 - Sandbox: White/Black TCP blocked (WinError 10013), Pale/Red reachable but 401 auth required — live E2
 - Goal #11 (hot LLM loading) drafted; test harness built but blocked by same WinError 10013 sandbox firewall as Goal 6 — no live localhost con
+- Mechanic: auto_restart.py (goal #2) verified & ledger-recorded; live-recovery untestable in sandbox (WinError 10013, port 8099).
+- Goal #9 closed: memory/scribe/meeting_brief.py built — 31-line brief with open goals, blockers, decisions, agenda sections.
+- Goal #5 (Notification System) complete: toast infra added to ui/core.js with CSS+HTML+JS, syntax verified.
+- Per-host ctx proven values: White Q4_K_S=131072, Red Q4_K_XL=65536, Pale/Black Q4_K_S=65536 — do NOT blanket-copy 131072
+- White=32GB; Q8(30.1GB)+Q4(23.7GB) can't coexist (53.8>32) — documented asymmetry
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

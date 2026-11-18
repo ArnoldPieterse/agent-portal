@@ -1,0 +1,39 @@
+{
+  "swap": "qwen3-27b-q8 -> qwen3-27b-q4",
+  "host": "white",
+  "dry_run": true,
+  "steps": [
+    {
+      "step": 1,
+      "action": "idle_gate on white"
+    },
+    {
+      "step": 2,
+      "action": "snapshot aliases (GET /api/settings/model-aliases)"
+    },
+    {
+      "step": 3,
+      "action": "unload qwen3-27b-q8 + poll until gone"
+    },
+    {
+      "step": 4,
+      "action": "load qwen3-27b-q4 (UD-Q4_K_S) on GPU[0]"
+    },
+    {
+      "step": 5,
+      "action": "poll until qwen3-27b-q4 resident (expected ~120s)"
+    },
+    {
+      "step": 6,
+      "action": "verify aliases unchanged"
+    },
+    {
+      "step": 7,
+      "action": "functional probe via alias 'quinn-q4'"
+    }
+  ],
+  "risks": [
+    "WARNING: Loading qwen3-27b-q4 (131072 ctx) may EVICT other resident models. Q8 auto-reloads on next demand."
+  ],
+  "verdict": "DRY_RUN - plan only, no execution"
+}
