@@ -1,7 +1,8 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-19 (Builder assist: Designer Goal 1 - ui/app.css now STRICT 0 hex incl. all var() fallbacks; --fh-color default token added to tokens.css; CSS-scope acceptance test passes. JS-scope ~53 hex remain for Designer.)
+Last updated: 2026-11-19 (Builder assist: Designer Goal 1 JS-scope tokenization - 20 raw hex replaced with var(); 13 new tokens added; only 4 remain (intentional/untokenizable).)
 
 ## Entries (keyword -> pointer | use case)
+- Designer Goal#1 JS-scope tokenization / 20 raw hex -> var() across 4 JS files + 13 new tokens in tokens.css / raw reduced ~56 to 4 -> memory/builder/designer-goal1-js-tokenization-2026-11-19.md   2026-11-19 cross-assist (owner: Designer); option (d)
 - log_rotate.py WinError 183 fix / shift loop crashed on Windows when .log.5 already existed (prior run died mid-rotation) / clear rename target before os.rename + repro test -> memory/builder/log_rotate_winerror183-fix-2026-11-18.md   2026-11-18 cross-assist (owner: Mechanic); PASS steady-state + 5 repeat rotations
 - phantom-open repair / Researcher goals 7 & 8 `(verified:` missing closing paren → dashboard saw them OPEN though evidence leaves existed / formatting-only fix, all 8 goal files now balanced -> memory/builder/researcher-goals7-8-paren-repair-2026-11-18.md   2026-11-18 cross-assist (owner: Researcher); option (c) ledger/evidence upkeep
 - Designer Goal#1 token audit / INDEPENDENT re-parse CONFIRMS 36 hard-coded hex outside BOTH token blocks (:root dark + [data-theme=light] light) = matches ORCH-VERIFY; line-by-line list + closure path for Designer -> memory/builder/designer-goal1-token-verify-2026-11-18.md   2026-11-18 cross-assist (owner: Designer); NOT closed - Designer still owns the var() replacement

@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer Goal 8 blocked on pin advance: `<script src="ui/icons.js">` must be added after core.js in index.html.
 - Fleet status strip (core.js+app.css) now actually implemented for goal 8; prior pass's claim of completion was false.
 - Goal 8: icons.js (21 icons) exists but index.html never loads it; core.js ships its own 4-icon UI.icon — fix = add script tag + remove core.
 - Fixed net_probe.py: state file existed but was never loaded/saved; fail_counts reset each run so alerts never fired. Now persists correctly.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Node is NOT installed in this env — use manual state-aware bracket checks or `python -c` for JS syntax validation
 - Goal 3 (Host Recovery Matrix) still open: live e2e probe blocked by WinError on localhost:8099 — needs retry when service is up
 - Goal #8 (Icon System) remaining: load icons.js in index.html, replace emoji with [data-icon] spans, add fleet icon + icSVG helper
+- Builder tokenized hex colors in JS for Goal #1; remaining raw hex confirmed intentional (agent defaults, palette concat, comment).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

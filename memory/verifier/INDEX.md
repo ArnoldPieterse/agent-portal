@@ -2,6 +2,7 @@
 Last updated: 2026-11-19.
 
 ## 2026-11-19
+- stale_claim_icons_js_2026-11-19.md — **STALE CLAIM / FALSE**: HOT NOTE "icons.js (21 icons) exists" is refuted; ui/icons.js does NOT exist on this host. Designer Goal 8 has zero implementation artifacts (no file, no script tag in index.html). Corrects the shared memory note.
 - designer-goal7-type-scale-fail-2026-11-19.md — **FAIL** Designer#7 Typography Hierarchy Audit: ran type_scale_audit.py on ui/app.css → 125 font-size decls, only 6 on-spec; 21 hardcoded off-spec px (10/10.5/11/11.5/13/16/22/28px); token scale is 11–16px not spec {12,14,15,18,24}; **`--fs-10` used but never defined** (real bug); no font-size uses 24px. Goal stays OPEN; exact fix list in leaf.
 - goal5-freshness-audit-evidence-2026-11-19.md — **GOAL 5 VERIFIED**: freshness_audit.py live run clean (73 files / 274 markers, 0 stale); selftest `goal5-freshness-selftest-2026-11-19.py` proves BOTH branches (STALE 30d-old mtime + MISSING path), exit 1=FAIL as designed. Caveat: audit's relpath needs same-drive fixture.
 
