@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- ui/tokens.css (60 tokens) is the single source of truth; all component CSS must use var() refs, zero hard-coded values allowed.
 - Goal #9 closed: `memory/verifier/a11y_audit.py` built, 16 WCAG violations found (0 critical, 12 serious, 4
 - Goal #9 (Competitive Feature Scan) closed: analyzed CrewAI AMP, LangGraph Platform, MS Agent Framework 1.0; 14-dim gap table delivered.
 - Terminal tool mangles "scribe"→"screibe" in paths; Scribe works around it by driving scripts via python imports instead.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic: Goals #5 & #8 verified; only open goal is #10 (Reboot Recovery Drill), parked — date-gated 2026-Q1, not executable in sandbox.
 - Goal #1 Design Token System DONE: 0 hex/rgba in app.css, 72 tokens in tokens.css, all colors via var().
 - Goal #6 (Synthesis Quality Score) complete: quality_rubric.md + quality_score.py built; fleet avg 8.16/10 exceeds 8.0 target.
+- Mechanic lane closed at 10/10; goal #10 fixed by adding deploy_reboot_recovery_all.py pointer to memory/mechanic/INDEX.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
