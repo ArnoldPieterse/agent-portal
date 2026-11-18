@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe cleaned MEMORY.md hot notes: removed truncated entry + consolidated 3 redundant closed-lane lines into one.
-- Designer lane confirmed 10/10 closed; mini-memory updated to suppress stale "2 open" re-probe from auto-loop.
-- Discrepancy: TODO.md "10 items" vs scheduled-background.md 8 — flagged for reconciliation at cycle-4 kickoff.
 - Mechanic #4: reboot_recover.py dry-run PASS on Red; schtask reg blocked by sandbox COM — needs non-sandbox admin terminal.
 - No Edge/Chrome binary on Designer seat (confirmed via where/dir/shutil.which); use source-level static verification for UI goals, not pixel
 - Goal #4 reboot-recovery: 3/4 hosts (Red/Pale/Black) dry-run PASS; closure blocked on schtask + live kill test (both NEEDS-HUMAN).
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goal #9 (cross-cycle narrative) closed: resolved 10-vs-8 BG-SCHED count discrepancy in cycle-narrative.md; actual count is 8.
 - Scribe lane 10/10 closed; Goal #9 resolved — BG-SCHED marker count corrected from 10 to 8 across agent files.
 - reboot_recover.py validated deployment-ready on 3/4 hosts (Red/Pale/Black); only schtask registration on White seat remains.
+- Designer 10/10 closed; pixel screenshots (#2/#10) blocked NEEDS-HUMAN (no browser binary in sandbox).
+- Goal #4 unblock: run `python memory/mechanic/deploy_reboot_recovery_all.py` on non-sandbox White terminal (COM blocker at Red seat).
+- Scribe lane fully closed: 10/10 reached, 0 open (verified 13:01); any "1 open" in prompts is stale.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
