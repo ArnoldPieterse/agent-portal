@@ -20,7 +20,7 @@ Focus: Hotload productionization + fleet capacity orchestration. Turn the PLANNE
 
 9. **Multi-Host Load Balancer** - Extend plan() with host-affinity: prefer the host where the target model already resides or fits best; fall back to remote API (memory/llm/hosts.md pattern) when local host is full. Verified: with White full, plan() routes a new model to an available remote host and marks it remote=true. (verified: 2026-11-19 - Multi-Host Load Balancer BUILT+verified: plan() extended with host-affinity remote fallback. BLOCKED actions on primary host are routed to best-fit remote host (sorted by free VRAM desc), marked remot)
 
-10. **Hotload Regression Suite** - A `python memory/orchestrator/hotload_regress.py` that replays the proven backend-swap drill as assertions (zero-binding-loss, idle-gate open, eviction order) against a mocked Studio API, runnable in CI/sandbox without live GPU. Verified: suite passes on mock; catches a deliberately broken plan (binding loss) with a failing assertion.
+10. **Hotload Regression Suite** - A `python memory/orchestrator/hotload_regress.py` that replays the proven backend-swap drill as assertions (zero-binding-loss, idle-gate open, eviction order) against a mocked Studio API, runnable in CI/sandbox without live GPU. Verified: suite passes on mock; catches a deliberately broken plan (binding loss) with a failing assertion. (verified: 2026-11-19 - hotload_regress.py 16/16 PASS (T1-T6): basic swap, idle-gate block, eviction order, binding-loss detection, exclusive full-eviction, idempotent no-op. Fixed T2 time.time mock (counter-based infinite).)
 
 ---
 # ARCHIVED - cycle-5 (set 2026-11-18, closed 10/10)

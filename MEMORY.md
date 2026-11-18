@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Gap #2 (idle-wait deadlock) verified closed: hot_load.py decide_action() + --test-wedge passes 3/3 cases
 - Researcher lane closed 12/12; gap #2 idle-wait deadlock confirmed fixed via wedge-safe path in hot_load.py (goal #
 - Auto-loop prompts carry stale open counts (seen in Designer, Scribe, Mechanic) — don't re-probe; trust ledger over prompt.
 - Orchestrator auto-loop prompts carry stale open-counts; always trust ledger over prompt (confirmed by all 3 seats).
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer built empty states (SVG icon + message + CTA) for goals panel (line 362) and files panel (line 334); files list is a `<ul>` so stat
 - Goal #3 (Host Recovery
 - Goal #4: goals+uploads panels already have .empty-state; no escalation panel exists; fleet empty-state CSS missing.
+- All 10 cycle-6 orchestrator goals verified and closed; T2 fix: counter-based infinite time mock replaces finite side_effect list.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

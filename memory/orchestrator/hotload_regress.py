@@ -191,17 +191,28 @@ def test_t2_idle_gate_blocks(runner, catalog):
     api.state.loaded = {"qwen3-27b-q8"}
     api.state.active_generations = 3  # NOT idle
 
+    # Infinite counter-based time mock: returns 1.0, 2.0, 3.0, ... forever.
+    # _wait_idle deadline = first_call + 180; loop exits when counter >= deadline.
+    tc = [0]
+    def _fake_time():
+        tc[0] += 1
+        return float(tc[0])
+
     with mock.patch.object(ms, "_studio_get", side_effect=api._get), \
          mock.patch.object(ms, "_studio_post", side_effect=api._post), \
          mock.patch("time.sleep", return_value=None), \
-         mock.patch("time.time", side_effect=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]):
-        # Use a very short timeout to force the deadline
+         mock.patch("time.time", side_effect=_fake_time):
         exec_result = ms.execute(plan_result, catalog=catalog, dry_run=False)
 
     # The idle gate should have blocked (never loaded q4)
     runner.check("T2 idle-gate prevented load",
                  "qwen3-27b-q4" not in api.state.loaded,
                  f"q4 was loaded despite active gens: {api.state.loaded}")
+    # Verify the gate actually timed out (not just skipped)
+    runner.check("T2 execute reports idle-gate abort",
+                 any(r.get("status") == "ABORTED" and "idle" in r.get("detail", "").lower()
+                     for r in exec_result.get("results", [])),
+                 str(exec_result.get("results", [])))
 
 
 # ---------------------------------------------------------------------------
