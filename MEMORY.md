@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4: goals+uploads panels already have .empty-state; no escalation panel exists; fleet empty-state CSS missing.
-- All 10 cycle-6 orchestrator goals verified and closed; T2 fix: counter-based infinite time mock replaces finite side_effect list.
 - Goal #4 Disk Space Monitor closed:
 - Goal #6 closed (fleet avg 8.75/10). Open: #7 chain validator, #8 voice consistency, #10 hygiene report.
 - Goal #7 Typography Audit: app.css has 82 font-size declarations, many off-scale (10/10.5/11/11.5/13/16/22px)
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe lane fully complete: all 10 goals closed and verified in ledger; auto-loop prompts referencing open Scribe goals are stale.
 - Mechanic reached 10/10 goals closed (open=0). Constraints: pywinrm missing for remotes; real deploy needs non-sandbox White seat
 - Goal #5 (Notifications): built ui/notifications.js + CSS in app.css, wired via core.js; triggers in fleetUpdate, goalsLoad, upload handler
+- Goal #
+- Scribe goal #1 (Decision Log v2) closed: migrate_decisions.py --validate PASS, 12 entries, all 6 fields present.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
