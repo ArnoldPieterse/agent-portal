@@ -1,0 +1,14 @@
+{
+  "total_goals": 93,
+  "verified_count": 53,
+  "unverified_count": 40,
+  "pct_verified": 57.0,
+  "avg_time_to_verify_hours": 0.0,
+  "pct_within_24h": 100.0,
+  "oldest_unverified": {
+    "agent": "archivist",
+    "goal_num": 1,
+    "title": "Knowledge Graph Integrity Report"
+  },
+  "generated_at": "2026-11-18 23:27"
+}

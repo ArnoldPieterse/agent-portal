@@ -18,10 +18,11 @@ def rotate_file(path):
         src = f"{base}{ext}.{i}"
         dst = f"{base}{ext}.{i+1}"
         if os.path.exists(src):
-            if i + 1 > KEEP_ROTATIONS:
-                os.remove(src)
-            else:
-                os.rename(src, dst)
+            # Clear the target first: Windows os.rename() raises WinError 183
+            # if dst already exists (e.g. a prior run crashed mid-rotation).
+            if os.path.exists(dst):
+                os.remove(dst)
+            os.rename(src, dst)
     # Compress the oldest rotation
     oldest = f"{base}{ext}.{KEEP_ROTATIONS}"
     if os.path.exists(oldest) and not oldest.endswith(".gz"):

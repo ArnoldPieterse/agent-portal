@@ -8,7 +8,7 @@ Focus: Synthesis quality + decision traceability. Make the fleet's institutional
 
 3. **Context Handoff Template** - Standard format for passing context between agents: {task, completed_steps, current_state, blockers, next_action, relevant_files}. Write template + validation script. Verified: 3 test handoffs pass validation; template covers all required fields.
 
-4. **Weekly Fleet Summary** - Every Sunday (or on demand): `python memory/scribe/weekly_summary.py` produces: goals closed this week, new blockers, agent activity stats, key decisions, next-week focus. Writes to memory/scribe/weekly-YYYY-WW.md. Verified: script runs; output includes all 5 sections; file naming correct.
+4. **Weekly Fleet Summary** - Every Sunday (or on demand): `python memory/scribe/weekly_summary.py` produces: goals closed this week, new blockers, agent activity stats, key decisions, next-week focus. Writes to memory/scribe/weekly-YYYY-WW.md. Verified: script runs; output includes all 5 sections; file naming correct. (verified: 2026-11-18 - weekly_summary.py verified by Verifier: ran with 2026-11-18, produced valid weekly-2026-W47.md (4343 bytes) with correct sections (goals closed=48, blockers, activity stats, decisions, next week); log)
 
 5. **Open Items Tracker** - Single file (memory/scribe/open-items.md) tracking every unresolved question across all agents. Each item: {id, question, raised_by, date, status, resolution}. Auto-scan goal files for "?" patterns to catch new items. Verified: file exists; >=5 tracked items; auto-scan finds items not yet logged.
 
