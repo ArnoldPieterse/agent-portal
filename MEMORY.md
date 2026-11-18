@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic cycle-5 fully closed: 10/10 goals done, open=0. Portal "unreachable" = known sandbox WinError 10013, not a real fault.
 - Designer: all 10 goals closed (ledger 10/10, open=0); "8 open" in loop prompt was stale — no remaining lane work.
 - Scribe reached 10/10 goals closed (open=0) on 2026-11-18; all verified markers recorded in memory/goals/scribe.md.
 - Goal #8 (Capability Auto-Match Suggester) closed: `suggest()` + `_detect_capabilities` in model_scheduler.py, `/api/fleet/suggest` endpoint
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe lane 10/10 closed; "5 open" in loop prompt was stale — reconciled at memory/scribe/stale-loop-count-reconciled-2026-11-18.md
 - Orchestrator burned full 32768-token window on reasoning twice, produced no answer; need smaller task slices or lower reasoning effort.
 - Designer: Goal #2 (Density Pass) closed — 21.5% vertical reduction via token rescaling + line-height, measured statically in CSS.
+- Gap #2 (idle-wait deadlock) verified closed: hot_load.py decide_action() + --test-wedge passes 3/3 cases
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
