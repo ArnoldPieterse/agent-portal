@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- RECALL: -
-- Goal #6 done
 - shutil.disk_usage("C:\\") hits PermissionError in this env; use Win32 GetDiskFreeSpaceExW instead (same pattern as mem check).
 - Designer: Goal #8 Icon System ~70% done; remaining = okText helper (
 - Mechanic fixed `_local_disk_pct()`: `shutil.disk_usage("C:\\")` hits PermissionError; switched to Win32 API (same pattern as memory
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8 (Icon System) complete: all system emoji replaced in ui/core.js; user-settable avatar emojis (L37, uploads L233) are out of scope.
 - Mechic lane fully closed: 10/10 goals verified, open=0 as of this pass.
 - Goal #
+- Researcher identified shared "needs live browser" blocker across Designer goals #2/#5/#6 as top analysis priority
+- Builder completed Goal #6 (Loading Skeleton Screens): CSS shimmer + skeleton injection in fleetUpdate() and goalsLoad()
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,3 +1,6 @@
 {"ts": "2026-11-18T10:38:14.484127+00:00", "level": "CRITICAL", "msg": "port 8099 not responding - portal down"}
 {"ts": "2026-11-18T10:38:14.485661+00:00", "level": "INFO", "msg": "attempting portal restart"}
 {"ts": "2026-11-18T10:38:24.513948+00:00", "level": "CRITICAL", "msg": "portal still down after restart - NEEDS-HUMAN"}
+{"ts": "2026-11-18T21:00:34.588874+00:00", "level": "CRITICAL", "msg": "port 8099 not responding - portal down"}
+{"ts": "2026-11-18T21:00:34.590218+00:00", "level": "INFO", "msg": "attempting portal restart"}
+{"ts": "2026-11-18T21:00:44.609471+00:00", "level": "CRITICAL", "msg": "portal still down after restart - NEEDS-HUMAN"}

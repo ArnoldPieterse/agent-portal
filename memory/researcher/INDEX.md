@@ -89,3 +89,4 @@ Last updated: 2026-11-15 (FINAL: mirror-clobber mechanism resolved w/ config evi
 
 - -> memory/researcher/dangling-pointer-unblock-2026-11-18.md   3 dangling pointers indexed (fleet 71->74/80)
 - 2026-11-18 (Researcher): understanding module → portal flow test. 23/23 PASS. Gaps: no UI visibility, compound-term mismatch in lookup. See understanding-flow-test-2026-11-18.md
+- 2026-11-19 (Researcher, assist Designer): browser-gate forecast for cycle-5. CONFIRMED no headless tooling in sandbox (playwright/selenium absent) yet Designer goals 4/5/6/7/9/10 all need a live browser for acceptance -> one systemic wall, not five. Ranked 3 workaround paths; rec = close G7+G10 now via CSS-only assertions, do G4/G5/G6/G9 via DOM-shim logic checks, reserve ONE batched real-browser screenshot pass for final visual sign-off. Artifact: memory/goals/designer-browser-gate-forecast-2026-11-19.md
