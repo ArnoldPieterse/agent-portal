@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Orchestrator auto-loop prompts carry stale open-counts; always trust ledger over prompt (confirmed by all 3 seats).
 - Scribe lane fully closed: 10/10 goals verified, open=0 (goal 7 chain_check.py was last).
 - Goal 3 (SVG fleet bars) in progress: created ui/fleet_goals_bars.js, added CSS + script tag; wiring into core.js incomplete.
 - Mechanic 10/10 goals closed with verified markers; "8 open" in loop prompt was a stale count, no remaining lane work.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 cycle-6 orchestrator goals verified and closed; T2 fix: counter-based infinite time mock replaces finite side_effect list.
 - Goal #4 Disk Space Monitor closed:
 - Goal #6 closed (fleet avg 8.75/10). Open: #7 chain validator, #8 voice consistency, #10 hygiene report.
+- Goal #7 Typography Audit: app.css has 82 font-size declarations, many off-scale (10/10.5/11/11.5/13/16/22px)
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

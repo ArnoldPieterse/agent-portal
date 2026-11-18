@@ -24,6 +24,16 @@ CLAIM_RE = re.compile(r'\b(verified|done|built|landed|complete[d]?|evidence|see 
 def is_noise(ref):
     return ('__pycache__' in ref) or ('.cpython-' in ref) or ref.endswith(('.pyc',))
 STALE_DAYS = 30
+# Cited .json paths often point at .jsonl log files (and vice versa). Resolve the
+# real on-disk path tolerating this one-extension mismatch before flagging MISSING.
+def resolve(ref):
+    rabs=os.path.join(ROOT,*ref.split("/"))
+    if os.path.exists(rabs): return rabs
+    base=ref.rsplit('.',1)[0]
+    for ext in (".json",".jsonl"):
+        alt=os.path.join(ROOT,*((base+ext).split("/")))
+        if os.path.exists(alt): return alt
+    return None
 
 def walk_files():
     out=[]
@@ -54,8 +64,8 @@ def main():
                 key=(rel,ref)
                 if key in seen: continue
                 seen.add(key)
-                rabs=os.path.join(ROOT,*ref.split("/"))
-                if not os.path.exists(rabs):
+                rabs=resolve(ref)
+                if rabs is None:
                     missing.append((rel,ref))
                 else:
                     try:

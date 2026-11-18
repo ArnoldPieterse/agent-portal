@@ -56,6 +56,7 @@ Last updated: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - Verifier health checks (daily) -> memory/ops/verifier-healthcheck-2026-11-15.md
 - AC V-09 provenance determinism -> memory/ops/verifier-ac-v09-2026-11-15.md
 - Memory trim archive (pre-11-14 MEMORY.md) -> memory/ops/memory-trim-archive-2026-11-14.md
+- stale_claim_check.py .json/.jsonl fallback regression (re-applied 2026-11-19; 206->58 MISSING; unpinned ops/*.py reverted by mirror) -> memory/ops/stale-claim-check-fallback-regression-2026-11-19.md
 
 ## ARCHIVED (cycle-1, superseded by memory/goals/)
 - left-*.md files are cycle-1 goal trackers; canonical goals now live in memory/goals/<agent>.md
