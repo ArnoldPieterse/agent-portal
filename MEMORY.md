@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer lane fully cleared: all 10 goals verified/closed (bulk close 2026-11-18); "8 open" in loop prompt is stale.
 - Scribe compress.py built; 4/5 threads pass ≤20% ratio. Open: add ultra-compact mode for inputs <1500 chars (fixed overhead dominates at that
 - Builder completed Goal #3 Fleet Health Dashboard: UI fetches /api/health/fleet, per-host scores + badges, CSS added, index.html pin advanced
 - All 10 Mechanic goals now carry verified markers; Goal #4 (disk_monitor.py) was the last open one, closed this pass.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - /api/kb/search endpoint added to agent_portal.py; dictionary migration verified 98/98 annotated
 - Designer lane fully cleared: 10/10 goals verified, open=0. "8 open" in prompt was stale. No further action needed.
 - 9/10 goals done; only Goal #8 (Fleet Status API endpoint in agent_portal.py) remains — needs a focused pass.
+- Goal #3 done: goalBarsUpdate() in ui/core.js, 8 bars from /api/goals, 400ms CSS transition, tokens --acc/--ok. Designer at 4/10.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
