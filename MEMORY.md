@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe found scan_goals() scoping bug: scans all memory/goals/*.md except archive/, flagging superseded files as live open items; needs fix
-- Goal #3 done: GoalBars module in ui/fleet_topology.js (+53L), SVG bars from /api/goals, CSS .gb-* in app.css, self-inits into #fleetBody
 - Sandbox WinError 10013 blocks outbound TCP; documented in goal #6 evidence — do not re-probe as a fleet issue.
 - OI-004 resolved: fleet at 76/
 - Designer found: index.html links only ui/app.css
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher delivered `memory/ops/scan_goals-scope-fix-2026-11-19.md` (whitelist patch, 8 canonical files) unblocking Scribe goal #5.
 - Mechanic lane 10/10 closed (open=0
 - Scribe confirmed 10/10 goals reached via strict ledger; "3 open" nudge was stale (pre-2026-11-19 sweep). scan_goals() over-report logged as
+- Fixed: open_items_scan.py now matches goal_ledger.py (recognizes em-dash + pointer evidence); scan shows archivist(
+- index.html repinned to sha12 76
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
