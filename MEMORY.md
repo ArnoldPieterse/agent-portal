@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe lane reached 10/10 verified (open=0) after closing goals #7, #8, #10 in one pass.
 - index.html is pinned (edits revert); empty-state/escalation UI must be injected via non-pinned files or alternate hooks.
 - Scribe lane fully complete: all 10 goals closed and verified in ledger; auto-loop prompts referencing open Scribe goals are stale.
 - Mechanic reached 10/10 goals closed (open=0). Constraints: pywinrm missing for remotes; real deploy needs non-sandbox White seat
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechic lane at 3/10; goal #3 (recovery-matrix.md) verified in ledger; next open: #4 Disk Space Monitor + Auto-Clean
 - The contradiction
 - icons.js is NOT loaded by index.html — UI.icon() exists but is unreachable at runtime; only core.js, fleet_topology.js, uploads.js are pinne
+- Memory hygiene audit: Designer's headless browser profiles = 11MB
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
