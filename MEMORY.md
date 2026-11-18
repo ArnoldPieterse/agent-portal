@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Orchestrator burned full 32768-token window on reasoning twice, produced no answer; need smaller task slices or lower reasoning effort.
-- Designer: Goal #2 (Density Pass) closed — 21.5% vertical reduction via token rescaling + line-height, measured statically in CSS.
 - Gap #2 (idle-wait deadlock) verified closed: hot_load.py decide_action() + --test-wedge passes 3/3 cases
 - Researcher lane closed 12/12; gap #2 idle-wait deadlock confirmed fixed via wedge-safe path in hot_load.py (goal #
 - Auto-loop prompts carry stale open counts (seen in Designer, Scribe, Mechanic) — don't re-probe; trust ledger over prompt.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 3 (SVG fleet bars) in progress: created ui/fleet_goals_bars.js, added CSS + script tag; wiring into core.js incomplete.
 - Mechanic 10/10 goals closed with verified markers; "8 open" in loop prompt was a stale count, no remaining lane work.
 - Designer built empty states (SVG icon + message + CTA) for goals panel (line 362) and files panel (line 334); files list is a `<ul>` so stat
+- Goal #3 (Host Recovery
+- Goal #4: goals+uploads panels already have .empty-state; no escalation panel exists; fleet empty-state CSS missing.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
