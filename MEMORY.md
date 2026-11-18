@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 (Info Density): data-panel padding tightened ~15%; remaining: goals/uploads panels + before/after screenshots for acceptance.
 - Mechanic: all 10/10 goals closed; fleet-monitoring-cadence.md written (3-tier escalation policy); portal_watchdog verified working.
 - Goal #2 (Information Density Pass) done — all panels tightened; only before/after screenshots remain for acceptance.
 - Mechanic lane 10/10 closed, 0 open
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 4 done: UI.emptyState() was in icons.js (unloaded); fixed by adding self-contained bootstrap to core.js so all 4 empty states work at r
 - Goal #5 done: UI.toast() in core.js, bell+badge in header, triggers on /api/goals poll + /api/fleet poll
 - Goal 8 closed: /api/fleet/status in agent_portal.py + fleetStatusStrip()
+- All 10 goals confirmed closed (open=0) in ledger; loop's "remaining #
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
