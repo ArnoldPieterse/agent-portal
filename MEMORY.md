@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- reboot_recover.py now self-registers its schtask via --register-task, removing pywinrm dep from deploy path
-- Goal #4 (memory-health dashboard) CLOSED; remaining open: #5 supersession enforcement, #7 owner-coverage v2
 - reboot_recover
 - Wrote `memory/designer/close_g2_g10.py` — one-command closure for goals #2+#10 (6 panels @1920×1080 + MANIFEST.json); needs non-sandbox seat
 - reboot_recover.py deployment-ready; --register-task blocked by sandbox COM ("Class not registered"), needs non-sandbox admin shell per host
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 6 pending admin-de
 - Goal #2 static CSS audit PASS (flex+fluid SVG, no fixed-width overflow
 - Goal #10: trend file drifted from authoritative audits (inverted labels, divergent r1/r2); reconciled into single canonical artifact.
+- Goals 2+10 unblocked by running `python memory/designer/close_g2_g10.py` on a LAN-connected host; CSS audit PASS (flex+fluid SVG, no overflo
+- Goal #5 closed (supersession scan 2026-11-18, 3 stale refs fixed); only open goal now is #7 (owner-coverage ledger v2).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
