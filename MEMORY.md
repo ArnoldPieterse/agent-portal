@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe corrected TODO.md background-item count from 10→8 (matching scheduled-background.md), closing a cross-file discrepancy on goal #9.
-- TODO.md "10 items moved
 - All 10 Scribe goals now closed: 8 verified, 1 BG-scheduled (#10), 1 ledger-marker recorded this pass (#9).
 - Scribe lane fully closed: 10/10 goals verified in ledger; MEMORY.md updated to CY
 - capture_baseline.py v2 adds --local mode (file:// + inlined CSS/JS), removing :8099 server dependency for sandbox-proof execution
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fixed stale_claim_check.py: added .json↔.jsonl suffix fallback, false-positive MISSING flags 131→33; remaining 33 are genuine gaps.
 - Scribe's goal file is
 - Goal 8 state classes implemented; docs used .state-conn-lost but code uses .state
+- Designer lane confirmed 10/10 closed per goal_ledger.py; auto-loop "1 open" count was stale — do not re-probe.
+- TODO.md background-item count reconciled 10→8; cycle-narrative.md flag changed OPEN→RESOLVED (2026-11-18).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
