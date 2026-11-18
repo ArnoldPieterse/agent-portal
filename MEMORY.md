@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 root causes confirmed: empty probe_state→all green; failed-probe time-to-error pollutes latency list. Fix plan in memory/mechanic/fle
-- icons.js exists but is NOT in static script list; core.js defines UI.icon with only 4 icons — root cause of Goal #8 gap
 - Mechanic lane 10/10 closed; "1 open" in loop prompt is a stale snapshot, not real work remaining.
 - Goal #5 Not
 - Goal 8 defects (all-down→HEALTHY, fake latency) confirmed already fixed in net_probe.py lines 28-44 & 57-64; no re-probe needed.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic goal 8: _fleet_health_snapshot() now returns per-host health field; UI strip
 - Goal 1 closed (0 hex outside tokens.css); Goal
 - Designer Goal 8 blocked on pin advance: `<script src="ui/icons.js">` must be added after core.js in index.html.
+- Fleet status strip (core.js+app.css) now actually implemented for goal 8; prior pass's claim of completion was false.
+- Goal 8: icons.js (21 icons) exists but index.html never loads it; core.js ships its own 4-icon UI.icon — fix = add script tag + remove core.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
