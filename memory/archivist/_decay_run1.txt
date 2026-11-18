@@ -1,0 +1,9 @@
+decay_score: 5853 leaves, 0 flagged -> memory\archivist\decay-report.md
+  0.517 age=6d refs=0 idx=n memory/portal/upgrades-2026-11-12.md
+  0.517 age=6d refs=0 idx=n memory/portal/v1-inventory.md
+  0.517 age=6d refs=0 idx=n memory/portal/v1-upgrade-state-2026-11-12.md
+  0.517 age=6d refs=0 idx=n memory/portal/v1-upgrades-decisions.md
+  0.517 age=6d refs=0 idx=n memory/portal/v1-upgrades-round-2.md
+  0.517 age=6d refs=0 idx=n memory/portal/v1-upgrades-round-3.md
+  0.517 age=6d refs=0 idx=n memory/portal/v1-upgrades-round-4.md
+  0.517 age=6d refs=0 idx=n memory/portal/v1-upgrades.md
