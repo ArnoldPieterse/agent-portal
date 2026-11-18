@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe lane confirmed 10/10 closed per ledger; goal file still missing verified lines for #3/#4/#5/#7 (record mismatch being fixed).
-- supersession_check.py v4 regex fix (require `\bcanonical\s*[:=]`) eliminated all 68 phantom broken chains; fleet now 76/80
 - Fixed truncated verified marker on Designer goal 3: filename cut at `css-bundle-budget-verify-20)` now full `...-2026-11-18.md`
 - Goal 4 dry-run verified on Red seat; unblock needs White admin to run `deploy_reboot_recovery_all.py` (COM wall, no re-probe from this seat)
 - All 10 goals closed; only pending item is SCRIBE#10 compression-fidelity audit (
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fleet corrected to 80/80 (100%) after fixing stale cycle-2 portal load test #4 in goal-ledger-current.json; evidence at memory/mechanic/ledg
 - Scribe wrote knowledge_graph_incremental.py (hash-diff incremental KG update); closed 4 Archivist goals with verified markers.
 - Verifier fixed Scribe goal#
+- stale_claim_check.py had .json/.jsonl extension mismatch causing 99 false positives; patched with sibling-extension fallback (132→
+- Fleet at 78/80 after recording 4 Archivist goals with on-disk
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
