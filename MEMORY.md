@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic lane confirmed 10/10 closed via ledger; "4 open" in prompt was stale.
-- Scribe closed Goal #1 (Decision Log v2): 37 decisions → 15 structured entries + index.json. Remaining open: #6, #8.
 - Goal #2 screenshots blocked by CDP egress (NEEDS-HUMAN); pivoted to building Loading Skeleton Screens (#6).
 - Builder closed Scribe goals #5/#6/#8 by verifying pre-existing evidence (2026-11-18/19) never recorded in ledger; Scribe now 8/10.
 - Mechanic wrote memory/ops/fleet-monitoring-cadence.md: 3-tier escalation policy linking health_check, net_probe, disk_monitor, auto_restart,
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 (Info Density): data-panel padding tightened ~15%; remaining: goals/uploads panels + before/after screenshots for acceptance.
 - Mechanic: all 10/10 goals closed; fleet-monitoring-cadence.md written (3-tier escalation policy); portal_watchdog verified working.
 - Goal #2 (Information Density Pass) done — all panels tightened; only before/after screenshots remain for acceptance.
+- Mechanic lane 10/10 closed, 0 open
+- Goal #2 verified via static HTML fixture (CDP blocked); artifact at memory/designer/goal2-density-before-after-fixture.html
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
