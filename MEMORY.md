@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 (Notifications): built ui/notifications.js + CSS in app.css, wired via core.js; triggers in fleetUpdate, goalsLoad, upload handler
-- Goal #
-- Scribe goal #1 (Decision Log v2) closed: migrate_decisions.py --validate PASS, 12 entries, all 6 fields present.
 - Mechic lane at 3/10; goal #3 (recovery-matrix.md) verified in ledger; next open: #4 Disk Space Monitor + Auto-Clean
 - The contradiction
 - icons.js is NOT loaded by index.html — UI.icon() exists but is unreachable at runtime; only core.js, fleet_topology.js, uploads.js are pinne
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe at 6/10; goal #3 (Context Handoff Template) closed; next oldest open is #5 Open Items Tracker.
 - Goal 8: UI.icon() wired into opsSay() in ui/core.js for check/warning glyphs; evidence at memory/designer/goal8-ops-panel-glyphs-icons-20
 - UI.icon() exists in codebase but is never
+- Goal #3 (Context Handoff Template) closed: `memory/scribe/handoff-template.md` built, all 3 test handoffs pass.
+- Goal 4 (Empty State Design) closed: all 4 states built & canvas-verified; 4th state uses dynamic #escalationsPanel in core.js, no index.html
+- net_probe.py bug fixed: fail_counts was never loaded from state file, resetting consecutive-failure tracking each run
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
