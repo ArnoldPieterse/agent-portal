@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- WinError 10013 on portal is a known sandbox egress restriction (documented in memory/ops/blockers.md), not a real failure.
 - Goal #4 Empty State CLOSED (19-pt verified); Goal #5 Notification System started — CSS tokens added, 4 trigger points being wired in core.js
 - Portal
 - Built /api/fleet/status endpoint (per-host reachable, latency_ms, disk_pct, mem_pct, portal_up); migrating UI strip from /
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #6 done
 - shutil.disk_usage("C:\\") hits PermissionError in this env; use Win32 GetDiskFreeSpaceExW instead (same pattern as mem check).
 - Designer: Goal #8 Icon System ~70% done; remaining = okText helper (
+- Mechanic fixed `_local_disk_pct()`: `shutil.disk_usage("C:\\")` hits PermissionError; switched to Win32 API (same pattern as memory
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
