@@ -168,6 +168,14 @@ def parse_agent_file(path):
             if dangling:
                 g["dangling_pointer"] = True
             goals.append(g)
+    for g in goals:
+        if g["text"].lstrip().startswith("[BG-SCHED"):
+            # (2026-11-18) goal was relocated to memory/goals/scheduled-background.md per the
+            # background-schedule rule - it is no longer open work for this seat. Count it as
+            # done (flagged bg_sched) so phantom placeholders cannot stall the seat queue or
+            # keep the fleet total under 100% forever.
+            g["status"] = "reached"
+            g["bg_sched"] = True
     return goals
 
 

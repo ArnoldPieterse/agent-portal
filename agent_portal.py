@@ -3037,7 +3037,7 @@ def _autoloop_watchdog():
                             "(memory/goals/%s.md, %d open)." % (n.lower(), og))
                 elif now - la[n] >= AUTOLOOP_MAINT_COOLDOWN_S:
                     why_bits.append("%s:maint" % n.lower())
-                    body = ("your goals are 100%% reached - contribute to the team while you wait - pick ONE of: (a) write a prediction/forecast for another agent's open goal into memory/goals/, (b) draft a solution or workflow improvement into memory/ops/, (c) verify and close one stale evidence claim in the ledger, (d) do one concrete step on another agent's oldest open goal. Reply [SILENT] only if you genuinely checked all four and found nothing actionable.")
+                    body = ("your goals are 100% reached - contribute to the team while you wait - pick ONE of: (a) write a prediction/forecast for another agent's open goal into memory/goals/, (b) draft a solution or workflow improvement into memory/ops/, (c) verify and close one stale evidence claim in the ledger, (d) do one concrete step on another agent's oldest open goal. Reply [SILENT] only if you genuinely checked all four and found nothing actionable.")
                 else:
                     continue   # at 100% inside maintenance cooldown - no task for this seat yet
                 sections.append((n, "@%s (idle %d s): %s%s" % (

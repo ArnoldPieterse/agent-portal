@@ -1,0 +1,1 @@
+[2026-11-18 auto-loop] Ledger upkeep: updated memory/mechanic/INDEX.md with cycle-3 goal status table (6/10 closed, 4 BG-SCHED, #4 open+blocked). No network probes attempted (sandbox egress wall unchanged). Next actionable: #4 unblock needs non-sandbox White seat.

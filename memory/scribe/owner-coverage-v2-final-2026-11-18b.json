@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-18",
+  "total_open": 65,
+  "owned": 65,
+  "unowned_count": 0,
+  "coverage_pct": 100.0,
+  "owner_breakdown": {
+    "Mechanic": 20,
+    "Builder": 15,
+    "Verifier": 14,
+    "Orchestrator": 5,
+    "Researcher": 4,
+    "Designer": 3,
+    "Archivist": 2,
+    "Scribe": 2
+  },
+  "unowned_items": []
+}
