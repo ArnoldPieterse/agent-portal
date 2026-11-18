@@ -1,0 +1,7 @@
+Task Name,Status,Schedule Type,Next Run Time
+\PortalRun,Ready,Task,2026-11-18 09:00:00
+\FleetProbe,Ready,Task,2026-11-18 04:30:00
+\MemoryMirrorRun,Ready,Task,2026-11-18 04:15:00
+\PortalDailyGitCommit,Ready,Task,2026-11-19 02:00:00
+\AgentGroupChat,Ready,Task,2026-11-18 03:00:00
+\RecoverAll,Ready,Task,2026-11-18 06:00:00

@@ -1,0 +1,139 @@
+{
+  "date": "2026-11-18",
+  "total_open": 64,
+  "owned": 42,
+  "unowned_count": 22,
+  "coverage_pct": 65.6,
+  "owner_breakdown": {
+    "Orchestrator": 24,
+    "Builder": 13,
+    "Verifier": 9,
+    "Mechanic": 7,
+    "Researcher": 4,
+    "Designer": 3,
+    "Archivist": 2,
+    "Scribe": 2
+  },
+  "unowned_items": [
+    {
+      "line": 60,
+      "text": "Watch first sequential pass: each agent should complete visibly one-by-one; if any single agent hangs, the stall banner ",
+      "owner": "Orchestrator",
+      "method": "tie->triage"
+    },
+    {
+      "line": 129,
+      "text": "Cleanup candidates for Arnold (NOT touched): `lmstudio-community\\Qwen3.8-27B-GGUF - Copy` holds a 29.0 GB `.part` = full",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 135,
+      "text": "NEXT (agent-owned): Verifier closes AC-A2-1..4 process-level on PID 23704 (+ Designer design-leg checks); Scribe queue \u2463",
+      "owner": "Orchestrator",
+      "method": "tie->triage"
+    },
+    {
+      "line": 174,
+      "text": "Arnold (White console): run the ps1, paste output - only remaining external action. Agent sandboxes cannot do it (powers",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 175,
+      "text": "Post-restart queue: Orchestrator resyncs MEMORY.md goal line -> Verifier AC-A2-1..4 one pass, single hard refresh (proce",
+      "owner": "Orchestrator",
+      "method": "tie->triage"
+    },
+    {
+      "line": 207,
+      "text": "Residual risk logged: memory_mirror.py PULL side still timestamp-only (a fresh-mtime stale remote memory leaf could stil",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 329,
+      "text": "FUTURE: mirror uploads into remote host sandboxes (Black/Red/Pale) so remote agents can open attachments with their own ",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 337,
+      "text": "FUTURE: move Red .245 to the wired NIC (WiFi 30 Mbps = root cause of the 2h copy) -> multi-GB transfers ~20 min.",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 338,
+      "text": "WATCH: two tool-call truncations in latest e2e (Archivist/Scribe) - if they recur, check their models' max-tokens / harn",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 371,
+      "text": "After Red agents live: full 8-agent roster smoke + group e2e; update hosts.md Red row; sync trees to AgentPortal_V1.",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 379,
+      "text": "Then PALE: Q8 copy done -> scan-folders -> dual load -> Pale agents (names from Arnold).",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 419,
+      "text": "BLOCKED: Arnold POSTPONED Red's llama.cpp install (2026-11-11, was 242 MB download in progress) -> R1 parked until he sa",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 423,
+      "text": "Arnold call: Red has ONLY Q4 variants today (UD-Q4_K_XL + Q4_K_M, no Q8) -> load both Q4s (GPU0+GPU1) or fetch a Q8 firs",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 424,
+      "text": "Resume llama.cpp runtime install on Red (was 242 MB, 1 of 2) - now via WinRM, no RDP needed.",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 425,
+      "text": "Load Q4 GGUF -> GPU0 + Q8 GGUF -> GPU1 (Q8 first per proven recipe), aliases red-a-q4 / red-b-q8 (final names pending ag",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 436,
+      "text": "Black R1-equivalent (PARKED like Red): llama.cpp runtime install + load UD-Q4_K_S (+2nd model? only ONE on Black today) ",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 447,
+      "text": "Arnold: names + personas for the 6 new agents (2 per host). Placeholders red-a/red-b until then.",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 448,
+      "text": "Solo-test each Red agent through portal; then group e2e incl. remote agents (cross-talk, stop/reset, budget, file links)",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 451,
+      "text": "memory/llm/hosts.md host table: fill GPUs/models/state per host as they come up.",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    },
+    {
+      "line": 453,
+      "text": "Pale & Black: repeat R0-R4. BLACK R0 ~90% done (see B0 above); PALE (.39) still offline as of 2026-11-11 02:15 - re-run ",
+      "owner": "Orchestrator",
+      "method": "fallback-triage"
+    }
+  ]
+}
