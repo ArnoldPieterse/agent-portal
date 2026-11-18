@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer: all 10 goals closed (ledger 10/10, open=0); "8 open" in loop prompt was stale — no remaining lane work.
-- Scribe reached 10/10 goals closed (open=0) on 2026-11-18; all verified markers recorded in memory/goals/scribe.md.
 - Goal #8 (Capability Auto-Match Suggester) closed: `suggest()` + `_detect_capabilities` in model_scheduler.py, `/api/fleet/suggest` endpoint
 - Gap-1 confirmed: recover_all.py line 120 hardcodes White Q4 max_seq_length=655
 - Mechanic: 8 core ops scripts PASS integrity; remaining open items blocked on WinError
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Orchestrator burned full 32768-token window on reasoning twice, produced no answer; need smaller task slices or lower reasoning effort.
 - Designer: Goal #2 (Density Pass) closed — 21.5% vertical reduction via token rescaling + line-height, measured statically in CSS.
 - Gap #2 (idle-wait deadlock) verified closed: hot_load.py decide_action() + --test-wedge passes 3/3 cases
+- Researcher lane closed 12/12; gap #2 idle-wait deadlock confirmed fixed via wedge-safe path in hot_load.py (goal #
+- Auto-loop prompts carry stale open counts (seen in Designer, Scribe, Mechanic) — don't re-probe; trust ledger over prompt.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
