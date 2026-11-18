@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 auto-close script built at memory/mechanic/goal1_auto_close.py; run it each pass, closes when 7/7 days present (target Nov 22).
-- Goal #8 shipped: `.fstate` renamed to `.pstate` (universal state class); goal #2 blocked on browser screenshots.
 - Screenshot capture blocked by sandbox network isolation to :8099 (affects goals #2 & #10); not re-probing per anti-loop rule.
 - Goal #7: Scribe added fallback rule — un
 - Goal #9 (typography scale) closed — evidence existed (PASS 2026-11-18) but ledger marker was missing; now properly marked done.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #6: static WCAG 2.1 AA contrast audit of all 19 dark-mode token pairs in app.css — all pass; no browser needed.
 - Cycle 3 narrative: 41/80 vs 22/80 discrepancy RESOLVED — correct per-agent sum is 42, not 41.
 - Goal #4: deploy_reboot_recovery_all.py ready; only step left is running it from White admin (registers FleetBootRecovery ONSTART on all 4 ho
+- Fixed --line to #303a4c (1.42:1 on panel2) and accent button text to
+- Scribe corrected stale auto-loop goal count (41/80 vs 22/80) in cycle-narrative.md; only #10 BG-SCHED remains open.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
