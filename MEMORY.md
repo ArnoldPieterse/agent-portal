@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Phantom scan for Archivist goal #5 done: 16 true phantoms in 423 refs; results at memory/goals/archivist-goal5-forecast-phantom-scan-2026-11
 - Archivist Goal#1 evidence file is stale; real
 - Builder built file-path ref scanner for Archivist #5; found 320 unique paths in memory/ops/*.md, 166 flagged as phantom.
 - Fixed stale_claim_check.py regex: `.json` matched as prefix of `.jsonl`; reorder alternation to put longer suffix first (157→35 real finding
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher Goal #1 (Source Reliability Scorer) closed: min-high=42 > max-low=26, 16pt margin, evidence + ledger recorded.
 - Scribe confirmed all 9 goals verified; chose to produce cycle-narrative synthesis artifact for new goal-setting round transition.
 - Goal #1 (Auto Goal-Cycle Transition) complete:
+- Goal #4 (reboot-recovery schtask) still blocked by COM wall at Red sandbox; documented in memory/ops/blockers.md, no re-probe per rules.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
