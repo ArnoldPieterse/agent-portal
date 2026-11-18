@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 (Host Recovery Matrix) blocked by WinError 10013 sandbox egress; needs `contract_test.py --live` from non-sandbox seat to
-- Mechanic lane 10/10 closed; "1 open" in auto-loop prompt is a stale counter, not a real goal.
 - Goal #2 density pass done; only remaining step is browser screenshot comparison, blocked by no display available.
 - Goal #2 (Information Density Pass) CLOSED — 20–25% vertical whitespace reduction verified via static CSS token analysis; no display for scre
 - Designer Goal #2 (Information Density Pass) complete: all padding/margin tokenized, 0 hardcoded px remain in app.css.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 (Info Density Pass): before/after visual canvas rendered; awaiting acceptance sign-off.
 - Mechanic lane fully closed (10/10 verified).
 - Goal #4 done: .empty-state CSS + UI.emptyState() wired to 4 panels (agents, fleet, goals, uploads) in core.js & uploads.js
+- Portal WinError 10013 = sandbox egress restriction
+- Goal #4 (Empty State) CLOSED: UI
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
