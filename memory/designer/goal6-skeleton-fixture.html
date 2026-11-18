@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Goal 6 — Skeleton Screens Fixture (2026-11-19)</title>
+<style>
+/* Design tokens (subset) */
+:root{--bg:#0d1117;--panel:#161b22;--panel2:#21262d;--line:#30363d;--text:#c9d1d9;--dim:#8b949e;--acc:#58a6ff;--ok:#3fb950;
+--sp-3:3px;--sp-4:4px;--sp-6:6px;--sp-8:8px;--sp-10:10px;--sp-12:12px;--sp-16:16px}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font:14px/1.5 system-ui,sans-serif;padding:24px;font-family:system-ui}
+h2{font-size:18px;margin:24px 0 8px;color:var(--dim)}
+.section{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:16px}
+label{font-size:12px;color:var(--dim);display:block;margin-bottom:8px}
+
+/* Skeleton system (from ui/app.css) */
+@keyframes shimmer{0%{background-position:-200px 0}100%{background-position:200px 0}}
+.skel{position:relative;overflow:hidden;background:var(--panel2);border-radius:4px}
+.skel::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent);background-size:200px 100%;animation:shimmer 1.4s infinite}
+.skel-line{height:12px;margin:6px 0;border-radius:3px}
+.skel-dot{width:8px;height:8px;border-radius:50%;flex:none}
+.skel-ring{width:44px;height:44px;border-radius:50%;flex:none}
+.skel-frow{display:flex;align-items:center;gap:var(--sp-6);padding:var(--sp-6) 0;border-bottom:1px dashed var(--line)}
+.skel-frow:last-child{border-bottom:none}
+.skel-frow .skel-line:nth-child(2){width:30%;flex:none}
+.skel-frow .skel-line:nth-child(3){width:50%}
+.skel-gtile{display:flex;align-items:center;gap:var(--sp-6);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:var(--sp-6) var(--sp-10);min-width:170px}
+.skel-gtile .skel-ring{flex:none}
+.skel-opsbox{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:var(--sp-4) var(--sp-8);margin-top:var(--sp-6)}
+.skel-opsbox .skel-line{font-family:ui-monospace,Consolas,monospace}
+.skel-fsrow{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-3) 0;border-bottom:1px dashed var(--line);list-style:none}
+.skel-fsrow:last-child{border-bottom:none}
+
+/* Real content shapes (for no-layout-shift comparison) */
+.frow-h{display:flex;align-items:center;gap:var(--sp-6);padding:var(--sp-6) 0;border-bottom:1px dashed var(--line)}
+.fdot{width:8px;height:8px;border-radius:50%;flex:none}
+.fdot.idle{background:var(--ok)}.fdot.busy{background:var(--acc)}.fdot.unknown{background:var(--dim)}
+.gtile{display:flex;align-items:center;gap:var(--sp-6);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:var(--sp-6) var(--sp-10);min-width:170px}
+.gring{position:relative;width:44px;height:44px;flex:none}
+.gtile .gname{font-weight:600;font-size:13px}
+.gtile .gmeta{font-size:12px;color:var(--dim)}
+.opsbox{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:var(--sp-4) var(--sp-8);margin-top:var(--sp-6);font-family:ui-monospace,Consolas,monospace;font-size:12px}
+ul.files{list-style:none;padding:0}
+ul.files li{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-3) 0;border-bottom:1px dashed var(--line)}
+ul.files li:last-child{border-bottom:none}
+.fs-meta{font-size:12px;color:var(--dim);margin-left:auto}
+.toggle{display:flex;gap:16px;margin-bottom:8px}
+.toggle label{display:flex;align-items:center;gap:4px;font-size:13px;color:var(--text)}
+</style></head>
+<body>
+<h1 style="font-size:24px">Goal 6 — Loading Skeleton Screens</h1>
+<p style="color:var(--dim);margin:8px 0 24px">Fixture proving: (1) shimmer animation works, (2) skeleton shapes match real panel layout, (3) no layout shift on content swap.</p>
+
+<div class="toggle"><label><input type="checkbox" id="tg-fleet" checked> Fleet</label><label><input type="checkbox" id="tg-goals"> Goals</label><label><input type="checkbox" id="tg-ops"> Ops</label><label><input type="checkbox" id="tg-files"> Files</label></div>
+
+<!-- FLEET -->
+<div class="section" id="sec-fleet">
+<h2>Fleet Panel — skeleton (left) vs real (right)</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div><label>SKELETON (4 rows)</label>
+<div class="skel-frow"><div class="skel skel-dot"></div><div class="skel skel-line"></div><div class="skel skel-line"></div></div>
+<div class="skel-frow"><div class="skel skel-dot"></div><div class="skel skel-line"></div><div class="skel skel-line"></div></div>
+<div class="skel-frow"><div class="skel skel-dot"></div><div class="skel skel-line"></div><div class="skel skel-line"></div></div>
+<div class="skel-frow"><div class="skel skel-dot"></div><div class="skel skel-line"></div><div class="skel skel-line"></div></div>
+</div>
+<div><label>REAL CONTENT (4 rows)</label>
+<div class="frow-h"><span class="fdot idle"></span><b style="font-size:13px">White</b><span style="font-size:12px;color:var(--dim)">· idle · last seen 2s ago</span></div>
+<div class="frow-h"><span class="fdot busy"></span><b style="font-size:13px">Red</b><span style="font-size:12px;color:var(--dim)">· busy · running builder</span></div>
+<div class="frow-h"><span class="fdot idle"></span><b style="font-size:13px">Blue</b><span style="font-size:12px;color:var(--dim)">· idle · last seen 8s ago</span></div>
+<div class="frow-h"><span class="fdot unknown"></span><b style="font-size:13px">Green</b><span style="font-size:12px;color:var(--dim)">· unknown · last seen 45s ago</span></div>
+</div>
+</div>
+</div>
+
+<!-- GOALS -->
+<div class="section" id="sec-goals" style="display:none">
+<h2>Goals Panel — skeleton (top) vs real (bottom)</h2>
+<label>SKELETON (3 tiles × 2 rows = 6)</label>
+<div style="display:flex;flex-wrap:wrap;gap:var(--sp-6);margin-bottom:16px">
+<div class="skel-gtile"><div class="skel skel-ring"></div><div style="flex:1"><div class="skel skel-line" style="width:70%"></div><div class="skel skel-line" style="width:45%;margin-top:8px"></div></div></div>
+<div class="skel-gtile"><div class="skel skel-ring"></div><div style="flex:1"><div class="skel skel-line" style="width:70%"></div><div class="skel skel-line" style="width:45%;margin-top:8px"></div></div></div>
+<div class="skel-gtile"><div class="skel skel-ring"></div><div style="flex:1"><div class="skel skel-line" style="width:70%"></div><div class="skel skel-line" style="width:45%;margin-top:8px"></div></div></div>
+<div class="skel-gtile"><div class="skel skel-ring"></div><div style="flex:1"><div class="skel skel-line" style="width:70%"></div><div class="skel skel-line" style="width:45%;margin-top:8px"></div></div></div>
+<div class="skel-gtile"><div class="skel skel-ring"></div><div style="flex:1"><div class="skel skel-line" style="width:70%"></div><div class="skel skel-line" style="width:45%;margin-top:8px"></div></div></div>
+<div class="skel-gtile"><div class="skel skel-ring"></div><div style="flex:1"><div class="skel skel-line" style="width:70%"></div><div class="skel skel-line" style="width:45%;margin-top:8px"></div></div></div>
+</div>
+<label>REAL CONTENT (3 tiles × 2 rows = 6)</label>
+<div style="display:flex;flex-wrap:wrap;gap:var(--sp-6)">
+<div class="gtile"><div class="gring"><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" fill="none" stroke="var(--line)" stroke-width="4"/><circle cx="22" cy="22" r="19" fill="none" stroke="var(--ok)" stroke-width="4" stroke-linecap="round" stroke-dasharray="119.38" stroke-dashoffset="0"/></svg></div><div><div class="gname">Orchestrator</div><div class="gmeta">10/10 done · 0 open</div></div></div>
+<div class="gtile"><div class="gring"><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" fill="none" stroke="var(--line)" stroke-width="4"/><circle cx="22" cy="22" r="19" fill="none" stroke="var(--acc)" stroke-width="4" stroke-linecap="round" stroke-dasharray="119.38" stroke-dashoffset="59.69"/></svg></div><div><div class="gname">Designer</div><div class="gmeta">3/10 done · 7 open</div></div></div>
+<div class="gtile"><div class="gring"><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" fill="none" stroke="var(--line)" stroke-width="4"/><circle cx="22" cy="22" r="19" fill="none" stroke="var(--ok)" stroke-width="4" stroke-linecap="round" stroke-dasharray="119.38" stroke-dashoffset="0"/></svg></div><div><div class="gname">Mechanic</div><div class="gmeta">10/10 done · 0 open</div></div></div>
+<div class="gtile"><div class="gring"><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" fill="none" stroke="var(--line)" stroke-width="4"/><circle cx="22" cy="22" r="19" fill="none" stroke="var(--acc)" stroke-width="4" stroke-linecap="round" stroke-dasharray="119.38" stroke-dashoffset="89.53"/></svg></div><div><div class="gname">Researcher</div><div class="gmeta">7/10 done · 3 open</div></div></div>
+<div class="gtile"><div class="gring"><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" fill="none" stroke="var(--line)" stroke-width="4"/><circle cx="22" cy="22" r="19" fill="none" stroke="var(--ok)" stroke-width="4" stroke-linecap="round" stroke-dasharray="119.38" stroke-dashoffset="0"/></svg></div><div><div class="gname">Builder</div><div class="gmeta">10/10 done · 0 open</div></div></div>
+<div class="gtile"><div class="gring"><svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" fill="none" stroke="var(--line)" stroke-width="4"/><circle cx="22" cy="22" r="19" fill="none" stroke="var(--ok)" stroke-width="4" stroke-linecap="round" stroke-dasharray="119.38" stroke-dashoffset="0"/></svg></div><div><div class="gname">Verifier</div><div class="gmeta">10/10 done · 0 open</div></div></div>
+</div>
+</div>
+
+<!-- OPS -->
+<div class="section" id="sec-ops" style="display:none">
+<h2>Ops Panel — skeleton (top) vs real (bottom)</h2>
+<label>SKELETON</label>
+<div class="skel-opsbox"><div class="skel skel-line" style="width:80%"></div><div class="skel skel-line" style="width:60%;margin-top:8px"></div><div class="skel skel-line" style="width:50%;margin-top:8px"></div></div>
+<label>REAL CONTENT</label>
+<div class="opsbox">On branch main<br>Your branch is up to date with 'origin/main'.<br>nothing to commit, working tree clean</div>
+</div>
+
+<!-- FILES -->
+<div class="section" id="sec-files" style="display:none">
+<h2>Files/Uploads Panel — skeleton (top) vs real (bottom)</h2>
+<label>SKELETON (5 rows)</label>
+<ul class="files" style="margin-bottom:16px">
+<li class="skel-fsrow"><div class="skel skel-line" style="width:55%"></div><div class="skel skel-line" style="width:25%;margin-left:auto"></div></li>
+<li class="skel-fsrow"><div class="skel skel-line" style="width:55%"></div><div class="skel skel-line" style="width:25%;margin-left:auto"></div></li>
+<li class="skel-fsrow"><div class="skel skel-line" style="width:55%"></div><div class="skel skel-line" style="width:25%;margin-left:auto"></div></li>
+<li class="skel-fsrow"><div class="skel skel-line" style="width:55%"></div><div class="skel skel-line" style="width:25%;margin-left:auto"></div></li>
+<li class="skel-fsrow"><div class="skel skel-line" style="width:55%"></div><div class="skel skel-line" style="width:25%;margin-left:auto"></div></li>
+</ul>
+<label>REAL CONTENT (5 rows)</label>
+<ul class="files">
+<li><span style="font-size:13px;color:var(--acc)">TODO.md</span><span class="fs-meta">4.2 KB · 19/11 08:32</span></li>
+<li><span style="font-size:13px;color:var(--acc)">MEMORY.md</span><span class="fs-meta">1.8 KB · 19/11 07:45</span></li>
+<li><span style="font-size:13px;color:var(--acc)">agents.json</span><span class="fs-meta">2.1 KB · 18/11 22:10</span></li>
+<li><span style="font-size:13px;color:var(--acc)">agent_portal.py</span><span class="fs-meta">18.7 KB · 19/11 06:00</span></li>
+<li><span style="font-size:13px;color:var(--acc)">memory/INDEX.md</span><span class="fs-meta">3.4 KB · 18/11 20:30</span></li>
+</ul>
+</div>
+
+<script>
+// Toggle sections
+["fleet","goals","ops","files"].forEach(s=>{
+  document.getElementById("tg-"+s).onchange=function(){
+    document.getElementById("sec-"+s).style.display=this.checked?"":"none";
+  };
+});
+</script>
+</body></html>

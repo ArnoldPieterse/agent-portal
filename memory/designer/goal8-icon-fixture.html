@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Goal 8 Icon System - verification fixture</title>
+<link rel="stylesheet" href="../../ui/tokens.css">
+<link rel="stylesheet" href="../../ui/app.css">
+<style>
+body{background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;font-size:14px;max-width:760px;margin:24px auto;padding:0 16px}
+h1{font-size:18px} h2{font-size:15px;margin-top:24px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.cell{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.cell small{font-size:12px;color:var(--dim)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0}
+.verdict{margin-top:24px;padding:10px 14px;border-radius:8px;font-size:13px;background:var(--panel);border:1px solid var(--line)}
+.pass{color:var(--ok)} .fail{color:var(--err)}
+</style>
+</head>
+<body>
+<h1>Goal #8 - Icon System verification fixture (2026-11-19)</h1>
+<p class="hint" style="font-size:12px;color:var(--dim)">Static fixture: loads real ui/icons.js + ui/app.css. Open from portal at memory/designer/goal8-icon-fixture.html. All icons 24x24 viewBox, 1.5px stroke, currentColor.</p>
+
+<h2>All defined icons</h2>
+<div class="grid" id="grid"></div>
+
+<h2>In-context usage (mirrors live UI patterns)</h2>
+<div class="row">
+  <button class="btn" id="b1">Goals</button>
+  <button class="btn" id="b2">Fleet</button>
+  <button class="btn" id="b3">Commit all</button>
+  <button class="btn" id="b4">Prune done TODO</button>
+</div>
+<div class="row">
+  <span class="toolchip" id="c1" style="background:var(--panel2);border-radius:6px;padding:2px 8px;font-size:12px"></span>
+  <span id="s1" style="display:inline-flex;align-items:center;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:4px 10px;font-size:13px"></span>
+  <span id="s2" style="display:inline-flex;align-items:center;gap:4px;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:4px 10px;font-size:13px"></span>
+</div>
+
+<div class="verdict" id="verdict">checking…</div>
+
+<script src="../../ui/icons.js"></script>
+<script>
+(function(){
+  var names = UI.iconNames;
+  var grid = document.getElementById("grid");
+  for (var i=0;i<names.length;i++){
+    var c=document.createElement("div"); c.className="cell";
+    c.appendChild(UI.icon(names[i],{size:24,cls:"ic"}));
+    var s=document.createElement("small"); s.textContent=names[i]; c.appendChild(s);
+    grid.appendChild(c);
+  }
+  // in-context demos (same patterns as index.html data-icon wiring + core.js chips/badges)
+  function wire(id,name){ var el=document.getElementById(id), ic=UI.icon(name,{size:16,cls:"ic"}); el.insertBefore(ic,el.firstChild); el.firstChild.nextSibling && (el.childNodes[1].nodeValue=" "+el.childNodes[1].nodeValue.replace(/^\s+/,"")); }
+  document.getElementById("b1").prepend(UI.icon("goal",{size:16,cls:"ic"}));
+  document.getElementById("b2").prepend(UI.icon("agent",{size:16,cls:"ic"}));
+  document.getElementById("b3").prepend(UI.icon("upload",{size:16,cls:"ic"}));
+  document.getElementById("b4").prepend(UI.icon("scissors",{size:16,cls:"ic"}));
+  var c1=document.getElementById("c1"); c1.append(UI.icon("tool",{size:13,cls:"ic"}),document.createTextNode(" web_search"));
+  var s1=document.getElementById("s1"); s1.innerHTML=UI.statHTML("check","committed: fix tokens");
+  var s2=document.getElementById("s2"); s2.innerHTML=UI.statHTML("warning","no disk data");
+
+  // acceptance check: >=9 icons, all required present, stroke 1.5, viewBox 24
+  var req=["agent","goal","upload","alert","settings","search","close","check","warning"];
+  var missing=req.filter(function(n){return names.indexOf(n)<0;});
+  var ok = missing.length===0 && names.length>=9;
+  var svg=UI.icon("agent",{size:24});
+  var strokeOk = svg.getAttribute("stroke-width")==="1.5" && svg.getAttribute("viewBox")==="0 0 24 24";
+  var v=document.getElementById("verdict");
+  v.innerHTML = (ok&&strokeOk ? '<b class="pass">PASS</b> ' : '<b class="fail">FAIL</b> ')
+    + names.length+" icons defined ("+names.join(", ")+")"
+    + (missing.length? " | missing: "+missing.join(","):" | all 9 required present")
+    + (strokeOk?"":" | STROKE/VIEWBOX MISMATCH");
+})();
+</script>
+</body>
+</html>
