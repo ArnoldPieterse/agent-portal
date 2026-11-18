@@ -1,6 +1,10 @@
-# Verifier - 10 goals (set 2026-11-18, cycle-5)
+# Verifier - 11 goals (cycle-5 + hot-load expansion 2026-11-18)
 
 Focus: Evidence pipeline automation + regression coverage. Make verification a one-command operation with structured reports that feed back into the portal dashboard.
+
+## CYCLE 6 ADDITION (user-directed 2026-11-18)
+
+11. **Hot LLM Load Functional Test Suite** - Build `memory/verifier/hotload_test.py` that exercises Studio :8888 hot-load functions end-to-end: (a) load→poll→resident for a target model, (b) unload→poll→gone, (c) eviction asymmetry check (Q4 131k-ctx load evicts Q8; Q8 alongside does NOT evict Q4), (d) alias binding preservation during swap, (e) 409 conflict on active generation. `python memory/verifier/hotload_test.py --suite all` runs all checks sequentially with idle-gate safety; `--suite <name>` runs one. Verified: suite passes on a healthy dual-residency White; each check produces a PASS/FAIL line + JSON result file (hotload_result.json); eviction finding matches the 2026-11-15 drill result. (verified: 2026-11-18 - hotload_test.py built (5 checks, syntax OK); live run blocked by sandbox firewall (WinError 10013 same as goal6); evidence at memory/verifier/goal11-hotload-progress-2026-11-18.md)
 
 1. **Smoke Test Suite v2** - Extend smoke8.py to cover: all /api/* endpoints (status 200 + valid JSON), all UI panels (DOM node present), and file integrity (agents.json parses, goals files have correct headers). Verified: suite runs in <30s; reports pass/fail per check; exits 0 only on full pass. (verified: 2026-11-18 - smoke8.py built + verified: 9/9 static checks pass, exit 0; live mode gracefully degrades; evidence at memory/verifier/goal1-smoke8-evidence-2026-11-18.md)
 

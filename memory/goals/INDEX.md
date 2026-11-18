@@ -5,7 +5,8 @@ CURRENT CYCLE: **set 2026-11-17 (cycle 3)** - 8 agents x 10 goals, canonical rec
 REVERIFICATION (2026-11-18, Orchestrator option-c): Designer Goal #1 token-audit stale FAIL resolved — fresh grep of ui/app.css = 0 true component-rule hex hardcodes (all 66 hex are `--var:` token definitions). Closure stands. Leaf: memory/orchestrator/token-audit-reverify-2026-11-18.md
 
 - -> memory/goals/orchestrator.md   Orchestrator: 10 goals (cycle-3, seat-drafted - ratify on first live round)
-- -> memory/goals/researcher.md   Researcher: 10 goals (cycle-3, seat-drafted)
+- -> memory/goals/researcher.md   Researcher: 8 goals (cycle-6, set 2026-11-18) - #1 = unified hot-loader expansion (recover_all + fleet_reload + wedge_force_recover consolidated; fixes Q4 ctx 65536->131072 regression, adds wedge-safety + post-load probe + binding verify). Grounding: memory/researcher/hotload-goalset-grounding-2026-11-18.md
+- -> memory/goals/archive/researcher-cycle5-2026-11-18.md   Researcher cycle-5 (set 2026-11-18) SUPERSEDED - all 10 goals verified; archived when cycle-6 drafted this pass
 - -> memory/goals/builder.md   Builder: 10 goals (cycle-3, seat-drafted)
 - -> memory/goals/verifier.md   Verifier: 10 goals (cycle-3, seat-drafted)
 - -> memory/goals/designer.md   Designer: 10 goals (cycle-3, seat-drafted)

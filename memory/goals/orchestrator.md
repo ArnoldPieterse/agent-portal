@@ -1,4 +1,29 @@
-# Orchestrator - 10 goals (set 2026-11-18, cycle-5)
+# Orchestrator - 10 goals (set 2026-11-18, cycle-6)
+
+Focus: Hotload productionization + fleet capacity orchestration. Turn the PLANNED hot-LLM-loading design (memory/llm/hotload-plan.md, hotload-selector.md, hotload-catalog.json v1.0) into a FUNCTIONAL scheduler, grounded in the proven backend-swap procedure (zero-binding-loss). Cycle-5 (fleet self-mgmt maturity) closed 10/10 -> archived to memory/goals/archive/orchestrator-cycle5-closed-2026-11-18.md.
+
+1. **Hot LLM Loading Functions - Expansion + Functional** - Take the prior hotload work (backend-swap-procedure.md, reload recipe in studio-api.md, hotload-catalog.json v1.0, model_load_params.json) and BUILD a functional `model_scheduler.py`: a `plan(target_agents, resident)` that resolves each agent to its required model via catalog agent_profiles, does per-host VRAM accounting, and emits an ordered LOAD/UNLOAD plan (evicting lowest-priority non-required residents first, honoring the documented Q4-evicts-Q8 asymmetry). Add `/api/fleet/status` (read-only: per-host loaded models + hot/cold agents) and `/api/fleet/plan` (dry-run, no GPU calls). Verified: `python memory/orchestrator/model_scheduler.py --selftest` passes all plan cases on the REAL catalog; /api/fleet/status returns valid JSON for all hosts; /api/fleet/plan dry-run matches hand-computed eviction order. (progress 2026-11-18: model_scheduler.py scaffolded with plan() + selftest)
+
+2. **Hotload Execute Engine (live)** - Extend model_scheduler.py with `execute(plan)` that drives the Studio API per host using the proven bodies from backend-swap-procedure.md: idle-gate (poll active-generations==0) -> load -> poll /models until resident (timeout=load_time_s*2) -> unload evicted. Logs every transition to memory/llm/hotload-log.jsonl. Verified: a real activate/deactivate cycle on White loads the target model, releases the evicted one, aliases byte-identical before/after (zero-binding-loss), jsonl has timestamped load+unload rows.
+
+3. **Agent Activation State Machine** - Implement COLD->HOT->SLEEP->COLD per agent with TTL (default 300s) in the portal round lifecycle: portal auto-deactivates agents after a round ends; SLEEP models unload on TTL or VRAM pressure. Verified: after a test round, non-participating agents transition HOT->SLEEP and their models unload within TTL; participating agents stay resident.
+
+4. **VRAM Conflict Predictor + Alert** - `/api/fleet/plan` returns `fits` boolean + per-host free-GB estimate before any load; alert (hotload-log + portal banner) when a planned load would exceed host VRAM budget or force eviction of a priority-1 resident. Verified: forcing a 2-model-30GB plan on a 32GB host returns fits=false with the conflict named; no false alarms on the proven dual-resident Q4+Q8 case.
+
+5. **Specialized Task-Model Slots** - Extend hotload-catalog.json planned_models into loadable task models (video/3d/large-context) with `exclusive:true` semantics: scheduler evicts ALL other models on that GPU before loading an exclusive model. Verified: plan() for a video-gen target returns a full-eviction sequence; catalog schema validated by a loader check.
+
+6. **Hotload Capacity Gauge Panel** - Surface /api/fleet/status in the fleet tab: per-host VRAM bar (used/free), hot/cold agent chips, last load/unload event. Verified: panel renders for all 4 hosts without JS errors; data matches /api/fleet/status JSON.
+
+7. **Load-Time Prediction** - From hotload-log.jsonl history, predict cold-load duration per model (median of past loads); expose in /api/fleet/plan as `eta_s`; alert if actual load exceeds 2x predicted. Verified: after >=3 real loads of a model, eta_s is within 50% of observed; overruns logged.
+
+8. **Capability Auto-Match Suggester** - `/api/fleet/suggest?task=<text>` maps task keywords to capabilities (text/vision/video/3d/code) and returns the minimal agent set + models to activate, reusing catalog capability tags. Verified: 5 sample tasks return a coherent, VRAM-feasible agent set; each suggestion's models exist in catalog.
+
+9. **Multi-Host Load Balancer** - Extend plan() with host-affinity: prefer the host where the target model already resides or fits best; fall back to remote API (memory/llm/hosts.md pattern) when local host is full. Verified: with White full, plan() routes a new model to an available remote host and marks it remote=true.
+
+10. **Hotload Regression Suite** - A `python memory/orchestrator/hotload_regress.py` that replays the proven backend-swap drill as assertions (zero-binding-loss, idle-gate open, eviction order) against a mocked Studio API, runnable in CI/sandbox without live GPU. Verified: suite passes on mock; catches a deliberately broken plan (binding loss) with a failing assertion.
+
+---
+# ARCHIVED - cycle-5 (set 2026-11-18, closed 10/10)
 
 Focus: Fleet self-management maturity. Automate the goal-cycle lifecycle, improve capacity planning, and make HR workflows (onboard/re-role/retire) one-command operations visible in the portal.
 
