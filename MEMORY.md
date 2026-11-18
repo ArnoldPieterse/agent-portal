@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe's goal file is
-- Goal 8 state classes implemented; docs used .state-conn-lost but code uses .state
 - Designer lane confirmed 10/10 closed per goal_ledger.py; auto-loop "1 open" count was stale — do not re-probe.
 - TODO.md background-item count reconciled 10→8; cycle-narrative.md flag changed OPEN→RESOLVED (2026-11-18).
 - Goal #10: source-hash manifest + verify_source.py done; pixel-level screenshot baseline still open (needs Playwright).
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer lane confirmed 10/10 open=0; auto-loop "2 open" count is stale — INDEX leaf added to stop phantom pings.
 - Scribe lane confirmed closed 10/10 open=0; INDEX.md re-indexed to cover all 30+ missing files through 11-18.
 - reboot_recover.py validated on Red host: --dry-run (NO-OP) and --dry-run --force (would start portal) both correct
+- Designer lane confirmed 10/10, open=0; auto-loop "2 open" count is stale — do not re-probe goal walls.
+- MEMORY.md hot notes cleaned: truncated line removed, 3 redundant Scribe/Designer closed-lane entries consolidated into 2 clean lines.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
