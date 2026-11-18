@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic lane 10/10 closed (open=0); "1 open" in loop prompt is a stale counter — do not re-probe.
 - Goal #8 Icon System complete: all index.html emoji replaced with [data-icon] spans, pin advanced to c35bc61f06d7
 - Goal #2: --sp-6 token added (13× use), vertical padding cut done; still open pending before/after screenshots for acceptance.
 - Goal #3 (Host Recovery Matrix) blocked by WinError 10013 sandbox egress; needs `contract_test.py --live` from non-sandbox seat to
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer Goal #2 (Information Density Pass) complete: all padding/margin tokenized, 0 hardcoded px remain in app.css.
 - RECALL: - **M3** (`memory/synthesis/cycle-narrative.md:12`): Goal-setting round landed 2
 - Goal #2 (Density Pass) fully closed: quantitative measurement + rendered before/after visual canvas both produced as acceptance evidence.
+- Goal #2 (Info Density Pass): before/after visual canvas rendered; awaiting acceptance sign-off.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
