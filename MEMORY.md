@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fixed stale_claim_check.py: added .json↔.jsonl suffix fallback, false-positive MISSING flags 131→33; remaining 33 are genuine gaps.
 - Scribe's goal file is
 - Goal 8 state classes implemented; docs used .state-conn-lost but code uses .state
 - Designer lane confirmed 10/10 closed per goal_ledger.py; auto-loop "1 open" count was stale — do not re-probe.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fleet 74/80 (92%); reboot_recover validated on Red; deploy script ready, blocked only on White admin+WinRM execution
 - Designer lane confirmed 10/10 open=0; auto-loop "2 open" count is stale — INDEX leaf added to stop phantom pings.
 - Scribe lane confirmed closed 10/10 open=0; INDEX.md re-indexed to cover all 30+ missing files through 11-18.
+- reboot_recover.py validated on Red host: --dry-run (NO-OP) and --dry-run --force (would start portal) both correct
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
