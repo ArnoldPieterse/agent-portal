@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 Mechanic goals closed; #8 Fleet Status API endpoint built in agent_portal.py returning 4 hosts from net_probe data.
-- Mechanic lane fully closed: all 10/10 goals reached, open=0 since 2026-11-19. No further action needed on this seat.
 - Scribe lane reached 10/10 goals closed; all remaining (#1,#3,#7,#8) verified live this pass.
 - Goal #4 closed: reusable emptyState(icon,title,msg,cta,onCta) helper in ui/core.js + tokenized .empty-state* CSS; prior passes' work was abs
 - Sandbox firewall (WinError 10013) blocks outbound TCP — known env limitation, not fleet issue; state file retains last real measurements.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Sandbox WinError 10013 blocks outbound TCP; documented in goal #6 evidence — do not re-probe as a fleet issue.
 - OI-004 resolved: fleet at 76/
 - Designer found: index.html links only ui/app.css
+- OI-004 resolved; fleet at 76/93 per ledger. MEMORY.md goal line is stale (informational only).
+- Designer Goal #4 (Empty State) has a stale "closed" claim; `emptyState()` does not exist in `ui/core.js` (grep 0 hits).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
