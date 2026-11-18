@@ -93,3 +93,4 @@
 {"ts": "2026-11-18 21:07:36", "file": "index.html", "sha": "800a87b3f1", "size": 11339, "snapshot": "memory/ops/merge-queue/index.html.800a87b3f1"}
 {"ts": "2026-11-18 21:07:36", "file": "memory_mirror.py", "sha": "88a468dbe9", "size": 15182, "snapshot": "memory/ops/merge-queue/memory_mirror.py.88a468dbe9"}
 {"ts": "2026-11-18 21:07:36", "file": "ui/app.css", "sha": "56bd98990b", "size": 36103, "snapshot": null}
+{"ts": "2026-11-18 21:20:01", "file": "agent_portal.py", "sha": "787dde45ee", "size": 248999, "snapshot": "memory/ops/merge-queue/agent_portal.py.787dde45ee"}

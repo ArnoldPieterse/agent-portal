@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #6 concurrency_stress.py built & verified; live run blocked by sandbox firewall (WinError 10013 on localhost:8099) — needs non-sandboxe
-- Fixed rerole_agent.py entry-guard bug ("main"→"__main__"); Goal #3 now unblocked for live non-dry-run test next pass.
 - Goal #1 (Proactive Health Check Cron) verified & recorded: script runs, detects down portal, fires CRITICAL alerts.
 - Researcher 9/10: Goal #8 drift_check.py done (module −78.9%, loop +94.5%); only #9 Competitive Feature Scan (due 2027-Q1) remains open.
 - Scribe's open_items_scan.py found 74+ unlogged open goals fleet-wide; scribe ledger now at 5/10.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9 (Competitive Feature Scan) closed: analyzed CrewAI AMP, LangGraph Platform, MS Agent Framework 1.0; 14-dim gap table delivered.
 - Terminal tool mangles "scribe"→"screibe" in paths; Scribe works around it by driving scripts via python imports instead.
 - Goal #5 (Notification System) built: toast+bell CSS/JS in core.js, hooks on goalBarsUpdate & upload completion; monkey-patch approach fixed
+- Goal #8 done: /api/fleet/dependencies built in agent_portal.py, 8 nodes + 5 edges verified, evidence at memory/orchestrator/dependencies-api
+- Scribe reached 4/10 goals; Goal #1 (Decision Log v2) closed with evidence leaf `goal1-decision-log-v2-closure-2026-11-18.md`.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
