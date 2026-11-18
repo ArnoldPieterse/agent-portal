@@ -2,6 +2,7 @@
 Last updated: 2026-11-18.
 
 ## Entries (keyword -> pointer | use case)
+- designer #4 empty-state hot-note fix claim RE-VERIFIED still FAILS 2026-11-19 -> memory/orchestrator/designer-goal4-reverify-2026-11-19.md   full render-path check: no emptyState helper in any ui/*.js, .state-empty CSS defined-but-unused, 4 panels unwired; exact unblock step given to Designer
 - goal #2 execute engine + goal #3 state machine BUILT 2026-11-18 -> memory/orchestrator/execute-engine+state-machine-2026-11-18.md   execute() with idle-gate/poll/rollback (dry-run verified, live blocked by sandbox egress); agent_state_machine.py COLD->HOT->SLEEP->COLD 18/18 selftest pass
 - archivist #4 supersession PASS claim STALE (assist/verify) -> memory/orchestrator/archivist-goal4-supersession-verify-2026-11-18.md   re-ran named script: 128 markers/116 dangling vs claimed 28/0; on-disk script lacks the 3 "v2" filters audit claims -> goal NOT closed, flag to Archivist/Verifier
 - light theme functional (goal #10) -> memory/orchestrator/goal10-light-theme-functional-2026-11-17.md   [data-theme=light] 12-token block added + core.js inverted mapping fixed; light mode now renders (was a no-op); 480px bp + live-viewport check remain

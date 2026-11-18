@@ -7,7 +7,7 @@ Focus: Visual system maturity + UX polish. Establish a design token system, impr
 2. **Information Density Pass** - Reduce vertical whitespace by 20% across all panels without hurting readability. Tighten line-height, reduce padding, consolidate related data into tables where appropriate. Verified: before/after screenshots show reduced height; no text overlap or clipping.
    [PROGRESS 2026-11-19 (Orchestrator on White canonical): All 10 line-height values tokenized (--lh-tight/caption/base/loose/mono); zero hardcoded remain. Remaining: padding consolidation + before/after screenshots for acceptance test.]
 
-3. **Data Visualization Upgrade** - Replace plain-text stats in fleet panel with mini bar charts (goal completion per agent) using inline SVG (no external lib). Animated on load. Verified: 8 bars render correctly; animation completes <500ms; colors match design tokens.
+3. **Data Visualization Upgrade** - Replace plain-text stats in fleet panel with mini bar charts (goal completion per agent) using inline SVG (no external lib). Animated on load. Verified: 8 bars render correctly; animation completes <500ms; colors match design tokens. (verified: 2026-11-19 - ASSIST by Builder (owner=Designer): goalBar() inline-SVG mini bar added to ui/core.js fleet Agent Overview rows + .fgoalbar/.goalbar CSS in ui/app.css. SMIL animate width dur=0.4s(<500ms) fill=freeze,)
 
 4. **Empty State Design** - For every panel, design a "no data" state: icon + helpful message + CTA button. Covers: no goals set, no agents online, no uploads, no escalations. Verified: all 4 empty states render when API returns empty arrays; CTAs are clickable. (pointer: memory/designer/goal2-fleet-states-2026-11-18.md)
 
