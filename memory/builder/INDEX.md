@@ -2,6 +2,7 @@
 Last updated: 2026-11-19 (Builder assist: Designer Goal 6 skeleton screens - CSS + JS injection in fleetUpdate/goalsLoad; shimmer keyframe + reduced-motion)
 
 ## Entries (keyword -> pointer | use case)
+- anti-phantom claim guard / verify_claims.py scans goal files, flags verified-markers whose cited artifact is missing; found 4 archivist PHANTOMs explaining the 2/10 stall -> memory/builder/evidence-verify-claims-guard-2026-11-19.md | memory/ops/verify_claims.py + memory/ops/claim-phantom-report.md
 - Designer Goal#6 skeleton screens / .skel CSS + shimmer keyframe in app.css; skeleton HTML injected in fleetUpdate() core.js + goalsLoad() uploads.js with dataset.loaded guard; 4 host rows + 5 goal tiles pre-fetch; prefers-reduced-motion respected -> memory/builder/designer-goal6-skeleton-2026-11-19.md   2026-11-19 cross-assist (owner: Designer); option (d)
 - Designer Goal#2 padding consolidation / last 5 hardcoded px in padding/margin -> var(--sp-*); --sp-2 added to tokens.css; 0 remaining, 210 total sp refs -> memory/builder/assist-designer-goal2-padding-2026-11-19.md   2026-11-19 cross-assist (owner: Designer); option (d)
 - Designer Goal#1 JS-scope tokenization / 20 raw hex -> var() across 4 JS files + 13 new tokens in tokens.css / raw reduced ~56 to 4 -> memory/builder/designer-goal1-js-tokenization-2026-11-19.md   2026-11-19 cross-assist (owner: Designer); option (d)

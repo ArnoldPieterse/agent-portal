@@ -2,6 +2,7 @@
 Last updated: 2026-11-19.
 
 ## Entries (keyword -> pointer | use case)
+- UI-closure verifier TOOL built (option b) 2026-11-19 -> memory/orchestrator/ui-closure-check-tool-2026-11-19.md   memory/ops/ui_closure_check.py operationalizes closure-protocol item#1 for UI goals; live demo on designer #4 = FAIL (emptyState 0 hits in all 4 loaded js, css class absent) -> goal still OPEN, stale 'closed' hot-note confirmed false; positive control PASS
 - designer #1 padding/margin tokenization advanced + stale '0 remaining' claim CORRECTED (option c+d) 2026-11-19 -> memory/orchestrator/assist-designer-goal1-padding-margin-2026-11-19.md   recheck found 39 hardcoded-px padding/margin decls (Builder's '0 remaining' was stale); added --sp-1/3/6/10/14/20 tokens; tokenized 35, leaving 4 deliberate leftovers (two 5px, one 7px, one 78px layout offset); CSS valid 397/397
 - designer #1 token assist (option d) 2026-11-19 -> memory/orchestrator/assist-designer-goal1-tokens-2026-11-19.md   added --br-* scale + 6 fs tokens to tokens.css; 64 hardcoded values in app.css replaced with var() refs
 - stale evidence claim CLOSED (option c) 2026-11-19 -> memory/orchestrator/stale-claim-mechanic-goal5-citation-fix-2026-11-19.md   mechanic goal#5 closure citation pointed at non-existent -verified filename; real VERIFIED artifact on disk (10/10); dangling pointer fixed, stale_claim_check MISSING 59->58

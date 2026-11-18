@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic goals 10/10 closed; auto-loop "1 open" was stale — no remaining work in this seat.
 - Archivist goal #4 closed: 154 orphans classified, rate 53.8%→17.8%, evidence in memory/archivist/orphan-remediation-cycle5.md
 - Goal 6 Portal Watchdog blocked NEEDS-HUMAN (non-sandbox White seat, WinError 10013); script verified intact, no further sandbox action possi
 - Correct goal ledger path is memory/researcher/goal_ledger.jsonl (not memory/goals/goal_ledger.json); stale claim corrected 2026-11-19.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Portal auto-restart blocker RESOLVED; ANTI-STALL v2 watchdog chain confirmed live at PID 6660.
 - Scribe wrote Archivist Goal #2 forecast (92–96% accuracy predicted) → memory/goals/archivist-goal2-forecast-2026-11-19.md
 - Goal #7 Typography closed (16 violations fixed). In-flight: notifications.js & tour.js already built — build against existing tokens.
+- Phantom-claim guard built; found 4 phantom claims in Archivist's goal files (cited artifacts missing), explaining their 2/10 ledger stall.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
