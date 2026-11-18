@@ -1,171 +1,9052 @@
 {
-  "date": "2026-11-18",
-  "files_scanned": 70,
-  "refs_checked": 288,
-  "phantoms_found": 29,
-  "unique_phantoms": [
-    "memory/ops/load-baseline.json",
-    "memory/ops/agents.json",
-    "memory/ops/probe-evidence.json",
-    "elev.py",
-    "memory/designer/d7_d9_cdp_verify.py",
-    "memory/ops/boot-recovery-log.json",
-    "memory/ops/boot-recovery.json",
-    "memory/ops/clobber-events.json",
-    "memory/builder/test_truncation_detect.py",
-    "memory/ops/fleet-probe-history.json",
-    "memory/ops/verifier-healthcheck-white-2026-11-15.md",
-    "memory/ops/merge-queue.json",
-    "memory/verifier/slo-history.json",
-    "memory/llm/fleet-probe-alias-log.json",
-    "memory/ops/mirror-clobber-pattern-2026-11-14.md",
-    "memory/ops-windows.md"
-  ],
-  "details": [
-    {
-      "file": "memory/ops/INDEX.md",
-      "line": 24,
-      "ref": "memory/ops/load-baseline.json"
-    },
-    {
-      "file": "memory/ops/black-studio-failover-2026-11-16.md",
-      "line": 13,
-      "ref": "memory/ops/agents.json"
-    },
-    {
-      "file": "memory/ops/blockers.md",
-      "line": 9,
-      "ref": "memory/ops/probe-evidence.json"
-    },
-    {
-      "file": "memory/ops/blockers.md",
-      "line": 19,
-      "ref": "elev.py"
-    },
-    {
-      "file": "memory/ops/blockers.md",
-      "line": 29,
-      "ref": "memory/designer/d7_d9_cdp_verify.py"
-    },
-    {
-      "file": "memory/ops/blockers.md",
-      "line": 44,
-      "ref": "elev.py"
-    },
-    {
-      "file": "memory/ops/blockers.md",
-      "line": 44,
-      "ref": "elev.py"
-    },
-    {
-      "file": "memory/ops/blockers.md",
-      "line": 53,
-      "ref": "elev.py"
-    },
-    {
-      "file": "memory/ops/boot-deployment-runbook.md",
-      "line": 54,
-      "ref": "memory/ops/boot-recovery-log.json"
-    },
-    {
-      "file": "memory/ops/boot-detection-runbook.md",
-      "line": 7,
-      "ref": "memory/ops/boot-recovery.json"
-    },
-    {
-      "file": "memory/ops/boot-detection-runbook.md",
-      "line": 37,
-      "ref": "memory/ops/boot-recovery.json"
-    },
-    {
-      "file": "memory/ops/cycle-transition-checklist.md",
-      "line": 16,
-      "ref": "memory/ops/clobber-events.json"
-    },
-    {
-      "file": "memory/ops/goal-progress-2026-11-16.md",
-      "line": 23,
-      "ref": "memory/builder/test_truncation_detect.py"
-    },
-    {
-      "file": "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
-      "line": 8,
-      "ref": "memory/ops/fleet-probe-history.json"
-    },
-    {
-      "file": "memory/ops/mechanic-goal3-red-leg-blocked-2026-11-15.md",
-      "line": 13,
-      "ref": "memory/ops/verifier-healthcheck-white-2026-11-15.md"
-    },
-    {
-      "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
-      "line": 10,
-      "ref": "memory/ops/merge-queue.json"
-    },
-    {
-      "file": "memory/ops/non-sandbox-queue.md",
-      "line": 7,
-      "ref": "elev.py"
-    },
-    {
-      "file": "memory/ops/non-sandbox-queue.md",
-      "line": 42,
-      "ref": "memory/verifier/slo-history.json"
-    },
-    {
-      "file": "memory/ops/non-sandbox-queue.md",
-      "line": 47,
-      "ref": "memory/ops/load-baseline.json"
-    },
-    {
-      "file": "memory/ops/non-sandbox-queue.md",
-      "line": 48,
-      "ref": "memory/ops/load-baseline.json"
-    },
-    {
-      "file": "memory/ops/non-sandbox-queue.md",
-      "line": 53,
-      "ref": "memory/designer/d7_d9_cdp_verify.py"
-    },
-    {
-      "file": "memory/ops/orch-fleetprobe-decision-2026-11-16.md",
-      "line": 7,
-      "ref": "memory/llm/fleet-probe-alias-log.json"
-    },
-    {
-      "file": "memory/ops/pin-guard-extension-ui-files.md",
-      "line": 61,
-      "ref": "memory/ops/mirror-clobber-pattern-2026-11-14.md"
-    },
-    {
-      "file": "memory/ops/probes.md",
-      "line": 2,
-      "ref": "memory/ops-windows.md"
-    },
-    {
-      "file": "memory/ops/schtask-sandbox-limitation.md",
-      "line": 20,
-      "ref": "memory/ops/load-baseline.json"
-    },
-    {
-      "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
-      "line": 3,
-      "ref": "elev.py"
-    },
-    {
-      "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
-      "line": 12,
-      "ref": "memory/ops/load-baseline.json"
-    },
-    {
-      "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
-      "line": 20,
-      "ref": "memory/ops/load-baseline.json"
-    },
-    {
-      "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
-      "line": 34,
-      "ref": "elev.py"
-    }
-  ]
+ "date": "2026-11-18",
+ "script": "memory/archivist/hostdoc_consistency_v2.py",
+ "files_scanned": 80,
+ "refs_checked": 1344,
+ "counts": {
+  "OK": 977,
+  "MOVED": 265,
+  "PHANTOM": 82,
+  "DOCUMENTED-ABSENT": 11,
+  "PROVENANCE": 9
+ },
+ "phantoms_found": 82,
+ "unique_phantoms": [
+  "-2026-11-15.md",
+  "Archivist/Scribe",
+  "BUNDLE-SHA256.txt",
+  "SKILL.md",
+  "Users/White/.agents/skills/portal-memory-modular/SKILL.md",
+  "_2026-11-17x.html",
+  "_YYYY-MM-DDx.html",
+  "_result.json",
+  "adb.html",
+  "agent_portal.log",
+  "archivist/canonical-map.md",
+  "archivist/provenance-audit.md",
+  "boot-start.txt",
+  "dep_graph_gen.py",
+  "designer/index-patched-v2.html",
+  "firewall_fix.bat",
+  "fleet_health_check.py",
+  "goals_data.json",
+  "handler_api.py",
+  "handler_ui.py",
+  "json/.jsonl",
+  "json/.md",
+  "lan_probe.py",
+  "lan_probe_result.txt",
+  "memory/designer/index_html_CANONICAL_",
+  "memory/designer/ui_app_css_CANONICAL_",
+  "memory/designer/ui_app_css_CANONICAL_a1b2c3d4e5f6_2026-11-17x.html",
+  "memory/goals/archive/cycle-2",
+  "memory/llm/fleet-probe-alias-log.jsonl",
+  "memory/mechanic/batch-tier-b-run.json",
+  "memory/mechanic/dep_graph_gen.py",
+  "memory/memory",
+  "memory/ops/boot-recovery.jsonl",
+  "memory/ops/failover-drill-",
+  "memory/ops/netcmd-ops.jsonl",
+  "memory/ops/verifier-healthcheck-white-2026-11-15.md",
+  "memory/researcher/benchmark-summary-2026-11-16.md",
+  "memory/scribe/compression_fidelity_trend.jsonl",
+  "memory/scribe/index_html_pre-r14-ac5e1560",
+  "mirror_canary_result.json",
+  "portal/agents_prompt.py",
+  "portal/api_snapshots.py",
+  "portal/autoloop.py",
+  "portal/chat_stream.py",
+  "portal/fleet_perf.py",
+  "portal/memory_state.py",
+  "portal/rag.py",
+  "portal/safety.py",
+  "portal/sandbox_sync.py",
+  "portal/umq.py",
+  "portal_restart.log",
+  "probe_fleet_8099_r80.py",
+  "probe_white_goals_r24.py",
+  "probe_white_reach_result.json",
+  "probe_winrm_r17.txt",
+  "prompt_builder.py",
+  "pyc/.bak",
+  "reboot_dryrun_r2.py",
+  "reboot_dryrun_remotes.py",
+  "ref.json",
+  "ref.jsonl",
+  "sim_fleet_probe_degrade.py",
+  "todo_done_parts/TODO_done_part_NNN.md"
+ ],
+ "details": [
+  {
+   "file": "MEMORY.md",
+   "line": 4,
+   "ref": "memory/ops/host-port-task-map-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 7,
+   "ref": "memory/portal/file-modularity.md",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 8,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 12,
+   "ref": "memory/ops/autoloop.md",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 15,
+   "ref": "llm/instances.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/instances.md",
+    "memory/llm/instances.md"
+   ]
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 15,
+   "ref": "portal/architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 15,
+   "ref": "portal/bugs/xtalk-completion.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/bugs/xtalk-completion.md",
+    "memory/portal/bugs/xtalk-completion.md"
+   ]
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 15,
+   "ref": "llm/instances.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/instances.md",
+    "memory/llm/instances.md"
+   ]
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 15,
+   "ref": "ops/windows-runbook.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "memory/ops/windows-runbook.md"
+   ]
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 15,
+   "ref": "ops/probes.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/probes.md",
+    "memory/ops/probes.md"
+   ]
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 17,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 25,
+   "ref": "fleet_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 26,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 27,
+   "ref": "memory/mechanic/goal4_closure_oneshot.py",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 28,
+   "ref": "deploy_reboot_recovery_all.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/deploy_reboot_recovery_all.py"
+   ]
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 30,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 35,
+   "ref": "elevated_helper.py",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 35,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 35,
+   "ref": "install_elevated_helper.bat",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 35,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 35,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 35,
+   "ref": "install_elevated_helper.bat",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 35,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 35,
+   "ref": "portal_loadtest.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 2,
+   "ref": "memory/goals/scheduled-background.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 5,
+   "ref": "memory/goals/scheduled-background.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 5,
+   "ref": "memory/run-rules.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 5,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 5,
+   "ref": "memory/portal/file-modularity.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 7,
+   "ref": "run-rules.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/run-rules.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 9,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 12,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 13,
+   "ref": "memory/portal/file-modularity.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 14,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 15,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 15,
+   "ref": "memory/designer/index_html_CANONICAL_10bbd8ddf982_2026-11-16h.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 18,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 18,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 18,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 20,
+   "ref": "memory/portal/file-modularity.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 23,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 23,
+   "ref": "restart_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 24,
+   "ref": "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 24,
+   "ref": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 26,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 26,
+   "ref": "memory/ops/merge-queue",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 28,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 31,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 34,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 34,
+   "ref": "memory/goals/archive",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 35,
+   "ref": "memory/goals/cycle2-proposals-raw-2026-11-16.txt",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 36,
+   "ref": "memory/goals/cycle2-kickoff-2026-11-16.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 37,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 37,
+   "ref": "GOAL_RESET_PENDING.json",
+   "status": "MOVED",
+   "actual": [
+    "memory/goals/GOAL_RESET_PENDING.json"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 38,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 43,
+   "ref": "netcmd.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 43,
+   "ref": "memory/ops/netcmd-ops.jsonl",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 45,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 48,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 51,
+   "ref": "memory/verifier",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 51,
+   "ref": "-2026-11-15.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 51,
+   "ref": "memory/builder/uploads-panel-verify-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 51,
+   "ref": "memory/ops/black-reload-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 52,
+   "ref": "tunnel_urls.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 53,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 57,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 65,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 66,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 66,
+   "ref": "user_messages.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 67,
+   "ref": "recover_force_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 67,
+   "ref": "trigger_group_run.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 70,
+   "ref": "evolution/README.md",
+   "status": "MOVED",
+   "actual": [
+    "README.md",
+    "AgentPortal_V1/README.md",
+    "archive/README.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 71,
+   "ref": "evolution.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 75,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 76,
+   "ref": "memory/projects/evolution-layer-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 78,
+   "ref": "memory/llm/hosts.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 79,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 79,
+   "ref": "memory/llm/hosts.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 80,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 80,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 81,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 81,
+   "ref": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 82,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 85,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 86,
+   "ref": "portal_start.bat",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 86,
+   "ref": "fleet_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 86,
+   "ref": "daily_git_commit.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 89,
+   "ref": "memory/llm/model-id-check-2026-11-14.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 90,
+   "ref": "memory_mirror.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 91,
+   "ref": "fleet_reload_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 93,
+   "ref": "SKILL.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 95,
+   "ref": "index_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/index_check.py"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 95,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 96,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 97,
+   "ref": "memory/verifier/fleet_crosscheck.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 97,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 97,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 97,
+   "ref": "memory/verifier/fleet_crosscheck_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 97,
+   "ref": "memory/ops/fleet-state-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 98,
+   "ref": "memory/designer/index-audit-critique-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 99,
+   "ref": "SKILL.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 99,
+   "ref": "Users/White/.agents/skills/portal-memory-modular/SKILL.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 100,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 101,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 101,
+   "ref": "goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 102,
+   "ref": "memory/llm/model-id-check-2026-11-14.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 106,
+   "ref": "goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 107,
+   "ref": "backend_swap_drill_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 108,
+   "ref": "pyc/.bak",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 108,
+   "ref": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 109,
+   "ref": "bugs/INDEX.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/INDEX.md",
+    "AgentPortal_V1/memory/llm/INDEX.md",
+    "AgentPortal_V1/memory/ops/INDEX.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 109,
+   "ref": "memory/archivist/index-integrity-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 110,
+   "ref": "memory/builder/prune_regression.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 110,
+   "ref": "memory/portal/prune-edge-cases-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 112,
+   "ref": "prune-log.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/prune-log.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 113,
+   "ref": "memory/builder/upload_path_safety.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 114,
+   "ref": "memory/researcher/probe_api_git.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 115,
+   "ref": "daily_git_commit.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 116,
+   "ref": "fleet_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 117,
+   "ref": "memory/ops/host-port-task-map-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 117,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 118,
+   "ref": "git-hygiene.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/git-hygiene.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 118,
+   "ref": "_provenance_missing.txt",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 119,
+   "ref": "builder/INDEX.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/INDEX.md",
+    "AgentPortal_V1/memory/llm/INDEX.md",
+    "AgentPortal_V1/memory/ops/INDEX.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 120,
+   "ref": "memory/researcher/open-questions-log.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 121,
+   "ref": "memory/llm/model-id-check-2026-11-14.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 123,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 125,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 125,
+   "ref": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 126,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 128,
+   "ref": "memory/llm/model-id-check-2026-11-14.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 130,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 131,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 132,
+   "ref": "white_realias_result.json",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/white_realias_result.json"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 135,
+   "ref": "llm/studio-api.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/studio-api.md",
+    "memory/llm/studio-api.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 136,
+   "ref": "llm/hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 139,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 139,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 140,
+   "ref": "memory/builder/arnold-restart-r19.ps1",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 140,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 140,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 141,
+   "ref": "repin_root_index.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/repin_root_index.py"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 141,
+   "ref": "memory/designer/index_html_black_5.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 145,
+   "ref": "memory/builder/repin_root_index.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 146,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 146,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 146,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 147,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 148,
+   "ref": "memory/builder/arnold-restart-r8.ps1",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 150,
+   "ref": "index_html_pre-r14-9c6b08e3.html",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/index_html_pre-r14-9c6b08e3.html"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 150,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 150,
+   "ref": "memory/mechanic/a-r14-write-path-2026-11-13.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 152,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 152,
+   "ref": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 153,
+   "ref": "memory/scribe/ops-r6-synthesis-2026-11-13.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 153,
+   "ref": "memory/mechanic/a-r14-write-path-2026-11-13.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 153,
+   "ref": "memory/synthesis/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 155,
+   "ref": "arnold-restart-r8.ps1",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/arnold-restart-r8.ps1"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 155,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 157,
+   "ref": "memory/scribe/index_html_pre-r14-ac5e1560",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 157,
+   "ref": "adb.html",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 159,
+   "ref": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 160,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 161,
+   "ref": "arnold-restart-r8.ps1",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/arnold-restart-r8.ps1"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 163,
+   "ref": "memory/goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 163,
+   "ref": "memory/goals/2026-11-13-agent-goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 163,
+   "ref": "memory/goals/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 163,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 163,
+   "ref": "memory/synthesis/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 163,
+   "ref": "Archivist/Pale",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "TODO.md",
+   "line": 164,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 165,
+   "ref": "memory/designer/index_html_black_5.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 166,
+   "ref": "memory/builder/arnold-restart-r8.ps1",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 166,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 170,
+   "ref": "memory/synthesis/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 170,
+   "ref": "goals/INDEX.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/INDEX.md",
+    "AgentPortal_V1/memory/llm/INDEX.md",
+    "AgentPortal_V1/memory/ops/INDEX.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 170,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 172,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 174,
+   "ref": "Users/White/.unsloth/studio/sandbox/_default/index.html",
+   "status": "MOVED",
+   "actual": [
+    "index.html",
+    "AgentPortal_V1/index.html",
+    "calculator-app/index.html"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 175,
+   "ref": "synthesis/INDEX.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/INDEX.md",
+    "AgentPortal_V1/memory/llm/INDEX.md",
+    "AgentPortal_V1/memory/ops/INDEX.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 176,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 176,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 177,
+   "ref": "memory/builder/arnold-restart-r8.ps1",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 177,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 177,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 177,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 179,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 180,
+   "ref": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 180,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 181,
+   "ref": "memory/builder/arnold-restart-r8.ps1",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 181,
+   "ref": "arnold-restart-r8.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/arnold-restart-r8.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 181,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 183,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 184,
+   "ref": "memory/synthesis/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 187,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 189,
+   "ref": "designer/files-panel-hunks-r5.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/files-panel-hunks-r5.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 189,
+   "ref": "memory/designer",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 189,
+   "ref": "memory/designer/index_html_black_5.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 190,
+   "ref": "memory/orchestrator_index_html_canonical_pre-r8.ac5e1560.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 191,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 192,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 192,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 193,
+   "ref": "memory/builder",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 193,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 193,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 193,
+   "ref": "designer/files-panel-hunks-r5.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/files-panel-hunks-r5.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 194,
+   "ref": "TODO.md/MEMORY.md",
+   "status": "MOVED",
+   "actual": [
+    "MEMORY.md",
+    "AgentPortal_V1/MEMORY.md",
+    "agents/orchestrator/MEMORY.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 194,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 194,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 194,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 197,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 197,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 198,
+   "ref": "designer/files-panel-hunks-r5.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/files-panel-hunks-r5.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 198,
+   "ref": "memory/designer/",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 200,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 201,
+   "ref": "files-panel-hunks-r5.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/files-panel-hunks-r5.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 201,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 201,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 205,
+   "ref": "memory/mechanic/memory_mirror_fixed.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 205,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 207,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 207,
+   "ref": "TODO.md/MEMORY.md",
+   "status": "MOVED",
+   "actual": [
+    "MEMORY.md",
+    "AgentPortal_V1/MEMORY.md",
+    "agents/orchestrator/MEMORY.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 207,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 209,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 213,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 215,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 219,
+   "ref": "memory/llm/alias-check-1113-r2.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 221,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 222,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 224,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 225,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 229,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 229,
+   "ref": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 232,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 232,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 233,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 234,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 234,
+   "ref": "memory/llm/",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 237,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 240,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 248,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 248,
+   "ref": "memory/ops/",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 250,
+   "ref": "memory/portal/",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 253,
+   "ref": "memory/llm/",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 256,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 260,
+   "ref": "group_e2e.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 263,
+   "ref": "memory/portal/testing.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 264,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 268,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 269,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 271,
+   "ref": "memory/ops/",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 275,
+   "ref": "MEMORY.md/TODO.md",
+   "status": "MOVED",
+   "actual": [
+    "TODO.md",
+    "AgentPortal_V1/TODO.md",
+    "agents/orchestrator/TODO.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 276,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 280,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 289,
+   "ref": "memory/portal/ui-tokens.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 292,
+   "ref": "archivist/index-sweep-2026-11-13.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/index-sweep-2026-11-13.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 293,
+   "ref": "archivist/index_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/index_check.py"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 294,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 294,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 295,
+   "ref": "memory/ops/git-hygiene.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 295,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 296,
+   "ref": "archivist/prune-log.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/prune-log.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 297,
+   "ref": "archivist/provenance-audit.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 298,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 299,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 299,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 299,
+   "ref": "architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 299,
+   "ref": "archivist/canonical-map.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 300,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 304,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 305,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 306,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 310,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 311,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 311,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 312,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 313,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 316,
+   "ref": "memory/ops/",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 320,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 322,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 325,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 325,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 328,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 328,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 331,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 331,
+   "ref": "memory/mechanic/memory_mirror_fixed.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 332,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 332,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 335,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 343,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 343,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 346,
+   "ref": "Archivist/Scribe",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 349,
+   "ref": "red_setup_result2.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 349,
+   "ref": "red_manual_verify.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 349,
+   "ref": "red_chain_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 349,
+   "ref": "red_chain_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 349,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 352,
+   "ref": "red_q8_wait2.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 352,
+   "ref": "red_setup_result2.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 352,
+   "ref": "red_chain_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 356,
+   "ref": "q8_red2.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 356,
+   "ref": "red_setup_result2.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 356,
+   "ref": "red_chain.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 356,
+   "ref": "red_smoke.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 356,
+   "ref": "smoke8.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 356,
+   "ref": "group_e2e.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 356,
+   "ref": "red_chain_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 358,
+   "ref": "red_chain_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 359,
+   "ref": "red_setup_result2.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 359,
+   "ref": "red_chain_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 359,
+   "ref": "red_chain_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 360,
+   "ref": "q8_red2.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 360,
+   "ref": "red_setup_result2.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 360,
+   "ref": "red_q8_wait2.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 360,
+   "ref": "red_chain.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 361,
+   "ref": "red_chain_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 362,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 364,
+   "ref": "black_hash_q8_out2.txt",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/black_hash_q8_out2.txt"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 364,
+   "ref": "pale_cancel.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 365,
+   "ref": "copy_tail/q8_red2.log",
+   "status": "MOVED",
+   "actual": [
+    "q8_red2.log"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 368,
+   "ref": "red_hash_q8.ps1",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 368,
+   "ref": "black_hash_q8.ps1",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/black_hash_q8.ps1"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 368,
+   "ref": "black_hash_q8_out2.txt",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/black_hash_q8_out2.txt"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 369,
+   "ref": "smoke8.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 369,
+   "ref": "smoke6.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 369,
+   "ref": "group_e2e.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 369,
+   "ref": "group_e2e_result_8agent.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 369,
+   "ref": "red_smoke.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 370,
+   "ref": "red_chain.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 370,
+   "ref": "red_smoke.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 370,
+   "ref": "smoke8.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 370,
+   "ref": "group_e2e.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 370,
+   "ref": "red_chain_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 371,
+   "ref": "red_agents_ready.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 371,
+   "ref": "merge_red_agents.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 371,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 371,
+   "ref": "red_dual_load.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 371,
+   "ref": "red_dual_load_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 371,
+   "ref": "red_realias.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 372,
+   "ref": "memory/ops/windows-runbook.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 372,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 372,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 373,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 373,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 374,
+   "ref": "red_agents_ready.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 374,
+   "ref": "red_realias.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 378,
+   "ref": "red_setup_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 378,
+   "ref": "red_dual_load.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 378,
+   "ref": "red_dual_load_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 378,
+   "ref": "red_realias.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 378,
+   "ref": "red_agents_ready.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 378,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 378,
+   "ref": "merge_red_agents.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 379,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 382,
+   "ref": "serial_e2e_wait.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 383,
+   "ref": "recover_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 384,
+   "ref": "serial_e2e_wait.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 384,
+   "ref": "group_e2e.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 384,
+   "ref": "serial_e2e_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 384,
+   "ref": "group_e2e.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 384,
+   "ref": "group_e2e_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 385,
+   "ref": "ops/windows-runbook.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "memory/ops/windows-runbook.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 386,
+   "ref": "serial_e2e_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 386,
+   "ref": "group_e2e.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 392,
+   "ref": "q8_black2.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 393,
+   "ref": "black_dual_load_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 399,
+   "ref": "pale_dl.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 400,
+   "ref": "r2_smoke_result.txt",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 406,
+   "ref": "q8_pale2.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 406,
+   "ref": "q8_black2.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 409,
+   "ref": "r2_smoke_wait.py",
+   "status": "MOVED",
+   "actual": [
+    "archive/one_shot_tasks_20261117/r2_smoke_wait.py"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 409,
+   "ref": "r2_smoke_result.txt",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 412,
+   "ref": "pale_dl.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 412,
+   "ref": "q8_pale.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 413,
+   "ref": "host_api.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 413,
+   "ref": "probe_black.py",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/probe_black.py"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 416,
+   "ref": "q8_pale.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 416,
+   "ref": "q8_black.log",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 419,
+   "ref": "scan_red.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 421,
+   "ref": "red_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 434,
+   "ref": "probe_quinn.py",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/probes/probe_quinn.py",
+    "archive/orphaned_20261117/probe_quinn.py"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 441,
+   "ref": "probe_black.py",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/probe_black.py"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 441,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 443,
+   "ref": "probe_black.py",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/probe_black.py"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 445,
+   "ref": "probe_black_winrm2.ps1",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 445,
+   "ref": "elev_trustedhosts.ps1",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 448,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 449,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 450,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 451,
+   "ref": "r2_smoke_result.txt",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 451,
+   "ref": "r2_smoke_wait.py",
+   "status": "MOVED",
+   "actual": [
+    "archive/one_shot_tasks_20261117/r2_smoke_wait.py"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 459,
+   "ref": "memory/llm/hosts.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 460,
+   "ref": "ops/windows-runbook.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "memory/ops/windows-runbook.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 461,
+   "ref": "scan_red.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 469,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 470,
+   "ref": "memory/portal",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 470,
+   "ref": "architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 470,
+   "ref": "memory/llm",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 470,
+   "ref": "memory/ops",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 470,
+   "ref": "bugs/INDEX.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/INDEX.md",
+    "AgentPortal_V1/memory/llm/INDEX.md",
+    "AgentPortal_V1/memory/ops/INDEX.md"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 471,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 472,
+   "ref": "memory/llm/instances.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 472,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 473,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 473,
+   "ref": "timer-app/index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 473,
+   "ref": "calculator-app/index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 473,
+   "ref": "model_list_now.json",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/model_list_now.json"
+   ]
+  },
+  {
+   "file": "TODO.md",
+   "line": 473,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 473,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 474,
+   "ref": "SKILL.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 475,
+   "ref": "timer-app/index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 475,
+   "ref": "json/.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 476,
+   "ref": "calculator.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 481,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 487,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 489,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 490,
+   "ref": "timer-app/index.html",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 503,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 511,
+   "ref": "TODO_archive_20261111.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 522,
+   "ref": "recover_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 523,
+   "ref": "fleet_reload_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 524,
+   "ref": "smoke8.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 526,
+   "ref": "memory/synthesis/2026-11-16-contradiction-rulings.md",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 527,
+   "ref": "goal_cycle_check.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 527,
+   "ref": "sot_audit.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 527,
+   "ref": "evidence_spotcheck.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 527,
+   "ref": "todo_freshness_check.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 527,
+   "ref": "citation_monitor_v2.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 527,
+   "ref": "parity_audit.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 527,
+   "ref": "open_questions_flag.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 527,
+   "ref": "model_benchmark.py",
+   "status": "OK"
+  },
+  {
+   "file": "TODO.md",
+   "line": 528,
+   "ref": "memory/researcher/benchmark-summary-2026-11-16.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "TODO.md",
+   "line": 529,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 3,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 9,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 17,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 18,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 19,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 20,
+   "ref": "user_messages.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 21,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 22,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 31,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 48,
+   "ref": "memory/archivist",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 57,
+   "ref": "memory/portal/api-reference.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 61,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 62,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 63,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 68,
+   "ref": "archivist/supersession_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/supersession_check.py",
+    "memory/scribe/supersession_check.py"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 78,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 79,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 81,
+   "ref": "memory/goals/archive/cycle-2",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 88,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 89,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 90,
+   "ref": "memory/portal/api-reference.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 91,
+   "ref": "memory/llm/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 92,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 93,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 94,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 95,
+   "ref": "memory/projects/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 96,
+   "ref": "memory/synthesis/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 97,
+   "ref": "memory/designer/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 98,
+   "ref": "memory/mechanic/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 99,
+   "ref": "memory/handoffs/PROTOCOL.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 100,
+   "ref": "archivist/freshness-report.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/freshness-report.md"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 101,
+   "ref": "archivist/supersession-report.json",
+   "status": "MOVED",
+   "actual": [
+    "memory/scribe/supersession-report.json"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 107,
+   "ref": "knowledge_graph.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/knowledge_graph.py"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 108,
+   "ref": "memory_health.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/memory_health.py"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 108,
+   "ref": "freshness-report.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/freshness-report.md"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 109,
+   "ref": "gen_api_ref.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/gen_api_ref.py"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 109,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 109,
+   "ref": "api-reference.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/portal/api-reference.md"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 110,
+   "ref": "supersession_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/supersession_check.py",
+    "memory/scribe/supersession_check.py"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 111,
+   "ref": "decay_score.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/decay_score.py"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 112,
+   "ref": "snapshot.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/snapshot.py"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 113,
+   "ref": "index_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/index_check.py"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 117,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 119,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 120,
+   "ref": "user_messages.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 125,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 126,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 127,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 127,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 128,
+   "ref": "archivist/index_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/index_check.py"
+   ]
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 131,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ONBOARDING.md",
+   "line": 133,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 5,
+   "ref": "memory/ops/windows-runbook.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 6,
+   "ref": "memory/ops/host-port-task-map-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 7,
+   "ref": "memory/ops/schtask-deps.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 8,
+   "ref": "memory/ops/hotline-v2.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 11,
+   "ref": "memory/ops/windows-runbook.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 12,
+   "ref": "memory/ops/host-port-task-map-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 13,
+   "ref": "memory/ops/schtask-deps.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 14,
+   "ref": "memory/ops/hotline-v2.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 15,
+   "ref": "memory/ops/non-sandbox-queue.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 16,
+   "ref": "memory/ops/blockers.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 17,
+   "ref": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 18,
+   "ref": "memory/ops/git-hygiene.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 19,
+   "ref": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 20,
+   "ref": "memory/ops/memory-sync-spec-r13.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 23,
+   "ref": "fleet_probe_v2.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet_probe_v2.py"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 24,
+   "ref": "load_probe.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_probe.py"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 24,
+   "ref": "memory/ops/load-baseline.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 25,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 26,
+   "ref": "fleet_health_check.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 27,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 28,
+   "ref": "portal_watchdog.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 29,
+   "ref": "sim_fleet_probe_degrade.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 31,
+   "ref": "memory/ops",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 32,
+   "ref": "fleet-probe-history.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet-probe-history.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 33,
+   "ref": "probe-evidence.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/probe-evidence.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 34,
+   "ref": "load-baseline.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/load_trend_test/load-baseline.jsonl",
+    "memory/ops/load-baseline.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 35,
+   "ref": "model-load.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/model-load.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 36,
+   "ref": "clobber-events.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/clobber-events.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 37,
+   "ref": "wedge-events.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/wedge-events.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 38,
+   "ref": "canary-deploys.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/canary-deploys.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 39,
+   "ref": "hotpatch-events.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/hotpatch-events.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 40,
+   "ref": "net-egress-log.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/net-egress-log.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 43,
+   "ref": "risk-register-cycle2.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/risk-register-cycle2.md"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 44,
+   "ref": "goal-progress-2026-11-16.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/goal-progress-2026-11-16.md"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 45,
+   "ref": "mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 46,
+   "ref": "mechanic-goal3-closure-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/mechanic-goal3-closure-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 47,
+   "ref": "reboot-dryrun-remote-legs-2026-11-16.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/reboot-dryrun-remote-legs-2026-11-16.md"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 48,
+   "ref": "portal-down-2026-11-16.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/portal-down-2026-11-16.md"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 51,
+   "ref": "memory/ops/agent-onboarding-playbook.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 52,
+   "ref": "memory/ops/pdf-reporting.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 53,
+   "ref": "memory/ops/ingestion-spec.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 54,
+   "ref": "memory/ops/fleet-state-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 55,
+   "ref": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 56,
+   "ref": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 57,
+   "ref": "memory/ops/verifier-ac-v09-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 58,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 58,
+   "ref": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 60,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 61,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 62,
+   "ref": "builder-fleet-8099-sweep-r80-2026-11-14.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 63,
+   "ref": "quarantine-index-html-variants-2026-11-13.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/quarantine-index-html-variants-2026-11-13.md"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 64,
+   "ref": "white-lan-firewall-drop-2026-11-14.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/white-lan-firewall-drop-2026-11-14.md"
+   ]
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 65,
+   "ref": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 66,
+   "ref": "memory/ops/black-studio-failover-2026-11-16.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/INDEX.md",
+   "line": 67,
+   "ref": "memory/ops/autoloop.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/agent-onboarding-playbook.md",
+   "line": 5,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/agent-onboarding-playbook.md",
+   "line": 10,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/agent-onboarding-playbook.md",
+   "line": 14,
+   "ref": "model_check_1115.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/agent-onboarding-playbook.md",
+   "line": 14,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/agent-onboarding-playbook.md",
+   "line": 16,
+   "ref": "memory/llm/model-id-check-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/agent-onboarding-playbook.md",
+   "line": 19,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md",
+   "line": 3,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md",
+   "line": 3,
+   "ref": "memory/ops/autoloop.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md",
+   "line": 20,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md",
+   "line": 26,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/autoloop.md",
+   "line": 26,
+   "ref": "memory/ops/autoloop.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 3,
+   "ref": "memory/goals/scheduled-background.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 9,
+   "ref": "load_trend.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/load_trend.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 11,
+   "ref": "memory/mechanic/load_trend.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_trend.py"
+   ]
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 13,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 13,
+   "ref": "load_trend.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/load_trend.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 14,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 21,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 23,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 23,
+   "ref": "mirror_repair.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 25,
+   "ref": "memory/mechanic/mirror-repairs.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 29,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 38,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 38,
+   "ref": "dep_graph_gen.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 40,
+   "ref": "memory/mechanic/dep_graph_gen.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 51,
+   "ref": "memory/mechanic/test_chaos_drill_sim.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 62,
+   "ref": "memory/archivist/decay_score.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 65,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 65,
+   "ref": "decay_score.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/decay_score.py"
+   ]
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 78,
+   "ref": "memory/archivist/snapshot.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 81,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 81,
+   "ref": "snapshot.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/snapshot.py"
+   ]
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 95,
+   "ref": "memory/scribe/compression_fidelity_trend.jsonl",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 105,
+   "ref": "memory/verifier/smb_drift_detector.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 108,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 108,
+   "ref": "smb_drift_detector.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/verifier/smb_drift_detector.py"
+   ]
+  },
+  {
+   "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+   "line": 134,
+   "ref": "goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/black-reload-2026-11-15.md",
+   "line": 12,
+   "ref": "black_dual_load2.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/black-reload-2026-11-15.md",
+   "line": 13,
+   "ref": "tunnel_urls.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/black-studio-failover-2026-11-16.md",
+   "line": 13,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/black-studio-failover-2026-11-16.md",
+   "line": 13,
+   "ref": "memory/ops/agents.json.pre-black-failover.20261116-213632.bak",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/black-studio-failover-2026-11-16.md",
+   "line": 16,
+   "ref": "run_state.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 9,
+   "ref": "memory/ops/probe-evidence.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 18,
+   "ref": "memory/ops/load_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 19,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 19,
+   "ref": "memory/ops/loadtest/register_daily_probe.bat",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 19,
+   "ref": "memory/ops/load_trend.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 19,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 26,
+   "ref": "d7_d9_cdp_verify.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 26,
+   "ref": "design_breakpoint_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/design_breakpoint_check.py"
+   ]
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 28,
+   "ref": "memory/designer/live_verify_g578.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 28,
+   "ref": "live_verify2_g578.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/live_verify2_g578.py"
+   ]
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 29,
+   "ref": "memory/designer/d7_d9_cdp_verify.py",
+   "status": "MOVED",
+   "actual": [
+    "d7_d9_cdp_verify.py"
+   ]
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 31,
+   "ref": "memory/orchestrator/designer-qa-gate-unblock-2026-11-17.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 41,
+   "ref": "memory/verifier/slo_enforce.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 43,
+   "ref": "memory/verifier/slo_enforce.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 44,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 44,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 45,
+   "ref": "memory/verifier/register_slo_task.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 45,
+   "ref": "slo_enforce.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/verifier/slo_enforce.py"
+   ]
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 45,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 49,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 49,
+   "ref": "parse_mirror_events.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/researcher/parse_mirror_events.py"
+   ]
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 51,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 53,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 55,
+   "ref": "memory/researcher/parse_mirror_events.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 77,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 81,
+   "ref": "reboot_recover.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 83,
+   "ref": "memory/mechanic/deploy_reboot_recovery_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 84,
+   "ref": "memory/mechanic/deploy_reboot_recovery_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 84,
+   "ref": "memory/mechanic/reboot-recovery.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 90,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 90,
+   "ref": "memory_mirror_hosts.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 91,
+   "ref": "mechanic.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/goals/mechanic.md",
+    "memory/goals/archive/cycle2-2026-11-17/mechanic.md"
+   ]
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 91,
+   "ref": "memory/ops/probe-evidence.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/blockers.md",
+   "line": 92,
+   "ref": "live_verify_g578.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/live_verify_g578.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 3,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 3,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 3,
+   "ref": "boot_recovery.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/boot_recovery.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 3,
+   "ref": "deploy_boot_task.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/deploy_boot_task.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 3,
+   "ref": "deploy_startup_folder.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/deploy_startup_folder.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 18,
+   "ref": "memory/ops/boot_recovery.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 19,
+   "ref": "memory/ops/fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 22,
+   "ref": "memory/ops/deploy_boot_task.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 25,
+   "ref": "memory/ops/verify_boot_deployment.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 31,
+   "ref": "memory/ops",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 32,
+   "ref": "memory/ops/boot_recovery.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 35,
+   "ref": "memory/ops/deploy_startup_folder.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 38,
+   "ref": "memory/ops/deploy_startup_folder.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 46,
+   "ref": "memory/ops/boot_recovery.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 48,
+   "ref": "memory/ops/boot-recovery-log.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 52,
+   "ref": "boot-start.txt",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 54,
+   "ref": "memory/ops/boot-recovery-log.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 54,
+   "ref": "boot_recovery.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/boot_recovery.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 60,
+   "ref": "boot_recovery.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/boot_recovery.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 60,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 60,
+   "ref": "memory/ops",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 63,
+   "ref": "deploy_boot_task.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/deploy_boot_task.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-deployment-runbook.md",
+   "line": 63,
+   "ref": "deploy_startup_folder.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/deploy_startup_folder.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-detection-runbook.md",
+   "line": 5,
+   "ref": "boot_recovery.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/boot_recovery.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-detection-runbook.md",
+   "line": 6,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/boot-detection-runbook.md",
+   "line": 7,
+   "ref": "memory/ops/boot-recovery.jsonl",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/boot-detection-runbook.md",
+   "line": 13,
+   "ref": "path/to/agent_portal/boot_recovery.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/boot_recovery.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-detection-runbook.md",
+   "line": 18,
+   "ref": "path/to/agent_portal/boot_recovery.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/boot_recovery.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-detection-runbook.md",
+   "line": 24,
+   "ref": "path/to/agent_portal/boot_recovery.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/boot_recovery.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-detection-runbook.md",
+   "line": 30,
+   "ref": "path/to/agent_portal/boot_recovery.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/boot_recovery.py"
+   ]
+  },
+  {
+   "file": "memory/ops/boot-detection-runbook.md",
+   "line": 37,
+   "ref": "memory/ops/boot-recovery.jsonl",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/boot-detection-runbook.md",
+   "line": 42,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md",
+   "line": 3,
+   "ref": "probe_fleet_8099_r80.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md",
+   "line": 20,
+   "ref": "white-lan-firewall-drop-2026-11-14.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/white-lan-firewall-drop-2026-11-14.md"
+   ]
+  },
+  {
+   "file": "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md",
+   "line": 23,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 2,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 2,
+   "ref": "memory/ops/non-sandbox-queue.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 2,
+   "ref": "memory/goals/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 16,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 16,
+   "ref": "memory/ops/clobber-events.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 19,
+   "ref": "memory/ops/windows-runbook.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 19,
+   "ref": "runbook-notes.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/runbook-notes.md"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 22,
+   "ref": "memory/ops/non-sandbox-queue.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 24,
+   "ref": "blockers.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/blockers.md"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 27,
+   "ref": "memory/goals/archive",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 28,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 29,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 30,
+   "ref": "memory/goals/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 33,
+   "ref": "load-baseline.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/load_trend_test/load-baseline.jsonl",
+    "memory/ops/load-baseline.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 34,
+   "ref": "fleet-probe-history.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet-probe-history.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 34,
+   "ref": "watchdog.log",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/watchdog.log"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 38,
+   "ref": "memory/ops/risk-register-cycle2.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 43,
+   "ref": "fleet_probe_v2.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet_probe_v2.py"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle-transition-checklist.md",
+   "line": 43,
+   "ref": "load_probe.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_probe.py"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 2,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 7,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 7,
+   "ref": "watchdog.log",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/watchdog.log"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 8,
+   "ref": "load-baseline.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/load_trend_test/load-baseline.jsonl",
+    "memory/ops/load-baseline.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 9,
+   "ref": "probe-evidence.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/probe-evidence.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 10,
+   "ref": "watchdog.log",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/watchdog.log"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 14,
+   "ref": "load_trend.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_trend.py"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 14,
+   "ref": "load_probe.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_probe.py"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 15,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 15,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 15,
+   "ref": "memory/designer/index_html_CANONICAL_",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 16,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 21,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 21,
+   "ref": "memory/ops/portal-split-seams-2026-11-17.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 22,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 22,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 25,
+   "ref": "api_contract_test.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/api_contract_test.py"
+   ]
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 32,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/cycle3-readiness-snapshot-2026-11-17.md",
+   "line": 34,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/fleet-state-2026-11-15.md",
+   "line": 9,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/fleet-state-2026-11-15.md",
+   "line": 9,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/fleet-state-2026-11-15.md",
+   "line": 10,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/fleet-state-2026-11-15.md",
+   "line": 10,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/fleet-state-2026-11-15.md",
+   "line": 13,
+   "ref": "portal_run_err.log",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/fleet-state-2026-11-15.md",
+   "line": 17,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/fleet-state-2026-11-15.md",
+   "line": 17,
+   "ref": "memory/verifier/fleet_crosscheck_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/git-hygiene.md",
+   "line": 2,
+   "ref": "archivist.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/goals/archivist.md",
+    "memory/goals/archive/cycle2-2026-11-17/archivist.md"
+   ]
+  },
+  {
+   "file": "memory/ops/git-hygiene.md",
+   "line": 7,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/git-hygiene.md",
+   "line": 13,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/git-hygiene.md",
+   "line": 19,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/git-hygiene.md",
+   "line": 19,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "memory/ops/git-hygiene.md",
+   "line": 23,
+   "ref": "portal/INDEX.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/INDEX.md",
+    "AgentPortal_V1/memory/llm/INDEX.md",
+    "AgentPortal_V1/memory/ops/INDEX.md"
+   ]
+  },
+  {
+   "file": "memory/ops/git-hygiene.md",
+   "line": 23,
+   "ref": "architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "memory/ops/git-hygiene.md",
+   "line": 24,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-ledger-bgsched-fix-2026-11-18.md",
+   "line": 4,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-ledger-bgsched-fix-2026-11-18.md",
+   "line": 5,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-ledger-bgsched-fix-2026-11-18.md",
+   "line": 5,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 4,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 5,
+   "ref": "memory/memory",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 5,
+   "ref": "memory/researcher",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 11,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 12,
+   "ref": "Projects/Workspace/index.html",
+   "status": "MOVED",
+   "actual": [
+    "index.html",
+    "AgentPortal_V1/index.html",
+    "calculator-app/index.html"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 17,
+   "ref": "_idx_where.txt",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/_idx_where.txt"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 21,
+   "ref": "memory/builder/MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 22,
+   "ref": "group_e2e.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 23,
+   "ref": "memory/builder/test_truncation_detect.py",
+   "status": "MOVED",
+   "actual": [
+    "test_truncation_detect.py"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 27,
+   "ref": "testing.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/portal/testing.md"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 29,
+   "ref": "memory/builder/curl-examples-prune-git-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 30,
+   "ref": "architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 31,
+   "ref": "architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 39,
+   "ref": "px-scale-spec-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/px-scale-spec-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 46,
+   "ref": "component-reference.html",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/component-reference.html"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 48,
+   "ref": "ui-tokens.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/portal/ui-tokens.md"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 51,
+   "ref": "memory/ops/portal-outage-2026-11-15-1825.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 51,
+   "ref": "portal-down-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/portal-down-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 53,
+   "ref": "test-report-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/verifier/test-report-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 56,
+   "ref": "mirror-clobber-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/verifier/mirror-clobber-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 60,
+   "ref": "_idx_where.txt",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/_idx_where.txt"
+   ]
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 60,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 62,
+   "ref": "group_e2e.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal-progress-2026-11-16.md",
+   "line": 63,
+   "ref": "architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "line": 1,
+   "ref": "goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "line": 5,
+   "ref": "goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "line": 16,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "line": 30,
+   "ref": "/does-not-exist.md",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "line": 42,
+   "ref": "goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "line": 45,
+   "ref": "memory/designer/css-bundle-budget-2026-11-17.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "line": 46,
+   "ref": "memory/mechanic/goal6-dep-gen-built-2026-11-17.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "line": 47,
+   "ref": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "line": 50,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-consistency-report.md",
+   "line": 34,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-consistency-report.md",
+   "line": 37,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 4,
+   "ref": "memory/llm/hosts.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 4,
+   "ref": "fleet_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 7,
+   "ref": "memory_mirror_hosts.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 8,
+   "ref": "memory_mirror_hosts.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 13,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 13,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 15,
+   "ref": "memory_mirror_hosts.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 20,
+   "ref": "windows-runbook.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "memory/ops/windows-runbook.md"
+   ]
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 21,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 23,
+   "ref": "fleet_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 23,
+   "ref": "fleet_probe.log",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 24,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/host-port-task-map-2026-11-15.md",
+   "line": 27,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "memory/ops/hotline-v2.md",
+   "line": 11,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/hotline-v2.md",
+   "line": 14,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/hotline-v2.md",
+   "line": 20,
+   "ref": "GOAL_RESET_PENDING.json",
+   "status": "MOVED",
+   "actual": [
+    "memory/goals/GOAL_RESET_PENDING.json"
+   ]
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 3,
+   "ref": "archivist/ingest.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/ingest.py"
+   ]
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 12,
+   "ref": "archivist/ingest.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/ingest.py"
+   ]
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 13,
+   "ref": "archivist/ingest.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/ingest.py"
+   ]
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 30,
+   "ref": "memory/portal",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 31,
+   "ref": "memory/llm",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 32,
+   "ref": "memory/ops",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 33,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 34,
+   "ref": "memory/designer",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 35,
+   "ref": "memory/mechanic",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 36,
+   "ref": "memory/projects",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 37,
+   "ref": "memory/workspace",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/ingestion-spec.md",
+   "line": 63,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 3,
+   "ref": "what_is_left.txt",
+   "status": "PROVENANCE"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 5,
+   "ref": "archivist/index-sweep-2026-11-13.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/index-sweep-2026-11-13.md"
+   ]
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 6,
+   "ref": "archivist/index_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/index_check.py"
+   ]
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 7,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 7,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 8,
+   "ref": "memory/ops/git-hygiene.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 8,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 9,
+   "ref": "archivist/provenance-audit.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 10,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 11,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 11,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 11,
+   "ref": "architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 11,
+   "ref": "archivist/canonical-map.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/left-archivist.md",
+   "line": 12,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-builder.md",
+   "line": 3,
+   "ref": "what_is_left.txt",
+   "status": "PROVENANCE"
+  },
+  {
+   "file": "memory/ops/left-designer.md",
+   "line": 3,
+   "ref": "what_is_left.txt",
+   "status": "PROVENANCE"
+  },
+  {
+   "file": "memory/ops/left-designer.md",
+   "line": 5,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-mechanic.md",
+   "line": 3,
+   "ref": "what_is_left.txt",
+   "status": "PROVENANCE"
+  },
+  {
+   "file": "memory/ops/left-mechanic.md",
+   "line": 5,
+   "ref": "memory/ops/",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-mechanic.md",
+   "line": 8,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-mechanic.md",
+   "line": 10,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-mechanic.md",
+   "line": 13,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-mechanic.md",
+   "line": 13,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 1,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 1,
+   "ref": "memory/goals/orchestrator.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 3,
+   "ref": "what_is_left.txt",
+   "status": "PROVENANCE"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 4,
+   "ref": "memory/goals/orchestrator.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 4,
+   "ref": "backend_swap_drill_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 4,
+   "ref": "memory/llm/model-id-check-2026-11-14.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 7,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 7,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 8,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 9,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 9,
+   "ref": "memory/llm/",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 12,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-orchestrator.md",
+   "line": 14,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-researcher.md",
+   "line": 3,
+   "ref": "what_is_left.txt",
+   "status": "PROVENANCE"
+  },
+  {
+   "file": "memory/ops/left-researcher.md",
+   "line": 8,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-researcher.md",
+   "line": 8,
+   "ref": "memory/ops/",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-researcher.md",
+   "line": 9,
+   "ref": "memory/portal/",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-scribe.md",
+   "line": 3,
+   "ref": "what_is_left.txt",
+   "status": "PROVENANCE"
+  },
+  {
+   "file": "memory/ops/left-scribe.md",
+   "line": 5,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-scribe.md",
+   "line": 6,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-scribe.md",
+   "line": 7,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-scribe.md",
+   "line": 11,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-scribe.md",
+   "line": 12,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-scribe.md",
+   "line": 12,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-scribe.md",
+   "line": 13,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-scribe.md",
+   "line": 14,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/left-verifier.md",
+   "line": 3,
+   "ref": "what_is_left.txt",
+   "status": "PROVENANCE"
+  },
+  {
+   "file": "memory/ops/left-verifier.md",
+   "line": 5,
+   "ref": "memory/ops/",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/loadtest/closure_runbook.md",
+   "line": 3,
+   "ref": "memory/ops/blockers.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/loadtest/closure_runbook.md",
+   "line": 7,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/loadtest/closure_runbook.md",
+   "line": 7,
+   "ref": "load_probe.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_probe.py"
+   ]
+  },
+  {
+   "file": "memory/ops/loadtest/closure_runbook.md",
+   "line": 12,
+   "ref": "load_trend.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_trend.py"
+   ]
+  },
+  {
+   "file": "memory/ops/loadtest/closure_runbook.md",
+   "line": 18,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/loadtest/closure_runbook.md",
+   "line": 18,
+   "ref": "load_trend.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_trend.py"
+   ]
+  },
+  {
+   "file": "memory/ops/loadtest/closure_runbook.md",
+   "line": 18,
+   "ref": "memory/ops/load-trend-report.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/loadtest/closure_runbook.md",
+   "line": 22,
+   "ref": "load-baseline.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/load_trend_test/load-baseline.jsonl",
+    "memory/ops/load-baseline.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/loadtest/closure_runbook.md",
+   "line": 22,
+   "ref": "load_trend.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_trend.py"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 8,
+   "ref": "memory/ops/fleet-state-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 9,
+   "ref": "memory/portal/testing.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 10,
+   "ref": "fleet_crosscheck.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/verifier/fleet_crosscheck.py"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 10,
+   "ref": "memory/verifier/fleet_crosscheck_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 11,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 13,
+   "ref": "ui-tokens.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/portal/ui-tokens.md"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 13,
+   "ref": "memory/portal/ui-tokens.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 16,
+   "ref": "ui-tokens.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/portal/ui-tokens.md"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 16,
+   "ref": "testing.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/portal/testing.md"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 16,
+   "ref": "memory/portal/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "line": 25,
+   "ref": "model_check_1115.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
+   "line": 6,
+   "ref": "fleet_probe_v2.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet_probe_v2.py"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
+   "line": 7,
+   "ref": "sim_fleet_probe_degrade.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
+   "line": 8,
+   "ref": "memory/ops/fleet-probe-history.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
+   "line": 10,
+   "ref": "sim_fleet_probe_degrade.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+   "line": 4,
+   "ref": "reboot-dryrun-remotes-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/reboot-dryrun-remotes-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+   "line": 4,
+   "ref": "mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+   "line": 15,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+   "line": 15,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+   "line": 15,
+   "ref": "windows-runbook.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "memory/ops/windows-runbook.md"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+   "line": 15,
+   "ref": "verifier-healthcheck-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/verifier-healthcheck-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+   "line": 16,
+   "ref": "pale_dl.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+   "line": 21,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+   "line": 22,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+   "line": 26,
+   "ref": "reboot_dryrun_remotes.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-red-leg-blocked-2026-11-15.md",
+   "line": 13,
+   "ref": "memory/ops/verifier-healthcheck-white-2026-11-15.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-goal3-red-leg-blocked-2026-11-15.md",
+   "line": 21,
+   "ref": "agent_portal.log",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+   "line": 7,
+   "ref": "probe_white_goals_r24.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+   "line": 11,
+   "ref": "lan_probe_result.txt",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+   "line": 11,
+   "ref": "probe_winrm_r17.txt",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+   "line": 14,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+   "line": 22,
+   "ref": "probe_white_goals_r24.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+   "line": 24,
+   "ref": "goal_provenance_report.json",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/goal_provenance_report.json",
+    "memory/archivist/memory/archivist/goal_provenance_report.json"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+   "line": 24,
+   "ref": "goals_data.json",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+   "line": 26,
+   "ref": "goals_data.json",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+   "line": 26,
+   "ref": "goals_data.json",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "line": 8,
+   "ref": "pale_dl.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "line": 25,
+   "ref": "reboot_dryrun_remotes.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "line": 28,
+   "ref": "pale_dl.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "line": 29,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "line": 29,
+   "ref": "pale_dl.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "line": 30,
+   "ref": "pale_dl.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "line": 32,
+   "ref": "windows-runbook.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "memory/ops/windows-runbook.md"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "line": 39,
+   "ref": "reboot_dryrun_remotes.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "line": 40,
+   "ref": "reboot_dryrun_r2.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mechanic-researcher-alias-diagnosis-2026-11-16.md",
+   "line": 7,
+   "ref": "mechanic-crossassist-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/mechanic-crossassist-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-researcher-alias-diagnosis-2026-11-16.md",
+   "line": 10,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-researcher-alias-diagnosis-2026-11-16.md",
+   "line": 11,
+   "ref": "model-id-check-2026-11-14.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/llm/model-id-check-2026-11-14.md"
+   ]
+  },
+  {
+   "file": "memory/ops/mechanic-researcher-alias-diagnosis-2026-11-16.md",
+   "line": 21,
+   "ref": "memory/llm/studio-api.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-researcher-alias-diagnosis-2026-11-16.md",
+   "line": 21,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mechanic-status-2026-11-17.md",
+   "line": 9,
+   "ref": "load_probe.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_probe.py"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 13,
+   "ref": "memory/portal/merge-pack.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 13,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 14,
+   "ref": "memory/portal/v1-inventory.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 15,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 19,
+   "ref": "memory/portal/upgrades-2026-11-12.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 20,
+   "ref": "memory/portal/v1-upgrade-state-2026-11-12.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 21,
+   "ref": "memory/portal/v1-upgrades-decisions.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 22,
+   "ref": "memory/portal/v1-upgrades-round-2.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 23,
+   "ref": "memory/portal/v1-upgrades-round-3.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 24,
+   "ref": "memory/portal/v1-upgrades-round-4.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 25,
+   "ref": "memory/portal/v1-upgrades-round-5.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 26,
+   "ref": "memory/portal/v1-upgrades.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 27,
+   "ref": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 28,
+   "ref": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 32,
+   "ref": "v1-upgrades-round-3.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/portal/v1-upgrades-round-3.md"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 33,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 33,
+   "ref": "memory/llm",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 33,
+   "ref": "memory/ops",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 34,
+   "ref": "memory/portal/merge-pack.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 34,
+   "ref": "memory/portal/v1-inventory.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 36,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 36,
+   "ref": "BUNDLE-SHA256.txt",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/memory-sync-spec-r13.md",
+   "line": 36,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 1,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 3,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 9,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 11,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 12,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 12,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 12,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 15,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 15,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 15,
+   "ref": "white_realias_rename.py",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/white_realias_rename.py"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 15,
+   "ref": "white_realias_result.json",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/white_realias_result.json"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 18,
+   "ref": "memory/goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 18,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 18,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 18,
+   "ref": "memory/ops/pdf-reporting.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 18,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 21,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 21,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 21,
+   "ref": "TODO_completed.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 21,
+   "ref": "todo_done_parts/TODO_done_part_NNN.md",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 21,
+   "ref": "memory/portal/architecture.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 24,
+   "ref": "smb_fix.ps1",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 24,
+   "ref": "memory_mirror_hosts.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 24,
+   "ref": "memory/archivist",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 24,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 24,
+   "ref": "portal/architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 27,
+   "ref": "TODO/MEMORY/agents.json/agent_portal.py",
+   "status": "MOVED",
+   "actual": [
+    "agent_portal.py",
+    "AgentPortal_V1/agent_portal.py",
+    "memory/builder/canary/black/agent_portal.py"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 27,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 27,
+   "ref": "portal/architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 30,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 33,
+   "ref": "portal/architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 36,
+   "ref": "llm/instances.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/instances.md",
+    "memory/llm/instances.md"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 36,
+   "ref": "portal/architecture.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/architecture.md",
+    "memory/portal/architecture.md"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 36,
+   "ref": "portal/bugs/xtalk-completion.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/portal/bugs/xtalk-completion.md",
+    "memory/portal/bugs/xtalk-completion.md"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 36,
+   "ref": "llm/instances.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/instances.md",
+    "memory/llm/instances.md"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 36,
+   "ref": "ops/windows-runbook.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "memory/ops/windows-runbook.md"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 36,
+   "ref": "ops/probes.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/probes.md",
+    "memory/ops/probes.md"
+   ]
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 40,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 41,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 42,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 48,
+   "ref": "goals_data.json",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "line": 48,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 4,
+   "ref": "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 10,
+   "ref": "memory/ops/merge-queue",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 10,
+   "ref": "memory/ops/merge-queue.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 20,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 22,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 32,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 33,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 40,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 41,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 41,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 43,
+   "ref": "memory/designer/index_html_CANONICAL_",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "line": 43,
+   "ref": "_YYYY-MM-DDx.html",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 1,
+   "ref": "load_trend.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_trend.py"
+   ]
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 5,
+   "ref": "memory/ops/load_trend.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 8,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 19,
+   "ref": "memory/ops/load_trend.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 20,
+   "ref": "load_trend.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_trend.py"
+   ]
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 24,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 25,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 31,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 32,
+   "ref": "memory/ops/load_trend.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 37,
+   "ref": "load_trend.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/load_trend.py"
+   ]
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 39,
+   "ref": "memory/ops/load_trend.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "line": 43,
+   "ref": "blockers.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/blockers.md"
+   ]
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 2,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 2,
+   "ref": "memory/ops/blockers.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 7,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 15,
+   "ref": "memory/ops/batch_tier_b.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 18,
+   "ref": "memory/mechanic/batch-tier-b-run.json",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 26,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 38,
+   "ref": "memory/designer",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 39,
+   "ref": "memory/designer/design_check.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 39,
+   "ref": "token_audit.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/token_audit.py"
+   ]
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 40,
+   "ref": "memory/designer/wcag_aa_contrast_check.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 41,
+   "ref": "memory/designer/contrast_check.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 47,
+   "ref": "failover_drill.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 47,
+   "ref": "failover_drill.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 48,
+   "ref": "memory/ops/failover-drill-",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 55,
+   "ref": "Projects/Workspace/memory/ops/boot_recovery.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/boot_recovery.py"
+   ]
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 56,
+   "ref": "Projects/Workspace/memory/mechanic/reboot_recovery_test.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/reboot_recovery_test.py"
+   ]
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 57,
+   "ref": "memory/mechanic/reboot_recovery_test.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 58,
+   "ref": "reboot-recovery.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/reboot-recovery.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 60,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 61,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/non-sandbox-queue.md",
+   "line": 71,
+   "ref": "blockers.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/blockers.md"
+   ]
+  },
+  {
+   "file": "memory/ops/orch-fleetprobe-decision-2026-11-16.md",
+   "line": 7,
+   "ref": "memory/llm/fleet-probe-alias-log.jsonl",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/orch-fleetprobe-decision-2026-11-16.md",
+   "line": 13,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/orch-reopen-designer4-2026-11-16.md",
+   "line": 7,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/orch-reopen-designer4-2026-11-16.md",
+   "line": 8,
+   "ref": "memory/goals/designer.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/orch-reopen-designer4-2026-11-16.md",
+   "line": 12,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/orch-reopen-designer4-2026-11-16.md",
+   "line": 14,
+   "ref": "memory/ops/mechanic-crossassist-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/orch-reopen-designer4-2026-11-16.md",
+   "line": 17,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
+   "line": 3,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
+   "line": 3,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
+   "line": 5,
+   "ref": "designer/index-patched-v2.html",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
+   "line": 5,
+   "ref": "index-patched-v3.html",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/index-patched-v3.html"
+   ]
+  },
+  {
+   "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
+   "line": 13,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
+   "line": 14,
+   "ref": "memory/researcher/designer-234-patch-for-mechanic.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
+   "line": 22,
+   "ref": "orch-reopen-designer4-2026-11-16.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/orch-reopen-designer4-2026-11-16.md"
+   ]
+  },
+  {
+   "file": "memory/ops/pdf-reporting.md",
+   "line": 3,
+   "ref": "_gen_report.py",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/_gen_report.py"
+   ]
+  },
+  {
+   "file": "memory/ops/pdf-reporting.md",
+   "line": 7,
+   "ref": "_gen_report.py",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/_gen_report.py"
+   ]
+  },
+  {
+   "file": "memory/ops/pdf-reporting.md",
+   "line": 9,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pdf-reporting.md",
+   "line": 9,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pdf-reporting.md",
+   "line": 9,
+   "ref": "memory/goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 8,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 9,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 9,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 17,
+   "ref": "memory/designer/goal1-token-layer-reapply-2026-11-17.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 19,
+   "ref": "token-gap-analysis-2026-11-17.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/token-gap-analysis-2026-11-17.md"
+   ]
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 25,
+   "ref": "memory/designer/ui_app_css_CANONICAL_a1b2c3d4e5f6_2026-11-17x.html",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 28,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 31,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 32,
+   "ref": "memory/designer/index_html_CANONICAL_2a3ffa6ac79c_2026-11-16j.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 35,
+   "ref": "memory/designer/ui_app_css_CANONICAL_",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 35,
+   "ref": "_2026-11-17x.html",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 41,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 41,
+   "ref": "memory/designer/ui_app_css_CANONICAL_",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 44,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 58,
+   "ref": "memory/designer/goal1-token-layer-reapply-2026-11-17.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 59,
+   "ref": "memory/designer/token-gap-analysis-2026-11-17.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 60,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/pin-guard-extension-ui-files.md",
+   "line": 61,
+   "ref": "memory/ops/mirror-clobber-pattern-2026-11-14.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/portal/mirror-clobber-pattern-2026-11-14.md"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-15.md",
+   "line": 6,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-15.md",
+   "line": 21,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-15.md",
+   "line": 21,
+   "ref": "memory/ops/windows-runbook.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-15.md",
+   "line": 24,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-15.md",
+   "line": 26,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-15.md",
+   "line": 28,
+   "ref": "recover_force_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-15.md",
+   "line": 28,
+   "ref": "trigger_group_run.log",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-16.md",
+   "line": 6,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-16.md",
+   "line": 7,
+   "ref": "portal_run_err.log",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-16.md",
+   "line": 9,
+   "ref": "/agent_portal.py",
+   "status": "MOVED",
+   "actual": [
+    "agent_portal.py",
+    "AgentPortal_V1/agent_portal.py",
+    "memory/builder/canary/black/agent_portal.py"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-16.md",
+   "line": 14,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-down-2026-11-16.md",
+   "line": 16,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-outage-2026-11-15-1825.md",
+   "line": 5,
+   "ref": "recover_force_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-outage-2026-11-15-1825.md",
+   "line": 18,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-outage-2026-11-15-1825.md",
+   "line": 19,
+   "ref": "recover_force_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-outage-2026-11-15-1825.md",
+   "line": 22,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
+   "line": 3,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
+   "line": 3,
+   "ref": "windows-runbook.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "memory/ops/windows-runbook.md"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
+   "line": 6,
+   "ref": "portal_run_err.log",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
+   "line": 8,
+   "ref": "sandbox/_default/agent_portal.py",
+   "status": "MOVED",
+   "actual": [
+    "agent_portal.py",
+    "AgentPortal_V1/agent_portal.py",
+    "memory/builder/canary/black/agent_portal.py"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
+   "line": 21,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
+   "line": 22,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
+   "line": 22,
+   "ref": "Users/Red/.unsloth/studio/sandbox/_default/agent_portal.py",
+   "status": "MOVED",
+   "actual": [
+    "agent_portal.py",
+    "AgentPortal_V1/agent_portal.py",
+    "memory/builder/canary/black/agent_portal.py"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
+   "line": 26,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
+   "line": 27,
+   "ref": "windows-runbook.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "memory/ops/windows-runbook.md"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 3,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 4,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 7,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 13,
+   "ref": "portal/config.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 14,
+   "ref": "portal/umq.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 15,
+   "ref": "portal/safety.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 16,
+   "ref": "portal/rag.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 17,
+   "ref": "portal/fleet_perf.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 18,
+   "ref": "portal/memory_state.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 19,
+   "ref": "portal/sandbox_sync.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 20,
+   "ref": "portal/agents_prompt.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 21,
+   "ref": "portal/chat_stream.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 22,
+   "ref": "portal/group_run.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 23,
+   "ref": "portal/autoloop.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 24,
+   "ref": "portal/api_snapshots.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 25,
+   "ref": "portal/handler.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 27,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 30,
+   "ref": "agents.py",
+   "status": "MOVED",
+   "actual": [
+    "portal/agents.py"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 30,
+   "ref": "prompt_builder.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 32,
+   "ref": "portal/__init__.py",
+   "status": "MOVED",
+   "actual": [
+    "projects/dcabots/dcabots/__init__.py",
+    "Python/pythoncore-3.15-64/Lib/asyncio/__init__.py",
+    "Python/pythoncore-3.15-64/Lib/collections/__init__.py"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 33,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 34,
+   "ref": "api_contract_test.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/api_contract_test.py"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 34,
+   "ref": "pre_commit_gate.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/pre_commit_gate.py"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 37,
+   "ref": "handler_api.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 37,
+   "ref": "handler_ui.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 43,
+   "ref": "api_contract_test.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/api_contract_test.py"
+   ]
+  },
+  {
+   "file": "memory/ops/portal-split-seams-2026-11-17.md",
+   "line": 44,
+   "ref": "pre_commit_gate.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/pre_commit_gate.py"
+   ]
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 2,
+   "ref": "memory/ops-windows.md",
+   "status": "PROVENANCE"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 4,
+   "ref": "smoke_e2e.py",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/probes/smoke_e2e.py",
+    "archive/orphaned_20261117/smoke_e2e.py"
+   ]
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 4,
+   "ref": "silent_probe2.py",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/probes/silent_probe2.py",
+    "archive/orphaned_20261117/silent_probe2.py"
+   ]
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 5,
+   "ref": "probe_quinn.py",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/probes/probe_quinn.py",
+    "archive/orphaned_20261117/probe_quinn.py"
+   ]
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 5,
+   "ref": "test_group.py",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/probes/test_group.py",
+    "archive/orphaned_20261117/test_group.py"
+   ]
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 5,
+   "ref": "qprobe.py",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/probes/qprobe.py",
+    "archive/orphaned_20261117/qprobe.py"
+   ]
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 6,
+   "ref": "e2e_test.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 6,
+   "ref": "e2e_parallel.py",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/probes/e2e_parallel.py",
+    "archive/orphaned_20261117/e2e_parallel.py"
+   ]
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 10,
+   "ref": "red_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 11,
+   "ref": "probe_black.py",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/probe_black.py"
+   ]
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 12,
+   "ref": "host_api.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 13,
+   "ref": "tunnel_urls.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 13,
+   "ref": "scan_red.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 14,
+   "ref": "mstsc_shots.ps1",
+   "status": "MOVED",
+   "actual": [
+    "archive/orphaned_20261117/mstsc_shots.ps1"
+   ]
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 19,
+   "ref": "memory/portal/fleet-status.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 23,
+   "ref": "memory/portal/file-links.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 25,
+   "ref": "memory/portal/file-links.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 28,
+   "ref": "red_chain.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 28,
+   "ref": "red_smoke.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 29,
+   "ref": "red_smoke_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/probes.md",
+   "line": 31,
+   "ref": "_result.json",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "line": 8,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "line": 10,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "line": 11,
+   "ref": "memory/llm/hosts.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "line": 12,
+   "ref": "memory/llm/hosts.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "line": 13,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "line": 13,
+   "ref": "memory/llm/hosts.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "line": 16,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "line": 16,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "line": 16,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "line": 1,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "line": 3,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "line": 9,
+   "ref": "memory/orchestrator_index_html_canonical_pre-r8.ac5e1560.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "line": 10,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "line": 15,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "line": 16,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "line": 16,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "line": 19,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "line": 19,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/quarantine-index-html-variants-2026-11-13.md",
+   "line": 19,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remote-legs-2026-11-16.md",
+   "line": 2,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remote-legs-2026-11-16.md",
+   "line": 8,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remote-legs-2026-11-16.md",
+   "line": 10,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remote-legs-2026-11-16.md",
+   "line": 18,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+   "line": 3,
+   "ref": "reboot_dryrun_remotes.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+   "line": 12,
+   "ref": "verifier-healthcheck-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/verifier-healthcheck-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+   "line": 13,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+   "line": 17,
+   "ref": "firewall_fix.bat",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+   "line": 21,
+   "ref": "reboot_dryrun_remotes.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+   "line": 25,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+   "line": 28,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+   "line": 32,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 10,
+   "ref": "fleet_probe_v2.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet_probe_v2.py"
+   ]
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 16,
+   "ref": "host_state.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/host_state.py"
+   ]
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 17,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 19,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 64,
+   "ref": "fleet_probe_v2.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet_probe_v2.py"
+   ]
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 92,
+   "ref": "memory/ops/slo-alerts.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 96,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 96,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 97,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 99,
+   "ref": "memory/ops/fleet_probe_v2.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 100,
+   "ref": "memory/researcher/goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/remote-host-metrics-probe-spec.md",
+   "line": 104,
+   "ref": "fleet_probe_v2.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet_probe_v2.py"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 5,
+   "ref": "/agent_portal.py",
+   "status": "MOVED",
+   "actual": [
+    "agent_portal.py",
+    "AgentPortal_V1/agent_portal.py",
+    "memory/builder/canary/black/agent_portal.py"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 5,
+   "ref": "/memory_mirror.py",
+   "status": "MOVED",
+   "actual": [
+    "memory_mirror.py"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 6,
+   "ref": "/index.html",
+   "status": "MOVED",
+   "actual": [
+    "index.html",
+    "AgentPortal_V1/index.html",
+    "calculator-app/index.html"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 8,
+   "ref": "memory/builder",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 8,
+   "ref": "agent_portal_ops-r5_staged.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/agent_portal_ops-r5_staged.py"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 8,
+   "ref": "memory_mirror_ops-r5_staged.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/memory_mirror_ops-r5_staged.py"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 9,
+   "ref": "designer/files-panel-hunks-r5.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/files-panel-hunks-r5.md"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 10,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 14,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 14,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 19,
+   "ref": "files-panel-hunks-r5.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/files-panel-hunks-r5.md"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 19,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 23,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 24,
+   "ref": "memory/orchestrator_index_html_canonical_pre-r8.ac5e1560.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 25,
+   "ref": "memory/designer/index_html_black_5.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 26,
+   "ref": "files-panel-hunks-r5.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/designer/files-panel-hunks-r5.md"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 26,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 27,
+   "ref": "portal.py",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 30,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 31,
+   "ref": "memory/synthesis/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 31,
+   "ref": "memory/goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 31,
+   "ref": "memory/goals/2026-11-13-agent-goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 31,
+   "ref": "memory/goals/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 31,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 31,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 31,
+   "ref": "arnold-restart-r8.ps1",
+   "status": "MOVED",
+   "actual": [
+    "memory/builder/arnold-restart-r8.ps1"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 34,
+   "ref": "synthesis/INDEX.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/INDEX.md",
+    "AgentPortal_V1/memory/llm/INDEX.md",
+    "AgentPortal_V1/memory/ops/INDEX.md"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 34,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 37,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 38,
+   "ref": "memory/synthesis/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 39,
+   "ref": "goals.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/goals.md"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 39,
+   "ref": "goals/2026-11-13-agent-goals.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/goals/2026-11-13-agent-goals.md",
+    "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 39,
+   "ref": "goals/INDEX.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/INDEX.md",
+    "AgentPortal_V1/memory/llm/INDEX.md",
+    "AgentPortal_V1/memory/ops/INDEX.md"
+   ]
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 39,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 40,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 45,
+   "ref": "memory/goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 45,
+   "ref": "memory/goals/2026-11-13-agent-goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 46,
+   "ref": "memory/goals/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 46,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 48,
+   "ref": "memory/synthesis/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 50,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 56,
+   "ref": "memory/goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 57,
+   "ref": "memory/goals/2026-11-13-agent-goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 58,
+   "ref": "memory/goals/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 59,
+   "ref": "memory/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 60,
+   "ref": "memory/synthesis/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 61,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 68,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+   "line": 73,
+   "ref": "goals.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/goals.md"
+   ]
+  },
+  {
+   "file": "memory/ops/risk-register-cycle2.md",
+   "line": 8,
+   "ref": "memory/llm/instances.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/risk-register-cycle2.md",
+   "line": 13,
+   "ref": "evidence_spotcheck.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/risk-register-cycle2.md",
+   "line": 14,
+   "ref": "parity_audit.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/risk-register-cycle2.md",
+   "line": 19,
+   "ref": "memory/ops/watchdog.log",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/risk-register-cycle2.md",
+   "line": 26,
+   "ref": "memory/verifier/slo-report-2026-11-16.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 3,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 3,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 4,
+   "ref": "r13/r14/r15_red_probe.txt",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 7,
+   "ref": "MEMORY.md/TODO.md",
+   "status": "MOVED",
+   "actual": [
+    "TODO.md",
+    "AgentPortal_V1/TODO.md",
+    "agents/orchestrator/TODO.md"
+   ]
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 8,
+   "ref": "mirror_canary_result.json",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 9,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 11,
+   "ref": "lan_probe.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 17,
+   "ref": "mirror_canary_result.json",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 17,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 18,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 21,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 21,
+   "ref": "memory/goals/2026-11-13-agent-goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 21,
+   "ref": "mirror_canary_result.json",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 21,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 22,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 26,
+   "ref": "mirror_canary_result.json",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 26,
+   "ref": "mirror_canary.py",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 26,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 26,
+   "ref": "probe_portal.py",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 29,
+   "ref": "lan_probe.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 31,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 31,
+   "ref": "memory/mechanic/r28-apply-bundle.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 32,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 36,
+   "ref": "mingit/.git/TODO_completed.md",
+   "status": "MOVED",
+   "actual": [
+    "TODO_completed.md"
+   ]
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 36,
+   "ref": "TODO/MEMORY/agents.json/agent_portal.py",
+   "status": "MOVED",
+   "actual": [
+    "agent_portal.py",
+    "AgentPortal_V1/agent_portal.py",
+    "memory/builder/canary/black/agent_portal.py"
+   ]
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 37,
+   "ref": "probe_winrm_r17.txt",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 38,
+   "ref": "memory/goals/2026-11-13-agent-goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 38,
+   "ref": "memory/goals.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 38,
+   "ref": "archivist/goals-2026-11-13.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/goals-2026-11-13.md"
+   ]
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 38,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/runbook-notes.md",
+   "line": 39,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 3,
+   "ref": "memory/ops/host-port-task-map-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 3,
+   "ref": "fleet_probe_v2.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet_probe_v2.py"
+   ]
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 9,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 9,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 10,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 12,
+   "ref": "fleet_probe_v2.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet_probe_v2.py"
+   ]
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 13,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 22,
+   "ref": "white_load_q8.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 29,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 47,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 52,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 53,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 65,
+   "ref": "fleet_probe_v2.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/fleet_probe_v2.py"
+   ]
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 71,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-deps.md",
+   "line": 82,
+   "ref": "host-port-task-map-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/host-port-task-map-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/schtask-sandbox-limitation.md",
+   "line": 13,
+   "ref": "memory/ops/load_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-sandbox-limitation.md",
+   "line": 20,
+   "ref": "memory/ops/load-baseline.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-sandbox-limitation.md",
+   "line": 23,
+   "ref": "load-baseline.jsonl",
+   "status": "MOVED",
+   "actual": [
+    "memory/mechanic/load_trend_test/load-baseline.jsonl",
+    "memory/ops/load-baseline.jsonl"
+   ]
+  },
+  {
+   "file": "memory/ops/schtask-sandbox-limitation.md",
+   "line": 28,
+   "ref": "memory/ops/INDEX.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/schtask-sandbox-limitation.md",
+   "line": 29,
+   "ref": "memory/goals/mechanic.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
+   "line": 1,
+   "ref": "stale_claim_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/stale_claim_check.py"
+   ]
+  },
+  {
+   "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
+   "line": 1,
+   "ref": "json/.jsonl",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
+   "line": 6,
+   "ref": "stale_claim_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/stale_claim_check.py"
+   ]
+  },
+  {
+   "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
+   "line": 11,
+   "ref": "ref.json",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
+   "line": 12,
+   "ref": "ref.jsonl",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/stale-claim-check-suffix-fix-2026-11-18.md",
+   "line": 1,
+   "ref": "stale_claim_check.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/stale_claim_check.py"
+   ]
+  },
+  {
+   "file": "memory/ops/stale-claim-check-suffix-fix-2026-11-18.md",
+   "line": 6,
+   "ref": "memory/ops/stale_claim_check.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-ac-v09-2026-11-15.md",
+   "line": 6,
+   "ref": "memory/archivist/goal_provenance.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-ac-v09-2026-11-15.md",
+   "line": 10,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-ac-v09-2026-11-15.md",
+   "line": 10,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-ac-v09-2026-11-15.md",
+   "line": 10,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-ac-v09-2026-11-15.md",
+   "line": 10,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-ac-v09-2026-11-15.md",
+   "line": 11,
+   "ref": "goal_ledger.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-ac-v09-2026-11-15.md",
+   "line": 12,
+   "ref": "memory/archivist/goal_provenance_report.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15c.md",
+   "line": 5,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15c.md",
+   "line": 6,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15c.md",
+   "line": 11,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15c.md",
+   "line": 12,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15c.md",
+   "line": 12,
+   "ref": "memory/designer/keyboard-microinteraction-evidence-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15c.md",
+   "line": 13,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15c.md",
+   "line": 14,
+   "ref": "memory/portal/ui-tokens.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15c.md",
+   "line": 21,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15c.md",
+   "line": 21,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15d.md",
+   "line": 5,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15d.md",
+   "line": 7,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15d.md",
+   "line": 12,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15d.md",
+   "line": 14,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-fix-crosscheck-2026-11-15d.md",
+   "line": 18,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-git-health-2026-11-15b.md",
+   "line": 10,
+   "ref": "portal_restart.log",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-14.md",
+   "line": 5,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-14.md",
+   "line": 6,
+   "ref": "agents.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-14.md",
+   "line": 7,
+   "ref": "memory/llm/hosts.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-14.md",
+   "line": 7,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-14.md",
+   "line": 7,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-14.md",
+   "line": 8,
+   "ref": "memory/goals",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-14.md",
+   "line": 8,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-14.md",
+   "line": 8,
+   "ref": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "line": 6,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "line": 15,
+   "ref": "md/.py/.json",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "line": 19,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "line": 19,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "line": 25,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "line": 26,
+   "ref": "reboot_launchers.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "line": 26,
+   "ref": "reboot_recover.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "line": 27,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "line": 28,
+   "ref": "memory/ops/windows-runbook.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-pin-crosscheck-2026-11-15.md",
+   "line": 3,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-pin-crosscheck-2026-11-15.md",
+   "line": 4,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-pin-crosscheck-2026-11-15.md",
+   "line": 6,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-pin-crosscheck-2026-11-15.md",
+   "line": 10,
+   "ref": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/verifier-pin-crosscheck-2026-11-15.md",
+   "line": 19,
+   "ref": "verifier-healthcheck-2026-11-15.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/verifier-healthcheck-2026-11-15.md"
+   ]
+  },
+  {
+   "file": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
+   "line": 4,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
+   "line": 5,
+   "ref": "hosts.md",
+   "status": "MOVED",
+   "actual": [
+    "AgentPortal_V1/memory/llm/hosts.md",
+    "memory/llm/hosts.md"
+   ]
+  },
+  {
+   "file": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
+   "line": 9,
+   "ref": "probe_white_reach_result.json",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
+   "line": 20,
+   "ref": "memory/llm/hosts.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
+   "line": 26,
+   "ref": "memory/ops/",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
+   "line": 29,
+   "ref": "TODO.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 8,
+   "ref": "recover_all.bat",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 9,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 9,
+   "ref": "recover_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 18,
+   "ref": "memory/llm/instances.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 21,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 21,
+   "ref": "portal_start.bat",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 22,
+   "ref": "direct-.bat",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 26,
+   "ref": "portal_run_err.log",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 28,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 29,
+   "ref": "_portal_pid.txt",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 33,
+   "ref": "portal_run.log",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 33,
+   "ref": "portal_run_err.log",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 34,
+   "ref": "index.html",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 35,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 45,
+   "ref": "serial_e2e_wait.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 47,
+   "ref": "memory.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 47,
+   "ref": "MEMORY.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 55,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 55,
+   "ref": "recover_all.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 56,
+   "ref": "fleet_reload.bat",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 57,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 58,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 58,
+   "ref": "pale_dl.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 59,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 59,
+   "ref": "recover_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 59,
+   "ref": "fleet_reload_result.json",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 60,
+   "ref": "memory_mirror.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 60,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 60,
+   "ref": "memory/portal/bugs/popup-pythonw-children-recoverall-2026-11-15.md",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 62,
+   "ref": "fleet_reload.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/windows-runbook.md",
+   "line": 62,
+   "ref": "pale_dl.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+   "line": 3,
+   "ref": "elev.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+   "line": 12,
+   "ref": "memory/ops/load_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+   "line": 12,
+   "ref": "memory/ops/load-baseline.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+   "line": 16,
+   "ref": "agent_portal.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+   "line": 20,
+   "ref": "memory/ops/load-baseline.jsonl",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+   "line": 24,
+   "ref": "memory/ops/load_probe.py",
+   "status": "OK"
+  },
+  {
+   "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
+   "line": 34,
+   "ref": "elev.py",
+   "status": "OK"
+  }
+ ]
 }

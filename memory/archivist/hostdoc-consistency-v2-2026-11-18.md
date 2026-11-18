@@ -1,97 +1,160 @@
-# Multi-host doc consistency v2 - file path audit (2026-11-18)
+# Multi-host doc consistency v2 - corrected audit (2026-11-18)
 
-Supersedes: hostdoc-consistency-2026-11-16.md (cycle-2, host:port claims only)
+Script: `memory/archivist/hostdoc_consistency_v2.py` (fixes the 2026-11-18 extraction bugs: .jsonl truncation, .bak cut-off, bare-name CWD resolution).
+Supersedes: hostdoc-consistency-v2-2026-11-18.md/.json (buggy counts) and hostdoc-consistency-2026-11-16.md (cycle-2, host:port only).
 
-## Scope
-Extended cycle-2 check to cover **file paths and script names** referenced in ops docs.
-Flags any reference to a file that doesn't exist on this host.
+Files scanned: 80 | refs checked: 1344 | DOCUMENTED-ABSENT: 11 | MOVED: 265 | OK: 977 | PHANTOM: 82 | PROVENANCE: 9
 
-## Method
-- Scanned all memory/ops/*.md (70 files)
-- Extracted path-like tokens (full paths with / + bare filenames with known extensions)
-- Verified existence at stated path; if not, checked if basename exists elsewhere (moved)
+## PHANTOM references (82) - must fix or annotate
 
-## Results
-| Metric | Count |
-|--------|-------|
-| Full-path references checked | 249 |
-| OK (exists at stated path) | 481 |
-| Moved (basename found elsewhere) | 100 |
-| Phantom (not found anywhere) | 99 |
+- `TODO.md` L43 -> `memory/ops/netcmd-ops.jsonl`
+- `TODO.md` L51 -> `-2026-11-15.md`
+- `TODO.md` L93 -> `SKILL.md`
+- `TODO.md` L99 -> `SKILL.md`
+- `TODO.md` L99 -> `Users/White/.agents/skills/portal-memory-modular/SKILL.md`
+- `TODO.md` L108 -> `pyc/.bak`
+- `TODO.md` L157 -> `memory/scribe/index_html_pre-r14-ac5e1560`
+- `TODO.md` L157 -> `adb.html`
+- `TODO.md` L297 -> `archivist/provenance-audit.md`
+- `TODO.md` L299 -> `archivist/canonical-map.md`
+- `TODO.md` L346 -> `Archivist/Scribe`
+- `TODO.md` L474 -> `SKILL.md`
+- `TODO.md` L475 -> `json/.md`
+- `TODO.md` L528 -> `memory/researcher/benchmark-summary-2026-11-16.md`
+- `memory/ONBOARDING.md` L81 -> `memory/goals/archive/cycle-2`
+- `memory/ops/INDEX.md` L26 -> `fleet_health_check.py`
+- `memory/ops/INDEX.md` L29 -> `sim_fleet_probe_degrade.py`
+- `memory/ops/background-goals-execution-plan-2026-11-18.md` L38 -> `dep_graph_gen.py`
+- `memory/ops/background-goals-execution-plan-2026-11-18.md` L40 -> `memory/mechanic/dep_graph_gen.py`
+- `memory/ops/background-goals-execution-plan-2026-11-18.md` L95 -> `memory/scribe/compression_fidelity_trend.jsonl`
+- `memory/ops/boot-deployment-runbook.md` L52 -> `boot-start.txt`
+- `memory/ops/boot-detection-runbook.md` L7 -> `memory/ops/boot-recovery.jsonl`
+- `memory/ops/boot-detection-runbook.md` L37 -> `memory/ops/boot-recovery.jsonl`
+- `memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md` L3 -> `probe_fleet_8099_r80.py`
+- `memory/ops/cycle3-readiness-snapshot-2026-11-17.md` L15 -> `memory/designer/index_html_CANONICAL_`
+- `memory/ops/goal-progress-2026-11-16.md` L5 -> `memory/memory`
+- `memory/ops/left-archivist.md` L9 -> `archivist/provenance-audit.md`
+- `memory/ops/left-archivist.md` L11 -> `archivist/canonical-map.md`
+- `memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md` L7 -> `sim_fleet_probe_degrade.py`
+- `memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md` L10 -> `sim_fleet_probe_degrade.py`
+- `memory/ops/mechanic-goal3-closure-2026-11-15.md` L26 -> `reboot_dryrun_remotes.py`
+- `memory/ops/mechanic-goal3-red-leg-blocked-2026-11-15.md` L13 -> `memory/ops/verifier-healthcheck-white-2026-11-15.md`
+- `memory/ops/mechanic-goal3-red-leg-blocked-2026-11-15.md` L21 -> `agent_portal.log`
+- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md` L7 -> `probe_white_goals_r24.py`
+- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md` L11 -> `lan_probe_result.txt`
+- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md` L11 -> `probe_winrm_r17.txt`
+- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md` L22 -> `probe_white_goals_r24.py`
+- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md` L26 -> `goals_data.json`
+- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md` L26 -> `goals_data.json`
+- `memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md` L25 -> `reboot_dryrun_remotes.py`
+- `memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md` L39 -> `reboot_dryrun_remotes.py`
+- `memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md` L40 -> `reboot_dryrun_r2.py`
+- `memory/ops/memory-sync-spec-r13.md` L36 -> `BUNDLE-SHA256.txt`
+- `memory/ops/memory-trim-archive-2026-11-14.md` L21 -> `todo_done_parts/TODO_done_part_NNN.md`
+- `memory/ops/memory-trim-archive-2026-11-14.md` L48 -> `goals_data.json`
+- `memory/ops/merge-queue-git-progress-2026-11-16.md` L43 -> `memory/designer/index_html_CANONICAL_`
+- `memory/ops/merge-queue-git-progress-2026-11-16.md` L43 -> `_YYYY-MM-DDx.html`
+- `memory/ops/non-sandbox-queue.md` L18 -> `memory/mechanic/batch-tier-b-run.json`
+- `memory/ops/non-sandbox-queue.md` L48 -> `memory/ops/failover-drill-`
+- `memory/ops/orch-fleetprobe-decision-2026-11-16.md` L7 -> `memory/llm/fleet-probe-alias-log.jsonl`
+- `memory/ops/orch-veto-wholecopy-v3-2026-11-16.md` L5 -> `designer/index-patched-v2.html`
+- `memory/ops/pin-guard-extension-ui-files.md` L25 -> `memory/designer/ui_app_css_CANONICAL_a1b2c3d4e5f6_2026-11-17x.html`
+- `memory/ops/pin-guard-extension-ui-files.md` L35 -> `memory/designer/ui_app_css_CANONICAL_`
+- `memory/ops/pin-guard-extension-ui-files.md` L35 -> `_2026-11-17x.html`
+- `memory/ops/pin-guard-extension-ui-files.md` L41 -> `memory/designer/ui_app_css_CANONICAL_`
+- `memory/ops/portal-split-seams-2026-11-17.md` L14 -> `portal/umq.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L15 -> `portal/safety.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L16 -> `portal/rag.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L17 -> `portal/fleet_perf.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L18 -> `portal/memory_state.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L19 -> `portal/sandbox_sync.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L20 -> `portal/agents_prompt.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L21 -> `portal/chat_stream.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L23 -> `portal/autoloop.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L24 -> `portal/api_snapshots.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L30 -> `prompt_builder.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L37 -> `handler_api.py`
+- `memory/ops/portal-split-seams-2026-11-17.md` L37 -> `handler_ui.py`
+- `memory/ops/probes.md` L31 -> `_result.json`
+- `memory/ops/reboot-dryrun-remotes-2026-11-15.md` L3 -> `reboot_dryrun_remotes.py`
+- `memory/ops/reboot-dryrun-remotes-2026-11-15.md` L17 -> `firewall_fix.bat`
+- `memory/ops/reboot-dryrun-remotes-2026-11-15.md` L21 -> `reboot_dryrun_remotes.py`
+- `memory/ops/runbook-notes.md` L8 -> `mirror_canary_result.json`
+- `memory/ops/runbook-notes.md` L11 -> `lan_probe.py`
+- `memory/ops/runbook-notes.md` L21 -> `mirror_canary_result.json`
+- `memory/ops/runbook-notes.md` L29 -> `lan_probe.py`
+- `memory/ops/runbook-notes.md` L37 -> `probe_winrm_r17.txt`
+- `memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md` L1 -> `json/.jsonl`
+- `memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md` L11 -> `ref.json`
+- `memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md` L12 -> `ref.jsonl`
+- `memory/ops/verifier-git-health-2026-11-15b.md` L10 -> `portal_restart.log`
+- `memory/ops/white-lan-firewall-drop-2026-11-14.md` L9 -> `probe_white_reach_result.json`
 
-## Phantom references (99)
-These files are referenced in ops docs but do not exist in the tree:
-- `memory/ops/INDEX.md -> fleet_health_check.py`
-- `memory/ops/INDEX.md -> portal_watchdog.py`
-- `memory/ops/INDEX.md -> sim_fleet_probe_degrade.py`
-- `memory/ops/agent-onboarding-playbook.md -> model_check_1115.py`
-- `memory/ops/black-reload-2026-11-15.md -> tunnel_urls.json`
-- `memory/ops/black-studio-failover-2026-11-16.md -> run_state.json`
-- `memory/ops/blockers.md -> elev.py`
-- `memory/ops/blockers.md -> d7_d9_cdp_verify.py`
-- `memory/ops/blockers.md -> memory/designer/d7_d9_cdp_verify.py`
-- `memory/ops/blockers.md -> elev.py`
-- `memory/ops/blockers.md -> elev.py`
-- `memory/ops/blockers.md -> elev.py`
-- `memory/ops/boot-detection-runbook.md -> memory/ops/boot-recovery.jsonl`
-- `memory/ops/boot-detection-runbook.md -> memory/ops/boot-recovery.jsonl`
-- `memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md -> probe_fleet_8099_r80.py`
-- `memory/ops/cycle3-readiness-snapshot-2026-11-17.md -> memory/designer/index_html_CANONICAL_`
-- `memory/ops/goal-progress-2026-11-16.md -> memory/builder/test_truncation_detect.py`
-- `memory/ops/host-port-task-map-2026-11-15.md -> fleet_probe.py`
-- `memory/ops/host-port-task-map-2026-11-15.md -> fleet_probe.py`
-- `memory/ops/left-archivist.md -> sweep-2026-11-13.md`
-- `memory/ops/left-archivist.md -> audit.md`
-- `memory/ops/left-archivist.md -> map.md`
-- `memory/ops/left-orchestrator.md -> backend_swap_drill_result.json`
-- `memory/ops/mechanic-crossassist-2026-11-15.md -> model_check_1115.py`
-- `memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md -> sim_fleet_probe_degrade.py`
-- `memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md -> sim_fleet_probe_degrade.py`
-- `memory/ops/mechanic-goal3-closure-2026-11-15.md -> reboot_dryrun_remotes.py`
-- `memory/ops/mechanic-goal3-red-leg-blocked-2026-11-15.md -> memory/ops/verifier-healthcheck-white-2026-11-15.md`
-- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md -> probe_white_goals_r24.py`
-- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md -> probe_white_goals_r24.py`
-- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md -> goals_data.json`
-- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md -> goals_data.json`
-- `memory/ops/mechanic-lan-8099-blocked-2026-11-15.md -> goals_data.json`
-- `memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md -> reboot_dryrun_remotes.py`
-- `memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md -> reboot_dryrun_remotes.py`
-- `memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md -> reboot_dryrun_r2.py`
-- `memory/ops/memory-trim-archive-2026-11-14.md -> white_realias_rename.py`
-- `memory/ops/memory-trim-archive-2026-11-14.md -> white_realias_result.json`
-- `memory/ops/memory-trim-archive-2026-11-14.md -> completion.md`
-- `memory/ops/memory-trim-archive-2026-11-14.md -> runbook.md`
-- ... +59 more
+## MOVED references (265) - exist at another path
 
-## Moved references (100)
-These files exist but at a different path than stated:
-- `memory/ops/INDEX.md -> load_probe.py`
-- `memory/ops/INDEX.md -> risk-register-cycle2.md`
-- `memory/ops/INDEX.md -> goal-progress-2026-11-16.md`
-- `memory/ops/INDEX.md -> mechanic-goal1-adaptive-probe-evidence-2026-11-16.md`
-- `memory/ops/INDEX.md -> mechanic-goal3-closure-2026-11-15.md`
-- `memory/ops/INDEX.md -> reboot-dryrun-remote-legs-2026-11-16.md`
-- `memory/ops/INDEX.md -> portal-down-2026-11-16.md`
-- `memory/ops/INDEX.md -> builder-fleet-8099-sweep-r80-2026-11-14.md`
-- `memory/ops/INDEX.md -> quarantine-index-html-variants-2026-11-13.md`
-- `memory/ops/INDEX.md -> white-lan-firewall-drop-2026-11-14.md`
-- `memory/ops/blockers.md -> live_verify2_g578.py`
-- `memory/ops/blockers.md -> slo_enforce.py`
-- `memory/ops/blockers.md -> parse_mirror_events.py`
-- `memory/ops/boot-deployment-runbook.md -> boot_recovery.py`
-- `memory/ops/boot-deployment-runbook.md -> deploy_boot_task.py`
-- `memory/ops/boot-deployment-runbook.md -> deploy_startup_folder.py`
-- `memory/ops/boot-deployment-runbook.md -> boot_recovery.py`
-- `memory/ops/boot-deployment-runbook.md -> boot_recovery.py`
-- `memory/ops/boot-deployment-runbook.md -> deploy_boot_task.py`
-- `memory/ops/boot-deployment-runbook.md -> deploy_startup_folder.py`
-- ... +80 more
+- `MEMORY.md` L15 -> `llm/instances.md` (actual: `AgentPortal_V1/memory/llm/instances.md`, `memory/llm/instances.md`)
+- `MEMORY.md` L15 -> `portal/architecture.md` (actual: `AgentPortal_V1/memory/portal/architecture.md`, `memory/portal/architecture.md`)
+- `MEMORY.md` L15 -> `portal/bugs/xtalk-completion.md` (actual: `AgentPortal_V1/memory/portal/bugs/xtalk-completion.md`, `memory/portal/bugs/xtalk-completion.md`)
+- `MEMORY.md` L15 -> `llm/instances.md` (actual: `AgentPortal_V1/memory/llm/instances.md`, `memory/llm/instances.md`)
+- `MEMORY.md` L15 -> `ops/windows-runbook.md` (actual: `AgentPortal_V1/memory/ops/windows-runbook.md`, `memory/ops/windows-runbook.md`)
+- `MEMORY.md` L15 -> `ops/probes.md` (actual: `AgentPortal_V1/memory/ops/probes.md`, `memory/ops/probes.md`)
+- `MEMORY.md` L28 -> `deploy_reboot_recovery_all.py` (actual: `memory/mechanic/deploy_reboot_recovery_all.py`)
+- `TODO.md` L7 -> `run-rules.md` (actual: `memory/run-rules.md`)
+- `TODO.md` L37 -> `GOAL_RESET_PENDING.json` (actual: `memory/goals/GOAL_RESET_PENDING.json`)
+- `TODO.md` L70 -> `evolution/README.md` (actual: `README.md`, `AgentPortal_V1/README.md`, `archive/README.md`)
+- `TODO.md` L79 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L80 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L81 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L82 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L95 -> `index_check.py` (actual: `memory/archivist/index_check.py`)
+- `TODO.md` L109 -> `bugs/INDEX.md` (actual: `AgentPortal_V1/memory/INDEX.md`, `AgentPortal_V1/memory/llm/INDEX.md`, `AgentPortal_V1/memory/ops/INDEX.md`)
+- `TODO.md` L112 -> `prune-log.md` (actual: `memory/archivist/prune-log.md`)
+- `TODO.md` L117 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L118 -> `git-hygiene.md` (actual: `memory/ops/git-hygiene.md`)
+- `TODO.md` L119 -> `builder/INDEX.md` (actual: `AgentPortal_V1/memory/INDEX.md`, `AgentPortal_V1/memory/llm/INDEX.md`, `AgentPortal_V1/memory/ops/INDEX.md`)
+- `TODO.md` L123 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L132 -> `white_realias_result.json` (actual: `archive/orphaned_20261117/white_realias_result.json`)
+- `TODO.md` L135 -> `llm/studio-api.md` (actual: `AgentPortal_V1/memory/llm/studio-api.md`, `memory/llm/studio-api.md`)
+- `TODO.md` L136 -> `llm/hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L141 -> `repin_root_index.py` (actual: `memory/builder/repin_root_index.py`)
+- `TODO.md` L150 -> `index_html_pre-r14-9c6b08e3.html` (actual: `memory/mechanic/index_html_pre-r14-9c6b08e3.html`)
+- `TODO.md` L155 -> `arnold-restart-r8.ps1` (actual: `memory/builder/arnold-restart-r8.ps1`)
+- `TODO.md` L161 -> `arnold-restart-r8.ps1` (actual: `memory/builder/arnold-restart-r8.ps1`)
+- `TODO.md` L170 -> `goals/INDEX.md` (actual: `AgentPortal_V1/memory/INDEX.md`, `AgentPortal_V1/memory/llm/INDEX.md`, `AgentPortal_V1/memory/ops/INDEX.md`)
+- `TODO.md` L174 -> `Users/White/.unsloth/studio/sandbox/_default/index.html` (actual: `index.html`, `AgentPortal_V1/index.html`, `calculator-app/index.html`)
+- `TODO.md` L175 -> `synthesis/INDEX.md` (actual: `AgentPortal_V1/memory/INDEX.md`, `AgentPortal_V1/memory/llm/INDEX.md`, `AgentPortal_V1/memory/ops/INDEX.md`)
+- `TODO.md` L181 -> `arnold-restart-r8.md` (actual: `memory/builder/arnold-restart-r8.md`)
+- `TODO.md` L189 -> `designer/files-panel-hunks-r5.md` (actual: `memory/designer/files-panel-hunks-r5.md`)
+- `TODO.md` L193 -> `designer/files-panel-hunks-r5.md` (actual: `memory/designer/files-panel-hunks-r5.md`)
+- `TODO.md` L194 -> `TODO.md/MEMORY.md` (actual: `MEMORY.md`, `AgentPortal_V1/MEMORY.md`, `agents/orchestrator/MEMORY.md`)
+- `TODO.md` L198 -> `designer/files-panel-hunks-r5.md` (actual: `memory/designer/files-panel-hunks-r5.md`)
+- `TODO.md` L201 -> `files-panel-hunks-r5.md` (actual: `memory/designer/files-panel-hunks-r5.md`)
+- `TODO.md` L207 -> `TODO.md/MEMORY.md` (actual: `MEMORY.md`, `AgentPortal_V1/MEMORY.md`, `agents/orchestrator/MEMORY.md`)
+- `TODO.md` L275 -> `MEMORY.md/TODO.md` (actual: `TODO.md`, `AgentPortal_V1/TODO.md`, `agents/orchestrator/TODO.md`)
+- `TODO.md` L292 -> `archivist/index-sweep-2026-11-13.md` (actual: `memory/archivist/index-sweep-2026-11-13.md`)
+- `TODO.md` L293 -> `archivist/index_check.py` (actual: `memory/archivist/index_check.py`)
+- `TODO.md` L296 -> `archivist/prune-log.md` (actual: `memory/archivist/prune-log.md`)
+- `TODO.md` L299 -> `architecture.md` (actual: `AgentPortal_V1/memory/portal/architecture.md`, `memory/portal/architecture.md`)
+- `TODO.md` L343 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L349 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L362 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L364 -> `black_hash_q8_out2.txt` (actual: `archive/orphaned_20261117/black_hash_q8_out2.txt`)
+- `TODO.md` L365 -> `copy_tail/q8_red2.log` (actual: `q8_red2.log`)
+- `TODO.md` L368 -> `black_hash_q8.ps1` (actual: `archive/orphaned_20261117/black_hash_q8.ps1`)
+- `TODO.md` L368 -> `black_hash_q8_out2.txt` (actual: `archive/orphaned_20261117/black_hash_q8_out2.txt`)
+- `TODO.md` L379 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L385 -> `ops/windows-runbook.md` (actual: `AgentPortal_V1/memory/ops/windows-runbook.md`, `memory/ops/windows-runbook.md`)
+- `TODO.md` L409 -> `r2_smoke_wait.py` (actual: `archive/one_shot_tasks_20261117/r2_smoke_wait.py`)
+- `TODO.md` L413 -> `probe_black.py` (actual: `archive/orphaned_20261117/probe_black.py`)
+- `TODO.md` L434 -> `probe_quinn.py` (actual: `AgentPortal_V1/probes/probe_quinn.py`, `archive/orphaned_20261117/probe_quinn.py`)
+- `TODO.md` L441 -> `probe_black.py` (actual: `archive/orphaned_20261117/probe_black.py`)
+- `TODO.md` L443 -> `probe_black.py` (actual: `archive/orphaned_20261117/probe_black.py`)
+- `TODO.md` L451 -> `r2_smoke_wait.py` (actual: `archive/one_shot_tasks_20261117/r2_smoke_wait.py`)
+- `TODO.md` L460 -> `ops/windows-runbook.md` (actual: `AgentPortal_V1/memory/ops/windows-runbook.md`, `memory/ops/windows-runbook.md`)
+- `TODO.md` L470 -> `architecture.md` (actual: `AgentPortal_V1/memory/portal/architecture.md`, `memory/portal/architecture.md`)
+- ... +205 more (see JSON)
 
-## Notes
-- Many "phantoms" are ephemeral scripts (one-off probes, test files) that were created and deleted.
-- The INDEX.md phantoms are stale pointer entries referencing archived/removed leaves.
-- Recommendation: prune INDEX.md pointers to non-existent files; leave ephemeral script refs as-is (they're historical records).
-
-## Acceptance criteria status
-Goal says: "one full pass with zero phantom references (or all flagged + fixed)."
-Status: All phantoms FLAGGED above. Fix = prune stale INDEX.md entries (separate task, low priority since they don't affect runtime).
+## Classification notes
+- HISTORICAL: file was committed at some point, later deleted; historical records may keep the reference.
+- PROVENANCE / DOCUMENTED-ABSENT: line talks about the file's history or its absence; not a live pointer.
+- REMOTE: drive-letter path on another host; unverifiable from White (expected in runbooks).
