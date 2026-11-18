@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe lane 10/10 closed; Goal #9 resolved — BG-SCHED marker count corrected from 10 to 8 across agent files.
-- reboot_recover.py validated deployment-ready on 3/4 hosts (Red/Pale/Black); only schtask registration on White seat remains.
 - Designer 10/10 closed; pixel screenshots (#2/#10) blocked NEEDS-HUMAN (no browser binary in sandbox).
 - Goal #4 unblock: run `python memory/mechanic/deploy_reboot_recovery_all.py` on non-sandbox White terminal (COM blocker at Red seat).
 - Scribe lane fully closed: 10/10 reached, 0 open (verified 13:01); any "1 open" in prompts is stale.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer goals
 - Goals #3 & #6 had truncated `(verified:` markers (missing closing paren from cut-off filenames) causing false open count; fixed via ledger.
 - supersession_check.py: 1145 leaves,
+- Phantom "2 open" root cause: goals #3 & #6 have truncated `(verified:` markers (missing closing paren); evidence files exist under full name
+- Scribe lane confirmed 10/10 closed per ledger; goal file still missing verified lines for #3/#4/#5/#7 (record mismatch being fixed).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

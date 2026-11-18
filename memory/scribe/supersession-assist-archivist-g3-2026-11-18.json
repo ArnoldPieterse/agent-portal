@@ -1,0 +1,1372 @@
+{
+  "timestamp": "2026-11-18T13:43:36.408804",
+  "root": ".",
+  "total_leaves_scanned": 1145,
+  "supersession_edges": 96,
+  "superseded_files_marked": 17,
+  "cycles_detected": 0,
+  "broken_chains": 68,
+  "orphaned_superseded": [
+    "memory/archivist/MEMORY.md",
+    "memory/archivist/history-r7-r36.md",
+    "memory/builder/index-repin-r65-v21-2026-11-14.md",
+    "memory/builder/pin-sha-stale-claim-closed-2026-11-17.md",
+    "memory/designer/files-panel-patch.md",
+    "memory/goals/INDEX.md",
+    "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+    "memory/goals/archive/README.md",
+    "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+    "memory/researcher/MEMORY.md",
+    "memory/researcher/ac-a2-r26-convergence-check-2026-11-14.md",
+    "memory/scribe/supersession-pointer-spec.md",
+    "memory/verifier/scribe-goal2-v2-contradiction-2026-11-18.md",
+    "memory/verifier/scribe-goal2-v2-stale-claim-2026-11-18.md"
+  ],
+  "canonical_heads": [
+    "memory/INDEX.md",
+    "memory/ONBOARDING.md",
+    "memory/archivist/INDEX.md",
+    "memory/archivist/REPAIR_2026-11-13.md",
+    "memory/archivist/decay-report.md",
+    "memory/archivist/goals-2026-11-13.md",
+    "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+    "memory/archivist/index-integrity-r72-2026-11-14.md",
+    "memory/archivist/index-pointer-batch-r42.md",
+    "memory/archivist/orphan-folder-audit-r42.md",
+    "memory/archivist/portal-baseline-clobber-2026-11-15.md",
+    "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+    "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+    "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+    "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+    "memory/builder/truncation-e2e-verify-2026-11-16.md",
+    "memory/designer/INDEX.md",
+    "memory/designer/planning-meeting-2026-11-14.md",
+    "memory/goals/all-goals-2026-11-13.md",
+    "memory/goals/archive/archivist-2026-11-13.md",
+    "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+    "memory/goals/archive/cycle2-2026-11-17/researcher.md",
+    "memory/ops/left-archivist.md",
+    "memory/ops/runbook-notes.md",
+    "memory/portal/planning-2026-11-13.md",
+    "memory/portal/v1-upgrades-decisions.md",
+    "memory/projects/INDEX.md",
+    "memory/researcher/INDEX.md",
+    "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+    "memory/scribe/INDEX.md",
+    "memory/scribe/MEMORY.md",
+    "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+    "memory/scribe/goal10-trend-supersession-complete-2026-11-18.md",
+    "memory/scribe/supersession-cycle3-run-2026-11-17.md",
+    "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+    "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+    "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+    "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+    "memory/synthesis/2026-11-12-consolidated-state.md",
+    "memory/synthesis/2026-11-14-r38-round-record.md",
+    "memory/synthesis/2026-11-14-white-rename-closeout.md",
+    "memory/synthesis/2026-11-16-portal-status-report.md",
+    "memory/synthesis/2026-11-16-status-thread-contradictions.md",
+    "memory/synthesis/INDEX.md",
+    "memory/synthesis/index-pointer-addendum-r43.md",
+    "memory/synthesis/index-pointer-batch-r40.md",
+    "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+    "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+    "memory/synthesis/index-pointer-handoff-r38.md",
+    "memory/synthesis/index-regen-r73-archivist-2026-11-14.md",
+    "memory/synthesis/index-replay-r81-24of24-canonical.md",
+    "memory/verifier/INDEX.md",
+    "memory/verifier/MEMORY.md",
+    "memory/verifier/ac-a2-r61-sweep-2026-11-14.md",
+    "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+    "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+    "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+    "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+    "memory/verifier/ac-a2-r77-sweep-r58-remeasure-2026-11-14.md",
+    "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+    "memory/verifier/goals-naming-ruling-2026-11-13.md",
+    "memory/verifier/live-state-pin-2026-11-15-r3.md",
+    "memory/verifier/planning-meeting-gate-2026-11-14.md",
+    "memory/verifier/ui-slices-verify-2026-11-17.md",
+    "memory/verifier/v2-artifact-lost-2026-11-15.md"
+  ],
+  "deep_chains_gt4": {},
+  "head_target_overlaps": [
+    {
+      "head1": "memory/INDEX.md",
+      "head2": "memory/ONBOARDING.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/INDEX.md",
+      "head2": "memory/ops/runbook-notes.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/INDEX.md",
+      "head2": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/INDEX.md",
+      "head2": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/INDEX.md",
+      "head2": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/INDEX.md",
+      "head2": "memory/verifier/MEMORY.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/INDEX.md",
+      "head2": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/ONBOARDING.md",
+      "head2": "memory/ops/runbook-notes.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/ONBOARDING.md",
+      "head2": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/ONBOARDING.md",
+      "head2": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/ONBOARDING.md",
+      "head2": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/ONBOARDING.md",
+      "head2": "memory/verifier/MEMORY.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/ONBOARDING.md",
+      "head2": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/INDEX.md",
+      "head2": "memory/archivist/decay-report.md",
+      "overlap": [
+        "-locations-2026-11-15.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/archivist/portal-baseline-clobber-2026-11-15.md",
+      "overlap": [
+        "-28hunk-2026-11-15.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/designer/INDEX.md",
+      "overlap": [
+        "-2026-11-15.md",
+        "-28hunk-2026-11-15.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/researcher/INDEX.md",
+      "overlap": [
+        "-pin-correction-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/scribe/INDEX.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md",
+        "-r73-8e194239-2026-11-14.md",
+        "-r72-485a6558-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/synthesis/index-regen-r73-archivist-2026-11-14.md",
+      "overlap": [
+        "-append.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/verifier/ac-a2-r61-sweep-2026-11-14.md",
+      "overlap": [
+        "-append.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/verifier/live-state-pin-2026-11-15-r3.md",
+      "overlap": [
+        "-2026-11-15.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/decay-report.md",
+      "head2": "memory/verifier/v2-artifact-lost-2026-11-15.md",
+      "overlap": [
+        "-2026-11-15.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/goals-2026-11-13.md",
+      "head2": "memory/goals/all-goals-2026-11-13.md",
+      "overlap": [
+        "-map.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/goals-2026-11-13.md",
+      "head2": "memory/goals/archive/archivist-2026-11-13.md",
+      "overlap": [
+        "-map.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/goals-2026-11-13.md",
+      "head2": "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+      "overlap": [
+        "-map.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/goals-2026-11-13.md",
+      "head2": "memory/ops/left-archivist.md",
+      "overlap": [
+        "-map.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/scribe/INDEX.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/scribe/INDEX.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/index-pointer-batch-r42.md",
+      "head2": "memory/archivist/orphan-folder-audit-r42.md",
+      "overlap": [
+        "memory/goals/archivist.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/portal-baseline-clobber-2026-11-15.md",
+      "head2": "memory/designer/INDEX.md",
+      "overlap": [
+        "-28hunk-2026-11-15.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/scribe/INDEX.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/synthesis/index-pointer-addendum-r43.md",
+      "overlap": [
+        "memory/synthesis/INDEX.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/synthesis/index-pointer-batch-r40.md",
+      "overlap": [
+        "memory/synthesis/INDEX.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/synthesis/index-pointer-handoff-r38.md",
+      "overlap": [
+        "memory/synthesis/INDEX.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r61-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "head2": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "head2": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "head2": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "head2": "memory/scribe/INDEX.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r62-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "head2": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "head2": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "head2": "memory/scribe/INDEX.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/archivist/synthesis-index-convergence-verify-r68-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "head2": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "head2": "memory/scribe/INDEX.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/builder/synthesis-index-apply-handoff-r62-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/designer/INDEX.md",
+      "head2": "memory/verifier/live-state-pin-2026-11-15-r3.md",
+      "overlap": [
+        "-2026-11-15.md"
+      ]
+    },
+    {
+      "head1": "memory/designer/INDEX.md",
+      "head2": "memory/verifier/v2-artifact-lost-2026-11-15.md",
+      "overlap": [
+        "-2026-11-15.md"
+      ]
+    },
+    {
+      "head1": "memory/goals/all-goals-2026-11-13.md",
+      "head2": "memory/goals/archive/archivist-2026-11-13.md",
+      "overlap": [
+        "-map.md"
+      ]
+    },
+    {
+      "head1": "memory/goals/all-goals-2026-11-13.md",
+      "head2": "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+      "overlap": [
+        "-map.md"
+      ]
+    },
+    {
+      "head1": "memory/goals/all-goals-2026-11-13.md",
+      "head2": "memory/ops/left-archivist.md",
+      "overlap": [
+        "-map.md"
+      ]
+    },
+    {
+      "head1": "memory/goals/archive/archivist-2026-11-13.md",
+      "head2": "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+      "overlap": [
+        "-map.md"
+      ]
+    },
+    {
+      "head1": "memory/goals/archive/archivist-2026-11-13.md",
+      "head2": "memory/ops/left-archivist.md",
+      "overlap": [
+        "-map.md"
+      ]
+    },
+    {
+      "head1": "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+      "head2": "memory/ops/left-archivist.md",
+      "overlap": [
+        "-map.md"
+      ]
+    },
+    {
+      "head1": "memory/ops/runbook-notes.md",
+      "head2": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/ops/runbook-notes.md",
+      "head2": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/ops/runbook-notes.md",
+      "head2": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/ops/runbook-notes.md",
+      "head2": "memory/verifier/MEMORY.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/ops/runbook-notes.md",
+      "head2": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/scribe/INDEX.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md",
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md",
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/synthesis/INDEX.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md",
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/INDEX.md",
+      "head2": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/INDEX.md",
+      "head2": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/INDEX.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/INDEX.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/INDEX.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/MEMORY.md",
+      "head2": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "overlap": [
+        "INDEX.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+      "head2": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+      "head2": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+      "head2": "memory/verifier/MEMORY.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+      "head2": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "head2": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "head2": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "head2": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md",
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "head2": "memory/synthesis/INDEX.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "head2": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "head2": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "head2": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md",
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+      "head2": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+      "head2": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+      "head2": "memory/synthesis/INDEX.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+      "head2": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+      "head2": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+      "head2": "memory/synthesis/INDEX.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+      "head2": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "head2": "memory/synthesis/INDEX.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "head2": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "head2": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md"
+      ]
+    },
+    {
+      "head1": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "head2": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md",
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "head2": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "head2": "memory/verifier/MEMORY.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "head2": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "head2": "memory/verifier/MEMORY.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "head2": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/INDEX.md",
+      "head2": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+      "overlap": [
+        "2026-11-12-upgrade-round.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/index-pointer-addendum-r43.md",
+      "head2": "memory/synthesis/index-pointer-batch-r40.md",
+      "overlap": [
+        "memory/synthesis/INDEX.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/index-pointer-addendum-r43.md",
+      "head2": "memory/synthesis/index-pointer-handoff-r38.md",
+      "overlap": [
+        "memory/synthesis/INDEX.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/index-pointer-batch-r40.md",
+      "head2": "memory/synthesis/index-pointer-handoff-r38.md",
+      "overlap": [
+        "memory/synthesis/INDEX.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+      "head2": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+      "head2": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+      "head2": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+      "overlap": [
+        "2026-11-14-planning-meeting.md"
+      ]
+    },
+    {
+      "head1": "memory/synthesis/index-regen-r73-archivist-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r61-sweep-2026-11-14.md",
+      "overlap": [
+        "-append.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/MEMORY.md",
+      "head2": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "overlap": [
+        "TODO.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "head2": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/ac-a2-r68-sweep-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
+      "head2": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "overlap": [
+        "-r61-0517db38-2026-11-14.md"
+      ]
+    },
+    {
+      "head1": "memory/verifier/live-state-pin-2026-11-15-r3.md",
+      "head2": "memory/verifier/v2-artifact-lost-2026-11-15.md",
+      "overlap": [
+        "-2026-11-15.md"
+      ]
+    }
+  ],
+  "healthy": false,
+  "violations": {
+    "cycles": 0,
+    "broken_chains": 68,
+    "orphaned_superseded": 14,
+    "deep_chains_gt4": 0,
+    "head_target_overlaps": 180
+  }
+}

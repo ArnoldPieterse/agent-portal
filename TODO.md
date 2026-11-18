@@ -20,7 +20,7 @@ Status: **DONE + verified 17:2x** - portal restarted (PID 36992, created 17:22:1
 - [ ] Fleet to adopt: every future file edit follows memory/portal/file-modularity.md (header pointers + budgets); oversized files logged in TODO top section.
 
 ## GOAL-STALL FIX 2026-11-16 ~16:2x (Studio seat, on user request) - supersedes older status lines
-Status: **code complete + unit-verified; portal restart PENDING** (kill PID from _portal_pid.txt -> schtasks /run PortalRun -> verify new PID on :8099 postdates agent_portal.py edit).
+Status: **code complete + unit-verified + portal RESTARTED** - running PID 22748 started 13:47:40 > agent_portal.py edit 13:28:30 (fresh code verified); canonical tool = restart_portal.py (Mechanic, on disk).
 Investigation of "agents not making progress" found three compounding bugs (full detail: memory/portal/bugs/goal-stall-loop-2026-11-16.md, runbook: memory/ops/merge-queue-git-progress-2026-11-16.md):
 - [x] BUG 1: per-turn prompt listed CLOSED goals as open (naive regex ignored evidence markers) -> agents re-verified finished work every turn. FIXED: _agent_goals_block now uses the strict ledger + spells out the CLOSURE PROCEDURE (--record command); truncation budget fixed (team rules were cut off at 1400 chars).
 - [x] BUG 2: agent code edits in the Studio sandbox silently destroyed by push-only sync; index.html additionally reverted by PIN_GUARD every mirror cycle (observed live on my own edit today). FIXED: merge queue snapshots diverged files BEFORE clobber (memory/ops/merge-queue/) + GET /api/merge-queue + POST /api/merge restore+commit + Ops panel UI; TOOLS prompt now teaches the repin procedure; pin advanced 2c6399f2d853 -> e0679e5f0844 (2026-11-16d).
@@ -35,7 +35,7 @@ Investigation of "agents not making progress" found three compounding bugs (full
 - [x] Proposals collected from goal-setting round g-1a1e266d42d (+ auto-resumes): 6 of 8 agents submitted; Orchestrator + Researcher models NOT loaded on White (LM Studio 404) -> their sets seat-drafted, flagged for ratification next round. Verbatim: memory/goals/cycle2-proposals-raw-2026-11-16.txt
 - [x] Coherence pass applied (SLO pipeline Mechanic#4->Builder#8->Verifier#4; fleet endpoint Mechanic#8; supersession Archivist#5/Scribe#5; memory-health Archivist#2/Scribe#9; Designer#5 replaced - responsive already shipped) - detail: memory/goals/cycle2-kickoff-2026-11-16.md
 - [x] Goal-logic bug fixed in agent_portal.py (rid NameError corrupted GOAL_RESET_PENDING.json on consumption); flag repaired with true consumed record; /api/goals live: 0/80, goal_reset_pending=false
-- [ ] **PENDING: restart portal** to load the fixed agent_portal.py - WAIT for active group run g-1a1e27ebd18 to end (was in progress at write time); then taskkill PID (_portal_pid.txt) -> schtasks /run PortalRun -> verify new PID on :8099 -> update _portal_pid.txt
+- [x] **DONE: portal restarted** to load fixed agent_portal.py - PID 22748 (started 13:47:40) postdates last edit 13:28:30; /api/goals serving; group run resumed (busy=True, mode=group).
 - [ ] NEXT ROUND: load Orchestrator + Researcher models on White (LM Studio), then have both agents ratify/revise their seat-drafted goal sets
 
 ## HOTLINE 2026-11-15 ~23:0x (Orchestrator, non-sandboxed - supersedes older status lines)

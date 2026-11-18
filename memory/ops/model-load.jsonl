@@ -253,3 +253,5 @@
 {"ts": "2026-11-18 13:34:42", "run": "g-1a1ecb896a9-b59eb8", "missing": {"Researcher": "not_loaded", "Orchestrator": "unreachable", "Builder": "unreachable", "Archivist": "unreachable", "Verifier": "unreachable"}}
 {"ts": "2026-11-18 13:37:48", "run": "g-1a1ecbb338c-7b3508", "missing": {"Orchestrator": "unreachable", "Researcher": "unreachable", "Verifier": "unreachable", "Builder": "unreachable", "Archivist": "unreachable"}}
 {"ts": "2026-11-18 13:42:42", "run": "g-1a1ecbfea49-af7f16", "missing": {"Researcher": "not_loaded", "Verifier": "unreachable", "Builder": "unreachable", "Orchestrator": "unreachable", "Archivist": "unreachable"}}
+{"ts": "2026-11-18 13:45:57", "run": "g-1a1ecc2e47e-cc7115", "missing": {"Researcher": "not_loaded", "Builder": "unreachable", "Verifier": "unreachable", "Orchestrator": "unreachable", "Archivist": "unreachable"}}
+{"ts": "2026-11-18 13:48:40", "run": "g-1a1ecc56039-0963d7", "missing": {"Researcher": "not_loaded", "Orchestrator": "unreachable", "Builder": "unreachable", "Verifier": "unreachable", "Archivist": "unreachable"}}
