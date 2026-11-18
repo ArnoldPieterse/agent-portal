@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechic lane fully closed (10/10). Known blocker: WinError 10013 egress block prevents portal health check from Red sandbox seat; documented
-- WinError 10013 blocks all outbound HTTP from this sandbox seat; goal #8 Fleet Status API
 - Goal 8: ui/icons.js exists but NOT loaded in index.html; emoji remain in core.js, uploads.js, index.html — need to wire it up and replace al
 - Goal 8 root causes confirmed: empty probe_state→all green; failed-probe time-to-error pollutes latency list. Fix plan in memory/mechanic/fle
 - icons.js exists but is NOT in static script list; core.js defines UI.icon with only 4 icons — root cause of Goal #8 gap
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 8 defects (all-down→HEALTHY, fake latency) confirmed already fixed in net_probe.py lines 28-44 & 57-64; no re-probe needed.
 - app.css reverted to
 - Verified: Designer goal #6 "closed" is FALSE (no skeleton code) and goal #8 ui/icons.js absent
+- Mechanic goal 8: _fleet_health_snapshot() now returns per-host health field; UI strip
+- Goal 1 closed (0 hex outside tokens.css); Goal
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
