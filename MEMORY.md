@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- net_probe.py bug fixed: fail_counts was never loaded from state file, resetting consecutive-failure tracking each run
-- Scribe lane now 6/10; Goal #1 (Decision Log v2) verified in ledger; next oldest open is #6 Synthesis Quality Score.
-- net_probe.py bug: never loads fail_counts from state file, so consecutive failure tracking resets every run
 - Goal #1 (Design Token System) complete: 48 hex values replaced with var(--token), tokens.css linked in index.html, duplicate :root removed f
 - Goal #2 done: replaced 7 hardcoded line-heights in ui/app.css with var(--lh-base)/var(--lh-mono) tokens
 - Goal 6 (Synthesis Quality Score) verified and closed in ledger — rubric + 5 scored syntheses, avg 8.75.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic lane fully closed: all 10 goals reached in ledger, open=0 as of this pass.
 - Scribe closed all 3 remaining open goals (#7 chain_check PASS/66 files, #8 attribution verified, #10 memory hygiene) — ledger now fully clos
 - ui/core.js was truncated to 0 bytes by failed write; restored from canonical backup. Line-height tokens re-applied after mirror revert.
+- RECALL: - **M2** (`memory/goals/archive/researcher-20
+- Mechanic added ui/app.css to PIN_FILES in memory_mirror.py (sha12=ac3) to stop mirror reverting Designer's CSS edits.
+- Scribe reconciled trackers this pass: OI-004 & OI-006 resolved, 4 items remain OPEN; MEMORY.md goal line updated to 76/93 (82%).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
