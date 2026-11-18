@@ -34,11 +34,19 @@ import model_scheduler as ms
 class MockStudioState:
     """In-memory state simulating a single Studio host."""
 
-    def __init__(self, loaded_models=None):
+    def __init__(self, loaded_models=None, path_to_id=None):
         self.loaded = set(loaded_models or [])
         self.active_generations = 0
         self.call_log = []       # every API call recorded here
         self.fail_next_load = False  # for negative tests
+        self.path_to_id = path_to_id or {}
+
+    def _resolve_id(self, body):
+        """Map folder path - using catalog mapping, fallback to basename."""
+        path = body.get("model_path", "")
+        if path in self.path_to_id:
+            return self.path_to_id[path]
+        return path.replace(chr(92), "/").split("/")[-1]
 
     def get_models(self):
         self.call_log.append(("GET", "/models"))
@@ -53,14 +61,13 @@ class MockStudioState:
         if self.fail_next_load:
             self.fail_next_load = False
             raise Exception("Simulated load failure")
-        # Extract model id from folder path (simplified)
-        model_id = body.get("model_path", "unknown").split("/")[-1]
+        model_id = self._resolve_id(body)
         self.loaded.add(model_id)
         return 200, {"status": "ok"}
 
     def unload_model(self, body):
         self.call_log.append(("POST", "/api/inference/unload", body))
-        model_id = body.get("model_path", "unknown").split("/")[-1]
+        model_id = self._resolve_id(body)
         self.loaded.discard(model_id)
         return 200, {"status": "ok"}
 
@@ -68,8 +75,8 @@ class MockStudioState:
 class MockStudioAPI:
     """Patches _studio_get and _studio_post to route to MockStudioState."""
 
-    def __init__(self):
-        self.state = MockStudioState()
+    def __init__(self, path_to_id=None):
+        self.state = MockStudioState(path_to_id=path_to_id)
 
     def _get(self, host_api, path, timeout=30):
         if "/models" in path:
@@ -148,7 +155,8 @@ def test_t1_basic_swap(runner, catalog):
 
     # Execute against mock and verify zero-binding-loss
     agents_before = _read_agents_json()
-    api = MockStudioAPI()
+    path_to_id = {m["folder"]: m["id"] for m in catalog["models"]}
+    api = MockStudioAPI(path_to_id=path_to_id)
     api.state.loaded = {"qwen3-27b-q8"}
 
     with mock.patch.object(ms, "_studio_get", side_effect=api._get), \
@@ -178,7 +186,8 @@ def test_t2_idle_gate_blocks(runner, catalog):
     print("\n--- T2: Idle-gate blocks ---")
     plan_result = ms.plan(["researcher"], {"white": ["qwen3-27b-q8"]}, catalog)
 
-    api = MockStudioAPI()
+    path_to_id = {m["folder"]: m["id"] for m in catalog["models"]}
+    api = MockStudioAPI(path_to_id=path_to_id)
     api.state.loaded = {"qwen3-27b-q8"}
     api.state.active_generations = 3  # NOT idle
 
@@ -239,7 +248,8 @@ def test_t4_binding_loss_detection(runner, catalog):
 
     # Run a normal plan + mock execute (should NOT modify agents.json)
     plan_result = ms.plan(["orchestrator"], {"white": ["qwen3-27b-q4"]}, catalog)
-    api = MockStudioAPI()
+    path_to_id = {m["folder"]: m["id"] for m in catalog["models"]}
+    api = MockStudioAPI(path_to_id=path_to_id)
     api.state.loaded = {"qwen3-27b-q4"}
 
     with mock.patch.object(ms, "_studio_get", side_effect=api._get), \
@@ -305,7 +315,8 @@ def test_t6_idempotent_noop(runner, catalog):
                  str(plan_result["hosts"].get("white", {})))
 
     # Execute no-op: mock state unchanged
-    api = MockStudioAPI()
+    path_to_id = {m["folder"]: m["id"] for m in catalog["models"]}
+    api = MockStudioAPI(path_to_id=path_to_id)
     api.state.loaded = {"qwen3-27b-q8"}
     with mock.patch.object(ms, "_studio_get", side_effect=api._get), \
          mock.patch.object(ms, "_studio_post", side_effect=api._post):

@@ -73,3 +73,4 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - designer-goal1-hex-reverify-2026-11-18.md — **CONFIRMED FAIL** Designer#1 token audit: 36 hex values in component rules (matches Orchestrator count). Designer's 11-17 'zero remaining' claim is stale. Goal stays OPEN. → **SUPERSEDED** by designer-goal1-conflict-reconciliation-2026-11-18.md: this ran against a pre-final-tokenization file state; live app.css (sha12=8ea14b11919e) has 0 outside token defs, so #1 is closed.
 
 - scribe-goal6-truncation-fix-2026-11-18.md — Fixed truncated evidence filename in Scribe goal #6 verified marker (`.m` → `.md`). Evidence file confirmed exists at full path. 3 other truncations noted but not fixed (prose-level, need original author).
+- mechanic-goal2-auto-restart-verify-2026-11-19.md — Mechanic #2 partial pass: failure/escalation path verified; success path untested
