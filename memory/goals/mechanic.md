@@ -12,7 +12,7 @@ Focus: Fleet reliability + automated recovery. Make the 4-host fleet self-healin
 
 5. **Network Connectivity Probe** - Test TCP connectivity to all 4 hosts every 10 min. Track latency + packet loss. Alert on >3 consecutive failures or >200ms p95. `memory/mechanic/net_probe.py`. Verified: probe runs; correctly reports reachable/unreachable; alert threshold works (simulated timeout).
 
-6. **Portal Process Watchdog** - Verify agent_portal.py is running as expected (correct PID, correct port bound, no zombie children). Restart if orphaned or in wrong state. `memory/mechanic/portal_watchdog.py`. Verified: killing portal process triggers watchdog restart; new process binds correctly.
+6. **Portal Process Watchdog** - Verify agent_portal.py is running as expected (correct PID, correct port bound, no zombie children). Restart if orphaned or in wrong state. `memory/mechanic/portal_watchdog.py`. Verified: killing portal process triggers watchdog restart; new process binds correctly. (pointer: memory/mechanic/portal_watchdog.py)
 
 7. **Log Rotation + Retention** - Implement log rotation for all .log files: max 10MB per file, keep 5 rotations, compress old ones. Prevents disk fill from unbounded logs. `memory/mechanic/log_rotate.py`. Verified: script runs; creates rotated files; compressed archives exist; original stays <10MB.
 

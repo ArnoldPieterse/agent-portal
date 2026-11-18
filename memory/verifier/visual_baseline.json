@@ -1,0 +1,3506 @@
+{
+  "1920": {
+    "count": 200,
+    "elements": [
+      {
+        "tag": "html",
+        "path": "/html",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "body",
+        "path": "html/body",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "dialog",
+        "path": "html/body/dialog",
+        "id": "editor",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div",
+        "id": "",
+        "class": "dbody"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div",
+        "id": "",
+        "class": "dfoot"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div",
+        "id": "",
+        "class": "dhead"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/button",
+        "id": "edCancel",
+        "class": "btn"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/button",
+        "id": "edClose",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/button",
+        "id": "edSave",
+        "class": "btn pri"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "netFields",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "f_tools",
+        "class": "checks"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/div/div/button",
+        "id": "f_scan",
+        "class": "btn"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_key",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_ragkey",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_ragstudio",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_studio",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_color",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_emoji",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_maxtok",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_maxtools",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_name",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_temp",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "select",
+        "path": "html/body/dialog/div/div/div/select",
+        "id": "f_reasoning",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/span",
+        "id": "f_scanstat",
+        "class": "hint"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/input",
+        "id": "f_blurb",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_fastfirst",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_memcycle",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_rag",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_runlocal",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "select",
+        "path": "html/body/dialog/div/div/select",
+        "id": "f_kb",
+        "class": ""
+      },
+      {
+        "tag": "select",
+        "path": "html/body/dialog/div/div/select",
+        "id": "f_model",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "textarea",
+        "path": "html/body/dialog/div/div/textarea",
+        "id": "f_persona",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/label/input",
+        "id": "f_net",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/span",
+        "id": "edTitle",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/div",
+        "id": "peek",
+        "class": ""
+      },
+      {
+        "tag": "header",
+        "path": "html/body/header",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/header/div",
+        "id": "status",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/header/div/span",
+        "id": "sdot",
+        "class": "dot"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/header/div/span",
+        "id": "stext",
+        "class": ""
+      },
+      {
+        "tag": "h1",
+        "path": "html/body/header/h1",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/header/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "main",
+        "path": "html/body/main",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "aside",
+        "path": "html/body/main/aside",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/aside/div",
+        "id": "",
+        "class": "ah"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/aside/div",
+        "id": "agentList",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/aside/div/button",
+        "id": "addAgent",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div",
+        "id": "chatCol",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "actPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "composer",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "filesPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "fleetPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "goalsPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "intBanner",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "modeBar",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "msgs",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "opsPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "queuePanel",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "intDismiss",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "intResume",
+        "class": "iact"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "navToggle",
+        "class": "nav-toggle"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "resetBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "send",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "stopBtn",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "actBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "actHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "attachWrap",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "filesHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetHealth",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetTopo",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "goalsBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "goalsGit",
+        "class": "hint"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "goalsHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "memHealthSection",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "opsBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "opsHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "queueHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "queueList",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/button",
+        "id": "actRefresh",
+        "class": "btn"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/button",
+        "id": "attach",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/button",
+        "id": "filesRefresh",
+        "class": "btn"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": "opsrow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": "opsrow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "attachMenu",
+        "class": "amenu"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "gitLog",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "gitStatus",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "memHealthBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "mergeQueue",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "opsMsg",
+        "class": "hint"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "gitCommit",
+        "class": "btn"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "todoPrune",
+        "class": "btn"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div/div",
+        "id": "diskTile",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div/div",
+        "id": "uptimeTile",
+        "class": "opsbox"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/main/div/div/div/div/input",
+        "id": "gitMsg",
+        "class": ""
+      },
+      {
+        "tag": "select",
+        "path": "html/body/main/div/div/div/select",
+        "id": "actSel",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "actStat",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "fleetStat",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "goalsStat",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "opsStat",
+        "class": "hint"
+      },
+      {
+        "tag": "nav",
+        "path": "html/body/main/div/div/nav",
+        "id": "",
+        "class": "seg"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/nav/button",
+        "id": "mGroup",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/nav/button",
+        "id": "mSolo",
+        "class": "on"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "",
+        "class": "vdiv"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "busyHint",
+        "class": "busyspan"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "intText",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "modeHint",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "toggles",
+        "class": "toggles"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "xtalk",
+        "class": "hint"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "actBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "filesBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "fleetBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "goalsBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "opsBtn",
+        "class": ""
+      },
+      {
+        "tag": "textarea",
+        "path": "html/body/main/div/div/textarea",
+        "id": "input",
+        "class": ""
+      },
+      {
+        "tag": "ul",
+        "path": "html/body/main/div/div/ul",
+        "id": "filesList",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/main/div/input",
+        "id": "dirPick",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/main/div/input",
+        "id": "filePick",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "head",
+        "path": "html/head",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "link",
+        "path": "html/head/link",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "link",
+        "path": "html/head/link",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "meta",
+        "path": "html/head/meta",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "meta",
+        "path": "html/head/meta",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "title",
+        "path": "html/head/title",
+        "id": "",
+        "class": ""
+      }
+    ],
+    "hash": "a750368ea236e789"
+  },
+  "768": {
+    "count": 200,
+    "elements": [
+      {
+        "tag": "html",
+        "path": "/html",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "body",
+        "path": "html/body",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "dialog",
+        "path": "html/body/dialog",
+        "id": "editor",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div",
+        "id": "",
+        "class": "dbody"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div",
+        "id": "",
+        "class": "dfoot"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div",
+        "id": "",
+        "class": "dhead"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/button",
+        "id": "edCancel",
+        "class": "btn"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/button",
+        "id": "edClose",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/button",
+        "id": "edSave",
+        "class": "btn pri"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "netFields",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "f_tools",
+        "class": "checks"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/div/div/button",
+        "id": "f_scan",
+        "class": "btn"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_key",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_ragkey",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_ragstudio",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_studio",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_color",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_emoji",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_maxtok",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_maxtools",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_name",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_temp",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "select",
+        "path": "html/body/dialog/div/div/div/select",
+        "id": "f_reasoning",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/div/span",
+        "id": "f_scanstat",
+        "class": "hint"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/input",
+        "id": "f_blurb",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_fastfirst",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_memcycle",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_rag",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_runlocal",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/div/label/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "select",
+        "path": "html/body/dialog/div/div/select",
+        "id": "f_kb",
+        "class": ""
+      },
+      {
+        "tag": "select",
+        "path": "html/body/dialog/div/div/select",
+        "id": "f_model",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "textarea",
+        "path": "html/body/dialog/div/div/textarea",
+        "id": "f_persona",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/label/input",
+        "id": "f_net",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/span",
+        "id": "edTitle",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/div",
+        "id": "peek",
+        "class": ""
+      },
+      {
+        "tag": "header",
+        "path": "html/body/header",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/header/div",
+        "id": "status",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/header/div/span",
+        "id": "sdot",
+        "class": "dot"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/header/div/span",
+        "id": "stext",
+        "class": ""
+      },
+      {
+        "tag": "h1",
+        "path": "html/body/header/h1",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/header/span",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "main",
+        "path": "html/body/main",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "aside",
+        "path": "html/body/main/aside",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/aside/div",
+        "id": "",
+        "class": "ah"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/aside/div",
+        "id": "agentList",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/aside/div/button",
+        "id": "addAgent",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div",
+        "id": "chatCol",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "actPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "composer",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "filesPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "fleetPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "goalsPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "intBanner",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "modeBar",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "msgs",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "opsPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "queuePanel",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "intDismiss",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "intResume",
+        "class": "iact"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "navToggle",
+        "class": "nav-toggle"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "resetBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "send",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "stopBtn",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "actBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "actHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "attachWrap",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "filesHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetHealth",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetTopo",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "goalsBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "goalsGit",
+        "class": "hint"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "goalsHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "memHealthSection",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "opsBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "opsHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "queueHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "queueList",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/button",
+        "id": "actRefresh",
+        "class": "btn"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/button",
+        "id": "attach",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/button",
+        "id": "filesRefresh",
+        "class": "btn"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": "hint"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": "opsrow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": "opsrow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "attachMenu",
+        "class": "amenu"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "gitLog",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "gitStatus",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "memHealthBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "mergeQueue",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "opsMsg",
+        "class": "hint"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "gitCommit",
+        "class": "btn"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "todoPrune",
+        "class": "btn"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div/div",
+        "id": "diskTile",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div/div",
+        "id": "uptimeTile",
+        "class": "opsbox"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/main/div/div/div/div/input",
+        "id": "gitMsg",
+        "class": ""
+      },
+      {
+        "tag": "select",
+        "path": "html/body/main/div/div/div/select",
+        "id": "actSel",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "actStat",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "fleetStat",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "goalsStat",
+        "class": "hint"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "opsStat",
+        "class": "hint"
+      },
+      {
+        "tag": "nav",
+        "path": "html/body/main/div/div/nav",
+        "id": "",
+        "class": "seg"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/nav/button",
+        "id": "mGroup",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/nav/button",
+        "id": "mSolo",
+        "class": "on"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "",
+        "class": "vdiv"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "busyHint",
+        "class": "busyspan"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "intText",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "modeHint",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "toggles",
+        "class": "toggles"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "xtalk",
+        "class": "hint"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "actBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "filesBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "fleetBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "goalsBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "opsBtn",
+        "class": ""
+      },
+      {
+        "tag": "textarea",
+        "path": "html/body/main/div/div/textarea",
+        "id": "input",
+        "class": ""
+      },
+      {
+        "tag": "ul",
+        "path": "html/body/main/div/div/ul",
+        "id": "filesList",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/main/div/input",
+        "id": "dirPick",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/main/div/input",
+        "id": "filePick",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "head",
+        "path": "html/head",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "link",
+        "path": "html/head/link",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "link",
+        "path": "html/head/link",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "meta",
+        "path": "html/head/meta",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "meta",
+        "path": "html/head/meta",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "title",
+        "path": "html/head/title",
+        "id": "",
+        "class": ""
+      }
+    ],
+    "hash": "a750368ea236e789"
+  },
+  "375": {
+    "count": 181,
+    "elements": [
+      {
+        "tag": "html",
+        "path": "/html",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "body",
+        "path": "html/body",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "dialog",
+        "path": "html/body/dialog",
+        "id": "editor",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div",
+        "id": "",
+        "class": "dbody"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div",
+        "id": "",
+        "class": "dfoot"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div",
+        "id": "",
+        "class": "dhead"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/button",
+        "id": "edCancel",
+        "class": "btn"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/button",
+        "id": "edClose",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/button",
+        "id": "edSave",
+        "class": "btn pri"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div",
+        "id": "netFields",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "",
+        "class": "frow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div",
+        "id": "f_tools",
+        "class": "checks"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/dialog/div/div/div/button",
+        "id": "f_scan",
+        "class": "btn"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/dialog/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_key",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_ragkey",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_ragstudio",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/div/input",
+        "id": "f_studio",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_color",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_emoji",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_maxtok",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_maxtools",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_name",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/div/input",
+        "id": "f_temp",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "select",
+        "path": "html/body/dialog/div/div/div/select",
+        "id": "f_reasoning",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/input",
+        "id": "f_blurb",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_fastfirst",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_memcycle",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_rag",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/div/label/input",
+        "id": "f_runlocal",
+        "class": ""
+      },
+      {
+        "tag": "select",
+        "path": "html/body/dialog/div/div/select",
+        "id": "f_kb",
+        "class": ""
+      },
+      {
+        "tag": "select",
+        "path": "html/body/dialog/div/div/select",
+        "id": "f_model",
+        "class": ""
+      },
+      {
+        "tag": "option",
+        "path": "html/body/dialog/div/div/select/option",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "textarea",
+        "path": "html/body/dialog/div/div/textarea",
+        "id": "f_persona",
+        "class": ""
+      },
+      {
+        "tag": "label",
+        "path": "html/body/dialog/div/label",
+        "id": "",
+        "class": "toggle"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/dialog/div/label/input",
+        "id": "f_net",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/dialog/div/span",
+        "id": "edTitle",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/div",
+        "id": "peek",
+        "class": ""
+      },
+      {
+        "tag": "header",
+        "path": "html/body/header",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/header/div",
+        "id": "status",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/header/div/span",
+        "id": "sdot",
+        "class": "dot"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/header/div/span",
+        "id": "stext",
+        "class": ""
+      },
+      {
+        "tag": "h1",
+        "path": "html/body/header/h1",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "main",
+        "path": "html/body/main",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "aside",
+        "path": "html/body/main/aside",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/aside/div",
+        "id": "",
+        "class": "ah"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/aside/div",
+        "id": "agentList",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/aside/div/button",
+        "id": "addAgent",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div",
+        "id": "chatCol",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "actPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "composer",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "filesPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "fleetPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "goalsPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "intBanner",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "modeBar",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "msgs",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "opsPanel",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div",
+        "id": "queuePanel",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "intDismiss",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "intResume",
+        "class": "iact"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "navToggle",
+        "class": "nav-toggle"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "resetBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "send",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/button",
+        "id": "stopBtn",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "actBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "actHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "attachWrap",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "filesHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetHealth",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "fleetTopo",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "goalsBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "goalsHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "memHealthSection",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "opsBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "opsHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "queueHead",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div",
+        "id": "queueList",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/button",
+        "id": "actRefresh",
+        "class": "btn"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/button",
+        "id": "attach",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/button",
+        "id": "filesRefresh",
+        "class": "btn"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": "opsrow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "",
+        "class": "opsrow"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "attachMenu",
+        "class": "amenu"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "gitLog",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "gitStatus",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "memHealthBody",
+        "class": ""
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div",
+        "id": "mergeQueue",
+        "class": "opsbox"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "gitCommit",
+        "class": "btn"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/div/div/button",
+        "id": "todoPrune",
+        "class": "btn"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div/div",
+        "id": "diskTile",
+        "class": "opsbox"
+      },
+      {
+        "tag": "div",
+        "path": "html/body/main/div/div/div/div/div",
+        "id": "uptimeTile",
+        "class": "opsbox"
+      },
+      {
+        "tag": "input",
+        "path": "html/body/main/div/div/div/div/input",
+        "id": "gitMsg",
+        "class": ""
+      },
+      {
+        "tag": "select",
+        "path": "html/body/main/div/div/div/select",
+        "id": "actSel",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/div/span",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "nav",
+        "path": "html/body/main/div/div/nav",
+        "id": "",
+        "class": "seg"
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/nav/button",
+        "id": "mGroup",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/nav/button",
+        "id": "mSolo",
+        "class": "on"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "busyHint",
+        "class": "busyspan"
+      },
+      {
+        "tag": "span",
+        "path": "html/body/main/div/div/span",
+        "id": "intText",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "actBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "filesBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "fleetBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "goalsBtn",
+        "class": ""
+      },
+      {
+        "tag": "button",
+        "path": "html/body/main/div/div/span/button",
+        "id": "opsBtn",
+        "class": ""
+      },
+      {
+        "tag": "textarea",
+        "path": "html/body/main/div/div/textarea",
+        "id": "input",
+        "class": ""
+      },
+      {
+        "tag": "ul",
+        "path": "html/body/main/div/div/ul",
+        "id": "filesList",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/main/div/input",
+        "id": "dirPick",
+        "class": ""
+      },
+      {
+        "tag": "input",
+        "path": "html/body/main/div/input",
+        "id": "filePick",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "script",
+        "path": "html/body/script",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "head",
+        "path": "html/head",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "link",
+        "path": "html/head/link",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "link",
+        "path": "html/head/link",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "meta",
+        "path": "html/head/meta",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "meta",
+        "path": "html/head/meta",
+        "id": "",
+        "class": ""
+      },
+      {
+        "tag": "title",
+        "path": "html/head/title",
+        "id": "",
+        "class": ""
+      }
+    ],
+    "hash": "0699b267fc0a8fe7"
+  }
+}

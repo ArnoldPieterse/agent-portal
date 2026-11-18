@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #8 mobile pass: 2/3 criteria done (overflow-x guard, 44px tap targets); mode bar toggle overflow at 375px still open.
-- Goal 8 done: /api/fleet/status endpoint in agent_portal.py via _
-- Goal #4 done: `memory/scribe/weekly_summary.py` produces `weekly-2026-W47.md`; evidence at `goal4-weekly-summary-evidence-2026-11-18.md`.
 - Goal #6 concurrency_stress.py built & verified; live run blocked by sandbox firewall (WinError 10013 on localhost:8099) — needs non-sandboxe
 - Fixed rerole_agent.py entry-guard bug ("main"→"__main__"); Goal #3 now unblocked for live non-dry-run test next pass.
 - Goal #1 (Proactive Health Check Cron) verified & recorded: script runs, detects down portal, fires CRITICAL alerts.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe's open_items_scan.py found 74+ unlogged open goals fleet-wide; scribe ledger now at 5/10.
 - ui/tokens.css (60 tokens) is the single source of truth; all component CSS must use var() refs, zero hard-coded values allowed.
 - Goal #9 closed: `memory/verifier/a11y_audit.py` built, 16 WCAG violations found (0 critical, 12 serious, 4
+- Goal #9 (Competitive Feature Scan) closed: analyzed CrewAI AMP, LangGraph Platform, MS Agent Framework 1.0; 14-dim gap table delivered.
+- Terminal tool mangles "scribe"→"screibe" in paths; Scribe works around it by driving scripts via python imports instead.
+- Goal #5 (Notification System) built: toast+bell CSS/JS in core.js, hooks on goalBarsUpdate & upload completion; monkey-patch approach fixed
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
