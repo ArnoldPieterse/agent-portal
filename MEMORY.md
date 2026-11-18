@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4: Red dry-run passed (ID 6008 detection OK); only remaining step is `elev.py boot_recovery_register.bat` per host — sandbox egress bl
-- Goal #9 (Typography scale) verified & ledgered — all font-sizes on token scale, line-height
 - Mirror self-heal (#2) passing dry-runs; needs ~2 wks continuous passes to close, earliest ~Dec 2.
 - Scribe fixed goal #9 closure marker (pointer→explicit verified); ledger now 9/10 closed, only #10 BG-sched remains open.
 - Designer seat: both CDP and offline msedge --screenshot blocked (WinError 10013 + sandbox path-remap); baseline PNGs need non-sandbox
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goal #9 closed: cycle-narrative.md verified current (cycles 1-3), all 10 goals confirmed fully cleared.
 - All 4 open goals (#1,#4,#6,#8) blocked by same sandbox class; unblock sequence in memory/mechanic/goal4-all-open-blocked-202
 - Wrote `memory/designer/design-system-state-2026-11-18.md` as canonical cycle-3 design handoff; INDEX updated with pointer.
+- Goal #4 unblock: run `python memory/mechanic/deploy_reboot_recovery_all.py` from non-sandbox White admin; schtasks COM blocked at this seat,
+- Goal #10 (compression-fidelity self-audit) is BG-SCHED/cadence-gated; supersession
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
