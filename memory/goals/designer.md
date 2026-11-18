@@ -2,8 +2,7 @@
 
 Focus: Visual system maturity + UX polish. Establish a design token system, improve information density, and make the portal feel like a professional ops tool rather than a prototype.
 
-1. **Design Token System** - Define all colors, spacing, typography, and border-radius values as `ui/tokens.css`. No hard-coded values in component CSS. Verified: grep for hex colors in ui/*.css returns 0 hits outside tokens.css; all components use var(--token). (pointer: memory/designer/apply_designer_scale_patch.py)
-   [PROGRESS 2026-11-19 (Builder assisting, owner=Designer): CSS-scope acceptance test PASSES. JS-scope: added 13 new semantic tokens to tokens.css; replaced 20 raw hex across core.js(6), uploads.js(11), fleet_health.js(1), fleet_topology.js(1) with var(). Raw hex reduced from ~56 to 4 (all remaining are intentional defaults or string-concat palette). Evidence: memory/builder/designer-goal1-js-tokenization-2026-11-19.md]
+1. **Design Token System** - Define all colors, spacing, typography, and border-radius values as CSS custom properties in `ui/tokens.css`. No hard-coded values in component CSS. Verified: grep for hex colors in ui/*.css returns 0 hits outside tokens.css; all components use var(--token). (pointer: memory/designer/apply_designer_scale_patch.py)
 
 2. **Information Density Pass** - Reduce vertical whitespace by 20% across all panels without hurting readability. Tighten line-height, reduce padding, consolidate related data into tables where appropriate. Verified: before/after screenshots show reduced height; no text overlap or clipping.
    [PROGRESS 2026-11-19 (Orchestrator on White canonical): All 10 line-height values tokenized (--lh-tight/caption/base/loose/mono); zero hardcoded remain. Remaining: padding consolidation + before/after screenshots for acceptance test.]
@@ -19,6 +18,7 @@ Focus: Visual system maturity + UX polish. Establish a design token system, impr
 7. **Typography Hierarchy Audit** - Ensure consistent type scale across all panels: h1=24px, h2=18px, h3=15px, body=14px, caption=12px. No off-scale sizes. Verified: computed styles audit (DevTools or script) shows 0 violations of the 5-step scale.
 
 8. **Icon System** - Replace all text/emoji icons with a consistent SVG icon set (max 24x24, 1.5px stroke). At minimum: agent, goal, upload, alert, settings, search, close, check, warning. Verified: 9+ SVG icons defined in ui/icons.js; used consistently across panels; no emoji remain.
+   [PROGRESS 2026-11-19 (Scribe assisting, pass 2): Pin advanced to f80157e5187c - <script src="ui/icons.js"> now loaded after core.js in index.html. Replaced icon-position emoji: core.js ⚙→settings SVG, ✕→close SVG, actIcons (8 entries) → UI.iconSized() calls; uploads.js gblock ⚠→warning SVG. Remaining: inline text indicators (⚠ before error messages in textContent contexts) need span-based approach; index.html emoji (8) not yet replaced.]
 
 9. **Portal Onboarding Tour** - First-visit (no localStorage flag): 4-step guided tour highlighting Fleet tab, Goals panel, Ops tab, and Uploads. Dismissible, skippable, stores completion. Verified: tour appears on first load; steps highlight correct elements; skipping/dismissing sets flag; does not reappear.
 
