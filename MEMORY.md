@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 (typography scale) closed — evidence existed (PASS 2026-11-18) but ledger marker was missing; now properly marked done.
-- Goal #9 (cross-cycle narrative) completed: Cycle 3 placeholder replaced in memory/synthesis/cycle-narrative.md
 - Mechanic wrote & validated memory/mechanic/reboot_recover.py (160 lines): detects Event Log 6008, idempotent, starts portal + health check f
 - Goal #6: static WCAG 2.1 AA contrast audit of all 19 dark-mode token pairs in app.css — all pass; no browser needed.
 - Cycle 3 narrative: 41/80 vs 22/80 discrepancy RESOLVED — correct per-agent sum is 42, not 41.
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe corrected stale auto-loop goal count (41/80 vs 22/80) in cycle-narrative.md; only #10 BG-SCHED remains open.
 - Goal #4 memory-health dashboard: 6/6 metrics verified non-null; live portal UI render blocked by sandbox network isolation to :8099 (anti-lo
 - reboot_recover.py now self-registers its schtask via --register-task, removing pywinrm dep from deploy path
+- Goal #4 (memory-health dashboard) CLOSED; remaining open: #5 supersession enforcement, #7 owner-coverage v2
+- reboot_recover
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
