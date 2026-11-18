@@ -1,0 +1,26 @@
+{
+  "white": {
+    "disk_pct": null,
+    "mem_pct": null,
+    "portal_up": true,
+    "ts": null
+  },
+  "red": {
+    "disk_pct": null,
+    "mem_pct": null,
+    "portal_up": false,
+    "ts": null
+  },
+  "pale": {
+    "disk_pct": null,
+    "mem_pct": null,
+    "portal_up": false,
+    "ts": null
+  },
+  "black": {
+    "disk_pct": null,
+    "mem_pct": null,
+    "portal_up": false,
+    "ts": null
+  }
+}
