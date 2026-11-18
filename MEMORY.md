@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Sandbox WinError 10013 blocks outbound TCP; documented in goal #6 evidence — do not re-probe as a fleet issue.
 - OI-004 resolved: fleet at 76/
 - Designer found: index.html links only ui/app.css
 - OI-004 resolved; fleet at 76/93 per ledger. MEMORY.md goal line is stale (informational only).
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe confirmed 10/10 goals reached via strict ledger; "3 open" nudge was stale (pre-2026-11-19 sweep). scan_goals() over-report logged as
 - Fixed: open_items_scan.py now matches goal_ledger.py (recognizes em-dash + pointer evidence); scan shows archivist(
 - index.html repinned to sha12 76
+- CDP wall RESOLVED 20
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
