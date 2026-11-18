@@ -1,0 +1,52 @@
+{
+  "generated": "2026-11-18T13:14:42.115283",
+  "file_count": 11,
+  "closure_threshold": 8,
+  "meets_closure": true,
+  "files": {
+    "baseline_chat.png": {
+      "sha256": "9507e70e13ec64264863ab27fba2b09103cd968d9edb9cb69eda14e4456f4425",
+      "bytes": 20863
+    },
+    "baseline_dashboard.png": {
+      "sha256": "860fced86a6db1dfb7bb080bd847938d66c0537f986a40ad6725283c4b09b3c7",
+      "bytes": 30270
+    },
+    "baseline_fleet.png": {
+      "sha256": "08e4ab5a50dfcbb0558b5153f60e00b67c5ac476df1c636e0dc7cfdc46b8ce1b",
+      "bytes": 16123
+    },
+    "baseline_goals.png": {
+      "sha256": "78eab8a40b73f2a6972090730a9e7ba112631ef657078ece04aa5cbfe6055fba",
+      "bytes": 18660
+    },
+    "baseline_memory-tree.png": {
+      "sha256": "b18a2aeca91154f824dee9408579871f9101c75bcc7b61032c2a8f7e8fa2aec6",
+      "bytes": 22786
+    },
+    "baseline_ops.png": {
+      "sha256": "4dfadde54cbfe6421d0fb96cbcdcffdbb97d740f6866c9a11789b75cfd66cd5d",
+      "bytes": 30358
+    },
+    "baseline_settings.png": {
+      "sha256": "277255536ac1fd689b3647a31b24b7f5819cce510b0b770759e6a8478867eb91",
+      "bytes": 14794
+    },
+    "baseline_uploads.png": {
+      "sha256": "d7297fbdc8887457fbb5d87cff92b47ce40749a3e9721d95ab85bdf8d3e4121d",
+      "bytes": 19796
+    },
+    "goal6_dark_1024.png": {
+      "sha256": "63d3ab9f46c8c28acc6b442e5bf7f4127debf692ef4679baf3e4c14c369ac4f2",
+      "bytes": 42825
+    },
+    "goal6_dark_1366.png": {
+      "sha256": "360492e5db1a7a8d348ef01d505bea21393911c7a10ce840e36620a9abd07e9e",
+      "bytes": 44247
+    },
+    "goal6_dark_1920.png": {
+      "sha256": "e309f356992f35166c9eb2e654fb9f27061a1cad5575bf4a02c5bb1b0b4bfb20",
+      "bytes": 57900
+    }
+  }
+}
