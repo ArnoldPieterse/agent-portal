@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verified: Designer goal #6 "closed" is FALSE (no skeleton code) and goal #8 ui/icons.js absent
 - Mechanic goal 8: _fleet_health_snapshot() now returns per-host health field; UI strip
 - Goal 1 closed (0 hex outside tokens.css); Goal
 - Designer Goal 8 blocked on pin advance: `<script src="ui/icons.js">` must be added after core.js in index.html.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8 blocker: ui/icons.js exists (14 SVGs) but index.html doesn't load it; uploads.js ⚠ glyphs now replaced with inline SVG
 - Mechic lane 10/10 closed; assist note for Designer: core.js 17 emoji lines need .textContent→.innerHTML with UI.iconSized() from ui/icons.js
 - Mechanic lane 10/10 closed; all goals now carry `verified:` markers — "1 open" in loop prompts is stale, do not re-probe.
+- Node is NOT installed in this env — use manual state-aware bracket checks or `python -c` for JS syntax validation
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
