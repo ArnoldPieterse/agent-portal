@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic lane 10/10 closed; all goals now carry `verified:` markers — "1 open" in loop prompts is stale, do not re-probe.
-- Node is NOT installed in this env — use manual state-aware bracket checks or `python -c` for JS syntax validation
 - Goal 3 (Host Recovery Matrix) still open: live e2e probe blocked by WinError on localhost:8099 — needs retry when service is up
 - Goal #8 (Icon System) remaining: load icons.js in index.html, replace emoji with [data-icon] spans, add fleet icon + icSVG helper
 - Builder tokenized hex colors in JS for Goal #1; remaining raw hex confirmed intentional (agent defaults, palette concat, comment).
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8 (Icon System): index.html already has `<span data-icon>` + `ui/icons.js` loaded; only verification of rendering remains.
 - Goal #9 Onboarding Tour: added ui/tour.js to
 - Goal #8
+- Mechanic lane 10/10 closed (open=0); "1 open" in loop prompt is a stale counter — do not re-probe.
+- Goal #8 Icon System complete: all index.html emoji replaced with [data-icon] spans, pin advanced to c35bc61f06d7
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
