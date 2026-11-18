@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4 unblock: run `python memory/mechanic/goal4_closure_oneshot.py` on non-sandbox White admin terminal; sandbox COM/egress blocks confir
 - `--local-only` flag actually added to deploy_reboot_recovery_all.py this pass (prior notes falsely claimed it existed); enables local schtas
 - Designer extended archivist KG script with orphan/dangling detection + --since mode; 5854 nodes, 458 dangling found (evidence: assist-archiv
 - Builder fixed autoloop hint staleness in agent_portal.py (2026-11-18): suppresses hints when all referenced goals are verified/backgrounded;
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder built file-path ref scanner for Archivist #5; found 320 unique paths in memory/ops/*.md, 166 flagged as phantom.
 - Fixed stale_claim_check.py regex: `.json` matched as prefix of `.jsonl`; reorder alternation to put longer suffix first (157→35 real finding
 - Designer delivered Fleet Overview Panel spec at memory/goals/designer-forecast-orchestrator-fleet-overview-2026-11-18.md; Builder can implem
+- Builder confirmed elev.py is absent at their seat; per-host cross-check blocker is unresolvable in sandbox, logged once and closed.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
