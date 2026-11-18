@@ -13,7 +13,7 @@ Focus: Visual system maturity + UX polish. Establish a design token system, impr
 
 5. **Notification System** - Toast notification component (top-right, auto-dismiss 5s, stackable) + in-app notification bell with unread count badge. Trigger on: goal closed, agent offline, upload complete, error. Verified: all 4 triggers produce correct toast; bell badge updates; toasts dismiss correctly.
 
-6. **Loading Skeleton Screens** - Replace spinner with skeleton placeholders that match each panel's layout shape. Shimmer animation. Applied to: fleet cards, goal list, timeline, uploads. Verified: skeletons render during API delay (simulated 2s); no layout shift when real content loads.
+6. **Loading Skeleton Screens** - Replace spinner with skeleton placeholders that match each panel's layout shape. Shimmer animation. Applied to: fleet cards, goal list, timeline, uploads. Verified: skeletons render during API delay (simulated 2s); no layout shift when real content loads. (pointer: memory/designer/skeleton-investigation-2026-11-19.md)
 
 7. **Typography Hierarchy Audit** - Ensure consistent type scale across all panels: h1=24px, h2=18px, h3=15px, body=14px, caption=12px. No off-scale sizes. Verified: computed styles audit (DevTools or script) shows 0 violations of the 5-step scale.
 
