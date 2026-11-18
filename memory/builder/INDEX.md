@@ -1,5 +1,5 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-19 (Builder assist: Designer Goal 1 - eliminated last 3 hard-coded hex, 0 remain outside token defs + var() fallbacks).
+Last updated: 2026-11-19 (Builder assist: Designer Goal 1 - ui/app.css now STRICT 0 hex incl. all var() fallbacks; --fh-color default token added to tokens.css; CSS-scope acceptance test passes. JS-scope ~53 hex remain for Designer.)
 
 ## Entries (keyword -> pointer | use case)
 - log_rotate.py WinError 183 fix / shift loop crashed on Windows when .log.5 already existed (prior run died mid-rotation) / clear rename target before os.rename + repro test -> memory/builder/log_rotate_winerror183-fix-2026-11-18.md   2026-11-18 cross-assist (owner: Mechanic); PASS steady-state + 5 repeat rotations

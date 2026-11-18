@@ -2,7 +2,8 @@
 
 Focus: Visual system maturity + UX polish. Establish a design token system, improve information density, and make the portal feel like a professional ops tool rather than a prototype.
 
-1. **Design Token System** - Define all colors, spacing, typography, and border-radius values as CSS custom properties in `ui/tokens.css`. No hard-coded values in component CSS. Verified: grep for hex colors in ui/*.css returns 0 hits outside tokens.css; all components use var(--token). (pointer: memory/designer/apply_designer_scale_patch.py)
+1. **Design Token System** - Define all colors, spacing, typography, and border-radius values as `ui/tokens.css`. No hard-coded values in component CSS. Verified: grep for hex colors in ui/*.css returns 0 hits outside tokens.css; all components use var(--token). (pointer: memory/designer/apply_designer_scale_patch.py)
+   [PROGRESS 2026-11-19 (Builder assisting, owner=Designer): CSS-scope acceptance test now PASSES - ui/app.css = 0 hard-coded hex (was 7 fallbacks). Added --fh-color:#2ecc71 default token to tokens.css :root; stripped redundant var(--err/--acc/--fh-color,#hex) fallbacks in app.css. Remaining for full closure: tokenize ~53 hex literals still inline in ui/core.js, uploads.js, components.js, fleet_health.js, fleet_topology.js (JS scope, not caught by the .css grep).]
 
 2. **Information Density Pass** - Reduce vertical whitespace by 20% across all panels without hurting readability. Tighten line-height, reduce padding, consolidate related data into tables where appropriate. Verified: before/after screenshots show reduced height; no text overlap or clipping.
    [PROGRESS 2026-11-19 (Orchestrator on White canonical): All 10 line-height values tokenized (--lh-tight/caption/base/loose/mono); zero hardcoded remain. Remaining: padding consolidation + before/after screenshots for acceptance test.]
