@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 Onboarding Tour: added ui/tour.js to
 - Goal #8
 - Mechanic lane 10/10 closed (open=0); "1 open" in loop prompt is a stale counter — do not re-probe.
 - Goal #8 Icon System complete: all index.html emoji replaced with [data-icon] spans, pin advanced to c35bc61f06d7
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 density pass done; only remaining step is browser screenshot comparison, blocked by no display available.
 - Goal #2 (Information Density Pass) CLOSED — 20–25% vertical whitespace reduction verified via static CSS token analysis; no display for scre
 - Designer Goal #2 (Information Density Pass) complete: all padding/margin tokenized, 0 hardcoded px remain in app.css.
+- RECALL: - **M3** (`memory/synthesis/cycle-narrative.md:12`): Goal-setting round landed 2
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
