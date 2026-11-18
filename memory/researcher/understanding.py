@@ -194,7 +194,10 @@ def expand(words):
 _dict_cache = {}
 
 def load_dictionary():
-    """Load dictionary_*.json (term -> [definition, usage]); mtime-cached; {} on failure."""
+    """Load dictionary_*.json; mtime-cached; {} on failure.
+    Supports both old format (term -> [definition, usage]) and new annotated format
+    (term -> {definition, usage, confidence, sources, last_verified}).
+    Returns dict: term -> [definition, usage] (same shape as before)."""
     try:
         sig = tuple((f, os.path.getmtime(f)) for f in DICT_FILES if os.path.exists(f))
         if _dict_cache.get("sig") == sig and "d" in _dict_cache:
@@ -209,6 +212,8 @@ def load_dictionary():
                             continue
                         if isinstance(v, (list, tuple)) and len(v) >= 1:
                             d[k.lower()] = [str(v[0]), str(v[1]) if len(v) > 1 else ""]
+                        elif isinstance(v, dict) and "definition" in v:
+                            d[k.lower()] = [v.get("definition", ""), v.get("usage", "")]
                 except Exception:
                     pass
         _dict_cache["sig"], _dict_cache["d"] = sig, d

@@ -1,33 +1,213 @@
 {
-"_note": "Project-specific dictionary for the understanding module. Format: term -> [definition, usage]. Terms from this project's prompts and memory files. Sibling: dictionary_core.json.",
-"agent portal": ["the multi-agent chat system agents talk through", "route every prompt through the agent portal"],
-"pre-context": ["background assembled before the main LLM prompt is built", "fold dictionary meanings into pre-context first"],
-"readmem": ["tool that reads memory files into the current context", "ReadMem rounds see already-resolved terms"],
-"storemem": ["tool that writes new facts back into memory files", "StoreMem after each verified decision"],
-"mirror": ["the git-tracked sync of allowlisted files between host and sandbox", "memory_mirror.py pushes the allowlist over SMB"],
-"pin": ["a fixed reference point (commit or state) used for comparison", "correct the canonical pin before measuring drift"],
-"epoch": ["a numbered period of a running system's life", "compare events across the epoch boundary"],
-"sla": ["a service-level agreement: a deadline with a pass condition", "check goal 8 against its SLA clock"],
-"goal ledger": ["the jsonl record of goals plus evidence for each", "append one evidence line per completed step"],
-"cross-talk": ["one agent answering or reacting to another agent's message", "suppress cross-talk with the SILENT convention"],
-"silent": ["a marker meaning an agent posts nothing this turn", "reply SILENT when no action is needed"],
-"scribe": ["the agent role that keeps memory files current", "have scribe land the health note"],
-"archivist": ["the agent role that audits and preserves records", "archivist verifies citations before closure"],
-"mechanic": ["the agent role that builds and repairs tooling", "mechanic patches the portal pipeline"],
-"orchestrator": ["the component coordinating which agents run when", "the orchestrator assigns turns across seats"],
-"verifier": ["the agent role that checks claims against evidence", "verifier re-runs the check before accepting it"],
-"designer": ["the agent role that plans structure and interfaces", "designer drafts the schema, mechanic implements it"],
-"builder": ["the agent role that assembles deliverables to spec", "builder lands the page slice"],
-"rag prefetch": ["fetching likely-relevant memory chunks before a prompt is sent", "key terms seed the rag prefetch lookup"],
-"background queue": ["a list of long-running goals run away from the main loop", "move scheduled goals to the background queue"],
-"run rules": ["rules every agent reads at the start of each run", "attach run-rules.md to global memory"],
-"blocker": ["an open item that stops a goal until cleared", "clear blockers recorded in blockers.md"],
-"stall": ["a goal making no progress across recent commits", "flag stalls after 14 commits without change"],
-"turn": ["one agent pass over one prompt, with its sandbox", "each chat turn gets a fresh sandbox"],
-"sandbox": ["the isolated environment where an agent's tools run", "files in the sandbox mirror to the host"],
-"rdp": ["remote desktop protocol for reaching Windows hosts here", "all RDP passwords are empty on these hosts"],
-"allowlist": ["the list of files permitted to be mirrored", "add new memory files to the allowlist"],
-"splice": ["insert new code at an exact anchor in an existing file", "splice the patch before rag_prefetch"],
-"degrade": ["fall back to safe behavior instead of failing hard", "the module degrades to empty strings on error"],
-"key term": ["a content word extracted from a prompt for lookup", "expand each key term with synonyms"]
+  "_note": "Project-specific dictionary for the understanding module. Format: term -> [definition, usage]. Terms from this project's prompts and memory files. Sibling: dictionary_core.json.",
+  "agent portal": {
+    "definition": "the multi-agent chat system agents talk through",
+    "usage": "route every prompt through the agent portal",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "pre-context": {
+    "definition": "background assembled before the main LLM prompt is built",
+    "usage": "fold dictionary meanings into pre-context first",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "readmem": {
+    "definition": "tool that reads memory files into the current context",
+    "usage": "ReadMem rounds see already-resolved terms",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "storemem": {
+    "definition": "tool that writes new facts back into memory files",
+    "usage": "StoreMem after each verified decision",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "mirror": {
+    "definition": "the git-tracked sync of allowlisted files between host and sandbox",
+    "usage": "memory_mirror.py pushes the allowlist over SMB",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "pin": {
+    "definition": "a fixed reference point (commit or state) used for comparison",
+    "usage": "correct the canonical pin before measuring drift",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "epoch": {
+    "definition": "a numbered period of a running system's life",
+    "usage": "compare events across the epoch boundary",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "sla": {
+    "definition": "a service-level agreement: a deadline with a pass condition",
+    "usage": "check goal 8 against its SLA clock",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "goal ledger": {
+    "definition": "the jsonl record of goals plus evidence for each",
+    "usage": "append one evidence line per completed step",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "cross-talk": {
+    "definition": "one agent answering or reacting to another agent's message",
+    "usage": "suppress cross-talk with the SILENT convention",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "silent": {
+    "definition": "a marker meaning an agent posts nothing this turn",
+    "usage": "reply SILENT when no action is needed",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "scribe": {
+    "definition": "the agent role that keeps memory files current",
+    "usage": "have scribe land the health note",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "archivist": {
+    "definition": "the agent role that audits and preserves records",
+    "usage": "archivist verifies citations before closure",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "mechanic": {
+    "definition": "the agent role that builds and repairs tooling",
+    "usage": "mechanic patches the portal pipeline",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "orchestrator": {
+    "definition": "the component coordinating which agents run when",
+    "usage": "the orchestrator assigns turns across seats",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "verifier": {
+    "definition": "the agent role that checks claims against evidence",
+    "usage": "verifier re-runs the check before accepting it",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "designer": {
+    "definition": "the agent role that plans structure and interfaces",
+    "usage": "designer drafts the schema, mechanic implements it",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "builder": {
+    "definition": "the agent role that assembles deliverables to spec",
+    "usage": "builder lands the page slice",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "rag prefetch": {
+    "definition": "fetching likely-relevant memory chunks before a prompt is sent",
+    "usage": "key terms seed the rag prefetch lookup",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "background queue": {
+    "definition": "a list of long-running goals run away from the main loop",
+    "usage": "move scheduled goals to the background queue",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "run rules": {
+    "definition": "rules every agent reads at the start of each run",
+    "usage": "attach run-rules.md to global memory",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "blocker": {
+    "definition": "an open item that stops a goal until cleared",
+    "usage": "clear blockers recorded in blockers.md",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "stall": {
+    "definition": "a goal making no progress across recent commits",
+    "usage": "flag stalls after 14 commits without change",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "turn": {
+    "definition": "one agent pass over one prompt, with its sandbox",
+    "usage": "each chat turn gets a fresh sandbox",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "sandbox": {
+    "definition": "the isolated environment where an agent's tools run",
+    "usage": "files in the sandbox mirror to the host",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "rdp": {
+    "definition": "remote desktop protocol for reaching Windows hosts here",
+    "usage": "all RDP passwords are empty on these hosts",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "allowlist": {
+    "definition": "the list of files permitted to be mirrored",
+    "usage": "add new memory files to the allowlist",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "splice": {
+    "definition": "insert new code at an exact anchor in an existing file",
+    "usage": "splice the patch before rag_prefetch",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "degrade": {
+    "definition": "fall back to safe behavior instead of failing hard",
+    "usage": "the module degrades to empty strings on error",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  },
+  "key term": {
+    "definition": "a content word extracted from a prompt for lookup",
+    "usage": "expand each key term with synonyms",
+    "confidence": 0.8,
+    "sources": [],
+    "last_verified": "2026-11-18"
+  }
 }

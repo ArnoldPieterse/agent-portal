@@ -6,7 +6,7 @@ Focus: Portal feature delivery + code quality. Ship the remaining UI panels from
 
 2. **Goal Cycle Timeline Panel** - Implement the UI for `/api/goals/timeline` (cycle-4 spec #2): horizontal strip with clickable cycle nodes showing stats popover. Verified: panel renders with real API data; clicking a node shows that cycle's open/closed counts. (verified: 2026-11-18 - Backend /api/goals/timeline endpoint implemented (agent_portal.py _goals_timeline); frontend clickable timeline strip + per-agent popover in ui/uploads.js; tested: 3 cycles returned with correct per-a)
 
-3. **Fleet Health Dashboard** - Implement the UI for `/api/fleet/health` (Orchestrator c5#9): score badge per agent card + composite fleet score at top. Verified: badges render with correct colors; composite score matches API value.
+3. **Fleet Health Dashboard** - Implement the UI for `/api/fleet/health` (Orchestrator c5#9): score badge per agent card + composite fleet score at top. Verified: badges render with correct colors; composite score matches API value. (verified: 2026-11-18 - Fleet Health Dashboard UI complete: ui/fleet_health.js (5KB) + CSS + index.html div/script; scoring logic unit-verified (4 hosts, composite=71); pin advanced to 6054f67027ca. Browser render test pendi)
 
 4. **Uploads Panel v2** - Extend ui/uploads.js: add drag-drop zone, file-type icons, progress bar, and error toast on failure. Verified: all 4 features work in browser; no console errors during upload flow.
 

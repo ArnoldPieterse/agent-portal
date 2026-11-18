@@ -8,7 +8,7 @@ Focus: Knowledge depth + verification rigor. Build the fleet's evidence backbone
 
 3. **Confidence-Annotated KB Entries** - Extend dictionary_*.json entries to include `confidence: float` + `sources: [urls]` + `last_verified: date`. Write migration script for existing entries. Verified: all existing entries have the 3 new fields; portal /api/kb/search returns them.
 
-4. **Stale-Knowledge Detector** - `python memory/researcher/stale_check.py` scans dictionary_*.json for entries with last_verified > 90 days, flags them, and generates a re-verification queue. Verified: script identifies correct stale entries; queue file written.
+4. **Stale-Knowledge Detector** - `python memory/researcher/stale_check.py` scans dictionary_*.json for entries with last_verified > 90 days, flags them, and generates a re-verification queue. Verified: script identifies correct stale entries; queue file written. (verified: 2026-11-18 - stale_check.py built+tested: scans both dict files for last_verified>90d (or missing), flags correctly (--days -1 test flagged all 98 entries), writes queue json. Artifact: memory/researcher/stale_che)
 
 5. **Research Brief Template** - Standardize the output format for any research task: claim, evidence (3+ sources), confidence, open questions, follow-up actions. Write `memory/researcher/brief_template.md` + validation script. Verified: 3 test briefs pass validation; template covers all required fields.
 
