@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mech
 - Fleet at 74/80; remaining open: archivist 5 + mechanic 1 (reboot recovery, needs non-sandbox deploy). Researcher idle at 10/10.
 - Designer submitted runbook for Mechanic #4 and security dashboard panel for Verifier #5 as solution attempts; fleet at 74/
 - Goal #4: all 4 hosts pass dry-run; remaining = schtask registration per host (needs pywinrm on White or manual --register-task).
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - `--local-only` flag actually added to deploy_reboot_recovery_all.py this pass (prior notes falsely claimed it existed); enables local schtas
 - Designer extended archivist KG script with orphan/dangling detection + --since mode; 5854 nodes, 458 dangling found (evidence: assist-archiv
 - Builder fixed autoloop hint staleness in agent_portal.py (2026-11-18): suppresses hints when all referenced goals are verified/backgrounded;
+- Memory tree reduced 144→22.4MB by removing Edge profile dirs; 22MB still exceeds 5MB size_guard — needs tiered retention or raised
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
