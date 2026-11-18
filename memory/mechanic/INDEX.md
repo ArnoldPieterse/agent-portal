@@ -14,6 +14,8 @@ Last updated: 2026-11-13.
 
 ## Cycle-3 evidence (indexed 2026-11-18, Researcher seat - dangling-pointer unblock)
 - -> memory/mechanic/goal6-dep-gen-built-2026-11-17.md   cycle-3 goal 6: schtask dependency graph auto-generation built + verified
+- -> memory/mechanic/reboot-drill-evidence-verify-2026-11-19.md   goal #10 Reboot Recovery Drill: artifact authenticity verified (deploy_reboot_recovery_all.py 12849B + reboot-recovery.jsonl 5-entry timeline); pointer un-dangled; full unattended drill due Q1 (gap+fix-plan documented per acceptance alternative)
+- -> memory/mechanic/deploy_reboot_recovery_all.py   goal #10 artifact: deploy FleetBootRecovery schtask across all 4 hosts (local schtasks + WinRM remote), idempotent, logs to reboot-recovery.jsonl
 - -> memory/mechanic/runbook-gap-analysis-2026-11-17.md   cycle-3 goal 9: ops runbook automation gap analysis (5 runbooks covered)
 - -> memory/mechanic/ingested-2026-11-18-fleet-host-registry-white-black-.md   ingested 2026-11-18 (confidence=medium ttl=60d, human-accepted)
 - -> memory/mechanic/ingested-2026-11-18-fleet-host-registry-v2-all-four-.md   ingested 2026-11-18 (confidence=medium ttl=60d score=1.000)
