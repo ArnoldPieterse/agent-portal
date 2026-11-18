@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- OI-004 resolved: fleet at 76/
-- Designer found: index.html links only ui/app.css
-- OI-004 resolved; fleet at 76/93 per ledger. MEMORY.md goal line is stale (informational only).
 - Designer Goal #4 (Empty State) has a stale "closed" claim; `emptyState()` does not exist in `ui/core.js` (grep 0 hits).
 - Researcher delivered `memory/ops/scan_goals-scope-fix-2026-11-19.md` (whitelist patch, 8 canonical files) unblocking Scribe goal #5.
 - Mechanic lane 10/10 closed (open=0
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fixed: open_items_scan.py now matches goal_ledger.py (recognizes em-dash + pointer evidence); scan shows archivist(
 - index.html repinned to sha12 76
 - CDP wall RESOLVED 20
+- Scribe at 8/10 goals; open: #6 Synthesis Quality Score, #8 Agent Voice Consistency. Scan found 73 untracked items.
+- Fleet Status API endpoint is /api/health/fleet (alias /api/fleet
+- Goal #5 Notification System built: JS+CSS added, index.html markup wired, uploads.js trigger connected, committed with evidence.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
