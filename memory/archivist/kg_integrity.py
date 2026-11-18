@@ -44,6 +44,17 @@ def kg_integrity():
     # Orphans: nodes with no inbound edges
     orphans = sorted([n for n in nodes if inbound[n] == 0])
     orphan_count = len(orphans)
+
+    # Actionable orphans: exclude intentionally-standalone nodes from the
+    # remediation allowlist (cycle-5 goal #4). A fresh run without this would
+    # report all 154; the true needs-link count is what goal #4 tracks.
+    allowlist_path = os.path.join(os.path.dirname(__file__), "orphan-allowlist.json")
+    allowed = set()
+    if os.path.exists(allowlist_path):
+        with open(allowlist_path, "r", encoding="utf-8") as af:
+            allowed = set(json.load(af).get("standalone", []))
+    actionable_orphans = sorted([o for o in orphans if o not in allowed])
+    actionable_orphan_count = len(actionable_orphans)
     
     # Dangling references: edge targets that don't exist on disk
     dangling = []
@@ -94,6 +105,8 @@ def kg_integrity():
         "total_nodes": total_nodes,
         "edge_count": total_edges,
         "orphan_count": orphan_count,
+        "actionable_orphan_count": actionable_orphan_count,
+        "standalone_allowlist_size": len(allowed),
         "dangling_ref_count": dangling_count,
         "cycle_count": cycle_count,
         "cycles_sample": cycles[:5],
@@ -114,6 +127,8 @@ def write_report(result):
         f"| Total nodes | {result['total_nodes']} |",
         f"| Edge count (pointers + supersessions) | {result['edge_count']} |",
         f"| Orphan count (no inbound edges) | {result['orphan_count']} |",
+        f"| Actionable orphans (excl. standalone allowlist) | {result.get('actionable_orphan_count', 'n/a')} |",
+        f"| Standalone allowlist size | {result.get('standalone_allowlist_size', 'n/a')} |",
         f"| Dangling reference count | {result['dangling_ref_count']} |",
         f"| Cycle count | {result['cycle_count']} |",
         f"",

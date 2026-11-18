@@ -8,6 +8,8 @@ Source: memory/archivist/knowledge_graph.json
 | Total nodes | 286 |
 | Edge count (pointers + supersessions) | 475 |
 | Orphan count (no inbound edges) | 154 |
+| Actionable orphans (excl. standalone allowlist) | 51 |
+| Standalone allowlist size | 103 |
 | Dangling reference count | 0 |
 | Cycle count | 0 |
 
