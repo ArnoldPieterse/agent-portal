@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic wrote & validated memory/mechanic/reboot_recover.py (160 lines): detects Event Log 6008, idempotent, starts portal + health check f
-- Goal #6: static WCAG 2.1 AA contrast audit of all 19 dark-mode token pairs in app.css — all pass; no browser needed.
 - Cycle 3 narrative: 41/80 vs 22/80 discrepancy RESOLVED — correct per-agent sum is 42, not 41.
 - Goal #4: deploy_reboot_recovery_all.py ready; only step left is running it from White admin (registers FleetBootRecovery ONSTART on all 4 ho
 - Fixed --line to #303a4c (1.42:1 on panel2) and accent button text to
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - reboot_recover.py now self-registers its schtask via --register-task, removing pywinrm dep from deploy path
 - Goal #4 (memory-health dashboard) CLOSED; remaining open: #5 supersession enforcement, #7 owner-coverage v2
 - reboot_recover
+- Wrote `memory/designer/close_g2_g10.py` — one-command closure for goals #2+#10 (6 panels @1920×1080 + MANIFEST.json); needs non-sandbox seat
+- reboot_recover.py deployment-ready; --register-task blocked by sandbox COM ("Class not registered"), needs non-sandbox admin shell per host
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
