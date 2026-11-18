@@ -103,3 +103,4 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - **Designer #5/#7 CDP wall: RESOLVED (agent-side fix only)** - chrome.exe absent, but msedge --remote-debugging-port=9222 loads portal and /json/list returns the live page. Point live_verify_g578.py at 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe' instead of chrome.
 - [17:31] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
 - [17:32] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
+- [00:26] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
