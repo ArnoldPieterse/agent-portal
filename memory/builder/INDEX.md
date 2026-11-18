@@ -1,5 +1,5 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-18 (Builder auto-loop: fixed log_rotate.py WinError 183 shift-loop crash; regression-tested).
+Last updated: 2026-11-19 (Builder assist: Designer Goal 1 - eliminated last 3 hard-coded hex, 0 remain outside token defs + var() fallbacks).
 
 ## Entries (keyword -> pointer | use case)
 - log_rotate.py WinError 183 fix / shift loop crashed on Windows when .log.5 already existed (prior run died mid-rotation) / clear rename target before os.rename + repro test -> memory/builder/log_rotate_winerror183-fix-2026-11-18.md   2026-11-18 cross-assist (owner: Mechanic); PASS steady-state + 5 repeat rotations
@@ -41,3 +41,4 @@ Last updated: 2026-11-18 (Builder auto-loop: fixed log_rotate.py WinError 183 sh
 - designer-goal5-components-2026-11-18.md — 2026-11-18 Builder cross-assist: wrote memory/portal/components.md (6 components + token table) for Designer goal #5
 - designer-goal8-state-patterns-2026-11-18.md — 2026-11-18 Builder cross-assist: implemented .state-loading/.state-error/.state-empty/.state-conn-lost in ui/app.css (all tokens, 0 hex) + documented in components.md §7 (Designer goal #8)
 - designer-goal2-fleet-states-2026-11-18.md — 2026-11-18 Builder cross-assist: loading/error/empty states + responsive SVG added to ui/fleet_topology.js (sha12=294aaca2ec20) + CSS in app.css (Designer goal #2, partial - screenshots still needed)
+- assist-designer-goal1-tokens-2026-11-19.md — 2026-11-19 Builder cross-assist: replaced last 3 hard-coded hex (#3ddc84 x2, #4cd964) with var(--ok); post-fix scan = 0 truly hard-coded hex outside token definitions (Designer goal #1, near-closure; remaining hex only in var() fallbacks)
