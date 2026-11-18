@@ -1,7 +1,8 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-19 (Builder assist: Designer Goal 6 skeleton screens - CSS + JS injection in fleetUpdate/goalsLoad; shimmer keyframe + reduced-motion)
+Last updated: 2026-11-19 (Builder assist: Archivist Goal 2 citation_audit.py built+ran, 49 URLs checked, report with filtered analysis)
 
 ## Entries (keyword -> pointer | use case)
+- citation audit / Archivist goal #2 assist: built+ran citation_audit.py, 49 external URLs live-checked, filtered accuracy ~86%, 5 genuinely dead links identified -> memory/builder/citation-audit-assist-archivist-goal2-2026-11-19.md | memory/archivist/citation_audit.py + memory/archivist/citation-audit-cycle5-report.md
 - anti-phantom claim guard / verify_claims.py scans goal files, flags verified-markers whose cited artifact is missing; found 4 archivist PHANTOMs explaining the 2/10 stall -> memory/builder/evidence-verify-claims-guard-2026-11-19.md | memory/ops/verify_claims.py + memory/ops/claim-phantom-report.md
 - Designer Goal#6 skeleton screens / .skel CSS + shimmer keyframe in app.css; skeleton HTML injected in fleetUpdate() core.js + goalsLoad() uploads.js with dataset.loaded guard; 4 host rows + 5 goal tiles pre-fetch; prefers-reduced-motion respected -> memory/builder/designer-goal6-skeleton-2026-11-19.md   2026-11-19 cross-assist (owner: Designer); option (d)
 - Designer Goal#2 padding consolidation / last 5 hardcoded px in padding/margin -> var(--sp-*); --sp-2 added to tokens.css; 0 remaining, 210 total sp refs -> memory/builder/assist-designer-goal2-padding-2026-11-19.md   2026-11-19 cross-assist (owner: Designer); option (d)

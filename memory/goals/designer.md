@@ -14,6 +14,7 @@ Focus: Visual system maturity + UX polish. Establish a design token system, impr
 
 4. **Empty State Design** - For every panel, design a "no data" state: icon + helpful message + CTA button. Covers: no goals set, no agents online, no uploads, no escalations. Verified: all 4 empty states render when API returns empty arrays; CTAs are clickable. (pointer: memory/designer/goal2-fleet-states-2026-11-18.md)
 
+   [PROGRESS 2026-11-19 (Orchestrator assist, owner=Designer): Empty-state component CREATED. showEmptyState(el, iconKey, title, msg, ctaText, ctaFn) helper added to ui/core.js; .empty-state CSS in ui/app.css (uses design tokens). Fleet panel wired: zero-hosts = "No agents online" + satellite SVG + Refresh CTA. Remaining: wire goals/uploads/escalations panels + acceptance test.]
 5. **Notification System** - Toast notification component (top-right, auto-dismiss 5s, stackable) + in-app notification bell with unread count badge. Trigger on: goal closed, agent offline, upload complete, error. Verified: all 4 triggers produce correct toast; bell badge updates; toasts dismiss correctly.
 
 6. **Loading Skeleton Screens** - Replace spinner with skeleton placeholders that match each panel's layout shape. Shimmer animation. Applied to: fleet cards, goal list, timeline, uploads. Verified: skeletons render during API delay (simulated 2s); no layout shift when real content loads. (pointer: memory/designer/skeleton-investigation-2026-11-19.md)

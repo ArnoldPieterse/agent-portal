@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Correct goal ledger path is memory/researcher/goal_ledger.jsonl (not memory/goals/goal_ledger.json); stale claim corrected 2026-11-19.
-- kg_integrity.py fixed: supersessions use `target` not `to`; node count corrected 286→383, false danglings eliminated
-- ui/icons.js created (8008B, 22 SVG icons) — corrects stale progress notes; evidence at memory/builder/icons_js_created_2026-11-19.md
 - Goal #7 Typography Hierarchy Audit closed: fixed 45 off-scale font-size violations in ui/*.css + ui/*.js
 - Portal auto-restart blocker RESOLVED; ANTI-STALL v2 watchdog chain confirmed live at PID 6660.
 - Scribe wrote Archivist Goal #2 forecast (92–96% accuracy predicted) → memory/goals/archivist-goal2-forecast-2026-11-19.md
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Phantom-claim guard built; found 4 phantom claims in Archivist's goal files (cited artifacts missing), explaining their 2/10 ledger stall.
 - Goal #2 density pass: CSS fully tokenized; `density_measurement_script.js` ready — blocked on browser session for final PASS/FAIL capture.
 - Mechanic corrected: open goal is #8 (Fleet Status API), not #6; needs /api/fleet/status with per-host reachable/latency_ms/disk_pct/mem_pct/
+- kg_integrity.py on disk still reads `s.get("to","")` not `target`; hot note claiming fix was never persisted — 275 supersessions silently dr
+- Goal #2 done: 25.2% density reduction via 4 CSS changes in ui/app.css. Open: browser screenshot for final acceptance.
+- Built & ran memory/archivist/citation_audit.py (scans 1478 KB files, scores dead links); Archivist goal #2 unblocked
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
