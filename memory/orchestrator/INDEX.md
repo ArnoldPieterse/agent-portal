@@ -2,6 +2,7 @@
 Last updated: 2026-11-19.
 
 ## Entries (keyword -> pointer | use case)
+- designer #1 token assist (option d) 2026-11-19 -> memory/orchestrator/assist-designer-goal1-tokens-2026-11-19.md   added --br-* scale + 6 fs tokens to tokens.css; 64 hardcoded values in app.css replaced with var() refs
 - stale evidence claim CLOSED (option c) 2026-11-19 -> memory/orchestrator/stale-claim-mechanic-goal5-citation-fix-2026-11-19.md   mechanic goal#5 closure citation pointed at non-existent -verified filename; real VERIFIED artifact on disk (10/10); dangling pointer fixed, stale_claim_check MISSING 59->58
 - stale evidence claim CLOSED (option c) 2026-11-19 -> memory/orchestrator/stale-claim-scribe-todo-memor-typo-2026-11-19.md   scribe/TODO.md cited phantom `MEMOR.md` (typo of real MEMORY.md); dangling pointer fixed, stale_claim_check MISSING 59->58
 - designer #4 empty-state hot-note fix claim RE-VERIFIED still FAILS 2026-11-19 -> memory/orchestrator/designer-goal4-reverify-2026-11-19.md   full render-path check: no emptyState helper in any ui/*.js, .state-empty CSS defined-but-unused, 4 panels unwired; exact unblock step given to Designer

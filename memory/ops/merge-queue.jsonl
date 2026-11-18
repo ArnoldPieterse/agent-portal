@@ -113,3 +113,5 @@
 {"ts": "2026-11-19 05:10:11", "file": "ui/fleet_topology.js", "sha": "2b1e92858e", "size": 10735, "snapshot": null}
 {"ts": "2026-11-19 05:10:11", "file": "ui/tokens.css", "sha": "0d42f4d745", "size": 2563, "snapshot": null}
 {"ts": "2026-11-19 05:10:11", "file": "ui/uploads.js", "sha": "8be4d1095e", "size": 40412, "snapshot": null}
+{"ts": "2026-11-19 05:45:53", "file": "ui/app.css", "sha": "2bb6a4ac3d", "size": 36444, "snapshot": null}
+{"ts": "2026-11-19 05:45:53", "file": "ui/tokens.css", "sha": "055712939c", "size": 3293, "snapshot": null}

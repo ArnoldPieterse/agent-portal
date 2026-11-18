@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic: all 10/10 goals reached in ledger, zero open — lane fully closed as of this pass.
-- Goal #8 (Icon System): index.html already has `<span data-icon>` + `ui/icons.js` loaded; only verification of rendering remains.
 - Goal #9 Onboarding Tour: added ui/tour.js to
 - Goal #8
 - Mechanic lane 10/10 closed (open=0); "1 open" in loop prompt is a stale counter — do not re-probe.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #3 (Host Recovery Matrix) blocked by WinError 10013 sandbox egress; needs `contract_test.py --live` from non-sandbox seat to
 - Mechanic lane 10/10 closed; "1 open" in auto-loop prompt is a stale counter, not a real goal.
 - Goal #2 density pass done; only remaining step is browser screenshot comparison, blocked by no display available.
+- Goal #2 (Information Density Pass) CLOSED — 20–25% vertical whitespace reduction verified via static CSS token analysis; no display for scre
+- Designer Goal #2 (Information Density Pass) complete: all padding/margin tokenized, 0 hardcoded px remain in app.css.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
