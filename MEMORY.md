@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 (Competitive Feature Scan) closed: analyzed CrewAI AMP, LangGraph Platform, MS Agent Framework 1.0; 14-dim gap table delivered.
 - Terminal tool mangles "scribe"→"screibe" in paths; Scribe works around it by driving scripts via python imports instead.
 - Goal #5 (Notification System) built: toast+bell CSS/JS in core.js, hooks on goalBarsUpdate & upload completion; monkey-patch approach fixed
 - Goal #8 done: /api/fleet/dependencies built in agent_portal.py, 8 nodes + 5 edges verified, evidence at memory/orchestrator/dependencies-api
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #6 (Synthesis Quality Score) complete: quality_rubric.md + quality_score.py built; fleet avg 8.16/10 exceeds 8.0 target.
 - Mechanic lane closed at 10/10; goal #10 fixed by adding deploy_reboot_recovery_all.py pointer to memory/mechanic/INDEX.md
 - Goal #9 Fleet Health Composite Score: backend done — `/api/fleet/health` route live in agent_portal.py, self-test
+- Mechanic 8/10; remaining: portal uptime (week-end tally) + reboot drill (needs elev.py on White, script ready).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
