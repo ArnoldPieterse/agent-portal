@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 defects (all-down→HEALTHY, fake latency) confirmed already fixed in net_probe.py lines 28-44 & 57-64; no re-probe needed.
 - app.css reverted to
 - Verified: Designer goal #6 "closed" is FALSE (no skeleton code) and goal #8 ui/icons.js absent
 - Mechanic goal 8: _fleet_health_snapshot() now returns per-host health field; UI strip
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 8: icons.js (21 icons) exists but index.html never loads it; core.js ships its own 4-icon UI.icon — fix = add script tag + remove core.
 - Fixed net_probe.py: state file existed but was never loaded/saved; fail_counts reset each run so alerts never fired. Now persists correctly.
 - Goal #8 blocker: ui/icons.js exists (14 SVGs) but index.html doesn't load it; uploads.js ⚠ glyphs now replaced with inline SVG
+- Mechic lane 10/10 closed; assist note for Designer: core.js 17 emoji lines need .textContent→.innerHTML with UI.iconSized() from ui/icons.js
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
