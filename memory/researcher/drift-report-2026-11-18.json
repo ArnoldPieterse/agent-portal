@@ -1,0 +1,69 @@
+{
+  "ok": true,
+  "baseline": "2026-11-13",
+  "current": "2026-11-18",
+  "threshold": 0.2,
+  "snapshots": [
+    "2026-11-13",
+    "2026-11-16",
+    "2026-11-18"
+  ],
+  "per_snapshot_words": {
+    "2026-11-13": 10441,
+    "2026-11-16": 1641,
+    "2026-11-18": 16489
+  },
+  "drift": [
+    {
+      "term": "loop",
+      "baseline_per_k": 1.341,
+      "current_per_k": 2.608,
+      "rel_change": 0.945,
+      "flagged": true
+    },
+    {
+      "term": "agent",
+      "baseline_per_k": 3.927,
+      "current_per_k": 4.912,
+      "rel_change": 0.251,
+      "flagged": true
+    },
+    {
+      "term": "task",
+      "baseline_per_k": 0.766,
+      "current_per_k": 0.485,
+      "rel_change": -0.367,
+      "flagged": true
+    },
+    {
+      "term": "module",
+      "baseline_per_k": 0.862,
+      "current_per_k": 0.182,
+      "rel_change": -0.789,
+      "flagged": true
+    },
+    {
+      "term": "reply",
+      "baseline_per_k": 0.0,
+      "current_per_k": 0.121,
+      "rel_change": 1.0,
+      "flagged": true
+    },
+    {
+      "term": "record",
+      "baseline_per_k": 1.341,
+      "current_per_k": 0.546,
+      "rel_change": -0.593,
+      "flagged": true
+    }
+  ],
+  "flagged_terms": [
+    "loop",
+    "agent",
+    "task",
+    "module",
+    "reply",
+    "record"
+  ],
+  "note": "6 term(s) shifted >20% from baseline"
+}

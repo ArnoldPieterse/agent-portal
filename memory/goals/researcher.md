@@ -16,7 +16,7 @@ Focus: Knowledge depth + verification rigor. Build the fleet's evidence backbone
 
 7. **Evidence Chain Validator** - `python memory/researcher/chain_validator.py <evidence_file>` checks that every claim in an evidence file has >=2 independent sources, no circular references, and timestamps are monotonic. Verified: passes on 3 known-good files; fails correctly on a corrupted test file. (verified: 2026-11-18 - chain_validator.py built + tested: 3/3 good files PASS, corrupted file FAILs with 3 distinct issues (single-domain, same-domain, non-monotonic ts). Artifact: memory/researcher/chain_validator.py; evid)
 
-8. **Terminology Drift Monitor** - Track how key fleet terms (loop, agent, task, module, reply, record) are used across goal files + chat logs over time. Flag any term whose usage pattern shifts >20% from baseline. Verified: script produces drift report for cycle-4 data; flags at least 1 real shift.
+8. **Terminology Drift Monitor** - Track how key fleet terms (loop, agent, task, module, reply, record) are used across goal files + chat logs over time. Flag any term whose usage pattern shifts >20% from baseline. Verified: script produces drift report for cycle-4 data; flags at least 1 real shift. (verified: 2026-11-18 - Terminology Drift Monitor built: drift_check.py scans dated goal-file snapshots (archive + live) across 3 cycles, computes per-term relative freq (/1k words), flags >20% shift from baseline. Report dr)
 
 9. **Competitive Feature Scan** - Quarterly (next due 2027-Q1): research 3 comparable multi-agent systems, document their fleet-management features, and produce a gap analysis vs our portal. Verified: `memory/researcher/competitive-scan-2026-11.md` exists with >=3 systems analyzed + gap table.
 

@@ -220,6 +220,25 @@ def update_todo(cycle_num, dry_run=False):
     return todo_path
 
 
+def save_roster_snapshot(cycle_num, dry_run=False):
+    """Save current agents.json as a cycle snapshot for roster-diff comparisons."""
+    snap_dir = os.path.join(repo_root(), "memory", "fleet", "roster-snapshots")
+    if not dry_run:
+        os.makedirs(snap_dir, exist_ok=True)
+    agents_path = os.path.join(repo_root(), "agents.json")
+    with open(agents_path, encoding="utf-8") as f:
+        data = json.load(f)
+    snap_file = os.path.join(snap_dir, f"cycle-{cycle_num}.json") if not dry_run else None
+    if dry_run:
+        print(f"  SNAPSHOT: [DRY] would save cycle-{cycle_num} roster ({len(data.get('agents', []))} agents)")
+        return snap_file
+    with open(snap_file, "w", encoding="utf-8") as f:
+        json.dump({"cycle": cycle_num, "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
+                   "agents": data.get("agents", [])}, f, indent=2)
+    print(f"  SNAPSHOT: saved cycle-{cycle_num} roster ({len(data.get('agents', []))} agents)")
+    return snap_file
+
+
 def main():
     mode = "--check"
     for arg in sys.argv[1:]:
@@ -254,6 +273,7 @@ def main():
     print(f"Mode: {mode}")
     dry = (mode == "--dry-run")
     
+    save_roster_snapshot(cycle, dry_run=dry)
     moves = archive_goals(dry_run=dry)
     for m in moves:
         print(f"  ARCHIVE: {m}")
