@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Orchestrator reached 10/10 goals closed; goal #10 (cycle_narrative.py) was the final one, built and tested on cycle-4 data.
 - Designer built Goal #5 Notification System: toast (4 variants, stackable), header bell w/ badge, goal-closure trigger wired in core.js
 - Goal #1 set by human:
 - Sandbox: White/Black TCP blocked (WinError 10013), Pale/Red reachable but 401 auth required — live E2
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #5 (Notification System) complete: toast infra added to ui/core.js with CSS+HTML+JS, syntax verified.
 - Per-host ctx proven values: White Q4_K_S=131072, Red Q4_K_XL=65536, Pale/Black Q4_K_S=65536 — do NOT blanket-copy 131072
 - White=32GB; Q8(30.1GB)+Q4(23.7GB) can't coexist (53.8>32) — documented asymmetry
+- Mechanic cycle-5: all 10/10 goals verified + ledger-recorded; no open items remain in Mechanic's queue.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
