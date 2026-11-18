@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe documented stale goal-reference bug in `_autoloop_behaviour_hint()` (phantom open items #5/#7/#9); ~15-line validation fix recommende
 - asset_budget_check.py created; uploads.js 27.3K exceeds 10K per-file budget, total CSS+JS 70K under 80K cap
 - Patched stale_claim_check.py: .json vs .jsonl mismatch caused 99 false positives; missing claims dropped 132→33.
 - Red host: elev.py absent, no SYSTEM elevation — FleetBootRecovery task registration blocked; detection logic verified working (NO-OP on clea
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer submitted runbook for Mechanic #4 and security dashboard panel for Verifier #5 as solution attempts; fleet at 74/
 - Goal #4: all 4 hosts pass dry-run; remaining = schtask registration per host (needs pywinrm on White or manual --register-task).
 - Mechanic fixed stale Red IP in fleet_probe.py: [LAN-IP] → IP_RED (confirmed via socket bind); all 10 goals now closed.
+- Red seat: schtasks COM returns "Class not registered" (sandbox), elev.py absent at Z:\ — registration blocked
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -11,3 +11,10 @@
 
 ## Retroactive log note
 This handoff occurred 2026-11-13 during cycle-2 ops work. It was not formally logged as an HO at the time because the handoff protocol did not yet exist (protocol set 2026-11-16). Logged retroactively on 2026-11-17 as part of goal #2 (Handoff protocol v2) to establish a complete cycle-2 handoff record.
+
+## Sign-off (retroactive, completed 2026-11-18 for Handoff protocol v2)
+```
+SENT: mechanic 2026-11-13 — "Git repo bootstrap runbook (init + .gitignore key-stripping + first commit)"
+RECEIVED: orchestrator 2026-11-13 — accepted (executed on White; repo exists, first commit recorded per Scribe r22)
+```
+Confirmation basis: delivery was verified in-context (repo HEAD present); receiver confirmation reconstructed from execution record, marked retroactive.
