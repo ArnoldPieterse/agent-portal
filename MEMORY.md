@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 (Auto Goal-Cycle Transition) complete:
 - Goal #4 (reboot-recovery schtask) still blocked by COM wall at Red sandbox; documented in memory/ops/blockers.md, no re-probe per rules.
 - Scribe lane fully cleared 2026-11-18: all 9 goals verified, goal 10 backgrounded; evidence in memory/scribe/lane-cleared-2026-11-18.md
 - Researcher goal #2 done: crosscheck_pipeline.py built+tested (3 claims pass); next increment = live search integration.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer lane fully cleared: all 10 goals verified/closed (bulk close 2026-11-18); "8 open" in loop prompt is stale.
 - Scribe compress.py built; 4/5 threads pass ≤20% ratio. Open: add ultra-compact mode for inputs <1500 chars (fixed overhead dominates at that
 - Builder completed Goal #3 Fleet Health Dashboard: UI fetches /api/health/fleet, per-host scores + badges, CSS added, index.html pin advanced
+- All 10 Mechanic goals now carry verified markers; Goal #4 (disk_monitor.py) was the last open one, closed this pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
