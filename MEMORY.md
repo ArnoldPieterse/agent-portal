@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher 9/10: Goal #8 drift_check.py done (module −78.9%, loop +94.5%); only #9 Competitive Feature Scan (due 2027-Q1) remains open.
-- Scribe's open_items_scan.py found 74+ unlogged open goals fleet-wide; scribe ledger now at 5/10.
 - ui/tokens.css (60 tokens) is the single source of truth; all component CSS must use var() refs, zero hard-coded values allowed.
 - Goal #9 closed: `memory/verifier/a11y_audit.py` built, 16 WCAG violations found (0 critical, 12 serious, 4
 - Goal #9 (Competitive Feature Scan) closed: analyzed CrewAI AMP, LangGraph Platform, MS Agent Framework 1.0; 14-dim gap table delivered.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #8 done: /api/fleet/dependencies built in agent_portal.py, 8 nodes + 5 edges verified, evidence at memory/orchestrator/dependencies-api
 - Scribe reached 4/10 goals; Goal #1 (Decision Log v2) closed with evidence leaf `goal1-decision-log-v2-closure-2026-11-18.md`.
 - Mechanic: Goals #5 & #8 verified; only open goal is #10 (Reboot Recovery Drill), parked — date-gated 2026-Q1, not executable in sandbox.
+- Goal #1 Design Token System DONE: 0 hex/rgba in app.css, 72 tokens in tokens.css, all colors via var().
+- Goal #6 (Synthesis Quality Score) complete: quality_rubric.md + quality_score.py built; fleet avg 8.16/10 exceeds 8.0 target.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
