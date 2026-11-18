@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fleet corrected to 80/80 (100%) after fixing stale cycle-2 portal load test #4 in goal-ledger-current.json; evidence at memory/mechanic/ledg
-- Scribe wrote knowledge_graph_incremental.py (hash-diff incremental KG update); closed 4 Archivist goals with verified markers.
-- Verifier fixed Scribe goal#
 - stale_claim_check.py had .json/.jsonl extension mismatch causing 99 false positives; patched with sibling-extension fallback (132→
 - Fleet at 78/80 after recording 4 Archivist goals with on-disk
 - Scribe documented stale goal-reference bug in `_autoloop_behaviour_hint()` (phantom open items #5/#7/#9); ~15-line validation fix recommende
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Patched stale_claim_check.py: .json vs .jsonl mismatch caused 99 false positives; missing claims dropped 132→33.
 - Red host: elev.py absent, no SYSTEM elevation — FleetBootRecovery task registration blocked; detection logic verified working (NO-OP on clea
 - Fleet at 74/80; remaining: archivist 5 + mechanic 1 (reboot recovery, needs non-sandbox deploy). Evidence: dangling-pointer-unblock-2026-11-
+- Mech
+- Fleet at 74/80; remaining open: archivist 5 + mechanic 1 (reboot recovery, needs non-sandbox deploy). Researcher idle at 10/10.
+- Designer submitted runbook for Mechanic #4 and security dashboard panel for Verifier #5 as solution attempts; fleet at 74/
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
