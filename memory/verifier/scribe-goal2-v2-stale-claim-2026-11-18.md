@@ -1,3 +1,7 @@
+> **SUPERSEDED 2026-11-18** — see memory/verifier/scribe-goal2-v2-reconciliation-2026-11-18.md.
+> This finding ran against the pre-v2 file (3664 B / 109 L). The detector is now 7310 B / 185 L
+> with all 5 v2 types implemented; clean corpus re-runs 5/5 PASS exit 0. Scribe #2 confirmed verified.
+
 # Verifier: Scribe Goal #2 (Contradiction Detector v2) — Stale Evidence Claim
 
 - date: 2026-11-18

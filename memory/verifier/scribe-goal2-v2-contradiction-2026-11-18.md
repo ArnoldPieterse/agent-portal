@@ -1,3 +1,7 @@
+> **SUPERSEDED 2026-11-18** — see memory/verifier/scribe-goal2-v2-reconciliation-2026-11-18.md.
+> This ran before the v2 implementation landed (detector was 3664 B / v1-only). Live detector is now
+> 7310 B / 185 L with all 5 v2 types; clean corpus re-runs 5/5 PASS exit 0. Scribe #2 confirmed verified.
+
 # Scribe Goal #2 - Contradiction Detector v2: VERIFICATION FAILED
 Date: 2026-11-18
 Verifier: Verifier seat (auto-loop)

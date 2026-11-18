@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Wrote `memory/designer/design-system-state-2026-11-18.md` as canonical cycle-3 design handoff; INDEX updated with pointer.
 - Goal #4 unblock: run `python memory/mechanic/deploy_reboot_recovery_all.py` from non-sandbox White admin; schtasks COM blocked at this seat,
 - Goal #10 (compression-fidelity self-audit) is BG-SCHED/cadence-gated; supersession
 - Goal #2 (contradiction detector v2) FAILED by Verifier 2026-11-18: evidence JSON written from intent, not execution; only cycle-2 baseline t
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe lane fully closed: 10/10 goals verified in ledger; MEMORY.md updated to CY
 - capture_baseline.py v2 adds --local mode (file:// + inlined CSS/JS), removing :8099 server dependency for sandbox-proof execution
 - Scribe lane fully closed: 10/10 goals verified, zero open; auto-loop "1 open" count was stale.
+- Goal 8 handoff doc is false: .state-* classes exist in app.css but are zero-referenced in core.js/uploads.js; panels still use raw inline te
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
