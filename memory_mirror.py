@@ -24,9 +24,10 @@ Design notes (r16 bundle review, 2026-11-13 - supersedes OPS r3 strict-newer-onl
   * Every run appends one JSON line to memory_mirror.log (audit for the 5-min task; every
     hash-differing decision is logged with both md5s so stuck files are adjudicable from the log).
 
-Credential status 2026-11-13: Red = empty password (works). Pale/Black password recorded in
-smb_fix.ps1 ('[REDACTED-CREDENTIAL]') was REJECTED by both hosts (error 86) -> status pending_creds;
-Arnold supplies the current passwords into memory_mirror_hosts.json, no code change needed.
+Credential status (final, Arnold 2026-11-18): ALL host passwords are EMPTY - RDP and SMB alike.
+The old '[REDACTED-CREDENTIAL]' string in smb_fix.ps1 is Unsloth Desktop remote-access only, NOT an SMB
+password. net use with a quoted empty password works on Red/Pale/Black; hosts json carries the
+per-host accounts (Red/pale/black).
 """
 import json, os, shutil, subprocess, sys, datetime, hashlib
 
@@ -111,7 +112,7 @@ def ensure_conn(ip, user, pw):
     if pw:
         cmd.append(pw)
     else:
-        cmd.append("")   # empty arg -> net sees a quoted empty password (Red's case)
+        cmd.append("")   # empty arg -> net sees a quoted empty password (all hosts, 2026-11-18)
     r = subprocess.run(cmd, capture_output=True, text=True, creationflags=CREATE_NO_WINDOW)
     if r.returncode == 0:
         try:

@@ -1,7 +1,11 @@
-Last updated: 2026-11-15 ~01:4x (Mechanic goal 7 - port + scheduled-task map, all four hosts; due Friday)
+Last updated: 2026-11-18 (added Access section: RDP + SMB passwords empty on all hosts)
 
 # Host port + scheduled-task map
 White rows VERIFIED live 2026-11-15 (probe + schtasks query). Remote rows from memory/llm/hosts.md recon (11-11..11-14) - re-verify at power-on (fleet_probe.py will flag reachability every 10 min meanwhile).
+
+## Access (RDP + SMB) - all hosts
+- **All passwords are EMPTY.** RDP on every host: empty password (Arnold, 2026-11-18). SMB admin shares (C$) likewise - `net use \\ip\C$ /user:<acct> ""` works; see memory_mirror_hosts.json (note field).
+- Accounts: Red = `Red`, Pale = `pale`, Black = `black` (per memory_mirror_hosts.json); White is the local machine.
 
 ## White ([LAN-IP] / local)
 | port | service | state |

@@ -1,5 +1,8 @@
 <!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 
+## 2026-11-18 - all host passwords are EMPTY (RDP + SMB, Arnold)
+- RDP and SMB passwords are empty on every host (White/Red/Pale/Black); remote accounts: Red/pale/black. Detail: memory/ops/host-port-task-map-2026-11-15.md #access-rdp--smb--all-hosts.
+
 ## 2026-11-16 ~17:xx - file-modularity rule + UI split + 15-min git net (Studio seat)
 - NEW FLEET RULE: working/project files follow memory/ modularity (small files, header pointers to parent) -> memory/portal/file-modularity.md. Root INDEX trimmed 2435->1395 chars (was over the 1600 _index_block budget - tail was truncated from every prompt).
 - index.html split: markup-only shell 10.3 KB + ui/app.css + ui/core.js + ui/uploads.js (GET /ui/* route); pin advanced e0679e5f0844 -> 10bbd8ddf982 same-turn (pin_guard reverted my first attempt within one cycle).
@@ -15,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #7 closed: 100% owner coverage (65/65) via `[owner: X]` tags on all TODO.md items; evidence in `memory/scribe/owner-coverage-v2-final-2
-- Goal #6: portal confirmed dark-mode-only (no light-theme CSS block exists), so contrast audits only need dark tokens.
 - Goal #4 blocked by sandbox egress (WinError 10013); needs non-sandbox White seat to unblock — do not re-probe.
 - Goal #7 verified (65/65 coverage) but auto-loop still lists
 - Scribe at 9/10 goals closed; only #10 (BG-SCHED background item) remains open as of 2026-11-18 batch pass.
@@ -25,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mirror self-heal (#2) passing dry-runs; needs ~2 wks continuous passes to close, earliest ~Dec 2.
 - Scribe fixed goal #9 closure marker (pointer→explicit verified); ledger now 9/10 closed, only #10 BG-sched remains open.
 - Designer seat: both CDP and offline msedge --screenshot blocked (WinError 10013 + sandbox path-remap); baseline PNGs need non-sandbox
+- Goal #4: created deploy_boot_recovery_fleet.py (WinRM+schtasks for 4 hosts), dry-run passed; still blocked on elev.py absence
+- Goal #10 blocked: sandbox egress wall (WinError 10013) blocks even localhost; unblock = run capture_baseline.py from non-sandbox White seat.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
