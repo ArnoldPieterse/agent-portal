@@ -5,7 +5,7 @@ Updated: 2026-11-18. Covers White, Black, Red, Blue.
 1. Check port 8099: `netstat -ano | findstr :8099` → expect LISTENING.
 2. If down: `python agent_portal.py &` → wait 10s → re-check port.
 3. Check disk: `wmic logicaldisk where caption='C:' get FreePercent` → expect <85%.
-4. Check memory_mirror.py last run: tail memory/mirror_log.jsonl for errors.
+4. Check memory_mirror.py last run: tail memory/memory_mirror.log for errors.
 5. Verify /api/goals returns 200: `curl -s -o nul -w "%%{http_code}" http://localhost:8099/api/goals`.
 6. If mirror stuck: kill + restart `python memory_mirror.py` → confirm next cycle completes.
 Expected recovery: <30s (portal), <2min (mirror).
@@ -36,4 +36,4 @@ Expected recovery: <30s (endpoint check), <5min (full KB rebuild).
 
 ## Escalation
 - Any host down >5min after auto-recovery: write NEEDS-HUMAN to memory/ops/blockers.md with exact command + error.
-- Two hosts down simultaneously: treat as fleet incident → generate post-mortem skeleton via `python memory/mechanic/postmortem_template.py`.
+- Two hosts down simultaneously: treat as fleet incident → generate post-mortem skeleton via `python memory/mechanic/postmortem_gen.py`.
