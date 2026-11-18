@@ -3044,15 +3044,51 @@ def _autoloop_watchdog():
             for _n in list(streaks):
                 if _n not in down:
                     streaks.pop(_n, None)
+            episodes = d.setdefault('down_episode', {})   # name -> {"since": ts, "reloads": int, "last_reload": ts}
             for _n in down:
                 streaks[_n] = streaks.get(_n, 0) + 1
+                ep = episodes.setdefault(_n, {"since": now, "reloads": 0, "last_reload": 0.0})
+                # 2026-11-18: don't let a down seat stall its goals silently - best-effort auto-reload
+                # via the seat's own Studio (harmless 404 on hosts without a load endpoint), max 2 per
+                # episode, 5-min cooldown. Recovery needs no extra wiring: the seat re-enters `ready`
+                # and is fired on the very next tick.
+                if streaks[_n] >= 8 and ep["reloads"] < 2 and now - ep["last_reload"] >= 300:
+                    try:
+                        _ag = {a.get('name'): a for a in json.load(open(os.path.join(HERE, 'agents.json'), encoding='utf-8')).get('agents', [])}
+                        _a = _ag.get(_n, {})
+                        _req = urllib.request.Request(((_a.get('studio') or STUDIO).rstrip('/') + "/v1/models/" + str(_a.get('model_id')) + "/load"),
+                                                      data=b'{}', headers={'Content-Type': 'application/json'})
+                        if _a.get('api_key'):
+                            _req.add_header('Authorization', 'Bearer ' + _a['api_key'])
+                        try:
+                            urllib.request.urlopen(_req, timeout=15)
+                            print('[autoloop] auto-reload %s: accepted' % _n)
+                        except Exception as _e:
+                            print('[autoloop] auto-reload %s -> %s' % (_n, getattr(_e, 'code', str(_e))[:60]))
+                    except Exception as _e:
+                        print('[autoloop] auto-reload attempt failed for %s: %s' % (_n, _e))
+                    ep["reloads"] += 1
+                    ep["last_reload"] = now
                 if streaks[_n] == 8:
                     try:
                         with open(os.path.join(HERE, 'memory', 'ops', 'blockers.md'), 'a', encoding='utf-8') as _bf:
-                            _bf.write('- [%s] NEEDS-HUMAN: seat %s model unreachable for 20+ min (%s). Reload the model in Studio or restart it elevated.\n'
+                            _bf.write('- [%s] NEEDS-HUMAN: seat %s model unreachable for 20+ min (%s). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.\n'
                                       % (time.strftime('%H:%M'), _n, mls[_n].get('status')))
                     except Exception:
                         pass
+            # 2026-11-18: machine-readable state so UI/tools can surface stuck seats; removed when all up.
+            try:
+                _ds = os.path.join(HERE, 'memory', 'ops', 'down-seats.json')
+                if down:
+                    with open(_ds, 'w', encoding='utf-8') as _f:
+                        json.dump({"ts": time.strftime('%Y-%m-%dT%H:%M:%S'),
+                                   "seats": [{"seat": _n, "status": mls.get(_n, {}).get('status'),
+                                              "down_ticks": streaks[_n],
+                                              "reload_attempts": episodes.get(_n, {}).get('reloads', 0)} for _n in down]}, _f)
+                elif os.path.exists(_ds):
+                    os.remove(_ds)
+            except Exception:
+                pass
             sections, why_bits, productive = [], [], False
             for n in ready:   # per-agent task, steered by behaviour analysis of their last reply
                 try:
@@ -3848,9 +3884,17 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/models/status":
             # Model-load governance (2026-11-16, Orchestrator goal #2): live per-seat status
             # for the fleet panel; same probe the run-start check uses.
+            # 2026-11-18: down_seats/action_required surface stuck seats explicitly so a seat
+            # sitting at N open goals can't stall silently - UI can show ACTION REQUIRED.
             try:
+                _ms = _model_load_status()
+                _down = [{"seat": _k, "status": (_v or {}).get("status")}
+                         for _k, _v in _ms.items()
+                         if isinstance(_v, dict) and _v.get("status") not in (None, "ok")]
                 return self._json(200, {"ok": True, "block_mode": MODEL_LOAD_BLOCK,
-                                        **_model_load_status()})
+                                        "down_seats": _down,
+                                        "action_required": bool(_down),
+                                        **_ms})
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/net/fleet":
