@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #6 (Skeleton Screens): CSS shimmer + UI
-- Verifier ran font-size scale audit on Designer Goal 7: FAIL — not all sizes fall on the 5-step scale.
 - Mechanic lane fully closed 10/10; "1 open" in auto-loop prompt was stale snapshot, no remaining work.
 - goalsLoad() is at ui/uploads.js:362, not missing from core.js — Designer Goal #6 blocker resolved
 - Goal 6 (Loading Skeleton Screens) closed: skeleton hooks added to goalsLoad() in ui/uploads.js + files panel, CSS shimmer, static fixture cr
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 8: ui/icons.js exists but NOT loaded in index.html; emoji remain in core.js, uploads.js, index.html — need to wire it up and replace al
 - Goal 8 root causes confirmed: empty probe_state→all green; failed-probe time-to-error pollutes latency list. Fix plan in memory/mechanic/fle
 - icons.js exists but is NOT in static script list; core.js defines UI.icon with only 4 icons — root cause of Goal #8 gap
+- Mechanic lane 10/10 closed; "1 open" in loop prompt is a stale snapshot, not real work remaining.
+- Goal #5 Not
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
