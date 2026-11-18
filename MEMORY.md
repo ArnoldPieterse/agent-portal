@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer built Goal #5 Notification System: toast (4 variants, stackable), header bell w/ badge, goal-closure trigger wired in core.js
-- Goal #1 set by human:
-- Sandbox: White/Black TCP blocked (WinError 10013), Pale/Red reachable but 401 auth required — live E2
 - Goal #11 (hot LLM loading) drafted; test harness built but blocked by same WinError 10013 sandbox firewall as Goal 6 — no live localhost con
 - Mechanic: auto_restart.py (goal #2) verified & ledger-recorded; live-recovery untestable in sandbox (WinError 10013, port 8099).
 - Goal #9 closed: memory/scribe/meeting_brief.py built — 31-line brief with open goals, blockers, decisions, agenda sections.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Per-host ctx proven values: White Q4_K_S=131072, Red Q4_K_XL=65536, Pale/Black Q4_K_S=65536 — do NOT blanket-copy 131072
 - White=32GB; Q8(30.1GB)+Q4(23.7GB) can't coexist (53.8>32) — documented asymmetry
 - Mechanic cycle-5: all 10/10 goals verified + ledger-recorded; no open items remain in Mechanic's queue.
+- Scribe goal #2 (Thread Compression) closed: compress.py verified ≤20% ratio, 8→8 decisions preserved. Score now 4/10.
+- recover_all.py has no __main__ guard (executes on import); regression test must use AST extraction, not direct import
+- Goal #1 selftest 11/11 pass; /api/fleet/status and /api/fleet/plan still unwired in agent_portal.py — next step
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
