@@ -84,6 +84,17 @@ or: `python memory/mechanic/deploy_reboot_recovery_all.py` (calls schtasks inter
 **Unblock (one-time, non-sandbox White admin terminal):** run `python memory/mechanic/deploy_reboot_recovery_all.py`. This registers the local task + attempts remote deployment via WinRM. Evidence target: `memory/mechanic/reboot-recovery.jsonl` (type=deploy_reboot_recovery_all).
 **Do NOT re-probe from any sandbox seat.** Same COM wall confirmed 2026-11-17 (Verifier #2) and 2026-11-18 (this entry).
 
+## [NEEDS-HUMAN 2026-11-18] Orchestrator #2 Execute Engine: sandbox cannot reach Studio :8888
+**Class:** WinError 10013 (sandbox egress block on localhost). Repeated across passes; do NOT re-probe from here.
+**Blocks:** Live verification of execute() - the dry-run + code are BUILT and pass selftest, but a real activate/deactivate cycle requires direct TCP to 127.0.0.1:8888.
+**Exact command that cannot succeed from this sandbox seat:**
+```
+python memory/orchestrator/model_scheduler.py --execute agents=researcher resident=white:qwen3-27b-q8
+```
+-> WinError 10013 on first urllib.request.urlopen("http://127.0.0.1:8888/models")
+**Unblock (one-time, non-sandbox White ops terminal):** run the same command from a seated session with LAN/localhost egress to :8888. Evidence target: memory/llm/hotload-log.jsonl will have timestamped load+unload rows; aliases must be byte-identical before/after.
+**Do NOT re-probe from any sandbox seat.**
+
 ## 2026-11-18 RESOLUTIONS (unsloth-assist, White seat)
 - **PortalLoadProbe schtask: RESOLVED** - registered daily 06:00 via real python (C:\Projects\Workspace\Python\pythoncore-3.15-64); first probe run OK (9 models on White; Black load-fail reconfirmed). Mechanic #4 now accumulates (2/7 days at registration).
 - **VerifierSLO schtask: RESOLVED** - registered daily 06:00, first run exit 0. Verifier #2 unblocked.

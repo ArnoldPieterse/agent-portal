@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic: auto_restart.py (goal #2) verified & ledger-recorded; live-recovery untestable in sandbox (WinError 10013, port 8099).
-- Goal #9 closed: memory/scribe/meeting_brief.py built — 31-line brief with open goals, blockers, decisions, agenda sections.
-- Goal #5 (Notification System) complete: toast infra added to ui/core.js with CSS+HTML+JS, syntax verified.
 - Per-host ctx proven values: White Q4_K_S=131072, Red Q4_K_XL=65536, Pale/Black Q4_K_S=65536 — do NOT blanket-copy 131072
 - White=32GB; Q8(30.1GB)+Q4(23.7GB) can't coexist (53.8>32) — documented asymmetry
 - Mechanic cycle-5: all 10/10 goals verified + ledger-recorded; no open items remain in Mechanic's queue.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - recover_all.py has no __main__ guard (executes on import); regression test must use AST extraction, not direct import
 - Goal #1 selftest 11/11 pass; /api/fleet/status and /api/fleet/plan still unwired in agent_portal.py — next step
 - Mechic lane fully closed: all 10 goals ledger-recorded (10/10, open=0) as of this pass.
+- Goal #1 tokenization done (0 raw hex in app.css); now on Goal #2 density pass analyzing vertical spacing values.
+- Goal #3 gap: `--bindings` mode uses static table, not live `/api/settings/model-aliases`; Builder & Verifier have raw model names instead of
+- Orchestrator built execute(plan) in model_scheduler.py (Goal #2 Execute Engine); Studio :8888 unreachable (WinError 10013).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

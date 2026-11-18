@@ -227,9 +227,248 @@ def _parse_kv(s, sep=";"):
     return out
 
 
+# ---------------------------------------------------------------------------
+# EXECUTE ENGINE (goal 2) - drives the Studio API from a plan()'s output
+# ---------------------------------------------------------------------------
+import time
+import urllib.request
+import urllib.error
+from datetime import datetime, timezone
+
+HOTLOAD_LOG = os.path.normpath(os.path.join(HERE, "..", "llm", "hotload-log.jsonl"))
+LOAD_PARAMS_PATH = os.path.normpath(os.path.join(HERE, "..", "llm", "model_load_params.json"))
+
+
+def _log_event(event_type, host, model, detail=""):
+    """Append a timestamped row to hotload-log.jsonl."""
+    row = {
+        "ts": datetime.now(timezone.utc).isoformat(),
+        "event": event_type,
+        "host": host,
+        "model": model,
+        "detail": detail,
+    }
+    os.makedirs(os.path.dirname(HOTLOAD_LOG), exist_ok=True)
+    with open(HOTLOAD_LOG, "a", encoding="utf-8") as f:
+        f.write(json.dumps(row) + "\n")
+
+
+def _studio_get(host_api, path, timeout=30):
+    url = host_api.rstrip("/") + path
+    req = urllib.request.Request(url)
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode())
+
+
+def _studio_post(host_api, path, body, timeout=60):
+    url = host_api.rstrip("/") + path
+    data = json.dumps(body).encode()
+    req = urllib.request.Request(url, data=data, method="POST")
+    req.add_header("Content-Type", "application/json")
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return resp.status, json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        return e.code, json.loads(e.read().decode() or b"{}")
+
+
+def _wait_idle(host_api, host_name, model, max_wait_s=180, poll_s=3):
+    """Poll active-generations until count==0. Returns True if idle."""
+    deadline = time.time() + max_wait_s
+    while time.time() < deadline:
+        try:
+            data = _studio_get(host_api, "/api/inference/active-generations")
+            cnt = data.get("count", 0)
+            if cnt == 0:
+                return True
+        except Exception:
+            pass
+        time.sleep(poll_s)
+    return False
+
+
+def _wait_resident(host_api, host_name, model_id, folder, timeout_s, poll_s=5):
+    """Poll GET /models until the target model shows loaded=true."""
+    deadline = time.time() + timeout_s
+    while time.time() < deadline:
+        try:
+            data = _studio_get(host_api, "/models")
+            for m in data.get("data", data if isinstance(data, list) else []):
+                mid = m.get("id", "")
+                # Match by folder path or id substring
+                if model_id in mid or (folder and folder.replace("\\", "/") in str(m).replace("\\", "/")):
+                    if m.get("loaded"):
+                        return True
+        except Exception:
+            pass
+        time.sleep(poll_s)
+    return False
+
+
+def _wait_unloaded(host_api, host_name, model_id, folder, timeout_s=60, poll_s=3):
+    """Poll GET /models until target shows loaded=false or absent."""
+    deadline = time.time() + timeout_s
+    while time.time() < deadline:
+        try:
+            data = _studio_get(host_api, "/models")
+            models_list = data.get("data", data if isinstance(data, list) else [])
+            found_loaded = False
+            for m in models_list:
+                mid = m.get("id", "")
+                if model_id in mid or (folder and folder.replace("\\", "/") in str(m).replace("\\", "/")):
+                    if m.get("loaded"):
+                        found_loaded = True
+            if not found_loaded:
+                return True
+        except Exception:
+            pass
+        time.sleep(poll_s)
+    return False
+
+
+def _load_body_for(model_entry, catalog=None):
+    """Build the POST /api/inference/load body from a catalog model entry.
+    Uses model_load_params.json for exact proven bodies when available."""
+    mid = model_entry["id"]
+    # Try proven params file first
+    try:
+        with open(LOAD_PARAMS_PATH, encoding="utf-8") as f:
+            params = json.load(f)
+        # Map: qwen3-27b-q8 -> atlas-q8, qwen3-27b-q4 -> quinn-q4
+        alias_map = {"qwen3-27b-q8": "atlas-q8", "qwen3-27b-q4": "quinn-q4"}
+        alias = alias_map.get(mid)
+        if alias and alias in params:
+            return dict(params[alias])
+    except Exception:
+        pass
+    # Fallback: build from catalog fields
+    body = {
+        "model_path": model_entry["folder"],
+        "gguf_variant": model_entry.get("gguf_variant", ""),
+        "gpu_ids": model_entry.get("gpu_ids", [0]),
+        "max_seq_length": model_entry.get("max_context", 32768),
+        "cache_type_kv": "q8_0",
+        "n_parallel": 1,
+    }
+    if "mtp" in (model_entry.get("gguf_variant") or "").lower():
+        body["speculative_type"] = "mtp"
+        body["spec_draft_n_max"] = 4
+    return body
+
+
+def execute(plan_result, catalog=None, dry_run=False):
+    """Drive the Studio API per host to execute a plan()'s output.
+
+    Sequence: for each action in plan['sequence']:
+      - UNLOAD: POST /api/inference/unload {model_path} -> poll until gone
+      - LOAD:   idle-gate -> POST /api/inference/load {body} -> poll until resident
+    Logs every transition to memory/llm/hotload-log.jsonl.
+
+    Returns {ok, results:[{op,model,host,status,detail}], errors:[]}
+    """
+    if catalog is None:
+        catalog = load_catalog()
+    hosts_meta = catalog["_meta"]["hosts"]
+    mindex = _model_index(catalog)
+
+    results = []
+    errors = []
+
+    for action in plan_result.get("sequence", []):
+        op = action["op"]
+        model_id = action["model"]
+        host = action["host"]
+        entry = mindex.get(model_id, {})
+        folder = entry.get("folder", "")
+        api_url = hosts_meta.get(host, {}).get("api", "http://127.0.0.1:8888")
+
+        if dry_run:
+            results.append({"op": op, "model": model_id, "host": host,
+                            "status": "DRY_RUN", "detail": action.get("reason", "")})
+            continue
+
+        if op == "BLOCKED":
+            errors.append(action.get("reason", "blocked"))
+            results.append({"op": op, "model": model_id, "host": host,
+                            "status": "BLOCKED", "detail": action.get("reason", "")})
+            _log_event("BLOCKED", host, model_id, action.get("reason", ""))
+            continue
+
+        if op == "UNLOAD":
+            t0 = time.time()
+            _log_event("UNLOAD_START", host, model_id)
+            status_code, resp = _studio_post(api_url, "/api/inference/unload",
+                                             {"model_path": folder})
+            if status_code == 200:
+                ok = _wait_unloaded(api_url, host, model_id, folder)
+                elapsed = time.time() - t0
+                st = "SUCCESS" if ok else "TIMEOUT"
+                results.append({"op": op, "model": model_id, "host": host,
+                                "status": st, "elapsed_s": round(elapsed, 1)})
+                _log_event("UNLOAD_" + st, host, model_id, "%.1fs" % elapsed)
+                if not ok:
+                    errors.append("unload timeout: %s on %s" % (model_id, host))
+            else:
+                results.append({"op": op, "model": model_id, "host": host,
+                                "status": "ERROR", "detail": "HTTP %d" % status_code})
+                _log_event("UNLOAD_ERROR", host, model_id, str(resp))
+                errors.append("unload HTTP %d: %s on %s" % (status_code, model_id, host))
+
+        elif op == "LOAD":
+            t0 = time.time()
+            # 1) idle gate
+            _log_event("IDLE_GATE_WAIT", host, model_id)
+            if not _wait_idle(api_url, host, model_id):
+                results.append({"op": op, "model": model_id, "host": host,
+                                "status": "ABORTED", "detail": "idle gate timeout"})
+                _log_event("IDLE_GATE_TIMEOUT", host, model_id)
+                errors.append("idle gate never opened for %s on %s" % (model_id, host))
+                continue
+            _log_event("IDLE_GATE_OPEN", host, model_id)
+
+            # 2) load
+            body = _load_body_for(entry)
+            _log_event("LOAD_START", host, model_id, json.dumps(body))
+            status_code, resp = _studio_post(api_url, "/api/inference/load", body)
+            if status_code == 200:
+                load_timeout = float(entry.get("load_time_s", 120)) * 2
+                ok = _wait_resident(api_url, host, model_id, folder, timeout_s=load_timeout)
+                elapsed = time.time() - t0
+                st = "SUCCESS" if ok else "TIMEOUT"
+                results.append({"op": op, "model": model_id, "host": host,
+                                "status": st, "elapsed_s": round(elapsed, 1)})
+                _log_event("LOAD_" + st, host, model_id, "%.1fs" % elapsed)
+                if not ok:
+                    errors.append("load timeout: %s on %s (waited %.0fs)" % (model_id, host, load_timeout))
+            elif status_code == 409:
+                results.append({"op": op, "model": model_id, "host": host,
+                                "status": "CONFLICT", "detail": "HTTP 409 - generation active"})
+                _log_event("LOAD_CONFLICT", host, model_id)
+                errors.append("load 409 conflict: %s on %s" % (model_id, host))
+            else:
+                results.append({"op": op, "model": model_id, "host": host,
+                                "status": "ERROR", "detail": "HTTP %d" % status_code})
+                _log_event("LOAD_ERROR", host, model_id, str(resp))
+                errors.append("load HTTP %d: %s on %s" % (status_code, model_id, host))
+
+    return {"ok": len(errors) == 0, "results": results, "errors": errors}
+
+
 def main(argv):
     if "--selftest" in argv:
         return selftest()
+    if "--execute" in argv:
+        agents, resident_s = [], None
+        dry_run = "--dry-run" in argv
+        for a in argv:
+            if a.startswith("agents="):
+                agents = [x for x in a[len("agents="):].split(",") if x]
+            elif a.startswith("resident="):
+                resident_s = _parse_kv(a[len("resident="):])
+        p = plan(agents, resident_s or {})
+        result = execute(p, dry_run=dry_run)
+        print(json.dumps(result, indent=2))
+        return 0 if result["ok"] else 1
     agents, resident_s = [], None
     for a in argv:
         if a.startswith("agents="):

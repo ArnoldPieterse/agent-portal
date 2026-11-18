@@ -37,17 +37,23 @@ USAGE:
   python hot_load.py --plan white            # dry-run: print host table + exact load bodies (NO network)
   python hot_load.py --test-wedge            # offline self-test of the wedge-skip decision (NO network)
   python hot_load.py --host white --execute  # live: probe -> skip/reload -> poll resident -> alias probe
-  python hot_load.py --bindings              # read agents.json + aliases, emit match matrix (needs network)
+  python hot_load.py --bindings              # offline: read agents.json, emit 8-agent match matrix (no network)
+  python hot_load.py --bindings --live       # + GET /api/settings/model-aliases per host (needs :8888 vantage)
+  python hot_load.py --test-bindings         # offline self-test: reproduces known builder/verifier mismatch
+                                              # flags; proves fetch never raises on an unreachable host (no network)
 
 ACCEPTANCE (goal #1): ast.parse exits 0; --plan prints all 4 hosts and White Q4 max_seq_length==131072;
 --test-wedge shows a healthy model is SKIPPED and a wedged one is FORCE_RELOAD. Live :8888 execution
 is gated on a non-sandbox vantage, so the verifiable surface here is --plan + --test-wedge (fixtures).
 """
-import json, os, sys, time, platform, socket, argparse, datetime, urllib.request, urllib.error
+import json, os, re, sys, time, platform, socket, argparse, datetime, urllib.request, urllib.error
 
 STUDIO_DEFAULT = "http://127.0.0.1:8888"
 PORTAL         = "http://127.0.0.1:8099"
 RESULT_DIR     = os.path.join("memory", "researcher", "hotload-results")
+_THIS_DIR      = os.path.dirname(os.path.abspath(__file__))
+PROJECT_ROOT   = os.path.abspath(os.path.join(_THIS_DIR, "..", ".."))  # memory/researcher -> root
+DEFAULT_AGENTS_JSON = os.path.join(PROJECT_ROOT, "agents.json")
 
 # ---------------------------------------------------------------------------
 # SINGLE HOST TABLE (the one source of truth for studio URL / auth / models).
@@ -353,22 +359,130 @@ def execute(host_key, jreq_fn=None):
 
 
 # ---------------------------------------------------------------------------
-# BINDINGS (live) - read agents.json + per-host aliases -> 8-agent match matrix (Gap 3).
+# BINDINGS (Goal #3) - read agents.json + per-host /api/settings/model-aliases ->
+# the 8-agent match matrix. Promotes model-residency-study-2026-11-17 into a runnable
+# check: an agent is a MISMATCH if its model_id is not a registered portal alias, OR its
+# configured route host != the intended host for that alias.
+#
+# EXPECTED_ROUTING is the documented SSOT (memory/llm/hosts.md + residency study 11-17):
+# which host each portal alias SHOULD resolve to. builder-q8 / verifier-q4 belong on Black.
 # ---------------------------------------------------------------------------
-def bindings_matrix(agents_json_path="agents.json"):
+EXPECTED_ROUTING = {
+    "atlas-q8":     "white",
+    "quinn-q4":     "white",
+    "builder-q8":   "black",
+    "verifier-q4":  "black",
+    "designer-q4":  "pale",
+    "archivist-q8": "pale",
+    "scribe-q8":    "red",
+    "mechanic-q4":  "red",
+}
+
+
+def _host_from_studio(studio_url):
+    """Map an agent's 'studio' URL to a HOSTS key. None/empty/local => 'white' (the portal
+    default routes local :8888). Remote IP matched against the HOSTS table."""
+    if not studio_url or not str(studio_url).strip():
+        return "white"
+    m = re.search(r"//([0-9.]+)", str(studio_url))
+    ip = m.group(1) if m else None
+    if ip in (None, "127.0.0.1", "localhost"):
+        return "white"
+    for hk, h in HOSTS.items():
+        if ip == h["ip"]:
+            return hk
+    return f"unknown:{ip}"
+
+
+def fetch_host_aliases(jreq_fn, host_key, t=15):
+    """GET /api/settings/model-aliases on one host. NEVER raises: returns (reachable, names).
+    Unreachable host -> (False, None) so a full-outage run is not an exception."""
+    try:
+        s, d, raw = jreq_fn("GET", HOSTS[host_key]["studio"] + "/api/settings/model-aliases",
+                            t=t, auth=_auth_header(host_key))
+    except Exception:
+        return False, None
+    if s != 200 or not isinstance(d, (dict, list)):
+        return False, None
+    al = d.get("model_aliases") or d.get("aliases") if isinstance(d, dict) else d
+    names = set()
+    for x in (al or []):
+        n = x.get("alias") if isinstance(x, dict) else x
+        if isinstance(n, str):
+            names.add(n)
+    return True, names
+
+
+def bindings_matrix(agents_json_path=DEFAULT_AGENTS_JSON, jreq_fn=None, live=False):
+    """Emit the 8-agent match matrix. Pure/offline by default (live=False needs no network).
+    With live=True + an injectable jreq_fn, also cross-checks alias registration per host.
+    Never raises on a missing agents.json or an unreachable host."""
     try:
         with open(agents_json_path, encoding="utf-8") as f:
             agents = json.load(f)
     except Exception as e:
         return {"error": f"could not read {agents_json_path}: {e}"}
+    agent_list = agents if isinstance(agents, list) else agents.get("agents", [])
+
+    live_aliases = {}  # host_key -> {reachable, aliases:[...]} (only when live)
+    if live and jreq_fn is not None:
+        for hk in HOSTS:
+            reachable, names = fetch_host_aliases(jreq_fn, hk)
+            live_aliases[hk] = {"reachable": reachable, "aliases": sorted(names or [])}
+
     rows = []
-    for a in (agents if isinstance(agents, list) else agents.get("agents", [])):
-        alias = a.get("model_id") or a.get("alias") or ""
-        matched = [hk for hk, h in HOSTS.items()
-                   if any(m["probe_alias"] == alias for m in h["models"])]
-        rows.append({"agent": a.get("name") or a.get("id"), "model_id": alias,
-                     "host_match": matched[0] if len(matched) == 1 else ("AMBIGUOUS:" + ",".join(matched) if matched else "NO_MATCH")})
-    return {"matrix": rows, "mismatches": [r for r in rows if not str(r["host_match"]).isalpha() or r["host_match"] == "NO_MATCH"]}
+    for a in agent_list:
+        name = a.get("name") or a.get("id")
+        mid = str(a.get("model_id") or "").strip()
+        actual_host = _host_from_studio(a.get("studio"))
+        intended_host = EXPECTED_ROUTING.get(mid)
+        flags = []
+        if mid not in EXPECTED_ROUTING:
+            # model_id is a raw GGUF/model name (e.g. Qwen3.8-27B-Q8_0), not a portal alias
+            flags.append("RAW_MODEL_NAME_NOT_ALIAS")
+        elif actual_host != intended_host:
+            flags.append(f"WRONG_HOST(actual={actual_host},intended={intended_host})")
+        live_ok = None
+        if live and intended_host in live_aliases:
+            la = live_aliases[intended_host]
+            if la["reachable"]:
+                live_ok = mid in la["aliases"]
+                if not live_ok:
+                    flags.append("ALIAS_NOT_REGISTERED_ON_INTENDED_HOST")
+        rows.append({"agent": name, "model_id": mid,
+                     "actual_route_host": actual_host, "intended_host": intended_host,
+                     "alias_registered_live": live_ok, "flags": flags, "match": not flags})
+    return {"agents_total": len(rows),
+            "matched": sum(1 for r in rows if r["match"]),
+            "mismatches": [r for r in rows if not r["match"]],
+            "live": live, "matrix": rows}
+
+
+def bindings_selftest(agents_json_path=DEFAULT_AGENTS_JSON):
+    """Offline self-test (Goal #3 acceptance): no network required.
+      1) reproduces the KNOWN builder+verifier mismatch flags from agents.json;
+      2) proves fetch_host_aliases NEVER raises on an unreachable host;
+      3) confirms the full 8-agent matrix builds without error."""
+    res = bindings_matrix(agents_json_path=agents_json_path, live=False)
+    got_mm = sorted((r["agent"] or "").lower() for r in res.get("mismatches", []))
+    expect_mm = ["builder", "verifier"]
+    ok1 = got_mm == expect_mm
+    print(f"  [{'PASS' if ok1 else 'FAIL'}] offline mismatches={got_mm} (expect {expect_mm})")
+
+    def boom(method, url, *a, **k):
+        raise OSError("simulated: port 8888 unreachable (WinError 10013)")
+    ok2 = True
+    try:
+        reachable, names = fetch_host_aliases(boom, "white")
+        ok2 = (reachable is False and names is None)
+    except Exception as e:
+        ok2 = False
+        print(f"    raise-on-unreachable leaked: {e!r}")
+    print(f"  [{'PASS' if ok2 else 'FAIL'}] unreachable host -> no raise, returns (False, None)")
+
+    ok3 = ("error" not in res) and res.get("agents_total") == 8
+    print(f"  [{'PASS' if ok3 else 'FAIL'}] matrix built agents_total={res.get('agents_total')} (expect 8), matched={res.get('matched')}")
+    return ok1 and ok2 and ok3
 
 
 def main(argv=None):
@@ -377,7 +491,9 @@ def main(argv=None):
     ap.add_argument("--test-wedge", action="store_true", help="offline wedge-skip self-test (no network)")
     ap.add_argument("--host", help="target host for --execute")
     ap.add_argument("--execute", action="store_true", help="live execute (needs :8888 vantage)")
-    ap.add_argument("--bindings", action="store_true", help="emit agents.json binding matrix")
+    ap.add_argument("--bindings", action="store_true", help="emit agents.json binding match matrix (offline; add --live for alias cross-check)")
+    ap.add_argument("--live", action="store_true", help="with --bindings: also GET /api/settings/model-aliases per host")
+    ap.add_argument("--test-bindings", action="store_true", help="offline self-test of the binding matrix (no network)")
     args = ap.parse_args(argv)
 
     if args.plan:
@@ -387,8 +503,13 @@ def main(argv=None):
         ok = wedge_selftest()
         print("WEDGE SELFTEST:", "PASS" if ok else "FAIL")
         return 0 if ok else 1
+    if args.test_bindings:
+        ok = bindings_selftest()
+        print("BINDINGS SELFTEST:", "PASS" if ok else "FAIL")
+        return 0 if ok else 1
     if args.bindings:
-        print(json.dumps(bindings_matrix(), indent=1))
+        res = bindings_matrix(jreq_fn=jreq, live=args.live)
+        print(json.dumps(res, indent=1))
         return 0
     if args.execute:
         hk = args.host or get_host_key()
