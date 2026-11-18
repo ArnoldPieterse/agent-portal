@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer lane confirmed 10/10 closed; goals #2 and #10 marked `(verified:)` in `memory/goals/designer.md`. No open items remain.
-- Scribe goal #9 (cross-cycle narrative) closed: resolved 10-vs-8 BG-SCHED count discrepancy in cycle-narrative.md; actual count is 8.
 - Scribe lane 10/10 closed; Goal #9 resolved — BG-SCHED marker count corrected from 10 to 8 across agent files.
 - reboot_recover.py validated deployment-ready on 3/4 hosts (Red/Pale/Black); only schtask registration on White seat remains.
 - Designer 10/10 closed; pixel screenshots (#2/#10) blocked NEEDS-HUMAN (no browser binary in sandbox).
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer lane 10/10 closed: Goal 8 (state classes in CSS+JS) and Goal 10 (baseline SHA256 manifest) completed this pass.
 - All 10 designer goals closed (10/10). Goals #2 and #6 verified via static source analysis; evidence in memory/designer/.
 - Designer goals
+- Goals #3 & #6 had truncated `(verified:` markers (missing closing paren from cut-off filenames) causing false open count; fixed via ledger.
+- supersession_check.py: 1145 leaves,
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
