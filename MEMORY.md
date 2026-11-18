@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- CDP wall RESOLVED 20
-- Scribe at 8/10 goals; open: #6 Synthesis Quality Score, #8 Agent Voice Consistency. Scan found 73 untracked items.
 - Fleet Status API endpoint is /api/health/fleet (alias /api/fleet
 - Goal #5 Notification System built: JS+CSS added, index.html markup wired, uploads.js trigger connected, committed with evidence.
 - Mechanic lane confirmed 10/10 closed via ledger; "4 open" in prompt was stale.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder closed Scribe goals #5/#6/#8 by verifying pre-existing evidence (2026-11-18/19) never recorded in ledger; Scribe now 8/10.
 - Mechanic wrote memory/ops/fleet-monitoring-cadence.md: 3-tier escalation policy linking health_check, net_probe, disk_monitor, auto_restart,
 - Goal #1 (Design Token System) complete: 48 hex colors in app.css mapped to tokens; rgba() shadows remain but are not violations.
+- Mechanic 10/10 goals closed; only open item is known WinError 10013 egress block (sandbox, not actionable).
+- Goal #2 (Info Density): data-panel padding tightened ~15%; remaining: goals/uploads panels + before/after screenshots for acceptance.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
