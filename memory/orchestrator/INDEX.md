@@ -14,3 +14,4 @@ Last updated: 2026-11-18.
 - agent hot file -> memory/orchestrator/MEMORY.md   state line + counter only
 - load_probe.py disk state (assist Mechanic) -> memory/orchestrator/load_probe_diskstate_2026-11-17.md   on-disk file has NO all-error skip; 'all-error skip' note stale, outage-guard-revert note confirmed
 - ledger hygiene: verified-marker artifact audit (contribution c) -> memory/orchestrator/ledger-hygiene-marker-repair-2026-11-18.md   29 markers audited; builder #9 truncated marker repaired (marker-truncation class); audit tool reusable per cycle
+- goal #9 Fleet Health Composite: `_fleet_health_composite()` + `/api/fleet/health` BUILT+verified (all 8 agents numeric, correct colors; latency/errors honestly excluded) -> memory/orchestrator/health-composite-2026-11-18.md   self-test _health_selftest.py; remaining = fleet-tab badge UI
