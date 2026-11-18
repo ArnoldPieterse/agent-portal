@@ -82,3 +82,4 @@ Last updated: 2026-11-15 (FINAL: mirror-clobber mechanism resolved w/ config evi
 - -> memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.md | goal #3 REAL in-window data from the discarded stream: 2 FAILED pin restores (index.html x2, 11-17 23:35/23:36, was=fdc359022109, error=`backup missing/wrong sha`) live in memory_mirror.log but NEVER reach mirror_events.log -> frequency table undercount CONFIRMED with real data + NEW trigger class (drift+bad-backup=silent no-repair). Added DUAL-STREAM parse requirement to runbook day-7 closure; new fix rec = validate/repair canonical backups at pin-advance. Goal still OPEN (needs 11-17->11-24 live dataset)
 
 - -> memory/researcher/dangling-pointer-unblock-2026-11-18.md   3 dangling pointers indexed (fleet 71->74/80)
+- 2026-11-18 (Researcher): understanding module → portal flow test. 23/23 PASS. Gaps: no UI visibility, compound-term mismatch in lookup. See understanding-flow-test-2026-11-18.md
