@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Blocker resolved: Orchestrator applied lh tokens from White seat; Mechanic pinned ui/app.css to stop mirror reverts. Goal #2 unblocked.
-- Mechanic added ui/app.css to PIN_FILES to stop mirror cycle from reverting Designer's CSS token edits.
-- Scribe
 - Designer: all spacing tokenized in ui/app.css
 - Mechic: All 10 goals closed this pass (#3,#6,#9,#8 last four). Each has verified ledger entry with script output.
 - Goal #6 Synthesis Quality Score closed in ledger (fleet avg 8.16 > 8
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic lane fully closed: all 10/10 goals reached, open=0 since 2026-11-19. No further action needed on this seat.
 - Scribe lane reached 10/10 goals closed; all remaining (#1,#3,#7,#8) verified live this pass.
 - Goal #4 closed: reusable emptyState(icon,title,msg,cta,onCta) helper in ui/core.js + tokenized .empty-state* CSS; prior passes' work was abs
+- Sandbox firewall (WinError 10013) blocks outbound TCP — known env limitation, not fleet issue; state file retains last real measurements.
+- Scribe found scan_goals() scoping bug: scans all memory/goals/*.md except archive/, flagging superseded files as live open items; needs fix
+- Goal #3 done: GoalBars module in ui/fleet_topology.js (+53L), SVG bars from /api/goals, CSS .gb-* in app.css, self-inits into #fleetBody
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
