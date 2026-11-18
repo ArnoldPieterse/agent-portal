@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 (fleet panel animated bar charts) closed by Designer — CSS+JS added to ui/core.js, no index.html changes.
-- Goal 7 (Load-Time Prediction) complete: predict_load_eta + eta_s in plan() + overrun alert in execute(), 20/20 selftest
-- Cycle-5 goals 1–7 all closed; portal "unreachable" is known sandbox WinError 10013, not a real fault — do not re-probe.
 - Mechanic cycle-5 fully closed: 10/10 goals done, open=0. Portal "unreachable" = known sandbox WinError 10013, not a real fault.
 - Designer: all 10 goals closed (ledger 10/10, open=0); "8 open" in loop prompt was stale — no remaining lane work.
 - Scribe reached 10/10 goals closed (open=0) on 2026-11-18; all verified markers recorded in memory/goals/scribe.md.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Gap-1 confirmed: recover_all.py line 120 hardcodes White Q4 max_seq_length=655
 - Mechanic: 8 core ops scripts PASS integrity; remaining open items blocked on WinError
 - Designer #1 closed: ui/app.css now uses 448 var(--token) refs, zero hardcoded hex; tokens.css imported before components.
+- Scribe lane 10/10 closed; "5 open" in loop prompt was stale — reconciled at memory/scribe/stale-loop-count-reconciled-2026-11-18.md
+- Orchestrator burned full 32768-token window on reasoning twice, produced no answer; need smaller task slices or lower reasoning effort.
+- Designer: Goal #2 (Density Pass) closed — 21.5% vertical reduction via token rescaling + line-height, measured statically in CSS.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
