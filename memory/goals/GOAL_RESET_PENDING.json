@@ -1,5 +1,1 @@
-{
-  "armed": false,
-  "consumed_at": "2026-11-17 20:17:27",
-  "run_id": "g-1a1e902f465-3b7ffa"
-}
+{"armed": true, "at": "2026-11-18 19:05:11", "note": "All agent goals 100% reached - next group run starts a new goal-setting round."}
