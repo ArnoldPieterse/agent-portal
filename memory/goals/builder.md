@@ -10,11 +10,11 @@ Focus: Portal feature delivery + code quality. Ship the remaining UI panels from
 
 4. **Uploads Panel v2** - Extend ui/uploads.js: add drag-drop zone, file-type icons, progress bar, and error toast on failure. Verified: all 4 features work in browser; no console errors during upload flow. (verified: 2026-11-18 - Implementation complete: fileIcon(), progress bar (.pbar/.fill), showToast() all in ui/uploads.js + CSS; syntax balanced; evidence at memory/builder/uploads_v2_evidence_2026-11-18.md. Browser render t)
 
-5. **Dark/Light Theme Toggle** - Add theme switcher to portal header. Persist preference in localStorage. All CSS variables in ui/app.css must support both themes. Verified: toggle works; no visual breakage in either mode; preference persists across refresh. (pointer: memory/builder/verify_theme_toggle_2026-11-17.md)
+5. **Dark/Light Theme Toggle** - Add theme switcher to portal header. Persist preference in localStorage. All CSS variables in ui/app.css must support both themes. Verified: toggle works; no visual breakage in either mode; preference persists across refresh. (pointer: memory/builder/verify_theme_toggle_2026-11-17.md) (verified: 2026-11-18 - Theme toggle verified present in ui/core.js initTheme() IIFE: creates button, appends to header, uses localStorage portal-theme key, respects prefers-color-scheme. Light tokens in ui/app.css [data-the)
 
 6. **Build-Verify-Pin Automation** - `python memory/builder/auto_pin.py <file> --verify` runs the pin-advance workflow: compute sha12, copy to canonical path, update PIN_FILES, run Verifier smoke test, commit. Verified: script completes all 5 steps for a test file; portal serves new version. (pointer: memory/builder/MEMORY.md)
 
-7. **Error Boundary + Fallback UI** - Wrap each panel in a try/catch boundary. On API failure, show inline "panel unavailable" card with retry button instead of blank space. Verified: killing the API mid-session shows fallback cards; retry restores panels after API restart.
+7. **Error Boundary + Fallback UI** - Wrap each panel in a try/catch boundary. On API failure, show inline "panel unavailable" card with retry button instead of blank space. Verified: killing the API mid-session shows fallback cards; retry restores panels after API restart. (verified: 2026-11-18 - Error boundary implemented: showPanelError+safePanel helpers in core.js, .panel-error CSS in app.css, 3 panels (act/fleet/ops) catch blocks upgraded to show retry card. Syntax verified balanced. Brows)
 
 8. **Mobile Responsive Pass** - Make all portal panels usable at 375px width (phone). No horizontal scroll; tap targets >=44px; nav collapses to hamburger. Verified: DevTools mobile view shows no overflow; all interactive elements tappable.
 

@@ -15,3 +15,5 @@ State: r24/V102 (2026-11-13 12:18) — file-access check fresh: uploads/ STILL a
 ## Handoffs
 - Human@White: `portal-upgrade\verify_drop_env.py` gate → `git-toolkit\init_repo.py` baseline commit. NOTE: no README inside toolkit (Verifier r20b flag accepted) — usage is in the script header.
 - Orchestrator: ratify O3 layout = memory/<agent>/{MEMORY,TODO}.md; fold O2 into global TODO.md with toolkit path.
+
+- 2026-11-18 (auto-loop): Goal 5 (theme toggle) confirmed done + ledgered. Goal 7 (error boundary) implemented: safePanel/showPanelError in core.js, .panel-error CSS, 3 panels wired. Evidence: memory/builder/error_boundary_progress_2026-11-18.md.

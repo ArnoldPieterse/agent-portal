@@ -80,3 +80,6 @@
 {"ts": "2026-11-18 20:16:34", "file": "ui/app.css", "sha": "f70945fea4", "size": 30891, "snapshot": null}
 {"ts": "2026-11-18 20:26:25", "file": "ui/app.css", "sha": "9d6ce3cb3e", "size": 31925, "snapshot": null}
 {"ts": "2026-11-18 20:26:25", "file": "ui/uploads.js", "sha": "58bc48dbd9", "size": 38954, "snapshot": null}
+{"ts": "2026-11-18 20:36:11", "file": "agent_portal.py", "sha": "2ca8623c6a", "size": 235385, "snapshot": "memory/ops/merge-queue/agent_portal.py.2ca8623c6a"}
+{"ts": "2026-11-18 20:36:11", "file": "ui/app.css", "sha": "4b3a8f2348", "size": 33062, "snapshot": null}
+{"ts": "2026-11-18 20:36:11", "file": "ui/core.js", "sha": "e26e9e3f18", "size": 38459, "snapshot": null}

@@ -382,13 +382,19 @@ if __name__ == "__main__":
         print("[STATIC MODE] Validating schema structure (no live requests)\n")
         errors = []
         for path, spec in SCHEMAS.items():
-            s = spec.get("schema", {})
-            if "type" not in s:
-                errors.append(f"{path}: missing 'type' in schema")
-            # Check for valid JSON types
-            t = s.get("type")
-            if t and t not in ("object","array","string","number","integer","boolean","null"): 
-                errors.append(f"{path}: invalid type '{t}'")
+            # Schema is the value itself (or oneOf variants)
+            if "oneOf" not in spec and "type" not in spec:
+                errors.append(f"{path}: missing 'type' or 'oneOf' in schema")
+            else:
+                # Check for valid JSON types
+                t = spec.get("type")
+                if t and t not in ("object","array","string","number","integer","boolean","null"):
+                    errors.append(f"{path}: invalid type '{t}'")
+                if "oneOf" in spec:
+                    for i, sub in enumerate(spec["oneOf"]):
+                        st = sub.get("type")
+                        if st and st not in ("object","array","string","number","integer","boolean","null"):
+                            errors.append(f"{path}: oneOf[{i}] invalid type '{st}'")
         if errors:
             for e in errors:
                 print(f"  FAIL: {e}")
