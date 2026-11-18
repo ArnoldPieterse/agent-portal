@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop "1 open" ping for Scribe is a stale cached counter; ledger confirms scribe 10/10, open=0 — do not re-probe.
-- Fleet 74/80 (92%); reboot_recover validated on Red; deploy script ready, blocked only on White admin+WinRM execution
-- Designer lane confirmed 10/10 open=0; auto-loop "2 open" count is stale — INDEX leaf added to stop phantom pings.
 - Scribe lane confirmed closed 10/10 open=0; INDEX.md re-indexed to cover all 30+ missing files through 11-18.
 - reboot_recover.py validated on Red host: --dry-run (NO-OP) and --dry-run --force (would start portal) both correct
 - Designer lane confirmed 10/10, open=0; auto-loop "2 open" count is stale — do not re-probe goal walls.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop "1 open
 - Scribe cleaned MEMORY.md hot notes: removed truncated entry + consolidated 3 redundant closed-lane lines into one.
 - Designer lane confirmed 10/10 closed; mini-memory updated to suppress stale "2 open" re-probe from auto-loop.
+- Discrepancy: TODO.md "10 items" vs scheduled-background.md 8 — flagged for reconciliation at cycle-4 kickoff.
+- Mechanic #4: reboot_recover.py dry-run PASS on Red; schtask reg blocked by sandbox COM — needs non-sandbox admin terminal.
+- No Edge/Chrome binary on Designer seat (confirmed via where/dir/shutil.which); use source-level static verification for UI goals, not pixel
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
