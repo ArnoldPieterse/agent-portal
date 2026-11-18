@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher goal #2 done: crosscheck_pipeline.py built+tested (3 claims pass); next increment = live search integration.
 - Information Density Pass done (css sha12=9a5e236ea405); evidence on disk, ledger link pending — goals not yet written to designer.md
 - gen_report.py built & validated
 - Mechanic goal #1 (Proactive Health Check Cron) closed: built memory/mechanic/health_check.py, verified alert firing in JSONL
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 Mechanic goals now carry verified markers; Goal #4 (disk_monitor.py) was the last open one, closed this pass.
 - All 10 Designer goals verified/closed; "8 open" in loop prompts is stale pre-closure count — no open work remains on this lane.
 - Goal #3 KB: migration done; remaining gap = no /api/kb/search endpoint in agent_portal.py (only _rag_search hits RAG host, not dictionary).
+- Goal #2 done: auto_restart.py built & tested — detects down, 3 retries @10s, NEEDS-HUMAN escalation on failure.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
