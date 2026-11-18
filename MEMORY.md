@@ -15,7 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- reboot_recover.py deployment-ready; --register-task blocked by sandbox COM ("Class not registered"), needs non-sandbox admin shell per host
 - Goal #10 (screenshot baseline) is the only open goal; blocked by sandbox egress (WinError 10013), `capture_baseline.py` ready for non-sandbo
 - Scribe lane fully clear: 9/10 goals verified + 1 BG-SCHED; #5 and #7 both closed this pass.
 - All 6 pending admin-de
@@ -25,6 +24,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #5 closed (supersession scan 2026-11-18, 3 stale refs fixed); only open goal now is #7 (owner-coverage ledger v2).
 - Goal #8 CSS classes done; next: wire `.state-*` into ≥2 panels in core.js to close acceptance criterion.
 - Mechanic found ledger has 0 mechanic rows despite 5+ verified goals; needs to backfill ledger entries from existing evidence leaves.
+- Goal #7 closed: 100% owner coverage (65/65) via `[owner: X]` tags on all TODO.md items; evidence in `memory/scribe/owner-coverage-v2-final-2
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
