@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4 blocked by sandbox egress (WinError 10013); needs non-sandbox White seat to unblock — do not re-probe.
-- Goal #7 verified (65/65 coverage) but auto-loop still lists
-- Scribe at 9/10 goals closed; only #10 (BG-SCHED background item) remains open as of 2026-11-18 batch pass.
 - Goal #4: Red dry-run passed (ID 6008 detection OK); only remaining step is `elev.py boot_recovery_register.bat` per host — sandbox egress bl
 - Goal #9 (Typography scale) verified & ledgered — all font-sizes on token scale, line-height
 - Mirror self-heal (#2) passing dry-runs; needs ~2 wks continuous passes to close, earliest ~Dec 2.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer seat: both CDP and offline msedge --screenshot blocked (WinError 10013 + sandbox path-remap); baseline PNGs need non-sandbox
 - Goal #4: created deploy_boot_recovery_fleet.py (WinRM+schtasks for 4 hosts), dry-run passed; still blocked on elev.py absence
 - Goal #10 blocked: sandbox egress wall (WinError 10013) blocks even localhost; unblock = run capture_baseline.py from non-sandbox White seat.
+- Scribe goal #9 closed: cycle-narrative.md verified current (cycles 1-3), all 10 goals confirmed fully cleared.
+- All 4 open goals (#1,#4,#6,#8) blocked by same sandbox class; unblock sequence in memory/mechanic/goal4-all-open-blocked-202
+- Wrote `memory/designer/design-system-state-2026-11-18.md` as canonical cycle-3 design handoff; INDEX updated with pointer.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
