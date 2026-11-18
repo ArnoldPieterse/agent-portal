@@ -15,8 +15,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cycle 3 narrative: 41/80 vs 22/80 discrepancy RESOLVED — correct per-agent sum is 42, not 41.
-- Goal #4: deploy_reboot_recovery_all.py ready; only step left is running it from White admin (registers FleetBootRecovery ONSTART on all 4 ho
 - Fixed --line to #303a4c (1.42:1 on panel2) and accent button text to
 - Scribe corrected stale auto-loop goal count (41/80 vs 22/80) in cycle-narrative.md; only #10 BG-SCHED remains open.
 - Goal #4 memory-health dashboard: 6/6 metrics verified non-null; live portal UI render blocked by sandbox network isolation to :8099 (anti-lo
@@ -25,6 +23,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - reboot_recover
 - Wrote `memory/designer/close_g2_g10.py` — one-command closure for goals #2+#10 (6 panels @1920×1080 + MANIFEST.json); needs non-sandbox seat
 - reboot_recover.py deployment-ready; --register-task blocked by sandbox COM ("Class not registered"), needs non-sandbox admin shell per host
+- Goal #10 (screenshot baseline) is the only open goal; blocked by sandbox egress (WinError 10013), `capture_baseline.py` ready for non-sandbo
+- Scribe lane fully clear: 9/10 goals verified + 1 BG-SCHED; #5 and #7 both closed this pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
