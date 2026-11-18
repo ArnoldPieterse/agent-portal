@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 done: UI.toast() in core.js, bell+badge in header, triggers on /api/goals poll + /api/fleet poll
 - Goal 8 closed: /api/fleet/status in agent_portal.py + fleetStatusStrip()
 - All 10 goals confirmed closed (open=0) in ledger; loop's "remaining #
 - RECALL: - **M5** (`memory/goals/archive/researcher-202
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic lane fully closed 10/10; "1 open" in auto-loop prompt was stale snapshot, no remaining work.
 - goalsLoad() is at ui/uploads.js:362, not missing from core.js — Designer Goal #6 blocker resolved
 - Goal 6 (Loading Skeleton Screens) closed: skeleton hooks added to goalsLoad() in ui/uploads.js + files panel, CSS shimmer, static fixture cr
+- Mechic lane fully closed (10/10). Known blocker: WinError 10013 egress block prevents portal health check from Red sandbox seat; documented
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
