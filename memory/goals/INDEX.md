@@ -30,3 +30,7 @@ Cycle 1 (set 2026-11-13, SUPERSEDED - all 80/80 verified):
 - -> memory/goals/researcher-attempts-cycle3-2026-11-18.md   Researcher attempts to close the 10 background scheduled goals (gaps + concrete close-it paths per owner)
 - -> memory/goals/scheduled-background.md   BACKGROUND SCHEDULED GOALS (closure gated by date/cadence; never hold main goals)
 - -> memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md   Builder assist: Mechanic goal #2 auto_restart.py verified static+unit (AST/import/ts/log_event OK); live kill->restart leg gated on non-sandbox vantage (WinError 10013). Owner=Mechanic.
+
+## Linked content (KG orphan remediation 2026-11-19)
+- [researcher.md](memory/goals/researcher.md)
+- [scheduler-cycle6.md](memory/goals/scheduler-cycle6.md)

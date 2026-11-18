@@ -1,9 +1,119 @@
 {
- "root": "",
- "node_count": 1251,
- "edge_count": 200,
- "supersession_edges": 275,
+ "root": "_default",
+ "node_count": 6376,
+ "edge_count": 582,
+ "supersession_edges": 343,
  "edges": [
+  {
+   "from": "memory/INDEX.md",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/INDEX.md",
+   "to": "memory/llm/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/INDEX.md",
+   "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/INDEX.md",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/INDEX.md",
+   "to": "memory/synthesis/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/INDEX.md",
+   "to": "memory/projects/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/INDEX.md",
+   "to": "memory/researcher/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/INDEX.md",
+   "to": "memory/run-rules.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/run-rules.md",
+   "to": "memory/portal/file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/apply_staged_patches.py",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/apply_staged_patches.py",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/apply_staged_patches.py",
+   "to": "memory/portal/planning-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/apply_staged_patches.py",
+   "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/evidence-goal1-delta-reporting-2026-11-18.md",
+   "to": "memory/archivist/knowledge_graph.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/evidence-goal3-api-ref-complete-2026-11-18.md",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/evidence-goal3-api-ref-restored-2026-11-18.md",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/f1-index-patch-20261113.md",
+   "to": "memory/portal/planning-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/index-integrity-2026-11-14.md",
+   "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/index-pointer-addendum-r43.md",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/index-pointer-addendum-r43.md",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/index-pointer-batch-r42.md",
+   "to": "memory/archivist/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/index-pointer-batch-r42.md",
+   "to": "memory/archivist/REPAIR_2026-11-13.md",
+   "kind": "pointer"
+  },
   {
    "from": "memory/archivist/index-pointer-batch-r42.md",
    "to": "memory/archivist/f1-index-patch-20261113.md",
@@ -25,6 +135,16 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/archivist/index-pointer-batch-r42.md",
+   "to": "memory/archivist/orphan-folder-audit-r42.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/index-pointer-batch-r42.md",
+   "to": "memory/archivist/provenance_audit.py",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/archivist/INDEX.md",
    "to": "memory/archivist/index-sweep-2026-11-13.md",
    "kind": "pointer"
@@ -32,6 +152,16 @@
   {
    "from": "memory/archivist/INDEX.md",
    "to": "memory/archivist/history-r7-r36.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/TODO.md",
    "kind": "pointer"
   },
   {
@@ -51,6 +181,21 @@
   },
   {
    "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/instances-md-pin-reconcile-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/llm-module-white-convention-r21.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/seat-root-anomaly-r14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
    "to": "memory/archivist/index-integrity-2026-11-15.md",
    "kind": "pointer"
   },
@@ -66,7 +211,37 @@
   },
   {
    "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/prune-log.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/knowledge_graph.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/memory_health.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
    "to": "memory/archivist/gen_api_ref.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/supersession_check.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/supersession-findings-2026-11-16.md",
    "kind": "pointer"
   },
   {
@@ -76,7 +251,132 @@
   },
   {
    "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/snapshot.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/ingest.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
    "to": "memory/archivist/hostdoc-consistency-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/handoffs/HO-20261116-file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/hostdoc_consistency_v2.py",
+   "kind": "link"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/ingest.py",
+   "kind": "link"
+  },
+  {
+   "from": "memory/archivist/ingest.py",
+   "to": "memory/archivist/ingest-review-queue.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/_decay_run1.txt",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/_snapshot_run1.txt",
+   "to": "memory/archivist/manifest-20261118.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/__pycache__/apply_staged_patches.cpython-313.pyc",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/__pycache__/apply_staged_patches.cpython-313.pyc",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/__pycache__/apply_staged_patches.cpython-313.pyc",
+   "to": "memory/portal/planning-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/__pycache__/apply_staged_patches.cpython-313.pyc",
+   "to": "memory/ops/pdf-reporting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/__pycache__/apply_staged_patches.cpython-313.pyc",
+   "to": "memory/ops/pdf-reporting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/__pycache__/apply_staged_patches.cpython-313.pyc",
+   "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/__pycache__/ingest.cpython-315.pyc",
+   "to": "memory/archivist/ingest-review-queue.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/citation-audit-assist-archivist-goal2-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/evidence-verify-claims-guard-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/assist-designer-goal2-padding-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/designer-goal1-js-tokenization-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/log_rotate_winerror183-fix-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/researcher-goals7-8-paren-repair-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/designer-goal1-token-verify-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/portal-startup-fix-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/prune_regression.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/upload_path_safety.py",
    "kind": "pointer"
   },
   {
@@ -91,7 +391,32 @@
   },
   {
    "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/truncation-e2e-verify-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/portal-startup-fix-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
    "to": "memory/builder/css-tokens-complete-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/verify_theme_toggle_2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/pin-sha-stale-claim-closed-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/pre_commit_gate.py",
    "kind": "pointer"
   },
   {
@@ -111,12 +436,27 @@
   },
   {
    "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/wedge-watchdog-verify-2026-11-16.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
    "to": "memory/builder/evolution_fitness_test.py",
    "kind": "pointer"
   },
   {
    "from": "memory/builder/INDEX.md",
    "to": "memory/builder/goal4_fitness_evidence.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/parity_guard.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/playbook_to_tests.py",
    "kind": "pointer"
   },
   {
@@ -130,6 +470,36 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/MEMORY.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/TODO.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/anomaly-ar14-writepath-evidence.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/designer/assist-archivist-kg-v2-2026-11-18.md",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/designer/INDEX.md",
+   "to": "memory/designer/index_html_CANONICAL_ac3ca7a6a264_2026-11-16b.html",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/designer/INDEX.md",
+   "to": "memory/designer/index_html_CANONICAL_2c6399f2d853_2026-11-16c.html",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/designer/INDEX.md",
    "to": "memory/designer/goal3-component-abstraction-2026-11-16.md",
    "kind": "pointer"
@@ -140,8 +510,38 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/designer/INDEX.md",
+   "to": "memory/designer/css-bundle-budget-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/designer/INDEX.md",
+   "to": "memory/designer/skeleton-investigation-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/orchestrator.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/researcher.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/goals/INDEX.md",
    "to": "memory/goals/builder.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/verifier.md",
    "kind": "pointer"
   },
   {
@@ -152,6 +552,16 @@
   {
    "from": "memory/goals/INDEX.md",
    "to": "memory/goals/archivist.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/scribe.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/mechanic.md",
    "kind": "pointer"
   },
   {
@@ -171,10 +581,55 @@
   },
   {
    "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/archive/orchestrator-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
    "to": "memory/goals/all-goals-2026-11-13.md",
    "kind": "pointer"
   },
   {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/researcher-attempts-cycle3-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/researcher.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/goals/INDEX.md",
+   "to": "memory/goals/scheduler-cycle6.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/goals/scheduled-background.md",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/scheduled-background.md",
+   "to": "memory/archivist/manifest-20261118.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/scheduled-background.md",
+   "to": "memory/scribe/compression-fidelity-trend.json",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/goals/archive/archivist-2026-11-16.md",
    "to": "memory/archivist/knowledge_graph.json",
    "kind": "pointer"
@@ -182,6 +637,16 @@
   {
    "from": "memory/goals/archive/archivist-2026-11-16.md",
    "to": "memory/archivist/freshness-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/archivist-2026-11-16.md",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/archivist-2026-11-16.md",
+   "to": "memory/portal/api-reference.md",
    "kind": "pointer"
   },
   {
@@ -200,6 +665,51 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/goals/archive/archivist-2026-11-18.md",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/archivist-2026-11-18.md",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/mechanic-2026-11-18.md",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/mechanic-2026-11-18.md",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/mechanic-2026-11-18.md",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/mechanic-2026-11-18.md",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/researcher-2026-11-18.md",
+   "to": "memory/researcher/sla-goal8-closure-integrity-check-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/scribe-2026-11-18.md",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/verifier-2026-11-18.md",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
    "to": "memory/archivist/knowledge_graph.json",
    "kind": "pointer"
@@ -207,6 +717,16 @@
   {
    "from": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
    "to": "memory/archivist/freshness-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
+   "to": "memory/portal/api-reference.md",
    "kind": "pointer"
   },
   {
@@ -222,11 +742,46 @@
   {
    "from": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
    "to": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/archive/cycle2-2026-11-17/verifier.md",
+   "to": "memory/verifier/slo-report-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/handoffs/INDEX.md",
+   "to": "memory/handoffs/PROTOCOL.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/llm/INDEX.md",
+   "to": "memory/llm/instances.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/llm/INDEX.md",
+   "to": "memory/llm/studio-api.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/llm/INDEX.md",
+   "to": "memory/portal/architecture.md",
    "kind": "pointer"
   },
   {
    "from": "memory/llm/INDEX.md",
    "to": "memory/llm/hosts.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/llm/INDEX.md",
+   "to": "memory/llm/overnight-unload.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/llm/INDEX.md",
+   "to": "memory/llm/model-id-check-2026-11-14.md",
    "kind": "pointer"
   },
   {
@@ -246,6 +801,16 @@
   },
   {
    "from": "memory/mechanic/goal-ledger-current.json",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/goal-ledger-current.json",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/goal-ledger-current.json",
    "to": "memory/archivist/hostdoc-consistency-2026-11-16.md",
    "kind": "pointer"
   },
@@ -257,6 +822,26 @@
   {
    "from": "memory/mechanic/goal-ledger-current.json",
    "to": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/goal-ledger-current.json",
+   "to": "memory/verifier/slo-report-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/mirror-mtime-guard-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/memory_mirror_fixed.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/ops/runbook-notes.md",
    "kind": "pointer"
   },
   {
@@ -280,8 +865,73 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/goal6-dep-gen-built-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/reboot-drill-evidence-verify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/deploy_reboot_recovery_all.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/ingested-2026-11-18-fleet-host-registry-white-black-.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/ingested-2026-11-18-fleet-host-registry-v2-all-four-.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/fleet-monitoring-cadence.md",
+   "to": "memory/ops/blockers.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "to": "memory/designer/css-bundle-budget-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "to": "memory/mechanic/goal6-dep-gen-built-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "to": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/windows-runbook.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/ops/INDEX.md",
    "to": "memory/ops/host-port-task-map-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/probe-false-healthy-fix.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/schtask-deps.md",
    "kind": "pointer"
   },
   {
@@ -291,7 +941,17 @@
   },
   {
    "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/non-sandbox-queue.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
    "to": "memory/ops/blockers.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
    "kind": "pointer"
   },
   {
@@ -301,12 +961,67 @@
   },
   {
    "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/memory-sync-spec-r13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
    "to": "memory/ops/agent-onboarding-playbook.md",
    "kind": "pointer"
   },
   {
    "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/pdf-reporting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/ingestion-spec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
    "to": "memory/ops/fleet-state-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/verifier-ac-v09-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/merge-queue-git-progress-2026-11-16.md",
    "kind": "pointer"
   },
   {
@@ -320,8 +1035,78 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/fleet-monitoring-cadence.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/pin-guard-extension-ui-files.md",
+   "kind": "link"
+  },
+  {
    "from": "memory/ops/memory-trim-archive-2026-11-14.md",
    "to": "memory/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/merge-queue/TODO_completed.md.73b7b5b6d3",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/ui-closure-check-tool-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/assist-designer-goal1-padding-margin-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/assist-designer-goal1-tokens-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/stale-claim-mechanic-goal5-citation-fix-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/stale-claim-scribe-todo-memor-typo-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/designer-goal4-reverify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/archivist-goal4-supersession-verify-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/goal10-light-theme-functional-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/fleet-overview-shape-fix-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/pin-sha-stale-ref-fix-2026-11-17.md",
    "kind": "pointer"
   },
   {
@@ -335,8 +1120,38 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/white-apply-bundle-v2-r45.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/load_probe_diskstate_2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/ledger-hygiene-marker-repair-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/health-composite-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/portal/file-modularity.md",
    "to": "memory/ops/windows-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/file-modularity.md",
+   "to": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
    "kind": "pointer"
   },
   {
@@ -351,7 +1166,32 @@
   },
   {
    "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/system-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
    "to": "memory/portal/file-links.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/bugs/file-links-sandbox.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/bugs/ui-frontend.md",
    "kind": "pointer"
   },
   {
@@ -368,6 +1208,41 @@
    "from": "memory/portal/INDEX.md",
    "to": "memory/portal/architecture.md",
    "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/components.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/prune-edge-cases-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/merge-pack.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/system-map.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/upgrade-plan.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/v1-inventory.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/portal/INDEX.md",
+   "to": "memory/portal/v1-upgrades-decisions.md",
+   "kind": "link"
   },
   {
    "from": "memory/portal/merge-pack.md",
@@ -405,6 +1280,11 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/portal/system-map.md",
    "to": "memory/portal/file-modularity.md",
    "kind": "pointer"
@@ -426,7 +1306,7 @@
   },
   {
    "from": "memory/portal/bugs/INDEX.md",
-   "to": "memory/portal/bugs/file-links-sandbox.md",
+   "to": "memory/portal/bugs/popup-pythonw-children-recoverall-2026-11-15.md",
    "kind": "pointer"
   },
   {
@@ -437,6 +1317,56 @@
   {
    "from": "memory/portal/bugs/INDEX.md",
    "to": "memory/portal/bugs/file-links-sandbox.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/file-links-sandbox.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/ui-frontend.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/portal/bugs/INDEX.md",
+   "to": "memory/portal/bugs/ui-frontend.md",
    "kind": "pointer"
   },
   {
@@ -465,8 +1395,123 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/projects/INDEX.md",
+   "to": "memory/researcher/farm-relpath-diagnosis-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/hotload-goalset-grounding-2026-11-18.md",
+   "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/archivist-goal4-actionable-orphan-count-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/kg-baseline-reverify-goal4-orphan-metric-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/goal8-icon-discrepancy-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/recovery-matrix-verify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/hotload-goalset-grounding-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/evidence-goal3-kb-search-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/evidence-source-scorer-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/understanding.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/sla-goal8-closure-integrity-check-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/mirror-revert-fix1-promotion-gap-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/net-capability-matrix-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/sla-report-cycle5-stale-citation-resolved-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/designer-goal1-stale-claim-resolved-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/mirror-revert-fix1-epoch-landed-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/mirror-revert-checktool-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/researcher/INDEX.md",
    "to": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/load-probe-current-diskstate-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/mirror-e2e-de-risk-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/pin-consistency-check-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/verify-dark-mode-claim.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/wcag-aa-and-tokenization-reverify-2026-11-17.md",
    "kind": "pointer"
   },
   {
@@ -476,12 +1521,47 @@
   },
   {
    "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
    "to": "memory/researcher/citation-audit-2026-11-15.md",
    "kind": "pointer"
   },
   {
    "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/outside-click-false-alarm-r76-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/stamp-target-correction-r75-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/white-pass-crosscheck-r69-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/thirdseat-measurement-vehicle-audit-r68-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
    "to": "memory/researcher/index-md5-reconciliation-r61-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/r56-mirror-confirmation-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/stamp-adjudication-crosscheck-r54-2026-11-14.md",
    "kind": "pointer"
   },
   {
@@ -506,6 +1586,16 @@
   },
   {
    "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/two-pin-index-adjudication-r32.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/probe-canonical-pin-correction-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
    "to": "memory/researcher/ac-a2-r26-convergence-check-2026-11-14.md",
    "kind": "pointer"
   },
@@ -526,6 +1616,11 @@
   },
   {
    "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/r20-lane-status-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
    "to": "memory/researcher/hosts-ctx-correction-and-rename-script-state-2026-11-14.md",
    "kind": "pointer"
   },
@@ -541,7 +1636,37 @@
   },
   {
    "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/r18-output-verification-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/sync-clobber-analysis-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
    "to": "memory/llm/overnight-unload.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/sync-clobber-analysis-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/open-questions-log.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/sla-audit-tool-and-pass8-age-regression-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/probe_api_git.py",
    "kind": "pointer"
   },
   {
@@ -551,7 +1676,27 @@
   },
   {
    "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/model-benchmark-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
    "to": "memory/researcher/failure-mode-indicators-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/lit-review-goal-cycling-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/sync-semantics-options-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/net-capability-matrix-2026-11-16.md",
    "kind": "pointer"
   },
   {
@@ -561,7 +1706,27 @@
   },
   {
    "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/sandbox-host-diff-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/oversized-workfile-audit-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
    "to": "memory/researcher/goals-complete-verification-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/memory-health-endpoint-reverted-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/scribe-memory-health-relanded-2026-11-17.md",
    "kind": "pointer"
   },
   {
@@ -580,8 +1745,228 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/mirror-revert-fix1-live-wiring-gap-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/mirror-revert-correlation-tool-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/mirror-revert-fix1-epoch-review-divergences-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/mirror-revert-schema-decheck-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/fill_analysis.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/dangling-pointer-unblock-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/MEMORY.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/fleet-hotload-watchdog-spec.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/open-questions-log.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-portal-down-state-change.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/cycle-narrative-thread-2026-11-17.md",
+   "to": "memory/synthesis/2026-11-15-stalled-goals-diagnosis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/cycle-narrative-thread-2026-11-17.md",
+   "to": "memory/synthesis/2026-cycle2-retrospective.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/cycle-narrative-thread-2026-11-17.md",
+   "to": "memory/synthesis/INDEX.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/scribe/INDEX.md",
    "to": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/ops-r6-synthesis-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/TODO.md",
    "kind": "pointer"
   },
   {
@@ -596,8 +1981,38 @@
   },
   {
    "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/orphan-sweep-2026-11-16.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/owner-coverage-ledger-2026-11-16.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
    "to": "memory/scribe/compression_lint.py",
    "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/handoff-validation-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/TODO.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/chain_check.py",
+   "kind": "link"
+  },
+  {
+   "from": "memory/scribe/INDEX.md",
+   "to": "memory/scribe/supersession-pointer-spec.md",
+   "kind": "link"
   },
   {
    "from": "memory/scribe/supersession-audit-2026-11-17.json",
@@ -607,6 +2022,441 @@
   {
    "from": "memory/scribe/supersession-audit-2026-11-17.json",
    "to": "memory/ops/windows-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-portal-down-state-change.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/TODO.md",
+   "to": "memory/workspace/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/_open_items_scan.txt",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/scribe/_open_items_scan.txt",
+   "to": "memory/researcher/sla-goal8-closure-integrity-check-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
    "kind": "pointer"
   },
   {
@@ -707,6 +2557,11 @@
   {
    "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
    "to": "memory/synthesis/index-pointer-batch-r40.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "to": "memory/synthesis/index-pointer-handoff-r38.md",
    "kind": "pointer"
   },
   {
@@ -970,6 +2825,16 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/cycle-narrative.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/synthesis/INDEX.md",
+   "to": "memory/synthesis/supersession-policy-baseline.md",
+   "kind": "link"
+  },
+  {
    "from": "memory/verifier/ac-a2-r71b-sweep-2026-11-14.md",
    "to": "memory/synthesis/INDEX.md",
    "kind": "pointer"
@@ -977,6 +2842,16 @@
   {
    "from": "memory/verifier/INDEX.md",
    "to": "memory/verifier/fault-injection-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/self-cert-audit-v2-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/smb_drift_detector.py",
    "kind": "pointer"
   },
   {
@@ -996,8 +2871,43 @@
   },
   {
    "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/security-matrix-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/scorecard-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/slo_enforce.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
    "to": "memory/verifier/agent-portal-size-verify-2026-11-16.md",
    "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/memory-health-endpoint-absent-verify-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/ssot-reconciliation-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/regression-detector-reverify-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "to": "memory/verifier/MEMORY.md",
+   "kind": "link"
   },
   {
    "from": "memory/workspace/INDEX.md",
@@ -1022,9 +2932,24 @@
    "marker": "Supersedes"
   },
   {
+   "from": "memory/archivist/evidence-goal1-stale-verification-2026-11-18.md",
+   "target": "no",
+   "marker": "Supersedes"
+  },
+  {
    "from": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
    "target": "v2.1",
    "marker": "superseded by"
+  },
+  {
+   "from": "memory/archivist/hostdoc_consistency_v2.py",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/archivist/kg-auto-update-2026-11-18.md",
+   "target": "memory/archivist/kg-auto-update-progress-2026-11-17.md",
+   "marker": "Supersedes"
   },
   {
    "from": "memory/archivist/run1_baseline.json",
@@ -1040,6 +2965,11 @@
    "from": "memory/archivist/supersession_check.py",
    "target": "Y",
    "marker": "supersedes"
+  },
+  {
+   "from": "memory/archivist/__pycache__/hostdoc_consistency_v2.cpython-315.pyc",
+   "target": "the",
+   "marker": "Supersedes"
   },
   {
    "from": "memory/builder/anomaly-ar14-writepath-evidence.md",
@@ -1137,6 +3067,16 @@
    "marker": "supersedes"
   },
   {
+   "from": "memory/designer/goal4-a11y-final-closure-2026-11-18.md",
+   "target": "-acc-btn",
+   "marker": "REPLACED by"
+  },
+  {
+   "from": "memory/designer/goal4-a11y-fix-focus-motion-2026-11-18.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
    "from": "memory/designer/goals-1-2-3-6-10-evidence-2026-11-16.md",
    "target": "prior",
    "marker": "supersedes"
@@ -1160,6 +3100,11 @@
    "from": "memory/designer/INDEX.md",
    "target": "reland",
    "marker": "superseded by"
+  },
+  {
+   "from": "memory/designer/ledger_snapshot.json",
+   "target": "X/",
+   "marker": "supersedes"
   },
   {
    "from": "memory/designer/live-root-not-v2-r62-2026-11-14.md",
@@ -1217,13 +3162,13 @@
    "marker": "Supersedes"
   },
   {
-   "from": "memory/goals/2026-11-13-agent-goals.md",
-   "target": "the",
-   "marker": "supersedes"
+   "from": "memory/designer/_ud768/Default/Service Worker/ScriptCache/013888a1cda32b90_0",
+   "target": "each",
+   "marker": "supersede"
   },
   {
-   "from": "memory/goals/archivist.md",
-   "target": "X",
+   "from": "memory/goals/2026-11-13-agent-goals.md",
+   "target": "the",
    "marker": "supersedes"
   },
   {
@@ -1247,8 +3192,23 @@
    "marker": "Supersede"
   },
   {
+   "from": "memory/goals/researcher.md",
+   "target": "RecoverAll/DualLoadOnce/Wed",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/goals/scheduler-cycle6.md",
+   "target": "cycle-5",
+   "marker": "Supersedes"
+  },
+  {
    "from": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
    "target": "the",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/goals/archive/archivist-2026-11-18.md",
+   "target": "X",
    "marker": "supersedes"
   },
   {
@@ -1265,6 +3225,11 @@
    "from": "memory/goals/archive/README.md",
    "target": "live",
    "marker": "superseded by"
+  },
+  {
+   "from": "memory/goals/archive/researcher-2026-11-18.md",
+   "target": "live",
+   "marker": "replaced by"
   },
   {
    "from": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
@@ -1294,6 +3259,11 @@
   {
    "from": "memory/goals/archive/cycle2-2026-11-17/researcher.md",
    "target": "memory-health-endpoint-reverted-2026-11-16.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/handoffs/PROTOCOL.md",
+   "target": "it.",
    "marker": "supersedes"
   },
   {
@@ -1327,6 +3297,11 @@
    "marker": "replaced by"
   },
   {
+   "from": "memory/mechanic/goal10-epoch-phase4-cutover-2026-11-18.md",
+   "target": "epoch",
+   "marker": "replaced by"
+  },
+  {
    "from": "memory/mechanic/goal2_mirror_heal_productionized-2026-11-17.md",
    "target": "ALERT_THRESHOLD",
    "marker": "replaced by"
@@ -1335,6 +3310,11 @@
    "from": "memory/mechanic/memory_mirror_r16.py",
    "target": "OPS",
    "marker": "supersedes"
+  },
+  {
+   "from": "memory/mechanic/net-probe-verdict-verified-2026-11-19.md",
+   "target": "the",
+   "marker": "Supersedes"
   },
   {
    "from": "memory/mechanic/__pycache__/ac_a2_live_leg_r21.cpython-313.pyc",
@@ -1382,6 +3362,31 @@
    "marker": "Supersedes"
   },
   {
+   "from": "memory/ops/merge-queue/memory_mirror.py.2997cc7f50",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.2997cc7f50",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.2997cc7f50",
+   "target": "2a3ffa6ac79c",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.2997cc7f50",
+   "target": "815d64fa70b5",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.2997cc7f50",
+   "target": "pre-flag",
+   "marker": "Supersedes"
+  },
+  {
    "from": "memory/ops/merge-queue/memory_mirror.py.39114dbdfa",
    "target": "OPS",
    "marker": "supersedes"
@@ -1419,6 +3424,96 @@
   {
    "from": "memory/ops/merge-queue/memory_mirror.py.77db23e68d",
    "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.88a468dbe9",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.88a468dbe9",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.88a468dbe9",
+   "target": "2a3ffa6ac79c",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.88a468dbe9",
+   "target": "815d64fa70b5",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.88a468dbe9",
+   "target": "6054f67027ca.",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.88a468dbe9",
+   "target": "7718d586be88.",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.959033ad07",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.959033ad07",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.959033ad07",
+   "target": "2a3ffa6ac79c",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.a2b8a96c12",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.a2b8a96c12",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.a2b8a96c12",
+   "target": "2a3ffa6ac79c",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.a2b8a96c12",
+   "target": "815d64fa70b5",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.a8e760d71f",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.a8e760d71f",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.a8e760d71f",
+   "target": "2a3ffa6ac79c",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.a8e760d71f",
+   "target": "815d64fa70b5",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.a8e760d71f",
+   "target": "6054f67027ca.",
    "marker": "Supersedes"
   },
   {
@@ -1434,6 +3529,26 @@
   {
    "from": "memory/ops/merge-queue/memory_mirror.py.d10e23eab7",
    "target": "2a3ffa6ac79c",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.d8277f385e",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.d8277f385e",
+   "target": "e0679e5f0844",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.d8277f385e",
+   "target": "2a3ffa6ac79c",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/merge-queue/memory_mirror.py.d8277f385e",
+   "target": "815d64fa70b5",
    "marker": "Supersedes"
   },
   {
@@ -1459,6 +3574,11 @@
   {
    "from": "memory/ops/merge-queue/TODO_completed.md.73b7b5b6d3",
    "target": "r15",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/orchestrator/designer-goal4-reverify-2026-11-19.md",
+   "target": "designer-goal4-stale-claim-2026-11-19.md",
    "marker": "supersedes"
   },
   {
@@ -1537,9 +3657,19 @@
    "marker": "superseded by"
   },
   {
+   "from": "memory/researcher/fleet-hotload-watchdog-spec.md",
+   "target": "ONE",
+   "marker": "supersedes"
+  },
+  {
    "from": "memory/researcher/index-md5-reconciliation-r61-2026-11-14.md",
    "target": "a",
    "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "target": "RecoverAll/DualLoadOnce/WedgeQ4Recover/FleetReload",
+   "marker": "supersedes"
   },
   {
    "from": "memory/researcher/INDEX.md",
@@ -1565,6 +3695,21 @@
    "from": "memory/researcher/load-probe-current-diskstate-2026-11-17.md",
    "target": "prior",
    "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/MEMORY.md",
+   "target": "RecoverAll/DualLoadOnce/WedgeQ4Recover/FleetReload",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/researcher/mirror-revert-fix1-promotion-gap-2026-11-18.md",
+   "target": "epoch",
+   "marker": "replaced by"
+  },
+  {
+   "from": "memory/researcher/open-questions-log.md",
+   "target": "restructure",
+   "marker": "superseded by"
   },
   {
    "from": "memory/researcher/open-questions-log.md",
@@ -1702,9 +3847,89 @@
    "marker": "supersedes"
   },
   {
+   "from": "memory/researcher/__pycache__/memory_mirror.cpython-313.pyc",
+   "target": "OPS",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/chain_check.py",
+   "target": "X",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/chain_check.py",
+   "target": "Y",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/chain_check.py",
+   "target": "earlier",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/chain_check.py",
+   "target": "B",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/chain_check.py",
+   "target": "this",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/chain_check.py",
+   "target": "-",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/chain_check.py",
+   "target": "t",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/compression-fidelity-trend-canonical-2026-11-18.md",
+   "target": "the",
+   "marker": "supersedes"
+  },
+  {
    "from": "memory/scribe/cycle-narrative-thread-2026-11-17.md",
    "target": "the",
    "marker": "replaced by"
+  },
+  {
+   "from": "memory/scribe/goal7-chain-validator-evidence-2026-11-18.md",
+   "target": "X",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/goal7-chain-validator-evidence-2026-11-18.md",
+   "target": "Y",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/goal7-chain-validator-evidence-2026-11-18.md",
+   "target": "B",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/goal7-chain-validator-evidence-2026-11-18.md",
+   "target": "-",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/goal7-chain-validator-evidence-2026-11-18.md",
+   "target": "-",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/goal7-chain-validator-evidence-2026-11-18.md",
+   "target": "-",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/goal7-chain-validator-evidence-2026-11-18.md",
+   "target": "-",
+   "marker": "supersedes"
   },
   {
    "from": "memory/scribe/INDEX.md",
@@ -1720,6 +3945,11 @@
    "from": "memory/scribe/supersession-audit-2026-11-17.json",
    "target": "live",
    "marker": "superseded by"
+  },
+  {
+   "from": "memory/scribe/supersession-cycle3-run-2026-11-17.md",
+   "target": "memory/goals.md",
+   "marker": "supersedes"
   },
   {
    "from": "memory/scribe/supersession-pointer-spec.md",
@@ -1895,6 +4125,11 @@
    "from": "memory/scribe/TODO.md",
    "target": "4e7a19b43779",
    "marker": "supersedes"
+  },
+  {
+   "from": "memory/scribe/_open_items_scan.txt",
+   "target": "live",
+   "marker": "replaced by"
   },
   {
    "from": "memory/scribe/__pycache__/supersession_check.cpython-313.pyc",
@@ -2332,6 +4567,16 @@
    "marker": "Supersedes"
   },
   {
+   "from": "memory/verifier/INDEX.md",
+   "target": "scribe-goal2-v2-stale-claim-2026-11-18.md",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/verifier/INDEX.md",
+   "target": "my",
+   "marker": "Supersedes"
+  },
+  {
    "from": "memory/verifier/lww-clobber-evidence-2026-11-13.md",
    "target": "OLDER/smaller",
    "marker": "replaced by"
@@ -2364,6 +4609,11 @@
   {
    "from": "memory/verifier/r45-closeout-2026-11-14.md",
    "target": "both",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/verifier/stale_claim_icons_js_2026-11-19.md",
+   "target": "the",
    "marker": "supersedes"
   },
   {

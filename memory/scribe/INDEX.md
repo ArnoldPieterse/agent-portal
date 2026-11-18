@@ -29,3 +29,8 @@ Last updated: 2026-11-16.
 
 ## 2026-11-19 goal #3 evidence (assist by Builder)
 - -> memory/scribe/handoff-validation-2026-11-19.md   Scribe goal #3 Context Handoff Template: 3 test handoffs (handoff_test1/2/3.md) all PASS via validate_handoff.py exit 0; acceptance met
+
+## Linked content (KG orphan remediation 2026-11-19)
+- [TODO.md](memory/scribe/TODO.md)
+- [chain_check.py](memory/scribe/chain_check.py)
+- [supersession-pointer-spec.md](memory/scribe/supersession-pointer-spec.md)

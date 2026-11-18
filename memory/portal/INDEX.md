@@ -20,3 +20,10 @@ Last updated: 2026-11-16. Grep by keyword; open ONE leaf per question. Bug entry
 - -> index.html        frontend MARKUP-ONLY shell (2026-11-16): UI in ui/app.css + ui/core.js + ui/uploads.js; PINNED - advance pin with every edit
 - -> MEMORY.md         hot state;  -> TODO.md  work plan
 - prune edge cases tested / chunking math 240+200 / live e2e via API -> memory/portal/prune-edge-cases-2026-11-15.md   2026-11-15: unit ALL PASS + live 4 sections pruned (110 lines, no chunk due)
+
+## Linked content (KG orphan remediation 2026-11-19)
+- [merge-pack.md](memory/portal/merge-pack.md)
+- [system-map.md](memory/portal/system-map.md)
+- [upgrade-plan.md](memory/portal/upgrade-plan.md)
+- [v1-inventory.md](memory/portal/v1-inventory.md)
+- [v1-upgrades-decisions.md](memory/portal/v1-upgrades-decisions.md)

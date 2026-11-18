@@ -6,3 +6,6 @@ Updated: 2026-11-17
 - memory/handoffs/HO-20261116-supersession-report.md
 - memory/handoffs/LOG.md
 - memory/handoffs/PROTOCOL.md
+
+## Linked content (KG orphan remediation 2026-11-19)
+- [PROTOCOL.md](memory/handoffs/PROTOCOL.md)

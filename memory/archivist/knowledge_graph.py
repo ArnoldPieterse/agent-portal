@@ -15,12 +15,24 @@ def norm(x): return x.replace("\\", "/").lstrip("./")
 def main():
     edges, sup = [], []
     files = {}
+    texts = {}
+    # PASS 1: collect every file (full membership set) before extracting any
+    # edges. The old single-pass version checked `t in files` against a set that
+    # was still being built during the walk, so an edge only registered if its
+    # target happened to be walked BEFORE its source -- making orphan counts
+    # depend on filesystem listdir order (e.g. basenames sorting after INDEX.md).
     for r, d, fs in os.walk(MEM):
         d[:] = [x for x in d if not x.startswith(".")]
         for f in fs:
             p = os.path.join(r, f)
             rel = norm(os.path.relpath(p, ROOT))
             files[rel] = os.path.getmtime(p)
+    # PASS 2: now that `files` is complete, extract edges from each file's text.
+    for r, d, fs in os.walk(MEM):
+        d[:] = [x for x in d if not x.startswith(".")]
+        for f in fs:
+            p = os.path.join(r, f)
+            rel = norm(os.path.relpath(p, ROOT))
             try: txt = open(p, encoding="utf-8", errors="replace").read()
             except Exception: continue
             for m in PTR.finditer(txt):

@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #7 Typography Hierarchy Audit closed: fixed 45 off-scale font-size violations in ui/*.css + ui/*.js
-- Portal auto-restart blocker RESOLVED; ANTI-STALL v2 watchdog chain confirmed live at PID 6660.
 - Scribe wrote Archivist Goal #2 forecast (92–96% accuracy predicted) → memory/goals/archivist-goal2-forecast-2026-11-19.md
 - Goal #7 Typography closed (16 violations fixed). In-flight: notifications.js & tour.js already built — build against existing tokens.
 - Phantom-claim guard built; found 4 phantom claims in Archivist's goal files (cited artifacts missing), explaining their 2/10 ledger stall.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - kg_integrity.py on disk still reads `s.get("to","")` not `target`; hot note claiming fix was never persisted — 275 supersessions silently dr
 - Goal #2 done: 25.2% density reduction via 4 CSS changes in ui/app.css. Open: browser screenshot for final acceptance.
 - Built & ran memory/archivist/citation_audit.py (scans 1478 KB files, scores dead links); Archivist goal #2 unblocked
+- Goal #6: --sandbox flag added to portal_watchdog.py (tri-state port_bound
+- Goal #9 (Portal Onboarding Tour) evidence verified but marker not yet recorded in goal file — needs fix next pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

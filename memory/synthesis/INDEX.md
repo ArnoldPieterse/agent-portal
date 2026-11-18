@@ -21,3 +21,7 @@ Open-item gate status: see TODO.md LIVE PLAN (do not duplicate it here).
 ## 2026-11-16 cycle-2 kickoff (Orchestrator, on-behalf per user directive)
 - -> memory/synthesis/2026-11-16-contradiction-rulings.md | C1-C4 queue drained: C2 ratifies Designer#4 (tokens live at pin 2c6399f2d853), C3 scopes Red block to :8099
 - -> memory/synthesis/2026-cycle2-retrospective.md | cycle-2 retro (living doc; end-of-cycle sections scheduled)
+
+## Linked content (KG orphan remediation 2026-11-19)
+- [cycle-narrative.md](memory/synthesis/cycle-narrative.md)
+- [supersession-policy-baseline.md](memory/synthesis/supersession-policy-baseline.md)

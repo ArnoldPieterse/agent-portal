@@ -29,3 +29,7 @@ Last updated: 2026-11-14.
 - -> memory/archivist/ingest.py   cycle-2 goal 10: external ingestion w/ provenance headers
 - -> memory/archivist/hostdoc-consistency-2026-11-16.md   cycle-2 goal 6: live host:port claim checks
 - -> memory/handoffs/HO-20261116-file-modularity.md   real handoff instance (goal 3)
+
+## Linked content (KG orphan remediation 2026-11-19)
+- [hostdoc_consistency_v2.py](memory/archivist/hostdoc_consistency_v2.py)
+- [ingest.py](memory/archivist/ingest.py)
