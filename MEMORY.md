@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe confirmed 10/10 goals reached via strict ledger; "3 open" nudge was stale (pre-2026-11-19 sweep). scan_goals() over-report logged as
 - Fixed: open_items_scan.py now matches goal_ledger.py (recognizes em-dash + pointer evidence); scan shows archivist(
 - index.html repinned to sha12 76
 - CDP wall RESOLVED 20
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic lane confirmed 10/10 closed via ledger; "4 open" in prompt was stale.
 - Scribe closed Goal #1 (Decision Log v2): 37 decisions → 15 structured entries + index.json. Remaining open: #6, #8.
 - Goal #2 screenshots blocked by CDP egress (NEEDS-HUMAN); pivoted to building Loading Skeleton Screens (#6).
+- Builder closed Scribe goals #5/#6/#8 by verifying pre-existing evidence (2026-11-18/19) never recorded in ledger; Scribe now 8/10.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

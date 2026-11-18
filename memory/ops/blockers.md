@@ -104,3 +104,10 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - [17:31] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
 - [17:32] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
 - [00:26] NEEDS-HUMAN: seat Archivist model unreachable for 20+ min (unreachable). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.
+
+## NEEDS-HUMAN: Portal auto-restart failed (auto_restart.py)
+- **Time:** 2026-11-19T02:51:50
+- **Port:** 8099 not responding after 3 restart attempts
+- **PID found:** None
+- **Diagnostics:** {"timestamp": "2026-11-19T02:51:50", "portal_port": 8099, "portal_up": false, "portal_pid": null, "recent_health_log": ["2026-11-18T10:07:48.054563+00:00 [CRITICAL] ALERT: agents: skipped (portal down)", "2026-11-18T10:07:50.352024+00:00 [INFO] ALERT-TEST: simulating a critical alert", "2026-11-18T10:07:50.365737+00:00 [CRITICAL] ALERT: alert_test: This is a test alert to verify wiring"]}
+- **Unblock step:** Manually run `python agent_portal.py` and verify port 8099 responds.

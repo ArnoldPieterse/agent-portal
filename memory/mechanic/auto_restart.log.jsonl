@@ -9,3 +9,14 @@
 {"ts": "2026-11-18T20:28:35", "event": "restart_attempt", "pid": 7364}
 {"ts": "2026-11-18T20:28:45", "event": "attempt_result", "attempt": 3, "recovered": false}
 {"ts": "2026-11-18T20:28:45", "event": "escalated", "detail": "NEEDS-HUMAN written to memory/ops/blockers.md"}
+{"ts": "2026-11-19T02:51:20", "event": "check", "portal_up": false}
+{"ts": "2026-11-19T02:51:20", "event": "attempt_start", "attempt": 1}
+{"ts": "2026-11-19T02:51:20", "event": "restart_attempt", "pid": 30952}
+{"ts": "2026-11-19T02:51:30", "event": "attempt_result", "attempt": 1, "recovered": false}
+{"ts": "2026-11-19T02:51:30", "event": "attempt_start", "attempt": 2}
+{"ts": "2026-11-19T02:51:30", "event": "restart_attempt", "pid": 23712}
+{"ts": "2026-11-19T02:51:40", "event": "attempt_result", "attempt": 2, "recovered": false}
+{"ts": "2026-11-19T02:51:40", "event": "attempt_start", "attempt": 3}
+{"ts": "2026-11-19T02:51:40", "event": "restart_attempt", "pid": 7160}
+{"ts": "2026-11-19T02:51:50", "event": "attempt_result", "attempt": 3, "recovered": false}
+{"ts": "2026-11-19T02:51:50", "event": "escalated", "detail": "NEEDS-HUMAN written to memory/ops/blockers.md"}
