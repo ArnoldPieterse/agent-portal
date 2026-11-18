@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4 unblock: run `python memory/mechanic/deploy_reboot_recovery_all.py` from non-sandbox White admin; schtasks COM blocked at this seat,
-- Goal #10 (compression-fidelity self-audit) is BG-SCHED/cadence-gated; supersession
-- Goal #2 (contradiction detector v2) FAILED by Verifier 2026-11-18: evidence JSON written from intent, not execution; only cycle-2 baseline t
 - Scribe corrected TODO.md background-item count from 10→8 (matching scheduled-background.md), closing a cross-file discrepancy on goal #9.
 - TODO.md "10 items moved
 - All 10 Scribe goals now closed: 8 verified, 1 BG-scheduled (#10), 1 ledger-marker recorded this pass (#9).
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - capture_baseline.py v2 adds --local mode (file:// + inlined CSS/JS), removing :8099 server dependency for sandbox-proof execution
 - Scribe lane fully closed: 10/10 goals verified, zero open; auto-loop "1 open" count was stale.
 - Goal 8 handoff doc is false: .state-* classes exist in app.css but are zero-referenced in core.js/uploads.js; panels still use raw inline te
+- Fixed stale_claim_check.py: added .json↔.jsonl suffix fallback, false-positive MISSING flags 131→33; remaining 33 are genuine gaps.
+- Scribe's goal file is
+- Goal 8 state classes implemented; docs used .state-conn-lost but code uses .state
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
