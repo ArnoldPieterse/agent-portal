@@ -1,15 +1,15 @@
-{"ts": "2026-11-17T22:24:42Z", "check": "rotation-order-4-hosts", "pass": true, "detail": "got ['White', 'Pale', 'Black', 'Red'], expected ['White', 'Pale', 'Black', 'Red']"}
-{"ts": "2026-11-17T22:24:42Z", "check": "rotation-wraparound", "pass": true, "detail": "after index 3 (Red), next is White"}
-{"ts": "2026-11-17T22:24:42Z", "check": "fast-recovery-detected", "pass": true, "detail": "recovered=True, elapsed=0.0s (simulated)"}
-{"ts": "2026-11-17T22:24:42Z", "check": "fast-recovery-under-60s", "pass": true, "detail": "elapsed=0.0s < 60s threshold"}
-{"ts": "2026-11-17T22:24:42Z", "check": "slow-recovery-detected", "pass": true, "detail": "recovered=True, elapsed=0.0s (simulated)"}
-{"ts": "2026-11-17T22:24:42Z", "check": "slow-recovery-under-60s", "pass": true, "detail": "elapsed=0.0s < 60s threshold"}
-{"ts": "2026-11-17T22:25:42Z", "check": "no-recovery-detected", "pass": true, "detail": "recovered=False (correctly detected as failure)"}
-{"ts": "2026-11-17T22:25:42Z", "check": "no-recovery-timed-out", "pass": true, "detail": "elapsed=60.0s >= 60s timeout"}
-{"ts": "2026-11-17T22:25:42Z", "check": "dry-run-verdict", "pass": true, "detail": "verdict=DRY_RUN_OK"}
-{"ts": "2026-11-17T22:25:42Z", "check": "dry-run-mode-tag", "pass": true, "detail": "mode=dry-run"}
-{"ts": "2026-11-17T22:25:42Z", "check": "dry-run-log-written", "pass": true, "detail": "log has 1 entry(ies)"}
-{"ts": "2026-11-17T22:25:42Z", "check": "live-drill-pass-verdict", "pass": true, "detail": "verdict=PASS"}
-{"ts": "2026-11-17T22:25:42Z", "check": "state-tracks-completed-drill", "pass": true, "detail": "drills_completed has 1 entry(ies)"}
-{"ts": "2026-11-17T22:25:42Z", "check": "state-host-correct", "pass": true, "detail": "host=White"}
-{"ts": "2026-11-17T22:25:42Z", "check": "SUMMARY", "pass": true, "detail": "14/14 checks passed"}
+{"ts": "2026-11-18T06:56:09Z", "check": "rotation-order-4-hosts", "pass": true, "detail": "got ['White', 'Pale', 'Black', 'Red'], expected ['White', 'Pale', 'Black', 'Red']"}
+{"ts": "2026-11-18T06:56:09Z", "check": "rotation-wraparound", "pass": true, "detail": "after index 3 (Red), next is White"}
+{"ts": "2026-11-18T06:56:09Z", "check": "fast-recovery-detected", "pass": true, "detail": "recovered=True, elapsed=0.0s (simulated)"}
+{"ts": "2026-11-18T06:56:09Z", "check": "fast-recovery-under-60s", "pass": true, "detail": "elapsed=0.0s < 60s threshold"}
+{"ts": "2026-11-18T06:56:09Z", "check": "slow-recovery-detected", "pass": true, "detail": "recovered=True, elapsed=0.0s (simulated)"}
+{"ts": "2026-11-18T06:56:09Z", "check": "slow-recovery-under-60s", "pass": true, "detail": "elapsed=0.0s < 60s threshold"}
+{"ts": "2026-11-18T06:57:09Z", "check": "no-recovery-detected", "pass": true, "detail": "recovered=False (correctly detected as failure)"}
+{"ts": "2026-11-18T06:57:09Z", "check": "no-recovery-timed-out", "pass": true, "detail": "elapsed=60.0s >= 60s timeout"}
+{"ts": "2026-11-18T06:57:09Z", "check": "dry-run-verdict", "pass": true, "detail": "verdict=DRY_RUN_OK"}
+{"ts": "2026-11-18T06:57:09Z", "check": "dry-run-mode-tag", "pass": true, "detail": "mode=dry-run"}
+{"ts": "2026-11-18T06:57:09Z", "check": "dry-run-log-written", "pass": true, "detail": "log has 1 entry(ies)"}
+{"ts": "2026-11-18T06:57:09Z", "check": "live-drill-pass-verdict", "pass": true, "detail": "verdict=PASS"}
+{"ts": "2026-11-18T06:57:09Z", "check": "state-tracks-completed-drill", "pass": true, "detail": "drills_completed has 1 entry(ies)"}
+{"ts": "2026-11-18T06:57:09Z", "check": "state-host-correct", "pass": true, "detail": "host=White"}
+{"ts": "2026-11-18T06:57:09Z", "check": "SUMMARY", "pass": true, "detail": "14/14 checks passed"}
