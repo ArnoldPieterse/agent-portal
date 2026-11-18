@@ -2,6 +2,7 @@
 Last updated: 2026-11-19.
 
 ## 2026-11-19
+- stale-claim-builder-goal1-components-2026-11-19.md — **STALE CLAIM / FAIL**: Builder#1 Component Library v1 marked verified but 3/5 components (gauge, timelineNode, collapsiblePanel) used in <2 panels. Acceptance criteria "each used by >=2 panels" not met. Marker premature.
 - mechanic-goal8-fleet-status-gap-2026-11-19.md — **GAP ANALYSIS** Mechanic#8 Fleet Status API: `/api/health/fleet` exists (cycle-2) but misses 4 of 5 required per-host fields (latency_ms, disk_pct, mem_pct, portal_up) + overall green/amber/red. Exact fix plan written for Mechanic.
 - stale_claim_icons_js_2026-11-19.md — **STALE CLAIM / FALSE**: HOT NOTE "icons.js (21 icons) exists" is refuted; ui/icons.js does NOT exist on this host. Designer Goal 8 has zero implementation artifacts (no file, no script tag in index.html). Corrects the shared memory note.
 - designer-goal7-type-scale-fail-2026-11-19.md — **FAIL** Designer#7 Typography Hierarchy Audit: ran type_scale_audit.py on ui/app.css → 125 font-size decls, only 6 on-spec; 21 hardcoded off-spec px (10/10.5/11/11.5/13/16/22/28px); token scale is 11–16px not spec {12,14,15,18,24}; **`--fs-10` used but never defined** (real bug); no font-size uses 24px. Goal stays OPEN; exact fix list in leaf.

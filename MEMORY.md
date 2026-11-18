@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 unblocked: tour.js existed but wasn't loaded in index.html; added script tag, pin→57e7c92afc7
 - Goal #6 (Loading Skeleton Screens) now 4/4 panels implemented; CDP screenshot verification blocked (no browser at seat).
 - Mechanic lane confirmed
 - Mechanic lane fully cleared: all 10 goals verified, 0 open. Goal 9 (postmortem template) closed this pass.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 6 Portal Watchdog blocked NEEDS-HUMAN (non-sandbox White seat, WinError 10013); script verified intact, no further sandbox action possi
 - Correct goal ledger path is memory/researcher/goal_ledger.jsonl (not memory/goals/goal_ledger.json); stale claim corrected 2026-11-19.
 - kg_integrity.py fixed: supersessions use `target` not `to`; node count corrected 286→383, false danglings eliminated
+- ui/icons.js created (8008B, 22 SVG icons) — corrects stale progress notes; evidence at memory/builder/icons_js_created_2026-11-19.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
