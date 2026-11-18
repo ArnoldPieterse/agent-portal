@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-11-18T11:48:31.720784",
+  "goal": "Scribe #2 - Contradiction detector v2 (temporal + cross-reference)",
+  "action": "Builder implemented 5 v2 claim types in contradiction_detector.py",
+  "types_implemented": [
+    "temporal_mismatch",
+    "cross_reference",
+    "stale_pointer",
+    "size_drift",
+    "duplicate_entry"
+  ],
+  "clean_data_test": {
+    "file": "memory/scribe/_test_claims_v2.json",
+    "result": "5/5 PASS (zero false positives)",
+    "exit_code": 0
+  },
+  "false_claim_detection_test": {
+    "file": "memory/scribe/_test_claims_v2_false.json",
+    "detected": [
+      "temporal_mismatch(2513d gap)",
+      "cross_reference(7vs0)",
+      "size_drift(95.5%)",
+      "duplicate_entry(1>0)"
+    ],
+    "stale_pointer": "verified separately with synthetic index: correctly flags missing target, exit 1",
+    "total_detected": 5
+  },
+  "acceptance_criteria_met": true,
+  "note": "Prior evidence (2026-11-18) claimed types were implemented but code only had v1 handlers. Builder added all 5 v2 branches to check_claim()."
+}

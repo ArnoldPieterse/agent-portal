@@ -29,14 +29,81 @@ def sha256_file(path):
 def check_claim(claim, root):
     cid   = claim.get("id", "?")
     ctype = claim["type"]
-    target = Path(root) / claim["target"]
-    expected = claim["expected"]
+    # v2 types don't always have target/expected at top level
+    target_str = claim.get("target", claim.get("index_file", claim.get("file_a", "?")))
+    target = Path(root) / target_str
+    expected = claim.get("expected")
     tol     = claim.get("tolerance", 0)
 
-    result = {"id": cid, "type": ctype, "target": str(claim["target"]), "expected": expected}
+    result = {"id": cid, "type": ctype, "target": str(target_str)}
+    if expected is not None:
+        result["expected"] = expected
 
     try:
-        if ctype == "line_count":
+        # --- v2 types ---
+        if ctype == "temporal_mismatch":
+            from datetime import datetime, timezone
+            claimed_date = claim["claimed_date"]
+            tol_days = claim.get("tolerance_days", 0)
+            mtime = target.stat().st_mtime
+            mtime_dt = datetime.fromtimestamp(mtime, tz=timezone.utc)
+            claimed_dt = datetime.fromisoformat(claimed_date).replace(tzinfo=timezone.utc)
+            diff_days = abs((mtime_dt - claimed_dt).total_seconds()) / 86400
+            result["actual_mtime"] = mtime_dt.isoformat()
+            result["diff_days"] = round(diff_days, 2)
+            result["pass"] = diff_days <= tol_days
+
+        elif ctype == "cross_reference":
+            import re as _re
+            fa = Path(root) / claim["file_a"]
+            fb = Path(root) / claim["file_b"]
+            pa = claim.get("pattern_a", ".")
+            pb = claim.get("pattern_b", ".")
+            ca = len(_re.findall(pa, fa.read_text(encoding='utf-8', errors='replace')))
+            cb = len(_re.findall(pb, fb.read_text(encoding='utf-8', errors='replace')))
+            result["count_a"] = ca
+            result["count_b"] = cb
+            result["pass"] = (ca == cb)
+
+        elif ctype == "stale_pointer":
+            import re as _re
+            idx_file = Path(root) / claim["index_file"]
+            ppat = claim.get("pointer_pattern", r"->\s+(memory/[^\s]+\.md)")
+            text = idx_file.read_text(encoding='utf-8', errors='replace')
+            pointers = _re.findall(ppat, text)
+            stale = []
+            for p in pointers:
+                # handle both full match and group(1)
+                pp = p if isinstance(p, str) else p[0]
+                fp = Path(root) / pp
+                if not fp.exists():
+                    stale.append(pp)
+            result["total_pointers"] = len(pointers)
+            result["stale_count"] = len(stale)
+            if stale:
+                result["stale_samples"] = stale[:5]
+            result["pass"] = len(stale) == 0
+
+        elif ctype == "size_drift":
+            claimed_kb = claim["claimed_kb"]
+            pct_tol = claim.get("pct_tolerance", 10)
+            actual_kb = target.stat().st_size / 1024.0
+            drift_pct = abs(actual_kb - claimed_kb) / claimed_kb * 100 if claimed_kb > 0 else 999
+            result["actual_kb"] = round(actual_kb, 2)
+            result["drift_pct"] = round(drift_pct, 1)
+            result["pass"] = drift_pct <= pct_tol
+
+        elif ctype == "duplicate_entry":
+            entry_str = claim["entry"]
+            max_occ = claim.get("max_occurrences", 1)
+            text = target.read_text(encoding='utf-8', errors='replace')
+            occ = text.count(entry_str)
+            result["occurrences"] = occ
+            result["max_allowed"] = max_occ
+            result["pass"] = occ <= max_occ
+
+        # --- v1 types ---
+        elif ctype == "line_count":
             actual = len(target.read_text().splitlines())
             result["actual"] = actual
             result["pass"] = abs(actual - expected) <= tol
@@ -71,7 +138,16 @@ def check_claim(claim, root):
             result["pass"] = False
             result["error"] = f"unknown claim type: {ctype}"
 
-    except FileNotFoundError:
+    except FileNotFoundError as e:
+        # For stale_pointer, a missing index file is itself a failure
+        if ctype == "stale_pointer":
+            result["actual"] = None
+            result["pass"] = False
+            result["error"] = f"index file not found: {claim.get('index_file','?')}"
+        else:
+            result["actual"] = None
+            result["pass"] = False
+            result["error"] = "file not found"
         result["actual"] = None
         result["pass"] = False
         result["error"] = "file not found"

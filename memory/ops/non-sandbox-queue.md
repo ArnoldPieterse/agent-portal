@@ -1,6 +1,6 @@
 # NON-SANDBOX EXECUTION QUEUE
 Parent: memory/ops/INDEX.md | Sibling: memory/ops/blockers.md (NEEDS-HUMAN log)
-Updated: 2026-11-17 (Orchestrator). Small file — one batch list, read whole.
+Updated: 2026-11-18 (Orchestrator) - pruned resolved items, added boot-recovery schtasks. Small file — one batch list, read whole.
 
 ## WHAT THIS IS
 A sandbox seat CANNOT do network egress to the fleet/LAN, drive a browser, or elevate
@@ -47,25 +47,25 @@ Same pattern applies to Orchestrator #8 (backend done; live viewport = Tier B) a
   - cmd: `python Z:\failover_drill.py --host red` then `python Z:\failover_drill.py --host black`
   - evidence target: memory/ops/failover-drill-<host>-<date>.json (TTD < 60s, fleet detection < 120s);
   - ledger record orchestrator 8.
-- [ ] **Verifier #2** — register daily SLO-enforcement task on White so the report auto-runs + posts to group chat.
-  - cmd: `schtasks /create /tn VerifierSLODaily /tr "python Z:\\memory\\verifier\\slo_enforce.py" /sc daily /st 06:30 /f`
-    (absolute path; runs after PortalLoadProbe at 06:00 so perf buffer has data).
-  - then confirm one row appended to memory/verifier/slo-history.jsonl with today's date; closure = two consecutive days of automated rows + ledger record verifier 2.
-  - evidence target: slo-history.jsonl (day 1+ rows from task) or goal #2 leaf.
-- [ ] **Mechanic #4** — register daily load-probe task on NON-SANDBOX White so data auto-accumulates (now 2/7 days).
-  - cmd: `schtasks /create /tn PortalLoadProbe /tr "python Z:\memory\ops\load_probe.py" /sc daily /st 06:00 /f`
-    (absolute script path so SYSTEM runs it from any CWD; do NOT use the `.bat` — its trailing `pause` hangs non-interactive runs).
-  - then confirm one row appended to memory/ops/load-baseline.jsonl; closure = `python memory/ops/load_trend.py --week-complete` + ledger record mechanic 4.
-  - evidence target: memory/ops/load-baseline.jsonl (day 3+ rows) or goal #4 leaf.
-- [ ] **Designer #7** — a11y score >=95 on :8099. Needs live Chrome + axe devtools against http://127.0.0.1:8099/ .
-  - cmd: run `python memory/designer/live_verify_g578.py` (or live_verify2) from the non-sandbox seat.
-  - evidence target: axe/Lighthouse score JSON in memory/designer/ ; ledger record designer 7.
-- [ ] **Designer #5** — breakpoint automation: CDP screenshots at 375/768px, assert 0 console errors + 0 horizontal overflow.
-  - cmd: `python memory/designer/d7_d9_cdp_verify.py` (-> design_breakpoint_check.py) from the non-sandbox seat.
-  - evidence target: 375/768 screenshots + check output in memory/designer/ ; ledger record designer 5.
+- [x] **Verifier #2** — RESOLVED 2026-11-18 (unsloth-assist, White seat): VerifierSLO schtask registered daily 06:00, first run exit 0.
+- [x] **Mechanic #4 load-probe leg** — RESOLVED 2026-11-18: PortalLoadProbe registered daily 06:00; accumulating (2/7 days at registration).
+- [x] **Designer #7** — RESOLVED 2026-11-18: msedge --remote-debugging-port=9222 works as CDP target (agent-side fix, no Chrome needed).
+- [x] **Designer #5** — RESOLVED 2026-11-18: same msedge CDP path unblocks breakpoint screenshots.
+- [ ] **Mechanic #4 boot-recovery schtasks** (NEW 2026-11-18) — register FleetBootRecovery + RebootRecoveryDetect on White; then run live kill+restart test.
+  - cmd 1: `schtasks /create /tn "FleetBootRecovery" /tr "\"C:\Projects\Workspace\Python\pythonw.exe\" \"C:\Projects\Workspace\memory\ops\boot_recovery.py\"" /sc onstart /ru SYSTEM /rl HIGHEST /f`
+  - cmd 2: `schtasks /create /tn "RebootRecoveryDetect" /tr "\"C:\Projects\Workspace\Python\python.exe\" \"C:\Projects\Workspace\memory\mechanic\reboot_recovery_test.py\" --dry-run" /sc onstart /delay PT5M /ru SYSTEM /rl HIGHEST /f`
+  - cmd 3 (acceptance test): `cd C:\Projects\Workspace && python memory\mechanic\reboot_recovery_test.py` (live kill+restart; expect <5 min recovery)
+  - evidence target: reboot-recovery.jsonl last entry + schtasks /query output.
+  - ledger record mechanic 4 (full closure).
+- [ ] **MirrorSync Pale/Black SMB creds** (Researcher #3 dependency) — add working credentials for .39 and .99 to the mirror hosts config; then `python memory_mirror.py -v` should show 0 auth errors.
+  - evidence target: memory_mirror.py -v output showing all 4 hosts connected.
 
 ## DONE / RESOLVED (kept for pattern, not action)
 - [x] Red .245 reachability (Mechanic #2 leg) — resolved 2026-11-17 ~14:07 via /api/health 200 + Verifier probe; was the first instance of this wall.
+- [x] PortalLoadProbe schtask — RESOLVED 2026-11-18 (unsloth-assist White seat).
+- [x] VerifierSLO schtask — RESOLVED 2026-11-18 (unsloth-assist White seat).
+- [x] MirrorSync schtask — RESOLVED 2026-11-18 (registered every 5 min; live pushing to Red).
+- [x] Designer #5/#7 CDP wall — RESOLVED 2026-11-18 (msedge as CDP target).
 
 ## NOT THIS QUEUE (infra, handled by Studio/human)
 - "seat <Name> model unreachable" entries in blockers.md are Studio reloads, not command-execution tasks — do not batch them here.

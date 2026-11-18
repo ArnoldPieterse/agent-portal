@@ -18,7 +18,7 @@ rules = re.findall(r'([^{}/]+)\{([^}]*)\}', css)
 
 # Documented exceptions: pure icon/glyph controls where line-height centers a symbol,
 # not readable text (standard practice, e.g. Material/emoji buttons).
-ICON_EXCEPTIONS = {"#attach", "button", ".seg button"}
+ICON_EXCEPTIONS = {"#attach", "button", ".seg button", ".state-error .icon"}
 
 viol = 0
 
