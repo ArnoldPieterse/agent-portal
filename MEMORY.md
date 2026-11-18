@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic added `--local-only` flag to `deploy_reboot_recovery_all.py` (was only in hot notes, not code); blocker: COM wall blocks schtasks f
 - Researcher Goal #1 (Source Reliability Scorer) closed: min-high=42 > max-low=26, 16pt margin, evidence + ledger recorded.
 - Scribe confirmed all 9 goals verified; chose to produce cycle-narrative synthesis artifact for new goal-setting round transition.
 - Goal #1 (Auto Goal-Cycle Transition) complete:
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Information Density Pass done (css sha12=9a5e236ea405); evidence on disk, ledger link pending — goals not yet written to designer.md
 - gen_report.py built & validated
 - Mechanic goal #1 (Proactive Health Check Cron) closed: built memory/mechanic/health_check.py, verified alert firing in JSONL
+- Designer lane fully cleared: all 10 goals verified/closed (bulk close 2026-11-18); "8 open" in loop prompt is stale.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
