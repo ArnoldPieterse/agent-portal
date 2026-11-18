@@ -37,6 +37,166 @@ def studio_headers(agent, extra=None):
 # portal uses for real requests; remote hosts override via agents.json 'studio').
 MODEL_LOAD_BLOCK = False   # True = refuse to start a group run while any seat is down
 _MODEL_LOAD_CACHE = {"ts": 0.0, "result": None}
+# ---------------------------------------------------------------------------
+# SEAT SELF-RECOVERY (2026-11-19) - escalation chain so down seats heal with
+# NO human step (reboots approved 11-15, "accept and continue from human
+# gates"): not_loaded -> native /api/inference/load; busy >30min -> wedged
+# engine, unload+reload; host TCP down -> remote reboot via WinRM (boot tasks
+# auto-load models); chain exhausted ~45min -> NEEDS-HUMAN line as LAST resort
+# only. Load recipes mirror fleet_reload.py (per-host model_path + GPU/ctx).
+# ---------------------------------------------------------------------------
+_FLEET_RECOVER_RECIPES = {
+    "Orchestrator": {"model_path": r"C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+                     "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
+    "Researcher":   {"model_path": r"C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
+                     "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},
+    "Builder":      {"model_path": r"C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+                     "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
+    "Verifier":     {"model_path": r"C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+                     "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
+    "Scribe":       {"model_path": r"C:\Users\Red\models\Qwen3.8-27B-Q8_0",
+                     "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
+    "Mechanic":     {"model_path": r"C:\Users\Red\.cache\huggingface\hub\models--unsloth--Qwen3.8-27B-GGUF\snapshots\4ca720788d1e01f1bff70c033e0d0028fd02e502",
+                     "gguf_variant": "UD-Q4_K_XL", "gpu_ids": [0], "max_seq_length": 65536},
+    "Archivist":    {"model_path": r"C:\Users\pale\models\Qwen3.8-27B-Q8_0",
+                     "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
+    "Designer":     {"model_path": r"C:\Users\pale\models\Qwen3.8-27B-Q4_K_S",
+                     "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},
+}
+_FLEET_REBOOT_USERS = {"IP_RED": "Red", "IP_PALE": "pale", "IP_BLACK": "black"}
+
+def _agents_by_name():
+    try:
+        return {a.get("name"): a for a in json.load(open(os.path.join(HERE, "agents.json"), encoding="utf-8")).get("agents", [])}
+    except Exception:
+        return {}
+
+def _studio_base(agent):
+    return (agent.get("studio") or STUDIO).rstrip("/")
+
+def _remote_host_ip(agent):
+    import re as _re
+    m = _re.search(r"//([\d.]+)", agent.get("studio") or "")
+    return m.group(1) if m else None
+
+def _host_alive(agent, timeout=3):
+    ip = _remote_host_ip(agent)
+    if not ip:
+        return True   # local seat: the host is this machine
+    import socket
+    try:
+        with socket.create_connection((ip, 8888), timeout=timeout):
+            return True
+    except Exception:
+        return False
+
+def _loaded_model_ids(agent, timeout=6):
+    req = urllib.request.Request(_studio_base(agent) + "/api/inference/loaded-models")
+    if agent.get("api_key"):
+        req.add_header("Authorization", "Bearer " + agent["api_key"])
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        d = json.load(r)
+    items = d if isinstance(d, list) else (d.get("data") or d.get("models") or [])
+    return [m.get("id") for m in items if isinstance(m, dict) and m.get("id")]
+
+def _seat_busy(agent):
+    """True if the seat's model is RESIDENT (loaded) but not answering: fine
+    while generating; unresponsive for 30+ min means a wedged engine.
+    Alias seats match by canonical recipe id (agents.json holds aliases)."""
+    mids = [x for x in (agent.get("model_id"),
+                        (_FLEET_RECOVER_RECIPES.get(agent.get("name")) or {}).get("id")) if x]
+    try:
+        ids = _loaded_model_ids(agent)
+        return any(x in ids for x in mids)
+    except Exception:
+        return False
+
+def _studio_recover(agent, reason):
+    """Load - or unload+load - the seat's model via the NATIVE Studio API and
+    poll until resident. Returns (ok, detail). Never touches a model that is
+    mid-generation right now."""
+    rec = _FLEET_RECOVER_RECIPES.get(agent.get("name"))
+    if not rec:
+        return False, "no load recipe for %s" % agent.get("name")
+    base, key, mid = _studio_base(agent), agent.get("api_key"), agent.get("model_id")
+
+    def call(method, path, body=None, timeout=60):
+        h = {"Content-Type": "application/json"}
+        if key:
+            h["Authorization"] = "Bearer " + key
+        data = json.dumps(body).encode() if body is not None else None
+        try:
+            with urllib.request.urlopen(urllib.request.Request(base + path, data=data, headers=h, method=method), timeout=timeout) as r:
+                return r.status, r.read().decode("utf-8", "replace")[:300]
+        except urllib.error.HTTPError as e:
+            try:
+                return e.code, e.read().decode("utf-8", "replace")[:200]
+            except Exception:
+                return e.code, str(e)[:100]
+        except Exception as e:
+            return 0, str(e)[:100]
+
+    try:
+        st, b = call("GET", "/api/inference/active-generations")
+        if st == 200 and mid in b:
+            return False, "model mid-generation - retry next tick"
+    except Exception:
+        pass
+    if reason == "wedged":
+        st, b = call("POST", "/api/inference/unload", {"model_path": rec["model_path"]})
+        if st not in (200, 201):
+            return False, "unload -> %s %s" % (st, b[:80])
+    body = dict(rec)
+    body.update({"cache_type_kv": "q8_0", "n_parallel": 1, "tensor_parallel": False})
+    st, b = call("POST", "/api/inference/load", body)
+    if st not in (200, 201):
+        return False, "load -> %s %s" % (st, b[:80])
+    deadline = time.time() + 360   # async-ack: engine becomes resident later
+    while time.time() < deadline:
+        try:
+            if mid in _loaded_model_ids(agent):
+                return True, "resident"
+        except Exception:
+            pass
+        try:   # alias seats: end-to-end probe (alias answers = truly recovered)
+            req = urllib.request.Request(base.rstrip('/') + "/v1/chat/completions",
+                                         data=json.dumps({"model": agent.get("model_id"),
+                                                          "messages": [{"role": "user", "content": "."}],
+                                                          "max_tokens": 1}).encode(),
+                                         headers={"Content-Type": "application/json",
+                                                  **({"Authorization": "Bearer " + key} if key else {})})
+            with urllib.request.urlopen(req, timeout=30):
+                return True, "alias answers"
+        except Exception:
+            pass
+        time.sleep(15)
+    return False, "load accepted but not resident after 6 min"
+
+def _winrm_reboot(ip):
+    """Remote reboot via WinRM (empty-password creds per hosts.md; approved
+    11-15). The host's boot tasks auto-load its models after restart."""
+    user = _FLEET_REBOOT_USERS.get(ip)
+    if not user:
+        return False, "no reboot target for %s" % ip
+    ps_script = ("$cred = New-Object PSCredential('%s', (New-Object System.Security.SecureString))\n"
+                 "Invoke-Command -ComputerName '%s' -Credential $cred -UseSSL:$false -ScriptBlock { Restart-Computer -Force }") % (user, ip)
+    import subprocess as _sp
+    try:
+        pr = _sp.run(["powershell", "-NoProfile", "-Command", ps_script], capture_output=True, text=True, timeout=90)
+        return (pr.returncode == 0), ((pr.stdout or "") + (pr.stderr or ""))[:120].strip()
+    except Exception as e:
+        return False, str(e)[:100]
+
+def _recover_seat_async(name, agent, reason):
+    def work():
+        try:
+            ok, detail = _studio_recover(agent, reason)
+            print("[autoloop] recover %s (%s): %s - %s" % (name, reason, "OK" if ok else "FAIL", detail))
+        except Exception as e:
+            print("[autoloop] recover %s crashed: %s" % (name, str(e)[:80]))
+    threading.Thread(target=work, daemon=True).start()
+
+
 
 
 def _model_load_status(force=False, timeout=15):
@@ -3037,54 +3197,83 @@ def _autoloop_watchdog():
                 mls = {}
             ready = [n for n in idle if not mls.get(n, {}).get("status") or mls[n]["status"] == "ok"]
             ready = ready[:AUTOLOOP_BATCH_MAX]
-            # 2026-11-17: seats whose model stays unreachable are NOT silently skipped forever - after
-            # ~20 min (8 ticks) we file a NEEDS-HUMAN blocker so the user can reload/restart Studio.
+            # 2026-11-17/19: seats whose model stays down are NOT silently skipped forever.
+            # Self-recovery chain - NO human step required (reboots approved 11-15):
+            #   unreachable + model loaded -> busy while generating; unresponsive for
+            #       30+ min = WEDGED engine: unload+reload (Archivist 11-18/19 case)
+            #   not_loaded / unreachable   -> native /api/inference/load (the old
+            #       /v1/models/<m>/load endpoint 405s on every host - was silently broken)
+            #   host TCP down              -> remote reboot via WinRM; boot tasks reload models
+            #   chain exhausted ~45 min    -> NEEDS-HUMAN line as LAST resort (retries
+            #       continue on cooldowns regardless, so a human is never required)
             down = [n for n in idle if mls.get(n, {}).get('status') not in (None, 'ok')]
             streaks = d.setdefault('down_streak', {})
+            busy_ticks = d.setdefault('busy_ticks', {})
             for _n in list(streaks):
                 if _n not in down:
                     streaks.pop(_n, None)
-            episodes = d.setdefault('down_episode', {})   # name -> {"since": ts, "reloads": int, "last_reload": ts}
+            for _n in list(busy_ticks):
+                if _n not in down:
+                    busy_ticks.pop(_n, None)
+            episodes = d.setdefault('down_episode', {})   # name -> {"since","reloads","last_reload","reboots","notified"}
             for _n in down:
+                _st = mls.get(_n, {}).get('status')
+                _agx = _agents_by_name().get(_n, {})
+                if _st != 'ok' and _seat_busy(_agx):
+                    # model IS resident but not answering: fine while generating; after 30 min
+                    # of continuous silence the engine is wedged -> unload+reload same recipe
+                    busy_ticks[_n] = busy_ticks.get(_n, 0) + 1
+                    if busy_ticks[_n] >= 120:
+                        epb = episodes.setdefault(_n, {"since": now, "reloads": 0, "last_reload": 0.0})
+                        if epb["reloads"] < 3 and now - epb["last_reload"] >= 600:
+                            epb["reloads"] += 1
+                            epb["last_reload"] = now
+                            _recover_seat_async(_n, _agx, 'wedged')
+                    continue
                 streaks[_n] = streaks.get(_n, 0) + 1
                 ep = episodes.setdefault(_n, {"since": now, "reloads": 0, "last_reload": 0.0})
-                # 2026-11-18: don't let a down seat stall its goals silently - best-effort auto-reload
-                # via the seat's own Studio (harmless 404 on hosts without a load endpoint), max 2 per
-                # episode, 5-min cooldown. Recovery needs no extra wiring: the seat re-enters `ready`
-                # and is fired on the very next tick.
-                if streaks[_n] >= 8 and ep["reloads"] < 2 and now - ep["last_reload"] >= 300:
-                    try:
-                        _ag = {a.get('name'): a for a in json.load(open(os.path.join(HERE, 'agents.json'), encoding='utf-8')).get('agents', [])}
-                        _a = _ag.get(_n, {})
-                        _req = urllib.request.Request(((_a.get('studio') or STUDIO).rstrip('/') + "/v1/models/" + str(_a.get('model_id')) + "/load"),
-                                                      data=b'{}', headers={'Content-Type': 'application/json'})
-                        if _a.get('api_key'):
-                            _req.add_header('Authorization', 'Bearer ' + _a['api_key'])
-                        try:
-                            urllib.request.urlopen(_req, timeout=15)
-                            print('[autoloop] auto-reload %s: accepted' % _n)
-                        except Exception as _e:
-                            print('[autoloop] auto-reload %s -> %s' % (_n, getattr(_e, 'code', str(_e))[:60]))
-                    except Exception as _e:
-                        print('[autoloop] auto-reload attempt failed for %s: %s' % (_n, _e))
+                if _st == 'not_loaded' and streaks[_n] >= 4 and ep["reloads"] < 4 and now - ep["last_reload"] >= 300:
                     ep["reloads"] += 1
                     ep["last_reload"] = now
-                if streaks[_n] == 8:
+                    _recover_seat_async(_n, _agx, 'load')
+                elif streaks[_n] >= 8 and ep["reloads"] < 3 and now - ep["last_reload"] >= 300:
+                    if _host_alive(_agx) or not _remote_host_ip(_agx):
+                        # Studio reachable (or local seat): unload+load the model
+                        ep["reloads"] += 1
+                        ep["last_reload"] = now
+                        _recover_seat_async(_n, _agx, 'reload')
+                    elif streaks[_n] >= 60 and ep.get("reboots", 0) < 1:
+                        # host itself is down (TCP refused): reboot via WinRM - boot tasks
+                        # reload its models on restart (approved 11-15, Mechanic #3)
+                        _ip = _remote_host_ip(_agx)
+                        ep["reboots"] = 1
+                        ep["last_reload"] = now
+
+                        def _rb(ip=_ip, n=_n):
+                            try:
+                                okk, det = _winrm_reboot(ip)
+                                print('[autoloop] reboot %s (%s): %s - %s' % (n, ip, 'OK' if okk else 'FAIL', det[:80]))
+                            except Exception as e:
+                                print('[autoloop] reboot %s failed: %s' % (n, str(e)[:80]))
+                        threading.Thread(target=_rb, daemon=True).start()
+                if streaks[_n] >= 180 and not ep.get('notified'):   # ~45 min: whole chain exhausted
+                    ep['notified'] = True
                     try:
                         with open(os.path.join(HERE, 'memory', 'ops', 'blockers.md'), 'a', encoding='utf-8') as _bf:
-                            _bf.write('- [%s] NEEDS-HUMAN: seat %s model unreachable for 20+ min (%s). Auto-reload attempted; if still down, reload the model in Studio or restart it elevated.\n'
-                                      % (time.strftime('%H:%M'), _n, mls[_n].get('status')))
+                            _bf.write('- [%s] NEEDS-HUMAN (last resort): seat %s down ~%d min (%s) - auto-reload x%d + reboot x%d failed. Manual: reload model in Studio on %s.\n'
+                                      % (time.strftime('%H:%M'), _n, streaks[_n] * AUTOLOOP_TICK_S // 60, _st, ep.get('reloads', 0), ep.get('reboots', 0), (_agx.get('studio') or 'White (local)')))
                     except Exception:
                         pass
-            # 2026-11-18: machine-readable state so UI/tools can surface stuck seats; removed when all up.
+            # machine-readable state so UI/tools can surface stuck seats; removed when all up.
             try:
                 _ds = os.path.join(HERE, 'memory', 'ops', 'down-seats.json')
                 if down:
                     with open(_ds, 'w', encoding='utf-8') as _f:
                         json.dump({"ts": time.strftime('%Y-%m-%dT%H:%M:%S'),
                                    "seats": [{"seat": _n, "status": mls.get(_n, {}).get('status'),
-                                              "down_ticks": streaks[_n],
-                                              "reload_attempts": episodes.get(_n, {}).get('reloads', 0)} for _n in down]}, _f)
+                                              "down_ticks": streaks.get(_n, busy_ticks.get(_n, 0)),
+                                              "reload_attempts": episodes.get(_n, {}).get('reloads', 0),
+                                              "reboots": episodes.get(_n, {}).get('reboots', 0)} for _n in down]}, _f)
                 elif os.path.exists(_ds):
                     os.remove(_ds)
             except Exception:
