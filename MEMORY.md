@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #8 blocker: ui/icons.js exists (14 SVGs) but index.html doesn't load it; uploads.js ⚠ glyphs now replaced with inline SVG
 - Mechic lane 10/10 closed; assist note for Designer: core.js 17 emoji lines need .textContent→.innerHTML with UI.iconSized() from ui/icons.js
 - Mechanic lane 10/10 closed; all goals now carry `verified:` markers — "1 open" in loop prompts is stale, do not re-probe.
 - Node is NOT installed in this env — use manual state-aware bracket checks or `python -c` for JS syntax validation
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - RECALL: - **M3** (`memory/synthesis/cycle-narrative.md:12`): Goal-setting round landed 2
 - Mechanic: all 10/10 goals reached in ledger, zero open — lane fully closed as of this pass.
 - Goal #8 (Icon System): index.html already has `<span data-icon>` + `ui/icons.js` loaded; only verification of rendering remains.
+- Goal #9 Onboarding Tour: added ui/tour.js to
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
