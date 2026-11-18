@@ -330,6 +330,150 @@ def selftest():
     return 0
 
 
+# ---- Capability Auto-Match Suggester (cycle-6 goal 8) -----------------------
+# Maps free-text task keywords -> catalog capability tags -> minimal VRAM-feasible
+# agent set + models. Reuses catalog `capabilities` lists; no GPU calls.
+CAPABILITY_KEYWORDS = {
+    "code": ["code", "coding", "program", "implement", "debug", "refactor",
+             "snippet", "script", "function", "api", "parse logs"],
+    "research": ["research", "investigate", "find sources", "cite", "look up",
+                 "cross-check"],
+    "planning": ["plan", "roadmap", "architect", "strategy", "orchestrat"],
+    "synthesis": ["summarize", "synthesize", "compress", "distill", "decision"],
+    "ops": ["ops", "operational", "deploy", "monitor", "fleet", "host",
+            "server", "maintenance", "load balance"],
+    "verify": ["test", "verify", "validate", "assert", "proof"],
+    "design": ["design", "ui", "ux", "frontend", "css", "interface", "layout"],
+    "video_generation": ["video", "animation", "text to video", "clip"],
+    "3d_generation": ["3d", "three-dimensional", "environment gen", "scene"],
+    "long_document": ["long document", "book", "large context", "codebase",
+                      "whole repo", "500-page", "200-page", "100k tokens"],
+    "speculative_draft": ["quick draft", "speculative"],
+}
+
+
+def _detect_capabilities(task):
+    """Return the set of catalog capability tags implied by a free-text task."""
+    t = (task or "").lower()
+    caps = set()
+    for cap, kws in CAPABILITY_KEYWORDS.items():
+        if any(kw in t for kw in kws):
+            caps.add(cap)
+    return caps
+
+
+def suggest(task, resident=None, catalog=None):
+    """Map a free-text task to the minimal VRAM-feasible agent set + models.
+
+    Reuses catalog capability tags: detect required capabilities from the task,
+    greedy-set-cover the smallest non-exclusive models that satisfy them (defaulting
+    to the most-widely-bound workhorse model when nothing matches), map those models
+    to their agents, then run a dry-run plan() for VRAM feasibility. No GPU calls.
+    Returns {ok, task, capabilities_detected, suggested_models, suggested_agents,
+             fits, plan_sequence_count, unresolved_caps}.
+    """
+    if catalog is None:
+        catalog = load_catalog()
+    mindex = _model_index(catalog)
+    task = (task or "").strip()
+    caps = _detect_capabilities(task)
+
+    candidates = []
+    for mid, entry in mindex.items():
+        mcaps = set(entry.get("capabilities") or [])
+        hit = mcaps & caps
+        if not hit:
+            continue
+        candidates.append((mid, entry, float(entry["vram_gb"]), bool(entry.get("exclusive")), hit))
+
+    if not caps:
+        # No capability matched -> default to the most-widely-bound non-exclusive workhorse.
+        fb = sorted(
+            [(m["id"], m, len(m.get("agent_profiles") or []), float(m["vram_gb"]))
+             for m in catalog.get("models", []) if not m.get("exclusive")],
+            key=lambda x: (-x[2], x[3]))
+        if fb:
+            mid, entry = fb[0][0], mindex[fb[0][0]]
+            candidates.append((mid, entry, float(entry["vram_gb"]), False, {"__default__"}))
+
+    # Greedy set cover: prefer non-exclusive + smaller VRAM first (minimal cost).
+    order = sorted(candidates, key=lambda c: (c[3], c[2]))
+    covered, chosen, remaining = set(), [], set(caps)
+    for mid, entry, vram, excl, hit in order:
+        new = hit - covered
+        if not new:
+            continue
+        chosen.append((mid, entry, vram, excl))
+        covered |= hit
+        remaining -= hit
+        if not remaining:
+            break
+
+    suggested_models = [
+        {"id": mid, "vram_gb": vram, "exclusive": excl,
+         "capabilities": sorted(entry.get("capabilities") or [])}
+        for mid, entry, vram, excl in chosen]
+    suggested_agents = []
+    for mid, entry, vram, excl in chosen:
+        for ag in entry.get("agent_profiles") or []:
+            if ag not in suggested_agents:
+                suggested_agents.append(ag)
+
+    plan_result = plan(suggested_agents, resident or {})
+    fits = bool(plan_result.get("ok")) and not any(
+        a.get("type") == "VRAM_EXCEEDED" for a in plan_result.get("alerts", []))
+
+    return {
+        "ok": True,
+        "task": task,
+        "capabilities_detected": sorted(caps) if caps else ["__default__"],
+        "suggested_models": suggested_models,
+        "suggested_agents": suggested_agents,
+        "fits": fits,
+        "plan_sequence_count": len(plan_result.get("sequence", [])),
+        "unresolved_caps": sorted(remaining),
+    }
+
+
+def suggest_selftest():
+    catalog = load_catalog()
+    failures = []
+
+    def check(name, cond, detail=""):
+        print(("PASS  " if cond else "FAIL  ") + name + ("  [" + detail + "]" if (detail and not cond) else ""))
+        if not cond:
+            failures.append(name)
+
+    t1 = suggest("write a python script to parse logs", catalog=catalog)
+    check("t1 code->q4 minimal", [m["id"] for m in t1["suggested_models"]] == ["qwen3-27b-q4"], str(t1["suggested_models"]))
+    check("t1 fits", t1["fits"] is True)
+
+    t2 = suggest("write code and design a UI", catalog=catalog)
+    check("t2 design+code single model", len(t2["suggested_models"]) == 1, str(t2["suggested_models"]))
+    check("t2 caps detected", "design" in t2["capabilities_detected"] and "code" in t2["capabilities_detected"])
+
+    t3 = suggest("generate a short video of a sunset", catalog=catalog)
+    ids3 = [m["id"] for m in t3["suggested_models"]]
+    check("t3 video->video-gen-model", "video-gen-model" in ids3, str(ids3))
+    check("t3 exclusive flagged", any(m["exclusive"] for m in t3["suggested_models"]))
+
+    t4 = suggest("summarize this 500-page book into a decision brief", catalog=catalog)
+    ids4 = [m["id"] for m in t4["suggested_models"]]
+    check("t4 long-doc->large-context-model", "large-context-model" in ids4, str(ids4))
+    check("t4 infeasible (48GB>32GB) fits=False", t4["fits"] is False)
+
+    t5 = suggest("hello there", catalog=catalog)
+    check("t5 default->q4 workhorse", [m["id"] for m in t5["suggested_models"]] == ["qwen3-27b-q4"], str(t5["suggested_models"]))
+    check("t5 fits", t5["fits"] is True)
+
+    print("\n%d/%d suggest checks passed" % (6 - len(failures), 6))
+    if failures:
+        print("FAILED:", failures)
+        return 1
+    print("ALL SUGGEST CASES PASS on real catalog")
+    return 0
+
+
 def _parse_kv(s, sep=";"):
     out = {}
     for chunk in filter(None, s.split(sep)):
@@ -626,6 +770,17 @@ def execute(plan_result, catalog=None, dry_run=False):
 
 
 def main(argv):
+    if "--suggest-selftest" in argv:
+        return suggest_selftest()
+    if "--suggest" in argv:
+        task = resident_s = None
+        for a in argv:
+            if a.startswith("task="):
+                task = a[len("task="):]
+            elif a.startswith("resident="):
+                resident_s = _parse_kv(a[len("resident="):])
+        print(json.dumps(suggest(task, resident_s or {}), indent=2))
+        return 0
     if "--selftest" in argv:
         return selftest()
     if "--execute" in argv:

@@ -99,3 +99,5 @@
 {"ts": "2026-11-18 23:13:20", "file": "agent_portal.py", "sha": "6d9551239b", "size": 258946, "snapshot": "memory/ops/merge-queue/agent_portal.py.6d9551239b"}
 {"ts": "2026-11-18 23:13:20", "file": "ui/app.css", "sha": "b8a032f2be", "size": 37200, "snapshot": null}
 {"ts": "2026-11-18 23:13:20", "file": "ui/core.js", "sha": "675251b46f", "size": 40143, "snapshot": null}
+{"ts": "2026-11-18 23:56:16", "file": "agent_portal.py", "sha": "1253cc4b15", "size": 260114, "snapshot": "memory/ops/merge-queue/agent_portal.py.1253cc4b15"}
+{"ts": "2026-11-18 23:56:16", "file": "recover_all.py", "sha": "2ea004d8e3", "size": 8952, "snapshot": "memory/ops/merge-queue/recover_all.py.2ea004d8e3"}
