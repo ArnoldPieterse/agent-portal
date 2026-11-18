@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- stale_claim_check.py had .json/.jsonl extension mismatch causing 99 false positives; patched with sibling-extension fallback (132→
 - Fleet at 78/80 after recording 4 Archivist goals with on-disk
 - Scribe documented stale goal-reference bug in `_autoloop_behaviour_hint()` (phantom open items #5/#7/#9); ~15-line validation fix recommende
 - asset_budget_check.py created; uploads.js 27.3K exceeds 10K per-file budget, total CSS+JS 70K under 80K cap
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mech
 - Fleet at 74/80; remaining open: archivist 5 + mechanic 1 (reboot recovery, needs non-sandbox deploy). Researcher idle at 10/10.
 - Designer submitted runbook for Mechanic #4 and security dashboard panel for Verifier #5 as solution attempts; fleet at 74/
+- Goal #4: all 4 hosts pass dry-run; remaining = schtask registration per host (needs pywinrm on White or manual --register-task).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

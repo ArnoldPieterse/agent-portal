@@ -269,3 +269,4 @@
 {"ts": "2026-11-18 16:42:29", "run": "g-1a1ed648289-f5cc0c", "missing": {"Verifier": "unreachable", "Orchestrator": "unreachable", "Builder": "unreachable", "Researcher": "unreachable", "Archivist": "unreachable"}}
 {"ts": "2026-11-18 16:52:06", "run": "g-1a1ed6d4f3c-b44d60", "missing": {"Mechanic": "unreachable", "Scribe": "unreachable", "Archivist": "unreachable"}}
 {"ts": "2026-11-18 16:54:02", "run": "g-1a1ed6edb25-0bc93b", "missing": {"Archivist": "unreachable"}}
+{"ts": "2026-11-18 17:16:36", "run": "g-1a1ed83beae-553257", "missing": {"Researcher": "unreachable", "Archivist": "unreachable"}}
