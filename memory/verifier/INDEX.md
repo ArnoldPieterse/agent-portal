@@ -74,3 +74,5 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 
 - scribe-goal6-truncation-fix-2026-11-18.md — Fixed truncated evidence filename in Scribe goal #6 verified marker (`.m` → `.md`). Evidence file confirmed exists at full path. 3 other truncations noted but not fixed (prose-level, need original author).
 - mechanic-goal2-auto-restart-verify-2026-11-19.md — Mechanic #2 partial pass: failure/escalation path verified; success path untested
+
+- 2026-11-19 (Verifier): stale_claim_check.py .json/.jsonl fallback fix verified PASS (58 MISSING / 0 STALE, matches Researcher's report). Leaf: memory/verifier/stale-claim-fallback-verified-2026-11-19.md
