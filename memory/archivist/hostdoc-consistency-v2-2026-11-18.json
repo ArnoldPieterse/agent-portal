@@ -1,132 +1,236 @@
 {
  "date": "2026-11-18",
  "script": "memory/archivist/hostdoc_consistency_v2.py",
- "files_scanned": 80,
- "refs_checked": 1202,
+ "files_scanned": 81,
+ "refs_checked": 1206,
  "counts": {
-  "OK": 905,
-  "MOVED": 245,
-  "DOCUMENTED-ABSENT": 13,
-  "OK-EXTERNAL": 2,
-  "ANNOTATED": 23,
+  "MOVED": 228,
+  "OK": 773,
+  "PHANTOM": 133,
+  "DOCUMENTED-ABSENT": 31,
+  "OK-EXTERNAL": 1,
+  "ANNOTATED": 26,
   "OK-PREFIX": 4,
   "PROVENANCE": 9,
   "OK-DOCUMENTED": 1
  },
- "phantoms_found": 0,
- "unique_phantoms": [],
+ "phantoms_found": 133,
+ "unique_phantoms": [
+  "TODO_archive_20261111.md",
+  "Users/White/.agents/skills/portal-memory-modular/SKILL.md",
+  "backend_swap_drill_result.json",
+  "black_dual_load_result.json",
+  "black_hash_q8.ps1",
+  "black_hash_q8_out2.txt",
+  "citation_monitor_v2.py",
+  "copy_tail/q8_red2.log",
+  "d7_d9_cdp_verify.py",
+  "daily_git_commit.py",
+  "docs.pytest.org/en/stable/how-to/cache.html",
+  "elev.py",
+  "elev_trustedhosts.ps1",
+  "elevated_helper.py",
+  "evolution.py",
+  "fleet_probe.log",
+  "fleet_probe.py",
+  "fleet_reload_result.json",
+  "goal_cycle_check.py",
+  "group_e2e.log",
+  "group_e2e_result.json",
+  "group_e2e_result_8agent.json",
+  "install_elevated_helper.bat",
+  "memory/designer/d7_d9_cdp_verify.py",
+  "merge_red_agents.py",
+  "model_benchmark.py",
+  "model_list_now.json",
+  "mstsc_shots.ps1",
+  "open_questions_flag.py",
+  "pale_cancel.py",
+  "parity_audit.py",
+  "portal_loadtest.py",
+  "portal_run.log",
+  "portal_run_err.log",
+  "portal_watchdog.py",
+  "probe_black.py",
+  "probe_black_winrm2.ps1",
+  "q8_black.log",
+  "q8_black2.log",
+  "q8_pale.log",
+  "q8_pale2.log",
+  "q8_red2.log",
+  "r2_smoke_result.txt",
+  "r2_smoke_wait.py",
+  "recover_force_result.json",
+  "recover_result.json",
+  "red_agents_ready.json",
+  "red_chain_result.json",
+  "red_dual_load.py",
+  "red_dual_load_result.json",
+  "red_hash_q8.ps1",
+  "red_manual_verify.py",
+  "red_probe.py",
+  "red_q8_wait2.py",
+  "red_realias.py",
+  "red_setup_result.json",
+  "red_setup_result2.json",
+  "red_smoke.py",
+  "red_smoke_result.json",
+  "run_state.json",
+  "scan_red.py",
+  "serial_e2e_result.json",
+  "serial_e2e_wait.py",
+  "smoke6.py",
+  "todo_freshness_check.py",
+  "trigger_group_run.log",
+  "tunnel_urls.json",
+  "user_messages.json",
+  "white_realias_result.json"
+ ],
  "details": [
   {
    "file": "MEMORY.md",
    "line": 4,
+   "ref": "gen_api_ref.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/gen_api_ref.py"
+   ]
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 4,
+   "ref": "ingest.py",
+   "status": "MOVED",
+   "actual": [
+    "memory/archivist/ingest.py"
+   ]
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 4,
+   "ref": "ONBOARDING.md",
+   "status": "MOVED",
+   "actual": [
+    "memory/ONBOARDING.md"
+   ]
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 7,
    "ref": "memory/ops/host-port-task-map-2026-11-15.md",
    "status": "OK"
   },
   {
    "file": "MEMORY.md",
-   "line": 7,
+   "line": 10,
    "ref": "memory/portal/file-modularity.md",
    "status": "OK"
   },
   {
    "file": "MEMORY.md",
-   "line": 8,
+   "line": 11,
    "ref": "index.html",
    "status": "OK"
   },
   {
    "file": "MEMORY.md",
-   "line": 12,
+   "line": 15,
    "ref": "memory/ops/autoloop.md",
    "status": "OK"
   },
   {
    "file": "MEMORY.md",
-   "line": 15,
+   "line": 18,
    "ref": "llm/instances.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/instances.md",
+    "AgentPortal_V1-git/memory/llm/instances.md",
+    "gapfix-test/memory/llm/instances.md",
     "memory/llm/instances.md"
    ]
   },
   {
    "file": "MEMORY.md",
-   "line": 15,
+   "line": 18,
    "ref": "portal/architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
   {
    "file": "MEMORY.md",
-   "line": 15,
+   "line": 18,
    "ref": "portal/bugs/xtalk-completion.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/bugs/xtalk-completion.md",
+    "AgentPortal_V1-git/memory/portal/bugs/xtalk-completion.md",
+    "gapfix-test/memory/portal/bugs/xtalk-completion.md",
     "memory/portal/bugs/xtalk-completion.md"
    ]
   },
   {
    "file": "MEMORY.md",
-   "line": 15,
+   "line": 18,
    "ref": "llm/instances.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/instances.md",
+    "AgentPortal_V1-git/memory/llm/instances.md",
+    "gapfix-test/memory/llm/instances.md",
     "memory/llm/instances.md"
    ]
   },
   {
    "file": "MEMORY.md",
-   "line": 15,
+   "line": 18,
    "ref": "ops/windows-runbook.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "AgentPortal_V1-git/memory/ops/windows-runbook.md",
+    "gapfix-test/memory/ops/windows-runbook.md",
     "memory/ops/windows-runbook.md"
    ]
   },
   {
    "file": "MEMORY.md",
-   "line": 15,
+   "line": 18,
    "ref": "ops/probes.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/probes.md",
+    "AgentPortal_V1-git/memory/ops/probes.md",
+    "gapfix-test/memory/ops/probes.md",
     "memory/ops/probes.md"
    ]
   },
   {
    "file": "MEMORY.md",
-   "line": 17,
+   "line": 20,
    "ref": "TODO.md",
    "status": "OK"
   },
   {
    "file": "MEMORY.md",
-   "line": 25,
-   "ref": "fleet_probe.py",
-   "status": "OK"
-  },
-  {
-   "file": "MEMORY.md",
-   "line": 26,
-   "ref": "elev.py",
-   "status": "OK"
-  },
-  {
-   "file": "MEMORY.md",
    "line": 27,
+   "ref": "fleet_probe.py",
+   "status": "PHANTOM"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 28,
+   "ref": "elev.py",
+   "status": "DOCUMENTED-ABSENT"
+  },
+  {
+   "file": "MEMORY.md",
+   "line": 29,
    "ref": "memory/mechanic/goal4_closure_oneshot.py",
    "status": "OK"
   },
   {
    "file": "MEMORY.md",
-   "line": 28,
+   "line": 30,
    "ref": "deploy_reboot_recovery_all.py",
    "status": "MOVED",
    "actual": [
@@ -135,57 +239,57 @@
   },
   {
    "file": "MEMORY.md",
-   "line": 30,
+   "line": 32,
    "ref": "agent_portal.py",
    "status": "OK"
   },
   {
    "file": "MEMORY.md",
-   "line": 35,
+   "line": 38,
    "ref": "elevated_helper.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "MEMORY.md",
-   "line": 35,
+   "line": 38,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "MEMORY.md",
-   "line": 35,
+   "line": 38,
    "ref": "install_elevated_helper.bat",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "MEMORY.md",
-   "line": 35,
+   "line": 38,
    "ref": "agent_portal.py",
    "status": "OK"
   },
   {
    "file": "MEMORY.md",
-   "line": 35,
+   "line": 38,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "MEMORY.md",
-   "line": 35,
+   "line": 38,
    "ref": "install_elevated_helper.bat",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "MEMORY.md",
-   "line": 35,
+   "line": 38,
    "ref": "agent_portal.py",
    "status": "OK"
   },
   {
    "file": "MEMORY.md",
-   "line": 35,
+   "line": 38,
    "ref": "portal_loadtest.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -296,7 +400,10 @@
    "file": "TODO.md",
    "line": 23,
    "ref": "restart_portal.py",
-   "status": "OK"
+   "status": "MOVED",
+   "actual": [
+    "memory/ops/restart_portal.py"
+   ]
   },
   {
    "file": "TODO.md",
@@ -383,7 +490,7 @@
    "file": "TODO.md",
    "line": 43,
    "ref": "netcmd.py",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "TODO.md",
@@ -425,7 +532,7 @@
    "file": "TODO.md",
    "line": 52,
    "ref": "tunnel_urls.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -455,19 +562,19 @@
    "file": "TODO.md",
    "line": 66,
    "ref": "user_messages.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 67,
    "ref": "recover_force_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 67,
    "ref": "trigger_group_run.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -476,15 +583,15 @@
    "status": "MOVED",
    "actual": [
     "README.md",
-    "AgentPortal_V1/README.md",
-    "archive/README.md"
+    "AgentPortal_V1-git/README.md",
+    "gapfix-test/README.md"
    ]
   },
   {
    "file": "TODO.md",
    "line": 71,
    "ref": "evolution.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -510,7 +617,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -532,7 +640,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -542,7 +651,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -558,7 +668,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -578,13 +689,13 @@
    "file": "TODO.md",
    "line": 86,
    "ref": "fleet_probe.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 86,
    "ref": "daily_git_commit.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -602,7 +713,7 @@
    "file": "TODO.md",
    "line": 91,
    "ref": "fleet_reload_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -665,7 +776,7 @@
    "file": "TODO.md",
    "line": 99,
    "ref": "Users/White/.agents/skills/portal-memory-modular/SKILL.md",
-   "status": "OK-EXTERNAL"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -695,7 +806,7 @@
    "file": "TODO.md",
    "line": 107,
    "ref": "backend_swap_drill_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -709,9 +820,9 @@
    "ref": "bugs/INDEX.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/INDEX.md",
-    "AgentPortal_V1/memory/llm/INDEX.md",
-    "AgentPortal_V1/memory/ops/INDEX.md"
+    "AgentPortal_V1-git/memory/INDEX.md",
+    "AgentPortal_V1-git/memory/agents/INDEX.md",
+    "AgentPortal_V1-git/memory/llm/INDEX.md"
    ]
   },
   {
@@ -757,13 +868,13 @@
    "file": "TODO.md",
    "line": 115,
    "ref": "daily_git_commit.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 116,
    "ref": "fleet_probe.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -777,7 +888,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -796,9 +908,9 @@
    "ref": "builder/INDEX.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/INDEX.md",
-    "AgentPortal_V1/memory/llm/INDEX.md",
-    "AgentPortal_V1/memory/ops/INDEX.md"
+    "AgentPortal_V1-git/memory/INDEX.md",
+    "AgentPortal_V1-git/memory/agents/INDEX.md",
+    "AgentPortal_V1-git/memory/llm/INDEX.md"
    ]
   },
   {
@@ -819,7 +931,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -863,10 +976,7 @@
    "file": "TODO.md",
    "line": 132,
    "ref": "white_realias_result.json",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/white_realias_result.json"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -874,7 +984,8 @@
    "ref": "llm/studio-api.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/studio-api.md",
+    "AgentPortal_V1-git/memory/llm/studio-api.md",
+    "gapfix-test/memory/llm/studio-api.md",
     "memory/llm/studio-api.md"
    ]
   },
@@ -884,7 +995,8 @@
    "ref": "llm/hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -1122,9 +1234,9 @@
    "ref": "goals/INDEX.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/INDEX.md",
-    "AgentPortal_V1/memory/llm/INDEX.md",
-    "AgentPortal_V1/memory/ops/INDEX.md"
+    "AgentPortal_V1-git/memory/INDEX.md",
+    "AgentPortal_V1-git/memory/agents/INDEX.md",
+    "AgentPortal_V1-git/memory/llm/INDEX.md"
    ]
   },
   {
@@ -1151,9 +1263,9 @@
    "ref": "synthesis/INDEX.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/INDEX.md",
-    "AgentPortal_V1/memory/llm/INDEX.md",
-    "AgentPortal_V1/memory/ops/INDEX.md"
+    "AgentPortal_V1-git/memory/INDEX.md",
+    "AgentPortal_V1-git/memory/agents/INDEX.md",
+    "AgentPortal_V1-git/memory/llm/INDEX.md"
    ]
   },
   {
@@ -1322,8 +1434,8 @@
    "status": "MOVED",
    "actual": [
     "MEMORY.md",
-    "AgentPortal_V1/MEMORY.md",
-    "agents/orchestrator/MEMORY.md"
+    "AgentPortal_V1-git/MEMORY.md",
+    "AgentPortal_V1-git/memory/orchestrator/MEMORY.md"
    ]
   },
   {
@@ -1423,8 +1535,8 @@
    "status": "MOVED",
    "actual": [
     "MEMORY.md",
-    "AgentPortal_V1/MEMORY.md",
-    "agents/orchestrator/MEMORY.md"
+    "AgentPortal_V1-git/MEMORY.md",
+    "AgentPortal_V1-git/memory/orchestrator/MEMORY.md"
    ]
   },
   {
@@ -1608,8 +1720,8 @@
    "status": "MOVED",
    "actual": [
     "TODO.md",
-    "AgentPortal_V1/TODO.md",
-    "agents/orchestrator/TODO.md"
+    "AgentPortal_V1-git/TODO.md",
+    "AgentPortal_V1-git/memory/orchestrator/TODO.md"
    ]
   },
   {
@@ -1711,7 +1823,8 @@
    "ref": "architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -1853,7 +1966,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -1861,19 +1975,19 @@
    "file": "TODO.md",
    "line": 349,
    "ref": "red_setup_result2.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 349,
    "ref": "red_manual_verify.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 349,
    "ref": "red_chain_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -1881,7 +1995,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -1889,31 +2004,31 @@
    "file": "TODO.md",
    "line": 352,
    "ref": "red_q8_wait2.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 352,
    "ref": "red_setup_result2.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 352,
    "ref": "red_chain_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 356,
    "ref": "q8_red2.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 356,
    "ref": "red_setup_result2.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -1925,7 +2040,7 @@
    "file": "TODO.md",
    "line": 356,
    "ref": "red_smoke.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -1943,43 +2058,43 @@
    "file": "TODO.md",
    "line": 358,
    "ref": "red_chain_result.json",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "TODO.md",
    "line": 359,
    "ref": "red_setup_result2.json",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "TODO.md",
    "line": 359,
    "ref": "red_chain_result.json",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "TODO.md",
    "line": 359,
    "ref": "red_chain_result.json",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "TODO.md",
    "line": 360,
    "ref": "q8_red2.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 360,
    "ref": "red_setup_result2.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 360,
    "ref": "red_q8_wait2.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -1993,7 +2108,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -2001,67 +2117,55 @@
    "file": "TODO.md",
    "line": 364,
    "ref": "black_hash_q8_out2.txt",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/black_hash_q8_out2.txt"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 364,
    "ref": "pale_cancel.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 365,
    "ref": "copy_tail/q8_red2.log",
-   "status": "MOVED",
-   "actual": [
-    "q8_red2.log"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 368,
    "ref": "red_hash_q8.ps1",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 368,
    "ref": "black_hash_q8.ps1",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/black_hash_q8.ps1"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 368,
    "ref": "black_hash_q8_out2.txt",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/black_hash_q8_out2.txt"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 369,
    "ref": "smoke6.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 369,
    "ref": "group_e2e_result_8agent.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 369,
    "ref": "red_smoke.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2073,7 +2177,7 @@
    "file": "TODO.md",
    "line": 370,
    "ref": "red_smoke.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2091,19 +2195,19 @@
    "file": "TODO.md",
    "line": 370,
    "ref": "red_chain_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 371,
    "ref": "red_agents_ready.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 371,
    "ref": "merge_red_agents.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2115,19 +2219,19 @@
    "file": "TODO.md",
    "line": 371,
    "ref": "red_dual_load.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 371,
    "ref": "red_dual_load_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 371,
    "ref": "red_realias.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2163,37 +2267,37 @@
    "file": "TODO.md",
    "line": 374,
    "ref": "red_agents_ready.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 378,
    "ref": "red_setup_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 378,
    "ref": "red_dual_load.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 378,
    "ref": "red_dual_load_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 378,
    "ref": "red_realias.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 378,
    "ref": "red_agents_ready.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2205,7 +2309,7 @@
    "file": "TODO.md",
    "line": 378,
    "ref": "merge_red_agents.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2213,7 +2317,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -2221,19 +2326,19 @@
    "file": "TODO.md",
    "line": 382,
    "ref": "serial_e2e_wait.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 383,
    "ref": "recover_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 384,
    "ref": "serial_e2e_wait.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2245,19 +2350,19 @@
    "file": "TODO.md",
    "line": 384,
    "ref": "serial_e2e_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 384,
    "ref": "group_e2e.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 384,
    "ref": "group_e2e_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2265,7 +2370,8 @@
    "ref": "ops/windows-runbook.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "AgentPortal_V1-git/memory/ops/windows-runbook.md",
+    "gapfix-test/memory/ops/windows-runbook.md",
     "memory/ops/windows-runbook.md"
    ]
   },
@@ -2273,25 +2379,25 @@
    "file": "TODO.md",
    "line": 386,
    "ref": "serial_e2e_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 386,
    "ref": "group_e2e.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 392,
    "ref": "q8_black2.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 393,
    "ref": "black_dual_load_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2303,34 +2409,31 @@
    "file": "TODO.md",
    "line": 400,
    "ref": "r2_smoke_result.txt",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 406,
    "ref": "q8_pale2.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 406,
    "ref": "q8_black2.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 409,
    "ref": "r2_smoke_wait.py",
-   "status": "MOVED",
-   "actual": [
-    "archive/one_shot_tasks_20261117/r2_smoke_wait.py"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 409,
    "ref": "r2_smoke_result.txt",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2342,7 +2445,7 @@
    "file": "TODO.md",
    "line": 412,
    "ref": "q8_pale.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2354,34 +2457,31 @@
    "file": "TODO.md",
    "line": 413,
    "ref": "probe_black.py",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/probe_black.py"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 416,
    "ref": "q8_pale.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 416,
    "ref": "q8_black.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 419,
    "ref": "scan_red.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 421,
    "ref": "red_probe.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2389,18 +2489,16 @@
    "ref": "probe_quinn.py",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/probes/probe_quinn.py",
-    "archive/orphaned_20261117/probe_quinn.py"
+    "AgentPortal_V1-git/probes/probe_quinn.py",
+    "gapfix-test/probes/probe_quinn.py",
+    "uploads/AgentPortal_V1/probes/probe_quinn.py"
    ]
   },
   {
    "file": "TODO.md",
    "line": 441,
    "ref": "probe_black.py",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/probe_black.py"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2412,22 +2510,19 @@
    "file": "TODO.md",
    "line": 443,
    "ref": "probe_black.py",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/probe_black.py"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 445,
    "ref": "probe_black_winrm2.ps1",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 445,
    "ref": "elev_trustedhosts.ps1",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2451,16 +2546,13 @@
    "file": "TODO.md",
    "line": 451,
    "ref": "r2_smoke_result.txt",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 451,
    "ref": "r2_smoke_wait.py",
-   "status": "MOVED",
-   "actual": [
-    "archive/one_shot_tasks_20261117/r2_smoke_wait.py"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2474,7 +2566,8 @@
    "ref": "ops/windows-runbook.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "AgentPortal_V1-git/memory/ops/windows-runbook.md",
+    "gapfix-test/memory/ops/windows-runbook.md",
     "memory/ops/windows-runbook.md"
    ]
   },
@@ -2482,7 +2575,7 @@
    "file": "TODO.md",
    "line": 461,
    "ref": "scan_red.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2502,7 +2595,8 @@
    "ref": "architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -2524,9 +2618,9 @@
    "ref": "bugs/INDEX.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/INDEX.md",
-    "AgentPortal_V1/memory/llm/INDEX.md",
-    "AgentPortal_V1/memory/ops/INDEX.md"
+    "AgentPortal_V1-git/memory/INDEX.md",
+    "AgentPortal_V1-git/memory/agents/INDEX.md",
+    "AgentPortal_V1-git/memory/llm/INDEX.md"
    ]
   },
   {
@@ -2569,10 +2663,7 @@
    "file": "TODO.md",
    "line": 473,
    "ref": "model_list_now.json",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/model_list_now.json"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2626,19 +2717,19 @@
    "file": "TODO.md",
    "line": 511,
    "ref": "TODO_archive_20261111.md",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 522,
    "ref": "recover_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 523,
    "ref": "fleet_reload_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2656,7 +2747,7 @@
    "file": "TODO.md",
    "line": 527,
    "ref": "goal_cycle_check.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2674,31 +2765,31 @@
    "file": "TODO.md",
    "line": 527,
    "ref": "todo_freshness_check.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 527,
    "ref": "citation_monitor_v2.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 527,
    "ref": "parity_audit.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 527,
    "ref": "open_questions_flag.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
    "line": 527,
    "ref": "model_benchmark.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "TODO.md",
@@ -2746,7 +2837,7 @@
    "file": "memory/ONBOARDING.md",
    "line": 20,
    "ref": "user_messages.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ONBOARDING.md",
@@ -3018,7 +3109,7 @@
    "file": "memory/ONBOARDING.md",
    "line": 120,
    "ref": "user_messages.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ONBOARDING.md",
@@ -3064,6 +3155,12 @@
    "line": 133,
    "ref": "memory/INDEX.md",
    "status": "OK"
+  },
+  {
+   "file": "memory/ops/.pytest_cache/README.md",
+   "line": 8,
+   "ref": "docs.pytest.org/en/stable/how-to/cache.html",
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/INDEX.md",
@@ -3195,7 +3292,7 @@
    "file": "memory/ops/INDEX.md",
    "line": 28,
    "ref": "portal_watchdog.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/INDEX.md",
@@ -3565,19 +3662,19 @@
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
    "line": 14,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
    "line": 21,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
    "line": 23,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
@@ -3601,7 +3698,7 @@
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
    "line": 38,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
@@ -3631,7 +3728,7 @@
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
    "line": 65,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
@@ -3652,7 +3749,7 @@
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
    "line": 81,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
@@ -3679,7 +3776,7 @@
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
    "line": 108,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
@@ -3706,7 +3803,7 @@
    "file": "memory/ops/black-reload-2026-11-15.md",
    "line": 13,
    "ref": "tunnel_urls.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/black-studio-failover-2026-11-16.md",
@@ -3724,7 +3821,7 @@
    "file": "memory/ops/black-studio-failover-2026-11-16.md",
    "line": 16,
    "ref": "run_state.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/blockers.md",
@@ -3742,7 +3839,7 @@
    "file": "memory/ops/blockers.md",
    "line": 19,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/blockers.md",
@@ -3766,7 +3863,7 @@
    "file": "memory/ops/blockers.md",
    "line": 26,
    "ref": "d7_d9_cdp_verify.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/blockers.md",
@@ -3796,10 +3893,7 @@
    "file": "memory/ops/blockers.md",
    "line": 29,
    "ref": "memory/designer/d7_d9_cdp_verify.py",
-   "status": "MOVED",
-   "actual": [
-    "d7_d9_cdp_verify.py"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/blockers.md",
@@ -3823,13 +3917,13 @@
    "file": "memory/ops/blockers.md",
    "line": 44,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/blockers.md",
    "line": 44,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/blockers.md",
@@ -3877,7 +3971,7 @@
    "file": "memory/ops/blockers.md",
    "line": 53,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/blockers.md",
@@ -3889,7 +3983,7 @@
    "file": "memory/ops/blockers.md",
    "line": 77,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/blockers.md",
@@ -4462,7 +4556,7 @@
    "file": "memory/ops/fleet-state-2026-11-15.md",
    "line": 13,
    "ref": "portal_run_err.log",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/fleet-state-2026-11-15.md",
@@ -4510,7 +4604,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -4520,9 +4615,9 @@
    "ref": "portal/INDEX.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/INDEX.md",
-    "AgentPortal_V1/memory/llm/INDEX.md",
-    "AgentPortal_V1/memory/ops/INDEX.md"
+    "AgentPortal_V1-git/memory/INDEX.md",
+    "AgentPortal_V1-git/memory/agents/INDEX.md",
+    "AgentPortal_V1-git/memory/llm/INDEX.md"
    ]
   },
   {
@@ -4531,7 +4626,8 @@
    "ref": "architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -4590,8 +4686,8 @@
    "status": "MOVED",
    "actual": [
     "index.html",
-    "AgentPortal_V1/index.html",
-    "calculator-app/index.html"
+    "AgentPortal_V1-git/index.html",
+    "AgentPortal_V1-git/u4-test-app/index.html"
    ]
   },
   {
@@ -4610,10 +4706,7 @@
    "file": "memory/ops/goal-progress-2026-11-16.md",
    "line": 23,
    "ref": "memory/builder/test_truncation_detect.py",
-   "status": "MOVED",
-   "actual": [
-    "test_truncation_detect.py"
-   ]
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/goal-progress-2026-11-16.md",
@@ -4636,7 +4729,8 @@
    "ref": "architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -4646,7 +4740,8 @@
    "ref": "architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -4728,7 +4823,8 @@
    "ref": "architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -4754,7 +4850,7 @@
    "file": "memory/ops/host-port-task-map-2026-11-15.md",
    "line": 4,
    "ref": "fleet_probe.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/host-port-task-map-2026-11-15.md",
@@ -4786,7 +4882,8 @@
    "ref": "windows-runbook.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "AgentPortal_V1-git/memory/ops/windows-runbook.md",
+    "gapfix-test/memory/ops/windows-runbook.md",
     "memory/ops/windows-runbook.md"
    ]
   },
@@ -4800,13 +4897,13 @@
    "file": "memory/ops/host-port-task-map-2026-11-15.md",
    "line": 23,
    "ref": "fleet_probe.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/host-port-task-map-2026-11-15.md",
    "line": 23,
    "ref": "fleet_probe.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/host-port-task-map-2026-11-15.md",
@@ -4820,7 +4917,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -5004,7 +5102,8 @@
    "ref": "architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -5102,7 +5201,7 @@
    "file": "memory/ops/left-orchestrator.md",
    "line": 4,
    "ref": "backend_swap_drill_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/left-orchestrator.md",
@@ -5252,7 +5351,7 @@
    "file": "memory/ops/loadtest/closure_runbook.md",
    "line": 7,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/loadtest/closure_runbook.md",
@@ -5447,7 +5546,8 @@
    "ref": "windows-runbook.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "AgentPortal_V1-git/memory/ops/windows-runbook.md",
+    "gapfix-test/memory/ops/windows-runbook.md",
     "memory/ops/windows-runbook.md"
    ]
   },
@@ -5590,7 +5690,8 @@
    "ref": "windows-runbook.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "AgentPortal_V1-git/memory/ops/windows-runbook.md",
+    "gapfix-test/memory/ops/windows-runbook.md",
     "memory/ops/windows-runbook.md"
    ]
   },
@@ -5709,19 +5810,13 @@
    "file": "memory/ops/memory-trim-archive-2026-11-14.md",
    "line": 15,
    "ref": "white_realias_rename.py",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/white_realias_rename.py"
-   ]
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/memory-trim-archive-2026-11-14.md",
    "line": 15,
    "ref": "white_realias_result.json",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/white_realias_result.json"
-   ]
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/memory-trim-archive-2026-11-14.md",
@@ -5781,7 +5876,7 @@
    "file": "memory/ops/memory-trim-archive-2026-11-14.md",
    "line": 24,
    "ref": "smb_fix.ps1",
-   "status": "OK"
+   "status": "ANNOTATED"
   },
   {
    "file": "memory/ops/memory-trim-archive-2026-11-14.md",
@@ -5807,7 +5902,8 @@
    "ref": "portal/architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -5818,8 +5914,8 @@
    "status": "MOVED",
    "actual": [
     "agent_portal.py",
-    "AgentPortal_V1/agent_portal.py",
-    "memory/builder/canary/black/agent_portal.py"
+    "AgentPortal_V1-git/agent_portal.py",
+    "gapfix-test/agent_portal.py"
    ]
   },
   {
@@ -5834,7 +5930,8 @@
    "ref": "portal/architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -5850,7 +5947,8 @@
    "ref": "portal/architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -5860,7 +5958,8 @@
    "ref": "llm/instances.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/instances.md",
+    "AgentPortal_V1-git/memory/llm/instances.md",
+    "gapfix-test/memory/llm/instances.md",
     "memory/llm/instances.md"
    ]
   },
@@ -5870,7 +5969,8 @@
    "ref": "portal/architecture.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/architecture.md",
+    "AgentPortal_V1-git/memory/portal/architecture.md",
+    "gapfix-test/memory/portal/architecture.md",
     "memory/portal/architecture.md"
    ]
   },
@@ -5880,7 +5980,8 @@
    "ref": "portal/bugs/xtalk-completion.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/portal/bugs/xtalk-completion.md",
+    "AgentPortal_V1-git/memory/portal/bugs/xtalk-completion.md",
+    "gapfix-test/memory/portal/bugs/xtalk-completion.md",
     "memory/portal/bugs/xtalk-completion.md"
    ]
   },
@@ -5890,7 +5991,8 @@
    "ref": "llm/instances.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/instances.md",
+    "AgentPortal_V1-git/memory/llm/instances.md",
+    "gapfix-test/memory/llm/instances.md",
     "memory/llm/instances.md"
    ]
   },
@@ -5900,7 +6002,8 @@
    "ref": "ops/windows-runbook.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "AgentPortal_V1-git/memory/ops/windows-runbook.md",
+    "gapfix-test/memory/ops/windows-runbook.md",
     "memory/ops/windows-runbook.md"
    ]
   },
@@ -5910,7 +6013,8 @@
    "ref": "ops/probes.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/probes.md",
+    "AgentPortal_V1-git/memory/ops/probes.md",
+    "gapfix-test/memory/ops/probes.md",
     "memory/ops/probes.md"
    ]
   },
@@ -6110,7 +6214,7 @@
    "file": "memory/ops/non-sandbox-queue.md",
    "line": 7,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/non-sandbox-queue.md",
@@ -6479,30 +6583,25 @@
    "file": "memory/ops/portal-down-2026-11-15.md",
    "line": 28,
    "ref": "recover_force_result.json",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/portal-down-2026-11-15.md",
    "line": 28,
    "ref": "trigger_group_run.log",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/portal-down-2026-11-16.md",
    "line": 7,
    "ref": "portal_run_err.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/portal-down-2026-11-16.md",
    "line": 9,
    "ref": "/agent_portal.py",
-   "status": "MOVED",
-   "actual": [
-    "agent_portal.py",
-    "AgentPortal_V1/agent_portal.py",
-    "memory/builder/canary/black/agent_portal.py"
-   ]
+   "status": "OK"
   },
   {
    "file": "memory/ops/portal-down-2026-11-16.md",
@@ -6520,13 +6619,13 @@
    "file": "memory/ops/portal-outage-2026-11-15-1825.md",
    "line": 5,
    "ref": "recover_force_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/portal-outage-2026-11-15-1825.md",
    "line": 19,
    "ref": "recover_force_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/portal-outage-2026-11-15-1825.md",
@@ -6546,7 +6645,8 @@
    "ref": "windows-runbook.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "AgentPortal_V1-git/memory/ops/windows-runbook.md",
+    "gapfix-test/memory/ops/windows-runbook.md",
     "memory/ops/windows-runbook.md"
    ]
   },
@@ -6554,7 +6654,7 @@
    "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
    "line": 6,
    "ref": "portal_run_err.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/portal-permissionerror-fix-2026-11-16.md",
@@ -6563,8 +6663,8 @@
    "status": "MOVED",
    "actual": [
     "agent_portal.py",
-    "AgentPortal_V1/agent_portal.py",
-    "memory/builder/canary/black/agent_portal.py"
+    "AgentPortal_V1-git/agent_portal.py",
+    "gapfix-test/agent_portal.py"
    ]
   },
   {
@@ -6597,7 +6697,8 @@
    "ref": "windows-runbook.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/ops/windows-runbook.md",
+    "AgentPortal_V1-git/memory/ops/windows-runbook.md",
+    "gapfix-test/memory/ops/windows-runbook.md",
     "memory/ops/windows-runbook.md"
    ]
   },
@@ -6613,8 +6714,9 @@
    "ref": "smoke_e2e.py",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/probes/smoke_e2e.py",
-    "archive/orphaned_20261117/smoke_e2e.py"
+    "AgentPortal_V1-git/probes/smoke_e2e.py",
+    "gapfix-test/probes/smoke_e2e.py",
+    "uploads/AgentPortal_V1/probes/smoke_e2e.py"
    ]
   },
   {
@@ -6623,8 +6725,9 @@
    "ref": "silent_probe2.py",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/probes/silent_probe2.py",
-    "archive/orphaned_20261117/silent_probe2.py"
+    "AgentPortal_V1-git/probes/silent_probe2.py",
+    "gapfix-test/probes/silent_probe2.py",
+    "uploads/AgentPortal_V1/probes/silent_probe2.py"
    ]
   },
   {
@@ -6633,8 +6736,9 @@
    "ref": "probe_quinn.py",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/probes/probe_quinn.py",
-    "archive/orphaned_20261117/probe_quinn.py"
+    "AgentPortal_V1-git/probes/probe_quinn.py",
+    "gapfix-test/probes/probe_quinn.py",
+    "uploads/AgentPortal_V1/probes/probe_quinn.py"
    ]
   },
   {
@@ -6643,8 +6747,9 @@
    "ref": "test_group.py",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/probes/test_group.py",
-    "archive/orphaned_20261117/test_group.py"
+    "AgentPortal_V1-git/probes/test_group.py",
+    "gapfix-test/probes/test_group.py",
+    "uploads/AgentPortal_V1/probes/test_group.py"
    ]
   },
   {
@@ -6653,8 +6758,9 @@
    "ref": "qprobe.py",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/probes/qprobe.py",
-    "archive/orphaned_20261117/qprobe.py"
+    "AgentPortal_V1-git/probes/qprobe.py",
+    "gapfix-test/probes/qprobe.py",
+    "uploads/AgentPortal_V1/probes/qprobe.py"
    ]
   },
   {
@@ -6669,24 +6775,22 @@
    "ref": "e2e_parallel.py",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/probes/e2e_parallel.py",
-    "archive/orphaned_20261117/e2e_parallel.py"
+    "AgentPortal_V1-git/probes/e2e_parallel.py",
+    "gapfix-test/probes/e2e_parallel.py",
+    "uploads/AgentPortal_V1/probes/e2e_parallel.py"
    ]
   },
   {
    "file": "memory/ops/probes.md",
    "line": 10,
    "ref": "red_probe.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/probes.md",
    "line": 11,
    "ref": "probe_black.py",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/probe_black.py"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/probes.md",
@@ -6698,22 +6802,19 @@
    "file": "memory/ops/probes.md",
    "line": 13,
    "ref": "tunnel_urls.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/probes.md",
    "line": 13,
    "ref": "scan_red.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/probes.md",
    "line": 14,
    "ref": "mstsc_shots.ps1",
-   "status": "MOVED",
-   "actual": [
-    "archive/orphaned_20261117/mstsc_shots.ps1"
-   ]
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/probes.md",
@@ -6743,13 +6844,13 @@
    "file": "memory/ops/probes.md",
    "line": 28,
    "ref": "red_smoke.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/probes.md",
    "line": 29,
    "ref": "red_smoke_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/public-repo-agent-portal-2026-11-15.md",
@@ -6757,7 +6858,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -6767,7 +6869,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -6813,7 +6916,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -7007,7 +7111,7 @@
    "file": "memory/ops/remote-host-metrics-probe-spec.md",
    "line": 96,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/remote-host-metrics-probe-spec.md",
@@ -7040,32 +7144,19 @@
    "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
    "line": 5,
    "ref": "/agent_portal.py",
-   "status": "MOVED",
-   "actual": [
-    "agent_portal.py",
-    "AgentPortal_V1/agent_portal.py",
-    "memory/builder/canary/black/agent_portal.py"
-   ]
+   "status": "OK"
   },
   {
    "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
    "line": 5,
    "ref": "/memory_mirror.py",
-   "status": "MOVED",
-   "actual": [
-    "memory_mirror.py"
-   ]
+   "status": "OK"
   },
   {
    "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
    "line": 6,
    "ref": "/index.html",
-   "status": "MOVED",
-   "actual": [
-    "index.html",
-    "AgentPortal_V1/index.html",
-    "calculator-app/index.html"
-   ]
+   "status": "OK"
   },
   {
    "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
@@ -7229,9 +7320,9 @@
    "ref": "synthesis/INDEX.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/INDEX.md",
-    "AgentPortal_V1/memory/llm/INDEX.md",
-    "AgentPortal_V1/memory/ops/INDEX.md"
+    "AgentPortal_V1-git/memory/INDEX.md",
+    "AgentPortal_V1-git/memory/agents/INDEX.md",
+    "AgentPortal_V1-git/memory/llm/INDEX.md"
    ]
   },
   {
@@ -7277,9 +7368,9 @@
    "ref": "goals/INDEX.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/INDEX.md",
-    "AgentPortal_V1/memory/llm/INDEX.md",
-    "AgentPortal_V1/memory/ops/INDEX.md"
+    "AgentPortal_V1-git/memory/INDEX.md",
+    "AgentPortal_V1-git/memory/agents/INDEX.md",
+    "AgentPortal_V1-git/memory/llm/INDEX.md"
    ]
   },
   {
@@ -7397,7 +7488,7 @@
    "file": "memory/ops/risk-register-cycle2.md",
    "line": 14,
    "ref": "parity_audit.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/risk-register-cycle2.md",
@@ -7718,7 +7809,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -7821,7 +7913,8 @@
    "ref": "hosts.md",
    "status": "MOVED",
    "actual": [
-    "AgentPortal_V1/memory/llm/hosts.md",
+    "AgentPortal_V1-git/memory/llm/hosts.md",
+    "gapfix-test/memory/llm/hosts.md",
     "memory/llm/hosts.md"
    ]
   },
@@ -7865,7 +7958,7 @@
    "file": "memory/ops/windows-runbook.md",
    "line": 9,
    "ref": "recover_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/windows-runbook.md",
@@ -7889,7 +7982,7 @@
    "file": "memory/ops/windows-runbook.md",
    "line": 26,
    "ref": "portal_run_err.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/windows-runbook.md",
@@ -7901,13 +7994,13 @@
    "file": "memory/ops/windows-runbook.md",
    "line": 33,
    "ref": "portal_run.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/windows-runbook.md",
    "line": 33,
    "ref": "portal_run_err.log",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/windows-runbook.md",
@@ -7925,7 +8018,7 @@
    "file": "memory/ops/windows-runbook.md",
    "line": 45,
    "ref": "serial_e2e_wait.py",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/windows-runbook.md",
@@ -7985,13 +8078,13 @@
    "file": "memory/ops/windows-runbook.md",
    "line": 59,
    "ref": "recover_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/windows-runbook.md",
    "line": 59,
    "ref": "fleet_reload_result.json",
-   "status": "OK"
+   "status": "PHANTOM"
   },
   {
    "file": "memory/ops/windows-runbook.md",
@@ -8027,7 +8120,7 @@
    "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
    "line": 3,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "DOCUMENTED-ABSENT"
   },
   {
    "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
@@ -8063,7 +8156,7 @@
    "file": "memory/ops/workflow-improvement-load-probe-no-schtasks.md",
    "line": 34,
    "ref": "elev.py",
-   "status": "OK"
+   "status": "PHANTOM"
   }
  ]
 }

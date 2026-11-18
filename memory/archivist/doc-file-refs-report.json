@@ -1,0 +1,1253 @@
+{
+  "date": "2026-11-18",
+  "scope": "memory/ops/*.md file-path references (templates excluded)",
+  "total_unique_refs": 316,
+  "existing": 154,
+  "phantom": 162,
+  "phantom_detail": {
+    "GOAL_RESET_PENDING.json": [
+      [
+        "hotline-v2.md",
+        20
+      ]
+    ],
+    "INDEX.md": [
+      [
+        "git-hygiene.md",
+        23
+      ],
+      [
+        "goal_ledger_record_fix-2026-11-18.md",
+        39
+      ],
+      [
+        "goal_ledger_record_fix-2026-11-18.md",
+        40
+      ]
+    ],
+    "agent-goals.md": [
+      [
+        "researcher-seat-verify-r7-2026-11-13.md",
+        39
+      ]
+    ],
+    "agent_portal_ops-r5_staged.py": [
+      [
+        "researcher-seat-verify-r7-2026-11-13.md",
+        8
+      ]
+    ],
+    "agents.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        30
+      ]
+    ],
+    "agents/80": [
+      [
+        "memory-trim-archive-2026-11-14.md",
+        46
+      ]
+    ],
+    "agents_prompt.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        20
+      ]
+    ],
+    "api_contract_test.py": [
+      [
+        "cycle3-readiness-snapshot-2026-11-17.md",
+        25
+      ],
+      [
+        "portal-split-seams-2026-11-17.md",
+        34
+      ],
+      [
+        "portal-split-seams-2026-11-17.md",
+        43
+      ]
+    ],
+    "api_snapshots.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        24
+      ]
+    ],
+    "app.css": [
+      [
+        "pin-guard-extension-ui-files.md",
+        25
+      ],
+      [
+        "pin-guard-extension-ui-files.md",
+        49
+      ]
+    ],
+    "architecture.md": [
+      [
+        "git-hygiene.md",
+        23
+      ],
+      [
+        "goal-progress-2026-11-16.md",
+        30
+      ],
+      [
+        "goal-progress-2026-11-16.md",
+        31
+      ]
+    ],
+    "archivist.md": [
+      [
+        "git-hygiene.md",
+        2
+      ]
+    ],
+    "autoloop.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        23
+      ]
+    ],
+    "backend_swap_drill_result.json": [
+      [
+        "left-orchestrator.md",
+        4
+      ]
+    ],
+    "batch_tier_b.py": [
+      [
+        "non-sandbox-queue.md",
+        15
+      ]
+    ],
+    "blockers.md": [
+      [
+        "cycle-transition-checklist.md",
+        24
+      ],
+      [
+        "mirror-revert-prevention-2026-11-18.md",
+        43
+      ],
+      [
+        "non-sandbox-queue.md",
+        71
+      ]
+    ],
+    "boot-recovery-log.json": [
+      [
+        "boot-deployment-runbook.md",
+        48
+      ]
+    ],
+    "boot_recovery.py": [
+      [
+        "boot-deployment-runbook.md",
+        3
+      ],
+      [
+        "boot-deployment-runbook.md",
+        18
+      ],
+      [
+        "boot-deployment-runbook.md",
+        32
+      ]
+    ],
+    "builder-fleet-8099-sweep-r80-2026-11-14.md": [
+      [
+        "INDEX.md",
+        62
+      ]
+    ],
+    "canary-deploys.json": [
+      [
+        "INDEX.md",
+        38
+      ]
+    ],
+    "chat_stream.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        21
+      ]
+    ],
+    "clobber-events.json": [
+      [
+        "INDEX.md",
+        36
+      ]
+    ],
+    "component-reference.html": [
+      [
+        "goal-progress-2026-11-16.md",
+        46
+      ]
+    ],
+    "config.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        13
+      ]
+    ],
+    "d7_d9_cdp_verify.py": [
+      [
+        "blockers.md",
+        26
+      ]
+    ],
+    "decay_score.py": [
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        65
+      ]
+    ],
+    "dep_graph_gen.py": [
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        38
+      ]
+    ],
+    "deploy_boot_task.py": [
+      [
+        "boot-deployment-runbook.md",
+        3
+      ],
+      [
+        "boot-deployment-runbook.md",
+        22
+      ],
+      [
+        "boot-deployment-runbook.md",
+        63
+      ]
+    ],
+    "deploy_startup_folder.py": [
+      [
+        "boot-deployment-runbook.md",
+        3
+      ],
+      [
+        "boot-deployment-runbook.md",
+        35
+      ],
+      [
+        "boot-deployment-runbook.md",
+        38
+      ]
+    ],
+    "design_breakpoint_check.py": [
+      [
+        "blockers.md",
+        26
+      ]
+    ],
+    "e2e_parallel.py": [
+      [
+        "probes.md",
+        6
+      ]
+    ],
+    "elev.py": [
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        14
+      ],
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        21
+      ],
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        23
+      ]
+    ],
+    "files-panel-hunks-r5.md": [
+      [
+        "researcher-seat-verify-r7-2026-11-13.md",
+        9
+      ],
+      [
+        "researcher-seat-verify-r7-2026-11-13.md",
+        19
+      ],
+      [
+        "researcher-seat-verify-r7-2026-11-13.md",
+        26
+      ]
+    ],
+    "fleet-probe-history.json": [
+      [
+        "INDEX.md",
+        32
+      ],
+      [
+        "cycle-transition-checklist.md",
+        34
+      ]
+    ],
+    "fleet_crosscheck.py": [
+      [
+        "mechanic-crossassist-2026-11-15.md",
+        10
+      ]
+    ],
+    "fleet_health_check.py": [
+      [
+        "INDEX.md",
+        26
+      ]
+    ],
+    "fleet_perf.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        17
+      ]
+    ],
+    "fleet_probe.py": [
+      [
+        "host-port-task-map-2026-11-15.md",
+        4
+      ],
+      [
+        "host-port-task-map-2026-11-15.md",
+        23
+      ]
+    ],
+    "fleet_probe_v2.py": [
+      [
+        "INDEX.md",
+        23
+      ],
+      [
+        "cycle-transition-checklist.md",
+        43
+      ],
+      [
+        "mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
+        6
+      ]
+    ],
+    "fleet_reload_result.json": [
+      [
+        "windows-runbook.md",
+        59
+      ]
+    ],
+    "gen_report.py": [
+      [
+        "pdf-reporting.md",
+        3
+      ],
+      [
+        "pdf-reporting.md",
+        7
+      ]
+    ],
+    "goal-progress-2026-11-16.md": [
+      [
+        "INDEX.md",
+        44
+      ]
+    ],
+    "goal_provenance_report.json": [
+      [
+        "mechanic-lan-8099-blocked-2026-11-15.md",
+        24
+      ]
+    ],
+    "goals-2026-11-13.md": [
+      [
+        "runbook-notes.md",
+        38
+      ]
+    ],
+    "goals.md": [
+      [
+        "researcher-seat-verify-r7-2026-11-13.md",
+        39
+      ],
+      [
+        "researcher-seat-verify-r7-2026-11-13.md",
+        73
+      ]
+    ],
+    "goals_data.json": [
+      [
+        "mechanic-lan-8099-blocked-2026-11-15.md",
+        24
+      ],
+      [
+        "mechanic-lan-8099-blocked-2026-11-15.md",
+        26
+      ],
+      [
+        "mechanic-lan-8099-blocked-2026-11-15.md",
+        26
+      ]
+    ],
+    "group_run.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        22
+      ]
+    ],
+    "handler.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        25
+      ]
+    ],
+    "handler_api.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        37
+      ]
+    ],
+    "handler_ui.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        37
+      ]
+    ],
+    "host-port-task-map-2026-11-15.md": [
+      [
+        "schtask-deps.md",
+        82
+      ]
+    ],
+    "host_state.py": [
+      [
+        "remote-host-metrics-probe-spec.md",
+        16
+      ]
+    ],
+    "hosts.md": [
+      [
+        "git-hygiene.md",
+        19
+      ],
+      [
+        "host-port-task-map-2026-11-15.md",
+        27
+      ],
+      [
+        "public-repo-agent-portal-2026-11-15.md",
+        8
+      ]
+    ],
+    "hotpatch-events.json": [
+      [
+        "INDEX.md",
+        39
+      ]
+    ],
+    "index-patched-v2.html": [
+      [
+        "orch-veto-wholecopy-v3-2026-11-16.md",
+        5
+      ]
+    ],
+    "index-patched-v3.html": [
+      [
+        "orch-veto-wholecopy-v3-2026-11-16.md",
+        5
+      ]
+    ],
+    "index-sweep-2026-11-13.md": [
+      [
+        "left-archivist.md",
+        5
+      ]
+    ],
+    "index_check.py": [
+      [
+        "left-archivist.md",
+        6
+      ]
+    ],
+    "ingest.py": [
+      [
+        "ingestion-spec.md",
+        3
+      ],
+      [
+        "ingestion-spec.md",
+        12
+      ],
+      [
+        "ingestion-spec.md",
+        13
+      ]
+    ],
+    "init__.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        32
+      ]
+    ],
+    "instances.md": [
+      [
+        "memory-trim-archive-2026-11-14.md",
+        36
+      ],
+      [
+        "memory-trim-archive-2026-11-14.md",
+        36
+      ]
+    ],
+    "lan_probe.py": [
+      [
+        "runbook-notes.md",
+        11
+      ],
+      [
+        "runbook-notes.md",
+        29
+      ]
+    ],
+    "live_verify2_g578.py": [
+      [
+        "blockers.md",
+        28
+      ]
+    ],
+    "live_verify_g578.py": [
+      [
+        "blockers.md",
+        92
+      ]
+    ],
+    "load-baseline.json": [
+      [
+        "INDEX.md",
+        34
+      ],
+      [
+        "cycle-transition-checklist.md",
+        33
+      ],
+      [
+        "cycle3-readiness-snapshot-2026-11-17.md",
+        8
+      ]
+    ],
+    "load_probe.py": [
+      [
+        "INDEX.md",
+        24
+      ],
+      [
+        "cycle-transition-checklist.md",
+        43
+      ],
+      [
+        "cycle3-readiness-snapshot-2026-11-17.md",
+        14
+      ]
+    ],
+    "load_trend.json": [
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        9
+      ],
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        13
+      ]
+    ],
+    "load_trend.py": [
+      [
+        "cycle3-readiness-snapshot-2026-11-17.md",
+        14
+      ],
+      [
+        "mirror-revert-prevention-2026-11-18.md",
+        1
+      ],
+      [
+        "mirror-revert-prevention-2026-11-18.md",
+        20
+      ]
+    ],
+    "mechanic-crossassist-2026-11-15.md": [
+      [
+        "mechanic-researcher-alias-diagnosis-2026-11-16.md",
+        7
+      ]
+    ],
+    "mechanic-goal1-adaptive-probe-evidence-2026-11-16.md": [
+      [
+        "INDEX.md",
+        45
+      ]
+    ],
+    "mechanic-goal3-closure-2026-11-15.md": [
+      [
+        "INDEX.md",
+        46
+      ]
+    ],
+    "mechanic-reboot-dryrun-remotes-2026-11-15.md": [
+      [
+        "mechanic-goal3-closure-2026-11-15.md",
+        4
+      ]
+    ],
+    "mechanic.md": [
+      [
+        "blockers.md",
+        91
+      ]
+    ],
+    "memory/builder/test_truncation_detect.py": [
+      [
+        "goal-progress-2026-11-16.md",
+        23
+      ]
+    ],
+    "memory/designer/d7_d9_cdp_verify.py": [
+      [
+        "blockers.md",
+        29
+      ]
+    ],
+    "memory/designer/index_html_CANONICAL_": [
+      [
+        "cycle3-readiness-snapshot-2026-11-17.md",
+        15
+      ],
+      [
+        "merge-queue-git-progress-2026-11-16.md",
+        43
+      ]
+    ],
+    "memory/designer/ui_app_css_CANONICAL_": [
+      [
+        "pin-guard-extension-ui-files.md",
+        35
+      ],
+      [
+        "pin-guard-extension-ui-files.md",
+        41
+      ]
+    ],
+    "memory/llm/fleet-probe-alias-log.jsonl": [
+      [
+        "orch-fleetprobe-decision-2026-11-16.md",
+        7
+      ]
+    ],
+    "memory/mechanic/batch-tier-b-run.json": [
+      [
+        "non-sandbox-queue.md",
+        18
+      ]
+    ],
+    "memory/mechanic/dep_graph_gen.py": [
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        40
+      ]
+    ],
+    "memory/mechanic/load_trend.py": [
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        11
+      ]
+    ],
+    "memory/ops-windows.md": [
+      [
+        "probes.md",
+        2
+      ]
+    ],
+    "memory/ops/failover-drill-": [
+      [
+        "non-sandbox-queue.md",
+        48
+      ]
+    ],
+    "memory/ops/mirror-clobber-pattern-2026-11-14.md": [
+      [
+        "pin-guard-extension-ui-files.md",
+        61
+      ]
+    ],
+    "memory/ops/verifier-healthcheck-white-2026-11-15.md": [
+      [
+        "mechanic-goal3-red-leg-blocked-2026-11-15.md",
+        13
+      ]
+    ],
+    "memory_mirror_ops-r5_staged.py": [
+      [
+        "researcher-seat-verify-r7-2026-11-13.md",
+        8
+      ]
+    ],
+    "memory_state.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        18
+      ]
+    ],
+    "mirror-clobber-2026-11-15.md": [
+      [
+        "goal-progress-2026-11-16.md",
+        56
+      ]
+    ],
+    "mirror_canary.py": [
+      [
+        "runbook-notes.md",
+        26
+      ]
+    ],
+    "mirror_canary_result.json": [
+      [
+        "runbook-notes.md",
+        8
+      ],
+      [
+        "runbook-notes.md",
+        17
+      ],
+      [
+        "runbook-notes.md",
+        21
+      ]
+    ],
+    "model-id-check-2026-11-14.md": [
+      [
+        "mechanic-researcher-alias-diagnosis-2026-11-16.md",
+        11
+      ]
+    ],
+    "model-load.json": [
+      [
+        "INDEX.md",
+        35
+      ]
+    ],
+    "net-egress-log.json": [
+      [
+        "INDEX.md",
+        40
+      ]
+    ],
+    "ops/probes.md": [
+      [
+        "memory-trim-archive-2026-11-14.md",
+        36
+      ]
+    ],
+    "ops/windows-runbook.md": [
+      [
+        "memory-trim-archive-2026-11-14.md",
+        36
+      ]
+    ],
+    "orch-reopen-designer4-2026-11-16.md": [
+      [
+        "orch-veto-wholecopy-v3-2026-11-16.md",
+        22
+      ]
+    ],
+    "parity_audit.py": [
+      [
+        "risk-register-cycle2.md",
+        14
+      ]
+    ],
+    "parse_mirror_events.py": [
+      [
+        "blockers.md",
+        49
+      ]
+    ],
+    "portal-down-2026-11-15.md": [
+      [
+        "goal-progress-2026-11-16.md",
+        51
+      ]
+    ],
+    "portal-down-2026-11-16.md": [
+      [
+        "INDEX.md",
+        48
+      ]
+    ],
+    "portal.py": [
+      [
+        "researcher-seat-verify-r7-2026-11-13.md",
+        27
+      ]
+    ],
+    "portal_watchdog.py": [
+      [
+        "INDEX.md",
+        28
+      ]
+    ],
+    "pre_commit_gate.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        34
+      ],
+      [
+        "portal-split-seams-2026-11-17.md",
+        44
+      ]
+    ],
+    "probe-evidence.json": [
+      [
+        "INDEX.md",
+        33
+      ],
+      [
+        "cycle3-readiness-snapshot-2026-11-17.md",
+        9
+      ]
+    ],
+    "probe_black.py": [
+      [
+        "probes.md",
+        11
+      ]
+    ],
+    "probe_fleet_8099_r80.py": [
+      [
+        "builder-fleet-8099-sweep-r80-2026-11-14.md",
+        3
+      ]
+    ],
+    "probe_portal.py": [
+      [
+        "runbook-notes.md",
+        26
+      ]
+    ],
+    "probe_quinn.py": [
+      [
+        "probes.md",
+        5
+      ]
+    ],
+    "probe_white_goals_r24.py": [
+      [
+        "mechanic-lan-8099-blocked-2026-11-15.md",
+        7
+      ],
+      [
+        "mechanic-lan-8099-blocked-2026-11-15.md",
+        22
+      ]
+    ],
+    "probe_white_reach_result.json": [
+      [
+        "white-lan-firewall-drop-2026-11-14.md",
+        9
+      ]
+    ],
+    "probe_winrm_r17.py": [
+      [
+        "runbook-notes.md",
+        29
+      ]
+    ],
+    "prompt_builder.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        30
+      ]
+    ],
+    "px-scale-spec-2026-11-15.md": [
+      [
+        "goal-progress-2026-11-16.md",
+        39
+      ]
+    ],
+    "qprobe.py": [
+      [
+        "probes.md",
+        5
+      ]
+    ],
+    "quarantine-index-html-variants-2026-11-13.md": [
+      [
+        "INDEX.md",
+        63
+      ]
+    ],
+    "rag.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        16
+      ]
+    ],
+    "reboot-dryrun-remote-legs-2026-11-16.md": [
+      [
+        "INDEX.md",
+        47
+      ]
+    ],
+    "reboot-dryrun-remotes-2026-11-15.md": [
+      [
+        "mechanic-goal3-closure-2026-11-15.md",
+        4
+      ]
+    ],
+    "reboot-recovery.json": [
+      [
+        "non-sandbox-queue.md",
+        58
+      ]
+    ],
+    "reboot_dryrun_r2.py": [
+      [
+        "mechanic-reboot-dryrun-remotes-2026-11-15.md",
+        40
+      ]
+    ],
+    "reboot_dryrun_remotes.py": [
+      [
+        "mechanic-goal3-closure-2026-11-15.md",
+        26
+      ],
+      [
+        "mechanic-reboot-dryrun-remotes-2026-11-15.md",
+        25
+      ],
+      [
+        "mechanic-reboot-dryrun-remotes-2026-11-15.md",
+        39
+      ]
+    ],
+    "reboot_recovery_test.py": [
+      [
+        "non-sandbox-queue.md",
+        56
+      ],
+      [
+        "non-sandbox-queue.md",
+        57
+      ]
+    ],
+    "recover_force_result.json": [
+      [
+        "portal-down-2026-11-15.md",
+        28
+      ],
+      [
+        "portal-outage-2026-11-15-1825.md",
+        5
+      ],
+      [
+        "portal-outage-2026-11-15-1825.md",
+        19
+      ]
+    ],
+    "recover_result.json": [
+      [
+        "windows-runbook.md",
+        9
+      ],
+      [
+        "windows-runbook.md",
+        59
+      ]
+    ],
+    "red_probe.py": [
+      [
+        "probes.md",
+        10
+      ]
+    ],
+    "red_smoke.py": [
+      [
+        "probes.md",
+        28
+      ]
+    ],
+    "red_smoke_result.json": [
+      [
+        "probes.md",
+        29
+      ]
+    ],
+    "ref.json": [
+      [
+        "stale-claim-check-jsonl-fallback-2026-11-18.md",
+        11
+      ],
+      [
+        "stale-claim-check-jsonl-fallback-2026-11-18.md",
+        12
+      ]
+    ],
+    "result.json": [
+      [
+        "probes.md",
+        31
+      ]
+    ],
+    "risk-register-cycle2.md": [
+      [
+        "INDEX.md",
+        43
+      ]
+    ],
+    "run_state.json": [
+      [
+        "black-studio-failover-2026-11-16.md",
+        16
+      ]
+    ],
+    "runbook-notes.md": [
+      [
+        "cycle-transition-checklist.md",
+        19
+      ]
+    ],
+    "safety.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        15
+      ]
+    ],
+    "sandbox_sync.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        19
+      ]
+    ],
+    "scan_red.py": [
+      [
+        "probes.md",
+        13
+      ]
+    ],
+    "serial_e2e_wait.py": [
+      [
+        "windows-runbook.md",
+        45
+      ]
+    ],
+    "silent_probe2.py": [
+      [
+        "probes.md",
+        4
+      ]
+    ],
+    "sim_fleet_probe_degrade.py": [
+      [
+        "INDEX.md",
+        29
+      ],
+      [
+        "mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
+        7
+      ],
+      [
+        "mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
+        10
+      ]
+    ],
+    "slo_enforce.py": [
+      [
+        "blockers.md",
+        41
+      ],
+      [
+        "blockers.md",
+        45
+      ]
+    ],
+    "smb_drift_detector.py": [
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        108
+      ]
+    ],
+    "smoke_e2e.py": [
+      [
+        "probes.md",
+        4
+      ]
+    ],
+    "snapshot.py": [
+      [
+        "background-goals-execution-plan-2026-11-18.md",
+        81
+      ]
+    ],
+    "stale_claim_check.py": [
+      [
+        "stale-claim-check-jsonl-fallback-2026-11-18.md",
+        1
+      ],
+      [
+        "stale-claim-check-jsonl-fallback-2026-11-18.md",
+        6
+      ],
+      [
+        "stale-claim-check-suffix-fix-2026-11-18.md",
+        1
+      ]
+    ],
+    "test-report-2026-11-15.md": [
+      [
+        "goal-progress-2026-11-16.md",
+        53
+      ]
+    ],
+    "test_group.py": [
+      [
+        "probes.md",
+        5
+      ]
+    ],
+    "testing.md": [
+      [
+        "goal-progress-2026-11-16.md",
+        27
+      ],
+      [
+        "mechanic-crossassist-2026-11-15.md",
+        16
+      ]
+    ],
+    "token-gap-analysis-2026-11-17.md": [
+      [
+        "pin-guard-extension-ui-files.md",
+        19
+      ]
+    ],
+    "token_audit.py": [
+      [
+        "non-sandbox-queue.md",
+        39
+      ]
+    ],
+    "tunnel_urls.json": [
+      [
+        "black-reload-2026-11-15.md",
+        13
+      ],
+      [
+        "probes.md",
+        13
+      ]
+    ],
+    "ui-tokens.md": [
+      [
+        "goal-progress-2026-11-16.md",
+        48
+      ],
+      [
+        "mechanic-crossassist-2026-11-15.md",
+        13
+      ],
+      [
+        "mechanic-crossassist-2026-11-15.md",
+        16
+      ]
+    ],
+    "ui_app_css_CANONICAL_ac3ef7ec2e35_2026-11-17y.css": [
+      [
+        "pin-guard-extension-ui-files.md",
+        25
+      ]
+    ],
+    "umq.py": [
+      [
+        "portal-split-seams-2026-11-17.md",
+        14
+      ]
+    ],
+    "v1-upgrades-round-3.md": [
+      [
+        "memory-sync-spec-r13.md",
+        32
+      ]
+    ],
+    "verifier-healthcheck-2026-11-15.md": [
+      [
+        "mechanic-goal3-closure-2026-11-15.md",
+        15
+      ],
+      [
+        "reboot-dryrun-remotes-2026-11-15.md",
+        12
+      ],
+      [
+        "verifier-pin-crosscheck-2026-11-15.md",
+        19
+      ]
+    ],
+    "verify_boot_deployment.py": [
+      [
+        "boot-deployment-runbook.md",
+        25
+      ]
+    ],
+    "wedge-events.json": [
+      [
+        "INDEX.md",
+        37
+      ]
+    ],
+    "white-lan-firewall-drop-2026-11-14.md": [
+      [
+        "INDEX.md",
+        64
+      ],
+      [
+        "builder-fleet-8099-sweep-r80-2026-11-14.md",
+        20
+      ]
+    ],
+    "white_realias_rename.py": [
+      [
+        "memory-trim-archive-2026-11-14.md",
+        15
+      ]
+    ],
+    "white_realias_result.json": [
+      [
+        "memory-trim-archive-2026-11-14.md",
+        15
+      ]
+    ],
+    "windows-runbook.md": [
+      [
+        "host-port-task-map-2026-11-15.md",
+        20
+      ],
+      [
+        "mechanic-goal3-closure-2026-11-15.md",
+        15
+      ],
+      [
+        "mechanic-reboot-dryrun-remotes-2026-11-15.md",
+        32
+      ]
+    ],
+    "x.html": [
+      [
+        "pin-guard-extension-ui-files.md",
+        35
+      ]
+    ],
+    "xtalk-completion.md": [
+      [
+        "memory-trim-archive-2026-11-14.md",
+        36
+      ]
+    ]
+  }
+}

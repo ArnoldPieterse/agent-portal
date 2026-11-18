@@ -3,71 +3,207 @@
 Script: `memory/archivist/hostdoc_consistency_v2.py` (fixes the 2026-11-18 extraction bugs: .jsonl truncation, .bak cut-off, bare-name CWD resolution).
 Supersedes: hostdoc-consistency-v2-2026-11-18.md/.json (buggy counts) and hostdoc-consistency-2026-11-16.md (cycle-2, host:port only).
 
-Files scanned: 80 | refs checked: 1202 | ANNOTATED: 23 | DOCUMENTED-ABSENT: 13 | MOVED: 245 | OK: 905 | OK-DOCUMENTED: 1 | OK-EXTERNAL: 2 | OK-PREFIX: 4 | PROVENANCE: 9
+Files scanned: 81 | refs checked: 1206 | ANNOTATED: 26 | DOCUMENTED-ABSENT: 31 | MOVED: 228 | OK: 773 | OK-DOCUMENTED: 1 | OK-EXTERNAL: 1 | OK-PREFIX: 4 | PHANTOM: 133 | PROVENANCE: 9
 
-## MOVED references (245) - exist at another path
+## PHANTOM references (133) - must fix or annotate
 
-- `MEMORY.md` L15 -> `llm/instances.md` (actual: `AgentPortal_V1/memory/llm/instances.md`, `memory/llm/instances.md`)
-- `MEMORY.md` L15 -> `portal/architecture.md` (actual: `AgentPortal_V1/memory/portal/architecture.md`, `memory/portal/architecture.md`)
-- `MEMORY.md` L15 -> `portal/bugs/xtalk-completion.md` (actual: `AgentPortal_V1/memory/portal/bugs/xtalk-completion.md`, `memory/portal/bugs/xtalk-completion.md`)
-- `MEMORY.md` L15 -> `llm/instances.md` (actual: `AgentPortal_V1/memory/llm/instances.md`, `memory/llm/instances.md`)
-- `MEMORY.md` L15 -> `ops/windows-runbook.md` (actual: `AgentPortal_V1/memory/ops/windows-runbook.md`, `memory/ops/windows-runbook.md`)
-- `MEMORY.md` L15 -> `ops/probes.md` (actual: `AgentPortal_V1/memory/ops/probes.md`, `memory/ops/probes.md`)
-- `MEMORY.md` L28 -> `deploy_reboot_recovery_all.py` (actual: `memory/mechanic/deploy_reboot_recovery_all.py`)
+- `MEMORY.md` L27 -> `fleet_probe.py`
+- `MEMORY.md` L38 -> `elevated_helper.py`
+- `MEMORY.md` L38 -> `elev.py`
+- `MEMORY.md` L38 -> `install_elevated_helper.bat`
+- `MEMORY.md` L38 -> `elev.py`
+- `MEMORY.md` L38 -> `install_elevated_helper.bat`
+- `MEMORY.md` L38 -> `portal_loadtest.py`
+- `TODO.md` L52 -> `tunnel_urls.json`
+- `TODO.md` L66 -> `user_messages.json`
+- `TODO.md` L67 -> `recover_force_result.json`
+- `TODO.md` L67 -> `trigger_group_run.log`
+- `TODO.md` L71 -> `evolution.py`
+- `TODO.md` L86 -> `fleet_probe.py`
+- `TODO.md` L86 -> `daily_git_commit.py`
+- `TODO.md` L91 -> `fleet_reload_result.json`
+- `TODO.md` L99 -> `Users/White/.agents/skills/portal-memory-modular/SKILL.md`
+- `TODO.md` L107 -> `backend_swap_drill_result.json`
+- `TODO.md` L115 -> `daily_git_commit.py`
+- `TODO.md` L116 -> `fleet_probe.py`
+- `TODO.md` L132 -> `white_realias_result.json`
+- `TODO.md` L349 -> `red_setup_result2.json`
+- `TODO.md` L349 -> `red_manual_verify.py`
+- `TODO.md` L349 -> `red_chain_result.json`
+- `TODO.md` L352 -> `red_q8_wait2.py`
+- `TODO.md` L352 -> `red_setup_result2.json`
+- `TODO.md` L352 -> `red_chain_result.json`
+- `TODO.md` L356 -> `q8_red2.log`
+- `TODO.md` L356 -> `red_setup_result2.json`
+- `TODO.md` L356 -> `red_smoke.py`
+- `TODO.md` L360 -> `q8_red2.log`
+- `TODO.md` L360 -> `red_setup_result2.json`
+- `TODO.md` L360 -> `red_q8_wait2.py`
+- `TODO.md` L364 -> `black_hash_q8_out2.txt`
+- `TODO.md` L364 -> `pale_cancel.py`
+- `TODO.md` L365 -> `copy_tail/q8_red2.log`
+- `TODO.md` L368 -> `red_hash_q8.ps1`
+- `TODO.md` L368 -> `black_hash_q8.ps1`
+- `TODO.md` L368 -> `black_hash_q8_out2.txt`
+- `TODO.md` L369 -> `smoke6.py`
+- `TODO.md` L369 -> `group_e2e_result_8agent.json`
+- `TODO.md` L369 -> `red_smoke.py`
+- `TODO.md` L370 -> `red_smoke.py`
+- `TODO.md` L370 -> `red_chain_result.json`
+- `TODO.md` L371 -> `red_agents_ready.json`
+- `TODO.md` L371 -> `merge_red_agents.py`
+- `TODO.md` L371 -> `red_dual_load.py`
+- `TODO.md` L371 -> `red_dual_load_result.json`
+- `TODO.md` L371 -> `red_realias.py`
+- `TODO.md` L374 -> `red_agents_ready.json`
+- `TODO.md` L378 -> `red_setup_result.json`
+- `TODO.md` L378 -> `red_dual_load.py`
+- `TODO.md` L378 -> `red_dual_load_result.json`
+- `TODO.md` L378 -> `red_realias.py`
+- `TODO.md` L378 -> `red_agents_ready.json`
+- `TODO.md` L378 -> `merge_red_agents.py`
+- `TODO.md` L382 -> `serial_e2e_wait.py`
+- `TODO.md` L383 -> `recover_result.json`
+- `TODO.md` L384 -> `serial_e2e_wait.py`
+- `TODO.md` L384 -> `serial_e2e_result.json`
+- `TODO.md` L384 -> `group_e2e.log`
+- `TODO.md` L384 -> `group_e2e_result.json`
+- `TODO.md` L386 -> `serial_e2e_result.json`
+- `TODO.md` L386 -> `group_e2e.log`
+- `TODO.md` L392 -> `q8_black2.log`
+- `TODO.md` L393 -> `black_dual_load_result.json`
+- `TODO.md` L400 -> `r2_smoke_result.txt`
+- `TODO.md` L406 -> `q8_pale2.log`
+- `TODO.md` L406 -> `q8_black2.log`
+- `TODO.md` L409 -> `r2_smoke_wait.py`
+- `TODO.md` L409 -> `r2_smoke_result.txt`
+- `TODO.md` L412 -> `q8_pale.log`
+- `TODO.md` L413 -> `probe_black.py`
+- `TODO.md` L416 -> `q8_pale.log`
+- `TODO.md` L416 -> `q8_black.log`
+- `TODO.md` L419 -> `scan_red.py`
+- `TODO.md` L421 -> `red_probe.py`
+- `TODO.md` L441 -> `probe_black.py`
+- `TODO.md` L443 -> `probe_black.py`
+- `TODO.md` L445 -> `probe_black_winrm2.ps1`
+- `TODO.md` L445 -> `elev_trustedhosts.ps1`
+- `TODO.md` L451 -> `r2_smoke_result.txt`
+- `TODO.md` L451 -> `r2_smoke_wait.py`
+- `TODO.md` L461 -> `scan_red.py`
+- `TODO.md` L473 -> `model_list_now.json`
+- `TODO.md` L511 -> `TODO_archive_20261111.md`
+- `TODO.md` L522 -> `recover_result.json`
+- `TODO.md` L523 -> `fleet_reload_result.json`
+- `TODO.md` L527 -> `goal_cycle_check.py`
+- `TODO.md` L527 -> `todo_freshness_check.py`
+- `TODO.md` L527 -> `citation_monitor_v2.py`
+- `TODO.md` L527 -> `parity_audit.py`
+- `TODO.md` L527 -> `open_questions_flag.py`
+- `TODO.md` L527 -> `model_benchmark.py`
+- `memory/ONBOARDING.md` L20 -> `user_messages.json`
+- `memory/ONBOARDING.md` L120 -> `user_messages.json`
+- `memory/ops/.pytest_cache/README.md` L8 -> `docs.pytest.org/en/stable/how-to/cache.html`
+- `memory/ops/INDEX.md` L28 -> `portal_watchdog.py`
+- `memory/ops/background-goals-execution-plan-2026-11-18.md` L21 -> `elev.py`
+- `memory/ops/background-goals-execution-plan-2026-11-18.md` L23 -> `elev.py`
+- `memory/ops/background-goals-execution-plan-2026-11-18.md` L65 -> `elev.py`
+- `memory/ops/background-goals-execution-plan-2026-11-18.md` L81 -> `elev.py`
+- `memory/ops/background-goals-execution-plan-2026-11-18.md` L108 -> `elev.py`
+- `memory/ops/black-reload-2026-11-15.md` L13 -> `tunnel_urls.json`
+- `memory/ops/black-studio-failover-2026-11-16.md` L16 -> `run_state.json`
+- `memory/ops/blockers.md` L19 -> `elev.py`
+- `memory/ops/blockers.md` L26 -> `d7_d9_cdp_verify.py`
+- `memory/ops/blockers.md` L29 -> `memory/designer/d7_d9_cdp_verify.py`
+- `memory/ops/host-port-task-map-2026-11-15.md` L4 -> `fleet_probe.py`
+- `memory/ops/host-port-task-map-2026-11-15.md` L23 -> `fleet_probe.py`
+- `memory/ops/host-port-task-map-2026-11-15.md` L23 -> `fleet_probe.log`
+- `memory/ops/left-orchestrator.md` L4 -> `backend_swap_drill_result.json`
+- `memory/ops/loadtest/closure_runbook.md` L7 -> `elev.py`
+- `memory/ops/portal-down-2026-11-16.md` L7 -> `portal_run_err.log`
+- `memory/ops/portal-outage-2026-11-15-1825.md` L5 -> `recover_force_result.json`
+- `memory/ops/portal-outage-2026-11-15-1825.md` L19 -> `recover_force_result.json`
+- `memory/ops/portal-permissionerror-fix-2026-11-16.md` L6 -> `portal_run_err.log`
+- `memory/ops/probes.md` L10 -> `red_probe.py`
+- `memory/ops/probes.md` L11 -> `probe_black.py`
+- `memory/ops/probes.md` L13 -> `tunnel_urls.json`
+- `memory/ops/probes.md` L13 -> `scan_red.py`
+- `memory/ops/probes.md` L14 -> `mstsc_shots.ps1`
+- `memory/ops/probes.md` L28 -> `red_smoke.py`
+- `memory/ops/probes.md` L29 -> `red_smoke_result.json`
+- `memory/ops/remote-host-metrics-probe-spec.md` L96 -> `elev.py`
+- `memory/ops/risk-register-cycle2.md` L14 -> `parity_audit.py`
+- `memory/ops/windows-runbook.md` L9 -> `recover_result.json`
+- `memory/ops/windows-runbook.md` L26 -> `portal_run_err.log`
+- `memory/ops/windows-runbook.md` L33 -> `portal_run.log`
+- `memory/ops/windows-runbook.md` L33 -> `portal_run_err.log`
+- `memory/ops/windows-runbook.md` L45 -> `serial_e2e_wait.py`
+- `memory/ops/windows-runbook.md` L59 -> `recover_result.json`
+- `memory/ops/windows-runbook.md` L59 -> `fleet_reload_result.json`
+- `memory/ops/workflow-improvement-load-probe-no-schtasks.md` L34 -> `elev.py`
+
+## MOVED references (228) - exist at another path
+
+- `MEMORY.md` L4 -> `gen_api_ref.py` (actual: `memory/archivist/gen_api_ref.py`)
+- `MEMORY.md` L4 -> `ingest.py` (actual: `memory/archivist/ingest.py`)
+- `MEMORY.md` L4 -> `ONBOARDING.md` (actual: `memory/ONBOARDING.md`)
+- `MEMORY.md` L18 -> `llm/instances.md` (actual: `AgentPortal_V1-git/memory/llm/instances.md`, `gapfix-test/memory/llm/instances.md`, `memory/llm/instances.md`)
+- `MEMORY.md` L18 -> `portal/architecture.md` (actual: `AgentPortal_V1-git/memory/portal/architecture.md`, `gapfix-test/memory/portal/architecture.md`, `memory/portal/architecture.md`)
+- `MEMORY.md` L18 -> `portal/bugs/xtalk-completion.md` (actual: `AgentPortal_V1-git/memory/portal/bugs/xtalk-completion.md`, `gapfix-test/memory/portal/bugs/xtalk-completion.md`, `memory/portal/bugs/xtalk-completion.md`)
+- `MEMORY.md` L18 -> `llm/instances.md` (actual: `AgentPortal_V1-git/memory/llm/instances.md`, `gapfix-test/memory/llm/instances.md`, `memory/llm/instances.md`)
+- `MEMORY.md` L18 -> `ops/windows-runbook.md` (actual: `AgentPortal_V1-git/memory/ops/windows-runbook.md`, `gapfix-test/memory/ops/windows-runbook.md`, `memory/ops/windows-runbook.md`)
+- `MEMORY.md` L18 -> `ops/probes.md` (actual: `AgentPortal_V1-git/memory/ops/probes.md`, `gapfix-test/memory/ops/probes.md`, `memory/ops/probes.md`)
+- `MEMORY.md` L30 -> `deploy_reboot_recovery_all.py` (actual: `memory/mechanic/deploy_reboot_recovery_all.py`)
 - `TODO.md` L7 -> `run-rules.md` (actual: `memory/run-rules.md`)
+- `TODO.md` L23 -> `restart_portal.py` (actual: `memory/ops/restart_portal.py`)
 - `TODO.md` L37 -> `GOAL_RESET_PENDING.json` (actual: `memory/goals/GOAL_RESET_PENDING.json`)
-- `TODO.md` L70 -> `evolution/README.md` (actual: `README.md`, `AgentPortal_V1/README.md`, `archive/README.md`)
-- `TODO.md` L79 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
-- `TODO.md` L80 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
-- `TODO.md` L81 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
-- `TODO.md` L82 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L70 -> `evolution/README.md` (actual: `README.md`, `AgentPortal_V1-git/README.md`, `gapfix-test/README.md`)
+- `TODO.md` L79 -> `hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L80 -> `hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L81 -> `hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L82 -> `hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
 - `TODO.md` L95 -> `index_check.py` (actual: `memory/archivist/index_check.py`)
-- `TODO.md` L109 -> `bugs/INDEX.md` (actual: `AgentPortal_V1/memory/INDEX.md`, `AgentPortal_V1/memory/llm/INDEX.md`, `AgentPortal_V1/memory/ops/INDEX.md`)
+- `TODO.md` L109 -> `bugs/INDEX.md` (actual: `AgentPortal_V1-git/memory/INDEX.md`, `AgentPortal_V1-git/memory/agents/INDEX.md`, `AgentPortal_V1-git/memory/llm/INDEX.md`)
 - `TODO.md` L112 -> `prune-log.md` (actual: `memory/archivist/prune-log.md`)
-- `TODO.md` L117 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L117 -> `hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
 - `TODO.md` L118 -> `git-hygiene.md` (actual: `memory/ops/git-hygiene.md`)
-- `TODO.md` L119 -> `builder/INDEX.md` (actual: `AgentPortal_V1/memory/INDEX.md`, `AgentPortal_V1/memory/llm/INDEX.md`, `AgentPortal_V1/memory/ops/INDEX.md`)
-- `TODO.md` L123 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
-- `TODO.md` L132 -> `white_realias_result.json` (actual: `archive/orphaned_20261117/white_realias_result.json`)
-- `TODO.md` L135 -> `llm/studio-api.md` (actual: `AgentPortal_V1/memory/llm/studio-api.md`, `memory/llm/studio-api.md`)
-- `TODO.md` L136 -> `llm/hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L119 -> `builder/INDEX.md` (actual: `AgentPortal_V1-git/memory/INDEX.md`, `AgentPortal_V1-git/memory/agents/INDEX.md`, `AgentPortal_V1-git/memory/llm/INDEX.md`)
+- `TODO.md` L123 -> `hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L135 -> `llm/studio-api.md` (actual: `AgentPortal_V1-git/memory/llm/studio-api.md`, `gapfix-test/memory/llm/studio-api.md`, `memory/llm/studio-api.md`)
+- `TODO.md` L136 -> `llm/hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
 - `TODO.md` L141 -> `repin_root_index.py` (actual: `memory/builder/repin_root_index.py`)
 - `TODO.md` L150 -> `index_html_pre-r14-9c6b08e3.html` (actual: `memory/mechanic/index_html_pre-r14-9c6b08e3.html`)
 - `TODO.md` L155 -> `arnold-restart-r8.ps1` (actual: `memory/builder/arnold-restart-r8.ps1`)
 - `TODO.md` L161 -> `arnold-restart-r8.ps1` (actual: `memory/builder/arnold-restart-r8.ps1`)
-- `TODO.md` L170 -> `goals/INDEX.md` (actual: `AgentPortal_V1/memory/INDEX.md`, `AgentPortal_V1/memory/llm/INDEX.md`, `AgentPortal_V1/memory/ops/INDEX.md`)
-- `TODO.md` L175 -> `synthesis/INDEX.md` (actual: `AgentPortal_V1/memory/INDEX.md`, `AgentPortal_V1/memory/llm/INDEX.md`, `AgentPortal_V1/memory/ops/INDEX.md`)
+- `TODO.md` L170 -> `goals/INDEX.md` (actual: `AgentPortal_V1-git/memory/INDEX.md`, `AgentPortal_V1-git/memory/agents/INDEX.md`, `AgentPortal_V1-git/memory/llm/INDEX.md`)
+- `TODO.md` L175 -> `synthesis/INDEX.md` (actual: `AgentPortal_V1-git/memory/INDEX.md`, `AgentPortal_V1-git/memory/agents/INDEX.md`, `AgentPortal_V1-git/memory/llm/INDEX.md`)
 - `TODO.md` L181 -> `arnold-restart-r8.md` (actual: `memory/builder/arnold-restart-r8.md`)
 - `TODO.md` L189 -> `designer/files-panel-hunks-r5.md` (actual: `memory/designer/files-panel-hunks-r5.md`)
 - `TODO.md` L193 -> `designer/files-panel-hunks-r5.md` (actual: `memory/designer/files-panel-hunks-r5.md`)
-- `TODO.md` L194 -> `TODO.md/MEMORY.md` (actual: `MEMORY.md`, `AgentPortal_V1/MEMORY.md`, `agents/orchestrator/MEMORY.md`)
+- `TODO.md` L194 -> `TODO.md/MEMORY.md` (actual: `MEMORY.md`, `AgentPortal_V1-git/MEMORY.md`, `AgentPortal_V1-git/memory/orchestrator/MEMORY.md`)
 - `TODO.md` L198 -> `designer/files-panel-hunks-r5.md` (actual: `memory/designer/files-panel-hunks-r5.md`)
 - `TODO.md` L201 -> `files-panel-hunks-r5.md` (actual: `memory/designer/files-panel-hunks-r5.md`)
-- `TODO.md` L207 -> `TODO.md/MEMORY.md` (actual: `MEMORY.md`, `AgentPortal_V1/MEMORY.md`, `agents/orchestrator/MEMORY.md`)
-- `TODO.md` L275 -> `MEMORY.md/TODO.md` (actual: `TODO.md`, `AgentPortal_V1/TODO.md`, `agents/orchestrator/TODO.md`)
+- `TODO.md` L207 -> `TODO.md/MEMORY.md` (actual: `MEMORY.md`, `AgentPortal_V1-git/MEMORY.md`, `AgentPortal_V1-git/memory/orchestrator/MEMORY.md`)
+- `TODO.md` L275 -> `MEMORY.md/TODO.md` (actual: `TODO.md`, `AgentPortal_V1-git/TODO.md`, `AgentPortal_V1-git/memory/orchestrator/TODO.md`)
 - `TODO.md` L292 -> `archivist/index-sweep-2026-11-13.md` (actual: `memory/archivist/index-sweep-2026-11-13.md`)
 - `TODO.md` L293 -> `archivist/index_check.py` (actual: `memory/archivist/index_check.py`)
 - `TODO.md` L296 -> `archivist/prune-log.md` (actual: `memory/archivist/prune-log.md`)
-- `TODO.md` L299 -> `architecture.md` (actual: `AgentPortal_V1/memory/portal/architecture.md`, `memory/portal/architecture.md`)
-- `TODO.md` L343 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
-- `TODO.md` L349 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
-- `TODO.md` L362 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
-- `TODO.md` L364 -> `black_hash_q8_out2.txt` (actual: `archive/orphaned_20261117/black_hash_q8_out2.txt`)
-- `TODO.md` L365 -> `copy_tail/q8_red2.log` (actual: `q8_red2.log`)
-- `TODO.md` L368 -> `black_hash_q8.ps1` (actual: `archive/orphaned_20261117/black_hash_q8.ps1`)
-- `TODO.md` L368 -> `black_hash_q8_out2.txt` (actual: `archive/orphaned_20261117/black_hash_q8_out2.txt`)
-- `TODO.md` L379 -> `hosts.md` (actual: `AgentPortal_V1/memory/llm/hosts.md`, `memory/llm/hosts.md`)
-- `TODO.md` L385 -> `ops/windows-runbook.md` (actual: `AgentPortal_V1/memory/ops/windows-runbook.md`, `memory/ops/windows-runbook.md`)
-- `TODO.md` L409 -> `r2_smoke_wait.py` (actual: `archive/one_shot_tasks_20261117/r2_smoke_wait.py`)
-- `TODO.md` L413 -> `probe_black.py` (actual: `archive/orphaned_20261117/probe_black.py`)
-- `TODO.md` L434 -> `probe_quinn.py` (actual: `AgentPortal_V1/probes/probe_quinn.py`, `archive/orphaned_20261117/probe_quinn.py`)
-- `TODO.md` L441 -> `probe_black.py` (actual: `archive/orphaned_20261117/probe_black.py`)
-- `TODO.md` L443 -> `probe_black.py` (actual: `archive/orphaned_20261117/probe_black.py`)
-- `TODO.md` L451 -> `r2_smoke_wait.py` (actual: `archive/one_shot_tasks_20261117/r2_smoke_wait.py`)
-- `TODO.md` L460 -> `ops/windows-runbook.md` (actual: `AgentPortal_V1/memory/ops/windows-runbook.md`, `memory/ops/windows-runbook.md`)
-- `TODO.md` L470 -> `architecture.md` (actual: `AgentPortal_V1/memory/portal/architecture.md`, `memory/portal/architecture.md`)
-- `TODO.md` L470 -> `bugs/INDEX.md` (actual: `AgentPortal_V1/memory/INDEX.md`, `AgentPortal_V1/memory/llm/INDEX.md`, `AgentPortal_V1/memory/ops/INDEX.md`)
-- ... +185 more (see JSON)
+- `TODO.md` L299 -> `architecture.md` (actual: `AgentPortal_V1-git/memory/portal/architecture.md`, `gapfix-test/memory/portal/architecture.md`, `memory/portal/architecture.md`)
+- `TODO.md` L343 -> `hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L349 -> `hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L362 -> `hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L379 -> `hosts.md` (actual: `AgentPortal_V1-git/memory/llm/hosts.md`, `gapfix-test/memory/llm/hosts.md`, `memory/llm/hosts.md`)
+- `TODO.md` L385 -> `ops/windows-runbook.md` (actual: `AgentPortal_V1-git/memory/ops/windows-runbook.md`, `gapfix-test/memory/ops/windows-runbook.md`, `memory/ops/windows-runbook.md`)
+- `TODO.md` L434 -> `probe_quinn.py` (actual: `AgentPortal_V1-git/probes/probe_quinn.py`, `gapfix-test/probes/probe_quinn.py`, `uploads/AgentPortal_V1/probes/probe_quinn.py`)
+- `TODO.md` L460 -> `ops/windows-runbook.md` (actual: `AgentPortal_V1-git/memory/ops/windows-runbook.md`, `gapfix-test/memory/ops/windows-runbook.md`, `memory/ops/windows-runbook.md`)
+- `TODO.md` L470 -> `architecture.md` (actual: `AgentPortal_V1-git/memory/portal/architecture.md`, `gapfix-test/memory/portal/architecture.md`, `memory/portal/architecture.md`)
+- `TODO.md` L470 -> `bugs/INDEX.md` (actual: `AgentPortal_V1-git/memory/INDEX.md`, `AgentPortal_V1-git/memory/agents/INDEX.md`, `AgentPortal_V1-git/memory/llm/INDEX.md`)
+- `memory/ONBOARDING.md` L68 -> `archivist/supersession_check.py` (actual: `memory/archivist/supersession_check.py`, `memory/scribe/supersession_check.py`)
+- `memory/ONBOARDING.md` L100 -> `archivist/freshness-report.md` (actual: `memory/archivist/freshness-report.md`)
+- `memory/ONBOARDING.md` L101 -> `archivist/supersession-report.json` (actual: `memory/scribe/supersession-report.json`)
+- `memory/ONBOARDING.md` L107 -> `knowledge_graph.py` (actual: `memory/archivist/knowledge_graph.py`)
+- `memory/ONBOARDING.md` L108 -> `memory_health.py` (actual: `memory/archivist/memory_health.py`)
+- `memory/ONBOARDING.md` L108 -> `freshness-report.md` (actual: `memory/archivist/freshness-report.md`)
+- ... +168 more (see JSON)
 
 ## Classification notes
 - HISTORICAL: file was committed at some point, later deleted; historical records may keep the reference.
