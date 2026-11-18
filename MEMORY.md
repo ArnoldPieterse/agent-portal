@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #11 (hot LLM loading) drafted; test harness built but blocked by same WinError 10013 sandbox firewall as Goal 6 — no live localhost con
 - Mechanic: auto_restart.py (goal #2) verified & ledger-recorded; live-recovery untestable in sandbox (WinError 10013, port 8099).
 - Goal #9 closed: memory/scribe/meeting_brief.py built — 31-line brief with open goals, blockers, decisions, agenda sections.
 - Goal #5 (Notification System) complete: toast infra added to ui/core.js with CSS+HTML+JS, syntax verified.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goal #2 (Thread Compression) closed: compress.py verified ≤20% ratio, 8→8 decisions preserved. Score now 4/10.
 - recover_all.py has no __main__ guard (executes on import); regression test must use AST extraction, not direct import
 - Goal #1 selftest 11/11 pass; /api/fleet/status and /api/fleet/plan still unwired in agent_portal.py — next step
+- Mechic lane fully closed: all 10 goals ledger-recorded (10/10, open=0) as of this pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
