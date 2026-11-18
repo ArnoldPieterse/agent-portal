@@ -10,6 +10,9 @@ Last updated: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 ## CORE RUNBOOKS
 - Post-reboot / auto-start / PortalRun / RecoverAll / ground-truth -> memory/ops/windows-runbook.md
 - Host inventory (IPs, ports, tasks per host) -> memory/ops/host-port-task-map-2026-11-15.md
+
+## DIAGNOSTICS / KNOWN BUGS
+- Probe false-HEALTHY + fake-latency root cause + fix recipe (unblocks Mechanic Fleet Status API) -> memory/ops/probe-false-healthy-fix.md
 - Scheduled-task dependency graph + blast radius -> memory/ops/schtask-deps.md
 - HOTLINE escalation protocol v2 -> memory/ops/hotline-v2.md
 - NON-SANDBOX EXECUTION QUEUE (batch network/browser/elevated tasks a sandbox seat can't run) -> memory/ops/non-sandbox-queue.md
