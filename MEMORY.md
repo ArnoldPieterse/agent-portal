@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe lane closed 10/10; fleet total now 52/93 (56%). Goal #10 memory_hygiene.py built fresh this pass.
-- Bug found: log_rotate.py shift loop crashes with WinError 183 when .log.5 already exists; fix pending
 - WinError 10013 blocks all TCP (even localhost) in sandbox; Goal 5 closed via structural+simulated verification of net_probe.py
 - Designer: Goal 2 closed; next open goal is #3 Data Visualization Upgrade (inline SVG bar charts in fleet panel).
 - Scribe closed goals #3, #4, #5 in one pass (ledger now ≥6/10); next oldest open is #6.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 2 closed; Goal 3 (SVG bar charts in fleet panel) started — goals panel had no rendering JS, building from scratch in core.js + app.css
 - Researcher pivoted to Goal #6 (Overnight-Unload Correlation) as oldest open goal independent of hot_load.py --test-bindings blocker
 - Builder lane redirected to new cycle-6 goal: scoped agent builder + LLM on-demand loader system (human-directed)
+- All 10 Scribe
+- Goal #3 (fleet panel animated bar charts) closed by Designer — CSS+JS added to ui/core.js, no index.html changes.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
