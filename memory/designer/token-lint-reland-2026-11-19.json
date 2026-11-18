@@ -1,0 +1,140 @@
+{
+  "file": "ui\\app.css",
+  "tokens_file": "ui\\tokens.css",
+  "token_scope_count": 0,
+  "dark_root_count": 0,
+  "override_scopes": [],
+  "defined_tokens": 86,
+  "C1_raw_hex_outside_root": [],
+  "C2_undefined_var_refs": [],
+  "C3_off_scale_font_size": [
+    {
+      "value": "18px",
+      "line": 23
+    },
+    {
+      "value": "22px",
+      "line": 68
+    },
+    {
+      "value": "11.5px",
+      "line": 239
+    },
+    {
+      "value": "10.5px",
+      "line": 251
+    },
+    {
+      "value": "11.5px",
+      "line": 253
+    },
+    {
+      "value": "10.5px",
+      "line": 261
+    },
+    {
+      "value": "10.5px",
+      "line": 262
+    },
+    {
+      "value": "10px",
+      "line": 264
+    },
+    {
+      "value": "10px",
+      "line": 272
+    }
+  ],
+  "C4_off_scale_spacing_info": [
+    {
+      "prop": "padding",
+      "value": "3px",
+      "line": 17
+    },
+    {
+      "prop": "padding",
+      "value": "2px",
+      "line": 27
+    },
+    {
+      "prop": "padding",
+      "value": "3px",
+      "line": 45
+    },
+    {
+      "prop": "padding",
+      "value": "1px",
+      "line": 56
+    },
+    {
+      "prop": "margin",
+      "value": "3px",
+      "line": 122
+    },
+    {
+      "prop": "padding",
+      "value": "3px",
+      "line": 133
+    },
+    {
+      "prop": "padding",
+      "value": "3px",
+      "line": 182
+    },
+    {
+      "prop": "gap",
+      "value": "6px",
+      "line": 219
+    },
+    {
+      "prop": "padding",
+      "value": "6px",
+      "line": 220
+    },
+    {
+      "prop": "margin",
+      "value": "2px",
+      "line": 222
+    },
+    {
+      "prop": "padding",
+      "value": "20px",
+      "line": 234
+    },
+    {
+      "prop": "padding",
+      "value": "1px",
+      "line": 237
+    },
+    {
+      "prop": "gap",
+      "value": "18px",
+      "line": 239
+    },
+    {
+      "prop": "gap",
+      "value": "6px",
+      "line": 254
+    },
+    {
+      "prop": "gap",
+      "value": "6px",
+      "line": 259
+    },
+    {
+      "prop": "margin",
+      "value": "6px",
+      "line": 262
+    },
+    {
+      "prop": "padding",
+      "value": "1px",
+      "line": 266
+    },
+    {
+      "prop": "gap",
+      "value": "6px",
+      "line": 273
+    }
+  ]
+}
