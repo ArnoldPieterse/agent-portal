@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic wrote memory/ops/fleet-monitoring-cadence.md: 3-tier escalation policy linking health_check, net_probe, disk_monitor, auto_restart,
 - Goal #1 (Design Token System) complete: 48 hex colors in app.css mapped to tokens; rgba() shadows remain but are not violations.
 - Mechanic 10/10 goals closed; only open item is known WinError 10013 egress block (sandbox, not actionable).
 - Goal #2 (Info Density): data-panel padding tightened ~15%; remaining: goals/uploads panels + before/after screenshots for acceptance.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 verified via static HTML fixture (CDP blocked); artifact at memory/designer/goal2-density-before-after-fixture.html
 - Mechic: All 10/10 goals closed; "1 open" in auto-loop prompt is a stale dashboard snapshot — do not re-probe.
 - Mechic: "1 open" in auto-loop prompt is a stale dashboard snapshot; ledger confirms 10/10 closed, 0 open. Do not re-probe.
+- Goal 4 done: UI.emptyState() was in icons.js (unloaded); fixed by adding self-contained bootstrap to core.js so all 4 empty states work at r
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
