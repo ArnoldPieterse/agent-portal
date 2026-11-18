@@ -48,9 +48,16 @@ def infer_edges(tasks):
     return edges
 
 def diff_tasks(prev_tasks, curr_tasks):
-    prev_names = {t["name"] for t in prev_tasks}
-    curr_names = {t["name"] for t in curr_tasks}
-    return {"added": sorted(curr_names - prev_names), "removed": sorted(prev_names - curr_names)}
+    # Normalize: live schtasks output carries a leading backslash (\\PortalRun)
+    # while hand-written baselines may not (PortalRun). Compare on the cleaned
+    # name, report the raw current name.
+    def key(n):
+        return n.strip().lstrip("\\").strip('"').lower()
+    prev_map = {key(t["name"]): t["name"] for t in prev_tasks}
+    curr_map = {key(t["name"]): t["name"] for t in curr_tasks}
+    added = sorted(curr_map[k] for k in curr_map.keys() - prev_map.keys())
+    removed = sorted(prev_map[k] for k in prev_map.keys() - curr_map.keys())
+    return {"added": added, "removed": removed}
 
 def main():
     ap = argparse.ArgumentParser()
@@ -72,7 +79,11 @@ def main():
 
     if args.prev and os.path.exists(args.prev):
         with open(args.prev, encoding="utf-8-sig") as f:
-            prev_tasks = parse_schtasks_csv(f.read())
+            raw = f.read()
+        if raw.lstrip().startswith("{"):  # previous snapshot is our JSON format
+            prev_tasks = json.loads(raw).get("tasks", [])
+        else:                              # or a raw schtasks CSV dump
+            prev_tasks = parse_schtasks_csv(raw)
         result["diff"] = diff_tasks(prev_tasks, tasks)
         d = result["diff"]
         if d["added"]:
