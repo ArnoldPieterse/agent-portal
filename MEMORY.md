@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Portal
-- Built /api/fleet/status endpoint (per-host reachable, latency_ms, disk_pct, mem_pct, portal_up); migrating UI strip from /
 - Goal #5 Notification System: code+CSS written; no display/Node for visual verify — plan is self-contained browser acceptance fixture.
 - shutil.disk_usage("C:\\") hits PermissionError here; use os.getcwd() instead (fixed in _local_disk_pct, goal 8)
 - RECALL: -
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer: Goal #8 Icon System ~70% done; remaining = okText helper (
 - Mechanic fixed `_local_disk_pct()`: `shutil.disk_usage("C:\\")` hits PermissionError; switched to Win32 API (same pattern as memory
 - Goal #8 (Icon System) complete: all chrome emoji replaced with SVG icons in core.js; 0 remaining per grep.
+- Goal #9 (Post-Mortem Template) was the stale "1 open" source; now closed with verified marker after running postmortem_gen.py.
+- Goal #8 (Icon System) complete: all system emoji replaced in ui/core.js; user-settable avatar emojis (L37, uploads L233) are out of scope.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

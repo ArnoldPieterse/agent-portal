@@ -1,0 +1,104 @@
+{
+  "goal": 4,
+  "date": "2026-11-19",
+  "type": "static_code_verification",
+  "pass": true,
+  "checks": [
+    {
+      "name": "UI.emptyState function defined",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "UI.emptyState exported on root.UI",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "PATHS['agent'] defined in icons.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "PATHS['fleet'] defined in icons.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "PATHS['upload'] defined in icons.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "PATHS['goal'] defined in icons.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS class .empty-state in app.css",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS class .empty-state-icon in app.css",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS class .empty-state-title in app.css",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS class .empty-state-msg in app.css",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS class .empty-state-cta in app.css",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "agent roster (core.js): icon+title present",
+      "ok": true,
+      "detail": "icon=True, title=True"
+    },
+    {
+      "name": "fleet panel (core.js): icon+title present",
+      "ok": true,
+      "detail": "icon=True, title=True"
+    },
+    {
+      "name": "goals panel (uploads.js): icon+title present",
+      "ok": true,
+      "detail": "icon=True, title=True"
+    },
+    {
+      "name": "uploads/files (uploads.js): icon+title present",
+      "ok": true,
+      "detail": "icon=True, title=True"
+    },
+    {
+      "name": "agent roster: has CTA (onCta param)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "fleet panel: has CTA (onCta param)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "goals panel: has CTA (onCta param)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "uploads/files: no CTA (informational only)",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "note": "All 4 empty-state call sites confirmed present with correct icon/title/CTA params. UI.emptyState function defined in icons.js L178, exported L325. All required CSS classes in app.css. No display available for browser screenshot; static verification serves as acceptance evidence per prior convention."
+}

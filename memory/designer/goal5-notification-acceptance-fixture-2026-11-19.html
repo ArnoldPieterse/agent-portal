@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Goal #5 - Notification System Acceptance Fixture</title>
+<style>
+:root{
+  --acc:#4f8cff;
+  --ok:#3ddc84;
+  --warn:#ff9f43;
+  --err:#ff6b6b;
+  --faint:#8b98ab;
+  --panel:#151a22;
+  --text:#e8edf4;
+  --line:#2a3342;
+  --dim:#9aa7b8;
+  --sp-4:4px;
+  --sp-6:6px;
+  --sp-8:8px;
+  --fs-12:12px;
+  --lh-base:1.45;
+  --ok-bg:rgba(61,220,132,.08);
+  --warn-bg:rgba(255,159,67,.08);
+  --err-bg:rgba(255,107,107,.08);
+  --acc-bg:rgba(79,140,255,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:#0b0f16;color:var(--text,#e8edf5);padding:24px}
+header{display:flex;align-items:center;gap:12px;padding:10px 14px;background:#111722;border:1px solid var(--line,#2a3446);border-radius:8px;margin-bottom:18px}
+h1{font-size:18px;margin:0 0 14px} h2{font-size:15px;margin:22px 0 8px}
+.card{background:#111722;border:1px solid var(--line,#2a3446);border-radius:8px;padding:14px;margin-bottom:14px}
+button.fire{background:#1b2536;color:var(--text);border:1px solid var(--line,#2a3446);border-left-width:3px;border-radius:6px;padding:8px 12px;font-size:13px;cursor:pointer;margin:0 6px 6px 0}
+button.fire.ok{border-left-color:var(--ok)} button.fire.warn{border-left-color:var(--warn)}
+button.fire.err{border-left-color:var(--err)} button.fire.info{border-left-color:var(--acc)}
+#results{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;line-height:1.7;white-space:pre-wrap;background:#0b0f16;border:1px solid var(--line,#2a3446);border-radius:8px;padding:14px;margin-top:10px}
+.pass{color:var(--ok);font-weight:700} .fail{color:var(--err);font-weight:700} .info{color:var(--faint)}
+.badge-line{display:flex;align-items:center;gap:10px;font-size:13px;margin-top:6px}
+/* ===== REAL notification CSS (copied verbatim from ui/app.css) ===== */
+.toast-container{position:fixed;top:var(--sp-8);right:var(--sp-8);z-index:9999;display:flex;flex-direction:column;gap:var(--sp-4);max-width:360px;pointer-events:none}
+.toast{pointer-events:auto;display:flex;align-items:center;gap:var(--sp-4);padding:var(--sp-6) var(--sp-8);border-radius:8px;font-size:var(--fs-12);line-height:var(--lh-base);color:var(--text);background:var(--panel);border:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.35);animation:toast-in .2s ease-out;transition:opacity .2s,transform .2s}
+.toast.ok{border-left:3px solid var(--ok)}
+.toast.warn{border-left:3px solid var(--warn)}
+.toast.err{border-left:3px solid var(--err)}
+.toast.info{border-left:3px solid var(--acc)}
+.toast.leaving{opacity:0;transform:translateX(20px)}
+@keyframes toast-in{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:none}}
+.toast-close{background:none;border:none;color:var(--faint);cursor:pointer;font-size:14px;padding:0 2px;line-height:1}
+.toast-close:hover{color:var(--text)}
+
+.notif-bell{position:relative;background:none;border:none;cursor:pointer;color:var(--dim);padding:var(--sp-4);display:flex;align-items:center}
+.notif-bell:hover{color:var(--text)}
+.notif-badge{position:absolute;top:1px;right:0;min-width:16px;height:16px;border-radius:8px;background:var(--err);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 4px;line-height:1}
+.notif-badge.hidden{display:none}
+
+.notif-panel{position:absolute;top:100%;right:0;width:300px;max-height:360px;overflow-y:auto;background:var(--panel);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.45);z-index:9998;display:none}
+.notif-panel.open{display:block}
+.notif-panel-head{padding:var(--sp-6) var(--sp-8);font-size:var(--fs-12);font-weight:600;color:var(--dim);border-bottom:1px solid var(--line)}
+.notif-item{display:flex;align-items:center;gap:var(--sp-4);padding:var(--sp-4) var(--sp-8);border-bottom:1px solid var(--line);font-size:var(--fs-12);line-height:var(--lh-base)}
+.notif-item:last-child{border-bottom:none}
+.ni-icon{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex:none}
+.ni-icon.ok{background:var(--ok-bg);color:var(--ok)}
+.ni-icon.warn{background:var(--warn-bg);color:var(--warn)}
+.ni-icon.err{background:var(--err-bg);color:var(--err)}
+.ni-icon.info{background:var(--acc-bg);color:var(--acc)}
+.ni-msg{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ni-time{font-size:11px;color:var(--faint);flex:none}
+</style></head>
+<body>
+<header><strong style="font-size:14px">Agent Portal - Notification Acceptance Harness</strong>
+  <span class="info" style="margin-left:auto;font-size:12px">runs the REAL ui/notifications.js module</span></header>
+
+<h1>Goal #5 - Notification System - Browser Acceptance Fixture</h1>
+<div class="card"><div class="info" style="font-size:13px;line-height:1.6">
+This page loads the <b>verbatim production module</b> (<code>ui/notifications.js</code>, 4666 bytes) and the
+<b>verbatim notification CSS + design tokens</b>. On load it runs an automated self-test (T1-T6). The bell in the
+header above is injected by the real module. Use the buttons to confirm visually; the auto-dismiss timer is the real 5 s.
+</div></div>
+
+<h2>Manual triggers (visual check)</h2>
+<div class="card">
+  <button class="fire ok"   onclick="notify('ok','Goal closed: designer #3 data-viz')">&#10003; goal closed (ok)</button>
+  <button class="fire warn" onclick="notify('warn','white-01 went offline')">! agent offline (warn)</button>
+  <button class="fire err"  onclick="notify('err','Upload failed: HTTP 500')">&#10007; upload failed (err)</button>
+  <button class="fire info" onclick="notify('info','Uploaded report.pdf (2.1 MB)')">i upload complete (info/ok)</button>
+  <div class="badge-line">Bell badge auto-updates (see header) - click the bell to open the history panel and clear the badge.</div>
+</div>
+
+<h2>Automated self-test results</h2>
+<div id="results"><span class="info">running... (auto-dismiss check needs ~5.5 s)</span></div>
+
+<!-- ===== REAL production module, verbatim ===== -->
+<script>
+// Agent Portal - Notification System (Goal #5, 2026-11-19)
+// Self-contained module: toast notifications + bell with unread badge.
+// Exposes window.notify(type, message) and window.getNotifications().
+// Types: 'ok' | 'warn' | 'err' | 'info'
+(function(){
+  'use strict';
+  var NOTIFS=[]; // {type, msg, ts}
+  var unread=0;
+
+  // --- DOM injection (runs on DOMContentLoaded or immediately if already loaded) ---
+  function init(){
+    // Toast container
+    var tc=document.createElement('div');
+    tc.className='toast-container';
+    tc.setAttribute('aria-live','polite');
+    tc.id='toastContainer';
+    document.body.appendChild(tc);
+
+    // Bell button in header (after status div)
+    var hdr=document.querySelector('header');
+    if(hdr){
+      var wrap=document.createElement('span');
+      wrap.style.position='relative';
+      var bell=document.createElement('button');
+      bell.className='notif-bell';
+      bell.title='Notifications';
+      bell.setAttribute('aria-label','Notifications');
+      bell.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>';
+      var badge=document.createElement('span');
+      badge.className='notif-badge hidden';
+      badge.id='notifBadge';
+      bell.appendChild(badge);
+
+      // Dropdown panel
+      var panel=document.createElement('div');
+      panel.className='notif-panel';
+      panel.id='notifPanel';
+      wrap.appendChild(bell);
+      wrap.appendChild(panel);
+      hdr.appendChild(wrap);
+
+      bell.onclick=function(e){ e.stopPropagation(); togglePanel(); };
+      document.addEventListener('click',function(ev){ if(!wrap.contains(ev.target)) closePanel(); });
+    }
+  }
+
+  function togglePanel(){
+    var p=document.getElementById('notifPanel');
+    if(!p) return;
+    var open=p.classList.toggle('open');
+    if(open){ renderPanel(); unread=0; updateBadge(); }
+  }
+  function closePanel(){ var p=document.getElementById('notifPanel'); if(p)p.classList.remove('open'); }
+
+  function updateBadge(){
+    var b=document.getElementById('notifBadge');
+    if(!b) return;
+    if(unread>0){ b.textContent=unread>9?'9+':String(unread); b.classList.remove('hidden'); }
+    else{ b.classList.add('hidden'); }
+  }
+
+  function renderPanel(){
+    var p=document.getElementById('notifPanel');
+    if(!p) return;
+    var h='<div class="notif-panel-head">Notifications ('+NOTIFS.length+')</div>';
+    if(!NOTIFS.length) h+='<div style="padding:10px 12px;font-size:12px;color:var(--faint)">No notifications yet</div>';
+    NOTIFS.slice().reverse().slice(0,30).forEach(function(n){
+      var icon=n.type==='ok'?'\u2713':n.type==='warn'?'!':n.type==='err'? '\u2717':'i';
+      var t=new Date(n.ts); var tm=String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0');
+      h+='<div class="notif-item"><span class="ni-icon '+n.type+'">'+icon+'</span><span class="ni-msg">'+escHtml(n.msg)+'</span><span class="ni-time">'+tm+'</span></div>';
+    });
+    p.innerHTML=h;
+  }
+
+  function escHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  // --- Public API ---
+  window.notify=function(type,msg){
+    type=type||'info'; msg=msg||'';
+    var entry={type:type,msg:msg,ts:Date.now()};
+    NOTIFS.push(entry);
+    if(NOTIFS.length>100) NOTIFS.shift();
+    unread++;
+    updateBadge();
+    showToast(type,msg);
+  };
+
+  window.getNotifications=function(){ return NOTIFS.slice(); };
+  window.markNotifsRead=function(){ unread=0; updateBadge(); };
+
+  function showToast(type,msg){
+    var tc=document.getElementById('toastContainer');
+    if(!tc) return;
+    var t=document.createElement('div');
+    t.className='toast '+type;
+    t.innerHTML='<span>'+escHtml(msg)+'</span><button class="toast-close" aria-label="Dismiss">\u00d7</button>';
+    tc.appendChild(t);
+    // Cap visible toasts at 4
+    var toasts=tc.querySelectorAll('.toast:not(.leaving)');
+    if(toasts.length>4){ var first=toasts[0]; first.classList.add('leaving'); setTimeout(function(){first.remove();},200); }
+    // Auto-dismiss after 5s
+    var timer=setTimeout(function(){ dismiss(t); },5000);
+    t.querySelector('.toast-close').onclick=function(){ clearTimeout(timer); dismiss(t); };
+  }
+
+  function dismiss(el){
+    if(!el||el.classList.contains('leaving')) return;
+    el.classList.add('leaving');
+    setTimeout(function(){ el.remove(); },200);
+  }
+
+  // Init on DOM ready
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init);
+  else init();
+})();
+</script>
+
+<script>
+// ===== Self-test harness (does NOT modify the module under test) =====
+(function(){
+  var out=document.getElementById('results');
+  var results=[];
+  function rec(id,name,ok,detail){results.push({id:id,ok:ok,name:name,detail:detail});render();}
+  function render(){
+    var p=0,f=0,s='';
+    for(var i=0;i<results.length;i++){var r=results[i]; if(r.ok)p++;else f++;
+      s+='<span class="'+(r.ok?'pass':'fail')+'">'+(r.ok?'PASS':'FAIL')+'</span> '+r.id+' - '+r.name+(r.detail?'  *  '+r.detail:'')+'\n';}
+    var done=results.length>=6;
+    out.innerHTML=(done?('<b>'+p+'/6 passed</b> '+(f===0?'- ALL ACCEPTANCE CRITERIA MET':('- '+f+' FAILED')))+'\n\n'):'waiting...\n')+s;
+  }
+  function wait(ms,cb){var t0=Date.now();(function loop(){if(Date.now()-t0>=ms)return cb();setTimeout(loop,50);})();}
+
+  function run(){
+    // T1: toast renders with type class + XSS-safe message
+    notify('ok','<script>alert(1)</script> goal closed');
+    var tc=document.getElementById('toastContainer');
+    var t=tc?tc.querySelector('.toast.ok'):null;
+    var escOk=t&&t.querySelector('span').textContent.indexOf('<script>')===-1&&t.querySelector('span').textContent.indexOf('goal closed')>-1;
+    rec('T1','toast renders with type class + XSS-safe message',!!t&&escOk,'container='+(tc?'found':'MISSING')+', toast.ok='+(t?'yes':'no'));
+
+    // T2: badge increments and shows count (caps at 9+)
+    var b=document.getElementById('notifBadge');
+    for(var i=0;i<3;i++)notify('info','n'+i);
+    wait(80,function(){
+      var txt=b?b.textContent:'';
+      rec('T2','unread badge increments + caps at 9+',!!b&&!b.classList.contains('hidden')&&(txt==='4'||txt==='9+'),'badge="'+txt+'"');
+
+      // T3: stack cap - fire enough to exceed 4, assert <=4 non-leaving remain
+      for(var j=0;j<6;j++)notify(j%2?'warn':'err','stack '+j);
+      wait(80,function(){
+        var live=document.querySelectorAll('#toastContainer .toast:not(.leaving)');
+        rec('T3','stack capped at 4 visible toasts',live.length<=4,'live='+live.length);
+
+        // T6: each of the 4 types resolves a distinct left-border color
+        var seen=[],ok=true;var rep='';
+        ['ok','warn','err','info'].forEach(function(tp){
+          var e=document.createElement('div');e.className='toast '+tp;document.body.appendChild(e);
+          var c=getComputedStyle(e).borderLeftColor;if(seen.indexOf(c)>-1)ok=false;seen.push(c);
+          rep+=tp+'='+c+' ';e.remove();});
+        rec('T6','4 types -> 4 distinct left-border colors',ok,rep.trim());
+
+        // T5: history API returns entries; markNotifsRead hides badge
+        var n=window.getNotifications?window.getNotifications():null;
+        if(window.markNotifsRead)window.markNotifsRead();
+        wait(80,function(){
+          rec('T5','history API + markNotifsRead clears badge',Array.isArray(n)&&n.length>0&&b.classList.contains('hidden'),'entries='+(n?n.length:0)+', badgeHidden='+b.classList.contains('hidden'));
+
+          // T4: auto-dismiss - fire one fresh toast, assert it is gone after >5s
+          notify('warn','auto-dismiss probe');
+          wait(5600,function(){
+            var probeGone=true;
+            document.querySelectorAll('#toastContainer .toast').forEach(function(x){
+              if(x.querySelector('span')&&x.querySelector('span').textContent.indexOf('auto-dismiss probe')>-1)probeGone=false;});
+            rec('T4','toasts auto-dismiss after 5s',probeGone,'probe removed='+probeGone);
+          });
+        });
+      });
+    });
+  }
+  wait(120,run);
+})();
+</script>
+</body></html>
