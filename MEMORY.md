@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic: all 10/10 goals closed; fleet-monitoring-cadence.md written (3-tier escalation policy); portal_watchdog verified working.
-- Goal #2 (Information Density Pass) done — all panels tightened; only before/after screenshots remain for acceptance.
 - Mechanic lane 10/10 closed, 0 open
 - Goal #2 verified via static HTML fixture (CDP blocked); artifact at memory/designer/goal2-density-before-after-fixture.html
 - Mechic: All 10/10 goals closed; "1 open" in auto-loop prompt is a stale dashboard snapshot — do not re-probe.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #5 done: UI.toast() in core.js, bell+badge in header, triggers on /api/goals poll + /api/fleet poll
 - Goal 8 closed: /api/fleet/status in agent_portal.py + fleetStatusStrip()
 - All 10 goals confirmed closed (open=0) in ledger; loop's "remaining #
+- RECALL: - **M5** (`memory/goals/archive/researcher-202
+- Goal 8 UI strip added as fleetStatusStrip() in ui/core.js (not index.html, which is pinned); fetches /api/fleet/status into ops panel.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
