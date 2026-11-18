@@ -1,0 +1,77 @@
+<!doctype html><html><head><meta charset=utf-8>
+<style>
+ body{background:#0d1117;color:#e6edf3;font:14px/1.5 system-ui; margin:24px}
+ h1{font-size:20px} .grid{display:flex;flex-wrap:wrap;gap:18px;margin-top:16px}
+ .cell{width:120px;text-align:center;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 8px}
+ .cell svg{color:#58a6ff;vertical-align:middle}
+ .nm{margin-top:8px;font-size:12px;color:#8b949e}
+ .tl{margin-top:24px;background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 14px}
+ .aev{display:flex;gap:8px;align-items:center;padding:4px 0;font-size:13px}
+ .ai svg{width:14px;height:14px;color:#58a6ff}
+ .ax{color:#8b949e}
+</style></head><body>
+<h1>Goal #8 — runtime icon set (extracted from ui/core.js inline IIFE)</h1>
+<div class=grid id=g></div>
+<h2 style="margin-top:28px">Activity-timeline marker wiring (actRender path)</h2>
+<div class=tl id=tl></div>
+<script>
+(function(){
+  var NS="http://www.w3.org/2000/svg";
+  var P={ agent:["M12 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8z","M4 20c0-3.3 3.6-5 8-5s8 1.7 8 5"],
+          goal:["M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z","M12 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12z","M12 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"],
+          upload:["M12 3v12","M8 7l4-4 4 4","M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"],
+          alert:["M12 3L2 21h20L12 3z","M12 10v5","M12 18h.01"],
+          settings:["M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z","M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"],
+          search:["M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z","M21 21l-4.35-4.35"],
+          close:["M18 6L6 18","M6 6l12 12"],
+          check:["M5 13l4 4L19 7"],
+          warning:["M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z","M12 8v5","M12 16h.01"],
+          bell:["M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9","M13.73 21a2 2 0 0 1-3.46 0"],
+          folder:["M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"],
+          clock:["M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z","M12 6v6l4 2"],
+          play:["M7 5l12 7-12 7V5z"],
+          tool:["M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6z"],
+          stop:["M6 6h12v12H6z"],
+          book:["M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2V5z","M8 7h8M8 11h8"],
+          save:["M5 3h11l3 3v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z","M8 3v5h7V3","M7 14h10v6H7z"] };
+  function icon(name,o){
+    o=o||{}; var paths=P[name]; if(!paths) return document.createElement("span");
+    var size=o.size||20, s=document.createElementNS(NS,"svg");
+    s.setAttribute("viewBox","0 0 24 24");s.setAttribute("width",size);s.setAttribute("height",size);
+    s.setAttribute("fill","none");s.setAttribute("stroke","currentColor");s.setAttribute("stroke-width","1.5");
+    s.setAttribute("stroke-linecap","round");s.setAttribute("stroke-linejoin","round");s.setAttribute("aria-hidden","true");
+    if(o.cls) s.setAttribute("class",o.cls);
+    for(var i=0;i<paths.length;i++){ var p=document.createElementNS(NS,"path"); p.setAttribute("d",paths[i]); s.appendChild(p); }
+    return s;
+  }
+  window.UI = (window.UI||{});
+  window.UI.icon = icon;
+  window.UI.iconNames = Object.keys(P);
+  window.emptyState=function(o){
+    o=o||{}; var box=document.createElement("div"); box.className="empty-state";
+    if(o.icon) box.appendChild(icon(o.icon,{size:32,cls:"empty-state-icon"}));
+    if(o.title){var t=document.createElement("div");t.className="empty-state-title";t.textContent=o.title;box.appendChild(t);}
+    if(o.message){var m=document.createElement("div");m.className="empty-state-msg";m.textContent=o.message;box.appendChild(m);}
+    if(o.ctaLabel){var b=document.createElement("button");b.type="button";b.className="empty-state-cta btn";b.textContent=o.ctaLabel;if(typeof o.onCta==="function")b.onclick=o.onCta;box.appendChild(b);}
+    return box;
+  };
+})();
+// render all icons
+var g=document.getElementById("g");
+UI.iconNames.forEach(function(n){
+  var c=document.createElement("div");c.className="cell";
+  c.appendChild(UI.icon(n,{size:32}));
+  var s=document.createElement("div");s.className="nm";s.textContent=n;c.appendChild(s);
+  g.appendChild(c);
+});
+// simulate actRender marker for each event using the SAME map core.js uses
+var actIcons={start:"play",tool:"tool",end:"check",blocked:"stop",error:"warning",aborted:"stop",readmem:"book",storemem:"save"};
+var tl=document.getElementById("tl");
+Object.keys(actIcons).forEach(function(ev){
+  var row=document.createElement("div");row.className="aev";
+  var mk=document.createElement("span");mk.className="ai";
+  var ic=UI.icon(actIcons[ev],{size:14,cls:"act-ic"}); if(ic)mk.appendChild(ic);
+  var ax=document.createElement("span");ax.className="ax";ax.textContent=ev+" -> "+actIcons[ev];
+  row.appendChild(mk);row.appendChild(ax);tl.appendChild(row);
+});
+</script></body></html>
