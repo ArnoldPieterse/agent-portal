@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 4 open goals (#1,#4,#6,#8) blocked by same sandbox class; unblock sequence in memory/mechanic/goal4-all-open-blocked-202
 - Wrote `memory/designer/design-system-state-2026-11-18.md` as canonical cycle-3 design handoff; INDEX updated with pointer.
 - Goal #4 unblock: run `python memory/mechanic/deploy_reboot_recovery_all.py` from non-sandbox White admin; schtasks COM blocked at this seat,
 - Goal #10 (compression-fidelity self-audit) is BG-SCHED/cadence-gated; supersession
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 Scribe goals now closed: 8 verified, 1 BG-scheduled (#10), 1 ledger-marker recorded this pass (#9).
 - Scribe lane fully closed: 10/10 goals verified in ledger; MEMORY.md updated to CY
 - capture_baseline.py v2 adds --local mode (file:// + inlined CSS/JS), removing :8099 server dependency for sandbox-proof execution
+- Scribe lane fully closed: 10/10 goals verified, zero open; auto-loop "1 open" count was stale.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
