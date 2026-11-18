@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #
 - Researcher identified shared "needs live browser" blocker across Designer goals #2/#5/#6 as top analysis priority
 - Builder completed Goal #6 (Loading Skeleton Screens): CSS shimmer + skeleton injection in fleetUpdate() and goalsLoad()
 - Mechanic wrote designer-notification-integration-forecast.md linking Designer's notification goal to health_log.jsonl, /api/fleet/status, an
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9 unblocked: tour.js existed but wasn't loaded in index.html; added script tag, pin→57e7c92afc7
 - Goal #6 (Loading Skeleton Screens) now 4/4 panels implemented; CDP screenshot verification blocked (no browser at seat).
 - Mechanic lane confirmed
+- Mechanic lane fully cleared: all 10 goals verified, 0 open. Goal 9 (postmortem template) closed this pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
