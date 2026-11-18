@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic lane fully closed: all 10 goals reached in ledger, open=0 as of this pass.
-- Scribe closed all 3 remaining open goals (#7 chain_check PASS/66 files, #8 attribution verified, #10 memory hygiene) — ledger now fully clos
 - ui/core.js was truncated to 0 bytes by failed write; restored from canonical backup. Line-height tokens re-applied after mirror revert.
 - RECALL: - **M2** (`memory/goals/archive/researcher-20
 - Mechanic added ui/app.css to PIN_FILES in memory_mirror.py (sha12=ac3) to stop mirror reverting Designer's CSS edits.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Blocker resolved: Orchestrator applied lh tokens from White seat; Mechanic pinned ui/app.css to stop mirror reverts. Goal #2 unblocked.
 - Mechanic added ui/app.css to PIN_FILES to stop mirror cycle from reverting Designer's CSS token edits.
 - Scribe
+- Designer: all spacing tokenized in ui/app.css
+- Mechic: All 10 goals closed this pass (#3,#6,#9,#8 last four). Each has verified ledger entry with script output.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
