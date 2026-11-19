@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Orchestrator seat cannot probe localhost HTTP (WinError 10013); must use elev.py as SYSTEM for live-portal tests.
 - Researcher at 100% on own goals; now assisting via ledger verification (option c), not re-probing :8888 egress wall.
 - Designer: app.css only imports tokens.css; interactions.css/animations.css are dead code; app.css still has duplicate :hover rules blocking
 - Designer Goals #1&2 "verified" markers are FALSE at runtime; canonical pin 195530265
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder: ui/core.js streamReplyCore line 168 — body.textContent SSE updates need rAF batching; file is not pin-protected.
 - Researcher confirmed :8888 egress wall (WinError 10013) persists in sandbox; elev.py absent — blocks all LIVE legs
 - Builder goal #2: all direct fetch() calls in
+- Goal #2 (Animation/Motion System) CLOSED — 5 keyframes in animations.css, GPU-composited props only, prefers-reduced-motion present.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
