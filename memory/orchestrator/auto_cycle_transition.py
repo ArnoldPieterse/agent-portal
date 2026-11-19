@@ -13,7 +13,7 @@ USAGE:
   python memory/orchestrator/auto_cycle_transition.py --run        # execute transition
   python memory/orchestrator/auto_cycle_transition.py --dry-run    # show what WOULD happen
 """
-import os, re, sys, shutil, datetime
+import os, re, sys, shutil, datetime, time
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "researcher"))
 try:
@@ -239,6 +239,42 @@ def save_roster_snapshot(cycle_num, dry_run=False):
     return snap_file
 
 
+def create_goal_files(cycle_num, dry_run=False):
+    """Create empty goal file skeletons for each agent in the new cycle. Returns list of paths."""
+    root = repo_root()
+    gdir = os.path.join(root, GOALS_DIR)
+    today = datetime.date.today().isoformat()
+    created = []
+    for agent, fn in sorted(AGENT_FILES.items()):
+        path = os.path.join(gdir, fn)
+        if os.path.exists(path) and not dry_run:
+            # file already exists (shouldn't after archive), skip
+            continue
+        skeleton = (
+            f"# {agent.capitalize()} - 10 goals (set {today}, cycle-{cycle_num+1})\n"
+            f"\n"
+            f"Focus: TBD\n"
+            f"\n"
+            f"1. **Goal 1** - (TBD)\n"
+            f"2. **Goal 2** - (TBD)\n"
+            f"3. **Goal 3** - (TBD)\n"
+            f"4. **Goal 4** - (TBD)\n"
+            f"5. **Goal 5** - (TBD)\n"
+            f"6. **Goal 6** - (TBD)\n"
+            f"7. **Goal 7** - (TBD)\n"
+            f"8. **Goal 8** - (TBD)\n"
+            f"9. **Goal 9** - (TBD)\n"
+            f"10. **Goal 10** - (TBD)\n"
+        )
+        if dry_run:
+            created.append(f"[DRY] {fn}")
+        else:
+            with open(path, "w", encoding="utf-8") as fh:
+                fh.write(skeleton)
+            created.append(fn)
+    return created
+
+
 def main():
     mode = "--check"
     for arg in sys.argv[1:]:
@@ -277,6 +313,10 @@ def main():
     moves = archive_goals(dry_run=dry)
     for m in moves:
         print(f"  ARCHIVE: {m}")
+    
+    new_files = create_goal_files(cycle, dry_run=dry)
+    for nf in new_files:
+        print(f"  NEW GOALS: {nf}")
     
     kickoff_path = generate_kickoff(cycle, dry_run=dry)
     update_todo(cycle, dry_run=dry)

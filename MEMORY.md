@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Hot note "UI.icon() 19 call sites" disproven: actual total=8, uploads.js=0; evidence leaf written for Mechanic Goal 2 sentinel.
 - Mechanic Goal 8 (Fleet Status API) corrected to STALE-OVERCLAIM; endpoint mirror-reverted, true state OPEN. Leaf: memory/sink/mechanic-goal8
 - Wrote `memory/ops/design-token-lint-workflow.md`: 3-step audit→fix→CI guard for off-scale px in `ui/app.css`, ~1h effort next cycle.
 - Cycle-7 scripts (model_bench, residency_matrix, kb_index, auto_research) are absent — "100% reached" closures were aspirational, not real.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Ledger EVIDENCE_PAT false-matches "(verified:)" in goal descriptions as closure markers; needs fix to avoid corrupting evidence tracking.
 - Goal #2 done: ui/animations.css created (5 keyframes, GPU-only), wired via @import in app.css, autoStagger() helper added.
 - PowerShell blocked, cmd for-loops mangled; use Python for filesystem recon in this sandbox (WinError 10013 on :8888/:8
+- Builder Goal#1: 32 createElement calls in core.js (target<5); approach=
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

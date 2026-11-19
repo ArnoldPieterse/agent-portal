@@ -6,7 +6,7 @@ Focus: Fleet orchestration at scale. Move from hotload infrastructure (cycle-6, 
 
 2. **Fleet Capacity Dashboard v2** - Extend /api/fleet/status with per-agent token-usage tracking (from portal request logs) and a 7-day trend sparkline. UI: fleet tab shows per-host VRAM bar + per-agent usage % + trend arrow. Verified: endpoint returns 7-day array per agent; UI renders without JS errors for all 8 agents.
 
-3. **Goal-Cycle Auto-Transition v2** - Extend auto_cycle_transition.py to: (a) detect 100% closure, (b) archive with date stamp, (c) generate kickoff note with lane-arc summary per agent, (d) create empty goal files, (e) update TODO.md AGENT GOALS section. Verified: running on current state produces all 5 artifacts correctly; no manual steps needed.
+3. **Goal-Cycle Auto-Transition v2** - Extend auto_cycle_transition.py to: (a) detect 100% closure, (b) archive with date stamp, (c) generate kickoff note with lane-arc summary per agent, (d) create empty goal files, (e) update TODO.md AGENT GOALS section. Verified: running on current state produces all 5 artifacts correctly; no manual steps needed. [PROGRESS 2026-11-20: create_goal_files() added + time import fixed; --check verified clean; full --run pending cycle closure] (pointer: memory/orchestrator/goal3-auto-transition-ext-2026-11-20.md)
 
 4. **Agent Performance Scoring** - /api/fleet/performance returns per-agent composite score from: goal completion rate (cycle-avg), response latency p50/p95, error count, evidence freshness. UI: sortable table in fleet tab with color-coded scores. Verified: all 8 agents return numeric scores; sorting works; colors correct (green>70, amber 40-70, red<40). (pointer: memory/orchestrator/goal9-perf-radar-backend-done-2026-11-17.md)
 

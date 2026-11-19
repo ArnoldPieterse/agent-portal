@@ -1,7 +1,8 @@
 # ORCHESTRATOR INDEX â€” ops/HR + fleet onboarding (newest first).
-Last updated: 2026-11-19.
+Last updated: 2026-11-20.
 
 ## Entries (keyword -> pointer | use case)
+- goal#3 auto-transition ext: added create_goal_files() + fixed time import; --check verified clean 2026-11-20 -> memory/orchestrator/goal3-auto-transition-ext-2026-11-20.md   5/5 artifacts pipeline complete structurally; full --run pending cycle closure.
 - designer #8 icon system: stale Verifier CAUTION re-measured & CLOSED (option c) 2026-11-19 -> memory/orchestrator/designer-goal8-icons-stale-claim-closed-2026-11-19.md   ui/icons.js=24 icons sha12=168e423ef3f4; UI.icon*() core.js=8/uploads=0/index.html=0; raw icon/emoji glyphs=0 in all 3 files (only typographic marks remain); all 3 acceptance criteria PASS; CAUTION resolved.
 - designer #2 density: served app.css MIRROR-DRIFT found+fixed, 0 hardcoded line-heights now (option c+d) 2026-11-19 -> memory/orchestrator/designer-goal2-density-mirror-drift-2026-11-19.md   live file had 9 hardcoded line-heights + missing lh tokens despite 'complete' notes; added --lh-cozy/relaxed/spacious, tokenized all 9 in served app.css (braces balanced); goal #2 still OPEN on padding/margin px. Corrects goal#1 'all line-height tokenized' claim.
 - UI-closure verifier TOOL built (option b) 2026-11-19 -> memory/orchestrator/ui-closure-check-tool-2026-11-19.md   memory/ops/ui_closure_check.py operationalizes closure-protocol item#1 for UI goals; live demo on designer #4 = FAIL (emptyState 0 hits in all 4 loaded js, css class absent) -> goal still OPEN, stale 'closed' hot-note confirmed false; positive control PASS
