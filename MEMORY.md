@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer true state: 8/10 reached; open=#5 Notification + #10 Print only. Prompt's "6 open" was stale.
 - Goal #2 (Density Pass) CSS tokenization done; blocked on acceptance test needing browser screenshots, no headless browser available
 - Goal #5 Notification System: CSS (25 tokenized rules) + script tag wired; module fully functional, pin 6f521cb54a84
 - Goal 8 pin conflict confirmed: HOT NOTES claim 6b50b
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Browser probe confirmed exit 1 in sandbox; NEEDS-HUMAN blocker is real, not uninvestigated. Multiple goals (2,4,5,8,9,10) blocked on it.
 - Tour step 4 fixed: was targeting #composer, now targets #opsBtn per Goal #9 spec (Fleet, Goals, Ops, Uploads).
 - Wrote memory/designer/cdp_acceptance_all.py — unified CDP script covering all 5 open goals (#2,#5,#8,#9,#10
+- Pin in memory_mirror.py advanced from stale 815d64fa70b5 (3 scripts
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
