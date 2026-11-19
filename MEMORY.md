@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Ledger EVIDENCE_PAT false-matches "(verified:)" in goal descriptions as closure markers; needs fix to avoid corrupting evidence tracking.
 - Goal #2 done: ui/animations.css created (5 keyframes, GPU-only), wired via @import in app.css, autoStagger() helper added.
 - PowerShell blocked, cmd for-loops mangled; use Python for filesystem recon in this sandbox (WinError 10013 on :8888/:8
 - Builder Goal#1: 32 createElement calls in core.js (target<5); approach=
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - p95 SLA tracking INACTIVE until portal emits `
 - Goal #2 (Animation/Motion) closed: animations.css had 5 keyframes +
 - Goal #6 evidence scorer built & selftest PASS (fleet avg 63.6, 11 markers); next: wire /api/evidence/quality endpoint
+- Designer wired interactions.css+animations.css into app.css; interactions.js still NOT in index.html script list — dead code
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

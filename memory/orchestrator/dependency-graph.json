@@ -1,0 +1,2047 @@
+{
+  "nodes": {
+    "archivist": {
+      "goals": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md"
+    },
+    "builder": {
+      "goals": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md"
+    },
+    "designer": {
+      "goals": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md"
+    },
+    "mechanic": {
+      "goals": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md"
+    },
+    "orchestrator": {
+      "goals": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md"
+    },
+    "researcher": {
+      "goals": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md"
+    },
+    "scribe": {
+      "goals": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md"
+    },
+    "verifier": {
+      "goals": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md"
+    }
+  },
+  "edges": [
+    {
+      "from": "file:archivist-goal2-forecast-2026-11-19",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archivist-goal2-forecast-2026-11-19.md",
+      "line": 1,
+      "context": "# Forecast: Archivist Goal #2 (Citation Accuracy Audit)"
+    },
+    {
+      "from": "file:archivist-goal5-forecast-retrieval-benchmark-2026-11-19",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archivist-goal5-forecast-retrieval-benchmark-2026-11-19.md",
+      "line": 1,
+      "context": "# Forecast: Archivist Goal #5 \u00e2\u20ac\u201d Retrieval Quality Benchmark"
+    },
+    {
+      "from": "archivist#6",
+      "to": "verifier#6",
+      "file": "memory\\goals\\archivist.md",
+      "line": 13,
+      "context": "5. **Cross-Reference Integrity Monitor** - Extend the data integrity checks (Verifier#6) with graph-"
+    },
+    {
+      "from": "file:builder-assist-mechanic2-autorestart-2026-11-19",
+      "to": "mechanic#2",
+      "file": "memory\\goals\\builder-assist-mechanic2-autorestart-2026-11-19.md",
+      "line": 1,
+      "context": "# Builder assist \u00e2\u20ac\u201d Mechanic goal #2 (Auto-Restart Runbook)"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "orchestrator#4",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 1,
+      "context": "# Cycle-2 cross-agent dependency map (Orchestrator goal #4, set 2026-11-16)"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 6,
+      "context": "1. **SLO pipeline** \u00e2\u20ac\u201d Mechanic#4 (load baseline, daily jsonl) -> Builder#8 (/api/perf + tiles) -> "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "builder#8",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 6,
+      "context": "1. **SLO pipeline** \u00e2\u20ac\u201d Mechanic#4 (load baseline, daily jsonl) -> Builder#8 (/api/perf + tiles) -> "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "verifier#4",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 6,
+      "context": "1. **SLO pipeline** \u00e2\u20ac\u201d Mechanic#4 (load baseline, daily jsonl) -> Builder#8 (/api/perf + tiles) -> "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 7,
+      "context": "2. **Fleet-state endpoint** \u00e2\u20ac\u201d Mechanic#8 (GET /api/health/fleet) -> Builder#6 (parity guard consum"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "builder#6",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 7,
+      "context": "2. **Fleet-state endpoint** \u00e2\u20ac\u201d Mechanic#8 (GET /api/health/fleet) -> Builder#6 (parity guard consum"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "designer#9",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 7,
+      "context": "2. **Fleet-state endpoint** \u00e2\u20ac\u201d Mechanic#8 (GET /api/health/fleet) -> Builder#6 (parity guard consum"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "archivist#5",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 8,
+      "context": "3. **Supersession validator** \u00e2\u20ac\u201d Archivist#5 (script `archivist/supersession_check.py`) -> Scribe#5"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "scribe#5",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 8,
+      "context": "3. **Supersession validator** \u00e2\u20ac\u201d Archivist#5 (script `archivist/supersession_check.py`) -> Scribe#5"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "archivist#2",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 9,
+      "context": "4. **Memory-health** \u00e2\u20ac\u201d Archivist#2 (memory_health.py + /api/memory/health) -> Scribe#9 (dashboard "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "scribe#9",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 9,
+      "context": "4. **Memory-health** \u00e2\u20ac\u201d Archivist#2 (memory_health.py + /api/memory/health) -> Scribe#9 (dashboard "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "scribe#4",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 9,
+      "context": "4. **Memory-health** \u00e2\u20ac\u201d Archivist#2 (memory_health.py + /api/memory/health) -> Scribe#9 (dashboard "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "builder#4",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 10,
+      "context": "5. **Evolution layer** \u00e2\u20ac\u201d Builder#4 (fitness = test suites) | Mechanic#5 (CHG entities on outage) |"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#5",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 10,
+      "context": "5. **Evolution layer** \u00e2\u20ac\u201d Builder#4 (fitness = test suites) | Mechanic#5 (CHG entities on outage) |"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "verifier#7",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 10,
+      "context": "5. **Evolution layer** \u00e2\u20ac\u201d Builder#4 (fitness = test suites) | Mechanic#5 (CHG entities on outage) |"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "orchestrator#2",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 11,
+      "context": "6. **Model governance** \u00e2\u20ac\u201d Orchestrator#2 (pre-run check + /api/models/status) -> every future grou"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "researcher#3",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 11,
+      "context": "6. **Model governance** \u00e2\u20ac\u201d Orchestrator#2 (pre-run check + /api/models/status) -> every future grou"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "builder#6",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 12,
+      "context": "7. **Clobber defense** \u00e2\u20ac\u201d Builder#6 (sandbox<->root parity, per-turn) | Researcher#6 (daily parity "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "researcher#6",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 12,
+      "context": "7. **Clobber defense** \u00e2\u20ac\u201d Builder#6 (sandbox<->root parity, per-turn) | Researcher#6 (daily parity "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "scribe#6",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 12,
+      "context": "7. **Clobber defense** \u00e2\u20ac\u201d Builder#6 (sandbox<->root parity, per-turn) | Researcher#6 (daily parity "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "verifier#5",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 13,
+      "context": "8. **Evidence quality** \u00e2\u20ac\u201d Verifier#5 (self-cert audit v2) + Verifier#10 (scorecard) -> Orchestrato"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "verifier#10",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 13,
+      "context": "8. **Evidence quality** \u00e2\u20ac\u201d Verifier#5 (self-cert audit v2) + Verifier#10 (scorecard) -> Orchestrato"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "orchestrator#7",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 13,
+      "context": "8. **Evidence quality** \u00e2\u20ac\u201d Verifier#5 (self-cert audit v2) + Verifier#10 (scorecard) -> Orchestrato"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "researcher#10",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 13,
+      "context": "8. **Evidence quality** \u00e2\u20ac\u201d Verifier#5 (self-cert audit v2) + Verifier#10 (scorecard) -> Orchestrato"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "designer#1",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 16,
+      "context": "- Designer#1-4,6-8 (design system), #5/#10 (breakpoint + QA gates) \u00e2\u20ac\u201d self-contained; #9 depends on"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 16,
+      "context": "- Designer#1-4,6-8 (design system), #5/#10 (breakpoint + QA gates) \u00e2\u20ac\u201d self-contained; #9 depends on"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "archivist#1",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 17,
+      "context": "- Archivist#1,3,4,6,7,8,9,10 \u00e2\u20ac\u201d self-contained; #2 feeds chain 4."
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#1",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 18,
+      "context": "- Mechanic#1,2,3,5,6,7,9,10 \u00e2\u20ac\u201d self-contained; #1 consumes Researcher#4 leading indicators (soft de"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "researcher#4",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 18,
+      "context": "- Mechanic#1,2,3,5,6,7,9,10 \u00e2\u20ac\u201d self-contained; #1 consumes Researcher#4 leading indicators (soft de"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "scribe#1",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 19,
+      "context": "- Scribe#1,2,3,7,8,10 \u00e2\u20ac\u201d self-contained."
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "orchestrator#1",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 20,
+      "context": "- Orchestrator#1,3,5,6,8,9,10 \u00e2\u20ac\u201d self-contained; #4 is this file."
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "researcher#1",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 21,
+      "context": "- Researcher#1,2,4,5,7,8,9 \u00e2\u20ac\u201d self-contained."
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\cycle2-dependency-map.md",
+      "line": 24,
+      "context": "- Chain 1 has the longest critical path (daily baseline must exist before tiles + enforcement are me"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 25,
+      "context": "1. **SLO pipeline** split into one capability / three roles: Mechanic#4 measures baseline -> Builder"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "builder#8",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 25,
+      "context": "1. **SLO pipeline** split into one capability / three roles: Mechanic#4 measures baseline -> Builder"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "verifier#4",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 25,
+      "context": "1. **SLO pipeline** split into one capability / three roles: Mechanic#4 measures baseline -> Builder"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 26,
+      "context": "2. **Fleet-state endpoint** owned by Mechanic#8 (GET /api/health/fleet); Builder's original \"fleet c"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "researcher#6",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 26,
+      "context": "2. **Fleet-state endpoint** owned by Mechanic#8 (GET /api/health/fleet); Builder's original \"fleet c"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "archivist#5",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 27,
+      "context": "3. **Supersession validator** dedup: script = Archivist#5, policy + weekly runs = Scribe#5 (their or"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "scribe#5",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 27,
+      "context": "3. **Supersession validator** dedup: script = Archivist#5, policy + weekly runs = Scribe#5 (their or"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "archivist#2",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 28,
+      "context": "4. **Memory-health**: engine = Archivist#2 (memory_health.py + /api/memory/health), dashboard = Scri"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "scribe#9",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 28,
+      "context": "4. **Memory-health**: engine = Archivist#2 (memory_health.py + /api/memory/health), dashboard = Scri"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "scribe#4",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 28,
+      "context": "4. **Memory-health**: engine = Archivist#2 (memory_health.py + /api/memory/health), dashboard = Scri"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "designer#5",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 29,
+      "context": "5. **Designer#5 replaced**: responsive <768px was already shipped 2026-11-16 (D7: media queries + CD"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "orchestrator#2",
+      "file": "memory\\goals\\cycle2-kickoff-2026-11-16.md",
+      "line": 30,
+      "context": "6. **Orchestrator + Researcher sets seat-drafted** from lane arcs + this cycle's failure modes; flag"
+    },
+    {
+      "from": "file:designer-notification-integration-forecast",
+      "to": "designer#2",
+      "file": "memory\\goals\\designer-notification-integration-forecast.md",
+      "line": 3,
+      "context": "Author: Mechanic | Date: 2026-11-19 | For: Designer goal #2 (Notification System)"
+    },
+    {
+      "from": "file:forecast-mechanic-fleet-status-api-2026-11-19",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\forecast-mechanic-fleet-status-api-2026-11-19.md",
+      "line": 1,
+      "context": "# Forecast: Mechanic goal #8 \u00e2\u20ac\u201d Fleet Status API"
+    },
+    {
+      "from": "file:forecast-mechanic-g4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\forecast-mechanic-g4.md",
+      "line": 1,
+      "context": "# Forecast: Mechanic Goal #4 \u00e2\u20ac\u201d Portal Load Test & Capacity Baseline"
+    },
+    {
+      "from": "file:forecast-mechanic1-adaptive-probe-2026-11-17",
+      "to": "mechanic#1",
+      "file": "memory\\goals\\forecast-mechanic1-adaptive-probe-2026-11-17.md",
+      "line": 1,
+      "context": "# Forecast: Mechanic Goal #1 (Adaptive Fleet Probe) \u00e2\u20ac\u201d 2026-11-17"
+    },
+    {
+      "from": "file:INDEX",
+      "to": "designer#10",
+      "file": "memory\\goals\\INDEX.md",
+      "line": 6,
+      "context": "REVERIFICATION (2026-11-19, Orchestrator option-c): Designer Goal #10 print \"PASS 9/9\" flagged STALE"
+    },
+    {
+      "from": "file:INDEX",
+      "to": "designer#1",
+      "file": "memory\\goals\\INDEX.md",
+      "line": 7,
+      "context": "REVERIFICATION (2026-11-18, Orchestrator option-c): Designer Goal #1 token-audit stale FAIL resolved"
+    },
+    {
+      "from": "file:INDEX",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\INDEX.md",
+      "line": 18,
+      "context": "- -> memory/goals/forecast-mechanic-g4.md   Verifier forecast for Mechanic#4 closure timing (2026-11"
+    },
+    {
+      "from": "file:INDEX",
+      "to": "mechanic#2",
+      "file": "memory\\goals\\INDEX.md",
+      "line": 34,
+      "context": "- -> memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md   Builder assist: Mechanic goal"
+    },
+    {
+      "from": "file:mechanic-forecast-recovery-matrix",
+      "to": "mechanic#3",
+      "file": "memory\\goals\\mechanic-forecast-recovery-matrix.md",
+      "line": 1,
+      "context": "# Forecast: Mechanic Goal #3 (Host Recovery Matrix) \u00e2\u20ac\u201d Verifier, 2026-11-19"
+    },
+    {
+      "from": "file:mechanic-goal4-forecast-2026-11-17",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\mechanic-goal4-forecast-2026-11-17.md",
+      "line": 1,
+      "context": "# Forecast: Mechanic Goal #4 \u00e2\u20ac\u201d SLO Baseline Accumulation & Regression Detection"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "mechanic#2",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 14,
+      "context": "## MECHANIC#2 \u00e2\u20ac\u201d Self-healing mirror (ONE STEP: elevation)"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "mechanic#6",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 24,
+      "context": "## MECHANIC#6 \u00e2\u20ac\u201d Scheduled-task dependency graph (SKEPTICAL FLAG)"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "mechanic#1",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 36,
+      "context": "## MECHANIC#1 \u00e2\u20ac\u201d Portal load test (TIME-GATED: register schedule NOW)"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "archivist#6",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 44,
+      "context": "## ARCHIVIST#6 \u00e2\u20ac\u201d Knowledge decay model (SPEC MISMATCH in script)"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "verifier#8",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 56,
+      "context": "## VERIFIER#8 \u00e2\u20ac\u201d Mirror-sync drift detector (NOT YET RUNNING)"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "archivist#8",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 64,
+      "context": "## ARCHIVIST#8 \u00e2\u20ac\u201d Snapshot diff weekly report (EXTEND existing)"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "scribe#10",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 71,
+      "context": "## SCRIBE#10 \u00e2\u20ac\u201d Compression fidelity score (NEARLY THERE)"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "mechanic#2",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 82,
+      "context": "| Mechanic#2 | one-step | register elevated schtask, confirm clean tick |"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "mechanic#6",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 83,
+      "context": "| Mechanic#6 | skeptical-flag | run 1 LIVE generation before claiming productionized |"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "mechanic#1",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 84,
+      "context": "| Mechanic#1 | time-gated | register probe today; close ~Nov-25 |"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "archivist#6",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 85,
+      "context": "| Archivist#6 | spec-mismatch | add archive/alert thresholds + ref-window; dry-run diff first |"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "verifier#8",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 86,
+      "context": "| Verifier#8 | not-running | register 30-min schtask + heartbeat line |"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "archivist#8",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 87,
+      "context": "| Archivist#8 | extend | add --weekly-report mode, verify vs git log |"
+    },
+    {
+      "from": "file:researcher-attempts-cycle3-2026-11-18",
+      "to": "scribe#10",
+      "file": "memory\\goals\\researcher-attempts-cycle3-2026-11-18.md",
+      "line": 88,
+      "context": "| Scribe#10 | near-done | confirm 2 dated weekly audit points w/ named fact-loss |"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "archivist#6",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 9,
+      "context": "- ARCHIVIST#6: Knowledge decay model productionization - run decay_score.py weekly (scheduled task);"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "archivist#8",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 10,
+      "context": "- ARCHIVIST#8: Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-readable "
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "mechanic#1",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 11,
+      "context": "- MECHANIC#1: Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days of da"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "mechanic#2",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 12,
+      "context": "- MECHANIC#2: Self-healing mirror productionization - the cycle-2 auto-repair design should now be a"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "mechanic#6",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 13,
+      "context": "- MECHANIC#6: Scheduled-task dependency graph productionization - the cycle-2 blast-radius map shoul"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 14,
+      "context": "- MECHANIC#8: Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should now be"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "scribe#10",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 15,
+      "context": "- SCRIBE#10: Scribe self-audit: compression fidelity score - for each synthesis produced in cycle 3,"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "verifier#8",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 16,
+      "context": "- VERIFIER#8: Mirror-sync drift detector productionization - the cycle-2 SMB drift detector should n"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "verifier#8",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 18,
+      "context": "- VERIFIER#8: schtask `PortalSmbDrift` registered (30 min). Remaining: two weeks of drift-log review"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "mechanic#2",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 19,
+      "context": "- MECHANIC#2: schtask `MirrorHeal` registered (15 min). Remaining: two drift-free weeks (~02-12)."
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "mechanic#6",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 20,
+      "context": "- MECHANIC#6: runner `memory/ops/schtask_dep_weekly.py` built; weekly schtask `PortalSchtaskDepGen` "
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "mechanic#1",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 21,
+      "context": "- MECHANIC#1: probe ran today p50=137ms p95=266ms 0 err. Note: goal text says `memory/mechanic/load_"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "archivist#6",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 22,
+      "context": "- ARCHIVIST#6: manual run today: 6120 leaves, 0 flagged -> memory/archivist/decay-report.md. Schtask"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "archivist#8",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 23,
+      "context": "- ARCHIVIST#8: manual run today: 6140 leaves -> memory/archivist/manifest-20261118.json. Schtask alr"
+    },
+    {
+      "from": "file:scheduled-background",
+      "to": "scribe#10",
+      "file": "memory\\goals\\scheduled-background.md",
+      "line": 24,
+      "context": "- SCRIBE#10: audit #1 done: 5 syntheses, 29 checkable key facts, 29 retained (avg score 0.8 - one th"
+    },
+    {
+      "from": "file:archivist-2026-11-16",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\archivist-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:archivist-2026-11-16",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\archivist-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:archivist-2026-11-16",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\archivist-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:archivist-2026-11-16",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\archivist-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:archivist-2026-11-16",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\archivist-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:archivist-2026-11-16",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\archivist-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:archivist-2026-11-16",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\archivist-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:archivist-2026-11-16",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\archivist-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:archivist-2026-11-16",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\archivist-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:archivist-2026-11-16",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\archivist-2026-11-16.md",
+      "line": 12,
+      "context": "5. Supersession chain validator (script owner per charter) - `archivist/supersession_check.py` finds"
+    },
+    {
+      "from": "file:archivist-2026-11-18",
+      "to": "archivist#6",
+      "file": "memory\\goals\\archive\\archivist-2026-11-18.md",
+      "line": 11,
+      "context": "6. [BG-SCHED - moved to background scheduled list] -> memory/goals/scheduled-background.md ARCHIVIST"
+    },
+    {
+      "from": "file:archivist-2026-11-18",
+      "to": "archivist#8",
+      "file": "memory\\goals\\archive\\archivist-2026-11-18.md",
+      "line": 13,
+      "context": "8. [BG-SCHED - moved to background scheduled list] -> memory/goals/scheduled-background.md ARCHIVIST"
+    },
+    {
+      "from": "archivist#4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "archivist#8",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "archivist#4",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "archivist#8",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "archivist#6",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "archivist#5",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "archivist#5",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "archivist#2",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "archivist#9",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "archivist#5",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\archivist.md",
+      "line": 12,
+      "context": "5. Supersession chain validator (script owner per charter) - `archivist/supersession_check.py` finds"
+    },
+    {
+      "from": "builder#4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "builder#8",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "builder#4",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "builder#8",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "builder#6",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "builder#5",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "builder#5",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "builder#2",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "builder#9",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "builder#8",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 13,
+      "context": "6. Sandbox <-> shared-root parity guard (re-scoped from fleet-consistency per charter - that scope i"
+    },
+    {
+      "from": "builder#4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\builder.md",
+      "line": 15,
+      "context": "8. Perf SLO tiles (SLO pipeline, Builder role) - GET /api/perf tracks p50/p95/p99 per endpoint over "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "orchestrator#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 1,
+      "context": "# Cycle-2 cross-agent dependency map (Orchestrator goal #4, set 2026-11-16)"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 6,
+      "context": "1. **SLO pipeline** \u00e2\u20ac\u201d Mechanic#4 (load baseline, daily jsonl) -> Builder#8 (/api/perf + tiles) -> "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 6,
+      "context": "1. **SLO pipeline** \u00e2\u20ac\u201d Mechanic#4 (load baseline, daily jsonl) -> Builder#8 (/api/perf + tiles) -> "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 6,
+      "context": "1. **SLO pipeline** \u00e2\u20ac\u201d Mechanic#4 (load baseline, daily jsonl) -> Builder#8 (/api/perf + tiles) -> "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 7,
+      "context": "2. **Fleet-state endpoint** \u00e2\u20ac\u201d Mechanic#8 (GET /api/health/fleet) -> Builder#6 (parity guard consum"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 7,
+      "context": "2. **Fleet-state endpoint** \u00e2\u20ac\u201d Mechanic#8 (GET /api/health/fleet) -> Builder#6 (parity guard consum"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "designer#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 7,
+      "context": "2. **Fleet-state endpoint** \u00e2\u20ac\u201d Mechanic#8 (GET /api/health/fleet) -> Builder#6 (parity guard consum"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 8,
+      "context": "3. **Supersession validator** \u00e2\u20ac\u201d Archivist#5 (script `archivist/supersession_check.py`) -> Scribe#5"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 8,
+      "context": "3. **Supersession validator** \u00e2\u20ac\u201d Archivist#5 (script `archivist/supersession_check.py`) -> Scribe#5"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 9,
+      "context": "4. **Memory-health** \u00e2\u20ac\u201d Archivist#2 (memory_health.py + /api/memory/health) -> Scribe#9 (dashboard "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 9,
+      "context": "4. **Memory-health** \u00e2\u20ac\u201d Archivist#2 (memory_health.py + /api/memory/health) -> Scribe#9 (dashboard "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "scribe#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 9,
+      "context": "4. **Memory-health** \u00e2\u20ac\u201d Archivist#2 (memory_health.py + /api/memory/health) -> Scribe#9 (dashboard "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "builder#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 10,
+      "context": "5. **Evolution layer** \u00e2\u20ac\u201d Builder#4 (fitness = test suites) | Mechanic#5 (CHG entities on outage) |"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 10,
+      "context": "5. **Evolution layer** \u00e2\u20ac\u201d Builder#4 (fitness = test suites) | Mechanic#5 (CHG entities on outage) |"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "verifier#7",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 10,
+      "context": "5. **Evolution layer** \u00e2\u20ac\u201d Builder#4 (fitness = test suites) | Mechanic#5 (CHG entities on outage) |"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "orchestrator#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 11,
+      "context": "6. **Model governance** \u00e2\u20ac\u201d Orchestrator#2 (pre-run check + /api/models/status) -> every future grou"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "researcher#3",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 11,
+      "context": "6. **Model governance** \u00e2\u20ac\u201d Orchestrator#2 (pre-run check + /api/models/status) -> every future grou"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 12,
+      "context": "7. **Clobber defense** \u00e2\u20ac\u201d Builder#6 (sandbox<->root parity, per-turn) | Researcher#6 (daily parity "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "researcher#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 12,
+      "context": "7. **Clobber defense** \u00e2\u20ac\u201d Builder#6 (sandbox<->root parity, per-turn) | Researcher#6 (daily parity "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "scribe#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 12,
+      "context": "7. **Clobber defense** \u00e2\u20ac\u201d Builder#6 (sandbox<->root parity, per-turn) | Researcher#6 (daily parity "
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "verifier#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 13,
+      "context": "8. **Evidence quality** \u00e2\u20ac\u201d Verifier#5 (self-cert audit v2) + Verifier#10 (scorecard) -> Orchestrato"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "verifier#10",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 13,
+      "context": "8. **Evidence quality** \u00e2\u20ac\u201d Verifier#5 (self-cert audit v2) + Verifier#10 (scorecard) -> Orchestrato"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "orchestrator#7",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 13,
+      "context": "8. **Evidence quality** \u00e2\u20ac\u201d Verifier#5 (self-cert audit v2) + Verifier#10 (scorecard) -> Orchestrato"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "researcher#10",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 13,
+      "context": "8. **Evidence quality** \u00e2\u20ac\u201d Verifier#5 (self-cert audit v2) + Verifier#10 (scorecard) -> Orchestrato"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "designer#1",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 16,
+      "context": "- Designer#1-4,6-8 (design system), #5/#10 (breakpoint + QA gates) \u00e2\u20ac\u201d self-contained; #9 depends on"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 16,
+      "context": "- Designer#1-4,6-8 (design system), #5/#10 (breakpoint + QA gates) \u00e2\u20ac\u201d self-contained; #9 depends on"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "archivist#1",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 17,
+      "context": "- Archivist#1,3,4,6,7,8,9,10 \u00e2\u20ac\u201d self-contained; #2 feeds chain 4."
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#1",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 18,
+      "context": "- Mechanic#1,2,3,5,6,7,9,10 \u00e2\u20ac\u201d self-contained; #1 consumes Researcher#4 leading indicators (soft de"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "researcher#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 18,
+      "context": "- Mechanic#1,2,3,5,6,7,9,10 \u00e2\u20ac\u201d self-contained; #1 consumes Researcher#4 leading indicators (soft de"
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "scribe#1",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 19,
+      "context": "- Scribe#1,2,3,7,8,10 \u00e2\u20ac\u201d self-contained."
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "orchestrator#1",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 20,
+      "context": "- Orchestrator#1,3,5,6,8,9,10 \u00e2\u20ac\u201d self-contained; #4 is this file."
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "researcher#1",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 21,
+      "context": "- Researcher#1,2,4,5,7,8,9 \u00e2\u20ac\u201d self-contained."
+    },
+    {
+      "from": "file:cycle2-dependency-map",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-dependency-map.md",
+      "line": 24,
+      "context": "- Chain 1 has the longest critical path (daily baseline must exist before tiles + enforcement are me"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 25,
+      "context": "1. **SLO pipeline** split into one capability / three roles: Mechanic#4 measures baseline -> Builder"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 25,
+      "context": "1. **SLO pipeline** split into one capability / three roles: Mechanic#4 measures baseline -> Builder"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 25,
+      "context": "1. **SLO pipeline** split into one capability / three roles: Mechanic#4 measures baseline -> Builder"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 26,
+      "context": "2. **Fleet-state endpoint** owned by Mechanic#8 (GET /api/health/fleet); Builder's original \"fleet c"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "researcher#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 26,
+      "context": "2. **Fleet-state endpoint** owned by Mechanic#8 (GET /api/health/fleet); Builder's original \"fleet c"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 27,
+      "context": "3. **Supersession validator** dedup: script = Archivist#5, policy + weekly runs = Scribe#5 (their or"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 27,
+      "context": "3. **Supersession validator** dedup: script = Archivist#5, policy + weekly runs = Scribe#5 (their or"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 28,
+      "context": "4. **Memory-health**: engine = Archivist#2 (memory_health.py + /api/memory/health), dashboard = Scri"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 28,
+      "context": "4. **Memory-health**: engine = Archivist#2 (memory_health.py + /api/memory/health), dashboard = Scri"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "scribe#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 28,
+      "context": "4. **Memory-health**: engine = Archivist#2 (memory_health.py + /api/memory/health), dashboard = Scri"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "designer#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 29,
+      "context": "5. **Designer#5 replaced**: responsive <768px was already shipped 2026-11-16 (D7: media queries + CD"
+    },
+    {
+      "from": "file:cycle2-kickoff-2026-11-16",
+      "to": "orchestrator#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\cycle2-kickoff-2026-11-16.md",
+      "line": 30,
+      "context": "6. **Orchestrator + Researcher sets seat-drafted** from lane arcs + this cycle's failure modes; flag"
+    },
+    {
+      "from": "designer#4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "designer#8",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "designer#4",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "designer#8",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "designer#6",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "designer#5",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "designer#5",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "designer#2",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "designer#9",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "designer#8",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\designer.md",
+      "line": 16,
+      "context": "9. Live fleet topology view - SVG diagram of 3 hosts + agent nodes from /api/net/fleet (data source:"
+    },
+    {
+      "from": "file:forecast-mechanic-g4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\forecast-mechanic-g4.md",
+      "line": 1,
+      "context": "# Forecast: Mechanic Goal #4 \u00e2\u20ac\u201d Portal Load Test & Capacity Baseline"
+    },
+    {
+      "from": "file:forecast-mechanic1-adaptive-probe-2026-11-17",
+      "to": "mechanic#1",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\forecast-mechanic1-adaptive-probe-2026-11-17.md",
+      "line": 1,
+      "context": "# Forecast: Mechanic Goal #1 (Adaptive Fleet Probe) \u00e2\u20ac\u201d 2026-11-17"
+    },
+    {
+      "from": "file:mechanic-goal4-forecast-2026-11-17",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic-goal4-forecast-2026-11-17.md",
+      "line": 1,
+      "context": "# Forecast: Mechanic Goal #4 \u00e2\u20ac\u201d SLO Baseline Accumulation & Regression Detection"
+    },
+    {
+      "from": "mechanic#4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "mechanic#8",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "mechanic#4",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "mechanic#8",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "mechanic#6",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "mechanic#5",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "mechanic#5",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "mechanic#2",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "mechanic#9",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "mechanic#8",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 11,
+      "context": "4. Portal load test & capacity baseline (SLO pipeline, Mechanic role) - daily probe of concurrent re"
+    },
+    {
+      "from": "mechanic#4",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 11,
+      "context": "4. Portal load test & capacity baseline (SLO pipeline, Mechanic role) - daily probe of concurrent re"
+    },
+    {
+      "from": "mechanic#6",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 15,
+      "context": "8. Fleet health dashboard endpoint - GET /api/health/fleet in agent_portal.py: per-host status, port"
+    },
+    {
+      "from": "mechanic#9",
+      "to": "designer#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\mechanic.md",
+      "line": 15,
+      "context": "8. Fleet health dashboard endpoint - GET /api/health/fleet in agent_portal.py: per-host status, port"
+    },
+    {
+      "from": "orchestrator#4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "orchestrator#8",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "orchestrator#4",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "orchestrator#8",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "orchestrator#6",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "orchestrator#5",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "orchestrator#5",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "orchestrator#2",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "orchestrator#9",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "orchestrator#3",
+      "to": "scribe#3",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\orchestrator.md",
+      "line": 17,
+      "context": "10. TODO.md top-section freshness - every round the top section reflects live status (stale >1 round"
+    },
+    {
+      "from": "researcher#4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "researcher#8",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "researcher#4",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "researcher#8",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "researcher#6",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "researcher#5",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "researcher#5",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "researcher#2",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "researcher#9",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "researcher#1",
+      "to": "mechanic#1",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 11,
+      "context": "4. Failure-mode prediction from logs - mine portal_run/journal logs for patterns preceding stalls, w"
+    },
+    {
+      "from": "researcher#6",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 13,
+      "context": "6. Sandbox-vs-host ground-truth daily diff - daily hash-diff of the shared allowlist between White's"
+    },
+    {
+      "from": "researcher#6",
+      "to": "mechanic#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 16,
+      "context": "9. /api/net capability matrix - document what outbound works per host (fleet/probe/dns/latency/http)"
+    },
+    {
+      "from": "researcher#6",
+      "to": "mechanic#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\researcher.md",
+      "line": 16,
+      "context": "9. /api/net capability matrix - document what outbound works per host (fleet/probe/dns/latency/http)"
+    },
+    {
+      "from": "scribe#4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "scribe#8",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "scribe#4",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "scribe#8",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "scribe#6",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "scribe#5",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "scribe#5",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "scribe#2",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "scribe#9",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "scribe#5",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 12,
+      "context": "5. Supersession-chain integrity (policy owner per charter) - consume Archivist#5's validator output;"
+    },
+    {
+      "from": "scribe#2",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 16,
+      "context": "9. Fleet memory-health dashboard - extend goal-dashboard.html with hot-file line count, orphan rate,"
+    },
+    {
+      "from": "scribe#1",
+      "to": "scribe#1",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\scribe.md",
+      "line": 16,
+      "context": "9. Fleet memory-health dashboard - extend goal-dashboard.html with hot-file line count, orphan rate,"
+    },
+    {
+      "from": "verifier#4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "verifier#8",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "verifier#4",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "verifier#8",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "verifier#6",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "verifier#5",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "verifier#5",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "verifier#2",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "verifier#9",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "verifier#4",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 11,
+      "context": "4. Performance SLO enforcement (SLO pipeline, Verifier role) - daily report asserting p95<2s / p99<5"
+    },
+    {
+      "from": "verifier#8",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 11,
+      "context": "4. Performance SLO enforcement (SLO pipeline, Verifier role) - daily report asserting p95<2s / p99<5"
+    },
+    {
+      "from": "verifier#10",
+      "to": "researcher#10",
+      "file": "memory\\goals\\archive\\cycle2-2026-11-17\\verifier.md",
+      "line": 17,
+      "context": "10. Verification quality scorecard - track own TP/TN/FP/FN across logged verdicts; target >=95% accu"
+    },
+    {
+      "from": "file:designer-2026-11-16",
+      "to": "mechanic#4",
+      "file": "memory\\goals\\archive\\designer-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:designer-2026-11-16",
+      "to": "builder#8",
+      "file": "memory\\goals\\archive\\designer-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:designer-2026-11-16",
+      "to": "verifier#4",
+      "file": "memory\\goals\\archive\\designer-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:designer-2026-11-16",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\designer-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:designer-2026-11-16",
+      "to": "builder#6",
+      "file": "memory\\goals\\archive\\designer-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:designer-2026-11-16",
+      "to": "archivist#5",
+      "file": "memory\\goals\\archive\\designer-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:designer-2026-11-16",
+      "to": "scribe#5",
+      "file": "memory\\goals\\archive\\designer-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:designer-2026-11-16",
+      "to": "archivist#2",
+      "file": "memory\\goals\\archive\\designer-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:designer-2026-11-16",
+      "to": "scribe#9",
+      "file": "memory\\goals\\archive\\designer-2026-11-16.md",
+      "line": 5,
+      "context": "Coherence pass 2026-11-16 (Orchestrator seat): cycle-2 charter - SLO pipeline: Mechanic#4 measures -"
+    },
+    {
+      "from": "file:designer-2026-11-16",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\designer-2026-11-16.md",
+      "line": 16,
+      "context": "9. Live fleet topology view - SVG diagram of 3 hosts + agent nodes from /api/net/fleet (data source:"
+    },
+    {
+      "from": "file:mechanic-2026-11-18",
+      "to": "mechanic#1",
+      "file": "memory\\goals\\archive\\mechanic-2026-11-18.md",
+      "line": 6,
+      "context": "1. [BG-SCHED - moved to background scheduled list] -> memory/goals/scheduled-background.md MECHANIC#"
+    },
+    {
+      "from": "file:mechanic-2026-11-18",
+      "to": "mechanic#2",
+      "file": "memory\\goals\\archive\\mechanic-2026-11-18.md",
+      "line": 7,
+      "context": "2. [BG-SCHED - moved to background scheduled list] -> memory/goals/scheduled-background.md MECHANIC#"
+    },
+    {
+      "from": "file:mechanic-2026-11-18",
+      "to": "mechanic#6",
+      "file": "memory\\goals\\archive\\mechanic-2026-11-18.md",
+      "line": 11,
+      "context": "6. [BG-SCHED - moved to background scheduled list] -> memory/goals/scheduled-background.md MECHANIC#"
+    },
+    {
+      "from": "file:mechanic-2026-11-18",
+      "to": "mechanic#8",
+      "file": "memory\\goals\\archive\\mechanic-2026-11-18.md",
+      "line": 13,
+      "context": "8. [BG-SCHED - moved to background scheduled list] -> memory/goals/scheduled-background.md MECHANIC#"
+    },
+    {
+      "from": "file:orchestrator-2026-11-18",
+      "to": "designer#1",
+      "file": "memory\\goals\\archive\\orchestrator-2026-11-18.md",
+      "line": 39,
+      "context": "- Goal 10 coordinates with Designer goal #1 (design tokens)"
+    },
+    {
+      "from": "file:orchestrator-2026-11-19",
+      "to": "builder#3",
+      "file": "memory\\goals\\archive\\orchestrator-2026-11-19.md",
+      "line": 44,
+      "context": "8. **Cross-Agent Dependency Graph** - `/api/fleet/dependencies` parses goal files for cross-referenc"
+    },
+    {
+      "from": "file:orchestrator-2026-11-20",
+      "to": "builder#3",
+      "file": "memory\\goals\\archive\\orchestrator-2026-11-20.md",
+      "line": 44,
+      "context": "8. **Cross-Agent Dependency Graph** - `/api/fleet/dependencies` parses goal files for cross-referenc"
+    },
+    {
+      "from": "file:orchestrator-cycle5-closed-2026-11-18",
+      "to": "builder#3",
+      "file": "memory\\goals\\archive\\orchestrator-cycle5-closed-2026-11-18.md",
+      "line": 19,
+      "context": "8. **Cross-Agent Dependency Graph** - `/api/fleet/dependencies` parses goal files for cross-referenc"
+    },
+    {
+      "from": "file:researcher-2026-11-18",
+      "to": "mechanic#6",
+      "file": "memory\\goals\\archive\\researcher-2026-11-18.md",
+      "line": 34,
+      "context": "[PROGRESS 2026-11-18 pass (auto-loop, ~16:29): re-ran per-host egress probe from White sandbox vanta"
+    },
+    {
+      "from": "file:researcher-2026-11-18",
+      "to": "archivist#1",
+      "file": "memory\\goals\\archive\\researcher-2026-11-18.md",
+      "line": 43,
+      "context": "[PROGRESS 2026-11-18 pass (auto-loop, assist): Stale-evidence audit on Archivist Goal #1 - verified "
+    },
+    {
+      "from": "file:scribe-2026-11-18",
+      "to": "scribe#10",
+      "file": "memory\\goals\\archive\\scribe-2026-11-18.md",
+      "line": 15,
+      "context": "10. [BG-SCHED - moved to background scheduled list] -> memory/goals/scheduled-background.md SCRIBE#1"
+    },
+    {
+      "from": "file:verifier-2026-11-18",
+      "to": "verifier#8",
+      "file": "memory\\goals\\archive\\verifier-2026-11-18.md",
+      "line": 13,
+      "context": "8. [BG-SCHED - moved to background scheduled list] -> memory/goals/scheduled-background.md VERIFIER#"
+    },
+    {
+      "from": "file:verifier-2026-11-19",
+      "to": "verifier#1",
+      "file": "memory\\goals\\archive\\verifier-2026-11-19.md",
+      "line": 23,
+      "context": "8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exis"
+    },
+    {
+      "from": "file:verifier-2026-11-19",
+      "to": "builder#1",
+      "file": "memory\\goals\\archive\\verifier-2026-11-19.md",
+      "line": 23,
+      "context": "8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exis"
+    },
+    {
+      "from": "file:verifier-2026-11-19",
+      "to": "designer#1",
+      "file": "memory\\goals\\archive\\verifier-2026-11-19.md",
+      "line": 23,
+      "context": "8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exis"
+    },
+    {
+      "from": "file:verifier-2026-11-19",
+      "to": "scribe#1",
+      "file": "memory\\goals\\archive\\verifier-2026-11-19.md",
+      "line": 23,
+      "context": "8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exis"
+    },
+    {
+      "from": "file:verifier-2026-11-19",
+      "to": "verifier#2",
+      "file": "memory\\goals\\archive\\verifier-2026-11-19.md",
+      "line": 23,
+      "context": "8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exis"
+    },
+    {
+      "from": "file:verifier-2026-11-20",
+      "to": "verifier#1",
+      "file": "memory\\goals\\archive\\verifier-2026-11-20.md",
+      "line": 23,
+      "context": "8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exis"
+    },
+    {
+      "from": "file:verifier-2026-11-20",
+      "to": "builder#1",
+      "file": "memory\\goals\\archive\\verifier-2026-11-20.md",
+      "line": 23,
+      "context": "8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exis"
+    },
+    {
+      "from": "file:verifier-2026-11-20",
+      "to": "designer#1",
+      "file": "memory\\goals\\archive\\verifier-2026-11-20.md",
+      "line": 23,
+      "context": "8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exis"
+    },
+    {
+      "from": "file:verifier-2026-11-20",
+      "to": "scribe#1",
+      "file": "memory\\goals\\archive\\verifier-2026-11-20.md",
+      "line": 23,
+      "context": "8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exis"
+    },
+    {
+      "from": "file:verifier-2026-11-20",
+      "to": "verifier#2",
+      "file": "memory\\goals\\archive\\verifier-2026-11-20.md",
+      "line": 23,
+      "context": "8. **Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exis"
+    }
+  ],
+  "cycles": [
+    [
+      "mechanic#4",
+      "verifier#4",
+      "mechanic#4"
+    ],
+    [
+      "archivist#5",
+      "scribe#5",
+      "archivist#5"
+    ],
+    [
+      "builder#8",
+      "mechanic#8",
+      "builder#8"
+    ]
+  ],
+  "orphans": [],
+  "stats": {
+    "agents": 8,
+    "edges": 271,
+    "cycles": 3,
+    "orphans": 0
+  }
+}

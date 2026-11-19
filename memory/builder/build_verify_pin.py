@@ -20,6 +20,108 @@ from html.parser import HTMLParser
 
 def sha12(b): return hashlib.sha1(b).hexdigest()[:12]
 
+# Tokens after which a '/' begins a regex literal (not division).
+_REGEX_PREV = set("=(,:[!&|?{};+-*%~^<> \\t\\n\\rreturn typeof case")
+
+def _js_balanced(src):
+    """Char-scanner for JS delimiter balance. Handles line/block comments,
+    single/double/template strings (with nested ${...} frames) and best-effort
+    regex literals. Returns (ok, msg). Not a full parser - catches genuine
+    unbalanced delimiters introduced by hand edits; template/regex false-positives
+    of the old regex-strip heuristic are eliminated."""
+    stack = []          # code-mode delimiter stack
+    tmpl = []           # template ${ } frames: True when inside an interpolation
+    state = "code"      # code | line | block | sq | dq | tpl
+    i, n = 0, len(src)
+    prev_sig = ""       # last significant token tail (for regex detection)
+    def push(c):
+        if c in "({[": stack.append(c)
+        elif c in ")}]":
+            want = {")":"(","}":"{","]":"["}[c]
+            if not stack or stack[-1] != want:
+                return False
+            stack.pop()
+        return True
+    while i < n:
+        ch = src[i]; nxt = src[i+1] if i+1 < n else ""
+        if state == "code":
+            if ch == "/" and nxt == "/": state="line"; i+=2; continue
+            if ch == "/" and nxt == "*": state="block"; i+=2; continue
+            if ch == "'": state="sq"; prev_sig="str"; i+=1; continue
+            if ch == '"': state="dq"; prev_sig="str"; i+=1; continue
+            if ch == "`":
+                # template literal: scan to matching backtick, honour ${ } + nested templates
+                j = i+1; depth = 0; in_interp = False
+                while j < n:
+                    c2 = src[j]; nx2 = src[j+1] if j+1<n else ""
+                    if in_interp:
+                        if c2 == "{": depth+=1
+                        elif c2 == "}":
+                            depth-=1
+                            if depth==0: in_interp=False
+                        elif c2 == "`":  # nested template inside interpolation
+                            # find its closing backtick (naive, escapes only)
+                            k=j+1
+                            while k<n and src[k]!="`":
+                                if src[k]=="\\": k+=1
+                                k+=1
+                            j=k; 
+                        elif c2=="'":
+                            k=j+1
+                            while k<n and src[k]!="'":
+                                if src[k]=="\\": k+=1
+                                k+=1
+                            j=k
+                        elif c2=='"':
+                            k=j+1
+                            while k<n and src[k]!='"':
+                                if src[k]=="\\": k+=1
+                                k+=1
+                            j=k
+                    else:
+                        if c2=="\\": j+=1
+                        elif c2 == "$" and nx2 == "{": in_interp=True; depth=0
+                        elif c2 == "`": break
+                    j+=1
+                i = j+1; prev_sig="str"; continue
+            if ch == "/":
+                # possible regex: previous significant char suggests expression start
+                p = prev_sig[-1] if prev_sig else ""
+                if p in "=(,:[!&|?{};+-*%~^>" or prev_sig in ("return","typeof","case"):
+                    j=i+1
+                    while j<n and src[j]!="/":
+                        if src[j]=="\\": j+=1
+                        elif src[j]=="\n": break  # not a regex after all
+                        j+=1
+                    i=j+1; prev_sig="str"; continue
+                else:
+                    i+=1; prev_sig="op"; continue
+            if ch in "({[]})":
+                if not push(ch):
+                    return False, f"unbalanced {ch} at offset {i}"
+                prev_sig = ch
+            elif ch == ";" or ch == "\n": prev_sig = ch
+            elif ch in " \t\r": pass
+            else: prev_sig = ch
+            i+=1; continue
+        elif state == "line":
+            if ch=="\n": state="code"
+            i+=1; continue
+        elif state == "block":
+            if ch=="*" and nxt=="/": state="code"; i+=2; continue
+            i+=1; continue
+        elif state in ("sq","dq"):
+            q = "'" if state=="sq" else '"'
+            if ch=="\\": i+=2; continue
+            if ch==q: state="code"; prev_sig="str"
+            i+=1; continue
+        elif state == "tpl":
+            # (unused - templates handled inline above) keep for safety
+            i+=1; continue
+    if stack:
+        return False, f"unclosed {stack[-1]} ({len(stack)} open at EOF)"
+    return True, f"delimiter balance OK ({len(src)} chars scanned) [scanner: node-free]"
+
 class _HP(HTMLParser):
     def __init__(self): super().__init__(); self.n=0; self.err=None
     def handle_starttag(self,t,a): self.n+=1
@@ -45,17 +147,10 @@ def validate(path, data):
                 return False, f"unbalanced {op}{cl}: {s.count(op)} vs {s.count(cl)}"
         return True, f"braces/parens balanced ({s.count('{')} rules)"
     if ext == ".js":
-        # strip strings + comments, then check delimiter balance (node not available in sandbox)
+        # char-scanner: template/regex/comment aware (node not available in sandbox)
         s = data.decode("utf-8","replace")
-        s = re.sub(r"/\*.*?\*/", "", s, flags=re.S)
-        s = re.sub(r"(?m)//[^\n]*", "", s)
-        s = re.sub(r"'(\\.|[^'\\])*'", "''", s)
-        s = re.sub(r'"(\\.|[^"\\])*"', '""', s)
-        s = re.sub(r"`(\\.|[^`\\])*`", "``", s)
-        for op,cl in [("{","}"),("[","]"),("(",")")]:
-            if s.count(op)!=s.count(cl):
-                return False, f"unbalanced {op}{cl}: {s.count(op)} vs {s.count(cl)} (heuristic)"
-        return True, f"delimiter balance OK ({s.count('{')} blocks) [heuristic: node unavailable]"
+        ok2, msg2 = _js_balanced(s)
+        return ok2, msg2
     return True, "no validator for this extension - skipped"
 
 def main():
