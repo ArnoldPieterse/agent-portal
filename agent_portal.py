@@ -3412,7 +3412,7 @@ def _ops_snapshot():
 
 def _memory_health_snapshot():
     """GET /api/memory-health (Scribe goal 9, re-landed 2026-11-17 after clobber loss).
-    Six memory-system health metrics from existing evidence files + live scans.
+    Eight memory-system health metrics (six original + retrieval_quality + knowledge_gaps).
     Each metric: {value, status in pass|warn|fail, detail}. Never raises."""
     def _latest(subdir, prefix):
         try:
@@ -3498,6 +3498,22 @@ def _memory_health_snapshot():
         pass
     m["durable_copy_integrity"] = {"value": len(unref), "status": "pass" if not unref else "fail",
                                    "detail": "%d Scribe leaves unreferenced by any INDEX.md" % len(unref)}
+    # 7/8 retrieval_quality - latest archivist retrieval benchmark (cycle-5 goal 9).
+    d = _jload(os.path.join(HERE, "memory", "archivist", "retrieval_metrics.json")) or {}
+    if isinstance(d.get("precision_at_5"), (int, float)):
+        m["retrieval_quality"] = {"value": round(float(d.get("mrr", 0)), 3),
+                                  "status": "pass" if d.get("recall_at_10", 0) >= 0.9 else ("warn" if d.get("precision_at_5", 0) >= 0.7 else "fail"),
+                                  "detail": "P@5=%s R@10=%s MRR=%s over %s queries (%s)" % (d.get("precision_at_5"), d.get("recall_at_10"), d.get("mrr"), d.get("n_queries", "?"), str(d.get("ts", "?"))[:10])}
+    else:
+        m["retrieval_quality"] = {"value": None, "status": "fail", "detail": "no retrieval_metrics.json (run archivist/retrieval_benchmark.py)"}
+    # 8/8 knowledge_gaps - open gaps from latest gap report (cycle-5 goal 9).
+    try:
+        gtxt = open(os.path.join(HERE, "memory", "archivist", "knowledge_gaps.md"), encoding="utf-8", errors="replace").read()
+        ngaps = len(re.findall(r"^## \d+\. Suggested title", gtxt, re.M))
+        m["knowledge_gaps"] = {"value": ngaps, "status": "warn" if ngaps else "pass",
+                               "detail": "%d recurring topics without a KB entry (archivist/knowledge_gaps.md)" % ngaps}
+    except Exception as e:
+        m["knowledge_gaps"] = {"value": None, "status": "fail", "detail": "no knowledge_gaps.md: %s" % str(e)[:80]}
     try:
         ts = time.strftime("%Y-%m-%d %H:%M:%S")
     except Exception:
