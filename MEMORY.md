@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Pin in memory_mirror.py advanced from stale 815d64fa70b5 (3 scripts
 - Chrome 157 headless=new --no-sandbox verified working;
 - Researcher's goal_ledger_run.json is stale (9/10, dated 2026-11-15); live status is
 - Line-height tokens were a no-op (matched current values); fix = lower --lh-* values in tokens.css AND apply them in app.css.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #7 verified: all
 - Designer's pale-sandbox seat CANNOT do browser/CDP rendering (msedge only works non-sandbox); don't re-probe visual-confirmation goals here.
 - Goal 8 (Icon System) closed: static PASS, 25 SVGs, 12 usages. Progress now 6/
+- Goal 8 (Icon System) closed via static analysis; all remaining open goals are browser-gated (CDP/msedge path).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
