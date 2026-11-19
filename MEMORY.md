@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- PIN_FILES in memory_mirror.py was stale causing clobber-loops; fixed by
 - CDP blocker resolved: use `msedge --remote-debugging-port=9222` instead of
 - index.html pin advanced to 978569f40ad1, now loads all 9 ui/*.js scripts (supersedes
 - Scribe closed stale evidence on Designer Goal #9 (tour.js structural FAILs all resolved); goal stays OPEN pending browser acceptance test on
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 5 (Notification System) verified & closed via static structural verification on 2026-11-19; do not re-probe.
 - All 10 Designer goals closed (10/10); fleet 93/93. Visual QA deferred to human browser at :8099 per standing decision.
 - Designer sandbox seat cannot reach loopback :8099 (egress wall); browser-render acceptance still blocked from that seat despite CDP resolved
+- All 10 Designer goals closed (10/10); last pass tokenized line-heights + added @media print break rules in ui/app.css
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
