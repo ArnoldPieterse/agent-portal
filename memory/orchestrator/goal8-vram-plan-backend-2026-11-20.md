@@ -19,3 +19,5 @@
 ## Remaining for full closure
 - UI banner in fleet tab (ui/core.js): read /api/fleet/plan result or poll vram-alerts.jsonl; render red/amber banner when alerts_triggered > 0
 - Live-HTTP 200 confirmation (needs safe portal restart window)
+
+{"ts": 1795131566.469988, "goal": "orchestrator-8", "step": "UI VRAM alert banner built in ui/core.js (vramAlertInit + vramAlertUpdate); fetches /api/fleet/vram-alerts, shows last 5 alerts <24h as inline banner in fleet tab; bracket-balance verified", "artifact": "ui/core.js L573-610"}

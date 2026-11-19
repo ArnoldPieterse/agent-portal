@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 (Animation/Motion System) CLOSED — 5 keyframes in animations.css, GPU-composited props only, prefers-reduced-motion present.
-- Goal #5: parallelized refresh()'s 5 sequential API calls; renderAgents() now uses incremental class toggle instead of full DOM rebuild on se
-- Goal #3 (Info Hierarchy Audit) closed: fixed 5 font-size violations in portal CSS, evidence written.
-- Goal 6 increment 1 done: ui/state.js created, selectedId wired. Next: wire mode (18 occ) and busy (6 occ).
-- Goal 3 (hierarchy audit): 9 CSS rules fixed in ui/app.css; closure needs static before/after fixture (browser blocked).
 - Goal #1 gap: needs fresh `freshness_report.py` (file-age tiers), NOT extend `freshness_sweep.py` (type-based TTLs) — different tool.
 - Researcher 10/10 goals done; chose Archivist #1 (Orphan
 - RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md
 - Goal #3 (Info Hierarchy Audit) remains open; only "before/after
 - Researcher found stale_claim_check.py and verify_claims.py already exist; option (c) is the best idle contribution path.
+- Mechanic built winrm_pool.py (retry/backoff, cred rotation, local path for White); remaining: live remote exec on PALE/BLACK/RED + alert int
+- Goal #2: only gauge-fill keyframe is live; panel-enter, li-enter, notif-slide-in are dead classes needing DOM wiring
+- KG has 6448 nodes / 614 edges; visualization built on connected subgraph (goal 4 done, ledger recorded).
+- Goal #1 done: built memory/scribe/extract_decisions.py, ran it — 12 decisions extracted, all fields present, spot-check passed.
+- Correction: the HTML-escape helper in ui/core.js is `esc()`, not `escHtml()` — use
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
