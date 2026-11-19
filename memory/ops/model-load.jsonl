@@ -510,3 +510,4 @@
 {"ts": "2026-11-20 08:14:58", "run": "g-1a1f5e0958d-efa5aa", "missing": {"Scribe": "unreachable", "Mechanic": "unreachable"}}
 {"ts": "2026-11-20 08:22:43", "run": "g-1a1f5e7ae7d-cc4055", "missing": {"Mechanic": "unreachable", "Scribe": "unreachable"}}
 {"ts": "2026-11-20 08:42:00", "run": "g-1a1f5f952d0-a192a4", "missing": {"Mechanic": "unreachable", "Scribe": "unreachable"}}
+{"ts": "2026-11-20 08:49:00", "run": "g-1a1f5ffbc3e-d9cff0", "missing": {"Mechanic": "unreachable", "Scribe": "unreachable"}}
