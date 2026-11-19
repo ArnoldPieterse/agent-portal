@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher built orphan_remediation.py, fixed last 2 orphans (rate 0.5%→0.0%), closed Archivist goal #1 on 2026-11-20
-- Goals 5 & 9 closed: typography scale fixed, empty states + skeletons on all 8 panels done.
 - Goal 5 (Typography Scale) CLOSED: orphan --fs-11/13/16 tokens removed, 75ch
 - Builder: ui/core.js streamReplyCore line 168 — body.textContent SSE updates need rAF batching; file is not pin-protected.
 - Researcher confirmed :8888 egress wall (WinError 10013) persists in sandbox; elev.py absent — blocks all LIVE legs
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #5: parallelized refresh()'s 5 sequential API calls; renderAgents() now uses incremental class toggle instead of full DOM rebuild on se
 - Goal #3 (Info Hierarchy Audit) closed: fixed 5 font-size violations in portal CSS, evidence written.
 - Goal 6 increment 1 done: ui/state.js created, selectedId wired. Next: wire mode (18 occ) and busy (6 occ).
+- Goal 3 (hierarchy audit): 9 CSS rules fixed in ui/app.css; closure needs static before/after fixture (browser blocked).
+- Goal #1 gap: needs fresh `freshness_report.py` (file-age tiers), NOT extend `freshness_sweep.py` (type-based TTLs) — different tool.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
