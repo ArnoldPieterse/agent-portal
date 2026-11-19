@@ -32,5 +32,5 @@
     overlay.appendChild(card); document.body.appendChild(overlay);
     render(); }
   function close(){ if(overlay){overlay.remove();overlay=null;card=null;} try{localStorage.setItem("portalTourDone","1");}catch(_){} }
-  window.addEventListener("load",function(){ let done=false; try{done=localStorage.getItem("portalTourDone")==="1";}catch(_){} if(!done)setTimeout(start,800); });
+  window.addEventListener("load",function(){ let done=false; try{done=localStorage.getItem("portalTourDone")==="1";}catch(_){} if(!done && !location.hash.includes("notour"))setTimeout(start,800); });
 })();

@@ -10,7 +10,7 @@
 /* form controls on the token scale (was UA default 13.33px - off-scale) */
 button,select{font-size:var(--fs-12)}
 input,textarea{font-size:var(--fs-14)}
-body{margin:0;font-size:var(--fs-14);line-height:1.45;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column}
+body{margin:0;font-size:var(--fs-14);line-height:var(--lh-base);font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column}
 header{display:flex;align-items:center;gap:var(--sp-12);padding:var(--sp-8) var(--sp-16);border-bottom:1px solid var(--line);background:var(--panel)}
 header h1{font-size:var(--fs-15);margin:0;font-weight:600}
 #status{margin-left:auto;display:flex;align-items:center;gap:var(--sp-8);color:var(--dim);font-size:var(--fs-12)}
@@ -118,7 +118,7 @@ textarea{resize:vertical;min-height:64px}
 #fleetPanel.open{display:flex}
 #fleetHead{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);color:var(--dim);border-bottom:1px solid var(--line)}
 #fleetBody{overflow-y:auto;padding:var(--sp-8) var(--sp-16)}
-.frow-h{padding:var(--sp-8) 0;border-bottom:1px dashed var(--line);font-size:var(--fs-12)}
+.frow-h{padding:var(--sp-6) 0;border-bottom:1px dashed var(--line);font-size:var(--fs-12)}
 .frow-h:last-child{border-bottom:none}
 .fdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:var(--sp-8);background:var(--dot-idle)}
 .fdot.busy{background:var(--dot-busy)}
@@ -154,8 +154,8 @@ textarea{resize:vertical;min-height:64px}
 #filesPanel.open{display:flex}
 #filesHead{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);color:var(--dim);border-bottom:1px solid var(--line)}
 #filesList{list-style:none;margin:0;padding:0;overflow:auto;font-size:var(--fs-12)}
-#filesList li{padding:var(--sp-4) var(--sp-8);border-bottom:1px solid var(--line)}
-#filesList a{color:var(--focus);text-decoration:none;display:block}
+#filesList li{display:flex;align-items:baseline;gap:var(--sp-8);padding:var(--sp-3) var(--sp-8);border-bottom:1px solid var(--line)}
+#filesList a{color:var(--focus);text-decoration:none;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 #filesList a:hover{text-decoration:underline}
 .fs-meta{color:var(--dim);font-size:var(--fs-12);white-space:nowrap;margin-left:var(--sp-8)}
 .fs-empty{padding:var(--sp-8);color:var(--dim)}

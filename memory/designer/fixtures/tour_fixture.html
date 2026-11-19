@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset=utf-8>
+<style>
+body{font-family:sans-serif;margin:0;padding:16px}
+.tour-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:9999}
+.tour-card{background:#fff;color:#111;max-width:340px;padding:20px;border-radius:8px}
+.tour-title{font-size:16px;font-weight:600;margin-bottom:8px}
+.tour-body{font-size:13px;margin-bottom:14px}
+.tour-btns{display:flex;gap:8px;justify-content:flex-end}
+.tour-next,.tour-skip{padding:6px 12px;border:none;border-radius:6px;cursor:pointer}
+#fleetTab,#goalsPanel,#opsBtn,#uploadsPanel{border:2px solid #ccc;padding:10px;margin:40px 0;width:200px}
+</style></head>
+<body>
+<h3>Tour fixture</h3>
+<div id=fleetBtn>FLEET TAB</div>
+<div id=goalsBtn>GOALS PANEL</div>
+<div id=opsBtn>OPS TAB</div>
+<div id=filesBtn>UPLOADS PANEL</div>
+<script src="../../ui/tour.js"></script>
+<script>window.addEventListener('load',function(){ try{ UI.tour.start(); }catch(e){document.title='ERR '+e.message;} });</script>
+</body></html>

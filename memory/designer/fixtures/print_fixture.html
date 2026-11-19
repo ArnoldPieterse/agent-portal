@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PRINT-FIXTURE</title>
+<link rel="stylesheet" href="../../ui/tokens.css">
+<link rel="stylesheet" href="../../ui/app.css">
+<style>
+.fixture-bar{position:fixed;top:0;left:0;right:0;z-index:9999;background:#1a1a2e;color:#fff;padding:8px 16px;display:flex;align-items:center;gap:12px;font:13px/1.4 system-ui}
+.fixture-bar button{background:#4f46e5;color:#fff;border:0;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px}
+.fixture-bar button:hover{background:#6366f1}
+.checklist{max-width:720px;margin:80px auto 40px;font:14px/1.6 system-ui;color:#e2e8f0;padding:0 16px}
+.checklist h2{font-size:18px;margin-bottom:12px}
+.checklist label{display:flex;align-items:center;gap:8px;margin:8px 0;cursor:pointer}
+.checklist input[type=checkbox]{width:18px;height:18px}
+#result{margin-top:16px;font-size:16px;font-weight:700}
+.pass{color:#4ade80}.fail{color:#f87171}
+body.sim-print *{background:transparent !important;color:#000 !important;box-shadow:none !important;animation:none !important;transition:none !important;}
+body.sim-print .panel-toggle,body.sim-print .btn,body.sim-print #printReportBtn,body.sim-print .toggles button{display:none !important}
+@media print{.fixture-bar,.checklist{display:none !important}}
+</style>
+</head>
+<body>
+<div class="fixture-bar">
+  <strong>PRINT-FIXTURE</strong>
+  <button onclick="window.print()">Print (Ctrl+P)</button>
+  <button onclick="document.body.classList.toggle('sim-print')">Toggle Sim-Print Mode</button>
+  <span id="result"></span>
+</div>
+
+<div class="checklist">
+  <h2>Verification Checklist &mdash; Goal 10 (Print-Ready Report)</h2>
+  <p>Open print preview (Ctrl+P or button above). Check each item:</p>
+  <label><input type="checkbox" id="c1"> White background, black text</label>
+  <label><input type="checkbox" id="c2"> No buttons/inputs/interactive elements visible</label>
+  <label><input type="checkbox" id="c3"> All panel data visible (no clipping/collapse)</label>
+  <label><input type="checkbox" id="c4"> Page breaks between major sections</label>
+  <label><input type="checkbox" id="c5"> No cut-off content at page boundaries</label>
+  <div id="result"></div>
+  <button onclick="grade()" style="margin-top:12px;padding:8px 16px;border-radius:6px;border:0;background:#4f46e5;color:#fff;cursor:pointer">Grade &amp; Set Title</button>
+</div>
+
+<main style="display:block;padding-top:200px">
+  <section class="panel" id="fleetPanel" style="margin-bottom:24px">
+    <h2>Fleet Status</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr><th style="text-align:left;padding:6px;border-bottom:1px solid #ccc">Agent</th><th>Status</th><th>Model</th><th>Uptime</th></tr>
+      <tr><td>Researcher</td><td>online</td><td>claude-sonnet-4-20250514</td><td>4h 32m</td></tr>
+      <tr><td>Builder</td><td>online</td><td>claude-sonnet-4-20250514</td><td>2h 15m</td></tr>
+      <tr><td>Verifier</td><td>idle</td><td>gpt-4.1</td><td>6h 01m</td></tr>
+      <tr><td>Archivist</td><td>online</td><td>claude-haiku-4-20250414</td><td>3h 48m</td></tr>
+      <tr><td>Scribe</td><td>loading</td><td>claude-sonnet-4-20250514</td><td>&mdash;</td></tr>
+    </table>
+  </section>
+
+  <section class="panel" id="goalsPanel" style="margin-bottom:24px">
+    <h2>Goals &mdash; Fleet Cycle 2 (27.5%)</h2>
+    <ul style="list-style:none;padding:0;font-size:13px;line-height:1.6">
+      <li><strong>Designer:</strong> 6/10 reached (4 open: #5, #9, #10 browser-gated)</li>
+      <li><strong>Builder:</strong> 8/10 reached</li>
+      <li><strong>Researcher:</strong> 9/10 reached</li>
+      <li><strong>Verifier:</strong> 7/10 reached</li>
+    </ul>
+  </section>
+
+  <section class="panel" id="opsPanel" style="margin-bottom:24px">
+    <h2>Operations Log</h2>
+    <div style="font-size:13px;line-height:1.5;font-family:monospace">
+      <p>[07:42] Portal started (PID 6660)</p>
+      <p>[07:43] Model load: Researcher=ok Archivist=ok Scribe=pending</p>
+      <p>[08:15] Auto-reload triggered: Scribe not_loaded &rarr; native /api/inference/load</p>
+      <p>[08:16] Scribe loaded successfully (2.3s)</p>
+      <p>[09:00] Mirror cycle: 0 reverts, 2 file syncs</p>
+    </div>
+  </section>
+
+  <section class="panel" id="uploadsPanel">
+    <h2>Recent Uploads</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:13px">
+      <tr><th style="text-align:left;padding:6px;border-bottom:1px solid #ccc">File</th><th>Size</th><th>Date</th></tr>
+      <tr><td>memory/designer/goal5-notify-fixture-2026-11-19.md</td><td>2.1 KB</td><td>Nov 19</td></tr>
+      <tr><td>ui/tour.js</td><td>4.8 KB</td><td>Nov 19</td></tr>
+    </table>
+  </section>
+</main>
+
+<script>
+document.title = "PRINT-FIXTURE LOADED";
+
+function grade(){
+  var boxes = ["c1","c2","c3","c4","c5"].map(function(id){return document.getElementById(id).checked});
+  var passed = boxes.filter(Boolean).length;
+  var allPass = passed === 5;
+  document.title = "PRINT-FIXTURE " + passed + "/5 PASS";
+  var el = document.getElementById("result");
+  el.textContent = allPass ? "ALL 5/5 PASS \u2014 Goal 10 print acceptance met" : passed + "/5 \u2014 " + (5-passed) + " check(s) failed";
+  el.className = allPass ? "pass" : "fail";
+}
+
+var observer = new MutationObserver(function(){
+  var boxes = ["c1","c2","c3","c4","c5"].map(function(id){return document.getElementById(id).checked});
+  if(boxes.every(Boolean)){ grade(); }
+});
+document.querySelectorAll(".checklist input").forEach(function(cb){observer.observe(cb,{attributes:true,attributeFilter:["checked"]})});
+</script>
+</body>
+</html>

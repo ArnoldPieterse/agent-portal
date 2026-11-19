@@ -1,0 +1,53 @@
+<!doctype html><html lang=en><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>NOTIFY-FIXTURE loading</title>
+<link rel=stylesheet href=../../ui/tokens.css>
+<link rel=stylesheet href=../../ui/app.css>
+<style>body{margin:0;font-family:sans-serif;background:var(--bg,#0d1117);color:var(--text,#eee)}
+#report{position:fixed;left:12px;bottom:12px;z-index:9998;background:#111;color:#fff;padding:10px 12px;border-radius:6px;font:12px/1.5 monospace;max-width:420px}
+#report .pass{color:#7CFC00} #report .fail{color:#ff6b6b} header{height:48px}</style>
+</head><body data-theme=dark>
+<header></header>
+<div id=report>loading…</div>
+<script src=../../ui/icons.js></script>
+<script src=../../ui/notifications.js></script>
+<script>
+(function(){
+  var R=[]; function check(ok,label){ R.push({ok:!!ok,label:label}); }
+  function badge(){var b=document.getElementById('notifBadge');return b?{t:b.textContent,h:b.classList.contains('hidden')}:null;}
+  function toastCount(){return document.querySelectorAll('#toastContainer .toast').length;}
+
+  window.addEventListener('load',function(){
+    try{
+      // Fire the four REAL triggers exactly as production callers do:
+      window.notify('ok','Goal closed on Scribe (5/6)');   // uploads.js L363 goal-closed
+      window.notify('warn','Agent host pale is offline');   // core.js L382 agent-offline
+      window.notify('ok','Upload complete: report.pdf');    // uploads.js L24 upload-ok
+      window.notify('err','Upload failed: report.pdf');     // uploads.js L26 / core.js onerror
+
+      setTimeout(function(){
+        check(toastCount()===4, 'toasts rendered = '+toastCount()+' (expect 4)');
+        var c=document.getElementById('toastContainer');
+        var cs=c?getComputedStyle(c):null; var r=c?c.getBoundingClientRect():null; var vw=window.innerWidth;
+        check(!!cs && cs.position==='fixed' && !!r && (vw-r.right)<60 && r.top<80,
+              'container top-right fixed: pos='+(cs?cs.position:'?')+' rightGap='+Math.round(r?vw-r.right:-1)+' top='+Math.round(r?r.top:-1));
+        var bd=badge(); check(!!bd && bd.t==='4' && !bd.h, 'badge = '+JSON.stringify(bd)+' (expect {"t":"4","h":false})');
+        var bell=document.getElementById('notifBell');
+        check(!!bell && !!bell.querySelector('svg'), 'bell svg icon present: '+(bell?!!bell.querySelector('svg'):false));
+        var closes=[].slice.call(document.querySelectorAll('.toast-close'));
+        var nSvg=closes.filter(function(x){return !!x.querySelector('svg');}).length;
+        check(closes.length>0 && nSvg===closes.length, 'all toast-close are SVG ('+nSvg+'/'+closes.length+')');
+
+        setTimeout(function(){
+          check(toastCount()===0, 'auto-dismiss: toasts now '+toastCount()+' (expect 0 after ~5.2s)');
+          var ok=R.filter(function(x){return x.ok;}).length;
+          var rep=document.getElementById('report');
+          rep.innerHTML=R.map(function(x){return '<div class="'+(x.ok?'pass':'fail')+'">'+(x.ok?'PASS':'FAIL')+' - '+x.label+'</div>';}).join('');
+          document.title='NOTIFY-FIXTURE '+ok+'/'+R.length+' PASS';
+        },5300);
+      },250);
+    }catch(e){ document.title='ERR '+e.message; var rep=document.getElementById('report'); if(rep)rep.textContent='ERR '+e.message; }
+  });
+})();
+</script>
+</body></html>
