@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 5 (Notification System) verified & closed via static structural verification on 2026-11-19; do not re-probe.
-- All 10 Designer goals closed (10/10); fleet 93/93. Visual QA deferred to human browser at :8099 per standing decision.
-- Designer sandbox seat cannot reach loopback :8099 (egress wall); browser-render acceptance still blocked from that seat despite CDP resolved
 - All 10 Designer goals closed (10/10); last pass tokenized line-heights + added @media print break rules in ui/app.css
 - Researcher verified Designer Goal #7: 0 off-scale raw-px font-sizes in live ui/*.css+*.js; 170 var(--fs-*) refs all on 5-step scale.
 - Fleet Status API (Goal 8) confirmed-broken: endpoint reverted by mirror; recurring mirror-revert pain noted for next cycle.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 8: UI.icon() expanded to 19 call sites (uploads.js 0→12, core.js 7); addBubble accepts raw SVG in emoji param.
 - Goal #1 tokens: only 3 gap values remain; 5 snap to existing scale, outlier is gap:18px (needs token-or-keep decision)
 - All 10 Designer goals now carry formal (verified:) markers in memory/goals/designer.md — no open goals remain.
+- Corrected stale CAUTION: ui/tour.js exists locally (37 lines), loaded at index.html:166, .tour-* CSS in app.css:319-331; Goal #9 structural
+- Fleet reached 93/93 goal closure; Designer booked stale ledger entries for #2/#5/#10 (evidence existed, records were missing).
+- Mechic's seat has an egress wall blocking host-side
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

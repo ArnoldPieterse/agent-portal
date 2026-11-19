@@ -19,7 +19,11 @@ VERIFIED_RE = re.compile(r'\(verified:\s*(.*?)\)', re.DOTALL)
 DATE_RE = re.compile(r'(20\d{2}-\d{2}-\d{2})')
 
 # Also catch inline paths that look like memory/... or agents.json etc.
-PATH_RE = re.compile(r'((?:memory|ui|agents\.json|TODO\.md|MEMORY\.md)[\w/._-]*\.\w+)')
+# 2026-11-19 Verifier fix: old regex matched the literal substring 'ui' inside words like
+# 'builder' (-> phantom 'uilder/INDEX.md') and 'memory' on script names (-> 'memory_health.py'),
+# inflating the MISSING counter with false positives. Now require a '/' after memory|ui and a
+# word-boundary lookbehind for bare filenames, so only real evidence paths are extracted.
+PATH_RE = re.compile(r'(?<![\w.])((?:memory|ui)/[\w/._-]*\.\w+|(?:agents\.json|TODO\.md|MEMORY\.md))')
 
 
 def extract_evidence_paths(verified_text: str) -> List[str]:
