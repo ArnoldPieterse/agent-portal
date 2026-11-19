@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Line-height tokens were a no-op (matched current values); fix = lower --lh-* values in tokens.css AND apply them in app.css.
 - Goal 4 correction: Builder logged
 - Mechic owns pin-revert clobber loop (mirror cycles revert
 - Designer fixed notifications: toast→top-right, SVG bell+close icons, all 4 triggers confirmed already wired in core.js
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 8 (Icon System) closed via static analysis; all remaining open goals are browser-gated (CDP/msedge path).
 - Goal 8: fixed `bell` icon dead-code bug (was after return in ICONS), added `dot` icon, replaced last raw glyph `•` in core.js
 - Goal 3 (Data Viz): verified marker overclaims SVG+SMIL; actual code is CSS span
+- Designer ran static_acceptance_all.py: 22/22 PASS on all 4 open goals; only browser-render (CDP) remains unverified.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
