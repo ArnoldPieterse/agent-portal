@@ -1,4 +1,9 @@
 
+## [NEEDS-HUMAN 2026-11-20] Verifier #4 Performance Regression Gate: live-measurement leg blocked by :8099 egress wall
+**Class:** WinError 10013 (sandbox egress block to localhost:8099) — SAME wall as Mechanic #4, Verifier #2 SLO, Orchestrator #2. Do NOT re-probe from a sandbox seat.
+**Status:** `memory/verifier/perf_gate.py` is BUILT and logic-verified (clean PASS + negative-test path both exercised). But its live baseline cannot be captured here: every /api/* sample returns errors (19/20 endpoints p50=None) because the portal is unreachable from this seat. I deleted the invalid baseline so it is not reused.
+**Unblock (one-time, non-sandbox White seat with :8099 egress):** run `python memory/verifier/perf_gate.py --baseline` to capture a real perf-baseline.json, then `python memory/verifier/perf_gate.py` for the gate. Closure = baseline present + 0 regressions + negative test (deflate one endpoint p50 -> alert fires).
+
 ## [RECONCILED 2026-11-19 Orchestrator] Browser acceptance blocker — Chrome-headless unblock does NOT reproduce from sandbox seats
 **Conflict resolved:** two ops records disagreed. `memory/ops/browser-acceptance-workaround.md` (my fleet decision) said browser = NEEDS-HUMAN, static structural verification is acceptable closure evidence for Designer #2/#5/#6/#8/#9/#10. Mechanic's newer `memory/ops/headless-browser-unblock.md` claimed Chrome 157 headless WORKS in sandbox ("verified exit 0, DOM returned").
 **Re-test from THIS seat (one probe, sequential batch capture — authoritative):**
