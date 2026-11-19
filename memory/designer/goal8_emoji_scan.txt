@@ -1,0 +1,10 @@
+TOTAL non-ASCII emoji/symbols: 6
+index.html: 3 non-ASCII symbols
+  index.html L37: U+21BA '↺' ctx=agent-to-agent counter">↺ Reset</button>
+  index.html L42: U+21BB '↻' ctx=;font-size:var(--fs-12)">↻ refresh</butto
+  index.html L73: U+21BB '↻' ctx=title="Re-list uploads/">↻ refresh</butto
+ui/core.js: 2 non-ASCII symbols
+  ui/core.js L426: U+21A9 '↩' ctx=;font-size:var(--fs-12)">↩ restore</butto
+  ui/core.js L449: U+2192 '→' ctx=${r.moved_items} item(s) → TODO_completed
+ui/uploads.js: 1 non-ASCII symbols
+  ui/uploads.js L328: U+21BB '↻' ctx=esigner): load-on-open + ↻ only (no polli

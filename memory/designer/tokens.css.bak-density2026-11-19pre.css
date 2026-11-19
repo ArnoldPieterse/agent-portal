@@ -1,0 +1,31 @@
+/* ui/tokens.css - design-token source of truth (Designer Goal #1; extracted by Builder 2026-11-19).
+   Dark family in :root; light override in [data-theme=light]. Literal values ONLY in the light
+   block (a var() alias there would be a cycle and invalidate every token at computed-value time).
+   Loaded via @import at top of ui/app.css. | sibling: ui/app.css | parent: index.html */
+:root{--bg:#0e1116;--panel:#151a22;--panel2:#1b2230;--line:#2a3342;--text:#e8edf4;--dim:#9aa7b8;
+--acc:#4f8cff;--ok:#3ddc84;--warn:#ff9f43;--err:#ff6b6b;--focus:#7fb0ff;--faint:#8b98ab;--white:#fff;--sel-bg:#20304d;--acc-active:#3a6fd6;--msg-you:#243b63;--msg-you-bd:#33507f;--dm-border:#4a3f6b;--dm-text:#b79ce0;--link:#6db1ff;--link-hv:#9ccaff;--peek-bg:#141a26;--peek-bd:#2c3548;--peek-tx:#cdd3e0;--peek-body:#aab2c5;--dot-idle:#888;--dot-busy:#ffb454;--dot-err:#e05252;
+  --agent-purple:#8a63d2;--queue-bg:#0d1117;--queue-dim:#8b949e;--int-border:#d29922;--int-bg:#2d2000;--int-text:#e3b341;--sp-4:4px;--sp-8:8px;--sp-12:12px;--sp-16:16px;--sp-24:24px;--fs-11:11px;--fs-12:12px;--fs-13:13px;--fs-14:14px;--fs-15:15px;--fs-16:16px;--lh-tight:1;--lh-caption:1.3;--lh-base:1.45;--lh-loose:1.5;--lh-mono:1.6;}
+
+/* Light theme (Goal #10, 2026-11-17): literal values ONLY - never var() aliases here
+   (a var() cycle invalidates every token at computed-value time). Set by core.js initTheme:
+   <html data-theme="light"> = light; no attribute = dark (:root above is the dark family). */
+[data-theme=light]{--bg:#f4f6fa;--panel:#ffffff;--panel2:#eef1f6;--line:#d5dbe5;--text:#1a2330;
+--dim:#5b6779;--acc:#2f6fe0;--ok:#1f9d5b;--warn:#c47a12;--err:#d64545;--focus:#2f6fe0;--faint:#7a8699;--white:#000;--sel-bg:#d4e4ff;--acc-active:#2f6fe0;--msg-you:#dbeafe;--msg-you-bd:#93c5fd;--dm-border:#7c3aed;--dm-text:#7c3aed;--link:#2563eb;--link-hv:#1d4ed8;--peek-bg:#ffffff;--peek-bd:#d5dbe5;--peek-tx:#1a2330;--peek-body:#374151;--dot-idle:#9ca3af;--dot-busy:#f59e0b;--dot-err:#ef4444;
+  --agent-purple:#7c3aed;--queue-bg:#f8fafc;--queue-dim:#6b7280;--int-border:#b45309;--int-bg:#fffbeb;--int-text:#92400e;}
+
+/* 2026-11-19 (White re-land): spacing/radius/type completion + print colors */
+:root{
+--sp-1:1px;--sp-3:3px;--sp-6:6px;--sp-10:10px;--sp-14:14px;--sp-20:20px;
+--br-sm:4px;--br-md:8px;--br-lg:12px;--br-pill:999px;
+--fs-18:18px;--fs-24:24px;
+--muted:#8b93a7;--qspin-bd:#30363d;--qspin-top:#58a6ff;--queue-tx:#c9d1d9;
+--black:#000;--paper:#fff;--print-dim:#444;--print-line:#ccc;--print-border:#ddd;
+}
+@media (prefers-color-scheme: light){ :root{ --muted:#64748b;--qspin-bd:#e2e8f0;--qspin-top:#2f6fe0;--queue-tx:#1a2330; } }
+
+/* 2026-11-19 (White re-land pass2): legacy value tokens */
+:root{
+  --hover-bg:#2a3342;--seg-on:#3a6fd6;
+  --dm-bg:rgba(138,99,210,.10);--ok-soft:rgba(61,220,132,.08);--ok-line:rgba(61,220,132,.25);
+  --link-dash:rgba(109,177,255,.5);--warn-border:#d29922;--warn-text:#e3b341;
+}

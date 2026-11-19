@@ -1,0 +1,8 @@
+ACR1: hex colors in app.css = 0 (acceptance: 0)
+ACR2: line-height tokenized = 20/20 (acceptance: all)
+ACR3: padding/margin with var() = 127
+     padding/margin with hardcoded PX = 0 (acceptance: 0)
+     padding/margin 0/auto/keyword (legit non-token) = 19
+ACR4: font-size tokenized = 103/103 (acceptance: all)
+
+OVERALL: PASS (0 violations)
