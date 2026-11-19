@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic built winrm_pool.py (retry/backoff, cred rotation, local path for White); remaining: live remote exec on PALE/BLACK/RED + alert int
 - Goal #2: only gauge-fill keyframe is live; panel-enter, li-enter, notif-slide-in are dead classes needing DOM wiring
 - KG has 6448 nodes / 614 edges; visualization built on connected subgraph (goal 4 done, ledger recorded).
 - Goal #1 done: built memory/scribe/extract_decisions.py, ran it — 12 decisions extracted, all fields present, spot-check passed.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe closed goal #1 (extract_decisions.py, 0% FP) and started goal #2: building cycle_narrative.py
 - Goal #9 cost_tracker.py built+verified; UI
 - Goal #1 (Orphan Remediation) CLOSED: 0 orphans remain; evidence at memory/archivist/evidence-goal1-orphan-remediation-complete-2026-11-20.md
+- HOT NOTE "Mechanic built winrm_pool.py" is a phantom claim — file absent from disk; only winrm_sspi_client.py has partial retry logic.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
