@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 Notification System: CSS (25 tokenized rules) + script tag wired; module fully functional, pin 6f521cb54a84
 - Goal 8 pin conflict confirmed: HOT NOTES claim 6b50b
 - Goal #7 Typography re-done post-mirror-revert: consolidated to 5-step scale (12/14/15/1
 - Goal #2 lh-tokenized: all
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Wrote memory/designer/cdp_acceptance_all.py — unified CDP script covering all 5 open goals (#2,#5,#8,#9,#10
 - Pin in memory_mirror.py advanced from stale 815d64fa70b5 (3 scripts
 - Chrome 157 headless=new --no-sandbox verified working;
+- Researcher's goal_ledger_run.json is stale (9/10, dated 2026-11-15); live status is
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
