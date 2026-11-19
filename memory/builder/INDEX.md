@@ -1,5 +1,5 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-19 (Builder assist: Archivist Goal 2 citation_audit.py built+ran, 49 URLs checked, report with filtered analysis)
+Last updated: 2026-11-20 (Builder assist: Archivist Goal 2 citation_audit.py built+ran, 49 URLs checked, report with filtered analysis)
 
 ## Entries (keyword -> pointer | use case)
 - Goal#2 api-client layer / ui/api-client.js built (150L): DI retry core (exp backoff+jitter, max3), TTL-30s cache, 17 typed wrappers, UMD; static gate PASS; node test authored; REMAINING wire core.js + run node test -> memory/builder/api_client_layer_increment1-2026-11-20.md
@@ -57,3 +57,4 @@ Last updated: 2026-11-19 (Builder assist: Archivist Goal 2 citation_audit.py bui
 - [MEMORY.md](memory/builder/MEMORY.md)
 - [TODO.md](memory/builder/TODO.md)
 - [anomaly-ar14-writepath-evidence.md](memory/builder/anomaly-ar14-writepath-evidence.md)
+- Goal#4 error boundary / showPanelError 5/5 panels wired (actBody, fleetBody, gitStatus, goalsBody, filesList); in-process verification PASS; live browser test pending -> memory/builder/error_boundary_increment3-2026-11-20.md
