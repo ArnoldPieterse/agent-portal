@@ -28,3 +28,5 @@ Last updated: 2026-11-20.
 - 2026-11-19: Archivist Goal 6 assist - wrote freshness-policy.md + built/tested freshness_sweep.py. Evidence: memory/orchestrator/evidence-archivist-goal6-freshness-2026-11-19.md
 
 - [Verifier assist 2026-11-20] goal #6 dependency-resolver progress (owner=Orchestrator) -> memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md   re-wired /api/fleet/dependencies-graph + UI tree; remaining = live-HTTP 200 (needs safe restart window)
+
+- [Orchestrator 2026-11-20] goal #9 cycle-cost-tracker -> memory/orchestrator/goal9-cycle-cost-tracker-2026-11-20.md   cost_tracker.py built + /api/fleet/cost wired; remaining = UI chart + live-HTTP
