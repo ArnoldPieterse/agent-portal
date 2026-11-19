@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe reconciled open set to {2,5,7,8,9,10}; flagged contradiction between designer-browser-gate-forecast and designer-open-goals-triage
 - Designer: 8/10 done; #5 Notifications & #10 Print code-complete but blocked—no headless browser available for acceptance testing.
 - Designer true state: 8/10 reached; open=#5 Notification + #10 Print only. Prompt's "6 open" was stale.
 - Goal #2 (Density Pass) CSS tokenization done; blocked on acceptance test needing browser screenshots, no headless browser available
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 lh-tokenized: all
 - Host confirmed: no headless browser binary or playwright/selenium — shared blocker behind Designer goals #2/#5/#6/#8/#9/#10
 - Browser probe confirmed exit 1 in sandbox; NEEDS-HUMAN blocker is real, not uninvestigated. Multiple goals (2,4,5,8,9,10) blocked on it.
+- Tour step 4 fixed: was targeting #composer, now targets #opsBtn per Goal #9 spec (Fleet, Goals, Ops, Uploads).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
