@@ -1,5 +1,8 @@
 # memory/verifier/ INDEX
-Last updated: 2026-11-19.
+Last updated: 2026-11-20.
+
+## 2026-11-20
+- stale-pointer-fix-orchestrator-goal9-2026-11-20.md — **STALE POINTER FIXED / CLOSED**: freshness_audit FAIL (1 missing) traced to truncated evidence path on archived Orchestrator Goal 9 (`goal9-perf-rad` -> full `goal9-perf-radar-backend-done-2026-11-17.md`). Underlying backend claim verified sound; pointer corrected; re-audit now PASS (0 missing, 0 stale).
 
 ## 2026-11-19
 - stale-claim-builder-goal1-components-2026-11-19.md — **STALE CLAIM / FAIL**: Builder#1 Component Library v1 marked verified but 3/5 components (gauge, timelineNode, collapsiblePanel) used in <2 panels. Acceptance criteria "each used by >=2 panels" not met. Marker premature.

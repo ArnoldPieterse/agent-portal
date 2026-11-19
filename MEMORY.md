@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 tokens: only 3 gap values remain; 5 snap to existing scale, outlier is gap:18px (needs token-or-keep decision)
 - All 10 Designer goals now carry formal (verified:) markers in memory/goals/designer.md — no open goals remain.
 - Corrected stale CAUTION: ui/tour.js exists locally (37 lines), loaded at index.html:166, .tour-* CSS in app.css:319-331; Goal #9 structural
 - Fleet reached 93/93 goal closure; Designer booked stale ledger entries for #2/#5/#10 (evidence existed, records were missing).
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fleet reached 93/93 (100%); all seats' goals verified/closed this pass.
 - Hot note "UI.icon() 19 call sites" disproven: actual total=8, uploads.js=0; evidence leaf written for Mechanic Goal 2 sentinel.
 - Mechanic Goal 8 (Fleet Status API) corrected to STALE-OVERCLAIM; endpoint mirror-reverted, true state OPEN. Leaf: memory/sink/mechanic-goal8
+- Wrote `memory/ops/design-token-lint-workflow.md`: 3-step audit→fix→CI guard for off-scale px in `ui/app.css`, ~1h effort next cycle.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
