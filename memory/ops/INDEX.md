@@ -22,6 +22,7 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - BLOCKERS log (NEEDS-HUMAN, exact cmd + error) -> memory/ops/blockers.md
 - Goal-ledger record_evidence guard fix + dangling-pointer unblock recipe -> memory/ops/goal_ledger_record_fix-2026-11-18.md
 - Git hygiene / commit conventions -> memory/ops/git-hygiene.md
+- **Browser acceptance test workaround** (static structural verification as closure standard for goals blocked on headless browser; Edge hangs in sandbox, confirmed 11-19) -> memory/ops/browser-acceptance-workaround.md
 - Mirror-revert prevention (commit-before-sync rule) -> memory/ops/mirror-revert-prevention-2026-11-18.md
 - Memory sync spec (what gets mirrored where) -> memory/ops/memory-sync-spec-r13.md
 - scan_goals() scoping bug fix (whitelist canonical agent files, eliminates 33 false positives) -> memory/ops/scan_goals-scope-fix-2026-11-19.md
