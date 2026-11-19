@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- interactions.css & animations.css exist but are never loaded (app.css only imports tokens.css) — Goal #1 patterns are dead code
 - Goal #10 auto_research.py must emit briefs passing validate_brief.py; briefs/ dir is empty (no prior output).
 - Prior /api/fleet/dependencies wiring (2026-11-18) was lost from agent_portal.py;
 - Goal #1 CSS gate met: all 16 :hover rules consolidated into interactions.css PORTAL INTEGRATION section; app.css @
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher at 100% on own goals; now assisting via ledger verification (option c), not re-probing :8888 egress wall.
 - Designer: app.css only imports tokens.css; interactions.css/animations.css are dead code; app.css still has duplicate :hover rules blocking
 - Designer Goals #1&2 "verified" markers are FALSE at runtime; canonical pin 195530265
+- Researcher built orphan_remediation.py, fixed last 2 orphans (rate 0.5%→0.0%), closed Archivist goal #1 on 2026-11-20
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
