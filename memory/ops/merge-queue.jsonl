@@ -145,3 +145,6 @@
 {"ts": "2026-11-19 16:50:49", "file": "ui/fleet_status.js", "sha": "4300c1a262", "size": 2680, "snapshot": null}
 {"ts": "2026-11-19 16:50:49", "file": "ui/uploads.js", "sha": "28ccee090a", "size": 36268, "snapshot": null}
 {"ts": "2026-11-19 17:40:23", "file": "ui/app.css", "sha": "bc7702e939", "size": 30015, "snapshot": null}
+{"ts": "2026-11-19 20:09:52", "file": "ui/core.js", "sha": "a5a56fc7f9", "size": 36452, "snapshot": null}
+{"ts": "2026-11-19 20:09:52", "file": "ui/tokens.css", "sha": "035ddf94b7", "size": 2921, "snapshot": null}
+{"ts": "2026-11-19 20:09:52", "file": "ui/tour.js", "sha": "7a59cfe0b7", "size": 2998, "snapshot": null}
