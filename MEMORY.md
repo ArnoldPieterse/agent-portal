@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 (Animation/Motion System) closed: animations.css had 5 keyframes+reduced-motion; only missing @import in app.css — added and verifie
-- Researcher's p95 SLA tracking is INACTIVE until Builder instruments portal-request-t
 - Goal 5 (Security Scan Automation) closed: security_scan.py built+tested, scans 97 Py/JS files, fixture verified.
 - p95 SLA tracking INACTIVE until portal emits `
 - Goal #2 (Animation/Motion) closed: animations.css had 5 keyframes +
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - interactions.css & animations.css exist but are never loaded (app.css only imports tokens.css) — Goal #1 patterns are dead code
 - Goal #10 auto_research.py must emit briefs passing validate_brief.py; briefs/ dir is empty (no prior output).
 - Prior /api/fleet/dependencies wiring (2026-11-18) was lost from agent_portal.py;
+- Goal #1 CSS gate met: all 16 :hover rules consolidated into interactions.css PORTAL INTEGRATION section; app.css @
+- Goal #2 residency_matrix.py built + selftest PASS; live verify still blocked by :8888 egress wall (WinError 10013).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

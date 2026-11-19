@@ -27,9 +27,21 @@ The 11-18 wiring (`_fleet_dependencies()` / `/api/fleet/dependencies`) had been 
 - Payload confirmed by running the resolver's identical 4 fns: **8 agents / 271 edges / 3 real cycles / 0 orphans**; cycles = mechanic#4<->verifier#4, archivist#5<->scribe#5, builder#8<->mechanic#8.
 - Full-module import not possible in this sandbox (top-level `_find_sandbox_dir()` hits `os.listdir('C:\Users')` PermissionError) — environment limit, not a code fault; py_compile + resolver-run cover the wrapper and payload respectively.
 
+## STEP 3 - 2026-11-20 (auto-loop): UI collapsible tree BUILT in ui/core.js
+Added `fleetDepsInit()` + `fleetDepsUpdate()` to `ui/core.js` (L397-473):
+- Dynamically injects a `#fleetDeps` section into `#fleetPanel` (no index.html edit needed - pinned).
+- Collapsible header "▸ Dependency graph" with stats line (N agents · E edges · C cycles).
+- On expand: fetches `/api/fleet/dependencies-graph`, renders:
+  - Cycles block (red-bordered, lists each cycle path)
+  - Per-agent `<details>` elements with outgoing edge list (capped at 15 per agent)
+  - In-cycle edges highlighted red
+- Defensive: try/catch around fetch; endpoint-down shows hint text, doesn't break fleet tab.
+- Hooked into existing `fleetBtn` onclick via wrapper (original handler preserved).
+- Bracket/paren balance verified: new code region delta = 0.
+
 ## Remaining for full closure (honest - NOT yet done)
 1. **Live-HTTP 200** on `/api/fleet/dependencies-graph` — needs a SAFE portal restart window (portal PID 6660 is serving old code mid-run; do not restart during an active batch pass).
-2. **UI**: collapsible dependency tree in the fleet tab, `ui/core.js` (NOT index.html - that's pinned). Write defensively (try/catch + endpoint-down fallback) so a missing endpoint can't break the fleet tab.
+2. ~~UI collapsible tree~~ — DONE (STEP 3 above).
 3. (Optional, already satisfied by design) deliberate-cycle test: resolver exits 1 on cycles; 3 real cycles currently flag it.
 
 ## Verdict
