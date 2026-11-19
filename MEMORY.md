@@ -18,16 +18,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 fleet_status code confirmed in agent_portal.py (L1090,4209) + ui/core.js (L414); live check blocked by WinError 10013; patch pending
-- Researcher: own goals all closed; next action = triage Designer's 6 open goals (sandbox-closeable vs needs browser pass)
-- Designer Goal 8 icon-wire claims verified false (stale/reverted); correction logged in memory/goals/designer.md + scribe evidence leaf.
-- Builder built fleet_status.js + CSS + core.js loader for Goal 8; code verified present, sandbox :8099 WinError 10013 escalated not re-probed
 - Goal #5 ledger entry corrected from "verified" to PROGRESS — browser acceptance not yet run; don't mark verified without live check.
 - Goal #6 (Loading Skeleton Screens) complete: skeletons wired into fleetUpdate/goalsLoad/filesLoad in core.js + uploads.js
 - Goal 7 closed: added --fs-18/--fs-24 tokens, fixed 9px/10px→var(--fs-12), tokenized all 21 hardcoded px in app.css.
 - Goal #9 (Onboarding Tour) complete: tour.js wired in index.html, 13 .tour-* CSS rules added to app.css, pin advanced.
 - Goal 8 done: all 12 emoji labels replaced with SVG icons (25 total in ui/icons.js), .ico CSS added, pin at 6b50b06fa0e8
 - Goals #5 (Notifications) & #10 (Print Layout) code-complete
+- Goal 8 fixed: fleet_status.js was hitting phantom /api/fleet/status; real endpoint is /api/fleet (agent_portal.py L40).
+- Researcher picked Goal #7 Typography Audit as sandbox-closable; known fix: #actBody line-height 1.7→≤1.6
+- Scribe reconciled open set to {2,5,7,8,9,10}; flagged contradiction between designer-browser-gate-forecast and designer-open-goals-triage
+- Designer: 8/10 done; #5 Notifications & #10 Print code-complete but blocked—no headless browser available for acceptance testing.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
