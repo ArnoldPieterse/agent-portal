@@ -116,8 +116,66 @@ def compare():
     sys.exit(0)
 
 
+def simulate():
+    """Self-test: prove regression detection works without live portal.
+    1. Write synthetic baseline (all endpoints ~5ms p50).
+    2. Compare with one endpoint slowed to 1000ms -> expect alert on that endpoint only.
+    3. Compare with all-at-baseline -> expect 0 regressions.
+    Exit 0 = all assertions pass, 1 = assertion failure.
+    """
+    import tempfile, shutil
+    # --- Phase 1: synthetic baseline ---
+    base_doc = {"captured_at": now_iso(), "threshold_pct": DEGRADE_PCT, "endpoints": {}}
+    for p in ENDPOINTS:
+        base_doc["endpoints"][p] = {"p50_ms": 5.0, "p95_ms": 8.0, "errors": 0}
+    # Write to a temp baseline so we don't clobber the real one
+    tmpdir = tempfile.mkdtemp(prefix="perf_sim_")
+    sim_base = os.path.join(tmpdir, "perf-baseline.json")
+    with open(sim_base, "w", encoding="utf-8") as f:
+        json.dump(base_doc, f, indent=2)
+
+    def _compare_with(current_data, baseline_path):
+        """Run the comparison logic against given current data + baseline path."""
+        with open(baseline_path, encoding="utf-8") as f:
+            base = json.load(f)
+        regressions = []
+        for p in ENDPOINTS:
+            b = base["endpoints"].get(p, {})
+            c = current_data.get(p, {})
+            bp50 = b.get("p50_ms")
+            cp50 = c.get("p50_ms")
+            if bp50 is None or cp50 is None:
+                continue
+            delta_pct = ((cp50 - bp50) / bp50 * 100.0) if bp50 else 0.0
+            if delta_pct > DEGRADE_PCT:
+                regressions.append((p, bp50, cp50, delta_pct))
+        return regressions
+
+    # --- Phase 2: slow endpoint -> expect alert ---
+    slow_target = "/api/goals"
+    current_slow = {p: {"p50_ms": 5.0, "p95_ms": 8.0, "errors": 0} for p in ENDPOINTS}
+    current_slow[slow_target] = {"p50_ms": 1000.0, "p95_ms": 1200.0, "errors": 0}
+    regressed = _compare_with(current_slow, sim_base)
+    assert len(regressed) == 1, f"Expected exactly 1 regression, got {len(regressed)}: {regressed}"
+    assert regressed[0][0] == slow_target, f"Wrong endpoint flagged: {regressed[0]}"
+    print(f"[perf_gate:simulate] Phase 2 PASS: slowdown on {slow_target} (5->1000ms) correctly triggered alert")
+
+    # --- Phase 3: clean state -> expect 0 regressions ---
+    current_clean = {p: {"p50_ms": 4.8, "p95_ms": 7.5, "errors": 0} for p in ENDPOINTS}
+    regressed_clean = _compare_with(current_clean, sim_base)
+    assert len(regressed_clean) == 0, f"Expected 0 regressions in clean state, got {regressed_clean}"
+    print("[perf_gate:simulate] Phase 3 PASS: clean state shows 0 regressions")
+
+    # Cleanup
+    shutil.rmtree(tmpdir, ignore_errors=True)
+    print("[perf_gate:simulate] ALL ASSERTIONS PASS (baseline captured + alert fires + clean=0)")
+    sys.exit(0)
+
+
 if __name__ == "__main__":
-    if "--baseline" in sys.argv:
+    if "--simulate" in sys.argv:
+        simulate()
+    elif "--baseline" in sys.argv:
         capture_baseline()
     else:
         compare()

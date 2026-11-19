@@ -2,6 +2,7 @@
 Last updated: 2026-11-19 (Builder assist: Archivist Goal 2 citation_audit.py built+ran, 49 URLs checked, report with filtered analysis)
 
 ## Entries (keyword -> pointer | use case)
+- Goal#2 api-client layer / ui/api-client.js built (150L): DI retry core (exp backoff+jitter, max3), TTL-30s cache, 17 typed wrappers, UMD; static gate PASS; node test authored; REMAINING wire core.js + run node test -> memory/builder/api_client_layer_increment1-2026-11-20.md
 - Goal#1 component-refactor regression / 0 document.createElement left in core.js; reference-integrity PASS (all UI.* refs resolve: icon/iconSized->icons.js, emptyState/skeleton->core.js); script order icons<components<core OK; structural substitute for pixel diff (no browser in sandbox) -> memory/builder/component_refactor_regression_2026-11-20.md   2026-11-20 own goal #1 closure support
 - citation audit / Archivist goal #2 assist: built+ran citation_audit.py, 49 external URLs live-checked, filtered accuracy ~86%, 5 genuinely dead links identified -> memory/builder/citation-audit-assist-archivist-goal2-2026-11-19.md | memory/archivist/citation_audit.py + memory/archivist/citation-audit-cycle5-report.md
 - anti-phantom claim guard / verify_claims.py scans goal files, flags verified-markers whose cited artifact is missing; found 4 archivist PHANTOMs explaining the 2/10 stall -> memory/builder/evidence-verify-claims-guard-2026-11-19.md | memory/ops/verify_claims.py + memory/ops/claim-phantom-report.md

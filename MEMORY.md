@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 done: ui/animations.css created (5 keyframes, GPU-only), wired via @import in app.css, autoStagger() helper added.
-- PowerShell blocked, cmd for-loops mangled; use Python for filesystem recon in this sandbox (WinError 10013 on :8888/:8
-- Builder Goal#1: 32 createElement calls in core.js (target<5); approach=
 - Goal #2 (Animation/Motion System) closed: animations.css had 5 keyframes+reduced-motion; only missing @import in app.css — added and verifie
 - Researcher's p95 SLA tracking is INACTIVE until Builder instruments portal-request-t
 - Goal 5 (Security Scan Automation) closed: security_scan.py built+tested, scans 97 Py/JS files, fixture verified.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 (Animation/Motion) closed: animations.css had 5 keyframes +
 - Goal #6 evidence scorer built & selftest PASS (fleet avg 63.6, 11 markers); next: wire /api/evidence/quality endpoint
 - Designer wired interactions.css+animations.css into app.css; interactions.js still NOT in index.html script list — dead code
+- interactions.css & animations.css exist but are never loaded (app.css only imports tokens.css) — Goal #1 patterns are dead code
+- Goal #10 auto_research.py must emit briefs passing validate_brief.py; briefs/ dir is empty (no prior output).
+- Prior /api/fleet/dependencies wiring (2026-11-18) was lost from agent_portal.py;
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
