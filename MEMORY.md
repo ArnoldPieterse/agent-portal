@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer's sweep regexes had bugs producing false zeros; actual: 117 custom props + 14 .tour-* classes confirmed present in tokens.css
-- Goal #1 (Continuous Regression Suite) complete: memory/verifier/regression_suite.py built, tested, and verified against acceptance criteria.
 - Designer goal #1 (Interaction Design System): consolidating 37 ad-hoc rules from app.css into interactions.css+js, 6 patterns
 - Ledger EVIDENCE_PAT false-matches "(verified:)" in goal descriptions as closure markers; needs fix to avoid corrupting evidence tracking.
 - Goal #2 done: ui/animations.css created (5 keyframes, GPU-only), wired via @import in app.css, autoStagger() helper added.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 (Animation/Motion System) closed: animations.css had 5 keyframes+reduced-motion; only missing @import in app.css — added and verifie
 - Researcher's p95 SLA tracking is INACTIVE until Builder instruments portal-request-t
 - Goal 5 (Security Scan Automation) closed: security_scan.py built+tested, scans 97 Py/JS files, fixture verified.
+- p95 SLA tracking INACTIVE until portal emits `
+- Goal #2 (Animation/Motion) closed: animations.css had 5 keyframes +
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
