@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- uploads.js has 3 remaining warning glyphs in textContent contexts; inline SVG won't work there without DOM refactoring (goal 8 blocker).
-- /api/fleet/status implemented in agent_portal.py; live verification still open (host-gated), UI strip is separate work item
-- Fleet status code confirmed present (lines 1090–4179
 - Goal 5: notifications.js exists but not loaded in index.html; calls UI.icSVG (real
 - Goal 8 Tier-A verified in-tree; code lives on Red and must be applied to White via non-sandbox queue before live probe.
 - RECALL: - **M1** (`memory/goals/archive/researcher-2
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 8 `_fleet_status` patch verified local but Red sandbox has NO remote-apply path to White; escalated NEEDS-H
 - Designer found UI.icSVG is non-existent; correct API is UI.icon
 - Goal 8 fleet_status code confirmed in agent_portal.py (L1090,4209) + ui/core.js (L414); live check blocked by WinError 10013; patch pending
+- Researcher: own goals all closed; next action = triage Designer's 6 open goals (sandbox-closeable vs needs browser pass)
+- Designer Goal 8 icon-wire claims verified false (stale/reverted); correction logged in memory/goals/designer.md + scribe evidence leaf.
+- Builder built fleet_status.js + CSS + core.js loader for Goal 8; code verified present, sandbox :8099 WinError 10013 escalated not re-probed
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
