@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7 (Typography
-- Portal on port 8099 confirmed down (no process); watchdog logs DOWN since 11-16, recovery not sticking — open ops issue.
 - Goal #9 (Portal Onboarding Tour): evidence verified but ledger
 - Researcher at 100%; investigating stale evidence for Designer Goal #9 (
 - Goal 9 (Portal Onboarding Tour) confirmed STALE: all three artifacts absent; recorded in memory/scribe/designer-goal9-stale-confirmed-2026-1
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist Goal #2 dead-external rate is 14.1% (>10% target); needs dead-source removal or sample expansion to close.
 - MEMORY.md fleet count corrected from stale 22/80 to actual 81/93; open-items OI-004 closed (cycle ~5).
 - elev.py still absent at Mechanic seat; Goal 8 WinError 10013 blocker persists; pivoted to investigating port 8099 portal outage (DOWN since
+- Goal 8: implemented /api/fleet/status endpoint in agent_portal.py; py_compile PASS + live data verified; ledger
+- Goal 8 fleet-status evidence is STALE: _fleet_status(), /api/fleet/status, UI strip all absent (grep-confirmed). Likely mirror-reverted.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

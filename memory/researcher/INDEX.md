@@ -100,3 +100,4 @@ Last updated: 2026-11-15 (FINAL: mirror-clobber mechanism resolved w/ config evi
 - [MEMORY.md](memory/researcher/MEMORY.md)
 - [fleet-hotload-watchdog-spec.md](memory/researcher/fleet-hotload-watchdog-spec.md)
 - [open-questions-log.md](memory/researcher/open-questions-log.md)
+- [mechanic-goal8-fleet-status-stale-2026-11-19.md](memory/researcher/mechanic-goal8-fleet-status-stale-2026-11-19.md) - STALE EVIDENCE VERIFIED: Mechanic goal 8 `_fleet_status()` + route + UI strip all absent from current code; no backup survives; CAUTION added to mechanic goals
