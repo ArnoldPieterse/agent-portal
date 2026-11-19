@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- RECALL: - **M1** (`memory/goals/archive/researcher-2
 - Goal #5: notifications.js calls non-existent `UI.icSVG`; real API is `UI.icon
 - Goal 8 `_fleet_status` patch verified local but Red sandbox has NO remote-apply path to White; escalated NEEDS-H
 - Designer found UI.icSVG is non-existent; correct API is UI.icon
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder built fleet_status.js + CSS + core.js loader for Goal 8; code verified present, sandbox :8099 WinError 10013 escalated not re-probed
 - Goal #5 ledger entry corrected from "verified" to PROGRESS — browser acceptance not yet run; don't mark verified without live check.
 - Goal #6 (Loading Skeleton Screens) complete: skeletons wired into fleetUpdate/goalsLoad/filesLoad in core.js + uploads.js
+- Goal 7 closed: added --fs-18/--fs-24 tokens, fixed 9px/10px→var(--fs-12), tokenized all 21 hardcoded px in app.css.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
