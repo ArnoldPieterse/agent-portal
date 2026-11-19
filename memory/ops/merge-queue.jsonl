@@ -179,3 +179,6 @@
 {"ts": "2026-11-20 08:22:25", "file": "ui/core.js", "sha": "56b01cefe7", "size": 44471, "snapshot": null}
 {"ts": "2026-11-20 08:48:40", "file": "index.html", "sha": "d9839a0a3a", "size": 14434, "snapshot": "memory/ops/merge-queue/index.html.d9839a0a3a"}
 {"ts": "2026-11-20 08:48:40", "file": "ui/tokens.css", "sha": "a136c5b879", "size": 3155, "snapshot": null}
+{"ts": "2026-11-20 09:14:59", "file": "agent_portal.py", "sha": "6afb6a0d77", "size": 246282, "snapshot": "memory/ops/merge-queue/agent_portal.py.6afb6a0d77"}
+{"ts": "2026-11-20 09:14:59", "file": "ui/app.css", "sha": "039e390a75", "size": 31972, "snapshot": null}
+{"ts": "2026-11-20 09:14:59", "file": "ui/core.js", "sha": "5c10c969fd", "size": 44670, "snapshot": null}
