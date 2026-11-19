@@ -96,3 +96,5 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 
 ## Linked content (KG orphan remediation 2026-11-19)
 - [MEMORY.md](memory/verifier/MEMORY.md)
+
+- regression-suite-goal1-evidence-2026-11-20.md (cycle-7 G1: continuous regression suite built + verified)
