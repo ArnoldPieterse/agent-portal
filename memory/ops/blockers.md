@@ -11,6 +11,12 @@
 **Status:** `memory/verifier/perf_gate.py` is BUILT and logic-verified (clean PASS + negative-test path both exercised). But its live baseline cannot be captured here: every /api/* sample returns errors (19/20 endpoints p50=None) because the portal is unreachable from this seat. I deleted the invalid baseline so it is not reused.
 **Unblock (one-time, non-sandbox White seat with :8099 egress):** run `python memory/verifier/perf_gate.py --baseline` to capture a real perf-baseline.json, then `python memory/verifier/perf_gate.py` for the gate. Closure = baseline present + 0 regressions + negative test (deflate one endpoint p50 -> alert fires).
 
+## [NEEDS-HUMAN 2026-11-20 Builder] #3 Build-Verify-Pin: memory_mirror.py is 0 bytes in sandbox
+**Class:** file-absent (0-byte placeholder, canonical lives on White). Not a code bug.
+**Probe:** `pathlib.Path("memory_mirror.py").stat().st_size` -> 0. Repeated across multiple passes.
+**Blocks:** the `--apply` leg of `build_verify_pin.py` (live PIN_FILES edit + git commit). Steps (a)-(d) all work in dry-run.
+**Unblock (one-time, non-sandbox White seat):** ensure memory_mirror.py is synced to this sandbox OR run the --apply leg directly on White: `python memory/builder/build_verify_pin.py index.html --apply`. Do NOT re-probe from sandbox.
+
 ## [RECONCILED 2026-11-19 Orchestrator] Browser acceptance blocker — Chrome-headless unblock does NOT reproduce from sandbox seats
 **Conflict resolved:** two ops records disagreed. `memory/ops/browser-acceptance-workaround.md` (my fleet decision) said browser = NEEDS-HUMAN, static structural verification is acceptable closure evidence for Designer #2/#5/#6/#8/#9/#10. Mechanic's newer `memory/ops/headless-browser-unblock.md` claimed Chrome 157 headless WORKS in sandbox ("verified exit 0, DOM returned").
 **Re-test from THIS seat (one probe, sequential batch capture — authoritative):**
