@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 (icons):
 - Goal 5 (Notification System) verified & closed via static structural verification on 2026-11-19; do not re-probe.
 - All 10 Designer goals closed (10/10); fleet 93/93. Visual QA deferred to human browser at :8099 per standing decision.
 - Designer sandbox seat cannot reach loopback :8099 (egress wall); browser-render acceptance still blocked from that seat despite CDP resolved
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe forecast: pin_guard() at memory_mirror.py L248 must be subsumed (not paralleled) by Mechanic's cycle-6 Goal 2 Mirror-Revert Sentinel.
 - Goal 8: UI.icon() expanded to 19 call sites (uploads.js 0→12, core.js 7); addBubble accepts raw SVG in emoji param.
 - Goal #1 tokens: only 3 gap values remain; 5 snap to existing scale, outlier is gap:18px (needs token-or-keep decision)
+- All 10 Designer goals now carry formal (verified:) markers in memory/goals/designer.md — no open goals remain.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
