@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 fixed: fleet_status.js was hitting phantom /api/fleet/status; real endpoint is /api/fleet (agent_portal.py L40).
 - Researcher picked Goal #7 Typography Audit as sandbox-closable; known fix: #actBody line-height 1.7→≤1.6
 - Scribe reconciled open set to {2,5,7,8,9,10}; flagged contradiction between designer-browser-gate-forecast and designer-open-goals-triage
 - Designer: 8/10 done; #5 Notifications & #10 Print code-complete but blocked—no headless browser available for acceptance testing.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 8 pin conflict confirmed: HOT NOTES claim 6b50b
 - Goal #7 Typography re-done post-mirror-revert: consolidated to 5-step scale (12/14/15/1
 - Goal #2 lh-tokenized: all
+- Host confirmed: no headless browser binary or playwright/selenium — shared blocker behind Designer goals #2/#5/#6/#8/#9/#10
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
