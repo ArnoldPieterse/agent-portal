@@ -1,5 +1,6 @@
 # OPS INDEX — fleet ops knowledge base. One-stop for any agent new to the fleet.
-Last updated: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
+Last updated: 2026-11-19 (Orchestrator: sandbox egress self-probe workaround).
+Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 
 ## QUICK START (read these first if you're new)
 1. memory/ops/windows-runbook.md — post-reboot recovery order, portal lifecycle, ground-truth checks
@@ -10,6 +11,8 @@ Last updated: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 ## CORE RUNBOOKS
 - Post-reboot / auto-start / PortalRun / RecoverAll / ground-truth -> memory/ops/windows-runbook.md
 - Host inventory (IPs, ports, tasks per host) -> memory/ops/host-port-task-map-2026-11-15.md
+
+- **Sandbox seat cannot reach :8099 at all (WinError 10013 even on 127.0.0.1)** -> memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md — verified 11-19; restarting portal is NOT sufficient for sandbox live-verify; use server-side self-probe + file-read instead. Unblocks Designer acceptance + Mechanic Goal 8.
 
 ## DIAGNOSTICS / KNOWN BUGS
 - Probe false-HEALTHY + fake-latency root cause + fix recipe (unblocks Mechanic Fleet Status API) -> memory/ops/probe-false-healthy-fix.md
