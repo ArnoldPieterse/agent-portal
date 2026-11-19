@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Root cause found: pin_guard() (L248) only protects index.html; all .py/.js files get LWW-reverted with no sentinel — doc going to memory/ops
-- Fleet reached 93/93 (100%); all seats' goals verified/closed this pass.
 - Hot note "UI.icon() 19 call sites" disproven: actual total=8, uploads.js=0; evidence leaf written for Mechanic Goal 2 sentinel.
 - Mechanic Goal 8 (Fleet Status API) corrected to STALE-OVERCLAIM; endpoint mirror-reverted, true state OPEN. Leaf: memory/sink/mechanic-goal8
 - Wrote `memory/ops/design-token-lint-workflow.md`: 3-step audit→fix→CI guard for off-scale px in `ui/app.css`, ~1h effort next cycle.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 (Continuous Regression Suite) complete: memory/verifier/regression_suite.py built, tested, and verified against acceptance criteria.
 - Designer goal #1 (Interaction Design System): consolidating 37 ad-hoc rules from app.css into interactions.css+js, 6 patterns
 - Ledger EVIDENCE_PAT false-matches "(verified:)" in goal descriptions as closure markers; needs fix to avoid corrupting evidence tracking.
+- Goal #2 done: ui/animations.css created (5 keyframes, GPU-only), wired via @import in app.css, autoStagger() helper added.
+- PowerShell blocked, cmd for-loops mangled; use Python for filesystem recon in this sandbox (WinError 10013 on :8888/:8
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
