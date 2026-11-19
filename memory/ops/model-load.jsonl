@@ -422,3 +422,4 @@
 {"ts": "2026-11-19 07:46:07", "run": "g-1a1f09fcf61-8ba234", "missing": {"Researcher": "unreachable"}}
 {"ts": "2026-11-19 07:50:12", "run": "g-1a1f0a38bf2-1fc7fd", "missing": {"Researcher": "unreachable", "Archivist": "unreachable"}}
 {"ts": "2026-11-19 13:40:17", "run": "g-1a1f1e40d3a-f1ba13", "missing": {"Researcher": "unreachable"}}
+{"ts": "2026-11-19 13:58:33", "run": "g-1a1f1f4c7bd-5d51f9", "missing": {"Researcher": "unreachable"}}

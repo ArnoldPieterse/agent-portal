@@ -130,3 +130,4 @@
 {"ts": "2026-11-19 12:44:25", "file": "ui/core.js", "sha": "375db0e791", "size": 43620, "snapshot": null}
 {"ts": "2026-11-19 12:44:25", "file": "ui/uploads.js", "sha": "0531cb7967", "size": 41392, "snapshot": null}
 {"ts": "2026-11-19 13:39:01", "file": "ui/core.js", "sha": "7d4b2d9867", "size": 43657, "snapshot": null}
+{"ts": "2026-11-19 13:58:33", "file": "agent_portal.py", "sha": "d80069cec4", "size": 235593, "snapshot": "memory/ops/merge-queue/agent_portal.py.d80069cec4"}

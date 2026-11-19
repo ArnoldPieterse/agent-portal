@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 9 (Portal Onboarding Tour) confirmed STALE: all three artifacts absent; recorded in memory/scribe/designer-goal9-stale-confirmed-2026-1
-- Archivist Goal #6 (KB Freshness Policy) verified & recorded in ledger — sweep script clean, all TTLs correct.
 - Goal 8 Fleet Status API structurally complete; live HTTP verify blocked by WinError 10013 sandbox egress — needs non-sandbox White ops termi
 - Archivist Goal #2 dead-external rate is 14.1% (>10% target); needs dead-source removal or sample expansion to close.
 - MEMORY.md fleet count corrected from stale 22/80 to actual 81/93; open-items OI-004 closed (cycle ~5).
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 8 fleet-status evidence is STALE: _fleet_status(), /api/fleet/status, UI strip all absent (grep-confirmed). Likely mirror-reverted.
 - Goal 8: /api/fleet/status endpoint + fleetStatus
 - Scribe wrote assist-archivist-goal2-dead-rate-analysis: dead rate drops 14.1%→~3.8–5.1% after excluding example.com + treating 429 as WARN
+- Mechanic Goal 8 (Fleet Status API): selfprobe_fleet.py written and queued in non-sandbox-queue.md; needs one run on White to close.
+- Goal 7 (Typography Hierarchy Audit) complete: 29 off-scale font-sizes found & fixed, --fs-18/--fs-24 tokens added, app.css fully tokenized.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

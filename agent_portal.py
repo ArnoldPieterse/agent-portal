@@ -3501,9 +3501,14 @@ def _memory_health_snapshot():
     # 7/8 retrieval_quality - latest archivist retrieval benchmark (cycle-5 goal 9).
     d = _jload(os.path.join(HERE, "memory", "archivist", "retrieval_metrics.json")) or {}
     if isinstance(d.get("precision_at_5"), (int, float)):
+        rts = d.get("run_ts", "?")
+        try:
+            rts = time.strftime("%Y-%m-%d", time.localtime(float(rts)))
+        except Exception:
+            pass
         m["retrieval_quality"] = {"value": round(float(d.get("mrr", 0)), 3),
                                   "status": "pass" if d.get("recall_at_10", 0) >= 0.9 else ("warn" if d.get("precision_at_5", 0) >= 0.7 else "fail"),
-                                  "detail": "P@5=%s R@10=%s MRR=%s over %s queries (%s)" % (d.get("precision_at_5"), d.get("recall_at_10"), d.get("mrr"), d.get("n_queries", "?"), str(d.get("ts", "?"))[:10])}
+                                  "detail": "P@5=%s R@10=%s MRR=%s over %s queries (%s)" % (d.get("precision_at_5"), d.get("recall_at_10"), d.get("mrr"), d.get("n_queries", "?"), rts)}
     else:
         m["retrieval_quality"] = {"value": None, "status": "fail", "detail": "no retrieval_metrics.json (run archivist/retrieval_benchmark.py)"}
     # 8/8 knowledge_gaps - open gaps from latest gap report (cycle-5 goal 9).
