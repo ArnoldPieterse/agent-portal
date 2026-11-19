@@ -1,0 +1,104 @@
+{
+  "cycle": 6,
+  "timestamp": "2026-11-19T23:52:33Z",
+  "source": "agents.json",
+  "n_agents": 8,
+  "agents": {
+    "Orchestrator": {
+      "id": "orchestrator",
+      "name": "Orchestrator",
+      "model_id": "atlas-q8",
+      "tools": [
+        "edit_file",
+        "python",
+        "render_html",
+        "terminal",
+        "web_search"
+      ]
+    },
+    "Researcher": {
+      "id": "researcher",
+      "name": "Researcher",
+      "model_id": "quinn-q4",
+      "tools": [
+        "edit_file",
+        "python",
+        "render_html",
+        "terminal",
+        "web_search"
+      ]
+    },
+    "Builder": {
+      "id": "builder",
+      "name": "Builder",
+      "model_id": "Qwen3.8-27B-Q8_0",
+      "tools": [
+        "edit_file",
+        "python",
+        "render_html",
+        "terminal",
+        "web_search"
+      ]
+    },
+    "Verifier": {
+      "id": "verifier",
+      "name": "Verifier",
+      "model_id": "Qwen3.8-27B-Q8_0",
+      "tools": [
+        "edit_file",
+        "python",
+        "render_html",
+        "terminal",
+        "web_search"
+      ]
+    },
+    "Designer": {
+      "id": "designer",
+      "name": "Designer",
+      "model_id": "designer-q4",
+      "tools": [
+        "edit_file",
+        "python",
+        "render_html",
+        "terminal",
+        "web_search"
+      ]
+    },
+    "Archivist": {
+      "id": "archivist",
+      "name": "Archivist",
+      "model_id": "archivist-q8",
+      "tools": [
+        "edit_file",
+        "python",
+        "terminal",
+        "web_search"
+      ]
+    },
+    "Scribe": {
+      "id": "scribe",
+      "name": "Scribe",
+      "model_id": "scribe-q8",
+      "tools": [
+        "edit_file",
+        "python",
+        "render_html",
+        "terminal",
+        "web_search"
+      ]
+    },
+    "Mechanic": {
+      "id": "mechanic",
+      "name": "Mechanic",
+      "model_id": "mechanic-q4",
+      "tools": [
+        "edit_file",
+        "python",
+        "render_html",
+        "terminal",
+        "web_search"
+      ]
+    }
+  },
+  "baseline": "reconstructed (no live capture existed for cycle-6; stable 8-agent fleet at current bindings)"
+}
