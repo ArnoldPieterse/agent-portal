@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer Goals #1&2 "verified" markers are FALSE at runtime; canonical pin 195530265
 - Researcher built orphan_remediation.py, fixed last 2 orphans (rate 0.5%→0.0%), closed Archivist goal #1 on 2026-11-20
 - Goals 5 & 9 closed: typography scale fixed, empty states + skeletons on all 8 panels done.
 - Goal 5 (Typography Scale) CLOSED: orphan --fs-11/13/16 tokens removed, 75ch
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 (Animation/Motion System) CLOSED — 5 keyframes in animations.css, GPU-composited props only, prefers-reduced-motion present.
 - Goal #5: parallelized refresh()'s 5 sequential API calls; renderAgents() now uses incremental class toggle instead of full DOM rebuild on se
 - Goal #3 (Info Hierarchy Audit) closed: fixed 5 font-size violations in portal CSS, evidence written.
+- Goal 6 increment 1 done: ui/state.js created, selectedId wired. Next: wire mode (18 occ) and busy (6 occ).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -80,6 +80,10 @@ def _scan_index_lines(memory_dir, agent_id, agent_name):
 
     index_files = [os.path.join(memory_dir, "INDEX.md")]
     for sub in sorted(os.listdir(memory_dir)):
+        # Skip the agent's OWN leaf index (memory/<id>/INDEX.md): it is archived/
+        # renamed in step 1, not struck - striking it would hit a missing path.
+        if sub == agent_id or sub.startswith(agent_id + "_archived"):
+            continue
         sub_idx = os.path.join(memory_dir, sub, "INDEX.md")
         if os.path.isfile(sub_idx):
             index_files.append(sub_idx)
@@ -187,8 +191,11 @@ def _execute(cl, agents_data, agents_file, memory_dir, no_commit=False):
         json.dump(data, fh, indent=1)
     print(f"  agents.json: removed '{agent_id}' ({before} -> {after} agents)")
 
-    # 3) Strike INDEX lines
+    # 3) Strike INDEX lines (defensive: skip any path already moved by step 1)
+    struck = 0
     for fpath, ln, _text in cl["index_lines_to_strike"]:
+        if not os.path.isfile(fpath):
+            continue
         with open(fpath, encoding="utf-8") as fh:
             lines = fh.read().splitlines()
         if 1 <= ln <= len(lines):
@@ -197,7 +204,8 @@ def _execute(cl, agents_data, agents_file, memory_dir, no_commit=False):
                 lines[ln - 1] = "~~" + orig + ("~~" if not orig.endswith("~~") else "")
                 with open(fpath, "w", encoding="utf-8") as fh:
                     fh.write("\n".join(lines) + "\n")
-    print(f"  struck {len(cl['index_lines_to_strike'])} INDEX lines")
+                struck += 1
+    print(f"  struck {struck} INDEX lines (of {len(cl['index_lines_to_strike'])} planned)")
 
     # 4) TODO.md note
     todo_path = os.path.join(os.path.dirname(memory_dir), "TODO.md")
