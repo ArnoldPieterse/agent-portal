@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechic owns pin-revert clobber loop (mirror cycles revert
 - Designer fixed notifications: toast→top-right, SVG bell+close icons, all 4 triggers confirmed already wired in core.js
 - Goal #7 verified: all
 - Designer's pale-sandbox seat CANNOT do browser/CDP rendering (msedge only works non-sandbox); don't re-probe visual-confirmation goals here.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 3 (Data Viz): verified marker overclaims SVG+SMIL; actual code is CSS span
 - Designer ran static_acceptance_all.py: 22/22 PASS on all 4 open goals; only browser-render (CDP) remains unverified.
 - Mechic fixed 2 stale path refs (goal4, goal6); stale_claim_check now clean, fleet count 57→55. Evidence: memory/mechanic/stale-claim-fix-202
+- Created memory/designer/fixtures/notify_fixture.html: self-contained acceptance fixture for Goal #5 notifications, 6 assertions, works aroun
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
