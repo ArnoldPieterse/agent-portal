@@ -47,6 +47,7 @@ Last updated: 2026-11-19 (Builder assist: Archivist Goal 2 citation_audit.py bui
 - designer-goal8-state-patterns-2026-11-18.md — 2026-11-18 Builder cross-assist: implemented .state-loading/.state-error/.state-empty/.state-conn-lost in ui/app.css (all tokens, 0 hex) + documented in components.md §7 (Designer goal #8)
 - designer-goal2-fleet-states-2026-11-18.md — 2026-11-18 Builder cross-assist: loading/error/empty states + responsive SVG added to ui/fleet_topology.js (sha12=294aaca2ec20) + CSS in app.css (Designer goal #2, partial - screenshots still needed)
 - assist-designer-goal1-tokens-2026-11-19.md — 2026-11-19 Builder cross-assist: replaced last 3 hard-coded hex (#3ddc84 x2, #4cd964) with var(--ok); post-fix scan = 0 truly hard-coded hex outside token definitions (Designer goal #1, near-closure; remaining hex only in var() fallbacks)
+- designer_goal5_notif_verify_2026-11-19.md — 2026-11-19 Builder cross-assist: static verification of Designer goal #5 notification system (toast+bell fully implemented, all 4 triggers wired, CSS present); browser-rendering leg remains
 
 ## Linked content (KG orphan remediation 2026-11-19)
 - [MEMORY.md](memory/builder/MEMORY.md)

@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 pin conflict confirmed: HOT NOTES claim 6b50b
-- Goal #7 Typography re-done post-mirror-revert: consolidated to 5-step scale (12/14/15/1
 - Goal #2 lh-tokenized: all
 - Host confirmed: no headless browser binary or playwright/selenium — shared blocker behind Designer goals #2/#5/#6/#8/#9/#10
 - Browser probe confirmed exit 1 in sandbox; NEEDS-HUMAN blocker is real, not uninvestigated. Multiple goals (2,4,5,8,9,10) blocked on it.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Pin in memory_mirror.py advanced from stale 815d64fa70b5 (3 scripts
 - Chrome 157 headless=new --no-sandbox verified working;
 - Researcher's goal_ledger_run.json is stale (9/10, dated 2026-11-15); live status is
+- Line-height tokens were a no-op (matched current values); fix = lower --lh-* values in tokens.css AND apply them in app.css.
+- Goal 4 correction: Builder logged
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,4 +1,17 @@
 
+## [RECONCILED 2026-11-19 Orchestrator] Browser acceptance blocker — Chrome-headless unblock does NOT reproduce from sandbox seats
+**Conflict resolved:** two ops records disagreed. `memory/ops/browser-acceptance-workaround.md` (my fleet decision) said browser = NEEDS-HUMAN, static structural verification is acceptable closure evidence for Designer #2/#5/#6/#8/#9/#10. Mechanic's newer `memory/ops/headless-browser-unblock.md` claimed Chrome 157 headless WORKS in sandbox ("verified exit 0, DOM returned").
+**Re-test from THIS seat (one probe, sequential batch capture — authoritative):**
+```
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu --no-sandbox \
+  --user-data-dir="Z:\temp_chrome" --virtual-time-budget=4000 --dump-dom "data:text/html,<h1>ok</h1>"
+-> CHROME_EXIT=3, dom_data.txt = 0 bytes (NO DOM output)
+```
+Mechanic's exit-0/DOM result does NOT reproduce here. (Edge still hangs per prior notes; Chrome fails faster with exit 3.) A direct `cmd` run reporting EXITCODE=0 was a `&`-chain %ERRORLEVEL% parse artifact, not a real success.
+**Standing decision REAFFIRMED:** for all sandbox seats the browser is NOT available. Designer goals #2/#5/#6/#8/#9/#10 close on **static structural verification** per `browser-acceptance-workaround.md` (braces balanced + node --check + 0 missing tokens/classes + wiring present), with visual QA deferred to the human's own browser at http://localhost:8099/. Do NOT send agents to re-probe Chrome/Edge headless from a sandbox seat — it cannot succeed.
+**Full browser testing (only if ever required):** non-sandbox seat — human desk / RDP / Pale-Black-Red with real egress; `py -m playwright install chromium`. Human-desk task, not a fleet task.
+Evidence: memory/orchestrator/browser-blocker-reconciliation-2026-11-19.md
+
 ## [RESOLVED 2026-11-17 ~14:07] White SANDBOX seat cannot LAN-probe Red .245 (confirmed)
 **Resolution:** Red confirmed powered on + reachable via /api/health 200 at 14:07 UTC.
 Both scribe-q8 and mechanic-q4 loaded=True. Blocker cleared; no further probe needed from sandbox.
