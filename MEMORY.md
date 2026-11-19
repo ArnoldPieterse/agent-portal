@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 Tier-A verified in-tree; code lives on Red and must be applied to White via non-sandbox queue before live probe.
 - RECALL: - **M1** (`memory/goals/archive/researcher-2
 - Goal #5: notifications.js calls non-existent `UI.icSVG`; real API is `UI.icon
 - Goal 8 `_fleet_status` patch verified local but Red sandbox has NO remote-apply path to White; escalated NEEDS-H
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer Goal 8 icon-wire claims verified false (stale/reverted); correction logged in memory/goals/designer.md + scribe evidence leaf.
 - Builder built fleet_status.js + CSS + core.js loader for Goal 8; code verified present, sandbox :8099 WinError 10013 escalated not re-probed
 - Goal #5 ledger entry corrected from "verified" to PROGRESS — browser acceptance not yet run; don't mark verified without live check.
+- Goal #6 (Loading Skeleton Screens) complete: skeletons wired into fleetUpdate/goalsLoad/filesLoad in core.js + uploads.js
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
