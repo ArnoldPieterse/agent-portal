@@ -18,6 +18,6 @@ Focus: Knowledge graph quality + retrieval accuracy. Make the fleet's memory not
 
 8. **Knowledge Gap Detector** - Analyze goal files + chat logs for recurring topics that have NO corresponding KB entry. Generate a "knowledge gap" list with suggested entry titles. Verified: gap report exists; >=5 gaps identified; each has a suggested title + source to research.
 
-9. **Archivist API Endpoint** - `/api/kb/search?q=<query>&limit=N` returns top-N matching entries with relevance score + snippet. Backed by simple TF-IDF (no external ML lib). Verified: endpoint returns ranked results for 10 test queries; top-3 are relevant to query.
+9. **Archivist API Endpoint** - `/api/kb/search?q=<query>&limit=N` returns top-N matching entries with relevance score + snippet. Backed by simple TF-IDF (no external ML lib). Verified: endpoint returns ranked results for 10 test queries; top-3 are relevant to query. (pointer: memory/archivist/kb_search.py)
 
 10. **Weekly Digest Generator** - `python memory/archivist/weekly_digest.py` produces a summary: new entries added, entries updated, orphan changes, retrieval quality delta vs last week. Writes to memory/archivist/digest-WW-YYYY.md. Verified: script runs; digest file exists with all 4 sections populated.

@@ -1,0 +1,339 @@
+{
+ "run_ts": 1795060073.7037961,
+ "method": "tfidf (kb_search.py)",
+ "n_queries": 20,
+ "precision_at_5": 0.75,
+ "recall_at_10": 0.9,
+ "mrr": 0.4085,
+ "queries": [
+  {
+   "query": "file modularity rule pointer budget ui modules",
+   "acceptable": [
+    "memory/portal/file-modularity.md"
+   ],
+   "top5": [
+    "memory/archivist/decay-report.md",
+    "memory/researcher/INDEX.md",
+    "memory/designer/ingested-20261116-file-modularity-rule-research-note.md",
+    "memory/portal/split-design-agent-portal-2026-11-16.md",
+    "memory/synthesis/2026-11-16-portal-status-report.md"
+   ],
+   "rank": 7,
+   "in_top5": false,
+   "in_top10": true
+  },
+  {
+   "query": "goal stall loop bug where agents re-edit index.html and pin guard fix",
+   "acceptable": [
+    "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
+    "memory/ops/pin-guard-extension-ui-files.md"
+   ],
+   "top5": [
+    "memory/researcher/INDEX.md",
+    "memory/researcher/open-questions-log.md",
+    "memory/goals/archive/orchestrator-2026-11-13.md",
+    "memory/archivist/decay-report.md",
+    "memory/portal/bugs/goal-stall-loop-2026-11-16.md"
+   ],
+   "rank": 5,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "fleet monitoring cadence escalation policy host outage",
+   "acceptable": [
+    "memory/ops/fleet-monitoring-cadence.md",
+    "memory/portal/fleet-status.md"
+   ],
+   "top5": [
+    "memory/ops/fleet-monitoring-cadence.md",
+    "memory/ops/INDEX.md",
+    "memory/goals/archive/cycle2-2026-11-17/orchestrator.md",
+    "memory/archivist/decay-report.md",
+    "memory/goals/archive/researcher-2026-11-18.md"
+   ],
+   "rank": 1,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "windows runbook scheduled tasks services",
+   "acceptable": [
+    "memory/ops/windows-runbook.md"
+   ],
+   "top5": [
+    "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+    "memory/ops/windows-runbook.md",
+    "memory/ops/INDEX.md",
+    "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+    "memory/ops/host-port-task-map-2026-11-15.md"
+   ],
+   "rank": 2,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "boot deployment runbook portal startup steps",
+   "acceptable": [
+    "memory/ops/boot-deployment-runbook.md",
+    "memory/ops/boot-detection-runbook.md"
+   ],
+   "top5": [
+    "memory/mechanic/goal9-ops-runbook-gap-analysis-2026-11-17.md",
+    "memory/mechanic/goal9-ops-gap-analysis-2026-11-17.md",
+    "memory/ops/boot-deployment-runbook.md",
+    "memory/mechanic/runbook-gap-analysis-draft-2026-11-18.md",
+    "memory/archivist/decay-report.md"
+   ],
+   "rank": 3,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "git hygiene commit message rules repo",
+   "acceptable": [
+    "memory/ops/git-hygiene.md"
+   ],
+   "top5": [
+    "memory/portal/architecture.md",
+    "memory/ops/git-hygiene.md",
+    "memory/workspace/INDEX.md",
+    "memory/archivist/decay-report.md",
+    "memory/goals/all-goals-2026-11-13.md"
+   ],
+   "rank": 2,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "mirror clobber pattern remote sync overwrites local edits",
+   "acceptable": [
+    "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+    "memory/ops/mirror-revert-prevention-2026-11-18.md"
+   ],
+   "top5": [
+    "memory/archivist/decay-report.md",
+    "memory/researcher/INDEX.md",
+    "memory/portal/architecture.md",
+    "memory/researcher/sync-clobber-analysis-2026-11-13.md",
+    "memory/researcher/open-questions-log.md"
+   ],
+   "rank": 10,
+   "in_top5": false,
+   "in_top10": true
+  },
+  {
+   "query": "portal API reference endpoints list",
+   "acceptable": [
+    "memory/portal/api-reference.md"
+   ],
+   "top5": [
+    "memory/ONBOARDING.md",
+    "memory/goals/all-goals-2026-11-13.md",
+    "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+    "memory/archivist/evidence-goal3-api-ref-diff-2026-11-18.md",
+    "memory/portal/architecture.md"
+   ],
+   "rank": null,
+   "in_top5": false,
+   "in_top10": false
+  },
+  {
+   "query": "portal architecture server frontend mirror overview",
+   "acceptable": [
+    "memory/portal/architecture.md",
+    "memory/portal/system-map.md"
+   ],
+   "top5": [
+    "memory/portal/architecture.md",
+    "memory/portal/INDEX.md",
+    "memory/archivist/xref-fix-log-2026-11-19.md",
+    "memory/archivist/decay-report.md",
+    "memory/ONBOARDING.md"
+   ],
+   "rank": 1,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "live design tokens app.css root hex colors tokenized",
+   "acceptable": [
+    "memory/portal/design-tokens-live.md",
+    "memory/portal/ui-tokens.md",
+    "memory/portal/design-tokens.md"
+   ],
+   "top5": [
+    "memory/goals/designer.md",
+    "memory/designer/goal1-token-system-2026-11-19.md",
+    "memory/builder/assist-designer-goal1-tokens-2026-11-19.md",
+    "memory/archivist/decay-report.md",
+    "memory/designer/goal1-token-closure-reland-2026-11-17.md"
+   ],
+   "rank": null,
+   "in_top5": false,
+   "in_top10": false
+  },
+  {
+   "query": "visual regression checklist UI changes",
+   "acceptable": [
+    "memory/portal/visual-regression-checklist.md"
+   ],
+   "top5": [
+    "memory/archivist/decay-report.md",
+    "memory/portal/visual-regression-checklist.md",
+    "memory/scribe/TODO.md",
+    "memory/scribe/MEMORY.md",
+    "memory/designer/goal10-harness-2026-11-18.md"
+   ],
+   "rank": 2,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "evidence closure protocol verified goals",
+   "acceptable": [
+    "memory/ops/evidence-closure-protocol.md"
+   ],
+   "top5": [
+    "memory/archivist/decay-report.md",
+    "memory/ops/evidence-closure-protocol.md",
+    "memory/researcher/cross-agent-comm-patterns-2026-11-17.md",
+    "memory/orchestrator/ui-closure-check-tool-2026-11-19.md",
+    "memory/archivist/evidence-goal2-handoff-protocol-v2-2026-11-18.md"
+   ],
+   "rank": 2,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "autoloop behaviour rules idle agents",
+   "acceptable": [
+    "memory/ops/autoloop.md",
+    "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md"
+   ],
+   "top5": [
+    "memory/archivist/decay-report.md",
+    "memory/ops/autoloop.md",
+    "memory/researcher/sync-semantics-spec-2026-11-17.md",
+    "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md",
+    "memory/ops/portal-split-seams-2026-11-17.md"
+   ],
+   "rank": 2,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "hotline v2 escalation procedure",
+   "acceptable": [
+    "memory/ops/hotline-v2.md"
+   ],
+   "top5": [
+    "memory/ops/INDEX.md",
+    "memory/ops/hotline-v2.md",
+    "memory/goals/archive/orchestrator-2026-11-18.md",
+    "memory/goals/archive/cycle2-2026-11-17/orchestrator.md",
+    "memory/researcher/mirror-revert-closure-runbook-2026-11-17.md"
+   ],
+   "rank": 2,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "sandbox egress self probe workaround blocked network",
+   "acceptable": [
+    "memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md"
+   ],
+   "top5": [
+    "memory/archivist/decay-report.md",
+    "memory/workspace/INDEX.md",
+    "memory/mechanic/MEMORY.md",
+    "memory/goals/archive/orchestrator-2026-11-13.md",
+    "memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md"
+   ],
+   "rank": 5,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "remote host metrics probe spec disk memory",
+   "acceptable": [
+    "memory/ops/remote-host-metrics-probe-spec.md"
+   ],
+   "top5": [
+    "memory/archivist/decay-report.md",
+    "memory/ops/remote-host-metrics-probe-spec.md",
+    "memory/orchestrator/crossassist-remote-host-metrics-spec-2026-11-18.md",
+    "memory/researcher/INDEX.md",
+    "memory/goals/archive/orchestrator-2026-11-13.md"
+   ],
+   "rank": 2,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "pdf reporting workflow generated reports",
+   "acceptable": [
+    "memory/ops/pdf-reporting.md"
+   ],
+   "top5": [
+    "memory/ops/pdf-reporting.md",
+    "memory/archivist/decay-report.md",
+    "memory/ops/memory-trim-archive-2026-11-14.md",
+    "memory/ops/INDEX.md",
+    "memory/goals/archive/archivist-2026-11-16.md"
+   ],
+   "rank": 1,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "memory sync spec SMB mirror rules r13",
+   "acceptable": [
+    "memory/ops/memory-sync-spec-r13.md"
+   ],
+   "top5": [
+    "memory/workspace/INDEX.md",
+    "memory/archivist/decay-report.md",
+    "memory/mechanic/MEMORY.md",
+    "memory/scribe/MEMORY.md",
+    "memory/researcher/INDEX.md"
+   ],
+   "rank": 9,
+   "in_top5": false,
+   "in_top10": true
+  },
+  {
+   "query": "stale claim check fallback regression jsonl",
+   "acceptable": [
+    "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
+    "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md"
+   ],
+   "top5": [
+    "memory/archivist/decay-report.md",
+    "memory/verifier/INDEX.md",
+    "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
+    "memory/researcher/INDEX.md",
+    "memory/researcher/open-questions-log.md"
+   ],
+   "rank": 3,
+   "in_top5": true,
+   "in_top10": true
+  },
+  {
+   "query": "agent onboarding playbook new fleet host",
+   "acceptable": [
+    "memory/ops/agent-onboarding-playbook.md"
+   ],
+   "top5": [
+    "memory/ops/INDEX.md",
+    "memory/archivist/decay-report.md",
+    "memory/mechanic/goal9-ops-runbook-gap-analysis-2026-11-17.md",
+    "memory/ops/agent-onboarding-playbook.md",
+    "memory/orchestrator/retro_draft_cycle3_2026-11-17.md"
+   ],
+   "rank": 4,
+   "in_top5": true,
+   "in_top10": true
+  }
+ ]
+}
