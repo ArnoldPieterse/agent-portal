@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2
-- Builder:
 - Implemented showEmptyState helper in core.js; wired to fleet, goals
 - Designer at 7/10 goals verified; remaining 3 need live browser session (screenshots/print-preview).
 - Goal 7 (Typography
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher at 100%; investigating stale evidence for Designer Goal #9 (
 - Goal 9 (Portal Onboarding Tour) confirmed STALE: all three artifacts absent; recorded in memory/scribe/designer-goal9-stale-confirmed-2026-1
 - Archivist Goal #6 (KB Freshness Policy) verified & recorded in ledger — sweep script clean, all TTLs correct.
+- Goal 8 Fleet Status API structurally complete; live HTTP verify blocked by WinError 10013 sandbox egress — needs non-sandbox White ops termi
+- Archivist Goal #2 dead-external rate is 14.1% (>10% target); needs dead-source removal or sample expansion to close.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

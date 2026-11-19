@@ -24,10 +24,10 @@ Target: >90% accuracy. 'NOT MET'
 | 4 | https://arxiv.org/abs/2608.06867 | PASS | HTTP 200 | hotload-selector.md |
 | 5 | https://lmstudio.ai/docs/developer/core/ttl-and-auto-evict | PASS | HTTP 200 | overnight-unload.md; overnight-unload.md; citation-audit-2026-11-15.md |
 | 6 | https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/2... | PASS | HTTP 200 | overnight-unload.md; citation-audit-2026-11-15.md; citation-manifest-2026-11-15.md |
-| 7 | http://white:8099api/todo/prune | WARN | InvalidURL: nonnumeric port: '8099api' | host-consistency-report.md |
-| 8 | http://pale:8099api/fleet | WARN | InvalidURL: nonnumeric port: '8099api' | host-consistency-report.md |
-| 9 | http://white:8099api/fleet | WARN | InvalidURL: nonnumeric port: '8099api' | host-consistency-report.md |
-| 10 | http://red:8099api/settings/lan-access/start | WARN | InvalidURL: nonnumeric port: '8099api' | host-consistency-report.md |
+| 7 | http://white:8099/api/todo/prune | WARN | InvalidURL: nonnumeric port: '8099api' | host-consistency-report.md |
+| 8 | http://pale:8099/api/fleet | WARN | InvalidURL: nonnumeric port: '8099api' | host-consistency-report.md |
+| 9 | http://white:8099/api/fleet | WARN | InvalidURL: nonnumeric port: '8099api' | host-consistency-report.md |
+| 10 | http://red:8099/api/settings/lan-access/start | WARN | InvalidURL: nonnumeric port: '8099api' | host-consistency-report.md |
 | 11 | https:// | FAIL | URLError: <urlopen error no host given> | ingestion-spec.md |
 | 12 | https://github.com/ArnoldPieterse/agent-portal | PASS | HTTP 200 | public-repo-agent-portal-2026-11-15.md; citation-audit-2026-11-15.md; citation-manifest-2026-11-15.md |
 | 13 | http://host:port/api/host-metrics | WARN | InvalidURL: nonnumeric port: 'port' | remote-host-metrics-probe-spec.md |
