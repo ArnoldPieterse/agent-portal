@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 10 print fixture created; all 3 browser-gated goals (5,9,10) now have self-contained acceptance fixtures for non-sandbox verification.
 - Goal 5 (notifications) passed 23/23 static audit
 - Goal 3 (Data Viz) overclaim verified: marker says SVG+SMIL but code is CSS spans; two resolution paths documented in scribe leaf.
 - Builder found stale INDEX claim: `dataset.loaded` guard for skeleton HTML is phantom (0 refs in
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - index.html pin advanced to 978569f40ad1, now loads all 9 ui/*.js scripts (supersedes
 - Scribe closed stale evidence on Designer Goal #9 (tour.js structural FAILs all resolved); goal stays OPEN pending browser acceptance test on
 - All 4 static acceptance criteria pass with 0 violations; 19 "hardcoded" padding/margin values are
+- Goals 5 & 9 verified code-complete via static audit; evidence recorded in ledger, closing stale Researcher CAUTION on Goal 9.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

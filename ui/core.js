@@ -423,7 +423,7 @@ async function mergeQueueLoad(){
     if(!evs.length){ el.textContent="(empty - no diverged sandbox code files captured)"; return; }
     const esc=s=>String(s).replace(/[&<>\"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
     el.innerHTML=evs.map(e=>'<div style="margin:2px 0">'+esc(e.ts.slice(5))+' · <b>'+esc(e.file)+'</b> sha '+esc(e.sha)+' ('+e.size+' B)'
-      +' <button class="btn" data-mq="'+esc(e.file)+'" style="padding:1px 8px;font-size:var(--fs-12)">↩ restore</button></div>').join("");
+      +' <button class="btn" data-mq="'+esc(e.file)+'" style="padding:1px 8px;font-size:var(--fs-12);display:inline-flex;align-items:center;gap:4px">'+UI.iconSized('undo',12)+' restore</button></div>').join("");
     el.querySelectorAll("button[data-mq]").forEach(b=>b.onclick=async()=>{
       opsSay("restoring "+b.dataset.mq+"…");
       try{ const r=await (await fetch("/api/merge",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({file:b.dataset.mq})})).json();
