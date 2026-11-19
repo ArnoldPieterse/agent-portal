@@ -157,3 +157,5 @@
 {"ts": "2026-11-19 21:58:44", "file": "ui/app.css", "sha": "77c4d83568", "size": 30917, "snapshot": null}
 {"ts": "2026-11-19 21:58:44", "file": "ui/tokens.css", "sha": "09907935e5", "size": 3155, "snapshot": null}
 {"ts": "2026-11-19 22:54:25", "file": "ui/app.css", "sha": "5fe978be9c", "size": 31050, "snapshot": null}
+{"ts": "2026-11-20 01:22:09", "file": "index.html", "sha": "189613691b", "size": 14336, "snapshot": "memory/ops/merge-queue/index.html.189613691b"}
+{"ts": "2026-11-20 01:22:09", "file": "ui/components.js", "sha": "9f84c7a6fc", "size": 12362, "snapshot": null}

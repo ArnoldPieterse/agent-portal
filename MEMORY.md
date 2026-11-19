@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechic's seat has an egress wall blocking host-side
-- RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md:
 - Root cause found: pin_guard() (L248) only protects index.html; all .py/.js files get LWW-reverted with no sentinel — doc going to memory/ops
 - Fleet reached 93/93 (100%); all seats' goals verified/closed this pass.
 - Hot note "UI.icon() 19 call sites" disproven: actual total=8, uploads.js=0; evidence leaf written for Mechanic Goal 2 sentinel.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Cycle-7 scripts (model_bench, residency_matrix, kb_index, auto_research) are absent — "100% reached" closures were aspirational, not real.
 - Designer's sweep regexes had bugs producing false zeros; actual: 117 custom props + 14 .tour-* classes confirmed present in tokens.css
 - Goal #1 (Continuous Regression Suite) complete: memory/verifier/regression_suite.py built, tested, and verified against acceptance criteria.
+- Designer goal #1 (Interaction Design System): consolidating 37 ad-hoc rules from app.css into interactions.css+js, 6 patterns
+- Ledger EVIDENCE_PAT false-matches "(verified:)" in goal descriptions as closure markers; needs fix to avoid corrupting evidence tracking.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
