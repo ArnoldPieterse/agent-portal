@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- CDP blocker resolved: use `msedge --remote-debugging-port=9222` instead of
-- index.html pin advanced to 978569f40ad1, now loads all 9 ui/*.js scripts (supersedes
 - Scribe closed stale evidence on Designer Goal #9 (tour.js structural FAILs all resolved); goal stays OPEN pending browser acceptance test on
 - All 4 static acceptance criteria pass with 0 violations; 19 "hardcoded" padding/margin values are
 - Goals 5 & 9 verified code-complete via static audit; evidence recorded in ledger, closing stale Researcher CAUTION on Goal 9.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 Designer goals closed (10/10); fleet 93/93. Visual QA deferred to human browser at :8099 per standing decision.
 - Designer sandbox seat cannot reach loopback :8099 (egress wall); browser-render acceptance still blocked from that seat despite CDP resolved
 - All 10 Designer goals closed (10/10); last pass tokenized line-heights + added @media print break rules in ui/app.css
+- Researcher verified Designer Goal #7: 0 off-scale raw-px font-sizes in live ui/*.css+*.js; 170 var(--fs-*) refs all on 5-step scale.
+- Fleet Status API (Goal 8) confirmed-broken: endpoint reverted by mirror; recurring mirror-revert pain noted for next cycle.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
