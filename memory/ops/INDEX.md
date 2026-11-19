@@ -23,6 +23,7 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - BLOCKERS log (NEEDS-HUMAN, exact cmd + error) -> memory/ops/blockers.md
 - Goal-ledger record_evidence guard fix + dangling-pointer unblock recipe -> memory/ops/goal_ledger_record_fix-2026-11-18.md
 - Git hygiene / commit conventions -> memory/ops/git-hygiene.md
+- **Citation-phantom triage** (run after any goal-file edit / closure claim; separates PHANTOM into mis-citation vs lost-to-revert vs future-work placeholder + collision-safe assist rule) -> memory/ops/citation-phantom-triage-runbook.md
 - **Browser-gate decision tree** (PER-SEAT procedure: Chrome check -> msedge probe -> two-tier fallback; resolves workaround-vs-unblock contradiction; run once per seat, never re-probe) -> memory/ops/browser-gate-decision-tree.md
 - **Browser acceptance test workaround** (static structural verification as closure standard for goals blocked on headless browser; Edge hangs in sandbox, confirmed 11-19) -> memory/ops/browser-acceptance-workaround.md
 - Mirror-revert prevention (commit-before-sync rule) -> memory/ops/mirror-revert-prevention-2026-11-18.md
