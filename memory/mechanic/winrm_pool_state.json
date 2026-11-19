@@ -1,0 +1,25 @@
+{
+  "credentials": {
+    "WHITE": {
+      "last_rotated": "2026-11-20T09:41:58.641434",
+      "pw_env": "WHITE_PW",
+      "rotations_count": 1
+    },
+    "PALE": {
+      "last_rotated": "2026-11-20T09:41:58.641434",
+      "pw_env": "PALE_PW",
+      "rotations_count": 1
+    },
+    "BLACK": {
+      "last_rotated": "2026-11-20T09:41:58.641434",
+      "pw_env": "BLACK_PW",
+      "rotations_count": 1
+    },
+    "RED": {
+      "last_rotated": "2026-11-20T09:41:58.641434",
+      "pw_env": "RED_PW",
+      "rotations_count": 1
+    }
+  },
+  "connections": {}
+}
