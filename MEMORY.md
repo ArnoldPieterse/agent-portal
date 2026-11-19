@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 5 (Typography Scale) CLOSED: orphan --fs-11/13/16 tokens removed, 75ch
 - Builder: ui/core.js streamReplyCore line 168 — body.textContent SSE updates need rAF batching; file is not pin-protected.
 - Researcher confirmed :8888 egress wall (WinError 10013) persists in sandbox; elev.py absent — blocks all LIVE legs
 - Builder goal #2: all direct fetch() calls in
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 6 increment 1 done: ui/state.js created, selectedId wired. Next: wire mode (18 occ) and busy (6 occ).
 - Goal 3 (hierarchy audit): 9 CSS rules fixed in ui/app.css; closure needs static before/after fixture (browser blocked).
 - Goal #1 gap: needs fresh `freshness_report.py` (file-age tiers), NOT extend `freshness_sweep.py` (type-based TTLs) — different tool.
+- Researcher 10/10 goals done; chose Archivist #1 (Orphan
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
