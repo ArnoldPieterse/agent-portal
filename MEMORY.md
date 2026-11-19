@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder goal #2: all direct fetch() calls in
 - Goal #2 (Animation/Motion System) CLOSED — 5 keyframes in animations.css, GPU-composited props only, prefers-reduced-motion present.
 - Goal #5: parallelized refresh()'s 5 sequential API calls; renderAgents() now uses incremental class toggle instead of full DOM rebuild on se
 - Goal #3 (Info Hierarchy Audit) closed: fixed 5 font-size violations in portal CSS, evidence written.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher 10/10 goals done; chose Archivist #1 (Orphan
 - RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md
 - Goal #3 (Info Hierarchy Audit) remains open; only "before/after
+- Researcher found stale_claim_check.py and verify_claims.py already exist; option (c) is the best idle contribution path.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
