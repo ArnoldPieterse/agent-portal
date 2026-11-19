@@ -436,3 +436,4 @@
 {"ts": "2026-11-19 17:44:23", "run": "g-1a1f2c389c3-bf149b", "missing": {"Scribe": "unreachable", "Mechanic": "unreachable"}}
 {"ts": "2026-11-19 17:46:54", "run": "g-1a1f2c5d97a-ebdd82", "missing": {"Scribe": "unreachable", "Mechanic": "unreachable"}}
 {"ts": "2026-11-19 17:49:55", "run": "g-1a1f2c89a8a-d5488b", "missing": {"Mechanic": "not_loaded"}}
+{"ts": "2026-11-19 17:51:55", "run": "g-1a1f2ca7158-2d070c", "missing": {"Mechanic": "not_loaded"}}
