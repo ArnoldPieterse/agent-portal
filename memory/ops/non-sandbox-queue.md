@@ -43,6 +43,10 @@ Same pattern applies to Orchestrator #8 (backend done; live viewport = Tier B) a
 (endpoint logic = Tier A via local probe; 4-host field values = Tier B).
 
 ## OPEN (batch in one sitting)
+- [ ] **Orchestrator #1** — Live Hotload Execution (elev.py / non-sandbox seat on White).
+  - cmd: `python Z:\hotload_exec.py` (loads quinn-q4, probes alias, unloads, verifies zero binding loss)
+  - evidence target: memory/ops/hotload-log.jsonl (LOAD_SUCCESS + UNLOAD_SUCCESS rows with timestamps)
+  - ledger record orchestrator 1.
 - [ ] **Orchestrator #8** — Multi-host failover drill (need WinRM + LAN). Run twice on different hosts.
   - cmd: `python Z:\failover_drill.py --host red` then `python Z:\failover_drill.py --host black`
   - evidence target: memory/ops/failover-drill-<host>-<date>.json (TTD < 60s, fleet detection < 120s); (template)

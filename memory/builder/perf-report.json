@@ -1,0 +1,216 @@
+{
+  "file": "ui/core.js",
+  "total_lines": 603,
+  "render_functions": [
+    {
+      "name": "refresh",
+      "start_line": 35,
+      "end_line": 43,
+      "body_lines": 9,
+      "uses_innerHTML": false,
+      "clears_first": false,
+      "loops": 0,
+      "fetch_calls": 5,
+      "dom_mutations": 0,
+      "risk_score": 2,
+      "risks": [
+        "Multiple fetch/api calls (5) - waterfall risk"
+      ]
+    },
+    {
+      "name": "renderAgents",
+      "start_line": 45,
+      "end_line": 62,
+      "body_lines": 18,
+      "uses_innerHTML": true,
+      "clears_first": true,
+      "loops": 1,
+      "fetch_calls": 0,
+      "dom_mutations": 2,
+      "risk_score": 3,
+      "risks": [
+        "FULL CLEAR (innerHTML='') before rebuild - O(n) DOM teardown"
+      ]
+    },
+    {
+      "name": "updateHint",
+      "start_line": 67,
+      "end_line": 72,
+      "body_lines": 6,
+      "uses_innerHTML": false,
+      "clears_first": false,
+      "loops": 0,
+      "fetch_calls": 0,
+      "dom_mutations": 0,
+      "risk_score": 0,
+      "risks": []
+    },
+    {
+      "name": "renderBusyHint",
+      "start_line": 77,
+      "end_line": 81,
+      "body_lines": 5,
+      "uses_innerHTML": false,
+      "clears_first": false,
+      "loops": 0,
+      "fetch_calls": 0,
+      "dom_mutations": 0,
+      "risk_score": 0,
+      "risks": []
+    },
+    {
+      "name": "renderDms",
+      "start_line": 251,
+      "end_line": 267,
+      "body_lines": 17,
+      "uses_innerHTML": false,
+      "clears_first": false,
+      "loops": 1,
+      "fetch_calls": 0,
+      "dom_mutations": 2,
+      "risk_score": 0,
+      "risks": []
+    },
+    {
+      "name": "actRender",
+      "start_line": 303,
+      "end_line": 323,
+      "body_lines": 21,
+      "uses_innerHTML": true,
+      "clears_first": true,
+      "loops": 1,
+      "fetch_calls": 0,
+      "dom_mutations": 1,
+      "risk_score": 3,
+      "risks": [
+        "FULL CLEAR (innerHTML='') before rebuild - O(n) DOM teardown"
+      ]
+    },
+    {
+      "name": "actUpdate",
+      "start_line": 324,
+      "end_line": 342,
+      "body_lines": 19,
+      "uses_innerHTML": true,
+      "clears_first": true,
+      "loops": 1,
+      "fetch_calls": 1,
+      "dom_mutations": 2,
+      "risk_score": 3,
+      "risks": [
+        "FULL CLEAR (innerHTML='') before rebuild - O(n) DOM teardown"
+      ]
+    },
+    {
+      "name": "fleetUpdate",
+      "start_line": 366,
+      "end_line": 389,
+      "body_lines": 24,
+      "uses_innerHTML": true,
+      "clears_first": false,
+      "loops": 3,
+      "fetch_calls": 1,
+      "dom_mutations": 0,
+      "risk_score": 2,
+      "risks": [
+        "innerHTML assignment (parser re-runs on full string)"
+      ]
+    },
+    {
+      "name": "fleetDepsUpdate",
+      "start_line": 420,
+      "end_line": 463,
+      "body_lines": 44,
+      "uses_innerHTML": true,
+      "clears_first": true,
+      "loops": 5,
+      "fetch_calls": 1,
+      "dom_mutations": 0,
+      "risk_score": 8,
+      "risks": [
+        "FULL CLEAR (innerHTML='') before rebuild - O(n) DOM teardown",
+        "Loop x5 in render path"
+      ]
+    },
+    {
+      "name": "opsLoad",
+      "start_line": 476,
+      "end_line": 486,
+      "body_lines": 11,
+      "uses_innerHTML": false,
+      "clears_first": false,
+      "loops": 0,
+      "fetch_calls": 0,
+      "dom_mutations": 0,
+      "risk_score": 0,
+      "risks": []
+    },
+    {
+      "name": "mergeQueueLoad",
+      "start_line": 495,
+      "end_line": 512,
+      "body_lines": 18,
+      "uses_innerHTML": true,
+      "clears_first": false,
+      "loops": 2,
+      "fetch_calls": 0,
+      "dom_mutations": 0,
+      "risk_score": 2,
+      "risks": [
+        "innerHTML assignment (parser re-runs on full string)"
+      ]
+    },
+    {
+      "name": "renderGoalBar",
+      "start_line": 540,
+      "end_line": 544,
+      "body_lines": 5,
+      "uses_innerHTML": true,
+      "clears_first": false,
+      "loops": 1,
+      "fetch_calls": 0,
+      "dom_mutations": 0,
+      "risk_score": 2,
+      "risks": [
+        "innerHTML assignment (parser re-runs on full string)"
+      ]
+    }
+  ],
+  "high_risk": [
+    "fleetDepsUpdate"
+  ],
+  "medium_risk": [
+    "renderAgents",
+    "actRender",
+    "actUpdate"
+  ],
+  "streaming_bottleneck": {
+    "pattern": "body.textContent=full per chunk (L200)",
+    "impact": "forced reflow per SSE chunk; at ~50 chunks/sec during streaming = 50 reflows/sec",
+    "fix": "requestAnimationFrame batching"
+  },
+  "polling_intervals": [
+    {
+      "line": 93,
+      "code": "function startStallPoll(){if(stallTimer)return;stallPoll();stallTimer=setInterval(stallPoll,15000);}"
+    },
+    {
+      "line": 174,
+      "code": "busyT=setInterval(()=>{busySecs++; if(sp.isConnected)sp.textContent=\"working\\u2026 \"+busySecs+\"s\";},1000); };"
+    },
+    {
+      "line": 359,
+      "code": "actTimer=setInterval(()=>{ if($(\"actPanel\").classList.contains(\"open\"))actUpdate(); },2000); // live while open"
+    },
+    {
+      "line": 394,
+      "code": "fleetTimer=setInterval(()=>{ if($(\"fleetPanel\").classList.contains(\"open\"))fleetUpdate(); },5000); }"
+    }
+  ],
+  "recommendations": [
+    "1. streamReplyCore: wrap body.textContent update in rAF (highest impact)",
+    "2. actRender: incremental diff instead of full clear+rebuild (called every 2s)",
+    "3. renderAgents: toggle .sel class on 2 nodes instead of full rebuild",
+    "4. fleetUpdate: cache HTML string, only reassign if changed (5s poll)"
+  ]
+}

@@ -2,7 +2,7 @@
 
 Focus: Fleet orchestration at scale. Move from hotload infrastructure (cycle-6, all built + verified in sandbox) to LIVE fleet operations: real model swaps via elev.py, capacity governance, and the goal-cycle lifecycle fully automated.
 
-1. **Live Hotload Execution (elev.py)** - Execute a real load/unload cycle on White using `python elev.py` to bypass the sandbox egress wall (WinError 10013). Target: activate Researcher's model, verify alias responds, then restore prior binding. Verified: hotload-log.jsonl has timestamped LOAD_SUCCESS + UNLOAD_SUCCESS rows; alias probe confirms zero-binding-loss; agents.json unchanged.
+1. **Live Hotload Execution (elev.py)** - Execute a real load/unload cycle on White using `python elev.py` to bypass the sandbox egress wall (WinError 10013). Target: activate Researcher's model, verify alias responds, then restore prior binding. Verified: hotload-log.jsonl has timestamped LOAD_SUCCESS + UNLOAD_SUCCESS rows; alias probe confirms zero-binding-loss; agents.json unchanged. [PROGRESS 2026-11-20: hotload_exec.py built + dry-run PASS (logic validated); Tier-B queued in non-sandbox-queue.md for host-side execution; elev.py unavailable (schtasks COM broken in sandbox)] (verified: 2026-11-20 - Tier-A verified: hotload_exec.py written + dry-run PASS (logic validated); Tier-B queued in non-sandbox-queue.md for host-side execution)
 
 2. **Fleet Capacity Dashboard v2** - Extend /api/fleet/status with per-agent token-usage tracking (from portal request logs) and a 7-day trend sparkline. UI: fleet tab shows per-host VRAM bar + per-agent usage % + trend arrow. Verified: endpoint returns 7-day array per agent; UI renders without JS errors for all 8 agents.
 
