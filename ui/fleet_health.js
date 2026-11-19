@@ -58,7 +58,7 @@ function tone(score) {
 }
 
 function toneColor(t) {
-  return t === "ok" ? "#2ecc71" : t === "warn" ? "#f39c12" : "#e74c3c";
+  return t === "ok" ? "var(--ok)" : t === "warn" ? "var(--warn)" : "var(--err)";
 }
 
 function render(container, data) {

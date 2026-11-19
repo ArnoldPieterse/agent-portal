@@ -6,10 +6,10 @@
   window.__fleetStatusLoaded = true;
 
   const HOSTS = ["white","black","red","blue"];
-  const COLORS = { green:"#4caf50", amber:"#ff9800", red:"#f44336" };
+  const COLORS = { green:"var(--ok)", amber:"var(--warn)", red:"var(--err)" };
 
   function dotColor(host){
-    if(!host) return "#666";
+    if(!host) return "var(--dot-idle)";
     if(!host.reachable) return COLORS.red;
     const d = host.disk_pct, m = host.mem_pct;
     if((d && d >= 85) || (m && m >= 90)) return COLORS.amber;
@@ -18,8 +18,8 @@
 
   function render(el, data){
     const overall = data.overall || "green";
-    const badge = { green:"● GREEN", amber:"● AMBER", red:"● RED" }[overall] || "?";
-    let html = `<span class="fs-badge" style="color:${COLORS[overall]||'#666'};font-weight:600">${badge}</span>`;
+    const badge = { green:"GREEN", amber:"AMBER", red:"RED" }[overall] || "?";
+    let html = `<span class="fs-badge" style="color:${COLORS[overall]||'var(--dot-idle)'};font-weight:600">${badge}</span>`;
     const hosts = data.hosts || {};
     for(const h of HOSTS){
       const info = hosts[h] || {};
@@ -50,7 +50,7 @@
     }
     fetch("/api/fleet/status").then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(d=>render(strip, d))
-      .catch(e=>{ strip.innerHTML = `<span style="color:var(--dim);font-size:var(--fs-12)">⚠ fleet status unavailable</span>`; });
+      .catch(e=>{ strip.innerHTML = `<span style="color:var(--dim);font-size:var(--fs-12)">fleet status unavailable</span>`; });
   }
 
   // Auto-load when ops panel opens (hook into existing opsLoad)

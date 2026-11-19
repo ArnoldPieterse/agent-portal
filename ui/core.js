@@ -124,7 +124,7 @@ $("stopBtn").onclick=()=>{ if(!busyNames.size&&mode!=="group")return; stopReques
 function addBubble(name, color, emoji, isYou){
   const d=document.createElement("div");
   d.className="msg"+(isYou?" you":"");
-  d.innerHTML=(isYou?"":`<div class="who" style="color:${color||"var(--tx-2)"}">${esc(emoji||"")} ${esc(name)}</div>`);
+  d.innerHTML=(isYou?"":`<div class="who" style="color:${color||"var(--dim)"}">${esc(emoji||"")} ${esc(name)}</div>`);
   const body=document.createElement("div"); body.className="body"; d.appendChild(body);
   $("msgs").appendChild(d); stickScroll();
   return d;
@@ -172,7 +172,7 @@ async function streamReplyCore(agent, kind, silentTarget){
      ctrl=new AbortController(); activeCtrls.add(ctrl);
       res=await fetch("/api/chat",{signal:ctrl.signal,method:"POST",headers:{"Content-Type":"application/json"},
        body:JSON.stringify({agent_id:agent.id, mode, kind:kind||"prompt", messages:history, session:sessionId||undefined})});
-   }catch(e){ if(ctrl&&(e.name==="AbortError"||stopRequested)){ stopBusy(); return ""; } stopBusy(); addBubble("error","#ff6b6b","!",false).querySelector(".body").textContent=String(e); return ""; }
+   }catch(e){ if(ctrl&&(e.name==="AbortError"||stopRequested)){ stopBusy(); return ""; } stopBusy(); addBubble("error","var(--err)","!",false).querySelector(".body").textContent=String(e); return ""; }
    const reader=res.body.getReader(); const dec=new TextDecoder(); let buf="";
    let full="", thinkEl=null, toolRow=null, metaSilent=false, metaConcluded=false, stop=false;
    try{
@@ -211,7 +211,7 @@ async function streamReplyCore(agent, kind, silentTarget){
      else{ d.classList.add("silentmsg"); body.textContent="\uD83D\uDD07 stayed silent"; stickScroll(); } // solo: small dim pill in place
      return ""; }
    if(metaConcluded){ lastConcluded=true; const s=stripConcluded(full); body.textContent=s; stickScroll();
-     const chip=document.createElement("span");chip.className="conclchip";chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:#3ddc84";
+     const chip=document.createElement("span");chip.className="conclchip";chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:var(--ok)";
      chip.textContent="\u2713 concluded"; chip.title="discussion reached a natural conclusion - round ended";
      d.querySelector(".who").appendChild(chip); if(!renderDms(body,s))linkifyFiles(body,s); return s; }
    if(/stopped before completing its tool calls/i.test(full)){ // Studio harness note = turn ended MID-TASK (promised edits never ran)
@@ -315,7 +315,7 @@ function actRender(evts){
     else if(e.event==="readmem")x="memory lookup · "+(e.chars??0)+" chars in "+(e.dur??0)+"s";
     else if(e.event==="storemem")x=(e.stored?"note stored: ":"no note: ")+esc(e.note||"(none)")+" ("+(e.dur??0)+"s)";
     const div=document.createElement("div"); div.className="aev";
-    const col=(agents.find(a=>a.name===e.agent)||{}).color||"var(--tx-2)";
+    const col=(agents.find(a=>a.name===e.agent)||{}).color||"var(--dim)";
     div.innerHTML=`<span class="at">${new Date(e.ts*1000).toLocaleTimeString([],{hour12:false})}</span><span class="an" style="color:${col}">${esc(e.agent||"?")}</span><span>${actIcons[e.event]?UI.icon(actIcons[e.event]):'•'}</span><span class="ax">${esc(x)}</span>`;
     body.appendChild(div);
   }
@@ -410,7 +410,7 @@ async function opsTiles(){
   try{
     const o=await (await fetch("/api/ops")).json();
     const d=o.disk||{};
-    $("diskTile").textContent=(d.total_gb!=null)?`disk ${d.drive} · ${d.used_gb} GB used / ${d.total_gb} GB (${Math.round(100*d.used_gb/d.total_gb)}%)\nfree ${d.free_gb} GB`:"⚠ "+(d.error||"no disk data");
+    $("diskTile").textContent=(d.total_gb!=null)?`disk ${d.drive} · ${d.used_gb} GB used / ${d.total_gb} GB (${Math.round(100*d.used_gb/d.total_gb)}%)\nfree ${d.free_gb} GB`:"error: "+(d.error||"no disk data");
     $("uptimeTile").textContent=`portal up · ${o.uptime_hm}\npid ${o.pid} · since ${o.started}`;
   }catch(e){ $("diskTile").textContent="error: "+e; $("uptimeTile").textContent="error: "+e; }
 }

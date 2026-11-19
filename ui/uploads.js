@@ -87,11 +87,11 @@ async function send(){
       // the UMQ where agents pick it up on their next prompt build.
       adopted=true;
       adoptLiveRun({run_id:m2[1],busy:true},()=>{
-        addBubble("queued","#8a63d2","\u2709",false).querySelector(".body").textContent=
+        addBubble("queued","var(--agent-purple)","\u2709",false).querySelector(".body").textContent=
           "group run already in progress - attached to its live output; your message is queued and the agents will pick it up";
       });
       queueMsg(text);
-    }else{ addBubble("error","#ff6b6b","!",false).querySelector(".body").textContent=em; }
+    }else{ addBubble("error","var(--err)","!",false).querySelector(".body").textContent=em; }
   }
   if(adopted){ umqPoll(); renderQueue(); return; }   // keep busy/heartbeat for the adopted run
   busy=false; busyNames.clear(); renderBusyHint(); setSendQueued(false); stopStallPoll(); $("input").focus(); stopHeartbeat(); saveHistoryServer(true); umqPoll(); renderQueue();
@@ -104,7 +104,7 @@ let runId=null, runCtrl=null;
 const runTurns={};   // agent name -> per-turn render state for the current phase
 function runTurn(agentName,kind){
   const ag=agents.find(a=>a.name===agentName);
-  const d=addBubble(ag?ag.name:agentName,ag?ag.color:'#8b949e',ag?ag.emoji:'\ud83e\udd16',false);
+  const d=addBubble(ag?ag.name:agentName,ag?ag.color:'var(--queue-dim)',ag?ag.emoji:'\ud83e\udd16',false);
   if(kind==="cross-talk"){
     const chip=document.createElement("span");
     chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:var(--dim)";
@@ -139,7 +139,7 @@ function handleRunEvent(ev){
   if(ev.run==="start")return;   // human prompt bubble already exists (local send) or came from restored history
   if(ev.run==="nudge"){
     history.push({speaker:"You",content:ev.text});
-    addBubble("auto-continue","#8a63d2","\u21bb",false).querySelector(".body").textContent=ev.text; stickScroll(); return; }
+    addBubble("auto-continue","var(--agent-purple)","\u21bb",false).querySelector(".body").textContent=ev.text; stickScroll(); return; }
   if(ev.run==="phase")return;
   if(ev.run==="end"){
     const v=ev.verdict||{};
@@ -157,7 +157,7 @@ function handleRunEvent(ev){
     if(o.meta){ if(typeof o.meta.inter_agent_replies==="number")setXtalk(o.meta.inter_agent_replies,o.meta.limit);
       if(o.meta.concluded){ lastConcluded=true;
         const chip=document.createElement("span");chip.className="conclchip";
-        chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:#3ddc84";chip.textContent="\u2713 concluded";
+        chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:var(--ok)";chip.textContent="\u2713 concluded";
         t.d.querySelector(".who").appendChild(chip); } }
     if(o.content){ t.stopBusy(); t.full+=o.content; t.body.textContent=t.full; stickScroll(); }
     if(o.thinking){ if(!t.thinkEl){t.thinkEl=document.createElement("details");t.thinkEl.className="think";
@@ -217,7 +217,7 @@ async function attachRun(rid, startCursor){
             }
           }
         }
-      }catch(e){ if(!(e&&e.name==="AbortError"))addBubble("error","#ff6b6b","\u26a0",false).querySelector(".body").textContent="run stream lost: "+e; }
+      }catch(e){ if(!(e&&e.name==="AbortError"))addBubble("error","var(--err)","\u26a0",false).querySelector(".body").textContent="run stream lost: "+e; }
       finally{ res(); }
     })();
   });
@@ -228,7 +228,7 @@ let editingId=null;
 function openEditor(a){
   editingId=a?a.id:null;
   $("edTitle").textContent=a?("Edit "+a.name):"New agent";
-  $("f_name").value=a?.name||""; $("f_emoji").value=(a?.emoji||""); $("f_color").value=a?.color||"#3ddc84";
+  $("f_name").value=a?.name||""; $("f_emoji").value=(a?.emoji||""); $("f_color").value=a?.color||"var(--ok)";
   $("f_blurb").value=a?.blurb||""; $("f_persona").value=a?.persona||"";
   const net=!!a?.studio;                                  // networked = agent has a remote studio base URL
   $("f_net").checked=net; $("f_studio").value=a?.studio||""; $("f_key").value=a?.api_key||"";
@@ -257,15 +257,15 @@ function populateModelSelect(list, cur){
 async function scanModels(){
   const base=$("f_studio").value.trim(), key=$("f_key").value.trim();
   const st=$("f_scanstat");
-  if(!base){ st.style.color="#ff9f43"; st.textContent="enter the Studio base URL first"; return; }
+  if(!base){ st.style.color="var(--warn)"; st.textContent="enter the Studio base URL first"; return; }
   $("f_scan").disabled=true; st.style.color=""; st.textContent="scanning "+base+" …";
   try{
     const r=await jpost("/api/scan-models",{base_url:base,api_key:key});
     const list=r.data||[];
     if(r.error&&list.length===0){ throw new Error(r.error); }
     netModels=list; populateModelSelect(list,$("f_model").value||"");
-    st.style.color="#3ddc84"; st.textContent="found "+list.length+" model(s) on that host";
-  }catch(e){ st.style.color="#ff6b6b"; st.textContent="scan failed: "+String(e).slice(0,90); }
+    st.style.color="var(--ok)"; st.textContent="found "+list.length+" model(s) on that host";
+  }catch(e){ st.style.color="var(--err)"; st.textContent="scan failed: "+String(e).slice(0,90); }
   $("f_scan").disabled=false;
 }
 $("f_net").onchange=()=>{
@@ -450,7 +450,7 @@ async function restoreFromServer(){
     if(!h.length)return;
     for(const e of h){
       if(e.speaker==='You'){addBubble('You','',null,true).querySelector('.body').textContent=e.content||'';}
-      else{const a=agents.find(x=>x.name===e.speaker);addBubble(a?a.name:e.speaker,a?a.color:'#8b949e',a?a.emoji:'\ud83e\udd16',false).querySelector('.body').textContent=e.content||'';}
+      else{const a=agents.find(x=>x.name===e.speaker);addBubble(a?a.name:e.speaker,a?a.color:'var(--queue-dim)',a?a.emoji:'\ud83e\udd16',false).querySelector('.body').textContent=e.content||'';}
     }
     saveMsgs(); // re-seed the localStorage slot from the server copy
   }catch(e){}
@@ -467,7 +467,7 @@ function adoptLiveRun(r, after){
     const start=(typeof r.hist_start==="number")?Math.min(r.hist_start,hist.length):hist.length;
     for(const e of hist.slice(0,start)){
       if(e.speaker==='You'){addBubble('You','',null,true).querySelector('.body').textContent=e.content||'';}
-      else{const a=agents.find(x=>x.name===e.speaker);addBubble(a?a.name:e.speaker,a?a.color:'#8b949e',a?a.emoji:'\ud83e\udd16',false).querySelector('.body').textContent=e.content||'';}
+      else{const a=agents.find(x=>x.name===e.speaker);addBubble(a?a.name:e.speaker,a?a.color:'var(--queue-dim)',a?a.emoji:'\ud83e\udd16',false).querySelector('.body').textContent=e.content||'';}
     }
     stickScroll(true); // pin to bottom after history re-render - no top-scroll flash on re-attach (2026-11-15)
     const resume=(attachedRunId===r.run_id)?runLastSeq:0; // same run already watched: skip the multi-MB replay

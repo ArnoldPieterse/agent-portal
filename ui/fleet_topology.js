@@ -7,13 +7,13 @@
    API: FleetTopology.render(containerEl, { live:true, sample?, fallback? }); SAMPLE exported. */
 /* FleetTopology — live SVG topology of fleet hosts + agent nodes (Designer goal #9).
    Data source: GET /api/fleet -> { ts, ttl, hosts:[{host,base,agents[],models[{id,quant}],generations,state,last_seen,reason}] }
-   State -> color reuses the existing .fdot palette: idle=--ok, busy=--warn, unknown=#e05252.
+   State -> color reuses the existing .fdot palette: idle=--ok, busy=--warn, unknown=--dot-err.
    Usage (after ui/core.js): FleetTopology.render(document.querySelector('#fleetTopo'), { live:true });
    Dependency-free. Self-contained SVG + HTML tooltip/detail card. */
 (function (root) {
   "use strict";
 
-  var STATE_COLOR = { idle: "var(--ok, #3ddc84)", busy: "var(--warn, #ff9f43)", unknown: "#e05252" };
+  var STATE_COLOR = { idle: "var(--ok, #3ddc84)", busy: "var(--warn, #ff9f43)", unknown: "var(--dot-err)" };
   var STATE_LABEL = { idle: "idle", busy: "busy", unknown: "unknown" };
 
   // Fallback dataset (real /api/fleet schema) so the diagram renders even with no egress.
