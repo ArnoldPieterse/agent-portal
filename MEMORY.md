@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder: ui/core.js streamReplyCore line 168 — body.textContent SSE updates need rAF batching; file is not pin-protected.
-- Researcher confirmed :8888 egress wall (WinError 10013) persists in sandbox; elev.py absent — blocks all LIVE legs
 - Builder goal #2: all direct fetch() calls in
 - Goal #2 (Animation/Motion System) CLOSED — 5 keyframes in animations.css, GPU-composited props only, prefers-reduced-motion present.
 - Goal #5: parallelized refresh()'s 5 sequential API calls; renderAgents() now uses incremental class toggle instead of full DOM rebuild on se
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 3 (hierarchy audit): 9 CSS rules fixed in ui/app.css; closure needs static before/after fixture (browser blocked).
 - Goal #1 gap: needs fresh `freshness_report.py` (file-age tiers), NOT extend `freshness_sweep.py` (type-based TTLs) — different tool.
 - Researcher 10/10 goals done; chose Archivist #1 (Orphan
+- RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md
+- Goal #3 (Info Hierarchy Audit) remains open; only "before/after
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
