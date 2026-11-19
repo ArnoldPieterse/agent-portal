@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Wrote memory/designer/cdp_acceptance_all.py — unified CDP script covering all 5 open goals (#2,#5,#8,#9,#10
 - Pin in memory_mirror.py advanced from stale 815d64fa70b5 (3 scripts
 - Chrome 157 headless=new --no-sandbox verified working;
 - Researcher's goal_ledger_run.json is stale (9/10, dated 2026-11-15); live status is
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer fixed notifications: toast→top-right, SVG bell+close icons, all 4 triggers confirmed already wired in core.js
 - Goal #7 verified: all
 - Designer's pale-sandbox seat CANNOT do browser/CDP rendering (msedge only works non-sandbox); don't re-probe visual-confirmation goals here.
+- Goal 8 (Icon System) closed: static PASS, 25 SVGs, 12 usages. Progress now 6/
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
