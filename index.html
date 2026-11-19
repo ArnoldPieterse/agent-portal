@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='42' r='26' fill='%234f8cff'/%3E%3Crect x='28' y='72' width='44' height='16' rx='8' fill='%234f8cff'/%3E%3C/svg%3E">
 <title>Agent Portal</title>
 <!-- 2026-11-16 file-modularity rule: this file is the MARKUP-ONLY shell.
      UI modules (edit those, not here): ui/app.css (styles) | ui/core.js (app logic)
@@ -13,13 +13,13 @@
 </head>
 <body>
 <header>
-  <h1>🤖 Agent Portal</h1>
+  <h1><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><circle cx="9" cy="14" r="1.5"/><circle cx="15" cy="14" r="1.5"/><line x1="12" y1="8" x2="12" y2="4"/><circle cx="12" cy="3" r="1"/></svg> Agent Portal</h1>
   <span class="hint">backed by Unsloth Studio desktop harness · v3</span>
   <div id="status"><span class="dot" id="sdot"></span><span id="stext">checking studio…</span></div>
 </header>
 <main>
   <aside aria-label="Agent roster">
-    <div class="ah">Agents <button id="addAgent" title="Add agent">＋ Add</button></div>
+    <div class="ah">Agents <button id="addAgent" title="Add agent">+ Add</button></div>
     <div id="agentList"></div>
   </aside>
   <div id="chatCol">
@@ -29,9 +29,10 @@
         <button id="mGroup">Group</button>
       </nav>
       <span id="modeHint">Chatting with —</span><span id="xtalk" class="hint"></span><span id="busyHint" class="busyspan"></span>
-      <span class="toggles"><button id="goalsBtn" title="Goal velocity: per-agent progress rings from memory/goals/">🎯 Goals</button><button id="actBtn" title="Activity timeline: every turn + tool call of each run, persisted per session (survives restarts)">⏱ Activity</button>
-      <button id="fleetBtn" title="Fleet status: per-host loaded models + busy/idle/unknown; live while open">🛰 Fleet</button>
-      <button id="filesBtn" title="Uploaded files (uploads/): humans' drop zone; lists on open, ↻ to re-list">📁 Files</button>
+      <div id="goalBar" class="goalbar" aria-label="Goal progress"></div>
+<span class="toggles"><button id="goalsBtn" title="Goal velocity: per-agent progress rings from memory/goals/">🎯 Goals</button><button id="actBtn" title="Activity timeline: every turn + tool call of each run, persisted per session (survives restarts)">⏱ Activity</button>
+      <button id="fleetBtn" title="Fleet status: per-host loaded models + busy/idle/unknown; live while open"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 7l4-4 4 4-4 4z"/><path d="M7 13l-4 4 4 4 4-4z"/><line x1="9" y1="9" x2="15" y2="15"/></svg> Fleet</button>
+      <button id="filesBtn" title="Uploaded files (uploads/): humans' drop zone; lists on open, use Refresh to re-list"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg> Files</button>
       <button id="opsBtn" title="Ops: local git status + commit, and prune fully-completed TODO sections into TODO_completed.md">🔧 Ops</button></span><span class="vdiv"></span>
       <button id="resetBtn" title="Reset conversation: clears chat history and the agent-to-agent counter">↺ Reset</button>
       <button id="stopBtn" disabled style="color:var(--err)" title="Stop this run now: aborts in-flight replies and closes the round as concluded">■ Stop</button>
@@ -62,7 +63,7 @@
         </div>
         <div class="opsrow">
           <input id="gitMsg" placeholder="commit message…" aria-label="Commit message">
-          <button class="btn" id="gitCommit">⬆ Commit all</button>
+          <button class="btn" id="gitCommit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/><polyline points="17,21 17,13 7,13 7,21"/><polyline points="7,3 7,8 15,8"/></svg> Commit all</button>
           <button class="btn" id="todoPrune" title="Moves TODO.md sections whose items are all [x] into TODO_completed.md (splits into numbered parts as it grows)">✂ Prune done TODO</button>
         </div>
         <div id="opsMsg" class="hint" role="status" aria-live="polite" style="margin-top:6px;font-size:12px"></div>
@@ -98,7 +99,7 @@
 <div id="peek"></div>
 
 <dialog id="editor">
-  <div class="dhead"><span id="edTitle">Edit agent</span><button id="edClose" title="Close">✕</button></div>
+  <div class="dhead"><span id="edTitle">Edit agent</span><button id="edClose" title="Close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></button></div>
   <div class="dbody">
     <div class="frow">
       <div><label>Name</label><input type="text" id="f_name"></div>
@@ -156,9 +157,12 @@
     <button class="btn pri" id="edSave">Save agent</button>
   </div>
 </dialog>
+<script src="ui/notifications.js"></script>
+<script src="ui/icons.js"></script>
 <script src="ui/core.js"></script>
   <script src="ui/fleet_topology.js"></script>
 
 <script src="ui/uploads.js"></script>
+<script src="ui/tour.js"></script>
 </body>
 </html>

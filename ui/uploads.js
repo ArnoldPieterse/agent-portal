@@ -21,9 +21,9 @@ function renderChips(){ const r=chipRow(); r.innerHTML="";
 function uploadFile(rel, blob, size){ const u={rel,size:(size!=null?size:blob.size),state:"uploading",pct:0}; pendingUploads.push(u); renderChips();
   const xhr=new XMLHttpRequest(); u.xhr=xhr;
   xhr.upload.onprogress=e=>{ if(e.lengthComputable){ u.pct=Math.round(100*e.loaded/e.total); renderChips(); } };
-  xhr.onload=()=>{ if(xhr.status===201||xhr.status===200){ u.state="done"; u.pct=100; }
+  xhr.onload=()=>{ if(xhr.status===201||xhr.status===200){ u.state="done"; u.pct=100; if(typeof window.notify==="function")window.notify("ok","Upload complete: "+u.rel); }
     else { u.state="error"; try{u.err=JSON.parse(xhr.responseText).error||("HTTP "+xhr.status);}catch(_){u.err="HTTP "+xhr.status;} } renderChips(); };
-  xhr.onerror=()=>{ u.state="error"; u.err="network"; renderChips(); };
+  xhr.onerror=()=>{ u.state="error"; u.err="network"; if(typeof window.notify==="function")window.notify("err","Upload failed: "+u.rel); renderChips(); };
   xhr.open("POST","/api/upload"); xhr.setRequestHeader("X-Rel-Path",encodeURIComponent(rel)); xhr.send(blob); }
 attachBtn.onclick=e=>{ e.stopPropagation(); amenu.hidden=!amenu.hidden; };
 document.addEventListener("click",e=>{ if(!e.target.closest("#attachWrap"))amenu.hidden=true; });
@@ -113,7 +113,7 @@ function runTurn(agentName,kind){
   const body=d.querySelector(".body");
   let busyT=null,secs=0;
   const sp=document.createElement("span");sp.className="busyspan";sp.textContent="\u23f3 working\u2026 0s";body.appendChild(sp);
-  busyT=setInterval(()=>{secs++;if(sp.isConnected)sp.textContent="\u23f3 working\u2026 "+secs+"s";},1000);
+  busyT=setInterval(()=>{secs++;if(sp.isConnected)sp.textContent="working\u2026 "+secs+"s";},1000);
   const t={d,body,thinkEl:null,toolRow:null,full:"",stopBusy(){ if(busyT){clearInterval(busyT);busyT=null;} const s=body.querySelector(".busyspan"); if(s)s.remove(); }};
   runTurns[agentName]=t; return t;
 }
@@ -327,11 +327,11 @@ setInterval(()=>{refresh().catch(()=>{});},30000);
 function fsFmtSize(b){return b==null?"":b<1024?b+" B":b<1048576?(b/1024).toFixed(1)+" KB":(b/1048576).toFixed(1)+" MB";}
 function fsFmtTime(t){const d=new Date(t*1000),n=new Date();let s=d.toTimeString().slice(0,5);if(d.toDateString()!==n.toDateString())s=d.toLocaleDateString();return s;}
 async function filesLoad(){
-  const list=$("filesList");list.innerHTML='<li class="fs-empty">loading…</li>';
+  const list=$("filesList");list.innerHTML=(typeof UI!=="undefined")?'<li class="skel-li">'+UI.skeleton(6,12)+'</li>':'<li class="fs-empty">loading…</li>';
   try{
     const j=await (await fetch("/api/uploads")).json();
     const files=(j&&j.files)||[];
-    if(!files.length){list.innerHTML='<li class="fs-empty">No uploads yet — drop files into uploads/ on White.</li>';return;}
+    if(!files.length){ list.innerHTML=""; const _li=document.createElement("li"); _li.innerHTML=(typeof UI!=="undefined")?UI.emptyState({icon:"upload",title:"No uploads yet",msg:"Drop files into the composer or uploads/ on White.",ctaLabel:"+ Upload"}):'<span class="fs-empty">No uploads yet</span>'; list.appendChild(_li); const _ct=_li.querySelector(".empty-cta"); if(_ct)_ct.onclick=function(){ const inp=document.querySelector('input[type="file"]'); if(inp)inp.click(); else { const cm=$("composer"); if(cm)cm.focus(); } }; return; }
     list.innerHTML='';
     for(const f of files){
       const li=document.createElement("li");
@@ -345,9 +345,10 @@ async function filesLoad(){
 $("filesBtn").onclick=()=>{const open=$("filesPanel").classList.toggle("open");$("filesBtn").classList.toggle("on",open);if(open)filesLoad();};
 // ---- Goals panel (2026-11-15, Designer): Goal Velocity dashboard ----
 async function goalsLoad(){
+  { const _gb=$("goalsBody"); if(_gb&&(typeof UI!=="undefined")&&!_gb.dataset.loaded)_gb.innerHTML=UI.skeleton(3,52); }
   try{
     const o=await (await fetch("/api/goals")).json();
-    if(!o.ok){ $("goalsStat").textContent="⚠ "+(o.error||"error"); return; }
+    if(!o.ok){ $("goalsStat").textContent="error: "+(o.error||"error"); return; }
     const C=119.38; let html="";
     for(const a of o.agents){
       const pct=a.total?Math.round(100*a.done/a.total):0;
@@ -359,8 +360,14 @@ async function goalsLoad(){
         +'<div><div class="gname">'+a.agent+'</div><div class="gmeta">'+a.done+'/'+a.total+' done · '+a.open+' open'
         +(a.blocked?' · <span class="gblock">⚠ '+a.blocked+' blocked</span>':'')+'</div></div></div>';
     }
-    $("goalsBody").innerHTML=html||'<div class="hint">no goal files</div>';
+    const _pg=window._goalsPrev||{}; for(const a of (o.agents||[])){ if(_pg[a.agent]!=null && a.done>_pg[a.agent] && typeof window.notify==="function") window.notify("ok","Goal closed on "+a.agent+" ("+a.done+"/"+a.total+")"); }
+    window._goalsPrev=Object.fromEntries((o.agents||[]).map(a=>[a.agent,a.done]));
+    $("goalsBody").dataset.loaded="1";
+    $("goalsBody").innerHTML=html||((typeof UI!=="undefined")?UI.emptyState({icon:"goal",title:"No goals set",msg:"Goal files live in memory/goals/ on each host.",ctaLabel:"Open TODO.md"}):'<div class="hint">no goal files</div>');
+    { const _ct=$("goalsBody").querySelector(".empty-cta"); if(_ct)_ct.onclick=function(){ const cm=$("composer"); if(cm)cm.focus(); }; }
     $("goalsStat").textContent=o.fleet_done+"/"+o.fleet_total+" · fleet "+(o.fleet_pct||0)+"%";
+    if(typeof renderGoalBar==="function")renderGoalBar(o);
+    if(typeof renderGoalBar==="function")renderGoalBar(o);
     // Git-based progress curve + stall signal (2026-11-16): goals are registered in git,
     // so the history IS the progress tracker.
     fetch("/api/goals/history").then(r=>r.json()).then(h=>{
@@ -371,13 +378,13 @@ async function goalsLoad(){
         t+=s.map(x=>x.fleet_reached).join(" \u2192 ")+" \u2192 "+o.fleet_done+"/"+o.fleet_total;
         if(h.last_change_commit) t+=" \u00b7 last goal change "+h.last_change_commit.sha+" "+String(h.last_change_commit.ts).slice(5,16);
       } else t+="no goal-file changes in window";
-      if((h.stall_commits||0)>3) t+=" \u00b7 \u26a0 stalled: "+h.stall_commits+" commits since last goal change";
+      if((h.stall_commits||0)>3) t+=" \u00b7 STALLED: "+h.stall_commits+" commits since last goal change";
       el.textContent=t;
     }).catch(()=>{});
     // Memory Health section (Scribe goal 9, re-landed 2026-11-17): six metric cards live from /api/memory-health.
     fetch("/api/memory-health").then(r=>r.json()).then(o=>{
       const el=$("memHealthBody"); if(!el||!o.ok)return;
-      const st={pass:"var(--ok)",warn:"#d9a514",fail:"#e0524d"};
+      const st={pass:"var(--ok)",warn:"var(--warn)",fail:"var(--err)"};
       el.innerHTML=Object.entries(o.metrics).map(([k,v])=>'<div class="mh-card" style="border-color:'+(st[v.status]||"var(--line)")+'">'
         +'<div class="mh-k">'+k+'</div><div class="mh-v">'+(v.value==null?"n/a":v.value)+'</div>'
         +'<div class="mh-d">'+(v.detail||"")+'</div></div>').join("");

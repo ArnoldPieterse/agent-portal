@@ -4,7 +4,7 @@
 // rule: memory/portal/file-modularity.md | served by GET /ui/core.js
 
 const $ = id => document.getElementById(id);
-window.onerror=(m,src,l)=>{try{$("stext").textContent="JS ERROR line "+l+": "+String(m).slice(0,80);}catch(_){}};
+window.onerror=(m,src,l)=>{try{$("stext").textContent="JS ERROR line "+l+": "+String(m).slice(0,80); if(typeof window.notify==="function")window.notify("err","JS error: "+String(m).slice(0,120));}catch(_){}};
 $("stext").textContent="js running…";
 let agents=[], models=[], netModels=[], kbs=[], localTools=[];
 let selectedId=null, mode="solo", busy=false;
@@ -164,7 +164,7 @@ async function streamReplyCore(agent, kind, silentTarget){
    let busyT=null, busySecs=0;
    const startBusy=()=>{ if(busyT)return; busySecs=0;
      const sp=document.createElement("span"); sp.className="busyspan"; sp.textContent="\u23f3 working\u2026 0s"; body.appendChild(sp);
-     busyT=setInterval(()=>{busySecs++; if(sp.isConnected)sp.textContent="\u23f3 working\u2026 "+busySecs+"s";},1000); };
+     busyT=setInterval(()=>{busySecs++; if(sp.isConnected)sp.textContent="working\u2026 "+busySecs+"s";},1000); };
    const stopBusy=()=>{ if(busyT){clearInterval(busyT);busyT=null;} const sp=body.querySelector(".busyspan"); if(sp)sp.remove(); };
    startBusy(); // modeBar busy-hint is owned by the streamReply wrapper above
    let res;
@@ -377,10 +377,15 @@ async function fleetUpdate(){
         '<div class="fmodels">'+models+'</div>'+
         '<div class="hint" style="margin-left:16px">agents: '+(h.agents.length?h.agents.join(", "):"none")+'</div></div>';
     }
-    $("fleetBody").innerHTML=html||'<div class="hint">no hosts</div>';
+    const _fp=window._fleetPrev||{}; const _fs={};
+    for(const h of (o.hosts||[])){ _fs[h.host]=h.state!=="unknown";
+      if(_fp[h.host]===true && h.state==="unknown" && typeof window.notify==="function") window.notify("warn","Agent host "+h.host+" is offline"); }
+    window._fleetPrev=_fs;
+    $("fleetBody").innerHTML=html||UI.emptyState({icon:"agent",title:"No hosts reporting",msg:"The fleet probe hasn't seen any hosts yet.",ctaLabel:"Refresh now"});
+    { const _ct=$("fleetBody").querySelector(".empty-cta"); if(_ct)_ct.onclick=fleetUpdate; }
     const up=(o.hosts||[]).filter(h=>h.state!=="unknown").length;
     $("fleetStat").textContent=up+"/"+(o.hosts||[]).length+" reporting · ttl "+(o.ttl||15)+"s";
-  }catch(e){ $("fleetStat").textContent="⚠ "+e; }
+  }catch(e){ $("fleetStat").textContent="error: "+e; }
 }
 $("fleetBtn").onclick=async()=>{
   const open=$("fleetPanel").classList.toggle("open");
@@ -434,13 +439,80 @@ $("gitCommit").onclick=async()=>{
   opsSay("committing…");
   try{ const r=await (await fetch("/api/git",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({action:"commit",message:m})})).json();
     if(r.status&&r.status.repo){ $("gitStatus").textContent=r.status.status||"(clean)"; $("gitLog").textContent=r.status.log||"—"; }
-    opsSay(r.committed?"✓ committed: "+m:(r.note||r.err||"done")); if(r.committed)$("gitMsg").value="";
-  }catch(e){ opsSay("⚠ "+e); } finally{ opsLoad(); }
+    opsSay(r.committed?"committed: "+m:(r.note||r.err||"done")); if(r.committed)$("gitMsg").value="";
+  }catch(e){ opsSay("error: "+e); } finally{ opsLoad(); }
 };
 $("gitMsg").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("gitCommit").click();}});
 $("todoPrune").onclick=async()=>{
   opsSay("pruning…");
   try{ const r=await (await fetch("/api/todo/prune",{method:"POST",headers:{"Content-Type":"application/json"},body:"{}"})).json();
     opsSay(r.moved_sections?`✓ moved ${r.moved_sections} section(s), ${r.moved_items} item(s) → TODO_completed.md (${r.completed_lines} lines${r.chunks_split?", split "+r.chunks_split+" part(s)":""})`:(r.note||"done"));
-  }catch(e){ opsSay("⚠ "+e); }
+  }catch(e){ opsSay("error: "+e); }
 };
+
+// ---- Goal #4/6 helpers (2026-11-19 White re-land) ----
+window.UI=window.UI||{};
+UI.emptyState=function(o){ o=o||{}; let ic=''; try{ ic=(window.UI&&UI.icon)?UI.icon(o.icon||"info"):''; }catch(_){}
+  return '<div class="empty-state"><div class="empty-icon">'+ic+'</div>'
+    +'<div class="empty-title">'+esc(o.title||"")+'</div>'
+    +(o.msg?'<div class="empty-msg">'+esc(o.msg)+'</div>':'')
+    +(o.ctaLabel?'<button type="button" class="empty-cta">'+esc(o.ctaLabel)+'</button>':'')+'</div>'; };
+UI.skeleton=function(n,h){ n=n||3; h=h||14; let s=''; for(let i=0;i<n;i++)s+='<div class="skeleton" style="height:'+h+'px"></div>'; return '<div class="skeleton-wrap">'+s+'</div>'; };
+// ---- Goal #3 - header goal bar (rendered from /api/goals by uploads.js) ----
+function renderGoalBar(o){ const el=$("goalBar"); if(!el||!o||!o.ok)return; let h='';
+  for(const a of (o.agents||[])){ const pct=a.total?Math.round(100*a.done/a.total):0;
+    h+='<span class="gbar" title="'+a.agent+': '+a.done+'/'+a.total+' done"><i class="gbar-fill" style="width:'+pct+'%"></i><em>'+esc(String(a.agent).slice(0,3).toUpperCase())+'</em></span>'; }
+  h+='<span class="gbar-fleet">'+o.fleet_done+'/'+o.fleet_total+' · '+(o.fleet_pct||0)+'%</span>';
+  el.innerHTML=h; }
+// ---- Goal #10 - print report button (injected into header) ----
+(function(){ const b=document.createElement("button"); b.id="printReportBtn"; b.type="button"; b.title="Print a clean report of the current panels";
+  let ic=''; try{ ic=(window.UI&&UI.icon)?UI.iconSized('save',14):''; }catch(_){}
+  b.innerHTML=ic+' Print';
+  b.onclick=function(){ window.print(); };
+  const st=$("status"); if(st)st.parentNode.insertBefore(b,st); else { const hd=document.querySelector("header"); if(hd)hd.appendChild(b); } })();
+// ---- Goal #6 - initial skeletons (replaced on first real load) ----
+if($("fleetBody"))$("fleetBody").innerHTML=UI.skeleton(4,18);
+if($("goalsBody"))$("goalsBody").innerHTML=UI.skeleton(3,52);
+if($("filesList"))$("filesList").innerHTML='<li class="skel-li">'+UI.skeleton(6,12)+'</li>';
+
+// ---- #selftest acceptance harness (2026-11-19 White re-land; evidence for goals 2,4,5,6,7,8,9) ----
+window.__selftest=async function(){ const out={};
+  const wait=(ms)=>new Promise(r=>setTimeout(r,ms));
+  for(let i=0;i<40 && !(agents.length);i++) await wait(250);
+  const ids=["fleetBody","goalsBody","filesList"];
+  const measure=()=>{ const r={body:document.body.scrollHeight}; for(const id of ids){ const el=$(id); if(el)r[id]=el.scrollHeight; } return r; };
+  const scale=["12px","14px","15px","18px","24px"];
+  let viol=[]; const all=document.querySelectorAll("body *");
+  for(const el of all){ const cs=getComputedStyle(el); if(cs.display==="none")continue; if(!scale.includes(cs.fontSize))viol.push((el.id?"#"+el.id:(typeof el.className==="string"&&el.className.trim()?"."+el.className.trim().split(/\s+/)[0]:el.tagName))+"="+cs.fontSize); }
+  out.typography={elements_checked:all.length,violation_count:viol.length,violations:viol.slice(0,25)};
+  const after=measure();
+  const link=document.querySelector('link[rel="stylesheet"]');
+  const orig=link.href; link.href="/ui/app_density_before.css"; await wait(400);
+  const before=measure(); link.href=orig; await wait(400); measure();
+  out.density={before:before,after:after,
+    panels:Object.keys(after).filter(k=>k!=="body"&&before[k]).map(k=>({panel:k,before:before[k],after:after[k],reduction_pct:+(100*(before[k]-after[k])/before[k]).toFixed(1)})),
+    body_reduction_pct:+(100*(before.body-after.body)/before.body).toFixed(1)};
+  let clipped=0; for(const el of document.querySelectorAll("body *")){ const cs=getComputedStyle(el); if((cs.overflow==="hidden"||cs.overflowY==="auto"||cs.overflowY==="scroll")&&el.scrollHeight>el.clientHeight+2)clipped++; }
+  out.clipping={clipped_elements:clipped};
+  const es=UI.emptyState({icon:"goal",title:"No goals set",msg:"m",ctaLabel:"Open TODO.md"});
+  out.empty_state={has_svg_icon:es.includes("<svg"),has_cta_button:es.includes('class="empty-cta"')};
+  if(typeof window.notify==="function"){ window.notify("ok","selftest ok"); window.notify("warn","selftest warn"); window.notify("err","selftest err"); await wait(150); }
+  out.notifications={toasts:document.querySelectorAll(".toast").length,badge:(document.getElementById("notifBadge")||{}).textContent||null,panel_items:document.querySelectorAll(".notif-item").length};
+  if(window.UI&&UI.tour){ UI.tour.start(); let steps=0; for(let i=0;i<6;i++){ if(!document.querySelector(".tour-card"))break; steps++; const n=document.querySelector(".tour-next"); if(n)n.click(); await wait(60);} out.tour={steps_seen:steps,ended_cleanly:!document.querySelector(".tour-overlay")}; }
+  return out; };
+window.__visual=function(mode){ // for headless screenshot variants
+  const wait=(ms)=>new Promise(r=>setTimeout(r,ms));
+  (async()=>{ for(let i=0;i<40 && !(agents.length);i++) await wait(250);
+    if(mode==="empty"){
+      $("fleetBody").innerHTML=UI.emptyState({icon:"agent",title:"No hosts reporting",msg:"The fleet probe hasn't seen any hosts yet.",ctaLabel:"Refresh now"});
+      $("goalsBody").innerHTML=UI.emptyState({icon:"goal",title:"No goals set",msg:"Goal files live in memory/goals/ on each host.",ctaLabel:"Open TODO.md"});
+      const fl=$("filesList"); if(fl){fl.innerHTML=""; const li=document.createElement("li"); li.innerHTML=UI.emptyState({icon:"upload",title:"No uploads yet",msg:"Drop files into the composer or uploads/ on White.",ctaLabel:"+ Upload"}); fl.appendChild(li);} }
+    else if(mode==="notify"){
+      window.notify&&window.notify("ok","Goal closed on Scribe (5/6)");
+      window.notify&&window.notify("warn","Agent host pale is offline");
+      window.notify&&window.notify("err","Upload failed: report.pdf"); await wait(120);
+      const p=document.getElementById("notifPanel"); if(p)p.classList.remove("hidden"); }
+    else if(mode==="tour"){ if(window.UI&&UI.tour){ UI.tour.start(); const n=document.querySelector(".tour-next"); if(n)n.click(); } }
+  })(); };
+if(location.hash==="#selftest"){ window.addEventListener("load",async()=>{ try{ const r=await window.__selftest(); const p=document.createElement("pre"); p.id="selftestOut"; p.textContent="SELFTEST_JSON "+JSON.stringify(r); document.body.appendChild(p); }catch(e){ const p=document.createElement("pre"); p.id="selftestOut"; p.textContent="SELFTEST_ERR "+e; document.body.appendChild(p);} }); }
+else if(location.hash==="#visual"){ window.addEventListener("load",()=>window.__visual((location.search.match(/m=(\w+)/)||[])[1]||"empty")); }

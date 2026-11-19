@@ -249,7 +249,7 @@ if c != c0:
 u = open('ui/uploads.js', encoding='utf-8').read()
 u0 = u
 u = u.replace('list.innerHTML=\'<li class="fs-empty">loading\u2026</li>\';',
-              'list.innerHTML=(typeof UI!=="undefined")?\'<li class="skel-li">'+UI.skeleton(6,12)+'</li>\':\'<li class="fs-empty">loading\u2026</li>\';')
+              "list.innerHTML=(typeof UI!==\"undefined\")?'<li class=\"skel-li\">'+UI.skeleton(6,12)+'</li>':'<li class=\"fs-empty\">loading\u2026</li>';")
 u = u.replace('if(!files.length){list.innerHTML=\'<li class="fs-empty">No uploads yet \u2014 drop files into uploads/ on White.</li>\';return;}',
   'if(!files.length){ list.innerHTML=""; const _li=document.createElement("li"); _li.innerHTML=(typeof UI!=="undefined")?UI.emptyState({icon:"upload",title:"No uploads yet",msg:"Drop files into the composer or uploads/ on White.",ctaLabel:"+ Upload"}):\'<span class="fs-empty">No uploads yet</span>\'; list.appendChild(_li); const _ct=_li.querySelector(".empty-cta"); if(_ct)_ct.onclick=function(){ const inp=document.querySelector(\'input[type="file"]\'); if(inp)inp.click(); else { const cm=$("composer"); if(cm)cm.focus(); } }; return; }')
 u = u.replace('async function goalsLoad(){\n  try{',
@@ -379,11 +379,7 @@ if 'id="goalBar"' not in h:
 # emoji -> inline SVG / ASCII
 h = re.sub(r'<h1>[^<]*Agent Portal</h1>', '<h1>' + iconsvg('robot') + ' Agent Portal</h1>', h)
 h = h.replace('>\uff0b Add</button>', '>+ Add</button>')
-for name, btn in [('satellite','fleetBtn'), ('folder','filesBtn'), ('save','gitCommit'), ('close','edClose')]:
-    svg = iconsvg(name, 14)
-    if not svg: continue
-    m = re.search(r'<button[^>]*id="%s"[^>]*>([^<]*<)', btn, h) or None
-# simpler targeted replaces:
+# targeted emoji->SVG replaces:
 h = re.sub(r'(id="fleetBtn"[^>]*>)[^<]+', lambda m: m.group(1)+iconsvg('satellite',14)+' Fleet', h)
 h = re.sub(r'(id="filesBtn"[^>]*>)[^<]+', lambda m: m.group(1)+iconsvg('folder',14)+' Files', h)
 h = re.sub(r'<button class="btn" id="gitCommit">[^<]*</button>', '<button class="btn" id="gitCommit">'+iconsvg('save',14)+' Commit all</button>', h)
