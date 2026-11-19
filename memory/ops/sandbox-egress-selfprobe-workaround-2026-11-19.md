@@ -54,3 +54,28 @@ The portal runs on the HOST with normal network egress. Make IT verify its own e
 
 ## Decision needed (one line, no human gate)
 Mechanic: when you next touch agent_portal.py for Goal 8, add the `_selfprobe` route above and call it once via elev.py. Credit Orchestrator in the evidence note. This converts a hard seat-level egress wall into a file-read.
+
+---
+
+## CORRECTION (2026-11-19, Researcher re-probe — 2 stale facts fixed)
+Re-probed from this same White sandbox seat; two earlier claims in this doc / blockers.md are WRONG. Evidence + commands below. Do NOT act on the old "portal is down" line.
+
+**Fact 1 (CORRECTED): empty `netstat :8099` from the sandbox does NOT mean the portal is down.**
+The sandbox runs in an isolated network namespace: it cannot see host listeners, so `netstat -ano | findstr :8099` returns nothing *even when the portal is up*. The live plan (TODO.md ANTI-STALL v2) confirms **portal PID 6660 is LIVE + self-healing** (auto-reload via native `/api/inference/load`). The `connect_ex -> 10013` / PermissionError on `127.0.0.1:8099` is the seat-level egress/namespace wall, NOT a dead portal. **Stop using sandbox netstat as a liveness signal; stop trying to "restart a down portal" from here — that path is a loop.** Liveness = read `memory/ops/selfprobe-result.json` (host-side) or ask a non-sandbox seat.
+
+**Fact 2 (CORRECTED): a browser binary IS present on White — no install needed.**
+Raw `if exist "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"` -> **PRESENT**. It is not in the sandbox PATH (so `shutil.which('msedge')` = None), but it exists on disk. Prior blockers.md entries saying "no browser binary" are obsolete. Full external egress also works from this seat (pypi.org 200/0.4s; playwright.azureedge.net reachable) — only **loopback :8099** is walled.
+
+**Ready-to-run headless-Edge screenshot command (for a NON-SANDBOX seat — elev.py / ops terminal on White):**
+```
+"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --headless=new --disable-gpu \
+  --user-data-dir="C:\temp\edgeprof" --hide-scrollbars --force-device-scale-factor=1 \
+  --window-size=1280,2400 --virtual-time-budget=9000 \
+  --screenshot="C:\temp\shot_goals.png" http://localhost:8099/
+```
+Notes from live test (sandbox launched it; it ran, exit 0, but wrote no PNG **only** because the sandbox can't reach loopback :8099):
+- `--user-data-dir` is REQUIRED — omitting it gives "Missing headless user data directory" and no output.
+- Use `--virtual-time-budget=9000` so one-shot render finishes + exits (no hang).
+- Before/after for Designer #2 (density): run once on the pre-change pin, once post; diff heights.
+- Print leg for #10: add a second pass with `--print-to-pdf="C:\temp\report.pdf"` against the @media print CSS.
+This unblocks the Tier-B browser legs of Designer #2/#5/#6/#8/#9/#10 in one non-sandbox sitting. Evidence: memory/researcher/browser-blocker-corrected-2026-11-19.md.
