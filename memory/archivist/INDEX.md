@@ -34,3 +34,7 @@ Last updated: 2026-11-14.
 ## Linked content (KG orphan remediation 2026-11-19)
 - [hostdoc_consistency_v2.py](memory/archivist/hostdoc_consistency_v2.py)
 - [ingest.py](memory/archivist/ingest.py)
+
+## Linked content (KG orphan remediation)
+- [index-pointer-addendum-r43.md](memory/archivist/index-pointer-addendum-r43.md)
+- [index-pointer-batch-r42.md](memory/archivist/index-pointer-batch-r42.md)
