@@ -1,0 +1,19 @@
+{
+ "tour_reappear": {
+  "class_tour_card": 0,
+  "class_tour_overlay": 0
+ },
+ "density_before.png": "MISSING",
+ "density_after.png": "MISSING",
+ "notify.png": "MISSING",
+ "tour_step1.png": "MISSING",
+ "print_report.pdf": {
+  "bytes": 0,
+  "pages": 0
+ },
+ "selftest_json": "saved",
+ "chain_B_tour_reappear": {
+  "tour_card_elements": 1,
+  "tour_overlay_elements": 1
+ }
+}

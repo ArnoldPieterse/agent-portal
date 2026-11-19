@@ -1,0 +1,63 @@
+{
+ "typography": {
+  "elements_checked": 1479,
+  "violation_count": 0,
+  "violations": []
+ },
+ "density": {
+  "before": {
+   "body": 1113,
+   "fleetBody": 227,
+   "goalsBody": 148,
+   "filesList": 87658
+  },
+  "after": {
+   "body": 1070,
+   "fleetBody": 142,
+   "goalsBody": 102,
+   "filesList": 45210
+  },
+  "panels": [
+   {
+    "panel": "fleetBody",
+    "before": 227,
+    "after": 142,
+    "reduction_pct": 37.4
+   },
+   {
+    "panel": "goalsBody",
+    "before": 148,
+    "after": 102,
+    "reduction_pct": 31.1
+   },
+   {
+    "panel": "filesList",
+    "before": 87658,
+    "after": 45210,
+    "reduction_pct": 48.4
+   }
+  ],
+  "body_reduction_pct": 3.9
+ },
+ "clipping": {
+  "clipped_elements": 3,
+  "ids": [
+   "#fleetBody",
+   "#filesList",
+   "#msgs"
+  ]
+ },
+ "empty_state": {
+  "has_svg_icon": true,
+  "has_cta_button": true
+ },
+ "notifications": {
+  "toasts": 3,
+  "badge": "3",
+  "panel_items": 3
+ },
+ "tour": {
+  "steps_seen": 4,
+  "ended_cleanly": true
+ }
+}
