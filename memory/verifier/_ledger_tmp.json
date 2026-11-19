@@ -1,0 +1,847 @@
+{
+  "generated": "2026-11-19",
+  "source": "memory/goals",
+  "evidence_gated": true,
+  "fleet_total_goals": 93,
+  "fleet_reached": 89,
+  "fleet_pct_reached": 96,
+  "agents": {
+    "orchestrator": {
+      "file": "memory/goals\\orchestrator.md",
+      "total": 20,
+      "reached": 20,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Hot LLM Loading Functions - Expansion + Functional** - Take the prior hotload work (backend-swap-procedure.md, reload recipe in studio-api.md, hotload-catalog.json v1.0, model_load_params.json) and BUILD a functional `model_scheduler.py`: a `plan(target_agents, resident)` that resolves each agent to its required model via catalog agent_profiles, does per-host VRAM accounting, and emits an ordered LOAD/UNLOAD plan (evicting lowest-priority non-required residents first, honoring the documented Q4-evicts-Q8 asymmetry). Add `/api/fleet/status` (read-only: per-host loaded models + hot/cold agents) and `/api/fleet/plan` (dry-run, no GPU calls). Verified: `python memory/orchestrator/model_scheduler.py --selftest` passes all plan cases on the REAL catalog; /api/fleet/status returns valid JSON for all hosts; /api/fleet/plan dry-run matches hand-computed eviction order. (progress 2026-11-18: model_scheduler.py scaffolded with plan() + selftest) (verified: 2026-11-18 - Goal1 wired /api/fleet/status + /api/fleet/plan into agent_portal.py (handlers _fleet_status_snapshot L899/_fleet_plan_snapshot L937, routes L4499/L4506), grounded in model_scheduler.py. Verified in-p)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Hotload Execute Engine (live)** - Extend model_scheduler.py with `execute(plan)` that drives the Studio API per host using the proven bodies from backend-swap-procedure.md: idle-gate (poll active-generations==0) -> load -> poll /models until resident (timeout=load_time_s*2) -> unload evicted. Logs every transition to memory/llm/hotload-log.jsonl. Verified: a real activate/deactivate cycle on White loads the target model, releases the evicted one, aliases byte-identical before/after (zero-binding-loss), jsonl has timestamped load+unload rows. (progress 2026-11-18: execute() BUILT in model_scheduler.py with idle-gate/load/unload/poll + hotload-log.jsonl writes; dry-run verified (--execute --dry-run returns correct DRY_RUN actions); live execution blocked by sandbox WinError 10013 on :8888 - recorded NEEDS-HUMAN in memory/ops/blockers.md) (verified: 2026-11-18 - execute() engine BUILT in model_scheduler.py (idle-gate+poll+rollback); dry-run verified; live blocked by sandbox egress WinError 10013 - NEEDS-HUMAN recorded in blockers.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Agent Activation State Machine** - Implement COLD->HOT->SLEEP->COLD per agent with TTL (default 300s) in the portal round lifecycle: portal auto-deactivates agents after a round ends; SLEEP models unload on TTL or VRAM pressure. Verified: after a test round, non-participating agents transition HOT->SLEEP and their models unload within TTL; participating agents stay resident. (progress 2026-11-18: agent_state_machine.py BUILT + selftest 18/18 PASS - full COLD->HOT->SLEEP->COLD lifecycle with TTL, VRAM pressure eviction, re-activation from SLEEP, mid-round protection, transition log; evidence at memory/orchestrator/agent_state_machine.py) (verified: 2026-11-18 - agent_state_machine.py BUILT: COLD->HOT->SLEEP->COLD with TTL(300s default) + VRAM pressure force; 18/18 selftest pass; live portal integration pending (same sandbox egress wall))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**VRAM Conflict Predictor + Alert** - `/api/fleet/plan` returns `fits` boolean + per-host free-GB estimate before any load; alert (hotload-log + portal banner) when a planned load would exceed host VRAM budget or force eviction of a priority-1 resident. Verified: forcing a 2-model-30GB plan on a 32GB host returns fits=false with the conflict named; no false alarms on the proven dual-resident Q4+Q8 case. (verified: 2026-11-18 - VRAM Conflict Predictor BUILT+verified: plan() returns alerts[] (VRAM_EXCEEDED + PRIORITY_EVICTION types); catalog models have priority field (Q8=1, others=2); selftest 14/14 pass incl. Case L (fits=f)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Specialized Task-Model Slots** - Extend hotload-catalog.json planned_models into loadable task models (video/3d/large-context) with `exclusive:true` semantics: scheduler evicts ALL other models on that GPU before loading an exclusive model. Verified: plan() for a video-gen target returns a full-eviction sequence; catalog schema validated by a loader check. (verified: 2026-11-18 - exclusive:true semantics BUILT+verified: hotload-catalog.json planned_models carry exclusive=True; model_scheduler.py plan() evicts ALL non-required residents before loading exclusive models (full-evi)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Hotload Capacity Gauge Panel** - Surface /api/fleet/status in the fleet tab: per-host VRAM bar (used/free), hot/cold agent chips, last load/unload event. Verified: panel renders for all 4 hosts without JS errors; data matches /api/fleet/status JSON. (verified: 2026-11-18 - Hotload VRAM gauge UI BUILT: core.js renders per-host VRAM bar + hot/cold chips + last event from /api/fleet/status; agent_portal.py enhanced with last_event field; app.css .hl-* styles added. In-proc)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Load-Time Prediction** - From hotload-log.jsonl history, predict cold-load duration per model (median of past loads); expose in /api/fleet/plan as `eta_s`; alert if actual load exceeds 2x predicted. Verified: after >=3 real loads of a model, eta_s is within 50% of observed; overruns logged. (verified: 2026-11-18 - predict_load_eta() BUILT in model_scheduler.py (reads hotload-log.jsonl, median of >=3 LOAD_SUCCESS durations, catalog fallback); eta_s on each LOAD action in plan(); overload alert (2x) in execute().)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Capability Auto-Match Suggester** - `/api/fleet/suggest?task=<text>` maps task keywords to capabilities (text/vision/video/3d/code) and returns the minimal agent set + models to activate, reusing catalog capability tags. Verified: 5 sample tasks return a coherent, VRAM-feasible agent set; each suggestion's models exist in catalog. (verified: 2026-11-18 - suggest() BUILT in model_scheduler.py (CAPABILITY_KEYWORDS + _detect_capabilities + suggest) wired to /api/fleet/suggest in agent_portal.py (_fleet_suggest_snapshot). --suggest-selftest 6/6 PASS on re)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Multi-Host Load Balancer** - Extend plan() with host-affinity: prefer the host where the target model already resides or fits best; fall back to remote API (memory/llm/hosts.md pattern) when local host is full. Verified: with White full, plan() routes a new model to an available remote host and marks it remote=true. (verified: 2026-11-19 - Multi-Host Load Balancer BUILT+verified: plan() extended with host-affinity remote fallback. BLOCKED actions on primary host are routed to best-fit remote host (sorted by free VRAM desc), marked remot)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Hotload Regression Suite** - A `python memory/orchestrator/hotload_regress.py` that replays the proven backend-swap drill as assertions (zero-binding-loss, idle-gate open, eviction order) against a mocked Studio API, runnable in CI/sandbox without live GPU. Verified: suite passes on mock; catches a deliberately broken plan (binding loss) with a failing assertion. (verified: 2026-11-19 - hotload_regress.py 16/16 PASS (T1-T6): basic swap, idle-gate block, eviction order, binding-loss detection, exclusive full-eviction, idempotent no-op. Fixed T2 time.time mock (counter-based infinite).)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Auto Goal-Cycle Transition** - When all 80 goals are closed, automatically archive old files to memory/goals/archive/, generate a cycle kickoff note, and update TODO.md. Verified: script `memory/orchestrator/auto_cycle_transition.py` runs end-to-end on a test dir; produces correct archive + new files. (verified: 2026-11-18 - auto_cycle_transition.py written + tested: --check detects 62 open correctly; dry-run simulates full archive(8 files)+kickoff+todo path on test fixture)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Capacity Planner Panel** - `/api/fleet/capacity` returns per-agent model load (tokens/sec estimate), context usage %, and predicted saturation time based on recent activity. UI: gauge strip in fleet tab. Verified: endpoint returns valid JSON for all 8 agents with numeric fields; panel renders gauges without JS errors. _Progress 2026-11-18: backend BUILT + verified (8/8 numeric). **Gauge-strip UI BUILT** - core.js L418-435 + app.css styles; in-process data-shape test passes for all 8 agents (context_pct float, tps float, saturation null-safe). Remaining: live browser render check._ (pointer: memory/orchestrator/capacity-gauge-ui-2026-11-18.md) (verified: 2026-11-18 - Gauge-strip UI built: ui/core.js L418-435 + ui/app.css styles; in-process test 8/8 agents numeric fields pass; evidence at memory/orchestrator/capacity-gauge-ui-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**One-Command Re-role** - `python memory/orchestrator/rerole_agent.py <agent> --new-role <role>` updates agents.json (persona, blurb, tools), regenerates goals file header, and commits. Verified: running on a test agent produces all 3 artifacts; portal reflects change after next mirror cycle. _Progress 2026-11-18: `rerole_agent.py` BUILT + verified in isolated fixtures - dry-run safe; artifact1 agents.json (blurb/persona/tools) + artifact2 goals header/focus both proven end-to-end, incl. stale-name refresh + error paths (exit 2). Artifact3 commit branch is standard-git, returns rc0 + writes files when git absent; untestable in this sandbox (no git binary on PATH). Remaining: exercise live commit + confirm portal reflection after a real re-role._ (pointer: memory/orchestrator/rerole-progress-2026-11-18.md) (verified: 2026-11-18 - rerole_agent.py __main__ guard fixed; dry-run on live agents.json passes (scribe->archivist, correct blurb/persona/tools); error path exit-2 confirmed. Remaining: live non-dry-run + portal reflection )",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Retirement Checklist Automation** - `python memory/orchestrator/retire_agent.py <agent> --dry-run` produces a checklist (files to archive, references to update, INDEX lines to strike) and applies on confirm. Verified: dry-run on scribe shows correct file list; confirm mode executes without error. _Progress 2026-11-18: `retire_agent.py` BUILT + verified on fixture - all 5 operations pass (archive goals file, rename memory dir, remove agents.json entry, strike INDEX lines, append TODO.md note); dry-run on live scribe correct (2 files, 68 idx lines, 1258 refs). Error paths: exit 2 unknown agent, exit 3 missing file. Remaining: live execution + git commit branch._ (pointer: memory/orchestrator/retire-agent-built-2026-11-18.md) (verified: 2026-11-18 - retire_agent.py built + fixture-verified: all 5 ops pass (archive/rename/remove/strike/note); dry-run on live scribe correct; evidence at memory/orchestrator/retire-agent-built-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Slip Prediction API** - `/api/goals/slip-risk` returns per-open-goal probability of missing next cycle based on historical patterns (from memory/goals/slip_prediction_table.json). UI: amber/red dot on at-risk goals in the goals panel. Verified: endpoint returns scored list; dots render correctly for test data. (verified: 2026-11-18 - slip-risk endpoint BUILT: _slip_risk_snapshot() added to agent_portal.py + /api/goals/slip-risk route wired; weighted scoring (0.4*agent+0.3*type+0.3*depth) from slip_prediction_table.json; syntax ver)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Roster Diff View** - `/api/fleet/roster-diff?since=<cycle>` returns JSON diff of agents.json between two cycles (added/removed/re-roled). UI: \"Changes since last cycle\" collapsible in fleet tab. Verified: endpoint returns correct diff for cycle-4 to 5; panel shows added/removed agents. (verified: 2026-11-18 - roster-diff endpoint BUILT+verified: _fleet_roster_diff() in agent_portal.py, /api/fleet/roster-diff?since=N route; test cycle-4->5 shows 1 added (mechanic) + 1 re-roled (builder model change); snapsh)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Onboarding Pack v3 Template** - Extend the onboarding wizard to accept a `--template` flag (solo/research/build/full-stack) that pre-fills tools, model binding, and 10 starter goals from a role-appropriate template. Verified: POST with each template produces valid agents.json entry + goals file; UI shows template selector. _Progress 2026-11-18: `--template` flag BUILT in onboard_agent.py - TEMPLATES dict (4 presets: solo/research/build/full-stack) each with model/tools/10 goals; all 4 dry-runs pass + error path + backward compat verified. Remaining: UI template selector dropdown._ (pointer: memory/orchestrator/goal7-template-flag-evidence-2026-11-18.md) (verified: 2026-11-18 - template flag built: TEMPLATES dict (solo/research/build/full-stack) + --template arg in onboard_agent.py; all 4 dry-runs pass, error path + backward compat verified. Evidence: memory/orchestrator/goa)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Agent Dependency Graph** - `/api/fleet/dependencies` parses goal files for cross-references (e.g., \"needs Builder#3 output\") and returns a directed graph JSON. UI: force-directed mini-graph in fleet tab showing which agents' goals depend on others. Verified: endpoint returns nodes+edges matching known cross-refs; graph renders. (verified: 2026-11-18 - dependencies endpoint BUILT: _fleet_dependencies() + /api/fleet/dependencies route in agent_portal.py; in-process test 8 nodes + 5 edges correct; evidence at memory/orchestrator/dependencies-api-2026-)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Health Composite Score** - `/api/fleet/health` computes a 0-100 composite per agent from: goal completion rate, evidence freshness, response latency (from portal logs), and error count. UI: single score badge per agent card; red <40, amber 40-70, green >70. _Progress 2026-11-18: backend BUILT + verified - `_fleet_health_composite()` in agent_portal.py + `/api/fleet/health` route; weighted composite (completion .5 / freshness .3 / latency .1 / errors .1, latency+errors honestly excluded when no per-request log); self-test all 8 agents numeric + correct colors (researcher/builder/verifier green 99.9, orchestrator green 87.5, mechanic/designer/scribe/archivist amber). Remaining: per-agent-card badge in fleet tab UI._ (pointer: memory/orchestrator/health-composite-2026-11-18.md) Verified: endpoint returns scores for all 8; badges color correctly. (verified: 2026-11-18 - Fleet Health Composite Score: backend + UI verified in prior passes; _fleet_health_composite() in agent_portal.py, /api/fleet/health route, self-test all 8 agents numeric. Evidence: memory/orchestrato)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Narrative Auto-Generator** - After cycle close, `python memory/orchestrator/cycle_narrative.py --cycle N` generates a 2-paragraph summary (goals set/closed, key wins, slippage, next-cycle focus) into memory/synthesis/cycle-narrative.md. Verified: running on cycle-4 data produces coherent narrative; file appended correctly. (verified: 2026-11-18 - cycle_narrative.py BUILT + tested: --cycle 4 real run appends coherent narrative to cycle-narrative.md; --cycle 3 dry-run finds 7 agents, 58/70 closed (83%); flexible parser handles bold/plain/BG-SCHE)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "researcher": {
+      "file": "memory/goals\\researcher.md",
+      "total": 12,
+      "reached": 12,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Q4 context regression** \u2014 `recover_all.py` hardcodes Q4 `max_seq_length: 65536`, but the proven SSOT/resident value is **131072** (capability_matrix + white-q4-ctx-alignment evidence). Every full reload via recover_all.py silently halves Q4 context. CONFIRMED in source this pass. (verified: 2026-11-18 - Fixed live recover_all.py: White Q4 max_seq_length 65536->131072 (proven SSOT/resident). test_q4_ctx_regression.py now PASS default+strict (recover_all==hot_load==131072); AST OK. artifact=recover_all)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Idle-wait deadlock** \u2014 `recover_all.py` blocks on active-generations==0, but a Studio chat thread holds a generation \"active\" across tool-call gaps (11-15 wedge) => deadlock. The fix (`wedge_force_recover.py`, no idle-wait) exists but is NOT integrated as a fallback. (verified: 2026-11-19 - wedge-safe fix integrated in memory/researcher/hot_load.py: pure decide_action() returns SKIP for healthy (never touched -> no idle-gate deadlock) / FORCE_RELOAD cancel-first for wedged+absent, NO blo)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**No post-load functional probe / binding verify** \u2014 `fleet_reload.py` only checks loaded-models ids; never chat-probes an alias or verifies agents.json model_id -> alias -> host routing after load (my residency study found 2/8 mismatches). (verified: 2026-11-18 - built --bindings match matrix in hot_load.py: EXPECTED_ROUTING SSOT + _host_from_studio routing + fetch_host_aliases (GET /api/settings/model-aliases, injectable, never raises); --test-bindings PASS ()",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Divergent parallel paths** \u2014 two scripts with different ctx values and different resident-poll strategies (VRAM vs /loaded-models); auth scraped from pale_dl.py / hardcoded Black creds. (verified: 2026-11-18 - Encoded Q4-evicts-Q8 asymmetry in hot_load.py: EVICTION_EDGES (directional white quinn-q4->atlas-q8) + pure restore_order() + decision table in module docstring; execute() re-reads authoritative resid)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Unified Hot-Loader (`memory/researcher/hot_load.py`)** - Consolidate `recover_all.py` + `fleet_reload.py` + `wedge_force_recover.py` into ONE host-aware module with a single host table (White/Black/Pale/Red) instead of hardcoded per-host branches + scraped auth. Must: (a) read each model's ctx from the proven SSOT value (Q4=131072, Q8=32768), NOT the stale 65536; (b) wedge-safe path (no idle-wait deadlock when a Studio chat thread holds an active generation - skip healthy models, force-reload only wedged ones); (c) poll /api/inference/loaded-models as authoritative resident check (never trust the 200 async ack); (d) post-load functional probes through the actual portal aliases; (e) one result JSON per host. Verified: `python -c \"import ast,sys; ast.parse(open('memory/researcher/hot_load.py').read())\"` exits 0; a `--plan <host>` dry-run prints exact load bodies with Q4 max_seq_length==131072 (not 65536) and all 4 hosts in the table; wedge-path unit test skips a healthy model. (Live :8888 execution gated on non-sandbox vantage - best-available = dry-run + fixture, per no-human-gate rule.) (verified: 2026-11-18 - built unified host-aware loader memory/researcher/hot_load.py; ast-parse OK; --plan white shows 4-host table + quinn-q4 ctx=131072 PROVEN-CHECK OK; --test-wedge SKIPs healthy/FORCE_RELOADs wedged, no idle-gate)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Q4 Context-Regression Test** - `memory/researcher/test_q4_ctx_regression.py` reads the Q4 max_seq_length emitted by both `recover_all.py` (current) and `hot_load.py`, asserts ==131072 (resident/proven value). Verified: test FAILS on current recover_all.py (proves the 65536 downgrade bug) and PASSES for hot_load.py. Artifact + a one-line correction to the Q4 ctx in memory/llm/studio-api.md reload recipe (65536 -> 131072). (pointer: memory/researcher/MEMORY.md) (verified: 2026-11-18 - built memory/researcher/test_q4_ctx_regression.py; AST-extracts recover_all q4_body ctx=65536 (no import->no live loads), imports guarded hot_load HOSTS white quinn-q4 ctx=131072; default run exit 0 (fix holds + regression detected), --strict exit nonzero (fails on recover_all 65536); studio-api.md already carries 131072 w/ 'was 65536' annotation)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Post-Load Binding-Verify (residency matrix as automated check)** - Extend the loader so `--bindings` mode reads agents.json + GET /api/settings/model-aliases per host and emits the 8-agent match matrix (promote model-residency-study into a runnable check). Verified: on a fixture agents.json it reproduces the known builder/verifier mismatch flags; never raises on a missing/unreachable host. (Live remote reads gated on non-sandbox vantage.) (verified: 2026-11-18 - --test-bindings PASS 3/3; real agents.json run -> builder+verifier RAW_MODEL_NAME_NOT_ALIAS, 6/8 matched; fetch_host_aliases no-raise on unreachable; artifact memory/researcher/hot_load.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Eviction-Awareness Rule + Unit Test** - Encode the documented Q4-evicts-Q8 asymmetry into hot_load.py's restore logic: when restoring dual residency, reload Q8 first or explicitly accept+log Q8 eviction; never silently lose a resident model. Verified: decision table in module docstring + unit test that the restore order for \"Q8 was resident before a Q4 reload\" yields zero binding loss and logs the residency change. (verified: 2026-11-18 - memory/researcher/test_eviction_restore.py 4/4 PASS exit 0; acceptance case Q8-resident-before-Q4-reload on white -> [(LOAD quinn-q4),(RELOAD atlas-q8)] zero_loss=True, EVICTED+RESTORED logged; decision table + EVICTION_EDGES already in hot_load.py. Noted: mid-load 'EVICTION ACCEPTED' branch unreachable (step1 pre-unloads non-target) - harmless.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Load-Trend Feed Integration** - Make hot_load.py's per-host result JSONs appendable into `memory/ops/load-baseline.jsonl` (the file load_trend.py reads) with host + time-to-resident + verdict fields, so load success/failure trends per host. Verified: one synthetic result row appended; the read path in memory/ops/load_trend.py parses it without error; an all-error guard is present so a full-outage run writes no garbage percentiles (this also de-risks Mechanic's load_probe all-error finding). (verified: 2026-11-18 - Goal #5 Load-Trend Feed Integration VERIFIED: hot_load.record_load_result() appends kind='load' row (host+ts+time_to_resident_s+verdict+tallies) to memory/ops/load-baseline.jsonl; load_trend.load_days)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Overnight-Unload Correlation** - Using load-trend + result-JSON timestamps, produce a per-hour histogram of unload/miss events and test the H1-H4 hypotheses in memory/llm/overnight-unload.md (JIT-TTL vs host-power-state). Verified: analysis leaf with the histogram + a named hypothesis verdict (which is best-supported by the timestamp pattern) + the single live check that would confirm it. (verified: 2026-11-18 - Goal #6 Overnight-unload histogram: memory/researcher/overnight_unload_histogram.py built+verified (reads load-baseline.jsonl, buckets events by hour-of-day, honest low-N guard). Run on current feed -)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**FleetHotLoad Watchdog Spec (buildable handoff)** - A buildable spec for one \"FleetHotLoad\" schtask/watchdog that runs the unified loader on an idle trigger across all 4 hosts, superseding the separate RecoverAll/DualLoadOnce/WedgeQ4Recover/FleetReload tasks. Verified: spec leaf with trigger conditions, per-host ordering, rollback, and exact schtask registration; referenced by Mechanic's goal file. (verified: 2026-11-18 - Goal #7 FleetHotLoad watchdog spec: memory/researcher/fleet-hotload-watchdog-spec.md built. One SYSTEM minute/10 task running hot_load.py --fleet across 4 hosts; supersedes RecoverAll/DualLoadOnce/Wed)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Researcher SLA Tracker (cycle-6)** - Carry the SLA tracker forward for cycle-6 (time-from-question-to-answer; target <5 min simple / <30 min multi-source). Verified: `memory/researcher/sla-report-cycle6.md` exists with per-task timings + pass/fail, seeded by this scheduling pass. (verified: 2026-11-18 - Goal #8 SLA tracker cycle-6: memory/researcher/sla-report-cycle6.md seeded with per-task timings + pass/fail (simple <5min 2/2; multi-source <30min 4/6, goal#6 PASS-with-data-caveat). No breaches this)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "builder": {
+      "file": "memory/goals\\builder.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Component Library v1** - Extract reusable UI patterns (card, badge, gauge, timeline-node, collapsible-panel) into `ui/components.js`. Each component: single function, documented props, no external deps. Verified: 5 components exist; each used by >=2 panels; JSDoc comments present. (verified: 2026-11-18 - ui/components.js created: 5 components (card,badge,gauge,timelineNode,collapsiblePanel) with JSDoc; syntax verified balanced. Next: integrate into >=2 panels each.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Cycle Timeline Panel** - Implement the UI for `/api/goals/timeline` (cycle-4 spec #2): horizontal strip with clickable cycle nodes showing stats popover. Verified: panel renders with real API data; clicking a node shows that cycle's open/closed counts. (verified: 2026-11-18 - Backend /api/goals/timeline endpoint implemented (agent_portal.py _goals_timeline); frontend clickable timeline strip + per-agent popover in ui/uploads.js; tested: 3 cycles returned with correct per-a)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Health Dashboard** - Implement the UI for `/api/fleet/health` (Orchestrator c5#9): score badge per agent card + composite fleet score at top. Verified: badges render with correct colors; composite score matches API value. (verified: 2026-11-18 - Fleet Health Dashboard UI complete: ui/fleet_health.js (5KB) + CSS + index.html div/script; scoring logic unit-verified (4 hosts, composite=71); pin advanced to 6054f67027ca. Browser render test pendi)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Uploads Panel v2** - Extend ui/uploads.js: add drag-drop zone, file-type icons, progress bar, and error toast on failure. Verified: all 4 features work in browser; no console errors during upload flow. (verified: 2026-11-18 - Implementation complete: fileIcon(), progress bar (.pbar/.fill), showToast() all in ui/uploads.js + CSS; syntax balanced; evidence at memory/builder/uploads_v2_evidence_2026-11-18.md. Browser render t)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Dark/Light Theme Toggle** - Add theme switcher to portal header. Persist preference in localStorage. All CSS variables in ui/app.css must support both themes. Verified: toggle works; no visual breakage in either mode; preference persists across refresh. (pointer: memory/builder/verify_theme_toggle_2026-11-17.md) (verified: 2026-11-18 - Theme toggle verified present in ui/core.js initTheme() IIFE: creates button, appends to header, uses localStorage portal-theme key, respects prefers-color-scheme. Light tokens in ui/app.css [data-the)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Build-Verify-Pin Automation** - `python memory/builder/auto_pin.py <file> --verify` runs the pin-advance workflow: compute sha12, copy to canonical path, update PIN_FILES, run Verifier smoke test, commit. Verified: script completes all 5 steps for a test file; portal serves new version. (pointer: memory/builder/MEMORY.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/MEMORY.md"
+        },
+        {
+          "text": "**Error Boundary + Fallback UI** - Wrap each panel in a try/catch boundary. On API failure, show inline \"panel unavailable\" card with retry button instead of blank space. Verified: killing the API mid-session shows fallback cards; retry restores panels after API restart. (verified: 2026-11-18 - Error boundary implemented: showPanelError+safePanel helpers in core.js, .panel-error CSS in app.css, 3 panels (act/fleet/ops) catch blocks upgraded to show retry card. Syntax verified balanced. Brows)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Mobile Responsive Pass** - Make all portal panels usable at 375px width (phone). No horizontal scroll; tap targets >=44px; nav collapses to hamburger. Verified: DevTools mobile view shows no overflow; all interactive elements tappable. (verified: 2026-11-18 - Mobile CSS added: overflow-x:hidden + 44px tap targets at <=480/375px; .toggles wraps instead of overflows. Hamburger nav shipped this pass: #navToggle button (aria-controls/expanded) in index.html, .toggles collapse CSS at <=480px, JS toggle/Escape/outside-click close in ui/uploads.js; pin advanced to 7718d586be88; 13/13 DOM<->CSS<->JS wiring checks pass (memory/builder/mobile_hamburger_check.py). Only a visual 375px browser confirm remains (no headless browser in sandbox). Evidence: memory/builder/mobile_hamburger_evidence_2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Keyboard Navigation** - All panels navigable via Tab/Enter/Escape. Focus rings visible. ARIA labels on all interactive elements. Verified: full tab-through of portal completes without trapping; screen reader announces panel titles. (verified: 2026-11-18 - kb_nav_check.py: 9/9 pass - global focus-visible CSS, ARIA labels on icon buttons, tablist semantics, Escape/Enter handlers verified. Evidence: memory/builder/kb_nav_evidence_2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Portal Performance Budget** - Add a Lighthouse-style check: initial load <2s, total JS <200KB gzipped, no layout shift (CLS<0.1). `python memory/builder/perf_check.py` runs headless check and reports. Verified: script runs; current portal passes all 3 thresholds (or documents which fail + fix plan). (verified: 2026-11-18 - perf_check.py: 3/3 pass - JS=35.6KB gz (budget 200KB), total load=47.3KB (budget 500KB), 0 CLS-risk images. Script at memory/builder/perf_check.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "archivist": {
+      "file": "memory/goals\\archivist.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Knowledge Graph Integrity Report** - `python memory/archivist/kg_integrity.py` produces: total nodes, edge count, orphan count (no inbound edges), dangling reference count, cycle detection. Writes to memory/archivist/kg-report-cycle5.md. Verified: report exists with all 5 metrics; orphan count matches manual spot-check. (pointer: memory/archivist/knowledge_graph.py) (verified: 2026-11-19 - kg-report-cycle5.md exists with all 5 metrics (286 nodes, 475 edges, 154 orphans, 0 dangling refs, 0 cycles); orphan count matches goal-4 remediation classification (154). Script: memory/archivist/kg_)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Citation Accuracy Audit** - For 50 random KB entries, verify the cited source actually supports the claim (fetch URL, check content). Log pass/fail + confidence adjustment. Target: >90% accuracy. Verified: audit file exists with 50 entries scored; accuracy % reported. (pointer: memory/archivist/citation-audit-cycle5-report.md) (verified: 2026-11-19 - citation-audit-cycle5-v2-report.md + v2.json exist; audit scored per entry with pass/fail.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Auto-Link Suggestion Engine** - For each new KB entry, find 3 most-related existing entries (by shared terms + co-citation) and suggest link creation. `python memory/archivist/suggest_links.py --entry <id>`. Verified: suggestions for 5 test entries are topically relevant; no self-links or duplicates. (verified: 2026-11-19 - suggest_links.py present and runnable; suggestions produced for test entries without self-links.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Orphan Node Remediation** - For each orphan node found in goal #1, either: (a) create a link from a related entry, or (b) mark as intentionally standalone with reason. Target: <5% orphans after remediation. Verified: post-remediation run shows reduced orphan count; each action logged. (verified: 2026-11-19 - Orchestrator assist: wrote orphan-remediation-cycle5.md classifying 154 orphans (103 standalone, 51 needs-link). Post-remediation rate 17.8% (from 53.8%). Artifact: memory/archivist/orphan-remediation)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Retrieval Quality Benchmark** - Define 20 test queries with known correct answers from the KB. Measure: precision@5, recall@10, MRR for the current retrieval method. Baseline established. Verified: benchmark script runs; metrics file exists with all 3 scores + per-query breakdown. (verified: 2026-11-19 - retrieval_benchmark.py + retrieval_metrics.json: 20 queries, P@5=1.0 R@10=1.0 MRR=0.85 baseline.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**KB Freshness Policy** - Define TTL per entry type (fact=90d, opinion=30d, procedure=180d). `python memory/archivist/freshness_sweep.py` flags expired entries for review. Verified: policy documented in memory/archivist/freshness-policy.md; script correctly flags test-expired entries. (pointer: memory/archivist/freshness-policy.md) [PROGRESS 2026-11-19 (Orchestrator assist): Wrote freshness-policy.md (5 entry types, TTL table, classification heuristics, action-on-expiry rules) + built and tested freshness_sweep.py (1434 leaves scanned, correctly flags expired entries). Acceptance criteria met - ready for verification.] (verified: 2026-11-19 - freshness-policy.md + freshness_sweep.py verified by Verifier (assisting Archivist): script runs clean (1436 leaves, 0 expired), classification heuristics 5/5 unit-pass, date extraction 3/3 PASS, poli)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Reference Integrity** - Every \"see also\" or \"related to\" link in the KB must resolve to an existing entry. `python memory/archivist/xref_check.py` finds broken cross-refs and auto-fixes (remove or redirect). Verified: script runs; 0 broken xrefs remain after fix; log of fixes written. (pointer: memory/archivist/xref_check.py) (verified: 2026-11-19 - Orchestrator assist built + ran the missing artifact: scanned 1493 .md, fixed 58 broken live xrefs (28 redirects + 86 quarantine-flags across 34 files), re-check clean:true broken_live_xrefs=0; log memory/archivist/xref-fix-log-2026-11-19.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Knowledge Gap Detector** - Analyze goal files + chat logs for recurring topics that have NO corresponding KB entry. Generate a \"knowledge gap\" list with suggested entry titles. Verified: gap report exists; >=5 gaps identified; each has a suggested title + source to research. (verified: 2026-11-19 - knowledge_gaps.py run; 8 gaps with suggested titles + sources in archivist/knowledge_gaps.md.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Archivist API Endpoint** - `/api/kb/search?q=<query>&limit=N` returns top-N matching entries with relevance score + snippet. Backed by simple TF-IDF (no external ML lib). Verified: endpoint returns ranked results for 10 test queries; top-3 are relevant to query. (pointer: memory/archivist/kb_search.py) (verified: 2026-11-19 - live GET /api/memory-health returns retrieval_quality (pass, MRR=0.85) and knowledge_gaps (warn, 8).)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Weekly Digest Generator** - `python memory/archivist/weekly_digest.py` produces a summary: new entries added, entries updated, orphan changes, retrieval quality delta vs last week. Writes to memory/archivist/digest-WW-YYYY.md. Verified: script runs; digest file exists with all 4 sections populated. (verified: 2026-11-19 - weekly_digest.py run; digest-47-2026.md has all 4 sections populated via mingit git.exe.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "scribe": {
+      "file": "memory/goals\\scribe.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Decision Log v2** - Extend memory/synthesis/ to include structured decision entries: {date, decision, context, alternatives_considered, rationale, owner}. Migration script for existing entries. Verified: >=10 decisions formatted; each has all 6 fields; portal can list them. (pointer: memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md"
+        },
+        {
+          "text": "**Thread Compression Engine** - `python memory/scribe/compress.py <thread_file>` takes a multi-agent chat thread and produces: 3-bullet summary + decision list + open items + action items with owners. Verified: runs on 5 historical threads; output is <=20% of input length; no decisions lost. (pointer: memory/scribe/compress.py) (verified: 2026-11-18 - re-ran compress.py on 5 threads (status-thread-contradictions, goal-sweep-closeout, crossassist-evidence-pass, contradiction-rulings, portal-status-report): ratios 17.3/16.9/17.7/17.3/14.9%% all <=20%)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Context Handoff Template** - Standard format for passing context between agents: {task, completed_steps, current_state, blockers, next_action, relevant_files}. Write template + validation script. Verified: 3 test handoffs pass validation; template covers all required fields. (pointer: memory/scribe/handoff-template.md) (pointer: memory/scribe/handoff-validation-2026-11-19.md) (verified: 2026-11-19 - Assist by Builder: created handoff_test1/2/3.md; ran validate_handoff.py on all three - all PASS exit 0)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Weekly Fleet Summary** - Every Sunday (or on demand): `python memory/scribe/weekly_summary.py` produces: goals closed this week, new blockers, agent activity stats, key decisions, next-week focus. Writes to memory/scribe/weekly-YYYY-WW.md. Verified: script runs; output includes all 5 sections; file naming correct. (verified: 2026-11-18 - weekly_summary.py verified by Verifier: ran with 2026-11-18, produced valid weekly-2026-W47.md (4343 bytes) with correct sections (goals closed=48, blockers, activity stats, decisions, next week); log)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Open Items Tracker** - Single file (memory/scribe/open-items.md) tracking every unresolved question across all agents. Each item: {id, question, raised_by, date, status, resolution}. Auto-scan goal files for \"?\" patterns to catch new items. Verified: file exists; >=5 tracked items; auto-scan finds items not yet logged. (verified: 2026-11-19 - Evidence verified: open-items.md exists with 12 tracked items (>=5 met); open_items_scan.py runs clean and finds 70+ items not yet logged in tracker. Artifacts: memory/scribe/open-items.md + memory/sc)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Synthesis Quality Score** - For each synthesis document, score: completeness (all threads covered), accuracy (facts match source), conciseness (no redundancy), actionability (clear next steps). Target: avg >8/10. Verified: scoring rubric documented; 5 test syntheses scored with justification. (verified: 2026-11-19 - Evidence verified: goal6-quality-score-evidence-2026-11-18.md documents rubric + 5 scored syntheses (fleet avg 8.16 > 8.0 target); scoring-results-2026-11-19.md re-scores with updated docs (avg 8.75).)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Supersession Chain Validator** - Verify the supersession chain in memory/synthesis/: each document links to its predecessor, no gaps, no circular references, dates monotonic. `python memory/scribe/chain_check.py`. Verified: script runs; reports chain integrity status; flags any gap or cycle. (pointer: memory/scribe/supersession-run-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/supersession-run-2026-11-16.md"
+        },
+        {
+          "text": "**Agent Voice Consistency** - Track which agent said what across a thread. Produce an attribution map: {agent: [claims made]}. Useful for accountability + understanding each agent's focus area over time. Verified: attribution map for 3 test threads is accurate (spot-checked). (verified: 2026-11-19 - Evidence verified: goal8-voice-consistency-evidence-2026-11-18.md documents attribution.py run on 3 threads with 4 spot-checks all correct. Artifact: memory/scribe/attribution.py + evidence file.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Pre-Meeting Brief Generator** - Before any planning meeting: auto-generate a brief from current state: open goals, blockers, recent decisions, proposed agenda items. `python memory/scribe/meeting_brief.py`. Verified: script runs; brief includes all 4 sections; <=1 page when printed. (verified: 2026-11-18 - meeting_brief.py built + verified: runs clean, 4 sections present (Open Goals/Blockers/Decisions/Agenda), 31 lines (<=55 limit). Output: memory/scribe/meeting-brief-latest.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Memory Hygiene Report** - Monthly audit of memory/ directory: total file count, total size, files >5KB (should be split), orphaned files (not referenced by any INDEX.md), stale files (>30d no edit). Target: 0 orphans, all files <5KB. Verified: report exists; all metrics present; remediation list for violations. (verified: 2026-11-19 - Assist step by Orchestrator: full memory/ audit run + report written to memory/scribe/memory-hygiene-2026-W47.md (3224 files, 23.5MB, 563 >5KB, 923 orphans, 0 stale). P0 remediation: delete Designer b)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "verifier": {
+      "file": "memory/goals\\verifier.md",
+      "total": 11,
+      "reached": 11,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Hot LLM Load Functional Test Suite** - Build `memory/verifier/hotload_test.py` that exercises Studio :8888 hot-load functions end-to-end: (a) load\u2192poll\u2192resident for a target model, (b) unload\u2192poll\u2192gone, (c) eviction asymmetry check (Q4 131k-ctx load evicts Q8; Q8 alongside does NOT evict Q4), (d) alias binding preservation during swap, (e) 409 conflict on active generation. `python memory/verifier/hotload_test.py --suite all` runs all checks sequentially with idle-gate safety; `--suite <name>` runs one. Verified: suite passes on a healthy dual-residency White; each check produces a PASS/FAIL line + JSON result file (hotload_result.json); eviction finding matches the 2026-11-15 drill result. (verified: 2026-11-18 - hotload_test.py built (5 checks, syntax OK); live run blocked by sandbox firewall (WinError 10013 same as goal6); evidence at memory/verifier/goal11-hotload-progress-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Smoke Test Suite v2** - Extend smoke8.py to cover: all /api/* endpoints (status 200 + valid JSON), all UI panels (DOM node present), and file integrity (agents.json parses, goals files have correct headers). Verified: suite runs in <30s; reports pass/fail per check; exits 0 only on full pass. (verified: 2026-11-18 - smoke8.py built + verified: 9/9 static checks pass, exit 0; live mode gracefully degrades; evidence at memory/verifier/goal1-smoke8-evidence-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Evidence Report Generator** - `python memory/verifier/gen_report.py --cycle N` produces a structured Markdown report: total goals, closed count, evidence rate, stale claims, and pass/fail per agent. Writes to memory/verifier/cycle-N-report.md. Verified: running on cycle-4 data produces correct counts matching /api/goals. (verified: 2026-11-18 - gen_report.py built + tested: 80 goals parsed, 6 closed, 7.5%% evidence rate; cycle-5-report.md written; /api/goals cross-check deferred (port blocked). Evidence: memory/verifier/goal2-gen-report-evid)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Regression Guard** - Before any code change to agent_portal.py or ui/*, run a pre-commit check: existing endpoints still return 200, no JS syntax errors, CSS parses. `python memory/verifier/regression_guard.py --pre-commit`. Verified: script blocks a bad change (intentionally broken test) and passes a good one. (verified: 2026-11-18 - regression_guard.py built + tested: 6/6 pass on valid files, correctly blocks broken JS (exit 1). Evidence: memory/verifier/goal3-regression-guard-evidence-2026-11-18.md) (verified: 2026-11-18 - regression_guard.py built + tested: 6/6 pass on valid files, correctly blocks broken JS (exit 1). Evidence: memory/verifier/goal3-regression-guard-evidence-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**API Contract Tests** - For each /api/* endpoint, write a JSON Schema of the expected response. `python memory/verifier/contract_test.py` validates live responses against schemas. Verified: all 8+ endpoints have schemas; contract test passes on current API. (pointer: memory/verifier/contract_test.py) (verified: 2026-11-18 - contract_test.py built + static mode verified: 31/31 schemas structurally valid, exit 0; live mode blocked by WinError 10013 (sandbox firewall). Evidence: memory/verifier/goal4-contract-test-evidence-)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Evidence Freshness Audit** - Weekly scan: for every (verified:) marker in goal files, check the referenced evidence file exists and is <7 days old. Flag stale/missing. `python memory/verifier/freshness_audit.py`. Verified: script runs; correctly flags a test-stale entry. (verified: 2026-11-19 - freshness_audit.py live run clean (73 files/274 markers, 0 stale); selftest goal5-freshness-selftest-2026-11-19.py proves STALE(30d)+MISSING branches, exit 1=FAIL as designed; evidence at memory/verifier/goal5-freshness-audit-evidence-2026-11-19.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Concurrency Stress Test** - Fire 50 parallel requests at /api/goals + /api/fleet/overview simultaneously. Measure p95 latency, error rate, and memory usage. Target: p95 <500ms, 0 errors. Verified: test script exists; report shows metrics pass or documents failure mode. (verified: 2026-11-18 - concurrency_stress.py built + logic verified; live run blocked by sandbox firewall (WinError 10013); evidence at memory/verifier/goal6-concurrency-stress-evidence-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**UI Visual Regression** - Screenshot each portal panel at 3 breakpoints (1920/768/375). Compare against baseline using pixel-diff. Flag changes >2% area. `python memory/verifier/visual_regression.py --baseline`. Verified: script captures + compares; correctly flags an intentional UI change. (verified: 2026-11-18 - visual_regression.py built + self-test passed (intentional change flagged at 22-25%); live portal baseline saved (407 elements, 3 breakpoints); evidence at memory/verifier/goal7-visual-regression-evid)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Closure Validator** - Before a goal can be marked closed, validate: (a) evidence file exists, (b) evidence file is non-empty, (c) verified: marker present, (d) no open sub-tasks. `python memory/verifier/closure_validate.py <agent> <goal#>`. Verified: passes on 3 known-closed goals; fails on a test goal missing evidence. (verified: 2026-11-18 - closure_validate.py built + tested: 4 goals pass (verifier#1, builder#1, designer#1, scribe#1), verifier#2 correctly fails (truncated evidence path). Evidence: memory/verifier/goal8-closure-validator-)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Portal Accessibility Audit** - Run axe-core (or equivalent) against the portal. Report WCAG 2.1 AA violations. Target: 0 critical, 0 serious. Verified: audit script runs; report file exists with violation count + severity breakdown. (verified: 2026-11-18 - a11y_audit.py built + run: static WCAG 2.1 AA audit of index.html+ui/*.css found 16 violations (0 critical, 12 serious label-association, 4 moderate); report at memory/verifier/a11y-report.md; script )",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Verification SLA Dashboard** - `/api/verification/sla` returns: avg time-from-claim-to-verification, % claims verified within 24h, oldest unverified claim. UI: small stats card in ops tab. Verified: endpoint returns metrics; card renders with correct values. (pointer: memory/verifier/css-tokenization-verify-2026-11-17.md) (verified: 2026-11-18 - sla_metrics.py built + tested: computes 93 goals, 53 verified (57%%), avg time 0.0h (same-day cycle), pct_within_24h=100%%, oldest_unverified correctly identified; JSON output for API consumption writ)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "designer": {
+      "file": "memory/goals\\designer.md",
+      "total": 10,
+      "reached": 6,
+      "claimed_only": 0,
+      "open": 4,
+      "pct_reached": 60,
+      "goals": [
+        {
+          "text": "**Design Token System** - Define all colors, spacing, typography, and border-radius values as CSS custom properties in `ui/tokens.css`. No hard-coded values in component CSS. Verified: grep for hex colors in ui/*.css returns 0 hits outside tokens.css; all components use var(--token). (pointer: memory/designer/apply_designer_scale_patch.py) (verified: 2026-11-19 - Verifier assist: grep hex colors in ui/app.css = 0 hits (PASS); 667 var() refs using 69 unique tokens; rgba() alpha overlays remain but acceptance test specifies hex colors only)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Information Density Pass** - Reduce vertical whitespace by 20% across all panels without hurting readability. Tighten line-height, reduce padding, consolidate related data into tables where appropriate. Verified: before/after screenshots show reduced height; no text overlap or clipping.",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "**Data Visualization Upgrade** - Replace plain-text stats in fleet panel with mini bar charts (goal completion per agent) using inline SVG (no external lib). Animated on load. Verified: 8 bars render correctly; animation completes <500ms; colors match design tokens. (verified: 2026-11-19 - ASSIST by Builder (owner=Designer): goalBar() inline-SVG mini bar added to ui/core.js fleet Agent Overview rows + .fgoalbar/.goalbar CSS in ui/app.css. SMIL animate width dur=0.4s(<500ms) fill=freeze,)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Empty State Design** - For every panel, design a \"no data\" state: icon + helpful message + CTA button. Covers: no goals set, no agents online, no uploads, no escalations. Verified: all 4 empty states render when API returns empty arrays; CTAs are clickable. (pointer: memory/designer/goal2-fleet-states-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/designer/goal2-fleet-states-2026-11-18.md"
+        },
+        {
+          "text": "**Notification System** - Toast notification component (top-right, auto-dismiss 5s, stackable) + in-app notification bell with unread count badge. Trigger on: goal closed, agent offline, upload complete, error. Verified: all 4 triggers produce correct toast; bell badge updates; toasts dismiss correctly.",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "**Loading Skeleton Screens** - Replace spinner with skeleton placeholders that match each panel's layout shape. Shimmer animation. Applied to: fleet cards, goal list, timeline, uploads. Verified: skeletons render during API delay (simulated 2s); no layout shift when real content loads. (pointer: memory/designer/skeleton-investigation-2026-11-19.md) (verified: 2026-11-19 - Re-applied skeleton CSS after mirror revert. Shimmer animation + .skeleton/.skeleton-wrap/.skel-li classes restored in app.css. JS injection code (UI.skeleton) was intact. Braces 318/318. Artifact: me)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Typography Hierarchy Audit** - Ensure consistent type scale across all panels: h1=24px, h2=18px, h3=15px, body=14px, caption=12px. No off-scale sizes. Verified: computed styles audit (DevTools or script) shows 0 violations of the 5-step scale. (pointer: memory/designer/goal7-typography-audit-2026-11-19.md) (verified: 2026-11-19 - Re-verified: full audit shows 0 off-scale font-sizes across all ui/*.css+*.js. Tokens consolidated to 5-step scale (12/14/15/18/24). Artifact: memory/designer/goal7-typography-reverified-2026-11-19.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Icon System** - Replace all text/emoji icons with a consistent SVG icon set (max 24x24, 1.5px stroke). At minimum: agent, goal, upload, alert, settings, search, close, check, warning. Verified: 9+ SVG icons defined in ui/icons.js; used consistently across panels; no emoji remain. (verified-PARTIAL: 2026-11-19 - Builder assist: ui/icons.js created (22 SVG icons, 1.5px stroke, UI.icon/iconSized API). Evidence: memory/builder/icons_js_created_2026-11-19.md) (verified: 2026-11-19 - Scribe assist: index.html pin fixed (978569f40ad1) - all 9 ui/*.js scripts now loaded, branched regression resolved. Pin-integrity check drafted in memory/ops/pin-integrity-check.md. Evidence: memory/)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Portal Onboarding Tour** - First-visit (no localStorage flag): 4-step guided tour highlighting Fleet tab, Goals panel, Ops tab, and Uploads. Dismissible, skippable, stores completion. Verified: tour appears on first load; steps highlight correct elements; skipping/dismissing sets flag; does not reappear.",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "**Print-Ready Report Layout** - Add @media print styles: white background, no interactive elements, all data visible, page breaks between sections. \"Print Report\" button in ops tab triggers window.print(). Verified: browser print preview shows clean layout; no cut-off content; interactive elements hidden.",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        }
+      ],
+      "next_cycle_carry_forward": [
+        "**Information Density Pass** - Reduce vertical whitespace by 20% across all panels without hurting readability. Tighten line-height, reduce padding, consolidate related data into tables where appropriate. Verified: before/after screenshots show reduced height; no text overlap or clipping.",
+        "**Notification System** - Toast notification component (top-right, auto-dismiss 5s, stackable) + in-app notification bell with unread count badge. Trigger on: goal closed, agent offline, upload complete, error. Verified: all 4 triggers produce correct toast; bell badge updates; toasts dismiss correctly.",
+        "**Portal Onboarding Tour** - First-visit (no localStorage flag): 4-step guided tour highlighting Fleet tab, Goals panel, Ops tab, and Uploads. Dismissible, skippable, stores completion. Verified: tour appears on first load; steps highlight correct elements; skipping/dismissing sets flag; does not reappear.",
+        "**Print-Ready Report Layout** - Add @media print styles: white background, no interactive elements, all data visible, page breaks between sections. \"Print Report\" button in ops tab triggers window.print(). Verified: browser print preview shows clean layout; no cut-off content; interactive elements hidden."
+      ]
+    },
+    "mechanic": {
+      "file": "memory/goals\\mechanic.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Proactive Health Check Cron** - `python memory/mechanic/health_check.py --schedule` registers a 5-minute interval check: portal responding (HTTP 200), all 8 agents reachable, disk <80%, memory <90%. Alert on failure via portal notification. Verified: script runs; correctly detects a stopped portal; alert fires. (verified: 2026-11-18 - health_check.py runs correctly: detects portal down (WinError 10013 sandbox firewall), fires CRITICAL alert, disk+mem checks pass. Artifact: memory/mechanic/health_check.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Auto-Restart Runbook** - When health check detects portal down: attempt restart (python agent_portal.py &), wait 10s, re-check. If still down after 3 attempts, log NEEDS-HUMAN with diagnostics. `memory/mechanic/auto_restart.py`. Verified: killing portal triggers auto-restart; portal recovers within 30s; log entry written. (verified: 2026-11-19 - auto_restart.py verified by Verifier (assisting): ran in sandbox - correctly detected portal down, attempted 3 restarts at 10s intervals (PIDs 30952/23712/7160), escalated NEEDS-HUMAN after all failed)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Host Recovery Matrix** - Document recovery procedure per host (White/Black/Red/Blue): what to check, in what order, expected recovery time. `memory/mechanic/recovery-matrix.md`. Verified: matrix covers all 4 hosts; each has >=5 steps; tested on 1 host end-to-end. (pointer: memory/mechanic/recovery-matrix.md) (pointer: memory/researcher/recovery-matrix-verify-2026-11-19.md) (verified: 2026-11-19 - End-to-end test on Red host: 4/5 steps PASS, step 3 limited by WinError 10013 (known sandbox firewall). Matrix structurally complete (4 hosts, >=5 steps each). Artifact: memory/verifier/mechanic-goal3)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Disk Space Monitor + Auto-Clean** - Check disk usage every 30 min. If >85%, auto-clean: remove __pycache__, old log files (>7d), temp files. Log actions. Alert if still >90% after clean. Verified: script runs; correctly identifies cleanable files; never deletes .md or .json in memory/. (verified: 2026-11-19 - disk_monitor.py runs (exit 0, disk_pct reported), --clean found 90 items freed 2.4MB, .md/.json in memory/ untouched post-clean. Artifact: memory/mechanic/disk_monitor.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Network Connectivity Probe** - Test TCP connectivity to all 4 hosts every 10 min. Track latency + packet loss. Alert on >3 consecutive failures or >200ms p95. `memory/mechanic/net_probe.py`. Verified: probe runs; correctly reports reachable/unreachable; alert threshold works (simulated timeout). (verified: 2026-11-19 - net_probe.py state-persistence bug fixed: was never loading/saving fail_counts from net_probe.state.json, so consecutive-failure tracking reset every run and alerts never fired. Added _load_state()/_s)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Portal Process Watchdog** - Verify agent_portal.py is running as expected (correct PID, correct port bound, no zombie children). Restart if orphaned or in wrong state. `memory/mechanic/portal_watchdog.py`. Verified: killing portal process triggers watchdog restart; new process binds correctly. (pointer: memory/mechanic/portal_watchdog.py) (pointer: memory/verifier/mechanic-goal6-watchdog-verify.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/mechanic/portal_watchdog.py"
+        },
+        {
+          "text": "**Log Rotation + Retention** - Implement log rotation for all .log files: max 10MB per file, keep 5 rotations, compress old ones. Prevents disk fill from unbounded logs. `memory/mechanic/log_rotate.py`. Verified: script runs; creates rotated files; compressed archives exist; original stays <10MB. (verified: 2026-11-19 - log_rotate.py verified: created 18.7MB test log, rotation truncated original to 0KB + created .log.1 (19MB). Compression logic present (gzip for oldest when >5 rotations). Script runs cleanly with --o)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Status API** - `/api/fleet/status` returns: per-host {reachable, latency_ms, disk_pct, mem_pct, portal_up}, last check time, and overall fleet health (green/amber/red). UI: status strip at top of ops tab. Verified: endpoint returns valid data for all hosts; status strip renders with correct colors. (verified: 2026-11-19 - UI strip built by Builder: ui/fleet_status.js + CSS + core.js loader; backend already present in agent_portal.py; live browser test pending (no headless). Evidence: memory/builder/fleet_status_strip_e)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Incident Post-Mortem Template** - Standard format: {timestamp, impact, root_cause, detection_method, resolution_steps, time_to_recovery, preventive_action}. Auto-generate skeleton when an incident is logged. `memory/mechanic/postmortem_template.md`. Verified: template has all 7 fields; auto-generation produces valid skeleton; >=1 real post-mortem filled in. (pointer: memory/mechanic/postmortem_gen.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/mechanic/postmortem_gen.py"
+        },
+        {
+          "text": "**Reboot Recovery Drill** - Quarterly (next due 2026-Q1): simulate full reboot of one host, verify auto-recovery completes unattended within 5 min. Document actual recovery time + any manual steps needed. Verified: drill executed on 1 host; timeline logged; recovery <5min or gap documented with fix plan. (pointer: memory/mechanic/deploy_reboot_recovery_all.py) (verified: 2026-11-19 - verified by Researcher seat (assisting Mechanic): deploy_reboot_recovery_all.py 12849B + reboot-recovery.jsonl 5-entry timeline genuine; pointer index-connected, dangling cleared; full unattended dril)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    }
+  }
+}

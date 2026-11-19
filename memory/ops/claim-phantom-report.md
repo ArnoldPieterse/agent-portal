@@ -1,22 +1,12 @@
 # Claim-Phantom Report
-Generated: 2026-11-19 10:13 by `memory/ops/verify_claims.py` (Builder).
+Generated: 2026-11-19 20:15 by `memory/ops/verify_claims.py` (Builder).
 
 Classifies every `verified:` marker in seat goal files against the disk:
   * REAL    - verified + a cited artifact exists on disk
   * PHANTOM - verified + cited path(s) present but NONE exist  (stale/false claim)
   * UNCITED - verified + no machine-checkable path (manual-only; needs a pointer added)
 
-**Totals: 64 REAL, 3 PHANTOM, 26 UNCITED.**
-
-## PHANTOM claims (verified but artifact missing) — owner should re-do or drop the marker
-- **archivist #3** Auto-Link Suggestion Engine
-    - MISSING: `memory/archivist/suggest_links.py`
-- **archivist #6** KB Freshness Policy
-    - MISSING: `memory/archivist/freshness-policy.md`
-    - MISSING: `memory/archivist/freshness_sweep.py`
-- **archivist #10** Weekly Digest Generator
-    - MISSING: `memory/archivist/digest-WW-YYYY.md`
-    - MISSING: `memory/archivist/weekly_digest.py`
+**Totals: 72 REAL, 0 PHANTOM, 21 UNCITED.**
 
 ## UNCITED verified claims (no path to check — add an artifact pointer so the ledger can close them)
 - **orchestrator #4** VRAM Conflict Predictor + Alert
@@ -36,15 +26,10 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **archivist #4** Orphan Node Remediation
 - **archivist #5** Retrieval Quality Benchmark
 - **archivist #8** Knowledge Gap Detector
-- **archivist #9** Archivist API Endpoint
 - **scribe #6** Synthesis Quality Score
 - **designer #2** Information Density Pass
 - **designer #3** Data Visualization Upgrade
 - **designer #5** Notification System
-- **designer #7** Typography Hierarchy Audit
-- **designer #9** Portal Onboarding Tour
-- **designer #10** Print-Ready Report Layout
-- **mechanic #8** Fleet Status API
 
 ## REAL claims (verified + artifact present)
 - **orchestrator #1** Hot LLM Loading Functions - Expansion + Functional  -> `memory/orchestrator/model_scheduler.py`
@@ -77,7 +62,11 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **builder #10** Portal Performance Budget  -> `memory/builder/perf_check.py`
 - **archivist #1** Knowledge Graph Integrity Report  -> `memory/archivist/kg-report-cycle5.md`
 - **archivist #2** Citation Accuracy Audit  -> `memory/archivist/citation-audit-cycle5-report.md`
+- **archivist #3** Auto-Link Suggestion Engine  -> `memory/archivist/suggest_links.py`
+- **archivist #6** KB Freshness Policy  -> `memory/archivist/freshness-policy.md`
 - **archivist #7** Cross-Reference Integrity  -> `memory/archivist/xref-fix-log-2026-11-19.md`
+- **archivist #9** Archivist API Endpoint  -> `memory/archivist/kb_search.py`
+- **archivist #10** Weekly Digest Generator  -> `memory/archivist/weekly_digest.py`
 - **scribe #1** Decision Log v2  -> `memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md`
 - **scribe #2** Thread Compression Engine  -> `memory/scribe/compress.py`
 - **scribe #3** Context Handoff Template  -> `memory/scribe/handoff-template.md`
@@ -99,9 +88,12 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **verifier #9** Portal Accessibility Audit  -> `memory/verifier/a11y-report.md`
 - **verifier #10** Verification SLA Dashboard  -> `memory/verifier/css-tokenization-verify-2026-11-17.md`
 - **designer #1** Design Token System  -> `memory/designer/apply_designer_scale_patch.py`
-- **designer #4** Empty State Design  -> `memory/designer/goal2-fleet-states-2026-11-18.md`
+- **designer #4** Empty State Design  -> `memory/builder/empty_states_wire_2026-11-19.md`
 - **designer #6** Loading Skeleton Screens  -> `memory/designer/skeleton-investigation-2026-11-19.md`
+- **designer #7** Typography Hierarchy Audit  -> `memory/designer/goal7-typography-audit-2026-11-19.md`
 - **designer #8** Icon System  -> `memory/builder/icons_js_created_2026-11-19.md`
+- **designer #9** Portal Onboarding Tour  -> `memory/researcher/goal9-tour-stale-evidence-2026-11-19.md`
+- **designer #10** Print-Ready Report Layout  -> `memory/orchestrator/designer-goal10-print-stale-overclaim-2026-11-19.md`
 - **mechanic #1** Proactive Health Check Cron  -> `memory/mechanic/health_check.py`
 - **mechanic #2** Auto-Restart Runbook  -> `memory/mechanic/auto_restart.py`
 - **mechanic #3** Host Recovery Matrix  -> `memory/mechanic/recovery-matrix.md`
@@ -109,5 +101,6 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **mechanic #5** Network Connectivity Probe  -> `memory/mechanic/net_probe.py`
 - **mechanic #6** Portal Process Watchdog  -> `memory/mechanic/portal_watchdog.py`
 - **mechanic #7** Log Rotation + Retention  -> `memory/mechanic/log_rotate.py`
+- **mechanic #8** Fleet Status API  -> `memory/researcher/mechanic-goal8-fleet-status-stale-2026-11-19.md`
 - **mechanic #9** Incident Post-Mortem Template  -> `memory/mechanic/postmortem_gen.py`
 - **mechanic #10** Reboot Recovery Drill  -> `memory/mechanic/deploy_reboot_recovery_all.py`

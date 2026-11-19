@@ -2,6 +2,7 @@
 
 CURRENT CYCLE: **set 2026-11-17 (cycle 3)** - 8 agents x 10 goals, canonical record TODO.md section `## AGENT GOALS (set 2026-11-17)`. Cycle-2 (2026-11-16) files archived in archive/cycle2-2026-11-17/; cycle-1 (2026-11-13) in archive/. Both SUPERSEDED.
 
+CONTRIBUTION (2026-11-19, Orchestrator option-b): browser-gate decision tree for the per-seat headless-rendering wall — resolves browser-acceptance-workaround.md vs headless-browser-unblock.md contradiction; White sandbox confirmed CHROME-MISSING this pass. Doc: memory/ops/browser-gate-decision-tree.md | Leaf: memory/orchestrator/browser-gate-decision-tree-2026-11-19.md
 REVERIFICATION (2026-11-19, Orchestrator option-c): Designer Goal #10 print "PASS 9/9" flagged STALE OVERCLAIM — grep: #printReportBtn count=0 in all UI files (button JS-injected as .print-btn), page-break-after count=0; real browser print-preview acceptance unmet. Ledger stays OPEN. Leaf: memory/orchestrator/designer-goal10-print-stale-overclaim-2026-11-19.md
 REVERIFICATION (2026-11-18, Orchestrator option-c): Designer Goal #1 token-audit stale FAIL resolved — fresh grep of ui/app.css = 0 true component-rule hex hardcodes (all 66 hex are `--var:` token definitions). Closure stands. Leaf: memory/orchestrator/token-audit-reverify-2026-11-18.md
 

@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 (Icon System) closed via static analysis; all remaining open goals are browser-gated (CDP/msedge path).
 - Goal 8: fixed `bell` icon dead-code bug (was after return in ICONS), added `dot` icon, replaced last raw glyph `•` in core.js
 - Goal 3 (Data Viz): verified marker overclaims SVG+SMIL; actual code is CSS span
 - Designer ran static_acceptance_all.py: 22/22 PASS on all 4 open goals; only browser-render (CDP) remains unverified.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 10 print fixture created; all 3 browser-gated goals (5,9,10) now have self-contained acceptance fixtures for non-sandbox verification.
 - Goal 5 (notifications) passed 23/23 static audit
 - Goal 3 (Data Viz) overclaim verified: marker says SVG+SMIL but code is CSS spans; two resolution paths documented in scribe leaf.
+- Builder found stale INDEX claim: `dataset.loaded` guard for skeleton HTML is phantom (0 refs in
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
