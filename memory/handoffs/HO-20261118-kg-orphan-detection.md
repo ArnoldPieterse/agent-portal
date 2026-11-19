@@ -18,7 +18,7 @@ The knowledge graph incremental update is now hooked into `memory_mirror.py` pos
 ## Content
 ### What changed in the mirror pipeline
 ```
-main() -> [host mirrors] -> _run_post_sync() -> knowledge_graph.py --incremental
+main() -> [host mirrors] -> _run_post_sync() -> ../archivist/knowledge_graph.py --incremental
 ```
 - 30-second hard timeout (CREATE_NO_WINDOW child process)
 - Wrapped in try/except: a broken or slow graph pass NEVER delays or breaks the mirror

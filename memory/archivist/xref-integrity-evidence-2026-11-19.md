@@ -1,0 +1,1 @@
+<489 chars of arguments you sent, already written to memory/archivist/xref-integrity-evidence-2026-11-19.md; elided. Not tool output; file on disk holds it.>

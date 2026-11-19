@@ -42,7 +42,7 @@ propose, do not own these lanes. Evidence below is from this host's shared agent
 counter check to the probe so a silent miss is visible rather than discovered at closure.
 
 ## ARCHIVIST#6 — Knowledge decay model (SPEC MISMATCH in script)
-- Exists: memory/archivist/decay_score.py (54 lines, runs -> decay-report.md) + decay-report.md present.
+- Exists: memory/archivist/decay_score.py (54 lines, runs -> ../archivist/decay-report.md) + decay-report.md present.
 - Gap to criterion ("weekly schedule; auto-archive <0.2; alert referenced-in-last-7d but <0.5"): the script
   flags at `<0.35` for review and only WRITES A REPORT — it does not archive, uses 0.35 not 0.2/0.5,
   and has no "referenced in last 7 days" window.

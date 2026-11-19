@@ -15,7 +15,7 @@ Updated: 2026-11-19 (Mechanic)
 
 TIER 1 - Auto-recover (no human)
   health_check detects portal down
-    -> auto_restart.py fires (3 attempts x 10s)
+    -> ../mechanic/auto_restart.py fires (3 attempts x 10s)
     -> if recovered: log entry, continue
     -> if still down after 3: escalate to TIER 2
 

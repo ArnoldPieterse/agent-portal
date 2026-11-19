@@ -15,7 +15,7 @@ status-dot 3 states, theme-toggle JS present. Credit: Designer authored the gate
 
 ## B. TWO REMAINING design_check.py FLAGS ARE GATE-LOGIC FALSE POSITIVES (Designer to decide)
 Gate still exits FAIL on 2 items that are not real design violations (Goal #2 dark mode is already verified):
-1. "[data-theme="light"] token override block missing" -> app.css line 21 uses `[data-theme="dark"]`
+1. "[data-theme="light"] token override block missing" -> ⚠missing:app.css line 21 uses `[data-theme="dark"]`
    as the override with `:root` as the light DEFAULT (no explicit light block by design).
    Suggested one-line fix: check for `[data-theme="dark"]` (the real override) OR treat `:root` as the light baseline.
 2. "NO @media(prefers-color-scheme) fallback" -> that fallback lives in core.js (themeToggle IIFE reads

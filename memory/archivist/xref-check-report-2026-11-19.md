@@ -1,0 +1,67 @@
+# Xref Integrity Report
+Generated: 2026-11-19T10:12:22 by memory/archivist/xref_check.py
+
+- scanned files: 1493
+- broken live xrefs: 58
+- flagged-dead (quarantined) refs: 0
+- status: **NOT CLEAN**
+
+## Broken xrefs
+- `memory/archivist/MEMORY.md:4` [arrow] -> ../portal/architecture.md
+- `memory/archivist/supersession-findings-2026-11-16.md:9` [arrow] -> ../synthesis/2026-11-12-upgrade-round.md
+- `memory/archivist/supersession-findings-2026-11-16.md:10` [arrow] -> ⚠missing:D-partial.md
+- `memory/archivist/supersession-findings-2026-11-16.md:11` [arrow] -> ⚠missing:d-2026-11-14.md
+- `memory/archivist/supersession-findings-2026-11-16.md:12` [arrow] -> ⚠missing:d-2026-11-14.md
+- `memory/builder/INDEX.md:7` [arrow] -> ⚠missing:memory/builder/designer-goal6-skeleton-2026-11-19.md
+- `memory/builder/INDEX.md:40` [arrow] -> ⚠missing:memory/builder/agent-health-checks.json
+- `memory/designer/goal6-skeleton-relanded-2026-11-19b.md:20` [arrow] -> ⚠missing:core.js
+- `memory/designer/goal6-skeleton-relanded-2026-11-19b.md:21` [arrow] -> ⚠missing:core.js
+- `memory/designer/goal6-skeleton-relanded-2026-11-19b.md:22` [arrow] -> ⚠missing:uploads.js
+- `memory/designer/goal6-skeleton-relanded-2026-11-19b.md:23` [arrow] -> ⚠missing:uploads.js
+- `memory/designer/goal9-tour-wired-2026-11-19.md:28` [arrow] -> ⚠missing:core.js
+- `memory/designer/goal9-tour-wired-2026-11-19.md:28` [arrow] -> ⚠missing:fleet_topology.js
+- `memory/designer/goal9-tour-wired-2026-11-19.md:28` [arrow] -> ⚠missing:uploads.js
+- `memory/designer/goal9-tour-wired-2026-11-19.md:28` [arrow] -> ⚠missing:tour.js
+- `memory/goals/archive/builder-2026-11-13.md:10` [arrow] -> ⚠missing:daily_git_commit.py
+- `memory/goals/archive/orchestrator-2026-11-13.md:117` [arrow] -> ⚠missing:memory/llm/fleet-probe-alias-log.json
+- `memory/goals/researcher-attempts-cycle3-2026-11-18.md:45` [arrow] -> decay-report.md
+- `memory/handoffs/HO-20261118-kg-orphan-detection.md:21` [arrow] -> knowledge_graph.py
+- `memory/llm/studio-api.md:38` [arrow] -> ⚠missing:recover_result.json
+- `memory/mechanic/fleet-verify-2026-11-14.md:5` [arrow] -> ⚠missing:probe_fleet_1114b_result.json
+- `memory/mechanic/goal2_mirror_heal_productionized-2026-11-17.md:4` [arrow] -> ⚠missing:memory/mechanic/mirror-repairs.json
+- `memory/mechanic/mirror-mtime-guard-2026-11-13.md:38` [arrow] -> ⚠missing:probe_unc_ab_result.json
+- `memory/mechanic/mirror-mtime-guard-2026-11-13.md:38` [arrow] -> ⚠missing:probe_unc_ab2_result.txt
+- `memory/ops/blockers.md:26` [arrow] -> ../designer/design_breakpoint_check.py
+- `memory/ops/fleet-monitoring-cadence.md:18` [arrow] -> ../mechanic/auto_restart.py
+- `memory/ops/fleet-state-2026-11-15.md:9` [arrow] -> ⚠missing:_portal_pid.txt
+- `memory/ops/goal_ledger_record_fix-2026-11-18.md:30` [pointer] -> ⚠missing:.../does-not-exist.md
+- `memory/ops/host-port-task-map-2026-11-15.md:23` [arrow] -> ⚠missing:fleet_probe.log
+- `memory/ops/portal-split-seams-2026-11-17.md:30` [arrow] -> ⚠missing:agents.py
+- `memory/orchestrator/archivist-goal4-supersession-verify-2026-11-18.md:12` [arrow] -> ../mechanic/ac_a2_live_leg_r20.py
+- `memory/orchestrator/archivist-goal4-supersession-verify-2026-11-18.md:13` [arrow] -> ../mechanic/ac_a2_live_leg_r20.py
+- `memory/orchestrator/designer-qa-gate-unblock-2026-11-17.md:18` [arrow] -> ⚠missing:app.css
+- `memory/orchestrator/stale-claim-scribe-todo-memor-typo-2026-11-19.md:7` [arrow] -> ⚠missing:memory/scribe/MEMOR.md
+- `memory/portal/architecture.md:87` [arrow] -> ⚠missing:e2e_parallel_result.json
+- `memory/portal/architecture.md:105` [arrow] -> ⚠missing:probe_parallel_result.json
+- `memory/portal/bugs/goal-stall-loop-2026-11-16.md:38` [arrow] -> ../designer/apply_designer_scale_patch.py
+- `memory/portal/system-map.md:8` [arrow] -> ⚠missing:flowmap/INDEX.md
+- `memory/portal/system-map.md:9` [arrow] -> ⚠missing:flowmap/server-core.html
+- `memory/portal/system-map.md:10` [arrow] -> ⚠missing:flowmap/frontend.html
+- `memory/portal/system-map.md:11` [arrow] -> ⚠missing:flowmap/llm-fleet.html
+- `memory/portal/system-map.md:12` [arrow] -> ⚠missing:flowmap/memory-system.html
+- `memory/portal/system-map.md:13` [arrow] -> ⚠missing:flowmap/ops-tasks.html
+- `memory/portal/system-map.md:14` [arrow] -> ⚠missing:flowmap/split-plan.html
+- `memory/portal/system-map.md:15` [arrow] -> ⚠missing:flowmap/orphans.html
+- `memory/projects/evolution-layer-2026-11-15.md:7` [arrow] -> ⚠missing:graveyard.json
+- `memory/researcher/INDEX.md:6` [arrow] -> ⚠missing:memory/memory_mirror.log
+- `memory/researcher/INDEX.md:6` [arrow] -> ../mechanic/postmortem_gen.py
+- `memory/scribe/goal7-chain-validator-evidence-2026-11-18.md:15` [arrow] -> ../synthesis/2026-11-12-upgrade-round.md
+- `memory/scribe/goal7-chain-validator-evidence-2026-11-18.md:16` [arrow] -> ../synthesis/2026-11-16-crossassist-evidence-pass.md
+- `memory/scribe/goal7-chain-validator-evidence-2026-11-18.md:17` [arrow] -> ../synthesis/2026-11-12-upgrade-round.md
+- `memory/scribe/goal7-chain-validator-evidence-2026-11-18.md:18` [arrow] -> ../synthesis/2026-11-12-upgrade-round.md
+- `memory/squire/INDEX.md:5` [arrow] -> ../squire/cycle3-discrepancy-resolved-2026-11-18.md
+- `memory/synthesis/index-pointer-batch-r57-consolidated.md:8` [arrow] -> ⚠missing:...r27-round-record.md
+- `memory/synthesis/index-pointer-batch-r58-canonical-append.md:7` [arrow] -> ⚠missing:...r27-round-record.md
+- `memory/verifier/INDEX.md:56` [arrow] -> ⚠missing:memory/verifier/regression-daemon-log.json
+- `memory/verifier/INDEX.md:58` [arrow] -> ⚠missing:memory/verifier/evidence-chain.json
+- `memory/workspace/INDEX.md:80` [arrow] -> ⚠missing:memory/does-not-exist-ic-test.md

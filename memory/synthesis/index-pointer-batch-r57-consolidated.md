@@ -5,7 +5,7 @@ New file -> propagates per transport rule. Supersedes the three fragmented stagi
 - `index-pointer-batch-r40.md` (adds r40 line)
 - `index-pointer-addendum-r43.md` (adds r41/r42 lines)
 
-**Why this exists:** three seats (Builder / Verifier / Archivist) independently confirmed on 2026-11-14 that `memory/synthesis/INDEX.md` is still **2,702 B / md5 485a6558** and missing 14 of the 26 leaves. Seat edits to the existing INDEX lose the mirror race (proven r16/r18/r23/r24; r25 flag C partial-apply), so this is a HANDOFF, not an edit. Orchestrator: apply the 14 lines below as ONE White-canonical append to `memory/synthesis/INDEX.md`, newest-first, immediately after the header block and before the current `- -> ...r27-round-record.md` line (i.e. above r27). Then re-measure md5 on all seats.
+**Why this exists:** three seats (Builder / Verifier / Archivist) independently confirmed on 2026-11-14 that `memory/synthesis/INDEX.md` is still **2,702 B / md5 485a6558** and missing 14 of the 26 leaves. Seat edits to the existing INDEX lose the mirror race (proven r16/r18/r23/r24; r25 flag C partial-apply), so this is a HANDOFF, not an edit. Orchestrator: apply the 14 lines below as ONE White-canonical append to `memory/synthesis/INDEX.md`, newest-first, immediately after the header block and before the current `- -> ⚠missing:...r27-round-record.md` line (i.e. above r27). Then re-measure md5 on all seats.
 
 ## The 14 missing pointer lines (verbatim, ready to append)
 

@@ -35,7 +35,7 @@ count even when index-linked.
   with one-click restore. Lost work is now recoverable instead of silent.
 - `sweep_evidence` (memory/researcher/goal_ledger.py) now also matches index-linked artifacts
   (.py/.jsonl/.json/.html/.css), not just .md leaves. First run auto-linked Builder#1 ->
-  memory/builder/pre_commit_gate.py and Designer#1 -> apply_designer_scale_patch.py.
+  memory/builder/pre_commit_gate.py and Designer#1 -> ../../designer/apply_designer_scale_patch.py.
 - **Git-based goal progress**: GET /api/goals/history - goals ARE registered in git (memory/goals/*.md
   tracked + auto-committed per turn); the endpoint reads the 8 goal files at recent goal-touching
   commits (`git show`) and counts marker lines = true reached count per checkpoint (diff arithmetic

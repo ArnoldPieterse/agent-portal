@@ -25,7 +25,7 @@ named this: "pin-advance required to add the tag".
 
 ## Static verification (no browser)
 - ui/tour.js braces balanced {21/21} (80/80); self-contained IIFE, no external deps.
-- index.html script load order: icons.js -> core.js -> fleet_topology.js -> uploads.js -> tour.js.
+- index.html script load order: icons.js -> ⚠missing:core.js -> ⚠missing:fleet_topology.js -> ⚠missing:uploads.js -> ⚠missing:tour.js.
 - All 4 STEPS target IDs exist in index.html markup (#fleetBtn/#goalsBtn/#opsBtn/#filesBtn).
 - memory_mirror.py parses; index.html sha matches pin spec; backup content sha matches.
 

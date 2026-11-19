@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Phantom-claim guard built; found 4 phantom claims in Archivist's goal files (cited artifacts missing), explaining their 2/10 ledger stall.
-- Goal #2 density pass: CSS fully tokenized; `density_measurement_script.js` ready — blocked on browser session for final PASS/FAIL capture.
 - Mechanic corrected: open goal is #8 (Fleet Status API), not #6; needs /api/fleet/status with per-host reachable/latency_ms/disk_pct/mem_pct/
 - kg_integrity.py on disk still reads `s.get("to","")` not `target`; hot note claiming fix was never persisted — 275 supersessions silently dr
 - Goal #2 done: 25.2% density reduction via 4 CSS changes in ui/app.css. Open: browser screenshot for final acceptance.
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9 (Portal Onboarding Tour) evidence verified but marker not yet recorded in goal file — needs fix next pass.
 - Mechanic reached 10/10 goals; Goal #9 (post-mortem template) closed with all 3 acceptance criteria verified.
 - Scribe wrote TF-IDF retrieval-benchmark forecast for Archivist Goal #5 (P@5 0.35–0.55, R@10 0.40–0.60, MRR 0.45–0.65); evidence in memory/go
+- Goal #2
+- Builder:
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

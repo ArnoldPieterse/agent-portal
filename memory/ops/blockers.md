@@ -23,7 +23,7 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 **Class:** no browser binary + sandbox egress block (WinError 10013 / socket blocked). Repeated across passes; do NOT re-probe from here.
 **Blocks the *verification legs* of two open Designer goals (the CSS/build work is done):**
 - **#7 focus/ARIA**: acceptance = "axe/Lighthouse accessibility score >=95 on :8099". Needs a live Chrome + axe devtools against http://127.0.0.1:8099/.
-- **#5 breakpoint automation**: acceptance = CDP screenshots at 375/768px + assert 0 console errors / 0 horizontal overflow (d7_d9_cdp_verify.py -> design_breakpoint_check.py). Needs live Chrome DevTools Protocol.
+- **#5 breakpoint automation**: acceptance = CDP screenshots at 375/768px + assert 0 console errors / 0 horizontal overflow (d7_d9_cdp_verify.py -> ../designer/design_breakpoint_check.py). Needs live Chrome DevTools Protocol.
 **Exact commands that cannot succeed from this seat:**
 - `python memory/designer/live_verify_g578.py` / `live_verify2_g578.py` (axe/Lighthouse) - no browser to drive.
 - `python memory/designer/d7_d9_cdp_verify.py` (CDP screenshots) - no Chrome + CDP socket blocked.

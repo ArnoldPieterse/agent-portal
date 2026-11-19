@@ -1,12 +1,12 @@
 # Claim-Phantom Report
-Generated: 2026-11-19 08:43 by `memory/ops/verify_claims.py` (Builder).
+Generated: 2026-11-19 10:13 by `memory/ops/verify_claims.py` (Builder).
 
 Classifies every `verified:` marker in seat goal files against the disk:
   * REAL    - verified + a cited artifact exists on disk
   * PHANTOM - verified + cited path(s) present but NONE exist  (stale/false claim)
   * UNCITED - verified + no machine-checkable path (manual-only; needs a pointer added)
 
-**Totals: 62 REAL, 4 PHANTOM, 27 UNCITED.**
+**Totals: 64 REAL, 3 PHANTOM, 26 UNCITED.**
 
 ## PHANTOM claims (verified but artifact missing) — owner should re-do or drop the marker
 - **archivist #3** Auto-Link Suggestion Engine
@@ -14,8 +14,6 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **archivist #6** KB Freshness Policy
     - MISSING: `memory/archivist/freshness-policy.md`
     - MISSING: `memory/archivist/freshness_sweep.py`
-- **archivist #7** Cross-Reference Integrity
-    - MISSING: `memory/archivist/xref_check.py`
 - **archivist #10** Weekly Digest Generator
     - MISSING: `memory/archivist/digest-WW-YYYY.md`
     - MISSING: `memory/archivist/weekly_digest.py`
@@ -35,7 +33,6 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **builder #2** Goal Cycle Timeline Panel
 - **builder #3** Fleet Health Dashboard
 - **builder #7** Error Boundary + Fallback UI
-- **archivist #2** Citation Accuracy Audit
 - **archivist #4** Orphan Node Remediation
 - **archivist #5** Retrieval Quality Benchmark
 - **archivist #8** Knowledge Gap Detector
@@ -79,6 +76,8 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **builder #9** Keyboard Navigation  -> `memory/builder/kb_nav_evidence_2026-11-18.md`
 - **builder #10** Portal Performance Budget  -> `memory/builder/perf_check.py`
 - **archivist #1** Knowledge Graph Integrity Report  -> `memory/archivist/kg-report-cycle5.md`
+- **archivist #2** Citation Accuracy Audit  -> `memory/archivist/citation-audit-cycle5-report.md`
+- **archivist #7** Cross-Reference Integrity  -> `memory/archivist/xref-fix-log-2026-11-19.md`
 - **scribe #1** Decision Log v2  -> `memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md`
 - **scribe #2** Thread Compression Engine  -> `memory/scribe/compress.py`
 - **scribe #3** Context Handoff Template  -> `memory/scribe/handoff-template.md`

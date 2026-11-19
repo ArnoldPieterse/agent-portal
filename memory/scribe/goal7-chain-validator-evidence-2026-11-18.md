@@ -12,10 +12,10 @@
 ```
 Scanning 66 files in memory/synthesis
 Edges found: 4
-  2026-11-12-consolidated-state.md -> supersedes -> 2026-11-12-upgrade-round.md
-  2026-11-16-status-thread-contradictions.md -> supersedes -> 2026-11-16-crossassist-evidence-pass.md
-  INDEX.md -> supersedes -> 2026-11-12-upgrade-round.md
-  index-replay-r81-24of24-canonical.md -> supersedes -> 2026-11-12-upgrade-round.md
+  2026-11-12-consolidated-state.md -> supersedes -> ../synthesis/2026-11-12-upgrade-round.md
+  2026-11-16-status-thread-contradictions.md -> supersedes -> ../synthesis/2026-11-16-crossassist-evidence-pass.md
+  INDEX.md -> supersedes -> ../synthesis/2026-11-12-upgrade-round.md
+  index-replay-r81-24of24-canonical.md -> supersedes -> ../synthesis/2026-11-12-upgrade-round.md
 [PASS] All supersession references resolve to existing files.
 [PASS] No circular references.
 [PASS] Dates are monotonic along all chains (superseder is always newer).

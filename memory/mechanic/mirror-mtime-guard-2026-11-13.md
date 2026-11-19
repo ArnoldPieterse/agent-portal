@@ -35,7 +35,7 @@ Known limitation (unchanged, by design): TODO.md/MEMORY.md are push-only; only m
 canonical source can still be clobbered by the White-local per-turn sync (_sync_workspace_to_sandbox in
 agent_portal.py) - that defect is OUT OF SCOPE of this patch and belongs to Arnold's one-shot list.
 
-## UNC routes A/B - verdict (probes: probe_unc_ab.py -> probe_unc_ab_result.json 19:08; probe_unc_ab2.py -> probe_unc_ab2_result.txt 19:09, both from Red seat)
+## UNC routes A/B - verdict (probes: probe_unc_ab.py -> ⚠missing:probe_unc_ab_result.json 19:08; probe_unc_ab2.py -> ⚠missing:probe_unc_ab2_result.txt 19:09, both from Red seat)
 - Route A = TTL / reconnect-on-fail (current ensure_conn). Route B = keep-alive / sleep-tolerance.
 - Data: net use to C$ from RED fails on all 3 hosts (Red self: error 5 in 0.02s; Pale + Black: error 5 after ~21.06-21.07s). Port follow-up at 19:09: ALL three :445 OPEN, Pale+Black :8888 HTTP 200 (awake), White :8888 timeout = known firewall baseline since r7-r16.
 - Reading: the 21s Pale/Black failures are SMB session-level rejections of Red's creds (port open, host awake) - NOT sleep, NOT a dropped port. New durable fact: admin-share mapping works from WHITE only (mirror runs fine all day; canary 18:09 ok lag 336s); Red-seat C$ maps to Pale/Black = denied (egress-block series data point #11).

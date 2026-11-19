@@ -35,7 +35,7 @@ download resumes it may recreate a quant-less folder - rename again if so.
 3. Then Q4 force_reload: ...\unsloth\Qwen3.8-27B-Q4_K_S, UD-Q4_K_S, gpu_ids [0], ctx 131072 (was 65536; resident value preserved 11-14),
    kv q8_0, n_parallel 1, spec mtp n_max 4, llama_extra_args ["--split-mode","layer"]. Fresh engine clears any stuck queue.
 4. Verify: nvidia-smi per-GPU (GPU0>18 GB, GPU1>25 GB) + llama-server cmdlines + /v1/models, then functional probes
-   through quinn-q4/atlas-q8 -> recover_result.json verdict ALL_UP.
+   through quinn-q4/atlas-q8 -> ⚠missing:recover_result.json verdict ALL_UP.
 - dual_load.py + \DualLoadOnce are already migrated to :8888 and remain a valid alternative (Q4-first order, 409 retry).
 - STALE (do not run): dual_load_once.py - targets dead :3008 API; orphaned (no bat/task references it); banner added.
 

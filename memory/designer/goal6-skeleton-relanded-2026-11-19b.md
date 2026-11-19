@@ -17,10 +17,10 @@ emptyState stale claim in HOT NOTES). Work re-implemented fresh below.
 3. **Builder** (`ui/icons.js`): `UI.skeleton(kind,n)` + `UI.sk(container,kind,n,onlyIfEmpty)` registered
    on the UI namespace (both attach + create branches). Row builder `_skRow` emits per-kind shapes.
 4. **Wiring (all 4 named panels)**:
-   - Fleet -> core.js `fleetUpdate()`: `UI.sk($("fleetBody"),"fleet",3,true)` at fetch start; cleared on success/empty/catch.
-   - Activity timeline -> core.js `actUpdate()`: `UI.sk($("actBody"),"timeline",5,true)` when a session's events load; cleared on catch.
-   - Files/uploads -> uploads.js `filesLoad()`: `UI.sk(list,"list",6,true)` (replaces the old plain "loading…" li); `<ul>` handled via per-`<li>` rows.
-   - Goals -> uploads.js `goalsLoad()`: `UI.sk($("goalsBody"),"cards",8,true)`; cleared on !ok / empty-state / catch.
+   - Fleet -> ⚠missing:core.js `fleetUpdate()`: `UI.sk($("fleetBody"),"fleet",3,true)` at fetch start; cleared on success/empty/catch.
+   - Activity timeline -> ⚠missing:core.js `actUpdate()`: `UI.sk($("actBody"),"timeline",5,true)` when a session's events load; cleared on catch.
+   - Files/uploads -> ⚠missing:uploads.js `filesLoad()`: `UI.sk(list,"list",6,true)` (replaces the old plain "loading…" li); `<ul>` handled via per-`<li>` rows.
+   - Goals -> ⚠missing:uploads.js `goalsLoad()`: `UI.sk($("goalsBody"),"cards",8,true)`; cleared on !ok / empty-state / catch.
 
 ## Key design decision: onlyIfEmpty guard
 `sk(...,onlyIfEmpty=true)` skips injection when the container already holds content. This is what stops

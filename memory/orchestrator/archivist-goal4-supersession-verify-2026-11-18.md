@@ -9,8 +9,8 @@ That audit claims a "v2" script with three fixes (negative lookbehind, JSON/JSON
 ```
 $ python memory/archivist/supersession_check.py
 supersession_check: 128 markers, 0 cycles, 116 dangling heads
-  DANGLING head: memory/verifier/r30-probe-drift-adjudication-2026-11-14.md -> ac_a2_live_leg_r20.py
-  DANGLING head: memory/mechanic/__pycache__/ac_a2_live_leg_r21.cpython-313.pyc -> ac_a2_live_leg_r20.py
+  DANGLING head: memory/verifier/r30-probe-drift-adjudication-2026-11-14.md -> ../mechanic/ac_a2_live_leg_r20.py
+  DANGLING head: memory/mechanic/__pycache__/ac_a2_live_leg_r21.cpython-313.pyc -> ../mechanic/ac_a2_live_leg_r20.py
   ... (116 total)
 ```
 Reproduced on two consecutive runs. Exit code reflects the dangling count.

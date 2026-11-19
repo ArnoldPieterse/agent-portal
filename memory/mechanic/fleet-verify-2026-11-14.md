@@ -2,7 +2,7 @@
 
 Runbook note: White quant-folder rename + alias re-point (v2, 01:26) worked as designed at 01:45 - the only earlier break was v1's unload body using `{'id':...}` where the endpoint requires `model_path` (422 x11); fixed by unloading on full path first. No further action needed on White from this seat.
 
-## Live probes 03:10:07 (probe_fleet_1114b.py -> probe_fleet_1114b_result.json)
+## Live probes 03:10:07 (probe_fleet_1114b.py -> ⚠missing:probe_fleet_1114b_result.json)
 - BLACK .99 /v1/models 200 (Bearer): Qwen3.8-27B-Q4_K_S loaded ctx 65536 + Qwen3.8-27B-Q8_0 loaded ctx 32768; alias verifier-q4 -> UD-Q4_K_S loaded. DUAL-RESIDENT confirmed.
 - PALE .39 /v1/models 200 (Bearer via pale_dl.py token - keyless LAN = 401, same as r20): Qwen3.8-27B-Q8_0 loaded ctx 32768 + Qwen3.8-27B-Q4_K_S loaded ctx 65536; aliases archivist-q8 + designer-q4 both loaded. DUAL-RESIDENT confirmed.
 - WHITE .179: :8888 and :8099 both TIMEOUT from Red (matches lan_probe 02:46); SMB C$ with /user:white "" = error 5 access denied (no blank-pw SMB path Red->White, unlike White->seats). White ground truth from this seat = mirror copies only (TODO.md mtime 01:46:28 carries the RESOLVED 01:45 state; MEMORY.md fresh 03:04:46) + indirect proof the White portal is up: this very chat's turns route through it.

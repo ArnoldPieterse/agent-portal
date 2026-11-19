@@ -84,7 +84,7 @@ frontend-only; the backend was already parallel-ready.
   helpers used by stream_chat auto-reset and _finish_chat.
 - Verification: e2e_parallel.py via schtask \PortalE2EPar (detached — in-turn probes deadlock on
   this chat's Q4 slot) fires BOTH agents concurrently, records per-stream first-token/done
-  timestamps + meta counter values -> e2e_parallel_result.json (expect overlap>0s and counter +2).
+  timestamps + meta counter values -> ⚠missing:e2e_parallel_result.json (expect overlap>0s and counter +2).
 - After index.html edits: user must HARD-REFRESH the portal tab (old JS cached).
 
 ## Parallel verification - e2e results + Studio serialization finding (2026-11-10 22:18)
@@ -102,7 +102,7 @@ frontend-only; the backend was already parallel-ready.
   parallel_slots, which models active). overlap>0 => cross-model concurrency exists and e2e's
   serialization had another cause (re-run e2e); overlap<=0 => Studio serializes globally -> true
   parallel group processing needs a Studio-side change (report to Arnold; busy indicators already
-  mask the wait in the UI). Result -> probe_parallel_result.json.
+  mask the wait in the UI). Result -> ⚠missing:probe_parallel_result.json.
 - PROBE RESULT (2026-11-10 ~22:40, read this turn): verdict SERIALIZED_NO_OVERLAP at RAW :8888
   level — both 'pong' replies completed in ~80ms each, overlap -0.12s, parallel_slots_seen=[1],
   peak_active_count=0 (sampler never caught two active). CONFIRMED: Studio's inference layer

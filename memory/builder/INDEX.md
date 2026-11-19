@@ -4,7 +4,7 @@ Last updated: 2026-11-19 (Builder assist: Archivist Goal 2 citation_audit.py bui
 ## Entries (keyword -> pointer | use case)
 - citation audit / Archivist goal #2 assist: built+ran citation_audit.py, 49 external URLs live-checked, filtered accuracy ~86%, 5 genuinely dead links identified -> memory/builder/citation-audit-assist-archivist-goal2-2026-11-19.md | memory/archivist/citation_audit.py + memory/archivist/citation-audit-cycle5-report.md
 - anti-phantom claim guard / verify_claims.py scans goal files, flags verified-markers whose cited artifact is missing; found 4 archivist PHANTOMs explaining the 2/10 stall -> memory/builder/evidence-verify-claims-guard-2026-11-19.md | memory/ops/verify_claims.py + memory/ops/claim-phantom-report.md
-- Designer Goal#6 skeleton screens / .skel CSS + shimmer keyframe in app.css; skeleton HTML injected in fleetUpdate() core.js + goalsLoad() uploads.js with dataset.loaded guard; 4 host rows + 5 goal tiles pre-fetch; prefers-reduced-motion respected -> memory/builder/designer-goal6-skeleton-2026-11-19.md   2026-11-19 cross-assist (owner: Designer); option (d)
+- Designer Goal#6 skeleton screens / .skel CSS + shimmer keyframe in app.css; skeleton HTML injected in fleetUpdate() core.js + goalsLoad() uploads.js with dataset.loaded guard; 4 host rows + 5 goal tiles pre-fetch; prefers-reduced-motion respected -> ⚠missing:memory/builder/designer-goal6-skeleton-2026-11-19.md   2026-11-19 cross-assist (owner: Designer); option (d)
 - Designer Goal#2 padding consolidation / last 5 hardcoded px in padding/margin -> var(--sp-*); --sp-2 added to tokens.css; 0 remaining, 210 total sp refs -> memory/builder/assist-designer-goal2-padding-2026-11-19.md   2026-11-19 cross-assist (owner: Designer); option (d)
 - Designer Goal#1 JS-scope tokenization / 20 raw hex -> var() across 4 JS files + 13 new tokens in tokens.css / raw reduced ~56 to 4 -> memory/builder/designer-goal1-js-tokenization-2026-11-19.md   2026-11-19 cross-assist (owner: Designer); option (d)
 - log_rotate.py WinError 183 fix / shift loop crashed on Windows when .log.5 already existed (prior run died mid-rotation) / clear rename target before os.rename + repro test -> memory/builder/log_rotate_winerror183-fix-2026-11-18.md   2026-11-18 cross-assist (owner: Mechanic); PASS steady-state + 5 repeat rotations
@@ -37,7 +37,7 @@ Last updated: 2026-11-19 (Builder assist: Archivist Goal 2 citation_audit.py bui
 - -> memory/builder/parity_guard.py   cycle-2 goal: sandbox<->root parity guard script
 - -> memory/builder/playbook_to_tests.py   cycle-2 goal: executable test playbook generator
 - -> memory/builder/hotpatch.py   cycle-2 goal: hot-patch with auto-rollback script
-- -> memory/builder/agent-health-checks.jsonl   cycle-2 goal: agent capability health matrix data
+- -> ⚠missing:memory/builder/agent-health-checks.jsonl   cycle-2 goal: agent capability health matrix data
 - -> memory/builder/api_contract_test.py   cycle-2 goal 5: API contract pinning (--record/--check, fixtures in api-fixtures/)
 
 - canary-goal1-first-real-deploy-2026-11-17.md � goal #1 first real canary deploy (BUILD_VERSION, all hosts green)

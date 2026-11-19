@@ -1,7 +1,7 @@
 # Goal #2 Evidence: Mirror Heal Productionization (2026-11-17)
 
 ## Changes Made
-- `mirror_heal.py`: REPAIR_LOG -> memory/mechanic/mirror-repairs.jsonl, MAX_AGE_S 300->900 (15min), MULTI_LEG_THRESHOLD replaced by ALERT_THRESHOLD=3 (>3 failures/hour)
+- `mirror_heal.py`: REPAIR_LOG -> ⚠missing:memory/mechanic/mirror-repairs.jsonl, MAX_AGE_S 300->900 (15min), MULTI_LEG_THRESHOLD replaced by ALERT_THRESHOLD=3 (>3 failures/hour)
 - `register_mirror_heal_task.py`: NEW - registers schtask 'MirrorHeal' every 15 min
 - `memory/mechanic/mirror-repairs.jsonl`: first entries logged (dry_run + repair_partial)
 

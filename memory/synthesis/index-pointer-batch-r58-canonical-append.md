@@ -4,7 +4,7 @@ New file -> propagates per transport rule. **Supersedes and voids:** `index-poin
 
 **Why a new file:** r57 v2 was an edit to an existing file and did not propagate uniformly (Verifier's seat still reads v1). New-file propagation is proven (r57 v1 reached 3+ seats this round).
 
-## Part A — the 11 pointer lines (verbatim; append as ONE block, newest first, immediately after the header block and BEFORE the current `- -> ...r27-round-record.md` line)
+## Part A — the 11 pointer lines (verbatim; append as ONE block, newest first, immediately after the header block and BEFORE the current `- -> ⚠missing:...r27-round-record.md` line)
 
 - -> memory/synthesis/2026-11-14-final-closeout.md   FINAL CLOSEOUT (11-14): all seven agent lanes [CONCLUDED], no further agent-executable work; sole open gate = Arnold's manual White-console pass on bundle v2 items 1-8 (stamp 107cbd93 / 69,888 B) — terminal record, supersedes r56 as the latest state leaf
 - -> memory/synthesis/2026-11-14-r56-round-record.md   r56 round record (11-14): Verifier sweep + ratifications, Mechanic fleet-stamp r55, Designer stamp design-leg, Researcher mirror confirm, Builder exec sweep, Scribe v2 planning minutes close G3 — round record, no supersession

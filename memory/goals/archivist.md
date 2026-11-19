@@ -14,7 +14,7 @@ Focus: Knowledge graph quality + retrieval accuracy. Make the fleet's memory not
 
 6. **KB Freshness Policy** - Define TTL per entry type (fact=90d, opinion=30d, procedure=180d). `python memory/archivist/freshness_sweep.py` flags expired entries for review. Verified: policy documented in memory/archivist/freshness-policy.md; script correctly flags test-expired entries.
 
-7. **Cross-Reference Integrity** - Every "see also" or "related to" link in the KB must resolve to an existing entry. `python memory/archivist/xref_check.py` finds broken cross-refs and auto-fixes (remove or redirect). Verified: script runs; 0 broken xrefs remain after fix; log of fixes written.
+7. **Cross-Reference Integrity** - Every "see also" or "related to" link in the KB must resolve to an existing entry. `python memory/archivist/xref_check.py` finds broken cross-refs and auto-fixes (remove or redirect). Verified: script runs; 0 broken xrefs remain after fix; log of fixes written. (pointer: memory/archivist/xref_check.py) (verified: 2026-11-19 - Orchestrator assist built + ran the missing artifact: scanned 1493 .md, fixed 58 broken live xrefs (28 redirects + 86 quarantine-flags across 34 files), re-check clean:true broken_live_xrefs=0; log memory/archivist/xref-fix-log-2026-11-19.md)
 
 8. **Knowledge Gap Detector** - Analyze goal files + chat logs for recurring topics that have NO corresponding KB entry. Generate a "knowledge gap" list with suggested entry titles. Verified: gap report exists; >=5 gaps identified; each has a suggested title + source to research.
 

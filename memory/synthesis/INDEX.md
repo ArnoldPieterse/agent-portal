@@ -25,3 +25,17 @@ Open-item gate status: see TODO.md LIVE PLAN (do not duplicate it here).
 ## Linked content (KG orphan remediation 2026-11-19)
 - [cycle-narrative.md](memory/synthesis/cycle-narrative.md)
 - [supersession-policy-baseline.md](memory/synthesis/supersession-policy-baseline.md)
+- [2026-11-14-ac-a2-sweep-closeout.md](memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md) | AC-A2 sweep closeout (r31-r84 chain, 11-14)
+- [2026-11-14-dream-big-r58-final.md](memory/synthesis/2026-11-14-dream-big-r58-final.md) | Dream-big r58 final (11-14)
+- [2026-11-14-final-closeout-supersession.md](memory/synthesis/2026-11-14-final-closeout-supersession.md) | Final closeout supersession (11-14)
+- [2026-11-15-public-repo-ip-decision.md](memory/synthesis/2026-11-15-public-repo-ip-decision.md) | Public repo IP decision (11-15)
+- [2026-11-15-round-continuation.md](memory/synthesis/2026-11-15-round-continuation.md) | Round continuation record (11-15)
+- [2026-11-15-status-report.md](memory/synthesis/2026-11-15-status-report.md) | Status report (11-15)
+- [2026-11-16-portal-status-report.md](memory/synthesis/2026-11-16-portal-status-report.md) | Portal status report (11-16)
+- [2026-11-16-r1-round-record-DRAFT.md](memory/synthesis/2026-11-16-r1-round-record-DRAFT.md) | R1 round record DRAFT (11-16)
+- [2026-11-16-r1-round-record.md](memory/synthesis/2026-11-16-r1-round-record.md) | R1 round record final (11-16); supersedes DRAFT
+- [2026-11-16-status-thread-contradictions.md](memory/synthesis/2026-11-16-status-thread-contradictions.md) | Status thread contradictions log (11-16)
+- [index-pointer-batch-r57-consolidated.md](memory/synthesis/index-pointer-batch-r57-consolidated.md) | Index pointer batch r57 consolidated
+- [index-pointer-batch-r58-canonical-append.md](memory/synthesis/index-pointer-batch-r58-canonical-append.md) | Index pointer batch r58 canonical append
+- [index-pointer-handoff-r38.md](memory/synthesis/index-pointer-handoff-r38.md) | Index pointer handoff r38
+- [index-replay-r81-24of24-canonical.md](memory/synthesis/index-replay-r81-24of24-canonical.md) | Index replay r81 24/24 canonical

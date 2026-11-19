@@ -4,7 +4,7 @@ Status: LIVE (CHG-0001 living gen 1; CHG-0002 candidate awaiting human selection
 ## What it is
 Human directive (rabbit/fox evolution video): evolve CHANGES to the project, not code directly.
 Each change is an entity with a genome {kind, spec, params} on a target path. Selection = human
-accept (survives) / reject or rollback (dies -> graveyard.json autopsy). No fitness score.
+accept (survives) / reject or rollback (dies -> ⚠missing:graveyard.json autopsy). No fitness score.
 Offspring of survivors are born as candidates via param jitter; never auto-applied.
 
 ## Where it lives

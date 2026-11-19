@@ -27,7 +27,7 @@ no-op explicitly instead of faking a write:
 A real `--note` verified marker now lands even when a stale/dangling pointer lingers on the line.
 
 ## Proof (isolated sandbox _ledger_test/, not the live tree)
-Goal line with dangling `(pointer: .../does-not-exist.md)`, no verified marker:
+Goal line with dangling `(pointer: ⚠missing:.../does-not-exist.md)`, no verified marker:
   BEFORE evidence = (False, None, True)   -> status open
   record #1        -> appended ` (verified: ... )`; line keeps BOTH markers
   AFTER  evidence = (True, 'marker', False) -> counts as REACHED

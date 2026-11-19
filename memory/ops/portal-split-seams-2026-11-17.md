@@ -27,7 +27,7 @@ Each new module gets a header pointer to this file + parent INDEX.
 Entry: `agent_portal.py` shrinks to ~30 lines (import handler; if __name__ == '__main__': run).
 
 ## Rules
-- Each module < 8 KB target (split further if larger: agents_prompt -> agents.py + prompt_builder.py)
+- Each module < 8 KB target (split further if larger: agents_prompt -> ⚠missing:agents.py + prompt_builder.py)
 - No circular imports: dependency graph is strictly downward
 - `portal/__init__.py` re-exports for backward-compat during transition
 - PortalRun schtask command unchanged (still runs agent_portal.py)

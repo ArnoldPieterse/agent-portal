@@ -1,0 +1,995 @@
+{
+  "generated": "2026-11-19T00:17:50Z",
+  "total": 101,
+  "external": 78,
+  "ext_pass": 39,
+  "ext_warn": 0,
+  "ext_dead": 11,
+  "true_dead_rate_pct": 14.1,
+  "cat_count": {
+    "BARE-EMPTY": 2,
+    "NOT-RECHECKED": 28,
+    "TEMPLATE": 3,
+    "INTERNAL-OK": 14,
+    "INTERNAL-MALFORMED": 4,
+    "PASS": 39,
+    "FAIL": 11
+  },
+  "rows": [
+    {
+      "url": "http://",
+      "category": "BARE-EMPTY",
+      "status": "n/a",
+      "detail": "bare scheme, no host (placeholder)",
+      "files": [
+        "memory/portal/architecture.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/designer/baseline/README.md",
+        "memory/designer/baseline/progress-2026-11-18.md",
+        "memory/designer/goal10-blocked-evidence-2026-11-18.md",
+        "memory/designer/goal10-cdp-turnkey-2026-11-18.md",
+        "memory/mechanic/portal-sandbox-perm-fix-2026-11-17.md",
+        "memory/mechanic/portal-startup-fix-2026-11-17.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/ops/blockers.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/`",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/designer/ac-a2-design-leg-r30.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/api/decisions?agent=Scribe",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/mechanic/assist-scribe-goal1-decisions-v2-reland-2026-11-18.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/api/file/raw?path=flowmap/index.html",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/portal/system-map.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/api/fleet",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/ops/probes.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/api/git",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/builder/curl-examples-prune-git-2026-11-15.md",
+        "memory/portal/architecture.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/api/goals",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/ops/boot-deployment-runbook.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/api/goals`",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/ops/portal-down-2026-11-15.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/api/health",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/ops/cycle-transition-checklist.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/api/health/fleet",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/mechanic/goal7-fleet-health-v2-2026-11-18.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/api/memory`",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/ops/portal-outage-2026-11-15-1825.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/api/todo/prune",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/builder/curl-examples-prune-git-2026-11-15.md",
+        "memory/portal/architecture.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099/index.html",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/designer/post-restart-verify-r16.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8099`",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/designer/goal10-cdp-capture-2026-11-18.md",
+        "memory/verifier/ac-a2-r23-sweep-2026-11-14.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8888",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/llm/studio-api.md",
+        "memory/mechanic/portal-startup-fix-2026-11-17.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8888/api/health",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/ops/remote-host-metrics-probe-spec.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8888/api/settings/lan-access/start",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/llm/hosts.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8888/api/settings/model-aliases`",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/llm/model-id-check-2026-11-15.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8888/models",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/ops/blockers.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8888/models`",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/llm/model-id-check-2026-11-15.md"
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:8888/v1/models`",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/ops/mechanic-researcher-alias-diagnosis-2026-11-16.md"
+      ]
+    },
+    {
+      "url": "http://[LAN-IP]:8099",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/portal/ui-upgrades-r4.md"
+      ]
+    },
+    {
+      "url": "http://[LAN-IP]:8099/api/file/raw?path=TODO.md`",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/mechanic/red-white-reachability-2026-11-14.md"
+      ]
+    },
+    {
+      "url": "http://IP_RED:8888",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/archivist/REPAIR_2026-11-13.md"
+      ]
+    },
+    {
+      "url": "http://IP_BLACK:8888",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/llm/hosts.md",
+        "memory/ops/black-studio-failover-2026-11-16.md",
+        "memory/portal/architecture.md",
+        "memory/researcher/model-residency-study-2026-11-17.md",
+        "memory/synthesis/2026-11-12-consolidated-state.md"
+      ]
+    },
+    {
+      "url": "http://[redacted-lan-template]`",
+      "category": "TEMPLATE",
+      "status": "n/a",
+      "detail": "placeholder/template token, not a real citation",
+      "files": [
+        "memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md"
+      ]
+    },
+    {
+      "url": "http://[redacted-lan-template`",
+      "category": "TEMPLATE",
+      "status": "n/a",
+      "detail": "placeholder/template token, not a real citation",
+      "files": [
+        "memory/researcher/citation-manifest-2026-11-15.md"
+      ]
+    },
+    {
+      "url": "http://host:port/",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "http://host:port/api/host-metrics",
+      "category": "EXTERNAL",
+      "status": "NOT-RECHECKED",
+      "detail": "(not in v1 sample; live-check on a net seat)",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/ops/remote-host-metrics-probe-spec.md"
+      ]
+    },
+    {
+      "url": "http://localhost:1235`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (localhost)",
+      "files": [
+        "memory/projects/dcabots.md",
+        "memory/researcher/dcabots-reprompt-precheck-2026-11-14.md"
+      ]
+    },
+    {
+      "url": "http://localhost:8099",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (localhost)",
+      "files": [
+        "memory/designer/goal10-cdp-script-2026-11-18.md",
+        "memory/goals/designer-attempt-verifier6-concurrency-harness-2026-11-18.md"
+      ]
+    },
+    {
+      "url": "http://localhost:8099/`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (localhost)",
+      "files": [
+        "memory/designer/ac-a2-2-console-clean-criteria.md"
+      ]
+    },
+    {
+      "url": "http://localhost:8099/api/file/raw?path=agent_portal.py`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (localhost)",
+      "files": [
+        "memory/mechanic/ops_r6_red_probe.md"
+      ]
+    },
+    {
+      "url": "http://localhost:8099/api/fleet/overview",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (localhost)",
+      "files": [
+        "memory/verifier/concurrency-stress-report.md"
+      ]
+    },
+    {
+      "url": "http://localhost:8099/api/goals",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (localhost)",
+      "files": [
+        "memory/goals/mechanic-forecast-recovery-matrix.md",
+        "memory/verifier/concurrency-stress-report.md"
+      ]
+    },
+    {
+      "url": "http://localhost:8099/api/goals`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (localhost)",
+      "files": [
+        "memory/goals/mechanic-forecast-recovery-matrix.md",
+        "memory/mechanic/recovery-matrix.md"
+      ]
+    },
+    {
+      "url": "http://localhost:8099/api/health/fleet`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (localhost)",
+      "files": [
+        "memory/mechanic/goal7-fleet-health-v2-fields-added-2026-11-18.md"
+      ]
+    },
+    {
+      "url": "http://localhost:8099/api/kb/search?q=test`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (localhost)",
+      "files": [
+        "memory/mechanic/recovery-matrix.md"
+      ]
+    },
+    {
+      "url": "http://localhost:8099`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (localhost)",
+      "files": [
+        "memory/designer/goal2-fleet-matrix-responsive-verify-2026-11-18.md",
+        "memory/designer/goal2-fleet-reland-2026-11-17.md",
+        "memory/verifier/goal6-concurrency-stress-evidence-2026-11-18.md"
+      ]
+    },
+    {
+      "url": "http://pale:8099/api/fleet`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (pale)",
+      "files": [
+        "memory/ops/host-consistency-report.md"
+      ]
+    },
+    {
+      "url": "http://pale:8099api/fleet",
+      "category": "INTERNAL-MALFORMED",
+      "status": "n/a",
+      "detail": "missing slash after port -> pale:8099/api",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "http://red:8099/api/settings/lan-access/start`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (red)",
+      "files": [
+        "memory/ops/host-consistency-report.md"
+      ]
+    },
+    {
+      "url": "http://red:8099api/settings/lan-access/start",
+      "category": "INTERNAL-MALFORMED",
+      "status": "n/a",
+      "detail": "missing slash after port -> red:8099/api",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "http://white:8099/api/fleet`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (white)",
+      "files": [
+        "memory/ops/host-consistency-report.md"
+      ]
+    },
+    {
+      "url": "http://white:8099/api/todo/prune`",
+      "category": "INTERNAL-OK",
+      "status": "n/a",
+      "detail": "internal portal endpoint (white)",
+      "files": [
+        "memory/ops/host-consistency-report.md"
+      ]
+    },
+    {
+      "url": "http://white:8099api/fleet",
+      "category": "INTERNAL-MALFORMED",
+      "status": "n/a",
+      "detail": "missing slash after port -> white:8099/api",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "http://white:8099api/todo/prune",
+      "category": "INTERNAL-MALFORMED",
+      "status": "n/a",
+      "detail": "missing slash after port -> white:8099/api",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "http://{host}:{port}/api/host-metrics",
+      "category": "TEMPLATE",
+      "status": "n/a",
+      "detail": "placeholder/template token, not a real citation",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/ops/remote-host-metrics-probe-spec.md"
+      ]
+    },
+    {
+      "url": "https://",
+      "category": "BARE-EMPTY",
+      "status": "n/a",
+      "detail": "bare scheme, no host (placeholder)",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/ops/ingestion-spec.md"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2311.16542",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/citation-audit-2026-11-15.md",
+        "memory/researcher/citation-manifest-2026-11-15.md"
+      ]
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.06867",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/llm/hotload-selector.md"
+      ]
+    },
+    {
+      "url": "https://blog.crewai.com/crewai-amp-the-agent-management-plat",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "https://blog.crewai.com/crewai-amp-the-agent-management-platform/",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/researcher/competitive-scan-2026-11.md"
+      ]
+    },
+    {
+      "url": "https://crewai.com/agent-management-platform",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/competitive-scan-2026-11.md"
+      ]
+    },
+    {
+      "url": "https://deepwiki.com/crewAIInc/crewAI/10-enterprise-features",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "HTTP 429",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "https://deepwiki.com/crewAIInc/crewAI/10-enterprise-features-(crewai-amp",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "HTTP 429",
+      "files": [
+        "memory/researcher/competitive-scan-2026-11.md"
+      ]
+    },
+    {
+      "url": "https://devblogs.microsoft.com/agent-framework/microsoft-age",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "https://devblogs.microsoft.com/agent-framework/microsoft-agent-framework-version-1-0/",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/researcher/competitive-scan-2026-11.md"
+      ]
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_good_A.md"
+      ]
+    },
+    {
+      "url": "https://docs-platform.crewai.com/platform/en/introduction",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/competitive-scan-2026-11.md"
+      ]
+    },
+    {
+      "url": "https://docs.pytest.org/en/stable/how-to/cache.html",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "https://docs.python.org/3/library/datetime.html",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_good_C.md"
+      ]
+    },
+    {
+      "url": "https://docs.python.org/3/library/json.html",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_good_B.md",
+        "memory/researcher/tests/evidence_good_C.md"
+      ]
+    },
+    {
+      "url": "https://docs.python.org/3/library/os.html",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_good_A.md"
+      ]
+    },
+    {
+      "url": "https://docs.python.org/3/library/subprocess.html",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_bad_D.md"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Data_migration",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_good_B.md"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Hash_function",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_bad_D.md"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Queue_(data_structure",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_good_C.md"
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Version_control",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_bad_D.md",
+        "memory/researcher/tests/evidence_good_A.md"
+      ]
+    },
+    {
+      "url": "https://example.com/elev-helper-docs",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issue",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/brief_B.md"
+      ]
+    },
+    {
+      "url": "https://example.com/fleet-mirror-notes",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issue",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/brief_A.md"
+      ]
+    },
+    {
+      "url": "https://example.com/only-one-source",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issue",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/brief_D_corrupt.md"
+      ]
+    },
+    {
+      "url": "https://example.com/single-source",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issue",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/brief_E_corrupt.md"
+      ]
+    },
+    {
+      "url": "https://example.com/verification-pipelines",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issue",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/brief_C.md"
+      ]
+    },
+    {
+      "url": "https://flask.palletsprojects.com/en/2.0.x/api/",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_good_B.md"
+      ]
+    },
+    {
+      "url": "https://github.com/ArnoldPieterse/agent-portal",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/ops/public-repo-agent-portal-2026-11-15.md",
+        "memory/researcher/citation-audit-2026-11-15.md",
+        "memory/researcher/citation-manifest-2026-11-15.md"
+      ]
+    },
+    {
+      "url": "https://github.com/anthropics/claude-code/blob/main/docs/mir",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "https://github.com/anthropics/claude-code/blob/main/docs/mirror-sync.md",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/researcher/tests/evidence_good_A.md"
+      ]
+    },
+    {
+      "url": "https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/2",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/2423",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/llm/overnight-unload.md",
+        "memory/researcher/citation-audit-2026-11-15.md",
+        "memory/researcher/citation-manifest-2026-11-15.md"
+      ]
+    },
+    {
+      "url": "https://github.com/rst0git/SwapServeLLM",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/llm/hotload-selector.md"
+      ]
+    },
+    {
+      "url": "https://github.com/samuelcolvin/watchfiles",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tooling-landscape-scan-2026-11-17.md"
+      ]
+    },
+    {
+      "url": "https://horejsek.github.io/python-fastjsonschema/",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tooling-landscape-scan-2026-11-17.md"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/agent-framework/migration-",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-autogen/",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/researcher/competitive-scan-2026-11.md"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/administrat",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/windows-server/administration/performance-tuning/role/file-server/",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/researcher/citation-audit-2026-11-15.md",
+        "memory/researcher/citation-manifest-2026-11-15.md",
+        "memory/researcher/sync-clobber-analysis-2026-11-13.md"
+      ]
+    },
+    {
+      "url": "https://lmstudio.ai/docs/developer/core/ttl-and-auto-evict",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/llm/overnight-unload.md",
+        "memory/researcher/citation-audit-2026-11-15.md",
+        "memory/researcher/citation-manifest-2026-11-15.md"
+      ]
+    },
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.datet",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "HTTP 404",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "https://numpy.org/doc/stable/reference/generated/numpy.datetime64.html",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "HTTP 404",
+      "files": [
+        "memory/researcher/tests/evidence_good_B.md"
+      ]
+    },
+    {
+      "url": " [redacted-tunnel-url]",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "URLError: <urlopen error [Errno 11001] getaddrinfo failed>",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/llm/hosts.md",
+        "memory/researcher/citation-audit-2026-11-15.md",
+        "memory/researcher/citation-manifest-2026-11-15.md"
+      ]
+    },
+    {
+      "url": "https://realpython.com/python-date-time/",
+      "category": "EXTERNAL",
+      "status": "FAIL",
+      "detail": "HTTP 404",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tests/evidence_good_C.md"
+      ]
+    },
+    {
+      "url": "https://turion.ai/blog/langgraph-vs-crewai-vs-autogen-compar",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md"
+      ]
+    },
+    {
+      "url": "https://turion.ai/blog/langgraph-vs-crewai-vs-autogen-comparison-2026/",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/researcher/competitive-scan-2026-11.md"
+      ]
+    },
+    {
+      "url": "https://uptrace.dev/tools/distributed-tracing-tools",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/tooling-landscape-scan-2026-11-17.md"
+      ]
+    },
+    {
+      "url": "https://vllm-sr.ai/docs/intro/",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/llm/hotload-selector.md"
+      ]
+    },
+    {
+      "url": "https://www.langchain.com/blog/langgraph-platform-ga",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/competitive-scan-2026-11.md"
+      ]
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/deployment",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/competitive-scan-2026-11.md"
+      ]
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/observability",
+      "category": "EXTERNAL",
+      "status": "PASS",
+      "detail": "HTTP 200",
+      "files": [
+        "memory/archivist/citation-audit-cycle5-report.md",
+        "memory/researcher/competitive-scan-2026-11.md"
+      ]
+    }
+  ]
+}

@@ -180,3 +180,8 @@ Generated: 2026-11-19 by Orchestrator (assist for Archivist goal #4)
 
 ---
 *Orchestrator assist for Archivist goal #4. Next step: create links for 'needs-link' nodes from their parent INDEX.md files.*
+
+## Progress 2026-11-19 (Verifier assist)
+- memory/synthesis/INDEX.md: 13 of 15 nodes linked (cycle-narrative + supersession-policy-baseline were already done). Remaining unlinked from this dir: 0.
+- KG re-scan: 475 total nodes, 150 orphans (31.6%), down from 286/154 (53.8%).
+- Still needs-link: ~38 nodes across builder(6), portal(5), designer(3), researcher(2), scribe(2), ops(1), orchestrator(1), archivist(1), verifier(3).

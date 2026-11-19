@@ -53,9 +53,9 @@ Last updated: 2026-11-19.
 Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2026-11-14/ at next prune.
 
 ## Cycle-2 evidence (indexed 2026-11-16, Orchestrator seat - unblocks end-of-run sweep)
-- -> memory/verifier/regression-daemon-log.jsonl   cycle-2 goal: continuous regression daemon log
+- -> ⚠missing:memory/verifier/regression-daemon-log.jsonl   cycle-2 goal: continuous regression daemon log
 - -> memory/verifier/fault-injection-2026-11-16.md   cycle-2 goal: fault injection suite results
-- -> memory/verifier/evidence-chain.jsonl   cycle-2 goal: SHA256-chained evidence log
+- -> ⚠missing:memory/verifier/evidence-chain.jsonl   cycle-2 goal: SHA256-chained evidence log
 - -> memory/verifier/self-cert-audit-v2-2026-11-16.md   cycle-2 goal: self-certification audit v2
 - -> memory/verifier/smb_drift_detector.py   cycle-2 goal: SMB mirror drift detector script
 - -> memory/verifier/evolution-validator-2026-11-16.json   cycle-2 goal: evolution state-machine validator output

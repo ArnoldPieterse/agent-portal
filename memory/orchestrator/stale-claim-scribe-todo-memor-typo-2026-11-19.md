@@ -4,7 +4,7 @@ Status: DONE + verified (measured)
 
 ## The stale claim
 `memory/ops/stale_claim_check.py` flagged:
-  [MISSING] memory/scribe/TODO.md -> memory/scribe/MEMOR.md
+  [MISSING] memory/scribe/TODO.md -> ⚠missing:memory/scribe/MEMOR.md
 `MEMOR.md` does not exist on disk; the real, intended artifact `memory/scribe/MEMORY.md` DOES exist.
 The dangling ref was a one-letter filename typo in a historical log line (2026-11-13 auto-cont 1/3+2/3 entry),
 not a benign template/fixture and not a documented-expected-missing row. Genuine closeable stale citation.
