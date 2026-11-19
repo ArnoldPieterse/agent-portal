@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 4 static acceptance criteria pass with 0 violations; 19 "hardcoded" padding/margin values are
 - Goals 5 & 9 verified code-complete via static audit; evidence recorded in ledger, closing stale Researcher CAUTION on Goal 9.
 - Goal 8 (icons):
 - Goal 5 (Notification System) verified & closed via static structural verification on 2026-11-19; do not re-probe.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher verified Designer Goal #7: 0 off-scale raw-px font-sizes in live ui/*.css+*.js; 170 var(--fs-*) refs all on 5-step scale.
 - Fleet Status API (Goal 8) confirmed-broken: endpoint reverted by mirror; recurring mirror-revert pain noted for next cycle.
 - Scribe forecast: pin_guard() at memory_mirror.py L248 must be subsumed (not paralleled) by Mechanic's cycle-6 Goal 2 Mirror-Revert Sentinel.
+- Goal 8: UI.icon() expanded to 19 call sites (uploads.js 0→12, core.js 7); addBubble accepts raw SVG in emoji param.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
