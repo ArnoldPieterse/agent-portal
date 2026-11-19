@@ -1,7 +1,13 @@
 {
  "tour_reappear": {
-  "class_tour_card": 0,
-  "class_tour_overlay": 0
+  "note": "terminal cmd chain, explicit --user-data-dir (profile persists localStorage); run A selftest closed tour -> flag set; run B same profile",
+  "runB_tour_card_elements": 0,
+  "runB_tour_overlay_elements": 0,
+  "artifacts": [
+   "selftest_runA_dom.html",
+   "tour_runB_dom.html"
+  ],
+  "python_fakeappdata_chain": "invalid harness: localStorage does not persist under fake LOCALAPPDATA default profile (probe test PROBE null on both runs)"
  },
  "density_before.png": "MISSING",
  "density_after.png": "MISSING",

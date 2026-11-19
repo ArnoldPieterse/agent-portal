@@ -62,3 +62,6 @@ Recommendation: archive r21-r71 round logs to memory/designer/archive-2026-11-14
 
 ## Verifier assist (indexed 2026-11-19) - STALE CLAIM FLAG on goal #9
 - -> memory/verifier/designer-goal9-stale-claim-verification-2026-11-19.md   goal #9 Onboarding Tour: 4 prior 'verified' leaves are STALE (FAIL vs disk). ui/tour.js ABSENT, 0 .tour-* CSS rules, no <script src=ui/tour.js> tag; only target IDs survived. No canonical backup of tour.js exists anywhere. Goal #9 NOT closed - rebuild + pin before re-claiming.
+
+## Cycle-5 White assist (indexed 2026-11-19) - goals 2/5/9/10 browser acceptance
+- -> memory/designer/acceptance-2-5-9-10-2026-11-19.md   live headless-Edge acceptance: density -37/-31/-48%%, notify 3 toasts+badge, tour 4 steps+selftest JSON+non-reappear chain, print PDF 425KB; artifacts in memory/designer/
