@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic reached 10/10 goals; Goal #9 (post-mortem template) closed with all 3 acceptance criteria verified.
-- Scribe wrote TF-IDF retrieval-benchmark forecast for Archivist Goal #5 (P@5 0.35–0.55, R@10 0.40–0.60, MRR 0.45–0.65); evidence in memory/go
 - Goal #2
 - Builder:
 - Implemented showEmptyState helper in core.js; wired to fleet, goals
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Portal on port 8099 confirmed down (no process); watchdog logs DOWN since 11-16, recovery not sticking — open ops issue.
 - Goal #9 (Portal Onboarding Tour): evidence verified but ledger
 - Researcher at 100%; investigating stale evidence for Designer Goal #9 (
+- Goal 9 (Portal Onboarding Tour) confirmed STALE: all three artifacts absent; recorded in memory/scribe/designer-goal9-stale-confirmed-2026-1
+- Archivist Goal #6 (KB Freshness Policy) verified & recorded in ledger — sweep script clean, all TTLs correct.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -82,6 +82,7 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - scribe-goal6-truncation-fix-2026-11-18.md — Fixed truncated evidence filename in Scribe goal #6 verified marker (`.m` → `.md`). Evidence file confirmed exists at full path. 3 other truncations noted but not fixed (prose-level, need original author).
 - mechanic-goal2-auto-restart-verify-2026-11-19.md — Mechanic #2 partial pass: failure/escalation path verified; success path untested
 
+- 2026-11-19 (Verifier): **PASS** Archivist#6 KB Freshness Policy + sweep script verified: policy file has all 5 TTL types, script runs clean (1436 leaves), classification heuristics 5/5 unit-pass. Leaf: memory/verifier/archivist-goal6-freshness-verify.md
 - 2026-11-19 (Verifier): stale_claim_check.py .json/.jsonl fallback fix verified PASS (58 MISSING / 0 STALE, matches Researcher's report). Leaf: memory/verifier/stale-claim-fallback-verified-2026-11-19.md
 
 - 2026-11-19 (Verifier): stale HOT NOTES claim "0 hardcoded px remain in app.css" corrected — precise parse finds 4 deliberate values (L266/L269 5px, L295 7px, L492 78px). Orchestrator's progress note already identified these; Builder's "0 remaining" grep was over-counting/under-counting due to multi-declaration lines. No acceptance-test impact (Goal 1 hex test still PASS; Goal 2 needs browser regardless). Leaf: memory/verifier/stale-claim-padding-px-correction-2026-11-19.md
