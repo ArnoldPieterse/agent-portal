@@ -33,11 +33,11 @@ function renderAgents(){
   for(const a of agents){
     const c=document.createElement("div");
     c.className="acard"+(a.id===selectedId?" sel":"");
-    c.innerHTML=`<span class="em">${esc(a.emoji||"🤖")}</span>
+    c.innerHTML=`<span class="em">${a.emoji?esc(a.emoji):UI.icon("robot")}</span>
       <span class="nm"><b>${esc(a.name)}</b><span>${esc(shortModel(a.model_id))}</span></span>`;
-    const g=document.createElement("button"); g.textContent="⚙"; g.title="Edit profile";
+    const g=document.createElement("button"); g.innerHTML=UI.icon("settings"); g.title="Edit profile";
     g.onclick=e=>{e.stopPropagation();openEditor(a);};
-    const x=document.createElement("button"); x.textContent="✕"; x.title="Delete";
+    const x=document.createElement("button"); x.innerHTML=UI.icon("close"); x.title="Delete";
     x.onclick=async e=>{e.stopPropagation();
       if(!confirm(`Delete ${a.name}?`))return;
       await fetch("/api/agents/"+a.id,{method:"DELETE"}); refresh();};
@@ -119,12 +119,12 @@ function restoreMsgs(){
   return true;
 }
 $("stopBtn").onclick=()=>{ if(!busyNames.size&&mode!=="group")return; stopRequested=true; lastConcluded=true; activeCtrls.forEach(c=>c.abort());
-  if(runId){ jpost('/api/run-stop',{run_id:runId}).catch(()=>{}); } }; // ■ Stop: abort solo streams / tell the backend run engine to stop cleanly (it finishes teardown + verdict)
+  if(runId){ jpost('/api/run-stop',{run_id:runId}).catch(()=>{}); } }; // Stop button: abort solo streams / tell the backend run engine to stop cleanly (it finishes teardown + verdict)
 
 function addBubble(name, color, emoji, isYou){
   const d=document.createElement("div");
   d.className="msg"+(isYou?" you":"");
-  d.innerHTML=(isYou?"":`<div class="who" style="color:${color||"#ccc"}">${esc(emoji||"")} ${esc(name)}</div>`);
+  d.innerHTML=(isYou?"":`<div class="who" style="color:${color||"var(--tx-2)"}">${esc(emoji||"")} ${esc(name)}</div>`);
   const body=document.createElement("div"); body.className="body"; d.appendChild(body);
   $("msgs").appendChild(d); stickScroll();
   return d;
@@ -137,9 +137,9 @@ function addBubble(name, color, emoji, isYou){
 // stray "." / "ok" after [SILENT] still counts as silence rather than re-opening the loop.
 let lastConcluded=false; // set by streamReply when the server meta says the debate concluded
 let noOutputNames=new Set(); // agents whose FINAL reply was an empty completion this prompt (shown as "(no output)")
-let roundBubbles=[];    // agent bubbles created during the current send() - stamped with ✓concluded when the round ends on [CONCLUDED]
-let stopRequested=false; // ■ Stop clicked - closes the current run as concluded (user authority)
-const activeCtrls=new Set(); // in-flight /api/chat streams, aborted by ■ Stop
+let roundBubbles=[];    // agent bubbles created during the current send() - stamped with marked concluded when the round ends on [CONCLUDED]
+let stopRequested=false; // Stop button clicked - closes the current run as concluded (user authority)
+const activeCtrls=new Set(); // in-flight /api/chat streams, aborted by Stop button
 const stripConcluded=t=>(t||"").replace(/^\[concluded\][\s:\-.\u2013\u2014]*/i,"");
 const isSilent=t=>{const s=((t||"").replace(/[\u0085\u180e\u200b-\u200f\u202a-\u202e\u2060\ufeff]/g,"")).trim();if(!/^\[silent\]/i.test(s))return false;const rest=s.slice(8).replace(/^[\s:.\-\u2013\u2014]+/,"").trim();return !rest||/^(ok|okay|sure|nothing|no|fine|cool|agree)[.!]*$/i.test(rest);};
 
@@ -150,11 +150,11 @@ async function streamReply(agent, kind, silentTarget){
 }
 async function streamReplyCore(agent, kind, silentTarget){
    const d=addBubble(agent.name, agent.color, agent.emoji, false);
-   let ctrl=null; // AbortController for this stream - ■ Stop aborts it
+   let ctrl=null; // AbortController for this stream - Stop button aborts it
    roundBubbles.push(d);
    if(kind==="cross-talk"){
      const chip=document.createElement("span");
-     chip.style.cssText="margin-left:auto;font-size:10px;color:var(--dim)";
+     chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:var(--dim)";
      chip.textContent="\u21bb agent-to-agent"; chip.title="reply to another group member (unlimited by default - finite cap only when budget OFF; ends early on [CONCLUDED])";
      d.querySelector(".who").appendChild(chip);
    }
@@ -172,7 +172,7 @@ async function streamReplyCore(agent, kind, silentTarget){
      ctrl=new AbortController(); activeCtrls.add(ctrl);
       res=await fetch("/api/chat",{signal:ctrl.signal,method:"POST",headers:{"Content-Type":"application/json"},
        body:JSON.stringify({agent_id:agent.id, mode, kind:kind||"prompt", messages:history, session:sessionId||undefined})});
-   }catch(e){ if(ctrl&&(e.name==="AbortError"||stopRequested)){ stopBusy(); return ""; } stopBusy(); addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=String(e); return ""; }
+   }catch(e){ if(ctrl&&(e.name==="AbortError"||stopRequested)){ stopBusy(); return ""; } stopBusy(); addBubble("error","#ff6b6b","!",false).querySelector(".body").textContent=String(e); return ""; }
    const reader=res.body.getReader(); const dec=new TextDecoder(); let buf="";
    let full="", thinkEl=null, toolRow=null, metaSilent=false, metaConcluded=false, stop=false;
    try{
@@ -187,7 +187,7 @@ async function streamReplyCore(agent, kind, silentTarget){
            const p=line.slice(6);
            if(p==="[DONE]"){stop=true;break;} // NOT an early return - post-processing below (silent merge / concluded chip) must still run
            let o; try{o=JSON.parse(p);}catch(e){continue;}
-           if(o.error){ body.textContent="⚠ "+o.error; return ""; }
+           if(o.error){ body.textContent="error: "+o.error; return ""; }
            if(o.blocked){ body.textContent="\u23f8 "+o.blocked; return null; }
            if(o.meta){ if(typeof o.meta.inter_agent_replies==="number")setXtalk(o.meta.inter_agent_replies,o.meta.limit); if(o.meta.silent)metaSilent=true; if(o.meta.concluded)metaConcluded=true; }
            if(o.content){ stopBusy(); full+=o.content; body.textContent=full; stickScroll(); }
@@ -199,7 +199,7 @@ async function streamReplyCore(agent, kind, silentTarget){
            if(o.tool){ stopBusy(); if(!toolRow){toolRow=document.createElement("div");d.appendChild(toolRow);}
              const chip=document.createElement("span");chip.className="toolchip";
              const tn=o.tool.name||(o.tool.function&&o.tool.function.name)||"tool";
-             chip.textContent="🔧 "+tn; toolRow.appendChild(chip); }
+             chip.innerHTML=UI.icon("wrench")+" "+esc(tn); toolRow.appendChild(chip); }
          }
          if(stop)break;
        }
@@ -211,12 +211,12 @@ async function streamReplyCore(agent, kind, silentTarget){
      else{ d.classList.add("silentmsg"); body.textContent="\uD83D\uDD07 stayed silent"; stickScroll(); } // solo: small dim pill in place
      return ""; }
    if(metaConcluded){ lastConcluded=true; const s=stripConcluded(full); body.textContent=s; stickScroll();
-     const chip=document.createElement("span");chip.className="conclchip";chip.style.cssText="margin-left:auto;font-size:10px;color:#3ddc84";
+     const chip=document.createElement("span");chip.className="conclchip";chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:#3ddc84";
      chip.textContent="\u2713 concluded"; chip.title="discussion reached a natural conclusion - round ended";
      d.querySelector(".who").appendChild(chip); if(!renderDms(body,s))linkifyFiles(body,s); return s; }
    if(/stopped before completing its tool calls/i.test(full)){ // Studio harness note = turn ended MID-TASK (promised edits never ran)
      const chip=document.createElement("span");chip.className="warnchip";
-     chip.style.cssText="margin-left:auto;font-size:10px;color:var(--warn)";
+     chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:var(--warn)";
      chip.textContent="\u26A0 tool calls truncated - task incomplete";
      chip.title="the model stopped before running its tool calls - the promised work was NOT done";
      d.querySelector(".who").appendChild(chip); }
@@ -299,7 +299,7 @@ function linkifyFiles(el,text){
 
 // ---- Activity timeline (per-session audit log, /api/activity, 2026-11-12) ----
 let actTimer=null;
-const actIcons={start:"▶",tool:"🔧",end:"✓",blocked:"⛔",error:"⚠",aborted:"■",readmem:"📖",storemem:"💾"};
+const actIcons={start:"play",tool:"wrench",end:"check",blocked:"alert",error:"warning",aborted:"stop",readmem:"book",storemem:"save"};
 function actRender(evts){
   const body=$("actBody"); if(!body)return;
   body.innerHTML="";
@@ -315,8 +315,8 @@ function actRender(evts){
     else if(e.event==="readmem")x="memory lookup · "+(e.chars??0)+" chars in "+(e.dur??0)+"s";
     else if(e.event==="storemem")x=(e.stored?"note stored: ":"no note: ")+esc(e.note||"(none)")+" ("+(e.dur??0)+"s)";
     const div=document.createElement("div"); div.className="aev";
-    const col=(agents.find(a=>a.name===e.agent)||{}).color||"#ccc";
-    div.innerHTML=`<span class="at">${new Date(e.ts*1000).toLocaleTimeString([],{hour12:false})}</span><span class="an" style="color:${col}">${esc(e.agent||"?")}</span><span>${actIcons[e.event]||"•"}</span><span class="ax">${esc(x)}</span>`;
+    const col=(agents.find(a=>a.name===e.agent)||{}).color||"var(--tx-2)";
+    div.innerHTML=`<span class="at">${new Date(e.ts*1000).toLocaleTimeString([],{hour12:false})}</span><span class="an" style="color:${col}">${esc(e.agent||"?")}</span><span>${actIcons[e.event]?UI.icon(actIcons[e.event]):'•'}</span><span class="ax">${esc(x)}</span>`;
     body.appendChild(div);
   }
   body.scrollTop=body.scrollHeight;
@@ -338,7 +338,7 @@ async function actUpdate(){
       const s=(o.sessions||[])[0];
       $("actStat").textContent=s?"newest: "+s.session:"";
     }
-  }catch(e){ $("actStat").textContent="⚠ "+e; }
+  }catch(e){ $("actStat").textContent="error: "+e; }
 }
 function actFollow(){ // panel open -> jump to the session this run just started
   const sel=$("actSel"); if(!sel||!sessionId||!$("actPanel").classList.contains("open"))return;
@@ -402,7 +402,7 @@ async function opsLoad(){
     $("gitStatus").textContent=o.status||(o.changed?"":"(clean)");
     $("gitLog").textContent=o.log||"(no commits yet)";
     $("opsStat").textContent=(o.changed?o.changed+" changed":"clean")+(o.log?(" · "+o.log.split("\n").length+" shown"):"");
-  }catch(e){ $("opsStat").textContent="⚠ "+e; }
+  }catch(e){ $("opsStat").textContent="error: "+e; }
   opsTiles();   // host tiles refresh with the panel (2026-11-15)
   mergeQueueLoad();   // sandbox merge queue (2026-11-16)
 }
@@ -412,25 +412,25 @@ async function opsTiles(){
     const d=o.disk||{};
     $("diskTile").textContent=(d.total_gb!=null)?`disk ${d.drive} · ${d.used_gb} GB used / ${d.total_gb} GB (${Math.round(100*d.used_gb/d.total_gb)}%)\nfree ${d.free_gb} GB`:"⚠ "+(d.error||"no disk data");
     $("uptimeTile").textContent=`portal up · ${o.uptime_hm}\npid ${o.pid} · since ${o.started}`;
-  }catch(e){ $("diskTile").textContent="⚠ "+e; $("uptimeTile").textContent="⚠ "+e; }
+  }catch(e){ $("diskTile").textContent="error: "+e; $("uptimeTile").textContent="error: "+e; }
 }
 async function mergeQueueLoad(){
   const el=$("mergeQueue"); if(!el)return;
   try{
     const q=await (await fetch("/api/merge-queue")).json();
-    if(!q.ok){ el.textContent="⚠ "+(q.error||"error"); return; }
+    if(!q.ok){ el.textContent="error: "+(q.error||"error"); return; }
     const evs=(q.events||[]).slice(0,5);
     if(!evs.length){ el.textContent="(empty - no diverged sandbox code files captured)"; return; }
     const esc=s=>String(s).replace(/[&<>\"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
     el.innerHTML=evs.map(e=>'<div style="margin:2px 0">'+esc(e.ts.slice(5))+' · <b>'+esc(e.file)+'</b> sha '+esc(e.sha)+' ('+e.size+' B)'
-      +' <button class="btn" data-mq="'+esc(e.file)+'" style="padding:1px 8px;font-size:11px">↩ restore</button></div>').join("");
+      +' <button class="btn" data-mq="'+esc(e.file)+'" style="padding:1px 8px;font-size:var(--fs-12)">↩ restore</button></div>').join("");
     el.querySelectorAll("button[data-mq]").forEach(b=>b.onclick=async()=>{
       opsSay("restoring "+b.dataset.mq+"…");
       try{ const r=await (await fetch("/api/merge",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({file:b.dataset.mq})})).json();
-        opsSay(r.ok?"✓ restored "+r.file+" from snapshot "+r.snapshot+(r.committed?" (committed)":""):"⚠ "+(r.error||"restore failed"));
-      }catch(e2){ opsSay("⚠ "+e2); } finally{ mergeQueueLoad(); }
+        opsSay(r.ok?"restored "+r.file+" from snapshot "+r.snapshot+(r.committed?" (committed)":""):"error: "+(r.error||"restore failed"));
+      }catch(e2){ opsSay("error: "+e2); } finally{ mergeQueueLoad(); }
     });
-  }catch(e){ el.textContent="⚠ "+e; }
+  }catch(e){ el.textContent="error: "+e; }
 }
 $("opsBtn").onclick=()=>{ const open=$("opsPanel").classList.toggle("open"); $("opsBtn").classList.toggle("on",open); if(open)opsLoad(); };
 async function opsSay(t){ $("opsMsg").textContent=t; }
@@ -446,7 +446,7 @@ $("gitMsg").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault(
 $("todoPrune").onclick=async()=>{
   opsSay("pruning…");
   try{ const r=await (await fetch("/api/todo/prune",{method:"POST",headers:{"Content-Type":"application/json"},body:"{}"})).json();
-    opsSay(r.moved_sections?`✓ moved ${r.moved_sections} section(s), ${r.moved_items} item(s) → TODO_completed.md (${r.completed_lines} lines${r.chunks_split?", split "+r.chunks_split+" part(s)":""})`:(r.note||"done"));
+    opsSay(r.moved_sections?`moved ${r.moved_sections} section(s), ${r.moved_items} item(s) → TODO_completed.md (${r.completed_lines} lines${r.chunks_split?", split "+r.chunks_split+" part(s)":""})`:(r.note||"done"));
   }catch(e){ opsSay("error: "+e); }
 };
 

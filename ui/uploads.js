@@ -91,7 +91,7 @@ async function send(){
           "group run already in progress - attached to its live output; your message is queued and the agents will pick it up";
       });
       queueMsg(text);
-    }else{ addBubble("error","#ff6b6b","⚠",false).querySelector(".body").textContent=em; }
+    }else{ addBubble("error","#ff6b6b","!",false).querySelector(".body").textContent=em; }
   }
   if(adopted){ umqPoll(); renderQueue(); return; }   // keep busy/heartbeat for the adopted run
   busy=false; busyNames.clear(); renderBusyHint(); setSendQueued(false); stopStallPoll(); $("input").focus(); stopHeartbeat(); saveHistoryServer(true); umqPoll(); renderQueue();
@@ -107,7 +107,7 @@ function runTurn(agentName,kind){
   const d=addBubble(ag?ag.name:agentName,ag?ag.color:'#8b949e',ag?ag.emoji:'\ud83e\udd16',false);
   if(kind==="cross-talk"){
     const chip=document.createElement("span");
-    chip.style.cssText="margin-left:auto;font-size:10px;color:var(--dim)";
+    chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:var(--dim)";
     chip.textContent="\u21bb agent-to-agent"; chip.title="reply to another group member";
     d.querySelector(".who").appendChild(chip); }
   const body=d.querySelector(".body");
@@ -125,7 +125,7 @@ function runFinishTurn(agentName,kind){
   if(isSilent(full)){ t.d.remove(); return ""; }   // silence: merge out (round-end notes cover it)
   if(/stopped before completing its tool calls/i.test(full)){
     const chip=document.createElement("span");chip.className="warnchip";
-    chip.style.cssText="margin-left:auto;font-size:10px;color:var(--warn)";
+    chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:var(--warn)";
     chip.textContent="\u26a0 tool calls truncated - task incomplete";
     t.d.querySelector(".who").appendChild(chip); }
   if(!full.trim()){ t.body.textContent="\u2014 (no output) \u2014"; t.body.style.color="var(--dim)"; return ""; }
@@ -157,7 +157,7 @@ function handleRunEvent(ev){
     if(o.meta){ if(typeof o.meta.inter_agent_replies==="number")setXtalk(o.meta.inter_agent_replies,o.meta.limit);
       if(o.meta.concluded){ lastConcluded=true;
         const chip=document.createElement("span");chip.className="conclchip";
-        chip.style.cssText="margin-left:auto;font-size:10px;color:#3ddc84";chip.textContent="\u2713 concluded";
+        chip.style.cssText="margin-left:auto;font-size:var(--fs-12);color:#3ddc84";chip.textContent="\u2713 concluded";
         t.d.querySelector(".who").appendChild(chip); } }
     if(o.content){ t.stopBusy(); t.full+=o.content; t.body.textContent=t.full; stickScroll(); }
     if(o.thinking){ if(!t.thinkEl){t.thinkEl=document.createElement("details");t.thinkEl.className="think";
@@ -228,7 +228,7 @@ let editingId=null;
 function openEditor(a){
   editingId=a?a.id:null;
   $("edTitle").textContent=a?("Edit "+a.name):"New agent";
-  $("f_name").value=a?.name||""; $("f_emoji").value=a?.emoji||"🤖"; $("f_color").value=a?.color||"#3ddc84";
+  $("f_name").value=a?.name||""; $("f_emoji").value=(a?.emoji||""); $("f_color").value=a?.color||"#3ddc84";
   $("f_blurb").value=a?.blurb||""; $("f_persona").value=a?.persona||"";
   const net=!!a?.studio;                                  // networked = agent has a remote studio base URL
   $("f_net").checked=net; $("f_studio").value=a?.studio||""; $("f_key").value=a?.api_key||"";
@@ -358,7 +358,7 @@ async function goalsLoad(){
         +'<circle cx="22" cy="22" r="19" fill="none" stroke="'+(pct>=100?'var(--ok)':'var(--acc)')+'" stroke-width="4" stroke-linecap="round" stroke-dasharray="'+C+'" stroke-dashoffset="'+off+'"/>'
         +'</svg><span class="pct">'+pct+'%</span></div>'
         +'<div><div class="gname">'+a.agent+'</div><div class="gmeta">'+a.done+'/'+a.total+' done · '+a.open+' open'
-        +(a.blocked?' · <span class="gblock">⚠ '+a.blocked+' blocked</span>':'')+'</div></div></div>';
+        +(a.blocked?' · <span class="gblock">'+a.blocked+' blocked</span>':'')+'</div></div></div>';
     }
     const _pg=window._goalsPrev||{}; for(const a of (o.agents||[])){ if(_pg[a.agent]!=null && a.done>_pg[a.agent] && typeof window.notify==="function") window.notify("ok","Goal closed on "+a.agent+" ("+a.done+"/"+a.total+")"); }
     window._goalsPrev=Object.fromEntries((o.agents||[]).map(a=>[a.agent,a.done]));
@@ -389,7 +389,7 @@ async function goalsLoad(){
         +'<div class="mh-k">'+k+'</div><div class="mh-v">'+(v.value==null?"n/a":v.value)+'</div>'
         +'<div class="mh-d">'+(v.detail||"")+'</div></div>').join("");
     }).catch(()=>{});
-  }catch(e){ $("goalsStat").textContent="⚠ "+e; }
+  }catch(e){ $("goalsStat").textContent="error: "+e; }
 }
 $("goalsBtn").onclick=()=>{ const open=$("goalsPanel").classList.toggle("open"); $("goalsBtn").classList.toggle("on",open); if(open)goalsLoad(); };
 

@@ -50,7 +50,7 @@
     }
     fetch("/api/fleet/status").then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(d=>render(strip, d))
-      .catch(e=>{ strip.innerHTML = `<span style="color:var(--dim);font-size:11px">⚠ fleet status unavailable</span>`; });
+      .catch(e=>{ strip.innerHTML = `<span style="color:var(--dim);font-size:var(--fs-12)">⚠ fleet status unavailable</span>`; });
   }
 
   // Auto-load when ops panel opens (hook into existing opsLoad)

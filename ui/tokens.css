@@ -20,3 +20,10 @@
 --black:#000;--paper:#fff;--print-dim:#444;--print-line:#ccc;--print-border:#ddd;
 }
 @media (prefers-color-scheme: light){ :root{ --muted:#64748b;--qspin-bd:#e2e8f0;--qspin-top:#2f6fe0;--queue-tx:#1a2330; } }
+
+/* 2026-11-19 (White re-land pass2): legacy value tokens */
+:root{
+  --hover-bg:#2a3342;--seg-on:#3a6fd6;
+  --dm-bg:rgba(138,99,210,.10);--ok-soft:rgba(61,220,132,.08);--ok-line:rgba(61,220,132,.25);
+  --link-dash:rgba(109,177,255,.5);--warn-border:#d29922;--warn-text:#e3b341;
+}

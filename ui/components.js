@@ -124,7 +124,7 @@
     if (opts.label) {
       const lb = el("span", "ui-gauge__label");
       lb.textContent = opts.label;
-      lb.style.cssText = "font-size:10px;color:var(--dim,#888);margin-top:2px;";
+      lb.style.cssText = "font-size:var(--fs-12);color:var(--dim,#888);margin-top:2px;";
       g.appendChild(lb);
     }
     return g;
@@ -160,7 +160,7 @@
     n.innerHTML =
       '<div class="ui-tl-node__dot" style="background:' + tone + ';width:14px;height:14px;border-radius:50%;margin:0 auto 4px;"></div>' +
       '<span class="ui-tl-node__label">' + esc(opts.label) + "</span>" +
-      '<span class="ui-tl-node__stats" style="font-size:9px;color:var(--dim,#888);">' + (opts.open || 0) + "/" + total + "</span>";
+      '<span class="ui-tl-node__stats" style="font-size:var(--fs-12);color:var(--dim,#888);">' + (opts.open || 0) + "/" + total + "</span>";
 
     if (opts.onClick) {
       n.addEventListener("click", opts.onClick);
@@ -191,7 +191,7 @@
 
     const head = el("button", "ui-collapsible__head");
     head.setAttribute("aria-expanded", String(isOpen));
-    head.innerHTML = '<span class="ui-collapsible__chevron" style="display:inline-block;transition:transform .2s;font-size:10px;">' + (isOpen ? "\u25bc" : "\u25b6") + '</span> ' + esc(opts.title || "Panel");
+    head.innerHTML = '<span class="ui-collapsible__chevron" style="display:inline-block;transition:transform .2s;font-size:var(--fs-12);">' + (isOpen ? "\u25bc" : "\u25b6") + '</span> ' + esc(opts.title || "Panel");
 
     const body = el("div", "ui-collapsible__body");
     body.style.display = isOpen ? "" : "none";

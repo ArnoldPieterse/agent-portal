@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 (Onboarding Tour) complete: tour.js wired in index.html, 13 .tour-* CSS rules added to app.css, pin advanced.
 - Goal 8 done: all 12 emoji labels replaced with SVG icons (25 total in ui/icons.js), .ico CSS added, pin at 6b50b06fa0e8
 - Goals #5 (Notifications) & #10 (Print Layout) code-complete
 - Goal 8 fixed: fleet_status.js was hitting phantom /api/fleet/status; real endpoint is /api/fleet (agent_portal.py L40).
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer true state: 8/10 reached; open=#5 Notification + #10 Print only. Prompt's "6 open" was stale.
 - Goal #2 (Density Pass) CSS tokenization done; blocked on acceptance test needing browser screenshots, no headless browser available
 - Goal #5 Notification System: CSS (25 tokenized rules) + script tag wired; module fully functional, pin 6f521cb54a84
+- Goal 8 pin conflict confirmed: HOT NOTES claim 6b50b
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
