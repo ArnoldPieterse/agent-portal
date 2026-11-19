@@ -1,5 +1,8 @@
 <!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 
+## 2026-11-19 - design-token deep sweep complete (White direct)
+- All UI files clean: 0 hardcoded hex (outside var() fallbacks), 0 real glyph chars, 0 raw px font-size across ui/*.js + index.html + app.css; all var() refs resolve to tokens; node --check passes 9/9. Evidence: memory/designer/deep-sweep-2026-11-19.md (commit 85e3097). Headless Edge CDP does not work in this sandbox - use static verification for UI acceptance.
+
 ## 2026-11-18 - all host passwords are EMPTY (RDP + SMB, Arnold)
 - RDP and SMB passwords are empty on every host (White/Red/Pale/Black); remote accounts: Red/pale/black. Detail: memory/ops/host-port-task-map-2026-11-15.md #access-rdp--smb--all-hosts.
 
