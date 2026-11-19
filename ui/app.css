@@ -328,6 +328,7 @@ code{background:var(--line);border-radius:5px;padding:1px 5px;font-size:var(--fs
 .tour-btns{display:flex;justify-content:space-between;align-items:center;}
 .tour-skip{background:none;border:none;color:var(--dim);font-size:var(--fs-12);cursor:pointer;}
 .tour-next{background:var(--acc);color:var(--white);border:none;border-radius:var(--br-sm);padding:var(--sp-6) var(--sp-12);font-size:var(--fs-12);cursor:pointer;}
+.tour-hl{position:relative;z-index:1102;outline:2px solid var(--acc);outline-offset:3px;border-radius:var(--br-sm);}
 /* Goal #10 - print report */
 #printReportBtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:var(--br-sm);padding:var(--sp-3) var(--sp-6);font-size:var(--fs-12);cursor:pointer;display:inline-flex;align-items:center;gap:4px;}
 #printReportBtn:hover{color:var(--text);border-color:var(--dim);}

@@ -7,8 +7,9 @@
     {sel:"#opsBtn", title:"Ops Panel", body:"Local git status + one-click commit, and prune fully-completed TODO sections into TODO_completed.md. The Print button here exports a clean report."},
     {sel:"#filesBtn", title:"Files & Uploads", body:"Humans' drop zone: attach files to prompts or list what already landed in uploads/. Empty states tell you exactly where to start.", last:true}
   ];
-  let step=0, overlay=null, card=null;
-  function place(){ const t=document.querySelector(STEPS[step].sel); if(!t)return;
+  let step=0, overlay=null, card=null, hl=null;
+  function unhl(){ if(hl){hl.classList.remove("tour-hl"); hl=null;} }
+  function place(){ unhl(); const t=document.querySelector(STEPS[step].sel); if(!t)return; t.classList.add("tour-hl"); hl=t;
     const r=t.getBoundingClientRect(); const cr=card.getBoundingClientRect();
     let top=r.bottom+8, left=Math.max(8,Math.min(window.innerWidth-cr.width-8,r.left));
     if(top+cr.height>window.innerHeight-8)top=Math.max(8,r.top-cr.height-8);
@@ -31,6 +32,6 @@
     card.querySelector(".tour-next").onclick=function(){ if(step<STEPS.length-1){step++;render();}else close(); };
     overlay.appendChild(card); document.body.appendChild(overlay);
     render(); }
-  function close(){ if(overlay){overlay.remove();overlay=null;card=null;} try{localStorage.setItem("portalTourDone","1");}catch(_){} }
+  function close(){ unhl(); if(overlay){overlay.remove();overlay=null;card=null;} try{localStorage.setItem("portalTourDone","1");}catch(_){} }
   window.addEventListener("load",function(){ let done=false; try{done=localStorage.getItem("portalTourDone")==="1";}catch(_){} if(!done && !location.hash.includes("notour"))setTimeout(function(){ let d=false; try{d=localStorage.getItem("portalTourDone")==="1";}catch(_){} if(!d)start(); },800); });
 })();

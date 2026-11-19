@@ -456,3 +456,4 @@
 {"ts": "2026-11-19 20:34:37", "run": "g-1a1f35f64bd-be6b74", "missing": {"Scribe": "not_loaded"}}
 {"ts": "2026-11-19 20:58:25", "run": "g-1a1f3752d95-040006", "missing": {"Mechanic": "not_loaded", "Researcher": "unreachable"}}
 {"ts": "2026-11-19 21:15:25", "run": "g-1a1f384bec2-e61056", "missing": {"Mechanic": "not_loaded", "Researcher": "unreachable"}}
+{"ts": "2026-11-19 21:18:55", "run": "g-1a1f387f4c4-75e7ad", "missing": {"Mechanic": "not_loaded", "Researcher": "unreachable"}}
