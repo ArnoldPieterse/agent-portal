@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 ledger entry corrected from "verified" to PROGRESS — browser acceptance not yet run; don't mark verified without live check.
 - Goal #6 (Loading Skeleton Screens) complete: skeletons wired into fleetUpdate/goalsLoad/filesLoad in core.js + uploads.js
 - Goal 7 closed: added --fs-18/--fs-24 tokens, fixed 9px/10px→var(--fs-12), tokenized all 21 hardcoded px in app.css.
 - Goal #9 (Onboarding Tour) complete: tour.js wired in index.html, 13 .tour-* CSS rules added to app.css, pin advanced.
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher picked Goal #7 Typography Audit as sandbox-closable; known fix: #actBody line-height 1.7→≤1.6
 - Scribe reconciled open set to {2,5,7,8,9,10}; flagged contradiction between designer-browser-gate-forecast and designer-open-goals-triage
 - Designer: 8/10 done; #5 Notifications & #10 Print code-complete but blocked—no headless browser available for acceptance testing.
+- Designer true state: 8/10 reached; open=#5 Notification + #10 Print only. Prompt's "6 open" was stale.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
