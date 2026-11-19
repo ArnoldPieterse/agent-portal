@@ -125,6 +125,44 @@ def archive_goals(dry_run=False):
     return moves
 
 
+def lane_arc_summary(cycle_num):
+    """Per-agent arc for the closing cycle: reached/total (from the ledger SSOT),
+    last goal closed, and carry-forward count. Returns list of markdown lines."""
+    root = repo_root()
+    gdir = os.path.join(root, GOALS_DIR)
+    try:
+        counts = build_ledger().get("agents", {})
+    except Exception:
+        counts = {}
+    lines = []
+    for agent in sorted(AGENT_FILES):
+        fn = AGENT_FILES[agent]
+        path = os.path.join(gdir, fn)
+        if not os.path.isfile(path):
+            lines.append(f"- **{agent}**: no goal file found")
+            continue
+        c = counts.get(agent, {})
+        total = c.get("total", 0)
+        reached = c.get("reached", 0)
+        last_closed = None
+        for ln in open(path, encoding="utf-8").read().splitlines():
+            m = re.match(r"^\s*(\d+)[.)]\s+(.*)", ln)
+            if not m or len(m.group(2).strip()) < 12:
+                continue
+            body = m.group(2).strip()
+            title_m = re.match(r"\*\*(.+?)\*\*", body)
+            title = title_m.group(1) if title_m else body[:60]
+            if "(verified:" in ln:
+                last_closed = title
+        carry = total - reached
+        arc = f"{reached}/{total} reached"
+        if last_closed:
+            arc += f" · last closed: {last_closed}"
+        arc += f" · carries {carry}" + (" goal(s) forward" if carry != 1 else " goal forward")
+        lines.append(f"- **{agent}**: {arc}")
+    return lines
+
+
 def generate_kickoff(cycle_num, dry_run=False):
     """Generate cycle kickoff note. Returns path."""
     root = repo_root()
@@ -133,6 +171,9 @@ def generate_kickoff(cycle_num, dry_run=False):
     fname = f"cycle{cycle_num+1}-kickoff-{today}.md"
     path = os.path.join(gdir, fname)
     
+    # Lane-arc summary for the closing cycle
+    arc_lines = lane_arc_summary(cycle_num)
+
     # Gather carry-forward from archived files (most recent per agent)
     adir = os.path.join(gdir, "archive")
     carry_lines = []
@@ -160,6 +201,9 @@ def generate_kickoff(cycle_num, dry_run=False):
 - Previous cycle: **{cycle_num}** (all goals closed)
 - New cycle start: {today}
 - Agents: {len(AGENT_FILES)} seats active
+
+## Lane Arcs (cycle {cycle_num})
+{chr(10).join(arc_lines) if arc_lines else "- No agent goal files found"}
 
 ## Carry-Forward (unmet from previous cycle)
 {chr(10).join(carry_lines) if carry_lines else "- None - all goals met"}

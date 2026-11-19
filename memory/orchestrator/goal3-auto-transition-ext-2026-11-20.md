@@ -7,6 +7,12 @@ Ran a direct dry-run harness over all 5 artifact functions against current state
 - `--check` still correctly reports cycle NOT READY (52 open) -> full `--run` remains pending genuine cycle closure, as designed.
 
 
+## [PROGRESS 2026-11-20 auto-loop] Lane-arc summary implemented + verified
+- Added `lane_arc_summary(cycle_num)` to auto_cycle_transition.py: per-agent **reached/total pulled from the ledger SSOT** (`build_ledger()`, so pointer-validation rules apply identically), last-closed goal title (from `(verified:` lines only), and carry-forward count.
+- Wired into `generate_kickoff()` as a new `## Lane Arcs (cycle N)` section between Transition Summary and Carry-Forward — this closes requirement (c) "kickoff note with lane-arc summary per agent" from the goal spec.
+- **Verified:** ARC_CHECK PASS — all 8 agents' fractions match the live ledger exactly (orchestrator 4/10, researcher 10/10, builder 5/10, archivist 4/10, scribe 0/10, verifier 10/10, designer 3/10, mechanic 2/10; fleet 38/80). Dry-run `generate_kickoff(7, dry_run=True)` renders the section in the note body. Regression: `--check` still runs clean and its per-agent counts agree with the arcs.
+- Remaining for closure: full `--run` on genuine cycle closure (5 artifacts land on disk).
+
 ## What was done this pass
 1. **Fixed missing `time` import** — `save_roster_snapshot()` used `time.strftime()` without importing the module; would crash on the transition code path.
 2. **Added `create_goal_files(cycle_num, dry_run)` function** — generates skeleton goal files (10 numbered TBD slots) for all 8 agents in the new cycle directory. This was requirement (d) from the goal spec and was entirely absent.
