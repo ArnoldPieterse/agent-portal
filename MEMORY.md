@@ -18,9 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- kg_integrity.py on disk still reads `s.get("to","")` not `target`; hot note claiming fix was never persisted — 275 supersessions silently dr
-- Goal #2 done: 25.2% density reduction via 4 CSS changes in ui/app.css. Open: browser screenshot for final acceptance.
-- Built & ran memory/archivist/citation_audit.py (scans 1478 KB files, scores dead links); Archivist goal #2 unblocked
 - Goal #6: --sandbox flag added to portal_watchdog.py (tri-state port_bound
 - Goal #9 (Portal Onboarding Tour) evidence verified but marker not yet recorded in goal file — needs fix next pass.
 - Mechanic reached 10/10 goals; Goal #9 (post-mortem template) closed with all 3 acceptance criteria verified.
@@ -28,6 +25,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2
 - Builder:
 - Implemented showEmptyState helper in core.js; wired to fleet, goals
+- Designer at 7/10 goals verified; remaining 3 need live browser session (screenshots/print-preview).
+- Goal 7 (Typography
+- Portal on port 8099 confirmed down (no process); watchdog logs DOWN since 11-16, recovery not sticking — open ops issue.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
