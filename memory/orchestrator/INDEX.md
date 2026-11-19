@@ -26,3 +26,5 @@ Last updated: 2026-11-20.
 - ledger hygiene: verified-marker artifact audit (contribution c) -> memory/orchestrator/ledger-hygiene-marker-repair-2026-11-18.md   29 markers audited; builder #9 truncated marker repaired (marker-truncation class); audit tool reusable per cycle
 - goal #9 Fleet Health Composite: `_fleet_health_composite()` + `/api/fleet/health` BUILT+verified (all 8 agents numeric, correct colors; latency/errors honestly excluded) -> memory/orchestrator/health-composite-2026-11-18.md   self-test _health_selftest.py; remaining = fleet-tab badge UI
 - 2026-11-19: Archivist Goal 6 assist - wrote freshness-policy.md + built/tested freshness_sweep.py. Evidence: memory/orchestrator/evidence-archivist-goal6-freshness-2026-11-19.md
+
+- [Verifier assist 2026-11-20] goal #6 dependency-resolver progress (owner=Orchestrator) -> memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md   re-wired /api/fleet/dependencies-graph + UI tree; remaining = live-HTTP 200 (needs safe restart window)

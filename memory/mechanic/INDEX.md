@@ -19,3 +19,5 @@ Last updated: 2026-11-13.
 - -> memory/mechanic/runbook-gap-analysis-2026-11-17.md   cycle-3 goal 9: ops runbook automation gap analysis (5 runbooks covered)
 - -> memory/mechanic/ingested-2026-11-18-fleet-host-registry-white-black-.md   ingested 2026-11-18 (confidence=medium ttl=60d, human-accepted)
 - -> memory/mechanic/ingested-2026-11-18-fleet-host-registry-v2-all-four-.md   ingested 2026-11-18 (confidence=medium ttl=60d score=1.000)
+
+- [Verifier assist 2026-11-20] chaos-drill simulator (owner=Mechanic) -> memory/mechanic/test_chaos_drill_sim.py   referenced by scheduled-background goal; indexed to resolve dangling pointer

@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- p95 SLA tracking INACTIVE until portal emits `
 - Goal #2 (Animation/Motion) closed: animations.css had 5 keyframes +
 - Goal #6 evidence scorer built & selftest PASS (fleet avg 63.6, 11 markers); next: wire /api/evidence/quality endpoint
 - Designer wired interactions.css+animations.css into app.css; interactions.js still NOT in index.html script list — dead code
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 CSS gate met: all 16 :hover rules consolidated into interactions.css PORTAL INTEGRATION section; app.css @
 - Goal #2 residency_matrix.py built + selftest PASS; live verify still blocked by :8888 egress wall (WinError 10013).
 - Goal #1 fix identified: remove 16 ad-hoc :hover rules from app.css, @import interactions.css (PORTAL INTEGRATION section already has them al
+- Orchestrator seat cannot probe localhost HTTP (WinError 10013); must use elev.py as SYSTEM for live-portal tests.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
