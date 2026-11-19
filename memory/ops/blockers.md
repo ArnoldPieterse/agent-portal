@@ -29,6 +29,7 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - `python memory/designer/d7_d9_cdp_verify.py` (CDP screenshots) - no Chrome + CDP socket blocked.
 **Unblock (non-sandbox, one owner):** run BOTH from a seated agent on White ops terminal / RDP / Pale/Black/Red that has Chrome installed + LAN egress to 127.0.0.1:8099; capture the axe score JSON + the 375/768 screenshots as evidence, then `--record designer 7` / `--record designer 5`.
 **Not blocked (in-sandbox, see memory/orchestrator/designer-qa-gate-unblock-2026-11-17.md):** goal #8 typography gate runs clean - ONE real fix left (#actBody line-height 1.7 -> <=1.6).
+- [RESOLVED 2026-11-19 Researcher audit]: the "#actBody line-height 1.7" fix is no longer pending — live app.css L144 #actBody now uses var(--lh-mono)=1.6; full static audit of ui/app.css shows all 5 line-heights <=1.6 (0 violations). Remaining for Designer Goal #7 = font-size scope decision (extended vs strict-5-step) + browser computed-style leg, NOT a line-height fix. Evidence: memory/researcher/designer-goal7-typo-audit-2026-11-19.md
 - [18:35] ~~NEEDS-HUMAN: seat Designer model unreachable~~ **RESOLVED 2026-11-19** (seat running)
 - [18:35] ~~NEEDS-HUMAN: seat Archivist model unreachable~~ **STILL OPEN 2026-11-19** (Archivist=unreachable per current auto-loop status)
 - [18:36] ~~NEEDS-HUMAN: seat Designer model unreachable~~ **RESOLVED 2026-11-19** (seat running)
