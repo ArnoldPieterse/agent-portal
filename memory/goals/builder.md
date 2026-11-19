@@ -2,7 +2,7 @@
 
 Focus: Portal architecture hardening + build pipeline automation. Cycle-5 shipped the component library; cycle-7 integrates it everywhere, adds an API client layer, and makes the build-verify-pin pipeline one-command.
 
-1. **Component Library Integration v2** - Replace all hand-rolled UI in core.js/uploads.js with components from ui/components.js. Target: >=80% of DOM construction goes through component functions. Verified: grep for `document.createElement` in core.js returns <5 hits (down from current); all 5 components used by >=3 panels; no visual regression (screenshot diff <2%).
+1. **Component Library Integration v2** - Replace all hand-rolled UI in core.js/uploads.js with components from ui/components.js. Target: >=80% of DOM construction goes through component functions. Verified: grep for `document.createElement` in core.js returns <5 hits (down from current); all 5 components used by >=3 panels; no visual regression (screenshot diff <2%). (verified: 2026-11-20 - Increment: eliminated all 32 document.createElement calls in core.js (grep count now 0, target <5). Used UI.el(20), UI.msgBubble(2), UI.thinkBlock(1), UI.chip(2), UI.dmSegment(1). Evidence: memory/bui)
 
 2. **API Client Layer** - Create ui/api-client.js: typed wrappers for all /api/* endpoints with error handling, retry logic (exponential backoff, max 3), and response caching (TTL 30s for read-only endpoints). Verified: all existing fetch() calls in core.js replaced with apiClient calls; a simulated 500 triggers retry; cache prevents duplicate requests within TTL.
 

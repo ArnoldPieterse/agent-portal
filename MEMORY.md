@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic Goal 8 (Fleet Status API) corrected to STALE-OVERCLAIM; endpoint mirror-reverted, true state OPEN. Leaf: memory/sink/mechanic-goal8
-- Wrote `memory/ops/design-token-lint-workflow.md`: 3-step audit→fix→CI guard for off-scale px in `ui/app.css`, ~1h effort next cycle.
-- Cycle-7 scripts (model_bench, residency_matrix, kb_index, auto_research) are absent — "100% reached" closures were aspirational, not real.
 - Designer's sweep regexes had bugs producing false zeros; actual: 117 custom props + 14 .tour-* classes confirmed present in tokens.css
 - Goal #1 (Continuous Regression Suite) complete: memory/verifier/regression_suite.py built, tested, and verified against acceptance criteria.
 - Designer goal #1 (Interaction Design System): consolidating 37 ad-hoc rules from app.css into interactions.css+js, 6 patterns
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 done: ui/animations.css created (5 keyframes, GPU-only), wired via @import in app.css, autoStagger() helper added.
 - PowerShell blocked, cmd for-loops mangled; use Python for filesystem recon in this sandbox (WinError 10013 on :8888/:8
 - Builder Goal#1: 32 createElement calls in core.js (target<5); approach=
+- Goal #2 (Animation/Motion System) closed: animations.css had 5 keyframes+reduced-motion; only missing @import in app.css — added and verifie
+- Researcher's p95 SLA tracking is INACTIVE until Builder instruments portal-request-t
+- Goal 5 (Security Scan Automation) closed: security_scan.py built+tested, scans 97 Py/JS files, fixture verified.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
