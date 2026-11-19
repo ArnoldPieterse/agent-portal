@@ -7,6 +7,19 @@ import json, os, sys
 from collections import defaultdict
 from datetime import date
 
+def _is_node_ref(x):
+    """A graph node must look like a file path. The supersession parser captures the
+    word after 'supersedes', which is often prose ('the', 'nothing', 'r24'); those are
+    not nodes and must not pollute the graph (edges already use real paths)."""
+    return isinstance(x, str) and ("/" in x or x.endswith(".md"))
+
+def _sup_target(s):
+    """Return a supersession's target node-id, or None if absent / not a real path.
+    Data uses key 'target' (NOT 'to'); fall back to 'to' for robustness."""
+    t = (s.get("target") or s.get("to")) if isinstance(s, dict) else \
+        (s[1] if isinstance(s, (list, tuple)) and len(s) >= 2 else None)
+    return t if _is_node_ref(t) else None
+
 def kg_integrity():
     with open("memory/archivist/knowledge_graph.json", "r") as f:
         kg = json.load(f)
@@ -22,10 +35,11 @@ def kg_integrity():
     for s in supersessions:
         if isinstance(s, dict):
             nodes.add(s.get("from", ""))
-            nodes.add(s.get("to", ""))
         elif isinstance(s, (list, tuple)) and len(s) >= 2:
             nodes.add(s[0])
-            nodes.add(s[1])
+        _t = _sup_target(s)
+        if _t:
+            nodes.add(_t)
     nodes = {n for n in nodes if n}
     
     total_nodes = len(nodes)
@@ -36,10 +50,9 @@ def kg_integrity():
     for e in edges:
         inbound[e["to"]] += 1
     for s in supersessions:
-        if isinstance(s, dict):
-            inbound[s.get("to", "")] += 1
-        elif isinstance(s, (list, tuple)) and len(s) >= 2:
-            inbound[s[1]] += 1
+        _t = _sup_target(s)
+        if _t:
+            inbound[_t] += 1
     
     # Orphans: nodes with no inbound edges
     orphans = sorted([n for n in nodes if inbound[n] == 0])
@@ -62,7 +75,7 @@ def kg_integrity():
         if not os.path.exists(e["to"]):
             dangling.append({"edge": e, "missing": e["to"]})
     for s in supersessions:
-        target = s.get("to") if isinstance(s, dict) else (s[1] if isinstance(s, (list, tuple)) and len(s) >= 2 else None)
+        target = _sup_target(s)
         if target and not os.path.exists(target):
             dangling.append({"edge": s, "missing": target})
     dangling_count = len(dangling)
@@ -72,10 +85,10 @@ def kg_integrity():
     for e in edges:
         adj[e["from"]].append(e["to"])
     for s in supersessions:
-        if isinstance(s, dict):
-            adj[s.get("from", "")].append(s.get("to", ""))
-        elif isinstance(s, (list, tuple)) and len(s) >= 2:
-            adj[s[0]].append(s[1])
+        _f = s.get("from") if isinstance(s, dict) else (s[0] if isinstance(s, (list, tuple)) and len(s) >= 2 else None)
+        _t = _sup_target(s)
+        if _f and _t:
+            adj[_f].append(_t)
     
     WHITE, GRAY, BLACK = 0, 1, 2
     color = {n: WHITE for n in nodes}

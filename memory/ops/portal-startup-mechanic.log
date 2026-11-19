@@ -1,0 +1,3 @@
+warning: Failed to set cwd to temp dir
+Z:\agent_portal.py:303: SyntaxWarning: invalid escape sequence '\P'
+  elsewhere (2026-11-11: tool shell had USERPROFILE=C:\Projects\Workspace -> sandbox refs 404'd).

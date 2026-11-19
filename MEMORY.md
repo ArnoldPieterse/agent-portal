@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #6: --sandbox flag added to portal_watchdog.py (tri-state port_bound
 - Goal #9 (Portal Onboarding Tour) evidence verified but marker not yet recorded in goal file — needs fix next pass.
 - Mechanic reached 10/10 goals; Goal #9 (post-mortem template) closed with all 3 acceptance criteria verified.
 - Scribe wrote TF-IDF retrieval-benchmark forecast for Archivist Goal #5 (P@5 0.35–0.55, R@10 0.40–0.60, MRR 0.45–0.65); evidence in memory/go
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer at 7/10 goals verified; remaining 3 need live browser session (screenshots/print-preview).
 - Goal 7 (Typography
 - Portal on port 8099 confirmed down (no process); watchdog logs DOWN since 11-16, recovery not sticking — open ops issue.
+- Goal #9 (Portal Onboarding Tour): evidence verified but ledger
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

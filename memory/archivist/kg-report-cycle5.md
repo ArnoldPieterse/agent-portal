@@ -5,12 +5,12 @@ Source: memory/archivist/knowledge_graph.json
 ## Metrics
 | Metric | Value |
 |--------|-------|
-| Total nodes | 475 |
+| Total nodes | 496 |
 | Edge count (pointers + supersessions) | 925 |
 | Orphan count (no inbound edges) | 150 |
 | Actionable orphans (excl. standalone allowlist) | 71 |
 | Standalone allowlist size | 103 |
-| Dangling reference count | 0 |
+| Dangling reference count | 25 |
 | Cycle count | 3 |
 
 ## Orphans (sample of 10)
@@ -25,9 +25,16 @@ Source: memory/archivist/knowledge_graph.json
 - `memory/archivist/evidence-goal1-delta-reporting-2026-11-18.md`
 - `memory/archivist/evidence-goal1-stale-verification-2026-11-18.md`
 
+## Dangling References (sample)
+- missing: `r21/r28`
+- missing: `e2e-truncation-integration-2026-11-15.md`
+- missing: `X/`
+- missing: `design-tokens.md`
+- missing: `all-goals-2026-11-13.md`
+
 ## Cycles Detected
 - memory/portal/INDEX.md -> memory/portal/merge-pack.md -> memory/portal/INDEX.md
-- memory/portal/INDEX.md -> memory/portal/merge-pack.md -> memory/ops/INDEX.md -> memory/ops/memory-trim-archive-2026-11-14.md -> memory/INDEX.md -> memory/portal/INDEX.md
+- memory/ops/INDEX.md -> memory/ops/memory-trim-archive-2026-11-14.md -> memory/INDEX.md -> memory/portal/INDEX.md -> memory/portal/merge-pack.md -> memory/ops/INDEX.md
 - memory/ops/INDEX.md -> memory/ops/memory-trim-archive-2026-11-14.md -> memory/INDEX.md -> memory/ops/INDEX.md
 
 ---

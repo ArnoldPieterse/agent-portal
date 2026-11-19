@@ -59,3 +59,6 @@ Recommendation: archive r21-r71 round logs to memory/designer/archive-2026-11-14
 
 ## Cycle-5 assist (indexed 2026-11-19, Researcher seat)
 - -> memory/designer/skeleton-investigation-2026-11-19.md   goal #6: skeleton screens panel map + CSS approach; key finding: goalsLoad() is in uploads.js:362, not core.js
+
+## Verifier assist (indexed 2026-11-19) - STALE CLAIM FLAG on goal #9
+- -> memory/verifier/designer-goal9-stale-claim-verification-2026-11-19.md   goal #9 Onboarding Tour: 4 prior 'verified' leaves are STALE (FAIL vs disk). ui/tour.js ABSENT, 0 .tour-* CSS rules, no <script src=ui/tour.js> tag; only target IDs survived. No canonical backup of tour.js exists anywhere. Goal #9 NOT closed - rebuild + pin before re-claiming.
