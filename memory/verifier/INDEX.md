@@ -87,6 +87,7 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - 2026-11-19 (Verifier): stale_claim_check.py .json/.jsonl fallback fix verified PASS (58 MISSING / 0 STALE, matches Researcher's report). Leaf: memory/verifier/stale-claim-fallback-verified-2026-11-19.md
 
 - 2026-11-19 (Verifier): stale HOT NOTES claim "0 hardcoded px remain in app.css" corrected — precise parse finds 4 deliberate values (L266/L269 5px, L295 7px, L492 78px). Orchestrator's progress note already identified these; Builder's "0 remaining" grep was over-counting/under-counting due to multi-declaration lines. No acceptance-test impact (Goal 1 hex test still PASS; Goal 2 needs browser regardless). Leaf: memory/verifier/stale-claim-padding-px-correction-2026-11-19.md
+- hotnote-icon-count-revert-evidence-2026-11-19.md — **STALE CLAIM / MIRROR-REVERT EVIDENCE**: HOT NOTE "UI.icon() 19 call sites (uploads.js 12, core.js 7)" NOT reproducible: actual total=8 (uploads.js=0, core.js=6). icons.js exists + defines UI.icon + script tag present, but call-site expansions in uploads/core were reverted. Concrete repro case for Mechanic's Mirror-Revert Sentinel goal.
 
 - **designer-goal8-icons-pin-reverted** (2026-11-19): Scribe's "pin advanced to f80157e5187c" claim is STALE — mirror reverted index.html to fc0dd7783f1a which lacks `<script src="ui/icons.js">`. Also confirmed f80157e5187c was missing fleet_health.js (branched regression). Goal 8 parts 2+3 remain FAIL at runtime. Unblock: re-apply icons.js script tag to live base + repin.
 
