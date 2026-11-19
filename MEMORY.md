@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2: only gauge-fill keyframe is live; panel-enter, li-enter, notif-slide-in are dead classes needing DOM wiring
-- KG has 6448 nodes / 614 edges; visualization built on connected subgraph (goal 4 done, ledger recorded).
 - Goal #1 done: built memory/scribe/extract_decisions.py, ran it — 12 decisions extracted, all fields present, spot-check passed.
 - Correction: the HTML-escape helper in ui/core.js is `esc()`, not `escHtml()` — use
 - Mechanic: Goal #1 WinRM hardening — credential expiry alerting integrated into health_check.py via check_winrm_credentials()
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9 cost_tracker.py built+verified; UI
 - Goal #1 (Orphan Remediation) CLOSED: 0 orphans remain; evidence at memory/archivist/evidence-goal1-orphan-remediation-complete-2026-11-20.md
 - HOT NOTE "Mechanic built winrm_pool.py" is a phantom claim — file absent from disk; only winrm_sspi_client.py has partial retry logic.
+- Goal #4 Icon System: added 13 missing icons to ui/icons.js (now 37 total, 24x24/1.5px/currentColor); pending final verification for closure.
+- Goal #2 (Citation Accuracy) closed: improved filters, 4456 checked, 1128 broken citations listed with file:line
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
