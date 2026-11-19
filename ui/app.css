@@ -22,7 +22,7 @@ aside .ah{display:flex;align-items:center;padding:var(--sp-8) var(--sp-12);font-
 #addAgent{margin-left:auto;background:none;border:1px solid var(--line);color:var(--text);border-radius:var(--br-md);padding:3px var(--sp-8);cursor:pointer}
 #addAgent:hover{border-color:var(--acc)}
 #agentList{flex:1;overflow-y:auto;padding:var(--sp-4) var(--sp-8)}
-.acard{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8);border-radius:var(--br-md);cursor:pointer;border:1px solid transparent;margin-bottom:var(--sp-4);background:var(--panel2)}
+.acard{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-4);border-radius:var(--br-md);cursor:pointer;border:1px solid transparent;margin-bottom:var(--sp-2);background:var(--panel2)}
 .acard:hover{border-color:var(--line)}
 .acard.sel{border-color:var(--acc);background:var(--sel-bg)}
 .acard .em{font-size:var(--fs-18);width:26px;text-align:center}
@@ -165,8 +165,8 @@ textarea{resize:vertical;min-height:64px}
 #goalsPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:300px;flex-direction:column}
 #goalsPanel.open{display:flex}
 #goalsHead{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);color:var(--dim);border-bottom:1px solid var(--line)}
-#goalsBody{overflow-y:auto;padding:var(--sp-8) var(--sp-16);display:flex;flex-wrap:wrap;gap:var(--sp-8)}
-.gtile{display:flex;align-items:center;gap:var(--sp-8);background:var(--panel2);border:1px solid var(--line);border-radius:var(--br-md);padding:var(--sp-8) var(--sp-12);min-width:170px}
+#goalsBody{overflow-y:auto;padding:var(--sp-6) var(--sp-16);display:flex;flex-wrap:wrap;gap:var(--sp-6)}
+.gtile{display:flex;align-items:center;gap:var(--sp-8);background:var(--panel2);border:1px solid var(--line);border-radius:var(--br-md);padding:var(--sp-4) var(--sp-8);min-width:170px}
 .gring{position:relative;width:44px;height:44px;flex:none}
 .gring svg{transform:rotate(-90deg)}
 .gring .pct{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:var(--fs-12);font-weight:600}

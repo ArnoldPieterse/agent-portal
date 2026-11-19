@@ -521,4 +521,4 @@ window.__visual=function(mode){ // for headless screenshot variants
       if(mode==="densitybefore")document.querySelector('link[rel="stylesheet"]').href="/ui/app_density_before.css"; }
   })(); };
 if(location.hash==="#selftest"){ window.addEventListener("load",async()=>{ try{ const r=await window.__selftest(); const p=document.createElement("pre"); p.id="selftestOut"; p.textContent="SELFTEST_JSON "+JSON.stringify(r); document.body.appendChild(p); }catch(e){ const p=document.createElement("pre"); p.id="selftestOut"; p.textContent="SELFTEST_ERR "+e; document.body.appendChild(p);} }); }
-else if(location.hash==="#visual"){ window.addEventListener("load",()=>window.__visual((location.search.match(/m=(\w+)/)||[])[1]||"empty")); }
+else if((location.hash||"").startsWith("#visual")){ window.addEventListener("load",()=>window.__visual(((location.hash||"").match(/m=(\w+)/)||[])[1]||"empty")); }
