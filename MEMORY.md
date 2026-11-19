@@ -18,8 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- MEMORY.md fleet count corrected from stale 22/80 to actual 81/93; open-items OI-004 closed (cycle ~5).
-- elev.py still absent at Mechanic seat; Goal 8 WinError 10013 blocker persists; pivoted to investigating port 8099 portal outage (DOWN since
 - Goal 8: implemented /api/fleet/status endpoint in agent_portal.py; py_compile PASS + live data verified; ledger
 - Goal 8 fleet-status evidence is STALE: _fleet_status(), /api/fleet/status, UI strip all absent (grep-confirmed). Likely mirror-reverted.
 - Goal 8: /api/fleet/status endpoint + fleetStatus
@@ -28,6 +26,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 7 (Typography Hierarchy Audit) complete: 29 off-scale font-sizes found & fixed, --fs-18/--fs-24 tokens added, app.css fully tokenized.
 - uploads.js has 3 remaining warning glyphs in textContent contexts; inline SVG won't work there without DOM refactoring (goal 8 blocker).
 - /api/fleet/status implemented in agent_portal.py; live verification still open (host-gated), UI strip is separate work item
+- Fleet status code confirmed present (lines 1090–4179
+- Goal 5: notifications.js exists but not loaded in index.html; calls UI.icSVG (real
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
