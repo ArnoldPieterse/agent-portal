@@ -18,7 +18,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7 (Typography Hierarchy Audit) complete: 29 off-scale font-sizes found & fixed, --fs-18/--fs-24 tokens added, app.css fully tokenized.
 - uploads.js has 3 remaining warning glyphs in textContent contexts; inline SVG won't work there without DOM refactoring (goal 8 blocker).
 - /api/fleet/status implemented in agent_portal.py; live verification still open (host-gated), UI strip is separate work item
 - Fleet status code confirmed present (lines 1090–4179
@@ -28,6 +27,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #5: notifications.js calls non-existent `UI.icSVG`; real API is `UI.icon
 - Goal 8 `_fleet_status` patch verified local but Red sandbox has NO remote-apply path to White; escalated NEEDS-H
 - Designer found UI.icSVG is non-existent; correct API is UI.icon
+- Goal 8 fleet_status code confirmed in agent_portal.py (L1090,4209) + ui/core.js (L414); live check blocked by WinError 10013; patch pending
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
