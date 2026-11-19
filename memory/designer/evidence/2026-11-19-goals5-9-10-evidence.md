@@ -8,10 +8,10 @@ Headless Edge battery (fresh profiles, virtual-time-budget 25s).
 
 | panel | before px | after px | reduction % |
 |---|---|---|---|
-| fleetBody | 262 | 235 | 10.3 |
-| goalsBody | 288 | 246 | 14.6 |
+| fleetBody | 262 | 157 | 40.1 |
+| goalsBody | 288 | 198 | 31.3 |
 | filesList | 101641 | 45210 | 55.5 |
-body scrollHeight reduction: -1.4%
+body scrollHeight reduction: 1.1%
 typography violations: 0 (target 0)
 
 ## Goal 9 onboarding tour
