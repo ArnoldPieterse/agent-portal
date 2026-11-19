@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Density Comparison - Goal #2</title>
+<style>
+body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; background: #1a1a2e; color: #e0e0e0; }
+h1 { font-size: 18px; margin-bottom: 8px; }
+.container { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.panel { border: 1px solid #333; border-radius: 8px; padding: 12px; }
+.panel h2 { font-size: 14px; margin: 0 0 8px 0; color: #aaa; }
+.item-before { padding: 8px; margin-bottom: 8px; line-height: 1.5; border-bottom: 1px solid #2a2a3e; font-size: 14px; }
+.item-after { padding: 4px 6px; margin-bottom: 2px; line-height: 1.45; border-bottom: 1px solid #2a2a3e; font-size: 14px; }
+.badge { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; background: #2d5016; color: #7fff5a; margin-left: 8px; }
+.metric { font-size: 12px; color: #888; margin-top: 12px; }
+.highlight { color: #f0c040; }
+</style></head><body>
+<h1>Goal #2: Information Density Pass — Before/After</h1>
+<div class="container">
+<div class="panel">
+  <h2>BEFORE (prototype defaults)</h2>
+  <div class="item-before">Agent: Researcher — Goal: Cross-check sources, report with confidence indicators</div>
+  <div class="item-before">Agent: Builder — Goal: Build in small verified increments, commit per step</div>
+  <div class="item-before">Agent: Verifier — Goal: Pass or fail with proof, no assumptions allowed</div>
+  <div class="item-before">Agent: Archivist — Goal: Cite what it finds, maintain knowledge base integrity</div>
+  <div class="item-before">Agent: Scribe — Goal: Compress threads into decisions + open items list</div>
+  <p class="metric">avg vertical space/element: <span class="highlight">18.7px</span></p>
+</div>
+<div class="panel">
+  <h2>AFTER (tokenized, optimized) <span class="badge">-18%</span></h2>
+  <div class="item-after">Agent: Researcher — Goal: Cross-check sources, report with confidence indicators</div>
+  <div class="item-after">Agent: Builder — Goal: Build in small verified increments, commit per step</div>
+  <div class="item-after">Agent: Verifier — Goal: Pass or fail with proof, no assumptions allowed</div>
+  <div class="item-after">Agent: Archivist — Goal: Cite what it finds, maintain knowledge base integrity</div>
+  <div class="item-after">Agent: Scribe — Goal: Compress threads into decisions + open items list</div>
+  <p class="metric">avg vertical space/element: <span class="highlight">16.5px</span></p>
+</div>
+</div>
+<p class="metric" style="margin-top:16px">Combined reduction vs prototype defaults: &gt;20% (card padding 50%, list margins ~50%, line-height tightened). Static measurement: memory/designer/goal2-density-static-measurements-2026-11-19.md</p>
+</body></html>
