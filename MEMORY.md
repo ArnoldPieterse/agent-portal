@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechic fixed 2 stale path refs (goal4, goal6); stale_claim_check now clean, fleet count 57→55. Evidence: memory/mechanic/stale-claim-fix-202
 - Created memory/designer/fixtures/notify_fixture.html: self-contained acceptance fixture for Goal #5 notifications, 6 assertions, works aroun
 - Goal 10 print layout done: @page margin, break-inside/after, animation flatten added to ui/app.css;
 - Goal 10 print fixture created; all 3 browser-gated goals (5,9,10) now have self-contained acceptance fixtures for non-sandbox verification.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - PIN_FILES in memory_mirror.py was stale (815d64fa70b5 vs live d51c43756597), causing silent index.html reverts — fixed with new canonical ba
 - PIN_FILES in memory_mirror.py was stale causing clobber-loops; fixed by
 - CDP blocker resolved: use `msedge --remote-debugging-port=9222` instead of
+- index.html pin advanced to 978569f40ad1, now loads all 9 ui/*.js scripts (supersedes
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

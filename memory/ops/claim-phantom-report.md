@@ -1,5 +1,5 @@
 # Claim-Phantom Report
-Generated: 2026-11-19 20:15 by `memory/ops/verify_claims.py` (Builder).
+Generated: 2026-11-19 20:21 by `memory/ops/verify_claims.py` (Builder).
 
 Classifies every `verified:` marker in seat goal files against the disk:
   * REAL    - verified + a cited artifact exists on disk
