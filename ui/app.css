@@ -7,6 +7,9 @@
 /* tokens: see ui/tokens.css (2026-11-19 re-land removed duplicate :root) */
 
 *{box-sizing:border-box}
+/* form controls on the token scale (was UA default 13.33px - off-scale) */
+button,select{font-size:var(--fs-12)}
+input,textarea{font-size:var(--fs-14)}
 body{margin:0;font-size:var(--fs-14);line-height:1.45;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column}
 header{display:flex;align-items:center;gap:var(--sp-12);padding:var(--sp-8) var(--sp-16);border-bottom:1px solid var(--line);background:var(--panel)}
 header h1{font-size:var(--fs-15);margin:0;font-weight:600}

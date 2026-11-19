@@ -2,10 +2,10 @@
 (function(){ "use strict";
   if(window.__tourLoaded)return; window.__tourLoaded=true;
   const STEPS=[
-    {sel:"#goalsBtn", title:"Goal Velocity", body:"Per-agent done/total rings from memory/goals/, plus fleet totals and a git-based progress curve with stall warnings."},
     {sel:"#fleetBtn", title:"Fleet Status", body:"Every host's loaded models, busy/idle state and last-seen age. Live while the panel is open; offline hosts raise a notification."},
-    {sel:"#filesBtn", title:"Files & Uploads", body:"Humans' drop zone: attach files to prompts or list what already landed in uploads/. Empty states tell you exactly where to start."},
-    {sel:"#composer", title:"Prompt Composer", body:"Send prompts solo or to the whole group. Messages sent while agents are busy queue up and deliver automatically when idle.", last:true}
+    {sel:"#goalsBtn", title:"Goal Velocity", body:"Per-agent done/total rings from memory/goals/, plus fleet totals and a git-based progress curve with stall warnings."},
+    {sel:"#opsBtn", title:"Ops Panel", body:"Local git status + one-click commit, and prune fully-completed TODO sections into TODO_completed.md. The Print button here exports a clean report."},
+    {sel:"#filesBtn", title:"Files & Uploads", body:"Humans' drop zone: attach files to prompts or list what already landed in uploads/. Empty states tell you exactly where to start.", last:true}
   ];
   let step=0, overlay=null, card=null;
   function place(){ const t=document.querySelector(STEPS[step].sel); if(!t)return;
