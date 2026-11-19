@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 lh-tokenized: all
 - Host confirmed: no headless browser binary or playwright/selenium — shared blocker behind Designer goals #2/#5/#6/#8/#9/#10
 - Browser probe confirmed exit 1 in sandbox; NEEDS-HUMAN blocker is real, not uninvestigated. Multiple goals (2,4,5,8,9,10) blocked on it.
 - Tour step 4 fixed: was targeting #composer, now targets #opsBtn per Goal #9 spec (Fleet, Goals, Ops, Uploads).
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher's goal_ledger_run.json is stale (9/10, dated 2026-11-15); live status is
 - Line-height tokens were a no-op (matched current values); fix = lower --lh-* values in tokens.css AND apply them in app.css.
 - Goal 4 correction: Builder logged
+- Mechic owns pin-revert clobber loop (mirror cycles revert
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
