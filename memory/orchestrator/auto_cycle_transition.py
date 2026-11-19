@@ -13,7 +13,7 @@ USAGE:
   python memory/orchestrator/auto_cycle_transition.py --run        # execute transition
   python memory/orchestrator/auto_cycle_transition.py --dry-run    # show what WOULD happen
 """
-import os, re, sys, shutil, datetime, time
+import os, re, sys, shutil, json, datetime, time
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "researcher"))
 try:

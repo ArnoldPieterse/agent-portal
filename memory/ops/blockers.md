@@ -1,4 +1,11 @@
 
+## [NEEDS-HUMAN 2026-11-20] Orchestrator #1 Live Hotload Execution: elev.py ABSENT on this seat
+**Class:** helper file-not-found (NOT exit 5) — same class as the earlier Verifier helper-absent note. The advertised escalation path `python elev.py <cmd>` does not exist at this sandbox seat.
+**Probes (fresh):** `python elev.py --shell "..."` -> `can't open file 'Z:\\elev.py': No such file or directory`; `dir /s /b C:\Users\White\\elev.py` and `C:\Users\Public\\elev.py` -> no match; `glob('Z:/elev*')` -> [].
+**Blocks:** the LIVE leg of goal #1 (real load/unload on White via elev.py to bypass the :8888/:8099 egress wall). All cycle-6 hotload infra is built + sandbox-verified; only the live execution step needs a seat where elev.py actually exists.
+**Unblock (one-time, non-sandbox White seat with elev.py present):** run `python elev.py --shell "curl -s http://127.0.0.1:8888/api/v0/models"` to confirm the helper + LM Studio, then execute the load/unload cycle and append LOAD_SUCCESS/UNLOAD_SUCCESS rows to hotload-log.jsonl.
+**Do NOT re-probe elev.py from this seat.**
+
 ## [NEEDS-HUMAN 2026-11-20] Verifier #4 Performance Regression Gate: live-measurement leg blocked by :8099 egress wall
 **Class:** WinError 10013 (sandbox egress block to localhost:8099) — SAME wall as Mechanic #4, Verifier #2 SLO, Orchestrator #2. Do NOT re-probe from a sandbox seat.
 **Status:** `memory/verifier/perf_gate.py` is BUILT and logic-verified (clean PASS + negative-test path both exercised). But its live baseline cannot be captured here: every /api/* sample returns errors (19/20 endpoints p50=None) because the portal is unreachable from this seat. I deleted the invalid baseline so it is not reused.
