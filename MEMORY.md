@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier closed last stale-evidence FP (orchestr
 - winrm_pool.py has no CLI/argv parsing — close_goal1.bat's "python
 - Designer 10/10 closed; only fleet open goal is Mechanic WinRM (sandbox egress block, NEEDS-HUMAN)
 - Auto-loop "1 open" is a stale dashboard artifact; live ledger is authoritative (designer 10/10, open=0).
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic goal #1 WinRM Hardening CLOSED: deploy_watchdog_remote ok on all 4 hosts; ledger 10/10, open=0, fleet 79
 - handoff.js 17 hexes are NOT a token-bypass defect; 46 var() usages confirm partial wiring — treat as resolved, not open
 - ui/handoff.js rgba tints → var(--ok-soft)/var(--ok-line); light-theme overrides in tokens.css; contrast_audit 0 fail, design_qa 12/12
+- Sandbox blocks HTTP data to LAN hosts even when TCP connect succeeds (PALE:5985 confirmed reachable at TCP level).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
