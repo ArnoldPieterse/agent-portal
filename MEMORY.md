@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- WCAG finding: secondary tokens (--dim,--acc,--ok light) only AA 4.8–5.9:1; "AAA 7:1+" hot-note overstates compliance for non-primary pairs.
-- Scribe: Goal 9 (Memory Search Relevance Feedback) closed — 3/3 AC pass, ledger recorded; open count now 3.
-- All 10 Designer goals closed — Goal #10 added perf markers to core.js + budget doc; no open items remain.
 - Goal #10 closed: weekly_summary.py gained --agent/--all-agents flags; 8 per-agent digests verified, no cross-contamination.
 - Goal 4 live integration test written; handles unreachable portal (FAIL+exit 1); closure is one `python` call on non-sandbox seat.
 - Fixed Goal 8 evidence path: `dup-detect-report-20
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe reached 10/10 goals closed (open=0) on 2026-11-21; evidence at memory/scribe/pass-evidence-2026-11-21.md
 - Mechanic Goal 9: breach_alert() implemented, 9/9 tests pass; full closure needs 7-day data (egress wall, not re-probed).
 - Builder ran auto-fix script resolving all 117 broken xrefs (0 remaining); evidence in memory/builder/, supports Archivist Goal 4
+- Designer: all 10/10 goals closed, open=0; "4 open" in auto-loop prompt was stale — lane fully done.
+- Mechanic 3/10 reached (Goal 10 closed). Goals #1–#6,#9 all blocked on sandbox egress wall (no :8099/:8888/LAN
+- Verifier built deploy_perf_gate.py (123 lines) for Goal #1; :8
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

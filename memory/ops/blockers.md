@@ -16,7 +16,7 @@
 ## [NEEDS-HUMAN 2026-11-20] Verifier #4 Performance Regression Gate: live-measurement leg blocked by :8099 egress wall
 **Class:** WinError 10013 (sandbox egress block to localhost:8099) â€” SAME wall as Mechanic #4, Verifier #2 SLO, Orchestrator #2. Do NOT re-probe from a sandbox seat.
 **Status:** `memory/verifier/perf_gate.py` is BUILT and logic-verified (clean PASS + negative-test path both exercised). But its live baseline cannot be captured here: every /api/* sample returns errors (19/20 endpoints p50=None) because the portal is unreachable from this seat. I deleted the invalid baseline so it is not reused.
-**Unblock (one-time, non-sandbox White seat with :8099 egress):** run `python memory/verifier/perf_gate.py --baseline` to capture a real perf-baseline.json, then `python memory/verifier/perf_gate.py` for the gate. Closure = baseline present + 0 regressions + negative test (deflate one endpoint p50 -> alert fires).
+**Unblock (one-time, non-sandbox White seat with :8099 egress):** run `python memory/verifier/deploy_perf_gate.py` — single command that captures baseline, registers daily schtask, and runs initial gate check. Closure = 3 consecutive daily PASS + negative test.
 
 ## [NEEDS-HUMAN 2026-11-20 Builder] #3 Build-Verify-Pin: memory_mirror.py is 0 bytes in sandbox
 **Class:** file-absent (0-byte placeholder, canonical lives on White). Not a code bug.
