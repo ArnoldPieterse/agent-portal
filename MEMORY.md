@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 API contracts: static+negative leg DONE (31/31 pass, 5 neg tests); only --live remains, blocked by :8099 egress wall.
-- Goal #8 closed: component-reference.md documents all 5 ui/components.js functions with examples, visuals, accessible names.
-- Goal #9 done: citation_map.py → citation-map.json (2095 files, 1667 edges, 245 genuine stale citations). Evidence at memory/archivist/eviden
 - Goal #10 closed: fixed cycle_quality.py security parser — severities are bold in table cells (`| **HIGH** |`), not standalone cells.
 - Goal #4: circuit breaker was documented but never applied to agent_portal.py; now implemented (timeout 5s, CB threshold 3)
 - Scribe goals file is at memory/goals/scribe.md (not squire.md) — wrong cached path caused 2 failed passes
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe's goal file is `memory/goals/scribe.md` (not `squire.md`) — repeated path error blocked
 - Goal #7: existing log rotation script mismatches spec (10MB→50MB, 5 rot→7 days, missing .jsonl); needs rewrite
 - Goal #5 static leg PASSED: verified no lock held across model generation; parallel_slots=1 invariant confirmed in code
+- Goal 4 (Fleet Status API): circuit breaker self-test passed 10/10; only live integration test on White remains.
+- Goal #9 advanced: high-contrast tokens in ui/tokens.css (WCAG AAA 7:1+), theme picker in ui/core.js persisting to localStorage.
+- Goal #7 (Auto-Updating Archive Nav) closed: dedup safety-net added to archive_nav.py, acceptance test passed
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
