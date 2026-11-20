@@ -38,8 +38,24 @@ SEAT_FILES = [
     "scribe.md", "verifier.md", "designer.md", "mechanic.md",
 ]
 
-PATH_RE = re.compile(r"memory/[A-Za-z0-9_./\-]+\.(?:py|md|json|jsonl)")
+# 2026-11-20 Researcher fix: `jsonl` MUST precede `json`. With the old order
+# `(?:py|md|json|jsonl)` a cited `.jsonl` artifact matched only its `.json`
+# prefix (trailing 'l' left unmatched), so it extracted a non-existent `.json`
+# path and every .jsonl-citing goal was flagged PHANTOM (false positive).
+PATH_RE = re.compile(r"memory/[A-Za-z0-9_./\-]+\.(?:py|md|jsonl|json)")
 GOAL_HEAD_RE = re.compile(r"^(?P<num>\d+)\. \*\*(?P<title>.*?)\*\*", re.M)
+
+# 2026-11-20 Researcher fix: template placeholder citations (e.g.
+# `roster-snapshots/cycle-N.json`, `sla-report-YYYY-MM-DD.md`) are NOT missing
+# work - they just need a concrete artifact pointer. Keep them OUT of PHANTOM
+# classification so the report only flags genuinely absent artifacts.
+def is_template(p):
+    base = p.rsplit("/", 1)[-1]
+    if "YYYY" in base:
+        return True
+    if re.fullmatch(r"cycle-[A-Z]\.jsonl?", base):
+        return True
+    return False
 
 
 def split_goal_blocks(text):
@@ -74,13 +90,17 @@ def scan():
         text = fp.read_text(encoding="utf-8", errors="replace")
         for num, title, body in split_goal_blocks(text):
             verified = "verified:" in body.lower()
-            cited = sorted(set(PATH_RE.findall(body)))
-            existing = {c for c in cited if (ROOT / c).exists()}
-            status = classify(verified, cited, existing)
+            cited_all = sorted(set(PATH_RE.findall(body)))
+            templates = [c for c in cited_all if is_template(c)]
+            concrete = [c for c in cited_all if not is_template(c)]
+            existing = {c for c in concrete if (ROOT / c).exists()}
+            # classify on CONCRETE paths only; a goal citing only placeholders
+            # becomes UNCITED (needs a concrete pointer), never PHANTOM.
+            status = classify(verified, concrete, existing)
             if status is None:
                 continue
-            missing = [c for c in cited if c not in existing]
-            rows.append((seat, num, title, status, cited, missing))
+            missing = [c for c in concrete if c not in existing] + templates
+            rows.append((seat, num, title, status, cited_all, missing))
     return rows
 
 

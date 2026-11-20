@@ -145,8 +145,11 @@ def selftest():
 def main():
     ap = argparse.ArgumentParser(description="Fleet performance profiler")
     ap.add_argument("--duration", type=int, default=3600, help="Profile window in seconds (default 3600=1h)")
+    ap.add_argument("--run-once", action="store_true", help="Alias for --duration 3600 (for schtask registration)")
     ap.add_argument("--selftest", action="store_true", help="Run self-test with synthetic data")
     args = ap.parse_args()
+    if args.run_once:
+        args.duration = 3600
 
     if args.selftest:
         ok = selftest()

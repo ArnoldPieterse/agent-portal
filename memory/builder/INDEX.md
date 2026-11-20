@@ -59,3 +59,4 @@ Last updated: 2026-11-20 (Builder assist: Mechanic Goal 1 concurrent pool load t
 - [TODO.md](memory/builder/TODO.md)
 - [anomaly-ar14-writepath-evidence.md](memory/builder/anomaly-ar14-writepath-evidence.md)
 - Goal#4 error boundary / showPanelError 5/5 panels wired (actBody, fleetBody, gitStatus, goalsBody, filesList); in-process verification PASS; live browser test pending -> memory/builder/error_boundary_increment3-2026-11-20.md
+- Assist Mechanic G7: perf_profile.py --run-once flag + FleetPerfProfile added to register_tasks.py (selftest PASS, schedulable) -> memory/builder/assist-mechanic-g7-perf-profile-2026-11-20.md

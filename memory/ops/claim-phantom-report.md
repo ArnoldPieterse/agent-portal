@@ -1,67 +1,29 @@
 # Claim-Phantom Report
-Generated: 2026-11-20 09:55 by `memory/ops/verify_claims.py` (Builder).
+Generated: 2026-11-20 15:01 by `memory/ops/verify_claims.py` (Builder).
 
 Classifies every `verified:` marker in seat goal files against the disk:
   * REAL    - verified + a cited artifact exists on disk
   * PHANTOM - verified + cited path(s) present but NONE exist  (stale/false claim)
   * UNCITED - verified + no machine-checkable path (manual-only; needs a pointer added)
 
-**Totals: 46 REAL, 16 PHANTOM, 18 UNCITED.**
-
-## PHANTOM claims (verified but artifact missing) — owner should re-do or drop the marker
-- **orchestrator #10** Fleet Roster Versioning
-    - MISSING: `memory/orchestrator/roster-snapshots/cycle-N.json`
-- **archivist #3** Memory Freshness SLA
-    - MISSING: `memory/archivist/freshness_report.py`
-- **archivist #5** Cross-Reference Integrity Monitor
-    - MISSING: `memory/archivist/xref_monitor.py`
-- **archivist #7** Retrieval Benchmark Suite
-    - MISSING: `memory/archivist/retrieval-baseline.json`
-- **archivist #8** Memory Deduplication Engine
-    - MISSING: `memory/archivist/dedup.py`
-- **archivist #9** Provenance Tracking
-    - MISSING: `memory/archivist/provenance.py`
-- **scribe #1** Decision Auto-Extraction
-    - MISSING: `memory/scribe/extract_decisions.py`
-    - MISSING: `memory/synthesis/decisions.json`
-- **scribe #3** Context Compression for New Agents
-    - MISSING: `memory/scribe/compress_context.py`
-- **scribe #4** Cross-Agent Handoff Protocol
-    - MISSING: `memory/scribe/handoffs.json`
-- **scribe #5** Knowledge Distillation Pipeline
-    - MISSING: `memory/scribe/distill.py`
-- **scribe #7** Archive Navigation Index
-    - MISSING: `memory/synthesis/archive-nav.md`
-- **scribe #8** Temporal Reasoning Layer
-    - MISSING: `memory/scribe/timeline.py`
-- **mechanic #5** Backup Automation
-    - MISSING: `memory/mechanic/backup.py`
-- **mechanic #7** Performance Profiling
-    - MISSING: `memory/mechanic/perf-profile.json`
-    - MISSING: `memory/mechanic/perf_profile.py`
-- **mechanic #9** Incident Response Runbook
-    - MISSING: `memory/mechanic/runbook.md`
-- **mechanic #10** Fleet Topology Visualization
-    - MISSING: `memory/mechanic/topology.py`
+**Totals: 64 REAL, 0 PHANTOM, 16 UNCITED.**
 
 ## UNCITED verified claims (no path to check — add an artifact pointer so the ledger can close them)
 - **orchestrator #1** Live Hotload Execution (elev.py)
 - **orchestrator #2** Fleet Capacity Dashboard v2
 - **orchestrator #9** Cycle Cost Tracker
+- **orchestrator #10** Fleet Roster Versioning
 - **builder #6** State Management Refactor
 - **archivist #6** Archive Compaction
-- **scribe #2** Cycle Narrative v2 (Auto)
 - **scribe #6** Synthesis Quality Scoring
 - **scribe #9** Institutional Memory Search
 - **designer #1** Interaction Design System
 - **designer #2** Animation/Motion System
 - **designer #4** Icon System
 - **designer #6** Responsive Design Hardening
-- **designer #7** Color Contrast + Accessibility
 - **designer #8** Notification/Toast Design
 - **designer #9** Empty States + Loading Patterns
 - **mechanic #1** WinRM Remote Management Hardening
-- **mechanic #6** Log Rotation
 - **mechanic #8** Capacity Planning Report
 
 ## REAL claims (verified + artifact present)
@@ -70,7 +32,7 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **orchestrator #5** Model Binding Governance  -> `memory/llm/binding-audit.md`
 - **orchestrator #6** Cross-Agent Dependency Resolver  -> `memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md`
 - **orchestrator #7** Fleet Onboarding Wizard v4  -> `memory/orchestrator/goal7-onboarding-wizard-v4-progress-2026-11-20.md`
-- **orchestrator #8** VRAM Pressure Alerting  -> `memory/orchestrator/goal8-vram-plan-backend-2026-11-20.md`
+- **orchestrator #8** VRAM Pressure Alerting  -> `memory/ops/vram-alerts.jsonl`
 - **researcher #1** Unified Loader Live Execution  -> `memory/researcher/unified-loader-offline-surface-2026-11-20.md`
 - **researcher #2** Residency Matrix Auto-Refresh  -> `memory/llm/residency-matrix.md`
 - **researcher #3** SLA Enforcement Tracker  -> `memory/ops/sla-report-2026-11-20.md`
@@ -92,8 +54,20 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **builder #10** Code Quality Gate  -> `memory/builder/quality_gate.py`
 - **archivist #1** Orphan Remediation Automation  -> `memory/archivist/orphan-remediation-cycle5.md`
 - **archivist #2** Citation Accuracy Verification  -> `memory/archivist/citation-audit-cycle5-report.md`
+- **archivist #3** Memory Freshness SLA  -> `memory/archivist/freshness_report.py`
 - **archivist #4** Knowledge Graph Visualization  -> `memory/archivist/knowledge_graph.py`
-- **archivist #10** Knowledge Graph Export + Import  -> `memory/archivist/knowledge_graph.py`
+- **archivist #5** Cross-Reference Integrity Monitor  -> `memory/archivist/xref-monitor-report-2026-11-20.md`
+- **archivist #7** Retrieval Benchmark Suite  -> `memory/archivist/retrieval-baseline.json`
+- **archivist #8** Memory Deduplication Engine  -> `memory/archivist/dedup.py`
+- **archivist #9** Provenance Tracking  -> `memory/archivist/provenance.py`
+- **archivist #10** Knowledge Graph Export + Import  -> `memory/archivist/kg_export.py`
+- **scribe #1** Decision Auto-Extraction  -> `memory/scribe/extract_decisions.py`
+- **scribe #2** Cycle Narrative v2 (Auto)  -> `memory/scribe/cycle_narrative.py`
+- **scribe #3** Context Compression for New Agents  -> `memory/scribe/compress_context.py`
+- **scribe #4** Cross-Agent Handoff Protocol  -> `memory/scribe/handoffs.jsonl`
+- **scribe #5** Knowledge Distillation Pipeline  -> `memory/scribe/distill.py`
+- **scribe #7** Archive Navigation Index  -> `memory/synthesis/archive-nav.md`
+- **scribe #8** Temporal Reasoning Layer  -> `memory/scribe/timeline.py`
 - **scribe #10** Weekly Synthesis Digest  -> `memory/researcher/scribe-goal10-stale-citation-close-2026-11-20.md`
 - **verifier #1** Continuous Regression Suite  -> `memory/verifier/regression_suite.py`
 - **verifier #2** Evidence Freshness Audit  -> `memory/verifier/evidence_audit.py`
@@ -107,7 +81,13 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **verifier #10** Chaos Engineering Lite  -> `memory/verifier/chaos-report.md`
 - **designer #3** Information Hierarchy Audit  -> `memory/designer/goal7-typography-audit-2026-11-19.md`
 - **designer #5** Typography Scale Refinement  -> `memory/designer/goal7-typography-audit-2026-11-19.md`
+- **designer #7** Color Contrast + Accessibility  -> `memory/designer/contrast_audit.py`
 - **designer #10** Design QA Checklist + Regression  -> `memory/designer/design-qa-checklist.md`
 - **mechanic #2** Disk Space Monitoring + Auto-Cleanup  -> `memory/mechanic/disk_monitor.py`
-- **mechanic #3** Network Health Monitoring  -> `memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md`
+- **mechanic #3** Network Health Monitoring  -> `memory/mechanic/goal3-net-probe-v2-verified-2026-11-20.md`
 - **mechanic #4** Service Dependency Graph  -> `memory/mechanic/goal6-dep-gen-built-2026-11-17.md`
+- **mechanic #5** Backup Automation  -> `memory/mechanic/backup.py`
+- **mechanic #6** Log Rotation  -> `memory/mechanic/goal6-log-rotate-verified-2026-11-20.jsonl`
+- **mechanic #7** Performance Profiling  -> `memory/mechanic/deploy_remaining.py`
+- **mechanic #9** Incident Response Runbook  -> `memory/mechanic/runbook.md`
+- **mechanic #10** Fleet Topology Visualization  -> `memory/mechanic/deploy_watchdog_remote.py`

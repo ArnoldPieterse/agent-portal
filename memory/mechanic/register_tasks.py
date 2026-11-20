@@ -13,6 +13,7 @@ TASKS = [
     ("FleetNetProbe", "net_probe.py", "minute", 30),
     ("FleetLogRotate", "log_rotate.py", "daily", 1),
     ("FleetCapacityReport", "capacity_report.py", "weekly", 1),
+    ("FleetPerfProfile", "perf_profile.py", "daily", 1),
 ]
 
 def register():
