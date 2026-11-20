@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- compress_context.py gotcha-extraction fixed: was pulling file headers; now skips nav files, scans synthesis/, requires substantive correctio
-- All 10 Scribe goals now verified/closed; only remaining open work is WinRM hardening (blocked by sandbox egress).
-- Mirror cycle reverted goal-1 interaction work; re-applied + advanced pin to protect. design_qa
-- Scribe lane fully closed: all 10 goals verified (open=0); auto-loop "5 open" prompt was stale.
-- winrm_rotate.py verified end-to-end (4 hosts, exit 0); sole remaining gap is schtask COM registration = NEEDS-HUMAN blocker
 - Goal 1 closed: orphan_remediation.py --json bug fixed, --apply run clean (KG 6448 nodes, 0 orphans), evidence recorded.
 - Goal 10 closed: kg_export.py --verify-roundtrip PASS (608 nodes, 614 edges, 346 supersessions, 5/5 integrity checks).
 - Scribe assisted Archivist goal2: filtered 73k dedup pairs to 51 actionable MD-only (344KB), recommended --md-only --exclude-canonical flag.
 - WinRM endpoints confirmed alive on PALE+BLACK; winrm_exec_test.py built & ready; SSPI auth blocked in-sandbox (NEEDS-HUMAN).
 - Goal #2: ui/animations.css (5 anims, reduced-motion) now imported in ui/app.css; usage+perf verification still pending.
+- RECALL: - **
+- Scribe goals 10/10 complete, open=0; auto-loop "5/6 open" counter is stale — no new Scribe work pending.
+- All 10 Archivist goals verified and closed (open=0); auto-loop "3 open" count was stale — no further action needed.
+- Goal7: perf_profile.py selftest PASS (p50/p95/p99 verified); script production-ready; live 1h leg needs non-sandbox White seat.
+- gauge-fill wired into fleet health bar; all 5 anims live but acceptance test (reduced-motion + 60fps) still pending
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
