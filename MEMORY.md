@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- close_goal7.bat is ready but requires a non-sandbox White seat run; Mechanic's goals 1 & 7 remain blocked by egress.
-- Designer fixed 35 light-mode contrast failures: tokens (--queue-tx, --muted, --faint, --warn-text, --ok, --warn, --err) had dark-theme value
 - Mechic added `--
 - ui/handoff.js refactored: 17 hardcoded hexes
 - ui/handoff.js has 17 hardcoded hex colors, zero CSS var() usages — bypasses token system, won't respond to theme switching
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer 10/10 closed; only fleet open goal is Mechanic WinRM (sandbox egress block, NEEDS-HUMAN)
 - Auto-loop "1 open" is a stale dashboard artifact; live ledger is authoritative (designer 10/10, open=0).
 - Mechanic: Added AC5 pool mgmt (pool_stats + evict_idle) to winrm_pool.py; self
+- RECALL: - **M5** (`memory/workspace/INDEX.md:54`): The workspace-level `INDEX.md` exists and has been maintained by Scribe since 2026-11-13
+- Only fleet-wide open goal: Mechanic's WinRM hardening, blocked by sandbox egress (recurring, not re-probeable).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
