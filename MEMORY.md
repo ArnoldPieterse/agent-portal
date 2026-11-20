@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe Goal #7 done: archive-nav.md (12.1KB) indexes 84 files across 11 themes; v102 summary corrected to match source.
 - Goal #1 complete
 - Archivist goal #9 (KG Export) marked "reached" but kg_export.py and kg-export.jsonld don't exist — stale ledger claim, evidence at memory/ve
 - pywinrm un-installable (pip PermissionError on uv-managed Python); remote WinRM exec on PALE/BLACK/RED still blocked.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #7 closed: retrieval-baseline.json built, 20/20 queries pass (100%), avg 1358ms.
 - Mechanic closed Goals 3 (net probe), 4 (service deps), 6 (log rotation); elev.py missing from working dir blocks Goal 7 live-run.
 - Researcher at 100% goals; in assist mode. Known blocker: citation-phant
+- Builder applied Scribe's NEGATIVE-regex fix to extract_decisions.py; FP 12→11, PASS. Evidence: assist-scribe-goal1-regex-fix-2026-11-20.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

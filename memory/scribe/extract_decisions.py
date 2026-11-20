@@ -39,7 +39,8 @@ PATTERNS = [
 
 NEGATIVE = re.compile(
     r"DECISION NEEDED|no further decision|decision was not|not a decision|"
-    r"pending decision|awaiting decision|revisit the decision", re.I)
+    r"pending decision|awaiting decision|revisit the decision|"
+    r"^Source:|^\s*-\s*->", re.I)
 
 
 def infer_owner(line):
