@@ -1,23 +1,22 @@
 # Freshness Report 2026-11-20
 
-Total files scanned: 6704
+Total files scanned: 6769
 
 ## Tier Summary
 
 | Tier | Count | % | Definition |
 |---|---|---|---|
-| HOT | 6615 | 98.7% | <7 days |
-| WARM | 89 | 1.3% | 7-30 days |
+| HOT | 6681 | 98.7% | <7 days |
+| WARM | 88 | 1.3% | 7-30 days |
 | COLD | 0 | 0.0% | 30-90 days |
 | STALE | 0 | 0.0% | >90 days |
 
-## HOT (6615 files)
+## HOT (6681 files)
 
 - `memory/INDEX-kb.json` (0d)
 - `memory/INDEX.md` (0d)
 - `memory/ONBOARDING.md` (2d)
 - `memory/run-rules.md` (2d)
-- `memory/archivist/.kg_state` (2d)
 - `memory/archivist/INDEX.md` (0d)
 - `memory/archivist/MEMORY.md` (1d)
 - `memory/archivist/REPAIR_2026-11-13.md` (6d)
@@ -33,6 +32,7 @@ Total files scanned: 6704
 - `memory/archivist/api-ref-evidence.md` (2d)
 - `memory/archivist/api_snapshot.json` (2d)
 - `memory/archivist/apply_staged_patches.py` (6d)
+- `memory/archivist/archive-compaction-report-2026-11-20.md` (0d)
 - `memory/archivist/bundle-v2-item1-staleness-r73-2026-11-14.md` (6d)
 - `memory/archivist/bundle-v2-item9-queue4-reword-gap-r74-2026-11-14.md` (6d)
 - `memory/archivist/canonical-locations-2026-11-15.md` (5d)
@@ -49,6 +49,8 @@ Total files scanned: 6704
 - `memory/archivist/dcabots-intake-2026-11-14.md` (6d)
 - `memory/archivist/decay-report.md` (2d)
 - `memory/archivist/decay_score.py` (4d)
+- `memory/archivist/dedup-report-2026-11-20.json` (0d)
+- `memory/archivist/dedup.py` (0d)
 - `memory/archivist/digest-47-2026.md` (1d)
 - `memory/archivist/digest-kg-snapshot.json` (1d)
 - `memory/archivist/doc-file-refs-report.json` (2d)
@@ -61,11 +63,9 @@ Total files scanned: 6704
 - `memory/archivist/evidence-goal1-knowledge-graph-hook-2026-11-18.md` (2d)
 - `memory/archivist/evidence-goal1-orphan-remediation-complete-2026-11-20.md` (0d)
 - `memory/archivist/evidence-goal1-scheduled-mirror-runs-2026-11-18.md` (2d)
-- `memory/archivist/evidence-goal1-stale-verification-2026-11-18.md` (2d)
-- `memory/archivist/evidence-goal2-citation-accuracy-2026-11-20.md` (0d)
-- ... and 6565 more
+- ... and 6631 more
 
-## WARM (89 files)
+## WARM (88 files)
 
 - `memory/goals.md` (7d)
 - `memory/orchestrator_index_html_canonical_pre-r8.ac5e1560.html` (7d)
@@ -99,7 +99,6 @@ Total files scanned: 6704
 - `memory/goals/researcher-log-2026-11-13.md` (7d)
 - `memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md` (7d)
 - `memory/goals/archive/researcher-2026-11-13.md` (7d)
-- `memory/goals/archive/researcher-log-2026-11-13.md` (7d)
 - `memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md` (7d)
 - `memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md` (7d)
 - `memory/goals/archive/cycle2-2026-11-17/researcher-log-2026-11-13.md` (7d)
@@ -117,4 +116,5 @@ Total files scanned: 6704
 - `memory/ops/memory-sync-spec-r13.md` (8d)
 - `memory/ops/pdf-reporting.md` (7d)
 - `memory/ops/probes.md` (7d)
-- ... and 39 more
+- `memory/ops/quarantine-index-html-variants-2026-11-13.md` (7d)
+- ... and 38 more

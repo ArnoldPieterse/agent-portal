@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal1+7 blocked on sandbox (py
 - Goal 6: responsive_check.py built & all checks PASS; CDP screenshot still blocked (portal :8099 unreachable from sandbox)
 - Fixed date-extraction bug in cycle_narrative.py: rsplit('-')→regex \d{4}-\d{2}-\d{2}; removed anachronistic Cycle 6 entry from synthesis/cyc
 - Fixed get_goal_completion() to read archive snapshots (memory/goals/archive/) for past cycles instead of always reading live files.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe fixed get_goal_completion() in cycle_narrative.py to accept goals_dir/since/until for archive-mode reads; verified with date-window a
 - Goal 7 (Perf Profiling): --verify subcommand added to perf_profile.py; blocked by sandbox :8099 egress wall, needs non-sandbox seat for live
 - Researcher at 100% on own goals; now in team-contribution mode, targeting oldest open goal of another agent
+- Lane detection in stale-file script hard-strips literal "memory/" prefix; fix: make it relative to memory root (bug found via --selftest).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
