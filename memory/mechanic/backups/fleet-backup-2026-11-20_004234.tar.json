@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-11-20T00:42:45.796354+00:00",
+  "archive": "Z:\\memory\\mechanic\\backups\\fleet-backup-2026-11-20_004234.tar.gz",
+  "size_bytes": 75465022,
+  "files_included": [
+    "agents.json",
+    "TODO.md",
+    "agent_portal.py",
+    "memory/"
+  ],
+  "rotation_deleted": []
+}

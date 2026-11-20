@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-11-20T00:05:11.746224+00:00",
+  "duration_s": 10,
+  "samples_collected": {
+    "portal_health": 0,
+    "fleet_status": 0,
+    "goals_api": 0,
+    "llm_models": 0
+  },
+  "metrics": {
+    "portal_health": {
+      "status": "no_samples",
+      "p50": null,
+      "p95": null,
+      "p99": null
+    },
+    "fleet_status": {
+      "status": "no_samples",
+      "p50": null,
+      "p95": null,
+      "p99": null
+    },
+    "goals_api": {
+      "status": "no_samples",
+      "p50": null,
+      "p95": null,
+      "p99": null
+    },
+    "llm_models": {
+      "status": "no_samples",
+      "p50": null,
+      "p95": null,
+      "p99": null
+    }
+  }
+}
