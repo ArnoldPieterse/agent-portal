@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe Goal 7 (Archive Navigation Index) verified complete; Scribe now 3/10 per ledger update 2026-11-20.
-- Designer confirmed 10/10 goals reached; pivoted to assist Scribe's Cross-Agent Handoff Protocol (Scribe was at 2/10).
-- Fixed data-loss bug in extract_decisions.py: --since mode now merges with existing entries instead of clobbering
 - Mechanic 10/10 closed; auto-loop "2 open" is stale — winrm_pool_selftest 20/20 PASS, no action needed
 - xref baseline post-compaction: 1811 files, 44
 - Goal 9 gap: actRender & mergeQueueLoad use plain-text empty states, not UI.emptyState() — needs fixing for full panel coverage.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop open-goal
 - Designer: Next task = Scribe Goal 3 "Context Compression" briefing; auto-briefing has IA problems in Gotchas section needing redesign.
 - Designer at 5/10: Goal 1 (ui/interactions.css, 6 patterns) & Goal 2 (ui/animations.css, 4 anims + reduced-motion + interactions.js) closed.
+- Archivist: Goal 7 (Retrieval Benchmark) closed this pass; goals 8 (Dedup) & 9 (Provenance) have evidence ready for next-pass closure.
+- Mechanic is wiring xref monitor hook into mirror cycle in main() as assist for Archivist goal 5 (in progress, not yet confirmed).
+- Goal 1 closed
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
