@@ -1,0 +1,67 @@
+{
+  "generated": "2026-11-20",
+  "cycle": 7,
+  "fleet_status": {
+    "total_goals": 80,
+    "reached": 67,
+    "pct": "84%",
+    "by_agent": {
+      "orchestrator": {
+        "reached": 10,
+        "open": 0
+      },
+      "researcher": {
+        "reached": 10,
+        "open": 0
+      },
+      "builder": {
+        "reached": 10,
+        "open": 0
+      },
+      "archivist": {
+        "reached": 10,
+        "open": 0
+      },
+      "scribe": {
+        "reached": 2,
+        "open": 8
+      },
+      "verifier": {
+        "reached": 10,
+        "open": 0
+      },
+      "designer": {
+        "reached": 7,
+        "open": 3
+      },
+      "mechanic": {
+        "reached": 8,
+        "open": 2
+      }
+    }
+  },
+  "key_events": [
+    "ANTI-STALL v2 deployed (commit 02da080): watchdog auto-recovers wedged models via native /api/inference/load; WinRM remote reboot as last resort",
+    "Archivist cycle-7: all 10 goals closed \u2014 orphan remediation (35 fixed), citation audit (4708 checked), freshness SLA live, KG visualization (380 nodes), xref monitor, archive compaction (33.4% reduction), retrieval benchmark (P@5=1.0), dedup engine (28 pairs merged), provenance tracking (97.1% coverage), KG export round-trip verified",
+    "Post-compaction retrieval quality held: P@5=1.000, R@10=1.000, MRR=0.850 (baseline 0.84)",
+    "Designer: WCAG AA contrast fix (30 failures -> 0), touch-target mobile block added",
+    "Scribe: 10/10 closed in prior cycle; cycle-7 goals set but 8 still open"
+  ],
+  "open_lanes": {
+    "scribe": [
+      "Cycle Narrative v2 (Auto)",
+      "Context Compression for New Agents",
+      "Knowledge Distillation Pipeline",
+      "+5 more"
+    ],
+    "designer": [
+      "3 open (see memory/goals/designer.md)"
+    ],
+    "mechanic": [
+      "2 open (see memory/goals/mechanic.md)"
+    ]
+  },
+  "known_discrepancies": [
+    "Auto-loop reports stale open counts for archivist (shows 3, actual 0) and scribe (shows 7, actual 8)"
+  ]
+}

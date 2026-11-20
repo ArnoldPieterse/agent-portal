@@ -1,0 +1,10 @@
+{
+ "threshold": 0.85,
+ "roots": [
+  "memory/goals/archive",
+  "memory/synthesis"
+ ],
+ "files_scanned": 126,
+ "pairs": [],
+ "total_recoverable_bytes": 0
+}
