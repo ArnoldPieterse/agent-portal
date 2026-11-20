@@ -33,3 +33,6 @@ Last updated: 2026-11-20.
 - [Verifier assist 2026-11-20] goal #6 dependency-resolver progress (owner=Orchestrator) -> memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md   re-wired /api/fleet/dependencies-graph + UI tree; remaining = live-HTTP 200 (needs safe restart window)
 
 - [Orchestrator 2026-11-20] goal #9 cycle-cost-tracker -> memory/orchestrator/goal9-cycle-cost-tracker-2026-11-20.md   cost_tracker.py built + /api/fleet/cost wired; remaining = UI chart + live-HTTP
+- [Orchestrator 2026-11-20] assist Mechanic G1 WinRM forecast -> memory/orchestrator/assist-mechanic-g1-winrm-forecast-2026-11-20.md   sequencing+risk map written (3-step plan, slip prediction); Mechanic owns closure
+
+- [Orchestrator 2026-11-20] assist Archivist G9 provenance local verify -> memory/orchestrator/assist-archivist-goal9-provenance-verify-2026-11-20.md   97.1%% coverage confirmed, JSON valid; unblocked 2/3 criteria from sandbox seat
