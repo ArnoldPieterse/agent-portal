@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 10 closed: kg_export.py --verify-roundtrip PASS (608 nodes, 614 edges, 346 supersessions, 5/5 integrity checks).
-- Scribe assisted Archivist goal2: filtered 73k dedup pairs to 51 actionable MD-only (344KB), recommended --md-only --exclude-canonical flag.
-- WinRM endpoints confirmed alive on PALE+BLACK; winrm_exec_test.py built & ready; SSPI auth blocked in-sandbox (NEEDS-HUMAN).
 - Goal #2: ui/animations.css (5 anims, reduced-motion) now imported in ui/app.css; usage+perf verification still pending.
 - RECALL: - **
 - Scribe goals 10/10 complete, open=0; auto-loop "5/6 open" counter is stale — no new Scribe work pending.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal7: perf_profile.py selftest PASS (p50/p95/p99 verified); script production-ready; live 1h leg needs non-sandbox White seat.
 - gauge-fill wired into fleet health bar; all 5 anims live but acceptance test (reduced-motion + 60fps) still pending
 - Goal #2 (Animation/Motion) verified code-complete in live files; all 5 patterns + reduced-motion confirmed; pending ledger close.
+- Goal 10 topology
+- Designer: Goal #2 icon set complete — all 37 icons added to icons.js, all panel-icons.js refs resolve; SVGs verified well-formed.
+- Scribe Goal #2 (Cycle Narrative v2 Auto) closed; now 5/10 goals verified in ledger.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
