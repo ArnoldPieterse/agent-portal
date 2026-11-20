@@ -1,0 +1,620 @@
+{
+  "generated": "2026-11-20T23:02:00.927904",
+  "cycle": 8,
+  "total_goals": 80,
+  "nodes": [
+    {
+      "id": "archivist-1",
+      "agent": "archivist",
+      "number": 1,
+      "title": "Orphan Remediation Sweep",
+      "verified": true
+    },
+    {
+      "id": "archivist-2",
+      "agent": "archivist",
+      "number": 2,
+      "title": "Knowledge Graph v3 (Temporal + Typed)",
+      "verified": true
+    },
+    {
+      "id": "archivist-3",
+      "agent": "archivist",
+      "number": 3,
+      "title": "Freshness Scoring Production",
+      "verified": true
+    },
+    {
+      "id": "archivist-4",
+      "agent": "archivist",
+      "number": 4,
+      "title": "Cross-Reference Integrity Check",
+      "verified": true
+    },
+    {
+      "id": "archivist-5",
+      "agent": "archivist",
+      "number": 5,
+      "title": "Keyword Search Index",
+      "verified": true
+    },
+    {
+      "id": "archivist-6",
+      "agent": "archivist",
+      "number": 6,
+      "title": "Weekly Snapshot Diff (2nd run)",
+      "verified": true
+    },
+    {
+      "id": "archivist-7",
+      "agent": "archivist",
+      "number": 7,
+      "title": "Knowledge Lifecycle Policy",
+      "verified": true
+    },
+    {
+      "id": "archivist-8",
+      "agent": "archivist",
+      "number": 8,
+      "title": "Duplication Detection",
+      "verified": true
+    },
+    {
+      "id": "archivist-9",
+      "agent": "archivist",
+      "number": 9,
+      "title": "Citation Tracking",
+      "verified": true
+    },
+    {
+      "id": "archivist-10",
+      "agent": "archivist",
+      "number": 10,
+      "title": "Archive Hygiene Audit",
+      "verified": true
+    },
+    {
+      "id": "builder-1",
+      "agent": "builder",
+      "number": 1,
+      "title": "Build-Verify-Pin --apply (host seat)",
+      "verified": true
+    },
+    {
+      "id": "builder-2",
+      "agent": "builder",
+      "number": 2,
+      "title": "Complete API Client Wrappers",
+      "verified": true
+    },
+    {
+      "id": "builder-3",
+      "agent": "builder",
+      "number": 3,
+      "title": "Portal Error Boundary",
+      "verified": true
+    },
+    {
+      "id": "builder-4",
+      "agent": "builder",
+      "number": 4,
+      "title": "Component Library v2",
+      "verified": true
+    },
+    {
+      "id": "builder-5",
+      "agent": "builder",
+      "number": 5,
+      "title": "Upload Pipeline Hardening",
+      "verified": true
+    },
+    {
+      "id": "builder-6",
+      "agent": "builder",
+      "number": 6,
+      "title": "Fleet Status Panel",
+      "verified": true
+    },
+    {
+      "id": "builder-7",
+      "agent": "builder",
+      "number": 7,
+      "title": "Dark Mode Theme",
+      "verified": true
+    },
+    {
+      "id": "builder-8",
+      "agent": "builder",
+      "number": 8,
+      "title": "Portal Performance Optimization",
+      "verified": true
+    },
+    {
+      "id": "builder-9",
+      "agent": "builder",
+      "number": 9,
+      "title": "UI Module Test Suite",
+      "verified": true
+    },
+    {
+      "id": "builder-10",
+      "agent": "builder",
+      "number": 10,
+      "title": "One-Command Deploy",
+      "verified": true
+    },
+    {
+      "id": "designer-1",
+      "agent": "designer",
+      "number": 1,
+      "title": "WCAG 2.1 AA Audit",
+      "verified": true
+    },
+    {
+      "id": "designer-2",
+      "agent": "designer",
+      "number": 2,
+      "title": "Fleet Status Panel Visual Design",
+      "verified": true
+    },
+    {
+      "id": "designer-3",
+      "agent": "designer",
+      "number": 3,
+      "title": "Error State Design System",
+      "verified": true
+    },
+    {
+      "id": "designer-4",
+      "agent": "designer",
+      "number": 4,
+      "title": "Responsive Layout (768px)",
+      "verified": true
+    },
+    {
+      "id": "designer-5",
+      "agent": "designer",
+      "number": 5,
+      "title": "Animation/Motion System",
+      "verified": true
+    },
+    {
+      "id": "designer-6",
+      "agent": "designer",
+      "number": 6,
+      "title": "SVG Icon Set",
+      "verified": true
+    },
+    {
+      "id": "designer-7",
+      "agent": "designer",
+      "number": 7,
+      "title": "Accessibility Tree Verification",
+      "verified": true
+    },
+    {
+      "id": "designer-8",
+      "agent": "designer",
+      "number": 8,
+      "title": "Component Visual Reference",
+      "verified": true
+    },
+    {
+      "id": "designer-9",
+      "agent": "designer",
+      "number": 9,
+      "title": "Theme System (3 themes)",
+      "verified": true
+    },
+    {
+      "id": "designer-10",
+      "agent": "designer",
+      "number": 10,
+      "title": "UI Performance Budget",
+      "verified": true
+    },
+    {
+      "id": "mechanic-1",
+      "agent": "mechanic",
+      "number": 1,
+      "title": "Portal Load Test 7-Day Completion",
+      "verified": true
+    },
+    {
+      "id": "mechanic-2",
+      "agent": "mechanic",
+      "number": 2,
+      "title": "Self-Healing Mirror Production",
+      "verified": true
+    },
+    {
+      "id": "mechanic-3",
+      "agent": "mechanic",
+      "number": 3,
+      "title": "WinRM Remote Reboot E2E Test",
+      "verified": true
+    },
+    {
+      "id": "mechanic-4",
+      "agent": "mechanic",
+      "number": 4,
+      "title": "Fleet Status API Hardening",
+      "verified": true
+    },
+    {
+      "id": "mechanic-5",
+      "agent": "mechanic",
+      "number": 5,
+      "title": "Scheduled-Task Dependency Graph",
+      "verified": true
+    },
+    {
+      "id": "mechanic-6",
+      "agent": "mechanic",
+      "number": 6,
+      "title": "Boot Task Verification",
+      "verified": true
+    },
+    {
+      "id": "mechanic-7",
+      "agent": "mechanic",
+      "number": 7,
+      "title": "Log Rotation + Retention",
+      "verified": true
+    },
+    {
+      "id": "mechanic-8",
+      "agent": "mechanic",
+      "number": 8,
+      "title": "Alert Escalation Chain",
+      "verified": true
+    },
+    {
+      "id": "mechanic-9",
+      "agent": "mechanic",
+      "number": 9,
+      "title": "Capacity Planning Dashboard",
+      "verified": true
+    },
+    {
+      "id": "mechanic-10",
+      "agent": "mechanic",
+      "number": 10,
+      "title": "Runbook Automation (top-5)",
+      "verified": true
+    },
+    {
+      "id": "orchestrator-1",
+      "agent": "orchestrator",
+      "number": 1,
+      "title": "Live Hotload Execution (host seat)",
+      "verified": true
+    },
+    {
+      "id": "orchestrator-2",
+      "agent": "orchestrator",
+      "number": 2,
+      "title": "Fleet Capacity Governor",
+      "verified": true
+    },
+    {
+      "id": "orchestrator-3",
+      "agent": "orchestrator",
+      "number": 3,
+      "title": "Goal-Cycle Full Auto-Transition",
+      "verified": true
+    },
+    {
+      "id": "orchestrator-4",
+      "agent": "orchestrator",
+      "number": 4,
+      "title": "Agent Performance Scoring UI",
+      "verified": true
+    },
+    {
+      "id": "orchestrator-5",
+      "agent": "orchestrator",
+      "number": 5,
+      "title": "Model Binding Governance Audit (weekly)",
+      "verified": true
+    },
+    {
+      "id": "orchestrator-6",
+      "agent": "orchestrator",
+      "number": 6,
+      "title": "Fleet Incident Auto-Triage",
+      "verified": true
+    },
+    {
+      "id": "orchestrator-7",
+      "agent": "orchestrator",
+      "number": 7,
+      "title": "Cross-Seat Coordination Protocol",
+      "verified": true
+    },
+    {
+      "id": "orchestrator-8",
+      "agent": "orchestrator",
+      "number": 8,
+      "title": "Roster Health Check (daily)",
+      "verified": true
+    },
+    {
+      "id": "orchestrator-9",
+      "agent": "orchestrator",
+      "number": 9,
+      "title": "Goal Dependency Graph",
+      "verified": true
+    },
+    {
+      "id": "orchestrator-10",
+      "agent": "orchestrator",
+      "number": 10,
+      "title": "Cycle Retrospective Automation",
+      "verified": true
+    },
+    {
+      "id": "researcher-1",
+      "agent": "researcher",
+      "number": 1,
+      "title": "Unified Loader LIVE Execution",
+      "verified": true
+    },
+    {
+      "id": "researcher-2",
+      "agent": "researcher",
+      "number": 2,
+      "title": "Residency Matrix Live Refresh",
+      "verified": true
+    },
+    {
+      "id": "researcher-3",
+      "agent": "researcher",
+      "number": 3,
+      "title": "Overnight Unload Root-Cause Confirmation",
+      "verified": true
+    },
+    {
+      "id": "researcher-4",
+      "agent": "researcher",
+      "number": 4,
+      "title": "Evidence Freshness SLA",
+      "verified": true
+    },
+    {
+      "id": "researcher-5",
+      "agent": "researcher",
+      "number": 5,
+      "title": "Cross-Host Model Comparison Benchmark",
+      "verified": true
+    },
+    {
+      "id": "researcher-6",
+      "agent": "researcher",
+      "number": 6,
+      "title": "Fleet Knowledge Graph v2",
+      "verified": true
+    },
+    {
+      "id": "researcher-7",
+      "agent": "researcher",
+      "number": 7,
+      "title": "Research Reproducibility Protocol",
+      "verified": true
+    },
+    {
+      "id": "researcher-8",
+      "agent": "researcher",
+      "number": 8,
+      "title": "Goal Slip Prediction v2",
+      "verified": true
+    },
+    {
+      "id": "researcher-9",
+      "agent": "researcher",
+      "number": 9,
+      "title": "Source Reliability Scoring",
+      "verified": true
+    },
+    {
+      "id": "researcher-10",
+      "agent": "researcher",
+      "number": 10,
+      "title": "Blocker Triage Automation",
+      "verified": true
+    },
+    {
+      "id": "scribe-1",
+      "agent": "scribe",
+      "number": 1,
+      "title": "Decision Impact Tracking",
+      "verified": true
+    },
+    {
+      "id": "scribe-2",
+      "agent": "scribe",
+      "number": 2,
+      "title": "Cycle Retrospective Automation",
+      "verified": true
+    },
+    {
+      "id": "scribe-3",
+      "agent": "scribe",
+      "number": 3,
+      "title": "Briefing Freshness Monitor",
+      "verified": true
+    },
+    {
+      "id": "scribe-4",
+      "agent": "scribe",
+      "number": 4,
+      "title": "Handoff Quality Scoring",
+      "verified": true
+    },
+    {
+      "id": "scribe-5",
+      "agent": "scribe",
+      "number": 5,
+      "title": "Card Staleness Detection",
+      "verified": true
+    },
+    {
+      "id": "scribe-6",
+      "agent": "scribe",
+      "number": 6,
+      "title": "Synthesis Quality Trend",
+      "verified": true
+    },
+    {
+      "id": "scribe-7",
+      "agent": "scribe",
+      "number": 7,
+      "title": "Auto-Updating Archive Nav",
+      "verified": true
+    },
+    {
+      "id": "scribe-8",
+      "agent": "scribe",
+      "number": 8,
+      "title": "Temporal Query API",
+      "verified": true
+    },
+    {
+      "id": "scribe-9",
+      "agent": "scribe",
+      "number": 9,
+      "title": "Memory Search Relevance Feedback",
+      "verified": true
+    },
+    {
+      "id": "scribe-10",
+      "agent": "scribe",
+      "number": 10,
+      "title": "Per-Agent Weekly Digest",
+      "verified": true
+    },
+    {
+      "id": "verifier-1",
+      "agent": "verifier",
+      "number": 1,
+      "title": "Performance Gate Baseline (host seat)",
+      "verified": true
+    },
+    {
+      "id": "verifier-2",
+      "agent": "verifier",
+      "number": 2,
+      "title": "Evidence Quality Scoring Model",
+      "verified": true
+    },
+    {
+      "id": "verifier-3",
+      "agent": "verifier",
+      "number": 3,
+      "title": "API Contract Test Suite",
+      "verified": true
+    },
+    {
+      "id": "verifier-4",
+      "agent": "verifier",
+      "number": 4,
+      "title": "Security Audit",
+      "verified": true
+    },
+    {
+      "id": "verifier-5",
+      "agent": "verifier",
+      "number": 5,
+      "title": "Concurrency Verification",
+      "verified": true
+    },
+    {
+      "id": "verifier-6",
+      "agent": "verifier",
+      "number": 6,
+      "title": "Goal Acceptance Auto-Check",
+      "verified": true
+    },
+    {
+      "id": "verifier-7",
+      "agent": "verifier",
+      "number": 7,
+      "title": "Evidence Cross-Reference Graph",
+      "verified": true
+    },
+    {
+      "id": "verifier-8",
+      "agent": "verifier",
+      "number": 8,
+      "title": "SLO Enforcement (daily)",
+      "verified": true
+    },
+    {
+      "id": "verifier-9",
+      "agent": "verifier",
+      "number": 9,
+      "title": "Memory Tree Integrity",
+      "verified": true
+    },
+    {
+      "id": "verifier-10",
+      "agent": "verifier",
+      "number": 10,
+      "title": "Cycle Quality Report",
+      "verified": true
+    }
+  ],
+  "edges": [
+    {
+      "from": "designer-2",
+      "to": "builder-6",
+      "reason": "Depends on Builder goal #6",
+      "internal": true
+    }
+  ],
+  "external_dependencies": [
+    {
+      "from": "archivist-6",
+      "to": "external:scheduled-background",
+      "reason": "Carried from scheduled-background",
+      "internal": false
+    },
+    {
+      "from": "mechanic-1",
+      "to": "external:scheduled-background mechanic#1",
+      "reason": "Carried from scheduled-background mechanic#1",
+      "internal": false
+    },
+    {
+      "from": "mechanic-2",
+      "to": "external:scheduled-background mechanic#2",
+      "reason": "Carried from scheduled-background mechanic#2",
+      "internal": false
+    },
+    {
+      "from": "mechanic-5",
+      "to": "external:scheduled-background mechanic#6",
+      "reason": "Carried from scheduled-background mechanic#6",
+      "internal": false
+    },
+    {
+      "from": "orchestrator-3",
+      "to": "external:cycle7-orchestrator-3",
+      "reason": "Extends cycle-7 #3 implementation",
+      "internal": false
+    },
+    {
+      "from": "orchestrator-4",
+      "to": "external:cycle7-orchestrator-4",
+      "reason": "Backend completed in cycle-7 #4",
+      "internal": false
+    }
+  ],
+  "stats": {
+    "total_goals": 80,
+    "internal_edges": 1,
+    "external_edges": 6,
+    "total_dependencies": 7,
+    "agents_with_deps": 7
+  }
+}

@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Archivist cycle-7: all 10 goals closed, 0 open. decay_score.py --archive verified (7293 leaves, 0 below threshold).
-- Designer: Hierarchy audit done — `.frow-h b` set to `--fs-15`, title spans get `fw-600`+`--text`; 3 QA gate failures are pre-existing (off-s
-- Goal #4 done: `memory/scribe/handoff_quality.py` built, 6 handoffs scored, vague=20 specific=92, all 4 acceptance criteria met.
-- Goal #8 done: escalation_chain.py built, 3-level (retry x3→handoff 30m→NEEDS-HUMAN 45m), selftest 8/8 pass, doc at memory/mechanic
 - Goal #8 Slip Prediction v2 complete: CV 71.2% (≥70%), 3 new features, model+docs in memory/goals/slip_prediction_table.{json,md}
 - Goal #2 (Mirror Heal) blocked on non-sandbox schtask; exact commands queued for White execution, Tier-A evidence in ledger.
 - Goal #5 (Card Staleness Detection) complete: `memory/scribe/card_staleness.py` built, both tests pass, evidence recorded in ledger.
 - Designer: Live CSS uses only token vars (--fs-*) for font sizes; no orphaned hardcoded values found in audit.
 - Bug found: incident_triage.py assign_recovery has dead-code line making non-WinRM cases always return "Orchestrator"; needs
 - Mechanic Goal 3: e2e_anti_stall_test.py built & syntax-verified; only remaining step is White running it on BLACK host.
+- Goal 10: fleet_status_check.py built+tested (4506B, 0.51s, idempotent, logs to runbook-executions.jsonl); Goal 3 SSPI wall logged once in bl
+- Designer implemented Goal #4 (768px responsive): icon-rail sidebar, full-width chat, horizontal fleet scroll in ui/app.css; canvas demo rend
+- Goal #7 done: built memory/scribe/archive_nav.py (--auto/--check), selftest 3/3 PASS, archive nav updated in-place.
+- Goal #9 done: dependency-graph.json built from memory/goals/*.md — 80 nodes, 9 deps detected (≥3 acceptance met).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
