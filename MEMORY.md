@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fixed net_probe.py: --once mode now reports DOWN when all hosts unreachable (was incorrectly HEALTHY due to FAIL_THRESHOLD=3 only applying i
 - All 10 Designer goals
 - Mechanic added --mock mode to perf_profile.py (Goal 7) so full pipeline is verifiable in sandbox without network access
 - Citation fix pass done: 467 paths fixed, broken count 1240→811, accuracy 77%→85.1%. Remaining 811 mostly truly-missing historical refs.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 1: interactions.css exists but wasn't imported in app.css; 16 duplicate :hover rules removed, @import added — fix in progress.
 - Mechic found Designer goal #2 has a dangling (pointer:) — evidence leaf missing/unindexed, closure claim doesn't count.
 - Goal 9: built --inject-header (7/7 pass); 2/3 criteria met; last criterion blocked by :8099 egress wall (known).
+- Goal #2 Animation/Motion closed: ui/animations.css (5 keyframes, transform/opacity only) wired into core.js panel-enter + fleet list stagger
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
