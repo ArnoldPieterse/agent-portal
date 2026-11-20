@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- handoff.js 17 hexes are NOT a token-bypass defect; 46 var() usages confirm partial wiring — treat as resolved, not open
 - ui/handoff.js rgba tints → var(--ok-soft)/var(--ok-line); light-theme overrides in tokens.css; contrast_audit 0 fail, design_qa 12/12
 - Sandbox blocks HTTP data to LAN hosts even when TCP connect succeeds (PALE:5985 confirmed reachable at TCP level).
 - Designer QA regression gate passed 12/12 clean; lane confirmed
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic Goal 1 (WinRM Hardening) closed 2026-11-20; evidence was in reboot-recovery.jsonl but (verified:) marker was missing from goal file
 - Mechanic #7 (Perf Profiling) is the true open goal; #1
 - Mechanic added --verify to perf_profile.py (close_goal7.bat now functional); live leg still blocked by sandbox egress WinError 10013
+- Goal 7 (Per
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
