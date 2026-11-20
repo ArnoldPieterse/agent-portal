@@ -1,8 +1,7 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
 Last updated: 2026-11-20 (Builder assist: Mechanic Goal 1 concurrent pool load test — 8 parallel cmds PASS, no cross-contamination)
 
-## Entries (keyword -> pointer | use case)
-- Mechanic Goal#1 concurrent pool / goal1_concurrent_test.py: 8 parallel cmds on WHITE via winrm_pool, all PASS, outputs isolated, 27ms total. Artifact: memory/mechanic/goal1-concurrent-test-2026-11-20.json -> memory/builder/mechanic-goal1-concurrent-pool-2026-11-20.md   2026-11-20 cross-assist (owner: Mechanic); option (d)
+<483 chars of arguments you sent, already written to memory/builder/INDEX.md; elided to save room. Not tool output; the file on disk holds it.
 - Goal#2 api-client layer / ui/api-client.js built (150L): DI retry core (exp backoff+jitter, max3), TTL-30s cache, 17 typed wrappers, UMD; static gate PASS; node test authored; REMAINING wire core.js + run node test -> memory/builder/api_client_layer_increment1-2026-11-20.md
 - Goal#1 component-refactor regression / 0 document.createElement left in core.js; reference-integrity PASS (all UI.* refs resolve: icon/iconSized->icons.js, emptyState/skeleton->core.js); script order icons<components<core OK; structural substitute for pixel diff (no browser in sandbox) -> memory/builder/component_refactor_regression_2026-11-20.md   2026-11-20 own goal #1 closure support
 - citation audit / Archivist goal #2 assist: built+ran citation_audit.py, 49 external URLs live-checked, filtered accuracy ~86%, 5 genuinely dead links identified -> memory/builder/citation-audit-assist-archivist-goal2-2026-11-19.md | memory/archivist/citation_audit.py + memory/archivist/citation-audit-cycle5-report.md

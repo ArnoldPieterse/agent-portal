@@ -1,12 +1,12 @@
 # Claim-Phantom Report
-Generated: 2026-11-20 15:01 by `memory/ops/verify_claims.py` (Builder).
+Generated: 2026-11-20 17:02 by `memory/ops/verify_claims.py` (Builder).
 
 Classifies every `verified:` marker in seat goal files against the disk:
   * REAL    - verified + a cited artifact exists on disk
   * PHANTOM - verified + cited path(s) present but NONE exist  (stale/false claim)
   * UNCITED - verified + no machine-checkable path (manual-only; needs a pointer added)
 
-**Totals: 64 REAL, 0 PHANTOM, 16 UNCITED.**
+**Totals: 65 REAL, 0 PHANTOM, 15 UNCITED.**
 
 ## UNCITED verified claims (no path to check — add an artifact pointer so the ledger can close them)
 - **orchestrator #1** Live Hotload Execution (elev.py)
@@ -19,7 +19,6 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **scribe #9** Institutional Memory Search
 - **designer #1** Interaction Design System
 - **designer #2** Animation/Motion System
-- **designer #4** Icon System
 - **designer #6** Responsive Design Hardening
 - **designer #8** Notification/Toast Design
 - **designer #9** Empty States + Loading Patterns
@@ -39,7 +38,7 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **researcher #4** Overnight Unload Correlation  -> `memory/researcher/overnight-unload-analysis.md`
 - **researcher #5** Model Performance Benchmark Suite  -> `memory/researcher/model-benchmark-2026-11-16.md`
 - **researcher #6** Evidence Quality Scoring  -> `memory/researcher/evidence-quality-2026-11-20.md`
-- **researcher #7** Cross-Host Model Comparison  -> `memory/researcher/residency_matrix.py`
+- **researcher #7** Cross-Host Model Comparison  -> `memory/researcher/evidence-marker-content-audit-2026-11-20.md`
 - **researcher #8** Load-Time Optimization Research  -> `memory/researcher/hotload-goalset-grounding-2026-11-18.md`
 - **researcher #9** Fleet Knowledge Base Index  -> `memory/INDEX-kb.json`
 - **researcher #10** Research Pipeline Automation  -> `memory/researcher/auto_research.py`
@@ -58,14 +57,14 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **archivist #4** Knowledge Graph Visualization  -> `memory/archivist/knowledge_graph.py`
 - **archivist #5** Cross-Reference Integrity Monitor  -> `memory/archivist/xref-monitor-report-2026-11-20.md`
 - **archivist #7** Retrieval Benchmark Suite  -> `memory/archivist/retrieval-baseline.json`
-- **archivist #8** Memory Deduplication Engine  -> `memory/archivist/dedup.py`
+- **archivist #8** Memory Deduplication Engine  -> `memory/archivist/dedup-verify-2026-11-20.json`
 - **archivist #9** Provenance Tracking  -> `memory/archivist/provenance.py`
 - **archivist #10** Knowledge Graph Export + Import  -> `memory/archivist/kg_export.py`
 - **scribe #1** Decision Auto-Extraction  -> `memory/scribe/extract_decisions.py`
 - **scribe #2** Cycle Narrative v2 (Auto)  -> `memory/scribe/cycle_narrative.py`
 - **scribe #3** Context Compression for New Agents  -> `memory/scribe/compress_context.py`
 - **scribe #4** Cross-Agent Handoff Protocol  -> `memory/scribe/handoffs.jsonl`
-- **scribe #5** Knowledge Distillation Pipeline  -> `memory/scribe/distill.py`
+- **scribe #5** Knowledge Distillation Pipeline  -> `memory/scribe/cards/hotload.md`
 - **scribe #7** Archive Navigation Index  -> `memory/synthesis/archive-nav.md`
 - **scribe #8** Temporal Reasoning Layer  -> `memory/scribe/timeline.py`
 - **scribe #10** Weekly Synthesis Digest  -> `memory/researcher/scribe-goal10-stale-citation-close-2026-11-20.md`
@@ -80,6 +79,7 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **verifier #9** Verification Dashboard  -> `memory/verifier/ui-slices-verify-2026-11-17.md`
 - **verifier #10** Chaos Engineering Lite  -> `memory/verifier/chaos-report.md`
 - **designer #3** Information Hierarchy Audit  -> `memory/designer/goal7-typography-audit-2026-11-19.md`
+- **designer #4** Icon System  -> `memory/verifier/designer-goal4-icon-citation-close-2026-11-20.md`
 - **designer #5** Typography Scale Refinement  -> `memory/designer/goal7-typography-audit-2026-11-19.md`
 - **designer #7** Color Contrast + Accessibility  -> `memory/designer/contrast_audit.py`
 - **designer #10** Design QA Checklist + Regression  -> `memory/designer/design-qa-checklist.md`
