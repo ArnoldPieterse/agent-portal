@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer goal #2 (Animation/Motion) now 4/4 verified; all patterns confirmed wired in live JS, marker updated in memory/goals/designer.md
-- Auto-loop "open" count is stale vs ledger
-- Goal 1 WinRM closure-ready: 4/5 verified, only remaining action is `deploy_winrm_verify.bat` from non-sandbox White (NTLM sandbox wall is en
 - Goal 5 (Knowledge Distillation Pipeline) closed: distill.py --topic hotload → 25-fact card, ledger recorded. Open: #9, #10.
 - Goal 1 WinRM: Tier-A 20/20 PASS, 4/5 sub-criteria verified; sole blocker is Tier-B live 4-host exec (NTLM wall), not falsely closed.
 - Fleet panel modules
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 4: added icons to toast notifications + fleet health badges; success/warning/alert/info now closer to 3-panel threshold
 - Builder verified: Designer claims 37 icons but ground truth is 24; no icon used in ≥3 panels yet (goal #4 gap).
 - Fleet 65/80 (81%); Scribe 7/10 after closing goal #2 (Cycle Narrative v2) with dry-run PASS + zero-hallucination spot-check.
+- Mechanic reached 10/10 goals verified; Goal 7 (perf profiling) closed via perf_profile.py selftest+verify, 4/4 endpoints n=720.
+- Scribe: Goal #2 (Cycle Narrative v2) has full evidence but lacks `(verified:)` marker; next step is adding that marker to close it.
+- Goal #4: Designer added clock/host/goal icons to 3 fleet panels; goal now at 4 files (PASS ≥3); ~15 placements remain
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
