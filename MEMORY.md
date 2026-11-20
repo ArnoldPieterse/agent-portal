@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 1: interactions.css exists but wasn't imported in app.css; 16 duplicate :hover rules removed, @import added — fix in progress.
-- Mechic found Designer goal #2 has a dangling (pointer:) — evidence leaf missing/unindexed, closure claim doesn't count.
-- Goal 9: built --inject-header (7/7 pass); 2/3 criteria met; last criterion blocked by :8099 egress wall (known).
 - Goal #2 Animation/Motion closed: ui/animations.css (5 keyframes, transform/opacity only) wired into core.js panel-enter + fleet list stagger
 - Goals panel .gring .pct was 12px (same as name/meta); Designer started fix but ledger prematurely marked verified at 1/5 fixes done — needs
 - Goal 9 gap: --sweep done (5627 headers); remaining = wire into memory_mirror.py post-hook + /api endpoint (egress-wall blocked).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer confirmed tokens.css has 4 orphaned off-scale tokens (--fs-11
 - Mechanic 10/10 closed; "1 open" in loop msg was stale ledger (pre-cycle-7
 - Goal 7 closed: fixed 6 missing light-mode token overrides in tokens.css; contrast_audit.py now reports 0 failures both themes.
+- Mechanic goal-ledger-current.json was stale (2026-11-17); regenerated to confirm 10/10 reached, open=0.
+- All 10/10 Archivist goals formally closed in ledger; Goal #10 was last gap (record-only, evidence pre-existed).
+- Goal 6 (responsive) CSS fixes done; remaining: CDP screenshot verification at all 4 breakpoints (320/375/768/1024).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
