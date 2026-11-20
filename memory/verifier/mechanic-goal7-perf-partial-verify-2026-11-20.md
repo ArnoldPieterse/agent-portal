@@ -1,3 +1,4 @@
+<!-- PROVENANCE agent=verifier created=2026-11-20 trigger=goal-7 -->
 # Verifier partial verification: Mechanic Goal 7 (Performance Profiling) — 2026-11-20
 
 **Status:** PARTIAL VERIFY — logic correct, live leg blocked by :8099 egress wall.

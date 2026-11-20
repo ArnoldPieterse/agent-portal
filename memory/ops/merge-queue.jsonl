@@ -1,3 +1,4 @@
+<!-- PROVENANCE agent=unknown created=2026-11-20 trigger=sweep-inject -->
 {"ts": "2026-11-16 16:31:52", "file": "agents.json", "sha": "fa1143e666", "size": 9563, "snapshot": "memory/ops/merge-queue/agents.json.fa1143e666"}
 {"ts": "2026-11-16 17:13:54", "file": "agent_portal.py", "sha": "24c7d4360c", "size": 176391, "snapshot": "memory/ops/merge-queue/agent_portal.py.24c7d4360c"}
 {"ts": "2026-11-16 17:13:54", "file": "index.html", "sha": "a6749ec1f9", "size": 91091, "snapshot": "memory/ops/merge-queue/index.html.a6749ec1f9"}
@@ -189,4 +190,4 @@
 {"ts": "2026-11-20 09:54:56", "file": "agent_portal.py", "sha": "0bb8066036", "size": 248344, "snapshot": "memory/ops/merge-queue/agent_portal.py.0bb8066036"}
 {"ts": "2026-11-20 09:54:56", "file": "ui/core.js", "sha": "2efae06d59", "size": 53757, "snapshot": null}
 {"ts": "2026-11-20 15:44:28", "file": "ui/icons.js", "sha": "499bd8ac57", "size": 11857, "snapshot": null}
-{"ts": "2026-11-20 17:45:44", "file": "agent_portal.py", "sha": "b53a98fcd5", "size": 249844, "snapshot": "memory/ops/merge-queue/agent_portal.py.b53a98fcd5"}
+{"ts": "2026-11-20 17:56:13", "file": "agent_portal.py", "sha": "b53a98fcd5", "size": 249844, "snapshot": "memory/ops/merge-queue/agent_portal.py.b53a98fcd5"}

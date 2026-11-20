@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 Designer goals
-- Mechanic added --mock mode to perf_profile.py (Goal 7) so full pipeline is verifiable in sandbox without network access
 - Citation fix pass done: 467 paths fixed, broken count 1240→811, accuracy 77%→85.1%. Remaining 811 mostly truly-missing historical refs.
 - Sandbox blocks all TCP (WinError 10013); perf_profile Goal 7 is mock-only and cannot be verified with live runs in this environment.
 - Goal #9 Provenance Tracking still blocked: WinError 10013 loopback firewall persists even after portal restart (PID 6660).
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechic found Designer goal #2 has a dangling (pointer:) — evidence leaf missing/unindexed, closure claim doesn't count.
 - Goal 9: built --inject-header (7/7 pass); 2/3 criteria met; last criterion blocked by :8099 egress wall (known).
 - Goal #2 Animation/Motion closed: ui/animations.css (5 keyframes, transform/opacity only) wired into core.js panel-enter + fleet list stagger
+- Goals panel .gring .pct was 12px (same as name/meta); Designer started fix but ledger prematurely marked verified at 1/5 fixes done — needs
+- Goal 9 gap: --sweep done (5627 headers); remaining = wire into memory_mirror.py post-hook + /api endpoint (egress-wall blocked).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
