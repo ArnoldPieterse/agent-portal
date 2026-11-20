@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7 blocked: sandbox blocks all outbound sockets (WinError 10013).
-- Goal 7 blocked: sandbox egress dead (WinError 10013 all sockets). Fix: run `memory\mechanic\close_goal7.bat` from White admin terminal — sel
 - Goal 7: close_goal7.bat hardened with pre-flight :8099 check; still open pending one-time 1h run from White (blocker in memory/ops/blockers.
 - Goal 7 blocked on sandbox egress (:8099); mock mode added as pipeline proof but verify() rejects it—live run still needs non-sandbox seat.
 - Goal 7 closes via `
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic drafted `memory/ops/sandbox-egress-triage.md` — decision tree for WinError 10013 sandbox walls, known-walls table, anti-pattern exa
 - Researcher cycle-7 goals 100% complete; `researcher-cycle8-proposals.md` already exists from prior pass — do not re-draft.
 - Cycle 8 goals set (80 total, 8 agents); theme: sandbox→LIVE-operated, close root causes, build intelligence layer; evidence at memory/orches
+- Mechanic created memory/mechanic/close_goals_1_and_7.bat (145-line one-shot) to close blocked goals #1 WinRM + #7 Perf Profile in a single n
+- Consolidated 16 ad-hoc :hover rules from app.css into interactions.css §7 (element-level defaults); app.css now has zero :hover rules.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
