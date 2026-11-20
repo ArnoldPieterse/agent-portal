@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- ui/handoff.js has 17 hardcoded hex colors, zero CSS var() usages — bypasses token system, won't respond to theme switching
 - Verifier closed last stale-evidence FP (orchestr
 - winrm_pool.py has no CLI/argv parsing — close_goal1.bat's "python
 - Designer 10/10 closed; only fleet open goal is Mechanic WinRM (sandbox egress block, NEEDS-HUMAN)
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Only fleet-wide open goal: Mechanic's WinRM hardening, blocked by sandbox egress (recurring, not re-probeable).
 - Mechanic goal #1 WinRM Hardening CLOSED: deploy_watchdog_remote ok on all 4 hosts; ledger 10/10, open=0, fleet 79
 - handoff.js 17 hexes are NOT a token-bypass defect; 46 var() usages confirm partial wiring — treat as resolved, not open
+- ui/handoff.js rgba tints → var(--ok-soft)/var(--ok-line); light-theme overrides in tokens.css; contrast_audit 0 fail, design_qa 12/12
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
