@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7 (Per
 - Goal 7 ledger corrected: `--verify` implemented + negative tests pass, but live leg not yet run; tag set to (progress) not (verified
 - Goal 7 blocked: sandbox blocks all outbound sockets (WinError 10013).
 - Goal 7 blocked: sandbox egress dead (WinError 10013 all sockets). Fix: run `memory\mechanic\close_goal7.bat` from White admin terminal — sel
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher drafting consolidated live-leg handoff protocol in memory/ops/ for recurring WinError 10013 sandbox egress blocker
 - Mechanic #1 (WinRM Hardening) closed 2026-11-20 with evidence but missing `(verified:)` marker in mechanic.md; dashboard still counts it ope
 - Mechanic drafted `memory/ops/sandbox-egress-triage.md` — decision tree for WinError 10013 sandbox walls, known-walls table, anti-pattern exa
+- Researcher cycle-7 goals 100% complete; `researcher-cycle8-proposals.md` already exists from prior pass — do not re-draft.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
