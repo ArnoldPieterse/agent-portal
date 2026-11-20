@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Post-compaction retrieval benchmark: P@5=1.000, R@10=1.000, MRR=0.850 (baseline 0.84) — quality held after 35 orphans removed, 28 dedup merg
-- Scribe lane 10/10 closed; auto-loop "7 open" is stale (known discrepancy) — do not re-probe.
-- Researcher seat in down-seats.json 2h+ stale; watchdog ~45-min threshold not firing — flagged at 12:4
-- Goal 6: 320px breakpoint added to ui/app.css; CDP screenshot verification still pending (needs browser access).
 - Archivist built `memory/scribe/agent-relevance-map-2026-11-20.json` (keyword-overlap top-15 per agent, 6291 files) for Scribe's compress_con
 - Scribe assisted Archivist Goal 3: ran freshness_report.py, spot-checked 10 WARM files, fleet 68→69/80 (86%).
 - RECALL: -
 - Goal 8 closed: fixed MAX=3 in ui/notifications.js (mirror revert had restored it to 4); all toast criteria verified.
 - Auto-loop "open" goal counts are stale; trust ledger over loop counter (confirmed by Archivist & Mechanic independently).
 - Fixed date-filtering bug in cycle_narrative.py (key events were unfiltered); cycle-6 dry-run verified, evidence at memory/scribe/goal2-cycle
+- Goals 8,9,10 closed (MAX=3 fixed, empty states
+- compress_context.py works standalone; Archivist's relevance map file missing at expected path (
+- Mechanic: WinRM + Perf Profile both blocked by sandbox; elev.py absent from seat; portal WinError 10013 expected — do not re-probe
+- Archivist retrieval benchmark (post-compaction): P@5=1.000, R@10=1.000, MRR=
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
