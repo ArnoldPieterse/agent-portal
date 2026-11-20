@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic #1 (WinRM Hardening) closed 2026-11-20 with evidence but missing `(verified:)` marker in mechanic.md; dashboard still counts it ope
 - Mechanic drafted `memory/ops/sandbox-egress-triage.md` — decision tree for WinError 10013 sandbox walls, known-walls table, anti-pattern exa
 - Researcher cycle-7 goals 100% complete; `researcher-cycle8-proposals.md` already exists from prior pass — do not re-draft.
 - Cycle 8 goals set (80 total, 8 agents); theme: sandbox→LIVE-operated, close root causes, build intelligence layer; evidence at memory/orches
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe cycle-8 goals written: 10 new goals focused on self-maintaining synthesis quality (impact tracking, freshness monitors, handoff scori
 - Goal 6 (Responsive Hardening) tablet @768px done: sidebar→64px icon bar, chat full-width in ui/app.css; 3 pre-existing FAILs unrelated.
 - Goal #7 (log_rotate.py) closed & verified: 50MB threshold, .jsonl, 7-day gzip retention. Self-test 4/4 PASS.
+- Scribe goal #1 (Decision Impact Tracking) closed: built decision_impact.py, enriched 5 cycle-7 entries, output at memory/synthesis/decision-
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
