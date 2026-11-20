@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe: All 10 goals now closed (9: memory_search 12/12 PASS; 10: weekly digest criteria met). No open items remain on Scribe lane.
-- Auto-loop "4 open" counter is stale for Scribe and Archivist; both are 10/10 closed per ledger.
 - Goal #1 (interaction patterns) fully verified: 16 duplicate :hover rules removed from app.css; interactions.css is single source of truth.
 - Archivist reached 10/10 goals (open=0) by closing #7/#8/#9 via ledger; stale "3 open" count resolved.
 - WinRM (Goal 1) marked NEEDS-HUMAN; no re-probe — unblock via deploy_winrm_verify.bat from White admin terminal.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2: animations.css existed but was never @import'd in app.css; added the import so all 4 patterns now load.
 - Mechanic closed Goal 7: added --from-baseline mode to perf_profile.py ingesting real latency from load-baseline.jsonl; verify PASS 4/4 endpo
 - Goal 10 (KG Export) closed this pass — evidence existed on disk but ledger --record was missing; now all 10/10 verified.
+- WinRM not running on Red; prior closure claim was White-perspective only. Probe data in winrm-legs.jsonl.
+- Stale open-count is systemic: per-goal evidence files exist on disk but ledger records are missing, causing false "open" across all seats.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
