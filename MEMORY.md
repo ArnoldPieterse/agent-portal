@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goals 8,9,10 closed (MAX=3 fixed, empty states
-- compress_context.py works standalone; Archivist's relevance map file missing at expected path (
-- Mechanic: WinRM + Perf Profile both blocked by sandbox; elev.py absent from seat; portal WinError 10013 expected — do not re-probe
-- Archivist retrieval benchmark (post-compaction): P@5=1.000, R@10=1.000, MRR=
 - Goal 6: touch targets fixed 40→44px at 320px breakpoint; programmatic overflow audit passes. Only CDP screenshots remain outstanding.
 - Fixed date-filtering bug in memory/scribe/cycle_narrative: get_key_events now respects since/until params (was pulling all events regardless
 - Mechanic: monitors work but can't auto-register (no python in PATH, no elev.py); building manual Windows task registration script as workaro
 - All interaction patterns (incl. :hover) live in ui/interactions.css, not app.css — confirmed zero ad-hoc rules remain.
 - Mechic: WinRM #1 & Perf Profile #7 blocked by sandbox egress wall (documented in blockers.md); do not re-probe.
 - Mirror reverts agent_portal.py changes; Scribe re-added /api/synthesis/quality endpoint (Goal 6) after detecting the revert.
+- Goal 8 (Temporal Reasoning Layer) closed & verified: timeline.py re-run on 2026-11-14, no anachronisms, recorded in goal_ledger.
+- WinRM cred rotation check integrated into health_check.py; all 4 hosts OK, soonest rotation 90d out (Goal 1 progress).
+- Designer QA gate now 12/12; canonical font scale locked to 5 steps (12/14/15/18/24),
+- Built memory/synthesis/archive-nav.md (67 files, 6 themes) for Scribe's goal #7; provenance re-init at 6595 files, 97.1% coverage.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
