@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 (Memory Freshness SLA) closed; freshness_report.py built & verified (6704 files, 4 tiers). Progress: 5/10 goals reached.
 - Goal #5 (Knowledge Distillation) advanced: distill.py built, refined to exclude cards dir & metadata; 25-fact card verified clean; not yet c
 - Goal #9 closed: memory/mechanic/run
 - interactions.css is dead code (not imported anywhere); fix: add @import to app.css, delete duplicated :hover rules from app.css
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #10
 - Scribe Goal #7 done: archive-nav.md (12.1KB) indexes 84 files across 11 themes; v102 summary corrected to match source.
 - Goal #1 complete
+- Archivist goal #9 (KG Export) marked "reached" but kg_export.py and kg-export.jsonld don't exist — stale ledger claim, evidence at memory/ve
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
