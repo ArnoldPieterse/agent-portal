@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 10 (UI Perf Budget): spec doc exists but `performance.mark` calls still missing from `core.js`; implementation started this pass.
-- Goals #4 (
 - Fleet at 69/80 (86%); Mechanic has 3 open: load test, mirror production, WinRM E2E. Scribe & Verifier both 10/10.
 - Goal #1: 5/7 days collected; earliest closure after Nov 22 06:00 schtask probe — skip re-probing before then.
 - Search index now 2201 leaves / 819KB; original 500KB AC was set at smaller tree scale, not a violation.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - goal_ledger_current.json went stale after cycle-8; regenerate from live designer.md when dashboard count mismatches verified markers
 - RECALL: - **M6** (`memory/goals/archive/orchestrator-2026-11-13.md:10`): Goal to verify every `model_id` alias in agents.json resolves again
 - Goal #6 boot_verify.py built+self-tested (sandbox); needs 3 live post-reboot runs on non-sandbox seat to close.
+- Auto-loop dispatch "open" counters can lag behind live goal_ledger_current.json; trust the ledger file
+- RECALL: - M5 (memory/workspace/INDEX.md:54): Scribe r32 planning meeting + auto-cont close-out — provides context for the Scribe goal ledger
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
