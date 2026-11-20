@@ -1,5 +1,5 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-20 (Builder assist: Archivist Goal 2 citation_audit.py built+ran, 49 URLs checked, report with filtered analysis)
+Last updated: 2026-11-20 (Builder assist: Archivist Goal 6 Archive Compaction pass 2 — 10 SHA-dupes removed, 33.4% reduction, target MET)
 
 ## Entries (keyword -> pointer | use case)
 - Goal#2 api-client layer / ui/api-client.js built (150L): DI retry core (exp backoff+jitter, max3), TTL-30s cache, 17 typed wrappers, UMD; static gate PASS; node test authored; REMAINING wire core.js + run node test -> memory/builder/api_client_layer_increment1-2026-11-20.md
