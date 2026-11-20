@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Archivist lane 10/10 closed; freshness sweep 2026-11-20: 6974 files, 0 STALE — no open
-- WinRM pool selftest 20/20 PASS; live-exec still blocked on LSA-token wall (NEEDS-HUMAN, unchanged across passes).
 - Auto-loop "1 open goal" count was stale; ledger confirms open=0 (all 10 closed). Corrected in maintenance-2026-11-20b.md.
 - Goal 5 closed: --line-max:75ch token added to ui/tokens.css, applied to .body/.tour-body; all 98 font-size decls use var(--fs-*) tokens.
 - Batch prompt "1 open" was stale; ledger confirms archivist 10/10 reached, open=0 as of 2026-11-20.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 6 closed via programmatic CSS audit; sandbox blocks localhost in Edge so
 - Mirror-revert of `check_winrm_credentials()` from `health_check.py` is now 3rd occurrence — add guard or alert on next pass.
 - G4 icons: cycle-7 doc says 16x16 viewBox but impl is 24x
+- Archivist produced empty-state audit checklist for Designer: some panels use plain-text fallbacks instead of existing UI.emptyState/UI.skele
+- Goal #9: skeletons/shimmer exist & wired; gap is empty states — only 3/8+ data panels covered (agentList, actBody, opsBox, filesList, goalsB
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
