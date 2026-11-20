@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 static leg PASSED: verified no lock held across model generation; parallel_slots=1 invariant confirmed in code
-- Goal 4 (Fleet Status API): circuit breaker self-test passed 10/10; only live integration test on White remains.
-- Goal #9 advanced: high-contrast tokens in ui/tokens.css (WCAG AAA 7:1+), theme picker in ui/core.js persisting to localStorage.
 - Goal #7 (Auto-Updating Archive Nav) closed: dedup safety-net added to archive_nav.py, acceptance test passed
 - Gate bug found: compare() accepts all-null baseline producing false PASS; fix is fail-closed on all-null (Goal #1).
 - Goal #2 (Fleet Status Panel) closed: static CSS verified no overflow at 768/1024/1920px, all state colors use var() tokens. Evidence at memo
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goal #5 (card_staleness.py) closed by Archivist; fleet now 60/80 (75%). Evidence: memory/archivist/assist
 - Goal #8 (Alert Escalation Chain) closed: escalation_chain.py --selftest 8/8 PASS, L1/L2/L3 verified, NEEDS-HUMAN only after full chain.
 - Scribe's oldest open goal: Card Staleness Detection — next step is running `memory/scribe/card_staleness.py` and recording output as ledger
+- Goal #5 (Animation/Motion System) formally recorded
+- WCAG finding: secondary tokens (--dim,--acc,--ok light) only AA 4.8–5.9:1; "AAA 7:1+" hot-note overstates compliance for non-primary pairs.
+- Scribe: Goal 9 (Memory Search Relevance Feedback) closed — 3/3 AC pass, ledger recorded; open count now 3.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
