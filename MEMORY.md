@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fixed winrm_pool.py health exit bug: was checking r.get('ok') (always None) instead of r.get('status')=='OK'; close_goal1.bat now gates corr
-- Designer lane fully closed: 10/10 goals verified, design_qa.py 12/12 pass, open=0. No remaining work on this seat.
 - Auto-loop "1 open" is a stale dashboard artifact; Designer lane is 10/10 closed, open=0 confirmed by ledger.
 - Fleet cache updated: WHITE=OK, PALE/BLACK/RED=UNREACHABLE (no
 - Phantom goal7-perf-profile-verified-2026-11-20.md invalidated (n=720 fabricated, --verify doesn
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - perf_profile
 - Mechanic added `winrm_pool.py --preflight` (4/5 pass; pywinrm missing in sandbox is expected); goal 1 close now has validated preconditions
 - design_qa.py fixed: checks 1-3 now derive type/spacing scales dynamically from tokens.css; gate passes 12/12 and flags broken panels (exit 1
+- close_goal7.bat is ready but requires a non-sandbox White seat run; Mechanic's goals 1 & 7 remain blocked by egress.
+- Designer fixed 35 light-mode contrast failures: tokens (--queue-tx, --muted, --faint, --warn-text, --ok, --warn, --err) had dark-theme value
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
