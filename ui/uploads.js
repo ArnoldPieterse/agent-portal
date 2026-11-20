@@ -363,7 +363,11 @@ async function goalsLoad(){
     const _pg=window._goalsPrev||{}; for(const a of (o.agents||[])){ if(_pg[a.agent]!=null && a.done>_pg[a.agent] && typeof window.notify==="function") window.notify("ok","Goal closed on "+a.agent+" ("+a.done+"/"+a.total+")"); }
     window._goalsPrev=Object.fromEntries((o.agents||[]).map(a=>[a.agent,a.done]));
     $("goalsBody").dataset.loaded="1";
-    $("goalsBody").innerHTML=html||((typeof UI!=="undefined")?UI.emptyState({icon:"goal",title:"No goals set",msg:"Goal files live in memory/goals/ on each host.",ctaLabel:"Open TODO.md"}):'<div class="hint">no goal files</div>');
+    const lvl=(o.level)?('<div class="lvl-banner"><div class="lvl-num">Level '+o.level+'</div>'
+      +'<div class="lvl-sub">+1 each time ALL goals reach 100% &middot; latest report: '
+      +(o.latest_level_report?'<a href="/api/file/raw?path='+encodeURIComponent(o.latest_level_report)+'" target="_blank">'+o.latest_level_report+'</a>'
+        :'<span class="hint">none yet - levels up when the fleet hits 100%</span>')+'</div></div>'):'';
+    $("goalsBody").innerHTML=lvl+(html||((typeof UI!=="undefined")?UI.emptyState({icon:"goal",title:"No goals set",msg:"Goal files live in memory/goals/ on each host.",ctaLabel:"Open TODO.md"}):'<div class="hint">no goal files</div>'));
     { const _ct=$("goalsBody").querySelector(".empty-cta"); if(_ct)_ct.onclick=function(){ const cm=$("composer"); if(cm)cm.focus(); }; }
     $("goalsStat").textContent=o.fleet_done+"/"+o.fleet_total+" · fleet "+(o.fleet_pct||0)+"%";
     if(typeof renderGoalBar==="function")renderGoalBar(o);

@@ -3526,6 +3526,163 @@ def _memory_health_snapshot():
     return {"ok": True, "ts": ts, "metrics": m}
 
 
+# ---- LEVEL COUNTER (2026-11-20, user request) ---------------------------------------
+# Every time ALL agent goals reach 100% for a goal set that differs from the one at the
+# previous level-up, the fleet level goes up by 1 and a "what changed" report is written
+# to memory/levels/. Signature-gated (SHA-256 of the current goal files): re-parsing the
+# same completed set never double-counts; the post-100% goal re-draft changes the
+# signature and arms the next cycle. State: memory/levels.json. Never raises - a level
+# failure must not break /api/goals or the auto-loop tick that also calls _goals_snapshot.
+LEVELS_FILE = os.path.join(HERE, "memory", "levels.json")
+LEVELS_DIR = os.path.join(HERE, "memory", "levels")
+_LEVEL_LOCK = None
+
+
+def _level_lock():
+    global _LEVEL_LOCK
+    if _LEVEL_LOCK is None:
+        import threading as _th
+        _LEVEL_LOCK = _th.Lock()
+    return _LEVEL_LOCK
+
+
+def _goal_parser():
+    """parse_agent_file from the strict goal_ledger (memory/researcher/) first, portal-root
+    goal_ledger.py only as last resort (its EVIDENCE_PAT matches '[x]' itself)."""
+    import importlib.util as _ilu
+    for _cand in (os.path.join(HERE, "memory", "researcher", "goal_ledger.py"),):
+        try:
+            _spec = _ilu.spec_from_file_location("_gl_strict", _cand)
+            _mod = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_mod)
+            return _mod.parse_agent_file
+        except Exception:
+            continue
+    try:
+        import goal_ledger as _gl
+        return _gl.parse_agent_file
+    except Exception:
+        return None
+
+
+def _level_sig():
+    """SHA-256 over the sorted contents of every agent goal file - identity of the current
+    goal set (same file filter as _goals_snapshot)."""
+    import hashlib
+    h = hashlib.sha256()
+    gdir = os.path.join(HERE, "memory", "goals")
+    try:
+        names = {(a.get("name") or "").lower() for a in load_agents().get("agents", [])}
+        for fn in sorted(os.listdir(gdir)):
+            if not fn.endswith(".md") or fn[:-3] == "INDEX" or fn.startswith("GOAL_"):
+                continue
+            if names and fn[:-3].lower() not in names:
+                continue
+            with open(os.path.join(gdir, fn), "rb") as f:
+                h.update(fn.encode()); h.update(f.read())
+    except Exception:
+        pass
+    return h.hexdigest()
+
+
+def _load_levels():
+    try:
+        with open(LEVELS_FILE, encoding="utf-8") as f:
+            d = json.load(f)
+        if not isinstance(d, dict) or "level" not in d:
+            raise ValueError("bad shape")
+        d.setdefault("history", [])
+        return d
+    except Exception:
+        return {"level": 0, "last_sig": "", "last_sha": "", "history": []}
+
+
+def _save_levels(d):
+    try:
+        os.makedirs(LEVELS_DIR, exist_ok=True)
+        tmp = LEVELS_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(d, f, indent=1)
+        os.replace(tmp, LEVELS_FILE)
+    except Exception:
+        pass
+
+
+def _level_report_md(level, prev_sha, snap):
+    """Level-N report: what changed since the previous level-up (git log + diff stat
+    between the two level-up commits) and which goals were completed this cycle."""
+    ts = time.strftime("%Y-%m-%d %H:%M:%S")
+    lines = ["# Level %d - all goals 100%%" % level, "",
+             "Fleet: %s/%s goals reached at level-up (%s)." % (
+                 snap.get("fleet_done"), snap.get("fleet_total"), ts), ""]
+    if prev_sha:
+        lg = _git(["log", "--oneline", "%s..HEAD" % prev_sha], max_out=12000)
+        df = _git(["diff", "--stat", "%s..HEAD" % prev_sha], max_out=8000)
+        lines += ["## What changed since level %d (git %s..HEAD)" % (level - 1, prev_sha[:7]), ""]
+        if lg.get("ok") and lg["out"]:
+            lines += ["```", lg["out"], "```", ""]
+        else:
+            lines += ["(no commits since the previous level-up)", ""]
+        if df.get("ok") and df["out"]:
+            lines += ["### Diff stat", "", "```", df["out"], "```", ""]
+    else:
+        lg = _git(["log", "--oneline", "-n", "20"], max_out=6000)
+        lines += ["## What changed (first level - recent history)", ""]
+        if lg.get("ok") and lg["out"]:
+            lines += ["```", lg["out"], "```", ""]
+    lines += ["## Goals completed this cycle", ""]
+    parse = _goal_parser()
+    gdir = os.path.join(HERE, "memory", "goals")
+    for a in snap.get("agents", []):
+        reached = []
+        if parse:
+            try:
+                reached = [g["text"][:200] for g in parse(os.path.join(gdir, a["agent"] + ".md"))
+                           if g["status"] == "reached"]
+            except Exception:
+                reached = []
+        lines.append("### %s (%d/%d)" % (a["agent"], len(reached), a["total"]))
+        for t in reached:
+            lines.append("- " + t)
+        lines.append("")
+    lines += ["Next cycle: a new goal-setting round is armed (GOAL_RESET_PENDING); the next",
+              "100% on the fresh goal set will be level %d." % (level + 1)]
+    return "\n".join(lines) + "\n"
+
+
+def _check_level_up(snap):
+    """All goals 100% for a goal set not yet leveled -> level += 1, write
+    memory/levels/level_N_<ts>.md and persist memory/levels.json. Idempotent per
+    goal-set signature; returns {level, latest_level_report} to merge into /api/goals."""
+    with _level_lock():
+        sig = _level_sig()
+        st = _load_levels()
+        if sig == (st.get("last_sig") or ""):
+            hist = st.get("history") or []
+            return {"level": int(st.get("level", 0)),
+                    "latest_level_report": hist[-1].get("report") if hist else None}
+        level = int(st.get("level", 0)) + 1
+        prev_sha = (st.get("last_sha") or "").strip()
+        head_r = _git(["rev-parse", "HEAD"])
+        head_sha = head_r["out"].strip() if head_r.get("ok") else ""
+        os.makedirs(LEVELS_DIR, exist_ok=True)
+        report_rel = "memory/levels/level_%d_%s.md" % (level, time.strftime("%Y%m%d-%H%M%S"))
+        try:
+            with open(os.path.join(HERE, report_rel), "w", encoding="utf-8") as f:
+                f.write(_level_report_md(level, prev_sha, snap))
+        except Exception:
+            pass
+        entry = {"level": level, "ts": time.strftime("%Y-%m-%d %H:%M:%S"),
+                 "sha": head_sha[:7], "sig": sig[:16],
+                 "fleet": "%s/%s" % (snap.get("fleet_done"), snap.get("fleet_total")),
+                 "report": report_rel}
+        st["history"] = (st.get("history") or []) + [entry]
+        st["level"] = level
+        st["last_sig"] = sig
+        st["last_sha"] = head_sha
+        _save_levels(st)
+    return {"level": level, "latest_level_report": report_rel}
+
+
 def _goals_snapshot():
     """Goal Velocity dashboard (2026-11-15, Designer; Researcher evidence-gated v2).
     Counts a goal DONE only when an acceptance/evidence marker is present. Delegates to
@@ -3545,22 +3702,9 @@ def _goals_snapshot():
         names = {(a.get("name") or "").lower() for a in load_agents().get("agents", [])}
     except Exception:
         names = set()
-    parse = None
-    import importlib.util as _ilu
-    for _cand in (os.path.join(HERE, "memory", "researcher", "goal_ledger.py"),):
-        try:
-            _spec = _ilu.spec_from_file_location("_gl_strict", _cand)
-            _mod = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_mod)
-            parse = _mod.parse_agent_file
-            break
-        except Exception:
-            continue
+    parse = _goal_parser()
     if parse is None:
-        try:
-            import goal_ledger as _gl
-            parse = _gl.parse_agent_file
-        except Exception:
-            return {"ok": False, "error": "goal_ledger module not found (memory/researcher or portal root)", "agents": []}
+        return {"ok": False, "error": "goal_ledger module not found (memory/researcher or portal root)", "agents": []}
     agents = []
     try:
         for fn in sorted(os.listdir(gdir)):
@@ -3598,6 +3742,18 @@ def _goals_snapshot():
         resp["goal_reset_pending"] = True
     else:
         resp["goal_reset_pending"] = False
+    # Level counter (2026-11-20): at 100% for a NEW goal-set signature _check_level_up bumps
+    # the level and writes memory/levels/level_N.md; otherwise just report current state.
+    try:
+        if total and done_all >= total:
+            resp.update(_check_level_up(resp) or {})
+        else:
+            _lst = _load_levels()
+            _lhist = _lst.get("history") or []
+            resp["level"] = int(_lst.get("level", 0))
+            resp["latest_level_report"] = _lhist[-1].get("report") if _lhist else None
+    except Exception:
+        pass
     return resp
 
 
