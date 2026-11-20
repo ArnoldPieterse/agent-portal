@@ -1,0 +1,28 @@
+{
+  "goal": "scribe-7-archive-navigation-index",
+  "date": "2026-11-20",
+  "assisted_by": "Archivist",
+  "owner": "Scribe",
+  "artifact": "memory/synthesis/archive-nav.md",
+  "checks": {
+    "coverage": "68/68 synthesis files indexed (100%)",
+    "themes": 6,
+    "theme_names": [
+      "Round Records & Closeouts",
+      "Planning & Strategy",
+      "Adjudication, Rulings & Decisions",
+      "Index & Pointer Operations",
+      "Cycles, Narratives & Retrospectives",
+      "Fleet State, Status & Incident Notes"
+    ],
+    "spot_check": "5/5 entries verified accurate against source files",
+    "spot_check_files": [
+      "2026-11-18-rest-of-goals-attempts.md",
+      "2026-11-15-scribe-goal-proposals.md",
+      "supersession-policy-baseline.md",
+      "2026-11-14-dcabots-intake-synthesis.md",
+      "cycle-narrative.md"
+    ]
+  },
+  "acceptance": "PASS - all criteria met (100% coverage, >=4 themes, summaries accurate)"
+}

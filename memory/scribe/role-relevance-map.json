@@ -1,0 +1,983 @@
+{
+  "generated": "2026-11-20",
+  "description": "Role-to-memory relevance map for compress_context.py. Each agent gets top-30 most relevant memory files ranked by keyword overlap with their role description.",
+  "method": "keyword extraction from agents.json blurb+persona; scored against filename (3x), path components (2x), and first-50-lines content (1x)",
+  "agents": {
+    "archivist": [
+      {
+        "file": "memory/ops/pdf-reporting.md",
+        "score": 39
+      },
+      {
+        "file": "memory/researcher/INDEX.md",
+        "score": 38
+      },
+      {
+        "file": "memory/archivist/goals-2026-11-13.md",
+        "score": 32
+      },
+      {
+        "file": "memory/goals/2026-11-13-agent-goals.md",
+        "score": 31
+      },
+      {
+        "file": "memory/goals/archivist.md",
+        "score": 31
+      },
+      {
+        "file": "memory/goals/archive/archivist-2026-11-13.md",
+        "score": 31
+      },
+      {
+        "file": "memory/goals/archive/researcher-2026-11-18.md",
+        "score": 31
+      },
+      {
+        "file": "memory/scribe/MEMORY.md",
+        "score": 30
+      },
+      {
+        "file": "memory/archivist/MEMORY.md",
+        "score": 29
+      },
+      {
+        "file": "memory/goals/all-goals-2026-11-13.md",
+        "score": 29
+      },
+      {
+        "file": "memory/goals/cycle2-proposals-raw-2026-11-16.txt",
+        "score": 29
+      },
+      {
+        "file": "memory/ops/left-archivist.md",
+        "score": 29
+      },
+      {
+        "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+        "score": 29
+      },
+      {
+        "file": "memory/scribe/TODO.md",
+        "score": 29
+      },
+      {
+        "file": "memory/goals/archive/archivist-2026-11-16.md",
+        "score": 29
+      },
+      {
+        "file": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
+        "score": 29
+      },
+      {
+        "file": "memory/goals/archive/cycle2-2026-11-17/cycle2-proposals-raw-2026-11-16.txt",
+        "score": 29
+      },
+      {
+        "file": "memory/workspace/INDEX.md",
+        "score": 28
+      },
+      {
+        "file": "memory/goals/researcher.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/archive/archivist-2026-11-18.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/archive/archivist-2026-11-19.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/archive/archivist-2026-11-20.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/archive/designer-2026-11-19.md",
+        "score": 26
+      },
+      {
+        "file": "memory/goals/archive/designer-2026-11-20.md",
+        "score": 26
+      },
+      {
+        "file": "memory/researcher/hosts-ctx-correction-and-rename-script-state-2026-11-14.md",
+        "score": 25
+      },
+      {
+        "file": "memory/scribe/_open_items_scan.txt",
+        "score": 25
+      },
+      {
+        "file": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+        "score": 25
+      },
+      {
+        "file": "memory/synthesis/2026-11-16-portal-status-report.md",
+        "score": 25
+      },
+      {
+        "file": "memory/verifier/ops-index-check-archivist-entry-2026-11-14.md",
+        "score": 25
+      },
+      {
+        "file": "memory/goals/archive/orchestrator-2026-11-19.md",
+        "score": 25
+      }
+    ],
+    "builder": [
+      {
+        "file": "memory/orchestrator/rerole_agent.py",
+        "score": 17
+      },
+      {
+        "file": "memory/goals/builder.md",
+        "score": 14
+      },
+      {
+        "file": "memory/goals/archive/builder-2026-11-19.md",
+        "score": 13
+      },
+      {
+        "file": "memory/goals/archive/builder-2026-11-20.md",
+        "score": 13
+      },
+      {
+        "file": "memory/builder/ci-gate-verified-2026-11-16.md",
+        "score": 11
+      },
+      {
+        "file": "memory/designer/goal9-tour-verified-2026-11-19.md",
+        "score": 11
+      },
+      {
+        "file": "memory/goals/2026-11-13-agent-goals.md",
+        "score": 11
+      },
+      {
+        "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
+        "score": 11
+      },
+      {
+        "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
+        "score": 11
+      },
+      {
+        "file": "memory/designer/goal9-tour-reland-verified-2026-11-19.md",
+        "score": 10
+      },
+      {
+        "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+        "score": 10
+      },
+      {
+        "file": "memory/orchestrator/onboard_agent.py",
+        "score": 10
+      },
+      {
+        "file": "memory/researcher/INDEX.md",
+        "score": 10
+      },
+      {
+        "file": "memory/verifier/r17b-queue5-inputs-verified.md",
+        "score": 10
+      },
+      {
+        "file": "memory/goals/archive/builder-2026-11-18.md",
+        "score": 10
+      },
+      {
+        "file": "memory/goals/archive/cycle2-2026-11-17/builder.md",
+        "score": 10
+      },
+      {
+        "file": "memory/archivist/dream-big-wishes-2026-11-14.md",
+        "score": 9
+      },
+      {
+        "file": "memory/builder/a4a5-persist-rerun-verified-r41.md",
+        "score": 9
+      },
+      {
+        "file": "memory/designer/goal10-print-verified-2026-11-19.md",
+        "score": 9
+      },
+      {
+        "file": "memory/designer/goal5-notification-static-verified-2026-11-19b.md",
+        "score": 9
+      },
+      {
+        "file": "memory/designer/goal9-tour-code-complete-step4-fixed-2026-11-19.md",
+        "score": 9
+      },
+      {
+        "file": "memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md",
+        "score": 9
+      },
+      {
+        "file": "memory/orchestrator/designer-goal5-notifications-static-verified-2026-11-19.md",
+        "score": 9
+      },
+      {
+        "file": "memory/orchestrator/goal2-timeline-logic-verified-2026-11-17.md",
+        "score": 9
+      },
+      {
+        "file": "memory/researcher/dream-big-goal-loop-2026-11-14.md",
+        "score": 9
+      },
+      {
+        "file": "memory/verifier/goals-patch-verified-2026-11-15.md",
+        "score": 9
+      },
+      {
+        "file": "memory/goals/archive/builder-2026-11-13.md",
+        "score": 9
+      },
+      {
+        "file": "memory/goals/archive/researcher-2026-11-18.md",
+        "score": 9
+      },
+      {
+        "file": "memory/builder/contrast-fix-in-stamp-verified-r59-2026-11-14.md",
+        "score": 8
+      },
+      {
+        "file": "memory/designer/builder-assist-designer1-token-lint-2026-11-19.md",
+        "score": 8
+      }
+    ],
+    "designer": [
+      {
+        "file": "memory/designer/index-audit-critique-2026-11-15.md",
+        "score": 22
+      },
+      {
+        "file": "memory/designer/designer-goal-proposals-2026-11-17.md",
+        "score": 21
+      },
+      {
+        "file": "memory/designer/contrast-token-audit-live-2026-11-15.md",
+        "score": 20
+      },
+      {
+        "file": "memory/portal/design-tokens-live.md",
+        "score": 20
+      },
+      {
+        "file": "memory/goals/archive/designer-2026-11-19.md",
+        "score": 20
+      },
+      {
+        "file": "memory/goals/archive/designer-2026-11-20.md",
+        "score": 20
+      },
+      {
+        "file": "memory/goals/designer.md",
+        "score": 19
+      },
+      {
+        "file": "memory/designer/design-tokens-live.md",
+        "score": 18
+      },
+      {
+        "file": "memory/goals/archive/designer-2026-11-18.md",
+        "score": 18
+      },
+      {
+        "file": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
+        "score": 17
+      },
+      {
+        "file": "memory/portal/increment2.md",
+        "score": 17
+      },
+      {
+        "file": "memory/goals/archive/designer-2026-11-13.md",
+        "score": 17
+      },
+      {
+        "file": "memory/goals/archive/designer-2026-11-16.md",
+        "score": 17
+      },
+      {
+        "file": "memory/goals/archive/cycle2-2026-11-17/designer.md",
+        "score": 17
+      },
+      {
+        "file": "memory/designer/design-qa-checklist.md",
+        "score": 16
+      },
+      {
+        "file": "memory/designer/design-sheet-rerun-45323d09-2026-11-14.md",
+        "score": 16
+      },
+      {
+        "file": "memory/designer/designer-goal-proposals-2026-11-16.md",
+        "score": 16
+      },
+      {
+        "file": "memory/designer/goal3-hierarchy-reland-2026-11-20c.md",
+        "score": 16
+      },
+      {
+        "file": "memory/designer/live-deploy-2026-11-16.md",
+        "score": 16
+      },
+      {
+        "file": "memory/designer/planning-meeting-2026-11-14.md",
+        "score": 16
+      },
+      {
+        "file": "memory/designer/reapply-goals-2-3-4-to-live-2026-11-15.md",
+        "score": 16
+      },
+      {
+        "file": "memory/researcher/INDEX.md",
+        "score": 16
+      },
+      {
+        "file": "memory/designer/ac-a2-2-console-clean-criteria.md",
+        "score": 15
+      },
+      {
+        "file": "memory/designer/contrast-sweep-2026-11-15.md",
+        "score": 15
+      },
+      {
+        "file": "memory/designer/goal2-density-live-2026-11-19.md",
+        "score": 15
+      },
+      {
+        "file": "memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md",
+        "score": 15
+      },
+      {
+        "file": "memory/designer/reland-2-3-4-live-2026-11-15.md",
+        "score": 15
+      },
+      {
+        "file": "memory/designer/stamp-design-leg-r56-2026-11-14.md",
+        "score": 15
+      },
+      {
+        "file": "memory/goals/designer-browser-gate-forecast-2026-11-19.md",
+        "score": 15
+      },
+      {
+        "file": "memory/goals/designer-cycle5-sequencing-forecast-2026-11-19.md",
+        "score": 15
+      }
+    ],
+    "mechanic": [
+      {
+        "file": "memory/goals/2026-11-13-agent-goals.md",
+        "score": 40
+      },
+      {
+        "file": "memory/mechanic/goal9-ops-runbook-gap-analysis-2026-11-17.md",
+        "score": 39
+      },
+      {
+        "file": "memory/mechanic/ops-runbook-gap-analysis-2026-11-17.md",
+        "score": 36
+      },
+      {
+        "file": "memory/mechanic/runbook.md",
+        "score": 36
+      },
+      {
+        "file": "memory/ops/probe-false-healthy-fix.md",
+        "score": 36
+      },
+      {
+        "file": "memory/researcher/INDEX.md",
+        "score": 36
+      },
+      {
+        "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+        "score": 35
+      },
+      {
+        "file": "memory/goals/archive/researcher-2026-11-18.md",
+        "score": 35
+      },
+      {
+        "file": "memory/ops/runbook-notes.md",
+        "score": 34
+      },
+      {
+        "file": "memory/mechanic/goal9-ops-gap-analysis-2026-11-17.md",
+        "score": 33
+      },
+      {
+        "file": "memory/goals/archive/mechanic-2026-11-13.md",
+        "score": 33
+      },
+      {
+        "file": "memory/llm/overnight-unload.md",
+        "score": 32
+      },
+      {
+        "file": "memory/mechanic/seat-probe-red-2026-11-13.md",
+        "score": 32
+      },
+      {
+        "file": "memory/goals/archive/mechanic-2026-11-19.md",
+        "score": 32
+      },
+      {
+        "file": "memory/goals/archive/mechanic-2026-11-20.md",
+        "score": 32
+      },
+      {
+        "file": "memory/goals/archive/mechanic-cycle5-closed-2026-11-19.md",
+        "score": 32
+      },
+      {
+        "file": "memory/goals/archive/orchestrator-2026-11-13.md",
+        "score": 32
+      },
+      {
+        "file": "memory/goals/archive/cycle2-2026-11-17/mechanic.md",
+        "score": 32
+      },
+      {
+        "file": "memory/mechanic/runbook-gap-analysis-draft-2026-11-18.md",
+        "score": 31
+      },
+      {
+        "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+        "score": 31
+      },
+      {
+        "file": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+        "score": 31
+      },
+      {
+        "file": "memory/mechanic/goal7-fleet-health-v2-built-2026-11-18.md",
+        "score": 30
+      },
+      {
+        "file": "memory/mechanic/goal8-fleet-status-relanded-2026-11-19.md",
+        "score": 30
+      },
+      {
+        "file": "memory/mechanic/pass-evidence-2026-11-17b.md",
+        "score": 30
+      },
+      {
+        "file": "memory/ops/mechanic-goal1-adaptive-probe-evidence-2026-11-16.md",
+        "score": 30
+      },
+      {
+        "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+        "score": 30
+      },
+      {
+        "file": "memory/synthesis/2026-11-17-r1-round-record-DRAFT.md",
+        "score": 30
+      },
+      {
+        "file": "memory/synthesis/2026-11-17-r2-round-record-DRAFT.md",
+        "score": 30
+      },
+      {
+        "file": "memory/synthesis/2026-11-18-r1-round-record-DRAFT.md",
+        "score": 30
+      },
+      {
+        "file": "memory/synthesis/2026-11-18-r2-round-record-DRAFT.md",
+        "score": 30
+      }
+    ],
+    "orchestrator": [
+      {
+        "file": "memory/goals/archive/orchestrator-2026-11-13.md",
+        "score": 49
+      },
+      {
+        "file": "memory/goals/2026-11-13-agent-goals.md",
+        "score": 47
+      },
+      {
+        "file": "memory/goals/archive/orchestrator-2026-11-19.md",
+        "score": 46
+      },
+      {
+        "file": "memory/goals/archive/orchestrator-2026-11-20.md",
+        "score": 46
+      },
+      {
+        "file": "memory/goals/all-goals-2026-11-13.md",
+        "score": 41
+      },
+      {
+        "file": "memory/researcher/INDEX.md",
+        "score": 37
+      },
+      {
+        "file": "memory/goals/archive/researcher-2026-11-18.md",
+        "score": 37
+      },
+      {
+        "file": "memory/orchestrator/rerole_agent.py",
+        "score": 35
+      },
+      {
+        "file": "memory/goals/archive/orchestrator-cycle5-closed-2026-11-18.md",
+        "score": 35
+      },
+      {
+        "file": "memory/goals/orchestrator.md",
+        "score": 33
+      },
+      {
+        "file": "memory/ops/left-orchestrator.md",
+        "score": 32
+      },
+      {
+        "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+        "score": 31
+      },
+      {
+        "file": "memory/portal/fleet-status.md",
+        "score": 29
+      },
+      {
+        "file": "memory/goals/archive/orchestrator-2026-11-18.md",
+        "score": 29
+      },
+      {
+        "file": "memory/scribe/_open_items_scan.txt",
+        "score": 28
+      },
+      {
+        "file": "memory/synthesis/2026-11-16-portal-status-report.md",
+        "score": 28
+      },
+      {
+        "file": "memory/synthesis/2026-11-18-r1-round-record-DRAFT.md",
+        "score": 28
+      },
+      {
+        "file": "memory/synthesis/2026-11-18-r2-round-record-DRAFT.md",
+        "score": 28
+      },
+      {
+        "file": "memory/synthesis/2026-11-18-r3-round-record-DRAFT.md",
+        "score": 28
+      },
+      {
+        "file": "memory/workspace/INDEX.md",
+        "score": 28
+      },
+      {
+        "file": "memory/llm/hosts.md",
+        "score": 27
+      },
+      {
+        "file": "memory/scribe/TODO.md",
+        "score": 27
+      },
+      {
+        "file": "memory/synthesis/2026-11-13-planning-meeting.md",
+        "score": 27
+      },
+      {
+        "file": "memory/synthesis/2026-11-17-r1-round-record-DRAFT.md",
+        "score": 27
+      },
+      {
+        "file": "memory/synthesis/2026-11-17-r2-round-record-DRAFT.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/archive/designer-2026-11-19.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/archive/designer-2026-11-20.md",
+        "score": 27
+      },
+      {
+        "file": "memory/ops/runbook-notes.md",
+        "score": 26
+      },
+      {
+        "file": "memory/orchestrator/retire-agent-built-2026-11-18.md",
+        "score": 26
+      },
+      {
+        "file": "memory/portal/v1-inventory.md",
+        "score": 26
+      }
+    ],
+    "researcher": [
+      {
+        "file": "memory/goals/archive/researcher-2026-11-18.md",
+        "score": 40
+      },
+      {
+        "file": "memory/researcher/INDEX.md",
+        "score": 37
+      },
+      {
+        "file": "memory/goals/archive/cycle2-2026-11-17/researcher.md",
+        "score": 34
+      },
+      {
+        "file": "memory/goals/all-goals-2026-11-13.md",
+        "score": 33
+      },
+      {
+        "file": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+        "score": 33
+      },
+      {
+        "file": "memory/orchestrator/rerole_agent.py",
+        "score": 32
+      },
+      {
+        "file": "memory/goals/archivist.md",
+        "score": 30
+      },
+      {
+        "file": "memory/goals/researcher.md",
+        "score": 29
+      },
+      {
+        "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+        "score": 29
+      },
+      {
+        "file": "memory/scribe/MEMORY.md",
+        "score": 29
+      },
+      {
+        "file": "memory/goals/archive/researcher-2026-11-19.md",
+        "score": 29
+      },
+      {
+        "file": "memory/goals/archive/researcher-2026-11-20.md",
+        "score": 29
+      },
+      {
+        "file": "memory/designer/a4-dual-base-verify-r27.md",
+        "score": 27
+      },
+      {
+        "file": "memory/mechanic/designer-clobber-stale-claims-resolved-2026-11-19.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/archive/orchestrator-2026-11-13.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/cycle2-proposals-raw-2026-11-16.txt",
+        "score": 26
+      },
+      {
+        "file": "memory/llm/overnight-unload.md",
+        "score": 26
+      },
+      {
+        "file": "memory/orchestrator/onboard_agent.py",
+        "score": 26
+      },
+      {
+        "file": "memory/researcher/goal9-tour-stale-evidence-2026-11-19.md",
+        "score": 26
+      },
+      {
+        "file": "memory/scribe/stale-claim-researcher-sla-cycle5-closed-2026-11-19.md",
+        "score": 26
+      },
+      {
+        "file": "memory/goals/archive/cycle2-2026-11-17/cycle2-proposals-raw-2026-11-16.txt",
+        "score": 26
+      },
+      {
+        "file": "memory/goals/researcher-attempts-cycle3-2026-11-18.md",
+        "score": 25
+      },
+      {
+        "file": "memory/ops/left-researcher.md",
+        "score": 25
+      },
+      {
+        "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+        "score": 25
+      },
+      {
+        "file": "memory/researcher/crosscheck-python-subprocess-run-with-check-true-raises-calledprocesser-2026-11-18.md",
+        "score": 25
+      },
+      {
+        "file": "memory/researcher/MEMORY.md",
+        "score": 25
+      },
+      {
+        "file": "memory/researcher/sla-report-cycle5-stale-citation-resolved-2026-11-19.md",
+        "score": 25
+      },
+      {
+        "file": "memory/verifier/goal2-gen-report-evidence-2026-11-18.md",
+        "score": 25
+      },
+      {
+        "file": "memory/goals/researcher-log-2026-11-13.md",
+        "score": 24
+      },
+      {
+        "file": "memory/researcher/designer-goal8-icon-static-verify-2026-11-19.md",
+        "score": 24
+      }
+    ],
+    "scribe": [
+      {
+        "file": "memory/scribe/TODO.md",
+        "score": 32
+      },
+      {
+        "file": "memory/synthesis/2026-11-15-scribe-goal-proposals.md",
+        "score": 32
+      },
+      {
+        "file": "memory/synthesis/2026-11-16-r1-round-record-DRAFT.md",
+        "score": 32
+      },
+      {
+        "file": "memory/synthesis/2026-11-16-r1-round-record.md",
+        "score": 32
+      },
+      {
+        "file": "memory/goals/2026-11-13-agent-goals.md",
+        "score": 31
+      },
+      {
+        "file": "memory/goals/archive/scribe-2026-11-13.md",
+        "score": 31
+      },
+      {
+        "file": "memory/ops/left-scribe.md",
+        "score": 30
+      },
+      {
+        "file": "memory/scribe/MEMORY.md",
+        "score": 30
+      },
+      {
+        "file": "memory/scribe/_open_items_scan.txt",
+        "score": 30
+      },
+      {
+        "file": "memory/builder/TODO.md",
+        "score": 29
+      },
+      {
+        "file": "memory/synthesis/2026-11-14-r56-round-record.md",
+        "score": 29
+      },
+      {
+        "file": "memory/goals/archive/researcher-2026-11-18.md",
+        "score": 29
+      },
+      {
+        "file": "memory/researcher/INDEX.md",
+        "score": 28
+      },
+      {
+        "file": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+        "score": 28
+      },
+      {
+        "file": "memory/synthesis/2026-11-17-r1-round-record-DRAFT.md",
+        "score": 28
+      },
+      {
+        "file": "memory/synthesis/2026-11-17-r2-round-record-DRAFT.md",
+        "score": 28
+      },
+      {
+        "file": "memory/synthesis/2026-11-18-r1-round-record-DRAFT.md",
+        "score": 28
+      },
+      {
+        "file": "memory/synthesis/2026-11-18-r2-round-record-DRAFT.md",
+        "score": 28
+      },
+      {
+        "file": "memory/synthesis/2026-11-18-r3-round-record-DRAFT.md",
+        "score": 28
+      },
+      {
+        "file": "memory/goals/all-goals-2026-11-13.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/scribe.md",
+        "score": 27
+      },
+      {
+        "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+        "score": 27
+      },
+      {
+        "file": "memory/orchestrator/stale-claim-scribe-todo-memor-typo-2026-11-19.md",
+        "score": 27
+      },
+      {
+        "file": "memory/verifier/MEMORY.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/archive/scribe-2026-11-18.md",
+        "score": 27
+      },
+      {
+        "file": "memory/goals/archive/cycle2-2026-11-17/scribe.md",
+        "score": 27
+      },
+      {
+        "file": "memory/designer/MEMORY.md",
+        "score": 26
+      },
+      {
+        "file": "memory/mechanic/assist-scribe-goal1-decisions-v2-reland-2026-11-18.md",
+        "score": 26
+      },
+      {
+        "file": "memory/portal/v1-upgrades-decisions.md",
+        "score": 26
+      },
+      {
+        "file": "memory/synthesis/2026-11-14-r38-round-record.md",
+        "score": 26
+      }
+    ],
+    "verifier": [
+      {
+        "file": "memory/verifier/ac-a2-gate-state-sweep-2026-11-14.md",
+        "score": 22
+      },
+      {
+        "file": "memory/researcher/evidence-quality-trend-report3-2026-11-17.md",
+        "score": 21
+      },
+      {
+        "file": "memory/researcher/INDEX.md",
+        "score": 20
+      },
+      {
+        "file": "memory/verifier/goal2-gen-report-evidence-2026-11-18.md",
+        "score": 20
+      },
+      {
+        "file": "memory/goals/verifier.md",
+        "score": 19
+      },
+      {
+        "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
+        "score": 19
+      },
+      {
+        "file": "memory/goals/archive/researcher-2026-11-18.md",
+        "score": 19
+      },
+      {
+        "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
+        "score": 18
+      },
+      {
+        "file": "memory/scribe/compression-gate-evidence-2026-11-18.md",
+        "score": 18
+      },
+      {
+        "file": "memory/verifier/MEMORY.md",
+        "score": 18
+      },
+      {
+        "file": "memory/goals/archive/verifier-2026-11-18.md",
+        "score": 18
+      },
+      {
+        "file": "memory/goals/archive/verifier-2026-11-19.md",
+        "score": 18
+      },
+      {
+        "file": "memory/goals/archive/verifier-2026-11-20.md",
+        "score": 18
+      },
+      {
+        "file": "memory/orchestrator/rerole_agent.py",
+        "score": 17
+      },
+      {
+        "file": "memory/researcher/r27b-live-leg-pass-condition-2026-11-14.md",
+        "score": 17
+      },
+      {
+        "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
+        "score": 17
+      },
+      {
+        "file": "memory/goals/archive/orchestrator-2026-11-13.md",
+        "score": 17
+      },
+      {
+        "file": "memory/goals/archive/verifier-2026-11-13.md",
+        "score": 17
+      },
+      {
+        "file": "memory/builder/evidence-verify-claims-guard-2026-11-19.md",
+        "score": 16
+      },
+      {
+        "file": "memory/designer/breakpoint-gate-logic-evidence-2026-11-17.md",
+        "score": 16
+      },
+      {
+        "file": "memory/mechanic/pass-evidence-2026-11-17b.md",
+        "score": 16
+      },
+      {
+        "file": "memory/ops/evidence-closure-protocol.md",
+        "score": 16
+      },
+      {
+        "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
+        "score": 16
+      },
+      {
+        "file": "memory/verifier/test-report-2026-11-15b.md",
+        "score": 16
+      },
+      {
+        "file": "memory/builder/ci-gate-acceptance-evidence-2026-11-16.md",
+        "score": 15
+      },
+      {
+        "file": "memory/goals/all-goals-2026-11-13.md",
+        "score": 15
+      },
+      {
+        "file": "memory/ops/verifier-git-health-2026-11-15b.md",
+        "score": 15
+      },
+      {
+        "file": "memory/portal/v1-upgrade-state-2026-11-12.md",
+        "score": 15
+      },
+      {
+        "file": "memory/scribe/goal6-quality-score-evidence-2026-11-18.md",
+        "score": 15
+      },
+      {
+        "file": "memory/scribe/_open_items_scan.txt",
+        "score": 15
+      }
+    ]
+  }
+}

@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 9 gap: actRender & mergeQueueLoad use plain-text empty states, not UI.emptyState() — needs fixing for full panel coverage.
-- Auto-loop open-goal counts are systematically stale across all 4 seats (confirmed by ledger each pass); don't re-probe.
-- Auto-loop open-goal
-- Designer: Next task = Scribe Goal 3 "Context Compression" briefing; auto-briefing has IA problems in Gotchas section needing redesign.
 - Designer at 5/10: Goal 1 (ui/interactions.css, 6 patterns) & Goal 2 (ui/animations.css, 4 anims + reduced-motion + interactions.js) closed.
 - Archivist: Goal 7 (Retrieval Benchmark) closed this pass; goals 8 (Dedup) & 9 (Provenance) have evidence ready for next-pass closure.
 - Mechanic is wiring xref monitor hook into mirror cycle in main() as assist for Archivist goal 5 (in progress, not yet confirmed).
 - Goal 1 closed
 - RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md:15`): Mirror-revert root-cause deep-dive — instrument the mirror sync proce
 - Goal 2 (Animation/Motion): animations.css exists with 4 patterns + reduced-motion but is NOT imported in app.css; must wire in and verify cl
+- Mirror cycle reverts ui/app.css edits; Goal 3 hierarchy fixes re-applied atomically 2026-11-20, verified 299/299 braces
+- Auto-briefing Gotchas section pulls file headers, not actual pitfalls — spec written for fix but not yet applied.
+- Archivist lane 10/10 closed: Goal 1 (orphans 154→35), Goal 4 (KG viz 217KB single-file,
+- Mechanic wrote memory/mechanic/winrm_remote_exec_test.py — one-shot pywinrm test for 4 hosts; Goal 1's only remaining leg (needs non-sandbox
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
