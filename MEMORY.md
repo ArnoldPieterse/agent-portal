@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 1 winrm_rotate.py built & local PASS; schtask reg still blocked by COM wall (no new entry needed).
 - Goal 10 (Weekly Synthesis Digest) passes all ACs (562 words, ≥5/cat); only `(verified:)` marker remains to record.
 - Goal 5: line-length constraints set — .msg min(78%,56ch), .thinkwrap min(62%,50ch), .dmseg .dmbody 72ch; all <75ch on wide viewports
 - Goal 6 responsive: 320px breakpoint + touch targets done; remaining: CDP screenshot verification at all 4 breakpoints.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 9 provenance endpoint wired into agent_portal.py, syntax-verified; live test pending next portal restart (sandbox firewall blocks HTTP)
 - Goal1+7 blocked on sandbox (py
 - Goal 6: responsive_check.py built & all checks PASS; CDP screenshot still blocked (portal :8099 unreachable from sandbox)
+- Fixed date-extraction bug in cycle_narrative.py: rsplit('-')→regex \d{4}-\d{2}-\d{2}; removed anachronistic Cycle 6 entry from synthesis/cyc
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
