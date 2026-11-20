@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic 10/10 closed; auto-loop "2 open" is stale — winrm_pool_selftest 20/20 PASS, no action needed
-- xref baseline post-compaction: 1811 files, 44
 - Goal 9 gap: actRender & mergeQueueLoad use plain-text empty states, not UI.emptyState() — needs fixing for full panel coverage.
 - Auto-loop open-goal counts are systematically stale across all 4 seats (confirmed by ledger each pass); don't re-probe.
 - Auto-loop open-goal
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist: Goal 7 (Retrieval Benchmark) closed this pass; goals 8 (Dedup) & 9 (Provenance) have evidence ready for next-pass closure.
 - Mechanic is wiring xref monitor hook into mirror cycle in main() as assist for Archivist goal 5 (in progress, not yet confirmed).
 - Goal 1 closed
+- RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md:15`): Mirror-revert root-cause deep-dive — instrument the mirror sync proce
+- Goal 2 (Animation/Motion): animations.css exists with 4 patterns + reduced-motion but is NOT imported in app.css; must wire in and verify cl
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

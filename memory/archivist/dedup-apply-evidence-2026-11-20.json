@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-20",
+  "goal": "archivist-8-dedup-engine",
+  "total_md_pairs_found": 54,
+  "safe_archive_pairs": 16,
+  "unique_redirects_applied": 13,
+  "applied": [
+    {
+      "redirect": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+      "keep": "memory/goals/2026-11-13-agent-goals.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+      "keep": "memory/goals/2026-11-13-agent-goals.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+      "keep": "memory/goals/all-goals-2026-11-13.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/cycle2-2026-11-17/cycle2-dependency-map.md",
+      "keep": "memory/goals/cycle2-dependency-map.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/cycle2-2026-11-17/cycle2-kickoff-2026-11-16.md",
+      "keep": "memory/goals/cycle2-kickoff-2026-11-16.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/cycle2-2026-11-17/designer-goal2-ops-tiers.md",
+      "keep": "memory/goals/designer-goal2-ops-tiers.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/cycle2-2026-11-17/designer-goal7-forecast-2026-11-17.md",
+      "keep": "memory/goals/designer-goal7-forecast-2026-11-17.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/cycle2-2026-11-17/forecast-mechanic-g4.md",
+      "keep": "memory/goals/forecast-mechanic-g4.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/cycle2-2026-11-17/forecast-mechanic1-adaptive-probe-2026-11-17.md",
+      "keep": "memory/goals/forecast-mechanic1-adaptive-probe-2026-11-17.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/cycle2-2026-11-17/mechanic-goal4-forecast-2026-11-17.md",
+      "keep": "memory/goals/mechanic-goal4-forecast-2026-11-17.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/researcher-2026-11-13.md",
+      "keep": "memory/goals/researcher-log-2026-11-13.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/researcher-log-2026-11-13.md",
+      "keep": "memory/goals/researcher-log-2026-11-13.md",
+      "similarity": 1.0
+    },
+    {
+      "redirect": "memory/goals/archive/cycle2-2026-11-17/researcher-log-2026-11-13.md",
+      "keep": "memory/goals/researcher-log-2026-11-13.md",
+      "similarity": 1.0
+    }
+  ],
+  "skipped": [],
+  "broken_pointers": [],
+  "acceptance": {
+    "pairs_identified_gte_10": true,
+    "unique_content_lost": 0,
+    "pointers_resolve": true
+  }
+}
