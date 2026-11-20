@@ -2,16 +2,17 @@
 Run FROM WHITE interactive session (not sandbox): python winrm_verify_legs.py
 Requires: pip install pywinrm  (or use PowerShell Invoke-Command equivalent)
 Verifies: HKCU Run entry + Studio :8888 model state on each remote."""
-import json, time
+import json, os, time
 
 HOSTS = {
     'PALE': {'ip': 'IP_PALE', 'user': 'pale',   'pw_env': 'PALE_PW'},
     'BLACK': {'ip': 'IP_BLACK', 'user': 'black',  'pw_env': 'BLACK_PW'},
+    'RED': {'ip': 'IP_RED', 'user': 'red',    'pw_env': 'RED_PW'},
 }
 
 def verify(host, cfg):
     import winrm
-    pw = os.environ.get(cfg['pw_env'], '[REDACTED-CREDENTIAL]')  # fallback to known password
+    pw = os.environ.get(cfg['pw_env'], '')  # fleet rule 2026-11-18: all host passwords are empty
     s = winrm.Session(f'http://{cfg["ip"]}:5985/wsman', auth=(cfg['user'], pw), transport='ntlm')
     results = {'host': host, 'ts': time.strftime('%Y-%m-%dT%H:%M:%S'), 'checks': {}}
 
