@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fixed extract_decisions.py --since bug: was clobbering decisions.jsonl; now merges+dedups on normalized text. Evidence in goal1-incremental-
 - Scribe Goal 7 (Archive Navigation Index) verified complete; Scribe now 3/10 per ledger update 2026-11-20.
 - Designer confirmed 10/10 goals reached; pivoted to assist Scribe's Cross-Agent Handoff Protocol (Scribe was at 2/10).
 - Fixed data-loss bug in extract_decisions.py: --since mode now merges with existing entries instead of clobbering
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop open-goal counts are systematically stale across all 4 seats (confirmed by ledger each pass); don't re-probe.
 - Auto-loop open-goal
 - Designer: Next task = Scribe Goal 3 "Context Compression" briefing; auto-briefing has IA problems in Gotchas section needing redesign.
+- Designer at 5/10: Goal 1 (ui/interactions.css, 6 patterns) & Goal 2 (ui/animations.css, 4 anims + reduced-motion + interactions.js) closed.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
