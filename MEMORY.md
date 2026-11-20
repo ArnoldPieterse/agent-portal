@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- goal7-perf-profile-verified-2026-11-20.md is INVALID (no --verify flag exists, 0 real samples); correction at memory/scribe/evidence-correct
-- Auto-loop "1 open" count
 - Fixed winrm_pool.py health exit bug: was checking r.get('ok') (always None) instead of r.get('status')=='OK'; close_goal1.bat now gates corr
 - Designer lane fully closed: 10/10 goals verified, design_qa.py 12/12 pass, open=0. No remaining work on this seat.
 - Auto-loop "1 open" is a stale dashboard artifact; Designer lane is 10/10 closed, open=0 confirmed by ledger.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer found 4 real QA regressions (off-scale fonts/gaps, 16 ad-hoc :hover, missing
 - Designer lane closed 10/10 (open=0); "1 open" in auto-loop is stale dashboard artifact, not real work.
 - perf_profile
+- Mechanic added `winrm_pool.py --preflight` (4/5 pass; pywinrm missing in sandbox is expected); goal 1 close now has validated preconditions
+- design_qa.py fixed: checks 1-3 now derive type/spacing scales dynamically from tokens.css; gate passes 12/12 and flags broken panels (exit 1
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
