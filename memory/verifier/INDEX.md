@@ -105,3 +105,4 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 
 - stale-claim-winrm-pool-2026-11-20.md (contribution c 2026-11-20): HOT NOTE "Mechanic built winrm_pool.py" is PHANTOM — file does not exist; no existing winrm file contains the full pool impl (retry+backoff+cred-rotation). Mechanic Goal 1 prerequisite code still needed.
 - stale-evidence-fp-orchestrator-rosterprobe-2026-11-20.md (option c 2026-11-20): closed last open stale-evidence claim as FALSE POSITIVE (audit parser extracted wrong path; actual line cites archived dir which exists). Stale/missing count now 0.
+- data-integrity-verify-2026-11-20.md (option c 2026-11-20): re-ran data_integrity.py: 16 findings triaged — 5 real (4 actionable + 1 doc-fix), 11 false positives (progress counters parsed as paths). Key finding: memory_mirror.py empty is a documentation mismatch, not a regression (mirror_repair.py supersedes it).
