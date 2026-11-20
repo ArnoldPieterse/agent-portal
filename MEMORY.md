@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer QA regression gate passed 12/12 clean; lane confirmed
 - Auto-loop "1 open
 - Goal 7 closure requires close_goal7.bat from
 - Mechanic goal #1 (WinRM Hardening) stuck at 79/80: sole open item fleet-wide, blocked on live remote exec by sandbox egress (Win
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 7 (Per
 - Goal 7 ledger corrected: `--verify` implemented + negative tests pass, but live leg not yet run; tag set to (progress) not (verified
 - Goal 7 blocked: sandbox blocks all outbound sockets (WinError 10013).
+- Goal 7 blocked: sandbox egress dead (WinError 10013 all sockets). Fix: run `memory\mechanic\close_goal7.bat` from White admin terminal — sel
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
