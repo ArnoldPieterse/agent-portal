@@ -191,3 +191,4 @@
 {"ts": "2026-11-20 09:54:56", "file": "ui/core.js", "sha": "2efae06d59", "size": 53757, "snapshot": null}
 {"ts": "2026-11-20 15:44:28", "file": "ui/icons.js", "sha": "499bd8ac57", "size": 11857, "snapshot": null}
 {"ts": "2026-11-20 17:56:13", "file": "agent_portal.py", "sha": "b53a98fcd5", "size": 249844, "snapshot": "memory/ops/merge-queue/agent_portal.py.b53a98fcd5"}
+{"ts": "2026-11-20 19:34:14", "file": "ui/tokens.css", "sha": "2b480c05c7", "size": 3468, "snapshot": null}

@@ -1,12 +1,12 @@
 # Claim-Phantom Report
-Generated: 2026-11-20 17:02 by `memory/ops/verify_claims.py` (Builder).
+Generated: 2026-11-20 19:30 by `memory/ops/verify_claims.py` (Builder).
 
 Classifies every `verified:` marker in seat goal files against the disk:
   * REAL    - verified + a cited artifact exists on disk
   * PHANTOM - verified + cited path(s) present but NONE exist  (stale/false claim)
   * UNCITED - verified + no machine-checkable path (manual-only; needs a pointer added)
 
-**Totals: 65 REAL, 0 PHANTOM, 15 UNCITED.**
+**Totals: 70 REAL, 0 PHANTOM, 10 UNCITED.**
 
 ## UNCITED verified claims (no path to check — add an artifact pointer so the ledger can close them)
 - **orchestrator #1** Live Hotload Execution (elev.py)
@@ -17,11 +17,6 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **archivist #6** Archive Compaction
 - **scribe #6** Synthesis Quality Scoring
 - **scribe #9** Institutional Memory Search
-- **designer #1** Interaction Design System
-- **designer #2** Animation/Motion System
-- **designer #6** Responsive Design Hardening
-- **designer #8** Notification/Toast Design
-- **designer #9** Empty States + Loading Patterns
 - **mechanic #1** WinRM Remote Management Hardening
 - **mechanic #8** Capacity Planning Report
 
@@ -78,10 +73,15 @@ Classifies every `verified:` marker in seat goal files against the disk:
 - **verifier #8** Load Test Framework  -> `memory/verifier/MEMORY.md`
 - **verifier #9** Verification Dashboard  -> `memory/verifier/ui-slices-verify-2026-11-17.md`
 - **verifier #10** Chaos Engineering Lite  -> `memory/verifier/chaos-report.md`
+- **designer #1** Interaction Design System  -> `memory/designer/goal1-interaction-system-live-2026-11-20.md`
+- **designer #2** Animation/Motion System  -> `memory/designer/goal2-animation-consumers-landed-2026-11-20.md`
 - **designer #3** Information Hierarchy Audit  -> `memory/designer/goal7-typography-audit-2026-11-19.md`
 - **designer #4** Icon System  -> `memory/verifier/designer-goal4-icon-citation-close-2026-11-20.md`
 - **designer #5** Typography Scale Refinement  -> `memory/designer/goal7-typography-audit-2026-11-19.md`
+- **designer #6** Responsive Design Hardening  -> `memory/designer/goal6-breakpoint-verify-final-2026-11-20.md`
 - **designer #7** Color Contrast + Accessibility  -> `memory/designer/contrast_audit.py`
+- **designer #8** Notification/Toast Design  -> `memory/designer/goal8-toast-design-2026-11-20.md`
+- **designer #9** Empty States + Loading Patterns  -> `memory/designer/goal9-empty-states-4panels-2026-11-20.md`
 - **designer #10** Design QA Checklist + Regression  -> `memory/designer/design-qa-checklist.md`
 - **mechanic #2** Disk Space Monitoring + Auto-Cleanup  -> `memory/mechanic/disk_monitor.py`
 - **mechanic #3** Network Health Monitoring  -> `memory/mechanic/goal3-net-probe-v2-verified-2026-11-20.md`

@@ -104,3 +104,4 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - dangling-pointer-repair-2026-11-20.md (contribution c/d 2026-11-20): 3 live dangling pointer leaves indexed -> 0 real dangles in active goal files; reusable scanner dangling_pointer_scan.py feeds Archivist xref-integrity goal #2
 
 - stale-claim-winrm-pool-2026-11-20.md (contribution c 2026-11-20): HOT NOTE "Mechanic built winrm_pool.py" is PHANTOM — file does not exist; no existing winrm file contains the full pool impl (retry+backoff+cred-rotation). Mechanic Goal 1 prerequisite code still needed.
+- stale-evidence-fp-orchestrator-rosterprobe-2026-11-20.md (option c 2026-11-20): closed last open stale-evidence claim as FALSE POSITIVE (audit parser extracted wrong path; actual line cites archived dir which exists). Stale/missing count now 0.
