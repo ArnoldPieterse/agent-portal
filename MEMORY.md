@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 Archivist goals now formally verified (8,9,10 had prior work unrecorded; closed this pass).
-- Goal #9 (Theme System) closed: HC tokens in ui/tokens.css, picker in ui/core.js, WCAG AAA verified, 2 hardcoded colors fixed
-- Auto-loop header open-counts are
 - Known issue: auto-loop dispatch "open" count
 - Orchestrator verified & closed Archivist Goals 5+9; fleet now 63/80 (79%) as of 2026-11-21.
 - Settings dialog uses sibling labels (`<label>Name</label><input id="f_name">`) with no `for`/wrapping — WCAG accessible-name gap, 23 flagged
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic lane fully closed (10/10 verified); Goals 1,3,4,9 remain egress-blocked per memory/ops/blockers.md
 - Archivist lane closed 10/10 verified; auto-loop "open
 - Goal 1 WCAG audit: automated checks PASS 10/10, index.html pinned sha 8c84ce86dcd3; remaining: manual Tab-through + ARIA spot-check on 14 bu
+- Wrote `memory/ops/live-run-checklist-white-seat.md` — 5-item checklist for live-run-from-White-seat tasks blocking Verifier+Mechanic goals.
+- Fixed 3 icon-only buttons (#edClose, settings g, delete x) with aria-label; WCAG keyboard/aria audit now passes all checks.
+- Archivist added `--auto` flag to `memory/scribe/archive_nav.py`, all ACs pass; Scribe's Auto-Updating Archive Nav goal advanced.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
