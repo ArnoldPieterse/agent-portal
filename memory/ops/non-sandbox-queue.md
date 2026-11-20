@@ -1,6 +1,6 @@
 # NON-SANDBOX EXECUTION QUEUE
 Parent: memory/ops/INDEX.md | Sibling: memory/ops/blockers.md (NEEDS-HUMAN log)
-Updated: 2026-11-18 (Orchestrator) - pruned resolved items, added boot-recovery schtasks. Small file — one batch list, read whole.
+Updated: 2026-11-21 (Orchestrator) - added Mechanic #3 WinRM E2E + #9 Capacity Planning (both mock/dry-run validated, live leg only). Pruned nothing new yet. Small file — one batch list, read whole.
 
 ## WHAT THIS IS
 A sandbox seat CANNOT do network egress to the fleet/LAN, drive a browser, or elevate
@@ -63,6 +63,14 @@ Same pattern applies to Orchestrator #8 (backend done; live viewport = Tier B) a
   - ledger record mechanic 4 (full closure).
 - [ ] **MirrorSync Pale/Black SMB creds** (Researcher #3 dependency) — add working credentials for .39 and .99 to the mirror hosts config; then `python memory_mirror.py -v` should show 0 auth errors.
   - evidence target: memory_mirror.py -v output showing all 4 hosts connected.
+- [ ] **Mechanic #3 WinRM Remote Reboot E2E** (NEW 2026-11-21) — script built + dry-run validated; live run needs non-sandbox seat with LAN egress to Black/Pale :8099 + WinRM.
+  - cmd: `python Z:\memory\mechanic\winrm_e2e_test.py --host black --live`
+  - evidence target: memory/mechanic/winrm-e2e-<date>.json (full cycle <15 min, all log entries in order)
+  - ledger record mechanic 3.
+- [ ] **Mechanic #9 Capacity Planning Dashboard** (NEW 2026-11-21) — mock-validated (slope=2.00, 0% error); live run needs real nvidia-smi + load_trend.jsonl data from non-sandbox seat.
+  - cmd: `python Z:\memory\mechanic\capacity_plan.py --live --days 7`
+  - evidence target: memory/mechanic/capacity-plan-<date>.md (7-day trend, prediction within 10%)
+  - ledger record mechanic 9.
 
 ## DONE / RESOLVED (kept for pattern, not action)
 - [x] Red .245 reachability (Mechanic #2 leg) — resolved 2026-11-17 ~14:07 via /api/health 200 + Verifier probe; was the first instance of this wall.
