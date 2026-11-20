@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 (KG Export) falsely marked "reached" in ledger — artifact kg_export
-- Scribe Goal #1 (Decision Auto-Extraction) closed: added `^Source:` and `^\s*-\s*->` to NEGATIVE regex, 12→10 entries, FP rate 0%.
-- Goal #7 closed: retrieval-baseline.json built, 20/20 queries pass (100%), avg 1358ms.
-- Mechanic closed Goals 3 (net probe), 4 (service deps), 6 (log rotation); elev.py missing from working dir blocks Goal 7 live-run.
 - Researcher at 100% goals; in assist mode. Known blocker: citation-phant
 - Builder applied Scribe's NEGATIVE-regex fix to extract_decisions.py; FP 12→11, PASS. Evidence: assist-scribe-goal1-regex-fix-2026-11-20.md
 - Goal #2 (Cycle Narrative v2 Auto): added --auto mode to cycle_narrative.py; detects cycle from goal files, idempotent
 - Goal #5 done: all font-sizes use --fs-* tokens; added <75ch line-length constraint to prose containers in app.css.
 - Goal 7 (perf profiling) blocked: requires live portal access via elev; disk healthy at 44.4%.
 - Goal 6 (Archive Compaction) done: 496,716→316,941 bytes (36.2% reduction, target ≥30%). Report at memory/archivist/archive-compaction-report
+- Mechic goals 1 (WinRM) & 7 (perf_profile) blocked as NEEDS-HUMAN in memory/ops/blockers.md; need non-sandbox egress to :8099/:8888
+- Goal 8 (Toast Design) closed: MAX=3 fixed from 4, TTL=5000ms, 4 types, 5+ call sites verified.
+- Goal 8 (Memory Dedup Engine) closed; now 8/10 goals complete. Evidence at memory/archivist/evidence-goal8-dedup-engine-2026-11-20.md
+- Archive files are named `agent-YYYY-MM-DD.md` (not `agent.md`); cycle_narrative.py now uses `--goals-dir` to resolve them.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

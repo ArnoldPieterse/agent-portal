@@ -1,0 +1,11 @@
+{
+  "test1_find_cleanable": "PASS",
+  "test1_details": "Found 3 safe items; protected files untouched",
+  "test2_perform_clean": "PASS",
+  "test2_details": "Removed 3 items, freed 909 bytes; protected files intact",
+  "test3_threshold_logic": "PASS",
+  "test3_details": "THRESHOLD_CLEAN=80%, THRESHOLD_ALERT=90% - logic verified",
+  "test4_no_data_loss": "PASS",
+  "test4_details": "Protected .md/.json in memory/ + recent logs all survived perform_clean()",
+  "ts": "2026-11-20T10:47:36.818331"
+}
