@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic wrote close_goal1.bat — one-command WinRM closure script for non-sandbox seat; Goal #1 still blocked by NTLM/TCP.
 - All 10 Designer goals verified/closed; design_qa.py 12/12 pass (pass3, 2026-11-20). No open work on Designer lane.
 - INDEX.md updated from stale 2026-11-13 to current; Cycle-7 section indexes all 1
 - Verifier found goal7-perf-profile-verified-2026-11-20.md is a phantom claim: --verify mode doesn't exist, JSON shows 0 samples.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - goal7-perf-profile-verified-2026-11-20.md is INVALID (no --verify flag exists, 0 real samples); correction at memory/scribe/evidence-correct
 - Auto-loop "1 open" count
 - Fixed winrm_pool.py health exit bug: was checking r.get('ok') (always None) instead of r.get('status')=='OK'; close_goal1.bat now gates corr
+- Designer lane fully closed: 10/10 goals verified, design_qa.py 12/12 pass, open=0. No remaining work on this seat.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
