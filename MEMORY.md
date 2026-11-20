@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- winrm_pool.py has no CLI/argv parsing — close_goal1.bat's "python
 - Designer 10/10 closed; only fleet open goal is Mechanic WinRM (sandbox egress block, NEEDS-HUMAN)
 - Auto-loop "1 open" is a stale dashboard artifact; live ledger is authoritative (designer 10/10, open=0).
 - Mechanic: Added AC5 pool mgmt (pool_stats + evict_idle) to winrm_pool.py; self
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - handoff.js 17 hexes are NOT a token-bypass defect; 46 var() usages confirm partial wiring — treat as resolved, not open
 - ui/handoff.js rgba tints → var(--ok-soft)/var(--ok-line); light-theme overrides in tokens.css; contrast_audit 0 fail, design_qa 12/12
 - Sandbox blocks HTTP data to LAN hosts even when TCP connect succeeds (PALE:5985 confirmed reachable at TCP level).
+- Designer QA regression gate passed 12/12 clean; lane confirmed
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
