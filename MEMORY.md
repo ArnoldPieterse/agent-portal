@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 4: built goal4_live_integration_test.py (7 tests, py_compile PASS); needs non-sandbox seat with :8099 access to execute.
-- Built memory/scribe/archive_nav.py (--auto/--dry-run), verified idempotent, assisting Scribe's archive nav goal.
 - RECALL: - M3 (`memory/synthesis/cycle-narrative.md:12`): Goal-setting round landed 2026-11-17 with 8 agents × 10 goals — this is the structu
 - Designer 10/10 goals closed; "4 open" in auto-loop dispatch is persistently stale — no action needed from Designer seat.
 - Auto-loop dispatches stale goal counts (Scribe 10/10 closed
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop dispatch "open" counts are stale; live goal_ledger.py (SSOT) confirms all lanes 10
 - Scribe confirmed artifacts on disk for goals 5,7,8,10 (card_staleness.py, archive_nav.py --auto,
 - Mechanic adding `--mock` mode to Goal #4 live integration test to validate CB logic without :8099 (bypasses egress wall).
+- Designer 10/10 goals verified/closed; "4 open" is stale. /api/goals probe
+- Goal 2 selftest built: 17/17 PASS; alert fires only on stale+4+repair_fail, not on success path.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
