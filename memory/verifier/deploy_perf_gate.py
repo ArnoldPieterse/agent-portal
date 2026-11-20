@@ -94,6 +94,15 @@ def main():
         for line in r.stdout.strip().splitlines()[-5:]:
             log(f"  {line}")
 
+    # Step 4b: Run negative test to produce criterion C evidence
+    log("Step 4b: Running negative test (perf_gate.py --negative-test)...")
+    r_neg = subprocess.run([sys.executable, str(PERF_GATE), "--negative-test"], capture_output=True, text=True)
+    neg_pass = r_neg.returncode == 0
+    log(f"Step 4b: Negative test exit={r_neg.returncode} ({'PASS - alert fired' if neg_pass else 'FAIL'})")
+    if r_neg.stdout:
+        for line in r_neg.stdout.strip().splitlines()[-3:]:
+            log(f"  {line}")
+
     # Step 5: Write evidence
     EVIDENCE_DIR.mkdir(parents=True, exist_ok=True)
     ts = datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
