@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 (interaction patterns) fully verified: 16 duplicate :hover rules removed from app.css; interactions.css is single source of truth.
-- Archivist reached 10/10 goals (open=0) by closing #7/#8/#9 via ledger; stale "3 open" count resolved.
-- WinRM (Goal 1) marked NEEDS-HUMAN; no re-probe — unblock via deploy_winrm_verify.bat from White admin terminal.
 - Scribe goals 10/10 closed; auto-loop "4 open" counter is stale (recurring pattern, same as Archivist).
 - Auto-loop open-goal counter is stale; always trust `goal_ledger.py --status` over the loop's reported count.
 - Goal #2: animations.css existed but was never @import'd in app.css; added the import so all 4 patterns now load.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 10 (KG Export) closed this pass — evidence existed on disk but ledger --record was missing; now all 10/10 verified.
 - WinRM not running on Red; prior closure claim was White-perspective only. Probe data in winrm-legs.jsonl.
 - Stale open-count is systemic: per-goal evidence files exist on disk but ledger records are missing, causing false "open" across all seats.
+- Mechanic at 9/10; sole open goal is WinRM hardening — NTLM DES blocker on PALE/BLACK, RED down, logged NEEDS-HUMAN.
+- Auto-loop open-goal count is stale/unreliable; ledger is SSOT — do not re-probe "open" goals already marked closed in ledger.
+- Designer goal #2 (Animation/Motion) now 4/4 verified; all patterns confirmed wired in live JS, marker updated in memory/goals/designer.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
