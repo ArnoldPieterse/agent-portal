@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 cost_tracker.py built+verified; UI
-- Goal #1 (Orphan Remediation) CLOSED: 0 orphans remain; evidence at memory/archivist/evidence-goal1-orphan-remediation-complete-2026-11-20.md
-- HOT NOTE "Mechanic built winrm_pool.py" is a phantom claim — file absent from disk; only winrm_sspi_client.py has partial retry logic.
-- Goal #4 Icon System: added 13 missing icons to ui/icons.js (now 37 total, 24x24/1.5px/currentColor); pending final verification for closure.
 - Goal #2 (Citation Accuracy) closed: improved filters, 4456 checked, 1128 broken citations listed with file:line
 - Goal #6 (responsive) has fixes applied but remains open: CDP screenshot pass at 4 breakpoints blocked on needing a live portal.
 - Goal 5 (xref_monitor.py) closed: 428 dangling edges, 11 self-refs, 50 deep chains found in 1751 files. Now at 5/10 goals.
 - Mechanic closed Goal 5 (backup.py built+tested) and Goal
 - Goal #2 (Cycle Narrative v2) closed; goal #3 (Context Compression for New Agents) opened. Scribe at 3/10 goals done.
 - Goal #6 Archive Compaction pass 1 done: 15 dupes removed, 16.9% saved; ~95KB gap to 30% target via content-level dedup of superseded round r
+- Goal #6: CSS fixes applied (overflow-x, 360px media query, 44px touch targets); still open pending CDP screenshot pass (sandbox blocks local
+- Mechic goal #7 perf_profile.py built+selftested; live run blocked by sandbox socket :8099, needs elev.py or schtask on host.
+- Goal #3 (Memory Freshness SLA) closed; freshness_report.py built & verified (6704 files, 4 tiers). Progress: 5/10 goals reached.
+- Goal #5 (Knowledge Distillation) advanced: distill.py built, refined to exclude cards dir & metadata; 25-fact card verified clean; not yet c
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
