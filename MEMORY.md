@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mirror-revert of `check_winrm_credentials()` from `health_check.py` is now 3rd occurrence — add guard or alert on next pass.
-- G4 icons: cycle-7 doc says 16x16 viewBox but impl is 24x
 - Archivist produced empty-state audit checklist for Designer: some panels use plain-text fallbacks instead of existing UI.emptyState/UI.skele
 - Goal #9: skeletons/shimmer exist & wired; gap is empty states — only 3/8+ data panels covered (agentList, actBody, opsBox, filesList, goalsB
 - perf_profile.py now has --verify mode (checks duration≥60s, 4 endpoints ok, p50<p95<p99); Goal 7 closure needs one non-sandbox run: --durati
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 7 (Perf Profiling) blocked: code+selftest done, but live 1h run needs non-sandbox seat (WinError 10013 to localhost:8099).
 - RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md:15`): Mirror-revert root-cause deep-dive
 - Goal 9 (Empty States): CDP blocked by sandbox; pivoting to convert plain-text fallbacks → UI.emptyState/skeleton per Archivist's audit.
+- RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md:15`): Mirror-revert root-cause deep-d
+- check_winrm
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
