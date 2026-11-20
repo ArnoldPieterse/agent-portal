@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #6 (SVG Icon Set) closed: ui/icons.js now has 28 icons incl. host/model/error/loading; spec at memory/designer/icon-set.md
-- Goal 10 (Runbook Automation) complete: model_reload.py, portal_restart.py, host_reboot_verify.py built; e2e_anti_stall_test.py patched with
-- Scribe hit context limit reading goals file; next pass must read memory/goals/squire.md first, then immediately act on oldest open goal.
 - Goal #1 WCAG audit: contrast leg DONE (0 failures both themes); keyboard + ARIA legs still open for next pass.
 - Scribe hit context-window limit reading memory/goals/squire.md; no artifact produced — blocker may repeat.
 - Goal 6 done: goal_acceptance.py built, 37
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 5 (dependency graph) closure blocked: needs real weekly generations, current evidence is fixture-based only.
 - Goal #1: contrast PASS; ARIA gap found — ~15 dialog `<label>`s missing `for=` attr; building static A
 - Goal #8 done: `dup_detect.py` (n-gram shingling + Jaccard>0.7) found 2849 near-dup pairs in 3282 leaves, 7.7s; categorized for merge.
+- Goal #5 (Card Staleness Detection) closed: card_staleness.py selftest 3/3 PASS, real-data run flags 3 stale + 1 fresh correctly.
+- Goal 7 closed: a11y_tree_verify.py (heading/landmark/list/table checks) passes clean; evidence at memory/designer/a11y-tree-verify-evidence-
+- Mechanic built capacity_trend.py (Goal 9) — 5/5 selftest pass, first data point seeded; Goal 5 still blocked on COM wall.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
