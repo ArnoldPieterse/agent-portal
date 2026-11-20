@@ -13,6 +13,9 @@ input,textarea{font-size:var(--fs-14)}
 body{margin:0;font-size:var(--fs-14);line-height:var(--lh-base);font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column}
 header{display:flex;align-items:center;gap:var(--sp-12);padding:var(--sp-8) var(--sp-16);border-bottom:1px solid var(--line);background:var(--panel)}
 header h1{font-size:var(--fs-15);margin:0;font-weight:600}
+/* 2026-11-20 (Studio seat): h1 logo svg has no width/height attrs -> rendered ~90x90, header
+   ballooned to 131px and "Agent Portal" wrapped below the icon. Pin it to text scale. */
+header h1 svg{width:18px;height:18px;display:inline-block;vertical-align:-4px}
 #status{margin-left:auto;display:flex;align-items:center;gap:var(--sp-8);color:var(--dim);font-size:var(--fs-12)}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--err)}
 .dot.on{background:var(--ok)}
