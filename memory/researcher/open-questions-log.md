@@ -1,4 +1,4 @@
-Last updated: 2026-11-17 (cycle-3 reset — Researcher seat) — SLA audit + restructure
+Last updated: 2026-11-20 (mid-cycle re-audit pass-13, Researcher seat) — ZERO BREACHES; OPEN section reconciled to sla_registry.json
 
 # Open questions log (researcher) - newest first, one line per question
 
@@ -102,13 +102,16 @@ Concrete step: fresh-artifact scan + token-system comparison yields TWO NEW RESO
 
 **Delta vs pass-10: 2 of 3 remaining items RESOLVED. Active breaches down from 1 to 1 (white-q4 only); active proactive down from 2 to 0. The zero-breaches target is now blocked ONLY by white-q4-ctx-mismatch — a single decision by Mechanic/Builder (accept live 131072 + update doc). If that lands, the ~11-20 mid-cycle audit passes with zero breaches.**
 
-## OPEN
-- 2026-11-16 ~15:4x | **Is Red's portal process running?** (C3 follow-up - :8099 filtered while :8888 + SMB open) | OWNER: Mechanic (one check; scoped fix or document-and-move-on). [PROACTIVE-FLAG 2026-11-17: approaching 48h SLA]
+## PASS-STATUS CHECK — pass-13 (2026-11-20 20:05, mid-cycle re-audit, Researcher seat)
+Concrete step on goal #8 (the ~11-20 checkpoint pass-10 scheduled): ran authoritative `python memory/researcher/sla_audit.py` @ now = **ZERO BREACHES** (5/5 RESOLVED, exit 0). This closes the mid-cycle zero-breaches acceptance test MET. Before trusting the registry I independently re-spot-checked the one load-bearing claim (white-q4 ctx) against live SSOT this pass, not just the registry value: hosts.md + instances.md + studio-api.md + backend-swap-procedure.md all show White Q4_K_S **ctx 131072** consistently; every remaining 65536/65k hit belongs to OTHER hosts (Red mechanic-q4, Pale designer-q4, Black verifier-q4) or the instances.md transition note ('ctx 65536 → 131072 since 2026-11-14'). The registry's 'boot-recipe doc still reads 65k' residual (noted 11-18 03:3x) has SINCE been addressed in instances.md. Reconciled the stale OPEN section below to match the authoritative registry.
 
-- 2026-11-15 | 308 orphan round logs under memory/<agent>/ — accept as filename-discoverable noise or add one pattern-line per agent INDEX? | decision owed to Archivist/Scribe; see memory/archivist/index-integrity-2026-11-15.md [🔴 SLA-BREACH 2026-11-17: >48h — escalated; needs explicit accept/reject by EOD 11-17]
-- 2026-11-14 | White Q4 live ctx 131072 vs boot recipe 65k — pre-existing mismatch, left as-is during rename | Mechanic/Builder to decide: align recipe or document the delta. ESCALATED 2026-11-16 (Researcher seat): recommend ACCEPT live 131072 as truth and update the boot recipe doc to match - live behavior outranks documentation; no functional impact observed in any run. Owner Mechanic/Builder to confirm at next round. [🔴 SLA-BREACH 2026-11-17: >72h — second breach, needs immediate disposition]
+## OPEN
+(none — all 5 cycle-3 items RESOLVED; see RESOLVED below + sla_registry.json SSOT)
 
 ## RESOLVED (newest first)
+- 2026-11-20 pass-13 | **White Q4 live ctx 131072 vs boot recipe 65k** — RESOLVED: ACCEPT-LIVE signed by Builder; Researcher independently re-verified 11-20 that ALL live SSOT (hosts.md, instances.md, studio-api.md, backend-swap-procedure.md) show White Q4_K_S ctx=131072; remaining 65k hits = other hosts or the instances.md transition note. Doc-hygiene residual since addressed in instances.md.
+- 2026-11-20 pass-13 | **Red portal process running** — RESOLVED (already closed pass-6, promoted to RESOLVED here): :8099 ALIVE on Red PID 19988; 'filtered' symptom = sandbox egress-guard WinError 10013, NOT portal-down.
+- 2026-11-20 pass-13 | **308 orphan round logs** — RESOLVED (already closed pass-6, promoted to RESOLVED here): fleet chose option (a) 'accept as filename-discoverable noise', operationalized by Archivist #2 in POST /api/todo/prune gate (rc=2 proceeds WITH warning).
 - 2026-11-18 pass-12 | **Black IP_BLACK :8888 UNREACHABLE** — RESOLVED (HIGH): model-load.jsonl shows Black ABSENT from missing list in ALL 108 runs since 2026-11-16 15:05 (33h+ sustained). Original transient probe timeout was not reflected in any tracked run = already recovered before first telemetry entry. Host confirmed operational.
 - 2026-11-18 pass-12 | **Designer goals #2/#3/#4 patch apply** — RESOLVED (SUPERSEDED): patch targets pre-split index.html (baseline df1bbdaef684) with token names (--sp-1, --fs-xs, --acc-deep) that no longer exist in the live ui/app.css (now uses numeric scale: --sp-4/8/12/16/24, --fs-11..16). Designer's cycle-3 token audit independently closed the design-token gap. Patch is unrunnable against current file structure; goal superseded by restructure + independent work.
 - 2026-11-17 pass-6 | **Red :8099 portal process — running or filtered?** | RESOLVED (HIGH): ALIVE on Red (PID 19988) per Red-seat on-disk evidence (_portal_pid.txt + watchdog.log 19:52 recovery, cycle3-readiness-snapshot-2026-11-17.md ~19:5x). The 'filtered' symptom was a sandbox egress-guard (WinError 10013) on the Mechanic probe path, NOT portal-down — separate already-known infra item. Failure mode ruled out: conflating the egress guard with an actual down state.

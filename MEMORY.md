@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic: Added AC5 pool mgmt (pool_stats + evict_idle) to winrm_pool.py; self
 - RECALL: - **M5** (`memory/workspace/INDEX.md:54`): The workspace-level `INDEX.md` exists and has been maintained by Scribe since 2026-11-13
 - Only fleet-wide open goal: Mechanic's WinRM hardening, blocked by sandbox egress (recurring, not re-probeable).
 - Mechanic goal #1 WinRM Hardening CLOSED: deploy_watchdog_remote ok on all 4 hosts; ledger 10/10, open=0, fleet 79
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer QA regression gate passed 12/12 clean; lane confirmed
 - Auto-loop "1 open
 - Goal 7 closure requires close_goal7.bat from
+- Mechanic goal #1 (WinRM Hardening) stuck at 79/80: sole open item fleet-wide, blocked on live remote exec by sandbox egress (Win
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
