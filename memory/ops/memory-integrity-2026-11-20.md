@@ -1,10 +1,10 @@
 # Memory Tree Integrity Report
-Run: 2026-11-20 | Status: **FAIL (214 issues)**
+Run: 2026-11-20 | Status: **FAIL (199 issues)**
 
 | Check | Result | Count |
 |---|---|---|
 | Orphaned files | FAIL | 79 |
-| Broken pointers | FAIL | 117 |
+| Broken pointers | FAIL | 102 |
 | Circular refs | FAIL | 2 |
 | INDEX size budget | FAIL | 16 |
 
@@ -66,7 +66,6 @@ Run: 2026-11-20 | Status: **FAIL (214 issues)**
 - `memory\researcher\INDEX.md` -> `ui-slices-audit-2026-11-17.md`
 - `memory\researcher\INDEX.md` -> `../mechanic/postmortem_gen.py`
 - `memory\squire\INDEX.md` -> `cycle3-discrepancy-resolved-2026-11-18.md`
-- `memory\archivist\assist-scribe-goals2-3-5-reverify-2026-11-20.md` -> `scribe.md`
 - `memory\archivist\evidence-goal1-delta-reporting-2026-11-18.md` -> `knowledge_graph.py`
 - `memory\archivist\MEMORY.md` -> `../portal/architecture.md`
 - `memory\archivist\supersession-findings-2026-11-16.md` -> `../synthesis/2026-11-12-upgrade-round.md`
@@ -112,7 +111,8 @@ Run: 2026-11-20 | Status: **FAIL (214 issues)**
 - `memory\archivist\xref-fix-log-2026-11-19.md` -> `../mechanic/ac_a2_live_leg_r20.py`
 - `memory\archivist\xref-fix-log-2026-11-19.md` -> `../mechanic/ac_a2_live_leg_r20.py`
 - `memory\archivist\xref-fix-log-2026-11-19.md` -> `../../designer/apply_designer_scale_patch.py`
-- ... and 67 more
+- `memory\archivist\xref-fix-log-2026-11-19.md` -> `../mechanic/postmortem_gen.py`
+- ... and 52 more
 
 ## Circular References
 - C:\Users\White\.unsloth\studio\sandbox\_default\memory\archivist\INDEX.md -> C:\Users\White\.unsloth\studio\sandbox\_default\memory\archivist\INDEX.md
@@ -120,7 +120,7 @@ Run: 2026-11-20 | Status: **FAIL (214 issues)**
 
 ## Oversized INDEX Files
 - `memory\archivist\INDEX.md`: 4275 chars (budget 1600)
-- `memory\builder\INDEX.md`: 9421 chars (budget 1600)
+- `memory\builder\INDEX.md`: 9439 chars (budget 1600)
 - `memory\designer\INDEX.md`: 6055 chars (budget 1600)
 - `memory\goals\INDEX.md`: 4898 chars (budget 1600)
 - `memory\INDEX.md`: 2334 chars (budget 1600)
@@ -130,7 +130,7 @@ Run: 2026-11-20 | Status: **FAIL (214 issues)**
 - `memory\orchestrator\INDEX.md`: 8700 chars (budget 1600)
 - `memory\portal\bugs\INDEX.md`: 3452 chars (budget 1600)
 - `memory\portal\INDEX.md`: 4174 chars (budget 1600)
-- `memory\researcher\INDEX.md`: 67178 chars (budget 1600)
+- `memory\researcher\INDEX.md`: 67956 chars (budget 1600)
 - `memory\scribe\INDEX.md`: 2522 chars (budget 1600)
 - `memory\synthesis\INDEX.md`: 5155 chars (budget 1600)
 - `memory\verifier\INDEX.md`: 16294 chars (budget 1600)
