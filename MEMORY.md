@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 10: fleet_status_check.py built+tested (4506B, 0.51s, idempotent, logs to runbook-executions.jsonl); Goal 3 SSPI wall logged once in bl
-- Designer implemented Goal #4 (768px responsive): icon-rail sidebar, full-width chat, horizontal fleet scroll in ui/app.css; canvas demo rend
-- Goal #7 done: built memory/scribe/archive_nav.py (--auto/--check), selftest 3/3 PASS, archive nav updated in-place.
 - Goal #9 done: dependency-graph.json built from memory/goals/*.md — 80 nodes, 9 deps detected (≥3 acceptance met).
 - Goal #8 (Temporal Query API) DONE — compare mode in timeline.py + both /api/timeline endpoints added
 - Goal 3 corrected: TCP egress to .39/.99:5985 IS open; real blocker is only SSPI/LSA auth wall, not network.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #6 (SVG Icon Set) closed: ui/icons.js now has 28 icons incl. host/model/error/loading; spec at memory/designer/icon-set.md
 - Goal 10 (Runbook Automation) complete: model_reload.py, portal_restart.py, host_reboot_verify.py built; e2e_anti_stall_test.py patched with
 - Scribe hit context limit reading goals file; next pass must read memory/goals/squire.md first, then immediately act on oldest open goal.
+- Goal #1 WCAG audit: contrast leg DONE (0 failures both themes); keyboard + ARIA legs still open for next pass.
+- Scribe hit context-window limit reading memory/goals/squire.md; no artifact produced — blocker may repeat.
+- Goal 6 done: goal_acceptance.py built, 37
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

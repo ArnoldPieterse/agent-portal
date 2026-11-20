@@ -1,0 +1,649 @@
+{
+  "run_at": "2026-11-20T13:26:00.086284+00:00",
+  "total_goals": 80,
+  "auto_verifiable": 37,
+  "passed": 36,
+  "failed": 1,
+  "results": [
+    {
+      "agent": "archivist",
+      "goal_num": 1,
+      "title": "Orphan Remediation Sweep",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 2,
+      "title": "Knowledge Graph v3 (Temporal + Typed)",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 3,
+      "title": "Freshness Scoring Production",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 4,
+      "title": "Cross-Reference Integrity Check",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 5,
+      "title": "Keyword Search Index",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 6,
+      "title": "Weekly Snapshot Diff (2nd run)",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 7,
+      "title": "Knowledge Lifecycle Policy",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 8,
+      "title": "Duplication Detection",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 9,
+      "title": "Citation Tracking",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 10,
+      "title": "Archive Hygiene Audit",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "builder",
+      "goal_num": 1,
+      "title": "Build-Verify-Pin --apply (host seat)",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory_mirror.py",
+      "pass": true
+    },
+    {
+      "agent": "builder",
+      "goal_num": 2,
+      "title": "Complete API Client Wrappers",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "builder",
+      "goal_num": 3,
+      "title": "Portal Error Boundary",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "builder",
+      "goal_num": 4,
+      "title": "Component Library v2",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "builder",
+      "goal_num": 5,
+      "title": "Upload Pipeline Hardening",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "builder",
+      "goal_num": 6,
+      "title": "Fleet Status Panel",
+      "classification": "count_check",
+      "detail": "Target exists: memory/builder/designer-goal2-fleet-states-2026-11-18.md",
+      "pass": true
+    },
+    {
+      "agent": "builder",
+      "goal_num": 7,
+      "title": "Dark Mode Theme",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "builder",
+      "goal_num": 8,
+      "title": "Portal Performance Optimization",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "builder",
+      "goal_num": 9,
+      "title": "UI Module Test Suite",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "builder",
+      "goal_num": 10,
+      "title": "One-Command Deploy",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "designer",
+      "goal_num": 1,
+      "title": "WCAG 2.1 AA Audit",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "designer",
+      "goal_num": 2,
+      "title": "Fleet Status Panel Visual Design",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory/designer/goal2-fleet-states-2026-11-18.md",
+      "pass": true
+    },
+    {
+      "agent": "designer",
+      "goal_num": 3,
+      "title": "Error State Design System",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "designer",
+      "goal_num": 4,
+      "title": "Responsive Layout (768px)",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "designer",
+      "goal_num": 5,
+      "title": "Animation/Motion System",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "designer",
+      "goal_num": 6,
+      "title": "SVG Icon Set",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "designer",
+      "goal_num": 7,
+      "title": "Accessibility Tree Verification",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "designer",
+      "goal_num": 8,
+      "title": "Component Visual Reference",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "designer",
+      "goal_num": 9,
+      "title": "Theme System (3 themes)",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "designer",
+      "goal_num": 10,
+      "title": "UI Performance Budget",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory/designer/css-bundle-budget-2026-11-17.md",
+      "pass": true
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 1,
+      "title": "Portal Load Test 7-Day Completion",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory/mechanic/load-test-week.md",
+      "pass": true
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 2,
+      "title": "Self-Healing Mirror Production",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 3,
+      "title": "WinRM Remote Reboot E2E Test",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 4,
+      "title": "Fleet Status API Hardening",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 5,
+      "title": "Scheduled-Task Dependency Graph",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 6,
+      "title": "Boot Task Verification",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 7,
+      "title": "Log Rotation + Retention",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 8,
+      "title": "Alert Escalation Chain",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 9,
+      "title": "Capacity Planning Dashboard",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory/mechanic/capacity-report-2026-11-20.md",
+      "pass": true
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 10,
+      "title": "Runbook Automation (top-5)",
+      "classification": "file_exists",
+      "detail": "MISSING: memory/mechanic/runbook-executions.jsonl",
+      "pass": false
+    },
+    {
+      "agent": "orchestrator",
+      "goal_num": 1,
+      "title": "Live Hotload Execution (host seat)",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "orchestrator",
+      "goal_num": 2,
+      "title": "Fleet Capacity Governor",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "orchestrator",
+      "goal_num": 3,
+      "title": "Goal-Cycle Full Auto-Transition",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "orchestrator",
+      "goal_num": 4,
+      "title": "Agent Performance Scoring UI",
+      "classification": "count_check",
+      "detail": "Target exists: memory/orchestrator/goal9-perf-radar-backend-done-2026-11-17.md",
+      "pass": true
+    },
+    {
+      "agent": "orchestrator",
+      "goal_num": 5,
+      "title": "Model Binding Governance Audit (weekly)",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory/orchestrator/goal5-binding-audit-progress-2026-11-20.md",
+      "pass": true
+    },
+    {
+      "agent": "orchestrator",
+      "goal_num": 6,
+      "title": "Fleet Incident Auto-Triage",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "orchestrator",
+      "goal_num": 7,
+      "title": "Cross-Seat Coordination Protocol",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "orchestrator",
+      "goal_num": 8,
+      "title": "Roster Health Check (daily)",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "orchestrator",
+      "goal_num": 9,
+      "title": "Goal Dependency Graph",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "orchestrator",
+      "goal_num": 10,
+      "title": "Cycle Retrospective Automation",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 1,
+      "title": "Unified Loader LIVE Execution",
+      "classification": "file_exists",
+      "detail": "EXISTS: agents.json",
+      "pass": true
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 2,
+      "title": "Residency Matrix Live Refresh",
+      "classification": "count_check",
+      "detail": "Target exists: memory/researcher/residency-matrix-offline-surface-2026-11-20.md",
+      "pass": true
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 3,
+      "title": "Overnight Unload Root-Cause Confirmation",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory/researcher/overnight-unload-histogram-2026-11-18.md",
+      "pass": true
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 4,
+      "title": "Evidence Freshness SLA",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md",
+      "pass": true
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 5,
+      "title": "Cross-Host Model Comparison Benchmark",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 6,
+      "title": "Fleet Knowledge Graph v2",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 7,
+      "title": "Research Reproducibility Protocol",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 8,
+      "title": "Goal Slip Prediction v2",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 9,
+      "title": "Source Reliability Scoring",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 10,
+      "title": "Blocker Triage Automation",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 1,
+      "title": "Decision Impact Tracking",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 2,
+      "title": "Cycle Retrospective Automation",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 3,
+      "title": "Briefing Freshness Monitor",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 4,
+      "title": "Handoff Quality Scoring",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 5,
+      "title": "Card Staleness Detection",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 6,
+      "title": "Synthesis Quality Trend",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 7,
+      "title": "Auto-Updating Archive Nav",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 8,
+      "title": "Temporal Query API",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 9,
+      "title": "Memory Search Relevance Feedback",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 10,
+      "title": "Per-Agent Weekly Digest",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "verifier",
+      "goal_num": 1,
+      "title": "Performance Gate Baseline (host seat)",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "verifier",
+      "goal_num": 2,
+      "title": "Evidence Quality Scoring Model",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "verifier",
+      "goal_num": 3,
+      "title": "API Contract Test Suite",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory/verifier/api_contracts.py",
+      "pass": true
+    },
+    {
+      "agent": "verifier",
+      "goal_num": 4,
+      "title": "Security Audit",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "verifier",
+      "goal_num": 5,
+      "title": "Concurrency Verification",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "verifier",
+      "goal_num": 6,
+      "title": "Goal Acceptance Auto-Check",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory/verifier/MEMORY.md",
+      "pass": true
+    },
+    {
+      "agent": "verifier",
+      "goal_num": 7,
+      "title": "Evidence Cross-Reference Graph",
+      "classification": "already_verified",
+      "detail": "Has (verified:) marker",
+      "pass": true
+    },
+    {
+      "agent": "verifier",
+      "goal_num": 8,
+      "title": "SLO Enforcement (daily)",
+      "classification": "file_exists",
+      "detail": "EXISTS: memory/verifier/MEMORY.md",
+      "pass": true
+    },
+    {
+      "agent": "verifier",
+      "goal_num": 9,
+      "title": "Memory Tree Integrity",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    },
+    {
+      "agent": "verifier",
+      "goal_num": 10,
+      "title": "Cycle Quality Report",
+      "classification": "manual",
+      "detail": "Requires live test / human judgment",
+      "pass": null
+    }
+  ]
+}
