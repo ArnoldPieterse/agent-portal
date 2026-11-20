@@ -1,0 +1,116 @@
+@import "tokens.css";
+/* ui/interactions.css — Designer goal #1: Interaction Design System
+   Standard, reusable interaction patterns for the Agent Portal.
+   parent: index.html (loaded via @import in ui/app.css) | siblings: ui/tokens.css, ui/app.css
+   rule: memory/portal/file-modularity.md
+
+   CONVENTIONS
+   - Utility classes are prefixed .ix-* (interaction). Apply to a component, or rely on the
+     built-in element rules below for common controls.
+   - Every pattern is documented: WHAT it does + WHEN to use it.
+   - All colours derive from tokens; nothing hardcodes a raw colour except rgba overlays.
+   - Cross-theme safety: hover uses color-mix(panel,text) so it lightens in dark, darkens in light
+     (tokens.css --panel/--text differ per theme). No reliance on --hover-bg (dark-only token).
+   - Motion is opt-out via prefers-reduced-motion (neutralises this file's transforms/shimmer only;
+     the full motion system is Designer goal #2).
+
+   ADOPTION CHECKLIST (goal #1: "no ad-hoc :hover rules outside interactions.css")
+   1. Add .ix-hover to interactive cards/rows/list items.
+   2. Add .ix-click for press feedback on buttons/cards/selectable rows.
+   3. Focus is global via :focus-visible (below); add .ix-focus only where a custom ring is needed.
+   4. Reorderable lists: .ix-drag-handle on the grip + .ix-drag-item on the row.
+   5. Fixed-height scroll regions: .ix-scroll (add .ix-scroll-fade for a "more below" hint).
+   6. Async panels: .ix-skeleton on placeholder blocks until data lands.
+*/
+
+/* theme-adaptive hover surface (lightens dark / darkens light) */
+:root{ --ix-hover-bg: color-mix(in srgb, var(--panel) 84%, var(--text) 16%);
+       --ix-ring: 2px solid var(--focus); }
+
+/* ============================================================
+   1. FOCUS RINGS — keyboard visibility
+   WHAT: one consistent focus indicator across the portal.
+   WHEN: any focusable (a, button, [tabindex], inputs). :focus-visible means mouse
+         clicks show no ring; keyboards do. Remove the UA outline in favour of ours.
+   ============================================================ */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible,
+.ix-focus:focus-visible {
+  outline: var(--ix-ring);
+  outline-offset: 2px;
+  border-radius: inherit;
+}
+a:focus:not(:focus-visible), button:focus:not(:focus-visible){ outline: none; }
+
+/* ============================================================
+   2. HOVER STATES — affordance on pointer devices only
+   WHAT: subtle surface lift that signals "interactive".
+   WHEN: cards, rows, list items (.ix-hover). Never on non-interactive text.
+         @media (hover:hover) so touch devices don't get sticky hover.
+   ============================================================ */
+.ix-hover{ transition: background-color 120ms ease, border-color 120ms ease; }
+@media (hover:hover){
+  .ix-hover:hover{ background-color: var(--ix-hover-bg); }
+  .ix-hover--border:hover{ border-color: var(--focus); }
+}
+
+/* ============================================================
+   3. CLICK FEEDBACK — press confirmation (scale 0.98)
+   WHAT: brief scale-down on :active so presses feel tactile.
+   WHEN: buttons, cards, selectable rows (.ix-click).
+   ============================================================ */
+.ix-click{ transition: transform 90ms ease; will-change: transform; }
+.ix-click:active{ transform: scale(0.98); }
+
+/* ============================================================
+   4. DRAG HANDLES — grab affordance + drag state
+   WHAT: a grip with grab/grabbing cursors and an "engaged" dim while dragging.
+   WHEN: reorderable rows (.ix-drag-handle on the grip, .ix-drag-item on the row).
+   ============================================================ */
+.ix-drag-handle{ cursor: grab; touch-action: none; color: var(--faint); }
+.ix-drag-handle:active{ cursor: grabbing; }
+body.ix-dragging, body.ix-dragging *{ cursor: grabbing !important; user-select: none; }
+.ix-drag-item{ transition: opacity 120ms ease; }
+.ix-drag-item.ix-dragging{ opacity: 0.5; }
+
+/* ============================================================
+   5. SCROLL INDICATORS — show there is more content
+   WHAT: thin token-coloured scrollbars + optional bottom fade hint.
+   WHEN: fixed-height scroll regions (.ix-scroll); add .ix-scroll-fade for "more below".
+   ============================================================ */
+.ix-scroll{ overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--faint) transparent; }
+.ix-scroll::-webkit-scrollbar{ width: 8px; height: 8px; }
+.ix-scroll::-webkit-scrollbar-thumb{ background: var(--faint); border-radius: 4px; }
+.ix-scroll::-webkit-scrollbar-track{ background: transparent; }
+.ix-scroll-fade::after{
+  content:""; display:block; height: var(--sp-24, 24px); margin-top: calc(-1 * var(--sp-24, 24px));
+  background: linear-gradient(to bottom, transparent, var(--peek-bg, var(--bg)));
+  pointer-events: none;
+}
+
+/* ============================================================
+   6. LOADING SKELETONS — placeholder shimmer for async content
+   WHAT: a non-blank placeholder that shimmers while data loads.
+   WHEN: any panel rendering async data (.ix-skeleton on the placeholder block).
+         (goal #9 builds per-panel empty/loading states on top of this.)
+   ============================================================ */
+.ix-skeleton{
+  position: relative; overflow: hidden;
+  background: var(--line, var(--ix-hover-bg)); border-radius: 4px; color: transparent;
+}
+.ix-skeleton::after{
+  content:""; position: absolute; inset: 0; transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.10), transparent);
+  animation: ix-shimmer 1.4s infinite;
+}
+@keyframes ix-shimmer{ 100%{ transform: translateX(100%); } }
+
+/* ============================================================
+   MOTION OPT-OUT — respect prefers-reduced-motion
+   Neutralises only the transforms/shimmer defined in THIS file.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce){
+  .ix-click, .ix-click:active{ transition: none; transform: none; }
+  .ix-skeleton::after{ animation: none; }
+  .ix-hover, .ix-drag-item{ transition: none; }
+}
