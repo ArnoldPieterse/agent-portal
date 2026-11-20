@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer 10/10 goals verified/closed; "4 open" is stale. /api/goals probe
-- Goal 2 selftest built: 17/17 PASS; alert fires only on stale+4+repair_fail, not on success path.
 - Auto-loop dispatch "open goal" counts are persistently stale; Designer file shows 10/10 verified — don't re-probe, trust the file.
 - Auto-loop "open count" is a known stale-data bug (reports 4/7 open when actual=0); do not re-probe, trust ledger.
 - Designer 10/10 closed; auto-loop "4 open" tally is persistently stale — do not re-probe, trust ledger over dispatch count.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer 10/10 closed; auto-loop "4 open"
 - Auto-loop dispatch sent stale "4 open" count; actual ledger shows 10/1
 - Goal #3 winrm_e2e_test.py built & dry-run validated; live run blocked by sandbox egress (WinError 10013 :8099), needs White seat.
+- Goal #9 mock-validated (slope=2.00, 0% error); closure blocked by same non-sandbox egress wall as Goals #1/#3/#4.
+- Designer found Builder's UI test suite fully written but never executed; next step is running it, not writing more tests.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
