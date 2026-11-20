@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 (Citation Accuracy) closed: improved filters, 4456 checked, 1128 broken citations listed with file:line
-- Goal #6 (responsive) has fixes applied but remains open: CDP screenshot pass at 4 breakpoints blocked on needing a live portal.
-- Goal 5 (xref_monitor.py) closed: 428 dangling edges, 11 self-refs, 50 deep chains found in 1751 files. Now at 5/10 goals.
-- Mechanic closed Goal 5 (backup.py built+tested) and Goal
 - Goal #2 (Cycle Narrative v2) closed; goal #3 (Context Compression for New Agents) opened. Scribe at 3/10 goals done.
 - Goal #6 Archive Compaction pass 1 done: 15 dupes removed, 16.9% saved; ~95KB gap to 30% target via content-level dedup of superseded round r
 - Goal #6: CSS fixes applied (overflow-x, 360px media query, 44px touch targets); still open pending CDP screenshot pass (sandbox blocks local
 - Mechic goal #7 perf_profile.py built+selftested; live run blocked by sandbox socket :8099, needs elev.py or schtask on host.
 - Goal #3 (Memory Freshness SLA) closed; freshness_report.py built & verified (6704 files, 4 tiers). Progress: 5/10 goals reached.
 - Goal #5 (Knowledge Distillation) advanced: distill.py built, refined to exclude cards dir & metadata; 25-fact card verified clean; not yet c
+- Goal #9 closed: memory/mechanic/run
+- interactions.css is dead code (not imported anywhere); fix: add @import to app.css, delete duplicated :hover rules from app.css
+- Goal #6 (Synthesis Quality Scoring) closed: built synthesis_quality.py + /api/synthesis/quality endpoint; vague<40, specific>80 verified.
+- Mirror cycle restores deleted files (source retains them); compaction deletions won't persist until source-side fix or ignore rule added.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,0 +1,5649 @@
+{
+  "total_citations": 4456,
+  "file_path_citations": 4092,
+  "url_citations": 364,
+  "resolved": 2886,
+  "broken": [
+    {
+      "file": "MEMORY.md",
+      "line": 30,
+      "cited": "freshness_report.py"
+    },
+    {
+      "file": "MEMORY.md",
+      "line": 30,
+      "cited": "freshness_sweep.py"
+    },
+    {
+      "file": "README.md",
+      "line": 20,
+      "cited": "recover_all.py/.bat"
+    },
+    {
+      "file": "SETUP_HISTORY.md",
+      "line": 15,
+      "cited": "rdp_shot.ps1"
+    },
+    {
+      "file": "TODO.md",
+      "line": 98,
+      "cited": "index_check.py"
+    },
+    {
+      "file": "TODO.md",
+      "line": 135,
+      "cited": "white_realias_result.json"
+    },
+    {
+      "file": "TODO.md",
+      "line": 153,
+      "cited": "index_html_pre-r14-9c6b08e3.html"
+    },
+    {
+      "file": "TODO.md",
+      "line": 158,
+      "cited": "arnold-restart-r8.ps1"
+    },
+    {
+      "file": "TODO.md",
+      "line": 164,
+      "cited": "arnold-restart-r8.ps1"
+    },
+    {
+      "file": "TODO.md",
+      "line": 525,
+      "cited": "recover_result.json"
+    },
+    {
+      "file": "TODO.md",
+      "line": 526,
+      "cited": "fleet_reload_result.json"
+    },
+    {
+      "file": "TODO_completed.md",
+      "line": 40,
+      "cited": "memory_health.py"
+    },
+    {
+      "file": "TODO_completed.md",
+      "line": 84,
+      "cited": "ops-r6-synthesis-2026-11-13.md"
+    },
+    {
+      "file": "memory/ONBOARDING.md",
+      "line": 107,
+      "cited": "knowledge_graph.py"
+    },
+    {
+      "file": "memory/ONBOARDING.md",
+      "line": 108,
+      "cited": "memory_health.py"
+    },
+    {
+      "file": "memory/ONBOARDING.md",
+      "line": 109,
+      "cited": "gen_api_ref.py"
+    },
+    {
+      "file": "memory/ONBOARDING.md",
+      "line": 110,
+      "cited": "supersession_check.py"
+    },
+    {
+      "file": "memory/ONBOARDING.md",
+      "line": 111,
+      "cited": "decay_score.py"
+    },
+    {
+      "file": "memory/ONBOARDING.md",
+      "line": 112,
+      "cited": "snapshot.py"
+    },
+    {
+      "file": "memory/ONBOARDING.md",
+      "line": 113,
+      "cited": "index_check.py"
+    },
+    {
+      "file": "memory/archivist/bundle-v2-item9-queue4-reword-gap-r74-2026-11-14.md",
+      "line": 10,
+      "cited": "2026-11-14-queue4-source-loss-adjudication.md"
+    },
+    {
+      "file": "memory/archivist/bundle-v2-item9-queue4-reword-gap-r74-2026-11-14.md",
+      "line": 16,
+      "cited": "white-apply-bundle-v2-r45.md"
+    },
+    {
+      "file": "memory/archivist/bundle-v2-item9-queue4-reword-gap-r74-2026-11-14.md",
+      "line": 16,
+      "cited": "2026-11-14-queue4-source-loss-adjudication.md"
+    },
+    {
+      "file": "memory/archivist/doc-ref-scanner-progress-2026-11-18.md",
+      "line": 25,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/dream-big-wishes-2026-11-14.md",
+      "line": 32,
+      "cited": "goal-dashboard.html"
+    },
+    {
+      "file": "memory/archivist/evidence-goal1-kg-autoupdate-real-2026-11-18.md",
+      "line": 26,
+      "cited": "_kg_test_orphan.md"
+    },
+    {
+      "file": "memory/archivist/evidence-goal1-kg-autoupdate-real-2026-11-18.md",
+      "line": 34,
+      "cited": ".kg_mtimes.json"
+    },
+    {
+      "file": "memory/archivist/goals-2026-11-13.md",
+      "line": 10,
+      "cited": "archivist/canonical-map.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 10,
+      "cited": "fleet_probe.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 11,
+      "cited": "elevated_helper.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 12,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 13,
+      "cited": "install_elevated_helper.bat"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 14,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 15,
+      "cited": "install_elevated_helper.bat"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 16,
+      "cited": "portal_loadtest.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 17,
+      "cited": "tunnel_urls.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 18,
+      "cited": "user_messages.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 19,
+      "cited": "recover_force_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 22,
+      "cited": "fleet_probe.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 23,
+      "cited": "daily_git_commit.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 24,
+      "cited": "fleet_reload_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 25,
+      "cited": "Users/White/.agents/skills/portal-memory-modular/SKILL.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 26,
+      "cited": "backend_swap_drill_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 27,
+      "cited": "daily_git_commit.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 28,
+      "cited": "fleet_probe.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 29,
+      "cited": "white_realias_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 30,
+      "cited": "red_setup_result2.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 31,
+      "cited": "red_manual_verify.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 32,
+      "cited": "red_chain_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 33,
+      "cited": "red_q8_wait2.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 34,
+      "cited": "red_setup_result2.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 35,
+      "cited": "red_chain_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 37,
+      "cited": "red_setup_result2.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 38,
+      "cited": "red_smoke.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 40,
+      "cited": "red_setup_result2.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 41,
+      "cited": "red_q8_wait2.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 42,
+      "cited": "black_hash_q8_out2.txt"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 43,
+      "cited": "pale_cancel.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 44,
+      "cited": "copy_tail/q8_red2.log"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 45,
+      "cited": "red_hash_q8.ps1"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 46,
+      "cited": "black_hash_q8.ps1"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 47,
+      "cited": "black_hash_q8_out2.txt"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 48,
+      "cited": "smoke6.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 49,
+      "cited": "group_e2e_result_8agent.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 50,
+      "cited": "red_smoke.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 51,
+      "cited": "red_smoke.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 52,
+      "cited": "red_chain_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 53,
+      "cited": "red_agents_ready.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 54,
+      "cited": "merge_red_agents.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 55,
+      "cited": "red_dual_load.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 56,
+      "cited": "red_dual_load_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 57,
+      "cited": "red_realias.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 58,
+      "cited": "red_agents_ready.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 59,
+      "cited": "red_setup_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 60,
+      "cited": "red_dual_load.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 61,
+      "cited": "red_dual_load_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 62,
+      "cited": "red_realias.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 63,
+      "cited": "red_agents_ready.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 64,
+      "cited": "merge_red_agents.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 65,
+      "cited": "serial_e2e_wait.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 66,
+      "cited": "recover_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 67,
+      "cited": "serial_e2e_wait.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 68,
+      "cited": "serial_e2e_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 70,
+      "cited": "group_e2e_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 71,
+      "cited": "serial_e2e_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 74,
+      "cited": "black_dual_load_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 75,
+      "cited": "r2_smoke_result.txt"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 78,
+      "cited": "r2_smoke_wait.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 79,
+      "cited": "r2_smoke_result.txt"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 81,
+      "cited": "probe_black.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 84,
+      "cited": "scan_red.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 85,
+      "cited": "red_probe.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 86,
+      "cited": "probe_black.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 87,
+      "cited": "probe_black.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 88,
+      "cited": "probe_black_winrm2.ps1"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 89,
+      "cited": "elev_trustedhosts.ps1"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 90,
+      "cited": "r2_smoke_result.txt"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 91,
+      "cited": "r2_smoke_wait.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 92,
+      "cited": "scan_red.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 93,
+      "cited": "model_list_now.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 94,
+      "cited": "TODO_archive_20261111.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 95,
+      "cited": "recover_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 96,
+      "cited": "fleet_reload_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 97,
+      "cited": "goal_cycle_check.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 98,
+      "cited": "todo_freshness_check.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 99,
+      "cited": "citation_monitor_v2.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 100,
+      "cited": "parity_audit.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 101,
+      "cited": "open_questions_flag.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 102,
+      "cited": "model_benchmark.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 103,
+      "cited": "user_messages.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 104,
+      "cited": "user_messages.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 105,
+      "cited": "memory/ops/.pytest_cache/README.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 105,
+      "cited": "docs.pytest.org/en/stable/how-to/cache.html"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 106,
+      "cited": "portal_watchdog.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 107,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 108,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 109,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 110,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 111,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 112,
+      "cited": "tunnel_urls.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 113,
+      "cited": "run_state.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 114,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 115,
+      "cited": "d7_d9_cdp_verify.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 116,
+      "cited": "memory/designer/d7_d9_cdp_verify.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 117,
+      "cited": "fleet_probe.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 118,
+      "cited": "fleet_probe.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 120,
+      "cited": "backend_swap_drill_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 121,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 123,
+      "cited": "recover_force_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 124,
+      "cited": "recover_force_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 126,
+      "cited": "red_probe.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 127,
+      "cited": "probe_black.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 128,
+      "cited": "tunnel_urls.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 129,
+      "cited": "scan_red.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 130,
+      "cited": "mstsc_shots.ps1"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 131,
+      "cited": "red_smoke.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 132,
+      "cited": "red_smoke_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 133,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 134,
+      "cited": "parity_audit.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 135,
+      "cited": "recover_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 139,
+      "cited": "serial_e2e_wait.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 140,
+      "cited": "recover_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 141,
+      "cited": "fleet_reload_result.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 142,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 149,
+      "cited": "AgentPortal_V1-git/memory/llm/instances.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 149,
+      "cited": "gapfix-test/memory/llm/instances.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 150,
+      "cited": "AgentPortal_V1-git/memory/portal/architecture.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 150,
+      "cited": "gapfix-test/memory/portal/architecture.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 151,
+      "cited": "AgentPortal_V1-git/memory/portal/bugs/xtalk-completion.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 151,
+      "cited": "gapfix-test/memory/portal/bugs/xtalk-completion.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 152,
+      "cited": "AgentPortal_V1-git/memory/llm/instances.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 152,
+      "cited": "gapfix-test/memory/llm/instances.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 153,
+      "cited": "AgentPortal_V1-git/memory/ops/windows-runbook.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 153,
+      "cited": "gapfix-test/memory/ops/windows-runbook.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 154,
+      "cited": "AgentPortal_V1-git/memory/ops/probes.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 154,
+      "cited": "gapfix-test/memory/ops/probes.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 155,
+      "cited": "deploy_reboot_recovery_all.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 157,
+      "cited": "restart_portal.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 158,
+      "cited": "GOAL_RESET_PENDING.json"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 159,
+      "cited": "AgentPortal_V1-git/README.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 159,
+      "cited": "gapfix-test/README.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 160,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 160,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 160,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 161,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 161,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 161,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 162,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 162,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 162,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 163,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 163,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 163,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 165,
+      "cited": "bugs/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 165,
+      "cited": "AgentPortal_V1-git/memory/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 165,
+      "cited": "AgentPortal_V1-git/memory/agents/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 165,
+      "cited": "AgentPortal_V1-git/memory/llm/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 167,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 167,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 167,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 168,
+      "cited": "git-hygiene.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 169,
+      "cited": "AgentPortal_V1-git/memory/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 169,
+      "cited": "AgentPortal_V1-git/memory/agents/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 169,
+      "cited": "AgentPortal_V1-git/memory/llm/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 170,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 170,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 170,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 171,
+      "cited": "AgentPortal_V1-git/memory/llm/studio-api.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 171,
+      "cited": "gapfix-test/memory/llm/studio-api.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 172,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 172,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 173,
+      "cited": "repin_root_index.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 174,
+      "cited": "index_html_pre-r14-9c6b08e3.html"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 175,
+      "cited": "arnold-restart-r8.ps1"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 176,
+      "cited": "arnold-restart-r8.ps1"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 177,
+      "cited": "AgentPortal_V1-git/memory/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 177,
+      "cited": "AgentPortal_V1-git/memory/agents/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 177,
+      "cited": "AgentPortal_V1-git/memory/llm/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 178,
+      "cited": "AgentPortal_V1-git/memory/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 178,
+      "cited": "AgentPortal_V1-git/memory/agents/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 178,
+      "cited": "AgentPortal_V1-git/memory/llm/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 179,
+      "cited": "arnold-restart-r8.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 182,
+      "cited": "TODO.md/MEMORY.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 182,
+      "cited": "AgentPortal_V1-git/MEMORY.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 182,
+      "cited": "AgentPortal_V1-git/memory/orchestrator/MEMORY.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 184,
+      "cited": "files-panel-hunks-r5.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 185,
+      "cited": "TODO.md/MEMORY.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 185,
+      "cited": "AgentPortal_V1-git/MEMORY.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 185,
+      "cited": "AgentPortal_V1-git/memory/orchestrator/MEMORY.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 186,
+      "cited": "MEMORY.md/TODO.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 186,
+      "cited": "AgentPortal_V1-git/TODO.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 186,
+      "cited": "AgentPortal_V1-git/memory/orchestrator/TODO.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 190,
+      "cited": "architecture.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 190,
+      "cited": "AgentPortal_V1-git/memory/portal/architecture.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 190,
+      "cited": "gapfix-test/memory/portal/architecture.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 191,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 191,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 191,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 192,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 192,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 192,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 193,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 193,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 193,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 194,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 194,
+      "cited": "AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 194,
+      "cited": "gapfix-test/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 195,
+      "cited": "AgentPortal_V1-git/memory/ops/windows-runbook.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 195,
+      "cited": "gapfix-test/memory/ops/windows-runbook.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 196,
+      "cited": "probe_quinn.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 196,
+      "cited": "AgentPortal_V1-git/probes/probe_quinn.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 196,
+      "cited": "gapfix-test/probes/probe_quinn.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 196,
+      "cited": "uploads/AgentPortal_V1/probes/probe_quinn.py"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 197,
+      "cited": "AgentPortal_V1-git/memory/ops/windows-runbook.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 197,
+      "cited": "gapfix-test/memory/ops/windows-runbook.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 198,
+      "cited": "architecture.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 198,
+      "cited": "AgentPortal_V1-git/memory/portal/architecture.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 198,
+      "cited": "gapfix-test/memory/portal/architecture.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 199,
+      "cited": "bugs/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 199,
+      "cited": "AgentPortal_V1-git/memory/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 199,
+      "cited": "AgentPortal_V1-git/memory/agents/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 199,
+      "cited": "AgentPortal_V1-git/memory/llm/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/hosts-pin-reconciliation-2026-11-14.md",
+      "line": 22,
+      "cited": "2026-11-14-white-rename-closeout.md"
+    },
+    {
+      "file": "memory/archivist/hosts-pin-reconciliation-2026-11-14.md",
+      "line": 23,
+      "cited": "2026-11-14-r25-continuation-check.md"
+    },
+    {
+      "file": "memory/archivist/index-integrity-2026-11-15.md",
+      "line": 12,
+      "cited": "bugs/x.md"
+    },
+    {
+      "file": "memory/archivist/index-integrity-2026-11-15.md",
+      "line": 12,
+      "cited": "memory/portal/bugs/x.md"
+    },
+    {
+      "file": "memory/archivist/index-integrity-2026-11-15.md",
+      "line": 12,
+      "cited": "../architecture.md"
+    },
+    {
+      "file": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "line": 8,
+      "cited": "planning-meeting-minutes-v2-2026-11-14.md"
+    },
+    {
+      "file": "memory/archivist/index-integrity-r72-2026-11-14.md",
+      "line": 17,
+      "cited": "index_v22.html"
+    },
+    {
+      "file": "memory/archivist/index-pointer-batch-r42.md",
+      "line": 21,
+      "cited": "../architecture.md"
+    },
+    {
+      "file": "memory/archivist/kg-report-cycle5.md",
+      "line": 29,
+      "cited": "r21/r28"
+    },
+    {
+      "file": "memory/archivist/kg-report-cycle5.md",
+      "line": 30,
+      "cited": "e2e-truncation-integration-2026-11-15.md"
+    },
+    {
+      "file": "memory/archivist/kg-report-cycle5.md",
+      "line": 32,
+      "cited": "design-tokens.md"
+    },
+    {
+      "file": "memory/archivist/kg-report-cycle5.md",
+      "line": 33,
+      "cited": "all-goals-2026-11-13.md"
+    },
+    {
+      "file": "memory/archivist/llm-module-white-convention-r21.md",
+      "line": 6,
+      "cited": "studio-api.md"
+    },
+    {
+      "file": "memory/archivist/llm-module-white-convention-r21.md",
+      "line": 6,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/archivist/orphan-folder-audit-r42.md",
+      "line": 9,
+      "cited": "../architecture.md"
+    },
+    {
+      "file": "memory/archivist/supersession-audit-2026-11-18.md",
+      "line": 24,
+      "cited": "uploads/AgentPortal_V1/UPGRADES.md"
+    },
+    {
+      "file": "memory/archivist/supersession-audit-2026-11-18.md",
+      "line": 29,
+      "cited": "goals-SUPERSEDED-partial.md"
+    },
+    {
+      "file": "memory/archivist/supersession-audit-2026-11-18.md",
+      "line": 30,
+      "cited": "d/archive"
+    },
+    {
+      "file": "memory/archivist/supersession-audit-2026-11-18.md",
+      "line": 30,
+      "cited": "OLDER/smaller"
+    },
+    {
+      "file": "memory/builder/MEMORY.md",
+      "line": 16,
+      "cited": "portal-upgrade\\verify_drop_env.py"
+    },
+    {
+      "file": "memory/builder/MEMORY.md",
+      "line": 16,
+      "cited": "git-toolkit\\init_repo.py"
+    },
+    {
+      "file": "memory/builder/TODO.md",
+      "line": 5,
+      "cited": "ui-upgrades-r4.md"
+    },
+    {
+      "file": "memory/builder/TODO.md",
+      "line": 18,
+      "cited": "check_black_models.py"
+    },
+    {
+      "file": "memory/builder/TODO.md",
+      "line": 23,
+      "cited": "verify_drop_env.py"
+    },
+    {
+      "file": "memory/builder/TODO.md",
+      "line": 31,
+      "cited": "check_black_models.py"
+    },
+    {
+      "file": "memory/builder/TODO.md",
+      "line": 34,
+      "cited": "git-toolkit\\init_repo.py"
+    },
+    {
+      "file": "memory/builder/TODO.md",
+      "line": 36,
+      "cited": "verify_drop_env.py"
+    },
+    {
+      "file": "memory/builder/a11y-repin-farm569-closeout-2026-11-14.md",
+      "line": 19,
+      "cited": "dcabots/farm569_apply_v2.py"
+    },
+    {
+      "file": "memory/builder/a11y-repin-farm569-closeout-2026-11-14.md",
+      "line": 24,
+      "cited": "_verify_farm569.py"
+    },
+    {
+      "file": "memory/builder/a11y-stack-r45-closeout-2026-11-14.md",
+      "line": 6,
+      "cited": "memory/verifier/index_html_a6_b_a11y_candidate_ffa77423...html"
+    },
+    {
+      "file": "memory/builder/a11y-stack-r45-closeout-2026-11-14.md",
+      "line": 12,
+      "cited": "apply_a6_b_r44_fixed.py"
+    },
+    {
+      "file": "memory/builder/a11y-stack-r45-closeout-2026-11-14.md",
+      "line": 15,
+      "cited": "index-pointer-addendum-r43.md"
+    },
+    {
+      "file": "memory/builder/a11y-stack-r45-closeout-2026-11-14.md",
+      "line": 15,
+      "cited": "2026-11-14-r42-round-record.md"
+    },
+    {
+      "file": "memory/builder/a11y-stack-r45-closeout-2026-11-14.md",
+      "line": 15,
+      "cited": "2026-11-14-r41-closeout.md"
+    },
+    {
+      "file": "memory/builder/a4a5-lineage-and-revert-r38-2026-11-14.md",
+      "line": 9,
+      "cited": "a4a5_sim_out.html"
+    },
+    {
+      "file": "memory/builder/a4a5-persist-rerun-verified-r41.md",
+      "line": 26,
+      "cited": "index-pointer-handoff-r38.md"
+    },
+    {
+      "file": "memory/builder/a6b-applyset-audit-r47-2026-11-14.md",
+      "line": 20,
+      "cited": "_rb.style.color=\\\"#33210a\\\""
+    },
+    {
+      "file": "memory/builder/ac-a2-1-outside-click-ratification-r82-2026-11-14.md",
+      "line": 7,
+      "cited": "index_html_v22_f18b24c4d5cce206bf85fc41ca550bc5.html"
+    },
+    {
+      "file": "memory/builder/api_client_layer_increment2-2026-11-20.md",
+      "line": 45,
+      "cited": "node memory/builder/test_api_client.js"
+    },
+    {
+      "file": "memory/builder/build_verify_pin_increment1-2026-11-20.md",
+      "line": 6,
+      "cited": "[a] validate index.html"
+    },
+    {
+      "file": "memory/builder/ci-gate-2026-11-16.md",
+      "line": 10,
+      "cited": "test_truncation_detect.py"
+    },
+    {
+      "file": "memory/builder/ci-gate-2026-11-16.md",
+      "line": 11,
+      "cited": "test_group_e2e_truncation.py"
+    },
+    {
+      "file": "memory/builder/crossassist-archivist5-doc-ref-scanner-2026-11-18.md",
+      "line": 6,
+      "cited": "check_doc_file_refs.py"
+    },
+    {
+      "file": "memory/builder/crossassist-archivist5-doc-ref-scanner-2026-11-18.md",
+      "line": 25,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/builder/crossassist-handoff-2026-11-16.md",
+      "line": 23,
+      "cited": "index-patched-v2.html"
+    },
+    {
+      "file": "memory/builder/durable-check-scribe-goal6-2026-11-18.md",
+      "line": 13,
+      "cited": "memory/builder/_durable_test_orphan.md"
+    },
+    {
+      "file": "memory/builder/goals-panel-reland-2026-11-15.md",
+      "line": 4,
+      "cited": "goals-patch-apply-2026-11-15.py"
+    },
+    {
+      "file": "memory/builder/h1-frow-fix-and-revert-incident-2026-11-15.md",
+      "line": 14,
+      "cited": "_apply_goals_patch.py"
+    },
+    {
+      "file": "memory/builder/h1-frow-fix-and-revert-incident-2026-11-15.md",
+      "line": 14,
+      "cited": "goals_data.json"
+    },
+    {
+      "file": "memory/builder/handoff-mechanic-2026-11-16.md",
+      "line": 4,
+      "cited": "index-patched-v3.html"
+    },
+    {
+      "file": "memory/builder/index-v22-surgical-fixes-confirmed-2026-11-14.md",
+      "line": 5,
+      "cited": "index-v22-promotion-r71-correction-2026-11-14.md"
+    },
+    {
+      "file": "memory/builder/perf_optimization_increment1-2026-11-20.md",
+      "line": 31,
+      "cited": "blockers.md"
+    },
+    {
+      "file": "memory/builder/remote-mirror-verify-2026-11-16.md",
+      "line": 7,
+      "cited": "uploads/builder_mirror_test.txt"
+    },
+    {
+      "file": "memory/builder/remote-mirror-verify-2026-11-16.md",
+      "line": 20,
+      "cited": "uploads/builder_mirror_test.txt"
+    },
+    {
+      "file": "memory/builder/smoke8-detached-r20.md",
+      "line": 2,
+      "cited": "probe_white_portal_r20.py"
+    },
+    {
+      "file": "memory/builder/smoke8-detached-r20.md",
+      "line": 7,
+      "cited": "smoke8_result.json"
+    },
+    {
+      "file": "memory/builder/smoke8-detached-r20.md",
+      "line": 18,
+      "cited": "smoke8_result.json"
+    },
+    {
+      "file": "memory/builder/white-rename-closeout-2026-11-14.md",
+      "line": 8,
+      "cited": "white_realias_result.json"
+    },
+    {
+      "file": "memory/builder/white-rename-consistency-r21-addendum.md",
+      "line": 16,
+      "cited": "white_load_q8_r21_dualpath.py"
+    },
+    {
+      "file": "memory/designer/MEMORY.md",
+      "line": 67,
+      "cited": "bootstrap.bat"
+    },
+    {
+      "file": "memory/designer/MEMORY.md",
+      "line": 85,
+      "cited": "BUNDLE-SHA256.txt"
+    },
+    {
+      "file": "memory/designer/a11y-contrast-audit-2026-11-18.md",
+      "line": 26,
+      "cited": "data-act=files/folder"
+    },
+    {
+      "file": "memory/designer/a11y-inheritance-ec095107-note-2026-11-14.md",
+      "line": 5,
+      "cited": "index_html_a6_b_candidate_ec095107236a9bdc.html"
+    },
+    {
+      "file": "memory/designer/a11y-inheritance-ec095107-note-2026-11-14.md",
+      "line": 16,
+      "cited": "apply_a6_b_r44_fixed.py"
+    },
+    {
+      "file": "memory/designer/a11y-inheritance-ec095107-note-2026-11-14.md",
+      "line": 16,
+      "cited": "r44-closeout-2026-11-14.md"
+    },
+    {
+      "file": "memory/designer/a4a5-repro-audit-r39b-2026-11-14.md",
+      "line": 3,
+      "cited": "a4a5_sim.py"
+    },
+    {
+      "file": "memory/designer/a4a5-repro-audit-r39b-2026-11-14.md",
+      "line": 3,
+      "cited": "apply_a4_a5_r35.py"
+    },
+    {
+      "file": "memory/designer/a4a5-repro-audit-r39b-2026-11-14.md",
+      "line": 20,
+      "cited": "a4a5_sim_out.html"
+    },
+    {
+      "file": "memory/designer/a5-send-contrast-hunk-r28.md",
+      "line": 53,
+      "cited": "designer/staged/variant_9c6b08e3\u2026.html"
+    },
+    {
+      "file": "memory/designer/a5-send-contrast-hunk-r28.md",
+      "line": 53,
+      "cited": "variant_8ef4e2227a7a.html"
+    },
+    {
+      "file": "memory/designer/a6b-candidate-diff-r47-2026-11-14.md",
+      "line": 6,
+      "cited": "memory/builder/index_html_a6_b_a11y_candidate_ffa77423...html"
+    },
+    {
+      "file": "memory/designer/a6b-candidate-diff-r47-2026-11-14.md",
+      "line": 21,
+      "cited": "ac_a2_live_leg_r21.py"
+    },
+    {
+      "file": "memory/designer/a6b-candidate-diff-r47-2026-11-14.md",
+      "line": 21,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/designer/a6b-recon-r46-2026-11-14.md",
+      "line": 8,
+      "cited": "apply_a6_b_r44_fixed.py"
+    },
+    {
+      "file": "memory/designer/ac-a2-1-ruling.md",
+      "line": 16,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/designer/ac-a2-2-console-clean-criteria.md",
+      "line": 3,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/designer/ac-a2-2-console-clean-criteria.md",
+      "line": 23,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/designer/conflict-resolution-merged-canonical-2026-11-15.md",
+      "line": 47,
+      "cited": "stopgap_h1_contrast_patch.py"
+    },
+    {
+      "file": "memory/designer/conflict-resolution-merged-canonical-2026-11-15.md",
+      "line": 50,
+      "cited": "stopgap_h1_contrast_patch.py"
+    },
+    {
+      "file": "memory/designer/design-sheet-rerun-45323d09-2026-11-14.md",
+      "line": 24,
+      "cited": "act/fleet/ops/files"
+    },
+    {
+      "file": "memory/designer/design-tokens-live.md",
+      "line": 116,
+      "cited": "grep -c 'var(--' ui/app.css"
+    },
+    {
+      "file": "memory/designer/designer-goal-proposals-2026-11-16.md",
+      "line": 6,
+      "cited": "design-tokens.md"
+    },
+    {
+      "file": "memory/designer/designer-goal-proposals-2026-11-16.md",
+      "line": 6,
+      "cited": "design-tokens.md"
+    },
+    {
+      "file": "memory/designer/designer-goal-proposals-2026-11-16.md",
+      "line": 24,
+      "cited": "design-qa.md"
+    },
+    {
+      "file": "memory/designer/fix-hunks-r51-2026-11-14.md",
+      "line": 2,
+      "cited": "repin_root_index.py"
+    },
+    {
+      "file": "memory/designer/goal1-color-tokens-reland-2026-11-19.md",
+      "line": 8,
+      "cited": "tokens.css"
+    },
+    {
+      "file": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
+      "line": 5,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
+      "line": 6,
+      "cited": "tokens.css"
+    },
+    {
+      "file": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
+      "line": 8,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
+      "line": 12,
+      "cited": "tokens.css"
+    },
+    {
+      "file": "memory/designer/goal1-token-reland-2026-11-19.md",
+      "line": 46,
+      "cited": "h1/code/.sub"
+    },
+    {
+      "file": "memory/designer/goal1-token-system-2026-11-19.md",
+      "line": 10,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/designer/goal10-baseline-infra-2026-11-18.md",
+      "line": 11,
+      "cited": "manifest.py"
+    },
+    {
+      "file": "memory/designer/goal10-baseline-infra-2026-11-18.md",
+      "line": 12,
+      "cited": "visual_diff.py"
+    },
+    {
+      "file": "memory/designer/goal10-baseline-infra-2026-11-18.md",
+      "line": 15,
+      "cited": "manifest.py"
+    },
+    {
+      "file": "memory/designer/goal10-baseline-infra-2026-11-18.md",
+      "line": 16,
+      "cited": "visual_diff.py"
+    },
+    {
+      "file": "memory/designer/goal10-blocked-evidence-2026-11-18.md",
+      "line": 14,
+      "cited": "MANIFEST.json"
+    },
+    {
+      "file": "memory/designer/goal10-design-check-pass-2026-11-17.md",
+      "line": 17,
+      "cited": ".ok/.warn/.err"
+    },
+    {
+      "file": "memory/designer/goal2-6-landed-2026-11-17e.md",
+      "line": 6,
+      "cited": ".green/.amber/.red"
+    },
+    {
+      "file": "memory/designer/goal2-6-landed-2026-11-17e.md",
+      "line": 6,
+      "cited": ".fdot.busy/idle/unknown"
+    },
+    {
+      "file": "memory/designer/goal2-6-landed-2026-11-17e.md",
+      "line": 9,
+      "cited": ".status-dot.green/amber/red"
+    },
+    {
+      "file": "memory/designer/goal2-animation-wiring-2026-11-20.md",
+      "line": 28,
+      "cited": "grep -n \"animations.css\" ui/app.css"
+    },
+    {
+      "file": "memory/designer/goal2-animation-wiring-2026-11-20.md",
+      "line": 29,
+      "cited": "grep -c \"@keyframes\" ui/animations.css"
+    },
+    {
+      "file": "memory/designer/goal2-animation-wiring-2026-11-20.md",
+      "line": 30,
+      "cited": "grep -n \"gauge-fill\" ui/fleet_health.js"
+    },
+    {
+      "file": "memory/designer/goal2-density-baseline-file-2026-11-19.md",
+      "line": 7,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/designer/goal2-density-baseline-file-2026-11-19.md",
+      "line": 9,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/designer/goal2-density-baseline-file-2026-11-19.md",
+      "line": 9,
+      "cited": "tokens.css"
+    },
+    {
+      "file": "memory/designer/goal2-density-baseline-file-2026-11-19.md",
+      "line": 16,
+      "cited": "app_density_before.css"
+    },
+    {
+      "file": "memory/designer/goal2-density-baseline-file-2026-11-19.md",
+      "line": 21,
+      "cited": "@import tokens.css"
+    },
+    {
+      "file": "memory/designer/goal2-static-verify-2026-11-18.md",
+      "line": 9,
+      "cited": "state-loading/error/empty/conn-lost"
+    },
+    {
+      "file": "memory/designer/goal4-a11y-fix-focus-motion-2026-11-18.md",
+      "line": 17,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/designer/goal4-empty-states-activity-wired-2026-11-19.md",
+      "line": 27,
+      "cited": ".empty-state/.empty-icon/.empty-title/.empty-msg/.empty-cta"
+    },
+    {
+      "file": "memory/designer/goal4-fleet-empty-state-2026-11-19.md",
+      "line": 6,
+      "cited": "grep emptyState ui/core.js"
+    },
+    {
+      "file": "memory/designer/goal5-fixture-bugfix-2026-11-19.md",
+      "line": 13,
+      "cited": "notifications.js"
+    },
+    {
+      "file": "memory/designer/goal5-fixture-bugfix-2026-11-19.md",
+      "line": 15,
+      "cited": "icons.js"
+    },
+    {
+      "file": "memory/designer/goal5-notification-reland-2026-11-19.md",
+      "line": 12,
+      "cited": "notifications.js"
+    },
+    {
+      "file": "memory/designer/goal5-notification-verified-2026-11-19.md",
+      "line": 29,
+      "cited": "blockers.md"
+    },
+    {
+      "file": "memory/designer/goal7-motion-audit-closed-2026-11-18.md",
+      "line": 8,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/designer/goal7-motion-audit-closed-2026-11-18.md",
+      "line": 30,
+      "cited": "grep -c 'prefers-reduced-motion' ui/app.css"
+    },
+    {
+      "file": "memory/designer/goal7-motion-audit-complete-2026-11-17.md",
+      "line": 36,
+      "cited": "grep prefers-reduced-motion app.css"
+    },
+    {
+      "file": "memory/designer/goal8-icon-progress-2026-11-19.md",
+      "line": 19,
+      "cited": "core.js"
+    },
+    {
+      "file": "memory/designer/goal8-icon-progress-2026-11-19b.md",
+      "line": 16,
+      "cited": "blockers.md"
+    },
+    {
+      "file": "memory/designer/goal8-icon-runtime-wiring-2026-11-19.md",
+      "line": 27,
+      "cited": "[\\w./\\\\-]"
+    },
+    {
+      "file": "memory/designer/goal8-typography-progress-2026-11-17.md",
+      "line": 23,
+      "cited": "grep line-height ui/app.css"
+    },
+    {
+      "file": "memory/designer/goal8-typography-progress-2026-11-17.md",
+      "line": 24,
+      "cited": "grep font-weight ui/app.css"
+    },
+    {
+      "file": "memory/designer/goal9-tour-css-restored-2026-11-19.md",
+      "line": 5,
+      "cited": "goal9-tour-stale-evidence-2026-11-19.md"
+    },
+    {
+      "file": "memory/designer/goal9-tour-css-restored-2026-11-19.md",
+      "line": 6,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/designer/goal9-tour-css-restored-2026-11-19.md",
+      "line": 10,
+      "cited": "start/close"
+    },
+    {
+      "file": "memory/designer/goal9-tour-rewired-durable-2026-11-19.md",
+      "line": 23,
+      "cited": "py_compile memory_mirror.py"
+    },
+    {
+      "file": "memory/designer/goals-patch-verify-2026-11-15.md",
+      "line": 12,
+      "cited": "all-goals-2026-11-13.md"
+    },
+    {
+      "file": "memory/designer/goals-patch-verify-2026-11-15.md",
+      "line": 17,
+      "cited": "#actHead/#fleetHead/#opsHead/#filesHead"
+    },
+    {
+      "file": "memory/designer/index-audit-critique-2026-11-15.md",
+      "line": 74,
+      "cited": "up/total"
+    },
+    {
+      "file": "memory/designer/index-v22-promotion-r71-correction-2026-11-14.md",
+      "line": 9,
+      "cited": "memory/designer/index_html_v22_f18b24c4\u2026.html"
+    },
+    {
+      "file": "memory/designer/lane-closure-repair-2026-11-18.md",
+      "line": 16,
+      "cited": ".../goal6"
+    },
+    {
+      "file": "memory/designer/lane-closure-repair-2026-11-18.md",
+      "line": 16,
+      "cited": ".../goal6-dark-mode-static-audit-2026-11-18.md)"
+    },
+    {
+      "file": "memory/designer/planning-meeting-2026-11-14.md",
+      "line": 26,
+      "cited": "repin_root_index.py"
+    },
+    {
+      "file": "memory/designer/planning-meeting-2026-11-14.md",
+      "line": 27,
+      "cited": "post-restart-verify-rNN.md"
+    },
+    {
+      "file": "memory/designer/roundlog-r40-autoclose-2026-11-14.md",
+      "line": 7,
+      "cited": "variant_9c6b08e3d98355e632a72cb871d5b60d.html"
+    },
+    {
+      "file": "memory/designer/stamp-design-leg-r56-2026-11-14.md",
+      "line": 22,
+      "cited": "repin_root_index.py"
+    },
+    {
+      "file": "memory/designer/theme-components-status-2026-11-16.md",
+      "line": 6,
+      "cited": ".ok/.idle"
+    },
+    {
+      "file": "memory/designer/theme-components-status-2026-11-16.md",
+      "line": 6,
+      "cited": ".busy/.warn"
+    },
+    {
+      "file": "memory/designer/theme-components-status-2026-11-16.md",
+      "line": 6,
+      "cited": ".err/.unknown"
+    },
+    {
+      "file": "memory/designer/theme-statusdot-focus-reapply-2026-11-16.md",
+      "line": 14,
+      "cited": ".ok/.idle"
+    },
+    {
+      "file": "memory/designer/theme-statusdot-focus-reapply-2026-11-16.md",
+      "line": 14,
+      "cited": ".busy/.warn"
+    },
+    {
+      "file": "memory/designer/theme-statusdot-focus-reapply-2026-11-16.md",
+      "line": 14,
+      "cited": ".err/.unknown"
+    },
+    {
+      "file": "memory/designer/theme-statusdot-reapply-2026-11-16.md",
+      "line": 25,
+      "cited": ".ok/.idle"
+    },
+    {
+      "file": "memory/designer/theme-statusdot-reapply-2026-11-16.md",
+      "line": 25,
+      "cited": ".busy/.warn"
+    },
+    {
+      "file": "memory/designer/theme-statusdot-reapply-2026-11-16.md",
+      "line": 25,
+      "cited": ".err/.unknown"
+    },
+    {
+      "file": "memory/designer/tierB-batch-fixed-2026-11-19.md",
+      "line": 18,
+      "cited": "d7_d9_cdp_verify.py"
+    },
+    {
+      "file": "memory/goals.md",
+      "line": 59,
+      "cited": "AgentPortal_V1-git/index.html"
+    },
+    {
+      "file": "memory/goals.md",
+      "line": 62,
+      "cited": "memory/audit_index.py"
+    },
+    {
+      "file": "memory/goals.md",
+      "line": 63,
+      "cited": "memory/digests/2026-11-13.md"
+    },
+    {
+      "file": "memory/goals/2026-11-13-agent-goals.md",
+      "line": 52,
+      "cited": "builder-sync-git-patch.md"
+    },
+    {
+      "file": "memory/goals/2026-11-13-agent-goals.md",
+      "line": 52,
+      "cited": "p1-uploads-mirror/STATUS"
+    },
+    {
+      "file": "memory/goals/2026-11-13-agent-goals.md",
+      "line": 57,
+      "cited": "verifier-ops-gate.txt"
+    },
+    {
+      "file": "memory/goals/2026-11-13-agent-goals.md",
+      "line": 65,
+      "cited": "upgrade-plan.md"
+    },
+    {
+      "file": "memory/goals/all-goals-2026-11-13.md",
+      "line": 73,
+      "cited": "archivist/canonical-map.md"
+    },
+    {
+      "file": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+      "line": 52,
+      "cited": "builder-sync-git-patch.md"
+    },
+    {
+      "file": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+      "line": 52,
+      "cited": "p1-uploads-mirror/STATUS"
+    },
+    {
+      "file": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+      "line": 57,
+      "cited": "verifier-ops-gate.txt"
+    },
+    {
+      "file": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+      "line": 65,
+      "cited": "upgrade-plan.md"
+    },
+    {
+      "file": "memory/goals/archive/README.md",
+      "line": 25,
+      "cited": "all-goals-2026-11-13.md"
+    },
+    {
+      "file": "memory/goals/archive/archivist-2026-11-13.md",
+      "line": 12,
+      "cited": "archivist/canonical-map.md"
+    },
+    {
+      "file": "memory/goals/archive/archivist-2026-11-16.md",
+      "line": 9,
+      "cited": "memory_health.py"
+    },
+    {
+      "file": "memory/goals/archive/builder-2026-11-18.md",
+      "line": 13,
+      "cited": "modularity_check.py"
+    },
+    {
+      "file": "memory/goals/archive/builder-2026-11-18.md",
+      "line": 15,
+      "cited": "build_registry.py"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+      "line": 52,
+      "cited": "builder-sync-git-patch.md"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+      "line": 52,
+      "cited": "p1-uploads-mirror/STATUS"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+      "line": 57,
+      "cited": "verifier-ops-gate.txt"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+      "line": 65,
+      "cited": "upgrade-plan.md"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+      "line": 73,
+      "cited": "archivist/canonical-map.md"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/archivist.md",
+      "line": 9,
+      "cited": "memory_health.py"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/builder.md",
+      "line": 8,
+      "cited": "pre_commit_gate.py"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/builder.md",
+      "line": 9,
+      "cited": "canary_deploy.py"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/builder.md",
+      "line": 10,
+      "cited": "wedge_watchdog.py"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/builder.md",
+      "line": 12,
+      "cited": "api_contract_test.py"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/builder.md",
+      "line": 14,
+      "cited": "playbook_to_tests.py"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/builder.md",
+      "line": 16,
+      "cited": "hotpatch.py"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/forecast-mechanic-g4.md",
+      "line": 26,
+      "cited": "load-baseline.jsonl"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/researcher-log-2026-11-13.md",
+      "line": 58,
+      "cited": "AgentPortal_V1-git/index.html"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/researcher-log-2026-11-13.md",
+      "line": 61,
+      "cited": "memory/audit_index.py"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/researcher-log-2026-11-13.md",
+      "line": 62,
+      "cited": "memory/digests/2026-11-13.md"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/researcher.md",
+      "line": 32,
+      "cited": "evidence_quality_trend.py"
+    },
+    {
+      "file": "memory/goals/archive/orchestrator-2026-11-19.md",
+      "line": 5,
+      "cited": "model_scheduler.py"
+    },
+    {
+      "file": "memory/goals/archive/orchestrator-2026-11-19.md",
+      "line": 34,
+      "cited": "rerole_agent.py"
+    },
+    {
+      "file": "memory/goals/archive/orchestrator-2026-11-19.md",
+      "line": 36,
+      "cited": "retire_agent.py"
+    },
+    {
+      "file": "memory/goals/archive/orchestrator-2026-11-20.md",
+      "line": 5,
+      "cited": "model_scheduler.py"
+    },
+    {
+      "file": "memory/goals/archive/orchestrator-2026-11-20.md",
+      "line": 34,
+      "cited": "rerole_agent.py"
+    },
+    {
+      "file": "memory/goals/archive/orchestrator-2026-11-20.md",
+      "line": 36,
+      "cited": "retire_agent.py"
+    },
+    {
+      "file": "memory/goals/archive/orchestrator-cycle5-closed-2026-11-18.md",
+      "line": 9,
+      "cited": "rerole_agent.py"
+    },
+    {
+      "file": "memory/goals/archive/orchestrator-cycle5-closed-2026-11-18.md",
+      "line": 11,
+      "cited": "retire_agent.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-13.md",
+      "line": 58,
+      "cited": "AgentPortal_V1-git/index.html"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-13.md",
+      "line": 61,
+      "cited": "memory/audit_index.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-13.md",
+      "line": 62,
+      "cited": "memory/digests/2026-11-13.md"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-18.md",
+      "line": 15,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-19.md",
+      "line": 9,
+      "cited": "wedge_force_recover.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-19.md",
+      "line": 13,
+      "cited": "wedge_force_recover.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-19.md",
+      "line": 17,
+      "cited": "wedge_force_recover.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-19.md",
+      "line": 19,
+      "cited": "hot_load.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-20.md",
+      "line": 9,
+      "cited": "wedge_force_recover.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-20.md",
+      "line": 13,
+      "cited": "wedge_force_recover.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-20.md",
+      "line": 17,
+      "cited": "wedge_force_recover.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-20.md",
+      "line": 19,
+      "cited": "hot_load.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+      "line": 23,
+      "cited": "memory/researcher/sla-report-cycle5.md"
+    },
+    {
+      "file": "memory/goals/archive/researcher-log-2026-11-13.md",
+      "line": 58,
+      "cited": "AgentPortal_V1-git/index.html"
+    },
+    {
+      "file": "memory/goals/archive/researcher-log-2026-11-13.md",
+      "line": 61,
+      "cited": "memory/audit_index.py"
+    },
+    {
+      "file": "memory/goals/archive/researcher-log-2026-11-13.md",
+      "line": 62,
+      "cited": "memory/digests/2026-11-13.md"
+    },
+    {
+      "file": "memory/goals/archive/scribe-2026-11-18.md",
+      "line": 11,
+      "cited": "durable_check.py"
+    },
+    {
+      "file": "memory/goals/archive/verifier-2026-11-18.md",
+      "line": 10,
+      "cited": "security_regression.py"
+    },
+    {
+      "file": "memory/goals/archivist-goal2-forecast-2026-11-19.md",
+      "line": 32,
+      "cited": "memory/archivist/citation-audit-cycle5.md"
+    },
+    {
+      "file": "memory/goals/archivist-goal5-forecast-phantom-scan-2026-11-18.md",
+      "line": 16,
+      "cited": "audit_index.py"
+    },
+    {
+      "file": "memory/goals/builder-forecast-archivist-phantom-closure-2026-11-19.md",
+      "line": 15,
+      "cited": "knowledge_graph.json"
+    },
+    {
+      "file": "memory/goals/builder-forecast-archivist-phantom-closure-2026-11-19.md",
+      "line": 19,
+      "cited": "decay_score.py"
+    },
+    {
+      "file": "memory/goals/builder-forecast-archivist-phantom-closure-2026-11-19.md",
+      "line": 19,
+      "cited": "freshness-report.md"
+    },
+    {
+      "file": "memory/goals/builder.md",
+      "line": 11,
+      "cited": "index_html_CANONICAL_95e752e795c0_2026-11-20a.html"
+    },
+    {
+      "file": "memory/goals/builder.md",
+      "line": 17,
+      "cited": "perf_profile.py"
+    },
+    {
+      "file": "memory/goals/designer-attempt-mechanic4-runbook-2026-11-18.md",
+      "line": 6,
+      "cited": "deploy_reboot_recovery_all.py"
+    },
+    {
+      "file": "memory/goals/designer-attempt-verifier5-security-panel-2026-11-18.md",
+      "line": 42,
+      "cited": "security_regression.py"
+    },
+    {
+      "file": "memory/goals/designer-cycle6-proposals.md",
+      "line": 20,
+      "cited": "[0-9]+\\.[0-9]+s"
+    },
+    {
+      "file": "memory/goals/designer-cycle6-proposals.md",
+      "line": 43,
+      "cited": "ui/empty-states.js"
+    },
+    {
+      "file": "memory/goals/designer-cycle6-proposals.md",
+      "line": 51,
+      "cited": "memory/designer/DESIGN.md"
+    },
+    {
+      "file": "memory/goals/designer-notification-integration-forecast.md",
+      "line": 12,
+      "cited": "health_log.jsonl"
+    },
+    {
+      "file": "memory/goals/designer-open-goals-triage-2026-11-19.md",
+      "line": 16,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/goals/designer-open-goals-triage-2026-11-19.md",
+      "line": 27,
+      "cited": "tokens.css"
+    },
+    {
+      "file": "memory/goals/forecast-mechanic-fleet-status-api-2026-11-19.md",
+      "line": 11,
+      "cited": "net_probe.state.json"
+    },
+    {
+      "file": "memory/goals/forecast-mechanic-fleet-status-api-2026-11-19.md",
+      "line": 25,
+      "cited": "net_probe.state.json"
+    },
+    {
+      "file": "memory/goals/forecast-mechanic-g4.md",
+      "line": 26,
+      "cited": "load-baseline.jsonl"
+    },
+    {
+      "file": "memory/goals/forecast-mechanic2-revert-sentinel-2026-11-19.md",
+      "line": 41,
+      "cited": "clobber-events.jsonl"
+    },
+    {
+      "file": "memory/goals/forecast-mechanic4-reboot-recovery-2026-11-18.md",
+      "line": 11,
+      "cited": "deploy_reboot_recovery_all.py"
+    },
+    {
+      "file": "memory/goals/mechanic.md",
+      "line": 21,
+      "cited": "memory/mechanic/runbook.md"
+    },
+    {
+      "file": "memory/goals/researcher-log-2026-11-13.md",
+      "line": 58,
+      "cited": "AgentPortal_V1-git/index.html"
+    },
+    {
+      "file": "memory/goals/researcher-log-2026-11-13.md",
+      "line": 61,
+      "cited": "memory/audit_index.py"
+    },
+    {
+      "file": "memory/goals/researcher-log-2026-11-13.md",
+      "line": 62,
+      "cited": "memory/digests/2026-11-13.md"
+    },
+    {
+      "file": "memory/goals/scheduler-cycle6.md",
+      "line": 3,
+      "cited": "memory/goals/scheduler.md"
+    },
+    {
+      "file": "memory/handoffs/HO-20261118-kg-orphan-detection.md",
+      "line": 30,
+      "cited": "knowledge_graph.py"
+    },
+    {
+      "file": "memory/handoffs/PROTOCOL.md",
+      "line": 79,
+      "cited": "memory_health.py"
+    },
+    {
+      "file": "memory/llm/hosts.md",
+      "line": 17,
+      "cited": "red_tunnel.ps1"
+    },
+    {
+      "file": "memory/llm/hosts.md",
+      "line": 17,
+      "cited": "red_login.ps1"
+    },
+    {
+      "file": "memory/llm/hosts.md",
+      "line": 17,
+      "cited": "pw_check.ps1"
+    },
+    {
+      "file": "memory/llm/hosts.md",
+      "line": 21,
+      "cited": ".lmstudio\\models"
+    },
+    {
+      "file": "memory/llm/hotload-selector.md",
+      "line": 104,
+      "cited": "comfyui_adapter.py"
+    },
+    {
+      "file": "memory/llm/model-id-check-2026-11-15.md",
+      "line": 5,
+      "cited": "model_check_1115.py"
+    },
+    {
+      "file": "memory/llm/model-id-check-2026-11-15.md",
+      "line": 21,
+      "cited": "orch_alias_probe.py"
+    },
+    {
+      "file": "memory/mechanic/MEMORY.md",
+      "line": 99,
+      "cited": "uploads/AgentPortal_V1"
+    },
+    {
+      "file": "memory/mechanic/adaptive-probe-poller-2026-11-17.md",
+      "line": 11,
+      "cited": "adaptive_probe_poller.py"
+    },
+    {
+      "file": "memory/mechanic/adaptive-probe-poller-2026-11-17.md",
+      "line": 15,
+      "cited": "test_adaptive_probe_poller.py"
+    },
+    {
+      "file": "memory/mechanic/assist-scribe-goal1-decisions-v2-reland-2026-11-18.md",
+      "line": 26,
+      "cited": "py_compile agent_portal.py"
+    },
+    {
+      "file": "memory/mechanic/auto-loop-pass-2026-11-18b.md",
+      "line": 28,
+      "cited": "memory/mechanic/productionize_all.py"
+    },
+    {
+      "file": "memory/mechanic/black-builder-q8-rebind-r37-2026-11-14.md",
+      "line": 4,
+      "cited": "probe_black_alias_r37.py"
+    },
+    {
+      "file": "memory/mechanic/black-builder-q8-rebind-r37-2026-11-14.md",
+      "line": 4,
+      "cited": "probe_black_alias_r37_result.json"
+    },
+    {
+      "file": "memory/mechanic/cycle6-hotload-progress-2026-11-18.md",
+      "line": 15,
+      "cited": "hotload_controller.py"
+    },
+    {
+      "file": "memory/mechanic/cycle6-progress-2026-11-19.md",
+      "line": 32,
+      "cited": "memory/ops/selfprobe-result.json"
+    },
+    {
+      "file": "memory/mechanic/dream-big-ops-plan-2026-11-14.md",
+      "line": 10,
+      "cited": "fleet_health_check.py"
+    },
+    {
+      "file": "memory/mechanic/dream-big-ops-plan-2026-11-14.md",
+      "line": 13,
+      "cited": "full_recovery.py"
+    },
+    {
+      "file": "memory/mechanic/dream-big-ops-plan-2026-11-14.md",
+      "line": 19,
+      "cited": "fleet_health_check.py"
+    },
+    {
+      "file": "memory/mechanic/dream-big-ops-plan-2026-11-14.md",
+      "line": 20,
+      "cited": "portal_launcher.py"
+    },
+    {
+      "file": "memory/mechanic/dream-big-ops-plan-2026-11-14.md",
+      "line": 21,
+      "cited": "full_recovery.py"
+    },
+    {
+      "file": "memory/mechanic/dream-big-ops-plan-2026-11-14.md",
+      "line": 27,
+      "cited": "fleet_health_check.py"
+    },
+    {
+      "file": "memory/mechanic/dream-big-ops-plan-2026-11-14.md",
+      "line": 31,
+      "cited": "portal_launcher.py"
+    },
+    {
+      "file": "memory/mechanic/dream-big-ops-plan-2026-11-14.md",
+      "line": 37,
+      "cited": "portal_launcher.py"
+    },
+    {
+      "file": "memory/mechanic/fleet-stamp-r50-2026-11-14.md",
+      "line": 9,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/mechanic/fleet-stamp-r50-2026-11-14.md",
+      "line": 9,
+      "cited": "probe_fleet_1114b_result_r50prev.json"
+    },
+    {
+      "file": "memory/mechanic/fleet-stamp-r55-2026-11-14.md",
+      "line": 9,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/mechanic/fleet-stamp-r55-2026-11-14.md",
+      "line": 10,
+      "cited": "_r55prev.json"
+    },
+    {
+      "file": "memory/mechanic/fleet-stamp-r55-2026-11-14.md",
+      "line": 10,
+      "cited": "_r50prev.json"
+    },
+    {
+      "file": "memory/mechanic/fleet-stamp-r55-2026-11-14.md",
+      "line": 13,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/mechanic/fleet-stamp-r55-2026-11-14.md",
+      "line": 13,
+      "cited": "_r50prev.json"
+    },
+    {
+      "file": "memory/mechanic/fleet-status-autocontinue-2026-11-14.md",
+      "line": 24,
+      "cited": "fleet-stamp-2026-11-14-r55-black-pass.md"
+    },
+    {
+      "file": "memory/mechanic/fleet-status-autocontinue-2026-11-14.md",
+      "line": 24,
+      "cited": "smoke8-results-partial-2026-11-14.md"
+    },
+    {
+      "file": "memory/mechanic/goal1-adaptive-probe-sim-2026-11-17.md",
+      "line": 10,
+      "cited": "sim_fleet_probe_degrade.py"
+    },
+    {
+      "file": "memory/mechanic/goal10-clock-skew-closure-2026-11-18.md",
+      "line": 14,
+      "cited": "memory_mirror_epoch.py"
+    },
+    {
+      "file": "memory/mechanic/goal10-epoch-clockskeew-sim-pass-2026-11-18.md",
+      "line": 4,
+      "cited": "memory_mirror_epoch.py"
+    },
+    {
+      "file": "memory/mechanic/goal10-epoch-clockskeew-sim-pass-2026-11-18.md",
+      "line": 5,
+      "cited": "shared/testfile.md"
+    },
+    {
+      "file": "memory/mechanic/goal10-epoch-phase01-2026-11-18.md",
+      "line": 12,
+      "cited": "memory_mirror_ownership.json"
+    },
+    {
+      "file": "memory/mechanic/goal10-epoch-phase01-2026-11-18.md",
+      "line": 13,
+      "cited": "memory_mirror_epoch.json"
+    },
+    {
+      "file": "memory/mechanic/goal10-epoch-phase01-2026-11-18.md",
+      "line": 36,
+      "cited": "memory_mirror_epoch.py"
+    },
+    {
+      "file": "memory/mechanic/goal10-epoch-phase01-2026-11-18.md",
+      "line": 37,
+      "cited": "_meta.json"
+    },
+    {
+      "file": "memory/mechanic/goal10-epoch-phase4-cutover-2026-11-18.md",
+      "line": 8,
+      "cited": "memory_mirror_epoch.py"
+    },
+    {
+      "file": "memory/mechanic/goal10-epoch-unit-tests-pass-2026-11-18.md",
+      "line": 4,
+      "cited": "memory_mirror_epoch.py"
+    },
+    {
+      "file": "memory/mechanic/goal2-boot-recovery-adaptive-wiring-2026-11-17.md",
+      "line": 5,
+      "cited": "boot_recovery.py"
+    },
+    {
+      "file": "memory/mechanic/goal2-boot-recovery-adaptive-wiring-2026-11-17.md",
+      "line": 5,
+      "cited": "boot-recovery-log.jsonl"
+    },
+    {
+      "file": "memory/mechanic/goal2-boot-recovery-progress-2026-11-17.md",
+      "line": 6,
+      "cited": "boot_recovery.py"
+    },
+    {
+      "file": "memory/mechanic/goal2-boot-recovery-status-2026-11-17.md",
+      "line": 17,
+      "cited": "deploy_boot_task_remotes.py"
+    },
+    {
+      "file": "memory/mechanic/goal2-boot-recovery-status-2026-11-17.md",
+      "line": 24,
+      "cited": "deploy_boot_task_remotes.py"
+    },
+    {
+      "file": "memory/mechanic/goal2-goal4-progress-2026-11-16.md",
+      "line": 26,
+      "cited": "load_probe.py"
+    },
+    {
+      "file": "memory/mechanic/goal2-goal4-registration-artifacts-2026-11-17.md",
+      "line": 19,
+      "cited": "fleet_schtask_register.bat"
+    },
+    {
+      "file": "memory/mechanic/goal2-mirror-heal-recreated-5th-2026-11-17.md",
+      "line": 9,
+      "cited": "mirror_heal.py"
+    },
+    {
+      "file": "memory/mechanic/goal2-mirror-heal-recreated-5th-2026-11-17.md",
+      "line": 11,
+      "cited": "register_mirror_heal_task.py"
+    },
+    {
+      "file": "memory/mechanic/goal2-mirror-heal-tier-a-2026-11-18.md",
+      "line": 6,
+      "cited": "mirror_heal.py"
+    },
+    {
+      "file": "memory/mechanic/goal2-mirror-heal-tier-a-2026-11-18.md",
+      "line": 6,
+      "cited": "register_mirror_heal_task.py"
+    },
+    {
+      "file": "memory/mechanic/goal2-mirror-heal-tz-reapplied-6th-2026-11-18.md",
+      "line": 14,
+      "cited": "blockers.md"
+    },
+    {
+      "file": "memory/mechanic/goal2-verify-2026-11-17.md",
+      "line": 12,
+      "cited": "boot_recovery_register.bat"
+    },
+    {
+      "file": "memory/mechanic/goal2_mirror_heal_productionized-2026-11-17.md",
+      "line": 4,
+      "cited": "mirror_heal.py"
+    },
+    {
+      "file": "memory/mechanic/goal2_mirror_heal_productionized-2026-11-17.md",
+      "line": 5,
+      "cited": "register_mirror_heal_task.py"
+    },
+    {
+      "file": "memory/mechanic/goal3-adaptive-probe-v2-closure-2026-11-18.md",
+      "line": 27,
+      "cited": "fleet_probe.py"
+    },
+    {
+      "file": "memory/mechanic/goal3-predictive-trend-verified-2026-11-18.md",
+      "line": 6,
+      "cited": "test_goal3_predictive.py"
+    },
+    {
+      "file": "memory/mechanic/goal3-predictive-trend-verified-2026-11-18.md",
+      "line": 20,
+      "cited": "test_goal3_predictive.py"
+    },
+    {
+      "file": "memory/mechanic/goal3_mirror_heal_evidence-2026-11-16.md",
+      "line": 6,
+      "cited": "mirror_heal.py"
+    },
+    {
+      "file": "memory/mechanic/goal4-load-probe-regression-2026-11-17.md",
+      "line": 6,
+      "cited": "load-baseline.jsonl"
+    },
+    {
+      "file": "memory/mechanic/goal4-load-probe-status-2026-11-17.md",
+      "line": 7,
+      "cited": "load_probe.py"
+    },
+    {
+      "file": "memory/mechanic/goal4-load-trend-dual-format-fix-2026-11-17.md",
+      "line": 6,
+      "cited": "load_probe.py"
+    },
+    {
+      "file": "memory/mechanic/goal4-load-trend-dual-format-fix-2026-11-17.md",
+      "line": 12,
+      "cited": "p50_ms/p95_ms/p99_ms"
+    },
+    {
+      "file": "memory/mechanic/goal4-load-trend-dual-format-fix-2026-11-17.md",
+      "line": 13,
+      "cited": "p50/p95/p99"
+    },
+    {
+      "file": "memory/mechanic/goal4-load-trend-pipeline-validated-2026-11-18.md",
+      "line": 7,
+      "cited": "load_trend.py"
+    },
+    {
+      "file": "memory/mechanic/goal4-load-trend-script-2026-11-17.md",
+      "line": 4,
+      "cited": "load_trend.py"
+    },
+    {
+      "file": "memory/mechanic/goal4-load-trend-validation-2026-11-17.md",
+      "line": 6,
+      "cited": "load_trend.py"
+    },
+    {
+      "file": "memory/mechanic/goal4-load-trend-validation-2026-11-17.md",
+      "line": 19,
+      "cited": "load_trend.py"
+    },
+    {
+      "file": "memory/mechanic/goal4-pipeline-validation-2026-11-17.md",
+      "line": 14,
+      "cited": "load_probe.py"
+    },
+    {
+      "file": "memory/mechanic/goal4-sandbox-recheck-2026-11-18.md",
+      "line": 5,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/mechanic/goal4-sandbox-recheck-2026-11-18.md",
+      "line": 13,
+      "cited": "blockers.md"
+    },
+    {
+      "file": "memory/mechanic/goal4-schtask-reg-and-guard-2026-11-17.md",
+      "line": 19,
+      "cited": "register_daily_probe.bat"
+    },
+    {
+      "file": "memory/mechanic/goal4-trend-report-rebuilt-2026-11-17.md",
+      "line": 4,
+      "cited": "load-baseline.jsonl"
+    },
+    {
+      "file": "memory/mechanic/goal4-trend-report-rebuilt-2026-11-17.md",
+      "line": 8,
+      "cited": "load-baseline.jsonl"
+    },
+    {
+      "file": "memory/mechanic/goal4-trend-report-rebuilt-2026-11-17.md",
+      "line": 12,
+      "cited": "load-baseline.jsonl"
+    },
+    {
+      "file": "memory/mechanic/goal5-egress-v2-closure-2026-11-18.md",
+      "line": 6,
+      "cited": "egress-rules.json"
+    },
+    {
+      "file": "memory/mechanic/goal5-egress-v2-closure-2026-11-18.md",
+      "line": 11,
+      "cited": "egress-rules.json"
+    },
+    {
+      "file": "memory/mechanic/goal5-egress-v2-closure-2026-11-18.md",
+      "line": 12,
+      "cited": "egress_guard.py"
+    },
+    {
+      "file": "memory/mechanic/goal5-egress-v2-per-agent-2026-11-17.md",
+      "line": 4,
+      "cited": "egress_guard.py"
+    },
+    {
+      "file": "memory/mechanic/goal5-egress-v2-per-agent-2026-11-17.md",
+      "line": 4,
+      "cited": "egress-rules.json"
+    },
+    {
+      "file": "memory/mechanic/goal5-egress-v2-per-agent-2026-11-17.md",
+      "line": 7,
+      "cited": "egress-rules.json"
+    },
+    {
+      "file": "memory/mechanic/goal5-egress-v2-per-agent-2026-11-17.md",
+      "line": 17,
+      "cited": "egress_guard.py"
+    },
+    {
+      "file": "memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md",
+      "line": 6,
+      "cited": "probe_to_chg.py"
+    },
+    {
+      "file": "memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md",
+      "line": 7,
+      "cited": "probe-to-chg-state.json"
+    },
+    {
+      "file": "memory/mechanic/goal6-dep-capture-script-2026-11-18.md",
+      "line": 7,
+      "cited": "memory/ops/schtasks_dep_capture.py"
+    },
+    {
+      "file": "memory/mechanic/goal6-dep-capture-script-2026-11-18.md",
+      "line": 9,
+      "cited": "schtask_dep_gen.py"
+    },
+    {
+      "file": "memory/mechanic/goal6-dep-capture-script-2026-11-18.md",
+      "line": 10,
+      "cited": "memory/mechanic/dep-snapshots/week-N.csv"
+    },
+    {
+      "file": "memory/mechanic/goal6-dep-capture-script-2026-11-18.md",
+      "line": 10,
+      "cited": "week-N-graph.json"
+    },
+    {
+      "file": "memory/mechanic/goal6-dep-gen-baseline-verified-2026-11-18.md",
+      "line": 8,
+      "cited": "schtask_dep_gen.py --input week1-test.csv --prev-snapshot week0.json"
+    },
+    {
+      "file": "memory/mechanic/goal6-dep-gen-integration-test-2026-11-18.md",
+      "line": 7,
+      "cited": "schtask_dep_gen.py"
+    },
+    {
+      "file": "memory/mechanic/goal6-dep-gen-integration-test-2026-11-18.md",
+      "line": 20,
+      "cited": "blockers.md"
+    },
+    {
+      "file": "memory/mechanic/goal6-dep-gen-twoweek-pipeline-2026-11-18.md",
+      "line": 9,
+      "cited": "schtask_dep_gen.py"
+    },
+    {
+      "file": "memory/mechanic/goal6-egress-guard-2026-11-16.md",
+      "line": 6,
+      "cited": "egress_guard.py"
+    },
+    {
+      "file": "memory/mechanic/goal6-egress-guard-2026-11-16.md",
+      "line": 6,
+      "cited": "egress-rules.json"
+    },
+    {
+      "file": "memory/mechanic/goal7-host-state-endpoint-2026-11-17.md",
+      "line": 18,
+      "cited": "host_state.py"
+    },
+    {
+      "file": "memory/mechanic/goal8-chaos-drill-built-2026-11-18.md",
+      "line": 5,
+      "cited": "chaos-drill-state.json"
+    },
+    {
+      "file": "memory/mechanic/goal8-chaos-drill-readiness-2026-11-18.md",
+      "line": 24,
+      "cited": "memory/mechanic/chaos-drill-log.jsonl"
+    },
+    {
+      "file": "memory/mechanic/goal8-fleet-status-patch-staged-2026-11-19.md",
+      "line": 20,
+      "cited": "non-sandbox-queue.md"
+    },
+    {
+      "file": "memory/mechanic/goal8-fleet-status-relanded-2026-11-19.md",
+      "line": 28,
+      "cited": "py_compile agent_portal.py"
+    },
+    {
+      "file": "memory/mechanic/goal9-ops-gap-analysis-2026-11-17.md",
+      "line": 26,
+      "cited": "onboard_host.py"
+    },
+    {
+      "file": "memory/mechanic/goal9-runbook-audit-complete-2026-11-18.md",
+      "line": 5,
+      "cited": "cycle_check.py"
+    },
+    {
+      "file": "memory/mechanic/hotload-controller-built-2026-11-17.md",
+      "line": 3,
+      "cited": "hotload_controller.py"
+    },
+    {
+      "file": "memory/mechanic/load-probe-2026-11-17.md",
+      "line": 6,
+      "cited": "start /b python agent_portal.py"
+    },
+    {
+      "file": "memory/mechanic/mirror-revert-sentinel-contribution-2026-11-19.md",
+      "line": 7,
+      "cited": "revert-sentinel-log.jsonl"
+    },
+    {
+      "file": "memory/mechanic/mirror-revert-sentinel-contribution-2026-11-19.md",
+      "line": 10,
+      "cited": "mirror-revert-prevention-2026-11-18.md"
+    },
+    {
+      "file": "memory/mechanic/mirror-revert-sentinel-contribution-2026-11-19.md",
+      "line": 13,
+      "cited": "budget_gb/used_gb"
+    },
+    {
+      "file": "memory/mechanic/mirror-revert-sentinel-contribution-2026-11-19.md",
+      "line": 13,
+      "cited": "memory/mechanic/agent_portal.fleet-status.bak.py"
+    },
+    {
+      "file": "memory/mechanic/ops-runbook-gap-analysis-2026-11-17.md",
+      "line": 23,
+      "cited": "cycle_readiness.py"
+    },
+    {
+      "file": "memory/mechanic/pin-clobber-repair-2026-11-19.md",
+      "line": 8,
+      "cited": "..._CANONICAL_815d64fa70b5_2026-11-17x.html"
+    },
+    {
+      "file": "memory/mechanic/r28-apply-bundle.md",
+      "line": 3,
+      "cited": "runbook-notes.md"
+    },
+    {
+      "file": "memory/mechanic/reboot-drill-evidence-verify-2026-11-19.md",
+      "line": 6,
+      "cited": "goal_ledger.py"
+    },
+    {
+      "file": "memory/mechanic/red-white-reachability-2026-11-14.md",
+      "line": 10,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "line": 18,
+      "cited": "restart_portal.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "line": 33,
+      "cited": "cycle_check.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "line": 35,
+      "cited": "cycle_rotate.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "line": 47,
+      "cited": "cycle_check.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "line": 63,
+      "cited": "restart_portal.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "line": 64,
+      "cited": "cycle_check.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "line": 66,
+      "cited": "cycle_rotate.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "line": 70,
+      "cited": "cycle_check.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "line": 71,
+      "cited": "restart_portal.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "line": 76,
+      "cited": "cycle_check.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-draft-2026-11-18.md",
+      "line": 23,
+      "cited": "portal_restart_safe.py"
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-draft-2026-11-18.md",
+      "line": 26,
+      "cited": "cycle_transition_check.py"
+    },
+    {
+      "file": "memory/mechanic/smoke8-partial-red-2026-11-14.md",
+      "line": 4,
+      "cited": "smoke8_partial_red.py"
+    },
+    {
+      "file": "memory/mechanic/stale-claim-check-regex-fix-2026-11-18.md",
+      "line": 7,
+      "cited": "stale_claim_check.py"
+    },
+    {
+      "file": "memory/mechanic/stale-claim-check-regex-fix-2026-11-18.md",
+      "line": 12,
+      "cited": "memory/mechanic/chaos-drill-evidence.json"
+    },
+    {
+      "file": "memory/mechanic/stale-claim-fix-2026-11-19.md",
+      "line": 7,
+      "cited": "memory/mechanic/schtask_dep_gen.py"
+    },
+    {
+      "file": "memory/mechanic/stale-claim-fix-2026-11-19.md",
+      "line": 11,
+      "cited": "memory/ops/schtasks_dep_capture.py"
+    },
+    {
+      "file": "memory/mechanic/stale-claim-fix-2026-11-19.md",
+      "line": 15,
+      "cited": "stale_claim_check.py"
+    },
+    {
+      "file": "memory/mechanic/understanding-module-health-2026-11-18.md",
+      "line": 6,
+      "cited": "understanding.py"
+    },
+    {
+      "file": "memory/mechanic/white-rename-closeout-2026-11-14.md",
+      "line": 8,
+      "cited": "studio-api.md"
+    },
+    {
+      "file": "memory/mechanic/white-rename-closeout-2026-11-14.md",
+      "line": 8,
+      "cited": "instances.md"
+    },
+    {
+      "file": "memory/mechanic/white-rename-closeout-2026-11-14.md",
+      "line": 9,
+      "cited": "smoke8_partial_red_seat.json"
+    },
+    {
+      "file": "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md",
+      "line": 21,
+      "cited": "^N\\."
+    },
+    {
+      "file": "memory/ops/blockers.md",
+      "line": 17,
+      "cited": "build_verify_pin.py"
+    },
+    {
+      "file": "memory/ops/blockers.md",
+      "line": 59,
+      "cited": "live_verify2_g578.py"
+    },
+    {
+      "file": "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md",
+      "line": 3,
+      "cited": "probe_fleet_8099_r80.py"
+    },
+    {
+      "file": "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md",
+      "line": 23,
+      "cited": "_portal_pid.txt"
+    },
+    {
+      "file": "memory/ops/design-token-lint-workflow.md",
+      "line": 26,
+      "cited": "memory/ops/token_lint.py"
+    },
+    {
+      "file": "memory/ops/design-token-lint-workflow.md",
+      "line": 54,
+      "cited": "token_lint.py"
+    },
+    {
+      "file": "memory/ops/live-leg-runbook-2026-11-20.md",
+      "line": 19,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/ops/live-leg-runbook-2026-11-20.md",
+      "line": 21,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/ops/live-leg-runbook-2026-11-20.md",
+      "line": 41,
+      "cited": "live_hotload_cycle.py"
+    },
+    {
+      "file": "memory/ops/live-leg-runbook-2026-11-20.md",
+      "line": 47,
+      "cited": "perf-baseline.json"
+    },
+    {
+      "file": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+      "line": 26,
+      "cited": "reboot_dryrun_remotes.py"
+    },
+    {
+      "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+      "line": 7,
+      "cited": "probe_white_goals_r24.py"
+    },
+    {
+      "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+      "line": 11,
+      "cited": "lan_probe_result.txt"
+    },
+    {
+      "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+      "line": 11,
+      "cited": "probe_winrm_r17.txt"
+    },
+    {
+      "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+      "line": 14,
+      "cited": "_portal_pid.txt"
+    },
+    {
+      "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+      "line": 24,
+      "cited": "goal_provenance_report.json"
+    },
+    {
+      "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+      "line": 24,
+      "cited": "goals_data.json"
+    },
+    {
+      "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+      "line": 39,
+      "cited": "reboot_dryrun_remotes.py"
+    },
+    {
+      "file": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+      "line": 40,
+      "cited": "reboot_dryrun_r2.py"
+    },
+    {
+      "file": "memory/ops/memory-sync-spec-r13.md",
+      "line": 32,
+      "cited": "v1-upgrades-round-3.md"
+    },
+    {
+      "file": "memory/ops/mirror-revert-sentinel-design-2026-11-19.md",
+      "line": 32,
+      "cited": "memory/ops/revert-sentinel-log.jsonl"
+    },
+    {
+      "file": "memory/ops/mirror-revert-sentinel-design-2026-11-19.md",
+      "line": 39,
+      "cited": "revert-sentinel-log.jsonl"
+    },
+    {
+      "file": "memory/ops/mirror-revert-sentinel-design-2026-11-19.md",
+      "line": 42,
+      "cited": "budget_gb/used_gb"
+    },
+    {
+      "file": "memory/ops/mirror-revert-sentinel-design-2026-11-19.md",
+      "line": 42,
+      "cited": "memory/mechanic/agent_portal.fleet-status.bak.py"
+    },
+    {
+      "file": "memory/ops/mirror-revert-sentinel-design-2026-11-19.md",
+      "line": 45,
+      "cited": "revert-sentinel-log.jsonl"
+    },
+    {
+      "file": "memory/ops/non-sandbox-queue.md",
+      "line": 7,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/ops/non-sandbox-queue.md",
+      "line": 18,
+      "cited": "memory/mechanic/batch-tier-b-run.json"
+    },
+    {
+      "file": "memory/ops/non-sandbox-queue.md",
+      "line": 39,
+      "cited": "token_audit.py"
+    },
+    {
+      "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
+      "line": 5,
+      "cited": "index-patched-v3.html"
+    },
+    {
+      "file": "memory/ops/pdf-reporting.md",
+      "line": 3,
+      "cited": "_gen_report.py"
+    },
+    {
+      "file": "memory/ops/portal-down-2026-11-16.md",
+      "line": 6,
+      "cited": "_portal_pid.txt"
+    },
+    {
+      "file": "memory/ops/portal-down-2026-11-16.md",
+      "line": 13,
+      "cited": "~/.unsloth/..."
+    },
+    {
+      "file": "memory/ops/portal-down-2026-11-16.md",
+      "line": 14,
+      "cited": ".../.unsloth/studio/sandbox/_default"
+    },
+    {
+      "file": "memory/ops/portal-split-seams-2026-11-17.md",
+      "line": 32,
+      "cited": "portal/__init__.py"
+    },
+    {
+      "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+      "line": 3,
+      "cited": "reboot_dryrun_remotes.py"
+    },
+    {
+      "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+      "line": 17,
+      "cited": "firewall_fix.bat"
+    },
+    {
+      "file": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+      "line": 21,
+      "cited": "reboot_dryrun_remotes.py"
+    },
+    {
+      "file": "memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md",
+      "line": 64,
+      "cited": "memory/ops/selfprobe-result.json"
+    },
+    {
+      "file": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
+      "line": 14,
+      "cited": "cycle2-dependency-map.md"
+    },
+    {
+      "file": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
+      "line": 15,
+      "cited": "cycle2-kickoff-2026-11-16.md"
+    },
+    {
+      "file": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
+      "line": 16,
+      "cited": "scheduler-cycle6.md"
+    },
+    {
+      "file": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
+      "line": 17,
+      "cited": "designer-goal7-forecast-2026-11-17.md"
+    },
+    {
+      "file": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
+      "line": 18,
+      "cited": "forecast-mechanic1-adaptive-probe-2026-11-17.md"
+    },
+    {
+      "file": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
+      "line": 19,
+      "cited": "mechanic-goal4-forecast-2026-11-17.md"
+    },
+    {
+      "file": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
+      "line": 80,
+      "cited": "goal_ledger.py"
+    },
+    {
+      "file": "memory/ops/sla-report-2026-11-20.md",
+      "line": 8,
+      "cited": "memory/ops/portal-request-timings.jsonl"
+    },
+    {
+      "file": "memory/ops/sla-report-2026-11-20.md",
+      "line": 26,
+      "cited": "portal-request-timings.jsonl"
+    },
+    {
+      "file": "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
+      "line": 11,
+      "cited": "ref.json"
+    },
+    {
+      "file": "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
+      "line": 12,
+      "cited": "ref.jsonl"
+    },
+    {
+      "file": "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
+      "line": 33,
+      "cited": "cycle-N-report.md"
+    },
+    {
+      "file": "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
+      "line": 36,
+      "cited": "memory/scribe/MEMOR.md"
+    },
+    {
+      "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
+      "line": 11,
+      "cited": "ref.json"
+    },
+    {
+      "file": "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
+      "line": 12,
+      "cited": "ref.jsonl"
+    },
+    {
+      "file": "memory/ops/verifier-git-health-2026-11-15b.md",
+      "line": 11,
+      "cited": "MinGit-x/cmd/git.exe"
+    },
+    {
+      "file": "memory/ops/verifier-git-health-2026-11-15b.md",
+      "line": 21,
+      "cited": "MinGit-x/cmd/git.exe"
+    },
+    {
+      "file": "memory/ops/verifier-git-health-2026-11-15b.md",
+      "line": 23,
+      "cited": "mingit/cmd/git.exe"
+    },
+    {
+      "file": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
+      "line": 9,
+      "cited": "probe_white_reach_result.json"
+    },
+    {
+      "file": "memory/orchestrator/INDEX.md",
+      "line": 12,
+      "cited": "MEMOR.md"
+    },
+    {
+      "file": "memory/orchestrator/archivist-goal4-supersession-verify-2026-11-18.md",
+      "line": 28,
+      "cited": "supersession_check.py"
+    },
+    {
+      "file": "memory/orchestrator/archivist-goal4-supersession-verify-2026-11-18.md",
+      "line": 32,
+      "cited": "supersession_check.py"
+    },
+    {
+      "file": "memory/orchestrator/bg-goals-contribution-2026-11-18.md",
+      "line": 8,
+      "cited": "test_chaos_drill_sim.py"
+    },
+    {
+      "file": "memory/orchestrator/bg-goals-contribution-2026-11-18.md",
+      "line": 13,
+      "cited": "decay_score.py"
+    },
+    {
+      "file": "memory/orchestrator/browser-blocker-reconciliation-2026-11-19.md",
+      "line": 20,
+      "cited": "browser-acceptance-workaround.md"
+    },
+    {
+      "file": "memory/orchestrator/designer-goal10-print-stale-overclaim-2026-11-19.md",
+      "line": 33,
+      "cited": "goal9-tour-verified-2026-11-19.md"
+    },
+    {
+      "file": "memory/orchestrator/designer-goal10-print-stale-overclaim-2026-11-19.md",
+      "line": 34,
+      "cited": "tour.js"
+    },
+    {
+      "file": "memory/orchestrator/execute-engine+state-machine-2026-11-18.md",
+      "line": 5,
+      "cited": "_studio_get/_studio_post"
+    },
+    {
+      "file": "memory/orchestrator/goal1-hotload-tier-a-2026-11-20.md",
+      "line": 4,
+      "cited": "hotload_exec.py"
+    },
+    {
+      "file": "memory/orchestrator/goal1-hotload-tier-a-2026-11-20.md",
+      "line": 9,
+      "cited": "hotload_exec.py"
+    },
+    {
+      "file": "memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md",
+      "line": 25,
+      "cited": "py_compile agent_portal.py"
+    },
+    {
+      "file": "memory/orchestrator/mirror_repair_progress_2026-11-17.md",
+      "line": 4,
+      "cited": "mirror_repair.py"
+    },
+    {
+      "file": "memory/orchestrator/mirror_repair_progress_2026-11-17.md",
+      "line": 14,
+      "cited": ".mirror_repair_state.json"
+    },
+    {
+      "file": "memory/orchestrator/preflight-assist-mechanic-goal4-2026-11-18.md",
+      "line": 13,
+      "cited": "reboot-recovery.jsonl"
+    },
+    {
+      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+      "line": 5,
+      "cited": "retro_draft.py"
+    },
+    {
+      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+      "line": 40,
+      "cited": "modularity_check.py"
+    },
+    {
+      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+      "line": 42,
+      "cited": "build_registry.py"
+    },
+    {
+      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+      "line": 53,
+      "cited": "goal_cycle_auto.py"
+    },
+    {
+      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+      "line": 54,
+      "cited": "mirror_repair.py"
+    },
+    {
+      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+      "line": 58,
+      "cited": "hotline_triage.py"
+    },
+    {
+      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+      "line": 61,
+      "cited": "agents_schema.py"
+    },
+    {
+      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+      "line": 163,
+      "cited": "retro_draft.py"
+    },
+    {
+      "file": "memory/orchestrator/roster-diff-built-2026-11-18.md",
+      "line": 7,
+      "cited": "memory/fleet/roster-snapshots/cycle-N.json"
+    },
+    {
+      "file": "memory/orchestrator/slip-risk-endpoint-2026-11-18.md",
+      "line": 6,
+      "cited": "slip_prediction_table.json"
+    },
+    {
+      "file": "memory/orchestrator/stale-claim-mechanic-goal5-citation-fix-2026-11-19.md",
+      "line": 7,
+      "cited": "memory/mechanic/goal5-egress-v2-closure-verified-2026-11-18.md"
+    },
+    {
+      "file": "memory/orchestrator/stale-claim-scribe-todo-memor-typo-2026-11-19.md",
+      "line": 8,
+      "cited": "MEMOR.md"
+    },
+    {
+      "file": "memory/orchestrator/stale-claim-scribe-todo-memor-typo-2026-11-19.md",
+      "line": 18,
+      "cited": "memory/scribe/MEMOR.md"
+    },
+    {
+      "file": "memory/orchestrator/stale-claim-scribe-todo-memor-typo-2026-11-19.md",
+      "line": 25,
+      "cited": "scribe/MEMOR.md"
+    },
+    {
+      "file": "memory/orchestrator/white-apply-bundle-v2-r45.md",
+      "line": 9,
+      "cited": "ac_a2_live_leg_r20/r21_result.json"
+    },
+    {
+      "file": "memory/orchestrator/white-apply-bundle-v2-r45.md",
+      "line": 17,
+      "cited": "index-pointer-batch-r42.md"
+    },
+    {
+      "file": "memory/portal/architecture.md",
+      "line": 6,
+      "cited": "todo_done_parts/TODO_done_part_NNN.md"
+    },
+    {
+      "file": "memory/portal/architecture.md",
+      "line": 7,
+      "cited": "mingit/cmd/git.exe"
+    },
+    {
+      "file": "memory/portal/architecture.md",
+      "line": 57,
+      "cited": "uploads/uploads"
+    },
+    {
+      "file": "memory/portal/architecture.md",
+      "line": 147,
+      "cited": "chat_history_group.json"
+    },
+    {
+      "file": "memory/portal/increment2.md",
+      "line": 30,
+      "cited": "setBusyHint/clearBusyHint"
+    },
+    {
+      "file": "memory/portal/planning-2026-11-13.md",
+      "line": 41,
+      "cited": "mirror_canary.py"
+    },
+    {
+      "file": "memory/portal/planning-2026-11-13.md",
+      "line": 41,
+      "cited": "mirror_canary_result.json"
+    },
+    {
+      "file": "memory/portal/planning-2026-11-13.md",
+      "line": 55,
+      "cited": "r13_red_probe.txt"
+    },
+    {
+      "file": "memory/portal/split-design-agent-portal-2026-11-16.md",
+      "line": 15,
+      "cited": "portal_modules/constants.py"
+    },
+    {
+      "file": "memory/portal/testing.md",
+      "line": 12,
+      "cited": "../../etc/passwd"
+    },
+    {
+      "file": "memory/portal/upgrade-plan.md",
+      "line": 27,
+      "cited": "BUNDLE-SHA256.txt"
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "line": 81,
+      "cited": "uploads/..."
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "line": 91,
+      "cited": "UPGRADES.md"
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "line": 95,
+      "cited": "UPGRADES.md"
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "line": 97,
+      "cited": "UPGRADES.md"
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "line": 97,
+      "cited": "UPGRADES-r3.md"
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "line": 110,
+      "cited": "UPGRADES.md"
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "line": 114,
+      "cited": "UPGRADES.md"
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "line": 116,
+      "cited": "UPGRADES.md"
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "line": 116,
+      "cited": "UPGRADES-r3.md"
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "line": 120,
+      "cited": "UPGRADES-r3.md"
+    },
+    {
+      "file": "memory/projects/dcabots-setup-2026-11-14.md",
+      "line": 5,
+      "cited": "dcabots/README.md"
+    },
+    {
+      "file": "memory/projects/dcabots.md",
+      "line": 2,
+      "cited": "uploads/dcabots"
+    },
+    {
+      "file": "memory/projects/dcabots.md",
+      "line": 8,
+      "cited": "results/e14/caches/llm_responses.jsonl"
+    },
+    {
+      "file": "memory/projects/dcabots.md",
+      "line": 8,
+      "cited": "qwen/qwen3.8-27b"
+    },
+    {
+      "file": "memory/researcher/INDEX.md",
+      "line": 10,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/researcher/TODO.md",
+      "line": 29,
+      "cited": "md5sum index.html agents.json"
+    },
+    {
+      "file": "memory/researcher/a4a5-crossseat-verify-r39b-2026-11-14.md",
+      "line": 9,
+      "cited": "a4a5_sim.py"
+    },
+    {
+      "file": "memory/researcher/a4a5-crossseat-verify-r39b-2026-11-14.md",
+      "line": 9,
+      "cited": "apply_a4_a5_r35.py"
+    },
+    {
+      "file": "memory/researcher/a4a5-crossseat-verify-r39b-2026-11-14.md",
+      "line": 9,
+      "cited": "memory/builder/a4a5-apply-r35-closeout-\u2026"
+    },
+    {
+      "file": "memory/researcher/a4a5-crossseat-verify-r39b-2026-11-14.md",
+      "line": 9,
+      "cited": "memory/verifier/a4a5-verify-r38-\u2026"
+    },
+    {
+      "file": "memory/researcher/a4a5-crossseat-verify-r39b-2026-11-14.md",
+      "line": 9,
+      "cited": "a4a5_sim.py"
+    },
+    {
+      "file": "memory/researcher/ac-a2-live-leg-status-final-2026-11-14.md",
+      "line": 8,
+      "cited": "_canary_remote.txt"
+    },
+    {
+      "file": "memory/researcher/ac-a2-r24-disk-reconcile-2026-11-14.md",
+      "line": 15,
+      "cited": "repin_root_index.py"
+    },
+    {
+      "file": "memory/researcher/ac-a2-r24-disk-reconcile-2026-11-14.md",
+      "line": 17,
+      "cited": "panel-discipline-r20.md"
+    },
+    {
+      "file": "memory/researcher/ac-a2-r24-disk-reconcile-2026-11-14.md",
+      "line": 21,
+      "cited": "_canary_remote.txt"
+    },
+    {
+      "file": "memory/researcher/ac-a2-r26-convergence-check-2026-11-14.md",
+      "line": 8,
+      "cited": "panel-discipline-r20.md"
+    },
+    {
+      "file": "memory/researcher/archivist-goal1-orphan-remediation-verify-2026-11-20.md",
+      "line": 15,
+      "cited": "index_check.py"
+    },
+    {
+      "file": "memory/researcher/archivist-goal4-actionable-orphan-count-2026-11-19.md",
+      "line": 7,
+      "cited": "kg_integrity.py"
+    },
+    {
+      "file": "memory/researcher/archivist-goal4-actionable-orphan-count-2026-11-19.md",
+      "line": 25,
+      "cited": "kg-report-cycle5.md"
+    },
+    {
+      "file": "memory/researcher/archivist-goal4-linkpass-and-orderbug-2026-11-19.md",
+      "line": 32,
+      "cited": "kg_integrity.py"
+    },
+    {
+      "file": "memory/researcher/browser-blocker-corrected-2026-11-19.md",
+      "line": 17,
+      "cited": "memory/ops/selfprobe-result.json"
+    },
+    {
+      "file": "memory/researcher/dcabots-reprompt-atlasq8-gate-r49.md",
+      "line": 2,
+      "cited": "white-apply-bundle-v2-r45.md"
+    },
+    {
+      "file": "memory/researcher/dcabots-reprompt-precheck-2026-11-14.md",
+      "line": 7,
+      "cited": "projects/dcabots/dcabots/farm.py"
+    },
+    {
+      "file": "memory/researcher/dcabots-reprompt-precheck-2026-11-14.md",
+      "line": 14,
+      "cited": "results/e14/caches/llm_responses.jsonl"
+    },
+    {
+      "file": "memory/researcher/dcabots-reprompt-precheck-2026-11-14.md",
+      "line": 14,
+      "cited": "qwen/qwen3.8-27b"
+    },
+    {
+      "file": "memory/researcher/dcabots-reprompt-precheck-2026-11-14.md",
+      "line": 19,
+      "cited": "webapp.py"
+    },
+    {
+      "file": "memory/researcher/dcabots-reprompt-precheck-2026-11-14.md",
+      "line": 19,
+      "cited": "requirements.txt"
+    },
+    {
+      "file": "memory/researcher/designer-goal1-2-false-verify-audit-2026-11-20.md",
+      "line": 9,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/researcher/designer-goal1-2-false-verify-audit-2026-11-20.md",
+      "line": 9,
+      "cited": "tokens.css"
+    },
+    {
+      "file": "memory/researcher/designer-goal8-icon-static-verify-2026-11-19.md",
+      "line": 12,
+      "cited": "\u2192 TODO_completed.md"
+    },
+    {
+      "file": "memory/researcher/e14-r41-reverify-2026-11-14.md",
+      "line": 5,
+      "cited": "researcher-r41-e14-probe.py"
+    },
+    {
+      "file": "memory/researcher/e14-r41-reverify-2026-11-14.md",
+      "line": 6,
+      "cited": "projects/dcabots/results/e14/caches/llm_responses.jsonl"
+    },
+    {
+      "file": "memory/researcher/e14-r41-reverify-2026-11-14.md",
+      "line": 7,
+      "cited": "projects/dcabots/dcabots/e14.py"
+    },
+    {
+      "file": "memory/researcher/e14-r41-reverify-2026-11-14.md",
+      "line": 9,
+      "cited": "researcher-r41-e14-probe.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
+      "line": 50,
+      "cited": "goal_cycle_check.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
+      "line": 50,
+      "cited": "todo_freshness_check.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
+      "line": 51,
+      "cited": "citation_monitor_v2.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
+      "line": 51,
+      "cited": "model_benchmark.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
+      "line": 51,
+      "cited": "open_questions_flag.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
+      "line": 23,
+      "cited": "citation_monitor_v2.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
+      "line": 24,
+      "cited": "model_benchmark.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
+      "line": 24,
+      "cited": "benchmark-summary-2026-11-16.md"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
+      "line": 25,
+      "cited": "open_questions_flag.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
+      "line": 55,
+      "cited": "citation_monitor_v2.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
+      "line": 56,
+      "cited": "model_benchmark.py"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
+      "line": 56,
+      "cited": "benchmark-summary-2026-11-16.md"
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
+      "line": 57,
+      "cited": "open_questions_flag.py"
+    },
+    {
+      "file": "memory/researcher/farm-relpath-diagnosis-2026-11-14.md",
+      "line": 22,
+      "cited": "dcabots/protocol.py"
+    },
+    {
+      "file": "memory/researcher/farm-relpath-diagnosis-2026-11-14.md",
+      "line": 22,
+      "cited": "paths.py"
+    },
+    {
+      "file": "memory/researcher/goal9-tour-stale-evidence-2026-11-19.md",
+      "line": 20,
+      "cited": "index_html_CANONICAL_fc0dd7783f1a_2026-11-18i.html"
+    },
+    {
+      "file": "memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md",
+      "line": 17,
+      "cited": "ArnoldPieterse/agent-portal"
+    },
+    {
+      "file": "memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md",
+      "line": 23,
+      "cited": "hosts.md"
+    },
+    {
+      "file": "memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md",
+      "line": 44,
+      "cited": "!/memory_mirror_hosts.json"
+    },
+    {
+      "file": "memory/researcher/kg-drift-and-cycle-nondeterminism-2026-11-20.md",
+      "line": 22,
+      "cited": "e2e-truncation-integration-2026-11-15.md"
+    },
+    {
+      "file": "memory/researcher/kg-drift-and-cycle-nondeterminism-2026-11-20.md",
+      "line": 22,
+      "cited": "all-goals-2026-11-13.md"
+    },
+    {
+      "file": "memory/researcher/kg-drift-and-cycle-nondeterminism-2026-11-20.md",
+      "line": 22,
+      "cited": "design-tokens.md"
+    },
+    {
+      "file": "memory/researcher/kg_integrity_to_vs_target-2026-11-19.md",
+      "line": 8,
+      "cited": "from/to/kind"
+    },
+    {
+      "file": "memory/researcher/kg_integrity_to_vs_target-2026-11-19.md",
+      "line": 9,
+      "cited": "from/target/marker"
+    },
+    {
+      "file": "memory/researcher/live-leg-runbook-contribution-2026-11-20.md",
+      "line": 10,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/researcher/memory-health-endpoint-reverted-2026-11-16.md",
+      "line": 16,
+      "cited": "\"/api/memory-health\""
+    },
+    {
+      "file": "memory/researcher/mirror-revert-closure-runbook-2026-11-17.md",
+      "line": 32,
+      "cited": "memory/researcher/mirror-revert-analysis-2026-11-24.md"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-closure-runbook-2026-11-17.md",
+      "line": 54,
+      "cited": "Z:\\mirror_events.log"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-closure-runbook-2026-11-17.md",
+      "line": 65,
+      "cited": "Z:\\mirror_events.log"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-fix-impact-estimate-2026-11-18.md",
+      "line": 22,
+      "cited": "test_sync_epoch_integration.py"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-fix1-epoch-review-divergences-2026-11-18.md",
+      "line": 36,
+      "cited": "memory_mirror_epoch.py"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-fix1-live-wiring-gap-2026-11-18.md",
+      "line": 14,
+      "cited": "memory_mirror_ownership.json"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-fix1-live-wiring-gap-2026-11-18.md",
+      "line": 14,
+      "cited": "memory_mirror_epoch.json"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-fix1-promotion-gap-2026-11-18.md",
+      "line": 17,
+      "cited": "memory_mirror_epoch.py"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-fix1-promotion-gap-2026-11-18.md",
+      "line": 23,
+      "cited": "memory_mirror_epoch.py"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-instrumentation-2026-11-17.md",
+      "line": 39,
+      "cited": "index_html_CANONICAL_043ff4d68827_2026-11-17b.html"
+    },
+    {
+      "file": "memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.md",
+      "line": 7,
+      "cited": "Z:\\mirror_events.log"
+    },
+    {
+      "file": "memory/researcher/open-questions-log.md",
+      "line": 129,
+      "cited": "mingit/cmd/git.exe"
+    },
+    {
+      "file": "memory/researcher/outside-click-false-alarm-r76-2026-11-14.md",
+      "line": 13,
+      "cited": "index_v22.html"
+    },
+    {
+      "file": "memory/researcher/outside-click-false-alarm-r76-2026-11-14.md",
+      "line": 21,
+      "cited": "ac-a2-1-ruling.md"
+    },
+    {
+      "file": "memory/researcher/outside-click-false-alarm-r76-2026-11-14.md",
+      "line": 22,
+      "cited": "apply_a4_a5_r35.py"
+    },
+    {
+      "file": "memory/researcher/pid-10692-provenance-and-probe-wall-2026-11-14.md",
+      "line": 4,
+      "cited": "\"$new\" | Set-Content _portal_pid.txt"
+    },
+    {
+      "file": "memory/researcher/pid-10692-provenance-and-probe-wall-2026-11-14.md",
+      "line": 5,
+      "cited": "_portal_pid.txt"
+    },
+    {
+      "file": "memory/researcher/pid-10692-provenance-and-probe-wall-2026-11-14.md",
+      "line": 19,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/researcher/pin-consistency-check-2026-11-17.md",
+      "line": 11,
+      "cited": "_2026-11-17x.html"
+    },
+    {
+      "file": "memory/researcher/probe-canonical-pin-correction-2026-11-14.md",
+      "line": 2,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/researcher/probe-canonical-pin-correction-2026-11-14.md",
+      "line": 5,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/researcher/probe-canonical-pin-correction-2026-11-14.md",
+      "line": 22,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/researcher/probe-canonical-pin-correction-2026-11-14.md",
+      "line": 22,
+      "cited": "_r21_result.json"
+    },
+    {
+      "file": "memory/researcher/r20-lane-status-2026-11-14.md",
+      "line": 7,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/researcher/r20-lane-status-2026-11-14.md",
+      "line": 26,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/researcher/r20-lane-status-2026-11-14.md",
+      "line": 27,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/researcher/r27-probe-n-semantics-2026-11-14.md",
+      "line": 21,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/researcher/r27b-live-leg-pass-condition-2026-11-14.md",
+      "line": 5,
+      "cited": "DCABOTS-MOVED.md"
+    },
+    {
+      "file": "memory/researcher/r27b-live-leg-pass-condition-2026-11-14.md",
+      "line": 6,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/researcher/r27b-live-leg-pass-condition-2026-11-14.md",
+      "line": 8,
+      "cited": "_canary_remote.txt"
+    },
+    {
+      "file": "memory/researcher/r27b-live-leg-pass-condition-2026-11-14.md",
+      "line": 16,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/researcher/r56-mirror-confirmation-2026-11-14.md",
+      "line": 7,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/researcher/r61-reconcile-2026-11-14.md",
+      "line": 10,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/researcher/recovery-matrix-verify-2026-11-19.md",
+      "line": 12,
+      "cited": "memory/mirror_log.jsonl"
+    },
+    {
+      "file": "memory/researcher/recovery-matrix-verify-2026-11-19.md",
+      "line": 12,
+      "cited": "memory/memory_mirror.log"
+    },
+    {
+      "file": "memory/researcher/residency-matrix-offline-surface-2026-11-20.md",
+      "line": 29,
+      "cited": "residency-matrix.md"
+    },
+    {
+      "file": "memory/researcher/selfprobe-citation-status-2026-11-19.md",
+      "line": 7,
+      "cited": "memory/ops/selfprobe-result.json"
+    },
+    {
+      "file": "memory/researcher/selfprobe-citation-status-2026-11-19.md",
+      "line": 36,
+      "cited": "memory/ops/selfprobe-result.json"
+    },
+    {
+      "file": "memory/researcher/sla-goal8-closure-integrity-check-2026-11-18.md",
+      "line": 29,
+      "cited": "instances.md"
+    },
+    {
+      "file": "memory/researcher/sla-goal8-closure-integrity-check-2026-11-18.md",
+      "line": 29,
+      "cited": "studio-api.md"
+    },
+    {
+      "file": "memory/researcher/sla-report-cycle5-stale-citation-resolved-2026-11-19.md",
+      "line": 6,
+      "cited": "memory/researcher/sla-report-cycle5.md"
+    },
+    {
+      "file": "memory/researcher/sla-report-cycle5-stale-citation-resolved-2026-11-19.md",
+      "line": 11,
+      "cited": "memory/researcher/sla-report-cycle5.md"
+    },
+    {
+      "file": "memory/researcher/stamp-target-correction-r75-2026-11-14.md",
+      "line": 6,
+      "cited": "index_html_stamp_final_107cbd93.html"
+    },
+    {
+      "file": "memory/researcher/stamp-target-correction-r75-2026-11-14.md",
+      "line": 18,
+      "cited": "white-apply-bundle-v2-r45.md"
+    },
+    {
+      "file": "memory/researcher/stamp-target-correction-r75-2026-11-14.md",
+      "line": 21,
+      "cited": "white_realias_result.json"
+    },
+    {
+      "file": "memory/researcher/stamp-target-correction-r75-2026-11-14.md",
+      "line": 21,
+      "cited": "ac_a2_live_leg_r20|21_result.json"
+    },
+    {
+      "file": "memory/researcher/stamp-target-correction-r75-2026-11-14.md",
+      "line": 21,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/researcher/sync-semantics-spec-2026-11-17.md",
+      "line": 10,
+      "cited": "memory_mirror_ownership.json"
+    },
+    {
+      "file": "memory/researcher/sync-semantics-spec-2026-11-17.md",
+      "line": 35,
+      "cited": "memory_mirror_epoch.json"
+    },
+    {
+      "file": "memory/researcher/sync-semantics-spec-2026-11-17.md",
+      "line": 229,
+      "cited": "memory_mirror_ownership.json"
+    },
+    {
+      "file": "memory/researcher/sync-semantics-spec-2026-11-17.md",
+      "line": 230,
+      "cited": "memory_mirror_epoch.json"
+    },
+    {
+      "file": "memory/researcher/sync-semantics-spec-2026-11-17.md",
+      "line": 306,
+      "cited": "memory_mirror_ownership.json"
+    },
+    {
+      "file": "memory/researcher/sync-semantics-spec-2026-11-17.md",
+      "line": 307,
+      "cited": "memory_mirror_epoch.json"
+    },
+    {
+      "file": "memory/researcher/synthesis-index-canonical-r73-24of24-2026-11-14.md",
+      "line": 16,
+      "cited": "2026-11-14-planning-meeting.md"
+    },
+    {
+      "file": "memory/researcher/thirdseat-measurement-vehicle-audit-r68-2026-11-14.md",
+      "line": 8,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/researcher/thirdseat-measurement-vehicle-audit-r68-2026-11-14.md",
+      "line": 8,
+      "cited": "white_realias_result.json"
+    },
+    {
+      "file": "memory/researcher/tooling-landscape-scan-2026-11-17.md",
+      "line": 14,
+      "cited": "notify-rs/notify"
+    },
+    {
+      "file": "memory/researcher/unified-loader-offline-surface-2026-11-20.md",
+      "line": 22,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/researcher/unified-loader-offline-surface-2026-11-20.md",
+      "line": 22,
+      "cited": "Z:\\elev.py"
+    },
+    {
+      "file": "memory/researcher/white-pass-crosscheck-r69-2026-11-14.md",
+      "line": 14,
+      "cited": "white_realias_result.json"
+    },
+    {
+      "file": "memory/researcher/white-pass-crosscheck-r69-2026-11-14.md",
+      "line": 15,
+      "cited": "ac_a2_live_leg_r20/r21_result.json"
+    },
+    {
+      "file": "memory/researcher/white-pass-crosscheck-r69-2026-11-14.md",
+      "line": 16,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/scheme/goal3-ledger-reconciled-2026-11-19.md",
+      "line": 10,
+      "cited": "handoff_template.md"
+    },
+    {
+      "file": "memory/scheme/goal3-ledger-reconciled-2026-11-19.md",
+      "line": 10,
+      "cited": "validate_handoff.py"
+    },
+    {
+      "file": "memory/scheme/goal3-ledger-reconciled-2026-11-19.md",
+      "line": 11,
+      "cited": "_test_handoff_1/2/3.md"
+    },
+    {
+      "file": "memory/scheme/goal3-ledger-reconciled-2026-11-19.md",
+      "line": 11,
+      "cited": "goal3-handoff-template-evidence-2026-11-18.md"
+    },
+    {
+      "file": "memory/scribe/TODO.md",
+      "line": 5,
+      "cited": "memory/agents/INDEX.md"
+    },
+    {
+      "file": "memory/scribe/_test_handoff_2.md",
+      "line": 24,
+      "cited": "memory/builder/api-fleet-health.md"
+    },
+    {
+      "file": "memory/scribe/_v2_fix/idx_bad.md",
+      "line": 1,
+      "cited": "memory/ghost/nonexistent_file_xyz.md"
+    },
+    {
+      "file": "memory/scribe/assist-archivist-goal2-dead-rate-analysis-2026-11-19.md",
+      "line": 36,
+      "cited": "citation_audit_v2.py"
+    },
+    {
+      "file": "memory/scribe/compression-fidelity-audit2-2026-11-18.md",
+      "line": 12,
+      "cited": "sot_audit.py"
+    },
+    {
+      "file": "memory/scribe/compression-fidelity-audit2-prep-2026-11-18.md",
+      "line": 20,
+      "cited": "compression-fidelity-audit-2026-11-25.md"
+    },
+    {
+      "file": "memory/scribe/cycle9-narrative-discrepancy-resolved-2026-11-18.md",
+      "line": 35,
+      "cited": "goal_ledger.py"
+    },
+    {
+      "file": "memory/scribe/durable-check-delta-2026-11-18.md",
+      "line": 19,
+      "cited": "rogue_leaf.md"
+    },
+    {
+      "file": "memory/scribe/durable-check-delta-2026-11-18.md",
+      "line": 19,
+      "cited": ".../memory/rogue_leaf.md"
+    },
+    {
+      "file": "memory/scribe/g3-hotfile-guard-evidence-2026-11-16.md",
+      "line": 18,
+      "cited": "memory/scribe/archive/hot-notes-trimmed-2026-11-16.md"
+    },
+    {
+      "file": "memory/scribe/g8-round-record-prefill-2026-11-16.md",
+      "line": 7,
+      "cited": "_portal_pid.txt"
+    },
+    {
+      "file": "memory/scribe/g8-round-record-prefill-2026-11-16.md",
+      "line": 7,
+      "cited": "index_check.py"
+    },
+    {
+      "file": "memory/scribe/goal8-voice-consistency-evidence-2026-11-18.md",
+      "line": 21,
+      "cited": "dcabots/intake.py"
+    },
+    {
+      "file": "memory/scribe/handoff_template.md",
+      "line": 31,
+      "cited": "path/to/file1"
+    },
+    {
+      "file": "memory/scribe/handoff_template.md",
+      "line": 32,
+      "cited": "path/to/file2"
+    },
+    {
+      "file": "memory/scribe/handoff_test2.md",
+      "line": 25,
+      "cited": "memory/mechanic/net-probe-latest.md"
+    },
+    {
+      "file": "memory/scribe/load-probe-guard-verify-2026-11-17.md",
+      "line": 10,
+      "cited": "load_probe.py"
+    },
+    {
+      "file": "memory/scribe/memory-hygiene-2026-W47.md",
+      "line": 33,
+      "cited": "kg_state.json"
+    },
+    {
+      "file": "memory/scribe/memory-hygiene-2026-W47.md",
+      "line": 34,
+      "cited": "knowledge_graph_delta.jsonl"
+    },
+    {
+      "file": "memory/scribe/memory-hygiene-2026-W47.md",
+      "line": 35,
+      "cited": "decay-report.md"
+    },
+    {
+      "file": "memory/scribe/memory-hygiene-2026-W47.md",
+      "line": 36,
+      "cited": "manifest-20261118.json"
+    },
+    {
+      "file": "memory/scribe/open-items-scan-scoping-fix-2026-11-19.md",
+      "line": 24,
+      "cited": "goal_ledger.py"
+    },
+    {
+      "file": "memory/scribe/stale-claim-builder-handoff-g2-2026-11-18.md",
+      "line": 11,
+      "cited": "memory/builder/uploads_mirror_roundtrip.py"
+    },
+    {
+      "file": "memory/scribe/stale-claim-builder-handoff-g2-2026-11-18.md",
+      "line": 19,
+      "cited": "stale_claim_check.py"
+    },
+    {
+      "file": "memory/scribe/stale-claim-builder-handoff-g2-2026-11-18.md",
+      "line": 22,
+      "cited": "uploads_mirror_roundtrip.py"
+    },
+    {
+      "file": "memory/scribe/stale-claim-builder-handoff-g2-2026-11-18.md",
+      "line": 25,
+      "cited": "memory/builder/uploads_mirror_roundtrip.py"
+    },
+    {
+      "file": "memory/scribe/stale-claim-cycle2-kickoff-ledger-path-2026-11-19.md",
+      "line": 10,
+      "cited": "memory/goals/goal_ledger.json"
+    },
+    {
+      "file": "memory/scribe/stale-claim-researcher-sla-cycle5-closed-2026-11-19.md",
+      "line": 6,
+      "cited": "memory/researcher/sla-report-cycle5.md"
+    },
+    {
+      "file": "memory/scribe/stale-claim-researcher-sla-cycle5-closed-2026-11-19.md",
+      "line": 19,
+      "cited": "sla-report-cycle5.md"
+    },
+    {
+      "file": "memory/scribe/stale-claim-researcher-sla-cycle5-closed-2026-11-19.md",
+      "line": 20,
+      "cited": "sla-report-cycle6.md"
+    },
+    {
+      "file": "memory/scribe/supersession-pointer-spec.md",
+      "line": 13,
+      "cited": "memory/synthesis/2026-11-17-canonical.md"
+    },
+    {
+      "file": "memory/scribe/supersession-pointer-spec.md",
+      "line": 36,
+      "cited": "memory/portal/upgrades-2026-11-12"
+    },
+    {
+      "file": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+      "line": 7,
+      "cited": "2026-11-14-planning-meeting.md"
+    },
+    {
+      "file": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+      "line": 7,
+      "cited": "2026-11-14-planning-meeting.md"
+    },
+    {
+      "file": "memory/synthesis/2026-11-12-consolidated-state.md",
+      "line": 32,
+      "cited": "memory/scribe/index_html_pre-r14-ac5e1560\u2026adb.html"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+      "line": 10,
+      "cited": "uploads\\dcabots"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+      "line": 10,
+      "cited": "webapp.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+      "line": 10,
+      "cited": "requirements.txt"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+      "line": 11,
+      "cited": "dcabots/intake.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+      "line": 23,
+      "cited": "webapp.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+      "line": 23,
+      "cited": "requirements.txt"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+      "line": 26,
+      "cited": "dcabots/README.md"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+      "line": 26,
+      "cited": "projects/dcabots/INTEGRATION.md"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
+      "line": 11,
+      "cited": "goal-dashboard.html"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
+      "line": 12,
+      "cited": "goals_api.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
+      "line": 24,
+      "cited": "goal_ledger.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
+      "line": 41,
+      "cited": "goal_ledger.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-r57-closeout.md",
+      "line": 9,
+      "cited": "goals_api.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-r57-closeout.md",
+      "line": 10,
+      "cited": "goals_data.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-r57-closeout.md",
+      "line": 11,
+      "cited": "goal-dashboard.html"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-r57-closeout.md",
+      "line": 21,
+      "cited": "goals_api.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-r57-closeout.md",
+      "line": 26,
+      "cited": "goals_data.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-final-closeout-supersession.md",
+      "line": 8,
+      "cited": "white-apply-bundle-v2-r45.md"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-final-closeout-supersession.md",
+      "line": 11,
+      "cited": "_canary_remote.txt"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-final-closeout-supersession.md",
+      "line": 20,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-final-closeout.md",
+      "line": 12,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+      "line": 13,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+      "line": 13,
+      "cited": "_r50prev.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+      "line": 16,
+      "cited": "probe_fleet_1114b.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-portal-down-state-change.md",
+      "line": 16,
+      "cited": "arnold-restart-r8.ps1"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+      "line": 8,
+      "cited": "memory/mechanic/smoke8_partial_red_seat.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+      "line": 11,
+      "cited": "mirror_canary.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+      "line": 11,
+      "cited": "mirror_canary_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+      "line": 9,
+      "cited": "mirror_canary.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+      "line": 9,
+      "cited": "mirror_canary_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+      "line": 17,
+      "cited": "_canary_remote.txt"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r27-round-record.md",
+      "line": 14,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r27-round-record.md",
+      "line": 15,
+      "cited": "white_load_q8_r21_dualpath.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+      "line": 14,
+      "cited": "ac_a2_live_leg_r21_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+      "line": 15,
+      "cited": "probe_white_reach.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+      "line": 10,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+      "line": 11,
+      "cited": "memory/agents/INDEX"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "line": 7,
+      "cited": "probe_black_alias_r37.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "line": 7,
+      "cited": "probe_black_alias_r37_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "line": 26,
+      "cited": "ac_a2_live_leg_r21.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r40-round-record.md",
+      "line": 6,
+      "cited": "apply_a4_a5_r35.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r40-round-record.md",
+      "line": 7,
+      "cited": "persist_a4a5_candidate_r40.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r40-round-record.md",
+      "line": 9,
+      "cited": "probe_black_alias_r37_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r40-round-record.md",
+      "line": 19,
+      "cited": "persist_a4a5_candidate_r40.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r41-closeout.md",
+      "line": 11,
+      "cited": "index_html_a4a5_candidate_45323d09.html"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r41-closeout.md",
+      "line": 11,
+      "cited": "apply_a4_a5_r35_pinned_copy.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+      "line": 15,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+      "line": 15,
+      "cited": "ac_a2_live_leg_r21.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r56-round-record.md",
+      "line": 18,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r56-round-record.md",
+      "line": 22,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r56-round-record.md",
+      "line": 22,
+      "cited": "_r55prev.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "line": 10,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "line": 16,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-evolution-artifact-gap.md",
+      "line": 3,
+      "cited": "verifier-evolution-status-2026-11-15.txt"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-public-repo-ip-decision.md",
+      "line": 5,
+      "cited": "github.com/ArnoldPieterse/agent-portal"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-scribe-goal-proposals.md",
+      "line": 10,
+      "cited": "index_check.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-scribe-goal-proposals.md",
+      "line": 15,
+      "cited": "goal-dashboard.html"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-status-report.md",
+      "line": 9,
+      "cited": "_portal_pid.txt"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-status-report.md",
+      "line": 12,
+      "cited": "goal_provenance.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-status-report.md",
+      "line": 31,
+      "cited": "_apply_goals_patch.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-status-report.md",
+      "line": 31,
+      "cited": "goals_data.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-wedge-recovery-portal-down.md",
+      "line": 9,
+      "cited": "user_messages.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-wedge-recovery-portal-down.md",
+      "line": 12,
+      "cited": "recover_force_result.json"
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-contradiction-rulings.md",
+      "line": 6,
+      "cited": "sot_audit.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-r1-round-record-DRAFT.md",
+      "line": 33,
+      "cited": "index_check.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-r1-round-record.md",
+      "line": 33,
+      "cited": "index_check.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-17-pin-consistency-check.md",
+      "line": 11,
+      "cited": "index_html_CANONICAL_043ff4d68827_2026-11-17b.html"
+    },
+    {
+      "file": "memory/synthesis/2026-11-17-r1-round-record-DRAFT.md",
+      "line": 31,
+      "cited": "index_check.py"
+    },
+    {
+      "file": "memory/synthesis/2026-11-17-r2-round-record-DRAFT.md",
+      "line": 31,
+      "cited": "index_check.py"
+    },
+    {
+      "file": "memory/synthesis/planning-meeting-minutes-v2-2026-11-14.md",
+      "line": 13,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/synthesis/planning-meeting-minutes-v2-2026-11-14.md",
+      "line": 13,
+      "cited": "_r50prev.json"
+    },
+    {
+      "file": "memory/synthesis/planning-meeting-minutes-v2-2026-11-14.md",
+      "line": 16,
+      "cited": "probe_fleet_1114b.py"
+    },
+    {
+      "file": "memory/verifier/INDEX.md",
+      "line": 5,
+      "cited": "goal9-perf-radar-backend-done-2026-11-17.md"
+    },
+    {
+      "file": "memory/verifier/MEMORY.md",
+      "line": 13,
+      "cited": "git-toolkit/init_repo.py"
+    },
+    {
+      "file": "memory/verifier/MEMORY.md",
+      "line": 15,
+      "cited": "portal-upgrade/verify_drop_env.py"
+    },
+    {
+      "file": "memory/verifier/MEMORY.md",
+      "line": 37,
+      "cited": "verifier/goals-2026-11-13.md"
+    },
+    {
+      "file": "memory/verifier/a4a5-candidate-persisted-r40-2026-11-14.md",
+      "line": 5,
+      "cited": "apply_a4_a5_r35.py"
+    },
+    {
+      "file": "memory/verifier/a4a5-candidate-persisted-r40-2026-11-14.md",
+      "line": 10,
+      "cited": "a4a5_sim.py"
+    },
+    {
+      "file": "memory/verifier/a4a5-candidate-persisted-r40-2026-11-14.md",
+      "line": 19,
+      "cited": "persist_a4a5_candidate_r40.py"
+    },
+    {
+      "file": "memory/verifier/a4a5-candidate-persisted-r40-2026-11-14.md",
+      "line": 23,
+      "cited": "ac_a2_live_leg_r20/r21_result.json"
+    },
+    {
+      "file": "memory/verifier/a4a5-candidate-persisted-r40-2026-11-14.md",
+      "line": 25,
+      "cited": "index-pointer-handoff-r38.md"
+    },
+    {
+      "file": "memory/verifier/a4a5-candidate-persisted-r40-2026-11-14.md",
+      "line": 31,
+      "cited": "ac-a2-2-console-clean-criteria.md"
+    },
+    {
+      "file": "memory/verifier/a4a5-lineage-repro-r39-2026-11-14.md",
+      "line": 5,
+      "cited": "ac_a2_live_leg_r20/r21_result.json"
+    },
+    {
+      "file": "memory/verifier/a4a5-lineage-repro-r39-2026-11-14.md",
+      "line": 12,
+      "cited": "a4a5_sim.py"
+    },
+    {
+      "file": "memory/verifier/a4a5-lineage-repro-r39-2026-11-14.md",
+      "line": 12,
+      "cited": "a4a5_sim_out.html"
+    },
+    {
+      "file": "memory/verifier/a4a5-lineage-repro-r39-2026-11-14.md",
+      "line": 20,
+      "cited": "apply_a4_a5_r35.py"
+    },
+    {
+      "file": "memory/verifier/a4a5-lineage-repro-r39-2026-11-14.md",
+      "line": 21,
+      "cited": "__pycache__/a4a5_sim.cpython-313.pyc"
+    },
+    {
+      "file": "memory/verifier/a4a5-verify-r38-2026-11-14.md",
+      "line": 3,
+      "cited": "apply_a4_a5_r35.py"
+    },
+    {
+      "file": "memory/verifier/a6b-candidate-diff-and-staging-audit-2026-11-14.md",
+      "line": 6,
+      "cited": "memory/verifier/...ec095107...html"
+    },
+    {
+      "file": "memory/verifier/a6b-candidate-diff-and-staging-audit-2026-11-14.md",
+      "line": 23,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/a6b-candidate-diff-and-staging-audit-2026-11-14.md",
+      "line": 24,
+      "cited": "ac_a2_live_leg_r21.py"
+    },
+    {
+      "file": "memory/verifier/ac-a2-2-live-leg-r82-seat-correction-2026-11-14.md",
+      "line": 4,
+      "cited": "ac_a2_live_leg_r21.py"
+    },
+    {
+      "file": "memory/verifier/ac-a2-2-live-leg-r82-seat-correction-2026-11-14.md",
+      "line": 9,
+      "cited": "verifier_black_lan_probe_r82.py"
+    },
+    {
+      "file": "memory/verifier/ac-a2-2-live-leg-r82-seat-correction-2026-11-14.md",
+      "line": 9,
+      "cited": "verifier_black_lan_probe_r82_result.json"
+    },
+    {
+      "file": "memory/verifier/ac-a2-2-live-leg-r82-seat-correction-2026-11-14.md",
+      "line": 20,
+      "cited": "_portal_pid.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-black-seat-r30.md",
+      "line": 8,
+      "cited": "ac_a2_live_leg_r21.py"
+    },
+    {
+      "file": "memory/verifier/ac-a2-black-seat-r30.md",
+      "line": 10,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-black-seat-r30.md",
+      "line": 18,
+      "cited": "ac_a2_live_leg_r21_result.json"
+    },
+    {
+      "file": "memory/verifier/ac-a2-closure-r19.md",
+      "line": 10,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-final-state-r20.md",
+      "line": 24,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-gate-state-sweep-2026-11-14.md",
+      "line": 5,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/verifier/ac-a2-gate-state-sweep-2026-11-14.md",
+      "line": 5,
+      "cited": "r21_result.json"
+    },
+    {
+      "file": "memory/verifier/ac-a2-gate-state-sweep-2026-11-14.md",
+      "line": 17,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/verifier/ac-a2-gate-state-sweep-2026-11-14.md",
+      "line": 27,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r19.md",
+      "line": 14,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r21-sweep-2026-11-14.md",
+      "line": 24,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r21-sweep-2026-11-14.md",
+      "line": 29,
+      "cited": "projects/dcabots/dcabots/farm.py"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r22-sweep-2026-11-14.md",
+      "line": 28,
+      "cited": "ac_a2_live_leg_r20.py"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r22-sweep-2026-11-14.md",
+      "line": 29,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r23-sweep-2026-11-14.md",
+      "line": 12,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r23-sweep-2026-11-14.md",
+      "line": 16,
+      "cited": "memory/designer/staged/variant_8ef4e2227a7a.html"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r24-sweep-2026-11-14.md",
+      "line": 15,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r25-adjudication-2026-11-14.md",
+      "line": 9,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r26-correction-and-canary-relay-2026-11-14.md",
+      "line": 6,
+      "cited": "index-repin-r25-rollback.md"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r26-correction-and-canary-relay-2026-11-14.md",
+      "line": 11,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r26-correction-and-canary-relay-2026-11-14.md",
+      "line": 20,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r26-correction-and-canary-relay-2026-11-14.md",
+      "line": 21,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r29-probe-restage-2026-11-14.md",
+      "line": 5,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r29-probe-restage-2026-11-14.md",
+      "line": 11,
+      "cited": "ac_a2_live_leg_r21_result.json"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r29-probe-restage-2026-11-14.md",
+      "line": 21,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r61-sweep-2026-11-14.md",
+      "line": 21,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "line": 11,
+      "cited": "memory/scribe/synthesis-index-canonical-r61-0517db38-...md"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r62-sweep-2026-11-14.md",
+      "line": 23,
+      "cited": "memory/scribe/synthesis-index-canonical-r61-0517db38-...md"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r66-correction-2026-11-14.md",
+      "line": 23,
+      "cited": "'\\P'"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r77-sweep-r58-remeasure-2026-11-14.md",
+      "line": 9,
+      "cited": "index-apply-r71-result.json"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r77-sweep-r58-remeasure-2026-11-14.md",
+      "line": 15,
+      "cited": "2026-11-14-planning-meeting-v2.md"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r83-closeout-2026-11-14.md",
+      "line": 8,
+      "cited": "memory/designer/index_html_v22_f18b24c4...html"
+    },
+    {
+      "file": "memory/verifier/ac-a2-r83-closeout-2026-11-14.md",
+      "line": 16,
+      "cited": "white-apply-bundle-v2-r45.md"
+    },
+    {
+      "file": "memory/verifier/ac-a2-status-r58-2026-11-14.md",
+      "line": 13,
+      "cited": "ac_a2_live_leg_r21.py"
+    },
+    {
+      "file": "memory/verifier/ac-a2-status-r58-2026-11-14.md",
+      "line": 14,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/ac-a2-status-r59-2026-11-14.md",
+      "line": 4,
+      "cited": "2026-11-14-planning-meeting-v2.md"
+    },
+    {
+      "file": "memory/verifier/archivist4-synthesis-links-2026-11-19.md",
+      "line": 15,
+      "cited": "kg-report-cycle5.md"
+    },
+    {
+      "file": "memory/verifier/black-seat-sweep-r75b-2026-11-14.md",
+      "line": 20,
+      "cited": "2026-11-14-final-closeout.md"
+    },
+    {
+      "file": "memory/verifier/designer-goal1-2-stale-claim-verify-2026-11-20.md",
+      "line": 11,
+      "cited": "app.css"
+    },
+    {
+      "file": "memory/verifier/designer-goal1-2-stale-claim-verify-2026-11-20.md",
+      "line": 11,
+      "cited": "app_density_before.css"
+    },
+    {
+      "file": "memory/verifier/designer-goal1-2-stale-claim-verify-2026-11-20.md",
+      "line": 11,
+      "cited": "tokens.css"
+    },
+    {
+      "file": "memory/verifier/designer-goal1-2-stale-claim-verify-2026-11-20.md",
+      "line": 12,
+      "cited": "interactions.css"
+    },
+    {
+      "file": "memory/verifier/designer-goal1-2-stale-claim-verify-2026-11-20.md",
+      "line": 12,
+      "cited": "animations.css"
+    },
+    {
+      "file": "memory/verifier/designer-goal1-2-stale-claim-verify-2026-11-20.md",
+      "line": 16,
+      "cited": "interactions.js"
+    },
+    {
+      "file": "memory/verifier/designer-goal8-verify-2026-11-17.md",
+      "line": 13,
+      "cited": "goal8_typography_check.py"
+    },
+    {
+      "file": "memory/verifier/designer-goal8-verify-2026-11-17.md",
+      "line": 33,
+      "cited": "goal10-design-check-pass-2026-11-17.md"
+    },
+    {
+      "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
+      "line": 8,
+      "cited": "run_checks.py"
+    },
+    {
+      "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
+      "line": 27,
+      "cited": "verifier/portal_ac_framework.py"
+    },
+    {
+      "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
+      "line": 28,
+      "cited": "verifier/regression_gate.py"
+    },
+    {
+      "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
+      "line": 29,
+      "cited": "verifier/evidence_ledger.py"
+    },
+    {
+      "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
+      "line": 34,
+      "cited": "fleet_health_check.py"
+    },
+    {
+      "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
+      "line": 34,
+      "cited": "regression_gate.py"
+    },
+    {
+      "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
+      "line": 36,
+      "cited": "goals_api.py"
+    },
+    {
+      "file": "memory/verifier/durable-check-reverify-2026-11-18.md",
+      "line": 6,
+      "cited": "memory/verifier/_durable_test_leaf_tmp.md"
+    },
+    {
+      "file": "memory/verifier/durable-check-reverify-2026-11-18.md",
+      "line": 7,
+      "cited": "durable_check.py"
+    },
+    {
+      "file": "memory/verifier/evidence-hash-chain-2026-11-16.md",
+      "line": 6,
+      "cited": "evidence_chain.jsonl"
+    },
+    {
+      "file": "memory/verifier/evidence-hash-chain-2026-11-16.md",
+      "line": 28,
+      "cited": "evidence_hash_chain.py"
+    },
+    {
+      "file": "memory/verifier/evidence-hash-chain-2026-11-16.md",
+      "line": 29,
+      "cited": "evidence_chain.jsonl"
+    },
+    {
+      "file": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "line": 16,
+      "cited": "cp memory/designer/index_html_v22_f18b24c4d5cce206bf85fc41ca550bc5.html index.html"
+    },
+    {
+      "file": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "line": 18,
+      "cited": "index_html_stamp_final_107cbd93.html"
+    },
+    {
+      "file": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "line": 19,
+      "cited": "cp memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md memory/synthesis/INDEX.md"
+    },
+    {
+      "file": "memory/verifier/final-gate-manifest-r74-2026-11-14.md",
+      "line": 30,
+      "cited": "index_html_v22_promote_result.json"
+    },
+    {
+      "file": "memory/verifier/g2-mirror-lag-r57-2026-11-14.md",
+      "line": 6,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/verifier/g2-mirror-lag-r57-2026-11-14.md",
+      "line": 7,
+      "cited": "_r50prev.json"
+    },
+    {
+      "file": "memory/verifier/g2-mirror-lag-r57-2026-11-14.md",
+      "line": 11,
+      "cited": "studio_exec_f_bo9cdo.py"
+    },
+    {
+      "file": "memory/verifier/goal-c-freshness-audit-pathre-fix-2026-11-19.md",
+      "line": 10,
+      "cited": "memory_health.py"
+    },
+    {
+      "file": "memory/verifier/goal-c-freshness-audit-pathre-fix-2026-11-19.md",
+      "line": 11,
+      "cited": "memory_health.py"
+    },
+    {
+      "file": "memory/verifier/goal-c-freshness-audit-pathre-fix-2026-11-19.md",
+      "line": 12,
+      "cited": "uilder/INDEX.md"
+    },
+    {
+      "file": "memory/verifier/goal-c-freshness-audit-pathre-fix-2026-11-19.md",
+      "line": 13,
+      "cited": "memory/orchestrator/goal9-perf-rad"
+    },
+    {
+      "file": "memory/verifier/goal-c-freshness-audit-pathre-fix-2026-11-19.md",
+      "line": 13,
+      "cited": "goal9-perf-radar-backend-done-2026-11-17.md"
+    },
+    {
+      "file": "memory/verifier/goal-c-freshness-audit-pathre-fix-2026-11-19.md",
+      "line": 17,
+      "cited": "uilder/INDEX.md"
+    },
+    {
+      "file": "memory/verifier/goal-c-freshness-audit-pathre-fix-2026-11-19.md",
+      "line": 18,
+      "cited": "memory_health.py"
+    },
+    {
+      "file": "memory/verifier/goal-c-freshness-audit-pathre-fix-2026-11-19.md",
+      "line": 28,
+      "cited": "memory/verifier/does_not_exist_xyz.md"
+    },
+    {
+      "file": "memory/verifier/goal-c-freshness-audit-pathre-fix-2026-11-19.md",
+      "line": 30,
+      "cited": "['memory/INDEX.md']"
+    },
+    {
+      "file": "memory/verifier/goal-c-freshness-audit-pathre-fix-2026-11-19.md",
+      "line": 31,
+      "cited": "['memory/archivist/freshness-report.md']"
+    },
+    {
+      "file": "memory/verifier/goal10-evidence-check-2026-11-18.md",
+      "line": 7,
+      "cited": "memory_mirror_ownership.json"
+    },
+    {
+      "file": "memory/verifier/goal10-evidence-check-2026-11-18.md",
+      "line": 19,
+      "cited": "memory_mirror_ownership.json"
+    },
+    {
+      "file": "memory/verifier/goal6-concurrency-stress-evidence-2026-11-18.md",
+      "line": 17,
+      "cited": "elev.py"
+    },
+    {
+      "file": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "line": 5,
+      "cited": "orchestrator.md"
+    },
+    {
+      "file": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "line": 5,
+      "cited": "mechanic.md"
+    },
+    {
+      "file": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "line": 5,
+      "cited": "all-goals-2026-11-13.md"
+    },
+    {
+      "file": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "line": 5,
+      "cited": "2026-11-13-agent-goals.md"
+    },
+    {
+      "file": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "line": 7,
+      "cited": "researcher.md"
+    },
+    {
+      "file": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "line": 12,
+      "cited": "all-goals-2026-11-13.md"
+    },
+    {
+      "file": "memory/verifier/goals-naming-ruling-2026-11-13.md",
+      "line": 14,
+      "cited": "all-goals-2026-11-13.md"
+    },
+    {
+      "file": "memory/verifier/kg-v2-edge-claim-check-2026-11-17.md",
+      "line": 17,
+      "cited": "knowledge_graph.py"
+    },
+    {
+      "file": "memory/verifier/kg-v2-edge-claim-check-2026-11-17.md",
+      "line": 18,
+      "cited": "knowledge_graph.json"
+    },
+    {
+      "file": "memory/verifier/llm-selector-verify-2026-11-17.md",
+      "line": 4,
+      "cited": "llm_selector.py"
+    },
+    {
+      "file": "memory/verifier/mechanic-goal1-loadprobe-status-2026-11-18.md",
+      "line": 14,
+      "cited": "load_trend.jsonl"
+    },
+    {
+      "file": "memory/verifier/mechanic-goal6-watchdog-verify.md",
+      "line": 10,
+      "cited": "watchdog_log.jsonl"
+    },
+    {
+      "file": "memory/verifier/mechanic-goal6-watchdog-verify.md",
+      "line": 15,
+      "cited": "blockers.md"
+    },
+    {
+      "file": "memory/verifier/ops-index-check-archivist-entry-2026-11-14.md",
+      "line": 4,
+      "cited": "white-lan-firewall-drop-2026-11-14.md"
+    },
+    {
+      "file": "memory/verifier/ops-index-check-archivist-entry-2026-11-14.md",
+      "line": 18,
+      "cited": "verifier-healthcheck-2026-11-14.md"
+    },
+    {
+      "file": "memory/verifier/r16-verification-r17.md",
+      "line": 15,
+      "cited": "r16_selftest.py"
+    },
+    {
+      "file": "memory/verifier/r17b-queue5-inputs-verified.md",
+      "line": 7,
+      "cited": "arnold-restart-r8.ps1"
+    },
+    {
+      "file": "memory/verifier/r28-probe-check1-ratification.md",
+      "line": 21,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/verifier/r30-probe-drift-adjudication-2026-11-14.md",
+      "line": 15,
+      "cited": "ac_a2_live_leg_r21_result.json"
+    },
+    {
+      "file": "memory/verifier/r30-probe-drift-adjudication-2026-11-14.md",
+      "line": 19,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/verifier/r30-probe-drift-adjudication-2026-11-14.md",
+      "line": 19,
+      "cited": "ac_a2_live_leg_r21_result.json"
+    },
+    {
+      "file": "memory/verifier/r30-probe-drift-adjudication-2026-11-14.md",
+      "line": 23,
+      "cited": "ac_a2_live_leg_r21_result.json"
+    },
+    {
+      "file": "memory/verifier/r31-sweep-closeout-2026-11-14.md",
+      "line": 14,
+      "cited": "ac_a2_live_leg_r20_result.json"
+    },
+    {
+      "file": "memory/verifier/r31-sweep-closeout-2026-11-14.md",
+      "line": 14,
+      "cited": "_r21_result.json"
+    },
+    {
+      "file": "memory/verifier/r32-sweep-closeout-2026-11-14.md",
+      "line": 13,
+      "cited": "ac_a2_live_leg_r20/r21_result.json"
+    },
+    {
+      "file": "memory/verifier/r32-sweep-closeout-2026-11-14.md",
+      "line": 20,
+      "cited": "hosts-pin-reconciliation-2026-11-14.md"
+    },
+    {
+      "file": "memory/verifier/r32-sweep-closeout-2026-11-14.md",
+      "line": 21,
+      "cited": "2026-11-14-r27-round-record.md"
+    },
+    {
+      "file": "memory/verifier/r32-sweep-closeout-2026-11-14.md",
+      "line": 25,
+      "cited": "ac_a2_live_leg_r21_result.json"
+    },
+    {
+      "file": "memory/verifier/r34-sweep-closeout-2026-11-14.md",
+      "line": 16,
+      "cited": "ac_a2_live_leg_r21_result.json"
+    },
+    {
+      "file": "memory/verifier/r34-sweep-closeout-2026-11-14.md",
+      "line": 36,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/r34-sweep-closeout-2026-11-14.md",
+      "line": 36,
+      "cited": "canary.txt"
+    },
+    {
+      "file": "memory/verifier/r34-sweep-closeout-2026-11-14.md",
+      "line": 41,
+      "cited": "memory/agents/INDEX.md"
+    },
+    {
+      "file": "memory/verifier/r36-sweep-closeout-2026-11-14.md",
+      "line": 13,
+      "cited": "ac_a2_live_leg_r21_result.json"
+    },
+    {
+      "file": "memory/verifier/r36-sweep-closeout-2026-11-14.md",
+      "line": 14,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/r37-sweep-closeout-2026-11-14.md",
+      "line": 20,
+      "cited": "memory/agents/INDEX.md"
+    },
+    {
+      "file": "memory/verifier/r38b-mechanic-rebind-crosscheck-2026-11-14.md",
+      "line": 8,
+      "cited": "verify_black_alias_r38.py"
+    },
+    {
+      "file": "memory/verifier/r38b-mechanic-rebind-crosscheck-2026-11-14.md",
+      "line": 8,
+      "cited": "verify_black_alias_r38_result.json"
+    },
+    {
+      "file": "memory/verifier/r38b-mechanic-rebind-crosscheck-2026-11-14.md",
+      "line": 9,
+      "cited": "probe_black_alias_r37.py"
+    },
+    {
+      "file": "memory/verifier/r38b-mechanic-rebind-crosscheck-2026-11-14.md",
+      "line": 9,
+      "cited": "_result.json"
+    },
+    {
+      "file": "memory/verifier/r38b-mechanic-rebind-crosscheck-2026-11-14.md",
+      "line": 15,
+      "cited": "ac_a2_live_leg_r20/r21_result.json"
+    },
+    {
+      "file": "memory/verifier/r41-closeout-2026-11-14.md",
+      "line": 10,
+      "cited": "persist_a4a5_candidate_r40.py"
+    },
+    {
+      "file": "memory/verifier/r43-closeout-2026-11-14.md",
+      "line": 28,
+      "cited": "index_check.py"
+    },
+    {
+      "file": "memory/verifier/r43-closeout-2026-11-14.md",
+      "line": 28,
+      "cited": "provenance_audit.py"
+    },
+    {
+      "file": "memory/verifier/r44-closeout-2026-11-14.md",
+      "line": 18,
+      "cited": "verifier_r44_probe.py"
+    },
+    {
+      "file": "memory/verifier/r56-sweep-and-ratification-2026-11-14.md",
+      "line": 5,
+      "cited": "planning-meeting-minutes-v2-2026-11-14.md"
+    },
+    {
+      "file": "memory/verifier/r56-sweep-and-ratification-2026-11-14.md",
+      "line": 11,
+      "cited": "probe_fleet_1114b.py"
+    },
+    {
+      "file": "memory/verifier/r56-sweep-and-ratification-2026-11-14.md",
+      "line": 11,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/verifier/r56-sweep-and-ratification-2026-11-14.md",
+      "line": 12,
+      "cited": "ac_a2_live_leg_r20/r21_result.json"
+    },
+    {
+      "file": "memory/verifier/r56-sweep-and-ratification-2026-11-14.md",
+      "line": 12,
+      "cited": "uploads/_canary_remote.txt"
+    },
+    {
+      "file": "memory/verifier/reproducible-evidence-audit-2026-11-18.md",
+      "line": 12,
+      "cited": "fleet_probe_v2_predictive_test.py"
+    },
+    {
+      "file": "memory/verifier/reproducible-evidence-audit-2026-11-18.md",
+      "line": 17,
+      "cited": "fleet_probe_v2_predictive_test.py"
+    },
+    {
+      "file": "memory/verifier/scorecard-2026-11-16.md",
+      "line": 23,
+      "cited": "verifier/evidence_ledger.jsonl"
+    },
+    {
+      "file": "memory/verifier/stale-claim-sweep-2026-11-18.md",
+      "line": 4,
+      "cited": "compression_gate.py"
+    },
+    {
+      "file": "memory/verifier/stale-claim-sweep-2026-11-18.md",
+      "line": 4,
+      "cited": "_lint_test_v2_bad.md"
+    },
+    {
+      "file": "memory/verifier/stale-claim-sweep-2026-11-18.md",
+      "line": 4,
+      "cited": "_lint_test_v2_clean.md"
+    },
+    {
+      "file": "memory/verifier/stale-pointer-fix-orchestrator-goal9-2026-11-20.md",
+      "line": 12,
+      "cited": "memory/orchestrator/goal9-perf-rad"
+    },
+    {
+      "file": "memory/verifier/stamp-target-adjudication-r53-2026-11-14.md",
+      "line": 22,
+      "cited": "fix-hunks-r51-2026-11-14.md"
+    },
+    {
+      "file": "memory/verifier/stamp-target-adjudication-r53-2026-11-14.md",
+      "line": 33,
+      "cited": "probe_fleet_1114b_result.json"
+    },
+    {
+      "file": "memory/verifier/stamp-target-adjudication-r53-2026-11-14.md",
+      "line": 33,
+      "cited": "probe_fleet_1114b.py"
+    },
+    {
+      "file": "memory/verifier/task-path-resolution-2026-11-15.md",
+      "line": 3,
+      "cited": "fleet_probe.py"
+    },
+    {
+      "file": "memory/verifier/task-path-resolution-2026-11-15.md",
+      "line": 3,
+      "cited": "daily_git_commit.py"
+    },
+    {
+      "file": "memory/verifier/ui-slices-verify-2026-11-17.md",
+      "line": 27,
+      "cited": ".status-dot.ok/.warn/.err"
+    },
+    {
+      "file": "memory/verifier/v2-artifact-lost-2026-11-15.md",
+      "line": 17,
+      "cited": "goal_ledger.py"
+    },
+    {
+      "file": "memory/workspace/INDEX.md",
+      "line": 16,
+      "cited": "BUNDLE-SHA256.txt"
+    },
+    {
+      "file": "memory/workspace/INDEX.md",
+      "line": 18,
+      "cited": "bootstrap.bat"
+    },
+    {
+      "file": "memory/workspace/INDEX.md",
+      "line": 28,
+      "cited": "portal-upgrade/verify_drop_env.py"
+    },
+    {
+      "file": "memory/workspace/INDEX.md",
+      "line": 35,
+      "cited": "memory/agents/INDEX.md"
+    },
+    {
+      "file": "memory/workspace/INDEX.md",
+      "line": 46,
+      "cited": "memory/agents/INDEX.md"
+    },
+    {
+      "file": "memory/workspace/INDEX.md",
+      "line": 73,
+      "cited": "memory/agents/INDEX.md"
+    }
+  ],
+  "skipped_non_citation": 9724
+}
