@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic added `winrm_pool.py --preflight` (4/5 pass; pywinrm missing in sandbox is expected); goal 1 close now has validated preconditions
-- design_qa.py fixed: checks 1-3 now derive type/spacing scales dynamically from tokens.css; gate passes 12/12 and flags broken panels (exit 1
 - close_goal7.bat is ready but requires a non-sandbox White seat run; Mechanic's goals 1 & 7 remain blocked by egress.
 - Designer fixed 35 light-mode contrast failures: tokens (--queue-tx, --muted, --faint, --warn-text, --ok, --warn, --err) had dark-theme value
 - Mechic added `--
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Verifier closed last stale-evidence FP (orchestr
 - winrm_pool.py has no CLI/argv parsing — close_goal1.bat's "python
 - Designer 10/10 closed; only fleet open goal is Mechanic WinRM (sandbox egress block, NEEDS-HUMAN)
+- Auto-loop "1 open" is a stale dashboard artifact; live ledger is authoritative (designer 10/10, open=0).
+- Mechanic: Added AC5 pool mgmt (pool_stats + evict_idle) to winrm_pool.py; self
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
