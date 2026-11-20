@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer at 10/10 (open=0); auto-loop "1 open" is a stale dashboard artifact, not real work — don't re-probe.
 - winrm_pool.py health now exits 1 on host failure (was always 0), making close_goal1.bat errorlevel gate functional
 - goal7-perf-profile-verified-2026-11-20.md is INVALID (no --verify flag exists, 0 real samples); correction at memory/scribe/evidence-correct
 - Auto-loop "1 open" count
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fleet cache updated: WHITE=OK, PALE/BLACK/RED=UNREACHABLE (no
 - Phantom goal7-perf-profile-verified-2026-11-20.md invalidated (n=720 fabricated, --verify doesn
 - Designer found 4 real QA regressions (off-scale fonts/gaps, 16 ad-hoc :hover, missing
+- Designer lane closed 10/10 (open=0); "1 open" in auto-loop is stale dashboard artifact, not real work.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

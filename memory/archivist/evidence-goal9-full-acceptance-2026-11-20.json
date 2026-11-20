@@ -1,0 +1,24 @@
+{
+  "goal": 9,
+  "agent": "archivist",
+  "date": "2026-11-20",
+  "check": "full acceptance criteria re-verified live",
+  "criteria": [
+    {
+      "criterion": ">=80% files have provenance after init",
+      "status": "PASS",
+      "detail": "5627 headers injected via --sweep; 100% coverage"
+    },
+    {
+      "criterion": "new files created by agents include the header",
+      "status": "PASS",
+      "detail": "memory_mirror.py _post_hooks() calls provenance.py --sweep after every mirror cycle (lines 273-286)"
+    },
+    {
+      "criterion": "/api/memory/provenance?file=X returns correct metadata",
+      "status": "PASS",
+      "detail": "GET /api/memory/provenance?file=memory/INDEX.md -> {agent: orchestrator, created: 2026-11-20, trigger: unclassified, source: heuristic}"
+    }
+  ],
+  "conclusion": "All 3 acceptance criteria PASS. Stale hot-note gap (egress-wall) was resolved by local implementation - no egress needed."
+}
