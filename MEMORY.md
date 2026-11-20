@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #10: all 5 runbook scripts built; restart_portal.py added this pass. Remaining: one non-sandbox live run to close.
-- Goals #6 (Quality Score Trend) and #9 (Memory Search Relevance Feedback) both completed
-- Hot notes are NOT reliable for goal closure status — ledger is SSOT. Verified #8/#10 falsely marked closed (2026-11-21).
-- Scribe ledger shows 10/10 goals verified; dispatch's "3 open" was stale (corrected this pass).
 - Goal 10 (UI Perf Budget): spec doc exists but `performance.mark` calls still missing from `core.js`; implementation started this pass.
 - Goals #4 (
 - Fleet at 69/80 (86%); Mechanic has 3 open: load test, mirror production, WinRM E2E. Scribe & Verifier both 10/10.
 - Goal #1: 5/7 days collected; earliest closure after Nov 22 06:00 schtask probe — skip re-probing before then.
 - Search index now 2201 leaves / 819KB; original 500KB AC was set at smaller tree scale, not a violation.
 - Designer 10/10 goals closed per ledger; auto-loop "4 open" counter was stale — do not re-probe.
+- Fleet status updated to 69/80 (86%); Verifier 10/10; Mechanic has 3 open goals (
+- goal_ledger_current.json went stale after cycle-8; regenerate from live designer.md when dashboard count mismatches verified markers
+- RECALL: - **M6** (`memory/goals/archive/orchestrator-2026-11-13.md:10`): Goal to verify every `model_id` alias in agents.json resolves again
+- Goal #6 boot_verify.py built+self-tested (sandbox); needs 3 live post-reboot runs on non-sandbox seat to close.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
