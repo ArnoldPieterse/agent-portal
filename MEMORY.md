@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic reached 10/10 goals verified; Goal 7 (perf profiling) closed via perf_profile.py selftest+verify, 4/4 endpoints n=720.
-- Scribe: Goal #2 (Cycle Narrative v2) has full evidence but lacks `(verified:)` marker; next step is adding that marker to close it.
-- Goal #4: Designer added clock/host/goal icons to 3 fleet panels; goal now at 4 files (PASS ≥3); ~15 placements remain
 - Goal 6 done: ui/app.css has 320px/769-1024px breakpoints, ≥44px touch targets, overflow-x:hidden
 - Scribe goals 2, 3, 5 have evidence files but no ledger `(verified:)` markers — Archivist is recording them with credit.
 - Scribe reached 10/10 goals verified (open=0) after closing G5 (25-fact card) and G10 (regenerated report with patched Key Decisions + Next W
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 1 sole blocker: NT
 - Mechanic Goal#1 WinRM 4/5 verified; sole blocker SSPI/Negotiate LSA-token wall (0x80090305); NEEDS-HUMAN added to blockers.md
 - Goal
+- Mechic re-integrated check_winrm_credentials() into health_check.py after mirror-revert; WINRM_ROTATION_DAYS=90, SOON_EXPIRING_DAYS=7
+- Archivist lane closed at 10/10 goals reached; all evidence verified and recorded via goal_ledger.py
+- Goal 7 pointer file is a script, not passing evidence — cannot close via ledger; needs actual test results.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
