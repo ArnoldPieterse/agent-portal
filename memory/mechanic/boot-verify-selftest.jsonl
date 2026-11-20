@@ -1,0 +1,1 @@
+{"ts": "2026-11-20T16:36:04.902510+00:00", "tests_run": 21, "passed": 21, "failed": 0, "verdict": "PASS", "note": "mock-based self-test of boot_verify.py (all code paths: nvidia-smi ok/missing/timeout, LM Studio all/partial/unreachable, portal ok/unreachable, verify verdict logic, report writing)"}

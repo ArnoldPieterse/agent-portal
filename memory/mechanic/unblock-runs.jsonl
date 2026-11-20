@@ -1,0 +1,2 @@
+{"ts": "2026-11-21T01:03:30.407937", "goal": "goal1", "name": "Portal Load Test 7-Day Completion", "status": "SKIP", "detail": "Not ready yet: warning: Failed to set cwd to temp dir", "duration_s": 0.2}
+{"ts": "2026-11-21T01:03:30.584258", "goal": "goal9", "name": "Capacity Planning Dashboard", "status": "PASS", "detail": "[capacity_report] Wrote Z:\\memory\\mechanic\\capacity-report-2026-11-20.md (2054 bytes)\nReport at: Z:\\memory\\mechanic\\capacity-report-2026-11-20.md\n\nwarning: Failed to set cwd to temp dir", "duration_s": 0.2}

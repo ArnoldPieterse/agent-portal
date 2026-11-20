@@ -1,0 +1,54 @@
+{
+  "generated": "2026-11-21T01:18:30.138985",
+  "host": "unknown",
+  "task_count": 5,
+  "tasks": [
+    {
+      "name": "PortalRun",
+      "status": "Ready",
+      "schedule_type": "",
+      "next_run": ""
+    },
+    {
+      "name": "PortalLoadProbe",
+      "status": "Ready",
+      "schedule_type": "",
+      "next_run": ""
+    },
+    {
+      "name": "FleetBootRecovery",
+      "status": "Ready",
+      "schedule_type": "",
+      "next_run": ""
+    },
+    {
+      "name": "MirrorRun",
+      "status": "Ready",
+      "schedule_type": "",
+      "next_run": ""
+    },
+    {
+      "name": "PortalDailyGitCommit",
+      "status": "Ready",
+      "schedule_type": "",
+      "next_run": ""
+    }
+  ],
+  "edges": [
+    {
+      "from": "PortalRun",
+      "to": "PortalDailyGitCommit",
+      "type": "known"
+    },
+    {
+      "from": "PortalRun",
+      "to": "FleetProbe",
+      "type": "known"
+    },
+    {
+      "from": "PortalRun",
+      "to": "AgentGroupChat",
+      "type": "known"
+    }
+  ]
+}
