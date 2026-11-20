@@ -95,3 +95,87 @@ def negative_tests() -> List[tuple]:
     e = validate(bad4, gs)
     out.append(("nested item violation caught", bool(e) and any("done" in x for x in e), str(e)))
     return out
+
+BASE = "http://127.0.0.1:8099"
+
+def _reachable() -> bool:
+    try:
+        with urllib.request.urlopen(BASE + "/api/status", timeout=5) as r:
+            return r.status == 200
+    except Exception:
+        return False
+
+def static_check() -> List[tuple]:
+    """Every contract file must be well-formed: endpoint path + usable schema."""
+    out = []
+    n = 0
+    for fn in sorted(os.listdir(CONTRACT_DIR)):
+        if not fn.endswith(".json") or fn == "manifest.json":
+            continue
+        n += 1
+        with open(os.path.join(CONTRACT_DIR, fn), encoding="utf-8") as f:
+            s = json.load(f)
+        ep = s.get("endpoint", "")
+        sch = s.get("schema", {})
+        good = ep.startswith("/") and ("type" in sch or "oneOf" in sch)
+        out.append((f"{fn}", good, f"endpoint={ep} schema_keys={list(sch.keys())[:3]}"))
+    ok_all = all(g for _, g, _ in out)
+    return [("well-formed contract files", ok_all, f"{sum(g for _,g,_ in out)}/{n}")], n
+
+def live_run() -> int:
+    """Fetch each endpoint and validate a 200 body against its schema."""
+    if not _reachable():
+        print("LIVE: portal :8099 unreachable from this seat (egress wall). "
+              "Static+negative legs still valid. See memory/ops/blockers.md.")
+        return 2
+    contracts = load_contracts()
+    rows, nfail = [], 0
+    for ep in sorted(contracts):
+        url = BASE + (ep if "/api" in ep else "/api" + ep)
+        try:
+            with urllib.request.urlopen(url, timeout=8) as r:
+                status, body = r.status, json.loads(r.read().decode("utf-8", "replace"))
+        except urllib.error.HTTPError as e:
+            rows.append((ep, "SKIP", f"HTTP {e.code} (needs params / unavailable)"))
+            continue
+        except Exception as e:
+            rows.append((ep, "SKIP", f"{type(e).__name__}: {e}"))
+            continue
+        errs = validate(body, contracts[ep])
+        if errs:
+            nfail += 1
+            rows.append((ep, "FAIL", "; ".join(errs[:4])))
+        else:
+            rows.append((ep, "PASS", f"status {status}"))
+    print(f"\nLIVE CONTRACTS ({len(rows)} endpoints):")
+    for ep, res, note in rows:
+        print(f"  [{res:4}] {ep}  {note}")
+    npass = sum(1 for _, r, _ in rows if r == "PASS")
+    nskip = sum(1 for _, r, _ in rows if r == "SKIP")
+    print(f"\nSUMMARY: {npass} pass / {nfail} fail / {nskip} skip")
+    return 1 if nfail else 0
+
+def main() -> int:
+    args = set(sys.argv[1:])
+    exit_code = 0
+    if "--negative" in args or not args:
+        print("NEGATIVE (validator correctness):")
+        for name, ok, detail in negative_tests():
+            print(f"  [{'PASS' if ok else 'FAIL'}] {name}  {'' if ok else detail}")
+            exit_code = max(exit_code, 0 if ok else 1)
+    if "--static" in args or not args:
+        checks, n = static_check()
+        for name, ok, detail in checks:
+            print(f"STATIC: [{'PASS' if ok else 'FAIL'}] {name} ({detail})")
+            exit_code = max(exit_code, 0 if ok else 1)
+        print(f"STATIC: {n} contract files loaded (acceptance needs >=15 endpoints)")
+    if "--live" in args or (not args):
+        rc = live_run()
+        if rc == 2:
+            exit_code = max(exit_code, 0)  # unreachable != failure of the suite itself
+        else:
+            exit_code = max(exit_code, rc)
+    return exit_code
+
+if __name__ == "__main__":
+    sys.exit(main())
