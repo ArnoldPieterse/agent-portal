@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""knowledge_graph_v3.py - Extended knowledge graph with typed edges, temporal stamps, node metadata.
+"""knowledge_graph_v3.py - Extended knowledge graph with typed edges (pointer, link,
+supersession, citation, evidence, dependency), temporal stamps, node metadata.
 Output: memory/archivist/knowledge-graph-v3.json"""
 import json, os, re, sys, subprocess
 from datetime import datetime, timezone
@@ -11,6 +12,9 @@ PTR_RE = re.compile(r"->\s*([A-Za-z0-9_./\\-]+\.(?:md|py|json|html|css|js))")
 MDL_RE = re.compile(r"\[([^\]]*)\]\(([^)]+\.(?:md|py|json|html))\)")
 SUP_RE = re.compile(r"(?i)\b(supersedes?|replaced by|superseded by)\s+[:\-]?\s*([A-Za-z0-9_./\\-]+)")
 CITE_RE = re.compile(r"\(pointer:\s*([A-Za-z0-9_./\\-]+\.(?:md|py|json))\)")
+EVID_RE = re.compile(r"(?i)\b(?:verified?:?|evidence:?)\s+[^(]{0,80}?\((?:pointer|evidence):\s*([A-Za-z0-9_./\\-]+\.(?:md|py|json))\)")
+DEP_KW_RE = re.compile(r"(?i)\b(?:depends?\s+on|depended\s+on|dependency\s+on|requires?)\b")
+DEP_PATH_RE = re.compile(r"([A-Za-z0-9_./\\-]+\.(?:md|py|json))")
 
 def norm(x):
     return x.replace("\\", "/").lstrip("./")
@@ -75,6 +79,7 @@ def main():
                 pass
     
     # PASS 2: extract typed edges
+    seen = set()
     for r, d, fs in os.walk(MEM):
         d[:] = [x for x in d if not x.startswith(".")]
         for f in fs:
@@ -99,6 +104,16 @@ def main():
                 t = norm(m.group(1))
                 if t in nodes and t != rel:
                     edges.append({"from": rel, "to": t, "type": "citation"})
+            for m in EVID_RE.finditer(txt):
+                t = norm(m.group(1))
+                if t in nodes and t != rel and (rel, t) not in seen:
+                    edges.append({"from": rel, "to": t, "type": "evidence", "marker": m.group(0)[:60]})
+            for km in DEP_KW_RE.finditer(txt):
+                window = txt[km.start():km.start()+160]
+                for pm in DEP_PATH_RE.finditer(window):
+                    t = norm(pm.group(1))
+                    if t in nodes and t != rel:
+                        edges.append({"from": rel, "to": t, "type": "dependency", "marker": km.group(0).lower()})
     
     # Deduplicate
     seen, unique_edges = set(), []

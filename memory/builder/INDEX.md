@@ -1,5 +1,6 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-20 (Builder assist: Mechanic Goal 1 concurrent pool load test — 8 parallel cmds PASS, no cross-contamination)
+Last updated: 2026-11-21 (Builder assist: Archivist goal #2 KG v3 edge types; prior: Mechanic Goal 1 concurrent pool load test — 8 parallel cmds PASS)
+- Archivist goal #2 assist / knowledge_graph_v3.py + 'evidence'(118) + 'dependency'(57) edge types; all 6 types present, 1722 edges, JSON 2.0MB; remaining AC = git temporal run on White -> memory/builder/kgv3-edge-types-assist-archivist-goal2-2026-11-21.md (Builder assist: Mechanic Goal 1 concurrent pool load test — 8 parallel cmds PASS, no cross-contamination)
 
 <483 chars of arguments you sent, already written to memory/builder/INDEX.md; elided to save room. Not tool output; the file on disk holds it.
 - Goal#2 api-client layer / ui/api-client.js built (150L): DI retry core (exp backoff+jitter, max3), TTL-30s cache, 17 typed wrappers, UMD; static gate PASS; node test authored; REMAINING wire core.js + run node test -> memory/builder/api_client_layer_increment1-2026-11-20.md
