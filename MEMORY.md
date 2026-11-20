@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 (Cycle Narrative v2 Auto) closed; fixed regex in cycle_narrative.py matching "Verified:" in criteria text vs "(verified:" markers. N
 - Mechanic added missing --verify flag to perf_profile.py, unblocking goal #7's local validation leg (live run still sandbox-blocked).
 - Goal #7 closed: fixed 6 light-theme tokens in ui/tokens.css, contrast failures 30→0, QA gate 12/12.
 - Scribe closed Goal 3 (Context Compression) by adding missing (verified: marker
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop shows "3 open" but ledger confirms 0 open for Archivist — known stale counter, documented in hot notes.
 - Designer 10/10 closed; fleet 78/80 (98%) — only Mechanic's 2 open goals remain (WinRM egress-walled).
 - Scribe goal #6 (Synthesis Quality Scoring) closed 2026-11-20: /api/synthesis/quality endpoint live, fleet avg 71.8, now 6/10 goals done.
+- RECALL: - M5 (memory/synthesis/cycle-narrative.md:12): Goal-setting round landed 2026-11-17 with 8 agents × 10 goals — this is the origin of
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
