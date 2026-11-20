@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe confirmed 10/10 goals closed (open=0); auto
 - All 10 Archivist goals now formally verified (8,9,10 had prior work unrecorded; closed this pass).
 - Goal #9 (Theme System) closed: HC tokens in ui/tokens.css, picker in ui/core.js, WCAG AAA verified, 2 hardcoded colors fixed
 - Auto-loop header open-counts are
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe updated `memory/synthesis/cycle-narrative.md` to cover Cycles 5–8 (was stale at 4); fleet at 63/80 (79%).
 - Mechanic lane fully closed (10/10 verified); Goals 1,3,4,9 remain egress-blocked per memory/ops/blockers.md
 - Archivist lane closed 10/10 verified; auto-loop "open
+- Goal 1 WCAG audit: automated checks PASS 10/10, index.html pinned sha 8c84ce86dcd3; remaining: manual Tab-through + ARIA spot-check on 14 bu
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
