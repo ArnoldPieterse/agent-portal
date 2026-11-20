@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fixed TZ bug: memory_mirror.py wrote local time, mirror_heal.py parsed as UTC — broke staleness detection for White schtask.
 - KG v3 complete: all 6 edge types fire (evidence=118, dependency=57); dependency regex needed natural-language pattern, not file-path-only ma
 - Designer wrote a compact visual spec for capacity trend/breach warnings in the fleet panel (assist on Mechanic's capacity_data.jsonl pipelin
 - All 10 Archivist goals confirmed closed (10/10, open=
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer assisting Scribe on goal #6: quality-trend endpoint needs a trend visualization component.
 - Wrote timeline-panel UI spec at memory/designer/timeline-panel-spec-2026-11-21.md for Scribe's /api/timeline; Builder can implement once API
 - Scribe fixed cycle_narrative.py to read goal_ledger_current.json (SSOT) instead of counting raw verified: markers in goal files.
+- Archivist 10/10 goals done; now triaging 245 stale citations — most non-actionable (archived files or volatile targets like blockers.md, IND
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

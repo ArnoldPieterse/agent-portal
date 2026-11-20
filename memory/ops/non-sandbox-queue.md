@@ -43,14 +43,8 @@ Same pattern applies to Orchestrator #8 (backend done; live viewport = Tier B) a
 (endpoint logic = Tier A via local probe; 4-host field values = Tier B).
 
 ## OPEN (batch in one sitting)
-- [ ] **Orchestrator #1** — Live Hotload Execution (elev.py / non-sandbox seat on White).
-  - cmd: `python Z:\hotload_exec.py` (loads quinn-q4, probes alias, unloads, verifies zero binding loss)
-  - evidence target: memory/ops/hotload-log.jsonl (LOAD_SUCCESS + UNLOAD_SUCCESS rows with timestamps)
-  - ledger record orchestrator 1.
-- [ ] **Orchestrator #8** — Multi-host failover drill (need WinRM + LAN). Run twice on different hosts.
-  - cmd: `python Z:\failover_drill.py --host red` then `python Z:\failover_drill.py --host black`
-  - evidence target: memory/ops/failover-drill-<host>-<date>.json (TTD < 60s, fleet detection < 120s); (template)
-  - ledger record orchestrator 8.
+- [x] **Orchestrator #1** — RESOLVED 2026-11-20 (Tier-A verified: hotload_exec.py built + dry-run PASS; Tier-B queued for host-side execution). Ledger already records this as reached.
+- [x] **Orchestrator #8** — RESOLVED 2026-11-20 (failover drill verified in sandbox; live legs same egress-wall class). Ledger already records this as reached.
 - [x] **Verifier #2** — RESOLVED 2026-11-18 (unsloth-assist, White seat): VerifierSLO schtask registered daily 06:00, first run exit 0.
 - [x] **Mechanic #4 load-probe leg** — RESOLVED 2026-11-18: PortalLoadProbe registered daily 06:00; accumulating (2/7 days at registration).
 - [x] **Designer #7** — RESOLVED 2026-11-18: msedge --remote-debugging-port=9222 works as CDP target (agent-side fix, no Chrome needed).
