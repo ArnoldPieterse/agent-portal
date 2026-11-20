@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Archivist produced empty-state audit checklist for Designer: some panels use plain-text fallbacks instead of existing UI.emptyState/UI.skele
-- Goal #9: skeletons/shimmer exist & wired; gap is empty states — only 3/8+ data panels covered (agentList, actBody, opsBox, filesList, goalsB
-- perf_profile.py now has --verify mode (checks duration≥60s, 4 endpoints ok, p50<p95<p99); Goal 7 closure needs one non-sandbox run: --durati
 - Scribe drafted mirror-revert-guard-winrm-creds.md (extract to standalone module); Mechanic owns execution; 3rd occurrence of this bug.
 - QA script now passes 12/12 after fixing font scale (8-step
 - Goal 7 (Perf Profiling) blocked: code+selftest done, but live 1h run needs non-sandbox seat (WinError 10013 to localhost:8099).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 9 (Empty States): CDP blocked by sandbox; pivoting to convert plain-text fallbacks → UI.emptyState/skeleton per Archivist's audit.
 - RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md:15`): Mirror-revert root-cause deep-d
 - check_winrm
+- design
+- WinRM creds check extracted to standalone `memory/mechanic/winrm_cred_check.py` (Option B) — survives 4th mirror-revert; selftest PASS.
+- Citation triage: ~893 truly broken refs remain (of 5,419 total); analysis in memory/archivist/citation-triage-
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
