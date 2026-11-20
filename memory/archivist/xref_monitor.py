@@ -92,7 +92,65 @@ def suggest_fix(vtype, detail):
         chain = detail
         return f"Simplify: add direct pointer {chain[0]} -> {chain[-1]}, remove intermediates"
 
+def _run_on_root(mroot, rroot):
+    """Run the pure graph logic against an arbitrary root (used by selftest)."""
+    global MEMORY_ROOT, REPO_ROOT
+    prev = (MEMORY_ROOT, REPO_ROOT)
+    MEMORY_ROOT, REPO_ROOT = mroot, rroot
+    try:
+        edges, self_refs, dangling, file_set = build_graph()
+        deep = find_deep_chains(edges)
+        return len(file_set), sum(len(v) for v in edges.values()), dangling, self_refs, deep
+    finally:
+        MEMORY_ROOT, REPO_ROOT = prev
+
+def _selftest():
+    """Controlled acceptance test (Goal 5):
+       (a) a DELIBERATELY deep chain A->B->C->D is caught (and is the ONLY violation),
+       (b) a CLEAN fixture (depth<=3, no dangling/self-ref) passes with 0 violations.
+    Returns 0 pass / 1 fail."""
+    import tempfile
+    ok = True
+    print("=== XRef Monitor SELFTEST ===")
+
+    # --- Fixture A: deliberate deep chain A->B->C->D (depth 4 > MAX_DEPTH) ---
+    with tempfile.TemporaryDirectory() as td:
+        mem = Path(td) / "memory"; mem.mkdir()
+        (mem / "A.md").write_text("start -> B.md\n")
+        (mem / "B.md").write_text("mid -> C.md\n")
+        (mem / "C.md").write_text("end -> D.md\n")
+        (mem / "D.md").write_text("leaf, no outgoing refs.\n")
+        nfiles, nedges, dangling, self_refs, deep = _run_on_root(mem, Path(td))
+        caught = any(len(c) > MAX_DEPTH for c in deep)
+        isolated = (len(dangling) == 0 and len(self_refs) == 0)
+        a_pass = caught and isolated
+        print(f"[A] deliberate depth-4 chain: files={nfiles} edges={nedges} "
+              f"deep_chains={len(deep)} dangling={len(dangling)} selfref={len(self_refs)}")
+        for c in deep[:3]:
+            print(f"      flagged: {' -> '.join(c)} (depth {len(c)})")
+        print(f"[A] expected=caught+isolated  got caught={caught} isolated={isolated}")
+        ok = ok and a_pass
+
+    # --- Fixture B: clean, depth<=3 only (E->F->G), no dangling/self-ref ---
+    with tempfile.TemporaryDirectory() as td:
+        mem = Path(td) / "memory"; mem.mkdir()
+        (mem / "E.md").write_text("head -> F.md\n")
+        (mem / "F.md").write_text("mid -> G.md\n")
+        (mem / "G.md").write_text("tail, no outgoing refs.\n")
+        nfiles, nedges, dangling, self_refs, deep = _run_on_root(mem, Path(td))
+        total_v = len(dangling) + len(self_refs) + len(deep)
+        b_pass = (total_v == 0 and nfiles == 3)
+        print(f"[B] clean depth-3 fixture: files={nfiles} violations={total_v}")
+        print(f"[B] expected=0 violations  got={total_v}")
+        ok = ok and b_pass
+
+    status = "PASS" if ok else "FAIL"
+    print(f"=== SELFTEST RESULT: {status} ===")
+    return 0 if ok else 1
+
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == "--selftest":
+        return _selftest()
     print(f"=== XRef Integrity Monitor ===")
     print(f"Run: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"Max chain depth: {MAX_DEPTH}\n")

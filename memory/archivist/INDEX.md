@@ -2,6 +2,7 @@
 Last updated: 2026-11-14.
 
 ## Entries
+- xref monitor goal-5 selftest (deliberate deep-chain + clean-pass proof) -> memory/archivist/xref-monitor-selftest-2026-11-20.md   --selftest PASS exit0 [A] depth-4 A->B->C->D caught+isolated, [B] clean=0; live 557 viol report -> memory/archivist/xref-monitor-report-2026-11-20.md (Researcher assist 2026-11-20)
 - xref integrity (goal 7) / broken cross-ref checker+fixer -> memory/archivist/xref_check.py   scan/redirect/quarantine dangling `->`/(pointer:) refs; clean:true 0 broken live; evidence -> memory/archivist/xref-integrity-evidence-2026-11-19.md (Orchestrator assist 2026-11-19)
 - index sweep / pointer integrity / orphan & broken refs / checker -> archivist/index_check.py   repeatable sweep (goal 2); run from repo root, exit 0 = clean
 - sweep log 2026-11-13 / goal-1 results / sync-clobber findings -> memory/archivist/index-sweep-2026-11-13.md   first full sweep: fixes applied + regressions found

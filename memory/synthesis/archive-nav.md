@@ -43,7 +43,7 @@ Curated index of all files in `memory/synthesis/`, organized by theme (not just 
 - **Portal update — joint planning meeting record (Scribe)** (`memory/synthesis/2026-11-13-planning-meeting.md`) - Date: 2026-11-13 · Convened on human instruction: "work together, access your memory files, run a planning meeting together around updating the portal. go." | Agents: Builder, Mechanic, Orchestrator, Researcher, Scribe, Verifier | 2026-11-13
 - **Synthesis — Portal upgrade round (2026-11-12)** (`memory/synthesis/2026-11-12-upgrade-round.md`) - Recorded by: Scribe. Rule applied: only claims traceable to something actually said/done are recorded here. | Agents: Archivist, Builder, Orchestrator, Scribe | 2026-11-12
 
-## Adjudication, Rulings & Decisions (7)
+## Adjudication, Rulings & Decisions (8)
 
 - **Supersession-Chain Policy — Baseline (Scribe#5, cycle 2)** (`memory/synthesis/supersession-policy-baseline.md`) - Source: consumes Archivist#5 handoff HO-20261116-supersession-report.md; policy authored by Scribe as charter owner. | Agents: Archivist, Orchestrator, Scribe | 2026-11-16
 - **2026-11-16 Status-thread synthesis — fleet state + contradictions flagged** (`memory/synthesis/2026-11-16-status-thread-contradictions.md`) - Scribe. Source: this round's per-agent status reports (Builder, Verifier, Designer, Archivist, Mechanic) + MEMORY.md GOAL line + TODO.md LIVE PLAN. Every bullet cites its | Agents: Archivist, Builder, Designer, Mechanic, Orchestrator, Researcher, Scribe, Verifier | 2026-11-16
@@ -53,7 +53,9 @@ Curated index of all files in `memory/synthesis/`, organized by theme (not just 
 - **Decisions** (`memory/synthesis/decisions.jsonl`) - {"date": "2026-11-13", "decision": "6. [Orchestrator or Researcher] O5: close the orphan-leaves direction only \u2014 broken-arrow side already PASS at efbf4af from two i | Agents: Archivist, Mechanic, Orchestrator, Researcher, Verifier | 2026-11-13
 - **Scribe synthesis — OPS r15 close-out + r16 adjudication round (recorded 2026-11-13 ~20:5x, White seat)** (`memory/synthesis/2026-11-13-r15-r16-adjudication.md`) - Sources (all claims trace to these): TODO.md LIVE PLAN r15+r16 sections (81,433 B / md5 f4505513, mtime 20:48:33); memory/verifier/lww-clobber-evidence-2026-11-13.md (2,1 | Agents: Builder, Mechanic, Researcher, Scribe, Verifier | 2026-11-13
 
-## Index & Pointer Operations (7)
+- **Supersession check 2026-11-16 — automated policy audit** (`memory/synthesis/supersession-check-2026-11-16.json`) - Automated scan of all synthesis files against supersession-policy-baseline.md; identifies 2 actually-superseded files + orphaned references. | Agents: Scribe | 2026-11-16
+
+## Index & Pointer Operations (8)
 
 - **memory/synthesis — pointer map** (`memory/synthesis/index-replay-r81-24of24-canonical.md`) - Scribe meeting records + consolidations (append-only, newest first). Every line in each leaf traces to a named source file. | Agents: Archivist, Builder, Designer, Mechanic, Orchestrator, Researcher, Scribe, Verifier | 2026-11-14
 - **index-regen-r73-archivist — synthesis INDEX 24/24 (durable payload)** (`memory/synthesis/index-regen-r73-archivist-2026-11-14.md`) - Filed: 2026-11-14, Archivist. Completes Scribe's truncated ground-truth step and regenerates the lost r72 replay payload. | Agents: Archivist, Mechanic, Scribe | 2026-11-14
@@ -62,6 +64,8 @@ Curated index of all files in `memory/synthesis/`, organized by theme (not just 
 - **INDEX pointer batch — CONSOLIDATED r57 (Builder, 2026-11-14)** (`memory/synthesis/index-pointer-batch-r57-consolidated.md`) - New file -> propagates per transport rule. Supersedes the three fragmented staging files below as the single source for a White-canonical append: | Agents: Archivist, Builder, Designer, Mechanic, Orchestrator, Researcher, Scribe, Verifier | 2026-11-14
 - **INDEX pointer batch — consolidated r40 (Scribe, 2026-11-14 ~05:4x)** (`memory/synthesis/index-pointer-batch-r40.md`) - New file -> propagates per transport rule. Purpose: give Orchestrator ONE file with ALL FOUR missing `memory/synthesis/INDEX.md` pointer lines for a single White-canonica | Agents: Builder, Orchestrator, Scribe, Verifier | 2026-11-14
 - **INDEX pointer addendum — r43 (Scribe, 2026-11-14 ~06:0x)** (`memory/synthesis/index-pointer-addendum-r43.md`) - New file -> propagates per transport rule. Purpose: close the gap flagged in Scribe's r43 chat block — pointer lines for the r41 and r42 leaves were staged NOWHERE (batch | Agents: Archivist, Designer, Orchestrator, Scribe, Verifier | 2026-11-14
+
+- **INDEX apply r71 result — canonical gate verification** (`memory/synthesis/index-apply-r71-result.json`) - Scribe seat; records pre/post md5+size gates for the INDEX.md canonical apply of Parts A+B+C from index-pointer-batch-r58. Both gates PASS. | Agents: Scribe | 2026-11-14
 
 ## Cycles, Narratives & Retrospectives (3)
 
