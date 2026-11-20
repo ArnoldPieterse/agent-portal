@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Ran `archive_nav.py --auto`: added 6 synthesis files to nav (mechanic adjudication, WinRM contradiction, auto_loop_notes, decision-impacts,
-- Designer committed to assisting Builder: document exact exports + edge cases per ui/ module for their open "UI Module Test Suite" goal.
-- Goal #9 closed: capacity_report.py --mock mode validated, slope=2.00 exact, breach error 0.0%, all 3 alert cases pass.
 - Non-sandbox queue refreshed 2026-11-21: two open Tier
 - Verified archive_nav.py acceptance end-to-end (detect/classify/idempotent/remove); evidence at memory/archivist/evidence-archive-nav-accepta
 - Goal #1 is NOT truly blocked — schtask auto-accumulates data (5/7 days as of 2026-11-21); unblock_all_live_runs.py handles it
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Verifier found Goal 4's (verified
 - Cross-ref integrity check passed: 0 broken live xrefs, no true circular chains (only self-references).
 - Real defect: .em (32px) and .acard button (28px)
+- Goal #4 (768px responsive) CLOSED — all 7 criteria in ui/app.css:204-229, verified via regex
+- Mechanic 10/10 goals closed; auto-loop "6 open" dispatch is stale, logged to prevent re-probing.
+- Goal #2 (KG v3) closed: 7615 nodes, all edges typed, JSON 1869KB, query mode OK. Evidence at memory/archivist/evidence-goal2-kg-v3-full-acce
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

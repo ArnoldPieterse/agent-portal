@@ -1,0 +1,1 @@
+"2026-11-20 Archivist: wrote memory/ops/memory-tree-runbook.md (121 lines) - consolidated weekly maintenance procedure for all 8 archivist tools into one operational runbook. Team contribution while at 10/10." 

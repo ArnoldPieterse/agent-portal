@@ -1,0 +1,143 @@
+{
+  "generated": "2026-11-21T00:54:29",
+  "ui_dir": "Z:\\ui",
+  "modules": 15,
+  "all_ok": true,
+  "results": [
+    {
+      "file": "api-client.js",
+      "lines": 150,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": true,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "components.js",
+      "lines": 358,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": true,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "core.js",
+      "lines": 566,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": true,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "fleet_goals_bars.js",
+      "lines": 86,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": false,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "fleet_health.js",
+      "lines": 147,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": false,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "fleet_status.js",
+      "lines": 63,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": false,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "fleet_topology.js",
+      "lines": 140,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": false,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "handoff.js",
+      "lines": 109,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": true,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "icons.js",
+      "lines": 72,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": true,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "interactions.js",
+      "lines": 163,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": true,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "notifications.js",
+      "lines": 31,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": true,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "panel-icons.js",
+      "lines": 53,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": false,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "state.js",
+      "lines": 36,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": true,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "tour.js",
+      "lines": 37,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": false,
+      "exports_missing": [],
+      "ok": true
+    },
+    {
+      "file": "uploads.js",
+      "lines": 517,
+      "balance_ok": true,
+      "balance_errors": [],
+      "exports_checked": true,
+      "exports_missing": [],
+      "ok": true
+    }
+  ]
+}
