@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 goals verified (open=0); cleaned ~44MB stale
 - compress_context.py gotcha-extraction fixed: was pulling file headers; now skips nav files, scans synthesis/, requires substantive correctio
 - All 10 Scribe goals now verified/closed; only remaining open work is WinRM hardening (blocked by sandbox egress).
 - Mirror cycle reverted goal-1 interaction work; re-applied + advanced pin to protect. design_qa
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 10 closed: kg_export.py --verify-roundtrip PASS (608 nodes, 614 edges, 346 supersessions, 5/5 integrity checks).
 - Scribe assisted Archivist goal2: filtered 73k dedup pairs to 51 actionable MD-only (344KB), recommended --md-only --exclude-canonical flag.
 - WinRM endpoints confirmed alive on PALE+BLACK; winrm_exec_test.py built & ready; SSPI auth blocked in-sandbox (NEEDS-HUMAN).
+- Goal #2: ui/animations.css (5 anims, reduced-motion) now imported in ui/app.css; usage+perf verification still pending.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
