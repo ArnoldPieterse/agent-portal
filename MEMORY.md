@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier built `perf_gate_closure_check` script — one-command acceptance for Goal #1 once :8099 baseline lands; correctly flags stale all-nu
-- Built memory/mechanic/goal1_auto_closure.py — one-command closure for Goal #1 when PortalLoadProbe hits 7/7 days (currently 5/7).
-- Verifier found 102 broken pointers remain (not 0 as Builder claimed); evidence at memory/verifier/evidence-integrity
 - Goal 4: built goal4_live_integration_test.py (7 tests, py_compile PASS); needs non-sandbox seat with :8099 access to execute.
 - Built memory/scribe/archive_nav.py (--auto/--dry-run), verified idempotent, assisting Scribe's archive nav goal.
 - RECALL: - M3 (`memory/synthesis/cycle-narrative.md:12`): Goal-setting round landed 2026-11-17 with 8 agents × 10 goals — this is the structu
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop dispatches stale goal counts (Scribe 10/10 closed
 - Mechanic: all 6 open goals blocked by sandbox egress wall; next unblock after Nov 22 06:00 schtask
 - Gap: deploy_perf_gate.py never executes negative test (criterion C). Adding --negative-test mode to perf_gate.py
+- Auto-loop dispatch "open" counts are stale; live goal_ledger.py (SSOT) confirms all lanes 10
+- Scribe confirmed artifacts on disk for goals 5,7,8,10 (card_staleness.py, archive_nav.py --auto,
+- Mechanic adding `--mock` mode to Goal #4 live integration test to validate CB logic without :8099 (bypasses egress wall).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
