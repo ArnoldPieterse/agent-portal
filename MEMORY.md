@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 9 (Empty States): CDP blocked by sandbox; pivoting to convert plain-text fallbacks → UI.emptyState/skeleton per Archivist's audit.
 - RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md:15`): Mirror-revert root-cause deep-d
 - check_winrm
 - design
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 Designer goals
 - Mechanic added --mock mode to perf_profile.py (Goal 7) so full pipeline is verifiable in sandbox without network access
 - Citation fix pass done: 467 paths fixed, broken count 1240→811, accuracy 77%→85.1%. Remaining 811 mostly truly-missing historical refs.
+- Sandbox blocks all TCP (WinError 10013); perf_profile Goal 7 is mock-only and cannot be verified with live runs in this environment.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
