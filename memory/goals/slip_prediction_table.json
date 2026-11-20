@@ -1,41 +1,151 @@
 {
-  "model": "naive_bayes_weighted",
+  "model": "naive_bayes_weighted_v2",
+  "version": 2,
+  "trained_on": "cycle-7 actuals (80 goals, 20 slipped)",
+  "training_date": "2026-11-20",
   "features": [
     "type",
     "agent",
-    "dep_depth"
+    "dep_depth",
+    "blocker_class",
+    "complexity"
   ],
-  "cv_accuracy_mean": 0.76,
+  "new_features_in_v2": [
+    "blocker_class",
+    "complexity"
+  ],
+  "cv_accuracy_mean": 0.7125,
   "cv_accuracy_folds": [
-    0.7666666666666667,
-    0.8333333333333334,
-    0.8,
-    0.6666666666666666,
-    0.7333333333333333
+    0.75,
+    0.5,
+    0.9375,
+    0.625,
+    0.75
   ],
-  "threshold": 0.87,
-  "training_data_points": 150,
-  "slip_rate_training": 0.19333333333333333,
+  "cv_accuracy_v1_baseline": 0.75,
+  "threshold": 0.5,
+  "training_data_points": 80,
+  "slip_rate_training": 0.25,
   "p_by_type": {
-    "build": 0.47133379389756463,
-    "measurement": 0.23868285562134745,
-    "ops": 0.3284445660799473,
-    "research": 0.2764602237363378,
-    "verify": 0.24939332513577903
+    "build": 0.5,
+    "measurement": 0.42857142857142855,
+    "ops": 0.15384615384615385,
+    "research": 0.2857142857142857,
+    "verify": 0.15384615384615385
   },
   "p_by_agent": {
-    "archivist": 0.29802340231992736,
-    "builder": 0.8605744789321823,
-    "designer": 0.6645677852455912,
-    "mechanic": 0.47133379389756463,
-    "orchestrator": 0.29802340231992736,
-    "researcher": 0.6406891432147439,
-    "scribe": 0.8359199721146088,
-    "verifier": 0.8813704934448883
+    "archivist": 0.1,
+    "builder": 0.2,
+    "designer": 0.7,
+    "mechanic": 0.2,
+    "orchestrator": 0.1,
+    "researcher": 0.5,
+    "scribe": 0.0,
+    "verifier": 0.2
   },
-  "p_by_depth": {
-    "depth=0": 0.47133379389756463,
-    "depth=1": 0.44200065006936895,
-    "depth=2": 0.6755496357543409
+  "p_by_blocker_class": {
+    "evidence-gap": 0.5,
+    "none": 0.11764705882352941,
+    "scope": 0.47058823529411764,
+    "seat-wall": 0.5
+  },
+  "p_by_complexity": {
+    "complexity=1": 0.19298245614035087,
+    "complexity=2": 0.42105263157894735,
+    "complexity=3": 0.25
+  },
+  "conditional_log_probs": {
+    "type|build": [
+      -1.1394,
+      -2.0949
+    ],
+    "type|verify": [
+      -1.6094,
+      -1.0389
+    ],
+    "type|measurement": [
+      -1.8326,
+      -2.5649
+    ],
+    "type|research": [
+      -2.1203,
+      -2.3826
+    ],
+    "type|ops": [
+      -1.6094,
+      -1.0389
+    ],
+    "agent|verifier": [
+      -2.2336,
+      -2.0223
+    ],
+    "agent|scribe": [
+      -3.3322,
+      -1.8216
+    ],
+    "agent|designer": [
+      -1.2528,
+      -2.8332
+    ],
+    "agent|archivist": [
+      -2.6391,
+      -1.9169
+    ],
+    "agent|orchestrator": [
+      -2.6391,
+      -1.9169
+    ],
+    "agent|mechanic": [
+      -2.2336,
+      -2.0223
+    ],
+    "agent|builder": [
+      -2.2336,
+      -2.0223
+    ],
+    "agent|researcher": [
+      -1.5404,
+      -2.4277
+    ],
+    "dep_depth|0": [
+      -0.4964,
+      -0.2113
+    ],
+    "dep_depth|1": [
+      -1.3437,
+      -2.0637
+    ],
+    "dep_depth|2": [
+      -2.0369,
+      -2.7568
+    ],
+    "blocker_class|scope": [
+      -0.9808,
+      -1.8563
+    ],
+    "blocker_class|seat-wall": [
+      -2.0794,
+      -3.0603
+    ],
+    "blocker_class|evidence-gap": [
+      -1.5686,
+      -2.5494
+    ],
+    "blocker_class|none": [
+      -1.2321,
+      -0.3302
+    ],
+    "complexity|1": [
+      -0.6506,
+      -0.293
+    ],
+    "complexity|2": [
+      -0.9383,
+      -1.6582
+    ],
+    "complexity|3": [
+      -2.4423,
+      -2.7568
+    ]
   }
 }
