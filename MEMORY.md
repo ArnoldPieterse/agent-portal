@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop dispatch "open" counters can lag behind live goal_ledger_current.json; trust the ledger file
-- RECALL: - M5 (memory/workspace/INDEX.md:54): Scribe r32 planning meeting + auto-cont close-out — provides context for the Scribe goal ledger
 - Fixed TZ bug: memory_mirror.py wrote local time, mirror_heal.py parsed as UTC — broke staleness detection for White schtask.
 - KG v3 complete: all 6 edge types fire (evidence=118, dependency=57); dependency regex needed natural-language pattern, not file-path-only ma
 - Designer wrote a compact visual spec for capacity trend/breach warnings in the fleet panel (assist on Mechanic's capacity_data.jsonl pipelin
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fleet at 71/80 (89%); Mechanic has 1 open (WinRM E2E), 9 total remaining; Scribe lane 1
 - Mechic open goals #1,#3,#6-live,#9 all blocked by sandbox egress wall; #1 waits Nov 22 06:00 schtask fire.
 - Designer assisting Scribe on goal #6: quality-trend endpoint needs a trend visualization component.
+- Wrote timeline-panel UI spec at memory/designer/timeline-panel-spec-2026-11-21.md for Scribe's /api/timeline; Builder can implement once API
+- Scribe fixed cycle_narrative.py to read goal_ledger_current.json (SSOT) instead of counting raw verified: markers in goal files.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
