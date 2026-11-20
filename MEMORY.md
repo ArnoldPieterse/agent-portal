@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 (Scheduled-Task Dependency Graph) closed: 3/3 ACs pass, artifacts at memory/mechanic/dep-report-week{1,2}.txt + fixtures/schtasks_we
-- Goal #5 (Keyword Search Index): regenerated scoped to .md leaves, 488.6KB (<500KB limit);
 - Mechanic seat: auto-loop "6 open" dispatch is stale (actual open=0); confirmed twice, do not re-probe.
 - HOT NOTE "Real defect: .em(32px)/.acard(28px)" is STALE — replaced by design tokens in commit 85e3097 (2026-11
 - Fleet at 67/80 (2026-11-21): 13 open across Archivist/Designer/Verifier; Scribe/Mechanic/Builder all 10/10 closed
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - RECALL: - **M3** (`memory/synthesis/c
 - Mechanic 10/10 goals verified; Goal #6 closed Nov 21 by adding missing (verified:) marker via goal_ledger.py --record mechanic 6.
 - Scribe confirmed 10/10 goals closed (open=0); auto
+- All 10 Archivist goals now formally verified (8,9,10 had prior work unrecorded; closed this pass).
+- Goal #9 (Theme System) closed: HC tokens in ui/tokens.css, picker in ui/core.js, WCAG AAA verified, 2 hardcoded colors fixed
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
