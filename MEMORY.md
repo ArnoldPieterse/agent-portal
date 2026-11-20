@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- perf_gate.py --simulate: all 5 phases PASS; tooling verified ready, live leg blocked only by :8099 egress wall (no re-probe).
-- Scribe goal #5 (card_staleness.py) closed by Archivist; fleet now 60/80 (75%). Evidence: memory/archivist/assist
-- Goal #8 (Alert Escalation Chain) closed: escalation_chain.py --selftest 8/8 PASS, L1/L2/L3 verified, NEEDS-HUMAN only after full chain.
-- Scribe's oldest open goal: Card Staleness Detection — next step is running `memory/scribe/card_staleness.py` and recording output as ledger
 - Goal #5 (Animation/Motion System) formally recorded
 - WCAG finding: secondary tokens (--dim,--acc,--ok light) only AA 4.8–5.9:1; "AAA 7:1+" hot-note overstates compliance for non-primary pairs.
 - Scribe: Goal 9 (Memory Search Relevance Feedback) closed — 3/3 AC pass, ledger recorded; open count now 3.
 - All 10 Designer goals closed — Goal #10 added perf markers to core.js + budget doc; no open items remain.
 - Goal #10 closed: weekly_summary.py gained --agent/--all-agents flags; 8 per-agent digests verified, no cross-contamination.
 - Goal 4 live integration test written; handles unreachable portal (FAIL+exit 1); closure is one `python` call on non-sandbox seat.
+- Fixed Goal 8 evidence path: `dup-detect-report-20
+- Goals 4,6,7,9 verified+ledgered; dashboard 6/10 is stale. Discrepancy doc written; no action needed until next sync.
+- Scribe reached 10/10 goals closed (open=0) on 2026-11-21; evidence at memory/scribe/pass-evidence-2026-11-21.md
+- Mechanic Goal 9: breach_alert() implemented, 9/9 tests pass; full closure needs 7-day data (egress wall, not re-probed).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
