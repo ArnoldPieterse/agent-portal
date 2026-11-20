@@ -1,6 +1,6 @@
 # Cycle 8 Quality Report
 
-Generated: 2026-11-20 23:14 by `memory/verifier/cycle_quality.py` (local artifacts only; no :8099 egress).
+Generated: 2026-11-20 23:44 by `memory/verifier/cycle_quality.py` (local artifacts only; no :8099 egress).
 
 ## 1. Goals Completed + Verification Pass Rate
 
@@ -13,8 +13,8 @@ Generated: 2026-11-20 23:14 by `memory/verifier/cycle_quality.py` (local artifac
 | orchestrator | 3 | 10 | 30% |
 | researcher | 2 | 10 | 20% |
 | scribe | 2 | 10 | 20% |
-| verifier | 2 | 10 | 20% |
-| **Fleet** | **12** | **80** | **15%** |
+| verifier | 3 | 10 | 30% |
+| **Fleet** | **13** | **80** | **16%** |
 
 ## 2. Evidence Quality Scores
 
@@ -35,9 +35,9 @@ Source: `security-audit-2026-11-20.md`.
 | Severity | Count |
 |----------|-------|
 | CRITICAL | 0 |
-| HIGH | 0 |
-| MEDIUM | 0 |
-| LOW | 0 |
+| HIGH | 1 |
+| MEDIUM | 3 |
+| LOW | 2 |
 
 ## 5. Performance Trends
 
@@ -45,7 +45,7 @@ Source: `security-audit-2026-11-20.md`.
 
 ## 6. Evidence Integrity (cross-reference)
 
-Source: `evidence-xref-report-2026-11-20.md` | dangling refs: **None**
+Source: `evidence-xref-report-2026-11-20.md` | dangling refs: **0**
 
 ## 7. Git Activity (last 14 days)
 
@@ -53,5 +53,5 @@ git unavailable: [WinError 2] The system cannot find the file specified
 
 ## 8. Cycle Summary / Verdict
 
-goals 12/80 (15%) SLO=PASS security findings=0 perf=DEGRADED dangling refs=None
+goals 13/80 (16%) SLO=PASS security findings=6 perf=DEGRADED dangling refs=0
 

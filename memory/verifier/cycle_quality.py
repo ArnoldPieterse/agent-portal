@@ -77,12 +77,18 @@ def parse_security():
         return None, None
     fp = files[-1]
     txt = open(fp, encoding="utf-8", errors="replace").read()
+    # Pattern 1: severity as a standalone bold cell in a table row: | **HIGH** |
+    # Pattern 2: severity as plain text cell: | HIGH |
+    # Pattern 3: section header: ## HIGH
     def cellcount(s):
-        return len(re.findall(r"(?m)^\|\s*" + s + r"\s*\|", txt))
+        # severity can appear in any column of a table row: | ... | **HIGH** | ...
+        c = len(re.findall(r"(?m)^\|.*\*\*" + s + r"\*\*.*\|", txt))
+        if c == 0:
+            c = len(re.findall(r"(?m)^\|\s*" + s + r"\s*\|", txt))
+        if c == 0:
+            c = len(re.findall(r"(?im)^#{2,4}\s*" + s + r"\b", txt))
+        return c
     sev = {s: cellcount(s) for s in ["CRITICAL","HIGH","MEDIUM","LOW"]}
-    if sum(sev.values()) == 0:
-        for s in ["CRITICAL","HIGH","MEDIUM","LOW"]:
-            sev[s] = len(re.findall(r"(?im)^#{2,4}\s*" + s + r"\b", txt))
     return sev, fp
 
 # ---- SLO -----------------------------------------------------------------
@@ -131,7 +137,10 @@ def parse_xref():
     if not files:
         return None
     txt = open(files[-1], encoding="utf-8", errors="replace").read()
-    m = re.search(r"(\d+)\s+dangling", txt, re.I)
+    # Format: "Dangling (broken) references: 0" or "N dangling"
+    m = re.search(r"[Dd]angling[^:]*:\s*(\d+)", txt)
+    if not m:
+        m = re.search(r"(\d+)\s+dangling", txt, re.I)
     return {"file": os.path.basename(files[-1]), "dangling": int(m.group(1)) if m else None}
 
 # ---- git -----------------------------------------------------------------

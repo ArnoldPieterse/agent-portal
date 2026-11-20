@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe hit context-window limit reading memory/goals/squire.md; no artifact produced — blocker may repeat.
-- Goal 6 done: goal_acceptance.py built, 37
-- Goal #10 closed: weekly_summary.py --agent flag implemented; 8/8 per-agent digests generated at memory/scribe/weekly-2026-W47-{agent}.md
-- Goal 5 (dependency graph) closure blocked: needs real weekly generations, current evidence is fixture-based only.
-- Goal #1: contrast PASS; ARIA gap found — ~15 dialog `<label>`s missing `for=` attr; building static A
 - Goal #8 done: `dup_detect.py` (n-gram shingling + Jaccard>0.7) found 2849 near-dup pairs in 3282 leaves, 7.7s; categorized for merge.
 - Goal #5 (Card Staleness Detection) closed: card_staleness.py selftest 3/3 PASS, real-data run flags 3 stale + 1 fresh correctly.
 - Goal 7 closed: a11y_tree_verify.py (heading/landmark/list/table checks) passes clean; evidence at memory/designer/a11y-tree-verify-evidence-
 - Mechanic built capacity_trend.py (Goal 9) — 5/5 selftest pass, first data point seeded; Goal 5 still blocked on COM wall.
 - Goal #3 API contracts: static+negative leg DONE (31/31 pass, 5 neg tests); only --live remains, blocked by :8099 egress wall.
+- Goal #8 closed: component-reference.md documents all 5 ui/components.js functions with examples, visuals, accessible names.
+- Goal #9 done: citation_map.py → citation-map.json (2095 files, 1667 edges, 245 genuine stale citations). Evidence at memory/archivist/eviden
+- Goal #10 closed: fixed cycle_quality.py security parser — severities are bold in table cells (`| **HIGH** |`), not standalone cells.
+- Goal #4: circuit breaker was documented but never applied to agent_portal.py; now implemented (timeout 5s, CB threshold 3)
+- Scribe goals file is at memory/goals/scribe.md (not squire.md) — wrong cached path caused 2 failed passes
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
