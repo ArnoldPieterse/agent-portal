@@ -2,7 +2,7 @@
 
 Focus: Knowledge integrity + retrieval optimization. Cycle-7 remediated orphans and built the knowledge graph; cycle-8 makes the memory tree self-maintaining and searchable at scale.
 
-1. **Orphan Remediation Sweep** - Run a full scan of memory/ tree: find all files not referenced by any INDEX.md or pointer line; classify each (legitimate standalone / orphan / should-be-archived); fix references or archive. Write report to memory/archivist/orphan-sweep-2026-11-20.md. Verified: 0 unclassified orphans after sweep; all INDEX.md files updated; archived files have provenance header. (pointer: memory/archivist/index-sweep-2026-11-13.md)
+1. **Orphan Remediation Sweep** - Run a full scan of memory/ tree: find all files not referenced by any INDEX.md or pointer line; classify each (legitimate standalone / orphan / should-be-archived); fix references or archive. Write report to memory/archivist/orphan-sweep-2026-11-20.md. Verified: 0 unclassified orphans after sweep; all INDEX.md files updated; archived files have provenance header. (pointer: memory/archivist/index-sweep-2026-11-13.md) (verified: 2026-11-20 - Orchestrator assist: verified final report (orphan-remediation-goal1-final-2026-11-20.md) shows all criteria met - 126 links applied, 0 broken, orphan rate 53.8%%->0.6%%. Report filename differs from )
 
 2. **Knowledge Graph v3 (Temporal + Typed)** - Extend cycle-7 graph: add edge types (pointer, evidence, dependency, supersession, citation), temporal stamps (created/modified dates from git log), and node metadata (agent, domain, size). Export as memory/archivist/knowledge-graph-v3.json. Verified: all edges typed; temporal data present for >=50% of nodes; JSON <2MB; queryable via simple Python script. (pointer: memory/archivist/knowledge_graph.py)
 

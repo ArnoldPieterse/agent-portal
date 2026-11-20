@@ -6,7 +6,8 @@ and alerts when any endpoint degrades >20% vs baseline.
 Usage:
   python memory/verifier/perf_gate.py --baseline   # capture/refresh baseline
   python memory/verifier/perf_gate.py              # compare vs baseline, alert on regression
-Exit: 0 = clean (no regression), 1 = regression detected, 2 = portal unreachable.
+Exit: 0 = clean (no regression), 1 = regression detected, 2 = portal unreachable,
+       3 = baseline invalid (all/none endpoints have p50) -> gate refuses to score.
 """
 import json, os, sys, time, urllib.request, statistics
 from datetime import datetime, timezone
@@ -32,6 +33,17 @@ DEGRADE_PCT = 20.0  # alert threshold
 
 def now_iso():
     return datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ")
+
+
+def baseline_validity(doc):
+    """Return (valid, n_valid, n_total). A baseline is valid only if a strict
+    majority of its endpoints carry a real (non-null) p50. An all-null baseline
+    means the portal was unreachable at capture time and must NOT be scored."""
+    eps = doc.get("endpoints", {})
+    n_total = len(eps)
+    n_valid = sum(1 for e in eps.values() if e.get("p50_ms") is not None)
+    valid = (n_total > 0) and (n_valid * 2 > n_total)
+    return valid, n_valid, n_total
 
 
 def measure(path):
@@ -68,9 +80,15 @@ def run_all():
 def capture_baseline():
     res = run_all()
     doc = {"captured_at": now_iso(), "threshold_pct": DEGRADE_PCT, "endpoints": res}
+    valid, n_valid, n_total = baseline_validity(doc)
+    doc["valid"] = valid
     with open(BASELINE_PATH, "w", encoding="utf-8") as f:
         json.dump(doc, f, indent=2)
-    print(f"[perf_gate] baseline captured -> {os.path.relpath(BASELINE_PATH)} ({len(res)} endpoints)")
+    print(f"[perf_gate] baseline captured -> {os.path.relpath(BASELINE_PATH)} ({n_valid}/{n_total} endpoints with p50)")
+    if not valid:
+        print("[perf_gate] WARNING: baseline INVALID (portal likely unreachable from this seat).")
+        print("            It is tagged valid=false; the gate will refuse to score against it.")
+        print("            Re-capture from a non-sandbox White seat with :8099 egress.")
     return doc
 
 
@@ -80,6 +98,21 @@ def compare():
         sys.exit(2)
     with open(BASELINE_PATH, encoding="utf-8") as f:
         base = json.load(f)
+    valid, n_valid, n_total = baseline_validity(base)
+    if not valid:
+        lines = ["# Performance Gate Report", "", f"Run: {now_iso()}",
+                 f"Baseline: {base.get('captured_at')}", "",
+                 f"## INVALID BASELINE - gate refused to score (fail-closed)", "",
+                 f"Only {n_valid}/{n_total} baseline endpoints have a real p50. An all/none-null"
+                 " baseline means the portal was unreachable when it was captured, so any"
+                 " PASS against it would be false.", "",
+                 "Fix: re-capture from a non-sandbox White seat with :8099 egress:",
+                 "  python memory/verifier/perf_gate.py --baseline", ""]
+        with open(REPORT_PATH, "w", encoding="utf-8") as f:
+            f.write("\n".join(lines))
+        print(f"[perf_gate] report -> {os.path.relpath(REPORT_PATH)}")
+        print(f"[perf_gate] FAIL-CLOSED: baseline invalid ({n_valid}/{n_total} endpoints with p50); not scored.")
+        sys.exit(3)
     res = run_all()
     regressions = []
     rows = []
@@ -165,6 +198,24 @@ def simulate():
     regressed_clean = _compare_with(current_clean, sim_base)
     assert len(regressed_clean) == 0, f"Expected 0 regressions in clean state, got {regressed_clean}"
     print("[perf_gate:simulate] Phase 3 PASS: clean state shows 0 regressions")
+
+    # --- Phase 4: fail-closed on an all-null (unreachable-seat) baseline ---
+    null_base = {"captured_at": now_iso(), "threshold_pct": DEGRADE_PCT,
+                 "endpoints": {p: {"p50_ms": None, "p95_ms": None, "errors": 12} for p in ENDPOINTS}}
+    v_allnull, nv, nt = baseline_validity(null_base)
+    assert v_allnull is False and nv == 0, f"All-null baseline must be invalid, got valid={v_allnull} ({nv}/{nt})"
+    print(f"[perf_gate:simulate] Phase 4 PASS: all-null baseline correctly flagged invalid (0/{nt}); gate would exit 3 (fail-closed)")
+
+    # --- Phase 5: a majority-valid baseline is accepted ---
+    mix_base = {"captured_at": now_iso(), "threshold_pct": DEGRADE_PCT, "endpoints": {}}
+    half = len(ENDPOINTS) // 2
+    for i, p in enumerate(ENDPOINTS):
+        mix_base["endpoints"][p] = {"p50_ms": (5.0 if i < half else None), "p95_ms": (8.0 if i < half else None), "errors": 0}
+    # add one extra valid to push strictly over majority
+    mix_base["endpoints"][ENDPOINTS[half]] = {"p50_ms": 5.0, "p95_ms": 8.0, "errors": 0}
+    v_mix, nv2, nt2 = baseline_validity(mix_base)
+    assert v_mix is True and nv2 * 2 > nt2, f"Majority-valid baseline must be valid, got valid={v_mix} ({nv2}/{nt2})"
+    print(f"[perf_gate:simulate] Phase 5 PASS: majority-valid baseline accepted ({nv2}/{nt2})")
 
     # Cleanup
     shutil.rmtree(tmpdir, ignore_errors=True)
