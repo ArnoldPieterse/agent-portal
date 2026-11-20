@@ -1,0 +1,106 @@
+{
+  "captured_at": "2026-11-20 12:41:13Z",
+  "threshold_pct": 20.0,
+  "endpoints": {
+    "/api/status": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/health/fleet": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/goals": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/agents": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/fleet": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/fleet/status": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/models": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/models/status": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/perf": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/tools": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/uploads": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/history": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/provenance": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/memory-health": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/manifest": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/knowledge-bases": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/run-state": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/activity": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/decisions": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    },
+    "/api/net/dns": {
+      "p50_ms": null,
+      "p95_ms": null,
+      "errors": 12
+    }
+  }
+}

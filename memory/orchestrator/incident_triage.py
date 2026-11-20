@@ -63,17 +63,20 @@ def classify(event_type, agent=None):
         return {"category": "infrastructure", "severity": "high", "action": "PortalRun restart"}
     return {"category": "unknown", "severity": "low", "action": "Investigate manually"}
 
-def assign_recovery(action):
+def assign_recovery(action, category=None):
+    # Goal #6 rule: WinRM reboot -> Mechanic (ops recovery).
     if "WinRM" in action or "reboot" in action:
         return "Mechanic"
-    if "agent" in classify.__code__.co_varnames:
+    # Agent-backend issues (wedge / model load) are orchestration decisions.
+    if category == "agent":
         return "Orchestrator"
+    # Infrastructure (portal, host-down) defaults to ops.
     return "Mechanic"
 
 def write_incident(event_type, agent=None, detail="", source="auto", date_key=None):
     INCIDENTS_DIR.mkdir(parents=True, exist_ok=True)
     cls = classify(event_type, agent)
-    assignee = assign_recovery(cls["action"])
+    assignee = assign_recovery(cls["action"], cls["category"])
     ts = now_iso()
     dk = date_key or today_str()
     target = agent or "fleet"
@@ -163,7 +166,7 @@ def triage(incidents):
     for inc in incidents:
         fpath = write_incident(inc["event_type"], inc.get("agent"), inc.get("detail", ""), inc.get("source", "auto"), inc.get("date_key"))
         cls = classify(inc["event_type"])
-        assignee = assign_recovery(cls["action"])
+        assignee = assign_recovery(cls["action"], cls["category"])
         print(f"  [{cls['severity'].upper()}] {fpath.relative_to(BASE)} -> assigned: {assignee}")
         created.append(fpath)
     return created
@@ -173,6 +176,14 @@ def main():
         fpath = resolve_incident(sys.argv[2])
         if fpath:
             print(f"RESOLVED: {fpath.relative_to(BASE)}")
+        return
+    if len(sys.argv) >= 3 and sys.argv[1] == "--simulate":
+        # Acceptance-test path: inject a synthetic incident (e.g. wedge, winrm_reboot).
+        event_type = sys.argv[2]
+        agent = sys.argv[3] if len(sys.argv) >= 4 else "researcher"
+        fpath = write_incident(event_type, agent, detail=f"SIMULATED {event_type} for acceptance test", source="--simulate")
+        cls = classify(event_type)
+        print(f"SIMULATED: {fpath.relative_to(BASE)} | severity={cls['severity']} | assignee={assign_recovery(cls['action'], cls['category'])}")
         return
     state = load_state()
     all_incidents = []

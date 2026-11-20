@@ -22,12 +22,36 @@ def die(code, msg):
 def sha12(b): return hashlib.sha1(b).hexdigest()[:12]
 
 # --- Step 1: Syntax validation (reuse logic from build_verify_pin.py) ---
+_REGEX_KW = {"return","typeof","case","in","of","new","delete","void",
+              "throw","do","else","instanceof","Instanceof","yield","await","import"}
+
+def _is_regex_start(src, i):
+    """Previous-token heuristic: does the '/' at index i begin a regex literal?
+    A '/' is division when the previous significant token ENDS an expression
+    (identifier/number, ')', ']', '.', or a closing template backtick); otherwise
+    it begins a regex. Keyword override: after return/typeof/case/... a '/' is a regex."""
+    j = i - 1
+    while j >= 0 and src[j] in " \t\r\n":
+        j -= 1
+    if j < 0:
+        return True  # start of input -> regex
+    ps = src[j]
+    if ps.isalnum() or ps in "_$":
+        k = j
+        while k >= 0 and (src[k].isalnum() or src[k] in "_$"):
+            k -= 1
+        word = src[k+1:j+1]
+        return word in _REGEX_KW  # keyword -> regex, else identifier/number -> division
+    if ps in ")]}.`":
+        return False  # expression ended -> division
+    return True  # operator / punctuation / start of line -> regex
+
 def _js_balanced(src):
-    """Char-scanner for JS delimiter balance. Handles comments, strings, templates."""
+    """Char-scanner for JS delimiter balance. Handles comments, strings, templates,
+    and regex literals (so [ ] { } inside a regex char-class are not miscounted)."""
     stack = []
     state = "code"
     i, n = 0, len(src)
-    prev_sig = ""
     def push(c):
         if c in "({[": stack.append(c)
         elif c in ")}]":
@@ -40,8 +64,18 @@ def _js_balanced(src):
         if state == "code":
             if ch=="/" and nxt=="/": state="line"; i+=2; continue
             if ch=="/" and nxt=="*": state="block"; i+=2; continue
-            if ch=="'": state="sq"; prev_sig="str"; i+=1; continue
-            if ch=='"': state="dq"; prev_sig="str"; i+=1; continue
+            if ch=="/" and _is_regex_start(src, i):
+                j = i+1; closed = False
+                while j < n:
+                    c2 = src[j]
+                    if c2 == "\\": j += 2; continue
+                    if c2 == "/": closed = True; break
+                    if c2 == "\n": break  # regex cannot span a newline -> not a regex
+                    j += 1
+                if closed:
+                    i = j+1; continue  # skip past closing '/'; flags follow harmlessly
+            if ch=="'": state="sq"; i+=1; continue
+            if ch=='"': state="dq"; i+=1; continue
             if ch=="`":
                 j=i+1; depth=0
                 while j<n:
@@ -50,12 +84,11 @@ def _js_balanced(src):
                     if c2=="$" and nx2=="{": depth+=1; j+=2; continue
                     if depth>0 and c2=="}": depth-=1
                     j+=1
-                i=j+1; prev_sig="str"; continue
-            if ch in "({[": 
+                i=j+1; continue
+            if ch in "({[":
                 if not push(ch): return False, f"Unbalanced '{ch}' at pos {i}"
             elif ch in ")}]":
                 if not push(ch): return False, f"Unexpected '{ch}' at pos {i}"
-            prev_sig = ch
         elif state == "line":
             if ch=="\n": state="code"
         elif state == "block":
