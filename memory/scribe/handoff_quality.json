@@ -1,0 +1,84 @@
+[
+  {
+    "id": "handoff-0",
+    "from_agent": "Orchestrator",
+    "to_agent": "Builder",
+    "score": 68.0,
+    "sub_scores": {
+      "completeness": 30.0,
+      "specificity": 16.0,
+      "actionability": 22.0
+    },
+    "weak_fields": [
+      "next_step_no_target"
+    ]
+  },
+  {
+    "id": "handoff-1",
+    "from_agent": "Mechanic",
+    "to_agent": "Scribe",
+    "score": 92.0,
+    "sub_scores": {
+      "completeness": 30.0,
+      "specificity": 32.0,
+      "actionability": 30.0
+    },
+    "weak_fields": []
+  },
+  {
+    "id": "handoff-2",
+    "from_agent": "Researcher",
+    "to_agent": "Verifier",
+    "score": 88.0,
+    "sub_scores": {
+      "completeness": 30.0,
+      "specificity": 40.0,
+      "actionability": 18.0
+    },
+    "weak_fields": [
+      "next_step_no_verb"
+    ]
+  },
+  {
+    "id": "handoff-3",
+    "from_agent": "Orchestrator",
+    "to_agent": "Builder",
+    "score": 88.0,
+    "sub_scores": {
+      "completeness": 30.0,
+      "specificity": 40.0,
+      "actionability": 18.0
+    },
+    "weak_fields": [
+      "next_step_no_verb"
+    ]
+  },
+  {
+    "id": "handoff-4",
+    "from_agent": "Researcher",
+    "to_agent": "Scribe",
+    "score": 88.0,
+    "sub_scores": {
+      "completeness": 30.0,
+      "specificity": 40.0,
+      "actionability": 18.0
+    },
+    "weak_fields": [
+      "next_step_no_verb"
+    ]
+  },
+  {
+    "id": "handoff-5",
+    "from_agent": "Orchestrator",
+    "to_agent": "Designer",
+    "score": 88.0,
+    "sub_scores": {
+      "completeness": 30.0,
+      "specificity": 40.0,
+      "actionability": 18.0
+    },
+    "weak_fields": [
+      "next_step_no_verb"
+    ]
+  }
+]

@@ -1,0 +1,282 @@
+{
+  "generated": "2026-11-20T22:28:50.952127",
+  "total_references": 39,
+  "files_with_references": 9,
+  "dangling_count": 0,
+  "edges": [
+    {
+      "source_file": "memory/goals/archivist.md",
+      "source_line": 5,
+      "type": "pointer",
+      "target": "memory/archivist/index-sweep-2026-11-13.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/archivist.md",
+      "source_line": 7,
+      "type": "pointer",
+      "target": "memory/archivist/knowledge_graph.py",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/builder.md",
+      "source_line": 5,
+      "type": "pointer",
+      "target": "memory/builder/apply_a4_a5_r35.py",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/builder.md",
+      "source_line": 9,
+      "type": "pointer",
+      "target": "memory/builder/error_boundary_increment3-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/builder.md",
+      "source_line": 11,
+      "type": "pointer",
+      "target": "memory/builder/component_refactor_regression_2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/builder.md",
+      "source_line": 15,
+      "type": "pointer",
+      "target": "memory/builder/designer-goal2-fleet-states-2026-11-18.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/builder.md",
+      "source_line": 17,
+      "type": "pointer",
+      "target": "memory/builder/verify_theme_toggle_2026-11-17.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/designer.md",
+      "source_line": 5,
+      "type": "pointer",
+      "target": "memory/designer/contrast-audit-live-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/designer.md",
+      "source_line": 7,
+      "type": "pointer",
+      "target": "memory/designer/goal2-fleet-states-2026-11-18.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/designer.md",
+      "source_line": 9,
+      "type": "pointer",
+      "target": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/designer.md",
+      "source_line": 13,
+      "type": "pointer",
+      "target": "memory/designer/goal2-animation-consumers-landed-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/designer.md",
+      "source_line": 23,
+      "type": "pointer",
+      "target": "memory/designer/css-bundle-budget-2026-11-17.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/mechanic.md",
+      "source_line": 13,
+      "type": "pointer",
+      "target": "memory/mechanic/goal6-dep-gen-built-2026-11-17.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/mechanic.md",
+      "source_line": 15,
+      "type": "pointer",
+      "target": "memory/mechanic/reboot-drill-evidence-verify-2026-11-19.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/mechanic.md",
+      "source_line": 21,
+      "type": "pointer",
+      "target": "memory/mechanic/capacity-report-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/mechanic.md",
+      "source_line": 23,
+      "type": "pointer",
+      "target": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/orchestrator.md",
+      "source_line": 7,
+      "type": "pointer",
+      "target": "memory/orchestrator/fleet_capacity_2026-11-17.json",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/orchestrator.md",
+      "source_line": 9,
+      "type": "pointer",
+      "target": "memory/orchestrator/goal3-auto-transition-ext-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/orchestrator.md",
+      "source_line": 11,
+      "type": "pointer",
+      "target": "memory/orchestrator/goal9-perf-radar-backend-done-2026-11-17.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/orchestrator.md",
+      "source_line": 13,
+      "type": "pointer",
+      "target": "memory/orchestrator/goal5-binding-audit-progress-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/orchestrator.md",
+      "source_line": 23,
+      "type": "pointer",
+      "target": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/researcher.md",
+      "source_line": 5,
+      "type": "pointer",
+      "target": "memory/researcher/unified-loader-offline-surface-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/researcher.md",
+      "source_line": 7,
+      "type": "pointer",
+      "target": "memory/researcher/residency-matrix-offline-surface-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/researcher.md",
+      "source_line": 9,
+      "type": "pointer",
+      "target": "memory/researcher/overnight-unload-histogram-2026-11-18.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/researcher.md",
+      "source_line": 11,
+      "type": "pointer",
+      "target": "memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/researcher.md",
+      "source_line": 13,
+      "type": "pointer",
+      "target": "memory/researcher/model-benchmark-2026-11-16.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/researcher.md",
+      "source_line": 15,
+      "type": "pointer",
+      "target": "memory/researcher/kg_integrity_bug_check.py",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/researcher.md",
+      "source_line": 21,
+      "type": "pointer",
+      "target": "memory/researcher/evidence-source-scorer-2026-11-18.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/scheduled-background.md",
+      "source_line": 13,
+      "type": "pointer",
+      "target": "memory/mechanic/goal6-dep-gen-built-2026-11-17.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/scheduled-background.md",
+      "source_line": 14,
+      "type": "pointer",
+      "target": "memory/mechanic/test_chaos_drill_sim.py",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/scheduled-background.md",
+      "source_line": 15,
+      "type": "pointer",
+      "target": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/scheduled-background.md",
+      "source_line": 16,
+      "type": "pointer",
+      "target": "memory/verifier/smb_drift_detector.py",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/scribe.md",
+      "source_line": 7,
+      "type": "pointer",
+      "target": "memory/scribe/memory-search-goal9-complete-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/scribe.md",
+      "source_line": 9,
+      "type": "pointer",
+      "target": "memory/scribe/cycle_narrative.py",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/scribe.md",
+      "source_line": 15,
+      "type": "pointer",
+      "target": "memory/scribe/chain_check.py",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/scribe.md",
+      "source_line": 23,
+      "type": "pointer",
+      "target": "memory/scribe/goal6-synthesis-quality-verified-2026-11-20.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/verifier.md",
+      "source_line": 15,
+      "type": "pointer",
+      "target": "memory/verifier/MEMORY.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/verifier.md",
+      "source_line": 19,
+      "type": "pointer",
+      "target": "memory/verifier/MEMORY.md",
+      "exists": true
+    },
+    {
+      "source_file": "memory/goals/verifier.md",
+      "source_line": 21,
+      "type": "pointer",
+      "target": "memory/verifier/MEMORY.md",
+      "exists": true
+    }
+  ],
+  "dangling": []
+}
