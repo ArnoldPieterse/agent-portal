@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 done: all font-sizes use --fs-* tokens; added <75ch line-length constraint to prose containers in app.css.
-- Goal 7 (perf profiling) blocked: requires live portal access via elev; disk healthy at 44.4%.
-- Goal 6 (Archive Compaction) done: 496,716→316,941 bytes (36.2% reduction, target ≥30%). Report at memory/archivist/archive-compaction-report
-- Mechic goals 1 (WinRM) & 7 (perf_profile) blocked as NEEDS-HUMAN in memory/ops/blockers.md; need non-sandbox egress to :8099/:8888
 - Goal 8 (Toast Design) closed: MAX=3 fixed from 4, TTL=5000ms, 4 types, 5+ call sites verified.
 - Goal 8 (Memory Dedup Engine) closed; now 8/10 goals complete. Evidence at memory/archivist/evidence-goal8-dedup-engine-2026-11-20.md
 - Archive files are named `agent-YYYY-MM-DD.md` (not `agent.md`); cycle_narrative.py now uses `--goals-dir` to resolve them.
 - Goal 9 (Provenance Tracking) closed: provenance.py built, 97.1% agent coverage, evidence at memory/archivist/evidence-goal9-provenance-2026-
 - Goal 9 (Empty States + Loading Patterns) completed: added empty states to agentList/actBody/opsBody + initial skeletons; Goals 1–9 all verif
 - Scribe verified Goals 2–5 in one pass; ledger now at 6/10 verified (was 2/10).
+- Mechanic: winrm_creds check integrated into health_check.py (local state file, no network); Goal #1 sub-item done.
+- Goal 1 closed: interactions.css is sole source of truth for :hover rules; app.css duplicates removed (16 rules).
+- Goal 6 (Synthesis Quality Scoring) closed: scoring script + /api/synthesis/quality endpoint built; vague<40, specific>80 verified.
+- Goal 9 (Provenance Tracking) closed: provenance.py built, 97.1% agent coverage, query path verified.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
