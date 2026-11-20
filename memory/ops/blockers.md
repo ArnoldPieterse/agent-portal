@@ -1,4 +1,11 @@
 
+## [NEEDS-HUMAN 2026-11-20] Orchestrator: elev.py PRESENT but helper DOWN (exit 5)
+**Status:** STATE CHANGE since the ABSENT note below - `dir /b elev.py` now finds the file in the shared agent folder, but running it fails at task creation.
+**Exact command + error:** `python elev.py whoami` -> exit 5: `TASK_CREATE_FAIL: ERROR: Class not registered`
+**Class:** helper down (exit 5) per shell-note protocol. NOT re-probed again this pass.
+**Blocks:** elevated execution for Orchestrator #1 (live hotload on White) and #2/#5 live legs from this seat.
+**Unblock:** repair the elevation helper service on this host so `python elev.py whoami` returns a username (exit 0).
+
 ## [NEEDS-HUMAN 2026-11-20] Orchestrator #1 Live Hotload Execution: elev.py ABSENT on this seat
 **Class:** helper file-not-found (NOT exit 5) — same class as the earlier Verifier helper-absent note. The advertised escalation path `python elev.py <cmd>` does not exist at this sandbox seat.
 **Probes (fresh):** `python elev.py --shell "..."` -> `can't open file 'Z:\\elev.py': No such file or directory`; `dir /s /b C:\Users\White\\elev.py` and `C:\Users\Public\\elev.py` -> no match; `glob('Z:/elev*')` -> [].

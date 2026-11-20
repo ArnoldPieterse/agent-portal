@@ -37,3 +37,5 @@ Last updated: 2026-11-20.
 - [Orchestrator 2026-11-20] assist Mechanic G1 WinRM forecast -> memory/orchestrator/assist-mechanic-g1-winrm-forecast-2026-11-20.md   sequencing+risk map written (3-step plan, slip prediction); Mechanic owns closure
 
 - [Orchestrator 2026-11-20] assist Archivist G9 provenance local verify -> memory/orchestrator/assist-archivist-goal9-provenance-verify-2026-11-20.md   97.1%% coverage confirmed, JSON valid; unblocked 2/3 criteria from sandbox seat
+
+- goal5-binding-audit-progress-2026-11-20.md  (cycle-8 #5: dry-run + fault-injection PASS; real dup binding builder/verifier flagged; schtask+live legs blocked per ops/blockers.md)

@@ -19,7 +19,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 AGENTS_JSON = os.path.join(ROOT, "agents.json")
 HOSTS_JSON = os.path.join(ROOT, "memory", "llm", "hosts.json")
-REPORT_PATH = os.path.join(ROOT, "memory", "llm", "binding-audit.md")
+REPORT_DIR = os.path.join(ROOT, "memory", "llm")
+# Date-stamped per cycle-8 goal spec: binding-audit-YYYY-MM-DD.md (latest kept as binding-audit.md too)
+REPORT_PATH = os.path.join(
+    REPORT_DIR,
+    "binding-audit-" + datetime.now(timezone.utc).strftime("%Y-%m-%d") + ".md",
+)
 
 STUDIO_PORTS = {
     "white": 8888,
