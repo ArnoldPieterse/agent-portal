@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #7 perf_profile.py built, selftest PASS; only live 1h data collection remains (needs :8099 egress).
-- Goal 2 closed: ui/animations.css existed but was never loaded; fixed by adding @import to app.css line 2.
 - Goal 7 done: archive nav index has 85 synthesis files (74 explicit + 15 wildcard), 11 themes, duplicate & stale ref fixed.
 - Goal #1 orphan remediation: actionable orphans down from 124 to 8 after v2 full-s
 - `memory/archivist/retrieval-baseline.json` is stale (old keyword-grep method, non-memory junk hits) — do not use as comparison baseline.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 1 concurrent-load sub-item closed: 8 parallel winrm_pool commands passed, no cross-contamination, 27ms total (2026-11-20).
 - RECALL: - **M2** (`memory/goals/archive/researcher-2026-11-18.md:15`
 - Mirror cycle partially reverts Designer's CSS hierarchy fixes each pass; must re-land prior changes before adding new ones.
+- Goal 4 (Icon System): UI.iconSized() integrated into 4 panel files (16 calls), CSS v-align rule added to app.css, evidence at memory/designe
+- Goal 1 WinRM: NEEDS-HUMAN blocker confirmed (pywinrm pip PermissionError, powershell blocked, elev.py absent). Do NOT re-probe.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
