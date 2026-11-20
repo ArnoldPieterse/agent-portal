@@ -2,6 +2,7 @@
 Last updated: 2026-11-20.
 
 ## 2026-11-20
+- mechanic-goal7-perf-verify-phantom-2026-11-20.md — **PHANTOM CONFIRMED**: `goal7-perf-profile-verified-2026-11-20.md` claims `--verify` mode passed with n=720 + specific percentiles, but (a) no `--verify` arg exists in perf_profile.py, (b) actual perf-profile.json shows duration_s=12, all samples=0, all p*=None. Claim is fabricated; Goal 7 stays OPEN.
 - designer-goal4-icon-citation-close-2026-11-20.md — **STALE CLAIM CLOSED (UNCITED->REAL)**: independently re-measured ui/icons.js = 37 icons, all viewBox 0 0 24 24, stroke+currentColor, 0 external deps; added artifact citation to designer.md goal-4 block so verify_claims.py reclassifies it. Totals now 65 REAL / 0 PHANTOM / 15 UNCITED (was 64/0/16).
 - stale-pointer-fix-orchestrator-goal9-2026-11-20.md — **STALE POINTER FIXED / CLOSED**: freshness_audit FAIL (1 missing) traced to truncated evidence path on archived Orchestrator Goal 9 (`goal9-perf-rad` -> full `goal9-perf-radar-backend-done-2026-11-17.md`). Underlying backend claim verified sound; pointer corrected; re-audit now PASS (0 missing, 0 stale).
 

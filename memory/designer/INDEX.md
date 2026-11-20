@@ -65,3 +65,12 @@ Recommendation: archive r21-r71 round logs to memory/designer/archive-2026-11-14
 
 ## Cycle-5 White assist (indexed 2026-11-19) - goals 2/5/9/10 browser acceptance
 - -> memory/designer/acceptance-2-5-9-10-2026-11-19.md   live headless-Edge acceptance: density -37/-31/-48%%, notify 3 toasts+badge, tour 4 steps+selftest JSON+non-reappear chain, print PDF 425KB; artifacts in memory/designer/
+
+## Cycle-7 evidence (indexed 2026-11-20, Researcher seat - stale open-count unblock)
+Cycle-7 goal set (set 2026-11-20). These leaves make verified cycle-7 work visible to /api/goals
+(pointers in memory/goals/designer.md reference them). Audit: memory/researcher/designer-cycle7-open-count-audit-2026-11-20.md
+- -> memory/designer/goal1-interaction-system-live-2026-11-20.md   goal 1 Interaction Design System: ui/interactions.css+animations.css made live via @import, 6 patterns wired, 16 ad-hoc :hover removed, interactions.js served
+- -> memory/designer/goal2-animation-consumers-landed-2026-11-20.md   goal 2 Animation/Motion: @import landed + real consumers (gauge-fill/ring-fill/panel-enter), reduced-motion honored
+- -> memory/designer/goal6-breakpoint-verify-final-2026-11-20.md   goal 6 Responsive Hardening: all 4 breakpoints, 0 overflow risks, touch targets >=44px (static cascade analysis; browser unavailable in sandbox)
+- -> memory/designer/goal8-toast-evidence-2026-11-20.md   goal 8 Toast system: 4 types, MAX=3 stack, TTL=5s auto-dismiss, 5 call sites - ALL CRITERIA PASS
+- -> memory/designer/contrast-audit-live-2026-11-20.md   goal 7 Contrast: LIVE run = FAIL (light theme 30 pairs <4.5:1) - goal NOT met, left open
