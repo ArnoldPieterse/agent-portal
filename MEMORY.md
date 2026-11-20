@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10/10 Archivist goals formally closed in ledger; Goal #10 was last gap (record-only, evidence pre-existed).
-- Goal 6 (responsive) CSS fixes done; remaining: CDP screenshot verification at all 4 breakpoints (320/375/768/1024).
-- Mechanic: "1 open" in auto-loop prompts is stale (pre-cycle-7 ledger); actual state is 10/10 closed, open=0.
 - Auto-loop "1 open" flag is stale (pre-cycle-7); all 10 Archivist goals verified closed,
 - Toast system in ui/notifications.js + app.css; added missing .toast.info (blue) style to close Goal 8.
 - Auto-loop "1 open" flag is stale — all 10 Mechanic goals verified/closed since cycle-7; ledger confirms open
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 9 closed: added Activity + Agent-list empty states in ui/core.js via UI.emptyState(); files on disk, portal serving.
 - Goal7 evidence file claims --verify mode (n=720) but perf_profile.py has no such flag; stale claim documented
 - Verifier assigned to verify Archivist goal #10 (KG Export+Import round-trip) as concrete contribution while idle
+- WinRM Goal 1 blocked: NTLM 401 PALE/BLACK + TCP timeout RED; logged in memory/ops/blockers.md, no re-probe from sandbox.
+- Goal 9 (Empty States): opsBody sub-lists (gitStatus, gitLog, mergeQueue) upgraded to UI.emptyState() components; QA gate passed.
+- Mechanic Goal 1 note claims CLOSED but winrm-legs.jsonl shows still blocked (NTLM 401 PALE/BLACK, TCP timeout RED) — discrepancy unresolved.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
