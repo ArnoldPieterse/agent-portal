@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #7 (log_rotate.py) closed & verified: 50MB threshold, .jsonl, 7-day gzip retention. Self-test 4/4 PASS.
 - Scribe goal #1 (Decision Impact Tracking) closed: built decision_impact.py, enriched 5 cycle-7 entries, output at memory/synthesis/decision-
 - Goal #5 done: validateUpload() in ui/uploads.js — allow-list (.md/.json/.txt/.py/.js/.css/.html),
 - Motion layer (animations.css) was orphaned by a revert loop; re-wired import in app.css + 3 consumers, goal #2 closed.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1: `load_week_complete.py` built; 5/7 days in, all p95 within limits (c=200 max 3527ms vs 3600ms), zero errors.
 - Designer decided tablet layout: sidebar→icon bar, chatCol→full width, fleet→horizontal scroll; Goal #3 still open despite prior artifacts.
 - Goal #8 Portal Perf: Increment 3 done (apiLimited rate limiter, 3s polls, spinner). Remaining: live browser perf measurement, blocked by san
+- Researcher Goal #10 closed: blocker_triage.py built, parses all 13 blockers.md entries, classifies into 6 classes.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
