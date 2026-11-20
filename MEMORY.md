@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic goal #1 WinRM Hardening CLOSED: deploy_watchdog_remote ok on all 4 hosts; ledger 10/10, open=0, fleet 79
 - handoff.js 17 hexes are NOT a token-bypass defect; 46 var() usages confirm partial wiring — treat as resolved, not open
 - ui/handoff.js rgba tints → var(--ok-soft)/var(--ok-line); light-theme overrides in tokens.css; contrast_audit 0 fail, design_qa 12/12
 - Sandbox blocks HTTP data to LAN hosts even when TCP connect succeeds (PALE:5985 confirmed reachable at TCP level).
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic goal #1 (WinRM Hardening) stuck at 79/80: sole open item fleet-wide, blocked on live remote exec by sandbox egress (Win
 - Mechanic Goal 1 (WinRM Hardening) closed 2026-11-20; evidence was in reboot-recovery.jsonl but (verified:) marker was missing from goal file
 - Mechanic #7 (Perf Profiling) is the true open goal; #1
+- Mechanic added --verify to perf_profile.py (close_goal7.bat now functional); live leg still blocked by sandbox egress WinError 10013
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
