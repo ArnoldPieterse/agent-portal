@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 6 CSS overflow fixes done; remaining: CDP screenshot verification (no browser this pass).
-- Goal 6 closed via programmatic CSS audit; sandbox blocks localhost in Edge so
 - Mirror-revert of `check_winrm_credentials()` from `health_check.py` is now 3rd occurrence — add guard or alert on next pass.
 - G4 icons: cycle-7 doc says 16x16 viewBox but impl is 24x
 - Archivist produced empty-state audit checklist for Designer: some panels use plain-text fallbacks instead of existing UI.emptyState/UI.skele
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe drafted mirror-revert-guard-winrm-creds.md (extract to standalone module); Mechanic owns execution; 3rd occurrence of this bug.
 - QA script now passes 12/12 after fixing font scale (8-step
 - Goal 7 (Perf Profiling) blocked: code+selftest done, but live 1h run needs non-sandbox seat (WinError 10013 to localhost:8099).
+- RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md:15`): Mirror-revert root-cause deep-dive
+- Goal 9 (Empty States): CDP blocked by sandbox; pivoting to convert plain-text fallbacks → UI.emptyState/skeleton per Archivist's audit.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
