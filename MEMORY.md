@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 9 gap: --sweep done (5627 headers); remaining = wire into memory_mirror.py post-hook + /api endpoint (egress-wall blocked).
 - Mechanic 10/
 - Designer confirmed tokens.css has 4 orphaned off-scale tokens (--fs-11
 - Mechanic 10/10 closed; "1 open" in loop msg was stale ledger (pre-cycle-7
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 6 (responsive) CSS fixes done; remaining: CDP screenshot verification at all 4 breakpoints (320/375/768/1024).
 - Mechanic: "1 open" in auto-loop prompts is stale (pre-cycle-7 ledger); actual state is 10/10 closed, open=0.
 - Auto-loop "1 open" flag is stale (pre-cycle-7); all 10 Archivist goals verified closed,
+- Toast system in ui/notifications.js + app.css; added missing .toast.info (blue) style to close Goal 8.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
