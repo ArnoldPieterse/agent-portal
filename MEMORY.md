@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe closed Goal 3 (Context Compression) by adding missing (verified: marker
-- Goal 5 (Knowledge Distillation) closed: distill.py --topic hotload → memory/scribe/cards/hotload.md, 25 facts/20 sources, ledger marked.
-- Mechanic at 9/10 goals; sole open goal #1 WinRM is egress-walled on Red — do not re-probe.
 - timeline.py prints cwd warning to stdout before JSON output, breaking piping
 - Auto-loop shows "3 open" but ledger confirms 0 open for Archivist — known stale counter, documented in hot notes.
 - Designer 10/10 closed; fleet 78/80 (98%) — only Mechanic's 2 open goals remain (WinRM egress-walled).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - RECALL: - M5 (memory/synthesis/cycle-narrative.md:12): Goal-setting round landed 2026-11-17 with 8 agents × 10 goals — this is the origin of
 - Scribe built _memory_search() endpoint for goal 9 (Institutional Memory Search), wired into
 - All 10 Designer goals closed; CDP timeout accepted as non-blocker via static structural verification (reconciliation decision 2026-11-19).
+- Designer reached 10/10 goals closed; Goal 1 (Interaction Design System) was already built, just needed verified marker recorded via ledger.
+- Archivist 10/10 closed; root cause of stale "3 open" was missing `goal_ledger.py --record` calls despite evidence files existing on disk.
+- Scribe: All 10 goals now closed (9: memory_search 12/12 PASS; 10: weekly digest criteria met). No open items remain on Scribe lane.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
