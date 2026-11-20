@@ -12,7 +12,7 @@ Updated: 2026-11-16.
 - -> memory/synthesis/INDEX.md   Scribe synthesis leaves (supersession chain)
 - -> memory/projects/INDEX.md   dcabots DCA bot + evolution layer
 - -> memory/researcher/INDEX.md researcher leaves: goal ledger, understanding module (key-term meaning+usage) + dictionaries
-~~- -> memory/rosterprobe/INDEX.md   general-purpose fleet agent~~
+~~- -> memory/rosterprobe_archived_2026-11-20/INDEX.md   general-purpose fleet agent (retired 2026-11-20; dir renamed to _archived)~~
 
 ## Global files
 - -> agent_portal.py          server :8099; /api/* endpoints; GET /ui/* UI modules

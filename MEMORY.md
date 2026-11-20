@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic at 9/10; sole open goal is WinRM hardening — NTLM DES blocker on PALE/BLACK, RED down, logged NEEDS-HUMAN.
-- Auto-loop open-goal count is stale/unreliable; ledger is SSOT — do not re-probe "open" goals already marked closed in ledger.
 - Designer goal #2 (Animation/Motion) now 4/4 verified; all patterns confirmed wired in live JS, marker updated in memory/goals/designer.md
 - Auto-loop "open" count is stale vs ledger
 - Goal 1 WinRM closure-ready: 4/5 verified, only remaining action is `deploy_winrm_verify.bat` from non-sandbox White (NTLM sandbox wall is en
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fleet panel modules
 - Auto-loop dispatch shows "3 open" for Archivist but ledger confirms 10/10 closed, open=0; the count is stale from before last verification p
 - Goal 4: added icons to toast notifications + fleet health badges; success/warning/alert/info now closer to 3-panel threshold
+- Builder verified: Designer claims 37 icons but ground truth is 24; no icon used in ≥3 panels yet (goal #4 gap).
+- Fleet 65/80 (81%); Scribe 7/10 after closing goal #2 (Cycle Narrative v2) with dry-run PASS + zero-hallucination spot-check.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
