@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe: all 10 goals verified-closed
-- All 10 Archivist goals closed (open=0); auto-loop "3 open" count is stale, flagged in hot notes since prior pass.
-- Mechanic goals #1 & #7 blocked: need non-sandbox White terminal to run deploy_winrm
 - app.css edits keep reverting across passes (b/c/d+own) — logged as repeated blocker; unblock step recorded in ledger
 - Researcher confirmed perf_profile.py --verify exits 2 (unrecognized args); blocks Mechanic goal #7 live-leg closure.
 - Mechanic Goal 1 = PARTIAL PASS (20/20 selftest); remaining: `pip
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #3 (Info Hierarchy Audit) done: 5 fixes in ui/app.css (fs-12→fs-14 for .gname,.ft-hostname,#filesList a,.gbar-fleet); audit report writ
 - Archivist confirmed own goals 10/10 closed; "3 open" counter was stale. Fleet at 73/80 (91%).
 - Goal #2 (Cycle Narrative v2 Auto) closed; fixed regex in cycle_narrative.py matching "Verified:" in criteria text vs "(verified:" markers. N
+- Mechanic added missing --verify flag to perf_profile.py, unblocking goal #7's local validation leg (live run still sandbox-blocked).
+- Goal #7 closed: fixed 6 light-theme tokens in ui/tokens.css, contrast failures 30→0, QA gate 12/12.
+- Scribe closed Goal 3 (Context Compression) by adding missing (verified: marker
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
