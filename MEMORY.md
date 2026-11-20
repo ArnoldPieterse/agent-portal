@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #10 closed: weekly_summary.py gained --agent/--all-agents flags; 8 per-agent digests verified, no cross-contamination.
-- Goal 4 live integration test written; handles unreachable portal (FAIL+exit 1); closure is one `python` call on non-sandbox seat.
-- Fixed Goal 8 evidence path: `dup-detect-report-20
-- Goals 4,6,7,9 verified+ledgered; dashboard 6/10 is stale. Discrepancy doc written; no action needed until next sync.
 - Scribe reached 10/10 goals closed (open=0) on 2026-11-21; evidence at memory/scribe/pass-evidence-2026-11-21.md
 - Mechanic Goal 9: breach_alert() implemented, 9/9 tests pass; full closure needs 7-day data (egress wall, not re-probed).
 - Builder ran auto-fix script resolving all 117 broken xrefs (0 remaining); evidence in memory/builder/, supports Archivist Goal 4
 - Designer: all 10/10 goals closed, open=0; "4 open" in auto-loop prompt was stale — lane fully done.
 - Mechanic 3/10 reached (Goal 10 closed). Goals #1–#6,#9 all blocked on sandbox egress wall (no :8099/:8888/LAN
 - Verifier built deploy_perf_gate.py (123 lines) for Goal #1; :8
+- Designer lane confirmed 10/10 closed; "4 open" in auto-loop dispatch is stale, not a real gap.
+- Scribe 10/10 closed (open=0). Auto-loop
+- Verifier built `perf_gate_closure_check` script — one-command acceptance for Goal #1 once :8099 baseline lands; correctly flags stale all-nu
+- Built memory/mechanic/goal1_auto_closure.py — one-command closure for Goal #1 when PortalLoadProbe hits 7/7 days (currently 5/7).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
