@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7 (contrast audit) closed: 30 AA failures in light mode fixed by darkening 6 text/accent tokens; both modes now pass RC=0.
 - Goal 1 (WinRM) closed via ledger; `check_winrm_credentials()` re-integrated after mirror-revert. Archivist now 10/10 verified.
 - Goal 1 (WinRM) blocked on SSPI/Negotiate LSA
 - Goal 3: fixed 5 hierarchy
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - WinRM pool selftest 20/20 PASS; live-exec still blocked on LSA-token wall (NEEDS-HUMAN, unchanged across passes).
 - Auto-loop "1 open goal" count was stale; ledger confirms open=0 (all 10 closed). Corrected in maintenance-2026-11-20b.md.
 - Goal 5 closed: --line-max:75ch token added to ui/tokens.css, applied to .body/.tour-body; all 98 font-size decls use var(--fs-*) tokens.
+- Batch prompt "1 open" was stale; ledger confirms archivist 10/10 reached, open=0 as of 2026-11-20.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
