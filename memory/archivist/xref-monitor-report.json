@@ -1,0 +1,539 @@
+{
+ "files_scanned": 6894,
+ "edges_found": 926,
+ "max_depth_allowed": 3,
+ "violations": {
+  "dangling_edges": 177,
+  "self_references": 5,
+  "deep_chains_gt_3": 121,
+  "total": 303
+ },
+ "dangling_sample": [
+  [
+   "memory/INDEX.md",
+   "memory/rosterprobe/INDEX.md",
+   "pointer",
+   15
+  ],
+  [
+   "memory/INDEX.md",
+   "agent_portal.py",
+   "pointer",
+   18
+  ],
+  [
+   "memory/INDEX.md",
+   "agents.json",
+   "pointer",
+   19
+  ],
+  [
+   "memory/INDEX.md",
+   "index.html",
+   "pointer",
+   20
+  ],
+  [
+   "memory/INDEX.md",
+   "MEMORY.md",
+   "pointer",
+   21
+  ],
+  [
+   "memory/INDEX.md",
+   "TODO.md",
+   "pointer",
+   22
+  ],
+  [
+   "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "archivist/index_check.py",
+   "pointer",
+   1124
+  ],
+  [
+   "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "archivist/index_check.py",
+   "pointer",
+   1125
+  ],
+  [
+   "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "archivist/index_check.py",
+   "pointer",
+   1201
+  ],
+  [
+   "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "archivist/index_check.py",
+   "pointer",
+   1202
+  ],
+  [
+   "memory/archivist/evidence-goal1-delta-reporting-2026-11-18.md",
+   "knowledge_graph.py",
+   "pointer",
+   19
+  ],
+  [
+   "memory/archivist/evidence-goal5-xref-monitor-2026-11-20.md",
+   "goals.md",
+   "pointer",
+   22
+  ],
+  [
+   "memory/archivist/evidence-goal5-xref-monitor-2026-11-20.md",
+   "archivist/MEMORY.md",
+   "pointer",
+   22
+  ],
+  [
+   "memory/archivist/evidence-goal5-xref-monitor-2026-11-20.md",
+   "ops/memory-sync-spec-r13.md",
+   "pointer",
+   22
+  ],
+  [
+   "memory/archivist/goal_provenance_report.json",
+   "daily_git_commit.py",
+   "pointer",
+   466
+  ],
+  [
+   "memory/archivist/goal_provenance_report.json",
+   "daily_git_commit.py",
+   "pointer",
+   1309
+  ],
+  [
+   "memory/archivist/index-pointer-batch-r42.md",
+   "archivist/index_check.py",
+   "pointer",
+   21
+  ],
+  [
+   "memory/archivist/INDEX.md",
+   "archivist/index_check.py",
+   "pointer",
+   6
+  ],
+  [
+   "memory/archivist/MEMORY.md",
+   "portal/architecture.md",
+   "pointer",
+   4
+  ],
+  [
+   "memory/archivist/orphan-folder-audit-r42.md",
+   "archivist/index_check.py",
+   "pointer",
+   8
+  ]
+ ],
+ "self_ref_sample": [
+  [
+   "memory/archivist/INDEX.md",
+   "memory/archivist/INDEX.md",
+   "pointer",
+   9
+  ],
+  [
+   "memory/designer/MEMORY.md",
+   "memory/designer/MEMORY.md",
+   "pointer",
+   80
+  ],
+  [
+   "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "pointer",
+   22
+  ],
+  [
+   "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "pointer",
+   25
+  ],
+  [
+   "memory/workspace/INDEX.md",
+   "memory/workspace/INDEX.md",
+   "pointer",
+   76
+  ]
+ ],
+ "deep_chain_sample": [
+  [
+   "memory/INDEX.md",
+   "memory/synthesis/INDEX.md",
+   "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "memory/synthesis/2026-11-14-white-rename-closeout.md"
+  ],
+  [
+   "memory/INDEX.md",
+   "memory/synthesis/INDEX.md",
+   "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "memory/synthesis/2026-11-14-white-rename-closeout.md"
+  ],
+  [
+   "memory/INDEX.md",
+   "memory/synthesis/INDEX.md",
+   "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "memory/synthesis/index-pointer-handoff-r38.md",
+   "memory/synthesis/2026-11-14-r31-closeout-synthesis.md"
+  ],
+  [
+   "memory/INDEX.md",
+   "memory/synthesis/INDEX.md",
+   "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "memory/synthesis/index-pointer-batch-r40.md",
+   "memory/synthesis/2026-11-14-r31-closeout-synthesis.md"
+  ],
+  [
+   "memory/INDEX.md",
+   "memory/synthesis/INDEX.md",
+   "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "memory/synthesis/index-pointer-addendum-r43.md",
+   "memory/synthesis/2026-11-14-r41-closeout.md"
+  ],
+  [
+   "memory/INDEX.md",
+   "memory/run-rules.md",
+   "memory/portal/file-modularity.md",
+   "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "memory/archivist/dcabots-intake-2026-11-14.md"
+  ],
+  [
+   "memory/INDEX.md",
+   "memory/portal/INDEX.md",
+   "memory/portal/system-map.md",
+   "memory/portal/file-modularity.md",
+   "memory/ops/windows-runbook.md"
+  ],
+  [
+   "memory/INDEX.md",
+   "memory/portal/INDEX.md",
+   "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "memory/synthesis/2026-11-14-white-rename-closeout.md"
+  ],
+  [
+   "memory/INDEX.md",
+   "memory/portal/INDEX.md",
+   "memory/portal/merge-pack.md",
+   "memory/ops/INDEX.md",
+   "memory/ops/agent-onboarding-playbook.md"
+  ],
+  [
+   "memory/INDEX.md",
+   "memory/portal/INDEX.md",
+   "memory/portal/merge-pack.md",
+   "memory/llm/INDEX.md",
+   "memory/llm/backend-swap-procedure.md"
+  ]
+ ],
+ "fix_suggestions": [
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/INDEX.md:15 -> memory/rosterprobe/INDEX.md (target not found in memory/; check for renamed/deleted file 'INDEX.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/INDEX.md:18 -> agent_portal.py (target not found in memory/; check for renamed/deleted file 'agent_portal.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/INDEX.md:19 -> agents.json (target not found in memory/; check for renamed/deleted file 'agents.json')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/INDEX.md:20 -> index.html (target not found in memory/; check for renamed/deleted file 'index.html')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/INDEX.md:21 -> MEMORY.md (target not found in memory/; check for renamed/deleted file 'MEMORY.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/INDEX.md:22 -> TODO.md (target not found in memory/; check for renamed/deleted file 'TODO.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/citation-filepath-audit-2026-11-20.json:1124 -> archivist/index_check.py (target not found in memory/; check for renamed/deleted file 'index_check.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/citation-filepath-audit-2026-11-20.json:1125 -> archivist/index_check.py (target not found in memory/; check for renamed/deleted file 'index_check.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/citation-filepath-audit-2026-11-20.json:1201 -> archivist/index_check.py (target not found in memory/; check for renamed/deleted file 'index_check.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/citation-filepath-audit-2026-11-20.json:1202 -> archivist/index_check.py (target not found in memory/; check for renamed/deleted file 'index_check.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/evidence-goal1-delta-reporting-2026-11-18.md:19 -> knowledge_graph.py (target not found in memory/; check for renamed/deleted file 'knowledge_graph.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/evidence-goal5-xref-monitor-2026-11-20.md:22 -> goals.md (target not found in memory/; check for renamed/deleted file 'goals.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/evidence-goal5-xref-monitor-2026-11-20.md:22 -> archivist/MEMORY.md (target not found in memory/; check for renamed/deleted file 'MEMORY.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/evidence-goal5-xref-monitor-2026-11-20.md:22 -> ops/memory-sync-spec-r13.md (target not found in memory/; check for renamed/deleted file 'memory-sync-spec-r13.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/goal_provenance_report.json:466 -> daily_git_commit.py (target not found in memory/; check for renamed/deleted file 'daily_git_commit.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/goal_provenance_report.json:1309 -> daily_git_commit.py (target not found in memory/; check for renamed/deleted file 'daily_git_commit.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/index-pointer-batch-r42.md:21 -> archivist/index_check.py (target not found in memory/; check for renamed/deleted file 'index_check.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/INDEX.md:6 -> archivist/index_check.py (target not found in memory/; check for renamed/deleted file 'index_check.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/MEMORY.md:4 -> portal/architecture.md (target not found in memory/; check for renamed/deleted file 'architecture.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/orphan-folder-audit-r42.md:8 -> archivist/index_check.py (target not found in memory/; check for renamed/deleted file 'index_check.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/supersession-findings-2026-11-16.md:9 -> synthesis/2026-11-12-upgrade-round.md (target not found in memory/; check for renamed/deleted file '2026-11-12-upgrade-round.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:10 -> portal/architecture.md (target not found in memory/; check for renamed/deleted file 'architecture.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:11 -> synthesis/2026-11-12-upgrade-round.md (target not found in memory/; check for renamed/deleted file '2026-11-12-upgrade-round.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:27 -> decay-report.md (target not found in memory/; check for renamed/deleted file 'decay-report.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:28 -> knowledge_graph.py (target not found in memory/; check for renamed/deleted file 'knowledge_graph.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:34 -> designer/design_breakpoint_check.py (target not found in memory/; check for renamed/deleted file 'design_breakpoint_check.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:35 -> mechanic/auto_restart.py (target not found in memory/; check for renamed/deleted file 'auto_restart.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:40 -> mechanic/ac_a2_live_leg_r20.py (target not found in memory/; check for renamed/deleted file 'ac_a2_live_leg_r20.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:41 -> mechanic/ac_a2_live_leg_r20.py (target not found in memory/; check for renamed/deleted file 'ac_a2_live_leg_r20.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:46 -> designer/apply_designer_scale_patch.py (target not found in memory/; check for renamed/deleted file 'apply_designer_scale_patch.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:57 -> mechanic/postmortem_gen.py (target not found in memory/; check for renamed/deleted file 'postmortem_gen.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:58 -> synthesis/2026-11-12-upgrade-round.md (target not found in memory/; check for renamed/deleted file '2026-11-12-upgrade-round.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:59 -> synthesis/2026-11-16-crossassist-evidence-pass.md (target not found in memory/; check for renamed/deleted file '2026-11-16-crossassist-evidence-pass.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:60 -> synthesis/2026-11-12-upgrade-round.md (target not found in memory/; check for renamed/deleted file '2026-11-12-upgrade-round.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:61 -> synthesis/2026-11-12-upgrade-round.md (target not found in memory/; check for renamed/deleted file '2026-11-12-upgrade-round.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-check-report-2026-11-19.md:62 -> squire/cycle3-discrepancy-resolved-2026-11-18.md (target not found in memory/; check for renamed/deleted file 'cycle3-discrepancy-resolved-2026-11-18.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:8 -> portal/architecture.md (target not found in memory/; check for renamed/deleted file 'architecture.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:9 -> synthesis/2026-11-12-upgrade-round.md (target not found in memory/; check for renamed/deleted file '2026-11-12-upgrade-round.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:13 -> portal/architecture.md (target not found in memory/; check for renamed/deleted file 'architecture.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:14 -> synthesis/2026-11-12-upgrade-round.md (target not found in memory/; check for renamed/deleted file '2026-11-12-upgrade-round.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:35 -> designer/design_breakpoint_check.py (target not found in memory/; check for renamed/deleted file 'design_breakpoint_check.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:36 -> mechanic/auto_restart.py (target not found in memory/; check for renamed/deleted file 'auto_restart.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:41 -> mechanic/ac_a2_live_leg_r20.py (target not found in memory/; check for renamed/deleted file 'ac_a2_live_leg_r20.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:42 -> mechanic/ac_a2_live_leg_r20.py (target not found in memory/; check for renamed/deleted file 'ac_a2_live_leg_r20.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:47 -> designer/apply_designer_scale_patch.py (target not found in memory/; check for renamed/deleted file 'apply_designer_scale_patch.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:58 -> mechanic/postmortem_gen.py (target not found in memory/; check for renamed/deleted file 'postmortem_gen.py')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:59 -> synthesis/2026-11-12-upgrade-round.md (target not found in memory/; check for renamed/deleted file '2026-11-12-upgrade-round.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:60 -> synthesis/2026-11-16-crossassist-evidence-pass.md (target not found in memory/; check for renamed/deleted file '2026-11-16-crossassist-evidence-pass.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:61 -> synthesis/2026-11-12-upgrade-round.md (target not found in memory/; check for renamed/deleted file '2026-11-12-upgrade-round.md')"
+  },
+  {
+   "type": "dangling",
+   "fix": "Remove or correct pointer at memory/archivist/xref-fix-log-2026-11-19.md:62 -> synthesis/2026-11-12-upgrade-round.md (target not found in memory/; check for renamed/deleted file '2026-11-12-upgrade-round.md')"
+  },
+  {
+   "type": "self_ref",
+   "fix": "Remove self-reference at memory/archivist/INDEX.md:9 (file points to itself)"
+  },
+  {
+   "type": "self_ref",
+   "fix": "Remove self-reference at memory/designer/MEMORY.md:80 (file points to itself)"
+  },
+  {
+   "type": "self_ref",
+   "fix": "Remove self-reference at memory/portal/mirror-clobber-pattern-2026-11-14.md:22 (file points to itself)"
+  },
+  {
+   "type": "self_ref",
+   "fix": "Remove self-reference at memory/synthesis/2026-11-14-r24-fleet-state.md:25 (file points to itself)"
+  },
+  {
+   "type": "self_ref",
+   "fix": "Remove self-reference at memory/workspace/INDEX.md:76 (file points to itself)"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/synthesis/INDEX.md -> memory/synthesis/index-replay-r81-24of24-canonical.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/synthesis/INDEX.md -> memory/synthesis/index-replay-r81-24of24-canonical.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/synthesis/INDEX.md -> memory/synthesis/index-pointer-batch-r57-consolidated.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/synthesis/INDEX.md -> memory/synthesis/index-pointer-batch-r57-consolidated.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/synthesis/INDEX.md -> memory/synthesis/index-pointer-batch-r57-consolidated.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/run-rules.md -> memory/portal/file-modularity.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/INDEX.md -> memory/portal/system-map.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/INDEX.md -> memory/portal/mirror-clobber-pattern-2026-11-14.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/INDEX.md -> memory/portal/merge-pack.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/INDEX.md -> memory/portal/merge-pack.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/INDEX.md -> memory/portal/file-modularity.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/merge-pack.md -> memory/portal/INDEX.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/merge-pack.md -> memory/portal/INDEX.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/merge-pack.md -> memory/portal/INDEX.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/merge-pack.md -> memory/ops/INDEX.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/merge-pack.md -> memory/ops/INDEX.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/merge-pack.md -> memory/ops/INDEX.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/INDEX.md -> memory/portal/system-map.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/INDEX.md -> memory/portal/mirror-clobber-pattern-2026-11-14.md or flattening the hierarchy"
+  },
+  {
+   "type": "deep_chain",
+   "fix": "Break chain of depth 4: consider removing intermediate pointer memory/portal/INDEX.md -> memory/portal/merge-pack.md or flattening the hierarchy"
+  }
+ ]
+}

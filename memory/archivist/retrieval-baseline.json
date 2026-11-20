@@ -1,0 +1,391 @@
+{
+  "date": "2026-11-20",
+  "total_queries": 20,
+  "passed": 20,
+  "failed": 0,
+  "accuracy_pct": 100.0,
+  "avg_time_ms": 1357.8,
+  "slowest_queries": [
+    {
+      "id": 1,
+      "query": "What model does Builder use?",
+      "time_ms": 2798.1
+    },
+    {
+      "id": 5,
+      "query": "What is the anti-stall recovery chain order?",
+      "time_ms": 1529.6
+    },
+    {
+      "id": 20,
+      "query": "Which format does kg_export.py produce?",
+      "time_ms": 1490.7
+    }
+  ],
+  "results": [
+    {
+      "id": 1,
+      "query": "What model does Builder use?",
+      "keywords": [
+        "builder",
+        "model"
+      ],
+      "files_matched": 2227,
+      "top_files": [
+        ".\\DESIGN.md",
+        ".\\MEMORY.md",
+        ".\\Packages\\sandbox.{179d8fdf-eaff-4133-bfc4-e09e8b933916}\\AC\\Temp\\edge_headless_test\\Default\\arbitration_service_config.json",
+        ".\\Packages\\sandbox.{3d6c64bb-6183-4274-8791-393b1a2b1c34}\\AC\\Temp\\edge_hs2\\Default\\arbitration_service_config.json",
+        ".\\Packages\\sandbox.{6d8dec1a-8bc2-4cb8-b409-dca1a9acad76}\\AC\\Temp\\edge_hs3\\Default\\arbitration_service_config.json"
+      ],
+      "time_ms": 2798.1,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 2,
+      "query": "When was the last portal restart?",
+      "keywords": [
+        "portal",
+        "restart",
+        "PID"
+      ],
+      "files_matched": 2765,
+      "top_files": [
+        ".\\DESIGN.md",
+        ".\\MEMORY.md",
+        ".\\README.md",
+        ".\\REPAIR_2026-11-13.md",
+        ".\\SETUP_HISTORY.md"
+      ],
+      "time_ms": 1184.0,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 3,
+      "query": "What is the current cycle percentage?",
+      "keywords": [
+        "cycle",
+        "FLEET CYCLE"
+      ],
+      "files_matched": 1665,
+      "top_files": [
+        ".\\MEMORY.md",
+        ".\\TODO.md",
+        ".\\TODO_completed.md",
+        ".\\_ledger.json",
+        ".\\_ledger_out.json"
+      ],
+      "time_ms": 1283.8,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 4,
+      "query": "Which host runs the portal server?",
+      "keywords": [
+        "white",
+        "8099",
+        "portal"
+      ],
+      "files_matched": 3581,
+      "top_files": [
+        ".\\DESIGN.md",
+        ".\\MEMORY.md",
+        ".\\README.md",
+        ".\\REPAIR_2026-11-13.md",
+        ".\\SETUP_HISTORY.md"
+      ],
+      "time_ms": 1241.7,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 5,
+      "query": "What is the anti-stall recovery chain order?",
+      "keywords": [
+        "wedged",
+        "unload",
+        "reload",
+        "reboot"
+      ],
+      "files_matched": 752,
+      "top_files": [
+        ".\\MEMORY.md",
+        ".\\README.md",
+        ".\\REPAIR_2026-11-13.md",
+        ".\\SETUP_HISTORY.md",
+        ".\\TODO.md"
+      ],
+      "time_ms": 1529.6,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 6,
+      "query": "How many orphans remain after remediation?",
+      "keywords": [
+        "orphan",
+        "0 remaining"
+      ],
+      "files_matched": 489,
+      "top_files": [
+        ".\\MEMORY.md",
+        ".\\TODO.md",
+        ".\\TODO_completed.md",
+        ".\\_ledger.json",
+        ".\\_ledger_tmp.json"
+      ],
+      "time_ms": 1281.1,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 7,
+      "query": "What is the freshness SLA tier for files older than 90 days?",
+      "keywords": [
+        "STALE",
+        "90 days"
+      ],
+      "files_matched": 1245,
+      "top_files": [
+        ".\\TODO.md",
+        ".\\TODO_completed.md",
+        ".\\_ledger.json",
+        ".\\_ledger_tmp.json",
+        ".\\_tmp_ledger.json"
+      ],
+      "time_ms": 1247.0,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 8,
+      "query": "Which agent owns TODO.md?",
+      "keywords": [
+        "orchestrator",
+        "TODO"
+      ],
+      "files_matched": 2075,
+      "top_files": [
+        ".\\MEMORY.md",
+        ".\\README.md",
+        ".\\REPAIR_2026-11-13.md",
+        ".\\TODO.md",
+        ".\\TODO_completed.md"
+      ],
+      "time_ms": 1225.9,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 9,
+      "query": "What is the pin file clobber loop prevention mechanism?",
+      "keywords": [
+        "pin",
+        "canonical",
+        "sha12"
+      ],
+      "files_matched": 2357,
+      "top_files": [
+        ".\\DESIGN.md",
+        ".\\MEMORY.md",
+        ".\\Packages\\sandbox.{179d8fdf-eaff-4133-bfc4-e09e8b933916}\\AC\\Temp\\edge_headless_test\\Default\\arbitration_service_config.json",
+        ".\\Packages\\sandbox.{3d6c64bb-6183-4274-8791-393b1a2b1c34}\\AC\\Temp\\edge_hs2\\Default\\arbitration_service_config.json",
+        ".\\Packages\\sandbox.{6d8dec1a-8bc2-4cb8-b409-dca1a9acad76}\\AC\\Temp\\edge_hs3\\Default\\arbitration_service_config.json"
+      ],
+      "time_ms": 1233.1,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 10,
+      "query": "How many citations were checked in the last audit?",
+      "keywords": [
+        "citation",
+        "4599"
+      ],
+      "files_matched": 259,
+      "top_files": [
+        ".\\MEMORY.md",
+        ".\\TODO.md",
+        ".\\TODO_completed.md",
+        ".\\_ledger.json",
+        ".\\_ledger_out.json"
+      ],
+      "time_ms": 1278.2,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 11,
+      "query": "What is the archive compaction reduction achieved?",
+      "keywords": [
+        "33.4%",
+        "compaction"
+      ],
+      "files_matched": 13,
+      "top_files": [
+        ".\\memory\\archivist\\INDEX.md",
+        ".\\memory\\archivist\\citation-check-2026-11-20.json",
+        ".\\memory\\archivist\\evidence-goal6-archive-compaction-2026-11-20.md",
+        ".\\memory\\goals\\archivist.md",
+        ".\\memory\\mechanic\\MEMORY.md"
+      ],
+      "time_ms": 1371.5,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 12,
+      "query": "Which endpoint does the portal use for model loading?",
+      "keywords": [
+        "/api/inference/load",
+        "native"
+      ],
+      "files_matched": 253,
+      "top_files": [
+        ".\\DESIGN.md",
+        ".\\MEMORY.md",
+        ".\\SETUP_HISTORY.md",
+        ".\\TODO.md",
+        ".\\_ledger_tmp.json"
+      ],
+      "time_ms": 1193.2,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 13,
+      "query": "What is the max depth for pointer chains in xref monitor?",
+      "keywords": [
+        "depth",
+        "3"
+      ],
+      "files_matched": 4882,
+      "top_files": [
+        ".\\DESIGN.md",
+        ".\\MEMORY.md",
+        ".\\Packages\\sandbox.{179d8fdf-eaff-4133-bfc4-e09e8b933916}\\AC\\Temp\\edge_headless_test\\Default\\arbitration_service_config.json",
+        ".\\Packages\\sandbox.{3d6c64bb-6183-4274-8791-393b1a2b1c34}\\AC\\Temp\\edge_hs2\\Default\\arbitration_service_config.json",
+        ".\\Packages\\sandbox.{6d8dec1a-8bc2-4cb8-b409-dca1a9acad76}\\AC\\Temp\\edge_hs3\\Default\\arbitration_service_config.json"
+      ],
+      "time_ms": 1230.5,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 14,
+      "query": "How many nodes are in the knowledge graph visualization?",
+      "keywords": [
+        "380",
+        "nodes"
+      ],
+      "files_matched": 344,
+      "top_files": [
+        ".\\SETUP_HISTORY.md",
+        ".\\TODO_completed.md",
+        ".\\_ledger.json",
+        ".\\_ledger_tmp.json",
+        ".\\_tmp_ledger.json"
+      ],
+      "time_ms": 1168.6,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 15,
+      "query": "What is the deduplication similarity threshold?",
+      "keywords": [
+        "0.85",
+        "similarity"
+      ],
+      "files_matched": 174,
+      "top_files": [
+        ".\\Packages\\sandbox.{179d8fdf-eaff-4133-bfc4-e09e8b933916}\\AC\\Temp\\edge_headless_test\\Default\\arbitration_service_config.json",
+        ".\\Packages\\sandbox.{3d6c64bb-6183-4274-8791-393b1a2b1c34}\\AC\\Temp\\edge_hs2\\Default\\arbitration_service_config.json",
+        ".\\Packages\\sandbox.{6d8dec1a-8bc2-4cb8-b409-dca1a9acad76}\\AC\\Temp\\edge_hs3\\Default\\arbitration_service_config.json",
+        ".\\Packages\\sandbox.{b043b13e-8f73-4851-92d2-727f650855d1}\\AC\\Temp\\edge_hs\\Default\\arbitration_service_config.json",
+        ".\\_edge_tmp\\Default\\arbitration_service_config.json"
+      ],
+      "time_ms": 1278.9,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 16,
+      "query": "Which agent writes synthesis decisions?",
+      "keywords": [
+        "scribe",
+        "synthesis"
+      ],
+      "files_matched": 1528,
+      "top_files": [
+        ".\\MEMORY.md",
+        ".\\README.md",
+        ".\\REPAIR_2026-11-13.md",
+        ".\\TODO.md",
+        ".\\TODO_completed.md"
+      ],
+      "time_ms": 1350.5,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 17,
+      "query": "What is the WinRM remote reboot trigger condition?",
+      "keywords": [
+        "TCP-down",
+        "WinRM",
+        "reboot"
+      ],
+      "files_matched": 469,
+      "top_files": [
+        ".\\MEMORY.md",
+        ".\\README.md",
+        ".\\REPAIR_2026-11-13.md",
+        ".\\SETUP_HISTORY.md",
+        ".\\TODO.md"
+      ],
+      "time_ms": 1441.8,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 18,
+      "query": "How many files did freshness_report.py scan?",
+      "keywords": [
+        "6704",
+        "files"
+      ],
+      "files_matched": 2634,
+      "top_files": [
+        ".\\DESIGN.md",
+        ".\\MEMORY.md",
+        ".\\README.md",
+        ".\\REPAIR_2026-11-13.md",
+        ".\\TODO.md"
+      ],
+      "time_ms": 1065.1,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 19,
+      "query": "What is the goal for provenance tracking coverage?",
+      "keywords": [
+        "80%",
+        "provenance"
+      ],
+      "files_matched": 411,
+      "top_files": [
+        ".\\TODO.md",
+        ".\\TODO_completed.md",
+        ".\\_ledger.json",
+        ".\\_ledger_tmp.json",
+        ".\\_tmp_ledger.json"
+      ],
+      "time_ms": 1262.5,
+      "accuracy": "PASS"
+    },
+    {
+      "id": 20,
+      "query": "Which format does kg_export.py produce?",
+      "keywords": [
+        "jsonld",
+        "JSON-LD"
+      ],
+      "files_matched": 3,
+      "top_files": [
+        ".\\memory\\goals\\archivist.md",
+        ".\\studio_exec_jjwugqiq.py",
+        "memory\\goals\\archivist.md"
+      ],
+      "time_ms": 1490.7,
+      "accuracy": "PASS"
+    }
+  ]
+}
