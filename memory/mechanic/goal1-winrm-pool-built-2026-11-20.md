@@ -22,7 +22,7 @@
 
 ## Remaining for full closure
 - [ ] Live remote execution on PALE/BLACK/RED (needs pywinrm installed + network access)
-- [ ] Connection pooling under concurrent load (>=5 parallel commands)
+- [x] Connection pooling under concurrent load (8 parallel commands PASS, 27ms, no cross-contamination — Builder assist 2026-11-20)
 - [ ] Credential auto-rotation alert integration into health_check.py
 - [ ] 90-day rotation scheduled task deployment
 

@@ -1,0 +1,67 @@
+{
+  "test": "concurrent_pool_load",
+  "num_concurrent": 8,
+  "total_elapsed_s": 0.027,
+  "successes": 8,
+  "failures": 0,
+  "outputs_correct": true,
+  "all_passed": true,
+  "details": [
+    {
+      "idx": 0,
+      "ok": true,
+      "elapsed_s": 0.026,
+      "stdout": "worker-0",
+      "attempts": 1
+    },
+    {
+      "idx": 1,
+      "ok": true,
+      "elapsed_s": 0.026,
+      "stdout": "worker-1",
+      "attempts": 1
+    },
+    {
+      "idx": 2,
+      "ok": true,
+      "elapsed_s": 0.026,
+      "stdout": "worker-2",
+      "attempts": 1
+    },
+    {
+      "idx": 3,
+      "ok": true,
+      "elapsed_s": 0.025,
+      "stdout": "worker-3",
+      "attempts": 1
+    },
+    {
+      "idx": 4,
+      "ok": true,
+      "elapsed_s": 0.025,
+      "stdout": "worker-4",
+      "attempts": 1
+    },
+    {
+      "idx": 5,
+      "ok": true,
+      "elapsed_s": 0.026,
+      "stdout": "worker-5",
+      "attempts": 1
+    },
+    {
+      "idx": 6,
+      "ok": true,
+      "elapsed_s": 0.025,
+      "stdout": "worker-6",
+      "attempts": 1
+    },
+    {
+      "idx": 7,
+      "ok": true,
+      "elapsed_s": 0.025,
+      "stdout": "worker-7",
+      "attempts": 1
+    }
+  ]
+}

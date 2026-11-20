@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic: winrm_creds check integrated into health_check.py (local state file, no network); Goal #1 sub-item done.
-- Goal 1 closed: interactions.css is sole source of truth for :hover rules; app.css duplicates removed (16 rules).
-- Goal 6 (Synthesis Quality Scoring) closed: scoring script + /api/synthesis/quality endpoint built; vague<40, specific>80 verified.
-- Goal 9 (Provenance Tracking) closed: provenance.py built, 97.1% agent coverage, query path verified.
 - Goal #7 perf_profile.py built, selftest PASS; only live 1h data collection remains (needs :8099 egress).
 - Goal 2 closed: ui/animations.css existed but was never loaded; fixed by adding @import to app.css line 2.
 - Goal 7 done: archive nav index has 85 synthesis files (74 explicit + 15 wildcard), 11 themes, duplicate & stale ref fixed.
 - Goal #1 orphan remediation: actionable orphans down from 124 to 8 after v2 full-s
 - `memory/archivist/retrieval-baseline.json` is stale (old keyword-grep method, non-memory junk hits) — do not use as comparison baseline.
 - Scribe Goal 4 (Cross-Agent Handoff Protocol) closed; fleet score now 58/60 after logging 3 real cycle-6 handoffs.
+- Goal #1 Orphan Remediation: classify logic fixed, 178 links applied, orphans dropped 180→2 (1 actionable remains in orchestrator/).
+- Goal 1 concurrent-load sub-item closed: 8 parallel winrm_pool commands passed, no cross-contamination, 27ms total (2026-11-20).
+- RECALL: - **M2** (`memory/goals/archive/researcher-2026-11-18.md:15`
+- Mirror cycle partially reverts Designer's CSS hierarchy fixes each pass; must re-land prior changes before adding new ones.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
