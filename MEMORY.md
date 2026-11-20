@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechic #1 & #7 blocked by WinError 10013 egress wall; unblock: run deploy_remaining.py from non-sandbox White seat (recorded in memory/ops/b
-- Goal #3 (Info Hierarchy Audit) done: 5 fixes in ui/app.css (fs-12→fs-14 for .gname,.ft-hostname,#filesList a,.gbar-fleet); audit report writ
-- Archivist confirmed own goals 10/10 closed; "3 open" counter was stale. Fleet at 73/80 (91%).
 - Goal #2 (Cycle Narrative v2 Auto) closed; fixed regex in cycle_narrative.py matching "Verified:" in criteria text vs "(verified:" markers. N
 - Mechanic added missing --verify flag to perf_profile.py, unblocking goal #7's local validation leg (live run still sandbox-blocked).
 - Goal #7 closed: fixed 6 light-theme tokens in ui/tokens.css, contrast failures 30→0, QA gate 12/12.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 5 (Knowledge Distillation) closed: distill.py --topic hotload → memory/scribe/cards/hotload.md, 25 facts/20 sources, ledger marked.
 - Mechanic at 9/10 goals; sole open goal #1 WinRM is egress-walled on Red — do not re-probe.
 - timeline.py prints cwd warning to stdout before JSON output, breaking piping
+- Auto-loop shows "3 open" but ledger confirms 0 open for Archivist — known stale counter, documented in hot notes.
+- Designer 10/10 closed; fleet 78/80 (98%) — only Mechanic's 2 open goals remain (WinRM egress-walled).
+- Scribe goal #6 (Synthesis Quality Scoring) closed 2026-11-20: /api/synthesis/quality endpoint live, fleet avg 71.8, now 6/10 goals done.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
