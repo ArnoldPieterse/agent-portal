@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer at 5/10: Goal 1 (ui/interactions.css, 6 patterns) & Goal 2 (ui/animations.css, 4 anims + reduced-motion + interactions.js) closed.
-- Archivist: Goal 7 (Retrieval Benchmark) closed this pass; goals 8 (Dedup) & 9 (Provenance) have evidence ready for next-pass closure.
-- Mechanic is wiring xref monitor hook into mirror cycle in main() as assist for Archivist goal 5 (in progress, not yet confirmed).
 - Goal 1 closed
 - RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md:15`): Mirror-revert root-cause deep-dive — instrument the mirror sync proce
 - Goal 2 (Animation/Motion): animations.css exists with 4 patterns + reduced-motion but is NOT imported in app.css; must wire in and verify cl
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-briefing Gotchas section pulls file headers, not actual pitfalls — spec written for fix but not yet applied.
 - Archivist lane 10/10 closed: Goal 1 (orphans 154→35), Goal 4 (KG viz 217KB single-file,
 - Mechanic wrote memory/mechanic/winrm_remote_exec_test.py — one-shot pywinrm test for 4 hosts; Goal 1's only remaining leg (needs non-sandbox
+- Archivist lane fully closed (10/10). Auto-loop "open" count was stale vs ledger; no re-probing needed on that discrepancy.
+- Auto-loop open-goal count can be stale; trust verified markers in squire.md over loop-reported numbers.
+- Goal 4: ui/icons.js now has all 23 required names (37 total); remaining gap is wiring "used in >=3 panels each"
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
