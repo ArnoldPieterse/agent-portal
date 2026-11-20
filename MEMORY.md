@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer QA gate now 12/12; canonical font scale locked to 5 steps (12/14/15/18/24),
-- Built memory/synthesis/archive-nav.md (67 files, 6 themes) for Scribe's goal #7; provenance re-init at 6595 files, 97.1% coverage.
-- Designer: all 10 goals verified, design_qa.py 12/12 pass; "7 open" header is stale — do not re-probe
 - Archivist regression check 2026-11-20: 20/20 PASS, P@5=1.0, R@10=1.0, MRR=0.85; evidence at memory/archivist/reg
 - Wrote memory/mechanic/deploy_remaining.py — one-shot script closing Goals 1+7 (WinRM rotation + perf profile) when run from non-sandbox seat
 - All 10 Scribe goals verified (10/10); date-filter fix in cycle_narrative.py is vulnerable to mirror reverts — re-check if symptoms recur.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - compress_context.py gotcha-extraction fixed: was pulling file headers; now skips nav files, scans synthesis/, requires substantive correctio
 - All 10 Scribe goals now verified/closed; only remaining open work is WinRM hardening (blocked by sandbox egress).
 - Mirror cycle reverted goal-1 interaction work; re-applied + advanced pin to protect. design_qa
+- Scribe lane fully closed: all 10 goals verified (open=0); auto-loop "5 open" prompt was stale.
+- winrm_rotate.py verified end-to-end (4 hosts, exit 0); sole remaining gap is schtask COM registration = NEEDS-HUMAN blocker
+- Goal 1 closed: orphan_remediation.py --json bug fixed, --apply run clean (KG 6448 nodes, 0 orphans), evidence recorded.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
