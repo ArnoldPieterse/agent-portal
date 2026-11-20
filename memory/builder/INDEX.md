@@ -59,3 +59,4 @@ Last updated: 2026-11-20 (Builder assist: Mechanic Goal 1 concurrent pool load t
 - [anomaly-ar14-writepath-evidence.md](memory/builder/anomaly-ar14-writepath-evidence.md)
 - Goal#4 error boundary / showPanelError 5/5 panels wired (actBody, fleetBody, gitStatus, goalsBody, filesList); in-process verification PASS; live browser test pending -> memory/builder/error_boundary_increment3-2026-11-20.md
 - Assist Mechanic G7: perf_profile.py --run-once flag + FleetPerfProfile added to register_tasks.py (selftest PASS, schedulable) -> memory/builder/assist-mechanic-g7-perf-profile-2026-11-20.md
+- Archivist Goal#4 circular-ref confirm / the 2 "circular ref" flags are A->A self-pointers (archivist/INDEX.md L10 auto-self-entry; workspace/INDEX.md L76 regex over-match of inline code) -> 0 genuine cycles, final box satisfied -> memory/builder/xref-circular-refs-artifact-confirm-2026-11-21.md   2026-11-21 cross-assist (owner: Archivist)
