@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4 (768px responsive) CLOSED — all 7 criteria in ui/app.css:204-229, verified via regex
-- Mechanic 10/10 goals closed; auto-loop "6 open" dispatch is stale, logged to prevent re-probing.
-- Goal #2 (KG v3) closed: 7615 nodes, all edges typed, JSON 1869KB, query mode OK. Evidence at memory/archivist/evidence-goal2-kg-v3-full-acce
 - Goal #5 (Scheduled-Task Dependency Graph) closed: 3/3 ACs pass, artifacts at memory/mechanic/dep-report-week{1,2}.txt + fixtures/schtasks_we
 - Goal #5 (Keyword Search Index): regenerated scoped to .md leaves, 488.6KB (<500KB limit);
 - Mechanic seat: auto-loop "6 open" dispatch is stale (actual open=0); confirmed twice, do not re-probe.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fleet at 67/80 (2026-11-21): 13 open across Archivist/Designer/Verifier; Scribe/Mechanic/Builder all 10/10 closed
 - Mechanic 10/10 closed; Goal #6 marker added via ledger; remaining items (Goal 1, 3, 9) are time/egress-blocked per blockers.md.
 - Goal #8 (Component Visual Reference) closed: 10/10 components documented (added toast, skeleton, emptyState, progressBar, tooltip).
+- RECALL: - **M3** (`memory/synthesis/c
+- Mechanic 10/10 goals verified; Goal #6 closed Nov 21 by adding missing (verified:) marker via goal_ledger.py --record mechanic 6.
+- Scribe confirmed 10/10 goals closed (open=0); auto
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
