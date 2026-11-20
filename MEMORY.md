@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder verified: Designer claims 37 icons but ground truth is 24; no icon used in ≥3 panels yet (goal #4 gap).
 - Fleet 65/80 (81%); Scribe 7/10 after closing goal #2 (Cycle Narrative v2) with dry-run PASS + zero-hallucination spot-check.
 - Mechanic reached 10/10 goals verified; Goal 7 (perf profiling) closed via perf_profile.py selftest+verify, 4/4 endpoints n=720.
 - Scribe: Goal #2 (Cycle Narrative v2) has full evidence but lacks `(verified:)` marker; next step is adding that marker to close it.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe reached 10/10 goals verified (open=0) after closing G5 (25-fact card) and G10 (regenerated report with patched Key Decisions + Next W
 - All 10
 - Goal 1 sole blocker: NT
+- Mechanic Goal#1 WinRM 4/5 verified; sole blocker SSPI/Negotiate LSA-token wall (0x80090305); NEEDS-HUMAN added to blockers.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
