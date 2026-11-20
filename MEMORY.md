@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fleet cache updated: WHITE=OK, PALE/BLACK/RED=UNREACHABLE (no
 - Phantom goal7-perf-profile-verified-2026-11-20.md invalidated (n=720 fabricated, --verify doesn
 - Designer found 4 real QA regressions (off-scale fonts/gaps, 16 ad-hoc :hover, missing
 - Designer lane closed 10/10 (open=0); "1 open" in auto-loop is stale dashboard artifact, not real work.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - close_goal7.bat is ready but requires a non-sandbox White seat run; Mechanic's goals 1 & 7 remain blocked by egress.
 - Designer fixed 35 light-mode contrast failures: tokens (--queue-tx, --muted, --faint, --warn-text, --ok, --warn, --err) had dark-theme value
 - Mechic added `--
+- ui/handoff.js refactored: 17 hardcoded hexes
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
