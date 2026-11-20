@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 WCAG audit: contrast leg DONE (0 failures both themes); keyboard + ARIA legs still open for next pass.
 - Scribe hit context-window limit reading memory/goals/squire.md; no artifact produced — blocker may repeat.
 - Goal 6 done: goal_acceptance.py built, 37
 - Goal #10 closed: weekly_summary.py --agent flag implemented; 8/8 per-agent digests generated at memory/scribe/weekly-2026-W47-{agent}.md
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #5 (Card Staleness Detection) closed: card_staleness.py selftest 3/3 PASS, real-data run flags 3 stale + 1 fresh correctly.
 - Goal 7 closed: a11y_tree_verify.py (heading/landmark/list/table checks) passes clean; evidence at memory/designer/a11y-tree-verify-evidence-
 - Mechanic built capacity_trend.py (Goal 9) — 5/5 selftest pass, first data point seeded; Goal 5 still blocked on COM wall.
+- Goal #3 API contracts: static+negative leg DONE (31/31 pass, 5 neg tests); only --live remains, blocked by :8099 egress wall.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
