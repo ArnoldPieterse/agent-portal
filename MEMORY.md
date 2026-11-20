@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop "1 open" is a stale dashboard artifact; live ledger is authoritative (designer 10/10, open=0).
 - Mechanic: Added AC5 pool mgmt (pool_stats + evict_idle) to winrm_pool.py; self
 - RECALL: - **M5** (`memory/workspace/INDEX.md:54`): The workspace-level `INDEX.md` exists and has been maintained by Scribe since 2026-11-13
 - Only fleet-wide open goal: Mechanic's WinRM hardening, blocked by sandbox egress (recurring, not re-probeable).
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Sandbox blocks HTTP data to LAN hosts even when TCP connect succeeds (PALE:5985 confirmed reachable at TCP level).
 - Designer QA regression gate passed 12/12 clean; lane confirmed
 - Auto-loop "1 open
+- Goal 7 closure requires close_goal7.bat from
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
