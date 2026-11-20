@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer found Builder's UI test suite fully written but never executed; next step is running it, not writing more tests.
 - Ran `archive_nav.py --auto`: added 6 synthesis files to nav (mechanic adjudication, WinRM contradiction, auto_loop_notes, decision-impacts,
 - Designer committed to assisting Builder: document exact exports + edge cases per ui/ module for their open "UI Module Test Suite" goal.
 - Goal #9 closed: capacity_report.py --mock mode validated, slope=2.00 exact, breach error 0.0%, all 3 alert cases pass.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe 10/10 goals closed; auto-loop "4 open" dispatch count is stale (flagged in HOT NOTES), no actionable work on Scribe seat
 - Verifier found Goal 4's (verified
 - Cross-ref integrity check passed: 0 broken live xrefs, no true circular chains (only self-references).
+- Real defect: .em (32px) and .acard button (28px)
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
