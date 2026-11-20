@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7 pointer file is a script, not passing evidence — cannot close via ledger; needs actual test results.
-- Archivist reached 10/10 verified closure; Goal 10 closed via kg_export.py --verify-roundtrip PASS (682 nodes, 1543 edges).
-- Mechanic: `check_winrm_credentials()` was mirror-reverted from health_check.py after 202
 - Goal 7 (contrast audit) closed: 30 AA failures in light mode fixed by darkening 6 text/accent tokens; both modes now pass RC=0.
 - Goal 1 (WinRM) closed via ledger; `check_winrm_credentials()` re-integrated after mirror-revert. Archivist now 10/10 verified.
 - Goal 1 (WinRM) blocked on SSPI/Negotiate LSA
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - net_probe.py confirms all 4 hosts egress-blocked (WinError 10013); last real data 11-18; Goal 1 still NEEDS-HUMAN
 - Goal 4 (Icon System) closed: 37 icons, 24×24 viewBox, 1.5px stroke, currentColor, sized API 16/24/32px, 6 panels, zero deps. Now 5/10.
 - Archivist lane 10/10 closed; freshness sweep 2026-11-20: 6974 files, 0 STALE — no open
+- WinRM pool selftest 20/20 PASS; live-exec still blocked on LSA-token wall (NEEDS-HUMAN, unchanged across passes).
+- Auto-loop "1 open goal" count was stale; ledger confirms open=0 (all 10 closed). Corrected in maintenance-2026-11-20b.md.
+- Goal 5 closed: --line-max:75ch token added to ui/tokens.css, applied to .body/.tour-body; all 98 font-size decls use var(--fs-*) tokens.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
