@@ -1,0 +1,14 @@
+{
+  "endpoint": "/api/activity",
+  "params": "",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "array"
+      },
+      {
+        "type": "object"
+      }
+    ]
+  }
+}

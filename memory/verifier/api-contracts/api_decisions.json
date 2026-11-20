@@ -1,0 +1,14 @@
+{
+  "endpoint": "/api/decisions",
+  "params": "",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "object"
+      },
+      {
+        "type": "array"
+      }
+    ]
+  }
+}

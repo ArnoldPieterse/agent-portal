@@ -13,7 +13,7 @@ USAGE:
   python memory/orchestrator/auto_cycle_transition.py --run        # execute transition
   python memory/orchestrator/auto_cycle_transition.py --dry-run    # show what WOULD happen
 """
-import os, re, sys, shutil, json, datetime, time
+import os, re, sys, shutil, json, datetime, time, subprocess
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "researcher"))
 try:
@@ -163,7 +163,38 @@ def lane_arc_summary(cycle_num):
     return lines
 
 
-def generate_kickoff(cycle_num, dry_run=False):
+def generate_retro(cycle_num, dry_run=False):
+    """Generate the cycle retrospective via cycle_retro.py (goal #3 leg b).
+
+    Runs AFTER archive_goals so the just-archived <agent>-<date>.md files are
+    the retro's input. Returns the expected retro path; on failure returns the
+    path anyway and prints a WARNING (transition must not die on a missing
+    retro - it is an enrichment, not a gate).
+    """
+    root = repo_root()
+    here = os.path.dirname(os.path.abspath(__file__))
+    out = os.path.join(root, GOALS_DIR, f"retro-cycle-{cycle_num}.md")
+    cmd = [sys.executable, os.path.join(here, "cycle_retro.py"),
+           "--cycle", str(cycle_num), "--out", out.replace(os.sep, "/")]
+    if dry_run:
+        print(f"[DRY] Would run: {' '.join(cmd)}")
+        return out
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        tail = (r.stdout or "").strip().splitlines()[-3:]
+        for line in tail:
+            print(f"  RETRO> {line}")
+        if r.returncode != 0:
+            err = (r.stderr or "").strip().splitlines()[-2:]
+            for line in err:
+                print(f"  RETRO-WARN> {line}")
+            print(f"WARNING: cycle_retro.py exited {r.returncode}; transition continues without retro.")
+    except Exception as e:
+        print(f"WARNING: cycle_retro.py failed ({e}); transition continues without retro.")
+    return out
+
+
+def generate_kickoff(cycle_num, dry_run=False, retro_path=None):
     """Generate cycle kickoff note. Returns path."""
     root = repo_root()
     today = datetime.date.today().isoformat()
@@ -199,6 +230,7 @@ def generate_kickoff(cycle_num, dry_run=False):
 
 ## Transition Summary
 - Previous cycle: **{cycle_num}** (all goals closed)
+- Retrospective: memory/goals/{os.path.basename(retro_path) if retro_path else 'retro-cycle-'+str(cycle_num)+'.md'}
 - New cycle start: {today}
 - Agents: {len(AGENT_FILES)} seats active
 
@@ -321,9 +353,12 @@ def create_goal_files(cycle_num, dry_run=False):
 
 def main():
     mode = "--check"
+    force = False
     for arg in sys.argv[1:]:
         if arg in ("--run", "--dry-run", "--check"):
             mode = arg
+        elif arg == "--force":
+            force = True  # override the all-closed gate (testing / manual transitions)
     
     root = repo_root()
     os.chdir(root)
@@ -345,9 +380,11 @@ def main():
         print(f"  {a:<12} {r}/{t}  [{flag}]")
     print()
     
-    if not all_closed:
-        print("CANNOT TRANSITION: goals still open. Use --force to override (not implemented).")
+    if not all_closed and not force:
+        print("CANNOT TRANSITION: goals still open. Use --force to override.")
         return 1
+    if not all_closed and force:
+        print("WARNING: --force given but goals are NOT all closed; proceeding (test/manual transition).")
     
     # Step 2-4: Execute transition
     print(f"Mode: {mode}")
@@ -361,8 +398,10 @@ def main():
     new_files = create_goal_files(cycle, dry_run=dry)
     for nf in new_files:
         print(f"  NEW GOALS: {nf}")
-    
-    kickoff_path = generate_kickoff(cycle, dry_run=dry)
+
+    retro_path = generate_retro(cycle, dry_run=dry)
+
+    kickoff_path = generate_kickoff(cycle, dry_run=dry, retro_path=retro_path)
     update_todo(cycle, dry_run=dry)
     
     print()

@@ -1,0 +1,35 @@
+{
+  "endpoint": "/api/manifest",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "count",
+      "files"
+    ],
+    "properties": {
+      "count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "files": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "path",
+            "mtime"
+          ],
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "mtime": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}

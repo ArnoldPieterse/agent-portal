@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Consolidated 16 ad-hoc :hover rules from app.css into interactions.css §7 (element-level defaults); app.css now has zero :hover rules.
-- Goal #7 done: reproducibility-protocol.md written (YAML schema + 3 examples). Open: #8
-- Scribe cycle-8 goals written: 10 new goals focused on self-maintaining synthesis quality (impact tracking, freshness monitors, handoff scori
-- Goal 6 (Responsive Hardening) tablet @768px done: sidebar→64px icon bar, chat full-width in ui/app.css; 3 pre-existing FAILs unrelated.
 - Goal #7 (log_rotate.py) closed & verified: 50MB threshold, .jsonl, 7-day gzip retention. Self-test 4/4 PASS.
 - Scribe goal #1 (Decision Impact Tracking) closed: built decision_impact.py, enriched 5 cycle-7 entries, output at memory/synthesis/decision-
 - Goal #5 done: validateUpload() in ui/uploads.js — allow-list (.md/.json/.txt/.py/.js/.css/.html),
 - Motion layer (animations.css) was orphaned by a revert loop; re-wired import in app.css + 3 consumers, goal #2 closed.
 - Goal #2 (Cycle Retrospective Automation) complete: `--retro` flag added to cycle_narrative.py, tested on cycle-7, 10 lessons produced, both
 - Goal #4 done: circuit breaker (3 fails→60s DOWN), timeout 2→5s, /api/fleet/status added; live test pending White portal restart.
+- Scribe Goal #3 done: briefing_freshness.py built, 3/3 acceptance tests pass, ledger recorded.
+- Goal #1: `load_week_complete.py` built; 5/7 days in, all p95 within limits (c=200 max 3527ms vs 3600ms), zero errors.
+- Designer decided tablet layout: sidebar→icon bar, chatCol→full width, fleet→horizontal scroll; Goal #3 still open despite prior artifacts.
+- Goal #8 Portal Perf: Increment 3 done (apiLimited rate limiter, 3s polls, spinner). Remaining: live browser perf measurement, blocked by san
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,0 +1,9 @@
+{
+  "endpoint": "/api/run-state",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [],
+    "properties": {}
+  }
+}

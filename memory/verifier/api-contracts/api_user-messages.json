@@ -1,0 +1,19 @@
+{
+  "endpoint": "/api/user-messages",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "ok",
+      "messages"
+    ],
+    "properties": {
+      "ok": {
+        "const": true
+      },
+      "messages": {
+        "type": "array"
+      }
+    }
+  }
+}

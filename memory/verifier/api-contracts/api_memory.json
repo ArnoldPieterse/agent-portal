@@ -1,0 +1,25 @@
+{
+  "endpoint": "/api/memory",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "text",
+      "infinite_budget",
+      "inter_agent_replies"
+    ],
+    "properties": {
+      "text": {
+        "type": "string"
+      },
+      "limit": {},
+      "infinite_budget": {
+        "type": "boolean"
+      },
+      "inter_agent_replies": {
+        "type": "integer"
+      },
+      "last_reset_by": {}
+    }
+  }
+}

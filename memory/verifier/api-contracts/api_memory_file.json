@@ -1,0 +1,34 @@
+{
+  "endpoint": "/api/memory/file",
+  "params": "?path=memory/INDEX.md",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "object",
+        "required": [
+          "path",
+          "text"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      },
+      {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "string"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "endpoint": "/api/evolution/stats",
+  "params": "",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "object"
+      },
+      {
+        "type": "array"
+      }
+    ]
+  }
+}

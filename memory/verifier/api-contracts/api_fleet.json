@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/fleet",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "hosts"
+    ],
+    "properties": {
+      "hosts": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "name",
+            "status"
+          ]
+        }
+      }
+    }
+  }
+}

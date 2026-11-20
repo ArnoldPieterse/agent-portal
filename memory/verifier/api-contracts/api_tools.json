@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/tools",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "local_tools",
+      "reasoning_levels"
+    ],
+    "properties": {
+      "local_tools": {
+        "type": "array"
+      },
+      "reasoning_levels": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

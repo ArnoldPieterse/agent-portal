@@ -1,0 +1,14 @@
+{
+  "endpoint": "/api/net/fleet",
+  "params": "",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "object"
+      },
+      {
+        "type": "array"
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "endpoint": "/api/memory-health",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "ok"
+    ],
+    "properties": {
+      "ok": {
+        "type": "boolean"
+      }
+    }
+  }
+}

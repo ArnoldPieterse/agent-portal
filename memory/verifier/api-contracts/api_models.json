@@ -1,0 +1,14 @@
+{
+  "endpoint": "/api/models",
+  "params": "",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "array"
+      },
+      {
+        "type": "object"
+      }
+    ]
+  }
+}

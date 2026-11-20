@@ -1,0 +1,25 @@
+{
+  "endpoint": "/api/goals/timeline",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "ok",
+      "cycles"
+    ],
+    "properties": {
+      "ok": {
+        "const": true
+      },
+      "cycles": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "date"
+          ]
+        }
+      }
+    }
+  }
+}

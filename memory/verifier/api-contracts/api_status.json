@@ -1,0 +1,14 @@
+{
+  "endpoint": "/api/status",
+  "params": "",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "object"
+      },
+      {
+        "type": "array"
+      }
+    ]
+  }
+}

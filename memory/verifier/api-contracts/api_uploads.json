@@ -1,0 +1,39 @@
+{
+  "endpoint": "/api/uploads",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "count",
+      "files"
+    ],
+    "properties": {
+      "count": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "files": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "path",
+            "size",
+            "mtime"
+          ],
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer"
+            },
+            "mtime": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  }
+}

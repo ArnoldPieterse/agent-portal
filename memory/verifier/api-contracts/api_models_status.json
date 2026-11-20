@@ -1,0 +1,25 @@
+{
+  "endpoint": "/api/models/status",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "ok",
+      "block_mode",
+      "down_seats",
+      "action_required"
+    ],
+    "properties": {
+      "ok": {
+        "const": true
+      },
+      "block_mode": {},
+      "down_seats": {
+        "type": "array"
+      },
+      "action_required": {
+        "type": "boolean"
+      }
+    }
+  }
+}

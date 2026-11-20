@@ -1,0 +1,14 @@
+{
+  "endpoint": "/api/goals/history",
+  "params": "",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "object"
+      },
+      {
+        "type": "array"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "endpoint": "/api/knowledge-bases",
+  "params": "",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "object"
+      },
+      {
+        "type": "array"
+      }
+    ]
+  }
+}

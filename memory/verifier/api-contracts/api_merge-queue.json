@@ -1,0 +1,14 @@
+{
+  "endpoint": "/api/merge-queue",
+  "params": "",
+  "schema": {
+    "oneOf": [
+      {
+        "type": "object"
+      },
+      {
+        "type": "array"
+      }
+    ]
+  }
+}

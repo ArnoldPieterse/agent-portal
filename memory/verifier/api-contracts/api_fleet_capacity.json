@@ -1,0 +1,9 @@
+{
+  "endpoint": "/api/fleet/capacity",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [],
+    "properties": {}
+  }
+}

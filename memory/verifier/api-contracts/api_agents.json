@@ -1,0 +1,21 @@
+{
+  "endpoint": "/api/agents",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "agents"
+    ],
+    "properties": {
+      "agents": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "name"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "endpoint": "/api/git",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "ok"
+    ],
+    "properties": {
+      "ok": {
+        "type": "boolean"
+      }
+    }
+  }
+}

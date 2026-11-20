@@ -1,0 +1,70 @@
+{
+  "endpoint": "/api/goals",
+  "params": "",
+  "schema": {
+    "type": "object",
+    "required": [
+      "ok",
+      "fleet_pct",
+      "fleet_done",
+      "fleet_total",
+      "agents"
+    ],
+    "properties": {
+      "ok": {
+        "const": true
+      },
+      "generated": {
+        "type": "string"
+      },
+      "fleet_pct": {
+        "type": "number"
+      },
+      "fleet_done": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "fleet_total": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "agents": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "agent",
+            "total",
+            "done",
+            "open",
+            "blocked"
+          ],
+          "properties": {
+            "agent": {
+              "type": "string"
+            },
+            "total": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "done": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "open": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "blocked": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "goal_reset_pending": {
+        "type": "boolean"
+      }
+    }
+  }
+}
