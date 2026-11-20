@@ -1,10 +1,10 @@
 {
- "run_ts": 1795060113.9753838,
+ "run_ts": 1795137423.0763004,
  "method": "tfidf (kb_search.py)",
  "n_queries": 20,
  "precision_at_5": 1.0,
  "recall_at_10": 1.0,
- "mrr": 0.85,
+ "mrr": 0.8417,
  "queries": [
   {
    "query": "file modularity rule pointer budget ui modules",
@@ -16,7 +16,7 @@
     "memory/portal/file-modularity.md",
     "memory/designer/css-budget-report-2026-11-17.md",
     "memory/handoffs/HO-20261116-file-modularity.md",
-    "memory/researcher/pin-consistency-check-2026-11-17.md"
+    "memory/archivist/digest-47-2026.md"
    ],
    "rank": 2,
    "in_top5": true,
@@ -31,9 +31,9 @@
    "top5": [
     "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
     "memory/researcher/INDEX.md",
+    "memory/mechanic/pin-clobber-repair-2026-11-19.md",
     "memory/researcher/open-questions-log.md",
-    "memory/goals/archive/orchestrator-2026-11-13.md",
-    "memory/archivist/decay-report.md"
+    "memory/designer/pin-advanced-d51c43756597-2026-11-19.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -48,9 +48,9 @@
    "top5": [
     "memory/ops/fleet-monitoring-cadence.md",
     "memory/ops/INDEX.md",
+    "memory/archivist/digest-47-2026.md",
     "memory/ops/portal-down-2026-11-15.md",
-    "memory/mechanic/goal4-load-probe-outage-guard-2026-11-17.md",
-    "memory/mechanic/goal4-outage-detection-2026-11-17.md"
+    "memory/verifier/archivist-goal6-freshness-verify.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -63,12 +63,12 @@
    ],
    "top5": [
     "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+    "memory/mechanic/runbook.md",
     "memory/ops/windows-runbook.md",
     "memory/mechanic/goal9-ops-gap-analysis-2026-11-17.md",
-    "memory/goals/scheduled-background.md",
-    "memory/mechanic/ops-runbook-gap-analysis-2026-11-17.md"
+    "memory/goals/scheduled-background.md"
    ],
-   "rank": 2,
+   "rank": 3,
    "in_top5": true,
    "in_top10": true
   },
@@ -116,7 +116,7 @@
     "memory/portal/mirror-clobber-pattern-2026-11-14.md",
     "memory/researcher/sync-clobber-analysis-2026-11-13.md",
     "memory/researcher/clobber-mechanism-and-final-ip-count-2026-11-15.md",
-    "memory/archivist/decay-report.md"
+    "memory/researcher/INDEX.md"
    ],
    "rank": 2,
    "in_top5": true,
@@ -166,8 +166,8 @@
     "memory/portal/design-tokens-live.md",
     "memory/orchestrator/appcss-hardcoded-colors-verify-2026-11-17.md",
     "memory/researcher/wcag-aa-and-tokenization-reverify-2026-11-17.md",
-    "memory/designer/goal1-token-system-2026-11-19.md",
-    "memory/builder/assist-designer-goal1-tokens-2026-11-19.md"
+    "memory/goals/archive/designer-2026-11-19.md",
+    "memory/goals/archive/designer-2026-11-20.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -182,8 +182,8 @@
     "memory/portal/visual-regression-checklist.md",
     "memory/designer/goal10-harness-2026-11-18.md",
     "memory/verifier/goal7-visual-regression-evidence-2026-11-18.md",
-    "memory/verifier/regression-5point-2026-11-16.md",
-    "memory/archivist/decay-report.md"
+    "memory/archivist/digest-47-2026.md",
+    "memory/verifier/regression-5point-2026-11-16.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -214,9 +214,9 @@
    "top5": [
     "memory/ops/autoloop.md",
     "memory/archivist/decay-report.md",
-    "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md",
     "memory/llm/backend-swap-procedure.md",
-    "memory/mechanic/goal5-egress-v2-closure-2026-11-18.md"
+    "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md",
+    "memory/designer/goal3-hierarchy-reland-2026-11-20b.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -230,9 +230,9 @@
    "top5": [
     "memory/ops/hotline-v2.md",
     "memory/llm/backend-swap-procedure.md",
+    "memory/ops/INDEX.md",
     "memory/mechanic/red-white-reachability-2026-11-14.md",
-    "memory/ops/fleet-monitoring-cadence.md",
-    "memory/ops/INDEX.md"
+    "memory/ops/fleet-monitoring-cadence.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -245,8 +245,8 @@
    ],
    "top5": [
     "memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md",
-    "memory/ops/blockers.md",
     "memory/mechanic/MEMORY.md",
+    "memory/researcher/INDEX.md",
     "memory/archivist/decay-report.md",
     "memory/workspace/INDEX.md"
    ],
@@ -263,8 +263,8 @@
     "memory/ops/remote-host-metrics-probe-spec.md",
     "memory/orchestrator/crossassist-remote-host-metrics-spec-2026-11-18.md",
     "memory/llm/hosts.md",
-    "memory/researcher/mirror-revert-fix1-epoch-review-divergences-2026-11-18.md",
-    "memory/archivist/decay-report.md"
+    "memory/archivist/decay-report.md",
+    "memory/researcher/mirror-revert-fix1-epoch-review-divergences-2026-11-18.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -278,9 +278,9 @@
    "top5": [
     "memory/ops/pdf-reporting.md",
     "memory/archivist/decay-report.md",
+    "memory/ops/design-token-lint-workflow.md",
     "memory/scribe/pin-guard-ui-css-workflow-2026-11-17.md",
-    "memory/archivist/evidence-goal1-delta-reporting-2026-11-18.md",
-    "memory/designer/goal3-inline-style-migration-2026-11-17.md"
+    "memory/archivist/evidence-goal1-delta-reporting-2026-11-18.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -327,9 +327,9 @@
    "top5": [
     "memory/ops/agent-onboarding-playbook.md",
     "memory/orchestrator/INDEX.md",
+    "memory/orchestrator/goal7-onboarding-wizard-v4-progress-2026-11-20.md",
     "memory/ops/INDEX.md",
-    "memory/ONBOARDING.md",
-    "memory/orchestrator/goal7-template-flag-evidence-2026-11-18.md"
+    "memory/portal/testing.md"
    ],
    "rank": 1,
    "in_top5": true,

@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 9 (Empty States + Loading Patterns) completed: added empty states to agentList/actBody/opsBody + initial skeletons; Goals 1–9 all verif
-- Scribe verified Goals 2–5 in one pass; ledger now at 6/10 verified (was 2/10).
 - Mechanic: winrm_creds check integrated into health_check.py (local state file, no network); Goal #1 sub-item done.
 - Goal 1 closed: interactions.css is sole source of truth for :hover rules; app.css duplicates removed (16 rules).
 - Goal 6 (Synthesis Quality Scoring) closed: scoring script + /api/synthesis/quality endpoint built; vague<40, specific>80 verified.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 2 closed: ui/animations.css existed but was never loaded; fixed by adding @import to app.css line 2.
 - Goal 7 done: archive nav index has 85 synthesis files (74 explicit + 15 wildcard), 11 themes, duplicate & stale ref fixed.
 - Goal #1 orphan remediation: actionable orphans down from 124 to 8 after v2 full-s
+- `memory/archivist/retrieval-baseline.json` is stale (old keyword-grep method, non-memory junk hits) — do not use as comparison baseline.
+- Scribe Goal 4 (Cross-Agent Handoff Protocol) closed; fleet score now 58/60 after logging 3 real cycle-6 handoffs.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

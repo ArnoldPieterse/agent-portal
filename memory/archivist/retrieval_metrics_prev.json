@@ -1,10 +1,10 @@
 {
- "run_ts": 1795060073.7037961,
+ "run_ts": 1795060113.9753838,
  "method": "tfidf (kb_search.py)",
  "n_queries": 20,
- "precision_at_5": 0.75,
- "recall_at_10": 0.9,
- "mrr": 0.4085,
+ "precision_at_5": 1.0,
+ "recall_at_10": 1.0,
+ "mrr": 0.85,
  "queries": [
   {
    "query": "file modularity rule pointer budget ui modules",
@@ -12,14 +12,14 @@
     "memory/portal/file-modularity.md"
    ],
    "top5": [
-    "memory/archivist/decay-report.md",
-    "memory/researcher/INDEX.md",
     "memory/designer/ingested-20261116-file-modularity-rule-research-note.md",
-    "memory/portal/split-design-agent-portal-2026-11-16.md",
-    "memory/synthesis/2026-11-16-portal-status-report.md"
+    "memory/portal/file-modularity.md",
+    "memory/designer/css-budget-report-2026-11-17.md",
+    "memory/handoffs/HO-20261116-file-modularity.md",
+    "memory/researcher/pin-consistency-check-2026-11-17.md"
    ],
-   "rank": 7,
-   "in_top5": false,
+   "rank": 2,
+   "in_top5": true,
    "in_top10": true
   },
   {
@@ -29,13 +29,13 @@
     "memory/ops/pin-guard-extension-ui-files.md"
    ],
    "top5": [
+    "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
     "memory/researcher/INDEX.md",
     "memory/researcher/open-questions-log.md",
     "memory/goals/archive/orchestrator-2026-11-13.md",
-    "memory/archivist/decay-report.md",
-    "memory/portal/bugs/goal-stall-loop-2026-11-16.md"
+    "memory/archivist/decay-report.md"
    ],
-   "rank": 5,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   },
@@ -48,9 +48,9 @@
    "top5": [
     "memory/ops/fleet-monitoring-cadence.md",
     "memory/ops/INDEX.md",
-    "memory/goals/archive/cycle2-2026-11-17/orchestrator.md",
-    "memory/archivist/decay-report.md",
-    "memory/goals/archive/researcher-2026-11-18.md"
+    "memory/ops/portal-down-2026-11-15.md",
+    "memory/mechanic/goal4-load-probe-outage-guard-2026-11-17.md",
+    "memory/mechanic/goal4-outage-detection-2026-11-17.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -64,9 +64,9 @@
    "top5": [
     "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
     "memory/ops/windows-runbook.md",
-    "memory/ops/INDEX.md",
-    "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-    "memory/ops/host-port-task-map-2026-11-15.md"
+    "memory/mechanic/goal9-ops-gap-analysis-2026-11-17.md",
+    "memory/goals/scheduled-background.md",
+    "memory/mechanic/ops-runbook-gap-analysis-2026-11-17.md"
    ],
    "rank": 2,
    "in_top5": true,
@@ -79,13 +79,13 @@
     "memory/ops/boot-detection-runbook.md"
    ],
    "top5": [
+    "memory/ops/boot-deployment-runbook.md",
+    "memory/mechanic/goal2-startup-deploy-path-2026-11-17.md",
     "memory/mechanic/goal9-ops-runbook-gap-analysis-2026-11-17.md",
     "memory/mechanic/goal9-ops-gap-analysis-2026-11-17.md",
-    "memory/ops/boot-deployment-runbook.md",
-    "memory/mechanic/runbook-gap-analysis-draft-2026-11-18.md",
-    "memory/archivist/decay-report.md"
+    "memory/mechanic/runbook-gap-analysis-draft-2026-11-18.md"
    ],
-   "rank": 3,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   },
@@ -95,13 +95,13 @@
     "memory/ops/git-hygiene.md"
    ],
    "top5": [
-    "memory/portal/architecture.md",
     "memory/ops/git-hygiene.md",
     "memory/workspace/INDEX.md",
-    "memory/archivist/decay-report.md",
-    "memory/goals/all-goals-2026-11-13.md"
+    "memory/handoffs/HO-20261113-git-repo-bootstrap.md",
+    "memory/ops/verifier-git-health-2026-11-15b.md",
+    "memory/builder/curl-examples-prune-git-2026-11-15.md"
    ],
-   "rank": 2,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   },
@@ -112,14 +112,14 @@
     "memory/ops/mirror-revert-prevention-2026-11-18.md"
    ],
    "top5": [
-    "memory/archivist/decay-report.md",
-    "memory/researcher/INDEX.md",
-    "memory/portal/architecture.md",
+    "memory/llm/hosts.md",
+    "memory/portal/mirror-clobber-pattern-2026-11-14.md",
     "memory/researcher/sync-clobber-analysis-2026-11-13.md",
-    "memory/researcher/open-questions-log.md"
+    "memory/researcher/clobber-mechanism-and-final-ip-count-2026-11-15.md",
+    "memory/archivist/decay-report.md"
    ],
-   "rank": 10,
-   "in_top5": false,
+   "rank": 2,
+   "in_top5": true,
    "in_top10": true
   },
   {
@@ -128,15 +128,15 @@
     "memory/portal/api-reference.md"
    ],
    "top5": [
-    "memory/ONBOARDING.md",
-    "memory/goals/all-goals-2026-11-13.md",
-    "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
     "memory/archivist/evidence-goal3-api-ref-diff-2026-11-18.md",
-    "memory/portal/architecture.md"
+    "memory/archivist/evidence-goal3-api-ref-progress-2026-11-18.md",
+    "memory/archivist/api-ref-e2e-2026-11-18.md",
+    "memory/portal/api-reference.md",
+    "memory/archivist/evidence-goal3-api-ref-complete-2026-11-18.md"
    ],
-   "rank": null,
-   "in_top5": false,
-   "in_top10": false
+   "rank": 4,
+   "in_top5": true,
+   "in_top10": true
   },
   {
    "query": "portal architecture server frontend mirror overview",
@@ -145,13 +145,13 @@
     "memory/portal/system-map.md"
    ],
    "top5": [
-    "memory/portal/architecture.md",
     "memory/portal/INDEX.md",
-    "memory/archivist/xref-fix-log-2026-11-19.md",
-    "memory/archivist/decay-report.md",
-    "memory/ONBOARDING.md"
+    "memory/verifier/fleet-overview-verify-2026-11-17.md",
+    "memory/goals/designer-forecast-orchestrator-fleet-overview-2026-11-18.md",
+    "memory/portal/architecture.md",
+    "memory/orchestrator/fleet-overview-shape-fix-2026-11-17.md"
    ],
-   "rank": 1,
+   "rank": 4,
    "in_top5": true,
    "in_top10": true
   },
@@ -163,15 +163,15 @@
     "memory/portal/design-tokens.md"
    ],
    "top5": [
-    "memory/goals/designer.md",
+    "memory/portal/design-tokens-live.md",
+    "memory/orchestrator/appcss-hardcoded-colors-verify-2026-11-17.md",
+    "memory/researcher/wcag-aa-and-tokenization-reverify-2026-11-17.md",
     "memory/designer/goal1-token-system-2026-11-19.md",
-    "memory/builder/assist-designer-goal1-tokens-2026-11-19.md",
-    "memory/archivist/decay-report.md",
-    "memory/designer/goal1-token-closure-reland-2026-11-17.md"
+    "memory/builder/assist-designer-goal1-tokens-2026-11-19.md"
    ],
-   "rank": null,
-   "in_top5": false,
-   "in_top10": false
+   "rank": 1,
+   "in_top5": true,
+   "in_top10": true
   },
   {
    "query": "visual regression checklist UI changes",
@@ -179,13 +179,13 @@
     "memory/portal/visual-regression-checklist.md"
    ],
    "top5": [
-    "memory/archivist/decay-report.md",
     "memory/portal/visual-regression-checklist.md",
-    "memory/scribe/TODO.md",
-    "memory/scribe/MEMORY.md",
-    "memory/designer/goal10-harness-2026-11-18.md"
+    "memory/designer/goal10-harness-2026-11-18.md",
+    "memory/verifier/goal7-visual-regression-evidence-2026-11-18.md",
+    "memory/verifier/regression-5point-2026-11-16.md",
+    "memory/archivist/decay-report.md"
    ],
-   "rank": 2,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   },
@@ -195,13 +195,13 @@
     "memory/ops/evidence-closure-protocol.md"
    ],
    "top5": [
-    "memory/archivist/decay-report.md",
     "memory/ops/evidence-closure-protocol.md",
-    "memory/researcher/cross-agent-comm-patterns-2026-11-17.md",
-    "memory/orchestrator/ui-closure-check-tool-2026-11-19.md",
-    "memory/archivist/evidence-goal2-handoff-protocol-v2-2026-11-18.md"
+    "memory/archivist/evidence-goal2-handoff-protocol-v2-2026-11-18.md",
+    "memory/handoffs/HO-20261116-file-modularity.md",
+    "memory/handoffs/PROTOCOL.md",
+    "memory/orchestrator/ui-closure-check-tool-2026-11-19.md"
    ],
-   "rank": 2,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   },
@@ -212,13 +212,13 @@
     "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md"
    ],
    "top5": [
-    "memory/archivist/decay-report.md",
     "memory/ops/autoloop.md",
-    "memory/researcher/sync-semantics-spec-2026-11-17.md",
+    "memory/archivist/decay-report.md",
     "memory/ops/autoloop-behaviour-hint-staleness-2026-11-18.md",
-    "memory/ops/portal-split-seams-2026-11-17.md"
+    "memory/llm/backend-swap-procedure.md",
+    "memory/mechanic/goal5-egress-v2-closure-2026-11-18.md"
    ],
-   "rank": 2,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   },
@@ -228,13 +228,13 @@
     "memory/ops/hotline-v2.md"
    ],
    "top5": [
-    "memory/ops/INDEX.md",
     "memory/ops/hotline-v2.md",
-    "memory/goals/archive/orchestrator-2026-11-18.md",
-    "memory/goals/archive/cycle2-2026-11-17/orchestrator.md",
-    "memory/researcher/mirror-revert-closure-runbook-2026-11-17.md"
+    "memory/llm/backend-swap-procedure.md",
+    "memory/mechanic/red-white-reachability-2026-11-14.md",
+    "memory/ops/fleet-monitoring-cadence.md",
+    "memory/ops/INDEX.md"
    ],
-   "rank": 2,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   },
@@ -244,13 +244,13 @@
     "memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md"
    ],
    "top5": [
-    "memory/archivist/decay-report.md",
-    "memory/workspace/INDEX.md",
+    "memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md",
+    "memory/ops/blockers.md",
     "memory/mechanic/MEMORY.md",
-    "memory/goals/archive/orchestrator-2026-11-13.md",
-    "memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md"
+    "memory/archivist/decay-report.md",
+    "memory/workspace/INDEX.md"
    ],
-   "rank": 5,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   },
@@ -260,13 +260,13 @@
     "memory/ops/remote-host-metrics-probe-spec.md"
    ],
    "top5": [
-    "memory/archivist/decay-report.md",
     "memory/ops/remote-host-metrics-probe-spec.md",
     "memory/orchestrator/crossassist-remote-host-metrics-spec-2026-11-18.md",
-    "memory/researcher/INDEX.md",
-    "memory/goals/archive/orchestrator-2026-11-13.md"
+    "memory/llm/hosts.md",
+    "memory/researcher/mirror-revert-fix1-epoch-review-divergences-2026-11-18.md",
+    "memory/archivist/decay-report.md"
    ],
-   "rank": 2,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   },
@@ -278,9 +278,9 @@
    "top5": [
     "memory/ops/pdf-reporting.md",
     "memory/archivist/decay-report.md",
-    "memory/ops/memory-trim-archive-2026-11-14.md",
-    "memory/ops/INDEX.md",
-    "memory/goals/archive/archivist-2026-11-16.md"
+    "memory/scribe/pin-guard-ui-css-workflow-2026-11-17.md",
+    "memory/archivist/evidence-goal1-delta-reporting-2026-11-18.md",
+    "memory/designer/goal3-inline-style-migration-2026-11-17.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -292,14 +292,14 @@
     "memory/ops/memory-sync-spec-r13.md"
    ],
    "top5": [
+    "memory/ops/memory-sync-spec-r13.md",
     "memory/workspace/INDEX.md",
+    "memory/researcher/mirror-revert-fix1-epoch-review-divergences-2026-11-18.md",
     "memory/archivist/decay-report.md",
-    "memory/mechanic/MEMORY.md",
-    "memory/scribe/MEMORY.md",
-    "memory/researcher/INDEX.md"
+    "memory/mechanic/MEMORY.md"
    ],
-   "rank": 9,
-   "in_top5": false,
+   "rank": 1,
+   "in_top5": true,
    "in_top10": true
   },
   {
@@ -309,13 +309,13 @@
     "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md"
    ],
    "top5": [
-    "memory/archivist/decay-report.md",
-    "memory/verifier/INDEX.md",
     "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
-    "memory/researcher/INDEX.md",
-    "memory/researcher/open-questions-log.md"
+    "memory/verifier/stale-claim-fallback-verified-2026-11-19.md",
+    "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
+    "memory/archivist/decay-report.md",
+    "memory/scribe/stale-claim-builder-handoff-g2-2026-11-18.md"
    ],
-   "rank": 3,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   },
@@ -325,13 +325,13 @@
     "memory/ops/agent-onboarding-playbook.md"
    ],
    "top5": [
-    "memory/ops/INDEX.md",
-    "memory/archivist/decay-report.md",
-    "memory/mechanic/goal9-ops-runbook-gap-analysis-2026-11-17.md",
     "memory/ops/agent-onboarding-playbook.md",
-    "memory/orchestrator/retro_draft_cycle3_2026-11-17.md"
+    "memory/orchestrator/INDEX.md",
+    "memory/ops/INDEX.md",
+    "memory/ONBOARDING.md",
+    "memory/orchestrator/goal7-template-flag-evidence-2026-11-18.md"
    ],
-   "rank": 4,
+   "rank": 1,
    "in_top5": true,
    "in_top10": true
   }
