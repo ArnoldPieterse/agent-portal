@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic goal #1 (WinRM Hardening) stuck at 79/80: sole open item fleet-wide, blocked on live remote exec by sandbox egress (Win
 - Mechanic Goal 1 (WinRM Hardening) closed 2026-11-20; evidence was in reboot-recovery.jsonl but (verified:) marker was missing from goal file
 - Mechanic #7 (Perf Profiling) is the true open goal; #1
 - Mechanic added --verify to perf_profile.py (close_goal7.bat now functional); live leg still blocked by sandbox egress WinError 10013
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 7 blocked: sandbox egress dead (WinError 10013 all sockets). Fix: run `memory\mechanic\close_goal7.bat` from White admin terminal — sel
 - Goal 7: close_goal7.bat hardened with pre-flight :8099 check; still open pending one-time 1h run from White (blocker in memory/ops/blockers.
 - Goal 7 blocked on sandbox egress (:8099); mock mode added as pipeline proof but verify() rejects it—live run still needs non-sandbox seat.
+- Goal 7 closes via `
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
