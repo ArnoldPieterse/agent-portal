@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic added missing --verify flag to perf_profile.py, unblocking goal #7's local validation leg (live run still sandbox-blocked).
-- Goal #7 closed: fixed 6 light-theme tokens in ui/tokens.css, contrast failures 30→0, QA gate 12/12.
 - Scribe closed Goal 3 (Context Compression) by adding missing (verified: marker
 - Goal 5 (Knowledge Distillation) closed: distill.py --topic hotload → memory/scribe/cards/hotload.md, 25 facts/20 sources, ledger marked.
 - Mechanic at 9/10 goals; sole open goal #1 WinRM is egress-walled on Red — do not re-probe.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer 10/10 closed; fleet 78/80 (98%) — only Mechanic's 2 open goals remain (WinRM egress-walled).
 - Scribe goal #6 (Synthesis Quality Scoring) closed 2026-11-20: /api/synthesis/quality endpoint live, fleet avg 71.8, now 6/10 goals done.
 - RECALL: - M5 (memory/synthesis/cycle-narrative.md:12): Goal-setting round landed 2026-11-17 with 8 agents × 10 goals — this is the origin of
+- Scribe built _memory_search() endpoint for goal 9 (Institutional Memory Search), wired into
+- All 10 Designer goals closed; CDP timeout accepted as non-blocker via static structural verification (reconciliation decision 2026-11-19).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
