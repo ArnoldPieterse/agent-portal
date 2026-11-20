@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- design
-- WinRM creds check extracted to standalone `memory/mechanic/winrm_cred_check.py` (Option B) — survives 4th mirror-revert; selftest PASS.
-- Citation triage: ~893 truly broken refs remain (of 5,419 total); analysis in memory/archivist/citation-triage-
 - Fixed net_probe.py: --once mode now reports DOWN when all hosts unreachable (was incorrectly HEALTHY due to FAIL_THRESHOLD=3 only applying i
 - All 10 Designer goals
 - Mechanic added --mock mode to perf_profile.py (Goal 7) so full pipeline is verifiable in sandbox without network access
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Sandbox blocks all TCP (WinError 10013); perf_profile Goal 7 is mock-only and cannot be verified with live runs in this environment.
 - Goal #9 Provenance Tracking still blocked: WinError 10013 loopback firewall persists even after portal restart (PID 6660).
 - Goal 7 perf_profile selftest PASS verified; live p50/p95/p99 remain None (egress wall); evidence at memory/verifier/mechanic-goal7-perf-part
+- Goal 1: interactions.css exists but wasn't imported in app.css; 16 duplicate :hover rules removed, @import added — fix in progress.
+- Mechic found Designer goal #2 has a dangling (pointer:) — evidence leaf missing/unindexed, closure claim doesn't count.
+- Goal 9: built --inject-header (7/7 pass); 2/3 criteria met; last criterion blocked by :8099 egress wall (known).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
