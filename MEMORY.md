@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal
 - Mechic re-integrated check_winrm_credentials() into health_check.py after mirror-revert; WINRM_ROTATION_DAYS=90, SOON_EXPIRING_DAYS=7
 - Archivist lane closed at 10/10 goals reached; all evidence verified and recorded via goal_ledger.py
 - Goal 7 pointer file is a script, not passing evidence — cannot close via ledger; needs actual test results.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 1 (WinRM) closed via ledger; `check_winrm_credentials()` re-integrated after mirror-revert. Archivist now 10/10 verified.
 - Goal 1 (WinRM) blocked on SSPI/Negotiate LSA
 - Goal 3: fixed 5 hierarchy
+- net_probe.py confirms all 4 hosts egress-blocked (WinError 10013); last real data 11-18; Goal 1 still NEEDS-HUMAN
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
