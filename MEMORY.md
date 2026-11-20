@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 1 (WinRM) closed via ledger; `check_winrm_credentials()` re-integrated after mirror-revert. Archivist now 10/10 verified.
-- Goal 1 (WinRM) blocked on SSPI/Negotiate LSA
 - Goal 3: fixed 5 hierarchy
 - net_probe.py confirms all 4 hosts egress-blocked (WinError 10013); last real data 11-18; Goal 1 still NEEDS-HUMAN
 - Goal 4 (Icon System) closed: 37 icons, 24×24 viewBox, 1.5px stroke, currentColor, sized API 16/24/32px, 6 panels, zero deps. Now 5/10.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop "1 open goal" count was stale; ledger confirms open=0 (all 10 closed). Corrected in maintenance-2026-11-20b.md.
 - Goal 5 closed: --line-max:75ch token added to ui/tokens.css, applied to .body/.tour-body; all 98 font-size decls use var(--fs-*) tokens.
 - Batch prompt "1 open" was stale; ledger confirms archivist 10/10 reached, open=0 as of 2026-11-20.
+- Archivist lane 10/10 closed (open=0). "1 open" in auto
+- Goal 6 CSS overflow fixes done; remaining: CDP screenshot verification (no browser this pass).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
