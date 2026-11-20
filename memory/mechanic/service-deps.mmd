@@ -1,0 +1,45 @@
+graph TD
+  portal["Fleet portal server"]
+  llm-studio-white["LM Studio instance on White"]
+  llm-studio-black["LM Studio instance on Black"]
+  llm-studio-red["LM Studio instance on Red"]
+  file-watcher["Memory mirror sync"]
+  health-check["Fleet health probe"]
+  winrm-remote["WinRM remote management channel"]
+  net-probe["Network health probe"]
+  python-runtime(("Python 3.x interpreter"))
+  agents.json(("Agent profiles config"))
+  memory-dir(("Shared project memory"))
+  ui-modules(("Frontend CSS/JS modules"))
+  gpu-vram-white(("GPU VRAM on White"))
+  gpu-vram-black(("GPU VRAM on Black"))
+  gpu-vram-red(("GPU VRAM on Red"))
+  model-files(("LLM model weights"))
+  git-binary(("Git executable for mirror sync"))
+  network-lan(("LAN connectivity between hosts"))
+  winrm-service(("Windows Remote Management serv"))
+  credentials-store(("WinRM credentials (encrypted)"))
+  portal -->|requires| python-runtime
+  portal -->|requires| agents.json
+  portal -->|requires| memory-dir
+  portal -->|requires| ui-modules
+  portal -->|requires| llm-studio-white
+  llm-studio-white -->|requires| python-runtime
+  llm-studio-white -->|requires| gpu-vram-white
+  llm-studio-white -->|requires| model-files
+  llm-studio-black -->|requires| python-runtime
+  llm-studio-black -->|requires| gpu-vram-black
+  llm-studio-black -->|requires| model-files
+  llm-studio-red -->|requires| python-runtime
+  llm-studio-red -->|requires| gpu-vram-red
+  llm-studio-red -->|requires| model-files
+  file-watcher -->|requires| python-runtime
+  file-watcher -->|requires| memory-dir
+  file-watcher -->|requires| git-binary
+  health-check -->|requires| python-runtime
+  health-check -->|requires| portal
+  winrm-remote -->|requires| network-lan
+  winrm-remote -->|requires| winrm-service
+  winrm-remote -->|requires| credentials-store
+  net-probe -->|requires| python-runtime
+  net-probe -->|requires| network-lan

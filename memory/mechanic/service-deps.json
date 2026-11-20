@@ -1,0 +1,266 @@
+{
+  "generated": "2026-11-19T23:58:55.083215+00:00",
+  "services": {
+    "portal": {
+      "description": "Fleet portal server (agent_portal.py)",
+      "host": "white",
+      "port": 8099,
+      "depends_on": [
+        "python-runtime",
+        "agents.json",
+        "memory-dir",
+        "ui-modules",
+        "llm-studio-white"
+      ]
+    },
+    "llm-studio-white": {
+      "description": "LM Studio instance on White (port 8888)",
+      "host": "white",
+      "port": 8888,
+      "depends_on": [
+        "python-runtime",
+        "gpu-vram-white",
+        "model-files"
+      ]
+    },
+    "llm-studio-black": {
+      "description": "LM Studio instance on Black (port 8889)",
+      "host": "black",
+      "port": 8889,
+      "depends_on": [
+        "python-runtime",
+        "gpu-vram-black",
+        "model-files"
+      ]
+    },
+    "llm-studio-red": {
+      "description": "LM Studio instance on Red (port 8890)",
+      "host": "red",
+      "port": 8890,
+      "depends_on": [
+        "python-runtime",
+        "gpu-vram-red",
+        "model-files"
+      ]
+    },
+    "file-watcher": {
+      "description": "Memory mirror sync (memory_mirror.py)",
+      "host": "white",
+      "port": null,
+      "depends_on": [
+        "python-runtime",
+        "memory-dir",
+        "git-binary"
+      ]
+    },
+    "health-check": {
+      "description": "Fleet health probe (health_check.py)",
+      "host": "white",
+      "port": null,
+      "depends_on": [
+        "python-runtime",
+        "portal"
+      ]
+    },
+    "winrm-remote": {
+      "description": "WinRM remote management channel",
+      "host": "all",
+      "port": 5985,
+      "depends_on": [
+        "network-lan",
+        "winrm-service",
+        "credentials-store"
+      ]
+    },
+    "net-probe": {
+      "description": "Network health probe (net_probe.py)",
+      "host": "white",
+      "port": null,
+      "depends_on": [
+        "python-runtime",
+        "network-lan"
+      ]
+    }
+  },
+  "infrastructure": {
+    "python-runtime": {
+      "type": "runtime",
+      "description": "Python 3.x interpreter"
+    },
+    "agents.json": {
+      "type": "file",
+      "path": "agents.json",
+      "description": "Agent profiles config"
+    },
+    "memory-dir": {
+      "type": "directory",
+      "path": "memory/",
+      "description": "Shared project memory"
+    },
+    "ui-modules": {
+      "type": "directory",
+      "path": "ui/",
+      "description": "Frontend CSS/JS modules"
+    },
+    "gpu-vram-white": {
+      "type": "hardware",
+      "host": "white",
+      "description": "GPU VRAM on White"
+    },
+    "gpu-vram-black": {
+      "type": "hardware",
+      "host": "black",
+      "description": "GPU VRAM on Black"
+    },
+    "gpu-vram-red": {
+      "type": "hardware",
+      "host": "red",
+      "description": "GPU VRAM on Red"
+    },
+    "model-files": {
+      "type": "directory",
+      "path": "/models/",
+      "description": "LLM model weights"
+    },
+    "git-binary": {
+      "type": "binary",
+      "description": "Git executable for mirror sync"
+    },
+    "network-lan": {
+      "type": "network",
+      "description": "LAN connectivity between hosts"
+    },
+    "winrm-service": {
+      "type": "service",
+      "port": 5985,
+      "description": "Windows Remote Management service"
+    },
+    "credentials-store": {
+      "type": "file",
+      "path": "memory/ops/winrm_creds.json",
+      "description": "WinRM credentials (encrypted)"
+    }
+  },
+  "edges": [
+    {
+      "from": "portal",
+      "to": "python-runtime",
+      "type": "requires"
+    },
+    {
+      "from": "portal",
+      "to": "agents.json",
+      "type": "requires"
+    },
+    {
+      "from": "portal",
+      "to": "memory-dir",
+      "type": "requires"
+    },
+    {
+      "from": "portal",
+      "to": "ui-modules",
+      "type": "requires"
+    },
+    {
+      "from": "portal",
+      "to": "llm-studio-white",
+      "type": "requires"
+    },
+    {
+      "from": "llm-studio-white",
+      "to": "python-runtime",
+      "type": "requires"
+    },
+    {
+      "from": "llm-studio-white",
+      "to": "gpu-vram-white",
+      "type": "requires"
+    },
+    {
+      "from": "llm-studio-white",
+      "to": "model-files",
+      "type": "requires"
+    },
+    {
+      "from": "llm-studio-black",
+      "to": "python-runtime",
+      "type": "requires"
+    },
+    {
+      "from": "llm-studio-black",
+      "to": "gpu-vram-black",
+      "type": "requires"
+    },
+    {
+      "from": "llm-studio-black",
+      "to": "model-files",
+      "type": "requires"
+    },
+    {
+      "from": "llm-studio-red",
+      "to": "python-runtime",
+      "type": "requires"
+    },
+    {
+      "from": "llm-studio-red",
+      "to": "gpu-vram-red",
+      "type": "requires"
+    },
+    {
+      "from": "llm-studio-red",
+      "to": "model-files",
+      "type": "requires"
+    },
+    {
+      "from": "file-watcher",
+      "to": "python-runtime",
+      "type": "requires"
+    },
+    {
+      "from": "file-watcher",
+      "to": "memory-dir",
+      "type": "requires"
+    },
+    {
+      "from": "file-watcher",
+      "to": "git-binary",
+      "type": "requires"
+    },
+    {
+      "from": "health-check",
+      "to": "python-runtime",
+      "type": "requires"
+    },
+    {
+      "from": "health-check",
+      "to": "portal",
+      "type": "requires"
+    },
+    {
+      "from": "winrm-remote",
+      "to": "network-lan",
+      "type": "requires"
+    },
+    {
+      "from": "winrm-remote",
+      "to": "winrm-service",
+      "type": "requires"
+    },
+    {
+      "from": "winrm-remote",
+      "to": "credentials-store",
+      "type": "requires"
+    },
+    {
+      "from": "net-probe",
+      "to": "python-runtime",
+      "type": "requires"
+    },
+    {
+      "from": "net-probe",
+      "to": "network-lan",
+      "type": "requires"
+    }
+  ]
+}
