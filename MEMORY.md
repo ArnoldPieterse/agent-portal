@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 9 (Provenance Tracking) closed: provenance.py built, 97.1% agent coverage, evidence at memory/archivist/evidence-goal9-provenance-2026-
 - Goal 9 (Empty States + Loading Patterns) completed: added empty states to agentList/actBody/opsBody + initial skeletons; Goals 1–9 all verif
 - Scribe verified Goals 2–5 in one pass; ledger now at 6/10 verified (was 2/10).
 - Mechanic: winrm_creds check integrated into health_check.py (local state file, no network); Goal #1 sub-item done.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #7 perf_profile.py built, selftest PASS; only live 1h data collection remains (needs :8099 egress).
 - Goal 2 closed: ui/animations.css existed but was never loaded; fixed by adding @import to app.css line 2.
 - Goal 7 done: archive nav index has 85 synthesis files (74 explicit + 15 wildcard), 11 themes, duplicate & stale ref fixed.
+- Goal #1 orphan remediation: actionable orphans down from 124 to 8 after v2 full-s
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
