@@ -1,0 +1,1 @@
+{"ts":"2026-11-20T23:xx","goal":4,"action":"circuit_breaker_selftest","result":"PASS 10/10","detail":"fleet_cb_selftest.py validates state machine: threshold=3, cooldown=60s, per-host isolation, skip-while-open, close-on-success. No live network needed.","artifact":"memory/mechanic/fleet_cb_selftest.py"}

@@ -1,0 +1,5 @@
+{"ts": "2026-11-20T14:10:45.718811", "round": 1, "http_status": null, "verdict": "FAIL", "detail": "Expected 200, got None: {'error': '<urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>'}"}
+{"ts": "2026-11-20T14:10:46.731566", "round": 2, "http_status": null, "verdict": "FAIL", "detail": "Expected 200, got None: {'error': '<urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>'}"}
+{"ts": "2026-11-20T14:10:47.747025", "type": "test_complete", "verdict": "FAIL", "rounds": 2, "port": 19999}
+{"ts": "2026-11-20T14:10:53.316301+00:00", "round": 1, "http_status": null, "verdict": "FAIL", "detail": "Expected 200, got None: {'error': '<urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>'}"}
+{"ts": "2026-11-20T14:10:54.328971+00:00", "type": "test_complete", "verdict": "FAIL", "rounds": 1, "port": 19999}

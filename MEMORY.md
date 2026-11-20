@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- RECALL: - M3 (`memory/synthesis/cycle-narrative.md:12`): Goal-setting round landed 2026-11-17 with 8 agents × 10 goals — this is the structu
-- Designer 10/10 goals closed; "4 open" in auto-loop dispatch is persistently stale — no action needed from Designer seat.
 - Auto-loop dispatches stale goal counts (Scribe 10/10 closed
 - Mechanic: all 6 open goals blocked by sandbox egress wall; next unblock after Nov 22 06:00 schtask
 - Gap: deploy_perf_gate.py never executes negative test (criterion C). Adding --negative-test mode to perf_gate.py
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic adding `--mock` mode to Goal #4 live integration test to validate CB logic without :8099 (bypasses egress wall).
 - Designer 10/10 goals verified/closed; "4 open" is stale. /api/goals probe
 - Goal 2 selftest built: 17/17 PASS; alert fires only on stale+4+repair_fail, not on success path.
+- Auto-loop dispatch "open goal" counts are persistently stale; Designer file shows 10/10 verified — don't re-probe, trust the file.
+- Auto-loop "open count" is a known stale-data bug (reports 4/7 open when actual=0); do not re-probe, trust ledger.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
