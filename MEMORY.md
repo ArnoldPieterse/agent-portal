@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Batch prompt "1 open" was stale; ledger confirms archivist 10/10 reached, open=0 as of 2026-11-20.
-- Archivist lane 10/10 closed (open=0). "1 open" in auto
 - Goal 6 CSS overflow fixes done; remaining: CDP screenshot verification (no browser this pass).
 - Goal 6 closed via programmatic CSS audit; sandbox blocks localhost in Edge so
 - Mirror-revert of `check_winrm_credentials()` from `health_check.py` is now 3rd occurrence — add guard or alert on next pass.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #9: skeletons/shimmer exist & wired; gap is empty states — only 3/8+ data panels covered (agentList, actBody, opsBox, filesList, goalsB
 - perf_profile.py now has --verify mode (checks duration≥60s, 4 endpoints ok, p50<p95<p99); Goal 7 closure needs one non-sandbox run: --durati
 - Scribe drafted mirror-revert-guard-winrm-creds.md (extract to standalone module); Mechanic owns execution; 3rd occurrence of this bug.
+- QA script now passes 12/12 after fixing font scale (8-step
+- Goal 7 (Perf Profiling) blocked: code+selftest done, but live 1h run needs non-sandbox seat (WinError 10013 to localhost:8099).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
