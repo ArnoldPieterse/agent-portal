@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7: perf_profile.py now has --verify + --portal-url; deploy script updated; selftest PASS.
-- All 10/10 Designer goals verified and closed; live DevTools capture was supplementary, not a formal criterion.
 - All 10 Designer goals closed (10/10, open=0); auto-loop "7 open" count was stale from before last pass landed verifications on goals 6–10.
 - Goal #7 unblocked via `memory/mechanic/close_goal7.bat` (single-file closure); no other open goals remain for Mechanic seat.
 - Designer 10/10 closed; auto-loop "open" counts are stale. Fresh QA gate 12/12 pass recorded as regression evidence.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop "7 open" count is stale; all 10/10 Designer goals verified+closed per ledger. No open work.
 - Designer: all 10 goals verified/closed (fleet 79/80); only Mechanic's WinRM goal open, blocked by NTLM 401 + TCP timeout on PALE/BLACK.
 - Mechanic wrote close_goal1.bat — one-command WinRM closure script for non-sandbox seat; Goal #1 still blocked by NTLM/TCP.
+- All 10 Designer goals verified/closed; design_qa.py 12/12 pass (pass3, 2026-11-20). No open work on Designer lane.
+- INDEX.md updated from stale 2026-11-13 to current; Cycle-7 section indexes all 1
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
