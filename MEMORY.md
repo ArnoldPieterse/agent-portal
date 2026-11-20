@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #7 (Log Rotation) closed: script fixed to 50MB/7-day spec, 7-test self-test passes, evidence recorded in ledger.
 - Goal 7 (Auto-Updating Archive Nav) closed: fixed parse_nav regex trailing-space bug in archive_nav.py; started Goal 8 (Temporal Query API).
 - Hot note falsely claimed errorState() + .ui-error CSS were done; Researcher verified neither exists in codebase (2026-11-21 pass).
 - Goal #3: UI.errorState() wired into 4 panels (activity, merge queue, chat, ops tiles);
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #3 done: opsSay() + disk tile now use inline SVG warning icon + .ops-err class for error strings in log/list contexts.
 - Goal #10: all 5 runbook scripts built; restart_portal.py added this pass. Remaining: one non-sandbox live run to close.
 - Goals #6 (Quality Score Trend) and #9 (Memory Search Relevance Feedback) both completed
+- Hot notes are NOT reliable for goal closure status — ledger is SSOT. Verified #8/#10 falsely marked closed (2026-11-21).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

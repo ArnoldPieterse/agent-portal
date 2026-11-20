@@ -1,5 +1,8 @@
 # memory/verifier/ INDEX
-Last updated: 2026-11-20.
+Last updated: 2026-11-21.
+
+## 2026-11-21
+- hotnote-false-closure-scribe-2026-11-21.md — **FALSE CLAIM CONFIRMED**: Hot note "Goals #8 (Temporal Query API) + #10 (Weekly Digest) all verified and closed" is FALSE. Evidence: `/api/timeline` route absent from agent_portal.py (0 grep hits for the endpoint); `weekly_summary.py` has no `--agent` flag or argparse. Both goals remain OPEN in Scribe's ledger (correctly). Hot note should not be trusted for closure status.
 
 ## 2026-11-20
 - evidence-perf-gate-failclosed-2026-11-20.md — **PROGRESS (Goal #1 Perf Gate)**: hardened perf_gate.py to FAIL-CLOSED on invalid baselines. The all-null sandbox baseline (0/20 p50) had re-appeared and old compare() would have scored it as a false PASS; now `baseline_validity()` gates scoring, each baseline is tagged `valid`, invalid -> exit 3 + INVALID-BASELINE report. Proven: real baseline exits 3; --simulate phases 4+5 pass. Live baseline still blocked by :8099 egress wall (blockers.md) — goal stays OPEN.
