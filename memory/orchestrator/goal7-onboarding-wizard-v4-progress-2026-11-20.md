@@ -33,7 +33,7 @@ Extended `onboard_agent.py` with a full interactive wizard mode (`--interactive`
 - INDEX line added in memory/INDEX.md
 
 **Retire** `echo yes | python memory/orchestrator/retire_agent.py rosterprobe --no-commit`:
-- goals/rosterprobe.md -> archive/rosterprobe-2026-11-20.md
+- goals/rosterprobe.md -> ../goals/archive/rosterprobe-2026-11-20.md
 - memory/rosterprobe -> memory/rosterprobe_archived_2026-11-20
 - agents.json: removed (9 -> 8, json-grep hits = 0)
 - INDEX line struck (~~...~~), TODO.md retirement note appended (line 552)

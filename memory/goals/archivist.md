@@ -8,7 +8,7 @@ Focus: Knowledge integrity + retrieval optimization. Cycle-7 remediated orphans 
 
 3. **Freshness Scoring Production** - Make decay_score.py a weekly schtask (via elev.py on White): score all memory/ leaves, auto-archive those <0.2 (move to memory/archive/ with pointer), alert on recently-referenced leaves scoring <0.5. Verified: two weekly runs; correct archive decisions; 0 false positives on files referenced in last 7 days; alerts logged.
 
-4. **Cross-Reference Integrity Check** - `python memory/archivist/xref_check.py`: verify all "pointer:" lines in memory/ resolve to existing files; all INDEX.md entries point to real leaves; no circular pointer chains (A->B->A). Write report + auto-fix where safe. Verified: 0 broken pointers after fix; 0 circular chains; check runs in <30s on full tree.
+4. **Cross-Reference Integrity Check** - `python memory/archivist/xref_check.py`: verify all "pointer:" lines in memory/ resolve to existing files; all INDEX.md entries point to real leaves; no circular pointer chains (A->B->A). Write report + auto-fix where safe. Verified: 0 broken pointers after fix; 0 circular chains; check runs in <30s on full tree. (verified: 2026-11-21 - xref_check.py --fix run by Builder: 42 actions (7 redirect + 35 quarantine); post-fix check = 0 broken live xrefs, CLEAN. Evidence: memory/builder/xref-autofix-archivist-goal4-2026-11-21.md)
 
 5. **Keyword Search Index** - Build memory/archivist/search-index.json: for each leaf file, extract title, first-100-chars summary, keyword set (from content), and agent/domain tags. Enable fast grep-based retrieval without reading full files. Verified: index covers 100% of memory/ leaves; searching a known term returns the correct file in top-3; index <500KB.
 

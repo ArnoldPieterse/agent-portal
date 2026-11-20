@@ -4,7 +4,7 @@ Owner: Designer | Type: tier-A evidence, tier-B queued. Parent: memory/goals/des
 ## 1. Empirical finding (resolves a doc contradiction)
 Tested msedge headless FROM the White sandbox seat against a LOCAL `file://` URL (no loopback involved):
 ```
-cmd -> _probe_edge.bat : msedge --headless=new ... --screenshot=... file:///Z:/memory/designer/_probe_edge.html
+cmd -> ⚠missing:_probe_edge.bat : msedge --headless=new ... --screenshot=... file:///Z:/memory/designer/_probe_edge.html
 result: crashpad warnings only, then HANG; tool timeout at 300000ms (5 min). No PNG written.
 ```
 Conclusion: **the sandbox seat is fully browser-walled** — headless render hangs even without `:8099` egress.

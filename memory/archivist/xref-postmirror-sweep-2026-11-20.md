@@ -14,4 +14,4 @@ Known false-positive classes in dangling list (monitor regex picks these up as r
 - shell command text in backticks: `findstr archivist api-reference.md`, `python model_check_1115.py`
 Suggested monitor fix (next cycle): skip refs containing `*`, `://`, or starting with a command word. Not applied this pass (one-step scope).
 
-Deep chains: 50, dominated by memory/INDEX.md -> goals/INDEX.md -> all-goals-2026-11-13.md -> * (depth 4). Structural: the flat all-goals hub adds one hop; fix = collapse or re-point.
+Deep chains: 50, dominated by memory/INDEX.md -> goals/INDEX.md -> ⚠missing:all-goals-2026-11-13.md -> * (depth 4). Structural: the flat all-goals hub adds one hop; fix = collapse or re-point.

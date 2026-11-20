@@ -12,7 +12,7 @@ definition AND scripts must load in dependency order (else render crashes).
 - UI.* calls routed through component library in core.js: {'el': 20, 'msgBubble': 2, 'thinkBlock': 1, 'chip': 2, 'dmSegment': 1, 'skeleton': 3, 'emptyState': 5}
 - Distinct `UI.<name>` referenced across ui/: 10
 - DANGLING refs (referenced but defined nowhere): **NONE**
-- Script load order (index.html): icons.js@1 -> components.js@2 -> core.js@3  => OK
+- Script load order (index.html): icons.js@1 -> ⚠missing:components.js@2 -> ⚠missing:core.js@3  => OK
 
 Where the previously-suspected "dangling" names actually live:
 - `UI.icon` / `UI.iconSized` -> ui/icons.js

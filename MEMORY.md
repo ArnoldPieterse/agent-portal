@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 (Animation/Motion System) formally recorded
 - WCAG finding: secondary tokens (--dim,--acc,--ok light) only AA 4.8–5.9:1; "AAA 7:1+" hot-note overstates compliance for non-primary pairs.
 - Scribe: Goal 9 (Memory Search Relevance Feedback) closed — 3/3 AC pass, ledger recorded; open count now 3.
 - All 10 Designer goals closed — Goal #10 added perf markers to core.js + budget doc; no open items remain.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goals 4,6,7,9 verified+ledgered; dashboard 6/10 is stale. Discrepancy doc written; no action needed until next sync.
 - Scribe reached 10/10 goals closed (open=0) on 2026-11-21; evidence at memory/scribe/pass-evidence-2026-11-21.md
 - Mechanic Goal 9: breach_alert() implemented, 9/9 tests pass; full closure needs 7-day data (egress wall, not re-probed).
+- Builder ran auto-fix script resolving all 117 broken xrefs (0 remaining); evidence in memory/builder/, supports Archivist Goal 4
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

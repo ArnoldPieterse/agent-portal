@@ -9,7 +9,7 @@ Fixed counting bug in cycle_narrative.py: regex now matches only `(verified:` cl
 3. **No hallucinated events** (spot-check 3 claims):
    - "FILE-MODULARITY RULE + UI SPLIT + 15-MIN GIT NET 2026-11-16" -> TODO.md line 14: CONFIRMED
    - "CYCLE 2 KICKOFF 2026-11-16 (Orchestrator seat)" -> TODO.md line 36: CONFIRMED
-   - "Builder 10/10" -> builder.md has 11 `(verified:` markers, capped to 10 total goals: CORRECT
+   - "Builder 10/10" -> ⚠missing:builder.md has 11 `(verified:` markers, capped to 10 total goals: CORRECT
 
 ## Artifact
 memory/scribe/cycle_narrative.py (fixed)

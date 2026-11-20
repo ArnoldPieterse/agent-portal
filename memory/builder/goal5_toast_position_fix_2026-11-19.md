@@ -9,10 +9,10 @@ All code for Goal #5 is present and wired:
 - **JS**: ui/notifications.js exists, loaded via <script> tag in index.html
 - **CSS**: 25 lines of toast/notif styles in ui/app.css (tokens-compliant)
 - **Triggers** (all 4 wired):
-  1. Goal closed -> uploads.js: notify("ok","Goal closed on ...")
-  2. Agent offline -> core.js: notify("warn","Agent host ... is offline")
-  3. Upload complete -> uploads.js: notify("ok","Upload complete: ...")
-  4. Error -> core.js (onerror) + uploads.js (xhr.onerror): notify("err",...)
+  1. Goal closed -> ⚠missing:uploads.js: notify("ok","Goal closed on ...")
+  2. Agent offline -> ⚠missing:core.js: notify("warn","Agent host ... is offline")
+  3. Upload complete -> ⚠missing:uploads.js: notify("ok","Upload complete: ...")
+  4. Error -> ⚠missing:core.js (onerror) + uploads.js (xhr.onerror): notify("err",...)
 
 ## Remaining for acceptance
 - Browser rendering test (same sandbox blocker as #2/#6/#10)

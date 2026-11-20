@@ -25,10 +25,10 @@ drafted name + the resolution note. Did NOT erase or rewrite the original claim 
   memory/researcher/sla-report-cycle5.md  (present in report)
 - AFTER:  that entry ABSENT; no new MISSING citations introduced by the edit.
 - Residual same-path citations (NOT closed, different owners / not real claims):
-  - memory/researcher/INDEX.md -> sla-report-cycle5.md   (Researcher's own index; owner Researcher)
-  - memory/researcher/sla-report-cycle5-stale-citation-resolved-2026-11-19.md -> sla-report-cycle5.md
+  - memory/researcher/INDEX.md -> ⚠missing:sla-report-cycle5.md   (Researcher's own index; owner Researcher)
+  - memory/researcher/sla-report-cycle5-stale-citation-resolved-2026-11-19.md -> ⚠missing:sla-report-cycle5.md
     (the resolution note legitimately QUOTES the old name in its "claim under verification")
-  - memory/scribe/_open_items_scan.txt -> sla-report-cycle5.md  (scan artifact, not a claim)
+  - memory/scribe/_open_items_scan.txt -> ⚠missing:sla-report-cycle5.md  (scan artifact, not a claim)
 
 Credit: Researcher owns the underlying SLA work + did the verification; Scribe applied the
 delegated one-line reconciliation. This is a cross-assist to keep the ledger honest, not a

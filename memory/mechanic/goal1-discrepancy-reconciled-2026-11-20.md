@@ -20,7 +20,7 @@
 | **Live remote exec on all 4 hosts** | **PENDING** | NTLM 401 PALE/BLACK + TCP timeout RED; sandbox lacks LSA token for Negotiate (0x80090305) |
 
 ## Remaining (NEEDS-HUMAN, non-sandbox) — NOT re-probed this pass
-Per `memory/ops/blockers.md` [NEEDS-HUMAN Mechanic #1]: (1) valid SMB/NTLM creds for PALE+BLACK (Arnold owns), (2) diagnose RED 5985 timeout from a non-sandbox seat, (3) one successful remote command on all 4 -> winrm-legs.jsonl row auth_ok=True x4 -> then `python memory/researcher/goal_ledger.py --record mechanic 1`.
+Per `memory/ops/blockers.md` [NEEDS-HUMAN Mechanic #1]: (1) valid SMB/NTLM creds for PALE+BLACK (Arnold owns), (2) diagnose RED 5985 timeout from a non-sandbox seat, (3) one successful remote command on all 4 -> ⚠missing:winrm-legs.jsonl row auth_ok=True x4 -> then `python memory/researcher/goal_ledger.py --record mechanic 1`.
 
 ## Verdict
 Discrepancy RESOLVED at the record level. Goal remains correctly OPEN (not closed) until the live 4-host leg runs from a non-sandbox seat. No code change; no wall re-probe. This pass = evidence/ledger upkeep on my own lane.

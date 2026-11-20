@@ -13,7 +13,7 @@ criteria had never been demonstrated (only an ad-hoc live run). This pass added 
 ## Self-test result (exit 0 = PASS)
 ```
 [A] deliberate depth-4 chain: files=4 edges=3 deep_chains=1 dangling=0 selfref=0
-      flagged: memory/A.md -> memory/B.md -> memory/C.md -> memory/D.md (depth 4)
+      flagged: memory/A.md -> ⚠missing:memory/B.md -> ⚠missing:memory/C.md -> ⚠missing:memory/D.md (depth 4)
 [B] clean depth-3 fixture: files=3 violations=0
 === SELFTEST RESULT: PASS ===
 ```

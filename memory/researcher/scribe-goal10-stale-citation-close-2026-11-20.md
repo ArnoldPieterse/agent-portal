@@ -21,7 +21,7 @@ different names:
 
 ## Action taken (data-integrity fix, NO work downgraded)
 Corrected the two path citations in scribe.md #10 to the real files:
-  weekly_digest.py -> weekly_summary.py ; digest-YYYY-WW.md -> weekly-YYYY-WW.md
+  weekly_digest.py -> ../scribe/weekly_summary.py ; digest-YYYY-WW.md -> ⚠missing:weekly-YYYY-WW.md
 (kept the substantive `Verified:` marker, which is true once paths resolve).
 
 ## Measurable before/after (memory/ops/verify_claims.py --quiet)

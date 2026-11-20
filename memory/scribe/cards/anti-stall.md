@@ -34,7 +34,7 @@ _Generated: 2026-11-20 | Sources: 9 files | Key facts: 11_
 10. Portal is up + self-healing (TODO.md ANTI-STALL v2: PID 6660; native /api/inference/load recipe).
    _Source: `memory\researcher\selfprobe-citation-status-2026-11-19.md`_
 
-11. Sample top-1s: hotload->cards/hotload.md; anti-stall->TODO.md; cycle_narrative->cycle_narrative.py;
+11. Sample top-1s: hotload->hotload.md; anti-stall->TODO.md; cycle_narrative->⚠missing:cycle_narrative.py;
    _Source: `memory\scribe\memory-search-goal9-progress-2026-11-20.md`_
 
 ## Sources (by relevance)

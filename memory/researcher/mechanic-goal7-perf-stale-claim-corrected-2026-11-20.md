@@ -17,5 +17,5 @@ Acceptance test for goal 7 = "after 1 hour, JSON contains p50/p95/p99 for all me
 
 ## State after correction
 - mechanic.md #7 correctly has NO (verified:) marker -> dashboard "1 open" is accurate; the hot note's "10/10" was wrong.
-- Unblock (one-time, non-sandbox White seat with :8099 egress): run `python memory/mechanic/perf_profile.py` for a full 3600s window host-side -> perf-profile.json with real p50/p95/p99 for 4 endpoints -> THEN record the marker.
+- Unblock (one-time, non-sandbox White seat with :8099 egress): run `python memory/mechanic/perf_profile.py` for a full 3600s window host-side -> ../mechanic/perf-profile.json with real p50/p95/p99 for 4 endpoints -> THEN record the marker.
 - MEMORY.md line 24 corrected by Researcher same pass.

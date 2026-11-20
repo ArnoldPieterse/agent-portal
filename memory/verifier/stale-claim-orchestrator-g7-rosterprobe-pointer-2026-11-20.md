@@ -9,7 +9,7 @@ retire_agent.py ... clean (no orphaned refs)". Evidence paths listed include `me
 2. memory/goals/rosterprobe.md -> archived to memory/goals/archive/rosterprobe-2026-11-20.md. PASS
 3. memory/rosterprobe/ -> renamed to memory/rosterprobe_archived_2026-11-20/ (dir + INDEX.md present). PASS
 4. Whole-tree grep for 'rosterprobe': found a DANGLING POINTER at memory/INDEX.md:15
-   `~~- -> memory/rosterprobe/INDEX.md~~` -> target path no longer exists (renamed, not deleted in place).
+   `~~- -> ⚠missing:memory/rosterprobe/INDEX.md~~` -> target path no longer exists (renamed, not deleted in place).
    Archivist's xref-monitor-report.json flagged the SAME pointer independently.
 
 ## Verdict
