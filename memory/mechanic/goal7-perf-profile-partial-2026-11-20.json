@@ -1,0 +1,19 @@
+{
+  "goal": 7,
+  "agent": "mechanic",
+  "date": "2026-11-20",
+  "status": "PARTIAL_VERIFIED",
+  "verified": [
+    "perf_profile.py exists (6256 bytes), compiles clean",
+    "selftest PASS: percentile math correct (p50=50.5, p95=95.05, p99=99.01 on 1..100)",
+    "Edge cases pass: single value, two values",
+    "JSON output structure valid (generated_at, duration_s, samples_collected, metrics with p50/p95/p99)",
+    "Endpoints defined: portal_health, fleet_status, goals_api, llm_models (all localhost:8099)"
+  ],
+  "remaining": [
+    "Live 1-hour profile run on non-sandbox seat (sandbox egress WinError 10013 blocks all outbound HTTP)",
+    "perf-profile.json must contain real p50/p95/p99 values for all 4 endpoint groups"
+  ],
+  "unblock_command": "python memory/mechanic/perf_profile.py --duration 3600  (run from non-sandbox White seat with :8099 egress)",
+  "evidence_path": "memory/mechanic/goal7-perf-profile-partial-2026-11-20.json"
+}

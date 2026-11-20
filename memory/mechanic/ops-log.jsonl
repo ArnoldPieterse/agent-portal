@@ -1,0 +1,1 @@
+{"ts": "2026-11-20T09:42:39Z", "agent": "mechanic", "action": "code-quality-fix", "detail": "Fixed SyntaxWarning in agent_portal.py:303 - docstring had unescaped C:\\Projects\\Workspace (invalid \\P sequence). Made it a raw string. Compile now clean, zero warnings.", "file": "agent_portal.py", "goal": null}
