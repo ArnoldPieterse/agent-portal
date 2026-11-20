@@ -26,6 +26,6 @@ Updated: 2026-11-16.
 ## Fleet Knowledge Base Index (machine)
 - Generated 2026-11-20: **1859/1859** files indexed (100.0% coverage)
 - Machine-readable index: `memory/INDEX-kb.json`
-- Top-level sections: `INDEX-kb.json`, `INDEX.md`, `ONBOARDING.md`, `archivist`, `builder`, `designer`, `fleet`, `goals`, `goals.md`, `handoffs`, `llm`, `mechanic`, `ops`, `orchestrator`, `portal`, `projects`, `researcher`, `run-rules.md`, `scheme`, `scribe`, `sink`, `squire`, `synthesis`, `verifier`, `workspace`
+- Top-level sections: `INDEX-kb.json`, `INDEX.md`, `ONBOARDING.md`, plus module dirs: archivist, builder, designer, fleet, goals, handoffs, llm, mechanic, ops, orchestrator, portal, projects, researcher, scheme, scribe, sink, squire, synthesis, verifier, workspace (rosterprobe dir archived 2026-11-20).
 <!-- KB-INDEX:END -->
 
