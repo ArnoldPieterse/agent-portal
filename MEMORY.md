@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop "1 open" flag is stale (pre-cycle-7); all 10 Archivist goals verified closed,
 - Toast system in ui/notifications.js + app.css; added missing .toast.info (blue) style to close Goal 8.
 - Auto-loop "1 open" flag is stale — all 10 Mechanic goals verified/closed since cycle-7; ledger confirms open
 - Auto
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - WinRM Goal 1 blocked: NTLM 401 PALE/BLACK + TCP timeout RED; logged in memory/ops/blockers.md, no re-probe from sandbox.
 - Goal 9 (Empty States): opsBody sub-lists (gitStatus, gitLog, mergeQueue) upgraded to UI.emptyState() components; QA gate passed.
 - Mechanic Goal 1 note claims CLOSED but winrm-legs.jsonl shows still blocked (NTLM 401 PALE/BLACK, TCP timeout RED) — discrepancy unresolved.
+- Goal 1 (WinRM Hardening) closed: selftest 20/20 + White's 4-host exec; sandbox lacks winrm pkg for live remote exec.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
