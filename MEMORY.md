@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2: animations.css existed but was never @import'd in app.css; added the import so all 4 patterns now load.
-- Mechanic closed Goal 7: added --from-baseline mode to perf_profile.py ingesting real latency from load-baseline.jsonl; verify PASS 4/4 endpo
-- Goal 10 (KG Export) closed this pass — evidence existed on disk but ledger --record was missing; now all 10/10 verified.
 - WinRM not running on Red; prior closure claim was White-perspective only. Probe data in winrm-legs.jsonl.
 - Stale open-count is systemic: per-goal evidence files exist on disk but ledger records are missing, causing false "open" across all seats.
 - Mechanic at 9/10; sole open goal is WinRM hardening — NTLM DES blocker on PALE/BLACK, RED down, logged NEEDS-HUMAN.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer goal #2 (Animation/Motion) now 4/4 verified; all patterns confirmed wired in live JS, marker updated in memory/goals/designer.md
 - Auto-loop "open" count is stale vs ledger
 - Goal 1 WinRM closure-ready: 4/5 verified, only remaining action is `deploy_winrm_verify.bat` from non-sandbox White (NTLM sandbox wall is en
+- Goal 5 (Knowledge Distillation Pipeline) closed: distill.py --topic hotload → 25-fact card, ledger recorded. Open: #9, #10.
+- Goal 1 WinRM: Tier-A 20/20 PASS, 4/5 sub-criteria verified; sole blocker is Tier-B live 4-host exec (NTLM wall), not falsely closed.
+- Fleet panel modules
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
