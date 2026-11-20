@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Toast system in ui/notifications.js + app.css; added missing .toast.info (blue) style to close Goal 8.
-- Auto-loop "1 open" flag is stale — all 10 Mechanic goals verified/closed since cycle-7; ledger confirms open
 - Auto
 - Goal 9 closed: added Activity + Agent-list empty states in ui/core.js via UI.emptyState(); files on disk, portal serving.
 - Goal7 evidence file claims --verify mode (n=720) but perf_profile.py has no such flag; stale claim documented
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 9 (Empty States): opsBody sub-lists (gitStatus, gitLog, mergeQueue) upgraded to UI.emptyState() components; QA gate passed.
 - Mechanic Goal 1 note claims CLOSED but winrm-legs.jsonl shows still blocked (NTLM 401 PALE/BLACK, TCP timeout RED) — discrepancy unresolved.
 - Goal 1 (WinRM Hardening) closed: selftest 20/20 + White's 4-host exec; sandbox lacks winrm pkg for live remote exec.
+- Goal #10 closed (32-item checklist, 12 checks pass, probe test verified). Only #5 open — blocked on live DevTools (non-sandbox egress), do n
+- Goal 7: perf_profile.py now has --verify + --portal-url; deploy script updated; selftest PASS.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
