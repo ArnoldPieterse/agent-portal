@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7 done: archive nav index has 85 synthesis files (74 explicit + 15 wildcard), 11 themes, duplicate & stale ref fixed.
-- Goal #1 orphan remediation: actionable orphans down from 124 to 8 after v2 full-s
-- `memory/archivist/retrieval-baseline.json` is stale (old keyword-grep method, non-memory junk hits) — do not use as comparison baseline.
-- Scribe Goal 4 (Cross-Agent Handoff Protocol) closed; fleet score now 58/60 after logging 3 real cycle-6 handoffs.
 - Goal #1 Orphan Remediation: classify logic fixed, 178 links applied, orphans dropped 180→2 (1 actionable remains in orchestrator/).
 - Goal 1 concurrent-load sub-item closed: 8 parallel winrm_pool commands passed, no cross-contamination, 27ms total (2026-11-20).
 - RECALL: - **M2** (`memory/goals/archive/researcher-2026-11-18.md:15`
 - Mirror cycle partially reverts Designer's CSS hierarchy fixes each pass; must re-land prior changes before adding new ones.
 - Goal 4 (Icon System): UI.iconSized() integrated into 4 panel files (16 calls), CSS v-align rule added to app.css, evidence at memory/designe
 - Goal 1 WinRM: NEEDS-HUMAN blocker confirmed (pywinrm pip PermissionError, powershell blocked, elev.py absent). Do NOT re-probe.
+- Goal 4 (Knowledge Graph Visualization) verified & ledgered: `memory/archivist/kg-visualization.html`, 380 nodes, D3 canvas, zero CDN deps.
+- Goal 7: `perf_profile.py` gained `--dry-run` (synthetic data, full loop + JSON); selftest PASS; only live :8099 egress remains blocked.
+- Goal #5 Typography: audit complete — all CSS/JS font-sizes use token scale (var(--fs-*)); only 2 literal SVG values off-token.
+- Goal 9 (Institutional Memory Search) closed: UI layer built (header search input, CSS, debounced JS calling /api/memory/search), pin at 58af
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
