@@ -1,93 +1,99 @@
 # Claim-Phantom Report
-Generated: 2026-11-20 19:30 by `memory/ops/verify_claims.py` (Builder).
+Generated: 2026-11-20 23:52 by `memory/ops/verify_claims.py` (Builder).
 
 Classifies every `verified:` marker in seat goal files against the disk:
   * REAL    - verified + a cited artifact exists on disk
   * PHANTOM - verified + cited path(s) present but NONE exist  (stale/false claim)
   * UNCITED - verified + no machine-checkable path (manual-only; needs a pointer added)
 
-**Totals: 70 REAL, 0 PHANTOM, 10 UNCITED.**
+**Totals: 60 REAL, 4 PHANTOM, 16 UNCITED.**
+
+## PHANTOM claims (verified but artifact missing) — owner should re-do or drop the marker
+- **archivist #7** Knowledge Lifecycle Policy
+    - MISSING: `memory/archivist/lifecycle-policy.md`
+- **archivist #9** Citation Tracking
+    - MISSING: `memory/archivist/citation-map.json`
+- **designer #6** SVG Icon Set
+    - MISSING: `memory/designer/icon-set.md`
+- **designer #8** Component Visual Reference
+    - MISSING: `memory/designer/component-reference.md`
 
 ## UNCITED verified claims (no path to check — add an artifact pointer so the ledger can close them)
-- **orchestrator #1** Live Hotload Execution (elev.py)
-- **orchestrator #2** Fleet Capacity Dashboard v2
-- **orchestrator #9** Cycle Cost Tracker
-- **orchestrator #10** Fleet Roster Versioning
-- **builder #6** State Management Refactor
-- **archivist #6** Archive Compaction
-- **scribe #6** Synthesis Quality Scoring
-- **scribe #9** Institutional Memory Search
-- **mechanic #1** WinRM Remote Management Hardening
-- **mechanic #8** Capacity Planning Report
+- **orchestrator #6** Fleet Incident Auto-Triage
+- **builder #2** Complete API Client Wrappers
+- **builder #5** Upload Pipeline Hardening
+- **builder #8** Portal Performance Optimization
+- **builder #9** UI Module Test Suite
+- **archivist #3** Freshness Scoring Production
+- **archivist #6** Weekly Snapshot Diff (2nd run)
+- **archivist #10** Archive Hygiene Audit
+- **scribe #7** Auto-Updating Archive Nav
+- **scribe #8** Temporal Query API
+- **scribe #10** Per-Agent Weekly Digest
+- **designer #4** Responsive Layout (768px)
+- **designer #7** Accessibility Tree Verification
+- **designer #9** Theme System (3 themes)
+- **mechanic #3** WinRM Remote Reboot E2E Test
+- **mechanic #4** Fleet Status API Hardening
 
 ## REAL claims (verified + artifact present)
-- **orchestrator #3** Goal-Cycle Auto-Transition v2  -> `memory/orchestrator/goal3-auto-transition-ext-2026-11-20.md`
-- **orchestrator #4** Agent Performance Scoring  -> `memory/orchestrator/goal9-perf-radar-backend-done-2026-11-17.md`
-- **orchestrator #5** Model Binding Governance  -> `memory/llm/binding-audit.md`
-- **orchestrator #6** Cross-Agent Dependency Resolver  -> `memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md`
-- **orchestrator #7** Fleet Onboarding Wizard v4  -> `memory/orchestrator/goal7-onboarding-wizard-v4-progress-2026-11-20.md`
-- **orchestrator #8** VRAM Pressure Alerting  -> `memory/ops/vram-alerts.jsonl`
-- **researcher #1** Unified Loader Live Execution  -> `memory/researcher/unified-loader-offline-surface-2026-11-20.md`
-- **researcher #2** Residency Matrix Auto-Refresh  -> `memory/llm/residency-matrix.md`
-- **researcher #3** SLA Enforcement Tracker  -> `memory/ops/sla-report-2026-11-20.md`
-- **researcher #4** Overnight Unload Correlation  -> `memory/researcher/overnight-unload-analysis.md`
-- **researcher #5** Model Performance Benchmark Suite  -> `memory/researcher/model-benchmark-2026-11-16.md`
-- **researcher #6** Evidence Quality Scoring  -> `memory/researcher/evidence-quality-2026-11-20.md`
-- **researcher #7** Cross-Host Model Comparison  -> `memory/researcher/evidence-marker-content-audit-2026-11-20.md`
-- **researcher #8** Load-Time Optimization Research  -> `memory/researcher/hotload-goalset-grounding-2026-11-18.md`
-- **researcher #9** Fleet Knowledge Base Index  -> `memory/INDEX-kb.json`
-- **researcher #10** Research Pipeline Automation  -> `memory/researcher/auto_research.py`
-- **builder #1** Component Library Integration v2  -> `memory/verifier/builder-goal1-grep-count-correction-2026-11-20.md`
-- **builder #2** API Client Layer  -> `memory/builder/api_client_layer_increment1-2026-11-20.md`
-- **builder #3** Build-Verify-Pin Pipeline  -> `memory/builder/MEMORY.md`
-- **builder #4** Error Boundary System  -> `memory/builder/error_boundary_increment3-2026-11-20.md`
-- **builder #5** Portal Performance Optimization  -> `memory/builder/perf_optimization_increment1-2026-11-20.md`
-- **builder #7** Accessibility Audit + Fix  -> `memory/builder/a11y_audit_increment1_2026-11-20.md`
-- **builder #8** Dark Mode Implementation  -> `memory/builder/verify_theme_toggle_2026-11-17.md`
-- **builder #9** Portal Test Harness  -> `memory/builder/portal_test.py`
-- **builder #10** Code Quality Gate  -> `memory/builder/quality_gate.py`
-- **archivist #1** Orphan Remediation Automation  -> `memory/archivist/orphan-remediation-cycle5.md`
-- **archivist #2** Citation Accuracy Verification  -> `memory/archivist/citation-audit-cycle5-report.md`
-- **archivist #3** Memory Freshness SLA  -> `memory/archivist/freshness_report.py`
-- **archivist #4** Knowledge Graph Visualization  -> `memory/archivist/knowledge_graph.py`
-- **archivist #5** Cross-Reference Integrity Monitor  -> `memory/archivist/xref-monitor-report-2026-11-20.md`
-- **archivist #7** Retrieval Benchmark Suite  -> `memory/archivist/retrieval-baseline.json`
-- **archivist #8** Memory Deduplication Engine  -> `memory/archivist/dedup-verify-2026-11-20.json`
-- **archivist #9** Provenance Tracking  -> `memory/archivist/provenance.py`
-- **archivist #10** Knowledge Graph Export + Import  -> `memory/archivist/kg_export.py`
-- **scribe #1** Decision Auto-Extraction  -> `memory/scribe/extract_decisions.py`
-- **scribe #2** Cycle Narrative v2 (Auto)  -> `memory/scribe/cycle_narrative.py`
-- **scribe #3** Context Compression for New Agents  -> `memory/scribe/compress_context.py`
-- **scribe #4** Cross-Agent Handoff Protocol  -> `memory/scribe/handoffs.jsonl`
-- **scribe #5** Knowledge Distillation Pipeline  -> `memory/scribe/cards/hotload.md`
-- **scribe #7** Archive Navigation Index  -> `memory/synthesis/archive-nav.md`
-- **scribe #8** Temporal Reasoning Layer  -> `memory/scribe/timeline.py`
-- **scribe #10** Weekly Synthesis Digest  -> `memory/researcher/scribe-goal10-stale-citation-close-2026-11-20.md`
-- **verifier #1** Continuous Regression Suite  -> `memory/verifier/regression_suite.py`
-- **verifier #2** Evidence Freshness Audit  -> `memory/verifier/evidence_audit.py`
-- **verifier #3** API Contract Tests  -> `memory/verifier/contract_test.py`
-- **verifier #4** Performance Regression Gate  -> `memory/verifier/perf_gate.py`
-- **verifier #5** Security Scan Automation  -> `memory/verifier/security-report.md`
-- **verifier #6** Data Integrity Checks  -> `memory/verifier/data_integrity.py`
-- **verifier #7** Cross-Agent Verification Protocol  -> `memory/verifier/agent-portal-size-verify-2026-11-16.md`
-- **verifier #8** Load Test Framework  -> `memory/verifier/MEMORY.md`
-- **verifier #9** Verification Dashboard  -> `memory/verifier/ui-slices-verify-2026-11-17.md`
-- **verifier #10** Chaos Engineering Lite  -> `memory/verifier/chaos-report.md`
-- **designer #1** Interaction Design System  -> `memory/designer/goal1-interaction-system-live-2026-11-20.md`
-- **designer #2** Animation/Motion System  -> `memory/designer/goal2-animation-consumers-landed-2026-11-20.md`
-- **designer #3** Information Hierarchy Audit  -> `memory/designer/goal7-typography-audit-2026-11-19.md`
-- **designer #4** Icon System  -> `memory/verifier/designer-goal4-icon-citation-close-2026-11-20.md`
-- **designer #5** Typography Scale Refinement  -> `memory/designer/goal7-typography-audit-2026-11-19.md`
-- **designer #6** Responsive Design Hardening  -> `memory/designer/goal6-breakpoint-verify-final-2026-11-20.md`
-- **designer #7** Color Contrast + Accessibility  -> `memory/designer/contrast_audit.py`
-- **designer #8** Notification/Toast Design  -> `memory/designer/goal8-toast-design-2026-11-20.md`
-- **designer #9** Empty States + Loading Patterns  -> `memory/designer/goal9-empty-states-4panels-2026-11-20.md`
-- **designer #10** Design QA Checklist + Regression  -> `memory/designer/design-qa-checklist.md`
-- **mechanic #2** Disk Space Monitoring + Auto-Cleanup  -> `memory/mechanic/disk_monitor.py`
-- **mechanic #3** Network Health Monitoring  -> `memory/mechanic/goal3-net-probe-v2-verified-2026-11-20.md`
-- **mechanic #4** Service Dependency Graph  -> `memory/mechanic/goal6-dep-gen-built-2026-11-17.md`
-- **mechanic #5** Backup Automation  -> `memory/mechanic/backup.py`
-- **mechanic #6** Log Rotation  -> `memory/mechanic/goal6-log-rotate-verified-2026-11-20.jsonl`
-- **mechanic #7** Performance Profiling  -> `memory/mechanic/deploy_remaining.py`
-- **mechanic #9** Incident Response Runbook  -> `memory/mechanic/runbook.md`
-- **mechanic #10** Fleet Topology Visualization  -> `memory/mechanic/deploy_watchdog_remote.py`
+- **orchestrator #1** Live Hotload Execution (host seat)  -> `memory/ops/blockers.md`
+- **orchestrator #2** Fleet Capacity Governor  -> `memory/orchestrator/fleet_capacity_2026-11-17.json`
+- **orchestrator #3** Goal-Cycle Full Auto-Transition  -> `memory/orchestrator/goal3-auto-transition-ext-2026-11-20.md`
+- **orchestrator #4** Agent Performance Scoring UI  -> `memory/orchestrator/goal9-perf-radar-backend-done-2026-11-17.md`
+- **orchestrator #5** Model Binding Governance Audit (weekly)  -> `memory/orchestrator/binding_audit.py`
+- **orchestrator #7** Cross-Seat Coordination Protocol  -> `memory/ops/cross-seat-protocol.md`
+- **orchestrator #8** Roster Health Check (daily)  -> `memory/orchestrator/roster_health.py`
+- **orchestrator #9** Goal Dependency Graph  -> `memory/goals/dependency-graph.json`
+- **orchestrator #10** Cycle Retrospective Automation  -> `memory/goals/retro-cycle-7.md`
+- **researcher #1** Unified Loader LIVE Execution  -> `memory/researcher/unified-loader-offline-surface-2026-11-20.md`
+- **researcher #2** Residency Matrix Live Refresh  -> `memory/llm/residency-matrix.md`
+- **researcher #3** Overnight Unload Root-Cause Confirmation  -> `memory/llm/overnight-unload.md`
+- **researcher #4** Evidence Freshness SLA  -> `memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md`
+- **researcher #5** Cross-Host Model Comparison Benchmark  -> `memory/researcher/model-benchmark-2026-11-16.md`
+- **researcher #6** Fleet Knowledge Graph v2  -> `memory/researcher/kg_integrity_bug_check.py`
+- **researcher #7** Research Reproducibility Protocol  -> `memory/researcher/reproducibility-protocol.md`
+- **researcher #8** Goal Slip Prediction v2  -> `memory/goals/slip_prediction_table.json`
+- **researcher #9** Source Reliability Scoring  -> `memory/researcher/evidence-source-scorer-2026-11-18.md`
+- **researcher #10** Blocker Triage Automation  -> `memory/ops/blockers.md`
+- **builder #1** Build-Verify-Pin --apply (host seat)  -> `memory/builder/apply_a4_a5_r35.py`
+- **builder #3** Portal Error Boundary  -> `memory/builder/error_boundary_increment3-2026-11-20.md`
+- **builder #4** Component Library v2  -> `memory/builder/component_refactor_regression_2026-11-20.md`
+- **builder #6** Fleet Status Panel  -> `memory/builder/designer-goal2-fleet-states-2026-11-18.md`
+- **builder #7** Dark Mode Theme  -> `memory/builder/verify_theme_toggle_2026-11-17.md`
+- **builder #10** One-Command Deploy  -> `memory/builder/deploy.py`
+- **archivist #1** Orphan Remediation Sweep  -> `memory/archivist/index-sweep-2026-11-13.md`
+- **archivist #2** Knowledge Graph v3 (Temporal + Typed)  -> `memory/archivist/knowledge_graph.py`
+- **archivist #4** Cross-Reference Integrity Check  -> `memory/archivist/xref_check.py`
+- **archivist #5** Keyword Search Index  -> `memory/archivist/search-index.json`
+- **archivist #8** Duplication Detection  -> `memory/archivist/dedup.py`
+- **scribe #1** Decision Impact Tracking  -> `memory/scribe/decision_impact.py`
+- **scribe #2** Cycle Retrospective Automation  -> `memory/ops/blockers.md`
+- **scribe #3** Briefing Freshness Monitor  -> `memory/scribe/briefing_freshness.py`
+- **scribe #4** Handoff Quality Scoring  -> `memory/scribe/handoff_quality.json`
+- **scribe #5** Card Staleness Detection  -> `memory/scribe/timeline.py`
+- **scribe #6** Synthesis Quality Trend  -> `memory/scribe/goal6-synthesis-quality-verified-2026-11-20.md`
+- **scribe #9** Memory Search Relevance Feedback  -> `memory/scribe/memory-search-goal9-complete-2026-11-20.md`
+- **verifier #1** Performance Gate Baseline (host seat)  -> `memory/verifier/perf_gate.py`
+- **verifier #2** Evidence Quality Scoring Model  -> `memory/ops/evidence-quality-2026-11-20.md`
+- **verifier #3** API Contract Test Suite  -> `memory/verifier/api_contracts.py`
+- **verifier #4** Security Audit  -> `memory/verifier/security-audit-2026-11-20.md`
+- **verifier #5** Concurrency Verification  -> `memory/verifier/concurrency-test-2026-11-20.md`
+- **verifier #6** Goal Acceptance Auto-Check  -> `memory/verifier/MEMORY.md`
+- **verifier #7** Evidence Cross-Reference Graph  -> `memory/verifier/evidence-xref.json`
+- **verifier #8** SLO Enforcement (daily)  -> `memory/verifier/MEMORY.md`
+- **verifier #9** Memory Tree Integrity  -> `memory/ops/memory-integrity-2026-11-20.md`
+- **verifier #10** Cycle Quality Report  -> `memory/verifier/cycle-8-quality-report.md`
+- **designer #1** WCAG 2.1 AA Audit  -> `memory/designer/contrast-audit-live-2026-11-20.md`
+- **designer #2** Fleet Status Panel Visual Design  -> `memory/designer/goal2-fleet-states-2026-11-18.md`
+- **designer #3** Error State Design System  -> `memory/designer/goal1-interaction-system-live-2026-11-20.md`
+- **designer #5** Animation/Motion System  -> `memory/designer/goal2-animation-consumers-landed-2026-11-20.md`
+- **designer #10** UI Performance Budget  -> `memory/designer/css-bundle-budget-2026-11-17.md`
+- **mechanic #1** Portal Load Test 7-Day Completion  -> `memory/mechanic/load-test-week.md`
+- **mechanic #2** Self-Healing Mirror Production  -> `memory/mechanic/mirror-repairs.jsonl`
+- **mechanic #5** Scheduled-Task Dependency Graph  -> `memory/mechanic/goal6-dep-gen-built-2026-11-17.md`
+- **mechanic #6** Boot Task Verification  -> `memory/mechanic/reboot-drill-evidence-verify-2026-11-19.md`
+- **mechanic #7** Log Rotation + Retention  -> `memory/mechanic/log_rotate.py`
+- **mechanic #8** Alert Escalation Chain  -> `memory/mechanic/escalation_chain.py`
+- **mechanic #9** Capacity Planning Dashboard  -> `memory/mechanic/capacity-report-2026-11-20.md`
+- **mechanic #10** Runbook Automation (top-5)  -> `memory/mechanic/runbook-gap-analysis-2026-11-17.md`

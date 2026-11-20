@@ -16,7 +16,7 @@ Focus: Accessibility + production UI polish. Cycle-7 closed design token gaps; c
 
 7. **Accessibility Tree Verification** - Verify DOM structure matches ARIA expectations: headings in correct order (h1>h2>h3, no skips), landmarks present (nav, main, aside), lists use ul/li, tables have th/td. Write verification script + report. Verified: script runs clean on current portal; a deliberate h4-after-h2 is caught; all 5 landmark types present.
 
-8. **Component Visual Reference** - Create memory/designer/component-reference.md: for each function in ui/components.js, show: purpose, usage example, visual description (or screenshot path), accessible name pattern. Keep it as a quick-lookup for other agents building UI. Verified: all 10+ component functions documented; examples are copy-paste runnable; accessible names specified.
+8. **Component Visual Reference** - Create memory/designer/component-reference.md: for each function in ui/components.js, show: purpose, usage example, visual description (or screenshot path), accessible name pattern. Keep it as a quick-lookup for other agents building UI. Verified: all 10+ component functions documented; examples are copy-paste runnable; accessible names specified. (pointer: memory/designer/component-reference.html)
 
 9. **Theme System (3 themes)** - Implement light/dark/high-contrast themes using CSS custom properties. Theme picker in settings; preference persisted. High-contrast theme must pass WCAG AAA (7:1 contrast). Verified: 3 themes switchable; all pass AA minimum; high-contrast passes AAA; no hardcoded colors outside var() declarations.
 
