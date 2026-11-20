@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 is NOT truly blocked — schtask auto-accumulates data (5/7 days as of 2026-11-21); unblock_all_live_runs.py handles it
-- Scribe 10/10 goals closed; auto-loop "4 open" dispatch count is stale (flagged in HOT NOTES), no actionable work on Scribe seat
 - Verifier found Goal 4's (verified
 - Cross-ref integrity check passed: 0 broken live xrefs, no true circular chains (only self-references).
 - Real defect: .em (32px) and .acard button (28px)
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #2 (KG v3) closed: 7615 nodes, all edges typed, JSON 1869KB, query mode OK. Evidence at memory/archivist/evidence-goal2-kg-v3-full-acce
 - Goal #5 (Scheduled-Task Dependency Graph) closed: 3/3 ACs pass, artifacts at memory/mechanic/dep-report-week{1,2}.txt + fixtures/schtasks_we
 - Goal #5 (Keyword Search Index): regenerated scoped to .md leaves, 488.6KB (<500KB limit);
+- Mechanic seat: auto-loop "6 open" dispatch is stale (actual open=0); confirmed twice, do not re-probe.
+- HOT NOTE "Real defect: .em(32px)/.acard(28px)" is STALE — replaced by design tokens in commit 85e3097 (2026-11
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
