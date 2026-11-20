@@ -1,0 +1,193 @@
+{
+  "breakpoints": [
+    320,
+    768,
+    1024,
+    1440
+  ],
+  "results": {
+    "320": {
+      "applicable_rules": 362,
+      "width_info": {
+        "aside": {
+          "selector": "aside",
+          "widths": {
+            "width": "100%"
+          },
+          "source": "ui/app.css:213",
+          "media": "max-width:375px"
+        },
+        "#chatCol": {
+          "selector": "#chatCol",
+          "widths": {
+            "min-width": "0"
+          },
+          "source": "ui/app.css:34",
+          "media": "always"
+        },
+        "#agentList": {
+          "selector": "#agentList",
+          "widths": {
+            "overflow-x": "auto"
+          },
+          "source": "ui/app.css:214",
+          "media": "max-width:375px"
+        },
+        "#fleetTopo": {
+          "selector": "#fleetTopo",
+          "widths": {
+            "max-width": "860px"
+          },
+          "source": "ui/app.css:246",
+          "media": "max-width:375px"
+        },
+        "#actSel": {
+          "selector": "#actSel",
+          "widths": {
+            "width": "auto",
+            "max-width": "360px"
+          },
+          "source": "ui/app.css:140",
+          "media": "always"
+        },
+        "#peek": {
+          "selector": "#peek",
+          "widths": {
+            "max-width": "calc(100vw - 24px)"
+          },
+          "source": "ui/app.css:208",
+          "media": "max-width:768px"
+        },
+        ".toast-container": {
+          "selector": ".toast-container",
+          "widths": {
+            "right": "var(--sp-16)",
+            "max-width": "320px"
+          },
+          "source": "ui/app.css:293",
+          "media": "max-width:375px"
+        }
+      },
+      "overflow_risks": [],
+      "overflow_count": 0
+    },
+    "768": {
+      "applicable_rules": 252,
+      "width_info": {
+        "#chatCol": {
+          "selector": "#chatCol",
+          "widths": {
+            "min-width": "0"
+          },
+          "source": "ui/app.css:34",
+          "media": "always"
+        },
+        "#actSel": {
+          "selector": "#actSel",
+          "widths": {
+            "width": "auto",
+            "max-width": "360px"
+          },
+          "source": "ui/app.css:140",
+          "media": "always"
+        },
+        "#peek": {
+          "selector": "#peek .pk-body",
+          "widths": {
+            "overflow": "auto"
+          },
+          "source": "ui/app.css:112",
+          "media": "always"
+        }
+      },
+      "overflow_risks": [],
+      "overflow_count": 0
+    },
+    "1024": {
+      "applicable_rules": 252,
+      "width_info": {
+        "#chatCol": {
+          "selector": "#chatCol",
+          "widths": {
+            "min-width": "0"
+          },
+          "source": "ui/app.css:34",
+          "media": "always"
+        },
+        "#actSel": {
+          "selector": "#actSel",
+          "widths": {
+            "width": "auto",
+            "max-width": "360px"
+          },
+          "source": "ui/app.css:140",
+          "media": "always"
+        },
+        "#peek": {
+          "selector": "#peek .pk-body",
+          "widths": {
+            "overflow": "auto"
+          },
+          "source": "ui/app.css:112",
+          "media": "always"
+        }
+      },
+      "overflow_risks": [],
+      "overflow_count": 0
+    },
+    "1440": {
+      "applicable_rules": 252,
+      "width_info": {
+        "#chatCol": {
+          "selector": "#chatCol",
+          "widths": {
+            "min-width": "0"
+          },
+          "source": "ui/app.css:34",
+          "media": "always"
+        },
+        "#actSel": {
+          "selector": "#actSel",
+          "widths": {
+            "width": "auto",
+            "max-width": "360px"
+          },
+          "source": "ui/app.css:140",
+          "media": "always"
+        },
+        "#peek": {
+          "selector": "#peek .pk-body",
+          "widths": {
+            "overflow": "auto"
+          },
+          "source": "ui/app.css:112",
+          "media": "always"
+        }
+      },
+      "overflow_risks": [],
+      "overflow_count": 0
+    }
+  },
+  "summary": {
+    "320": {
+      "status": "PASS",
+      "applicable_rules": 362,
+      "overflow_risks": 0
+    },
+    "768": {
+      "status": "PASS",
+      "applicable_rules": 252,
+      "overflow_risks": 0
+    },
+    "1024": {
+      "status": "PASS",
+      "applicable_rules": 252,
+      "overflow_risks": 0
+    },
+    "1440": {
+      "status": "PASS",
+      "applicable_rules": 252,
+      "overflow_risks": 0
+    }
+  }
+}
