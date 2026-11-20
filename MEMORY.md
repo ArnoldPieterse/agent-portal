@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- xref_monitor.py baseline: 6917
-- Goal 10 open: QA script hardcodes stale 5-step type scale; live tokens.css has 8 tokens (11–24px). Fix: derive from tokens.css, not duplicat
-- Auto-loop prompt "open" counts are consistently stale; always trust goal_ledger over loop trigger numbers.
 - Fixed extract_decisions.py --since bug: was clobbering decisions.jsonl; now merges+dedups on normalized text. Evidence in goal1-incremental-
 - Scribe Goal 7 (Archive Navigation Index) verified complete; Scribe now 3/10 per ledger update 2026-11-20.
 - Designer confirmed 10/10 goals reached; pivoted to assist Scribe's Cross-Agent Handoff Protocol (Scribe was at 2/10).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic 10/10 closed; auto-loop "2 open" is stale — winrm_pool_selftest 20/20 PASS, no action needed
 - xref baseline post-compaction: 1811 files, 44
 - Goal 9 gap: actRender & mergeQueueLoad use plain-text empty states, not UI.emptyState() — needs fixing for full panel coverage.
+- Auto-loop open-goal counts are systematically stale across all 4 seats (confirmed by ledger each pass); don't re-probe.
+- Auto-loop open-goal
+- Designer: Next task = Scribe Goal 3 "Context Compression" briefing; auto-briefing has IA problems in Gotchas section needing redesign.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
