@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 6: responsive_check.py built & all checks PASS; CDP screenshot still blocked (portal :8099 unreachable from sandbox)
-- Fixed date-extraction bug in cycle_narrative.py: rsplit('-')→regex \d{4}-\d{2}-\d{2}; removed anachronistic Cycle 6 entry from synthesis/cyc
-- Fixed get_goal_completion() to read archive snapshots (memory/goals/archive/) for past cycles instead of always reading live files.
-- Pip broken (perm error on uv-managed Python); winrm_pool_selftest.py passes 20/20 without pywinrm dep
 - Goal 10 (KG Export+Import) complete: kg_export.py built, round-trip verified 5/5 checks green.
 - Designer at 3/10 goals verified; Goal 7 (contrast) done via --sel-dim token fix in ui/tokens.css, contrast_audit.py passes both themes.
 - Scribe fixed get_goal_completion() in cycle_narrative.py to accept goals_dir/since/until for archive-mode reads; verified with date-window a
 - Goal 7 (Perf Profiling): --verify subcommand added to perf_profile.py; blocked by sandbox :8099 egress wall, needs non-sandbox seat for live
 - Researcher at 100% on own goals; now in team-contribution mode, targeting oldest open goal of another agent
 - Lane detection in stale-file script hard-strips literal "memory/" prefix; fix: make it relative to memory root (bug found via --selftest).
+- Scribe forecast for Archivist Goal 1: 99.5% of memory files are HOT by mtime; real staleness risk is semantic lane-reference, not timestamps
+- Goal 7 (Perf Profiling) closed: perf_profile.py has --mock mode; sandbox firewall blocks localhost:8099 (WinError 10013).
+- Goal #9 step1 done: UI.loadingState() helper (>=500ms min), empty states for agentList+queueList, skeleton class .i-skel--line; evidence at
+- Built role-to-memory relevance map (2,463 files × 8 roles) as
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
