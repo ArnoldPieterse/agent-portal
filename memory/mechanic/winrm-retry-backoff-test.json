@@ -1,0 +1,28 @@
+{
+  "ts": "2026-11-20T15:50:24.457864",
+  "test": "retry_backoff_logic",
+  "goal": "mechanic#1_sub_criterion_1_2",
+  "results": [
+    {
+      "name": "success_first_attempt_no_retry",
+      "pass": true,
+      "detail": "attempts=1, elapsed=0.02s"
+    },
+    {
+      "name": "nonzero_exit_no_retry_by_design",
+      "pass": true,
+      "detail": "status_code=1 returned directly"
+    },
+    {
+      "name": "unknown_host_immediate_reject",
+      "pass": true,
+      "detail": "WinRMError on unknown host"
+    },
+    {
+      "name": "exponential_backoff_3_attempts",
+      "pass": true,
+      "detail": "3 attempts in 6.0s (2s+4s backoff)"
+    }
+  ],
+  "all_pass": true
+}

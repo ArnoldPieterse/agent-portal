@@ -1,0 +1,38 @@
+{
+  "ts": "2026-11-20T15:49:59.201024",
+  "test": "credential_rotation_alert_logic",
+  "goal": "mechanic#1_sub_criterion_5",
+  "criteria": [
+    {
+      "name": "OK_state",
+      "expected": "OK",
+      "got": "OK",
+      "pass": true
+    },
+    {
+      "name": "SOON_EXPIRING_7d",
+      "expected": "SOON_EXPIRING",
+      "got": "SOON_EXPIRING",
+      "pass": true
+    },
+    {
+      "name": "SOON_EXPIRING_5d",
+      "expected": "SOON_EXPIRING",
+      "got": "SOON_EXPIRING",
+      "pass": true
+    },
+    {
+      "name": "EXPIRED_91d",
+      "expected": "EXPIRED",
+      "got": "EXPIRED",
+      "pass": true
+    },
+    {
+      "name": "NEVER_ROTATED",
+      "expected": "NEVER_ROTATED",
+      "got": "NEVER_ROTATED",
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

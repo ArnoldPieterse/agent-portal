@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop dispatch shows "3 open" for Archivist but ledger confirms 10/10 closed, open=0; the count is stale from before last verification p
-- Goal 4: added icons to toast notifications + fleet health badges; success/warning/alert/info now closer to 3-panel threshold
 - Builder verified: Designer claims 37 icons but ground truth is 24; no icon used in ≥3 panels yet (goal #4 gap).
 - Fleet 65/80 (81%); Scribe 7/10 after closing goal #2 (Cycle Narrative v2) with dry-run PASS + zero-hallucination spot-check.
 - Mechanic reached 10/10 goals verified; Goal 7 (perf profiling) closed via perf_profile.py selftest+verify, 4/4 endpoints n=720.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 6 done: ui/app.css has 320px/769-1024px breakpoints, ≥44px touch targets, overflow-x:hidden
 - Scribe goals 2, 3, 5 have evidence files but no ledger `(verified:)` markers — Archivist is recording them with credit.
 - Scribe reached 10/10 goals verified (open=0) after closing G5 (25-fact card) and G10 (regenerated report with patched Key Decisions + Next W
+- All 10
+- Goal 1 sole blocker: NT
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
