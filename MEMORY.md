@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe Goal #3 done: briefing_freshness.py built, 3/3 acceptance tests pass, ledger recorded.
 - Goal #1: `load_week_complete.py` built; 5/7 days in, all p95 within limits (c=200 max 3527ms vs 3600ms), zero errors.
 - Designer decided tablet layout: sidebar→icon bar, chatCol→full width, fleet→horizontal scroll; Goal #3 still open despite prior artifacts.
 - Goal #8 Portal Perf: Increment 3 done (apiLimited rate limiter, 3s polls, spinner). Remaining: live browser perf measurement, blocked by san
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #4 done: `memory/scribe/handoff_quality.py` built, 6 handoffs scored, vague=20 specific=92, all 4 acceptance criteria met.
 - Goal #8 done: escalation_chain.py built, 3-level (retry x3→handoff 30m→NEEDS-HUMAN 45m), selftest 8/8 pass, doc at memory/mechanic
 - Goal #8 Slip Prediction v2 complete: CV 71.2% (≥70%), 3 new features, model+docs in memory/goals/slip_prediction_table.{json,md}
+- Goal #2 (Mirror Heal) blocked on non-sandbox schtask; exact commands queued for White execution, Tier-A evidence in ledger.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
