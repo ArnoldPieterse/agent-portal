@@ -142,17 +142,52 @@ def selftest():
     print("  JSON structure valid.")
     return True
 
+def verify():
+    """Verify perf-profile.json: all endpoints have p50/p95/p99, monotonic order."""
+    if not os.path.exists(OUT_PATH):
+        print("[verify] FAIL: perf-profile.json does not exist (run --duration first)")
+        return False
+    with open(OUT_PATH) as f:
+        data = json.load(f)
+    metrics = data.get("metrics", {})
+    if not metrics:
+        print("[verify] FAIL: no metrics in JSON")
+        return False
+    errors = []
+    for name, m in metrics.items():
+        if m.get("status") != "ok":
+            errors.append(f"{name}: status={m.get('status')} (expected 'ok')")
+            continue
+        p50, p95, p99 = m.get("p50"), m.get("p95"), m.get("p99")
+        if p50 is None or p95 is None or p99 is None:
+            errors.append(f"{name}: null percentile(s) p50={p50} p95={p95} p99={p99}")
+            continue
+        if not (p50 <= p95 <= p99):
+            errors.append(f"{name}: non-monotonic p50={p50} > p95={p95} or p95 > p99={p99}")
+    if errors:
+        for e in errors:
+            print(f"[verify] FAIL: {e}")
+        return False
+    print("[verify] PASS: all endpoints have valid monotonic p50<=p95<=p99")
+    for name, m in metrics.items():
+        print(f"  {name}: p50={m['p50']}ms p95={m['p95']}ms p99={m['p99']}ms (n={m['count']})")
+    return True
+
 def main():
     ap = argparse.ArgumentParser(description="Fleet performance profiler")
     ap.add_argument("--duration", type=int, default=3600, help="Profile window in seconds (default 3600=1h)")
     ap.add_argument("--run-once", action="store_true", help="Alias for --duration 3600 (for schtask registration)")
     ap.add_argument("--selftest", action="store_true", help="Run self-test with synthetic data")
+    ap.add_argument("--verify", action="store_true", help="Verify perf-profile.json: non-null + monotonic percentiles")
     args = ap.parse_args()
     if args.run_once:
         args.duration = 3600
 
     if args.selftest:
         ok = selftest()
+        sys.exit(0 if ok else 1)
+    elif args.verify:
+        ok = verify()
         sys.exit(0 if ok else 1)
     else:
         results = run_profile(args.duration)
