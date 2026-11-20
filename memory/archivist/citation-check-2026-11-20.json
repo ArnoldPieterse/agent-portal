@@ -1,28 +1,18 @@
 {
-  "total_citations": 4456,
-  "file_path_citations": 4092,
-  "url_citations": 364,
-  "resolved": 2886,
+  "total_citations": 4708,
+  "file_path_citations": 4354,
+  "url_citations": 354,
+  "resolved": 3167,
   "broken": [
-    {
-      "file": "MEMORY.md",
-      "line": 30,
-      "cited": "freshness_report.py"
-    },
-    {
-      "file": "MEMORY.md",
-      "line": 30,
-      "cited": "freshness_sweep.py"
-    },
     {
       "file": "README.md",
       "line": 20,
       "cited": "recover_all.py/.bat"
     },
     {
-      "file": "SETUP_HISTORY.md",
-      "line": 15,
-      "cited": "rdp_shot.ps1"
+      "file": "RED_RPC_ROOTCAUSE.md",
+      "line": 17,
+      "cited": "studio\\backend\\core\\inference\\llama_cpp.py"
     },
     {
       "file": "TODO.md",
@@ -48,16 +38,6 @@
       "file": "TODO.md",
       "line": 164,
       "cited": "arnold-restart-r8.ps1"
-    },
-    {
-      "file": "TODO.md",
-      "line": 525,
-      "cited": "recover_result.json"
-    },
-    {
-      "file": "TODO.md",
-      "line": 526,
-      "cited": "fleet_reload_result.json"
     },
     {
       "file": "TODO_completed.md",
@@ -120,11 +100,6 @@
       "cited": "2026-11-14-queue4-source-loss-adjudication.md"
     },
     {
-      "file": "memory/archivist/doc-ref-scanner-progress-2026-11-18.md",
-      "line": 25,
-      "cited": "elev.py"
-    },
-    {
       "file": "memory/archivist/dream-big-wishes-2026-11-14.md",
       "line": 32,
       "cited": "goal-dashboard.html"
@@ -140,74 +115,34 @@
       "cited": ".kg_mtimes.json"
     },
     {
+      "file": "memory/archivist/evidence-goal1-kg-autoupdate-real-2026-11-18.md",
+      "line": 45,
+      "cited": "memory/archivist/.kg_state"
+    },
+    {
+      "file": "memory/archivist/evidence-goal3-api-ref-progress-2026-11-18.md",
+      "line": 18,
+      "cited": ".git/hooks/pre-commit"
+    },
+    {
+      "file": "memory/archivist/evidence-goal3-api-ref-progress-2026-11-18.md",
+      "line": 41,
+      "cited": ".git/hooks/pre-commit"
+    },
+    {
+      "file": "memory/archivist/freshness-report-2026-11-20.md",
+      "line": 20,
+      "cited": "memory/archivist/.kg_state"
+    },
+    {
+      "file": "memory/archivist/goals-2026-11-13.md",
+      "line": 8,
+      "cited": "archivist/provenance-audit.md"
+    },
+    {
       "file": "memory/archivist/goals-2026-11-13.md",
       "line": 10,
       "cited": "archivist/canonical-map.md"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 10,
-      "cited": "fleet_probe.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 11,
-      "cited": "elevated_helper.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 12,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 13,
-      "cited": "install_elevated_helper.bat"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 14,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 15,
-      "cited": "install_elevated_helper.bat"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 16,
-      "cited": "portal_loadtest.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 17,
-      "cited": "tunnel_urls.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 18,
-      "cited": "user_messages.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 19,
-      "cited": "recover_force_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 22,
-      "cited": "fleet_probe.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 23,
-      "cited": "daily_git_commit.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 24,
-      "cited": "fleet_reload_result.json"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
@@ -216,73 +151,8 @@
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 26,
-      "cited": "backend_swap_drill_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 27,
-      "cited": "daily_git_commit.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 28,
-      "cited": "fleet_probe.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
       "line": 29,
       "cited": "white_realias_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 30,
-      "cited": "red_setup_result2.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 31,
-      "cited": "red_manual_verify.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 32,
-      "cited": "red_chain_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 33,
-      "cited": "red_q8_wait2.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 34,
-      "cited": "red_setup_result2.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 35,
-      "cited": "red_chain_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 37,
-      "cited": "red_setup_result2.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 38,
-      "cited": "red_smoke.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 40,
-      "cited": "red_setup_result2.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 41,
-      "cited": "red_q8_wait2.py"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
@@ -291,18 +161,8 @@
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 43,
-      "cited": "pale_cancel.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
       "line": 44,
       "cited": "copy_tail/q8_red2.log"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 45,
-      "cited": "red_hash_q8.ps1"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
@@ -316,153 +176,13 @@
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 48,
-      "cited": "smoke6.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 49,
-      "cited": "group_e2e_result_8agent.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 50,
-      "cited": "red_smoke.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 51,
-      "cited": "red_smoke.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 52,
-      "cited": "red_chain_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 53,
-      "cited": "red_agents_ready.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 54,
-      "cited": "merge_red_agents.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 55,
-      "cited": "red_dual_load.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 56,
-      "cited": "red_dual_load_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 57,
-      "cited": "red_realias.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 58,
-      "cited": "red_agents_ready.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 59,
-      "cited": "red_setup_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 60,
-      "cited": "red_dual_load.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 61,
-      "cited": "red_dual_load_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 62,
-      "cited": "red_realias.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 63,
-      "cited": "red_agents_ready.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 64,
-      "cited": "merge_red_agents.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 65,
-      "cited": "serial_e2e_wait.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 66,
-      "cited": "recover_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 67,
-      "cited": "serial_e2e_wait.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 68,
-      "cited": "serial_e2e_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 70,
-      "cited": "group_e2e_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 71,
-      "cited": "serial_e2e_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 74,
-      "cited": "black_dual_load_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 75,
-      "cited": "r2_smoke_result.txt"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
       "line": 78,
       "cited": "r2_smoke_wait.py"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 79,
-      "cited": "r2_smoke_result.txt"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
       "line": 81,
       "cited": "probe_black.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 84,
-      "cited": "scan_red.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 85,
-      "cited": "red_probe.py"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
@@ -476,88 +196,13 @@
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 88,
-      "cited": "probe_black_winrm2.ps1"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 89,
-      "cited": "elev_trustedhosts.ps1"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 90,
-      "cited": "r2_smoke_result.txt"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
       "line": 91,
       "cited": "r2_smoke_wait.py"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 92,
-      "cited": "scan_red.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
       "line": 93,
       "cited": "model_list_now.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 94,
-      "cited": "TODO_archive_20261111.md"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 95,
-      "cited": "recover_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 96,
-      "cited": "fleet_reload_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 97,
-      "cited": "goal_cycle_check.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 98,
-      "cited": "todo_freshness_check.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 99,
-      "cited": "citation_monitor_v2.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 100,
-      "cited": "parity_audit.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 101,
-      "cited": "open_questions_flag.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 102,
-      "cited": "model_benchmark.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 103,
-      "cited": "user_messages.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 104,
-      "cited": "user_messages.json"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
@@ -571,93 +216,8 @@
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 106,
-      "cited": "portal_watchdog.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 107,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 108,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 109,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 110,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 111,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 112,
-      "cited": "tunnel_urls.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 113,
-      "cited": "run_state.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 114,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 115,
-      "cited": "d7_d9_cdp_verify.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
       "line": 116,
       "cited": "memory/designer/d7_d9_cdp_verify.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 117,
-      "cited": "fleet_probe.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 118,
-      "cited": "fleet_probe.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 120,
-      "cited": "backend_swap_drill_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 121,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 123,
-      "cited": "recover_force_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 124,
-      "cited": "recover_force_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 126,
-      "cited": "red_probe.py"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
@@ -666,63 +226,8 @@
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 128,
-      "cited": "tunnel_urls.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 129,
-      "cited": "scan_red.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
       "line": 130,
       "cited": "mstsc_shots.ps1"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 131,
-      "cited": "red_smoke.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 132,
-      "cited": "red_smoke_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 133,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 134,
-      "cited": "parity_audit.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 135,
-      "cited": "recover_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 139,
-      "cited": "serial_e2e_wait.py"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 140,
-      "cited": "recover_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 141,
-      "cited": "fleet_reload_result.json"
-    },
-    {
-      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 142,
-      "cited": "elev.py"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
@@ -791,13 +296,13 @@
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 157,
-      "cited": "restart_portal.py"
+      "line": 158,
+      "cited": "GOAL_RESET_PENDING.json"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
-      "line": 158,
-      "cited": "GOAL_RESET_PENDING.json"
+      "line": 159,
+      "cited": "evolution/README.md"
     },
     {
       "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
@@ -1215,6 +720,11 @@
       "cited": "AgentPortal_V1-git/memory/llm/INDEX.md"
     },
     {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "line": 202,
+      "cited": "archivist/supersession-report.json"
+    },
+    {
       "file": "memory/archivist/hosts-pin-reconciliation-2026-11-14.md",
       "line": 22,
       "cited": "2026-11-14-white-rename-closeout.md"
@@ -1246,8 +756,8 @@
     },
     {
       "file": "memory/archivist/index-integrity-r72-2026-11-14.md",
-      "line": 17,
-      "cited": "index_v22.html"
+      "line": 16,
+      "cited": "index_html_pre-v22-8fc29f19.html"
     },
     {
       "file": "memory/archivist/index-pointer-batch-r42.md",
@@ -1310,6 +820,216 @@
       "cited": "OLDER/smaller"
     },
     {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 13,
+      "cited": "memory/archivist/findstr archivist api-reference.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 14,
+      "cited": "memory/archivist/white-apply-bundle-v2-r45.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 18,
+      "cited": "memory/archivist/_kg_test_orphan.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 22,
+      "cited": "memory/archivist/TODO_completed.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 23,
+      "cited": "memory/archivist/archivist/canonical-map.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 24,
+      "cited": "memory/archivist/archivist/provenance-audit.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 25,
+      "cited": "memory/archivist/archivist/index-sweep-2026-11-13.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 26,
+      "cited": "memory/archivist/archivist/prune-log.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 27,
+      "cited": "memory/archivist/synthesis/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 28,
+      "cited": "memory/archivist/AgentPortal_V1-git/memory/orchestrator/MEMORY.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 29,
+      "cited": "memory/archivist/AgentPortal_V1-git/memory/portal/bugs/xtalk-completion.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 30,
+      "cited": "memory/archivist/gapfix-test/memory/llm/instances.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 31,
+      "cited": "memory/archivist/Users/White/.agents/skills/portal-memory-modular/SKILL.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 32,
+      "cited": "memory/archivist/AgentPortal_V1-git/memory/llm/studio-api.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 33,
+      "cited": "MEMORY.md/TODO.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 34,
+      "cited": "memory/archivist/gapfix-test/memory/ops/probes.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 35,
+      "cited": "memory/archivist/archivist/freshness-report.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 36,
+      "cited": "memory/archivist/run-rules.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 37,
+      "cited": "memory/archivist/ops/probes.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 38,
+      "cited": "memory/archivist/AgentPortal_V1-git/memory/portal/architecture.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 39,
+      "cited": "memory/archivist/AgentPortal_V1-git/memory/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 40,
+      "cited": "memory/archivist/README.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 41,
+      "cited": "memory/archivist/git-hygiene.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 42,
+      "cited": "memory/archivist/gapfix-test/README.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 43,
+      "cited": "memory/archivist/portal/bugs/xtalk-completion.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 44,
+      "cited": "memory/archivist/AgentPortal_V1-git/TODO.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 45,
+      "cited": "memory/archivist/hosts.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 47,
+      "cited": "memory/ops/.pytest_cache/README.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 49,
+      "cited": "memory/archivist/architecture.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 50,
+      "cited": "TODO.md/MEMORY.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 51,
+      "cited": "memory/archivist/AgentPortal_V1-git/README.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 52,
+      "cited": "memory/archivist/AgentPortal_V1-git/memory/orchestrator/TODO.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 53,
+      "cited": "memory/archivist/AgentPortal_V1-git/memory/ops/windows-runbook.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 54,
+      "cited": "memory/archivist/ops/windows-runbook.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 55,
+      "cited": "memory/archivist/portal/architecture.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 56,
+      "cited": "memory/archivist/llm/hosts.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 57,
+      "cited": "memory/archivist/ONBOARDING.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 58,
+      "cited": "memory/archivist/arnold-restart-r8.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 59,
+      "cited": "memory/archivist/archivist/prune-log.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 60,
+      "cited": "memory/archivist/AgentPortal_V1-git/memory/ops/probes.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 61,
+      "cited": "memory/archivist/bugs/INDEX.md"
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "line": 62,
+      "cited": "memory/archivist/AgentPortal_V1-git/memory/INDEX.md"
+    },
+    {
       "file": "memory/builder/MEMORY.md",
       "line": 16,
       "cited": "portal-upgrade\\verify_drop_env.py"
@@ -1318,6 +1038,11 @@
       "file": "memory/builder/MEMORY.md",
       "line": 16,
       "cited": "git-toolkit\\init_repo.py"
+    },
+    {
+      "file": "memory/builder/TODO.md",
+      "line": 4,
+      "cited": "ws-b-increment1/index.html"
     },
     {
       "file": "memory/builder/TODO.md",
@@ -1333,6 +1058,11 @@
       "file": "memory/builder/TODO.md",
       "line": 23,
       "cited": "verify_drop_env.py"
+    },
+    {
+      "file": "memory/builder/TODO.md",
+      "line": 24,
+      "cited": "ws-b-increment1/index.html"
     },
     {
       "file": "memory/builder/TODO.md",
@@ -1416,11 +1146,6 @@
     },
     {
       "file": "memory/builder/ci-gate-2026-11-16.md",
-      "line": 10,
-      "cited": "test_truncation_detect.py"
-    },
-    {
-      "file": "memory/builder/ci-gate-2026-11-16.md",
       "line": 11,
       "cited": "test_group_e2e_truncation.py"
     },
@@ -1428,11 +1153,6 @@
       "file": "memory/builder/crossassist-archivist5-doc-ref-scanner-2026-11-18.md",
       "line": 6,
       "cited": "check_doc_file_refs.py"
-    },
-    {
-      "file": "memory/builder/crossassist-archivist5-doc-ref-scanner-2026-11-18.md",
-      "line": 25,
-      "cited": "elev.py"
     },
     {
       "file": "memory/builder/crossassist-handoff-2026-11-16.md",
@@ -1475,6 +1195,11 @@
       "cited": "blockers.md"
     },
     {
+      "file": "memory/builder/portal-startup-fix-2026-11-17.md",
+      "line": 33,
+      "cited": "Z:\\agent_portal.py"
+    },
+    {
       "file": "memory/builder/remote-mirror-verify-2026-11-16.md",
       "line": 7,
       "cited": "uploads/builder_mirror_test.txt"
@@ -1490,16 +1215,6 @@
       "cited": "probe_white_portal_r20.py"
     },
     {
-      "file": "memory/builder/smoke8-detached-r20.md",
-      "line": 7,
-      "cited": "smoke8_result.json"
-    },
-    {
-      "file": "memory/builder/smoke8-detached-r20.md",
-      "line": 18,
-      "cited": "smoke8_result.json"
-    },
-    {
       "file": "memory/builder/white-rename-closeout-2026-11-14.md",
       "line": 8,
       "cited": "white_realias_result.json"
@@ -1511,6 +1226,11 @@
     },
     {
       "file": "memory/designer/MEMORY.md",
+      "line": 65,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
+      "file": "memory/designer/MEMORY.md",
       "line": 67,
       "cited": "bootstrap.bat"
     },
@@ -1518,6 +1238,26 @@
       "file": "memory/designer/MEMORY.md",
       "line": 85,
       "cited": "BUNDLE-SHA256.txt"
+    },
+    {
+      "file": "memory/designer/MEMORY.md",
+      "line": 107,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
+      "file": "memory/designer/MEMORY.md",
+      "line": 108,
+      "cited": "git-bootstrap/README.md"
+    },
+    {
+      "file": "memory/designer/TODO.md",
+      "line": 58,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
+      "file": "memory/designer/TODO.md",
+      "line": 58,
+      "cited": "git-bootstrap/README.md"
     },
     {
       "file": "memory/designer/a11y-contrast-audit-2026-11-18.md",
@@ -1600,6 +1340,21 @@
       "cited": "ac_a2_live_leg_r20_result.json"
     },
     {
+      "file": "memory/designer/breakpoint-check-enhancement-2026-11-17.md",
+      "line": 8,
+      "cited": "breakpoint_overflow_fixture.html"
+    },
+    {
+      "file": "memory/designer/conflict-resolution-merged-canonical-2026-11-15.md",
+      "line": 18,
+      "cited": "apply_designer_goals_patch.py"
+    },
+    {
+      "file": "memory/designer/conflict-resolution-merged-canonical-2026-11-15.md",
+      "line": 33,
+      "cited": "apply_designer_goals_patch.py"
+    },
+    {
       "file": "memory/designer/conflict-resolution-merged-canonical-2026-11-15.md",
       "line": 47,
       "cited": "stopgap_h1_contrast_patch.py"
@@ -1635,6 +1390,11 @@
       "cited": "design-qa.md"
     },
     {
+      "file": "memory/designer/designer-goal-proposals-2026-11-16.md",
+      "line": 24,
+      "cited": "design-check.py"
+    },
+    {
       "file": "memory/designer/fix-hunks-r51-2026-11-14.md",
       "line": 2,
       "cited": "repin_root_index.py"
@@ -1643,6 +1403,21 @@
       "file": "memory/designer/goal1-color-tokens-reland-2026-11-19.md",
       "line": 8,
       "cited": "tokens.css"
+    },
+    {
+      "file": "memory/designer/goal1-interaction-reestablished-2026-11-20b.md",
+      "line": 12,
+      "cited": "ui/interactions.js"
+    },
+    {
+      "file": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
+      "line": 4,
+      "cited": "ui/interactions.css"
+    },
+    {
+      "file": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
+      "line": 4,
+      "cited": "ui/animations.css"
     },
     {
       "file": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
@@ -1720,6 +1495,21 @@
       "cited": ".status-dot.green/amber/red"
     },
     {
+      "file": "memory/designer/goal2-animation-system-2026-11-20.md",
+      "line": 4,
+      "cited": "ui/animations.css"
+    },
+    {
+      "file": "memory/designer/goal2-animation-system-2026-11-20.md",
+      "line": 14,
+      "cited": "ui/interactions.js"
+    },
+    {
+      "file": "memory/designer/goal2-animation-wiring-2026-11-20.md",
+      "line": 6,
+      "cited": "ui/animations.css"
+    },
+    {
       "file": "memory/designer/goal2-animation-wiring-2026-11-20.md",
       "line": 28,
       "cited": "grep -n \"animations.css\" ui/app.css"
@@ -1763,6 +1553,11 @@
       "file": "memory/designer/goal2-static-verify-2026-11-18.md",
       "line": 9,
       "cited": "state-loading/error/empty/conn-lost"
+    },
+    {
+      "file": "memory/designer/goal3-fleet-bars-wired-2026-11-19.md",
+      "line": 4,
+      "cited": "ui/fleet_goals_bars.js"
     },
     {
       "file": "memory/designer/goal4-a11y-fix-focus-motion-2026-11-18.md",
@@ -1870,9 +1665,19 @@
       "cited": "#actHead/#fleetHead/#opsHead/#filesHead"
     },
     {
+      "file": "memory/designer/goals3-4-source-verified-2026-11-15.md",
+      "line": 3,
+      "cited": "index_html_pre-accd-37549a04.html"
+    },
+    {
       "file": "memory/designer/index-audit-critique-2026-11-15.md",
       "line": 74,
       "cited": "up/total"
+    },
+    {
+      "file": "memory/designer/index-v22-promotion-r71-2026-11-14.md",
+      "line": 22,
+      "cited": "index_html_pre-v22-8fc29f19.html"
     },
     {
       "file": "memory/designer/index-v22-promotion-r71-correction-2026-11-14.md",
@@ -1890,6 +1695,21 @@
       "cited": ".../goal6-dark-mode-static-audit-2026-11-18.md)"
     },
     {
+      "file": "memory/designer/live-deploy-2026-11-16.md",
+      "line": 4,
+      "cited": "designer/index-patched-v2.html"
+    },
+    {
+      "file": "memory/designer/patch-v2-evidence-2026-11-16.md",
+      "line": 4,
+      "cited": "designer/index-patched-v2.html"
+    },
+    {
+      "file": "memory/designer/patch-v2-evidence-2026-11-16.md",
+      "line": 39,
+      "cited": "designer/index-patched-v2.html"
+    },
+    {
       "file": "memory/designer/planning-meeting-2026-11-14.md",
       "line": 26,
       "cited": "repin_root_index.py"
@@ -1898,6 +1718,11 @@
       "file": "memory/designer/planning-meeting-2026-11-14.md",
       "line": 27,
       "cited": "post-restart-verify-rNN.md"
+    },
+    {
+      "file": "memory/designer/roundlog-r40-autoclose-2026-11-14.md",
+      "line": 7,
+      "cited": "designer/staged/variant_8ef4e2227a7a.html"
     },
     {
       "file": "memory/designer/roundlog-r40-autoclose-2026-11-14.md",
@@ -1955,9 +1780,19 @@
       "cited": ".err/.unknown"
     },
     {
-      "file": "memory/designer/tierB-batch-fixed-2026-11-19.md",
-      "line": 18,
-      "cited": "d7_d9_cdp_verify.py"
+      "file": "memory/designer/token-refactor-2026-11-15.md",
+      "line": 3,
+      "cited": "index.refactored.html"
+    },
+    {
+      "file": "memory/designer/token-refactor-2026-11-15.md",
+      "line": 26,
+      "cited": "index.refactored.html"
+    },
+    {
+      "file": "memory/designer/ui-asset-restore-2026-11-16.md",
+      "line": 7,
+      "cited": "index.refactored.html"
     },
     {
       "file": "memory/goals.md",
@@ -1995,6 +1830,21 @@
       "cited": "upgrade-plan.md"
     },
     {
+      "file": "memory/goals/2026-11-13-agent-goals.md",
+      "line": 69,
+      "cited": "designer/ops-panel-mock.html"
+    },
+    {
+      "file": "memory/goals/2026-11-13-agent-goals.md",
+      "line": 72,
+      "cited": "designer/a11y-check.md"
+    },
+    {
+      "file": "memory/goals/all-goals-2026-11-13.md",
+      "line": 71,
+      "cited": "archivist/provenance-audit.md"
+    },
+    {
       "file": "memory/goals/all-goals-2026-11-13.md",
       "line": 73,
       "cited": "archivist/canonical-map.md"
@@ -2020,9 +1870,24 @@
       "cited": "upgrade-plan.md"
     },
     {
+      "file": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+      "line": 69,
+      "cited": "designer/ops-panel-mock.html"
+    },
+    {
+      "file": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+      "line": 72,
+      "cited": "designer/a11y-check.md"
+    },
+    {
       "file": "memory/goals/archive/README.md",
       "line": 25,
       "cited": "all-goals-2026-11-13.md"
+    },
+    {
+      "file": "memory/goals/archive/archivist-2026-11-13.md",
+      "line": 10,
+      "cited": "archivist/provenance-audit.md"
     },
     {
       "file": "memory/goals/archive/archivist-2026-11-13.md",
@@ -2033,11 +1898,6 @@
       "file": "memory/goals/archive/archivist-2026-11-16.md",
       "line": 9,
       "cited": "memory_health.py"
-    },
-    {
-      "file": "memory/goals/archive/builder-2026-11-18.md",
-      "line": 13,
-      "cited": "modularity_check.py"
     },
     {
       "file": "memory/goals/archive/builder-2026-11-18.md",
@@ -2063,6 +1923,21 @@
       "file": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
       "line": 65,
       "cited": "upgrade-plan.md"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+      "line": 69,
+      "cited": "designer/ops-panel-mock.html"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+      "line": 72,
+      "cited": "designer/a11y-check.md"
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+      "line": 71,
+      "cited": "archivist/provenance-audit.md"
     },
     {
       "file": "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
@@ -2183,11 +2058,6 @@
       "file": "memory/goals/archive/researcher-2026-11-13.md",
       "line": 62,
       "cited": "memory/digests/2026-11-13.md"
-    },
-    {
-      "file": "memory/goals/archive/researcher-2026-11-18.md",
-      "line": 15,
-      "cited": "elev.py"
     },
     {
       "file": "memory/goals/archive/researcher-2026-11-19.md",
@@ -2420,19 +2290,54 @@
       "cited": "comfyui_adapter.py"
     },
     {
-      "file": "memory/llm/model-id-check-2026-11-15.md",
-      "line": 5,
-      "cited": "model_check_1115.py"
+      "file": "memory/mechanic/MEMORY.md",
+      "line": 37,
+      "cited": "git-bootstrap/bootstrap.bat"
     },
     {
-      "file": "memory/llm/model-id-check-2026-11-15.md",
-      "line": 21,
-      "cited": "orch_alias_probe.py"
+      "file": "memory/mechanic/MEMORY.md",
+      "line": 39,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
+      "file": "memory/mechanic/MEMORY.md",
+      "line": 42,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
+      "file": "memory/mechanic/MEMORY.md",
+      "line": 45,
+      "cited": "git-bootstrap/bootstrap.bat"
     },
     {
       "file": "memory/mechanic/MEMORY.md",
       "line": 99,
       "cited": "uploads/AgentPortal_V1"
+    },
+    {
+      "file": "memory/mechanic/MEMORY.md",
+      "line": 109,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
+      "file": "memory/mechanic/MEMORY.md",
+      "line": 115,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
+      "file": "memory/mechanic/MEMORY.md",
+      "line": 120,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
+      "file": "memory/mechanic/MEMORY.md",
+      "line": 126,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
+      "file": "memory/mechanic/MEMORY.md",
+      "line": 131,
+      "cited": "git-bootstrap/bootstrap.bat"
     },
     {
       "file": "memory/mechanic/adaptive-probe-poller-2026-11-17.md",
@@ -2513,6 +2418,11 @@
       "file": "memory/mechanic/dream-big-ops-plan-2026-11-14.md",
       "line": 37,
       "cited": "portal_launcher.py"
+    },
+    {
+      "file": "memory/mechanic/fleet-probe-v2-2026-11-16.md",
+      "line": 6,
+      "cited": "fleet_probe_v2.py"
     },
     {
       "file": "memory/mechanic/fleet-stamp-r50-2026-11-14.md",
@@ -2685,11 +2595,6 @@
       "cited": "register_mirror_heal_task.py"
     },
     {
-      "file": "memory/mechanic/goal3-adaptive-probe-v2-closure-2026-11-18.md",
-      "line": 27,
-      "cited": "fleet_probe.py"
-    },
-    {
       "file": "memory/mechanic/goal3-predictive-trend-verified-2026-11-18.md",
       "line": 6,
       "cited": "test_goal3_predictive.py"
@@ -2698,6 +2603,11 @@
       "file": "memory/mechanic/goal3-predictive-trend-verified-2026-11-18.md",
       "line": 20,
       "cited": "test_goal3_predictive.py"
+    },
+    {
+      "file": "memory/mechanic/goal3-predictive-trend-verified-2026-11-18.md",
+      "line": 21,
+      "cited": "fleet_probe_v2.py"
     },
     {
       "file": "memory/mechanic/goal3_mirror_heal_evidence-2026-11-16.md",
@@ -2753,11 +2663,6 @@
       "file": "memory/mechanic/goal4-pipeline-validation-2026-11-17.md",
       "line": 14,
       "cited": "load_probe.py"
-    },
-    {
-      "file": "memory/mechanic/goal4-sandbox-recheck-2026-11-18.md",
-      "line": 5,
-      "cited": "elev.py"
     },
     {
       "file": "memory/mechanic/goal4-sandbox-recheck-2026-11-18.md",
@@ -2818,6 +2723,11 @@
       "file": "memory/mechanic/goal5-egress-v2-per-agent-2026-11-17.md",
       "line": 17,
       "cited": "egress_guard.py"
+    },
+    {
+      "file": "memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md",
+      "line": 5,
+      "cited": "fleet_probe_v2.py"
     },
     {
       "file": "memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md",
@@ -2960,19 +2870,9 @@
       "cited": "runbook-notes.md"
     },
     {
-      "file": "memory/mechanic/reboot-drill-evidence-verify-2026-11-19.md",
-      "line": 6,
-      "cited": "goal_ledger.py"
-    },
-    {
       "file": "memory/mechanic/red-white-reachability-2026-11-14.md",
       "line": 10,
       "cited": "probe_fleet_1114b_result.json"
-    },
-    {
-      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
-      "line": 18,
-      "cited": "restart_portal.py"
     },
     {
       "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
@@ -2991,11 +2891,6 @@
     },
     {
       "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
-      "line": 63,
-      "cited": "restart_portal.py"
-    },
-    {
-      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
       "line": 64,
       "cited": "cycle_check.py"
     },
@@ -3008,11 +2903,6 @@
       "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
       "line": 70,
       "cited": "cycle_check.py"
-    },
-    {
-      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
-      "line": 71,
-      "cited": "restart_portal.py"
     },
     {
       "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
@@ -3100,9 +2990,89 @@
       "cited": "probe_fleet_8099_r80.py"
     },
     {
-      "file": "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md",
+      "file": "memory/ops/citation-phantom-triage-runbook.md",
+      "line": 25,
+      "cited": "weekly_digest.py"
+    },
+    {
+      "file": "memory/ops/citation-phantom-triage-runbook.md",
+      "line": 25,
+      "cited": "weekly-2026-W47.md"
+    },
+    {
+      "file": "memory/ops/citation-phantom-triage-runbook.md",
+      "line": 26,
+      "cited": "winrm_sspi_client.py"
+    },
+    {
+      "file": "memory/ops/citation-phantom-triage-runbook.md",
+      "line": 27,
+      "cited": "extract_decisions.py"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 13,
+      "cited": "memory/orchestrator/roster-snapshots/cycle-N.json"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 19,
+      "cited": "memory/archivist/retrieval-baseline.json"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 21,
+      "cited": "memory/archivist/dedup.py"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
       "line": 23,
-      "cited": "_portal_pid.txt"
+      "cited": "memory/archivist/provenance.py"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 26,
+      "cited": "memory/synthesis/decisions.json"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 30,
+      "cited": "memory/scribe/handoffs.json"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 32,
+      "cited": "memory/scribe/distill.py"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 34,
+      "cited": "memory/synthesis/archive-nav.md"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 36,
+      "cited": "memory/scribe/timeline.py"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 40,
+      "cited": "memory/mechanic/perf-profile.json"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 41,
+      "cited": "memory/mechanic/perf_profile.py"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 43,
+      "cited": "memory/mechanic/runbook.md"
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "line": 45,
+      "cited": "memory/mechanic/topology.py"
     },
     {
       "file": "memory/ops/design-token-lint-workflow.md",
@@ -3113,16 +3083,6 @@
       "file": "memory/ops/design-token-lint-workflow.md",
       "line": 54,
       "cited": "token_lint.py"
-    },
-    {
-      "file": "memory/ops/live-leg-runbook-2026-11-20.md",
-      "line": 19,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/ops/live-leg-runbook-2026-11-20.md",
-      "line": 21,
-      "cited": "elev.py"
     },
     {
       "file": "memory/ops/live-leg-runbook-2026-11-20.md",
@@ -3153,11 +3113,6 @@
       "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
       "line": 11,
       "cited": "probe_winrm_r17.txt"
-    },
-    {
-      "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
-      "line": 14,
-      "cited": "_portal_pid.txt"
     },
     {
       "file": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
@@ -3211,11 +3166,6 @@
     },
     {
       "file": "memory/ops/non-sandbox-queue.md",
-      "line": 7,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/ops/non-sandbox-queue.md",
       "line": 18,
       "cited": "memory/mechanic/batch-tier-b-run.json"
     },
@@ -3227,17 +3177,17 @@
     {
       "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
       "line": 5,
+      "cited": "designer/index-patched-v2.html"
+    },
+    {
+      "file": "memory/ops/orch-veto-wholecopy-v3-2026-11-16.md",
+      "line": 5,
       "cited": "index-patched-v3.html"
     },
     {
       "file": "memory/ops/pdf-reporting.md",
       "line": 3,
       "cited": "_gen_report.py"
-    },
-    {
-      "file": "memory/ops/portal-down-2026-11-16.md",
-      "line": 6,
-      "cited": "_portal_pid.txt"
     },
     {
       "file": "memory/ops/portal-down-2026-11-16.md",
@@ -3305,11 +3255,6 @@
       "cited": "mechanic-goal4-forecast-2026-11-17.md"
     },
     {
-      "file": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
-      "line": 80,
-      "cited": "goal_ledger.py"
-    },
-    {
       "file": "memory/ops/sla-report-2026-11-20.md",
       "line": 8,
       "cited": "memory/ops/portal-request-timings.jsonl"
@@ -3358,11 +3303,6 @@
       "file": "memory/ops/verifier-git-health-2026-11-15b.md",
       "line": 21,
       "cited": "MinGit-x/cmd/git.exe"
-    },
-    {
-      "file": "memory/ops/verifier-git-health-2026-11-15b.md",
-      "line": 23,
-      "cited": "mingit/cmd/git.exe"
     },
     {
       "file": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
@@ -3415,24 +3355,9 @@
       "cited": "_studio_get/_studio_post"
     },
     {
-      "file": "memory/orchestrator/goal1-hotload-tier-a-2026-11-20.md",
-      "line": 4,
-      "cited": "hotload_exec.py"
-    },
-    {
-      "file": "memory/orchestrator/goal1-hotload-tier-a-2026-11-20.md",
-      "line": 9,
-      "cited": "hotload_exec.py"
-    },
-    {
       "file": "memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md",
       "line": 25,
       "cited": "py_compile agent_portal.py"
-    },
-    {
-      "file": "memory/orchestrator/mirror_repair_progress_2026-11-17.md",
-      "line": 4,
-      "cited": "mirror_repair.py"
     },
     {
       "file": "memory/orchestrator/mirror_repair_progress_2026-11-17.md",
@@ -3446,43 +3371,8 @@
     },
     {
       "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
-      "line": 5,
-      "cited": "retro_draft.py"
-    },
-    {
-      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
-      "line": 40,
-      "cited": "modularity_check.py"
-    },
-    {
-      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
       "line": 42,
       "cited": "build_registry.py"
-    },
-    {
-      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
-      "line": 53,
-      "cited": "goal_cycle_auto.py"
-    },
-    {
-      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
-      "line": 54,
-      "cited": "mirror_repair.py"
-    },
-    {
-      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
-      "line": 58,
-      "cited": "hotline_triage.py"
-    },
-    {
-      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
-      "line": 61,
-      "cited": "agents_schema.py"
-    },
-    {
-      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
-      "line": 163,
-      "cited": "retro_draft.py"
     },
     {
       "file": "memory/orchestrator/roster-diff-built-2026-11-18.md",
@@ -3531,23 +3421,43 @@
     },
     {
       "file": "memory/portal/architecture.md",
-      "line": 7,
-      "cited": "mingit/cmd/git.exe"
-    },
-    {
-      "file": "memory/portal/architecture.md",
       "line": 57,
       "cited": "uploads/uploads"
     },
     {
-      "file": "memory/portal/architecture.md",
-      "line": 147,
-      "cited": "chat_history_group.json"
+      "file": "memory/portal/design-tokens-live.md",
+      "line": 7,
+      "cited": "design_breakpoint_check.py"
+    },
+    {
+      "file": "memory/portal/increment2.md",
+      "line": 2,
+      "cited": "ws-b-increment1/index.html"
+    },
+    {
+      "file": "memory/portal/increment2.md",
+      "line": 5,
+      "cited": "ws-b-increment1/index.html"
+    },
+    {
+      "file": "memory/portal/increment2.md",
+      "line": 5,
+      "cited": "designer/increment2-portal-mock.html"
+    },
+    {
+      "file": "memory/portal/increment2.md",
+      "line": 28,
+      "cited": "designer/increment2-portal-mock.html"
     },
     {
       "file": "memory/portal/increment2.md",
       "line": 30,
       "cited": "setBusyHint/clearBusyHint"
+    },
+    {
+      "file": "memory/portal/increment2.md",
+      "line": 37,
+      "cited": "designer/increment2-portal-mock.html"
     },
     {
       "file": "memory/portal/planning-2026-11-13.md",
@@ -3575,9 +3485,34 @@
       "cited": "../../etc/passwd"
     },
     {
+      "file": "memory/portal/ui-upgrades-r4.md",
+      "line": 27,
+      "cited": "ws-b-increment1/index.html"
+    },
+    {
+      "file": "memory/portal/ui-upgrades-r4.md",
+      "line": 28,
+      "cited": "designer/increment2-portal-mock.html"
+    },
+    {
       "file": "memory/portal/upgrade-plan.md",
       "line": 27,
       "cited": "BUNDLE-SHA256.txt"
+    },
+    {
+      "file": "memory/portal/upgrade-plan.md",
+      "line": 72,
+      "cited": "ws-b-increment1/index.html"
+    },
+    {
+      "file": "memory/portal/upgrade-plan.md",
+      "line": 82,
+      "cited": "ws-b-increment1/index.html"
+    },
+    {
+      "file": "memory/portal/upgrade-plan.md",
+      "line": 82,
+      "cited": "designer/increment2-portal-mock.html"
     },
     {
       "file": "memory/portal/v1-inventory.md",
@@ -3651,7 +3586,7 @@
     },
     {
       "file": "memory/researcher/INDEX.md",
-      "line": 10,
+      "line": 11,
       "cited": "app.css"
     },
     {
@@ -3741,11 +3676,6 @@
     },
     {
       "file": "memory/researcher/dcabots-reprompt-precheck-2026-11-14.md",
-      "line": 7,
-      "cited": "projects/dcabots/dcabots/farm.py"
-    },
-    {
-      "file": "memory/researcher/dcabots-reprompt-precheck-2026-11-14.md",
       "line": 14,
       "cited": "results/e14/caches/llm_responses.jsonl"
     },
@@ -3766,6 +3696,21 @@
     },
     {
       "file": "memory/researcher/designer-goal1-2-false-verify-audit-2026-11-20.md",
+      "line": 6,
+      "cited": "ui/interactions.css"
+    },
+    {
+      "file": "memory/researcher/designer-goal1-2-false-verify-audit-2026-11-20.md",
+      "line": 6,
+      "cited": "ui/animations.css"
+    },
+    {
+      "file": "memory/researcher/designer-goal1-2-false-verify-audit-2026-11-20.md",
+      "line": 6,
+      "cited": "ui/interactions.js"
+    },
+    {
+      "file": "memory/researcher/designer-goal1-2-false-verify-audit-2026-11-20.md",
       "line": 9,
       "cited": "app.css"
     },
@@ -3780,89 +3725,14 @@
       "cited": "\u2192 TODO_completed.md"
     },
     {
-      "file": "memory/researcher/e14-r41-reverify-2026-11-14.md",
-      "line": 5,
-      "cited": "researcher-r41-e14-probe.py"
-    },
-    {
-      "file": "memory/researcher/e14-r41-reverify-2026-11-14.md",
-      "line": 6,
-      "cited": "projects/dcabots/results/e14/caches/llm_responses.jsonl"
-    },
-    {
-      "file": "memory/researcher/e14-r41-reverify-2026-11-14.md",
-      "line": 7,
-      "cited": "projects/dcabots/dcabots/e14.py"
-    },
-    {
-      "file": "memory/researcher/e14-r41-reverify-2026-11-14.md",
-      "line": 9,
-      "cited": "researcher-r41-e14-probe.py"
-    },
-    {
-      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
-      "line": 50,
-      "cited": "goal_cycle_check.py"
-    },
-    {
-      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
-      "line": 50,
-      "cited": "todo_freshness_check.py"
-    },
-    {
-      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
-      "line": 51,
-      "cited": "citation_monitor_v2.py"
-    },
-    {
-      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
-      "line": 51,
-      "cited": "model_benchmark.py"
-    },
-    {
-      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
-      "line": 51,
-      "cited": "open_questions_flag.py"
-    },
-    {
-      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
-      "line": 23,
-      "cited": "citation_monitor_v2.py"
-    },
-    {
-      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
-      "line": 24,
-      "cited": "model_benchmark.py"
-    },
-    {
       "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
       "line": 24,
       "cited": "benchmark-summary-2026-11-16.md"
     },
     {
-      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
-      "line": 25,
-      "cited": "open_questions_flag.py"
-    },
-    {
-      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
-      "line": 55,
-      "cited": "citation_monitor_v2.py"
-    },
-    {
-      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
-      "line": 56,
-      "cited": "model_benchmark.py"
-    },
-    {
       "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
       "line": 56,
       "cited": "benchmark-summary-2026-11-16.md"
-    },
-    {
-      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
-      "line": 57,
-      "cited": "open_questions_flag.py"
     },
     {
       "file": "memory/researcher/farm-relpath-diagnosis-2026-11-14.md",
@@ -3918,11 +3788,6 @@
       "file": "memory/researcher/kg_integrity_to_vs_target-2026-11-19.md",
       "line": 9,
       "cited": "from/target/marker"
-    },
-    {
-      "file": "memory/researcher/live-leg-runbook-contribution-2026-11-20.md",
-      "line": 10,
-      "cited": "elev.py"
     },
     {
       "file": "memory/researcher/memory-health-endpoint-reverted-2026-11-16.md",
@@ -3986,13 +3851,18 @@
     },
     {
       "file": "memory/researcher/open-questions-log.md",
-      "line": 129,
-      "cited": "mingit/cmd/git.exe"
+      "line": 142,
+      "cited": "Z:\\index.html"
     },
     {
-      "file": "memory/researcher/outside-click-false-alarm-r76-2026-11-14.md",
-      "line": 13,
-      "cited": "index_v22.html"
+      "file": "memory/researcher/open-questions-log.md",
+      "line": 142,
+      "cited": "Z:\\index.html"
+    },
+    {
+      "file": "memory/researcher/open-questions-log.md",
+      "line": 143,
+      "cited": "Z:\\index.html"
     },
     {
       "file": "memory/researcher/outside-click-false-alarm-r76-2026-11-14.md",
@@ -4008,11 +3878,6 @@
       "file": "memory/researcher/pid-10692-provenance-and-probe-wall-2026-11-14.md",
       "line": 4,
       "cited": "\"$new\" | Set-Content _portal_pid.txt"
-    },
-    {
-      "file": "memory/researcher/pid-10692-provenance-and-probe-wall-2026-11-14.md",
-      "line": 5,
-      "cited": "_portal_pid.txt"
     },
     {
       "file": "memory/researcher/pid-10692-provenance-and-probe-wall-2026-11-14.md",
@@ -4217,11 +4082,6 @@
     {
       "file": "memory/researcher/unified-loader-offline-surface-2026-11-20.md",
       "line": 22,
-      "cited": "elev.py"
-    },
-    {
-      "file": "memory/researcher/unified-loader-offline-surface-2026-11-20.md",
-      "line": 22,
       "cited": "Z:\\elev.py"
     },
     {
@@ -4280,19 +4140,9 @@
       "cited": "citation_audit_v2.py"
     },
     {
-      "file": "memory/scribe/compression-fidelity-audit2-2026-11-18.md",
-      "line": 12,
-      "cited": "sot_audit.py"
-    },
-    {
       "file": "memory/scribe/compression-fidelity-audit2-prep-2026-11-18.md",
       "line": 20,
       "cited": "compression-fidelity-audit-2026-11-25.md"
-    },
-    {
-      "file": "memory/scribe/cycle9-narrative-discrepancy-resolved-2026-11-18.md",
-      "line": 35,
-      "cited": "goal_ledger.py"
     },
     {
       "file": "memory/scribe/durable-check-delta-2026-11-18.md",
@@ -4308,11 +4158,6 @@
       "file": "memory/scribe/g3-hotfile-guard-evidence-2026-11-16.md",
       "line": 18,
       "cited": "memory/scribe/archive/hot-notes-trimmed-2026-11-16.md"
-    },
-    {
-      "file": "memory/scribe/g8-round-record-prefill-2026-11-16.md",
-      "line": 7,
-      "cited": "_portal_pid.txt"
     },
     {
       "file": "memory/scribe/g8-round-record-prefill-2026-11-16.md",
@@ -4363,11 +4208,6 @@
       "file": "memory/scribe/memory-hygiene-2026-W47.md",
       "line": 36,
       "cited": "manifest-20261118.json"
-    },
-    {
-      "file": "memory/scribe/open-items-scan-scoping-fix-2026-11-19.md",
-      "line": 24,
-      "cited": "goal_ledger.py"
     },
     {
       "file": "memory/scribe/stale-claim-builder-handoff-g2-2026-11-18.md",
@@ -4435,6 +4275,11 @@
       "cited": "memory/scribe/index_html_pre-r14-ac5e1560\u2026adb.html"
     },
     {
+      "file": "memory/synthesis/2026-11-13-planning-meeting.md",
+      "line": 13,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
       "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
       "line": 10,
       "cited": "uploads\\dcabots"
@@ -4483,16 +4328,6 @@
       "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
       "line": 12,
       "cited": "goals_api.py"
-    },
-    {
-      "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
-      "line": 24,
-      "cited": "goal_ledger.py"
-    },
-    {
-      "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
-      "line": 41,
-      "cited": "goal_ledger.py"
     },
     {
       "file": "memory/synthesis/2026-11-14-dream-big-r57-closeout.md",
@@ -4696,6 +4531,11 @@
     },
     {
       "file": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "line": 12,
+      "cited": "designer/staged/variant_8ef4e2227a7a.html"
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-white-rename-closeout.md",
       "line": 16,
       "cited": "ac_a2_live_leg_r20.py"
     },
@@ -4721,11 +4561,6 @@
     },
     {
       "file": "memory/synthesis/2026-11-15-status-report.md",
-      "line": 9,
-      "cited": "_portal_pid.txt"
-    },
-    {
-      "file": "memory/synthesis/2026-11-15-status-report.md",
       "line": 12,
       "cited": "goal_provenance.py"
     },
@@ -4738,21 +4573,6 @@
       "file": "memory/synthesis/2026-11-15-status-report.md",
       "line": 31,
       "cited": "goals_data.json"
-    },
-    {
-      "file": "memory/synthesis/2026-11-15-wedge-recovery-portal-down.md",
-      "line": 9,
-      "cited": "user_messages.json"
-    },
-    {
-      "file": "memory/synthesis/2026-11-15-wedge-recovery-portal-down.md",
-      "line": 12,
-      "cited": "recover_force_result.json"
-    },
-    {
-      "file": "memory/synthesis/2026-11-16-contradiction-rulings.md",
-      "line": 6,
-      "cited": "sot_audit.py"
     },
     {
       "file": "memory/synthesis/2026-11-16-r1-round-record-DRAFT.md",
@@ -4905,11 +4725,6 @@
       "cited": "verifier_black_lan_probe_r82_result.json"
     },
     {
-      "file": "memory/verifier/ac-a2-2-live-leg-r82-seat-correction-2026-11-14.md",
-      "line": 20,
-      "cited": "_portal_pid.txt"
-    },
-    {
       "file": "memory/verifier/ac-a2-black-seat-r30.md",
       "line": 8,
       "cited": "ac_a2_live_leg_r21.py"
@@ -4965,9 +4780,9 @@
       "cited": "ac_a2_live_leg_r20.py"
     },
     {
-      "file": "memory/verifier/ac-a2-r21-sweep-2026-11-14.md",
-      "line": 29,
-      "cited": "projects/dcabots/dcabots/farm.py"
+      "file": "memory/verifier/ac-a2-r22-sweep-2026-11-14.md",
+      "line": 15,
+      "cited": "designer/staged/variant_8ef4e2227a7a.html"
     },
     {
       "file": "memory/verifier/ac-a2-r22-sweep-2026-11-14.md",
@@ -5130,6 +4945,16 @@
       "cited": "interactions.js"
     },
     {
+      "file": "memory/verifier/designer-goal1-2-stale-claim-verify-2026-11-20.md",
+      "line": 29,
+      "cited": "ui/interactions.css"
+    },
+    {
+      "file": "memory/verifier/designer-goal1-2-stale-claim-verify-2026-11-20.md",
+      "line": 29,
+      "cited": "ui/animations.css"
+    },
+    {
       "file": "memory/verifier/designer-goal8-verify-2026-11-17.md",
       "line": 13,
       "cited": "goal8_typography_check.py"
@@ -5138,6 +4963,11 @@
       "file": "memory/verifier/designer-goal8-verify-2026-11-17.md",
       "line": 33,
       "cited": "goal10-design-check-pass-2026-11-17.md"
+    },
+    {
+      "file": "memory/verifier/designer-goal8-verify-2026-11-17.md",
+      "line": 35,
+      "cited": "design_check.py"
     },
     {
       "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
@@ -5295,11 +5125,6 @@
       "cited": "memory_mirror_ownership.json"
     },
     {
-      "file": "memory/verifier/goal6-concurrency-stress-evidence-2026-11-18.md",
-      "line": 17,
-      "cited": "elev.py"
-    },
-    {
       "file": "memory/verifier/goals-naming-ruling-2026-11-13.md",
       "line": 5,
       "cited": "orchestrator.md"
@@ -5345,9 +5170,9 @@
       "cited": "knowledge_graph.json"
     },
     {
-      "file": "memory/verifier/llm-selector-verify-2026-11-17.md",
-      "line": 4,
-      "cited": "llm_selector.py"
+      "file": "memory/verifier/load-probe-hotnote-closure-2026-11-17.md",
+      "line": 15,
+      "cited": "Z:\\memory\\ops\\load_probe.py"
     },
     {
       "file": "memory/verifier/mechanic-goal1-loadprobe-status-2026-11-18.md",
@@ -5575,6 +5400,36 @@
       "cited": "_lint_test_v2_clean.md"
     },
     {
+      "file": "memory/verifier/stale-claim-winrm-pool-2026-11-20.md",
+      "line": 16,
+      "cited": "winrm_check_batch.bat"
+    },
+    {
+      "file": "memory/verifier/stale-claim-winrm-pool-2026-11-20.md",
+      "line": 17,
+      "cited": "winrm_raw_test.py"
+    },
+    {
+      "file": "memory/verifier/stale-claim-winrm-pool-2026-11-20.md",
+      "line": 18,
+      "cited": "winrm_sspi_client.py"
+    },
+    {
+      "file": "memory/verifier/stale-claim-winrm-pool-2026-11-20.md",
+      "line": 19,
+      "cited": "winrm_verify_legs.py"
+    },
+    {
+      "file": "memory/verifier/stale-claim-winrm-pool-2026-11-20.md",
+      "line": 20,
+      "cited": "winrm_verify_result.json"
+    },
+    {
+      "file": "memory/verifier/stale-claim-winrm-pool-2026-11-20.md",
+      "line": 24,
+      "cited": "winrm_pool.py"
+    },
+    {
       "file": "memory/verifier/stale-pointer-fix-orchestrator-goal9-2026-11-20.md",
       "line": 12,
       "cited": "memory/orchestrator/goal9-perf-rad"
@@ -5595,24 +5450,19 @@
       "cited": "probe_fleet_1114b.py"
     },
     {
-      "file": "memory/verifier/task-path-resolution-2026-11-15.md",
-      "line": 3,
-      "cited": "fleet_probe.py"
-    },
-    {
-      "file": "memory/verifier/task-path-resolution-2026-11-15.md",
-      "line": 3,
-      "cited": "daily_git_commit.py"
-    },
-    {
       "file": "memory/verifier/ui-slices-verify-2026-11-17.md",
       "line": 27,
       "cited": ".status-dot.ok/.warn/.err"
     },
     {
       "file": "memory/verifier/v2-artifact-lost-2026-11-15.md",
-      "line": 17,
-      "cited": "goal_ledger.py"
+      "line": 6,
+      "cited": "apply_designer_goals_patch_v2.py"
+    },
+    {
+      "file": "memory/verifier/v2-artifact-lost-2026-11-15.md",
+      "line": 7,
+      "cited": "apply_designer_goals_patch.py"
     },
     {
       "file": "memory/workspace/INDEX.md",
@@ -5643,7 +5493,62 @@
       "file": "memory/workspace/INDEX.md",
       "line": 73,
       "cited": "memory/agents/INDEX.md"
+    },
+    {
+      "file": "news-report-2026-11-10.md",
+      "line": 58,
+      "cited": "news_report_2026-11-10.md"
+    },
+    {
+      "file": "orchestrator-v102-d13-scoped-verdict.md",
+      "line": 6,
+      "cited": "run_checks.py"
+    },
+    {
+      "file": "orchestrator-v102-d13-scoped-verdict.md",
+      "line": 6,
+      "cited": "check_black_models.py"
+    },
+    {
+      "file": "orchestrator-v102-d13-scoped-verdict.md",
+      "line": 6,
+      "cited": "run_checks.py"
+    },
+    {
+      "file": "orchestrator-v102-d13-scoped-verdict.md",
+      "line": 8,
+      "cited": "run_checks.py"
+    },
+    {
+      "file": "orchestrator-v102-d13-scoped-verdict.md",
+      "line": 19,
+      "cited": "run_checks.py"
+    },
+    {
+      "file": "orchestrator-v102-final-state.md",
+      "line": 12,
+      "cited": "git-bootstrap/bootstrap.bat"
+    },
+    {
+      "file": "orchestrator-v102-h3-amendment.md",
+      "line": 21,
+      "cited": "ui-upgrades-r4.md"
+    },
+    {
+      "file": "orchestrator-v102-h3-final.md",
+      "line": 6,
+      "cited": "studio_exec_m0nosxag.py"
+    },
+    {
+      "file": "orchestrator-v102-h3-update.md",
+      "line": 6,
+      "cited": "studio_exec_m4eknbmh.py"
+    },
+    {
+      "file": "orchestrator-v102-h3-update.md",
+      "line": 12,
+      "cited": "ui-upgrades-r4.md"
     }
   ],
-  "skipped_non_citation": 9724
+  "skipped_non_citation": 9888
 }

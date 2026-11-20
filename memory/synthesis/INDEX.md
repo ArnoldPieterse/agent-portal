@@ -39,3 +39,5 @@ Open-item gate status: see TODO.md LIVE PLAN (do not duplicate it here).
 - [index-pointer-batch-r58-canonical-append.md](memory/synthesis/index-pointer-batch-r58-canonical-append.md) | Index pointer batch r58 canonical append
 - [index-pointer-handoff-r38.md](memory/synthesis/index-pointer-handoff-r38.md) | Index pointer handoff r38
 - [index-replay-r81-24of24-canonical.md](memory/synthesis/index-replay-r81-24of24-canonical.md) | Index replay r81 24/24 canonical
+
+- `archive-nav.md` — theme-organized navigation index (Orchestrator assist Scribe#7, 2026-11-20)

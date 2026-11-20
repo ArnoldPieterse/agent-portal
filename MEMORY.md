@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 (Knowledge Distillation) advanced: distill.py built, refined to exclude cards dir & metadata; 25-fact card verified clean; not yet c
-- Goal #9 closed: memory/mechanic/run
-- interactions.css is dead code (not imported anywhere); fix: add @import to app.css, delete duplicated :hover rules from app.css
 - Goal #6 (Synthesis Quality Scoring) closed: built synthesis_quality.py + /api/synthesis/quality endpoint; vague<40, specific>80 verified.
 - Mirror cycle restores deleted files (source retains them); compaction deletions won't persist until source-side fix or ignore rule added.
 - Goal #6 Archive Compaction closed: 33.4% reduction achieved (target ≥30%), archive now 365.4 KB after removing 90.9 KB duplicates.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe Goal #7 done: archive-nav.md (12.1KB) indexes 84 files across 11 themes; v102 summary corrected to match source.
 - Goal #1 complete
 - Archivist goal #9 (KG Export) marked "reached" but kg_export.py and kg-export.jsonld don't exist — stale ledger claim, evidence at memory/ve
+- pywinrm un-installable (pip PermissionError on uv-managed Python); remote WinRM exec on PALE/BLACK/RED still blocked.
+- Verifier found Archivist Goal 9 (kg_export.py) falsely marked "reached" in
+- Goal #9 (KG Export) falsely marked "reached" in ledger — artifact kg_export
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
