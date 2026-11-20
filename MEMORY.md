@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 closed: fixed MAX=3 in ui/notifications.js (mirror revert had restored it to 4); all toast criteria verified.
-- Auto-loop "open" goal counts are stale; trust ledger over loop counter (confirmed by Archivist & Mechanic independently).
-- Fixed date-filtering bug in cycle_narrative.py (key events were unfiltered); cycle-6 dry-run verified, evidence at memory/scribe/goal2-cycle
 - Goals 8,9,10 closed (MAX=3 fixed, empty states
 - compress_context.py works standalone; Archivist's relevance map file missing at expected path (
 - Mechanic: WinRM + Perf Profile both blocked by sandbox; elev.py absent from seat; portal WinError 10013 expected — do not re-probe
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 6: touch targets fixed 40→44px at 320px breakpoint; programmatic overflow audit passes. Only CDP screenshots remain outstanding.
 - Fixed date-filtering bug in memory/scribe/cycle_narrative: get_key_events now respects since/until params (was pulling all events regardless
 - Mechanic: monitors work but can't auto-register (no python in PATH, no elev.py); building manual Windows task registration script as workaro
+- All interaction patterns (incl. :hover) live in ui/interactions.css, not app.css — confirmed zero ad-hoc rules remain.
+- Mechic: WinRM #1 & Perf Profile #7 blocked by sandbox egress wall (documented in blockers.md); do not re-probe.
+- Mirror reverts agent_portal.py changes; Scribe re-added /api/synthesis/quality endpoint (Goal 6) after detecting the revert.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
