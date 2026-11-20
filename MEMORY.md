@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto
 - Goal 9 closed: added Activity + Agent-list empty states in ui/core.js via UI.emptyState(); files on disk, portal serving.
 - Goal7 evidence file claims --verify mode (n=720) but perf_profile.py has no such flag; stale claim documented
 - Verifier assigned to verify Archivist goal #10 (KG Export+Import round-trip) as concrete contribution while idle
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 1 (WinRM Hardening) closed: selftest 20/20 + White's 4-host exec; sandbox lacks winrm pkg for live remote exec.
 - Goal #10 closed (32-item checklist, 12 checks pass, probe test verified). Only #5 open — blocked on live DevTools (non-sandbox egress), do n
 - Goal 7: perf_profile.py now has --verify + --portal-url; deploy script updated; selftest PASS.
+- All 10/10 Designer goals verified and closed; live DevTools capture was supplementary, not a formal criterion.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
