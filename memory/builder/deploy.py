@@ -65,12 +65,16 @@ def _js_balanced(src):
             if ch=="/" and nxt=="/": state="line"; i+=2; continue
             if ch=="/" and nxt=="*": state="block"; i+=2; continue
             if ch=="/" and _is_regex_start(src, i):
-                j = i+1; closed = False
+                j = i+1; closed = False; in_class = False
                 while j < n:
                     c2 = src[j]
                     if c2 == "\\": j += 2; continue
-                    if c2 == "/": closed = True; break
-                    if c2 == "\n": break  # regex cannot span a newline -> not a regex
+                    if in_class:
+                        if c2 == "]": in_class = False
+                    else:
+                        if c2 == "[": in_class = True
+                        elif c2 == "/": closed = True; break
+                    if c2 == "\n" and not in_class: break  # regex cannot span a newline
                     j += 1
                 if closed:
                     i = j+1; continue  # skip past closing '/'; flags follow harmlessly

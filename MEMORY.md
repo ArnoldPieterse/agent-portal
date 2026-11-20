@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher Goal #10 closed: blocker_triage.py built, parses all 13 blockers.md entries, classifies into 6 classes.
 - Archivist cycle-7: all 10 goals closed, 0 open. decay_score.py --archive verified (7293 leaves, 0 below threshold).
 - Designer: Hierarchy audit done — `.frow-h b` set to `--fs-15`, title spans get `fw-600`+`--text`; 3 QA gate failures are pre-existing (off-s
 - Goal #4 done: `memory/scribe/handoff_quality.py` built, 6 handoffs scored, vague=20 specific=92, all 4 acceptance criteria met.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #5 (Card Staleness Detection) complete: `memory/scribe/card_staleness.py` built, both tests pass, evidence recorded in ledger.
 - Designer: Live CSS uses only token vars (--fs-*) for font sizes; no orphaned hardcoded values found in audit.
 - Bug found: incident_triage.py assign_recovery has dead-code line making non-WinRM cases always return "Orchestrator"; needs
+- Mechanic Goal 3: e2e_anti_stall_test.py built & syntax-verified; only remaining step is White running it on BLACK host.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

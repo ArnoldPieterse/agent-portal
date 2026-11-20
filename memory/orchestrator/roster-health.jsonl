@@ -1,0 +1,34 @@
+{"ts": "2026-11-20T12:51:58Z", "agent": "orchestrator", "ok": true, "latency_ms": 159, "mode": "simulate"}
+{"ts": "2026-11-20T12:51:58Z", "agent": "researcher", "ok": true, "latency_ms": 855, "mode": "simulate"}
+{"ts": "2026-11-20T12:51:58Z", "agent": "builder", "ok": true, "latency_ms": 919, "mode": "simulate"}
+{"ts": "2026-11-20T12:51:58Z", "agent": "verifier", "ok": true, "latency_ms": 312, "mode": "simulate"}
+{"ts": "2026-11-20T12:51:58Z", "agent": "designer", "ok": true, "latency_ms": 354, "mode": "simulate"}
+{"ts": "2026-11-20T12:51:58Z", "agent": "archivist", "ok": true, "latency_ms": 898, "mode": "simulate"}
+{"ts": "2026-11-20T12:51:58Z", "agent": "scribe", "ok": true, "latency_ms": 268, "mode": "simulate"}
+{"ts": "2026-11-20T12:51:58Z", "agent": "mechanic", "ok": true, "latency_ms": 663, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:05Z", "agent": "orchestrator", "ok": true, "latency_ms": 136, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:05Z", "agent": "researcher", "ok": true, "latency_ms": 371, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:05Z", "agent": "builder", "ok": true, "latency_ms": 207, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:05Z", "agent": "verifier", "ok": false, "latency_ms": 30000, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:05Z", "agent": "designer", "ok": true, "latency_ms": 905, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:05Z", "agent": "archivist", "ok": true, "latency_ms": 147, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:05Z", "agent": "scribe", "ok": true, "latency_ms": 177, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:05Z", "agent": "mechanic", "ok": true, "latency_ms": 324, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:11Z", "agent": "orchestrator", "ok": true, "latency_ms": 125, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:11Z", "agent": "researcher", "ok": true, "latency_ms": 370, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:11Z", "agent": "builder", "ok": true, "latency_ms": 281, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:11Z", "agent": "verifier", "ok": false, "latency_ms": 30000, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:11Z", "agent": "designer", "ok": true, "latency_ms": 681, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:11Z", "agent": "archivist", "ok": true, "latency_ms": 362, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:11Z", "agent": "scribe", "ok": true, "latency_ms": 214, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:11Z", "agent": "mechanic", "ok": true, "latency_ms": 874, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:11Z", "type": "NEEDS-HUMAN", "alerts": ["verifier:2consec"], "mode": "simulate"}
+{"ts": "2026-11-20T12:52:14Z", "agent": "orchestrator", "ok": true, "latency_ms": 599, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:14Z", "agent": "researcher", "ok": true, "latency_ms": 356, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:14Z", "agent": "builder", "ok": true, "latency_ms": 217, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:14Z", "agent": "verifier", "ok": false, "latency_ms": 30000, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:14Z", "agent": "designer", "ok": true, "latency_ms": 620, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:14Z", "agent": "archivist", "ok": true, "latency_ms": 343, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:14Z", "agent": "scribe", "ok": true, "latency_ms": 641, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:14Z", "agent": "mechanic", "ok": true, "latency_ms": 270, "mode": "simulate"}
+{"ts": "2026-11-20T12:52:14Z", "type": "NEEDS-HUMAN", "alerts": ["verifier:2consec"], "mode": "simulate"}
