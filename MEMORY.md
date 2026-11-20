@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 Orphan Remediation: classify logic fixed, 178 links applied, orphans dropped 180→2 (1 actionable remains in orchestrator/).
-- Goal 1 concurrent-load sub-item closed: 8 parallel winrm_pool commands passed, no cross-contamination, 27ms total (2026-11-20).
-- RECALL: - **M2** (`memory/goals/archive/researcher-2026-11-18.md:15`
 - Mirror cycle partially reverts Designer's CSS hierarchy fixes each pass; must re-land prior changes before adding new ones.
 - Goal 4 (Icon System): UI.iconSized() integrated into 4 panel files (16 calls), CSS v-align rule added to app.css, evidence at memory/designe
 - Goal 1 WinRM: NEEDS-HUMAN blocker confirmed (pywinrm pip PermissionError, powershell blocked, elev.py absent). Do NOT re-probe.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 7: `perf_profile.py` gained `--dry-run` (synthetic data, full loop + JSON); selftest PASS; only live :8099 egress remains blocked.
 - Goal #5 Typography: audit complete — all CSS/JS font-sizes use token scale (var(--fs-*)); only 2 literal SVG values off-token.
 - Goal 9 (Institutional Memory Search) closed: UI layer built (header search input, CSS, debounced JS calling /api/memory/search), pin at 58af
+- Goal 1 winrm_rotate.py built & local PASS; schtask reg still blocked by COM wall (no new entry needed).
+- Goal 10 (Weekly Synthesis Digest) passes all ACs (562 words, ≥5/cat); only `(verified:)` marker remains to record.
+- Goal 5: line-length constraints set — .msg min(78%,56ch), .thinkwrap min(62%,50ch), .dmseg .dmbody 72ch; all <75ch on wide viewports
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
