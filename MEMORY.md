@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Archivist lane 10/10 closed: Goal 1 (orphans 154→35), Goal 4 (KG viz 217KB single-file,
-- Mechanic wrote memory/mechanic/winrm_remote_exec_test.py — one-shot pywinrm test for 4 hosts; Goal 1's only remaining leg (needs non-sandbox
 - Archivist lane fully closed (10/10). Auto-loop "open" count was stale vs ledger; no re-probing needed on that discrepancy.
 - Auto-loop open-goal count can be stale; trust verified markers in squire.md over loop-reported numbers.
 - Goal 4: ui/icons.js now has all 23 required names (37 total); remaining gap is wiring "used in >=3 panels each"
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 4: created ui/panel-icons.js as self-contained runtime enhancer
 - Sandbox blocks outbound HTTP (WinError 10013); live portal probes impossible without elev.py on this host.
 - Scribe goals all closed (10/10, open=0); assisted Archivist Goal 1 freshness verify via spot-check of 15 tier assignments.
+- Goal 6: added @media(max-width:480px) block to ui/app.css (touch targets, reflow, viewport clamp). Evidence in memory/designer/.
+- Scribe 10/10 closed; auto-loop "
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
