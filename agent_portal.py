@@ -3645,7 +3645,7 @@ def _level_report_md(level, prev_sha, snap):
             lines.append("- " + t)
         lines.append("")
     lines += ["Next cycle: a new goal-setting round is armed (GOAL_RESET_PENDING); the next",
-              "100% on the fresh goal set will be level %d." % (level + 1)]
+              "100%% on the fresh goal set will be level %d." % (level + 1)]
     return "\n".join(lines) + "\n"
 
 
@@ -3666,9 +3666,10 @@ def _check_level_up(snap):
         head_sha = head_r["out"].strip() if head_r.get("ok") else ""
         os.makedirs(LEVELS_DIR, exist_ok=True)
         report_rel = "memory/levels/level_%d_%s.md" % (level, time.strftime("%Y%m%d-%H%M%S"))
-        try:
+        try:   # build BEFORE opening the file - a failed build must not leave a 0-byte report
+            md = _level_report_md(level, prev_sha, snap)
             with open(os.path.join(HERE, report_rel), "w", encoding="utf-8") as f:
-                f.write(_level_report_md(level, prev_sha, snap))
+                f.write(md)
         except Exception:
             pass
         entry = {"level": level, "ts": time.strftime("%Y-%m-%d %H:%M:%S"),

@@ -197,3 +197,5 @@
 {"ts": "2026-11-20 21:41:27", "file": "ui/fleet_health.js", "sha": "37e4143ebb", "size": 5191, "snapshot": null}
 {"ts": "2026-11-20 21:41:27", "file": "ui/fleet_status.js", "sha": "ef8b515321", "size": 2594, "snapshot": null}
 {"ts": "2026-11-20 21:41:27", "file": "ui/fleet_topology.js", "sha": "53774bbf64", "size": 9053, "snapshot": null}
+{"ts": "2026-11-20 22:08:31", "file": "ui/app.css", "sha": "9e8a369a19", "size": 31068, "snapshot": null}
+{"ts": "2026-11-20 22:08:31", "file": "ui/uploads.js", "sha": "c17a39fd92", "size": 36960, "snapshot": null}

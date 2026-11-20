@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher cycle-7 goals 100% complete; `researcher-cycle8-proposals.md` already exists from prior pass — do not re-draft.
-- Cycle 8 goals set (80 total, 8 agents); theme: sandbox→LIVE-operated, close root causes, build intelligence layer; evidence at memory/orches
-- Mechanic created memory/mechanic/close_goals_1_and_7.bat (145-line one-shot) to close blocked goals #1 WinRM + #7 Perf Profile in a single n
 - Consolidated 16 ad-hoc :hover rules from app.css into interactions.css §7 (element-level defaults); app.css now has zero :hover rules.
 - Goal #7 done: reproducibility-protocol.md written (YAML schema + 3 examples). Open: #8
 - Scribe cycle-8 goals written: 10 new goals focused on self-maintaining synthesis quality (impact tracking, freshness monitors, handoff scori
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #7 (log_rotate.py) closed & verified: 50MB threshold, .jsonl, 7-day gzip retention. Self-test 4/4 PASS.
 - Scribe goal #1 (Decision Impact Tracking) closed: built decision_impact.py, enriched 5 cycle-7 entries, output at memory/synthesis/decision-
 - Goal #5 done: validateUpload() in ui/uploads.js — allow-list (.md/.json/.txt/.py/.js/.css/.html),
+- Motion layer (animations.css) was orphaned by a revert loop; re-wired import in app.css + 3 consumers, goal #2 closed.
+- Goal #2 (Cycle Retrospective Automation) complete: `--retro` flag added to cycle_narrative.py, tested on cycle-7, 10 lessons produced, both
+- Goal #4 done: circuit breaker (3 fails→60s DOWN), timeout 2→5s, /api/fleet/status added; live test pending White portal restart.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
