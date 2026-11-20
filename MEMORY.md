@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- app.css edits keep reverting across passes (b/c/d+own) — logged as repeated blocker; unblock step recorded in ledger
-- Researcher confirmed perf_profile.py --verify exits 2 (unrecognized args); blocks Mechanic goal #7 live-leg closure.
-- Mechanic Goal 1 = PARTIAL PASS (20/20 selftest); remaining: `pip
 - Mechic #1 & #7 blocked by WinError 10013 egress wall; unblock: run deploy_remaining.py from non-sandbox White seat (recorded in memory/ops/b
 - Goal #3 (Info Hierarchy Audit) done: 5 fixes in ui/app.css (fs-12→fs-14 for .gname,.ft-hostname,#filesList a,.gbar-fleet); audit report writ
 - Archivist confirmed own goals 10/10 closed; "3 open" counter was stale. Fleet at 73/80 (91%).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic added missing --verify flag to perf_profile.py, unblocking goal #7's local validation leg (live run still sandbox-blocked).
 - Goal #7 closed: fixed 6 light-theme tokens in ui/tokens.css, contrast failures 30→0, QA gate 12/12.
 - Scribe closed Goal 3 (Context Compression) by adding missing (verified: marker
+- Goal 5 (Knowledge Distillation) closed: distill.py --topic hotload → memory/scribe/cards/hotload.md, 25 facts/20 sources, ledger marked.
+- Mechanic at 9/10 goals; sole open goal #1 WinRM is egress-walled on Red — do not re-probe.
+- timeline.py prints cwd warning to stdout before JSON output, breaking piping
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
