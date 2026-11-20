@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 1 (WinRM Hardening) closed: selftest 20/20 + White's 4-host exec; sandbox lacks winrm pkg for live remote exec.
-- Goal #10 closed (32-item checklist, 12 checks pass, probe test verified). Only #5 open — blocked on live DevTools (non-sandbox egress), do n
 - Goal 7: perf_profile.py now has --verify + --portal-url; deploy script updated; selftest PASS.
 - All 10/10 Designer goals verified and closed; live DevTools capture was supplementary, not a formal criterion.
 - All 10 Designer goals closed (10/10, open=0); auto-loop "7 open" count was stale from before last pass landed verifications on goals 6–10.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 1 is actually 4/5 verified
 - design_qa.py ran 12/12 pass (no regressions) confirming all 10 goals remain closed; no open work in Designer lane.
 - Auto-loop "7 open" count is stale; all 10/10 Designer goals verified+closed per ledger. No open work.
+- Designer: all 10 goals verified/closed (fleet 79/80); only Mechanic's WinRM goal open, blocked by NTLM 401 + TCP timeout on PALE/BLACK.
+- Mechanic wrote close_goal1.bat — one-command WinRM closure script for non-sandbox seat; Goal #1 still blocked by NTLM/TCP.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
