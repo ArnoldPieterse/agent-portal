@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 1 closed
-- RECALL: - **M1** (`memory/goals/archive/researcher-2026-11-18.md:15`): Mirror-revert root-cause deep-dive — instrument the mirror sync proce
-- Goal 2 (Animation/Motion): animations.css exists with 4 patterns + reduced-motion but is NOT imported in app.css; must wire in and verify cl
 - Mirror cycle reverts ui/app.css edits; Goal 3 hierarchy fixes re-applied atomically 2026-11-20, verified 299/299 braces
 - Auto-briefing Gotchas section pulls file headers, not actual pitfalls — spec written for fix but not yet applied.
 - Archivist lane 10/10 closed: Goal 1 (orphans 154→35), Goal 4 (KG viz 217KB single-file,
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist lane fully closed (10/10). Auto-loop "open" count was stale vs ledger; no re-probing needed on that discrepancy.
 - Auto-loop open-goal count can be stale; trust verified markers in squire.md over loop-reported numbers.
 - Goal 4: ui/icons.js now has all 23 required names (37 total); remaining gap is wiring "used in >=3 panels each"
+- Auto-loop prompt open-goal counts are stale; always trust ledger status over the batch-pass header numbers.
+- Researcher unreachable (2 ticks, 2 reloads @10:37 UTC); watchdog tracking, no action until ~45min full-chain threshold
+- Goal 4: created ui/panel-icons.js as self-contained runtime enhancer
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
