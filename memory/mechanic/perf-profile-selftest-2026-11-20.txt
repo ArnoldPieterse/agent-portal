@@ -1,0 +1,1 @@
+2026-11-20 perf_profile.py --selftest PASS: p50=50.5 p95=95.05 p99=99.01 (synthetic); JSON structure valid. Live leg still blocked by :8099 egress wall (NEEDS-HUMAN in blockers.md).
