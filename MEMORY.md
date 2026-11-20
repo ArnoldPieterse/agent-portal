@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 6: touch targets fixed 40→44px at 320px breakpoint; programmatic overflow audit passes. Only CDP screenshots remain outstanding.
-- Fixed date-filtering bug in memory/scribe/cycle_narrative: get_key_events now respects since/until params (was pulling all events regardless
-- Mechanic: monitors work but can't auto-register (no python in PATH, no elev.py); building manual Windows task registration script as workaro
-- All interaction patterns (incl. :hover) live in ui/interactions.css, not app.css — confirmed zero ad-hoc rules remain.
 - Mechic: WinRM #1 & Perf Profile #7 blocked by sandbox egress wall (documented in blockers.md); do not re-probe.
 - Mirror reverts agent_portal.py changes; Scribe re-added /api/synthesis/quality endpoint (Goal 6) after detecting the revert.
 - Goal 8 (Temporal Reasoning Layer) closed & verified: timeline.py re-run on 2026-11-14, no anachronisms, recorded in goal_ledger.
 - WinRM cred rotation check integrated into health_check.py; all 4 hosts OK, soonest rotation 90d out (Goal 1 progress).
 - Designer QA gate now 12/12; canonical font scale locked to 5 steps (12/14/15/18/24),
 - Built memory/synthesis/archive-nav.md (67 files, 6 themes) for Scribe's goal #7; provenance re-init at 6595 files, 97.1% coverage.
+- Designer: all 10 goals verified, design_qa.py 12/12 pass; "7 open" header is stale — do not re-probe
+- Archivist regression check 2026-11-20: 20/20 PASS, P@5=1.0, R@10=1.0, MRR=0.85; evidence at memory/archivist/reg
+- Wrote memory/mechanic/deploy_remaining.py — one-shot script closing Goals 1+7 (WinRM rotation + perf profile) when run from non-sandbox seat
+- All 10 Scribe goals verified (10/10); date-filter fix in cycle_narrative.py is vulnerable to mirror reverts — re-check if symptoms recur.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
