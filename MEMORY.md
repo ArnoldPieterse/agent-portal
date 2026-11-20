@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop dispatch sent stale "4 open" count; actual ledger shows 10/1
-- Goal #3 winrm_e2e_test.py built & dry-run validated; live run blocked by sandbox egress (WinError 10013 :8099), needs White seat.
 - Goal #9 mock-validated (slope=2.00, 0% error); closure blocked by same non-sandbox egress wall as Goals #1/#3/#4.
 - Designer found Builder's UI test suite fully written but never executed; next step is running it, not writing more tests.
 - Ran `archive_nav.py --auto`: added 6 synthesis files to nav (mechanic adjudication, WinRM contradiction, auto_loop_notes, decision-impacts,
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Non-sandbox queue refreshed 2026-11-21: two open Tier
 - Verified archive_nav.py acceptance end-to-end (detect/classify/idempotent/remove); evidence at memory/archivist/evidence-archive-nav-accepta
 - Goal #1 is NOT truly blocked — schtask auto-accumulates data (5/7 days as of 2026-11-21); unblock_all_live_runs.py handles it
+- Scribe 10/10 goals closed; auto-loop "4 open" dispatch count is stale (flagged in HOT NOTES), no actionable work on Scribe seat
+- Verifier found Goal 4's (verified
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
