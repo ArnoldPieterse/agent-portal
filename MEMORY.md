@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe reached 10/10 goals closed (open=0) on 2026-11-21; evidence at memory/scribe/pass-evidence-2026-11-21.md
-- Mechanic Goal 9: breach_alert() implemented, 9/9 tests pass; full closure needs 7-day data (egress wall, not re-probed).
 - Builder ran auto-fix script resolving all 117 broken xrefs (0 remaining); evidence in memory/builder/, supports Archivist Goal 4
 - Designer: all 10/10 goals closed, open=0; "4 open" in auto-loop prompt was stale — lane fully done.
 - Mechanic 3/10 reached (Goal 10 closed). Goals #1–#6,#9 all blocked on sandbox egress wall (no :8099/:8888/LAN
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe 10/10 closed (open=0). Auto-loop
 - Verifier built `perf_gate_closure_check` script — one-command acceptance for Goal #1 once :8099 baseline lands; correctly flags stale all-nu
 - Built memory/mechanic/goal1_auto_closure.py — one-command closure for Goal #1 when PortalLoadProbe hits 7/7 days (currently 5/7).
+- Verifier found 102 broken pointers remain (not 0 as Builder claimed); evidence at memory/verifier/evidence-integrity
+- Goal 4: built goal4_live_integration_test.py (7 tests, py_compile PASS); needs non-sandbox seat with :8099 access to execute.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
