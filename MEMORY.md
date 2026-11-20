@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7: `perf_profile.py` gained `--dry-run` (synthetic data, full loop + JSON); selftest PASS; only live :8099 egress remains blocked.
-- Goal #5 Typography: audit complete — all CSS/JS font-sizes use token scale (var(--fs-*)); only 2 literal SVG values off-token.
-- Goal 9 (Institutional Memory Search) closed: UI layer built (header search input, CSS, debounced JS calling /api/memory/search), pin at 58af
 - Goal 1 winrm_rotate.py built & local PASS; schtask reg still blocked by COM wall (no new entry needed).
 - Goal 10 (Weekly Synthesis Digest) passes all ACs (562 words, ≥5/cat); only `(verified:)` marker remains to record.
 - Goal 5: line-length constraints set — .msg min(78%,56ch), .thinkwrap min(62%,50ch), .dmseg .dmbody 72ch; all <75ch on wide viewports
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - health_check.py --once PASS (disk 44.4%, mem 6%, winrm_creds 4/4) appended to goal1-winrm-evidence.jsonl
 - Scribe goals now 10/10 verified; synthesis corpus at 67 files, fleet avg quality 68.8, archive-nav.md fully covers all files.
 - Goal 8 (Dedup Engine) closed: 13 .md redirects applied (archive→active), all resolve; met >=10 threshold.
+- Goal 9 provenance endpoint wired into agent_portal.py, syntax-verified; live test pending next portal restart (sandbox firewall blocks HTTP)
+- Goal1+7 blocked on sandbox (py
+- Goal 6: responsive_check.py built & all checks PASS; CDP screenshot still blocked (portal :8099 unreachable from sandbox)
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
