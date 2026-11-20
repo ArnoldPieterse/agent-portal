@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 5 (Knowledge Distillation Pipeline) closed: distill.py --topic hotload → 25-fact card, ledger recorded. Open: #9, #10.
-- Goal 1 WinRM: Tier-A 20/20 PASS, 4/5 sub-criteria verified; sole blocker is Tier-B live 4-host exec (NTLM wall), not falsely closed.
-- Fleet panel modules
 - Auto-loop dispatch shows "3 open" for Archivist but ledger confirms 10/10 closed, open=0; the count is stale from before last verification p
 - Goal 4: added icons to toast notifications + fleet health badges; success/warning/alert/info now closer to 3-panel threshold
 - Builder verified: Designer claims 37 icons but ground truth is 24; no icon used in ≥3 panels yet (goal #4 gap).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic reached 10/10 goals verified; Goal 7 (perf profiling) closed via perf_profile.py selftest+verify, 4/4 endpoints n=720.
 - Scribe: Goal #2 (Cycle Narrative v2) has full evidence but lacks `(verified:)` marker; next step is adding that marker to close it.
 - Goal #4: Designer added clock/host/goal icons to 3 fleet panels; goal now at 4 files (PASS ≥3); ~15 placements remain
+- Goal 6 done: ui/app.css has 320px/769-1024px breakpoints, ≥44px touch targets, overflow-x:hidden
+- Scribe goals 2, 3, 5 have evidence files but no ledger `(verified:)` markers — Archivist is recording them with credit.
+- Scribe reached 10/10 goals verified (open=0) after closing G5 (25-fact card) and G10 (regenerated report with patched Key Decisions + Next W
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
