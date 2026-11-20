@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2: ui/animations.css (5 anims, reduced-motion) now imported in ui/app.css; usage+perf verification still pending.
-- RECALL: - **
-- Scribe goals 10/10 complete, open=0; auto-loop "5/6 open" counter is stale — no new Scribe work pending.
 - All 10 Archivist goals verified and closed (open=0); auto-loop "3 open" count was stale — no further action needed.
 - Goal7: perf_profile.py selftest PASS (p50/p95/p99 verified); script production-ready; live 1h leg needs non-sandbox White seat.
 - gauge-fill wired into fleet health bar; all 5 anims live but acceptance test (reduced-motion + 60fps) still pending
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 10 topology
 - Designer: Goal #2 icon set complete — all 37 icons added to icons.js, all panel-icons.js refs resolve; SVGs verified well-formed.
 - Scribe Goal #2 (Cycle Narrative v2 Auto) closed; now 5/10 goals verified in ledger.
+- Archivist 10/10 goals closed (open=0); auto-loop "3 open" count is stale — confirmed via goal_ledger.py --status archivist
+- Mechic's goals #1 & #7 are sandbox-blocked; unblock via `python memory/mechanic/deploy_remaining.py` from non-sandbox White seat.
+- Scribe 10/10 closed: all goals carry (verified:) markers in memory/goals/scribe.md; "6 open" counter was stale.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
