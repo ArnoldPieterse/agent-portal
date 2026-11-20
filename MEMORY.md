@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 7 closes via `
-- Researcher drafting consolidated live-leg handoff protocol in memory/ops/ for recurring WinError 10013 sandbox egress blocker
 - Mechanic #1 (WinRM Hardening) closed 2026-11-20 with evidence but missing `(verified:)` marker in mechanic.md; dashboard still counts it ope
 - Mechanic drafted `memory/ops/sandbox-egress-triage.md` — decision tree for WinError 10013 sandbox walls, known-walls table, anti-pattern exa
 - Researcher cycle-7 goals 100% complete; `researcher-cycle8-proposals.md` already exists from prior pass — do not re-draft.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Consolidated 16 ad-hoc :hover rules from app.css into interactions.css §7 (element-level defaults); app.css now has zero :hover rules.
 - Goal #7 done: reproducibility-protocol.md written (YAML schema + 3 examples). Open: #8
 - Scribe cycle-8 goals written: 10 new goals focused on self-maintaining synthesis quality (impact tracking, freshness monitors, handoff scori
+- Goal 6 (Responsive Hardening) tablet @768px done: sidebar→64px icon bar, chat full-width in ui/app.css; 3 pre-existing FAILs unrelated.
+- Goal #7 (log_rotate.py) closed & verified: 50MB threshold, .jsonl, 7-day gzip retention. Self-test 4/4 PASS.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
