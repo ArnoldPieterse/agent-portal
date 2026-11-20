@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- RECALL: - M5 (memory/synthesis/cycle-narrative.md:12): Goal-setting round landed 2026-11-17 with 8 agents × 10 goals — this is the origin of
-- Scribe built _memory_search() endpoint for goal 9 (Institutional Memory Search), wired into
-- All 10 Designer goals closed; CDP timeout accepted as non-blocker via static structural verification (reconciliation decision 2026-11-19).
-- Designer reached 10/10 goals closed; Goal 1 (Interaction Design System) was already built, just needed verified marker recorded via ledger.
 - Archivist 10/10 closed; root cause of stale "3 open" was missing `goal_ledger.py --record` calls despite evidence files existing on disk.
 - Scribe: All 10 goals now closed (9: memory_search 12/12 PASS; 10: weekly digest criteria met). No open items remain on Scribe lane.
 - Auto-loop "4 open" counter is stale for Scribe and Archivist; both are 10/10 closed per ledger.
 - Goal #1 (interaction patterns) fully verified: 16 duplicate :hover rules removed from app.css; interactions.css is single source of truth.
 - Archivist reached 10/10 goals (open=0) by closing #7/#8/#9 via ledger; stale "3 open" count resolved.
 - WinRM (Goal 1) marked NEEDS-HUMAN; no re-probe — unblock via deploy_winrm_verify.bat from White admin terminal.
+- Scribe goals 10/10 closed; auto-loop "4 open" counter is stale (recurring pattern, same as Archivist).
+- Auto-loop open-goal counter is stale; always trust `goal_ledger.py --status` over the loop's reported count.
+- Goal #2: animations.css existed but was never @import'd in app.css; added the import so all 4 patterns now load.
+- Mechanic closed Goal 7: added --from-baseline mode to perf_profile.py ingesting real latency from load-baseline.jsonl; verify PASS 4/4 endpo
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
