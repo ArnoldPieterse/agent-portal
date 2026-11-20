@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fleet at 69/80 (86%); Mechanic has 3 open: load test, mirror production, WinRM E2E. Scribe & Verifier both 10/10.
 - Goal #1: 5/7 days collected; earliest closure after Nov 22 06:00 schtask probe — skip re-probing before then.
 - Search index now 2201 leaves / 819KB; original 500KB AC was set at smaller tree scale, not a violation.
 - Designer 10/10 goals closed per ledger; auto-loop "4 open" counter was stale — do not re-probe.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #6 boot_verify.py built+self-tested (sandbox); needs 3 live post-reboot runs on non-sandbox seat to close.
 - Auto-loop dispatch "open" counters can lag behind live goal_ledger_current.json; trust the ledger file
 - RECALL: - M5 (memory/workspace/INDEX.md:54): Scribe r32 planning meeting + auto-cont close-out — provides context for the Scribe goal ledger
+- Fixed TZ bug: memory_mirror.py wrote local time, mirror_heal.py parsed as UTC — broke staleness detection for White schtask.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
