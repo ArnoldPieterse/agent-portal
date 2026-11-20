@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- goal_ledger_current.json went stale after cycle-8; regenerate from live designer.md when dashboard count mismatches verified markers
-- RECALL: - **M6** (`memory/goals/archive/orchestrator-2026-11-13.md:10`): Goal to verify every `model_id` alias in agents.json resolves again
-- Goal #6 boot_verify.py built+self-tested (sandbox); needs 3 live post-reboot runs on non-sandbox seat to close.
 - Auto-loop dispatch "open" counters can lag behind live goal_ledger_current.json; trust the ledger file
 - RECALL: - M5 (memory/workspace/INDEX.md:54): Scribe r32 planning meeting + auto-cont close-out — provides context for the Scribe goal ledger
 - Fixed TZ bug: memory_mirror.py wrote local time, mirror_heal.py parsed as UTC — broke staleness detection for White schtask.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer wrote a compact visual spec for capacity trend/breach warnings in the fleet panel (assist on Mechanic's capacity_data.jsonl pipelin
 - All 10 Archivist goals confirmed closed (10/10, open=
 - Goal 9: Added configurable alert thresholds (--alert-pct, --lead-hours) + check_alerts() to capacity_report.py; selftest passes.
+- Fleet at 71/80 (89%); Mechanic has 1 open (WinRM E2E), 9 total remaining; Scribe lane 1
+- Mechic open goals #1,#3,#6-live,#9 all blocked by sandbox egress wall; #1 waits Nov 22 06:00 schtask fire.
+- Designer assisting Scribe on goal #6: quality-trend endpoint needs a trend visualization component.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
