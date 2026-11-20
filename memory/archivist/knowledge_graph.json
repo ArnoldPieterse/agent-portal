@@ -1,8 +1,8 @@
 {
- "root": "Workspace",
- "node_count": 6448,
- "edge_count": 614,
- "supersession_edges": 346,
+ "root": "",
+ "node_count": 7036,
+ "edge_count": 1543,
+ "supersession_edges": 372,
  "edges": [
   {
    "from": "memory/INDEX.md",
@@ -67,6 +67,46 @@
   {
    "from": "memory/archivist/apply_staged_patches.py",
    "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "to": "memory/archivist/knowledge_graph.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "to": "memory/archivist/knowledge_graph.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "to": "memory/workspace/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "to": "memory/workspace/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "to": "memory/portal/bugs/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "to": "memory/portal/bugs/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "to": "memory/workspace/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/citation-filepath-audit-2026-11-20.json",
+   "to": "memory/workspace/INDEX.md",
    "kind": "pointer"
   },
   {
@@ -142,6 +182,16 @@
   {
    "from": "memory/archivist/index-pointer-batch-r42.md",
    "to": "memory/archivist/provenance_audit.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/xref-monitor-selftest-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/xref-monitor-report-2026-11-20.md",
    "kind": "pointer"
   },
   {
@@ -290,11 +340,3876 @@
    "kind": "link"
   },
   {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/index-pointer-addendum-r43.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/archivist/INDEX.md",
+   "to": "memory/archivist/index-pointer-batch-r42.md",
+   "kind": "link"
+  },
+  {
    "from": "memory/archivist/ingest.py",
    "to": "memory/archivist/ingest-review-queue.md",
    "kind": "pointer"
   },
   {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/llm/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/projects/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/run-rules.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/planning-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/knowledge_graph.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/knowledge_graph.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/workspace/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/workspace/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/workspace/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/workspace/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/knowledge_graph.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/planning-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/REPAIR_2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/f1-index-patch-20261113.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/fleet-md5-discrepancy-note-20261113.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/goals-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/index-integrity-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/orphan-folder-audit-r42.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/provenance_audit.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/xref_check.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/xref-integrity-evidence-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/index-sweep-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/history-r7-r36.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/TODO.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/dcabots-intake-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/history-r7-r36.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/index-sweep-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/instances-md-pin-reconcile-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/llm-module-white-convention-r21.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/seat-root-anomaly-r14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/index-integrity-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/guardrail-checklist-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/canonical-locations-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/prune-log.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/knowledge_graph.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/memory_health.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/gen_api_ref.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/supersession_check.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/supersession-findings-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/decay_score.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/snapshot.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/ingest.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/hostdoc-consistency-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/handoffs/HO-20261116-file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/hostdoc_consistency_v2.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/ingest.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/index-pointer-addendum-r43.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/index-pointer-batch-r42.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/ingest-review-queue.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/merge-pack.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/merge-pack.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ONBOARDING.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/memory-sync-spec-r13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/memory-sync-spec-r13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/design-tokens.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/design-tokens.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/upgrade-plan.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/upgrade-plan.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/all-goals-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/all-goals-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archive/orchestrator-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archive/orchestrator-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archivist.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archivist.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/builder.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/builder.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/cycle2-dependency-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/cycle2-dependency-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/system-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/merge-pack.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/merge-pack.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/system-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/merge-pack.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/manifest-20261118.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/planning-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/pdf-reporting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/pdf-reporting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/ingest-review-queue.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/api_client_layer_increment1-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/component_refactor_regression_2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/citation-audit-assist-archivist-goal2-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/evidence-verify-claims-guard-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/designer-goal6-skeleton-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/assist-designer-goal2-padding-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/designer-goal1-js-tokenization-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/log_rotate_winerror183-fix-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/researcher-goals7-8-paren-repair-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/designer-goal1-token-verify-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/portal-startup-fix-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/prune_regression.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/upload_path_safety.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/index-repin-r24-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/a11y-repin-farm569-closeout-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/truncation-e2e-verify-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/portal-startup-fix-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/css-tokens-complete-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/verify_theme_toggle_2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/pin-sha-stale-claim-closed-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/pre_commit_gate.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/ci-gate-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/ci-gate-acceptance-evidence-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/canary_deploy.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/wedge-watchdog-verify-2026-11-16.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/evolution_fitness_test.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/goal4_fitness_evidence.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/parity_guard.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/playbook_to_tests.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/hotpatch.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/api_contract_test.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/designer-goal10-print-reverify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/error_boundary_increment3-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/TODO.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/anomaly-ar14-writepath-evidence.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/index_html_CANONICAL_ac3ca7a6a264_2026-11-16b.html",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/index_html_CANONICAL_2c6399f2d853_2026-11-16c.html",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/goal3-component-abstraction-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/cdp-unblock-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/css-bundle-budget-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/skeleton-investigation-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/designer-goal9-stale-claim-verification-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/acceptance-2-5-9-10-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/goal5-typography-tokenization-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/index_html_CANONICAL_d51c43756597_2026-11-19x.html",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/goal2-fleet-states-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/skeleton-investigation-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/orchestrator.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/researcher.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/builder.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/verifier.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/designer.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archivist.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scribe.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/mechanic.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/forecast-mechanic-g4.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/cycle2-kickoff-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/cycle2-dependency-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archive/orchestrator-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/all-goals-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/researcher-attempts-cycle3-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/researcher.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduler-cycle6.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/INDEX-kb.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/manifest-20261118.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/compression-fidelity-trend.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/knowledge_graph.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/freshness-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/hostdoc-consistency-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/sla-goal8-closure-integrity-check-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/knowledge_graph.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/freshness-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/hostdoc-consistency-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/slo-report-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/handoffs/PROTOCOL.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/llm/instances.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/llm/studio-api.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/llm/hosts.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/llm/overnight-unload.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/llm/model-id-check-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/llm/backend-swap-procedure.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/knowledge_graph.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/freshness-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/hostdoc-consistency-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/slo-report-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/mirror-mtime-guard-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/memory_mirror_fixed.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/runbook-notes.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/fleet-probe-v2-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/goal1_adaptive_probe_verified.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/goal4-load-baseline-day3-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/goal6-dep-gen-built-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/reboot-drill-evidence-verify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/deploy_reboot_recovery_all.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/ingested-2026-11-18-fleet-host-registry-white-black-.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/ingested-2026-11-18-fleet-host-registry-v2-all-four-.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/test_chaos_drill_sim.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/blockers.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/css-bundle-budget-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/goal6-dep-gen-built-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/windows-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/host-port-task-map-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/live-leg-runbook-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/probe-false-healthy-fix.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/schtask-deps.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/hotline-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/non-sandbox-queue.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/blockers.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/citation-phantom-triage-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/browser-gate-decision-tree.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/browser-acceptance-workaround.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/mirror-revert-prevention-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/memory-sync-spec-r13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/agent-onboarding-playbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/pdf-reporting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/ingestion-spec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/fleet-state-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/public-repo-agent-portal-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/verifier-healthcheck-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/verifier-ac-v09-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/memory-trim-archive-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/merge-queue-git-progress-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/black-studio-failover-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/autoloop.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/fleet-monitoring-cadence.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/pin-guard-extension-ui-files.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/forecast-mechanic-g4.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/manifest-20261118.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/goal3-auto-transition-ext-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/designer-goal8-icons-stale-claim-closed-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/designer-goal2-density-mirror-drift-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/ui-closure-check-tool-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/assist-designer-goal1-padding-margin-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/assist-designer-goal1-tokens-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/stale-claim-mechanic-goal5-citation-fix-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/stale-claim-scribe-todo-memor-typo-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/designer-goal4-reverify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/archivist-goal4-supersession-verify-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/goal10-light-theme-functional-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/fleet-overview-shape-fix-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/pin-sha-stale-ref-fix-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/designer-qa-gate-unblock-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/appcss-hardcoded-colors-verify-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/white-apply-bundle-v2-r45.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/load_probe_diskstate_2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/ledger-hygiene-marker-repair-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/health-composite-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/goal9-cycle-cost-tracker-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/windows-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/system-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/file-links.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/file-links-sandbox.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/ui-frontend.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/fleet-status.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/components.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/prune-edge-cases-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/merge-pack.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/system-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/upgrade-plan.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/v1-inventory.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/v1-upgrades-decisions.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/llm/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/llm-module-white-convention-r21.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/instances-md-pin-reconcile-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/dcabots-intake-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/seat-root-anomaly-r14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/windows-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/builder/pre_commit_gate.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/popup-pythonw-children-recoverall-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/file-links-sandbox.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/file-links-sandbox.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/file-links-sandbox.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/xtalk-completion.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/ui-frontend.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/ui-frontend.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/projects/evolution-layer-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/projects/dcabots.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/projects/dcabots-setup-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/farm-relpath-diagnosis-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/scribe-goal10-stale-citation-close-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/designer-goal1-2-false-verify-audit-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/live-leg-runbook-contribution-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/kg-drift-and-cycle-nondeterminism-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/llm/residency-matrix.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/residency-matrix-offline-surface-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/unified-loader-offline-surface-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/researcher-cycle8-proposals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/goal9-tour-corrected-closure-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/selfprobe-citation-status-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/goal9-tour-reverified-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/designer-goal7-typo-fresh-verify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/designer-goal8-9-reverify-fresh-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/designer-goal8-icon-static-verify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/browser-blocker-corrected-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/designer-open-goals-triage-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/goal9-tour-stale-evidence-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/kg_integrity_to_vs_target-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/archivist-goal4-linkpass-and-orderbug-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/archivist-goal4-actionable-orphan-count-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/kg-baseline-reverify-goal4-orphan-metric-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/goal8-icon-discrepancy-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/recovery-matrix-verify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/hotload-goalset-grounding-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/evidence-goal3-kb-search-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/evidence-source-scorer-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/understanding.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/sla-goal8-closure-integrity-check-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/mirror-revert-fix1-promotion-gap-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/net-capability-matrix-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/sla-report-cycle5-stale-citation-resolved-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/designer-goal1-stale-claim-resolved-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/mirror-revert-fix1-epoch-landed-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/mirror-revert-checktool-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/load-probe-current-diskstate-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/mirror-e2e-de-risk-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/pin-consistency-check-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/verify-dark-mode-claim.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/wcag-aa-and-tokenization-reverify-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/clobber-mechanism-and-final-ip-count-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/citation-audit-2026-11-15.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/outside-click-false-alarm-r76-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/stamp-target-correction-r75-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/white-pass-crosscheck-r69-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/thirdseat-measurement-vehicle-audit-r68-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/index-md5-reconciliation-r61-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/r56-mirror-confirmation-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/stamp-adjudication-crosscheck-r54-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/dcabots-reprompt-atlasq8-gate-r49.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/dcabots-reprompt-precheck-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/e14-r41-reverify-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/a4a5-crossseat-verify-r39b-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/two-pin-index-adjudication-r32.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/probe-canonical-pin-correction-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/ac-a2-r26-convergence-check-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/ac-a2-r25-oscillation-consolidated-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/ac-a2-r24b-adjudication-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/ac-a2-live-leg-status-final-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/r20-lane-status-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/hosts-ctx-correction-and-rename-script-state-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/ac-a2-r24-disk-reconcile-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/farm-relpath-diagnosis-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/r18-output-verification-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/sync-clobber-analysis-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/llm/overnight-unload.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/sync-clobber-analysis-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/open-questions-log.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/sla-audit-tool-and-pass8-age-regression-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/probe_api_git.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/claim-reverification-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/model-benchmark-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/failure-mode-indicators-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/lit-review-goal-cycling-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/sync-semantics-options-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/net-capability-matrix-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/evidence-quality-trend-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/sandbox-host-diff-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/oversized-workfile-audit-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/goals-complete-verification-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/memory-health-endpoint-reverted-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/scribe-memory-health-relanded-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/evidence_quality_trend.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/css-tokenization-verify-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/mirror-revert-fix1-live-wiring-gap-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/mirror-revert-correlation-tool-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/mirror-revert-fix1-epoch-review-divergences-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/mirror-revert-schema-decheck-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/fill_analysis.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/dangling-pointer-unblock-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/evidence-quality-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/citation-phantom-triage-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/fleet-hotload-watchdog-spec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/open-questions-log.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/mechanic-goal8-fleet-status-stale-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/designer-goal7-typo-audit-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/designer-goal4-emptystate-name-drift-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-portal-down-state-change.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-15-stalled-goals-diagnosis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-cycle2-retrospective.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/goal-setting-round-compression-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/ops-r6-synthesis-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/synthesis-index-canonical-r72-485a6558-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/synthesis-index-canonical-r61-0517db38-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/TODO.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/contradiction-detector-evidence-2026-11-16.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/g3-hotfile-guard-evidence-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/orphan-sweep-2026-11-16.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/owner-coverage-ledger-2026-11-16.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/compression_lint.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/handoff-validation-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/TODO.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/chain_check.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/scribe/supersession-pointer-spec.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/designer/index_html_CANONICAL_d51c43756597_2026-11-19x.html",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/ops/windows-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-portal-down-state-change.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/workspace/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/sla-goal8-closure-integrity-check-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-16-contradiction-rulings.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-pointer-addendum-r43.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-pointer-batch-r40.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-pointer-handoff-r38.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-portal-down-state-change.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-final-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r56-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r42-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r41-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r40-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r38-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r27-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-13-planning-meeting.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-consolidated-state.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-16-contradiction-rulings.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-cycle2-retrospective.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/cycle-narrative.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/supersession-policy-baseline.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-dream-big-r58-final.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-14-final-closeout-supersession.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-15-public-repo-ip-decision.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-15-round-continuation.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-15-status-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-16-portal-status-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-16-r1-round-record-DRAFT.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-16-r1-round-record.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-16-status-thread-contradictions.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-pointer-handoff-r38.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/researcher/evidence-quality-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/test_chaos_drill_sim.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/fault-injection-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/self-cert-audit-v2-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/smb_drift_detector.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/evolution-validator-2026-11-16.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/evolution-lifecycle-validator-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/idempotency_proof.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/security-matrix-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/scorecard-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/slo_enforce.py",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/agent-portal-size-verify-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/memory-health-endpoint-absent-verify-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/ssot-reconciliation-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/regression-detector-reverify-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/verifier/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/portal/bugs/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/archivist/kg-auto-update-progress-2026-11-17.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/mechanic/fleet-probe-v2-2026-11-16.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-16-crossassist-evidence-pass.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/kg-export.jsonld",
+   "to": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/archivist/kg-report-cycle5.md",
    "to": "memory/portal/merge-pack.md",
    "kind": "pointer"
@@ -302,11 +4217,6 @@
   {
    "from": "memory/archivist/kg-report-cycle5.md",
    "to": "memory/portal/INDEX.md",
-   "kind": "pointer"
-  },
-  {
-   "from": "memory/archivist/kg-report-cycle5.md",
-   "to": "memory/ops/memory-trim-archive-2026-11-14.md",
    "kind": "pointer"
   },
   {
@@ -335,13 +4245,438 @@
    "kind": "pointer"
   },
   {
-   "from": "memory/archivist/kg-report-cycle5.md",
+   "from": "memory/archivist/orphan_remediation.py",
    "to": "memory/INDEX.md",
    "kind": "pointer"
   },
   {
-   "from": "memory/archivist/kg-report-cycle5.md",
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/ONBOARDING.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/api-reference.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/archivist/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/ops/memory-sync-spec-r13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/ops/memory-sync-spec-r13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/archivist/MEMORY.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/architecture.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/design-tokens.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/design-tokens.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/2026-11-13-agent-goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/upgrade-plan.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/portal/upgrade-plan.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/all-goals-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/all-goals-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/archive/orchestrator-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/archive/orchestrator-2026-11-13.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/archivist.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/archivist.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/builder.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/builder.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/cycle2-dependency-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report-2026-11-20.md",
+   "to": "memory/goals/cycle2-dependency-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/system-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/merge-pack.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/merge-pack.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/file-modularity.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
    "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/ops/INDEX.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/system-map.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/archivist/xref-monitor-report.json",
+   "to": "memory/portal/merge-pack.md",
    "kind": "pointer"
   },
   {
@@ -391,12 +4726,32 @@
   },
   {
    "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/mechanic-goal1-concurrent-pool-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/api_client_layer_increment1-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/component_refactor_regression_2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
    "to": "memory/builder/citation-audit-assist-archivist-goal2-2026-11-19.md",
    "kind": "pointer"
   },
   {
    "from": "memory/builder/INDEX.md",
    "to": "memory/builder/evidence-verify-claims-guard-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/designer-goal6-skeleton-2026-11-19.md",
    "kind": "pointer"
   },
   {
@@ -531,6 +4886,16 @@
   },
   {
    "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/designer-goal10-print-reverify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
+   "to": "memory/builder/error_boundary_increment3-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/builder/INDEX.md",
    "to": "memory/builder/MEMORY.md",
    "kind": "link"
   },
@@ -582,6 +4947,26 @@
   {
    "from": "memory/designer/INDEX.md",
    "to": "memory/verifier/designer-goal9-stale-claim-verification-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/designer/INDEX.md",
+   "to": "memory/designer/acceptance-2-5-9-10-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/designer/pin-advanced-d51c43756597-2026-11-19.md",
+   "to": "memory/designer/index_html_CANONICAL_d51c43756597_2026-11-19x.html",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/designer-open-set-reconciliation-2026-11-19.md",
+   "to": "memory/designer/goal2-fleet-states-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/goals/designer-open-set-reconciliation-2026-11-19.md",
+   "to": "memory/designer/skeleton-investigation-2026-11-19.md",
    "kind": "pointer"
   },
   {
@@ -678,6 +5063,11 @@
    "from": "memory/goals/INDEX.md",
    "to": "memory/goals/scheduler-cycle6.md",
    "kind": "link"
+  },
+  {
+   "from": "memory/goals/researcher-cycle8-proposals.md",
+   "to": "memory/INDEX-kb.json",
+   "kind": "pointer"
   },
   {
    "from": "memory/goals/scheduled-background.md",
@@ -960,6 +5350,11 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/test_chaos_drill_sim.py",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/ops/fleet-monitoring-cadence.md",
    "to": "memory/ops/blockers.md",
    "kind": "pointer"
@@ -996,6 +5391,11 @@
   },
   {
    "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/live-leg-runbook-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
    "to": "memory/ops/probe-false-healthy-fix.md",
    "kind": "pointer"
   },
@@ -1027,6 +5427,21 @@
   {
    "from": "memory/ops/INDEX.md",
    "to": "memory/ops/git-hygiene.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/citation-phantom-triage-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/browser-gate-decision-tree.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
+   "to": "memory/ops/browser-acceptance-workaround.md",
    "kind": "pointer"
   },
   {
@@ -1125,6 +5540,91 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/goals/forecast-mechanic-g4.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/archivist/decay-report.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/archivist/manifest-20261118.json",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/dependency-graph.json",
+   "to": "memory/goals/scheduled-background.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/ledger-regen-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/contribution-mechanic-goal1-winrm-forecast-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/goal3-auto-transition-ext-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/designer-goal8-icons-stale-claim-closed-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/designer-goal2-density-mirror-drift-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/orchestrator/INDEX.md",
    "to": "memory/orchestrator/ui-closure-check-tool-2026-11-19.md",
    "kind": "pointer"
@@ -1212,6 +5712,16 @@
   {
    "from": "memory/orchestrator/INDEX.md",
    "to": "memory/orchestrator/health-composite-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/orchestrator/INDEX.md",
+   "to": "memory/orchestrator/goal9-cycle-cost-tracker-2026-11-20.md",
    "kind": "pointer"
   },
   {
@@ -1472,6 +5982,101 @@
   {
    "from": "memory/researcher/hotload-goalset-grounding-2026-11-18.md",
    "to": "memory/goals/archive/researcher-cycle5-2026-11-18.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/winrm-pool-stale-claim-closed-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/archivist-goal7-retrieval-benchmark-verify-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/scribe-goal10-stale-citation-close-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/designer-goal1-2-false-verify-audit-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/live-leg-runbook-contribution-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/kg-drift-and-cycle-nondeterminism-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/llm/residency-matrix.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/residency-matrix-offline-surface-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/unified-loader-offline-surface-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/goals/researcher-cycle8-proposals.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/goal9-tour-corrected-closure-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/selfprobe-citation-status-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/goal9-tour-reverified-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/designer-goal7-typo-fresh-verify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/designer-goal8-9-reverify-fresh-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/designer-goal8-icon-static-verify-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/browser-blocker-corrected-2026-11-19.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/goals/designer-open-goals-triage-2026-11-19.md",
    "kind": "pointer"
   },
   {
@@ -1866,6 +6471,16 @@
   },
   {
    "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/evidence-quality-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/ops/citation-phantom-triage-runbook.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
    "to": "memory/researcher/MEMORY.md",
    "kind": "link"
   },
@@ -1882,6 +6497,16 @@
   {
    "from": "memory/researcher/INDEX.md",
    "to": "memory/researcher/mechanic-goal8-fleet-status-stale-2026-11-19.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/designer-goal7-typo-audit-2026-11-19.md",
+   "kind": "link"
+  },
+  {
+   "from": "memory/researcher/INDEX.md",
+   "to": "memory/researcher/designer-goal4-emptystate-name-drift-2026-11-19.md",
    "kind": "link"
   },
   {
@@ -2103,6 +6728,11 @@
    "from": "memory/scribe/INDEX.md",
    "to": "memory/scribe/supersession-pointer-spec.md",
    "kind": "link"
+  },
+  {
+   "from": "memory/scribe/pin_advance_2026-11-19.md",
+   "to": "memory/designer/index_html_CANONICAL_d51c43756597_2026-11-19x.html",
+   "kind": "pointer"
   },
   {
    "from": "memory/scribe/supersession-audit-2026-11-17.json",
@@ -3000,6 +7630,21 @@
    "kind": "pointer"
   },
   {
+   "from": "memory/verifier/dangling-pointer-repair-2026-11-20.md",
+   "to": "memory/orchestrator/goal6-dependency-resolver-progress-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/dangling-pointer-repair-2026-11-20.md",
+   "to": "memory/researcher/evidence-quality-2026-11-20.md",
+   "kind": "pointer"
+  },
+  {
+   "from": "memory/verifier/dangling-pointer-repair-2026-11-20.md",
+   "to": "memory/mechanic/test_chaos_drill_sim.py",
+   "kind": "pointer"
+  },
+  {
    "from": "memory/verifier/INDEX.md",
    "to": "memory/verifier/fault-injection-2026-11-16.md",
    "kind": "pointer"
@@ -3077,6 +7722,11 @@
  ],
  "supersessions": [
   {
+   "from": "memory/archivist/archive-compaction-report-2026-11-20.md",
+   "target": "r58",
+   "marker": "superseded by"
+  },
+  {
    "from": "memory/archivist/bundle-v2-item1-staleness-r73-2026-11-14.md",
    "target": "nothing",
    "marker": "Supersedes"
@@ -3095,6 +7745,11 @@
    "from": "memory/archivist/evidence-goal1-stale-verification-2026-11-18.md",
    "target": "no",
    "marker": "Supersedes"
+  },
+  {
+   "from": "memory/archivist/evidence-goal6-archive-compaction-2026-11-20.md",
+   "target": "later",
+   "marker": "superseded by"
   },
   {
    "from": "memory/archivist/ground-truth-pale-r64-2026-11-14.md",
@@ -3145,6 +7800,11 @@
    "from": "memory/builder/builder-exec-sweep-2026-11-14.md",
    "target": "ffa77423",
    "marker": "supersedes"
+  },
+  {
+   "from": "memory/builder/designer_goal7_typography_final_verify_2026-11-19.md",
+   "target": "Verifier",
+   "marker": "superseded by"
   },
   {
    "from": "memory/builder/index-repin-r25-rollback.md",
@@ -3212,6 +7872,11 @@
    "marker": "Supersedes"
   },
   {
+   "from": "memory/designer/closure-booked-2-5-10-2026-11-19.md",
+   "target": "the",
+   "marker": "superseded by"
+  },
+  {
    "from": "memory/designer/conflict-resolution-merged-canonical-2026-11-15.md",
    "target": "my",
    "marker": "Supersedes"
@@ -3235,6 +7900,11 @@
    "from": "memory/designer/goal4-a11y-fix-focus-motion-2026-11-18.md",
    "target": "the",
    "marker": "supersedes"
+  },
+  {
+   "from": "memory/designer/goal8-icon-progress-2026-11-19c.md",
+   "target": "the",
+   "marker": "replaced by"
   },
   {
    "from": "memory/designer/goals-1-2-3-6-10-evidence-2026-11-16.md",
@@ -3292,6 +7962,21 @@
    "marker": "replaced by"
   },
   {
+   "from": "memory/designer/selftest_runA_dom.html",
+   "target": "my",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/designer/selftest_runA_dom.html",
+   "target": "two",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/designer/selftest_runA_dom.html",
+   "target": "both",
+   "marker": "supersedes"
+  },
+  {
    "from": "memory/designer/stamp-verify-r61-107cbd93-2026-11-14.md",
    "target": "the",
    "marker": "Supersedes"
@@ -3310,6 +7995,21 @@
    "from": "memory/designer/token_audit.py",
    "target": "var",
    "marker": "replaced by"
+  },
+  {
+   "from": "memory/designer/tour_runB_dom.html",
+   "target": "my",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/designer/tour_runB_dom.html",
+   "target": "two",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/designer/tour_runB_dom.html",
+   "target": "both",
+   "marker": "supersedes"
   },
   {
    "from": "memory/designer/v21-merge-c820e755-r64-2026-11-14.md",
@@ -3352,11 +8052,6 @@
    "marker": "Supersede"
   },
   {
-   "from": "memory/goals/researcher.md",
-   "target": "RecoverAll/DualLoadOnce/Wed",
-   "marker": "supersedes"
-  },
-  {
    "from": "memory/goals/scheduler-cycle6.md",
    "target": "cycle-5",
    "marker": "Supersedes"
@@ -3390,6 +8085,16 @@
    "from": "memory/goals/archive/researcher-2026-11-18.md",
    "target": "live",
    "marker": "replaced by"
+  },
+  {
+   "from": "memory/goals/archive/researcher-2026-11-19.md",
+   "target": "RecoverAll/DualLoadOnce/Wed",
+   "marker": "supersedes"
+  },
+  {
+   "from": "memory/goals/archive/researcher-2026-11-20.md",
+   "target": "RecoverAll/DualLoadOnce/Wed",
+   "marker": "supersedes"
   },
   {
    "from": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
@@ -3488,8 +8193,18 @@
   },
   {
    "from": "memory/ops/INDEX.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/ops/INDEX.md",
    "target": "memory/goals/",
    "marker": "superseded by"
+  },
+  {
+   "from": "memory/ops/live-leg-runbook-2026-11-20.md",
+   "target": "the",
+   "marker": "supersedes"
   },
   {
    "from": "memory/ops/pin-guard-extension-ui-files.md",
@@ -3827,6 +8542,16 @@
    "marker": "superseded by"
   },
   {
+   "from": "memory/researcher/designer-goal4-emptystate-name-drift-2026-11-19.md",
+   "target": "that",
+   "marker": "superseded by"
+  },
+  {
+   "from": "memory/researcher/designer-goal8-9-reverify-fresh-2026-11-19.md",
+   "target": "two",
+   "marker": "supersedes"
+  },
+  {
    "from": "memory/researcher/fleet-hotload-watchdog-spec.md",
    "target": "ONE",
    "marker": "supersedes"
@@ -3860,6 +8585,11 @@
    "from": "memory/researcher/INDEX.md",
    "target": "the",
    "marker": "SUPersedes"
+  },
+  {
+   "from": "memory/researcher/live-leg-runbook-contribution-2026-11-20.md",
+   "target": "their",
+   "marker": "supersedes"
   },
   {
    "from": "memory/researcher/load-probe-current-diskstate-2026-11-17.md",
@@ -4472,6 +9202,41 @@
    "marker": "Supersedes"
   },
   {
+   "from": "memory/synthesis/archive-nav.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/archive-nav.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/archive-nav.md",
+   "target": "and",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/archive-nav.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/archive-nav.md",
+   "target": "nothing",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/archive-nav.md",
+   "target": "the",
+   "marker": "Supersedes"
+  },
+  {
+   "from": "memory/synthesis/archive-nav.md",
+   "target": "memory/synthesis/2026-11-12-upgrade-round.md",
+   "marker": "Supersedes"
+  },
+  {
    "from": "memory/synthesis/cycle-narrative.md",
    "target": "nothing",
    "marker": "Supersedes"
@@ -4742,6 +9507,11 @@
    "marker": "Supersedes"
   },
   {
+   "from": "memory/verifier/designer-goal8-reverified-2026-11-19.md",
+   "target": "prior",
+   "marker": "supersedes"
+  },
+  {
    "from": "memory/verifier/INDEX.md",
    "target": "scribe-goal2-v2-stale-claim-2026-11-18.md",
    "marker": "supersedes"
@@ -4805,6 +9575,11 @@
    "from": "memory/verifier/ui-slices-verify-2026-11-17.md",
    "target": "status-dot.",
    "marker": "replaced by"
+  },
+  {
+   "from": "memory/verifier/_ledger_tmp.json",
+   "target": "RecoverAll/DualLoadOnce/Wed",
+   "marker": "supersedes"
   }
  ]
 }

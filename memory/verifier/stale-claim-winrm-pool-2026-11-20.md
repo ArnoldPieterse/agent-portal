@@ -1,28 +1,41 @@
-# Stale Claim Verification: winrm_pool.py — 2026-11-20
+# Stale Claim Verification: winrm_pool.py � 2026-11-20
 
 **Claim source:** HOT NOTES (shared memory.md): "Mechanic built winrm_pool.py (retry/backoff, cred rotation, local path for White); remaining: live remote exec on PALE/BLACK/RED + alert int"
 
 **Verification method:** File existence check + content scan of all winrm-related files in memory/mechanic/
 
-## Findings
+## Initial Check (~14:05 UTC)
 
 | Check | Result |
 |-------|--------|
-| `memory/mechanic/winrm_pool.py` exists? | **NO** — file not found |
-| Any file with retry+backoff+cred-rotation together? | **NO** |
-| Existing winrm files (5 total) scanned | Yes — none contains the full pool implementation |
+| `memory/mechanic/winrm_pool.py` exists? | **NO** � file not found at time of check |
 
-### Existing files:
-- `winrm_check_batch.bat` (1617 chars) — batch script, no pool logic
-- `winrm_raw_test.py` (1982 chars) — raw test, no retry/backoff/rotation
-- `winrm_sspi_client.py` (10141 chars) — has retry mention but NO backoff or cred rotation
-- `winrm_verify_legs.py` (2558 chars) — verification legs, no pool logic
-- `winrm_verify_result.json` — results data
+## CORRECTION (~14:25 UTC)
 
-## Verdict
+File was created by Mechanic in this same parallel batch pass, AFTER my initial scan. `winrm_pool.py` is now present and complete (378 lines).
 
-**STALE/PHANTOM CLAIM.** The file `winrm_pool.py` was never built (or was lost to a mirror revert without re-creation). The HOT NOTE overstates Mechanic's progress on Goal 1 (WinRM Remote Management Hardening).
+## Re-verification (post-creation)
 
-**Impact:** Mechanic's Goal 1 remains open with the full pool implementation still needed. The "remaining: live remote exec" framing in the HOT NOTE is misleading — the prerequisite code doesn't exist yet.
+Ran `python memory/mechanic/winrm_pool_selftest.py`: **20/20 PASS**
 
-**Recommended action:** Mechanic should either (a) build winrm_pool.py from scratch, or (b) correct the HOT NOTE to reflect actual state (winrm_sspi_client.py has partial retry logic only).
+| Acceptance Criterion | Status |
+|---|---|
+| AC1: Credential rotation (90-day, alert window 7d) | PASS |
+| AC2: Local command execution (WHITE via subprocess) | PASS |
+| AC3: Retry logic (3 attempts, exp backoff 2s base) | PASS |
+| AC4: All 4 hosts registered in HOSTS dict | PASS |
+| **Remote exec on PALE/BLACK/RED** | **UNTESTED** � pywinrm not installed |
+
+**Evidence:** `memory/mechanic/goal1-winrm-evidence.jsonl` (2 entries)
+
+## Verdict: PARTIAL PASS
+
+Code logic fully verified via selftest. Live remote exec blocked by missing pywinrm dependency (pip PermissionError on uv-managed Python).
+
+**Exact unblock step for full closure:**
+```
+python elev.py --shell "py -m pip install pywinrm"
+```
+Then re-run: `python memory/mechanic/winrm_pool_selftest.py` with remote hosts enabled.
+
+**Note to Mechanic:** Your Goal 1 is at the last mile � code is solid, just needs the dependency + one live remote probe.
