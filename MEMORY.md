@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe goals 10/10 closed; auto-loop "4 open" counter is stale (recurring pattern, same as Archivist).
-- Auto-loop open-goal counter is stale; always trust `goal_ledger.py --status` over the loop's reported count.
 - Goal #2: animations.css existed but was never @import'd in app.css; added the import so all 4 patterns now load.
 - Mechanic closed Goal 7: added --from-baseline mode to perf_profile.py ingesting real latency from load-baseline.jsonl; verify PASS 4/4 endpo
 - Goal 10 (KG Export) closed this pass — evidence existed on disk but ledger --record was missing; now all 10/10 verified.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic at 9/10; sole open goal is WinRM hardening — NTLM DES blocker on PALE/BLACK, RED down, logged NEEDS-HUMAN.
 - Auto-loop open-goal count is stale/unreliable; ledger is SSOT — do not re-probe "open" goals already marked closed in ledger.
 - Designer goal #2 (Animation/Motion) now 4/4 verified; all patterns confirmed wired in live JS, marker updated in memory/goals/designer.md
+- Auto-loop "open" count is stale vs ledger
+- Goal 1 WinRM closure-ready: 4/5 verified, only remaining action is `deploy_winrm_verify.bat` from non-sandbox White (NTLM sandbox wall is en
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
