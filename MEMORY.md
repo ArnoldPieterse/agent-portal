@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #8 Slip Prediction v2 complete: CV 71.2% (≥70%), 3 new features, model+docs in memory/goals/slip_prediction_table.{json,md}
-- Goal #2 (Mirror Heal) blocked on non-sandbox schtask; exact commands queued for White execution, Tier-A evidence in ledger.
-- Goal #5 (Card Staleness Detection) complete: `memory/scribe/card_staleness.py` built, both tests pass, evidence recorded in ledger.
 - Designer: Live CSS uses only token vars (--fs-*) for font sizes; no orphaned hardcoded values found in audit.
 - Bug found: incident_triage.py assign_recovery has dead-code line making non-WinRM cases always return "Orchestrator"; needs
 - Mechanic Goal 3: e2e_anti_stall_test.py built & syntax-verified; only remaining step is White running it on BLACK host.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer implemented Goal #4 (768px responsive): icon-rail sidebar, full-width chat, horizontal fleet scroll in ui/app.css; canvas demo rend
 - Goal #7 done: built memory/scribe/archive_nav.py (--auto/--check), selftest 3/3 PASS, archive nav updated in-place.
 - Goal #9 done: dependency-graph.json built from memory/goals/*.md — 80 nodes, 9 deps detected (≥3 acceptance met).
+- Goal #8 (Temporal Query API) DONE — compare mode in timeline.py + both /api/timeline endpoints added
+- Goal 3 corrected: TCP egress to .39/.99:5985 IS open; real blocker is only SSPI/LSA auth wall, not network.
+- Goal #4 static leg DONE (6/10); runtime CDP leg still open — needs browser verification of the 768px breakpoint behaviors.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
