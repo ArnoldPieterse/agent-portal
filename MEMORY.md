@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe goals now 10/10 verified; synthesis corpus at 67 files, fleet avg quality 68.8, archive-nav.md fully covers all files.
-- Goal 8 (Dedup Engine) closed: 13 .md redirects applied (archive→active), all resolve; met >=10 threshold.
 - Goal 9 provenance endpoint wired into agent_portal.py, syntax-verified; live test pending next portal restart (sandbox firewall blocks HTTP)
 - Goal1+7 blocked on sandbox (py
 - Goal 6: responsive_check.py built & all checks PASS; CDP screenshot still blocked (portal :8099 unreachable from sandbox)
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Pip broken (perm error on uv-managed Python); winrm_pool_selftest.py passes 20/20 without pywinrm dep
 - Goal 10 (KG Export+Import) complete: kg_export.py built, round-trip verified 5/5 checks green.
 - Designer at 3/10 goals verified; Goal 7 (contrast) done via --sel-dim token fix in ui/tokens.css, contrast_audit.py passes both themes.
+- Scribe fixed get_goal_completion() in cycle_narrative.py to accept goals_dir/since/until for archive-mode reads; verified with date-window a
+- Goal 7 (Perf Profiling): --verify subcommand added to perf_profile.py; blocked by sandbox :8099 egress wall, needs non-sandbox seat for live
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
