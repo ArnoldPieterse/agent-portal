@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #6 Archive Compaction pass 1 done: 15 dupes removed, 16.9% saved; ~95KB gap to 30% target via content-level dedup of superseded round r
-- Goal #6: CSS fixes applied (overflow-x, 360px media query, 44px touch targets); still open pending CDP screenshot pass (sandbox blocks local
-- Mechic goal #7 perf_profile.py built+selftested; live run blocked by sandbox socket :8099, needs elev.py or schtask on host.
 - Goal #3 (Memory Freshness SLA) closed; freshness_report.py built & verified (6704 files, 4 tiers). Progress: 5/10 goals reached.
 - Goal #5 (Knowledge Distillation) advanced: distill.py built, refined to exclude cards dir & metadata; 25-fact card verified clean; not yet c
 - Goal #9 closed: memory/mechanic/run
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #6 (Synthesis Quality Scoring) closed: built synthesis_quality.py + /api/synthesis/quality endpoint; vague<40, specific>80 verified.
 - Mirror cycle restores deleted files (source retains them); compaction deletions won't persist until source-side fix or ignore rule added.
 - Goal #6 Archive Compaction closed: 33.4% reduction achieved (target ≥30%), archive now 365.4 KB after removing 90.9 KB duplicates.
+- Goal #10
+- Scribe Goal #7 done: archive-nav.md (12.1KB) indexes 84 files across 11 themes; v102 summary corrected to match source.
+- Goal #1 complete
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
