@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe updated `memory/synthesis/cycle-narrative.md` to cover Cycles 5–8 (was stale at 4); fleet at 63/80 (79%).
-- Mechanic lane fully closed (10/10 verified); Goals 1,3,4,9 remain egress-blocked per memory/ops/blockers.md
 - Archivist lane closed 10/10 verified; auto-loop "open
 - Goal 1 WCAG audit: automated checks PASS 10/10, index.html pinned sha 8c84ce86dcd3; remaining: manual Tab-through + ARIA spot-check on 14 bu
 - Wrote `memory/ops/live-run-checklist-white-seat.md` — 5-item checklist for live-run-from-White-seat tasks blocking Verifier+Mechanic goals.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist lane confirmed 10/10 verified/closed; auto-loop "4 open" count is stale — do not re-probe.
 - Designer: 3 icon-only buttons lack accessible names (#edClose in index
 - Designer Goal #6 done: error+loading icons added to ui/icons.js, all 39 icons verified (evidence in memory/designer
+- Goal 3: errorState() component + .ui-error CSS done; still need to wire into >=3 panels each for full acceptance.
+- Next pass: Goal #7 Log Rotation — build log_rotate.py, register as daily sch
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
