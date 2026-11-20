@@ -1,0 +1,517 @@
+{
+  "date": "2026-11-20",
+  "total_leaves": 1998,
+  "flagged_count": 1016,
+  "high_quality_count": 829,
+  "low_quality_count": 8,
+  "avg_specificity": 3.8,
+  "avg_reproducibility": 2.6,
+  "avg_currency": 4.97,
+  "flagged_leaves": [
+    {
+      "path": "memory\\archivist\\api-ref-diff-2026-11-18.md",
+      "specificity": 3,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.0,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\archive-compaction-report-2026-11-20.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\assist-scribe-goals2-3-5-reverify-2026-11-20.md",
+      "specificity": 3,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\auto-loop-notes.md",
+      "specificity": 2,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 2.67,
+      "flags": [
+        "low-specificity",
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\auto-loop-pass-2026-11-20b.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\blocker-cleanup-2026-11-20.md",
+      "specificity": 3,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.0,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\bundle-v2-item1-staleness-r73-2026-11-14.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\bundle-v2-item9-queue4-reword-gap-r74-2026-11-14.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\citation-audit-cycle5-v2-report.md",
+      "specificity": 3,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\citation-check-exclude-evidence-2026-11-20.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\citation-fix-pass-2026-11-20.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\citation-triage-2026-11-20.md",
+      "specificity": 3,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\cycle3-goals-drafted-2026-11-17.md",
+      "specificity": 3,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.0,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\dcabots-intake-2026-11-14.md",
+      "specificity": 3,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\designer-empty-states-audit-2026-11-20.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\doc-ref-scanner-progress-2026-11-18.md",
+      "specificity": 3,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.0,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\dream-big-wishes-2026-11-14.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-assist-scribe-relevance-map-2026-11-20.md",
+      "specificity": 4,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal1-kg-autoupdate-2026-11-18.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal1-kg-delta-confirmed-2026-11-18.md",
+      "specificity": 2,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 2.67,
+      "flags": [
+        "low-specificity",
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal1-scheduled-mirror-runs-2026-11-18.md",
+      "specificity": 3,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal2-handoff-protocol-v2-2026-11-18.md",
+      "specificity": 3,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.0,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal3-api-ref-complete-2026-11-18.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal3-api-ref-diff-2026-11-18.md",
+      "specificity": 4,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal3-api-ref-progress-2026-11-18.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal6-archive-compaction-2026-11-20.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal9-full-closure-2026-11-20.md",
+      "specificity": 3,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal9-posthook-2026-11-20.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal9-provenance-2026-11-20.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-goal9-provenance-endpoint-2026-11-20.md",
+      "specificity": 3,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-misattribution-goal4-vs-goal7-2026-11-17.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\evidence-scribe-goal8-timeline-verify-2026-11-20.md",
+      "specificity": 3,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.0,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\fleet-md5-discrepancy-note-20261113.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\freshness-report-2026-11-20.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\freshness-report.md",
+      "specificity": 3,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.0,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\freshness-sweep-2026-11-19.md",
+      "specificity": 2,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 2.67,
+      "flags": [
+        "low-specificity",
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\freshness-sweep-2026-11-20.md",
+      "specificity": 2,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 2.67,
+      "flags": [
+        "low-specificity",
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\goal9-memory-health-endpoint-absent-2026-11-16.md",
+      "specificity": 4,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\ground-truth-pale-r64-2026-11-14.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\history-r7-r36.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\hostdoc-consistency-2026-11-16.md",
+      "specificity": 4,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\hosts-pin-reconciliation-2026-11-14.md",
+      "specificity": 4,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\hotload-research-evidence.md",
+      "specificity": 4,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\index-integrity-2026-11-14.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.67,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\index-integrity-2026-11-15.md",
+      "specificity": 3,
+      "reproducibility": 2,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\index-integrity-r69-2026-11-14.md",
+      "specificity": 4,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\index-sweep-2026-11-13.md",
+      "specificity": 4,
+      "reproducibility": 2,
+      "currency": 4,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\ingest-review-queue.md",
+      "specificity": 2,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 2.67,
+      "flags": [
+        "low-specificity",
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\instances-md-pin-reconcile-2026-11-14.md",
+      "specificity": 4,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.33,
+      "flags": [
+        "low-reproducibility"
+      ]
+    },
+    {
+      "path": "memory\\archivist\\kg-report-cycle5.md",
+      "specificity": 3,
+      "reproducibility": 1,
+      "currency": 5,
+      "composite": 3.0,
+      "flags": [
+        "low-reproducibility"
+      ]
+    }
+  ]
+}
