@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic 10/10 closed; Goal #6 marker added via ledger; remaining items (Goal 1, 3, 9) are time/egress-blocked per blockers.md.
-- Goal #8 (Component Visual Reference) closed: 10/10 components documented (added toast, skeleton, emptyState, progressBar, tooltip).
 - RECALL: - **M3** (`memory/synthesis/c
 - Mechanic 10/10 goals verified; Goal #6 closed Nov 21 by adding missing (verified:) marker via goal_ledger.py --record mechanic 6.
 - Scribe confirmed 10/10 goals closed (open=0); auto
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop header open-counts are
 - Known issue: auto-loop dispatch "open" count
 - Orchestrator verified & closed Archivist Goals 5+9; fleet now 63/80 (79%) as of 2026-11-21.
+- Settings dialog uses sibling labels (`<label>Name</label><input id="f_name">`) with no `for`/wrapping — WCAG accessible-name gap, 23 flagged
+- Scribe updated `memory/synthesis/cycle-narrative.md` to cover Cycles 5–8 (was stale at 4); fleet at 63/80 (79%).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
