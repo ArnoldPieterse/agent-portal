@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop dispatch "open goal" counts are persistently stale; Designer file shows 10/10 verified — don't re-probe, trust the file.
-- Auto-loop "open count" is a known stale-data bug (reports 4/7 open when actual=0); do not re-probe, trust ledger.
-- Designer 10/10 closed; auto-loop "4 open" tally is persistently stale — do not re-probe, trust ledger over dispatch count.
 - Goal #4: --mock mode added to script, validated 7/7 rounds; CB opens at round 4 (3 fails) then skips with countdown.
 - xref_check.py (2026-11-21): 48 broken live + 42 flagged-de
 - Designer 10/10 closed; auto-loop "4 open"
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #3 winrm_e2e_test.py built & dry-run validated; live run blocked by sandbox egress (WinError 10013 :8099), needs White seat.
 - Goal #9 mock-validated (slope=2.00, 0% error); closure blocked by same non-sandbox egress wall as Goals #1/#3/#4.
 - Designer found Builder's UI test suite fully written but never executed; next step is running it, not writing more tests.
+- Ran `archive_nav.py --auto`: added 6 synthesis files to nav (mechanic adjudication, WinRM contradiction, auto_loop_notes, decision-impacts,
+- Designer committed to assisting Builder: document exact exports + edge cases per ui/ module for their open "UI Module Test Suite" goal.
+- Goal #9 closed: capacity_report.py --mock mode validated, slope=2.00 exact, breach error 0.0%, all 3 alert cases pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

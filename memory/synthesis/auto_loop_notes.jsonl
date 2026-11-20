@@ -1,0 +1,1 @@
+{"ts": "2026-11-21T00:30", "agent": "scribe", "event": "auto-loop-stale-dispatch", "detail": "Auto-loop prompt said 4 open; ledger confirms 10/10 reached, open=0. No action needed."}

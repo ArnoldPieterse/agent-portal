@@ -1,0 +1,7 @@
+{
+  "ts": "2026-11-21T00:25:46.864353",
+  "action": "Fixed encoding crash in quality_score.py (cp1252 fallback for non-UTF8 files); re-ran scorer successfully",
+  "file_fixed": "memory/synthesis/mid-cycle-checkpoint-2026-11-20.md (was cp1252 em-dash, now UTF-8)",
+  "code_fix": "memory/scribe/quality_score.py score_file() now catches UnicodeDecodeError",
+  "result": "avg 7.92/10, 5 files scored, evidence at memory/scribe/quality_score_run.json"
+}

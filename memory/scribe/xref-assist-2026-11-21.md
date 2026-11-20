@@ -1,0 +1,57 @@
+# Xref Integrity Report
+Generated: 2026-11-21T00:43:40 by memory/archivist/xref_check.py
+
+- scanned files: 2134
+- broken live xrefs: 48
+- flagged-dead (quarantined) refs: 42
+- status: **NOT CLEAN**
+
+## Broken xrefs
+- `memory/archivist/assist-scribe-goals2-3-5-reverify-2026-11-20.md:10` [arrow] -> scribe.md
+- `memory/archivist/xref-monitor-report-2026-11-20.md:82` [arrow] -> memory/goals/agent_portal.py
+- `memory/archivist/xref-monitor-report-2026-11-20.md:82` [arrow] -> memory/goals/agent_portal.py
+- `memory/archivist/xref-monitor-report-2026-11-20.md:83` [arrow] -> memory/goals/builder-sync-git-patch.md
+- `memory/archivist/xref-monitor-report-2026-11-20.md:83` [arrow] -> memory/goals/builder-sync-git-patch.md
+- `memory/archivist/xref-monitor-report-2026-11-20.md:84` [arrow] -> memory/goals/designer/a11y-check.md
+- `memory/archivist/xref-monitor-report-2026-11-20.md:84` [arrow] -> memory/goals/designer/a11y-check.md
+- `memory/archivist/xref-monitor-report-2026-11-20.md:85` [arrow] -> memory/goals/designer/ops-panel-mock.html
+- `memory/archivist/xref-monitor-report-2026-11-20.md:85` [arrow] -> memory/goals/designer/ops-panel-mock.html
+- `memory/archivist/xref-monitor-report-2026-11-20.md:86` [arrow] -> memory/goals/index.html
+- `memory/archivist/xref-monitor-report-2026-11-20.md:86` [arrow] -> memory/goals/index.html
+- `memory/archivist/xref-monitor-report-2026-11-20.md:87` [arrow] -> memory/goals/memory_mirror.py
+- `memory/archivist/xref-monitor-report-2026-11-20.md:87` [arrow] -> memory/goals/memory_mirror.py
+- `memory/archivist/xref-monitor-report-2026-11-20.md:88` [arrow] -> memory/goals/upgrade-plan.md
+- `memory/archivist/xref-monitor-report-2026-11-20.md:88` [arrow] -> memory/goals/upgrade-plan.md
+- `memory/archivist/xref-monitor-selftest-2026-11-20.md:16` [arrow] -> memory/B.md
+- `memory/archivist/xref-monitor-selftest-2026-11-20.md:16` [arrow] -> memory/C.md
+- `memory/archivist/xref-monitor-selftest-2026-11-20.md:16` [arrow] -> memory/D.md
+- `memory/archivist/xref-postmirror-sweep-2026-11-20.md:17` [arrow] -> all-goals-2026-11-13.md
+- `memory/builder/INDEX.md:6` [arrow] -> icons.js
+- `memory/builder/INDEX.md:6` [arrow] -> core.js
+- `memory/builder/component_refactor_regression_2026-11-20.md:15` [arrow] -> components.js
+- `memory/builder/component_refactor_regression_2026-11-20.md:15` [arrow] -> core.js
+- `memory/builder/goal5_toast_position_fix_2026-11-19.md:12` [arrow] -> uploads.js
+- `memory/builder/goal5_toast_position_fix_2026-11-19.md:13` [arrow] -> core.js
+- `memory/builder/goal5_toast_position_fix_2026-11-19.md:14` [arrow] -> uploads.js
+- `memory/builder/goal5_toast_position_fix_2026-11-19.md:15` [arrow] -> core.js
+- `memory/designer/tierB-batch-fixed-2026-11-19.md:7` [arrow] -> _probe_edge.bat
+- `memory/goals/archive/researcher-2026-11-20b.md:23` [arrow] -> briefs/fleet-vram-management.md
+- `memory/goals/mechanic.md:14` [pointer] -> memory/mechanic/goal4-cb-state-machine-test.py
+- `memory/mechanic/goal1-discrepancy-reconciled-2026-11-20.md:23` [arrow] -> winrm-legs.json
+- `memory/orchestrator/INDEX.md:23` [arrow] -> failover_drill.py
+- `memory/orchestrator/contribution-mechanic-goal1-winrm-forecast-2026-11-20.md:6` [arrow] -> winrm_ops.py
+- `memory/orchestrator/goal7-onboarding-wizard-v4-progress-2026-11-20.md:36` [arrow] -> archive/rosterprobe-2026-11-20.md
+- `memory/researcher/mechanic-goal7-perf-stale-claim-corrected-2026-11-20.md:20` [arrow] -> perf-profile.json
+- `memory/researcher/scribe-goal10-stale-citation-close-2026-11-20.md:24` [arrow] -> weekly_summary.py
+- `memory/researcher/scribe-goal10-stale-citation-close-2026-11-20.md:24` [arrow] -> weekly-YYYY-WW.md
+- `memory/scribe/cards/anti-stall.md:37` [arrow] -> cards/hotload.md
+- `memory/scribe/cards/anti-stall.md:37` [arrow] -> cycle_narrative.py
+- `memory/scribe/compression-fidelity-audit2-2026-11-18.md:22` [arrow] -> sot_audit.py
+- `memory/scribe/cycle-narrative-v2-goal2-evidence-2026-11-20.md:12` [arrow] -> builder.md
+- `memory/scribe/stale-claim-researcher-sla-cycle5-closed-2026-11-19.md:28` [arrow] -> sla-report-cycle5.md
+- `memory/scribe/stale-claim-researcher-sla-cycle5-closed-2026-11-19.md:29` [arrow] -> sla-report-cycle5.md
+- `memory/scribe/stale-claim-researcher-sla-cycle5-closed-2026-11-19.md:31` [arrow] -> sla-report-cycle5.md
+- `memory/verifier/evidence-integrity-rerun-2026-11-21.md:23` [arrow] -> retro-cycle-7.md
+- `memory/verifier/evidence-integrity-rerun-2026-11-21.md:24` [arrow] -> ui-slices-audit-2026-11-17.md
+- `memory/verifier/evidence-integrity-rerun-2026-11-21.md:27` [arrow] -> cycle3-discrepancy-resolved-2026-11-18.md
+- `memory/verifier/stale-claim-orchestrator-g7-rosterprobe-pointer-2026-11-20.md:12` [arrow] -> memory/rosterprobe/INDEX.md
