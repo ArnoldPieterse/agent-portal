@@ -14,7 +14,7 @@ Focus: Interaction design + visual polish. Cycle-5 established the token system;
 
 6. **Responsive Design Hardening** - Test and fix all portal panels at 320px, 768px, 1024px, 1440px widths. Ensure: no horizontal scroll, touch targets >=44x44px on mobile, content reflows logically (not just shrinks). Verified: CDP screenshots at all 4 breakpoints show no overflow; touch targets pass; layout is usable at each width.
 
-7. **Color Contrast + Accessibility** - Audit all text/background pairs for WCAG 2.1 AA contrast (>=4.5:1 body, >=3:1 large text). Fix failures by adjusting token values (not per-component overrides). Verified: automated contrast check passes for all visible text; no new issues introduced; dark mode also passes AA.
+7. **Color Contrast + Accessibility** - Audit all text/background pairs for WCAG 2.1 AA contrast (>=4.5:1 body, >=3:1 large text). Fix failures by adjusting token values (not per-component overrides). Verified: automated contrast check passes for all visible text; no new issues introduced; dark mode also passes AA. (pointer: memory/designer/contrast_audit.py)
 
 8. **Notification/Toast Design** - Design and implement a toast notification system: success (green), error (red), warning (amber), info (blue). Auto-dismiss after 5s, stackable (max 3 visible), dismissible by click. Used for: model load complete, goal verified, connection lost/restored, form errors. Verified: >=4 toast types implemented; stacking works; auto-dismiss timer correct; used in >=3 real scenarios in portal.
 
