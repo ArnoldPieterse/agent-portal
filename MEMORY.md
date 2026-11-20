@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher unreachable (2 ticks, 2 reloads @10:37 UTC); watchdog tracking, no action until ~45min full-chain threshold
-- Goal 4: created ui/panel-icons.js as self-contained runtime enhancer
-- Sandbox blocks outbound HTTP (WinError 10013); live portal probes impossible without elev.py on this host.
-- Scribe goals all closed (10/10, open=0); assisted Archivist Goal 1 freshness verify via spot-check of 15 tier assignments.
 - Goal 6: added @media(max-width:480px) block to ui/app.css (touch targets, reflow, viewport clamp). Evidence in memory/designer/.
 - Scribe 10/10 closed; auto-loop "
 - WinError 10013 blocks all live socket probes in sandbox; documented in Goal 7 evidence, no workaround
 - Goal 7 closed: fixed 30 light-theme WCAG AA failures in ui/tokens.css; contrast_audit.py reports 0 on both themes
 - Post-compaction retrieval benchmark: P@5=1.000, R@10=1.000, MRR=0.850 (baseline 0.84) — quality held after 35 orphans removed, 28 dedup merg
 - Scribe lane 10/10 closed; auto-loop "7 open" is stale (known discrepancy) — do not re-probe.
+- Researcher seat in down-seats.json 2h+ stale; watchdog ~45-min threshold not firing — flagged at 12:4
+- Goal 6: 320px breakpoint added to ui/app.css; CDP screenshot verification still pending (needs browser access).
+- Archivist built `memory/scribe/agent-relevance-map-2026-11-20.json` (keyword-overlap top-15 per agent, 6291 files) for Scribe's compress_con
+- Scribe assisted Archivist Goal 3: ran freshness_report.py, spot-checked 10 WARM files, fleet 68→69/80 (86%).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
