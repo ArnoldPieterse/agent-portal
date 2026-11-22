@@ -1,0 +1,317 @@
+{
+  "generated": "2026-11-23",
+  "total_dirs": 14,
+  "dirs": {
+    "_root": {
+      "files": 3565,
+      "avg_age_days": 4.1,
+      "freshness_score": 95,
+      "tiers": {
+        "HOT": 3003,
+        "WARM": 562,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 84.2,
+      "stale_pct": 0.0,
+      "newest_file_age": 0,
+      "oldest_file_age": 11
+    },
+    "archivist": {
+      "files": 966,
+      "avg_age_days": 0.1,
+      "freshness_score": 100,
+      "tiers": {
+        "HOT": 965,
+        "WARM": 1,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 99.9,
+      "stale_pct": 0.0,
+      "newest_file_age": 0,
+      "oldest_file_age": 8
+    },
+    "builder": {
+      "files": 21,
+      "avg_age_days": 5.2,
+      "freshness_score": 94,
+      "tiers": {
+        "HOT": 15,
+        "WARM": 6,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 71.4,
+      "stale_pct": 0.0,
+      "newest_file_age": 3,
+      "oldest_file_age": 9
+    },
+    "designer": {
+      "files": 4017,
+      "avg_age_days": 5.0,
+      "freshness_score": 94,
+      "tiers": {
+        "HOT": 4015,
+        "WARM": 2,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 100.0,
+      "stale_pct": 0.0,
+      "newest_file_age": 1,
+      "oldest_file_age": 7
+    },
+    "fleet": {
+      "files": 2,
+      "avg_age_days": 1.0,
+      "freshness_score": 99,
+      "tiers": {
+        "HOT": 2,
+        "WARM": 0,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 100.0,
+      "stale_pct": 0.0,
+      "newest_file_age": 1,
+      "oldest_file_age": 1
+    },
+    "goals": {
+      "files": 102,
+      "avg_age_days": 3.1,
+      "freshness_score": 97,
+      "tiers": {
+        "HOT": 82,
+        "WARM": 20,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 80.4,
+      "stale_pct": 0.0,
+      "newest_file_age": 0,
+      "oldest_file_age": 10
+    },
+    "mechanic": {
+      "files": 59,
+      "avg_age_days": 4.6,
+      "freshness_score": 95,
+      "tiers": {
+        "HOT": 59,
+        "WARM": 0,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 100.0,
+      "stale_pct": 0.0,
+      "newest_file_age": 1,
+      "oldest_file_age": 6
+    },
+    "ops": {
+      "files": 148,
+      "avg_age_days": 3.2,
+      "freshness_score": 96,
+      "tiers": {
+        "HOT": 135,
+        "WARM": 13,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 91.2,
+      "stale_pct": 0.0,
+      "newest_file_age": 0,
+      "oldest_file_age": 13
+    },
+    "orchestrator": {
+      "files": 2,
+      "avg_age_days": 3.0,
+      "freshness_score": 97,
+      "tiers": {
+        "HOT": 2,
+        "WARM": 0,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 100.0,
+      "stale_pct": 0.0,
+      "newest_file_age": 3,
+      "oldest_file_age": 3
+    },
+    "portal": {
+      "files": 6,
+      "avg_age_days": 8.8,
+      "freshness_score": 90,
+      "tiers": {
+        "HOT": 1,
+        "WARM": 5,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 16.7,
+      "stale_pct": 0.0,
+      "newest_file_age": 4,
+      "oldest_file_age": 12
+    },
+    "researcher": {
+      "files": 13,
+      "avg_age_days": 4.0,
+      "freshness_score": 96,
+      "tiers": {
+        "HOT": 13,
+        "WARM": 0,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 100.0,
+      "stale_pct": 0.0,
+      "newest_file_age": 0,
+      "oldest_file_age": 5
+    },
+    "scribe": {
+      "files": 30,
+      "avg_age_days": 4.1,
+      "freshness_score": 95,
+      "tiers": {
+        "HOT": 28,
+        "WARM": 2,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 93.3,
+      "stale_pct": 0.0,
+      "newest_file_age": 1,
+      "oldest_file_age": 8
+    },
+    "synthesis": {
+      "files": 16,
+      "avg_age_days": 4.0,
+      "freshness_score": 96,
+      "tiers": {
+        "HOT": 16,
+        "WARM": 0,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 100.0,
+      "stale_pct": 0.0,
+      "newest_file_age": 4,
+      "oldest_file_age": 4
+    },
+    "verifier": {
+      "files": 33,
+      "avg_age_days": 3.1,
+      "freshness_score": 97,
+      "tiers": {
+        "HOT": 32,
+        "WARM": 1,
+        "COLD": 0,
+        "STALE": 0
+      },
+      "hot_pct": 97.0,
+      "stale_pct": 0.0,
+      "newest_file_age": 3,
+      "oldest_file_age": 7
+    }
+  },
+  "trends": {
+    "_root": [
+      {
+        "date": "2026-11-23",
+        "score": 95,
+        "avg_age": 4.1
+      }
+    ],
+    "archivist": [
+      {
+        "date": "2026-11-23",
+        "score": 100,
+        "avg_age": 0.1
+      }
+    ],
+    "builder": [
+      {
+        "date": "2026-11-23",
+        "score": 94,
+        "avg_age": 5.2
+      }
+    ],
+    "designer": [
+      {
+        "date": "2026-11-23",
+        "score": 94,
+        "avg_age": 5.0
+      }
+    ],
+    "fleet": [
+      {
+        "date": "2026-11-23",
+        "score": 99,
+        "avg_age": 1.0
+      }
+    ],
+    "goals": [
+      {
+        "date": "2026-11-23",
+        "score": 97,
+        "avg_age": 3.1
+      }
+    ],
+    "mechanic": [
+      {
+        "date": "2026-11-23",
+        "score": 95,
+        "avg_age": 4.6
+      }
+    ],
+    "ops": [
+      {
+        "date": "2026-11-23",
+        "score": 96,
+        "avg_age": 3.2
+      }
+    ],
+    "orchestrator": [
+      {
+        "date": "2026-11-23",
+        "score": 97,
+        "avg_age": 3.0
+      }
+    ],
+    "portal": [
+      {
+        "date": "2026-11-23",
+        "score": 90,
+        "avg_age": 8.8
+      }
+    ],
+    "researcher": [
+      {
+        "date": "2026-11-23",
+        "score": 96,
+        "avg_age": 4.0
+      }
+    ],
+    "scribe": [
+      {
+        "date": "2026-11-23",
+        "score": 95,
+        "avg_age": 4.1
+      }
+    ],
+    "synthesis": [
+      {
+        "date": "2026-11-23",
+        "score": 96,
+        "avg_age": 4.0
+      }
+    ],
+    "verifier": [
+      {
+        "date": "2026-11-23",
+        "score": 97,
+        "avg_age": 3.1
+      }
+    ]
+  },
+  "history_days": 1
+}
