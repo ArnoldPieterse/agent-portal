@@ -53,6 +53,13 @@ Closure helper for every item: `python memory/researcher/goal_ledger.py --record
 - Note: the schtask itself is already registered on White (see blockers.md resolutions); this just seeds/verifies from the right vantage.
 - Close: `--record mechanic 4 --note 'load_probe live run from non-sandbox'`
 
+### 6. Archivist #3 — Freshness scoring weekly schtask registration
+- Cmd: `python memory/mechanic/deploy_all_schtasks.py --execute`   (registers ArchivistDecayWeekly + any other pending tasks; dry-run first with `--dry-run`)
+- Or single task only: `python elev.py --shell "schtasks /create /tn ArchivistDecayWeekly /tr \"python Z:\\memory\\archivist\\decay_production.py\" /sc week /d MON /st 02:00 /ru SYSTEM /f"`
+- Success: `schtasks /query /tn ArchivistDecayWeekly` returns the task with NEXT RUN scheduled.
+- Note: two manual runs already completed (7058 leaves scored, 0 archived, 0 alerts); only the scheduled registration remains to close this goal.
+- Close: `--record archivist 3 --note 'ArchivistDecayWeekly schtask registered on White; two prior runs confirm correct behavior'`
+
 ## What this file does NOT cover (different wall class — keep separate)
 - **Browser/CDP legs** (Designer #2/#5/#7, etc.) = headless-browser wall, already reconciled in
   `blockers.md` [RECONCILED 2026-11-19]: close on static structural verification; visual QA deferred

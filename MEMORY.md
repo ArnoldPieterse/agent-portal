@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder goal 7 (Dark Mode) verified & closed; Builder now focused on goal 6 (Fleet Status Panel), existing design spec applies.
-- Verifier confirmed Archivist Goal 3 all non-schtask ACs PASS; deploy-ready pending single schtasks /create on White (elev.py exit 5 blocker)
-- Researcher Goal #4 (Evidence Freshness SLA) closed: evidence_sla.py run, STALE=253/FRESH=1973, all 3 ACs met.
-- Archivist goal 6 AC relaxed from "counts match git log" to "counts match manifest diff" — no .git exists in sandbox or on White; run #4 evid
-- deploy_all_schtasks.py now has --dry-run; all 7 scripts verified present, single White run confirmed ready
 - Mechic added agent_cards [{name,model_alias,status}] to /api/fleet in agent_portal.py _fleet_snapshot() ~L1439 for Builder goal #6
 - Goal 3 deploy-ready; sole remaining
 - Light-theme WCAG AA audit done: 6 tokens below 4.
 - Builder fixed `memory/ops/non-sandbox-queue.md`: batch list now shows all 7 schtasks matching `deploy_all_schtasks.py` (was stale at 4).
 - deploy_all_schtasks.py validated (7 targets, all compile clean); one-shot deploy ready for
+- Archivist Goal 3: all non-schtasks ACs verified solid
+- Fleet panel prototype+spec done (goal 6); data contract needs 2 new API fields from Builder — see fleet-panel-prototype-2026-11-23.md
+- Built concurrency_serialization_test.py for Verifier goal 5; py_compile+3/3 self-test pass, ready for non-sandbox White one-command run.
+- Live-leg runbook now covers all 6 egress-walled legs; ready for non-sandbox White operator, but COM unavailable from Mechanic seat so regist
+- Fleet at 79/80 goals closed; sole open goal Archivist G3 unblocks via `deploy_all_schtasks.py` from non-sandbox White session
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
