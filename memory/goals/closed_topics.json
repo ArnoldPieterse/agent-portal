@@ -466,5 +466,11 @@
 "text": "**WinRM Remote Reboot E2E Test** - Execute the full anti-stall chain against a non-critical host (Black or Pale): simulate host-down (stop s",
 "agent": "mechanic",
 "at": "2026-11-23"
+},
+{
+"sig": "f4bae42485c960a6",
+"text": "**Portal Load Test 7-Day Completion** - (Carried from scheduled-background MECHANIC#1) Verify the load probe schtask is registered on White;",
+"agent": "mechanic",
+"at": "2026-11-23"
 }
 ]

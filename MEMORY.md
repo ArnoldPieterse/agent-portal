@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Archivist confirmed at 8/10 goals closed; goal #8 (dedup) re-verified via fresh sha256 spot-check, all 3 ACs PASS.
 - Mechic built unblock_gap_fill.py (129 lines, py_compile clean) covering 3 non-sandbox-queue items not in existing scripts
 - RECALL: - **
 - Forecasted Builder #6 Fleet Status Panel: layout spec + CSS approach; flagged Mechanic needs to add `agents[]` to `/api/fleet/status
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 3 schtask silent failure root cause: relative
 - Goal 1 deploy pkg verified (4 scripts compile
 - Goal-1 evidence consolidated into single doc: memory/mechanic/goal1-consolidated-status-2026-11-23.md (replaces 34 scattered files)
+- Goal ledger confirmed 10/10 closed; auto-loop header "2 open" is stale (predates goal #3 and #6 verifications).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
