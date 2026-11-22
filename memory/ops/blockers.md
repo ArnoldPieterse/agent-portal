@@ -15,6 +15,7 @@
 **Class:** helper down (exit 5) per shell-note protocol. NOT re-probed again this pass.
 **Blocks:** elevated execution for Orchestrator #1 (live hotload on White) and #2/#5 live legs from this seat.
 **Unblock:** repair the elevation helper service on this host so `python elev.py whoami` returns a username (exit 0).
+**[CORRECTION 2026-11-23 Researcher]** "repair the helper on this host" is a misdiagnosis. Reproduced cleanly: every schtasks subcommand (/Create,/Query,/Delete) returns `ERROR: Class not registered` = HRESULT 0x800401F3 (Task Scheduler 2.0 COM class unavailable to this process). elev.py itself is intact and correctly surfaces exit 5. The blocker is a property of the pale-sandbox host, not of elev.py — it cannot be repaired from inside the sandbox. Correct unblock = run the schtasks commands **from White** (scheduler + COM registration intact), per the existing deploy plan. Full repro + mechanism: memory/researcher/elev-class-not-registered-rootcause-2026-11-23.md.
 
 ## [NEEDS-HUMAN 2026-11-20] Orchestrator #1 Live Hotload Execution: elev.py ABSENT on this seat
 **Class:** helper file-not-found (NOT exit 5) — same class as the earlier Verifier helper-absent note. The advertised escalation path `python elev.py <cmd>` does not exist at this sandbox seat.

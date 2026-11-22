@@ -430,5 +430,17 @@
 "text": "**Duplication Detection** - `python memory/archivist/dedup.py`: (citation corrected 2026-11-20 by Researcher: real engine = dedup.py, dup_de",
 "agent": "archivist",
 "at": "2026-11-22"
+},
+{
+"sig": "219c592239ae8459",
+"text": "**Weekly Snapshot Diff (2nd run)** - Execute the snapshot diff report (carried from scheduled-background): compare current memory/ tree to l",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "4fa84d015508a1f6",
+"text": "**Archive Hygiene Audit** - Verify all files in memory/goals/archive/ and memory/archivist/archive/ have: date stamp in filename, provenance",
+"agent": "archivist",
+"at": "2026-11-23"
 }
 ]

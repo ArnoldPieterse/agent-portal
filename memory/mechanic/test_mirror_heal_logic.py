@@ -1,8 +1,9 @@
-"""Test mirror_heal.py core logic (no network required)."""
+"""Test mirror_heal.py core logic (no network required).
+Updated 2026-11-23 to match current API (_last_sync_time, _log, _recent_failures)."""
 import json, os, sys, tempfile, shutil
 from datetime import datetime, timezone, timedelta
 
-sys.path.insert(0, ".")
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "ops"))
 results = []
 
 def check(name, condition, detail=""):
@@ -21,17 +22,20 @@ try:
         f.write(json.dumps({"t": recent_ts, "status": "ok"}) + "\n")
     
     import mirror_heal as mh
-    orig_log = mh.LOG_FILE
+    orig_log = mh.MIRROR_LOG
     orig_repair = mh.REPAIR_LOG
     orig_max_age = mh.MAX_AGE_S
-    mh.LOG_FILE = test_log
+    mh.MIRROR_LOG = test_log
     mh.REPAIR_LOG = os.path.join(tmpdir, "mirror-repairs.jsonl")
     mh.MAX_AGE_S = 900
     
-    last_ts = mh._last_mirror_run_ts()
+    last_ts = mh._last_sync_time()
     check("parses recent timestamp", last_ts is not None, f"got {last_ts}")
+    if last_ts:
+        age_s = (now - last_ts).total_seconds()
+        check("age < MAX_AGE_S (not stale)", age_s < 900, f"age={age_s:.0f}s")
 finally:
-    mh.LOG_FILE = orig_log
+    mh.MIRROR_LOG = orig_log
     mh.REPAIR_LOG = orig_repair
     mh.MAX_AGE_S = orig_max_age
     shutil.rmtree(tmpdir)
@@ -47,21 +51,24 @@ try:
         f.write(json.dumps({"t": old_ts, "status": "ok"}) + "\n")
     
     import mirror_heal as mh
-    orig_log = mh.LOG_FILE
+    orig_log = mh.MIRROR_LOG
     orig_repair = mh.REPAIR_LOG
-    mh.LOG_FILE = test_log
+    mh.MIRROR_LOG = test_log
     mh.REPAIR_LOG = os.path.join(tmpdir, "mirror-repairs.jsonl")
     mh.MAX_AGE_S = 900
     
-    last_ts = mh._last_mirror_run_ts()
+    last_ts = mh._last_sync_time()
     check("parses old timestamp", last_ts is not None, f"got {last_ts}")
+    if last_ts:
+        age_s = (now - last_ts).total_seconds()
+        check("age > MAX_AGE_S (stale)", age_s > 900, f"age={age_s:.0f}s")
 finally:
-    mh.LOG_FILE = orig_log
+    mh.MIRROR_LOG = orig_log
     mh.REPAIR_LOG = orig_repair
     shutil.rmtree(tmpdir)
 
-# --- Test 3: Log event format ---
-print("\nTest 3: _log_event writes valid JSONL")
+# --- Test 3: _log writes valid JSONL ---
+print("\nTest 3: _log writes valid JSONL with ts field")
 tmpdir = tempfile.mkdtemp()
 try:
     import mirror_heal as mh
@@ -69,7 +76,7 @@ try:
     test_repair = os.path.join(tmpdir, "mirror-repairs.jsonl")
     mh.REPAIR_LOG = test_repair
     
-    mh._log_event("test_event", "test detail", hosts=["Red"])
+    mh._log({"type": "test_event", "detail": "test detail"})
     
     with open(test_repair) as f:
         line = f.readline().strip()
@@ -77,13 +84,12 @@ try:
     check("has ts field", "ts" in entry)
     check("has type field", entry.get("type") == "test_event")
     check("has detail field", entry.get("detail") == "test detail")
-    check("has hosts field", entry.get("hosts") == ["Red"])
 finally:
     mh.REPAIR_LOG = orig_repair
     shutil.rmtree(tmpdir)
 
-# --- Test 4: Alert threshold logic ---
-print("\nTest 4: Alert threshold at >3 failures/hour")
+# --- Test 4: Alert threshold logic (_recent_failures) ---
+print("\nTest 4: _recent_failures counts repair_failed in last hour")
 tmpdir = tempfile.mkdtemp()
 try:
     import mirror_heal as mh
@@ -91,13 +97,12 @@ try:
     test_repair = os.path.join(tmpdir, "mirror-repairs.jsonl")
     mh.REPAIR_LOG = test_repair
     
-    for i in range(3):
-        mh._log_event("repair_failed", f"fail {i}")
+    for i in range(4):
+        mh._log({"type": "repair_failed", "detail": f"fail {i}"})
     
-    with open(test_repair) as f:
-        lines = [json.loads(l) for l in f if l.strip()]
-    fail_count = sum(1 for l in lines if l["type"] == "repair_failed")
-    check("3 failures logged", fail_count == 3, f"got {fail_count}")
+    count = mh._recent_failures()
+    check("counts 4 recent failures", count == 4, f"got {count}")
+    check("exceeds ALERT_THRESHOLD(3)", count > mh.ALERT_THRESHOLD, f"{count} > {mh.ALERT_THRESHOLD}")
 finally:
     mh.REPAIR_LOG = orig_repair
     shutil.rmtree(tmpdir)

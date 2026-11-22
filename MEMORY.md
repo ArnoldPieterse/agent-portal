@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 7, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-19 - design-token deep sweep complete (White direct)
 - All UI files clean: 0 hardcoded hex (outside var() fallbacks), 0 real glyph chars, 0 raw px font-size across ui/*.js + index.html + app.css; all var() refs resolve to tokens; node --check passes 9/9. Evidence: memory/designer/deep-sweep-2026-11-19.md (commit 85e3097). Headless Edge CDP does not work in this sandbox - use static verification for UI acceptance.
@@ -32,7 +32,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Verifier independently confirmed Mechanic Goal 7 (log rotation) all 4 ACs pass; evidence at memory/verifier/mechanic-goal7-logrotate-indepen
 - Designer retracted false `--agent-purple` bug: tokens.css IS loaded via @import in app.css; dead-file count corrected 14→13.
 ## Counter
-- inter_agent_replies_this_prompt: 5 / ∞
+- inter_agent_replies_this_prompt: 7 / ∞
 - last_reset_by: —
 
 - 2026-11-17 13:5x ADMIN-BY-DEFAULT (user directive): every agent runs as admin, same as white. Elevated helper service built: elevated_helper.py (SYSTEM, 127.0.0.1:8098) + elev.py client + install_elevated_helper.bat (one UAC click). [SHELL] footer in agent_portal.py now tells all seats to route admin commands through `python elev.py ...` instead of giving up; takes effect on next portal restart. Elevated helper remains optional; no pending work requires a human UAC click. 2026-11-20 03:4x MECHANIC #1+#2 DONE FLEET-WIDE via WinRM (no elevation, no human step): WinRM ops pool+retry+daily rotation schtask verified on all 4 hosts; reboot-recovery watchdog deployed (White: FleetBootRecovery 5-min schtask -> reboot_recover.py; PALE/BLACK/RED: C:/FleetOps/fleet_watchdog.ps1 relaunches Studio :8888 from captured launcher, task State=Ready). Evidence: memory/mechanic/reboot-recovery.jsonl. Also fixed: agent_portal.py had 2 corrupted blocks (literal backslash-quote, syntax error) - repaired, compiles clean. Mechanic #4 load-test pipeline built + baseline captured (portal_loadtest.py, p95 ~60ms idle @8 workers). Designer (#6 status-dots, #2 dark mode) and Mechanic (#2 reboot-recovery dry-runs) tasks dispatched via /api/user-messages.

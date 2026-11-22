@@ -1,1 +1,58 @@
-JSON report: memory\archivist\freshness-report-2026-11-20.json
+{
+  "date": "2026-11-23",
+  "leaves_scored": 7058,
+  "archived": 0,
+  "alerts": 0,
+  "lowest_scores": [
+    {
+      "file": "memory/ops/merge-queue/SETUP_HISTORY.md.4dd807fb2b",
+      "score": 0.478,
+      "age_d": 13
+    },
+    {
+      "file": "memory/portal/upgrades-2026-11-12.md",
+      "score": 0.489,
+      "age_d": 11
+    },
+    {
+      "file": "memory/portal/v1-upgrade-state-2026-11-12.md",
+      "score": 0.489,
+      "age_d": 11
+    },
+    {
+      "file": "memory/portal/v1-upgrades-round-4.md",
+      "score": 0.489,
+      "age_d": 11
+    },
+    {
+      "file": "memory/portal/v1-upgrades.md",
+      "score": 0.489,
+      "age_d": 11
+    },
+    {
+      "file": "memory/builder/agent_portal_ops-r5_staged.py",
+      "score": 0.494,
+      "age_d": 10
+    },
+    {
+      "file": "memory/builder/agent_portal_r16_staged.py",
+      "score": 0.494,
+      "age_d": 10
+    },
+    {
+      "file": "memory/builder/arnold-restart-r19.ps1",
+      "score": 0.494,
+      "age_d": 10
+    },
+    {
+      "file": "memory/builder/arnold-restart-r8.md",
+      "score": 0.494,
+      "age_d": 10
+    },
+    {
+      "file": "memory/builder/arnold-restart-r8.ps1",
+      "score": 0.494,
+      "age_d": 10
+    }
+  ]
+}
