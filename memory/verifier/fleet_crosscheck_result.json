@@ -1,6 +1,6 @@
 {
  "ok": true,
- "elapsed_s": 0.89,
+ "elapsed_s": 0.05,
  "failures": [],
  "hosts": [
   {
@@ -9,31 +9,37 @@
    "state": "busy",
    "reason": "",
    "models": [
-    "Qwen3.8-27B-Q8_0"
+    "Qwen3.8-27B-Q8_0",
+    "lmstudio-community/Qwen3.8-27B-Q8_0"
    ],
    "status_field_ok": true
   },
   {
-   "host": "Black",
-   "base": "http://Black:8888",
-   "state": "idle",
-   "reason": "",
-   "models": [],
-   "status_field_ok": true
-  },
-  {
    "host": "Pale",
-   "base": "http://Pale:8888",
+   "base": "http://IP_PALE:8888",
    "state": "idle",
    "reason": "",
-   "models": [],
+   "models": [
+    "Qwen3.8-27B-Q8_0",
+    "Qwen3.8-27B-Q4_K_S",
+    "archivist-q8",
+    "designer-q4"
+   ],
    "status_field_ok": true
   },
   {
    "host": "Red",
-   "base": "http://Red:8888",
-   "state": "idle",
-   "reason": "",
+   "base": "http://IP_RED:8888",
+   "state": "unknown",
+   "reason": "unreachable",
+   "models": [],
+   "status_field_ok": true
+  },
+  {
+   "host": "Black",
+   "base": "http://IP_BLACK:8888",
+   "state": "unknown",
+   "reason": "unreachable",
    "models": [],
    "status_field_ok": true
   }

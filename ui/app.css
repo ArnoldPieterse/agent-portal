@@ -130,6 +130,8 @@ textarea{resize:vertical;min-height:64px}
 .fdot.idle{background:var(--ok)}
 .fdot.unknown{background:var(--dot-err)}
 .fmodels{color:var(--text);margin:3px 0 0 var(--sp-16);font-family:ui-monospace,Consolas,monospace;font-size:var(--fs-12);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fload{color:var(--warn);font-weight:600;white-space:nowrap}
+.fload-wait{color:var(--dim);font-weight:400}
 #fleetBtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:var(--br-md);padding:var(--sp-4) var(--sp-8);cursor:pointer;font-size:var(--fs-12)}
 #fleetBtn:hover,#fleetBtn.on{border-color:var(--acc);color:var(--text)}
 #opsPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:360px;flex-direction:column}

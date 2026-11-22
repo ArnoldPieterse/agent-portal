@@ -6,7 +6,7 @@
    State -> color reuses portal tokens (var(--ok)/var(--warn)/var(--err)) via ui/app.css .ft-* block.
    API: FleetTopology.render(containerEl, { live:true, sample?, fallback? }); SAMPLE exported. */
 /* FleetTopology — live SVG topology of fleet hosts + agent nodes (Designer goal #9).
-   Data source: GET /api/fleet -> { ts, ttl, hosts:[{host,base,agents[],models[{id,quant}],generations,state,last_seen,reason}] }
+   Data source: GET /api/fleet -> { ts, ttl, hosts:[{host,base,agents[],models[{id,quant}],generations,state,last_seen,reason,loading:{agent,model,since}|null,queued:int}] }
    State -> color reuses the existing .fdot palette: idle=--ok, busy=--warn, unknown=--dot-err.
    Usage (after ui/core.js): FleetTopology.render(document.querySelector('#fleetTopo'), { live:true });
    Dependency-free. Self-contained SVG + HTML tooltip/detail card. */
@@ -18,9 +18,10 @@
 
   // Fallback dataset (real /api/fleet schema) so the diagram renders even with no egress.
   var SAMPLE = { ts: Date.now() / 1000, ttl: 30, hosts: [
-    { host: "White (local)", base: "http://127.0.0.1:8888", agents: ["Orchestrator","Researcher","Builder","Verifier","Designer","Archivist","Scribe","Mechanic"], models: [{id:"atlas-q8",quant:"Q8"},{id:"scribe-q8",quant:"Q8"}], generations: 0, state: "idle", last_seen: null, reason: "" },
-    { host: "Black .244", base: "http://Black:8888", agents: ["Builder","Verifier"], models: [{id:"atlas-q8",quant:"Q8"}], generations: 1, state: "busy", last_seen: null, reason: "" },
-    { host: "Red .245", base: "http://Red:8888", agents: ["Mechanic"], models: [{id:"mech-q4",quant:"Q4"}], generations: 0, state: "unknown", last_seen: null, reason: "unreachable" }
+    { host: "White (local)", base: "http://127.0.0.1:8888", agents: ["Orchestrator","Researcher","Builder","Verifier"], models: [{id:"Qwen3.8-27B-Q8_0",quant:"Q8"},{id:"Qwen3.8-27B-Q4_K_S",quant:"Q4"}], generations: 0, state: "idle", last_seen: null, reason: "", loading: null, queued: 0 },
+    { host: "Pale", base: "http://IP_PALE:8888", agents: ["Designer","Archivist"], models: [{id:"Qwen3.8-27B-Q4_K_S",quant:"Q4"}], generations: 1, state: "busy", last_seen: null, reason: "", loading: { agent: "Archivist", model: "Q8_0", since: Date.now() / 1000 - 95 }, queued: 1 },
+    { host: "Black", base: "http://IP_BLACK:8888", agents: [], models: [], generations: 0, state: "unknown", last_seen: null, reason: "unreachable", loading: null, queued: 0 },
+    { host: "Red", base: "http://IP_RED:8888", agents: ["Scribe","Mechanic"], models: [{id:"Qwen3.8-27B-Q8_0",quant:"Q8"}], generations: 0, state: "idle", last_seen: null, reason: "", loading: null, queued: 0 }
   ]};
 
   function esc(s){ return String(s==null?"":s).replace(/[&<>\"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
@@ -37,25 +38,38 @@
       var agents = (h.agents||[]).slice(0,8);
       var span = Math.min(agents.length,7) * 26;
       var ax0 = cx - span/2 + 13;
-      return { h:h, i:i, cx:cx, hostY:hostY, agentY:agentY, portal:portal, W:W, H:H,
+      var bh = (h.loading || h.queued > 0) ? 58 : 46;   // extra line for the load queue
+      return { h:h, i:i, cx:cx, hostY:hostY, agentY:agentY, portal:portal, W:W, H:H, bh:bh,
         agents: agents.map(function(a,j){ return { name:a, x:ax0 + j*26, y:agentY }; }) };
     });
+  }
+
+  function loadLine(h){
+    if(!h.loading && !(h.queued>0)) return "";
+    var t = h.loading ? ("⏳ " + (h.loading.model||"?")) : "";
+    if(h.queued>0) t += (t?" · ":"") + h.queued + " queued";
+    return t;
   }
 
   function svgNode(node){
     var h = node.h, color = STATE_COLOR[h.state] || STATE_COLOR.unknown;
     var s = "";
-    s += '<line x1="'+node.cx+'" y1="'+(node.hostY+26)+'" x2="'+node.portal.x+'" y2="'+(node.portal.y-18)+'" class="ft-link"/>';
+    var pY = node.hostY + Math.max(26, node.bh/2 + 1);
+    var aY = node.hostY + Math.max(34, node.bh/2 + 9);
+    s += '<line x1="'+node.cx+'" y1="'+pY+'" x2="'+node.portal.x+'" y2="'+(node.portal.y-18)+'" class="ft-link"/>';
     node.agents.forEach(function(a){
-      s += '<line x1="'+node.cx+'" y1="'+(node.hostY+34)+'" x2="'+a.x+'" y2="'+(a.y-7)+'" class="ft-agentlink"/>';
+      s += '<line x1="'+node.cx+'" y1="'+aY+'" x2="'+a.x+'" y2="'+(a.y-7)+'" class="ft-agentlink"/>';
       s += '<g class="ft-agent"><circle cx="'+a.x+'" cy="'+a.y+'" r="6"/><title>'+esc(a.name)+'</title></g>';
     });
-    var bw = 150, bh = 46, bx = node.cx - bw/2, by = node.hostY - bh/2;
-    s += '<g class="ft-host" data-i="'+node.i+'" tabindex="0" role="button" aria-label="'+esc(h.host)+' '+esc(STATE_LABEL[h.state]||h.state)+', '+(h.agents?h.agents.length:0)+' agents">'+
+    var bw = 150, bh = node.bh, bx = node.cx - bw/2, by = node.hostY - bh/2;
+    var lq = loadLine(h);
+    var c1 = lq ? -10 : -4, c2 = lq ? 6 : 12;   // baselines for line 1 (name) / line 2 (agents·gen)
+    s += '<g class="ft-host" data-i="'+node.i+'" tabindex="0" role="button" aria-label="'+esc(h.host)+' '+esc(STATE_LABEL[h.state]||h.state)+', '+(h.agents?h.agents.length:0)+' agents'+(lq?', load queue: '+esc(lq)+(h.loading&&h.queued>0?' ('+esc(h.loading.agent||'?')+')':''):"")+'">'+
          '<rect x="'+bx+'" y="'+by+'" width="'+bw+'" height="'+bh+'" rx="12"/>'+
-         '<circle cx="'+(bx+16)+'" cy="'+node.hostY+'" r="7" class="ft-state" style="fill:'+color+'"/>'+
-         '<text x="'+(bx+30)+'" y="'+(node.hostY-4)+'" class="ft-hostname">'+esc(h.host)+'</text>'+
-         '<text x="'+(bx+30)+'" y="'+(node.hostY+12)+'" class="ft-subline">'+(h.agents?h.agents.length:0)+' agents · '+(h.generations||0)+' gen'+(h.state==="unknown"?" · "+esc(h.reason||"unreachable"):"")+'</text>'+
+         '<circle cx="'+(bx+16)+'" cy="'+(node.hostY+c1)+'" r="7" class="ft-state" style="fill:'+color+'"/>'+
+         '<text x="'+(bx+30)+'" y="'+(node.hostY+c1)+'" class="ft-hostname">'+esc(h.host)+'</text>'+
+         '<text x="'+(bx+30)+'" y="'+(node.hostY+c2)+'" class="ft-subline">'+(h.agents?h.agents.length:0)+' agents · '+(h.generations||0)+' gen'+(h.state==="unknown"?" · "+esc(h.reason||"unreachable"):"")+'</text>'+
+         (lq ? '<text x="'+(bx+30)+'" y="'+(node.hostY+21)+'" class="ft-loadline">'+esc(lq)+'</text>' : '')+
          '</g>';
     return s;
   }
@@ -69,17 +83,24 @@
 
   function tooltipHTML(h){
     var models = (h.models||[]).map(function(m){return esc(m.id)+(m.quant?" ("+esc(m.quant)+")":"");}).join(", ") || "—";
+    var lq = h.loading ? ('loading '+esc(h.loading.model||'?')+' for '+esc(h.loading.agent||'?')+' · '+fmtAge(h.loading.since)+(h.queued>0?' · '+h.queued+' waiting':''))
+                       : (h.queued>0 ? h.queued+' queued' : 'none');
     return '<div class="ft-tt-head"><span class="ft-state" style="background:'+(STATE_COLOR[h.state]||STATE_COLOR.unknown)+'"></span>'+esc(h.host)+' <em>'+esc(STATE_LABEL[h.state]||h.state)+'</em></div>'+
            '<div class="ft-tt-row"><b>base</b> '+esc(h.base)+'</div>'+
            '<div class="ft-tt-row"><b>gens</b> '+(h.generations||0)+' · <b>last seen</b> '+fmtAge(h.last_seen)+(h.reason?' ('+esc(h.reason)+')':'')+'</div>'+
+           '<div class="ft-tt-row"><b>load queue</b> '+lq+'</div>'+
            '<div class="ft-tt-row"><b>models</b> '+models+'</div>';
   }
 
   function detailHTML(h){
     var models = (h.models||[]).map(function(m){return '<li>'+esc(m.id)+(m.quant?' <span class="ft-quant">'+esc(m.quant)+'</span>':'')+'</li>';}).join("") || "<li class='ft-empty'>no models loaded</li>";
     var agents = (h.agents||[]).map(function(a){return '<span class="ft-chip">'+esc(a)+'</span>';}).join(" ") || '<span class="ft-empty">no agents bound</span>';
+    var lq = h.loading
+      ? '<li><b>'+esc(h.loading.model||'?')+'</b> for '+esc(h.loading.agent||'?')+' <span class="ft-quant">'+fmtAge(h.loading.since)+'</span></li>'+(h.queued>0?"<li class='ft-empty'>"+h.queued+" queued behind it</li>":"")
+      : (h.queued>0 ? "<li>"+h.queued+" queued</li>" : "<li class='ft-empty'>no loads in flight</li>");
     return '<div class="ft-dt-head"><span class="ft-state" style="background:'+(STATE_COLOR[h.state]||STATE_COLOR.unknown)+'"></span><b>'+esc(h.host)+'</b> <em>'+esc(STATE_LABEL[h.state]||h.state)+'</em></div>'+
            '<div class="ft-dt-base">'+esc(h.base)+'</div>'+
+           '<div class="ft-dt-sub">Load queue</div><ul class="ft-models">'+lq+'</ul>'+
            '<div class="ft-dt-sub">Models ('+(h.models?h.models.length:0)+')</div><ul class="ft-models">'+models+'</ul>'+
            '<div class="ft-dt-sub">Agents ('+(h.agents?h.agents.length:0)+')</div><div class="ft-agents">'+agents+'</div>';
   }

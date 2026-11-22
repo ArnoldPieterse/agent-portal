@@ -372,11 +372,15 @@ async function fleetUpdate(){
     for(const h of (o.hosts||[])){
       const age=h.last_seen?Math.max(0,Math.round(now-h.last_seen)):"–";
       const st=h.state==="busy"?"busy":h.state==="idle"?"idle":"UNKNOWN";
-      const models=h.models.length?h.models.map(m=>m.id+(m.quant?" ("+m.quant+")":"")).join(", "):"— none loaded —";
-      html+='<div class="frow-h"><span class="fdot '+h.state+'"></span><b>'+h.host+'</b>'+
-        '<span class="hint"> · '+st+(h.reason?" · "+h.reason:"")+" · last seen "+age+"s ago</span>"+
-        '<div class="fmodels">'+models+'</div>'+
-        '<div class="hint" style="margin-left:16px">agents: '+(h.agents.length?h.agents.join(", "):"none")+'</div></div>';
+      const models=h.models.length?h.models.map(m=>esc(m.id)+(m.quant?" ("+esc(m.quant)+")":"")).join(", "):"— none loaded —";
+      // Per-host load queue (2026-11-22): in-flight model load + waiters behind it.
+      let lq="";
+      if(h.loading){ lq+=' · <span class="fload" title="Model load in progress on this host (one at a time)">⏳ loading '+esc(h.loading.model||"?")+' for '+esc(h.loading.agent||"?")+'</span>'; }
+      if(h.queued>0){ lq+=' · <span class="fload fload-wait" title="Waiting their turn in the per-host load queue">'+h.queued+' queued</span>'; }
+      html+='<div class="frow-h"><span class="fdot '+h.state+'"></span><b>'+esc(h.host)+'</b>'+
+        '<span class="hint"> · '+st+(h.reason?" · "+esc(h.reason):"")+" · last seen "+age+"s ago</span>"+
+        '<div class="fmodels">'+models+lq+'</div>'+
+        '<div class="hint" style="margin-left:16px">agents: '+(h.agents.length?h.agents.map(esc).join(", "):"none")+'</div></div>';
     }
     const _fp=window._fleetPrev||{}; const _fs={};
     for(const h of (o.hosts||[])){ _fs[h.host]=h.state!=="unknown";
@@ -385,6 +389,7 @@ async function fleetUpdate(){
     $("fleetBody").innerHTML=html||UI.emptyState({icon:"agent",title:"No hosts reporting",msg:"The fleet probe hasn't seen any hosts yet.",ctaLabel:"Refresh now"});
     { const _ct=$("fleetBody").querySelector(".empty-cta"); if(_ct)_ct.onclick=fleetUpdate; }
     const up=(o.hosts||[]).filter(h=>h.state!=="unknown").length;
+    $("fleetCount").textContent=(o.hosts||[]).length+"-host fleet · live while open (5s refresh)";
     $("fleetStat").textContent=up+"/"+(o.hosts||[]).length+" reporting · ttl "+(o.ttl||15)+"s";
   }catch(e){ $("fleetStat").textContent="error: "+e; }
 }

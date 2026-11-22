@@ -215,6 +215,34 @@ def _host_label(base):
     ip = m.group(1) if m else base
     return _FLEET_REBOOT_USERS.get(ip, ip)
 
+_HOST_NAME_CACHE = None   # base -> friendly name (catalog _meta.hosts), cached for the process
+
+def _fleet_host_names():
+    """{base: friendly name} for every host in memory/llm/hotload-catalog.json (_meta.hosts:
+    white/pale/black/red). The catalog is the source of truth for fleet membership, so hosts
+    with no agents mapped (e.g. Black) still appear in the Fleet tab; bases the catalog
+    doesn't know fall back to _host_label (WinRM user, else raw IP)."""
+    global _HOST_NAME_CACHE
+    if _HOST_NAME_CACHE is not None:
+        return _HOST_NAME_CACHE
+    names = {}
+    try:
+        cat = json.load(open(os.path.join(HERE, "memory", "llm", "hotload-catalog.json"), encoding="utf-8"))
+        for hn, hv in (cat.get("_meta") or {}).get("hosts", {}).items():
+            api = str(hv.get("api") or "").strip().rstrip("/")
+            if api:
+                names[api] = str(hn).capitalize()
+    except Exception:
+        pass
+    _HOST_NAME_CACHE = names
+    return names
+
+def _friendly_host_name(base):
+    """Display name for a Studio base: catalog host name, else WinRM user, else raw IP."""
+    if not base or base.rstrip("/") == STUDIO.rstrip("/"):
+        return "White (local)"
+    return _fleet_host_names().get(base.rstrip("/")) or _host_label(base)
+
 
 def _base_alive(base, timeout=3):
     if not base or base.rstrip("/") == STUDIO.rstrip("/"):
@@ -320,6 +348,7 @@ def _resolve_seat(agent):
 # of piling up. Different hosts load in parallel.
 _HOST_LOAD_SEMS = {}      # host base -> Semaphore(1): one model load at a time per host
 _HOST_LOAD_WAITERS = {}   # host base -> current waiters (for honest "N ahead" messages)
+_HOST_LOAD_ACTIVE = {}    # host base key -> {agent, model, since} of the in-flight load (Fleet tab)
 _LOADQ_LOCK = threading.Lock()
 LOADQ_WAIT_S = 150        # max seconds a TURN waits its turn in the load queue
 LOADQ_MAX_WAITERS = 4     # per-host depth cap: beyond this, new loads defer honestly
@@ -374,6 +403,10 @@ def _queued_model_load(agent, reason="load", wait_s=LOADQ_WAIT_S, wfile=None):
                 # we waited - take the seat without a second (double) load
                 if reason == "load" and _model_resident(agent, rec):
                     return True, "resident (caught shared load)"
+                with _LOADQ_LOCK:
+                    _HOST_LOAD_ACTIVE[k] = {"agent": name,
+                                            "model": rec.get("gguf_variant") or os.path.basename((rec.get("model_path") or "").replace("\\", "/")) or "?",
+                                            "since": time.time()}
                 break
             if time.time() >= deadline:
                 with _LOADQ_LOCK:
@@ -387,6 +420,8 @@ def _queued_model_load(agent, reason="load", wait_s=LOADQ_WAIT_S, wfile=None):
     finally:
         with _LOADQ_LOCK:
             _HOST_LOAD_WAITERS[k] = max(0, _HOST_LOAD_WAITERS.get(k, 0) - 1)
+            if got:
+                _HOST_LOAD_ACTIVE.pop(k, None)
         if got:
             sem.release()
 
@@ -1212,6 +1247,12 @@ def _fleet_snapshot():
     if local not in hosts:
         hosts[local] = {"key": "", "agents": []}
         order.insert(0, local)
+    # Catalog hosts with no agents mapped (e.g. Black) still belong to the fleet picture:
+    # they can serve as placement seats and carry model loads, so the tab must not hide them.
+    for cb in _fleet_host_names():
+        if cb not in hosts:
+            hosts[cb] = {"key": "", "agents": []}
+            order.append(cb)
     now = time.time()
 
     def probe(b):
@@ -1241,7 +1282,7 @@ def _fleet_snapshot():
     rows = []
     for b in order:
         h = hosts[b]
-        name = "White (local)" if b == local else b.split("//")[-1].split(":")[0]
+        name = _friendly_host_name(b)
         row = {"host": name, "base": b, "agents": h["agents"], "models": [],
                "generations": 0, "state": "unknown", "last_seen": None, "reason": ""}
         res = results.get(b)
@@ -1254,6 +1295,13 @@ def _fleet_snapshot():
             row.update(res)
             row["state"] = "busy" if res["generations"] > 0 else "idle"
             row["last_seen"] = now
+        # Load queue (2026-11-22): in-flight load + waiters behind it, per host. The waiter
+        # counter includes the runner itself while a load is active, so queued = waiters - 1.
+        with _LOADQ_LOCK:
+            act = _HOST_LOAD_ACTIVE.get(b.rstrip("/"))
+            wait = _HOST_LOAD_WAITERS.get(b.rstrip("/"), 0)
+        row["loading"] = dict(act) if act else None
+        row["queued"] = max(0, wait - (1 if act else 0))
         rows.append(row)
     return {"ts": now, "ttl": FLEET_TTL, "hosts": rows}
 
