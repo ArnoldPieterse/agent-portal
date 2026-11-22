@@ -1,0 +1,4 @@
+{"ts": "2026-11-22T09:42:43.371249+00:00", "action": "UNLOAD_SUCCESS", "host": "White", "model": "quinn-q4", "vram_pct": 92.0, "threshold": 85.0}
+{"ts": "2026-11-22T09:42:43.371745+00:00", "action": "OK", "host": "Black", "vram_pct": 45.0, "threshold": 85.0}
+{"ts": "2026-11-22T09:42:50.320004+00:00", "action": "UNLOAD_SUCCESS", "host": "White", "model": "quinn-q4", "vram_pct": 92.0, "threshold": 40.0}
+{"ts": "2026-11-22T09:42:50.320585+00:00", "action": "UNLOAD_SUCCESS", "host": "Black", "model": "scribe-q8", "vram_pct": 45.0, "threshold": 40.0}

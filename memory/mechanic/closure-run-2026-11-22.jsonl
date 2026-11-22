@@ -1,0 +1,8 @@
+{"ts": "2026-11-22T09:01:35.440768+00:00", "stage": "preflight", "status": "PASS", "detail": "elevated=True"}
+{"ts": "2026-11-22T09:01:38.466348+00:00", "stage": "preflight", "status": "FAIL", "detail": ":8099 egress=False"}
+{"ts": "2026-11-22T09:01:38.982599+00:00", "stage": "preflight", "status": "FAIL", "detail": "schtasks COM"}
+{"ts": "2026-11-22T09:01:38.986754+00:00", "stage": "deploy", "status": "SKIP", "detail": "dry-run mode"}
+{"ts": "2026-11-22T09:01:38.987392+00:00", "stage": "goal1", "status": "FAIL", "detail": "trend file not found: C:\\Users\\black\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\loadtest\\load_trend.jsonl"}
+{"ts": "2026-11-22T09:01:39.062601+00:00", "stage": "goal4", "status": "FAIL", "detail": "Request.__init__() got an unexpected keyword argument 'timeout'"}
+{"ts": "2026-11-22T09:01:42.071190+00:00", "stage": "goal3", "status": "WARN", "detail": "Black ([LAN-IP]) unreachable: timed out"}
+{"ts": "2026-11-22T09:01:45.076019+00:00", "stage": "goal3", "status": "WARN", "detail": "Pale ([LAN-IP]) unreachable: timed out"}

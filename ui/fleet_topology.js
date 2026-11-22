@@ -38,15 +38,17 @@
       var agents = (h.agents||[]).slice(0,8);
       var span = Math.min(agents.length,7) * 26;
       var ax0 = cx - span/2 + 13;
-      var bh = (h.loading || h.queued > 0) ? 58 : 46;   // extra line for the load queue
+      var bh = (h.loading || h.queued > 0 || (h.host_loading||[]).length) ? 58 : 46;   // extra line for the load queue
       return { h:h, i:i, cx:cx, hostY:hostY, agentY:agentY, portal:portal, W:W, H:H, bh:bh,
         agents: agents.map(function(a,j){ return { name:a, x:ax0 + j*26, y:agentY }; }) };
     });
   }
 
   function loadLine(h){
-    if(!h.loading && !(h.queued>0)) return "";
+    var hl = h.host_loading||[];
+    if(!h.loading && !(h.queued>0) && !hl.length) return "";
     var t = h.loading ? ("⏳ " + (h.loading.model||"?")) : "";
+    if(hl.length) t += (t?" · ":"") + "⏳ " + hl.slice(0,2).join(", ") + (hl.length>2?" +"+(hl.length-2):"") + " (host)";
     if(h.queued>0) t += (t?" · ":"") + h.queued + " queued";
     return t;
   }
@@ -85,6 +87,7 @@
     var models = (h.models||[]).map(function(m){return esc(m.id)+(m.quant?" ("+esc(m.quant)+")":"");}).join(", ") || "—";
     var lq = h.loading ? ('loading '+esc(h.loading.model||'?')+' for '+esc(h.loading.agent||'?')+' · '+fmtAge(h.loading.since)+(h.queued>0?' · '+h.queued+' waiting':''))
                        : (h.queued>0 ? h.queued+' queued' : 'none');
+    if((h.host_loading||[]).length) lq += (lq==='none'?'':' · ') + 'host loading '+h.host_loading.map(esc).join(", ");
     return '<div class="ft-tt-head"><span class="ft-state" style="background:'+(STATE_COLOR[h.state]||STATE_COLOR.unknown)+'"></span>'+esc(h.host)+' <em>'+esc(STATE_LABEL[h.state]||h.state)+'</em></div>'+
            '<div class="ft-tt-row"><b>base</b> '+esc(h.base)+'</div>'+
            '<div class="ft-tt-row"><b>gens</b> '+(h.generations||0)+' · <b>last seen</b> '+fmtAge(h.last_seen)+(h.reason?' ('+esc(h.reason)+')':'')+'</div>'+
@@ -97,9 +100,11 @@
     var models = (h.models||[]).map(function(m){return '<li>'+esc(m.id)+(m.quant?' <span class="ft-quant">'+esc(m.quant)+'</span>':'')+'</li>';}).join("") || "<li class='ft-empty'>no models loaded</li>";
     var actChips = (h.active||[]).map(function(a){return '<span class="ft-chip">'+esc(a)+'</span>';}).join(" ") || '<span class="ft-empty">none in the last 10 minutes</span>';
     var homeChips = (h.agents||[]).map(function(a){return '<span class="ft-chip" style="opacity:.65">'+esc(a)+'</span>';}).join(" ") || '<span class="ft-empty">no agents bound at home</span>';
-    var lq = h.loading
-      ? '<li><b>'+esc(h.loading.model||'?')+'</b> for '+esc(h.loading.agent||'?')+' <span class="ft-quant">'+fmtAge(h.loading.since)+'</span></li>'+(h.queued>0?"<li class='ft-empty'>"+h.queued+" queued behind it</li>":"")
-      : (h.queued>0 ? "<li>"+h.queued+" queued</li>" : "<li class='ft-empty'>no loads in flight</li>");
+    var items = [];
+    if(h.loading) items.push('<li><b>'+esc(h.loading.model||'?')+'</b> for '+esc(h.loading.agent||'?')+' <span class="ft-quant">'+fmtAge(h.loading.since)+'</span></li>');
+    if(h.queued>0) items.push("<li class='ft-empty'>"+h.queued+" queued behind it</li>");
+    (h.host_loading||[]).forEach(function(m){ items.push('<li>⏳ <b>'+esc(m)+'</b> <span class="ft-quant">host load - started by Studio, not the portal queue</span></li>'); });
+    var lq = items.length ? items.join("") : "<li class='ft-empty'>no loads in flight</li>";
     return '<div class="ft-dt-head"><span class="ft-state" style="background:'+(STATE_COLOR[h.state]||STATE_COLOR.unknown)+'"></span><b>'+esc(h.host)+'</b> <em>'+esc(STATE_LABEL[h.state]||h.state)+'</em></div>'+
            '<div class="ft-dt-base">'+esc(h.base)+'</div>'+
            '<div class="ft-dt-sub">Load queue</div><ul class="ft-models">'+lq+'</ul>'+

@@ -1282,6 +1282,21 @@ def _fleet_probe(base, api_key="", timeout=3):
         return None
     except Exception:
         return None
+    # Studio-side load visibility (2026-11-22): /api/inference/status reports the models
+    # CURRENTLY LOADING on this engine - including loads the portal never initiated (boot
+    # auto-load tasks, manual reloads). The Fleet tab shows these too, so a host mid-load
+    # is visible no matter who started it. Best-effort: a slow status call must never
+    # demote a live host to unknown.
+    sl = []
+    try:
+        with urllib.request.urlopen(urllib.request.Request(b + "/api/inference/status", headers=h), timeout=timeout) as r:
+            st = json.load(r)
+        for m in (st.get("loading") or []):
+            mid = str(m if not isinstance(m, dict) else (m.get("id") or m.get("model") or ""))
+            if mid:
+                sl.append(mid.replace("\\", "/").rsplit("/", 1)[-1])
+    except Exception:
+        pass
     # AG answered => the host IS reachable; state derives from generations. The model
     # list is display-only: fetch on TTL, fall back to the last known list (or empty)
     # when /v1/models stalls - never demote a live host to unknown for it.
@@ -1302,7 +1317,7 @@ def _fleet_probe(base, api_key="", timeout=3):
                 qm = re.search(r"(UD-)?(Q\d+[A-Z0-9_]*|F16|BF16)", mid)
                 models.append({"id": mid, "quant": qm.group(2) if qm else ""})
             _fleet_models_cache[b] = (now, models)
-    return {"generations": gen, "models": models}
+    return {"generations": gen, "models": models, "studio_loading": sl}
 
 def _fleet_snapshot():
     """GET /api/fleet: live view of every host in agents.json (+ local Studio).
@@ -1362,7 +1377,8 @@ def _fleet_snapshot():
         h = hosts[b]
         name = _friendly_host_name(b)
         row = {"host": name, "base": b, "agents": h["agents"], "models": [],
-               "generations": 0, "state": "unknown", "last_seen": None, "reason": ""}
+               "generations": 0, "state": "unknown", "last_seen": None, "reason": "",
+               "host_loading": []}
         res = results.get(b)
         with _fleet_lock:
             if res is None:
@@ -1388,6 +1404,12 @@ def _fleet_snapshot():
             wait = _HOST_LOAD_WAITERS.get(b.rstrip("/"), 0)
         row["loading"] = dict(act) if act else None
         row["queued"] = max(0, wait - (1 if act else 0))
+        # Host-side loads (2026-11-22): models Studio itself reports mid-load via
+        # /api/inference/status - boot auto-loads and manual reloads included, not just
+        # portal-initiated queue entries. This is why the panel used to read "empty"
+        # while a host was plainly loading a model it started on its own.
+        row["host_loading"] = (res or {}).get("studio_loading") or []
+        row.pop("studio_loading", None)
         # Live placement (2026-11-22): agents that actually RAN on this host in the last
         # ACTIVE_TTL_S seconds - placement is host-agnostic, so this is the truth the tab
         # shows; h["agents"] stays the static home roster for reference.

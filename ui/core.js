@@ -376,7 +376,8 @@ async function fleetUpdate(){
       // Per-host load queue (2026-11-22): in-flight model load + waiters behind it.
       let lq="";
       if(h.loading){ lq+=' · <span class="fload" title="Model load in progress on this host (one at a time)">⏳ loading '+esc(h.loading.model||"?")+' for '+esc(h.loading.agent||"?")+'</span>'; }
-      if(h.queued>0){ lq+=' · <span class="fload fload-wait" title="Waiting their turn in the per-host load queue">'+h.queued+' queued</span>'; }
+      if(h.queued>0){ lq+=' · <span class="fload fload-wait" title="Waiting their turn in the per-host load queue">'+h.queued+' queued</span>; }
+      (h.host_loading||[]).forEach(m=>{ lq+=' · <span class="fload" title="Studio is loading this model right now - started by the host itself (boot auto-load or manual reload), not via the portal queue">⏳ '+esc(m)+' (host load)</span>'; });
       // LIVE PLACEMENT (2026-11-22): primary list = agents that actually RAN on this host
       // in the last 10 min (h.active); the static agents.json home roster is secondary.
       const act=h.active||[];
