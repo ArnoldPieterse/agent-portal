@@ -1,5 +1,8 @@
 # memory/verifier/ INDEX
-Last updated: 2026-11-21.
+Last updated: 2026-11-22.
+
+## 2026-11-22
+- evidence-integrity-drift-2026-11-22.md — **FRESH RUN + DRIFT**: re-ran `memory_integrity.py`; goal #9 closure NOT stale (script runs/lists, still valid). New measurement: issues 214→256, broken pointers 117→157 (+40/day) — route to Archivist. Found hardcoded report-path defect in script (clobbers memory-integrity-2026-11-20.md each run).
 
 ## 2026-11-21
 - hotnote-false-closure-scribe-2026-11-21.md — **FALSE CLAIM CONFIRMED**: Hot note "Goals #8 (Temporal Query API) + #10 (Weekly Digest) all verified and closed" is FALSE. Evidence: `/api/timeline` route absent from agent_portal.py (0 grep hits for the endpoint); `weekly_summary.py` has no `--agent` flag or argparse. Both goals remain OPEN in Scribe's ledger (correctly). Hot note should not be trusted for closure status.

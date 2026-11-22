@@ -8,7 +8,7 @@ Focus: Accessibility + production UI polish. Cycle-7 closed design token gaps; c
 
 3. **Error State Design System** - Define consistent patterns for: empty states (no data yet), error states (API failed, file not found), loading states (spinner, skeleton), success states (confirmation toast). Implement as components in ui/components.js. Verified: 4 state types have visual specs; all implemented; used in >=3 panels each; no raw "Error" text without context. (pointer: memory/designer/goal1-interaction-system-live-2026-11-20.md)
 
-4. **Responsive Layout (768px)** - Make the portal usable at tablet width: sidebar collapses to icon bar, chat panel full-width, fleet tab scrolls horizontally for host cards. Verified: at 768px all content accessible; no horizontal scroll on main panels; touch targets >=44px; text readable without zoom.
+4. **Responsive Layout (768px)** - Make the portal usable at tablet width: sidebar collapses to icon bar, chat panel full-width, fleet tab scrolls horizontally for host cards. Verified: at 768px all content accessible; no horizontal scroll on main panels; touch targets >=44px; text readable without zoom. (verified: 2026-11-22 - Builder assist: verified all AC met in ui/app.css L204-233 - sidebar icon bar (56px, .nm hidden), chat full-width (flex-direction:column), fleet h-scroll (.fleet-grid overflow-x:auto), touch targets >)
 
 5. **Animation/Motion System** - Add subtle CSS transitions: panel open/close (200ms ease), toast slide-in (300ms), loading spinner rotation, status dot pulse (2s loop). Respect prefers-reduced-motion. Verified: all animations present; duration <400ms; reduced-motion media query disables them; no layout shift during animation. (pointer: memory/designer/goal2-animation-consumers-landed-2026-11-20.md)
 
