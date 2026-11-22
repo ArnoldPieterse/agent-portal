@@ -527,3 +527,4 @@
 {"ts": "2026-11-22 13:53:16", "run": "g-1a2016304f8-b2b38c", "missing": {"Orchestrator": "not_loaded", "Builder": "not_loaded", "Verifier": "not_loaded"}}
 {"ts": "2026-11-22 14:07:22", "run": "g-1a2016fecb2-331cea", "missing": {"Researcher": "unreachable", "Verifier": "unreachable", "Builder": "unreachable", "Orchestrator": "unreachable", "Archivist": "unreachable", "Designer": "unreachable"}}
 {"ts": "2026-11-22 14:11:23", "run": "g-1a201739a2b-fc23b5", "missing": {"Orchestrator": "not_loaded", "Builder": "not_loaded", "Verifier": "not_loaded", "Designer": "unreachable", "Archivist": "unreachable"}}
+{"ts": "2026-11-22 14:22:27", "run": "g-1a2017dbd2e-9ec590", "missing": {"Scribe": "unreachable", "Mechanic": "unreachable", "Researcher": "unreachable", "Builder": "unreachable", "Verifier": "unreachable", "Orchestrator": "unreachable"}}
