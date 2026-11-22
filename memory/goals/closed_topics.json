@@ -442,5 +442,11 @@
 "text": "**Archive Hygiene Audit** - Verify all files in memory/goals/archive/ and memory/archivist/archive/ have: date stamp in filename, provenance",
 "agent": "archivist",
 "at": "2026-11-23"
+},
+{
+"sig": "f40089d7d9ce6b28",
+"text": "**Log Rotation + Retention** - Implement rotation for all .jsonl and .log files in the fleet: max 50MB per file, keep 7 days of history, com",
+"agent": "mechanic",
+"at": "2026-11-23"
 }
 ]

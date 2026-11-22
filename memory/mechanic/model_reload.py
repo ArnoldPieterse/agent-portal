@@ -65,8 +65,9 @@ def main():
     t_start = time.monotonic()
 
     # Look up target model from agents.json
-    agents = json.loads(AGENTS_PATH.read_text())
-    profile = agents.get(agent_name)
+    raw = json.loads(AGENTS_PATH.read_text())
+    agent_list = raw.get("agents", []) if isinstance(raw, dict) else raw
+    profile = next((a for a in agent_list if a.get("id") == agent_name or a.get("name","").lower() == agent_name), None)
     if not profile:
         log_entry("unknown_agent", False, f"agent '{agent_name}' not in agents.json")
         print(f"[FAIL] Agent '{agent_name}' not found in agents.json")
