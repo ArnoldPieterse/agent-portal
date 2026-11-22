@@ -297,13 +297,37 @@ def _quant_family(variant):
     return ""
 
 
+# ---- LIVE PLACEMENT TRACKING (2026-11-22) -------------------------------------------
+# "Which agents actually RAN where" - the Fleet tab shows this instead of the static
+# agents.json home mapping, because placement is host-agnostic (first available host).
+# In-memory only; a portal restart simply starts a fresh 10-minute window.
+_ACTIVE_SEATS = {}        # base -> {agent name: last-run ts}
+_ACTIVE_LOCK = threading.Lock()
+ACTIVE_TTL_S = 600        # "active on this host" = ran here within the last 10 minutes
+
+def _record_active(agent, base):
+    try:
+        with _ACTIVE_LOCK:
+            _ACTIVE_SEATS.setdefault((base or "").rstrip("/"), {})[agent.get("name", "?")] = time.time()
+    except Exception:
+        pass
+
+def _active_agents(base, ttl=ACTIVE_TTL_S):
+    now = time.time()
+    with _ACTIVE_LOCK:
+        d = dict(_ACTIVE_SEATS.get((base or "").rstrip("/"), {}))
+    return sorted(n for n, ts in d.items() if now - ts < ttl)
+
 def _resolve_seat(agent):
     """Find a host where the agent's model is ALREADY resident (no loading). Home first,
-    then other hosts in agents.json order (first available wins). Returns {base, host,
-    model, key[, fallback]} or None (caller falls back to the home hot-load path).
-    On home the returned model is the agent's own alias id (behavior unchanged); on a
-    foreign host it is the loaded-models id of the resident model. A quant-family
-    fallback (q8<->q4) is offered ONLY when the home host itself is unreachable."""
+    then local White, then other hosts in agents.json order (first available wins), then
+    catalog-only hosts like Black (2026-11-22: it carries resident models but no
+    agents.json seat maps it - appended LAST so existing preferences are unchanged).
+    Returns {base, host, model, key[, fallback]} or None (caller falls back to the home
+    hot-load path). On home the returned model is the agent's own alias id (behavior
+    unchanged); on a foreign host it is the loaded-models id of the resident model. A
+    quant-family fallback (q8<->q4) is offered ONLY when the home host itself is
+    unreachable."""
     name = agent.get("name", "?")
     rec = _FLEET_RECOVER_RECIPES.get(name) or {}
     want = os.path.basename((rec.get("model_path") or "").replace("\\", "/"))
@@ -319,6 +343,12 @@ def _resolve_seat(agent):
             cands.append((b, _host_label(b)))
     keys = {b: k for b, k in _fleet_bases()}
     keys.setdefault(STUDIO.rstrip("/"), "")
+    # Catalog-only hosts (e.g. Black .99): resident models can serve overflow turns even
+    # though no agents.json seat points at them. Appended after the mapped remotes.
+    for cb in _fleet_host_names():
+        if cb != home and cb.rstrip("/") != STUDIO.rstrip("/") and all(cb != c[0] for c in cands):
+            cands.append((cb, _friendly_host_name(cb)))
+            keys.setdefault(cb, _fleet_host_key(cb))
     home_reachable = True
     for i, (base, label) in enumerate(cands):
         if i == 0 and not _base_alive(base):
@@ -1332,6 +1362,10 @@ def _fleet_snapshot():
             wait = _HOST_LOAD_WAITERS.get(b.rstrip("/"), 0)
         row["loading"] = dict(act) if act else None
         row["queued"] = max(0, wait - (1 if act else 0))
+        # Live placement (2026-11-22): agents that actually RAN on this host in the last
+        # ACTIVE_TTL_S seconds - placement is host-agnostic, so this is the truth the tab
+        # shows; h["agents"] stays the static home roster for reference.
+        row["active"] = _active_agents(b)
         rows.append(row)
     return {"ts": now, "ttl": FLEET_TTL, "hosts": rows}
 
@@ -2462,6 +2496,8 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
         _seat = _resolve_seat(agent)
     except Exception:
         _seat = None
+    if _seat:
+        _record_active(agent, _seat["base"])   # LIVE PLACEMENT: this turn runs on that host
     if _seat and _seat["base"] != _studio_base(agent):
         _set_seat(_seat)
         _act_log(session, {"agent": who, "event": "placed",
@@ -2478,6 +2514,8 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
     if not _seat:
         try:
             _ready, _load_note = _ensure_seat_ready(agent, wfile)
+            if _ready:
+                _record_active(agent, _studio_base(agent))   # hot-loaded home seat now serves it
             if not _ready:
                 _act_log(session, {"agent": who, "event": "model_load_fail", "detail": _load_note[:300]})
                 wfile.write(b"data: " + json.dumps(

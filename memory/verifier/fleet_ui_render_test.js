@@ -47,15 +47,17 @@ var o = FT.SAMPLE;
 var now = o.ts, html = "";
 for(const h of (o.hosts||[])){
   const age=h.last_seen?Math.max(0,Math.round(now-h.last_seen)):"–";
-  const st=h.state==="busy"?"busy":h.state==="idle"?"idle":"UNKNOWN";
+  const st=h.state==="busy"?"busy":h.state==="idle"?"idle":h.state==="unauth"?"UNAUTH (up - key missing/expired)":"UNKNOWN";
   const models=h.models.length?h.models.map(m=>esc(m.id)+(m.quant?" ("+esc(m.quant)+")":"")).join(", "):"— none loaded —";
   let lq="";
   if(h.loading){ lq+=' · <span class="fload" title="Model load in progress on this host (one at a time)">⏳ loading '+esc(h.loading.model||"?")+' for '+esc(h.loading.agent||"?")+'</span>'; }
   if(h.queued>0){ lq+=' · <span class="fload fload-wait" title="Waiting their turn in the per-host load queue">'+h.queued+' queued</span>'; }
+  const act=h.active||[];
+  const who=act.length?act:(h.agents||[]);
   html+='<div class="frow-h"><span class="fdot '+h.state+'"></span><b>'+esc(h.host)+'</b>'+
     '<span class="hint"> · '+st+(h.reason?" · "+esc(h.reason):"")+" · last seen "+age+"s ago</span>"+
     '<div class="fmodels">'+models+lq+'</div>'+
-    '<div class="hint" style="margin-left:16px">agents: '+(h.agents.length?h.agents.map(esc).join(", "):"none")+'</div></div>';
+    '<div class="hint" style="margin-left:16px">'+(act.length?"now":"home")+': '+(who.length?who.map(esc).join(", "):"none")+(act.length&&h.agents.length?" · home: "+h.agents.map(esc).join(", "):"")+'</div></div>';
 }
 if (!html) throw new Error("row loop produced no HTML");
 const mustRows = ["White (local)", ">Pale<", ">Black<", ">Red<",

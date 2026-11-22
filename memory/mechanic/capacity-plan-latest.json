@@ -1,0 +1,16 @@
+{
+  "ts": "2026-11-22T07:14:47.629391+00:00",
+  "results": [
+    {
+      "host": "safe",
+      "metric": "disk_pct",
+      "n_points": 7,
+      "status": "OK",
+      "slope_per_day": 0.5,
+      "current": 43.0,
+      "days_to_breach": 0,
+      "alert": true,
+      "threshold_pct": 41.0
+    }
+  ]
+}

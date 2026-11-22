@@ -226,3 +226,6 @@
 {"ts": "2026-11-22 18:05:14", "file": "ui/app.css", "sha": "aa36bab1ae", "size": 32914, "snapshot": null}
 {"ts": "2026-11-22 18:05:14", "file": "ui/core.js", "sha": "36d01ac727", "size": 38198, "snapshot": null}
 {"ts": "2026-11-22 18:05:14", "file": "ui/fleet_topology.js", "sha": "62e09c4a4c", "size": 10956, "snapshot": null}
+{"ts": "2026-11-22 18:25:51", "file": "agent_portal.py", "sha": "c40edbdf7b", "size": 274252, "snapshot": "memory/ops/merge-queue/agent_portal.py.c40edbdf7b"}
+{"ts": "2026-11-22 18:25:51", "file": "ui/core.js", "sha": "f345132936", "size": 38253, "snapshot": null}
+{"ts": "2026-11-22 18:25:51", "file": "ui/fleet_topology.js", "sha": "5ac2fb9ba1", "size": 11018, "snapshot": null}

@@ -1,0 +1,7 @@
+{"ts": "2026-11-22T17:20:47.620506", "check": "7 distinct dates", "result": "PASS"}
+{"ts": "2026-11-22T17:20:47.620532", "check": "All p95 within thresholds", "result": "PASS"}
+{"ts": "2026-11-22T17:20:47.620537", "check": "FAIL detected when p95 exceeds threshold", "result": "PASS"}
+{"ts": "2026-11-22T17:20:47.620540", "check": "3 boot-verify reports detected", "result": "PASS"}
+{"ts": "2026-11-22T17:20:47.620542", "check": "Latest report contains PASS", "result": "PASS"}
+{"ts": "2026-11-22T17:20:47.620545", "check": "7 distinct capacity dates", "result": "PASS"}
+{"ts": "2026-11-22T17:20:47.620547", "check": "Evidence log appends (no overwrite)", "result": "PASS"}

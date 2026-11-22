@@ -18,11 +18,11 @@
 
   // Fallback dataset (real /api/fleet schema) so the diagram renders even with no egress.
   var SAMPLE = { ts: Date.now() / 1000, ttl: 30, hosts: [
-    { host: "White (local)", base: "http://127.0.0.1:8888", agents: ["Orchestrator","Researcher","Builder","Verifier"], models: [{id:"Qwen3.8-27B-Q8_0",quant:"Q8"},{id:"Qwen3.8-27B-Q4_K_S",quant:"Q4"}], generations: 0, state: "idle", last_seen: null, reason: "", loading: null, queued: 0 },
-    { host: "Pale", base: "http://IP_PALE:8888", agents: ["Designer","Archivist"], models: [{id:"Qwen3.8-27B-Q4_K_S",quant:"Q4"}], generations: 1, state: "busy", last_seen: null, reason: "", loading: { agent: "Archivist", model: "Q8_0", since: Date.now() / 1000 - 95 }, queued: 1 },
-    { host: "Black", base: "http://IP_BLACK:8888", agents: [], models: [], generations: 0, state: "unknown", last_seen: null, reason: "unreachable", loading: null, queued: 0 },
-    { host: "Red", base: "http://IP_RED:8888", agents: ["Scribe","Mechanic"], models: [{id:"Qwen3.8-27B-Q8_0",quant:"Q8"}], generations: 0, state: "idle", last_seen: null, reason: "", loading: null, queued: 0 }
-  ]};
+    { host: "White (local)", base: "http://127.0.0.1:8888", agents: ["Orchestrator","Researcher","Builder","Verifier"], active: ["Orchestrator","Scribe"], models: [{id:"Qwen3.8-27B-Q8_0",quant:"Q8"},{id:"Qwen3.8-27B-Q4_K_S",quant:"Q4"}], generations: 0, state: "idle", last_seen: null, reason: "", loading: null, queued: 0 },
+    { host: "Pale", base: "http://IP_PALE:8888", agents: ["Designer","Archivist"], active: ["Archivist"], models: [{id:"Qwen3.8-27B-Q4_K_S",quant:"Q4"}], generations: 1, state: "busy", last_seen: null, reason: "", loading: { agent: "Archivist", model: "Q8_0", since: Date.now() / 1000 - 95 }, queued: 1 },
+    { host: "Black", base: "http://IP_BLACK:8888", agents: [], active: [], models: [{id:"Qwen3.8-27B-Q4_K_S",quant:"Q4"}], generations: 0, state: "idle", last_seen: null, reason: "", loading: null, queued: 0 },
+    { host: "Red", base: "http://IP_RED:8888", agents: ["Scribe","Mechanic"], active: [], models: [{id:"Qwen3.8-27B-Q8_0",quant:"Q8"}], generations: 0, state: "idle", last_seen: null, reason: "", loading: null, queued: 0 }
+  ]};   // 'agents' = home roster (agents.json), 'active' = ran here in the last 10 min
 
   function esc(s){ return String(s==null?"":s).replace(/[&<>\"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
   function fmtAge(ts){ if(ts==null) return "never"; var s=Math.max(0,Math.floor(Date.now()/1000-ts)); if(s<60)return s+"s ago"; if(s<3600)return Math.floor(s/60)+"m "+(s%60)+"s ago"; return Math.floor(s/3600)+"h "+Math.floor((s%3600)/60)+"m ago"; }
@@ -64,11 +64,11 @@
     var bw = 150, bh = node.bh, bx = node.cx - bw/2, by = node.hostY - bh/2;
     var lq = loadLine(h);
     var c1 = lq ? -10 : -4, c2 = lq ? 6 : 12;   // baselines for line 1 (name) / line 2 (agents·gen)
-    s += '<g class="ft-host" data-i="'+node.i+'" tabindex="0" role="button" aria-label="'+esc(h.host)+' '+esc(STATE_LABEL[h.state]||h.state)+', '+(h.agents?h.agents.length:0)+' agents'+(lq?', load queue: '+esc(lq)+(h.loading&&h.queued>0?' ('+esc(h.loading.agent||'?')+')':''):"")+'">'+
+    s += '<g class="ft-host" data-i="'+node.i+'" tabindex="0" role="button" aria-label="'+esc(h.host)+' '+esc(STATE_LABEL[h.state]||h.state)+', '+((h.active||[]).length)+' active, '+(h.agents?h.agents.length:0)+' home'+(lq?', load queue: '+esc(lq)+(h.loading&&h.queued>0?' ('+esc(h.loading.agent||'?')+')':''):"")+'">'+
          '<rect x="'+bx+'" y="'+by+'" width="'+bw+'" height="'+bh+'" rx="12"/>'+
          '<circle cx="'+(bx+16)+'" cy="'+(node.hostY+c1)+'" r="7" class="ft-state" style="fill:'+color+'"/>'+
          '<text x="'+(bx+30)+'" y="'+(node.hostY+c1)+'" class="ft-hostname">'+esc(h.host)+'</text>'+
-         '<text x="'+(bx+30)+'" y="'+(node.hostY+c2)+'" class="ft-subline">'+(h.agents?h.agents.length:0)+' agents · '+(h.generations||0)+' gen'+(h.state==="unknown"?" · "+esc(h.reason||"unreachable"):"")+'</text>'+
+         '<text x="'+(bx+30)+'" y="'+(node.hostY+c2)+'" class="ft-subline" title="active on this host in the last 10 min (placement is host-agnostic); home roster: '+((h.agents||[]).map(esc).join(", ")||"none")+'">'+((h.active||[]).length)+' active · '+(h.generations||0)+' gen'+(h.state==="unknown"?" · "+esc(h.reason||"unreachable"):"")+'</text>'+
          (lq ? '<text x="'+(bx+30)+'" y="'+(node.hostY+21)+'" class="ft-loadline">'+esc(lq)+'</text>' : '')+
          '</g>';
     return s;
@@ -88,13 +88,15 @@
     return '<div class="ft-tt-head"><span class="ft-state" style="background:'+(STATE_COLOR[h.state]||STATE_COLOR.unknown)+'"></span>'+esc(h.host)+' <em>'+esc(STATE_LABEL[h.state]||h.state)+'</em></div>'+
            '<div class="ft-tt-row"><b>base</b> '+esc(h.base)+'</div>'+
            '<div class="ft-tt-row"><b>gens</b> '+(h.generations||0)+' · <b>last seen</b> '+fmtAge(h.last_seen)+(h.reason?' ('+esc(h.reason)+')':'')+'</div>'+
+           '<div class="ft-tt-row"><b>active 10m</b> '+((h.active||[]).map(esc).join(", ")||"none")+' · <b>home</b> '+((h.agents||[]).map(esc).join(", ")||"none")+'</div>'+
            '<div class="ft-tt-row"><b>load queue</b> '+lq+'</div>'+
            '<div class="ft-tt-row"><b>models</b> '+models+'</div>';
   }
 
   function detailHTML(h){
     var models = (h.models||[]).map(function(m){return '<li>'+esc(m.id)+(m.quant?' <span class="ft-quant">'+esc(m.quant)+'</span>':'')+'</li>';}).join("") || "<li class='ft-empty'>no models loaded</li>";
-    var agents = (h.agents||[]).map(function(a){return '<span class="ft-chip">'+esc(a)+'</span>';}).join(" ") || '<span class="ft-empty">no agents bound</span>';
+    var actChips = (h.active||[]).map(function(a){return '<span class="ft-chip">'+esc(a)+'</span>';}).join(" ") || '<span class="ft-empty">none in the last 10 minutes</span>';
+    var homeChips = (h.agents||[]).map(function(a){return '<span class="ft-chip" style="opacity:.65">'+esc(a)+'</span>';}).join(" ") || '<span class="ft-empty">no agents bound at home</span>';
     var lq = h.loading
       ? '<li><b>'+esc(h.loading.model||'?')+'</b> for '+esc(h.loading.agent||'?')+' <span class="ft-quant">'+fmtAge(h.loading.since)+'</span></li>'+(h.queued>0?"<li class='ft-empty'>"+h.queued+" queued behind it</li>":"")
       : (h.queued>0 ? "<li>"+h.queued+" queued</li>" : "<li class='ft-empty'>no loads in flight</li>");
@@ -102,7 +104,8 @@
            '<div class="ft-dt-base">'+esc(h.base)+'</div>'+
            '<div class="ft-dt-sub">Load queue</div><ul class="ft-models">'+lq+'</ul>'+
            '<div class="ft-dt-sub">Models ('+(h.models?h.models.length:0)+')</div><ul class="ft-models">'+models+'</ul>'+
-           '<div class="ft-dt-sub">Agents ('+(h.agents?h.agents.length:0)+')</div><div class="ft-agents">'+agents+'</div>';
+           '<div class="ft-dt-sub">Active now (last 10m)</div><div class="ft-agents">'+actChips+'</div>'+
+           '<div class="ft-dt-sub">Home roster</div><div class="ft-agents">'+homeChips+'</div>';
   }
 
   function render(container, opts){

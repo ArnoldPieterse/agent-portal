@@ -2,6 +2,7 @@
 Last updated: 2026-11-22.
 
 ## 2026-11-22
+- mechanic-goal4-circuit-breaker-verify-2026-11-22.md — **INDEPENDENT RE-PRODUCTION** of Mechanic #4 unit-test leg (was single-source Orchestrator word): `py_compile` COMPILE_OK + `test_fleet_circuit_breaker.py` 17 passed/0 failed, reproduced green by Verifier. Live 200-with-down leg still open (sandbox egress wall — not re-probed).
 - evidence-integrity-drift-2026-11-22.md — **FRESH RUN + DRIFT**: re-ran `memory_integrity.py`; goal #9 closure NOT stale (script runs/lists, still valid). New measurement: issues 214→256, broken pointers 117→157 (+40/day) — route to Archivist. Found hardcoded report-path defect in script (clobbers memory-integrity-2026-11-20.md each run).
 
 ## 2026-11-21

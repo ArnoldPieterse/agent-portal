@@ -1,0 +1,5 @@
+{"host": "alert_host", "ts": "2026-11-17T06:00:00", "disk": {"total_gb": 500, "free_gb": 200.0, "pct_used": 60.0}}
+{"host": "alert_host", "ts": "2026-11-18T06:00:00", "disk": {"total_gb": 500, "free_gb": 175.0, "pct_used": 65.0}}
+{"host": "alert_host", "ts": "2026-11-19T06:00:00", "disk": {"total_gb": 500, "free_gb": 150.0, "pct_used": 70.0}}
+{"host": "alert_host", "ts": "2026-11-20T06:00:00", "disk": {"total_gb": 500, "free_gb": 125.0, "pct_used": 75.0}}
+{"host": "alert_host", "ts": "2026-11-21T06:00:00", "disk": {"total_gb": 500, "free_gb": 100.0, "pct_used": 80.0}}

@@ -377,10 +377,14 @@ async function fleetUpdate(){
       let lq="";
       if(h.loading){ lq+=' · <span class="fload" title="Model load in progress on this host (one at a time)">⏳ loading '+esc(h.loading.model||"?")+' for '+esc(h.loading.agent||"?")+'</span>'; }
       if(h.queued>0){ lq+=' · <span class="fload fload-wait" title="Waiting their turn in the per-host load queue">'+h.queued+' queued</span>'; }
+      // LIVE PLACEMENT (2026-11-22): primary list = agents that actually RAN on this host
+      // in the last 10 min (h.active); the static agents.json home roster is secondary.
+      const act=h.active||[];
+      const who=act.length?act:(h.agents||[]);
       html+='<div class="frow-h"><span class="fdot '+h.state+'"></span><b>'+esc(h.host)+'</b>'+
         '<span class="hint"> · '+st+(h.reason?" · "+esc(h.reason):"")+" · last seen "+age+"s ago</span>"+
         '<div class="fmodels">'+models+lq+'</div>'+
-        '<div class="hint" style="margin-left:16px">agents: '+(h.agents.length?h.agents.map(esc).join(", "):"none")+'</div></div>';
+        '<div class="hint" style="margin-left:16px">'+(act.length?"now":"home")+': '+(who.length?who.map(esc).join(", "):"none")+(act.length&&h.agents.length?" · home: "+h.agents.map(esc).join(", "):"")+'</div></div>';
     }
     const _fp=window._fleetPrev||{}; const _fs={};
     for(const h of (o.hosts||[])){ _fs[h.host]=h.state!=="unknown";

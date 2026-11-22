@@ -1,7 +1,8 @@
 # SCRIBE INDEX — synthesis + compression leaves (newest first).
-Last updated: 2026-11-16.
+Last updated: 2026-11-22.
 
 ## Entries (keyword -> pointer | use case)
+- memory-integrity 256-issue reconciliation (128 genuine / 128 false-positive; resolve_target bug) -> memory/scribe/memory-integrity-reconciliation-2026-11-22.md   resolves hot-note contradiction vs Archivist #1/#7 closures
 - goal-setting round compression (3-5 bullets, 8 agents) -> memory/scribe/goal-setting-round-compression-2026-11-13.md   Scribe goal #1 output; cites agent+message per bullet
 - ops r6 synthesis -> memory/scribe/ops-r6-synthesis-2026-11-13.md   OPS CHECK compression, each line cites source
 - synthesis index canonical (current) -> memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md   newest canonical; supersession chain r61 < r72 < r73

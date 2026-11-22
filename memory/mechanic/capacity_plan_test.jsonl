@@ -1,0 +1,7 @@
+{"host": "testhost", "ts": "2026-11-15T06:00:00", "disk": {"total_gb": 500, "free_gb": 250.0, "pct_used": 50.0}, "mem": {"total_mb": 32000, "free_mb": 16000, "pct_used": 50.0}}
+{"host": "testhost", "ts": "2026-11-16T06:00:00", "disk": {"total_gb": 500, "free_gb": 242.9, "pct_used": 51.43}, "mem": {"total_mb": 32000, "free_mb": 15542, "pct_used": 51.43}}
+{"host": "testhost", "ts": "2026-11-17T06:00:00", "disk": {"total_gb": 500, "free_gb": 235.7, "pct_used": 52.86}, "mem": {"total_mb": 32000, "free_mb": 15085, "pct_used": 52.86}}
+{"host": "testhost", "ts": "2026-11-18T06:00:00", "disk": {"total_gb": 500, "free_gb": 228.6, "pct_used": 54.29}, "mem": {"total_mb": 32000, "free_mb": 14627, "pct_used": 54.29}}
+{"host": "testhost", "ts": "2026-11-19T06:00:00", "disk": {"total_gb": 500, "free_gb": 221.4, "pct_used": 55.72}, "mem": {"total_mb": 32000, "free_mb": 14170, "pct_used": 55.72}}
+{"host": "testhost", "ts": "2026-11-20T06:00:00", "disk": {"total_gb": 500, "free_gb": 214.2, "pct_used": 57.15}, "mem": {"total_mb": 32000, "free_mb": 13712, "pct_used": 57.15}}
+{"host": "testhost", "ts": "2026-11-21T06:00:00", "disk": {"total_gb": 500, "free_gb": 207.1, "pct_used": 58.58}, "mem": {"total_mb": 32000, "free_mb": 13254, "pct_used": 58.58}}
