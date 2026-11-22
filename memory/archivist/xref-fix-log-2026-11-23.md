@@ -1,0 +1,62 @@
+# Xref Auto-Fix Log
+Generated: 2026-11-23T01:41:28 by memory/archivist/xref_check.py --fix
+
+- files changed: 8
+- actions taken: 55
+- redirects: 13   quarantines (flagged-dead): 42
+
+- `memory/designer/integrity-designer-lane-cleared-2026-11-22.md:16` [arrow] QUARANTINE subdir/file.md  (no unique match; flagged dead)
+- `memory/designer/timeline-panel-spec.md:13` [arrow] QUARANTINE components.js  (no unique match; flagged dead)
+- `memory/orchestrator/INDEX.md:24` [arrow] QUARANTINE failover_drill.py  (no unique match; flagged dead)
+- `memory/researcher/log-rotate-functional-test-mechanic-goal7-2026-11-22.md:17` [arrow] QUARANTINE test_big.json  (no unique match; flagged dead)
+- `memory/researcher/log-rotate-functional-test-mechanic-goal7-2026-11-22.md:18` [arrow] QUARANTINE test_old.log  (no unique match; flagged dead)
+- `memory/scribe/compression-fidelity-audit2-2026-11-18.md:22` [arrow] QUARANTINE sot_audit.py  (no unique match; flagged dead)
+- `memory/scribe/memory-integrity-reconciliation-2026-11-22.md:19` [arrow] REDIRECT retro-cycle-7.md -> ../goals/retro-cycle-7.md
+- `memory/scribe/memory-integrity-reconciliation-2026-11-22.md:20` [arrow] REDIRECT ui-slices-audit-2026-11-17.md -> ../researcher/ui-slices-audit-2026-11-17.md
+- `memory/scribe/xref-assist-2026-11-21.md:10` [arrow] QUARANTINE scribe.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:11` [arrow] QUARANTINE memory/goals/agent_portal.py  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:12` [arrow] QUARANTINE memory/goals/agent_portal.py  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:13` [arrow] QUARANTINE memory/goals/builder-sync-git-patch.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:14` [arrow] QUARANTINE memory/goals/builder-sync-git-patch.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:15` [arrow] QUARANTINE memory/goals/designer/a11y-check.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:16` [arrow] QUARANTINE memory/goals/designer/a11y-check.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:17` [arrow] QUARANTINE memory/goals/designer/ops-panel-mock.html  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:18` [arrow] QUARANTINE memory/goals/designer/ops-panel-mock.html  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:19` [arrow] QUARANTINE memory/goals/index.html  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:20` [arrow] QUARANTINE memory/goals/index.html  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:21` [arrow] QUARANTINE memory/goals/memory_mirror.py  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:22` [arrow] QUARANTINE memory/goals/memory_mirror.py  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:23` [arrow] REDIRECT memory/goals/upgrade-plan.md -> ../portal/upgrade-plan.md
+- `memory/scribe/xref-assist-2026-11-21.md:24` [arrow] REDIRECT memory/goals/upgrade-plan.md -> ../portal/upgrade-plan.md
+- `memory/scribe/xref-assist-2026-11-21.md:25` [arrow] QUARANTINE memory/B.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:26` [arrow] QUARANTINE memory/C.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:27` [arrow] QUARANTINE memory/D.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:28` [arrow] QUARANTINE all-goals-2026-11-13.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:29` [arrow] QUARANTINE icons.js  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:30` [arrow] QUARANTINE core.js  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:31` [arrow] QUARANTINE components.js  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:32` [arrow] QUARANTINE core.js  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:33` [arrow] QUARANTINE uploads.js  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:34` [arrow] QUARANTINE core.js  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:35` [arrow] QUARANTINE uploads.js  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:36` [arrow] QUARANTINE core.js  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:38` [arrow] REDIRECT briefs/fleet-vram-management.md -> ../researcher/briefs/fleet-vram-management.md
+- `memory/scribe/xref-assist-2026-11-21.md:39` [arrow] QUARANTINE memory/mechanic/goal4-cb-state-machine-test.py  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:40` [arrow] QUARANTINE winrm-legs.json  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:41` [arrow] QUARANTINE failover_drill.py  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:42` [arrow] QUARANTINE winrm_ops.py  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:43` [arrow] REDIRECT archive/rosterprobe-2026-11-20.md -> ../goals/archive/rosterprobe-2026-11-20.md
+- `memory/scribe/xref-assist-2026-11-21.md:44` [arrow] REDIRECT perf-profile.json -> ../mechanic/perf-profile.json
+- `memory/scribe/xref-assist-2026-11-21.md:46` [arrow] QUARANTINE weekly-YYYY-WW.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:49` [arrow] QUARANTINE sot_audit.py  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:50` [arrow] QUARANTINE builder.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:51` [arrow] QUARANTINE sla-report-cycle5.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:52` [arrow] QUARANTINE sla-report-cycle5.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:53` [arrow] QUARANTINE sla-report-cycle5.md  (no unique match; flagged dead)
+- `memory/scribe/xref-assist-2026-11-21.md:54` [arrow] REDIRECT retro-cycle-7.md -> ../goals/retro-cycle-7.md
+- `memory/scribe/xref-assist-2026-11-21.md:55` [arrow] REDIRECT ui-slices-audit-2026-11-17.md -> ../researcher/ui-slices-audit-2026-11-17.md
+- `memory/scribe/xref-assist-2026-11-21.md:56` [arrow] REDIRECT cycle3-discrepancy-resolved-2026-11-18.md -> ../squire/cycle3-discrepancy-resolved-2026-11-18.md
+- `memory/scribe/xref-assist-2026-11-21.md:57` [arrow] QUARANTINE memory/rosterprobe/INDEX.md  (no unique match; flagged dead)
+- `memory/verifier/evidence-integrity-rerun-2026-11-21.md:23` [arrow] REDIRECT retro-cycle-7.md -> ../goals/retro-cycle-7.md
+- `memory/verifier/evidence-integrity-rerun-2026-11-21.md:24` [arrow] REDIRECT ui-slices-audit-2026-11-17.md -> ../researcher/ui-slices-audit-2026-11-17.md
+- `memory/verifier/evidence-integrity-rerun-2026-11-21.md:27` [arrow] REDIRECT cycle3-discrepancy-resolved-2026-11-18.md -> ../squire/cycle3-discrepancy-resolved-2026-11-18.md

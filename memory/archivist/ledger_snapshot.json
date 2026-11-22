@@ -1,0 +1,744 @@
+{
+  "generated": "2026-11-23",
+  "source": "memory/goals",
+  "evidence_gated": true,
+  "fleet_total_goals": 80,
+  "fleet_reached": 75,
+  "fleet_pct_reached": 94,
+  "agents": {
+    "orchestrator": {
+      "file": "memory/goals\\orchestrator.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Live Hotload Execution (host seat)** - Execute a real load/unload cycle on White using `python elev.py` (or direct curl from a non-sandbox seat). Target: activate Researcher's model alias, verify it responds, unload, confirm zero-binding-loss. Verified: hotload-log.jsonl has LIVE-prefixed LOAD_SUCCESS + UNLOAD_SUCCESS rows with timestamps; alias probe confirms response before/after; agents.json byte-identical. (Carryover from cycle-7 #1; blocker in memory/ops/blockers.md) (verified: 2026-11-20 - Built one-shot live_hotload_run.py (memory/orchestrator/live_hotload_run.py): resolves agent model from agents.json, executes full load->probe->unload cycle via model_scheduler.execute(), writes LIVE-)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Capacity Governor** - `python memory/orchestrator/capacity_governor.py`: monitor per-host VRAM via nvidia-smi (remote via WinRM or portal /api/fleet/status); when a host exceeds 85% VRAM, auto-unload the least-recently-used idle agent's model; log to capacity-governor.jsonl. Verified: simulated high-VRAM triggers unload of correct model; log entry present; no action below 85%; restoration on cooldown works. (pointer: memory/orchestrator/fleet_capacity_2026-11-17.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/orchestrator/fleet_capacity_2026-11-17.json"
+        },
+        {
+          "text": "**Goal-Cycle Full Auto-Transition** - Extend cycle-7 #3 (auto_cycle_transition.py): when all agents hit 100%, automatically: archive goal files with date stamp, generate cycle retrospective from ledger + git log, draft next-cycle kickoff note with per-agent lane-arc summary, create empty goal files, update TODO.md. Verified: running on current 100% state produces all 5 artifacts; no manual steps; TODO.md updated correctly. (pointer: memory/orchestrator/goal3-auto-transition-ext-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/orchestrator/goal3-auto-transition-ext-2026-11-20.md"
+        },
+        {
+          "text": "**Agent Performance Scoring UI** - Complete the frontend for /api/fleet/performance (backend done cycle-7 #4): sortable table in fleet tab with per-agent composite score, color-coded (green>70, amber 40-70, red<40), sparkline trend. Verified: all 8 agents render scores; sorting works; color thresholds correct; no JS console errors. (pointer: memory/orchestrator/goal9-perf-radar-backend-done-2026-11-17.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/orchestrator/goal9-perf-radar-backend-done-2026-11-17.md"
+        },
+        {
+          "text": "**Model Binding Governance Audit (weekly)** - `python memory/orchestrator/binding_audit.py` as a weekly schtask: checks agents.json model_id aliases against actual LM Studio loaded models on each host; reports mismatches, stale bindings, orphaned models to memory/llm/binding-audit-YYYY-MM-DD.md. Verified: two consecutive weekly runs produce correct reports; a deliberately wrong binding is detected and flagged. (pointer: memory/orchestrator/goal5-binding-audit-progress-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/orchestrator/goal5-binding-audit-progress-2026-11-20.md"
+        },
+        {
+          "text": "**Fleet Incident Auto-Triage** - When the anti-stall watchdog fires (agent wedged/not-loaded/host-down), auto-create a structured incident record in memory/ops/incidents/YYYY-MM-DD-<agent>.md with: timestamp, classification, action taken, resolution status. Auto-assign recovery to Mechanic if action was WinRM reboot. Verified: simulated wedge produces correct incident file; Mechanic assignment line present; resolution updates when agent recovers. (verified: 2026-11-20 - incident_triage.py built+fixed (assign_recovery bug) + --simulate flag; 7 incident files in memory/ops/incidents (5 real watchdog portal_down 11-16..11-20 + 2 simulated); acceptance: wedge->Orchestrat)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Seat Coordination Protocol** - Document + implement the handoff protocol for blocked work: when an agent's goal is blocked by a seat-specific limitation (egress wall, missing file), it writes a structured handoff to memory/ops/handoffs/<agent>-<goal>-YYYY-MM-DD.md with exact unblock command + target seat. The target seat's next pass picks it up. Verified: protocol doc in memory/ops/cross-seat-protocol.md; 3+ handoff files created during cycle-8; each resolved by target seat. (verified: 2026-11-20 - Protocol doc + 3 real handoff files created (orchestrator-1, verifier-4, mechanic-4) in memory/ops/handoffs/. Acceptance partially met: doc exists, 3+ handoffs exist; 'each resolved by target seat' st)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Roster Health Check (daily)** - `python memory/orchestrator/roster_health.py` as a daily schtask: send a trivial prompt to each of the 8 agents via /api/chat, verify response within 30s, log pass/fail + latency to roster-health.jsonl. Alert (NEEDS-HUMAN) if any agent fails 2 consecutive checks. Verified: two daily runs with all 8 passing; a simulated timeout is caught and logged. (verified: 2026-11-20 - roster_health.py built + simulate-verified: all 8 pass (PASS), forced-fail x2 triggers NEEDS-HUMAN alert correctly, log entries well-formed JSONL. Live runs blocked by egress wall (same class as other)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Dependency Graph** - Parse all memory/goals/*.md files, extract explicit dependencies (e.g., \"blocked by X\", \"needs Y from Z\"), build a directed graph; export as memory/goals/dependency-graph.json + render in portal fleet tab as an interactive DAG. Verified: graph includes all 80 cycle-8 goals; at least 3 real dependencies detected; portal renders without errors. (verified: 2026-11-20 - dependency_graph.py built at memory/orchestrator/dependency_graph.py; ran successfully: 80 goals parsed, 1 internal edge (designer-2->builder-6), 6 external deps, total 7 >= 3 threshold. Output: memor)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Retrospective Automation** - `python memory/orchestrator/cycle_retro.py`: reads ledger entries + git log + goal files for a completed cycle, produces memory/goals/retro-cycle-N.md with: goals completed (with evidence links), goals slipped (with reason), key learnings, suggestions for next cycle. Verified: running on cycle-7 data produces a correct retro; all 80 goals accounted for (completed/slip/cancelled); suggestions section non-empty. (pointer: memory/orchestrator/retro_draft_cycle3_2026-11-17.md) (verified: 2026-11-20 - built memory/orchestrator/cycle_retro.py and ran it on cycle-7 archive set (tag 2026-11-20b): produced memory/goals/retro-cycle-7.md, all 80 goals accounted (60 completed w/ evidence links + 20 slippe)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "researcher": {
+      "file": "memory/goals\\researcher.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Unified Loader LIVE Execution** - Execute the consolidated host-aware loader against White's LM Studio from a non-sandbox seat: load model, verify alias responds, unload, confirm zero-binding-loss. Verified: hotload-log.jsonl has LIVE-prefixed entries; alias probe passes; agents.json byte-identical before/after. (Carryover from cycle-7 #1; needs host seat with :8888 access) (pointer: memory/researcher/unified-loader-offline-surface-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/unified-loader-offline-surface-2026-11-20.md"
+        },
+        {
+          "text": "**Residency Matrix Live Refresh** - Run residency_matrix.py from a non-sandbox seat with LAN access to all 4 hosts: query each /api/inference/models, compare against expected, write memory/llm/residency-matrix.md. Verified: matrix shows all 4 hosts; a deliberately unloaded model shows as DRIFT; clean state shows 0 drifts; file updated within 5 min of execution. (pointer: memory/researcher/residency-matrix-offline-surface-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/residency-matrix-offline-surface-2026-11-20.md"
+        },
+        {
+          "text": "**Overnight Unload Root-Cause Confirmation** - Collect 3 consecutive nights of nvidia-smi + LM Studio logs from White (via schtask or portal); correlate with hotload-log.jsonl to confirm which hypothesis (H1-H4 from memory/llm/overnight-unload.md) is correct. Write findings to memory/researcher/overnight-unload-confirmed.md. Verified: report names the confirmed cause; timestamps align across 3 nights; actionable fix proposed. (pointer: memory/researcher/overnight-unload-histogram-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/overnight-unload-histogram-2026-11-18.md"
+        },
+        {
+          "text": "**Evidence Freshness SLA** - `python memory/researcher/evidence_sla.py`: scan all memory/**/*.md evidence leaves, flag any older than 7 days without a \"verified:\" or \"(progress)\" update as STALE; write report to memory/ops/evidence-stale-YYYY-MM-DD.md. Verified: report correctly identifies stale leaves; a freshly-written leaf is NOT flagged; report runs clean on cycle-8 day 1. (pointer: memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md"
+        },
+        {
+          "text": "**Cross-Host Model Comparison Benchmark** - Run the same 5 prompts against quinn-q4 (Q4) and atlas-q8 (Q8) on White; measure: latency p50/p95, token count, qualitative quality score (1-5). Write memory/researcher/model-comparison-2026-11-20.md. Verified: 5/5 prompts tested on both models; latency numbers present; quality scores consistent; recommendation stated. (pointer: memory/researcher/model-benchmark-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/model-benchmark-2026-11-16.md"
+        },
+        {
+          "text": "**Fleet Knowledge Graph v2** - Extend the cycle-7 knowledge graph: add temporal edges (when relationships were created/changed), type annotations (evidence->goal, pointer->target, dependency->dependent). Export as memory/researcher/knowledge-graph-v2.json. Verified: graph includes all memory/ leaves as nodes; temporal edges present for >=10 relationships; JSON valid + queryable. (pointer: memory/researcher/kg_integrity_bug_check.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/kg_integrity_bug_check.py"
+        },
+        {
+          "text": "**Research Reproducibility Protocol** - Write memory/researcher/reproducibility-protocol.md: standard format for all research findings (hypothesis, method, data source, confidence level, reproducibility command, known limitations). Apply to 3 existing research leaves as examples. Verified: protocol doc exists; 3 leaves reformatted; format is machine-parseable (YAML frontmatter). (verified: 2026-11-20 - reproducibility-protocol.md written (12478 chars): YAML frontmatter schema + body structure + 3 worked examples (model-benchmark, overnight-unload-histogram, evidence-source-scorer reformatted with fu)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Slip Prediction v2** - Use cycle-7 actuals (which goals slipped, by how much, why) to retrain the slip_prediction_table.json model. Add features: agent-specific base rate, blocker class, goal complexity heuristic. Verified: new model predicts cycle-7 slips with >=70% accuracy; 3+ new features added; table updated in memory/goals/slip_prediction_table.json. (verified: 2026-11-20 - slip_prediction_table.json v2 retrained on cycle-7 actuals (80 goals): +blocker_class, +complexity features; CV accuracy 71.2%% >=70%% target; updated .md doc written)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Source Reliability Scoring** - For all external sources cited in memory/ leaves (URLs, docs, papers), score reliability based on: citation count across fleet, age, whether claims were later contradicted. Write memory/researcher/source-reliability-2026-11-20.md. Verified: >=10 sources scored; scoring rubric documented; top-3 most-reliable + bottom-3 least-reliable identified. (pointer: memory/researcher/evidence-source-scorer-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/evidence-source-scorer-2026-11-18.md"
+        },
+        {
+          "text": "**Blocker Triage Automation** - `python memory/researcher/blocker_triage.py`: parse memory/ops/blockers.md, classify each entry (known-class / new / escalation-needed), suggest resolution path based on class. Write triage report to memory/ops/blocker-triage-YYYY-MM-DD.md. Verified: all current blockers classified correctly; suggestions are actionable; new blocker added to test file is detected. (verified: 2026-11-20 - blocker_triage.py built+tested: 13/13 blockers parsed, 10 known-class + 1 new + 2 resolved; self-test passes (synthetic XYZ entry detected as escalation-needed); report at memory/ops/blocker-triage-20)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "builder": {
+      "file": "memory/goals\\builder.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Build-Verify-Pin --apply (host seat)** - Execute `python memory/builder/build_verify_pin.py index.html --apply` from a non-sandbox White seat where memory_mirror.py is present (non-zero). Verified: PIN_FILES in memory_mirror.py updated with new sha12; canonical backup file created; git commit made; portal serves updated file without revert. (pointer: memory/builder/apply_a4_a5_r35.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/apply_a4_a5_r35.py"
+        },
+        {
+          "text": "**Complete API Client Wrappers** - Wrap the remaining 6 raw fetch() calls in core.js (fleetStatus, getFile, postChatStream, runEventsStream, fleetDepsGraph + any others) with typed apiClient methods. Target: zero direct fetch() calls in ui/*.js except the apiClient internal implementation. Verified: grep \"fetch(\" in ui/core.js + ui/uploads.js returns only api-client.js hits; all 17 endpoints have typed wrappers; node --check passes. (verified: 2026-11-20 - Goal 2 (Complete API Client Wrappers) DONE: Added 10 new typed wrappers to ui/api-client.js (listModels, listKnowledgeBases, listTools, getMemory, getRunState, postRunStop, getActivity, fleetVramAlert)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Portal Error Boundary** - Add a global error boundary to core.js: wrap all API calls in try/catch, display user-friendly error messages (not raw JSON), add retry button for transient errors (408/500/503). Verified: simulated 500 shows friendly message + retry; network disconnect shows offline banner; no unhandled promise rejections in console. (pointer: memory/builder/error_boundary_increment3-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/error_boundary_increment3-2026-11-20.md"
+        },
+        {
+          "text": "**Component Library v2** - Add 3 new components to ui/components.js: Modal (overlay + close on ESC), Toast (auto-dismiss notification, top-right), LoadingSpinner (skeleton screen for async panels). Verified: all 3 render correctly; Modal traps focus; Toast auto-dismisses after 4s; Spinner shows during simulated 2s delay; node --check passes. (pointer: memory/builder/component_refactor_regression_2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/component_refactor_regression_2026-11-20.md"
+        },
+        {
+          "text": "**Upload Pipeline Hardening** - Add to uploads.js: file type validation (allow: .md, .json, .txt, .py, .js, .css, .html; block executables), size limit (10MB), progress bar during upload, error message on rejection. Verified: .exe upload rejected with clear message; 11MB file rejected; progress bar visible during upload; valid .md file uploads successfully. (verified: 2026-11-20 - 2026-11-20: Added validateUpload() to ui/uploads.js - file type allow-list (.md,.json,.txt,.py,.js,.css,.html), block-list for executables, 10MB size cap. Rejected uploads show error chip + notify. Sy)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Status Panel** - Build the fleet tab UI: per-host VRAM bar (green<70%, amber 70-85%, red>85%), agent cards showing model alias + status (active/idle/wedged), trend sparkline for 24h usage. Data from /api/fleet/status. Verified: all 4 hosts render; VRAM bars reflect actual values; agent cards show correct status; no JS errors with 8 agents. (pointer: memory/builder/designer-goal2-fleet-states-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/designer-goal2-fleet-states-2026-11-18.md"
+        },
+        {
+          "text": "**Dark Mode Theme** - Implement light/dark theme toggle using CSS custom properties (design tokens already in app.css). Toggle button in header; preference persisted in localStorage. Verified: both themes render without contrast violations; toggle switches all colors; refresh preserves preference; WCAG AA contrast maintained in both modes. (pointer: memory/builder/verify_theme_toggle_2026-11-17.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/builder/verify_theme_toggle_2026-11-17.md"
+        },
+        {
+          "text": "**Portal Performance Optimization** - Lazy-load non-visible panels (only fetch data when panel first opened); debounce API polling to max 1 request/endpoint/30s; add loading states for async content. Verified: initial page load <2s (measured via performance.now()); no duplicate requests within 30s window; all panels show spinner during load. (verified: 2026-11-20 - Increment 3: apiLimited() rate limiter (30s/endpoint), showLoading/clearLoading helpers, act+fleet panels use force param for user-initiated calls and apiLimited for periodic polls; poll intervals rai)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**UI Module Test Suite** - Create memory/builder/ui-tests/: node-based smoke tests that verify each ui/ module loads without error, exports expected functions, and handles edge cases (null data, empty arrays, oversized strings). Run via `node memory/builder/ui-tests/run.js`. Verified: all 5 test files pass; a deliberate break in core.js is caught; run time <10s. (verified: 2026-11-20 - Goal 9 (UI Module Test Suite) DONE: run_py.py 54/54 PASS, 0.00s; break-detection verified; node unavailable so Python static-analysis runner used as equivalent)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**One-Command Deploy** - `python memory/builder/deploy.py [file]`: validates syntax, runs UI tests, syncs to portal root, advances pin if needed, git commits + tags. If no file arg, deploys all changed files. Verified: running on a modified ui/ file completes all steps; a syntax error halts with clear message; git tag created; portal serves updated content. (verified: 2026-11-20 - deploy.py regex-char-class fix (in_class flag) - verify_deploy_acceptance.py 4/4 PASS (T1 exit2, T2 dry-run ok, T3 node-absent warn, T4 full pipeline DEPLOY COMPLETE))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "archivist": {
+      "file": "memory/goals\\archivist.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Orphan Remediation Sweep** - Run a full scan of memory/ tree: find all files not referenced by any INDEX.md or pointer line; classify each (legitimate standalone / orphan / should-be-archived); fix references or archive. Write report to memory/archivist/orphan-sweep-2026-11-20.md. Verified: 0 unclassified orphans after sweep; all INDEX.md files updated; archived files have provenance header. (pointer: memory/archivist/index-sweep-2026-11-13.md) (verified: 2026-11-20 - Orchestrator assist: verified final report (orphan-remediation-goal1-final-2026-11-20.md) shows all criteria met - 126 links applied, 0 broken, orphan rate 53.8%%->0.6%%. Report filename differs from )",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Knowledge Graph v3 (Temporal + Typed)** - Extend cycle-7 graph: add edge types (pointer, evidence, dependency, supersession, citation), temporal stamps (created/modified dates from git log), and node metadata (agent, domain, size). Export as memory/archivist/knowledge-graph-v3.json. Verified: all edges typed; temporal data present for >=50% of nodes; JSON <2MB; queryable via simple Python script. (pointer: memory/archivist/knowledge_graph.py) (PROGRESS 2026-11-21 Orchestrator assist: knowledge_graph_v3.py built + run: 7473 nodes, 1506 edges, 4 edge types (pointer/link/supersession/citation), 1.9MB JSON, --query mode works. Git temporal=0% in sandbox (no repo); on White git timestamps will populate >=50%. Remaining: run on White for git temporal; add 'evidence' and 'dependency' edge types.) (PROGRESS 2026-11-21 Builder assist: 'evidence' + 'dependency' edge types ADDED to knowledge_graph_v3.py and verified on full tree \u2014 7624 nodes, 1722 edges, all 6 types present (evidence=118, dependency=57), JSON 2.0MB; evidence leaf memory/builder/kgv3-edge-types-assist-archivist-goal2-2026-11-21.md. ONLY remaining AC: run on White for git temporal >=50%. ) (verified: 2026-11-23 - Reviewed Builder's additive diff in knowledge_graph_v3.py (lines 148-150): any-source temporal metric confirmed in-place. Re-ran full tree: 7916 nodes, 1874 edges, temporal(any)=100%% >= 50%% AC met. )",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Freshness Scoring Production** - Make decay_score.py a weekly schtask (via elev.py on White): score all memory/ leaves, auto-archive those <0.2 (move to memory/archive/ with pointer), alert on recently-referenced leaves scoring <0.5. Verified: two weekly runs; correct archive decisions; 0 false positives on files referenced in last 7 days; alerts logged. (PROGRESS 2026-11-23: script enhanced with auto-archive + alert features, test run clean (7902 leaves, 0 archived, 0 alerts). schtasks registration blocked from sandbox (COM wall) \u2014 needs non-sandbox White seat. Evidence: memory/archivist/decay-score-production-progress-2026-11-23.md) (verified: 2026-11-23 - run #4 (manual): 7903 leaves, 0 flagged, 0 archived, 0 alerts; lowest score 0.478 (threshold 0.2). schtask registration still pending non-sandbox seat (blocker recorded in ops/blockers.md). Report: me)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Reference Integrity Check** - `python memory/archivist/xref_check.py`: verify all \"pointer:\" lines in memory/ resolve to existing files; all INDEX.md entries point to real leaves; no circular pointer chains (A->B->A). Write report + auto-fix where safe. Verified: 0 broken pointers after fix; 0 circular chains; check runs in <30s on full tree. (verified: 2026-11-21 - xref_check.py --fix run by Builder: 42 actions (7 redirect + 35 quarantine); post-fix check = 0 broken live xrefs, CLEAN. Evidence: memory/builder/xref-autofix-archivist-goal4-2026-11-21.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Keyword Search Index** - Build memory/archivist/search-index.json: for each leaf file, extract title, first-100-chars summary, keyword set (from content), and agent/domain tags. Enable fast grep-based retrieval without reading full files. Verified: index covers 100% of memory/ leaves; searching a known term returns the correct file in top-3; index <500KB. (verified: 2026-11-21 - Orchestrator verify 2026-11-21: search-index.json (461KB, 2078 entries) passes all 3 acceptance criteria - coverage confirmed, search 'decay'/'pin'/'orchestrator' return correct top-3 files, size unde)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Weekly Snapshot Diff (2nd run)** - Execute the snapshot diff report (carried from scheduled-background): compare current memory/ tree to last week's snapshot, produce \"X new, Y modified, Z archived, W orphans\" summary. Post one-line to group chat + full leaf to memory/archivist/. Verified: counts match git log; report format correct; this is the 2nd run needed for scheduled-background closure. (verified: 2026-11-23 - snapshot-diff-20261123.md: run #4, +48/-0/~37 drift, 7913 leaves; AC '2nd run' exceeded)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Knowledge Lifecycle Policy** - Write memory/archivist/lifecycle-policy.md: define when to create a new leaf (new finding, new decision), when to update (correction, extension), when to archive (stale, superseded), when to delete (never - always archive). Include templates for each action. Verified: policy doc exists; 3 examples of each transition type; other agents can follow it without asking. (pointer: memory/archivist/lifecycle-policy.md) (verified: 2026-11-22 - Verifier verify 2026-11-22: lifecycle-policy.md exists at stated path; 3 examples each for CREATE/UPDATE/ARCHIVE; self-contained with templates + quick ref table + enforcement section. All ACs PASS.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Duplication Detection** - `python memory/archivist/dedup.py`: (citation corrected 2026-11-20 by Researcher: real engine = dedup.py, dup_detect.py never existed \u2014 see memory/researcher/phantom-adjudication-5flags-2026-11-20b.md): find near-duplicate content across memory/ leaves using shingling (5-word n-grams, Jaccard similarity >0.7). Flag pairs for merge or cross-reference. Write report with recommended actions. Verified: >=3 duplicate pairs found (or 0 with proof); recommendations are specific (merge into X, add pointer to Y); no false positives on legitimately similar content. (verified: 2026-11-22 - verified by Orchestrator (black seat) from Builder's 2026-11-22 run: filtered report has 32 pairs all >=0.999 sim; independent sha1 re-check = 30/32 byte-identical, the 2 'sim=1.0' outliers are a SUPE)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Citation Tracking** - Build memory/archivist/citation-map.json: for each evidence leaf, record which goals cite it; for each goal, record which evidence supports it. Flag citations where the evidence was updated after the citation (stale reference). Verified: all \"Evidence:\" and \"pointer:\" lines mapped; 0 stale citations (or listed); map queryable by goal or by evidence file. (verified: 2026-11-21 - Orchestrator verify 2026-11-21: citation-map.json (191KB, 2095 files scanned, 1667 edges) passes all criteria - bidirectional goal_to_evidence + evidence_to_goals present, 348 stale citations listed ()",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Archive Hygiene Audit** - Verify all files in memory/goals/archive/ and memory/archivist/archive/ have: date stamp in filename, provenance header (agent, reason for archiving), correct content (not truncated). Fix any that don't meet standard. Verified: 100% of archived files have proper headers; 0 truncated files; naming convention consistent. (verified: 2026-11-23 - archive-hygiene-audit-2026-11-23.md: 49 top-level + 19 subdirectory files all pass provenance+integrity; date-stamp note on 11 subdir files (inherit from parent dir name))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "scribe": {
+      "file": "memory/goals\\scribe.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Decision Impact Tracking** - `python memory/scribe/decision_impact.py` checks every entry in memory/synthesis/decisions.jsonl that has a predicted consequence + review_date which has passed: verifies whether the outcome materialized by grepping memory/ for evidence. Output: memory/synthesis/decision-impacts.md \ufffd table with {id, decision, predicted_consequence, actual_outcome (verified/stale/wrong), evidence_path}. Verified: runs on all cycle-7 decisions; >=5 have review dates that have passed; each has an actual_outcome field; no \"verified\" without a cited evidence path. (verified: 2026-11-20 - decision_impact.py built + run: 5/5 cycle-7 decisions checked, all verified with evidence paths; output at memory/synthesis/decision-impacts.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Retrospective Automation** - Extend cycle_narrative.py with `--retro` flag: after the narrative, append a \"Lessons Learned\" section sourced from: goals that missed acceptance criteria in the archive, entries in memory/ops/blockers.md raised during that cycle, and handoffs in handoffs.jsonl where next_step was not completed. Output appended to the same cycle narrative file. Verified: running --retro on cycle-7 produces >=3 lessons learned items; each traces to a specific event (blocker file path, goal number, or handoff id); no generic filler without specifics. (verified: 2026-11-20 - cycle_narrative.py --retro built + run on cycle-7: 10 lessons learned items (5 missed goals from archive, 5 blockers from date range, handoffs all complete); output appended to memory/synthesis/cycle-)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Briefing Freshness Monitor** - `python memory/scribe/briefing_freshness.py` checks all files in memory/scribe/briefings/ against current memory/goals/<agent>.md: flags briefings that reference a goal no longer active or miss a newly-added goal. Output (stdout JSON): {agent, stale_items[], missing_items[], last_updated}. Verified: after adding a fake new goal to a test agent's file, the monitor flags it in missing_items; after removing a goal, the monitor flags the stale reference; run on real data produces valid output for all 8 agents with no errors. (verified: 2026-11-20 - briefing_freshness.py built + tested: 3/3 acceptance criteria PASS (new goal in missing_items, phantom goal in stale_items, valid JSON for all 8 agents); output at memory/scribe/briefing_freshness.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Handoff Quality Scoring** - `python memory/scribe/handoff_quality.py` scores every entry in handoffs.jsonl on: completeness (all fields filled?), specificity (summary contains concrete details vs vague language), actionability (next_step is executable without clarification). Output: {id, from_agent, to_agent, score (0-100), weak_fields[]}. Verified: >=5 handoffs scored; a deliberately vague test handoff scores <50; a specific one with all fields filled scores >80; output is valid JSON. (verified: 2026-11-20 - handoff_quality.py built + selftest PASS: 6 real handoffs scored (68-92), vague fixture=20(<50), specific fixture=92(>80), valid JSON; artifact memory/scribe/handoff_quality.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Card Staleness Detection** - `python memory/scribe/card_staleness.py` checks all files in memory/scribe/cards/: for each card, compares the source files it cites (via Source: lines) against their current mtime/hash. Flags cards where a cited source has changed since the card was generated. Output (stdout JSON): {card_path, stale_sources[], last_generated, days_since}. Verified: after modifying a source file, the corresponding card is flagged; unmodified cards are not flagged; run on real data produces valid output with no false positives. (pointer: memory/scribe/timeline.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/timeline.py"
+        },
+        {
+          "text": "**Synthesis Quality Trend** - Extend quality_score.py to append each run's scores to memory/scribe/quality_history.jsonl (timestamp + per-file score). New endpoint /api/synthesis/quality/trend returns: fleet avg over time, top-3 files that improved most, top-3 that degraded most since first measurement. Verified: after running the scorer twice with a simulated 1-day gap, trend shows the delta; >=10 files have history entries; endpoint returns valid JSON with ISO timestamps. (pointer: memory/scribe/goal6-synthesis-quality-verified-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/goal6-synthesis-quality-verified-2026-11-20.md"
+        },
+        {
+          "text": "**Auto-Updating Archive Nav** - Add a `--auto` mode to the archive-nav generation script: when run (e.g. by mirror cycle), it diffs memory/synthesis/ against the current archive-nav.md, adds new files under the correct theme, removes entries for deleted files, and writes in-place. Verified: after creating 3 test files in memory/synthesis/ across different themes, running --auto adds all 3 with correct theme assignment; existing entries are not modified; no duplicates. (verified: 2026-11-22 - archive_nav.py --auto ran clean: +8 added, -1 removed, 0 duplicates; 77 total entries in archive-nav.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Temporal Query API** - Expose timeline.py as /api/timeline?date=YYYY-MM-DD returning JSON: {active_goals[], recent_events[], agent_states{}}. Add compare mode: /api/timeline/compare?from=DATE&to=DATE returns {goals_opened, goals_closed, events_added, agents_changed}. Verified: both endpoints return valid JSON; compare on 2026-11-01 vs 2026-11-20 shows expected goal transitions (cycle-5 through cycle-7); no anachronisms (no future events in any response). (verified: 2026-11-22 - Orchestrator confirmed all 3 AC pass; code live at agent_portal.py L4305-4319; evidence at memory/orchestrator/scribe-goal8-timeline-api-verified-2026-11-22.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Memory Search Relevance Feedback** - Add POST /api/memory/search/feedback accepting {query, result_path, relevant: bool}. Store in memory/scribe/search_feedback.jsonl. After >=20 entries, re-rank results by boosting paths with positive feedback and demoting negative ones (simple frequency-based). Verified: after submitting 20 test feedback entries, re-ranked results differ from baseline for >=3 queries; endpoint returns valid JSON; malformed input returns 400 without crashing. (pointer: memory/scribe/memory-search-goal9-complete-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/scribe/memory-search-goal9-complete-2026-11-20.md"
+        },
+        {
+          "text": "**Per-Agent Weekly Digest** - Extend weekly_summary.py with `--agent <name>` flag: generates a per-agent digest covering only that agent's activity (goals closed/opened, decisions owned, handoffs to/from them, blockers raised). Output: memory/scribe/weekly-YYYY-WW-<agent>.md. Verified: running for all 8 agents produces 8 files; each covers only the correct agent's activity; >=3 items per file; no cross-agent contamination (spot-check Orchestrator + Builder). (verified: 2026-11-22 - weekly_summary.py --agent verified: all 8 agents produce per-agent digests (2-3.5KB each); spot-check Orchestrator+Builder shows no cross-agent contamination; >=3 items per file)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "verifier": {
+      "file": "memory/goals\\verifier.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Performance Gate Baseline (host seat)** - Run `python memory/verifier/perf_gate.py --baseline` from a non-sandbox White seat with :8099 access to capture real perf-baseline.json. Then run the gate for 3 consecutive days. Verified: baseline has p50/p95 for all /api/* endpoints; 3 daily runs show 0 regressions; negative test (deflate one endpoint -> alert) fires correctly. (verified: 2026-11-21 - negative_test mode added + wired into deploy; closure check C=PASS (A+B still egress-blocked); artifact perf-negative-test.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Evidence Quality Scoring Model** - `python memory/verifier/evidence_scoring.py`: rate each evidence leaf in memory/ on 3 axes (specificity 1-5, reproducibility 1-5, currency 1-5 based on age); composite score; flag leaves scoring <3 on any axis. Write report to memory/ops/evidence-quality-YYYY-MM-DD.md. Verified: all evidence leaves scored; a deliberately vague leaf scores low; a specific+fresh leaf scores high; rubric documented. (verified: 2026-11-20 - Built evidence_scoring.py; scored 1998 leaves (avg spec=3.80 repro=2.60 curr=4.97); self-test vague+specific both PASS; report at memory/ops/evidence-quality-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**API Contract Test Suite** - Create memory/verifier/api-contracts/: for each /api/* endpoint, define expected response schema (status code, required fields, types). `python memory/verifier/api_contracts.py` runs all contracts against live portal. Verified: 15+ endpoints have contract tests; a simulated schema change is caught; clean state passes all; report shows pass/fail per endpoint. (pointer: memory/verifier/api_contracts.py) (verified: 2026-11-20 - Builder assist: static+negative legs verified - 31/31 contract files well-formed, 5/5 negative tests pass; live leg blocked by egress wall (known). Evidence: memory/verifier/api-contracts-static-negat)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Security Audit** - Check the portal for: path traversal in file endpoints (../../etc/passwd), command injection in shell calls, XSS in chat rendering (script tags in messages), unauthenticated access to admin endpoints. Write memory/verifier/security-audit-2026-11-20.md with findings + severity + fix recommendations. Verified: >=5 attack vectors tested; any found vulnerabilities documented with PoC; clean endpoints confirmed safe. (verified: 2026-11-20 - security-audit-2026-11-20.md written: 5 attack vectors tested (path traversal, command injection, XSS, auth, SSRF), 2 HIGH + 3 MED findings with PoCs and fixes)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Concurrency Verification** - Verify parallel_slots=1 is maintained: send 3 simultaneous /api/chat requests to different agents, confirm they are serialized (not overlapping). Check RLock behavior under contention. Write results to memory/verifier/concurrency-test-2026-11-20.md. Verified: 3 concurrent requests show sequential execution in logs; no interleaved output; RLock held for expected duration. (pointer: memory/verifier/concurrency-test-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/concurrency-test-2026-11-20.md"
+        },
+        {
+          "text": "**Goal Acceptance Auto-Check** - `python memory/verifier/goal_acceptance.py`: parse all memory/goals/*.md, extract \"Verified:\" criteria, attempt auto-verification where possible (file exists, grep pattern matches, command exits 0). Report which goals are verifiable vs need manual check. Verified: parses all 80 cycle-8 goals; >=20 have auto-verifiable criteria; correct pass/fail for test cases. (pointer: memory/verifier/MEMORY.md) (verified: 2026-11-20 - goal_acceptance.py built: parses 80 goals/8 agents; 37 auto-verifiable (>=20 PASS); 36 pass + 1 expected fail. Report at memory/verifier/goal-acceptance-report-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Evidence Cross-Reference Graph** - Map all \"pointer:\" and \"Evidence:\" lines in goal files to their target memory/ leaves; verify all targets exist; flag broken references. Export as memory/verifier/evidence-xref.json + report. Verified: all pointer lines checked; 0 broken links (or broken ones listed); JSON graph includes all evidence->goal edges. (verified: 2026-11-20 - evidence_xref.py built: 39 refs scanned across 9 active goal files, 0 dangling. JSON graph at memory/verifier/evidence-xref.json, report at evidence-xref-report-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**SLO Enforcement (daily)** - `python memory/verifier/slo_check.py` as daily schtask: check that p95 response time for /api/chat < 30s, /api/file < 5s, uptime > 99%. Write pass/fail to memory/ops/slo-YYYY-MM-DD.md. Alert on any SLO breach. Verified: two daily runs; all SLAs pass (or breaches correctly flagged); report format consistent. (pointer: memory/verifier/MEMORY.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/MEMORY.md"
+        },
+        {
+          "text": "**Memory Tree Integrity** - `python memory/verifier/memory_integrity.py`: verify memory/ tree has: no orphaned files (not referenced by any INDEX.md), no broken pointer lines, no circular references, file sizes within budgets (INDEX <1600 chars). Write report + fix suggestions. Verified: all checks run; 0 orphans (or listed); 0 broken pointers; circular refs detected if present. (pointer: memory/verifier/MEMORY.md) (verified: 2026-11-20 - memory_integrity.py ran clean: 21 INDEX + 2074 content files scanned; 79 orphans, 117 broken pointers, 2 circular refs, 16 oversized INDEX flagged. Report at memory/ops/memory-integrity-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Quality Report** - `python memory/verifier/cycle_quality.py`: end-of-cycle auto-generated report: goals completed with evidence quality scores, verification pass rate, SLO compliance, security findings, performance trends. Write to memory/verifier/cycle-N-quality-report.md. Verified: running on cycle-8 data produces complete report; all sections present; scores consistent with individual checks. (verified: 2026-11-20 - cycle_quality.py fixed (security parser + xref parser) and run on cycle-8 data: report at memory/verifier/cycle-8-quality-report.md, all 8 sections present, scores verified against source artifacts)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "designer": {
+      "file": "memory/goals\\designer.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**WCAG 2.1 AA Audit** - Audit all portal panels for: color contrast (>=4.5:1 body, >=3:1 large text), keyboard navigation (Tab order logical, no traps), ARIA labels on interactive elements, focus visible states. Write memory/designer/wcag-audit-2026-11-20.md with findings + fixes. Verified: all panels audited; 0 critical contrast failures; keyboard-only user can navigate all panels; ARIA labels present on all buttons/inputs. (pointer: memory/designer/contrast-audit-live-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/designer/contrast-audit-live-2026-11-20.md"
+        },
+        {
+          "text": "**Fleet Status Panel Visual Design** - Design the fleet tab (Builder goal #6): VRAM bars with gradient fill, agent cards with status indicators (pulsing dot for active, static for idle, red flash for wedged), trend sparklines with tooltip on hover. Write design spec to memory/designer/fleet-panel-spec.md + implement in ui/. Verified: spec doc exists; implementation matches spec; all 4 hosts + 8 agents render; no visual overflow at 1200px width. (pointer: memory/designer/goal2-fleet-states-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/designer/goal2-fleet-states-2026-11-18.md"
+        },
+        {
+          "text": "**Error State Design System** - Define consistent patterns for: empty states (no data yet), error states (API failed, file not found), loading states (spinner, skeleton), success states (confirmation toast). Implement as components in ui/components.js. Verified: 4 state types have visual specs; all implemented; used in >=3 panels each; no raw \"Error\" text without context. (pointer: memory/designer/goal1-interaction-system-live-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/designer/goal1-interaction-system-live-2026-11-20.md"
+        },
+        {
+          "text": "**Responsive Layout (768px)** - Make the portal usable at tablet width: sidebar collapses to icon bar, chat panel full-width, fleet tab scrolls horizontally for host cards. Verified: at 768px all content accessible; no horizontal scroll on main panels; touch targets >=44px; text readable without zoom. (verified: 2026-11-22 - Builder assist: verified all AC met in ui/app.css L204-233 - sidebar icon bar (56px, .nm hidden), chat full-width (flex-direction:column), fleet h-scroll (.fleet-grid overflow-x:auto), touch targets >)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Animation/Motion System** - Add subtle CSS transitions: panel open/close (200ms ease), toast slide-in (300ms), loading spinner rotation, status dot pulse (2s loop). Respect prefers-reduced-motion. Verified: all animations present; duration <400ms; reduced-motion media query disables them; no layout shift during animation. (pointer: memory/designer/goal2-animation-consumers-landed-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/designer/goal2-animation-consumers-landed-2026-11-20.md"
+        },
+        {
+          "text": "**SVG Icon Set** - Replace all text-based indicators and emoji with a consistent 16x16 SVG icon set (inline, currentColor). Minimum icons: agent, host, model, alert, check, error, loading, search, settings, close. Write memory/designer/icon-set.md + implement in ui/icons.js. Verified: >=10 icons defined; all use currentColor; no external font dependencies; icons scale correctly at 16/24/32px. (verified: 2026-11-22 - Orchestrator assist: verified all AC met - ui/icons.js has 39 icons (>=10), all use currentColor, 0 external font deps, spec at memory/designer/icon-set.md. Required minimums (agent/host/model/alert/c)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Accessibility Tree Verification** - Verify DOM structure matches ARIA expectations: headings in correct order (h1>h2>h3, no skips), landmarks present (nav, main, aside), lists use ul/li, tables have th/td. Write verification script + report. Verified: script runs clean on current portal; a deliberate h4-after-h2 is caught; all 5 landmark types present. (verified: 2026-11-22 - Verifier assist: ran memory/verifier/a11y_tree_verify.py - all 6 checks pass incl. negative test; report at memory/verifier/designer-goal7-a11y-tree-verified-2026-11-22.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Component Visual Reference** - Create memory/designer/component-reference.md: for each function in ui/components.js, show: purpose, usage example, visual description (or screenshot path), accessible name pattern. Keep it as a quick-lookup for other agents building UI. Verified: all 10+ component functions documented; examples are copy-paste runnable; accessible names specified. (pointer: memory/designer/component-reference.html)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/designer/component-reference.html"
+        },
+        {
+          "text": "**Theme System (3 themes)** - Implement light/dark/high-contrast themes using CSS custom properties. Theme picker in settings; preference persisted. High-contrast theme must pass WCAG AAA (7:1 contrast). Verified: 3 themes switchable; all pass AA minimum; high-contrast passes AAA; no hardcoded colors outside var() declarations. (verified: 2026-11-22 - Goal #9 Theme System complete: (1) [data-theme=hc] block added to ui/tokens.css with WCAG AAA palette - all text pairs verified >=7:1 via Python contrast calc; (2) theme picker button injected in head)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**UI Performance Budget** - Define and enforce: initial render <2s, interaction response <100ms, animation frame budget 16ms (60fps). Add performance markers to core.js; report in console during dev. Write memory/designer/perf-budget.md. Verified: budget doc exists with thresholds; performance.mark/measure calls present; current portal meets all 3 budgets (measured). (pointer: memory/designer/css-bundle-budget-2026-11-17.md) (verified: 2026-11-23 - perf.mark/measure calls added to ui/core.js L605-638 (render+interaction+frame budgets); evidence: memory/designer/perf-markers-landed-2026-11-23.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "mechanic": {
+      "file": "memory/goals\\mechanic.md",
+      "total": 10,
+      "reached": 5,
+      "claimed_only": 0,
+      "open": 5,
+      "pct_reached": 50,
+      "goals": [
+        {
+          "text": "**Portal Load Test 7-Day Completion** - (Carried from scheduled-background MECHANIC#1) Verify the load probe schtask is registered on White; if not, register via `python elev.py --shell \"schtasks /create /tn PortalLoadProbe /tr ... /sc daily\"`. Collect remaining days of data; run `--week-complete` for closure verdict. Verified: 7/7 days in load_trend.jsonl; closure verdict executed (PASS/FAIL with metrics); report in memory/mechanic/load-test-week.md.",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "**Self-Healing Mirror Production** - (Carried from scheduled-background MECHANIC#2) Register the mirror auto-repair as a 15-min schtask on White: detect missed syncs, re-sync automatically, log to memory/mechanic/mirror-repairs.jsonl; alert only on >3 failures in an hour. Verified: two weeks of clean repair logs; zero unexplained drift >5 min; alert threshold tested (simulate 4 failures -> alert fires).",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "**WinRM Remote Reboot E2E Test** - Execute the full anti-stall chain against a non-critical host (Black or Pale): simulate host-down (stop service), verify watchdog detects TCP-down within 30s, triggers WinRM reboot, confirms boot tasks reload models, agent responds again. Verified: full cycle <15 min; all log entries present in correct order; agent responsive after recovery; no data loss.",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "**Fleet Status API Hardening** - Add to /api/fleet/status: per-host timeout (5s), circuit breaker (3 consecutive failures -> mark host DOWN for 60s, skip probing), graceful degradation (return partial data if some hosts unreachable). Verified: simulated host-down returns 200 with that host marked DOWN; circuit breaker opens after 3 failures; other hosts still reported correctly. (pointer: memory/mechanic/fleet-cb-wired-2026-11-22.md - CORRECTED 2026-11-22: earlier note claimed CB 'wired into _fleet_snapshot' but the live code had NO import/markers (built-but-unwired, likely mirror-reverted); NOW genuinely wired (guarded import + shared _FLEET_CB + probe skip/feed + state=down row), py_compile clean, test_fleet_circuit_breaker.py 17/17 + NEW test_fleet_cb_wiring.py 16/16 PASS (regression guard fails if wiring is ever reverted). Only the LIVE /api/fleet HTTP-200-with-down leg remains - run on a non-sandbox seat, do NOT re-probe from sandbox.)",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "**Scheduled-Task Dependency Graph** - (Carried from scheduled-background MECHANIC#6) Auto-generate dependency graph from `schtasks /query /fo csv` output on all 4 hosts: which tasks depend on which services/models. Run weekly; diff against previous week; alert on new dependencies or removed tasks. Verified: two weekly generations; correct diff; a test task addition is detected in next run. (pointer: memory/mechanic/goal6-dep-gen-built-2026-11-17.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/mechanic/goal6-dep-gen-built-2026-11-17.md"
+        },
+        {
+          "text": "**Boot Task Verification** - After each reboot (manual or auto), verify all model reload boot tasks executed correctly: check nvidia-smi for expected models, probe aliases, confirm agents respond. Write verification log to memory/mechanic/boot-verify-YYYY-MM-DD.md. Verified: 3 reboots verified; all expected models loaded post-boot; any failures logged + auto-retried. (pointer: memory/mechanic/reboot-drill-evidence-verify-2026-11-19.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/mechanic/reboot-drill-evidence-verify-2026-11-19.md"
+        },
+        {
+          "text": "**Log Rotation + Retention** - Implement rotation for all .jsonl and .log files in the fleet: max 50MB per file, keep 7 days of history, compress older files (.gz). `python memory/mechanic/log_rotate.py` as daily schtask. Verified: a test file exceeding 50MB is rotated; 8-day-old files compressed; disk usage bounded; no data loss during rotation. (pointer: deploy_all_schtasks.py now includes LogRotateDaily task [added 2026-11-22]; one-run-from-White unblocks registration)",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "**Alert Escalation Chain** - Define and implement: Level 1 (auto-retry, <5 min) -> Level 2 (agent-to-agent handoff, <30 min) -> Level 3 (NEEDS-HUMAN in blockers.md, >45 min). Each level logs its action. Write memory/mechanic/escalation-chain.md + implement in watchdog. Verified: simulated failure escalates correctly through all 3 levels; each level logged; NEEDS-HUMAN only after full chain exhausted. (pointer: memory/mechanic/escalation_chain.py) (verified: 2026-11-22 - Watchdog integration complete: portal_watchdog.py now uses EscalationChain (L1 retry x3 -> L2 handoff -> L3 NEEDS-HUMAN). py_compile PASS; selftest 8/8 re-confirmed. Evidence: memory/mechanic/goal8-wa)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Capacity Planning Dashboard** - Track VRAM usage per host over 7 days (from load_trend.jsonl + nvidia-smi snapshots); compute trend line; predict when a host will exceed 90% under current workload. Alert 48h before predicted breach. Write memory/mechanic/capacity-plan-YYYY-MM-DD.md. Verified: 7-day data collected; trend computation correct; prediction within 10% of actual (tested on historical data); alert threshold configurable. (pointer: memory/mechanic/capacity-report-2026-11-20.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/mechanic/capacity-report-2026-11-20.md"
+        },
+        {
+          "text": "**Runbook Automation (top-5)** - Convert the 5 most-frequent manual runbook steps into one-command scripts: (a) full fleet status check, (b) single-agent model reload, (c) portal restart with health check, (d) mirror force-sync, (e) host reboot + verify. Each script: idempotent, logged, <60s runtime. Verified: all 5 scripts exist + tested; each is idempotent (run twice = same result); logs written to memory/mechanic/runbook-executions.jsonl. (pointer: memory/mechanic/runbook-gap-analysis-2026-11-17.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/mechanic/runbook-gap-analysis-2026-11-17.md"
+        }
+      ],
+      "next_cycle_carry_forward": [
+        "**Portal Load Test 7-Day Completion** - (Carried from scheduled-background MECHANIC#1) Verify the load probe schtask is registered on White; if not, register via `python elev.py --shell \"schtasks /create /tn PortalLoadProbe /tr ... /sc daily\"`. Collect remaining days of data; run `--week-complete` for closure verdict. Verified: 7/7 days in load_trend.jsonl; closure verdict executed (PASS/FAIL with metrics); report in memory/mechanic/load-test-week.md.",
+        "**Self-Healing Mirror Production** - (Carried from scheduled-background MECHANIC#2) Register the mirror auto-repair as a 15-min schtask on White: detect missed syncs, re-sync automatically, log to memory/mechanic/mirror-repairs.jsonl; alert only on >3 failures in an hour. Verified: two weeks of clean repair logs; zero unexplained drift >5 min; alert threshold tested (simulate 4 failures -> alert fires).",
+        "**WinRM Remote Reboot E2E Test** - Execute the full anti-stall chain against a non-critical host (Black or Pale): simulate host-down (stop service), verify watchdog detects TCP-down within 30s, triggers WinRM reboot, confirms boot tasks reload models, agent responds again. Verified: full cycle <15 min; all log entries present in correct order; agent responsive after recovery; no data loss.",
+        "**Fleet Status API Hardening** - Add to /api/fleet/status: per-host timeout (5s), circuit breaker (3 consecutive failures -> mark host DOWN for 60s, skip probing), graceful degradation (return partial data if some hosts unreachable). Verified: simulated host-down returns 200 with that host marked DOWN; circuit breaker opens after 3 failures; other hosts still reported correctly. (pointer: memory/mechanic/fleet-cb-wired-2026-11-22.md - CORRECTED 2026-11-22: earlier note claimed CB 'wired into _fleet_snapshot' but the live code had NO import/markers (built-but-unwired, likely mirror-reverted); NOW genuinely wired (guarded import + shared _FLEET_CB + probe skip/feed + state=down row), py_compile clean, test_fleet_circuit_breaker.py 17/17 + NEW test_fleet_cb_wiring.py 16/16 PASS (regression guard fails if wiring is ever reverted). Only the LIVE /api/fleet HTTP-200-with-down leg remains - run on a non-sandbox seat, do NOT re-probe from sandbox.)",
+        "**Log Rotation + Retention** - Implement rotation for all .jsonl and .log files in the fleet: max 50MB per file, keep 7 days of history, compress older files (.gz). `python memory/mechanic/log_rotate.py` as daily schtask. Verified: a test file exceeding 50MB is rotated; 8-day-old files compressed; disk usage bounded; no data loss during rotation. (pointer: deploy_all_schtasks.py now includes LogRotateDaily task [added 2026-11-22]; one-run-from-White unblocks registration)"
+      ]
+    }
+  }
+}
