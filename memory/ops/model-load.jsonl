@@ -533,3 +533,4 @@
 {"ts": "2026-11-22 14:35:44", "run": "g-1a20189e5ef-08ab2d", "missing": {"Researcher": "not_loaded"}}
 {"ts": "2026-11-22 14:39:36", "run": "g-1a2018d7151-2eeef8", "missing": {"Researcher": "not_loaded"}}
 {"ts": "2026-11-22 14:43:47", "run": "g-1a201914666-1d7872", "missing": {"Researcher": "not_loaded", "Builder": "unreachable", "Verifier": "unreachable", "Orchestrator": "unreachable"}}
+{"ts": "2026-11-22 15:05:07", "run": "g-1a201a4cd84-80969f", "missing": {"Researcher": "not_loaded", "Mechanic": "unreachable", "Scribe": "unreachable", "Archivist": "unreachable"}}
