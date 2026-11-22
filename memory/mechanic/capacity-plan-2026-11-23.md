@@ -1,6 +1,6 @@
 # Fleet Capacity Plan - 2026-11-23
 
-Generated: 2026-11-22T15:20:31.389507+00:00
+Generated: 2026-11-22T15:28:01.674540+00:00
 Threshold: 90.0% | Alert window: 48h
 
 | Host | Metric | Points | Current % | Trend (%/day) | Days to 90% | Alert |

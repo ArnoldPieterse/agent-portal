@@ -460,5 +460,11 @@
 "text": "**Fleet Status API Hardening** - Add to /api/fleet/status: per-host timeout (5s), circuit breaker (3 consecutive failures -> mark host DOWN ",
 "agent": "mechanic",
 "at": "2026-11-23"
+},
+{
+"sig": "bf66a3bc3736f64b",
+"text": "**WinRM Remote Reboot E2E Test** - Execute the full anti-stall chain against a non-critical host (Black or Pale): simulate host-down (stop s",
+"agent": "mechanic",
+"at": "2026-11-23"
 }
 ]
