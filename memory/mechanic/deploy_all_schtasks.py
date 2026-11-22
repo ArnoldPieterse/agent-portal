@@ -42,6 +42,13 @@ TASKS = [
         "ru": "SYSTEM",
     },
     {
+        "name": "LogRotateDaily",
+        "goal": 7,
+        "tr": r'python "%s\memory\mechanic\log_rotate.py"' % str(HERE),
+        "schedule": "/sc daily /st 03:00",
+        "ru": "SYSTEM",
+    },
+    {
         "name": "ChaosDrillMonthly",
         "goal": 8,
         "tr": r'python "%s\memory\ops\chaos_drill.py --rotate"' % str(HERE),
