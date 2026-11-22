@@ -1,0 +1,7 @@
+{"ts": "2026-11-22T15:26:17Z", "step": "Phase 1: Simulate host-down on IP_BLACK (stop python/portal process)", "status": "DRY-RUN", "action": "taskkill /f /im python.exe (portal only)"}
+{"ts": "2026-11-22T15:26:17Z", "step": "Phase 2: Verify detection within 30s", "status": "DRY-RUN", "action": "poll fleet_probe_v2 or portal /api/fleet/status"}
+{"ts": "2026-11-22T15:26:17Z", "step": "Phase 3: Trigger WinRM reboot on IP_BLACK", "status": "DRY-RUN", "action": "Restart-Computer -Force"}
+{"ts": "2026-11-22T15:26:17Z", "step": "Phase 4: Wait for IP_BLACK to recover (max 900s)", "status": "DRY-RUN", "action": "poll TCP :8099 until up"}
+{"ts": "2026-11-22T15:26:17Z", "step": "Phase 5: Verify boot tasks + model reload on IP_BLACK", "status": "DRY-RUN", "action": "nvidia-smi + port :8888 probe"}
+{"ts": "2026-11-22T15:26:17Z", "step": "Phase 6: Verify agent response on IP_BLACK:8099", "status": "DRY-RUN", "action": "GET /api/health"}
+{"ts": "2026-11-22T15:26:17Z", "step": "VERDICT", "status": "PASS", "host": "BLACK", "total_time_s": 0.0, "phases_passed": 6, "phases_total": 6, "within_budget": true}

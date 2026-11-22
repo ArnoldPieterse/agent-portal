@@ -1,10 +1,10 @@
 {
  "version": 3,
- "generated": "2026-11-22T14:53:55.629067+00:00",
- "node_count": 7928,
- "edge_count": 1897,
+ "generated": "2026-11-22T15:26:26.166304+00:00",
+ "node_count": 7960,
+ "edge_count": 1899,
  "edge_type_counts": {
-  "pointer": 1076,
+  "pointer": 1078,
   "dependency": 175,
   "link": 44,
   "supersession": 9,
@@ -485,7 +485,7 @@
    "agent": "archivist",
    "domain": "agent:archivist",
    "size_bytes": 1777,
-   "modified": "2026-11-19T03:55:26.358343+00:00",
+   "modified": "2026-11-19T03:54:03.863169+00:00",
    "temporal_source": "mtime"
   },
   "memory/archivist/doc-file-refs-report.json": {
@@ -1296,8 +1296,8 @@
   "memory/archivist/knowledge-graph-v3.json": {
    "agent": "archivist",
    "domain": "agent:archivist",
-   "size_bytes": 2167567,
-   "modified": "2026-11-22T14:45:51.721019+00:00",
+   "size_bytes": 2166230,
+   "modified": "2026-11-22T14:53:55.669926+00:00",
    "temporal_source": "mtime"
   },
   "memory/archivist/knowledge_gaps.md": {
@@ -2235,14 +2235,14 @@
    "agent": "archivist",
    "domain": "agent:archivist",
    "size_bytes": 5250,
-   "modified": "2026-11-16T08:18:34.618936+00:00",
+   "modified": "2026-11-16T08:33:57.900012+00:00",
    "temporal_source": "mtime"
   },
   "memory/archivist/__pycache__/freshness_report.cpython-313.pyc": {
    "agent": "archivist",
    "domain": "agent:archivist",
-   "size_bytes": 8518,
-   "modified": "2026-11-20T00:43:43.501245+00:00",
+   "size_bytes": 13727,
+   "modified": "2026-11-20T02:02:08.248771+00:00",
    "temporal_source": "mtime"
   },
   "memory/archivist/__pycache__/freshness_sweep.cpython-313.pyc": {
@@ -2277,7 +2277,7 @@
    "agent": "archivist",
    "domain": "agent:archivist",
    "size_bytes": 3928,
-   "modified": "2026-11-16T08:18:34.635547+00:00",
+   "modified": "2026-11-16T08:33:57.902529+00:00",
    "temporal_source": "mtime"
   },
   "memory/archivist/__pycache__/ingest.cpython-315.pyc": {
@@ -2325,8 +2325,8 @@
   "memory/archivist/__pycache__/snapshot.cpython-313.pyc": {
    "agent": "archivist",
    "domain": "agent:archivist",
-   "size_bytes": 5051,
-   "modified": "2026-11-16T08:18:34.626506+00:00",
+   "size_bytes": 5656,
+   "modified": "2026-11-16T08:33:57.901522+00:00",
    "temporal_source": "mtime"
   },
   "memory/archivist/__pycache__/supersession_check.cpython-313.pyc": {
@@ -2523,6 +2523,13 @@
    "domain": "agent:builder",
    "size_bytes": 1697,
    "modified": "2026-11-20T00:13:08.815037+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/builder/archivist-goal3-schtasks-queue-assist-2026-11-23.md": {
+   "agent": "builder",
+   "domain": "agent:builder",
+   "size_bytes": 1420,
+   "modified": "2026-11-22T14:54:12.931269+00:00",
    "temporal_source": "mtime"
   },
   "memory/builder/archivist-goal4-kg-viz-built-2026-11-20.md": {
@@ -3998,8 +4005,8 @@
   "memory/builder/canary/black/__pycache__/agent_portal.cpython-313.pyc": {
    "agent": "builder",
    "domain": "agent:builder",
-   "size_bytes": 267132,
-   "modified": "2026-11-17T10:21:55.846487+00:00",
+   "size_bytes": 275552,
+   "modified": "2026-11-17T11:44:21.913259+00:00",
    "temporal_source": "mtime"
   },
   "memory/builder/canary/pale/agent_portal.py": {
@@ -4012,8 +4019,8 @@
   "memory/builder/canary/pale/__pycache__/agent_portal.cpython-313.pyc": {
    "agent": "builder",
    "domain": "agent:builder",
-   "size_bytes": 267131,
-   "modified": "2026-11-17T10:21:55.979021+00:00",
+   "size_bytes": 275551,
+   "modified": "2026-11-17T11:44:22.047780+00:00",
    "temporal_source": "mtime"
   },
   "memory/builder/canary/red/agent_portal.py": {
@@ -4026,8 +4033,8 @@
   "memory/builder/canary/red/__pycache__/agent_portal.cpython-313.pyc": {
    "agent": "builder",
    "domain": "agent:builder",
-   "size_bytes": 267130,
-   "modified": "2026-11-17T10:21:55.717467+00:00",
+   "size_bytes": 275550,
+   "modified": "2026-11-17T11:44:21.777243+00:00",
    "temporal_source": "mtime"
   },
   "memory/builder/canary/__pycache__/agent_portal_slo_patched.cpython-313.pyc": {
@@ -4111,21 +4118,21 @@
    "agent": "builder",
    "domain": "agent:builder",
    "size_bytes": 102284,
-   "modified": "2026-11-13T10:59:41.888224+00:00",
+   "modified": "2026-11-13T12:01:17.760440+00:00",
    "temporal_source": "mtime"
   },
   "memory/builder/__pycache__/api_contract_test.cpython-313.pyc": {
    "agent": "builder",
    "domain": "agent:builder",
    "size_bytes": 9629,
-   "modified": "2026-11-16T07:31:59.497756+00:00",
+   "modified": "2026-11-16T05:29:22.583245+00:00",
    "temporal_source": "mtime"
   },
   "memory/builder/__pycache__/api_contract_test.cpython-315.pyc": {
    "agent": "builder",
    "domain": "agent:builder",
    "size_bytes": 10141,
-   "modified": "2026-11-16T06:02:15.828709+00:00",
+   "modified": "2026-11-16T06:13:08.195653+00:00",
    "temporal_source": "mtime"
   },
   "memory/builder/__pycache__/apply_a6_b_r42.cpython-313.pyc": {
@@ -4195,7 +4202,7 @@
    "agent": "builder",
    "domain": "agent:builder",
    "size_bytes": 7661,
-   "modified": "2026-11-16T06:02:15.825708+00:00",
+   "modified": "2026-11-16T06:13:08.191650+00:00",
    "temporal_source": "mtime"
   },
   "memory/builder/__pycache__/persist_a4a5_candidate_r40.cpython-313.pyc": {
@@ -4216,7 +4223,7 @@
    "agent": "builder",
    "domain": "agent:builder",
    "size_bytes": 7309,
-   "modified": "2026-11-16T06:02:15.827209+00:00",
+   "modified": "2026-11-16T06:13:08.193650+00:00",
    "temporal_source": "mtime"
   },
   "memory/builder/__pycache__/pre_commit_gate.cpython-313.pyc": {
@@ -4230,7 +4237,7 @@
    "agent": "builder",
    "domain": "agent:builder",
    "size_bytes": 3888,
-   "modified": "2026-11-16T06:02:15.824208+00:00",
+   "modified": "2026-11-16T06:13:08.189142+00:00",
    "temporal_source": "mtime"
   },
   "memory/builder/__pycache__/prune_regression.cpython-313.pyc": {
@@ -37815,8 +37822,8 @@
   "memory/designer/__pycache__/design_breakpoint_check.cpython-313.pyc": {
    "agent": "designer",
    "domain": "agent:designer",
-   "size_bytes": 9479,
-   "modified": "2026-11-16T09:50:34.196456+00:00",
+   "size_bytes": 10067,
+   "modified": "2026-11-16T11:06:07.817967+00:00",
    "temporal_source": "mtime"
   },
   "memory/designer/__pycache__/goal7_typography_verify.cpython-313.pyc": {
@@ -37829,8 +37836,8 @@
   "memory/designer/__pycache__/goals-patch-apply-2026-11-15.cpython-313.pyc": {
    "agent": "designer",
    "domain": "agent:designer",
-   "size_bytes": 18645,
-   "modified": "2026-11-15T02:55:09.621698+00:00",
+   "size_bytes": 21094,
+   "modified": "2026-11-15T03:54:55.200288+00:00",
    "temporal_source": "mtime"
   },
   "memory/designer/__pycache__/goals-patch-apply-2026-11-15.cpython-315.pyc": {
@@ -37976,8 +37983,8 @@
   "memory/goals/closed_topics.json": {
    "agent": "shared",
    "domain": "goals",
-   "size_bytes": 17076,
-   "modified": "2026-11-22T14:43:21.906484+00:00",
+   "size_bytes": 17766,
+   "modified": "2026-11-22T15:22:49.235477+00:00",
    "temporal_source": "mtime"
   },
   "memory/goals/cycle2-dependency-map.md": {
@@ -38249,8 +38256,8 @@
   "memory/goals/mechanic.md": {
    "agent": "shared",
    "domain": "goals",
-   "size_bytes": 7527,
-   "modified": "2026-11-22T14:48:42.672199+00:00",
+   "size_bytes": 8808,
+   "modified": "2026-11-22T15:20:55.834594+00:00",
    "temporal_source": "mtime"
   },
   "memory/goals/orchestrator.md": {
@@ -39569,11 +39576,18 @@
    "modified": "2026-11-22T07:14:47.628728+00:00",
    "temporal_source": "mtime"
   },
+  "memory/mechanic/capacity-plan-2026-11-23.md": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 420,
+   "modified": "2026-11-22T15:20:31.389763+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/mechanic/capacity-plan-latest.json": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
    "size_bytes": 313,
-   "modified": "2026-11-22T07:14:47.629228+00:00",
+   "modified": "2026-11-22T15:20:31.389763+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/capacity-predict-selftest.jsonl": {
@@ -40140,7 +40154,7 @@
    "agent": "mechanic",
    "domain": "agent:mechanic",
    "size_bytes": 1513,
-   "modified": "2026-11-17T10:33:15.948890+00:00",
+   "modified": "2026-11-17T22:37:41.269950+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/fleet_probe_v2_predictive_test.py": {
@@ -40246,6 +40260,13 @@
    "domain": "agent:mechanic",
    "size_bytes": 873,
    "modified": "2026-11-17T22:17:38.983532+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/goal1-diag-script-built-2026-11-23.md": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 1586,
+   "modified": "2026-11-22T15:08:13.345425+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/goal1-discrepancy-reconciled-2026-11-20.md": {
@@ -40507,6 +40528,13 @@
    "modified": "2026-11-20T13:30:46.221269+00:00",
    "temporal_source": "mtime"
   },
+  "memory/mechanic/goal10-runbook-idempotency-2026-11-23.md": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 1779,
+   "modified": "2026-11-22T15:01:24.302537+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/mechanic/goal10-runbook-script-a-2026-11-20.md": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
@@ -40540,6 +40568,13 @@
    "domain": "agent:mechanic",
    "size_bytes": 2295,
    "modified": "2026-11-20T01:20:33.471922+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/goal1_diagnose_fix.py": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 4866,
+   "modified": "2026-11-22T15:08:05.281378+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/goal1_escalation_test.json": {
@@ -41077,8 +41112,8 @@
   "memory/mechanic/goal4-live-integration-evidence.jsonl": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 3960,
-   "modified": "2026-11-22T14:28:11.950105+00:00",
+   "size_bytes": 5940,
+   "modified": "2026-11-22T14:48:22.968504+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/goal4-live-integration-test-2026-11-21.md": {
@@ -41690,6 +41725,13 @@
    "modified": "2026-11-17T13:48:26.164674+00:00",
    "temporal_source": "mtime"
   },
+  "memory/mechanic/goal7-log-rotate-evidence-2026-11-23.md": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 1857,
+   "modified": "2026-11-22T14:58:22.623686+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/mechanic/goal7-log-rotate-updated-2026-11-22.md": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
@@ -41709,6 +41751,13 @@
    "domain": "agent:mechanic",
    "size_bytes": 1227,
    "modified": "2026-11-22T11:02:22.929703+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/goal7-log-rotate-verified-2026-11-23.md": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 1137,
+   "modified": "2026-11-22T14:37:59.790882+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/goal7-log-rotation-2026-11-21.md": {
@@ -42260,8 +42309,8 @@
   "memory/mechanic/log_rotate.py": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 3126,
-   "modified": "2026-11-22T10:23:28.737573+00:00",
+   "size_bytes": 3260,
+   "modified": "2026-11-22T14:58:06.391429+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/maintenance-log.jsonl": {
@@ -42269,6 +42318,20 @@
    "domain": "agent:mechanic",
    "size_bytes": 307,
    "modified": "2026-11-20T04:08:28.442286+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/mechanic-goals-dashboard.html": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 6950,
+   "modified": "2026-11-22T14:21:13.348478+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/mechanic_closure_battery.py": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 11691,
+   "modified": "2026-11-22T14:31:21.693016+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/memory-tree-bloat-cleanup-2026-11-18.md": {
@@ -42337,8 +42400,8 @@
   "memory/mechanic/model_reload.py": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 4673,
-   "modified": "2026-11-20T13:20:34.889699+00:00",
+   "size_bytes": 4827,
+   "modified": "2026-11-22T15:01:04.308718+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/net-probe-verdict-verified-2026-11-19.md": {
@@ -42485,7 +42548,7 @@
    "agent": "mechanic",
    "domain": "agent:mechanic",
    "size_bytes": 703,
-   "modified": "2026-11-20T05:02:07.781274+00:00",
+   "modified": "2026-11-20T10:44:21.072407+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/perf_profile.py": {
@@ -42558,6 +42621,13 @@
    "modified": "2026-11-20T13:20:14.441165+00:00",
    "temporal_source": "mtime"
   },
+  "memory/mechanic/portal_start_2026-11-23.log": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 0,
+   "modified": "2026-11-22T14:47:50.423881+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/mechanic/portal_watchdog.py": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
@@ -42577,6 +42647,27 @@
    "domain": "agent:mechanic",
    "size_bytes": 652,
    "modified": "2026-11-18T10:38:41.150772+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/preflight-2026-11-23.jsonl": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 1920,
+   "modified": "2026-11-22T15:18:37.537655+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/preflight-built-and-bugfix-2026-11-23.md": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 1661,
+   "modified": "2026-11-22T15:18:44.661775+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/preflight_check.py": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 5355,
+   "modified": "2026-11-22T15:18:28.614890+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/py_probe.py": {
@@ -42694,8 +42785,8 @@
   "memory/mechanic/runbook-executions.jsonl": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 4086,
-   "modified": "2026-11-22T05:49:37.895880+00:00",
+   "size_bytes": 5570,
+   "modified": "2026-11-22T15:01:13.899919+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/runbook-gap-analysis-2026-11-17.md": {
@@ -42724,6 +42815,13 @@
    "domain": "agent:mechanic",
    "size_bytes": 30,
    "modified": "2026-11-20T15:15:21.595841+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/schtasks-white-snapshot-2026-11-23.json": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 115,
+   "modified": "2026-11-22T14:47:30.169554+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/schtasks_snapshot_2026-11-18.csv": {
@@ -42793,7 +42891,7 @@
    "agent": "mechanic",
    "domain": "agent:mechanic",
    "size_bytes": 1927,
-   "modified": "2026-11-22T10:58:31.553625+00:00",
+   "modified": "2026-11-19T23:58:55.084972+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/service_deps.py": {
@@ -42822,6 +42920,13 @@
    "domain": "agent:mechanic",
    "size_bytes": 1009,
    "modified": "2026-11-19T09:18:37.831960+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/status-snapshot-2026-11-23.md": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 1899,
+   "modified": "2026-11-22T15:20:48.970792+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/studio_path_probe.py": {
@@ -42964,6 +43069,13 @@
    "modified": "2026-11-20T00:14:48.454177+00:00",
    "temporal_source": "mtime"
   },
+  "memory/mechanic/unblock-all-built-2026-11-23.md": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 1460,
+   "modified": "2026-11-22T15:10:23.552841+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/mechanic/unblock-checklist-2026-11-18.md": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
@@ -42976,6 +43088,13 @@
    "domain": "agent:mechanic",
    "size_bytes": 543,
    "modified": "2026-11-20T15:03:30.585356+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/unblock_all.py": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 4835,
+   "modified": "2026-11-22T15:18:27.262614+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/unblock_all_live_runs.py": {
@@ -43689,7 +43808,7 @@
    "agent": "mechanic",
    "domain": "agent:mechanic",
    "size_bytes": 6396,
-   "modified": "2026-11-13T20:03:51.457585+00:00",
+   "modified": "2026-11-13T18:12:13.351981+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/agent_portal_pre-decisions-v2-reland-2026-11-18.cpython-313.pyc": {
@@ -43730,8 +43849,8 @@
   "memory/mechanic/__pycache__/capacity_plan.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 13231,
-   "modified": "2026-11-22T07:14:47.080347+00:00",
+   "size_bytes": 13228,
+   "modified": "2026-11-22T15:20:40.058296+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/capacity_report.cpython-313.pyc": {
@@ -43776,6 +43895,13 @@
    "modified": "2026-11-20T09:30:31.319713+00:00",
    "temporal_source": "mtime"
   },
+  "memory/mechanic/__pycache__/complete_remaining_legs.cpython-313.pyc": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 22252,
+   "modified": "2026-11-22T14:20:51.638683+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/mechanic/__pycache__/dbg_pale.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
@@ -43793,8 +43919,8 @@
   "memory/mechanic/__pycache__/deploy_all_schtasks.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 7869,
-   "modified": "2026-11-22T09:01:00.904457+00:00",
+   "size_bytes": 7874,
+   "modified": "2026-11-22T15:20:40.051293+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/deploy_one_host.cpython-313.pyc": {
@@ -43807,8 +43933,8 @@
   "memory/mechanic/__pycache__/deploy_reboot_recovery_all.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 11861,
-   "modified": "2026-11-18T00:30:35.865270+00:00",
+   "size_bytes": 18980,
+   "modified": "2026-11-18T07:51:06.183071+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/deploy_reboot_recovery_winrm.cpython-313.pyc": {
@@ -43856,22 +43982,22 @@
   "memory/mechanic/__pycache__/e2e_anti_stall_test.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 11414,
-   "modified": "2026-11-20T12:51:19.050880+00:00",
+   "size_bytes": 12808,
+   "modified": "2026-11-22T15:18:37.320555+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/escalation_chain.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 14348,
-   "modified": "2026-11-22T14:36:10.529646+00:00",
+   "size_bytes": 14395,
+   "modified": "2026-11-22T11:32:55.931381+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/fleet_load_probe.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
    "size_bytes": 3517,
-   "modified": "2026-11-20T09:30:31.338640+00:00",
+   "modified": "2026-11-22T15:20:40.059795+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/fleet_probe_v2_escalation_test.cpython-313.pyc": {
@@ -43930,6 +44056,13 @@
    "modified": "2026-11-20T09:30:31.346641+00:00",
    "temporal_source": "mtime"
   },
+  "memory/mechanic/__pycache__/goal1_diagnose_fix.cpython-313.pyc": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 6919,
+   "modified": "2026-11-22T15:08:07.167438+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/mechanic/__pycache__/goal1_one_command_close.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
@@ -43955,7 +44088,7 @@
    "agent": "mechanic",
    "domain": "agent:mechanic",
    "size_bytes": 15036,
-   "modified": "2026-11-20T14:35:08.076400+00:00",
+   "modified": "2026-11-22T15:20:40.054296+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/goal6_oneshot_verify.cpython-313.pyc": {
@@ -43982,8 +44115,8 @@
   "memory/mechanic/__pycache__/host_reboot_verify.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 11393,
-   "modified": "2026-11-22T08:51:27.276286+00:00",
+   "size_bytes": 9257,
+   "modified": "2026-11-20T13:28:45.212450+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/ledger_upkeep.cpython-313.pyc": {
@@ -43996,8 +44129,15 @@
   "memory/mechanic/__pycache__/log_rotate.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 3987,
-   "modified": "2026-11-22T09:00:35.957097+00:00",
+   "size_bytes": 5556,
+   "modified": "2026-11-22T15:20:40.055796+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/__pycache__/mechanic_closure_battery.cpython-313.pyc": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 17801,
+   "modified": "2026-11-22T14:31:21.702543+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/memory_mirror_fixed.cpython-313.pyc": {
@@ -44011,7 +44151,7 @@
    "agent": "mechanic",
    "domain": "agent:mechanic",
    "size_bytes": 15670,
-   "modified": "2026-11-13T10:53:31.243820+00:00",
+   "modified": "2026-11-13T12:01:17.856459+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/mirror_force_sync.cpython-313.pyc": {
@@ -44038,8 +44178,8 @@
   "memory/mechanic/__pycache__/perf_profile.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 19442,
-   "modified": "2026-11-20T07:21:24.359096+00:00",
+   "size_bytes": 11979,
+   "modified": "2026-11-20T10:44:07.630844+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/perf_via_pale.cpython-313.pyc": {
@@ -44059,8 +44199,8 @@
   "memory/mechanic/__pycache__/portal_watchdog.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 5137,
-   "modified": "2026-11-18T11:09:18.981917+00:00",
+   "size_bytes": 6571,
+   "modified": "2026-11-22T13:44:27.590722+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/postmortem_gen.cpython-313.pyc": {
@@ -44068,6 +44208,13 @@
    "domain": "agent:mechanic",
    "size_bytes": 2475,
    "modified": "2026-11-18T11:09:18.987427+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/mechanic/__pycache__/preflight_check.cpython-313.pyc": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 9189,
+   "modified": "2026-11-22T15:18:30.522179+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/py_probe.cpython-313.pyc": {
@@ -44224,6 +44371,13 @@
    "modified": "2026-11-20T09:30:31.402641+00:00",
    "temporal_source": "mtime"
   },
+  "memory/mechanic/__pycache__/unblock_all.cpython-313.pyc": {
+   "agent": "mechanic",
+   "domain": "agent:mechanic",
+   "size_bytes": 8099,
+   "modified": "2026-11-22T15:20:40.049294+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/mechanic/__pycache__/unblock_all_live_runs.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
@@ -44241,8 +44395,8 @@
   "memory/mechanic/__pycache__/white_seat_closure_run.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 14648,
-   "modified": "2026-11-22T09:01:33.826934+00:00",
+   "size_bytes": 13891,
+   "modified": "2026-11-22T08:42:33.051971+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/winrm_cred_check.cpython-313.pyc": {
@@ -44283,8 +44437,8 @@
   "memory/mechanic/__pycache__/winrm_pool.cpython-313.pyc": {
    "agent": "mechanic",
    "domain": "agent:mechanic",
-   "size_bytes": 11629,
-   "modified": "2026-11-20T01:20:06.581917+00:00",
+   "size_bytes": 11626,
+   "modified": "2026-11-20T01:55:04.789759+00:00",
    "temporal_source": "mtime"
   },
   "memory/mechanic/__pycache__/winrm_pool_selftest.cpython-313.pyc": {
@@ -44395,8 +44549,8 @@
   "memory/ops/autoloop.json": {
    "agent": "shared",
    "domain": "ops",
-   "size_bytes": 1204,
-   "modified": "2026-11-22T14:44:37.943739+00:00",
+   "size_bytes": 1253,
+   "modified": "2026-11-22T15:24:17.468802+00:00",
    "temporal_source": "mtime"
   },
   "memory/ops/autoloop.md": {
@@ -44647,8 +44801,8 @@
   "memory/ops/down-seats.json": {
    "agent": "shared",
    "domain": "ops",
-   "size_bytes": 140,
-   "modified": "2026-11-22T14:35:52.407475+00:00",
+   "size_bytes": 239,
+   "modified": "2026-11-22T15:23:51.367974+00:00",
    "temporal_source": "mtime"
   },
   "memory/ops/egress-audit.jsonl": {
@@ -45131,7 +45285,7 @@
    "agent": "shared",
    "domain": "ops",
    "size_bytes": 8589,
-   "modified": "2026-11-22T06:49:09.396274+00:00",
+   "modified": "2026-11-22T08:09:03.099277+00:00",
    "temporal_source": "mtime"
   },
   "memory/ops/memory-integrity-2026-11-21.md": {
@@ -45221,8 +45375,8 @@
   "memory/ops/model-load.jsonl": {
    "agent": "shared",
    "domain": "ops",
-   "size_bytes": 80652,
-   "modified": "2026-11-22T14:43:56.025075+00:00",
+   "size_bytes": 83442,
+   "modified": "2026-11-22T15:24:51.223620+00:00",
    "temporal_source": "mtime"
   },
   "memory/ops/net-egress-log.jsonl": {
@@ -45554,6 +45708,13 @@
    "modified": "2026-11-18T16:22:28.346718+00:00",
    "temporal_source": "mtime"
   },
+  "memory/ops/schtask-consolidation-gap-2026-11-23.md": {
+   "agent": "shared",
+   "domain": "ops",
+   "size_bytes": 2637,
+   "modified": "2026-11-22T14:54:04.465578+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/ops/schtask-deps.md": {
    "agent": "shared",
    "domain": "ops",
@@ -45748,6 +45909,13 @@
    "domain": "ops",
    "size_bytes": 3815,
    "modified": "2026-11-20T14:22:38.603992+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/ops/ui-asset-inventory-2026-11-23.md": {
+   "agent": "shared",
+   "domain": "ops",
+   "size_bytes": 3412,
+   "modified": "2026-11-22T14:40:35.268081+00:00",
    "temporal_source": "mtime"
   },
   "memory/ops/ui-change-checklist.md": {
@@ -46761,22 +46929,22 @@
   "memory/ops/__pycache__/load_probe.cpython-313.pyc": {
    "agent": "shared",
    "domain": "ops",
-   "size_bytes": 5864,
-   "modified": "2026-11-16T14:15:09.548717+00:00",
+   "size_bytes": 5898,
+   "modified": "2026-11-17T07:17:46.211675+00:00",
    "temporal_source": "mtime"
   },
   "memory/ops/__pycache__/load_trend.cpython-313.pyc": {
    "agent": "shared",
    "domain": "ops",
-   "size_bytes": 6661,
-   "modified": "2026-11-16T14:24:34.055060+00:00",
+   "size_bytes": 10469,
+   "modified": "2026-11-18T12:56:29.553204+00:00",
    "temporal_source": "mtime"
   },
   "memory/ops/__pycache__/mirror_heal.cpython-313.pyc": {
    "agent": "shared",
    "domain": "ops",
-   "size_bytes": 7168,
-   "modified": "2026-11-17T11:05:58.200831+00:00",
+   "size_bytes": 7216,
+   "modified": "2026-11-22T15:18:37.529153+00:00",
    "temporal_source": "mtime"
   },
   "memory/ops/__pycache__/register_mirror_heal_task.cpython-313.pyc": {
@@ -46810,8 +46978,8 @@
   "memory/ops/__pycache__/schtask_dep_gen.cpython-313.pyc": {
    "agent": "shared",
    "domain": "ops",
-   "size_bytes": 6043,
-   "modified": "2026-11-17T12:15:17.899276+00:00",
+   "size_bytes": 6966,
+   "modified": "2026-11-18T13:49:04.796975+00:00",
    "temporal_source": "mtime"
   },
   "memory/ops/__pycache__/verify_claims.cpython-313.pyc": {
@@ -46819,6 +46987,20 @@
    "domain": "ops",
    "size_bytes": 9598,
    "modified": "2026-11-20T05:02:07.860826+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/orchestrator/.incident_triage_state.json": {
+   "agent": "orchestrator",
+   "domain": "agent:orchestrator",
+   "size_bytes": 280,
+   "modified": "2026-11-20T12:47:33.217985+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/orchestrator/.roster_health_state.json": {
+   "agent": "orchestrator",
+   "domain": "agent:orchestrator",
+   "size_bytes": 151,
+   "modified": "2026-11-22T05:06:15.205635+00:00",
    "temporal_source": "mtime"
   },
   "memory/orchestrator/agents_schema_test_2026-11-17.md": {
@@ -47101,6 +47283,13 @@
    "modified": "2026-11-20T11:51:05.262100+00:00",
    "temporal_source": "mtime"
   },
+  "memory/orchestrator/decay-run2-assist-archivist-goal3-2026-11-23.md": {
+   "agent": "orchestrator",
+   "domain": "agent:orchestrator",
+   "size_bytes": 1555,
+   "modified": "2026-11-22T14:37:34.347619+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/orchestrator/dependencies-api-2026-11-18.md": {
    "agent": "orchestrator",
    "domain": "agent:orchestrator",
@@ -47112,7 +47301,7 @@
    "agent": "orchestrator",
    "domain": "agent:orchestrator",
    "size_bytes": 81915,
-   "modified": "2026-11-19T17:34:56.699933+00:00",
+   "modified": "2026-11-19T18:04:39.808034+00:00",
    "temporal_source": "mtime"
   },
   "memory/orchestrator/dependency_graph.py": {
@@ -47804,22 +47993,22 @@
   "memory/orchestrator/__pycache__/auto_cycle_transition.cpython-313.pyc": {
    "agent": "orchestrator",
    "domain": "agent:orchestrator",
-   "size_bytes": 24749,
-   "modified": "2026-11-22T09:43:35.526652+00:00",
+   "size_bytes": 21897,
+   "modified": "2026-11-19T19:50:26.848872+00:00",
    "temporal_source": "mtime"
   },
   "memory/orchestrator/__pycache__/binding_audit.cpython-313.pyc": {
    "agent": "orchestrator",
    "domain": "agent:orchestrator",
-   "size_bytes": 9835,
-   "modified": "2026-11-19T16:36:15.248717+00:00",
+   "size_bytes": 10078,
+   "modified": "2026-11-20T12:10:20.827807+00:00",
    "temporal_source": "mtime"
   },
   "memory/orchestrator/__pycache__/cost_tracker.cpython-313.pyc": {
    "agent": "orchestrator",
    "domain": "agent:orchestrator",
-   "size_bytes": 6485,
-   "modified": "2026-11-19T23:42:25.344184+00:00",
+   "size_bytes": 6437,
+   "modified": "2026-11-20T09:30:43.142027+00:00",
    "temporal_source": "mtime"
   },
   "memory/orchestrator/__pycache__/cycle_retro.cpython-313.pyc": {
@@ -47839,8 +48028,8 @@
   "memory/orchestrator/__pycache__/model_scheduler.cpython-313.pyc": {
    "agent": "orchestrator",
    "domain": "agent:orchestrator",
-   "size_bytes": 14162,
-   "modified": "2026-11-18T12:03:53.862196+00:00",
+   "size_bytes": 51185,
+   "modified": "2026-11-18T14:30:26.696544+00:00",
    "temporal_source": "mtime"
   },
   "memory/orchestrator/__pycache__/onboard_agent.cpython-313.pyc": {
@@ -48022,7 +48211,7 @@
    "agent": "shared",
    "domain": "portal",
    "size_bytes": 4844,
-   "modified": "2026-11-16T04:28:14.819079+00:00",
+   "modified": "2026-11-15T07:30:42.209120+00:00",
    "temporal_source": "mtime"
   },
   "memory/portal/ui-tokens.md": {
@@ -48261,6 +48450,13 @@
    "domain": "agent:researcher",
    "size_bytes": 1272,
    "modified": "2026-11-19T02:16:31.860446+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/researcher/archivist-goal2-temporal-reverify-2026-11-23.md": {
+   "agent": "researcher",
+   "domain": "agent:researcher",
+   "size_bytes": 537,
+   "modified": "2026-11-22T14:46:20.976670+00:00",
    "temporal_source": "mtime"
   },
   "memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md": {
@@ -48641,6 +48837,13 @@
    "modified": "2026-11-13T16:51:12.295931+00:00",
    "temporal_source": "mtime"
   },
+  "memory/researcher/elev-class-not-registered-rootcause-2026-11-23.md": {
+   "agent": "researcher",
+   "domain": "agent:researcher",
+   "size_bytes": 3271,
+   "modified": "2026-11-22T14:41:00.476782+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/researcher/evidence-assist-archivist-goal1-orphan-remediation-2026-11-20.md": {
    "agent": "researcher",
    "domain": "agent:researcher",
@@ -48968,6 +49171,13 @@
    "domain": "agent:researcher",
    "size_bytes": 632022,
    "modified": "2026-11-22T09:00:39.755657+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/researcher/knowledge-graph-v3-verify-assist-archivist-goal2-2026-11-23.md": {
+   "agent": "researcher",
+   "domain": "agent:researcher",
+   "size_bytes": 1545,
+   "modified": "2026-11-22T14:36:36.792349+00:00",
    "temporal_source": "mtime"
   },
   "memory/researcher/ledger_current.json": {
@@ -49862,22 +50072,22 @@
   "memory/researcher/__pycache__/goal_ledger.cpython-313.pyc": {
    "agent": "researcher",
    "domain": "agent:researcher",
-   "size_bytes": 25500,
-   "modified": "2026-11-22T09:43:28.938690+00:00",
+   "size_bytes": 25503,
+   "modified": "2026-11-18T01:39:44.772069+00:00",
    "temporal_source": "mtime"
   },
   "memory/researcher/__pycache__/goal_ledger.cpython-315.pyc": {
    "agent": "researcher",
    "domain": "agent:researcher",
-   "size_bytes": 9657,
-   "modified": "2026-11-15T05:08:00.888053+00:00",
+   "size_bytes": 27666,
+   "modified": "2026-11-18T01:42:02.193168+00:00",
    "temporal_source": "mtime"
   },
   "memory/researcher/__pycache__/hot_load.cpython-313.pyc": {
    "agent": "researcher",
    "domain": "agent:researcher",
-   "size_bytes": 24330,
-   "modified": "2026-11-18T12:02:39.629706+00:00",
+   "size_bytes": 47845,
+   "modified": "2026-11-18T12:56:52.056943+00:00",
    "temporal_source": "mtime"
   },
   "memory/researcher/__pycache__/memory_mirror.cpython-313.pyc": {
@@ -49925,8 +50135,8 @@
   "memory/researcher/__pycache__/understanding.cpython-315.pyc": {
    "agent": "researcher",
    "domain": "agent:researcher",
-   "size_bytes": 17102,
-   "modified": "2026-11-18T03:27:17.553842+00:00",
+   "size_bytes": 17535,
+   "modified": "2026-11-18T18:18:35.642769+00:00",
    "temporal_source": "mtime"
   },
   "memory/researcher/__pycache__/validate_brief.cpython-313.pyc": {
@@ -51040,6 +51250,13 @@
    "domain": "agent:scribe",
    "size_bytes": 1044,
    "modified": "2026-11-19T02:40:34.675398+00:00",
+   "temporal_source": "mtime"
+  },
+  "memory/scribe/mechanic-forecast-contribution-2026-11-23.md": {
+   "agent": "scribe",
+   "domain": "agent:scribe",
+   "size_bytes": 778,
+   "modified": "2026-11-22T14:39:04.098544+00:00",
    "temporal_source": "mtime"
   },
   "memory/scribe/meeting-brief-latest.md": {
@@ -52172,8 +52389,8 @@
   "memory/scribe/__pycache__/memory_search.cpython-313.pyc": {
    "agent": "scribe",
    "domain": "agent:scribe",
-   "size_bytes": 10718,
-   "modified": "2026-11-20T04:47:52.494990+00:00",
+   "size_bytes": 10715,
+   "modified": "2026-11-20T09:30:43.140533+00:00",
    "temporal_source": "mtime"
   },
   "memory/scribe/__pycache__/open_items_scan.cpython-313.pyc": {
@@ -54199,6 +54416,13 @@
    "modified": "2026-11-22T14:34:21.237372+00:00",
    "temporal_source": "mtime"
   },
+  "memory/verifier/kgv3-size-ac-check-2026-11-23.md": {
+   "agent": "verifier",
+   "domain": "agent:verifier",
+   "size_bytes": 1570,
+   "modified": "2026-11-22T14:54:10.599209+00:00",
+   "temporal_source": "mtime"
+  },
   "memory/verifier/lint_reports.py": {
    "agent": "verifier",
    "domain": "agent:verifier",
@@ -55469,8 +55693,8 @@
   "memory/verifier/__pycache__/freshness_audit.cpython-313.pyc": {
    "agent": "verifier",
    "domain": "agent:verifier",
-   "size_bytes": 8570,
-   "modified": "2026-11-18T16:11:24.355314+00:00",
+   "size_bytes": 8630,
+   "modified": "2026-11-19T12:45:29.451488+00:00",
    "temporal_source": "mtime"
   },
   "memory/verifier/__pycache__/memory_integrity.cpython-313.pyc": {
@@ -55498,7 +55722,7 @@
    "agent": "verifier",
    "domain": "agent:verifier",
    "size_bytes": 8224,
-   "modified": "2026-11-15T03:14:44.393501+00:00",
+   "modified": "2026-11-15T02:40:03.079465+00:00",
    "temporal_source": "mtime"
   },
   "memory/workspace/INDEX.md": {
@@ -57904,7 +58128,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/designer/goal-regression-gate-2026-11-20.md",
    "type": "dependency",
-   "marker": "requires"
+   "marker": "require"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -57940,7 +58164,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/designer/baseline/run_all.py",
    "type": "dependency",
-   "marker": "require"
+   "marker": "requires"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -57952,7 +58176,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/designer/goal2-density-live-2026-11-19.md",
    "type": "dependency",
-   "marker": "requires"
+   "marker": "require"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -57976,13 +58200,13 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/designer/goal5-reland-line-max-and-gaps-2026-11-20.md",
    "type": "dependency",
-   "marker": "require"
+   "marker": "requires"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/designer/INDEX.md",
    "type": "dependency",
-   "marker": "requires"
+   "marker": "require"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -58102,13 +58326,13 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/ops/mirror_heal.py",
    "type": "dependency",
-   "marker": "require"
+   "marker": "requires"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/mechanic/goal4-week-complete-restored-2026-11-17.md",
    "type": "dependency",
-   "marker": "requires"
+   "marker": "require"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -58150,13 +58374,13 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/mechanic/goal7-perf-profile-progress-2026-11-20b.md",
    "type": "dependency",
-   "marker": "require"
+   "marker": "requires"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/mechanic/perf_via_pale.py",
    "type": "dependency",
-   "marker": "requires"
+   "marker": "require"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -58222,7 +58446,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/goals/forecast-mechanic-g4.md",
    "type": "dependency",
-   "marker": "require"
+   "marker": "requires"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -58240,7 +58464,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/portal/file-modularity.md",
    "type": "dependency",
-   "marker": "requires"
+   "marker": "require"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -58264,7 +58488,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/researcher/overnight_unload_histogram.py",
    "type": "dependency",
-   "marker": "require"
+   "marker": "requires"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -58276,7 +58500,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/scribe/INDEX.md",
    "type": "dependency",
-   "marker": "requires"
+   "marker": "require"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -58372,7 +58596,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/archivist/knowledge_graph_v3.py",
    "type": "dependency",
-   "marker": "depends on"
+   "marker": "requires"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -58384,7 +58608,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/researcher/evidence-marker-content-audit-2026-11-20.md",
    "type": "dependency",
-   "marker": "requires"
+   "marker": "depends on"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -58474,7 +58698,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/mechanic/deploy_all_schtasks.py",
    "type": "dependency",
-   "marker": "require"
+   "marker": "requires"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -58498,7 +58722,7 @@
    "from": "memory/archivist/knowledge-graph-v3.json",
    "to": "memory/mechanic/log_rotate.py",
    "type": "dependency",
-   "marker": "requires"
+   "marker": "require"
   },
   {
    "from": "memory/archivist/knowledge-graph-v3.json",
@@ -61725,6 +61949,11 @@
   {
    "from": "memory/mechanic/INDEX.md",
    "to": "memory/mechanic/escalation_chain.py",
+   "type": "pointer"
+  },
+  {
+   "from": "memory/mechanic/INDEX.md",
+   "to": "memory/mechanic/goal7-log-rotate-verified-2026-11-23.md",
    "type": "pointer"
   },
   {
@@ -65054,6 +65283,11 @@
    "from": "memory/verifier/INDEX.md",
    "to": "memory/verifier/MEMORY.md",
    "type": "link"
+  },
+  {
+   "from": "memory/verifier/kgv3-size-ac-check-2026-11-23.md",
+   "to": "memory/archivist/knowledge-graph-v3.json",
+   "type": "pointer"
   },
   {
    "from": "memory/verifier/mechanic-goal6-watchdog-verify.md",
