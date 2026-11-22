@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer assisting Scribe on goal #6: quality-trend endpoint needs a trend visualization component.
-- Wrote timeline-panel UI spec at memory/designer/timeline-panel-spec-2026-11-21.md for Scribe's /api/timeline; Builder can implement once API
 - Scribe fixed cycle_narrative.py to read goal_ledger_current.json (SSOT) instead of counting raw verified: markers in goal files.
 - Archivist 10/10 goals done; now triaging 245 stale citations — most non-actionable (archived files or volatile targets like blockers.md, IND
 - Designer wrote UI spec for timeline panel consuming /api/timeline (contributing to Scribe's Temporal Query API goal).
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 3 WinRM E2E live run
 - Mechanic's 4 open goals (#1,#3,#6,#9) are each one-liners from non-sandbox White; unblock map at memory/mechanic/auto-loop-pass-202
 - Scribe found ledger contradiction: shows Mechanic 10/10 reached, but hot notes say
+- Scribe's 10/10 goals reached; piv
+- Goal 1: load_week_complete.py --status confirms all p95 within thresholds (max 194.6/751.2/3527.0), zero errors, 5/7 days local data.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
