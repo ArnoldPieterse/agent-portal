@@ -754,5 +754,11 @@
 "text": "**Fleet Knowledge Delta Report** - `python memory/scribe/knowledge_delta.py`: compare fleet knowledge at cycle start vs end: what new files ",
 "agent": "scribe",
 "at": "2026-11-23"
+},
+{
+"sig": "39d2901bd321dcab",
+"text": "**Knowledge Decay Model** - `python memory/researcher/knowledge_decay.py`: build a mathematical model for how quickly different knowledge ty",
+"agent": "researcher",
+"at": "2026-11-23"
 }
 ]
