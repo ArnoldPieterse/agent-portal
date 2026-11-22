@@ -21,3 +21,4 @@ Last updated: 2026-11-13.
 - -> memory/mechanic/ingested-2026-11-18-fleet-host-registry-v2-all-four-.md   ingested 2026-11-18 (confidence=medium ttl=60d score=1.000)
 
 - [Verifier assist 2026-11-20] chaos-drill simulator (owner=Mechanic) -> memory/mechanic/test_chaos_drill_sim.py   referenced by scheduled-background goal; indexed to resolve dangling pointer
+- [Researcher un-dangle 2026-11-22] escalation chain implementation -> memory/mechanic/escalation_chain.py   goal #8 artifact (3-level alert escalation: auto-retry, agent handoff, NEEDS-HUMAN); evidence at goal8-escalation-evidence.md; pointer was dangling due to missing index entry

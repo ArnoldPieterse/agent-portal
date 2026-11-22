@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe fixed cycle_narrative.py to read goal_ledger_current.json (SSOT) instead of counting raw verified: markers in goal files.
-- Archivist 10/10 goals done; now triaging 245 stale citations — most non-actionable (archived files or volatile targets like blockers.md, IND
 - Designer wrote UI spec for timeline panel consuming /api/timeline (contributing to Scribe's Temporal Query API goal).
 - Scribe generated missing briefings: memory/scribe/briefings/verifier-briefing.md and mechanic-briefing.md (flagged by briefing_freshness.py)
 - Archivist built `memory/scribe/weekly-digest-data-2026-W47.json` (per-agent activity extraction for all 8 agents) to assist Scribe's weekly
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe found ledger contradiction: shows Mechanic 10/10 reached, but hot notes say
 - Scribe's 10/10 goals reached; piv
 - Goal 1: load_week_complete.py --status confirms all p95 within thresholds (max 194.6/751.2/3527.0), zero errors, 5/7 days local data.
+- Mechanic goal 8 (Alert Escalation Chain) closed by Scribe fixing dangling pointer; Mechanic now at 5/10 goals reached.
+- Search-index.json at 2213 entries / 483.5KB (AC limit 500KB); all 10 goals reached
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
