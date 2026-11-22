@@ -81,3 +81,4 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 ## Linked content (KG orphan remediation 2026-11-19)
 - [fleet-monitoring-cadence.md](memory/ops/fleet-monitoring-cadence.md)
 - [pin-guard-extension-ui-files.md](memory/ops/pin-guard-extension-ui-files.md)
+- 2026-11-22 Orchestrator: `recover_seats.py` (per-seat fleet recovery, plan-by-default) built + runs clean; converts the prose-only unreachable-seat unblock into a one-command `--execute` path for a non-sandbox seat. Evidence: -> memory/orchestrator/recover-seats-script-2026-11-22.md
