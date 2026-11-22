@@ -3,21 +3,23 @@
 **Parent:** memory/ops/INDEX.md
 
 ## Summary
-Portal serves 21 CSS+JS files in ui/ (226 KB total), but the browser only loads **7 files** (~145 KB active). 14 files (85 KB) are never fetched by the browser. One token var (`--agent-purple`) is referenced in uploads.js but its definition lives only in the unloaded tokens.css — a minor color-resolution bug.
+Portal serves 21 CSS+JS files in ui/ (226 KB total), but the browser only loads **8 files** (~147 KB active). 13 files (79 KB) are never fetched by the browser.
+
+**Correction (2026-11-23):** Initial audit missed `@import "tokens.css"` at line 1 of app.css. tokens.css IS loaded (indirectly), so `--agent-purple` resolves correctly. No bug.
 
 ## Loaded by Browser (index.html → /ui/*)
 | File | Size | Role |
 |------|------|------|
-| ui/app.css | 32.7 KB | All styles (tokens inlined except 1) |
+| ui/app.css | 32.7 KB | All styles; @imports tokens.css at L1 |
+| ui/tokens.css | 2.9 KB | Design tokens (loaded via @import from app.css) |
 | ui/core.js | 42.2 KB | Main orchestrator, panels, goals |
 | ui/uploads.js | 39.4 KB | Chat composer, file uploads, bubbles |
 | ui/fleet_topology.js | 12.4 KB | Fleet topology panel |
-| ui/components.js* | — | NOT loaded (see below) |
 | ui/icons.js | 8.4 KB | SVG icon registry |
 | ui/notifications.js | 3.0 KB | Toast + bell system |
 | ui/tour.js | 3.2 KB | Onboarding tour overlay |
 
-**Active payload: ~145 KB (6 JS + 1 CSS)**
+**Active payload: ~147 KB (6 JS + 2 CSS)**
 
 ## Unloaded Dead Files (85 KB total)
 | File | Size | Status |
@@ -31,16 +33,15 @@ Portal serves 21 CSS+JS files in ui/ (226 KB total), but the browser only loads 
 | load_queue.js | 5.1 KB | Queue UI inlined into core.js |
 | fleet_health.js | 5.3 KB | Health panel inlined into fleet_topology.js |
 | fleet_goals_bars.js | 3.8 KB | Goal bars inlined into core.js |
-| animations.css | 3.3 KB | Keyframes (panel-enter, li-enter, gauge-fill, ring-fill, notif-slide-in) — NONE referenced in app.css |
-| tokens.css | 2.9 KB | 117 vars defined; 96 inlined in app.css; **`--agent-purple` used by uploads.js but missing from app.css** |
+| animations.css | 3.3 KB | Keyframes (panel-enter, li-enter, gauge-fill, ring-fill, notif-slide-in) — NOT @imported anywhere |
 | fleet_status.js | 2.7 KB | Status dots inlined into fleet_topology.js |
 | panel-icons.js | 2.0 KB | Icons inlined into icons.js |
 | state.js | 1.3 KB | State management inlined into core.js |
 
-## Bug Found
-`--agent-purple` is used in `ui/uploads.js` (line ~queued-bubble color) but defined only in `ui/tokens.css` which is never loaded. Result: queued-run bubbles render with no background color.
+## ~~Bug Found~~ (RETRACTED)
+Initial report claimed `--agent-purple` was undefined because tokens.css was "never loaded." **This was wrong** — app.css line 1 is `@import "tokens.css"`, so the browser fetches it. No fix needed.
 
-**Fix:** Add `--agent-purple: #7c3aed;` (or current value from tokens.css) to the `:root` block in `ui/app.css`. One-line fix, then tokens.css can be archived.
+**Lesson:** Always check for `@import` chains before declaring a CSS file dead. from tokens.css) to the `:root` block in `ui/app.css`. One-line fix, then tokens.css can be archived.
 
 ## Recommended Actions (for Builder)
 1. **Fix `--agent-purple`** — add the var to app.css :root (1 line).
