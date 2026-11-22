@@ -1,0 +1,40 @@
+{
+  "goal": "#9 Task Re-Routing E2E Test",
+  "timestamp": "2026-11-23 09:03:12",
+  "pass": true,
+  "checks": {
+    "detection": {
+      "unresponsive_detected": [
+        "Beta"
+      ],
+      "beta_flagged": true,
+      "task_still_pending": true,
+      "detection_time_s": 0.0
+    },
+    "reroute": {
+      "new_owner": "Alpha",
+      "task_in_new_queue": true,
+      "task_not_lost": true
+    },
+    "task_completed": {
+      "status": "completed",
+      "result": "done_by_Alpha",
+      "completed": true
+    },
+    "recovery": {
+      "beta_status": "recovered",
+      "updated_correctly": true
+    },
+    "all_logged": {
+      "steps_found": 15,
+      "required_present": true,
+      "missing": []
+    },
+    "timing": {
+      "elapsed_s": 0.041994333267211914,
+      "under_5min": true
+    }
+  },
+  "elapsed_s": 0.042,
+  "events_count": 15
+}

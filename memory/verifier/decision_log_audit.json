@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "entries_total": 12,
+  "issues_count": 0,
+  "issues": [],
+  "agents_seen": [
+    "builder"
+  ],
+  "time_span": [
+    "2026-11-22T20:26:33.080010+00:00",
+    "2026-11-22T21:03:36.741021+00:00"
+  ]
+}

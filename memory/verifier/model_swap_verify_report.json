@@ -1,0 +1,95 @@
+{
+  "timestamp": "2026-11-22T22:03:03.708711+00:00",
+  "self_test_results": [
+    "T1_correct_swap_all_pass",
+    "T2_failed_swap_detection",
+    "T3_timing_under_60s",
+    "T4_report_structure"
+  ],
+  "failed_tests": [],
+  "t1_good_swap": {
+    "timestamp": "2026-11-22T22:03:03.708637+00:00",
+    "elapsed_s": 0.0,
+    "all_passed": true,
+    "checks_passed": 4,
+    "checks_total": 4,
+    "checks": [
+      {
+        "check": "ping_response",
+        "passed": true,
+        "detail": "Response 'pong' in 0.30s (threshold: 10s)",
+        "latency_s": 0.3
+      },
+      {
+        "check": "response_quality",
+        "passed": true,
+        "detail": "null_bytes=False, replacement_chars=0, word_count=34, non_printable_ratio=0.000",
+        "response_preview": "I understand your request: What is the capital of France? Answer in one sentence.. Here is my analysis based on the avai"
+      },
+      {
+        "check": "tool_calls",
+        "passed": true,
+        "detail": "2/2 tools responded correctly",
+        "tools_tested": [
+          {
+            "tool": "python",
+            "success": true,
+            "result_preview": "print('hello') -> hello\n"
+          },
+          {
+            "tool": "terminal",
+            "success": true,
+            "result_preview": "dir /b -> file1.txt, file2.txt\n"
+          }
+        ]
+      },
+      {
+        "check": "context_window",
+        "passed": true,
+        "detail": "Actual=128000, expected=128000 (tolerance 10%)",
+        "actual": 128000,
+        "expected": 128000
+      }
+    ]
+  },
+  "t2_bad_swap": {
+    "timestamp": "2026-11-22T22:03:03.708680+00:00",
+    "elapsed_s": 0.0,
+    "all_passed": false,
+    "checks_passed": 0,
+    "checks_total": 4,
+    "checks": [
+      {
+        "check": "ping_response",
+        "passed": false,
+        "detail": "No response received (latency=15.0s > 10s timeout)"
+      },
+      {
+        "check": "response_quality",
+        "passed": false,
+        "detail": "null_bytes=True, replacement_chars=4, word_count=2, non_printable_ratio=0.136",
+        "response_preview": "\ufffd\ufffd\ufffd\u0000\u0001binary_garbage_\ufffd\u0002"
+      },
+      {
+        "check": "tool_calls",
+        "passed": false,
+        "detail": "0/1 tools responded correctly",
+        "tools_tested": [
+          {
+            "tool": "python",
+            "success": false,
+            "result_preview": "ERROR: tool registry empty - no tools loaded for this model"
+          }
+        ]
+      },
+      {
+        "check": "context_window",
+        "passed": false,
+        "detail": "Actual=4096, expected=131072 (tolerance 10%)",
+        "actual": 4096,
+        "expected": 131072
+      }
+    ]
+  },
+  "all_pass": true
+}

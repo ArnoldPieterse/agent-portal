@@ -1,0 +1,53 @@
+{
+  "agents": {
+    "researcher": {
+      "used": 28245,
+      "turns": 42,
+      "last_status": "warn",
+      "reloads": 0
+    },
+    "builder": {
+      "used": 28245,
+      "turns": 42,
+      "last_status": "warn",
+      "reloads": 0
+    },
+    "archivist": {
+      "used": 15645,
+      "turns": 21,
+      "last_status": "ok",
+      "reloads": 0
+    },
+    "designer": {
+      "used": 0,
+      "turns": 0,
+      "last_status": "ok",
+      "reloads": 0
+    },
+    "mechanic": {
+      "used": 0,
+      "turns": 0,
+      "last_status": "ok",
+      "reloads": 0
+    },
+    "orchestrator": {
+      "used": 0,
+      "turns": 0,
+      "last_status": "ok",
+      "reloads": 0
+    },
+    "scribe": {
+      "used": 0,
+      "turns": 0,
+      "last_status": "ok",
+      "reloads": 0
+    },
+    "verifier": {
+      "used": 0,
+      "turns": 0,
+      "last_status": "ok",
+      "reloads": 0
+    }
+  },
+  "last_usage_ts": "2026-11-19T15:16:03.662206+00:00"
+}

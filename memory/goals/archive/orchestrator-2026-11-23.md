@@ -1,0 +1,23 @@
+# Orchestrator - 10 goals (set 2026-11-23, cycle-10)
+
+Focus: Closed-Loop Autonomy & Fleet Cockpit. Cycle 10 closes the loop: intelligence becomes action. The fleet detects, decides, and remediates autonomously; a unified cockpit shows all state in real time.
+
+1. **Auto-Remediation Policy Engine** - `python memory/orchestrator/remediation_policy.py`: define which degradation patterns trigger which autonomous actions (model swap, host failover, task re-route). Encode as a policy file (memory/ops/remediation-policy.json) with rules: condition -> action -> preconditions -> rollback. Verified: policy covers >=5 distinct degradation types; each rule has all 4 fields; a simulated trigger correctly selects the right action.
+
+2. **Model Routing Optimizer** - `python memory/orchestrator/model_router.py`: given current agent workloads + predicted demand (from capacity_forecast), compute optimal model-to-agent assignments minimizing total VRAM while meeting quality floors. Output: assignment table + rationale per decision. Verified: on cycle-9 load data, optimizer's assignment uses <=10% more VRAM than manual assignment; no agent assigned a model below its quality floor; output is machine-readable JSON.
+
+3. **Fleet Cockpit API** - Add `/api/fleet/cockpit` to agent_portal.py: single endpoint returning {agents: [{name, status, current_goal, last_active}], hosts: [{name, vram_pct, cpu_pct, temp_c}], goals: {total, done, in_progress, blocked}, health_score, recent_decisions: [last 10], predicted_risks: [from capacity_forecast]}. Verified: endpoint responds <2s; all 6 top-level keys present; data matches raw sources within 5% tolerance; valid JSON.
+
+4. **Workload Rebalancer** - `python memory/orchestrator/rebalancer.py`: detect agent overload (queue depth >3 or p95 response >30s) and propose task redistribution to underloaded agents. Write rebalancing decisions to decision-log.jsonl. Verified: on simulated 2-agent-overload scenario, rebalancer proposes valid redistribution; no agent assigned >1.5x its normal load; decision logged with all required fields.
+
+5. **Cycle Auto-Planner** - `python memory/orchestrator/auto_cycle_planner.py`: given current backlog + capacity_forecast + each agent's historical throughput, auto-generate next cycle's goal allocation (which goals to which agent, priority order). Output: draft TODO.md section + per-agent goal files. Verified: on cycle-9 data, planner's allocation would have predicted >=70% of actual completions; no agent assigned 0 or >15 goals; output is valid markdown matching TODO.md format.
+
+6. **Context Budget Manager** - `python memory/orchestrator/context_budget.py`: track context window usage per agent from chat logs; warn at 70%, force summary+reload at 90%. Log all budget events to decision-log.jsonl. Verified: tracker correctly identifies agents approaching limit; warning fires at correct threshold; reload event logged with before/after context size.
+
+7. **Roster Health Monitor** - `python memory/orchestrator/roster_monitor.py`: continuous (per-pass) check of all agent responsiveness (can they answer a ping within 10s?). Auto-flag unresponsive seats in cockpit data + decision log. Verified: all 7 active agents detected as responsive; a simulated timeout correctly flags the agent; flag persists until agent responds again.
+
+8. **Fleet Incident Auto-Responder** - `python memory/orchestrator/incident_responder.py`: when an incident is detected (host down, model OOM, agent unresponsive >60s), execute the matching runbook from memory/ops/runbooks/ automatically. Log start, each step, outcome to decision-log.jsonl. Verified: on simulated host-down, responder executes the correct runbook; all steps logged; total response time <5 min; rollback available if any step fails.
+
+9. **Decision Audit Validator** - `python memory/orchestrator/decision_audit.py`: scan decision-log.jsonl for policy violations (action taken without required precondition, missing rollback, action outside agent's authority). Report violations with timestamp + rule broken. Verified: a clean log produces 0 violations; an injected violation is detected and reported with correct rule reference; report includes count + details.
+
+10. **Fleet Cockpit State Validator** - `python memory/orchestrator/cockpit_validator.py`: cross-check /api/fleet/cockpit output against raw sources (agents.json, nvidia-smi, TODO.md) to detect stale or incorrect data. Write discrepancies to cockpit-discrepancies.jsonl. Verified: on healthy system, 0 discrepancies; a simulated stale agent status is detected; discrepancy logged with field name + expected vs actual.

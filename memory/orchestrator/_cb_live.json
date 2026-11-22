@@ -1,0 +1,74 @@
+{
+  "archivist": {
+    "agent": "archivist",
+    "window": 32768,
+    "used": 0,
+    "fraction": 0.0,
+    "status": "ok",
+    "warn_at": 22938,
+    "critical_at": 29491
+  },
+  "builder": {
+    "agent": "builder",
+    "window": 32768,
+    "used": 0,
+    "fraction": 0.0,
+    "status": "ok",
+    "warn_at": 22938,
+    "critical_at": 29491
+  },
+  "designer": {
+    "agent": "designer",
+    "window": 32768,
+    "used": 0,
+    "fraction": 0.0,
+    "status": "ok",
+    "warn_at": 22938,
+    "critical_at": 29491
+  },
+  "mechanic": {
+    "agent": "mechanic",
+    "window": 32768,
+    "used": 0,
+    "fraction": 0.0,
+    "status": "ok",
+    "warn_at": 22938,
+    "critical_at": 29491
+  },
+  "orchestrator": {
+    "agent": "orchestrator",
+    "window": 32768,
+    "used": 0,
+    "fraction": 0.0,
+    "status": "ok",
+    "warn_at": 22938,
+    "critical_at": 29491
+  },
+  "researcher": {
+    "agent": "researcher",
+    "window": 32768,
+    "used": 0,
+    "fraction": 0.0,
+    "status": "ok",
+    "warn_at": 22938,
+    "critical_at": 29491
+  },
+  "scribe": {
+    "agent": "scribe",
+    "window": 32768,
+    "used": 0,
+    "fraction": 0.0,
+    "status": "ok",
+    "warn_at": 22938,
+    "critical_at": 29491
+  },
+  "verifier": {
+    "agent": "verifier",
+    "window": 32768,
+    "used": 0,
+    "fraction": 0.0,
+    "status": "ok",
+    "warn_at": 22938,
+    "critical_at": 29491
+  }
+}

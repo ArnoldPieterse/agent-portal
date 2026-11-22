@@ -1,0 +1,364 @@
+warning: Failed to set cwd to temp dir
+362 lines
+"""
+context_budget.py - Orchestrator cycle-10 goal 1 (Context Budget Manager)
+
+Tracks rolling context-window usage per agent and enforces two thresholds:
+  * WARN at    70% of the window  -> log a 'context_warn' budget event
+  * CRITICAL at 90% of the window -> force summary+reload: compress the active
+    context down to a SUMMARY_FRACTION of the window, then log a
+    'context_reload' budget event. This is what keeps an agent from blowing its
+    context and garbling.
+
+Data source for token accumulation:
+  * Primary: memory/orchestrator/token_usage.jsonl (per-turn input/output tokens,
+    written by token_usage_tracker). Each pass we add the tokens logged since the
+    last reload to that agent's running context.
+  * The running fill is persisted in context_budget_state.json so it is continuous
+    across passes (a fresh process still knows where each agent left off).
+
+Every budget event (warn / critical-reload) is appended to decision-log.jsonl with
+the fields the audit validator expects: source, rule_id, action, rollback,
+preconditions_met, timestamp.
+
+Usage:
+  from memory.orchestrator.context_budget import run_pass, evaluate_agent, record_turn
+  events = run_pass()                 # one continuous pass over live data
+  status = evaluate_agent("researcher")
+
+Selftest:  python memory/orchestrator/context_budget.py --selftest
+"""
+import json, os
+from datetime import datetime, timezone
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+USAGE_FILE = os.path.join(HERE, "token_usage.jsonl")
+STATE_FILE = os.path.join(HERE, "context_budget_state.json")
+DECISION_LOG = os.path.join(HERE, "..", "..", "decision-log.jsonl")
+AGENTS_JSON = os.path.join(HERE, "..", "..", "agents.json")
+
+# --- Tunables -------------------------------------------------------------
+WARN_FRACTION = 0.70       # warn threshold
+CRITICAL_FRACTION = 0.90   # force summary+reload threshold
+SUMMARY_FRACTION = 0.10    # after a forced reload, context is compressed to this
+DEFAULT_WINDOW = 32768     # tokens; overridable per agent via agents.json['context_window']
+# Optional per-agent window overrides (agent_id -> tokens). Edit here if needed.
+WINDOW_OVERRIDES = {
+    # "researcher": 131072,
+}
+
+
+# --- Thresholds -----------------------------------------------------------
+def thresholds(window: int) -> dict:
+    return {"warn_at": round(WARN_FRACTION * window),
+            "critical_at": round(CRITICAL_FRACTION * window)}
+
+
+def classify(fraction: float) -> str:
+    if fraction >= CRITICAL_FRACTION:
+        return "critical"
+    if fraction >= WARN_FRACTION:
+        return "warn"
+    return "ok"
+
+
+# --- Context-window resolution -------------------------------------------
+def resolve_window(agent_id: str, agents_cfg: dict | None = None) -> int:
+    """Window in tokens for an agent. Priority: WINDOW_OVERRIDES > agents.json
+    'context_window' field > DEFAULT_WINDOW."""
+    if agent_id in WINDOW_OVERRIDES:
+        return int(WINDOW_OVERRIDES[agent_id])
+    if agents_cfg is None:
+        agents_cfg = _load_agents()
+    cfg = (agents_cfg or {}).get(agent_id, {}) if isinstance(agents_cfg, dict) else {}
+    if isinstance(cfg, dict) and cfg.get("context_window"):
+        return int(cfg["context_window"])
+    return DEFAULT_WINDOW
+
+
+def _load_agents() -> dict:
+    """Return {agent_id: agent_cfg}. Tolerates list- or dict-shaped agents.json."""
+    if not os.path.exists(AGENTS_JSON):
+        return {}
+    try:
+        raw = json.load(open(AGENTS_JSON, encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    items = raw.get("agents", raw) if isinstance(raw, dict) else raw
+    out = {}
+    for a in (items if isinstance(items, list) else items.values()):
+        if isinstance(a, dict) and a.get("id"):
+            out[a["id"]] = a
+    return out
+
+
+# --- State ----------------------------------------------------------------
+def _load_state() -> dict:
+    if os.path.exists(STATE_FILE):
+        try:
+            return json.load(open(STATE_FILE, encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+    return {"agents": {}, "last_usage_ts": ""}
+
+
+def _save_state(state: dict) -> None:
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(state, f, indent=2)
+
+
+# --- Decision-log events --------------------------------------------------
+def _log_event(rec: dict) -> None:
+    rec.setdefault("timestamp", datetime.now(timezone.utc).isoformat())
+    with open(DECISION_LOG, "a", encoding="utf-8") as f:
+        f.write(json.dumps(rec) + "\n")
+
+
+def _warn_event(agent: str, used: int, window: int, fraction: float) -> dict:
+    return {
+        "source": "context_budget",
+        "rule_id": "CB-WARN",
+        "degradation_type": "context_window_exhaustion",
+        "agent": agent,
+        "action": {"type": "context_warn", "description": f"{agent} context at "
+                    f"{fraction:.0%} of window ({used}/{window} tokens); recommend summarising soon"},
+        "rollback": {"type": "none", "steps": []},
+        "preconditions_met": True,
+        "used_tokens": used, "window_tokens": window, "fraction": round(fraction, 4),
+        "status": "warn",
+    }
+
+
+def _reload_event(agent: str, used_before: int, window: int, fraction: float) -> dict:
+    summary = round(SUMMARY_FRACTION * window)
+    return {
+        "source": "context_budget",
+        "rule_id": "CB-RELOAD",
+        "degradation_type": "context_window_exhaustion",
+        "agent": agent,
+        "action": {"type": "summary_reload", "description": f"{agent} context at "
+                    f"{fraction:.0%} of window ({used_before}/{window}); forced summary+reload, "
+                    f"context compressed to ~{summary} tokens"},
+        "rollback": {"type": "restore_full_context", "trigger": "if summary loses load-bearing detail",
+                     "steps": ["re-inject_relevant_history"]},
+        "preconditions_met": True,
+        "used_tokens_before": used_before, "summary_tokens": summary,
+        "window_tokens": window, "fraction": round(fraction, 4),
+        "status": "critical",
+    }
+
+
+# --- Core API -------------------------------------------------------------
+def record_turn(state: dict, agent: str, input_tokens: int, output_tokens: int) -> None:
+    """Add one turn's tokens to the agent's running context fill."""
+    a = state["agents"].setdefault(agent, {"used": 0, "turns": 0, "last_status": "ok",
+                                           "reloads": 0})
+    a["used"] += max(0, int(input_tokens)) + max(0, int(output_tokens))
+    a["turns"] += 1
+
+
+def evaluate_agent(agent: str, state: dict | None = None,
+                   agents_cfg: dict | None = None) -> dict:
+    """Current status for one agent without mutating state."""
+    if state is None:
+        state = _load_state()
+    window = resolve_window(agent, agents_cfg)
+    used = state["agents"].get(agent, {}).get("used", 0)
+    fraction = (used / window) if window else 0.0
+    return {"agent": agent, "window": window, "used": used,
+            "fraction": round(fraction, 4), "status": classify(fraction),
+            **thresholds(window)}
+
+
+def run_pass(usage_file: str | None = None, state: dict | None = None,
+             log: bool = True) -> list:
+    """One continuous pass: fold in tokens logged since the last reload, enforce
+    thresholds, log budget events. Returns the list of events produced this pass."""
+    usage_file = usage_file or USAGE_FILE
+    if state is None:
+        state = _load_state()
+    agents_cfg = _load_agents()
+    events: list = []
+
+    # 1) Accumulate new tokens since last_usage_ts.
+    last_ts = state.get("last_usage_ts", "")
+    if os.path.exists(usage_file):
+        for line in open(usage_file, encoding="utf-8"):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            ts = rec.get("ts", "")
+            if last_ts and ts <= last_ts:
+                continue  # already folded in on a prior pass
+            agent = rec.get("agent", "unknown")
+            record_turn(state, agent, rec.get("input_tokens", 0), rec.get("output_tokens", 0))
+            if ts > state.get("last_usage_ts", ""):
+                state["last_usage_ts"] = ts
+
+    # 2) Enforce thresholds for every known + active agent.
+    active = set(state["agents"].keys()) | set(agents_cfg.keys())
+    for agent in sorted(active):
+        window = resolve_window(agent, agents_cfg)
+        if not window:
+            continue
+        a = state["agents"].setdefault(agent, {"used": 0, "turns": 0,
+                                               "last_status": "ok", "reloads": 0})
+        used = a["used"]
+        fraction = used / window
+        status = classify(fraction)
+        prev = a.get("last_status", "ok")
+
+        if status == "critical":
+            ev = _reload_event(agent, used, window, fraction)
+            # Force summary+reload: compress running context down.
+            a["used"] = round(SUMMARY_FRACTION * window)
+            a["reloads"] += 1
+            a["last_status"] = "ok"  # post-reload we're back under warn
+            if log:
+                _log_event(ev)
+            events.append(ev)
+        elif status == "warn":
+            # Log at most one warn per agent until the next reload (anti-spam).
+            if prev != "warn":
+                ev = _warn_event(agent, used, window, fraction)
+                a["last_status"] = "warn"
+                if log:
+                    _log_event(ev)
+                events.append(ev)
+        else:  # ok
+            a["last_status"] = "ok"
+
+    _save_state(state)
+    return events
+
+
+def snapshot() -> dict:
+    """Human/machine-readable current budget picture for all agents."""
+    state = _load_state()
+    cfg = _load_agents()
+    out = {}
+    for agent in sorted(set(state["agents"].keys()) | set(cfg.keys())):
+        out[agent] = evaluate_agent(agent, state, cfg)
+    return out
+
+
+# --- Selftest -------------------------------------------------------------
+def _selftest() -> None:
+    import tempfile
+    tmpdir = tempfile.mkdtemp(prefix="ctxbudget_")
+    usage = os.path.join(tmpdir, "usage.jsonl")
+    state_file = os.path.join(HERE, "context_budget_state.json")
+    backup = None
+    if os.path.exists(state_file):
+        backup = open(state_file, encoding="utf-8").read()
+
+    # Isolated decision log so the selftest doesn't pollute the real one.
+    global DECISION_LOG
+    real_log = DECISION_LOG
+    test_log = os.path.join(tmpdir, "decision-log.jsonl")
+    DECISION_LOG = test_log
+
+    try:
+        cfg = {"tester": {"id": "tester", "context_window": 1000}}
+        state = {"agents": {}, "last_usage_ts": ""}
+
+        # Turn 1: 500 tokens -> 50% (ok)
+        record_turn(state, "tester", 300, 200)
+        _run_with_cfg(state, cfg, usage)
+        assert evaluate_agent("tester", state, cfg)["status"] == "ok", "50% should be ok"
+
+        # Turn 2: +300 -> 800/1000 = 80% (warn) ; no reload yet
+        record_turn(state, "tester", 150, 150)
+        _run_with_cfg(state, cfg, usage)
+        st = evaluate_agent("tester", state, cfg)
+        assert st["status"] == "warn", f"80% should be warn, got {st['status']}"
+
+        # Turn 3: +150 -> 950/1000 = 95% (critical) -> forced reload
+        record_turn(state, "tester", 75, 75)
+        _run_with_cfg(state, cfg, usage)
+        st = evaluate_agent("tester", state, cfg)
+        # After reload context is compressed to SUMMARY_FRACTION of window.
+        assert st["fraction"] <= WARN_FRACTION + 1e-9, f"post-reload should be under warn: {st['fraction']}"
+        assert state["agents"]["tester"]["reloads"] == 1, "reload counter must increment"
+
+        # Verify both event types were written to the decision log.
+        logged = [json.loads(l) for l in open(test_log, encoding="utf-8") if l.strip()]
+        kinds = {e["rule_id"] for e in logged}
+        assert "CB-WARN" in kinds, f"expected a warn event, got {kinds}"
+        assert "CB-RELOAD" in kinds, f"expected a reload event, got {kinds}"
+        # Every event carries the audit-required fields.
+        for e in logged:
+            for fld in ("source", "rule_id", "action", "rollback",
+                        "preconditions_met", "timestamp"):
+                assert fld in e, f"event missing field {fld}: {e}"
+
+        print("SELFTEST PASS: context_budget warn@70% + forced summary+reload@90%; "
+              "all budget events logged to decision-log with audit fields")
+    finally:
+        DECISION_LOG = real_log
+        if backup is not None:
+            open(state_file, "w", encoding="utf-8").write(backup)
+        else:
+            if os.path.exists(state_file):
+                os.remove(state_file)
+
+
+def _run_with_cfg(state: dict, cfg: dict, usage_file: str) -> list:
+    """run_pass with an injected agents config (used by the selftest)."""
+    events = []
+    last_ts = state.get("last_usage_ts", "")
+    if os.path.exists(usage_file):
+        for line in open(usage_file, encoding="utf-8"):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            ts = rec.get("ts", "")
+            if last_ts and ts <= last_ts:
+                continue
+            record_turn(state, rec.get("agent", "unknown"),
+                        rec.get("input_tokens", 0), rec.get("output_tokens", 0))
+            if ts > state.get("last_usage_ts", ""):
+                state["last_usage_ts"] = ts
+    for agent in sorted(set(state["agents"].keys()) | set(cfg.keys())):
+        window = resolve_window(agent, cfg)
+        if not window:
+            continue
+        a = state["agents"].setdefault(agent, {"used": 0, "turns": 0,
+                                               "last_status": "ok", "reloads": 0})
+        used = a["used"]
+        fraction = used / window
+        status = classify(fraction)
+        prev = a.get("last_status", "ok")
+        if status == "critical":
+            ev = _reload_event(agent, used, window, fraction)
+            a["used"] = round(SUMMARY_FRACTION * window)
+            a["reloads"] += 1
+            a["last_status"] = "ok"
+            if os.environ.get("CB_NO_LOG") != "1":
+                _log_event(ev)
+            events.append(ev)
+        elif status == "warn" and prev != "warn":
+            ev = _warn_event(agent, used, window, fraction)
+            a["last_status"] = "warn"
+            if os.environ.get("CB_NO_LOG") != "1":
+                _log_event(ev)
+            events.append(ev)
+        else:
+            a["last_status"] = "ok"
+    return events
+
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "--selftest":
+        _selftest()
+    else:
+        print(json.dumps(snapshot(), indent=2))

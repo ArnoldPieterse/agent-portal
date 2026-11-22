@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-22T22:03:07.766571+00:00",
+  "elapsed_s": 0.0,
+  "scores": {
+    "a_all_healthy": 100.0,
+    "b_one_down": 78.0,
+    "c_three_down": 34.0,
+    "d_high_vram": 90.0
+  },
+  "total_tests": 6,
+  "passed": 6,
+  "failed": 0,
+  "results": {
+    "a_all_healthy_gt80": true,
+    "b_one_down_drop_10_25": true,
+    "c_three_down_lt40": true,
+    "d_high_vram_drops": true,
+    "mono_degradation_monotonic": true,
+    "time_under_10s": true
+  },
+  "all_pass": true
+}

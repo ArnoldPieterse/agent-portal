@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-11-22T22:02:55.983486+00:00",
+  "self_test_results": [
+    "T1_consistent_zero_issues",
+    "T2_planted_detected",
+    "T3_timing_under_20s",
+    "T4_report_structure",
+    "T5_agents_json_crosscheck"
+  ],
+  "failed_tests": [],
+  "t1_consistent": {
+    "timestamp": "2026-11-22T22:02:55.983418+00:00",
+    "elapsed_s": 0.0,
+    "total_issues": 0,
+    "errors": 0,
+    "warnings": 0,
+    "infos": 0,
+    "passed": true,
+    "issues": []
+  },
+  "t2_inconsistent": {
+    "timestamp": "2026-11-22T22:02:55.983448+00:00",
+    "elapsed_s": 0.0,
+    "total_issues": 3,
+    "errors": 2,
+    "warnings": 1,
+    "infos": 0,
+    "passed": false,
+    "issues": [
+      {
+        "type": "agent_no_process",
+        "severity": "error",
+        "agent": "verifier",
+        "detail": "Agent 'verifier' marked active (pid=1001) but no matching process found"
+      },
+      {
+        "type": "host_gpu_zero",
+        "severity": "warning",
+        "host": "white",
+        "detail": "Host 'white' shown healthy but GPU usage is 0%"
+      },
+      {
+        "type": "goal_count_mismatch",
+        "severity": "error",
+        "detail": "Goal completed mismatch: cockpit=4, TODO.md=5"
+      }
+    ]
+  }
+}

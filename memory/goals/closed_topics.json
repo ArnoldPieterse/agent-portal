@@ -778,5 +778,29 @@
 "text": "**Stakeholder Briefing Generator** - `python memory/scribe/stakeholder_brief.py`: produce a 1-page (500-word max) briefing suitable for a no",
 "agent": "scribe",
 "at": "2026-11-23"
+},
+{
+"sig": "d472c08f9181dbce",
+"text": "**Auto-Cycle Trigger** - `python memory/builder/auto_cycle_trigger.py`: monitor TODO.md goal completion; when all goals reach 100%, auto-inv",
+"agent": "builder",
+"at": "2026-11-23"
+},
+{
+"sig": "9b328bd7d3cf62f6",
+"text": "**Cross-Agent Pattern Detector** - `python memory/researcher/cross_patterns.py`: parse all agents' goal completions + incident records from ",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "8e4901aeeda37429",
+"text": "**Fleet Memory Compression** - `python memory/researcher/memory_compress.py`: identify redundant/overlapping knowledge across agents (same f",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "a84cf4629640f4e3",
+"text": "**Anomaly Narrative Generator** - `python memory/researcher/anomaly_narrative.py`: when an anomaly is detected in fleet metrics (health scor",
+"agent": "researcher",
+"at": "2026-11-23"
 }
 ]
