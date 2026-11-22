@@ -22,7 +22,8 @@ def check():
         if not os.path.exists(gp):
             continue
         text = open(gp, encoding="utf-8", errors="replace").read()
-        idx_path = os.path.join(ROOT, "memory", agent, "INDEX.md")
+        idx_dir = "squire" if agent == "scribe" else agent  # 2026-11-23: scribe pointer map lives in memory/squire/
+        idx_path = os.path.join(ROOT, "memory", idx_dir, "INDEX.md")
         idx_text = open(idx_path, encoding="utf-8", errors="replace").read() if os.path.exists(idx_path) else ""
         for m in POINTER_RE.finditer(text):
             target = m.group(1).replace("\\", "/")

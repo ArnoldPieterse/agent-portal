@@ -42,3 +42,11 @@ Last updated: 2026-11-14.
 ## Linked content (KG orphan remediation)
 - [index-pointer-addendum-r43.md](memory/archivist/index-pointer-addendum-r43.md)
 - [index-pointer-batch-r42.md](memory/archivist/index-pointer-batch-r42.md)
+- [knowledge_index.py](memory/archivist/knowledge_index.py) - md knowledge index generator: 2559 docs, JSON + stats report (2026-11-23 Goal#1 verified)  
+- [citation_monitor.py](memory/archivist/citation_monitor.py) - pointer citation monitor: exists+indexed check for all goal pointers (2026-11-23 Goal#2 verified)  
+- [topic_heatmap.py](memory/archivist/topic_heatmap.py) - hot/cold topic heatmap from term frequency per agent dir (2026-11-23 Goal#3 verified)  
+- [auto_abstract.py](memory/archivist/auto_abstract.py) - auto-abstract pipeline for changed docs, git or mtime source (2026-11-23 Goal#5 verified)  
+- [decay_production.py](memory/archivist/decay_production.py) - knowledge decay scoring for stale docs  
+- [dup_detect.py](memory/archivist/dup_detect.py) - duplicate document detector  
+- [knowledge-graph-v3.json](memory/archivist/knowledge-graph-v3.json) - knowledge graph v3 data (7663 nodes, temporal edges)  
+- [weekly_digest.py](memory/archivist/weekly_digest.py) - weekly digest generator for fleet activity  

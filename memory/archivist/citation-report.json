@@ -1,34 +1,34 @@
 {
- "generated": "2026-11-23 09:24:43",
+ "generated": "2026-11-23 09:26:09",
  "total_pointers": 18,
- "resolved_and_indexed": 11,
+ "resolved_and_indexed": 18,
  "dangling": 0,
- "unindexed": 7,
- "health": "ATTENTION",
+ "unindexed": 0,
+ "health": "OK",
  "details": [
   {
    "agent": "archivist",
    "pointer": "memory/archivist/decay_production.py",
    "exists": true,
-   "indexed": false
+   "indexed": true
   },
   {
    "agent": "archivist",
    "pointer": "memory/archivist/dup_detect.py",
    "exists": true,
-   "indexed": false
+   "indexed": true
   },
   {
    "agent": "archivist",
    "pointer": "memory/archivist/knowledge-graph-v3.json",
    "exists": true,
-   "indexed": false
+   "indexed": true
   },
   {
    "agent": "archivist",
    "pointer": "memory/archivist/weekly_digest.py",
    "exists": true,
-   "indexed": false
+   "indexed": true
   },
   {
    "agent": "builder",
@@ -76,13 +76,13 @@
    "agent": "mechanic",
    "pointer": "memory/mechanic/test_fleet_circuit_breaker.py",
    "exists": true,
-   "indexed": false
+   "indexed": true
   },
   {
    "agent": "mechanic",
    "pointer": "memory/mechanic/state_collector.py",
    "exists": true,
-   "indexed": false
+   "indexed": true
   },
   {
    "agent": "researcher",
@@ -106,7 +106,7 @@
    "agent": "scribe",
    "pointer": "memory/scribe/goal6-synthesis-quality-verified-2026-11-20.md",
    "exists": true,
-   "indexed": false
+   "indexed": true
   },
   {
    "agent": "verifier",

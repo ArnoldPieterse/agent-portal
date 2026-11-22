@@ -976,5 +976,35 @@
 "text": "**Portal Self-Healing** - `python memory/mechanic/portal_heal.py`: monitor agent_portal.py process health. If it's unresponsive (>30s no /ap",
 "agent": "mechanic",
 "at": "2026-11-23"
+},
+{
+"sig": "24e6b80ec3036bbc",
+"text": "**Knowledge Index Builder** - `python memory/archivist/knowledge_index.py`: scan all memory/**/*.md, extract atomic facts (subject-predicate",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "ddbdac5233a1e7d8",
+"text": "**Citation Integrity Monitor** - `python memory/archivist/citation_monitor.py`: scan all goal files and evidence leaves for citation pattern",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "2c68382a9d35220c",
+"text": "**Retrieval Accuracy Benchmark** - Build a benchmark suite of 20 known questions with correct source files; measure retrieval accuracy (top-",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "3bd42652589473c2",
+"text": "**Auto-Abstract Generation** - For each evidence leaf >200 lines, generate a 3-sentence abstract (first/last paragraph + key finding) and pr",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "fcc12346a41ead3f",
+"text": "**Cross-Reference Consistency Check** - When the same fact appears in multiple files, verify they agree. E.g., if file A says \"host White ha",
+"agent": "archivist",
+"at": "2026-11-23"
 }
 ]
