@@ -155,6 +155,25 @@ def _studio_recover(agent, reason):
     body = dict(rec)
     body.update({"cache_type_kv": "q8_0", "n_parallel": 1, "tensor_parallel": False})
     st, b = call("POST", "/api/inference/load", body)
+    # 409 active_generations (2026-11-22): the engine refuses a load while ANY chat is
+    # generating - loading would stop that chat. A load must QUEUE behind in-flight work:
+    # wait for generations to drain, then retry once. (Researcher's Q4 on White 409'd all
+    # day: its home host was busy with other seats' turns at every retry instant.)
+    if st == 409 and "active_generations" in b:
+        drain = time.time() + 240
+        while time.time() < drain:
+            time.sleep(10)
+            try:
+                gst, gb = call("GET", "/api/inference/active-generations")
+                if gst == 200:
+                    g = json.loads(gb)
+                    running = (g.get("running", len(g.get("thread_ids") or []))
+                               if isinstance(g, dict) else len(g))
+                    if not running:
+                        break
+            except Exception:
+                pass
+        st, b = call("POST", "/api/inference/load", body)
     if st not in (200, 201):
         return False, "load -> %s %s" % (st, b[:80])
     deadline = time.time() + 360   # async-ack: engine becomes resident later

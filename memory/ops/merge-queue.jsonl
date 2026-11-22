@@ -231,3 +231,4 @@
 {"ts": "2026-11-22 18:25:51", "file": "ui/fleet_topology.js", "sha": "5ac2fb9ba1", "size": 11018, "snapshot": null}
 {"ts": "2026-11-22 18:45:44", "file": "agent_portal.py", "sha": "57496aace7", "size": 276367, "snapshot": "memory/ops/merge-queue/agent_portal.py.57496aace7"}
 {"ts": "2026-11-22 18:45:44", "file": "agents.json", "sha": "c05e6fcebf", "size": 8874, "snapshot": "memory/ops/merge-queue/agents.json.c05e6fcebf"}
+{"ts": "2026-11-22 18:59:11", "file": "agent_portal.py", "sha": "42d0c5f1bc", "size": 276975, "snapshot": "memory/ops/merge-queue/agent_portal.py.42d0c5f1bc"}

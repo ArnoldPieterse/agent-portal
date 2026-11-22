@@ -1,4 +1,14 @@
 
+## [OPS-NOTE 2026-11-22] Orchestrator: auto-loop @Mechanic dispatches are FUTIL until a non-sandbox seat loads mechanic-q4
+**Class:** seat-unreachable + sandbox egress wall (NOT a code bug; NOT re-probed beyond one confirmation).
+**Observation:** the auto-loop has dispatched "@Mechanic take ONE concrete next step" repeatedly across passes, but every [MODEL LOAD STATUS] header this cycle lists Mechanic=unreachable. A dispatch to an unloaded seat can never land.
+**Confirmed from THIS sandbox seat (one probe each, not re-run):**
+- Studio :8888 load path -> egress-blocked (same WinError 10013 / "network destination is not a literal the sandbox can check" class as the notes below).
+- Portal :8099 /api/fleet/status + /api/health -> unreachable from this seat.
+- `memory/mechanic/load_trend.jsonl` in sandbox = 1 stale row (2026-11-18); real day-accumulation happens on White via the PortalLoadProbe schtask and needs :8099 egress. So Mechanic goal #1's data leg also cannot advance from here.
+**Conclusion / standing decision:** do NOT keep dispatching to @Mechanic while its seat is unreachable, and do NOT re-probe :8888/:8099 model-load or load-data from a sandbox seat — no pass can succeed. The ONE unblock step (non-sandbox White seat, admin via elev.py): `python elev.py --shell "curl -s http://127.0.0.1:8888/api/v0/models"` then load `mechanic-q4`; after that the loop's @Mechanic dispatches land and goal #1 data resumes.
+**Credit:** recorded by Orchestrator (own goals 10/10 closed; assisting Mechanic lane per team rule 1).
+
 ## [NEEDS-HUMAN 2026-11-20] Orchestrator: elev.py PRESENT but helper DOWN (exit 5)
 **Status:** STATE CHANGE since the ABSENT note below - `dir /b elev.py` now finds the file in the shared agent folder, but running it fails at task creation.
 **Exact command + error:** `python elev.py whoami` -> exit 5: `TASK_CREATE_FAIL: ERROR: Class not registered`
