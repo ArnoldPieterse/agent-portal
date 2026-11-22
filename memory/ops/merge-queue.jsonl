@@ -250,3 +250,4 @@
 {"ts": "2026-11-23 02:28:12", "file": "agent_portal.py", "sha": "b63f050f69", "size": 283323, "snapshot": "memory/ops/merge-queue/agent_portal.py.b63f050f69"}
 {"ts": "2026-11-23 06:33:24", "file": "ui/uploads.js", "sha": "44484ed08d", "size": 40334, "snapshot": null}
 {"ts": "2026-11-23 07:01:14", "file": "agent_portal.py", "sha": "540225d8ad", "size": 286552, "snapshot": "memory/ops/merge-queue/agent_portal.py.540225d8ad"}
+{"ts": "2026-11-23 07:26:09", "file": "goal_ledger.py", "sha": "642313f73a", "size": 6488, "snapshot": "memory/ops/merge-queue/goal_ledger.py.642313f73a"}

@@ -736,5 +736,11 @@
 "text": "**Cross-Agent Handoff Summarizer** - `python memory/scribe/handoff_summary.py`: when a task is re-routed between agents, auto-generate a con",
 "agent": "scribe",
 "at": "2026-11-23"
+},
+{
+"sig": "a454fb0f4fbb5af6",
+"text": "**Cockpit Narrative Layer** - `python memory/scribe/cockpit_narrative.py`: given raw cockpit data, produce a 2-3 sentence natural-language s",
+"agent": "scribe",
+"at": "2026-11-23"
 }
 ]

@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #3 in progress: 4 state components in ui/components.js; wiring errorState/loadingState
-- Verifier Goal #4 done: `memory/verifier/policy_audit.py` built, 13/13 self-test green (policy compliance audit engine).
-- Goal #5 closed: --anim-duration-slow reduced 600ms→350ms in ui/animations.css, all durations now <400ms per spec.
-- Goal #2 done: `memory/mechanic/model_lifecycle.py` built, 17/17 self-test pass (VRAM check, OOM redirect, warmup+verify, agents.json sync, J
 - Builder Goal #4 done: `memory/builder/task_rerouter.py` built & tested — 10/10 tasks rerouted on simulated agent-down, capability-matched, d
 - Mechanic closed Goals #5 (state_collector.py) and #6 (oom_recovery.py), both 20/20 selftest green.
 - Verifier closed goals #4–#7 in one pass: policy_audit (13/13), state_consistency (5/5), cycle_trigger_test (6/6), model_swap (4/4).
 - Goal #5 closed: animation durations fixed to 150/200/350ms (spec requires <400
 - Builder: Goal #2 marked reached; Goal #5 needs new backend health-score computation+history (
 - Scribe Goal 4 (cockpit_n
+- Verifier reached 10/10 goals verified; closed #9 (reroute_e2e.py) and #10 (cockpit perf benchmark) this pass.
+- All 5 Fleet Cockpit design goals complete; component-reference.md now documents 9 public UI functions (was 5).
+- Verify script uses non-existent APIs; real path is `run_verification()` + `--verify` flag. Correct metric: allocation agreement, not through
+- Mechanic: Goal #5 (state_collector.py) built & verified 20/20 selftest + live collection; moved to next goals.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
