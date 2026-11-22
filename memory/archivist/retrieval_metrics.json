@@ -1,10 +1,10 @@
 {
- "run_ts": 1795156142.023756,
+ "run_ts": 1795386314.418383,
  "method": "tfidf (kb_search.py)",
  "n_queries": 20,
  "precision_at_5": 1.0,
  "recall_at_10": 1.0,
- "mrr": 0.85,
+ "mrr": 0.8417,
  "queries": [
   {
    "query": "file modularity rule pointer budget ui modules",
@@ -15,8 +15,8 @@
     "memory/designer/ingested-20261116-file-modularity-rule-research-note.md",
     "memory/portal/file-modularity.md",
     "memory/designer/css-budget-report-2026-11-17.md",
-    "memory/handoffs/HO-20261116-file-modularity.md",
-    "memory/archivist/digest-47-2026.md"
+    "memory/designer/perf-budget.md",
+    "memory/handoffs/HO-20261116-file-modularity.md"
    ],
    "rank": 2,
    "in_top5": true,
@@ -31,9 +31,9 @@
    "top5": [
     "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
     "memory/researcher/INDEX.md",
+    "memory/archivist/decay-report.md",
     "memory/mechanic/pin-clobber-repair-2026-11-19.md",
-    "memory/researcher/open-questions-log.md",
-    "memory/designer/pin-advanced-d51c43756597-2026-11-19.md"
+    "memory/mechanic/pin-drift-index-html-2026-11-21.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -47,10 +47,10 @@
    ],
    "top5": [
     "memory/ops/fleet-monitoring-cadence.md",
+    "memory/archivist/decay-report.md",
     "memory/ops/INDEX.md",
     "memory/ops/portal-down-2026-11-15.md",
-    "memory/archivist/digest-47-2026.md",
-    "memory/verifier/archivist-goal6-freshness-verify.md"
+    "memory/archivist/digest-47-2026.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -66,7 +66,7 @@
     "memory/ops/windows-runbook.md",
     "memory/mechanic/runbook.md",
     "memory/mechanic/goal9-ops-gap-analysis-2026-11-17.md",
-    "memory/goals/scheduled-background.md"
+    "memory/mechanic/ops-runbook-gap-analysis-2026-11-17.md"
    ],
    "rank": 2,
    "in_top5": true,
@@ -99,7 +99,7 @@
     "memory/workspace/INDEX.md",
     "memory/handoffs/HO-20261113-git-repo-bootstrap.md",
     "memory/ops/verifier-git-health-2026-11-15b.md",
-    "memory/builder/curl-examples-prune-git-2026-11-15.md"
+    "memory/researcher/archivist-goal2-git-temporal-feasibility-2026-11-21.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -113,12 +113,12 @@
    ],
    "top5": [
     "memory/llm/hosts.md",
-    "memory/portal/mirror-clobber-pattern-2026-11-14.md",
     "memory/researcher/sync-clobber-analysis-2026-11-13.md",
-    "memory/researcher/clobber-mechanism-and-final-ip-count-2026-11-15.md",
-    "memory/researcher/INDEX.md"
+    "memory/portal/mirror-clobber-pattern-2026-11-14.md",
+    "memory/researcher/INDEX.md",
+    "memory/archivist/decay-report.md"
    ],
-   "rank": 2,
+   "rank": 3,
    "in_top5": true,
    "in_top10": true
   },
@@ -197,9 +197,9 @@
    "top5": [
     "memory/ops/evidence-closure-protocol.md",
     "memory/archivist/evidence-goal2-handoff-protocol-v2-2026-11-18.md",
-    "memory/scribe/handoff-card-assist-designer-2026-11-20.md",
-    "memory/handoffs/HO-20261116-file-modularity.md",
-    "memory/handoffs/PROTOCOL.md"
+    "memory/researcher/reproducibility-protocol.md",
+    "memory/verifier/cross-seat-protocol-overclaim-2026-11-22.md",
+    "memory/scribe/handoff-card-assist-designer-2026-11-20.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -230,9 +230,9 @@
    "top5": [
     "memory/ops/hotline-v2.md",
     "memory/llm/backend-swap-procedure.md",
-    "memory/ops/INDEX.md",
-    "memory/mechanic/red-white-reachability-2026-11-14.md",
-    "memory/ops/fleet-monitoring-cadence.md"
+    "memory/builder/escalation-chain-selftest-assist-mechanic-goal8-2026-11-22.md",
+    "memory/mechanic/goal8-watchdog-integration-2026-11-22.md",
+    "memory/mechanic/goal8-watchdog-integration-2026-11-23.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -245,10 +245,10 @@
    ],
    "top5": [
     "memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md",
+    "memory/ops/blockers.md",
     "memory/mechanic/MEMORY.md",
-    "memory/researcher/INDEX.md",
     "memory/archivist/decay-report.md",
-    "memory/workspace/INDEX.md"
+    "memory/researcher/INDEX.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -279,8 +279,8 @@
     "memory/ops/pdf-reporting.md",
     "memory/archivist/decay-report.md",
     "memory/ops/design-token-lint-workflow.md",
-    "memory/scribe/pin-guard-ui-css-workflow-2026-11-17.md",
-    "memory/archivist/evidence-goal1-delta-reporting-2026-11-18.md"
+    "memory/ops/schtask-consolidation-gap-2026-11-23.md",
+    "memory/ops/schtasks-cli-fallback-workflow-2026-11-23.md"
    ],
    "rank": 1,
    "in_top5": true,
@@ -294,8 +294,8 @@
    "top5": [
     "memory/ops/memory-sync-spec-r13.md",
     "memory/workspace/INDEX.md",
-    "memory/researcher/mirror-revert-fix1-epoch-review-divergences-2026-11-18.md",
     "memory/archivist/decay-report.md",
+    "memory/researcher/mirror-revert-fix1-epoch-review-divergences-2026-11-18.md",
     "memory/mechanic/MEMORY.md"
    ],
    "rank": 1,
@@ -310,10 +310,10 @@
    ],
    "top5": [
     "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
+    "memory/archivist/decay-report.md",
     "memory/verifier/stale-claim-fallback-verified-2026-11-19.md",
     "memory/ops/stale-claim-check-jsonl-fallback-2026-11-18.md",
-    "memory/archivist/decay-report.md",
-    "memory/scribe/stale-claim-builder-handoff-g2-2026-11-18.md"
+    "memory/scribe/stale-claim-mechanic1-winrm-closure-overstated-2026-11-20.md"
    ],
    "rank": 1,
    "in_top5": true,
