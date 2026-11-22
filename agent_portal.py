@@ -1942,9 +1942,19 @@ def render_dm_view(segs, viewer_name, sender_name):
 
 def to_openai_messages(agent, messages, mode, all_agents, rag_context="", shared_memory="",
                        kind="prompt", lookup_context=""):
-    msgs = [{"role": "system",
-             "content": build_system_prompt(agent, mode, all_agents, rag_context,
-                                            shared_memory, kind, lookup_context)}]
+    _sysp = build_system_prompt(agent, mode, all_agents, rag_context,
+                                shared_memory, kind, lookup_context)
+    try:
+        if mode == "group":
+            _fb = _forecast_block(agent.get("name"))
+            if _fb:
+                _sysp += "\n" + _fb
+            _lb = _agent_lane_block(agent.get("name"))
+            if _lb:
+                _sysp += "\n" + _lb
+    except Exception:
+        pass
+    msgs = [{"role": "system", "content": _sysp}]
     def _human(m):
         spk = (m.get("speaker") or "").strip()
         # Leniency: raw API clients send role=="user" without a speaker field;
@@ -4448,6 +4458,150 @@ def _closed_topics_recent(n=20):
         return []
 
 
+_FORECAST_MOD = None
+_FORECAST_LOCK = None
+def _fl():
+    global _FORECAST_LOCK
+    if _FORECAST_LOCK is None:
+        import threading
+        _FORECAST_LOCK = threading.Lock()
+    return _FORECAST_LOCK
+
+def _forecast_mod():
+    """memory/goals/forecast_engine.py - the 10-steps-ahead prediction engine (2026-11-23)."""
+    global _FORECAST_MOD
+    if _FORECAST_MOD is not None:
+        return _FORECAST_MOD
+    import importlib.util
+    p = os.path.join(HERE, "memory", "goals", "forecast_engine.py")
+    spec = importlib.util.spec_from_file_location("forecast_engine", p)
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    _FORECAST_MOD = m
+    return m
+
+def _forecast_snapshot(max_age_s=900):
+    """GET /api/goals/forecast payload: next-10 queue + 5-horizon cards. Recomputes when stale."""
+    nf = os.path.join(HERE, "memory", "goals", "next10.json")
+    age = None
+    try:
+        age = time.time() - os.path.getmtime(nf)
+    except OSError:
+        pass
+    if age is None or age > max_age_s:
+        with _fl():
+            try:
+                age2 = time.time() - os.path.getmtime(nf)
+            except OSError:
+                age2 = 1e9
+            if age2 > max_age_s:
+                _forecast_mod().refresh()
+    with open(nf, encoding="utf-8") as f:
+        doc = json.load(f)
+    try:
+        doc["age_s"] = int(time.time() - os.path.getmtime(nf))
+    except OSError:
+        pass
+    doc["ok"] = True
+    return doc
+
+_FC_CACHE = {"ts": 0.0, "txt": {}}
+def _forecast_block(agent_name):
+    """Compact per-agent forecast for prompt injection (goal-FOLLOWING alignment)."""
+    name = (agent_name or "").lower()
+    if not name:
+        return ""
+    now = time.time()
+    if now - _FC_CACHE["ts"] > 60:
+        _FC_CACHE["txt"].clear()
+        _FC_CACHE["ts"] = now
+    if name in _FC_CACHE["txt"]:
+        return _FC_CACHE["txt"][name]
+    try:
+        doc = _forecast_snapshot(max_age_s=3600)
+    except Exception:
+        return ""
+    mine = [it for it in doc.get("next10", []) if it.get("agent") == name][:3]
+    lines = ["FORECAST - 10 steps ahead (memory/goals/next10.json; full cards in forecast-latest.md):"]
+    if mine:
+        lines.append("- Your lane next: " + " | ".join(
+            "#%d %s (ETA %s, P %.0f%%)" % (it["rank"], it.get("title", it["goal"])[:48], it["eta"][11:16], 100 * it["p_reached"])
+            for it in mine))
+    else:
+        lines.append("- Your lane: no open goals in the next-10 queue (idle - contribute to a shared goal).")
+    fl = doc.get("fleet", {})
+    h24 = next((h for h in doc.get("horizons", []) if h["hours"] == 24), None)
+    tail = []
+    if fl.get("total"):
+        tail.append("fleet %s/%s now" % (fl.get("done"), fl.get("total")))
+    if h24:
+        tail.append("~%d%% by %s" % (h24["pct"], h24["by"][5:16]))
+    lv = doc.get("level_up_eta")
+    if lv:
+        tail.append("all-clear ETA " + lv)
+    lines.append("- " + "; ".join(tail) + ". Align your next step with this queue; if you spot a flaw, fix the engine.")
+    out = "\n".join(lines)[:600]
+    _FC_CACHE["txt"][name] = out
+    return out
+
+_LANE_CACHE = {}
+def _agent_lane_block(agent_name):
+    """Per-agent focused memory map (2026-11-23 pointer upgrade): the root INDEX.md is injected
+    for everyone; this adds the agent's own lane sub-index so a small-context seat sees its
+    pointer map without a tool call."""
+    name = (agent_name or "").lower()
+    if not name:
+        return ""
+    now = time.time()
+    c = _LANE_CACHE.get(name)
+    if c and now - c[0] < 300:
+        return c[1]
+    p = os.path.join(HERE, "memory", name, "INDEX.md")
+    out = ""
+    try:
+        with open(p, encoding="utf-8") as f:
+            t = f.read()
+        if len(t) > 700:
+            t = t[:700] + " [...]"
+        out = "YOUR LANE MAP (memory/%s/INDEX.md - read deeper leaves on demand):\n%s" % (name, t.strip())
+    except OSError:
+        pass
+    _LANE_CACHE[name] = (now, out)
+    return out
+
+def _hot_file_guard(budget=2600):
+    """MEMORY.md hot-file budget (portal-memory-modular skill): the hot file is injected into
+    every prompt, so it must stay small. When it grows past budget, move its oldest dated
+    '## YYYY-MM-DD' sections into memory/synthesis/hotfile-archive-<date>.md. Keeps: state line,
+    non-dated sections (Counter/Durable/GOAL/Hot Notes) and the 3 newest dated sections."""
+    mf = os.path.join(HERE, "MEMORY.md")
+    try:
+        if os.path.getsize(mf) <= budget:
+            return None
+        txt = open(mf, encoding="utf-8").read()
+    except OSError:
+        return None
+    m0 = re.search(r"(?m)^## ", txt)
+    head, body = (txt[:m0.start()], txt[m0.start():]) if m0 else (txt, "")
+    secs = [s for s in re.split(r"(?m)^(?=## )", body) if s.strip()]
+    dated = [s for s in secs if re.match(r"## \d{4}-\d{2}-\d{2}", s)]
+    keep_dated = set(sorted(dated, key=lambda s: s[:10])[-3:])
+    drop = [s for s in dated if s not in keep_dated]
+    if not drop:
+        return None
+    arch_dir = os.path.join(HERE, "memory", "synthesis")
+    try:
+        os.makedirs(arch_dir, exist_ok=True)
+        af = os.path.join(arch_dir, "hotfile-archive-%s.md" % time.strftime("%Y%m%d"))
+        with open(af, "a", encoding="utf-8") as f:
+            f.write("\n<!-- moved from MEMORY.md by _hot_file_guard at %s -->\n%s"
+                    % (time.strftime("%Y-%m-%d %H:%M"), "".join(drop)))
+        with open(mf, "w", encoding="utf-8") as f:
+            f.write(head + "".join(s for s in secs if s not in drop))
+        return af
+    except OSError:
+        return None
+
 def _goals_snapshot():
     """Goal Velocity dashboard (2026-11-15, Designer; Researcher evidence-gated v2).
     Counts a goal DONE only when an acceptance/evidence marker is present. Delegates to
@@ -4461,6 +4615,10 @@ def _goals_snapshot():
     '[BLOCKED]' on the goal line (2026-11-16: plain prose containing the word no longer
     counts - Mechanic cycle-2 goal 6 'outbound blocked + logged' was a false positive).
     Per-agent counts + fleet %."""
+    try:
+        _hot_file_guard()
+    except Exception:
+        pass
     GOAL_BLOCKED_PAT = re.compile(r"(?i)(\[BLOCKED\]|\bblocked\s*[:)])")
     gdir = os.path.join(HERE, "memory", "goals")
     try:
@@ -5029,6 +5187,14 @@ class Handler(BaseHTTPRequestHandler):
             # Round topic + queue (P1, 2026-11-22): current round focus, queued user topics,
             # recent past topics. Mutations via POST /api/goals/topic.
             return self._json(200, _round_topic_snapshot())
+        elif p == "/api/goals/forecast":
+            # 10-steps-ahead prediction system (2026-11-23): next-10 goal queue + 5-horizon
+            # forecast (30m/1h/1d/1w/1m) with outcomes & consequences. Recomputes inline if the
+            # snapshot is >15 min old; schtask FleetForecast30 keeps it fresh between polls.
+            try:
+                return self._json(200, _forecast_snapshot())
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/models/status":
             # Model-load governance (2026-11-16, Orchestrator goal #2): live per-seat status
             # for the fleet panel; same probe the run-start check uses.

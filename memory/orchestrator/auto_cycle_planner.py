@@ -291,15 +291,25 @@ def predict_completion(assignment: dict[str, list[dict]], throughput: dict[str, 
     return weighted_completed / total_goals
 
 
-def run_verification(cycle9_dir: str = None) -> dict:
-    """Run the planner on cycle-9 data and compare to actual completions."""
-    # Load cycle-9 actual assignments
+def run_verification(target_cycle: str = "cycle8") -> dict:
+    """Run the planner on a target cycle's data and compare to actual completions.
+    
+    Args:
+        target_cycle: Cycle identifier to verify against (e.g. 'cycle8', 'cycle9').
+                      Must have completed goals in archive files matching '*{target_cycle}*.md'.
+    """
+    # Load target cycle actual assignments
     archive = ARCHIVE_DIR
     if not archive.exists():
         return {"error": "archive dir not found"}
 
+    pattern = f"*{target_cycle}*.md"
+    matching_files = list(archive.glob(pattern))
+    if not matching_files:
+        return {"error": f"No archive files matching '{pattern}'"}
+
     actual_completions = {}  # agent -> list of completed goal titles
-    for f in sorted(archive.glob("*cycle9*.md")):
+    for f in sorted(matching_files):
         text = f.read_text(encoding="utf-8", errors="replace")
         goals = parse_goal_file(text)
         agent_id = f.stem.split("-")[0].lower()
@@ -309,11 +319,11 @@ def run_verification(cycle9_dir: str = None) -> dict:
 
     total_actual_completed = sum(len(v) for v in actual_completions.values())
     if total_actual_completed == 0:
-        return {"error": "No completed goals found in cycle-9 data", "detail": actual_completions}
+        return {"error": f"No completed goals found in {target_cycle} data", "detail": actual_completions}
 
-    # Build backlog from cycle-9 goal files (all goals, not just completed)
+    # Build backlog from target cycle goal files (all goals, not just completed)
     backlog = []
-    for f in sorted(archive.glob("*cycle9*.md")):
+    for f in sorted(matching_files):
         text = f.read_text(encoding="utf-8", errors="replace")
         goals = parse_goal_file(text)
         for g in goals:
@@ -363,11 +373,12 @@ def main():
     parser.add_argument("--cycle", type=int, default=None, help="Cycle number")
     parser.add_argument("--focus", type=str, default="", help="Round topic / focus text")
     parser.add_argument("--dry-run", action="store_true", help="Print output without writing files")
-    parser.add_argument("--verify", action="store_true", help="Run verification on cycle-9 data")
+    parser.add_argument("--verify", action="store_true", help="Run verification on target cycle data")
+    parser.add_argument("--target-cycle", type=str, default="cycle8", help="Cycle to verify against (default: cycle8)")
     args = parser.parse_args()
 
     if args.verify:
-        result = run_verification()
+        result = run_verification(args.target_cycle)
         print(json.dumps(result, indent=2))
         sys.exit(0 if result.get("meets_70pct_threshold") and result.get("allocation_valid") else 1)
 
