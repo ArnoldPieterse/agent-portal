@@ -166,6 +166,7 @@ def collect_state(simulated=False):
         active, total, agent_recs = collect_agent_status()
         goal_pct = collect_goal_progress()
         blockers = collect_open_blockers()
+        host_recs = collect_fleet_hosts()
 
     duration_ms = round((time.time() - t0) * 1000, 1)
 
@@ -182,7 +183,23 @@ def collect_state(simulated=False):
         "open_blockers": blockers,
         "duration_ms": duration_ms
     }
+    if not simulated:
+        record["hosts"] = host_recs  # per-host fleet view (all hosts, not just local)
     return record
+
+
+def collect_fleet_hosts():
+    """Per-host GPU/CPU/temp for ALL fleet hosts via the portal cockpit endpoint.
+    (2026-11-23, goal #5 'per-host' leg: local nvidia-smi only covers White; the
+    cockpit aggregates every host from agents.json. Graceful [] when portal down.)"""
+    try:
+        import urllib.request
+        d = json.load(urllib.request.urlopen("http://127.0.0.1:8099/api/fleet/cockpit", timeout=8))
+        return [{"name": h.get("name"), "vram_pct": h.get("vram_pct"),
+                 "cpu_pct": h.get("cpu_pct"), "temp_c": h.get("temp_c")}
+                for h in d.get("hosts", [])]
+    except Exception:
+        return []
 
 
 def append_record(record):
@@ -300,8 +317,11 @@ def register_schtasks():
     task_name = "FleetStateCollector"
     python_exe = sys.executable
     script_path = Path(__file__).resolve()
-    # Use elev.py for admin-level schtask registration
-    cmd = f'schtasks /Create /TN "{task_name}" /TR ""{python_exe}" "{script_path}" collect" /SC MINUTE /MO 5 /F'
+    # Use elev.py for admin-level schtask registration.
+    # 2026-11-23 FIX: nested quotes in /TR broke under cmd /c (elev.py shell route) -
+    # no spaces in these paths, so one flat quoted TR string is valid for schtasks.
+    tr = f'{python_exe} {script_path} collect'
+    cmd = f'schtasks /Create /TN "{task_name}" /TR "{tr}" /SC MINUTE /MO 5 /F'
     print(f"Registering: {cmd}")
     try:
         r = subprocess.run(

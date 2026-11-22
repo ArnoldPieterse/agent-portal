@@ -1,57 +1,55 @@
 {
  "ok": true,
- "generated": "2026-11-23 08:51:59",
+ "generated": "2026-11-23 09:14:27",
  "fleet": {
-  "done": 46,
+  "done": 52,
   "total": 72,
-  "pct": 63.9
+  "pct": 72.2
  },
  "throughput_goals_per_hour": 6.0,
  "next10": [
   {
-   "agent": "mechanic",
-   "goal": "**Model Load/Unload Automation** - `python memory/mechanic/model_lifecycle.py`: full model lifecycle automation: check VRAM availability on target host -> if insufficient, find alternate or queue -> load model (with prog",
-   "type": "verify",
+   "agent": "builder",
+   "goal": "**Runbook Parser + Executor** - `python memory/builder/runbook_exec.py`: parse markdown runbooks (memory/ops/runbooks/*.md) into structured steps (command, expected_output, timeout, rollback_command). Execute sequentiall",
+   "type": "ops",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 11:26",
+   "eta": "2026-11-23 11:49",
    "hours": 2.58,
    "order": 0,
    "rank": 1,
-   "title": "Model Load/Unload Automation",
+   "title": "Runbook Parser + Executor",
    "steps": [
-    "build the test battery / audit script",
-    "run against live sources",
-    "record verdict + evidence leaf"
+    "pre-flight checks (targets exist, idempotent)",
+    "execute from non-sandbox session",
+    "verify registration/health + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 11:26 (P=52%)",
+   "outcome": "reached ~2026-11-23 11:49 (P=52%)",
    "consequences": [
-    "mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 16:35) - shared scope mechanic,model",
-    "verifier: **Model Swap Verification Battery** - `python memory/verifie (2026-11-23 18:34) - shared scope check,model",
-    "lane end designer: 11-24 12:58 (slowest lane)"
+    "lane end designer: 11-24 13:20 (slowest lane)"
    ]
   },
   {
-   "agent": "verifier",
-   "goal": "**Decision Policy Compliance Audit** - `python memory/verifier/policy_audit.py`: scan decision-log.jsonl for all autonomous decisions; verify each complies with remediation-policy.json (correct action for condition, prec",
+   "agent": "mechanic",
+   "goal": "**Fleet State Collector Daemon** - `python memory/mechanic/state_collector.py`: background process (schtask every 5 min) that collects: per-host GPU/CPU/temp, per-agent last-active timestamp, goal progress from TODO.md, ",
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 11:26",
+   "eta": "2026-11-23 11:49",
    "hours": 2.58,
    "order": 0,
    "rank": 2,
-   "title": "Decision Policy Compliance Audit",
+   "title": "Fleet State Collector Daemon",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 11:26 (P=52%)",
+   "outcome": "reached ~2026-11-23 11:49 (P=52%)",
    "consequences": [
-    "verifier: **Auto-Cycle Trigger Validation** - `python memory/verifier/ (2026-11-23 14:01) - shared scope verifier,verify",
-    "verifier: **Model Swap Verification Battery** - `python memory/verifie (2026-11-23 18:34) - shared scope verifier,verify",
-    "lane end designer: 11-24 12:58 (slowest lane)"
+    "mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 14:23) - shared scope mechanic,process",
+    "mechanic: **Portal Self-Healing** - `python memory/mechanic/portal_hea (2026-11-24 02:40) - shared scope mechanic,process",
+    "lane end designer: 11-24 13:20 (slowest lane)"
    ]
   },
   {
@@ -60,7 +58,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.046,
-   "eta": "2026-11-23 12:06",
+   "eta": "2026-11-23 12:29",
    "hours": 3.25,
    "order": 0,
    "rank": 3,
@@ -70,35 +68,12 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-23 12:06 (P=5%)",
+   "outcome": "reached ~2026-11-23 12:29 (P=5%)",
    "consequences": [
-    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 15:21) - shared scope design,health,produce",
-    "mechanic: **Host Capacity Arbitration** - `python memory/mechanic/capa (2026-11-23 21:44) - shared scope agents,priority",
-    "designer: **Fleet Topology Live Update** - Update the existing fleet t (2026-11-24 04:19) - shared scope agents,health,hosts",
-    "lane end designer: 11-24 12:58 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "builder",
-   "goal": "**Auto-Cycle Trigger** - `python memory/builder/auto_cycle_trigger.py`: monitor TODO.md goal completion; when all goals reach 100%, auto-invoke the cycle reset procedure (archive old files, prompt Orchestrator for new go",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.224,
-   "eta": "2026-11-23 12:19",
-   "hours": 3.46,
-   "order": 0,
-   "rank": 4,
-   "title": "Auto-Cycle Trigger",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-23 12:19 (P=22%)",
-   "consequences": [
-    "verifier: **Auto-Cycle Trigger Validation** - `python memory/verifier/ (2026-11-23 14:01) - shared scope cycle,files,goals",
-    "archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 16:16) - shared scope files,monitor",
-    "lane end designer: 11-24 12:58 (slowest lane)"
+    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 15:44) - shared scope design,health,produce",
+    "mechanic: **Host Capacity Arbitration** - `python memory/mechanic/capa (2026-11-23 19:32) - shared scope agents,priority",
+    "designer: **Fleet Topology Live Update** - Update the existing fleet t (2026-11-24 04:42) - shared scope agents,health,hosts",
+    "lane end designer: 11-24 13:20 (slowest lane)"
    ]
   },
   {
@@ -107,10 +82,10 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.278,
-   "eta": "2026-11-23 13:34",
+   "eta": "2026-11-23 13:56",
    "hours": 4.7,
    "order": 0,
-   "rank": 5,
+   "rank": 4,
    "title": "Knowledge Index Builder",
    "steps": [
     "scaffold the module file",
@@ -118,78 +93,34 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-23 13:34 (P=28%)",
+   "outcome": "reached ~2026-11-23 13:56 (P=28%)",
    "consequences": [
-    "archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 16:16) - shared scope archivist,leaves",
-    "lane end designer: 11-24 12:58 (slowest lane)"
+    "archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 16:39) - shared scope archivist,leaves",
+    "lane end designer: 11-24 13:20 (slowest lane)"
    ]
   },
   {
    "agent": "mechanic",
-   "goal": "**Fleet State Collector Daemon** - `python memory/mechanic/state_collector.py`: background process (schtask every 5 min) that collects: per-host GPU/CPU/temp, per-agent last-active timestamp, goal progress from TODO.md, ",
+   "goal": "**Model OOM Auto-Recovery** - `python memory/mechanic/oom_recovery.py`: when a model process hits OOM (detected via probe or agent unresponsive), auto-execute: kill process -> wait for GPU memory to free -> reload with s",
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 14:01",
+   "eta": "2026-11-23 14:23",
    "hours": 2.58,
    "order": 1,
-   "rank": 6,
-   "title": "Fleet State Collector Daemon",
+   "rank": 5,
+   "title": "Model OOM Auto-Recovery",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 14:01 (P=52%)",
+   "outcome": "reached ~2026-11-23 14:23 (P=52%)",
    "consequences": [
-    "mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 16:35) - shared scope mechanic,process",
-    "mechanic: **Portal Self-Healing** - `python memory/mechanic/portal_hea (2026-11-24 04:52) - shared scope mechanic,process",
-    "lane end designer: 11-24 12:58 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "verifier",
-   "goal": "**Auto-Cycle Trigger Validation** - `python memory/verifier/cycle_trigger_test.py`: verify the auto-cycle mechanism: (a) fires only when ALL goals are 100%, (b) produces valid archived files, (c) produces valid new goal ",
-   "type": "verify",
-   "complexity": 2,
-   "p_reached": 0.515,
-   "eta": "2026-11-23 14:01",
-   "hours": 2.58,
-   "order": 1,
-   "rank": 7,
-   "title": "Auto-Cycle Trigger Validation",
-   "steps": [
-    "build the test battery / audit script",
-    "run against live sources",
-    "record verdict + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-23 14:01 (P=52%)",
-   "consequences": [
-    "verifier: **Decision Policy Compliance Audit** - `python memory/verifi (2026-11-23 11:26) - shared scope verifier,verify",
-    "builder: **Auto-Cycle Trigger** - `python memory/builder/auto_cycle_t (2026-11-23 12:19) - shared scope cycle,files,goals",
-    "archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 16:16) - shared scope files,verify",
-    "lane end designer: 11-24 12:58 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "builder",
-   "goal": "**Runbook Parser + Executor** - `python memory/builder/runbook_exec.py`: parse markdown runbooks (memory/ops/runbooks/*.md) into structured steps (command, expected_output, timeout, rollback_command). Execute sequentiall",
-   "type": "ops",
-   "complexity": 2,
-   "p_reached": 0.515,
-   "eta": "2026-11-23 14:54",
-   "hours": 2.58,
-   "order": 1,
-   "rank": 8,
-   "title": "Runbook Parser + Executor",
-   "steps": [
-    "pre-flight checks (targets exist, idempotent)",
-    "execute from non-sandbox session",
-    "verify registration/health + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-23 14:54 (P=52%)",
-   "consequences": [
-    "lane end designer: 11-24 12:58 (slowest lane)"
+    "mechanic: **Fleet State Collector Daemon** - `python memory/mechanic/s (2026-11-23 11:49) - shared scope mechanic,process",
+    "mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-24 00:05) - shared scope detected,mechanic",
+    "mechanic: **Portal Self-Healing** - `python memory/mechanic/portal_hea (2026-11-24 02:40) - shared scope mechanic,process,unresponsive",
+    "lane end designer: 11-24 13:20 (slowest lane)"
    ]
   },
   {
@@ -198,22 +129,22 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.046,
-   "eta": "2026-11-23 15:21",
+   "eta": "2026-11-23 15:44",
    "hours": 3.25,
    "order": 1,
-   "rank": 9,
+   "rank": 6,
    "title": "Health Score Visualization",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-23 15:21 (P=5%)",
+   "outcome": "reached ~2026-11-23 15:44 (P=5%)",
    "consequences": [
-    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 12:06) - shared scope design,health,produce",
-    "designer: **Decision Timeline UX** - Design the decision log display a (2026-11-23 19:41) - shared scope color,design,display",
-    "designer: **Agent Status Grid** - Design the per-agent status display: (2026-11-24 00:00) - shared scope color,design,display",
-    "lane end designer: 11-24 12:58 (slowest lane)"
+    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 12:29) - shared scope design,health,produce",
+    "designer: **Decision Timeline UX** - Design the decision log display a (2026-11-23 20:03) - shared scope color,design,display",
+    "designer: **Agent Status Grid** - Design the per-agent status display: (2026-11-24 00:22) - shared scope color,design,display",
+    "lane end designer: 11-24 13:20 (slowest lane)"
    ]
   },
   {
@@ -222,22 +153,90 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.639,
-   "eta": "2026-11-23 16:16",
+   "eta": "2026-11-23 16:39",
    "hours": 2.71,
    "order": 1,
-   "rank": 10,
+   "rank": 7,
    "title": "Citation Integrity Monitor",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 16:16 (P=64%)",
+   "outcome": "reached ~2026-11-23 16:39 (P=64%)",
    "consequences": [
-    "builder: **Auto-Cycle Trigger** - `python memory/builder/auto_cycle_t (2026-11-23 12:19) - shared scope files,monitor",
-    "archivist: **Knowledge Index Builder** - `python memory/archivist/knowl (2026-11-23 13:34) - shared scope archivist,leaves",
-    "verifier: **Auto-Cycle Trigger Validation** - `python memory/verifier/ (2026-11-23 14:01) - shared scope files,verify",
-    "lane end designer: 11-24 12:58 (slowest lane)"
+    "archivist: **Knowledge Index Builder** - `python memory/archivist/knowl (2026-11-23 13:56) - shared scope archivist,leaves",
+    "archivist: **Retrieval Accuracy Benchmark** - Build a benchmark suite o (2026-11-23 22:57) - shared scope files,source",
+    "archivist: **Cross-Reference Consistency Check** - When the same fact a (2026-11-24 06:22) - shared scope files,verify",
+    "lane end designer: 11-24 13:20 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "mechanic",
+   "goal": "**Scheduled Maintenance Window** - `python memory/mechanic/maintenance_window.py`: identify low-activity periods (no agent requests for >15 min) and schedule non-critical maintenance: log rotation, cache clearing, snapsh",
+   "type": "ops",
+   "complexity": 2,
+   "p_reached": 0.515,
+   "eta": "2026-11-23 16:58",
+   "hours": 2.58,
+   "order": 2,
+   "rank": 8,
+   "title": "Scheduled Maintenance Window",
+   "steps": [
+    "pre-flight checks (targets exist, idempotent)",
+    "execute from non-sandbox session",
+    "verify registration/health + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-23 16:58 (P=52%)",
+   "consequences": [
+    "lane end designer: 11-24 13:20 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "mechanic",
+   "goal": "**Host Capacity Arbitration** - `python memory/mechanic/capacity_arbiter.py`: when multiple agents request the same host's GPU simultaneously, arbitrate: priority by (a) current task criticality, (b) time already waited,",
+   "type": "ops",
+   "complexity": 2,
+   "p_reached": 0.515,
+   "eta": "2026-11-23 19:32",
+   "hours": 2.58,
+   "order": 3,
+   "rank": 9,
+   "title": "Host Capacity Arbitration",
+   "steps": [
+    "pre-flight checks (targets exist, idempotent)",
+    "execute from non-sandbox session",
+    "verify registration/health + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-23 19:32 (P=52%)",
+   "consequences": [
+    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 12:29) - shared scope agents,priority",
+    "mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-24 00:05) - shared scope agents,mechanic",
+    "lane end designer: 11-24 13:20 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "designer",
+   "goal": "**Decision Timeline UX** - Design the decision log display as a vertical timeline: each node = one decision, expandable card shows detail. Color by outcome (green=success, yellow=pending, red=failed/rolled-back). Filters",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.037,
+   "eta": "2026-11-23 20:03",
+   "hours": 4.32,
+   "order": 2,
+   "rank": 10,
+   "title": "Decision Timeline UX",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-23 20:03 (P=4%)",
+   "consequences": [
+    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 15:44) - shared scope color,design,display",
+    "designer: **Agent Status Grid** - Design the per-agent status display: (2026-11-24 00:22) - shared scope color,design,display",
+    "lane end designer: 11-24 13:20 (slowest lane)"
    ]
   }
  ],
@@ -245,45 +244,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-23 09:21",
+   "end": "2026-11-23 09:44",
    "completes": 0,
-   "fleet_pct": 63.9,
+   "fleet_pct": 72.2,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-23 09:51",
+   "end": "2026-11-23 10:14",
    "completes": 0,
-   "fleet_pct": 63.9,
+   "fleet_pct": 72.2,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-24 08:51",
-   "completes": 25,
+   "end": "2026-11-24 09:14",
+   "completes": 19,
    "fleet_pct": 98.6,
    "top": [
-    "#1 mechanic: Model Load/Unload Automation (2026-11-23 11:26)",
-    "#2 verifier: Decision Policy Compliance Audit (2026-11-23 11:26)",
-    "#3 designer: Cockpit Layout Design (2026-11-23 12:06)",
-    "#4 builder: Auto-Cycle Trigger (2026-11-23 12:19)",
-    "#5 archivist: Knowledge Index Builder (2026-11-23 13:34)"
+    "#1 builder: Runbook Parser + Executor (2026-11-23 11:49)",
+    "#2 mechanic: Fleet State Collector Daemon (2026-11-23 11:49)",
+    "#3 designer: Cockpit Layout Design (2026-11-23 12:29)",
+    "#4 archivist: Knowledge Index Builder (2026-11-23 13:56)",
+    "#5 mechanic: Model OOM Auto-Recovery (2026-11-23 14:23)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-11-30 08:51",
-   "completes": 26,
+   "end": "2026-11-30 09:14",
+   "completes": 20,
    "fleet_pct": 100.0,
    "top": [
-    "#1 mechanic: Model Load/Unload Automation (2026-11-23 11:26)",
-    "#2 verifier: Decision Policy Compliance Audit (2026-11-23 11:26)",
-    "#3 designer: Cockpit Layout Design (2026-11-23 12:06)",
-    "#4 builder: Auto-Cycle Trigger (2026-11-23 12:19)",
-    "#5 archivist: Knowledge Index Builder (2026-11-23 13:34)"
+    "#1 builder: Runbook Parser + Executor (2026-11-23 11:49)",
+    "#2 mechanic: Fleet State Collector Daemon (2026-11-23 11:49)",
+    "#3 designer: Cockpit Layout Design (2026-11-23 12:29)",
+    "#4 archivist: Knowledge Index Builder (2026-11-23 13:56)",
+    "#5 mechanic: Model OOM Auto-Recovery (2026-11-23 14:23)"
    ],
    "next_cycle_candidates": [
     {
@@ -339,15 +338,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-23 08:51",
-   "completes": 26,
+   "end": "2026-12-23 09:14",
+   "completes": 20,
    "fleet_pct": 100.0,
    "top": [
-    "#1 mechanic: Model Load/Unload Automation (2026-11-23 11:26)",
-    "#2 verifier: Decision Policy Compliance Audit (2026-11-23 11:26)",
-    "#3 designer: Cockpit Layout Design (2026-11-23 12:06)",
-    "#4 builder: Auto-Cycle Trigger (2026-11-23 12:19)",
-    "#5 archivist: Knowledge Index Builder (2026-11-23 13:34)"
+    "#1 builder: Runbook Parser + Executor (2026-11-23 11:49)",
+    "#2 mechanic: Fleet State Collector Daemon (2026-11-23 11:49)",
+    "#3 designer: Cockpit Layout Design (2026-11-23 12:29)",
+    "#4 archivist: Knowledge Index Builder (2026-11-23 13:56)",
+    "#5 mechanic: Model OOM Auto-Recovery (2026-11-23 14:23)"
    ],
    "next_cycle_candidates": [
     {
@@ -405,43 +404,43 @@
   "archivist": {
    "done": 4,
    "total": 10,
-   "end": "2026-11-24 05:59"
+   "end": "2026-11-24 06:22"
   },
   "builder": {
-   "done": 8,
+   "done": 9,
    "total": 10,
-   "end": "2026-11-23 14:54"
+   "end": "2026-11-23 11:49"
   },
   "designer": {
    "done": 3,
    "total": 10,
-   "end": "2026-11-24 12:58"
+   "end": "2026-11-24 13:20"
   },
   "mechanic": {
-   "done": 2,
+   "done": 3,
    "total": 9,
-   "end": "2026-11-24 04:52"
+   "end": "2026-11-24 02:40"
   },
   "orchestrator": {
    "done": 3,
    "total": 3,
-   "end": "2026-11-23 08:51"
+   "end": "2026-11-23 09:14"
   },
   "researcher": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 08:51"
+   "end": "2026-11-23 09:14"
   },
   "scribe": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 08:51"
+   "end": "2026-11-23 09:14"
   },
   "verifier": {
-   "done": 6,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-23 21:08"
+   "end": "2026-11-23 09:14"
   }
  },
- "level_up_eta": "2026-11-24 12:58"
+ "level_up_eta": "2026-11-24 13:20"
 }

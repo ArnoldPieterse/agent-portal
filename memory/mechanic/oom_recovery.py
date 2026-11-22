@@ -415,6 +415,20 @@ def main():
             agent = sys.argv[idx + 1] if idx + 1 < len(sys.argv) else None
         is_oom, details = detect_oom(agent)
         print(json.dumps({"is_oom": is_oom, **details}, indent=2))
+    elif cmd == "watch":
+        # 2026-11-23 (goal #6): periodic detect->recover pass for schtask use.
+        try:
+            is_oom, details = detect_oom()
+            if not is_oom:
+                print(json.dumps({"action": "none", **details}))
+                sys.exit(0)
+            agent = details.get("agent") or "local-model"
+            result = execute_recovery(agent, host=None)
+            print(json.dumps({"action": "recovered" if result.get("success") else "failed", **result}))
+            sys.exit(0 if result.get("success") else 1)
+        except Exception as e:
+            print(json.dumps({"action": "error", "error": str(e)}))
+            sys.exit(2)
     elif cmd == "recover":
         if len(sys.argv) < 3:
             print("Usage: oom_recovery.py recover <agent_name> [--host HOST]")

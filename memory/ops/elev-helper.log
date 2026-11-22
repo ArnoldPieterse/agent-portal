@@ -2,3 +2,5 @@
 2026-11-22T16:02:30.243719 start pid=13884 elevated=False user=White
 2026-11-22T23:28:51.167030 start pid=22892 elevated=False user=White
 2026-11-22T23:30:57.817445 start pid=22736 elevated=False user=White
+2026-11-23T09:13:30.553453 RUN schtasks /Create /TN "FleetStateCollector" /TR ""C:\Projects\Workspace\Python\pythoncore-3.15-64\python.exe" "C:\Projects\Workspace\memory\mechanic\state_collector.py" collect" /SC MINUTE /MO 5 /F
+2026-11-23T09:13:39.022202 RUN schtasks /Create /TN "FleetStateCollector" /TR "C:\Projects\Workspace\Python\pythoncore-3.15-64\python.exe C:\Projects\Workspace\memory\mechanic\state_collector.py collect" /SC MINUTE /MO 5 /F

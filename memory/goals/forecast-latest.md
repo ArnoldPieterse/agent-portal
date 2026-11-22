@@ -1,68 +1,68 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-23 08:51:59 | Fleet: 46/72 (64%) | throughput ~6.0 goals/h
+Generated: 2026-11-23 09:14:27 | Fleet: 52/72 (72%) | throughput ~6.0 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [mechanic] Model Load/Unload Automation** - ETA 2026-11-23 11:26, P(reached) 52% (verify, cx2)
-   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 16:35) - shared scope mechanic,model | verifier: **Model Swap Verification Battery** - `python memory/verifie (2026-11-23 18:34) - shared scope check,model | lane end designer: 11-24 12:58 (slowest lane)
-**#2 [verifier] Decision Policy Compliance Audit** - ETA 2026-11-23 11:26, P(reached) 52% (verify, cx2)
-   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: verifier: **Auto-Cycle Trigger Validation** - `python memory/verifier/ (2026-11-23 14:01) - shared scope verifier,verify | verifier: **Model Swap Verification Battery** - `python memory/verifie (2026-11-23 18:34) - shared scope verifier,verify | lane end designer: 11-24 12:58 (slowest lane)
-**#3 [designer] Cockpit Layout Design** - ETA 2026-11-23 12:06, P(reached) 5% (measurement, cx2)
-   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: designer: **Health Score Visualization** - Design the health score com (2026-11-23 15:21) - shared scope design,health,produce | mechanic: **Host Capacity Arbitration** - `python memory/mechanic/capa (2026-11-23 21:44) - shared scope agents,priority | designer: **Fleet Topology Live Update** - Update the existing fleet t (2026-11-24 04:19) - shared scope agents,health,hosts
-**#4 [builder] Auto-Cycle Trigger** - ETA 2026-11-23 12:19, P(reached) 22% (measurement, cx2)
-   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: verifier: **Auto-Cycle Trigger Validation** - `python memory/verifier/ (2026-11-23 14:01) - shared scope cycle,files,goals | archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 16:16) - shared scope files,monitor | lane end designer: 11-24 12:58 (slowest lane)
-**#5 [archivist] Knowledge Index Builder** - ETA 2026-11-23 13:34, P(reached) 28% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 16:16) - shared scope archivist,leaves | lane end designer: 11-24 12:58 (slowest lane)
-**#6 [mechanic] Fleet State Collector Daemon** - ETA 2026-11-23 14:01, P(reached) 52% (verify, cx2)
-   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 16:35) - shared scope mechanic,process | mechanic: **Portal Self-Healing** - `python memory/mechanic/portal_hea (2026-11-24 04:52) - shared scope mechanic,process | lane end designer: 11-24 12:58 (slowest lane)
-**#7 [verifier] Auto-Cycle Trigger Validation** - ETA 2026-11-23 14:01, P(reached) 52% (verify, cx2)
-   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: verifier: **Decision Policy Compliance Audit** - `python memory/verifi (2026-11-23 11:26) - shared scope verifier,verify | builder: **Auto-Cycle Trigger** - `python memory/builder/auto_cycle_t (2026-11-23 12:19) - shared scope cycle,files,goals | archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 16:16) - shared scope files,verify
-**#8 [builder] Runbook Parser + Executor** - ETA 2026-11-23 14:54, P(reached) 52% (ops, cx2)
+**#1 [builder] Runbook Parser + Executor** - ETA 2026-11-23 11:49, P(reached) 52% (ops, cx2)
    steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
-   consequences: lane end designer: 11-24 12:58 (slowest lane)
-**#9 [designer] Health Score Visualization** - ETA 2026-11-23 15:21, P(reached) 5% (measurement, cx2)
-   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 12:06) - shared scope design,health,produce | designer: **Decision Timeline UX** - Design the decision log display a (2026-11-23 19:41) - shared scope color,design,display | designer: **Agent Status Grid** - Design the per-agent status display: (2026-11-24 00:00) - shared scope color,design,display
-**#10 [archivist] Citation Integrity Monitor** - ETA 2026-11-23 16:16, P(reached) 64% (verify, cx2)
+   consequences: lane end designer: 11-24 13:20 (slowest lane)
+**#2 [mechanic] Fleet State Collector Daemon** - ETA 2026-11-23 11:49, P(reached) 52% (verify, cx2)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: builder: **Auto-Cycle Trigger** - `python memory/builder/auto_cycle_t (2026-11-23 12:19) - shared scope files,monitor | archivist: **Knowledge Index Builder** - `python memory/archivist/knowl (2026-11-23 13:34) - shared scope archivist,leaves | verifier: **Auto-Cycle Trigger Validation** - `python memory/verifier/ (2026-11-23 14:01) - shared scope files,verify
+   consequences: mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 14:23) - shared scope mechanic,process | mechanic: **Portal Self-Healing** - `python memory/mechanic/portal_hea (2026-11-24 02:40) - shared scope mechanic,process | lane end designer: 11-24 13:20 (slowest lane)
+**#3 [designer] Cockpit Layout Design** - ETA 2026-11-23 12:29, P(reached) 5% (measurement, cx2)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: designer: **Health Score Visualization** - Design the health score com (2026-11-23 15:44) - shared scope design,health,produce | mechanic: **Host Capacity Arbitration** - `python memory/mechanic/capa (2026-11-23 19:32) - shared scope agents,priority | designer: **Fleet Topology Live Update** - Update the existing fleet t (2026-11-24 04:42) - shared scope agents,health,hosts
+**#4 [archivist] Knowledge Index Builder** - ETA 2026-11-23 13:56, P(reached) 28% (build, cx2)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 16:39) - shared scope archivist,leaves | lane end designer: 11-24 13:20 (slowest lane)
+**#5 [mechanic] Model OOM Auto-Recovery** - ETA 2026-11-23 14:23, P(reached) 52% (verify, cx2)
+   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
+   consequences: mechanic: **Fleet State Collector Daemon** - `python memory/mechanic/s (2026-11-23 11:49) - shared scope mechanic,process | mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-24 00:05) - shared scope detected,mechanic | mechanic: **Portal Self-Healing** - `python memory/mechanic/portal_hea (2026-11-24 02:40) - shared scope mechanic,process,unresponsive
+**#6 [designer] Health Score Visualization** - ETA 2026-11-23 15:44, P(reached) 5% (measurement, cx2)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 12:29) - shared scope design,health,produce | designer: **Decision Timeline UX** - Design the decision log display a (2026-11-23 20:03) - shared scope color,design,display | designer: **Agent Status Grid** - Design the per-agent status display: (2026-11-24 00:22) - shared scope color,design,display
+**#7 [archivist] Citation Integrity Monitor** - ETA 2026-11-23 16:39, P(reached) 64% (verify, cx2)
+   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
+   consequences: archivist: **Knowledge Index Builder** - `python memory/archivist/knowl (2026-11-23 13:56) - shared scope archivist,leaves | archivist: **Retrieval Accuracy Benchmark** - Build a benchmark suite o (2026-11-23 22:57) - shared scope files,source | archivist: **Cross-Reference Consistency Check** - When the same fact a (2026-11-24 06:22) - shared scope files,verify
+**#8 [mechanic] Scheduled Maintenance Window** - ETA 2026-11-23 16:58, P(reached) 52% (ops, cx2)
+   steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
+   consequences: lane end designer: 11-24 13:20 (slowest lane)
+**#9 [mechanic] Host Capacity Arbitration** - ETA 2026-11-23 19:32, P(reached) 52% (ops, cx2)
+   steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
+   consequences: designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 12:29) - shared scope agents,priority | mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-24 00:05) - shared scope agents,mechanic | lane end designer: 11-24 13:20 (slowest lane)
+**#10 [designer] Decision Timeline UX** - ETA 2026-11-23 20:03, P(reached) 4% (build, cx2)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: designer: **Health Score Visualization** - Design the health score com (2026-11-23 15:44) - shared scope color,design,display | designer: **Agent Status Grid** - Design the per-agent status display: (2026-11-24 00:22) - shared scope color,design,display | lane end designer: 11-24 13:20 (slowest lane)
 
-## 30m ahead (by 2026-11-23 09:21)
-- completes: **0** goal(s) -> fleet ~64%
+## 30m ahead (by 2026-11-23 09:44)
+- completes: **0** goal(s) -> fleet ~72%
 
-## 1h ahead (by 2026-11-23 09:51)
-- completes: **0** goal(s) -> fleet ~64%
+## 1h ahead (by 2026-11-23 10:14)
+- completes: **0** goal(s) -> fleet ~72%
 
-## 1d ahead (by 2026-11-24 08:51)
-- completes: **25** goal(s) -> fleet ~99%
-  - #1 mechanic: Model Load/Unload Automation (2026-11-23 11:26)
-  - #2 verifier: Decision Policy Compliance Audit (2026-11-23 11:26)
-  - #3 designer: Cockpit Layout Design (2026-11-23 12:06)
-  - #4 builder: Auto-Cycle Trigger (2026-11-23 12:19)
-  - #5 archivist: Knowledge Index Builder (2026-11-23 13:34)
+## 1d ahead (by 2026-11-24 09:14)
+- completes: **19** goal(s) -> fleet ~99%
+  - #1 builder: Runbook Parser + Executor (2026-11-23 11:49)
+  - #2 mechanic: Fleet State Collector Daemon (2026-11-23 11:49)
+  - #3 designer: Cockpit Layout Design (2026-11-23 12:29)
+  - #4 archivist: Knowledge Index Builder (2026-11-23 13:56)
+  - #5 mechanic: Model OOM Auto-Recovery (2026-11-23 14:23)
 
-## 1w ahead (by 2026-11-30 08:51)
-- completes: **26** goal(s) -> fleet ~100%
-  - #1 mechanic: Model Load/Unload Automation (2026-11-23 11:26)
-  - #2 verifier: Decision Policy Compliance Audit (2026-11-23 11:26)
-  - #3 designer: Cockpit Layout Design (2026-11-23 12:06)
-  - #4 builder: Auto-Cycle Trigger (2026-11-23 12:19)
-  - #5 archivist: Knowledge Index Builder (2026-11-23 13:34)
+## 1w ahead (by 2026-11-30 09:14)
+- completes: **20** goal(s) -> fleet ~100%
+  - #1 builder: Runbook Parser + Executor (2026-11-23 11:49)
+  - #2 mechanic: Fleet State Collector Daemon (2026-11-23 11:49)
+  - #3 designer: Cockpit Layout Design (2026-11-23 12:29)
+  - #4 archivist: Knowledge Index Builder (2026-11-23 13:56)
+  - #5 mechanic: Model OOM Auto-Recovery (2026-11-23 14:23)
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-23 08:51)
-- completes: **26** goal(s) -> fleet ~100%
-  - #1 mechanic: Model Load/Unload Automation (2026-11-23 11:26)
-  - #2 verifier: Decision Policy Compliance Audit (2026-11-23 11:26)
-  - #3 designer: Cockpit Layout Design (2026-11-23 12:06)
-  - #4 builder: Auto-Cycle Trigger (2026-11-23 12:19)
-  - #5 archivist: Knowledge Index Builder (2026-11-23 13:34)
+## 1m ahead (by 2026-12-23 09:14)
+- completes: **20** goal(s) -> fleet ~100%
+  - #1 builder: Runbook Parser + Executor (2026-11-23 11:49)
+  - #2 mechanic: Fleet State Collector Daemon (2026-11-23 11:49)
+  - #3 designer: Cockpit Layout Design (2026-11-23 12:29)
+  - #4 archivist: Knowledge Index Builder (2026-11-23 13:56)
+  - #5 mechanic: Model OOM Auto-Recovery (2026-11-23 14:23)
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
