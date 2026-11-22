@@ -1,4 +1,4 @@
-// ui/state.js — single portal state store with subscribe/notify (plain script, no ES modules)
+// ui/state.js â€” single portal state store with subscribe/notify (plain script, no ES modules)
 // Goal 6: State Management Refactor (increment 1)
 // Loaded before core.js; exposes window.State.
 
