@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe's 10/10 goals reached; piv
-- Goal 1: load_week_complete.py --status confirms all p95 within thresholds (max 194.6/751.2/3527.0), zero errors, 5/7 days local data.
-- Mechanic goal 8 (Alert Escalation Chain) closed by Scribe fixing dangling pointer; Mechanic now at 5/10 goals reached.
-- Search-index.json at 2213 entries / 483.5KB (AC limit 500KB); all 10 goals reached
 - Goal 9 criterion 1 (7-day data) still blocked — needs daily probe schtask on White; disk healthy at 42.9%.
 - Designer 10/1
 - Goal 7 (Auto-Updating Archive Nav): `--auto` writes to archive-nav.md but `--check` still reports files as pending — detection bug, unresolv
 - Designer confirmed all 10 goals reached (0 open); "4 open" in prompt was stale pre-evidence count. Lane fully complete.
 - Designer wrote UI Change Checklist at memory/ops/ui-change-checklist.md (7-point regression table + pin-advance proc) to prevent clobber-loo
 - All 10 goals verified (100%). Assisted Scribe's goal #10: --agent flag ACs confirmed (8 files, min=12 items, no cross-agent contamination).
+- Designer 10/10 reached; contributing timeline-panel design spec for Scribe's Temporal Query API (timeline.py not yet built).
+- Mechanic Goals 1-3 blocked: all require non-sandbox execution on White; no further action possible from this seat.
+- Archivist at 10/10 goals; last contribution: stale-citation-triage.md (348 edges, 4 categories) at memory/ops/.
+- Scribe Goals
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
