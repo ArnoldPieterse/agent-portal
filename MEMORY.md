@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop prompt is stale — all
-- Auto-loop prompt is stale: all 4 seats (Builder/Verifier/Designer/Scribe) confirmed 10/10 goals done as of 2026-11-23; needs regeneration.
 - All 10/10 goals verified complete (2026-11-23
 - Designer: all 10 goals verified complete (2026-11-23); auto-loop prompt is stale, no open work for this seat.
 - Verifier 10/10 verified (2026-11-23), no open goals, auto-loop prompt stale — do not re-probe
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 4 seats at 10/10 verified goals (cycle-10, 2026-1
 - Builder lane fully closed: all 10 goals verified 2026-11-23, artifacts on disk; auto-loop prompt is stale for this seat.
 - Auto-loop prompt is stale (pre-cycle-10 names); all 4 seats confirmed 10/
+- Designer: all 10 goals verified 2026-11-23; auto-loop prompt is stale (shows old goal set), no open work remains
+- All 4 seats (Mechanic, Builder, Verifier, Designer) confirmed 10/10 goals complete as of
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

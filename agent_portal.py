@@ -1606,11 +1606,11 @@ def _cockpit_snapshot():
     health = None
     try:
         with open(os.path.join(HERE, "memory", "ops", "health-score.jsonl"), encoding="utf-8") as f:
-            for line in f.readlines()[-1:]:
-                if line.strip():
-                    health = json.loads(line)
+            _hl = [json.loads(l) for l in f.readlines() if l.strip()]
+        health = _hl[-1] if _hl else None
+        trend = [{"ts": h.get("ts"), "score": h.get("score")} for h in _hl[-7:]]
     except Exception:
-        pass
+        trend = []
     decisions = []
     try:
         with open(os.path.join(HERE, "memory", "ops", "decision-log.jsonl"), encoding="utf-8") as f:
@@ -1629,6 +1629,7 @@ def _cockpit_snapshot():
         pass
     data = {"agents": agents_out, "hosts": hosts_out, "goals": goals,
             "health_score": (health or {}).get("score"),
+            "health_trend": trend,
             "recent_decisions": decisions, "predicted_risks": risks,
             "generated": time.strftime("%Y-%m-%d %H:%M:%S")}
     _cockpit_cache.update(ts=now, data=data)
