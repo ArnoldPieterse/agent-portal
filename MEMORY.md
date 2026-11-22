@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer: all 10 goals verified 2026-11-23; auto-loop prompt is stale (shows old goal set), no open work remains
-- All 4 seats (Mechanic, Builder, Verifier, Designer) confirmed 10/10 goals complete as of
-- Auto-loop prompt is stale: all 10 Designer goals verified complete in memory/goals/designer.md; no open work remains.
 - Builder goals all verified complete 2026-11-23; auto-loop prompt is stale, no open work remains for this seat.
 - Auto-loop prompt is stale: all 10/10 goals across Builder, Verifier, Designer verified complete 2026-11-23; no open work remains.
 - Egress wall confirmed: WinError 10013 blocks Studio :8888 from sandbox; workaround =
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer seat fully concluded: all 10 goals verified in memory/goals/designer.md; "2/10" header is stale dashboard state, not actual progres
 - Builder: all 10 goals verified complete (2026-11-23). Auto-loop prompt is stale for this seat; no open work remains.
 - All 10 mechanic goals verified (2026-11-23); auto-loop dispatching stale goal set, no open work for this seat
+- Designer 10/10 goals verified 2026-11-23; auto-loop prompt is stale, keeps re
+- Auto-loop dispatch sends stale goal sets; Builder/Designer/Mechanic all 10/10 verified on 2026-11-23, no open work remains.
+- All seats (Builder/Designer/Mechanic/Verifier) confirmed 10/10
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
