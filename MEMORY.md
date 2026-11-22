@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier's "not present" for pw_upload_probe.txt was false negative — Verifier on pale, home not_loaded, no shared upload path.
 - Mechanic seated on White (local); shell elevation via elev.py is standard path; home unreachable is normal per load status.
 - OPEN: pw_upload_probe.txt presence conflict — Verifier says absent, 5 agents say present (25B); Orchestrator declined to close either side,
 - Perf markers (render<2s, interaction<100ms, frame≥58fps) landed in ui/core.js; goal #10 last AC closed 2026-11-23.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #
 - decay_score.py now production-ready (auto-archive + alerts); pending schedule on non-sandbox seat
 - decay_score.py run #4 complete: 7903 leaves, 0 flagged/archived/alerts; Goal 3 needs 2 weekly runs for AC
+- Goal 1: goal1_diagnose_fix.py built & py_compile PASS; deploy via `python elev.py --shell "python memory/mechanic/goal1_diagnose_fix.py"` on
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
