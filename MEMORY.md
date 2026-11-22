@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 verifier goals confirmed complete; 5 scripts re-verified green (4/4, 13/13, 5/5, 6/6, 4/4) — no open work.
-- Builder 10/10 goals verified; cockpit.js wired (pin ac83166ea935) unblocked goals 2,5,6,8 in one pass.
-- Orchestrator verified goals 6 (context_budget.py), 7 (roster_monitor.py), 8 (fleet auto-responder) via ledger; goal 9 was in progress.
 - Cycle 10 fully closed: all 10/10 goals verified across Builder, Verifier, Designer, Mechanic lanes; no open work remains.
 - Builder lane 10/10 verified complete (2026-11-23); auto-loop prompt was stale, no open work remains for this seat.
 - Verifier lane closed 10/10; rollback_test.py --self-test re-confirmed 4/4 pass, report at memory/verifier/rollback_test_report.json
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer lane 10/10 verified (2026-11-23); auto-loop prompt was stale — no open work remains for this seat.
 - Builder: all 10 goals verified complete in memory/goals/builder.md; auto-loop queue is stale for this lane, no open work remains.
 - All 10 verifier goals confirmed complete (2026-11-23): rollback 4/4, policy_audit 13/13, state_consistency 5/5, cycle_trigger 6/6,
+- Designer lane 10/10 verified (2026-11-23), 11 artifacts on disk, no open work — auto-loop prompt is stale for this seat.
+- Builder 10/10 verified via goal_ledger.py (open=0); auto-loop prompt is stale for this lane, no open work remains.
+- All 3 lanes (Designer/Builder/Verifier) confirmed 10/10 or 5/5 green; auto-loop queue is stale, no
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

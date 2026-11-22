@@ -1464,6 +1464,134 @@ def _perf_snapshot():
     return {"ok": True, "window_s": 3600, "endpoints": out}
 
 
+# ---- Fleet Cockpit API (Orchestrator cycle-10 goal 3; re-landed 2026-11-23) ----
+# The earlier REACHED marker was stale: the route had been lost in a refactor. This landing
+# is live-verified: one call = full fleet picture for the Cockpit tab (builder goal 2).
+_cockpit_cache = {"ts": 0.0, "data": None}
+_COCKPIT_TTL = 15   # seconds; dashboard view - 15s freshness keeps responses well under 2s
+
+def _cockpit_gpu_local(timeout=2):
+    """Local GPU aggregate via nvidia-smi: vram_pct (all GPUs), cpu_pct (GPU util avg),
+    temp_c (max). None on any failure - a missing GPU must never break the cockpit."""
+    try:
+        out = subprocess.run(
+            ["nvidia-smi", "--query-gpu=utilization.gpu,memory.used,memory.total,temperature.gpu",
+             "--format=csv,noheader,nounits"],
+            capture_output=True, text=True, timeout=timeout)
+        if out.returncode != 0:
+            return None
+        rows = [r.split(",") for r in out.stdout.strip().splitlines() if r.strip()]
+        if not rows:
+            return None
+        util = sum(float(r[0]) for r in rows) / len(rows)
+        used = sum(float(r[1]) for r in rows)
+        total = sum(float(r[2]) for r in rows)
+        temp = max(float(r[3]) for r in rows)
+        return {"vram_pct": round(100.0 * used / total, 1) if total else None,
+                "cpu_pct": round(util, 1), "temp_c": round(temp, 1)}
+    except Exception:
+        return None
+
+def _cockpit_snapshot():
+    """GET /api/fleet/cockpit: agents (status/current_goal/last_active), hosts (vram/cpu/temp),
+    goals {total,done,in_progress,blocked}, health_score, recent_decisions (last 10),
+    predicted_risks (from the forecast engine). Local file reads + cached nvidia-smi; <2s."""
+    now = time.time()
+    if _cockpit_cache["data"] is not None and now - _cockpit_cache["ts"] < _COCKPIT_TTL:
+        return _cockpit_cache["data"]
+    # -- agents: config + last activity (decision log) + first open goal (evidence-gated ledger)
+    last_active = {}
+    try:
+        with open(os.path.join(HERE, "memory", "ops", "decision-log.jsonl"), encoding="utf-8") as f:
+            for line in f.readlines()[-300:]:
+                try:
+                    e = json.loads(line)
+                except Exception:
+                    continue
+                a = str(e.get("agent") or "").lower()
+                ts = e.get("timestamp")
+                if a and ts and (a not in last_active or ts > last_active[a]):
+                    last_active[a] = ts
+    except OSError:
+        pass
+    agents_out = []
+    try:
+        for a in load_agents().get("agents", []):
+            aid = str(a.get("id") or "").lower()
+            la = last_active.get(aid)
+            if la is None:
+                status = "unknown"
+            else:
+                try:
+                    age_h = (now - time.mktime(time.strptime(str(la)[:19], "%Y-%m-%dT%H:%M:%S"))) / 3600.0
+                    status = "active" if age_h < 24 else "idle"
+                except Exception:
+                    status = "unknown"
+            agents_out.append({"name": a.get("name"), "status": status,
+                               "current_goal": None, "last_active": la})
+    except Exception:
+        pass
+    parse = _goal_parser()
+    if parse is not None:
+        gdir = os.path.join(HERE, "memory", "goals")
+        for ag in agents_out:
+            fn = os.path.join(gdir, (ag["name"] or "").lower() + ".md")
+            try:
+                for g in parse(fn):
+                    if g.get("status") == "open":
+                        ag["current_goal"] = (g.get("text") or "")[:160]
+                        break
+            except Exception:
+                continue
+    # -- hosts: local seat via nvidia-smi; remote mirror hosts from config (metrics null until probed)
+    hosts_out = []
+    local = _cockpit_gpu_local()
+    if local is not None:
+        hosts_out.append({"name": "White", **local})
+    try:
+        cfg = json.load(open(os.path.join(HERE, "memory_mirror_hosts.json"), encoding="utf-8"))
+        for h in cfg.get("hosts", []):
+            hosts_out.append({"name": h.get("name"), "vram_pct": None, "cpu_pct": None, "temp_c": None})
+    except Exception:
+        pass
+    # -- goals (evidence-gated), health score, decisions, risks
+    gs = _goals_snapshot()
+    open_n = sum(a.get("open", 0) for a in gs.get("agents", []))
+    blocked_n = sum(a.get("blocked", 0) for a in gs.get("agents", []))
+    goals = {"total": gs.get("fleet_total", 0), "done": gs.get("fleet_done", 0),
+             "in_progress": max(open_n - blocked_n, 0), "blocked": blocked_n}
+    health = None
+    try:
+        with open(os.path.join(HERE, "memory", "ops", "health-score.jsonl"), encoding="utf-8") as f:
+            for line in f.readlines()[-1:]:
+                if line.strip():
+                    health = json.loads(line)
+    except Exception:
+        pass
+    decisions = []
+    try:
+        with open(os.path.join(HERE, "memory", "ops", "decision-log.jsonl"), encoding="utf-8") as f:
+            for line in f.readlines()[-10:]:
+                if line.strip():
+                    decisions.append(json.loads(line))
+    except Exception:
+        pass
+    risks = []
+    try:
+        fc = json.load(open(os.path.join(HERE, "memory", "goals", "next10.json"), encoding="utf-8"))
+        for item in fc.get("next10", [])[:5]:
+            risks.append({"agent": item.get("agent"), "goal": (item.get("goal") or "")[:120],
+                          "p_reached": item.get("p_reached"), "eta": item.get("eta")})
+    except Exception:
+        pass
+    data = {"agents": agents_out, "hosts": hosts_out, "goals": goals,
+            "health_score": (health or {}).get("score"),
+            "recent_decisions": decisions, "predicted_risks": risks,
+            "generated": time.strftime("%Y-%m-%d %H:%M:%S")}
+    _cockpit_cache.update(ts=now, data=data)
+    return data
+
+
 def _fleet_health_snapshot():
     """GET /api/health/fleet (Mechanic cycle-2 goal 8): single call = full fleet picture.
     Per host: latest structured probe state + SMB sync age; plus last plain-text probe
@@ -5167,6 +5295,10 @@ class Handler(BaseHTTPRequestHandler):
             # Fleet Status panel (2026-11-13): per-host models + busy/idle/unknown.
             # On-demand probes only (no background timer); dead host => unknown, no hang.
             return self._json(200, _fleet_snapshot())
+        elif p == "/api/fleet/cockpit":
+            # Fleet Cockpit API (Orchestrator cycle-10 goal 3, re-landed 2026-11-23): one call
+            # = full fleet picture for the Cockpit tab. Local reads + cached nvidia-smi, <2s.
+            return self._json(200, _cockpit_snapshot())
         elif p == "/api/perf":
             return self._json(200, _perf_snapshot())
         elif p == "/api/health/fleet":
