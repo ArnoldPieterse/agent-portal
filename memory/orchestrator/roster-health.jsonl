@@ -32,3 +32,11 @@
 {"ts": "2026-11-20T12:52:14Z", "agent": "scribe", "ok": true, "latency_ms": 641, "mode": "simulate"}
 {"ts": "2026-11-20T12:52:14Z", "agent": "mechanic", "ok": true, "latency_ms": 270, "mode": "simulate"}
 {"ts": "2026-11-20T12:52:14Z", "type": "NEEDS-HUMAN", "alerts": ["verifier:2consec"], "mode": "simulate"}
+{"ts": "2026-11-22T05:06:15Z", "agent": "orchestrator", "ok": false, "latency_ms": 21, "mode": "live"}
+{"ts": "2026-11-22T05:06:15Z", "agent": "researcher", "ok": false, "latency_ms": 19, "mode": "live"}
+{"ts": "2026-11-22T05:06:15Z", "agent": "builder", "ok": false, "latency_ms": 15, "mode": "live"}
+{"ts": "2026-11-22T05:06:15Z", "agent": "verifier", "ok": false, "latency_ms": 14, "mode": "live"}
+{"ts": "2026-11-22T05:06:15Z", "agent": "designer", "ok": false, "latency_ms": 14, "mode": "live"}
+{"ts": "2026-11-22T05:06:15Z", "agent": "archivist", "ok": false, "latency_ms": 1, "mode": "live"}
+{"ts": "2026-11-22T05:06:15Z", "agent": "scribe", "ok": false, "latency_ms": 12, "mode": "live"}
+{"ts": "2026-11-22T05:06:15Z", "agent": "mechanic", "ok": false, "latency_ms": 31, "mode": "live"}

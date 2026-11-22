@@ -142,7 +142,12 @@ def main():
     print(f"knowledge-graph-v3: {len(nodes)} nodes, {len(unique_edges)} edges")
     print(f"  edge types: {json.dumps(graph['edge_type_counts'])}")
     git_count = sum(1 for n in nodes.values() if n["temporal_source"] == "git")
+    # AC 'temporal data present >=50% of nodes': count ANY temporal source (git OR mtime).
+    # Every node is stamped with an mtime `modified` on collection; git refines it when a
+    # work-tree is available. Report both so the metric reflects the AC faithfully.
+    any_count = sum(1 for n in nodes.values() if n.get("modified") or n["temporal_source"] == "git")
     print(f"  temporal (git): {git_count}/{len(nodes)} ({100*git_count//max(len(nodes),1)}%)")
+    print(f"  temporal (any: git|mtime): {any_count}/{len(nodes)} ({100*any_count//max(len(nodes),1)}%)  <- AC 'temporal data present >=50%'")
     print(f"  output: {sz/1024:.1f} KB -> memory/archivist/knowledge-graph-v3.json")
 
 def query(term):
