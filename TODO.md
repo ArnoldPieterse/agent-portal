@@ -349,7 +349,6 @@ Status: **LIVE.** Portal :8099 accepts file & folder uploads → shared agent fo
 Status: **ALL GREEN, records synced.** Red DUAL_UP final: Q8_0 hash VERIFIED == f0fc43cf…E8A (WinRM Get-FileHash ON RED disk-local 25s - skipped the 2h SMB crawl), mmproj landed -> is_vision:true. red_smoke **ALL_OK** 18:05:55 (chain's first run crashed exit=1 on an `open(..., indent=)` bug in the script -> fixed + rerun; chain summary keeps the STALE pre-crash section). smoke8 rerun **ALL_OK** 18:29 (all 8 ids: ORCH/RES/BUILDER/VERIFIER/DESIGNER/ARCHIVIST/SCRIBE/MECHANIC-OK; researcher 349s = serialization, not a fault). group_e2e rerun ~18:3x: all 8 spoke, 33 turns, counter 24, concluded=False - Archivist+Scribe final turns truncated mid tool-call ("model stopped before completing the tool calls"). Chain first pass (18:07) TRANSIENT failures: orchestrator 404 'unknown agent', builder/verifier/designer/archivist 400 + empty smoke text -> self-resolved by ~18:2x, no root cause found.
 - [x] CHAIN_OK branch executed with caveats above: hosts.md Red row = LIVE; trees synced to AgentPortal_V1 (hash-compare pattern); _portal_pid.txt fixed (30852).
 
-- [ ] FUTURE: move Red .245 to the wired NIC (WiFi 30 Mbps = root cause of the 2h copy) -> multi-GB transfers ~20 min.
 - [ ] WATCH: two tool-call truncations in latest e2e (Archivist/Scribe) - if they recur, check their models' max-tokens / harness stop conditions.
 
 ## RED DUAL_UP via manual move + CHAIN RUNNING (2026-11-12 ~18:0x) - SUPERSEDED by GREEN above

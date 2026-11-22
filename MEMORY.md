@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer 10/10 verified; "4 open" in auto-loop prompt is stale — do not re-probe, already flagged in HOT NOTES.
 - Scribe 10/10 verified, 0 open; auto-loop "2 open" count is stale (ledger confirms all closed).
 - Goal #1 (load test) blocked: Nov 21/22 White-side data missing from sandbox; tracked in memory/ops/blockers
 - Mechanic: goal #4 circuit breaker (3-fail→60s DOWN
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - RECALL: - M5 (memory
 - RECALL: - **M5** (`
 - Auto-loop prompt
+- Goal #9 Theme System: all 31 hardcoded colors in app.css/interactions.css replaced with 8 new design tokens; verified complete.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
