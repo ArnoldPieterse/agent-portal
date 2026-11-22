@@ -1,0 +1,171 @@
+{
+  "generated": "2026-11-22T23:44:59Z",
+  "total_decisions": 20,
+  "mean_confidence": 0.305,
+  "min_confidence": 0.1,
+  "max_confidence": 0.8,
+  "distinct_score_count": 6,
+  "high_confidence_pct": 10.0,
+  "entries": [
+    {
+      "index": 0,
+      "agent": "builder",
+      "type": "cycle_trigger",
+      "timestamp": "2026-11-22T21:35:52.410186Z",
+      "confidence": 0.8,
+      "source": "decision-log.jsonl"
+    },
+    {
+      "index": 1,
+      "agent": "builder",
+      "type": "runbook_exec",
+      "timestamp": "2026-11-22T21:38:01.302963+00:00",
+      "confidence": 0.8,
+      "source": "decision-log.jsonl"
+    },
+    {
+      "index": 2,
+      "agent": "Builder",
+      "type": "runbook_execution",
+      "timestamp": "2026-11-23T08:45:35.351199",
+      "confidence": 0.3,
+      "source": "memory/decision-log.jsonl"
+    },
+    {
+      "index": 3,
+      "agent": "Builder",
+      "type": "runbook_execution",
+      "timestamp": "2026-11-23T08:45:37.895668",
+      "confidence": 0.1,
+      "source": "memory/decision-log.jsonl"
+    },
+    {
+      "index": 4,
+      "agent": "Builder",
+      "type": "runbook_execution",
+      "timestamp": "2026-11-23T08:18:29.133450",
+      "confidence": 0.1,
+      "source": "memory/decision-log.jsonl"
+    },
+    {
+      "index": 5,
+      "agent": "Builder",
+      "type": "runbook_execution",
+      "timestamp": "2026-11-23T08:18:34.537904",
+      "confidence": 0.1,
+      "source": "memory/decision-log.jsonl"
+    },
+    {
+      "index": 6,
+      "agent": "Builder",
+      "type": "runbook_execution",
+      "timestamp": "2026-11-23T09:20:49.523299",
+      "confidence": 0.1,
+      "source": "memory/decision-log.jsonl"
+    },
+    {
+      "index": 7,
+      "agent": "Builder",
+      "type": "playbook_dry_run",
+      "timestamp": "2026-11-22T20:26:33.080010+00:00",
+      "confidence": 0.6,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 8,
+      "agent": "Builder",
+      "type": "playbook_step",
+      "timestamp": "2026-11-22T20:26:34.965977+00:00",
+      "confidence": 0.3,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 9,
+      "agent": "Builder",
+      "type": "playbook_step",
+      "timestamp": "2026-11-22T20:26:35.071888+00:00",
+      "confidence": 0.3,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 10,
+      "agent": "Builder",
+      "type": "playbook_step",
+      "timestamp": "2026-11-22T20:26:35.086069+00:00",
+      "confidence": 0.3,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 11,
+      "agent": "Builder",
+      "type": "playbook_complete",
+      "timestamp": "2026-11-22T20:26:35.086530+00:00",
+      "confidence": 0.6,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 12,
+      "agent": "Builder",
+      "type": "playbook_step",
+      "timestamp": "2026-11-22T20:26:38.480837+00:00",
+      "confidence": 0.3,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 13,
+      "agent": "Builder",
+      "type": "playbook_step",
+      "timestamp": "2026-11-22T20:26:38.586244+00:00",
+      "confidence": 0.3,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 14,
+      "agent": "Builder",
+      "type": "playbook_step",
+      "timestamp": "2026-11-22T20:26:38.586742+00:00",
+      "confidence": 0.2,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 15,
+      "agent": "Builder",
+      "type": "playbook_rollback",
+      "timestamp": "2026-11-22T20:26:38.693352+00:00",
+      "confidence": 0.1,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 16,
+      "agent": "Builder",
+      "type": "playbook_complete",
+      "timestamp": "2026-11-22T20:26:38.693832+00:00",
+      "confidence": 0.4,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 17,
+      "agent": "mechanic",
+      "type": "SELFTEST",
+      "timestamp": "2026-11-22T20:39:46.129680+00:00",
+      "confidence": 0.2,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 18,
+      "agent": "test_agent",
+      "type": "oom_recovery",
+      "timestamp": "2026-11-22T22:17:58.698011+00:00",
+      "confidence": 0.1,
+      "source": "memory/ops/decision-log.jsonl"
+    },
+    {
+      "index": 19,
+      "agent": "test_agent",
+      "type": "oom_recovery",
+      "timestamp": "2026-11-22T23:10:36.112747+00:00",
+      "confidence": 0.1,
+      "source": "memory/ops/decision-log.jsonl"
+    }
+  ]
+}

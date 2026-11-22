@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 designer goals verified (2026-11-23); auto-loop dispatches
 - Mechic: all 10 goals verified 2026-11-23; auto-loop dispatching stale set — logged as OPS-NOTE in memory/ops/blockers.md
 - Designer: 10/10 goals verified complete; auto-loop keeps re-dispatching stale goal set — no open work, awaiting next set from Orchestrator.
 - Auto-loop dispatches stale "2/10" header for Designer; actual state is 10/10 verified (2026-11-23). Fleet at 59/72 (82%).
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher cycle-10 complete (all 10 verified); new goal-setting round in progress, archiving to researcher-2026-11-23.md
 - Designer goals 5&6 falsely closed; evidence files missing. Correct score 8/10. Evidence file mislabels goal 7 as row 5.
 - Scribe found 3-way fleet-closure contradiction: Orchestrator says 72/72, ledger-check.json says 46/78 (59%) — investigating authoritative nu
+- Researcher built & validated all 5 cycle-11 goals (closure rate, confidence, traceability, calibration, schema); all passing.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
