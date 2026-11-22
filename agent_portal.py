@@ -56,10 +56,10 @@ _FLEET_RECOVER_RECIPES = {
                      "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
     "Researcher":   {"model_path": r"C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
                      "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},
-    "Builder":      {"model_path": r"C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
-                     "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
-    "Verifier":     {"model_path": r"C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
-                     "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
+    "Builder":      {"model_path": r"C:\Users\black\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+                     "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},   # home = Black (2026-11-22)
+    "Verifier":     {"model_path": r"C:\Users\black\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
+                     "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},   # home = Black (2026-11-22, verifier-q4)
     "Scribe":       {"model_path": r"C:\Users\Red\models\Qwen3.8-27B-Q8_0",
                      "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
     "Mechanic":     {"model_path": r"C:\Users\Red\.cache\huggingface\hub\models--unsloth--Qwen3.8-27B-GGUF\snapshots\4ca720788d1e01f1bff70c033e0d0028fd02e502",
@@ -3731,6 +3731,8 @@ def _autoloop_watchdog():
                     busy_ticks[_n] = busy_ticks.get(_n, 0) + 1
                     if busy_ticks[_n] >= 120:
                         epb = episodes.setdefault(_n, {"since": now, "reloads": 0, "last_reload": 0.0})
+                        if epb["reloads"] >= 3 and now - epb.get("last_reload", 0) >= 1800:   # RE-ARM (2026-11-22)
+                            epb.update(reloads=0, notified=False)
                         if epb["reloads"] < 3 and now - epb["last_reload"] >= 600:
                             epb["reloads"] += 1
                             epb["last_reload"] = now
@@ -3738,6 +3740,10 @@ def _autoloop_watchdog():
                     continue
                 streaks[_n] = streaks.get(_n, 0) + 1
                 ep = episodes.setdefault(_n, {"since": now, "reloads": 0, "last_reload": 0.0})
+                # RE-ARM (2026-11-22): counters used to stay exhausted forever once spent
+                # (Researcher: 4 loads tried, chain then silent all day). Fresh cycle after 30 min.
+                if ep["reloads"] >= 4 and now - ep.get("last_reload", 0) >= 1800:
+                    ep.update(reloads=0, reboots=0, notified=False, since=now)
                 if _st == 'not_loaded' and streaks[_n] >= 4 and ep["reloads"] < 4 and now - ep["last_reload"] >= 300:
                     ep["reloads"] += 1
                     ep["last_reload"] = now
