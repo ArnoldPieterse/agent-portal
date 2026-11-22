@@ -400,5 +400,11 @@
 "text": "**Cycle Quality Report** - `python memory/verifier/cycle_quality.py`: end-of-cycle auto-generated report: goals completed with evidence qual",
 "agent": "verifier",
 "at": "2026-11-22"
+},
+{
+"sig": "31406af5789101fa",
+"text": "**Responsive Layout (768px)** - Make the portal usable at tablet width: sidebar collapses to icon bar, chat panel full-width, fleet tab scro",
+"agent": "designer",
+"at": "2026-11-22"
 }
 ]
