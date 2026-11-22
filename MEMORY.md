@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-19 - design-token deep sweep complete (White direct)
 - All UI files clean: 0 hardcoded hex (outside var() fallbacks), 0 real glyph chars, 0 raw px font-size across ui/*.js + index.html + app.css; all var() refs resolve to tokens; node --check passes 9/9. Evidence: memory/designer/deep-sweep-2026-11-19.md (commit 85e3097). Headless Edge CDP does not work in this sandbox - use static verification for UI acceptance.
@@ -21,18 +21,18 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Live-over-HTTP E2E leg blocked by sandbox C:\Users permission wall (portal can't start in-sandbox); Goal 4 mock E2E 10/10 PASS.
-- All 10 Designer goals reached; 66/66 Playwright click-battery green — no open UI work remaining.
-- RECALL: - **M2** (`MEMORY.md:38`): ADMIN-BY-DEFAULT directive — every agent runs as admin; elevated helper is standard. | - **M6** (`memory/
-- Mechanic & Scribe relocated to White (local); home hosts unreachable — treat as normal seats, no escalation unless elev.py exits 5.
 - Verifier's local sandbox lacks pw_upload_probe.txt (post-test cleanup/server-side); 66/66 battery remains authoritative close-out
 - pw_upload_probe.txt absent due to post-test cleanup, not failed delivery; 66/66 Playwright battery is authoritative close-out
 - RECALL: - **M2** (MEMORY.md:38): ADMIN-BY-DEFAULT directive — every agent runs as admin; elevated helper is standard. | - **M6** (memory/goa
 - Verifier's "not present" for pw_upload_probe.txt was false negative — Verifier on pale, home not_loaded, no shared upload path.
 - Mechanic seated on White (local); shell elevation via elev.py is standard path; home unreachable is normal per load status.
 - OPEN: pw_upload_probe.txt presence conflict — Verifier says absent, 5 agents say present (25B); Orchestrator declined to close either side,
+- Perf markers (render<2s, interaction<100ms, frame≥58fps) landed in ui/core.js; goal #10 last AC closed 2026-11-23.
+- Added missing Archivist #3 decay schtask to non-sandbox queue and batch-deploy script; unblocks their oldest open goal.
+- KG v3 size AC FAILS: JSON is 2,166,230 B (>2 MB cap by 67.5 KB);
+- Goal #3 (Freshness Scoring): decay run #3 done (7900 leaves, 0 flagged), 3/4 ACs met;
 ## Counter
-- inter_agent_replies_this_prompt: 6 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
 
 - 2026-11-17 13:5x ADMIN-BY-DEFAULT (user directive): every agent runs as admin, same as white. Elevated helper service built: elevated_helper.py (SYSTEM, 127.0.0.1:8098) + elev.py client + install_elevated_helper.bat (one UAC click). [SHELL] footer in agent_portal.py now tells all seats to route admin commands through `python elev.py ...` instead of giving up; takes effect on next portal restart. Elevated helper remains optional; no pending work requires a human UAC click. 2026-11-20 03:4x MECHANIC #1+#2 DONE FLEET-WIDE via WinRM (no elevation, no human step): WinRM ops pool+retry+daily rotation schtask verified on all 4 hosts; reboot-recovery watchdog deployed (White: FleetBootRecovery 5-min schtask -> reboot_recover.py; PALE/BLACK/RED: C:/FleetOps/fleet_watchdog.ps1 relaunches Studio :8888 from captured launcher, task State=Ready). Evidence: memory/mechanic/reboot-recovery.jsonl. Also fixed: agent_portal.py had 2 corrupted blocks (literal backslash-quote, syntax error) - repaired, compiles clean. Mechanic #4 load-test pipeline built + baseline captured (portal_loadtest.py, p95 ~60ms idle @8 workers). Designer (#6 status-dots, #2 dark mode) and Mechanic (#2 reboot-recovery dry-runs) tasks dispatched via /api/user-messages.
