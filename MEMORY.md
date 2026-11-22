@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- RECALL: - M5 (memory
 - RECALL: - **M5** (`
 - Auto-loop prompt
 - Goal #9 Theme System: all 31 hardcoded colors in app.css/interactions.css replaced with 8 new design tokens; verified complete.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 Designer goals reached (10/10, open=0); goal #4 verified in ui/app.css L204–233
 - Orchestrator enhanced @media(max-width:768px) in ui/app.css lines 204–233
 - Verifier found memory_integrity.py FAILS with 256 issues, contradicting a prior goal closure — needs re-investigation
+- All 10/10 Designer goals reached; Goal #9 theme system verified (AAA contrast, tokenized, localStorage persistence).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
