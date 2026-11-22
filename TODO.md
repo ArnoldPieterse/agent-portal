@@ -1,3 +1,5 @@
+<537 chars of arguments you sent, already written to TODO.md; elided to save room. Not tool output; the file on disk holds it.>
+
 ## PORTAL UI UPGRADES + FULL CLICK-BATTERY (Playwright) 2026-11-22
 Status: **DONE - 66/66 steps green in real Chromium** (pw_test.py, run pw_run5.log).
 Upgrades shipped this round: theme toggle (light/dark, persisted, icon swap), print-report button, toast click-to-dismiss + Esc on bell panel + Esc closes any open panel/editor dialog, goal bar + Lv chip render on page load.

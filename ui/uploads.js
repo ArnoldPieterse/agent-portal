@@ -424,7 +424,11 @@ async function goalsLoad(){
 }
 $("goalsBtn").onclick=()=>{ const open=$("goalsPanel").classList.toggle("open"); $("goalsBtn").classList.toggle("on",open); if(open)goalsLoad(); };
 // Header goal bar + Lv chip must render on page load, not only after a Goals-tab click (2026-11-22, found by Playwright test):
-fetch("/api/goals").then(r=>r.json()).then(o=>{ if(o&&o.ok&&typeof renderGoalBar==="function")renderGoalBar(o); }).catch(()=>{});
+// 2026-11-23: poll every 30s - the one-shot fetch left the Lv chip frozen at load-time values
+// (dashboard showed "Lv 0" for hours after the backend had already leveled up).
+function goalBarPoll(){ fetch("/api/goals").then(r=>r.json()).then(o=>{ if(o&&o.ok&&typeof renderGoalBar==="function")renderGoalBar(o); }).catch(()=>{}); }
+goalBarPoll();
+setInterval(goalBarPoll, 30000);
 
 $("filesRefresh").onclick=filesLoad;
 

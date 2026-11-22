@@ -4118,6 +4118,7 @@ def _memory_health_snapshot():
 # failure must not break /api/goals or the auto-loop tick that also calls _goals_snapshot.
 LEVELS_FILE = os.path.join(HERE, "memory", "levels.json")
 LEVELS_DIR = os.path.join(HERE, "memory", "levels")
+LEVEL_HEARTBEAT_S = 120   # autonomous level-check tick (2026-11-23): worst-case lag from 100% to level-up
 _LEVEL_LOCK = None
 
 
@@ -5476,6 +5477,20 @@ class Handler(BaseHTTPRequestHandler):
         self._json(200, {"ok": True})
 
 
+def _level_heartbeat():
+    """Autonomous level check (2026-11-23). Previously _check_level_up ran ONLY when a client
+    polled /api/goals or a group run ended - cycle-8 sat at 80/80 from 02:28 to 06:00 (~3.5 h)
+    because per-pass mirrors don't call the snapshot and no client was polling, so the fleet
+    looked "stuck on Lv 0" long after it had actually completed the cycle. This tick makes
+    level-up + GOAL_RESET_PENDING arming independent of both; same code path as /api/goals."""
+    while True:
+        time.sleep(LEVEL_HEARTBEAT_S)
+        try:
+            _goals_snapshot()
+        except Exception:
+            pass
+
+
 if __name__ == "__main__":
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)   # bind FIRST: only the port owner may mutate run state
     _portal_live = True
@@ -5496,6 +5511,7 @@ if __name__ == "__main__":
     except Exception:
         pass
     threading.Thread(target=_autoloop_watchdog, daemon=True).start()   # AUTO-LOOP (2026-11-16)
+    threading.Thread(target=_level_heartbeat, daemon=True).start()   # LEVEL HEARTBEAT (2026-11-23)
     print(f"Agent portal -> http://127.0.0.1:{PORT}  (backed by Studio at {STUDIO})")
     try:
         srv.serve_forever()
