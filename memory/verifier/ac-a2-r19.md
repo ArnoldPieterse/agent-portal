@@ -1,5 +1,5 @@
 # Verifier r19 — AC-A2-1..4 closure (Black seat, 2026-11-14 ~01:5x)
-Scope: "process-level on PID 23704" executed as far as this seat physically allows. Live :8099 from Black remains policy-blocked (re-probed THIS round: TCP [LAN-IP]:8099 → 10035 after full 4 s timeout = filtered, not refused; closed local port control → 10013 immediate; sandbox-python allowlist rejects the host; terminal curl blocked). Live HTTP legs stay Mechanic-as-proxy / White-browser per r7-r8 convention.
+Scope: "process-level on PID 23704" executed as far as this seat physically allows. Live :8099 from Black remains policy-blocked (re-probed THIS round: TCP White:8099 → 10035 after full 4 s timeout = filtered, not refused; closed local port control → 10013 immediate; sandbox-python allowlist rejects the host; terminal curl blocked). Live HTTP legs stay Mechanic-as-proxy / White-browser per r7-r8 convention.
 
 ## Code pins (the build PID 23704 launched from — byte-exact in shared root)
 | file | md5-8 | size | verdict |

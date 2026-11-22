@@ -39,7 +39,7 @@ Closed the two verification gaps flagged by Archivist/Orchestrator without needi
    => Archivist gap #2 RESOLVED: hosts.md cannot re-publish via auto-sync.
 
 2. **NEW LEAK CONFIRMED for the scrub gate: `memory_mirror_hosts.json` is PUBLIC** (raw 200 on main).
-   Content = fleet host table: Red IP_RED, Pale IP_PALE, Black IP_BLACK + per-host
+   Content = fleet host table: Red Red, Pale Pale, Black Black + per-host
    usernames + note that "[REDACTED-CREDENTIAL]" is Unsloth Desktop remote-access only (not an SMB password).
    It is explicitly allowlisted in .gitignore (`!/memory_mirror_hosts.json`) — intentionally tracked for
    memory_mirror.py's internal operation, but therefore also published to public GitHub. Deleting

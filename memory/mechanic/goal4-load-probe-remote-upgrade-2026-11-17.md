@@ -9,7 +9,7 @@ Upgraded `memory/ops/load_probe.py`:
 - Syntax verified (py_compile PASS)
 
 ## Key finding: portal unreachable from Red
-- White ([LAN-IP]):8099 times out from Red (IP_RED) — both TCP connect and HTTP
+- White (White):8099 times out from Red (Red) — both TCP connect and HTTP
 - Portal cannot be started locally on Red: sandbox restricts C:\Users enumeration, breaking
   `_find_sandbox_dir()` in agent_portal.py
 - **Operational requirement**: the daily load probe scheduled task MUST run ON White
@@ -23,6 +23,6 @@ Upgraded `memory/ops/load_probe.py`:
 
 ## Next step (when White is reachable / portal running)
 Run on White: `python memory/ops/load_probe.py --host 127.0.0.1 --port 8099`
-Or from any host with network access: `python memory/ops/load_probe.py --host [LAN-IP] --port 8099`
+Or from any host with network access: `python memory/ops/load_probe.py --host White --port 8099`
 
 One-line runbook: load_probe.py now supports remote targeting; daily probe must execute on the portal host (White) because Red sandbox blocks both outbound to White:8099 and local portal startup.

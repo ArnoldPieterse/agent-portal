@@ -1,5 +1,5 @@
 # smoke8 detached one-shot r20 (Builder, 2026-11-14 auto-continue)
-Closes the TODO NEXT item "smoke8 when convenient" as far as an agent seat can: I run on Black (IP_BLACK) and have NO portal reachability from here — 127.0.0.1:8099 = WinError 10013, LAN [LAN-IP]:8099 = timeout (consistent with r16/r17 sandbox-degradation findings; probe artifact `probe_white_portal_r20.py`).
+Closes the TODO NEXT item "smoke8 when convenient" as far as an agent seat can: I run on Black (Black) and have NO portal reachability from here — 127.0.0.1:8099 = WinError 10013, LAN White:8099 = timeout (consistent with r16/r17 sandbox-degradation findings; probe artifact `probe_white_portal_r20.py`).
 
 ## Artifact
 - `memory/builder/smoke8_detached_r20.ps1` — 2,801 B / md5 6efce4d7e0ee536ddc07f4210ffc8607 (LF).

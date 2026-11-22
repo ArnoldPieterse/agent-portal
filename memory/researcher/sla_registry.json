@@ -6,12 +6,12 @@
   "entries": [
     {
       "id": "black99-unreachable",
-      "question": "Black IP_BLACK :8888 unreachable from White (alias probes builder-q4/verifier-q4 timed out)",
+      "question": "Black Black :8888 unreachable from White (alias probes builder-q4/verifier-q4 timed out)",
       "sla_started": "2026-11-16T15:40",
       "sla_started_note": "OPEN line: 'new since 11-15 3/3 up', first noted 11-16 ~15:4x. Hour is an estimate (log gives only ~15:4x). Carryover from cycle-2, never resolved -> clock NOT reset by cycle-3 restructure.",
       "status": "RESOLVED",
       "owner": "Mechanic",
-      "unblock_cmd": "Test-NetConnection IP_BLACK -Port 8888 from non-sandbox seat -> close or H-OUT",
+      "unblock_cmd": "Test-NetConnection Black -Port 8888 from non-sandbox seat -> close or H-OUT",
       "last_status_change": "2026-11-17 pass-5 (host appears UP per model-load telemetry; conflicting vantage with round-record power-on-blocked)",
       "resolved_ts": "2026-11-17T22:16",
       "resolved_ts_note": "CORRECTED 2026-11-18 ~03:3x (goal#8 integrity fix): original stamp 2026-11-18T12:30 was in the FUTURE vs now (03:3x) - a resolution cannot be time-stamped later than the audit clock. Set to pass-5 telemetry run g-1a1e96ffd6d (11-17 22:16), when Black first showed up. sla_audit.py keys breach logic on status not ts, so no breach math changes.",

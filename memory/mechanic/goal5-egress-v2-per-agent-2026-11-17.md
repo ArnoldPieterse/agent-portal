@@ -22,16 +22,16 @@ Extended `egress_guard.py` + `egress-rules.json` from per-host to per-agent prof
 ### Test results (10/10 PASS)
 | # | agent | target | port | verdict | expected | pass |
 |---|-------|--------|------|---------|----------|------|
-| 1 | mechanic | IP_BLACK | 8888 | ALLOW | ALLOW | Y |
-| 2 | mechanic | IP_RED | 5985 | ALLOW | ALLOW | Y |
+| 1 | mechanic | Black | 8888 | ALLOW | ALLOW | Y |
+| 2 | mechanic | Red | 5985 | ALLOW | ALLOW | Y |
 | 3 | researcher | arxiv.org | 443 | ALLOW | ALLOW | Y |
-| 4 | researcher | IP_BLACK | 445 | DENY | DENY | Y |
+| 4 | researcher | Black | 445 | DENY | DENY | Y |
 | 5 | builder | pypi.org | 443 | ALLOW | ALLOW | Y |
-| 6 | builder | [LAN-IP] | 445 | DENY | DENY | Y |
+| 6 | builder | White | 445 | DENY | DENY | Y |
 | 7 | scribe | 127.0.0.1 | 8099 | ALLOW | ALLOW | Y |
 | 8 | scribe | github.com | 443 | DENY | DENY | Y |
 | 9 | designer | fonts.googleapis.com | 443 | ALLOW | ALLOW | Y |
-| 10 | verifier | IP_PALE | 8099 | ALLOW | ALLOW | Y |
+| 10 | verifier | Pale | 8099 | ALLOW | ALLOW | Y |
 
 ### Acceptance criteria met
 - [x] 8 distinct agent profiles defined + tested

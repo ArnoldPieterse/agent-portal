@@ -11,10 +11,10 @@ Agent: Mechanic (Red seat)
 ## Findings
 | Host | Check | Result | Note |
 |---|---|---|---|
-| Pale | IP_PALE:8888 | PASS 45.6ms | LLM reachable |
-| Black | IP_BLACK:8888 | PASS 39.1ms | LLM reachable |
-| White | [LAN-IP]:8099 | FAIL timeout | Portal not reachable from LAN |
-| Red (self) | IP_RED:8888 | FAIL | LLM not loaded locally |
+| Pale | Pale:8888 | PASS 45.6ms | LLM reachable |
+| Black | Black:8888 | PASS 39.1ms | LLM reachable |
+| White | White:8099 | FAIL timeout | Portal not reachable from LAN |
+| Red (self) | Red:8888 | FAIL | LLM not loaded locally |
 
 ## Assessment
 - Pale + Black confirmed healthy and reachable across the network

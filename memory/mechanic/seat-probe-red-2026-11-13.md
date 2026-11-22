@@ -1,4 +1,4 @@
-# Mechanic seat probe — Red IP_RED (2026-11-13 ~21:3x)
+# Mechanic seat probe — Red Red (2026-11-13 ~21:3x)
 
 For Verifier AC-A2 + Orchestrator evidence file. All facts read from this seat just now.
 
@@ -11,7 +11,7 @@ For Verifier AC-A2 + Orchestrator evidence file. All facts read from this seat j
 - psutil: NO portal/8099 process on Red (only sandbox execs). Running PID 1240 is on White — consistent with plan. No local clobber source from this host.
 
 ## Canonical reachability from Red — BLOCKED
-- UNC \\\\[LAN-IP]\\C$ -> WinError 65 (network access denied; auth refused, NOT timeout => White is up on SMB, 17:18 regression did not recur)
+- UNC \\\\White\\C$ -> WinError 65 (network access denied; auth refused, NOT timeout => White is up on SMB, 17:18 regression did not recur)
 - No creds for White in local memory_mirror_hosts.json (it's a synced copy of the SOURCE-side config: targets = Red/Pale/Black only)
 - No .git in this sandbox; git.exe lives at canonical HERE/mingit — no fetch path
 - memory_mirror.log is canonical-only (not in sync allowlist) — no local copy

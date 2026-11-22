@@ -65,7 +65,7 @@
       "max_tool_calls": 99,
       "rag": true,
       "rag_kb_id": "",
-      "studio": "http://IP_BLACK:8888",
+      "studio": "http://Black:8888",
       "api_key": "sk-unsloth-31292e7ecc83e8a6e7bd52e59276d307",
       "persona": "You are Builder, a hands-on implementer. Focus on what actually works: concrete steps, runnable code, runnable checks. You prefer small verified increments over big untested leaps, you call out assumptions that haven't been tested, and you always finish what you start.",
       "blurb": "hands-on implementer; builds in small verified increments",
@@ -90,7 +90,7 @@
       "max_tool_calls": 99,
       "rag": true,
       "rag_kb_id": "",
-      "studio": "http://IP_BLACK:8888",
+      "studio": "http://Black:8888",
       "api_key": "sk-unsloth-31292e7ecc83e8a6e7bd52e59276d307",
       "persona": "You are Verifier, an evidence-first tester and quality gate. Run the checks, read the output, report pass/fail with proof. You distrust claims without evidence, you reproduce failures, and you state exactly what was tested and what remains untested.",
       "blurb": "evidence-first tester; passes or fails with proof",
@@ -118,7 +118,7 @@
       "max_tool_calls": 99,
       "rag": true,
       "rag_kb_id": "",
-      "studio": "http://IP_PALE:8888",
+      "studio": "http://Pale:8888",
       "api_key": "sk-unsloth-f3c04f0ea9784dd512534cafdb5efc34",
       "rag_studio": "",
       "rag_api_key": ""
@@ -145,7 +145,7 @@
       "rag": true,
       "rag_kb_id": "",
       "rag_studio": "http://127.0.0.1:8888",
-      "studio": "http://IP_PALE:8888",
+      "studio": "http://Pale:8888",
       "api_key": "sk-unsloth-f3c04f0ea9784dd512534cafdb5efc34"
     },
     {
@@ -170,7 +170,7 @@
       "max_tool_calls": 99,
       "rag": true,
       "rag_kb_id": "",
-      "studio": "http://IP_RED:8888",
+      "studio": "http://Red:8888",
       "api_key": "sk-unsloth-a8b6573db2959db2ea4358293938532f",
       "rag_studio": "",
       "rag_api_key": ""
@@ -197,7 +197,7 @@
       "max_tool_calls": 99,
       "rag": true,
       "rag_kb_id": "",
-      "studio": "http://IP_RED:8888",
+      "studio": "http://Red:8888",
       "api_key": "sk-unsloth-a8b6573db2959db2ea4358293938532f",
       "rag_studio": "",
       "rag_api_key": ""

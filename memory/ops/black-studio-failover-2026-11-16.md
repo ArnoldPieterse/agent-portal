@@ -1,4 +1,4 @@
-# Black (IP_BLACK) Studio failover - 2026-11-16 ~21:35 (Studio seat)
+# Black (Black) Studio failover - 2026-11-16 ~21:35 (Studio seat)
 
 ## Incident
 Group runs wedged in auto-continue loop; user messages queued. Root cause chain:
@@ -16,7 +16,7 @@ WSMan reachable but Access is denied for White/empty-pass (WinRM auth policy); n
 - Also fixed stale run_state.json (busy=True from the wedged run) + portal restarted via PortalRun.
 
 ## Restore when Black is healthy
-1. Put Builder/Verifier back to studio=http://IP_BLACK:8888 with their sk-unslo... keys (in the .bak file).
+1. Put Builder/Verifier back to studio=http://Black:8888 with their sk-unslo... keys (in the .bak file).
 2. Verifier model_id back to verifier-q4.
 3. Verify: GET /api/models/status shows ok for both; run one group round.
 

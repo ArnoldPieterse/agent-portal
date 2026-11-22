@@ -1,5 +1,5 @@
 # v1-upgrades round 5 — Mechanic (Red) status
-Date: 2026-11-12 22:33 · Host: Red (red\red, IP_RED) · Source: live probes this turn.
+Date: 2026-11-12 22:33 · Host: Red (red\red, Red) · Source: live probes this turn.
 
 ## Fresh evidence (timestamps 22:32–22:33)
 - SMB root enumeration: 0/4 — black/red/pale/white all WinError 65 (u2-probe/probe_hosts.py, re-run).
@@ -38,7 +38,7 @@ What broke: probe_egress_r4.py swallowed its port-scan output (no print of `out`
 
 ## Addendum r9 (2026-11-12 23:15, Mechanic Red — auto-continue 3/3 re-check)
 - Re-ran both probe scripts at 23:15:33 (raw overwrote r8_egress.txt / r8_studio.txt): byte-for-byte same verdicts as r7/r8 — black/pale 445/5985/8888 OPEN, white :445 only, all :8099/:8000 TIMEOUT, loopback WinError 10013, /v1/models 401 + / 200 on black and pale.
-- New observation: DNS drift — pale now resolves IP_PALE (was .105 in r5 notes), white [LAN-IP] (was .103); port patterns unchanged, probe scripts use names so they track automatically. No verdict impact.
+- New observation: DNS drift — pale now resolves Pale (was .105 in r5 notes), white White (was .103); port patterns unchanged, probe scripts use names so they track automatically. No verdict impact.
 - TODO.md confirmed ABSENT on Red → cannot point Designer at the open design item; that pointer is Orchestrator's (owns TODO.md) or the human's.
 - Verdict final for my lane: MECHANIC WORK COMPLETE on Red, no agent-side action remains until the human re-drop lands. [CONCLUDED]
 

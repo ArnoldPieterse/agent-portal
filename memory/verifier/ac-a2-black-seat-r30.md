@@ -1,6 +1,6 @@
 # Verifier AC-A2 status — BLACK seat, r30 (2026-11-14)
 Seat proven this round: `socket.gethostname()` = **black**; USER/USERNAME env = None (degraded ctx).
-Live portal :8099 lives ONLY on White ([LAN-IP]). Egress policy-block RE-CONFIRMED first-hand:
+Live portal :8099 lives ONLY on White (White). Egress policy-block RE-CONFIRMED first-hand:
 loopback 127.0.0.1:8099 socket refused by sandbox allowlist ("host not in allowlist") -> I CANNOT reach the
 served page from this seat. Matches every prior round.
 

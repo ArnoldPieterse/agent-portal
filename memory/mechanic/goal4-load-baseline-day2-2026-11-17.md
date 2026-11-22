@@ -1,8 +1,8 @@
 # Goal #4 - Load Baseline Day 2 (2026-11-17)
 
 ## What ran
-- load_probe.py executed from Red seat (IP_RED) at 14:13 UTC
-- Target: [LAN-IP]:8099 (White portal)
+- load_probe.py executed from Red seat (Red) at 14:13 UTC
+- Target: White:8099 (White portal)
 - Result: all 260 requests failed (timeout) - portal unreachable from Red
 
 ## Finding

@@ -8,7 +8,7 @@ Companion to `ac-a2-r19.md` (static closure + hand-off). This sweep re-proved no
 | index.html | 67,681 B / **9c6b08e3** MATCH (TRUE canonical held) |
 | uploads/ inventory | **N=1**: `_canary_remote.txt` 212 B → Mechanic live-leg expectation unchanged: panel shows exactly 1 row; `/api/file/raw` must return 200 + exactly 212 bytes |
 
-Network evidence (new): sandbox allowlist now rejects White explicitly — `connect_ex(("[LAN-IP]", 8099))` → "host not in sandbox allowlist"; terminal blocks powershell/curl. Corroborates the r19 filtered-TCP reading: live :8099 from Black is structurally unreachable, Mechanic-as-proxy / White-browser remains the ONLY path for the AC-A2-2 live leg.
+Network evidence (new): sandbox allowlist now rejects White explicitly — `connect_ex(("White", 8099))` → "host not in sandbox allowlist"; terminal blocks powershell/curl. Corroborates the r19 filtered-TCP reading: live :8099 from Black is structurally unreachable, Mechanic-as-proxy / White-browser remains the ONLY path for the AC-A2-2 live leg.
 
 Also confirmed closed by others (evidence on disk): `memory/llm/hosts.md` carries the 2026-11-14 ~01:45 "White model folders → fleet convention" section (Q8_0/Q4_K_S quant-named folders, Researcher path corrections) — that open TODO line is DONE.
 

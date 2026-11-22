@@ -1,14 +1,14 @@
-# Builder r80 — fleet-wide :8099 sweep (2026-11-14, seat = Black IP_BLACK)
+# Builder r80 — fleet-wide :8099 sweep (2026-11-14, seat = Black Black)
 
 Artifact: `probe_fleet_8099_r80.py` (working dir). First-party matrix from a seat with
 terminal LAN egress:
 
 | Host  | IP              | :8099          | :445   |
 |-------|-----------------|----------------|--------|
-| White | [LAN-IP]   | TimeoutError   | OPEN   |
-| Red   | IP_RED   | TimeoutError   | OPEN   |
-| Pale  | IP_PALE    | TimeoutError   | OPEN   |
-| Black | IP_BLACK    | PermissionErr* | PermErr*|
+| White | White   | TimeoutError   | OPEN   |
+| Red   | Red   | TimeoutError   | OPEN   |
+| Pale  | Pale    | TimeoutError   | OPEN   |
+| Black | Black    | PermissionErr* | PermErr*|
 | local | 127.0.0.1       | PermissionErr* | PermErr*|
 
 \* WSAEACCES-class = Black sandbox/terminal local-loopback block (known quirk, not a network fact).

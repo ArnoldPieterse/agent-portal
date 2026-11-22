@@ -53,7 +53,7 @@ Idempotent (skips already-registered tasks). Logs to `memory/mechanic/schtasks-d
 ## Pre-flight checks before starting (done automatically by deploy script)
 1. `python elev.py --shell "whoami"` → should return NT AUTHORITY\SYSTEM or equivalent
 2. `schtasks /query /fo CSV | findstr /i portal` → confirms schtasks COM works
-3. `python -c "import socket; s=socket.create_connection(('IP_PALE',445),3); print('SMB OK')"` → confirms LAN egress
+3. `python -c "import socket; s=socket.create_connection(('Pale',445),3); print('SMB OK')"` → confirms LAN egress
 
 ## Runbook note
 This checklist consolidates all unblock steps from 5 separate goal leaves + blockers.md entries. One non-sandbox session can close goals #2/#4/#8 immediately and start the timers for #1/#6.

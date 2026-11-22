@@ -12,15 +12,15 @@ Status: **IMPLEMENTED + test matrix PASS**
 ## Test matrix result (10 cases)
 | # | target | port | verdict | correct |
 |---|--------|------|---------|----------|
-| 1 | IP_BLACK | 8888 | ALLOW | ✓ |
-| 2 | IP_BLACK | 445 | ALLOW | ✓ |
-| 3 | IP_BLACK | 22 | DENY | ✓ |
+| 1 | Black | 8888 | ALLOW | ✓ |
+| 2 | Black | 445 | ALLOW | ✓ |
+| 3 | Black | 22 | DENY | ✓ |
 | 4 | 127.0.0.1 | 8099 | ALLOW | ✓ |
 | 5 | 127.0.0.1 | 8080 | DENY | ✓ |
 | 6 | github.com | 443 | ALLOW | ✓ |
 | 7 | github.com | 80 | DENY | ✓ |
 | 8 | evil.example.com | 443 | DENY | ✓ |
-| 9 | IP_RED | 8888 | ALLOW | ✓ |
+| 9 | Red | 8888 | ALLOW | ✓ |
 | 10 | 10.0.0.1 | 80 | DENY | ✓ |
 
 ## Acceptance criterion met

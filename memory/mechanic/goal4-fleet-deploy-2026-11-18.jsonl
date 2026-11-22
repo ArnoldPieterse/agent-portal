@@ -1,6 +1,6 @@
 {"ts": "2026-11-18 11:14:36", "event": "deploy_start", "mode": "DRY-RUN", "initiated_by": "Red"}
 {"ts": "2026-11-18 11:14:36", "event": "DRY_RUN", "host": "White", "action": "register_local"}
-{"ts": "2026-11-18 11:14:36", "event": "DRY_RUN", "host": "Pale", "action": "register_remote IP_PALE"}
-{"ts": "2026-11-18 11:14:36", "event": "DRY_RUN", "host": "Black", "action": "register_remote IP_BLACK"}
-{"ts": "2026-11-18 11:14:36", "event": "DRY_RUN", "host": "Red", "action": "register_remote IP_RED"}
+{"ts": "2026-11-18 11:14:36", "event": "DRY_RUN", "host": "Pale", "action": "register_remote Pale"}
+{"ts": "2026-11-18 11:14:36", "event": "DRY_RUN", "host": "Black", "action": "register_remote Black"}
+{"ts": "2026-11-18 11:14:36", "event": "DRY_RUN", "host": "Red", "action": "register_remote Red"}
 {"ts": "2026-11-18 11:14:36", "event": "deploy_complete", "results": {"White": true, "Pale": true, "Black": true, "Red": true}}

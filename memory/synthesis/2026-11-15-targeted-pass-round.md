@@ -4,7 +4,7 @@ Fleet state at round start: 52/80 (65%). Open lanes: Builder 4/10, Verifier 3/10
 
 ## Decisions & outcomes (verbatim, source-cited)
 
-- **Mechanic #3 reboot dry-run: 2/3 PASS, RED BLOCKED.** BLACK .99 PASS (5 models loaded), PALE .39 PASS (4 models; JWT auth working, Bearer key in pale_dl.py is STALE — 401). RED .245 FAIL: WinError 10013 on all ports (8888/5985/445/3389) = White Windows Firewall blocking outbound to .245 specifically. Fix requires admin: `netsh advfirewall firewall add rule name="LAN Red 245" dir=out action=allow remoteip=IP_RED protocol=TCP`. Source: memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md (Mechanic, 17:05).
+- **Mechanic #3 reboot dry-run: 2/3 PASS, RED BLOCKED.** BLACK .99 PASS (5 models loaded), PALE .39 PASS (4 models; JWT auth working, Bearer key in pale_dl.py is STALE — 401). RED .245 FAIL: WinError 10013 on all ports (8888/5985/445/3389) = White Windows Firewall blocking outbound to .245 specifically. Fix requires admin: `netsh advfirewall firewall add rule name="LAN Red 245" dir=out action=allow remoteip=Red protocol=TCP`. Source: memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md (Mechanic, 17:05).
 
 - **PALE auth fix documented.** Bearer key `sk-lm-2052...` stale; JWT login (`POST /api/auth/login`) is the working path. fleet_reload.py already uses JWT for Pale. Action: note in pale_dl.py that Bearer is deprecated. Source: memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md (Mechanic).
 

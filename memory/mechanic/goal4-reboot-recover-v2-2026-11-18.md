@@ -8,9 +8,9 @@
   - Proper timeout handling (3s TCP connect timeout)
 
 ## Current state (fresh probe 2026-11-18T00:51Z from Red sandbox)
-- Black IP_BLACK:8888 = OPEN
-- Pale IP_PALE:8888 = OPEN  
-- Red IP_RED:8888 = closed (sandbox self-probe limitation, known)
+- Black Black:8888 = OPEN
+- Pale Pale:8888 = OPEN  
+- Red Red:8888 = closed (sandbox self-probe limitation, known)
 - Portal :8099 = DOWN (expected - portal runs on White, not this seat)
 
 ## Remaining for closure

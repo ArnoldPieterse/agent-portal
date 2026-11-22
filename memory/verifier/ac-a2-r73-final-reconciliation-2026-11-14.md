@@ -27,7 +27,7 @@ CONCLUSION: **no agent op ever touched White-canonical index.html.** v2.2 (f18b2
 
 ## 4. AC-A2 verdict (final from Black)
 - Content leg (v2.2 f18b24c4 markers): **PASS** — r71b sweep: files-panel set (#filesBtn/#filesPanel//api/uploads//api/file/raw), Fleet+Ops panels, Stop+Reset, linkifyFiles, div 62/62, script 2/2, no /api/uploads poll (AC-A2-4 structurally holds).
-- Process/live leg (served-bytes vs disk on PID 23704, /api/fleet row, console clean): **BLOCKED from every agent seat** — Pale loopback WinError 10013 (designer r30); Black LAN :8099/:8888 timeout (my white-rename closeout; builder smoke8-r20: 127.0.0.1=10013, [LAN-IP]=timeout). Only the White console can execute it.
+- Process/live leg (served-bytes vs disk on PID 23704, /api/fleet row, console clean): **BLOCKED from every agent seat** — Pale loopback WinError 10013 (designer r30); Black LAN :8099/:8888 timeout (my white-rename closeout; builder smoke8-r20: 127.0.0.1=10013, White=timeout). Only the White console can execute it.
 - INDEX convergence leg: **BLOCKED** (same mirror topology; Scribe vehicle staged, apply-on-White required).
 AC-A2 is NOT closed. Closing it now would be a false certification; I refuse to do that.
 

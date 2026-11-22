@@ -20,7 +20,7 @@ Scribe. Source: this round's per-agent status reports (Builder, Verifier, Design
 - **Status: UNRESOLVED, pending Orchestrator ratify/reject (Orchestrator msg this round did not yet adjudicate). Owner of next action: Orchestrator.**
 
 ### C3 — WinError 10013: same symptom, conflicting diagnoses (Mechanic vs prior adjudication)
-- Mechanic msg: "Red BLOCKED: WinError 10013 on all ports from White's firewall" -> proposes admin `netsh advfirewall ... remoteip=IP_RED` rule as unblock.
+- Mechanic msg: "Red BLOCKED: WinError 10013 on all ports from White's firewall" -> proposes admin `netsh advfirewall ... remoteip=Red` rule as unblock.
 - Designer msg: same WinError 10013 attributed to "sandbox egress is blocked."
 - Prior adjudication on record (TODO.md line 22, archivist r14 correction): "WinError-10013 note reworded to **seat-egress artifact**" — i.e. NOT a real LAN firewall block.
 - **Tension: Mechanic's admin-firewall fix contradicts the earlier seat-egress-artifact adjudication. Needs ONE measurement to disambiguate (sandbox seat vs White LAN egress). Owner of next action: Mechanic (measure once); if still blocked, document exact failure and move on per user directive — do not loop.**

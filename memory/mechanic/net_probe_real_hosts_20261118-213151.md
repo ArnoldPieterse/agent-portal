@@ -6,7 +6,7 @@ Goal: One-pass probe script covering all four hosts (White/Pale/Black/Red)
 ## What changed
 - net_probe.py HOSTS dict was hardcoded to 127.0.0.1 for all entries (sandbox-only)
 - Now reads real IPs from memory_mirror_hosts.json at startup
-- Production mapping: white=127.0.0.1:8099, red=IP_RED:3389, pale=IP_PALE:3389, black=IP_BLACK:3389
+- Production mapping: white=127.0.0.1:8099, red=Red:3389, pale=Pale:3389, black=Black:3389
 - Added --local flag for sandbox testing (forces all to 127.0.0.1)
 
 ## Verification

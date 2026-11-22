@@ -55,10 +55,10 @@ broken external citations (v1 miscounted them as dead).
 | `http://127.0.0.1:8888/models` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/ops/blockers.md |
 | `http://127.0.0.1:8888/models`` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/llm/model-id-check-2026-11-15.md |
 | `http://127.0.0.1:8888/v1/models`` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/ops/mechanic-researcher-alias-diagnosis-2026-11-16.md |
-| `http://[LAN-IP]:8099` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/portal/ui-upgrades-r4.md |
-| `http://[LAN-IP]:8099/api/file/raw?path=TODO.md`` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/mechanic/red-white-reachability-2026-11-14.md |
-| `http://IP_RED:8888` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/archivist/REPAIR_2026-11-13.md |
-| `http://IP_BLACK:8888` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/llm/hosts.md, memory/ops/black-studio-failover-2026-11-16.md, m |
+| `http://White:8099` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/portal/ui-upgrades-r4.md |
+| `http://White:8099/api/file/raw?path=TODO.md`` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/mechanic/red-white-reachability-2026-11-14.md |
+| `http://Red:8888` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/archivist/REPAIR_2026-11-13.md |
+| `http://Black:8888` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/llm/hosts.md, memory/ops/black-studio-failover-2026-11-16.md, m |
 | `http://[redacted-lan-template]`` | TEMPLATE | n/a | placeholder/template token, not a real citation | memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md |
 | `http://[redacted-lan-template`` | TEMPLATE | n/a | placeholder/template token, not a real citation | memory/researcher/citation-manifest-2026-11-15.md |
 | `http://host:port/` | EXTERNAL | NOT-RECHECKED | (not in v1 sample; live-check on a net seat) | memory/archivist/citation-audit-cycle5-report.md |

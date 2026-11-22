@@ -22,4 +22,4 @@ Mechanic lane: [CONCLUDED] - nothing further executable from Red seat.
 
 ## Correction + fresh evidence (auto-continue round, ~08:4x)
 - CORRECTION: prior chat reply cited artifact names `fleet-stamp-2026-11-14-r55-black-pass.md` / `smoke8-results-partial-2026-11-14.md` — WRONG. Actual on-disk names: `memory/mechanic/fleet-stamp-r55-2026-11-14.md` (1,961 B) and `memory/mechanic/smoke8-partial-red-2026-11-14.md` (2,488 B). Contents as claimed; names were misstated.
-- FRESH: direct socket probe to [LAN-IP]:8099/:8888 from Red python sandbox REFUSED at sandbox allowlist layer ("host not in sandbox allowlist") — independent corroboration that White is unreachable from this seat; gate remains human-owned (Arnold console pass). No state change.
+- FRESH: direct socket probe to White:8099/:8888 from Red python sandbox REFUSED at sandbox allowlist layer ("host not in sandbox allowlist") — independent corroboration that White is unreachable from this seat; gate remains human-owned (Arnold console pass). No state change.

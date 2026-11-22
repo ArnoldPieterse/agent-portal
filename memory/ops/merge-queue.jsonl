@@ -211,3 +211,5 @@
 {"ts": "2026-11-22 15:34:19", "file": "agent_portal.py", "sha": "748a909928", "size": 247061, "snapshot": "memory/ops/merge-queue/agent_portal.py.748a909928"}
 {"ts": "2026-11-22 15:39:27", "file": "ui/core.js", "sha": "8d705314c9", "size": 37407, "snapshot": null}
 {"ts": "2026-11-22 15:42:21", "file": "agent_portal.py", "sha": "1b27474ccb", "size": 257129, "snapshot": "memory/ops/merge-queue/agent_portal.py.1b27474ccb"}
+{"ts": "2026-11-22 15:50:11", "file": "SETUP_HISTORY.md", "sha": "4dd807fb2b", "size": 5157, "snapshot": "memory/ops/merge-queue/SETUP_HISTORY.md.4dd807fb2b"}
+{"ts": "2026-11-22 15:50:11", "file": "todo_done_parts/TODO_done_part_001.md", "sha": "6de61ed426", "size": 41272, "snapshot": null}

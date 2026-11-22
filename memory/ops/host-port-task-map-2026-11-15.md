@@ -23,11 +23,11 @@ White rows VERIFIED live 2026-11-15 (probe + schtasks query). Remote rows from m
 | PortalFleetProbe | every 10 min | fleet_probe.py 4-host port probe, failures -> ⚠missing:fleet_probe.log |
 | RecoverAll | on demand / boot | recover_all.py model reload per llm recipe |
 
-## Red (IP_RED) - seats: Scribe, Mechanic
+## Red (Red) - seats: Scribe, Mechanic
 Ports: 8888 Studio (Bearer auth ON), 3389 RDP, 445 SMB, 5985 WinRM. Tasks: PortalRun + RecoverAll (per hosts.md 11-12 recovery line). PENDING power-on re-verify.
 
-## Pale (IP_PALE) - seats: Designer, Archivist
+## Pale (Pale) - seats: Designer, Archivist
 Ports: 8888 Studio, 445 SMB, 5985 WinRM (cmdkey TERMSRV target per recon). Tasks: PortalRun + RecoverAll (same rollout). PENDING power-on re-verify.
 
-## Black (IP_BLACK) - seats: Builder, Verifier
+## Black (Black) - seats: Builder, Verifier
 Ports: 8888 Studio (was bound 127.0.0.1-only; LAN access via JWT lan-access route, auto_start), 445 SMB, 5985 WinRM. Tasks: PortalRun + RecoverAll (same rollout). PENDING power-on re-verify.

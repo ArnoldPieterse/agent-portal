@@ -1,12 +1,12 @@
 # OPS NOTE 2026-11-15 ~11:40 - Mechanic: White :8099/:8888 unreachable from LAN (pre-existing, now documented)
 
-**Finding:** portal :8099 and Studio :8888 on White ([LAN-IP]) TIME OUT from the Red seat,
+**Finding:** portal :8099 and Studio :8888 on White (White) TIME OUT from the Red seat,
 while White's 445/3389 are OPEN. Black/Pale :8888 reachable normally. So it is White-specific
 inbound filtering, not a dead host and not my egress.
 
 **Evidence (live probe `probe_white_goals_r24.py`, Red seat, 2026-11-15 11:39):**
-- [LAN-IP]: 445 OPEN 0.002s | 3389 OPEN 0.028s | 8099 TimeoutError 4.01s
-- IP_BLACK (Black): 445 + 8888 OPEN | IP_PALE (Pale): 445 + 8888 OPEN
+- White: 445 OPEN 0.002s | 3389 OPEN 0.028s | 8099 TimeoutError 4.01s
+- Black (Black): 445 + 8888 OPEN | Pale (Pale): 445 + 8888 OPEN
 - /api/status and /api/goals via HTTP: urlopen timeout (6s)
 - First observed 2026-11-14 02:46 (`lan_probe_result.txt`); WinRM 5985/5986 to White blocked since 2026-11-13 (`probe_winrm_r17.txt`). NOT caused by today's windowless restart.
 

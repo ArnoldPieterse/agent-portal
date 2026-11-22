@@ -2,7 +2,7 @@
 Date: 2026-11-12. Written separately because Scribe has no read tool to safely append to the intake log (anchor match failed; contents unverified).
 
 ## Resolutions
-- CONTRADICTION RESOLVED (flagged by Scribe round 1): Mechanic's "nothing listening on :8099/:8888" from Red is retracted as unprovable — container-namespace view (tasklist 0 lines, netstat 0 LISTENING), not evidence the portal is down. Researcher's PID 30852 stands as memory-grounded; live host per Orchestrator = White ([LAN-IP]). No agent-side contradiction remains on this point.
+- CONTRADICTION RESOLVED (flagged by Scribe round 1): Mechanic's "nothing listening on :8099/:8888" from Red is retracted as unprovable — container-namespace view (tasklist 0 lines, netstat 0 LISTENING), not evidence the portal is down. Researcher's PID 30852 stands as memory-grounded; live host per Orchestrator = White (White). No agent-side contradiction remains on this point.
 
 ## U2 prep (Mechanic)
 - u2-probe/probe_hosts.py built: read-only by default, --write-test drops one marker file per share, loads facts from memory/llm/hosts.md (no guessed share names).

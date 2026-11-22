@@ -13,9 +13,9 @@ Source of truth: agents.json `model_id` values vs Studio :8888 (GET /models + GE
 ## Remote seats — UNVERIFIED this round (hosts unreachable at check time)
 | model_id | seat host | result |
 |---|---|---|
-| scribe-q8, mechanic-q4 | IP_RED | host unreachable via /api/fleet |
-| designer-q4, archivist-q8 | IP_PALE | host unreachable via /api/fleet |
-| verifier-q4 (Builder seat also .99) | IP_BLACK | host unreachable via /api/fleet |
+| scribe-q8, mechanic-q4 | Red | host unreachable via /api/fleet |
+| designer-q4, archivist-q8 | Pale | host unreachable via /api/fleet |
+| verifier-q4 (Builder seat also .99) | Black | host unreachable via /api/fleet |
 
 Fleet snapshot: White busy (Q8_0 resident, generations=1); all three LAN hosts state=unknown reason=unreachable.
 ACTION: re-run remote half when any of .245/.39/.99 is up; log result here (append, do not delete).
@@ -23,11 +23,11 @@ ACTION: re-run remote half when any of .245/.39/.99 is up; log result here (appe
 ## 2026-11-15 ~11:0x - REMOTE HALF RE-RUN: PASS 6/6 (all three hosts powered back on by human ~10:5x)
 | model_id | seat host | result |
 |---|---|---|
-| Qwen3.8-27B-Q8_0 (Builder) | IP_BLACK | OK - resolves as folder model in /v1/models (not an alias; same pattern as White) |
-| verifier-q4 | IP_BLACK | OK - alias registered on host |
-| designer-q4 | IP_PALE | OK - alias registered on host |
-| archivist-q8 | IP_PALE | OK - alias registered on host |
-| scribe-q8 | IP_RED | OK - alias registered on host |
-| mechanic-q4 | IP_RED | OK - alias registered on host |
+| Qwen3.8-27B-Q8_0 (Builder) | Black | OK - resolves as folder model in /v1/models (not an alias; same pattern as White) |
+| verifier-q4 | Black | OK - alias registered on host |
+| designer-q4 | Pale | OK - alias registered on host |
+| archivist-q8 | Pale | OK - alias registered on host |
+| scribe-q8 | Red | OK - alias registered on host |
+| mechanic-q4 | Red | OK - alias registered on host |
 Local re-check same round: Qwen3.8-27B-Q8_0 loaded=true; aliases atlas-q8 + quinn-q4 registered (3/3 OK).
 SURFACED STATE (Mechanic goal 9): all three remotes are UP but have NO model resident in VRAM (/v1/models lists registered models + aliases, none loaded) - remote agents cannot generate until their bound model is loaded. Fleet panel shows this live (state=idle, no models). Decision needed: load the six bound models (fleet_reload.py has the per-host recipe) or leave idle.

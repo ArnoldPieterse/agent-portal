@@ -1,6 +1,6 @@
 # Goal #4 Status — Portal Load Test (2026-11-17)
 
-**Seat**: Red (IP_RED) sandbox
+**Seat**: Red (Red) sandbox
 **Status**: IN PROGRESS — 1/7 good baseline days collected
 
 ## What works
@@ -9,7 +9,7 @@
 - Baseline file at `memory/ops/load-baseline.jsonl` (4 entries, only 1 valid)
 
 ## What's blocking
-- Portal runs on White ([LAN-IP]:8099); this seat is Red
+- Portal runs on White (White:8099); this seat is Red
 - Red sandbox firewall blocks outbound :8099 to White (WinError 10013 WSAEACCES)
 - Probe MUST run from White seat where localhost:8099 is the portal
 

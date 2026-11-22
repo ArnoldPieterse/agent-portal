@@ -6,7 +6,7 @@
 ## 2026-11-13 r58 (auto-continue — integrity re-check + egate re-probe, lane COMPLETE)
 - [x] All four deliverables byte-intact on Pale: ws-b-increment1/index.html sha256-12=**b82dd3b77f4e** (= record); designer/increment2-portal-mock.html sha256-12=**b4ede3daf6df** (= record; r57's "16,053 B" was a typo — file is 16,154 B, hash authoritative); memory/portal/increment2.md sha256-12=**694cf6e35dcd** (hash of record first logged here); designer/files-panel-patch.md sha256-12=**5278ddf4833c** (same).
 - [x] Patch structurally complete: button+CSS+JS blocks, AC-A2-1…AC-A2-4, endpoint contract (/api/uploads + /api/file/raw), mirror line for index.html into _sync_workspace_to_sandbox.
-- [x] Egress gate re-proven, NEW enforcement layer: python sandbox now hard-blocks 127.0.0.1:8099 AND [LAN-IP]:8099 via host allowlist ("host not in sandbox allowlist") — previously WinError 10013/timeout; Pale lane still cannot reach the live portal.
+- [x] Egress gate re-proven, NEW enforcement layer: python sandbox now hard-blocks 127.0.0.1:8099 AND White:8099 via host allowlist ("host not in sandbox allowlist") — previously WinError 10013/timeout; Pale lane still cannot reach the live portal.
 - [x] No new drops: uploads/, portal-upgrade/, memory/synthesis/ all absent.
 - Lane state: DESIGN DELIVERABLES COMPLETE (4 files, hashes on record above). Remaining work is NOT mine: Builder ports Inc-1 → Inc-2 → Files patch into live index.html (row-5 MERGE, diff-reconcile); Orchestrator ratifies queue; Verifier adjudicates AC-6…AC-10 + AC-A2-* from a :8099-reachable seat. Next Designer action only if: port lands (I can then diff my mocks vs live merge), or spec change requested.
 ## 2026-11-13 r57 (auto-continue 3/3 — lane integrity re-check, CLOSED)

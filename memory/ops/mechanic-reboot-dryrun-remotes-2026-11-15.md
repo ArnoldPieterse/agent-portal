@@ -10,13 +10,13 @@
 
 ## RED block detail
 - WinError 10013 ("access to a socket in a way forbidden by its access permissions") on ALL ports tested: 8888, 5985, 445, 3389.
-- This is White's Windows Firewall blocking outbound TCP to IP_RED specifically (Black/Pale reachable normally in same run).
+- This is White's Windows Firewall blocking outbound TCP to Red specifically (Black/Pale reachable normally in same run).
 - Not a host-down issue: the error is local (socket forbidden), not timeout or connection-refused.
 - `ping` also fails with "Unable to contact IP driver" (ICMP outbound likely filtered globally).
 
 ## Fix needed (HUMAN GATE - requires admin on White)
 ```
-netsh advfirewall firewall add rule name="LAN Red 245" dir=out action=allow remoteip=IP_RED protocol=TCP
+netsh advfirewall firewall add rule name="LAN Red 245" dir=out action=allow remoteip=Red protocol=TCP
 ```
 Or identify and remove the blocking rule:
 ```

@@ -1,8 +1,8 @@
 # OPS r6 - Mechanic probe from Red seat (2026-11-13 19:39 local)
 
-## Fleet health (from Red, IP_RED)
-- Black IP_BLACK :8888 Studio UP (HTTP 200); Pale IP_PALE :8888 Studio UP (HTTP 200).
-- White [LAN-IP]: :445 OPEN, :3389 OPEN, :8099 TIMEOUT, :8888 TIMEOUT, :5985/:5986 TIMEOUT.
+## Fleet health (from Red, Red)
+- Black Black :8888 Studio UP (HTTP 200); Pale Pale :8888 Studio UP (HTTP 200).
+- White White: :445 OPEN, :3389 OPEN, :8099 TIMEOUT, :8888 TIMEOUT, :5985/:5986 TIMEOUT.
   => portal down OR localhost-bound (indistinguishable from LAN; WinRM closed). Arnold to confirm on White: `python probe_portal.py`.
 - Red local :8099 -> WSAEACCES 10013 (no usable local portal on this seat).
 

@@ -7,9 +7,9 @@
 | Host | Target | Status | Latency |
 |------|--------|--------|---------|
 | White | 127.0.0.1:8099 | FAIL | 24.0ms (sandbox egress 10013, known) |
-| Pale | IP_PALE:8888 | **PASS** | 31.2ms |
-| Black | IP_BLACK:8888 | **PASS** | 3.4ms |
-| Red | IP_RED:8888 | FAIL | 0.1ms (self-probe limitation, known) |
+| Pale | Pale:8888 | **PASS** | 31.2ms |
+| Black | Black:8888 | **PASS** | 3.4ms |
+| Red | Red:8888 | FAIL | 0.1ms (self-probe limitation, known) |
 
 ## Verdict
 - Pale + Black: **CONFIRMED REACHABLE** - recovery script would detect portal-down and initiate start.

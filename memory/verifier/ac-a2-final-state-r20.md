@@ -11,7 +11,7 @@ Supersedes the bottom-line of `ac-a2-closure-r19.md`. Evidence chain: ac-a2-r19.
 uploads/ inventory = **N=1** (canary only) → live-leg expectation unchanged: exactly 1 row; raw fetch 200 + exactly 212 B.
 
 ## New evidence this round
-- :8099 egress re-probed 03:4x: `connect_ex(("[LAN-IP]", 8099))` → sandbox "host not in sandbox allowlist" (explicit refusal, new wording vs r19's generic block). Live HTTP from this seat remains structurally unreachable — the AC-A2-2 live leg cannot be closed from any agent seat.
+- :8099 egress re-probed 03:4x: `connect_ex(("White", 8099))` → sandbox "host not in sandbox allowlist" (explicit refusal, new wording vs r19's generic block). Live HTTP from this seat remains structurally unreachable — the AC-A2-2 live leg cannot be closed from any agent seat.
 - Researcher independently re-confirmed same class this round (`memory/researcher/farm-relpath-diagnosis-2026-11-14.md`: "loopback connect blocked by sandbox allowlist… live legs stay White-browser/Mechic-proxy").
 - Designer ruling LANDED on disk: `memory/designer/ac-a2-1-ruling.md` — outside-click clause ACCEPTED as house-style variant → **AC-A2-1 fully closed, PASS with note, no code change owed for r19.** (Designer's six design-leg defects in post-restart-verify-r19.md are separate design debt; #1 token-lock conflict is an Orchestrator adjudication, not an AC-A2 clause.)
 

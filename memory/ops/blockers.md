@@ -16,7 +16,7 @@
 ## [NEEDS-HUMAN 2026-11-20] Verifier #4 Performance Regression Gate: live-measurement leg blocked by :8099 egress wall
 **Class:** WinError 10013 (sandbox egress block to localhost:8099) — SAME wall as Mechanic #4, Verifier #2 SLO, Orchestrator #2. Do NOT re-probe from a sandbox seat.
 **Status:** `memory/verifier/perf_gate.py` is BUILT and logic-verified (clean PASS + negative-test path both exercised). But its live baseline cannot be captured here: every /api/* sample returns errors (19/20 endpoints p50=None) because the portal is unreachable from this seat. I deleted the invalid baseline so it is not reused.
-**Unblock (one-time, non-sandbox White seat with :8099 egress):** run `python memory/verifier/deploy_perf_gate.py` � single command that captures baseline, registers daily schtask, and runs initial gate check. Closure = 3 consecutive daily PASS + negative test.
+**Unblock (one-time, non-sandbox White seat with :8099 egress):** run `python memory/verifier/deploy_perf_gate.py` � single command that captures baseline, registers daily schtask, and runs initial gate check. Closure = 3 consecutive daily PASS + negative test.
 
 ## [NEEDS-HUMAN 2026-11-20 Builder] #3 Build-Verify-Pin: memory_mirror.py is 0 bytes in sandbox
 **Class:** file-absent (0-byte placeholder, canonical lives on White). Not a code bug.
@@ -40,9 +40,9 @@ Evidence: memory/orchestrator/browser-blocker-reconciliation-2026-11-19.md
 ## [RESOLVED 2026-11-17 ~14:07] White SANDBOX seat cannot LAN-probe Red .245 (confirmed)
 **Resolution:** Red confirmed powered on + reachable via /api/health 200 at 14:07 UTC.
 Both scribe-q8 and mechanic-q4 loaded=True. Blocker cleared; no further probe needed from sandbox.
-Mechanic asked for `Test-NetConnection IP_RED -Port 445` and `-Port 8888` to close goal #2 Red leg. Attempted from THIS White sandbox seat, both paths fail:
+Mechanic asked for `Test-NetConnection Red -Port 445` and `-Port 8888` to close goal #2 Red leg. Attempted from THIS White sandbox seat, both paths fail:
 - `powershell -Command "Test-NetConnection ..."` -> terminal tool policy: **Blocked command(s) for safety: powershell**.
-- Python `socket.connect_ex(("IP_RED", 445/8888))` -> sandbox egress allowlist rejects the destination ("network destination is not a literal the sandbox can check"). Same class as prior WinError 10013.
+- Python `socket.connect_ex(("Red", 445/8888))` -> sandbox egress allowlist rejects the destination ("network destination is not a literal the sandbox can check"). Same class as prior WinError 10013.
 **Conclusion:** Red .245 reachability CANNOT be verified from a White sandbox seat, by any tool. The probe must run from a **non-sandbox seat with LAN egress** (White ops terminal / RDP session, or a seated agent on Pale/Black/Red). Do NOT re-probe from here — no pass can succeed.
 Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/ops/probe-evidence.jsonl` or goal #2 leaf.
 - [18:04] ~~NEEDS-HUMAN: seat Orchestrator model unreachable~~ **RESOLVED 2026-11-19** (seat running, confirmed in auto-loop status)
@@ -88,7 +88,7 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - Status: Instrumentation verified live in memory_mirror.py (log_event at 4 sites). Self-test PASS. Parse pipeline validated end-to-end (parse_mirror_events.py). Closure runbook pre-staged.
 - SHARPENED DIAGNOSIS (2026-11-17 auto-loop pass, seeded a real run from this White/Red sandbox seat):
   - `python memory_mirror.py -v` -> ALL 3 hosts: `connect: System error 5 ... Access is denied.`
-  - This is an **SMB AUTH** failure, NOT the prior "egress block / WinError 10013" class. The seat CAN reach IP_RED/.39/.99 on the LAN; `net use` with the config's empty SMB password is rejected.
+  - This is an **SMB AUTH** failure, NOT the prior "egress block / WinError 10013" class. The seat CAN reach Red/.39/.99 on the LAN; `net use` with the config's empty SMB password is rejected.
   - `python elev.py` -> **helper ABSENT at this seat** (same as Verifier #2 entry); cannot escalate from here.
 - Conclusion: a one-off seed from an ephemeral sandbox session will NOT satisfy the "one-week LIVE dataset" anyway — that requires the mirror to run PERSISTENTLY on the persistent White host (C:\Projects\Workspace) where `net use` sessions + SMB creds persist, via its scheduled task / watchdog.
 - Unblock (persistent White host, owner = Mechanic or Orchestrator): confirm the MirrorSync schtask/watchdog is registered AND that `net use \\192.168.1.<ip>\C$` succeeds there with working creds; then it self-seeds + accumulates through 11-24. Closure = `python memory/researcher/parse_mirror_events.py <live-log>` per runbook.

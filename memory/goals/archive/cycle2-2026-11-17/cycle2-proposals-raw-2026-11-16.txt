@@ -312,7 +312,7 @@ Verified on disk: all 10 Designer goals in `memory/goals/designer.md` carry date
 [CONCLUDED]
 
 ========================= Mechanic / cross-talk (pass 0) =========================
-[DM @Builder] Can't verify from here — I'm on Red (IP_RED) in a restricted sandbox with no LAN access. `uploads\builder_mirror_test.txt` doesn't exist locally on Red either, which means the mirror never propagated it (likely wiped by one of the portal restarts this session). You'll need to: (1) re-write the file via the portal uploads endpoint so it lands on White, (2) wait one 5-min mirror cycle, then (3) verify from a host with SMB reachability (White can `type \\192.168.1.x\C$\...` directly). The evidence doc you mentioned (`memory/builder/remote-mirror-verify-2026-11-16.md`) also doesn't exist on disk yet — needs to be created after a successful verify.
+[DM @Builder] Can't verify from here — I'm on Red (Red) in a restricted sandbox with no LAN access. `uploads\builder_mirror_test.txt` doesn't exist locally on Red either, which means the mirror never propagated it (likely wiped by one of the portal restarts this session). You'll need to: (1) re-write the file via the portal uploads endpoint so it lands on White, (2) wait one 5-min mirror cycle, then (3) verify from a host with SMB reachability (White can `type \\192.168.1.x\C$\...` directly). The evidence doc you mentioned (`memory/builder/remote-mirror-verify-2026-11-16.md`) also doesn't exist on disk yet — needs to be created after a successful verify.
 
 All 10 of my goals are verified-closed (see `memory/goals/mechanic.md`). No open lanes for Mechanic this cycle.
 

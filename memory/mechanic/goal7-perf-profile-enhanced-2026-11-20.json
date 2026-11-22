@@ -5,7 +5,7 @@
   "action": "perf_profile.py enhanced with --verify and --portal-url flags; deploy_perf_profile.bat updated to use --verify",
   "changes": [
     "Added verify() function: checks perf-profile.json has non-null p50/p95/p99 for all endpoints + percentile ordering",
-    "Added --portal-url CLI arg: allows pointing at remote portal (e.g. http://[LAN-IP]:8099)",
+    "Added --portal-url CLI arg: allows pointing at remote portal (e.g. http://White:8099)",
     "PORTAL_URL now reads FLEET_PORTAL_URL env var as fallback",
     "deploy_perf_profile.bat step 2 now uses 'python perf_profile.py --verify' instead of inline python -c"
   ],

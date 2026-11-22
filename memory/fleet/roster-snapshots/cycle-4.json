@@ -120,7 +120,7 @@
       "max_tool_calls": 99,
       "rag": true,
       "rag_kb_id": "",
-      "studio": "http://IP_PALE:8888",
+      "studio": "http://Pale:8888",
       "api_key": "sk-unsloth-f3c04f0ea9784dd512534cafdb5efc34",
       "rag_studio": "",
       "rag_api_key": ""
@@ -147,7 +147,7 @@
       "rag": true,
       "rag_kb_id": "",
       "rag_studio": "http://127.0.0.1:8888",
-      "studio": "http://IP_PALE:8888",
+      "studio": "http://Pale:8888",
       "api_key": "sk-unsloth-f3c04f0ea9784dd512534cafdb5efc34"
     },
     {
@@ -172,7 +172,7 @@
       "max_tool_calls": 99,
       "rag": true,
       "rag_kb_id": "",
-      "studio": "http://IP_RED:8888",
+      "studio": "http://Red:8888",
       "api_key": "sk-unsloth-a8b6573db2959db2ea4358293938532f",
       "rag_studio": "",
       "rag_api_key": ""

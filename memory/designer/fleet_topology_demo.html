@@ -49,8 +49,8 @@ code{background:#2a3342;border-radius:5px;padding:1px 5px;font-size:11px;color:v
   // Fallback dataset (real /api/fleet schema) so the diagram renders even with no egress.
   var SAMPLE = { ts: Date.now() / 1000, ttl: 30, hosts: [
     { host: "White (local)", base: "http://127.0.0.1:8888", agents: ["Orchestrator","Researcher","Builder","Verifier","Designer","Archivist","Scribe","Mechanic"], models: [{id:"atlas-q8",quant:"Q8"},{id:"scribe-q8",quant:"Q8"}], generations: 0, state: "idle", last_seen: null, reason: "" },
-    { host: "Black .244", base: "http://[LAN-IP]:8888", agents: ["Builder","Verifier"], models: [{id:"atlas-q8",quant:"Q8"}], generations: 1, state: "busy", last_seen: null, reason: "" },
-    { host: "Red .245", base: "http://IP_RED:8888", agents: ["Mechanic"], models: [{id:"mech-q4",quant:"Q4"}], generations: 0, state: "unknown", last_seen: null, reason: "unreachable" }
+    { host: "Black .244", base: "http://Black:8888", agents: ["Builder","Verifier"], models: [{id:"atlas-q8",quant:"Q8"}], generations: 1, state: "busy", last_seen: null, reason: "" },
+    { host: "Red .245", base: "http://Red:8888", agents: ["Mechanic"], models: [{id:"mech-q4",quant:"Q4"}], generations: 0, state: "unknown", last_seen: null, reason: "unreachable" }
   ]};
 
   function esc(s){ return String(s==null?"":s).replace(/[&<>\"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }

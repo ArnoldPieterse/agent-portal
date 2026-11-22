@@ -27,7 +27,7 @@
 - **Conflict resolved:** two ops records disagreed. `memory/ops/browser-acceptance-workaround.md` (my fleet decision) said browser = NEEDS-HUMAN, static
 - Mechanic's exit-0/DOM result does NOT reproduce here. (Edge still hangs per prior notes; Chrome fails faster with exit 3.) A direct `cmd` run reportin
 - Both scribe-q8 and mechanic-q4 loaded=True. Blocker cleared; no further probe needed from sandbox.
-- Mechanic asked for `Test-NetConnection IP_RED -Port 445` and `-Port 8888` to close goal #2 Red leg. Attempted from THIS White sandbox seat, bot
+- Mechanic asked for `Test-NetConnection Red -Port 445` and `-Port 8888` to close goal #2 Red leg. Attempted from THIS White sandbox seat, bot
 - Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/ops/probe-evidence.jsonl` or goal #2 leaf.
 - **Blocks:** Mechanic goal #4 daily data accumulation (currently 2/7 days; regression demo + week-complete mode already built).
 - **Unblock (one-time, non-sandbox White seat):** run `python elev.py --shell "memory\ops\loadtest\register_daily_probe.bat"` on White to register the P

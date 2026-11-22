@@ -1,6 +1,6 @@
 {
  "model": "archivist-q8",
- "base": "http://IP_PALE:8888",
+ "base": "http://Pale:8888",
  "prompt_chars": 165,
  "runs": [
   {

@@ -16,7 +16,7 @@ Replaces ad-hoc hotline notes. One-line format; 5-minute ack SLA from any seat; 
 
 ## Log (events since v2 adopted 2026-11-16 ~15:1x)
 - H-MODEL | White / Orchestrator+Researcher | both seats 404 not_loaded; single tensor-split llama-server (PID 33560 :57451) alive but untracked by Studio routing; group rounds loop on auto-resume without a chair | Orchestrator (governance shipped: pre-run flag + /api/models/status) | ack same-turn (this line is the ack); user directive: skip loading, seat-drafted goals cover lanes
-- H-OUT | Red IP_RED | portal :8099 timeout/filtered (1502ms) while Studio :8888 open (2.9ms) + SMB 445/139 open — scoped, not blanket | Mechanic (check if Red portal process is running; scoped fix only) | ack due next round
+- H-OUT | Red Red | portal :8099 timeout/filtered (1502ms) while Studio :8888 open (2.9ms) + SMB 445/139 open — scoped, not blanket | Mechanic (check if Red portal process is running; scoped fix only) | ack due next round
 - H-GOAL | White / portal | GOAL_RESET_PENDING.json corrupted by pre-fix NameError in start_group_run consumption | Orchestrator seat | FIXED same-day: code fixed (rid before use, serialize-before-truncate), flag repaired with true consumed record, commit 9d89362 + auto-syncs
 
 ## Rules

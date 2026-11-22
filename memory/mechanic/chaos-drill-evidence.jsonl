@@ -1,2 +1,2 @@
-{"ts": "2026-11-17T22:51:21.768954+00:00", "host": "Pale", "ip": "IP_PALE", "dry_run": true, "pre_kill_status": "DOWN", "action": "DRY-RUN: no kill executed", "verdict": "WARN (portal already down before drill)"}
-{"ts": "2026-11-17T22:51:29.376523+00:00", "host": "White", "ip": "[LAN-IP]", "dry_run": true, "pre_kill_status": "DOWN", "action": "DRY-RUN: no kill executed", "verdict": "WARN (portal already down before drill)"}
+{"ts": "2026-11-17T22:51:21.768954+00:00", "host": "Pale", "ip": "Pale", "dry_run": true, "pre_kill_status": "DOWN", "action": "DRY-RUN: no kill executed", "verdict": "WARN (portal already down before drill)"}
+{"ts": "2026-11-17T22:51:29.376523+00:00", "host": "White", "ip": "White", "dry_run": true, "pre_kill_status": "DOWN", "action": "DRY-RUN: no kill executed", "verdict": "WARN (portal already down before drill)"}

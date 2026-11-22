@@ -7,7 +7,7 @@ automatic model-to-project routing (no manual selection). Started by configuring
 - **White** (this box, where the agent runs): 2x NVIDIA RTX 5090 (32 GB each).
   - llama.cpp built with CUDA + RPC support:
     `C:\Users\White\.unsloth\llama.cpp\build\bin\Release\llama-server.exe`
-- **Red**: IP_RED — intended as the worker node, expected to serve on port 50052.
+- **Red**: Red — intended as the worker node, expected to serve on port 50052.
 
 ## Access methods (from White)
 - WinRM: BLOCKED (firewall exception not enabled on Red). `Test-WSMan` fails.
@@ -18,7 +18,7 @@ automatic model-to-project routing (no manual selection). Started by configuring
 ## Timeline
 - Configured White's llama.cpp build (CUDA + RPC) and confirmed test models present.
 - Set up RDP-based inspection of Red (screenshots in this folder: red_*.png).
-- Attempted to bring up the worker on Red at IP_RED:50052.
+- Attempted to bring up the worker on Red at Red:50052.
 
 ## Current state (2026-11-08, latest check)
 - Red port 50052: CLOSED (worker not running or firewall blocking).
@@ -35,7 +35,7 @@ automatic model-to-project routing (no manual selection). Started by configuring
 - WHITE worker PROOF PASSED (user, elevated): taskkill PID 9976 -> port free -> Start-ScheduledTask LlamaRPCWorker -> new PID 21452 LISTENING 0.0.0.0:50052. Boot auto-start verified equivalent.
 - White local check: ggml-rpc-server running (PID 23208, started 19:08 — restarted after user test; harmless, ONLOGON task covers boot). unsloth-studio + llama-server (loopback 57572) running since 16:28.
 - Only White scheduled task matching llama/rpc/unsloth: LlamaRPCWorker (Ready). No Unsloth entry in HKCU Run on White.
-- RED IP_RED:50052 = CLOSED from White probe -> Red worker NOT running. Gave user idempotent elevated block for Red: ensure C:\llama-rpc\build (move from Downloads llama-b12* if needed), firewall rule llama-rpc-in, ONSTART/SYSTEM task 'llama-rpc-server', run it, netstat+tasklist proof.
+- RED Red:50052 = CLOSED from White probe -> Red worker NOT running. Gave user idempotent elevated block for Red: ensure C:\llama-rpc\build (move from Downloads llama-b12* if needed), firewall rule llama-rpc-in, ONSTART/SYSTEM task 'llama-rpc-server', run it, netstat+tasklist proof.
 - PENDING after reboot of both PCs: verify both :50052 up autonomously; end-to-end 4x5090 model load via --rpc; then bake --rpc into Unsloth global defaults (no per-project selection). Red Unsloth autostart + config path (Block B) completion unconfirmed.
 
 ## REVERT 2026-11-09 — user: "settings broke our llama server engine, revert for Red"

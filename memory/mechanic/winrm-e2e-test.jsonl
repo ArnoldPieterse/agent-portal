@@ -1,8 +1,8 @@
-{"ts": "2026-11-20T14:47:12+00:00", "phase": "START", "status": "INFO", "detail": "host=black ip=IP_BLACK dry_run=True"}
-{"ts": "2026-11-20T14:47:12+00:00", "phase": "PHASE1_BASELINE", "status": "RUNNING", "detail": "probing IP_BLACK:8888"}
+{"ts": "2026-11-20T14:47:12+00:00", "phase": "START", "status": "INFO", "detail": "host=black ip=Black dry_run=True"}
+{"ts": "2026-11-20T14:47:12+00:00", "phase": "PHASE1_BASELINE", "status": "RUNNING", "detail": "probing Black:8888"}
 {"ts": "2026-11-20T14:47:12+00:00", "phase": "PHASE1_BASELINE", "status": "PASS", "detail": "TCP up, 0 models loaded: []"}
 {"ts": "2026-11-20T14:47:12+00:00", "phase": "DRY_RUN", "status": "PASS", "detail": "baseline verified; skipping destructive phases"}
-{"ts": "2026-11-20T14:47:13+00:00", "phase": "START", "status": "INFO", "detail": "host=pale ip=IP_PALE dry_run=True"}
-{"ts": "2026-11-20T14:47:13+00:00", "phase": "PHASE1_BASELINE", "status": "RUNNING", "detail": "probing IP_PALE:8888"}
+{"ts": "2026-11-20T14:47:13+00:00", "phase": "START", "status": "INFO", "detail": "host=pale ip=Pale dry_run=True"}
+{"ts": "2026-11-20T14:47:13+00:00", "phase": "PHASE1_BASELINE", "status": "RUNNING", "detail": "probing Pale:8888"}
 {"ts": "2026-11-20T14:47:14+00:00", "phase": "PHASE1_BASELINE", "status": "PASS", "detail": "TCP up, 0 models loaded: []"}
 {"ts": "2026-11-20T14:47:14+00:00", "phase": "DRY_RUN", "status": "PASS", "detail": "baseline verified; skipping destructive phases"}

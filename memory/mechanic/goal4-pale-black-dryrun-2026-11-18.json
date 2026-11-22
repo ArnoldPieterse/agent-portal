@@ -7,7 +7,7 @@
     {
       "timestamp": "2026-11-18T07:17:40.702501+00:00",
       "host": "PALE",
-      "ip": "IP_PALE",
+      "ip": "Pale",
       "dry_run": true,
       "checks": {
         "winrm_tcp_5985": "PASS",
@@ -19,7 +19,7 @@
     {
       "timestamp": "2026-11-18T07:17:40.757724+00:00",
       "host": "BLACK",
-      "ip": "IP_BLACK",
+      "ip": "Black",
       "dry_run": true,
       "checks": {
         "winrm_tcp_5985": "PASS",

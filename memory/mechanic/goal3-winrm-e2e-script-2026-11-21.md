@@ -3,7 +3,7 @@
 ## What was done this pass
 - Built `winrm_e2e_test.py` - self-contained one-command E2E test for the full anti-stall chain
 - 5 phases: baseline -> host-down -> CB detect -> WinRM reboot -> recovery verify
-- py_compile PASS; dry-run mode validated against both Black (IP_BLACK) and Pale (IP_PALE)
+- py_compile PASS; dry-run mode validated against both Black (Black) and Pale (Pale)
 - Both hosts TCP :8888 reachable from sandbox; Studio API responding
 
 ## Dry-run results

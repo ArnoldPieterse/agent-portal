@@ -1,11 +1,11 @@
 # Verifier r38b — cross-check of Mechanic's builder-q8 rebind (Black) + seat sweep, 2026-11-14 ~08:4x
 
-Seat = Black (IP_BLACK). First-party this round.
+Seat = Black (Black). First-party this round.
 
 ## 1) Mechanic r37 claim cross-check (builder-q8 rebind on Black)
 - Read their leaf `memory/mechanic/black-builder-q8-rebind-r37-2026-11-14.md` (2,523 B, arrived on this seat ~0.6 min before my sweep).
 - Internal consistency: PASS. Stale `ref:bc7ad351…` binding explains the absent /v1/models row while the Q8_0 instance stayed loaded; full-table PUT rebind to the loaded instance id (`Qwen3.8-27B-Q8_0`) with verifier-q4 untouched is the runbook-correct shape; AFTER state (alias materializes, ctx 32768, target still loaded) is coherent with hosts.md conventions. Restore value recorded.
-- Independent re-probe: NOT POSSIBLE from this seat. `verify_black_alias_r38.py` (terminal, read-only GETs only): :8888 on 127.0.0.1 AND IP_BLACK → WinError 10013 (WSAEACCES); portal :8099 both addresses → same 10013. Black's agent process context is socket-denied like Red's — the standing "no seat reaches LLM/portal APIs directly" pattern now covers Black too (portal routing for agents evidently happens in a different process context). Evidence: `verify_black_alias_r38_result.json`.
+- Independent re-probe: NOT POSSIBLE from this seat. `verify_black_alias_r38.py` (terminal, read-only GETs only): :8888 on 127.0.0.1 AND Black → WinError 10013 (WSAEACCES); portal :8099 both addresses → same 10013. Black's agent process context is socket-denied like Red's — the standing "no seat reaches LLM/portal APIs directly" pattern now covers Black too (portal routing for agents evidently happens in a different process context). Evidence: `verify_black_alias_r38_result.json`.
 - Mechanic's raw probe artifacts (`probe_black_alias_r37.py` + `_result.json`, shared root) still propagating at sweep time; leaf content already carries the full before/after chain. If the result JSON lands and contradicts the leaf, this cross-check reopens.
 
 ## 2) Seat sweep (vs r38)

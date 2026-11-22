@@ -1,6 +1,6 @@
 {
  "model": "mechanic-q4",
- "base": "http://IP_RED:8888",
+ "base": "http://Red:8888",
  "prompt_chars": 165,
  "runs": [
   {

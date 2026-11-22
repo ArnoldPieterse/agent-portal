@@ -23,18 +23,18 @@ But these two bugs would have made that non-sandbox run FAIL for spurious reason
   + pywinrm it runs live exec and passes only if all 4 OK).
 - Regression check: `python memory/mechanic/winrm_pool_selftest.py` still 20/20 PASS, 0 FAIL.
 
-## Defect 2: RED host IP typo ([LAN-IP] -> IP_RED)
-- winrm_pool.py HOSTS['RED'] had ip=[LAN-IP], but the canonical Red IP is IP_RED
+## Defect 2: RED host IP typo ([redacted-LAN-IP] -> Red)
+- winrm_pool.py HOSTS['RED'] had ip=[redacted-LAN-IP], but the canonical Red IP is Red
   (confirmed across agents.json, agent_portal.py _FLEET_REBOOT_USERS, boot_recovery.py,
   egress_guard.py, capability_registry.json, hotload-catalog.json, memory_mirror_hosts.json and
   every deploy_*.py). Only 3 mechanic files had the .50 typo.
 - Consequence: `close_goal1.bat health` would try to reach the WRONG IP for RED and report it
   UNREACHABLE even from a perfectly good non-sandbox seat -> goal-1 closure blocked for the wrong reason.
-- FIX: corrected RED ip to IP_RED in:
+- FIX: corrected RED ip to Red in:
     memory/mechanic/winrm_pool.py      (closure path - critical)
     memory/mechanic/winrm_ntlm_full.py (probe script)
     memory/mechanic/_winrm_probe_now.py(probe script)
-- VERIFIED: all 3 compile clean; zero remaining '[LAN-IP]' occurrences in the three files.
+- VERIFIED: all 3 compile clean; zero remaining '[redacted-LAN-IP]' occurrences in the three files.
 
 ## Net effect
 - close_goal1.bat is now end-to-end correct: it will perform a REAL 4-host health gate and record

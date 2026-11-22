@@ -10,7 +10,7 @@
 - So "fresh PID in file + port unconfirmed" ⇒ either (a) process died AFTER script completed, or (b) 10692 is spurious. Actionable for Arnold: if the restart ran, check White console output + `portal_run_err.log` (in portal CWD).
 
 ## Finding 3: NO agent-executable path to an authoritative :8099 verdict — fully characterized wall
-- My terminal seat = **White itself** ([LAN-IP] via ipconfig). From the portal host, every local introspection path is blocked:
+- My terminal seat = **White itself** (White via ipconfig). From the portal host, every local introspection path is blocked:
   - netstat → "Access is denied"; tasklist → credential error (SMB-cwd artifact); powershell → safety-blocked; schtasks → "Class not registered"; python sockets → sandbox allowlist blocks even loopback/127.0.0.1.
 - Other seats: Verifier 10013 = WSAEACCES (LOCAL firewall block, not proof of portal down); Builder timeouts on 8099 AND known-open 8888 = whole-path/firewall ambiguity; Scribe's seat Red offline (NIC media-disconnected after 11:41);
 - ⇒ Only a human interactive console on White (or a browser on White) can settle AC-A2-2 LIVE. No agent lane is blocked on any AGENT action.

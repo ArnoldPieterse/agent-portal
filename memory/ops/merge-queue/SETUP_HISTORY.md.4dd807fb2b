@@ -1,0 +1,61 @@
+# Unsloth LAN Cluster — Setup History
+
+Goal: multiple Unsloth Desktop instances on the same LAN (White + Red), inference-only,
+automatic model-to-project routing (no manual selection). Started by configuring Red first.
+
+## Machines
+- **White** (this box, where the agent runs): 2x NVIDIA RTX 5090 (32 GB each).
+  - llama.cpp built with CUDA + RPC support:
+    `C:\Users\White\.unsloth\llama.cpp\build\bin\Release\llama-server.exe`
+- **Red**: IP_RED — intended as the worker node, expected to serve on port 50052.
+
+## Access methods (from White)
+- WinRM: BLOCKED (firewall exception not enabled on Red). `Test-WSMan` fails.
+- Saved credentials (`cmdkey /list`): none for Red.
+- RDP: WORKS — `rdp_shot.ps1` opens/screenshots the "red - Remote Desktop Connection"
+  session; used to inspect Red's screen and console when needed.
+
+## Timeline
+- Configured White's llama.cpp build (CUDA + RPC) and confirmed test models present.
+- Set up RDP-based inspection of Red (screenshots in this folder: red_*.png).
+- Attempted to bring up the worker on Red at IP_RED:50052.
+
+## Current state (2026-11-08, latest check)
+- Red port 50052: CLOSED (worker not running or firewall blocking).
+- White: one `llama-server` process running (Unsloth Desktop's internal server),
+  listening on **127.0.0.1:57572 only** — loopback, not LAN-reachable.
+- Next step: get the llama.cpp RPC worker running on Red and reachable from White,
+  then wire Unsloth inference to use both nodes.
+
+## Open questions / blockers
+- Is the llama-server process actually running on Red? (check via RDP console)
+- Does Red's Windows Firewall allow inbound 50052 from the LAN?
+
+## Update 2026-11-08 (late) — pre-reboot state
+- WHITE worker PROOF PASSED (user, elevated): taskkill PID 9976 -> port free -> Start-ScheduledTask LlamaRPCWorker -> new PID 21452 LISTENING 0.0.0.0:50052. Boot auto-start verified equivalent.
+- White local check: ggml-rpc-server running (PID 23208, started 19:08 — restarted after user test; harmless, ONLOGON task covers boot). unsloth-studio + llama-server (loopback 57572) running since 16:28.
+- Only White scheduled task matching llama/rpc/unsloth: LlamaRPCWorker (Ready). No Unsloth entry in HKCU Run on White.
+- RED IP_RED:50052 = CLOSED from White probe -> Red worker NOT running. Gave user idempotent elevated block for Red: ensure C:\llama-rpc\build (move from Downloads llama-b12* if needed), firewall rule llama-rpc-in, ONSTART/SYSTEM task 'llama-rpc-server', run it, netstat+tasklist proof.
+- PENDING after reboot of both PCs: verify both :50052 up autonomously; end-to-end 4x5090 model load via --rpc; then bake --rpc into Unsloth global defaults (no per-project selection). Red Unsloth autostart + config path (Block B) completion unconfirmed.
+
+## REVERT 2026-11-09 — user: "settings broke our llama server engine, revert for Red"
+- Root cause on Red: the b12128 CUDA build was MOVED out of `C:\Users\Red\Downloads\llama-b12128-bin-win-cuda-13.4-x64` to `C:\llama-rpc\build`, so Unsloth Desktop's llama-server engine on Red lost its binaries.
+- Revert block handed to user (elevated PowerShell on Red): kill ggml-rpc-server, delete scheduled task `llama-rpc-server`, move build back to Downloads under original name, remove `C:\llama-rpc` + start-server.bat, delete firewall rule `llama-rpc-in`, WinRM back to defaults (AllowUnencrypted=false, WS-Management group disabled, service stopped).
+- NOT touched: White's LlamaRPCWorker task + worker, White Unsloth config. Network profile on Red left as Private (original unknown; harmless — user can flip back if desired).
+<460 chars of arguments you sent, elided to save room; the call already ran. Not tool output>
+
+## Update 2026-11-09 — White Unsloth Studio: two-instance config (agent-portal workstream)
+- Multi-model ENABLED (mode=fit). Per-GPU pins in auto-switch overrides: Qwen3.8-27B Q4_K_S → GPU0, Q8_0 → GPU1; MTP draft model (Qwen3.5-4B-MTP UD-Q4_K_XL) tensor_parallel for fast inference (~104 tok/s @ 74% acceptance).
+- Live check: ONE instance resident — Q8_0 llama-server (port 60360, alias Qwen3.8-27B-GGUF, -c 32768) tensor-split across both GPUs (~18/16 GB used); second evicted by fit mode.
+- Full recipe + design: MEMORY.md and DESIGN.md in this folder.
+
+## Update 2026-11-10 — dual residency restored on White (Q4→GPU0 + Q8→GPU1)
+- Root cause of earlier pin failures: the auto-switch override STORE ignores gpu_ids / llama_extra_args /
+  n_parallel; the fix was passing `gpu_ids` directly in the POST /api/inference/load BODY.
+- dual_load.py (one-shot task DualLoadOnce, fired 00:28): reloaded Q4_K_S with gpu_ids [0] (ctx 65536)
+  → pinned GPU0 (~20.6 GB); then loaded Q8_0 with gpu_ids [1] + alongside (ctx 32768) → GPU1 (~30.1 GB),
+  Q4 untouched. Both instances resident; verified via nvidia-smi.
+- Script reported INCOMPLETE only because /v1/models shows the Q8 instance under alias id
+  `Qwen3.8-27B-GGUF` (loaded=true) while full id `lmstudio-community/...` shows loaded=false —
+  alias artifact, not a load failure.
+- Next: bind agents.json (Atlas→Q8_0, Quinn→Q4_K_S) + per-agent smoke tests. Details in MEMORY.md.

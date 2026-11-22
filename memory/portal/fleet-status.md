@@ -23,7 +23,7 @@ The round-table spec assumed each host runs its own portal process writing `flee
 
 ## Verification evidence (2026-11-13)
 - Live capture: 4 hosts — White busy (gens=1, Qwen3.8-27B-GGUF loaded); .99/.39/.245 idle with **zero models loaded** (raw /v1/models confirms every entry unloaded — fleet had gone to sleep overnight; first thing the panel revealed).
-- Dead-host repro: temporary fake host [LAN-IP] -> `unknown`/`unreachable`, HTTP 200, bounded ~7s; agents.json restored byte-identical (md5 match).
+- Dead-host repro: temporary fake host [redacted-LAN-IP] -> `unknown`/`unreachable`, HTTP 200, bounded ~7s; agents.json restored byte-identical (md5 match).
 - Regression: /api/memory, /api/agents, /api/activity all 200; index.html serves each new block exactly once; agent_portal.py first-1600-chars header md5 unchanged (2ba0b031a46c70b1ab5e643ae1347acd); /api/chat Solo proven by live operation through the restarted portal.
 - Portal restart: PID 24808 killed -> relaunched detached via one-shot schtask (wmic removed on this OS; `start` children are reaped by the terminal wrapper) -> new PID 21988, task deleted immediately after.
 

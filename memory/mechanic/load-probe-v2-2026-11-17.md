@@ -13,7 +13,7 @@
 | ts | target | status |
 |---|---|---|
 | 2026-11-16 18:37:54 | localhost | ok (p50=127ms @10, p50=373ms @50, p50=1666ms @200) |
-| 2026-11-17 13:33:28 | [LAN-IP]:8099 | target_unreachable (egress guard on Red sandbox blocks :8099 egress to White) |
+| 2026-11-17 13:33:28 | [redacted-LAN-IP]:8099 | target_unreachable (egress guard on Red sandbox blocks :8099 egress to White) |
 
 ## Next step
 Run `python memory/ops/load_probe.py --host 127.0.0.1:8099` from **White** seat daily.

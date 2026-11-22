@@ -3,9 +3,9 @@
 ## Status: BLOCKED by sandbox network (documented per Arnold instruction to move on)
 
 ## Exact failure
-- **Host**: Red ([LAN-IP])
+- **Host**: Red ([redacted-LAN-IP])
 - **Error**: WinError 10013 (not privileged) on outbound TCP from White sandbox
-- **Reproduced**: 2026-11-15 ~23:xx - socket.connect_ex(('[LAN-IP]',445)) -> blocked/timeout
+- **Reproduced**: 2026-11-15 ~23:xx - socket.connect_ex(('[redacted-LAN-IP]',445)) -> blocked/timeout
 - **Root cause**: White sandbox has no outbound TCP egress to LAN subnets; Windows firewall blocks it
 - **Impact**: Cannot execute reboot-recovery dry-run steps on Red from this seat
 

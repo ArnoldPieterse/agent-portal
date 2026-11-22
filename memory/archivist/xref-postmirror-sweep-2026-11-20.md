@@ -10,7 +10,7 @@ Trend note: earlier JSON (11:03, older script build) reported 303 total / 6894 f
 
 Known false-positive classes in dangling list (monitor regex picks these up as refs):
 - glob patterns: `*_completed.md`, `memory/ops/*.md`
-- URLs inside backticks: `http:/[LAN-IP]:8099/...`, `https:/github.com/...`
+- URLs inside backticks: `http:/White:8099/...`, `https:/github.com/...`
 - shell command text in backticks: `findstr archivist api-reference.md`, `python model_check_1115.py`
 Suggested monitor fix (next cycle): skip refs containing `*`, `://`, or starting with a command word. Not applied this pass (one-step scope).
 

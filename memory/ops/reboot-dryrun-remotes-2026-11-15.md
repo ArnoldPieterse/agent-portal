@@ -13,8 +13,8 @@ Executed via `reboot_dryrun_remotes.py` + manual JWT probes. HUMAN GATE cleared 
 All 5 steps OK: PortalRun task exists, recover_all.py compiles, launchers present, PID file current, runbook doc complete.
 
 ## Broken Steps Found + Fixes
-1. **Red firewall**: White's Windows Firewall blocks outbound TCP to IP_RED:8888.
-   - Fix: `firewall_fix.bat` (netsh advfirewall add rule name="LAN-Red-245" dir=out action=allow remoteip=IP_RED protocol=TCP)
+1. **Red firewall**: White's Windows Firewall blocks outbound TCP to Red:8888.
+   - Fix: `firewall_fix.bat` (netsh advfirewall add rule name="LAN-Red-245" dir=out action=allow remoteip=Red protocol=TCP)
    - Status: **needs admin execution** (White user is not admin; Arnold must run or elevate)
    - Runbook note: what broke = outbound firewall rule missing after 11-15 power cycle; what fixed = netsh add rule (pending admin)
 

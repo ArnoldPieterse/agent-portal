@@ -14,24 +14,24 @@
    "status_field_ok": true
   },
   {
-   "host": "IP_BLACK",
-   "base": "http://IP_BLACK:8888",
+   "host": "Black",
+   "base": "http://Black:8888",
    "state": "idle",
    "reason": "",
    "models": [],
    "status_field_ok": true
   },
   {
-   "host": "IP_PALE",
-   "base": "http://IP_PALE:8888",
+   "host": "Pale",
+   "base": "http://Pale:8888",
    "state": "idle",
    "reason": "",
    "models": [],
    "status_field_ok": true
   },
   {
-   "host": "IP_RED",
-   "base": "http://IP_RED:8888",
+   "host": "Red",
+   "base": "http://Red:8888",
    "state": "idle",
    "reason": "",
    "models": [],

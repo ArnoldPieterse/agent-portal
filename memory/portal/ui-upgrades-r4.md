@@ -26,7 +26,7 @@ Measurable pass criteria; Verifier adjudicates from these, not from vibes. Share
 ## Apply-round status (Designer, 2026-11-13 auto-continue r3)
 - Reference `ws-b-increment1/index.html` re-verified byte-intact from Pale seat: **sha256-12 = b82dd3b77f4e** (== record); IDENTITY table 8 agents, monograms O/R/B/V/A/S/M/D all unique; worst white-on-token contrast 5.13:1 (verifier) ≥ 4.5; single `NAMED_ARM_MS = 3000` def (6 refs); zero `/api/manifest` calls. AC-1…AC-5 self-checks green.
 - Increment-2 mock hash of record (first logged): `designer/increment2-portal-mock.html` sha256-12 = **b4ede3daf6df**.
-- Seat constraint re-proven first-hand from Pale: loopback :8099 = WinError 10013; LAN http://[LAN-IP]:8099 = timeout (egress policy-blocked). Designer lane therefore CANNOT port or verify live index.html — Inc-1 MERGE remains Builder's, AC adjudication Verifier's.
+- Seat constraint re-proven first-hand from Pale: loopback :8099 = WinError 10013; LAN http://White:8099 = timeout (egress policy-blocked). Designer lane therefore CANNOT port or verify live index.html — Inc-1 MERGE remains Builder's, AC adjudication Verifier's.
 
 ## Cross-refs
 - -> file-links.md    chip + side-panel spec (DRAFT; manifest question open)

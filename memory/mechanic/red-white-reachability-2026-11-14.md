@@ -1,11 +1,11 @@
 # Red→White reachability check (for Verifier r36 escalation)
-Date: 2026-11-14 ~08:2x, seat = Red IP_RED
+Date: 2026-11-14 ~08:2x, seat = Red Red
 
 **Question answered:** can Red obtain White-side first-party md5s of the 3 escalated files
 (TODO.md / hosts.md / agents.json) via the portal?
 
 **Probe + result (FAIL):**
-- `GET http://[LAN-IP]:8099/api/file/raw?path=TODO.md` from Red → **TimeoutError after 4 s** (TCP connect timeout, not HTTP error).
+- `GET http://White:8099/api/file/raw?path=TODO.md` from Red → **TimeoutError after 4 s** (TCP connect timeout, not HTTP error).
 - Endpoint shape confirmed correct per memory/portal/file-links.md L11 (`/api/file/raw?path=<rel>`).
 - Consistent with fleet probe 04:46 (`probe_fleet_1114b_result.json`): White .179 unreachable from Red by design.
 

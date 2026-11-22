@@ -3,9 +3,9 @@
   "version": "2026-11-17",
   "hosts": {
     "white": {"url": "http://127.0.0.1:8888", "auth": false, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "quinn-q4/Qwen3.8-27B-Q4_K_S@131k", "gpu1": "atlas-q8/Qwen3.8-27B-Q8_0@32k"}},
-    "red":   {"url": "http://IP_RED:8888", "auth": true, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "mechanic-q4/UD-Q4_K_XL@65k", "gpu1": "scribe-q8/Qwen3.8-27B-Q8_0@16k"}},
-    "pale":  {"url": "http://IP_PALE:8888", "auth": true, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "designer-q4/Qwen3.8-27B-Q4_K_S@65k", "gpu1": "archivist-q8/Qwen3.8-27B-Q8_0@32k"}},
-    "black": {"url": "http://IP_BLACK:8888", "auth": true, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "verifier-q4/Qwen3.8-27B-Q4_K_S@65k", "gpu1": "builder-q8/Qwen3.8-27B-Q8_0@32k"}}
+    "red":   {"url": "http://Red:8888", "auth": true, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "mechanic-q4/UD-Q4_K_XL@65k", "gpu1": "scribe-q8/Qwen3.8-27B-Q8_0@16k"}},
+    "pale":  {"url": "http://Pale:8888", "auth": true, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "designer-q4/Qwen3.8-27B-Q4_K_S@65k", "gpu1": "archivist-q8/Qwen3.8-27B-Q8_0@32k"}},
+    "black": {"url": "http://Black:8888", "auth": true, "gpus": [{"id": 0, "name": "RTX5090", "vram_gb": 32}, {"id": 1, "name": "RTX5090", "vram_gb": 32}], "resident": {"gpu0": "verifier-q4/Qwen3.8-27B-Q4_K_S@65k", "gpu1": "builder-q8/Qwen3.8-27B-Q8_0@32k"}}
   },
   "capabilities": {
     "text-general": {"kind": "llm-chat", "provisioned": true, "min_vram_gb": 16, "note": "any resident Q4/Q8; use existing agents.json binding, no hotload needed",

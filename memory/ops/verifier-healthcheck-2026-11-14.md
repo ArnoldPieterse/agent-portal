@@ -8,7 +8,7 @@ Seat: Black sandbox. Method: python hashlib/socket in shared agent folder + term
 - Goals meeting artifacts complete: `memory/goals/` = 8 agent leaves × 10 numbered goals each (regex count, no truncation); canonical section `## AGENT GOALS (set 2026-11-13)` present in TODO.md; planning record = `memory/synthesis/2026-11-13-planning-meeting.md` (+ v102 supersedes per synthesis INDEX).
 
 ## BLOCKED from this seat (evidence, not skipped)
-- White portal process-level check (PID alive / :8099 single listener / /api/git): python socket to [LAN-IP]:8099 rejected by sandbox policy ("host not in sandbox allowlist"); terminal `curl` = "Blocked command(s) for safety: curl". Consistent with r30 standing finding that agent seats have no egress to White LAN; live-leg remains Arnold/White-console owned (r21 staged leg + smoke8). AC-A2 process-level on PID 23704 stays OPEN for a seat with egress — NOT re-opened here, just untestable from Black.
+- White portal process-level check (PID alive / :8099 single listener / /api/git): python socket to White:8099 rejected by sandbox policy ("host not in sandbox allowlist"); terminal `curl` = "Blocked command(s) for safety: curl". Consistent with r30 standing finding that agent seats have no egress to White LAN; live-leg remains Arnold/White-console owned (r21 staged leg + smoke8). AC-A2 process-level on PID 23704 stays OPEN for a seat with egress — NOT re-opened here, just untestable from Black.
 
 ## Verdict
 Static gates PASS; dynamic LAN gates UNTESTED-from-seat (blocked by policy, logged per goal #5 non-reproduction convention). No regressions found on measured files.

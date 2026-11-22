@@ -3,15 +3,15 @@
 ## What was done this pass
 
 ### 1. TCP Reachability Confirmed
-- PALE (IP_PALE):5985 -> **OK** (TCP connect success)
-- BLACK (IP_BLACK):5985 -> **OK** (TCP connect success)
-- WHITE ([LAN-IP]):5985 -> **FAIL** (no route from RED sandbox)
+- PALE (Pale):5985 -> **OK** (TCP connect success)
+- BLACK (Black):5985 -> **OK** (TCP connect success)
+- WHITE (White):5985 -> **FAIL** (no route from RED sandbox)
 
 ### 2. WinRM Endpoints Alive (401 + Negotiate challenge)
 Both PALE and BLACK respond correctly to unauthenticated POST /wsman:
 ```
-PALE (IP_PALE): HTTP/1.1 401 | Negotiate challenge: True
-BLACK (IP_BLACK): HTTP/1.1 401 | Negotiate challenge: True
+PALE (Pale): HTTP/1.1 401 | Negotiate challenge: True
+BLACK (Black): HTTP/1.1 401 | Negotiate challenge: True
 ```
 This confirms the WinRM service is running and configured for Negotiate auth on both hosts.
 

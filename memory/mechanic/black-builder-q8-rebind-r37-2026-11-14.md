@@ -1,4 +1,4 @@
-# Black builder-q8 alias rebind (r37, 2026-11-14 ~05:09, seat = Red IP_RED)
+# Black builder-q8 alias rebind (r37, 2026-11-14 ~05:09, seat = Red Red)
 
 Closes the r36 open item "Mechanic/Orchestrator: Black /v1/models no longer lists builder-q8".
 Evidence: `probe_black_alias_r37.py` + `probe_black_alias_r37_result.json` (shared folder root).
@@ -16,7 +16,7 @@ Evidence: `probe_black_alias_r37.py` + `probe_black_alias_r37_result.json` (shar
 - Q8 instance still loaded after the change (black_q8_still_loaded=true) - zero side effects; nothing was unloaded or restarted.
 
 ## Side observation (no action)
-- Red's own :8888 is unreachable FROM RED's sandbox: 127.0.0.1 and IP_RED both give WSAEACCES (WinError 10013 = local firewall denial, not connection-refused). LAN access from other hosts works (that is how the portal routes Mechanic), so this is a local-process-context quirk only; do not "fix" by touching the firewall mid-ops.
+- Red's own :8888 is unreachable FROM RED's sandbox: 127.0.0.1 and Red both give WSAEACCES (WinError 10013 = local firewall denial, not connection-refused). LAN access from other hosts works (that is how the portal routes Mechanic), so this is a local-process-context quirk only; do not "fix" by touching the firewall mid-ops.
 
 ## Runbook line
 Black alias missing from /v1/models but present in settings = binding points at stale `ref:<hash>`: rebind via PUT /api/settings/model-aliases to the loaded instance's model id (send the FULL alias table), then confirm the alias row materializes AND the target instance is still loaded.

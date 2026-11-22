@@ -233,7 +233,7 @@
       ]
     },
     {
-      "url": "http://[LAN-IP]:8099",
+      "url": "http://White:8099",
       "category": "EXTERNAL",
       "status": "NOT-RECHECKED",
       "detail": "(not in v1 sample; live-check on a net seat)",
@@ -242,7 +242,7 @@
       ]
     },
     {
-      "url": "http://[LAN-IP]:8099/api/file/raw?path=TODO.md`",
+      "url": "http://White:8099/api/file/raw?path=TODO.md`",
       "category": "EXTERNAL",
       "status": "NOT-RECHECKED",
       "detail": "(not in v1 sample; live-check on a net seat)",
@@ -251,7 +251,7 @@
       ]
     },
     {
-      "url": "http://IP_RED:8888",
+      "url": "http://Red:8888",
       "category": "EXTERNAL",
       "status": "NOT-RECHECKED",
       "detail": "(not in v1 sample; live-check on a net seat)",
@@ -260,7 +260,7 @@
       ]
     },
     {
-      "url": "http://IP_BLACK:8888",
+      "url": "http://Black:8888",
       "category": "EXTERNAL",
       "status": "NOT-RECHECKED",
       "detail": "(not in v1 sample; live-check on a net seat)",

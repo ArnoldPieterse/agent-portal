@@ -4992,8 +4992,8 @@
     {
       "file": "memory\\mechanic\\red-white-reachability-2026-11-14.md",
       "line": 8,
-      "cited_path": "GET http://[LAN-IP]:8099/api/file/raw?path=TODO.md",
-      "normalized": "GET http://[LAN-IP]:8099/api/file/raw?path=TODO.md",
+      "cited_path": "GET http://White:8099/api/file/raw?path=TODO.md",
+      "normalized": "GET http://White:8099/api/file/raw?path=TODO.md",
       "exists": false
     },
     {

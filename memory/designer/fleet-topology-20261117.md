@@ -8,7 +8,7 @@ Renders per host: name, IP, agent count, generation count, status dot; per-agent
 Data source: /api/health/fleet (Mechanic #8) - no new endpoint.
 
 Evidence (CDP headless Edge 157, d9_d7_verify_20261117.py):
-- svg rendered, 40 nodes; hosts: Portal :8099 (local), IP_PALE (2 agents/0 gen), IP_RED (2 agents/1 gen)
+- svg rendered, 40 nodes; hosts: Portal :8099 (local), Pale (2 agents/0 gen), Red (2 agents/1 gen)
 - console errors 0, page exceptions 0
 - axe-core: 0 violations on repeatable loads (one transient nested-interactive x2 seen once on first load only; not reproducible in 2 follow-up runs incl. goals+fleet panels open)
 - landmarks nav/main/aside/header = 1 each; 10 aria-labeled elements; 15-step Tab chain all :focus-visible with visible outline

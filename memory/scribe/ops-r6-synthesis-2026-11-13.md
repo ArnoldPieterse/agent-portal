@@ -1,6 +1,6 @@
 # Scribe synthesis — OPS r5/r6 (recorded 2026-11-13 19:37 Red-seat local)
 
-Source: TODO.md LIVE PLAN (r5+r6 sections), MEMORY.md, on-disk hashes at Z:\ (Red, IP_RED). All claims trace to those; nothing added from inference except where marked (inferred).
+Source: TODO.md LIVE PLAN (r5+r6 sections), MEMORY.md, on-disk hashes at Z:\ (Red, Red). All claims trace to those; nothing added from inference except where marked (inferred).
 
 ## Decided (one-line rationale each)
 1. **Clobber path closed at source level** — section-3 pull walks memory/ leaves only, so root docs are structurally unreachable by stale-seat pulls (r5 apply; Verifier AC-A2 PASS on function, current disk, r6).

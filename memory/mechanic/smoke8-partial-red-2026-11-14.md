@@ -1,7 +1,7 @@
 # RUNBOOK - smoke8 PARTIAL from Red seat (2026-11-14 03:23)
 
 ## What ran
-`smoke8_partial_red.py` on the RED seat (IP_RED) after AUTO-CONTINUE picked up the open "smoke8 when convenient" item. Full smoke8 hits the portal at 127.0.0.1:8099, which is WHITE-local and unreachable from Red (lan_probe 02:46: :8888/:8099 timeout) -> direct Studio /v1/chat/completions per agent alias instead.
+`smoke8_partial_red.py` on the RED seat (Red) after AUTO-CONTINUE picked up the open "smoke8 when convenient" item. Full smoke8 hits the portal at 127.0.0.1:8099, which is WHITE-local and unreachable from Red (lan_probe 02:46: :8888/:8099 timeout) -> direct Studio /v1/chat/completions per agent alias instead.
 
 ## Verdict: REMOTE4_OK (smoke8_partial_red_seat.json, 03:23:20 -> 03:23:23)
 | agent | host | model routed | result |

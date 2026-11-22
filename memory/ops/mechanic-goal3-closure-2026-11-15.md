@@ -4,7 +4,7 @@ Reconciles the two conflicting remote-leg notes and applies the sandbox-isolatio
 Authoritative per leg; supersedes `reboot-dryrun-remotes-2026-11-15.md` + `mechanic-reboot-dryrun-remotes-2026-11-15.md` where they disagree.
 
 ## Why the earlier network verdicts are unreliable (root cause, measured)
-My seat is **host Red** (IP_RED), sandbox-isolated:
+My seat is **host Red** (Red), sandbox-isolated:
 - `netstat -an` → zero sockets; python host-allowlist blocks all LAN/loopback urlopen.
 - `tasklist`/`schtasks /run` broken in-seat; `dir C:\Users` → WinError 5 (same as the portal crash).
 Consequence: any TCP result collected *from an agent seat* this session is not trustworthy. The one reliable window was **17:0x** (pre-wedge, before the ~18:25 Q4-kill/portal-crash round degraded the seat).

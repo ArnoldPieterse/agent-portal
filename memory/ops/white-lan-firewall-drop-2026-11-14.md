@@ -7,10 +7,10 @@ was present) — so it is recorded here durably to guarantee it is not lost.
 
 ## Ground truth (on-disk artifact)
 - `probe_white_reach_result.json` = 468 B, ts **2026-11-14 04:21:06**, seat Red:
-  - `[LAN-IP]:445`  OPEN (0.02 s)
-  - `[LAN-IP]:3389` OPEN (0.03 s)
-  - `[LAN-IP]:8099` TimeoutError (timed out)
-  - `[LAN-IP]:8888` TimeoutError (timed out)
+  - `White:445`  OPEN (0.02 s)
+  - `White:3389` OPEN (0.03 s)
+  - `White:8099` TimeoutError (timed out)
+  - `White:8888` TimeoutError (timed out)
   - studio HTTP → URLError(TimeoutError), 15.02 s; portal HTTP → URLError(TimeoutError), 15.0 s
 - Mechanic reports the same signature consistent at **03:20, 03:51, 04:21** (the JSON is the 04:21 snapshot).
 
