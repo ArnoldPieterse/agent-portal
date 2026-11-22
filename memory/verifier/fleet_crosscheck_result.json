@@ -1,6 +1,6 @@
 {
  "ok": true,
- "elapsed_s": 0.05,
+ "elapsed_s": 0.12,
  "failures": [],
  "hosts": [
   {
@@ -17,7 +17,7 @@
   {
    "host": "Pale",
    "base": "http://IP_PALE:8888",
-   "state": "idle",
+   "state": "busy",
    "reason": "",
    "models": [
     "Qwen3.8-27B-Q8_0",
@@ -38,9 +38,12 @@
   {
    "host": "Black",
    "base": "http://IP_BLACK:8888",
-   "state": "unknown",
-   "reason": "unreachable",
-   "models": [],
+   "state": "idle",
+   "reason": "",
+   "models": [
+    "Qwen3.8-27B-Q4_K_S",
+    "Qwen3.8-27B-Q8_0"
+   ],
    "status_field_ok": true
   }
  ]
