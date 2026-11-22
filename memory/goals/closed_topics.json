@@ -946,5 +946,35 @@
 "text": "16 (verified) 2026-11-23 - selftest 20/20 PASS; schtask FleetStateCollector live (fleet-metrics.jsonl growing); per-host fleet view added to",
 "agent": "mechanic",
 "at": "2026-11-23"
+},
+{
+"sig": "6a8ff745af8e86a7",
+"text": "**Model OOM Auto-Recovery** - `python memory/mechanic/oom_recovery.py`: when a model process hits OOM (detected via probe or agent unrespons",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "febe2322e916f902",
+"text": "**Scheduled Maintenance Window** - `python memory/mechanic/maintenance_window.py`: identify low-activity periods (no agent requests for >15 ",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "187296f6565457cf",
+"text": "**Host Capacity Arbitration** - `python memory/mechanic/capacity_arbiter.py`: when multiple agents request the same host's GPU simultaneousl",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "7329749a6f036878",
+"text": "**Incident Auto-Classification** - `python memory/mechanic/incident_classifier.py`: when an incident is detected, auto-classify severity: P1",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "fc70d92081580f2b",
+"text": "**Portal Self-Healing** - `python memory/mechanic/portal_heal.py`: monitor agent_portal.py process health. If it's unresponsive (>30s no /ap",
+"agent": "mechanic",
+"at": "2026-11-23"
 }
 ]
