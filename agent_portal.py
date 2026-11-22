@@ -311,6 +311,82 @@ def _resolve_seat(agent):
     return None
 
 
+# ---- LOAD QUEUE (2026-11-22, user directive: "loads should be queued when only a few are
+# available") - model loads are serialized PER HOST (one at a time). With only a few hosts /
+# VRAM slots up, concurrent load attempts 409-thrash the Studios. Turn-start hot-loads and
+# the autoloop recovery chain both go through this queue; while waiting we re-check residency
+# so a shared/earlier load releases us WITHOUT a second load (dedup). Bounded wait + bounded
+# per-host depth: when the queue is deep, new loads defer honestly (retry next tick) instead
+# of piling up. Different hosts load in parallel.
+_HOST_LOAD_SEMS = {}      # host base -> Semaphore(1): one model load at a time per host
+_HOST_LOAD_WAITERS = {}   # host base -> current waiters (for honest "N ahead" messages)
+_LOADQ_LOCK = threading.Lock()
+LOADQ_WAIT_S = 150        # max seconds a TURN waits its turn in the load queue
+LOADQ_MAX_WAITERS = 4     # per-host depth cap: beyond this, new loads defer honestly
+
+
+def _host_load_sem(base):
+    k = (base or "").rstrip("/")
+    with _LOADQ_LOCK:
+        s = _HOST_LOAD_SEMS.get(k)
+        if s is None:
+            s = threading.Semaphore(1)
+            _HOST_LOAD_SEMS[k] = s
+            _HOST_LOAD_WAITERS.setdefault(k, 0)
+        return k, s
+
+
+def _queued_model_load(agent, reason="load", wait_s=LOADQ_WAIT_S, wfile=None):
+    """Run a model load (or unload+load for wedged/reload) through the per-host load queue.
+    Returns (ok, detail). While queued we re-check residency every 15s: if another load made
+    the model resident meanwhile, we release without loading again."""
+    name = agent.get("name", "?")
+    rec = _FLEET_RECOVER_RECIPES.get(name)
+    if not rec:
+        return False, "no load recipe for %s" % name
+    base = _studio_base(agent)
+    k, sem = _host_load_sem(base)
+    with _LOADQ_LOCK:
+        ahead = _HOST_LOAD_WAITERS.get(k, 0)
+        if ahead >= LOADQ_MAX_WAITERS:
+            return False, "load queue deep on %s (%d waiting) - deferred, retry shortly (auto)" % (_host_label(base), ahead)
+        _HOST_LOAD_WAITERS[k] = ahead + 1
+
+    def emit(note):
+        if wfile is None:
+            return
+        try:
+            wfile.write(b"data: " + json.dumps({"model_load": note}).encode() + b"\n\n")
+            wfile.flush()
+        except Exception:
+            pass
+
+    got = False
+    deadline = time.time() + wait_s
+    last_note = 0.0
+    try:
+        while True:
+            if reason == "load" and _model_resident(agent, rec):
+                return True, "resident (caught shared load)"
+            got = sem.acquire(timeout=15)
+            if got:
+                break
+            if time.time() >= deadline:
+                with _LOADQ_LOCK:
+                    n = max(0, _HOST_LOAD_WAITERS.get(k, 0) - 1)
+                return False, "load queue busy on %s (%d ahead) - deferred, retry shortly (auto)" % (_host_label(base), n)
+            if time.time() - last_note >= 30:
+                last_note = time.time()
+                emit("%s: queued for model load on %s (one load at a time per host)" % (name, _host_label(base)))
+        ok, detail = _studio_recover(agent, reason)
+        return ok, detail
+    finally:
+        with _LOADQ_LOCK:
+            _HOST_LOAD_WAITERS[k] = max(0, _HOST_LOAD_WAITERS.get(k, 0) - 1)
+        if got:
+            sem.release()
+
+
 def _winrm_reboot(ip):
     """Remote reboot via WinRM (empty-password creds per hosts.md; approved
     11-15). The host's boot tasks auto-load its models after restart."""
@@ -329,11 +405,29 @@ def _winrm_reboot(ip):
 def _recover_seat_async(name, agent, reason):
     def work():
         try:
-            ok, detail = _studio_recover(agent, reason)
+            # through the per-host load queue: never double-load a host that is mid-load
+            ok, detail = _queued_model_load(agent, reason, wait_s=300)
             print("[autoloop] recover %s (%s): %s - %s" % (name, reason, "OK" if ok else "FAIL", detail))
         except Exception as e:
             print("[autoloop] recover %s crashed: %s" % (name, str(e)[:80]))
     threading.Thread(target=work, daemon=True).start()
+
+
+def _model_resident(agent, rec=None):
+    """True if the agent's model is resident on its home Studio. loaded-models reports MODEL
+    NAMES while alias seats carry ALIAS ids in agents.json (atlas-q8 vs Qwen3.8-27B-Q8_0), so
+    match by model_id OR recipe model_path basename / gguf_variant."""
+    mid = agent.get("model_id") or ""
+    if rec is None:
+        rec = _FLEET_RECOVER_RECIPES.get(agent.get("name", "?")) or {}
+    try:
+        ids = _loaded_model_ids(agent)
+    except Exception:
+        return False
+    mp = os.path.basename((rec.get("model_path") or "").replace("\\", "/"))
+    gv = (rec.get("gguf_variant") or "").lower()
+    return any((mid and i == mid) or (mp and i == mp) or (gv and gv in (i or "").lower())
+               for i in ids)
 
 
 def _ensure_seat_ready(agent, wfile=None):
@@ -358,19 +452,9 @@ def _ensure_seat_ready(agent, wfile=None):
         # fast path 1: recent fleet cache says ok (60 s cache / 15 min per-seat trust)
         if _model_load_status().get(name, {}).get("status") == "ok":
             return True, ""
-        # fast path 2: precise resident check on the seat's own Studio. loaded-models reports
-        # MODEL NAMES while alias seats carry ALIAS ids in agents.json (atlas-q8 vs Qwen3.8-27B-
-        # Q8_0), so match by model_id OR recipe model_path basename / gguf_variant.
-        rec = _FLEET_RECOVER_RECIPES.get(name) or {}
-        try:
-            ids = _loaded_model_ids(agent)
-            mp = os.path.basename((rec.get("model_path") or "").replace("\\", "/"))
-            gv = (rec.get("gguf_variant") or "").lower()
-            if any((mid and i == mid) or (mp and i == mp) or (gv and gv in (i or "").lower())
-                   for i in ids):
-                return True, ""
-        except Exception:
-            pass
+        # fast path 2: precise resident check on the seat's own Studio.
+        if _model_resident(agent):
+            return True, ""
         # host down -> remote reboot (boot tasks reload its models); fail this turn honestly
         ip = _remote_host_ip(agent)
         if ip and not _host_alive(agent):
@@ -383,8 +467,8 @@ def _ensure_seat_ready(agent, wfile=None):
         if not _FLEET_RECOVER_RECIPES.get(name):
             return False, "no load recipe for %s" % name
         # hot-load via the seat recipe: native /api/inference/load + poll until resident
-        emit("%s: model not resident - hot-loading now (can take a few minutes)" % name)
-        ok, detail = _studio_recover(agent, "load")
+        emit("%s: model not resident - hot-loading now (queued per host; can take a few minutes)" % name)
+        ok, detail = _queued_model_load(agent, "load", wfile=wfile)
         if ok:
             emit("%s: model resident - continuing" % name)
             return True, ""
