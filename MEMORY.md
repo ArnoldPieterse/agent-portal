@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #1 done: memory/builder/playbook_runner.py — dry-run, real run, inject-failure rollback all verified end-to-end.
-- Verifier built memory/verifier/remediation_gate.py: 4 precondition checks (host, lock, rollback, policy), 5/5 self-tests pass.
-- Scribe closed goal #1 (Cycle Auto-Summary Generator): built cycle_summary.py, output at memory/synthesis/cycle-summary-2026-11-23.md
-- Goal #3: 4 state components built in ui/components.js + app.css; next: wire each into ≥3 live panels
 - Goal #2 (Fleet Cockpit Frontend) complete: /api/fleet/cockpit endpoint + ui/cockpit.js 6-panel grid with 30s auto-refresh shipped.
 - Goal #2 closed: decision_digest.py built, 32 decisions → 7 themes, output at memory/synthesis/decision-digest-2026-11-23.md
 - Goal #3 done: memory/verifier/rollback_test.py, 4/4 runbooks pass, report at rollback
 - RECALL: - **M3** (`memory/goals/archive/orchestrator-
 - Goal #3 done: `memory/builder/model_swap.py` (295 lines) built, dry-run verified — agent lookup, Studio URL from profile, VRAM fallback, 5-s
 - Goal #3 in progress: 4 state components in ui/components.js; wiring errorState/loadingState
+- Verifier Goal #4 done: `memory/verifier/policy_audit.py` built, 13/13 self-test green (policy compliance audit engine).
+- Goal #5 closed: --anim-duration-slow reduced 600ms→350ms in ui/animations.css, all durations now <400ms per spec.
+- Goal #2 done: `memory/mechanic/model_lifecycle.py` built, 17/17 self-test pass (VRAM check, OOM redirect, warmup+verify, agents.json sync, J
+- Builder Goal #4 done: `memory/builder/task_rerouter.py` built & tested — 10/10 tasks rerouted on simulated agent-down, capability-matched, d
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -2852,6 +2852,9 @@ _run_seq = {}              # run_id -> next seq
 _run_last_frame = {}       # run_id -> wall time of last journaled frame (stall watchdog)
 RUN_STALL_S = 240          # no frames for this long => /api/run-state flags stalled=True
 STALL_KILL_S = 900         # (2026-11-15) no frames for THIS long => watchdog kills the run (wedge guard)
+PASS_TIMEOUT_S = 900       # (2026-11-23, Arnold: fleet slower than one LLM) hard cap on ONE parallel pass:
+                           # a hung seat used to hold the whole pass open until a human hit Stop; now the
+                           # remaining turns are torn down cleanly and marked stalled so the round can end
 AUTO_RESUME_MAX = 5        # (2026-11-15) consecutive auto-resumes before a human follow-up is required
 AUTO_RESUME_DELAY_S = 45   # settle time after a run ends before the watchdog starts the continuation
 AUTOLOOP_IDLE_S = 60       # (2026-11-16, Arnold) max seconds an agent may sit idle before re-entering the work queue
@@ -3050,10 +3053,25 @@ def _parallel_turns(run_id, names, kind, hist, stop_event):
 
     if stop_event.is_set():
         return out
-    from concurrent.futures import ThreadPoolExecutor
+    from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as _FTimeout
     with ThreadPoolExecutor(max_workers=max(1, len(names))) as pool:
-        for i, nm in enumerate(names):
-            pool.submit(work, i, nm)   # context exit waits for all turns; stop_event tears each down cleanly
+        futs = {pool.submit(work, i, nm): (i, nm) for i, nm in enumerate(names)}
+        try:
+            for _ in as_completed(futs, timeout=PASS_TIMEOUT_S):
+                pass
+        except _FTimeout:
+            # 2026-11-23 (Arnold: fleet slower than one LLM): cap the pass. stop_event tears the
+            # remaining turns down cleanly (existing path); whatever hasn't landed gets a stalled
+            # result so the round ends and the next pass can start instead of waiting on a dead seat.
+            stop_event.set()
+            for fut, (i, nm) in futs.items():
+                if not out[i]:
+                    try:
+                        fut.result(timeout=20)
+                    except Exception:
+                        out[i] = {"name": nm, "full": "", "silent": False, "concluded": False,
+                                  "error": "turn stalled - no completion within %d min (pass cap)" % (PASS_TIMEOUT_S // 60),
+                                  "blocked": None}
     for r in out:  # terminal event per turn - the frontend finalizes each bubble on this
         if r:
             _run_event(run_id, {"agent": r["name"], "kind": kind, "done": True})
@@ -3641,6 +3659,18 @@ def autoloop_note_human():
             _autoloop_save(d)
 
 
+def _agent_open_goals(name, limit=5):
+    """One-line-per-open-goal list for pass prompts (2026-11-23): skips the ~minute of
+    re-derivation each agent used to spend every pass re-reading its goal file and
+    re-reasoning about what state things are in."""
+    try:
+        path = os.path.join(HERE, "memory", "goals", name.lower() + ".md")
+        items = [g for g in _goal_ledger_mod().parse_agent_file(path) if g["status"] != "reached"]
+        return [("%d. %s" % (i + 1, str(g.get("text") or "").strip()[:200])) for i, g in enumerate(items[:limit])]
+    except Exception:
+        return []
+
+
 def _agent_open_goal_count(name):
     try:
         path = os.path.join(HERE, "memory", "goals", name.lower() + ".md")
@@ -3760,7 +3790,11 @@ def _autoloop_watchdog():
                 mls = _model_load_status(timeout=AUTOLOOP_PROBE_TIMEOUT_S)
             except Exception:
                 mls = {}
-            ready = [n for n in idle if not mls.get(n, {}).get("status") or mls[n]["status"] == "ok"]
+            # 2026-11-23 (Arnold: fleet slower than one LLM): only seats whose model is CONFIRMED loaded
+            # run from home. A probe that timed out (no status) used to count as ready - dead seats were
+            # fired, their turns hung tokenless for 20+ min and stretched every pass until a human stopped
+            # it (journal g-1a204f69381: Archivist 2 frames in 20m52s). Unknown => down chain instead.
+            ready = [n for n in idle if mls.get(n, {}).get("status") == "ok"]
             # HOST-AGNOSTIC PLACEMENT (2026-11-22): a seat whose home model is down can still
             # be fired when another reachable host has its model resident - single-host op.
             for n in idle:
@@ -3878,8 +3912,18 @@ def _autoloop_watchdog():
                 elif og > 0:
                     productive = True
                     why_bits.append("%s:%d-open" % (n.lower(), og))
-                    body = ("take ONE concrete next step on your oldest open goal "
-                            "(memory/goals/%s.md, %d open)." % (n.lower(), og))
+                    glines = _agent_open_goals(n)
+                    goal_list = ("\n".join(glines) + "\n") if glines else ""
+                    # 2026-11-23 (Arnold: fleet slower than one LLM): work-to-completion passes.
+                    # "ONE step" per pass meant a goal needing N steps took N x (pass time + idle
+                    # gap); a single LLM iterates to done inside ONE turn - that's why it outpaced
+                    # the whole fleet. Pass cap (PASS_TIMEOUT_S) is the backstop for long work.
+                    body = ("Work your oldest open goal TO COMPLETION this pass. Your open goals:\n%s"
+                            "Iterate tool calls (terminal/python/edit_file) until its verification criteria are "
+                            "genuinely met, then mark it reached in memory/goals/%s.md with a timestamped evidence line. "
+                            "If budget remains, take the next-oldest open goal and do the same. Keep reasoning terse - "
+                            "act, don't deliberate. Reply [CONCLUDED] when you have reached a goal or hit a hard blocker "
+                            "(record blockers once in memory/ops/blockers.md)." % (goal_list, n.lower()))
                 elif now - la[n] >= AUTOLOOP_MAINT_COOLDOWN_S:
                     why_bits.append("%s:maint" % n.lower())
                     body = ("your goals are 100% reached - contribute to the team while you wait - pick ONE of: (a) write a prediction/forecast for another agent's open goal into memory/goals/, (b) draft a solution or workflow improvement into memory/ops/, (c) verify and close one stale evidence claim in the ledger, (d) do one concrete step on another agent's oldest open goal. Reply [SILENT] only if you genuinely checked all four and found nothing actionable.")
