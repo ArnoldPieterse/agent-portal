@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Perf markers (render<2s, interaction<100ms, frame≥58fps) landed in ui/core.js; goal #10 last AC closed 2026-11-23.
 - Added missing Archivist #3 decay schtask to non-sandbox queue and batch-deploy script; unblocks their oldest open goal.
 - KG v3 size AC FAILS: JSON is 2,166,230 B (>2 MB cap by 67.5 KB);
 - Goal #3 (Freshness Scoring): decay run #3 done (7900 leaves, 0 flagged), 3/4 ACs met;
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 1: goal1_diagnose_fix.py built & py_compile PASS; deploy via `python elev.py --shell "python memory/mechanic/goal1_diagnose_fix.py"` on
 - Built memory/mechanic/unblock_all.py (py_compile PASS) — consolidated one-shot for all blocked goals on non-sandbox seat
 - All 10 goals confirmed complete; search-index.json rebuilt to 7,903 entries
+- E2E test script is `e2e_anti_stall_test.py
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

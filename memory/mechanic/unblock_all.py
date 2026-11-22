@@ -54,15 +54,12 @@ def phase_schtasks():
 def phase_winrm(host="black"):
     """Phase 2: WinRM E2E anti-stall test."""
     log("winrm_e2e", "START", f"target={host}")
-    script = HERE / "winrm_e2e_test.py"
+    script = HERE / "e2e_anti_stall_test.py"
     if not script.exists():
         log("winrm_e2e", "FAIL", f"script missing: {script}")
         return False
-    args = [sys.executable, str(script), "--host", host]
-    # Add --password from env if set
-    pw = os.environ.get("WINRM_PASSWORD")
-    if pw:
-        args += ["--password", pw]
+    # e2e_anti_stall_test.py uses --host=BLACK (equals, uppercase)
+    args = [sys.executable, str(script), f"--host={host.upper()}"]
     code, out = run_cmd(args, timeout=900)  # 15 min max
     if code == 0:
         log("winrm_e2e", "PASS", f"full cycle completed against {host}")
