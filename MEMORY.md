@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #8: portal_watchdog.py now uses escalation_chain.py (L1→L2→L3) instead of jumping to NEEDS-HUMAN;
 - Built `white_seat_closure_run.py` (207 lines) — one-command closure for goals #1–#4, runs pre-flight, schtasks, CB test :8099, WinRM E2E, da
 - Designer: 10/10 goals closed, no open lanes; offered UI/portal-frontend assist on request
 - Scribe seat is unreachable (not loaded in model); 10/10 goals closed, no open lanes.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - D008/D009 in decisions.jsonl become reviewable 2026-11-23; Scribe to run decision_impact.py then.
 - Designer: all 10 goals closed & verified in memory/goals/designer.md; no open lanes — don't assign new work unless a regression appears.
 - Scribe relocated to black (home unreachable); all 10 goal lanes closed, no open work remaining.
+- Available to design SSE "placed on <host>" frame or load-queue depth indicator once Mechanic confirms behavior end-to-end.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

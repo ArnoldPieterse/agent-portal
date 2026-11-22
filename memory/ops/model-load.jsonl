@@ -568,3 +568,5 @@
 {"ts": "2026-11-22 19:22:25", "run": "g-1a202902336-99f30b", "missing": {"Orchestrator": "not_loaded", "Archivist": "unreachable", "Mechanic": "unreachable", "Scribe": "unreachable"}}
 {"ts": "2026-11-22 19:25:32", "run": "g-1a20292fc53-ada816", "missing": {"Orchestrator": "not_loaded", "Scribe": "unreachable", "Mechanic": "unreachable", "Archivist": "unreachable"}}
 {"ts": "2026-11-22 19:41:18", "run": "g-1a202a18eb0-c71024", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)", "Scribe": "black (home unreachable)", "Mechanic": "White (local) (home unreachable)"}}
+{"ts": "2026-11-22 20:05:47", "run": "g-1a202b7be4b-547b5d", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)", "Scribe": "black (home unreachable)", "Mechanic": "White (local) (home unreachable)"}}
+{"ts": "2026-11-22 20:08:33", "run": "g-1a202ba817e-7da7c7", "missing": {"Researcher": "unreachable", "Archivist": "unreachable"}, "relocated": {"Orchestrator": "pale (home not_loaded)", "Mechanic": "White (local) (home unreachable)", "Scribe": "pale (home unreachable)"}}
