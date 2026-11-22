@@ -20,7 +20,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))
 PORTAL = "http://127.0.0.1:8099"
 BUDGET_S = 5.0   # the panel's refresh window
-VALID_STATES = {"busy", "idle", "unknown"}
+# 'unauth' (2026-11-22): host is UP but the probe was rejected (401/403) - a key problem,
+# not a dead host; it still counts as reporting in the panel.
+VALID_STATES = {"busy", "idle", "unauth", "unknown"}
 
 
 def main() -> int:

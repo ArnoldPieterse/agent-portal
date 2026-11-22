@@ -243,6 +243,20 @@ def _friendly_host_name(base):
         return "White (local)"
     return _fleet_host_names().get(base.rstrip("/")) or _host_label(base)
 
+def _fleet_host_key(base):
+    """Studio API key for a fleet base that no agents.json seat carries (e.g. Black).
+    Without it the probe 401s and the host falsely shows 'unreachable' even though its
+    Studio is up (2026-11-22). Keys live in host_api.py per the chat-only convention
+    (never in memory files); the catalog host name maps to its load_key() argument."""
+    hn = _fleet_host_names().get((base or "").rstrip("/"))
+    if not hn:
+        return ""
+    try:
+        import host_api
+        return host_api.load_key(hn.upper()) or ""
+    except Exception:
+        return ""
+
 
 def _base_alive(base, timeout=3):
     if not base or base.rstrip("/") == STUDIO.rstrip("/"):
@@ -1203,6 +1217,13 @@ def _fleet_probe(base, api_key="", timeout=3):
     try:
         with urllib.request.urlopen(urllib.request.Request(b + "/api/inference/active-generations", headers=h), timeout=timeout) as r:
             gen = int(json.load(r).get("count", 0))
+    except urllib.error.HTTPError as e:
+        # The Studio ANSWERED, so the host IS up. 401/403 = our key is missing or expired:
+        # report a distinct 'unauth' state instead of a false 'unreachable' (2026-11-22,
+        # Black was alive but keyless-probed and showed down in the Fleet tab).
+        if e.code in (401, 403):
+            return {"generations": None, "models": [], "auth": False}
+        return None
     except Exception:
         return None
     # AG answered => the host IS reachable; state derives from generations. The model
@@ -1249,9 +1270,10 @@ def _fleet_snapshot():
         order.insert(0, local)
     # Catalog hosts with no agents mapped (e.g. Black) still belong to the fleet picture:
     # they can serve as placement seats and carry model loads, so the tab must not hide them.
+    # Their Studio keys come from host_api.py (no agents.json seat carries one for them).
     for cb in _fleet_host_names():
         if cb not in hosts:
-            hosts[cb] = {"key": "", "agents": []}
+            hosts[cb] = {"key": _fleet_host_key(cb), "agents": []}
             order.append(cb)
     now = time.time()
 
@@ -1292,8 +1314,16 @@ def _fleet_snapshot():
                 row["reason"] = ("unreachable" if row["last_seen"] is None else
                                  "stale (%ds)" % int(now - row["last_seen"]))
         if res is not None:
+            auth = res.pop("auth", None)
             row.update(res)
-            row["state"] = "busy" if res["generations"] > 0 else "idle"
+            if auth is False:
+                # host up, probe rejected: show it as UP (counts toward 'reporting') but
+                # flag the key problem instead of pretending to know its load state
+                row["state"] = "unauth"
+                row["generations"] = 0
+                row["reason"] = "up - unauthenticated (key missing or expired)"
+            else:
+                row["state"] = "busy" if res.get("generations") else "idle"
             row["last_seen"] = now
         # Load queue (2026-11-22): in-flight load + waiters behind it, per host. The waiter
         # counter includes the runner itself while a load is active, so queued = waiters - 1.

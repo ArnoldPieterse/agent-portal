@@ -129,6 +129,7 @@ textarea{resize:vertical;min-height:64px}
 .fdot.busy{background:var(--dot-busy)}
 .fdot.idle{background:var(--ok)}
 .fdot.unknown{background:var(--dot-err)}
+.fdot.unauth{background:var(--acc)}
 .fmodels{color:var(--text);margin:3px 0 0 var(--sp-16);font-family:ui-monospace,Consolas,monospace;font-size:var(--fs-12);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fload{color:var(--warn);font-weight:600;white-space:nowrap}
 .fload-wait{color:var(--dim);font-weight:400}

@@ -13,8 +13,8 @@
 (function (root) {
   "use strict";
 
-  var STATE_COLOR = { idle: "var(--ok, #3ddc84)", busy: "var(--warn, #ff9f43)", unknown: "var(--dot-err)" };
-  var STATE_LABEL = { idle: "idle", busy: "busy", unknown: "unknown" };
+  var STATE_COLOR = { idle: "var(--ok, #3ddc84)", busy: "var(--warn, #ff9f43)", unauth: "var(--acc, #4f8cff)", unknown: "var(--dot-err)" };
+  var STATE_LABEL = { idle: "idle", busy: "busy", unauth: "unauth (up, no key)", unknown: "unknown" };
 
   // Fallback dataset (real /api/fleet schema) so the diagram renders even with no egress.
   var SAMPLE = { ts: Date.now() / 1000, ttl: 30, hosts: [

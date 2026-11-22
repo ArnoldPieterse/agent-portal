@@ -371,7 +371,7 @@ async function fleetUpdate(){
     let html="";
     for(const h of (o.hosts||[])){
       const age=h.last_seen?Math.max(0,Math.round(now-h.last_seen)):"–";
-      const st=h.state==="busy"?"busy":h.state==="idle"?"idle":"UNKNOWN";
+      const st=h.state==="busy"?"busy":h.state==="idle"?"idle":h.state==="unauth"?"UNAUTH (up - key missing/expired)":"UNKNOWN";
       const models=h.models.length?h.models.map(m=>esc(m.id)+(m.quant?" ("+esc(m.quant)+")":"")).join(", "):"— none loaded —";
       // Per-host load queue (2026-11-22): in-flight model load + waiters behind it.
       let lq="";
