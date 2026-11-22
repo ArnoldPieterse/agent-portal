@@ -99,3 +99,59 @@
     document.getElementById("ckpRisks").innerHTML = r || "<i>none predicted</i>";
     renderDecs(d.recent_decisions || []);
   }
+
+  var decState = { agent: "", type: "", outcome: "", q: "" };
+  function renderDecs(list) {
+    list = list.slice(-50).reverse();
+    var box = document.getElementById("ckpDecs");
+    if (!box.dataset.built) {
+      box.innerHTML = "<div class=ckfilters>" +
+        "<select id=ckpFA><option value=''>all agents</option></select>" +
+        "<select id=ckpFT><option value=''>all types</option></select>" +
+        "<select id=ckpFO><option value=''>all outcomes</option></select>" +
+        "<input id=ckpFQ type=search placeholder='search decisions\u2026' style='flex:1;min-width:120px'></div><div id=ckpDecList></div>";
+      box.dataset.built = "1";
+      ["A", "T", "O"].forEach(function (k) {
+        var sel = document.getElementById("ckpF" + k), key = k === "A" ? "agent" : k === "T" ? "type" : "outcome";
+        var vals = {}; list.forEach(function (x) { if (x[key]) vals[x[key]] = 1; });
+        Object.keys(vals).sort().forEach(function (v) { var o = document.createElement("option"); o.value = v; o.textContent = v; sel.appendChild(o); });
+        sel.onchange = function () { decState[key] = sel.value; paintDecs(list); };
+      });
+      document.getElementById("ckpFQ").oninput = function (e) { decState.q = e.target.value.toLowerCase(); paintDecs(list); };
+    }
+    paintDecs(list);
+  }
+  function paintDecs(list) {
+    var out = "";
+    list.forEach(function (x, i) {
+      var hay = JSON.stringify(x).toLowerCase();
+      if (decState.agent && x.agent !== decState.agent) return;
+      if (decState.type && x.type !== decState.type) return;
+      if (decState.outcome && x.outcome !== decState.outcome) return;
+      if (decState.q && hay.indexOf(decState.q) < 0) return;
+      var head = [x.ts || x.time, x.agent, x.type, x.outcome].filter(Boolean).map(esc).join(" \u00B7 ") || esc(JSON.stringify(x).slice(0, 80));
+      out += "<div class=ckdec id=ckd" + i + "><div class=hd onclick=document.getElementById('ckd" + i + "').classList.toggle('open')><span>" + head + "</span></div><div class=bd>" + esc(JSON.stringify(x, null, 1)) + "</div></div>";
+    });
+    document.getElementById("ckpDecList").innerHTML = out || "<i style='color:#8a8f98'>no decisions match</i>";
+  }
+
+  async function refresh() {
+    try {
+      var r = await fetch(API, { cache: "no-store" });
+      last = await r.json();
+      render(last);
+      document.getElementById("ckpStamp").textContent = "updated " + new Date().toLocaleTimeString();
+    } catch (e) {
+      document.getElementById("ckpStamp").textContent = "refresh failed";
+    }
+  }
+  function start() { if (!timer) timer = setInterval(refresh, 30000); }
+  function init() {
+    build();
+    refresh();
+    start();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+  window.CKPIT = { refresh: refresh, data: function () { return last; } };
+})();

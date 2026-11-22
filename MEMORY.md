@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10/10 goals verified complete (2026-11-23
-- Designer: all 10 goals verified complete (2026-11-23); auto-loop prompt is stale, no open work for this seat.
-- Verifier 10/10 verified (2026-11-23), no open goals, auto-loop prompt stale — do not re-probe
 - Builder: all 10 goals verified complete (2026-11-23); auto-loop prompt is stale, no open work remains for this seat.
 - Mechanic 10/10 goals verified; goal #10 portal_heal.py selftest 34/34 PASS closed last gap — no open work remains.
 - All 4 seats at 10/10 verified goals (cycle-10, 2026-1
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop prompt is stale (pre-cycle-10 names); all 4 seats confirmed 10/
 - Designer: all 10 goals verified 2026-11-23; auto-loop prompt is stale (shows old goal set), no open work remains
 - All 4 seats (Mechanic, Builder, Verifier, Designer) confirmed 10/10 goals complete as of
+- Auto-loop prompt is stale: all 10 Designer goals verified complete in memory/goals/designer.md; no open work remains.
+- Builder goals all verified complete 2026-11-23; auto-loop prompt is stale, no open work remains for this seat.
+- Auto-loop prompt is stale: all 10/10 goals across Builder, Verifier, Designer verified complete 2026-11-23; no open work remains.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1568,7 +1568,11 @@ def _cockpit_snapshot():
         for ag in agents_out:
             fn = os.path.join(gdir, (ag["name"] or "").lower() + ".md")
             try:
-                for g in parse(fn):
+                gs = parse(fn)
+                ag["total"] = len(gs)
+                ag["done"] = sum(1 for g in gs if g.get("status") == "reached")
+                ag["blocked"] = sum(1 for g in gs if g.get("status") == "blocked")
+                for g in gs:
                     if g.get("status") == "open":
                         ag["current_goal"] = (g.get("text") or "")[:160]
                         break
