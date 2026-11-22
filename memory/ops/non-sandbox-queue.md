@@ -10,15 +10,15 @@ A single NON-SANDBOX seat (White ops terminal / RDP, or a seated agent on Pale/B
 batch-executes the whole list in ONE sitting, ticks each off, and records evidence.
 
 ## ONE-COMMAND BATCH (preferred)
-From a non-sandbox White seat (ops terminal / RDP, elevated), run:
+From a non-sandbox White seat (ops terminal / RDP, elevated), run IN ORDER:
 ```
-python Z:\memory\ops\batch_tier_b.py
+python Z:\memory\mechanic\unblock_all.py        # Phase 1-3: schtasks + WinRM E2E + CB live
+python Z:\memory\mechanic\unblock_gap_fill.py   # Phase 4-6: boot-detect + SMB creds + capacity
 ```
-This executes ALL open entries below in sequence, writes a summary to
-`memory/mechanic/batch-tier-b-run.json` (never committed), and is idempotent (re-runs are safe).
-Use `--dry-run` to preview; `--skip-browser` to skip Designer #5/#7 if no Chrome.
-After the batch: check each artifact path, run ledger records for any goals whose
-acceptance is now met, and tick the lines below.
+- `unblock_all.py` covers: deploy_all_schtasks (PortalLoadProbe, MirrorHeal, FleetBootRecovery, LogRotateDaily), WinRM E2E against Black, live CB verification.
+- `unblock_gap_fill.py` covers: RebootRecoveryDetect schtask (Mechanic #4), SMB creds dry-run (Researcher #3 dep), Capacity Planning 7-day live run (Mechanic #9).
+- Both are idempotent; use `--dry-run` / `--skip-*` flags as needed.
+- After the batch: check each artifact path, run ledger records for any goals whose acceptance is now met, and tick the lines below.
 
 ## HOW TO CLOSE AN ENTRY (manual, per-item)
 1. Run the exact command from a non-sandbox seat with LAN egress + Chrome (where noted).

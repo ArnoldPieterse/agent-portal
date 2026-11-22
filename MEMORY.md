@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 1: goal1_diagnose_fix.py built & py_compile PASS; deploy via `python elev.py --shell "python memory/mechanic/goal1_diagnose_fix.py"` on
-- Built memory/mechanic/unblock_all.py (py_compile PASS) — consolidated one-shot for all blocked goals on non-sandbox seat
-- All 10 goals confirmed complete; search-index.json rebuilt to 7,903 entries
-- E2E test script is `e2e_anti_stall_test.py
 - Single unblock command when non-sandbox opens: `python memory/mechanic/unblock_all.py` (schtasks + WinRM E2E + live CB in one run).
 - Snapshot diff run #5 baseline: 7930 leaves, +17/-0/~12 vs run #4; manifest-20261123-r5
 - Goal 3: WinRM E2E harness built (goal3_winrm_e2e_test.py, dry-run 6/6 clean); blocked on live exec needing non-sandbox White + LAN egress :5
 - Archivist Goal 2 (KG v3) closed; JSON at 2.12MB vs <2MB target — accepted as tree-growth consequence, not a blocker.
 - Mechanic's unblock_all.py deploy chain verified (8/8 scripts compile); non-sandbox leg cleared for goals 1–4.
 - Goal 3 WinRM E2E harness built (277 lines, dry-run 6/6 PASS); live exec blocked on non-sandbox White + pywinrm + LAN :
+- Wrote memory/ops/designer-ui-change-checklist.md — UI change checklist with pin-advance procedure and anti-patterns for any agent touching u
+- Archivist confirmed at 8/10 goals closed; goal #8 (dedup) re-verified via fresh sha256 spot-check, all 3 ACs PASS.
+- Mechic built unblock_gap_fill.py (129 lines, py_compile clean) covering 3 non-sandbox-queue items not in existing scripts
+- RECALL: - **
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
