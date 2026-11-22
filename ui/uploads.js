@@ -154,6 +154,7 @@ function handleRunEvent(ev){
     const o=ev.frame;
     if(o.error){ t.stopBusy(); t.body.textContent="\u26a0 "+o.error; delete runTurns[ev.agent]; return; }
     if(o.blocked){ t.stopBusy(); t.body.textContent="\u23f8 "+o.blocked; delete runTurns[ev.agent]; return; }
+    if(o.model_load){ let ln=t.d.querySelector(".loadnote"); if(!ln){ln=document.createElement("div");ln.className="loadnote";t.d.appendChild(ln);} ln.textContent="\u23f3 "+o.model_load; stickScroll(); return; }
     if(o.meta){ if(typeof o.meta.inter_agent_replies==="number")setXtalk(o.meta.inter_agent_replies,o.meta.limit);
       if(o.meta.concluded){ lastConcluded=true;
         const chip=document.createElement("span");chip.className="conclchip";
@@ -344,6 +345,8 @@ async function filesLoad(){
 }
 $("filesBtn").onclick=()=>{const open=$("filesPanel").classList.toggle("open");$("filesBtn").classList.toggle("on",open);if(open)filesLoad();};
 // ---- Goals panel (2026-11-15, Designer): Goal Velocity dashboard ----
+// Round-topic mount node (P1, 2026-11-22): created from JS so index.html stays untouched.
+{ const _tp=$("goalsPanel"); if(_tp&&!$("topicBody")&&$("goalsGit")){ const tb=document.createElement("div"); tb.id="topicBody"; _tp.insertBefore(tb,$("goalsGit")); } }
 async function goalsLoad(){
   { const _gb=$("goalsBody"); if(_gb&&(typeof UI!=="undefined")&&!_gb.dataset.loaded)_gb.innerHTML=UI.skeleton(3,52); }
   try{
@@ -373,6 +376,29 @@ async function goalsLoad(){
     { const _ct=$("goalsBody").querySelector(".empty-cta"); if(_ct)_ct.onclick=function(){ const cm=$("composer"); if(cm)cm.focus(); }; }
     $("goalsStat").textContent=o.fleet_done+"/"+o.fleet_total+" · fleet "+(o.fleet_pct||0)+"%";
     if(typeof renderGoalBar==="function")renderGoalBar(o);
+    // Round topic + queue (P1, 2026-11-22): current round focus; user can queue topics that
+    // steer the goal-setting focus of following rounds.
+    fetch("/api/goals/topic").then(r=>r.json()).then(rt=>{
+      const el=$("topicBody"); if(!el||!rt.ok)return;
+      let h="";
+      const c=rt.current;
+      h+='<div class="topic-card'+(c?'':' zero')+'"><div class="topic-k">Round topic</div>'
+        +(c?('<div class="topic-t">'+esc(c.topic)+'</div><div class="topic-d">'+esc(c.description||"")+'</div>')
+           :'<div class="topic-d hint">none set yet - the Orchestrator sets one each goal round, or queue one below</div>')+'</div>';
+      const q=rt.queue||[];
+      if(q.length){ h+='<div class="topic-q">'+q.map((x,i)=>'<span class="topic-qi" title="'+esc(x.description||"")+'">'+esc(x.topic)+'<button data-ti="'+i+'" title="Remove from queue">&times;</button></span>').join("")+'</div>'; }
+      h+='<div class="topic-form"><input id="topicIn" placeholder="Topic for a future round (short name)…" maxlength="120">'
+        +'<input id="topicDesc" placeholder="Short paragraph - what this focus should cover (optional)" maxlength="400">'
+        +'<button class="btn" id="topicQueueBtn">Queue</button><span id="topicMsg" class="hint"></span></div>';
+      el.innerHTML=h;
+      el.querySelectorAll(".topic-qi button").forEach(b=>b.onclick=()=>{ jpost("/api/goals/topic",{action:"remove",index:+b.dataset.ti}).then(()=>goalsLoad()).catch(()=>{}); });
+      const qb=$("topicQueueBtn"); if(qb)qb.onclick=async()=>{
+        const tv=$("topicIn").value.trim(), dsc=$("topicDesc").value.trim();
+        const msg=$("topicMsg");
+        if(!tv){ msg.textContent="topic required"; return; }
+        try{ const r=await jpost("/api/goals/topic",{action:"queue",topic:tv,description:dsc});
+          msg.textContent=r.ok?"queued - steers the next goal round":"error: "+(r.error||""); goalsLoad(); }catch(e){ msg.textContent="error: "+e; } };
+    }).catch(()=>{});
     // Git-based progress curve + stall signal (2026-11-16): goals are registered in git,
     // so the history IS the progress tracker.
     fetch("/api/goals/history").then(r=>r.json()).then(h=>{

@@ -2901,6 +2901,41 @@ def start_group_run(text, extra=None):
                         _f.write(_rec)
         except Exception:
             pass
+        if reset_note:
+            # ROUND TOPIC (P1, 2026-11-22): a queued user topic steers the new round; otherwise
+            # the Orchestrator must set one before goals are drafted. The anti-repeat list keeps
+            # the fresh goal set genuinely new work.
+            try:
+                _rt = _load_round_topic()
+                _q = _rt.get("queue") or []
+                if _q:
+                    _nxt = _q.pop(0)
+                    if _rt.get("current") and (_rt["current"] or {}).get("topic"):
+                        _rt.setdefault("past", []).append(_rt["current"]["topic"][:120])
+                        _rt["past"] = _rt["past"][-10:]
+                    _rt["current"] = {"topic": (_nxt.get("topic") or "").strip()[:200],
+                                      "description": (_nxt.get("description") or "").strip()[:1200],
+                                      "set_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                      "source": "user-queue"}
+                    _save_round_topic(_rt)
+                    reset_note += ("\n\n[ROUND TOPIC - USER QUEUED] This goal-setting round's focus: \"%s\". %s "
+                                   "Every agent's new goals MUST serve this topic - each goal traceable to it."
+                                   % ((_nxt.get("topic") or "").strip(), (_nxt.get("description") or "").strip()))
+                else:
+                    _past = [t for t in (_rt.get("past") or []) if t]
+                    reset_note += ("\n\n[ROUND TOPIC] No user-queued topic this round. Orchestrator: BEFORE goals are "
+                                   "drafted, set this round's focus - a short topic + 2-3 sentence paragraph describing "
+                                   "the collection of goals for the round - by writing memory/goals/round_topic.json as "
+                                   "{\"current\": {\"topic\": \"...\", \"description\": \"...\"}} (move the previous topic into "
+                                   "\"past\"). Do NOT reuse a recent topic"
+                                   + ((" (recent: %s)" % ", ".join(_past[-5:])) if _past else "") + ".")
+                _closed = _closed_topics_recent(20)
+                if _closed:
+                    reset_note += ("\n\n[ANTI-REPEAT] These goals were already completed in earlier rounds - do NOT "
+                                   "re-set them verbatim or near-verbatim (if genuinely needed again, cite the prior "
+                                   "evidence pointer instead):\n" + "\n".join("- " + c for c in _closed))
+            except Exception:
+                pass
         full_text = (text or "") + reset_note
         # 2026-11-17: admin is the DEFAULT for every agent (user directive). When this shell is
         # not elevated, route admin commands through the elevated helper service (elev.py ->
@@ -2996,8 +3031,17 @@ def _agent_goals_block(name):
         base += ("\nTEAM RULES: (1) You may ASSIST another agent's open goal when you can unblock it - "
                  "coordinate in cross-talk and credit the original owner in the evidence note. "
                  "(2) ANTI-LOOP: if your last two turns produced no new file change, measurement or evidence, "
-                 "stop re-verifying and take ONE concrete next step (or hand off / assist).")
-        return base[:1800]
+                 "stop re-verifying and take ONE concrete next step (or hand off / assist). "
+                 "(3) ANTI-REPEAT: never re-issue a goal already in your file or closed in an earlier round "
+                 "(memory/goals/closed_topics.json); new work must be genuinely new.")
+        try:
+            _rt = (_load_round_topic().get("current") or {})
+            if _rt.get("topic"):
+                base += ("\nROUND TOPIC (this cycle's focus - new work should serve it): %s"
+                         % str(_rt["topic"])[:140])
+        except Exception:
+            pass
+        return base[:2200]
     except Exception:
         return ""
 
@@ -3746,6 +3790,140 @@ def _check_level_up(snap):
             "level_cycles": len(st["history"])}
 
 
+# ---- ROUND TOPIC + ANTI-REPEAT LEDGER (P1, 2026-11-22, user request) -----------------
+# Every goal-setting round has a TOPIC: a short name + paragraph describing the collection
+# of goals for that round. The user can QUEUE topics (POST /api/goals/topic); each new round
+# pops the next queued topic as its focus. If none is queued, the Orchestrator sets one before
+# goals are drafted. Anti-repeat: every goal line at 100% is hashed into
+# memory/goals/closed_topics.json; goal-setting prompts list recent closed topics so agents
+# never re-issue finished work verbatim or near-verbatim.
+ROUND_TOPIC_FILE = os.path.join(HERE, "memory", "goals", "round_topic.json")
+CLOSED_TOPICS_FILE = os.path.join(HERE, "memory", "goals", "closed_topics.json")
+
+
+def _norm_topic(t):
+    return re.sub(r"\W+", " ", (t or "").lower()).strip()[:120]
+
+
+def _load_round_topic():
+    try:
+        with open(ROUND_TOPIC_FILE, encoding="utf-8") as f:
+            d = json.load(f)
+        if not isinstance(d, dict):
+            raise ValueError("bad shape")
+        d.setdefault("current", None); d.setdefault("queue", []); d.setdefault("past", [])
+        return d
+    except Exception:
+        return {"current": None, "queue": [], "past": []}
+
+
+def _save_round_topic(d):
+    try:
+        tmp = ROUND_TOPIC_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(d, f, indent=1)
+        os.replace(tmp, ROUND_TOPIC_FILE)
+    except Exception:
+        pass
+
+
+def _round_topic_snapshot():
+    d = _load_round_topic()
+    return {"ok": True, "current": d.get("current"), "queue": d.get("queue") or [],
+            "past": (d.get("past") or [])[-5:]}
+
+
+def _round_topic_mutate(body):
+    """POST /api/goals/topic - user controls the round focus. Actions: queue {topic,
+    description} | remove {index} | set {topic, description}. Duplicate topics (vs current /
+    queue / past, normalized) are rejected so queued focus never repeats."""
+    try:
+        d = _load_round_topic()
+        act = (body.get("action") or "").strip().lower()
+        topic = (body.get("topic") or "").strip()[:200]
+        desc = (body.get("description") or "").strip()[:1200]
+        known = {_norm_topic((d.get("current") or {}).get("topic"))}
+        known |= {_norm_topic(q.get("topic")) for q in d.get("queue") or []}
+        known.discard("")
+        if act == "queue":
+            if not topic:
+                return False, {"error": "topic required (short name for the round focus)"}
+            if _norm_topic(topic) in known:
+                return False, {"error": "duplicate topic - it is already current, queued or used recently"}
+            d["queue"].append({"topic": topic, "description": desc,
+                               "at": time.strftime("%Y-%m-%d %H:%M:%S")})
+            d["queue"] = d["queue"][-5:]
+        elif act == "remove":
+            q = d.get("queue") or []
+            i = int(body.get("index") or 0)
+            if not (0 <= i < len(q)):
+                return False, {"error": "bad index"}
+            q.pop(i)
+        elif act == "set":
+            if not topic:
+                return False, {"error": "topic required"}
+            if _norm_topic(topic) in known:
+                return False, {"error": "duplicate topic - it is already current, queued or used recently"}
+            if d.get("current") and d["current"].get("topic"):
+                d.setdefault("past", []).append(d["current"]["topic"][:120])
+                d["past"] = d["past"][-10:]
+            d["current"] = {"topic": topic, "description": desc,
+                            "set_at": time.strftime("%Y-%m-%d %H:%M:%S"), "source": "user"}
+        else:
+            return False, {"error": "action must be queue | remove | set"}
+        _save_round_topic(d)
+        return True, _round_topic_snapshot()
+    except Exception as e:
+        return False, {"error": str(e)[:200]}
+
+
+def _goal_sig(text):
+    import hashlib
+    n = _norm_topic(text)
+    return hashlib.sha1(n.encode()).hexdigest()[:16] if n else ""
+
+
+def _record_reached_goals(reached_pairs):
+    """reached_pairs = [(text, agent), ...] goal lines currently at 100%. New sigs are appended
+    to the anti-repeat ledger (dedup by sig, capped). Called from _goals_snapshot every poll -
+    idempotent and cheap (hash of <=80 short strings)."""
+    if not reached_pairs:
+        return
+    try:
+        with open(CLOSED_TOPICS_FILE, encoding="utf-8") as f:
+            d = json.load(f)
+        if not isinstance(d, list):
+            raise ValueError("bad shape")
+    except Exception:
+        d = []
+    have = {e.get("sig") for e in d}
+    added = 0
+    for text, agent in reached_pairs:
+        sig = _goal_sig(text)
+        if not sig or sig in have:
+            continue
+        d.append({"sig": sig, "text": text[:140], "agent": agent,
+                  "at": time.strftime("%Y-%m-%d")})
+        have.add(sig); added += 1
+    if added:
+        try:
+            tmp = CLOSED_TOPICS_FILE + ".tmp"
+            with open(tmp, "w", encoding="utf-8") as f:
+                json.dump(d[-800:], f, indent=0)
+            os.replace(tmp, CLOSED_TOPICS_FILE)
+        except Exception:
+            pass
+
+
+def _closed_topics_recent(n=20):
+    try:
+        with open(CLOSED_TOPICS_FILE, encoding="utf-8") as f:
+            d = json.load(f)
+        return [e.get("text", "") for e in (d or [])[-n:] if e.get("text")]
+    except Exception:
+        return []
+
+
 def _goals_snapshot():
     """Goal Velocity dashboard (2026-11-15, Designer; Researcher evidence-gated v2).
     Counts a goal DONE only when an acceptance/evidence marker is present. Delegates to
@@ -3769,6 +3947,7 @@ def _goals_snapshot():
     if parse is None:
         return {"ok": False, "error": "goal_ledger module not found (memory/researcher or portal root)", "agents": []}
     agents = []
+    _reached_now = []   # (text, agent) pairs at 100% -> anti-repeat ledger
     try:
         for fn in sorted(os.listdir(gdir)):
             if not fn.endswith(".md") or fn[:-3] == "INDEX":
@@ -3779,10 +3958,17 @@ def _goals_snapshot():
             done = sum(1 for g in goals if g["status"] == "reached")
             not_done = [g["text"] for g in goals if g["status"] != "reached"]
             blocked = sum(1 for t in not_done if GOAL_BLOCKED_PAT.search(t))
+            for g in goals:
+                if g["status"] == "reached":
+                    _reached_now.append((g["text"], fn[:-3]))
             agents.append({"agent": fn[:-3], "total": len(goals), "done": done,
                            "open": len(not_done), "blocked": blocked})
     except Exception as e:
         return {"ok": False, "error": str(e), "agents": []}
+    try:
+        _record_reached_goals(_reached_now)   # anti-repeat ledger (idempotent per sig)
+    except Exception:
+        pass
     total = sum(a["total"] for a in agents)
     done_all = sum(a["done"] for a in agents)
     resp = {"ok": True, "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
@@ -4315,6 +4501,10 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/goals":
             # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
             return self._json(200, _goals_snapshot())
+        elif p == "/api/goals/topic":
+            # Round topic + queue (P1, 2026-11-22): current round focus, queued user topics,
+            # recent past topics. Mutations via POST /api/goals/topic.
+            return self._json(200, _round_topic_snapshot())
         elif p == "/api/models/status":
             # Model-load governance (2026-11-16, Orchestrator goal #2): live per-seat status
             # for the fleet panel; same probe the run-start check uses.
@@ -4766,6 +4956,10 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(400, {"error": "goal (number or text) required"})
             ok, msg = _goal_ledger_mod().record_evidence(agent, ref, note=body.get("note", ""), leaf=body.get("leaf"))
             return self._json(200 if ok else 400, {"ok": ok, "msg": msg})
+        elif p == "/api/goals/topic":
+            # Round topic queue (P1, 2026-11-22): {action: queue|remove|set, topic, description, index}
+            ok, out = _round_topic_mutate(body)
+            return self._json(200 if ok else 400, out)
         else:
             self._json(404, {"error": "not found"})
 

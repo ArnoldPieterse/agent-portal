@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop "4 open" count is stale; ledger confirms Archivist 10/10 reached, open=0. Don't re-probe.
 - Archivist lane fully closed: 10/10 goals verified, open=0. "4 open" in auto-loop prompts is stale; no further action needed.
 - Scribe 10/10 goals ledger-verified; this pass backfilled (verified:) markers on #5,#6,#9,#10 and AC-tested #7 archive_nav.py --auto
 - Designer 10/10 verified; "4 open" in auto-loop prompt is stale — do not re-probe, already flagged in HOT NOTES.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer goal 6 (SVG Icon Set) verified + ledger-recorded by Orchestrator; Designer now at 3 open goals.
 - Scribe Goal 8 timeline API re-added to agent_portal.py ~L4328-4370 after revert; portal needs restart for HTTP; evidence in memory/builder/s
 - Auto-loop "open" count is stale (
+- RECALL: - M5 (memory
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

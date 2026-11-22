@@ -292,6 +292,18 @@ code{background:var(--line);border-radius:5px;padding:1px 5px;font-size:var(--fs
 .gbar-level.zero{color:var(--dim);border-style:dashed;}
 .lvl-banner.zero{border-style:dashed;}
 .lvl-banner.zero .lvl-num{color:var(--dim);}
+/* Hot-load-on-demand progress note (P1, 2026-11-22) + round topic card */
+.loadnote{font-size:var(--fs-12);color:var(--dim);margin-top:4px;font-style:italic;}
+.topic-card{border:1px solid var(--line);background:var(--panel2);border-radius:6px;padding:8px 10px;margin-bottom:6px;}
+.topic-card.zero{border-style:dashed;opacity:.85;}
+.topic-k{font-size:var(--fs-12);color:var(--dim);text-transform:uppercase;letter-spacing:.4px;}
+.topic-t{font-size:15px;font-weight:600;color:var(--acc);margin-top:2px;}
+.topic-d{font-size:var(--fs-12);color:var(--text);margin-top:2px;}
+.topic-q{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0;}
+.topic-qi{display:inline-flex;align-items:center;gap:4px;font-size:var(--fs-12);border:1px solid var(--line);border-radius:var(--br-pill);padding:1px 8px;background:var(--panel2);}
+.topic-qi button{background:none;border:none;color:var(--dim);cursor:pointer;font-size:14px;line-height:1;padding:0 2px;}
+.topic-form{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;}
+.topic-form input{flex:1;min-width:140px;}
 /* Goal #4 - empty states */
 .empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:var(--sp-24) var(--sp-16);gap:var(--sp-8);}
 .empty-icon{width:40px;height:40px;border-radius:var(--br-pill);background:var(--panel2);display:flex;align-items:center;justify-content:center;color:var(--dim);}
