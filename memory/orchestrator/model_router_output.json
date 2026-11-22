@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-11-23T06:34:43",
+  "forecast_source": "steady-state (no file)",
+  "predicted_demand": "steady",
+  "assignment": {
+    "Orchestrator": "Q8_0",
+    "Builder": "Q8_0",
+    "Archivist": "Q8_0",
+    "Scribe": "Q8_0",
+    "Researcher": "Q4_K_S",
+    "Verifier": "Q4_K_S",
+    "Designer": "Q4_K_S",
+    "Mechanic": "Q4_K_S"
+  },
+  "total_vram_gb": 45.5,
+  "current_manual_vram_gb": 45.5,
+  "vram_delta_pct": 0.0,
+  "vram_breakdown": [
+    {
+      "model": "Q8_0",
+      "vram_gb": 30.1,
+      "agents": [
+        "Orchestrator",
+        "Builder",
+        "Archivist",
+        "Scribe"
+      ]
+    },
+    {
+      "model": "Q4_K_S",
+      "vram_gb": 15.4,
+      "agents": [
+        "Researcher",
+        "Verifier",
+        "Designer",
+        "Mechanic"
+      ]
+    }
+  ],
+  "rationale": {
+    "Orchestrator": "Lowest-VRAM model meeting tier>=1 + caps ['text', 'code'] -> Q8_0 (30.1GB)",
+    "Builder": "Lowest-VRAM model meeting tier>=1 + caps ['text', 'code'] -> Q8_0 (30.1GB)",
+    "Archivist": "Lowest-VRAM model meeting tier>=1 + caps ['text', 'long-ctx', 'rag'] -> Q8_0 (30.1GB)",
+    "Scribe": "Lowest-VRAM model meeting tier>=1 + caps ['text', 'code'] -> Q8_0 (30.1GB)",
+    "Researcher": "Lowest-VRAM model meeting tier>=0 + caps ['text', 'long-ctx', 'rag'] -> Q4_K_S (15.4GB)",
+    "Verifier": "Lowest-VRAM model meeting tier>=0 + caps ['text', 'code'] -> Q4_K_S (15.4GB)",
+    "Designer": "Lowest-VRAM model meeting tier>=0 + caps ['text'] -> Q4_K_S (15.4GB)",
+    "Mechanic": "Lowest-VRAM model meeting tier>=0 + caps ['text', 'code'] -> Q4_K_S (15.4GB)"
+  },
+  "quality_floors_met": true,
+  "models_available": [
+    "Q4_K_S",
+    "Q8_0"
+  ]
+}

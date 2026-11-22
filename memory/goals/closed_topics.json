@@ -700,5 +700,23 @@
 "text": "**Cockpit Data Accuracy Test** - `python memory/verifier/cockpit_accuracy.py`: call /api/fleet/cockpit, then independently verify each field",
 "agent": "verifier",
 "at": "2026-11-23"
+},
+{
+"sig": "8eaae1367944feb3",
+"text": "**Runbook Parser + Executor** - `python memory/builder/runbook_exec.py`: parse markdown runbooks (memory/ops/runbooks/*.md) into structured ",
+"agent": "builder",
+"at": "2026-11-23"
+},
+{
+"sig": "8535fd3a560df676",
+"text": "**Fleet State Narrative Summarizer** - `python memory/researcher/fleet_summary.py`: generate a 3-5 sentence natural-language summary of flee",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "ae44ce778fee223f",
+"text": "**Fleet Decision Digest** - `python memory/scribe/decision_digest.py`: compress all decisions from decision-log.jsonl since last digest into",
+"agent": "scribe",
+"at": "2026-11-23"
 }
 ]

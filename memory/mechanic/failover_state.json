@@ -1,0 +1,22 @@
+{
+  "hosts": {
+    "WHITE": {
+      "consec_fail": 1,
+      "status": "DEGRADED"
+    },
+    "PALE": {
+      "consec_fail": 1,
+      "status": "DEGRADED"
+    },
+    "BLACK": {
+      "consec_fail": 1,
+      "status": "DEGRADED"
+    },
+    "RED": {
+      "consec_fail": 1,
+      "status": "DEGRADED"
+    }
+  },
+  "failovers": [],
+  "originals": {}
+}
