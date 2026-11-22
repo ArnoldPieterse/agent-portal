@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cockpit JS (223 lines, 6 panels) exists but index.html lacks `<script src="ui/cockpit.js">` — flagged to Builder as blocker.
 - Auto-loop header showed "4/10" but actual ledger state is 10/10 verified (2026-11-23); header is a stale snapshot, not live state.
 - Goal #3 (Model Swap) reached: model_swap.py self-test 10/10 PASS, evidence in memory/builder/model_swap_goal3_verified_2026-11-23.md
 - Scribe completed goals 8 & 9: runbook_lessons.py (8 events, 4 runbooks) + stakeholder briefing script, both ledger-verified.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10/10
 - Goals 5, 6, 8 already implemented in ui/cockpit.js (built with goal #2); only
 - Mechanic confirmed all 10/10 goals verified
+- precedent_match.py built & self-tested (5/5 top-3, monotonicity OK); goal 10 Knowledge Conflict Detector also passed
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

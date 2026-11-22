@@ -802,5 +802,23 @@
 "text": "**Anomaly Narrative Generator** - `python memory/researcher/anomaly_narrative.py`: when an anomaly is detected in fleet metrics (health scor",
 "agent": "researcher",
 "at": "2026-11-23"
+},
+{
+"sig": "f33fa9f8b743a5d8",
+"text": "**Model Swap Automation Script** - `python memory/builder/model_swap.py`: full sequence for swapping a model on an agent: check VRAM availab",
+"agent": "builder",
+"at": "2026-11-23"
+},
+{
+"sig": "e328a6a7a80b570c",
+"text": "**Historical Precedent Matcher** - `python memory/researcher/precedent_match.py`: given a current incident description, find the most simila",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "3826a1857f1df437",
+"text": "**Knowledge Conflict Detector** - `python memory/researcher/conflict_detector.py`: scan memory/ for contradictory statements (e.g., \"host X ",
+"agent": "researcher",
+"at": "2026-11-23"
 }
 ]
