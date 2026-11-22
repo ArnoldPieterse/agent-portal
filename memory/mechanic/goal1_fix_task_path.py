@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""goal1_fix_task_path.py - One-shot fix for PortalLoadProbe silent-failure.
+r"""goal1_fix_task_path.py - One-shot fix for PortalLoadProbe silent-failure.
 
 ROOT CAUSE: register_daily_probe.bat uses relative path `python memory\ops\load_probe.py`
 which doesn't resolve in Task Scheduler's working directory context. Task registered
