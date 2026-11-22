@@ -724,5 +724,17 @@
 "text": "**Fleet Cockpit API** - Add `/api/fleet/cockpit` to agent_portal.py: single endpoint returning {agents: [{name, status, current_goal, last_a",
 "agent": "orchestrator",
 "at": "2026-11-23"
+},
+{
+"sig": "a9b36cfcb893a6b5",
+"text": "**Workload Rebalancer** - `python memory/orchestrator/rebalancer.py`: detect agent overload (queue depth >3 or p95 response >30s) and propos",
+"agent": "orchestrator",
+"at": "2026-11-23"
+},
+{
+"sig": "7fab4cefdcc2dd01",
+"text": "**Cross-Agent Handoff Summarizer** - `python memory/scribe/handoff_summary.py`: when a task is re-routed between agents, auto-generate a con",
+"agent": "scribe",
+"at": "2026-11-23"
 }
 ]
