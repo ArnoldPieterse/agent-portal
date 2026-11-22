@@ -3659,7 +3659,8 @@ def _check_level_up(snap):
         if sig == (st.get("last_sig") or ""):
             hist = st.get("history") or []
             return {"level": int(st.get("level", 0)),
-                    "latest_level_report": hist[-1].get("report") if hist else None}
+                    "latest_level_report": hist[-1].get("report") if hist else None,
+                    "level_cycles": len(hist)}
         level = int(st.get("level", 0)) + 1
         prev_sha = (st.get("last_sha") or "").strip()
         head_r = _git(["rev-parse", "HEAD"])
@@ -3681,7 +3682,8 @@ def _check_level_up(snap):
         st["last_sig"] = sig
         st["last_sha"] = head_sha
         _save_levels(st)
-    return {"level": level, "latest_level_report": report_rel}
+    return {"level": level, "latest_level_report": report_rel,
+            "level_cycles": len(st["history"])}
 
 
 def _goals_snapshot():
@@ -3753,8 +3755,13 @@ def _goals_snapshot():
             _lhist = _lst.get("history") or []
             resp["level"] = int(_lst.get("level", 0))
             resp["latest_level_report"] = _lhist[-1].get("report") if _lhist else None
+            resp["level_cycles"] = len(_lhist)
     except Exception:
         pass
+    # Level counter always present in the response (UI renders it even at level 0).
+    resp.setdefault("level", 0)
+    resp.setdefault("latest_level_report", None)
+    resp.setdefault("level_cycles", 0)
     return resp
 
 

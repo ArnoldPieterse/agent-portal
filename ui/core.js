@@ -463,7 +463,8 @@ function renderGoalBar(o){ const el=$("goalBar"); if(!el||!o||!o.ok)return; let 
   for(const a of (o.agents||[])){ const pct=a.total?Math.round(100*a.done/a.total):0;
     h+='<span class="gbar" title="'+a.agent+': '+a.done+'/'+a.total+' done"><i class="gbar-fill" style="width:'+pct+'%"></i><em>'+esc(String(a.agent).slice(0,3).toUpperCase())+'</em></span>'; }
   h+='<span class="gbar-fleet">'+o.fleet_done+'/'+o.fleet_total+' · '+(o.fleet_pct||0)+'%</span>';
-  if(o.level)h+='<span class="gbar-level" title="Fleet level - +1 each time ALL goals reach 100%; report in memory/levels/">Lv '+o.level+'</span>';
+  const lv=(Number.isFinite(+o.level))?+o.level:0;
+  h+='<span class="gbar-level'+(lv>0?'':' zero')+'" title="Fleet level - +1 each time ALL goals reach 100% on a fresh goal set; reports in memory/levels/">Lv '+lv+'</span>';
   el.innerHTML=h; }
 // ---- Goal #10 - print report button (injected into header) ----
 (function(){ const b=document.createElement("button"); b.id="printReportBtn"; b.type="button"; b.title="Print a clean report of the current panels";
