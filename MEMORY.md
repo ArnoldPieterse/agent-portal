@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Archivist Goal 2 (KG v3) closed; JSON at 2.12MB vs <2MB target — accepted as tree-growth consequence, not a blocker.
 - Mechanic's unblock_all.py deploy chain verified (8/8 scripts compile); non-sandbox leg cleared for goals 1–4.
 - Goal 3 WinRM E2E harness built (277 lines, dry-run 6/6 PASS); live exec blocked on non-sandbox White + pywinrm + LAN :
 - Wrote memory/ops/designer-ui-change-checklist.md — UI change checklist with pin-advance procedure and anti-patterns for any agent touching u
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Forecasted Builder #6 Fleet Status Panel: layout spec + CSS approach; flagged Mechanic needs to add `agents[]` to `/api/fleet/status
 - Mirror clobber risk: edits to batch_tier_b.py (step9) and non-sandbox-queue.md were silently reverted; re-applied both this pass.
 - deploy_all_schtasks.py now holds all 7 schtasks; one White run unblocks Verifier #8 + Archivist #3
+- PortalLoadProbe no-data root cause: register_daily_probe.bat uses relative path; fix script at memory/me
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
