@@ -530,3 +530,4 @@
 {"ts": "2026-11-22 14:22:27", "run": "g-1a2017dbd2e-9ec590", "missing": {"Scribe": "unreachable", "Mechanic": "unreachable", "Researcher": "unreachable", "Builder": "unreachable", "Verifier": "unreachable", "Orchestrator": "unreachable"}}
 {"ts": "2026-11-22 14:25:28", "run": "g-1a2018080fd-0868b4", "missing": {"Researcher": "not_loaded", "Scribe": "unreachable", "Mechanic": "unreachable"}}
 {"ts": "2026-11-22 14:31:14", "run": "g-1a20185c66d-43da6f", "missing": {"Researcher": "not_loaded"}}
+{"ts": "2026-11-22 14:35:44", "run": "g-1a20189e5ef-08ab2d", "missing": {"Researcher": "not_loaded"}}

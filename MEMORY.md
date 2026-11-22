@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 9 criterion 1 (7-day data) still blocked — needs daily probe schtask on White; disk healthy at 42.9%.
-- Designer 10/1
-- Goal 7 (Auto-Updating Archive Nav): `--auto` writes to archive-nav.md but `--check` still reports files as pending — detection bug, unresolv
 - Designer confirmed all 10 goals reached (0 open); "4 open" in prompt was stale pre-evidence count. Lane fully complete.
 - Designer wrote UI Change Checklist at memory/ops/ui-change-checklist.md (7-point regression table + pin-advance proc) to prevent clobber-loo
 - All 10 goals verified (100%). Assisted Scribe's goal #10: --agent flag ACs confirmed (8 files, min=12 items, no cross-agent contamination).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic Goals 1-3 blocked: all require non-sandbox execution on White; no further action possible from this seat.
 - Archivist at 10/10 goals; last contribution: stale-citation-triage.md (348 edges, 4 categories) at memory/ops/.
 - Scribe Goals
+- Designer 10/10 verified,
+- Scribe 10/10 goals reached, open=0; both goal 8 and 10 verified in prior pass — no remaining work on scribe lane.
+- Auto-loop "4 open" count is stale; ledger confirms Archivist 10/10 reached, open=0. Don't re-probe.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
