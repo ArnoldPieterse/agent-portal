@@ -1,3 +1,10 @@
+## HOST-AGNOSTIC PLACEMENT - agents no longer pinned to hosts (Studio seat) 2026-11-22 ~17:0x
+Status: **DONE + live** - user follow-up on P1 hot-load: "agents pick the first available host, drop their profile + working activities on top; whole fleet can run on one active host."
+- [x] `_resolve_seat()` placement engine in agent_portal.py: home -> local White -> other hosts (first available with model RESIDENT); foreign seats use loaded-models id, home keeps alias; quant-family fallback only when home unreachable; else falls back to P1 home hot-load/reboot path. Thread-local seat redirects main + aux LLM calls per turn (no global state).
+- [x] Autoloop fires seats whose home is down when another host serves their model (single-host operation); SSE "placed on <host>" progress frame + activity-log event.
+- [x] Scratch sim 8/8; portal restarted, APIs healthy. Design note: memory/ops/placement-architecture-2026-11-22.md.
+- [ ] Follow-up: refresh hotload-catalog.json (stale: no remote models, black/red labels swapped) so VRAM-aware placement can use it; cross-host LOAD (not just resident) when home is down and nothing is resident anywhere reachable.
+
 ## P1 HOT-LOAD ON DEMAND + ROUND TOPICS + IP SCRUB + FULL-AUTOMATION RULES (Studio seat) 2026-11-22 ~16:1x
 Status: **DONE + live after restart** - user priorities 0/2/4/5 from the review of open work.
 - [x] P1 hot LLM load-on-demand + agent call-up: `_ensure_seat_ready()` at top of every stream_chat turn - resident check (cache -> loaded-models by model_id OR recipe path/variant), host-down -> WinRM reboot async, else native /api/inference/load with SSE `model_load` progress frames (UI: .loadnote in solo + group bubbles); 409 mid-generation falls back to end-to-end probe. Sandbox test 11/11 incl. live local-seat fast path (0.1s).

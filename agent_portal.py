@@ -15,13 +15,19 @@ STUDIO = "http://127.0.0.1:8888"   # local Studio (White); remote hosts override
 
 
 def studio_base(agent):
-    """Per-agent Studio base URL (multi-host routing). Empty/missing = local Studio."""
+    """Per-agent Studio base URL (multi-host routing). Empty/missing = local Studio.
+    A per-turn placement seat (thread-local, host-agnostic placement 2026-11-22) overrides
+    when this turn runs on another host."""
+    s = _seat_now()
+    if s:
+        return s["base"]
     return (agent or {}).get("studio") or STUDIO
 
 
 def studio_headers(agent, extra=None):
     h = {"Content-Type": "application/json"}
-    key = (agent or {}).get("api_key") or ""
+    s = _seat_now()
+    key = (s.get("key") or "") if s else ((agent or {}).get("api_key") or "")
     if key:
         h["Authorization"] = "Bearer " + key
     if extra:
@@ -171,6 +177,139 @@ def _studio_recover(agent, reason):
             pass
         time.sleep(15)
     return False, "load accepted but not resident after 6 min"
+
+# ---- HOST-AGNOSTIC PLACEMENT (2026-11-22, user directive) ------------------------
+# Agents are NOT pinned to hosts: if the agent's model is resident on any reachable host,
+# the turn runs there (first available wins; home first). Working state is already
+# host-independent (shared memory/ tree mirrored to every seat), so only the LLM call
+# moves. Result: the whole fleet can operate from a single active host.
+_SEAT_TL = threading.local()
+_LOADED_IDS_CACHE = {}   # base -> (ts, [ids])
+
+
+def _set_seat(seat):
+    _SEAT_TL.seat = seat
+
+
+def _seat_now():
+    return getattr(_SEAT_TL, "seat", None)
+
+
+def _fleet_bases():
+    """Ordered unique remote (base, key) pairs from agents.json - the placement candidate set."""
+    out = []
+    try:
+        for a in load_agents()["agents"]:
+            b = (a.get("studio") or "").strip().rstrip("/")
+            if b and all(b != x[0] for x in out):
+                out.append((b, a.get("api_key") or ""))
+    except Exception:
+        pass
+    return out
+
+
+def _host_label(base):
+    if not base or base.rstrip("/") == STUDIO.rstrip("/"):
+        return "White (local)"
+    m = re.search(r"//([\d.]+)", base)
+    ip = m.group(1) if m else base
+    return _FLEET_REBOOT_USERS.get(ip, ip)
+
+
+def _base_alive(base, timeout=3):
+    if not base or base.rstrip("/") == STUDIO.rstrip("/"):
+        return True
+    import socket
+    m = re.search(r"//([\d.]+)", base)
+    if not m:
+        return False
+    try:
+        with socket.create_connection((m.group(1), 8888), timeout=timeout):
+            return True
+    except Exception:
+        return False
+
+
+def _loaded_ids_cached(base, key=""):
+    now = time.time()
+    hit = _LOADED_IDS_CACHE.get(base)
+    if hit and now - hit[0] < 60:
+        return hit[1]
+    req = urllib.request.Request(base + "/api/inference/loaded-models")
+    if key:
+        req.add_header("Authorization", "Bearer " + key)
+    with urllib.request.urlopen(req, timeout=8) as r:
+        d = json.load(r)
+    items = d if isinstance(d, list) else (d.get("data") or d.get("models") or [])
+    ids = [x.get("id") for x in items if isinstance(x, dict) and x.get("id")]
+    _LOADED_IDS_CACHE[base] = (now, ids)
+    return ids
+
+
+def _quant_family(variant):
+    v = (variant or "").upper()
+    if "Q8" in v:
+        return "q8"
+    if "Q4" in v:
+        return "q4"
+    return ""
+
+
+def _resolve_seat(agent):
+    """Find a host where the agent's model is ALREADY resident (no loading). Home first,
+    then other hosts in agents.json order (first available wins). Returns {base, host,
+    model, key[, fallback]} or None (caller falls back to the home hot-load path).
+    On home the returned model is the agent's own alias id (behavior unchanged); on a
+    foreign host it is the loaded-models id of the resident model. A quant-family
+    fallback (q8<->q4) is offered ONLY when the home host itself is unreachable."""
+    name = agent.get("name", "?")
+    rec = _FLEET_RECOVER_RECIPES.get(name) or {}
+    want = os.path.basename((rec.get("model_path") or "").replace("\\", "/"))
+    gv = (rec.get("gguf_variant") or "").lower()
+    home = _studio_base(agent)
+    cands = [(home, "home")]
+    # the local host is ALWAYS a candidate (it is not in agents.json 'studio' fields) and
+    # sits right after home: White holds the Q8+Q4 pair and the canonical shared tree.
+    if home.rstrip("/") != STUDIO.rstrip("/"):
+        cands.append((STUDIO, _host_label(STUDIO)))
+    for b, k in _fleet_bases():
+        if b != home and b.rstrip("/") != STUDIO.rstrip("/"):
+            cands.append((b, _host_label(b)))
+    keys = {b: k for b, k in _fleet_bases()}
+    keys.setdefault(STUDIO.rstrip("/"), "")
+    home_reachable = True
+    for i, (base, label) in enumerate(cands):
+        if i == 0 and not _base_alive(base):
+            home_reachable = False
+            continue
+        try:
+            ids = _loaded_ids_cached(base, keys.get(base))
+        except Exception:
+            continue
+        hit = None
+        for x in ids:
+            if want and (x == want or (gv and gv in (x or "").lower())):
+                hit = x
+                break
+        if hit:
+            return {"base": base, "host": label,
+                    "model": agent.get("model_id") if i == 0 else hit,
+                    "key": (agent.get("api_key") or "") if i == 0 else keys.get(base, "")}
+    if not home_reachable:
+        fam = _quant_family(rec.get("gguf_variant"))
+        for i, (base, label) in enumerate(cands):
+            if i == 0:
+                continue
+            try:
+                ids = _loaded_ids_cached(base, keys.get(base))
+            except Exception:
+                continue
+            for x in ids:
+                if fam and fam in (x or "").lower():
+                    return {"base": base, "host": label, "model": x,
+                            "key": keys.get(base, ""), "fallback": True}
+    return None
+
 
 def _winrm_reboot(ip):
     """Remote reboot via WinRM (empty-password creds per hosts.md; approved
@@ -1988,7 +2127,7 @@ def _aux_chat(agent, system, user, max_tokens):
     """One NON-streaming auxiliary LLM round on the agent's own Studio host
     (low reasoning, tiny budget, short timeout). Returns content; "" on ANY failure."""
     try:
-        body = {"model": agent["model_id"],
+        body = {"model": (_seat_now() or {}).get("model") or agent["model_id"],
                 "messages": [{"role": "system", "content": system},
                              {"role": "user", "content": user}],
                 "max_tokens": max_tokens,
@@ -2149,19 +2288,39 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
     who = agent.get("name", "?")[:60]
     t0 = time.time()
     _act_log(session, {"agent": who, "event": "start", "kind": kind, "mode": mode})
-    # HOT LOAD ON DEMAND (P1, 2026-11-22): before ANY work on this turn (incl. the READMEM
-    # aux round, which uses the same model), make sure the seat's model is resident.
+    # HOST-AGNOSTIC PLACEMENT (2026-11-22): the agent's model may be resident on ANOTHER
+    # reachable host (home down or unloaded) - run this turn THERE; first available wins.
+    # The thread-local seat then redirects every LLM call of this turn (main + aux rounds).
+    _seat = None
     try:
-        _ready, _load_note = _ensure_seat_ready(agent, wfile)
-        if not _ready:
-            _act_log(session, {"agent": who, "event": "model_load_fail", "detail": _load_note[:300]})
-            wfile.write(b"data: " + json.dumps(
-                {"error": "model not available for %s - auto-recovery in progress: %s" % (who, _load_note)}).encode() + b"\n\n")
-            wfile.write(b"data: [DONE]\n\n")
-            wfile.flush()
-            return
+        _seat = _resolve_seat(agent)
     except Exception:
-        pass
+        _seat = None
+    if _seat and _seat["base"] != _studio_base(agent):
+        _set_seat(_seat)
+        _act_log(session, {"agent": who, "event": "placed",
+                           "host": _seat.get("host"), "model": _seat.get("model")})
+        try:
+            wfile.write(b"data: " + json.dumps({"model_load": "%s -> placed on %s (%s resident%s)" % (
+                who, _seat.get("host"), _seat["model"], ", quant fallback" if _seat.get("fallback") else "")}).encode() + b"\n\n")
+            wfile.flush()
+        except Exception:
+            pass
+    # HOT LOAD ON DEMAND (P1, 2026-11-22): when no other host serves the model, before ANY
+    # work on this turn (incl. the READMEM aux round) make sure the HOME seat's model is
+    # resident - hot-load it now instead of erroring.
+    if not _seat:
+        try:
+            _ready, _load_note = _ensure_seat_ready(agent, wfile)
+            if not _ready:
+                _act_log(session, {"agent": who, "event": "model_load_fail", "detail": _load_note[:300]})
+                wfile.write(b"data: " + json.dumps(
+                    {"error": "model not available for %s - auto-recovery in progress: %s" % (who, _load_note)}).encode() + b"\n\n")
+                wfile.write(b"data: [DONE]\n\n")
+                wfile.flush()
+                return
+        except Exception:
+            pass
     all_agents = load_agents()["agents"]
     _, mem_st = load_memory() if mode == "group" else (None, None)
     if mode == "group" and kind == "prompt":
@@ -2235,7 +2394,7 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
     msgs_llm = (messages[-FIRST_REPLY_MAX_MSGS:]
                 if fast_first and len(messages or []) > FIRST_REPLY_MAX_MSGS else (messages or []))
     rag_context = rag_prefetch(agent, msgs_llm)
-    body = {"model": agent["model_id"],
+    body = {"model": (_seat_now() or {}).get("model") or agent["model_id"],
             "messages": to_openai_messages(agent, msgs_llm, mode, all_agents,
                                            rag_context, mem_block, kind, lookup_ctx),
             "stream": True,
@@ -3327,6 +3486,18 @@ def _autoloop_watchdog():
             except Exception:
                 mls = {}
             ready = [n for n in idle if not mls.get(n, {}).get("status") or mls[n]["status"] == "ok"]
+            # HOST-AGNOSTIC PLACEMENT (2026-11-22): a seat whose home model is down can still
+            # be fired when another reachable host has its model resident - single-host op.
+            for n in idle:
+                if n in ready:
+                    continue
+                _ag = _agents_by_name().get(n) or {}
+                try:
+                    _s = _resolve_seat(_ag)
+                    if _s and _s["base"] != _studio_base(_ag):
+                        ready.append(n)
+                except Exception:
+                    pass
             ready = ready[:AUTOLOOP_BATCH_MAX]
             # 2026-11-17/19: seats whose model stays down are NOT silently skipped forever.
             # Self-recovery chain - NO human step required (reboots approved 11-15):
