@@ -1,0 +1,6 @@
+TaskName,Task To Run,Status
+"PortalRun","Z:\agent_portal.py",Ready
+"PortalLoadProbe","python Z:\memory\ops\load_trend.py --probe",Ready
+"FleetBootRecovery","python Z:\memory\mechanic\reboot_recover.py --onstart",Ready
+"MirrorRun","python Z:\memory_mirror.py --sync",Ready
+"SchTaskDepGen","python Z:\memory\ops\schtask_dep_gen.py --input ...",Ready

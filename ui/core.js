@@ -189,6 +189,7 @@ async function streamReplyCore(agent, kind, silentTarget){
            let o; try{o=JSON.parse(p);}catch(e){continue;}
            if(o.error){ body.textContent="error: "+o.error; return ""; }
            if(o.blocked){ body.textContent="\u23f8 "+o.blocked; return null; }
+           if(o.model_load){ let ln=d.querySelector(".loadnote"); if(!ln){ln=document.createElement("div");ln.className="loadnote";d.appendChild(ln);} ln.textContent="\u23f3 "+o.model_load; stickScroll(); }
            if(o.meta){ if(typeof o.meta.inter_agent_replies==="number")setXtalk(o.meta.inter_agent_replies,o.meta.limit); if(o.meta.silent)metaSilent=true; if(o.meta.concluded)metaConcluded=true; }
            if(o.content){ stopBusy(); full+=o.content; body.textContent=full; stickScroll(); }
            if(o.thinking){ // thinking stays in this agent's own bubble, per message (only silences are merged)
