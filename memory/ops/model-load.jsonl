@@ -644,3 +644,6 @@
 {"ts": "2026-11-23 08:24:01", "run": "g-1a2055bf2be-c5e6a7", "missing": {"Mechanic": "not_loaded", "Researcher": "unreachable", "Archivist": "unreachable"}, "relocated": {}}
 {"ts": "2026-11-23 08:27:02", "run": "g-1a2055eb63b-00c05d", "missing": {"Mechanic": "not_loaded", "Researcher": "unreachable", "Archivist": "unreachable"}, "relocated": {}}
 {"ts": "2026-11-23 08:29:41", "run": "g-1a2056120f4-ff1a3b", "missing": {"Mechanic": "not_loaded", "Researcher": "unreachable", "Archivist": "unreachable"}, "relocated": {}}
+{"ts": "2026-11-23 08:34:57", "run": "g-1a20565f2ab-aa7128", "missing": {"Researcher": "unreachable", "Archivist": "unreachable"}, "relocated": {"Scribe": "White (local) (home not_loaded)"}}
+{"ts": "2026-11-23 08:37:49", "run": "g-1a205689323-9b827a", "missing": {"Researcher": "unreachable", "Archivist": "unreachable"}, "relocated": {"Scribe": "White (local) (home not_loaded)"}}
+{"ts": "2026-11-23 08:39:29", "run": "g-1a2056a18f8-3a7d59", "missing": {"Researcher": "unreachable", "Archivist": "unreachable"}, "relocated": {"Scribe": "White (local) (home not_loaded)"}}

@@ -1492,6 +1492,15 @@ def _cockpit_gpu_local(timeout=2):
     except Exception:
         return None
 
+def _cockpit_ts(s):
+    """ISO timestamp string -> epoch seconds (0 on anything unparseable)."""
+    try:
+        from datetime import datetime
+        return datetime.fromisoformat(str(s)).timestamp()
+    except Exception:
+        return 0.0
+
+
 def _cockpit_snapshot():
     """GET /api/fleet/cockpit: agents (status/current_goal/last_active), hosts (vram/cpu/temp),
     goals {total,done,in_progress,blocked}, health_score, recent_decisions (last 10),
@@ -1501,6 +1510,18 @@ def _cockpit_snapshot():
         return _cockpit_cache["data"]
     # -- agents: config + last activity (decision log) + first open goal (evidence-gated ledger)
     last_active = {}
+    # Last group run: every seat in its cast was active until it ended (epoch seconds).
+    try:
+        _gr = json.load(open(os.path.join(HERE, "group_run.json"), encoding="utf-8"))
+        _end = float(_gr.get("ended") or 0)
+        if _end > 0:
+            for nm in (_gr.get("cast") or []):
+                aid = str(nm).lower()
+                if aid not in last_active or _end > _cockpit_ts(last_active[aid]):
+                    # +00:00 suffix: fromisoformat then reads it as UTC, not local (machine is UTC+10)
+                    last_active[aid] = time.strftime("%Y-%m-%dT%H:%M:%S", time.gmtime(_end)) + "+00:00"
+    except Exception:
+        pass
     try:
         with open(os.path.join(HERE, "memory", "ops", "decision-log.jsonl"), encoding="utf-8") as f:
             for line in f.readlines()[-300:]:
@@ -1514,16 +1535,26 @@ def _cockpit_snapshot():
                     last_active[a] = ts
     except OSError:
         pass
+    # roster_monitor flags (persisted until the seat recovers) outrank derived activity
+    rm_flags = {}
+    try:
+        _rmf = json.load(open(os.path.join(HERE, "memory", "orchestrator",
+                                           ".roster_monitor_state.json"), encoding="utf-8"))
+        rm_flags = _rmf.get("flags") or {}
+    except Exception:
+        pass
     agents_out = []
     try:
         for a in load_agents().get("agents", []):
             aid = str(a.get("id") or "").lower()
             la = last_active.get(aid)
-            if la is None:
+            if aid in rm_flags:
+                status = "unresponsive"   # flagged by roster_monitor; persists until recovery
+            elif la is None:
                 status = "unknown"
             else:
                 try:
-                    age_h = (now - time.mktime(time.strptime(str(la)[:19], "%Y-%m-%dT%H:%M:%S"))) / 3600.0
+                    age_h = (now - _cockpit_ts(la)) / 3600.0
                     status = "active" if age_h < 24 else "idle"
                 except Exception:
                     status = "unknown"

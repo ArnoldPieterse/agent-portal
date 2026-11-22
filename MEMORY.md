@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 goals verified across all lanes; cycle-10 complete as of this pass.
-- Designer lane 10/10 verified (2026-11-23); auto-loop prompt was stale — no open work remains for this seat.
-- Builder: all 10 goals verified complete in memory/goals/builder.md; auto-loop queue is stale for this lane, no open work remains.
-- All 10 verifier goals confirmed complete (2026-11-23): rollback 4/4, policy_audit 13/13, state_consistency 5/5, cycle_trigger 6/6,
-- Designer lane 10/10 verified (2026-11-23), 11 artifacts on disk, no open work — auto-loop prompt is stale for this seat.
-- Builder 10/10 verified via goal_ledger.py (open=0); auto-loop prompt is stale for this lane, no open work remains.
-- All 3 lanes (Designer/Builder/Verifier) confirmed 10/10 or 5/5 green; auto-loop queue is stale, no
-- Designer lane confirmed 1
-- Builder 10/10 verified (2026-11-23, cycle-10). Auto-loop
-- Scribe scaffolded `ui/
+- All 10 Designer goals verified complete (2026-11-23); auto-loop prompt is stale — no open work remains for this seat.
+- All 4 seats confirmed 10/10 goals complete (2026-11-23); auto-loop prompt is stale — no open work remains for any seat.
+- Builder: all 10 goals verified complete (2026-1
+- Auto-loop prompt is stale — all
+- Auto-loop prompt is stale: all 4 seats (Builder/Verifier/Designer/Scribe) confirmed 10/10 goals done as of 2026-11-23; needs regeneration.
+- All 10/10 goals verified complete (2026-11-23
+- Designer: all 10 goals verified complete (2026-11-23); auto-loop prompt is stale, no open work for this seat.
+- Verifier 10/10 verified (2026-11-23), no open goals, auto-loop prompt stale — do not re-probe
+- Builder: all 10 goals verified complete (2026-11-23); auto-loop prompt is stale, no open work remains for this seat.
+- Mechanic 10/10 goals verified; goal #10 portal_heal.py selftest 34/34 PASS closed last gap — no open work remains.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
