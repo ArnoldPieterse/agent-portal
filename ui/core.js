@@ -535,3 +535,33 @@ window.__visual=function(mode){ // for headless screenshot variants
   })(); };
 if(location.hash==="#selftest"){ window.addEventListener("load",async()=>{ try{ const r=await window.__selftest(); const p=document.createElement("pre"); p.id="selftestOut"; p.textContent="SELFTEST_JSON "+JSON.stringify(r); document.body.appendChild(p); }catch(e){ const p=document.createElement("pre"); p.id="selftestOut"; p.textContent="SELFTEST_ERR "+e; document.body.appendChild(p);} }); }
 else if((location.hash||"").startsWith("#visual")){ window.addEventListener("load",()=>window.__visual(((location.hash||"").match(/m=(\w+)/)||[])[1]||"empty")); }
+
+// ---- Host-side load visibility (2026-11-22) ----
+// /api/fleet now reports host_loading[] per host (models the Studio itself is
+// mid-load on - boot auto-loads, manual reloads, not just portal queue entries).
+// Independent DOM patch: while any host has a load in flight, replace the
+// "no loads in flight" placeholder in that host's LOAD QUEUE section. No-op
+// when nothing is loading or when another renderer already shows it.
+(function(){
+  let cur=[];
+  async function tick(){
+    try{
+      const d=await api("/api/fleet");
+      cur=(d.hosts||[]).filter(h=>(h.host_loading||[]).length);
+      if(!cur.length){ // restore any placeholder we replaced
+        document.querySelectorAll("[data-hlpatch]").forEach(el=>{el.textContent="\u00b7 no loads in flight";el.removeAttribute("data-hlpatch");});
+        return; }
+      const want={}; cur.forEach(h=>(h.host_loading||[]).forEach(m=>want[m]=1));
+      document.querySelectorAll("#fleetPanel [class*=hint], #fleetPanel div, #fleetPanel span").forEach(el=>{
+        if(el.children.length && el.textContent!=="\u00b7 no loads in flight"&&el.textContent!=="no loads in flight")return;
+        if(!/no loads in flight/.test(el.textContent))return;
+        // attribute to the nearest host card above this element
+        let card=el, hostName="";
+        for(let k=0;k<6&&card;k++){ const t=(card.textContent||""); const mm=t.match(/^(White|Black|Pale|Red)\b/); if(mm){hostName=mm[1];break;} card=card.parentElement; }
+        const m=cur.find(h=>String(h.host).startsWith(hostName) && (h.host_loading||[]).length);
+        if(m){ el.textContent="\u23f3 loading "+m.host_loading.join(", ")+(m.queued?" \u00b7 "+m.queued+" queued":""); el.setAttribute("data-hlpatch","1"); }
+      });
+    }catch(e){}
+  }
+  setInterval(tick,4000); setTimeout(tick,1500);
+})();
