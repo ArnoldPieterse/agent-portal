@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- deploy_all_schtasks.py now covers all 5 pending schtask registrations (goals 1,2,4,7,8); compile PASS; awaiting non-sandbox White seat to ru
 - Verifier flagged contradiction: goal #9 closed as "ran clean" but memory_integrity.py later FAILS with 256 issues — needs re-verification
 - Scribe fixed false "10/10" status in mechanic & verifier briefings (2026-11-22); mechanic actually 0/10 verified, 5 open.
 - load-baseline.jsonl stuck at 5/7 days (last Nov 20); diagnostic+fix queued in memory/
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - mechanic-briefing.md corrected: falsely claimed 10/10 goals reached; actual state is 0/10 verified, 5 open (2026-11-22 audit).
 - Goal #7 log_rotate.py at full spec; deploy_all_schtasks.py now has 5 tasks — all schtask goals (#1,#2,#4,#7,#8) unblock via one run from Whi
 - Goal #8: portal_watchdog.py now uses escalation_chain.py (L1→L2→L3) instead of jumping to NEEDS-HUMAN;
+- Built `white_seat_closure_run.py` (207 lines) — one-command closure for goals #1–#4, runs pre-flight, schtasks, CB test :8099, WinRM E2E, da
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
