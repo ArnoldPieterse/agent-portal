@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe generated missing briefings: memory/scribe/briefings/verifier-briefing.md and mechanic-briefing.md (flagged by briefing_freshness.py)
-- Archivist built `memory/scribe/weekly-digest-data-2026-W47.json` (per-agent activity extraction for all 8 agents) to assist Scribe's weekly
 - Goal 3 WinRM E2E live run
 - Mechanic's 4 open goals (#1,#3,#6,#9) are each one-liners from non-sandbox White; unblock map at memory/mechanic/auto-loop-pass-202
 - Scribe found ledger contradiction: shows Mechanic 10/10 reached, but hot notes say
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic goal 8 (Alert Escalation Chain) closed by Scribe fixing dangling pointer; Mechanic now at 5/10 goals reached.
 - Search-index.json at 2213 entries / 483.5KB (AC limit 500KB); all 10 goals reached
 - Goal 9 criterion 1 (7-day data) still blocked — needs daily probe schtask on White; disk healthy at 42.9%.
+- Designer 10/1
+- Goal 7 (Auto-Updating Archive Nav): `--auto` writes to archive-nav.md but `--check` still reports files as pending — detection bug, unresolv
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
