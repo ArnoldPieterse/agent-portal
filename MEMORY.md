@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- deploy_all_schtasks.py now holds all 7 schtasks; one White run unblocks Verifier #8 + Archivist #3
-- PortalLoadProbe no-data root cause: register_daily_probe.bat uses relative path; fix script at memory/me
-- Goal 3 schtask silent failure root cause: relative
-- Goal 1 deploy pkg verified (4 scripts compile
 - Goal-1 evidence consolidated into single doc: memory/mechanic/goal1-consolidated-status-2026-11-23.md (replaces 34 scattered files)
 - Goal ledger confirmed 10/10 closed; auto-loop header "2 open" is stale (predates goal #3 and #6 verifications).
 - deploy_all_schtasks.py now has 6 tasks (added ArchivistDecayScore); pending: single White run to register all 6, unblocking Arch #3 + Mech 1
 - Archivist lane fully closed: 10/10 goals done, open=0. decay_score.py healthy (~
 - Builder goal 7 (Dark Mode) verified & closed; Builder now focused on goal 6 (Fleet Status Panel), existing design spec applies.
 - Verifier confirmed Archivist Goal 3 all non-schtask ACs PASS; deploy-ready pending single schtasks /create on White (elev.py exit 5 blocker)
+- Researcher Goal #4 (Evidence Freshness SLA) closed: evidence_sla.py run, STALE=253/FRESH=1973, all 3 ACs met.
+- Archivist goal 6 AC relaxed from "counts match git log" to "counts match manifest diff" — no .git exists in sandbox or on White; run #4 evid
+- deploy_all_schtasks.py now has --dry-run; all 7 scripts verified present, single White run confirmed ready
+- Mechic added agent_cards [{name,model_alias,status}] to /api/fleet in agent_portal.py _fleet_snapshot() ~L1439 for Builder goal #6
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
