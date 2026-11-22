@@ -1,242 +1,252 @@
 {
  "ok": true,
- "generated": "2026-11-23 09:18:01",
+ "generated": "2026-11-23 09:38:41",
  "fleet": {
-  "done": 52,
+  "done": 62,
   "total": 72,
-  "pct": 72.2
+  "pct": 86.1
  },
- "throughput_goals_per_hour": 6.0,
+ "throughput_goals_per_hour": 30.0,
  "next10": [
   {
-   "agent": "builder",
-   "goal": "**Runbook Parser + Executor** - `python memory/builder/runbook_exec.py`: parse markdown runbooks (memory/ops/runbooks/*.md) into structured steps (command, expected_output, timeout, rollback_command). Execute sequentiall",
-   "type": "ops",
+   "agent": "researcher",
+   "goal": "**Autonomy Loop-Closure Rate** - `python memory/researcher/loop_closure_rate.py`: parse every autonomous action in decision-log.jsonl + goal_ledger_current.json; classify each as CLOSED (detected -> acted -> verified) vs",
+   "type": "build",
    "complexity": 2,
-   "p_reached": 0.515,
-   "eta": "2026-11-23 11:52",
-   "hours": 2.58,
+   "p_reached": 0.072,
+   "eta": "2026-11-23 14:00",
+   "hours": 4.37,
    "order": 0,
    "rank": 1,
-   "title": "Runbook Parser + Executor",
+   "title": "Autonomy Loop-Closure Rate",
    "steps": [
-    "pre-flight checks (targets exist, idempotent)",
-    "execute from non-sandbox session",
-    "verify registration/health + evidence leaf"
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-23 11:52 (P=52%)",
+   "outcome": "reached ~2026-11-23 14:00 (P=7%)",
    "consequences": [
-    "lane end designer: 11-24 13:24 (slowest lane)"
+    "researcher: **Decision Confidence Estimator** - `python memory/researche (2026-11-23 17:18) - shared scope decision,jsonl,researcher",
+    "researcher: **Evidence-to-Decision Traceability** - `python memory/resea (2026-11-23 19:38) - shared scope decision,every,researcher",
+    "researcher: **Prediction Calibration Tracker** - `python memory/research (2026-11-23 22:56) - shared scope current,ledger,researcher",
+    "lane end researcher: 11-24 23:16 (slowest lane)"
    ]
   },
   {
-   "agent": "mechanic",
-   "goal": "**Fleet State Collector Daemon** - `python memory/mechanic/state_collector.py`: background process (schtask every 5 min) that collects: per-host GPU/CPU/temp, per-agent last-active timestamp, goal progress from TODO.md, ",
-   "type": "verify",
+   "agent": "researcher",
+   "goal": "**Decision Confidence Estimator** - `python memory/researcher/decision_confidence.py`: for each decision in decision-log.jsonl, score how well-supported it was by evidence available at decision time (count + quality of c",
+   "type": "measurement",
    "complexity": 2,
-   "p_reached": 0.515,
-   "eta": "2026-11-23 11:52",
-   "hours": 2.58,
-   "order": 0,
+   "p_reached": 0.088,
+   "eta": "2026-11-23 17:18",
+   "hours": 3.3,
+   "order": 1,
    "rank": 2,
-   "title": "Fleet State Collector Daemon",
+   "title": "Decision Confidence Estimator",
    "steps": [
-    "build the test battery / audit script",
-    "run against live sources",
-    "record verdict + evidence leaf"
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-23 11:52 (P=52%)",
+   "outcome": "reached ~2026-11-23 17:18 (P=9%)",
    "consequences": [
-    "mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 14:27) - shared scope mechanic,process",
-    "mechanic: **Portal Self-Healing** - `python memory/mechanic/portal_hea (2026-11-24 02:43) - shared scope mechanic,process",
-    "lane end designer: 11-24 13:24 (slowest lane)"
+    "researcher: **Autonomy Loop-Closure Rate** - `python memory/researcher/l (2026-11-23 14:00) - shared scope decision,jsonl,researcher",
+    "researcher: **Evidence-to-Decision Traceability** - `python memory/resea (2026-11-23 19:38) - shared scope decision,researcher",
+    "researcher: **Prediction Calibration Tracker** - `python memory/research (2026-11-23 22:56) - shared scope researcher,score",
+    "lane end researcher: 11-24 23:16 (slowest lane)"
    ]
   },
   {
-   "agent": "designer",
-   "goal": "**Cockpit Layout Design** - Design the Fleet Cockpit tab layout: grid structure, panel priority ordering (health score top-left, agents next, hosts below, decisions + risks bottom), spacing, typography hierarchy. Produce",
-   "type": "measurement",
+   "agent": "researcher",
+   "goal": "**Evidence-to-Decision Traceability** - `python memory/researcher/evidence_trace.py`: for each cockpit decision, build the provenance chain decision -> cited evidence leaves -> raw data points and verify every link resol",
+   "type": "verify",
    "complexity": 2,
-   "p_reached": 0.046,
-   "eta": "2026-11-23 12:33",
-   "hours": 3.25,
-   "order": 0,
+   "p_reached": 0.262,
+   "eta": "2026-11-23 19:38",
+   "hours": 2.34,
+   "order": 2,
    "rank": 3,
-   "title": "Cockpit Layout Design",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-23 12:33 (P=5%)",
-   "consequences": [
-    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 15:48) - shared scope design,health,produce",
-    "mechanic: **Host Capacity Arbitration** - `python memory/mechanic/capa (2026-11-23 19:36) - shared scope agents,priority",
-    "designer: **Fleet Topology Live Update** - Update the existing fleet t (2026-11-24 04:45) - shared scope agents,health,hosts",
-    "lane end designer: 11-24 13:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**Knowledge Index Builder** - `python memory/archivist/knowledge_index.py`: scan all memory/**/*.md, extract atomic facts (subject-predicate-object triples) from evidence leaves, build a JSON index at memory/archivist/kn",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.278,
-   "eta": "2026-11-23 14:00",
-   "hours": 4.7,
-   "order": 0,
-   "rank": 4,
-   "title": "Knowledge Index Builder",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-23 14:00 (P=28%)",
-   "consequences": [
-    "archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 16:42) - shared scope archivist,leaves",
-    "lane end designer: 11-24 13:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "mechanic",
-   "goal": "**Model OOM Auto-Recovery** - `python memory/mechanic/oom_recovery.py`: when a model process hits OOM (detected via probe or agent unresponsive), auto-execute: kill process -> wait for GPU memory to free -> reload with s",
-   "type": "verify",
-   "complexity": 2,
-   "p_reached": 0.515,
-   "eta": "2026-11-23 14:27",
-   "hours": 2.58,
-   "order": 1,
-   "rank": 5,
-   "title": "Model OOM Auto-Recovery",
+   "title": "Evidence-to-Decision Traceability",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 14:27 (P=52%)",
+   "outcome": "reached ~2026-11-23 19:38 (P=26%)",
    "consequences": [
-    "mechanic: **Fleet State Collector Daemon** - `python memory/mechanic/s (2026-11-23 11:52) - shared scope mechanic,process",
-    "mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-24 00:09) - shared scope detected,mechanic",
-    "mechanic: **Portal Self-Healing** - `python memory/mechanic/portal_hea (2026-11-24 02:43) - shared scope mechanic,process,unresponsive",
-    "lane end designer: 11-24 13:24 (slowest lane)"
+    "researcher: **Autonomy Loop-Closure Rate** - `python memory/researcher/l (2026-11-23 14:00) - shared scope decision,every,researcher",
+    "researcher: **Decision Confidence Estimator** - `python memory/researche (2026-11-23 17:18) - shared scope decision,researcher",
+    "researcher: **Cockpit Decision-Feed Schema** - `memory/researcher/cockpi (2026-11-24 03:19) - shared scope cockpit,decision,researcher",
+    "lane end researcher: 11-24 23:16 (slowest lane)"
    ]
   },
   {
-   "agent": "designer",
-   "goal": "**Health Score Visualization** - Design the health score component: gauge type (half-circle vs linear), color thresholds, trend indicator (arrow/sparkline), delta display vs last cycle. Produce CSS + JS skeleton in ui/co",
+   "agent": "researcher",
+   "goal": "**Prediction Calibration Tracker** - `python memory/researcher/calibration_tracker.py`: read forecast-latest.md / next10.json predictions + their later actuals from goal_ledger_current.json; compute Brier score + reliabi",
    "type": "measurement",
    "complexity": 2,
-   "p_reached": 0.046,
-   "eta": "2026-11-23 15:48",
-   "hours": 3.25,
-   "order": 1,
-   "rank": 6,
-   "title": "Health Score Visualization",
+   "p_reached": 0.088,
+   "eta": "2026-11-23 22:56",
+   "hours": 3.3,
+   "order": 3,
+   "rank": 4,
+   "title": "Prediction Calibration Tracker",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-23 15:48 (P=5%)",
+   "outcome": "reached ~2026-11-23 22:56 (P=9%)",
    "consequences": [
-    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 12:33) - shared scope design,health,produce",
-    "designer: **Decision Timeline UX** - Design the decision log display a (2026-11-23 20:07) - shared scope color,design,display",
-    "designer: **Agent Status Grid** - Design the per-agent status display: (2026-11-24 00:26) - shared scope color,design,display",
-    "lane end designer: 11-24 13:24 (slowest lane)"
+    "researcher: **Autonomy Loop-Closure Rate** - `python memory/researcher/l (2026-11-23 14:00) - shared scope current,ledger,researcher",
+    "researcher: **Decision Confidence Estimator** - `python memory/researche (2026-11-23 17:18) - shared scope researcher,score",
+    "researcher: **Fleet Trust Score** - `python memory/researcher/fleet_trus (2026-11-24 19:58) - shared scope calibration,researcher,score",
+    "lane end researcher: 11-24 23:16 (slowest lane)"
    ]
   },
   {
-   "agent": "archivist",
-   "goal": "**Citation Integrity Monitor** - `python memory/archivist/citation_monitor.py`: scan all goal files and evidence leaves for citation patterns (pointer:, Evidence:, source:); verify each cited target exists and is non-emp",
-   "type": "verify",
-   "complexity": 2,
-   "p_reached": 0.639,
-   "eta": "2026-11-23 16:42",
-   "hours": 2.71,
-   "order": 1,
-   "rank": 7,
-   "title": "Citation Integrity Monitor",
-   "steps": [
-    "build the test battery / audit script",
-    "run against live sources",
-    "record verdict + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-23 16:42 (P=64%)",
-   "consequences": [
-    "archivist: **Knowledge Index Builder** - `python memory/archivist/knowl (2026-11-23 14:00) - shared scope archivist,leaves",
-    "archivist: **Retrieval Accuracy Benchmark** - Build a benchmark suite o (2026-11-23 23:00) - shared scope files,source",
-    "archivist: **Cross-Reference Consistency Check** - When the same fact a (2026-11-24 06:25) - shared scope files,verify",
-    "lane end designer: 11-24 13:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "mechanic",
-   "goal": "**Scheduled Maintenance Window** - `python memory/mechanic/maintenance_window.py`: identify low-activity periods (no agent requests for >15 min) and schedule non-critical maintenance: log rotation, cache clearing, snapsh",
-   "type": "ops",
-   "complexity": 2,
-   "p_reached": 0.515,
-   "eta": "2026-11-23 17:01",
-   "hours": 2.58,
-   "order": 2,
-   "rank": 8,
-   "title": "Scheduled Maintenance Window",
-   "steps": [
-    "pre-flight checks (targets exist, idempotent)",
-    "execute from non-sandbox session",
-    "verify registration/health + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-23 17:01 (P=52%)",
-   "consequences": [
-    "lane end designer: 11-24 13:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "mechanic",
-   "goal": "**Host Capacity Arbitration** - `python memory/mechanic/capacity_arbiter.py`: when multiple agents request the same host's GPU simultaneously, arbitrate: priority by (a) current task criticality, (b) time already waited,",
-   "type": "ops",
-   "complexity": 2,
-   "p_reached": 0.515,
-   "eta": "2026-11-23 19:36",
-   "hours": 2.58,
-   "order": 3,
-   "rank": 9,
-   "title": "Host Capacity Arbitration",
-   "steps": [
-    "pre-flight checks (targets exist, idempotent)",
-    "execute from non-sandbox session",
-    "verify registration/health + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-23 19:36 (P=52%)",
-   "consequences": [
-    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 12:33) - shared scope agents,priority",
-    "mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-24 00:09) - shared scope agents,mechanic",
-    "lane end designer: 11-24 13:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "designer",
-   "goal": "**Decision Timeline UX** - Design the decision log display as a vertical timeline: each node = one decision, expandable card shows detail. Color by outcome (green=success, yellow=pending, red=failed/rolled-back). Filters",
+   "agent": "researcher",
+   "goal": "**Cockpit Decision-Feed Schema** - `memory/researcher/cockpit-decision-feed.md`: spec the JSON contract the Fleet Cockpit consumes for decision-quality signals - fields {decision_id, confidence, loop_state, evidence_coun",
    "type": "build",
    "complexity": 2,
-   "p_reached": 0.037,
-   "eta": "2026-11-23 20:07",
-   "hours": 4.32,
-   "order": 2,
-   "rank": 10,
-   "title": "Decision Timeline UX",
+   "p_reached": 0.072,
+   "eta": "2026-11-24 03:19",
+   "hours": 4.37,
+   "order": 4,
+   "rank": 5,
+   "title": "Cockpit Decision-Feed Schema",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-23 20:07 (P=4%)",
+   "outcome": "reached ~2026-11-24 03:19 (P=7%)",
    "consequences": [
-    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 15:48) - shared scope color,design,display",
-    "designer: **Agent Status Grid** - Design the per-agent status display: (2026-11-24 00:26) - shared scope color,design,display",
-    "lane end designer: 11-24 13:24 (slowest lane)"
+    "researcher: **Autonomy Loop-Closure Rate** - `python memory/researcher/l (2026-11-23 14:00) - shared scope decision,researcher",
+    "researcher: **Decision Confidence Estimator** - `python memory/researche (2026-11-23 17:18) - shared scope confidence,decision,quality",
+    "researcher: **Evidence-to-Decision Traceability** - `python memory/resea (2026-11-23 19:38) - shared scope cockpit,decision,researcher",
+    "lane end researcher: 11-24 23:16 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "researcher",
+   "goal": "**Autonomous Action Replay** - `python memory/researcher/action_replay.py`: given a past autonomous action that failed or was reverted, reconstruct the exact evidence/data state available at decision time and report whet",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.072,
+   "eta": "2026-11-24 07:41",
+   "hours": 4.37,
+   "order": 5,
+   "rank": 6,
+   "title": "Autonomous Action Replay",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-24 07:41 (P=7%)",
+   "consequences": [
+    "researcher: **Autonomy Loop-Closure Rate** - `python memory/researcher/l (2026-11-23 14:00) - shared scope action,autonomous,decision",
+    "researcher: **Decision Confidence Estimator** - `python memory/researche (2026-11-23 17:18) - shared scope available,decision,researcher",
+    "researcher: **Evidence-to-Decision Traceability** - `python memory/resea (2026-11-23 19:38) - shared scope decision,researcher",
+    "lane end researcher: 11-24 23:16 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "researcher",
+   "goal": "**Autonomy Risk Register** - `python memory/researcher/autonomy_risk_register.py`: scan OPS-NOTE/NEEDS-HUMAN entries in memory/ops/blockers.md + incident records for *autonomy-specific* failure modes (stale-goal dispatch",
+   "type": "verify",
+   "complexity": 2,
+   "p_reached": 0.262,
+   "eta": "2026-11-24 10:01",
+   "hours": 2.34,
+   "order": 6,
+   "rank": 7,
+   "title": "Autonomy Risk Register",
+   "steps": [
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-24 10:01 (P=26%)",
+   "consequences": [
+    "researcher: **Autonomy Loop-Closure Rate** - `python memory/researcher/l (2026-11-23 14:00) - shared scope autonomy,researcher",
+    "researcher: **Loop-Stall Predictor** - `python memory/researcher/loop_st (2026-11-24 14:23) - shared scope researcher,stale",
+    "lane end researcher: 11-24 23:16 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "researcher",
+   "goal": "**Loop-Stall Predictor** - `python memory/researcher/loop_stall_predictor.py`: from an agent's recent turn history (repeated no-file-change turns, same blocker re-probed, stale goal set dispatched), predict stall likelih",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.072,
+   "eta": "2026-11-24 14:23",
+   "hours": 4.37,
+   "order": 7,
+   "rank": 8,
+   "title": "Loop-Stall Predictor",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-24 14:23 (P=7%)",
+   "consequences": [
+    "researcher: **Autonomy Risk Register** - `python memory/researcher/auton (2026-11-24 10:01) - shared scope researcher,stale",
+    "lane end researcher: 11-24 23:16 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "researcher",
+   "goal": "**Fleet Trust Score** - `python memory/researcher/fleet_trust_score.py`: combine loop-closure rate (#1), mean decision confidence (#2), calibration accuracy (#4) and conflict count (knowledge-conflicts.md) into ONE 0-100",
+   "type": "research",
+   "complexity": 2,
+   "p_reached": 0.134,
+   "eta": "2026-11-24 19:58",
+   "hours": 5.58,
+   "order": 8,
+   "rank": 9,
+   "title": "Fleet Trust Score",
+   "steps": [
+    "gather sources from memory/ (pointer map)",
+    "compute/detect per protocol",
+    "write findings leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-24 19:58 (P=13%)",
+   "consequences": [
+    "researcher: **Autonomy Loop-Closure Rate** - `python memory/researcher/l (2026-11-23 14:00) - shared scope closure,decision,researcher",
+    "researcher: **Decision Confidence Estimator** - `python memory/researche (2026-11-23 17:18) - shared scope confidence,count,decision",
+    "researcher: **Evidence-to-Decision Traceability** - `python memory/resea (2026-11-23 19:38) - shared scope decision,researcher",
+    "lane end researcher: 11-24 23:16 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "researcher",
+   "goal": "**Trust-Pipeline Self-Check** - `python memory/researcher/trust_selfcheck.py`: test harness that runs #1/#2/#4/#9 against fixtures and asserts invariants (score bounds, monotonicity, determinism, JSON validity) so the co",
+   "type": "measurement",
+   "complexity": 2,
+   "p_reached": 0.088,
+   "eta": "2026-11-24 23:16",
+   "hours": 3.3,
+   "order": 9,
+   "rank": 10,
+   "title": "Trust-Pipeline Self-Check",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-24 23:16 (P=9%)",
+   "consequences": [
+    "researcher: **Decision Confidence Estimator** - `python memory/researche (2026-11-23 17:18) - shared scope researcher,score",
+    "researcher: **Prediction Calibration Tracker** - `python memory/research (2026-11-23 22:56) - shared scope researcher,score",
+    "researcher: **Fleet Trust Score** - `python memory/researcher/fleet_trus (2026-11-24 19:58) - shared scope researcher,score,trust",
+    "lane end researcher: 11-24 23:16 (slowest lane)"
    ]
   }
  ],
@@ -244,45 +254,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-23 09:48",
+   "end": "2026-11-23 10:08",
    "completes": 0,
-   "fleet_pct": 72.2,
+   "fleet_pct": 86.1,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-23 10:18",
+   "end": "2026-11-23 10:38",
    "completes": 0,
-   "fleet_pct": 72.2,
+   "fleet_pct": 86.1,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-24 09:18",
-   "completes": 19,
-   "fleet_pct": 98.6,
+   "end": "2026-11-24 09:38",
+   "completes": 6,
+   "fleet_pct": 94.4,
    "top": [
-    "#1 builder: Runbook Parser + Executor (2026-11-23 11:52)",
-    "#2 mechanic: Fleet State Collector Daemon (2026-11-23 11:52)",
-    "#3 designer: Cockpit Layout Design (2026-11-23 12:33)",
-    "#4 archivist: Knowledge Index Builder (2026-11-23 14:00)",
-    "#5 mechanic: Model OOM Auto-Recovery (2026-11-23 14:27)"
+    "#1 researcher: Autonomy Loop-Closure Rate (2026-11-23 14:00)",
+    "#2 researcher: Decision Confidence Estimator (2026-11-23 17:18)",
+    "#3 researcher: Evidence-to-Decision Traceability (2026-11-23 19:38)",
+    "#4 researcher: Prediction Calibration Tracker (2026-11-23 22:56)",
+    "#5 researcher: Cockpit Decision-Feed Schema (2026-11-24 03:19)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-11-30 09:18",
-   "completes": 20,
+   "end": "2026-11-30 09:38",
+   "completes": 10,
    "fleet_pct": 100.0,
    "top": [
-    "#1 builder: Runbook Parser + Executor (2026-11-23 11:52)",
-    "#2 mechanic: Fleet State Collector Daemon (2026-11-23 11:52)",
-    "#3 designer: Cockpit Layout Design (2026-11-23 12:33)",
-    "#4 archivist: Knowledge Index Builder (2026-11-23 14:00)",
-    "#5 mechanic: Model OOM Auto-Recovery (2026-11-23 14:27)"
+    "#1 researcher: Autonomy Loop-Closure Rate (2026-11-23 14:00)",
+    "#2 researcher: Decision Confidence Estimator (2026-11-23 17:18)",
+    "#3 researcher: Evidence-to-Decision Traceability (2026-11-23 19:38)",
+    "#4 researcher: Prediction Calibration Tracker (2026-11-23 22:56)",
+    "#5 researcher: Cockpit Decision-Feed Schema (2026-11-24 03:19)"
    ],
    "next_cycle_candidates": [
     {
@@ -338,15 +348,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-23 09:18",
-   "completes": 20,
+   "end": "2026-12-23 09:38",
+   "completes": 10,
    "fleet_pct": 100.0,
    "top": [
-    "#1 builder: Runbook Parser + Executor (2026-11-23 11:52)",
-    "#2 mechanic: Fleet State Collector Daemon (2026-11-23 11:52)",
-    "#3 designer: Cockpit Layout Design (2026-11-23 12:33)",
-    "#4 archivist: Knowledge Index Builder (2026-11-23 14:00)",
-    "#5 mechanic: Model OOM Auto-Recovery (2026-11-23 14:27)"
+    "#1 researcher: Autonomy Loop-Closure Rate (2026-11-23 14:00)",
+    "#2 researcher: Decision Confidence Estimator (2026-11-23 17:18)",
+    "#3 researcher: Evidence-to-Decision Traceability (2026-11-23 19:38)",
+    "#4 researcher: Prediction Calibration Tracker (2026-11-23 22:56)",
+    "#5 researcher: Cockpit Decision-Feed Schema (2026-11-24 03:19)"
    ],
    "next_cycle_candidates": [
     {
@@ -402,45 +412,45 @@
  ],
  "lanes": {
   "archivist": {
-   "done": 4,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-24 06:25"
+   "end": "2026-11-23 09:38"
   },
   "builder": {
-   "done": 9,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-23 11:52"
+   "end": "2026-11-23 09:38"
   },
   "designer": {
-   "done": 3,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-24 13:24"
+   "end": "2026-11-23 09:38"
   },
   "mechanic": {
-   "done": 3,
+   "done": 9,
    "total": 9,
-   "end": "2026-11-24 02:43"
+   "end": "2026-11-23 09:38"
   },
   "orchestrator": {
    "done": 3,
    "total": 3,
-   "end": "2026-11-23 09:18"
+   "end": "2026-11-23 09:38"
   },
   "researcher": {
-   "done": 10,
+   "done": 0,
    "total": 10,
-   "end": "2026-11-23 09:18"
+   "end": "2026-11-24 23:16"
   },
   "scribe": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 09:18"
+   "end": "2026-11-23 09:38"
   },
   "verifier": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 09:18"
+   "end": "2026-11-23 09:38"
   }
  },
- "level_up_eta": "2026-11-24 13:24"
+ "level_up_eta": "2026-11-24 23:16"
 }
