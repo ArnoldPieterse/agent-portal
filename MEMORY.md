@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder: Goal #2 marked reached; Goal #5 needs new backend health-score computation+history (
-- Scribe Goal 4 (cockpit_n
 - Verifier reached 10/10 goals verified; closed #9 (reroute_e2e.py) and #10 (cockpit perf benchmark) this pass.
 - All 5 Fleet Cockpit design goals complete; component-reference.md now documents 9 public UI functions (was 5).
 - Verify script uses non-existent APIs; real path is `run_verification()` + `--verify` flag. Correct metric: allocation agreement, not through
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer completed all 5 cockpit goals (1–5); each component is self-contained with a single render() for Builder to wire into the portal.
 - Mechic: All 10/10 goals complete, 186/186 selftest assertions green, no open ops work for cycle-10.
 - Builder: Goals 7 (auto_cycle_trigger.py) and 8 (resource monitor in cockpit.js:49-62) verified; Goal 9 (runbook parser) started.
+- Cockpit JS (223 lines, 6 panels) exists but index.html lacks `<script src="ui/cockpit.js">` — flagged to Builder as blocker.
+- Auto-loop header showed "4/10" but actual ledger state is 10/10 verified (2026-11-23); header is a stale snapshot, not live state.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -36,12 +36,37 @@ def main() -> int:
                 tgt = m.group(1)
                 if tgt in ("pointer", "file"):  # convention words, not paths
                     continue
+                if "*" in tgt or "?" in tgt:  # glob patterns are families, not pointers
+                    continue
                 pointers.append((rel_idx, tgt))
         d = DATE_RE.search(idx.read_text(encoding="utf-8", errors="replace"))
         if d:
             y, mo, da = map(int, d.group(1).split("-"))
             if date(y, mo, da) < today:
                 stale.append((rel_idx, d.group(1)))
+
+    # 2026-11-23: staleness - an index older than a target it points to is out of date
+    # (soft signal only; does not affect the exit code).
+    stale_pointers = []
+    for idx in index_files:
+        try:
+            imt = idx.stat().st_mtime
+        except OSError:
+            continue
+        for line in idx.read_text(encoding="utf-8", errors="replace").splitlines():
+            m = ARROW_RE.search(line) or MDLINK_RE.search(line)
+            if not m:
+                continue
+            tgt = m.group(1)
+            if tgt in ("pointer", "file") or "*" in tgt or "?" in tgt:
+                continue
+            for cand in (ROOT / tgt, MEM / tgt, idx.parent / tgt):
+                try:
+                    if cand.is_file() and cand.stat().st_mtime > imt + 5:
+                        stale_pointers.append((idx.relative_to(ROOT).as_posix(), tgt))
+                        break
+                except OSError:
+                    continue
 
     META = {"INDEX.md", "MEMORY.md", "TODO.md", "VLOG.txt"}
     all_files = {p.relative_to(ROOT).as_posix()
@@ -81,6 +106,9 @@ def main() -> int:
     print(f"STALE 'Last updated' ({len(stale)}):")
     for src, d in stale:
         print(f"  {src}: {d}")
+    print(f"STALE pointers - target newer than its index ({len(set(stale_pointers))}):")
+    for src, tgt in sorted(set(stale_pointers)):
+        print(f"  {src} -> {tgt}")
 
     if dangling:
         return 1

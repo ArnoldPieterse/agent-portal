@@ -1,10 +1,10 @@
 {
  "ok": true,
- "generated": "2026-11-23 07:39:46",
+ "generated": "2026-11-23 07:48:19",
  "fleet": {
-  "done": 31,
+  "done": 32,
   "total": 78,
-  "pct": 39.7
+  "pct": 41.0
  },
  "throughput_goals_per_hour": 6.0,
  "next10": [
@@ -14,7 +14,7 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 10:14",
+   "eta": "2026-11-23 10:22",
    "hours": 2.58,
    "order": 0,
    "rank": 1,
@@ -24,12 +24,12 @@
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 10:14 (P=52%)",
+   "outcome": "reached ~2026-11-23 10:22 (P=52%)",
    "consequences": [
-    "mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 12:48) - shared scope mechanic,model",
-    "builder: **Model Swap Automation Script** - `python memory/builder/mo (2026-11-23 13:41) - shared scope automation,availability,check",
-    "verifier: **Model Swap Verification Battery** - `python memory/verifie (2026-11-23 22:31) - shared scope check,model",
-    "lane end designer: 11-24 11:45 (slowest lane)"
+    "mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 12:57) - shared scope mechanic,model",
+    "builder: **Model Swap Automation Script** - `python memory/builder/mo (2026-11-23 13:50) - shared scope automation,availability,check",
+    "verifier: **Model Swap Verification Battery** - `python memory/verifie (2026-11-23 22:39) - shared scope check,model",
+    "lane end designer: 11-24 11:54 (slowest lane)"
    ]
   },
   {
@@ -38,7 +38,7 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 10:14",
+   "eta": "2026-11-23 10:22",
    "hours": 2.58,
    "order": 0,
    "rank": 2,
@@ -48,36 +48,34 @@
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 10:14 (P=52%)",
+   "outcome": "reached ~2026-11-23 10:22 (P=52%)",
    "consequences": [
-    "verifier: **Decision Policy Compliance Audit** - `python memory/verifi (2026-11-23 12:48) - shared scope action,remediation,verifier",
-    "scribe: **Runbook Lesson Extractor** - `python memory/scribe/runbook (2026-11-23 13:28) - shared scope remediation,runbook",
-    "builder: **Model Swap Automation Script** - `python memory/builder/mo (2026-11-23 13:41) - shared scope sequence,verify",
-    "lane end designer: 11-24 11:45 (slowest lane)"
+    "scribe: **Runbook Lesson Extractor** - `python memory/scribe/runbook (2026-11-23 10:42) - shared scope remediation,runbook",
+    "verifier: **Decision Policy Compliance Audit** - `python memory/verifi (2026-11-23 12:57) - shared scope action,remediation,verifier",
+    "builder: **Model Swap Automation Script** - `python memory/builder/mo (2026-11-23 13:50) - shared scope sequence,verify",
+    "lane end designer: 11-24 11:54 (slowest lane)"
    ]
   },
   {
    "agent": "scribe",
-   "goal": "**Goal Completion Pattern Analysis** - `python memory/scribe/completion_patterns.py`: analyze all completed goals across cycles: which types (build, verify, research, design, ops) have highest completion rates? Which age",
-   "type": "verify",
+   "goal": "**Runbook Lesson Extractor** - `python memory/scribe/runbook_lessons.py`: after each remediation execution (success or failure), extract lessons learned: what worked, what didn't, what should change in the runbook. Appen",
+   "type": "ops",
    "complexity": 2,
    "p_reached": 0.796,
-   "eta": "2026-11-23 10:34",
+   "eta": "2026-11-23 10:42",
    "hours": 2.9,
    "order": 0,
    "rank": 3,
-   "title": "Goal Completion Pattern Analysis",
+   "title": "Runbook Lesson Extractor",
    "steps": [
-    "build the test battery / audit script",
-    "run against live sources",
-    "record verdict + evidence leaf"
+    "pre-flight checks (targets exist, idempotent)",
+    "execute from non-sandbox session",
+    "verify registration/health + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 10:34 (P=80%)",
+   "outcome": "reached ~2026-11-23 10:42 (P=80%)",
    "consequences": [
-    "orchestrator: **Cycle Auto-Planner** - `python memory/orchestrator/auto_cy (2026-11-23 12:21) - shared scope goals,which",
-    "researcher: **Cross-Agent Pattern Detector** - `python memory/researcher (2026-11-23 13:14) - shared scope cycles,pattern,patterns",
-    "archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 15:04) - shared scope patterns,verify",
-    "lane end designer: 11-24 11:45 (slowest lane)"
+    "verifier: **Remediation Rollback Test** - `python memory/verifier/roll (2026-11-23 10:22) - shared scope remediation,runbook",
+    "lane end designer: 11-24 11:54 (slowest lane)"
    ]
   },
   {
@@ -86,7 +84,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.046,
-   "eta": "2026-11-23 10:54",
+   "eta": "2026-11-23 11:03",
    "hours": 3.25,
    "order": 0,
    "rank": 4,
@@ -96,12 +94,12 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-23 10:54 (P=5%)",
+   "outcome": "reached ~2026-11-23 11:03 (P=5%)",
    "consequences": [
-    "builder: **Fleet Cockpit Frontend** - Add a \"Cockpit\" tab to the port (2026-11-23 11:07) - shared scope cockpit,decisions,health",
-    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 14:09) - shared scope design,health,produce",
-    "verifier: **Fleet State Consistency Check** - `python memory/verifier/ (2026-11-23 15:23) - shared scope agents,cockpit",
-    "lane end designer: 11-24 11:45 (slowest lane)"
+    "builder: **Fleet Cockpit Frontend** - Add a \"Cockpit\" tab to the port (2026-11-23 11:15) - shared scope cockpit,decisions,health",
+    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 14:18) - shared scope design,health,produce",
+    "verifier: **Fleet State Consistency Check** - `python memory/verifier/ (2026-11-23 15:31) - shared scope agents,cockpit",
+    "lane end designer: 11-24 11:54 (slowest lane)"
    ]
   },
   {
@@ -110,7 +108,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.224,
-   "eta": "2026-11-23 11:07",
+   "eta": "2026-11-23 11:15",
    "hours": 3.46,
    "order": 0,
    "rank": 5,
@@ -120,12 +118,12 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-23 11:07 (P=22%)",
+   "outcome": "reached ~2026-11-23 11:15 (P=22%)",
    "consequences": [
-    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 10:54) - shared scope cockpit,decisions,health",
-    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 14:09) - shared scope display,gauge,health",
-    "builder: **Health Score Widget** - Add to cockpit tab: real-time heal (2026-11-23 17:09) - shared scope cockpit,display,gauge",
-    "lane end designer: 11-24 11:45 (slowest lane)"
+    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 11:03) - shared scope cockpit,decisions,health",
+    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 14:18) - shared scope display,gauge,health",
+    "builder: **Health Score Widget** - Add to cockpit tab: real-time heal (2026-11-23 17:17) - shared scope cockpit,display,gauge",
+    "lane end designer: 11-24 11:54 (slowest lane)"
    ]
   },
   {
@@ -134,7 +132,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.278,
-   "eta": "2026-11-23 12:21",
+   "eta": "2026-11-23 12:30",
    "hours": 4.7,
    "order": 0,
    "rank": 6,
@@ -145,10 +143,10 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-23 12:21 (P=28%)",
+   "outcome": "reached ~2026-11-23 12:30 (P=28%)",
    "consequences": [
-    "archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 15:04) - shared scope archivist,leaves",
-    "lane end designer: 11-24 11:45 (slowest lane)"
+    "archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 15:13) - shared scope archivist,leaves",
+    "lane end designer: 11-24 11:54 (slowest lane)"
    ]
   },
   {
@@ -157,7 +155,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.278,
-   "eta": "2026-11-23 12:21",
+   "eta": "2026-11-23 12:30",
    "hours": 4.7,
    "order": 0,
    "rank": 7,
@@ -168,12 +166,12 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-23 12:21 (P=28%)",
+   "outcome": "reached ~2026-11-23 12:30 (P=28%)",
    "consequences": [
-    "scribe: **Goal Completion Pattern Analysis** - `python memory/scribe (2026-11-23 10:34) - shared scope goals,which",
-    "mechanic: **Host Capacity Arbitration** - `python memory/mechanic/capa (2026-11-23 17:58) - shared scope capacity,current",
-    "verifier: **Auto-Cycle Trigger Validation** - `python memory/verifier/ (2026-11-23 17:58) - shared scope cycle,goals",
-    "lane end designer: 11-24 11:45 (slowest lane)"
+    "mechanic: **Host Capacity Arbitration** - `python memory/mechanic/capa (2026-11-23 18:06) - shared scope capacity,current",
+    "verifier: **Auto-Cycle Trigger Validation** - `python memory/verifier/ (2026-11-23 18:06) - shared scope cycle,goals",
+    "builder: **Auto-Cycle Trigger** - `python memory/builder/auto_cycle_t (2026-11-24 01:18) - shared scope cycle,goals,orchestrator",
+    "lane end designer: 11-24 11:54 (slowest lane)"
    ]
   },
   {
@@ -182,7 +180,7 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 12:48",
+   "eta": "2026-11-23 12:57",
    "hours": 2.58,
    "order": 1,
    "rank": 8,
@@ -192,12 +190,12 @@
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 12:48 (P=52%)",
+   "outcome": "reached ~2026-11-23 12:57 (P=52%)",
    "consequences": [
-    "mechanic: **Model Load/Unload Automation** - `python memory/mechanic/m (2026-11-23 10:14) - shared scope mechanic,model",
-    "orchestrator: **Fleet Incident Auto-Responder** - `python memory/orchestra (2026-11-23 22:15) - shared scope detected,execute,model",
-    "mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-23 22:31) - shared scope detected,mechanic",
-    "lane end designer: 11-24 11:45 (slowest lane)"
+    "mechanic: **Model Load/Unload Automation** - `python memory/mechanic/m (2026-11-23 10:22) - shared scope mechanic,model",
+    "orchestrator: **Fleet Incident Auto-Responder** - `python memory/orchestra (2026-11-23 22:23) - shared scope detected,execute,model",
+    "mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-23 22:39) - shared scope detected,mechanic",
+    "lane end designer: 11-24 11:54 (slowest lane)"
    ]
   },
   {
@@ -206,7 +204,7 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 12:48",
+   "eta": "2026-11-23 12:57",
    "hours": 2.58,
    "order": 1,
    "rank": 9,
@@ -216,12 +214,12 @@
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 12:48 (P=52%)",
+   "outcome": "reached ~2026-11-23 12:57 (P=52%)",
    "consequences": [
-    "verifier: **Remediation Rollback Test** - `python memory/verifier/roll (2026-11-23 10:14) - shared scope action,remediation,verifier",
-    "verifier: **Fleet State Consistency Check** - `python memory/verifier/ (2026-11-23 15:23) - shared scope verifier,verify",
-    "orchestrator: **Context Budget Manager** - `python memory/orchestrator/con (2026-11-23 15:57) - shared scope decision,jsonl",
-    "lane end designer: 11-24 11:45 (slowest lane)"
+    "verifier: **Remediation Rollback Test** - `python memory/verifier/roll (2026-11-23 10:22) - shared scope action,remediation,verifier",
+    "verifier: **Fleet State Consistency Check** - `python memory/verifier/ (2026-11-23 15:31) - shared scope verifier,verify",
+    "orchestrator: **Context Budget Manager** - `python memory/orchestrator/con (2026-11-23 16:05) - shared scope decision,jsonl",
+    "lane end designer: 11-24 11:54 (slowest lane)"
    ]
   },
   {
@@ -230,7 +228,7 @@
    "type": "research",
    "complexity": 2,
    "p_reached": 0.134,
-   "eta": "2026-11-23 13:14",
+   "eta": "2026-11-23 13:23",
    "hours": 5.58,
    "order": 0,
    "rank": 10,
@@ -240,12 +238,12 @@
     "compute/detect per protocol",
     "write findings leaf + index line"
    ],
-   "outcome": "reached ~2026-11-23 13:14 (P=13%)",
+   "outcome": "reached ~2026-11-23 13:23 (P=13%)",
    "consequences": [
-    "scribe: **Goal Completion Pattern Analysis** - `python memory/scribe (2026-11-23 10:34) - shared scope cycles,pattern,patterns",
-    "researcher: **Fleet Memory Compression** - `python memory/researcher/mem (2026-11-23 17:36) - shared scope agents,identify,researcher",
-    "mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-23 22:31) - shared scope agents,incident",
-    "lane end designer: 11-24 11:45 (slowest lane)"
+    "researcher: **Fleet Memory Compression** - `python memory/researcher/mem (2026-11-23 17:45) - shared scope agents,identify,researcher",
+    "mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-23 22:39) - shared scope agents,incident",
+    "researcher: **Historical Precedent Matcher** - `python memory/researcher (2026-11-24 04:55) - shared scope incident,records,researcher",
+    "lane end designer: 11-24 11:54 (slowest lane)"
    ]
   }
  ],
@@ -253,45 +251,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-23 08:09",
+   "end": "2026-11-23 08:18",
    "completes": 0,
-   "fleet_pct": 39.7,
+   "fleet_pct": 41.0,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-23 08:39",
+   "end": "2026-11-23 08:48",
    "completes": 0,
-   "fleet_pct": 39.7,
+   "fleet_pct": 41.0,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-24 07:39",
-   "completes": 45,
+   "end": "2026-11-24 07:48",
+   "completes": 44,
    "fleet_pct": 97.4,
    "top": [
-    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:14)",
-    "#2 verifier: Remediation Rollback Test (2026-11-23 10:14)",
-    "#3 scribe: Goal Completion Pattern Analysis (2026-11-23 10:34)",
-    "#4 designer: Cockpit Layout Design (2026-11-23 10:54)",
-    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:07)"
+    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:22)",
+    "#2 verifier: Remediation Rollback Test (2026-11-23 10:22)",
+    "#3 scribe: Runbook Lesson Extractor (2026-11-23 10:42)",
+    "#4 designer: Cockpit Layout Design (2026-11-23 11:03)",
+    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:15)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-11-30 07:39",
-   "completes": 47,
+   "end": "2026-11-30 07:48",
+   "completes": 46,
    "fleet_pct": 100.0,
    "top": [
-    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:14)",
-    "#2 verifier: Remediation Rollback Test (2026-11-23 10:14)",
-    "#3 scribe: Goal Completion Pattern Analysis (2026-11-23 10:34)",
-    "#4 designer: Cockpit Layout Design (2026-11-23 10:54)",
-    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:07)"
+    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:22)",
+    "#2 verifier: Remediation Rollback Test (2026-11-23 10:22)",
+    "#3 scribe: Runbook Lesson Extractor (2026-11-23 10:42)",
+    "#4 designer: Cockpit Layout Design (2026-11-23 11:03)",
+    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:15)"
    ],
    "next_cycle_candidates": [
     {
@@ -347,15 +345,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-23 07:39",
-   "completes": 47,
+   "end": "2026-12-23 07:48",
+   "completes": 46,
    "fleet_pct": 100.0,
    "top": [
-    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:14)",
-    "#2 verifier: Remediation Rollback Test (2026-11-23 10:14)",
-    "#3 scribe: Goal Completion Pattern Analysis (2026-11-23 10:34)",
-    "#4 designer: Cockpit Layout Design (2026-11-23 10:54)",
-    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:07)"
+    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:22)",
+    "#2 verifier: Remediation Rollback Test (2026-11-23 10:22)",
+    "#3 scribe: Runbook Lesson Extractor (2026-11-23 10:42)",
+    "#4 designer: Cockpit Layout Design (2026-11-23 11:03)",
+    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:15)"
    ],
    "next_cycle_candidates": [
     {
@@ -413,42 +411,43 @@
   "archivist": {
    "done": 4,
    "total": 10,
-   "end": "2026-11-24 04:47"
+   "end": "2026-11-24 04:56"
   },
   "builder": {
    "done": 3,
    "total": 10,
-   "end": "2026-11-24 07:12"
+   "end": "2026-11-24 07:20"
   },
   "designer": {
    "done": 3,
    "total": 10,
-   "end": "2026-11-24 11:45"
+   "end": "2026-11-24 11:54"
   },
   "mechanic": {
    "done": 4,
    "total": 10,
-   "end": "2026-11-24 01:05"
+   "end": "2026-11-24 01:14"
   },
   "orchestrator": {
    "done": 2,
    "total": 8,
-   "end": "2026-11-24 05:40"
+   "end": "2026-11-24 05:48"
   },
   "researcher": {
    "done": 5,
    "total": 10,
-   "end": "2026-11-24 10:21"
+   "end": "2026-11-24 10:30"
   },
   "scribe": {
-   "done": 7,
+   "done": 8,
    "total": 10,
-   "end": "2026-11-23 18:30"
+   "end": "2026-11-23 15:44"
   },
   "verifier": {
    "done": 3,
    "total": 10,
-   "end": "2026-11-24 03:40"
+   "end": "2026-11-24 03:48"
   }
- }
+ },
+ "level_up_eta": "2026-11-24 11:54"
 }

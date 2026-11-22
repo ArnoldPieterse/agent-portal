@@ -238,6 +238,8 @@ def refresh(now=None):
            "lanes": {a: {"done": s["done"], "total": s["total"],
                           "end": (lane_end[a].strftime("%Y-%m-%d %H:%M") if a in lane_end else None)}
                      for a, s in sorted(lanes.items())}}
+    # Fleet all-clear ETA = the last lane to finish; this is when a fresh 100% can gate a level-up.
+    doc["level_up_eta"] = max((v["end"] for v in doc["lanes"].values() if v["end"]), default=None)
     _write_outputs(doc)
     return doc
 

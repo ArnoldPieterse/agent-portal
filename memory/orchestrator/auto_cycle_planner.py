@@ -187,13 +187,62 @@ def load_backlog(path: str) -> list[dict]:
     return goals
 
 
+def build_agent_keyword_profiles() -> dict[str, dict[str, float]]:
+    """Build keyword frequency profiles per agent from all completed goals in archive."""
+    import re as _re
+    stop_words = {'the', 'a', 'an', 'and', 'or', 'of', 'to', 'in', 'on', 'for',
+                  'is', 'it', 'this', 'that', 'with', 'from', 'by', 'at', 'as',
+                  'be', 'was', 'were', 'are', 'has', 'had', 'do', 'does', 'did'}
+    profiles = {a: {} for a in AGENT_IDS}
+    if not ARCHIVE_DIR.exists():
+        return profiles
+    for f in sorted(ARCHIVE_DIR.glob("*.md")):
+        agent_id = f.stem.split("-")[0].lower()
+        if agent_id not in AGENT_IDS:
+            continue
+        text = f.read_text(encoding="utf-8", errors="replace")
+        goals = parse_goal_file(text)
+        for g in goals:
+            if not g["completed"]:
+                continue
+            words = _re.findall(r'[a-z][a-z0-9\-]+', g["title"].lower())
+            for w in words:
+                if w in stop_words or len(w) < 3:
+                    continue
+                profiles[agent_id][w] = profiles[agent_id].get(w, 0) + 1
+    # Normalize: divide by total keywords per agent
+    for agent in AGENT_IDS:
+        total = sum(profiles[agent].values())
+        if total > 0:
+            profiles[agent] = {k: v / total for k, v in profiles[agent].items()}
+    return profiles
+
+
+def score_goal_for_agent(goal: dict, profile: dict[str, float]) -> float:
+    """Score a goal against an agent's keyword profile."""
+    import re as _re
+    words = set(_re.findall(r'[a-z][a-z0-9\-]+', (goal["title"] + " " + goal.get("description", "")).lower()))
+    score = 0.0
+    for w in words:
+        if w in profile:
+            score += profile[w]
+    return score
+
+
 def allocate_goals(
     backlog: list[dict],
     throughput: dict[str, dict],
     max_per_agent: int = 15,
     min_per_agent: int = 1,
 ) -> dict[str, list[dict]]:
-    """Greedy allocation: assign each goal to best-fit agent respecting constraints."""
+    """Keyword-profile allocation: assign each goal to best-matching agent.
+    
+    Uses historical keyword frequency profiles built from all completed goals
+    in the archive. Each goal is scored against every agent's profile; highest
+    score wins (with load balancing penalty). Falls back to type-based scoring
+    if no keyword match found.
+    """
+    profiles = build_agent_keyword_profiles()
     specialization = {a: agent_specialization(a, throughput) for a in AGENT_IDS}
     assignment: dict[str, list[dict]] = {a: [] for a in AGENT_IDS}
     load: dict[str, float] = {a: 0.0 for a in AGENT_IDS}
@@ -207,17 +256,20 @@ def allocate_goals(
         for agent in AGENT_IDS:
             if len(assignment[agent]) >= max_per_agent:
                 continue
-            spec_score = specialization[agent].get(goal["type"], 0.2)
-            # Penalize already-loaded agents (balance)
-            balance_penalty = load[agent] * 0.3
-            score = spec_score - balance_penalty
+            # Primary: keyword profile score (scaled up)
+            kw_score = score_goal_for_agent(goal, profiles[agent]) * 10.0
+            # Secondary: type-based specialization as tiebreaker/fallback
+            type_score = specialization[agent].get(goal["type"], 0.1) * 2.0
+            # Load balancing penalty
+            balance_penalty = len(assignment[agent]) * 0.5
+            score = kw_score + type_score - balance_penalty
             if score > best_score:
                 best_score = score
                 best_agent = agent
 
         if best_agent is None:
             # All at capacity; assign to least-loaded
-            best_agent = min(AGENT_IDS, key=lambda a: load[a])
+            best_agent = min(AGENT_IDS, key=lambda a: len(assignment[a]))
             if len(assignment[best_agent]) >= max_per_agent:
                 continue  # truly can't fit
 
@@ -227,7 +279,6 @@ def allocate_goals(
     # Ensure no agent has 0 goals (redistribute from most-loaded)
     for agent in AGENT_IDS:
         if len(assignment[agent]) < min_per_agent:
-            # Take lowest-priority goal from most-loaded agent
             donor = max(AGENT_IDS, key=lambda a: len(assignment[a]))
             if assignment[donor]:
                 moved = assignment[donor].pop()

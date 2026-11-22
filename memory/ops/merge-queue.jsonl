@@ -252,3 +252,8 @@
 {"ts": "2026-11-23 07:01:14", "file": "agent_portal.py", "sha": "540225d8ad", "size": 286552, "snapshot": "memory/ops/merge-queue/agent_portal.py.540225d8ad"}
 {"ts": "2026-11-23 07:26:09", "file": "goal_ledger.py", "sha": "642313f73a", "size": 6488, "snapshot": "memory/ops/merge-queue/goal_ledger.py.642313f73a"}
 {"ts": "2026-11-23 07:42:09", "file": "agent_portal.py", "sha": "39a8d6df65", "size": 285136, "snapshot": "memory/ops/merge-queue/agent_portal.py.39a8d6df65"}
+{"ts": "2026-11-23 07:44:21", "file": "agent_portal.py", "sha": "80ed23fe7b", "size": 291716, "snapshot": "memory/ops/merge-queue/agent_portal.py.80ed23fe7b"}
+{"ts": "2026-11-23 07:44:21", "file": "ui/app.css", "sha": "9cc18886d7", "size": 33519, "snapshot": null}
+{"ts": "2026-11-23 07:44:21", "file": "ui/uploads.js", "sha": "de7193a7ed", "size": 40588, "snapshot": null}
+{"ts": "2026-11-23 07:49:25", "file": "agent_portal.py", "sha": "ed0642fe59", "size": 291891, "snapshot": "memory/ops/merge-queue/agent_portal.py.ed0642fe59"}
+{"ts": "2026-11-23 07:49:25", "file": "ui/uploads.js", "sha": "4b4a61f067", "size": 42478, "snapshot": null}

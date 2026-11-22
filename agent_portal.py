@@ -2287,7 +2287,9 @@ def _index_block():
     """Compact pointer map injected into group prompts instead of full notes."""
     try:
         t = open(os.path.join(MEMORY_DIR, "INDEX.md"), encoding="utf-8").read().strip()
-        return t[:1600]
+        # 2026-11-23: budget raised 1600->2400 so the full lane+module pointer map survives
+        # injection (the forecast/goals pointers must be visible to every seat).
+        return t[:2400]
     except Exception:
         return ""
 
@@ -4535,7 +4537,7 @@ def _forecast_block(agent_name):
     if fl.get("total"):
         tail.append("fleet %s/%s now" % (fl.get("done"), fl.get("total")))
     if h24:
-        tail.append("~%d%% by %s" % (h24["pct"], h24["by"][5:16]))
+        tail.append("~%d%% by %s" % (h24["fleet_pct"], h24["end"][5:16]))
     lv = doc.get("level_up_eta")
     if lv:
         tail.append("all-clear ETA " + lv)

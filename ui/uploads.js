@@ -347,6 +347,8 @@ $("filesBtn").onclick=()=>{const open=$("filesPanel").classList.toggle("open");$
 // ---- Goals panel (2026-11-15, Designer): Goal Velocity dashboard ----
 // Round-topic mount node (P1, 2026-11-22): created from JS so index.html stays untouched.
 { const _tp=$("goalsPanel"); if(_tp&&!$("topicBody")&&$("goalsGit")){ const tb=document.createElement("div"); tb.id="topicBody"; _tp.insertBefore(tb,$("goalsGit")); } }
+// Forecast mount node (2026-11-23): 10-steps-ahead prediction panel, created from JS so index.html stays untouched.
+{ const _fp=$("goalsPanel"); if(_fp&&!$("forecastBody")&&$("goalsGit")){ const fb=document.createElement("div"); fb.id="forecastBody"; _fp.insertBefore(fb,$("goalsGit")); } }
 async function goalsLoad(){
   { const _gb=$("goalsBody"); if(_gb&&(typeof UI!=="undefined")&&!_gb.dataset.loaded)_gb.innerHTML=UI.skeleton(3,52); }
   try{
@@ -398,6 +400,27 @@ async function goalsLoad(){
         if(!tv){ msg.textContent="topic required"; return; }
         try{ const r=await jpost("/api/goals/topic",{action:"queue",topic:tv,description:dsc});
           msg.textContent=r.ok?"queued - steers the next goal round":"error: "+(r.error||""); goalsLoad(); }catch(e){ msg.textContent="error: "+e; } };
+    }).catch(()=>{});
+    // 10-steps-ahead prediction system (2026-11-23): next-10 goal queue + 5-horizon cards
+    // (30m/1h/1d/1w/1m) with outcomes & consequences - aligns goal setting and following.
+    fetch("/api/goals/forecast").then(r=>r.json()).then(fc=>{
+      const el=$("forecastBody"); if(!el||!fc.ok)return;
+      let h='<div class="topic-card"><div class="topic-k">Forecast &middot; 10 steps ahead <span class="hint">(refreshed '+Math.round((fc.age_s||0)/60)+'m ago)</span></div>';
+      const hs=fc.horizons||[];
+      if(hs.length)h+='<div class="fc-hz">'+hs.map(x=>'<span class="fc-chip" title="by '+esc(x.end)+'"><b>'+esc(x.label)+'</b> +'+x.completes.length+' &rarr; ~'+Math.round(x.fleet_pct)+'%</span>').join("")+'</div>';
+      const its=fc.next10||[];
+      if(its.length){
+        h+='<table class="fc-tab"><tr><th>#</th><th>agent</th><th>goal (next step)</th><th>ETA</th><th>P</th><th>potential consequences</th></tr>';
+        for(const it of its){
+          const cons=(it.consequences||[]).map(c=>esc(c.agent)+": "+esc((c.title||c.goal).slice(0,42))).join("<br>")||"&mdash;";
+          h+='<tr><td>'+it.rank+'</td><td class="fc-ag">'+esc(it.agent)+'</td><td title="'+esc(it.goal)+'">'+esc((it.title||it.goal).slice(0,56))+'</td><td>'+esc(it.eta.slice(5,16))+'</td><td>'+(Math.round(100*it.p_reached))+'%</td><td class="fc-cons">'+cons+'</td></tr>';
+        }
+        h+='</table>';
+      }
+      const _ends=Object.values(fc.lanes||{}).map(l=>l.end).filter(Boolean);
+      if(_ends.length)h+='<div class="hint" style="margin-top:6px">level-up (all goals 100%) ETA: '+esc(_ends.sort().slice(-1)[0])+'</div>';
+      h+='</div>';
+      el.innerHTML=h;
     }).catch(()=>{});
     // Git-based progress curve + stall signal (2026-11-16): goals are registered in git,
     // so the history IS the progress tracker.

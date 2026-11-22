@@ -1,42 +1,27 @@
-# memory/goals — pointer map
+# memory/goals - pointer map
 
-CURRENT CYCLE: **set 2026-11-17 (cycle 3)** - 8 agents x 10 goals, canonical record TODO.md section `## AGENT GOALS (set 2026-11-17)`. Cycle-2 (2026-11-16) files archived in archive/cycle2-2026-11-17/; cycle-1 (2026-11-13) in archive/. Both SUPERSEDED.
+CURRENT CYCLE: **cycle-10 (set 2026-11-23)** - 8 agents x 10 goals, focus "Closed-Loop Autonomy & Fleet Cockpit". Canonical record: TODO.md section `## AGENT GOALS`. Level 1 reached on the previous set (report in memory/levels/).
 
-CYCLE-8 PROPOSALS (Builder, 2026-11-20): ~10 next-cycle Builder goals drafted + grounded in current code state (dark mode absent from core.js; state.js covers only selectedId; components.js lacks modal/toast/virtualizedList/skeleton; api-client has ~9 bare call sites). Ready for Orchestrator to collect verbatim into TODO.md `## AGENT GOALS` + memory/goals/builder.md. Doc: memory/goals/builder-cycle8-proposals.md
+## Prediction system (10 steps ahead, 2026-11-23)
+- -> forecast_engine.py   deterministic engine: per-goal ETA from type x complexity x slip model; per-lane FIFO queue; run `python memory/goals/forecast_engine.py`
+- -> next10.json          machine output: next-10 queue + 5 horizons (30m/1h/1d/1w/1m), ETAs, P(reached), steps, consequences (portal /api/goals/forecast)
+- -> forecast-latest.md   human-readable horizon cards (agents read this)
+- -> calibration.json     rolling prediction-vs-actuals scores (hit/late/slipped); feeds future model tuning
+- -> cycle-proposal.md    pre-computed ranked candidates for the NEXT cycle - goal-setting alignment; Orchestrator ratifies, does not draft cold
+- -> history/             rotated snapshots (keep 48) used by calibration
+- -> slip_prediction_table.json   v2 slip model (naive Bayes: type x agent x complexity); feeds P(reached)
 
-CONTRIBUTION (2026-11-19, Orchestrator option-b): browser-gate decision tree for the per-seat headless-rendering wall — resolves browser-acceptance-workaround.md vs headless-browser-unblock.md contradiction; White sandbox confirmed CHROME-MISSING this pass. Doc: memory/ops/browser-gate-decision-tree.md | Leaf: memory/orchestrator/browser-gate-decision-tree-2026-11-19.md
-REVERIFICATION (2026-11-19, Orchestrator option-c): Designer Goal #10 print "PASS 9/9" flagged STALE OVERCLAIM — grep: #printReportBtn count=0 in all UI files (button JS-injected as .print-btn), page-break-after count=0; real browser print-preview acceptance unmet. Ledger stays OPEN. Leaf: memory/orchestrator/designer-goal10-print-stale-overclaim-2026-11-19.md
-REVERIFICATION (2026-11-18, Orchestrator option-c): Designer Goal #1 token-audit stale FAIL resolved — fresh grep of ui/app.css = 0 true component-rule hex hardcodes (all 66 hex are `--var:` token definitions). Closure stands. Leaf: memory/orchestrator/token-audit-reverify-2026-11-18.md
+## Per-lane goal files (the ONLY form the dashboard counts)
+- -> orchestrator.md researcher.md verifier.md scribe.md designer.md builder.md archivist.md mechanic.md
 
-- -> memory/goals/orchestrator.md   Orchestrator: 10 goals (cycle-3, seat-drafted - ratify on first live round)
-- -> memory/goals/researcher.md   Researcher: 8 goals (cycle-6, set 2026-11-18) - #1 = unified hot-loader expansion (recover_all + fleet_reload + wedge_force_recover consolidated; fixes Q4 ctx 65536->131072 regression, adds wedge-safety + post-load probe + binding verify). Grounding: memory/researcher/hotload-goalset-grounding-2026-11-18.md
-- -> memory/goals/archive/researcher-cycle5-2026-11-18.md   Researcher cycle-5 (set 2026-11-18) SUPERSEDED - all 10 goals verified; archived when cycle-6 drafted this pass
-- -> memory/goals/builder.md   Builder: 10 goals (cycle-3, seat-drafted)
-- -> memory/goals/verifier.md   Verifier: 10 goals (cycle-3, seat-drafted)
-- -> memory/goals/designer.md   Designer: 10 goals (cycle-3, seat-drafted)
-- -> memory/goals/archivist.md   Archivist: 10 goals (cycle-3, seat-drafted)
-- -> memory/goals/scribe.md   Scribe: 10 goals (cycle-3, seat-drafted)
-- -> memory/goals/mechanic.md   Mechanic: 10 goals (cycle-3, seat-drafted)
-- -> memory/goals/forecast-mechanic-g4.md   Verifier forecast for Mechanic#4 closure timing (2026-11-17)
+## Backlog + supporting state
+- -> scheduled-background.md   BACKGROUND SCHEDULED GOALS (closure gated by date/cadence; never hold main goals)
+- -> dependency-graph.json   cross-agent goal dependencies
+- -> closed_topics.json, round_topic.json, GOAL_RESET_PENDING.json   runtime state (portal-managed)
+- memory/goals/forecast-<agent>-*.md   per-goal prediction leaves written by agents (older style family; engine outputs above are the fleet view)
+- -> retro-cycle-7.md   Cycle-7 retrospective (60/80 completed, 20 slipped - grounded the slip model)
 
-Cycle-2 kickoff provenance + verbatim proposals:
-- -> memory/goals/cycle2-kickoff-2026-11-16.md
-- -> memory/goals/cycle2-dependency-map.md   cross-agent dependency map (O4): SLO chain, supersession split, evolution trio   kickoff record (proposals, coherence decisions, goal-logic bug fix, restart pending)
-- -> memory/goals/cycle2-proposals-raw-2026-11-16.txt   verbatim agent text from journals g-1a1e266d42d + g-1a1e2727470
-
-Cycle 2 (set 2026-11-16, SUPERSEDED - 100% reached):
-- -> memory/goals/archive/cycle2-2026-11-17/   full cycle-2 goal files + kickoff docs
-
-Cycle 1 (set 2026-11-13, SUPERSEDED - all 80/80 verified):
-- -> memory/goals/archive/orchestrator-2026-11-13.md, researcher-2026-11-13.md, builder-2026-11-13.md, verifier-2026-11-13.md, designer-2026-11-13.md, archivist-2026-11-13.md, scribe-2026-11-13.md, mechanic-2026-11-13.md
-- -> memory/goals/all-goals-2026-11-13.md   batch file: all eight cycle-1 lists in one doc (root copy; archived twin: archive/2026-11-13-agent-goals-SUPERSEDED-partial.md)
-- NOTE (r9): 2026-11-13-agent-goals.md = 6/8 partial, superseded by all-goals-2026-11-13.md (8/8); see also memory/synthesis/INDEX.md
-- -> memory/goals/researcher-attempts-cycle3-2026-11-18.md   Researcher attempts to close the 10 background scheduled goals (gaps + concrete close-it paths per owner)
-- -> memory/goals/scheduled-background.md   BACKGROUND SCHEDULED GOALS (closure gated by date/cadence; never hold main goals)
-- -> memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md   Builder assist: Mechanic goal #2 auto_restart.py verified static+unit (AST/import/ts/log_event OK); live kill->restart leg gated on non-sandbox vantage (WinError 10013). Owner=Mechanic.
-
-## Linked content (KG orphan remediation 2026-11-19)
-- [researcher.md](memory/goals/researcher.md)
-- [scheduler-cycle6.md](memory/goals/scheduler-cycle6.md)
-
-- -> retro-cycle-7.md   Cycle-7 retrospective (auto-generated by memory/orchestrator/cycle_retro.py; 60/80 completed, 20 slipped)
+## Superseded cycles (archive)
+- -> archive/cycle2-2026-11-17/   cycle-2 full goal files + kickoff docs (SUPERSEDED, 100% reached)
+- -> archive/orchestrator-2026-11-13.md (+ researcher/builder/verifier/designer/scribe/archivist/mechanic twins)   cycle-1 (SUPERSEDED, 80/80 verified)
+- -> all-goals-2026-11-13.md   batch file: all eight cycle-1 lists in one doc
