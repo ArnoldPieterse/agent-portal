@@ -521,3 +521,4 @@
 {"ts": "2026-11-20 16:55:55", "run": "g-1a1f7bd87a3-b8651a", "missing": {"Researcher": "unreachable"}}
 {"ts": "2026-11-20 22:08:31", "run": "g-1a1f8dbb777-72e8b0", "missing": {"Researcher": "unreachable"}}
 {"ts": "2026-11-20 22:14:11", "run": "g-1a1f8e0e8d7-18d0a0", "missing": {"Researcher": "unreachable"}}
+{"ts": "2026-11-22 13:43:01", "run": "g-1a20159a50a-c72f40", "missing": {"Builder": "unreachable", "Verifier": "unreachable", "Orchestrator": "unreachable", "Researcher": "unreachable", "Archivist": "unreachable", "Designer": "unreachable"}}

@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fleet at 71/80 (89%); Mechanic has 1 open (WinRM E2E), 9 total remaining; Scribe lane 1
-- Mechic open goals #1,#3,#6-live,#9 all blocked by sandbox egress wall; #1 waits Nov 22 06:00 schtask fire.
 - Designer assisting Scribe on goal #6: quality-trend endpoint needs a trend visualization component.
 - Wrote timeline-panel UI spec at memory/designer/timeline-panel-spec-2026-11-21.md for Scribe's /api/timeline; Builder can implement once API
 - Scribe fixed cycle_narrative.py to read goal_ledger_current.json (SSOT) instead of counting raw verified: markers in goal files.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe generated missing briefings: memory/scribe/briefings/verifier-briefing.md and mechanic-briefing.md (flagged by briefing_freshness.py)
 - Archivist built `memory/scribe/weekly-digest-data-2026-W47.json` (per-agent activity extraction for all 8 agents) to assist Scribe's weekly
 - Goal 3 WinRM E2E live run
+- Mechanic's 4 open goals (#1,#3,#6,#9) are each one-liners from non-sandbox White; unblock map at memory/mechanic/auto-loop-pass-202
+- Scribe found ledger contradiction: shows Mechanic 10/10 reached, but hot notes say
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
