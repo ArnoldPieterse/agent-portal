@@ -1,0 +1,126 @@
+{
+  "g": "2026-11-21",
+  "total": 2201,
+  "files": {
+    "INDEX_md.json": {
+      "agent": "INDEX.md",
+      "n": 1,
+      "kb": 0.4
+    },
+    "ONBOARDING_md.json": {
+      "agent": "ONBOARDING.md",
+      "n": 1,
+      "kb": 0.4
+    },
+    "archivist.json": {
+      "agent": "archivist",
+      "n": 173,
+      "kb": 64.0
+    },
+    "builder.json": {
+      "agent": "builder",
+      "n": 134,
+      "kb": 50.0
+    },
+    "designer.json": {
+      "agent": "designer",
+      "n": 504,
+      "kb": 190.4
+    },
+    "goals.json": {
+      "agent": "goals",
+      "n": 126,
+      "kb": 45.8
+    },
+    "goals_md.json": {
+      "agent": "goals.md",
+      "n": 1,
+      "kb": 0.4
+    },
+    "handoffs.json": {
+      "agent": "handoffs",
+      "n": 7,
+      "kb": 2.5
+    },
+    "llm.json": {
+      "agent": "llm",
+      "n": 18,
+      "kb": 6.1
+    },
+    "mechanic.json": {
+      "agent": "mechanic",
+      "n": 314,
+      "kb": 116.1
+    },
+    "ops.json": {
+      "agent": "ops",
+      "n": 116,
+      "kb": 41.1
+    },
+    "orchestrator.json": {
+      "agent": "orchestrator",
+      "n": 94,
+      "kb": 36.6
+    },
+    "portal.json": {
+      "agent": "portal",
+      "n": 37,
+      "kb": 13.2
+    },
+    "projects.json": {
+      "agent": "projects",
+      "n": 4,
+      "kb": 1.5
+    },
+    "researcher.json": {
+      "agent": "researcher",
+      "n": 167,
+      "kb": 65.4
+    },
+    "rosterprobe_archived_2026-11-20.json": {
+      "agent": "rosterprobe_archived_2026-11-20",
+      "n": 1,
+      "kb": 0.4
+    },
+    "run-rules_md.json": {
+      "agent": "run-rules.md",
+      "n": 1,
+      "kb": 0.4
+    },
+    "scheme.json": {
+      "agent": "scheme",
+      "n": 1,
+      "kb": 0.4
+    },
+    "scribe.json": {
+      "agent": "scribe",
+      "n": 195,
+      "kb": 70.1
+    },
+    "sink.json": {
+      "agent": "sink",
+      "n": 1,
+      "kb": 0.4
+    },
+    "squire.json": {
+      "agent": "squire",
+      "n": 2,
+      "kb": 0.7
+    },
+    "synthesis.json": {
+      "agent": "synthesis",
+      "n": 87,
+      "kb": 32.7
+    },
+    "verifier.json": {
+      "agent": "verifier",
+      "n": 215,
+      "kb": 80.5
+    },
+    "workspace.json": {
+      "agent": "workspace",
+      "n": 1,
+      "kb": 0.4
+    }
+  }
+}
