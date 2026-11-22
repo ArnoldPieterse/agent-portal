@@ -133,5 +133,5 @@ Run: 2026-11-20 | Status: **FAIL (256 issues)**
 - `memory\researcher\INDEX.md`: 72501 chars (budget 1600)
 - `memory\scribe\INDEX.md`: 2522 chars (budget 1600)
 - `memory\synthesis\INDEX.md`: 5155 chars (budget 1600)
-- `memory\verifier\INDEX.md`: 17559 chars (budget 1600)
+- `memory\verifier\INDEX.md`: 17916 chars (budget 1600)
 - `memory\workspace\INDEX.md`: 49475 chars (budget 1600)

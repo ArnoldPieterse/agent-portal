@@ -206,11 +206,202 @@ def generate_weekly_summary(ref_date=None):
     
     return filename, content
 
+def get_agent_goals(agent, start, end):
+    """Get goals closed AND still open for a specific agent in the week range."""
+    path = f'memory/goals/{agent}.md'
+    if not os.path.exists(path):
+        return [], []
+    text = open(path, encoding='utf-8').read()
+    lines = text.split('\n')
+    closed, open_goals = [], []
+    current_goal = None
+    for line in lines:
+        m = re.match(r'^(\d+)\.\s+\*\*(.+?)\*\*', line)
+        if m:
+            if current_goal:
+                (closed if current_goal['verified'] else open_goals).append(current_goal)
+            current_goal = {'num': int(m.group(1)), 'title': m.group(2), 'verified': False, 'verify_date': None}
+            vm = re.search(r'\(verified:\s*(\d{4}-\d{2}-\d{2})', line)
+            if vm:
+                current_goal['verified'] = True
+                current_goal['verify_date'] = vm.group(1)
+        elif current_goal and not m:
+            if not current_goal['verified']:
+                vm = re.search(r'\(verified:\s*(\d{4}-\d{2}-\d{2})', line)
+                if vm:
+                    current_goal['verified'] = True
+                    current_goal['verify_date'] = vm.group(1)
+            # Also check pointer lines for evidence
+            pm = re.search(r'\(pointer:\s*([^)]+)\)', line)
+            if pm and not current_goal.get('evidence'):
+                current_goal['evidence'] = pm.group(1).strip()
+    if current_goal:
+        (closed if current_goal['verified'] else open_goals).append(current_goal)
+    # Filter closed to those verified in range
+    closed_in_range = []
+    for g in closed:
+        if g['verify_date']:
+            try:
+                vd = datetime.strptime(g['verify_date'], '%Y-%m-%d')
+                if start <= vd < end:
+                    closed_in_range.append(g)
+            except ValueError:
+                pass
+    return closed_in_range, open_goals
+
+def get_agent_decisions(agent, start, end):
+    """Extract decisions attributed to a specific agent from decision_log.md."""
+    path = 'memory/scribe/decision_log.md'
+    if not os.path.exists(path):
+        return []
+    text = open(path, encoding='utf-8').read()
+    results = []
+    for line in text.split('\n'):
+        if agent.lower() in line.lower():
+            m = re.search(r'(20\d{2}-\d{2}-\d{2})', line)
+            if m:
+                try:
+                    d = datetime.strptime(m.group(1), '%Y-%m-%d')
+                    if start <= d < end:
+                        results.append(line.strip())
+                except ValueError:
+                    pass
+    return results[:10]
+
+def get_agent_blockers(agent, start, end):
+    """Find blockers mentioning a specific agent."""
+    path = 'memory/ops/blockers.md'
+    if not os.path.exists(path):
+        return []
+    text = open(path, encoding='utf-8').read()
+    results = []
+    for line in text.split('\n'):
+        if agent.lower() in line.lower():
+            m = re.search(r'(20\d{2}-\d{2}-\d{2})', line)
+            if m:
+                try:
+                    d = datetime.strptime(m.group(1), '%Y-%m-%d')
+                    if start <= d < end:
+                        results.append(line.strip())
+                except ValueError:
+                    pass
+    return results[:5]
+
+def get_agent_handoffs(agent, start, end):
+    """Find handoff mentions for a specific agent in synthesis files."""
+    results = []
+    syn_dir = 'memory/synthesis'
+    if not os.path.isdir(syn_dir):
+        return results
+    for f in os.listdir(syn_dir):
+        if not f.endswith('.md'):
+            continue
+        fp = os.path.join(syn_dir, f)
+        try:
+            mtime = datetime.fromtimestamp(os.path.getmtime(fp))
+            if not (start <= mtime < end):
+                continue
+        except OSError:
+            continue
+        try:
+            text = open(fp, encoding='utf-8', errors='replace').read()
+        except OSError:
+            continue
+        for line in text.split('\n'):
+            if agent.lower() in line.lower() and ('handoff' in line.lower() or '->' in line or 'to ' in line.lower()):
+                results.append(line.strip())
+    return results[:5]
+
+def generate_agent_digest(agent, ref_date=None):
+    """Generate a per-agent weekly digest."""
+    start, end = get_week_range(ref_date)
+    week_num = start.isocalendar()[1]
+    year = start.isocalendar()[0]
+    
+    closed, open_goals = get_agent_goals(agent, start, end)
+    decisions = get_agent_decisions(agent, start, end)
+    blockers = get_agent_blockers(agent, start, end)
+    handoffs = get_agent_handoffs(agent, start, end)
+    activity = get_agent_activity(start, end)
+    agent_files = activity.get(agent, 0)
+    
+    out = []
+    out.append(f"# Weekly Digest: {agent.title()} - {year}-W{week_num:02d}")
+    out.append(f"**Period:** {start.strftime('%Y-%m-%d')} to {(end - timedelta(days=1)).strftime('%Y-%m-%d')}")
+    out.append(f"**Generated:** {datetime.now().strftime('%Y-%m-%d %H:%M')} by Orchestrator assist")
+    out.append("")
+    
+    out.append("## Goals Closed This Week")
+    if closed:
+        for g in sorted(closed, key=lambda x: x['num']):
+            ev = f" [evidence: {g['evidence']}]" if g.get('evidence') else ''
+            out.append(f"- #{g['num']} **{g['title']}** ({g['verify_date']}){ev}")
+    else:
+        out.append("- (none closed this week)")
+    out.append("")
+    
+    out.append("## Open Goals")
+    if open_goals:
+        for g in sorted(open_goals, key=lambda x: x['num']):
+            ev = f" [pointer: {g['evidence']}]" if g.get('evidence') else ''
+            out.append(f"- #{g['num']} **{g['title']}**{ev}")
+    else:
+        out.append("- (all goals reached)")
+    out.append("")
+    
+    out.append("## Decisions Owned")
+    if decisions:
+        for d in decisions:
+            out.append(f"- {d}")
+    else:
+        out.append("- (none recorded this week)")
+    out.append("")
+    
+    out.append("## Handoffs & Coordination")
+    if handoffs:
+        for h in handoffs:
+            out.append(f"- {h}")
+    else:
+        out.append("- (none detected this week)")
+    out.append("")
+    
+    out.append("## Blockers Raised")
+    if blockers:
+        for b in blockers:
+            out.append(f"- {b}")
+    else:
+        out.append("- (none raised this week)")
+    out.append("")
+    
+    out.append("## Activity")
+    out.append(f"- Files modified: {agent_files}")
+    out.append("")
+    
+    content = '\n'.join(out)
+    filename = f"memory/scribe/weekly-{year}-W{week_num:02d}-{agent}.md"
+    os.makedirs('memory/scribe', exist_ok=True)
+    with open(filename, 'w', encoding='utf-8') as f:
+        f.write(content)
+    return filename, content
+
 if __name__ == '__main__':
     import sys
     ref = None
-    if len(sys.argv) > 1:
-        ref = datetime.strptime(sys.argv[1], '%Y-%m-%d')
-    fname, content = generate_weekly_summary(ref)
+    agent = None
+    args = sys.argv[1:]
+    i = 0
+    while i < len(args):
+        if args[i] == '--agent' and i + 1 < len(args):
+            agent = args[i + 1].lower()
+            i += 2
+        elif not args[i].startswith('--'):
+            ref = datetime.strptime(args[i], '%Y-%m-%d')
+            i += 1
+        else:
+            i += 1
+    if agent:
+        fname, content = generate_agent_digest(agent, ref)
+    else:
+        fname, content = generate_weekly_summary(ref)
     print(f"Wrote: {fname}")
     print(f"Size: {len(content)} bytes")

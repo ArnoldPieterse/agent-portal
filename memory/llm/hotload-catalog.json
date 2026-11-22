@@ -1,28 +1,28 @@
 {
   "_meta": {
-    "version": "1.0",
-    "updated": "2026-11-17",
-    "description": "Model capability registry for auto-selector + hotload controller. Each entry describes a model's capabilities, resource needs, and which agent profiles it serves.",
+    "version": "1.1",
+    "updated": "2026-11-22",
+    "description": "Model capability registry for auto-selector + hotload controller. Each entry describes a model's capabilities, resource needs, and which agent profiles it serves. v1.1: corrected host IPs (Black=.99, Red=.245), all hosts 2x RTX 5090 32GB=64GB, added remote residency entries.",
     "hosts": {
       "white": {
         "api": "http://127.0.0.1:8888",
         "gpus": 2,
-        "vram_total_gb": 32
+        "vram_total_gb": 64
       },
       "pale": {
         "api": "http://IP_PALE:8888",
-        "gpus": 1,
-        "vram_total_gb": 16
+        "gpus": 2,
+        "vram_total_gb": 64
       },
       "black": {
-        "api": "http://IP_RED:8888",
-        "gpus": 1,
-        "vram_total_gb": 16
+        "api": "http://IP_BLACK:8888",
+        "gpus": 2,
+        "vram_total_gb": 64
       },
       "red": {
-        "api": "http://IP_BLACK:8888",
-        "gpus": 1,
-        "vram_total_gb": 16
+        "api": "http://IP_RED:8888",
+        "gpus": 2,
+        "vram_total_gb": 64
       }
     }
   },
@@ -109,6 +109,175 @@
       "load_time_s": 15,
       "notes": "Draft model for MTP speculative decoding; not a standalone agent backend.",
       "priority": 2
+    },
+    {
+      "id": "qwen3-27b-q8",
+      "folder": "C:\\Users\\pale\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "gguf_variant": "Q8_0",
+      "host": "pale",
+      "gpu_ids": [
+        1
+      ],
+      "vram_gb": 30.1,
+      "max_context": 32768,
+      "modalities": [
+        "text",
+        "reasoning"
+      ],
+      "capabilities": [
+        "code",
+        "ops",
+        "planning",
+        "synthesis"
+      ],
+      "agent_profiles": [
+        "archivist"
+      ],
+      "load_time_s": 240,
+      "notes": "Remote copy on Pale; alias archivist-q8. DUAL-RESIDENT since 11-13 22:56.",
+      "priority": 1
+    },
+    {
+      "id": "qwen3-27b-q4",
+      "folder": "C:\\Users\\pale\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+      "gguf_variant": "UD-Q4_K_S",
+      "host": "pale",
+      "gpu_ids": [
+        0
+      ],
+      "vram_gb": 23.7,
+      "max_context": 65536,
+      "modalities": [
+        "text",
+        "reasoning"
+      ],
+      "capabilities": [
+        "code",
+        "research",
+        "build",
+        "verify",
+        "design",
+        "ops"
+      ],
+      "agent_profiles": [
+        "designer"
+      ],
+      "load_time_s": 120,
+      "notes": "Remote copy on Pale; alias designer-q4. DUAL-RESIDENT since 11-13 22:56.",
+      "priority": 2
+    },
+    {
+      "id": "qwen3-27b-q8",
+      "folder": "C:\\Users\\black\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "gguf_variant": "Q8_0",
+      "host": "black",
+      "gpu_ids": [
+        1
+      ],
+      "vram_gb": 30.1,
+      "max_context": 32768,
+      "modalities": [
+        "text",
+        "reasoning"
+      ],
+      "capabilities": [
+        "code",
+        "ops",
+        "planning",
+        "synthesis"
+      ],
+      "agent_profiles": [
+        "builder"
+      ],
+      "load_time_s": 240,
+      "notes": "Remote copy on Black; alias builder-q8. DUAL-RESIDENT since 11-12 16:28.",
+      "priority": 1
+    },
+    {
+      "id": "qwen3-27b-q4",
+      "folder": "C:\\Users\\black\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+      "gguf_variant": "UD-Q4_K_S",
+      "host": "black",
+      "gpu_ids": [
+        0
+      ],
+      "vram_gb": 23.7,
+      "max_context": 65536,
+      "modalities": [
+        "text",
+        "reasoning"
+      ],
+      "capabilities": [
+        "code",
+        "research",
+        "build",
+        "verify",
+        "design",
+        "ops"
+      ],
+      "agent_profiles": [
+        "verifier"
+      ],
+      "load_time_s": 120,
+      "notes": "Remote copy on Black; alias verifier-q4. DUAL-RESIDENT since 11-12 16:28.",
+      "priority": 2
+    },
+    {
+      "id": "qwen3-27b-q4xl",
+      "folder": "C:\\Users\\Red\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-GGUF",
+      "gguf_variant": "UD-Q4_K_XL",
+      "host": "red",
+      "gpu_ids": [
+        0
+      ],
+      "vram_gb": 25.8,
+      "max_context": 65536,
+      "modalities": [
+        "text",
+        "reasoning"
+      ],
+      "capabilities": [
+        "code",
+        "research",
+        "build",
+        "verify",
+        "design",
+        "ops",
+        "planning"
+      ],
+      "agent_profiles": [
+        "mechanic"
+      ],
+      "load_time_s": 180,
+      "notes": "UD-Q4_K_XL on Red; alias mechanic-q4. DUAL_UP since 11-12 18:0x.",
+      "priority": 2
+    },
+    {
+      "id": "qwen3-27b-q8",
+      "folder": "C:\\Users\\Red\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "gguf_variant": "Q8_0",
+      "host": "red",
+      "gpu_ids": [
+        1
+      ],
+      "vram_gb": 30.1,
+      "max_context": 16384,
+      "modalities": [
+        "text",
+        "reasoning"
+      ],
+      "capabilities": [
+        "code",
+        "ops",
+        "planning",
+        "synthesis"
+      ],
+      "agent_profiles": [
+        "scribe"
+      ],
+      "load_time_s": 240,
+      "notes": "Remote copy on Red; alias scribe-q8. DUAL_UP since 11-12 18:0x.",
+      "priority": 1
     }
   ],
   "planned_models": [

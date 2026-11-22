@@ -1,0 +1,2 @@
+{"ts": "2026-11-22T06:50:23.391162+00:00", "dry_run": false, "rotated": 1, "compressed": 0, "deleted": 0, "details": ["rotated _test_rotation_50mb.jsonl (70000000 bytes) -> _test_rotation_50mb.jsonl.20261122"]}
+{"ts": "2026-11-22T06:50:42.481672+00:00", "dry_run": false, "rotated": 1, "compressed": 1, "deleted": 0, "details": ["rotated _test_rotation_50mb.jsonl (70000000 bytes) -> _test_rotation_50mb.jsonl.20261122", "compressed _test_rotation_50mb.jsonl.20261114 -> _test_rotation_50mb.jsonl.20261114.gz"]}
