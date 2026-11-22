@@ -222,3 +222,4 @@
 {"ts": "2026-11-22 17:35:18", "file": "index.html", "sha": "5a75dfdeda", "size": 14288, "snapshot": "memory/ops/merge-queue/index.html.5a75dfdeda"}
 {"ts": "2026-11-22 17:37:59", "file": "ui/core.js", "sha": "85c98d1356", "size": 37615, "snapshot": null}
 {"ts": "2026-11-22 17:37:59", "file": "ui/fleet_topology.js", "sha": "e417db8d7a", "size": 9085, "snapshot": null}
+{"ts": "2026-11-22 17:58:38", "file": "agent_portal.py", "sha": "b02b5855be", "size": 274573, "snapshot": "memory/ops/merge-queue/agent_portal.py.b02b5855be"}

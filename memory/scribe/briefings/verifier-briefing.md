@@ -1,6 +1,6 @@
 # Verifier Briefing (auto-generated 2026-11-21)
 
-## Current Status: 10/10 goals reached
+## Current Status: 9/10 verified (Goal 6 open)
 
 ## Open Work Items
 - **Goal 1 (Perf Gate Baseline)**: C=PASS (negative test); A+B blocked by :8099 egress wall. Unblock: run `python memory/verifier/deploy_perf_gate.py` on non-sandbox White seat.
