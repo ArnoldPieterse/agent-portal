@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-11-22T22:43:56.290985+00:00",
+  "elapsed_s": 0.13,
+  "total_issues": 4,
+  "errors": 0,
+  "warnings": 0,
+  "infos": 4,
+  "passed": true,
+  "issues": [
+    {
+      "type": "agent_no_process",
+      "severity": "info",
+      "detail": "Cockpit or process list unavailable - check skipped"
+    },
+    {
+      "type": "host_gpu",
+      "severity": "info",
+      "detail": "Cockpit or GPU data unavailable - check skipped"
+    },
+    {
+      "type": "goal_count",
+      "severity": "info",
+      "detail": "Cockpit or goal counts unavailable - check skipped"
+    },
+    {
+      "type": "agents_json_mismatch",
+      "severity": "info",
+      "detail": "Cockpit or agents.json unavailable - check skipped"
+    }
+  ]
+}
