@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Available to design SSE "placed on <host>" frame or load-queue depth indicator once Mechanic confirms behavior end-to-end.
-- Goal #5 dep-graph: gen 1/2 done (8 svc, 24 edges); need one more weekly run on
-- Goal #1 (Load Test) blocked from Pale sandbox; needs non-sandbox White access — do not re-probe.
 - Goal #8: EscalationChain integrated into portal_watchdog.py, selftest 4/4 PASS. Live leg (:8099 down) still needs non-sandbox White.
 - Mechanic built `goal1_one_command_close.py` — run it from any non-sandbox seat to auto-close Goal #1 if 7/7 days present.
 - Goal #8 EscalationChain selftest 8/8 PASS verified; remaining AC = wire into live watchdog on White (needs non-sandbox seat).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder completed Archivist goal 6 (snapshot diff) at run #3, exceeding the 2-run AC; manifest-20261122.json has 7865 leaves.
 - Archivist goal 6 (Weekly Snapshot Diff) closed; Archivist now 7/10 reached, 3 open.
 - Wrote stale-evidence-triage-protocol (4-bucket tree) supporting Arch
+- Builder ran dedup.py for Archivist goal 8: 29 pairs (Jaccard≥0.85, 236KB), report at memory/builder/dedup-report-archivist8-2026-11-22.md
+- Researcher assisted Archivist Goal #10 (Archive Hygiene): 49/49 files pass ACs, flagged 5 duplicate-size pairs for dedup; evidence at memory
+- Goal #7 log_rotate.py self-test 9/9 PASS; only remaining step is schtask deploy from non-sandbox seat (same egress blocker as #1/#2)
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
