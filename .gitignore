@@ -3,6 +3,9 @@
 !/agent_portal.py
 # 2026-11-17: starnet-style run queue (imported by agent_portal)
 !/agent_queue.py
+# 2026-11-23: evidence-gated goal ledger (tightened EVIDENCE_PAT) + UAC-popup git runner
+!/goal_ledger.py
+!/git_run.py
 !/index.html
 !/ui/
 !/agents.json
