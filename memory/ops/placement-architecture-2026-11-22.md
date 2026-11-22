@@ -34,3 +34,13 @@ from a single active host.**
 ## Verified
 Scratch sim 8/8 (home resident / home-down exact on White / quant fallback / all-down -> P1
 path / thread-local isolation / home-exact precedence). Live: portal restarted, APIs healthy.
+
+## Load queue (same day, user directive: "loads should be queued when only a few are available")
+`_queued_model_load()` serializes model loads PER HOST (Semaphore(1) per Studio base): one load at
+a time on a host; different hosts load in parallel. Turn-start hot-loads AND the autoloop recovery
+chain both go through it, so nothing double-loads a mid-load host. While queued, every 15s we
+re-check residency (and once more right after acquiring the slot) - if the load we queued behind
+finished meanwhile, we take the seat WITHOUT loading again (shared-load dedup). Bounded: a turn
+waits at most LOADQ_WAIT_S=150s then defers honestly ("load queue busy - retry shortly (auto)");
+per-host depth cap LOADQ_MAX_WAITERS=4 rejects deeper pileups immediately. Verified 10/10 scratch
+(simulated same-host serialization + dedup, cross-host parallelism, depth cap, bounded wait).

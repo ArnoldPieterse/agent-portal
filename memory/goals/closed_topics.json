@@ -412,5 +412,17 @@
 "text": "**Theme System (3 themes)** - Implement light/dark/high-contrast themes using CSS custom properties. Theme picker in settings; preference pe",
 "agent": "designer",
 "at": "2026-11-22"
+},
+{
+"sig": "f3c9f359ab90a188",
+"text": "**Auto-Updating Archive Nav** - Add a `--auto` mode to the archive-nav generation script: when run (e.g. by mirror cycle), it diffs memory/s",
+"agent": "scribe",
+"at": "2026-11-22"
+},
+{
+"sig": "a0d81ca617063caa",
+"text": "**Per-Agent Weekly Digest** - Extend weekly_summary.py with `--agent <name>` flag: generates a per-agent digest covering only that agent's a",
+"agent": "scribe",
+"at": "2026-11-22"
 }
 ]

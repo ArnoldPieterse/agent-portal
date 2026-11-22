@@ -3,6 +3,7 @@ Status: **DONE + live** - user follow-up on P1 hot-load: "agents pick the first 
 - [x] `_resolve_seat()` placement engine in agent_portal.py: home -> local White -> other hosts (first available with model RESIDENT); foreign seats use loaded-models id, home keeps alias; quant-family fallback only when home unreachable; else falls back to P1 home hot-load/reboot path. Thread-local seat redirects main + aux LLM calls per turn (no global state).
 - [x] Autoloop fires seats whose home is down when another host serves their model (single-host operation); SSE "placed on <host>" progress frame + activity-log event.
 - [x] Scratch sim 8/8; portal restarted, APIs healthy. Design note: memory/ops/placement-architecture-2026-11-22.md.
+- [x] Load queue (user: "loads should be queued when only a few are available"): `_queued_model_load()` serializes loads per host (one at a time), shared-load dedup via post-acquire residency re-check, bounded wait (150s) + depth cap (4) with honest deferral; turn-start hot-loads + autoloop recovery both routed through it. 10/10 scratch tests.
 - [ ] Follow-up: refresh hotload-catalog.json (stale: no remote models, black/red labels swapped) so VRAM-aware placement can use it; cross-host LOAD (not just resident) when home is down and nothing is resident anywhere reachable.
 
 ## P1 HOT-LOAD ON DEMAND + ROUND TOPICS + IP SCRUB + FULL-AUTOMATION RULES (Studio seat) 2026-11-22 ~16:1x

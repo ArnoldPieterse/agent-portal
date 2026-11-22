@@ -370,6 +370,10 @@ def _queued_model_load(agent, reason="load", wait_s=LOADQ_WAIT_S, wfile=None):
                 return True, "resident (caught shared load)"
             got = sem.acquire(timeout=15)
             if got:
+                # re-check AFTER acquiring: the load we queued behind may have finished while
+                # we waited - take the seat without a second (double) load
+                if reason == "load" and _model_resident(agent, rec):
+                    return True, "resident (caught shared load)"
                 break
             if time.time() >= deadline:
                 with _LOADQ_LOCK:
