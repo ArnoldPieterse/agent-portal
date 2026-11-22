@@ -1,0 +1,16 @@
+{
+ "path": "memory/archivist/archive-compaction-report-2026-11-20.md",
+ "headings": [
+  "Archive Compaction Report - 2026-11-20",
+  "Summary",
+  "Operations Performed",
+  "Phase 1: DRAFT Deduplication (synthesis/)",
+  "Phase 2: Superseded Pointer Compression (synthesis/)",
+  "Phase 3: Older Cycle Goal Compression (archive/)",
+  "Verification",
+  "Pointer Resolution"
+ ],
+ "lead": "3 near-identical auto-drafted round records consolidated:",
+ "chars": 1859,
+ "abstracted": "2026-11-23 09:24:43"
+}

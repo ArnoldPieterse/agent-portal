@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal3-hierarchy-pass-f-2026-11-20.md",
+ "headings": [
+  "Goal #3 - Information Hierarchy Audit: pass f (2026-11-20)",
+  "What landed this pass (ui/app.css, live sha12 4e28f3a34d27)",
+  "Verification",
+  "Remaining for full closure"
+ ],
+ "lead": "Agent: Designer (auto-loop). Supersedes goal3-hierarchy-pass-e-2026-11-20.md for the .frow-h b + section-heads fix.",
+ "chars": 1626,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,14 @@
+{
+ "path": "memory/verifier/kgv3-size-ac-check-2026-11-23.md",
+ "headings": [
+  "Verifier: Knowledge Graph v3 Size AC \u2014 2026-11-23",
+  "Result: FAIL (by 67.5 KB / 3.3%)",
+  "Root Cause",
+  "Fix Options (ranked by effort)",
+  "Recommendation",
+  "Evidence"
+ ],
+ "lead": "**Target:** Archivist Goal 2 \u2014 Knowledge Graph v3 (Temporal + Typed)",
+ "chars": 1560,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/goal1-decision-impact-evidence-2026-11-20.md",
+ "headings": [
+  "Decision Impact Tracking - Goal #1 Evidence (2026-11-20)",
+  "What ran",
+  "Results",
+  "Acceptance criteria check",
+  "Files created/modified"
+ ],
+ "lead": "`python memory/scribe/decision_impact.py`",
+ "chars": 781,
+ "abstracted": "2026-11-23 09:24:44"
+}

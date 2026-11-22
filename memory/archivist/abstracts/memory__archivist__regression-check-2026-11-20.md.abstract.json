@@ -1,0 +1,9 @@
+{
+ "path": "memory/archivist/regression-check-2026-11-20.md",
+ "headings": [
+  "Retrieval Benchmark Regression Check \u2014 2026-11-20"
+ ],
+ "lead": "**Run:** `python memory/archivist/retrieval_benchmark.py --quick`",
+ "chars": 305,
+ "abstracted": "2026-11-23 09:24:43"
+}

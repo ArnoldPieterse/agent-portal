@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal5-dep-graph-e2e-2026-11-21.md",
+ "headings": [
+  "Goal #5: Scheduled-Task Dependency Graph \u2014 E2E Validation (2026-11-21)",
+  "What was done this pass",
+  "Acceptance criteria met",
+  "Remaining for production",
+  "Artifacts",
+  "Runbook note"
+ ],
+ "lead": "Ran the full pipeline end-to-end with realistic fixtures:",
+ "chars": 1431,
+ "abstracted": "2026-11-23 09:24:44"
+}

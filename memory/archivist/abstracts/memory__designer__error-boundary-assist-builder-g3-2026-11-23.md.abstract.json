@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/error-boundary-assist-builder-g3-2026-11-23.md",
+ "headings": [
+  "Designer assist \ufffd Builder Goal 3 (Portal Error Boundary) \ufffd 2026-11-23",
+  "What was done",
+  "Structural verification",
+  "Remaining for Builder to close goal #3",
+  "Files touched"
+ ],
+ "lead": "Created `ui/error-boundary.js` (152 lines): a self-contained error boundary module providing:",
+ "chars": 1762,
+ "abstracted": "2026-11-23 09:24:44"
+}

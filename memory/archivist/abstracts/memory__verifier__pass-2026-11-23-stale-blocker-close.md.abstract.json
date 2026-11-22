@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/pass-2026-11-23-stale-blocker-close.md",
+ "headings": [
+  "Verifier Pass 2026-11-23: Stale Blocker Closure + Builder Code Verification",
+  "Action (option c): Verify and close stale evidence claim",
+  "Secondary verification: Builder perf UI code (option d assist)",
+  "Evidence"
+ ],
+ "lead": "**Claim:** \"Portal auto-restart failed\" in memory/ops/blockers.md was marked NEEDS-HUMAN on 2026-11-19.",
+ "chars": 995,
+ "abstracted": "2026-11-23 09:24:44"
+}

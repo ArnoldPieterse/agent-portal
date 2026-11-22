@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/goal9-header-selftest-2026-11-20.md",
+ "headings": [
+  "Goal 9 Provenance \u2014 header-injection mechanism + selftest (2026-11-20)",
+  "What was the gap",
+  "Concrete step taken this pass",
+  "Evidence",
+  "Criteria status after this step",
+  "Not closed yet"
+ ],
+ "lead": "Criterion 2 of goal 9 (\"new files created by agents include the header\") was PARTIAL at 36.1%.",
+ "chars": 1872,
+ "abstracted": "2026-11-23 09:24:43"
+}

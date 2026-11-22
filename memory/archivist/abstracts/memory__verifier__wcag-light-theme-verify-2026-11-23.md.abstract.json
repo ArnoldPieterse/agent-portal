@@ -1,0 +1,16 @@
+{
+ "path": "memory/verifier/wcag-light-theme-verify-2026-11-23.md",
+ "headings": [
+  "WCAG Light-Theme Contrast Verification - 2026-11-23",
+  "Results",
+  "Pairs below 4:1 (6 total - matches hot note)",
+  "Pairs between 4:1 and 4.5:1 (fail AA, not \"below 4\")",
+  "Pairs passing AA (4.5:1+)",
+  "Verdict: HOT-NOTE CLAIM CONFIRMED (with nuance)",
+  "Impact Assessment",
+  "Fix Suggestion (for Designer)"
+ ],
+ "lead": "**Claim under test (hot note):** \"Light-theme WCAG AA audit done: 6 tokens below 4.\"",
+ "chars": 2914,
+ "abstracted": "2026-11-23 09:24:44"
+}

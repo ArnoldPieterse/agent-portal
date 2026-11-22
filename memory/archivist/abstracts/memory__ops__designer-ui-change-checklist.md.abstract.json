@@ -1,0 +1,15 @@
+{
+ "path": "memory/ops/designer-ui-change-checklist.md",
+ "headings": [
+  "Portal UI Change Checklist (Designer, 2026-11-23)",
+  "Before editing",
+  "Design conventions (source of truth: ui/tokens.css)",
+  "After editing (pin advance for index.html)",
+  "Non-pinned files (ui/*.css, ui/*.js)",
+  "Quick reference: token groups",
+  "Anti-patterns (seen in past reverts)"
+ ],
+ "lead": "Purpose: any agent modifying `index.html`, `ui/app.css`, `ui/tokens.css`, `ui/core.js`, or `ui/uploads.js` follows this to avoid the clobber loop and token-cycle bugs.",
+ "chars": 2748,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,15 @@
+{
+ "path": "memory/builder/deploy_one_command_2026-11-20.md",
+ "headings": [
+  "Builder Goal #10 - One-Command Deploy: BUILT + TESTED (2026-11-20)",
+  "Deliverable",
+  "Usage",
+  "Pipeline (5 steps)",
+  "Tests run this pass",
+  "Sandbox limitations (graceful degradation)",
+  "Status: BUILT + sandbox-tested. Full verification (git tag created, portal serves updated content) needs host seat."
+ ],
+ "lead": "`memory/builder/deploy.py` - one-command deploy pipeline.",
+ "chars": 1441,
+ "abstracted": "2026-11-23 09:24:44"
+}

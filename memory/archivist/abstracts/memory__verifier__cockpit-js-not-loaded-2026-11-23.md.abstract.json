@@ -1,0 +1,14 @@
+{
+ "path": "memory/verifier/cockpit-js-not-loaded-2026-11-23.md",
+ "headings": [
+  "Cross-Seat Finding: cockpit.js NOT loaded in index.html",
+  "Finding:",
+  "Impact:",
+  "Likely cause:",
+  "Fix needed by Builder:",
+  "Secondary note:"
+ ],
+ "lead": "**Verifier check:** Static analysis of index.html script tags vs. ui/cockpit.js existence",
+ "chars": 1289,
+ "abstracted": "2026-11-23 09:24:44"
+}

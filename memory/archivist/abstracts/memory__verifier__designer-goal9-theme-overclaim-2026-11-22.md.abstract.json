@@ -1,0 +1,14 @@
+{
+ "path": "memory/verifier/designer-goal9-theme-overclaim-2026-11-22.md",
+ "headings": [
+  "Designer Goal #9 (Theme System) \u2014 Overclaim Verification",
+  "Claim under test",
+  "Findings \u2014 FAIL",
+  "Conclusion",
+  "Required action for Designer",
+  "Evidence reproduction"
+ ],
+ "lead": "**Verifier:** Verifier (auto-loop, option c: stale evidence claim)",
+ "chars": 1612,
+ "abstracted": "2026-11-23 09:24:44"
+}

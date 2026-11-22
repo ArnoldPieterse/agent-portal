@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal1-interaction-system-evidence.md",
+ "headings": [
+  "Goal #1: Interaction Design System - Evidence (2026-11-20)",
+  "Acceptance Criteria Check",
+  "Changes Made This Pass",
+  "Files",
+  "Verified By"
+ ],
+ "lead": "| >=6 patterns defined | PASS | interactions.css defines 6: .i-hv, .i-focus, .i-press, .i-drag, .i-scroll, .i-skel |",
+ "chars": 1263,
+ "abstracted": "2026-11-23 09:24:44"
+}

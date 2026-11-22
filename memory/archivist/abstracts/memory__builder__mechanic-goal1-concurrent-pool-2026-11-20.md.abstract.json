@@ -1,0 +1,13 @@
+{
+ "path": "memory/builder/mechanic-goal1-concurrent-pool-2026-11-20.md",
+ "headings": [
+  "Builder Assist: Mechanic Goal 1 - Concurrent Pool Load Test (2026-11-20)",
+  "What was done",
+  "Result",
+  "Remaining for Mechanic Goal 1 full closure",
+  "Files"
+ ],
+ "lead": "Ran `memory/mechanic/goal1_concurrent_test.py` - 8 parallel commands on WHITE host",
+ "chars": 777,
+ "abstracted": "2026-11-23 09:24:44"
+}

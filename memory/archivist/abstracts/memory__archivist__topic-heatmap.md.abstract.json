@@ -1,0 +1,11 @@
+{
+ "path": "memory/archivist/topic-heatmap.md",
+ "headings": [
+  "Topic Heatmap (knowledge hot/cold)",
+  "HOT topics (most cited across agent memory)",
+  "COLD agents (low citation mass - review/merge candidates)"
+ ],
+ "lead": "Generated 2026-11-23 09:24:43 | build 0.35s",
+ "chars": 722,
+ "abstracted": "2026-11-23 09:24:44"
+}

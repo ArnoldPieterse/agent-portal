@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal8-toast-evidence-2026-11-20.md",
+ "headings": [
+  "Goal 8 Evidence - Notification/Toast Design (2026-11-20)",
+  "Acceptance Criteria Verification",
+  "Files",
+  "Change this pass",
+  "Verdict: ALL CRITERIA PASS"
+ ],
+ "lead": "| >=4 toast types | PASS | ok (green), warn (amber), err (red), info (accent/blue default) in ui/notifications.js line 25 + ui/app.css lines 288-290 |",
+ "chars": 1162,
+ "abstracted": "2026-11-23 09:24:44"
+}

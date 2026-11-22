@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/mechanic-goal8-escalation-selftest-verified-2026-11-23.md",
+ "headings": [
+  "Verifier: Mechanic Goal 8 - Escalation Chain Selftest Verified",
+  "Claim under test",
+  "Evidence",
+  "Verdict"
+ ],
+ "lead": "HOT NOTE (2026-11-23): \"Goal #8 EscalationChain integrated locally (py_compile+selftest pass); remaining: deploy to White + live simulated-failure drill\"",
+ "chars": 992,
+ "abstracted": "2026-11-23 09:24:44"
+}

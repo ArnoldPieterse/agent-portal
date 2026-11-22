@@ -1,0 +1,16 @@
+{
+ "path": "memory/archivist/snapshot-diff-20261120.md",
+ "headings": [
+  "Snapshot Diff 2026-11-20 (Goal #6 \u2014 Weekly Snapshot Diff, 2nd run)",
+  "Summary",
+  "Breakdown of +6573 (vs last week)",
+  "Agent directory growth (new files since 20261117)",
+  "Orphans (potential)",
+  "Interpretation (inference)",
+  "Modified files (notable, vs last week)",
+  "Action items"
+ ],
+ "lead": "Provenance: source=archivist/snapshot.py + manual analysis | date=2026-11-20 | confidence=high | ttl=30d",
+ "chars": 2403,
+ "abstracted": "2026-11-23 09:24:43"
+}

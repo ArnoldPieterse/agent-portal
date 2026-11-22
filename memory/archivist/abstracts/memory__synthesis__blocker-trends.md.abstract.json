@@ -1,0 +1,15 @@
+{
+ "path": "memory/synthesis/blocker-trends.md",
+ "headings": [
+  "Blocker Resolution Trends",
+  "Summary",
+  "Blockers by Agent",
+  "Blocker Classes (top 10)",
+  "Currently Open (NEEDS-HUMAN)",
+  "Resolved Blockers (with timing)",
+  "Insights & Recommendations"
+ ],
+ "lead": "1. Most frequent blocker class: **winerror 10013** (2 occurrences). Consider a standing runbook or automation for this pattern.",
+ "chars": 2466,
+ "abstracted": "2026-11-23 09:24:44"
+}

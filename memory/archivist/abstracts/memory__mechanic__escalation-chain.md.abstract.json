@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/escalation-chain.md",
+ "headings": [
+  "Alert Escalation Chain - Design & Implementation",
+  "Architecture",
+  "Thresholds",
+  "Files",
+  "Integration Points",
+  "CLI",
+  "Self-test (no side effects, uses temp files)",
+  "Resolve an incident after manual fix"
+ ],
+ "lead": "Status: BUILT + SELFTEST PASS (8/8). Watchdog integration pending non-sandbox deploy.",
+ "chars": 2467,
+ "abstracted": "2026-11-23 09:24:44"
+}

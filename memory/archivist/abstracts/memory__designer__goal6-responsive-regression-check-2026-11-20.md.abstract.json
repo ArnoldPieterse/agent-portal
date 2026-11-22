@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal6-responsive-regression-check-2026-11-20.md",
+ "headings": [
+  "Goal 6 - Responsive Design Hardening: Automated Regression Check (2026-11-20)",
+  "What was done this pass",
+  "Result: PASS (all checks green)",
+  "How to re-run",
+  "Remaining for full closure (CDP screenshots)",
+  "Files created"
+ ],
+ "lead": "Built `memory/designer/responsive_check.py` - a self-contained static analysis script that validates:",
+ "chars": 1211,
+ "abstracted": "2026-11-23 09:24:44"
+}

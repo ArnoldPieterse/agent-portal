@@ -1,0 +1,11 @@
+{
+ "path": "memory/archivist/evidence-circular-ref-artifacts-2026-11-21.md",
+ "headings": [
+  "Evidence: Circular Ref Reports Are Scanner Artifacts",
+  "Finding",
+  "Conclusion"
+ ],
+ "lead": "Task: Confirm the 2 \"circular ref\" reports are scanner artifacts (self-pointing INDEX.md entries)",
+ "chars": 786,
+ "abstracted": "2026-11-23 09:24:43"
+}

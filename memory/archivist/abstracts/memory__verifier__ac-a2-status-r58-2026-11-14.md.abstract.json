@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/ac-a2-status-r58-2026-11-14.md",
+ "headings": [
+  "Verifier r58 \u2014 AC-A2 status sweep (Black seat, 2026-11-14 ~09:1x)",
+  "Static verdicts (re-verified against current disk bytes this round)",
+  "Live leg (AC-A2-2 LIVE) \u2014 SOLE REMAINING GATE",
+  "Disk state (this sweep, 09:13:26)",
+  "Bottom line"
+ ],
+ "lead": "| AC-A2-1 placement + click-open | **PASS** | `#filesBtn` at char 14244 after `#fleetBtn` at 14116; onclick toggle handler present in index.html 8fc29f19/68,549 B |",
+ "chars": 2607,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/orchestrator/goal9-cycle-cost-tracker-2026-11-20.md",
+ "headings": [
+  "Goal 9: Cycle Cost Tracker - Progress (2026-11-20)",
+  "Done this pass",
+  "Remaining for full closure",
+  "Verdict"
+ ],
+ "lead": "per-model breakdown (qwen3-27b-q4: 4 loads @ 23.7 GB avg, qwen3-27b-q8: 1 load @ 30.1 GB)",
+ "chars": 1199,
+ "abstracted": "2026-11-23 09:24:44"
+}

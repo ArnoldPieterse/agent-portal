@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/mechanic-goals-assist-2026-11-23.md",
+ "headings": [
+  "Designer Assist: Mechanic Goals - 2026-11-23",
+  "What was done (concrete code contributions)",
+  "Goal #4 (Fleet Status API Hardening) - MAJOR PROGRESS",
+  "All goals - deployment tooling",
+  "Status dashboard",
+  "Summary for Mechanic (pick + execute from non-sandbox seat)",
+  "Files created/modified"
+ ],
+ "lead": "The `fleet_circuit_breaker.py` module was **missing** (mirror revert or never committed).",
+ "chars": 2783,
+ "abstracted": "2026-11-23 09:24:44"
+}

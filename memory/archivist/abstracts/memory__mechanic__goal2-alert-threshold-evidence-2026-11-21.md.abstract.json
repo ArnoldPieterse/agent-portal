@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal2-alert-threshold-evidence-2026-11-21.md",
+ "headings": [
+  "Goal 2 - Self-Healing Mirror: Alert Threshold Test Evidence",
+  "What was tested",
+  "Test results: 17/17 PASS",
+  "Remaining for full closure",
+  "Command to run from White"
+ ],
+ "lead": "Artifact: memory/mechanic/goal2_mirror_heal_selftest.py",
+ "chars": 1290,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/orchestrator/assist-scribe-goal4-handoffs-2026-11-20.md",
+ "headings": [
+  "Scribe Goal 4 - Cross-Agent Handoff Protocol: Real Handoffs Logged",
+  "What was done",
+  "Acceptance criteria check",
+  "Artifact"
+ ],
+ "lead": "Appended 3 real cycle-6+ handoffs to memory/scribe/handoffs.jsonl (was 3 test entries, now 6 total):",
+ "chars": 870,
+ "abstracted": "2026-11-23 09:24:44"
+}

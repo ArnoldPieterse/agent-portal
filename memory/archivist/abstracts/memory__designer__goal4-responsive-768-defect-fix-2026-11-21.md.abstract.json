@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal4-responsive-768-defect-fix-2026-11-21.md",
+ "headings": [
+  "Goal #4 (Responsive 768px) \u2014 sub-44px touch-target defect fixed + verifier made honest",
+  "What was wrong",
+  "Fix (ui/app.css @media max-width:768px)",
+  "Verifier alignment (memory/designer/goal4_768_verify.py)",
+  "Measured result (this pass)",
+  "Remaining for closure (honest \u2014 NOT done)"
+ ],
+ "lead": "Date: 2026-11-21. Status: PROGRESS (not closure). Live CDP measurement still pending portal-up on :8099.",
+ "chars": 2753,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/goal1-winrm-verification-2026-11-20.md",
+ "headings": [
+  "Goal 1: WinRM Remote Management Hardening - Verification Status",
+  "Sub-criteria",
+  "Blocker",
+  "Artifacts"
+ ],
+ "lead": "**Score:** 4/5 verified, 1 blocked (NTLM wall - recorded)",
+ "chars": 1433,
+ "abstracted": "2026-11-23 09:24:44"
+}

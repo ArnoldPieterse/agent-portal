@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal7-contrast-reland-sel-fix-2026-11-20.md",
+ "headings": [
+  "Goal 7 - Color Contrast + Accessibility: re-land token fixes + selection-state fix (2026-11-20)",
+  "Context",
+  "Changes applied to ui/tokens.css",
+  "Changes applied to ui/app.css",
+  "Verification",
+  "Remaining (documented, not a token failure)"
+ ],
+ "lead": "Previous pass documented token-level AA fixes in `goal7-contrast-token-fixes-2026-11-20.md` but the changes",
+ "chars": 2088,
+ "abstracted": "2026-11-23 09:24:44"
+}

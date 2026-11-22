@@ -1,0 +1,12 @@
+{
+ "path": "memory/builder/goal1-playbook-runner-verified-2026-11-23.md",
+ "headings": [
+  "Builder Goal 1: Auto-Remediation Playbook Runner - VERIFIED",
+  "Acceptance Criteria Results",
+  "Run commands used",
+  "Notes"
+ ],
+ "lead": "Artifact: memory/builder/playbook_runner.py (9,678 bytes)",
+ "chars": 1334,
+ "abstracted": "2026-11-23 09:24:44"
+}

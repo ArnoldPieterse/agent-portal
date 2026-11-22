@@ -1,0 +1,16 @@
+{
+ "path": "memory/designer/timeline-panel-spec.md",
+ "headings": [
+  "Timeline Panel \u2014 Design Forecast (for Scribe goal 8: Temporal Query API)",
+  "1. Data contract (from goal spec)",
+  "2. Panel: \"Timeline\" (new tab or sub-view of Fleet)",
+  "3. Compare mode (replaces list region when active)",
+  "4. State handling (error-state system, goal 3)",
+  "5. Motion + perf budgets",
+  "6. Acceptance checklist for the UI (run when endpoints exist)",
+  "Hand-off to Scribe"
+ ],
+ "lead": "Authored: 2026-11-22 by Designer. Purpose: give Scribe's `/api/timeline` + `/api/timeline/compare` a ready-to-consume UI so the endpoints are not orphaned JSON when they ship. This is a FORECAST \u2014 field names below are t",
+ "chars": 3929,
+ "abstracted": "2026-11-23 09:24:44"
+}

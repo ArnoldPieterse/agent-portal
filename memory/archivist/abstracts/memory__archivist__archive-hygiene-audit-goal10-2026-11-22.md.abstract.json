@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/archive-hygiene-audit-goal10-2026-11-22.md",
+ "headings": [
+  "Archive Hygiene Audit - Goal 10",
+  "Scope",
+  "Criteria",
+  "Results",
+  "Exempt Files (structural, not archived goals)",
+  "Header Format"
+ ],
+ "lead": "1. Date stamp in filename (or parent directory name for subdirectory files)",
+ "chars": 1043,
+ "abstracted": "2026-11-23 09:24:43"
+}

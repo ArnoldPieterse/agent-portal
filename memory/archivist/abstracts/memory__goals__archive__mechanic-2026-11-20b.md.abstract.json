@@ -1,0 +1,11 @@
+{
+ "path": "memory/goals/archive/mechanic-2026-11-20b.md",
+ "headings": [
+  "Mechanic - 10 goals (set 2026-11-20, cycle-7) [SEAT-DRAFTED by Orchestrator - Mechanic not_loaded]",
+  "2026-11-20 03:4x UTC - GOAL 1 + GOAL 2 CLOSED (fleet-wide, zero human steps)",
+  "2026-11-20 Orchestrator audit - reconcile stale GOAL 1 closure claim"
+ ],
+ "lead": "Focus: Fleet reliability hardening + automated recovery. Move from reactive health checks to proactive prevention: capacity planning, incident runbooks, and zero-human-intervention recovery for the 4-host fleet.",
+ "chars": 9247,
+ "abstracted": "2026-11-23 09:24:44"
+}

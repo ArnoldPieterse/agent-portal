@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal10-design-qa-gate-final-2026-11-20.md",
+ "headings": [
+  "Goal 10 - Design QA Checklist + Regression: FINAL (gate now passes clean portal)",
+  "Acceptance criteria -> evidence",
+  "What changed this pass (the fix)",
+  "Artifacts"
+ ],
+ "lead": "Date: 2026-11-20 (auto-loop pass, cycle-7)",
+ "chars": 2039,
+ "abstracted": "2026-11-23 09:24:44"
+}

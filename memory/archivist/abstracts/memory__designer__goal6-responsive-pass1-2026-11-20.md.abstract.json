@@ -1,0 +1,11 @@
+{
+ "path": "memory/designer/goal6-responsive-pass1-2026-11-20.md",
+ "headings": [
+  "Goal 6 - Responsive Hardening: Pass 1 (static overflow + touch targets)",
+  "What was done",
+  "Remaining (needs CDP or live browser)"
+ ],
+ "lead": "<!-- PROVENANCE agent=designer goal=6 date=2026-11-20 -->",
+ "chars": 1108,
+ "abstracted": "2026-11-23 09:24:44"
+}

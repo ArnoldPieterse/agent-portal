@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/search-index-refresh-2026-11-23.md",
+ "headings": [
+  "Search Index Refresh - 2026-11-23 (routine maintenance)",
+  "Before vs After",
+  "Verification",
+  "Note on size"
+ ],
+ "lead": "**Action:** Rebuilt memory/archivist/search-index.json from full memory/ tree scan.",
+ "chars": 1140,
+ "abstracted": "2026-11-23 09:24:43"
+}

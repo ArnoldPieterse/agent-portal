@@ -1,0 +1,9 @@
+{
+ "path": "memory/archivist/evidence-postcompaction-retrieval-2026-11-20.md",
+ "headings": [
+  "Evidence: post-compaction retrieval re-benchmark (2026-11-20)"
+ ],
+ "lead": "**Trigger:** auto-loop pass; archivist lane 10/10 closed per ledger, so took a non-blocker maintenance step.",
+ "chars": 962,
+ "abstracted": "2026-11-23 09:24:43"
+}

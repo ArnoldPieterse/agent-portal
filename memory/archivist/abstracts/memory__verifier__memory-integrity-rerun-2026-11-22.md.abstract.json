@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/memory-integrity-rerun-2026-11-22.md",
+ "headings": [
+  "Memory Tree Integrity Re-run \u2014 2026-11-22",
+  "Delta vs 2026-11-20 baseline",
+  "Notable findings",
+  "Verdict"
+ ],
+ "lead": "**Run:** `python memory/verifier/memory_integrity.py` (sandbox, exit 1 = issues found)",
+ "chars": 1234,
+ "abstracted": "2026-11-23 09:24:44"
+}

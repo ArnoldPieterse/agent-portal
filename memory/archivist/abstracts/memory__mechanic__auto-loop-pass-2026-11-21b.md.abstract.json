@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-21b.md",
+ "headings": [
+  "Auto-loop pass 2026-11-21 (batch)",
+  "Mechanic action",
+  "Mechanic action (second pass, ~02:35)",
+  "Next steps (future passes)"
+ ],
+ "lead": "Closed Goal #5 (Scheduled-Task Dependency Graph): recorded verified marker via goal_ledger.py.",
+ "chars": 1075,
+ "abstracted": "2026-11-23 09:24:44"
+}

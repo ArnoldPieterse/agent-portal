@@ -1,0 +1,14 @@
+{
+ "path": "memory/synthesis/2026-11-16-contradiction-rulings.md",
+ "headings": [
+  "2026-11-16 Contradiction queue C1-C4 \u2014 Orchestrator rulings (cycle-2 goal #3)",
+  "C1 \u2014 Chat self-reports overstate the ledger",
+  "C2 \u2014 F-VER-01 (Designer #4 false-positive flag)",
+  "C3 \u2014 WinError 10013: seat-egress artifact vs real firewall block",
+  "C4 \u2014 Orphan vs unindexed-leaf numbers",
+  "Supersession"
+ ],
+ "lead": "Orchestrator seat, acting per user directive 2026-11-16. Queue source: memory/synthesis/2026-11-16-status-thread-contradictions.md. SLA: ruling within 2 rounds \u2014 all four ruled same-day (round 0).",
+ "chars": 2909,
+ "abstracted": "2026-11-23 09:24:44"
+}

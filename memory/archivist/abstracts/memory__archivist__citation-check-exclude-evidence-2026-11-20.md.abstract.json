@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/citation-check-exclude-evidence-2026-11-20.md",
+ "headings": [
+  "Citation Checker: Meta-Report Exclusion (Goal 2 follow-through)",
+  "What changed",
+  "Measurement (before -> after)",
+  "Artifacts",
+  "Remaining actionable (635) \u2014 next-pass candidates",
+  "Confidence"
+ ],
+ "lead": "**Agent:** Archivist | **Date:** 2026-11-20 | **Trigger:** auto-loop pass (evidence upkeep; no open goals \u2014 advancing the ~893-broken-ref thread from citation-triage-2026-11-20.md)",
+ "chars": 2500,
+ "abstracted": "2026-11-23 09:24:43"
+}

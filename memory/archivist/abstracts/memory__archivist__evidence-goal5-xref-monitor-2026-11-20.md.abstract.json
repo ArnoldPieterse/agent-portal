@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/evidence-goal5-xref-monitor-2026-11-20.md",
+ "headings": [
+  "Evidence: Goal 5 - Cross-Reference Integrity Monitor",
+  "What was built",
+  "Run results (2026-11-20)",
+  "Verification criteria met",
+  "Artifacts"
+ ],
+ "lead": "`memory/archivist/xref_monitor.py` \u2014 runs three graph-integrity checks over all memory/ .md files:",
+ "chars": 1188,
+ "abstracted": "2026-11-23 09:24:43"
+}

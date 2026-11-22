@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/fleet-cb-wired-2026-11-22.md",
+ "headings": [
+  "Goal #4 - Circuit Breaker NOW WIRED into live _fleet_snapshot (2026-11-22)",
+  "What was wrong (drift / hollow claim)",
+  "What I did this pass (sandbox-safe, reversible, no network/elevation)",
+  "Evidence (all ran this pass, from sandbox seat)",
+  "State / what remains"
+ ],
+ "lead": "The prior goal note said the 3-strike/60s breaker was \"BUILT in fleet_circuit_breaker.py + wired into",
+ "chars": 3331,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,15 @@
+{
+ "path": "memory/mechanic/goal1-diag-script-built-2026-11-23.md",
+ "headings": [
+  "Goal #1 - Diagnostic Script Built (2026-11-23)",
+  "What was done",
+  "Script capabilities",
+  "Verification this pass",
+  "Deployment (one command from non-sandbox White seat)",
+  "Expected outcome on White",
+  "Status"
+ ],
+ "lead": "Built `memory/mechanic/goal1_diagnose_fix.py` - a one-shot diagnostic + fix script",
+ "chars": 1550,
+ "abstracted": "2026-11-23 09:24:44"
+}

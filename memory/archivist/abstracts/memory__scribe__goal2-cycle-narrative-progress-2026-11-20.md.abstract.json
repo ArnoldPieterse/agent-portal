@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/goal2-cycle-narrative-progress-2026-11-20.md",
+ "headings": [
+  "Scribe Goal 2 Progress: Cycle Narrative v2 date-filter fix (2026-11-20)",
+  "What was done",
+  "Verification run",
+  "Remaining for full close",
+  "Artifact"
+ ],
+ "lead": "Now events with embedded dates outside [since, until] are skipped.",
+ "chars": 1111,
+ "abstracted": "2026-11-23 09:24:44"
+}

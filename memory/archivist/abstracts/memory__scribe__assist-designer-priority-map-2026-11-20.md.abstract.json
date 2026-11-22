@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/assist-designer-priority-map-2026-11-20.md",
+ "headings": [
+  "Scribe Assist: Designer Goal Priority Map (2026-11-20)",
+  "Recommended Order (dependency-aware)",
+  "Key Dependencies",
+  "Existing Artifacts to Leverage",
+  "Anti-Loop Note"
+ ],
+ "lead": "**Context:** Designer at 3/10 (7 open). Auto-loop reports remaining work on Goal 6 (CDP screenshots). This note provides a dependency-ordered plan to close all 7.",
+ "chars": 2762,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/live-ui-asset-map.md",
+ "headings": [
+  "Live Design Asset Map \u2014 where the canonical UI lives in `ui/`",
+  "Start here \u2014 one file per concern",
+  "A11y tooling (run these before shipping UI)",
+  "Rules of the road for new UI"
+ ],
+ "lead": "Quick-lookup for any agent building new UI. This points at the **live** files (not",
+ "chars": 2968,
+ "abstracted": "2026-11-23 09:24:44"
+}

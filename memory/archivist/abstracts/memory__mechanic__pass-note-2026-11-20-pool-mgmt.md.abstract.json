@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/pass-note-2026-11-20-pool-mgmt.md",
+ "headings": [
+  "Mechanic Pass Note 2026-11-20 ~19:53 UTC",
+  "WinRM Pool Management (AC5) - DELIVERED",
+  "Designer Contrast Audit - ASSISTED RUN",
+  "Fleet State"
+ ],
+ "lead": "Ran `python memory/designer/contrast_audit.py` (exit 1 = failures found):",
+ "chars": 1237,
+ "abstracted": "2026-11-23 09:24:44"
+}

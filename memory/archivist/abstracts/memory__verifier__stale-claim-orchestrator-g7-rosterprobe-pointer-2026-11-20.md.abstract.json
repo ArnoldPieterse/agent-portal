@@ -1,0 +1,14 @@
+{
+ "path": "memory/verifier/stale-claim-orchestrator-g7-rosterprobe-pointer-2026-11-20.md",
+ "headings": [
+  "Verifier - Orchestrator Goal 7 (Onboarding Wizard) stale-pointer verification - 2026-11-20",
+  "Claim under test",
+  "Method (re-ran from Black sandbox, static)",
+  "Verdict",
+  "Fix applied",
+  "Re-audit"
+ ],
+ "lead": "orchestrator.md:17 (goal 7) evidence marker: \"real onboarding+retire round-trip PASS ... retire via",
+ "chars": 2005,
+ "abstracted": "2026-11-23 09:24:44"
+}

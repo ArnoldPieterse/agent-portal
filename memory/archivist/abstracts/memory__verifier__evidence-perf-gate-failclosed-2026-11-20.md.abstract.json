@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/evidence-perf-gate-failclosed-2026-11-20.md",
+ "headings": [
+  "Evidence: perf_gate.py fail-closed on invalid baselines (2026-11-20)",
+  "Problem found",
+  "Fix (memory/verifier/perf_gate.py)",
+  "Proof (ran this pass)",
+  "Still open (goal #1 not closed)"
+ ],
+ "lead": "**Goal:** verifier #1 (Performance Gate Baseline) \u2014 hardening step, NOT final closure.",
+ "chars": 1844,
+ "abstracted": "2026-11-23 09:24:44"
+}

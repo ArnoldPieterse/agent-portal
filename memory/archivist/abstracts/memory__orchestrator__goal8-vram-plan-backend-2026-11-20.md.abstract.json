@@ -1,0 +1,12 @@
+{
+ "path": "memory/orchestrator/goal8-vram-plan-backend-2026-11-20.md",
+ "headings": [
+  "Goal 8 VRAM Pressure Alerting \u2014 backend DONE (2026-11-20)",
+  "What was built",
+  "Verification (self-test, 2026-11-20)",
+  "Remaining for full closure"
+ ],
+ "lead": "1. `memory/orchestrator/vram_plan.py` \u2014 self-contained module:",
+ "chars": 1443,
+ "abstracted": "2026-11-23 09:24:44"
+}

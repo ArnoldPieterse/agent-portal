@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/circuit-breaker-built-2026-11-22.md",
+ "headings": [
+  "Mechanic #4 - Fleet Status API Hardening: circuit breaker BUILT + wired + tested (Orchestrator assist 2026-11-22)",
+  "What was built (this pass)",
+  "Evidence (commands + results, run from repo root)",
+  "Remaining step to FULL closure (needs a NON-sandbox seat - do NOT re-probe from here)"
+ ],
+ "lead": "**Status:** PARTIAL (core delivered; live 200-with-down leg pending on a non-sandbox seat).",
+ "chars": 3037,
+ "abstracted": "2026-11-23 09:24:44"
+}

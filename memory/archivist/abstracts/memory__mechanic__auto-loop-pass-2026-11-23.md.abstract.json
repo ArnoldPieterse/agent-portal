@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-23.md",
+ "headings": [
+  "Mechanic Auto-Loop Pass - 2026-11-23 (batch)",
+  "Action taken",
+  "What it does",
+  "Verification",
+  "Files"
+ ],
+ "lead": "Built `memory/mechanic/model_lifecycle.py` (Goal #2: Model Load/Unload Automation).",
+ "chars": 820,
+ "abstracted": "2026-11-23 09:24:44"
+}

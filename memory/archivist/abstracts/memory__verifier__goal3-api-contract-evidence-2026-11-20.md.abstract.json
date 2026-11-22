@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/goal3-api-contract-evidence-2026-11-20.md",
+ "headings": [
+  "Goal 3 - API Contract Test Suite - Evidence (2026-11-20)",
+  "This pass (concrete step: completed the missing CLI runner)",
+  "Verified from this seat (real runs)",
+  "Live leg \u2014 GATED (logged NEEDS-HUMAN, not re-probed)",
+  "Acceptance criteria status"
+ ],
+ "lead": "**Runner:** `memory/verifier/api_contracts.py` (full CLI: `--static`, `--negative`, `--live`)",
+ "chars": 1764,
+ "abstracted": "2026-11-23 09:24:44"
+}

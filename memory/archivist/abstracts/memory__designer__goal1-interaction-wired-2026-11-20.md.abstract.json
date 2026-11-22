@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal1-interaction-wired-2026-11-20.md",
+ "headings": [
+  "Goal 1 Evidence: Interaction System Wired (2026-11-20)",
+  "What was done this pass",
+  "Acceptance criteria status",
+  "Remaining for full closure"
+ ],
+ "lead": "1. Added `@import \"interactions.css\";` at top of `ui/app.css` (line 2, after tokens.css)",
+ "chars": 1405,
+ "abstracted": "2026-11-23 09:24:44"
+}

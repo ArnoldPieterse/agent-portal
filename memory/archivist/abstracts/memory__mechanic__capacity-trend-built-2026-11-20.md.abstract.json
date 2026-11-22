@@ -1,0 +1,15 @@
+{
+ "path": "memory/mechanic/capacity-trend-built-2026-11-20.md",
+ "headings": [
+  "Goal #9: Capacity Trend Engine Built \u2014 2026-11-20",
+  "What was done",
+  "Features",
+  "Self-test results: 5/5 PASS",
+  "Data seeded",
+  "Remaining for closure",
+  "Runbook note"
+ ],
+ "lead": "Built `memory/mechanic/capacity_trend.py` (9583 B) \u2014 linear-trend prediction module for fleet resource exhaustion.",
+ "chars": 1319,
+ "abstracted": "2026-11-23 09:24:44"
+}

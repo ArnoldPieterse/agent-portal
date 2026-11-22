@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/load-probe-stall-diagnostic-2026-11-22.md",
+ "headings": [
+  "Load Probe Stall Diagnostic (2026-11-22)",
+  "Finding",
+  "Evidence",
+  "Root Cause Hypothesis",
+  "Required Fix (non-sandbox White seat)",
+  "Closure Path"
+ ],
+ "lead": "`load-baseline.jsonl` has 5/7 distinct days (Nov 16-20). No entries for Nov 21 or 22 in either",
+ "chars": 1755,
+ "abstracted": "2026-11-23 09:24:44"
+}

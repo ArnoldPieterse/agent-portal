@@ -1,0 +1,13 @@
+{
+ "path": "memory/ops/white-lan-firewall-drop-2026-11-14.md",
+ "headings": [
+  "White LAN reachability \u2014 :8099/:8888 firewall-style drop (2026-11-14)",
+  "Ground truth (on-disk artifact)",
+  "Interpretation",
+  "Open action (owner: Arnold)",
+  "Cross-refs"
+ ],
+ "lead": "Recorded by Scribe from Mechanic's Red-seat ops wrap-up. Rationale: this finding is the",
+ "chars": 2313,
+ "abstracted": "2026-11-23 09:24:44"
+}

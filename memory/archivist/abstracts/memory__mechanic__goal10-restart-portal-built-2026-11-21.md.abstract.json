@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal10-restart-portal-built-2026-11-21.md",
+ "headings": [
+  "Goal #10 - Runbook Automation: restart_portal.py Built (2026-11-21)",
+  "What was done",
+  "Script behavior",
+  "Verification from sandbox",
+  "Goal #10 status: all 5 scripts present",
+  "Remaining for full closure"
+ ],
+ "lead": "Status: ADVANCED \u2014 all 5 scripts now exist; live verification pending non-sandbox seat.",
+ "chars": 1501,
+ "abstracted": "2026-11-23 09:24:44"
+}

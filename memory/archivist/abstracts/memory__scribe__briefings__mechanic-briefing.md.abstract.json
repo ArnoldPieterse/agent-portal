@@ -1,0 +1,14 @@
+{
+ "path": "memory/scribe/briefings/mechanic-briefing.md",
+ "headings": [
+  "Mechanic Briefing (updated 2026-11-22 by Scribe)",
+  "Current Status: 0/10 verified, 5 open (goals 1, 6, 7, 9, 10 still active; goals 2, 3, 4, 5, 8 closed in cycle-7/8)",
+  "Open Work Items",
+  "Key Artifacts",
+  "Blockers",
+  "Scribe Correction Note (2026-11-22)"
+ ],
+ "lead": "Previous briefing incorrectly stated \"10/10 goals reached.\" Actual state per memory/goals/mechanic.md: 5 goals have pointer references (evidence exists but not formally ledger-verified), 5 remain open with active work it",
+ "chars": 1760,
+ "abstracted": "2026-11-23 09:24:44"
+}

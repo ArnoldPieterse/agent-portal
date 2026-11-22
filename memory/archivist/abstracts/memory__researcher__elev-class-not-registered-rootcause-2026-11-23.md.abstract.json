@@ -1,0 +1,16 @@
+{
+ "path": "memory/researcher/elev-class-not-registered-rootcause-2026-11-23.md",
+ "headings": [
+  "Root Cause: elev.py exit-5 \"Class not registered\" (2026-11-23, Researcher)",
+  "Reproduction (run from THIS pale-sandbox seat, each in isolation)",
+  "Mechanism",
+  "Why elev.py returns 5",
+  "Key correction to the existing NEEDS-HUMAN note",
+  "Correct unblock path (no human step needed)",
+  "or equivalently run the raw schtasks line directly with admin.",
+  "Confidence & limits"
+ ],
+ "lead": "**Purpose:** pin the exact mechanism behind the fleet-wide `elev.py` exit-5 blocker so the unblock path is precise. This does NOT re-probe whether elevated execution works \u2014 it captures the diagnostic that has been missi",
+ "chars": 3261,
+ "abstracted": "2026-11-23 09:24:44"
+}

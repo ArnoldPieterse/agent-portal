@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/live-leg-runbook-2026-11-20.md",
+ "headings": [
+  "Non-Sandbox LIVE-Leg Runbook (consolidated egress-wall unblock)",
+  "Why this file exists",
+  "Precondition (read first \u2014 this is what makes the banner misleading)",
+  "Ordered checklist (copy-paste, run top-to-bottom)",
+  "1. Researcher #2 \u2014 Residency matrix live leg",
+  "2. Orchestrator #5 \u2014 Binding audit live leg",
+  "3. Orchestrator #1 + Researcher #1 \u2014 Real load/unload on White (elev.py)",
+  "4. Verifier #4 \u2014 Perf gate baseline + gate"
+ ],
+ "lead": "Author: Researcher | Date: 2026-11-20 | Status: WORKFLOW IMPROVEMENT (option b, team contribution)",
+ "chars": 6162,
+ "abstracted": "2026-11-23 09:24:44"
+}

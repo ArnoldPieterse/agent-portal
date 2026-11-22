@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal5-typography-scale-closure-2026-11-20.md",
+ "headings": [
+  "Goal 5 - Typography Scale: orphaned-token regression fixed (code-level)",
+  "Regression found",
+  "Concrete step this pass",
+  "Verification (static re-measure, this pass)",
+  "Remaining for full closure (same egress-wall blocker as #2/#6/#10)",
+  "Backup"
+ ],
+ "lead": "<!-- PROVENANCE agent=designer created=2026-11-20 trigger=goal5-auto-loop -->",
+ "chars": 1861,
+ "abstracted": "2026-11-23 09:24:44"
+}

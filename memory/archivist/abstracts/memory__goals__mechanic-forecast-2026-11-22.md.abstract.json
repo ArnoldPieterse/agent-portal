@@ -1,0 +1,13 @@
+{
+ "path": "memory/goals/mechanic-forecast-2026-11-22.md",
+ "headings": [
+  "Mechanic Goal Forecast \u2014 2026-11-22 (by Verifier)",
+  "Method",
+  "Predictions",
+  "Key Insight",
+  "Recommendation for Orchestrator"
+ ],
+ "lead": "**Purpose:** Predict completion likelihood for Mechanic's 5 open goals based on blocker class, dependency structure, and observed seat-restriction patterns. Helps Orchestrator prioritize unblock sequencing.",
+ "chars": 2608,
+ "abstracted": "2026-11-23 09:24:44"
+}

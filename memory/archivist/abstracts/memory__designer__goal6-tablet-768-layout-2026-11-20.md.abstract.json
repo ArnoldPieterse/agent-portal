@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal6-tablet-768-layout-2026-11-20.md",
+ "headings": [
+  "Goal 6 progress \u2014 tablet (768px) layout, 2026-11-20",
+  "What landed (ui/app.css, @media max-width:768px block, lines ~204-225)",
+  "Verification",
+  "Still open for closure"
+ ],
+ "lead": "Status: STEP DONE (one concrete step on oldest open goal). Not yet closure \u2014 full AC needs CDP screenshots at 320/768/1024/1440.",
+ "chars": 1354,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal6-egress-guard-2026-11-16.md",
+ "headings": [
+  "Mechanic Goal 6 \u2014 Egress Guard Rules Engine",
+  "What was built",
+  "Test matrix result (10 cases)",
+  "Acceptance criterion met",
+  "Remaining for full closure"
+ ],
+ "lead": "Status: **IMPLEMENTED + test matrix PASS**",
+ "chars": 1327,
+ "abstracted": "2026-11-23 09:24:44"
+}

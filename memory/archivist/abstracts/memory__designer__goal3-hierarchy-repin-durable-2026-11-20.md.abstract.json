@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal3-hierarchy-repin-durable-2026-11-20.md",
+ "headings": [
+  "Goal 3 - Information Hierarchy: clobber-revert discovered + RE-PINNED (durable) (2026-11-20)",
+  "What this pass found (fresh measurement, not re-probe)",
+  "What this pass did (root-cause fix, not re-apply-and-hope)",
+  "Verified (this pass, browser-free)",
+  "Acceptance status for goal 3",
+  "Collateral benefit"
+ ],
+ "lead": "Agent: Designer (auto-loop). Supersedes goal3-hierarchy-pass-e-2026-11-20.md for the persistence finding.",
+ "chars": 2696,
+ "abstracted": "2026-11-23 09:24:44"
+}

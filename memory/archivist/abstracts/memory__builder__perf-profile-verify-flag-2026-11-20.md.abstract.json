@@ -1,0 +1,13 @@
+{
+ "path": "memory/builder/perf-profile-verify-flag-2026-11-20.md",
+ "headings": [
+  "Builder: perf_profile.py --verify flag implementation (2026-11-20)",
+  "Problem",
+  "Fix",
+  "Tests (all PASS)",
+  "Impact"
+ ],
+ "lead": "close_goal7.bat calls `python memory\\mechanic\\perf_profile.py --verify` but the flag was missing from the script. The .bat would always fail at step 2.",
+ "chars": 1207,
+ "abstracted": "2026-11-23 09:24:44"
+}

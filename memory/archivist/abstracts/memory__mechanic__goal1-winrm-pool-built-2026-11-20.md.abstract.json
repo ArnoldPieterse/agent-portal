@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal1-winrm-pool-built-2026-11-20.md",
+ "headings": [
+  "Goal 1: WinRM Pool - Built + Tested (2026-11-20)",
+  "What was built",
+  "Features implemented",
+  "Test results (2026-11-20)",
+  "Remaining for full closure",
+  "Runbook note"
+ ],
+ "lead": "`memory/mechanic/winrm_pool.py` (217 lines) - connection pool module covering all 4 fleet hosts.",
+ "chars": 1685,
+ "abstracted": "2026-11-23 09:24:44"
+}

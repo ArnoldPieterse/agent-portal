@@ -1,0 +1,12 @@
+{
+ "path": "memory/llm/model-id-check-2026-11-14.md",
+ "headings": [
+  "Daily model_id alias check \u2014 2026-11-14",
+  "Local host (White, 127.0.0.1:8888)",
+  "Remote seats \u2014 UNVERIFIED this round (hosts unreachable at check time)",
+  "2026-11-15 ~11:0x - REMOTE HALF RE-RUN: PASS 6/6 (all three hosts powered back on by human ~10:5x)"
+ ],
+ "lead": "Last updated: 2026-11-14 ~01:5x (daily model_id alias check, Orchestrator goal)",
+ "chars": 2193,
+ "abstracted": "2026-11-23 09:24:44"
+}

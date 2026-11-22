@@ -1,0 +1,16 @@
+{
+ "path": "memory/archivist/orphan-remediation-goal1-final-2026-11-20.md",
+ "headings": [
+  "Orphan Remediation - Final Report (Goal #1 Closure)",
+  "Acceptance Criteria",
+  "Summary of Work",
+  "Pass 1: KG-based remediation (earlier)",
+  "Pass 2: Full file-scan remediation (this pass)",
+  "Verification",
+  "Before/After",
+  "Artifacts"
+ ],
+ "lead": "| >=50 orphans auto-linked | PASS | 124 links applied across 11 INDEX.md files (fullscan pass) + 2 from KG-based pass = 126 total |",
+ "chars": 1986,
+ "abstracted": "2026-11-23 09:24:43"
+}

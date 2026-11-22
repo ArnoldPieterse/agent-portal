@@ -1,0 +1,9 @@
+{
+ "path": "memory/archivist/evidence-stale-triage-workflow-2026-11-22.md",
+ "headings": [
+  "Evidence: Stale Citation Triage Workflow"
+ ],
+ "lead": "Action: Drafted memory/ops/stale-citation-triage.md \u2014 triage criteria (4 categories), batch cadence, ownership model for the 348 stale citation edges in citation-map.json. Estimated ~15 actionable after auto-dismiss of a",
+ "chars": 323,
+ "abstracted": "2026-11-23 09:24:43"
+}

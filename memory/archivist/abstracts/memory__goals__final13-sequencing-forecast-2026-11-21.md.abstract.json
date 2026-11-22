@@ -1,0 +1,13 @@
+{
+ "path": "memory/goals/final13-sequencing-forecast-2026-11-21.md",
+ "headings": [
+  "Final-13 Sequencing + Slip-Risk Forecast",
+  "Gate classification of each lane's entry (oldest) goal",
+  "Recommended sequence (all three are independent lanes -> start in parallel, but order the UNBLOCK actions)",
+  "Slip-risk ranking (highest first)",
+  "Confidence: MEDIUM-HIGH. Counts + entry goals traced verbatim to goal_ledger.py --status; gate types are inferences from each goal's stated acceptance criteria, not new measurements."
+ ],
+ "lead": "Date: 2026-11-21 | Author: Scribe (synthesis)",
+ "chars": 2507,
+ "abstracted": "2026-11-23 09:24:44"
+}

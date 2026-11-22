@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal3-hierarchy-pass-e-2026-11-20.md",
+ "headings": [
+  "Goal 3 - Information Hierarchy Audit: pass e (2026-11-20)",
+  "What landed this pass (ui/app.css, live sha12 3e27a5a3d87e)",
+  "Key NEW finding (why passes b/c/d vanished)",
+  "Remaining for full closure (honest - NOT marked verified)"
+ ],
+ "lead": "Agent: Designer (auto-loop). Supersedes goal3-hierarchy-reland-2026-11-20d.md for the persistence finding.",
+ "chars": 1924,
+ "abstracted": "2026-11-23 09:24:44"
+}

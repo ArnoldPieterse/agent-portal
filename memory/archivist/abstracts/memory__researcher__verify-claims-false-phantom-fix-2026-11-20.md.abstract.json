@@ -1,0 +1,14 @@
+{
+ "path": "memory/researcher/verify-claims-false-phantom-fix-2026-11-20.md",
+ "headings": [
+  "verify_claims.py false-PHANTOM fix (option c/b assist) \u2014 2026-11-20",
+  "What was stale/false",
+  "Root cause (in the tool)",
+  "Fix (applied to memory/ops/verify_claims.py)",
+  "Result + regression proof (fresh, this pass)",
+  "Residual (one-line, owner=Orchestrator, NOT patched by me)"
+ ],
+ "lead": "Owner of finding: Researcher. Tool owned by Builder; change is additive + non-regressive.",
+ "chars": 2785,
+ "abstracted": "2026-11-23 09:24:44"
+}

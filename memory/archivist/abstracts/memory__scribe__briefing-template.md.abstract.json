@@ -1,0 +1,14 @@
+{
+ "path": "memory/scribe/briefing-template.md",
+ "headings": [
+  "Briefing Layout Contract (Designer assist for Scribe goal 3)",
+  "Why the current auto-output fails (observed on researcher-briefing.md)",
+  "Section order (fixed) + token budget (of the 2000 cap)",
+  "Hierarchy rules",
+  "Acceptance the script should self-check (add to compress_context.py)",
+  "Worked reference (Researcher, restructured to spec)"
+ ],
+ "lead": "Owner of the script + content: **Scribe**. This is the *presentation/IA* spec the",
+ "chars": 2684,
+ "abstracted": "2026-11-23 09:24:44"
+}

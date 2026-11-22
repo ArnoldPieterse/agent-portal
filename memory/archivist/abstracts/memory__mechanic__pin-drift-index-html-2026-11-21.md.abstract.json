@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/pin-drift-index-html-2026-11-21.md",
+ "headings": [
+  "index.html pin drift \u2014 detected 2026-11-21 (Mechanic, ops-integrity pass)",
+  "Finding (three-way sha mismatch on the pinned portal shell)",
+  "Consequence (diagnosed from pin_guard source, not assumed)",
+  "Why NOT auto-fixed from this seat",
+  "Exact unblock step (pin-owner: Designer / Studio-White seat, ONE turn)",
+  "edit memory_mirror.py PIN_FILES[\"index.html\"]:",
+  "\"sha12\": \"95e752e795c0\",",
+  "\"backup\": \"memory/designer/index_html_CANONICAL_95e752e795c0_2026-11-19x.html\""
+ ],
+ "lead": "Parent: memory/INDEX.md -> memory/ops/. Sibling: memory/designer/index_html_CANONICAL_*.html.",
+ "chars": 2802,
+ "abstracted": "2026-11-23 09:24:44"
+}

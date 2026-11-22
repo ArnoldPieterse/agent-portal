@@ -1,0 +1,15 @@
+{
+ "path": "memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md",
+ "headings": [
+  "Researcher \u2014 IP-scrub human gate: count reconciliation + functional-IP evidence (2026-11-15)",
+  "Measured (White host, full shared tree scan, all file types)",
+  "Why the team's numbers differ (all correct, different scopes)",
+  "Repo-scope estimate",
+  "Functional-IP caveat (evidence, not hearsay)",
+  "NEW finding for the human gate",
+  "2026-11-15 ~14:4x \u2014 LIVE REMOTE VERIFICATION (Researcher, via public GitHub API/raw)"
+ ],
+ "lead": "Scope: resolve the 85/96/~50 discrepancy on \"tracked files with internal IPs\" and verify the functional-IP caveat before the human decides scrub vs leave.",
+ "chars": 4664,
+ "abstracted": "2026-11-23 09:24:44"
+}

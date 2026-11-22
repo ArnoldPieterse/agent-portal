@@ -1,0 +1,13 @@
+{
+ "path": "memory/researcher/hotload-catalog-v1.1-verify-2026-11-22.md",
+ "headings": [
+  "hotload-catalog.json v1.1 \u2014 independent cross-source verification (2026-11-22)",
+  "Verdict",
+  "Evidence (independent recompute, no trust in Builder's own leaf)",
+  "What remains UNVERIFIED / uncertain",
+  "Recommendation"
+ ],
+ "lead": "Owner: Researcher (assist, LIVE-plan follow-up). Builder authored v1.1 today; this is an",
+ "chars": 3094,
+ "abstracted": "2026-11-23 09:24:44"
+}

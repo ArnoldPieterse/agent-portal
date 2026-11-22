@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/goal2-animation-consumers-landed-2026-11-20.md",
+ "headings": [
+  "Goal 2 - Animation/Motion System \u2014 consumers LANDED + verified in-file, 2026-11-20",
+  "Why this pass (prior-claim discrepancy)",
+  "Changes made this pass (all confirmed via findstr on the live files)",
+  "Consumer coverage (every pattern now has a real element)",
+  "Acceptance criteria (code-verified this pass)",
+  "Residual (not blocking closure)",
+  "Re-verify commands"
+ ],
+ "lead": "Parent: memory/goals/designer.md #2 \u00b7 Siblings: ui/animations.css, ui/app.css, ui/components.js, ui/fleet_health.js, ui/interactions.js",
+ "chars": 3446,
+ "abstracted": "2026-11-23 09:24:44"
+}

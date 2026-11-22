@@ -1,0 +1,16 @@
+{
+ "path": "memory/builder/dedup-report-archivist8-2026-11-22.md",
+ "headings": [
+  "Dedup Report \u2014 Archivist Goal #8 (Assist by Builder, 2026-11-22)",
+  "Findings Summary",
+  "Specific Recommendations",
+  "DELETE (exact copies \u2014 redirect file is redundant):",
+  "CROSS-REFERENCE (add pointer header, do NOT delete):",
+  "NO ACTION (false-positive guard):",
+  "Estimated Space Recovery",
+  "Verification Criteria Check"
+ ],
+ "lead": "**Run**: `python memory/archivist/dedup.py` from Black sandbox.",
+ "chars": 3843,
+ "abstracted": "2026-11-23 09:24:44"
+}

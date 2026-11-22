@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/schtasks-cli-fallback-workflow-2026-11-23.md",
+ "headings": [
+  "Workflow Improvement: CLI Fallback for schtask Registration (2026-11-23)",
+  "Problem",
+  "Solution",
+  "Why this works when the .py doesn't",
+  "Verification plan (for whoever runs it on White)",
+  "Anti-loop note"
+ ],
+ "lead": "**Type:** Workflow improvement (option b)",
+ "chars": 1743,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,15 @@
+{
+ "path": "memory/mechanic/goal3-e2e-anti-stall-progress-2026-11-20.md",
+ "headings": [
+  "Goal 3: WinRM Remote Reboot E2E Test \u2014 Progress (2026-11-20)",
+  "Status: TIER-A COMPLETE. Live execution queued for non-sandbox seat.",
+  "What's verified so far",
+  "What remains (single action from non-sandbox White)",
+  "Acceptance criteria mapping",
+  "Blocker (environmental, already recorded)",
+  "Runbook note"
+ ],
+ "lead": "| Remote watchdog deployed (FleetBootRecovery) | PASS on PALE+BLACK+RED | `reboot-recovery.jsonl` 2026-11-20T03:44, all 3 hosts ok=true, verified=true |",
+ "chars": 1891,
+ "abstracted": "2026-11-23 09:24:44"
+}

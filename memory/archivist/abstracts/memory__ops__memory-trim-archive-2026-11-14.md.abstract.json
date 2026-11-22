@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/memory-trim-archive-2026-11-14.md",
+ "headings": [
+  "MEMORY.md trim archive \u2014 2026-11-14 23:52",
+  "Project Memory \u2014 Agent Portal (White)",
+  "GOAL (live plan = TODO.md top; keep both in sync)",
+  "2026-11-14 ~01:1x - White model folders \u2192 fleet convention (in flight)",
+  "2026-11-13 ~18:1x - r29: TWO-WAY sync + per-mode UI persistence + Archivist PDF function",
+  "2026-11-13 ~17:0x - NEW OPS PROCESSES LIVE: TODO pruning + local git repo",
+  "2026-11-13 ~13:2x - File-access plan COMPLETE (all 4 steps) + last DM gap closed",
+  "2026-11-13 ~12:5x - Private messaging (DM) LIVE-VERIFIED + file-access steps 1+3"
+ ],
+ "lead": "Pre-trim full content (lossless; trimmed per Orchestrator goal 9 'keep MEMORY.md small'):",
+ "chars": 8327,
+ "abstracted": "2026-11-23 09:24:44"
+}

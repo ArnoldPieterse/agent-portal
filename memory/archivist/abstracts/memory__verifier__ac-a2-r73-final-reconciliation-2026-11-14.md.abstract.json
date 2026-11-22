@@ -1,0 +1,15 @@
+{
+ "path": "memory/verifier/ac-a2-r73-final-reconciliation-2026-11-14.md",
+ "headings": [
+  "Verifier r73 \u2014 AC-A2 FINAL RECONCILIATION (record correction + fresh sweep)",
+  "1. Fresh measurements this round (Black)",
+  "2. Rebuttal: pre-repin backups (Researcher r73 claim \"absent tree-wide + internally inconsistent\")",
+  "3. Record correction: \"v2.2 landed on the serving (White) seat\"",
+  "4. AC-A2 verdict (final from Black)",
+  "5. Sole remaining gate (no agent dependency)",
+  "6. Untested (honest boundary)"
+ ],
+ "lead": "Seat: black (first-party). 2026-11-14 12:11 local. Supersedes nothing; adds to r71b (d3fddc06) and the r70/r71 pin-result JSON pair.",
+ "chars": 5065,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/goal2-cycle-narrative-datefix-2026-11-20b.md",
+ "headings": [
+  "Goal 2 \u2014 Cycle Narrative v2: date-filter fix (re-applied) 2026-11-20",
+  "Problem",
+  "Fix",
+  "Verification",
+  "Ledger"
+ ],
+ "lead": "Progress note from earlier today claimed `_extract_date()` + date-window filtering were added,",
+ "chars": 1017,
+ "abstracted": "2026-11-23 09:24:44"
+}

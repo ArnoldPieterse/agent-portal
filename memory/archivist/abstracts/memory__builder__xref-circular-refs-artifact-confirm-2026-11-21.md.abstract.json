@@ -1,0 +1,14 @@
+{
+ "path": "memory/builder/xref-circular-refs-artifact-confirm-2026-11-21.md",
+ "headings": [
+  "Builder confirm: Archivist Goal 4 \u2014 the 2 \"circular ref\" flags are scanner artifacts",
+  "Question carried from last pass",
+  "Method",
+  "Finding: the 2 flagged \"circular refs\" are A->A self-pointers, NOT real chains",
+  "Note on the scanner",
+  "Conclusion"
+ ],
+ "lead": "Owner: Archivist (Goal 4, Cross-Reference Integrity) | Confirmed by: Builder",
+ "chars": 2574,
+ "abstracted": "2026-11-23 09:24:44"
+}

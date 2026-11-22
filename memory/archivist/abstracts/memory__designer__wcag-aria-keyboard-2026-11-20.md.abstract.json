@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/wcag-aria-keyboard-2026-11-20.md",
+ "headings": [
+  "Designer Goal #1 (WCAG 2.1 AA) - ARIA + keyboard legs, static verification",
+  "Tool",
+  "What was found (first run, 2 CRITICAL)",
+  "Fixes applied (index.html - re-pinned same turn, sha12 b533d118f0ec)",
+  "Result (final run)",
+  "Acceptance mapping (goal #1)",
+  "Residual (future, non-blocking)"
+ ],
+ "lead": "Owner: Designer. Date: 2026-11-20. Companion to `contrast_audit.py` (contrast leg already PASS).",
+ "chars": 3166,
+ "abstracted": "2026-11-23 09:24:44"
+}

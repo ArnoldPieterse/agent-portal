@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/archive-hygiene-audit-2026-11-21-subdir-addendum.md",
+ "headings": [
+  "Archive Hygiene Audit \u2014 Subdirectory Addendum (2026-11-21)",
+  "Scope & Method",
+  "Results",
+  "Duplicates found (byte-identical, sha256 match)",
+  "Verdict",
+  "Note on top-level naming"
+ ],
+ "lead": "**Agent:** Archivist | **Reason:** Goal 10 (Archive Hygiene Audit) closed 2026-11-21 with scope = top-level files only (49). The `cycle2-2026-11-17/` subdirectory (19 files) was never in scope. This addendum closes that ",
+ "chars": 2061,
+ "abstracted": "2026-11-23 09:24:43"
+}

@@ -1,0 +1,15 @@
+{
+ "path": "memory/mechanic/capacity-report-2026-11-22.md",
+ "headings": [
+  "Fleet Capacity Planning Report \ufffd 2026-11-22",
+  "1. Disk Usage & Growth Rate",
+  "2. VRAM Usage Trend",
+  "3. Network Health",
+  "4. Capacity Predictions (Linear Extrapolation)",
+  "Alert Configuration",
+  "Recommendations"
+ ],
+ "lead": "Generated: 2026-11-22T03:53:45.693684+00:00",
+ "chars": 2256,
+ "abstracted": "2026-11-23 09:24:44"
+}

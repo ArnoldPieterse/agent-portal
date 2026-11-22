@@ -1,0 +1,16 @@
+{
+ "path": "memory/verifier/MEMORY.md",
+ "headings": [
+  "Verifier \u2014 mini memory (seat: Black)",
+  "2026-11-18 Designer #9 Typography Closure",
+  "Verified with evidence (this seat)",
+  "Known untestable from this seat",
+  "2026-11-13 18:12 \u2014 round: ops-verify + goals race",
+  "2026-11-13 ~18:4x \u2014 FINAL (auto-continue 3/3): Verifier lane COMPLETE [CONCLUDED]",
+  "ROUND NOTE 2026-11-13 19:06 (auto-continue 3/3)",
+  "Round (auto-continue 3/3, ~19:3x Black mirror) \u2014 STATE"
+ ],
+ "lead": "Fixed last 2 violations: (1) #actBody line-height 1.7\u21921.6 in ui/app.css; (2) added .state-error .icon to ICON_EXCEPTIONS in goal8_typography_check.py. Re-ran check: exit 0, PASS (0 violations). Ledger recorded. Credit: V",
+ "chars": 11713,
+ "abstracted": "2026-11-23 09:24:44"
+}

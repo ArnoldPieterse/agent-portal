@@ -1,0 +1,15 @@
+{
+ "path": "memory/portal/ui-upgrades-r4.md",
+ "headings": [
+  "ui-upgrades-r4 \u2014 Designer UI spec (persisted 2026-11-13)",
+  "The four upgrades",
+  "Build-queue position (my recommendation, planning meeting 2026-11-13)",
+  "Acceptance criteria \u2014 increment 1 (written pre-change, per Verifier's gate rule)",
+  "Gated items (not buildable from Pale)",
+  "Apply-round status (Designer, 2026-11-13 auto-continue r3)",
+  "Cross-refs"
+ ],
+ "lead": "Status: DESIGN DECISIONS, persisted from r4 in-chat canvas (was \"not yet a file\" per v1-inventory round-4 delta). Scope = `index.html` only; all changes hard-refresh-safe. Token values re-derived from DESIGN.md at build ",
+ "chars": 6091,
+ "abstracted": "2026-11-23 09:24:44"
+}

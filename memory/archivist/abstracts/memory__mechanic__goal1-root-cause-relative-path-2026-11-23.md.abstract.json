@@ -1,0 +1,15 @@
+{
+ "path": "memory/mechanic/goal1-root-cause-relative-path-2026-11-23.md",
+ "headings": [
+  "Goal 1 Root Cause: PortalLoadProbe Silent Failure (2026-11-23)",
+  "Finding",
+  "Root Cause",
+  "Fix",
+  "Current Data Status",
+  "Unblock (one command from non-sandbox White with schtasks COM available):",
+  "Evidence chain"
+ ],
+ "lead": "PortalLoadProbe schtask was verified registered on White on 2026-11-22, but `load-baseline.jsonl`",
+ "chars": 1502,
+ "abstracted": "2026-11-23 09:24:44"
+}

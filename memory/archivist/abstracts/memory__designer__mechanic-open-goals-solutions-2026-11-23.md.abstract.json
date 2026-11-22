@@ -1,0 +1,16 @@
+{
+ "path": "memory/designer/mechanic-open-goals-solutions-2026-11-23.md",
+ "headings": [
+  "Mechanic Open Goals - Solutions Ready for Execution",
+  "Summary Table",
+  "Goal 1 - Portal Load Test 7-Day Completion",
+  "Goal 2 - Self-Healing Mirror Production",
+  "Goal 3 - WinRM Remote Reboot E2E Test",
+  "Goal 7 - Log Rotation + Retention",
+  "Recommended Execution Order",
+  "Single-session close-out (from White, non-sandbox)"
+ ],
+ "lead": "All 4 open goals have scripts built and locally verified. Each needs exactly **one command from a non-sandbox seat (White)** to close.",
+ "chars": 5620,
+ "abstracted": "2026-11-23 09:24:44"
+}

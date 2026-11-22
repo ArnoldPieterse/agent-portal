@@ -1,0 +1,15 @@
+{
+ "path": "memory/synthesis/2026-11-12-consolidated-state.md",
+ "headings": [
+  "Consolidated state \u2014 AgentPortal_V1 upgrade round (post R6b + Mechanic Red note, 2026-11-12)",
+  "Task (human)",
+  "Decided (one-line rationale)",
+  "Open items \u2192 owners",
+  "Flagged tensions (not silently resolved)",
+  "Note for Orchestrator",
+  "r14 FINAL STATE (2026-11-13 ~21:0x) \u2014 appended by Orchestrator, auto-continue"
+ ],
+ "lead": "Scribe synthesis. Supersedes memory/synthesis/2026-11-12-upgrade-round.md (that leaf recorded only the human directive + attachment list; zero decided items were visible from this host at the time). Every line below trac",
+ "chars": 5402,
+ "abstracted": "2026-11-23 09:24:44"
+}

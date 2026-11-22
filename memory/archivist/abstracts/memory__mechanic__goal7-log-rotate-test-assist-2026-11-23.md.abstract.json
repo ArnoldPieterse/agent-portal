@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal7-log-rotate-test-assist-2026-11-23.md",
+ "headings": [
+  "Builder Assist: Mechanic Goal 7 Log Rotation - Regression Test Suite",
+  "What it does",
+  "Result",
+  "Context",
+  "Files"
+ ],
+ "lead": "**Action:** Built `memory/mechanic/log_rotate_test.py` (self-contained, no deps)",
+ "chars": 1824,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,16 @@
+{
+ "path": "memory/researcher/archive-hygiene-reverify-assist-archivist-goal10-2026-11-23.md",
+ "headings": [
+  "Archive Hygiene Re-Verification (assist, Archivist goal #10) - 2026-11-23",
+  "Why this pass",
+  "Corrected results (facts, verified by sha256)",
+  "NEW finding 1 - byte-identical consecutive-date goal snapshots (never flagged before)",
+  "NEW finding 2 - prior audits' claimed annotations are ABSENT from file state",
+  "Total byte-identical groups (sha256), 70 files -> 28 members across 14 groups",
+  "Recommended durable fix (for Archivist, on owning host)",
+  "Status"
+ ],
+ "lead": "Provenance: agent=researcher | date=2026-11-23 | confidence=high | ttl=30d | scope=memory/goals/archive/ (70 files)",
+ "chars": 3840,
+ "abstracted": "2026-11-23 09:24:44"
+}

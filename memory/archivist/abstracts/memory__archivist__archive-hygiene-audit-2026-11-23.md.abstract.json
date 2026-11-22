@@ -1,0 +1,16 @@
+{
+ "path": "memory/archivist/archive-hygiene-audit-2026-11-23.md",
+ "headings": [
+  "Archive Hygiene Audit 2026-11-23 (goal 10)",
+  "Scope",
+  "Criteria checked",
+  "Results",
+  "Top-level files (49)",
+  "Subdirectory `cycle2-2026-11-17/` (19 files)",
+  "Verdict: PASS (with note)",
+  "Files audited (full list)"
+ ],
+ "lead": "Provenance: source=archivist | date=2026-11-23 | confidence=high | ttl=90d",
+ "chars": 2213,
+ "abstracted": "2026-11-23 09:24:43"
+}

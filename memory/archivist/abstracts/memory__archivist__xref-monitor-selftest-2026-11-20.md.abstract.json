@@ -1,0 +1,15 @@
+{
+ "path": "memory/archivist/xref-monitor-selftest-2026-11-20.md",
+ "headings": [
+  "XRef Monitor \u2014 Self-test evidence (Goal 5, Archivist cycle-7)",
+  "Why this leaf exists",
+  "What changed",
+  "Self-test result (exit 0 = PASS)",
+  "Live run (real tree)",
+  "Acceptance mapping",
+  "Known limitation (inference, not a blocker)"
+ ],
+ "lead": "Owner: Archivist \u00b7 Assist: Researcher \u00b7 Date: 2026-11-20",
+ "chars": 2199,
+ "abstracted": "2026-11-23 09:24:44"
+}

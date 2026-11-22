@@ -1,0 +1,13 @@
+{
+ "path": "memory/goals/designer-forecast-2026-11-21.md",
+ "headings": [
+  "Designer Cycle-8 Slip Forecast (2026-11-21)",
+  "Risk ranking (highest slip probability first)",
+  "Recommendation to Designer (one concrete step per the auto-loop)",
+  "What this does NOT capture",
+  "Sources / provenance"
+ ],
+ "lead": "model: naive_bayes_weighted_v2 (memory/goals/slip_prediction_table.json, v2, CV accuracy 0.7125 on cycle-7 actuals)",
+ "chars": 4161,
+ "abstracted": "2026-11-23 09:24:44"
+}

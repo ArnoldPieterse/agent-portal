@@ -1,0 +1,15 @@
+{
+ "path": "memory/researcher/knowledge-decay-cycle10.md",
+ "headings": [
+  "Knowledge Decay Model (cycle-10, Researcher goal #4)",
+  "Model",
+  "Parameters (calibrated)",
+  "Interpretation (decay ranking, fastest -> slowest)",
+  "Validation (AC: predicts staleness within 20% of actual correction timing)",
+  "Data provenance",
+  "Pairing sample (first 12)"
+ ],
+ "lead": "Calibrated against actual correction history in `memory/`. Complementary to Archivist's per-file `decay_score.py` (which scores each leaf); this model estimates the decay RATE (half-life) of each knowledge TYPE.",
+ "chars": 4226,
+ "abstracted": "2026-11-23 09:24:44"
+}

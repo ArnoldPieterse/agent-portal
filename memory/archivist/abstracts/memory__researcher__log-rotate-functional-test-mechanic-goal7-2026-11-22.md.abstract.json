@@ -1,0 +1,13 @@
+{
+ "path": "memory/researcher/log-rotate-functional-test-mechanic-goal7-2026-11-22.md",
+ "headings": [
+  "Researcher assist: log_rotate.py functional test (Mechanic goal 7)",
+  "Test executed",
+  "Results",
+  "Remaining step (not doable from this seat)",
+  "Verdict"
+ ],
+ "lead": "Agent: Researcher (assisting Mechanic open goal #7 - Log Rotation + Retention)",
+ "chars": 1409,
+ "abstracted": "2026-11-23 09:24:44"
+}

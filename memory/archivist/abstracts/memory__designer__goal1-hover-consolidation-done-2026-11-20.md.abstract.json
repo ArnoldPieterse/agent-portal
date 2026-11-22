@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal1-hover-consolidation-done-2026-11-20.md",
+ "headings": [
+  "Goal 1 - Interaction System: Hover Consolidation (2026-11-20)",
+  "What was done",
+  "Acceptance criteria progress",
+  "Files changed",
+  "Remaining for full closure"
+ ],
+ "lead": "Moved all 16 ad-hoc `:hover` rules from `ui/app.css` into `ui/interactions.css`",
+ "chars": 1181,
+ "abstracted": "2026-11-23 09:24:44"
+}

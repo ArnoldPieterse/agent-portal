@@ -1,0 +1,16 @@
+{
+ "path": "memory/verifier/concurrency-test-2026-11-20.md",
+ "headings": [
+  "Concurrency Verification (cycle-8 goal #5) - STATIC leg",
+  "Invariant under test",
+  "Lock definitions found",
+  "Lock-hold blocks scanned: 25",
+  "Violations: 0 - every lock-hold is a short critical section",
+  "Parallel execution topology",
+  "parallel_slots references",
+  "Live leg (NOT run here - wall-blocked)"
+ ],
+ "lead": "Docstring (agent_portal.py L2528): \"Concurrency is safe: ... no lock is ever held across a generation.\"",
+ "chars": 3394,
+ "abstracted": "2026-11-23 09:24:44"
+}

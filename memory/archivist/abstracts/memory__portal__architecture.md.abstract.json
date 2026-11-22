@@ -1,0 +1,16 @@
+{
+ "path": "memory/portal/architecture.md",
+ "headings": [
+  "Portal architecture \u2014 how it runs (design notes, not bugs)",
+  "Ops processes: TODO pruning + local git repo (BUILT + LIVE-VERIFIED 2026-11-13 ~17:0x)",
+  "curl examples (BUILDER GOAL 9 \u2014 run verbatim 2026-11-16 against live PID 16164, curl 8.22.0 Windows)",
+  "Private messaging / DM (BUILT + LIVE-VERIFIED 2026-11-13 ~12:4x)",
+  "Workspace <-> sandbox sync (BUILT 2026-11-13, TWO-WAY since r29 ~18:1x)",
+  "SMB push mirror to remote sandboxes (LIVE 2026-11-13 ~13:2x)",
+  "Live plan injection into group prompts (LIVE 2026-11-13 ~13:1x)",
+  "File & folder uploads (BUILT 2026-11-12 ~20:3x)"
+ ],
+ "lead": "Last updated: 2026-11-13 ~18:1x (r29: TWO-WAY workspace sync + post-turn auto-commit + SMB mirror pull-back; NEW OPS processes: TODO pruning + local git repo; DM complete incl. human [DM]; SMB mirror live on all hosts).",
+ "chars": 24433,
+ "abstracted": "2026-11-23 09:24:44"
+}

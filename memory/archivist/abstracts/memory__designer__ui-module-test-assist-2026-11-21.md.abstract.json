@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/ui-module-test-assist-2026-11-21.md",
+ "headings": [
+  "UI Module Test Assist \u2014 for Builder Goal \"UI Module Test Suite\"",
+  "Module inventory (14 files, ~2 700 lines total)",
+  "Pure / deterministic functions (easy unit tests, no DOM needed)",
+  "DOM-dependent functions (need jsdom or integration test)",
+  "Edge-case matrix (per acceptance criteria)",
+  "Suggested test file layout (matches acceptance: 5 files)",
+  "Notes for Builder"
+ ],
+ "lead": "Written: 2026-11-21 by Designer (assist; credit Builder as owner).",
+ "chars": 5419,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/stale-evidence-fp-orchestrator-rosterprobe-2026-11-20.md",
+ "headings": [
+  "Stale-Evidence False Positive \ufffd orchestrator.md:17 (rosterprobe path)",
+  "Finding",
+  "Root Cause",
+  "Resolution"
+ ],
+ "lead": "**Status:** FALSE POSITIVE \ufffd closed, no action needed.",
+ "chars": 1049,
+ "abstracted": "2026-11-23 09:24:44"
+}

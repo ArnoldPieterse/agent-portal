@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/wcag-aa-light-theme-fixes-2026-11-23.md",
+ "headings": [
+  "WCAG AA Light-Theme Contrast Fixes (ready-to-apply)",
+  "Context",
+  "WCAG Criteria Applied",
+  "Fixes (edit `ui/tokens.css` light-theme block)",
+  "Patch (apply to `[data-theme=\"light\"]` block in ui/tokens.css)",
+  "Verification method",
+  "contrast check script (see memory/builder/a11y_audit_increment1_2026-11-20.md for full harness)",
+  "All 6 tokens must show >= target ratio vs both --bg and --panel."
+ ],
+ "lead": "Date: 2026-11-23 | Author: Builder (contribution option-b; credit to Designer for application)",
+ "chars": 2375,
+ "abstracted": "2026-11-23 09:24:44"
+}

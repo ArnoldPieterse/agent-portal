@@ -1,0 +1,13 @@
+{
+ "path": "memory/orchestrator/assist-archivist-knowledge-graph-v3-2026-11-21.md",
+ "headings": [
+  "Orchestrator assist: Archivist Goal #2 (Knowledge Graph v3)",
+  "What was done",
+  "Results",
+  "Remaining for full closure",
+  "Artifacts"
+ ],
+ "lead": "Built `memory/archivist/knowledge_graph_v3.py` extending the existing v2 script:",
+ "chars": 1252,
+ "abstracted": "2026-11-23 09:24:44"
+}

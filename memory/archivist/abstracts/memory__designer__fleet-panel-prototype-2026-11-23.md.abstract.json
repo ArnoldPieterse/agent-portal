@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/fleet-panel-prototype-2026-11-23.md",
+ "headings": [
+  "Fleet Status Panel \u2014 Design Prototype (Builder Goal #6 assist)",
+  "What was done",
+  "Design decisions (for Builder)",
+  "Data contract (from /api/fleet/status in agent_portal.py)",
+  "Files changed",
+  "Acceptance status",
+  "Next steps for Builder"
+ ],
+ "lead": "Owner: Designer | Contributor to Builder goal 6",
+ "chars": 3020,
+ "abstracted": "2026-11-23 09:24:44"
+}

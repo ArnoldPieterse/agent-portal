@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/goal8-escalation-evidence.md",
+ "headings": [
+  "Goal #8: Alert Escalation Chain - Verification Evidence",
+  "Acceptance Criteria Check",
+  "Test Run",
+  "Artifact"
+ ],
+ "lead": "| Simulated failure escalates correctly through all 3 levels | PASS (L1->L2 after 4th fail, L2->L3 after 45min timeout) |",
+ "chars": 960,
+ "abstracted": "2026-11-23 09:24:44"
+}

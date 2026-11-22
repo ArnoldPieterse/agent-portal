@@ -1,0 +1,9 @@
+{
+ "path": "memory/builder/hotload-catalog-refresh-2026-11-22.md",
+ "headings": [
+  "hotload-catalog.json refresh \u2014 2026-11-22"
+ ],
+ "lead": "1. Black/Red IPs swapped: catalog had black=.245, red=.99; hosts.md confirms black=.99, red=.245.",
+ "chars": 1681,
+ "abstracted": "2026-11-23 09:24:44"
+}

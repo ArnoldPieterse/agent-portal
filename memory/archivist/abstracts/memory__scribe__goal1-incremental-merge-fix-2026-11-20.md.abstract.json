@@ -1,0 +1,9 @@
+{
+ "path": "memory/scribe/goal1-incremental-merge-fix-2026-11-20.md",
+ "headings": [
+  "Goal 1 - Incremental Merge Fix (2026-11-20)"
+ ],
+ "lead": "**Bug:** `extract_decisions.py --since YYYY-MM-DD` opened decisions.jsonl in write mode, clobbering all prior entries with only the new subset.",
+ "chars": 676,
+ "abstracted": "2026-11-23 09:24:44"
+}

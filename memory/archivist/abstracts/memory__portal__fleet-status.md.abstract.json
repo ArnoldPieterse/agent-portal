@@ -1,0 +1,16 @@
+{
+ "path": "memory/portal/fleet-status.md",
+ "headings": [
+  "Fleet Status Panel \u2014 decision, contract, evidence",
+  "Decision",
+  "Locked state definitions (round-table)",
+  "Spec adaptation (recorded honestly)",
+  "API contract \u2014 GET /api/fleet (:8099)",
+  "UI (index.html)",
+  "Verification evidence (2026-11-13)",
+  "Ops notes"
+ ],
+ "lead": "Last updated: 2026-11-13 (BUILT + VERIFIED). Source: 8-agent round-table (group_e2e_result_8agent.json) + Orchestrator build notes.",
+ "chars": 4807,
+ "abstracted": "2026-11-23 09:24:44"
+}

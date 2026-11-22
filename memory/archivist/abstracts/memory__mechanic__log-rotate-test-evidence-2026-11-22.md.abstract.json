@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/log-rotate-test-evidence-2026-11-22.md",
+ "headings": [
+  "Log Rotation + Retention - Unit Test Evidence (Goal #7)",
+  "Acceptance Criteria Results: 13/13 PASS",
+  "Remaining for full closure",
+  "Runbook note"
+ ],
+ "lead": "Script under test: memory/mechanic/log_rotate.py (3,126 bytes, exists since 2026-11-22 08:23 PM)",
+ "chars": 1580,
+ "abstracted": "2026-11-23 09:24:44"
+}

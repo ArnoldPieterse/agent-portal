@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/ac-a2-2-live-leg-r82-seat-correction-2026-11-14.md",
+ "headings": [
+  "Verifier r82 (2026-11-14 ~13:1x, Black seat) - AC-A2-2 LIVE leg: seat correction + firewall re-verification",
+  "1. RETRACTION (evidence-quality fix)",
+  "2. Fresh first-party LAN probe from Black (13:16:07-15)",
+  "3. Verdict table (unchanged except LIVE-leg characterization)",
+  "4. New incident corroboration for Arnold"
+ ],
+ "lead": "`verifier_black_lan_probe_r82.py` \u2192 `verifier_black_lan_probe_r82_result.json`:",
+ "chars": 2138,
+ "abstracted": "2026-11-23 09:24:44"
+}

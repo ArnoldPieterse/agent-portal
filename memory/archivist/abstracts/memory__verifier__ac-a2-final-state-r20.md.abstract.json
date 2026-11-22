@@ -1,0 +1,14 @@
+{
+ "path": "memory/verifier/ac-a2-final-state-r20.md",
+ "headings": [
+  "Verifier r20 \u2014 AC-A2 FINAL STATE (Black seat, 2026-11-14 ~03:5x)",
+  "Fresh sweep 03:45:48 \u2014 zero drift vs 03:31 pins",
+  "New evidence this round",
+  "Final verdict table (Verifier sheet)",
+  "Process-level on PID 23704 \u2014 boundary restated",
+  "Bottom line"
+ ],
+ "lead": "Supersedes the bottom-line of `ac-a2-closure-r19.md`. Evidence chain: ac-a2-r19.md \u2192 ac-a2-r19-reverify.md \u2192 ac-a2-closure-r19.md \u2192 this leaf. Written to close the auto-continue loop on the \"Verifier closes AC-A2-1..4\" T",
+ "chars": 3663,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,16 @@
+{
+ "path": "memory/builder/responsive_static_audit_g6_2026-11-20.md",
+ "headings": [
+  "Static Structural Audit \u2014 Designer Goal #6 (Responsive Design Hardening)",
+  "Scope checked (4 breakpoints: 320 / 768 / 1024 / 1440px)",
+  "1. Media-query breakpoint coverage",
+  "2. Fixed-width overflow risk at 320px viewport",
+  "3. Touch-target sizing (>=44x44px on mobile)",
+  "4. Overflow handling on scroll containers",
+  "Verdict for Goal #6 acceptance criteria (static leg only)",
+  "What this unblocks for Designer"
+ ],
+ "lead": "Date: 2026-11-20 | Author: Builder (assisting; owner = Designer) | Method: static CSS analysis of ui/app.css + ui/tokens.css (no browser/CDP, per fleet standing decision in memory/ops/blockers.md RECONCILED entry \u2014 sandb",
+ "chars": 4580,
+ "abstracted": "2026-11-23 09:24:44"
+}

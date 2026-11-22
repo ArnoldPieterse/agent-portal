@@ -1,0 +1,12 @@
+{
+ "path": "memory/synthesis/2026-11-22-ledger-refresh-mechanic-pointer-flag.md",
+ "headings": [
+  "2026-11-22 \u2014 Ledger SSOT refresh + Mechanic pointer-closure flag (Scribe)",
+  "1. SSOT refresh (done)",
+  "2. FLAG \u2014 Mechanic #6/#9 counted reached via pointer, contradicting goal text (NOT resolved)",
+  "Owners / next steps"
+ ],
+ "lead": "Round: auto-loop batch pass, Scribe seat. All 10 Scribe goals already `reached` in the ledger; this is a team-contribution step (option c: verify/close stale evidence claim).",
+ "chars": 2542,
+ "abstracted": "2026-11-23 09:24:44"
+}

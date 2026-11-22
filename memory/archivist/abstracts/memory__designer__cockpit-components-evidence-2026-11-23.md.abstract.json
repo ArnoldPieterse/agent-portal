@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/cockpit-components-evidence-2026-11-23.md",
+ "headings": [
+  "Evidence: Fleet Cockpit Components (Goals #1-5, Cycle-9)",
+  "Artifacts",
+  "Design Decisions Summary",
+  "API Contracts for Builder"
+ ],
+ "lead": "| 1. Cockpit Layout Design | memory/designer/cockpit-layout-spec.html | 23,778 B | 17/17 |",
+ "chars": 1861,
+ "abstracted": "2026-11-23 09:24:44"
+}

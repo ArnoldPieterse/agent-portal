@@ -1,0 +1,10 @@
+{
+ "path": "memory/goals/builder-cycle8-proposals.md",
+ "headings": [
+  "Builder \u2014 Cycle-8 Goal Proposals (drafted 2026-11-20)",
+  "Cross-agent dependencies"
+ ],
+ "lead": "Status: PROPOSAL for Orchestrator to collect verbatim into TODO.md `## AGENT GOALS` + memory/goals/builder.md (archive cycle-7 builder.md first).",
+ "chars": 6043,
+ "abstracted": "2026-11-23 09:24:44"
+}

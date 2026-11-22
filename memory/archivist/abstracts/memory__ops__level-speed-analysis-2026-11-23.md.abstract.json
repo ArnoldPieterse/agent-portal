@@ -1,0 +1,15 @@
+{
+ "path": "memory/ops/level-speed-analysis-2026-11-23.md",
+ "headings": [
+  "Level-Speed Analysis \u2014 why a level took >1h (2026-11-23)",
+  "What actually happened (cycle-8, the cycle that earned Lv 1)",
+  "Root cause of the 35h silence",
+  "Secondary factors (active time still ~13h, not 1h)",
+  "Fixes applied (2026-11-23)",
+  "To actually get toward ~1h/level (needs decision)",
+  "Files"
+ ],
+ "lead": "Question: \"we have been stuck on lvl 0 for more than an hour. one level should not take more than an hour on average.\"",
+ "chars": 3374,
+ "abstracted": "2026-11-23 09:24:44"
+}

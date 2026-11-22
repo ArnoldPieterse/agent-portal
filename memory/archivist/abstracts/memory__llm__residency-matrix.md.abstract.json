@@ -1,0 +1,13 @@
+{
+ "path": "memory/llm/residency-matrix.md",
+ "headings": [
+  "Residency Matrix (auto-refreshed)",
+  "black  (http://Red:8888) \ufffd UNREACHABLE",
+  "pale  (http://Pale:8888) \ufffd UNREACHABLE",
+  "red  (http://Black:8888) \ufffd UNREACHABLE",
+  "white  (http://127.0.0.1:8888) \ufffd UNREACHABLE"
+ ],
+ "lead": "Last run: 2026-11-20 04:22  |  hosts: 4  |  DRIFT: **0**  |  EXTRA: 0  |  unreachable: 4",
+ "chars": 493,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal7-contrast-token-fixes-2026-11-20.md",
+ "headings": [
+  "Goal 7 - Color Contrast + Accessibility (cycle-7) - token-level AA fixes, 2026-11-20",
+  "What ran",
+  "Token changes applied to ui/tokens.css (all verified to clear >=4.5:1 on every realistic surface)",
+  "Result",
+  "Documented follow-up (NOT a token failure - different fix class)",
+  "Artifacts"
+ ],
+ "lead": "Owner: Designer. Scope: audit every text/background design-token pair for WCAG 2.1 AA (>=4.5:1 body) and fix failures AT THE TOKEN LEVEL (no per-component overrides).",
+ "chars": 2497,
+ "abstracted": "2026-11-23 09:24:44"
+}

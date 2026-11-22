@@ -1,0 +1,14 @@
+{
+ "path": "memory/scribe/briefings/researcher-briefing.example.md",
+ "headings": [
+  "Researcher Briefing \u2014 worked reference (to spec, 2026-11-20)",
+  "Live state",
+  "Your open goals (top 3)",
+  "Decisions that bind you",
+  "Gotchas",
+  "Start here"
+ ],
+ "lead": "> **TL;DR** You are Researcher. Fleet is 70/80 (88%). Your lane is closed this cycle;",
+ "chars": 1888,
+ "abstracted": "2026-11-23 09:24:44"
+}

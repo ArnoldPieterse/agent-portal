@@ -1,0 +1,13 @@
+{
+ "path": "memory/ops/fleet-throughput-fix-2026-11-23.md",
+ "headings": [
+  "Fleet throughput fix - why the fleet was slower than one LLM (2026-11-23 ~07:1x)",
+  "Root causes (evidence)",
+  "Fixes (agent_portal.py, deployed via PortalRun restart ~07:06)",
+  "Verified live (run g-1a205166af8 after restart)",
+  "Known hazard (NOT on the fleet path - flagged, not changed)"
+ ],
+ "lead": "Arnold: \"we have single handily reached more goals with your single LLM in under a few minutes",
+ "chars": 3046,
+ "abstracted": "2026-11-23 09:24:44"
+}

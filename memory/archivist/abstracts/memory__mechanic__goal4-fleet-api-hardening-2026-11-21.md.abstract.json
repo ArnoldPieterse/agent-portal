@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/goal4-fleet-api-hardening-2026-11-21.md",
+ "headings": [
+  "Goal #4 - Fleet Status API Hardening: VERIFIED",
+  "Acceptance Criteria vs Implementation",
+  "Functional Test (circuit breaker state machine)",
+  "Verdict: PASS"
+ ],
+ "lead": "| Per-host timeout 5s | `FLEET_PROBE_TIMEOUT = 5` in agent_portal.py | PASS |",
+ "chars": 1281,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/researcher/dangling-pointer-fix-mechanic-g8-2026-11-22.md",
+ "headings": [
+  "Dangling Pointer Fix: Mechanic Goal 8 (Alert Escalation Chain)",
+  "What was found",
+  "Fix applied",
+  "Verification"
+ ],
+ "lead": "Agent: Researcher (assist, owner=Mechanic)",
+ "chars": 918,
+ "abstracted": "2026-11-23 09:24:44"
+}

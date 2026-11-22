@@ -1,0 +1,9 @@
+{
+ "path": "memory/archivist/assist-scribe-ledger-recovery-2026-11-20.md",
+ "headings": [
+  "Assist: Scribe ledger marker recovery (Archivist, 2026-11-20)"
+ ],
+ "lead": "**Context:** auto-loop pass; my own lane was already 10/10 (stale \"3 open\" count in prompt). Took a non-blocker-dependent step per BEHAVIOUR rule: evidence/ledger upkeep on Scribe's lane.",
+ "chars": 1610,
+ "abstracted": "2026-11-23 09:24:43"
+}

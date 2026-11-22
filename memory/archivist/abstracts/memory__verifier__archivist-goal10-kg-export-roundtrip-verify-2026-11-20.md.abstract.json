@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/archivist-goal10-kg-export-roundtrip-verify-2026-11-20.md",
+ "headings": [
+  "Archivist Goal #10 \u2014 KG Export + Import: round-trip verified (Verifier, 2026-11-20)",
+  "Acceptance criteria (from memory/goals/archivist.md goal 10)",
+  "What ran",
+  "Verdict"
+ ],
+ "lead": "Owner: Archivist. Assisted/verified by Verifier.",
+ "chars": 1071,
+ "abstracted": "2026-11-23 09:24:44"
+}

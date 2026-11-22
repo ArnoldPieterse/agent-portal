@@ -1,0 +1,9 @@
+{
+ "path": "memory/designer/fleet-topology-20261117.md",
+ "headings": [
+  "Fleet Topology (Designer goal #9) - 2026-11-17"
+ ],
+ "lead": "Live SVG fleet topology in the Fleet panel: ui/fleet_topology.js (new module, header pointer per file-modularity rule),",
+ "chars": 1322,
+ "abstracted": "2026-11-23 09:24:44"
+}

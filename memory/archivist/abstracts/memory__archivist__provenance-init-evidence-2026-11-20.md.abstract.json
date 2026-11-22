@@ -1,0 +1,9 @@
+{
+ "path": "memory/archivist/provenance-init-evidence-2026-11-20.md",
+ "headings": [
+  "Provenance --init Evidence (Mechanic assist, 2026-11-20)"
+ ],
+ "lead": "Ran `python memory/archivist/provenance.py --init` from sandbox seat.",
+ "chars": 583,
+ "abstracted": "2026-11-23 09:24:43"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal5-typography-scale-2026-11-20.md",
+ "headings": [
+  "Goal 5 - Typography Scale Refinement",
+  "What was done",
+  "Verification",
+  "Artifacts"
+ ],
+ "lead": "1. Added `--lh-body:1.4` to tokens.css :root (fills gap between --lh-loose:1.35 and --lh-mono:1.6)",
+ "chars": 1182,
+ "abstracted": "2026-11-23 09:24:44"
+}

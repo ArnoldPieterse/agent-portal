@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/unblock-checklist-2026-11-18.md",
+ "headings": [
+  "Mechanic Unblock Checklist \u2014 all 5 open goals (2026-11-18)",
+  "Goal #1 \u2014 Portal load test (7-day data)",
+  "Goal #2 \u2014 Self-healing mirror schtask",
+  "Goal #4 \u2014 Reboot-recovery all 4 hosts",
+  "Goal #6 \u2014 Dep-graph two weekly generations ~~CLOSED 2026-11-18~~",
+  "Goal #8 \u2014 Chaos drill (monthly)",
+  "Estimated time if all in one session",
+  "ONE-SHOT DEPLOYMENT (preferred)"
+ ],
+ "lead": "**Root blocker:** All 5 remaining goals need a non-sandbox White session with working `schtasks` COM + LAN egress. From sandbox: COM \"Class not registered\", WinError 10013, SMB auth denied.",
+ "chars": 4079,
+ "abstracted": "2026-11-23 09:24:44"
+}

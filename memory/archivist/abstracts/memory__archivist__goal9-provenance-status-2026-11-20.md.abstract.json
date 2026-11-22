@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/goal9-provenance-status-2026-11-20.md",
+ "headings": [
+  "Goal 9 Provenance Tracking - Status Evidence (2026-11-20)",
+  "Criteria Status",
+  "Data Summary (provenance-data.json, generated 2026-11-20T10:58:41)",
+  "Per-Agent Breakdown",
+  "Blocker (recorded once, not re-probing)",
+  "Next Step to Close"
+ ],
+ "lead": "| >=80% files have provenance after init | PASS | 97.1% agent coverage (6464 files, 6277 identified) |",
+ "chars": 1404,
+ "abstracted": "2026-11-23 09:24:43"
+}

@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/smoke8-partial-red-2026-11-14.md",
+ "headings": [
+  "RUNBOOK - smoke8 PARTIAL from Red seat (2026-11-14 03:23)",
+  "What ran",
+  "Verdict: REMOTE4_OK (smoke8_partial_red_seat.json, 03:23:20 -> 03:23:23)",
+  "LESSON (what broke + what fixed it)",
+  "NOT covered from this seat",
+  "Sandbox facts (Red seat, verified this round)"
+ ],
+ "lead": "`smoke8_partial_red.py` on the RED seat (Red) after AUTO-CONTINUE picked up the open \"smoke8 when convenient\" item. Full smoke8 hits the portal at 127.0.0.1:8099, which is WHITE-local and unreachable from Red (lan_probe ",
+ "chars": 2478,
+ "abstracted": "2026-11-23 09:24:44"
+}

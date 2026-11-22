@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/mechanic-goal3-closure-2026-11-15.md",
+ "headings": [
+  "Goal #3 closure \u2014 reboot-recovery dry-run, all 4 hosts (Mechanic) \u2014 2026-11-15 ~19:3x",
+  "Why the earlier network verdicts are unreliable (root cause, measured)",
+  "Per-leg verdicts (final)",
+  "Broken steps found + fixes (documented per goal)",
+  "Unblock step (stated ONCE, then alternative taken \u2014 no human gate)",
+  "Goal #3 status: 2/4 fully closed (White, Pale); 2/4 INCONCLUSIVE pending one non-isolated re-probe (Black, Red). No broken step left un-documented."
+ ],
+ "lead": "Reconciles the two conflicting remote-leg notes and applies the sandbox-isolation correction.",
+ "chars": 3656,
+ "abstracted": "2026-11-23 09:24:44"
+}

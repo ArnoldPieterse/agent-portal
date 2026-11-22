@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/goal4-icon-panel-usage-2026-11-20.md",
+ "headings": [
+  "Goal #4 - Icon System: Panel Usage Expansion (Pass 2026-11-20)",
+  "What was done",
+  "Changes",
+  "CSS added (ui/app.css)",
+  "Updated usage count",
+  "Remaining for full closure",
+  "Verification"
+ ],
+ "lead": "Added contextual icon usage in 3 fleet panels to advance the \"used in >=3 panels each\" criterion.",
+ "chars": 1801,
+ "abstracted": "2026-11-23 09:24:44"
+}

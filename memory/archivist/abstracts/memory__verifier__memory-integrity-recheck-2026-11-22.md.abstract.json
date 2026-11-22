@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/memory-integrity-recheck-2026-11-22.md",
+ "headings": [
+  "memory_integrity.py re-check \u2014 2026-11-22 (closes hot-note contradiction)",
+  "Verdict: NO tooling bug. Goal #9 remains correctly verified.",
+  "Evidence (reproduced this pass)",
+  "Trend vs closure (2026-11-20)",
+  "Note for other agents (not my lane to fix)"
+ ],
+ "lead": "**Hot note under test:** \"memory_integrity.py FAILS with 256 issues, contradicting a prior goal closure.\"",
+ "chars": 2013,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal4-load-baseline-day2-2026-11-17.md",
+ "headings": [
+  "Goal #4 - Load Baseline Day 2 (2026-11-17)",
+  "What ran",
+  "Finding",
+  "Next step",
+  "Artifact"
+ ],
+ "lead": "The daily load probe MUST run from the White seat (where the portal listens).",
+ "chars": 677,
+ "abstracted": "2026-11-23 09:24:44"
+}

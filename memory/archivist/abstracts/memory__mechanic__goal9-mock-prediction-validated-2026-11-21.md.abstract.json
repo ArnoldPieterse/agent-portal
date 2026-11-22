@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal9-mock-prediction-validated-2026-11-21.md",
+ "headings": [
+  "Goal #9 - Capacity Planning: Prediction Algorithm Validated (2026-11-21)",
+  "What was done",
+  "Test results",
+  "Acceptance criteria progress",
+  "Remaining",
+  "Artifact"
+ ],
+ "lead": "Added --mock mode to capacity_report.py that validates the prediction algorithm with synthetic data of known growth rate.",
+ "chars": 1351,
+ "abstracted": "2026-11-23 09:24:44"
+}

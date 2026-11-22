@@ -1,0 +1,9 @@
+{
+ "path": "memory/mechanic/goal3-e2e-script-built-2026-11-23.md",
+ "headings": [
+  "Goal 3 E2E Test Script - Built & Dry-Run Verified (2026-11-23)"
+ ],
+ "lead": "**What:** `memory/mechanic/goal3_winrm_e2e_test.py` (277 lines) implements the full acceptance criteria for Goal 3.",
+ "chars": 1044,
+ "abstracted": "2026-11-23 09:24:44"
+}

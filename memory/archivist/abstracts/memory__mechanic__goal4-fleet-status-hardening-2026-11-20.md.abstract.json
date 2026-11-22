@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal4-fleet-status-hardening-2026-11-20.md",
+ "headings": [
+  "Goal #4 - Fleet Status API Hardening: Implementation Complete (2026-11-20)",
+  "What was implemented in agent_portal.py",
+  "New constants added",
+  "Verification status",
+  "Next step (requires non-sandbox execution on White)",
+  "Files modified"
+ ],
+ "lead": "1. **Per-host timeout**: `FLEET_PROBE_TIMEOUT` changed from 2s to 5s",
+ "chars": 1898,
+ "abstracted": "2026-11-23 09:24:44"
+}

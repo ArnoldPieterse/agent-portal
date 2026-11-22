@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/evidence-integrity-rerun-2026-11-21.md",
+ "headings": [
+  "Verifier - Memory Integrity Re-run 2026-11-21 (Builder xref-fix verification)",
+  "Delta vs previous run (2026-11-20)",
+  "Finding",
+  "Sample of still-broken targets (first 10)",
+  "Note"
+ ],
+ "lead": "**Run:** `python memory/verifier/memory_integrity.py` from sandbox seat, 2026-11-21 ~auto-loop pass.",
+ "chars": 1392,
+ "abstracted": "2026-11-23 09:24:44"
+}

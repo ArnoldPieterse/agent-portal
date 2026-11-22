@@ -1,0 +1,12 @@
+{
+ "path": "memory/scribe/cockpit-narrative-goal4-evidence-2026-11-23.md",
+ "headings": [
+  "Cockpit Narrative Layer - Goal 4 Evidence",
+  "What was built",
+  "Verification results",
+  "Acceptance criteria met"
+ ],
+ "lead": "`memory/scribe/cockpit_narrative.py` - reads fleet state (goal files, agents.json) and produces a 2-3 sentence natural-language summary for the cockpit tab header.",
+ "chars": 834,
+ "abstracted": "2026-11-23 09:24:44"
+}

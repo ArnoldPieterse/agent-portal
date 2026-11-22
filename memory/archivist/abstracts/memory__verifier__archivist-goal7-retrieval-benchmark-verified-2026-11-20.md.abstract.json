@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/archivist-goal7-retrieval-benchmark-verified-2026-11-20.md",
+ "headings": [
+  "Verification: Archivist Goal 7 (Retrieval Benchmark Suite) - 2026-11-20",
+  "Status: PASS - all acceptance criteria met",
+  "What ran",
+  "Acceptance criteria mapping",
+  "Note"
+ ],
+ "lead": "| All 20 queries run | PASS | 20/20 [OK] in benchmark output |",
+ "chars": 1020,
+ "abstracted": "2026-11-23 09:24:44"
+}

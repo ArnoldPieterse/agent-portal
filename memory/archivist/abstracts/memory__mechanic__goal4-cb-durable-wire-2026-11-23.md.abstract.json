@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal4-cb-durable-wire-2026-11-23.md",
+ "headings": [
+  "Goal #4 (Fleet Status API hardening) - circuit breaker durably wired on canonical White",
+  "What was wrong (evidence)",
+  "Fix (this pass) - durable because it is on the canonical host",
+  "Post-fix evidence (this host)",
+  "Remaining for full closure (NOT yet done - do not claim closed)"
+ ],
+ "lead": "Date: 2026-11-23 | Seat: Mechanic -> White (local, canonical for root docs)",
+ "chars": 2205,
+ "abstracted": "2026-11-23 09:24:44"
+}

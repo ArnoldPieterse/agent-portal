@@ -1,0 +1,12 @@
+{
+ "path": "memory/builder/INDEX.md",
+ "headings": [
+  "BUILDER INDEX \u2014 index of indexes for Builder lane (repin farm, staged patches, test suites).",
+  "Global pointers",
+  "Cycle-2 evidence (indexed 2026-11-16, Orchestrator seat - unblocks end-of-run sweep)",
+  "Linked content (KG orphan remediation 2026-11-19)"
+ ],
+ "lead": "Last updated: 2026-11-21 (Builder assist: Archivist goal #2 KG v3 edge types; prior: Mechanic Goal 1 concurrent pool load test \u2014 8 parallel cmds PASS)",
+ "chars": 10970,
+ "abstracted": "2026-11-23 09:24:44"
+}

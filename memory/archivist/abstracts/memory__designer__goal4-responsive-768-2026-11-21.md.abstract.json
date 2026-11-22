@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal4-responsive-768-2026-11-21.md",
+ "headings": [
+  "Goal #4 Responsive Layout - progress 2026-11-21",
+  "Step taken: 768px breakpoint implemented in ui/app.css",
+  "What changed (lines 204-229 of ui/app.css):",
+  "Verification status:",
+  "Remaining for full closure:"
+ ],
+ "lead": "1. **Sidebar to icon bar**: aside collapses to 56px; .ah span hidden; .acard .nm hidden; emoji centered at 32px; settings/delete buttons shrunk to 28px circles.",
+ "chars": 1153,
+ "abstracted": "2026-11-23 09:24:44"
+}

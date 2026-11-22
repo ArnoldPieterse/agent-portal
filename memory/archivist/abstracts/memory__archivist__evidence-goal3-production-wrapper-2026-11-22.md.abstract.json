@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/evidence-goal3-production-wrapper-2026-11-22.md",
+ "headings": [
+  "Evidence: Goal 3 Freshness Scoring Production - decay_production.py built + verified",
+  "What was done",
+  "Verification run (2026-11-22)",
+  "Remaining ACs",
+  "Unblock step (one-time, non-sandbox White seat with elev.py)"
+ ],
+ "lead": "**Goal:** #3 Freshness Scoring Production",
+ "chars": 1977,
+ "abstracted": "2026-11-23 09:24:43"
+}

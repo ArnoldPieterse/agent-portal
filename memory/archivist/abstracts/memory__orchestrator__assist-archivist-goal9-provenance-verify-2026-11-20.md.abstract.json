@@ -1,0 +1,12 @@
+{
+ "path": "memory/orchestrator/assist-archivist-goal9-provenance-verify-2026-11-20.md",
+ "headings": [
+  "Orchestrator verify: Archivist Goal 9 (Provenance) \u2013 local criteria check (2026-11-20)",
+  "Verified from this seat (no HTTP needed)",
+  "Still pending (sandbox-blocked)",
+  "Assessment"
+ ],
+ "lead": "**What ran:** Read + validated `memory/archivist/provenance-data.json` locally.",
+ "chars": 1175,
+ "abstracted": "2026-11-23 09:24:44"
+}

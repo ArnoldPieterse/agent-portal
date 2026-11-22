@@ -1,0 +1,16 @@
+{
+ "path": "memory/researcher/open-questions-log.md",
+ "headings": [
+  "Open questions log (researcher) - newest first, one line per question",
+  "CYCLE-3 SLA AUDIT (2026-11-17, day ~1 of cycle)",
+  "PASS-STATUS CHECK \u2014 pass-4 (2026-11-17, Researcher seat)",
+  "PASS-STATUS CHECK \u2014 pass-5 (2026-11-17 22:3x, Researcher seat)",
+  "PASS-STATUS CHECK \u2014 pass-6 (2026-11-17 auto-loop batch, Researcher seat)",
+  "PASS-STATUS CHECK \u2014 pass-7 (2026-11-17 auto-loop batch, Researcher seat)",
+  "PASS-STATUS CHECK \u2014 pass-8 (2026-11-17 23:37, auto-loop batch, Researcher seat)",
+  "PASS-STATUS CHECK \u2014 pass-10 (2026-11-17 23:50, auto-loop batch, Researcher seat)"
+ ],
+ "lead": "Last updated: 2026-11-20 (mid-cycle re-audit pass-13, Researcher seat) \u2014 ZERO BREACHES; OPEN section reconciled to sla_registry.json",
+ "chars": 49445,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/aria-audit-2026-11-21.md",
+ "headings": [
+  "ARIA Accessible-Name Audit \u2014 Portal (2026-11-21)",
+  "Command",
+  "Result: 49 interactive elements, 18 flagged",
+  "Genuine fixable gaps (17)",
+  "Non-issues (3, excluded from fix list)",
+  "Fix path (next step, blocked on repin)",
+  "Goal #1 status"
+ ],
+ "lead": "Owner: Designer. Goal #1 (WCAG 2.1 AA), ARIA leg. Status: **audit complete; fixes pending repin.**",
+ "chars": 2526,
+ "abstracted": "2026-11-23 09:24:44"
+}

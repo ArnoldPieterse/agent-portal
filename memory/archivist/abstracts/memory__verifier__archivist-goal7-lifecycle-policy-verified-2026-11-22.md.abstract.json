@@ -1,0 +1,11 @@
+{
+ "path": "memory/verifier/archivist-goal7-lifecycle-policy-verified-2026-11-22.md",
+ "headings": [
+  "Archivist Goal 7 (Knowledge Lifecycle Policy) - Verified",
+  "AC Check",
+  "Verdict"
+ ],
+ "lead": "| Policy doc exists at memory/archivist/lifecycle-policy.md | PASS (present, 3.5KB) |",
+ "chars": 501,
+ "abstracted": "2026-11-23 09:24:44"
+}

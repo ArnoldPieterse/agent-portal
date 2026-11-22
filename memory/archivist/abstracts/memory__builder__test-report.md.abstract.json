@@ -1,0 +1,12 @@
+{
+ "path": "memory/builder/test-report.md",
+ "headings": [
+  "Portal Test Report",
+  "api",
+  "ui",
+  "integration"
+ ],
+ "lead": "**Run:** 2026-11-19 23:37 UTC | **Suite:** all | **Mode:** offline",
+ "chars": 2053,
+ "abstracted": "2026-11-23 09:24:44"
+}

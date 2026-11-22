@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal8-toast-design-2026-11-20.md",
+ "headings": [
+  "Designer Goal 8 - Notification/Toast Design (2026-11-20)",
+  "Acceptance criteria check",
+  "Changes this pass",
+  "Files"
+ ],
+ "lead": "| >=4 toast types | PASS | ok(--ok green), warn(--warn amber), err(--err red), info(--acc blue) - all in ui/app.css L355-358 + new .toast.info rule |",
+ "chars": 1112,
+ "abstracted": "2026-11-23 09:24:44"
+}

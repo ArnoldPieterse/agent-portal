@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal6-icon-set-closed-2026-11-21.md",
+ "headings": [
+  "Goal 6 (SVG Icon Set) \u2014 Closure Evidence",
+  "What was wrong",
+  "Fix",
+  "Acceptance criteria \u2014 all PASS (verified by regex/structural check on ui/icons.js)",
+  "Emoji / text-indicator replacement",
+  "Artifacts"
+ ],
+ "lead": "`memory/designer/icon-set.md` claimed a 28-icon inventory, but `ui/icons.js` only defined 24.",
+ "chars": 1790,
+ "abstracted": "2026-11-23 09:24:44"
+}

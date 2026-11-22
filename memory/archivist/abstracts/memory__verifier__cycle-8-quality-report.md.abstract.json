@@ -1,0 +1,16 @@
+{
+ "path": "memory/verifier/cycle-8-quality-report.md",
+ "headings": [
+  "Cycle 8 Quality Report",
+  "1. Goals Completed + Verification Pass Rate",
+  "2. Evidence Quality Scores",
+  "3. SLO Compliance",
+  "4. Security Findings",
+  "5. Performance Trends",
+  "6. Evidence Integrity (cross-reference)",
+  "7. Git Activity (last 14 days)"
+ ],
+ "lead": "Generated: 2026-11-20 23:44 by `memory/verifier/cycle_quality.py` (local artifacts only; no :8099 egress).",
+ "chars": 1635,
+ "abstracted": "2026-11-23 09:24:44"
+}

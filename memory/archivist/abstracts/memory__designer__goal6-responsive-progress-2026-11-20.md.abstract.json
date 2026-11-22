@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal6-responsive-progress-2026-11-20.md",
+ "headings": [
+  "Goal 6 (Responsive Design Hardening) - Progress 2026-11-20",
+  "What was done this pass",
+  "Fixes applied (overflow + touch target)",
+  "Verification status",
+  "Artifacts"
+ ],
+ "lead": "Replaced the thin 2-breakpoint responsive CSS (768px + 375px, ~15 rules total) with a full",
+ "chars": 1788,
+ "abstracted": "2026-11-23 09:24:44"
+}

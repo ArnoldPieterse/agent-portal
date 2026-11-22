@@ -1,0 +1,11 @@
+{
+ "path": "memory/ops/evidence-stale-2026-11-23.md",
+ "headings": [
+  "Evidence Freshness SLA Report - 2026-11-23",
+  "STALE Files (>7d, no freshness marker)",
+  "Fresh Files (have marker or recent)"
+ ],
+ "lead": "Scanned: 2422 files (skipped 196 non-leaf)",
+ "chars": 25945,
+ "abstracted": "2026-11-23 09:24:44"
+}

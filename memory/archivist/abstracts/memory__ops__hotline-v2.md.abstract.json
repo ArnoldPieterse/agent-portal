@@ -1,0 +1,13 @@
+{
+ "path": "memory/ops/hotline-v2.md",
+ "headings": [
+  "HOTLINE escalation protocol v2 (Orchestrator goal #8, set 2026-11-16)",
+  "Triggers (any one fires the line)",
+  "Format (one line in TODO.md top section + jsonl event)",
+  "Log (events since v2 adopted 2026-11-16 ~15:1x)",
+  "Rules"
+ ],
+ "lead": "Replaces ad-hoc hotline notes. One-line format; 5-minute ack SLA from any seat; no human gates (standing rule).",
+ "chars": 2361,
+ "abstracted": "2026-11-23 09:24:44"
+}

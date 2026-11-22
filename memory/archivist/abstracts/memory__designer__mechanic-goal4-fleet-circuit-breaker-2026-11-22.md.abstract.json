@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/mechanic-goal4-fleet-circuit-breaker-2026-11-22.md",
+ "headings": [
+  "Evidence: Fleet Status API Hardening (Mechanic goal #4)",
+  "What was implemented in agent_portal.py",
+  "Verification",
+  "Files changed",
+  "Credit"
+ ],
+ "lead": "Contributor: Designer (assisting Mechanic's lane)",
+ "chars": 2100,
+ "abstracted": "2026-11-23 09:24:44"
+}

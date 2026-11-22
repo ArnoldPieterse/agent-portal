@@ -1,0 +1,14 @@
+{
+ "path": "memory/builder/assist-verifier5-concurrency-script-2026-11-22.md",
+ "headings": [
+  "Builder Assist: Verifier Goal 5 - Concurrency Serialization Test Script Built",
+  "What was done",
+  "Script capabilities",
+  "Verification performed (sandbox)",
+  "Remaining leg",
+  "Blocker (same class as Verifier #4 in blockers.md)"
+ ],
+ "lead": "Built `memory/verifier/concurrency_serialization_test.py` (10,244 bytes) - the LIVE leg",
+ "chars": 1644,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/orchestrator2-capacity-governor-sim-verify-2026-11-23.md",
+ "headings": [
+  "Verifier assist \u2014 Orchestrator #2 Fleet Capacity Governor (static/simulate leg)",
+  "What was tested",
+  "Results",
+  "Gap detail",
+  "Verdict"
+ ],
+ "lead": "Ran `python memory/orchestrator/capacity_governor.py --simulate` and `--simulate --threshold 99` from this seat.",
+ "chars": 1696,
+ "abstracted": "2026-11-23 09:24:44"
+}

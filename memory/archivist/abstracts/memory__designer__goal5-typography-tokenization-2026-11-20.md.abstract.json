@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal5-typography-tokenization-2026-11-20.md",
+ "headings": [
+  "Goal #5 Typography Scale Refinement - PROGRESS (2026-11-20)",
+  "What changed (files in shared agent folder, relative paths)",
+  "Measurement (re-ran audit after edits)",
+  "Acceptance criteria status"
+ ],
+ "lead": "One concrete step this pass: tokenized the font stacks + eliminated every off-scale font-size literal.",
+ "chars": 1729,
+ "abstracted": "2026-11-23 09:24:44"
+}

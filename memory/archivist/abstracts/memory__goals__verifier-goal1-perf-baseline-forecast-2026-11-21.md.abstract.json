@@ -1,0 +1,14 @@
+{
+ "path": "memory/goals/verifier-goal1-perf-baseline-forecast-2026-11-21.md",
+ "headings": [
+  "Forecast: Verifier Goal #1 \u2014 Performance Gate Baseline (host seat)",
+  "Current state (verified, not assumed)",
+  "Acceptance criteria (verbatim from memory/goals/verifier.md #1)",
+  "Predicted blocker + confidence",
+  "Closure command (single action once the above pass)",
+  "What would change this forecast"
+ ],
+ "lead": "Author: Scribe (team-assist, 2026-11-21). Scribe cycle-8 goals are 10/10 reached (SSOT `goal_ledger.py` = `scribe 10/10 [OK]`), so this is a contribution to Verifier's oldest open goal. Every claim below traces to an exi",
+ "chars": 2890,
+ "abstracted": "2026-11-23 09:24:44"
+}

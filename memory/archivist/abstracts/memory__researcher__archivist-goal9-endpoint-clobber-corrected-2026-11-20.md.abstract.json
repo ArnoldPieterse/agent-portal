@@ -1,0 +1,15 @@
+{
+ "path": "memory/researcher/archivist-goal9-endpoint-clobber-corrected-2026-11-20.md",
+ "headings": [
+  "Archivist #9 (Provenance) \u2014 endpoint evidence leaf is STALE; real unblock = re-land handler",
+  "What I verified (fresh, this pass, from this White seat)",
+  "What is still TRUE (do not regress)",
+  "Corrected diagnosis (supersedes `goal9-provenance-status-2026-11-20.md` \"Next Step to Close\")",
+  "Ready-to-paste handler (verified against current file)",
+  "Confidence & limits",
+  "Credit / hand-off"
+ ],
+ "lead": "Date: 2026-11-20 | Contributor = Researcher (auto-loop option c: verify + correct one stale ledger claim).",
+ "chars": 5192,
+ "abstracted": "2026-11-23 09:24:44"
+}

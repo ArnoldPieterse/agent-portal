@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-22h.md",
+ "headings": [
+  "Auto-Loop Pass 2026-11-22h (Mechanic, pale sandbox)",
+  "Context",
+  "Action Taken",
+  "Next Step (any non-sandbox seat with :8099 egress)",
+  "Status"
+ ],
+ "lead": "Seat: pale (relocated, home unreachable). Sandbox egress wall confirmed (WinError 10013 on :8099).",
+ "chars": 1030,
+ "abstracted": "2026-11-23 09:24:44"
+}

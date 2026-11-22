@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/black-studio-failover-2026-11-16.md",
+ "headings": [
+  "Black (Black) Studio failover - 2026-11-16 ~21:35 (Studio seat)",
+  "Incident",
+  "Remote restart blocked",
+  "Emergency fix applied (this file = the rollback record)",
+  "Restore when Black is healthy",
+  "Capacity note"
+ ],
+ "lead": "Group runs wedged in auto-continue loop; user messages queued. Root cause chain:",
+ "chars": 1659,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,16 @@
+{
+ "path": "memory/synthesis/2026-11-16-status-thread-contradictions.md",
+ "headings": [
+  "2026-11-16 Status-thread synthesis \u2014 fleet state + contradictions flagged",
+  "Fleet state (single source of truth = /api/goals via MEMORY.md GOAL line)",
+  "CONTRADICTIONS FLAGGED (not silently resolved)",
+  "C1 \u2014 Chat self-reports OVERSTATE the ledger (fleet count)",
+  "C2 \u2014 F-VER-01 (Designer #4): agent-vs-agent + internal-MEMORY contradiction",
+  "C3 \u2014 WinError 10013: same symptom, conflicting diagnoses (Mechanic vs prior adjudication)",
+  "C4 \u2014 Orphan/index numbers are DIFFERENT metrics (Archivist vs Scribe) \u2014 note, not a conflict",
+  "Open lanes + named owners (next concrete step each)"
+ ],
+ "lead": "Scribe. Source: this round's per-agent status reports (Builder, Verifier, Designer, Archivist, Mechanic) + MEMORY.md GOAL line + TODO.md LIVE PLAN. Every bullet cites its source; zero untraceable claims.",
+ "chars": 4305,
+ "abstracted": "2026-11-23 09:24:44"
+}

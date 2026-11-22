@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/integrity-designer-lane-cleared-2026-11-22.md",
+ "headings": [
+  "Designer lane integrity cleanup - 2026-11-22",
+  "What was wrong in my lane",
+  "Fix applied (all in memory/designer/)",
+  "Verified (re-ran memory/verifier/memory_integrity.py)",
+  "Resolver gotcha (for anyone adding pointers)",
+  "Handoff (not mine to fix)"
+ ],
+ "lead": "Assist to Verifier's flagged item: \"memory_integrity.py FAILS ~256 issues, contradicting a prior goal closure\".",
+ "chars": 2544,
+ "abstracted": "2026-11-23 09:24:44"
+}

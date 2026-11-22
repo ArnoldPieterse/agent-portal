@@ -1,0 +1,12 @@
+{
+ "path": "memory/scribe/app-css-hex-audit-2026-11-23.md",
+ "headings": [
+  "app.css Hex/RGB Audit \u2014 2026-11-23 (Builder assist for Scribe)",
+  "Results",
+  "Notes",
+  "Supersession"
+ ],
+ "lead": "**Task:** compute `sha12(ui/app.css)` + count hex outside `:root`/`[data-theme]`",
+ "chars": 1158,
+ "abstracted": "2026-11-23 09:24:44"
+}

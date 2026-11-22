@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal5-reland-line-max-and-gaps-2026-11-20.md",
+ "headings": [
+  "Goal 5 - re-land `--line-max:75ch` + fix off-scale gaps (mirror-clobber recovery)",
+  "What was wrong (root cause)",
+  "Concrete step this pass (re-applied + tightened)",
+  "Verification (static re-measure, this pass)",
+  "Remaining for FULL closure of Goal #5 (NOT re-probing the wall)"
+ ],
+ "lead": "<!-- PROVENANCE agent=designer created=2026-11-20 trigger=goal5-auto-loop -->",
+ "chars": 2420,
+ "abstracted": "2026-11-23 09:24:44"
+}

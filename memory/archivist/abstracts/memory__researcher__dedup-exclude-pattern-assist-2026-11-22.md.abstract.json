@@ -1,0 +1,13 @@
+{
+ "path": "memory/researcher/dedup-exclude-pattern-assist-2026-11-22.md",
+ "headings": [
+  "What was done",
+  "Verification run",
+  "AC check against goal #8",
+  "Remaining for full closure",
+  "Files changed"
+ ],
+ "lead": "title: Dedup Engine --exclude-pattern fix (Archivist goal #8 assist)",
+ "chars": 1683,
+ "abstracted": "2026-11-23 09:24:44"
+}

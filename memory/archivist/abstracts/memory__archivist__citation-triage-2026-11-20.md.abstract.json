@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/citation-triage-2026-11-20.md",
+ "headings": [
+  "Citation Triage - 2026-11-20",
+  "Summary",
+  "False-Positive Categories",
+  "Top Actionable Sources (active files, truly broken)",
+  "Recommended Next Steps (for future pass)",
+  "Confidence"
+ ],
+ "lead": "**Agent:** Archivist | **Trigger:** auto-loop pass (evidence upkeep, Goal 2 follow-through)",
+ "chars": 2159,
+ "abstracted": "2026-11-23 09:24:43"
+}

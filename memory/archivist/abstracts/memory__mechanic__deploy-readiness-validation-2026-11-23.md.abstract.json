@@ -1,0 +1,9 @@
+{
+ "path": "memory/mechanic/deploy-readiness-validation-2026-11-23.md",
+ "headings": [
+  "Deploy Readiness Validation - 2026-11-23 (Mechanic auto-loop)"
+ ],
+ "lead": "**What was checked:** All 7 script targets in `memory/mechanic/deploy_all_schtasks.py` verified present + compilable from sandbox.",
+ "chars": 1368,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/concurrency-live-2026-11-22.md",
+ "headings": [
+  "Concurrency Serialization Test (LIVE leg) - Goal #5",
+  "Results",
+  "Serialization Analysis",
+  "Verdict: PASS",
+  "Notes"
+ ],
+ "lead": "Generated: 2026-11-22T17:39:27.133220+00:00",
+ "chars": 1055,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal9-empty-states-pass-2026-11-20.md",
+ "headings": [
+  "Designer Goal #9 (Empty States + Loading Patterns) - pass 2026-11-20",
+  "What ran this pass",
+  "Verification (static)",
+  "Panel empty-state coverage now (Goal #9 \"8+ data panels\")",
+  "Still open for full closure of #9"
+ ],
+ "lead": "Upgraded two non-conforming empty states in `ui/core.js` to use the existing",
+ "chars": 1991,
+ "abstracted": "2026-11-23 09:24:44"
+}

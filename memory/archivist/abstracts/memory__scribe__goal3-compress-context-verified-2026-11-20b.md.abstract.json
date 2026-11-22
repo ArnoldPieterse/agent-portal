@@ -1,0 +1,9 @@
+{
+ "path": "memory/scribe/goal3-compress-context-verified-2026-11-20b.md",
+ "headings": [
+  "Goal 3 Context Compression \u2014 Verified (pass 2, 2026-11-20)"
+ ],
+ "lead": "**What ran:** Fixed `get_gotchas()` in `compress_context.py`:",
+ "chars": 949,
+ "abstracted": "2026-11-23 09:24:44"
+}

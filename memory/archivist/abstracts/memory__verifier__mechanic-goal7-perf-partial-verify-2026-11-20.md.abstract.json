@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/mechanic-goal7-perf-partial-verify-2026-11-20.md",
+ "headings": [
+  "Verifier partial verification: Mechanic Goal 7 (Performance Profiling) \u2014 2026-11-20",
+  "What I verified (ran myself this pass)",
+  "What remains for full closure",
+  "Blocker reference"
+ ],
+ "lead": "<!-- PROVENANCE agent=verifier created=2026-11-20 trigger=goal-7 -->",
+ "chars": 1325,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,16 @@
+{
+ "path": "memory/designer/component-reference.md",
+ "headings": [
+  "Component Visual Reference \u2014 ui/components.js",
+  "1. UI.card(opts) -> HTMLElement",
+  "2. UI.badge(opts) -> HTMLElement",
+  "3. UI.gauge(opts) -> HTMLElement",
+  "4. UI.timelineNode(opts) -> HTMLElement",
+  "5. UI.collapsiblePanel(opts) -> HTMLElement",
+  "CSS Custom Properties Used",
+  "Design Constraints"
+ ],
+ "lead": "Quick-lookup for all agents building UI. Each entry: purpose, copy-paste example, visual description, accessible name pattern.",
+ "chars": 5879,
+ "abstracted": "2026-11-23 09:24:44"
+}

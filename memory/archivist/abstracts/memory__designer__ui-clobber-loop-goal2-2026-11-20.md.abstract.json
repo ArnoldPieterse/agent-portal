@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/ui-clobber-loop-goal2-2026-11-20.md",
+ "headings": [
+  "ui/ CLOBBER LOOP - structural blocker on Designer live-ui goals (2026-11-20)",
+  "What is happening (confirmed this pass)",
+  "Evidence (repeated across passes today)",
+  "Why it is NOT a code bug and NOT NEEDS-HUMAN",
+  "Exact durable unblock (one owner, non-sandbox White/Studio seat)",
+  "Do NOT do from a sandbox seat",
+  "Status of goal #2 specifically"
+ ],
+ "lead": "Parent: memory/goals/designer.md #2 (Animation/Motion System). Siblings: this pass also closes goal #10 (memory/designer/goal10-qa-gate-negative-test-2026-11-20.md).",
+ "chars": 3493,
+ "abstracted": "2026-11-23 09:24:44"
+}

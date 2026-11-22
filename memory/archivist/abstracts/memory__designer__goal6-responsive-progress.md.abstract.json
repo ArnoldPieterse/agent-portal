@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal6-responsive-progress.md",
+ "headings": [
+  "Goal 6 Progress: Responsive Design Hardening",
+  "Fixes Applied (ui/app.css)",
+  "Existing Coverage (verified already present)",
+  "Remaining for Full Closure",
+  "Status"
+ ],
+ "lead": "| `.ft-detail` | Fixed width:230px overflows at 320px viewport | `width:min(230px,calc(100% - 20px))` |",
+ "chars": 1235,
+ "abstracted": "2026-11-23 09:24:44"
+}

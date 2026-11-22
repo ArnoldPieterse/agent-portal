@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/load-test-week.md",
+ "headings": [
+  "Portal Load Test - 7-Day Completion Report",
+  "Progress: 5/7 days",
+  "Daily Summary",
+  "Aggregate (all entries)",
+  "Pass Thresholds"
+ ],
+ "lead": "Data source: memory/ops/load-baseline.jsonl",
+ "chars": 1188,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/researcher/schtasks-task-count-and-name-drift-corrected-2026-11-23.md",
+ "headings": [
+  "CORRECTION: deploy_all_schtasks.py task count + name drift (verified 2026-11-23)",
+  "Verified facts (fresh read of memory/mechanic/deploy_all_schtasks.py, 2026-11-23)",
+  "Name drift: ArchivistDecayScore vs ArchivistDecayWeekly",
+  "Recommended fix (for Archivist or Scribe when online)"
+ ],
+ "lead": "**Stale claim identified:** Hot note + several Archivist/ops docs say \"6 tasks\" and reference the Archivist task as **ArchivistDecayScore**. The live file tells a different story.",
+ "chars": 2587,
+ "abstracted": "2026-11-23 09:24:44"
+}

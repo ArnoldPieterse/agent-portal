@@ -1,0 +1,15 @@
+{
+ "path": "memory/archivist/goal3-deploy-ready-2026-11-23.md",
+ "headings": [
+  "Goal 3 (Freshness Scoring Production) \u2014 Deployment-Ready Check",
+  "Status: ALL PRECONDITIONS MET \u2014 one command on White closes this goal.",
+  "Verified preconditions:",
+  "Remaining step (ONE command on White):",
+  "Post-deploy verification:",
+  "Blocker (already recorded in memory/ops/blockers.md):",
+  "Closure command (after deploy confirms):"
+ ],
+ "lead": "| decay_production.py exists + correct | PASS | 158 lines, functions: score_leaves, auto_archive, alert_recent_low, main |",
+ "chars": 1696,
+ "abstracted": "2026-11-23 09:24:43"
+}

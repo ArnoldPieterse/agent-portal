@@ -1,0 +1,12 @@
+{
+ "path": "memory/scribe/app-css-tokenization-verify-2026-11-23.md",
+ "headings": [
+  "Scribe G8 \ufffd ui/app.css Tokenization Verify (Verifier assist)",
+  "Results",
+  "Method",
+  "Status"
+ ],
+ "lead": "Task: Compute sha12(ui/app.css) + count hex outside :root/[data-theme]",
+ "chars": 991,
+ "abstracted": "2026-11-23 09:24:44"
+}

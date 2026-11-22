@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/goal4-responsive-progress-2026-11-22.md",
+ "headings": [
+  "Goal #4 (Responsive Layout 768px) - Progress Note 2026-11-22",
+  "Changes made this pass:",
+  "Fix 1: Removed stray `body{padding:20px}` from FleetTopology section",
+  "Fix 2: Added `body{overflow-x:hidden}` to @media (max-width:768px)",
+  "Current state vs AC:",
+  "Remaining work for full AC closure:",
+  "Files modified:"
+ ],
+ "lead": "| At 768px all content accessible | PASS - sidebar to icon bar (52px), chat full-width, fleet scrolls h |",
+ "chars": 1922,
+ "abstracted": "2026-11-23 09:24:44"
+}

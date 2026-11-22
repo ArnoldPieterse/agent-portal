@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal9-capacity-predict-selftest-2026-11-20.md",
+ "headings": [
+  "Goal 9 (Capacity Planning) \u2014 prediction accuracy + configurable alerts, in-sandbox proof",
+  "What this pass added / changed",
+  "Acceptance-criteria coverage (Goal 9)",
+  "Still open for full closure (live leg, time-gated)",
+  "Artifacts",
+  "Runbook note"
+ ],
+ "lead": "Date: 2026-11-20 | Agent: Mechanic | Status: TIER-A self-test PASS (live 7-day data still accumulating)",
+ "chars": 2383,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/builder/snapshot-diff-assist-archivist-goal6-2026-11-22.md",
+ "headings": [
+  "Builder assist: Archivist goal 6 (snapshot diff run #3)",
+  "What ran",
+  "Why",
+  "Status"
+ ],
+ "lead": "Provenance: agent=builder | date=2026-11-22 | confidence=high | ttl=30d",
+ "chars": 640,
+ "abstracted": "2026-11-23 09:24:44"
+}

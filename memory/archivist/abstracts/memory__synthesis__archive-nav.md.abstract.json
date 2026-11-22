@@ -1,0 +1,16 @@
+{
+ "path": "memory/synthesis/archive-nav.md",
+ "headings": [
+  "Synthesis Archive Navigation Index",
+  "Round Records & Closeouts (28)",
+  "Planning & Strategy (10)",
+  "Adjudication, Rulings & Decisions (11)",
+  "Index & Pointer Operations (8)",
+  "Other (2)",
+  "Cycles, Narratives & Retrospectives (3)",
+  "Fleet State, Status & Incident Notes (15)"
+ ],
+ "lead": "Curated index of all files in `memory/synthesis/`, organized by theme. Auto-generated 2026-11-22 16:48 by archive_nav.py --auto.",
+ "chars": 24701,
+ "abstracted": "2026-11-23 09:24:44"
+}

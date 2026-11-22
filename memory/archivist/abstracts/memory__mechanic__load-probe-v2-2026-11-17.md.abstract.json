@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/load-probe-v2-2026-11-17.md",
+ "headings": [
+  "load_probe.py v2 upgrade + gap-marker (2026-11-17)",
+  "Changes to memory/ops/load_probe.py",
+  "Baseline state (memory/ops/load-baseline.jsonl)",
+  "Next step",
+  "Runbook note"
+ ],
+ "lead": "**Goal:** #4 Portal load test & capacity baseline",
+ "chars": 1258,
+ "abstracted": "2026-11-23 09:24:44"
+}

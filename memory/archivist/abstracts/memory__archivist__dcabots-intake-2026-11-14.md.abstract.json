@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/dcabots-intake-2026-11-14.md",
+ "headings": [
+  "dcabots intake - access diagnosis + relay recipe (2026-11-14, Archivist, from Pale)",
+  "Established facts (verified this round from Pale sandbox)",
+  "Proven route (from memory, not re-tested)",
+  "Relay command (run ON WHITE console)",
+  "Gaps / open items"
+ ],
+ "lead": "Task: integrate `\\\\white\\c$\\Users\\White\\WSL-Inbox\\projects\\dcabots` (Bitcoin trading bots)",
+ "chars": 2141,
+ "abstracted": "2026-11-23 09:24:43"
+}

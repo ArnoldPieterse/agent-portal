@@ -1,0 +1,15 @@
+{
+ "path": "memory/verifier/hotnote-false-closure-scribe-2026-11-21.md",
+ "headings": [
+  "Hot-Note Claim Verification: Scribe Goals #8 + #10 (Temporal Query API, Weekly Digest)",
+  "Claim under test",
+  "Findings: CLAIM IS FALSE for Temporal Query API + Weekly Digest",
+  "Goal 8 - Temporal Query API",
+  "Goal 10 - Per-Agent Weekly Digest",
+  "Impact",
+  "Recommendation"
+ ],
+ "lead": "Hot note states: \"Goals #7 (Log Rotation), #8 (Temporal Query API), #10 (Weekly Digest) all verified and closed this pass; Scribe al...\"",
+ "chars": 1719,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal2-mirror-heal-tz-fix-2026-11-21.md",
+ "headings": [
+  "Goal 2 - Mirror Heal Timezone Fix (2026-11-21)",
+  "Problem",
+  "Fix (3 changes to memory/ops/mirror_heal.py)",
+  "Verification",
+  "Remaining for full closure",
+  "Status: IN PROGRESS (tz bug fixed, schtask registration pending White access)"
+ ],
+ "lead": "`mirror_heal.py` parsed `memory_mirror.log` timestamps as UTC (`.replace(tzinfo=utc)`),",
+ "chars": 1320,
+ "abstracted": "2026-11-23 09:24:44"
+}

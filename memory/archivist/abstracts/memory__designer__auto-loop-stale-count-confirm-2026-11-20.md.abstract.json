@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/auto-loop-stale-count-confirm-2026-11-20.md",
+ "headings": [
+  "Designer - auto-loop pass 2026-11-20 (stale-count confirmation)",
+  "Finding",
+  "Verification run",
+  "Conclusion"
+ ],
+ "lead": "Auto-loop reported \"1 open\" for Designer lane. Ledger query confirms:",
+ "chars": 666,
+ "abstracted": "2026-11-23 09:24:44"
+}

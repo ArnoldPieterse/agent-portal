@@ -1,0 +1,9 @@
+{
+ "path": "memory/verifier/evidence-hotnote-discrepancy-scribe5-2026-11-21.md",
+ "headings": [
+  "Verification Finding: Hot Note False Closure Claim \u2014 Scribe #5 (2026-11-21)"
+ ],
+ "lead": "**Finding:** Shared memory hot note states \"Scribe goal #5 (card_staleness.py) closed by Archivist; fleet now 60/80 (75%).\"",
+ "chars": 1131,
+ "abstracted": "2026-11-23 09:24:44"
+}

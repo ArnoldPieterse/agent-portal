@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal6-boot-verify-built-2026-11-21.md",
+ "headings": [
+  "Goal #6 - Boot Task Verification: boot_verify.py Built + Tested (2026-11-21)",
+  "What was built this pass",
+  "Self-test results (sandbox seat)",
+  "Acceptance criteria status",
+  "Remaining"
+ ],
+ "lead": "`memory/mechanic/boot_verify.py` (7.8 KB) - post-reboot verification script that checks:",
+ "chars": 1754,
+ "abstracted": "2026-11-23 09:24:44"
+}

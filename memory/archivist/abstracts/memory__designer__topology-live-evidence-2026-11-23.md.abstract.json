@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/topology-live-evidence-2026-11-23.md",
+ "headings": [
+  "Goal #7 Fleet Topology Live Update \u2014 Evidence",
+  "Verification (12/12 selfTest pass)",
+  "Acceptance criteria coverage",
+  "API surface",
+  "Design decisions"
+ ],
+ "lead": "File: ui/topology-live.js (12927B, 352 lines)",
+ "chars": 1550,
+ "abstracted": "2026-11-23 09:24:44"
+}

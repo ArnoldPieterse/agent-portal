@@ -1,0 +1,16 @@
+{
+ "path": "memory/workspace/INDEX.md",
+ "headings": [
+  "WORKSPACE \u2014 git repo, white-share write access, per-agent mini files",
+  "Decisions (one-line rationale)",
+  "Facts",
+  "Convergence \u2014 why no agent seat can run the probe/init (2026-11-12, all seats reported)",
+  "Open items",
+  "Contradictions flagged (r6, not silently resolved)",
+  "Per-agent mini-file layout (RATIFIED r8 \u2014 see O3 closure; original proposal below is superseded)",
+  "Pointer-system check (2026-11-12, Scribe)"
+ ],
+ "lead": "Last updated: 2026-11-13 (Scribe), V102 - upgrade planning meeting run as ID of record (D1); chaired by Orchestrator (orchestrator-v102-chair.md + -delta.md, White seat root); minutes memory/synthesis/2026-11-13-v102-upg",
+ "chars": 49475,
+ "abstracted": "2026-11-23 09:24:44"
+}

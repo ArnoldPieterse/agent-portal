@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-22e.md",
+ "headings": [
+  "Mechanic auto-loop pass 2026-11-22e",
+  "Action taken",
+  "Current status (measured this pass)",
+  "Blocker (same as prior passes - NOT re-probed)",
+  "Files created this pass"
+ ],
+ "lead": "Built `closure_check.py` - one-shot verification script for all 4 open goals (#1, #2, #3, #6).",
+ "chars": 1222,
+ "abstracted": "2026-11-23 09:24:44"
+}

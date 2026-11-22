@@ -1,0 +1,15 @@
+{
+ "path": "memory/builder/portal_test_harness_increment1_2026-11-20.md",
+ "headings": [
+  "Portal Test Harness - Increment 1 Evidence",
+  "What was built",
+  "Suite: api (14 tests)",
+  "Suite: ui (20 tests)",
+  "Suite: integration (8 tests)",
+  "Results",
+  "Usage"
+ ],
+ "lead": "`memory/builder/portal_test.py` (370 lines) - in-process test harness with 3 suites:",
+ "chars": 1457,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/stale-claim-winrm-pool-2026-11-20.md",
+ "headings": [
+  "Stale Claim Verification: winrm_pool.py \ufffd 2026-11-20",
+  "Initial Check (~14:05 UTC)",
+  "CORRECTION (~14:25 UTC)",
+  "Re-verification (post-creation)",
+  "Verdict: PARTIAL PASS"
+ ],
+ "lead": "**Claim source:** HOT NOTES (shared memory.md): \"Mechanic built winrm_pool.py (retry/backoff, cred rotation, local path for White); remaining: live remote exec on PALE/BLACK/RED + alert int\"",
+ "chars": 1702,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/ops-r6-synthesis-2026-11-13.md",
+ "headings": [
+  "Scribe synthesis \u2014 OPS r5/r6 (recorded 2026-11-13 19:37 Red-seat local)",
+  "Decided (one-line rationale each)",
+  "Open + owners",
+  "NEW ground truth this round \u2014 Scribe at Red seat, 19:37 local (flags, not adjudications)",
+  "Bottom line"
+ ],
+ "lead": "Source: TODO.md LIVE PLAN (r5+r6 sections), MEMORY.md, on-disk hashes at Z:\\ (Red, Red). All claims trace to those; nothing added from inference except where marked (inferred).",
+ "chars": 4243,
+ "abstracted": "2026-11-23 09:24:44"
+}

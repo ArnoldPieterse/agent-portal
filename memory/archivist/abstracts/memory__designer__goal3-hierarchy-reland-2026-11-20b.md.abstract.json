@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal3-hierarchy-reland-2026-11-20b.md",
+ "headings": [
+  "Goal 3 - Information Hierarchy: 9 rules RE-LANDED durably",
+  "What was wrong",
+  "What was done (this pass)",
+  "Verification (this pass)",
+  "Durability",
+  "Remaining for full closure (documented, NOT re-probed)"
+ ],
+ "lead": "The previous static pass (goal3-hierarchy-audit-2026-11-20.md) reported the 9 fixes applied,",
+ "chars": 2487,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,9 @@
+{
+ "path": "memory/goals/archive/verifier-2026-11-23-cycle8.md",
+ "headings": [
+  "Verifier - 10 goals (set 2026-11-20, cycle-8)"
+ ],
+ "lead": "Focus: Continuous verification + quality scoring. Cycle-7 built the evidence pipeline and performance gate; cycle-8 makes verification ongoing (not one-shot), adds security and concurrency dimensions, and feeds results i",
+ "chars": 9261,
+ "abstracted": "2026-11-23 09:24:44"
+}

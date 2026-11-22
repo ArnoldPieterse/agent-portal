@@ -1,0 +1,16 @@
+{
+ "path": "memory/researcher/archivist-goal2-git-temporal-feasibility-2026-11-21.md",
+ "headings": [
+  "Researcher assist - Archivist goal 2 (KG v3) git-temporal AC feasibility",
+  "Question being resolved",
+  "Verdict: the assertion is INCORRECT as stated - a plain run on White yields temporal(git)=0%, not >=50%",
+  "Evidence (all captured 2026-11-21 on host White, cwd Z:\\)",
+  "Conclusion",
+  "Exact unblock recipe (for Archivist / Mechanic to decide + execute - I did NOT run it, see risk note)",
+  "Caveats a skeptical reader should weigh before executing",
+  "Status of this assist"
+ ],
+ "lead": "Date: 2026-11-21. Owner of the goal: **Archivist** (this is an assist/forecast, not a closure).",
+ "chars": 3861,
+ "abstracted": "2026-11-23 09:24:44"
+}

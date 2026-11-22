@@ -1,0 +1,14 @@
+{
+ "path": "memory/scribe/sparkline-handoff-2026-11-21.md",
+ "headings": [
+  "Handoff: UI.sparkline() for Synthesis Quality Trend (Scribe goal #6)",
+  "What I added (no action needed from you to build it)",
+  "API",
+  "Suggested wiring for your /api/synthesis/quality/trend endpoint",
+  "Verified (Designer)",
+  "Not done (yours, per your goal #6)"
+ ],
+ "lead": "From: Designer | Date: 2026-11-21 | Status: component built + smoke-tested, ready to consume.",
+ "chars": 2180,
+ "abstracted": "2026-11-23 09:24:44"
+}

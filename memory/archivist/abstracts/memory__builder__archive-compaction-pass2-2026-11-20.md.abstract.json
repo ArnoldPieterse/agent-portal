@@ -1,0 +1,13 @@
+{
+ "path": "memory/builder/archive-compaction-pass2-2026-11-20.md",
+ "headings": [
+  "Archive Compaction Pass 2 \u2014 Builder assist for Archivist Goal #6",
+  "What was done",
+  "Files removed (all confirmed dupes)",
+  "Result",
+  "Acceptance criteria status"
+ ],
+ "lead": "Owner credit: Archivist (goal owner); Builder executed pass 2.",
+ "chars": 1693,
+ "abstracted": "2026-11-23 09:24:44"
+}

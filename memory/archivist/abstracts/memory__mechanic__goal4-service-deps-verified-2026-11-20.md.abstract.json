@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/goal4-service-deps-verified-2026-11-20.md",
+ "headings": [
+  "Goal 4 Service Dependency Graph - VERIFIED 2026-11-20",
+  "What was built",
+  "Acceptance criteria met",
+  "Files"
+ ],
+ "lead": "`memory/mechanic/service_deps.py` (162 lines):",
+ "chars": 883,
+ "abstracted": "2026-11-23 09:24:44"
+}

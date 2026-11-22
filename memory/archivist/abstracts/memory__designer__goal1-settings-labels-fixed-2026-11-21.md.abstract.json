@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal1-settings-labels-fixed-2026-11-21.md",
+ "headings": [
+  "Goal 1 (WCAG) accessible-name leg: settings-dialog labels fixed \u2014 2026-11-21",
+  "What changed in index.html (21 edits, one pin cycle)",
+  "Pin advance (same turn, per pin_guard rule)",
+  "Verification (static, sandbox \u2014 no browser per ops/browser-acceptance-workaround)",
+  "Status"
+ ],
+ "lead": "**Closes:** the open item from `aria-audit-2026-11-21.md` (\"Fixes pending index.html repin\") and the HOT-NOTE known issue (\"Settings dialog uses sibling labels\u2026 23 flagged\").",
+ "chars": 2170,
+ "abstracted": "2026-11-23 09:24:44"
+}

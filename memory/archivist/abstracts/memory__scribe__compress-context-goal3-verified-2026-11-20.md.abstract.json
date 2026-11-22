@@ -1,0 +1,9 @@
+{
+ "path": "memory/scribe/compress-context-goal3-verified-2026-11-20.md",
+ "headings": [
+  "Goal #3 Context Compression \u2014 Verified 2026-11-20"
+ ],
+ "lead": "**What ran:** `python memory/scribe/compress_context.py --agent Scribe` and `--agent Researcher`",
+ "chars": 841,
+ "abstracted": "2026-11-23 09:24:44"
+}

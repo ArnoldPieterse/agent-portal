@@ -1,0 +1,14 @@
+{
+ "path": "memory/scribe/goal6-endpoint-readded-2026-11-20.md",
+ "headings": [
+  "Goal 6 - /api/synthesis/quality endpoint re-added",
+  "What happened",
+  "Fix applied",
+  "Acceptance criteria (re-verified)",
+  "Note on criterion 2",
+  "Artifacts"
+ ],
+ "lead": "The `/api/synthesis/quality` endpoint was missing from agent_portal.py (likely reverted by mirror cycle).",
+ "chars": 1757,
+ "abstracted": "2026-11-23 09:24:44"
+}

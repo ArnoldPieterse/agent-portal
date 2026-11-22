@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal9-empty-states-progress-2026-11-20.md",
+ "headings": [
+  "Goal #9 (Empty States + Loading Patterns) \u2014 progress 2026-11-20",
+  "This pass: wired 2 more panels to the shared empty-state component",
+  "Current empty-state coverage across data panels",
+  "Still open for full acceptance"
+ ],
+ "lead": "Both icons (`robot`, `clock`) exist in the 37-icon set (ui/icons.js). core.js braces/parens balanced (275/275, 983/983).",
+ "chars": 2004,
+ "abstracted": "2026-11-23 09:24:44"
+}

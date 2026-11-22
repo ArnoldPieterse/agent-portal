@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal7-log-rotate-evidence-2026-11-23.md",
+ "headings": [
+  "Goal #7 Log Rotation - Evidence (2026-11-23)",
+  "What was done this pass",
+  "Acceptance criteria status",
+  "Remaining for full closure",
+  "Script location"
+ ],
+ "lead": "1. **Fixed FLEET_ROOT bug**: Script was scanning only `memory/` (0 old files found) instead of the full project tree. Changed from `dirname x2` to `dirname x3` so it scans from project root. Now finds all .log/.jsonl fil",
+ "chars": 1857,
+ "abstracted": "2026-11-23 09:24:44"
+}

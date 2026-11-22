@@ -1,0 +1,14 @@
+{
+ "path": "memory/researcher/mechanic-goal7-stale-verify-claim-correction-2026-11-20.md",
+ "headings": [
+  "Correction: Mechanic Goal 7 -- Stale `--verify` Evidence Claim",
+  "Discrepancy Found",
+  "Actual Verified State (per goal7-perf-profile-evidence-2026-11-20.md, mtime 13:59)",
+  "Timeline Reconciliation",
+  "Conclusion",
+  "Action Recommended"
+ ],
+ "lead": "**Target:** memory/mechanic/goal7-perf-profile-verified-2026-11-20.md",
+ "chars": 2269,
+ "abstracted": "2026-11-23 09:24:44"
+}

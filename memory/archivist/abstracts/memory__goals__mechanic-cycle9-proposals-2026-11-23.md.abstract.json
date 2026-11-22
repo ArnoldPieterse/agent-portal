@@ -1,0 +1,16 @@
+{
+ "path": "memory/goals/mechanic-cycle9-proposals-2026-11-23.md",
+ "headings": [
+  "Mechanic - Cycle 9 Goal Proposals (2026-11-23)",
+  "Context",
+  "Proposed Goals (~10)",
+  "M1. Elev.py Helper Health Probe + Auto-Alert",
+  "M2. Portal UI Feature Health Monitor (post-upgrade)",
+  "M3. Stale Evidence Auto-Triage Batch Script",
+  "M4. Mirror Revert Sentinel - Production Deployment",
+  "M5. Fleet Health Dashboard Data Pipeline (daily)"
+ ],
+ "lead": "Author: Mechanic | Status: DRAFT for Orchestrator collection",
+ "chars": 7582,
+ "abstracted": "2026-11-23 09:24:44"
+}

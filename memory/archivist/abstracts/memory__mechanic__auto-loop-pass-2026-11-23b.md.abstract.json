@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-23b.md",
+ "headings": [
+  "Mechanic Auto-Loop Pass - 2026-11-23 (this cycle)",
+  "Goals closed this pass: 5",
+  "Total selftest passes: 184/184",
+  "Notes:",
+  "Goal status: 9/10 verified (only #4 circuit breaker pending live endpoint test from non-sandbox seat)"
+ ],
+ "lead": "| Goal | Script | Selftest | Key features |",
+ "chars": 1088,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/builder/goal3_error_boundary_2026-11-22.md",
+ "headings": [
+  "Goal 3: Portal Error Boundary - Progress (2026-11-22)",
+  "What was added to ui/core.js:",
+  "Verification:",
+  "Remaining:"
+ ],
+ "lead": "1. **ApiError class** - structured error with status, path, transient flag ([408,500,502,503])",
+ "chars": 1318,
+ "abstracted": "2026-11-23 09:24:44"
+}

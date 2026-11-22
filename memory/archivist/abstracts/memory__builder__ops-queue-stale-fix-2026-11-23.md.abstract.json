@@ -1,0 +1,9 @@
+{
+ "path": "memory/builder/ops-queue-stale-fix-2026-11-23.md",
+ "headings": [
+  "Non-Sandbox Queue Stale Fix (Builder team-contrib, 2026-11-23)"
+ ],
+ "lead": "**What:** `memory/ops/non-sandbox-queue.md` listed only 4 task names for `deploy_all_schtasks.py`",
+ "chars": 732,
+ "abstracted": "2026-11-23 09:24:44"
+}

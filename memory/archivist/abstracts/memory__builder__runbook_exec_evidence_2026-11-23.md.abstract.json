@@ -1,0 +1,12 @@
+{
+ "path": "memory/builder/runbook_exec_evidence_2026-11-23.md",
+ "headings": [
+  "Evidence: Runbook Parser + Executor (Goal #9) - 2026-11-23",
+  "Artifact",
+  "Tests Performed",
+  "Acceptance Criteria Met"
+ ],
+ "lead": "1. **Parse test** --dry-run on safe_test.md: 3/3 steps extracted with correct fields (command, expected, timeout, rollback_command)",
+ "chars": 796,
+ "abstracted": "2026-11-23 09:24:44"
+}

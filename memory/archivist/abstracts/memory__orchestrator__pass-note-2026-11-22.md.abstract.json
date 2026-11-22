@@ -1,0 +1,11 @@
+{
+ "path": "memory/orchestrator/pass-note-2026-11-22.md",
+ "headings": [
+  "Orchestrator Pass Note - 2026-11-22 ~15:07",
+  "Actions this pass",
+  "Fleet status"
+ ],
+ "lead": "1. Fleet integrity check: agents.json valid, 8/8 agents present, all bindings intact (SHA 112e501985256c2e).",
+ "chars": 880,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal4-load-probe-remote-upgrade-2026-11-17.md",
+ "headings": [
+  "Goal 4: load_probe.py remote-host upgrade + reachability finding (2026-11-17)",
+  "What was done",
+  "Key finding: portal unreachable from Red",
+  "Baseline data status",
+  "Next step (when White is reachable / portal running)"
+ ],
+ "lead": "instead of silently writing all-error data points",
+ "chars": 1624,
+ "abstracted": "2026-11-23 09:24:44"
+}

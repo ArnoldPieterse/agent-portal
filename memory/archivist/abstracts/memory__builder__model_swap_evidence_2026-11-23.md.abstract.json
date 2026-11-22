@@ -1,0 +1,11 @@
+{
+ "path": "memory/builder/model_swap_evidence_2026-11-23.md",
+ "headings": [
+  "Model Swap Automation - Evidence",
+  "Verification Results: 10/10 PASS",
+  "Notes"
+ ],
+ "lead": "**Self-test:** memory/builder/model_swap_selftest.py",
+ "chars": 849,
+ "abstracted": "2026-11-23 09:24:44"
+}

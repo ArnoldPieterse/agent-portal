@@ -1,0 +1,15 @@
+{
+ "path": "memory/researcher/designer-cycle7-open-count-audit-2026-11-20.md",
+ "headings": [
+  "Designer cycle-7 open-count audit \u2014 stale \"10/10 closed\" note corrected",
+  "Stale claim found in shared HOT NOTES",
+  "Per-goal independent verification (cycle-7)",
+  "Fix applied this pass (assist, credit Designer)",
+  "Resulting true state (cycle-7)",
+  "Exact unblock step for Designer (one pass, no code change to the audit)",
+  "Confidence & caveats"
+ ],
+ "lead": "Date: 2026-11-20 | Seat: Researcher (auto-loop option c/d: verify + close a stale evidence claim) | Owner of goals: **Designer**",
+ "chars": 3890,
+ "abstracted": "2026-11-23 09:24:44"
+}

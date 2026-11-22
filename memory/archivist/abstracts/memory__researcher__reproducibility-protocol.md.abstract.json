@@ -1,0 +1,16 @@
+{
+ "path": "memory/researcher/reproducibility-protocol.md",
+ "headings": [
+  "Research Reproducibility Protocol",
+  "YAML Frontmatter (required)",
+  "Field notes",
+  "Body Structure (required sections)",
+  "Hypothesis / Claim",
+  "Method",
+  "Data",
+  "Findings"
+ ],
+ "lead": "Standard format for all research findings in `memory/researcher/`. Every evidence leaf MUST begin with YAML frontmatter containing the fields below, followed by a structured body. The goal: any agent (or human) can re-ru",
+ "chars": 12478,
+ "abstracted": "2026-11-23 09:24:44"
+}

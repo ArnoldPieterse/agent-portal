@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal7-perf-profile-progress-2026-11-20b.md",
+ "headings": [
+  "Goal 7: Performance Profiling - Progress Update (2026-11-20 pass)",
+  "What was done this pass:",
+  "Remaining for closure (single step):",
+  "Blocker:",
+  "Artifact:"
+ ],
+ "lead": "1. Added `--verify` mode to `perf_profile.py` - explicit acceptance criteria checker",
+ "chars": 1047,
+ "abstracted": "2026-11-23 09:24:44"
+}

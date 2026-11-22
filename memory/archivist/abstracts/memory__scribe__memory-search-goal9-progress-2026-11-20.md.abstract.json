@@ -1,0 +1,14 @@
+{
+ "path": "memory/scribe/memory-search-goal9-progress-2026-11-20.md",
+ "headings": [
+  "Scribe Goal 9 (Institutional Memory Search) - PARTIAL progress 2026-11-20",
+  "What was built this pass",
+  "Verification (ran this pass)",
+  "Known fix this pass",
+  "Remaining (next step, NOT done)",
+  "Acceptance mapping"
+ ],
+ "lead": "Status: **PARTIAL** - backend complete + unit-verified; UI (header search box + results panel) still pending.",
+ "chars": 2478,
+ "abstracted": "2026-11-23 09:24:44"
+}

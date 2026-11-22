@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/cross-seat-protocol-overclaim-2026-11-22.md",
+ "headings": [
+  "VERIFICATION FINDING: Orchestrator Goal #6 (Cross-Seat Coordination Protocol)",
+  "Acceptance Criteria (from goal text)",
+  "Evidence",
+  "Verdict",
+  "Recommended Action"
+ ],
+ "lead": "**Status:** EVIDENCE INSUFFICIENT - goal should NOT count as reached",
+ "chars": 1372,
+ "abstracted": "2026-11-23 09:24:44"
+}

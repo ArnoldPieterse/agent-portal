@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal7-perf-profile-built-2026-11-20.md",
+ "headings": [
+  "Goal 7: Performance Profiling - Built + Selftest Passed (2026-11-20)",
+  "Status: SCRIPT BUILT, LIVE RUN PENDING HOST ACCESS",
+  "What was done:",
+  "Blocker:",
+  "Acceptance criteria check:"
+ ],
+ "lead": "Sandbox cannot reach localhost:8099 (WinError 10013 - socket access forbidden).",
+ "chars": 1097,
+ "abstracted": "2026-11-23 09:24:44"
+}

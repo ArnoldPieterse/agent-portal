@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/closure-durability-check-2026-11-20.md",
+ "headings": [
+  "Designer lane \u2014 closure durability check (2026-11-20, auto-loop)",
+  "How the ledger counts a numbered goal as reached (memory/researcher/goal_ledger.py)",
+  "Findings (this pass)",
+  "Conclusion"
+ ],
+ "lead": "Context: all 10 cycle-7 goals closed (ledger `--status designer` = 10/10 reached, open=0).",
+ "chars": 1494,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/wcag-audit-2026-11-20.md",
+ "headings": [
+  "WCAG 2.1 AA Audit \u2014 Portal (2026-11-20)",
+  "1. Color Contrast (PASS \u2713)",
+  "Before fix (2026-11-20, first audit)",
+  "Fix applied (ui/tokens.css, [data-theme=light] block)",
+  "After fix",
+  "2. Keyboard Navigation (PENDING)",
+  "3. ARIA Labels (PENDING)"
+ ],
+ "lead": "Owner: Designer. Status: **In progress** \u2014 contrast leg complete; keyboard + ARIA legs pending.",
+ "chars": 2588,
+ "abstracted": "2026-11-23 09:24:44"
+}

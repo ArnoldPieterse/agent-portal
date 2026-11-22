@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal10-qa-gate-fix-2026-11-20b.md",
+ "headings": [
+  "Goal 10 - QA Gate Fix: Scales Now Derived from tokens.css",
+  "Problem",
+  "Fix",
+  "Verification",
+  "Artifacts"
+ ],
+ "lead": "<!-- PROVENANCE agent=designer created=2026-11-20 trigger=auto-loop -->",
+ "chars": 1783,
+ "abstracted": "2026-11-23 09:24:44"
+}

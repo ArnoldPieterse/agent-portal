@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal4-pale-black-dryrun-2026-11-18.md",
+ "headings": [
+  "Goal #4 Evidence: Pale + Black Dry-Run Confirmed (2026-11-18)",
+  "Test",
+  "Results (2026-11-18T02:52:33Z)",
+  "Verdict",
+  "Remaining for full closure",
+  "Runbook note"
+ ],
+ "lead": "`python reboot_recovery_test.py --dry-run` from White sandbox seat.",
+ "chars": 1249,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/goal6-synthesis-quality-verified-2026-11-20.md",
+ "headings": [
+  "Goal 6: Synthesis Quality Scoring - Verified",
+  "What was done",
+  "Acceptance test results",
+  "Fleet average",
+  "Files changed"
+ ],
+ "lead": "Added `_synthesis_quality()` function + `/api/synthesis/quality` endpoint to agent_portal.py.",
+ "chars": 1056,
+ "abstracted": "2026-11-23 09:24:44"
+}

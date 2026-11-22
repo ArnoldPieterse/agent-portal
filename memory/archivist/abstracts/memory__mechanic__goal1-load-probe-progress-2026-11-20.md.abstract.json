@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal1-load-probe-progress-2026-11-20.md",
+ "headings": [
+  "Goal #1 - Load Probe Progress: 5/7 days (2026-11-20)",
+  "Current state",
+  "Trend (avg p50 across all concurrency levels per day)",
+  "Closure command (run Nov 22+)",
+  "No action needed until Nov 22"
+ ],
+ "lead": "Trend: downward (improving). No regression >30% between consecutive days.",
+ "chars": 1050,
+ "abstracted": "2026-11-23 09:24:44"
+}

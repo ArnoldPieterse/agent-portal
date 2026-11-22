@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/evidence-goal3-freshness-sla-progress-2026-11-20.md",
+ "headings": [
+  "Evidence: Goal #3 - Memory Freshness SLA (PROGRESS)",
+  "What was done this pass",
+  "Verification",
+  "Artifacts",
+  "Remaining for full closure",
+  "Commands"
+ ],
+ "lead": "Built and ran `memory/archivist/freshness_report.py` implementing the tier system:",
+ "chars": 1289,
+ "abstracted": "2026-11-23 09:24:43"
+}

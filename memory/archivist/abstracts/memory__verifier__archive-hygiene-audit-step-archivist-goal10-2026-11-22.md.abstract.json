@@ -1,0 +1,14 @@
+{
+ "path": "memory/verifier/archive-hygiene-audit-step-archivist-goal10-2026-11-22.md",
+ "headings": [
+  "Archive Hygiene Audit \u2014 Partial Verification (Verifier assist, 2026-11-22)",
+  "What was checked",
+  "Results",
+  "Files missing provenance headers (23)",
+  "Recommended fix (one-liner per file)",
+  "Status"
+ ],
+ "lead": "**Goal**: Archivist #10 \u2014 Verify all files in memory/goals/archive/ and memory/archivist/archive/ have: date stamp in filename, provenance header (agent + reason), correct content (not truncated).",
+ "chars": 1844,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/archivist-goal10-kg-export-verified-2026-11-20.md",
+ "headings": [
+  "Archivist Goal #10 (KG Export + Import) - Stale Claim RESOLVED",
+  "Context",
+  "Acceptance criteria verification (re-run live 2026-11-20)",
+  "Note on count drift",
+  "Verdict"
+ ],
+ "lead": "Status: VERIFIED PASS - all acceptance criteria met",
+ "chars": 1364,
+ "abstracted": "2026-11-23 09:24:44"
+}

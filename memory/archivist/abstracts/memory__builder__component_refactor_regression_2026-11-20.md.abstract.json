@@ -1,0 +1,13 @@
+{
+ "path": "memory/builder/component_refactor_regression_2026-11-20.md",
+ "headings": [
+  "Builder Goal #1 \u2014 Component Library Integration v2: regression verification",
+  "What ran this pass",
+  "Measured results",
+  "Acceptance-criteria status (honest, not over-claimed)",
+  "Verdict"
+ ],
+ "lead": "Headless regression + reference-integrity check on the core.js component refactor.",
+ "chars": 2075,
+ "abstracted": "2026-11-23 09:24:44"
+}

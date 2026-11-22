@@ -1,0 +1,11 @@
+{
+ "path": "memory/verifier/mechanic-goal4-circuit-breaker-verify-2026-11-22.md",
+ "headings": [
+  "Verifier independent re-check \u2014 Mechanic #4 circuit breaker (2026-11-22)",
+  "Evidence (this pass, sandbox \u2014 no network needed)",
+  "Verdict"
+ ],
+ "lead": "**Purpose:** Closure of Mechanic goal #4's unit-test leg previously rested ONLY on",
+ "chars": 1366,
+ "abstracted": "2026-11-23 09:24:44"
+}

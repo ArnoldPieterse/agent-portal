@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/r20-seat-change-and-ac-a2-live-leg-2026-11-14.md",
+ "headings": [
+  "Mechanic r20 (2026-11-14 ~02:5x, Red seat) - seat change + fleet probe + AC-A2-2 live-leg handoff",
+  "1. SEAT CHANGE: White -> Red (durable until next rebind)",
+  "2. Fleet probe 02:46 (lan_probe.py, Red seat)",
+  "3. AC-A2-2 LIVE LEG - handoff (owner still Mechanic, executor must be White-side)",
+  "Runbook one-liners"
+ ],
+ "lead": "",
+ "chars": 2971,
+ "abstracted": "2026-11-23 09:24:44"
+}

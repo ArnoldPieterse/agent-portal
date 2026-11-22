@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/stale-citation-remediation-2026-11-21.md",
+ "headings": [
+  "Stale-Citation Remediation Priorities (from citation-map.json)",
+  "Triage summary",
+  "Work queue: live files whose citations may be stale",
+  "Recommended process (per live file)",
+  "Notes / gaps"
+ ],
+ "lead": "Source: memory/archivist/citation-map.json (generated 2026-11-20T13:44:00Z).",
+ "chars": 3231,
+ "abstracted": "2026-11-23 09:24:43"
+}

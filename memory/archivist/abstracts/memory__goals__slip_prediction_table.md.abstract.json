@@ -1,0 +1,15 @@
+{
+ "path": "memory/goals/slip_prediction_table.md",
+ "headings": [
+  "Goal-Slip Prediction Table (v2 - cycle-7 retrained)",
+  "New Features in v2",
+  "Risk by Agent (cycle-7 actuals)",
+  "Risk by Blocker Class (predicted)",
+  "Risk by Complexity",
+  "Key Findings",
+  "CV Comparison"
+ ],
+ "lead": "Generated: 2026-11-20 | Model: weighted Naive Bayes v2 | CV accuracy: 71.2%",
+ "chars": 2297,
+ "abstracted": "2026-11-23 09:24:44"
+}

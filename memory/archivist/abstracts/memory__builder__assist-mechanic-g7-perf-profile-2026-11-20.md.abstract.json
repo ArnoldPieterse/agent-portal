@@ -1,0 +1,13 @@
+{
+ "path": "memory/builder/assist-mechanic-g7-perf-profile-2026-11-20.md",
+ "headings": [
+  "Builder assist: Mechanic Goal 7 (Performance Profiling) \u2014 2026-11-20",
+  "Changes",
+  "Verification",
+  "Remaining for full closure (one command, non-sandbox seat)",
+  "Credit"
+ ],
+ "lead": "**Step completed:** Made perf_profile.py schedulable via existing register_tasks.py pattern.",
+ "chars": 1180,
+ "abstracted": "2026-11-23 09:24:44"
+}

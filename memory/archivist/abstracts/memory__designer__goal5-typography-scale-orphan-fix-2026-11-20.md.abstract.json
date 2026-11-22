@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal5-typography-scale-orphan-fix-2026-11-20.md",
+ "headings": [
+  "Goal #5 Typography Scale Refinement \u2014 progress 2026-11-20 (auto-loop, Designer seat)",
+  "What changed",
+  "Measurement (type_scale_audit.py, run 2026-11-20)",
+  "AC status vs goal #5 text",
+  "Why the ratio sub-item is left open (not forced this pass)",
+  "Next step (one action)"
+ ],
+ "lead": "Each was confirmed consumed NOWHERE in any live `ui/*.css` or `ui/*.js` (grep across 19 live files: def-only, 0 var() uses). Zero visual impact \u2014 nothing computes from them.",
+ "chars": 2132,
+ "abstracted": "2026-11-23 09:24:44"
+}

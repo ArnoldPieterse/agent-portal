@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/health-baseline-2026-11-21.md",
+ "headings": [
+  "Memory Health Baseline \u2014 2026-11-21",
+  "Measurements (all run 2026-11-21, full tree)",
+  "Notes",
+  "Goal status",
+  "What a future pass should do"
+ ],
+ "lead": "Owner: Archivist. Dated snapshot of knowledge-integrity checks so future auto-loop passes can trust this baseline instead of re-probing (anti-loop).",
+ "chars": 1561,
+ "abstracted": "2026-11-23 09:24:43"
+}

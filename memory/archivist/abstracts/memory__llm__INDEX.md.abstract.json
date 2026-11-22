@@ -1,0 +1,11 @@
+{
+ "path": "memory/llm/INDEX.md",
+ "headings": [
+  "LLM INDEX \u2014 index of indexes for LLM instances & routing.",
+  "Entries (keyword -> pointer | use case)",
+  "Global pointers"
+ ],
+ "lead": "Last updated: 2026-11-15. Ground truth = nvidia-smi per-GPU VRAM, never /v1/models alone.",
+ "chars": 1768,
+ "abstracted": "2026-11-23 09:24:44"
+}

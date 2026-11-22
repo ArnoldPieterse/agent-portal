@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/net_probe_real_hosts_20261118-213151.md",
+ "headings": [
+  "Evidence: net_probe.py upgraded to real host IPs",
+  "What changed",
+  "Verification",
+  "Status"
+ ],
+ "lead": "Goal: One-pass probe script covering all four hosts (White/Pale/Black/Red)",
+ "chars": 818,
+ "abstracted": "2026-11-23 09:24:44"
+}

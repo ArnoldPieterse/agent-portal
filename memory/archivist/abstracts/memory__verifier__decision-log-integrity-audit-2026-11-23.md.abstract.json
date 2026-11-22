@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/decision-log-integrity-audit-2026-11-23.md",
+ "headings": [
+  "Decision Log Integrity Audit - 2026-11-23",
+  "Checks performed:",
+  "Time span covered:",
+  "Report artifact:"
+ ],
+ "lead": "**Script:** `memory/verifier/decision_log_audit.py`",
+ "chars": 786,
+ "abstracted": "2026-11-23 09:24:44"
+}

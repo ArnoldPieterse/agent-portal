@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal10-runbook-all5-verified-2026-11-20.md",
+ "headings": [
+  "Mechanic Goal #10 - Runbook Automation: All 5 Scripts Verified",
+  "Scripts (all exist, all pass py_compile)",
+  "Evidence",
+  "Remaining (non-sandbox)",
+  "Verdict: PASS (sandbox-verifiable acceptance criteria met)"
+ ],
+ "lead": "Status: VERIFIED (sandbox-leg complete; live legs deferred to non-sandbox seat)",
+ "chars": 1574,
+ "abstracted": "2026-11-23 09:24:44"
+}

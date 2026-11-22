@@ -1,0 +1,14 @@
+{
+ "path": "memory/researcher/anomaly-narratives/narratives-2026-11-23_0801.md",
+ "headings": [
+  "Anomaly Narratives - 2026-11-23_0801",
+  "[MEDIUM] Health Drop",
+  "[HIGH] Vram Breach",
+  "[HIGH] Agent Unresponsive",
+  "[LOW] Goal Slip",
+  "[MEDIUM] Response Spike"
+ ],
+ "lead": "Fleet health score fell from 78 to 62 (16 pts) at 14:00 UTC. Primary driver: Archivist seat unreachable 3 probes. Recommended action: verify White GPU and reload model.",
+ "chars": 987,
+ "abstracted": "2026-11-23 09:24:44"
+}

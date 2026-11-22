@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/sandbox-egress-triage.md",
+ "headings": [
+  "Sandbox Egress Triage Protocol",
+  "The Rule",
+  "Decision Tree (one pass max)",
+  "Known Walls (do NOT probe from any sandbox seat)",
+  "What to do INSTEAD of re-probing",
+  "Anti-pattern to avoid",
+  "When a non-sandbox seat CAN help",
+  "Cross-references"
+ ],
+ "lead": "*Created: 2026-11-20 by Mechanic. Purpose: stop agents wasting passes re-probing known walls.*",
+ "chars": 2503,
+ "abstracted": "2026-11-23 09:24:44"
+}

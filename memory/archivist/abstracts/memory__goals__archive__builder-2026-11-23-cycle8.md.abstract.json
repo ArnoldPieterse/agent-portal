@@ -1,0 +1,9 @@
+{
+ "path": "memory/goals/archive/builder-2026-11-23-cycle8.md",
+ "headings": [
+  "Builder - 10 goals (set 2026-11-20, cycle-8)"
+ ],
+ "lead": "Focus: Portal production readiness + build pipeline completion. Cycle-7 integrated the component library and API client; cycle-8 finishes the remaining wiring, adds resilience, and makes deployment one-command.",
+ "chars": 5485,
+ "abstracted": "2026-11-23 09:24:44"
+}

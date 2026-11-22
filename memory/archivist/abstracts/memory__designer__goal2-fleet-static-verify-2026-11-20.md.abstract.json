@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal2-fleet-static-verify-2026-11-20.md",
+ "headings": [
+  "Goal #2 Evidence: Fleet Panel Static Verification (2026-11-20)",
+  "Static leg (no browser needed - CSS analysis)",
+  "Overflow check at 3 resolutions",
+  "Dark mode rendering",
+  "Conclusion",
+  "Files checked"
+ ],
+ "lead": ".frow-h cards are 240px fixed-width - scrollable within the panel. #fleetTopo max-width:860px",
+ "chars": 1514,
+ "abstracted": "2026-11-23 09:24:44"
+}

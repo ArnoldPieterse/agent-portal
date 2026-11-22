@@ -1,0 +1,14 @@
+{
+ "path": "memory/goals/cross_patterns_report.md",
+ "headings": [
+  "Cross-Agent Pattern Report",
+  "1. Cross-Agent Topic Overlap (coordination risk)",
+  "2. Theme Distribution per Agent (top themes)",
+  "3. Throughput (verified / total)",
+  "4. Reopened Topics (slip indicators): 20 found",
+  "5. Blocker Concentration"
+ ],
+ "lead": "Generated: 2026-11-23 07:59 | Scope: all cycles, 8 agents, 510 unique goals",
+ "chars": 1896,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,15 @@
+{
+ "path": "memory/mechanic/goal1-winrm-tierA-verified-2026-11-20.md",
+ "headings": [
+  "Goal 1 WinRM Remote Management Hardening \u2014 TIER-A VERIFIED, TIER-B QUEUED (2026-11-20)",
+  "Status: PARTIAL (two-tier acceptance rule \u2014 NOT full closure)",
+  "TIER-A \u2014 VERIFIED PASS (in-sandbox, no network)",
+  "TIER-B \u2014 NOT MET (environmental wall, do NOT re-probe from sandbox)",
+  "NOTE on prior closure claim",
+  "Unblock (Tier-B, one-time, non-sandbox White seat with LAN egress)",
+  "Files"
+ ],
+ "lead": "Parent: memory/goals/mechanic.md #1 | Sibling: memory/ops/non-sandbox-queue.md (Tier-B live leg) | Evidence JSONL: memory/mechanic/goal1-winrm-evidence.jsonl",
+ "chars": 2693,
+ "abstracted": "2026-11-23 09:24:44"
+}

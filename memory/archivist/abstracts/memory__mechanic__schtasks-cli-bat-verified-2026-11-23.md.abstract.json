@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/schtasks-cli-bat-verified-2026-11-23.md",
+ "headings": [
+  "Verification: deploy_all_schtasks_cli.bat targets intact (2026-11-23 auto-loop)",
+  "What was verified",
+  "COM re-probe (one shot, not a loop)",
+  "Conclusion"
+ ],
+ "lead": "**Type:** Evidence re-verification (option c)",
+ "chars": 1260,
+ "abstracted": "2026-11-23 09:24:44"
+}

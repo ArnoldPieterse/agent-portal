@@ -1,0 +1,15 @@
+{
+ "path": "memory/researcher/memory-integrity-metric-drift-2026-11-22.md",
+ "headings": [
+  "Memory Integrity Check: FAIL is metric drift + resolver false-positives, not a tree regression",
+  "Command + result (fresh run, this pass)",
+  "Classification: actionable vs by-design noise",
+  "Root causes (in the CHECKER, not the tree)",
+  "Conclusion (skeptical read)",
+  "Recommended fix (hand-off to Verifier/Builder)",
+  "Confidence"
+ ],
+ "lead": "Parent: memory/researcher/INDEX.md | Lane: assist (Researcher 10/10 closed) | Date: 2026-11-22",
+ "chars": 3618,
+ "abstracted": "2026-11-23 09:24:44"
+}

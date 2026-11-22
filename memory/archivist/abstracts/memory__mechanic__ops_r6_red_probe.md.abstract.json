@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/ops_r6_red_probe.md",
+ "headings": [
+  "OPS r6 - Mechanic probe from Red seat (2026-11-13 19:39 local)",
+  "Fleet health (from Red, Red)",
+  "Key finding: restart-as-written is likely a NO-OP",
+  "Missing bundle step (before Arnold's restart)",
+  "Staging constraint",
+  "Runbook one-liner"
+ ],
+ "lead": "=> portal down OR localhost-bound (indistinguishable from LAN; WinRM closed). Arnold to confirm on White: `python probe_portal.py`.",
+ "chars": 2231,
+ "abstracted": "2026-11-23 09:24:44"
+}

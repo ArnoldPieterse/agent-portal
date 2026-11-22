@@ -1,0 +1,9 @@
+{
+ "path": "memory/designer/regression-measurement-2026-11-20.md",
+ "headings": [
+  "Designer regression sweep \u2014 2026-11-20 (auto-loop pass)"
+ ],
+ "lead": "No open designer goals (ledger: designer 10/10 reached, open=0). The auto-loop \"1 open\" was a stale dashboard count; live `goal_ledger.py --status` is authoritative.",
+ "chars": 768,
+ "abstracted": "2026-11-23 09:24:44"
+}

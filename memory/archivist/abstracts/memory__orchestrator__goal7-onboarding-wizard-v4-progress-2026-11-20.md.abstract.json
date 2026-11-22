@@ -1,0 +1,14 @@
+{
+ "path": "memory/orchestrator/goal7-onboarding-wizard-v4-progress-2026-11-20.md",
+ "headings": [
+  "Goal 7: Fleet Onboarding Wizard v4 \u2014 Interactive CLI (progress 2026-11-20)",
+  "What was built this pass",
+  "Verification (all PASS this pass)",
+  "Real round-trip executed 2026-11-20 ~08:45 (PASS)",
+  "Closure",
+  "Files changed"
+ ],
+ "lead": "Extended `onboard_agent.py` with a full interactive wizard mode (`--interactive` / `-i`):",
+ "chars": 2743,
+ "abstracted": "2026-11-23 09:24:44"
+}

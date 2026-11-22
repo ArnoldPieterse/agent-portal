@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/briefing-accuracy-audit-2026-11-22.md",
+ "headings": [
+  "Scribe Pass Note - Briefing Accuracy Audit (2026-11-22)",
+  "Action",
+  "Rationale",
+  "Artifacts Modified",
+  "Remaining Gap"
+ ],
+ "lead": "Ran briefing_freshness.py across all 8 agents. Found 2 briefings with incorrect status lines:",
+ "chars": 1164,
+ "abstracted": "2026-11-23 09:24:44"
+}

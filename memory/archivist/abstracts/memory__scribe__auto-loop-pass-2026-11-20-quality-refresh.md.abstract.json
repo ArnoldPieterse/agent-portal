@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/auto-loop-pass-2026-11-20-quality-refresh.md",
+ "headings": [
+  "Scribe auto-loop pass 2026-11-20 \u2014 quality refresh + lane reconciliation",
+  "Lane state",
+  "Concrete step this pass (self-contained, no Researcher dependency)",
+  "Also checked (not committed)",
+  "Open threads / next"
+ ],
+ "lead": "**Date:** 2026-11-20 (auto-loop batch pass)",
+ "chars": 1714,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/capacity-trend-visual-spec.md",
+ "headings": [
+  "Capacity & Trend Strip \u2014 Visual Spec (Designer assist, 2026-11-21)",
+  "Goal",
+  "Data sources (already exist)",
+  "Placement",
+  "Threshold bands (reuse existing tokens)",
+  "Sparkline",
+  "States (reuse existing components \u2014 do NOT invent new ones)",
+  "Breach chip (the one new element)"
+ ],
+ "lead": "Owner: Mechanic (data pipeline already built). This spec defines how to present it in the portal fleet tab. No host access required to implement \u2014 pure frontend over existing data.",
+ "chars": 3577,
+ "abstracted": "2026-11-23 09:24:44"
+}

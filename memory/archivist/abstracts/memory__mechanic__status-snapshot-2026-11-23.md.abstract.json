@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/status-snapshot-2026-11-23.md",
+ "headings": [
+  "Mechanic Status Snapshot \u2014 2026-11-23 (auto-loop pass)",
+  "Verified state (all code intact, py_compile clean)",
+  "Single unblocking command (non-sandbox White, admin)",
+  "Sandbox limitations confirmed this pass (2026-11-23)",
+  "Integrity check"
+ ],
+ "lead": "| Goal | Code status | Tests | Remaining leg | Unblock via |",
+ "chars": 1887,
+ "abstracted": "2026-11-23 09:24:44"
+}

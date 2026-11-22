@@ -1,0 +1,11 @@
+{
+ "path": "memory/archivist/maintenance-2026-11-21.md",
+ "headings": [
+  "Maintenance Pass 2026-11-21",
+  "Actions",
+  "Status"
+ ],
+ "lead": "1. **xref_check.py re-run**: PASS \u2014 7467 files, 0 broken pointers, 0 broken INDEX entries, 0 circular chains (0.9s)",
+ "chars": 752,
+ "abstracted": "2026-11-23 09:24:43"
+}

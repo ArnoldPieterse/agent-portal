@@ -1,0 +1,14 @@
+{
+ "path": "memory/researcher/evidence-marker-content-audit-2026-11-20.md",
+ "headings": [
+  "Evidence-Marker Content Audit (Researcher, 2026-11-20)",
+  "Systemic finding",
+  "Method",
+  "Results (7 true dangling refs, classified)",
+  "Recommended fix (workflow improvement, option-b)",
+  "Action taken this pass"
+ ],
+ "lead": "Owner: Researcher. Context: at 100% on own goals, contributing to fleet evidence backbone (option b + c).",
+ "chars": 4649,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/orchestrator/goal6-incident-triage-built-2026-11-20.md",
+ "headings": [
+  "Goal #6 Fleet Incident Auto-Triage \u2014 BUILT + acceptance-verified 2026-11-20",
+  "What it does",
+  "Bug fixed this pass",
+  "Acceptance test (all 3 criteria PASS, run this pass)",
+  "Real-scan run (no network)"
+ ],
+ "lead": "**Artifact:** `memory/orchestrator/incident_triage.py` (scan + triage + resolve + simulate).",
+ "chars": 2320,
+ "abstracted": "2026-11-23 09:24:44"
+}

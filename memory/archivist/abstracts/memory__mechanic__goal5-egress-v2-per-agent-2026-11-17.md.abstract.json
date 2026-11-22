@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal5-egress-v2-per-agent-2026-11-17.md",
+ "headings": [
+  "Goal #5 Evidence: Egress Rules Engine v2 - Per-Agent Granularity (2026-11-17)",
+  "What was built",
+  "Changes",
+  "Test results (10/10 PASS)",
+  "Acceptance criteria met",
+  "Remaining for full productionization"
+ ],
+ "lead": "Extended `egress_guard.py` + `egress-rules.json` from per-host to per-agent profiles.",
+ "chars": 2272,
+ "abstracted": "2026-11-23 09:24:44"
+}

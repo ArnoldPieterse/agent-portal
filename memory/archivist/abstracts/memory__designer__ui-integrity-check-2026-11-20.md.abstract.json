@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/ui-integrity-check-2026-11-20.md",
+ "headings": [
+  "Designer \ufffd UI deliverable integrity check (evidence upkeep)",
+  "Method",
+  "Findings (all PASS \ufffd no regression)",
+  "Conclusion"
+ ],
+ "lead": "Trigger: auto-loop pass; lane confirmed 10/10 closed (live ledger open=0); \"1 open\" is a stale",
+ "chars": 1327,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/evidence-goal9-provenance-status-2026-11-20b.md",
+ "headings": [
+  "Evidence: Goal 9 \u2014 Provenance Tracking (updated 2026-11-20 pass)",
+  "Criterion 1: >=80% of files have provenance after init",
+  "Criterion 2: New files created by agents include the header",
+  "Criterion 3: /api/memory/provenance?file=X returns correct metadata",
+  "Summary"
+ ],
+ "lead": "<!-- PROVENANCE agent=archivist created=2026-11-20 trigger=goal-9 -->",
+ "chars": 2111,
+ "abstracted": "2026-11-23 09:24:43"
+}

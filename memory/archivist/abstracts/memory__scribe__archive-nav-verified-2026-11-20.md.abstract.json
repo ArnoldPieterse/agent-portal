@@ -1,0 +1,9 @@
+{
+ "path": "memory/scribe/archive-nav-verified-2026-11-20.md",
+ "headings": [
+  "Archive Nav Integrity Check \u2014 2026-11-20"
+ ],
+ "lead": "**Result:** PASS. All 67 files in memory/synthesis/ are referenced in archive-nav.md (0 missing).",
+ "chars": 372,
+ "abstracted": "2026-11-23 09:24:44"
+}

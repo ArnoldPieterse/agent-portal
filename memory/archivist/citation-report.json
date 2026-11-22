@@ -1,0 +1,118 @@
+{
+ "generated": "2026-11-23 09:24:43",
+ "total_pointers": 18,
+ "resolved_and_indexed": 11,
+ "dangling": 0,
+ "unindexed": 7,
+ "health": "ATTENTION",
+ "details": [
+  {
+   "agent": "archivist",
+   "pointer": "memory/archivist/decay_production.py",
+   "exists": true,
+   "indexed": false
+  },
+  {
+   "agent": "archivist",
+   "pointer": "memory/archivist/dup_detect.py",
+   "exists": true,
+   "indexed": false
+  },
+  {
+   "agent": "archivist",
+   "pointer": "memory/archivist/knowledge-graph-v3.json",
+   "exists": true,
+   "indexed": false
+  },
+  {
+   "agent": "archivist",
+   "pointer": "memory/archivist/weekly_digest.py",
+   "exists": true,
+   "indexed": false
+  },
+  {
+   "agent": "builder",
+   "pointer": "memory/builder/MEMORY.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "builder",
+   "pointer": "memory/builder/playbook_runner.py",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "builder",
+   "pointer": "memory/builder/designer-goal2-fleet-states-2026-11-18.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "designer",
+   "pointer": "memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "designer",
+   "pointer": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "designer",
+   "pointer": "memory/designer/designer-goal-proposals-2026-11-16.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "mechanic",
+   "pointer": "memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "mechanic",
+   "pointer": "memory/mechanic/test_fleet_circuit_breaker.py",
+   "exists": true,
+   "indexed": false
+  },
+  {
+   "agent": "mechanic",
+   "pointer": "memory/mechanic/state_collector.py",
+   "exists": true,
+   "indexed": false
+  },
+  {
+   "agent": "researcher",
+   "pointer": "memory/researcher/evidence-quality-2026-11-20.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "researcher",
+   "pointer": "memory/researcher/MEMORY.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "researcher",
+   "pointer": "memory/researcher/evidence-source-scorer-2026-11-18.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "scribe",
+   "pointer": "memory/scribe/goal6-synthesis-quality-verified-2026-11-20.md",
+   "exists": true,
+   "indexed": false
+  },
+  {
+   "agent": "verifier",
+   "pointer": "memory/verifier/MEMORY.md",
+   "exists": true,
+   "indexed": true
+  }
+ ]
+}

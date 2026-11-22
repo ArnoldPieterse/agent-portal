@@ -1,0 +1,16 @@
+{
+ "path": "memory/goals/retro-cycle-7.md",
+ "headings": [
+  "Cycle 7 Retrospective \u2014 tag `2026-11-20b`",
+  "Summary",
+  "Goals Completed (with evidence)",
+  "orchestrator \u2014 9/10",
+  "researcher \u2014 5/10",
+  "builder \u2014 8/10",
+  "verifier \u2014 8/10",
+  "designer \u2014 3/10"
+ ],
+ "lead": "Generated: 2026-11-20 21:51 by cycle_retro.py. Sources: archive/2026-11-20b goal files + memory/researcher/goal_ledger.jsonl.",
+ "chars": 10790,
+ "abstracted": "2026-11-23 09:24:44"
+}

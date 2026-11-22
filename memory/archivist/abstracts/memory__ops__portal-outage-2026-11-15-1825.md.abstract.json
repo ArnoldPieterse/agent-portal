@@ -1,0 +1,13 @@
+{
+ "path": "memory/ops/portal-outage-2026-11-15-1825.md",
+ "headings": [
+  "Portal :8099 Outage 2026-11-15 ~18:25 \u2014 Mechanic status",
+  "State",
+  "What's needed to restore",
+  "Post-restore checklist",
+  "Runbook note (one-liner)"
+ ],
+ "lead": "Then verify: `curl http://127.0.0.1:8099/api/memory` -> 200",
+ "chars": 1351,
+ "abstracted": "2026-11-23 09:24:44"
+}

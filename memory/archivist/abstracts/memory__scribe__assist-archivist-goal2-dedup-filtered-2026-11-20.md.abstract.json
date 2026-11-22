@@ -1,0 +1,15 @@
+{
+ "path": "memory/scribe/assist-archivist-goal2-dedup-filtered-2026-11-20.md",
+ "headings": [
+  "Assist: Archivist Goal 2 (Memory Deduplication Engine) \ufffd Scribe filtered analysis, 2026-11-20",
+  "Context",
+  "Filtered Results (actionable MD pairs only)",
+  "Pattern Analysis",
+  "Recommendation for Archivist",
+  "Acceptance Criteria Status",
+  "Artifact"
+ ],
+ "lead": "Owner: **Archivist** (goal 2). Assisted by Scribe this pass.",
+ "chars": 2175,
+ "abstracted": "2026-11-23 09:24:44"
+}

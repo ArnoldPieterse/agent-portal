@@ -1,0 +1,11 @@
+{
+ "path": "memory/designer/a11y-tree-verify-evidence-2026-11-20.md",
+ "headings": [
+  "Goal 7 Evidence: Accessibility Tree Verification (2026-11-20)",
+  "Results",
+  "Acceptance criteria met"
+ ],
+ "lead": "Script: memory/designer/a11y_tree_verify.py",
+ "chars": 713,
+ "abstracted": "2026-11-23 09:24:44"
+}

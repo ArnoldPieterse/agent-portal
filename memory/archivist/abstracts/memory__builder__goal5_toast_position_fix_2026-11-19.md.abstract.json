@@ -1,0 +1,13 @@
+{
+ "path": "memory/builder/goal5_toast_position_fix_2026-11-19.md",
+ "headings": [
+  "Builder assist: Designer Goal #5 Notification System - toast position fix (2026-11-19)",
+  "What was done",
+  "Full Goal #5 status assessment",
+  "Remaining for acceptance",
+  "File changed"
+ ],
+ "lead": "Fixed `.toast-container` CSS from `bottom:var(--sp-16)` to `top:var(--sp-16)` in ui/app.css (line 287).",
+ "chars": 1112,
+ "abstracted": "2026-11-23 09:24:44"
+}

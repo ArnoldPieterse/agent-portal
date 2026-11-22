@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/goal1-winrm-CLOSURE-READY-2026-11-20.md",
+ "headings": [
+  "Goal 1 WinRM Hardening \u2014 CLOSURE READY (2026-11-20)",
+  "Status: 4/5 sub-criteria VERIFIED. One non-sandbox command remains.",
+  "Verified (with evidence)",
+  "Single remaining action",
+  "From non-sandbox White admin terminal (elevated):",
+  "Closure command (after deploy succeeds)",
+  "Blocker (environmental, not a code defect)",
+  "Artifacts inventory"
+ ],
+ "lead": "| Connection pool + retry (3 attempts, exp backoff) | PASS | `winrm_pool.py` selftest 20/20; 6.0s total delay on unreachable host |",
+ "chars": 2420,
+ "abstracted": "2026-11-23 09:24:44"
+}

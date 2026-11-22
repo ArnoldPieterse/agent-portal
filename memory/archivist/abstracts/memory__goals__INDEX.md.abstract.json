@@ -1,0 +1,13 @@
+{
+ "path": "memory/goals/INDEX.md",
+ "headings": [
+  "memory/goals - pointer map",
+  "Prediction system (10 steps ahead, 2026-11-23)",
+  "Per-lane goal files (the ONLY form the dashboard counts)",
+  "Backlog + supporting state",
+  "Superseded cycles (archive)"
+ ],
+ "lead": "CURRENT CYCLE: **cycle-10 (set 2026-11-23)** - 8 agents x 10 goals, focus \"Closed-Loop Autonomy & Fleet Cockpit\". Canonical record: TODO.md section `## AGENT GOALS`. Level 1 reached on the previous set (report in memory/",
+ "chars": 2218,
+ "abstracted": "2026-11-23 09:24:44"
+}

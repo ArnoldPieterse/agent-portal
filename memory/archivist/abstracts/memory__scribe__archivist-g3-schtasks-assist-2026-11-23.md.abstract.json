@@ -1,0 +1,12 @@
+{
+ "path": "memory/scribe/archivist-g3-schtasks-assist-2026-11-23.md",
+ "headings": [
+  "Archivist Goal 3 - schtask registration assist",
+  "What was done",
+  "Effect",
+  "Remaining (Archivist-owned)"
+ ],
+ "lead": "Added `ArchivistDecayWeekly` task to `memory/mechanic/deploy_all_schtasks.py` TASKS list.",
+ "chars": 946,
+ "abstracted": "2026-11-23 09:24:44"
+}

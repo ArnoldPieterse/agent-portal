@@ -1,0 +1,16 @@
+{
+ "path": "memory/designer/icon-set.md",
+ "headings": [
+  "SVG Icon Set \u2014 Design Spec",
+  "Overview",
+  "API",
+  "Required Icons (goal minimum, all present)",
+  "Full Inventory (28 icons)",
+  "Design Rules",
+  "Scaling Verification",
+  "Usage in Panels"
+ ],
+ "lead": "`ui/icons.js` provides a consistent inline SVG icon set for the portal.",
+ "chars": 3318,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,9 @@
+{
+ "path": "memory/designer/handoff-js-tokens-verified-2026-11-20.md",
+ "headings": [
+  "handoff.js token wiring \u2014 verified CORRECT (HOT NOTE is stale) 2026-11-20"
+ ],
+ "lead": "**Context:** HOT NOTES carried \"ui/handoff.js has 17 hardcoded hex colors, zero CSS var() usages \u2014 bypasses token system, won't respond to theme switching.\" That finding is **factually wrong** and risks a phantom fix.",
+ "chars": 2012,
+ "abstracted": "2026-11-23 09:24:44"
+}

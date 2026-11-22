@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal4-responsive-768px-verified-2026-11-21.md",
+ "headings": [
+  "Goal #4 Evidence: Responsive Layout (768px) \u2014 VERIFIED 2026-11-21",
+  "Acceptance criteria \u2192 result",
+  "Verification method",
+  "File"
+ ],
+ "lead": "| Sidebar collapses to icon bar | PASS | `aside{width:56px;overflow:hidden}` + `.ah span{display:none}` |",
+ "chars": 1029,
+ "abstracted": "2026-11-23 09:24:44"
+}

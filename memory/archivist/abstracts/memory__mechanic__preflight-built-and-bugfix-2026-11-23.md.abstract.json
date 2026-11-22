@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/preflight-built-and-bugfix-2026-11-23.md",
+ "headings": [
+  "Preflight Check Built + unblock_all.py Bug Fixed (2026-11-23)",
+  "What was done",
+  "Baseline from sandbox seat (2026-11-23T01:18)",
+  "Impact",
+  "Files changed"
+ ],
+ "lead": "1. **Built `preflight_check.py`** \u2014 validates 7 prerequisites before running `unblock_all.py`:",
+ "chars": 1659,
+ "abstracted": "2026-11-23 09:24:44"
+}

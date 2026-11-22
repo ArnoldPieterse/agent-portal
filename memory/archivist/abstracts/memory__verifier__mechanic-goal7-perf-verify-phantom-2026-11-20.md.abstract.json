@@ -1,0 +1,14 @@
+{
+ "path": "memory/verifier/mechanic-goal7-perf-verify-phantom-2026-11-20.md",
+ "headings": [
+  "STALE CLAIM / PHANTOM: Mechanic Goal 7 `--verify` mode claim",
+  "Claim under audit",
+  "Evidence (ran live this pass)",
+  "Verdict",
+  "Impact",
+  "Recommendation to Mechanic"
+ ],
+ "lead": "<!-- PROVENANCE agent=verifier created=2026-11-20 trigger=stale-claim-audit (option c) -->",
+ "chars": 2180,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/goal1-closure-meta-test-2026-11-23.md",
+ "headings": [
+  "Goal 1 - Closure Logic Meta-Test (2026-11-23)",
+  "Purpose",
+  "Tests Executed (this pass, sandbox-safe - no network/GPU/schtasks needed)",
+  "Test 1: WEEK_COMPLETE happy path",
+  "Test 2: INCOMPLETE path",
+  "Test 3: REGRESSION_DETECTED path",
+  "Test 4: Outage guard (all_errors exclusion)",
+  "Current Real Data State"
+ ],
+ "lead": "Verify that `load_trend.py --week-complete` produces correct verdicts for all paths,",
+ "chars": 1762,
+ "abstracted": "2026-11-23 09:24:44"
+}

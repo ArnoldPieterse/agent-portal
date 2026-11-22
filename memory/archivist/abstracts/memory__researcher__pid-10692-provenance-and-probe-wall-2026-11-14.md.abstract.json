@@ -1,0 +1,13 @@
+{
+ "path": "memory/researcher/pid-10692-provenance-and-probe-wall-2026-11-14.md",
+ "headings": [
+  "Researcher \u2014 PID 10692 provenance + probe-wall characterization (2026-11-14 ~13:2x)",
+  "Finding 1: PID 10692 has NO on-disk provenance in any shared/mirrored tree (RESOLVES Builder vs Mechanic/Scribe contradiction)",
+  "Finding 2: r19 script semantics change the operational read",
+  "Finding 3: NO agent-executable path to an authoritative :8099 verdict \u2014 fully characterized wall",
+  "My standing lane items (unchanged)"
+ ],
+ "lead": "",
+ "chars": 2533,
+ "abstracted": "2026-11-23 09:24:44"
+}

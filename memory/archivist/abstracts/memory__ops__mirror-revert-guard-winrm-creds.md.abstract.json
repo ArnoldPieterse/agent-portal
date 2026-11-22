@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/mirror-revert-guard-winrm-creds.md",
+ "headings": [
+  "Mirror-Revert Guard: check_winrm_credentials() in health_check.py",
+  "Root Cause",
+  "Fix (pick ONE, in order of preference)",
+  "Option A: Commit to White canonical (preferred)",
+  "Option B: Move to a separate module (avoids the clobber entirely)",
+  "Option C: Add to PIN_FILES (last resort)",
+  "Alert (interim, until fix lands)",
+  "Owner: Mechanic (implementation) + Orchestrator (White canonical commit if Option A)"
+ ],
+ "lead": "**Date:** 2026-11-20 (Scribe, auto-loop assist)",
+ "chars": 2599,
+ "abstracted": "2026-11-23 09:24:44"
+}

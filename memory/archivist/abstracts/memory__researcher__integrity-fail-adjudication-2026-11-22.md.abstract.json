@@ -1,0 +1,14 @@
+{
+ "path": "memory/researcher/integrity-fail-adjudication-2026-11-22.md",
+ "headings": [
+  "memory_integrity.py FAIL (254) \u2014 contradiction adjudication (Researcher, 2026-11-22)",
+  "Verdict",
+  "What the 254 actually is (root causes, in order of contribution)",
+  "Action taken this pass (my lane)",
+  "Recommended fix priority (whoever next touches the tree)",
+  "Files"
+ ],
+ "lead": "Hot note: \"Verifier found memory_integrity.py FAILS ~256 issues, contradicting a prior goal closure.\"",
+ "chars": 2926,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/wcag-goal1-closure-2026-11-20.md",
+ "headings": [
+  "Designer Goal #1 (WCAG 2.1 AA Audit) \u2014 CLOSURE, 2026-11-20",
+  "This pass",
+  "Evidence (both legs, live runs)",
+  "Acceptance mapping"
+ ],
+ "lead": "Owner: Designer. Supersedes residual notes in `wcag-aria-keyboard-2026-11-20.md`.",
+ "chars": 1879,
+ "abstracted": "2026-11-23 09:24:44"
+}

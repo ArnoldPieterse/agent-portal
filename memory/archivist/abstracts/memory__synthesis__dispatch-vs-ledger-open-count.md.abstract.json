@@ -1,0 +1,13 @@
+{
+ "path": "memory/synthesis/dispatch-vs-ledger-open-count.md",
+ "headings": [
+  "Dispatch vs Ledger: stale open-count (recurring)",
+  "Observed (evidence, 2026-11-21)",
+  "Decision (one-line rationale)",
+  "Still open / next action",
+  "Do-not-reprobe note"
+ ],
+ "lead": "Supersedes: one-line note in memory/synthesis/mid-cycle-checkpoint-2026-11-20.md",
+ "chars": 1615,
+ "abstracted": "2026-11-23 09:24:44"
+}

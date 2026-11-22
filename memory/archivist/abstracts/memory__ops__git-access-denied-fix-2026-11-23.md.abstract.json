@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/git-access-denied-fix-2026-11-23.md",
+ "headings": [
+  "Git \"Access is denied\" \u2014 root cause, fix, popup fallback (2026-11-23)",
+  "Symptom",
+  "Diagnosis chain",
+  "Fix (deployed, verified)",
+  "Popup fallback (the \"so we don't get access denied\" mechanism)",
+  "Housekeeping in the same pass"
+ ],
+ "lead": "Every non-elevated launch of the only full git on this box failed:",
+ "chars": 2646,
+ "abstracted": "2026-11-23 09:24:44"
+}

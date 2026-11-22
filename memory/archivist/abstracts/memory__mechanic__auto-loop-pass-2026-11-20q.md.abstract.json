@@ -1,0 +1,9 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-20q.md",
+ "headings": [
+  "Auto-loop pass 2026-11-20q (Mechanic)"
+ ],
+ "lead": "**Action:** Full compile-check of all 80 mechanic .py scripts (expanded from prior 9-script check). All 80/80 PASS. Evidence: `memory/mechanic/compile-check-2026-11-20.jsonl` (appended entry).",
+ "chars": 694,
+ "abstracted": "2026-11-23 09:24:44"
+}

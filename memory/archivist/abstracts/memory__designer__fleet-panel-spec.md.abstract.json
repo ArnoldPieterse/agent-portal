@@ -1,0 +1,16 @@
+{
+ "path": "memory/designer/fleet-panel-spec.md",
+ "headings": [
+  "Fleet Panel Visual Design Spec (Goal #2)",
+  "Overview",
+  "Layout Grid",
+  "Component Specs",
+  "1. Host Card (`.fh-host`)",
+  "2. Agent Card (`.fh-agent`)",
+  "3. Composite Health Bar (`.fh-composite`)",
+  "4. State Indicators (loading / empty / error)"
+ ],
+ "lead": "Status: SPEC COMPLETE \u2014 implementation in ui/fleet_status.js, ui/fleet_health.js, ui/app.css",
+ "chars": 5926,
+ "abstracted": "2026-11-23 09:24:44"
+}

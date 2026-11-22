@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/evidence-deploy-perf-gate-2026-11-22.md",
+ "headings": [
+  "Deploy Perf Gate - 2026-11-22T05:58:21Z",
+  "Steps",
+  "Baseline file",
+  "Next steps for goal #1 closure"
+ ],
+ "lead": "1. Baseline: kept valid (18/20 valid p50)",
+ "chars": 526,
+ "abstracted": "2026-11-23 09:24:44"
+}

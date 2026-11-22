@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/goal2-animation-reland-2026-11-20b.md",
+ "headings": [
+  "Goal 2 - Animation/Motion System \u2014 both gauge consumers RE-LANDED + verified present, 2026-11-20 (pass b)",
+  "What was found at pass start",
+  "Changes made this pass (each re-verified present via findstr after edit)",
+  "Consumer coverage (live, verified present this pass)",
+  "Acceptance status (code-verified)",
+  "Residual / durability note",
+  "Re-verify commands"
+ ],
+ "lead": "Parent: memory/goals/designer.md #2 \u00b7 Siblings: ui/animations.css, ui/fleet_health.js, ui/components.js, ui/interactions.js",
+ "chars": 3516,
+ "abstracted": "2026-11-23 09:24:44"
+}

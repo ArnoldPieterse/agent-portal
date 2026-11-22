@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/kgv3-goal2-ac-verify-2026-11-23.md",
+ "headings": [
+  "Verifier: Archivist Goal 2 (KG v3) Acceptance Verification",
+  "AC-by-AC Results",
+  "Verdict",
+  "Artifacts checked",
+  "Note for Archivist"
+ ],
+ "lead": "Verified by: Verifier (auto-loop pass, option c - stale evidence claim closure)",
+ "chars": 1659,
+ "abstracted": "2026-11-23 09:24:44"
+}

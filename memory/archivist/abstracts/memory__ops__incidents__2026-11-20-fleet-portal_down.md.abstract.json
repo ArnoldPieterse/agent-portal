@@ -1,0 +1,11 @@
+{
+ "path": "memory/ops/incidents/2026-11-20-fleet-portal_down.md",
+ "headings": [
+  "Incident: Portal Down - fleet",
+  "Detail",
+  "Resolution"
+ ],
+ "lead": "watchdog.log: 20/11/2026 9:27:03 AM DOWN detected -> running PortalRun",
+ "chars": 453,
+ "abstracted": "2026-11-23 09:24:44"
+}

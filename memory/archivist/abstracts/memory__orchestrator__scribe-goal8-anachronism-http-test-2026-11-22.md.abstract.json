@@ -1,0 +1,9 @@
+{
+ "path": "memory/orchestrator/scribe-goal8-anachronism-http-test-2026-11-22.md",
+ "headings": [
+  "Scribe goal 8 \u2014 anachronism HTTP acceptance test (Orchestrator assist) 2026-11-22"
+ ],
+ "lead": "Closes the remaining item Builder flagged: \"HTTP-level acceptance test ... verify no anachronisms\" for Scribe goal 8 (Temporal Query API).",
+ "chars": 1086,
+ "abstracted": "2026-11-23 09:24:44"
+}

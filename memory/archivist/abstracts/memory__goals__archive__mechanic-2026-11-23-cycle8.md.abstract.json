@@ -1,0 +1,9 @@
+{
+ "path": "memory/goals/archive/mechanic-2026-11-23-cycle8.md",
+ "headings": [
+  "Mechanic - 10 goals (set 2026-11-20, cycle-8)"
+ ],
+ "lead": "Focus: Fleet reliability hardening + zero-human recovery completion. Cycle-7 built the anti-stall chain; cycle-8 verifies it end-to-end, adds capacity planning, and automates the remaining manual runbook steps.",
+ "chars": 10712,
+ "abstracted": "2026-11-23 09:24:44"
+}

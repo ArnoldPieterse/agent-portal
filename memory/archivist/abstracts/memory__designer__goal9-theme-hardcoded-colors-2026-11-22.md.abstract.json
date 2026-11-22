@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal9-theme-hardcoded-colors-2026-11-22.md",
+ "headings": [
+  "Goal 9 Theme System - Hardcoded Color Elimination (2026-11-22)",
+  "What was done",
+  "New tokens added to ui/tokens.css",
+  "Verification",
+  "Acceptance criteria status",
+  "Files modified"
+ ],
+ "lead": "Eliminated all 31 hardcoded color values from ui/app.css and ui/interactions.css,",
+ "chars": 1996,
+ "abstracted": "2026-11-23 09:24:44"
+}

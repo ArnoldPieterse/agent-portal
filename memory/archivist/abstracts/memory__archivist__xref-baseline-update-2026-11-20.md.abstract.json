@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/xref-baseline-update-2026-11-20.md",
+ "headings": [
+  "XRef Baseline Update \u2014 post dedup + compaction",
+  "Context",
+  "New Baseline (2026-11-20 12:12 run)",
+  "Interpretation"
+ ],
+ "lead": "Goal 5 (xref_monitor.py) was verified at baseline 6894 files / 177 dangling. After Goal 6 (archive compaction, -33% size) and Goal 8 (dedup, 13 redirects applied), the landscape shifted.",
+ "chars": 872,
+ "abstracted": "2026-11-23 09:24:44"
+}

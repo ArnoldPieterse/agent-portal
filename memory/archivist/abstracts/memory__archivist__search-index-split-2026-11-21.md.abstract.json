@@ -1,0 +1,15 @@
+{
+ "path": "memory/archivist/search-index-split-2026-11-21.md",
+ "headings": [
+  "Search Index Split - 2026-11-21",
+  "Context",
+  "Action",
+  "Verification",
+  "File Layout",
+  "Usage",
+  "Note"
+ ],
+ "lead": "search-index.json grew to 818.8 KB (2201 entries) after tree expansion, exceeding the file-modularity guideline (keep files small enough for a small-context model to read whole). Original AC was <500KB but that was set w",
+ "chars": 1401,
+ "abstracted": "2026-11-23 09:24:43"
+}

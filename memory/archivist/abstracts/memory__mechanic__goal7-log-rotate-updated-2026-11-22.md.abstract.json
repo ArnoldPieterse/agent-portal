@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal7-log-rotate-updated-2026-11-22.md",
+ "headings": [
+  "Goal #7 - Log Rotation Updated to Spec (2026-11-22)",
+  "What was done this pass",
+  "Test results (all PASS)",
+  "Normal run (no action needed)",
+  "Remaining for closure",
+  "Status: SCRIPT BUILT + TESTED; deployment to White pending seat access"
+ ],
+ "lead": "Updated `memory/mechanic/log_rotate.py` to match goal spec:",
+ "chars": 1244,
+ "abstracted": "2026-11-23 09:24:44"
+}

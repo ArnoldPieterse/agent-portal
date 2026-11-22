@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/quality-scoring-goal6-verified-2026-11-20.md",
+ "headings": [
+  "Goal 6 Verification: Synthesis Quality Scoring",
+  "Acceptance Criteria",
+  "Artifacts",
+  "Scoring Weights",
+  "Fleet Averages (2026-11-20)"
+ ],
+ "lead": "| Vague file scores <40 | PASS (37.7 - 2-week-old unstructured note) |",
+ "chars": 1157,
+ "abstracted": "2026-11-23 09:24:44"
+}

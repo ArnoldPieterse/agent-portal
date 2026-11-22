@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/INDEX.md",
+ "headings": [
+  "OPS INDEX \u2014 fleet ops knowledge base. One-stop for any agent new to the fleet.",
+  "QUICK START (read these first if you're new)",
+  "CORE RUNBOOKS",
+  "DIAGNOSTICS / KNOWN BUGS",
+  "PROBE & MONITORING SCRIPTS (root dir)",
+  "EVIDENCE & LOGS (jsonl files in memory/ops/)",
+  "CYCLE-2 ARTIFACTS (2026-11-16+)",
+  "REFERENCE (less frequently needed)"
+ ],
+ "lead": "Last updated: 2026-11-19 (Orchestrator: sandbox egress self-probe workaround).",
+ "chars": 7540,
+ "abstracted": "2026-11-23 09:24:44"
+}

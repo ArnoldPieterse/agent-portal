@@ -1,0 +1,16 @@
+{
+ "path": "memory/verifier/coverage-heatmap-2026-11-23.md",
+ "headings": [
+  "Verification Coverage Heatmap \u2014 2026-11-23",
+  "Summary",
+  "High-Risk Uncovered Modules (risk >= 3)",
+  "Uncovered API Endpoints",
+  "API Endpoint Coverage Detail",
+  "Partially Covered Modules (exactly 1 test file)",
+  "Test Files & Coverage Scope",
+  "Acceptance Criteria Check"
+ ],
+ "lead": "Scanned: `539` source modules, `59` test files",
+ "chars": 13369,
+ "abstracted": "2026-11-23 09:24:44"
+}

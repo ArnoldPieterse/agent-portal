@@ -1,0 +1,9 @@
+{
+ "path": "memory/scribe/cycle-narrative-ledger-fix-2026-11-21.md",
+ "headings": [
+  "Cycle Narrative Ledger Fix (2026-11-21)"
+ ],
+ "lead": "**Problem:** `cycle_narrative.py` counted raw `verified:` markers in goal files, producing 80/80 (100%) when the ledger showed 73/80 (91%). Carry-forward sections and re-run notes inflated the count.",
+ "chars": 617,
+ "abstracted": "2026-11-23 09:24:44"
+}

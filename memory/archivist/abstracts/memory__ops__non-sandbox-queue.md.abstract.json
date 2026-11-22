@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/non-sandbox-queue.md",
+ "headings": [
+  "NON-SANDBOX EXECUTION QUEUE",
+  "WHAT THIS IS",
+  "ONE-COMMAND BATCH (preferred)",
+  "HOW TO CLOSE AN ENTRY (manual, per-item)",
+  "TWO-TIER ACCEPTANCE RULE (Orchestrator, 2026-11-18)",
+  "OPEN (batch in one sitting)",
+  "DONE / RESOLVED (kept for pattern, not action)",
+  "NOT THIS QUEUE (infra, handled by Studio/human)"
+ ],
+ "lead": "Parent: memory/ops/INDEX.md | Sibling: memory/ops/blockers.md (NEEDS-HUMAN log)",
+ "chars": 7180,
+ "abstracted": "2026-11-23 09:24:44"
+}

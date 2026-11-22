@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/evidence-goal9-provenance-endpoint-2026-11-20.md",
+ "headings": [
+  "Evidence: Goal 9 \u2014 Provenance API Endpoint (2026-11-20)",
+  "Endpoint behaviour",
+  "Verification",
+  "Remaining for full goal closure"
+ ],
+ "lead": "**What was done:** Wired `/api/memory/provenance?file=X` into `agent_portal.py` (inserted after `/api/memory/file` handler, ~line 4159).",
+ "chars": 1113,
+ "abstracted": "2026-11-23 09:24:43"
+}

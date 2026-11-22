@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-20j.md",
+ "headings": [
+  "Auto-loop pass 2026-11-20j (Red seat)",
+  "Goal 1 progress: rotation schtask script built",
+  "What was done",
+  "Goal 1 status update",
+  "Unblock step (for non-sandbox White seat, one-time):",
+  "No new blockers; existing NEEDS-HUMAN entries in blockers.md still apply."
+ ],
+ "lead": "1. **Selftest re-run**: `winrm_pool_selftest.py` -> **20/20 PASS** (AC1 credential rotation, AC2 local exec, AC3 retry/backoff, AC4 host registration). Fresh evidence in `goal1-winrm-evidence.jsonl`.",
+ "chars": 1435,
+ "abstracted": "2026-11-23 09:24:44"
+}

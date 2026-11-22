@@ -1,0 +1,10 @@
+{
+ "path": "memory/verifier/perf-report.md",
+ "headings": [
+  "Performance Gate Report",
+  "Regressions: 2"
+ ],
+ "lead": "| endpoint | base p50 | curr p50 | delta | regressed |",
+ "chars": 1255,
+ "abstracted": "2026-11-23 09:24:44"
+}

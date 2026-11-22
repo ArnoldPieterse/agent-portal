@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/maintenance-schedule-2026-11-23.md",
+ "headings": [
+  "Preventive Maintenance Schedule - 2026-11-23",
+  "Scheduled Actions",
+  "1. Proactive portal restart (preventive)",
+  "2. Black host connectivity check + conditional reboot",
+  "3. Agent wedge detection (stall >30min triggers restart)",
+  "4. Log rotation + cleanup (preventive disk management)",
+  "5. Mirror force-sync (post-drift-window)",
+  "Acceptance Check"
+ ],
+ "lead": "Data sources: 7 incidents, 21 watchdog events, 1 capacity readings",
+ "chars": 2307,
+ "abstracted": "2026-11-23 09:24:44"
+}

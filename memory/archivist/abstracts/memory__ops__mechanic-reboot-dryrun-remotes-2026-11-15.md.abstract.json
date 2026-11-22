@@ -1,0 +1,15 @@
+{
+ "path": "memory/ops/mechanic-reboot-dryrun-remotes-2026-11-15.md",
+ "headings": [
+  "OPS NOTE 2026-11-15 ~17:0x - Mechanic goal #3: reboot-recovery dry-run, remote legs",
+  "Verdict: 2/3 PASS, 1 BLOCKED (firewall)",
+  "RED block detail",
+  "Fix needed (HUMAN GATE - requires admin on White)",
+  "Broken-step fix (PALE)",
+  "Runbook step mapping (per windows-runbook.md post-reboot verification order)",
+  "Evidence files"
+ ],
+ "lead": "| Host | TCP :8888 | Studio API | Models loaded | Verdict |",
+ "chars": 2809,
+ "abstracted": "2026-11-23 09:24:44"
+}

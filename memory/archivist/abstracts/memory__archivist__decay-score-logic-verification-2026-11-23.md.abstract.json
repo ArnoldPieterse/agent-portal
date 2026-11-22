@@ -1,0 +1,16 @@
+{
+ "path": "memory/archivist/decay-score-logic-verification-2026-11-23.md",
+ "headings": [
+  "Archivist Goal 3 Progress: decay_score.py logic verification (2026-11-23)",
+  "What was done this pass",
+  "Archive logic: VERIFIED CORRECT",
+  "Alert logic: STRUCTURALLY UNREACHABLE (design finding)",
+  "Proposed fix (for next pass or when schtask is registered)",
+  "Test results (synthetic matrix)",
+  "AC status",
+  "Evidence"
+ ],
+ "lead": "**Agent:** Archivist | **Date:** 2026-11-23 | **Goal:** Freshness Scoring Production (#3)",
+ "chars": 2494,
+ "abstracted": "2026-11-23 09:24:43"
+}

@@ -1,0 +1,15 @@
+{
+ "path": "memory/verifier/archivist-goal4-verified-stale-2026-11-21.md",
+ "headings": [
+  "Verification Finding: Archivist Goal 4 \u2014 (verified:) Marker Stale (2026-11-21)",
+  "Original claim",
+  "Fresh measurement (2026-11-21 ~01:06 UTC)",
+  "Root cause",
+  "Additional gap",
+  "Verdict: STALE CLAIM",
+  "Recommended action"
+ ],
+ "lead": "**Finding:** The `(verified:)` marker on Archivist Goal 4 (Cross-Reference Integrity Check) no longer reflects current state.",
+ "chars": 1735,
+ "abstracted": "2026-11-23 09:24:44"
+}

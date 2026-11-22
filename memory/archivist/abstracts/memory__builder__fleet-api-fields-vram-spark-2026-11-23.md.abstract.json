@@ -1,0 +1,15 @@
+{
+ "path": "memory/builder/fleet-api-fields-vram-spark-2026-11-23.md",
+ "headings": [
+  "Fleet Panel API Fields - vram_pct + spark_24h (Builder assist to Designer prototype)",
+  "What was added to agent_portal.py",
+  "1. `vram_pct` in `_fleet_probe()`",
+  "2. `spark_24h` in `_fleet_snapshot()`",
+  "Verification",
+  "Data contract now matches Designer prototype spec:",
+  "Remaining (not blocked on Builder)"
+ ],
+ "lead": "in one of the expected field names. If Studio uses a different key, add it to the candidate list.",
+ "chars": 1735,
+ "abstracted": "2026-11-23 09:24:44"
+}

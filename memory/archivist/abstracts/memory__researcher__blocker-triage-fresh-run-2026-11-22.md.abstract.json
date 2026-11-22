@@ -1,0 +1,12 @@
+{
+ "path": "memory/researcher/blocker-triage-fresh-run-2026-11-22.md",
+ "headings": [
+  "Blocker Triage Fresh Run \u2014 2026-11-22 (Researcher auto-loop)",
+  "What ran",
+  "Result",
+  "Fleet value"
+ ],
+ "lead": "`python memory/researcher/blocker_triage.py` \u2192 exit 0",
+ "chars": 855,
+ "abstracted": "2026-11-23 09:24:44"
+}

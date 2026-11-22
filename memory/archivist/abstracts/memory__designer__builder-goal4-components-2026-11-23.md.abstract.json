@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/builder-goal4-components-2026-11-23.md",
+ "headings": [
+  "Designer assist: Builder Goal 4 - Component Library v2 (Modal + Toast + LoadingSpinner)",
+  "What was done",
+  "Verification",
+  "Files changed",
+  "Acceptance criteria met (Builder Goal 4)"
+ ],
+ "lead": "Added 3 missing components to `ui/components.js` (was 217 lines / 5 components, now 434 lines / 8 components):",
+ "chars": 1902,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,16 @@
+{
+ "path": "memory/designer/goal3-hierarchy-reland-2026-11-20d.md",
+ "headings": [
+  "Goal 3 - Information Hierarchy Audit: Re-land + New Fixes (pass d)",
+  "Context",
+  "Changes (11 rules total in ui/app.css)",
+  "Re-landed from prior audit (7 rules):",
+  "New in this pass (4 rules):",
+  "Resulting Hierarchy Scale",
+  "Verification",
+  "Remaining for full closure (goal 3 acceptance criteria)"
+ ],
+ "lead": "Prior pass (goal3-hierarchy-audit-2026-11-20.md) made 9 rule changes but they were",
+ "chars": 2392,
+ "abstracted": "2026-11-23 09:24:44"
+}

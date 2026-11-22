@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/light-theme-contrast-audit-2026-11-23.md",
+ "headings": [
+  "Light Theme WCAG AA Contrast Audit - 2026-11-23 (Designer)",
+  "Finding",
+  "Failing pairs (light, against --bg #f4f6fa)",
+  "Impact",
+  "Fix",
+  "Verification method",
+  "Status"
+ ],
+ "lead": "Light theme has **6 tokens below the 4.5:1 AA threshold** for normal text (<18pt).",
+ "chars": 1669,
+ "abstracted": "2026-11-23 09:24:44"
+}

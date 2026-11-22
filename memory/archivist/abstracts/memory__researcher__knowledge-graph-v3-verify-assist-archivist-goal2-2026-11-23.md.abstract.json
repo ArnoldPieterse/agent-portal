@@ -1,0 +1,13 @@
+{
+ "path": "memory/researcher/knowledge-graph-v3-verify-assist-archivist-goal2-2026-11-23.md",
+ "headings": [
+  "Knowledge Graph v3 \u2014 verification assist (Archivist Goal 2)",
+  "What I checked (ran json.load + per-field analysis on the live artifact)",
+  "Verdict",
+  "Concrete fix (one-line, for Archivist)",
+  "Next step for Archivist"
+ ],
+ "lead": "Date: 2026-11-23 | By: Researcher | Artifact verified: memory/archivist/knowledge-graph-v3.json",
+ "chars": 1531,
+ "abstracted": "2026-11-23 09:24:44"
+}

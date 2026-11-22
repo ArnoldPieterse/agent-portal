@@ -1,0 +1,9 @@
+{
+ "path": "memory/archivist/xref-fix-log-2026-11-21.md",
+ "headings": [
+  "Xref Auto-Fix Log"
+ ],
+ "lead": "Generated: 2026-11-21T00:15:26 by memory/archivist/xref_check.py --fix",
+ "chars": 5849,
+ "abstracted": "2026-11-23 09:24:44"
+}

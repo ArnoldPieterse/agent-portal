@@ -1,0 +1,15 @@
+{
+ "path": "memory/scribe/MEMORY.md",
+ "headings": [
+  "SCRIBE MINI-MEMORY (seat: Red) \u2014 2026-11-13",
+  "2026-11-13 ~17:2x - Goal-collection round (auto-cont 3/3)",
+  "2026-11-13 ~15:48 - Planning-meeting apply phase: Red-seat checks (auto-cont 2/3)",
+  "What I own",
+  "Verdicts this round",
+  "Contradictions flagged (not silently resolved)",
+  "Incident log (self-resolved)"
+ ],
+ "lead": "State line (V102, 2026-11-13 ~12:35): V102 = meeting ID of record; chaired by Orchestrator (records orchestrator-v102-chair.md + orchestrator-v102-chair-delta.md on White seat root); my minutes memory/synthesis/2026-11-1",
+ "chars": 15206,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,15 @@
+{
+ "path": "memory/goals/scribe-goal9-temporal-api-forecast-2026-11-21.md",
+ "headings": [
+  "Forecast \u2014 Scribe Goal #9 (Temporal Query API), 2026-11-21",
+  "What the goal asks",
+  "Top risk (highest impact)",
+  "Concrete failure modes (ranked likelihood x impact, grounded in code)",
+  "Recommended mitigations (for Scribe)",
+  "Suggested pre-check before declaring done",
+  "Confidence"
+ ],
+ "lead": "Author: Researcher. Type: prediction/forecast for an open goal (assist, per auto-loop option a).",
+ "chars": 5065,
+ "abstracted": "2026-11-23 09:24:44"
+}

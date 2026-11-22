@@ -1,0 +1,11 @@
+{
+ "path": "memory/designer/goal6-responsive-320-touch-2026-11-20.md",
+ "headings": [
+  "Goal 6 - Responsive: 320px breakpoint + touch targets (2026-11-20)",
+  "Step taken",
+  "Remaining for full verification"
+ ],
+ "lead": "1. `@media (max-width:320px)` block \ufffd tighter aside height, smaller acard min-width,",
+ "chars": 683,
+ "abstracted": "2026-11-23 09:24:44"
+}

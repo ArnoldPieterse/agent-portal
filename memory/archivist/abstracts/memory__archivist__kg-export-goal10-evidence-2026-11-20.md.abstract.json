@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/kg-export-goal10-evidence-2026-11-20.md",
+ "headings": [
+  "Goal 10 - Knowledge Graph Export + Import \u2014 Evidence",
+  "Acceptance criteria & results",
+  "Commands run",
+  "Output metrics",
+  "Note"
+ ],
+ "lead": "| Export file valid JSON-LD | PASS \u2014 kg-export.jsonld parses as valid JSON with @context + @graph |",
+ "chars": 953,
+ "abstracted": "2026-11-23 09:24:43"
+}

@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/goal1-deploy-readiness-2026-11-23.md",
+ "headings": [
+  "Goal 1 Deploy Readiness Report - 2026-11-23",
+  "Current State (verified this pass)",
+  "Root Cause (confirmed prior pass)",
+  "Fix Script (built + py_compile PASS)",
+  "One-Command Deploy (from non-sandbox White, admin)",
+  "Closure Sequence (after 7/7 reached)",
+  "Blocker (documented, not re-probed)",
+  "Verification This Pass"
+ ],
+ "lead": "`register_daily_probe.bat` used relative path `python memory\\ops\\load_probe.py`.",
+ "chars": 2015,
+ "abstracted": "2026-11-23 09:24:44"
+}

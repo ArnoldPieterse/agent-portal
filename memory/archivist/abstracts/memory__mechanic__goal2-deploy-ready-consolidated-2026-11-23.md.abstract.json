@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal2-deploy-ready-consolidated-2026-11-23.md",
+ "headings": [
+  "Goal 2 (Self-Healing Mirror) - DEPLOY-READY Consolidated (2026-11-23)",
+  "Canonical module (confirmed this pass)",
+  "Acceptance criteria status",
+  "Fresh verification run (this pass, 2026-11-23)",
+  "One-liner to close the registration leg (run ONCE on White, admin via elev.py)"
+ ],
+ "lead": "**Purpose:** single copy-paste artifact for whoever regains White access. All code ACs verified; only the schtask registration + 2-week log window remain, both requiring White (elev.py exit 5 in this seat = pale-sandbox ",
+ "chars": 1890,
+ "abstracted": "2026-11-23 09:24:44"
+}

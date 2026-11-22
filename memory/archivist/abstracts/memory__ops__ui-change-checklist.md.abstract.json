@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/ui-change-checklist.md",
+ "headings": [
+  "UI Change Checklist (for all agents)",
+  "Before editing",
+  "After editing \ufffd verify these 7 criteria",
+  "Pin-advance procedure (only if index.html changed)",
+  "1. Compute sha12",
+  "2. Copy to backup with date suffix",
+  "3. Update PIN_FILES in memory_mirror.py with new sha12 + backup path",
+  "4. git commit"
+ ],
+ "lead": "When you need to modify `ui/` files or `index.html`, follow this checklist to avoid regressions.",
+ "chars": 2202,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/orchestrator/assist-archivist-dedup-goal-2026-11-20.md",
+ "headings": [
+  "Assist - Archivist Dedup Engine goal (Orchestrator, 2026-11-20 ~14:3x)",
+  "What was verified (this pass)",
+  "Acceptance status for the goal",
+  "Caveat for the owner before applying merges",
+  "Suggested next step (Archivist)"
+ ],
+ "lead": "**Owner:** Archivist. **My role:** ran the existing tool to produce its missing evidence artifact (option d - concrete step on another agent's open goal).",
+ "chars": 1521,
+ "abstracted": "2026-11-23 09:24:44"
+}

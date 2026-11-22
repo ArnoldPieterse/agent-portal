@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/goal1-winrm-sandbox-probe-2026-11-20.md",
+ "headings": [
+  "Goal 1 Progress: WinRM Sandbox Probe (2026-11-20)",
+  "What was done this pass",
+  "1. TCP Reachability Confirmed",
+  "2. WinRM Endpoints Alive (401 + Negotiate challenge)",
+  "3. SSPI Auth Blocked by Sandbox Environment",
+  "4. Bugs Fixed in winrm_sspi_client.py",
+  "5. New Artifact: winrm_exec_test.py",
+  "Remaining for Goal 1 closure"
+ ],
+ "lead": "Both PALE and BLACK respond correctly to unauthenticated POST /wsman:",
+ "chars": 2057,
+ "abstracted": "2026-11-23 09:24:44"
+}

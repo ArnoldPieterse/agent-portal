@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/alert-triage-evidence-2026-11-23.md",
+ "headings": [
+  "Goal #8 Alert Triage View \u2014 Evidence",
+  "Verification (12/12 selfTest pass)",
+  "Acceptance criteria",
+  "Design decisions"
+ ],
+ "lead": "Files: ui/alert-triage.js (7554B, 203 lines) + ui/alert-triage.css (3237B, 142 lines)",
+ "chars": 1174,
+ "abstracted": "2026-11-23 09:24:44"
+}

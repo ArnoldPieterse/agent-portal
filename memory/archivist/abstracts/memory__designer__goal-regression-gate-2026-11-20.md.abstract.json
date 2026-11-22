@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal-regression-gate-2026-11-20.md",
+ "headings": [
+  "Designer regression gate \u2014 2026-11-20 18:39",
+  "What ran",
+  "State",
+  "Only remaining leg (NOT re-probed from sandbox)",
+  "Verdict"
+ ],
+ "lead": "<!-- PROVENANCE agent=designer created=2026-11-20 18:39 trigger=auto-loop -->",
+ "chars": 1129,
+ "abstracted": "2026-11-23 09:24:44"
+}

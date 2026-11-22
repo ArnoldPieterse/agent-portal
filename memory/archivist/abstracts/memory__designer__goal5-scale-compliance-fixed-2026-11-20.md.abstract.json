@@ -1,0 +1,9 @@
+{
+ "path": "memory/designer/goal5-scale-compliance-fixed-2026-11-20.md",
+ "headings": [
+  "Goal 5 + QA Gate: Scale compliance fixed"
+ ],
+ "lead": "Action: design_qa.py found 3 failures (off-scale fs tokens 11/13/16, off-scale gaps 6px/18px).",
+ "chars": 444,
+ "abstracted": "2026-11-23 09:24:44"
+}

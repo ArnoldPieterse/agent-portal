@@ -1,0 +1,14 @@
+{
+ "path": "memory/scribe/memory-integrity-reconciliation-2026-11-22.md",
+ "headings": [
+  "Memory-Integrity Reconciliation (Scribe) \u2014 2026-11-22",
+  "Verdict (do NOT pick a side \u2014 the truth is neither \"clean\" nor \"256 broken\")",
+  "Root cause of the inflation (evidence)",
+  "Does it contradict the prior closure? \u2014 PARTIALLY, and mostly a scope mismatch",
+  "Honest status line",
+  "Next actions (owners)"
+ ],
+ "lead": "**Trigger:** hot note \"Verifier found `memory_integrity.py` FAILS with 256 issues, contradicting a prior goal closure \u2014 needs re-investigation.\"",
+ "chars": 3586,
+ "abstracted": "2026-11-23 09:24:44"
+}

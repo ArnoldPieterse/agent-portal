@@ -1,0 +1,9 @@
+{
+ "path": "memory/designer/regression-rerun-2026-11-20.md",
+ "headings": [
+  "Designer regression re-run 2026-11-20"
+ ],
+ "lead": "Lane state: 10/10 closed (open=0). Auto-loop \"1 open\" is the stale dashboard artifact; live ledger authoritative.",
+ "chars": 608,
+ "abstracted": "2026-11-23 09:24:44"
+}

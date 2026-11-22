@@ -1,0 +1,16 @@
+{
+ "path": "memory/verifier/security-audit-2026-11-20.md",
+ "headings": [
+  "Security Audit \u2014 agent_portal.py (2026-11-20)",
+  "Summary",
+  "1. Path Traversal in File Endpoints",
+  "2. Command Injection via Subprocess",
+  "3. XSS in Chat Rendering",
+  "4. Unauthenticated Access to Admin Endpoints",
+  "5. CORS Wildcard (`Access-Control-Allow-Origin: *`)",
+  "6. SSRF via /api/net/* Endpoints"
+ ],
+ "lead": "**Scope:** `agent_portal.py` (4764 lines) + `ui/*.js` frontend files",
+ "chars": 8749,
+ "abstracted": "2026-11-23 09:24:44"
+}

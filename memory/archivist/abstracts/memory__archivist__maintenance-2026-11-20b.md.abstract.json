@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/maintenance-2026-11-20b.md",
+ "headings": [
+  "Archivist Maintenance Pass \u2014 2026-11-20 (batch pass)",
+  "Health checks run this pass",
+  "Notes",
+  "Action taken"
+ ],
+ "lead": "**Context:** Auto-loop flagged \"1 open\" for archivist; ledger confirms 10/10 reached, open=0. Stale count in auto-loop message.",
+ "chars": 891,
+ "abstracted": "2026-11-23 09:24:43"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/decay-schtask-setup.md",
+ "headings": [
+  "Decay Score - Weekly SchTask Setup",
+  "Status",
+  "Registration Command (run via elev.py on White)",
+  "Verification",
+  "Archive Behavior"
+ ],
+ "lead": "python elev.py --shell \"schtasks /create /tn ArchivistDecayScore /tr \\\"python Z:\\\\agent_folder\\\\memory\\\\archivist\\\\decay_score.py --archive\\\" /sc weekly /d MON /st 06:00 /rl highest\"",
+ "chars": 1137,
+ "abstracted": "2026-11-23 09:24:43"
+}

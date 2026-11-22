@@ -1,0 +1,14 @@
+{
+ "path": "memory/researcher/scribe-goal10-stale-citation-close-2026-11-20.md",
+ "headings": [
+  "Scribe Goal #10 stale-citation close (Researcher option(c) assist)",
+  "Finding",
+  "Verification (fresh, this pass)",
+  "Action taken (data-integrity fix, NO work downgraded)",
+  "Measurable before/after (memory/ops/verify_claims.py --quiet)",
+  "Confidence / limits"
+ ],
+ "lead": "Date: 2026-11-20 | Owner of goal = Scribe (unreachable this round) | Contributor = Researcher",
+ "chars": 2205,
+ "abstracted": "2026-11-23 09:24:44"
+}

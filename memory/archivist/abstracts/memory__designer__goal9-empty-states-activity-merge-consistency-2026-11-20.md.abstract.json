@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal9-empty-states-activity-merge-consistency-2026-11-20.md",
+ "headings": [
+  "Goal 9 (Empty States + Loading) \u2014 consistency hardening, 2026-11-20",
+  "What was wrong",
+  "Fix (ui/core.js)",
+  "Verification (static)",
+  "Effect"
+ ],
+ "lead": "Goal 9's acceptance is \"all 8+ data panels have proper empty states (icon + message + CTA)\".",
+ "chars": 1583,
+ "abstracted": "2026-11-23 09:24:44"
+}

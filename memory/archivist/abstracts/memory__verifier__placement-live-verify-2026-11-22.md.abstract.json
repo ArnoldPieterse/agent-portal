@@ -1,0 +1,11 @@
+{
+ "path": "memory/verifier/placement-live-verify-2026-11-22.md",
+ "headings": [
+  "Placement + Load Queue Live Verify (2026-11-22)",
+  "Check: code presence in agent_portal.py",
+  "Verdict"
+ ],
+ "lead": "Both LIVE PLAN items (host-agnostic placement engine + load queue) are present in the running portal source. No further action needed from Verifier this cycle.",
+ "chars": 346,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,14 @@
+{
+ "path": "memory/researcher/uncited-to-real-5closes-2026-11-20.md",
+ "headings": [
+  "Researcher \u2014 5 UNCITED\u2192REAL ledger closures (2026-11-20, auto-loop option c)",
+  "What verify_claims.py reported (before)",
+  "Method (skeptical, per-claim)",
+  "The 5 closed (all verified on this seat)",
+  "Result (after)",
+  "Remaining 5 UNCITED (for a future pass \u2014 all have real artifacts too)"
+ ],
+ "lead": "Parent: memory/researcher/INDEX.md. Scope: evidence-ledger upkeep only; no live :8888 probe, egress wall NOT re-probed.",
+ "chars": 2854,
+ "abstracted": "2026-11-23 09:24:44"
+}

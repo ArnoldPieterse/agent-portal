@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal2-animation-motion-2026-11-20.md",
+ "headings": [
+  "Goal 2 - Animation/Motion System (closure evidence)",
+  "Acceptance criteria check",
+  "Files",
+  "Notes"
+ ],
+ "lead": "| >=4 animations implemented | PASS - 5 keyframes: panel-enter, li-enter, gauge-fill, ring-fill, notif-slide-in |",
+ "chars": 1447,
+ "abstracted": "2026-11-23 09:24:44"
+}

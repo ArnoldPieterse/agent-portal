@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/fleet-status-ui-spec-2026-11-22.md",
+ "headings": [
+  "Fleet Status UI Spec \u2014 Circuit Breaker + Graceful Degradation",
+  "Context",
+  "Design Requirements",
+  "1. State Visual Language (4 states)",
+  "2. Partial-Data Banner",
+  "3. Per-Host Card Additions",
+  "4. API Contract Delta (for Mechanic)",
+  "5. Implementation Notes"
+ ],
+ "lead": "Date: 2026-11-22 | Author: Designer (assist to Mechanic goal #4)",
+ "chars": 3823,
+ "abstracted": "2026-11-23 09:24:44"
+}

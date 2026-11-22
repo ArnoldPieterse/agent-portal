@@ -1,0 +1,9 @@
+{
+ "path": "memory/orchestrator/ledger-regen-2026-11-20.md",
+ "headings": [
+  "Ledger Regeneration - 2026-11-20 (Orchestrator contribution, option c)"
+ ],
+ "lead": "**Action:** Regenerated `goal_ledger.json` from live goal files using `python goal_ledger.py --json`.",
+ "chars": 1309,
+ "abstracted": "2026-11-23 09:24:44"
+}

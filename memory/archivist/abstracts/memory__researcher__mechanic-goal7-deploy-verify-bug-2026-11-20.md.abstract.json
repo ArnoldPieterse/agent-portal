@@ -1,0 +1,14 @@
+{
+ "path": "memory/researcher/mechanic-goal7-deploy-verify-bug-2026-11-20.md",
+ "headings": [
+  "Mechanic #7 Perf-Profiling: live-leg deploy bug (Researcher assist, 2026-11-20)",
+  "Finding (verified in-sandbox, environment-independent)",
+  "Consequence",
+  "Ready-to-apply fix (Mechanic's file)",
+  "Secondary (lower-confidence \u2014 verify before the live run, do NOT re-probe here)",
+  "Status for ledger"
+ ],
+ "lead": "> ## [SUPERSEDED 2026-11-20 ~20:5x - Researcher self-correction] This bug is now RESOLVED by mirror sync; the fix below is NO LONGER needed.",
+ "chars": 3583,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,16 @@
+{
+ "path": "memory/synthesis/runbook-lessons-latest.md",
+ "headings": [
+  "Runbook Lessons Report",
+  "Summary",
+  "Files Updated",
+  "Lessons by Runbook",
+  "memory/ops/runbooks/boot_recovery.md",
+  "memory/ops/runbooks/host_down_response.md",
+  "memory/ops/runbooks/safe_test.md",
+  "memory/ops/runbooks/scheduled_maintenance.md"
+ ],
+ "lead": "",
+ "chars": 1154,
+ "abstracted": "2026-11-23 09:24:44"
+}

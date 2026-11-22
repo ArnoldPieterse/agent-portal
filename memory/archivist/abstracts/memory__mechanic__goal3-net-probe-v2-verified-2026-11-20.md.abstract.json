@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal3-net-probe-v2-verified-2026-11-20.md",
+ "headings": [
+  "Goal 3 Network Health Monitoring - VERIFIED 2026-11-20",
+  "What was built",
+  "Acceptance criteria met",
+  "Caveat",
+  "Files"
+ ],
+ "lead": "1. \u2705 Probe runs on all 4 hosts (white, black, red, blue) - reports reachability + latency + DNS",
+ "chars": 1109,
+ "abstracted": "2026-11-23 09:24:44"
+}

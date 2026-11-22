@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal7-perf-profile-verified-2026-11-20.md",
+ "headings": [
+  "Goal 7: Performance Profiling - Verification Evidence (2026-11-20)",
+  "Status: ~~PIPELINE VERIFIED, LIVE RUN PENDING~~ \u2192 SELFTEST ONLY (`--verify` block below is a PHANTOM \u2014 see banner)",
+  "What was verified this pass:",
+  "Remaining for full closure:",
+  "Acceptance criteria mapping:",
+  "Artifact: memory/mechanic/perf-profile.json (mock mode, valid structure)"
+ ],
+ "lead": "> ## \u26a0\ufe0f PHANTOM NOTICE \u2014 do NOT trust this file's `--verify` claim (added by Orchestrator, 2026-11-20)",
+ "chars": 2419,
+ "abstracted": "2026-11-23 09:24:44"
+}

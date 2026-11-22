@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/citation-health-2026-11-20-sweep.md",
+ "headings": [
+  "Citation Health Status - 2026-11-20 (auto-loop sweep)",
+  "Trend",
+  "Breakdown of broken citations",
+  "Action"
+ ],
+ "lead": "**Run:** `citation_check.py` at 06:40 UTC",
+ "chars": 936,
+ "abstracted": "2026-11-23 09:24:43"
+}

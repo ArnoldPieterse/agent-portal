@@ -1,0 +1,16 @@
+{
+ "path": "memory/goals/archive/orchestrator-2026-11-13.md",
+ "headings": [
+  "Orchestrator \u2014 10 goals (set 2026-11-13)",
+  "Round evidence 2026-11-15 ~20:4x (Orchestrator)",
+  "Round evidence 2026-11-15 ~21:xx (Orchestrator, auto-resume 3/5)",
+  "Round evidence 2026-11-15 ~21:xx (Orchestrator, cycle-closures round)",
+  "Round evidence 2026-11-15 ~22:3x (Orchestrator, post-fix verification)",
+  "Round evidence 2026-11-15 ~22:4x (Orchestrator, AUTO-RESUME 1/5 post portal-restart)",
+  "Round evidence 2026-11-15 ~22:5x (Orchestrator, cross-assist re-route on NEW external evidence)",
+  "Round evidence 2026-11-15 ~23:xx (Orchestrator, handoff EXECUTED on NEW trigger)"
+ ],
+ "lead": "Source: Goal-setting round 2026-11-13 (earlier cycle), collected by Orchestrator. Archived as superseded.",
+ "chars": 26559,
+ "abstracted": "2026-11-23 09:24:44"
+}

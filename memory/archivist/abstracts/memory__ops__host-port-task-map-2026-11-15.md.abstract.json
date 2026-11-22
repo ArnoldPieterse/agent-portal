@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/host-port-task-map-2026-11-15.md",
+ "headings": [
+  "Host port + scheduled-task map",
+  "Access (RDP + SMB) - all hosts",
+  "White ([LAN-IP] / local)",
+  "Red (Red) - seats: Scribe, Mechanic",
+  "Pale (Pale) - seats: Designer, Archivist",
+  "Black (Black) - seats: Builder, Verifier"
+ ],
+ "lead": "Last updated: 2026-11-18 (added Access section: RDP + SMB passwords empty on all hosts)",
+ "chars": 2205,
+ "abstracted": "2026-11-23 09:24:44"
+}

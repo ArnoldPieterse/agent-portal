@@ -1,0 +1,9 @@
+{
+ "path": "memory/mechanic/goal7-perf-dryrun-2026-11-20.md",
+ "headings": [
+  "Goal 7 Progress: dry-run mode added (2026-11-20)"
+ ],
+ "lead": "**What was done:** Added `--dry-run` mode to `perf_profile.py` that exercises the full collection loop + JSON output with synthetic data (no network needed).",
+ "chars": 880,
+ "abstracted": "2026-11-23 09:24:44"
+}

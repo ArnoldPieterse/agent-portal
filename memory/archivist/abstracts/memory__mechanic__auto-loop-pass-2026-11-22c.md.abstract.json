@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-22c.md",
+ "headings": [
+  "Mechanic Auto-Loop Pass 2026-11-22 ~17:20 (Pale sandbox seat)",
+  "Context",
+  "Action This Pass",
+  "Impact",
+  "Current Data State (unchanged from last pass)",
+  "Anti-Loop Check"
+ ],
+ "lead": "Pale sandbox. Egress wall confirmed (WinError 10013). elev.py absent. All 5 open goals blocked on data accumulation or live execution from non-sandbox seats.",
+ "chars": 1739,
+ "abstracted": "2026-11-23 09:24:44"
+}

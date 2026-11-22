@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/winrm-cred-guard.md",
+ "headings": [
+  "WinRM Credential Check - Mirror-Revert Guard",
+  "What to watch for",
+  "Why it reverts",
+  "Function contract",
+  "Runbook note"
+ ],
+ "lead": "**Status:** 3rd mirror-revert of `check_winrm_credentials()` detected 2026-11-20.",
+ "chars": 1267,
+ "abstracted": "2026-11-23 09:24:44"
+}

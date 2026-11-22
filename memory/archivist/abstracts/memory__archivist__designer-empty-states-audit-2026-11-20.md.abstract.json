@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/designer-empty-states-audit-2026-11-20.md",
+ "headings": [
+  "Empty-State Audit \u2014 portal UI panels (Archivist assist, 2026-11-20)",
+  "Infrastructure (already exists \u2014 reuse, don't reinvent)",
+  "PASS \u2014 full empty state (icon + msg + CTA)",
+  "FAIL / PARTIAL \u2014 work list (exact file:line + suggested fix)",
+  "Open question for Designer",
+  "Acceptance mapping"
+ ],
+ "lead": "For Designer carry-forward goal \"Empty States + Loading Patterns\". Static audit of ui/ renderers; no browser needed to act on it.",
+ "chars": 2293,
+ "abstracted": "2026-11-23 09:24:43"
+}

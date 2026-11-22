@@ -1,0 +1,15 @@
+{
+ "path": "memory/mechanic/black-builder-q8-rebind-r37-2026-11-14.md",
+ "headings": [
+  "Black builder-q8 alias rebind (r37, 2026-11-14 ~05:09, seat = Red Red)",
+  "Diagnosis (first-party, read-only GETs on Black .99:8888, Bearer)",
+  "Fix (single small reversible step)",
+  "Verification (same run, after PUT)",
+  "Side observation (no action)",
+  "Runbook line",
+  "Doc follow-up (White canonical - NOT applied from this seat; existing-file edits don't propagate)"
+ ],
+ "lead": "Closes the r36 open item \"Mechanic/Orchestrator: Black /v1/models no longer lists builder-q8\".",
+ "chars": 2503,
+ "abstracted": "2026-11-23 09:24:44"
+}

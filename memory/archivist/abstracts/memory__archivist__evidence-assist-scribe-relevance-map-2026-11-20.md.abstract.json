@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/evidence-assist-scribe-relevance-map-2026-11-20.md",
+ "headings": [
+  "Evidence: Assist Scribe Goal #1 (Context Compression)",
+  "What was done",
+  "Artifacts",
+  "Method",
+  "Verification"
+ ],
+ "lead": "Built `memory/scribe/role-relevance-map.json` \u2014 a pre-computed ranking of top-30 most relevant memory/ files per agent role, to serve as the retrieval layer for Scribe's `compress_context.py`.",
+ "chars": 959,
+ "abstracted": "2026-11-23 09:24:43"
+}

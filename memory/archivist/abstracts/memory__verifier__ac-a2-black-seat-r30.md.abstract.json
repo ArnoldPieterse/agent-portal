@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/ac-a2-black-seat-r30.md",
+ "headings": [
+  "Verifier AC-A2 status \u2014 BLACK seat, r30 (2026-11-14)",
+  "Verified PASS (evidence-backed, from this seat)",
+  "NOT testable from this seat (genuinely gated on White / human) \u2014 UNTESTED, not failed",
+  "Verdict"
+ ],
+ "lead": "Seat proven this round: `socket.gethostname()` = **black**; USER/USERNAME env = None (degraded ctx).",
+ "chars": 2183,
+ "abstracted": "2026-11-23 09:24:44"
+}

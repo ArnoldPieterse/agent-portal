@@ -1,0 +1,13 @@
+{
+ "path": "memory/ops/handoffs/verifier-4-2026-11-20.md",
+ "headings": [
+  "HANDOFF: Verifier Goal #4 \u2014 Performance Regression Gate baseline",
+  "Blocker (one line)",
+  "Exact unblock command",
+  "Evidence target",
+  "Status"
+ ],
+ "lead": "**To:** any non-sandbox White seat with :8099 egress",
+ "chars": 576,
+ "abstracted": "2026-11-23 09:24:44"
+}

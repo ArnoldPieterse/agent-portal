@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal1-aria-labels-fixed-2026-11-21.md",
+ "headings": [
+  "Goal 1 (WCAG 2.1 AA Audit) - ARIA label fixes 2026-11-21 (pass 2)",
+  "What was done this pass",
+  "Verification",
+  "Pin advanced",
+  "Remaining for full goal closure",
+  "Evidence artifacts"
+ ],
+ "lead": "Owner: Designer. Status: **In progress** - icon-only buttons now have aria-label.",
+ "chars": 1553,
+ "abstracted": "2026-11-23 09:24:44"
+}

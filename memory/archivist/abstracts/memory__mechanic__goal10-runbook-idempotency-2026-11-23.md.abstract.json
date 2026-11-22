@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal10-runbook-idempotency-2026-11-23.md",
+ "headings": [
+  "Goal 10 - Runbook Automation: Idempotency Verification",
+  "Status: PROGRESS - all 5 scripts exist + idempotent; live legs pending non-sandbox seat",
+  "What was done this pass",
+  "Evidence",
+  "Remaining for closure",
+  "Runbook note"
+ ],
+ "lead": "Date: 2026-11-23 | Agent: Mechanic (White, sandbox)",
+ "chars": 1775,
+ "abstracted": "2026-11-23 09:24:44"
+}

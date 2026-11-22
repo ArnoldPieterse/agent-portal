@@ -1,0 +1,9 @@
+{
+ "path": "memory/archivist/xref-postmirror-sweep-2026-11-20.md",
+ "headings": [
+  "XRef post-mirror sweep 2026-11-20 17:32 (Archivist, auto-loop upkeep)"
+ ],
+ "lead": "Trigger: mirror cycle landed after last xref report (195 files newer than 12:35 report) -> goal-5 rule \"run after every mirror cycle\".",
+ "chars": 1329,
+ "abstracted": "2026-11-23 09:24:44"
+}

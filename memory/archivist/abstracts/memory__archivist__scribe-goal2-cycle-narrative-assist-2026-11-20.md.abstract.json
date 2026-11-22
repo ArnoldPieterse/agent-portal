@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/scribe-goal2-cycle-narrative-assist-2026-11-20.md",
+ "headings": [
+  "Archivist assist: Scribe Goal #2 (Cycle Narrative v2) verification",
+  "What ran",
+  "Results",
+  "Spot-check (3 claims)",
+  "Known limitation",
+  "Verdict"
+ ],
+ "lead": "python memory/scribe/cycle_narrative.py --cycle 6 --since 2026-11-17 --until 2026-11-19 --dry-run",
+ "chars": 1385,
+ "abstracted": "2026-11-23 09:24:43"
+}

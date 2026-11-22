@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/goal5-card-staleness-verified-2026-11-20.md",
+ "headings": [
+  "Goal 5 \u2014 Card Staleness Detection: VERIFIED 2026-11-20",
+  "Acceptance criteria (all met)",
+  "Artifact",
+  "Real-data output summary (2026-11-20)",
+  "Ledger record"
+ ],
+ "lead": "| 1 | After modifying a source file, the corresponding card is flagged | PASS \u2014 selftest: modifying `a.md` flags `c1.md`; real data: 3/4 cards correctly flag newer sources |",
+ "chars": 1218,
+ "abstracted": "2026-11-23 09:24:44"
+}

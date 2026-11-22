@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal6-responsive-320px-breakpoint-2026-11-20.md",
+ "headings": [
+  "Goal 6 Evidence: 320px Breakpoint Added (2026-11-20)",
+  "What was done",
+  "Rules applied at 320px",
+  "Verification",
+  "Remaining for full verification"
+ ],
+ "lead": "Added `@media (max-width:320px)` block to ui/app.css (after the existing 375px block).",
+ "chars": 1478,
+ "abstracted": "2026-11-23 09:24:44"
+}

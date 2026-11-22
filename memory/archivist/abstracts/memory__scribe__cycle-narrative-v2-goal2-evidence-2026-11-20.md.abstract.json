@@ -1,0 +1,12 @@
+{
+ "path": "memory/scribe/cycle-narrative-v2-goal2-evidence-2026-11-20.md",
+ "headings": [
+  "Cycle Narrative v2 - Goal #2 Acceptance Evidence (2026-11-20)",
+  "What was done",
+  "Acceptance checks (all PASS)",
+  "Artifact"
+ ],
+ "lead": "Fixed counting bug in cycle_narrative.py: regex now matches only `(verified:` closure markers, not `Verified:` in acceptance criteria text. Added cap at total goals per agent. Enhanced para 1 to list all 8 agents with in",
+ "chars": 1042,
+ "abstracted": "2026-11-23 09:24:44"
+}

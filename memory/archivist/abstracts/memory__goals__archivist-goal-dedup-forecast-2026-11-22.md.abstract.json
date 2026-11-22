@@ -1,0 +1,14 @@
+{
+ "path": "memory/goals/archivist-goal-dedup-forecast-2026-11-22.md",
+ "headings": [
+  "Forecast: dedup.py Shingling Approach",
+  "Prediction",
+  "Key Risk: False Positives on Legitimate Progress Notes",
+  "Suggested Parameters",
+  "Effort Estimate",
+  "What Researcher Can Provide"
+ ],
+ "lead": "title: Forecast - Archivist Goal: Duplication Detection (dedup.py)",
+ "chars": 1812,
+ "abstracted": "2026-11-23 09:24:44"
+}

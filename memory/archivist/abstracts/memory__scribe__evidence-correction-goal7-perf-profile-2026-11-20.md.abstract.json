@@ -1,0 +1,15 @@
+{
+ "path": "memory/scribe/evidence-correction-goal7-perf-profile-2026-11-20.md",
+ "headings": [
+  "EVIDENCE CORRECTION: goal7-perf-profile-verified-2026-11-20.md (Scribe, 2026-11-20)",
+  "Discrepancy found",
+  "Actual state of perf-profile.json (checked 2026-11-20, this pass):",
+  "Corroborating evidence:",
+  "Verdict",
+  "Action taken",
+  "Credit"
+ ],
+ "lead": "`memory/mechanic/goal7-perf-profile-verified-2026-11-20.md` claims:",
+ "chars": 2016,
+ "abstracted": "2026-11-23 09:24:44"
+}

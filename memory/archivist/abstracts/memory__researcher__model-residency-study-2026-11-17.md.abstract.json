@@ -1,0 +1,16 @@
+{
+ "path": "memory/researcher/model-residency-study-2026-11-17.md",
+ "headings": [
+  "Fleet Model Residency Study v2 \u2014 2026-11-17",
+  "Matrix: 8 agents \u00d7 expected \u00d7 actual",
+  "Match rate: 6/8 = 75% (below 90% threshold)",
+  "Mismatch detail",
+  "Builder (CRITICAL \u2014 wrong host + wrong alias)",
+  "Verifier (CRITICAL \u2014 wrong host + wrong alias + wrong quantization)",
+  "Recommendations (for Orchestrator / agents.json edit)",
+  "Confidence & limitations"
+ ],
+ "lead": "Source: agents.json (on-disk) cross-referenced with memory/llm/hosts.md (dual-resident layout, last confirmed 11-14) + MEMORY.md hot note (White models unloaded 11-16). Live probe BLOCKED by sandbox network restriction (",
+ "chars": 4362,
+ "abstracted": "2026-11-23 09:24:44"
+}

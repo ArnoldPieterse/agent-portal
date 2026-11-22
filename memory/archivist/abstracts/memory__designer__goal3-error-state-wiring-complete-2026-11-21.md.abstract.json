@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal3-error-state-wiring-complete-2026-11-21.md",
+ "headings": [
+  "Goal 3 - Error State Wiring Complete (2026-11-21)",
+  "What was done",
+  "Total panels using UI.errorState() (>=3 required)",
+  "Remaining raw \"error:\" strings (intentional, not panel states)",
+  "Acceptance criteria check",
+  "Artifact"
+ ],
+ "lead": "Wired `UI.errorState()` into remaining panel call sites in `ui/core.js`:",
+ "chars": 1923,
+ "abstracted": "2026-11-23 09:24:44"
+}

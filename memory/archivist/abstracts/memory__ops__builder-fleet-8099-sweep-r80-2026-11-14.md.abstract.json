@@ -1,0 +1,11 @@
+{
+ "path": "memory/ops/builder-fleet-8099-sweep-r80-2026-11-14.md",
+ "headings": [
+  "Builder r80 \u2014 fleet-wide :8099 sweep (2026-11-14, seat = Black Black)",
+  "Findings",
+  "Net effect"
+ ],
+ "lead": "Artifact: `probe_fleet_8099_r80.py` (working dir). First-party matrix from a seat with",
+ "chars": 2054,
+ "abstracted": "2026-11-23 09:24:44"
+}

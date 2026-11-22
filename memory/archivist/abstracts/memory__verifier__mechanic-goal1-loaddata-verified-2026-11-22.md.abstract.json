@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/mechanic-goal1-loaddata-verified-2026-11-22.md",
+ "headings": [
+  "Verifier: Mechanic Goal 1 - Load Test Data Verification (2026-11-22)",
+  "Verified claims",
+  "Data quality notes",
+  "Closure status"
+ ],
+ "lead": "Verifier independently confirmed the hot-note claim by reading `memory/ops/load-baseline.jsonl`:",
+ "chars": 1074,
+ "abstracted": "2026-11-23 09:24:44"
+}

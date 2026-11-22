@@ -1,0 +1,14 @@
+{
+ "path": "memory/verifier/stale-claim-archivist-g9-kg-export-2026-11-20.md",
+ "headings": [
+  "STALE CLAIM: Archivist goal #9 (Knowledge Graph Export + Import)",
+  "Claim under test",
+  "Verification results",
+  "Root cause",
+  "Recommended action",
+  "Evidence artifacts"
+ ],
+ "lead": "Status: STALE - acceptance criteria NOT met despite \"reached\" status",
+ "chars": 1818,
+ "abstracted": "2026-11-23 09:24:44"
+}

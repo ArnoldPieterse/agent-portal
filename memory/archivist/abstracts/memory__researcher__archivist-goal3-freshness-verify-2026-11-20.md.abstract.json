@@ -1,0 +1,16 @@
+{
+ "path": "memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md",
+ "headings": [
+  "Archivist #3 (Memory Freshness SLA) - Independent Cross-Verification",
+  "Method (independent, does not trust the tool's own summary)",
+  "Results (fresh, this pass)",
+  "Supporting measurements",
+  "Verdict",
+  "Credit / hand-off",
+  "Repro",
+  "synthetic fire: create aged .md in memory/researcher/, utime -120d, scan() -> alert=True; delete"
+ ],
+ "lead": "Date: 2026-11-20 | Owner of goal = **Archivist** (reachable, idle). Contributor = Researcher (auto-loop option d - assist another agent's oldest open goal; NOT re-probing the citation-phantom wall).",
+ "chars": 3408,
+ "abstracted": "2026-11-23 09:24:44"
+}

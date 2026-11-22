@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/evidence-scribe-goal10-agent-digest-2026-11-22.md",
+ "headings": [
+  "Evidence: Per-Agent Weekly Digest (Scribe Goal #10)",
+  "What ran",
+  "Acceptance criteria verification",
+  "Artifacts"
+ ],
+ "lead": "Executed `python memory/scribe/weekly_summary.py --agent <name>` for all 8 agents.",
+ "chars": 1323,
+ "abstracted": "2026-11-23 09:24:43"
+}

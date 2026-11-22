@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal4-reboot-dryrun-red-2026-11-18.md",
+ "headings": [
+  "Goal #4 - Reboot Recovery: Dry-run from Red 2026-11-18",
+  "What was done",
+  "Findings",
+  "Assessment",
+  "Next step",
+  "Runbook note"
+ ],
+ "lead": "| Pale | Pale:8888 | PASS 45.6ms | LLM reachable |",
+ "chars": 1321,
+ "abstracted": "2026-11-23 09:24:44"
+}

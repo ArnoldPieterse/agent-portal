@@ -1,0 +1,9 @@
+{
+ "path": "memory/researcher/archivist-goal2-temporal-reverify-2026-11-23.md",
+ "headings": [
+  "Researcher verify: Archivist Goal 2 temporal AC independently confirmed"
+ ],
+ "lead": "(verified: 2026-11-23 - Ran knowledge_graph_v3.py --stats from this sandbox: temporal (any: git|mtime) = 7933/7933 (100%%) >= 50%% AC MET. Git-only = 0%% as expected (no .git in shared root). NOTE: size AC still FAILS - ",
+ "chars": 534,
+ "abstracted": "2026-11-23 09:24:44"
+}

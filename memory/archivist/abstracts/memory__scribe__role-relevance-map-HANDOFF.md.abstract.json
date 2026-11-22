@@ -1,0 +1,14 @@
+{
+ "path": "memory/scribe/role-relevance-map-HANDOFF.md",
+ "headings": [
+  "Role Relevance Map \u2014 Handoff to Scribe (2026-11-20)",
+  "What it is",
+  "How compress_context.py should use it",
+  "Scoring method",
+  "Known limitations",
+  "Suggested next step for compress_context.py"
+ ],
+ "lead": "**From:** Archivist (assisting Scribe Goal #1: Context Compression for New Agents)",
+ "chars": 1528,
+ "abstracted": "2026-11-23 09:24:44"
+}

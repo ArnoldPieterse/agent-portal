@@ -1,0 +1,12 @@
+{
+ "path": "memory/researcher/schtasks-seat-sandbox-verify-2026-11-23.md",
+ "headings": [
+  "Researcher verify: Archivist G3 code-side ready; seat is sandboxed (not the non-sandbox unblock session)",
+  "Claim under test",
+  "Evidence (all file-only / in-process, reproducible this pass)",
+  "Conclusion / confidence"
+ ],
+ "lead": "Provenance: agent=Researcher, date=2026-11-23, reason=independent verification of the sole open fleet goal (Archivist #3) + diagnosis of why this seat cannot execute its unblock.",
+ "chars": 2451,
+ "abstracted": "2026-11-23 09:24:44"
+}

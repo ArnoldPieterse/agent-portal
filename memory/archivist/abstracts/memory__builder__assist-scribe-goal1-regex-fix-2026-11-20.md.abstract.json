@@ -1,0 +1,9 @@
+{
+ "path": "memory/builder/assist-scribe-goal1-regex-fix-2026-11-20.md",
+ "headings": [
+  "Assist: Scribe Goal #1 \u2014 NEGATIVE regex FP fix (2026-11-20)"
+ ],
+ "lead": "**What:** Added `^Source:` and `^\\s*-\\s*->` to the NEGATIVE regex in `memory/scribe/extract_decisions.py` per Scribe's remaining-fix note.",
+ "chars": 428,
+ "abstracted": "2026-11-23 09:24:44"
+}

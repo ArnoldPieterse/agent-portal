@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/remote-verify-runner-2026-11-20.md",
+ "headings": [
+  "Remote Verification Runner \u2014 unblocks CDP + live-port goals from sandbox",
+  "Solution: WinRM remote execution on White (persistent host, portal local)",
+  "One-shot command (from any sandbox seat):",
+  "memory/ops/run_remote_verify.py",
+  "Prerequisites (already met):",
+  "Expected artifacts (land in shared memory/ after mirror):",
+  "After artifacts land:",
+  "Est. time:"
+ ],
+ "lead": "Problem: Sandbox WinError 10013 blocks :8099 egress. Two goals stuck:",
+ "chars": 2480,
+ "abstracted": "2026-11-23 09:24:44"
+}

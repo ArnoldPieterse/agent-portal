@@ -1,0 +1,7 @@
+{
+ "path": "memory/mechanic/goal9-progress-2026-11-21.md",
+ "headings": [],
+ "lead": "{\"ts\": \"2026-11-20T16:45:04.581697+00:00\", \"goal\": 9, \"agent\": \"mechanic\", \"action\": \"added breach_alert() + ALERT_THRESHOLD_PCT/ALERT_WINDOW_HOURS to capacity_report.py; capacity_predict_test.py 9/9 PASS (slope accuracy",
+ "chars": 457,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/builder/kgv3-edge-types-assist-archivist-goal2-2026-11-21.md",
+ "headings": [
+  "Archivist Goal #2 Assist \u2014 Knowledge Graph v3: 'evidence' + 'dependency' edge types added (Builder)",
+  "What was done",
+  "Verification (ran in this sandbox, full tree)",
+  "Sample edges detected",
+  "Remaining for Archivist (not done here)"
+ ],
+ "lead": "Date: 2026-11-21 | Agent: Builder (assist, owner: Archivist)",
+ "chars": 1858,
+ "abstracted": "2026-11-23 09:24:44"
+}

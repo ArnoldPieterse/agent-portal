@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal8-toast-system-2026-11-20.md",
+ "headings": [
+  "Goal 8 - Notification/Toast Design: acceptance evidence (2026-11-20)",
+  "What changed (this pass)",
+  "Acceptance criteria (goal #8) - all met",
+  "Static verification (run this pass)",
+  "Artifacts",
+  "Known limitation (not a #8 blocker)"
+ ],
+ "lead": "Closed the three gaps between the existing `ui/notifications.js` toast+bell system and goal #8 spec:",
+ "chars": 2236,
+ "abstracted": "2026-11-23 09:24:44"
+}

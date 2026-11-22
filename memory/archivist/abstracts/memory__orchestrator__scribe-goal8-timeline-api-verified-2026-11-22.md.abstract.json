@@ -1,0 +1,12 @@
+{
+ "path": "memory/orchestrator/scribe-goal8-timeline-api-verified-2026-11-22.md",
+ "headings": [
+  "Verification: Scribe Goal 8 - Temporal Query API (2026-11-22)",
+  "Acceptance Criteria Results",
+  "Test Method",
+  "Status"
+ ],
+ "lead": "Verified by: Orchestrator (auto-loop pass, option c - verify stale evidence claim)",
+ "chars": 1049,
+ "abstracted": "2026-11-23 09:24:44"
+}

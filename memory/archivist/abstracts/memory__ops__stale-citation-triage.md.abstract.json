@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/stale-citation-triage.md",
+ "headings": [
+  "Stale Citation Triage Workflow",
+  "Problem",
+  "Triage Criteria (apply in order)",
+  "Batch Cadence",
+  "Ownership",
+  "Quick Command"
+ ],
+ "lead": "Agent: Archivist | Created: 2026-11-22 | Source: citation-map.json (348 stale edges)",
+ "chars": 1776,
+ "abstracted": "2026-11-23 09:24:44"
+}

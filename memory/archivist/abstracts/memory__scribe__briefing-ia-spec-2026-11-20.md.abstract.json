@@ -1,0 +1,12 @@
+{
+ "path": "memory/scribe/briefing-ia-spec-2026-11-20.md",
+ "headings": [
+  "Briefing IA Spec \u2014 compress_context.py redesign (assist for Designer, 2026-11-20)",
+  "Defects in current output (evidence: memory/scribe/briefings/scribe-briefing.md, 2026-11-20)",
+  "Required behaviour (acceptance criteria)",
+  "Verification"
+ ],
+ "lead": "Owner of fix: Designer (per hot note: auto-briefing Gotchas section has IA problems). Scribe supplies this spec; credit Designer in closure.",
+ "chars": 1971,
+ "abstracted": "2026-11-23 09:24:44"
+}

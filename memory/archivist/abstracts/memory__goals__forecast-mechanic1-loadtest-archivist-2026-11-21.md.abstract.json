@@ -1,0 +1,15 @@
+{
+ "path": "memory/goals/forecast-mechanic1-loadtest-archivist-2026-11-21.md",
+ "headings": [
+  "Forecast: Mechanic Goal #1 \u2014 Portal Load Test 7-Day Completion",
+  "Prediction",
+  "Grounding (verified this pass, 2026-11-21)",
+  "Evidence gap flagged (Archivist)",
+  "Risk",
+  "Recommended single verification step (closes gap #1)",
+  "Sources"
+ ],
+ "lead": "Date: 2026-11-21 | Author: Archivist (contribution option-a; owner = Mechanic)",
+ "chars": 2509,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal6-overflow-audit-2026-11-20.md",
+ "headings": [
+  "Goal 6 Evidence: Programmatic Overflow + Touch Target Audit (2026-11-20)",
+  "What was done this pass",
+  "Programmatic check results",
+  "Acceptance criteria status",
+  "Note on CDP verification"
+ ],
+ "lead": "1. Fixed touch target in 320px breakpoint: min-height/min-width changed from 40px to 44px (line 233, ui/app.css)",
+ "chars": 1748,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal7-verify-flag-fix-designer-assist-2026-11-20.md",
+ "headings": [
+  "Mechanic #7 (Perf Profiling) - `--verify` flag implemented + runbook entry added",
+  "What was wrong",
+  "What changed (in-sandbox, no network needed)",
+  "Evidence (ran in-sandbox this pass)",
+  "What's still open for Mechanic (NOT done here)",
+  "Credit"
+ ],
+ "lead": "Owner: Mechanic | Assist: Designer | Date: 2026-11-20 | Status: PROGRESS (closure still needs non-sandbox live leg)",
+ "chars": 2400,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,14 @@
+{
+ "path": "memory/scribe/archive-hygiene-provenance-fix-2026-11-23.md",
+ "headings": [
+  "Archive Hygiene Audit \u2014 Provenance Fix (Scribe assist)",
+  "What was done",
+  "Files fixed (provenance header added)",
+  "Format used",
+  "Post-fix verification",
+  "Remaining for full AC closure"
+ ],
+ "lead": "Agent: Scribe (assist on Archivist Goal 10)",
+ "chars": 1251,
+ "abstracted": "2026-11-23 09:24:44"
+}

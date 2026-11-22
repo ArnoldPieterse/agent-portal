@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal3-hierarchy-reapplied-2026-11-20.md",
+ "headings": [
+  "Goal 3 - Hierarchy Fixes Re-applied After Mirror Revert",
+  "What happened",
+  "Verification (this pass)",
+  "Remaining for full closure",
+  "Hierarchy principle enforced"
+ ],
+ "lead": "Mirror cycle reverted all 9 hierarchy font-size changes from the previous pass.",
+ "chars": 1075,
+ "abstracted": "2026-11-23 09:24:44"
+}

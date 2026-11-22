@@ -1,0 +1,12 @@
+{
+ "path": "memory/builder/archivist-goal9-provenance-api-2026-11-20.md",
+ "headings": [
+  "Builder Assist: Archivist Goal 9 (Provenance Tracking) - API Endpoint",
+  "What was done",
+  "Verification (local logic test - sandbox cannot reach :8099)",
+  "Goal status update"
+ ],
+ "lead": "Agent: Builder (assist, credit: Archivist built provenance.py)",
+ "chars": 1206,
+ "abstracted": "2026-11-23 09:24:44"
+}

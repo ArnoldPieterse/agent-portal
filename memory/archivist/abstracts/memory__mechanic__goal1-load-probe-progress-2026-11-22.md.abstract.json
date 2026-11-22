@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal1-load-probe-progress-2026-11-22.md",
+ "headings": [
+  "Goal #1 - Load Probe Status: 5/7 days (2026-11-22, pass 2)",
+  "Current state",
+  "This pass actions",
+  "Blocker (unchanged from pass 1)",
+  "Next step (White seat available)",
+  "Status: BLOCKED on White seat for live diagnostic (queued, not re-probing)"
+ ],
+ "lead": "1. Verified load-baseline.jsonl state: 5/7 days confirmed (Nov 16-20)",
+ "chars": 1475,
+ "abstracted": "2026-11-23 09:24:44"
+}

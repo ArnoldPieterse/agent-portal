@@ -1,0 +1,14 @@
+{
+ "path": "memory/builder/ui_tests_suite_2026-11-20.md",
+ "headings": [
+  "Goal #9: UI Module Test Suite \u2014 Evidence (2026-11-20)",
+  "Deliverables created",
+  "Verification status",
+  "Deliberate-break detection",
+  "Run command (from host seat with node)",
+  "Remaining for full closure"
+ ],
+ "lead": "\u251c\u2500\u2500 run.js                    # main runner, exits 0/1, <10s SLO check",
+ "chars": 1875,
+ "abstracted": "2026-11-23 09:24:44"
+}

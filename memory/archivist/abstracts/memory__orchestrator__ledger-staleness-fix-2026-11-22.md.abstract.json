@@ -1,0 +1,9 @@
+{
+ "path": "memory/orchestrator/ledger-staleness-fix-2026-11-22.md",
+ "headings": [
+  "Ledger Staleness Fix - 2026-11-22"
+ ],
+ "lead": "**Issue**: `goal_ledger_current.json` (generated 2026-11-20) claimed Fleet 73/80 (91%) with Mechanic at 10/10.",
+ "chars": 1005,
+ "abstracted": "2026-11-23 09:24:44"
+}

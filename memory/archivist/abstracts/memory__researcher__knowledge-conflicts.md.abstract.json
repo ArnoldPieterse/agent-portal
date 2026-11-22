@@ -1,0 +1,13 @@
+{
+ "path": "memory/researcher/knowledge-conflicts.md",
+ "headings": [
+  "Knowledge Conflict Report",
+  "Conflict 1: black / vram",
+  "Conflict 2: fleet / agent_count",
+  "Conflict 3: portal / port",
+  "Conflict 4: white / vram"
+ ],
+ "lead": "Generated: 2026-11-23 (conflict_detector.py)",
+ "chars": 3127,
+ "abstracted": "2026-11-23 09:24:44"
+}

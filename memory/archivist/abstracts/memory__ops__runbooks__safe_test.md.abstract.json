@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/runbooks/safe_test.md",
+ "headings": [
+  "Safe Test Runbook",
+  "Metadata",
+  "Steps",
+  "Step 1: Echo hello",
+  "Step 2: Write marker file",
+  "Step 3: Echo done",
+  "Lessons Learned",
+  "1. success (2026-11-22T20:26:35)"
+ ],
+ "lead": "",
+ "chars": 1789,
+ "abstracted": "2026-11-23 09:24:44"
+}

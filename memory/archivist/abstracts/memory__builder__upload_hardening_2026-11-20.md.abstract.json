@@ -1,0 +1,12 @@
+{
+ "path": "memory/builder/upload_hardening_2026-11-20.md",
+ "headings": [
+  "Upload Pipeline Hardening - Evidence (2026-11-20)",
+  "What was added",
+  "Acceptance criteria verified",
+  "Test method"
+ ],
+ "lead": "**Goal #5 complete.** Added to `ui/uploads.js`:",
+ "chars": 1102,
+ "abstracted": "2026-11-23 09:24:44"
+}

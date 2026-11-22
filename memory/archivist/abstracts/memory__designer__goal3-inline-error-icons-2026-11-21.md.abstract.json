@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal3-inline-error-icons-2026-11-21.md",
+ "headings": [
+  "Goal 3 - inline error icons in log/list contexts (2026-11-21)",
+  "Change",
+  "CSS (ui/app.css)",
+  "Remaining error: strings (intentional, not user-facing raw indicators)",
+  "Acceptance: no raw Error text without context"
+ ],
+ "lead": "Remaining raw `error:` strings in non-component contexts now render with an inline SVG warning icon + red color:",
+ "chars": 975,
+ "abstracted": "2026-11-23 09:24:44"
+}

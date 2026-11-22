@@ -1,0 +1,11 @@
+{
+ "path": "memory/ops/runbooks/boot_recovery.md",
+ "headings": [
+  "Lessons Learned",
+  "1. failure (STUDIO_TIMEOUT_EXCEEDED) (2026-11-17 00:41:09)",
+  "2. failure (STUDIO_TIMEOUT_EXCEEDED) (2026-11-17 00:41:12)"
+ ],
+ "lead": "",
+ "chars": 811,
+ "abstracted": "2026-11-23 09:24:44"
+}

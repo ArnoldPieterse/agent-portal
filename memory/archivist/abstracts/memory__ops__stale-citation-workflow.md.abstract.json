@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/stale-citation-workflow.md",
+ "headings": [
+  "Stale Citation Cleanup Workflow",
+  "Context",
+  "Triage Rule (3 tiers)",
+  "Procedure",
+  "Acceptance",
+  "Links"
+ ],
+ "lead": "**Owner:** Archivist | **Created:** 2026-11-21 | **Source data:** `memory/archivist/citation-map.json`",
+ "chars": 2517,
+ "abstracted": "2026-11-23 09:24:44"
+}

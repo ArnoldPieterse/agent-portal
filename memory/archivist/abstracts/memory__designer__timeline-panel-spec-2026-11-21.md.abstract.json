@@ -1,0 +1,16 @@
+{
+ "path": "memory/designer/timeline-panel-spec-2026-11-21.md",
+ "headings": [
+  "Timeline Panel UI Spec \u2014 Designer contribution to Scribe Goal 1 (Temporal Query API)",
+  "Purpose",
+  "Layout (768px\u20131200px)",
+  "Single-day view (`/api/timeline?date=`)",
+  "Compare view (`/api/timeline/compare?from=&to=`)",
+  "Design Tokens",
+  "ARIA / Accessibility",
+  "Animation"
+ ],
+ "lead": "Status: DRAFT (ready for Scribe/Builder to implement once /api/timeline is live)",
+ "chars": 5013,
+ "abstracted": "2026-11-23 09:24:44"
+}

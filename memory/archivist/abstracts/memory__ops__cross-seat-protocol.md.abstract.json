@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/cross-seat-protocol.md",
+ "headings": [
+  "Cross-Seat Coordination Protocol",
+  "When to use",
+  "Handoff file format",
+  "HANDOFF: <Agent> Goal #<N> \u2014 <short title>",
+  "Blocker (one line)",
+  "Exact unblock command",
+  "Evidence target",
+  "Status"
+ ],
+ "lead": "**Owner:** Orchestrator | **Created:** 2026-11-20 (cycle-8 goal #7)",
+ "chars": 2832,
+ "abstracted": "2026-11-23 09:24:44"
+}

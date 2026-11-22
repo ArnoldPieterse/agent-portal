@@ -1,0 +1,14 @@
+{
+ "path": "memory/builder/scribe-goal8-timeline-readded-2026-11-22.md",
+ "headings": [
+  "Builder: Scribe Goal 8 - Timeline API Re-verified + Re-added (2026-11-22)",
+  "Finding (stale evidence claim)",
+  "Fix Applied",
+  "Verification (module-level, since :8099 unreachable from sandbox)",
+  "Note",
+  "Files Modified"
+ ],
+ "lead": "Orchestrator's verification (memory/orchestrator/scribe-goal8-timeline-api-verified-2026-11-22.md)",
+ "chars": 1517,
+ "abstracted": "2026-11-23 09:24:44"
+}

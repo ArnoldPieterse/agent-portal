@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-22g.md",
+ "headings": [
+  "Mechanic auto-loop pass 2026-11-22g",
+  "Action taken",
+  "Current state of open goals",
+  "Blocker (unchanged, NOT re-probed)",
+  "Files created"
+ ],
+ "lead": "Built `white_seat_closure_run.py` (207 lines, compile PASS) - one-command script that closes all 4 remaining open goals (#1, #2, #3, #4) from a non-sandbox White session in a single execution.",
+ "chars": 1518,
+ "abstracted": "2026-11-23 09:24:44"
+}

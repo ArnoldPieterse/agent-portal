@@ -1,0 +1,13 @@
+{
+ "path": "memory/orchestrator/goal5-binding-audit-progress-2026-11-20.md",
+ "headings": [
+  "Goal #5 (Model Binding Governance Audit) \u2014 progress 2026-11-20",
+  "What ran this pass (all in-process, no network needed)",
+  "Genuine finding (needs adjudication, NOT auto-fixed)",
+  "Remaining for closure (both blocked, both logged in memory/ops/blockers.md \u2014 do NOT re-probe)",
+  "Artifacts"
+ ],
+ "lead": "Owner: Orchestrator. Status: PARTIAL \u2014 detection + reporting proven; scheduling + live probe still pending on logged blockers.",
+ "chars": 2160,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/goal4-circuit-breaker-2026-11-21.md",
+ "headings": [
+  "Mechanic Goal #4 - Fleet Status API Hardening: Circuit Breaker + Timeout Implemented",
+  "Changes Made to agent_portal.py",
+  "1. Per-host timeout increased to 5s",
+  "2. Circuit breaker pattern (new)",
+  "3. Graceful degradation (verified existing)",
+  "Test Results (unit test, simulated clock)",
+  "Remaining (for full closure)",
+  "Files Modified"
+ ],
+ "lead": "Status: IN PROGRESS (code implemented + unit-tested; live verification pending portal restart)",
+ "chars": 1619,
+ "abstracted": "2026-11-23 09:24:44"
+}

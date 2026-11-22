@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal9-empty-states-evidence-2026-11-20.md",
+ "headings": [
+  "Goal 9 - Empty States + Loading Patterns (2026-11-20)",
+  "What was done",
+  "Panels with proper empty states (total: 5)",
+  "Notes",
+  "Verification"
+ ],
+ "lead": "Added proper empty states and initial loading skeletons to the 3 panels that were missing them:",
+ "chars": 2051,
+ "abstracted": "2026-11-23 09:24:44"
+}

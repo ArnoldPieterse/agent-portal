@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/goal6-responsive-fix-2026-11-20.md",
+ "headings": [
+  "Goal 6 Responsive Design Hardening - Static CSS Audit + Fix (2026-11-20)",
+  "What was done",
+  "Fixes applied to ui/app.css:",
+  "Breakpoint coverage after fix:",
+  "Remaining for full closure:",
+  "Files modified",
+  "Verification method"
+ ],
+ "lead": "Static responsive audit of all ui/*.css files, then applied fixes for the two critical gaps:",
+ "chars": 1619,
+ "abstracted": "2026-11-23 09:24:44"
+}

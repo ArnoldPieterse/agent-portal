@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/evidence-freshness-schtask-progress-2026-11-20.md",
+ "headings": [
+  "Evidence: Freshness Scoring Production - Progress",
+  "What was done",
+  "Remaining for closure",
+  "Blocker note"
+ ],
+ "lead": "1. Enhanced `decay_score.py` with `--archive` flag:",
+ "chars": 818,
+ "abstracted": "2026-11-23 09:24:43"
+}

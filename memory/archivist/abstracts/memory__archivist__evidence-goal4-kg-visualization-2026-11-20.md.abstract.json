@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/evidence-goal4-kg-visualization-2026-11-20.md",
+ "headings": [
+  "Evidence: Goal #4 - Knowledge Graph Visualization (COMPLETE)",
+  "Acceptance Criteria Verification",
+  "Artifacts",
+  "Verification Commands"
+ ],
+ "lead": "| File opens in browser | PASS | Static single-file HTML, 217 KB, well-formed (script tags balanced, </html> present) |",
+ "chars": 1268,
+ "abstracted": "2026-11-23 09:24:43"
+}

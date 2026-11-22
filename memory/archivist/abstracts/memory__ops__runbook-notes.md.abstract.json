@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/runbook-notes.md",
+ "headings": [
+  "Ops runbook notes (one line each: what broke / what fixed it)",
+  "2026-11-13 16:45 - Mechanic state check (auto-continue round)",
+  "2026-11-13 2026-11-13 17:21 - Mechanic re-probe (auto-continue round, lan_probe.py)",
+  "2026-11-13 17:35 - Mechanic auto-continue round (on-disk evidence only)",
+  "2026-11-13 18:4x - Mechanic fresh canary read (requested by Verifier; corrects 17:35 flag)",
+  "2026-11-13 17:4x - Mechanic: canary WATCH CLOSED (not a mirror fault)",
+  "2026-11-13 17:5x - Mechanic auto-continue round (r28 apply triage)",
+  "Mechanic \u2014 2026-11-13 ~18:09 (auto-continue 3/3, prune+git round)"
+ ],
+ "lead": "",
+ "chars": 8158,
+ "abstracted": "2026-11-23 09:24:44"
+}

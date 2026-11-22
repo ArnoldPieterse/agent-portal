@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/goal2-mirror-heal-tier-a-2026-11-20.md",
+ "headings": [
+  "Mechanic Goal #2 - Self-Healing Mirror Production (Tier-A)",
+  "What was done this pass",
+  "What remains (Tier-B)",
+  "Existing repair log (memory/mechanic/mirror-repairs.jsonl)"
+ ],
+ "lead": "Status: Tier-A verified; Tier-B queued (non-sandbox seat needed for schtask registration)",
+ "chars": 1410,
+ "abstracted": "2026-11-23 09:24:44"
+}

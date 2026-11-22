@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/auto-loop-state-2026-11-21.md",
+ "headings": [
+  "Mechanic Auto-Loop Progress: 2026-11-21",
+  "State Summary (all open goals blocked on egress/time)",
+  "Blocker (unchanged from prior passes)",
+  "Next actionable steps (when unblocked)",
+  "This pass (third auto-loop 2026-11-21)",
+  "Prior pass (second auto-loop 2026-11-21)"
+ ],
+ "lead": "Sandbox egress wall: no :8099, no LAN, no :8888. elev.py not present in this working dir.",
+ "chars": 2283,
+ "abstracted": "2026-11-23 09:24:44"
+}

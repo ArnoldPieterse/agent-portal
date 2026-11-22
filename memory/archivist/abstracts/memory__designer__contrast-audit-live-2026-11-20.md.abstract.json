@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/contrast-audit-live-2026-11-20.md",
+ "headings": [
+  "Designer Goal #7 (Color Contrast + Accessibility) - LIVE contrast_audit.py run 2026-11-20",
+  "Command",
+  "Verdict: FAIL (goal #7 NOT met)",
+  "Worst offenders (light, fix these first)",
+  "Root cause (light theme)",
+  "Fix path (Designer)",
+  "Ledger note"
+ ],
+ "lead": "Owner: Designer. Verified-by: Mechanic (ops assist, auto-loop contribution option c/d).",
+ "chars": 1892,
+ "abstracted": "2026-11-23 09:24:44"
+}

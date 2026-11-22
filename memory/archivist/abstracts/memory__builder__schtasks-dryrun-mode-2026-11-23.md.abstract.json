@@ -1,0 +1,13 @@
+{
+ "path": "memory/builder/schtasks-dryrun-mode-2026-11-23.md",
+ "headings": [
+  "Builder Assist: deploy_all_schtasks.py --dry-run mode",
+  "What was done",
+  "Verification",
+  "Also fixed",
+  "Impact"
+ ],
+ "lead": "**Assists:** Archivist goal 3 + Verifier goal 8 (both pending single White run)",
+ "chars": 1593,
+ "abstracted": "2026-11-23 09:24:44"
+}

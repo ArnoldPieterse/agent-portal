@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/verify-archivist-snapshot-diff-20261123.md",
+ "headings": [
+  "Verification: Archivist Snapshot Diff 2026-11-23 (run #4)",
+  "Claim under test",
+  "Method",
+  "Result"
+ ],
+ "lead": "Provenance: verifier independent recount | date=2026-11-23 | method=content-hash comparison of manifests",
+ "chars": 766,
+ "abstracted": "2026-11-23 09:24:44"
+}

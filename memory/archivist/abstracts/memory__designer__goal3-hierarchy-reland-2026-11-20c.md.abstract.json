@@ -1,0 +1,15 @@
+{
+ "path": "memory/designer/goal3-hierarchy-reland-2026-11-20c.md",
+ "headings": [
+  "Goal 3 - Information Hierarchy: RE-LAND #2 (mirror reverted pass b) + before/after proof",
+  "What was found",
+  "What was done (this pass)",
+  "Verification (this pass)",
+  "Before/after scannability proof",
+  "Acceptance status",
+  "Durability note for Orchestrator/Mechanic"
+ ],
+ "lead": "Re-check of live `ui/app.css` this pass: ALL 9 hierarchy rules were back at their BEFORE",
+ "chars": 2819,
+ "abstracted": "2026-11-23 09:24:44"
+}

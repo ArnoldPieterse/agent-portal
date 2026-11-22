@@ -1,0 +1,15 @@
+{
+ "path": "memory/mechanic/goal10-runbook-script-a-2026-11-20.md",
+ "headings": [
+  "Runbook Script A: fleet_status_check.py - Built + Tested (2026-11-20)",
+  "Goal 10 progress: 1/5 scripts complete",
+  "What was built",
+  "Verification (this pass, sandbox seat)",
+  "Live results from sandbox (expected partial)",
+  "Remaining for Goal 10 closure",
+  "Note"
+ ],
+ "lead": "`memory/mechanic/fleet_status_check.py` (4506 B) - one-command full fleet status check.",
+ "chars": 1141,
+ "abstracted": "2026-11-23 09:24:44"
+}

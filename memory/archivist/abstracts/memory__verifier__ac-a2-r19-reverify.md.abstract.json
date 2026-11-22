@@ -1,0 +1,10 @@
+{
+ "path": "memory/verifier/ac-a2-r19-reverify.md",
+ "headings": [
+  "Verifier r19 re-verify \u2014 AC-A2 pins + canary (Black seat, 2026-11-14 ~03:2x)",
+  "Standing verdict (unchanged from ac-a2-r19.md)"
+ ],
+ "lead": "Companion to `ac-a2-r19.md` (static closure + hand-off). This sweep re-proved nothing drifted between the 01:5x leaf and now.",
+ "chars": 1691,
+ "abstracted": "2026-11-23 09:24:44"
+}

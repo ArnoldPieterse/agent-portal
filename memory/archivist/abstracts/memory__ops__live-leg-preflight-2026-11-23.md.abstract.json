@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/live-leg-preflight-2026-11-23.md",
+ "headings": [
+  "Live-Leg Runbook Pre-Flight Check",
+  "Purpose",
+  "One-command pre-flight (run from non-sandbox White seat)",
+  "Manual checklist (if script unavailable)",
+  "Item independence (can run subset if some preconditions fail)",
+  "Credit"
+ ],
+ "lead": "Author: Mechanic | Date: 2026-11-23 | Status: WORKFLOW IMPROVEMENT (option b, team contribution)",
+ "chars": 2021,
+ "abstracted": "2026-11-23 09:24:44"
+}

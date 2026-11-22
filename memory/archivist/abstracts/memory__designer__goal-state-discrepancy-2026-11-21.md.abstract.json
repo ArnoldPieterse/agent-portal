@@ -1,0 +1,11 @@
+{
+ "path": "memory/designer/goal-state-discrepancy-2026-11-21.md",
+ "headings": [
+  "Designer goal state discrepancy - 2026-11-21",
+  "Re-confirmed 2026-11-21 (auto-loop pass)",
+  "Re-confirmed 2026-11-21 (auto-loop pass, dispatch said '4 open')"
+ ],
+ "lead": "Dashboard reports 6/10 reached but all 10 goals have (verified:) markers + ledger entries confirmed via `goal_ledger.py --record` (returns 'already has equivalent marker').",
+ "chars": 1476,
+ "abstracted": "2026-11-23 09:24:44"
+}

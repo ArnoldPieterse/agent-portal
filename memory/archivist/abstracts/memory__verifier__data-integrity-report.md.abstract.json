@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/data-integrity-report.md",
+ "headings": [
+  "Data Integrity Report",
+  "\u274c A_agents_json: FAIL",
+  "\u274c B_goal_agent_refs: FAIL",
+  "\u274c C_index_pointers: FAIL",
+  "\u274c D_mirror_py: FAIL"
+ ],
+ "lead": "",
+ "chars": 1386,
+ "abstracted": "2026-11-23 09:24:44"
+}

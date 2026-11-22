@@ -1,0 +1,16 @@
+{
+ "path": "memory/synthesis/completion-patterns.md",
+ "headings": [
+  "Goal Completion Pattern Analysis",
+  "Summary Statistics",
+  "By Agent (overall completion rate)",
+  "By Cycle",
+  "Agent x Type Matrix (completion %)",
+  "Key Patterns Identified",
+  "Pattern 1: Verification goals complete at the highest rate (89%)",
+  "Pattern 2: Ops-type goals are the chronic underperformers (84% fleet-wide)"
+ ],
+ "lead": "*Generated: 2026-11-23 by Scribe (completion_patterns.py)*",
+ "chars": 4583,
+ "abstracted": "2026-11-23 09:24:44"
+}

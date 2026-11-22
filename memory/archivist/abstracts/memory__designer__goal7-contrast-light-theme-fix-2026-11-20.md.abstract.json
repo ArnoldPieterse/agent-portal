@@ -1,0 +1,9 @@
+{
+ "path": "memory/designer/goal7-contrast-light-theme-fix-2026-11-20.md",
+ "headings": [
+  "Goal 7 - Light-theme contrast fix (2026-11-20)"
+ ],
+ "lead": "**Problem:** 30 WCAG AA failures in light theme. Root cause: `--muted` and `--warn-text` had no light override (inherited dark-family values), and `--ok`, `--warn`, `--err`, `--faint` were set too bright for white/near-w",
+ "chars": 749,
+ "abstracted": "2026-11-23 09:24:44"
+}

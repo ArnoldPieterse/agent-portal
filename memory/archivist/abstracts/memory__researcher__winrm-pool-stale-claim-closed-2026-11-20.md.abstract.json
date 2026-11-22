@@ -1,0 +1,14 @@
+{
+ "path": "memory/researcher/winrm-pool-stale-claim-closed-2026-11-20.md",
+ "headings": [
+  "Closed Stale Claim: winrm_pool.py \"phantom/never-built\" (option c)",
+  "Stale claim closed",
+  "Verification (all run in-sandbox, no fleet access needed)",
+  "Credential-rotation state machine \ufffd all 4 branches exercised with synthetic dates",
+  "Remaining open leg (NOT a stale claim \ufffd genuinely untested from sandbox)",
+  "Ledger impact"
+ ],
+ "lead": "Date: 2026-11-20 | Researcher | Owner of underlying goal: **Mechanic** (Goal #1, WinRM Remote Management Hardening)",
+ "chars": 2370,
+ "abstracted": "2026-11-23 09:24:44"
+}

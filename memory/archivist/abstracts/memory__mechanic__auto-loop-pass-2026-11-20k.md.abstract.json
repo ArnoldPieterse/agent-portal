@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-20k.md",
+ "headings": [
+  "Auto-loop pass 2026-11-20k (Red seat)",
+  "Goal 1 (WinRM hardening) - one concrete step, no blocker re-probe",
+  "Step taken this pass (in-sandbox, no blocker dependency)",
+  "Goal 1 remaining delta (now purely non-sandbox, both already NEEDS-HUMAN)"
+ ],
+ "lead": "Last pass (j) ended mid-flight on the schtask COM wall. That is a documented NEEDS-HUMAN",
+ "chars": 1295,
+ "abstracted": "2026-11-23 09:24:44"
+}

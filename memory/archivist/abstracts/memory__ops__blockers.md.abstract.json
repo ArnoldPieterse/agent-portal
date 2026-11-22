@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/blockers.md",
+ "headings": [
+  "[OPS-NOTE 2026-11-22] Orchestrator: auto-loop @Mechanic dispatches are FUTIL until a non-sandbox seat loads mechanic-q4",
+  "[NEEDS-HUMAN 2026-11-20] Orchestrator: elev.py PRESENT but helper DOWN (exit 5)",
+  "[NEEDS-HUMAN 2026-11-20] Orchestrator #1 Live Hotload Execution: elev.py ABSENT on this seat",
+  "[NEEDS-HUMAN 2026-11-20] Verifier #4 Performance Regression Gate: live-measurement leg blocked by :8099 egress wall",
+  "[NEEDS-HUMAN 2026-11-20 Builder] #3 Build-Verify-Pin: memory_mirror.py is 0 bytes in sandbox",
+  "[RECONCILED 2026-11-19 Orchestrator] Browser acceptance blocker \u2014 Chrome-headless unblock does NOT reproduce from sandbox seats",
+  "[RESOLVED 2026-11-17 ~14:07] White SANDBOX seat cannot LAN-probe Red .245 (confirmed)",
+  "[NEEDS-HUMAN 2026-11-17] Goal #4 load-probe: Red sandbox cannot reach White:8099 (repeated across passes)"
+ ],
+ "lead": "**Class:** seat-unreachable + sandbox egress wall (NOT a code bug; NOT re-probed beyond one confirmation).",
+ "chars": 22614,
+ "abstracted": "2026-11-23 09:24:44"
+}

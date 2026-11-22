@@ -1,0 +1,16 @@
+{
+ "path": "memory/llm/hotload-runbook.md",
+ "headings": [
+  "Hotload Ops Runbook",
+  "0. Prerequisites (verify before any action)",
+  "Confirm Studio is up on the target host:",
+  "Expected: {\"count\": <int>}",
+  "If connection refused -> engine dead; go to section 5 (Wedge Recovery).",
+  "1. Activate (load models for a set of agents)",
+  "Steps",
+  "VRAM fit check (before loading)"
+ ],
+ "lead": "Last updated: 2026-11-23 (Mechanic; Scribe cycle-6 goal #8)",
+ "chars": 7136,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,11 @@
+{
+ "path": "memory/archivist/assist-scribe-goal5-card-staleness-2026-11-21.md",
+ "headings": [
+  "Assist: Scribe Goal #5 Card Staleness Detection \u2014 Closure Verification",
+  "What was done",
+  "Ledger record"
+ ],
+ "lead": "Scribe's `memory/scribe/card_staleness.py` was built but lacked the formal acceptance test run + ledger closure marker. I ran the full acceptance test:",
+ "chars": 1017,
+ "abstracted": "2026-11-23 09:24:43"
+}

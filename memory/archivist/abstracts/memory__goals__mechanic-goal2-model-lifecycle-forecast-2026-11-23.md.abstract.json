@@ -1,0 +1,16 @@
+{
+ "path": "memory/goals/mechanic-goal2-model-lifecycle-forecast-2026-11-23.md",
+ "headings": [
+  "MECHANIC GOAL #2 (Model Load/Unload Automation) - FORECAST & REMAINING-GAP ANALYSIS",
+  "STATUS: 85% COMPLETE (selftest 17/17 PASS; live legs unverified from this seat)",
+  "WHAT IS DONE (verified 2026-11-23)",
+  "REMAINING GAPS FOR FULL VERIFICATION (ranked by effort)",
+  "1. LIVE RUN against Studio :8888 (BLOCKED from this seat - egress wall WinError 10013)",
+  "2. AC WORDING DISCREPANCY: \"nvidia-smi\" vs API check",
+  "3. STATIC VRAM CONFIG IN PRODUCTION MODE",
+  "4. NO RETRY LOGIC ON API CALLS"
+ ],
+ "lead": "Date: 2026-11-23 | Author: Researcher (option a contribution) | Owner: Mechanic",
+ "chars": 5541,
+ "abstracted": "2026-11-23 09:24:44"
+}

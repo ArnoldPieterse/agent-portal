@@ -1,0 +1,12 @@
+{
+ "path": "memory/verifier/api-contracts-static-negative-2026-11-20.md",
+ "headings": [
+  "Verifier Goal #3 - API Contract Test Suite: Static+Negative Evidence",
+  "Acceptance criteria status",
+  "Test run output (2026-11-20)",
+  "Remaining leg"
+ ],
+ "lead": "| 15+ endpoints have contract tests | **PASS** | 31 JSON schema files in memory/verifier/api-contracts/ |",
+ "chars": 1376,
+ "abstracted": "2026-11-23 09:24:44"
+}

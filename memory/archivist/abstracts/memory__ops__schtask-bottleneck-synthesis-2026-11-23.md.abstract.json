@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/schtask-bottleneck-synthesis-2026-11-23.md",
+ "headings": [
+  "Schtask Bottleneck - Fleet Synthesis (2026-11-23)",
+  "The Wall",
+  "Exact Unblock Step (single command on White)",
+  "Why It's Stuck",
+  "Automation Path (when helper recovers)",
+  "Status: OPS-NOTE (recorded once, do not re-probe)"
+ ],
+ "lead": "**Scribe synthesis** - consolidates the single highest-leverage unblock step for 3+ agents.",
+ "chars": 1908,
+ "abstracted": "2026-11-23 09:24:44"
+}

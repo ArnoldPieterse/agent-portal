@@ -1,0 +1,13 @@
+{
+ "path": "memory/ops/memory-integrity-2026-11-20.md",
+ "headings": [
+  "Memory Tree Integrity Report",
+  "Orphaned Files",
+  "Broken Pointers",
+  "Circular References",
+  "Oversized INDEX Files"
+ ],
+ "lead": "Run: 2026-11-20 | Status: **FAIL (263 issues)**",
+ "chars": 8438,
+ "abstracted": "2026-11-23 09:24:44"
+}

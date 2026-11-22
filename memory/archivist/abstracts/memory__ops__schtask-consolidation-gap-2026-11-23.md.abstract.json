@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/schtask-consolidation-gap-2026-11-23.md",
+ "headings": [
+  "Workflow Improvement: Consolidate Remaining Schtasks into deploy_all_schtasks.py",
+  "Problem",
+  "Fix (exact diff to deploy_all_schtasks.py)",
+  "Impact",
+  "Why not just do it now",
+  "Verification After Apply"
+ ],
+ "lead": "**Author:** Researcher (auto-loop contribution, 2026-11-23)",
+ "chars": 2637,
+ "abstracted": "2026-11-23 09:24:44"
+}

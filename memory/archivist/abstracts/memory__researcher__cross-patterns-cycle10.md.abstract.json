@@ -1,0 +1,16 @@
+{
+ "path": "memory/researcher/cross-patterns-cycle10.md",
+ "headings": [
+  "Cross-Agent Patterns - Cycle 10",
+  "Pattern 1: Cross-Agent Topic Overlap (confidence: HIGH)",
+  "Pattern 2: Theme Asymmetry (confidence: MEDIUM)",
+  "Pattern 3: Throughput Parity (confidence: HIGH)",
+  "Pattern 4: Reopened Topics / Slip Indicators (confidence: MEDIUM)",
+  "Pattern 5: Blocker Concentration (confidence: HIGH)",
+  "Non-Obvious Finding (cross-cutting)",
+  "Actionable Recommendations"
+ ],
+ "lead": "Data: 510 unique goals across 8 agents (316 verified, 194 open)",
+ "chars": 3217,
+ "abstracted": "2026-11-23 09:24:44"
+}

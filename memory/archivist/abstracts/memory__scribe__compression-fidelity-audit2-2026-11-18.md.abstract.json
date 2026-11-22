@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/compression-fidelity-audit2-2026-11-18.md",
+ "headings": [
+  "Compression Fidelity Audit \u2014 Week of 2026-11-18 (Scribe goal #10, audit 2/2)",
+  "Samples",
+  "Aggregate",
+  "Fact-loss / durability items named",
+  "Observations"
+ ],
+ "lead": "Method: spot-check 5 syntheses NOT covered by audit 1/2 (the 2026-11-16 set); verify names, numbers, file paths, byte sizes against on-disk state. Score = key facts verified correct / total key facts checked. Target >=90",
+ "chars": 4832,
+ "abstracted": "2026-11-23 09:24:44"
+}

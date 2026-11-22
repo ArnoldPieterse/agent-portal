@@ -1,0 +1,12 @@
+{
+ "path": "memory/scribe/assist-builder-cockpit-2026-11-23.md",
+ "headings": [
+  "Scribe assist: Builder Cockpit Frontend (2026-11-23)",
+  "What was done",
+  "What remains for Builder",
+  "Verification"
+ ],
+ "lead": "Created initial `ui/cockpit.js` (7335 bytes) implementing the core Fleet Cockpit panel:",
+ "chars": 1217,
+ "abstracted": "2026-11-23 09:24:44"
+}

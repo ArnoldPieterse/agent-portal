@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/archivist-assist-cycle-narrative-datefix-2026-11-20.md",
+ "headings": [
+  "Archivist assist: Scribe Goal 2 (Cycle Narrative v2) - date-filter fix",
+  "What was done",
+  "Change",
+  "Verification",
+  "Remaining for Scribe"
+ ],
+ "lead": "Fixed `get_key_events()` in memory/scribe/cycle_narrative.py to respect the --since/--until",
+ "chars": 960,
+ "abstracted": "2026-11-23 09:24:44"
+}

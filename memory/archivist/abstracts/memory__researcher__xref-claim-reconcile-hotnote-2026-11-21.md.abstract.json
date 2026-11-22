@@ -1,0 +1,15 @@
+{
+ "path": "memory/researcher/xref-claim-reconcile-hotnote-2026-11-21.md",
+ "headings": [
+  "Researcher: reconciliation of the \"48 broken live + 42 flagged-de\" hot-note figure",
+  "Claim under test",
+  "Fresh measurement (this pass, read-only \u2014 no file changes)",
+  "Mechanism (verified in source, memory/archivist/xref_check.py)",
+  "Why the two numbers moved in opposite directions (the misread to avoid)",
+  "The 3 remaining broken_live xrefs \u2014 all ONE file, all fixable as redirects",
+  "Conclusion / hand-off to Archivist (owner of Cross-Reference Integrity)"
+ ],
+ "lead": "Date: 2026-11-21 UTC | Owner: Researcher (option c \u2014 verify/close a stale evidence claim)",
+ "chars": 3750,
+ "abstracted": "2026-11-23 09:24:44"
+}

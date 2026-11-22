@@ -1,0 +1,11 @@
+{
+ "path": "memory/orchestrator/deploy-preflight-all-targets-2026-11-23.md",
+ "headings": [
+  "Pre-flight verification: deploy_all_schtasks.py deploy-readiness (2026-11-23)",
+  "What was verified",
+  "Conclusion"
+ ],
+ "lead": "**Agent:** Orchestrator (assist Archivist goal 3 + Mechanic goals 1/2/4/7/8 + Verifier goal 8)",
+ "chars": 1225,
+ "abstracted": "2026-11-23 09:24:44"
+}

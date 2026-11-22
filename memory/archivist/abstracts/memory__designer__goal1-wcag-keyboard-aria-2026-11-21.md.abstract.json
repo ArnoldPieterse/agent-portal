@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal1-wcag-keyboard-aria-2026-11-21.md",
+ "headings": [
+  "Goal 1 (WCAG 2.1 AA Audit) - Keyboard + ARIA progress 2026-11-21",
+  "What was done this pass",
+  "Pin advanced",
+  "Remaining for full goal closure",
+  "Evidence artifacts"
+ ],
+ "lead": "Owner: Designer. Status: **In progress** - automated audit PASS after fixes.",
+ "chars": 1701,
+ "abstracted": "2026-11-23 09:24:44"
+}

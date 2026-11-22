@@ -1,0 +1,14 @@
+{
+ "path": "memory/verifier/evidence-integrity-drift-2026-11-22.md",
+ "headings": [
+  "Memory Tree Integrity \u2014 Fresh Run + Drift Delta (2026-11-22)",
+  "Command",
+  "Result: script runs clean; tree FAILS (expected drift, closure still valid)",
+  "Verdict on goal #9 closure (verifier.md #9, pointer: memory/verifier/MEMORY.md)",
+  "Findings worth routing",
+  "Untested / out of scope this pass"
+ ],
+ "lead": "Owner: Verifier. Trigger: auto-loop option (c) \u2014 re-verify a closed integrity claim with live evidence.",
+ "chars": 1614,
+ "abstracted": "2026-11-23 09:24:44"
+}

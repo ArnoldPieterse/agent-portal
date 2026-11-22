@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/tierB-batch-fixed-2026-11-19.md",
+ "headings": [
+  "Designer Tier-B batch fix + msedge sandbox-hang confirmation (2026-11-19)",
+  "1. Empirical finding (resolves a doc contradiction)",
+  "2. Concrete fix: batch_tier_b.py now covers Designer's OPEN legs (was stale)",
+  "State of #2/#9/#10"
+ ],
+ "lead": "Owner: Designer | Type: tier-A evidence, tier-B queued. Parent: memory/goals/designer.md (#2/#9/#10).",
+ "chars": 2569,
+ "abstracted": "2026-11-23 09:24:44"
+}

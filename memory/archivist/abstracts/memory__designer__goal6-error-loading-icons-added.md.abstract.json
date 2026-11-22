@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal6-error-loading-icons-added.md",
+ "headings": [
+  "Designer Goal #6 \u2014 `error` + `loading` icons added",
+  "What was done",
+  "Verification (static, sandbox-safe)",
+  "Remaining for full closure of Goal #6"
+ ],
+ "lead": "Added the two missing required-minimum icons to `ui/icons.js`:",
+ "chars": 1155,
+ "abstracted": "2026-11-23 09:24:44"
+}

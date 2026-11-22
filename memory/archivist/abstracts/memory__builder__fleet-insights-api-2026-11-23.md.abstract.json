@@ -1,0 +1,14 @@
+{
+ "path": "memory/builder/fleet-insights-api-2026-11-23.md",
+ "headings": [
+  "Fleet Insights API endpoint built - 2026-11-23",
+  "What was done",
+  "Response structure",
+  "Data sources",
+  "Verification",
+  "Next steps for full Goal #1"
+ ],
+ "lead": "**Goal:** Builder #1 (Fleet Insights Dashboard) - backend prerequisite",
+ "chars": 1369,
+ "abstracted": "2026-11-23 09:24:44"
+}

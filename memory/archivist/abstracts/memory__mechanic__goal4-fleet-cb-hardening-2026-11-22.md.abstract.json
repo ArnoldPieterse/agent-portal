@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal4-fleet-cb-hardening-2026-11-22.md",
+ "headings": [
+  "Goal #4 Fleet Status API Hardening - Progress 2026-11-22",
+  "What was done",
+  "Verification",
+  "Remaining for full closure",
+  "Files modified"
+ ],
+ "lead": "Implemented circuit breaker + graceful degradation in `agent_portal.py` `_fleet_snapshot()`:",
+ "chars": 1620,
+ "abstracted": "2026-11-23 09:24:44"
+}

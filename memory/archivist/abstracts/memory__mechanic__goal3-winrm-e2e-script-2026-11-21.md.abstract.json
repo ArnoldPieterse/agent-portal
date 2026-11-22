@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal3-winrm-e2e-script-2026-11-21.md",
+ "headings": [
+  "Goal #3: WinRM E2E Test - Script Built + Dry-Run Validated (2026-11-21)",
+  "What was done this pass",
+  "Dry-run results",
+  "Remaining for final acceptance",
+  "Acceptance criteria mapping",
+  "Runbook note"
+ ],
+ "lead": "[PHASE1_BASELINE] PASS - Black: TCP up, 0 models loaded",
+ "chars": 1605,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/ac-a2-r19.md",
+ "headings": [
+  "Verifier r19 \u2014 AC-A2-1..4 closure (Black seat, 2026-11-14 ~01:5x)",
+  "Code pins (the build PID 23704 launched from \u2014 byte-exact in shared root)",
+  "Per-AC verdicts (structural/byte-level; \"live\" sub-clauses flagged)",
+  "Verdict",
+  "Untested / out of reach from this seat (explicit)"
+ ],
+ "lead": "Scope: \"process-level on PID 23704\" executed as far as this seat physically allows. Live :8099 from Black remains policy-blocked (re-probed THIS round: TCP White:8099 \u2192 10035 after full 4 s timeout = filtered, not refuse",
+ "chars": 3760,
+ "abstracted": "2026-11-23 09:24:44"
+}

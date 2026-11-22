@@ -1,0 +1,15 @@
+{
+ "path": "memory/archivist/search-index-refresh-2026-11-21.md",
+ "headings": [
+  "Search Index Refresh - 2026-11-21 (auto-loop pass)",
+  "Context",
+  "What ran",
+  "Results (run 1 - initial)",
+  "Results (run 2 - this pass, ~14:xx)",
+  "Results (run 3 - this pass, ~15:xx)",
+  "File"
+ ],
+ "lead": "Auto-loop idle check: search-index.json had 2185 entries but tree now has 2199 .md files.",
+ "chars": 2009,
+ "abstracted": "2026-11-23 09:24:43"
+}

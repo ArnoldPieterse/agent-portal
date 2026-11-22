@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/goal8-watchdog-integration-2026-11-23.md",
+ "headings": [
+  "Goal #8 - Watchdog Escalation Integration (2026-11-23)",
+  "Changes to portal_watchdog.py",
+  "Verification (this pass, pale sandbox)",
+  "Remaining for full closure"
+ ],
+ "lead": "**Step taken:** Wired `EscalationChain` into `portal_watchdog.py`.",
+ "chars": 1435,
+ "abstracted": "2026-11-23 09:24:44"
+}

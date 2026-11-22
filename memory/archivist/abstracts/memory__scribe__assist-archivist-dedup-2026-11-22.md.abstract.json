@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/assist-archivist-dedup-2026-11-22.md",
+ "headings": [
+  "Dedup Assist - Full Active Scope Run (2026-11-22)",
+  "Results",
+  "Recommendations",
+  "False Positive Assessment",
+  "Acceptance Criteria Check (Archivist goal #2)"
+ ],
+ "lead": "Agent: Scribe (assisting Archivist goal #2 Duplication Detection)",
+ "chars": 2185,
+ "abstracted": "2026-11-23 09:24:44"
+}

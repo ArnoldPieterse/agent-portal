@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal1-reland-regression-2026-11-20.md",
+ "headings": [
+  "Goal #1 re-land (regression found + fixed) - 2026-11-20",
+  "What was wrong",
+  "Fix (this pass)",
+  "Acceptance (now true in LIVE files)",
+  "Verification",
+  "Note for next cycle"
+ ],
+ "lead": "Status: verified (live files, not just evidence claims)",
+ "chars": 1858,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/synthesis/completion-patterns-2026-11-23.md",
+ "headings": [
+  "Goal Completion Pattern Analysis",
+  "Summary",
+  "Completion Rate by Agent",
+  "Completion Rate by Goal Type",
+  "Key Insights"
+ ],
+ "lead": "1. Highest completion agent: orchestrator (74/90)",
+ "chars": 708,
+ "abstracted": "2026-11-23 09:24:44"
+}

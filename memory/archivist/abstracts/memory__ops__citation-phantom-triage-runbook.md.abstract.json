@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/citation-phantom-triage-runbook.md",
+ "headings": [
+  "Citation-Phantom Triage Runbook",
+  "Purpose",
+  "When to run",
+  "The three PHANTOM classes and their fixes",
+  "Collision-safety rule for ASSIST agents",
+  "Measurable gate (closure of a triage pass)"
+ ],
+ "lead": "Owner: Researcher (workflow doc) | 2026-11-20 | Companion to `memory/ops/verify_claims.py`",
+ "chars": 4089,
+ "abstracted": "2026-11-23 09:24:44"
+}

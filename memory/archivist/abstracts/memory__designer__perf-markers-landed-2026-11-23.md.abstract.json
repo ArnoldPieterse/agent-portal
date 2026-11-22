@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/perf-markers-landed-2026-11-23.md",
+ "headings": [
+  "Performance Markers Landed \u2014 Goal #10 AC Completion (2026-11-23)",
+  "What was done",
+  "Files changed",
+  "AC status for goal #10"
+ ],
+ "lead": "Added `performance.mark()`/`performance.measure()` calls to `ui/core.js` (lines 605-638), completing the last unmet AC for goal #10:",
+ "chars": 1153,
+ "abstracted": "2026-11-23 09:24:44"
+}

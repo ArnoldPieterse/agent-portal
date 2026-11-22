@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/design-qa-rerun-msg75ch-2026-11-20.md",
+ "headings": [
+  "Design QA re-run + .msg 75ch reading-measure fix (2026-11-20, Designer auto-loop pass)",
+  "What ran",
+  "Before -> After",
+  "Change made (one concrete step, own lane, no dependency on the WinRM wall)",
+  "Remaining FAILs (next-cycle carry-forward, Designer lane \u2014 NOT the WinRM blocker)",
+  "Note on the \"1 open\" auto-loop artifact"
+ ],
+ "lead": "`python memory/designer/design_qa.py` \u2014 fresh static measurement on the live ui/ tree.",
+ "chars": 1550,
+ "abstracted": "2026-11-23 09:24:44"
+}

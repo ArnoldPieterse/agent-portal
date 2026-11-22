@@ -1,0 +1,16 @@
+{
+ "path": "memory/designer/perf-budget.md",
+ "headings": [
+  "UI Performance Budget \u2014 Spec + Enforcement (2026-11-21)",
+  "Thresholds",
+  "Enforcement Mechanism",
+  "Activation",
+  "Console output format (with ?debug)",
+  "Measurement Protocol (for verification)",
+  "Baseline (2026-11-21, local measurement)",
+  "Bundle Size (from css-bundle-budget-2026-11-17.md)"
+ ],
+ "lead": "| Initial render (DOM ready \u2192 first paint with data) | **< 2000 ms** | `performance.measure('portal-init')` from `portal-init-start` mark (top of core.js) to `portal-init-end` mark (after first `refresh()` resolves + ren",
+ "chars": 2611,
+ "abstracted": "2026-11-23 09:24:44"
+}

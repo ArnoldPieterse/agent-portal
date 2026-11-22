@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/cockpit_accuracy-evidence-2026-11-23.md",
+ "headings": [
+  "Cockpit Accuracy Test - Evidence (2026-11-23)",
+  "What was built",
+  "Self-test results (5/5 PASS)",
+  "Notes",
+  "Artifacts"
+ ],
+ "lead": "**Goal:** Verifier #2 - Cockpit Data Accuracy Test",
+ "chars": 1170,
+ "abstracted": "2026-11-23 09:24:44"
+}

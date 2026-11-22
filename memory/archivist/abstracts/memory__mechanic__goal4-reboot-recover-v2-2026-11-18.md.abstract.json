@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal4-reboot-recover-v2-2026-11-18.md",
+ "headings": [
+  "Goal #4 Progress: reboot_recover.py v2 (2026-11-18)",
+  "What was done",
+  "Current state (fresh probe 2026-11-18T00:51Z from Red sandbox)",
+  "Remaining for closure",
+  "Runbook note"
+ ],
+ "lead": "to register the boot-detect schtask. BLOCKED by sandbox COM \"Class not registered\" (documented in memory/ops/blockers.md).",
+ "chars": 1256,
+ "abstracted": "2026-11-23 09:24:44"
+}

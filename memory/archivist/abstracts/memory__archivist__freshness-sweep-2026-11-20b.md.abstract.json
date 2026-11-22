@@ -1,0 +1,11 @@
+{
+ "path": "memory/archivist/freshness-sweep-2026-11-20b.md",
+ "headings": [
+  "Freshness Sweep 2026-11-20 (pass b)",
+  "Result",
+  "Note on open-goal count discrepancy"
+ ],
+ "lead": "Trigger: auto-loop batch pass (all 10 goals closed; maintenance step)",
+ "chars": 596,
+ "abstracted": "2026-11-23 09:24:43"
+}

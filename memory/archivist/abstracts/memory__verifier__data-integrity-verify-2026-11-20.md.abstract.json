@@ -1,0 +1,16 @@
+{
+ "path": "memory/verifier/data-integrity-verify-2026-11-20.md",
+ "headings": [
+  "Data Integrity Verification - 2026-11-20 (Verifier)",
+  "Triage Summary",
+  "Real Findings (actionable)",
+  "F1: memory_mirror.py is empty (0 bytes) \ufffd DOCUMENTATION MISMATCH, not a bug",
+  "F2: memory/orchestrator/INDEX.md pointer 'execute-engine' -> file not found",
+  "F3: memory/archivist/INDEX.md pointer 'archivist/index_check.py' -> file not found",
+  "False Positives (no action needed)",
+  "B: \"cycle2\" parsed as agent name (x2)"
+ ],
+ "lead": "**Run:** 2026-11-20 ~11:25 UTC | Tool: `memory/verifier/data_integrity.py`",
+ "chars": 2976,
+ "abstracted": "2026-11-23 09:24:44"
+}

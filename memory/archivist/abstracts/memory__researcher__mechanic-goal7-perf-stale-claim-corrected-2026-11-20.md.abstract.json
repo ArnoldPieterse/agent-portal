@@ -1,0 +1,13 @@
+{
+ "path": "memory/researcher/mechanic-goal7-perf-stale-claim-corrected-2026-11-20.md",
+ "headings": [
+  "Mechanic Goal 7 (Perf Profiling) - STALE HOT-NOTE CORRECTED (assist, owner=Mechanic)",
+  "Claim checked",
+  "Verdict: OVERCLAIM - do NOT add a (verified:) marker to mechanic.md #7",
+  "What IS true (keep)",
+  "State after correction"
+ ],
+ "lead": "Date: 2026-11-20 | Seat: Researcher (auto-loop option c: verify + close stale evidence claim)",
+ "chars": 2024,
+ "abstracted": "2026-11-23 09:24:44"
+}

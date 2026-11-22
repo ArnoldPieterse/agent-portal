@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/auto-loop-pass-2026-11-20u.md",
+ "headings": [
+  "Auto-Loop Pass 2026-11-20u (Mechanic)",
+  "Action taken: Goal #4 Fleet Status API Hardening - code actually applied + self-test PASS",
+  "Status of all open goals:",
+  "No new blockers."
+ ],
+ "lead": "**Problem discovered:** The circuit breaker hardening was documented in goal4-fleet-status-hardening-2026-11-20.md but NEVER actually applied to agent_portal.py. FLEET_PROBE_TIMEOUT was still 2, no _fleet_fail_count or _",
+ "chars": 1456,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal8-watchdog-integration-2026-11-22.md",
+ "headings": [
+  "Goal #8 - Escalation Chain: Watchdog Integration Complete (2026-11-22)",
+  "What was done",
+  "Verification",
+  "Files modified",
+  "Remaining for full closure",
+  "Status: CODE COMPLETE + SELFTEST PASS; live leg deferred to non-sandbox seat"
+ ],
+ "lead": "Date: 2026-11-22 (auto-loop pass, Pale sandbox seat)",
+ "chars": 1539,
+ "abstracted": "2026-11-23 09:24:44"
+}

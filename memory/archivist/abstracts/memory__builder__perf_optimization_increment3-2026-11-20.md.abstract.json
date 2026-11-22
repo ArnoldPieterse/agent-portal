@@ -1,0 +1,14 @@
+{
+ "path": "memory/builder/perf_optimization_increment3-2026-11-20.md",
+ "headings": [
+  "Portal Performance Optimization - Increment 3 (2026-11-20)",
+  "What was done",
+  "Rate limiter: max 1 request/endpoint/30s for periodic polls",
+  "Poll intervals increased to 3s",
+  "Loading states for async panels",
+  "Verification"
+ ],
+ "lead": "**Goal:** Builder cycle-8 #8 (Portal Performance Optimization). **Artifacts:** `ui/core.js` + `ui/app.css` modified.",
+ "chars": 1317,
+ "abstracted": "2026-11-23 09:24:44"
+}

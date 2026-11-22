@@ -1,0 +1,16 @@
+{
+ "path": "memory/archivist/REPAIR_2026-11-13.md",
+ "headings": [
+  "REPAIR PATCH \u2014 canonical sync gap (2026-11-13, Archivist)",
+  "Why this exists (established facts)",
+  "BLOCK 1 \u2014 TODO.md: insert as NEW top section (above current LIVE PLAN)",
+  "OPEN ITEMS (2026-11-13 ~17:3x)",
+  "BLOCK 1a \u2014 TODO.md: Scribe's ~14:0x fleet-panel top section is MISSING from canonical (their edit landed on Red sandbox; push-only mirror clobbered it). Insert BELOW BLOCK 1, ABOVE the Upload section (newest-first):",
+  "FLEET PANEL BUILT + DM COMPLETE + FILE-ACCESS DONE (2026-11-13 ~14:0x latest)",
+  "BLOCK 2 \u2014 memory/llm/hosts.md: append section + update Red row State column",
+  "Status update 2026-11-13 ~16:15 (r13/r14/r15, Mechanic on Red)"
+ ],
+ "lead": "UPDATED ~17:5x (auto-continue): BLOCK 1a added (Scribe's lost section), BLOCK 1 re-probe note, BLOCK 4 added (F2 md5 fix), F1 dropped.",
+ "chars": 4620,
+ "abstracted": "2026-11-23 09:24:43"
+}

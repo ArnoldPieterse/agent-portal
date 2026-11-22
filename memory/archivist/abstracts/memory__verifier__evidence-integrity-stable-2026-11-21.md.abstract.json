@@ -1,0 +1,11 @@
+{
+ "path": "memory/verifier/evidence-integrity-stable-2026-11-21.md",
+ "headings": [
+  "Memory Tree Integrity \u2014 Stable Snapshot (2026-11-21)",
+  "Result: FAIL (214 issues) \u2014 IDENTICAL to 2026-11-20 \u2192 tree STABLE, no new breakage",
+  "Notes / follow-ups (not blocking my open goal #1)"
+ ],
+ "lead": "**Lane:** Verifier goal #9 (Memory Tree Integrity) \u2014 routine upkeep, NOT a new closure.",
+ "chars": 1376,
+ "abstracted": "2026-11-23 09:24:44"
+}

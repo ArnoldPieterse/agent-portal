@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal7-perf-profile-evidence-2026-11-20.md",
+ "headings": [
+  "Goal 7: Performance Profiling - Evidence (2026-11-20)",
+  "Status: script built + selftest PASS; live 1h run needs non-sandbox :8099 egress",
+  "Verified in sandbox:",
+  "Blocked (sandbox egress):",
+  "Unblock (one-time, non-sandbox White):",
+  "Artifact:"
+ ],
+ "lead": "python memory/mechanic/perf_profile.py --duration 3600",
+ "chars": 1210,
+ "abstracted": "2026-11-23 09:24:44"
+}

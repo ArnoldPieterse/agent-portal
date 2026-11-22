@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/goal1-winrm-closure-path-fixed-2026-11-20.md",
+ "headings": [
+  "Goal 1 (WinRM) - closure path made functional + RED IP bug fixed [2026-11-20]",
+  "Defect 1: winrm_pool.py had NO CLI entry point",
+  "Defect 2: RED host IP typo ([redacted-LAN-IP] -> Red)",
+  "Net effect"
+ ],
+ "lead": "Two latent defects in the goal-1 closure path found + fixed this pass (in-sandbox, no wall involved).",
+ "chars": 3317,
+ "abstracted": "2026-11-23 09:24:44"
+}

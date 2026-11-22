@@ -1,0 +1,16 @@
+{
+ "path": "memory/goals/forecast-builder-g6-fleet-panel-2026-11-23.md",
+ "headings": [
+  "Forecast: Builder Goal #6 \u2014 Fleet Status Panel Design Brief",
+  "Current state (what exists)",
+  "What's missing (the 3 AC gaps)",
+  "Design approach (recommended to Builder)",
+  "Layout: 3-row grid per host, NOT cards-in-a-row",
+  "VRAM bar implementation",
+  "Agent chips",
+  "Sparkline (reuse pattern from capacity-trend spec)"
+ ],
+ "lead": "Author: Designer | Date: 2026-11-23 | Target: memory/goals/builder.md #6",
+ "chars": 4463,
+ "abstracted": "2026-11-23 09:24:44"
+}

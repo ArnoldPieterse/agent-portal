@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/goal8-timeline-api-evidence-2026-11-21.md",
+ "headings": [
+  "Scribe Goal 8: Temporal Query API - Evidence, 2026-11-21",
+  "What was done",
+  "Test results (standalone run 2026-11-21)",
+  "Files modified",
+  "Note"
+ ],
+ "lead": "Added `_timeline_snapshot(date_str)` and `_timeline_compare(from_date, to_date)` helper functions",
+ "chars": 1116,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,15 @@
+{
+ "path": "memory/mechanic/goal4-live-integration-test-2026-11-21.md",
+ "headings": [
+  "Goal #4 - Live Integration Test Script Ready (2026-11-21)",
+  "What was done",
+  "Usage (non-sandbox seat with :8099 egress)",
+  "What it checks per round",
+  "Verified from sandbox",
+  "Closure path (one command on non-sandbox seat)",
+  "Status: ADVANCED (closure tooling ready; only the run remains)"
+ ],
+ "lead": "Built `memory/mechanic/goal4-live-integration-test.py` (155 lines) \u2014 a one-command",
+ "chars": 1405,
+ "abstracted": "2026-11-23 09:24:44"
+}

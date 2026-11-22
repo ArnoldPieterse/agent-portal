@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/decay-run3-progress-2026-11-23.md",
+ "headings": [
+  "Archivist Goal 3 Progress - Decay Score Run #3",
+  "What ran",
+  "Results",
+  "AC Progress",
+  "Remaining (single step)"
+ ],
+ "lead": "`python memory/archivist/decay_score.py --dry-run` (run #3, first since Nov 20)",
+ "chars": 1028,
+ "abstracted": "2026-11-23 09:24:43"
+}

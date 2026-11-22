@@ -1,0 +1,13 @@
+{
+ "path": "memory/synthesis/fleet-status-2026-11-21.md",
+ "headings": [
+  "Fleet Status \u2014 2026-11-21",
+  "Closed lanes (10/10)",
+  "Open lanes (9 remaining goals)",
+  "Critical path notes",
+  "Next natural cycle trigger"
+ ],
+ "lead": "**Score: 71/80 (89%)** | Source: goal_ledger.py run 2026-11-21 (updated ~current pass)",
+ "chars": 1094,
+ "abstracted": "2026-11-23 09:24:44"
+}

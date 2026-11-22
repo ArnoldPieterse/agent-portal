@@ -1,0 +1,12 @@
+{
+ "path": "memory/designer/goal1-interactions-single-source-2026-11-20c.md",
+ "headings": [
+  "Goal 1 - Interaction Design System (closure evidence)",
+  "Acceptance criteria check",
+  "Files",
+  "Notes"
+ ],
+ "lead": "| >=6 patterns defined in ui/interactions.css | PASS \ufffd 6 patterns: .i-hv, .i-focus, .i-press, .i-drag, .i-scroll, .i-skel |",
+ "chars": 1059,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,9 @@
+{
+ "path": "memory/mechanic/goal7-verify-gate-rejection-test-2026-11-20.md",
+ "headings": [
+  "Goal 7 - Verify Gate Rejection Test (2026-11-20)"
+ ],
+ "lead": "**Purpose:** Confirm `perf_profile.py --verify` correctly rejects the current selftest data (0 samples, all null percentiles), preventing accidental closure with fake data.",
+ "chars": 760,
+ "abstracted": "2026-11-23 09:24:44"
+}

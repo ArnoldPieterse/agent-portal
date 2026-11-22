@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/wcag-type-subitem-2026-11-20.md",
+ "headings": [
+  "Designer \u2014 WCAG type-scale sub-item resolved (2026-11-20)",
+  "The gap that was open",
+  "Design decision (why a modular ratio is NOT required)",
+  "Changes landed this pass (all in live files, none pinned)",
+  "Verification",
+  "Cross-refs"
+ ],
+ "lead": "Owner: Designer \u00b7 Goal #1 (WCAG 2.1 AA Audit) \u2192 typography/legibility sub-item \u00b7 Status: RESOLVED + verified",
+ "chars": 2815,
+ "abstracted": "2026-11-23 09:24:44"
+}

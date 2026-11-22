@@ -1,0 +1,12 @@
+{
+ "path": "memory/ops/verifier-healthcheck-2026-11-14.md",
+ "headings": [
+  "Verifier daily health check \u2014 2026-11-14 (goal #4, auto-continue round)",
+  "PASS (measured this round, shared root)",
+  "BLOCKED from this seat (evidence, not skipped)",
+  "Verdict"
+ ],
+ "lead": "Seat: Black sandbox. Method: python hashlib/socket in shared agent folder + terminal curl attempt.",
+ "chars": 1991,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/retrieval-rerun-2026-11-20.md",
+ "headings": [
+  "Retrieval Benchmark Re-run - 2026-11-20 (maintenance)",
+  "Result (fresh measurement)",
+  "Verdict",
+  "Discrepancy note (for Orchestrator/dashboard)"
+ ],
+ "lead": "Trigger: auto-loop pass nudged Archivist on \"oldest open goal\"; ledger shows all 10",
+ "chars": 1004,
+ "abstracted": "2026-11-23 09:24:43"
+}

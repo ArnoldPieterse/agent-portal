@@ -1,0 +1,11 @@
+{
+ "path": "memory/ops/runbooks/host_down_response.md",
+ "headings": [
+  "Lessons Learned",
+  "1. P2 incident detected (2026-11-22T21:25:18)",
+  "2. P2 incident detected (2026-11-22T21:25:23)"
+ ],
+ "lead": "",
+ "chars": 1009,
+ "abstracted": "2026-11-23 09:24:44"
+}

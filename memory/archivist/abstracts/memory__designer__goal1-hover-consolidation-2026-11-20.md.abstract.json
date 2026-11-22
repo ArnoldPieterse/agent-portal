@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal1-hover-consolidation-2026-11-20.md",
+ "headings": [
+  "Goal 1 \u2014 Interaction System: ad-hoc :hover consolidation + dead-file wiring",
+  "What was wrong (root cause found this pass)",
+  "Concrete step taken (this pass)",
+  "Measurement (before \u2192 after)",
+  "Still open on Goal 1 (NOT closed \u2014 do not ledger-record as verified)"
+ ],
+ "lead": "Date: 2026-11-20 (auto-loop pass). Owner: Designer.",
+ "chars": 2069,
+ "abstracted": "2026-11-23 09:24:44"
+}

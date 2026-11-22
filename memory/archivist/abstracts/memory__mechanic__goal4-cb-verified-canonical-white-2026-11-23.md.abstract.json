@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal4-cb-verified-canonical-white-2026-11-23.md",
+ "headings": [
+  "Goal #4 (Fleet Status API Hardening) \u2014 corrected evidence, canonical White, 2026-11-23",
+  "What actually happened (record correction)",
+  "Ground truth verified THIS pass (all run locally on White)",
+  "Environment fact this pass",
+  "Remaining leg to close goal #4 (precise, single step)",
+  "Verdict"
+ ],
+ "lead": "Supersedes `goal4-cb-durable-wire-2026-11-23.md` and the contradictory 2026-11-22/23 note trail.",
+ "chars": 3260,
+ "abstracted": "2026-11-23 09:24:44"
+}

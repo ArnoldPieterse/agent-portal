@@ -1,0 +1,15 @@
+{
+ "path": "memory/goals/forecast-latest.md",
+ "headings": [
+  "Fleet Forecast - 10 steps ahead",
+  "Next 10 goals (queue order)",
+  "30m ahead (by 2026-11-23 09:48)",
+  "1h ahead (by 2026-11-23 10:18)",
+  "1d ahead (by 2026-11-24 09:18)",
+  "1w ahead (by 2026-11-30 09:18)",
+  "1m ahead (by 2026-12-23 09:18)"
+ ],
+ "lead": "Generated: 2026-11-23 09:18:01 | Fleet: 52/72 (72%) | throughput ~6.0 goals/h",
+ "chars": 6984,
+ "abstracted": "2026-11-23 09:24:44"
+}

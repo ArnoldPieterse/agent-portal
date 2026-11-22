@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal1-discrepancy-reconciled-2026-11-20.md",
+ "headings": [
+  "Goal 1 WinRM \u2014 discrepancy reconciled (2026-11-20, Mechanic)",
+  "What was inconsistent",
+  "Fix applied this pass (evidence/ledger upkeep; no wall re-probe)",
+  "True state of Goal 1",
+  "Remaining (NEEDS-HUMAN, non-sandbox) \u2014 NOT re-probed this pass",
+  "Verdict"
+ ],
+ "lead": "| Pool + retry (3 attempts, exp backoff) | PASS | winrm_pool_selftest.py 20/20; 6.0s backoff |",
+ "chars": 2386,
+ "abstracted": "2026-11-23 09:24:44"
+}

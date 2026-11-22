@@ -1,0 +1,15 @@
+{
+ "path": "memory/mechanic/runbook.md",
+ "headings": [
+  "Fleet Incident Response Runbook",
+  "1. Host Down (any host unresponsive)",
+  "2. Model Wedged (LM Studio instance unresponsive / VRAM leak)",
+  "3. Portal Crash (agent_portal.py down, port 8099 dead)",
+  "4. Disk Full (host disk >=85%)",
+  "5. Network Partition (host unreachable over WinRM/SMB only)",
+  "Cross-references"
+ ],
+ "lead": "Owner: Mechanic | Created 2026-11-20 (cycle-7 goal 9, Builder-assisted) | Covers top-5 incident types.",
+ "chars": 8124,
+ "abstracted": "2026-11-23 09:24:44"
+}

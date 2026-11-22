@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/kgv3-goal2-verify-2026-11-23.md",
+ "headings": [
+  "Verifier \u2014 Archivist Goal 2 (Knowledge Graph v3) AC Verification",
+  "What was tested",
+  "Results per AC",
+  "Size fix recommendation",
+  "Verdict"
+ ],
+ "lead": "Ran `python memory/archivist/knowledge_graph_v3.py` in full-tree mode + `--query \"temporal\"`.",
+ "chars": 1464,
+ "abstracted": "2026-11-23 09:24:44"
+}

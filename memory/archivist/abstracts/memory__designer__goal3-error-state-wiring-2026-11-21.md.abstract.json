@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal3-error-state-wiring-2026-11-21.md",
+ "headings": [
+  "Goal 3 - Error State Design System: Wiring Evidence (2026-11-21)",
+  "What was done",
+  "Panels wired",
+  "Acceptance criteria status",
+  "Files changed",
+  "Remaining work for full closure"
+ ],
+ "lead": "Wired `UI.errorState()` into 3 panel call sites in ui/core.js, replacing raw `\"error: ...\"` strings with visual error state components (icon + message + detail + optional retry button).",
+ "chars": 1966,
+ "abstracted": "2026-11-23 09:24:44"
+}

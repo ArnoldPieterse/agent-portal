@@ -1,0 +1,13 @@
+{
+ "path": "memory/verifier/evidence-xref-report-2026-11-20.md",
+ "headings": [
+  "Evidence Cross-Reference Graph Report",
+  "Summary",
+  "Status: ALL REFERENCES RESOLVED",
+  "Edge List (complete)",
+  "Method"
+ ],
+ "lead": "No broken pointers or evidence references found.",
+ "chars": 4624,
+ "abstracted": "2026-11-23 09:24:44"
+}

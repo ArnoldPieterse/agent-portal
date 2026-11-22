@@ -1,0 +1,16 @@
+{
+ "path": "memory/researcher/memory-compression-report.md",
+ "headings": [
+  "Memory Compression Report",
+  "Findings and Consolidation Proposals",
+  "port: [8099] (35 locations)",
+  "residency: [white] (6 locations)",
+  "port: [2026] (5 locations)",
+  "resource: [24] (4 locations)",
+  "port: [5985] (3 locations)",
+  "Compression Impact"
+ ],
+ "lead": "Action: Consolidate into canonical source; replace others with pointer.",
+ "chars": 2813,
+ "abstracted": "2026-11-23 09:24:44"
+}

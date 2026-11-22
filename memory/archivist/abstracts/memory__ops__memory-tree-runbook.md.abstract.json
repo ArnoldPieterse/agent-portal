@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/memory-tree-runbook.md",
+ "headings": [
+  "Memory Tree Maintenance Runbook",
+  "Prerequisites",
+  "Step 1: Orphan Scan",
+  "Step 2: Cross-Reference Integrity",
+  "Step 3: Freshness Scoring + Archive",
+  "Step 4: Duplication Detection",
+  "Step 5: Citation Map + Staleness",
+  "Step 6: Search Index Rebuild"
+ ],
+ "lead": "Owner: Archivist | Updated: 2026-11-20 | Cycle: 8",
+ "chars": 4894,
+ "abstracted": "2026-11-23 09:24:44"
+}

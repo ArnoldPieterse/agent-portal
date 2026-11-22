@@ -1,0 +1,15 @@
+{
+ "path": "memory/archivist/archive-hygiene-audit-2026-11-20.md",
+ "headings": [
+  "Archive Hygiene Audit - 2026-11-20",
+  "Summary",
+  "Findings",
+  "1. Duplicate: researcher-2026-11-13.md = researcher-log-2026-11-13.md",
+  "2. Provenance style variance (informational, not a defect)",
+  "3. No truncation detected",
+  "Verdict"
+ ],
+ "lead": "**Scope:** memory/goals/archive/ (51 files)",
+ "chars": 1434,
+ "abstracted": "2026-11-23 09:24:43"
+}

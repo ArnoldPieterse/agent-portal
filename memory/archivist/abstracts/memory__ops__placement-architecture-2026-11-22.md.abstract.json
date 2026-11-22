@@ -1,0 +1,13 @@
+{
+ "path": "memory/ops/placement-architecture-2026-11-22.md",
+ "headings": [
+  "Host-agnostic placement (agents are not pinned to hosts) - 2026-11-22",
+  "How it works (agent_portal.py)",
+  "Rules / invariants",
+  "Verified",
+  "Load queue (same day, user directive: \"loads should be queued when only a few are available\")"
+ ],
+ "lead": "User directive: with hot-load-on-demand in place, agents must NOT depend on specific hosts.",
+ "chars": 3488,
+ "abstracted": "2026-11-23 09:24:44"
+}

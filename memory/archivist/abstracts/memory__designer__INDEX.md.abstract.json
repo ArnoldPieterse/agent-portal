@@ -1,0 +1,16 @@
+{
+ "path": "memory/designer/INDEX.md",
+ "headings": [
+  "memory/designer/ INDEX",
+  "Assist (2026-11-17, Orchestrator seat)",
+  "Next-cycle proposals (2026-11-16)",
+  "Active evidence (2026-11-15)",
+  "2026-11-14 (round logs r21-r71)",
+  "Staged / backups (do not serve)",
+  "Scripts",
+  "Orphan count: ~70 files total; 15 active (11-15) indexed above; remainder = round logs + backups."
+ ],
+ "lead": "Recommendation: archive r21-r71 round logs to memory/designer/archive-2026-11-14/ at next prune.",
+ "chars": 6055,
+ "abstracted": "2026-11-23 09:24:44"
+}

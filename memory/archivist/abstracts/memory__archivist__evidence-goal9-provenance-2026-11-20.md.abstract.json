@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/evidence-goal9-provenance-2026-11-20.md",
+ "headings": [
+  "Evidence: Goal 9 \u2014 Provenance Tracking (2026-11-20)",
+  "Acceptance Criteria",
+  "Per-agent breakdown",
+  "Notes"
+ ],
+ "lead": "**Script:** `memory/archivist/provenance.py`",
+ "chars": 949,
+ "abstracted": "2026-11-23 09:24:43"
+}

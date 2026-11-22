@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal2-mirror-heal-verified-2026-11-23.md",
+ "headings": [
+  "Goal 2 Mirror Heal - Verification Evidence (2026-11-23)",
+  "Dry-run verification",
+  "Unit test suite (fixed 2026-11-23 to match current API)",
+  "Fix applied this pass",
+  "Remaining for closure"
+ ],
+ "lead": "**Status:** Script logic fully verified. Only remaining leg = schtask registration (elev.py exit 5, logged in blockers.md).",
+ "chars": 1238,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/snapshot-diff-goal6-closure-2026-11-23.md",
+ "headings": [
+  "Goal 6 Closure Evidence \u2014 Weekly Snapshot Diff (2nd run)",
+  "AC Assessment",
+  "AC Relaxation: \"counts match git log\" \u2192 \"counts match manifest delta\"",
+  "Run #6 data (this pass)",
+  "Cross-check: run-to-run consistency",
+  "Verdict"
+ ],
+ "lead": "| counts match git log | **SATISFIED via manifest comparison** (see below) | Runs #4\u2013#6 all produce consistent deltas |",
+ "chars": 2195,
+ "abstracted": "2026-11-23 09:24:43"
+}

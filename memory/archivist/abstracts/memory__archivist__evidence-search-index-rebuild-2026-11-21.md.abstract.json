@@ -1,0 +1,14 @@
+{
+ "path": "memory/archivist/evidence-search-index-rebuild-2026-11-21.md",
+ "headings": [
+  "Search Index Rebuild - 2026-11-21",
+  "Context",
+  "What ran",
+  "Results",
+  "Format",
+  "File"
+ ],
+ "lead": "search-index.json was found corrupted (3 entries in wrong format, likely overwritten by another process).",
+ "chars": 982,
+ "abstracted": "2026-11-23 09:24:43"
+}

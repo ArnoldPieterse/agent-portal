@@ -1,0 +1,14 @@
+{
+ "path": "memory/designer/goal8-toast-progress-2026-11-20.md",
+ "headings": [
+  "Goal 8 - Notification/Toast Design: Progress Evidence",
+  "What exists (pre-existing, re-verified this pass):",
+  "Real usage sites in core.js (>=3 required):",
+  "Gap fixed this pass (2026-11-20):",
+  "Remaining for full closure:",
+  "Acceptance test:"
+ ],
+ "lead": "<!-- PROVENANCE agent=designer created=2026-11-20 trigger=auto-loop -->",
+ "chars": 1825,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/ops/claim-phantom-report.md",
+ "headings": [
+  "Claim-Phantom Report",
+  "PHANTOM claims (verified but artifact missing) \u2014 owner should re-do or drop the marker",
+  "UNCITED verified claims (no path to check \u2014 add an artifact pointer so the ledger can close them)",
+  "REAL claims (verified + artifact present)"
+ ],
+ "lead": "Generated: 2026-11-20 23:52 by `memory/ops/verify_claims.py` (Builder).",
+ "chars": 7400,
+ "abstracted": "2026-11-23 09:24:44"
+}

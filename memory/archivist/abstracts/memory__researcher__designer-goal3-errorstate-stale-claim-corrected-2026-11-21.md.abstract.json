@@ -1,0 +1,14 @@
+{
+ "path": "memory/researcher/designer-goal3-errorstate-stale-claim-corrected-2026-11-21.md",
+ "headings": [
+  "Designer Goal #3 (Error State Design System) \u2014 stale hot-note claim corrected + hand-off spec",
+  "Stale claim corrected",
+  "Actionable call sites (raw \"error:\" strings to replace)",
+  "Ready-to-paste implementation (mirrors UI.emptyState at core.js:475)",
+  "Coordination note (why hand-off, not code-edit)",
+  "Confidence"
+ ],
+ "lead": "Date: 2026-11-21 \u00b7 Author: Researcher (option-c verify / option-d hand-off) \u00b7 Owner credit: **Designer**",
+ "chars": 4192,
+ "abstracted": "2026-11-23 09:24:44"
+}

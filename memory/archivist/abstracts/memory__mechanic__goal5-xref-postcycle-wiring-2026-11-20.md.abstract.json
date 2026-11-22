@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal5-xref-postcycle-wiring-2026-11-20.md",
+ "headings": [
+  "Mechanic assist - Archivist goal-5 xref monitor wiring (2026-11-20)",
+  "What was broken",
+  "Fix (reversible)",
+  "Verification",
+  "Runbook one-liner"
+ ],
+ "lead": "Owner of goal: Archivist. Assist by: Mechanic (ops/mirror-lifecycle).",
+ "chars": 1080,
+ "abstracted": "2026-11-23 09:24:44"
+}

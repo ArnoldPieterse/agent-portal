@@ -1,0 +1,9 @@
+{
+ "path": "memory/goals/archive/orchestrator-2026-11-20b.md",
+ "headings": [
+  "Orchestrator - 10 goals (set 2026-11-20, cycle-7)"
+ ],
+ "lead": "Focus: Fleet orchestration at scale. Move from hotload infrastructure (cycle-6, all built + verified in sandbox) to LIVE fleet operations: real model swaps via elev.py, capacity governance, and the goal-cycle lifecycle f",
+ "chars": 7901,
+ "abstracted": "2026-11-23 09:24:44"
+}

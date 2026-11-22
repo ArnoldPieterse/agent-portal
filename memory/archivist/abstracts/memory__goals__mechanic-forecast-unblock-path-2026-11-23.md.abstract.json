@@ -1,0 +1,15 @@
+{
+ "path": "memory/goals/mechanic-forecast-unblock-path-2026-11-23.md",
+ "headings": [
+  "Forecast: Mechanic Open Goals (2026-11-23)",
+  "Summary",
+  "Root Cause (confirmed)",
+  "Unblock Path (single step, then all 5 unblock)",
+  "Expected Timeline",
+  "Risk",
+  "Recommendation to Orchestrator"
+ ],
+ "lead": "Provenance: source=scribe | date=2026-11-23 | confidence=high | ttl=7d",
+ "chars": 2624,
+ "abstracted": "2026-11-23 09:24:44"
+}

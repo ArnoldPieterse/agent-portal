@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/evidence-assist-scribe-compress-2026-11-20.md",
+ "headings": [
+  "Evidence: Assist Scribe Goal 3 (Context Compression) - 2026-11-20",
+  "Issue Found",
+  "Fix Applied",
+  "Verification",
+  "Artifacts"
+ ],
+ "lead": "`get_gotchas()` in `memory/scribe/compress_context.py` was searching only `memory/scribe/` and picking up INDEX.md / meta-files instead of actual correction content. Result: gotchas section listed file names rather than ",
+ "chars": 1058,
+ "abstracted": "2026-11-23 09:24:43"
+}

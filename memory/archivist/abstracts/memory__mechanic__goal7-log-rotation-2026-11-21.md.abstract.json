@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/goal7-log-rotation-2026-11-21.md",
+ "headings": [
+  "Goal #7 Log Rotation + Retention - Progress 2026-11-21",
+  "What was done this pass",
+  "Remaining for full closure",
+  "Runbook note"
+ ],
+ "lead": "decompresses correctly, small file not rotated, 8-day-old pruned, fresh preserved)",
+ "chars": 1378,
+ "abstracted": "2026-11-23 09:24:44"
+}

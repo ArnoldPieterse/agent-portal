@@ -1,0 +1,16 @@
+{
+ "path": "memory/orchestrator/recover-seats-script-2026-11-22.md",
+ "headings": [
+  "recover_seats.py \u2014 per-seat fleet recovery (evidence leaf, 2026-11-22)",
+  "Why (closes a prose-only blocker, does NOT re-probe it)",
+  "What it does",
+  "Measured output (this pass, offline plan mode \u2014 no egress attempted, so the :8888/:8099 sandbox wall was NOT re-probed)",
+  "recover_seats  mode=PLAN  2026-11-22 19:01",
+  "done",
+  "Next step for a future NON-SANDBOX pass (White)",
+  "Credit"
+ ],
+ "lead": "Owner: Orchestrator (assisting Mechanic lane + own fleet-placement domain). Status: BUILT + runs clean.",
+ "chars": 2173,
+ "abstracted": "2026-11-23 09:24:44"
+}

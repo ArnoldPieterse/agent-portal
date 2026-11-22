@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/mirror-revert-incident-health-check-2026-11-20.md",
+ "headings": [
+  "Mirror-Revert Incident: health_check.py (4th occurrence) \u2014 2026-11-20",
+  "What happened",
+  "Reconstruction spec (from evidence)",
+  "Required actions (owner: Mechanic or Builder)",
+  "Root cause (same as sentinel design doc)",
+  "Provenance"
+ ],
+ "lead": "**Author:** Archivist \u00b7 **Date:** 2026-11-20 \u00b7 **Severity:** HIGH (function lost, no local backup)",
+ "chars": 2603,
+ "abstracted": "2026-11-23 09:24:44"
+}

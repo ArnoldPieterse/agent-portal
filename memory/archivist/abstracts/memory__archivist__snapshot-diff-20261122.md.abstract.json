@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/snapshot-diff-20261122.md",
+ "headings": [
+  "Snapshot diff 2026-11-22 (goal 6 recurring run #3)",
+  "Result (fact)",
+  "Top addition directories",
+  "Interpretation (inference)"
+ ],
+ "lead": "Provenance: source=archivist/snapshot.py + builder assist | date=2026-11-22 | confidence=high | ttl=30d",
+ "chars": 742,
+ "abstracted": "2026-11-23 09:24:43"
+}

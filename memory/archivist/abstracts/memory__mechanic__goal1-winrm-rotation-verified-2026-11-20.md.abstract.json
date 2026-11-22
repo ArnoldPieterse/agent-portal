@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal1-winrm-rotation-verified-2026-11-20.md",
+ "headings": [
+  "Goal 1 Evidence: Credential Rotation Alert Logic (2026-11-20)",
+  "What was verified (this pass)",
+  "What was built (this pass)",
+  "Remaining (blocked, recorded in blockers.md)",
+  "Verdict"
+ ],
+ "lead": "Bundles: pip install pywinrm -> health check all 4 hosts -> register daily schtask WinRM_CredRotate -> append evidence JSONL.",
+ "chars": 1420,
+ "abstracted": "2026-11-23 09:24:44"
+}

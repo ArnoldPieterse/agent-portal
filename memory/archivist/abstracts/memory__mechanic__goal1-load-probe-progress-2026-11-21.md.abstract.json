@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal1-load-probe-progress-2026-11-21.md",
+ "headings": [
+  "Goal #1 - Load Probe Status: 5/7 days (2026-11-21)",
+  "Current state",
+  "Blocker",
+  "Closure path",
+  "No action needed until Nov 22 (earliest possible closure)"
+ ],
+ "lead": "Cannot trigger probe from this seat (WinError 10013 egress block to :8099). Data accumulates automatically via White's schtask. Next expected entry: Nov 21 06:00 (if schtask ran) or Nov 22 06:00.",
+ "chars": 1217,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal7-light-contrast-fix-2026-11-20.md",
+ "headings": [
+  "Goal 7 - Color Contrast + Accessibility: Light Mode Fix (2026-11-20)",
+  "Problem",
+  "Fix Applied (ui/tokens.css, [data-theme=light] block)",
+  "Verification",
+  "Acceptance Criteria Status"
+ ],
+ "lead": "<!-- PROVENANCE agent=designer created=2026-11-20 trigger=goal7-light-mode-fix -->",
+ "chars": 1380,
+ "abstracted": "2026-11-23 09:24:44"
+}

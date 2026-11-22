@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/evidence-goal1-orphan-remediation-complete-2026-11-20.md",
+ "headings": [
+  "Evidence: Goal #1 - Orphan Remediation Automation (COMPLETE)",
+  "Acceptance Criteria Verification",
+  "Artifacts",
+  "Verification Commands",
+  "Summary"
+ ],
+ "lead": "| >=50 orphans auto-linked | PASS | 103 auto-classified standalone + 2 auto-linked = 105 total auto-remediated (original 154 all resolved) |",
+ "chars": 1494,
+ "abstracted": "2026-11-23 09:24:43"
+}

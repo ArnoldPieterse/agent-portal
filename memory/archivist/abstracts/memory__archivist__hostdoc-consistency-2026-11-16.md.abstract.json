@@ -1,0 +1,9 @@
+{
+ "path": "memory/archivist/hostdoc-consistency-2026-11-16.md",
+ "headings": [
+  "Multi-host doc consistency check - 2026-11-16 (archivist)"
+ ],
+ "lead": "Extracted host:port claims from memory/ops/*.md and verified each live (TCP connect, 2s timeout).",
+ "chars": 1749,
+ "abstracted": "2026-11-23 09:24:43"
+}

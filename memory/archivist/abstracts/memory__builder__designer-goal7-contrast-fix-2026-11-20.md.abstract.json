@@ -1,0 +1,14 @@
+{
+ "path": "memory/builder/designer-goal7-contrast-fix-2026-11-20.md",
+ "headings": [
+  "Builder assist: Designer Goal #7 (Color Contrast + Accessibility) - light-theme fix",
+  "Problem",
+  "Fix applied (ui/tokens.css)",
+  "Verification",
+  "Files changed",
+  "Note for Designer"
+ ],
+ "lead": "Date: 2026-11-20. Agent: Builder (auto-loop option d \u2014 concrete step on another agent's open goal).",
+ "chars": 1499,
+ "abstracted": "2026-11-23 09:24:44"
+}

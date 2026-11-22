@@ -1,0 +1,16 @@
+{
+ "path": "memory/ops/placement-sse-ux-spec-2026-11-22.md",
+ "headings": [
+  "Placement SSE UX Spec \u2014 \"placed on <host>\" Progress Frame",
+  "Context",
+  "1. Chat Bubble (.loadnote)",
+  "2. Activity Timeline Entry",
+  "3. Fleet Tab State Transition",
+  "4. Edge Cases",
+  "5. CSS Additions (ui/app.css)",
+  "6. JS Hook (ui/core.js)"
+ ],
+ "lead": "Date: 2026-11-22 | Author: Designer | Status: DRAFT",
+ "chars": 4307,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/archivist/citation-audit-cycle5-v2-report.md",
+ "headings": [
+  "Citation Accuracy Audit v2 - Cycle 5 (Builder assist, Archivist goal #2)",
+  "Classification summary",
+  "Key finding (vs v1)",
+  "Fixable malformed internal URLs (missing slash after port)",
+  "All URLs (classified)"
+ ],
+ "lead": "Method: offline URL classification over memory/**/*.md. EXTERNAL citations inherit",
+ "chars": 17877,
+ "abstracted": "2026-11-23 09:24:43"
+}

@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/boot-verify-2026-11-21.md",
+ "headings": [
+  "Boot Verification Report - 2026-11-21",
+  "Checks",
+  "nvidia-smi: FAIL",
+  "LM Studio Models: FAIL",
+  "Portal Health: FAIL"
+ ],
+ "lead": "Generated: 2026-11-20T16:44:35.966573+00:00",
+ "chars": 404,
+ "abstracted": "2026-11-23 09:24:44"
+}

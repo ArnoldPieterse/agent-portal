@@ -1,0 +1,9 @@
+{
+ "path": "memory/ops/mechanic-lan-8099-blocked-2026-11-15.md",
+ "headings": [
+  "OPS NOTE 2026-11-15 ~11:40 - Mechanic: White :8099/:8888 unreachable from LAN (pre-existing, now documented)"
+ ],
+ "lead": "**Finding:** portal :8099 and Studio :8888 on White (White) TIME OUT from the Red seat,",
+ "chars": 2339,
+ "abstracted": "2026-11-23 09:24:44"
+}

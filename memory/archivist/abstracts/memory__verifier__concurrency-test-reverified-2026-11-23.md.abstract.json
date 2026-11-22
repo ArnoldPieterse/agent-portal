@@ -1,0 +1,11 @@
+{
+ "path": "memory/verifier/concurrency-test-reverified-2026-11-23.md",
+ "headings": [
+  "Verifier: Concurrency Serialization Test Re-Verification",
+  "What was verified",
+  "Verdict"
+ ],
+ "lead": "Independently re-ran `memory/verifier/concurrency_serialization_test.py` logic in dry-run mode:",
+ "chars": 651,
+ "abstracted": "2026-11-23 09:24:44"
+}

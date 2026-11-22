@@ -1,0 +1,13 @@
+{
+ "path": "memory/goals/designer-forecast-mechanic-winrm-2026-11-20.md",
+ "headings": [
+  "Forecast: Mechanic Goal - WinRM Remote Management Hardening",
+  "Current State",
+  "Design Recommendations for Portal Integration",
+  "Suggested Unblock Path (no human gate)",
+  "Risk"
+ ],
+ "lead": "When WinRM hardening lands, the portal should surface:",
+ "chars": 1275,
+ "abstracted": "2026-11-23 09:24:44"
+}

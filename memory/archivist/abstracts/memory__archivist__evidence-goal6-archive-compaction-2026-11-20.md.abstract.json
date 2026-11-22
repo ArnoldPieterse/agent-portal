@@ -1,0 +1,16 @@
+{
+ "path": "memory/archivist/evidence-goal6-archive-compaction-2026-11-20.md",
+ "headings": [
+  "Evidence: Goal 6 \u2014 Archive Compaction (Pass 1 of N)",
+  "Baseline (before compaction)",
+  "After compaction (this pass)",
+  "Reduction",
+  "Files removed (all exact duplicates, verified by SHA-256)",
+  "memory/goals/archive/ (13 files)",
+  "memory/synthesis/ (2 files)",
+  "Spot-check: content preserved"
+ ],
+ "lead": "Status: IN PROGRESS (16.9% achieved, target >=30%)",
+ "chars": 2903,
+ "abstracted": "2026-11-23 09:24:43"
+}

@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/goal7-deploy-ready-2026-11-22.md",
+ "headings": [
+  "Goal #7 - Log Rotate Deployment Ready (2026-11-22)",
+  "Action taken",
+  "Verification",
+  "Status"
+ ],
+ "lead": "Added `LogRotateDaily` schtask entry to `deploy_all_schtasks.py` (5th task).",
+ "chars": 744,
+ "abstracted": "2026-11-23 09:24:44"
+}

@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/reboot-dryrun-remotes-2026-11-15.md",
+ "headings": [
+  "Reboot-Recovery Dry-RUN: Remote Legs (Red/Pale/Black) \u2014 2026-11-15 ~18:35",
+  "Results",
+  "White (completed earlier, see verifier-healthcheck-2026-11-15.md)",
+  "Broken Steps Found + Fixes",
+  "Portal Status at Time of Dry-RUN",
+  "Goal #3 Closure Status"
+ ],
+ "lead": "Executed via `reboot_dryrun_remotes.py` + manual JWT probes. HUMAN GATE cleared by Arnold 17:xx.",
+ "chars": 3021,
+ "abstracted": "2026-11-23 09:24:44"
+}

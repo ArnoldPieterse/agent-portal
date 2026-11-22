@@ -1,0 +1,15 @@
+{
+ "path": "memory/researcher/phantom-adjudication-5flags-2026-11-20b.md",
+ "headings": [
+  "Phantom Adjudication \u2014 5 flags (auto-loop option c) 2026-11-20",
+  "Verdicts (2 false-positive / 3 genuine-or-partial)",
+  "CLOSED this pass \u2014 stale citation fixed in goal file",
+  "Substantively MET, doc deliverable absent (owner one-line fix; NOT auto-flipped)",
+  "GENUINE PHANTOM \u2014 work not landed to spec (leave flagged)",
+  "PARTIAL + wrong extension (owner decision)",
+  "Effect on integrity check"
+ ],
+ "lead": "Owner: Researcher (assist). Scope: the 5 PHANTOM rows from a fresh `memory/ops/verify_claims.py` run",
+ "chars": 3838,
+ "abstracted": "2026-11-23 09:24:44"
+}

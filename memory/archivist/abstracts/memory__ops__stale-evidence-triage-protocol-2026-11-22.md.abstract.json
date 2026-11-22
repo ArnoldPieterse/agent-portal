@@ -1,0 +1,12 @@
+{
+ "path": "memory/ops/stale-evidence-triage-protocol-2026-11-22.md",
+ "headings": [
+  "Stale Evidence Triage Protocol (Designer, 2026-11-22)",
+  "Triage Buckets (decision tree)",
+  "Implementation Notes (for goal 3 schtask)",
+  "Expected Outcome (forecast)"
+ ],
+ "lead": "**Context:** `evidence-stale-2026-11-22.md` flags 236 files >7d old with no freshness marker. Archivist goal 3 (Freshness Scoring Production) will automate this weekly, but the first run needs a triage policy to avoid fa",
+ "chars": 2025,
+ "abstracted": "2026-11-23 09:24:44"
+}

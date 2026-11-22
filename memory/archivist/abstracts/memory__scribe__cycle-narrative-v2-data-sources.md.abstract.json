@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/cycle-narrative-v2-data-sources.md",
+ "headings": [
+  "Cycle Narrative v2 \u2014 Data Source Map (Archivist assist, 2026-11-20)",
+  "Working data sources (confirmed in sandbox)",
+  "Missing / unavailable in sandbox",
+  "Recommended fixes (ordered by impact)",
+  "Acceptance criteria reminder (from goal)"
+ ],
+ "lead": "Purpose: identify exactly which files/endpoints feed `cycle_narrative.py` and flag gaps.",
+ "chars": 2005,
+ "abstracted": "2026-11-23 09:24:44"
+}

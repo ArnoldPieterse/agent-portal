@@ -1,0 +1,7 @@
+{
+ "path": "memory/archivist/auto-loop-notes.md",
+ "headings": [],
+ "lead": "\"2026-11-20 auto-loop: dispatch showed '3 open' for Archivist; ledger confirms 10/10 reached open=0 (stale count). No action taken.\"",
+ "chars": 134,
+ "abstracted": "2026-11-23 09:24:43"
+}

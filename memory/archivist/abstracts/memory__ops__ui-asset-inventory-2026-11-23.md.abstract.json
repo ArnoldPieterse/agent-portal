@@ -1,0 +1,15 @@
+{
+ "path": "memory/ops/ui-asset-inventory-2026-11-23.md",
+ "headings": [
+  "UI Asset Inventory + Dead-Code Report",
+  "Summary",
+  "Loaded by Browser (index.html \u2192 /ui/*)",
+  "Unloaded Dead Files (85 KB total)",
+  "~~Bug Found~~ (RETRACTED)",
+  "Recommended Actions (for Builder)",
+  "Impact"
+ ],
+ "lead": "**Author:** Designer | **Date:** 2026-11-23 | **Type:** ops/workflow improvement",
+ "chars": 3398,
+ "abstracted": "2026-11-23 09:24:44"
+}

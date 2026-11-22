@@ -1,0 +1,9 @@
+{
+ "path": "memory/mechanic/goal10-model-reload-bugfix-2026-11-22.md",
+ "headings": [
+  "Goal 10 - model_reload.py Bug Fix (2026-11-22)"
+ ],
+ "lead": "**Bug:** `model_reload.py` used `agents.get(agent_name)` to look up an agent, but agents.json has structure `{\"agents\": [{\"id\":..., \"model_id\":...}]}` (a dict wrapping a list). The script would always return None for any",
+ "chars": 1494,
+ "abstracted": "2026-11-23 09:24:44"
+}

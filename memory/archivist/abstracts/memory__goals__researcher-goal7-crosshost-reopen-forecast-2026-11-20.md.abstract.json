@@ -1,0 +1,16 @@
+{
+ "path": "memory/goals/researcher-goal7-crosshost-reopen-forecast-2026-11-20.md",
+ "headings": [
+  "Forecast: Researcher Goal #7 - Cross-Host Model Comparison (re-opened 2026-11-20)",
+  "Context",
+  "Acceptance Criteria (from goal text)",
+  "Blockers (documented, do NOT re-probe)",
+  "Forecast: What Closes This Goal",
+  "Path A: Non-sandbox execution (primary)",
+  "Path B: Offline proxy (partial, does NOT meet acceptance)",
+  "Script to Build (prerequisite)"
+ ],
+ "lead": "Date: 2026-11-20 | Author: Archivist | Status: FORECAST",
+ "chars": 2959,
+ "abstracted": "2026-11-23 09:24:44"
+}

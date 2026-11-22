@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/evidence-scribe-goal8-timeline-verify-2026-11-20.md",
+ "headings": [
+  "Evidence: Scribe Goal #8 - Temporal Reasoning Layer (assist verification)",
+  "Test runs (3 historical dates, no anachronisms confirmed)",
+  "Acceptance criteria check",
+  "Note"
+ ],
+ "lead": "| Date tested | Events returned | Agent snapshots | Anachronisms |",
+ "chars": 962,
+ "abstracted": "2026-11-23 09:24:43"
+}

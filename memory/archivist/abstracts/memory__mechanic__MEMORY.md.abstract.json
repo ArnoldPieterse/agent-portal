@@ -1,0 +1,16 @@
+{
+ "path": "memory/mechanic/MEMORY.md",
+ "headings": [
+  "MECHANIC MINI-MEMORY (seat: White sandbox this round) \u2014 updated 2026-11-13 ~18:0x",
+  "2026-11-13 ~18:0x auto-cont 3/3 \u2014 prune+git health check from WHITE seat (Z:\\ = shared agent folder, full tree incl. agents.json + uploads/ \u2192 NOT the Red mount)",
+  "2026-11-13 17:0x auto-cont 3/3 \u2014 inventory + :8888 chase closed out from my seat",
+  "2026-11-13 V102 (human: \"Check file access, run the upgrade planning meeting, we call it ID V102. Then apply as a group\") \u2014 ops lane",
+  "2026-11-13 planning meeting auto-continue r34 \u2014 fresh probe, no drop",
+  "2026-11-13 planning meeting auto-continue r34 \u2014 fresh probe, no drop",
+  "2026-11-13 planning meeting (human: \"run a planning meeting around updating the portal\")",
+  "2026-11-13 planning meeting (human: \"run a planning meeting around updating the portal\")"
+ ],
+ "lead": "State line: Red sandbox has NO LAN egress to White (UNC \\\\white\\c$ denied at sandbox level; Black not on socket allowlist). git NOT installed on Red (PATH, C:\\Program Files\\Git, user dir \u2014 all checked). r6: canonical rep",
+ "chars": 37648,
+ "abstracted": "2026-11-23 09:24:44"
+}

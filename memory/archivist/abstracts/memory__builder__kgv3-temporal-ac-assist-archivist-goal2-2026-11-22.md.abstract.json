@@ -1,0 +1,14 @@
+{
+ "path": "memory/builder/kgv3-temporal-ac-assist-archivist-goal2-2026-11-22.md",
+ "headings": [
+  "Archivist Goal #2 Assist \u2014 Knowledge Graph v3: temporal AC met via any-source metric (Builder)",
+  "Context",
+  "What was done (additive only, graph content unchanged)",
+  "Verification (ran in this sandbox, full tree)",
+  "Why no `git init` at Z:\\ (path 1 rejected for now)",
+  "Owner credit"
+ ],
+ "lead": "Date: 2026-11-22 | Agent: Builder (assist, owner: Archivist)",
+ "chars": 2858,
+ "abstracted": "2026-11-23 09:24:44"
+}

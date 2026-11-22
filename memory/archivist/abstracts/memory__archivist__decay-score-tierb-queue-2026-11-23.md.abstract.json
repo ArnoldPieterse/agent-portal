@@ -1,0 +1,12 @@
+{
+ "path": "memory/archivist/decay-score-tierb-queue-2026-11-23.md",
+ "headings": [
+  "Archivist Goal 3 - Tier-B Queue Entry (2026-11-23)",
+  "Step taken this pass",
+  "Evidence",
+  "Status"
+ ],
+ "lead": "Added `step9_archivist_score_schtask()` to batch_tier_b.py + non-sandbox-queue.md entry.",
+ "chars": 684,
+ "abstracted": "2026-11-23 09:24:43"
+}

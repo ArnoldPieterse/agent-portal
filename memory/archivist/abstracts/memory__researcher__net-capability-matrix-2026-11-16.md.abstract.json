@@ -1,0 +1,13 @@
+{
+ "path": "memory/researcher/net-capability-matrix-2026-11-16.md",
+ "headings": [
+  "Researcher \u2014 /api/net outbound capability matrix (goal #9, 2026-11-16)",
+  "Per-host reachability FROM White shared root (measured 2026-11-16 ~15:3x)",
+  "Capability surface (what /api/net exposes today)",
+  "Open follow-ups",
+  "2026-11-18 refresh (auto-loop pass; vantage = White sandbox White)"
+ ],
+ "lead": "Documented from live probes this pass + raw netcmd evidence. Keep current as Mechanic#6 egress rules engine lands (then re-run and diff).",
+ "chars": 3365,
+ "abstracted": "2026-11-23 09:24:44"
+}

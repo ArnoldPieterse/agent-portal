@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/assist-archivist-goal1-freshness-spotcheck-2026-11-20.md",
+ "headings": [
+  "Evidence: Archivist Goal 1 (Memory Freshness SLA) \u2014 Spot-check Verification",
+  "What was verified",
+  "Spot-check detail",
+  "Note on tier boundary method",
+  "Conclusion"
+ ],
+ "lead": "Ran `python memory/archivist/freshness_report.py` \u2192 report at `memory/archivist/freshness-report-2026-11-20.md`.",
+ "chars": 1604,
+ "abstracted": "2026-11-23 09:24:44"
+}

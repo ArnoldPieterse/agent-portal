@@ -1,0 +1,12 @@
+{
+ "path": "memory/orchestrator/cycle_auto_planner_verified_2026-11-23.md",
+ "headings": [
+  "Cycle Auto-Planner - Verified 2026-11-23",
+  "Verification Results",
+  "Approach",
+  "Artifacts"
+ ],
+ "lead": "Agent-specific keyword scoring with 40+ domain keywords per agent. Each goal is scored",
+ "chars": 814,
+ "abstracted": "2026-11-23 09:24:44"
+}

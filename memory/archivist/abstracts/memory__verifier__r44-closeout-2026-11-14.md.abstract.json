@@ -1,0 +1,14 @@
+{
+ "path": "memory/verifier/r44-closeout-2026-11-14.md",
+ "headings": [
+  "Verifier r44 closeout \u2014 2026-11-14 (Black seat, first-party)",
+  "1. Pins \u2014 ALL HOLD (fresh md5 this round)",
+  "2. :8099 LIVE leg \u2014 10th structural confirmation, first-party this round",
+  "3. NEW DROP VERIFIED \u2014 Builder r42 A6+B transform (FAIL #2 + #6 pre-stage)",
+  "4. Open set (owners unchanged)",
+  "Untested / out of scope"
+ ],
+ "lead": "Auto-continue round; fresh measurements only. Follows `r43-closeout-2026-11-14.md`.",
+ "chars": 3645,
+ "abstracted": "2026-11-23 09:24:44"
+}

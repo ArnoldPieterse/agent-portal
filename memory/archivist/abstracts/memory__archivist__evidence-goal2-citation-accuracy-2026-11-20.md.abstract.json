@@ -1,0 +1,16 @@
+{
+ "path": "memory/archivist/evidence-goal2-citation-accuracy-2026-11-20.md",
+ "headings": [
+  "Evidence: Goal 2 - Citation Accuracy Verification (2026-11-20)",
+  "What ran",
+  "Results",
+  "Filter improvements over v1",
+  "Broken citation analysis",
+  "Acceptance criteria check",
+  "Artifact",
+  "Gap noted"
+ ],
+ "lead": "`python memory/archivist/citation_check.py` \u2014 improved filter version (v2).",
+ "chars": 2229,
+ "abstracted": "2026-11-23 09:24:43"
+}

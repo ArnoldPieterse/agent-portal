@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/fleet-placement-snapshot-2026-11-22.md",
+ "headings": [
+  "Fleet Placement + Integrity Snapshot (2026-11-22, consolidation round)",
+  "Why this note",
+  "Roster integrity check (agents.json) \u2014 VERIFIED this pass",
+  "Backend host map (studio field)",
+  "Recovery order (deterministic, when home hosts return)",
+  "Egress note (no re-probe)"
+ ],
+ "lead": "Agent: Orchestrator (relocated seat = black; home unreachable). Fully local, verifiable.",
+ "chars": 3064,
+ "abstracted": "2026-11-23 09:24:44"
+}

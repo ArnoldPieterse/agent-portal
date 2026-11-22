@@ -1,0 +1,13 @@
+{
+ "path": "memory/scribe/stale-claim-researcher-sla-cycle5-closed-2026-11-19.md",
+ "headings": [
+  "STALE CLAIM CLOSED: researcher-cycle5 goal #10 SLA-report citation (Scribe, option c)",
+  "What was closed",
+  "Root cause (per Researcher's HIGH-confidence disk measurement, re-confirmed here)",
+  "Action taken (minimal, additive \u2014 history preserved)",
+  "Verification (measured this pass, stale_claim_check.py --json)"
+ ],
+ "lead": "Date: 2026-11-19. Agent: Scribe. auto-loop option (c): verify + close one stale evidence claim.",
+ "chars": 2429,
+ "abstracted": "2026-11-23 09:24:44"
+}

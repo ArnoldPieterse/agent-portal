@@ -1,0 +1,14 @@
+{
+ "path": "memory/ops/mechanic-goal3-red-leg-blocked-2026-11-15.md",
+ "headings": [
+  "Mechanic Goal #3 - RED Leg: Documented Failure (2026-11-15)",
+  "Status: BLOCKED by sandbox network (documented per Arnold instruction to move on)",
+  "Exact failure",
+  "What was completed (all other legs)",
+  "Unblock path (for non-sandbox seat)",
+  "Verdict"
+ ],
+ "lead": "Run the 5-step reboot-recovery dry-run manually on Red:",
+ "chars": 1470,
+ "abstracted": "2026-11-23 09:24:44"
+}

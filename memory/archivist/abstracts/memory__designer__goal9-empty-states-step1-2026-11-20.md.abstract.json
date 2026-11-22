@@ -1,0 +1,13 @@
+{
+ "path": "memory/designer/goal9-empty-states-step1-2026-11-20.md",
+ "headings": [
+  "Goal 9 - Empty States + Loading Patterns: Step 1 (2026-11-20)",
+  "What was done",
+  "Files changed",
+  "Verification",
+  "Remaining for full Goal #9 closure"
+ ],
+ "lead": "Added missing empty states and a loading-state helper:",
+ "chars": 1723,
+ "abstracted": "2026-11-23 09:24:44"
+}

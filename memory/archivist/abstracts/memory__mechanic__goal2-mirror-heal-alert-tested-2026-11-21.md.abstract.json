@@ -1,0 +1,12 @@
+{
+ "path": "memory/mechanic/goal2-mirror-heal-alert-tested-2026-11-21.md",
+ "headings": [
+  "Goal #2 - Self-Healing Mirror: Alert Threshold Verified (2026-11-21)",
+  "Progress this pass",
+  "Acceptance criteria status",
+  "Remaining"
+ ],
+ "lead": "1. `mirror_heal.py --dry-run` -> \"mirror fresh (-25944s < 900s) - no action\" (mirror IS syncing correctly)",
+ "chars": 998,
+ "abstracted": "2026-11-23 09:24:44"
+}

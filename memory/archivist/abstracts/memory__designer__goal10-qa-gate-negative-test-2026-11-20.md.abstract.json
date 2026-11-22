@@ -1,0 +1,16 @@
+{
+ "path": "memory/designer/goal10-qa-gate-negative-test-2026-11-20.md",
+ "headings": [
+  "Goal 10 - Design QA Checklist + Regression: negative-test + clean-run verified, 2026-11-20",
+  "What ran this pass (fresh, from sandbox seat \u2014 durable memory/ artifacts)",
+  "1. Clean portal run",
+  "2. Deliberately-broken-panel negative test (proves the gate is not always-green)",
+  "Acceptance criteria \u2014 all met with fresh evidence",
+  "Re-verify commands",
+  "negative test (then remove the file):",
+  "Note on scope (why this is sandbox-durable)"
+ ],
+ "lead": "Parent: memory/goals/designer.md #10 \u00b7 Siblings: memory/designer/design_qa.py, memory/designer/design-qa-checklist.md",
+ "chars": 2170,
+ "abstracted": "2026-11-23 09:24:44"
+}

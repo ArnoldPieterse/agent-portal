@@ -1,0 +1,14 @@
+{
+ "path": "memory/mechanic/goal9-capacity-predict-verified-2026-11-21.md",
+ "headings": [
+  "Goal 9 Progress \u2014 Capacity Prediction Validated (2026-11-21)",
+  "What was done this pass",
+  "Result: 9/9 PASS",
+  "Evidence artifact",
+  "Remaining for full closure",
+  "Runbook note"
+ ],
+ "lead": "Implemented missing `breach_alert()` + `ALERT_THRESHOLD_PCT`/`ALERT_WINDOW_HOURS` in `capacity_report.py`,",
+ "chars": 1063,
+ "abstracted": "2026-11-23 09:24:44"
+}

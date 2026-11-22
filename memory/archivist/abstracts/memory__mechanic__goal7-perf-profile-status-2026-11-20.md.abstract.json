@@ -1,0 +1,13 @@
+{
+ "path": "memory/mechanic/goal7-perf-profile-status-2026-11-20.md",
+ "headings": [
+  "Mechanic Goal 7 - Performance Profiling: Status Leaf (2026-11-20)",
+  "DONE (sandbox-verifiable):",
+  "BLOCKED (needs non-sandbox seat):",
+  "Acceptance criteria checklist:",
+  "Runbook note:"
+ ],
+ "lead": "If perf-profile.json shows any endpoint with status=\"no_samples\" after a live run, check that endpoint's URL in perf_profile.py ENDPOINTS dict matches the portal's actual route. The /api/models endpoint for llm_models wa",
+ "chars": 1705,
+ "abstracted": "2026-11-23 09:24:44"
+}
