@@ -197,6 +197,53 @@ def _recover_seat_async(name, agent, reason):
     threading.Thread(target=work, daemon=True).start()
 
 
+def _ensure_seat_ready(agent, wfile=None):
+    """HOT LOAD ON DEMAND (P1, 2026-11-22): a called agent whose model is not resident gets
+    hot-loaded NOW instead of erroring - the seat recovers inline with SSE progress frames
+    ({"model_load": ...}), no human step. Called at the top of every stream_chat turn.
+    Returns (ready, note). Never raises: on any internal failure it returns (True, "") and
+    lets the normal upstream retry logic handle things as before."""
+    name = agent.get("name", "?")
+    mid = agent.get("model_id") or ""
+
+    def emit(note):
+        if wfile is None:
+            return
+        try:
+            wfile.write(b"data: " + json.dumps({"model_load": note}).encode() + b"\n\n")
+            wfile.flush()
+        except Exception:
+            pass
+
+    try:
+        # fast path 1: recent fleet cache says ok (60 s cache / 15 min per-seat trust)
+        if _model_load_status().get(name, {}).get("status") == "ok":
+            return True, ""
+        # fast path 2: precise resident check on the seat's own Studio
+        if mid and mid in _loaded_model_ids(agent):
+            return True, ""
+        # host down -> remote reboot (boot tasks reload its models); fail this turn honestly
+        ip = _remote_host_ip(agent)
+        if ip and not _host_alive(agent):
+            emit("%s: host %s is down - remote reboot initiated; model auto-loads on boot" % (name, ip))
+            try:
+                threading.Thread(target=_winrm_reboot, args=(ip,), daemon=True).start()
+            except Exception:
+                pass
+            return False, "host %s down - reboot initiated (auto); retry in a few minutes" % ip
+        if not _FLEET_RECOVER_RECIPES.get(name):
+            return False, "no load recipe for %s" % name
+        # hot-load via the seat recipe: native /api/inference/load + poll until resident
+        emit("%s: model not resident - hot-loading now (can take a few minutes)" % name)
+        ok, detail = _studio_recover(agent, "load")
+        if ok:
+            emit("%s: model resident - continuing" % name)
+            return True, ""
+        return False, "hot-load failed: %s" % detail
+    except Exception as e:
+        return True, ""   # never block a turn that could otherwise run
+
+
 
 
 def _model_load_status(force=False, timeout=15):
@@ -2075,6 +2122,19 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
     who = agent.get("name", "?")[:60]
     t0 = time.time()
     _act_log(session, {"agent": who, "event": "start", "kind": kind, "mode": mode})
+    # HOT LOAD ON DEMAND (P1, 2026-11-22): before ANY work on this turn (incl. the READMEM
+    # aux round, which uses the same model), make sure the seat's model is resident.
+    try:
+        _ready, _load_note = _ensure_seat_ready(agent, wfile)
+        if not _ready:
+            _act_log(session, {"agent": who, "event": "model_load_fail", "detail": _load_note[:300]})
+            wfile.write(b"data: " + json.dumps(
+                {"error": "model not available for %s - auto-recovery in progress: %s" % (who, _load_note)}).encode() + b"\n\n")
+            wfile.write(b"data: [DONE]\n\n")
+            wfile.flush()
+            return
+    except Exception:
+        pass
     all_agents = load_agents()["agents"]
     _, mem_st = load_memory() if mode == "group" else (None, None)
     if mode == "group" and kind == "prompt":
