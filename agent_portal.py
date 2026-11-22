@@ -109,8 +109,15 @@ def _seat_busy(agent):
     """True if the seat's model is RESIDENT (loaded) but not answering: fine
     while generating; unresponsive for 30+ min means a wedged engine.
     Alias seats match by canonical recipe id (agents.json holds aliases)."""
-    mids = [x for x in (agent.get("model_id"),
-                        (_FLEET_RECOVER_RECIPES.get(agent.get("name")) or {}).get("id")) if x]
+    rec = _FLEET_RECOVER_RECIPES.get(agent.get("name")) or {}
+    mids = [x for x in (agent.get("model_id"), rec.get("id")) if x]
+    # 2026-11-22 BUGFIX: recipes carry model_path, not 'id' - alias seats (archivist-q8)
+    # never matched their resident canonical id (Qwen3.8-27B-Q8_0), so a WEDGED engine
+    # (resident but unresponsive) was misread as 'not busy' and the unload+reload wedge
+    # path never fired; plain reloads can't clear a stuck engine (Pale Q8, 19:30).
+    mp = os.path.basename((rec.get("model_path") or "").replace("\\", "/"))
+    if mp:
+        mids.append(mp)
     try:
         ids = _loaded_model_ids(agent)
         return any(x in ids for x in mids)
@@ -3359,19 +3366,42 @@ def start_group_run(text, extra=None):
             pass
         # Model-load governance: flag seats whose model is not loaded BEFORE the run
         # starts, so agents stop waiting on a chair that can never answer (2026-11-16).
+        # HOST-AGNOSTIC PLACEMENT (2026-11-22): a seat whose HOME model is down is NOT missing
+        # when another reachable host has its model resident - the turn runs there. Only truly
+        # unplaceable seats are flagged; relocated ones are announced as normal seats, not mourned.
         _mls = None
+        _relocated = {}
         try:
             _mls = _model_load_status()
-            _missing = {n: s for n, s in _mls.items() if s.get("status") != "ok"}
-            if _missing:
-                full_text += ("\n\n[MODEL LOAD STATUS] Seats NOT ready at run start: " +
+            _missing = {}
+            for n, s in _mls.items():
+                if s.get("status") == "ok":
+                    continue
+                _agx = _agents_by_name().get(n) or {}
+                try:
+                    _sx = _resolve_seat(_agx)
+                except Exception:
+                    _sx = None
+                if _sx and _sx["base"] != _studio_base(_agx):
+                    _relocated[n] = "%s (home %s)" % (_sx.get("host"), s.get("status"))
+                else:
+                    _missing[n] = s
+            if _missing or _relocated:
+                _note = "\n\n[MODEL LOAD STATUS]"
+                if _relocated:
+                    _note += (" Relocated - home model down, running on another host, treat as NORMAL seats: " +
+                              ", ".join("%s -> %s" % (n, v) for n, v in sorted(_relocated.items())) + ".")
+                if _missing:
+                    _note += (" Seats NOT ready anywhere at run start: " +
                               ", ".join("%s=%s" % (n, s["status"]) for n, s in sorted(_missing.items())) +
                               ". Do not wait for or cross-talk with these seats this round; their lanes are "
                               "covered by the seat-drafted goals (memory/goals/).")
+                full_text += _note
                 try:
                     with open(os.path.join(HERE, "memory", "ops", "model-load.jsonl"), "a", encoding="utf-8") as _f:
                         _f.write(json.dumps({"ts": time.strftime("%Y-%m-%d %H:%M:%S"), "run": rid,
-                                             "missing": {n: s.get("status") for n, s in _missing.items()}}) + "\n")
+                                             "missing": {n: s.get("status") for n, s in _missing.items()},
+                                             "relocated": _relocated}) + "\n")
                 except Exception:
                     pass
             if MODEL_LOAD_BLOCK and _missing:
