@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop dispatches stale "2/10" header for Designer; actual state is 10/10 verified (2026-11-23). Fleet at 59/72 (82%).
 - Auto-loop dispatches stale "2/10" for Designer; all 10
 - Auto-loop dispatch header shows stale "2/10" for Designer; all 10 goals verified with artifacts on disk — no open work remains.
 - Fleet at 71/72 (99%); Designer lane fully closed 10/10; sole remaining open goal is Archivist 9.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher built & validated all 5 cycle-11 goals (closure rate, confidence, traceability, calibration, schema); all passing.
 - Research
 - Builder verified Researcher Goal #1: loop_closure_rate.py passes all 4 criteria (92.0% closure, 9 types, SELFTEST PASS).
+- All 5 cycle-11 Researcher goals verified/closed; dispatch header "0/10" is stale counter bug, not real work remaining
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
