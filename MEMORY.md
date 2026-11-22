@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 (Theme System: high-contrast theme + picker) is the only remaining open Designer goal; all others verified complete.
 - All 10 Designer goals reached (10/10, open=0); goal #4 verified in ui/app.css L204–233
 - Orchestrator enhanced @media(max-width:768px) in ui/app.css lines 204–233
 - Verifier found memory_integrity.py FAILS with 256 issues, contradicting a prior goal closure — needs re-investigation
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - hotload-catalog.json v1.1: Black IP .99, Red IP .245, all hosts 2×RTX 5090 32GB=64GB, 6
 - Mechanic 5/10 closed; goals 1,2,3,6,9 blocked by egress wall
 - Built goal_auto_closure.py — one-command watcher for 5 open goals (1,2,3,6,9);
+- deploy_all_schtasks.py now covers all 5 pending schtask registrations (goals 1,2,4,7,8); compile PASS; awaiting non-sandbox White seat to ru
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
