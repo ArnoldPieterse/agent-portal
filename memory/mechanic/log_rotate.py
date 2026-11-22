@@ -3,8 +3,10 @@ Usage: python memory/mechanic/log_rotate.py [--once | --schedule]"""
 import os, sys, time, glob, gzip, shutil
 from datetime import datetime, timezone, timedelta
 
-# Scan the full fleet tree (parent of memory/)
-FLEET_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Scan the full fleet tree (project root, parent of memory/)
+# __file__ = <root>/memory/mechanic/log_rotate.py
+# dirname x3 from file: mechanic -> memory -> <root>
+FLEET_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MAX_SIZE = 50 * 1024 * 1024  # 50MB per goal spec
 RETENTION_DAYS = 7
 INTERVAL_S = 3600  # hourly when --schedule
