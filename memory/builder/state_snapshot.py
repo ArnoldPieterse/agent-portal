@@ -100,14 +100,21 @@ def get_open_blockers() -> list:
 
 def take_snapshot() -> dict:
     """Capture full fleet state as a single snapshot dict."""
-    return {
-        "ts": datetime.now(timezone.utc).isoformat(),
+    ts = datetime.now(timezone.utc).isoformat()
+    snap = {
+        "ts": ts,
         "agent_statuses": get_agent_statuses(),
         "host_resources": get_host_resources(),
         "goal_progress": get_goal_progress(),
         "health_score": get_health_score(),
         "open_blockers": get_open_blockers(),
     }
+    # Canonical aliases so consumers can rely on stable key names
+    snap["timestamp"] = ts
+    snap["agents"] = snap["agent_statuses"]
+    snap["hosts"] = snap["host_resources"]
+    snap["goals"] = snap["goal_progress"]
+    return snap
 
 
 def append_snapshot(snapshot: dict):

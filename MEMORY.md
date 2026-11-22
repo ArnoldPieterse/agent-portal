@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10/10 designer goals verified complete on
-- All 10/10
-- Goals 5, 6, 8 already implemented in ui/cockpit.js (built with goal #2); only
-- Mechanic confirmed all 10/10 goals verified
 - precedent_match.py built & self-tested (5/5 top-3, monotonicity OK); goal 10 Knowledge Conflict Detector also passed
 - Designer lane 10/10 verified in memory/goals/designer.md; all artifacts on disk, no open work remains for this seat.
 - Mechanic lane fully closed 10/10 (verified 2026-11-23); auto-loop queue is stale for this seat — ignore its "next" prompts.
 - All 10 verifier goals confirmed complete; 5 scripts re-verified green (4/4, 13/13, 5/5, 6/6, 4/4) — no open work.
 - Builder 10/10 goals verified; cockpit.js wired (pin ac83166ea935) unblocked goals 2,5,6,8 in one pass.
 - Orchestrator verified goals 6 (context_budget.py), 7 (roster_monitor.py), 8 (fleet auto-responder) via ledger; goal 9 was in progress.
+- Cycle 10 fully closed: all 10/10 goals verified across Builder, Verifier, Designer, Mechanic lanes; no open work remains.
+- Builder lane 10/10 verified complete (2026-11-23); auto-loop prompt was stale, no open work remains for this seat.
+- Verifier lane closed 10/10; rollback_test.py --self-test re-confirmed 4/4 pass, report at memory/verifier/rollback_test_report.json
+- All 10 goals verified across all lanes; cycle-10 complete as of this pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

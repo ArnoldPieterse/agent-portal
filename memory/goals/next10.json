@@ -1,10 +1,10 @@
 {
  "ok": true,
- "generated": "2026-11-23 07:48:19",
+ "generated": "2026-11-23 08:18:01",
  "fleet": {
-  "done": 32,
-  "total": 78,
-  "pct": 41.0
+  "done": 42,
+  "total": 77,
+  "pct": 54.5
  },
  "throughput_goals_per_hour": 6.0,
  "next10": [
@@ -14,7 +14,7 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 10:22",
+   "eta": "2026-11-23 10:52",
    "hours": 2.58,
    "order": 0,
    "rank": 1,
@@ -24,12 +24,11 @@
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 10:22 (P=52%)",
+   "outcome": "reached ~2026-11-23 10:52 (P=52%)",
    "consequences": [
-    "mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 12:57) - shared scope mechanic,model",
-    "builder: **Model Swap Automation Script** - `python memory/builder/mo (2026-11-23 13:50) - shared scope automation,availability,check",
-    "verifier: **Model Swap Verification Battery** - `python memory/verifie (2026-11-23 22:39) - shared scope check,model",
-    "lane end designer: 11-24 11:54 (slowest lane)"
+    "mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 16:01) - shared scope mechanic,model",
+    "verifier: **Model Swap Verification Battery** - `python memory/verifie (2026-11-23 23:09) - shared scope check,model",
+    "lane end designer: 11-24 12:24 (slowest lane)"
    ]
   },
   {
@@ -38,7 +37,7 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 10:22",
+   "eta": "2026-11-23 10:52",
    "hours": 2.58,
    "order": 0,
    "rank": 2,
@@ -48,34 +47,36 @@
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 10:22 (P=52%)",
+   "outcome": "reached ~2026-11-23 10:52 (P=52%)",
    "consequences": [
-    "scribe: **Runbook Lesson Extractor** - `python memory/scribe/runbook (2026-11-23 10:42) - shared scope remediation,runbook",
-    "verifier: **Decision Policy Compliance Audit** - `python memory/verifi (2026-11-23 12:57) - shared scope action,remediation,verifier",
-    "builder: **Model Swap Automation Script** - `python memory/builder/mo (2026-11-23 13:50) - shared scope sequence,verify",
-    "lane end designer: 11-24 11:54 (slowest lane)"
+    "orchestrator: **Decision Audit Validator** - `python memory/orchestrator/d (2026-11-23 11:00) - shared scope action,rollback",
+    "verifier: **Decision Policy Compliance Audit** - `python memory/verifi (2026-11-23 13:27) - shared scope action,remediation,verifier",
+    "verifier: **Fleet State Consistency Check** - `python memory/verifier/ (2026-11-23 16:01) - shared scope state,verifier,verify",
+    "lane end designer: 11-24 12:24 (slowest lane)"
    ]
   },
   {
-   "agent": "scribe",
-   "goal": "**Runbook Lesson Extractor** - `python memory/scribe/runbook_lessons.py`: after each remediation execution (success or failure), extract lessons learned: what worked, what didn't, what should change in the runbook. Appen",
-   "type": "ops",
+   "agent": "orchestrator",
+   "goal": "**Decision Audit Validator** - `python memory/orchestrator/decision_audit.py`: scan decision-log.jsonl for policy violations (action taken without required precondition, missing rollback, action outside agent's authority",
+   "type": "verify",
    "complexity": 2,
-   "p_reached": 0.796,
-   "eta": "2026-11-23 10:42",
-   "hours": 2.9,
+   "p_reached": 0.639,
+   "eta": "2026-11-23 11:00",
+   "hours": 2.71,
    "order": 0,
    "rank": 3,
-   "title": "Runbook Lesson Extractor",
+   "title": "Decision Audit Validator",
    "steps": [
-    "pre-flight checks (targets exist, idempotent)",
-    "execute from non-sandbox session",
-    "verify registration/health + evidence leaf"
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 10:42 (P=80%)",
+   "outcome": "reached ~2026-11-23 11:00 (P=64%)",
    "consequences": [
-    "verifier: **Remediation Rollback Test** - `python memory/verifier/roll (2026-11-23 10:22) - shared scope remediation,runbook",
-    "lane end designer: 11-24 11:54 (slowest lane)"
+    "verifier: **Remediation Rollback Test** - `python memory/verifier/roll (2026-11-23 10:52) - shared scope action,rollback",
+    "verifier: **Decision Policy Compliance Audit** - `python memory/verifi (2026-11-23 13:27) - shared scope action,audit,decision",
+    "orchestrator: **Fleet Cockpit State Validator** - `python memory/orchestra (2026-11-23 15:42) - shared scope orchestrator,validator",
+    "lane end designer: 11-24 12:24 (slowest lane)"
    ]
   },
   {
@@ -84,7 +85,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.046,
-   "eta": "2026-11-23 11:03",
+   "eta": "2026-11-23 11:33",
    "hours": 3.25,
    "order": 0,
    "rank": 4,
@@ -94,12 +95,12 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-23 11:03 (P=5%)",
+   "outcome": "reached ~2026-11-23 11:33 (P=5%)",
    "consequences": [
-    "builder: **Fleet Cockpit Frontend** - Add a \"Cockpit\" tab to the port (2026-11-23 11:15) - shared scope cockpit,decisions,health",
-    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 14:18) - shared scope design,health,produce",
-    "verifier: **Fleet State Consistency Check** - `python memory/verifier/ (2026-11-23 15:31) - shared scope agents,cockpit",
-    "lane end designer: 11-24 11:54 (slowest lane)"
+    "builder: **Fleet Cockpit Frontend** - Add a \"Cockpit\" tab to the port (2026-11-23 11:45) - shared scope cockpit,decisions,health",
+    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 14:48) - shared scope design,health,produce",
+    "builder: **Health Score Widget** - Add to cockpit tab: real-time heal (2026-11-23 15:13) - shared scope cockpit,health,score",
+    "lane end designer: 11-24 12:24 (slowest lane)"
    ]
   },
   {
@@ -108,7 +109,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.224,
-   "eta": "2026-11-23 11:15",
+   "eta": "2026-11-23 11:45",
    "hours": 3.46,
    "order": 0,
    "rank": 5,
@@ -118,12 +119,12 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-23 11:15 (P=22%)",
+   "outcome": "reached ~2026-11-23 11:45 (P=22%)",
    "consequences": [
-    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 11:03) - shared scope cockpit,decisions,health",
-    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 14:18) - shared scope display,gauge,health",
-    "builder: **Health Score Widget** - Add to cockpit tab: real-time heal (2026-11-23 17:17) - shared scope cockpit,display,gauge",
-    "lane end designer: 11-24 11:54 (slowest lane)"
+    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 11:33) - shared scope cockpit,decisions,health",
+    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 14:48) - shared scope display,gauge,health",
+    "builder: **Health Score Widget** - Add to cockpit tab: real-time heal (2026-11-23 15:13) - shared scope cockpit,display,gauge",
+    "lane end designer: 11-24 12:24 (slowest lane)"
    ]
   },
   {
@@ -132,7 +133,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.278,
-   "eta": "2026-11-23 12:30",
+   "eta": "2026-11-23 13:00",
    "hours": 4.7,
    "order": 0,
    "rank": 6,
@@ -143,59 +144,34 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-23 12:30 (P=28%)",
+   "outcome": "reached ~2026-11-23 13:00 (P=28%)",
    "consequences": [
-    "archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 15:13) - shared scope archivist,leaves",
-    "lane end designer: 11-24 11:54 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "orchestrator",
-   "goal": "**Cycle Auto-Planner** - `python memory/orchestrator/auto_cycle_planner.py`: given current backlog + capacity_forecast + each agent's historical throughput, auto-generate next cycle's goal allocation (which goals to whic",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.278,
-   "eta": "2026-11-23 12:30",
-   "hours": 4.7,
-   "order": 0,
-   "rank": 7,
-   "title": "Cycle Auto-Planner",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-23 12:30 (P=28%)",
-   "consequences": [
-    "mechanic: **Host Capacity Arbitration** - `python memory/mechanic/capa (2026-11-23 18:06) - shared scope capacity,current",
-    "verifier: **Auto-Cycle Trigger Validation** - `python memory/verifier/ (2026-11-23 18:06) - shared scope cycle,goals",
-    "builder: **Auto-Cycle Trigger** - `python memory/builder/auto_cycle_t (2026-11-24 01:18) - shared scope cycle,goals,orchestrator",
-    "lane end designer: 11-24 11:54 (slowest lane)"
+    "archivist: **Citation Integrity Monitor** - `python memory/archivist/ci (2026-11-23 15:42) - shared scope archivist,leaves",
+    "lane end designer: 11-24 12:24 (slowest lane)"
    ]
   },
   {
    "agent": "mechanic",
-   "goal": "**Model OOM Auto-Recovery** - `python memory/mechanic/oom_recovery.py`: when a model process hits OOM (detected via probe or agent unresponsive), auto-execute: kill process -> wait for GPU memory to free -> reload with s",
+   "goal": "**Fleet State Collector Daemon** - `python memory/mechanic/state_collector.py`: background process (schtask every 5 min) that collects: per-host GPU/CPU/temp, per-agent last-active timestamp, goal progress from TODO.md, ",
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 12:57",
+   "eta": "2026-11-23 13:27",
    "hours": 2.58,
    "order": 1,
-   "rank": 8,
-   "title": "Model OOM Auto-Recovery",
+   "rank": 7,
+   "title": "Fleet State Collector Daemon",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 12:57 (P=52%)",
+   "outcome": "reached ~2026-11-23 13:27 (P=52%)",
    "consequences": [
-    "mechanic: **Model Load/Unload Automation** - `python memory/mechanic/m (2026-11-23 10:22) - shared scope mechanic,model",
-    "orchestrator: **Fleet Incident Auto-Responder** - `python memory/orchestra (2026-11-23 22:23) - shared scope detected,execute,model",
-    "mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-23 22:39) - shared scope detected,mechanic",
-    "lane end designer: 11-24 11:54 (slowest lane)"
+    "mechanic: **Model OOM Auto-Recovery** - `python memory/mechanic/oom_re (2026-11-23 16:01) - shared scope mechanic,process",
+    "verifier: **Fleet State Consistency Check** - `python memory/verifier/ (2026-11-23 16:01) - shared scope process,state",
+    "mechanic: **Portal Self-Healing** - `python memory/mechanic/portal_hea (2026-11-24 04:18) - shared scope mechanic,process",
+    "lane end designer: 11-24 12:24 (slowest lane)"
    ]
   },
   {
@@ -204,46 +180,70 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-23 12:57",
+   "eta": "2026-11-23 13:27",
    "hours": 2.58,
    "order": 1,
-   "rank": 9,
+   "rank": 8,
    "title": "Decision Policy Compliance Audit",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 12:57 (P=52%)",
+   "outcome": "reached ~2026-11-23 13:27 (P=52%)",
    "consequences": [
-    "verifier: **Remediation Rollback Test** - `python memory/verifier/roll (2026-11-23 10:22) - shared scope action,remediation,verifier",
-    "verifier: **Fleet State Consistency Check** - `python memory/verifier/ (2026-11-23 15:31) - shared scope verifier,verify",
-    "orchestrator: **Context Budget Manager** - `python memory/orchestrator/con (2026-11-23 16:05) - shared scope decision,jsonl",
-    "lane end designer: 11-24 11:54 (slowest lane)"
+    "verifier: **Remediation Rollback Test** - `python memory/verifier/roll (2026-11-23 10:52) - shared scope action,remediation,verifier",
+    "orchestrator: **Decision Audit Validator** - `python memory/orchestrator/d (2026-11-23 11:00) - shared scope action,audit,decision",
+    "verifier: **Fleet State Consistency Check** - `python memory/verifier/ (2026-11-23 16:01) - shared scope verifier,verify",
+    "lane end designer: 11-24 12:24 (slowest lane)"
    ]
   },
   {
-   "agent": "researcher",
-   "goal": "**Cross-Agent Pattern Detector** - `python memory/researcher/cross_patterns.py`: parse all agents' goal completions + incident records from the last 3 cycles; identify patterns no single agent would see (e.g., \"Builder g",
-   "type": "research",
+   "agent": "designer",
+   "goal": "**Health Score Visualization** - Design the health score component: gauge type (half-circle vs linear), color thresholds, trend indicator (arrow/sparkline), delta display vs last cycle. Produce CSS + JS skeleton in ui/co",
+   "type": "measurement",
    "complexity": 2,
-   "p_reached": 0.134,
-   "eta": "2026-11-23 13:23",
-   "hours": 5.58,
-   "order": 0,
-   "rank": 10,
-   "title": "Cross-Agent Pattern Detector",
+   "p_reached": 0.046,
+   "eta": "2026-11-23 14:48",
+   "hours": 3.25,
+   "order": 1,
+   "rank": 9,
+   "title": "Health Score Visualization",
    "steps": [
-    "gather sources from memory/ (pointer map)",
-    "compute/detect per protocol",
-    "write findings leaf + index line"
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-23 13:23 (P=13%)",
+   "outcome": "reached ~2026-11-23 14:48 (P=5%)",
    "consequences": [
-    "researcher: **Fleet Memory Compression** - `python memory/researcher/mem (2026-11-23 17:45) - shared scope agents,identify,researcher",
-    "mechanic: **Incident Auto-Classification** - `python memory/mechanic/i (2026-11-23 22:39) - shared scope agents,incident",
-    "researcher: **Historical Precedent Matcher** - `python memory/researcher (2026-11-24 04:55) - shared scope incident,records,researcher",
-    "lane end designer: 11-24 11:54 (slowest lane)"
+    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 11:33) - shared scope design,health,produce",
+    "builder: **Fleet Cockpit Frontend** - Add a \"Cockpit\" tab to the port (2026-11-23 11:45) - shared scope display,gauge,health",
+    "builder: **Health Score Widget** - Add to cockpit tab: real-time heal (2026-11-23 15:13) - shared scope arrow,cycle,delta",
+    "lane end designer: 11-24 12:24 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "builder",
+   "goal": "**Health Score Widget** - Add to cockpit tab: real-time health score display (0-100 gauge) with 7-day trend sparkline, threshold indicators (green >70, yellow 40-70, red <40), and delta arrow vs previous cycle. Fetch fro",
+   "type": "measurement",
+   "complexity": 2,
+   "p_reached": 0.224,
+   "eta": "2026-11-23 15:13",
+   "hours": 3.46,
+   "order": 1,
+   "rank": 10,
+   "title": "Health Score Widget",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-23 15:13 (P=22%)",
+   "consequences": [
+    "designer: **Cockpit Layout Design** - Design the Fleet Cockpit tab lay (2026-11-23 11:33) - shared scope cockpit,health,score",
+    "builder: **Fleet Cockpit Frontend** - Add a \"Cockpit\" tab to the port (2026-11-23 11:45) - shared scope cockpit,display,gauge",
+    "designer: **Health Score Visualization** - Design the health score com (2026-11-23 14:48) - shared scope arrow,cycle,delta",
+    "lane end designer: 11-24 12:24 (slowest lane)"
    ]
   }
  ],
@@ -251,45 +251,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-23 08:18",
+   "end": "2026-11-23 08:48",
    "completes": 0,
-   "fleet_pct": 41.0,
+   "fleet_pct": 54.5,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-23 08:48",
+   "end": "2026-11-23 09:18",
    "completes": 0,
-   "fleet_pct": 41.0,
+   "fleet_pct": 54.5,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-24 07:48",
-   "completes": 44,
-   "fleet_pct": 97.4,
+   "end": "2026-11-24 08:18",
+   "completes": 34,
+   "fleet_pct": 98.7,
    "top": [
-    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:22)",
-    "#2 verifier: Remediation Rollback Test (2026-11-23 10:22)",
-    "#3 scribe: Runbook Lesson Extractor (2026-11-23 10:42)",
-    "#4 designer: Cockpit Layout Design (2026-11-23 11:03)",
-    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:15)"
+    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:52)",
+    "#2 verifier: Remediation Rollback Test (2026-11-23 10:52)",
+    "#3 orchestrator: Decision Audit Validator (2026-11-23 11:00)",
+    "#4 designer: Cockpit Layout Design (2026-11-23 11:33)",
+    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:45)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-11-30 07:48",
-   "completes": 46,
+   "end": "2026-11-30 08:18",
+   "completes": 35,
    "fleet_pct": 100.0,
    "top": [
-    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:22)",
-    "#2 verifier: Remediation Rollback Test (2026-11-23 10:22)",
-    "#3 scribe: Runbook Lesson Extractor (2026-11-23 10:42)",
-    "#4 designer: Cockpit Layout Design (2026-11-23 11:03)",
-    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:15)"
+    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:52)",
+    "#2 verifier: Remediation Rollback Test (2026-11-23 10:52)",
+    "#3 orchestrator: Decision Audit Validator (2026-11-23 11:00)",
+    "#4 designer: Cockpit Layout Design (2026-11-23 11:33)",
+    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:45)"
    ],
    "next_cycle_candidates": [
     {
@@ -345,15 +345,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-23 07:48",
-   "completes": 46,
+   "end": "2026-12-23 08:18",
+   "completes": 35,
    "fleet_pct": 100.0,
    "top": [
-    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:22)",
-    "#2 verifier: Remediation Rollback Test (2026-11-23 10:22)",
-    "#3 scribe: Runbook Lesson Extractor (2026-11-23 10:42)",
-    "#4 designer: Cockpit Layout Design (2026-11-23 11:03)",
-    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:15)"
+    "#1 mechanic: Model Load/Unload Automation (2026-11-23 10:52)",
+    "#2 verifier: Remediation Rollback Test (2026-11-23 10:52)",
+    "#3 orchestrator: Decision Audit Validator (2026-11-23 11:00)",
+    "#4 designer: Cockpit Layout Design (2026-11-23 11:33)",
+    "#5 builder: Fleet Cockpit Frontend (2026-11-23 11:45)"
    ],
    "next_cycle_candidates": [
     {
@@ -411,43 +411,43 @@
   "archivist": {
    "done": 4,
    "total": 10,
-   "end": "2026-11-24 04:56"
+   "end": "2026-11-24 05:25"
   },
   "builder": {
-   "done": 3,
+   "done": 4,
    "total": 10,
-   "end": "2026-11-24 07:20"
+   "end": "2026-11-24 05:15"
   },
   "designer": {
    "done": 3,
    "total": 10,
-   "end": "2026-11-24 11:54"
+   "end": "2026-11-24 12:24"
   },
   "mechanic": {
-   "done": 4,
+   "done": 3,
    "total": 10,
-   "end": "2026-11-24 01:14"
+   "end": "2026-11-24 04:18"
   },
   "orchestrator": {
-   "done": 2,
-   "total": 8,
-   "end": "2026-11-24 05:48"
+   "done": 5,
+   "total": 7,
+   "end": "2026-11-23 15:42"
   },
   "researcher": {
-   "done": 5,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-24 10:30"
+   "end": "2026-11-23 08:18"
   },
   "scribe": {
-   "done": 8,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-23 15:44"
+   "end": "2026-11-23 08:18"
   },
   "verifier": {
    "done": 3,
    "total": 10,
-   "end": "2026-11-24 03:48"
+   "end": "2026-11-24 04:18"
   }
  },
- "level_up_eta": "2026-11-24 11:54"
+ "level_up_eta": "2026-11-24 12:24"
 }

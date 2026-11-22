@@ -1,2 +1,4 @@
 {"type": "runbook_execution", "agent": "Builder", "runbook": "Safe Test", "overall_ok": true, "steps_completed": 3, "steps_total": 3, "rolled_back": false, "duration_s": 0.133, "timestamp": "2026-11-23T08:45:35.351199"}
 {"type": "runbook_execution", "agent": "Builder", "runbook": "Safe Test", "overall_ok": false, "steps_completed": 2, "steps_total": 3, "rolled_back": true, "duration_s": 0.22, "timestamp": "2026-11-23T08:45:37.895668"}
+{"type": "runbook_execution", "agent": "Builder", "runbook": "Safe Test", "overall_ok": false, "steps_completed": 1, "steps_total": 3, "rolled_back": false, "duration_s": 0.016, "timestamp": "2026-11-23T08:18:29.133450"}
+{"type": "runbook_execution", "agent": "Builder", "runbook": "Safe Test", "overall_ok": false, "steps_completed": 2, "steps_total": 3, "rolled_back": true, "duration_s": 0.243, "timestamp": "2026-11-23T08:18:34.537904"}

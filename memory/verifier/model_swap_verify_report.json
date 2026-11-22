@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-22T22:12:16.498692+00:00",
+  "timestamp": "2026-11-22T22:17:56.710581+00:00",
   "self_test_results": [
     "T1_correct_swap_all_pass",
     "T2_failed_swap_detection",
@@ -8,7 +8,7 @@
   ],
   "failed_tests": [],
   "t1_good_swap": {
-    "timestamp": "2026-11-22T22:12:16.498599+00:00",
+    "timestamp": "2026-11-22T22:17:56.710485+00:00",
     "elapsed_s": 0.0,
     "all_passed": true,
     "checks_passed": 4,
@@ -53,7 +53,7 @@
     ]
   },
   "t2_bad_swap": {
-    "timestamp": "2026-11-22T22:12:16.498643+00:00",
+    "timestamp": "2026-11-22T22:17:56.710539+00:00",
     "elapsed_s": 0.0,
     "all_passed": false,
     "checks_passed": 0,
