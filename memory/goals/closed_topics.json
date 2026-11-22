@@ -592,5 +592,113 @@
 "text": "**Verification Cost Analysis** - `python memory/verifier/cost_analysis.py`: measure time/effort spent on verification activities (test runs,",
 "agent": "verifier",
 "at": "2026-11-23"
+},
+{
+"sig": "c486792ef9b1f9fc",
+"text": "**Auto-Remediation Playbook Runner** - `python memory/builder/playbook_runner.py`: take a remediation decision (from Orchestrator's policy e",
+"agent": "builder",
+"at": "2026-11-23"
+},
+{
+"sig": "ed400243bce93131",
+"text": "**Task Re-Router** - `python memory/builder/task_rerouter.py`: when an agent is flagged unresponsive (from roster_monitor), find its pending",
+"agent": "builder",
+"at": "2026-11-23"
+},
+{
+"sig": "78cb77b933cc6e43",
+"text": "**Fleet State Snapshot Scheduler** - `python memory/builder/state_snapshot.py`: every 30 min (via schtask), capture full fleet state: agent ",
+"agent": "builder",
+"at": "2026-11-23"
+},
+{
+"sig": "0544a575b868fcf1",
+"text": "**Risk Forecast Panel** - Design the predictive risk display: list of upcoming risks sorted by time-to-breach, each showing: what (host/agen",
+"agent": "designer",
+"at": "2026-11-23"
+},
+{
+"sig": "74d351a1c8031ccf",
+"text": "**Remediation Action Display** - Design how auto-remediation actions appear in the cockpit: compact card showing what was done, when, by whi",
+"agent": "designer",
+"at": "2026-11-23"
+},
+{
+"sig": "72cce95d87d29207",
+"text": "**Cycle Progress Radar** - Design a radar/spider chart showing all agents' goal completion as axes (one axis per agent, value = % complete).",
+"agent": "designer",
+"at": "2026-11-23"
+},
+{
+"sig": "6a9693d581459ef4",
+"text": "**Auto-Failover Execution** - `python memory/mechanic/auto_failover.py`: when a host is detected down (3 consecutive probe failures), execut",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "86ecb477e6792a1a",
+"text": "**Host Health Probe Suite** - `python memory/mechanic/host_probes.py`: expand host monitoring to include: GPU temperature (>85C = warning), ",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "139a573015c39c50",
+"text": "**Remediation Circuit Breaker** - `python memory/mechanic/circuit_breaker.py`: track consecutive remediation failures per host. If 3 consecu",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "1fad11bd1f47ac46",
+"text": "**Evidence Quality Auto-Scorer** - `python memory/researcher/evidence_scorer.py`: score all new evidence leaves (memory/*/evidence-*.md) on:",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "9acc463a73cf0ce6",
+"text": "**Research Gap Detector** - `python memory/researcher/gap_detector.py`: scan all memory/ leaves to identify topics where the fleet has no de",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "b9ee1b16a549eb09",
+"text": "**Source Reliability Ranking** - `python memory/researcher/source_ranking.py`: maintain a dynamic ranking of information sources (hosts, API",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "44a49a85054449d3",
+"text": "**Blocker Resolution Tracker** - `python memory/scribe/blocker_tracker.py`: track all blockers from open (first mentioned in cross-talk or T",
+"agent": "scribe",
+"at": "2026-11-23"
+},
+{
+"sig": "35c9871a4e4d1f76",
+"text": "**Synthesis Quality Metric** - `python memory/scribe/synthesis_quality.py`: define and compute a score (0-10) for synthesis outputs on: comp",
+"agent": "scribe",
+"at": "2026-11-23"
+},
+{
+"sig": "4535fbfae4fb3850",
+"text": "**Auto-Remediation Safety Gate** - `python memory/verifier/remediation_gate.py`: before any autonomous action executes, check preconditions:",
+"agent": "verifier",
+"at": "2026-11-23"
+},
+{
+"sig": "09f93cb3cef208e9",
+"text": "**Task Re-Routing E2E Test** - `python memory/verifier/reroute_e2e.py`: full end-to-end test: simulate agent unresponsive -> verify detectio",
+"agent": "verifier",
+"at": "2026-11-23"
+},
+{
+"sig": "d95fd202ed3f1564",
+"text": "**Cycle Auto-Summary Generator** - `python memory/scribe/cycle_summary.py`: at end of each cycle, auto-generate a structured summary: goals ",
+"agent": "scribe",
+"at": "2026-11-23"
+},
+{
+"sig": "f164840c27314c16",
+"text": "**Cockpit Data Accuracy Test** - `python memory/verifier/cockpit_accuracy.py`: call /api/fleet/cockpit, then independently verify each field",
+"agent": "verifier",
+"at": "2026-11-23"
 }
 ]

@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- COM schtasks 0x800401F3 persists in sandbox; deploy_all_schtasks_cli.bat is sole unblock for Archivist G3 (freshness scoring).
-- Created `memory/ops/design_qa.py` — static QA script checking CSS var integrity, theme parity; found `--sp-2` missing from tokens.css
-- capacity_governor.py verified 3/4 ACs; missing cooldown restoration mechanism — fix steps in memory/verifier/orchestrator2-capacity-governor
-- Built `memory/ops/live_leg_preflight.py`: pre-flight GO/BLOCKED checker for 6 live-leg runbook items with partial-run independence mapping.
-- Verified ui
-- Verifier confirmed 3/4 criteria for Orchestrator #2
 - WCAG checker found 9 light-theme failures; tokens `--acc` and `--err` not covered by Builder's existing patch — open gap.
 - Mechic wrote cycle9 proposals at `memory/goals/mechanic-cycle9-proposals-2026-11-23.md`; M9 elev.py recovery runbook is top priority (gates
 - Builder: /api/fleet/insights endpoint added to agent_portal.py, verified working (2 anomalies, 1 forecast). Goal #1 backend
 - Scribe built `memory/scribe/blocker_tracker.py`; key finding: Orchestrator holds most open blockers (3/10), avg resolution
+- Goal #1 done: memory/builder/playbook_runner.py — dry-run, real run, inject-failure rollback all verified end-to-end.
+- Verifier built memory/verifier/remediation_gate.py: 4 precondition checks (host, lock, rollback, policy), 5/5 self-tests pass.
+- Scribe closed goal #1 (Cycle Auto-Summary Generator): built cycle_summary.py, output at memory/synthesis/cycle-summary-2026-11-23.md
+- Goal #3: 4 state components built in ui/components.js + app.css; next: wire each into ≥3 live panels
+- Goal #2 (Fleet Cockpit Frontend) complete: /api/fleet/cockpit endpoint + ui/cockpit.js 6-panel grid with 30s auto-refresh shipped.
+- Goal #2 closed: decision_digest.py built, 32 decisions → 7 themes, output at memory/synthesis/decision-digest-2026-11-23.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

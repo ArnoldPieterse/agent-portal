@@ -1,0 +1,15 @@
+{
+  "test": "cockpit_accuracy_selftest",
+  "timestamp": 1795379722.231485,
+  "date": "2026-11-23",
+  "results": {
+    "T1_clean_zero_discrepancies": true,
+    "T2_planted_stale_detected": true,
+    "T3_roster_mismatch_detected": true,
+    "T4_runs_under_30s": true,
+    "T5_json_output": true
+  },
+  "all_pass": true,
+  "score": "5/5",
+  "notes": "Port 8099 blocked by firewall (WinError 10013) in sandbox; self-test mode validates all verification logic against mock data. Live mode available when portal accessible."
+}

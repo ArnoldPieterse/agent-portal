@@ -1,0 +1,184 @@
+{
+  "version": "1.0",
+  "updated": "2026-11-23",
+  "description": "Auto-remediation policy for fleet degradation events. Each rule maps a condition to an autonomous action with preconditions and rollback.",
+  "rules": [
+    {
+      "id": "R001",
+      "degradation_type": "model_oom",
+      "description": "A model on a host has run out of VRAM (CUDA OOM error or nvidia-smi shows 100% usage with allocation failure)",
+      "condition": {
+        "field": "host.vram_pct",
+        "op": ">=",
+        "value": 98,
+        "sustained_seconds": 30
+      },
+      "action": {
+        "type": "model_swap",
+        "description": "Unload the OOM'd model and load a lower-quantization or smaller model in its place",
+        "parameters": {
+          "strategy": "downgrade_quant",
+          "fallback_chain": ["Q4_K_M", "Q3_K_M", "Q2_K"],
+          "max_swap_time_seconds": 120
+        }
+      },
+      "preconditions": [
+        "target_host.reachable == true",
+        "replacement_model.available_on_registry == true",
+        "no_other_oom_event_on_same_host_in_last_60s"
+      ],
+      "rollback": {
+        "type": "restore_original_model",
+        "trigger": "if replacement model fails to serve within 30s of load",
+        "steps": ["unload_replacement", "reload_original_at_lower_batch_size"]
+      }
+    },
+    {
+      "id": "R002",
+      "degradation_type": "host_unreachable",
+      "description": "A fleet host is unreachable via WinRM or network ping for >=3 consecutive probes",
+      "condition": {
+        "field": "host.consecutive_probe_failures",
+        "op": ">=",
+        "value": 3,
+        "probe_interval_seconds": 15
+      },
+      "action": {
+        "type": "host_failover",
+        "description": "Reassign all agents bound to the down host to the next available host with sufficient capacity",
+        "parameters": {
+          "selection_criterion": "min_vram_usage_among_reachable",
+          "max_agents_per_failover": 3,
+          "cooldown_seconds": 300
+        }
+      },
+      "preconditions": [
+        "at_least_one_other_host_reachable == true",
+        "total_free_vram_on_survivors >= sum(agent_min_vram)",
+        "no_cascade_failover_in_last_120s"
+      ],
+      "rollback": {
+        "type": "rebind_original_hosts",
+        "trigger": "when down host becomes reachable again for 3 consecutive probes",
+        "steps": ["verify_host_health", "reassign_agents_to_original_bindings", "update_agents_json"]
+      }
+    },
+    {
+      "id": "R003",
+      "degradation_type": "agent_unresponsive",
+      "description": "An agent has not responded to a ping within 10s for >=2 consecutive checks",
+      "condition": {
+        "field": "agent.consecutive_ping_failures",
+        "op": ">=",
+        "value": 2,
+        "ping_timeout_seconds": 10
+      },
+      "action": {
+        "type": "task_reroute",
+        "description": "Reassign the agent's pending tasks to the next available agent with matching capability; mark agent as degraded in cockpit",
+        "parameters": {
+          "max_tasks_to_reroute": 5,
+          "capability_match_required": true,
+          "flag_duration_seconds": 300
+        }
+      },
+      "preconditions": [
+        "another_agent_with_same_capability_is_available == true",
+        "agent.queue_depth > 0"
+      ],
+      "rollback": {
+        "type": "restore_task_ownership",
+        "trigger": "when agent responds to next ping within 10s",
+        "steps": ["unflag_agent", "return_unprocessed_tasks_to_original_owner"]
+      }
+    },
+    {
+      "id": "R004",
+      "degradation_type": "vram_pressure_sustained",
+      "description": "Host VRAM usage has been >=90% for more than 5 minutes, indicating chronic pressure rather than a spike",
+      "condition": {
+        "field": "host.vram_pct",
+        "op": ">=",
+        "value": 90,
+        "sustained_seconds": 300
+      },
+      "action": {
+        "type": "load_rebalance",
+        "description": "Migrate the lowest-priority agent's model to another host to relieve pressure",
+        "parameters": {
+          "priority_metric": "goal_completion_rate_desc",
+          "migration_target": "min_vram_host",
+          "max_migrations_per_hour": 2
+        }
+      },
+      "preconditions": [
+        "target_host.free_vram >= source_agent.model_vram_requirement",
+        "source_agent.priority_rank > 3",
+        "no_recent_migration_of_same_agent_in_last_1800s"
+      ],
+      "rollback": {
+        "type": "migrate_back",
+        "trigger": "if source host VRAM drops below 70% or target host exceeds 95%",
+        "steps": ["unload_from_target", "reload_on_source", "update_agents_json"]
+      }
+    },
+    {
+      "id": "R005",
+      "degradation_type": "disk_space_critical",
+      "description": "A host's primary data partition is below 10% free space",
+      "condition": {
+        "field": "host.disk_free_pct",
+        "op": "<",
+        "value": 10,
+        "sustained_seconds": 60
+      },
+      "action": {
+        "type": "cleanup_and_archive",
+        "description": "Prune old log files, clear __pycache__, archive completed cycle artifacts to cold storage; if still below 5%, halt new model loads on that host",
+        "parameters": {
+          "prune_targets": ["__pycache__", "*.log older than 7d", "tmp/ older than 1d"],
+          "archive_to": "memory/archive/",
+          "halt_threshold_pct": 5
+        }
+      },
+      "preconditions": [
+        "host.reachable == true",
+        "deletable_space_estimate > 2GB"
+      ],
+      "rollback": {
+        "type": "resume_normal_ops",
+        "trigger": "when disk_free_pct recovers above 15% after cleanup",
+        "steps": ["remove_halt_flag", "log_recovery_event"]
+      }
+    },
+    {
+      "id": "R006",
+      "degradation_type": "context_window_exhaustion",
+      "description": "An agent's context usage has reached >=90% of its model's max context window",
+      "condition": {
+        "field": "agent.context_usage_pct",
+        "op": ">=",
+        "value": 90,
+        "sustained_seconds": 0
+      },
+      "action": {
+        "type": "force_summary_reload",
+        "description": "Trigger a forced context compression: summarize the agent's working state, reload with compressed context, log before/after sizes",
+        "parameters": {
+          "compression_ratio_target": 0.5,
+          "state_preservation_min": ["current_goal", "open_files", "decision_log_last_10"],
+          "max_reload_time_seconds": 60
+        }
+      },
+      "preconditions": [
+        "agent.has_active_session == true",
+        "compression_model_available == true"
+      ],
+      "rollback": {
+        "type": "restore_full_context",
+        "trigger": "if compressed context causes agent to lose >20% of active task state (measured by goal_progress_delta)",
+        "steps": ["reload_original_context_from_checkpoint", "log_rollback_reason"]
+      }
+    }
+  ]
+}
