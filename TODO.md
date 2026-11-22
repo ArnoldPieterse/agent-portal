@@ -1,3 +1,10 @@
+## PORTAL UI UPGRADES + FULL CLICK-BATTERY (Playwright) 2026-11-22
+Status: **DONE - 66/66 steps green in real Chromium** (pw_test.py, run pw_run5.log).
+Upgrades shipped this round: theme toggle (light/dark, persisted, icon swap), print-report button, toast click-to-dismiss + Esc on bell panel + Esc closes any open panel/editor dialog, goal bar + Lv chip render on page load.
+Battery covers every clickable action: tour A1-A6, header B1-B13, shortcuts/panels C, goals+topic-queue D, fleet topology E, ops+agents F (incl. delete-confirm guard), composer/upload/modes G, error harvest H.
+Benign-by-design 404s whitelisted in H3: linkify file probes (/api/file?path=), activity run-events probes, 409 on /api/todo/prune = nothing to prune.
+Git found at %LOCALAPPDATA%\hermes\tools\git-2.53.0+3-win32-x64\cmd\git.exe (not on PATH).
+
 ## UI JS FIXES + PLAYWRIGHT VERIFICATION 2026-11-22
 Status: **DONE + verified in real Chromium (Playwright)** - user asked to test the portal with Playwright instead of trusting static checks.
 - [x] `ui/core.js` had TWO adjacent syntax breaks from the load-queue edit that froze the whole page at "checking studio…": line 378 missing `+` before `'</span>'` (V8: `SyntaxError: Unexpected string` @377:146 via CDP Runtime.exceptionThrown) and line 379 unterminated string `' queued</span>`. Both fixed.
