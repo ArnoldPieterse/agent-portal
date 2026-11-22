@@ -406,5 +406,11 @@
 "text": "**Responsive Layout (768px)** - Make the portal usable at tablet width: sidebar collapses to icon bar, chat panel full-width, fleet tab scro",
 "agent": "designer",
 "at": "2026-11-22"
+},
+{
+"sig": "c789930a2155ea61",
+"text": "**Theme System (3 themes)** - Implement light/dark/high-contrast themes using CSS custom properties. Theme picker in settings; preference pe",
+"agent": "designer",
+"at": "2026-11-22"
 }
 ]
