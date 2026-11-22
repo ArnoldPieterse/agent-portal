@@ -1,5 +1,6 @@
 # Designer - 10 goals (set 2026-11-20, cycle-7)
 
+Source: Goal-setting round 2026-11-20 (cycle-7), collected by Orchestrator. Archived as superseded.
 Focus: Interaction design + visual polish. Cycle-5 established the token system; cycle-7 makes the portal feel alive: smooth transitions, clear hierarchy, and a consistent interaction language across all panels.
 
 1. **Interaction Design System** - Define standard interaction patterns in ui/interactions.css + ui/interactions.js: hover states, focus rings, click feedback (scale 0.98), drag handles, scroll indicators, loading skeletons. Document each pattern with when-to-use guidance. Verified: >=6 patterns defined; all interactive elements in portal use the system; no ad-hoc :hover rules outside interactions.css. (pointer: memory/designer/goal1-interaction-system-live-2026-11-20.md)

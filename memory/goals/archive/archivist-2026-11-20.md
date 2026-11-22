@@ -1,5 +1,6 @@
 # Archivist - 10 goals (set 2026-11-18, cycle-5)
 
+Source: Goal-setting round 2026-11-20 (cycle-5), collected by Orchestrator. Archived as superseded.
 Focus: Knowledge graph quality + retrieval accuracy. Make the fleet's memory not just searchable but trustworthy: citation accuracy, orphan detection, and automated freshness maintenance.
 
 1. **Knowledge Graph Integrity Report** - `python memory/archivist/kg_integrity.py` produces: total nodes, edge count, orphan count (no inbound edges), dangling reference count, cycle detection. Writes to memory/archivist/kg-report-cycle5.md. Verified: report exists with all 5 metrics; orphan count matches manual spot-check. (pointer: memory/archivist/knowledge_graph.py) (verified: 2026-11-19 - kg-report-cycle5.md exists with all 5 metrics (286 nodes, 475 edges, 154 orphans, 0 dangling refs, 0 cycles); orphan count matches goal-4 remediation classification (154). Script: memory/archivist/kg_)

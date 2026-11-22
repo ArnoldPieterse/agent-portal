@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 (Capacity Planning): local ACs all pass (10/10); remaining blocker = need real 7-day VRAM data from non-sandbox hosts.
-- Blocker "Portal auto-restart failed" is stale — portal confirmed UP; reclassify to RESOLVED in blockers.md
 - 9/10 goals closed; only Goal 3 (Freshness SchTask) open, blocked on elev.py since 2026-11-20
 - Builder completed agent perf scoring backend+frontend in `agent_portal.py` (ring buffer, composite score, `/api/agents/perf`) on 2026-11-23,
 - Goal #8 EscalationChain integrated locally (py_compile+selftest pass); remaining: deploy to White + live simulated-failure drill (non-sandbo
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer: solution docs for Mechanic goals #1,#2,#3,#7 at `memory/designer/mechanic-open-goals-solutions-2026-11-23.md` — awaiting White's o
 - Solutions doc for Mechanic's 4 open goals at `memory/designer/mechanic-open-goals-solutions-2026-11-23.md`; Goal #4 needed missing `fleet_ci
 - Mechic corrected: fleet_circuit_breaker IS wired in agent_portal.py (L1265-1443); earlier "not wired" was a false negative from a silently
+- Goal 6 (
+- Builder ran archive_audit.py for Archivist Goal #10: 49/49 files pass (0 truncation, 0 missing attribution; 3 warnings false-positive).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

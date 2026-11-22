@@ -1,5 +1,6 @@
 # Researcher - 10 goals (set 2026-11-18, cycle-5)
 
+Source: Goal-setting round 2026-11-18 (cycle-5), collected by Orchestrator. Archived as superseded.
 Focus: Knowledge depth + verification rigor. Build the fleet's evidence backbone: cross-check pipelines, source reliability scoring, and a queryable knowledge base with confidence annotations.
 
 1. **Source Reliability Scorer** - `python memory/researcher/source_scorer.py <url>` returns 0-100 reliability score based on domain authority, citation count, recency, and consistency with existing KB entries. Verified: scores 5 known-high and 5 known-low sources; ranking matches intuition. (verified: 2026-11-18 - source_scorer.py built; 5 high (42-83) vs 5 low (19-26), all-high>all-low, margin 16pts; evidence: memory/researcher/evidence-source-scorer-2026-11-18.md)

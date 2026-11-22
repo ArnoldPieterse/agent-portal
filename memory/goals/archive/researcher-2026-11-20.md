@@ -1,5 +1,6 @@
 # Researcher - 8 goals (set 2026-11-18, cycle-6)
 
+Source: Goal-setting round 2026-11-20 (cycle-6), collected by Orchestrator. Archived as superseded.
 Focus: **Hot LLM loading functions expansion** (user directive, goal #1) + continuation of the fleet evidence backbone.
 Goal #1 consolidates the proven load/reload/swap/wedge scripts into ONE host-aware, eviction-aware, wedge-safe unified loader; #2-#5 harden it with tests + verification; #6-#8 continue the researcher mission (overnight-unload correlation, SLA tracker, residency matrix).
 
