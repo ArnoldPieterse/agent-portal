@@ -742,5 +742,17 @@
 "text": "**Cockpit Narrative Layer** - `python memory/scribe/cockpit_narrative.py`: given raw cockpit data, produce a 2-3 sentence natural-language s",
 "agent": "scribe",
 "at": "2026-11-23"
+},
+{
+"sig": "0c2c8de2d86624b4",
+"text": "**Fleet State Collector Daemon** - `python memory/mechanic/state_collector.py`: background process (schtask every 5 min) that collects: per-",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "9a2d7ec47b283b08",
+"text": "**Fleet Knowledge Delta Report** - `python memory/scribe/knowledge_delta.py`: compare fleet knowledge at cycle start vs end: what new files ",
+"agent": "scribe",
+"at": "2026-11-23"
 }
 ]
