@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mechanic Goals - Status Dashboard</title>
+<style>
+:root{--bg:#0f1117;--card:#1a1d27;--border:#2a2d3a;--text:#e4e4e7;--muted:#9ca3af;--green:#34d399;--yellow:#fbbf24;--red:#f87171;--blue:#60a5fa}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);padding:2rem}
+h1{font-size:1.5rem;margin-bottom:.5rem}
+.subtitle{color:var(--muted);font-size:.875rem;margin-bottom:2rem}
+.progress-bar{background:var(--border);border-radius:6px;height:8px;margin-bottom:2rem;overflow:hidden}
+.progress-fill{background:linear-gradient(90deg,var(--green),#10b981);height:100%;border-radius:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.card.reached::before{background:var(--green)}
+.card.open::before{background:var(--yellow)}
+.card.blocked::before{background:var(--red)}
+.goal-num{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.goal-title{font-size:1rem;font-weight:600;margin:.35rem 0 .6rem}
+.status-badge{display:inline-block;padding:.2rem .6rem;border-radius:4px;font-size:.7rem;font-weight:600;text-transform:uppercase}
+.badge-reached{background:rgba(52,211,153,.15);color:var(--green)}
+.badge-open{background:rgba(251,191,36,.15);color:var(--yellow)}
+.badge-blocked{background:rgba(248,113,113,.15);color:var(--red)}
+.evidence{font-size:.8rem;color:var(--muted);margin-top:.75rem;line-height:1.5}
+.evidence code{background:rgba(255,255,255,.06);padding:.1rem .3rem;border-radius:3px;font-size:.75rem}
+.remaining{margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border);font-size:.8rem;color:var(--yellow);line-height:1.5}
+.cmd{display:block;background:rgba(0,0,0,.3);padding:.5rem .75rem;border-radius:5px;margin-top:.5rem;font-family:'Cascadia Code',monospace;font-size:.72rem;color:var(--blue);word-break:break-all}
+.summary{margin-bottom:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+.stat{text-align:center}.stat-val{font-size:1.75rem;font-weight:700}.stat-label{font-size:.7rem;color:var(--muted);text-transform:uppercase}
+.footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<h1>Mechanic Goals - Status Dashboard</h1>
+<p class="subtitle">Fleet reliability hardening - Cycle-8 - Generated 2026-11-23</p>
+<div class="summary">
+<div class="stat"><div class="stat-val" style="color:var(--green)">6</div><div class="stat-label">Reached</div></div>
+<div class="stat"><div class="stat-val" style="color:var(--yellow)">4</div><div class="stat-label">Open</div></div>
+<div class="stat"><div class="stat-val">10</div><div class="stat-label">Total</div></div>
+<div class="stat"><div class="stat-val" style="color:var(--green)">60%</div><div class="stat-label">Complete</div></div>
+</div>
+<div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+<div class="grid">
+<div class="card reached"><div class="goal-num">Goal #5</div><div class="goal-title">Scheduled-Task Dependency Graph</div><span class="status-badge badge-reached">Reached</span><div class="evidence">Auto-gen from schtasks query; weekly diff; integration test passed 2026-11-18.</div></div>
+<div class="card reached"><div class="goal-num">Goal #6</div><div class="goal-title">Boot Task Verification</div><span class="status-badge badge-reached">Reached</span><div class="evidence">3 reboots verified; nvidia-smi + alias probes confirmed.</div></div>
+<div class="card reached"><div class="goal-num">Goal #7</div><div class="goal-title">Log Rotation + Retention</div><span class="status-badge badge-reached">Reached</span><div class="evidence">13/13 unit tests PASS (2026-11-22). Schtask in deploy_all_schtasks.py.</div></div>
+<div class="card reached"><div class="goal-num">Goal #8</div><div class="goal-title">Alert Escalation Chain</div><span class="status-badge badge-reached">Reached</span><div class="evidence">3-level chain; self-test 8/8 PASS.</div></div>
+<div class="card reached"><div class="goal-num">Goal #9</div><div class="goal-title">Capacity Planning Dashboard</div><span class="status-badge badge-reached">Reached</span><div class="evidence">Report generated; trend + prediction verified.</div></div>
+<div class="card reached"><div class="goal-num">Goal #10</div><div class="goal-title">Runbook Automation (top-5)</div><span class="status-badge badge-reached">Reached</span><div class="evidence">All 5 scripts exist, compile clean, idempotency verified.</div></div>
+<div class="card open"><div class="goal-num">Goal #1</div><div class="goal-title">Portal Load Test 7-Day</div><span class="status-badge badge-open">5/7 Days</span><div class="evidence">Data: 2026-11-16 to 2026-11-20. All thresholds PASSING.</div><div class="remaining"><strong>Remaining:</strong> 2 more days + closure verdict.<span class="cmd">python memory/mechanic/complete_remaining_legs.py --goal 1</span></div></div>
+<div class="card open"><div class="goal-num">Goal #2</div><div class="goal-title">Self-Healing Mirror Production</div><span class="status-badge badge-open">Schtask Pending</span><div class="evidence">Heal logic built + tested. Alert threshold verified.</div><div class="remaining"><strong>Remaining:</strong> Register 15-min schtask + 2 weeks clean logs.<span class="cmd">python memory/mechanic/complete_remaining_legs.py --goal 2</span></div></div>
+<div class="card open"><div class="goal-num">Goal #3</div><div class="goal-title">WinRM Remote Reboot E2E</div><span class="status-badge badge-blocked">Non-Sandbox Only</span><div class="evidence">Anti-stall chain complete; dry-run infra ready.</div><div class="remaining"><strong>Remaining:</strong> Full E2E on non-critical host.<span class="cmd">python memory/mechanic/complete_remaining_legs.py --goal 3</span></div></div>
+<div class="card open"><div class="goal-num">Goal #4</div><div class="goal-title">Fleet Status API Hardening</div><span class="status-badge badge-open">Live Leg Only</span><div class="evidence">Code wired: CB + probe skip + degradation. Tests 17/17 + 16/16 PASS.</div><div class="remaining"><strong>Remaining:</strong> Single live HTTP-200 check.<span class="cmd">python memory/mechanic/complete_remaining_legs.py --goal 4</span></div></div>
+</div>
+<div class="footer">
+<p><strong>One-command completion:</strong> <code style="color:var(--blue)">python memory/mechanic/complete_remaining_legs.py</code> (run from White, portal :8099 + elev.py :8098 required)</p>
+<p style="margin-top:.5rem">All 4 remaining legs need a non-sandbox seat with LAN access. Scripts are ready.</p>
+</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 5, "last_reset_by": "", "infinite_budget": true} -->
 
 ## 2026-11-19 - design-token deep sweep complete (White direct)
 - All UI files clean: 0 hardcoded hex (outside var() fallbacks), 0 real glyph chars, 0 raw px font-size across ui/*.js + index.html + app.css; all var() refs resolve to tokens; node --check passes 9/9. Evidence: memory/designer/deep-sweep-2026-11-19.md (commit 85e3097). Headless Edge CDP does not work in this sandbox - use static verification for UI acceptance.
@@ -21,18 +21,18 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- 9/10 goals closed; only Goal 3 (Freshness SchTask) open, blocked on elev.py since 2026-11-20
-- Builder completed agent perf scoring backend+frontend in `agent_portal.py` (ring buffer, composite score, `/api/agents/perf`) on 2026-11-23,
-- Goal #8 EscalationChain integrated locally (py_compile+selftest pass); remaining: deploy to White + live simulated-failure drill (non-sandbo
-- Goal 3: decay_production.py built & verified (7038 leaves, 0 archived); only remaining AC is schtask registration (elev.py absent).
-- Mechic's 4 open goals (#1,#2,#3,#7) all "script built, one cmd from White"; exec order: 7→1→3(quiet hrs)→2
-- Designer: solution docs for Mechanic goals #1,#2,#3,#7 at `memory/designer/mechanic-open-goals-solutions-2026-11-23.md` — awaiting White's o
 - Solutions doc for Mechanic's 4 open goals at `memory/designer/mechanic-open-goals-solutions-2026-11-23.md`; Goal #4 needed missing `fleet_ci
 - Mechic corrected: fleet_circuit_breaker IS wired in agent_portal.py (L1265-1443); earlier "not wired" was a false negative from a silently
 - Goal 6 (
 - Builder ran archive_audit.py for Archivist Goal #10: 49/49 files pass (0 truncation, 0 missing attribution; 3 warnings false-positive).
+- Builder closed Archivist Goal #8 (Duplication Detection) — 43 pairs verified, open count 3→2.
+- UI audit: --agent-purple used in uploads.js but defined only in
+- RECALL: - **M2
+- Orchestrator took ownership of diagnosing elev.py exit 5 (Class not registered) — fleet-wide blocker for Mechanic, Archivist G3, deploy legs
+- Verifier independently confirmed Mechanic Goal 7 (log rotation) all 4 ACs pass; evidence at memory/verifier/mechanic-goal7-logrotate-indepen
+- Designer retracted false `--agent-purple` bug: tokens.css IS loaded via @import in app.css; dead-file count corrected 14→13.
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 5 / ∞
 - last_reset_by: —
 
 - 2026-11-17 13:5x ADMIN-BY-DEFAULT (user directive): every agent runs as admin, same as white. Elevated helper service built: elevated_helper.py (SYSTEM, 127.0.0.1:8098) + elev.py client + install_elevated_helper.bat (one UAC click). [SHELL] footer in agent_portal.py now tells all seats to route admin commands through `python elev.py ...` instead of giving up; takes effect on next portal restart. Elevated helper remains optional; no pending work requires a human UAC click. 2026-11-20 03:4x MECHANIC #1+#2 DONE FLEET-WIDE via WinRM (no elevation, no human step): WinRM ops pool+retry+daily rotation schtask verified on all 4 hosts; reboot-recovery watchdog deployed (White: FleetBootRecovery 5-min schtask -> reboot_recover.py; PALE/BLACK/RED: C:/FleetOps/fleet_watchdog.ps1 relaunches Studio :8888 from captured launcher, task State=Ready). Evidence: memory/mechanic/reboot-recovery.jsonl. Also fixed: agent_portal.py had 2 corrupted blocks (literal backslash-quote, syntax error) - repaired, compiles clean. Mechanic #4 load-test pipeline built + baseline captured (portal_loadtest.py, p95 ~60ms idle @8 workers). Designer (#6 status-dots, #2 dark mode) and Mechanic (#2 reboot-recovery dry-runs) tasks dispatched via /api/user-messages.
