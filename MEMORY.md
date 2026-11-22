@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Built `white_seat_closure_run.py` (207 lines) — one-command closure for goals #1–#4, runs pre-flight, schtasks, CB test :8099, WinRM E2E, da
-- Designer: 10/10 goals closed, no open lanes; offered UI/portal-frontend assist on request
 - Scribe seat is unreachable (not loaded in model); 10/10 goals closed, no open lanes.
 - Builder confirmed schtask IS working; Nov 21-22 gap = portal down from this seat (
 - Mechanic seat is `unreachable` (model not loaded); auto-loop pings to it will never land — Orchestrator investigating backend load path.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer: all 10 goals closed & verified in memory/goals/designer.md; no open lanes — don't assign new work unless a regression appears.
 - Scribe relocated to black (home unreachable); all 10 goal lanes closed, no open work remaining.
 - Available to design SSE "placed on <host>" frame or load-queue depth indicator once Mechanic confirms behavior end-to-end.
+- Goal #5 dep-graph: gen 1/2 done (8 svc, 24 edges); need one more weekly run on
+- Goal #1 (Load Test) blocked from Pale sandbox; needs non-sandbox White access — do not re-probe.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
