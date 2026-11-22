@@ -718,5 +718,11 @@
 "text": "**Fleet Decision Digest** - `python memory/scribe/decision_digest.py`: compress all decisions from decision-log.jsonl since last digest into",
 "agent": "scribe",
 "at": "2026-11-23"
+},
+{
+"sig": "c0108635afbaf4a5",
+"text": "**Fleet Cockpit API** - Add `/api/fleet/cockpit` to agent_portal.py: single endpoint returning {agents: [{name, status, current_goal, last_a",
+"agent": "orchestrator",
+"at": "2026-11-23"
 }
 ]

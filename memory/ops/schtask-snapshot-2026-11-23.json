@@ -1,0 +1,162 @@
+{
+  "generated": "2026-11-23T07:00:02.373584",
+  "host": "WHITE",
+  "task_count": 21,
+  "tasks": [
+    {
+      "name": "\\AgentPortal",
+      "status": "Ready",
+      "schedule_type": "One Time Only",
+      "next_run": "N/A"
+    },
+    {
+      "name": "\\AgentPortal_LoadProbe_Daily",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "23/11/2026 9:00:00 AM"
+    },
+    {
+      "name": "\\GCC",
+      "status": "Ready",
+      "schedule_type": "At logon time",
+      "next_run": "N/A"
+    },
+    {
+      "name": "\\LlamaRPCWorker",
+      "status": "Disabled",
+      "schedule_type": "At system start up",
+      "next_run": "N/A"
+    },
+    {
+      "name": "\\MemoryMirrorRun",
+      "status": "Running",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "23/11/2026 7:02:00 AM"
+    },
+    {
+      "name": "\\MirrorHeal",
+      "status": "Ready",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "23/11/2026 7:01:00 AM"
+    },
+    {
+      "name": "\\MirrorSync",
+      "status": "Running",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "23/11/2026 7:05:00 AM"
+    },
+    {
+      "name": "\\PortalDailyGitCommit",
+      "status": "Ready",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "23/11/2026 7:12:00 AM"
+    },
+    {
+      "name": "\\PortalDepGenCanary",
+      "status": "Ready",
+      "schedule_type": "Weekly",
+      "next_run": "23/11/2026 7:30:00 AM"
+    },
+    {
+      "name": "\\PortalFleetProbe",
+      "status": "Ready",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "23/11/2026 7:01:00 AM"
+    },
+    {
+      "name": "\\PortalGapAlarm",
+      "status": "Ready",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "23/11/2026 7:02:00 AM"
+    },
+    {
+      "name": "\\PortalLoadProbe",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "24/11/2026 6:00:00 AM"
+    },
+    {
+      "name": "\\PortalMemoryDecay",
+      "status": "Ready",
+      "schedule_type": "Weekly",
+      "next_run": "30/11/2026 6:00:00 AM"
+    },
+    {
+      "name": "\\PortalMemorySizeGuard",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "23/11/2026 9:00:00 AM"
+    },
+    {
+      "name": "\\PortalRun",
+      "status": "Running",
+      "schedule_type": "One Time Only",
+      "next_run": "N/A"
+    },
+    {
+      "name": "\\PortalSchtaskDepGen",
+      "status": "Running",
+      "schedule_type": "Weekly",
+      "next_run": "30/11/2026 7:00:00 AM"
+    },
+    {
+      "name": "\\PortalSmbDrift",
+      "status": "Ready",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "23/11/2026 7:15:00 AM"
+    },
+    {
+      "name": "\\PortalSnapshotDiff",
+      "status": "Ready",
+      "schedule_type": "Weekly",
+      "next_run": "30/11/2026 6:30:00 AM"
+    },
+    {
+      "name": "\\PortalWatchdog",
+      "status": "Ready",
+      "schedule_type": "One Time Only, Minute",
+      "next_run": "23/11/2026 7:02:00 AM"
+    },
+    {
+      "name": "\\RecoverAll",
+      "status": "Ready",
+      "schedule_type": "One Time Only",
+      "next_run": "N/A"
+    },
+    {
+      "name": "\\VerifierSLO",
+      "status": "Ready",
+      "schedule_type": "Daily",
+      "next_run": "24/11/2026 7:00:00 AM"
+    }
+  ],
+  "edges": [
+    {
+      "from": "\\MemoryMirrorRun",
+      "to": "RemoteMemoryFreshness",
+      "type": "known"
+    },
+    {
+      "from": "\\PortalRun",
+      "to": "PortalDailyGitCommit",
+      "type": "known"
+    },
+    {
+      "from": "\\PortalRun",
+      "to": "FleetProbe",
+      "type": "known"
+    },
+    {
+      "from": "\\PortalRun",
+      "to": "AgentGroupChat",
+      "type": "known"
+    }
+  ],
+  "diff": {
+    "added": [
+      "\\PortalDepGenCanary",
+      "\\PortalGapAlarm"
+    ],
+    "removed": []
+  }
+}
