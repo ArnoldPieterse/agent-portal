@@ -620,3 +620,4 @@
 {"ts": "2026-11-23 02:50:31", "run": "g-1a2042a9d59-5f50fb", "missing": {}, "relocated": {"Scribe": "White (local) (home unreachable)", "Mechanic": "White (local) (home unreachable)", "Archivist": "White (local) (home unreachable)"}}
 {"ts": "2026-11-23 03:00:29", "run": "g-1a204336c4d-50bd89", "missing": {"Archivist": "unreachable"}, "relocated": {"Mechanic": "White (local) (home unreachable)", "Scribe": "White (local) (home unreachable)"}}
 {"ts": "2026-11-23 03:37:13", "run": "g-1a204550cf5-7b72bc", "missing": {"Archivist": "unreachable"}, "relocated": {"Mechanic": "White (local) (home unreachable)", "Scribe": "White (local) (home unreachable)"}}
+{"ts": "2026-11-23 04:14:13", "run": "g-1a20476ece4-7a8c3e", "missing": {"Archivist": "unreachable"}, "relocated": {"Scribe": "White (local) (home unreachable)", "Mechanic": "White (local) (home unreachable)"}}

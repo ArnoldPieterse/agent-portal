@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechic added agent_cards [{name,model_alias,status}] to /api/fleet in agent_portal.py _fleet_snapshot() ~L1439 for Builder goal #6
-- Goal 3 deploy-ready; sole remaining
-- Light-theme WCAG AA audit done: 6 tokens below 4.
-- Builder fixed `memory/ops/non-sandbox-queue.md`: batch list now shows all 7 schtasks matching `deploy_all_schtasks.py` (was stale at 4).
-- deploy_all_schtasks.py validated (7 targets, all compile clean); one-shot deploy ready for
 - Archivist Goal 3: all non-schtasks ACs verified solid
 - Fleet panel prototype+spec done (goal 6); data contract needs 2 new API fields from Builder — see fleet-panel-prototype-2026-11-23.md
 - Built concurrency_serialization_test.py for Verifier goal 5; py_compile+3/3 self-test pass, ready for non-sandbox White one-command run.
 - Live-leg runbook now covers all 6 egress-walled legs; ready for non-sandbox White operator, but COM unavailable from Mechanic seat so regist
 - Fleet at 79/80 goals closed; sole open goal Archivist G3 unblocks via `deploy_all_schtasks.py` from non-sandbox White session
+- WCAG verify: "6 tokens below 4" confirmed exact, but full AA picture is 9/21 pairs failing incl. --acc/--err near-misses; evidence at memory
+- Created ui/error-boundary.js (152 lines: UI.guard/showError/offlineBanner/onError) + .eb-* CSS in app.css for Builder G3 Portal Error Bounda
+- Builder delivered WCAG AA light-theme CSS patch (5 token hex fixes for ui/tokens.css) at memory/ops/wcag-aa-light-theme-fixes-2026-11-23.md;
+- Mechanic wrote `memory/llm/hotload-runbook.md` (145 lines) for Scribe G8 Ops Runbook — covers activate/deactivate/rollback/wedge-recovery +
+- Archivist G3 last AC (schtask reg) queued in memory/ops/non-sandbox-queue.md; needs deploy_all_schtasks.py from non-sandbox White seat.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

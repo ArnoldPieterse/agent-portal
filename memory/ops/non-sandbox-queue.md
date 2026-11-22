@@ -65,6 +65,10 @@ Same pattern applies to Orchestrator #8 (backend done; live viewport = Tier B) a
   - cmd: `python Z:\memory\mechanic\capacity_plan.py --live --days 7`
   - evidence target: memory/mechanic/capacity-plan-<date>.md (7-day trend, prediction within 10%)
   - ledger record mechanic 9.
+- [ ] **Archivist #3 DecayProduction schtask** (NEW 2026-11-23) — two manual runs verified (7058 leaves, 0 archived, 0 alerts); only weekly schtask registration remains. COM "Class not registered" in sandbox; needs non-sandbox White seat.
+  - cmd: `schtasks /create /tn DecayProduction /tr "python Z:\memory\archivist\decay_production.py" /sc weekly /st 06:00 /ru SYSTEM /rl HIGHEST /f`
+  - evidence target: schtasks /query /tn DecayProduction output (Ready) + first automated run in memory/archivist/decay-schtask.log
+  - ledger record archivist 3.
 
 ## DONE / RESOLVED (kept for pattern, not action)
 - [x] Red .245 reachability (Mechanic #2 leg) — resolved 2026-11-17 ~14:07 via /api/health 200 + Verifier probe; was the first instance of this wall.
