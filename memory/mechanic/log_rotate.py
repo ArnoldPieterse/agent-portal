@@ -1,51 +1,67 @@
-"""Log Rotation + Retention - rotates .log files >10MB, keeps 5, compresses old.
+"""Log Rotation + Retention - rotates .jsonl/.log files >50MB, keeps 7 days, compresses old.
 Usage: python memory/mechanic/log_rotate.py [--once | --schedule]"""
 import os, sys, time, glob, gzip, shutil
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
-LOG_DIR = os.path.dirname(os.path.abspath(__file__))
-MAX_SIZE = 10 * 1024 * 1024  # 10MB
-KEEP_ROTATIONS = 5
-INTERVAL_S = 1800  # 30 min
+# Scan the full fleet tree (parent of memory/)
+FLEET_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MAX_SIZE = 50 * 1024 * 1024  # 50MB per goal spec
+RETENTION_DAYS = 7
+INTERVAL_S = 3600  # hourly when --schedule
 
 def rotate_file(path):
-    """Rotate a single log file. Returns True if rotated."""
+    """Rotate a single log file (>MAX_SIZE). Returns True if rotated."""
     if not os.path.exists(path) or os.path.getsize(path) < MAX_SIZE:
         return False
-    base, ext = os.path.splitext(path)
-    # Shift existing rotations: .log.4 -> .log.5 (delete if >KEEP), .log.3 -> .log.4, etc.
-    for i in range(KEEP_ROTATIONS - 1, 0, -1):
-        src = f"{base}{ext}.{i}"
-        dst = f"{base}{ext}.{i+1}"
-        if os.path.exists(src):
-            # Clear the target first: Windows os.rename() raises WinError 183
-            # if dst already exists (e.g. a prior run crashed mid-rotation).
-            if os.path.exists(dst):
-                os.remove(dst)
-            os.rename(src, dst)
-    # Compress the oldest rotation
-    oldest = f"{base}{ext}.{KEEP_ROTATIONS}"
-    if os.path.exists(oldest) and not oldest.endswith(".gz"):
-        with open(oldest, "rb") as f_in:
-            with gzip.open(oldest + ".gz", "wb") as f_out:
-                shutil.copyfileobj(f_in, f_out)
-        os.remove(oldest)
-    # Current -> .log.1
-    os.rename(path, f"{base}{ext}.1")
-    # Create fresh empty file
+    ts_tag = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    compressed = path + f".{ts_tag}.gz"
+    with open(path, "rb") as f_in:
+        with gzip.open(compressed, "wb") as f_out:
+            shutil.copyfileobj(f_in, f_out)
+    # Truncate the live file (keep it for appenders that hold an open handle)
     open(path, "w").close()
     return True
+
+def compress_old_files():
+    """Compress .log/.jsonl files older than RETENTION_DAYS. Returns count."""
+    cutoff = datetime.now(timezone.utc) - timedelta(days=RETENTION_DAYS)
+    compressed = 0
+    for pattern in ("**/*.log", "**/*.jsonl"):
+        for fpath in glob.glob(os.path.join(FLEET_ROOT, pattern), recursive=True):
+            if _is_rotated_artifact(fpath):
+                continue
+            try:
+                mtime = datetime.fromtimestamp(os.path.getmtime(fpath), tz=timezone.utc)
+            except OSError:
+                continue
+            if mtime < cutoff and os.path.getsize(fpath) > 0:
+                gz_path = fpath + ".gz"
+                with open(fpath, "rb") as f_in:
+                    with gzip.open(gz_path, "wb") as f_out:
+                        shutil.copyfileobj(f_in, f_out)
+                os.remove(fpath)
+                compressed += 1
+    return compressed
+
+def _is_rotated_artifact(path):
+    """True if path is a rotation output (e.g. foo.jsonl.20261122_102305.gz)."""
+    name = os.path.basename(path)
+    return name.endswith(".gz")
 
 def run_check():
     ts = datetime.now(timezone.utc).isoformat()
     rotated = []
-    # Scan all .log files in memory/ tree
-    log_files = glob.glob(os.path.join(LOG_DIR, "**", "*.log"), recursive=True)
-    for lf in log_files:
-        if rotate_file(lf):
-            rotated.append(lf)
-    status = f"rotated {len(rotated)} files" if rotated else "all logs under 10MB"
-    print(f"{ts} [{status}]")
+    # Scan all .log and .jsonl files in fleet tree
+    patterns = ("**/*.log", "**/*.jsonl")
+    for pattern in patterns:
+        for lf in glob.glob(os.path.join(FLEET_ROOT, pattern), recursive=True):
+            if _is_rotated_artifact(lf):
+                continue
+            if rotate_file(lf):
+                rotated.append(lf)
+    compressed = compress_old_files()
+    status = f"rotated={len(rotated)} compressed_old={compressed}"
+    print(f"{ts} [{status}] max={MAX_SIZE//1024//1024}MB retention={RETENTION_DAYS}d")
     for r in rotated:
         print(f"  rotated: {r}")
     return rotated
