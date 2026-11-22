@@ -1,8 +1,13 @@
 {
   "current": {
-    "topic": "Fleet Intelligence & Adaptive Operations",
-    "description": "Cycle 9 shifts the fleet from reactive productionization to proactive, self-optimizing behavior. Goals focus on: (1) predictive operations - anticipating failures and resource needs before they occur, (2) knowledge synthesis - building a shared semantic layer so agents can reason over fleet state without re-deriving context each pass, (3) delivery value - making the portal and fleet produce outputs a human would find useful (reports, insights, automated decisions). Each agent's 10 goals should advance at least one of these three pillars."
+    "topic": "Closed-Loop Autonomy & Fleet Cockpit",
+    "description": "Cycle 10 closes the loop between intelligence and action. Cycle 9 built the sensing layer (forecasts, health scores, collaboration graphs); cycle 10 makes the fleet act on its own observations without waiting for a human pass. Three pillars: (1) Auto-Remediation - when a degradation is detected, the fleet executes the fix (model swap, host failover, task re-route) and logs the decision; (2) Self-Balancing - workload distribution, model routing, and context management optimize themselves based on live throughput data; (3) Fleet Cockpit - a single unified view (portal + API) that shows all fleet state in real time: agent status, goal progress, resource usage, recent decisions, and predicted risks. Every agent's goals should advance at least one pillar."
   },
   "queue": [],
-  "past": []
+  "past": [
+    {
+      "topic": "Fleet Intelligence & Adaptive Operations",
+      "description": "Cycle 9 shifts the fleet from reactive productionization to proactive, self-optimizing behavior. Goals focus on: (1) predictive operations - anticipating failures and resource needs before they occur, (2) knowledge synthesis - building a shared semantic layer so agents can reason over fleet state without re-deriving context each pass, (3) delivery value - making the portal and fleet produce outputs a human would find useful (reports, insights, automated decisions). Each agent's 10 goals should advance at least one of these three pillars."
+    }
+  ]
 }

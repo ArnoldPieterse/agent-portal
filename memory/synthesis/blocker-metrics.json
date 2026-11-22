@@ -1,0 +1,47 @@
+{
+  "total_blockers": 15,
+  "by_status": {
+    "ops_note": 1,
+    "open_needs_human": 10,
+    "reconciled": 1,
+    "resolved": 1,
+    "unknown": 2
+  },
+  "by_agent": {
+    "Orchestrator": 5,
+    "Verifier": 2,
+    "Builder": 1,
+    "Designer": 1,
+    "Researcher": 1,
+    "Mechanic": 1
+  },
+  "by_class": {
+    "seat-unreachable + sandbox egress wall": 1,
+    "helper down": 1,
+    "helper file-not-found": 1,
+    "winerror 10013": 2,
+    "file-absent": 1,
+    "sandbox egress block": 1,
+    "no browser binary + sandbox egress block": 1,
+    "sandbox limitation": 1,
+    "`schtasks` -> \"error: class not registered\"": 1
+  },
+  "resolution_times_hours": [
+    {
+      "title": "White SANDBOX seat cannot LAN-probe Red .245 (confirmed)",
+      "agent": null,
+      "hours": 48.0
+    },
+    {
+      "title": "Live-browser verification unavailable from this sandbox seat (Designer #5 + #7)",
+      "agent": "Designer",
+      "hours": 48.0
+    }
+  ],
+  "agent_resolution_counts": {
+    "Orchestrator": 1
+  },
+  "avg_resolution_hours": 48.0,
+  "min_resolution_hours": 48.0,
+  "max_resolution_hours": 48.0
+}

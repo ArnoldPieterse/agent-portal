@@ -1,0 +1,23 @@
+# Designer - 10 goals (set 2026-11-23, cycle-9)
+
+Focus: Fleet Intelligence & Adaptive Operations. Cycle-9 builds the visual intelligence layer: data visualization standards, accessibility for dynamic content, and a cohesive design system for fleet analytics.
+
+1. **Data Visualization Standards** - Write memory/designer/visualization-standards.md: define chart types (line, bar, heatmap, radar) for each data category (time-series, comparison, distribution, relationship); specify color coding rules (green/amber/red thresholds), axis conventions, and when to use which type. Apply to 3 existing portal charts as examples. Verified: doc covers >=4 chart types; color rules are consistent with tokens.css; 3 charts updated to match standards.
+
+2. **Fleet Status Icon System** - Create a consistent SVG icon set for all fleet states: healthy (green check), degraded (amber warning), down (red X), loading (spinner), unknown (gray question). Store as inline SVGs in ui/icons.js. Use across portal (fleet tab, topology map, alert banners). Verified: >=5 icons defined; each renders at 16px and 32px without distortion; used in >=3 portal locations. (pointer: memory/designer/goal2-fleet-states-2026-11-18.md)
+
+3. **Dark Theme Data Viz Palette** - Design chart color palettes that maintain contrast in both light and dark themes. Define CSS custom properties for chart series colors (up to 8 series) in ui/tokens.css. Verify WCAG AA contrast against both backgrounds. Verified: 8 series colors defined; all pass 4.5:1 contrast in both themes; charts remain distinguishable when theme toggles.
+
+4. **Accessibility Audit v2 (Dynamic Content)** - Extend the WCAG check to cover dynamic UI elements: toast notifications (screen reader announcements), modal focus trapping, live region updates, aria-live regions for real-time data. Write findings to memory/designer/a11y-dynamic-2026-11-23.md. Verified: >=5 dynamic elements audited; any violations documented with fix; toast announces via aria-live; modal traps focus correctly. (pointer: memory/designer/contrast-audit-live-2026-11-20.md)
+
+5. **Micro-interaction Library** - Build reusable CSS/JS micro-interactions: pulse-on-update (element briefly highlights when data changes), slide-in (new list items animate in), fade-transition (tab switches), progress-shimmer (loading state). Store in ui/micro-interactions.js + corresponding CSS. Verified: >=4 interactions defined; each works on a demo element; no jank (60fps); respects prefers-reduced-motion. (pointer: memory/designer/keyboard-microinteraction-evidence-2026-11-15.md)
+
+6. **Error State Design System** - Comprehensive visual treatment for all error states: empty state (no data), loading skeleton, partial failure (some data loaded), complete failure (retry button), timeout. Define patterns + implement in ui/error-states.js. Verified: >=4 error states designed; each has a clear user action; consistent with existing design language; no raw error text shown to user. (pointer: memory/designer/goal1-interaction-system-live-2026-11-20.md)
+
+7. **Typography Scale & Hierarchy** - Document and enforce the type scale used across the portal: heading levels, body text, caption, data/monospace. Define in ui/tokens.css as --font-size-* custom properties. Audit all existing elements for consistency. Verified: >=6 size steps defined; audit finds >=3 inconsistencies (or 0); all fixes applied; doc at memory/designer/type-scale.md. (pointer: memory/designer/goal7-typography-audit-2026-11-19.md)
+
+8. **Information Density Optimization** - Test two layout densities for the fleet tab: compact (smaller padding, tighter spacing) vs comfortable (current). Measure: items visible per viewport, time-to-find-info (heuristic), visual clutter score. Document recommendation. Verified: both variants implemented as CSS classes; measurement criteria defined; recommendation is evidence-based (not just preference).
+
+9. **Print-Optimized Report Layout** - Design and implement a print stylesheet for the fleet report: 2-page layout (page 1: status + insights, page 2: goals + events). Use @media print rules in ui/print.css. Ensure: no overflow, correct page breaks, readable font sizes, header with date/cycle. Verified: Ctrl+P produces correct 2-page layout; no content cutoff; prints in B&W correctly; tested in Chrome.
+
+10. **Mobile-First Fleet View (375px)** - Design the fleet tab for phone width (375px): single-column layout, collapsible sections, touch-friendly targets (>=44px), horizontal scroll for wide data tables. Implement as a responsive variant of the existing fleet tab. Verified: at 375px, no horizontal overflow; all interactive elements >=44px tap target; key info visible without scrolling >2 screens.

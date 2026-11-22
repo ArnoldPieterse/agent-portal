@@ -1,0 +1,23 @@
+# Verifier - 10 goals (set 2026-11-23, cycle-9)
+
+Focus: Fleet Intelligence & Adaptive Operations. Cycle-9 builds the quality intelligence layer: predictive verification, cross-agent consistency checking, and quality debt management.
+
+1. **Verification Coverage Heatmap** - `python memory/verifier/coverage_heatmap.py`: map which code paths / API endpoints / fleet operations have zero or minimal test coverage. Cross-reference test files against source modules. Output: memory/verifier/coverage-heatmap-YYYY-MM-DD.md with per-module coverage % + gaps ranked by risk. Verified: all /api/* endpoints assessed; >=3 uncovered high-risk paths identified; coverage % is accurate (spot-check 5 modules).
+
+2. **Prediction Validation Engine** - `python memory/verifier/prediction_validator.py`: auto-score all predictions made by agents (from forecast files, capacity forecasts, slip predictions) against actual outcomes. Maintain a running accuracy score per agent + per prediction type. Write to memory/verifier/prediction-scores.jsonl. Verified: >=10 predictions scored; accuracy % per agent computed; a deliberately wrong prediction scores 0; JSONL is valid.
+
+3. **Regression Risk Scoring** - `python memory/verifier/regression_risk.py`: before any code change (git diff), score the regression risk based on: historical failure rate of that module, number of dependent modules, time since last test. Output: risk score 1-5 + recommended test focus areas. Verified: a change to agent_portal.py scores higher than a change to a memory/ doc; top-3 riskiest files identified correctly; scoring is consistent.
+
+4. **Evidence Chain Completeness** - `python memory/verifier/evidence_chain.py`: for each "Verified:" claim in goal files, verify the evidence chain is complete: does the cited file exist? Does it contain the specific claim? Is there a logical path from raw data -> analysis -> conclusion? Flag incomplete chains. Verified: all cycle-9 verified claims checked; >=1 incomplete chain found (or 0 if all complete); each flag has specific missing link identified. (pointer: memory/verifier/evidence-chain.jsonl)
+
+5. **Flaky Test Detection** - `python memory/verifier/flaky_detect.py`: run existing test suites 3 times; identify tests that pass in some runs but fail in others (non-deterministic). Report flaky tests with pass/fail pattern across runs. Verified: >=3 test suites run 3x; any non-deterministic tests are flagged; a deliberately flaky test (random sleep) is detected.
+
+6. **Quality Trend Forecasting** - `python memory/verifier/quality_forecast.py`: track quality metrics over time (evidence quality scores, test pass rate, SLO compliance); fit trend line; predict when each metric will cross its threshold if current trajectory continues. Alert 7 days before predicted breach. Verified: forecast on historical data is reasonable; alert logic fires correctly on simulated degradation; report includes all tracked metrics.
+
+7. **Cross-Agent Consistency Check** - `python memory/verifier/consistency_check.py`: scan evidence leaves for claims about the same fact made by different agents (e.g., "host X has Y GB VRAM"). Flag contradictions. Write to memory/ops/contradictions-YYYY-MM-DD.md. Verified: >=3 cross-agent claims compared; any contradictions flagged with both sources cited; no false positives on compatible claims.
+
+8. **Verification Cost Analysis** - `python memory/verifier/cost_analysis.py`: measure time/effort spent on verification activities (test runs, manual checks, evidence reviews) vs value delivered (bugs caught, quality improvements). Identify low-ROI verification activities. Write to memory/ops/verification-costs-YYYY-MM-DD.md. Verified: >=3 cost categories measured; ROI ranking produced; at least 1 low-ROI activity identified with recommendation. (pointer: memory/verifier/evidence-integrity-rerun-2026-11-21.md)
+
+9. **Negative Path Coverage** - `python memory/verifier/negative_coverage.py`: for every "Verified:" criterion in goal files, check if a corresponding negative test exists (what should FAIL). Flag criteria that only test the happy path. Write to memory/verifier/negative-gaps-YYYY-MM-DD.md. Verified: all cycle-9 verified claims checked; >=3 missing negative tests identified; each has a suggested negative test description.
+
+10. **Quality Debt Tracker** - `python memory/verifier/quality_debt.py`: maintain a register of known quality debts (untested paths, missing evidence, degraded SLOs). For each: estimated cost of inaction per day, priority score. Auto-update from other verifier tools' outputs. Write to memory/ops/quality-debt-YYYY-MM-DD.md. Verified: >=5 debt items tracked; each has cost estimate + priority; a new debt added by another tool appears in next run.

@@ -478,5 +478,119 @@
 "text": "**Freshness Scoring Production** - Make decay_score.py a weekly schtask (via elev.py on White): score all memory/ leaves, auto-archive those",
 "agent": "archivist",
 "at": "2026-11-23"
+},
+{
+"sig": "ce0a677c0488c176",
+"text": "**Semantic Search Index** - Build a lightweight TF-IDF or embedding-based search over all memory/ leaves: `python memory/archivist/semantic_",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "c4c1e3c38878f370",
+"text": "**Orphan Knowledge Recovery** - Find files in memory/ not referenced by any INDEX.md, goal file, or evidence chain; classify each as (a) gen",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "7bb8c68f6d85376a",
+"text": "**Knowledge Dependency Graph** - Build a directed graph showing which knowledge leaves depend on which others (A cites B means A depends on ",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "7d82c7ec36778940",
+"text": "**Knowledge Base Health Report** - Weekly composite report: total leaves, freshness score, retrieval accuracy trend, citation integrity stat",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "881277c7db6f1e64",
+"text": "**Decision Timeline Component** - Build a reusable JS component (ui/timeline.js) that renders a vertical timeline of decision events (from d",
+"agent": "builder",
+"at": "2026-11-23"
+},
+{
+"sig": "cb7ad74a875653e1",
+"text": "**Cycle Comparison View** - In Goals tab, add a \"Compare\" button that shows side-by-side metrics for current vs previous cycle: goals comple",
+"agent": "builder",
+"at": "2026-11-23"
+},
+{
+"sig": "b14afca90b597764",
+"text": "**Goal Quality Gate** - `python memory/orchestrator/goal_gate.py`: pre-validate proposed goals before acceptance. Checks: (a) clarity (has e",
+"agent": "orchestrator",
+"at": "2026-11-23"
+},
+{
+"sig": "4df1c9e06c40c790",
+"text": "**Fleet Decision Log** - Create memory/ops/decision-log.jsonl: structured record of every fleet decision (model load/unload, agent re-role, ",
+"agent": "orchestrator",
+"at": "2026-11-23"
+},
+{
+"sig": "2443258125129ed5",
+"text": "**Fleet Health Composite Score** - `python memory/orchestrator/health_score.py`: compute a single 0-100 score combining: agent responsivenes",
+"agent": "orchestrator",
+"at": "2026-11-23"
+},
+{
+"sig": "badba7ccfe3a0f79",
+"text": "**Fleet Knowledge Graph** - `python memory/researcher/knowledge_graph.py`: extract entities (hosts, models, agents, services, files) and rel",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "43e5e871cd293a3d",
+"text": "**Semantic Search Index** - `python memory/researcher/semantic_index.py`: build a lightweight TF-IDF (or simple embedding) index over all me",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "58ba6c0aaf8dcdf2",
+"text": "**Research Gap Analysis** - `python memory/researcher/gap_analysis.py`: scan all goal files for topics mentioned but lacking supporting rese",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "54376fe133bbcf9e",
+"text": "**Evidence Source Reliability Score** - Track which evidence sources (agent names, file patterns) produce the most reliable findings over ti",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "3d41bca371cb04c7",
+"text": "**Auto-Synthesis Trigger** - `python memory/scribe/auto_synthesize.py`: detect when a chat thread or topic has enough content to synthesize ",
+"agent": "scribe",
+"at": "2026-11-23"
+},
+{
+"sig": "dbf88bb2c5a0493f",
+"text": "**Synthesis Quality Rubric** - Define and document a rubric for evaluating synthesis output quality: completeness (all key points covered), ",
+"agent": "scribe",
+"at": "2026-11-23"
+},
+{
+"sig": "3218fd0ce8c12323",
+"text": "**Open Item Aging Report** - `python memory/scribe/open_item_aging.py`: track all open items from syntheses and goal files; flag those aging",
+"agent": "scribe",
+"at": "2026-11-23"
+},
+{
+"sig": "e7889b7be0b7d726",
+"text": "**Knowledge Gap Narrative** - `python memory/scribe/knowledge_gaps.py`: produce a narrative summary of what the fleet doesn't know yet: topi",
+"agent": "scribe",
+"at": "2026-11-23"
+},
+{
+"sig": "ac951f6a5824b172",
+"text": "**Evidence Chain Completeness** - `python memory/verifier/evidence_chain.py`: for each \"Verified:\" claim in goal files, verify the evidence ",
+"agent": "verifier",
+"at": "2026-11-23"
+},
+{
+"sig": "bb05c8c40384c5aa",
+"text": "**Verification Cost Analysis** - `python memory/verifier/cost_analysis.py`: measure time/effort spent on verification activities (test runs,",
+"agent": "verifier",
+"at": "2026-11-23"
 }
 ]
