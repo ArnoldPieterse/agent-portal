@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agent Status Grid - Fleet Cockpit</title>
+<style>
+:root {
+  --panel-bg: #1a1d23;
+  --panel-border: #2a2e36;
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-faint: #5f6368;
+  --ok: #34a853;
+  --warn: #fbbc04;
+  --err: #ea4335;
+  --accent: #4285f4;
+  --radius-md: 8px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+}
+
+/* --- Grid container --- */
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-sm);
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.agent-grid__label {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+/* --- Agent Card --- */
+.agent-card {
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 200ms ease;
+}
+
+.agent-card:hover,
+.agent-card:focus-within {
+  border-color: var(--accent);
+}
+
+/* Header row: dot + name + status badge */
+.agent-card__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.agent-card__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.agent-card__dot--active   { background: var(--ok); animation: pulse 2s infinite; }
+.agent-card__dot--idle     { background: var(--text-faint); }
+.agent-card__dot--loading  { background: var(--warn); animation: pulse 1s infinite; }
+.agent-card__dot--error    { background: var(--err); }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.agent-card__name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.agent-card__status-badge {
+  margin-left: auto;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge--active   { background: rgba(52,168,83,0.15); color: var(--ok); }
+.badge--idle     { background: rgba(95,99,104,0.15); color: var(--text-faint); }
+.badge--loading  { background: rgba(251,188,4,0.15); color: var(--warn); }
+.badge--error    { background: rgba(234,67,53,0.15); color: var(--err); }
+
+/* Goal title */
+.agent-card__goal {
+  font-size: 11px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Last active */
+.agent-card__time {
+  font-size: 10px;
+  color: var(--text-faint);
+}
+
+/* Context usage bar (3px thin) */
+.agent-card__ctx {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--panel-border);
+  overflow: hidden;
+}
+
+.agent-card__ctx-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 350ms ease;
+}
+
+.ctx-fill--low    { background: var(--ok); }
+.ctx-fill--mid    { background: var(--warn); }
+.ctx-fill--high   { background: var(--err); }
+
+/* --- Responsive: at 768px, force 2 columns --- */
+@media (max-width: 768px) {
+  .agent-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .agent-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .agent-card__dot--active,
+  .agent-card__dot--loading { animation: none; opacity: 1; }
+  .agent-card { transition: none; }
+}
+</style>
+</head>
+<body style="background:#12141a;padding:40px;font-family:system-ui,sans-serif;">
+
+<div class="agent-grid" role="grid" aria-label="Agent status grid" id="agent-grid">
+  <div class="agent-grid__label">Agents (8)</div>
+  <!-- Cards rendered by JS -->
+</div>
+
+<script>
+/**
+ * Agent Status Grid - Fleet Cockpit Component
+ * 
+ * API:
+ *   renderAgentGrid(container, agents)
+ *   - agents: array of { name, status, goal, lastActive, contextUsage }
+ *   - status: 'active' | 'idle' | 'loading' | 'error'
+ *   - contextUsage: 0-100 (%)
+ */
+
+function ctxClass(pct) {
+  if (pct >= 90) return 'ctx-fill--high';
+  if (pct >= 60) return 'ctx-fill--mid';
+  return 'ctx-fill--low';
+}
+
+function timeAgo(iso) {
+  const diff = Date.now() - new Date(iso).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'just now';
+  if (mins < 60) return mins + 'm ago';
+  return Math.floor(mins/60) + 'h ago';
+}
+
+function renderAgentGrid(container, agents) {
+  // Remove old cards (keep label)
+  container.querySelectorAll('.agent-card').forEach(c => c.remove());
+  
+  agents.forEach(a => {
+    const card = document.createElement('div');
+    card.className = 'agent-card';
+    card.setAttribute('role', 'row');
+    card.setAttribute('aria-label', `${a.name}: ${a.status}, context ${a.contextUsage}%`);
+    
+    card.innerHTML = `
+      <div class="agent-card__header">
+        <span class="agent-card__dot agent-card__dot--${a.status}" aria-hidden="true"></span>
+        <span class="agent-card__name">${a.name}</span>
+        <span class="agent-card__status-badge badge--${a.status}">${a.status}</span>
+      </div>
+      <div class="agent-card__goal" title="${a.goal || ''}">${a.goal || 'No active goal'}</div>
+      <div class="agent-card__time">${timeAgo(a.lastActive)}</div>
+      <div class="agent-card__ctx" role="progressbar" aria-valuenow="${a.contextUsage}" aria-valuemin="0" aria-valuemax="100" aria-label="Context usage">
+        <div class="agent-card__ctx-fill ${ctxClass(a.contextUsage)}" style="width:${a.contextUsage}%"></div>
+      </div>
+    `;
+    
+    container.appendChild(card);
+  });
+}
+
+// --- Demo: 8 agents with varied states ---
+const now = Date.now();
+const demoAgents = [
+  { name: 'Orchestrator', status: 'active', goal: 'Cycle Auto-Planner', lastActive: new Date(now - 45000).toISOString(), contextUsage: 62 },
+  { name: 'Researcher',   status: 'idle',   goal: '',                   lastActive: new Date(now - 3600000).toISOString(), contextUsage: 12 },
+  { name: 'Builder',      status: 'active', goal: 'Fleet Cockpit Frontend', lastActive: new Date(now - 30000).toISOString(), contextUsage: 78 },
+  { name: 'Verifier',     status: 'loading', goal: 'Rollback Test',    lastActive: new Date(now - 15000).toISOString(), contextUsage: 45 },
+  { name: 'Designer',     status: 'active', goal: 'Cockpit Layout Design', lastActive: new Date(now - 20000).toISOString(), contextUsage: 85 },
+  { name: 'Archivist',    status: 'error',  goal: '',                   lastActive: new Date(now - 7200000).toISOString(), contextUsage: 0 },
+  { name: 'Scribe',       status: 'idle',   goal: 'Goal Pattern Analysis', lastActive: new Date(now - 1800000).toISOString(), contextUsage: 34 },
+  { name: 'Mechanic',     status: 'active', goal: 'Model Lifecycle',    lastActive: new Date(now - 60000).toISOString(), contextUsage: 55 },
+];
+
+renderAgentGrid(document.getElementById('agent-grid'), demoAgents);
+console.log('%c[agent-grid] 8 cards rendered (2x4 grid at desktop, 2-col at 768px)', 'color:#34a853');
+</script>
+</body>
+</html>

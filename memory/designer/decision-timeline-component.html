@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decision Timeline - Fleet Cockpit</title>
+<style>
+:root {
+  --panel-bg: #1a1d23;
+  --panel-border: #2a2e36;
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-faint: #5f6368;
+  --ok: #34a853;
+  --warn: #fbbc04;
+  --err: #ea4335;
+  --accent: #4285f4;
+  --radius-md: 8px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+}
+
+/* --- Timeline Container --- */
+.timeline {
+  position: relative;
+  max-height: 360px;
+  overflow-y: auto;
+  padding-left: var(--spacing-md);
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+}
+
+.timeline__header {
+  position: sticky;
+  top: 0;
+  padding: var(--spacing-sm) 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: var(--panel-bg);
+  border-bottom: 1px solid var(--panel-border);
+  z-index: 1;
+}
+
+/* --- Vertical Line --- */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px; /* center of 16px dot */
+  top: 40px;
+  bottom: var(--spacing-md);
+  width: 2px;
+  background: var(--panel-border);
+}
+
+/* --- Timeline Item (node) --- */
+.timeline__item {
+  position: relative;
+  padding: var(--spacing-sm) 0 var(--spacing-sm) 28px;
+  cursor: pointer;
+}
+
+/* Dot on the line */
+.timeline__dot {
+  position: absolute;
+  left: -24px; /* align to 7px center of ::before */
+  top: 14px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--panel-bg);
+}
+
+.timeline__dot--success { background: var(--ok); }
+.timeline__dot--pending { background: var(--warn); }
+.timeline__dot--failed  { background: var(--err); }
+
+/* --- Card (collapsed state) --- */
+.timeline__card {
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) 12px;
+  transition: border-color 200ms ease;
+}
+
+.timeline__item:hover .timeline__card,
+.timeline__item:focus-within .timeline__card {
+  border-color: var(--accent);
+}
+
+.timeline__title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.timeline__meta {
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 2px;
+}
+
+/* --- Expand indicator --- */
+.timeline__expand {
+  display: inline-block;
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--text-faint);
+  transition: transform 200ms ease;
+}
+
+.timeline__item[aria-expanded="true"] .timeline__expand {
+  transform: rotate(90deg);
+}
+
+/* --- Detail (expanded) --- */
+.timeline__detail {
+  display: none;
+  margin-top: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--panel-border);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.timeline__item[aria-expanded="true"] .timeline__detail {
+  display: block;
+}
+
+.timeline__detail dt {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 6px;
+}
+
+.timeline__detail dd {
+  margin-left: 0;
+  margin-top: 2px;
+}
+
+/* --- Filter bar --- */
+.timeline__filters {
+  display: flex;
+  gap: 6px;
+  padding: var(--spacing-sm) 0;
+  position: sticky;
+  top: 32px;
+  background: var(--panel-bg);
+  z-index: 1;
+}
+
+.timeline__filter-btn {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--panel-border);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.timeline__filter-btn[aria-pressed="true"] {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* --- Reduced motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .timeline__card, .timeline__expand { transition: none; }
+}
+</style>
+</head>
+<body style="background:#12141a;display:flex;justify-content:center;padding:40px;font-family:system-ui,sans-serif;">
+
+<div class="timeline" role="log" aria-label="Decision timeline">
+  <div class="timeline__header">Recent Decisions</div>
+  
+  <div class="timeline__filters" role="group" aria-label="Filter decisions">
+    <button class="timeline__filter-btn" aria-pressed="true" data-filter="all">All</button>
+    <button class="timeline__filter-btn" aria-pressed="false" data-filter="success">Success</button>
+    <button class="timeline__filter-btn" aria-pressed="false" data-filter="pending">Pending</button>
+    <button class="timeline__filter-btn" aria-pressed="false" data-filter="failed">Failed</button>
+  </div>
+
+  <!-- Sample nodes rendered by JS -->
+  <div id="timeline-nodes"></div>
+</div>
+
+<script>
+/**
+ * Decision Timeline - Fleet Cockpit Component
+ * 
+ * API:
+ *   renderTimeline(container, decisions)
+ *   - decisions: array of { id, title, agent, timestamp, outcome, detail, action, precondition }
+ *   - outcome: 'success' | 'pending' | 'failed'
+ */
+
+function renderTimeline(container, decisions) {
+  const nodesEl = container.querySelector('#timeline-nodes');
+  if (!nodesEl) return;
+  
+  nodesEl.innerHTML = '';
+  
+  decisions.forEach(d => {
+    const item = document.createElement('div');
+    item.className = 'timeline__item';
+    item.setAttribute('role', 'button');
+    item.setAttribute('tabindex', '0');
+    item.setAttribute('aria-expanded', 'false');
+    item.setAttribute('data-outcome', d.outcome);
+    
+    const dotClass = { success: 'success', pending: 'pending', failed: 'failed' }[d.outcome] || 'pending';
+    
+    item.innerHTML = `
+      <span class="timeline__dot timeline__dot--${dotClass}" aria-hidden="true"></span>
+      <div class="timeline__card">
+        <div class="timeline__title">
+          ${d.title}
+          <span class="timeline__expand" aria-hidden="true">&#9654;</span>
+        </div>
+        <div class="timeline__meta">${d.agent} &middot; ${formatTime(d.timestamp)}</div>
+      </div>
+      <dl class="timeline__detail">
+        <dt>Action</dt><dd>${d.action}</dd>
+        <dt>Precondition</dt><dd>${d.precondition || 'N/A'}</dd>
+        <dt>Outcome</dt><dd style="color:var(--${dotClass === 'success' ? 'ok' : dotClass === 'failed' ? 'err' : 'warn'})">${d.outcome}</dd>
+      </dl>
+    `;
+    
+    // Click / keyboard to expand
+    const toggle = () => {
+      const expanded = item.getAttribute('aria-expanded') === 'true';
+      item.setAttribute('aria-expanded', String(!expanded));
+    };
+    item.addEventListener('click', toggle);
+    item.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    
+    nodesEl.appendChild(item);
+  });
+  
+  // Wire filter buttons
+  container.querySelectorAll('.timeline__filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('.timeline__filter-btn').forEach(b => b.setAttribute('aria-pressed','false'));
+      btn.setAttribute('aria-pressed','true');
+      const filter = btn.dataset.filter;
+      container.querySelectorAll('.timeline__item').forEach(item => {
+        item.style.display = (filter === 'all' || item.dataset.outcome === filter) ? '' : 'none';
+      });
+    });
+  });
+}
+
+function formatTime(ts) {
+  if (!ts) return '';
+  const d = new Date(ts);
+  return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+// --- Demo data ---
+const sampleDecisions = [
+  { id: 'd1', title: 'Model swap: Scribe to White host', agent: 'Mechanic', timestamp: new Date(Date.now()-3600000).toISOString(), outcome: 'success', action: 'Unloaded qwen-7b from Black, loaded on White (VRAM verified)', precondition: 'White VRAM > 8GB free' },
+  { id: 'd2', title: 'Auto-restart agent loop', agent: 'Orchestrator', timestamp: new Date(Date.now()-7200000).toISOString(), outcome: 'success', action: 'Detected Builder unresponsive >60s, triggered restart', precondition: 'Unresponsive count >= 3 pings' },
+  { id: 'd3', title: 'GPU memory cleanup on Black', agent: 'Mechanic', timestamp: new Date(Date.now()-10800000).toISOString(), outcome: 'pending', action: 'Issued nvidia-smi reset, awaiting confirmation', precondition: 'VRAM usage > 95%' },
+  { id: 'd4', title: 'Goal allocation rebalance', agent: 'Orchestrator', timestamp: new Date(Date.now()-14400000).toISOString(), outcome: 'failed', action: 'Attempted to assign 3 goals to Researcher (unreachable)', precondition: 'Researcher responsive' },
+  { id: 'd5', title: 'Log rotation on all hosts', agent: 'Mechanic', timestamp: new Date(Date.now()-18000000).toISOString(), outcome: 'success', action: 'Rotated .log files >50MB, compressed old segments', precondition: 'No active writes (verified via handle count)' },
+];
+
+renderTimeline(document.querySelector('.timeline'), sampleDecisions);
+console.log('%c[decision-timeline] 5 nodes rendered, filters wired', 'color:#34a853');
+</script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cockpit Layout Design Spec - Fleet Cockpit Tab</title>
+<style>
+/* ===== DESIGN TOKENS (from ui/tokens.css) ===== */
+:root {
+  --bg: #0d1117;
+  --panel: #161b22;
+  --line: #30363d;
+  --text: #e6edf3;
+  --dim: #8b949e;
+  --acc: #58a6ff;
+  --ok: #3fb950;
+  --warn: #d29922;
+  --err: #f85149;
+  --sp-4: 4px; --sp-8: 8px; --sp-12: 12px; --sp-16: 16px; --sp-24: 24px;
+  --fs-11: 11px; --fs-12: 12px; --fs-13: 13px; --fs-14: 14px; --fs-16: 16px; --fs-20: 20px; --fs-28: 28px;
+  --br-md: 6px; --br-lg: 10px;
+}
+[data-theme="dark"] { color-scheme: dark; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: var(--sp-24); line-height: 1.5; }
+
+/* ===== SPEC DOCUMENTATION STYLES ===== */
+.spec-header { margin-bottom: var(--sp-24); border-bottom: 2px solid var(--acc); padding-bottom: var(--sp-16); }
+.spec-header h1 { font-size: var(--fs-20); font-weight: 700; color: var(--acc); }
+.spec-header p { font-size: var(--fs-13); color: var(--dim); margin-top: var(--sp-4); }
+
+/* ===== COCKPIT GRID LAYOUT (THE ACTUAL DESIGN) ===== */
+.cockpit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: var(--sp-12);
+  max-width: 960px;
+  margin: 0 auto var(--sp-24);
+}
+
+/* Priority ordering via grid placement */
+.cockpit-grid > :nth-child(1) { grid-column: 1; grid-row: 1; } /* Health Score - TOP LEFT (P1) */
+.cockpit-grid > :nth-child(2) { grid-column: 2; grid-row: 1; } /* Agent Status Grid - TOP RIGHT (P2) */
+.cockpit-grid > :nth-child(3) { grid-column: 1; grid-row: 2; } /* Host Resources - MID LEFT (P3) */
+.cockpit-grid > :nth-child(4) { grid-column: 2; grid-row: 2; } /* Goal Progress - MID RIGHT (P4) */
+.cockpit-grid > :nth-child(5) { grid-column: 1 / -1; grid-row: 3; } /* Decision Timeline + Risks - BOTTOM FULL (P5+P6) */
+
+/* ===== PANEL BASE ===== */
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--br-lg);
+  padding: var(--sp-16);
+  min-height: 180px;
+}
+.panel-title {
+  font-size: var(--fs-12);
+  font-weight: 600;
+  color: var(--dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--sp-12);
+}
+
+/* ===== P1: HEALTH SCORE GAUGE ===== */
+.health-gauge { display: flex; align-items: center; gap: var(--sp-24); }
+.gauge-svg { width: 120px; height: 70px; }
+.gauge-track { fill: none; stroke: var(--line); stroke-width: 8; stroke-linecap: round; }
+.gauge-fill { fill: none; stroke-width: 8; stroke-linecap: round; transition: stroke-dashoffset 600ms ease, stroke 300ms ease; }
+.gauge-score { font-size: var(--fs-28); font-weight: 700; text-anchor: middle; }
+.gauge-label { font-size: var(--fs-11); fill: var(--dim); text-anchor: middle; }
+.health-meta { flex: 1; }
+.health-delta { font-size: var(--fs-14); font-weight: 600; }
+.health-delta.up { color: var(--ok); }
+.health-delta.down { color: var(--err); }
+.health-trend { margin-top: var(--sp-8); }
+.trend-sparkline { width: 100%; height: 32px; }
+.trend-path { fill: none; stroke: var(--acc); stroke-width: 1.5; }
+.trend-area { fill: var(--acc); opacity: 0.1; }
+
+/* ===== P2: AGENT STATUS GRID ===== */
+.agent-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--sp-8); }
+.agent-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--br-md);
+  padding: var(--sp-8) var(--sp-12);
+}
+.agent-card-top { display: flex; align-items: center; gap: var(--sp-4); margin-bottom: var(--sp-4); }
+.agent-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.agent-dot.active { background: var(--acc); animation: pulse 2s infinite; }
+.agent-dot.idle { background: var(--dim); }
+.agent-dot.error { background: var(--err); animation: flash 1.5s infinite; }
+.agent-dot.loading { background: var(--warn); }
+.agent-name { font-size: var(--fs-12); font-weight: 600; }
+.agent-goal { font-size: var(--fs-11); color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.agent-context { margin-top: var(--sp-4); height: 3px; background: var(--line); border-radius: 2px; }
+.agent-context-fill { height: 100%; border-radius: 2px; transition: width 300ms ease; }
+
+/* ===== P3: HOST RESOURCES ===== */
+.host-list { display: flex; flex-direction: column; gap: var(--sp-8); }
+.host-row { display: grid; grid-template-columns: 60px 1fr 40px; align-items: center; gap: var(--sp-8); }
+.host-name { font-size: var(--fs-12); font-weight: 500; }
+.resource-bar { height: 6px; background: var(--bg); border-radius: 3px; overflow: hidden; }
+.resource-fill { height: 100%; border-radius: 3px; transition: width 300ms ease; }
+.resource-fill.ok { background: linear-gradient(90deg, var(--ok), var(--acc)); }
+.resource-fill.warn { background: linear-gradient(90deg, var(--warn), var(--err)); }
+.resource-fill.crit { background: var(--err); }
+.resource-pct { font-size: var(--fs-11); color: var(--dim); text-align: right; }
+
+/* ===== P4: GOAL PROGRESS ===== */
+.goal-progress { display: flex; flex-direction: column; gap: var(--sp-12); }
+.cycle-bar-track { height: 8px; background: var(--bg); border-radius: 4px; overflow: hidden; }
+.cycle-bar-fill { height: 100%; background: linear-gradient(90deg, var(--acc), var(--ok)); border-radius: 4px; transition: width 600ms ease; }
+.cycle-meta { display: flex; justify-content: space-between; font-size: var(--fs-12); color: var(--dim); }
+.goal-items { list-style: none; }
+.goal-items li { font-size: var(--fs-12); padding: var(--sp-4) 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; }
+.goal-items li:last-child { border-bottom: none; }
+.goal-status { font-size: var(--fs-11); font-weight: 600; }
+.goal-status.done { color: var(--ok); }
+.goal-status.active { color: var(--acc); }
+
+/* ===== P5+P6: BOTTOM ROW (DECISIONS + RISKS) ===== */
+.bottom-panel { grid-column: 1 / -1 !important; }
+.bottom-inner { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-16); }
+
+/* Decision Timeline */
+.timeline { position: relative; padding-left: var(--sp-16); }
+.timeline::before { content: ''; position: absolute; left: 5px; top: 4px; bottom: 4px; width: 2px; background: var(--line); }
+.timeline-node { position: relative; margin-bottom: var(--sp-12); }
+.timeline-node::before { content: ''; position: absolute; left: -16px; top: 4px; width: 10px; height: 10px; border-radius: 50%; border: 2px solid; background: var(--panel); }
+.timeline-node.success::before { border-color: var(--ok); background: var(--ok); }
+.timeline-node.pending::before { border-color: var(--warn); background: var(--warn); }
+.timeline-node.failed::before { border-color: var(--err); background: var(--err); }
+.tl-title { font-size: var(--fs-12); font-weight: 500; }
+.tl-meta { font-size: var(--fs-11); color: var(--dim); }
+.tl-expand { font-size: var(--fs-11); color: var(--acc); cursor: pointer; margin-top: 2px; display: inline-block; }
+
+/* Risk Panel */
+.risk-list { list-style: none; display: flex; flex-direction: column; gap: var(--sp-8); }
+.risk-item { padding: var(--sp-8) var(--sp-12); border-radius: var(--br-md); font-size: var(--fs-12); display: flex; align-items: center; gap: var(--sp-8); }
+.risk-item.critical { background: rgba(248,81,73,0.1); border-left: 3px solid var(--err); }
+.risk-item.warning { background: rgba(210,153,34,0.1); border-left: 3px solid var(--warn); }
+.risk-item.info { background: rgba(88,166,255,0.1); border-left: 3px solid var(--acc); }
+.risk-severity { font-size: var(--fs-11); font-weight: 700; text-transform: uppercase; min-width: 48px; }
+.risk-item.critical .risk-severity { color: var(--err); }
+.risk-item.warning .risk-severity { color: var(--warn); }
+.risk-item.info .risk-severity { color: var(--acc); }
+
+/* ===== ANNOTATION OVERLAY (spec-only, not in production) ===== */
+.annotation { position: relative; }
+.prio-badge {
+  position: absolute; top: -8px; right: var(--sp-8);
+  font-size: 10px; font-weight: 700; padding: 2px 6px;
+  border-radius: 3px; background: var(--acc); color: var(--bg);
+}
+
+/* ===== SPEC TABLES ===== */
+.spec-section { margin-top: var(--sp-24); }
+.spec-section h2 { font-size: var(--fs-16); font-weight: 700; margin-bottom: var(--sp-12); color: var(--text); border-bottom: 1px solid var(--line); padding-bottom: var(--sp-8); }
+table { width: 100%; border-collapse: collapse; font-size: var(--fs-12); }
+th, td { text-align: left; padding: var(--sp-8) var(--sp-12); border-bottom: 1px solid var(--line); }
+th { color: var(--dim); font-weight: 600; font-size: var(--fs-11); text-transform: uppercase; letter-spacing: 0.3px; }
+tr:hover td { background: rgba(88,166,255,0.04); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .cockpit-grid { grid-template-columns: 1fr; }
+  .cockpit-grid > :nth-child(n) { grid-column: 1; }
+  .bottom-inner { grid-template-columns: 1fr; }
+}
+
+@keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.4);opacity:0.6} }
+@keyframes flash { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@media (prefers-reduced-motion: reduce) {
+  .agent-dot.active, .agent-dot.error { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="spec-header">
+  <h1>Fleet Cockpit Layout Design Spec</h1>
+  <p>Goal #1 - Designer | Round topic: Closed-Loop Autonomy &amp; Fleet Cockpit | Date: 2026-11-23<br>
+  Grid: 2&#215;3 (bottom row spans full width) | Viewport target: 960px min, responsive to 768px</p>
+</div>
+
+<!-- ===== LIVE PROTOTYPE ===== -->
+<div class="cockpit-grid">
+
+  <!-- P1: HEALTH SCORE GAUGE (top-left, highest priority) -->
+  <div class="panel annotation" style="position:relative;">
+    <span class="prio-badge">P1</span>
+    <div class="panel-title">Fleet Health Score</div>
+    <div class="health-gauge">
+      <svg class="gauge-svg" viewBox="0 0 120 70" role="img" aria-label="Health score 82 out of 100">
+        <path class="gauge-track" d="M 10 65 A 50 50 0 0 1 110 65"/>
+        <path class="gauge-fill" d="M 10 65 A 50 50 0 0 1 110 65" stroke="var(--ok)" stroke-dasharray="157" stroke-dashoffset="28.3"/>
+        <text class="gauge-score" x="60" y="52" fill="var(--ok)">82</text>
+        <text class="gauge-label" x="60" y="66">/ 100</text>
+      </svg>
+      <div class="health-meta">
+        <div class="health-delta up">&#9650; +4 vs last cycle</div>
+        <div class="health-trend">
+          <svg class="trend-sparkline" viewBox="0 0 120 32" role="img" aria-label="7-day health trend">
+            <path class="trend-area" d="M0,24 L15,22 L30,20 L45,18 L60,19 L75,14 L90,12 L105,10 L120,8 L120,32 L0,32 Z"/>
+            <path class="trend-path" d="M0,24 L15,22 L30,20 L45,18 L60,19 L75,14 L90,12 L105,10 L120,8"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- P2: AGENT STATUS GRID (top-right) -->
+  <div class="panel annotation" style="position:relative;">
+    <span class="prio-badge">P2</span>
+    <div class="panel-title">Agent Status</div>
+    <div class="agent-grid">
+      <div class="agent-card">
+        <div class="agent-card-top"><span class="agent-dot active"></span><span class="agent-name">Orchestrator</span></div>
+        <div class="agent-goal">Cycle Auto-Planner</div>
+        <div class="agent-context"><div class="agent-context-fill" style="width:45%;background:var(--acc)"></div></div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-top"><span class="agent-dot loading"></span><span class="agent-name">Builder</span></div>
+        <div class="agent-goal">Cockpit Frontend</div>
+        <div class="agent-context"><div class="agent-context-fill" style="width:62%;background:var(--warn)"></div></div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-top"><span class="agent-dot active"></span><span class="agent-name">Designer</span></div>
+        <div class="agent-goal">Cockpit Layout Design</div>
+        <div class="agent-context"><div class="agent-context-fill" style="width:38%;background:var(--acc)"></div></div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card-top"><span class="agent-dot idle"></span><span class="agent-name">Verifier</span></div>
+        <div class="agent-goal">&mdash;</div>
+        <div class="agent-context"><div class="agent-context-fill" style="width:12%;background:var(--dim)"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- P3: HOST RESOURCES (mid-left) -->
+  <div class="panel annotation" style="position:relative;">
+    <span class="prio-badge">P3</span>
+    <div class="panel-title">Host Resources</div>
+    <div class="host-list">
+      <div class="host-row"><span class="host-name">White</span><div class="resource-bar"><div class="resource-fill ok" style="width:54%"></div></div><span class="resource-pct">54%</span></div>
+      <div class="host-row"><span class="host-name">Black</span><div class="resource-bar"><div class="resource-fill warn" style="width:78%"></div></div><span class="resource-pct">78%</span></div>
+      <div class="host-row"><span class="host-name">Red</span><div class="resource-bar"><div class="resource-fill ok" style="width:32%"></div></div><span class="resource-pct">32%</span></div>
+      <div class="host-row"><span class="host-name">Blue</span><div class="resource-bar"><div class="resource-fill crit" style="width:91%"></div></div><span class="resource-pct">91%</span></div>
+    </div>
+  </div>
+
+  <!-- P4: GOAL PROGRESS (mid-right) -->
+  <div class="panel annotation" style="position:relative;">
+    <span class="prio-badge">P4</span>
+    <div class="panel-title">Cycle Progress</div>
+    <div class="goal-progress">
+      <div>
+        <div class="cycle-bar-track"><div class="cycle-bar-fill" style="width:27%"></div></div>
+        <div class="cycle-meta"><span>Cycle 8</span><span>22/80 goals (27.5%)</span></div>
+      </div>
+      <ul class="goal-items">
+        <li><span>WCAG 2.1 AA Audit</span><span class="goal-status done">&#10003; done</span></li>
+        <li><span>Fleet Status Panel</span><span class="goal-status done">&#10003; done</span></li>
+        <li><span>Error State Design</span><span class="goal-status done">&#10003; done</span></li>
+        <li><span>Cockpit Layout Design</span><span class="goal-status active">&#9679; active</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- P5+P6: BOTTOM ROW - DECISIONS + RISKS (full width) -->
+  <div class="panel bottom-panel annotation" style="position:relative;">
+    <span class="prio-badge">P5+P6</span>
+    <div class="bottom-inner">
+      <!-- Decision Timeline -->
+      <div>
+        <div class="panel-title">Recent Decisions</div>
+        <div class="timeline" role="list" aria-label="Decision timeline">
+          <div class="timeline-node success" role="listitem">
+            <div class="tl-title">Model swap: Scribe &#8594; White local</div>
+            <div class="tl-meta">2026-11-23 14:32 &#183; Orchestrator &#183; success</div>
+            <span class="tl-expand">&#9662; detail</span>
+          </div>
+          <div class="timeline-node pending" role="listitem">
+            <div class="tl-title">Cockpit endpoint deployment</div>
+            <div class="tl-meta">2026-11-23 14:15 &#183; Builder &#183; pending verify</div>
+          </div>
+          <div class="timeline-node failed" role="listitem">
+            <div class="tl-title">GPU OOM recovery attempt (Blue)</div>
+            <div class="tl-meta">2026-11-23 13:58 &#183; Mechanic &#183; failed: VRAM not freed</div>
+          </div>
+        </div>
+      </div>
+      <!-- Risk Panel -->
+      <div>
+        <div class="panel-title">Active Risks</div>
+        <ul class="risk-list" aria-label="Active risks">
+          <li class="risk-item critical"><span class="risk-severity">CRIT</span><span>Blue host VRAM at 91% - OOM risk within 30min</span></li>
+          <li class="risk-item warning"><span class="risk-severity">WARN</span><span>Researcher seat unreachable &gt;2h</span></li>
+          <li class="risk-item info"><span class="risk-severity">INFO</span><span>Cockpit auto-refresh at 30s - verify latency &lt;100ms</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== SPECIFICATION TABLES ===== -->
+<div class="spec-section">
+<h2>Grid Structure &amp; Panel Priority</h2>
+<table>
+<tr><th>Priority</th><th>Panel</th><th>Grid Position</th><th>Rationale</th></tr>
+<tr><td>P1</td><td>Health Score Gauge</td><td>Row 1, Col 1 (top-left)</td><td>Fleets-first: overall state is the single most important signal. F-pattern reading starts top-left.</td></tr>
+<tr><td>P2</td><td>Agent Status Grid</td><td>Row 1, Col 2 (top-right)</td><td>Who is doing what right now - second-highest operational value.</td></tr>
+<tr><td>P3</td><td>Host Resources</td><td>Row 2, Col 1 (mid-left)</td><td>Infrastructure capacity - needed before P4 to understand constraints on goal progress.</td></tr>
+<tr><td>P4</td><td>Goal Progress</td><td>Row 2, Col 2 (mid-right)</td><td>Cycle completion state - contextualizes the health score above.</td></tr>
+<tr><td>P5+P6</td><td>Decision Timeline + Risks</td><td>Row 3, full width (bottom)</td><td>Historical/audit data - lowest urgency, scanned last. Split 50/50 for decisions vs risks.</td></tr>
+</table>
+</div>
+
+<div class="spec-section">
+<h2>Spacing &amp; Typography Tokens</h2>
+<table>
+<tr><th>Token</th><th>Value</th><th>Usage</th></tr>
+<tr><td>--sp-4 / --sp-8 / --sp-12 / --sp-16 / --sp-24</td><td>4/8/12/16/24px</td><td>Grid gap=12, panel padding=16, card internal=8, spec section margin=24</td></tr>
+<tr><td>--fs-11</td><td>11px</td><td>Secondary labels, meta text, timeline timestamps</td></tr>
+<tr><td>--fs-12</td><td>12px</td><td>Panel titles (uppercase), agent names, host names, goal items</td></tr>
+<tr><td>--fs-13</td><td>13px</td><td>Body text in spec docs</td></tr>
+<tr><td>--fs-14</td><td>14px</td><td>Delta display, risk item text</td></tr>
+<tr><td>--fs-28</td><td>28px bold</td><td>Health score number (gauge center)</td></tr>
+<tr><td>--br-md / --br-lg</td><td>6px / 10px</td><td>Cards use md; panels use lg</td></tr>
+</table>
+</div>
+
+<div class="spec-section">
+<h2>Color Thresholds (Health Score + Resource Bars)</h2>
+<table>
+<tr><th>Range</th><th>Token</th><th>Hex (dark)</th><th>WCAG Contrast on --panel</th></tr>
+<tr><td>&#8805;70 (healthy)</td><td>var(--ok)</td><td>#3fb950</td><td>4.6:1 &#10003;</td></tr>
+<tr><td>40&#8211;69 (caution)</td><td>var(--warn)</td><td>#d29922</td><td>5.2:1 &#10003;</td></tr>
+<tr><td>&lt;40 (critical)</td><td>var(--err)</td><td>#f85149</td><td>4.8:1 &#10003;</td></tr>
+</table>
+<p style="font-size:var(--fs-12);color:var(--dim);margin-top:var(--sp-8)">Resource bars use gradient fills: ok&#8594;acc (0-69%), warn&#8594;err (70-84%), solid err (&#8805;85%). Gauge arc uses solid color matching the score band.</p>
+</div>
+
+<div class="spec-section">
+<h2>Gauge Specification (Health Score)</h2>
+<table>
+<tr><th>Property</th><th>Value</th></tr>
+<tr><td>Type</td><td>Half-circle arc (180&#176; sweep)</td></tr>
+<tr><td>SVG viewBox</td><td>0 0 120 70</td></tr>
+<tr><td>Arc path</td><td>M 10 65 A 50 50 0 0 1 110 65 (radius 50, center at 60,65)</td></tr>
+<tr><td>Stroke width</td><td>8px, stroke-linecap: round</td></tr>
+<tr><td>Circumference (half)</td><td>&#960; &#215; 50 = 157.08</td></tr>
+<tr><td>dashoffset formula</td><td>157.08 &#215; (1 - score/100)</td></tr>
+<tr><td>Animation</td><td>stroke-dashoffset 600ms ease on value change</td></tr>
+<tr><td>Trend sparkline</td><td>7 data points, 32px tall, area fill at 10% opacity + stroke path</td></tr>
+<tr><td>Delta display</td><td>&#9650;/&#9660; arrow + signed value, colored ok/err</td></tr>
+</table>
+</div>
+
+<div class="spec-section">
+<h2>Decision Timeline Specification</h2>
+<table>
+<tr><th>Property</th><th>Value</th></tr>
+<tr><td>Structure</td><td>Vertical timeline: left rail (2px line) + nodes (10px circles)</td></tr>
+<tr><td>Node colors</td><td>success=var(--ok), pending=var(--warn), failed=var(--err)</td></tr>
+<tr><td>Card content</td><td>Title (fs-12, weight 500) + meta line (fs-11, dim: date &#183; agent &#183; outcome)</td></tr>
+<tr><td>Expand interaction</td><td>"&#9662; detail" toggle reveals full decision JSON in a collapsible block</td></tr>
+<tr><td>Max visible nodes</td><td>5 (scrollable container, max-height: 200px)</td></tr>
+<tr><td>ARIA</td><td>role="list" on timeline, role="listitem" on each node</td></tr>
+</table>
+</div>
+
+<div class="spec-section">
+<h2>Risk Panel Specification</h2>
+<table>
+<tr><th>Severity</th><th>Left border</th><th>Background tint</th><th>Label color</th></tr>
+<tr><td>CRITICAL</td><td>3px solid var(--err)</td><td>rgba(248,81,73,0.1)</td><td>var(--err)</td></tr>
+<tr><td>WARNING</td><td>3px solid var(--warn)</td><td>rgba(210,153,34,0.1)</td><td>var(--warn)</td></tr>
+<tr><td>INFO</td><td>3px solid var(--acc)</td><td>rgba(88,166,255,0.1)</td><td>var(--acc)</td></tr>
+</table>
+</div>
+
+<div class="spec-section">
+<h2>Responsive Behavior</h2>
+<table>
+<tr><th>Viewport</th><th>Grid</th><th>Notes</th></tr>
+<tr><td>&#8805;960px</td><td>2&#215;3 (bottom spans)</td><td>Full layout as shown above</td></tr>
+<tr><td>768&#8211;959px</td><td>2 columns, panels stack in priority order</td><td>Agent grid collapses to 1 col within its panel</td></tr>
+<tr><td>&lt;768px</td><td>Single column</td><td>All panels full-width; bottom-inner stacks vertically</td></tr>
+</table>
+</div>
+
+<div class="spec-section">
+<h2>Animation Budget</h2>
+<table>
+<tr><th>Element</th><th>Property</th><th>Duration</th><th>Easing</th><th>Reduced-motion</th></tr>
+<tr><td>Gauge arc</td><td>stroke-dashoffset</td><td>600ms</td><td>ease</td><td>snaps to final value</td></tr>
+<tr><td>Resource bar fill</td><td>width</td><td>300ms</td><td>ease</td><td>no transition</td></tr>
+<tr><td>Agent dot (active)</td><td>scale + opacity</td><td>2s infinite</td><td>ease-in-out</td><td>static, full opacity</td></tr>
+<tr><td>Agent dot (error)</td><td>opacity</td><td>1.5s infinite</td><td>linear</td><td>solid red, no flash</td></tr>
+<tr><td>Cycle progress bar</td><td>width</td><td>600ms</td><td>ease</td><td>no transition</td></tr>
+</table>
+<p style="font-size:var(--fs-12);color:var(--dim);margin-top:var(--sp-8)">All animations use transform/opacity/stroke-dashoffset only (no layout shift). Max single-animation duration: 600ms. Infinite loops capped at 2s cycle.</p>
+</div>
+
+<div class="spec-section">
+<h2>Data Contract (for Builder implementation)</h2>
+<table>
+<tr><th>Panel</th><th>API Source</th><th>Refresh Interval</th><th>Fallback on Error</th></tr>
+<tr><td>Health Score</td><td>/api/fleet/cockpit &#8594; .health_score, .trend[7]</td><td>30s</td><td>Show last-known value + "stale" badge</td></tr>
+<tr><td>Agent Grid</td><td>/api/fleet/cockpit &#8594; .agents[]</td><td>30s</td><td>errorState component (existing)</td></tr>
+<tr><td>Host Resources</td><td>/api/fleet/cockpit &#8594; .hosts[]</td><td>30s</td><td>errorState component</td></tr>
+<tr><td>Goal Progress</td><td>/api/goals</td><td>60s (slower, less volatile)</td><td>Static "loading" skeleton</td></tr>
+<tr><td>Decision Timeline</td><td>/api/decisions?limit=5</td><td>60s</td><td>emptyState component</td></tr>
+<tr><td>Risks</td><td>/api/fleet/cockpit &#8594; .risks[]</td><td>30s</td><td>emptyState ("No active risks")</td></tr>
+</table>
+</div>
+
+</body>
+</html>

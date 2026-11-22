@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleet Topology - Live Data Flow</title>
+<style>
+:root {
+  --panel-bg: #1a1d23;
+  --panel-border: #2a2e36;
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-faint: #5f6368;
+  --ok: #34a853;
+  --accent: #4285f4;
+  --radius-md: 8px;
+}
+
+.topology-panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.topology-panel__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* --- SVG Canvas --- */
+.topology-svg {
+  width: 100%;
+  height: 240px;
+}
+
+/* Nodes (agents left, hosts right) */
+.node {
+  fill: var(--panel-border);
+  stroke: var(--text-faint);
+  stroke-width: 1.5;
+  rx: 6;
+}
+
+.node--agent { stroke: var(--accent); }
+.node--host  { stroke: var(--ok); }
+
+.node-label {
+  font-size: 10px;
+  fill: var(--text-primary);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+/* --- Connection lines --- */
+.flow-line {
+  fill: none;
+  stroke: var(--accent);
+  opacity: 0.4;
+}
+
+/* Animated dash for active connections */
+.flow-line--active {
+  stroke-dasharray: 6 4;
+  animation: flowDash 1.2s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes flowDash {
+  to { stroke-dashoffset: -10; }
+}
+
+/* Line thickness encodes message rate: thin=low, thick=high */
+.flow-line--rate-low    { stroke-width: 1; }
+.flow-line--rate-med    { stroke-width: 2.5; }
+.flow-line--rate-high   { stroke-width: 4; }
+
+/* --- Legend --- */
+.topology-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 10px;
+  color: var(--text-faint);
+}
+
+.legend-line {
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0.5;
+}
+
+/* --- Reduced motion: stop animation, keep static lines --- */
+@media (prefers-reduced-motion: reduce) {
+  .flow-line--active {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}
+</style>
+</head>
+<body style="background:#12141a;padding:40px;font-family:system-ui,sans-serif;">
+
+<div class="topology-panel" role="img" aria-label="Fleet topology showing active data flows between agents and hosts">
+  <div class="topology-panel__label">Fleet Topology — Live</div>
+  
+  <svg class="topology-svg" viewBox="0 0 600 240" id="topo-svg">
+    <!-- Agents (left column) -->
+    <g id="agents-col"></g>
+    
+    <!-- Hosts (right column) -->
+    <g id="hosts-col"></g>
+    
+    <!-- Connections -->
+    <g id="connections"></g>
+  </svg>
+  
+  <div class="topology-legend">
+    <span><span class="legend-line" style="height:1px"></span> Low rate</span>
+    <span><span class="legend-line" style="height:2.5px"></span> Med rate</span>
+    <span><span class="legend-line" style="height:4px"></span> High rate</span>
+    <span style="margin-left:auto;color:var(--text-faint)">&#9679; active flow (animated)</span>
+  </div>
+</div>
+
+<script>
+/**
+ * Fleet Topology Live Update - Cockpit Component
+ * 
+ * API:
+ *   renderTopology(container, { agents, hosts, connections })
+ *   - agents: [{ name, x, y }] — left column positions
+ *   - hosts:  [{ name, x, y }] — right column positions
+ *   - connections: [{ from, to, rate, active }] — from=agent idx, to=host idx
+ *     rate: 'low' | 'med' | 'high' (controls stroke-width)
+ *     active: boolean (enables dash animation)
+ */
+
+function renderTopology(container, data) {
+  const svg = container.querySelector('#topo-svg');
+  if (!svg) return;
+  
+  const agentsG = svg.querySelector('#agents-col');
+  const hostsG  = svg.querySelector('#hosts-col');
+  const connG   = svg.querySelector('#connections');
+  
+  // Clear
+  agentsG.innerHTML = '';
+  hostsG.innerHTML = '';
+  connG.innerHTML = '';
+  
+  const W = 60, H = 32; // node dimensions
+  
+  // Render agents (left)
+  data.agents.forEach((a, i) => {
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.innerHTML = `
+      <rect class="node node--agent" x="${a.x}" y="${a.y}" width="${W}" height="${H}" rx="6"/>
+      <text class="node-label" x="${a.x + W/2}" y="${a.y + H/2}">${a.name}</text>
+    `;
+    agentsG.appendChild(g);
+  });
+  
+  // Render hosts (right)
+  data.hosts.forEach((h, i) => {
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.innerHTML = `
+      <rect class="node node--host" x="${h.x}" y="${h.y}" width="${W}" height="${H}" rx="6"/>
+      <text class="node-label" x="${h.x + W/2}" y="${h.y + H/2}">${h.name}</text>
+    `;
+    hostsG.appendChild(g);
+  });
+  
+  // Render connections (bezier curves)
+  data.connections.forEach(c => {
+    const from = data.agents[c.from];
+    const to   = data.hosts[c.to];
+    
+    const x1 = from.x + W, y1 = from.y + H/2;
+    const x2 = to.x,       y2 = to.y + H/2;
+    const cx = (x1 + x2) / 2;
+    
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    let cls = `flow-line flow-line--rate-${c.rate}`;
+    if (c.active) cls += ' flow-line--active';
+    path.setAttribute('class', cls);
+    path.setAttribute('d', `M${x1},${y1} C${cx},${y1} ${cx},${y2} ${x2},${y2}`);
+    connG.appendChild(path);
+  });
+}
+
+// --- Demo data: 4 agents, 4 hosts, 6 connections ---
+const demoData = {
+  agents: [
+    { name: 'Orch', x: 20, y: 16 },
+    { name: 'Build', x: 20, y: 68 },
+    { name: 'Verify', x: 20, y: 120 },
+    { name: 'Design', x: 20, y: 172 },
+  ],
+  hosts: [
+    { name: 'White', x: 520, y: 16 },
+    { name: 'Black', x: 520, y: 68 },
+    { name: 'Blue',  x: 520, y: 120 },
+    { name: 'Green', x: 520, y: 172 },
+  ],
+  connections: [
+    { from: 0, to: 0, rate: 'high', active: true },   // Orch -> White (active)
+    { from: 1, to: 1, rate: 'med',  active: true },   // Build -> Black (active)
+    { from: 2, to: 2, rate: 'low',  active: false },  // Verify -> Blue (idle)
+    { from: 3, to: 0, rate: 'med',  active: true },   // Design -> White (active)
+    { from: 1, to: 2, rate: 'low',  active: false },  // Build -> Blue (idle)
+    { from: 0, to: 3, rate: 'high', active: true },   // Orch -> Green (active)
+  ]
+};
+
+renderTopology(document.querySelector('.topology-panel'), demoData);
+console.log('%c[fleet-topology] 4 agents + 4 hosts + 6 connections rendered', 'color:#34a853');
+console.log('Active flows animated (stroke-dashoffset), reduced-motion disables animation');
+</script>
+</body>
+</html>

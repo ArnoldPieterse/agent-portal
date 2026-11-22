@@ -1,0 +1,307 @@
+/* ============================================================
+   Fleet Cockpit - Health Score Visualization Component
+   memory/designer/health-score-component.html
+   Self-contained demo with embedded CSS+JS for Builder to integrate
+   ============================================================ */
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health Score Component - Fleet Cockpit</title>
+<style>
+/* --- Design Tokens (match ui/tokens.css) --- */
+:root {
+  --panel-bg: #1a1d23;
+  --panel-border: #2a2e36;
+  --text-primary: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-faint: #5f6368;
+  --ok: #34a853;
+  --warn: #fbbc04;
+  --err: #ea4335;
+  --accent: #4285f4;
+  --radius-md: 8px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --font-mono: 'SF Mono', 'Cascadia Code', monospace;
+}
+
+/* --- Gauge Container --- */
+.health-gauge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: var(--radius-md);
+  min-width: 200px;
+  max-width: 280px;
+}
+
+.health-gauge__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* --- Half-Circle Gauge --- */
+.gauge {
+  position: relative;
+  width: 160px;
+  height: 84px; /* half of 160 + stroke */
+  overflow: visible;
+}
+
+.gauge__track,
+.gauge__fill {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.gauge__track {
+  stroke: var(--panel-border);
+}
+
+.gauge__fill {
+  transition: stroke-dashoffset 350ms ease, stroke 350ms ease;
+}
+
+/* Color bands based on score */
+.gauge__fill[data-band="ok"]   { stroke: var(--ok); }
+.gauge__fill[data-band="warn"] { stroke: var(--warn); }
+.gauge__fill[data-band="err"]  { stroke: var(--err); }
+
+.gauge__value {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+.gauge__value-unit {
+  font-size: 14px;
+  color: var(--text-faint);
+  font-weight: 400;
+}
+
+/* --- Delta Indicator --- */
+.health-gauge__delta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: var(--spacing-sm);
+  font-size: 13px;
+  font-family: var(--font-mono);
+}
+
+.health-gauge__delta--up   { color: var(--ok); }
+.health-gauge__delta--down { color: var(--err); }
+.health-gauge__delta--flat { color: var(--text-faint); }
+
+.health-gauge__delta-label {
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+/* --- Sparkline (7-day trend) --- */
+.health-gauge__sparkline {
+  margin-top: var(--spacing-sm);
+  width: 120px;
+  height: 32px;
+}
+
+.sparkline__path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sparkline__dot {
+  fill: var(--accent);
+}
+
+/* --- Threshold Legend --- */
+.health-gauge__legend {
+  display: flex;
+  gap: 12px;
+  margin-top: var(--spacing-sm);
+  font-size: 10px;
+  color: var(--text-faint);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-dot--ok   { background: var(--ok); }
+.legend-dot--warn { background: var(--warn); }
+.legend-dot--err  { background: var(--err); }
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  .gauge__fill {
+    transition: none;
+  }
+}
+
+/* --- Accessibility --- */
+.health-gauge[aria-label] {
+  /* Container has aria-label for screen readers */
+}
+</style>
+</head>
+<body style="background:#12141a;display:flex;justify-content:center;padding:40px;font-family:system-ui,sans-serif;">
+
+<div class="health-gauge" role="meter" aria-label="Fleet health score" aria-valuemin="0" aria-valuemax="100" id="gauge-container">
+  <div class="health-gauge__label">Fleet Health</div>
+  
+  <!-- Half-circle SVG gauge -->
+  <div class="gauge">
+    <svg width="160" height="84" viewBox="0 0 160 84" aria-hidden="true">
+      <!-- Track (background arc) -->
+      <path class="gauge__track" d="M 12 80 A 68 68 0 0 1 148 80" />
+      <!-- Fill (foreground arc) - dashoffset controlled by JS -->
+      <path class="gauge__fill" id="gauge-fill" data-band="ok" 
+            d="M 12 80 A 68 68 0 0 1 148 80" />
+    </svg>
+    <div class="gauge__value">
+      <span id="gauge-number">82</span><span class="gauge__value-unit">/100</span>
+    </div>
+  </div>
+
+  <!-- Delta vs last cycle -->
+  <div class="health-gauge__delta health-gauge__delta--up" id="delta-row">
+    <span aria-hidden="true">&#9650;</span>
+    <span id="delta-value">+4</span>
+    <span class="health-gauge__delta-label">vs last cycle</span>
+  </div>
+
+  <!-- 7-day sparkline -->
+  <svg class="health-gauge__sparkline" viewBox="0 0 120 32" aria-label="7-day trend: improving">
+    <path class="sparkline__path" id="sparkline-path" d="" />
+    <circle class="sparkline__dot" id="sparkline-end" r="3" cx="0" cy="0" />
+  </svg>
+
+  <!-- Threshold legend -->
+  <div class="health-gauge__legend">
+    <span class="legend-item"><span class="legend-dot legend-dot--ok"></span>&gt;70</span>
+    <span class="legend-item"><span class="legend-dot legend-dot--warn"></span>40-70</span>
+    <span class="legend-item"><span class="legend-dot legend-dot--err"></span>&lt;40</span>
+  </div>
+</div>
+
+<script>
+/**
+ * Health Score Gauge - Fleet Cockpit Component
+ * 
+ * API:
+ *   updateHealthGauge(container, { score, prevScore, trend })
+ *   - score: 0-100 current health score
+ *   - prevScore: 0-100 previous cycle score (for delta)
+ *   - trend: array of 7 numbers (oldest first) for sparkline
+ */
+
+const ARC_LENGTH = 213.6; // pi * r where r=68, half circle
+
+function getBand(score) {
+  if (score > 70) return 'ok';
+  if (score >= 40) return 'warn';
+  return 'err';
+}
+
+function updateHealthGauge(container, data) {
+  const { score, prevScore = 0, trend = [] } = data;
+  
+  // 1. Update gauge arc (stroke-dashoffset technique)
+  const fill = container.querySelector('.gauge__fill');
+  const offset = ARC_LENGTH * (1 - score / 100);
+  fill.style.strokeDasharray = ARC_LENGTH;
+  fill.style.strokeDashoffset = offset;
+  fill.setAttribute('data-band', getBand(score));
+  
+  // 2. Update numeric value
+  container.querySelector('#gauge-number').textContent = Math.round(score);
+  
+  // 3. Update ARIA
+  const el = container.closest('[role="meter"]') || container;
+  el.setAttribute('aria-valuenow', Math.round(score));
+  
+  // 4. Delta indicator
+  const delta = score - prevScore;
+  const deltaRow = container.querySelector('#delta-row');
+  const deltaVal = container.querySelector('#delta-value');
+  const arrow = deltaRow.querySelector('span[aria-hidden]');
+  
+  if (delta > 0) {
+    deltaRow.className = 'health-gauge__delta health-gauge__delta--up';
+    arrow.innerHTML = '&#9650;';
+    deltaVal.textContent = '+' + Math.round(delta);
+  } else if (delta < 0) {
+    deltaRow.className = 'health-gauge__delta health-gauge__delta--down';
+    arrow.innerHTML = '&#9660;';
+    deltaVal.textContent = Math.round(delta);
+  } else {
+    deltaRow.className = 'health-gauge__delta health-gauge__delta--flat';
+    arrow.innerHTML = '&#8212;';
+    deltaVal.textContent = '0';
+  }
+  
+  // 5. Sparkline (7 points mapped to 120x32 viewBox)
+  if (trend.length >= 2) {
+    const w = 120, h = 32, pad = 4;
+    const minV = Math.min(...trend);
+    const maxV = Math.max(...trend);
+    const range = maxV - minV || 1;
+    
+    const points = trend.map((v, i) => {
+      const x = pad + (i / (trend.length - 1)) * (w - 2 * pad);
+      const y = h - pad - ((v - minV) / range) * (h - 2 * pad);
+      return `${x},${y}`;
+    });
+    
+    container.querySelector('#sparkline-path').setAttribute('d', 'M' + points.join(' L'));
+    
+    // Position end dot at last point
+    const last = points[points.length - 1].split(',');
+    const dot = container.querySelector('#sparkline-end');
+    dot.setAttribute('cx', last[0]);
+    dot.setAttribute('cy', last[1]);
+  }
+}
+
+// --- Demo: Initialize with sample data ---
+const demoData = {
+  score: 82,
+  prevScore: 78,
+  trend: [65, 70, 72, 74, 78, 80, 82] // 7-day trend (oldest to newest)
+};
+
+updateHealthGauge(document.getElementById('gauge-container'), demoData);
+
+// --- Demo: Show all 3 states ---
+console.log('%c[health-gauge] Component initialized', 'color:#34a853');
+console.log('Score: 82 (ok band), Delta: +4, Trend: improving');
+console.log('API: updateHealthGauge(container, { score, prevScore, trend })');
+</script>
+</body>
+</html>
