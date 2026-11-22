@@ -11,7 +11,7 @@ let selectedId=null, mode="solo", busy=false;
 let sessionId=null; // current run's activity-timeline session (one per human prompt)
 let history=[]; // {speaker, content}
 
-async function api(path, opts){ const ctl=new AbortController(); const _to=setTimeout(()=>ctl.abort(),6000); const r=await fetch(path, {...opts, signal:ctl.signal}).finally(()=>clearTimeout(_to)); // 2026-11-22: 6s cap so a hung Studio endpoint can't freeze refresh() return r.json(); }
+async function api(path, opts){ const ctl=new AbortController(); const _to=setTimeout(()=>ctl.abort(),6000); const r=await fetch(path, {...opts, signal:ctl.signal}).finally(()=>clearTimeout(_to)); return r.json(); } // 2026-11-22: 6s abort cap on api() so a hung Studio endpoint can't freeze refresh()
 const jpost=(p,b)=>api(p,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});
 const jput =(p,b)=>api(p,{method:"PUT" ,headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});
 
