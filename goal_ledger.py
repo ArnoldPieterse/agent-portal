@@ -83,8 +83,12 @@ def _next_number(path):
         with open(path, encoding="utf-8", errors="replace") as f:
             for line in f:
                 m = CB_RE.match(line) or NUM_RE.match(line)
-                if m and m.group(1):
-                    n = max(n, int(m.group(1)))
+                if m:
+                    # 2026-11-23 FIX: for checkbox lines group(1) is the [ ]/x state,
+                    # the number is group(2); for numbered lines it is group(1).
+                    num = m.group(2) if m.re is CB_RE else m.group(1)
+                    if num:
+                        n = max(n, int(num))
     return n + 1
 
 def _agent_path(agent):

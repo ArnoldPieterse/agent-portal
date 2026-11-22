@@ -910,5 +910,41 @@
 "text": "**Cockpit Performance Benchmark** - `python memory/verifier/cockpit_perf.py`: measure /api/fleet/cockpit response time under: (a) normal loa",
 "agent": "verifier",
 "at": "2026-11-23"
+},
+{
+"sig": "6d718a477cfa8197",
+"text": "11 (verified) 2026-11-23 - selftest 20/20 PASS; per-host fleet data added (hosts field, 4 hosts via /api/fleet/cockpit); schtask FleetStateC",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "7a9845b167cd4b4f",
+"text": "12 (verified) 2026-11-23 - selftest 17/17 PASS; watch command added (detect->recover loop); schtask FleetOomWatch registered every 5 min (ev",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "926fe0ac949e9c1b",
+"text": "13 (verified) 2026-11-23 - selftest 9/9 PASS; idle-detection logic verified (forced + non-forced); schtask FleetMaintenanceWindow registered",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "637afd901aa87883",
+"text": "14 (verified) 2026-11-23 - selftest 8/8 PASS; runbook automation for top-5 manual steps with dry-run safety (cycle-2 goal 4) (evidence:  \u2014 r",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "8db4de2cbb25dc33",
+"text": "15 (verified) 2026-11-23 - selftest 10/10 PASS; schtask PortalSelfHeal registered every 5 min; real bug found+fixed: health probe hit nonexi",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "24d4f651de6d6f65",
+"text": "16 (verified) 2026-11-23 - selftest 20/20 PASS; schtask FleetStateCollector live (fleet-metrics.jsonl growing); per-host fleet view added to",
+"agent": "mechanic",
+"at": "2026-11-23"
 }
 ]

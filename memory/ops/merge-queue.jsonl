@@ -263,3 +263,6 @@
 {"ts": "2026-11-23 08:47:08", "file": "agent_portal.py", "sha": "dcf82b2653", "size": 300013, "snapshot": "memory/ops/merge-queue/agent_portal.py.dcf82b2653"}
 {"ts": "2026-11-23 08:49:07", "file": "index.html", "sha": "374bd34dde", "size": 14297, "snapshot": "memory/ops/merge-queue/index.html.374bd34dde"}
 {"ts": "2026-11-23 08:52:08", "file": "agent_portal.py", "sha": "4dc0eca68a", "size": 300125, "snapshot": "memory/ops/merge-queue/agent_portal.py.4dc0eca68a"}
+{"ts": "2026-11-23 09:18:27", "file": "agent_portal.py", "sha": "af43711497", "size": 300354, "snapshot": "memory/ops/merge-queue/agent_portal.py.af43711497"}
+{"ts": "2026-11-23 09:18:27", "file": "recover_all.py", "sha": "2ea004d8e3", "size": 8952, "snapshot": "memory/ops/merge-queue/recover_all.py.2ea004d8e3"}
+{"ts": "2026-11-23 09:19:42", "file": "goal_ledger.py", "sha": "ff3d95dd64", "size": 9893, "snapshot": "memory/ops/merge-queue/goal_ledger.py.ff3d95dd64"}

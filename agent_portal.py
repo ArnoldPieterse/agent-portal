@@ -5339,6 +5339,9 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(200, self._proxy_get("/v1/models"))
         elif p == "/api/status":
             return self._json(200, self._proxy_get("/api/inference/status"))
+        elif p == "/api/health":
+            # 2026-11-23 (Mechanic goal 10): lightweight liveness probe for portal_heal.py
+            self._json(200, {"ok": True, "service": "agent_portal", "uptime_s": round(time.time() - PORTAL_START)})
         elif p == "/api/fleet":
             # Fleet Status panel (2026-11-13): per-host models + busy/idle/unknown.
             # On-demand probes only (no background timer); dead host => unknown, no hang.

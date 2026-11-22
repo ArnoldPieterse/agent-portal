@@ -3,3 +3,4 @@
 {"event": "restart_skipped_cooldown", "elapsed_s": 0, "timestamp": "2026-11-22T23:10:43Z"}
 {"event": "restart_attempted", "success": false, "duration_s": 1.2, "restarts_1h": 2, "timestamp": "2026-11-22T23:15:41Z"}
 {"event": "restart_skipped_cooldown", "elapsed_s": 4, "timestamp": "2026-11-22T23:15:45Z"}
+{"event": "health_check_ok", "response_ms": 10.1, "timestamp": "2026-11-22T23:17:53Z"}
