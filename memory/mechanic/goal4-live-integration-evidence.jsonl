@@ -9,3 +9,14 @@
 {"ts": "2026-11-20T14:35:09.380914+00:00", "test": "M9: post-recovery - all 4 hosts UP again", "result": "PASS", "detail": "{'white': {'state': 'up'}, 'pale': {'state': 'up'}, 'black': {'state': 'up'}, 'red': {'state': 'up'}}"}
 {"ts": "2026-11-20T14:35:09.380917+00:00", "test": "M10: constants match spec (timeout=5s, threshold=3, cooldown=60s)", "result": "PASS", "detail": "TIMEOUT=5 CB_THRESHOLD=3 CB_COOLDOWN=60"}
 {"ts": "2026-11-20T14:35:09.382100+00:00", "summary": "10 PASS / 0 FAIL", "mode": "mock", "verdict": "PASS"}
+{"ts": "2026-11-22T14:28:11.948976+00:00", "test": "M1: all hosts UP (healthy baseline)", "result": "PASS", "detail": "{'white': {'state': 'up'}, 'pale': {'state': 'up'}, 'black': {'state': 'up'}, 'red': {'state': 'up'}}"}
+{"ts": "2026-11-22T14:28:11.948984+00:00", "test": "M2: first failure on 'black' - circuit NOT yet open", "result": "PASS", "detail": "fail_count=1"}
+{"ts": "2026-11-22T14:28:11.948989+00:00", "test": "M3: second failure on 'black' - circuit still NOT open", "result": "PASS", "detail": "fail_count=2"}
+{"ts": "2026-11-22T14:28:11.948995+00:00", "test": "M4: third failure on 'black' - circuit OPENS", "result": "PASS", "detail": "state=down reason=circuit_open_after_3_failures"}
+{"ts": "2026-11-22T14:28:11.949005+00:00", "test": "M5: graceful degradation - 3/4 hosts UP while 'black' is DOWN", "result": "PASS", "detail": "response_keys=['white', 'pale', 'black', 'red'] black_state=down"}
+{"ts": "2026-11-22T14:28:11.949011+00:00", "test": "M6: circuit-open host skipped (no probe during cooldown)", "result": "PASS", "detail": "reason=circuit_open"}
+{"ts": "2026-11-22T14:28:11.949018+00:00", "test": "M7: other hosts unaffected by 'black' circuit", "result": "PASS", "detail": "states={h: (hosts[h].fail_count, hosts[h].circuit_open) for h in HOSTS}"}
+{"ts": "2026-11-22T14:28:11.949023+00:00", "test": "M8: cooldown expired - circuit closes, host recovers", "result": "PASS", "detail": "fail_count_reset=True"}
+{"ts": "2026-11-22T14:28:11.949030+00:00", "test": "M9: post-recovery - all 4 hosts UP again", "result": "PASS", "detail": "{'white': {'state': 'up'}, 'pale': {'state': 'up'}, 'black': {'state': 'up'}, 'red': {'state': 'up'}}"}
+{"ts": "2026-11-22T14:28:11.949033+00:00", "test": "M10: constants match spec (timeout=5s, threshold=3, cooldown=60s)", "result": "PASS", "detail": "TIMEOUT=5 CB_THRESHOLD=3 CB_COOLDOWN=60"}
+{"ts": "2026-11-22T14:28:11.950325+00:00", "summary": "10 PASS / 0 FAIL", "mode": "mock", "verdict": "PASS"}
