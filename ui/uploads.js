@@ -423,6 +423,8 @@ async function goalsLoad(){
   }catch(e){ $("goalsStat").textContent="error: "+e; }
 }
 $("goalsBtn").onclick=()=>{ const open=$("goalsPanel").classList.toggle("open"); $("goalsBtn").classList.toggle("on",open); if(open)goalsLoad(); };
+// Header goal bar + Lv chip must render on page load, not only after a Goals-tab click (2026-11-22, found by Playwright test):
+fetch("/api/goals").then(r=>r.json()).then(o=>{ if(o&&o.ok&&typeof renderGoalBar==="function")renderGoalBar(o); }).catch(()=>{});
 
 $("filesRefresh").onclick=filesLoad;
 

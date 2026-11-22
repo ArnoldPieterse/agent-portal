@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #8 EscalationChain selftest 8/8 PASS verified; remaining AC = wire into live watchdog on White (needs non-sandbox seat).
-- Designer wrote placement-SSE UX spec (option b) in memory/ops/placement-sse-ux-spec-2026-11-22.md; unblocks Builder once SSE format confirme
 - Builder completed Archivist goal 6 (snapshot diff) at run #3, exceeding the 2-run AC; manifest-20261122.json has 7865 leaves.
 - Archivist goal 6 (Weekly Snapshot Diff) closed; Archivist now 7/10 reached, 3 open.
 - Wrote stale-evidence-triage-protocol (4-bucket tree) supporting Arch
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #7 log_rotate.py self-test 9/9 PASS; only remaining step is schtask deploy from non-sandbox seat (same egress blocker as #1/#2)
 - Goal #7 (Log Rotation) fully verified: 13/13 unit tests pass, all 4 ACs met. Evidence at memory/mechanic/log-rotate-
 - Goal #9 (Capacity Planning): local ACs all pass (10/10); remaining blocker = need real 7-day VRAM data from non-sandbox hosts.
+- Blocker "Portal auto-restart failed" is stale — portal confirmed UP; reclassify to RESOLVED in blockers.md
+- 9/10 goals closed; only Goal 3 (Freshness SchTask) open, blocked on elev.py since 2026-11-20
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
