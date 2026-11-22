@@ -1,3 +1,10 @@
+## UI JS FIXES + PLAYWRIGHT VERIFICATION 2026-11-22
+Status: **DONE + verified in real Chromium (Playwright)** - user asked to test the portal with Playwright instead of trusting static checks.
+- [x] `ui/core.js` had TWO adjacent syntax breaks from the load-queue edit that froze the whole page at "checking studio…": line 378 missing `+` before `'</span>'` (V8: `SyntaxError: Unexpected string` @377:146 via CDP Runtime.exceptionThrown) and line 379 unterminated string `' queued</span>`. Both fixed.
+- [x] Header goal bar + Lv chip only rendered after a Goals-tab click (`renderGoalBar`'s sole call site was inside `goalsLoad()`). Added one load-time `/api/goals` fetch in `ui/uploads.js` so the bar renders on page load.
+- Evidence (pw_test.py, fresh Chromium profile, 3 consecutive green runs): 0 pageerrors, 0 HTTP ≥400, all 6 scripts parse OK under V8, stext="studio connected", 8/8 agents rendered, Lv 0 chip + goal bar visible on load (screenshot pw_shot_header.png), all 5 tabs clickable with content. Note: first-run tour overlay blocks clicks in a fresh profile - expected, test removes it.
+- Not committed: no `git` binary on PATH in this shell (repo exists); commit when git is available.
+
 ## HOST-AGNOSTIC PLACEMENT - agents no longer pinned to hosts (Studio seat) 2026-11-22 ~17:0x
 Status: **DONE + live** - user follow-up on P1 hot-load: "agents pick the first available host, drop their profile + working activities on top; whole fleet can run on one active host."
 - [x] `_resolve_seat()` placement engine in agent_portal.py: home -> local White -> other hosts (first available with model RESIDENT); foreign seats use loaded-models id, home keeps alias; quant-family fallback only when home unreachable; else falls back to P1 home hot-load/reboot path. Thread-local seat redirects main + aux LLM calls per turn (no global state).
