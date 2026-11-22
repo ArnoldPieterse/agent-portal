@@ -36,6 +36,9 @@ Last updated: 2026-11-14.
 - [hostdoc_consistency_v2.py](memory/archivist/hostdoc_consistency_v2.py)
 - [ingest.py](memory/archivist/ingest.py)
 
+## Assist evidence
+- [archive-hygiene-audit-2026-11-22.md](memory/orchestrator/archive-hygiene-audit-2026-11-22.md)   Goal #10 assist (Orchestrator): full scan, all files pass
+
 ## Linked content (KG orphan remediation)
 - [index-pointer-addendum-r43.md](memory/archivist/index-pointer-addendum-r43.md)
 - [index-pointer-batch-r42.md](memory/archivist/index-pointer-batch-r42.md)

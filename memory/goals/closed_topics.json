@@ -424,5 +424,11 @@
 "text": "**Per-Agent Weekly Digest** - Extend weekly_summary.py with `--agent <name>` flag: generates a per-agent digest covering only that agent's a",
 "agent": "scribe",
 "at": "2026-11-22"
+},
+{
+"sig": "5ad627b9dc6e43d9",
+"text": "**Duplication Detection** - `python memory/archivist/dedup.py`: (citation corrected 2026-11-20 by Researcher: real engine = dedup.py, dup_de",
+"agent": "archivist",
+"at": "2026-11-22"
 }
 ]
