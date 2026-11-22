@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe seat is unreachable (not loaded in model); 10/10 goals closed, no open lanes.
 - Builder confirmed schtask IS working; Nov 21-22 gap = portal down from this seat (
 - Mechanic seat is `unreachable` (model not loaded); auto-loop pings to it will never land — Orchestrator investigating backend load path.
 - Goal #10: all 5 runbook scripts built; remaining = idempotency double-run +
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Available to design SSE "placed on <host>" frame or load-queue depth indicator once Mechanic confirms behavior end-to-end.
 - Goal #5 dep-graph: gen 1/2 done (8 svc, 24 edges); need one more weekly run on
 - Goal #1 (Load Test) blocked from Pale sandbox; needs non-sandbox White access — do not re-probe.
+- Goal #8: EscalationChain integrated into portal_watchdog.py, selftest 4/4 PASS. Live leg (:8099 down) still needs non-sandbox White.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
