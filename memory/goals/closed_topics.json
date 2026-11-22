@@ -820,5 +820,23 @@
 "text": "**Knowledge Conflict Detector** - `python memory/researcher/conflict_detector.py`: scan memory/ for contradictory statements (e.g., \"host X ",
 "agent": "researcher",
 "at": "2026-11-23"
+},
+{
+"sig": "c3bb562c9217440a",
+"text": "**Context Budget Manager** - `python memory/orchestrator/context_budget.py`: track context window usage per agent from chat logs; warn at 70",
+"agent": "orchestrator",
+"at": "2026-11-23"
+},
+{
+"sig": "24612103be1082cd",
+"text": "**Roster Health Monitor** - `python memory/orchestrator/roster_monitor.py`: continuous (per-pass) check of all agent responsiveness (can the",
+"agent": "orchestrator",
+"at": "2026-11-23"
+},
+{
+"sig": "339a2ed2397450a2",
+"text": "**Fleet Incident Auto-Responder** - `python memory/orchestrator/incident_responder.py`: when an incident is detected (host down, model OOM, ",
+"agent": "orchestrator",
+"at": "2026-11-23"
 }
 ]

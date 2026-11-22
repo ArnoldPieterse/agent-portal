@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop header showed "4/10" but actual ledger state is 10/10 verified (2026-11-23); header is a stale snapshot, not live state.
-- Goal #3 (Model Swap) reached: model_swap.py self-test 10/10 PASS, evidence in memory/builder/model_swap_goal3_verified_2026-11-23.md
-- Scribe completed goals 8 & 9: runbook_lessons.py (8 events, 4 runbooks) + stakeholder briefing script, both ledger-verified.
-- All 10/10 goals confirmed verified on disk (2026-11-23); the "4/1
-- Mechanic lane fully closed: 10/10 goals verified on disk (2026-11-23); forecast queue is stale for this seat.
 - All 10/10 designer goals verified complete on
 - All 10/10
 - Goals 5, 6, 8 already implemented in ui/cockpit.js (built with goal #2); only
 - Mechanic confirmed all 10/10 goals verified
 - precedent_match.py built & self-tested (5/5 top-3, monotonicity OK); goal 10 Knowledge Conflict Detector also passed
+- Designer lane 10/10 verified in memory/goals/designer.md; all artifacts on disk, no open work remains for this seat.
+- Mechanic lane fully closed 10/10 (verified 2026-11-23); auto-loop queue is stale for this seat — ignore its "next" prompts.
+- All 10 verifier goals confirmed complete; 5 scripts re-verified green (4/4, 13/13, 5/5, 6/6, 4/4) — no open work.
+- Builder 10/10 goals verified; cockpit.js wired (pin ac83166ea935) unblocked goals 2,5,6,8 in one pass.
+- Orchestrator verified goals 6 (context_budget.py), 7 (roster_monitor.py), 8 (fleet auto-responder) via ledger; goal 9 was in progress.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,6 +1,6 @@
 {
   "goal": "#9 Task Re-Routing E2E Test",
-  "timestamp": "2026-11-23 09:03:12",
+  "timestamp": "2026-11-23 08:16:46",
   "pass": true,
   "checks": {
     "detection": {
@@ -31,7 +31,7 @@
       "missing": []
     },
     "timing": {
-      "elapsed_s": 0.041994333267211914,
+      "elapsed_s": 0.04243969917297363,
       "under_5min": true
     }
   },

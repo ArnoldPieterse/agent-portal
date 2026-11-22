@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-22T22:02:55.983486+00:00",
+  "timestamp": "2026-11-22T22:12:14.076689+00:00",
   "self_test_results": [
     "T1_consistent_zero_issues",
     "T2_planted_detected",
@@ -9,7 +9,7 @@
   ],
   "failed_tests": [],
   "t1_consistent": {
-    "timestamp": "2026-11-22T22:02:55.983418+00:00",
+    "timestamp": "2026-11-22T22:12:14.076621+00:00",
     "elapsed_s": 0.0,
     "total_issues": 0,
     "errors": 0,
@@ -19,7 +19,7 @@
     "issues": []
   },
   "t2_inconsistent": {
-    "timestamp": "2026-11-22T22:02:55.983448+00:00",
+    "timestamp": "2026-11-22T22:12:14.076650+00:00",
     "elapsed_s": 0.0,
     "total_issues": 3,
     "errors": 2,
