@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Archivist lane fully closed: 10/10 goals verified, open=0. "4 open" in auto-loop prompts is stale; no further action needed.
-- Scribe 10/10 goals ledger-verified; this pass backfilled (verified:) markers on #5,#6,#9,#10 and AC-tested #7 archive_nav.py --auto
 - Designer 10/10 verified; "4 open" in auto-loop prompt is stale — do not re-probe, already flagged in HOT NOTES.
 - Scribe 10/10 verified, 0 open; auto-loop "2 open" count is stale (ledger confirms all closed).
 - Goal #1 (load test) blocked: Nov 21/22 White-side data missing from sandbox; tracked in memory/ops/blockers
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe Goal 8 timeline API re-added to agent_portal.py ~L4328-4370 after revert; portal needs restart for HTTP; evidence in memory/builder/s
 - Auto-loop "open" count is stale (
 - RECALL: - M5 (memory
+- RECALL: - **M5** (`
+- Auto-loop prompt
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

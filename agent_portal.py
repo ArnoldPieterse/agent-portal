@@ -219,9 +219,19 @@ def _ensure_seat_ready(agent, wfile=None):
         # fast path 1: recent fleet cache says ok (60 s cache / 15 min per-seat trust)
         if _model_load_status().get(name, {}).get("status") == "ok":
             return True, ""
-        # fast path 2: precise resident check on the seat's own Studio
-        if mid and mid in _loaded_model_ids(agent):
-            return True, ""
+        # fast path 2: precise resident check on the seat's own Studio. loaded-models reports
+        # MODEL NAMES while alias seats carry ALIAS ids in agents.json (atlas-q8 vs Qwen3.8-27B-
+        # Q8_0), so match by model_id OR recipe model_path basename / gguf_variant.
+        rec = _FLEET_RECOVER_RECIPES.get(name) or {}
+        try:
+            ids = _loaded_model_ids(agent)
+            mp = os.path.basename((rec.get("model_path") or "").replace("\\", "/"))
+            gv = (rec.get("gguf_variant") or "").lower()
+            if any((mid and i == mid) or (mp and i == mp) or (gv and gv in (i or "").lower())
+                   for i in ids):
+                return True, ""
+        except Exception:
+            pass
         # host down -> remote reboot (boot tasks reload its models); fail this turn honestly
         ip = _remote_host_ip(agent)
         if ip and not _host_alive(agent):
@@ -239,6 +249,23 @@ def _ensure_seat_ready(agent, wfile=None):
         if ok:
             emit("%s: model resident - continuing" % name)
             return True, ""
+        # 409 active_generations: something is generating on this Studio right now - it may be
+        # OUR model mid-turn (alias mismatch hid it from the checks above). One last end-to-end
+        # probe decides; if it answers, the seat is ready.
+        if "active_generations" in detail or "409" in detail:
+            try:
+                req = urllib.request.Request(_studio_base(agent).rstrip("/") + "/v1/chat/completions",
+                                             data=json.dumps({"model": mid,
+                                                              "messages": [{"role": "user", "content": "."}],
+                                                              "max_tokens": 1}).encode(),
+                                             headers={"Content-Type": "application/json",
+                                                       **({"Authorization": "Bearer " + agent["api_key"]}
+                                                          if agent.get("api_key") else {})})
+                with urllib.request.urlopen(req, timeout=90):
+                    emit("%s: model resident (was mid-generation) - continuing" % name)
+                    return True, ""
+            except Exception:
+                pass
         return False, "hot-load failed: %s" % detail
     except Exception as e:
         return True, ""   # never block a turn that could otherwise run
