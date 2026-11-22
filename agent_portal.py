@@ -1585,6 +1585,18 @@ def _cockpit_snapshot():
             hosts_out.append({"name": h.get("name"), "vram_pct": None, "cpu_pct": None, "temp_c": None})
     except Exception:
         pass
+    # Circuit breaker state (Mechanic cycle-10 goal 4): MANUAL REVIEW marks surface here.
+    try:
+        _cbdir = os.path.join(HERE, "memory", "mechanic")
+        if _cbdir not in sys.path:
+            sys.path.insert(0, _cbdir)
+        import circuit_breaker as _cb
+        for h in hosts_out:
+            c = _cb.status().get(h.get("name"))
+            if c:
+                h["circuit"] = c
+    except Exception:
+        pass
     # -- goals (evidence-gated), health score, decisions, risks
     gs = _goals_snapshot()
     open_n = sum(a.get("open", 0) for a in gs.get("agents", []))
