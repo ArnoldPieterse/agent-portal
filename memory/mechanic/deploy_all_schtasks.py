@@ -55,6 +55,20 @@ TASKS = [
         "schedule": "/sc month /d 1 /st 02:00",
         "ru": "SYSTEM",
     },
+    {
+        "name": "ArchivistDecayWeekly",
+        "goal": "archivist-3",
+        "tr": r'python "%s\memory\archivist\decay_production.py"' % str(HERE),
+        "schedule": "/sc week /d MON /st 02:00",
+        "ru": "SYSTEM",
+    },
+    {
+        "name": "VerifierSLO",
+        "goal": "verifier-8",
+        "tr": r'python "%s\memory\verifier\slo_check.py"' % str(HERE),
+        "schedule": "/sc daily /st 06:00",
+        "ru": "SYSTEM",
+    },
 ]
 
 
