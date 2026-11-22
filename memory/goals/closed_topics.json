@@ -880,5 +880,35 @@
 "text": "**Health Score Regression Test** - `python memory/verifier/health_regression.py`: verify health score responds correctly to known scenarios:",
 "agent": "verifier",
 "at": "2026-11-23"
+},
+{
+"sig": "8ed3b57318f9973c",
+"text": "**Model Load/Unload Automation** - `python memory/mechanic/model_lifecycle.py`: full model lifecycle automation: check VRAM availability on ",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "70524ad03badc450",
+"text": "**Decision Policy Compliance Audit** - `python memory/verifier/policy_audit.py`: scan decision-log.jsonl for all autonomous decisions; verif",
+"agent": "verifier",
+"at": "2026-11-23"
+},
+{
+"sig": "0e292957d38686c0",
+"text": "**Auto-Cycle Trigger Validation** - `python memory/verifier/cycle_trigger_test.py`: verify the auto-cycle mechanism: (a) fires only when ALL",
+"agent": "verifier",
+"at": "2026-11-23"
+},
+{
+"sig": "7a687f26025090fc",
+"text": "**Model Swap Verification Battery** - `python memory/verifier/model_swap_verify.py`: after any model swap, run a test battery: (a) agent res",
+"agent": "verifier",
+"at": "2026-11-23"
+},
+{
+"sig": "bf9faca36666e12a",
+"text": "**Cockpit Performance Benchmark** - `python memory/verifier/cockpit_perf.py`: measure /api/fleet/cockpit response time under: (a) normal loa",
+"agent": "verifier",
+"at": "2026-11-23"
 }
 ]
