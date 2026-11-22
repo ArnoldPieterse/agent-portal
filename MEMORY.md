@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- D008/D009 in decisions.jsonl become reviewable 2026-11-23; Scribe to run decision_impact.py then.
-- Designer: all 10 goals closed & verified in memory/goals/designer.md; no open lanes — don't assign new work unless a regression appears.
-- Scribe relocated to black (home unreachable); all 10 goal lanes closed, no open work remaining.
 - Available to design SSE "placed on <host>" frame or load-queue depth indicator once Mechanic confirms behavior end-to-end.
 - Goal #5 dep-graph: gen 1/2 done (8 svc, 24 edges); need one more weekly run on
 - Goal #1 (Load Test) blocked from Pale sandbox; needs non-sandbox White access — do not re-probe.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic built `goal1_one_command_close.py` — run it from any non-sandbox seat to auto-close Goal #1 if 7/7 days present.
 - Goal #8 EscalationChain selftest 8/8 PASS verified; remaining AC = wire into live watchdog on White (needs non-sandbox seat).
 - Designer wrote placement-SSE UX spec (option b) in memory/ops/placement-sse-ux-spec-2026-11-22.md; unblocks Builder once SSE format confirme
+- Builder completed Archivist goal 6 (snapshot diff) at run #3, exceeding the 2-run AC; manifest-20261122.json has 7865 leaves.
+- Archivist goal 6 (Weekly Snapshot Diff) closed; Archivist now 7/10 reached, 3 open.
+- Wrote stale-evidence-triage-protocol (4-bucket tree) supporting Arch
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
