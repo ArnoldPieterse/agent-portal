@@ -1,31 +1,31 @@
 {
-  "captured_at": "2026-11-20 13:09:44Z",
+  "captured_at": "2026-11-22 05:57:56Z",
   "threshold_pct": 20.0,
   "endpoints": {
     "/api/status": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 53.45,
+      "p95_ms": 68.37,
+      "errors": 0
     },
     "/api/health/fleet": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 368.56,
+      "p95_ms": 420.07,
+      "errors": 0
     },
     "/api/goals": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 127.95,
+      "p95_ms": 240.78,
+      "errors": 0
     },
     "/api/agents": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 6.37,
+      "p95_ms": 26.25,
+      "errors": 0
     },
     "/api/fleet": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 64.95,
+      "p95_ms": 86.77,
+      "errors": 0
     },
     "/api/fleet/status": {
       "p50_ms": null,
@@ -33,74 +33,75 @@
       "errors": 12
     },
     "/api/models": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 44.5,
+      "p95_ms": 70.84,
+      "errors": 0
     },
     "/api/models/status": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 15.42,
+      "p95_ms": 15.73,
+      "errors": 2
     },
     "/api/perf": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 15.51,
+      "p95_ms": 15.73,
+      "errors": 0
     },
     "/api/tools": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 15.27,
+      "p95_ms": 15.64,
+      "errors": 0
     },
     "/api/uploads": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 166.28,
+      "p95_ms": 184.09,
+      "errors": 0
     },
     "/api/history": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 15.45,
+      "p95_ms": 15.8,
+      "errors": 0
     },
     "/api/provenance": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 15.52,
+      "p95_ms": 15.75,
+      "errors": 0
     },
     "/api/memory-health": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 123.98,
+      "p95_ms": 128.06,
+      "errors": 0
     },
     "/api/manifest": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 850.79,
+      "p95_ms": 882.47,
+      "errors": 0
     },
     "/api/knowledge-bases": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 31.25,
+      "p95_ms": 46.37,
+      "errors": 0
     },
     "/api/run-state": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 15.36,
+      "p95_ms": 15.56,
+      "errors": 0
     },
     "/api/activity": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 94.79,
+      "p95_ms": 108.37,
+      "errors": 0
     },
     "/api/decisions": {
-      "p50_ms": null,
-      "p95_ms": null,
-      "errors": 12
+      "p50_ms": 46.47,
+      "p95_ms": 48.46,
+      "errors": 0
     },
     "/api/net/dns": {
       "p50_ms": null,
       "p95_ms": null,
       "errors": 12
     }
-  }
+  },
+  "valid": true
 }

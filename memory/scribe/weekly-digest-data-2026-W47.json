@@ -1,0 +1,150 @@
+{
+  "week": "2026-11-W47",
+  "generated": "2026-11-21T02:44:38.832071",
+  "agents": {
+    "orchestrator": {
+      "files_touched": 112,
+      "goals_closed": 26,
+      "evidence_leaves": 12,
+      "blockers_raised": 22,
+      "sample_files": [
+        "memory/designer/theme-reapply-pass-g-2026-11-16.md",
+        "memory/goals/designer-forecast-orchestrator-fleet-overview-2026-11-18.md",
+        "memory/goals/orchestrator.md",
+        "memory/goals/archive/orchestrator-2026-11-13.md",
+        "memory/goals/archive/orchestrator-2026-11-18.md"
+      ],
+      "goal_closures": [
+        "1. **Live Hotload Execution (host seat)** - Execute a real load/unload cycle on White using `python elev.py` (or direct ",
+        "1. Keep TODO.md discipline every round I touch it: newest section on top, strike finished lines (never delete), goal lin",
+        "2. Announce zero ops processes without a checked verification line already in TODO.md. (verified: 2026-11-14 sweep of al"
+      ]
+    },
+    "researcher": {
+      "files_touched": 159,
+      "goals_closed": 21,
+      "evidence_leaves": 19,
+      "blockers_raised": 33,
+      "sample_files": [
+        "memory/builder/researcher-goal8-closure-signoff-2026-11-18.md",
+        "memory/builder/researcher-goals7-8-paren-repair-2026-11-18.md",
+        "memory/goals/researcher-attempts-cycle3-2026-11-18.md",
+        "memory/goals/researcher-cycle8-proposals.md",
+        "memory/goals/researcher-goal7-cross-host-forecast.md"
+      ],
+      "goal_closures": [
+        "- goal 8: appended one `)` after the trailing `...sla-goal8-closure-integrity-check-2026-11-18.md]` so `(verified:` wrap",
+        "1. Sync-semantics implementation spec - take the cycle-2 recommendation (single-writer ownership + per-file epoch stamps",
+        "1. **Q4 context regression** \u2014 `recover_all.py` hardcodes Q4 `max_seq_length: 65536`, but the proven SSOT/resident value"
+      ]
+    },
+    "builder": {
+      "files_touched": 124,
+      "goals_closed": 27,
+      "evidence_leaves": 13,
+      "blockers_raised": 14,
+      "sample_files": [
+        "memory/builder/a11y_audit_increment1_2026-11-20.md",
+        "memory/builder/a11y_focus_visible_global_2026-11-20.md",
+        "memory/builder/accdeep-apply-2026-11-15.md",
+        "memory/builder/api_client_layer_increment1-2026-11-20.md",
+        "memory/builder/api_client_layer_increment2-2026-11-20.md"
+      ],
+      "goal_closures": [
+        "- goal 8: appended one `)` after the trailing `...sla-goal8-closure-integrity-check-2026-11-18.md]` so `(verified:` wrap",
+        "2. **Complete API Client Wrappers** - Wrap the remaining 6 raw fetch() calls in core.js (fleetStatus, getFile, postChatS",
+        "5. **Upload Pipeline Hardening** - Add to uploads.js: file type validation (allow: .md, .json, .txt, .py, .js, .css, .ht"
+      ]
+    },
+    "archivist": {
+      "files_touched": 185,
+      "goals_closed": 43,
+      "evidence_leaves": 57,
+      "blockers_raised": 21,
+      "sample_files": [
+        "memory/archivist/api-ref-autogen-progress-2026-11-18.md",
+        "memory/archivist/api-ref-diff-2026-11-18.md",
+        "memory/archivist/api-ref-e2e-2026-11-18.md",
+        "memory/archivist/api-ref-evidence.md",
+        "memory/archivist/archive-compaction-report-2026-11-20.md"
+      ],
+      "goal_closures": [
+        "\u2192 OK: scribe.md line 13: (verified: 2026-11-21 - ...)",
+        "- Reconciled stale scheduler data: auto-loop claimed \"8 open\" but memory/goals/archivist.md showed 9/10 verified. Root c",
+        "> \"(verified: 2026-11-16 - :focus-visible 2px offset ring in ui/app.css + <nav aria-label=\"Chat mode\"> landmark + aside "
+      ]
+    },
+    "scribe": {
+      "files_touched": 186,
+      "goals_closed": 46,
+      "evidence_leaves": 26,
+      "blockers_raised": 51,
+      "sample_files": [
+        "memory/designer/assist-scribe-goal3-briefing-ia-2026-11-20.md",
+        "memory/goals/scribe.md",
+        "memory/goals/archive/scribe-2026-11-13.md",
+        "memory/goals/archive/scribe-2026-11-18.md",
+        "memory/goals/archive/scribe-2026-11-19.md"
+      ],
+      "goal_closures": [
+        "\u2192 OK: scribe.md line 13: (verified: 2026-11-21 - ...)",
+        "1. **Decision Impact Tracking** - `python memory/scribe/decision_impact.py` checks every entry in memory/synthesis/decis",
+        "2. **Cycle Retrospective Automation** - Extend cycle_narrative.py with `--retro` flag: after the narrative, append a \"Le"
+      ]
+    },
+    "verifier": {
+      "files_touched": 148,
+      "goals_closed": 33,
+      "evidence_leaves": 28,
+      "blockers_raised": 28,
+      "sample_files": [
+        "memory/designer/reapply-goals-2-3-4-to-live-2026-11-15.md",
+        "memory/designer/reland-2-3-4-live-2026-11-15.md",
+        "memory/designer/token-refactor-2026-11-15.md",
+        "memory/goals/designer-attempt-verifier5-security-panel-2026-11-18.md",
+        "memory/goals/designer-attempt-verifier6-concurrency-harness-2026-11-18.md"
+      ],
+      "goal_closures": [
+        "1. **Performance Gate Baseline (host seat)** - Run `python memory/verifier/perf_gate.py --baseline` from a non-sandbox W",
+        "2. **Evidence Quality Scoring Model** - `python memory/verifier/evidence_scoring.py`: rate each evidence leaf in memory/",
+        "1. Smoke-test every new /api endpoint in agent_portal.py with recorded curl output before its TODO item is marked [x]. ("
+      ]
+    },
+    "designer": {
+      "files_touched": 493,
+      "goals_closed": 34,
+      "evidence_leaves": 57,
+      "blockers_raised": 128,
+      "sample_files": [
+        "memory/designer/a11y-audit-2026-11-18.md",
+        "memory/designer/a11y-contrast-audit-2026-11-18.md",
+        "memory/designer/a11y-tree-verify-evidence-2026-11-20.md",
+        "memory/designer/acceptance-2-5-9-10-2026-11-19.md",
+        "memory/designer/aria-audit-2026-11-21.md"
+      ],
+      "goal_closures": [
+        "- Goals 7,8,9,10 carry explicit `(verified: 2026-11-20 - ...)` closure markers.",
+        "(verified: 2026-11-19 - Static audit confirms all acceptance criteria: @media print with white bg, hidden interactive el",
+        "(verified: 2026-11-19 - Static audit script confirms all acceptance criteria met without browser: shimmer 1.4s, 4/4 fns "
+      ]
+    },
+    "mechanic": {
+      "files_touched": 324,
+      "goals_closed": 36,
+      "evidence_leaves": 24,
+      "blockers_raised": 150,
+      "sample_files": [
+        "memory/goals/forecast-mechanic-fleet-status-api-2026-11-19.md",
+        "memory/goals/forecast-mechanic-g4.md",
+        "memory/goals/forecast-mechanic1-adaptive-probe-2026-11-17.md",
+        "memory/goals/forecast-mechanic2-revert-sentinel-2026-11-19.md",
+        "memory/goals/forecast-mechanic4-reboot-recovery-2026-11-18.md"
+      ],
+      "goal_closures": [
+        "1. Keep portal :8099 up \u226599% this week; any outage restored within 5 min with a one-line runbook note in memory/ops/. (i",
+        "2. One-pass probe script covering all four hosts (White/Pale/Black/Red) \u2014 ports + key processes \u2014 on a scheduled task ev",
+        "3. Dry-run the reboot-recovery runbook once per machine this week; fix and document any broken step found. (in progress "
+      ]
+    }
+  }
+}
