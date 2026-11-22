@@ -11,7 +11,7 @@ let selectedId=null, mode="solo", busy=false;
 let sessionId=null; // current run's activity-timeline session (one per human prompt)
 let history=[]; // {speaker, content}
 
-async function api(path, opts){ const ctl=new AbortController(); const _to=setTimeout(()=>ctl.abort(),6000); const r=await fetch(path, {...opts, signal:ctl.signal}).finally(()=>clearTimeout(_to)); return r.json(); } // 2026-11-22: 6s abort cap on api() so a hung Studio endpoint can't freeze refresh()
+async function api(path, opts){ const r=await fetch(path, opts); return r.json(); }
 const jpost=(p,b)=>api(p,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});
 const jput =(p,b)=>api(p,{method:"PUT" ,headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});
 
@@ -20,7 +20,7 @@ function shortModel(m){ return (m||"").split("/").pop().slice(0,26); }
 
 async function refresh(){
   agents=((await api("/api/agents").catch(()=>({}))).agents)||[];
-  const m=await Promise.race([api("/api/models"),new Promise(r=>setTimeout(()=>r({}),4000))]).catch(()=>({})); if(m.data)models=m.data; // 2026-11-22: cap at 4s so a stalled Studio can't block renderAgents(); keep prior list on timeout   // Studio's /v1/models can stall during a generation - never let it kill the rest of refresh
+  const m=await api("/api/models").catch(()=>({data:[]})); models=m.data||[];   // Studio's /v1/models can stall during a generation - never let it kill the rest of refresh
   try{ kbs=(await api("/api/knowledge-bases")).knowledgeBases||[]; }catch(e){ kbs=[]; }
   localTools=((await api("/api/tools").catch(()=>({}))).local_tools)||[];
   if(!agents.find(a=>a.id===selectedId)) selectedId=agents[0]?.id||null;
