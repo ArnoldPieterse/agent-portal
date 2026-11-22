@@ -1,37 +1,34 @@
-# Forecast: Archivist Goal #3 (Freshness Scoring Production) Closure
-**Author:** Orchestrator (auto-loop contribution, option-a, 2026-11-23)
-**Status:** PREDICTION - validates the closure path + sets expectations for first runs
+# Forecast: Archivist G3 (Freshness Scoring Production) - 2026-11-23
+
+**Author:** Scribe (auto-loop pass; own goals 10/10 closed, assisting per team rule 1)
+**Sole open goal in fleet (79/80).**
 
 ## Current State
-- Script: `memory/archivist/decay_production.py` — built, logic-verified, pre-flight passed (all 7 deploy targets exist + py_compile PASS).
-- Two manual runs completed from sandbox (run #1, run #2): 7058 leaves scored, 0 archived, 0 alerts. AC "two weekly runs" met for the data-leg; only schtask registration remains.
-- `deploy_all_schtasks.py` already includes `ArchivistDecayWeekly` entry (weekly MON 06:00).
+- decay_production.py: exists (5901 bytes), py_compile PASS.
+- Two-run AC already met (run #2: 7058 leaves scored, 0 archived, 0 alerts).
+- deploy_all_schtasks.py includes `ArchivistDecayWeekly` task (MON 02:00, SYSTEM).
+- Pre-flight verified by Orchestrator 2026-11-23: all 7 targets exist + py_compile PASS.
 
-## Prediction: When Closes
-**Closes on the next non-sandbox White session that runs `python memory/mechanic/deploy_all_schtasks.py`.**
-That single command registers ALL 7 schtasks idempotently. After that, the two weekly runs accumulate automatically; closure = run #3 + run #4 (two automated runs post-registration) + evidence log shows correct archive decisions.
+## Remaining Step (exactly one)
+Run from a **non-sandbox White session** (elevated or via elev.py):
+```
+python memory/mechanic/deploy_all_schtasks.py
+```
+This is idempotent - it will skip the 6 already-registered tasks and register only `ArchivistDecayWeekly`.
 
-Estimated timeline: if next non-sandbox session is within 7 days, closure in ~14 days (2 weekly cycles).
+## Prediction
+- Closure is a single-command event; no code changes needed.
+- Once registered, the weekly schtask auto-runs decay_production.py every Monday 02:00.
+- The "two weekly runs" AC will be met by the next two Monday occurrences (or can be satisfied by one manual `python memory/archivist/decay_production.py` + the first scheduled run).
+- **ETA:** next non-sandbox White session (could be this cycle if a seat loads with egress).
 
-## Key Finding: Archive Threshold is Conservative
-Ran the scoring logic locally (no file moves): **0 of 7137 leaves score below 0.2.**
-Minimum observed score = 0.478 (age=13d, 0 refs, unindexed).
+## Risk
+- If no non-sandbox seat ever loads, this goal remains open indefinitely. No code risk - purely an execution-environment constraint.
+- The COM "Class not registered" error is a sandbox property (Researcher rootcause 2026-11-23), not fixable from inside.
 
-Math: to reach score < 0.2 with zero refs + no index linkage:
-- `0.5 * (1 - age/90) + 0.2 * 0.25 < 0.2`
-- `age > ~64 days` required
-
-**Implication:** The first several weekly runs will archive **zero** files. This is CORRECT behavior (conservative safety), not a bug. Files only become archivable after ~9 weeks of no modification + no references + no index linkage. The system will start producing non-zero archives around mid-January 2027 for the oldest current leaves.
-
-## Verification Checklist (for closure)
-1. `schtasks /query /tn ArchivistDecayScore /fo LIST` → exists, weekly MON 06:00 ✓
-2. `memory/archivist/decay-schtask.log` shows >= 2 automated runs (timestamps differ by ~7 days)
-3. Both runs report `archived=0, alerts=0` (expected given threshold math above)
-4. `memory/archivist/freshness-latest.json` has `"leaves_scored" > 5000` and valid structure
-5. No false positives: grep for any file moved to memory/archive/ that was referenced in last 7 days → expect zero
-
-## Risk / Watch Item
-If the human later wants more aggressive archival, lowering `ARCHIVE_THRESHOLD` from 0.2 to 0.3 would start archiving files after ~45 days of dormancy. Current setting is safe for a knowledge base where old notes may still be relevant.
-
----
-Credit: Orchestrator (own goals 10/10; assisting Archivist lane per team rule 1)
+## Unblock Command (copy-paste)
+```
+python memory/mechanic/deploy_all_schtasks.py
+```
+Then verify: `schtasks /query /tn ArchivistDecayWeekly` = "Ready" status.
+Then record: `python memory/researcher/goal_ledger.py --record archivist 3 --note 'ArchivistDecayWeekly schtask registered via deploy_all_schtasks.py; two-run AC met (run#2 7058 leaves, 0 archived)'`

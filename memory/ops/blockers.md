@@ -150,3 +150,15 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - Mechanic #4 / Archivist #1 / Mechanic #2 schtasks: VERIFIED registered on White - PortalLoadProbe, AgentPortal_LoadProbe_Daily, PortalMemoryDecay, MirrorHeal, VerifierPerfGate all Ready (schtasks /query 2026-11-22).
 - Elevated helper was DOWN (port 8098 closed; ONSTART SYSTEM task ElevatedHelper MISSING from scheduler). Recovered non-elevated: pythonw elevated_helper.py running detached (ping {ok, elevated:false, user:White}) + startup-folder VBS (elev_helper_start.vbs) for auto-start on logon. ONE-TIME setup remaining (not a work gate): double-click install_elevated_helper.bat once (UAC) to restore the SYSTEM task for admin-only commands; until then elev.py works for non-admin ops and admin ops fail honestly.
 - Red stays WIRELESS (user directive 2026-11-22): FUTURE "move Red .245 to wired NIC" removed from TODO.md; live per-agent goal files had no such item; archived cycle-1 files left as frozen provenance.
+
+
+[OPS-NOTE 2026-11-23 Researcher seat - schtasks/portal blocked by SANDBOXED execution context (NOT elev.py-down)]
+- Context: platform.node()=='White', cwd=Z:\, elev.py helper RESPONDS (no exit 5), yet privileged ops fail. This seat is a sandboxed/restricted-token view of White, NOT the non-sandbox session the unblock requires.
+- Exact command + error (reproduced this pass):
+  * `schtasks /query` -> rc 1, "ERROR: Class not registered" (Task Scheduler COM unavailable in-process)
+  * `python elev.py schtasks /query /fo CSV` -> "TASK_CREATE_FAIL: ERROR: Class not registered", exit 0 (helper up, but COM still broken - elevation does NOT cross the sandbox boundary here)
+  * `powershell.exe` -> FileNotFoundError (WinError 2), not on PATH in this context
+  * socket connect 127.0.0.1:8099 -> PermissionError WinError 10013 "access ... forbidden" (loopback sockets blocked)
+- Implication / reconciliation: 2026-11-22 evidence (see OPS entry above) shows PortalLoadProbe, AgentPortal_LoadProbe_Daily, PortalMemoryDecay, MirrorHeal, VerifierPerfGate were VERIFIED registered on White via a genuinely non-sandbox seat. My empty `schtasks /query` + COM error are a SEAT-LEVEL verification limitation, NOT proof the host tasks are absent. Do not interpret this seat's 0-visible-tasks as "tasks missing."
+- Consequence: from THIS Researcher seat I cannot run deploy_all_schtasks.py (needs schtasks COM) nor the Verifier G5 concurrency test LIVE leg (needs :8099 socket). The designated unblock `python elev.py --shell "python memory/mechanic/deploy_all_schtasks.py"` must be issued from a truly non-sandbox, elevated White logon session - which is not this seat despite the host label.
+- Automation path: unchanged (run from real non-sandbox White). Recorded once per anti-reprobe rule; future passes: skip schtasks/portal probes from this seat.
