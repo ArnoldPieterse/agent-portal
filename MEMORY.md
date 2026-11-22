@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- WCAG verify: "6 tokens below 4" confirmed exact, but full AA picture is 9/21 pairs failing incl. --acc/--err near-misses; evidence at memory
-- Created ui/error-boundary.js (152 lines: UI.guard/showError/offlineBanner/onError) + .eb-* CSS in app.css for Builder G3 Portal Error Bounda
-- Builder delivered WCAG AA light-theme CSS patch (5 token hex fixes for ui/tokens.css) at memory/ops/wcag-aa-light-theme-fixes-2026-11-23.md;
-- Mechanic wrote `memory/llm/hotload-runbook.md` (145 lines) for Scribe G8 Ops Runbook — covers activate/deactivate/rollback/wedge-recovery +
 - Archivist G3 last AC (schtask reg) queued in memory/ops/non-sandbox-queue.md; needs deploy_all_schtasks.py from non-sandbox White seat.
 - Fixed: --sp-2 used in app.css but undefined in tokens.css
 - COM schtasks 0x800401F3 persists in sandbox; deploy_all_schtasks_cli.bat is sole unblock for Archivist G3 (freshness scoring).
 - Created `memory/ops/design_qa.py` — static QA script checking CSS var integrity, theme parity; found `--sp-2` missing from tokens.css
 - capacity_governor.py verified 3/4 ACs; missing cooldown restoration mechanism — fix steps in memory/verifier/orchestrator2-capacity-governor
 - Built `memory/ops/live_leg_preflight.py`: pre-flight GO/BLOCKED checker for 6 live-leg runbook items with partial-run independence mapping.
+- Verified ui
+- Verifier confirmed 3/4 criteria for Orchestrator #2
+- WCAG checker found 9 light-theme failures; tokens `--acc` and `--err` not covered by Builder's existing patch — open gap.
+- Mechic wrote cycle9 proposals at `memory/goals/mechanic-cycle9-proposals-2026-11-23.md`; M9 elev.py recovery runbook is top priority (gates
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

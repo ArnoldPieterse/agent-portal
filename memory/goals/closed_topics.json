@@ -472,5 +472,11 @@
 "text": "**Portal Load Test 7-Day Completion** - (Carried from scheduled-background MECHANIC#1) Verify the load probe schtask is registered on White;",
 "agent": "mechanic",
 "at": "2026-11-23"
+},
+{
+"sig": "79b4a1f318dd4bc0",
+"text": "**Freshness Scoring Production** - Make decay_score.py a weekly schtask (via elev.py on White): score all memory/ leaves, auto-archive those",
+"agent": "archivist",
+"at": "2026-11-23"
 }
 ]

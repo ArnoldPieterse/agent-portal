@@ -1,0 +1,15 @@
+{
+ "level": 1,
+ "last_sig": "2d342f67c6aebbddcc4f5fd0263d09e516bb163c2d20785432e368899ad6f495",
+ "last_sha": "d4ba708c3e2ee836ce3518e3aa2b884222a1c207",
+ "history": [
+  {
+   "level": 1,
+   "ts": "2026-11-23 06:00:01",
+   "sha": "d4ba708",
+   "sig": "2d342f67c6aebbdd",
+   "fleet": "80/80",
+   "report": "memory/levels/level_1_20261123-060001.md"
+  }
+ ]
+}
