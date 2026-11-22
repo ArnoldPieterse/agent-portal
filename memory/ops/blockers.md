@@ -133,3 +133,9 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - **PID found:** None
 - **Diagnostics:** {"timestamp": "2026-11-19T02:51:50", "portal_port": 8099, "portal_up": false, "portal_pid": null, "recent_health_log": ["2026-11-18T10:07:48.054563+00:00 [CRITICAL] ALERT: agents: skipped (portal down)", "2026-11-18T10:07:50.352024+00:00 [INFO] ALERT-TEST: simulating a critical alert", "2026-11-18T10:07:50.365737+00:00 [CRITICAL] ALERT: alert_test: This is a test alert to verify wiring"]}
 - **Unblock step:** Manually run `python agent_portal.py` and verify port 8099 responds.
+
+[OPS 2026-11-22 ~16:0x - Studio seat (user directive: full automation, no human-blocking gates)] RESOLVED from non-sandbox seat:
+- Verifier #1 perf gate: deploy_perf_gate.py ran clean - fresh baseline 18/20 valid p50, schtask VerifierPerfGate registered daily 07:00, initial gate = 1 WARN (/api/agents +142.9% 6.37->15.47ms, load-dependent), negative test PASS (alert fired). Evidence: memory/verifier/evidence-deploy-perf-gate-2026-11-22.md.
+- Mechanic #4 / Archivist #1 / Mechanic #2 schtasks: VERIFIED registered on White - PortalLoadProbe, AgentPortal_LoadProbe_Daily, PortalMemoryDecay, MirrorHeal, VerifierPerfGate all Ready (schtasks /query 2026-11-22).
+- Elevated helper was DOWN (port 8098 closed; ONSTART SYSTEM task ElevatedHelper MISSING from scheduler). Recovered non-elevated: pythonw elevated_helper.py running detached (ping {ok, elevated:false, user:White}) + startup-folder VBS (elev_helper_start.vbs) for auto-start on logon. ONE-TIME setup remaining (not a work gate): double-click install_elevated_helper.bat once (UAC) to restore the SYSTEM task for admin-only commands; until then elev.py works for non-admin ops and admin ops fail honestly.
+- Red stays WIRELESS (user directive 2026-11-22): FUTURE "move Red .245 to wired NIC" removed from TODO.md; live per-agent goal files had no such item; archived cycle-1 files left as frozen provenance.

@@ -1,0 +1,404 @@
+[
+{
+"sig": "4db3a2a2e400c0e6",
+"text": "**Orphan Remediation Sweep** - Run a full scan of memory/ tree: find all files not referenced by any INDEX.md or pointer line; classify each",
+"agent": "archivist",
+"at": "2026-11-22"
+},
+{
+"sig": "f84a592c5304cd3e",
+"text": "**Knowledge Graph v3 (Temporal + Typed)** - Extend cycle-7 graph: add edge types (pointer, evidence, dependency, supersession, citation), te",
+"agent": "archivist",
+"at": "2026-11-22"
+},
+{
+"sig": "3cbe663b2bcbca5c",
+"text": "**Cross-Reference Integrity Check** - `python memory/archivist/xref_check.py`: verify all \"pointer:\" lines in memory/ resolve to existing fi",
+"agent": "archivist",
+"at": "2026-11-22"
+},
+{
+"sig": "f84b2d158b3171f3",
+"text": "**Keyword Search Index** - Build memory/archivist/search-index.json: for each leaf file, extract title, first-100-chars summary, keyword set",
+"agent": "archivist",
+"at": "2026-11-22"
+},
+{
+"sig": "c5423b2e88be1a19",
+"text": "**Knowledge Lifecycle Policy** - Write memory/archivist/lifecycle-policy.md: define when to create a new leaf (new finding, new decision), w",
+"agent": "archivist",
+"at": "2026-11-22"
+},
+{
+"sig": "17b31fc22ab7d40a",
+"text": "**Citation Tracking** - Build memory/archivist/citation-map.json: for each evidence leaf, record which goals cite it; for each goal, record ",
+"agent": "archivist",
+"at": "2026-11-22"
+},
+{
+"sig": "36bc85810f4545fc",
+"text": "**Build-Verify-Pin --apply (host seat)** - Execute `python memory/builder/build_verify_pin.py index.html --apply` from a non-sandbox White s",
+"agent": "builder",
+"at": "2026-11-22"
+},
+{
+"sig": "a6a9ab8f16c1810c",
+"text": "**Complete API Client Wrappers** - Wrap the remaining 6 raw fetch() calls in core.js (fleetStatus, getFile, postChatStream, runEventsStream,",
+"agent": "builder",
+"at": "2026-11-22"
+},
+{
+"sig": "2e6b0dc6318e268b",
+"text": "**Portal Error Boundary** - Add a global error boundary to core.js: wrap all API calls in try/catch, display user-friendly error messages (n",
+"agent": "builder",
+"at": "2026-11-22"
+},
+{
+"sig": "7366c5d79e0d8502",
+"text": "**Component Library v2** - Add 3 new components to ui/components.js: Modal (overlay + close on ESC), Toast (auto-dismiss notification, top-r",
+"agent": "builder",
+"at": "2026-11-22"
+},
+{
+"sig": "5584032ce2b332fa",
+"text": "**Upload Pipeline Hardening** - Add to uploads.js: file type validation (allow: .md, .json, .txt, .py, .js, .css, .html; block executables),",
+"agent": "builder",
+"at": "2026-11-22"
+},
+{
+"sig": "a82c2b84f0a6fd12",
+"text": "**Fleet Status Panel** - Build the fleet tab UI: per-host VRAM bar (green<70%, amber 70-85%, red>85%), agent cards showing model alias + sta",
+"agent": "builder",
+"at": "2026-11-22"
+},
+{
+"sig": "f146a54a98e92280",
+"text": "**Dark Mode Theme** - Implement light/dark theme toggle using CSS custom properties (design tokens already in app.css). Toggle button in hea",
+"agent": "builder",
+"at": "2026-11-22"
+},
+{
+"sig": "38984fbb99903247",
+"text": "**Portal Performance Optimization** - Lazy-load non-visible panels (only fetch data when panel first opened); debounce API polling to max 1 ",
+"agent": "builder",
+"at": "2026-11-22"
+},
+{
+"sig": "93074a3ebf2e8664",
+"text": "**UI Module Test Suite** - Create memory/builder/ui-tests/: node-based smoke tests that verify each ui/ module loads without error, exports ",
+"agent": "builder",
+"at": "2026-11-22"
+},
+{
+"sig": "4404ff20856876d6",
+"text": "**One-Command Deploy** - `python memory/builder/deploy.py [file]`: validates syntax, runs UI tests, syncs to portal root, advances pin if ne",
+"agent": "builder",
+"at": "2026-11-22"
+},
+{
+"sig": "1a8cba0dc36229ad",
+"text": "**WCAG 2.1 AA Audit** - Audit all portal panels for: color contrast (>=4.5:1 body, >=3:1 large text), keyboard navigation (Tab order logical",
+"agent": "designer",
+"at": "2026-11-22"
+},
+{
+"sig": "764d201801e96c8b",
+"text": "**Fleet Status Panel Visual Design** - Design the fleet tab (Builder goal #6): VRAM bars with gradient fill, agent cards with status indicat",
+"agent": "designer",
+"at": "2026-11-22"
+},
+{
+"sig": "cd2eabd4763ec48d",
+"text": "**Error State Design System** - Define consistent patterns for: empty states (no data yet), error states (API failed, file not found), loadi",
+"agent": "designer",
+"at": "2026-11-22"
+},
+{
+"sig": "4ec3b2c3d36e32d8",
+"text": "**Animation/Motion System** - Add subtle CSS transitions: panel open/close (200ms ease), toast slide-in (300ms), loading spinner rotation, s",
+"agent": "designer",
+"at": "2026-11-22"
+},
+{
+"sig": "660a8fd295ded91f",
+"text": "**SVG Icon Set** - Replace all text-based indicators and emoji with a consistent 16x16 SVG icon set (inline, currentColor). Minimum icons: a",
+"agent": "designer",
+"at": "2026-11-22"
+},
+{
+"sig": "ed104f993de56ef5",
+"text": "**Accessibility Tree Verification** - Verify DOM structure matches ARIA expectations: headings in correct order (h1>h2>h3, no skips), landma",
+"agent": "designer",
+"at": "2026-11-22"
+},
+{
+"sig": "a62f778806fde025",
+"text": "**Component Visual Reference** - Create memory/designer/component-reference.md: for each function in ui/components.js, show: purpose, usage ",
+"agent": "designer",
+"at": "2026-11-22"
+},
+{
+"sig": "77e5e729f3f21076",
+"text": "**UI Performance Budget** - Define and enforce: initial render <2s, interaction response <100ms, animation frame budget 16ms (60fps). Add pe",
+"agent": "designer",
+"at": "2026-11-22"
+},
+{
+"sig": "112a3bc75806eed6",
+"text": "**Scheduled-Task Dependency Graph** - (Carried from scheduled-background MECHANIC#6) Auto-generate dependency graph from `schtasks /query /f",
+"agent": "mechanic",
+"at": "2026-11-22"
+},
+{
+"sig": "43b8cee62e01b1f0",
+"text": "**Boot Task Verification** - After each reboot (manual or auto), verify all model reload boot tasks executed correctly: check nvidia-smi for",
+"agent": "mechanic",
+"at": "2026-11-22"
+},
+{
+"sig": "ebd013c0c599b398",
+"text": "**Alert Escalation Chain** - Define and implement: Level 1 (auto-retry, <5 min) -> Level 2 (agent-to-agent handoff, <30 min) -> Level 3 (NEE",
+"agent": "mechanic",
+"at": "2026-11-22"
+},
+{
+"sig": "52410cf5d677f07d",
+"text": "**Capacity Planning Dashboard** - Track VRAM usage per host over 7 days (from load_trend.jsonl + nvidia-smi snapshots); compute trend line; ",
+"agent": "mechanic",
+"at": "2026-11-22"
+},
+{
+"sig": "9b99f0449a300f02",
+"text": "**Runbook Automation (top-5)** - Convert the 5 most-frequent manual runbook steps into one-command scripts: (a) full fleet status check, (b)",
+"agent": "mechanic",
+"at": "2026-11-22"
+},
+{
+"sig": "317145a5d5d4924c",
+"text": "**Live Hotload Execution (host seat)** - Execute a real load/unload cycle on White using `python elev.py` (or direct curl from a non-sandbox",
+"agent": "orchestrator",
+"at": "2026-11-22"
+},
+{
+"sig": "b897ff543bc40f5f",
+"text": "**Fleet Capacity Governor** - `python memory/orchestrator/capacity_governor.py`: monitor per-host VRAM via nvidia-smi (remote via WinRM or p",
+"agent": "orchestrator",
+"at": "2026-11-22"
+},
+{
+"sig": "03e2053245f5d0b4",
+"text": "**Goal-Cycle Full Auto-Transition** - Extend cycle-7 #3 (auto_cycle_transition.py): when all agents hit 100%, automatically: archive goal fi",
+"agent": "orchestrator",
+"at": "2026-11-22"
+},
+{
+"sig": "e665cdcd12a8e4eb",
+"text": "**Agent Performance Scoring UI** - Complete the frontend for /api/fleet/performance (backend done cycle-7 #4): sortable table in fleet tab w",
+"agent": "orchestrator",
+"at": "2026-11-22"
+},
+{
+"sig": "75ff30dc721d32df",
+"text": "**Model Binding Governance Audit (weekly)** - `python memory/orchestrator/binding_audit.py` as a weekly schtask: checks agents.json model_id",
+"agent": "orchestrator",
+"at": "2026-11-22"
+},
+{
+"sig": "5c76390052c4fe51",
+"text": "**Fleet Incident Auto-Triage** - When the anti-stall watchdog fires (agent wedged/not-loaded/host-down), auto-create a structured incident r",
+"agent": "orchestrator",
+"at": "2026-11-22"
+},
+{
+"sig": "b2717c9ee104533d",
+"text": "**Cross-Seat Coordination Protocol** - Document + implement the handoff protocol for blocked work: when an agent's goal is blocked by a seat",
+"agent": "orchestrator",
+"at": "2026-11-22"
+},
+{
+"sig": "4ac97fdeb7c2838a",
+"text": "**Roster Health Check (daily)** - `python memory/orchestrator/roster_health.py` as a daily schtask: send a trivial prompt to each of the 8 a",
+"agent": "orchestrator",
+"at": "2026-11-22"
+},
+{
+"sig": "08d6d2a61d228d93",
+"text": "**Goal Dependency Graph** - Parse all memory/goals/*.md files, extract explicit dependencies (e.g., \"blocked by X\", \"needs Y from Z\"), build",
+"agent": "orchestrator",
+"at": "2026-11-22"
+},
+{
+"sig": "91f531d04cc4df98",
+"text": "**Cycle Retrospective Automation** - `python memory/orchestrator/cycle_retro.py`: reads ledger entries + git log + goal files for a complete",
+"agent": "orchestrator",
+"at": "2026-11-22"
+},
+{
+"sig": "44364c2b3f0fb55f",
+"text": "**Unified Loader LIVE Execution** - Execute the consolidated host-aware loader against White's LM Studio from a non-sandbox seat: load model",
+"agent": "researcher",
+"at": "2026-11-22"
+},
+{
+"sig": "412cef44e4b7e2c3",
+"text": "**Residency Matrix Live Refresh** - Run residency_matrix.py from a non-sandbox seat with LAN access to all 4 hosts: query each /api/inferenc",
+"agent": "researcher",
+"at": "2026-11-22"
+},
+{
+"sig": "aaf6e041cc892b39",
+"text": "**Overnight Unload Root-Cause Confirmation** - Collect 3 consecutive nights of nvidia-smi + LM Studio logs from White (via schtask or portal",
+"agent": "researcher",
+"at": "2026-11-22"
+},
+{
+"sig": "d094bdcbac975c1b",
+"text": "**Evidence Freshness SLA** - `python memory/researcher/evidence_sla.py`: scan all memory/**/*.md evidence leaves, flag any older than 7 days",
+"agent": "researcher",
+"at": "2026-11-22"
+},
+{
+"sig": "faccc9663c4b2662",
+"text": "**Cross-Host Model Comparison Benchmark** - Run the same 5 prompts against quinn-q4 (Q4) and atlas-q8 (Q8) on White; measure: latency p50/p9",
+"agent": "researcher",
+"at": "2026-11-22"
+},
+{
+"sig": "b1f3cc21132da06d",
+"text": "**Fleet Knowledge Graph v2** - Extend the cycle-7 knowledge graph: add temporal edges (when relationships were created/changed), type annota",
+"agent": "researcher",
+"at": "2026-11-22"
+},
+{
+"sig": "212e4318de16baf2",
+"text": "**Research Reproducibility Protocol** - Write memory/researcher/reproducibility-protocol.md: standard format for all research findings (hypo",
+"agent": "researcher",
+"at": "2026-11-22"
+},
+{
+"sig": "8606a4071ccb4f0a",
+"text": "**Goal Slip Prediction v2** - Use cycle-7 actuals (which goals slipped, by how much, why) to retrain the slip_prediction_table.json model. A",
+"agent": "researcher",
+"at": "2026-11-22"
+},
+{
+"sig": "52a72d856ae18c1b",
+"text": "**Source Reliability Scoring** - For all external sources cited in memory/ leaves (URLs, docs, papers), score reliability based on: citation",
+"agent": "researcher",
+"at": "2026-11-22"
+},
+{
+"sig": "d040b7f95be7a587",
+"text": "**Blocker Triage Automation** - `python memory/researcher/blocker_triage.py`: parse memory/ops/blockers.md, classify each entry (known-class",
+"agent": "researcher",
+"at": "2026-11-22"
+},
+{
+"sig": "6d7f385f581b9581",
+"text": "**Decision Impact Tracking** - `python memory/scribe/decision_impact.py` checks every entry in memory/synthesis/decisions.jsonl that has a p",
+"agent": "scribe",
+"at": "2026-11-22"
+},
+{
+"sig": "4c51e7eb185b3970",
+"text": "**Cycle Retrospective Automation** - Extend cycle_narrative.py with `--retro` flag: after the narrative, append a \"Lessons Learned\" section ",
+"agent": "scribe",
+"at": "2026-11-22"
+},
+{
+"sig": "0fa8e432361ddaef",
+"text": "**Briefing Freshness Monitor** - `python memory/scribe/briefing_freshness.py` checks all files in memory/scribe/briefings/ against current m",
+"agent": "scribe",
+"at": "2026-11-22"
+},
+{
+"sig": "03fb9ca393b84d07",
+"text": "**Handoff Quality Scoring** - `python memory/scribe/handoff_quality.py` scores every entry in handoffs.jsonl on: completeness (all fields fi",
+"agent": "scribe",
+"at": "2026-11-22"
+},
+{
+"sig": "43ab4923f8538f04",
+"text": "**Card Staleness Detection** - `python memory/scribe/card_staleness.py` checks all files in memory/scribe/cards/: for each card, compares th",
+"agent": "scribe",
+"at": "2026-11-22"
+},
+{
+"sig": "3fe4b00cec121f26",
+"text": "**Synthesis Quality Trend** - Extend quality_score.py to append each run's scores to memory/scribe/quality_history.jsonl (timestamp + per-fi",
+"agent": "scribe",
+"at": "2026-11-22"
+},
+{
+"sig": "f16e7b5066b198fe",
+"text": "**Temporal Query API** - Expose timeline.py as /api/timeline?date=YYYY-MM-DD returning JSON: {active_goals[], recent_events[], agent_states{",
+"agent": "scribe",
+"at": "2026-11-22"
+},
+{
+"sig": "621fb4e6dd7c6f57",
+"text": "**Memory Search Relevance Feedback** - Add POST /api/memory/search/feedback accepting {query, result_path, relevant: bool}. Store in memory/",
+"agent": "scribe",
+"at": "2026-11-22"
+},
+{
+"sig": "d03dd31fdf414297",
+"text": "**Performance Gate Baseline (host seat)** - Run `python memory/verifier/perf_gate.py --baseline` from a non-sandbox White seat with :8099 ac",
+"agent": "verifier",
+"at": "2026-11-22"
+},
+{
+"sig": "37931912b59f1b0f",
+"text": "**Evidence Quality Scoring Model** - `python memory/verifier/evidence_scoring.py`: rate each evidence leaf in memory/ on 3 axes (specificity",
+"agent": "verifier",
+"at": "2026-11-22"
+},
+{
+"sig": "c7f6dfc8b6db6850",
+"text": "**API Contract Test Suite** - Create memory/verifier/api-contracts/: for each /api/* endpoint, define expected response schema (status code,",
+"agent": "verifier",
+"at": "2026-11-22"
+},
+{
+"sig": "85b49ce70e8e62a3",
+"text": "**Security Audit** - Check the portal for: path traversal in file endpoints (../../etc/passwd), command injection in shell calls, XSS in cha",
+"agent": "verifier",
+"at": "2026-11-22"
+},
+{
+"sig": "3a0314c86442f26e",
+"text": "**Concurrency Verification** - Verify parallel_slots=1 is maintained: send 3 simultaneous /api/chat requests to different agents, confirm th",
+"agent": "verifier",
+"at": "2026-11-22"
+},
+{
+"sig": "666ef854f38c847a",
+"text": "**Goal Acceptance Auto-Check** - `python memory/verifier/goal_acceptance.py`: parse all memory/goals/*.md, extract \"Verified:\" criteria, att",
+"agent": "verifier",
+"at": "2026-11-22"
+},
+{
+"sig": "d6bd4cc065affeb3",
+"text": "**Evidence Cross-Reference Graph** - Map all \"pointer:\" and \"Evidence:\" lines in goal files to their target memory/ leaves; verify all targe",
+"agent": "verifier",
+"at": "2026-11-22"
+},
+{
+"sig": "793150db83716edf",
+"text": "**SLO Enforcement (daily)** - `python memory/verifier/slo_check.py` as daily schtask: check that p95 response time for /api/chat < 30s, /api",
+"agent": "verifier",
+"at": "2026-11-22"
+},
+{
+"sig": "0740632f640e83c4",
+"text": "**Memory Tree Integrity** - `python memory/verifier/memory_integrity.py`: verify memory/ tree has: no orphaned files (not referenced by any ",
+"agent": "verifier",
+"at": "2026-11-22"
+},
+{
+"sig": "8b58eb0749bb95df",
+"text": "**Cycle Quality Report** - `python memory/verifier/cycle_quality.py`: end-of-cycle auto-generated report: goals completed with evidence qual",
+"agent": "verifier",
+"at": "2026-11-22"
+}
+]
