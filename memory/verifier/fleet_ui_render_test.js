@@ -33,7 +33,7 @@ const container = fakeEl();
 FT.render(container, { sample: FT.SAMPLE });   // opts.sample IS the dataset
 const svg = container.children[".ft-svg"]._html || "";
 if (!svg) throw new Error("no SVG produced");
-const must = ["White (local)", ">Pale<", ">Black<", ">Red<", 'class="ft-loadline"', "⏳ Q8_0 · 1 queued"];
+const must = ["White (local)", ">Pale<", ">Black<", ">Red<", 'class="ft-loadline"', "⏳ Q8_0 · 1 queued", "active · "];
 for (const m of must) if (!svg.includes(m)) throw new Error("SVG missing: " + m);
 // the loading host gets the taller box (58); the others stay 46
 const h58 = (svg.match(/height="58"/g) || []).length;
@@ -61,7 +61,8 @@ for(const h of (o.hosts||[])){
 }
 if (!html) throw new Error("row loop produced no HTML");
 const mustRows = ["White (local)", ">Pale<", ">Black<", ">Red<",
-  "⏳ loading Q8_0 for Archivist", "1 queued"];
+  "⏳ loading Q8_0 for Archivist", "1 queued",
+  "now: Orchestrator, Scribe", "home: none"];
 for (const m2 of mustRows) if (!html.includes(m2)) throw new Error("ROWS missing: " + m2);
 console.log("fleet UI render test PASS: 4 named hosts, load-queue line in topology, loading/queued chips in rows");
 process.exit(0);
