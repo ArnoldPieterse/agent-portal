@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fleet Status Panel - Design Prototype</title>
+<style>
+:root{--bg:#0e1116;--panel:#151a22;--panel2:#1b2230;--line:#2a3342;--text:#e8edf4;--dim:#9aa7b8;
+--acc:#4f8cff;--ok:#3ddc84;--warn:#ff9f43;--err:#ff6b6b;--dot-idle:#888;--dot-busy:#ffb454;--dot-err:#e05252;
+--sp-4:4px;--sp-8:8px;--sp-12:12px;--sp-16:16px;--sp-24:24px;
+--fs-11:11px;--fs-12:12px;--fs-13:13px;--fs-14:14px;--fs-15:15px;
+--br-sm:4px;--br-md:8px;--br-lg:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;padding:var(--sp-24)}
+h1{font-size:var(--fs-15);margin-bottom:8px;color:var(--dim)}
+p.spec{font-size:var(--fs-12);color:var(--dim);margin-bottom:24px}
+.fleet-panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--br-lg);padding:var(--sp-16);max-width:960px}
+.fp-header{display:flex;justify-content:space-between;margin-bottom:16px;align-items:center}
+.fp-title{font-size:var(--fs-15);font-weight:600}
+.fp-ts{font-size:var(--fs-11);color:var(--dim)}
+.host-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--sp-16)}
+@media(max-width:640px){.host-grid{grid-template-columns:1fr}}
+.host-card{background:var(--panel2);border:1px solid var(--line);border-radius:var(--br-md);padding:var(--sp-12);display:flex;flex-direction:column;gap:var(--sp-12)}
+.hc-header{display:flex;align-items:center;justify-content:space-between}
+.hc-name{font-size:var(--fs-14);font-weight:600;text-transform:capitalize}
+.hc-state{font-size:var(--fs-11);padding:2px 8px;border-radius:999px;font-weight:500}
+.hc-state.busy{background:rgba(255,180,84,.15);color:var(--dot-busy)}
+.hc-state.idle{background:rgba(61,220,132,.1);color:var(--ok)}
+.hc-state.unknown{background:rgba(136,136,136,.15);color:var(--dim)}
+.vram-row{display:flex;align-items:center;gap:var(--sp-8)}
+.vram-label{font-size:var(--fs-11);color:var(--dim);min-width:32px}
+.vram-track{flex:1;height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.vram-fill{height:100%;border-radius:3px;transition:width .4s ease}
+.vram-fill.green{background:var(--ok)}
+.vram-fill.amber{background:var(--warn)}
+.vram-fill.red{background:var(--err)}
+.vram-pct{font-size:var(--fs-11);color:var(--dim);min-width:30px;text-align:right}
+.agent-list{display:flex;flex-direction:column;gap:var(--sp-4)}
+.agent-card{display:flex;align-items:center;gap:var(--sp-8);padding:6px 8px;background:var(--panel);border-radius:var(--br-sm);border:1px solid var(--line)}
+.agent-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.agent-dot.active{background:var(--ok)}
+.agent-dot.idle{background:var(--dot-idle)}
+.agent-dot.wedged{background:var(--err);animation:pulse 1.5s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.agent-alias{font-size:var(--fs-12);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.agent-model{font-size:var(--fs-11);color:var(--dim)}
+.spark-row{display:flex;align-items:center;gap:var(--sp-8);padding-top:4px}
+.spark-label{font-size:var(--fs-11);color:var(--dim)}
+.spark-svg{flex:1;height:28px}
+.spark-line{fill:none;stroke:var(--acc);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.legend{display:flex;gap:var(--sp-16);margin-top:var(--sp-16);padding-top:var(--sp-12);border-top:1px solid var(--line);flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:4px;font-size:var(--fs-11);color:var(--dim)}
+.legend-swatch{width:10px;height:10px;border-radius:2px}
+.no-data{font-size:var(--fs-11);color:var(--dim);padding:4px 0}
+</style>
+</head>
+<body>
+<h1>Fleet Status Panel &mdash; Design Prototype (Builder Goal #6)</h1>
+<p class="spec">Data source: /api/fleet/status. VRAM thresholds: green&lt;70%, amber 70&ndash;85%, red&gt;85%. Agent states: active/idle/wedged.</p>
+<div class="fleet-panel">
+<div class="fp-header"><span class="fp-title">Fleet Status</span><span class="fp-ts">updated 12s ago</span></div>
+<div class="host-grid" id="grid"></div>
+<div class="legend">
+<div class="legend-item"><div class="legend-swatch" style="background:var(--ok)"></div>VRAM &lt;70%</div>
+<div class="legend-item"><div class="legend-swatch" style="background:var(--warn)"></div>VRAM 70&ndash;85%</div>
+<div class="legend-item"><div class="legend-swatch" style="background:var(--err)"></div>VRAM &gt;85%</div>
+<div class="legend-item"><div class="agent-dot active" style="width:8px;height:8px"></div>Active</div>
+<div class="legend-item"><div class="agent-dot idle" style="width:8px;height:8px"></div>Idle</div>
+<div class="legend-item"><div class="agent-dot wedged" style="width:8px;height:8px"></div>Wedged</div>
+</div>
+</div>
+<script>
+const D={hosts:{
+white:{state:"busy",vram_pct:82,agents:[{name:"Orchestrator",model:"UD-Q4_K_M",status:"active"},{name:"Researcher",model:"Q5_K_M",status:"idle"},{name:"Builder",model:"F16",status:"active"}],spark:[12,15,18,22,30,45,60,72,68,55,40,35,28,25,30,42,55,70,78,82,75,60,45,30]},
+black:{state:"idle",vram_pct:34,agents:[{name:"Verifier",model:"Q4_K_S",status:"idle"}],spark:[5,8,10,12,15,18,20,22,25,30,28,25,20,15,12,10,8,6,5,4,3,5,8,10]},
+red:{state:"busy",vram_pct:91,agents:[{name:"Mechanic",model:"UD-Q4_K_M",status:"active"},{name:"Scribe",model:"Q5_K_M",status:"wedged"}],spark:[60,65,70,78,85,90,92,88,85,80,75,70,65,60,68,75,82,88,91,93,90,85,78,70]},
+blue:{state:"unknown",vram_pct:null,agents:[],spark:Array(24).fill(null)}
+}};
+function vc(p){return p==null?"":p<70?"green":p<=85?"amber":"red"}
+function sp(pts,w=120,h=28){const v=pts.map((y,i)=>y!=null?{x:i,y}:null).filter(Boolean);if(v.length<2)return`<svg class="spark-svg" viewBox="0 0 ${w} ${h}"><text x="${w/2}" y="${h/2+3}" text-anchor="middle" fill="var(--dim)" font-size="9">no data</text></svg>`;const mx=Math.max(...v.map(p=>p.y))||1,mn=Math.min(...v.map(p=>p.y)),r=mx-mn||1;const c=v.map(p=>`${(p.x/(pts.length-1)*w).toFixed(1)},${(h-2-(p.y-mn)/r*(h-4)).toFixed(1)}`);const ln="M"+c.join(" L");const lp=v[v.length-1];return`<svg class="spark-svg" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none"><path class="spark-line" d="${ln}"/><circle cx="${(lp.x/(pts.length-1)*w).toFixed(1)}" cy="${(h-2-(lp.y-mn)/r*(h-4)).toFixed(1)}" r="2.5" fill="var(--acc)"/></svg>`}
+function rh(n,h){const v=h.vram_pct!=null?`<div class="vram-row"><span class="vram-label">VRAM</span><div class="vram-track"><div class="vram-fill ${vc(h.vram_pct)}" style="width:${h.vram_pct}%"></div></div><span class="vram-pct">${h.vram_pct}%</span></div>`:`<div class="vram-row"><span class="vram-label">VRAM</span><div class="vram-track"></div><span class="vram-pct">\u2014</span></div>`;let a=h.agents.length?`<div class="agent-list">`+h.agents.map(x=>`<div class="agent-card"><span class="agent-dot ${x.status}"></span><span class="agent-alias">${x.name}</span><span class="agent-model">${x.model}</span></div>`).join("")+`</div>`:`<div class="no-data">No agents assigned</div>`;const s=h.spark?`<div class="spark-row"><span class="spark-label">24h</span>${sp(h.spark)}</div>`:"";return`<div class="host-card"><div class="hc-header"><span class="hc-name">${n}</span><span class="hc-state ${h.state}">${h.state.toUpperCase()}</span></div>${v}${a}${s}</div>`}
+const g=document.getElementById("grid");for(const[n,h]of Object.entries(D.hosts))g.insertAdjacentHTML("beforeend",rh(n,h));
+</script>
+</body>
+</html>
