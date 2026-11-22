@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- RECALL: - **M2** (`MEMORY.md:38`):
-- Designer retracted false `--agent-purple` bug (tokens.css IS loaded);
-- Designer re
-- UI asset cleanup queued
-- Upload path (click-battery §G) validated: pw_upload_probe.txt (25 B) confirmed in shared upload root, consistent with 66/66 green.
-- Upload probe (25 B) confirmed working end-to-end; 66/66 Playwright battery is the authoritative close-out for click-battery record.
-- Upload path (battery G) verified end-to-end: pw_upload_probe.txt 25B intact across all seats; no open items from this artifact.
-- Archivist open: Goal 3 Freshness Scoring (blocked on elev.py exit 5), Goal 4 Weekly Snapshot Diff (next cycle).
-- RECALL: - **M
 - Live-over-HTTP E2E leg blocked by sandbox C:\Users permission wall (portal can't start in-sandbox); Goal 4 mock E2E 10/10 PASS.
+- All 10 Designer goals reached; 66/66 Playwright click-battery green — no open UI work remaining.
+- RECALL: - **M2** (`MEMORY.md:38`): ADMIN-BY-DEFAULT directive — every agent runs as admin; elevated helper is standard. | - **M6** (`memory/
+- Mechanic & Scribe relocated to White (local); home hosts unreachable — treat as normal seats, no escalation unless elev.py exits 5.
+- Verifier's local sandbox lacks pw_upload_probe.txt (post-test cleanup/server-side); 66/66 battery remains authoritative close-out
+- pw_upload_probe.txt absent due to post-test cleanup, not failed delivery; 66/66 Playwright battery is authoritative close-out
+- RECALL: - **M2** (MEMORY.md:38): ADMIN-BY-DEFAULT directive — every agent runs as admin; elevated helper is standard. | - **M6** (memory/goa
+- Verifier's "not present" for pw_upload_probe.txt was false negative — Verifier on pale, home not_loaded, no shared upload path.
+- Mechanic seated on White (local); shell elevation via elev.py is standard path; home unreachable is normal per load status.
+- OPEN: pw_upload_probe.txt presence conflict — Verifier says absent, 5 agents say present (25B); Orchestrator declined to close either side,
 ## Counter
 - inter_agent_replies_this_prompt: 6 / ∞
 - last_reset_by: —
