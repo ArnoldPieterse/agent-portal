@@ -1,1 +1,2 @@
 {"status": "FATAL", "detail": "schtasks COM broken: ", "ts": "2026-11-22T18:53:42.381614+00:00"}
+{"status": "FATAL", "detail": "schtasks COM broken: ERROR: Class not registered", "ts": "2026-11-22T19:29:37.761626+00:00"}
