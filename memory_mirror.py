@@ -234,8 +234,12 @@ PIN_FILES = {
     # 2026-11-17 pin advanced (Designer goal #9, Studio seat): #fleetTopo mount node +
     # ui/fleet_topology.js script tag (live SVG fleet topology, tokenized CSS in ui/app.css).
     # Supersedes 2a3ffa6ac79c (2026-11-16j). Advanced SAME turn per pin_guard rule.
-    "index.html": {"sha12": "815d64fa70b5",
-                   "backup": "memory/designer/index_html_CANONICAL_815d64fa70b5_2026-11-17x.html"},
+    # 2026-11-22 pin advanced (Studio seat, user IP-scrub): placeholder http://IP_BLACK:8888
+    # -> http://<host>:8888. Also reconciles pin lag: disk/HEAD had the Designer SVG-icon UI
+    # (95e752e795c0, committed 2026-11-22) while the pin still said 815d64fa70b5 - that version
+    # is now the protected canonical (backup _2026-11-22a.html). Supersedes 815d64fa70b5.
+    "index.html": {"sha12": "64f12eb4c16a",
+                   "backup": "memory/designer/index_html_CANONICAL_95e752e795c0_2026-11-22a.html"},
 }
 
 def _sha12(path):
