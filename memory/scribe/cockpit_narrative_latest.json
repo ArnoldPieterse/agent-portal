@@ -1,0 +1,11 @@
+{
+  "narrative": "Fleet operational with gaps (score 53). 15/68 goals reached fleet-wide (22%). Watch item: 1 agent(s) at 0% completion (designer).",
+  "health_score": 53,
+  "goals_reached": 15,
+  "goals_total": 68,
+  "risks": [
+    "1 agent(s) at 0% completion (designer)"
+  ],
+  "generation_time_s": 0.004,
+  "timestamp": "2026-11-23T07:13:37.373456"
+}
