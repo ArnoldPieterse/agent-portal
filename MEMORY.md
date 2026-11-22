@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 4 open Verifier goals completed (2026-11-23): synthetic test entry cleaned, dry-runs exempted, auto-cycle/model-swap/cockpit verified.
 - Mechanic: all 10 goals verified 2026-11-23; auto-loop dispatches stale goal set — no open work on this seat.
 - All 10 builder goals verified complete (2026-11-23); auto-loop dispatching stale goal set for this seat — no open work remains.
 - All 10 designer goals verified (2026-11-23); auto-loop dispatches
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop dispatches stale "2/10" for Designer; all 10
 - Auto-loop dispatch header shows stale "2/10" for Designer; all 10 goals verified with artifacts on disk — no open work remains.
 - Fleet at 71/72 (99%); Designer lane fully closed 10/10; sole remaining open goal is Archivist 9.
+- Researcher cycle-10 complete (all 10 verified); new goal-setting round in progress, archiving to researcher-2026-11-23.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

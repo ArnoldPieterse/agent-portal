@@ -1006,5 +1006,53 @@
 "text": "**Cross-Reference Consistency Check** - When the same fact appears in multiple files, verify they agree. E.g., if file A says \"host White ha",
 "agent": "archivist",
 "at": "2026-11-23"
+},
+{
+"sig": "3530db1909948ef4",
+"text": "**Knowledge Freshness Heatmap** - Extend freshness scoring to produce a per-directory heatmap: which areas of memory/ are stale vs fresh, tr",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "eadc6e9d2d77ad97",
+"text": "**Cockpit Layout Design** - Design the Fleet Cockpit tab layout: grid structure, panel priority ordering (health score top-left, agents next",
+"agent": "designer",
+"at": "2026-11-23"
+},
+{
+"sig": "31fc98242bffc835",
+"text": "**Health Score Visualization** - Design the health score component: gauge type (half-circle vs linear), color thresholds, trend indicator (a",
+"agent": "designer",
+"at": "2026-11-23"
+},
+{
+"sig": "6d29583a98b54494",
+"text": "**Decision Timeline UX** - Design the decision log display as a vertical timeline: each node = one decision, expandable card shows detail. C",
+"agent": "designer",
+"at": "2026-11-23"
+},
+{
+"sig": "654971b692c14fc7",
+"text": "**Agent Status Grid** - Design the per-agent status display: card per agent showing name, current status (active/idle/loading/error), curren",
+"agent": "designer",
+"at": "2026-11-23"
+},
+{
+"sig": "a5051d1c1f45c2d0",
+"text": "**Fleet Topology Live Update** - Update the existing fleet topology view to show real-time data flow: animated lines between agents and host",
+"agent": "designer",
+"at": "2026-11-23"
+},
+{
+"sig": "26167424627541c8",
+"text": "**Alert Triage View** - Design a prioritized alert queue: sorted by severity x age, each alert showing: what happened, affected component, t",
+"agent": "designer",
+"at": "2026-11-23"
+},
+{
+"sig": "bb7d80c6590c7a8e",
+"text": "**Cockpit Mobile Adaptation** - Ensure the full cockpit tab is usable at 768px: panels stack vertically, gauges scale down, agent grid becom",
+"agent": "designer",
+"at": "2026-11-23"
 }
 ]
