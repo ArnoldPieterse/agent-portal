@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer confirmed all 10 goals reached (0 open); "4 open" in prompt was stale pre-evidence count. Lane fully complete.
-- Designer wrote UI Change Checklist at memory/ops/ui-change-checklist.md (7-point regression table + pin-advance proc) to prevent clobber-loo
 - All 10 goals verified (100%). Assisted Scribe's goal #10: --agent flag ACs confirmed (8 files, min=12 items, no cross-agent contamination).
 - Designer 10/10 reached; contributing timeline-panel design spec for Scribe's Temporal Query API (timeline.py not yet built).
 - Mechanic Goals 1-3 blocked: all require non-sandbox execution on White; no further action possible from this seat.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer 10/10 verified,
 - Scribe 10/10 goals reached, open=0; both goal 8 and 10 verified in prior pass — no remaining work on scribe lane.
 - Auto-loop "4 open" count is stale; ledger confirms Archivist 10/10 reached, open=0. Don't re-probe.
+- Archivist lane fully closed: 10/10 goals verified, open=0. "4 open" in auto-loop prompts is stale; no further action needed.
+- Scribe 10/10 goals ledger-verified; this pass backfilled (verified:) markers on #5,#6,#9,#10 and AC-tested #7 archive_nav.py --auto
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
