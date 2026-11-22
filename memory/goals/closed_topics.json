@@ -766,5 +766,17 @@
 "text": "**Goal Completion Pattern Analysis** - `python memory/scribe/completion_patterns.py`: analyze all completed goals across cycles: which types",
 "agent": "scribe",
 "at": "2026-11-23"
+},
+{
+"sig": "722b75e576947270",
+"text": "**Runbook Lesson Extractor** - `python memory/scribe/runbook_lessons.py`: after each remediation execution (success or failure), extract les",
+"agent": "scribe",
+"at": "2026-11-23"
+},
+{
+"sig": "18e0eef25232deb6",
+"text": "**Stakeholder Briefing Generator** - `python memory/scribe/stakeholder_brief.py`: produce a 1-page (500-word max) briefing suitable for a no",
+"agent": "scribe",
+"at": "2026-11-23"
 }
 ]

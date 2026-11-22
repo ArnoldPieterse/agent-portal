@@ -102,50 +102,60 @@ def compute_agent_throughput() -> dict[str, dict]:
     return throughput
 
 
-def classify_goal_type(title: str, description: str = "") -> str:
-    """Classify a goal into a task type based on keywords."""
-    text = (title + " " + description).lower()
-    if any(k in text for k in ["portal", "ui", "tab", "component", "css", "js", "frontend", "widget", "render"]):
-        return "build"
-    if any(k in text for k in ["verify", "test", "audit", "check", "validate", "rollback", "compliance"]):
-        return "verify"
-    if any(k in text for k in ["research", "investigate", "find", "source", "cross-check", "analysis", "analyze"]):
-        return "research"
-    if any(k in text for k in ["design", "layout", "visual", "typography", "gauge", "sparkline", "timeline ux"]):
-        return "design"
-    if any(k in text for k in ["synthes", "summar", "narrative", "brief", "report", "compress"]):
-        return "synthesize"
-    if any(k in text for k in ["model", "host", "gpu", "vram", "load", "unload", "reboot", "maintenance", "probe", "daemon"]):
-        return "ops"
-    if any(k in text for k in ["orchestrat", "plan", "allocate", "budget", "capacity", "roster", "incident", "policy"]):
-        return "orchestrate"
-    # Default: build (most common)
-    return "build"
-
-
-def agent_specialization(agent: str, throughput: dict[str, dict]) -> dict[str, float]:
-    """Estimate which task types an agent handles best based on historical data."""
-    # Base specialization from role (prior knowledge)
-    base = {
-        "orchestrator": {"orchestrate": 0.9, "build": 0.6, "ops": 0.5, "synthesize": 0.4},
-        "researcher": {"research": 0.9, "synthesize": 0.6, "verify": 0.4},
-        "builder": {"build": 0.9, "design": 0.4, "ops": 0.3},
-        "verifier": {"verify": 0.9, "research": 0.3, "ops": 0.4},
-        "designer": {"design": 0.9, "build": 0.5, "synthesize": 0.3},
-        "archivist": {"research": 0.7, "synthesize": 0.6, "verify": 0.4},
-        "scribe": {"synthesize": 0.9, "research": 0.4, "design": 0.3},
-        "mechanic": {"ops": 0.9, "build": 0.4, "verify": 0.5},
-    }
-    # Adjust by historical completion rate
-    agent_rate = throughput.get(agent, {}).get("avg_completion_rate", 0.5)
-    scale = 0.7 + 0.6 * agent_rate  # higher rate -> more weight
-    result = {}
-    for task_type, score in base.get(agent, {}).items():
-        result[task_type] = min(1.0, score * scale)
-    # Add small baseline for all types
-    for tt in ["build", "verify", "research", "design", "synthesize", "ops", "orchestrate"]:
-        result.setdefault(tt, 0.2)
-    return result
+AGENT_KEYWORDS: dict[str, list[str]] = {
+    "orchestrator": [
+        "hotload", "incident triage", "cross-seat", "roster health", "goal dependency",
+        "cycle retrospective", "capacity governor", "auto-transition", "auto-planner",
+        "rebalancer", "routing optimizer", "policy engine", "budget manager",
+        "incident responder", "decision audit", "fleet cockpit api", "workload",
+        "orchestrat", "plan", "allocat", "capacity", "roster", "incident", "policy",
+    ],
+    "researcher": [
+        "evidence freshness", "reproducibility", "goal slip", "blocker triage",
+        "unified loader", "residency matrix", "overnight unload", "root-cause",
+        "research", "investigate", "find", "source", "cross-check", "analysis",
+        "analyze", "evidence", "slip model", "kb index", "dictionary",
+    ],
+    "builder": [
+        "api client wrappers", "upload pipeline", "dark mode", "portal performance",
+        "ui module", "one-command deploy", "build-verify-pin", "error boundary",
+        "frontend", "widget", "render", "component", "cockpit tab", "model swap",
+        "auto-cycle trigger", "health score widget", "decision log viewer",
+        "portal", "ui", "tab", "css", "js",
+    ],
+    "verifier": [
+        "performance gate", "evidence quality scoring", "api contract test", "security audit",
+        "goal acceptance", "evidence cross-reference", "memory tree integrity", "cycle quality",
+        "rollback test", "policy compliance", "state consistency", "cycle trigger validation",
+        "model swap verification", "verify", "test", "audit", "check", "validate",
+        "compliance", "baseline", "integrity",
+    ],
+    "designer": [
+        "responsive layout", "svg icon", "accessibility tree", "theme system",
+        "wcag", "visual design", "error state design", "layout design", "typography",
+        "gauge", "sparkline", "timeline ux", "status grid", "topology live",
+        "design", "layout", "visual", "icon", "theme", "responsive",
+    ],
+    "archivist": [
+        "orphan remediation", "knowledge graph", "cross-reference integrity", "keyword search index",
+        "snapshot diff", "knowledge lifecycle", "duplication detection", "citation tracking",
+        "archive hygiene", "index check", "provenance", "freshness scoring",
+        "archive", "knowledge", "citation", "orphan", "snapshot", "index",
+    ],
+    "scribe": [
+        "decision impact tracking", "briefing freshness", "handoff quality", "card staleness",
+        "auto-updating archive nav", "temporal query api", "per-agent weekly digest",
+        "cycle retrospective automation", "stakeholder brief", "runbook lessons",
+        "synthes", "summar", "narrative", "brief", "report", "compress", "digest",
+    ],
+    "mechanic": [
+        "load test", "self-healing mirror", "winrm", "fleet status api hardening",
+        "scheduled-task dependency", "log rotation", "alert escalation", "capacity planning",
+        "runbook automation", "model lifecycle", "oom recovery", "maintenance window",
+        "capacity arbitration", "incident classification", "probe", "daemon", "reboot",
+        "gpu", "vram", "host down", "load/unload",
+    ],
+}
 
 
 def load_backlog(path: str) -> list[dict]:
@@ -161,7 +171,7 @@ def load_backlog(path: str) -> list[dict]:
         return [
             {
                 "title": g.get("title", g.get("name", f"Goal {i+1}")),
-                "type": g.get("type", "build"),
+                "type": g.get("type", "auto"),
                 "priority": int(g.get("priority", 3)),
                 "est_effort": float(g.get("est_effort", 1.0)),
                 "description": g.get("description", ""),
@@ -172,14 +182,14 @@ def load_backlog(path: str) -> list[dict]:
     # Markdown: numbered lines
     goals = []
     for line in text.splitlines():
-        m = re.match(r"^\s*(\d+)\.\s+\*\*(.+?)\*\*\s*[-—]?\s*(.*)", line.strip())
+        m = re.match(r"^\s*(\d+)\.\s+\*\*(.+?)\*\*\s*[-\u2014]?\s*(.*)", line.strip())
         if not m:
             continue
         title = m.group(2).strip()
         desc = m.group(3).strip() if m.group(3) else ""
         goals.append({
             "title": title,
-            "type": classify_goal_type(title, desc),
+            "type": "auto",
             "priority": 3,
             "est_effort": 1.0,
             "description": desc,
@@ -187,46 +197,18 @@ def load_backlog(path: str) -> list[dict]:
     return goals
 
 
-def build_agent_keyword_profiles() -> dict[str, dict[str, float]]:
-    """Build keyword frequency profiles per agent from all completed goals in archive."""
-    import re as _re
-    stop_words = {'the', 'a', 'an', 'and', 'or', 'of', 'to', 'in', 'on', 'for',
-                  'is', 'it', 'this', 'that', 'with', 'from', 'by', 'at', 'as',
-                  'be', 'was', 'were', 'are', 'has', 'had', 'do', 'does', 'did'}
-    profiles = {a: {} for a in AGENT_IDS}
-    if not ARCHIVE_DIR.exists():
-        return profiles
-    for f in sorted(ARCHIVE_DIR.glob("*.md")):
-        agent_id = f.stem.split("-")[0].lower()
-        if agent_id not in AGENT_IDS:
-            continue
-        text = f.read_text(encoding="utf-8", errors="replace")
-        goals = parse_goal_file(text)
-        for g in goals:
-            if not g["completed"]:
-                continue
-            words = _re.findall(r'[a-z][a-z0-9\-]+', g["title"].lower())
-            for w in words:
-                if w in stop_words or len(w) < 3:
-                    continue
-                profiles[agent_id][w] = profiles[agent_id].get(w, 0) + 1
-    # Normalize: divide by total keywords per agent
-    for agent in AGENT_IDS:
-        total = sum(profiles[agent].values())
-        if total > 0:
-            profiles[agent] = {k: v / total for k, v in profiles[agent].items()}
-    return profiles
-
-
-def score_goal_for_agent(goal: dict, profile: dict[str, float]) -> float:
-    """Score a goal against an agent's keyword profile."""
-    import re as _re
-    words = set(_re.findall(r'[a-z][a-z0-9\-]+', (goal["title"] + " " + goal.get("description", "")).lower()))
-    score = 0.0
-    for w in words:
-        if w in profile:
-            score += profile[w]
-    return score
+def score_goal_for_agent(goal: dict) -> dict[str, float]:
+    """Score a goal against each agent's domain keywords. Returns {agent: score}."""
+    text = (goal["title"] + " " + goal.get("description", "")).lower()
+    scores = {}
+    for agent, keywords in AGENT_KEYWORDS.items():
+        score = 0.0
+        for kw in keywords:
+            if kw in text:
+                # Longer keywords are more specific -> higher weight
+                score += 1.0 + len(kw.split()) * 0.5
+        scores[agent] = score
+    return scores
 
 
 def allocate_goals(
@@ -235,36 +217,28 @@ def allocate_goals(
     max_per_agent: int = 15,
     min_per_agent: int = 1,
 ) -> dict[str, list[dict]]:
-    """Keyword-profile allocation: assign each goal to best-matching agent.
+    """Allocate goals to agents using agent-specific domain keyword matching.
     
-    Uses historical keyword frequency profiles built from all completed goals
-    in the archive. Each goal is scored against every agent's profile; highest
-    score wins (with load balancing penalty). Falls back to type-based scoring
-    if no keyword match found.
+    Primary signal: agent domain keywords (strong, specific).
+    Secondary: load balancing penalty (mild, only breaks ties).
     """
-    profiles = build_agent_keyword_profiles()
-    specialization = {a: agent_specialization(a, throughput) for a in AGENT_IDS}
     assignment: dict[str, list[dict]] = {a: [] for a in AGENT_IDS}
-    load: dict[str, float] = {a: 0.0 for a in AGENT_IDS}
 
     # Sort by priority (lower number = higher priority), then by effort
     sorted_goals = sorted(backlog, key=lambda g: (g["priority"], -g["est_effort"]))
 
     for goal in sorted_goals:
+        scores = score_goal_for_agent(goal)
         best_agent = None
         best_score = -1
         for agent in AGENT_IDS:
             if len(assignment[agent]) >= max_per_agent:
                 continue
-            # Primary: keyword profile score (scaled up)
-            kw_score = score_goal_for_agent(goal, profiles[agent]) * 10.0
-            # Secondary: type-based specialization as tiebreaker/fallback
-            type_score = specialization[agent].get(goal["type"], 0.1) * 2.0
-            # Load balancing penalty
-            balance_penalty = len(assignment[agent]) * 0.5
-            score = kw_score + type_score - balance_penalty
-            if score > best_score:
-                best_score = score
+            # Mild load-balancing penalty (0.2 per assigned goal)
+            balance_penalty = len(assignment[agent]) * 0.2
+            effective_score = scores.get(agent, 0.0) - balance_penalty
+            if effective_score > best_score:
+                best_score = effective_score
                 best_agent = agent
 
         if best_agent is None:
@@ -274,7 +248,6 @@ def allocate_goals(
                 continue  # truly can't fit
 
         assignment[best_agent].append(goal)
-        load[best_agent] += goal["est_effort"]
 
     # Ensure no agent has 0 goals (redistribute from most-loaded)
     for agent in AGENT_IDS:
@@ -380,7 +353,7 @@ def run_verification(target_cycle: str = "cycle8") -> dict:
         for g in goals:
             backlog.append({
                 "title": g["title"],
-                "type": classify_goal_type(g["title"]),
+                "type": "auto",
                 "priority": 3,
                 "est_effort": 1.0,
                 "description": "",
