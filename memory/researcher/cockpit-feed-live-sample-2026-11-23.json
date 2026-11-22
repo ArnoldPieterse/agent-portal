@@ -1,0 +1,27 @@
+{
+  "decision_id": "fleet-2026-11-23-105121",
+  "agent": "researcher",
+  "timestamp": "2026-11-23T10:51:00Z",
+  "confidence": 0.305,
+  "loop_closed": true,
+  "evidence_count": 5,
+  "staleness_hours": 0.1,
+  "context": {
+    "fleet_pct_reached": 80,
+    "fleet_goals_total": 80,
+    "fleet_goals_reached": 64,
+    "researcher_closure_rate": 0.92,
+    "brier_score": 0.4575,
+    "prediction_count_matched": 10,
+    "decisions_traced": 20,
+    "evidence_resolution_pct": 86.1
+  },
+  "action_summary": "All 5 cycle-11 goals verified; generating live cockpit feed sample from actual measurement data",
+  "provenance": [
+    "memory/researcher/loop-closure-report.md",
+    "memory/researcher/decision-confidence-report.json",
+    "memory/researcher/evidence-trace-report.md",
+    "memory/researcher/calibration-report.md",
+    "memory/goals/researcher.md"
+  ]
+}
