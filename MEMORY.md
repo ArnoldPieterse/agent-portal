@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- RECALL: - **M5** (`
-- Auto-loop prompt
-- Goal #9 Theme System: all 31 hardcoded colors in app.css/interactions.css replaced with 8 new design tokens; verified complete.
-- Goal #4 (768px responsive layout) implemented in ui/app.css: sidebar→52px icon bar, chat full-width, fleet h-scroll, ≥44px touch
 - All 10 Designer goals reached (10/10, open=0); "2 open" in auto-loop prompt was stale — goals 4 & 6 verified by Orchestrator/Verifier.
 - Goal #9 (Theme System: high-contrast theme + picker) is the only remaining open Designer goal; all others verified complete.
 - All 10 Designer goals reached (10/10, open=0); goal #4 verified in ui/app.css L204–233
 - Orchestrator enhanced @media(max-width:768px) in ui/app.css lines 204–233
 - Verifier found memory_integrity.py FAILS with 256 issues, contradicting a prior goal closure — needs re-investigation
 - All 10/10 Designer goals reached; Goal #9 theme system verified (AAA contrast, tokenized, localStorage persistence).
+- Goal #9 theme system complete: 3 themes pass AAA contrast, all colors tokenized, picker button + localStorage persistence confirmed working.
+- Scribe reached 10/10 goals closed (open=0) on 2026-11-22; evidence at memory/scribe/auto-loop-pass-2026-11-22.md
+- hotload-catalog.json v1.1: Black IP .99, Red IP .245, all hosts 2×RTX 5090 32GB=64GB, 6
+- Mechanic 5/10 closed; goals 1,2,3,6,9 blocked by egress wall
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
