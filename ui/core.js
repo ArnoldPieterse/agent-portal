@@ -565,3 +565,40 @@ else if((location.hash||"").startsWith("#visual")){ window.addEventListener("loa
   }
   setInterval(tick,4000); setTimeout(tick,1500);
 })();
+
+// ---- Theme toggle (2026-11-22 - completes Goal #10: tokens.css had the [data-theme=light]
+// family since 2026-11-17 but initTheme was never built, so the light theme was unreachable).
+// Button injected into the header like printReportBtn; choice persisted per browser. ----
+(function(){
+  const KEY="portalTheme";
+  function cur(){ let t="dark"; try{ t=localStorage.getItem(KEY)||"dark"; }catch(_){} return t==="light"?"light":"dark"; }
+  window.initTheme=function(t){ if(t)try{ localStorage.setItem(KEY,t); }catch(_){}
+    const v=t||cur();
+    if(v==="light")document.documentElement.setAttribute("data-theme","light"); else document.documentElement.removeAttribute("data-theme"); };
+  initTheme(); // apply persisted choice as early as core.js parses (script is at end of body)
+  const b=document.createElement("button"); b.id="themeBtn"; b.type="button";
+  b.title="Toggle light/dark theme (remembered in this browser)";
+  function paint(){ let ic=''; try{ ic=(window.UI&&UI.iconSized)?(cur()==="light"?UI.iconSized("moon",14):UI.iconSized("sun",14)):''; }catch(_){}
+    b.innerHTML=ic+" Theme"; }
+  paint();
+  b.onclick=function(){ initTheme(cur()==="light"?"dark":"light"); paint(); };
+  const st=$("status"); if(st)st.parentNode.insertBefore(b,st); else { const hd=document.querySelector("header"); if(hd)hd.appendChild(b); }
+})();
+// ---- Keyboard shortcuts (2026-11-22): Esc closes topmost layer, "/" focuses the composer. ----
+(function(){
+  const PANELS=[["actBtn","actPanel"],["fleetBtn","fleetPanel"],["opsBtn","opsPanel"],["filesBtn","filesPanel"],["goalsBtn","goalsPanel"]];
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"){
+      let handled=false;
+      if(document.querySelector(".tour-overlay")&&window.UI&&UI.tour&&UI.tour.close){ UI.tour.close(); handled=true; }
+      const ed=$("editor"); if(ed&&typeof ed.close==="function"&&ed.open){ try{ ed.close(); }catch(_){} handled=true; }
+      const np=document.getElementById("notifPanel"); if(np&&!np.classList.contains("hidden")){ np.classList.add("hidden"); handled=true; }
+      for(const pair of PANELS){ const p=$(pair[1]),bb=$(pair[0]); if(p&&p.classList.contains("open")&&bb){ bb.click(); handled=true; } }
+      if(handled)e.preventDefault();
+    } else if(e.key==="/"&&!e.ctrlKey&&!e.metaKey&&!e.altKey){
+      const t=e.target,tag=t?(t.tagName||""):"";
+      if(tag==="INPUT"||tag==="TEXTAREA"||tag==="SELECT"||(t&&t.isContentEditable))return;
+      const inp=$("input"); if(inp){ e.preventDefault(); inp.focus(); }
+    }
+  });
+})();

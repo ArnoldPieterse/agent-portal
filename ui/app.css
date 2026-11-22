@@ -169,6 +169,11 @@ textarea{resize:vertical;min-height:64px}
 .fs-empty{padding:var(--sp-8);color:var(--dim)}
 /* Goal Velocity dashboard (2026-11-15, Designer): /api/goals -> per-agent SVG rings */
 #goalsBtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:var(--br-md);padding:var(--sp-4) var(--sp-8);cursor:pointer;font-size:var(--fs-12)}
+/* 2026-11-22: theme toggle (completes Goal #10) + Fleet-tab load badge */
+#themeBtn{background:none;border:1px solid var(--line);color:var(--dim);border-radius:var(--br-sm);padding:var(--sp-3) var(--sp-8);cursor:pointer;font-size:var(--fs-12);display:inline-flex;align-items:center;gap:4px;}
+#themeBtn:hover{color:var(--text);border-color:var(--dim);}
+#themeBtn svg{width:14px;height:14px;}
+.tabbadge{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--warn);margin-left:6px;vertical-align:2px;box-shadow:0 0 0 2px var(--bg);}
 #goalsBtn:hover,#goalsBtn.on{border-color:var(--acc);color:var(--text)}
 #goalsPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:300px;flex-direction:column}
 #goalsPanel.open{display:flex}
@@ -363,7 +368,7 @@ code{background:var(--line);border-radius:5px;padding:1px 5px;font-size:var(--fs
   *{background:transparent !important;color:var(--black) !important;box-shadow:none !important;}
   body{height:auto !important;display:block !important;margin:0 !important;font-size:var(--fs-12);line-height:1.4;}
   header .composer,#chips,.toast-container,.notif-bell,.notif-panel,.tour-overlay,.tour-card,#peek,#sendQueuePanel,#busyHint{display:none !important;}
-  .panel-toggle,.btn,#printReportBtn,.toggles button{display:none !important;}
+  .panel-toggle,.btn,#printReportBtn,#themeBtn,.toggles button{display:none !important;}
   main{display:block !important;height:auto !important;}
   .panel,[id$="Panel"]{position:static !important;height:auto !important;max-height:none !important;overflow:visible !important;border:none !important;margin:0 0 var(--sp-12) !important;padding:var(--sp-8) !important;}
   #chatCol,#composerWrap{display:none !important;}

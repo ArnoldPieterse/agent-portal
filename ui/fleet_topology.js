@@ -13,6 +13,7 @@
 (function (root) {
   "use strict";
 
+  var _subs = [];   // 2026-11-22: FleetTopology.onData(cb) - cb(d) after every draw (live or one-shot); powers the Fleet-tab load badge.
   var STATE_COLOR = { idle: "var(--ok, #3ddc84)", busy: "var(--warn, #ff9f43)", unauth: "var(--acc, #4f8cff)", unknown: "var(--dot-err)" };
   var STATE_LABEL = { idle: "idle", busy: "busy", unauth: "unauth (up, no key)", unknown: "unknown" };
 
@@ -143,6 +144,7 @@
         g.addEventListener("click", function(){ det.innerHTML=detailHTML(h); det.hidden=false; });
         g.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); det.innerHTML=detailHTML(h); det.hidden=false; } });
       });
+      _subs.forEach(function(cb){ try{ cb(d); }catch(_){} });   // 2026-11-22: notify subscribers (tab badge)
     }
 
     function load(){
@@ -156,7 +158,11 @@
     if(opts.live && !opts.sample){ var iv = setInterval(load, 30000); container._ftStop=function(){clearInterval(iv);}; }
   }
 
-  root.FleetTopology = { render: render, SAMPLE: SAMPLE };
+  root.FleetTopology = {
+    render: render,
+    SAMPLE: SAMPLE,
+    onData: function(cb){ if(typeof cb==="function")_subs.push(cb); }   // 2026-11-22
+  };
 })(typeof window!=="undefined" ? window : this);
 /* Self-init: render into #fleetTopo when present (index.html markup-only shell rule). */
 (function(){

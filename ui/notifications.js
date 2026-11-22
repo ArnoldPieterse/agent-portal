@@ -24,7 +24,9 @@
     const c=ensureContainer();
     while(c.children.length>=MAX)c.firstChild.remove();
     const t=el("div","toast "+kind); t.appendChild(document.createTextNode(msg));
-    const x=el("button","toast-close"); x.type="button"; x.setAttribute("aria-label","Dismiss notification"); let xi=''; try{ xi=(window.UI&&UI.icon)?UI.iconSized('close',10):''; }catch(_){} x.innerHTML=xi||'×'; x.onclick=function(){ dismiss(t); };
+    t.title="Click to dismiss";
+    t.onclick=function(){ dismiss(t); };   // 2026-11-22: click anywhere on the toast dismisses it (× still works)
+    const x=el("button","toast-close"); x.type="button"; x.setAttribute("aria-label","Dismiss notification"); let xi=''; try{ xi=(window.UI&&UI.icon)?UI.iconSized('close',10):''; }catch(_){} x.innerHTML=xi||'×'; x.onclick=function(e){ e.stopPropagation(); dismiss(t); };
     t.appendChild(x); c.appendChild(t);
     const bell=ensureBell(); if(bell){ items.push({kind:kind,msg:msg}); if(items.length>50)items=items.slice(-50); unread++; renderBadge(); renderPanel(); }
     setTimeout(function(){ dismiss(t); },TTL); };

@@ -543,4 +543,16 @@ $('intResume').onclick=()=>{ $('intBanner').classList.remove('show');clearRunSta
   if(busy){queueMsg(t);}else{$('input').value=t;send();} };
 $('intDismiss').onclick=()=>{ $('intBanner').classList.remove('show');clearRunState(); };
 function bootRestore(){ try{setMode(mode);}catch(e){} restoreFromServer(); umqPoll(); setInterval(()=>{umqPoll();umqDeliver();},1500); checkInterruptedRun(); startRunWatch(); }
+// ---- Fleet-tab load-queue badge (2026-11-22): amber dot on the Fleet tab while ANY host has a
+// model load in flight or waiters queued. Piggybacks on the topology's existing 30s live poll
+// (FleetTopology.onData) - zero extra requests. Sample/fallback data carries no loads -> no badge.
+if(window.FleetTopology&&FleetTopology.onData){
+  FleetTopology.onData(function(d){
+    const b=$("fleetBtn"); if(!b)return;
+    let old=b.querySelector(".tabbadge"); if(old)old.remove();
+    const busy=(d.hosts||[]).some(h=>h.loading||(h.queued>0)||(h.host_loading&&h.host_loading.length));
+    if(busy){ const s=document.createElement("span"); s.className="tabbadge";
+      s.title="Model load in progress on at least one host (open Fleet for details)"; b.appendChild(s); }
+  });
+}
 
