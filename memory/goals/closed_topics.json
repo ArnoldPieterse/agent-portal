@@ -448,5 +448,17 @@
 "text": "**Log Rotation + Retention** - Implement rotation for all .jsonl and .log files in the fleet: max 50MB per file, keep 7 days of history, com",
 "agent": "mechanic",
 "at": "2026-11-23"
+},
+{
+"sig": "f76ceb1a0020a6c5",
+"text": "**Self-Healing Mirror Production** - (Carried from scheduled-background MECHANIC#2) Register the mirror auto-repair as a 15-min schtask on W",
+"agent": "mechanic",
+"at": "2026-11-23"
+},
+{
+"sig": "7b45417d6bad2764",
+"text": "**Fleet Status API Hardening** - Add to /api/fleet/status: per-host timeout (5s), circuit breaker (3 consecutive failures -> mark host DOWN ",
+"agent": "mechanic",
+"at": "2026-11-23"
 }
 ]
