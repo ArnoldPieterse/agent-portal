@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- pw_upload_probe.txt absent due to post-test cleanup, not failed delivery; 66/66 Playwright battery is authoritative close-out
 - RECALL: - **M2** (MEMORY.md:38): ADMIN-BY-DEFAULT directive — every agent runs as admin; elevated helper is standard. | - **M6** (memory/goa
 - Verifier's "not present" for pw_upload_probe.txt was false negative — Verifier on pale, home not_loaded, no shared upload path.
 - Mechanic seated on White (local); shell elevation via elev.py is standard path; home unreachable is normal per load status.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - KG v3 size AC FAILS: JSON is 2,166,230 B (>2 MB cap by 67.5 KB);
 - Goal #3 (Freshness Scoring): decay run #3 done (7900 leaves, 0 flagged), 3/4 ACs met;
 - Goal #
+- decay_score.py now production-ready (auto-archive + alerts); pending schedule on non-sandbox seat
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
