@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 9796 | flagged (<0.35): 0
+Leaves: 9810 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -6537,7 +6537,6 @@ Leaves: 9796 | flagged (<0.35): 0
 | memory/mechanic/__pycache__/_winrm_probe_now.cpython-313.pyc | 4 | 0 | n | 0.528 |
 | memory/ops/blocker-triage-2026-11-20.md | 4 | 0 | n | 0.528 |
 | memory/ops/blocker-triage-test.md | 4 | 0 | n | 0.528 |
-| memory/ops/claim-phantom-report.md | 4 | 0 | n | 0.528 |
 | memory/ops/cross-seat-protocol.md | 4 | 0 | n | 0.528 |
 | memory/ops/design-token-lint-workflow.md | 4 | 0 | n | 0.528 |
 | memory/ops/evidence-quality-2026-11-20.md | 4 | 0 | n | 0.528 |
@@ -9158,7 +9157,6 @@ Leaves: 9796 | flagged (<0.35): 0
 | memory/verifier/remediation_gate.py | 1 | 0 | n | 0.544 |
 | memory/verifier/remediation_gate_log.jsonl | 1 | 0 | n | 0.544 |
 | memory/verifier/reroute_e2e.py | 1 | 0 | n | 0.544 |
-| memory/verifier/reroute_e2e_report.json | 1 | 0 | n | 0.544 |
 | memory/verifier/reverify-rollback-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/verifier/reverify-stability-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/verifier/rollback_test.py | 1 | 0 | n | 0.544 |
@@ -9191,12 +9189,16 @@ Leaves: 9796 | flagged (<0.35): 0
 | memory/levels.json | 0 | 0 | n | 0.550 |
 | memory/archivist/citation-report.json | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-assist-builder-decision-index-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-assist-ops-actionlog-index-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-stale-pointer-sweep-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/archivist/kb-delta-selftest-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic_index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic_search.py | 0 | 0 | n | 0.550 |
 | memory/builder/decision-index.db | 0 | 0 | n | 0.550 |
 | memory/builder/decision_index.py | 0 | 0 | n | 0.550 |
+| memory/builder/evidence-cockpit-frontend-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-runbook-trigger-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/builder/feed-refresh-run-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/feed_refresh.py | 0 | 0 | n | 0.550 |
 | memory/builder/goal10_verification.py | 0 | 0 | n | 0.550 |
 | memory/builder/policy-conflict-detector-evidence.md | 0 | 0 | n | 0.550 |
@@ -9229,25 +9231,31 @@ Leaves: 9796 | flagged (<0.35): 0
 | memory/goals/closed_topics.json | 0 | 0 | n | 0.550 |
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
+| memory/goals/forecast-verifier-cluster-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/goals/next10.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-005723.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-015929.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-030002.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-040506.json | 0 | 0 | n | 0.550 |
 | memory/handoffs/mechanic-to-builder-preflight-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/scribe-to-builder-topology-visualizer-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_5_20261124-015216.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_6_20261124-024710.md | 0 | 0 | n | 0.550 |
+| memory/levels/level_7_20261124-033510.md | 0 | 0 | n | 0.550 |
+| memory/levels/level_8_20261124-040711.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-builder-goal10-preflight-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-builder-goal8-extractor-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-assist-action-log-spec-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook_preflight.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook_preflight_selftest.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/stall-detector-reachable-filter-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/winrm_pool.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
-| memory/ops/autonomous-action-log-spec-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/ops/claim-phantom-report.md | 0 | 0 | n | 0.550 |
 | memory/ops/cockpit-data-provenance-spec-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/ops/data-freshness-escalation-protocol-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
 | memory/ops/feed-refresh-fix-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-metrics.jsonl | 0 | 0 | n | 0.550 |
@@ -9259,6 +9267,9 @@ Leaves: 9796 | flagged (<0.35): 0
 | memory/ops/runbook-status.json | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-state.json | 0 | 0 | n | 0.550 |
+| memory/ops/state-collector-staleness-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/ops/unreachable_agents.json | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.0b19c0bd68 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.dbd3a02f71 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.fdcf1f1764 | 0 | 0 | n | 0.550 |
 | memory/ops/post-mortems/2026-11-22-Builder.md | 0 | 0 | n | 0.550 |
@@ -9271,6 +9282,7 @@ Leaves: 9796 | flagged (<0.35): 0
 | memory/researcher/builder-cycle14-sweep-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/researcher/evidence-assist-verifier-stall-detector-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-builder-goal9-policy-conflict-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/scribe/evidence-data-freshness-protocol-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/goal10-state-reconciliation-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/stale-claim-mechanic-g3-closure-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/autonomy-pr-tracker-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9294,6 +9306,7 @@ Leaves: 9796 | flagged (<0.35): 0
 | memory/verifier/remediation-e2e-genuine-pass-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation_e2e.py | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation_e2e_results.jsonl | 0 | 0 | n | 0.550 |
+| memory/verifier/reroute_e2e_report.json | 0 | 0 | n | 0.550 |
 | memory/verifier/slo-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/slo-report-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
@@ -9660,6 +9673,7 @@ Leaves: 9796 | flagged (<0.35): 0
 | memory/researcher/mirror-revert-fix1-promotion-gap-2026-11-18.md | 6 | 3 | Y | 0.805 |
 | memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.md | 6 | 3 | Y | 0.805 |
 | memory/researcher/understanding.py | 6 | 3 | Y | 0.805 |
+| memory/ops/autonomous-action-log-spec-2026-11-24.md | 0 | 2 | Y | 0.810 |
 | memory/archivist/supersession-findings-2026-11-16.md | 5 | 3 | Y | 0.811 |
 | memory/archivist/xref_check.py | 5 | 3 | Y | 0.811 |
 | memory/builder/assist-designer-goal2-padding-2026-11-19.md | 5 | 3 | Y | 0.811 |
