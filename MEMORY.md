@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- state_snapshot.py fixed: reads memory/ops/fleet-metrics.jsonl (not memory/fleet/*probe*); verified real metrics flow
-- Orchestrator verified all 5 Builder cycle-14 selftests (all pass) and recorded evidence in builder.md + assist-builder-cycle14-verify-2026-1
 - Goal 6 done: ui/topology.js (11/11 selftest) integrated into cockpit.js via dynamic script load + topology panel section.
 - Designer closed goals #1 (Adaptive Density), #2 (Provenance Overlay), #
 - Goal 8 (Post-Remediation Auto-Report) complete 6/6 ACs; Goal 9 (Policy Conflict Detector) in progress, regex fix applied.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder fixed extraction regex: split on `then/do` markers before matching trigger/action; all 4 ACs now pass.
 - Cycle-12 fully closed 2026-11-24: all 10 goals rebuilt + verified, evidence at memory/designer/cycle12-full-closure-2026-11-24.md
 - Goal #10 (Cockpit One-Click Runbook Trigger) in-progress: backend trigger script + API endpoints in agent_portal.py written, not yet verifie
+- Builder mid-build on Goal #10 (One-Click Runbook Trigger): added GET/POST routes to agent_portal.py, next step is frontend Run buttons in co
+- Cycle-12: all 10 goals verified (10/10). Full closure achieved; no open goals remain.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

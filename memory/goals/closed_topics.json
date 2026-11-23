@@ -1378,5 +1378,29 @@
 "text": "**Autonomous Remediation E2E** \u2014 full closed-loop fault-injection test (detect\u2192diagnose\u2192remediate\u2192verify) with per-stage SLA (verified: 2026",
 "agent": "verifier",
 "at": "2026-11-24"
+},
+{
+"sig": "3bf6e04572dc1469",
+"text": "**Cockpit Live-Staleness Monitor** \u2014 continuous check that /api/fleet/cockpit data is <5min fresh; alert leaf on breach (pointer: memory/ver",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "656bd65368c6ff95",
+"text": "**Autonomy Stall Detector** \u2014 flag any agent with zero file changes across 3 consecutive auto-loop passes (pointer: memory/verifier/stall-de",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "c5493576e5162aa0",
+"text": "**Closed-Loop Latency Budget** \u2014 measure per-segment latency of the autonomy cycle; enforce configurable budgets (pointer: memory/verifier/l",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "14981bf7c10f3bb2",
+"text": "**Cockpit UI Playwright Gate** \u2014 automated browser test at 3 viewports: panels render, no JS errors, interactive elements clickable (pointer",
+"agent": "verifier",
+"at": "2026-11-24"
 }
 ]
