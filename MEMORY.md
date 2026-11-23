@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe cycle-11 goals written (theme: Closed-Loop Autonomy & Fleet Cockpit, 10 goals); cycle-10 archived to memory/goals/archive/.
-- Verifier cycle-14 fully reached & archived; 22 anti-repeat topics locked in before cycle-15 goal-setting
-- Designer cycle-12 direction: adaptive/forward-looking/operable cockpit (density modes by risk, provenance overlay, concurrency board)
 - Cycle-15 goals set; round topic: "Fleet Evolution & Continuous Self-Improvement" — fleet reconfigures own composition and identifies capabil
 - Verifier's oldest open goal: build full E2E remediation test; last attempt truncated by response length —
 - kb_incr_rebuild.py built; known bug: os.walk needs str path not Path — fix: os.walk(str(MEMORY/d)), pending next pass
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechic fixed 3 bugs in memory/verifier/remediation_e2e.py; self-test now 3/3 green (2026-11-23).
 - Scribe wrote cross-lane integration map at memory/goals/scribe-crosslane-integration-map-2026-11-23.md mapping 4 lanes' open goals with depe
 - Designer reached goals 1–4 (live proof HTML, provenance overlay, fleet board, forecast) and started goal 5 (EME).
+- Cycle-12: 5/10 goals closed (density,
+- Goal #5 (Cockpit UI Play
+- Chaos Drill Scheduler built (selftest 3/3 PASS) but schedule registration blocked: no COM or elev.py in sandbox.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
