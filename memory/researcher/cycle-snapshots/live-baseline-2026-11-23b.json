@@ -1,0 +1,344 @@
+{
+  "files": {
+    "memory/goals/2026-11-13-agent-goals.md": {
+      "sha1": "ebcb4ce48af7b8aea3461fe9f501ad2a45398241",
+      "size": 12150
+    },
+    "memory/goals/INDEX.md": {
+      "sha1": "8afcd19cf827fb9d31cc4177541d4dc289ee1c74",
+      "size": 2245
+    },
+    "memory/goals/all-goals-2026-11-13.md": {
+      "sha1": "2ca1c840ba1dc7ae353ef6463f41522ee3297f57",
+      "size": 12435
+    },
+    "memory/goals/archivist-cycle8-proposal.md": {
+      "sha1": "f7d42e58e618467aa57cb7575cc04d9aaa7d7a22",
+      "size": 4102
+    },
+    "memory/goals/archivist-goal-dedup-forecast-2026-11-22.md": {
+      "sha1": "102c861ba83608b97e0069ff990198ec624ff44a",
+      "size": 1843
+    },
+    "memory/goals/archivist-goal1-freshness-forecast-2026-11-20.md": {
+      "sha1": "e43d913fc97619bcce0b613444402e79d153ea9c",
+      "size": 1515
+    },
+    "memory/goals/archivist-goal1-provenance-forecast-2026-11-23.md": {
+      "sha1": "21fc7c8d5711d6dd936682e99031dca93b74e310",
+      "size": 4925
+    },
+    "memory/goals/archivist-goal2-forecast-2026-11-19.md": {
+      "sha1": "cdcd6664f2c235f1cfe3cf2f7a0f967c92b7272e",
+      "size": 2774
+    },
+    "memory/goals/archivist-goal3-decay-schtasks-forecast-2026-11-23.md": {
+      "sha1": "eda67c1bafc509b3ecf65edf3a6f6da56ad5e2d9",
+      "size": 2707
+    },
+    "memory/goals/archivist-goal5-forecast-phantom-scan-2026-11-18.md": {
+      "sha1": "d46ab52f83174d8b4cdf8b8252971a2de0f933e1",
+      "size": 4589
+    },
+    "memory/goals/archivist-goal5-forecast-retrieval-benchmark-2026-11-19.md": {
+      "sha1": "b610d40d05cb798f132dd4d7b13fd22d76d52e78",
+      "size": 2399
+    },
+    "memory/goals/archivist-goal6-forecast-2026-11-23.md": {
+      "sha1": "1d46e3c9a9cfc9627f320b7a9c68339258e80a99",
+      "size": 1704
+    },
+    "memory/goals/archivist-goal8-sentinel-forecast-2026-11-23.md": {
+      "sha1": "a1543ec8b2745b3dea649a3bcc212e283bbe96ac",
+      "size": 4352
+    },
+    "memory/goals/archivist.md": {
+      "sha1": "74507eb436b33e94ed283e45f7e174661a9533a2",
+      "size": 12324
+    },
+    "memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md": {
+      "sha1": "51cc791f580a3ae9cedcd6b82287d27d5bf448f8",
+      "size": 2028
+    },
+    "memory/goals/builder-cycle8-proposals.md": {
+      "sha1": "88592dd1f436fd214af85ea1896040057e347371",
+      "size": 6049
+    },
+    "memory/goals/builder-forecast-archivist-phantom-closure-2026-11-19.md": {
+      "sha1": "d5b002819aec7a7c05f4b5904586aa3adde7a702",
+      "size": 2212
+    },
+    "memory/goals/builder.md": {
+      "sha1": "56f0e6309774ef80ded787e4be3c785aa411af40",
+      "size": 12992
+    },
+    "memory/goals/closed_topics.json": {
+      "sha1": "82c5c1de21b56c0f5fe83e33b03f4a508ac7f4da",
+      "size": 47238
+    },
+    "memory/goals/cross_patterns_report.md": {
+      "sha1": "d5704f02cc4cb5cd80bc8ebce2a7ecab4dd24522",
+      "size": 1942
+    },
+    "memory/goals/cycle-proposal.md": {
+      "sha1": "5c2a95f55106fd2f3cf531ae5c95652a85f334cf",
+      "size": 2353
+    },
+    "memory/goals/cycle2-dependency-map.md": {
+      "sha1": "3943760661d2d1ede7d0cb0ad302133b136bf8e8",
+      "size": 2499
+    },
+    "memory/goals/cycle2-kickoff-2026-11-16.md": {
+      "sha1": "532a2bcd48d90422879d36646df852c4881b31b5",
+      "size": 4438
+    },
+    "memory/goals/designer-attempt-mechanic4-runbook-2026-11-18.md": {
+      "sha1": "d3c9e0bcbcd80a33343f93e9dad52f01361645d9",
+      "size": 2856
+    },
+    "memory/goals/designer-attempt-verifier5-security-panel-2026-11-18.md": {
+      "sha1": "4e1fe03085c7cf90ae559c7f9bafe1c7e7b005f9",
+      "size": 2627
+    },
+    "memory/goals/designer-attempt-verifier6-concurrency-harness-2026-11-18.md": {
+      "sha1": "f9367d31306ba1c703bd322f1d3158dabb9b13a4",
+      "size": 1718
+    },
+    "memory/goals/designer-browser-gate-forecast-2026-11-19.md": {
+      "sha1": "92c60ba7a62d267e3e669f7b04657b3ef4a5a173",
+      "size": 3634
+    },
+    "memory/goals/designer-cycle5-sequencing-forecast-2026-11-19.md": {
+      "sha1": "ca640f76e37d27d55f1816c801ece7dd35e6ecdb",
+      "size": 4160
+    },
+    "memory/goals/designer-cycle6-proposals.md": {
+      "sha1": "9e31dec51943906b1f5c59ca243672821714a15e",
+      "size": 6054
+    },
+    "memory/goals/designer-cycle7-sequencing-forecast-2026-11-20.md": {
+      "sha1": "5deb86530d751d6d7c9cb8374103ff19adc0f579",
+      "size": 4773
+    },
+    "memory/goals/designer-cycle8-proposals.md": {
+      "sha1": "c829ab0f1bc599da23d6efa55421e5dc1666fec5",
+      "size": 4503
+    },
+    "memory/goals/designer-forecast-2026-11-19.md": {
+      "sha1": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+      "size": 0
+    },
+    "memory/goals/designer-forecast-2026-11-21.md": {
+      "sha1": "95b28cd1a30004be53fac30fc3e3b8a145681553",
+      "size": 4179
+    },
+    "memory/goals/designer-forecast-2026-11-23.md": {
+      "sha1": "57594aea82f36fd78aa319b74ab020889030fb38",
+      "size": 2153
+    },
+    "memory/goals/designer-forecast-cockpit-impact-2026-11-23.md": {
+      "sha1": "794123d75fc1b1b7da4f43951f4521583cac56b8",
+      "size": 2397
+    },
+    "memory/goals/designer-forecast-mechanic-winrm-2026-11-20.md": {
+      "sha1": "7bfb17d4306ca712254f6da6838df92e65ee843e",
+      "size": 1297
+    },
+    "memory/goals/designer-forecast-orchestrator-fleet-overview-2026-11-18.md": {
+      "sha1": "1d51cd7fda43b016fe31f541380a69ee33a4e746",
+      "size": 3672
+    },
+    "memory/goals/designer-goal2-ops-tiers.md": {
+      "sha1": "68fbd9a5a32c15cf5c60f9dd47616c83f4736bdc",
+      "size": 2668
+    },
+    "memory/goals/designer-goal7-forecast-2026-11-17.md": {
+      "sha1": "ad3bbad5e42e56094c5fa1247ab26149c3cb2346",
+      "size": 2903
+    },
+    "memory/goals/designer-goals5-6-stale-resolution-forecast-2026-11-23.md": {
+      "sha1": "e057f08beea95f619282450ebbf26815e9a00d77",
+      "size": 2594
+    },
+    "memory/goals/designer-notification-integration-forecast.md": {
+      "sha1": "1e9bd26d2b56bf40583e10c6b70d36e7dad643f3",
+      "size": 1953
+    },
+    "memory/goals/designer-open-goals-triage-2026-11-19.md": {
+      "sha1": "71b79b154bc59e9d8745eee14afea23306090f3f",
+      "size": 4443
+    },
+    "memory/goals/designer-open-set-reconciliation-2026-11-19.md": {
+      "sha1": "be2ee9b463d9629581ce288d4f1b83e01a490fc9",
+      "size": 3703
+    },
+    "memory/goals/designer.md": {
+      "sha1": "763020c3e2872af24581b29043966b316158dc23",
+      "size": 6999
+    },
+    "memory/goals/final13-sequencing-forecast-2026-11-21.md": {
+      "sha1": "85e280a576d712e67079b7d0cfef0a3d396eaca9",
+      "size": 2507
+    },
+    "memory/goals/forecast-archivist-g3-closure-2026-11-23.md": {
+      "sha1": "2064519555e7a86c89de3b5a663c9f7403c15753",
+      "size": 1882
+    },
+    "memory/goals/forecast-builder-g6-fleet-panel-2026-11-23.md": {
+      "sha1": "8b4bbe9db15472db07cf7b8353a2a37c0709f006",
+      "size": 4848
+    },
+    "memory/goals/forecast-builder-goal9-runbook-exec.md": {
+      "sha1": "75fbec735fb4b88ef8919ee6c69d51e801a5171e",
+      "size": 2211
+    },
+    "memory/goals/forecast-latest.md": {
+      "sha1": "9dc674380ebb64d2571c90b311bd294932891212",
+      "size": 6869
+    },
+    "memory/goals/forecast-mechanic-fleet-status-api-2026-11-19.md": {
+      "sha1": "aac89709b62256f0b7a61b190f4b8cadacede83b",
+      "size": 2500
+    },
+    "memory/goals/forecast-mechanic-g4.md": {
+      "sha1": "8a721b03f34180f73266649f6f969eaf7e131a2d",
+      "size": 1497
+    },
+    "memory/goals/forecast-mechanic-goal1-loadtest-2026-11-23.md": {
+      "sha1": "409ffa2a0dfabe9772efa657ec5302ad645409fd",
+      "size": 1623
+    },
+    "memory/goals/forecast-mechanic1-adaptive-probe-2026-11-17.md": {
+      "sha1": "4613d472124e81835637ff8857a7a2a3637db65f",
+      "size": 2679
+    },
+    "memory/goals/forecast-mechanic1-loadtest-archivist-2026-11-21.md": {
+      "sha1": "d9c5cb8e571283016a65a8d183d26ffe82ee6532",
+      "size": 2519
+    },
+    "memory/goals/forecast-mechanic2-revert-sentinel-2026-11-19.md": {
+      "sha1": "d74d528a8ebb12d54be77383fa17c0a02e0ad5c9",
+      "size": 3634
+    },
+    "memory/goals/forecast-mechanic4-reboot-recovery-2026-11-18.md": {
+      "sha1": "d58fa527e627ffe93342528b7bf1f980fd89bd45",
+      "size": 2649
+    },
+    "memory/goals/mechanic-cycle9-proposals-2026-11-23.md": {
+      "sha1": "33af8bb4b98afd54e008c0d3154ec28f415aabf2",
+      "size": 7646
+    },
+    "memory/goals/mechanic-forecast-2026-11-22.md": {
+      "sha1": "26a13bb958943eaff059fd33c42808e51182c86d",
+      "size": 2628
+    },
+    "memory/goals/mechanic-forecast-recovery-matrix.md": {
+      "sha1": "48cf60482adf3440259c952875b8b05735967813",
+      "size": 1648
+    },
+    "memory/goals/mechanic-forecast-unblock-path-2026-11-23.md": {
+      "sha1": "7eaa94ee0d5b74d7de647346f7a02ce1bc11a2a5",
+      "size": 2664
+    },
+    "memory/goals/mechanic-goal1-forecast-2026-11-18.md": {
+      "sha1": "dc8a34018c376b59b37bd5e98930e3cc62b753ef",
+      "size": 1374
+    },
+    "memory/goals/mechanic-goal1-winrm-forecast-2026-11-20.md": {
+      "sha1": "e212839b99463a6d59f0bb9faa861294d67d99dd",
+      "size": 3130
+    },
+    "memory/goals/mechanic-goal2-model-lifecycle-forecast-2026-11-23.md": {
+      "sha1": "8606ce68427af0ff50fbca3c5c09fdf7e13e4f34",
+      "size": 5620
+    },
+    "memory/goals/mechanic-goal4-forecast-2026-11-17.md": {
+      "sha1": "2459aca65e2fd6c28818aa60cdebb728e470b760",
+      "size": 2616
+    },
+    "memory/goals/mechanic.md": {
+      "sha1": "9400e3fd9d11564bd94fd6250738f38b5e5c5186",
+      "size": 7360
+    },
+    "memory/goals/orchestrator.md": {
+      "sha1": "8f983f86e14f736466ba2a8daef543ebd4d389a3",
+      "size": 7990
+    },
+    "memory/goals/researcher-attempts-cycle3-2026-11-18.md": {
+      "sha1": "f4bab626057ee43a1468701c0591fcf18b1fed8d",
+      "size": 7260
+    },
+    "memory/goals/researcher-cycle8-proposals.md": {
+      "sha1": "42f1a29af095548663a89aa1bfea31d05a2c85a8",
+      "size": 5349
+    },
+    "memory/goals/researcher-goal7-cross-host-forecast.md": {
+      "sha1": "ac9779bb3d3f7bef84779231740820e4a01c6a97",
+      "size": 2338
+    },
+    "memory/goals/researcher-goal7-crosshost-reopen-forecast-2026-11-20.md": {
+      "sha1": "baa57635ea22e4d9a9906d302b4479c8bc768728",
+      "size": 3014
+    },
+    "memory/goals/researcher-log-2026-11-13.md": {
+      "sha1": "e8bf1202f6a1a29bb54c3427ff66a864ba309036",
+      "size": 7069
+    },
+    "memory/goals/researcher.md": {
+      "sha1": "0faeef565f7e0a31dcbc2d995b45b81e2bfaf5ed",
+      "size": 6876
+    },
+    "memory/goals/retro-cycle-7.md": {
+      "sha1": "3801b5a9d2c6139e66666673f3a77198f51e231e",
+      "size": 11144
+    },
+    "memory/goals/scheduled-background.md": {
+      "sha1": "37a42b2c61bc1a361d41b65d940a85947478d165",
+      "size": 5144
+    },
+    "memory/goals/scheduler-cycle6.md": {
+      "sha1": "006ae732aa0055efd0c85a8b94e217191fdc1ce5",
+      "size": 5480
+    },
+    "memory/goals/scribe-crosslane-integration-map-2026-11-23.md": {
+      "sha1": "cff15b2b2052b53873c4538683076a480c59624d",
+      "size": 3524
+    },
+    "memory/goals/scribe-goal9-temporal-api-forecast-2026-11-21.md": {
+      "sha1": "b4106113c6da469f3a37b37e102de171bb1f0230",
+      "size": 5075
+    },
+    "memory/goals/scribe.md": {
+      "sha1": "9de16c22496263603c0922f774eab6da0b21295c",
+      "size": 7381
+    },
+    "memory/goals/slip_prediction_table.md": {
+      "sha1": "45020abe0a13c1f095e9e16668b8676b296c9534",
+      "size": 2352
+    },
+    "memory/goals/testy.md": {
+      "sha1": "86ccd299888ad5b2d31976e91f61595d8a141c23",
+      "size": 184
+    },
+    "memory/goals/verifier-goal1-perf-baseline-forecast-2026-11-21.md": {
+      "sha1": "6d76a80a915f04741074688ecc8e021aa7506608",
+      "size": 2902
+    },
+    "memory/goals/verifier.md": {
+      "sha1": "3e7278ffe9447ef9b4a4d2da6fc484cf93ea92e2",
+      "size": 7708
+    },
+    "memory/researcher/goal_ledger.jsonl": {
+      "sha1": "7753017fcd0635dd63f5a2a214fc240ebee31a1c",
+      "size": 2964
+    },
+    "memory/researcher/goal_ledger_current.json": {
+      "sha1": "1fc273255daca68ef20361d2a6b76a5112338115",
+      "size": 68617
+    }
+  },
+  "count": 84,
+  "manifest_sha1": "9c0c7d9378d842f6432b576c4bcf2cfb935cef46",
+  "cycle_id": "live-baseline-2026-11-23b",
+  "ts": "2026-11-23T23:19:09"
+}

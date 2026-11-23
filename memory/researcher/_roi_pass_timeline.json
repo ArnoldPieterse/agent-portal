@@ -1,0 +1,344 @@
+[
+ {
+  "ts": "2026-11-17",
+  "lane": "scribe",
+  "file": "memory\\scribe\\auto-loop-pass-2026-11-17.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-18",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-18.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-18",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-18b.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-18",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-18c.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-18",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-18d.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-18",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-18e.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-18",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-18f.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-18",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-18g.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-18",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\cycle6-hotload-pass-note.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-18",
+  "lane": "orchestrator",
+  "file": "memory\\orchestrator\\auto-loop-pass-2026-11-18-contribution.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-19",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-19.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-19",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-19b.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-19",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-19c.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-19",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-19d.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-19",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-19e.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-19",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-19f.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-19",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-19g.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-19",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-19h.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "archivist",
+  "file": "memory\\archivist\\auto-loop-pass-2026-11-20b.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "archivist",
+  "file": "memory\\archivist\\auto-loop-pass-2026-11-20c.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "designer",
+  "file": "memory\\designer\\auto-loop-pass-2026-11-20-batch.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "designer",
+  "file": "memory\\designer\\pass-note-all-goals-closed-2026-11-20.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20b.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20c.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20h.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20i.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20j.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20k.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20l.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20m.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20n.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20o.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20p.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20q.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20r.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20s.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20t.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-20u.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\pass-note-2026-11-20-pool-mgmt.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-20",
+  "lane": "scribe",
+  "file": "memory\\scribe\\auto-loop-pass-2026-11-20-quality-refresh.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-21",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-21b.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-22.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-22b.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-22c.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-22d.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-22e.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-22f.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-22g.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-22h.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-22i.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-22j.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "orchestrator",
+  "file": "memory\\orchestrator\\pass-note-2026-11-22.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-22",
+  "lane": "scribe",
+  "file": "memory\\scribe\\auto-loop-pass-2026-11-22.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-23",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-23.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-23",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-23b.md",
+  "empty": true
+ },
+ {
+  "ts": "2026-11-23",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-23c.md",
+  "empty": false
+ },
+ {
+  "ts": "2026-11-23",
+  "lane": "mechanic",
+  "file": "memory\\mechanic\\auto-loop-pass-2026-11-23d.md",
+  "empty": false
+ }
+]

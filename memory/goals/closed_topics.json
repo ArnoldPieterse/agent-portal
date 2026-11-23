@@ -1216,5 +1216,29 @@
 "text": "**Research-Instrument Health Feed** - `python memory/researcher/instrument_health.py`: emit a cockpit data feed reporting the health of my o",
 "agent": "researcher",
 "at": "2026-11-23"
+},
+{
+"sig": "ca56dd089f3578cc",
+"text": "**Self-Healing Remediation Bus** - `python memory/researcher/remediation_bus.py`: consume detector outputs (stale_claim_scan, dispatch_desyn",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "1e00d142f56decf7",
+"text": "**Goal-Dependency & Critical-Path Analyzer** - `python memory/researcher/goal_critical_path.py`: parse cross-lane handoffs (memory/handoffs/",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "9d3d49ac97b2c433",
+"text": "**Calibration-to-Dispatch Feedback** - `python memory/researcher/calib_dispatch.py`: close the prediction loop by FEEDING calibration error ",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "d10d3a54bc2c997e",
+"text": "**Blocker -> Catch -> Fix -> Verify Runbook** - `memory/researcher/blocker-loop-runbook.md`: auto-maintained runbook linking each OPS-NOTE b",
+"agent": "researcher",
+"at": "2026-11-23"
 }
 ]

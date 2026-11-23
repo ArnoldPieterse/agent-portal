@@ -1,0 +1,301 @@
+{
+  "generated": "2026-11-23T23:17:43",
+  "telemetry": {
+    "passes": 57,
+    "range": [
+      "2026-11-17",
+      "2026-11-23"
+    ],
+    "overall_empty_rate": 0.2632,
+    "resolved_cases": 2
+  },
+  "run_cost_units": 1,
+  "instruments": [
+    {
+      "instrument": "stale_claim_scan",
+      "adoption": "2026-11-18",
+      "detection_yield": 398,
+      "yield_unit": "stale claims flagged",
+      "evidence": "memory/researcher/stale-claim-corrections.md",
+      "empty_rate_effect": {
+        "effect": 0.75,
+        "baseline_rate": 1.0,
+        "post_rate": 0.25,
+        "n_pre": 1,
+        "n_post": 56,
+        "confidence": "LOW",
+        "note": ""
+      },
+      "blocker_resolution_effect": {
+        "effect": null,
+        "n_pre": 0,
+        "n_post": 2,
+        "note": "sample<2 per window"
+      },
+      "net_roi": 397,
+      "flags": [],
+      "notes": [
+        "empty-rate window small (n_pre=1, n_post=56)",
+        "blocker-resolution: insufficient sample (n_pre=0, n_post=2)"
+      ]
+    },
+    {
+      "instrument": "calib_dispatch",
+      "adoption": "2026-11-23",
+      "detection_yield": 22,
+      "yield_unit": "calibration slip runs scored",
+      "evidence": "memory/researcher/calib-dispatch-output.json",
+      "empty_rate_effect": {
+        "effect": 0.0142,
+        "baseline_rate": 0.2642,
+        "post_rate": 0.25,
+        "n_pre": 53,
+        "n_post": 4,
+        "confidence": "OK",
+        "note": ""
+      },
+      "blocker_resolution_effect": {
+        "effect": null,
+        "n_pre": 2,
+        "n_post": 0,
+        "note": "sample<2 per window"
+      },
+      "net_roi": 21,
+      "flags": [],
+      "notes": [
+        "blocker-resolution: insufficient sample (n_pre=2, n_post=0)"
+      ]
+    },
+    {
+      "instrument": "clobber_manifest",
+      "adoption": "2026-11-13",
+      "detection_yield": 18,
+      "yield_unit": "clobber/re-land events",
+      "evidence": "memory/**/*clobber*, remediation-bus-log.jsonl",
+      "empty_rate_effect": {
+        "effect": 0.0,
+        "baseline_rate": 0.2632,
+        "post_rate": 0.2632,
+        "n_pre": 0,
+        "n_post": 57,
+        "confidence": "LOW",
+        "note": "adoption predates telemetry start; used overall baseline as proxy"
+      },
+      "blocker_resolution_effect": {
+        "effect": null,
+        "n_pre": 0,
+        "n_post": 2,
+        "note": "sample<2 per window"
+      },
+      "net_roi": 17,
+      "flags": [],
+      "notes": [
+        "empty-rate window small (n_pre=0, n_post=57)",
+        "blocker-resolution: insufficient sample (n_pre=0, n_post=2)"
+      ]
+    },
+    {
+      "instrument": "knowledge_decay",
+      "adoption": "2026-11-22",
+      "detection_yield": 9,
+      "yield_unit": "decay/orphan passes",
+      "evidence": "memory/**/knowledge-decay*, *orphan-remediat*",
+      "empty_rate_effect": {
+        "effect": 0.1052,
+        "baseline_rate": 0.2927,
+        "post_rate": 0.1875,
+        "n_pre": 41,
+        "n_post": 16,
+        "confidence": "OK",
+        "note": ""
+      },
+      "blocker_resolution_effect": {
+        "effect": null,
+        "n_pre": 1,
+        "n_post": 1,
+        "note": "sample<2 per window"
+      },
+      "net_roi": 8,
+      "flags": [],
+      "notes": [
+        "blocker-resolution: insufficient sample (n_pre=1, n_post=1)"
+      ]
+    },
+    {
+      "instrument": "reach_matrix",
+      "adoption": "2026-11-23",
+      "detection_yield": 8,
+      "yield_unit": "hosts reach-audited",
+      "evidence": "memory/researcher/reach-matrix.json",
+      "empty_rate_effect": {
+        "effect": 0.0142,
+        "baseline_rate": 0.2642,
+        "post_rate": 0.25,
+        "n_pre": 53,
+        "n_post": 4,
+        "confidence": "OK",
+        "note": ""
+      },
+      "blocker_resolution_effect": {
+        "effect": null,
+        "n_pre": 2,
+        "n_post": 0,
+        "note": "sample<2 per window"
+      },
+      "net_roi": 7,
+      "flags": [],
+      "notes": [
+        "blocker-resolution: insufficient sample (n_pre=2, n_post=0)"
+      ]
+    },
+    {
+      "instrument": "evidence_quality_trend",
+      "adoption": "2026-11-15",
+      "detection_yield": 6,
+      "yield_unit": "quality snapshots",
+      "evidence": "memory/researcher/evidence-quality*.{md,json}",
+      "empty_rate_effect": {
+        "effect": 0.0,
+        "baseline_rate": 0.2632,
+        "post_rate": 0.2632,
+        "n_pre": 0,
+        "n_post": 57,
+        "confidence": "LOW",
+        "note": "adoption predates telemetry start; used overall baseline as proxy"
+      },
+      "blocker_resolution_effect": {
+        "effect": null,
+        "n_pre": 0,
+        "n_post": 2,
+        "note": "sample<2 per window"
+      },
+      "net_roi": 5,
+      "flags": [],
+      "notes": [
+        "empty-rate window small (n_pre=0, n_post=57)",
+        "blocker-resolution: insufficient sample (n_pre=0, n_post=2)"
+      ]
+    },
+    {
+      "instrument": "sla_tracker",
+      "adoption": "2026-11-20",
+      "detection_yield": 5,
+      "yield_unit": "SLA entries tracked",
+      "evidence": "memory/researcher/sla_registry.json",
+      "empty_rate_effect": {
+        "effect": 0.0214,
+        "baseline_rate": 0.2778,
+        "post_rate": 0.2564,
+        "n_pre": 18,
+        "n_post": 39,
+        "confidence": "OK",
+        "note": ""
+      },
+      "blocker_resolution_effect": {
+        "effect": null,
+        "n_pre": 1,
+        "n_post": 1,
+        "note": "sample<2 per window"
+      },
+      "net_roi": 4,
+      "flags": [],
+      "notes": [
+        "blocker-resolution: insufficient sample (n_pre=1, n_post=1)"
+      ]
+    },
+    {
+      "instrument": "goal_critical_path",
+      "adoption": "2026-11-23",
+      "detection_yield": 5,
+      "yield_unit": "handoffs parsed to priority list",
+      "evidence": "memory/researcher/goal-critical-path.json",
+      "empty_rate_effect": {
+        "effect": 0.0142,
+        "baseline_rate": 0.2642,
+        "post_rate": 0.25,
+        "n_pre": 53,
+        "n_post": 4,
+        "confidence": "OK",
+        "note": ""
+      },
+      "blocker_resolution_effect": {
+        "effect": null,
+        "n_pre": 2,
+        "n_post": 0,
+        "note": "sample<2 per window"
+      },
+      "net_roi": 4,
+      "flags": [],
+      "notes": [
+        "blocker-resolution: insufficient sample (n_pre=2, n_post=0)"
+      ]
+    },
+    {
+      "instrument": "blocker_triage",
+      "adoption": "2026-11-19",
+      "detection_yield": 2,
+      "yield_unit": "OPS-NOTES classified",
+      "evidence": "memory/ops/blockers.md",
+      "empty_rate_effect": {
+        "effect": 0.0447,
+        "baseline_rate": 0.3,
+        "post_rate": 0.2553,
+        "n_pre": 10,
+        "n_post": 47,
+        "confidence": "OK",
+        "note": ""
+      },
+      "blocker_resolution_effect": {
+        "effect": null,
+        "n_pre": 0,
+        "n_post": 2,
+        "note": "sample<2 per window"
+      },
+      "net_roi": 1,
+      "flags": [],
+      "notes": [
+        "blocker-resolution: insufficient sample (n_pre=0, n_post=2)"
+      ]
+    },
+    {
+      "instrument": "dispatch_desync",
+      "adoption": "2026-11-23",
+      "detection_yield": 0,
+      "yield_unit": "desync events observed",
+      "evidence": "memory/researcher/remediation-bus-log.jsonl",
+      "empty_rate_effect": {
+        "effect": 0.0142,
+        "baseline_rate": 0.2642,
+        "post_rate": 0.25,
+        "n_pre": 53,
+        "n_post": 4,
+        "confidence": "OK",
+        "note": ""
+      },
+      "blocker_resolution_effect": {
+        "effect": null,
+        "n_pre": 2,
+        "n_post": 0,
+        "note": "sample<2 per window"
+      },
+      "net_roi": -1,
+      "flags": [
+        "NET_NEGATIVE",
+        "ZERO_ATTRIBUTION"
+      ],
+      "notes": [
+        "blocker-resolution: insufficient sample (n_pre=2, n_post=0)"
+      ]
+    }
+  ],
+  "summary": {
+    "signed_estimates": 10,
+    "net_negative": [
+      "dispatch_desync"
+    ],
+    "zero_attribution": [
+      "dispatch_desync"
+    ],
+    "low_confidence": []
+  }
+}

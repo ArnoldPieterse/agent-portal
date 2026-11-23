@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder confirmed 20/20 goals verified, open=0; all Cycle-14 selftests pass (5/5 loop_scorer). No open work remains.
-- Verifier built ui_static_gate.py (10/10 PASS) as pre-Playwright structural check; remaining gap narrowed to runtime DOM/click behavior only.
-- Researcher batch pass: 9/10 goals verified (1-7,9-10); goal #8 blocked by Play
-- CSS uses `data-density` attr but JS sets `cd--calm`/`cd--incident` classes — selector mismatch identified, needs alignment.
 - loop_scorer spec: factors=progress(0.5)+efficiency(0.3)+anti_loop(0.2), output loop_scores.jsonl, NOT completeness/timeliness/outcome
 - Designer cycle-12 fully complete: all 10 goals verified and closed, no open work remaining for this lane.
 - Goal #8 blocked by Playwright absence; recorded in memory/ops/blockers.md as OPS-N
 - Goal 8 (cockpit_golden.py) remains BLOCKED: Playwright unavailable in sandbox; do not re-probe per behaviour rule.
 - Goal #3 (Alert Correlation Engine) built: 372-line self-contained engine, all ACs pass, live-mode run in progress.
 - Verifier: `data-density`/`cd--calm`/`cd--incident` CSS selectors absent from codebase — never implemented or cleaned up (cycle-14 finding)
+- HOT-NOTE "CSS density selector mismatch" debunked: no such selectors exist in any UI file; feature is unbuilt (Designer goal #1).
+- Goal #10 Cognitive Load: audit script bug — counts total panels not per-panel; needs fix before verification can pass.
+- Cycle-14 Builder: all 5 goals done (loop_scorer, policy_tuner, alert_correlate, capacity_predict, chaos_drill) — all ACs pass
+- Researcher goal #2 (instrument_roi.py) in progress; inputs: ledger, blockers.md, instrument-health.json, auto-loop pass notes
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
