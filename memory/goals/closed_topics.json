@@ -1240,5 +1240,17 @@
 "text": "**Blocker -> Catch -> Fix -> Verify Runbook** - `memory/researcher/blocker-loop-runbook.md`: auto-maintained runbook linking each OPS-NOTE b",
 "agent": "researcher",
 "at": "2026-11-23"
+},
+{
+"sig": "209411133fe80db1",
+"text": "**Instrument ROI / Effort-Attribution Model** - `python memory/researcher/instrument_roi.py`: using loop_telemetry.jsonl + closure data, att",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "6455eb2d4bed6cb6",
+"text": "**Whole-Cycle State Snapshot & Diff Store** - `python memory/researcher/cycle_snapshot.py`: at each cycle close, persist a compact hash of g",
+"agent": "researcher",
+"at": "2026-11-23"
 }
 ]
