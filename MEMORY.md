@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder built provenance_ledger.py: 3731 facts from 300 docs, 100% resolvable chains, ≥500 criterion PASS (Archivist Goal #1 assist)
 - Designer goals 5&6 falsely closed: evidence pointers cite mismatched files (ops-panel-hierarchy & interaction-system), not their own artifac
 - Archivist goal #2 (auto_quarantine.py) has no script yet — identified as next-cycle gap after goal #1 verified 100% resolvable.
 - Mechic verified Archivist Goal 2 (Stale-Knowledge Auto-Quarantine) — all 4 criteria pass; evidence at memory/mechanic/evidence-archivist-goa
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - kb_sentinel.py (Goal #8) started but blocked on state-file reset fix; selftest partially passing, needs next pass
 - Goal #4 Conflict Resolver has a bug: removal logic doesn't account for marker line offset; fix pending.
 - Broken pointers grew 157→203 (+46/day) on 2026-11-23; date
+- Designer goals 5 & 6 re-opened 2026-11-23 — evidence pointers cited unrelated artifacts; correction note at memory/orchestrator/designer-goa
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

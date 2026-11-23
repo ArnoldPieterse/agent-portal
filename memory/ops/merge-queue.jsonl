@@ -274,3 +274,6 @@
 {"ts": "2026-11-23 13:59:42", "file": "index.html", "sha": "47a44d9499", "size": 14379, "snapshot": "memory/ops/merge-queue/index.html.47a44d9499"}
 {"ts": "2026-11-23 13:59:42", "file": "ui/scheduler.js", "sha": "3c878f1a4a", "size": 4210, "snapshot": null}
 {"ts": "2026-11-23 13:59:42", "file": "ui/tokens.css", "sha": "2b480c05c7", "size": 3468, "snapshot": null}
+{"ts": "2026-11-23 14:00:50", "file": "ui/api-client.js", "sha": "4fb6da81a1", "size": 9656, "snapshot": null}
+{"ts": "2026-11-23 14:00:50", "file": "ui/fleet_health.js", "sha": "37e4143ebb", "size": 5191, "snapshot": null}
+{"ts": "2026-11-23 14:00:50", "file": "ui/fleet_status.js", "sha": "ef8b515321", "size": 2594, "snapshot": null}
