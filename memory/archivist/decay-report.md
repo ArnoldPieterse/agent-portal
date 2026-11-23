@@ -1,6 +1,6 @@
 # Decay report 2026-11-23
 
-Leaves: 9384 | flagged (<0.35): 0
+Leaves: 9387 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -8557,6 +8557,7 @@ Leaves: 9384 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261123-134541.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-140636.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-143507.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261123-145757.json | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/levels/level_1_20261123-060001.md | 0 | 0 | n | 0.550 |
@@ -8690,6 +8691,7 @@ Leaves: 9384 | flagged (<0.35): 0
 | memory/ops/portal-heal-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/portal-heal-state.json | 0 | 0 | n | 0.550 |
 | memory/ops/remediation-policy.json | 0 | 0 | n | 0.550 |
+| memory/ops/run_steps.py | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-state.json | 0 | 0 | n | 0.550 |
 | memory/ops/schtask-bottleneck-synthesis-2026-11-23.md | 0 | 0 | n | 0.550 |
@@ -8742,6 +8744,7 @@ Leaves: 9384 | flagged (<0.35): 0
 | memory/ops/__pycache__/chaos_drill.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/__pycache__/live_leg_preflight.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/__pycache__/mirror_heal.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/ops/__pycache__/run_steps.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/auto_cycle_planner.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/auto_cycle_planner_verify.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/cockpit_validator.py | 0 | 0 | n | 0.550 |
