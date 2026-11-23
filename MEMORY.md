@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 (Cockpit UI Play
-- Chaos Drill Scheduler built (selftest 3/3 PASS) but schedule registration blocked: no COM or elev.py in sandbox.
-- Goal #9 Policy Conflict Detector fixed+verified; Goal #10 Cockpit Runbook Trigger built, verification pending.
 - Designer closed goals 1–6; built ui/cockpit-topology.js (enhanced) for goal 7, now on goal 8 Cross-Cycle Trend Strip.
 - Goal 4 (Task Re-Router) verified & closed; mismatched evidence note in builder.md corrected by Scribe this pass.
 - Archivist fixed 2 dangling INDEX pointers (designer c11→c10, failover_drill.py→[MISSING]); index_check 40→38. Evidence: memory/archivist/evi
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - elev.py absent at Mechanic seat (Z:\elev.py not found); blocks goals 7 (log rotation) and 2 (mirror heal)
 - Designer cycle-12: all 10 goals verified and closed (open=0). No open work remaining for Designer.
 - All 10 Builder Cycle 14 goals verified; goal #10 runbook_trigger.py selftest 7/7 PASS recorded in ledger.
+- Builder confirmed 20/20 goals verified, open=0; all Cycle-14 selftests pass (5/5 loop_scorer). No open work remains.
+- Verifier built ui_static_gate.py (10/10 PASS) as pre-Playwright structural check; remaining gap narrowed to runtime DOM/click behavior only.
+- Researcher batch pass: 9/10 goals verified (1-7,9-10); goal #8 blocked by Play
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
