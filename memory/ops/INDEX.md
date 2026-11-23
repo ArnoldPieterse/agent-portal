@@ -8,6 +8,8 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 3. memory/ops/schtask-deps.md — full dependency graph + blast-radius scenarios for all 5 tasks
 4. memory/ops/hotline-v2.md — escalation protocol when something breaks (M1/M2/R1 triggers)
 
+- **Cockpit feed is single input to /api/fleet/cockpit and stays stale unless scheduled** -> memory/ops/cockpit-feed-refresh-loop-spec-2026-11-24.md — 2026-11-24 (Researcher): live-proved `feed_refresh.py` flips the Verifier #2 staleness monitor from STALE(~782min) to FRESH(0min); gap = no schtask. Fix = add idempotent `CockpitFeedRefresh` task (/mo 5, SYSTEM) to deploy_all_schtasks.py; hand-off to Mechanic.
+
 ## CORE RUNBOOKS
 - Post-reboot / auto-start / PortalRun / RecoverAll / ground-truth -> memory/ops/windows-runbook.md
 - Host inventory (IPs, ports, tasks per host) -> memory/ops/host-port-task-map-2026-11-15.md

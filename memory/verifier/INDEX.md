@@ -2,6 +2,7 @@
 Last updated: 2026-11-24.
 
 ## 2026-11-24
+- archivist-goal10-kb-health-gap-2026-11-24.md — Gap analysis for Archivist Goal #10 (KB Health Report): 3/7 metrics present in weekly_digest.py; all 4 missing sources exist and pass self-tests. Integration spec + verification plan documented.
 - goal-lifecycle-audit-verified-2026-11-24.md — **GOAL #7 (Cycle-14) VERIFIED**: `goal_lifecycle_audit.py --self-test` 6 PASS / 0 FAIL from BOTH CWDs. Live audit: 23 files, 194 goals (115 open, 79 verified). CWD-independent.
 - fleet-health-closed-loop-verified-2026-11-24.md — **GOAL #8 (Cycle-14) VERIFIED**: `fleet_health_closed_loop.py --self-test` 6 PASS / 0 FAIL from BOTH CWDs. T1-T6: VRAM OOM, agent-down, healthy-no-fire, SLA breach, chain completeness, post-recovery.
 - cockpit-a11y-gate-verified-2026-11-24.md — **GOAL #9 (Cycle-14) VERIFIED**: `cockpit_a11y_gate.py --self-test` 6 PASS / 0 FAIL from BOTH CWDs. T1-T6: contrast pass/fail, focus styles present/absent, ARIA labels ok/missing.
