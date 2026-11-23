@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 9763 | flagged (<0.35): 0
+Leaves: 9796 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -470,7 +470,6 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/verifier/security_boundary_results.json | 8 | 0 | n | 0.506 |
 | memory/verifier/self-cert-audit-2026-11-16.md | 8 | 0 | n | 0.506 |
 | memory/verifier/self-cert-audit-v2-2026-11-16b.md | 8 | 0 | n | 0.506 |
-| memory/verifier/slo-history.jsonl | 8 | 0 | n | 0.506 |
 | memory/verifier/_prove_daemon.py | 8 | 0 | n | 0.506 |
 | memory/verifier/slo-reports/slo-report-2026-11-16.json | 8 | 0 | n | 0.506 |
 | memory/verifier/__pycache__/evidence_chain.cpython-313.pyc | 8 | 0 | n | 0.506 |
@@ -6455,7 +6454,6 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/mechanic/winrm_pool_state.json | 4 | 0 | n | 0.528 |
 | memory/mechanic/winrm_remote_exec_test.py | 4 | 0 | n | 0.528 |
 | memory/mechanic/winrm_rotate.py | 4 | 0 | n | 0.528 |
-| memory/mechanic/winrm_rotate_log.jsonl | 4 | 0 | n | 0.528 |
 | memory/mechanic/winrm_sspi_exec.py | 4 | 0 | n | 0.528 |
 | memory/mechanic/winrm_sspi_test_all.py | 4 | 0 | n | 0.528 |
 | memory/mechanic/winrm_verify_legs.py | 4 | 0 | n | 0.528 |
@@ -9110,7 +9108,6 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/verifier/cockpit_accuracy.py | 1 | 0 | n | 0.544 |
 | memory/verifier/cockpit_accuracy_selftest.json | 1 | 0 | n | 0.544 |
 | memory/verifier/cockpit_perf.py | 1 | 0 | n | 0.544 |
-| memory/verifier/cockpit_ui_gate.py | 1 | 0 | n | 0.544 |
 | memory/verifier/concurrency-live-2026-11-22.md | 1 | 0 | n | 0.544 |
 | memory/verifier/concurrency-test-reverified-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/verifier/concurrency_serialization_test.py | 1 | 0 | n | 0.544 |
@@ -9153,7 +9150,6 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/verifier/model_swap_verify_report.json | 1 | 0 | n | 0.544 |
 | memory/verifier/orchestrator2-capacity-governor-sim-verify-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/verifier/perf-benchmark.jsonl | 1 | 0 | n | 0.544 |
-| memory/verifier/perf-report.md | 1 | 0 | n | 0.544 |
 | memory/verifier/policy-audit-goal1-evidence-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/verifier/policy_audit.py | 1 | 0 | n | 0.544 |
 | memory/verifier/policy_audit_report.json | 1 | 0 | n | 0.544 |
@@ -9195,11 +9191,13 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/levels.json | 0 | 0 | n | 0.550 |
 | memory/archivist/citation-report.json | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-assist-builder-decision-index-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/archivist/kb-delta-selftest-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic_index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic_search.py | 0 | 0 | n | 0.550 |
 | memory/builder/decision-index.db | 0 | 0 | n | 0.550 |
 | memory/builder/decision_index.py | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-runbook-trigger-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/builder/feed_refresh.py | 0 | 0 | n | 0.550 |
 | memory/builder/goal10_verification.py | 0 | 0 | n | 0.550 |
 | memory/builder/policy-conflict-detector-evidence.md | 0 | 0 | n | 0.550 |
 | memory/builder/policy-conflict-fix-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9214,6 +9212,19 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/builder/__pycache__/runbook_trigger.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/designer/density-cycle12-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/forecast-cycle12-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/_find.py | 0 | 0 | n | 0.550 |
+| memory/designer/_gate_live.json | 0 | 0 | n | 0.550 |
+| memory/designer/_js_dbg.py | 0 | 0 | n | 0.550 |
+| memory/designer/_js_pos.py | 0 | 0 | n | 0.550 |
+| memory/designer/_js_rx.py | 0 | 0 | n | 0.550 |
+| memory/designer/_js_scan_proto.py | 0 | 0 | n | 0.550 |
+| memory/designer/_js_scan_test.py | 0 | 0 | n | 0.550 |
+| memory/designer/_read_gate.py | 0 | 0 | n | 0.550 |
+| memory/designer/_run_dbg.py | 0 | 0 | n | 0.550 |
+| memory/designer/_run_rx.py | 0 | 0 | n | 0.550 |
+| memory/designer/__pycache__/_js_dbg.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/designer/__pycache__/_js_rx.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/designer/__pycache__/_js_scan_proto.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/calibration.json | 0 | 0 | n | 0.550 |
 | memory/goals/closed_topics.json | 0 | 0 | n | 0.550 |
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
@@ -9221,14 +9232,27 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/goals/next10.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-005723.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-015929.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-030002.json | 0 | 0 | n | 0.550 |
+| memory/handoffs/mechanic-to-builder-preflight-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/scribe-to-builder-topology-visualizer-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_5_20261124-015216.md | 0 | 0 | n | 0.550 |
+| memory/levels/level_6_20261124-024710.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/assist-builder-goal10-preflight-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-builder-goal8-extractor-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-assist-action-log-spec-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 0 | n | 0.550 |
+| memory/mechanic/runbook_preflight.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/runbook_preflight_selftest.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
+| memory/mechanic/__pycache__/winrm_pool.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
+| memory/ops/autonomous-action-log-spec-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/ops/cockpit-data-provenance-spec-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
+| memory/ops/feed-refresh-fix-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-metrics.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/idle-maintenance-rotation-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/mirror_cache.json | 0 | 0 | n | 0.550 |
 | memory/ops/model-load.jsonl | 0 | 0 | n | 0.550 |
@@ -9247,6 +9271,8 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/researcher/builder-cycle14-sweep-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/researcher/evidence-assist-verifier-stall-detector-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-builder-goal9-policy-conflict-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/scribe/goal10-state-reconciliation-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/scribe/stale-claim-mechanic-g3-closure-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/autonomy-pr-tracker-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/autonomy_pr_tracker.py | 0 | 0 | n | 0.550 |
 | memory/verifier/cockpit-a11y-gate-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9255,6 +9281,7 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/verifier/cockpit_playwright_gate.py | 0 | 0 | n | 0.550 |
 | memory/verifier/cockpit_playwright_gate_results.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/cockpit_staleness_monitor.py | 0 | 0 | n | 0.550 |
+| memory/verifier/cockpit_ui_gate.py | 0 | 0 | n | 0.550 |
 | memory/verifier/cycle14-all10-reverified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/cycle14-goals1-5-repro-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/failure-replay-harness-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9262,9 +9289,13 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/verifier/fleet-health-closed-loop-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/fleet_health_closed_loop_results.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/goal-lifecycle-audit-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/verifier/kb-delta-feed-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/verifier/perf-report.md | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation-e2e-genuine-pass-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation_e2e.py | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation_e2e_results.jsonl | 0 | 0 | n | 0.550 |
+| memory/verifier/slo-history.jsonl | 0 | 0 | n | 0.550 |
+| memory/verifier/slo-report-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
 | memory/verifier/stale-evidence-fix-runbook-trigger-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/_e2e_out.txt | 0 | 0 | n | 0.550 |
@@ -9277,6 +9308,7 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/verifier/_tasks.txt | 0 | 0 | n | 0.550 |
 | memory/verifier/__pycache__/autonomy_pr_tracker.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/verifier/__pycache__/cockpit_a11y_gate.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/verifier/__pycache__/cockpit_ui_gate.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/verifier/__pycache__/failure_replay.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/verifier/__pycache__/fleet_health_closed_loop.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/verifier/__pycache__/goal_lifecycle_audit.cpython-313.pyc | 0 | 0 | n | 0.550 |
@@ -9450,17 +9482,18 @@ Leaves: 9763 | flagged (<0.35): 0
 | memory/builder/policy_conflict.py | 0 | 1 | Y | 0.769 |
 | memory/designer/cycle12-full-closure-2026-11-24.md | 0 | 1 | Y | 0.769 |
 | memory/designer/runbook-trigger-token-refactor-2026-11-24.md | 0 | 1 | Y | 0.769 |
+| memory/goals/mechanic-nextcycle-state-collector-forecast.md | 0 | 1 | Y | 0.769 |
 | memory/goals/verifier-goal3-stall-detector-forecast.md | 0 | 1 | Y | 0.769 |
 | memory/portal/planning-2026-11-13.md | 2 | 9 | n | 0.769 |
 | memory/goals/builder.md | 0 | 8 | n | 0.770 |
 | memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md | 5 | 11 | n | 0.771 |
 | memory/portal/file-links.md | 12 | 3 | Y | 0.772 |
-| memory/goals/archivist.md | 1 | 9 | n | 0.775 |
 | memory/archivist/TODO.md | 11 | 3 | Y | 0.778 |
 | memory/mechanic/memory_mirror_fixed.py | 11 | 3 | Y | 0.778 |
 | memory/researcher/r18-output-verification-2026-11-13.md | 11 | 3 | Y | 0.778 |
 | memory/scribe/goal-setting-round-compression-2026-11-13.md | 11 | 3 | Y | 0.778 |
 | memory/synthesis/index-pointer-batch-r57-consolidated.md | 5 | 12 | n | 0.779 |
+| memory/goals/archivist.md | 0 | 9 | n | 0.780 |
 | memory/builder/a11y-repin-farm569-closeout-2026-11-14.md | 10 | 3 | Y | 0.783 |
 | memory/builder/index-repin-r24-2026-11-14.md | 10 | 3 | Y | 0.783 |
 | memory/orchestrator/MEMORY.md | 10 | 3 | Y | 0.783 |
