@@ -1,4 +1,30 @@
-# Archivist - 10 goals (set 2026-11-23, cycle-9)
+# Archivist - 10 goals (set 2026-11-23, cycle-12)
+
+Focus: Closed-Loop Autonomy & Fleet Cockpit. Cycle-9/10 built the knowledge layer (index, search, freshness, graph, abstracts, xref). Cycle-12 turns that layer into a *live, accountable, cockpit-facing* knowledge service: provenance you can trust, stale knowledge that quarantines itself, a conflict resolver, and a feedback loop that lets the fleet's own decision outcomes grade its knowledge. (Cycle-11 = Researcher's autonomy metrics; cycle-12 wires KB quality to those metrics.)
+
+1. **Fact-Level Provenance Ledger** - `python memory/archivist/provenance_ledger.py`: for every fact in knowledge-index.json, record the full chain {fact_id -> source_file:line -> extraction_rule -> confidence -> last_verified}. Emit memory/archivist/provenance-ledger.json so the Cockpit can answer "where did this number come from" on click. Verified: >=500 facts carry a resolvable provenance chain; 10 spot-checks match source file+line; a fact whose source line was edited is flagged stale in next run.
+
+2. **Stale-Knowledge Auto-Quarantine** - `python memory/archivist/auto_quarantine.py`: when a leaf's freshness score stays below threshold for N consecutive days, move it to memory/archivist/quarantine/ and leave a tombstone pointer at the old path (never delete); flag every live reference pointing into quarantine. Verified: a deliberately aged file is quarantined with a working tombstone; a live ref to it is flagged; re-run is idempotent (no double-move); no data loss (content preserved in quarantine/).
+
+3. **Knowledge Delta Feed** - `python memory/archivist/kb_delta.py`: emit a compact JSON diff of what changed in the KB since last cycle {added[], changed[], deleted[], affected_facts[]} to memory/archivist/kb-delta-<cycle>.json for the Cockpit "what's new" panel. Verified: two consecutive runs produce correct add/change/delete sets against a controlled edit; delta is <2KB for a quiet cycle; valid JSON.
+
+4. **Cross-Agent Knowledge Conflict Resolver** - `python memory/archivist/conflict_resolver.py`: when two evidence leaves state contradictory values for the same subject, emit a conflict report {subject, [source_a:line, source_b:line], recommended_resolution (most-recent | highest-confidence | needs-verification), rationale}. Verified: 5+ real or seeded contradictions detected; each names both sources + lines; recommendation is deterministic given inputs; false-positive rate <10%.
+
+5. **Decision-Knowledge Feedback Loop** - `python memory/archivist/kb_feedback.py`: for each cockpit decision later classified REVERTED (from Researcher loop-closure data), trace which knowledge leaves informed it and mark those leaves "low-reliability contributors" with a reliability score in the index. Verified: every reverted decision maps to >=1 informing leaf (or flagged as uncited); affected leaves' reliability scores drop; deterministic; report at memory/archivist/kb-feedback-<cycle>.md.
+
+6. **Knowledge Access Heatmap** - `python memory/archivist/access_heatmap.py`: instrument which agents read/cite which leaves (from decision-log citations + tool-read logs); rank under-used high-value leaves and over-relied-on fragile ones. Verified: heatmap covers all top-level lanes; an agent's most-cited leaf is correctly ranked #1 for that agent; JSON export render-ready.
+
+7. **Write-Time Auto-Linker** - `python memory/archivist/auto_linker.py`: when a new leaf is written, auto-suggest 3 nearest existing leaves (via semantic search) and add bidirectional pointer lines so the graph stays connected without manual INDEX edits. Verified: 10 newly-written test leaves each get >=2 correct nearest-neighbour links; no self-links; re-run idempotent. (pointer: memory/archivist/ingest.py)
+
+8. **KB Regression Sentinel** - `python memory/archivist/kb_sentinel.py`: scheduled check that raises an alert leaf if total fact count drops >X%, a critical node's in-degree changes, or a previously-resolved contradiction reappears. Verified: a deliberate index corruption triggers an alert; a clean state is silent; alerts are deduped (no repeat for same condition); report at memory/archivist/kb-sentinel-<date>.md.
+
+9. **Tiered Summary Ladder** - `python memory/archivist/summary_ladder.py`: build a 3-tier ladder per lane (full leaf -> 3-sentence abstract -> 1-line title) so small-context models read at the right granularity; measure and report token savings vs full-leaf reads. Verified: >=50 leaves have all 3 tiers; compression ratio reported (expect >60%); a tier is regenerable from its parent (idempotent).
+
+10. **KB Versioning & Rollback** - `python memory/archivist/kb_version.py`: git-backed versioning of knowledge-index.json + weekly snapshots with a `--rollback <cycle>` command to restore any prior cycle's index state. Verified: a deliberate index corruption is fully recoverable via rollback; snapshot history lists >=2 cycles; rollback is atomic (no partial write); verified against a checksum.
+
+---
+## Archive note (superseded)
+Cycle-9 set (all 10 verified 2026-11-23) preserved at memory/goals/archive/archivist-2026-11-23-cycle9-live.md.
 
 Focus: Knowledge infrastructure. Cycle-8 built freshness scoring and retrieval; cycle-9 builds the semantic layer that lets all agents reason over fleet knowledge without re-deriving context.
 
