@@ -24,6 +24,9 @@
 !/reboot_launchers.py
 !/reboot_recover.py
 !/memory_mirror.py
+!/portal_host.py
+!/portal_scheduler.py
+!/elevated_helper.py
 !/memory_mirror_hosts.json
 !/host_api.py
 !/smoke8.py
@@ -42,6 +45,7 @@
 **/__pycache__/
 *.pyc
 *.bak
+memory/ops/mirror_cache.json*
 
 # 2026-11-15: internal LAN host table (IPs, auth notes) - removed from the PUBLIC repo by human;
 # local copy kept for fleet ops but must never be tracked again. Still mirrored to internal remotes
