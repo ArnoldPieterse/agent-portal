@@ -296,7 +296,7 @@ $("edSave").onclick=async()=>{
 $("edClose").onclick=$("edCancel").onclick=()=>$("editor").close();
 $("addAgent").onclick=()=>openEditor(null);
 
-function setMode(m){mode=m;$("mSolo").classList.toggle("on",m==="solo");$("mGroup").classList.toggle("on",m==="group");updateHint();resetChat();restoreMsgs();}
+function setMode(m){ if(m===mode)return; mode=m; $("mSolo").classList.toggle("on",m==="solo");$("mGroup").classList.toggle("on",m==="group");updateHint();resetChat();restoreMsgs(); } // 2026-11-23: no-op when already in this mode (old reset+restore churn made re-clicks look unclickable)
 $("mSolo").onclick=()=>setMode("solo"); $("mGroup").onclick=()=>setMode("group");
 new MutationObserver(scheduleSave).observe($("msgs"),{childList:true,subtree:true,charData:true}); // per-mode persistence (2026-11-13)
 // Reset mechanism: one button clears ALL conversational state - client history + bubbles,

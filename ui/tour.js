@@ -1,4 +1,6 @@
-/* ui/tour.js - first-run 4-step tour (Goal #9, re-landed on White 2026-11-19) */
+/* ui/tour.js - first-run 4-step tour (Goal #9, re-landed on White 2026-11-19).
+   2026-11-23 hardening: overlay can no longer get stuck over the UI (render failure
+   rolls back; Esc + backdrop click dismiss; sweeper removes card-less overlays). */
 (function(){ "use strict";
   if(window.__tourLoaded)return; window.__tourLoaded=true;
   const STEPS=[
@@ -30,8 +32,14 @@
     card.innerHTML='<div class="tour-step"></div><div class="tour-title"></div><p class="tour-body"></p><div class="tour-dots">'+dots+'</div><div class="tour-btns"><button type="button" class="tour-skip">Skip tour</button><button type="button" class="tour-next">Next</button></div>';
     card.querySelector(".tour-skip").onclick=close;
     card.querySelector(".tour-next").onclick=function(){ if(step<STEPS.length-1){step++;render();}else close(); };
-    overlay.appendChild(card); document.body.appendChild(overlay);
-    render(); }
+    overlay.appendChild(card);
+    try{ document.body.appendChild(overlay); render(); }
+    catch(e){ overlay.remove(); overlay=null; card=null; return; } // 2026-11-23: never leave a bare/stuck overlay that eats clicks
+    overlay.addEventListener("click",function(e){ if(e.target===overlay)close(); }); // backdrop click dismisses (stuck overlay made mode bar unclickable)
+  }
+  window.addEventListener("keydown",function(e){ if(e.key==="Escape"&&overlay)close(); }); // Esc dismisses
+  setInterval(function(){ document.querySelectorAll(".tour-overlay").forEach(function(o){
+    if(o!==overlay || !o.querySelector(".tour-card")) o.remove(); }); },2000); // sweep stuck/foreign overlays
   function close(){ unhl(); if(overlay){overlay.remove();overlay=null;card=null;} try{localStorage.setItem("portalTourDone","1");}catch(_){} }
   window.addEventListener("load",function(){ let done=false; try{done=localStorage.getItem("portalTourDone")==="1";}catch(_){} if(!done && !location.hash.includes("notour"))setTimeout(function(){ let d=false; try{d=localStorage.getItem("portalTourDone")==="1";}catch(_){} if(!d)start(); },800); });
 })();
