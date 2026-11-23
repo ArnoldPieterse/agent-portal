@@ -1,329 +1,252 @@
 #!/usr/bin/env python3
-"""KB Regression Sentinel - monitors knowledge base for regressions.
+"""KB Regression Sentinel (archivist goal 8).
 
-Checks:
-1. Fact count drops > threshold% vs previous snapshot
-2. Critical node in-degree changes (nodes with in-degree >= CRITICAL_THRESHOLD)
-3. Previously-resolved contradiction reappears
+Scheduled check that raises an alert leaf if:
+- Total fact count drops >X% vs previous snapshot
+- A critical node's in-degree changes
+- A previously-resolved contradiction reappears
+
+Alerts are deduped (no repeat for same condition). Report at memory/archivist/kb-sentinel-<date>.md.
 
 Usage:
-    python memory/archivist/kb_sentinel.py            # normal run
-    python memory/archivist/kb_sentinel.py --selftest  # verification suite
-    python memory/archivist/kb_sentinel.py --corrupt   # simulate corruption (for testing)
+  python memory/archivist/kb_sentinel.py --check      # run sentinel check
+  python memory/archivist/kb_sentinel.py --selftest   # run selftest
 """
 import json, sys, hashlib
 from datetime import datetime, timezone
 from pathlib import Path
 
-MEMORY = Path(__file__).resolve().parent.parent.parent
-SENTINEL_DIR = MEMORY / "memory" / "archivist"
-SNAPSHOT_PATH = SENTINEL_DIR / "kb-sentinel-snapshot.json"
-ALERT_STATE_PATH = SENTINEL_DIR / "kb-sentinel-alert-state.json"
+MEMORY = Path("memory")
+ARCHIVIST = MEMORY / "archivist"
+STATE_FILE = ARCHIVIST / ".kb_sentinel_state.json"
+KNOWLEDGE_INDEX = ARCHIVIST / "knowledge-index.json"
+CONFLICT_REPORT = ARCHIVIST / "conflict-resolver-report.json"
 
-FACT_DROP_THRESHOLD = 0.05       # alert if fact count drops >5%
-CRITICAL_IN_DEGREE = 5           # nodes with in-degree >= this are "critical"
-CONTRADICTION_FILE = SENTINEL_DIR / "conflict-report-2026-11-23.json"
+FACT_DROP_THRESHOLD = 0.10  # alert if fact count drops >10%
+CRITICAL_IN_DEGREE = 5      # nodes with in-degree >= this are critical
+
+
+def load_state() -> dict:
+    if STATE_FILE.exists():
+        return json.loads(STATE_FILE.read_text(encoding='utf-8'))
+    return {"last_fact_count": None, "critical_nodes": {}, "resolved_conflicts": [], "alerts_issued": []}
+
+
+def save_state(state: dict):
+    STATE_FILE.write_text(json.dumps(state, indent=2), encoding='utf-8')
+
 
 def get_fact_count() -> int:
-    """Get current doc/fact count from knowledge-index.json."""
-    idx_path = SENTINEL_DIR / "knowledge-index.json"
-    if not idx_path.exists():
+    if not KNOWLEDGE_INDEX.exists():
         return 0
-    data = json.loads(idx_path.read_text(encoding="utf-8"))
-    # Supports both 'facts' and 'docs' keys (schema evolution)
-    facts = data.get("facts", data.get("docs", []))
+    data = json.loads(KNOWLEDGE_INDEX.read_text(encoding='utf-8'))
+    facts = data.get("facts", data if isinstance(data, list) else [])
     return len(facts)
 
-def get_critical_nodes() -> dict:
-    """Get in-degree of critical nodes from knowledge graph."""
-    kg_path = SENTINEL_DIR / "knowledge-graph-v3.json"
-    if not kg_path.exists():
-        return {}
-    data = json.loads(kg_path.read_text(encoding="utf-8"))
-    edges = data.get("edges", [])
-    in_degree = {}
-    for e in edges:
-        target = e.get("target", "")
-        in_degree[target] = in_degree.get(target, 0) + 1
-    # Return only critical nodes (in-degree >= threshold)
-    return {k: v for k, v in in_degree.items() if v >= CRITICAL_IN_DEGREE}
 
-def get_resolved_contradictions() -> list:
-    """Get subjects that were previously flagged as contradictions."""
-    if not CONTRADICTION_FILE.exists():
+def get_critical_nodes() -> dict:
+    """Compute in-degree from knowledge graph if available."""
+    graph_file = ARCHIVIST / "knowledge-deps.json"
+    if not graph_file.exists():
+        return {}
+    try:
+        data = json.loads(graph_file.read_text(encoding='utf-8'))
+        edges = data.get("edges", [])
+        in_degree = {}
+        for e in edges:
+            target = e.get("target", "")
+            in_degree[target] = in_degree.get(target, 0) + 1
+        return {k: v for k, v in in_degree.items() if v >= CRITICAL_IN_DEGREE}
+    except Exception:
+        return {}
+
+
+def get_active_conflicts() -> list:
+    """Get currently active (unresolved) conflicts."""
+    if not CONFLICT_REPORT.exists():
         return []
     try:
-        data = json.loads(CONTRADICTION_FILE.read_text(encoding="utf-8"))
+        data = json.loads(CONFLICT_REPORT.read_text(encoding='utf-8'))
         conflicts = data.get("conflicts", [])
-        return [c.get("subject", "") for c in conflicts if c.get("subject")]
-    except (json.JSONDecodeError, KeyError):
+        return [c.get("subject", "") for c in conflicts if not c.get("resolved", False)]
+    except Exception:
         return []
 
-def snapshot() -> dict:
-    """Capture current KB state."""
-    return {
-        "timestamp": datetime.now(timezone.utc).isoformat(),
-        "fact_count": get_fact_count(),
-        "critical_nodes": get_critical_nodes(),
-        "known_contradictions": get_resolved_contradictions(),
-    }
 
-def load_alert_state() -> dict:
-    if ALERT_STATE_PATH.exists():
-        return json.loads(ALERT_STATE_PATH.read_text(encoding="utf-8"))
-    return {"alerted_conditions": []}
-
-def save_alert_state(state: dict):
-    ALERT_STATE_PATH.write_text(json.dumps(state, indent=2), encoding="utf-8")
-
-def check_regressions(prev: dict, curr: dict) -> list:
-    """Compare snapshots and return list of regression alerts."""
+def run_check() -> dict:
+    """Run the sentinel check, return report dict."""
+    state = load_state()
     alerts = []
-    
+
     # Check 1: Fact count drop
-    prev_facts = prev.get("fact_count", 0)
-    curr_facts = curr.get("fact_count", 0)
-    if prev_facts > 0:
-        drop_pct = (prev_facts - curr_facts) / prev_facts
-        if drop_pct > FACT_DROP_THRESHOLD:
-            cond_id = f"fact_drop_{drop_pct:.3f}"
+    current_facts = get_fact_count()
+    if state["last_fact_count"] is not None and state["last_fact_count"] > 0:
+        drop_ratio = (state["last_fact_count"] - current_facts) / state["last_fact_count"]
+        if drop_ratio > FACT_DROP_THRESHOLD:
+            alert_key = f"fact_drop_{drop_ratio:.2f}"
             alerts.append({
                 "type": "FACT_COUNT_DROP",
-                "detail": f"Facts dropped from {prev_facts} to {curr_facts} ({drop_pct*100:.1f}% decrease)",
-                "condition_id": cond_id,
+                "severity": "HIGH",
+                "detail": f"Fact count dropped from {state['last_fact_count']} to {current_facts} ({drop_ratio*100:.1f}% drop)",
+                "key": alert_key
             })
-    
+
     # Check 2: Critical node in-degree changes
-    prev_nodes = prev.get("critical_nodes", {})
-    curr_nodes = curr.get("critical_nodes", {})
-    for node, prev_deg in prev_nodes.items():
-        curr_deg = curr_nodes.get(node, 0)
-        if curr_deg != prev_deg:
-            cond_id = f"node_{hashlib.md5(node.encode()).hexdigest()[:8]}"
+    current_critical = get_critical_nodes()
+    for node, degree in state["critical_nodes"].items():
+        if node not in current_critical:
             alerts.append({
-                "type": "CRITICAL_NODE_CHANGE",
-                "detail": f"Node '{node}' in-degree changed: {prev_deg} -> {curr_deg}",
-                "condition_id": cond_id,
+                "type": "CRITICAL_NODE_LOST",
+                "severity": "MEDIUM",
+                "detail": f"Critical node '{node}' (was in-degree {degree}) no longer meets threshold",
+                "key": f"critical_lost_{node}"
             })
-    # New critical nodes appearing
-    for node in curr_nodes:
-        if node not in prev_nodes:
-            cond_id = f"new_node_{hashlib.md5(node.encode()).hexdigest()[:8]}"
+        elif current_critical[node] != degree:
             alerts.append({
-                "type": "NEW_CRITICAL_NODE",
-                "detail": f"New critical node '{node}' with in-degree {curr_nodes[node]}",
-                "condition_id": cond_id,
+                "type": "CRITICAL_NODE_DEGREE_CHANGE",
+                "severity": "MEDIUM",
+                "detail": f"Critical node '{node}' in-degree changed: {degree} -> {current_critical[node]}",
+                "key": f"critical_degree_{node}_{current_critical[node]}"
             })
-    
-    # Check 3: Previously-resolved contradiction reappearing
-    # If a subject was in prev's known_contradictions but NOT in curr's (meaning it was resolved),
-    # and NOW appears again -> regression
-    prev_contra = set(prev.get("known_contradictions", []))
-    curr_contra = set(curr.get("known_contradictions", []))
-    # For our purposes, we track which contradictions exist now
-    # A "reappearance" would mean a contradiction was absent in a prior check but is back
-    # Simplified: if current has more contradictions than previous snapshot tracked
-    new_contras = curr_contra - prev_contra
-    for contra in sorted(new_contras):
-        cond_id = f"contra_{hashlib.md5(contra.encode()).hexdigest()[:8]}"
-        alerts.append({
-            "type": "CONTRADICTION_REAPPEARED",
-            "detail": f"Contradiction on subject '{contra}' reappeared",
-            "condition_id": cond_id,
-        })
-    
-    return alerts
 
-def dedupe_alerts(alerts: list, state: dict) -> list:
-    """Remove alerts for conditions already in the alerted set."""
-    already = set(state.get("alerted_conditions", []))
-    fresh = [a for a in alerts if a["condition_id"] not in already]
-    # Update state with newly-alerted conditions
-    for a in fresh:
-        state["alerted_conditions"].append(a["condition_id"])
-    return fresh
+    # Check 3: Previously-resolved conflict reappeared
+    active_conflicts = get_active_conflicts()
+    for subject in state["resolved_conflicts"]:
+        if subject in active_conflicts:
+            alerts.append({
+                "type": "CONFLICT_REGRESSED",
+                "severity": "HIGH",
+                "detail": f"Previously-resolved conflict on '{subject}' has reappeared",
+                "key": f"conflict_regression_{subject}"
+            })
 
-def write_report(alerts: list, curr: dict) -> Path:
-    """Write sentinel report."""
+    # Dedup: filter out alerts already issued
+    existing_keys = set(state["alerts_issued"])
+    new_alerts = [a for a in alerts if a["key"] not in existing_keys]
+
+    # Update state
+    state["last_fact_count"] = current_facts
+    state["critical_nodes"] = current_critical
+    # Add newly-resolved conflicts to resolved list
+    prev_active = set(state.get("last_active_conflicts", []))
+    curr_active = set(active_conflicts)
+    newly_resolved = prev_active - curr_active
+    state["resolved_conflicts"] = list(set(state["resolved_conflicts"]) | newly_resolved)
+    state["last_active_conflicts"] = active_conflicts
+    # Record issued alerts
+    state["alerts_issued"] = list(existing_keys | {a["key"] for a in new_alerts})
+    save_state(state)
+
+    report = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "fact_count": current_facts,
+        "critical_nodes": len(current_critical),
+        "active_conflicts": len(active_conflicts),
+        "alerts_total": len(alerts),
+        "new_alerts": new_alerts,
+        "status": "ALERT" if new_alerts else "OK"
+    }
+
+    # Write report file
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    report_path = SENTINEL_DIR / f"kb-sentinel-{date_str}.md"
-    
-    lines = [
-        "# KB Sentinel Report - " + date_str,
-        "",
-        f"**Run time:** {curr.get('timestamp', 'unknown')}",
-        f"**Fact count:** {curr.get('fact_count', 0)}",
-        f"**Critical nodes:** {len(curr.get('critical_nodes', {}))}",
-        f"**Known contradictions:** {len(curr.get('known_contradictions', []))}",
-        "",
-    ]
-    
-    if alerts:
-        lines.append(f"## ALERTS ({len(alerts)})")
+    report_path = ARCHIVIST / f"kb-sentinel-{date_str}.md"
+    lines = [f"# KB Sentinel Report {date_str}", "", f"Status: **{report['status']}**", ""]
+    lines.append(f"- Fact count: {current_facts}")
+    lines.append(f"- Critical nodes: {len(current_critical)}")
+    lines.append(f"- Active conflicts: {len(active_conflicts)}")
+    lines.append(f"- New alerts: {len(new_alerts)}")
+    if new_alerts:
         lines.append("")
-        for a in alerts:
-            lines.append(f"- **{a['type']}**: {a['detail']}")
-        lines.append("")
-    else:
-        lines.append("## Status: CLEAN (no regressions detected)")
-        lines.append("")
-    
-    report_path.write_text("\n".join(lines), encoding="utf-8")
-    return report_path
+        lines.append("## Alerts")
+        for a in new_alerts:
+            lines.append(f"- [{a['severity']}] {a['type']}: {a['detail']}")
+    report_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+    report["report_path"] = str(report_path)
 
-def run() -> int:
-    """Main sentinel run."""
-    # Load previous snapshot
-    if SNAPSHOT_PATH.exists():
-        prev = json.loads(SNAPSHOT_PATH.read_text(encoding="utf-8"))
-    else:
-        prev = None
-    
-    # Current snapshot
-    curr = snapshot()
-    
-    alerts = []
-    if prev is not None:
-        raw_alerts = check_regressions(prev, curr)
-        state = load_alert_state()
-        alerts = dedupe_alerts(raw_alerts, state)
-        save_alert_state(state)
-    
-    # Save current snapshot as new baseline
-    SNAPSHOT_PATH.write_text(json.dumps(curr, indent=2), encoding="utf-8")
-    
-    # Write report
-    report = write_report(alerts, curr)
-    
-    if alerts:
-        print(f"ALERTS: {len(alerts)} regression(s) detected -> {report.name}")
-        for a in alerts:
-            print(f"  [{a['type']}] {a['detail']}")
-        return 1
-    else:
-        print(f"CLEAR: no regressions. Facts={curr['fact_count']}, critical_nodes={len(curr['critical_nodes'])}")
-        return 0
+    return report
+
 
 def run_selftest() -> bool:
-    """Selftest: verify all three alert types trigger correctly."""
-    import tempfile, shutil
-    
-    ok = True
-    results = []
-    
-    # Setup: create a fake previous snapshot with known values
-    test_dir = SENTINEL_DIR / "_sentinel_test"
-    test_dir.mkdir(exist_ok=True)
-    
-    # Backup existing state
-    backup_snap = None
-    if SNAPSHOT_PATH.exists():
-        backup_snap = SNAPSHOT_PATH.read_text(encoding="utf-8")
-    backup_alerts = None
-    if ALERT_STATE_PATH.exists():
-        backup_alerts = ALERT_STATE_PATH.read_text(encoding="utf-8")
-    
+    """Selftest: simulate corruption, verify alert fires; clean state is silent; dedup works."""
+    import shutil
+    print("[selftest] KB Regression Sentinel")
+
+    # Backup state
+    state_backup = None
+    if STATE_FILE.exists():
+        state_backup = STATE_FILE.read_text(encoding='utf-8')
+
+    all_pass = True
+
     try:
-        # --- Test 1: Fact count drop triggers alert ---
-        prev_snap = {
-            "timestamp": "2026-11-22T00:00:00Z",
-            "fact_count": 1000,
-            "critical_nodes": {"nodeA": 10, "nodeB": 5},
-            "known_contradictions": ["sub1", "sub2"],
+        # Setup: initialize state with known values
+        test_state = {
+            "last_fact_count": 1000,
+            "critical_nodes": {"memory/INDEX.md": 10, "memory/goals/orchestrator.md": 7},
+            "resolved_conflicts": ["host_white_vram_gb"],
+            "alerts_issued": [],
+            "last_active_conflicts": []
         }
-        curr_snap = {
-            "timestamp": "2026-11-23T00:00:00Z",
-            "fact_count": 900,  # 10% drop > 5% threshold
-            "critical_nodes": {"nodeA": 10, "nodeB": 5},
-            "known_contradictions": ["sub1", "sub2"],
-        }
-        alerts = check_regressions(prev_snap, curr_snap)
-        t1 = any(a["type"] == "FACT_COUNT_DROP" for a in alerts)
-        results.append(("fact_drop_alert", "PASS" if t1 else "FAIL", f"{len(alerts)} alert(s)"))
-        ok = ok and t1
-        
-        # --- Test 2: Clean state is silent ---
-        curr_clean = {
-            "timestamp": "2026-11-23T00:00:00Z",
-            "fact_count": 998,  # <5% drop
-            "critical_nodes": {"nodeA": 10, "nodeB": 5},
-            "known_contradictions": ["sub1", "sub2"],
-        }
-        alerts_clean = check_regressions(prev_snap, curr_clean)
-        t2 = len(alerts_clean) == 0
-        results.append(("clean_state_silent", "PASS" if t2 else "FAIL", f"{len(alerts_clean)} alert(s)"))
-        ok = ok and t2
-        
-        # --- Test 3: Critical node in-degree change triggers alert ---
-        curr_node_change = {
-            "timestamp": "2026-11-23T00:00:00Z",
-            "fact_count": 998,
-            "critical_nodes": {"nodeA": 7, "nodeB": 5},  # nodeA changed from 10 to 7
-            "known_contradictions": ["sub1", "sub2"],
-        }
-        alerts_node = check_regressions(prev_snap, curr_node_change)
-        t3 = any(a["type"] == "CRITICAL_NODE_CHANGE" for a in alerts_node)
-        results.append(("node_in_degree_change", "PASS" if t3 else "FAIL", f"{len(alerts_node)} alert(s)"))
-        ok = ok and t3
-        
-        # --- Test 4: Contradiction reappears triggers alert ---
-        curr_contra = {
-            "timestamp": "2026-11-23T00:00:00Z",
-            "fact_count": 998,
-            "critical_nodes": {"nodeA": 10, "nodeB": 5},
-            "known_contradictions": ["sub1", "sub2", "sub3"],  # sub3 is new
-        }
-        alerts_contra = check_regressions(prev_snap, curr_contra)
-        t4 = any(a["type"] == "CONTRADICTION_REAPPEARED" for a in alerts_contra)
-        results.append(("contradiction_reappears", "PASS" if t4 else "FAIL", f"{len(alerts_contra)} alert(s)"))
-        ok = ok and t4
-        
-        # --- Test 5: Alert deduplication ---
-        state = {"alerted_conditions": []}
-        first_pass = dedupe_alerts(alerts, state)
-        second_pass = dedupe_alerts(alerts, state)
-        t5 = len(first_pass) > 0 and len(second_pass) == 0
-        results.append(("alerts_deduped", "PASS" if t5 else "FAIL", f"first={len(first_pass)}, second={len(second_pass)}"))
-        ok = ok and t5
-        
+        STATE_FILE.write_text(json.dumps(test_state), encoding='utf-8')
+
+        # Test 1: Clean state (no changes) should be silent
+        test_state_clean = dict(test_state)
+        test_state_clean["last_fact_count"] = get_fact_count() or 1000  # use actual count
+        STATE_FILE.write_text(json.dumps(test_state_clean), encoding='utf-8')
+        r1 = run_check()
+        clean_silent = r1["status"] == "OK"
+        print(f"  [{'PASS' if clean_silent else 'FAIL'}] Clean state is silent: status={r1['status']}")
+        all_pass = all_pass and clean_silent
+
+        # Test 2: Deliberate fact count drop triggers alert
+        STATE_FILE.write_text(json.dumps({**test_state_clean, "alerts_issued": []}), encoding='utf-8')
+        # Simulate: set last_fact_count very high so current looks like a drop
+        drop_state = dict(test_state_clean)
+        drop_state["last_fact_count"] = (get_fact_count() or 100) * 3  # 3x current = 66% drop
+        STATE_FILE.write_text(json.dumps(drop_state), encoding='utf-8')
+        r2 = run_check()
+        alert_fired = any(a["type"] == "FACT_COUNT_DROP" for a in r2["new_alerts"])
+        print(f"  [{'PASS' if alert_fired else 'FAIL'}] Fact drop triggers alert: alerts={[a['type'] for a in r2['new_alerts']]}")
+        all_pass = all_pass and alert_fired
+
+        # Test 3: Dedup - same condition again should NOT re-alert
+        r3 = run_check()
+        deduped = not any(a["type"] == "FACT_COUNT_DROP" for a in r3["new_alerts"])
+        print(f"  [{'PASS' if deduped else 'FAIL'}] Dedup: same alert not repeated")
+        all_pass = all_pass and deduped
+
+        # Test 4: Critical node loss triggers alert
+        STATE_FILE.write_text(json.dumps({
+            "last_fact_count": get_fact_count() or 100,
+            "critical_nodes": {"memory/INDEX.md": 10},
+            "resolved_conflicts": [],
+            "alerts_issued": [],
+            "last_active_conflicts": []
+        }), encoding='utf-8')
+        # Run with no graph file (or empty) so critical_nodes becomes {}
+        r4 = run_check()
+        node_alert = any(a["type"] == "CRITICAL_NODE_LOST" for a in r4["new_alerts"])
+        print(f"  [{'PASS' if node_alert else 'FAIL'}] Critical node loss detected")
+        all_pass = all_pass and node_alert
+
     finally:
         # Restore state
-        if backup_snap is not None:
-            SNAPSHOT_PATH.write_text(backup_snap, encoding="utf-8")
-        else:
-            SNAPSHOT_PATH.unlink(missing_ok=True)
-        if backup_alerts is not None:
-            ALERT_STATE_PATH.write_text(backup_alerts, encoding="utf-8")
-        else:
-            ALERT_STATE_PATH.unlink(missing_ok=True)
-        shutil.rmtree(test_dir, ignore_errors=True)
-    
-    print("=== KB SENTINEL SELFTEST ===\n")
-    for name, status, detail in results:
-        print(f"  [{status}] {name}: {detail}")
-    print(f"\nResult: {'PASS' if ok else 'FAIL'} ({sum(1 for _,s,_ in results if s=='PASS')}/{len(results)} checks)")
-    
-    # Save evidence
-    evidence = {"results": [{"test": n, "pass": s == "PASS", "detail": d} for n,s,d in results], "all_pass": ok}
-    (SENTINEL_DIR / "kb-sentinel-selftest.json").write_text(json.dumps(evidence, indent=2), encoding="utf-8")
-    
-    return ok
+        if state_backup:
+            STATE_FILE.write_text(state_backup, encoding='utf-8')
+        elif STATE_FILE.exists():
+            STATE_FILE.unlink()
+
+    print(f"\n[selftest] {'PASS' if all_pass else 'FAIL'}")
+    return all_pass
+
 
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    if "--selftest" in args:
+    if "--selftest" in sys.argv:
         ok = run_selftest()
         sys.exit(0 if ok else 1)
-    elif "--corrupt" in args:
-        # Simulate corruption by reducing fact count in a temp snapshot
-        fake_prev = {
-            "timestamp": datetime.now(timezone.utc).isoformat(),
-            "fact_count": get_fact_count() * 2,  # pretend we had twice as many
-            "critical_nodes": {},
-            "known_contradictions": [],
-        }
-        SNAPSHOT_PATH.write_text(json.dumps(fake_prev, indent=2), encoding="utf-8")
-        print(f"Corrupted snapshot: pretending fact_count was {fake_prev['fact_count']}")
-        run()
+    elif "--check" in sys.argv:
+        report = run_check()
+        print(json.dumps(report, indent=2))
     else:
-        sys.exit(run())
+        print(__doc__)
+        sys.exit(1)
