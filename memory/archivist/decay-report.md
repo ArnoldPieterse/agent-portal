@@ -1,6 +1,6 @@
 # Decay report 2026-11-23
 
-Leaves: 9515 | flagged (<0.35): 0
+Leaves: 9549 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -7391,6 +7391,7 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/archivist/ARCHIVED.md | 0 | 0 | n | 0.550 |
 | memory/archivist/archive_audit.py | 0 | 0 | n | 0.550 |
 | memory/archivist/artifact-integrity-check-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/assist-builder-loop-scorer-contract-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/auto-linker-selftest.json | 0 | 0 | n | 0.550 |
 | memory/archivist/auto-loop-idle-confirmation.md | 0 | 0 | n | 0.550 |
 | memory/archivist/auto_linker.py | 0 | 0 | n | 0.550 |
@@ -7406,6 +7407,7 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/archivist/decay-score-production-progress-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/decay-score-tierb-queue-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-cycle13-goal-setting-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-dangling-pointer-fix-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-goal10-kb-version-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-goal2-auto-quarantine-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-goal2-auto-quarantine-testfix-orchestrator-2026-11-23.md | 0 | 0 | n | 0.550 |
@@ -8462,39 +8464,58 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/designer/assist-cockpit-forecast-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/assist-mechic-goals-solutions-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/assist-ui-asset-inventory-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/brake-cycle12-evidence.md | 0 | 0 | n | 0.550 |
 | memory/designer/builder-goal4-components-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-autonomy-loop-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-autonomy-wired-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-components-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/cockpit-density-spec-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-layout-design-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-layout-spec.html | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-p0-p1-fixes-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-responsive-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-risks-remediation-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/cognitive-budget.md | 0 | 0 | n | 0.550 |
 | memory/designer/cycle-radar-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/cycle12-goal-setting-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/decay-cycle12-evidence.md | 0 | 0 | n | 0.550 |
 | memory/designer/decision-timeline-component.html | 0 | 0 | n | 0.550 |
+| memory/designer/density-cycle12-evidence.md | 0 | 0 | n | 0.550 |
 | memory/designer/design-qa-tool-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/error-boundary-assist-builder-g3-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-assist-builder-g6-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-goal1-density.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-goal2-provenance.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-goal3-fleetboard.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-goal4-forecast.md | 0 | 0 | n | 0.550 |
 | memory/designer/fleet-panel-forecast-assist-builder-g6-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/fleet-panel-prototype-2026-11-23.html | 0 | 0 | n | 0.550 |
 | memory/designer/fleet-panel-prototype-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/fleet-panel-spec.md | 0 | 0 | n | 0.550 |
 | memory/designer/fleet-topology-live-component.html | 0 | 0 | n | 0.550 |
+| memory/designer/fleetboard-cycle12-evidence.md | 0 | 0 | n | 0.550 |
+| memory/designer/forecast-cycle12-evidence.md | 0 | 0 | n | 0.550 |
+| memory/designer/goal1-density-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/goal2-provenance-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/goal3-fleetboard-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/goal5-animation-verified-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/health-score-component.html | 0 | 0 | n | 0.550 |
 | memory/designer/index_html_CANONICAL_17ab95daf2d8_2026-11-23b.html | 0 | 0 | n | 0.550 |
 | memory/designer/index_html_CANONICAL_a00d6ac0083d_2026-11-23b.html | 0 | 0 | n | 0.550 |
 | memory/designer/index_html_CANONICAL_ac83166ea935_2026-11-23a.html | 0 | 0 | n | 0.550 |
 | memory/designer/index_html_CANONICAL_f174dd4be49d_2026-11-23x.html | 0 | 0 | n | 0.550 |
+| memory/designer/knowledge-impact-cycle12-evidence.md | 0 | 0 | n | 0.550 |
 | memory/designer/light-theme-contrast-audit-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/load-budget-cycle12-evidence.md | 0 | 0 | n | 0.550 |
 | memory/designer/mechanic-goals-assist-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/mechanic-open-goals-solutions-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/perf-markers-landed-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/provenance-cycle12-evidence.md | 0 | 0 | n | 0.550 |
 | memory/designer/risk-forecast-component.html | 0 | 0 | n | 0.550 |
 | memory/designer/risk-forecast-panel-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/topology-cycle12-evidence.md | 0 | 0 | n | 0.550 |
 | memory/designer/topology-live-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/trend-cycle12-evidence.md | 0 | 0 | n | 0.550 |
 | memory/designer/ui-asset-inventory-correction-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/ui-checklist-contribution-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/verify-builder-goal7-dark-mode-2026-11-23.md | 0 | 0 | n | 0.550 |
@@ -8522,6 +8543,7 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/goals/mechanic-forecast-unblock-path-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/goals/next10.json | 0 | 0 | n | 0.550 |
 | memory/goals/round_topic.json | 0 | 0 | n | 0.550 |
+| memory/goals/scribe-crosslane-integration-map-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/goals/_ledger_tmp.json | 0 | 0 | n | 0.550 |
 | memory/goals/archive/archivist-2026-11-19.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/archivist-2026-11-20.md | 0 | 0 | n | 0.550 |
@@ -8595,8 +8617,10 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261123-205937.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-211424.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-213943.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261123-224540.json | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/handoffs/HO-20261123-loop-scorer-contract.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_1_20261123-060001.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_2_20261123-093159.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_3_20261123-103155.md | 0 | 0 | n | 0.550 |
@@ -8606,6 +8630,7 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/mechanic/archivist-goal2-auto-quarantine-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-archivist-g2-quarantine-verify-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-archivist-goal-closure-sweep-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/assist-verifier-g1-remediation-e2e-fix-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-23b.md | 0 | 0 | n | 0.550 |
@@ -8819,10 +8844,13 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.fb13076d76 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/gap_alarm.py.722479a2c2 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/goal_ledger.py.ff3d95dd64 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/index.html.07d00a03d8 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.47a44d9499 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.7d30ea94f9 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.e0e875bb51 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/index.html.f10040268f | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/memory_mirror.py.3d9266645f | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/portal_host.py.114157f8eb | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/boot_recovery.md | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/host_down_response.md | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/scheduled_maintenance.md | 0 | 0 | n | 0.550 |
@@ -8942,6 +8970,7 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/scribe/decision_digest.py | 0 | 0 | n | 0.550 |
 | memory/scribe/designer-evidence-reconciliation-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-archivist-cycle12-full-verify-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/scribe/evidence-correction-builder-goal4-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/scribe/fleet-state-reconciliation-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/scribe/forecast-archivist-g3-assist-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/scribe/forecast-builder-goal9-contribution-2026-11-23.md | 0 | 0 | n | 0.550 |
@@ -9014,6 +9043,7 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/verifier/policy_audit.py | 0 | 0 | n | 0.550 |
 | memory/verifier/policy_audit_report.json | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation_e2e.py | 0 | 0 | n | 0.550 |
+| memory/verifier/remediation_e2e_results.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation_gate.py | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation_gate_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/reroute_e2e.py | 0 | 0 | n | 0.550 |
@@ -9024,6 +9054,8 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/verifier/scribe-goal10-synthesis-quality-close-2026-11-23b.md | 0 | 0 | n | 0.550 |
 | memory/verifier/scribe-goal10-synthesis-quality-verify-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
+| memory/verifier/stall_detector.py | 0 | 0 | n | 0.550 |
+| memory/verifier/stall_state.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/state_consistency.py | 0 | 0 | n | 0.550 |
 | memory/verifier/state_consistency_assist-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/verifier/state_consistency_live.json | 0 | 0 | n | 0.550 |
@@ -9193,7 +9225,9 @@ Leaves: 9515 | flagged (<0.35): 0
 | memory/goals/mechanic-goal2-model-lifecycle-forecast-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/goal2-mirror-heal-verified-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/goal7-log-rotate-verified-2026-11-23.md | 0 | 1 | Y | 0.769 |
+| memory/orchestrator/builder-cycle14-goal-specs-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/orchestrator/designer-goal5-closure-assist-2026-11-23.md | 0 | 1 | Y | 0.769 |
+| memory/orchestrator/todo-agent-goals-summary-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/researcher/autoloop-open-count-rootcause-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/researcher/decay-run3-assist-archivist-goal3-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/researcher/gap-fill-script-assist-2026-11-23.md | 0 | 1 | Y | 0.769 |
