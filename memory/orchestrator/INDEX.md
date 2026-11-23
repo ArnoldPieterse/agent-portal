@@ -1,7 +1,9 @@
 # ORCHESTRATOR INDEX â€” ops/HR + fleet onboarding (newest first).
 Last updated: 2026-11-22.
 
-## Entries (keyword -> pointer | use case)
+## Entries
+# Builder Cycle 14 goal specs landed 2026-11-23 -> memory/orchestrator/builder-cycle14-goal-specs-2026-11-23.md   replaced bare-name cycle-14 section in builder.md with full specs (script paths + verification criteria) for all 10 goals; disk==dispatch achieved. - 
+ (keyword -> pointer | use case)
 - TODO.md AGENT GOALS summary section 2026-11-23 -> memory/orchestrator/todo-agent-goals-summary-2026-11-23.md   completed prior pass's remaining work: top-of-file per-seat open-goal summary (Builder/Designer=5 newer dispatch, Verifier=10, Researcher=10; Scribe/Mechanic/Archivist/Orchestrator reached); verified present+ordered.
 - designer goal 5 stale-pointer closure (option c) 2026-11-23 -> memory/orchestrator/designer-goal5-closure-assist-2026-11-23.md   fixed mismatched pointer to goal-2 file; genuine evidence (11/11 PASS, all 4 ACs) already on disk; upgraded to [REACHED]. Owner=Designer.
 - scribe goal 8 anachronism test (option d) 2026-11-22 -> memory/orchestrator/scribe-goal8-anachronism-http-test-2026-11-22.md   closes Builder's remaining "no anachronisms" AC: called timeline.build_timeline() directly (sandbox can't reach :8099); PASS 4/4 target dates, 0 future-dated events

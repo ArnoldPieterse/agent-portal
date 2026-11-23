@@ -1,59 +1,59 @@
 {
  "ok": true,
- "generated": "2026-11-23 21:39:43",
+ "generated": "2026-11-23 22:45:40",
  "fleet": {
-  "done": 62,
+  "done": 64,
   "total": 102,
-  "pct": 60.8
+  "pct": 62.7
  },
  "throughput_goals_per_hour": 22.39,
  "next10": [
+  {
+   "agent": "researcher",
+   "goal": "**Self-Healing Remediation Bus** - `python memory/researcher/remediation_bus.py`: consume detector outputs (stale_claim_scan, dispatch_desync, reach_matrix, clobber-manifest) and APPLY safe, idempotent remediations \u2014 re-",
+   "type": "verify",
+   "complexity": 1,
+   "p_reached": 0.51,
+   "eta": "2026-11-24 00:22",
+   "hours": 1.61,
+   "order": 0,
+   "rank": 1,
+   "title": "Self-Healing Remediation Bus",
+   "steps": [
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-24 00:22 (P=51%)",
+   "consequences": [
+    "researcher: **Calibration-to-Dispatch Feedback** - `python memory/resear (2026-11-24 13:28) - shared scope dispatch,researcher",
+    "researcher: **Blocker -> Catch -> Fix -> Verify Runbook** - `memory/rese (2026-11-24 15:05) - shared scope detector,remediation,researcher",
+    "researcher: **Closed-Loop Failure-Mutation Library** - `python memory/re (2026-11-25 03:52) - shared scope clobber,desync,researcher",
+    "lane end designer: 11-25 12:47 (slowest lane)"
+   ]
+  },
   {
    "agent": "verifier",
    "goal": "**Autonomous Remediation E2E** \u2014 full closed-loop fault-injection test (detect\u2192diagnose\u2192remediate\u2192verify) with per-stage SLA",
    "type": "verify",
    "complexity": 1,
    "p_reached": 0.758,
-   "eta": "2026-11-23 23:26",
+   "eta": "2026-11-24 00:32",
    "hours": 1.78,
    "order": 0,
-   "rank": 1,
+   "rank": 2,
    "title": "Autonomous Remediation E2E",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-23 23:26 (P=76%)",
+   "outcome": "reached ~2026-11-24 00:32 (P=76%)",
    "consequences": [
-    "designer: **Closed-Loop Goal Lifecycle Trace** - Design the single-goa (2026-11-23 23:54) - shared scope closed,stage",
-    "builder: Automated Chaos Drill Scheduler (periodic fault injection +  (2026-11-24 11:03) - shared scope fault,injection,verify",
-    "verifier: **Fleet Health Closed-Loop Test** \u2014 simulate VRAM/OOM degrad (2026-11-24 16:43) - shared scope autonomous,closed,verify",
-    "lane end designer: 11-25 11:38 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "designer",
-   "goal": "**Closed-Loop Goal Lifecycle Trace** - Design the single-goal loop view: ONE goal rendered as a closed loop (proposed -> assigned -> in-flight -> action taken -> verified/closed | reverted), each stage color-coded, with ",
-   "type": "ops",
-   "complexity": 2,
-   "p_reached": 0.151,
-   "eta": "2026-11-23 23:54",
-   "hours": 2.25,
-   "order": 0,
-   "rank": 2,
-   "title": "Closed-Loop Goal Lifecycle Trace",
-   "steps": [
-    "pre-flight checks (targets exist, idempotent)",
-    "execute from non-sandbox session",
-    "verify registration/health + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-23 23:54 (P=15%)",
-   "consequences": [
-    "verifier: **Autonomous Remediation E2E** \u2014 full closed-loop fault-inje (2026-11-23 23:26) - shared scope closed,stage",
-    "designer: **Loop-Closure Signal Choreography** - Design how a goal's v (2026-11-24 07:28) - shared scope closed,design,single",
-    "designer: **Revert / Rollback Trace Design** - Design the visual treat (2026-11-24 11:47) - shared scope design,reverted,trace",
-    "lane end designer: 11-25 11:38 (slowest lane)"
+    "builder: Automated Chaos Drill Scheduler (periodic fault injection +  (2026-11-24 12:09) - shared scope fault,injection,verify",
+    "researcher: **Blocker -> Catch -> Fix -> Verify Runbook** - `memory/rese (2026-11-24 15:05) - shared scope remediation,verify",
+    "verifier: **Fleet Health Closed-Loop Test** \u2014 simulate VRAM/OOM degrad (2026-11-24 17:49) - shared scope autonomous,closed,verify",
+    "lane end designer: 11-25 12:47 (slowest lane)"
    ]
   },
   {
@@ -62,7 +62,7 @@
    "type": "measurement",
    "complexity": 1,
    "p_reached": 0.459,
-   "eta": "2026-11-24 00:01",
+   "eta": "2026-11-24 01:07",
    "hours": 2.36,
    "order": 0,
    "rank": 3,
@@ -72,10 +72,9 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 00:01 (P=46%)",
+   "outcome": "reached ~2026-11-24 01:07 (P=46%)",
    "consequences": [
-    "designer: **Loop-Closure Signal Choreography** - Design how a goal's v (2026-11-24 07:28) - shared scope closed,score",
-    "lane end designer: 11-25 11:38 (slowest lane)"
+    "lane end designer: 11-25 12:47 (slowest lane)"
    ]
   },
   {
@@ -84,7 +83,7 @@
    "type": "measurement",
    "complexity": 1,
    "p_reached": 0.459,
-   "eta": "2026-11-24 01:48",
+   "eta": "2026-11-24 02:54",
    "hours": 2.36,
    "order": 1,
    "rank": 4,
@@ -94,36 +93,35 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 01:48 (P=46%)",
+   "outcome": "reached ~2026-11-24 02:54 (P=46%)",
    "consequences": [
-    "verifier: **Cockpit A11y Gate (WCAG AA)** \u2014 automated contrast, keyboa (2026-11-24 19:48) - shared scope check,cockpit",
-    "designer: **Data Freshness & Live-Feed Indicator** - Design a single c (2026-11-25 00:45) - shared scope cockpit,fresh,staleness",
-    "lane end designer: 11-25 11:38 (slowest lane)"
+    "verifier: **Cockpit A11y Gate (WCAG AA)** \u2014 automated contrast, keyboa (2026-11-24 20:54) - shared scope check,cockpit",
+    "lane end designer: 11-25 12:47 (slowest lane)"
    ]
   },
   {
-   "agent": "researcher",
-   "goal": "**Auto-Loop Effectiveness Telemetry** - `python memory/researcher/loop_telemetry.py`: log every auto-loop pass {agent, open_before, closed, files_written, tool_calls, outcome_class(empty|progress|blocker)} to loop_teleme",
+   "agent": "designer",
+   "goal": "**Adaptive Information Density (Calm vs. Incident)** - Design two cockpit density modes: \"calm\" for normal operation shows only aggregate health + active loops; \"incident\" mode auto-engages when any panel enters critical",
    "type": "build",
    "complexity": 2,
-   "p_reached": 0.072,
-   "eta": "2026-11-24 02:01",
-   "hours": 4.37,
+   "p_reached": 0.037,
+   "eta": "2026-11-24 03:04",
+   "hours": 4.32,
    "order": 0,
    "rank": 5,
-   "title": "Auto-Loop Effectiveness Telemetry",
+   "title": "Adaptive Information Density (Calm vs. Incident)",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 02:01 (P=7%)",
+   "outcome": "reached ~2026-11-24 03:04 (P=4%)",
    "consequences": [
-    "researcher: **Loop-Closure Rate Metric** - `python memory/researcher/loo (2026-11-24 11:59) - shared scope closed,researcher",
-    "researcher: **Dispatch-Desync Sentinel** - `python memory/researcher/dis (2026-11-24 14:49) - shared scope files,researcher",
-    "verifier: **Goal Lifecycle Audit** \u2014 trace every goal through proposed (2026-11-24 14:56) - shared scope closed,every",
-    "lane end designer: 11-25 11:38 (slowest lane)"
+    "designer: **Decision Provenance Overlay** - Design the \"where did this (2026-11-24 06:19) - shared scope cockpit,design,health",
+    "designer: **Predictive Risk Surface (Forward-Looking)** - Design the f (2026-11-24 10:39) - shared scope design,panel",
+    "designer: **Operator Emergency Brake UX** - Design the intervention pa (2026-11-24 16:06) - shared scope design,shows",
+    "lane end designer: 11-25 12:47 (slowest lane)"
    ]
   },
   {
@@ -132,7 +130,7 @@
    "type": "build",
    "complexity": 1,
    "p_reached": 0.405,
-   "eta": "2026-11-24 03:06",
+   "eta": "2026-11-24 04:12",
    "hours": 3.08,
    "order": 1,
    "rank": 6,
@@ -143,34 +141,56 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 03:06 (P=40%)",
+   "outcome": "reached ~2026-11-24 04:12 (P=40%)",
    "consequences": [
-    "lane end designer: 11-25 11:38 (slowest lane)"
+    "lane end designer: 11-25 12:47 (slowest lane)"
    ]
   },
   {
-   "agent": "designer",
-   "goal": "**Autonomy Level Indicator (Trust Dial)** - Design the top-level autonomy mode indicator: current fleet self-driving level (fully autonomous / supervised / manual) + escalation-threshold proximity, so an operator knows a",
+   "agent": "researcher",
+   "goal": "**Instrument ROI / Effort-Attribution Model** - `python memory/researcher/instrument_roi.py`: using loop_telemetry.jsonl + closure data, attribute changes in empty-pass rate and blocker-resolution time to the specific in",
    "type": "build",
    "complexity": 2,
-   "p_reached": 0.037,
-   "eta": "2026-11-24 04:13",
-   "hours": 4.32,
+   "p_reached": 0.072,
+   "eta": "2026-11-24 04:44",
+   "hours": 4.37,
    "order": 1,
    "rank": 7,
-   "title": "Autonomy Level Indicator (Trust Dial)",
+   "title": "Instrument ROI / Effort-Attribution Model",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 04:13 (P=4%)",
+   "outcome": "reached ~2026-11-24 04:44 (P=7%)",
    "consequences": [
-    "verifier: **Autonomy Precision/Recall Tracker** \u2014 classify each autono (2026-11-24 22:53) - shared scope autonomous,autonomy",
-    "designer: **Data Freshness & Live-Feed Indicator** - Design a single c (2026-11-25 00:45) - shared scope design,indicator,operator",
-    "designer: **Autonomy Incident Triage View** - Design the incident disp (2026-11-25 05:04) - shared scope autonomy,current,design",
-    "lane end designer: 11-25 11:38 (slowest lane)"
+    "researcher: **Blocker -> Catch -> Fix -> Verify Runbook** - `memory/rese (2026-11-24 15:05) - shared scope blocker,researcher",
+    "lane end designer: 11-25 12:47 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "designer",
+   "goal": "**Decision Provenance Overlay** - Design the \"where did this come from?\" overlay: clicking any cockpit data point (health score, risk item, autonomy level) opens a provenance panel showing the chain: which agent made the",
+   "type": "measurement",
+   "complexity": 2,
+   "p_reached": 0.046,
+   "eta": "2026-11-24 06:19",
+   "hours": 3.25,
+   "order": 1,
+   "rank": 8,
+   "title": "Decision Provenance Overlay",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-24 06:19 (P=5%)",
+   "consequences": [
+    "designer: **Adaptive Information Density (Calm vs. Incident)** - Desig (2026-11-24 03:04) - shared scope cockpit,design,health",
+    "designer: **Predictive Risk Surface (Forward-Looking)** - Design the f (2026-11-24 10:39) - shared scope design,panel,showing",
+    "verifier: **Fleet Health Closed-Loop Test** \u2014 simulate VRAM/OOM degrad (2026-11-24 17:49) - shared scope chain,health",
+    "lane end designer: 11-25 12:47 (slowest lane)"
    ]
   },
   {
@@ -179,20 +199,20 @@
    "type": "research",
    "complexity": 1,
    "p_reached": 0.576,
-   "eta": "2026-11-24 05:55",
+   "eta": "2026-11-24 07:01",
    "hours": 4.13,
    "order": 2,
-   "rank": 8,
+   "rank": 9,
    "title": "Autonomy Stall Detector",
    "steps": [
     "gather sources from memory/ (pointer map)",
     "compute/detect per protocol",
     "write findings leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 05:55 (P=58%)",
+   "outcome": "reached ~2026-11-24 07:01 (P=58%)",
    "consequences": [
-    "designer: **Autonomy Incident Triage View** - Design the incident disp (2026-11-25 05:04) - shared scope autonomy,stall",
-    "lane end designer: 11-25 11:38 (slowest lane)"
+    "designer: **Cross-Cycle Trend Strip** - Design a persistent horizontal (2026-11-25 06:13) - shared scope across,autonomy",
+    "lane end designer: 11-25 12:47 (slowest lane)"
    ]
   },
   {
@@ -201,10 +221,10 @@
    "type": "build",
    "complexity": 1,
    "p_reached": 0.405,
-   "eta": "2026-11-24 06:11",
+   "eta": "2026-11-24 07:17",
    "hours": 3.08,
    "order": 2,
-   "rank": 9,
+   "rank": 10,
    "title": "Alert Correlation Engine (group alerts \u2192 incidents)",
    "steps": [
     "scaffold the module file",
@@ -212,33 +232,9 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 06:11 (P=40%)",
+   "outcome": "reached ~2026-11-24 07:17 (P=40%)",
    "consequences": [
-    "lane end designer: 11-25 11:38 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "designer",
-   "goal": "**Loop-Closure Signal Choreography** - Design how a goal's verified-closed signal propagates across the cockpit as ONE coherent sequence: health score ticks up, the loop node turns green with a single subtle pulse, risk ",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.046,
-   "eta": "2026-11-24 07:28",
-   "hours": 3.25,
-   "order": 2,
-   "rank": 10,
-   "title": "Loop-Closure Signal Choreography",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-24 07:28 (P=5%)",
-   "consequences": [
-    "designer: **Closed-Loop Goal Lifecycle Trace** - Design the single-goa (2026-11-23 23:54) - shared scope closed,design,single",
-    "builder: Closed-Loop Feedback Scorer (score each loop 0-1) (2026-11-24 00:01) - shared scope closed,score",
-    "researcher: **Loop-Closure Rate Metric** - `python memory/researcher/loo (2026-11-24 11:59) - shared scope closed,closure",
-    "lane end designer: 11-25 11:38 (slowest lane)"
+    "lane end designer: 11-25 12:47 (slowest lane)"
    ]
   }
  ],
@@ -246,45 +242,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-23 22:09",
+   "end": "2026-11-23 23:15",
    "completes": 0,
-   "fleet_pct": 60.8,
+   "fleet_pct": 62.7,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-23 22:39",
+   "end": "2026-11-23 23:45",
    "completes": 0,
-   "fleet_pct": 60.8,
+   "fleet_pct": 62.7,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-24 21:39",
+   "end": "2026-11-24 22:45",
    "completes": 29,
-   "fleet_pct": 89.2,
+   "fleet_pct": 91.2,
    "top": [
-    "#1 verifier: Autonomous Remediation E2E (2026-11-23 23:26)",
-    "#2 designer: Closed-Loop Goal Lifecycle Trace (2026-11-23 23:54)",
-    "#3 builder: Closed-Loop Feedback Scorer (score each loop 0-1) (2026-11-24 00:01)",
-    "#4 verifier: Cockpit Live-Staleness Monitor (2026-11-24 01:48)",
-    "#5 researcher: Auto-Loop Effectiveness Telemetry (2026-11-24 02:01)"
+    "#1 researcher: Self-Healing Remediation Bus (2026-11-24 00:22)",
+    "#2 verifier: Autonomous Remediation E2E (2026-11-24 00:32)",
+    "#3 builder: Closed-Loop Feedback Scorer (score each loop 0-1) (2026-11-24 01:07)",
+    "#4 verifier: Cockpit Live-Staleness Monitor (2026-11-24 02:54)",
+    "#5 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 03:04)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-11-30 21:39",
-   "completes": 40,
+   "end": "2026-11-30 22:45",
+   "completes": 38,
    "fleet_pct": 100.0,
    "top": [
-    "#1 verifier: Autonomous Remediation E2E (2026-11-23 23:26)",
-    "#2 designer: Closed-Loop Goal Lifecycle Trace (2026-11-23 23:54)",
-    "#3 builder: Closed-Loop Feedback Scorer (score each loop 0-1) (2026-11-24 00:01)",
-    "#4 verifier: Cockpit Live-Staleness Monitor (2026-11-24 01:48)",
-    "#5 researcher: Auto-Loop Effectiveness Telemetry (2026-11-24 02:01)"
+    "#1 researcher: Self-Healing Remediation Bus (2026-11-24 00:22)",
+    "#2 verifier: Autonomous Remediation E2E (2026-11-24 00:32)",
+    "#3 builder: Closed-Loop Feedback Scorer (score each loop 0-1) (2026-11-24 01:07)",
+    "#4 verifier: Cockpit Live-Staleness Monitor (2026-11-24 02:54)",
+    "#5 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 03:04)"
    ],
    "next_cycle_candidates": [
     {
@@ -340,15 +336,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-23 21:39",
-   "completes": 40,
+   "end": "2026-12-23 22:45",
+   "completes": 38,
    "fleet_pct": 100.0,
    "top": [
-    "#1 verifier: Autonomous Remediation E2E (2026-11-23 23:26)",
-    "#2 designer: Closed-Loop Goal Lifecycle Trace (2026-11-23 23:54)",
-    "#3 builder: Closed-Loop Feedback Scorer (score each loop 0-1) (2026-11-24 00:01)",
-    "#4 verifier: Cockpit Live-Staleness Monitor (2026-11-24 01:48)",
-    "#5 researcher: Auto-Loop Effectiveness Telemetry (2026-11-24 02:01)"
+    "#1 researcher: Self-Healing Remediation Bus (2026-11-24 00:22)",
+    "#2 verifier: Autonomous Remediation E2E (2026-11-24 00:32)",
+    "#3 builder: Closed-Loop Feedback Scorer (score each loop 0-1) (2026-11-24 01:07)",
+    "#4 verifier: Cockpit Live-Staleness Monitor (2026-11-24 02:54)",
+    "#5 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 03:04)"
    ],
    "next_cycle_candidates": [
     {
@@ -406,43 +402,43 @@
   "archivist": {
    "done": 20,
    "total": 20,
-   "end": "2026-11-23 21:39"
+   "end": "2026-11-23 22:45"
   },
   "builder": {
    "done": 10,
    "total": 20,
-   "end": "2026-11-25 00:54"
+   "end": "2026-11-25 02:00"
   },
   "designer": {
-   "done": 0,
+   "done": 1,
    "total": 10,
-   "end": "2026-11-25 11:38"
+   "end": "2026-11-25 12:47"
   },
   "mechanic": {
    "done": 9,
    "total": 9,
-   "end": "2026-11-23 21:39"
+   "end": "2026-11-23 22:45"
   },
   "orchestrator": {
    "done": 3,
    "total": 3,
-   "end": "2026-11-23 21:39"
+   "end": "2026-11-23 22:45"
   },
   "researcher": {
-   "done": 0,
+   "done": 1,
    "total": 10,
-   "end": "2026-11-25 11:15"
+   "end": "2026-11-25 08:15"
   },
   "scribe": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 21:39"
+   "end": "2026-11-23 22:45"
   },
   "verifier": {
    "done": 10,
    "total": 20,
-   "end": "2026-11-24 22:53"
+   "end": "2026-11-24 23:59"
   }
  },
- "level_up_eta": "2026-11-25 11:38"
+ "level_up_eta": "2026-11-25 12:47"
 }
