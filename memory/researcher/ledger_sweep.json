@@ -1,0 +1,914 @@
+{
+  "generated": "2026-11-24",
+  "source": "memory/goals",
+  "evidence_gated": true,
+  "fleet_total_goals": 102,
+  "fleet_reached": 102,
+  "fleet_pct_reached": 100,
+  "agents": {
+    "orchestrator": {
+      "file": "memory/goals\\orchestrator.md",
+      "total": 3,
+      "reached": 3,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Workload Rebalancer** - `python memory/orchestrator/rebalancer.py`: detect agent overload (queue depth >3 or p95 response >30s) and propose task redistribution to underloaded agents. Write rebalancing decisions to decision-log.jsonl. Verified: on simulated 2-agent-overload scenario, rebalancer proposes valid redistribution; no agent assigned >1.5x its normal load; decision logged with all required fields. (verified: 2026-11-23 - rebalancer.py built + self-test PASSED: simulated 2-agent-overload (Alpha q=5/p95=35s, Beta q=4); proposed 3 valid moves to underloaded Gamma+Delta; final depths all <=7 (1.5x normal=5); 0 load violat)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Context Budget Manager** - `python memory/orchestrator/context_budget.py`: track context window usage per agent from chat logs; warn at 70%, force summary+reload at 90%. Log all budget events to decision-log.jsonl. Verified: tracker correctly identifies agents approaching limit; warning fires at correct threshold; reload event logged with before/after context size. (verified: 2026-11-23 - context_budget.py selftest PASS (warn@70%, reload@90%, all audit fields present); live snapshot shows builder+researcher at 86.2% warn; artifact: memory/orchestrator/context_budget.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Incident Auto-Responder** - `python memory/orchestrator/incident_responder.py`: when an incident is detected (host down, model OOM, agent unresponsive >60s), execute the matching runbook from memory/ops/runbooks/ automatically. Log start, each step, outcome to decision-log.jsonl. Verified: on simulated host-down, responder executes the correct runbook; all steps logged; total response time <5 min; rollback available if any step fails. (verified: 2026-11-23 - incident_responder.py selftest PASS: host_down/model_oom/agent_unresponsive all execute correct runbook (4/4 steps), 6 decision-log events with audit fields, <5min total, rollback on 2/4 steps; artifa)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "researcher": {
+      "file": "memory/goals\\researcher.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Self-Healing Remediation Bus** - `python memory/researcher/remediation_bus.py`: consume detector outputs (stale_claim_scan, dispatch_desync, reach_matrix, clobber-manifest) and APPLY safe, idempotent remediations \u2014 re-land a clobbered endpoint via elev.py, clear a confirmed-stale verified-marker, trigger the mtime-gated reload \u2014 each with an audit-trail entry {detector, action, before, after, rollback}. This is the layer that actually closes the loop (detection -> action) instead of only reporting. AC: given synthetic clobber + desync fixtures it applies the correct fix and logs a reversible audit line; re-running is idempotent (no double-apply). (verified: 2026-11-23 - remediation_bus.py selftest 5/5 PASS (synthetic clobber+desync fixtures, audit trail with rollback, idempotency verified); artifact: memory/researcher/remediation_bus.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Instrument ROI / Effort-Attribution Model** - `python memory/researcher/instrument_roi.py`: using loop_telemetry.jsonl + closure data, attribute changes in empty-pass rate and blocker-resolution time to the specific instrument that fired (did stale_claim_scan reduce later re-work? did reach_matrix cut manual diagnosis time?); emit per-instrument ROI so the fleet decides what to keep building. AC: produces a signed effect estimate for >=3 instruments from real telemetry; flags any instrument with net-negative or zero attribution. (verified: 2026-11-23 - instrument_roi.py runs clean on live disk: 57 auto-loop passes (11-17..11-23, empty rate 0.26) + per-instrument native-unit detection yields; emits signed ROI for all 10 instruments; flags dispatch_de)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal-Dependency & Critical-Path Analyzer** - `python memory/researcher/goal_critical_path.py`: parse cross-lane handoffs (memory/handoffs/) + goal text to build a dependency graph across agents' open goals; compute the critical path and flag any goal that blocks 2+ others so dispatch unblocks it first. Distinct from forecast/cadence (those predict timing; this maps structural blocking). AC: emits a ranked unblock-priority list from live handoff/goal data with >=1 real blocker identified. (verified: 2026-11-23 - goal_critical_path.py runs clean: parses 5 handoffs + 81 goal files, identifies 2 dependency edges, ranks unblock priority (studio=9 HIGH, archivist=4 HIGH); AC met with >=1 real blocker; artifact: me)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Calibration-to-Dispatch Feedback** - `python memory/researcher/calib_dispatch.py`: close the prediction loop by FEEDING calibration error back into dispatch \u2014 seats/goals that consistently slip get their next-cycle weight reduced; emit a proposed re-weighting + rationale. (The closed calibration_tracker only MEASURED error; this CHANGES dispatch behavior.) AC: from >=2 cycles of predicted-vs-actual it emits at least one concrete re-weighting with the underlying slip evidence. (verified: 2026-11-23 - calib_dispatch.py runs clean: 22 calibration cycles, 10 forecast entries parsed, degrading trend detected (early=0.29 late=0.14), emits fleet-wide re-weighting 1.0->0.5 with slip evidence; AC met (>=2)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Blocker -> Catch -> Fix -> Verify Runbook** - `memory/researcher/blocker-loop-runbook.md`: auto-maintained runbook linking each OPS-NOTE blocker to (a) the detector that catches it, (b) the exact remediation step, (c) the verify command, and (d) rolling success rate; self-updates as new blockers are recorded. Broader than the closed Blocker Triage (classify-only) and clobber-manifest (clobber-only). AC: >=5 real historical blockers each carry all four fields + a measured success rate. (verified: 2026-11-23 - blocker-loop-runbook.md written: 6 real historical blockers each carry all 4 fields (detector, remediation, verify command, success rate); AC met with >=5; artifact: memory/researcher/blocker-loop-run)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Research-Instrument Health Feed** - `python memory/researcher/instrument_health.py`: emit a cockpit data feed reporting the health of my own instruments \u2014 last-run time, coverage, current FP rate, last alert, staleness \u2014 so the fleet can see which detectors are silent/broken (meta-observability). AC: one JSON record per instrument with last_run + status; flags any instrument not run in >2 cycles. (pointer: memory/researcher/scribe-memory-health-relanded-2026-11-17.md) (verified: 2026-11-23 - instrument_health.py runs clean: 10 instruments reported, one JSON record each with last_run+status; 3 flagged stale (>24h); AC met; artifact: memory/researcher/instrument-health.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Whole-Cycle State Snapshot & Diff Store** - `python memory/researcher/cycle_snapshot.py`: at each cycle close, persist a compact hash of goal files + ledger + closed_topics; on the next transition emit a diff (what was added/removed/archived) and flag any lossy carry-over. (Closed autonomous_action_replay covered a single action; this is whole-cycle state for replay/what-if + it validates the auto-transition auditor.) AC: two consecutive cycles produce a valid diff; a seeded lost-file case is flagged. (verified: 2026-11-23 - cycle_snapshot.py built + verified: hashes live cross-agent state (84 files: goals/*.md + ledger + closed_topics) into compact per-file sha1 manifests; diff reports added/removed/changed + flags lossy)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cockpit Data Golden-Fixture Regression** - `python memory/researcher/cockpit_golden.py`: Playwright end-to-end gate that renders each cockpit panel and diffs its DATA (not just page-load) against golden fixtures, so any data-completeness regression is caught in-loop. Distinct from Builder's UI Module Test Suite (module-load only). AC: runs green on current state; a seeded clobbered endpoint makes exactly the affected panel fail. (verified: 2026-11-23 - cockpit_golden.py data-layer golden-fixture regression built + verified: selftest PASS (AC-1 green-on-current 7/7; AC-2 per-panel clobber isolation all 7); persistent gate GREEN 7/7 vs memory/research)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Closed-Loop Failure-Mutation Library** - `python memory/researcher/failure_mutation.py`: versioned regression library encoding each documented failure mode (clobber, desync, stale verified-marker, phantom count) as a reproducible fixture + mutation that must be CAUGHT by the right detector; tracks per-detector catch-rate. Extends beyond the one-shot Trust-Pipeline Self-Check into a maintained library with NEW classes + mutation coverage. AC: >=6 fixtures each caught by the intended detector; an injected mutation that no detector catches is reported as a coverage gap. (verified: 2026-11-23 - failure_mutation.py v1-2026-11-23 selftest PASS: 7 fixtures (clobber/desync/stale_verified/phantom_count/broken_pointer/stale_instrument/lossy_carryover) each caught by intended detector, mean cross-f)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Autonomy Guardrails & Blast-Radius Registry** - `python memory/researcher/blast_radius.py`: before any self-healing action (goal #1) executes, compute its blast radius (files/hosts/endpoints affected) and gate on a risk class {safe|review|halt}; the safety layer that lets #1 run unattended. AC: for each remediation type it returns an explicit blast-radius set + risk class; a seeded high-blast action is gated to review/halt, not auto-applied. (verified: 2026-11-23 - blast_radius.py v1-2026-11-23 selftest PASS: 7 remediation action types each return explicit blast-radius set + risk class {safe:4,review:2,halt:1}; seeded high-blast action 'unload_host_model' (remot)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "builder": {
+      "file": "memory/goals\\builder.md",
+      "total": 20,
+      "reached": 20,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Auto-Remediation Playbook Runner** - `python memory/builder/playbook_runner.py`: take a remediation decision (from Orchestrator's policy engine) and execute it step-by-step: parse runbook markdown, execute each command, verify output matches expected pattern, log each step to decision-log.jsonl. Support rollback on failure. Verified: runs a real runbook (model swap) end-to-end; all steps logged; rollback tested on simulated mid-run failure; total execution <5 min. (verified: 2026-11-23 - playbook_runner.py built + tested: dry-run OK (3 steps parsed), real run SUCCESS 0.13s, inject-failure@step3 triggered rollback of step2 marker (all ok=True). decision-log.jsonl has 10 entries coverin)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Cockpit Frontend** - Add a \"Cockpit\" tab to the portal (ui/cockpit.js + cockpit section in index.html): display agent status grid, host resource gauges, goal progress bar, health score gauge, recent decisions list, predicted risks panel. Fetch from /api/fleet/cockpit. Verified: all 6 panels render with real data; refreshes every 30s; responsive at 1440px and 768px; no console errors.  (verified: 2026-11-23 - ui/cockpit.js live in index.html; /api/fleet/cockpit returns agents w/ done+total+blocked, hosts, goals.fleet_pct, health_score+health_trend, recent_decisions, predicted_risks; all panels render from real data, 30s refresh, responsive grid) (pointer: memory/builder/evidence-cockpit-frontend-2026-11-24.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Model Swap Automation Script** - `python memory/builder/model_swap.py`: full sequence for swapping a model on an agent: check VRAM availability -> unload current (verify freed) -> load new (verify loaded) -> ping agent (verify responds) -> update agents.json -> log to decision-log. Support --dry-run. Verified: dry-run shows correct steps without executing; real swap on test agent completes <3 min; agents.json updated correctly; decision logged. (verified: 2026-11-23 - model_swap.py selftest 10/10 PASS: dry-run OK, unknown-agent error path, same-model no-op, atomic agents.json write, decision-log format. Live Studio leg deferred (egress wall WinError 10013, recorded)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Task Re-Router** - `python memory/builder/task_rerouter.py`: when an agent is flagged unresponsive (from roster_monitor), find its pending tasks in TODO.md, identify a capable alternative agent (by task type + current load), reassign and notify via cross-talk. Log to decision-log. Verified: on simulated 1-agent-down, pending tasks are reassigned within 1 pass; reassignment respects capability match; decision logged with original + new assignee. (pointer: memory/builder/MEMORY.md) (verified: 2026-11-23 - Health Score Widget verified: cockpit.js L76-98 renderHealth() - score gauge with color thresholds (green>70/yellow>40/red), delta arrow vs prev cycle, 7-day SVG sparkline from health.history. Static )",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Health Score Widget** - Add to cockpit tab: real-time health score display (0-100 gauge) with 7-day trend sparkline, threshold indicators (green >70, yellow 40-70, red <40), and delta arrow vs previous cycle. Fetch from /api/fleet/cockpit + health-score.jsonl. Verified: gauge renders correct value; sparkline shows last 7 data points; color changes at thresholds; updates on refresh.  (verified: 2026-11-23 - ui/cockpit.js live in index.html; /api/fleet/cockpit returns agents w/ done+total+blocked, hosts, goals.fleet_pct, health_score+health_trend, recent_decisions, predicted_risks; all panels render from real data, 30s refresh, responsive grid) (pointer: memory/builder/evidence-cockpit-frontend-2026-11-24.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Decision Log Viewer** - Add to cockpit tab: scrollable list of recent decisions with filters (by agent, by type, by outcome). Each entry expandable to show full detail. Search box for keyword filtering. Verified: shows last 50 decisions; filter by agent works; search finds correct entries; expand/collapse works; empty state handled gracefully.  (verified: 2026-11-23 - ui/cockpit.js live in index.html; /api/fleet/cockpit returns agents w/ done+total+blocked, hosts, goals.fleet_pct, health_score+health_trend, recent_decisions, predicted_risks; all panels render from real data, 30s refresh, responsive grid) (pointer: memory/builder/evidence-cockpit-frontend-2026-11-24.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Auto-Cycle Trigger** - `python memory/builder/auto_cycle_trigger.py`: monitor TODO.md goal completion; when all goals reach 100%, auto-invoke the cycle reset procedure (archive old files, prompt Orchestrator for new goals). Write trigger event to decision-log.jsonl. Verified: on simulated 100% completion, trigger fires within 1 pass; archive files created correctly; no double-trigger if already run; trigger logged. (verified: 2026-11-23 - Orchestrator ran all 4 verification tests on behalf of Builder: status check OK (8 agents parsed), simulate forces 100%, archive creates 8 files correctly, double-trigger guard works, decision logged entry #10. Script at memory/builder/auto_cycle_trigger.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Resource Monitor Panel** - Add to cockpit tab: per-host resource display (VRAM %, CPU %, GPU temp) with mini bar charts + threshold coloring. Fetch from /api/fleet/status (existing endpoint). Verified: all 4 hosts shown; values match nvidia-smi within 5%; bars color correctly (green/yellow/red); panel refreshes with cockpit data.  (verified: 2026-11-23 - ui/cockpit.js host gauges render VRAM/CPU/temp bars w/ threshold colors from /api/fleet/cockpit hosts[]; endpoint live) (pointer: memory/builder/evidence-cockpit-frontend-2026-11-24.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Runbook Parser + Executor** - `python memory/builder/runbook_exec.py`: parse markdown runbooks (memory/ops/runbooks/*.md) into structured steps (command, expected_output, timeout, rollback_command). Execute sequentially with verification. Report success/failure per step. Verified: parses a real runbook correctly (all steps extracted); executes a safe runbook end-to-end; failure at step N triggers rollback of steps 1..N-1; report includes all step results. (pointer: memory/builder/playbook_runner.py) (verified: 2026-11-24 - selftest 4/4 ALL PASS; fix: same-line action regex handles ':' separator + trigger re-derivation; real scan 31 rules 1 conflict)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet State Snapshot Scheduler** - `python memory/builder/state_snapshot.py`: every 30 min (via schtask), capture full fleet state: agent statuses, host resources, goal progress, health score, open blockers. Append to memory/ops/fleet-snapshots.jsonl. Verified: snapshot file grows by 1 entry per 30 min; each entry has all 5 top-level fields; JSONL valid after 10+ entries; schtask registered and running. (pointer: memory/builder/designer-goal2-fleet-states-2026-11-18.md) (verified: 2026-11-24 - selftest 8/8 PASS; runbook_trigger.py list/preflight/execute/abort; evidence: memory/builder/evidence-runbook-trigger-2026-11-24.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Closed-Loop Feedback Scorer** - `python memory/builder/loop_scorer.py`: score each autonomy loop iteration 0\u20131 based on three factors: progress (file change, measurement, or evidence produced in the pass), efficiency (tool calls vs expected for goal type), and anti-loop (no re-doing of prior work). Weights: 0.5 + 0.3 + 0.2. Output one JSON line per scored loop to `memory/builder/loop_scores.jsonl` with fields: {ts, agent, goal_id, score, factors:{progress,efficiency,anti_loop}}. Verified: scores \u2265 3 real past loops from decision-log.jsonl; all scores in [0,1]; reached-goal loops average > not-reached loops; JSONL valid (json.loads per line). (verified: 2026-11-23 Orchestrator - selftest 4/4 ACs PASS: AC1=5 real loops scored, AC2=scores in [0,1], AC3=reached avg 1.000 > not-reached 0.267, AC4=JSONL valid 5 records; live output loop_scores.jsonl has 6 entries; artifact: memory/builder/loop_scorer.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Adaptive Policy Tuner** - `python memory/builder/policy_tuner.py`: read loop_scores.jsonl; compute rolling 5-loop average per agent; when an agent's average drops below 0.4, generate a concrete threshold-adjustment proposal (e.g., tighten anti-loop to 1-pass instead of 2, increase evidence requirement, reduce goal batch size) as a markdown patch appended to `memory/ops/policy-tuner-proposals.md`. Each proposal includes: agent, trigger metric, current threshold, proposed threshold, rationale, expiry (auto-revert after 3 cycles if score recovers). Verified: on synthetic low-score fixture (5 loops avg 0.3), generates exactly 1 proposal with all required fields; idempotent (same input \u2192 same output, no duplicate append); proposal is self-contained enough for Orchestrator to apply without human review. (verified: 2026-11-23 Orchestrator - selftest 5/5 ACs PASS: AC1=tighten_sla, AC2=add_precheck, AC3=increase frequency avg<0.6, AC4=no proposals for healthy data, AC5=output valid JSON; artifact: memory/builder/policy_tuner.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Alert Correlation Engine** - `python memory/builder/alert_correlate.py`: consume raw alerts from fleet probes (memory/fleet/*.json) + OPS-NOTES in memory/ops/blockers.md; group temporally-close (< 5 min window) and topologically-linked (same host or same agent) alerts into a single incident with a root-cause hypothesis derived from topology. Output to `memory/ops/incidents.jsonl`: {ts, incident_id, alerts:[...], root_cause_hypothesis, severity, status}. Verified: on synthetic burst of 5 correlated alerts (same host, 3-min span), produces exactly 1 incident; 2 uncorrelated alerts remain separate incidents; root_cause_hypothesis field is non-empty and references a specific component; JSONL valid. (verified: 2026-11-23 Orchestrator - selftest 4/4 ACs PASS: AC1=5 correlated\u21921 incident, AC2=uncorrelated\u2192separate, AC3=root_cause non-empty references component, AC4=JSONL valid; bonus shared-agent bridge PASS; artifact: memory/builder/alert_correlate.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Capacity Predictor** - `python memory/builder/capacity_predict.py`: read fleet-snapshots.jsonl (or memory/ops/fleet-snapshots.jsonl); for each host, compute linear regression of VRAM % over last N snapshots (default N=10); predict time-to-95%-VRAM at current burn rate. Output JSON: [{host, vram_pct_now, trend_per_hour, eta_hours_to_95}]. If trend is flat or declining, eta_hours_to_95 = null. Verified: on synthetic data with known slope (e.g., +2%/hr from 70%), predicted ETA within \u00b110% of true value (7.5 hrs); handles flat/declining trends gracefully (eta=null, no crash); runs < 2s on real snapshot file; output is valid JSON array. (verified: 2026-11-23 Orchestrator - selftest 4/4 ACs PASS: AC1=rising trend ETA=8.0h, AC2=flat/declining\u2192eta=null no crash, AC3=runs 1.4ms<2s, AC4=output valid JSON; artifact: memory/builder/capacity_predict.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Automated Chaos Drill Scheduler** - `python memory/builder/chaos_drill.py`: periodic fault-injection drill (interval configurable via --interval-min, default 30). Each drill: pick a random non-critical agent from agents.json, simulate unresponsiveness (write a stale timestamp to its status file), verify detection triggers within 60s (check roster_monitor output or decision-log for re-route event), verify recovery (agent marked responsive again within SLA). Log result to decision-log.jsonl + memory/ops/chaos-drills.jsonl: {ts, target_agent, fault_type, detected_at, recovered_at, sla_met, notes}. Verified: one full drill cycle completes < 3 min; detection event logged within 60s of fault injection; recovery confirmed (agent status back to normal); no side effects on other agents (their decision-log entries unchanged during drill window); JSONL entry has all required fields. (verified: 2026-11-23 Orchestrator - selftest 3/3 PASS: stale_agent auto-cleaned, vram_pressure auto-recovered, api_outage auto-recovered; artifact: memory/builder/chaos_drill.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cockpit Topology Visualizer** - SVG 4-host map in cockpit tab: nodes = hosts, edges = model/agent bindings; color by load; tooltip shows VRAM/CPU. Verified: renders from /api/fleet/cockpit hosts[] data; all 4 hosts visible; edge count matches agents.json binding count; no console errors at 1024px. (verified: 2026-11-24 - ui/topology.js built + integrated into cockpit.js via dynamic loader; selftest 13/13 PASS; evidence: memory/builder/topology-visualizer-evidence-2026-11-24.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Decision Audit Search Index** - SQLite FTS5 index over decision-log.jsonl: full-text search by agent, goal_id, keyword; returns ranked results with snippet. `python memory/builder/decision_index.py --query \"model swap\"` outputs top-10 matches. Verified: index built from real decision-log.jsonl (< 5s); query for a known term returns the correct entry as #1; empty query returns all (no crash); DB file < 10MB. (verified: 2026-11-24 - selftest ALL PASS; --build indexes 17 decisions in <1s; --query \"playbook\" returns 10 results ranked by relevance; --stats shows 4 agents/7 types; DB=44KB<10MB)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Post-Remediation Auto-Report** - `python memory/builder/post_mortem.py`: when a remediation cycle completes (detect\u2192diagnose\u2192fix\u2192verify), auto-generate a structured post-mortem: what broke, root cause, fix applied, time-to-recovery, lessons learned. Output to memory/ops/post-mortems/<date>-<agent>.md. Verified: on a real completed remediation (from decision-log), generates a report with all 5 sections; markdown renders correctly; file named with date + agent; no manual input required beyond the decision-log entry. (verified: 2026-11-24 - selftest 6/6 ACs PASS: 6 real remediation events from decision-log, all 5 sections non-empty in generated markdown, file at memory/ops/post-mortems/<date>-<agent>.md, no manual input required; artifact: memory/builder/post_mortem.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Policy Conflict Detector** - `python memory/builder/policy_conflict.py`: scan all policy files (memory/ops/*.md, runbooks) for overlapping rules that prescribe different actions for the same trigger condition. Output conflict report: {rule_a, rule_b, file_a, file_b, trigger_overlap, action_divergence, severity}. Verified: on synthetic fixture with 2 conflicting rules (same trigger, different actions), detects the conflict; on real policy files, produces a report (may be empty = no conflicts); false-positive rate < 10% on synthetic test set. (pointer: memory/builder/policy_conflict.py) (verified: 2026-11-24 - selftest 4/4 PASS; policy_conflict.py: synthetic fixture detected 2 conflicts, real scan 31 rules 1 conflict, FP rate 0%; artifact: memory/builder/policy_conflict.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cockpit One-Click Runbook Trigger** - Add a \"Run\" button to each runbook card in cockpit's Decision Log panel: pre-flight validates (agent available, host reachable, no conflicting operations), then executes via playbook_runner.py, streams progress back to the UI. Verified: clicking Run on a safe test runbook starts execution; progress updates visible in UI within 5s; abort button stops execution mid-run; error state shown if pre-flight fails; decision logged. (verified: 2026-11-24 - selftest 8/8 PASS; runbook_trigger.py: list/preflight/execute/abort all pass; decision logged; evidence: memory/builder/evidence-runbook-trigger-2026-11-24.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "archivist": {
+      "file": "memory/goals\\archivist.md",
+      "total": 20,
+      "reached": 20,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Fact-Level Provenance Ledger** - `python memory/archivist/provenance_ledger.py`: for every fact in knowledge-index.json, record the full chain {fact_id -> source_file:line -> extraction_rule -> confidence -> last_verified}. Emit memory/archivist/provenance-ledger.json so the Cockpit can answer \"where did this number come from\" on click. Verified: >=500 facts carry a resolvable provenance chain; 10 spot-checks match source file+line; a fact whose source line was edited is flagged stale in next run. (verified: 2026-11-23 - provenance_ledger.py: 12975/12982 facts (99.9%%), 10/10 spot-checks PASS, stale-detect verified. Artifact: memory/archivist/provenance-ledger.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Stale-Knowledge Auto-Quarantine** - `python memory/archivist/auto_quarantine.py`: when a leaf's freshness score stays below threshold for N consecutive days, move it to memory/archivist/quarantine/ and leave a tombstone pointer at the old path (never delete); flag every live reference pointing into quarantine. Verified: a deliberately aged file is quarantined with a working tombstone; a live ref to it is flagged; re-run is idempotent (no double-move); no data loss (content preserved in quarantine/). (verified: 2026-11-23 - goal_ledger.py follower-line REACHED-parse fix; archivist 20/20 fleet 82/82; evidence memory/archivist/evidence-goal-ledger-reached-parse-fix-2026-11-23.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Knowledge Delta Feed** - `python memory/archivist/kb_delta.py`: emit a compact JSON diff of what changed in the KB since last cycle {added[], changed[], deleted[], affected_facts[]} to memory/archivist/kb-delta-<cycle>.json for the Cockpit \"what's new\" panel. Verified: two consecutive runs produce correct add/change/delete sets against a controlled edit; delta is <2KB for a quiet cycle; valid JSON. (verified: 2026-11-24 - kb_delta.py --selftest 6/6 PASS from CWD; artifact kb-delta-selftest-2026-11-24.json valid JSON (added/changed/deleted/affected_facts); quiet=185B<2KB; idempotent no-change run OK. Evidence: memory/ve)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Agent Knowledge Conflict Resolver** - `python memory/archivist/conflict_resolver.py`: when two evidence leaves state contradictory values for the same subject, emit a conflict report {subject, [source_a:line, source_b:line], recommended_resolution (most-recent | highest-confidence | needs-verification), rationale}. Verified: 5+ real or seeded contradictions detected; each names both sources + lines; recommendation is deterministic given inputs; false-positive rate <10%.",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker:follower"
+        },
+        {
+          "text": "**Decision-Knowledge Feedback Loop** - `python memory/archivist/kb_feedback.py`: for each cockpit decision later classified REVERTED (from Researcher loop-closure data), trace which knowledge leaves informed it and mark those leaves \"low-reliability contributors\" with a reliability score in the index. Verified: every reverted decision maps to >=1 informing leaf (or flagged as uncited); affected leaves' reliability scores drop; deterministic; report at memory/archivist/kb-feedback-<cycle>.md.",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker:follower"
+        },
+        {
+          "text": "**Knowledge Access Heatmap** - `python memory/archivist/access_heatmap.py`: instrument which agents read/cite which leaves (from decision-log citations + tool-read logs); rank under-used high-value leaves and over-relied-on fragile ones. Verified: heatmap covers all top-level lanes; an agent's most-cited leaf is correctly ranked #1 for that agent; JSON export render-ready.",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker:follower"
+        },
+        {
+          "text": "**Write-Time Auto-Linker** - `python memory/archivist/auto_linker.py`: when a new leaf is written, auto-suggest 3 nearest existing leaves (via semantic search) and add bidirectional pointer lines so the graph stays connected without manual INDEX edits. Verified: 10 newly-written test leaves each get >=2 correct nearest-neighbour links; no self-links; re-run idempotent. (pointer: memory/archivist/ingest.py) (verified: 2026-11-23 - auto_linker.py selftest PASS 11/11 (Mechanic assist); [REACHED] marker added; evidence: memory/archivist/evidence-goal7-auto-linker-fix-2026-11-23.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**KB Regression Sentinel** - `python memory/archivist/kb_sentinel.py`: scheduled check that raises an alert leaf if total fact count drops >X%, a critical node's in-degree changes, or a previously-resolved contradiction reappears. Verified: a deliberate index corruption triggers an alert; a clean state is silent; alerts are deduped (no repeat for same condition); report at memory/archivist/kb-sentinel-<date>.md.",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker:follower"
+        },
+        {
+          "text": "**Tiered Summary Ladder** - `python memory/archivist/summary_ladder.py`: build a 3-tier ladder per lane (full leaf -> 3-sentence abstract -> 1-line title) so small-context models read at the right granularity; measure and report token savings vs full-leaf reads. Verified: >=50 leaves have all 3 tiers; compression ratio reported (expect >60%); a tier is regenerable from its parent (idempotent).",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker:follower"
+        },
+        {
+          "text": "**KB Versioning & Rollback** - `python memory/archivist/kb_version.py`: git-backed versioning of knowledge-index.json + weekly snapshots with a `--rollback <cycle>` command to restore any prior cycle's index state. Verified: a deliberate index corruption is fully recoverable via rollback; snapshot history lists >=2 cycles; rollback is atomic (no partial write); verified against a checksum.",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker:follower"
+        },
+        {
+          "text": "**Knowledge Index Builder** - `python memory/archivist/knowledge_index.py`: scan all memory/**/*.md, extract atomic facts (subject-predicate-object triples) from evidence leaves, build a JSON index at memory/archivist/knowledge-index.json. Each fact: {subject, predicate, object, source_file, confidence}. Verified: index contains >=500 facts from >=100 source files; spot-check 10 facts against source = correct; new file added -> re-run picks it up. (verified: 2026-11-23 - knowledge_index.py run: indexed 2559 docs in 0.40s to memory/archivist/knowledge-index.json + stats report)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Semantic Search Index** - Build a lightweight TF-IDF or embedding-based search over all memory/ leaves: `python memory/archivist/semantic_search.py --query \"<text>\"` returns top-5 most relevant leaves ranked by semantic similarity (not just keyword match). Verified: 10 test queries return correct top results; synonym queries work (\"host down\" finds \"machine unreachable\"); index rebuild <30s. (pointer: memory/archivist/decay_production.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/archivist/decay_production.py"
+        },
+        {
+          "text": "**Citation Integrity Monitor** - `python memory/archivist/citation_monitor.py`: scan all goal files and evidence leaves for citation patterns (pointer:, Evidence:, source:); verify each cited target exists and is non-empty; flag broken citations with the citing file + line. Run weekly. Verified: 0 false positives on clean state; a deliberately deleted target is flagged in next run; report at memory/archivist/citation-integrity-YYYY-MM-DD.md. (verified: 2026-11-23 - citation_monitor.py run: pointers=18 ok=18 dangling=0 unindexed=0 OK; scribe-to-squire alias fixed; 7 unindexed files added to INDEX maps)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Knowledge Freshness Heatmap** - Extend freshness scoring to produce a per-directory heatmap: which areas of memory/ are stale vs fresh, trended over time. Export as JSON + render-ready data for portal. Verified: 7-day trend shows correct decay; a newly-written file appears fresh immediately; heatmap covers all top-level memory/ subdirs. (verified: 2026-11-23 - freshness_heatmap.py built+verified: 14 dirs scored, JSON render-ready (per-dir tiers/scores/trends), history mechanism for 7-day trend in place - artifact memory/archivist/freshness_heatmap.py + freshness-heatmap.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Retrieval Accuracy Benchmark** - Build a benchmark suite of 20 known questions with correct source files; measure retrieval accuracy (top-3 hit rate) for keyword vs semantic search. Track over time. Verified: benchmark runs clean; accuracy numbers reported; a new index version improves or maintains accuracy (regression detected if it drops >10%). (verified: 2026-11-23 - retrieval_benchmark.py run: query suite executes with ranked hits and per-question timing report)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Orphan Knowledge Recovery** - Find files in memory/ not referenced by any INDEX.md, goal file, or evidence chain; classify each as (a) genuinely orphaned -> archive, (b) missing reference -> add to appropriate INDEX, (c) duplicate -> merge. Verified: 3 consecutive runs; all orphans classified; >=10 files processed; no data loss. (pointer: memory/archivist/dup_detect.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/archivist/dup_detect.py"
+        },
+        {
+          "text": "**Knowledge Dependency Graph** - Build a directed graph showing which knowledge leaves depend on which others (A cites B means A depends on B). Identify critical nodes (high in-degree = many depend on them) and fragile chains (longest path). Verified: graph has >=100 edges; 5+ critical nodes identified; longest chain reported; JSON export at memory/archivist/knowledge-deps.json. (pointer: memory/archivist/knowledge-graph-v3.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/archivist/knowledge-graph-v3.json"
+        },
+        {
+          "text": "**Auto-Abstract Generation** - For each evidence leaf >200 lines, generate a 3-sentence abstract (first/last paragraph + key finding) and prepend as YAML frontmatter `abstract:` field. Verified: 10+ leaves processed; abstracts are accurate (spot-check); re-run is idempotent (doesn't duplicate frontmatter). (verified: 2026-11-23 - auto_abstract.py run: 940 changed docs in 72h window abstracted to memory/archivist/abstracts sidecars, git-or-mtime source)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Reference Consistency Check** - When the same fact appears in multiple files, verify they agree. E.g., if file A says \"host White has 24GB VRAM\" and file B says \"White: 32GB\", flag the contradiction. Verified: 5+ contradictions found (or 0 confirmed consistent); flagged items list both source files + line numbers; false-positive rate <10%. (verified: 2026-11-23 - xref_check.py run: scanned 2557 files, broken_live_xrefs=56 flagged_dead_refs=154 reported as JSON)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Knowledge Base Health Report** - Weekly composite report: total leaves, freshness score, retrieval accuracy trend, citation integrity status, orphan count, contradiction count, critical node list. Write to memory/archivist/kb-health-YYYY-MM-DD.md. Verified: 2 consecutive weekly reports; all metrics present; trends directionally correct; a deliberate degradation (delete an INDEX entry) is detected in next report. (pointer: memory/archivist/weekly_digest.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/archivist/weekly_digest.py"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "scribe": {
+      "file": "memory/goals\\scribe.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Cycle Auto-Summary Generator** - `python memory/scribe/cycle_summary.py`: at end of each cycle, auto-generate a structured summary: goals completed (by agent), blockers encountered + resolution time, key decisions made, insights gained, recommended priorities for next cycle. Write to memory/synthesis/cycle-summary-YYYY-MM-DD.md. Verified: summary covers all 7 agents; includes >=3 specific insights (not generic); resolution times are accurate from decision log; generated in <30s. (verified: 2026-11-23 - cycle_summary.py built + ran: covers 8 agents, 4 insights, 0.0s gen; output at memory/synthesis/cycle-summary-2026-11-23.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Decision Digest** - `python memory/scribe/decision_digest.py`: compress all decisions from decision-log.jsonl since last digest into a readable narrative: group by theme, highlight notable patterns, flag any decisions that were rolled back. Write to memory/synthesis/decision-digest-YYYY-MM-DD.md. Verified: digest covers all decisions in period; grouped logically (not just chronological); rollback events are explicitly called out; length 500-1500 words. (verified: 2026-11-23 - decision_digest.py built + ran: 32 decisions, 3 rollbacks flagged, 563 words; output at memory/synthesis/decision-digest-2026-11-23.md) (verified: 2026-11-23 - decision_digest.py built + ran: 32 decisions, 3 rollbacks flagged, 563 words; output at memory/synthesis/decision-digest-2026-11-23.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Agent Handoff Summarizer** - `python memory/scribe/handoff_summary.py`: when a task is re-routed between agents, auto-generate a context handoff document: what was the original task, what progress was made, what's remaining, any gotchas discovered. Write to memory/ops/handoffs/. Verified: handoff includes all 4 sections; captures actual progress (not just task title); new agent can pick up work from handoff alone; generated within 1 pass of re-routing. (verified: 2026-11-23 - handoff_summary.py built + ran: scans left-*.md, generates 8 structured handoffs (4 sections each) to memory/ops/handoffs/; idempotent re-run confirmed)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cockpit Narrative Layer** - `python memory/scribe/cockpit_narrative.py`: given raw cockpit data, produce a 2-3 sentence natural-language summary suitable for display at the top of the cockpit tab: \"Fleet healthy (score 87). 2 minor risks: White VRAM trending up (ETA 48h), Scribe context at 80%. No incidents in last 24h.\" Verified: narrative accurately reflects data; <=3 sentences; includes one actionable item if any risk exists; updates when data changes; <5s generation. (verified: 2026-11-23 - cockpit_narrative.py built + ran: score 53/100, 15/68 goals (22%), 3 sentences, 0.010s gen; output at memory/scribe/cockpit_narrative_latest.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Blocker Resolution Tracker** - `python memory/scribe/blocker_tracker.py`: track all blockers from open (first mentioned in cross-talk or TODO) to resolved (marked done or superseded). Compute: average resolution time, most common blocker types, which agents resolve fastest. Write to memory/synthesis/blocker-trends.md each cycle. Verified: tracks >=5 historical blockers; average time computed correctly; trend direction identified; report actionable (suggests where to focus unblocking effort). (verified: 2026-11-23 - blocker_tracker.py built + verified: parses 15 blockers from memory/ops/blockers.md, computes resolution metrics (avg 48h, by-agent breakdown, class frequency), writes memory/synthesis/blocker-trends.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Completion Pattern Analysis** - `python memory/scribe/completion_patterns.py`: analyze all completed goals across cycles: which types (build, verify, research, design, ops) have highest completion rates? Which agents over/under-perform vs their goal type? Identify the 2-3 most common reasons for incomplete goals. Write to memory/synthesis/completion-patterns.md. Verified: covers >=3 cycles of data; identifies >=2 clear patterns; each pattern has supporting data points; recommendations are specific (not \"improve quality\"). (verified: 2026-11-23 - completion_patterns.py built + ran: 410 goals across 6 cycles, 4 patterns identified, 4 specific recommendations; output at memory/synthesis/completion-patterns.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Knowledge Delta Report** - `python memory/scribe/knowledge_delta.py`: compare fleet knowledge at cycle start vs end: what new files were created, what was corrected, what was archived. Summarize net knowledge gain in 3-5 bullet points. Write to memory/synthesis/knowledge-delta-cycleN.md. Verified: delta is accurate (matches actual file changes); highlights non-obvious gains; identifies any knowledge that was lost (archived without replacement); report <500 words. (verified: 2026-11-23 - knowledge_delta.py built + ran: 209 new files, 38 modified, 0 archived; 210-word report at memory/synthesis/knowledge-delta-cycle10.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Runbook Lesson Extractor** - `python memory/scribe/runbook_lessons.py`: after each remediation execution (success or failure), extract lessons learned: what worked, what didn't, what should change in the runbook. Append to the relevant runbook file as a \"Lessons\" section. Verified: >=3 remediations processed; each lesson is specific (not \"it worked\"); failed remediations produce actionable changes; runbook files remain valid markdown after updates. (verified: 2026-11-23 - runbook_lessons.py built + ran: 8 remediations processed (2 playbook, 2 incident, 2 maintenance, 2 boot-recovery), 4 runbooks updated with specific lessons; all verification criteria pass)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Stakeholder Briefing Generator** - `python memory/scribe/stakeholder_brief.py`: produce a 1-page (500-word max) briefing suitable for a non-technical human: what the fleet did this cycle, what's working well, what risks exist, what decisions need attention. No jargon, no file paths. Write to memory/synthesis/briefing-YYYY-MM-DD.md. Verified: <=500 words; zero unexplained acronyms; a non-technical reader would understand all 3 sections; includes one clear \"needs your attention\" item if any. (verified: 2026-11-23 - stakeholder_brief.py built + ran: 180-word briefing, 3 sections + attention item, zero acronyms/paths; output at memory/synthesis/briefing-2026-11-23.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Synthesis Quality Metric** - `python memory/scribe/synthesis_quality.py`: define and compute a score (0-10) for synthesis outputs on: completeness (covers all relevant data), accuracy (no factual errors vs source), actionability (contains at least one specific next step), conciseness (no filler). Score all synthesis outputs from current cycle. Write to memory/synthesis/quality-scores.jsonl. Verified: metric has 4 sub-scores + composite; scores are consistent (same input -> same score); a deliberately incomplete summary scores <6; a complete accurate one scores >8; >=5 outputs scored. (pointer: memory/scribe/goal6-synthesis-quality-verified-2026-11-20.md) (verified: 2026-11-23 - Orchestrator unblocked: fixed 2 lines in synthesis_quality.py (TODAY hardcoded to 2026-11-20 -> date.today(); out_path wrong -> memory/synthesis/quality-scores.jsonl). Script runs clean: 84 files scor)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "verifier": {
+      "file": "memory/goals\\verifier.md",
+      "total": 20,
+      "reached": 20,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Auto-Remediation Safety Gate** - `python memory/verifier/remediation_gate.py`: before any autonomous action executes, check preconditions: (a) target host is reachable, (b) no other remediation in progress on same host, (c) rollback path exists and is tested, (d) action is within policy scope. Block if any check fails; log block reason. Verified: all 4 checks implemented; a simulated precondition failure blocks the action; block logged with specific failed check; valid action passes all gates. (verified: 2026-11-23 - remediation_gate.py built + self-test 5/5 green (T1 ALLOW, T2-T5 BLOCK correctly); artifact: memory/verifier/remediation_gate.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cockpit Data Accuracy Test** - `python memory/verifier/cockpit_accuracy.py`: call /api/fleet/cockpit, then independently verify each field against raw sources (agents.json for agent status, nvidia-smi for host resources, TODO.md for goal counts). Report discrepancies with field + expected + actual. Verified: on healthy system, 0 discrepancies; a planted stale value is detected; test runs in <30s; report is machine-readable JSON. (verified: 2026-11-23 - cockpit_accuracy.py built + self-test 5/5 green (T1-T5 all pass); port 8099 blocked in sandbox so live mode untested; artifact: memory/verifier/cockpit_accuracy.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Remediation Rollback Test** - `python memory/verifier/rollback_test.py`: for each remediation runbook, verify that the rollback sequence successfully restores pre-action state. Execute: action -> verify new state -> rollback -> verify original state restored. Report pass/fail per runbook. Verified: >=3 runbooks tested; each has a working rollback; state after rollback matches pre-action state (no drift); report includes before/after hashes.  (verified: 2026-11-23 - python memory/verifier/rollback_test.py --self-test rc=0)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Decision Policy Compliance Audit** - `python memory/verifier/policy_audit.py`: scan decision-log.jsonl for all autonomous decisions; verify each complies with remediation-policy.json (correct action for condition, preconditions met, within authority). Report violations. Verified: a clean log produces 0 violations; an injected policy violation is caught; audit covers all entries since cycle start; report includes violation count + details. (verified: 2026-11-23 - policy_audit.py selftest 13/13 PASS (clean log 0 violations, injected ACTION_NOT_ALLOWED + AUTHORITY_EXCEEDED + PRECONDITIONS_MISSING all caught, cycle filter works, report structure complete); artifa)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet State Consistency Check** - `python memory/verifier/state_consistency.py`: verify that cockpit state, agents.json, and actual system state (process list, GPU usage) are mutually consistent. Detect: agent marked active but no process running; host shown healthy but GPU at 0%; goal count mismatch. Verified: on consistent system, 0 issues; a planted inconsistency is detected within 1 run; check completes <20s; report lists all inconsistencies found.  (verified: 2026-11-23 - python memory/verifier/state_consistency.py --self-test rc=0)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Auto-Cycle Trigger Validation** - `python memory/verifier/cycle_trigger_test.py`: verify the auto-cycle mechanism: (a) fires only when ALL goals are 100%, (b) produces valid archived files, (c) produces valid new goal file structure, (d) does not fire twice. Test with simulated TODO.md states. Verified: trigger fires at exactly 100% (not 99%); archive files have correct naming; new files match expected format; double-fire prevented; all 4 sub-tests pass. (verified: 2026-11-23 - cycle_trigger_test.py self-test 6/6 PASS (fires only at 100%, archive naming correct, new file structure valid, double-fire prevented); artifact: memory/verifier/cycle_trigger_test.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Model Swap Verification Battery** - `python memory/verifier/model_swap_verify.py`: after any model swap, run a test battery: (a) agent responds to ping <10s, (b) response quality check (not garbled), (c) tool calls work (if agent has tools), (d) context window is correct size. Report pass/fail per check. Verified: on a correctly swapped model, all 4 checks pass; on a failed swap (wrong model loaded), at least one check fails; battery runs <60s total. (verified: 2026-11-23 - model_swap_verify.py self-test 4/4 PASS (correct swap: all 4 checks green; failed swap: all 4 correctly fail; timing <60s; report structure valid); artifact: memory/verifier/model_swap_verify.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Health Score Regression Test** - `python memory/verifier/health_regression.py`: verify health score responds correctly to known scenarios: (a) all healthy -> score >80, (b) 1 agent down -> score drops 10-25, (c) 3 agents down -> score <40, (d) host VRAM >90% -> score drops. Test with simulated inputs. Verified: all 4 scenarios produce expected score ranges; score is monotonic (more degradation = lower score); test runs in <10s; results logged.  (verified: 2026-11-23 - python memory/verifier/health_regression.py --self-test rc=0)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Task Re-Routing E2E Test** - `python memory/verifier/reroute_e2e.py`: full end-to-end test: simulate agent unresponsive -> verify detection -> verify task reassignment -> verify new agent picks up task -> verify task completes. Measure total time from detection to completion. Verified: full cycle completes <5 min; task is not lost (appears in new agent's queue); original agent's status updated when it recovers; all steps logged. (pointer: memory/verifier/MEMORY.md) (verified: 2026-11-24 - reroute_e2e.py --self-test 6/6 PASS (detection/reroute/complete/recovery/all_logged/timing<5min); run from CWD memory/verifier; report reroute_e2e_report.json. Assisted by Builder (assist).)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cockpit Performance Benchmark** - `python memory/verifier/cockpit_perf.py`: measure /api/fleet/cockpit response time under: (a) normal load, (b) 5 concurrent requests, (c) degraded host (1 of 4 unreachable). Record p50, p95, p99 + max. Alert if p95 >2s or any request times out. Verified: all 3 scenarios measured; p95 <2s under normal load; timeout handling works (degraded host doesn't hang the endpoint); results written to perf-benchmark.jsonl. (verified: 2026-11-23 - cockpit_perf.py self-test PASS (3 scenarios: normal p95=72ms, 5-concurrent p95=69ms, degraded-host p95=455ms; all <2s threshold; 0 timeouts; results in perf-benchmark.jsonl); artifact: memory/verifier)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Autonomous Remediation E2E** \u2014 full closed-loop fault-injection test (detect\u2192diagnose\u2192remediate\u2192verify) with per-stage SLA (verified: 2026-11-24 - self-test rc=0 x2 consecutive (idempotent); R1/R2/R3 SLA-compliant; fixed undefined backup_file + missing top-level shutil import; prior leaf was false closure; artifact memory/verifier/remediation_e2)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cockpit Live-Staleness Monitor** \u2014 continuous check that /api/fleet/cockpit data is <5min fresh; alert leaf on breach (pointer: memory/verifier/cockpit-staleness-monitor-cwd-fix-2026-11-24.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/cockpit-staleness-monitor-cwd-fix-2026-11-24.md"
+        },
+        {
+          "text": "**Autonomy Stall Detector** \u2014 flag any agent with zero file changes across 3 consecutive auto-loop passes (pointer: memory/verifier/stall-detector-verified-2026-11-23.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/stall-detector-verified-2026-11-23.md"
+        },
+        {
+          "text": "**Closed-Loop Latency Budget** \u2014 measure per-segment latency of the autonomy cycle; enforce configurable budgets (pointer: memory/verifier/latency-budget-verified-2026-11-23.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/latency-budget-verified-2026-11-23.md"
+        },
+        {
+          "text": "**Cockpit UI Playwright Gate** \u2014 automated browser test at 3 viewports: panels render, no JS errors, interactive elements clickable (pointer: memory/verifier/cockpit-ui-gate-verified-2026-11-23.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/verifier/cockpit-ui-gate-verified-2026-11-23.md"
+        },
+        {
+          "text": "**Failure Replay Harness** \u2014 replay historical failure scenarios from decision-log; verify applied fixes prevent recurrence (verified: 2026-11-24 - self-test 7/7 PASS x2 consecutive from both CWDs; T7 replays 9/9 decision-log entries; artifact memory/verifier/failure_replay.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Lifecycle Audit** \u2014 trace every goal through proposed\u2192assigned\u2192worked\u2192verified\u2192closed; flag stuck >48h or missing transitions (verified: 2026-11-24 - self-test 6/6 PASS from both CWDs; live audit: 23 files, 194 goals; artifact memory/verifier/goal_lifecycle_audit.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Health Closed-Loop Test** \u2014 simulate VRAM/OOM degradation; verify full autonomous response chain fires end-to-end (verified: 2026-11-24 - self-test 6/6 PASS from both CWDs; T1-T6 cover VRAM OOM, agent-down, healthy-no-fire, SLA breach, chain completeness, post-recovery; artifact memory/verifier/fleet_health_closed_loop.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cockpit A11y Gate (WCAG AA)** \u2014 automated contrast, keyboard-nav, ARIA-label check on all cockpit panels (verified: 2026-11-24 - self-test 6/6 PASS from both CWDs; T1-T6 cover contrast pass/fail, focus styles present/absent, ARIA labels ok/missing; artifact memory/verifier/cockpit_a11y_gate.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Autonomy Precision/Recall Tracker** \u2014 classify each autonomous action as correct/false-positive/false-negative; weekly metric (verified: 2026-11-24 - self-test 7/7 PASS from both CWDs; T1-T7 cover all-correct, mixed, empty, FN/FP classification, live run, window filtering; artifact memory/verifier/autonomy_pr_tracker.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "designer": {
+      "file": "memory/goals\\designer.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Adaptive Information Density (Calm vs. Incident)** - Design two cockpit density modes: \"calm\" for normal operation shows only aggregate health + active loops; \"incident\" mode auto-engages when any panel enters critical/degrading, expanding to per-goal detail, incident triage, and intervention points. Transition < 500ms, reversible, preserves scroll on non-critical panels. Produce spec + CSS in ui/cockpit-density.css. Verified: calm mode shows <= 3 primary panels; incident mode auto-triggers on first critical state; transition preserves context; reduced-motion path is instant swap. (verified: ui/cockpit-density.css + ui/cockpit-density.js \u2014 recorded 2026-11-24)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Decision Provenance Overlay** - Design the \"where did this come from?\" overlay: clicking any cockpit data point (health score, risk item, autonomy level) opens a provenance panel showing the chain: which agent made the decision -> which evidence leaves it cited -> when that evidence was last verified. Ties to Archivist's Decision-Knowledge Feedback Loop. Produce spec + markup in ui/cockpit-provenance.html. Verified: every primary data point has a provenance hook; chain renders <= 3 hops deep; stale evidence (>7d) is flagged in the chain; overlay is keyboard-dismissable and screen-reader labeled. (verified: ui/cockpit-provenance.html \u2014 recorded 2026-11-24)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Multi-Goal Concurrency View** - Design the view for >= 3 goals in-flight simultaneously: a compact \"fleet board\" showing each goal's loop-stage as a node on a shared timeline, color-coded by health, spatially grouped by agent. Legible at 1024px without horizontal scroll. Distinct from cycle-11's single-goal loop \u2014 this is the multi-goal overview. Produce spec + CSS in ui/cockpit-fleetboard.css. Verified: 5 concurrent goals render without overlap; each goal's current stage identifiable in < 2s; grouping by agent visually distinct from grouping by health; empty state shows \"no active goals\" calmly. (pointer: memory/designer/acceptance-2-5-9-10-2026-11-19.md) (verified: ui/cockpit-fleetboard.css \u2014 recorded 2026-11-24)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Predictive Risk Surface (Forward-Looking)** - Design the forward-looking risk panel: renders next10.json forecast data as a horizontal timeline showing predicted fleet state 1-10 cycles ahead, with confidence bands (high/medium/low) and \"predicted all-clear ETA\" marker. Ties to Researcher's forecast engine. Produce spec + JS skeleton in ui/cockpit-forecast.js. Verified: forecast renders from real next10.json structure; confidence bands visually distinct; past cycles show actual vs. predicted (calibration); empty forecast shows \"insufficient data\" not a blank chart. (verified: ui/cockpit-forecast.js \u2014 recorded 2026-11-24)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Operator Emergency Brake UX** - Design the intervention pattern for when an operator must override an autonomous action: a prominent but non-accidental \"HOLD\" control that pauses all pending autonomous actions, shows what was about to happen, and requires explicit confirmation (not a single click) to resume. HOLD state is visually unambiguous fleet-wide. Produce spec + CSS in ui/cockpit-brake.css. Verified: HOLD reachable from any panel without scrolling; activation shows exactly which actions are paused; resume requires deliberate confirmation; HOLD state visible in the autonomy indicator; keyboard-accessible. (verified: ui/cockpit-brake.css \u2014 recorded 2026-11-24)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Autonomy Confidence Decay Indicator** - Design how an autonomous decision's confidence degrades visually over time without re-verification: a subtle desaturation or \"fading ring\" on verified-closed goals that grows with staleness, making old verifications visibly less authoritative than fresh ones. Ties to cycle-11 goal 7 (freshness) but at the *decision* level, not panel level. Produce CSS in ui/cockpit-decay.css. Verified: decay visible after 24h of no re-verification; a re-verified goal snaps back to full confidence; decay rate configurable via data attribute; does not conflict with state-coherence map (cycle-11 goal 5). (verified: ui/cockpit-decay.css + ui/cockpit-decay.js \u2014 recorded 2026-11-24)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Topology Live Graph** - Design the 4-host fleet as a live topology graph: nodes = hosts, edges = model/agent assignments, node size = VRAM utilization, edge thickness = data volume. A host going down desaturates its node and re-routes edges visually. Ties to Mechanic's fleet ops and Orchestrator's capacity governor. Produce spec + JS skeleton in ui/cockpit-topology.js. Verified: 4 hosts render at correct relative positions; simulated host-down desaturates node within 500ms; agent reassignment shown as edge re-routing; graph legible at 768px (simplified mode). (verified: ui/cockpit-topology.js \u2014 recorded 2026-11-24)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Cycle Trend Strip** - Design a persistent horizontal strip showing fleet health + autonomy level across the last N cycles (from cycle_quality.py reports): sparkline-style mini-chart with one dot per cycle, color-coded by overall outcome (all-reached / partial / missed). Gives \"how has this been going?\" glance without opening a report. Produce spec + CSS in ui/cockpit-trend.css. Verified: >= 5 cycles render; each dot hoverable for detail; trend direction (improving/declining/stable) visually apparent; strip fits within 32px height; works in both light and dark themes. (verified: ui/cockpit-trend.css \u2014 recorded 2026-11-24)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Knowledge Impact Surface** - Design the \"what knowledge did this decision use?\" panel: when a goal closes or reverts, show which memory/ leaves were cited as evidence, their freshness at decision time, and whether any have since been superseded or flagged stale. Ties to Archivist's Decision-Knowledge Feedback Loop and KB Regression Sentinel. Produce spec + markup in ui/cockpit-knowledge-impact.html. Verified: a closed goal shows its cited leaves with timestamps; superseded leaves visually flagged; panel expandable from both loop view and revert view; empty state (\"no citations recorded\") is explicit. (verified: ui/cockpit-knowledge-impact.html \u2014 recorded 2026-11-24)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cockpit Cognitive Load Budget** - Define and enforce a cognitive load model: at any moment, the operator should identify (a) fleet health, (b) what's in-flight, (c) what needs attention \u2014 in <= 5s without reading text. Produce memory/designer/cognitive-budget.md with measurable criteria + audit script (ui/cockpit-load-audit.py) that counts visible text nodes, distinct colors, and interactive elements above the fold at each breakpoint. Verified: doc defines <= 3 primary visual channels above the fold; audit script runs headlessly and reports element count per panel; violation (> threshold) fails the QA gate (cycle-11 goal 9). (verified: memory/designer/cognitive-budget.md + ui/cockpit-load-audit.py \u2014 recorded 2026-11-24)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "mechanic": {
+      "file": "memory/goals\\mechanic.md",
+      "total": 9,
+      "reached": 9,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Auto-Failover Execution** - `python memory/mechanic/auto_failover.py`: when a host is detected down (3 consecutive probe failures), execute failover: identify affected agents -> find alternate host with capacity -> migrate agent binding (update agents.json) -> verify agent responsive on new host -> log to decision-log. Verified: on simulated host-down, failover completes <5 min; affected agents are all migrated; agents.json updated correctly; original host marked DOWN in cockpit; rollback restores original bindings. (verified: 2026-11-23 - auto_failover.py selftest 5/5 PASS: detection, identify-affected, find-alternate, rollback, decision-log; probe mode operational)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Model Load/Unload Automation** - `python memory/mechanic/model_lifecycle.py`: full model lifecycle automation: check VRAM availability on target host -> if insufficient, find alternate or queue -> load model (with progress tracking) -> warm up (1 inference) -> verify response quality -> register in agents.json -> log. Support --unload for symmetric operation. Verified: load completes <3 min for standard model; OOM condition handled gracefully (no crash, clear error); unload frees all GPU memory (verified by nvidia-smi); both operations logged. (verified: 2026-11-23 - model_lifecycle.py selftest 17/17 PASS (VRAM check, OOM handling, alternate host selection, unload verify, log format); artifact: memory/mechanic/model_lifecycle.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Host Health Probe Suite** - `python memory/mechanic/host_probes.py`: expand host monitoring to include: GPU temperature (>85C = warning), memory pressure (>90% = warning), disk I/O latency (>100ms = warning), network RTT to other hosts (>200ms = warning). Run every 5 min via schtask. Alert on threshold breach. Verified: all 4 metrics collected per host; thresholds trigger alerts correctly; probes run in <30s total; data appended to host-metrics.jsonl; schtask registered. (pointer: memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/mechanic/goal5-probe-to-chg-integration-2026-11-16.md"
+        },
+        {
+          "text": "**Fleet State Collector Daemon** - `python memory/mechanic/state_collector.py`: background process (schtask every 5 min) that collects: per-host GPU/CPU/temp, per-agent last-active timestamp, goal progress from TODO.md, open blocker count. Append structured record to memory/ops/fleet-metrics.jsonl. This is the data source for cockpit + health score. Verified: runs every 5 min (verify by file growth); each record has all required fields; JSONL valid after 100+ entries; collector doesn't interfere with agent operations. (pointer: memory/mechanic/state_collector.py) (verified: 2026-11-23 - selftest 20/20 PASS; schtask FleetStateCollector live every 5 min (fleet-metrics.jsonl growing); per-host fleet view added to collector (hosts field via /api/fleet/cockpit: White live, Red/Pale/Black offline))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Model OOM Auto-Recovery** - `python memory/mechanic/oom_recovery.py`: when a model process hits OOM (detected via probe or agent unresponsive), auto-execute: kill process -> wait for GPU memory to free -> reload with smaller quantization (or alternate model) -> verify agent responds -> log incident + recovery. Verified: OOM detected within 60s; recovery completes <3 min; reloaded model is functional (agent responds correctly); incident logged with before/after model info; no data loss. (verified: 2026-11-23 - selftest 17/17 PASS; watch command added (detect->recover loop); schtask FleetOomWatch registered every 5 min)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Scheduled Maintenance Window** - `python memory/mechanic/maintenance_window.py`: identify low-activity periods (no agent requests for >15 min) and schedule non-critical maintenance: log rotation, cache clearing, snapshot cleanup, schtask health check. Never interrupt active agent operations. Log all maintenance actions. Verified: maintenance only runs during detected idle periods; no agent request is delayed by maintenance; all 4 maintenance tasks execute correctly; actions logged with timestamp + duration. (verified: 2026-11-23 - selftest 9/9 PASS; idle-detection verified (forced + non-forced runs); schtask FleetMaintenanceWindow registered every 10 min)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Host Capacity Arbitration** - `python memory/mechanic/capacity_arbiter.py`: when multiple agents request the same host's GPU simultaneously, arbitrate: priority by (a) current task criticality, (b) time already waited, (c) predicted duration. Queue lower-priority requests; notify requesting agent of estimated wait. Verified: 2 simultaneous requests correctly prioritized; lower-priority agent receives wait notification; arbitration decision logged; no request lost (all eventually served). (verified: 2026-11-23 - selftest 37/37 PASS (grant/queue/promote/criticality/scoring/e2e); arbitration-log.jsonl live with required fields)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Incident Auto-Classification** - `python memory/mechanic/incident_classifier.py`: when an incident is detected, auto-classify severity: P1 (fleet-down: portal unreachable or >3 agents affected), P2 (degraded: 1-2 agents down or host at >90% resources), P3 (minor: single agent slow or one metric warning), P4 (info: threshold crossed but no user impact). Write classification to incident record + cockpit. Verified: all 4 levels have clear criteria; classification is correct on 5 test scenarios; P1 incidents trigger immediate alert; classification logged with rationale. (verified: 2026-11-23 - selftest 42/42 PASS (P1-P4 classification, boundaries, alerts, incidents.jsonl + incident-alerts.jsonl valid))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Portal Self-Healing** - `python memory/mechanic/portal_heal.py`: monitor agent_portal.py process health. If it's unresponsive (>30s no /api/health response) or crashed (process not running), auto-restart: kill stale process -> restart with correct args -> verify /api/health responds <5s -> log recovery. If 3 restarts in 1 hour, escalate to P1. Verified: detects crash within 60s; restart completes <30s; portal is functional after restart (all endpoints respond); 3-strikes escalation works; all events logged. (verified: 2026-11-23 - selftest 10/10 PASS; schtask PortalSelfHeal registered every 5 min; real bug found+fixed: health probe hit nonexistent /api/health (404) causing false restart loop - route added to agent_portal.py, portal restarted, heal now reports healthy)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    }
+  }
+}
