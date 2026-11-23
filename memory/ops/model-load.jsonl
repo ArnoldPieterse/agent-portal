@@ -730,3 +730,4 @@
 {"ts": "2026-11-23 20:18:09", "run": "g-1a207e9bf22-d2ab2f", "missing": {}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-23 20:21:24", "run": "g-1a207ecbb02-e62caa", "missing": {}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-23 20:29:29", "run": "g-1a207f42056-ca0158", "missing": {}, "relocated": {"Researcher": "black (home not_loaded)"}}
+{"ts": "2026-11-23 20:47:46", "run": "g-1a20804dcf7-26fe31", "missing": {}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
