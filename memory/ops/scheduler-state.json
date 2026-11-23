@@ -16,191 +16,191 @@
   "interval": 600,
   "note": "dedup: was PortalLoadProbe + AgentPortal_LoadProbe_Daily",
   "next_run": 1795402674.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "fleet_probe": {
   "name": "fleet_probe",
   "interval": 600,
   "note": "was PortalFleetProbe",
   "next_run": 1795402674.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "gap_alarm": {
   "name": "gap_alarm",
   "interval": 300,
   "note": "was PortalGapAlarm",
   "next_run": 1795402374.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "state_collector": {
   "name": "state_collector",
   "interval": 1800,
   "note": "was FleetStateCollector",
   "next_run": 1795403874.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "state_snapshot": {
   "name": "state_snapshot",
   "interval": 3600,
   "note": "was FleetStateSnapshot",
   "next_run": 1795405674.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "reboot_recover": {
   "name": "reboot_recover",
   "interval": 1800,
   "note": "was FleetBootRecovery (SMB path; failure-tolerant)",
   "next_run": 1795403874.537725,
-  "last_run": null,
-  "last_rc": null,
-  "last_err": "",
+  "last_run": 1795402079.6344638,
+  "last_rc": 2,
+  "last_err": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe: can't open file 'Z:\\\\memory\\\\mechanic\\\\reboot_recover.py': [Errno 2] No such file or directory",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "maintenance_window": {
   "name": "maintenance_window",
   "interval": 3600,
   "note": "was FleetMaintenanceWindow",
   "next_run": 1795405674.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "forecast_engine": {
   "name": "forecast_engine",
   "interval": 86400,
   "note": "was FleetForecast30 (daily)",
   "next_run": 1795488474.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "mirror_heal": {
   "name": "mirror_heal",
   "interval": 300,
   "note": "was MirrorHeal",
   "next_run": 1795402374.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "daily_git_commit": {
   "name": "daily_git_commit",
   "interval": 900,
   "note": "was PortalDailyGitCommit (15m)",
   "next_run": 1795402974.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "schtask_dep_weekly": {
   "name": "schtask_dep_weekly",
   "interval": 604800,
   "note": "was PortalSchtaskDepGen; PortalDepGenCanary dropped (cmd echo no-op)",
   "next_run": 1796006874.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "portal_heal_check": {
   "name": "portal_heal_check",
   "interval": 300,
   "note": "was PortalSelfHeal",
   "next_run": 1795402374.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "smb_drift_detector": {
   "name": "smb_drift_detector",
   "interval": 1800,
   "note": "was PortalSmbDrift",
   "next_run": 1795403874.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402084.641271,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "decay_score": {
   "name": "decay_score",
   "interval": 3600,
   "note": "was PortalMemoryDecay",
   "next_run": 1795405674.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402114.6527085,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "size_guard": {
   "name": "size_guard",
   "interval": 3600,
   "note": "was PortalMemorySizeGuard",
   "next_run": 1795405674.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402079.6344638,
+  "last_rc": 2,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "snapshot_diff": {
   "name": "snapshot_diff",
   "interval": 3600,
   "note": "was PortalSnapshotDiff",
   "next_run": 1795405674.537725,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795402114.6527085,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  }
 }
