@@ -1,0 +1,46 @@
+{
+  "surfaces": 3,
+  "failed": 3,
+  "rollup_pass": false,
+  "rows": [
+    {
+      "file": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\index.html",
+      "pass": false,
+      "violations": [
+        "text nodes (209) > 40",
+        "interactive elements (47) > 8"
+      ],
+      "scope": "whole-file",
+      "text_nodes": 209,
+      "distinct_colors": 1,
+      "interactive_elements": 47,
+      "primary_channels": 0
+    },
+    {
+      "file": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\ui\\cockpit-provenance.html",
+      "pass": false,
+      "violations": [
+        "text nodes (473) > 40",
+        "distinct colors (12) > 5"
+      ],
+      "scope": "whole-file",
+      "text_nodes": 473,
+      "distinct_colors": 12,
+      "interactive_elements": 7,
+      "primary_channels": 0
+    },
+    {
+      "file": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\ui\\cockpit-knowledge-impact.html",
+      "pass": false,
+      "violations": [
+        "text nodes (119) > 40",
+        "distinct colors (7) > 5"
+      ],
+      "scope": "whole-file",
+      "text_nodes": 119,
+      "distinct_colors": 7,
+      "interactive_elements": 1,
+      "primary_channels": 0
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "seeded_test": {
-    "ts": "2026-11-23T21:12:21.677938+00:00",
+    "ts": "2026-11-23T21:42:22.139041+00:00",
     "test_type": "seeded_drift",
     "check_file": "verifier/INDEX.md",
     "local_hash": "315907b0adaebe30",
@@ -13,7 +13,7 @@
     "status": "DRIFT_DETECTED"
   },
   "live_check": {
-    "ts": "2026-11-23T21:12:21.678075+00:00",
+    "ts": "2026-11-23T21:42:22.139171+00:00",
     "check_file": "verifier/INDEX.md",
     "local_hash": "315907b0adaebe30",
     "max_drift_s": 60,

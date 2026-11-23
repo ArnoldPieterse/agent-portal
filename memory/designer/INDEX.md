@@ -2,6 +2,7 @@
 Last updated: 2026-11-24.
 
 ## Assists (auto-loop, design lane)
+- -> memory/designer/cockpit-load-gate-spec-impl-fix-2026-11-24.md — cognitive-load QA gate (goal 10 / cycle-11 g9) was non-functional: impl constants contradicted cognitive-budget.md spec (12/8/6 vs 40/5/8) AND counted whole-file instead of above-fold. Fixed ui/cockpit-load-audit.py to match spec + added `<!-- /ABOVE-FOLD -->` sentinel scoping with honest scope field; fleet re-measure in cockpit-load-audit-fleet-2026-11-24.json. Assists Verifier cycle-14 UI gates.
 - -> memory/designer/evidence-cockpit-mode-banner-2026-11-24.md — Builder cycle-15 goal #4: fleet mode banner (WORK/MAINTENANCE/IDLE) at top of cockpit panel; color-mix theme-aware tints, relative time-since-activity, data-testid for Playwright
 - -> memory/designer/evidence-cockpit-token-completion-2026-11-24.md - Builder cockpit UI: eliminated all 42 hardcoded hex colors in ui/cockpit.js, replaced with CSS custom property tokens (var(--ok/--warn/--err/--dim/--panel2/--line/--text/--bg/--acc)); SVG stroke fix; cockpit now theme-aware
 - -> memory/designer/evidence-cockpit-testability-2026-11-24.md — Verifier goal 5 unblock: added data-testid + ARIA to all cockpit panels in ui/cockpit.js (17 testids, role/tabindex on decision items); gives Playwright gate stable selectors.
