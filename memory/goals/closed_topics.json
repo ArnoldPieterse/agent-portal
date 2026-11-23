@@ -1402,5 +1402,35 @@
 "text": "**Cockpit UI Playwright Gate** \u2014 automated browser test at 3 viewports: panels render, no JS errors, interactive elements clickable (pointer",
 "agent": "verifier",
 "at": "2026-11-24"
+},
+{
+"sig": "ccd7c4072be31bea",
+"text": "**Failure Replay Harness** \u2014 replay historical failure scenarios from decision-log; verify applied fixes prevent recurrence (verified: 2026-",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "9cba1acbec3ac44d",
+"text": "**Goal Lifecycle Audit** \u2014 trace every goal through proposed\u2192assigned\u2192worked\u2192verified\u2192closed; flag stuck >48h or missing transitions (verifi",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "4f562df838d846bc",
+"text": "**Fleet Health Closed-Loop Test** \u2014 simulate VRAM/OOM degradation; verify full autonomous response chain fires end-to-end (verified: 2026-11",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "5b5bdc0b2c68fb7c",
+"text": "**Cockpit A11y Gate (WCAG AA)** \u2014 automated contrast, keyboard-nav, ARIA-label check on all cockpit panels (verified: 2026-11-24 - self-test",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "818d73dd050ef438",
+"text": "**Autonomy Precision/Recall Tracker** \u2014 classify each autonomous action as correct/false-positive/false-negative; weekly metric (verified: 2",
+"agent": "verifier",
+"at": "2026-11-24"
 }
 ]
