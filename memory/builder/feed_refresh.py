@@ -20,6 +20,7 @@ FEED_PATH = ROOT / "memory" / "ops" / "cockpit-feed.json"
 METRICS_PATH = ROOT / "memory" / "ops" / "fleet-metrics.jsonl"
 GOALS_DIR = ROOT / "memory" / "goals"
 AGENTS_JSON = ROOT / "agents.json"
+ACTIONS_PATH = ROOT / "memory" / "ops" / "autonomous-actions.jsonl"
 
 
 def latest_metrics() -> dict:
@@ -131,6 +132,20 @@ def health_score(metrics: dict) -> int:
     return max(0, min(100, score))
 
 
+def recent_actions(n: int = 20) -> list:
+    """Read last n entries from autonomous-actions.jsonl."""
+    if not ACTIONS_PATH.exists():
+        return []
+    lines = ACTIONS_PATH.read_text(encoding="utf-8").strip().splitlines()
+    out = []
+    for line in lines[-n:]:
+        try:
+            out.append(json.loads(line))
+        except json.JSONDecodeError:
+            continue
+    return list(reversed(out))  # newest first
+
+
 def build_feed(dry_run: bool = False) -> dict:
     metrics = latest_metrics()
     goals = compute_fleet_pct()
@@ -142,6 +157,7 @@ def build_feed(dry_run: bool = False) -> dict:
         "hosts": host_statuses(metrics),
         "goals": goals,
         "open_blockers": metrics.get("open_blockers", 0),
+        "autonomous_actions": recent_actions(20),
         "source": "feed_refresh.py (local-only, no network)",
     }
     if dry_run:

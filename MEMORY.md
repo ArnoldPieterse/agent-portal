@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cycle 15
 - Goal ledger reached 102/102 (100%) across all 8 agents as of 2026-11-24; cockpit feed loop verified end-to-end fresh.
 - Verifier #4 closed: latency_budget.py --self-test 5/5 from repo root AND memory/verifier (CWD-robust, unlike #2 false-closure).
 - Tokenized all 42 hardcoded hex colors in ui/cockpit.js → CSS vars (--ok,--warn,--err,--dim,--panel2); SVG sparkline fixed to use style="stro
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - CockpitFeedRefresh added to deploy_all_schtasks.py; deploy pending non-sandbox White session (COM blocked in Red sandbox).
 - Fleet hit 100% (20/20 Verifier goals closed); milestone note written to memory/synthesis
 - dangling_pointer_fix.py triaged 50 missing refs: 2
+- Builder implemented all 3 steps of Mechanic's autonomous-action-log spec: action_log.py, cockpit feed wiring
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

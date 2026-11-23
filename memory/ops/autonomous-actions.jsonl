@@ -1,1 +1,4 @@
 {"ts": "2026-11-23T18:24:53.547687+00:00", "host": "White", "action": "self_test", "trigger": "manual_schtasks", "outcome": "success", "detail": "action_log.py self-test entry (orchestrator assist)", "reversible": true, "source_script": "memory/ops/action_log.py"}
+{"ts": "2026-11-23T20:56:44Z", "host": "White", "action": "restart_portal", "trigger": "watchdog", "outcome": "success", "detail": "Self-test: portal restart simulated", "reversible": true, "source_script": ""}
+{"ts": "2026-11-23T20:56:44Z", "host": "Black", "action": "deploy_canary", "trigger": "health_check", "outcome": "rolled_back", "detail": "Self-test: canary deploy rolled back", "reversible": true, "source_script": ""}
+{"ts": "2026-11-23T20:56:44Z", "host": "Red", "action": "auto_clean_disk", "trigger": "disk_monitor", "outcome": "success", "detail": "Self-test: disk cleanup 2.1GB freed", "reversible": true, "source_script": ""}
