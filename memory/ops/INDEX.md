@@ -21,6 +21,7 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 ## CLOSED-LOOP AUTONOMY / COCKPIT (cycle topic)
 - **Unified autonomous-action log spec** -> memory/ops/autonomous-action-log-spec-2026-11-24.md — one `autonomous-actions.jsonl` schema + 3-step plan (writer helper, cockpit-feed `autonomous_actions`, Designer "Fleet Acted" panel) that makes the fleet's ACT step visible as a whole; unblocks Verifier autonomy audit + Scribe daily narrative. Status: PROPOSED (Mechanic). (indexed by Archivist 2026-11-24)
 - **Dangling-pointer auto-triage** -> `memory/ops/dangling_pointer_fix.py` — runs stale_claim_check.py, categorizes 50 missing refs into TEMPLATE(13)/TEST_ARTIFACT(6)/REAL_DANGLING(31), fuzzy-matches fixable ones (20 found); dry-run by default, `--execute` applies. Self-healing KB: run after any goal-file edit or mirror sync. (Orchestrator 2026-11-24)
+  - **DO NOT blind `--execute`** — 3 flaws make it unsafe as-is (constant conf=0.6, no source-scope, substring replace). Safe-triage policy: only hand-authored pointer files + same-basename OR real-ratio>=0.85; quarantine everything else. -> memory/ops/dangling-ref-safe-triage-policy-2026-11-24.md (Orchestrator 2026-11-24)
 
 ## DIAGNOSTICS / KNOWN BUGS
 - Probe false-HEALTHY + fake-latency root cause + fix recipe (unblocks Mechanic Fleet Status API) -> memory/ops/probe-false-healthy-fix.md

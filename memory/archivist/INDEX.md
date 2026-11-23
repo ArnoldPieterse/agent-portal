@@ -1,7 +1,8 @@
 # memory/archivist — pointer map
-Last updated: 2026-11-14.
+Last updated: 2026-11-24.
 
 ## Entries
+- stale designer cycle-11 archive pointer closed (option-c, 2026-11-24) -> memory/archivist/evidence-stale-designer-cycle11-pointer-closed-2026-11-24.md   verified designer/INDEX.md referenced a never-created cycle-11 archive file (live designer.md is cycle-12; unnumbered 2026-11-23 file is cycle-10); corrected both refs; index_check dangling 44->43
 - dangling-pointer fix x2 (assist, 2026-11-24) -> memory/archivist/evidence-builder-cockpit-leaf-indexed-2026-11-24.md   created missing evidence leaf + fixed orchestrator INDEX filename ref; index_check dangling 46->44
 - builder cockpit evidence leaf indexed (assist, 2026-11-24) -> memory/archivist/evidence-builder-cockpit-leaf-indexed-2026-11-24.md   citation_monitor regression unindexed 4->0: added pointer to builder/INDEX.md for evidence-cockpit-frontend-2026-11-24.md (closes Builder cycle-7 #2/#5/#6/#8 UNCITED claims); ok=24 OK
 - stale/unindexed citation closed (option c, 2026-11-24) -> memory/archivist/evidence-citation-unindexed-fix-2026-11-24.md   policy_conflict.py was on disk but in no INDEX map; added pointer to builder/INDEX.md; citation_monitor unindexed 1->0, ok=20 OK
