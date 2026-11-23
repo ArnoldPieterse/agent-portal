@@ -2961,6 +2961,8 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
     buf = b""
     full = ""
     seen_tools = set()
+    _last_content = time.time()   # 2026-11-23 staleness watchdog (see loop below)
+    stop_ev = getattr(wfile, "stop_event", None)
     try:
         for raw in resp:
             buf += raw
@@ -2990,10 +2992,18 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
                             seen_tools.add(nm)
                             _act_log(session, {"agent": who, "event": "tool", "tool": nm})
                 if delta or think or tool:
+                    _last_content = time.time()
                     wfile.write(b"data: " + json.dumps(
                         {"content": delta, "thinking": think, "tool": tool},
                         ensure_ascii=False).encode() + b"\n\n")
                     wfile.flush()
+                # 2026-11-23 hang fix: a stalled upstream (model evicted mid-generation on an
+                # overloaded host) keeps the SSE socket open with no content frames, so the 300 s
+                # socket timeout never fires and this loop blocks forever - freezing the whole pass
+                # (run g-1a20817c: all seats hung, autoloop dead). Abort on staleness or stop.
+                if (stop_ev is not None and stop_ev.is_set()) or \
+                   (time.time() - _last_content) > 300:
+                    raise OSError("upstream stream stalled")
     except OSError:
         # Browser aborted the stream (■ Stop / tab closed): stop forwarding AND kill the
         # upstream request so Studio stops generating instead of burning GPU on a dead stream.
@@ -3284,8 +3294,9 @@ def _parallel_turns(run_id, names, kind, hist, stop_event):
     if stop_event.is_set():
         return out
     from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError as _FTimeout
-    with ThreadPoolExecutor(max_workers=max(1, len(names))) as pool:
-        futs = {pool.submit(work, i, nm): (i, nm) for i, nm in enumerate(names)}
+    pool = ThreadPoolExecutor(max_workers=max(1, len(names)))
+    futs = {pool.submit(work, i, nm): (i, nm) for i, nm in enumerate(names)}
+    try:
         try:
             for _ in as_completed(futs, timeout=PASS_TIMEOUT_S):
                 pass
@@ -3302,6 +3313,12 @@ def _parallel_turns(run_id, names, kind, hist, stop_event):
                         out[i] = {"name": nm, "full": "", "silent": False, "concluded": False,
                                   "error": "turn stalled - no completion within %d min (pass cap)" % (PASS_TIMEOUT_S // 60),
                                   "blocked": None}
+    finally:
+        # 2026-11-23 hang fix: the implicit shutdown(wait=True) here froze the whole fleet when an
+        # upstream stream stalled (model evicted mid-generation on an overloaded host - run
+        # g-1a20817c hung 30+ min, no done events, autoloop dead). Stragglers now die on their own
+        # via the stream staleness watchdog in stream_chat; the round must not wait for them.
+        pool.shutdown(wait=False, cancel_futures=True)
     for r in out:  # terminal event per turn - the frontend finalizes each bubble on this
         if r:
             _run_event(run_id, {"agent": r["name"], "kind": kind, "done": True})
@@ -3622,7 +3639,31 @@ def start_group_run(text, extra=None):
                                    "evidence pointer instead):\n" + "\n".join("- " + c for c in _closed))
             except Exception:
                 pass
-        full_text = (text or "") + reset_note
+        _goal_round_cast = None
+        if reset_note:
+            # 2026-11-23 fix (round topic stuck >40 min after level-up): auto-loop passes kept
+            # CONSUMING this flag and merely appending the note to a partial-cast "work your open
+            # goals" prompt - the Orchestrator often wasn't even in the cast, so the new goal round
+            # never started and the round topic never updated. Consumption must now IMPLY
+            # execution: machine-triggered runs become a full-cast goal-setting round (canonical
+            # chair prompt replaces the pass text); human-sent runs keep their text but still get
+            # the full cast so the chair can run the round alongside it.
+            _goal_round_cast = list(names)
+            if (extra or {}).get("autoloop_why") or (extra or {}).get("auto_resume_count"):
+                full_text = ("\nGOAL-SETTING ROUND (new cycle) - the previous goal set is 100% complete. "
+                             "This run's ONLY job is to produce the NEXT cycle's goals; do NOT work "
+                             "old-cycle goals - they are done and get archived by the Orchestrator. "
+                             "Orchestrator: CHAIR this round - open it, state the ROUND TOPIC first "
+                             "(see below), then collect every agent's ~10 proposed goals VERBATIM into "
+                             "TODO.md '## AGENT GOALS' and memory/goals/<name>.md (move each old file to "
+                             "memory/goals/archive/ as you go). Every other agent: propose your ~10 NEW "
+                             "goals for the next cycle NOW, in this run - each traceable to the round "
+                             "topic, none from the [ANTI-REPEAT] list. Reply [CONCLUDED] only after your "
+                             "new goal file is written." + reset_note)
+            else:
+                full_text = (text or "") + reset_note
+        else:
+            full_text = text or ""
         # 2026-11-17: admin is the DEFAULT for every agent (user directive). When this shell is
         # not elevated, route admin commands through the elevated helper service (elev.py ->
         # 127.0.0.1:8098, SYSTEM) instead of telling agents to give up.
@@ -3680,7 +3721,7 @@ def start_group_run(text, extra=None):
             pass
         hist = _load_history("group")
         run = {"id": rid, "status": "running", "prompt": full_text[:4000],
-               "cast": ((extra or {}).get("cast_override") or mentioned or names),
+               "cast": (_goal_round_cast or (extra or {}).get("cast_override") or mentioned or names),
                "settled": [], "nudges": 0, "phase": "prompt",
                "started": time.time(), "ended": None, "verdict": None, "error": None,
                "hist_start": len(hist)}
@@ -4879,18 +4920,48 @@ def _goals_snapshot():
     # Goal-cycle upgrade (2026-11-15): at 100% for ALL agents the backend arms a persistent
     # flag; start_group_run() consumes it and forces a new goal-setting round. Idempotent:
     # re-arming refreshes 'at' while armed, never resurrects a consumed flag.
+    # 2026-11-23 fix: the old code DID resurrect - its bare except caught the intentional
+    # "consumed" raise and re-armed on EVERY poll, so auto-loop passes kept consuming a flag
+    # they never acted on and the new round (and its topic) never started. A consumed flag is
+    # now re-armed only when the consuming run ended without replacing the goal files (no
+    # agent-file mtime newer than consumed_at) AND no run is active - i.e. the round truly
+    # never happened.
     if total and done_all >= total:
         gf = os.path.join(HERE, "memory", "goals", "GOAL_RESET_PENDING.json")
+        _armed_now = False
         try:
-            with open(gf, encoding="utf-8") as f:
-                d = json.load(f)
-            if not d.get("armed"):
-                raise ValueError("consumed")
+            try:
+                with open(gf, encoding="utf-8") as f:
+                    d = json.load(f)
+            except Exception:
+                d = {}   # missing/corrupt - treat as never armed
+            if d.get("armed"):
+                _armed_now = True
+            elif not d or not d.get("consumed_at"):
+                with open(gf, "w", encoding="utf-8") as f:
+                    json.dump({"armed": True, "at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                               "note": "All agent goals 100% reached - next group run starts a new goal-setting round."}, f)
+                _armed_now = True
+            else:
+                try:
+                    _ca_t = time.mktime(time.strptime(d["consumed_at"], "%Y-%m-%d %H:%M:%S"))
+                except Exception:
+                    _ca_t = 0.0
+                _newest = 0.0
+                for f2 in os.listdir(gdir):
+                    if f2.endswith(".md") and (not names or f2[:-3].lower() in names):
+                        try:
+                            _newest = max(_newest, os.path.getmtime(os.path.join(gdir, f2)))
+                        except OSError:
+                            pass
+                if _ca_t and _newest < _ca_t and not _active_run_id:
+                    with open(gf, "w", encoding="utf-8") as f:
+                        json.dump({"armed": True, "at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                   "note": "All agent goals 100% reached - next group run starts a new goal-setting round."}, f)
+                    _armed_now = True
         except Exception:
-            with open(gf, "w", encoding="utf-8") as f:
-                json.dump({"armed": True, "at": time.strftime("%Y-%m-%d %H:%M:%S"),
-                           "note": "All agent goals 100% reached - next group run starts a new goal-setting round."}, f)
-        resp["goal_reset_pending"] = True
+            pass
+        resp["goal_reset_pending"] = _armed_now
     else:
         resp["goal_reset_pending"] = False
     # Level counter (2026-11-20): at 100% for a NEW goal-set signature _check_level_up bumps

@@ -230,6 +230,7 @@ Context: human powered down .245/.39/.99 + unloaded a local LLM to free context;
 - [x] Arnold bundle verified on disk: memory/builder/arnold-restart-r8.ps1 (2,429 B) + arnold-restart-r8.md - fail-fast gates per runbook (assert listener=1240 -> taskkill -> schtasks /run PortalRun -> new PID on :8099 -> CreationDate > LastWriteTime trap check -> _portal_pid.txt update -> /api/status liveness).
 - [ ] Arnold (White console): run the ps1, paste output - only remaining external action. Agent sandboxes cannot do it (powershell/curl/schtasks/netstat policy-blocked; workspace root not visible from sandbox).
 - [ ] Post-restart queue: Orchestrator resyncs MEMORY.md goal line -> Verifier AC-A2-1..4 one pass, single hard refresh (process check = new PID + CreationDate trap; /api/status = liveness only).
+- Mechanic & Scribe: proposals not in journal (stream cut) - re-propose next goal pass
 - Archivist: your r8 consolidation write was truncated mid-sentence (memory/synthesis/INDEX.md + superseded marks on the two goals copies) - resume as FIRST action next round; lane stays yours.
 
 

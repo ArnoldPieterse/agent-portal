@@ -21,3 +21,16 @@ Focus: Closed-Loop Autonomy & Fleet Cockpit. Cycle 10: verify the autonomous act
 9. **Task Re-Routing E2E Test** - `python memory/verifier/reroute_e2e.py`: full end-to-end test: simulate agent unresponsive -> verify detection -> verify task reassignment -> verify new agent picks up task -> verify task completes. Measure total time from detection to completion. Verified: full cycle completes <5 min; task is not lost (appears in new agent's queue); original agent's status updated when it recovers; all steps logged. (pointer: memory/verifier/MEMORY.md)
 
 10. **Cockpit Performance Benchmark** - `python memory/verifier/cockpit_perf.py`: measure /api/fleet/cockpit response time under: (a) normal load, (b) 5 concurrent requests, (c) degraded host (1 of 4 unreachable). Record p50, p95, p99 + max. Alert if p95 >2s or any request times out. Verified: all 3 scenarios measured; p95 <2s under normal load; timeout handling works (degraded host doesn't hang the endpoint); results written to perf-benchmark.jsonl. (verified: 2026-11-23 - cockpit_perf.py self-test PASS (3 scenarios: normal p95=72ms, 5-concurrent p95=69ms, degraded-host p95=455ms; all <2s threshold; 0 timeouts; results in perf-benchmark.jsonl); artifact: memory/verifier)
+
+## Cycle 14 - 2026-11-23 (topic: Closed-Loop Autonomy & Fleet Cockpit)
+
+1. **Autonomous Remediation E2E** — full closed-loop fault-injection test (detect→diagnose→remediate→verify) with per-stage SLA
+2. **Cockpit Live-Staleness Monitor** — continuous check that /api/fleet/cockpit data is <5min fresh; alert leaf on breach
+3. **Autonomy Stall Detector** — flag any agent with zero file changes across 3 consecutive auto-loop passes
+4. **Closed-Loop Latency Budget** — measure per-segment latency of the autonomy cycle; enforce configurable budgets
+5. **Cockpit UI Playwright Gate** — automated browser test at 3 viewports: panels render, no JS errors, interactive elements clickable
+6. **Failure Replay Harness** — replay historical failure scenarios from decision-log; verify applied fixes prevent recurrence
+7. **Goal Lifecycle Audit** — trace every goal through proposed→assigned→worked→verified→closed; flag stuck >48h or missing transitions
+8. **Fleet Health Closed-Loop Test** — simulate VRAM/OOM degradation; verify full autonomous response chain fires end-to-end
+9. **Cockpit A11y Gate (WCAG AA)** — automated contrast, keyboard-nav, ARIA-label check on all cockpit panels
+10. **Autonomy Precision/Recall Tracker** — classify each autonomous action as correct/false-positive/false-negative; weekly metric

@@ -22,3 +22,16 @@ Focus: Closed-Loop Autonomy & Fleet Cockpit. Cycle 10: build the execution layer
 9. **Runbook Parser + Executor** - `python memory/builder/runbook_exec.py`: parse markdown runbooks (memory/ops/runbooks/*.md) into structured steps (command, expected_output, timeout, rollback_command). Execute sequentially with verification. Report success/failure per step. Verified: parses a real runbook correctly (all steps extracted); executes a safe runbook end-to-end; failure at step N triggers rollback of steps 1..N-1; report includes all step results. (pointer: memory/builder/playbook_runner.py)
 
 10. **Fleet State Snapshot Scheduler** - `python memory/builder/state_snapshot.py`: every 30 min (via schtask), capture full fleet state: agent statuses, host resources, goal progress, health score, open blockers. Append to memory/ops/fleet-snapshots.jsonl. Verified: snapshot file grows by 1 entry per 30 min; each entry has all 5 top-level fields; JSONL valid after 10+ entries; schtask registered and running. (pointer: memory/builder/designer-goal2-fleet-states-2026-11-18.md)
+
+## Cycle 14 - 2026-11-23 (topic: Closed-Loop Autonomy & Fleet Cockpit)
+
+1. Closed-Loop Feedback Scorer (score each loop 0-1)
+2. Adaptive Policy Tuner (propose threshold adjustments from low scores)
+3. Alert Correlation Engine (group alerts → incidents)
+4. Fleet Capacity Predictor (trend-based time-to-threshold)
+5. Automated Chaos Drill Scheduler (periodic fault injection + recovery verify)
+6. Cockpit Topology Visualizer (SVG 4-host map)
+7. Decision Audit Search Index (SQLite FTS5 over decision log)
+8. Post-Remediation Auto-Report (structured post-mortems)
+9. Policy Conflict Detector (find overlapping rules with different actions)
+10. Cockpit One-Click Runbook Trigger (pre-flight validated execution from UI)

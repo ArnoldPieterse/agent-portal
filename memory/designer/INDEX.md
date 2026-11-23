@@ -1,6 +1,12 @@
 # memory/designer/ INDEX
 Last updated: 2026-11-23.
 
+## Cycle-12 goals (set 2026-11-23, goal-setting round)
+- -> memory/goals/designer.md — 10 NEW cycle-12 goals; theme "Closed-Loop Autonomy & Fleet Cockpit" = adaptive, forward-looking, operable cockpit (density modes, provenance overlay, multi-goal board, forecast surface, emergency brake, confidence decay, topology graph, trend strip, knowledge impact, cognitive load budget). Cycle-11 file to be archived by Orchestrator -> memory/goals/archive/designer-cycle11-2026-11-23.md
+
+## Cycle-11 goals (set 2026-11-23, goal-setting round) — ARCHIVED
+- theme: cockpit as one coherent closed-loop autonomy instrument. File archived -> memory/goals/archive/designer-cycle11-2026-11-23.md
+
 ## Assist (2026-11-23, Archivist goals)
 - assist-archivist-goals-ledger-2026-11-23.md — verified 9/10 cycle-12 scripts via live selftest; added [REACHED] markers to goals file. Goal 7 (auto_linker idempotency) remains open.
 
