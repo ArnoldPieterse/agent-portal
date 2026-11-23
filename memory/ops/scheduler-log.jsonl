@@ -591,3 +591,6 @@
 {"t": "2026-11-23 21:47:11", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-23 21:47:11", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-23 21:47:11", "job": "schtask_dep_weekly", "event": "done", "rc": 0}
+{"t": "2026-11-23 21:47:36", "job": "cycle_1h", "event": "done", "rc": 2}
+{"t": "2026-11-23 21:52:06", "job": "cycle_5m", "event": "start", "pid": 13996}
+{"t": "2026-11-23 21:52:11", "job": "cycle_5m", "event": "done", "rc": 0}
