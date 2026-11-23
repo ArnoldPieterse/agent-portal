@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic added subprocess call to feed_refresh.py at end of state_collector.py collect; cockpit-feed.json now auto-refreshes via existing 5-
 - Unified action log (Mechanic spec Steps 1+2) implemented: `memory/ops/action_log.py` live, cockpit feed now includes autonomous_actions; unb
 - feed_refresh.py now in FleetStateCollector; live probe shows feed FRESH (
 - Mechic added CockpitFeedRefresh to deploy_all_schtasks.py; deploy blocked by known schtasks COM sandbox limit on Red.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Tokenized all 42 hardcoded hex colors in ui/cockpit.js → CSS vars (--ok,--warn,--err,--dim,--panel2); SVG sparkline fixed to use style="stro
 - Mirror cycle reverts Mechanic edits (state_collector.py + deploy_all_schtasks.py); must re-verify after each sync pass.
 - Verifier cycle-14 now 20/20 (100%) — all goals closed; evidence at memory/builder/evidence-verifier-batch-close-2026-11-24.md
+- Cockpit Fleet Mode Banner added to ui/cockpit.js; uses color-mix(in srgb) for theme tints, data-testid=cockpit-mode-banner
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

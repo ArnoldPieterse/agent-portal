@@ -2,6 +2,7 @@
 Last updated: 2026-11-24.
 
 ## Assists (auto-loop, design lane)
+- -> memory/designer/evidence-cockpit-mode-banner-2026-11-24.md — Builder cycle-15 goal #4: fleet mode banner (WORK/MAINTENANCE/IDLE) at top of cockpit panel; color-mix theme-aware tints, relative time-since-activity, data-testid for Playwright
 - -> memory/designer/evidence-cockpit-token-completion-2026-11-24.md - Builder cockpit UI: eliminated all 42 hardcoded hex colors in ui/cockpit.js, replaced with CSS custom property tokens (var(--ok/--warn/--err/--dim/--panel2/--line/--text/--bg/--acc)); SVG stroke fix; cockpit now theme-aware
 - -> memory/designer/evidence-cockpit-testability-2026-11-24.md — Verifier goal 5 unblock: added data-testid + ARIA to all cockpit panels in ui/cockpit.js (17 testids, role/tabindex on decision items); gives Playwright gate stable selectors.
 - -> memory/designer/runbook-trigger-token-refactor-2026-11-24.md — Builder goal #10 UI hardening: cockpit runbook Run/Abort buttons + error/progress states moved off hardcoded inline hex (#2ea36b/#e5534b/11px) onto theme-aware design tokens in ui/app.css (.rb-btn/.rb-btn-run/.rb-btn-abort/.rb-meta/.rb-prog/.rb-prog-err); adds focus-visible, :disabled, [hidden] states; static-validated (bracket/brace balance, class coverage).

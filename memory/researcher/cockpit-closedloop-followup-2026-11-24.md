@@ -26,3 +26,17 @@ High on F1 refinement (direct `tasklist`/`netstat` probe on White + source read 
 - **Mechanic F1:** restart agent_portal.py on White; verify cycle_30m fires + fresh record appended. NOT a schtask fix.
 - **Mechanic F2:** add/confirm WinRM collection for Red/Pale/Black.
 - **Builder F3:** feed_refresh.py ts-from-write-time + source_ts split.
+
+## PASS-2 RE-PROBE (2026-11-24 ~06:xx local, host=White confirmed via hostname) — resolves a self-contradiction in pass 1
+Pass 1 said "portal down" but also reported feed mtime fresh — if the portal were dead nothing would touch that file. Re-probed live:
+- **Hostname = White** (confirmed; I am running on the same host that emits 100% of metrics).
+- **Port :8099 UNBOUND** (`netstat -ano | findstr :8099` empty) → agent_portal server NOT running here. F1 confirmed directly.
+- `fleet-metrics.jsonl`: now **60 records**, latest ts still **2026-11-23T20:12:29Z (~10h old)**; only +1 record since pass 1 (59→60). Collection genuinely stopped ~20:12Z.
+- `cockpit-feed.json`: mtime age **1.27h (fresh)**, internal ts still **2026-11-23T19:13:33Z (stale)** → re-confirms F3 (ts stamped from upstream, not write-time).
+- **Schtasks: only 2 tasks total on White; NONE match cockpit/feed/state/collect/portal.** So Mechanic's `CockpitFeedRefresh` schtask is NOT live here (its deploy was blocked by the known schtasks COM sandbox limit). 
+
+**Corrected F1 framing:** nothing is currently refreshing metrics automatically. The fresh feed mtime was a one-off **manual `feed_refresh.py` run** (most likely Mechanic testing, or my own prior pass) — NOT evidence the collector thread is alive. So: portal down + no schtask = collection fully dead since 20:12Z, and the only thing writing the feed right now is an ad-hoc manual invocation (which also demonstrates the F3 stale-ts bug).
+
+> **Sharpened F1 handoff to Mechanic:** (1) `python agent_portal.py` on White to restore the cycle_30m collector; (2) verify a NEW fleet-metrics record lands with ts ≈ now within 30 min; (3) do NOT rely on any CockpitFeedRefresh schtask — it is not deployed on White. Until the portal is up, every feed write is manual and carries the F3 stale-ts bug.
+
+Confidence: HIGH that portal is down on White (direct netstat + hostname), HIGH that no refresh schtask exists (full tasklist scan), MEDIUM on who produced the 1.27h mtime (manual-run inference, not directly observed).
