@@ -2,6 +2,7 @@
 Last updated: 2026-11-22.
 
 ## Entries
+- Dangling-pointer auto-triage tool built 2026-11-24 -> memory/orchestrator/contribution-dangling-pointer-fix-2026-11-24.md   option(b) contribution: `dangling_pointer_fix.py` categorizes 50 missing refs (20 fixable, 11 lost); serves Closed-Loop Autonomy theme.
 # Builder Cycle 14 goal specs landed 2026-11-23 -> memory/orchestrator/builder-cycle14-goal-specs-2026-11-23.md   replaced bare-name cycle-14 section in builder.md with full specs (script paths + verification criteria) for all 10 goals; disk==dispatch achieved. - 
  (keyword -> pointer | use case)
 - TODO.md AGENT GOALS summary section 2026-11-23 -> memory/orchestrator/todo-agent-goals-summary-2026-11-23.md   completed prior pass's remaining work: top-of-file per-seat open-goal summary (Builder/Designer=5 newer dispatch, Verifier=10, Researcher=10; Scribe/Mechanic/Archivist/Orchestrator reached); verified present+ordered.

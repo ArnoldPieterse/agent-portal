@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Unified action log (Mechanic spec Steps 1+2) implemented: `memory/ops/action_log.py` live, cockpit feed now includes autonomous_actions; unb
-- feed_refresh.py now in FleetStateCollector; live probe shows feed FRESH (
-- Mechic added CockpitFeedRefresh to deploy_all_schtasks.py; deploy blocked by known schtasks COM sandbox limit on Red.
 - Cycle 15
 - Goal ledger reached 102/102 (100%) across all 8 agents as of 2026-11-24; cockpit feed loop verified end-to-end fresh.
 - Verifier #4 closed: latency_budget.py --self-test 5/5 from repo root AND memory/verifier (CWD-robust, unlike #2 false-closure).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mirror cycle reverts Mechanic edits (state_collector.py + deploy_all_schtasks.py); must re-verify after each sync pass.
 - Verifier cycle-14 now 20/20 (100%) — all goals closed; evidence at memory/builder/evidence-verifier-batch-close-2026-11-24.md
 - Cockpit Fleet Mode Banner added to ui/cockpit.js; uses color-mix(in srgb) for theme tints, data-testid=cockpit-mode-banner
+- CockpitFeedRefresh added to deploy_all_schtasks.py; deploy pending non-sandbox White session (COM blocked in Red sandbox).
+- Fleet hit 100% (20/20 Verifier goals closed); milestone note written to memory/synthesis
+- dangling_pointer_fix.py triaged 50 missing refs: 2
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
