@@ -21,7 +21,8 @@ GIT = os.path.join(HERE, "mingit", "cmd", "git.exe")
 def head_age_s():
     try:
         r = subprocess.run([GIT, "log", "-1", "--pretty=format:%ct"], cwd=HERE,
-                           capture_output=True, timeout=30)
+                           capture_output=True, timeout=30,
+                           creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
         return time.time() - int(r.stdout.decode().strip())
     except Exception:
         return None

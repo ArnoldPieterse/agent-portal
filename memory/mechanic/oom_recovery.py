@@ -72,7 +72,8 @@ def detect_oom(agent_name=None, simulated=False):
         r = subprocess.run(
             ["nvidia-smi", "--query-gpu=memory.used,memory.total,utilization.gpu",
              "--format=csv,noheader,nounits"],
-            capture_output=True, text=True, timeout=5
+            capture_output=True, text=True, timeout=5,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
         )
         if r.returncode == 0 and r.stdout.strip():
             parts = [p.strip() for p in r.stdout.strip().split(",")]
@@ -123,7 +124,8 @@ def kill_process(pid=None, agent_name=None, simulated=False):
             # On Windows, use taskkill
             r = subprocess.run(
                 ["taskkill", "/F", "/PID", str(pid)],
-                capture_output=True, text=True, timeout=10
+                capture_output=True, text=True, timeout=10,
+                creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
             )
             if r.returncode == 0:
                 return True, f"killed pid {pid}"
@@ -134,7 +136,8 @@ def kill_process(pid=None, agent_name=None, simulated=False):
             r = subprocess.run(
                 ["powershell", "-NoProfile", "-Command",
                  f"Get-Process -Name '*{agent_name}*' -ErrorAction SilentlyContinue | Stop-Process -Force"],
-                capture_output=True, text=True, timeout=10
+                capture_output=True, text=True, timeout=10,
+                creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
             )
             return True, f"killed processes matching {agent_name}"
         else:
@@ -156,7 +159,8 @@ def wait_for_gpu_free(target_mb=FREE_THRESHOLD_MB, timeout_s=MAX_WAIT_S, simulat
         try:
             r = subprocess.run(
                 ["nvidia-smi", "--query-gpu=memory.free", "--format=csv,noheader,nounits"],
-                capture_output=True, text=True, timeout=5
+                capture_output=True, text=True, timeout=5,
+                creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
             )
             if r.returncode == 0 and r.stdout.strip():
                 free = int(r.stdout.strip().split("\n")[0].strip())
@@ -170,7 +174,8 @@ def wait_for_gpu_free(target_mb=FREE_THRESHOLD_MB, timeout_s=MAX_WAIT_S, simulat
     try:
         r = subprocess.run(
             ["nvidia-smi", "--query-gpu=memory.free", "--format=csv,noheader,nounits"],
-            capture_output=True, text=True, timeout=5
+            capture_output=True, text=True, timeout=5,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
         )
         free = int(r.stdout.strip().split("\n")[0].strip()) if r.returncode == 0 else 0
     except (FileNotFoundError, subprocess.TimeoutExpired, ValueError):

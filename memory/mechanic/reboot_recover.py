@@ -41,7 +41,8 @@ def detect_unexpected_shutdown():
         r = subprocess.run(
             'powershell -NoProfile -Command '
             '"Get-WinEvent -LogName System -MaxEvents 50 | Where-Object { $_.Id -eq 6008 } | Select-Object -First 1 TimeCreated, Id"',
-            shell=True, capture_output=True, text=True, timeout=15
+            shell=True, capture_output=True, text=True, timeout=15,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
         )
         if r.returncode == 0 and "6008" in r.stdout:
             return True
@@ -75,7 +76,7 @@ def start_portal():
         p = subprocess.Popen(
             [sys.executable, str(portal_path)],
             cwd=str(script_dir),
-            creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+            creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0) | getattr(subprocess, "CREATE_NO_WINDOW", 0)
         )
         return True, p.pid
     except Exception as e:

@@ -49,7 +49,8 @@ def collect_gpu_usage():
         r = subprocess.run(
             ["nvidia-smi", "--query-gpu=utilization.gpu,memory.used,memory.total,temperature.gpu",
              "--format=csv,noheader,nounits"],
-            capture_output=True, text=True, timeout=5
+            capture_output=True, text=True, timeout=5,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
         )
         if r.returncode == 0 and r.stdout.strip():
             line = r.stdout.strip().split("\n")[0]
@@ -72,7 +73,8 @@ def collect_cpu_load():
         r = subprocess.run(
             ["powershell", "-NoProfile", "-Command",
              "Get-CimInstance Win32_Processor | Measure-Object -Property LoadPercentage -Average | Select-Object -ExpandProperty Average"],
-            capture_output=True, text=True, timeout=5
+            capture_output=True, text=True, timeout=5,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
         )
         if r.returncode == 0:
             return float(r.stdout.strip())
@@ -326,7 +328,8 @@ def register_schtasks():
     try:
         r = subprocess.run(
             [sys.executable, str(BASE / "elev.py"), "--shell", cmd],
-            capture_output=True, text=True, timeout=30
+            capture_output=True, text=True, timeout=30,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
         )
         if r.returncode == 0:
             print(f"OK: schtask '{task_name}' registered (every 5 min)")

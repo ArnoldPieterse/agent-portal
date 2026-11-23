@@ -1514,7 +1514,8 @@ def _cockpit_gpu_local(timeout=2):
         out = subprocess.run(
             ["nvidia-smi", "--query-gpu=utilization.gpu,memory.used,memory.total,temperature.gpu",
              "--format=csv,noheader,nounits"],
-            capture_output=True, text=True, timeout=timeout)
+            capture_output=True, text=True, timeout=timeout,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
         if out.returncode != 0:
             return None
         rows = [r.split(",") for r in out.stdout.strip().splitlines() if r.strip()]

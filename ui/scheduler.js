@@ -35,7 +35,7 @@
       '<span class="chev">&#9656;</span>' +
       '<span style="font-size:12px">&#9201;</span>' +
       '<b>In-process scheduler</b>' +
-      '<span style="opacity:.5;font-size:11px">(host script portal_host.py &middot; 0 periodic schtasks)</span>' +
+      '<span style="opacity:.5;font-size:11px">(host script portal_host.py &middot; boot: Startup-folder launcher &middot; 0 periodic schtasks)</span>' +
       '<span class="smeta" id="schedMeta">loading...</span>' +
     '</div>' +
     '<div class="srows">' +

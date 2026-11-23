@@ -35,7 +35,8 @@ def main() -> int:
     today = datetime.date.today().isoformat()
     inp = os.path.join(HERE, f"{SNAP_PREFIX}{today}-input.csv")
     q = subprocess.run(["schtasks", "/query", "/fo", "CSV", "/v"],
-                       capture_output=True, text=True)
+                       capture_output=True, text=True,
+                       creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
     if q.returncode != 0:
         print("FATAL: schtasks /query failed:", q.stderr.strip()[:200])
         return 1
@@ -77,7 +78,8 @@ def main() -> int:
     if prev:
         cmd += ["--prev", prev]
     cmd += ["--output", os.path.join(HERE, f"{SNAP_PREFIX}{today}.json")]
-    r = subprocess.run(cmd, capture_output=True, text=True)
+    r = subprocess.run(cmd, capture_output=True, text=True,
+                       creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
     sys.stdout.write(r.stdout)
     if r.returncode != 0:
         print("FATAL: dep_gen failed:", r.stderr.strip()[:300])

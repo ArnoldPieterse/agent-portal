@@ -183,36 +183,51 @@ def task_snapshot_cleanup():
 
 
 def task_schtasks_health():
-    """Check that registered fleet schtasks are present and enabled."""
+    """Verify the consolidated scheduler architecture (2026-11-23):
+    - NO legacy fleet schtasks remain (they were merged into portal_host.py;
+      any re-appearance means double-running work).
+    - The portal_host.py guardian process is alive (it owns all job timers).
+    """
     t0 = time.perf_counter()
     results = []
-    
-    expected_tasks = [
-        "FleetHostProbes",
-        "FleetStateCollector",
-        "FleetAutoFailover",
-    ]
-    
-    # Try to query schtasks (may fail in sandbox)
+
+    legacy_tasks = ["FleetHostProbes", "FleetStateCollector", "FleetAutoFailover"]
     try:
         r = subprocess.run(
             ["schtasks", "/query", "/fo", "csv", "/nh"],
-            capture_output=True, text=True, timeout=10
+            capture_output=True, text=True, timeout=10,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
         )
         if r.returncode == 0:
-            for task in expected_tasks:
-                found = task in r.stdout
-                results.append({"task": task, "registered": found})
+            for task in legacy_tasks:
+                results.append({"task": task, "absent_as_expected": task not in r.stdout})
         else:
-            # schtasks not available - report as indeterminate
-            for task in expected_tasks:
-                results.append({"task": task, "registered": None, "note": "schtasks unavailable"})
+            for task in legacy_tasks:
+                results.append({"task": task, "absent_as_expected": None,
+                                "note": "schtasks unavailable"})
     except Exception:
-        for task in expected_tasks:
-            results.append({"task": task, "registered": None, "note": "probe_failed"})
-    
+        for task in legacy_tasks:
+            results.append({"task": task, "absent_as_expected": None, "note": "probe_failed"})
+
+    # The real guardian: a live portal_host.py process (windowless python.exe).
+    host_alive = None
+    try:
+        h = subprocess.run(
+            ["powershell", "-NoProfile", "-Command",
+             "(Get-CimInstance Win32_Process |"
+             " Where-Object { $_.Name -eq 'python.exe' -and $_.CommandLine -like '*portal_host.py*' } | Measure-Object).Count"],
+            capture_output=True, text=True, timeout=15,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0)
+        )
+        if h.returncode == 0:
+            host_alive = int(h.stdout.strip() or 0) > 0
+    except Exception:
+        pass
+    results.append({"task": "portal_host_process", "alive": host_alive})
+
     elapsed = time.perf_counter() - t0
-    all_ok = all(r.get("registered") is not False for r in results)
+    all_ok = (all(r.get("absent_as_expected") is not False for r in results)
+              and host_alive is True)
     return {
         "task": "schtasks_health",
         "status": "ok" if all_ok else "warning",
