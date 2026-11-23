@@ -5304,6 +5304,12 @@ class Handler(BaseHTTPRequestHandler):
                          else "application/javascript; charset=utf-8")
                 return self._static(name, ctype)
             return self._json(404, {"error": "bad ui path"})
+        if p == "/api/scheduler":   # IN-PROC SCHEDULER STATUS (2026-11-23)
+            try:
+                import portal_scheduler
+                return self._json(200, portal_scheduler.status())
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         if p == "/api/agents":
             return self._json(200, load_agents())
         elif p == "/api/user-messages":
@@ -5758,6 +5764,12 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, _restore_merge_queue(body))
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
+        elif p == "/api/scheduler":   # IN-PROC SCHEDULER ACTIONS (2026-11-23)
+            try:
+                import portal_scheduler
+                return self._json(200, portal_scheduler.action(body.get("job"), body.get("action")))
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/agents":
             name = (body.get("name") or "").strip()
             if not name:
@@ -5907,6 +5919,11 @@ if __name__ == "__main__":
         pass
     threading.Thread(target=_autoloop_watchdog, daemon=True).start()   # AUTO-LOOP (2026-11-16)
     threading.Thread(target=_level_heartbeat, daemon=True).start()   # LEVEL HEARTBEAT (2026-11-23)
+    try:
+        import portal_scheduler
+        threading.Thread(target=portal_scheduler.run_forever, daemon=True).start()   # IN-PROC SCHEDULER (2026-11-23)
+    except Exception as _sched_e:
+        print("in-proc scheduler failed to start:", _sched_e)
     print(f"Agent portal -> http://127.0.0.1:{PORT}  (backed by Studio at {STUDIO})")
     try:
         srv.serve_forever()

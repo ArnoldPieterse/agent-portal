@@ -1,0 +1,18 @@
+{"t": "2026-11-23 12:47:24", "event": "scheduler-up", "jobs": 17}
+{"t": "2026-11-23 12:47:54", "job": "memory_mirror", "event": "start", "pid": 20700}
+{"t": "2026-11-23 12:47:54", "job": "load_probe", "event": "start", "pid": 14792}
+{"t": "2026-11-23 12:47:54", "job": "fleet_probe", "event": "start", "pid": 19984}
+{"t": "2026-11-23 12:47:54", "job": "gap_alarm", "event": "start", "pid": 12768}
+{"t": "2026-11-23 12:47:54", "job": "state_collector", "event": "start", "pid": 12904}
+{"t": "2026-11-23 12:47:54", "job": "state_snapshot", "event": "start", "pid": 23440}
+{"t": "2026-11-23 12:47:54", "job": "reboot_recover", "event": "start", "pid": 9460}
+{"t": "2026-11-23 12:47:54", "job": "maintenance_window", "event": "start", "pid": 23100}
+{"t": "2026-11-23 12:47:54", "job": "forecast_engine", "event": "start", "pid": 11144}
+{"t": "2026-11-23 12:47:54", "job": "mirror_heal", "event": "start", "pid": 4356}
+{"t": "2026-11-23 12:47:54", "job": "daily_git_commit", "event": "start", "pid": 16004}
+{"t": "2026-11-23 12:47:54", "job": "schtask_dep_weekly", "event": "start", "pid": 21296}
+{"t": "2026-11-23 12:47:54", "job": "portal_heal_check", "event": "start", "pid": 22636}
+{"t": "2026-11-23 12:47:54", "job": "smb_drift_detector", "event": "start", "pid": 2904}
+{"t": "2026-11-23 12:47:54", "job": "decay_score", "event": "start", "pid": 2300}
+{"t": "2026-11-23 12:47:54", "job": "size_guard", "event": "start", "pid": 9344}
+{"t": "2026-11-23 12:47:54", "job": "snapshot_diff", "event": "start", "pid": 10132}
