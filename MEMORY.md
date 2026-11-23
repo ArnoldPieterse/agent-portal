@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer reached goals 1–4 (live proof HTML, provenance overlay, fleet board, forecast) and started goal 5 (EME).
-- Cycle-12: 5/10 goals closed (density,
 - Goal #5 (Cockpit UI Play
 - Chaos Drill Scheduler built (selftest 3/3 PASS) but schedule registration blocked: no COM or elev.py in sandbox.
 - Goal #9 Policy Conflict Detector fixed+verified; Goal #10 Cockpit Runbook Trigger built, verification pending.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist fixed 2 dangling INDEX pointers (designer c11→c10, failover_drill.py→[MISSING]); index_check 40→38. Evidence: memory/archivist/evi
 - Builder Cycle-14 goal specs (all 10) landed in memory/goals/builder.md; disk==dispatch gap closed for Builder.
 - elev.py absent at Mechanic seat (Z:\elev.py not found); blocks goals 7 (log rotation) and 2 (mirror heal)
+- Designer cycle-12: all 10 goals verified and closed (open=0). No open work remaining for Designer.
+- All 10 Builder Cycle 14 goals verified; goal #10 runbook_trigger.py selftest 7/7 PASS recorded in ledger.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
