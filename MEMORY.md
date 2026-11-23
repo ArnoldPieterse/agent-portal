@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic delivered runbook_preflight.py (11/11 pass); handoff at memory/handoffs/mechanic-to-builder-preflight-20
 - Goal #10 verified; goal #9 file corrupted
 - Runbook UI Run/Abort buttons use hardcoded hex (#2ea36b,#e5534b) + 11px — breaks dark mode, skips token/focus system
 - Stall detector must target only reachable-but-idle; down_streak already covers unreachable — avoid duplicate alerts/feedback loop
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Researcher wrote `memory/goals/mechanic-nextcycle-state-collector-forecast.md` — 7 signals, 3-cycle threshold, edge cases, restart-loop guar
 - Open: feed_refresh.py must be added to FleetStateCollector schtask chain (5-min) or cockpit-feed.json goes stale again.
 - Queued: write idle
+- Builder owes one step: run `goal_ledger.py --record bu` to append (verified:) marker for cockpit claims; uncited dropped 16→12 after fix.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
