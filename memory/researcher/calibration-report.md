@@ -1,31 +1,29 @@
 # Prediction Calibration Report
-Generated: 2026-11-22T23:46:05Z
+Generated: 2026-11-23T00:26:06Z
 
 ## Summary
 - Predictions available: **10**
 - Matched to actuals: **10**
 - Unmatched (no corresponding goal in ledger): **0**
-- **Brier score: 0.4575** (0=perfect, 1=random)
-- Mean predicted probability: 0.362
+- **Brier score: 0.7779** (0=perfect, 1=random)
+- Mean predicted probability: 0.121
 - Mean actual outcome: 1.000
 - **Calibration: UNDER-confident (predictions too low)**
 
 ## Reliability Table
 | Bin | Count | Mean Predicted | Mean Actual | Gap (Actual-Predicted) |
 |-----|-------|---------------|-------------|------------------------|
-| [0.0, 0.2) | 3 | 0.043 | 1.000 | +0.957 |
-| [0.2, 0.4) | 1 | 0.278 | 1.000 | +0.722 |
-| [0.4, 0.6) | 5 | 0.515 | 1.000 | +0.485 |
-| [0.6, 0.8) | 1 | 0.639 | 1.000 | +0.361 |
+| [0.0, 0.2) | 8 | 0.086 | 1.000 | +0.914 |
+| [0.2, 0.4) | 2 | 0.262 | 1.000 | +0.738 |
 
 ## Matched Predictions Detail
-- [CORRECT] builder / Runbook Parser + Executor: P=0.52, actual=reached
-- [CORRECT] mechanic / Fleet State Collector Daemon: P=0.52, actual=reached
-- [MISSED] designer / Cockpit Layout Design: P=0.05, actual=reached
-- [MISSED] archivist / Knowledge Index Builder: P=0.28, actual=reached
-- [CORRECT] mechanic / Model OOM Auto-Recovery: P=0.52, actual=reached
-- [MISSED] designer / Health Score Visualization: P=0.05, actual=reached
-- [CORRECT] archivist / Citation Integrity Monitor: P=0.64, actual=reached
-- [CORRECT] mechanic / Scheduled Maintenance Window: P=0.52, actual=reached
-- [CORRECT] mechanic / Host Capacity Arbitration: P=0.52, actual=reached
-- [MISSED] designer / Decision Timeline UX: P=0.04, actual=reached
+- [MISSED] researcher / Autonomy Loop-Closure Rate: P=0.07, actual=reached
+- [MISSED] researcher / Decision Confidence Estimator: P=0.09, actual=reached
+- [MISSED] researcher / Evidence-to-Decision Traceability: P=0.26, actual=reached
+- [MISSED] researcher / Prediction Calibration Tracker: P=0.09, actual=reached
+- [MISSED] researcher / Cockpit Decision-Feed Schema: P=0.07, actual=reached
+- [MISSED] researcher / Autonomous Action Replay: P=0.07, actual=reached
+- [MISSED] researcher / Autonomy Risk Register: P=0.26, actual=reached
+- [MISSED] researcher / Loop-Stall Predictor: P=0.07, actual=reached
+- [MISSED] researcher / Fleet Trust Score: P=0.13, actual=reached
+- [MISSED] researcher / Trust-Pipeline Self-Check: P=0.09, actual=reached
