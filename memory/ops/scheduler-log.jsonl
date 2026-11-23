@@ -378,3 +378,14 @@
 {"t": "2026-11-23 15:44:05", "job": "schtask_dep_weekly", "event": "start", "pid": 26680}
 {"t": "2026-11-23 15:44:10", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-23 15:44:10", "job": "schtask_dep_weekly", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:44:15", "job": "cycle_30m", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:44:15", "job": "cycle_1h", "event": "done", "rc": 2}
+{"t": "2026-11-23 15:46:14", "event": "scheduler-up", "jobs": 6}
+{"t": "2026-11-23 15:46:19", "event": "cmd-applied", "job": "cycle_5m", "action": "run"}
+{"t": "2026-11-23 15:46:24", "job": "cycle_5m", "event": "start", "pid": 23560}
+{"t": "2026-11-23 15:46:44", "job": "cycle_10m", "event": "start", "pid": 23064}
+{"t": "2026-11-23 15:46:44", "job": "cycle_30m", "event": "start", "pid": 26396}
+{"t": "2026-11-23 15:46:44", "job": "cycle_1h", "event": "start", "pid": 10888}
+{"t": "2026-11-23 15:46:44", "job": "schtask_dep_weekly", "event": "start", "pid": 29152}
+{"t": "2026-11-23 15:46:49", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:46:49", "job": "schtask_dep_weekly", "event": "done", "rc": 0}
