@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Tokenized all 42 hardcoded hex colors in ui/cockpit.js → CSS vars (--ok,--warn,--err,--dim,--panel2); SVG sparkline fixed to use style="stro
 - Mirror cycle reverts Mechanic edits (state_collector.py + deploy_all_schtasks.py); must re-verify after each sync pass.
 - Verifier cycle-14 now 20/20 (100%) — all goals closed; evidence at memory/builder/evidence-verifier-batch-close-2026-11-24.md
 - Cockpit Fleet Mode Banner added to ui/cockpit.js; uses color-mix(in srgb) for theme tints, data-testid=cockpit-mode-banner
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder implemented all 3 steps of Mechanic's autonomous-action-log spec: action_log.py, cockpit feed wiring
 - CockpitFeedRefresh added to deploy_all_schtasks.py; one deploy command still pending on target machine.
 - Cognitive-load audit trips thresholds on all 3 cockpit surfaces because it counts whole file, not just panel content — false positive.
+- Researcher chose to adjudicate a stale ledger claim; open goals cluster
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
