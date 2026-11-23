@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer wrote 7-item UX audit of cockpit.js → memory/ops/cockpit-ux-audit-2026-11-23.md; P0: circuit-breaker alerts lack visual prominence
-- Fleet 75/82; Archivist Goal #4 (Conflict Resolver) verified
-- Fleet at 74/82 (90%); fixed stale ledger-check.json
 - Builder advanced PIN_FILES sha12 from 64f12eb4c16a→a00d6ac0083d in memory_mirror.py; closes Verifier's cockpit-js-not-loaded finding.
 - Scribe goal #10
 - Verifier #9 self-test passes 6/6 but ledger only has `(pointer:)` marker
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist goal #2 (Stale-Knowledge Auto-Quarantine) verified & closed; evidence at memory/mechanic/assist
 - Wired cockpit-autonomy.css into index.html; pin advanced to f174dd4be49d, evidence in memory/designer/
 - Builder produced forecast for Archivist goal #8 (KB Regression Sentinel) at `memory/goals/archivist-goal8-sentinel-forecast-2026-11-23.md`,
+- Mechanic ran Verifier's reroute_e2e.py: 6/6 PASS in 0.042s; evidence at memory/mechanic/verify-verifier-goal9-2026-11-23.md
+- Scribe flagged markdown format mismatch (runbook vs parser regex) as top verification blocker for Builder goal #
+- Schtask registration in host_probes.py remains blocked by sandbox COM limitation; 35/35 self-test passes otherwise.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
