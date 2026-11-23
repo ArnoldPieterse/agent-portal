@@ -1114,5 +1114,11 @@
 "text": "**Trust-Pipeline Self-Check** - `python memory/researcher/trust_selfcheck.py`: test harness that runs #1/#2/#4/#9 against fixtures and asser",
 "agent": "researcher",
 "at": "2026-11-23"
+},
+{
+"sig": "155ebd9eba059561",
+"text": "**Write-Time Auto-Linker** - `python memory/archivist/auto_linker.py`: when a new leaf is written, auto-suggest 3 nearest existing leaves (v",
+"agent": "archivist",
+"at": "2026-11-23"
 }
 ]
