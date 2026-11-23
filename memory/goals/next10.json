@@ -1,18 +1,18 @@
 {
  "ok": true,
- "generated": "2026-11-24 05:12:35",
+ "generated": "2026-11-24 06:21:39",
  "fleet": {
   "done": 102,
   "total": 102,
   "pct": 100.0
  },
- "throughput_goals_per_hour": 28.93,
+ "throughput_goals_per_hour": 30.0,
  "next10": [],
  "horizons": [
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-24 05:42",
+   "end": "2026-11-24 06:51",
    "completes": 0,
    "fleet_pct": 100.0,
    "top": []
@@ -20,7 +20,7 @@
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-24 06:12",
+   "end": "2026-11-24 07:21",
    "completes": 0,
    "fleet_pct": 100.0,
    "top": []
@@ -28,7 +28,7 @@
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-25 05:12",
+   "end": "2026-11-25 06:21",
    "completes": 0,
    "fleet_pct": 100.0,
    "top": []
@@ -36,7 +36,7 @@
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-01 05:12",
+   "end": "2026-12-01 06:21",
    "completes": 0,
    "fleet_pct": 100.0,
    "top": [],
@@ -94,7 +94,7 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-24 05:12",
+   "end": "2026-12-24 06:21",
    "completes": 0,
    "fleet_pct": 100.0,
    "top": [],
@@ -154,43 +154,43 @@
   "archivist": {
    "done": 20,
    "total": 20,
-   "end": "2026-11-24 05:12"
+   "end": "2026-11-24 06:21"
   },
   "builder": {
    "done": 20,
    "total": 20,
-   "end": "2026-11-24 05:12"
+   "end": "2026-11-24 06:21"
   },
   "designer": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-24 05:12"
+   "end": "2026-11-24 06:21"
   },
   "mechanic": {
    "done": 9,
    "total": 9,
-   "end": "2026-11-24 05:12"
+   "end": "2026-11-24 06:21"
   },
   "orchestrator": {
    "done": 3,
    "total": 3,
-   "end": "2026-11-24 05:12"
+   "end": "2026-11-24 06:21"
   },
   "researcher": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-24 05:12"
+   "end": "2026-11-24 06:21"
   },
   "scribe": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-24 05:12"
+   "end": "2026-11-24 06:21"
   },
   "verifier": {
    "done": 20,
    "total": 20,
-   "end": "2026-11-24 05:12"
+   "end": "2026-11-24 06:21"
   }
  },
- "level_up_eta": "2026-11-24 05:12"
+ "level_up_eta": "2026-11-24 06:21"
 }
