@@ -723,3 +723,4 @@
 {"ts": "2026-11-23 19:41:06", "run": "g-1a207c7d52c-df35cc", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-23 19:43:36", "run": "g-1a207ca2022-098095", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-23 19:46:06", "run": "g-1a207cc6b12-0ca3dd", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
+{"ts": "2026-11-23 19:49:07", "run": "g-1a207cf2b5a-0efef2", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
