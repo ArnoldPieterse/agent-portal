@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 9843 | flagged (<0.35): 0
+Leaves: 9857 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9193,14 +9193,18 @@ Leaves: 9843 | flagged (<0.35): 0
 | memory/archivist/evidence-assist-ops-actionlog-index-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-citation-cockpit-frontend-reindex-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-feed-refresh-integration-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-ops-index-closed-loop-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-stale-pointer-sweep-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/archivist/kb-delta-selftest-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/archivist/semantic-index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic_index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic_search.py | 0 | 0 | n | 0.550 |
 | memory/builder/decision-index.db | 0 | 0 | n | 0.550 |
 | memory/builder/decision_index.py | 0 | 0 | n | 0.550 |
+| memory/builder/evidence-autonomous-actions-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-idle-maintenance-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-runbook-trigger-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/builder/evidence-verifier-batch-close-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-verifier-latency-budget-close-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/feed-refresh-run-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/goal10_verification.py | 0 | 0 | n | 0.550 |
@@ -9244,6 +9248,8 @@ Leaves: 9843 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261124-030002.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-040506.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-051235.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-062139.json | 0 | 0 | n | 0.550 |
+| memory/handoffs/HO-20261124-fleet-state-collector-schtasks.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/mechanic-to-builder-preflight-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/scribe-to-builder-topology-visualizer-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_5_20261124-015216.md | 0 | 0 | n | 0.550 |
@@ -9257,6 +9263,7 @@ Leaves: 9843 | flagged (<0.35): 0
 | memory/mechanic/evidence-assist-action-log-spec-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-autonomous-remediation-runbook-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/feed-refresh-integrated-into-collector-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/feed-refresh-reintegrated-mirror-revert-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook_preflight.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook_preflight_selftest.py | 0 | 0 | n | 0.550 |
@@ -9270,6 +9277,7 @@ Leaves: 9843 | flagged (<0.35): 0
 | memory/ops/claim-phantom-report.md | 0 | 0 | n | 0.550 |
 | memory/ops/closed-loop-readiness-scorecard-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/cockpit-data-provenance-spec-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/ops/dangling_pointer_fix.py | 0 | 0 | n | 0.550 |
 | memory/ops/data-freshness-escalation-protocol-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
 | memory/ops/feed-refresh-fix-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9294,12 +9302,14 @@ Leaves: 9843 | flagged (<0.35): 0
 | memory/ops/post-mortems/post-mortems.jsonl | 0 | 0 | n | 0.550 |
 | memory/orchestrator/action-log-implemented-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/evidence-assist-archivist-forecast-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/orchestrator/evidence-fleet-state-collector-schtasks-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/todo-sync-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/researcher/builder-cycle14-sweep-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/researcher/cockpit-closedloop-rootcause-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/researcher/cockpit-feed-loop-assist-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/researcher/evidence-assist-verifier-stall-detector-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/researcher/ledger_sweep.json | 0 | 0 | n | 0.550 |
+| memory/scribe/assist-archivist-goal2-semantic-search-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-builder-goal9-policy-conflict-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/closed-loop-scorecard-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-data-freshness-protocol-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9320,6 +9330,7 @@ Leaves: 9843 | flagged (<0.35): 0
 | memory/verifier/cycle14-goals1-5-repro-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/failure-replay-harness-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/failure_replay.py | 0 | 0 | n | 0.550 |
+| memory/verifier/feed-closed-loop-reverify-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/feed-refresh-scheduling-gap-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/fleet-health-closed-loop-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/fleet_health_closed_loop_results.jsonl | 0 | 0 | n | 0.550 |
@@ -9521,12 +9532,14 @@ Leaves: 9843 | flagged (<0.35): 0
 | memory/builder/evidence-cockpit-feed-loop-verified-2026-11-24.md | 0 | 1 | Y | 0.769 |
 | memory/builder/policy_conflict.py | 0 | 1 | Y | 0.769 |
 | memory/designer/cycle12-full-closure-2026-11-24.md | 0 | 1 | Y | 0.769 |
+| memory/designer/evidence-cockpit-mode-banner-2026-11-24.md | 0 | 1 | Y | 0.769 |
 | memory/designer/evidence-cockpit-testability-2026-11-24.md | 0 | 1 | Y | 0.769 |
 | memory/designer/evidence-cockpit-token-completion-2026-11-24.md | 0 | 1 | Y | 0.769 |
 | memory/designer/runbook-trigger-token-refactor-2026-11-24.md | 0 | 1 | Y | 0.769 |
 | memory/goals/mechanic-nextcycle-state-collector-forecast.md | 0 | 1 | Y | 0.769 |
 | memory/goals/verifier-goal3-stall-detector-forecast.md | 0 | 1 | Y | 0.769 |
 | memory/ops/cockpit-feed-refresh-loop-spec-2026-11-24.md | 0 | 1 | Y | 0.769 |
+| memory/orchestrator/contribution-dangling-pointer-fix-2026-11-24.md | 0 | 1 | Y | 0.769 |
 | memory/portal/planning-2026-11-13.md | 2 | 9 | n | 0.769 |
 | memory/researcher/cockpit-closedloop-followup-2026-11-24.md | 0 | 1 | Y | 0.769 |
 | memory/goals/builder.md | 0 | 8 | n | 0.770 |
@@ -9705,7 +9718,7 @@ Leaves: 9843 | flagged (<0.35): 0
 | memory/researcher/mirror-revert-fix1-promotion-gap-2026-11-18.md | 6 | 3 | Y | 0.805 |
 | memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.md | 6 | 3 | Y | 0.805 |
 | memory/researcher/understanding.py | 6 | 3 | Y | 0.805 |
-| memory/builder/evidence-cockpit-frontend-2026-11-24.md | 0 | 2 | Y | 0.810 |
+| memory/archivist/evidence-builder-cockpit-leaf-indexed-2026-11-24.md | 0 | 2 | Y | 0.810 |
 | memory/ops/autonomous-action-log-spec-2026-11-24.md | 0 | 2 | Y | 0.810 |
 | memory/archivist/supersession-findings-2026-11-16.md | 5 | 3 | Y | 0.811 |
 | memory/archivist/xref_check.py | 5 | 3 | Y | 0.811 |
@@ -9793,6 +9806,7 @@ Leaves: 9843 | flagged (<0.35): 0
 | memory/researcher/sync-clobber-analysis-2026-11-13.md | 11 | 6 | Y | 0.833 |
 | memory/archivist/instances-md-pin-reconcile-2026-11-14.md | 10 | 6 | Y | 0.839 |
 | memory/archivist/llm-module-white-convention-r21.md | 10 | 6 | Y | 0.839 |
+| memory/builder/evidence-cockpit-frontend-2026-11-24.md | 0 | 3 | Y | 0.839 |
 | memory/goals/designer.md | 0 | 3 | Y | 0.839 |
 | memory/orchestrator/goal9-cycle-cost-tracker-2026-11-20.md | 4 | 4 | Y | 0.839 |
 | memory/researcher/farm-relpath-diagnosis-2026-11-14.md | 10 | 6 | Y | 0.839 |
