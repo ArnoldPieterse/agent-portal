@@ -1,6 +1,6 @@
 {
  "ok": true,
- "generated": "2026-11-23 17:55:48",
+ "generated": "2026-11-23 19:21:56",
  "fleet": {
   "done": 74,
   "total": 82,
@@ -14,7 +14,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.325,
-   "eta": "2026-11-23 21:31",
+   "eta": "2026-11-23 22:57",
    "hours": 3.59,
    "order": 0,
    "rank": 1,
@@ -24,12 +24,12 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-23 21:31 (P=32%)",
+   "outcome": "reached ~2026-11-23 22:57 (P=32%)",
    "consequences": [
-    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 02:13) - shared scope archivist,knowledge",
-    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 08:27) - shared scope archivist,knowledge",
-    "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 12:02) - shared scope archivist,knowledge",
-    "lane end archivist: 11-25 04:38 (slowest lane)"
+    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
+    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge",
+    "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 13:29) - shared scope archivist,knowledge",
+    "lane end archivist: 11-25 06:04 (slowest lane)"
    ]
   },
   {
@@ -38,7 +38,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.278,
-   "eta": "2026-11-24 02:13",
+   "eta": "2026-11-24 03:39",
    "hours": 4.7,
    "order": 1,
    "rank": 2,
@@ -49,12 +49,12 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 02:13 (P=28%)",
+   "outcome": "reached ~2026-11-24 03:39 (P=28%)",
    "consequences": [
-    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 21:31) - shared scope archivist,knowledge",
-    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 08:27) - shared scope archivist,knowledge",
-    "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 12:02) - shared scope archivist,knowledge",
-    "lane end archivist: 11-25 04:38 (slowest lane)"
+    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
+    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge",
+    "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 13:29) - shared scope archivist,knowledge",
+    "lane end archivist: 11-25 06:04 (slowest lane)"
    ]
   },
   {
@@ -63,7 +63,7 @@
    "type": "research",
    "complexity": 2,
    "p_reached": 0.435,
-   "eta": "2026-11-24 08:27",
+   "eta": "2026-11-24 09:53",
    "hours": 6.24,
    "order": 2,
    "rank": 3,
@@ -73,12 +73,12 @@
     "compute/detect per protocol",
     "write findings leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 08:27 (P=44%)",
+   "outcome": "reached ~2026-11-24 09:53 (P=44%)",
    "consequences": [
-    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 21:31) - shared scope archivist,knowledge",
-    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 02:13) - shared scope archivist,knowledge",
-    "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 12:02) - shared scope archivist,knowledge,leaves",
-    "lane end archivist: 11-25 04:38 (slowest lane)"
+    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
+    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
+    "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 13:29) - shared scope archivist,knowledge,leaves",
+    "lane end archivist: 11-25 06:04 (slowest lane)"
    ]
   },
   {
@@ -87,7 +87,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.325,
-   "eta": "2026-11-24 12:02",
+   "eta": "2026-11-24 13:29",
    "hours": 3.59,
    "order": 3,
    "rank": 4,
@@ -97,12 +97,12 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 12:02 (P=32%)",
+   "outcome": "reached ~2026-11-24 13:29 (P=32%)",
    "consequences": [
-    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 21:31) - shared scope archivist,knowledge",
-    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 02:13) - shared scope archivist,knowledge",
-    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 08:27) - shared scope archivist,knowledge,leaves",
-    "lane end archivist: 11-25 04:38 (slowest lane)"
+    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
+    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
+    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge,leaves",
+    "lane end archivist: 11-25 06:04 (slowest lane)"
    ]
   },
   {
@@ -111,7 +111,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.325,
-   "eta": "2026-11-24 15:38",
+   "eta": "2026-11-24 17:04",
    "hours": 3.59,
    "order": 4,
    "rank": 5,
@@ -121,12 +121,12 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 15:38 (P=32%)",
+   "outcome": "reached ~2026-11-24 17:04 (P=32%)",
    "consequences": [
-    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 21:31) - shared scope archivist,knowledge",
-    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 02:13) - shared scope archivist,knowledge",
-    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 08:27) - shared scope archivist,knowledge,leaves",
-    "lane end archivist: 11-25 04:38 (slowest lane)"
+    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
+    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
+    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge,leaves",
+    "lane end archivist: 11-25 06:04 (slowest lane)"
    ]
   },
   {
@@ -135,7 +135,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.278,
-   "eta": "2026-11-24 20:20",
+   "eta": "2026-11-24 21:46",
    "hours": 4.7,
    "order": 5,
    "rank": 6,
@@ -146,9 +146,9 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 20:20 (P=28%)",
+   "outcome": "reached ~2026-11-24 21:46 (P=28%)",
    "consequences": [
-    "lane end archivist: 11-25 04:38 (slowest lane)"
+    "lane end archivist: 11-25 06:04 (slowest lane)"
    ]
   },
   {
@@ -157,7 +157,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.325,
-   "eta": "2026-11-24 23:55",
+   "eta": "2026-11-25 01:21",
    "hours": 3.59,
    "order": 6,
    "rank": 7,
@@ -167,9 +167,9 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 23:55 (P=32%)",
+   "outcome": "reached ~2026-11-25 01:21 (P=32%)",
    "consequences": [
-    "lane end archivist: 11-25 04:38 (slowest lane)"
+    "lane end archivist: 11-25 06:04 (slowest lane)"
    ]
   },
   {
@@ -178,7 +178,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.278,
-   "eta": "2026-11-25 04:38",
+   "eta": "2026-11-25 06:04",
    "hours": 4.7,
    "order": 7,
    "rank": 8,
@@ -189,12 +189,12 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-25 04:38 (P=28%)",
+   "outcome": "reached ~2026-11-25 06:04 (P=28%)",
    "consequences": [
-    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 21:31) - shared scope archivist,knowledge",
-    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 02:13) - shared scope archivist,cycle,knowledge",
-    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 08:27) - shared scope archivist,knowledge,state",
-    "lane end archivist: 11-25 04:38 (slowest lane)"
+    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
+    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,cycle,knowledge",
+    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge,state",
+    "lane end archivist: 11-25 06:04 (slowest lane)"
    ]
   }
  ],
@@ -202,7 +202,7 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-23 18:25",
+   "end": "2026-11-23 19:51",
    "completes": 0,
    "fleet_pct": 90.2,
    "top": []
@@ -210,7 +210,7 @@
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-23 18:55",
+   "end": "2026-11-23 20:21",
    "completes": 0,
    "fleet_pct": 90.2,
    "top": []
@@ -218,29 +218,29 @@
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-24 17:55",
+   "end": "2026-11-24 19:21",
    "completes": 5,
    "fleet_pct": 96.3,
    "top": [
-    "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 21:31)",
-    "#2 archivist: Knowledge Delta Feed (2026-11-24 02:13)",
-    "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 08:27)",
-    "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 12:02)",
-    "#5 archivist: Knowledge Access Heatmap (2026-11-24 15:38)"
+    "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 22:57)",
+    "#2 archivist: Knowledge Delta Feed (2026-11-24 03:39)",
+    "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 09:53)",
+    "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 13:29)",
+    "#5 archivist: Knowledge Access Heatmap (2026-11-24 17:04)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-11-30 17:55",
+   "end": "2026-11-30 19:21",
    "completes": 8,
    "fleet_pct": 100.0,
    "top": [
-    "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 21:31)",
-    "#2 archivist: Knowledge Delta Feed (2026-11-24 02:13)",
-    "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 08:27)",
-    "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 12:02)",
-    "#5 archivist: Knowledge Access Heatmap (2026-11-24 15:38)"
+    "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 22:57)",
+    "#2 archivist: Knowledge Delta Feed (2026-11-24 03:39)",
+    "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 09:53)",
+    "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 13:29)",
+    "#5 archivist: Knowledge Access Heatmap (2026-11-24 17:04)"
    ],
    "next_cycle_candidates": [
     {
@@ -296,15 +296,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-23 17:55",
+   "end": "2026-12-23 19:21",
    "completes": 8,
    "fleet_pct": 100.0,
    "top": [
-    "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 21:31)",
-    "#2 archivist: Knowledge Delta Feed (2026-11-24 02:13)",
-    "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 08:27)",
-    "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 12:02)",
-    "#5 archivist: Knowledge Access Heatmap (2026-11-24 15:38)"
+    "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 22:57)",
+    "#2 archivist: Knowledge Delta Feed (2026-11-24 03:39)",
+    "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 09:53)",
+    "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 13:29)",
+    "#5 archivist: Knowledge Access Heatmap (2026-11-24 17:04)"
    ],
    "next_cycle_candidates": [
     {
@@ -362,43 +362,43 @@
   "archivist": {
    "done": 12,
    "total": 20,
-   "end": "2026-11-25 04:38"
+   "end": "2026-11-25 06:04"
   },
   "builder": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 17:55"
+   "end": "2026-11-23 19:21"
   },
   "designer": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 17:55"
+   "end": "2026-11-23 19:21"
   },
   "mechanic": {
    "done": 9,
    "total": 9,
-   "end": "2026-11-23 17:55"
+   "end": "2026-11-23 19:21"
   },
   "orchestrator": {
    "done": 3,
    "total": 3,
-   "end": "2026-11-23 17:55"
+   "end": "2026-11-23 19:21"
   },
   "researcher": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 17:55"
+   "end": "2026-11-23 19:21"
   },
   "scribe": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 17:55"
+   "end": "2026-11-23 19:21"
   },
   "verifier": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 17:55"
+   "end": "2026-11-23 19:21"
   }
  },
- "level_up_eta": "2026-11-25 04:38"
+ "level_up_eta": "2026-11-25 06:04"
 }
