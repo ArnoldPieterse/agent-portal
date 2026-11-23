@@ -1312,5 +1312,11 @@
 "text": "**Decision Audit Search Index** - SQLite FTS5 index over decision-log.jsonl: full-text search by agent, goal_id, keyword; returns ranked res",
 "agent": "builder",
 "at": "2026-11-24"
+},
+{
+"sig": "2e1dcdcd42308190",
+"text": "**Post-Remediation Auto-Report** - `python memory/builder/post_mortem.py`: when a remediation cycle completes (detect\u2192diagnose\u2192fix\u2192verify), ",
+"agent": "builder",
+"at": "2026-11-24"
 }
 ]
