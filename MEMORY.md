@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fleet progress: 75/82 goals complete after assisting Archivist Goal #5 (kb_feedback selftest 5/5 PASS).
 - All 10 Archivist goals formally tagged [REACHED]; lane fully closed, dashboard should show 10/10.
 - Archivist lane fully closed: all 10 goals marked [REACHED] in memory/goals/archivist.md; no open work remains.
 - auto_quarantine.py verified 7/7 PASS + clean prod run (7652 files); only remaining step: schedule via schtasks
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 20 Archivist goals (cycle-9+12) confirmed [REACHED];
 - next10.json forecast is stale: shows Archivist with open goals but all 20 are [REACHED];
 - Fixed bug in auto_linker.py: idempotency check omitted marker line from end_offset, causing stale blocks to persist on re-run.
+- Archivist lane fully closed: 20/20 goals [REACHED] (2026-11-23). Auto-loop kept firing on stale cycle-12
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
