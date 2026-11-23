@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder cycle-14: goals 1–5 verified; now building goal #6 Cockpit Topology Visual
-- All 10 Cycle-14 Verifier goals (1–10) verified and ledger-recorded; no open Verifier goals remain.
 - Goal 10
 - Builder cycle: goals 1–7 done; #8 (post_mortem.py) selftest 5/5 PASS, 3 post-mortems generated
 - All 10 goals reached; Goal #10 fixed by making audit recognize `var(--token, fallback)` as state tokens.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 5 cycle-14 Builder goals (loop_scorer, policy_tuner, alert_correlate, capacity_predict, chaos_drill) verified in memory/go
 - Cycle-12 Designer: all 10 goals verified & ledger-recorded (10/10, open=0). No remaining work.
 - All 10 Cycle-14 Verifier goals verified & ledger-recorded; remediation
+- Designer lane fully closed: 10/1
+- Builder goals #11–15 (loop_scorer, policy_tuner, alert_correlate, capacity_predict, chaos_drill) all verified and recorded in memory/goals/b
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

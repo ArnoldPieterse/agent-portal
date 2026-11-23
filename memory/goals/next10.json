@@ -1,80 +1,59 @@
 {
  "ok": true,
- "generated": "2026-11-23 22:45:40",
+ "generated": "2026-11-23 23:47:30",
  "fleet": {
-  "done": 64,
+  "done": 73,
   "total": 102,
-  "pct": 62.7
+  "pct": 71.6
  },
  "throughput_goals_per_hour": 22.39,
  "next10": [
-  {
-   "agent": "researcher",
-   "goal": "**Self-Healing Remediation Bus** - `python memory/researcher/remediation_bus.py`: consume detector outputs (stale_claim_scan, dispatch_desync, reach_matrix, clobber-manifest) and APPLY safe, idempotent remediations \u2014 re-",
-   "type": "verify",
-   "complexity": 1,
-   "p_reached": 0.51,
-   "eta": "2026-11-24 00:22",
-   "hours": 1.61,
-   "order": 0,
-   "rank": 1,
-   "title": "Self-Healing Remediation Bus",
-   "steps": [
-    "build the test battery / audit script",
-    "run against live sources",
-    "record verdict + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-24 00:22 (P=51%)",
-   "consequences": [
-    "researcher: **Calibration-to-Dispatch Feedback** - `python memory/resear (2026-11-24 13:28) - shared scope dispatch,researcher",
-    "researcher: **Blocker -> Catch -> Fix -> Verify Runbook** - `memory/rese (2026-11-24 15:05) - shared scope detector,remediation,researcher",
-    "researcher: **Closed-Loop Failure-Mutation Library** - `python memory/re (2026-11-25 03:52) - shared scope clobber,desync,researcher",
-    "lane end designer: 11-25 12:47 (slowest lane)"
-   ]
-  },
   {
    "agent": "verifier",
    "goal": "**Autonomous Remediation E2E** \u2014 full closed-loop fault-injection test (detect\u2192diagnose\u2192remediate\u2192verify) with per-stage SLA",
    "type": "verify",
    "complexity": 1,
    "p_reached": 0.758,
-   "eta": "2026-11-24 00:32",
+   "eta": "2026-11-24 01:34",
    "hours": 1.78,
    "order": 0,
-   "rank": 2,
+   "rank": 1,
    "title": "Autonomous Remediation E2E",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-24 00:32 (P=76%)",
+   "outcome": "reached ~2026-11-24 01:34 (P=76%)",
    "consequences": [
-    "builder: Automated Chaos Drill Scheduler (periodic fault injection +  (2026-11-24 12:09) - shared scope fault,injection,verify",
-    "researcher: **Blocker -> Catch -> Fix -> Verify Runbook** - `memory/rese (2026-11-24 15:05) - shared scope remediation,verify",
-    "verifier: **Fleet Health Closed-Loop Test** \u2014 simulate VRAM/OOM degrad (2026-11-24 17:49) - shared scope autonomous,closed,verify",
-    "lane end designer: 11-25 12:47 (slowest lane)"
+    "builder: **Automated Chaos Drill Scheduler** - `python memory/builder (2026-11-24 18:23) - shared scope fault,injection",
+    "verifier: **Fleet Health Closed-Loop Test** \u2014 simulate VRAM/OOM degrad (2026-11-24 18:51) - shared scope autonomous,closed,verify",
+    "designer: **Autonomy Confidence Decay Indicator** - Design how an auto (2026-11-24 22:36) - shared scope autonomous,closed",
+    "lane end designer: 11-25 13:48 (slowest lane)"
    ]
   },
   {
    "agent": "builder",
-   "goal": "Closed-Loop Feedback Scorer (score each loop 0-1)",
+   "goal": "**Closed-Loop Feedback Scorer** - `python memory/builder/loop_scorer.py`: score each autonomy loop iteration 0\u20131 based on three factors: progress (file change, measurement, or evidence produced in the pass), efficiency (",
    "type": "measurement",
-   "complexity": 1,
-   "p_reached": 0.459,
-   "eta": "2026-11-24 01:07",
-   "hours": 2.36,
+   "complexity": 2,
+   "p_reached": 0.224,
+   "eta": "2026-11-24 03:15",
+   "hours": 3.46,
    "order": 0,
-   "rank": 3,
-   "title": "Closed-Loop Feedback Scorer (score each loop 0-1)",
+   "rank": 2,
+   "title": "Closed-Loop Feedback Scorer",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 01:07 (P=46%)",
+   "outcome": "reached ~2026-11-24 03:15 (P=22%)",
    "consequences": [
-    "lane end designer: 11-25 12:47 (slowest lane)"
+    "designer: **Decision Provenance Overlay** - Design the \"where did this (2026-11-24 07:21) - shared scope autonomy,score",
+    "verifier: **Closed-Loop Latency Budget** \u2014 measure per-segment latency (2026-11-24 10:25) - shared scope autonomy,closed",
+    "designer: **Autonomy Confidence Decay Indicator** - Design how an auto (2026-11-24 22:36) - shared scope autonomy,closed",
+    "lane end designer: 11-25 13:48 (slowest lane)"
    ]
   },
   {
@@ -83,20 +62,20 @@
    "type": "measurement",
    "complexity": 1,
    "p_reached": 0.459,
-   "eta": "2026-11-24 02:54",
+   "eta": "2026-11-24 03:56",
    "hours": 2.36,
    "order": 1,
-   "rank": 4,
+   "rank": 3,
    "title": "Cockpit Live-Staleness Monitor",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 02:54 (P=46%)",
+   "outcome": "reached ~2026-11-24 03:56 (P=46%)",
    "consequences": [
-    "verifier: **Cockpit A11y Gate (WCAG AA)** \u2014 automated contrast, keyboa (2026-11-24 20:54) - shared scope check,cockpit",
-    "lane end designer: 11-25 12:47 (slowest lane)"
+    "verifier: **Cockpit A11y Gate (WCAG AA)** \u2014 automated contrast, keyboa (2026-11-24 21:56) - shared scope check,cockpit",
+    "lane end designer: 11-25 13:48 (slowest lane)"
    ]
   },
   {
@@ -105,10 +84,10 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.037,
-   "eta": "2026-11-24 03:04",
+   "eta": "2026-11-24 04:06",
    "hours": 4.32,
    "order": 0,
-   "rank": 5,
+   "rank": 4,
    "title": "Adaptive Information Density (Calm vs. Incident)",
    "steps": [
     "scaffold the module file",
@@ -116,57 +95,36 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 03:04 (P=4%)",
+   "outcome": "reached ~2026-11-24 04:06 (P=4%)",
    "consequences": [
-    "designer: **Decision Provenance Overlay** - Design the \"where did this (2026-11-24 06:19) - shared scope cockpit,design,health",
-    "designer: **Predictive Risk Surface (Forward-Looking)** - Design the f (2026-11-24 10:39) - shared scope design,panel",
-    "designer: **Operator Emergency Brake UX** - Design the intervention pa (2026-11-24 16:06) - shared scope design,shows",
-    "lane end designer: 11-25 12:47 (slowest lane)"
+    "designer: **Decision Provenance Overlay** - Design the \"where did this (2026-11-24 07:21) - shared scope cockpit,design,health",
+    "designer: **Predictive Risk Surface (Forward-Looking)** - Design the f (2026-11-24 11:40) - shared scope design,panel",
+    "designer: **Operator Emergency Brake UX** - Design the intervention pa (2026-11-24 17:08) - shared scope design,shows",
+    "lane end designer: 11-25 13:48 (slowest lane)"
    ]
   },
   {
    "agent": "builder",
-   "goal": "Adaptive Policy Tuner (propose threshold adjustments from low scores)",
-   "type": "build",
-   "complexity": 1,
-   "p_reached": 0.405,
-   "eta": "2026-11-24 04:12",
-   "hours": 3.08,
-   "order": 1,
-   "rank": 6,
-   "title": "Adaptive Policy Tuner (propose threshold adjustments from low scores)",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-24 04:12 (P=40%)",
-   "consequences": [
-    "lane end designer: 11-25 12:47 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "researcher",
-   "goal": "**Instrument ROI / Effort-Attribution Model** - `python memory/researcher/instrument_roi.py`: using loop_telemetry.jsonl + closure data, attribute changes in empty-pass rate and blocker-resolution time to the specific in",
-   "type": "build",
+   "goal": "**Adaptive Policy Tuner** - `python memory/builder/policy_tuner.py`: read loop_scores.jsonl; compute rolling 5-loop average per agent; when an agent's average drops below 0.4, generate a concrete threshold-adjustment pro",
+   "type": "measurement",
    "complexity": 2,
-   "p_reached": 0.072,
-   "eta": "2026-11-24 04:44",
-   "hours": 4.37,
+   "p_reached": 0.224,
+   "eta": "2026-11-24 06:42",
+   "hours": 3.46,
    "order": 1,
-   "rank": 7,
-   "title": "Instrument ROI / Effort-Attribution Model",
+   "rank": 5,
+   "title": "Adaptive Policy Tuner",
    "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 04:44 (P=7%)",
+   "outcome": "reached ~2026-11-24 06:42 (P=22%)",
    "consequences": [
-    "researcher: **Blocker -> Catch -> Fix -> Verify Runbook** - `memory/rese (2026-11-24 15:05) - shared scope blocker,researcher",
-    "lane end designer: 11-25 12:47 (slowest lane)"
+    "builder: **Fleet Capacity Predictor** - `python memory/builder/capaci (2026-11-24 15:48) - shared scope builder,compute,jsonl",
+    "builder: **Decision Audit Search Index** - SQLite FTS5 index over dec (2026-11-25 01:30) - shared scope builder,jsonl",
+    "builder: **Post-Remediation Auto-Report** - `python memory/builder/po (2026-11-25 04:05) - shared scope builder,generate",
+    "lane end designer: 11-25 13:48 (slowest lane)"
    ]
   },
   {
@@ -175,22 +133,22 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.046,
-   "eta": "2026-11-24 06:19",
+   "eta": "2026-11-24 07:21",
    "hours": 3.25,
    "order": 1,
-   "rank": 8,
+   "rank": 6,
    "title": "Decision Provenance Overlay",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 06:19 (P=5%)",
+   "outcome": "reached ~2026-11-24 07:21 (P=5%)",
    "consequences": [
-    "designer: **Adaptive Information Density (Calm vs. Incident)** - Desig (2026-11-24 03:04) - shared scope cockpit,design,health",
-    "designer: **Predictive Risk Surface (Forward-Looking)** - Design the f (2026-11-24 10:39) - shared scope design,panel,showing",
-    "verifier: **Fleet Health Closed-Loop Test** \u2014 simulate VRAM/OOM degrad (2026-11-24 17:49) - shared scope chain,health",
-    "lane end designer: 11-25 12:47 (slowest lane)"
+    "builder: **Closed-Loop Feedback Scorer** - `python memory/builder/loo (2026-11-24 03:15) - shared scope autonomy,score",
+    "designer: **Adaptive Information Density (Calm vs. Incident)** - Desig (2026-11-24 04:06) - shared scope cockpit,design,health",
+    "designer: **Predictive Risk Surface (Forward-Looking)** - Design the f (2026-11-24 11:40) - shared scope design,panel,showing",
+    "lane end designer: 11-25 13:48 (slowest lane)"
    ]
   },
   {
@@ -199,42 +157,91 @@
    "type": "research",
    "complexity": 1,
    "p_reached": 0.576,
-   "eta": "2026-11-24 07:01",
+   "eta": "2026-11-24 08:03",
    "hours": 4.13,
    "order": 2,
-   "rank": 9,
+   "rank": 7,
    "title": "Autonomy Stall Detector",
    "steps": [
     "gather sources from memory/ (pointer map)",
     "compute/detect per protocol",
     "write findings leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 07:01 (P=58%)",
+   "outcome": "reached ~2026-11-24 08:03 (P=58%)",
    "consequences": [
-    "designer: **Cross-Cycle Trend Strip** - Design a persistent horizontal (2026-11-25 06:13) - shared scope across,autonomy",
-    "lane end designer: 11-25 12:47 (slowest lane)"
+    "designer: **Cross-Cycle Trend Strip** - Design a persistent horizontal (2026-11-25 07:14) - shared scope across,autonomy",
+    "lane end designer: 11-25 13:48 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "verifier",
+   "goal": "**Closed-Loop Latency Budget** \u2014 measure per-segment latency of the autonomy cycle; enforce configurable budgets",
+   "type": "measurement",
+   "complexity": 1,
+   "p_reached": 0.459,
+   "eta": "2026-11-24 10:25",
+   "hours": 2.36,
+   "order": 3,
+   "rank": 8,
+   "title": "Closed-Loop Latency Budget",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-24 10:25 (P=46%)",
+   "consequences": [
+    "builder: **Closed-Loop Feedback Scorer** - `python memory/builder/loo (2026-11-24 03:15) - shared scope autonomy,closed",
+    "designer: **Autonomy Confidence Decay Indicator** - Design how an auto (2026-11-24 22:36) - shared scope autonomy,closed",
+    "designer: **Cross-Cycle Trend Strip** - Design a persistent horizontal (2026-11-25 07:14) - shared scope autonomy,cycle",
+    "lane end designer: 11-25 13:48 (slowest lane)"
    ]
   },
   {
    "agent": "builder",
-   "goal": "Alert Correlation Engine (group alerts \u2192 incidents)",
+   "goal": "**Alert Correlation Engine** - `python memory/builder/alert_correlate.py`: consume raw alerts from fleet probes (memory/fleet/*.json) + OPS-NOTES in memory/ops/blockers.md; group temporally-close (< 5 min window) and top",
    "type": "build",
-   "complexity": 1,
-   "p_reached": 0.405,
-   "eta": "2026-11-24 07:17",
-   "hours": 3.08,
+   "complexity": 2,
+   "p_reached": 0.188,
+   "eta": "2026-11-24 11:15",
+   "hours": 4.55,
    "order": 2,
-   "rank": 10,
-   "title": "Alert Correlation Engine (group alerts \u2192 incidents)",
+   "rank": 9,
+   "title": "Alert Correlation Engine",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 07:17 (P=40%)",
+   "outcome": "reached ~2026-11-24 11:15 (P=19%)",
    "consequences": [
-    "lane end designer: 11-25 12:47 (slowest lane)"
+    "lane end designer: 11-25 13:48 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "designer",
+   "goal": "**Predictive Risk Surface (Forward-Looking)** - Design the forward-looking risk panel: renders next10.json forecast data as a horizontal timeline showing predicted fleet state 1-10 cycles ahead, with confidence bands (hi",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.037,
+   "eta": "2026-11-24 11:40",
+   "hours": 4.32,
+   "order": 2,
+   "rank": 10,
+   "title": "Predictive Risk Surface (Forward-Looking)",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-24 11:40 (P=4%)",
+   "consequences": [
+    "designer: **Adaptive Information Density (Calm vs. Incident)** - Desig (2026-11-24 04:06) - shared scope design,panel",
+    "designer: **Decision Provenance Overlay** - Design the \"where did this (2026-11-24 07:21) - shared scope design,panel,showing",
+    "designer: **Autonomy Confidence Decay Indicator** - Design how an auto (2026-11-24 22:36) - shared scope confidence,design",
+    "lane end designer: 11-25 13:48 (slowest lane)"
    ]
   }
  ],
@@ -242,45 +249,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-23 23:15",
+   "end": "2026-11-24 00:17",
    "completes": 0,
-   "fleet_pct": 62.7,
+   "fleet_pct": 71.6,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-23 23:45",
+   "end": "2026-11-24 00:47",
    "completes": 0,
-   "fleet_pct": 62.7,
+   "fleet_pct": 71.6,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-24 22:45",
-   "completes": 29,
+   "end": "2026-11-24 23:47",
+   "completes": 20,
    "fleet_pct": 91.2,
    "top": [
-    "#1 researcher: Self-Healing Remediation Bus (2026-11-24 00:22)",
-    "#2 verifier: Autonomous Remediation E2E (2026-11-24 00:32)",
-    "#3 builder: Closed-Loop Feedback Scorer (score each loop 0-1) (2026-11-24 01:07)",
-    "#4 verifier: Cockpit Live-Staleness Monitor (2026-11-24 02:54)",
-    "#5 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 03:04)"
+    "#1 verifier: Autonomous Remediation E2E (2026-11-24 01:34)",
+    "#2 builder: Closed-Loop Feedback Scorer (2026-11-24 03:15)",
+    "#3 verifier: Cockpit Live-Staleness Monitor (2026-11-24 03:56)",
+    "#4 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 04:06)",
+    "#5 builder: Adaptive Policy Tuner (2026-11-24 06:42)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-11-30 22:45",
-   "completes": 38,
+   "end": "2026-11-30 23:47",
+   "completes": 29,
    "fleet_pct": 100.0,
    "top": [
-    "#1 researcher: Self-Healing Remediation Bus (2026-11-24 00:22)",
-    "#2 verifier: Autonomous Remediation E2E (2026-11-24 00:32)",
-    "#3 builder: Closed-Loop Feedback Scorer (score each loop 0-1) (2026-11-24 01:07)",
-    "#4 verifier: Cockpit Live-Staleness Monitor (2026-11-24 02:54)",
-    "#5 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 03:04)"
+    "#1 verifier: Autonomous Remediation E2E (2026-11-24 01:34)",
+    "#2 builder: Closed-Loop Feedback Scorer (2026-11-24 03:15)",
+    "#3 verifier: Cockpit Live-Staleness Monitor (2026-11-24 03:56)",
+    "#4 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 04:06)",
+    "#5 builder: Adaptive Policy Tuner (2026-11-24 06:42)"
    ],
    "next_cycle_candidates": [
     {
@@ -336,15 +343,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-23 22:45",
-   "completes": 38,
+   "end": "2026-12-23 23:47",
+   "completes": 29,
    "fleet_pct": 100.0,
    "top": [
-    "#1 researcher: Self-Healing Remediation Bus (2026-11-24 00:22)",
-    "#2 verifier: Autonomous Remediation E2E (2026-11-24 00:32)",
-    "#3 builder: Closed-Loop Feedback Scorer (score each loop 0-1) (2026-11-24 01:07)",
-    "#4 verifier: Cockpit Live-Staleness Monitor (2026-11-24 02:54)",
-    "#5 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 03:04)"
+    "#1 verifier: Autonomous Remediation E2E (2026-11-24 01:34)",
+    "#2 builder: Closed-Loop Feedback Scorer (2026-11-24 03:15)",
+    "#3 verifier: Cockpit Live-Staleness Monitor (2026-11-24 03:56)",
+    "#4 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 04:06)",
+    "#5 builder: Adaptive Policy Tuner (2026-11-24 06:42)"
    ],
    "next_cycle_candidates": [
     {
@@ -402,43 +409,43 @@
   "archivist": {
    "done": 20,
    "total": 20,
-   "end": "2026-11-23 22:45"
+   "end": "2026-11-23 23:47"
   },
   "builder": {
    "done": 10,
    "total": 20,
-   "end": "2026-11-25 02:00"
+   "end": "2026-11-25 12:37"
   },
   "designer": {
    "done": 1,
    "total": 10,
-   "end": "2026-11-25 12:47"
+   "end": "2026-11-25 13:48"
   },
   "mechanic": {
    "done": 9,
    "total": 9,
-   "end": "2026-11-23 22:45"
+   "end": "2026-11-23 23:47"
   },
   "orchestrator": {
    "done": 3,
    "total": 3,
-   "end": "2026-11-23 22:45"
+   "end": "2026-11-23 23:47"
   },
   "researcher": {
-   "done": 1,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-25 08:15"
+   "end": "2026-11-23 23:47"
   },
   "scribe": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 22:45"
+   "end": "2026-11-23 23:47"
   },
   "verifier": {
    "done": 10,
    "total": 20,
-   "end": "2026-11-24 23:59"
+   "end": "2026-11-25 01:01"
   }
  },
- "level_up_eta": "2026-11-25 12:47"
+ "level_up_eta": "2026-11-25 13:48"
 }
