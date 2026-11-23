@@ -51,6 +51,10 @@ EVIDENCE_PAT = re.compile(
     r"\(\s*verified\s*:|(?:\u2014|--)\s*recorded\b",
     re.IGNORECASE,
 )
+# [REACHED <date>] closure marker (2026-11-23): the standard line agents append when a
+# goal's acceptance test passes, e.g. `[REACHED 2026-11-23T14:00:00Z] ...`. It is explicit
+# evidence of closure and must be honored even when it sits on a follower line under the goal.
+REACHED_DATE_PAT = re.compile(r"\[\s*REACHED\b[^\]]*\d{4}-\d{2}-\d{2}", re.IGNORECASE)
 # POINTER EVIDENCE (2026-11-15): `(pointer: <relpath>)` counts as evidence ONLY when
 # the leaf exists AND is connected to an index. See validate_pointer().
 POINTER_PAT = re.compile(r"\(\s*pointer\s*:\s*([^\)\s]+)\)", re.IGNORECASE)
@@ -119,6 +123,8 @@ def _line_evidence(line, root, cache):
     """(evidence, via, dangling) for one goal line."""
     if EVIDENCE_PAT.search(line):
         return True, "marker", False
+    if REACHED_DATE_PAT.search(line):
+        return True, "reached-marker", False
     pm = POINTER_PAT.search(line)
     if pm:
         leaf = pm.group(1).strip()
@@ -141,7 +147,8 @@ def parse_agent_file(path):
         lines = f.read().splitlines()
     root = repo_root()
     cache = {}
-    for line in lines:
+    goal_line_idx = []  # (goal_dict, source_line_index) for follower-evidence attribution
+    for idx, line in enumerate(lines):
         m = CB_RE.match(line)
         if m:
             checked = m.group(1).lower() == "x"
@@ -154,6 +161,7 @@ def parse_agent_file(path):
             if dangling:
                 g["dangling_pointer"] = True
             goals.append(g)
+            goal_line_idx.append((g, idx))
             continue
         m2 = NUM_RE.match(line)
         if m2 and 1 <= int(m2.group(1)) <= 50:
@@ -168,6 +176,36 @@ def parse_agent_file(path):
             if dangling:
                 g["dangling_pointer"] = True
             goals.append(g)
+            goal_line_idx.append((g, idx))
+    # Follower-line evidence (2026-11-23): the [REACHED <date>] / (verified:) closure marker
+    # is conventionally written on a line *under* the goal, not on the goal line itself.
+    # Attribute the first such marker found before the next goal start to that goal, so the
+    # ledger honors standard closure lines and does not report closed goals as open.
+    starts = sorted(i for _g, i in goal_line_idx)
+    def _next_start(after):
+        for s in starts:
+            if s > after:
+                return s
+        return len(lines)
+    for g, idx in goal_line_idx:
+        if g["evidence"]:
+            continue
+        stop = _next_start(idx)
+        for j in range(idx + 1, stop):
+            fl = lines[j]
+            # a section header or archive boundary ends this goal's evidence block
+            if fl.lstrip().startswith("##") or "Archive note" in fl:
+                break
+            ev, via, _d = _line_evidence(fl, root, cache)
+            if ev:
+                g["evidence"] = True
+                g["evidence_via"] = (via or "marker") + ":follower"
+                if g["form"] == "checkbox" and not g["checked"]:
+                    # an unchecked box with a closure marker is treated as reached only if
+                    # the marker is explicit; keep checked semantics otherwise.
+                    pass
+                g["status"] = "reached"
+                break
     for g in goals:
         if g["text"].lstrip().startswith("[BG-SCHED"):
             # (2026-11-18) goal was relocated to memory/goals/scheduled-background.md per the
