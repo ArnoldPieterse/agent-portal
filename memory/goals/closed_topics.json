@@ -1300,5 +1300,17 @@
 "text": "**Automated Chaos Drill Scheduler** - `python memory/builder/chaos_drill.py`: periodic fault-injection drill (interval configurable via --in",
 "agent": "builder",
 "at": "2026-11-24"
+},
+{
+"sig": "b6ce4e0c37324ce6",
+"text": "**Cockpit Topology Visualizer** - SVG 4-host map in cockpit tab: nodes = hosts, edges = model/agent bindings; color by load; tooltip shows V",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "260122dacd58b5ff",
+"text": "**Decision Audit Search Index** - SQLite FTS5 index over decision-log.jsonl: full-text search by agent, goal_id, keyword; returns ranked res",
+"agent": "builder",
+"at": "2026-11-24"
 }
 ]

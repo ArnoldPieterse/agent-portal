@@ -758,3 +758,4 @@
 {"ts": "2026-11-24 00:04:36", "run": "g-1a208b9133d-b57f12", "missing": {}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-24 00:08:06", "run": "g-1a208bc4804-9d5317", "missing": {}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-24 00:17:26", "run": "g-1a208c4409d-3c96d7", "missing": {"Researcher": "not_loaded", "Verifier": "unreachable", "Designer": "unreachable"}, "relocated": {"Builder": "White (local) (home unreachable)", "Archivist": "White (local) (home unreachable)"}}
+{"ts": "2026-11-24 00:23:08", "run": "g-1a208c9b63d-ba4abc", "missing": {"Researcher": "not_loaded", "Verifier": "unreachable", "Designer": "unreachable"}, "relocated": {"Builder": "White (local) (home unreachable)", "Archivist": "White (local) (home unreachable)"}}

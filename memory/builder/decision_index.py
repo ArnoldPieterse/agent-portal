@@ -202,8 +202,9 @@ def main():
         cmd_selftest()
     elif "--build" in args:
         build_index()
-    elif "--search" in args:
-        q = args[args.index("--search") + 1] if args.index("--search") + 1 < len(args) else ""
+    elif "--search" in args or "--query" in args:
+        flag = "--search" if "--search" in args else "--query"
+        q = args[args.index(flag) + 1] if args.index(flag) + 1 < len(args) else ""
         results = search(q)
         print(f"Results for '{q}': {len(results)}")
         for r in results:
