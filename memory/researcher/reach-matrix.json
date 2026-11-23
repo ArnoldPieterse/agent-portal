@@ -1,0 +1,621 @@
+{
+  "generated": "2026-11-23T21:49:58",
+  "matrix": {
+    "researcher": {
+      "total": 10,
+      "reached": 0,
+      "open": 10,
+      "pct": "0%",
+      "goals": [
+        {
+          "num": 1,
+          "title": "Auto-Loop Effectiveness Telemetry",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 2,
+          "title": "Stale-Claim Detector",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 3,
+          "title": "Loop-Closure Rate Metric",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 4,
+          "title": "Dispatch-Desync Sentinel",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 5,
+          "title": "Fleet Endpoint Reachability Matrix",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 6,
+          "title": "Cockpit Data-Completeness Audit",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 7,
+          "title": "Clobber-Resistance Manifest",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 8,
+          "title": "Forecast Calibration & Drift Monitor",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 9,
+          "title": "Cycle-Cadence & All-Clear ETA Verifier",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 10,
+          "title": "Auto-Transition Clean-Sweep Auditor",
+          "reached": false,
+          "evidence": null
+        }
+      ]
+    },
+    "builder": {
+      "total": 10,
+      "reached": 0,
+      "open": 10,
+      "pct": "0%",
+      "goals": [
+        {
+          "num": 1,
+          "title": "Auto-Remediation Playbook Runner",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 2,
+          "title": "Fleet Cockpit Frontend",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 3,
+          "title": "Model Swap Automation Script",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 4,
+          "title": "Task Re-Router",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 5,
+          "title": "Health Score Widget",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 6,
+          "title": "Decision Log Viewer",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 7,
+          "title": "Auto-Cycle Trigger",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 8,
+          "title": "Resource Monitor Panel",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 9,
+          "title": "Runbook Parser + Executor",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 10,
+          "title": "Fleet State Snapshot Scheduler",
+          "reached": false,
+          "evidence": null
+        }
+      ]
+    },
+    "verifier": {
+      "total": 20,
+      "reached": 0,
+      "open": 20,
+      "pct": "0%",
+      "goals": [
+        {
+          "num": 1,
+          "title": "Auto-Remediation Safety Gate",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 2,
+          "title": "Cockpit Data Accuracy Test",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 3,
+          "title": "Remediation Rollback Test",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 4,
+          "title": "Decision Policy Compliance Audit",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 5,
+          "title": "Fleet State Consistency Check",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 6,
+          "title": "Auto-Cycle Trigger Validation",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 7,
+          "title": "Model Swap Verification Battery",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 8,
+          "title": "Health Score Regression Test",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 9,
+          "title": "Task Re-Routing E2E Test",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 10,
+          "title": "Cockpit Performance Benchmark",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 1,
+          "title": "Autonomous Remediation E2E",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 2,
+          "title": "Cockpit Live-Staleness Monitor",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 3,
+          "title": "Autonomy Stall Detector",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 4,
+          "title": "Closed-Loop Latency Budget",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 5,
+          "title": "Cockpit UI Playwright Gate",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 6,
+          "title": "Failure Replay Harness",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 7,
+          "title": "Goal Lifecycle Audit",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 8,
+          "title": "Fleet Health Closed-Loop Test",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 9,
+          "title": "Cockpit A11y Gate (WCAG AA)",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 10,
+          "title": "Autonomy Precision/Recall Tracker",
+          "reached": false,
+          "evidence": null
+        }
+      ]
+    },
+    "designer": {
+      "total": 10,
+      "reached": 0,
+      "open": 10,
+      "pct": "0%",
+      "goals": [
+        {
+          "num": 1,
+          "title": "Closed-Loop Goal Lifecycle Trace",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 2,
+          "title": "Autonomy Level Indicator (Trust Dial)",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 3,
+          "title": "Loop-Closure Signal Choreography",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 4,
+          "title": "Revert / Rollback Trace Design",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 5,
+          "title": "Cross-Panel State Coherence Map",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 6,
+          "title": "Design-for-Degradation (Partial Availability)",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 7,
+          "title": "Data Freshness & Live-Feed Indicator",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 8,
+          "title": "Autonomy Incident Triage View",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 9,
+          "title": "Cockpit System-Level QA Gate",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 10,
+          "title": "Autonomy Operator First-Run Orientation",
+          "reached": false,
+          "evidence": null
+        }
+      ]
+    },
+    "mechanic": {
+      "total": 9,
+      "reached": 1,
+      "open": 8,
+      "pct": "11%",
+      "goals": [
+        {
+          "num": 1,
+          "title": "Auto-Failover Execution",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 2,
+          "title": "Model Load/Unload Automation",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 3,
+          "title": "Host Health Probe Suite",
+          "reached": true,
+          "evidence": "~~~~4. **Remediation Circuit Breaker**~~~ - `python memory/mechanic/circuit_breaker.py`: track consecutive remediation f"
+        },
+        {
+          "num": 5,
+          "title": "Fleet State Collector Daemon",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 6,
+          "title": "Model OOM Auto-Recovery",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 7,
+          "title": "Scheduled Maintenance Window",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 8,
+          "title": "Host Capacity Arbitration",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 9,
+          "title": "Incident Auto-Classification",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 10,
+          "title": "Portal Self-Healing",
+          "reached": false,
+          "evidence": null
+        }
+      ]
+    },
+    "orchestrator": {
+      "total": 3,
+      "reached": 3,
+      "open": 0,
+      "pct": "100%",
+      "goals": [
+        {
+          "num": 4,
+          "title": "Workload Rebalancer",
+          "reached": true,
+          "evidence": "~~5. **Cycle Auto-Planner**~~ - `python memory/orchestrator/auto_cycle_planner.py`: given current backlog + capacity_for"
+        },
+        {
+          "num": 6,
+          "title": "Context Budget Manager",
+          "reached": true,
+          "evidence": "~~~~7. **Roster Health Monitor**~~~ - `python memory/orchestrator/roster_monitor.py`: continuous (per-pass) check of all"
+        },
+        {
+          "num": 8,
+          "title": "Fleet Incident Auto-Responder",
+          "reached": true,
+          "evidence": "~~10. **Fleet Cockpit State Validator**~~ - `python memory/orchestrator/cockpit_validator.py`: cross-check /api/fleet/co"
+        }
+      ]
+    },
+    "archivist": {
+      "total": 20,
+      "reached": 10,
+      "open": 10,
+      "pct": "50%",
+      "goals": [
+        {
+          "num": 1,
+          "title": "Fact-Level Provenance Ledger",
+          "reached": true,
+          "evidence": "[REACHED 2026-11-23T02:52:18Z] provenance_ledger.py: 12975/12982 facts (99.9%), 10/10 spot-checks PASS, stale-detect ver"
+        },
+        {
+          "num": 2,
+          "title": "Stale-Knowledge Auto-Quarantine",
+          "reached": true,
+          "evidence": "[REACHED 2026-11-23T14:00:00Z] auto_quarantine.py selftest PASS 6/6. Evidence: memory/archivist/evidence-goal2-auto-quar"
+        },
+        {
+          "num": 3,
+          "title": "Knowledge Delta Feed",
+          "reached": true,
+          "evidence": "[REACHED 2026-11-23T14:00:00Z] kb_delta.py selftest PASS 6/6. Evidence: memory/archivist/evidence-goal3-kb-delta-2026-11"
+        },
+        {
+          "num": 4,
+          "title": "Cross-Agent Knowledge Conflict Resolver",
+          "reached": true,
+          "evidence": "[REACHED 2026-11-23T14:00:00Z] conflict_resolver.py selftest PASS 5/5. Evidence: memory/archivist/evidence-goal4-conflic"
+        },
+        {
+          "num": 5,
+          "title": "Decision-Knowledge Feedback Loop",
+          "reached": true,
+          "evidence": "[REACHED 2026-11-23T14:00:00Z] kb_feedback.py selftest PASS 5/5. Evidence: memory/archivist/evidence-goal5-kb-feedback-2"
+        },
+        {
+          "num": 6,
+          "title": "Knowledge Access Heatmap",
+          "reached": true,
+          "evidence": "[REACHED 2026-11-23T14:00:00Z] access_heatmap.py selftest PASS 5/5. Evidence: memory/archivist/evidence-goal6-access-hea"
+        },
+        {
+          "num": 7,
+          "title": "Write-Time Auto-Linker",
+          "reached": true,
+          "evidence": "[REACHED 2026-11-23T03:47:25Z] auto_linker.py selftest PASS 11/11 (Mechanic assist). Evidence: memory/archivist/evidence"
+        },
+        {
+          "num": 8,
+          "title": "KB Regression Sentinel",
+          "reached": true,
+          "evidence": "[REACHED 2026-11-23T14:05:00Z] kb_sentinel.py selftest PASS 4/4. Evidence: memory/archivist/evidence-goal8-kb-sentinel-2"
+        },
+        {
+          "num": 9,
+          "title": "Tiered Summary Ladder",
+          "reached": true,
+          "evidence": "[REACHED 2026-11-23T14:05:00Z] summary_ladder.py selftest PASS 5/5. Evidence: memory/archivist/evidence-goal9-summary-la"
+        },
+        {
+          "num": 10,
+          "title": "KB Versioning & Rollback",
+          "reached": true,
+          "evidence": "[REACHED 2026-11-23T14:05:00Z] kb_version.py selftest PASS 7/7. Evidence: memory/archivist/evidence-goal10-kb-version-20"
+        },
+        {
+          "num": 1,
+          "title": "Knowledge Index Builder",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 2,
+          "title": "Semantic Search Index",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 3,
+          "title": "Citation Integrity Monitor",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 4,
+          "title": "Knowledge Freshness Heatmap",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 5,
+          "title": "Retrieval Accuracy Benchmark",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 6,
+          "title": "Orphan Knowledge Recovery",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 7,
+          "title": "Knowledge Dependency Graph",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 8,
+          "title": "Auto-Abstract Generation",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 9,
+          "title": "Cross-Reference Consistency Check",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 10,
+          "title": "Knowledge Base Health Report",
+          "reached": false,
+          "evidence": null
+        }
+      ]
+    },
+    "scribe": {
+      "total": 10,
+      "reached": 0,
+      "open": 10,
+      "pct": "0%",
+      "goals": [
+        {
+          "num": 1,
+          "title": "Cycle Auto-Summary Generator",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 2,
+          "title": "Fleet Decision Digest",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 3,
+          "title": "Cross-Agent Handoff Summarizer",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 4,
+          "title": "Cockpit Narrative Layer",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 5,
+          "title": "Blocker Resolution Tracker",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 6,
+          "title": "Goal Completion Pattern Analysis",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 7,
+          "title": "Fleet Knowledge Delta Report",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 8,
+          "title": "Runbook Lesson Extractor",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 9,
+          "title": "Stakeholder Briefing Generator",
+          "reached": false,
+          "evidence": null
+        },
+        {
+          "num": 10,
+          "title": "Synthesis Quality Metric",
+          "reached": false,
+          "evidence": null
+        }
+      ]
+    }
+  }
+}

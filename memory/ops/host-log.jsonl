@@ -39,3 +39,6 @@
 {"t": "2026-11-23 21:46:35", "event": "host-start", "pid": 21356}
 {"t": "2026-11-23 21:46:36", "event": "host-up", "pid": 21356, "py": "3.15.2"}
 {"t": "2026-11-23 21:46:38", "event": "spawned", "what": "portal", "pid": 10536, "argv": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\Workspace\\agent_portal.py"}
+{"t": "2026-11-23 22:03:03", "event": "host-start", "pid": 18784}
+{"t": "2026-11-23 22:03:04", "event": "host-up", "pid": 18784, "py": "3.15.2"}
+{"t": "2026-11-23 22:03:06", "event": "spawned", "what": "portal", "pid": 2992, "argv": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\Workspace\\agent_portal.py"}

@@ -14,3 +14,6 @@
 2026-11-23T16:06:08.072066 RUN ['whoami', '/all']
 2026-11-23T16:06:11.760474 RUN ['whoami']
 2026-11-23T21:46:24.896826 start pid=23256 elevated=False user=White
+2026-11-23T22:00:13.638804 RUN schtasks /create /f /tn ElevatedHelper /sc onstart /ru SYSTEM /tr ""C:\Projects\Workspace\Python\pythoncore-3.15-64\pythonw.exe" "C:\Projects\Workspace\elevated_helper.py"" && schtasks /create /f /tn 
+2026-11-23T22:01:23.256970 RUN powershell -NoProfile -Command "Start-Process -FilePath cmd.exe -ArgumentList '/c C:\Projects\Workspace\restore_boot_tasks.bat' -Verb RunAs"
+2026-11-23T22:03:02.289306 start pid=18956 elevated=False user=White
