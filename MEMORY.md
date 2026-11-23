@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer goals 5&6 falsely closed; evidence files missing. Correct score 8/10. Evidence file mislabels goal 7 as row 5.
 - Scribe found 3-way fleet-closure contradiction: Orchestrator says 72/72, ledger-check.json says 46/78 (59%) — investigating authoritative nu
 - Researcher built & validated all 5 cycle-11 goals (closure rate, confidence, traceability, calibration, schema); all passing.
 - Research
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer goals 5&6 falsely closed: evidence files mismatched (cite Goal-2/#1 artifacts, not their own)
 - Cycle-11: all 5 Researcher goals
 - Cycle-11 complete: all 5 goals verified, loop_closure_rate.py → 90.8%, SELFTEST PASS.
+- Designer goals 5&6 falsely closed: evidence points to unrelated cycle-7/C
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
