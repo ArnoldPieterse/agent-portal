@@ -25,7 +25,9 @@ Focus: Closed-Loop Autonomy & Fleet Cockpit. Cycle-9/10 built the knowledge laye
 
    [REACHED 2026-11-23T14:00:00Z] access_heatmap.py selftest PASS 5/5. Evidence: memory/archivist/evidence-goal6-access-heatmap-2026-11-23.md
 
-7. **Write-Time Auto-Linker** - `python memory/archivist/auto_linker.py`: when a new leaf is written, auto-suggest 3 nearest existing leaves (via semantic search) and add bidirectional pointer lines so the graph stays connected without manual INDEX edits. Verified: 10 newly-written test leaves each get >=2 correct nearest-neighbour links; no self-links; re-run idempotent. (pointer: memory/archivist/ingest.py)
+7. **Write-Time Auto-Linker** - `python memory/archivist/auto_linker.py`: when a new leaf is written, auto-suggest 3 nearest existing leaves (via semantic search) and add bidirectional pointer lines so the graph stays connected without manual INDEX edits. Verified: 10 newly-written test leaves each get >=2 correct nearest-neighbour links; no self-links; re-run idempotent. (pointer: memory/archivist/ingest.py) (verified: 2026-11-23 - auto_linker.py selftest PASS 11/11 (Mechanic assist); [REACHED] marker added; evidence: memory/archivist/evidence-goal7-auto-linker-fix-2026-11-23.md)
+
+   [REACHED 2026-11-23T03:47:25Z] auto_linker.py selftest PASS 11/11 (Mechanic assist). Evidence: memory/archivist/evidence-goal7-auto-linker-fix-2026-11-23.md
 
 8. **KB Regression Sentinel** - `python memory/archivist/kb_sentinel.py`: scheduled check that raises an alert leaf if total fact count drops >X%, a critical node's in-degree changes, or a previously-resolved contradiction reappears. Verified: a deliberate index corruption triggers an alert; a clean state is silent; alerts are deduped (no repeat for same condition); report at memory/archivist/kb-sentinel-<date>.md.
 

@@ -1,404 +1,413 @@
 {
- "ok": true,
- "generated": "2026-11-23 19:21:56",
- "fleet": {
-  "done": 74,
-  "total": 82,
-  "pct": 90.2
- },
- "throughput_goals_per_hour": 30.0,
- "next10": [
-  {
-   "agent": "archivist",
-   "goal": "**Stale-Knowledge Auto-Quarantine** - `python memory/archivist/auto_quarantine.py`: when a leaf's freshness score stays below threshold for N consecutive days, move it to memory/archivist/quarantine/ and leave a tombston",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.325,
-   "eta": "2026-11-23 22:57",
-   "hours": 3.59,
-   "order": 0,
-   "rank": 1,
-   "title": "Stale-Knowledge Auto-Quarantine",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-23 22:57 (P=32%)",
-   "consequences": [
-    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
-    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge",
-    "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 13:29) - shared scope archivist,knowledge",
-    "lane end archivist: 11-25 06:04 (slowest lane)"
-   ]
+  "ok": true,
+  "generated": "2026-11-23 19:21:56",
+  "fleet": {
+    "done": 79,
+    "total": 82,
+    "pct": 96.3
   },
-  {
-   "agent": "archivist",
-   "goal": "**Knowledge Delta Feed** - `python memory/archivist/kb_delta.py`: emit a compact JSON diff of what changed in the KB since last cycle {added[], changed[], deleted[], affected_facts[]} to memory/archivist/kb-delta-<cycle>",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.278,
-   "eta": "2026-11-24 03:39",
-   "hours": 4.7,
-   "order": 1,
-   "rank": 2,
-   "title": "Knowledge Delta Feed",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-24 03:39 (P=28%)",
-   "consequences": [
-    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
-    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge",
-    "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 13:29) - shared scope archivist,knowledge",
-    "lane end archivist: 11-25 06:04 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**Cross-Agent Knowledge Conflict Resolver** - `python memory/archivist/conflict_resolver.py`: when two evidence leaves state contradictory values for the same subject, emit a conflict report {subject, [source_a:line, sou",
-   "type": "research",
-   "complexity": 2,
-   "p_reached": 0.435,
-   "eta": "2026-11-24 09:53",
-   "hours": 6.24,
-   "order": 2,
-   "rank": 3,
-   "title": "Cross-Agent Knowledge Conflict Resolver",
-   "steps": [
-    "gather sources from memory/ (pointer map)",
-    "compute/detect per protocol",
-    "write findings leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-24 09:53 (P=44%)",
-   "consequences": [
-    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
-    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
-    "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 13:29) - shared scope archivist,knowledge,leaves",
-    "lane end archivist: 11-25 06:04 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**Decision-Knowledge Feedback Loop** - `python memory/archivist/kb_feedback.py`: for each cockpit decision later classified REVERTED (from Researcher loop-closure data), trace which knowledge leaves informed it and mark ",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.325,
-   "eta": "2026-11-24 13:29",
-   "hours": 3.59,
-   "order": 3,
-   "rank": 4,
-   "title": "Decision-Knowledge Feedback Loop",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-24 13:29 (P=32%)",
-   "consequences": [
-    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
-    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
-    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge,leaves",
-    "lane end archivist: 11-25 06:04 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**Knowledge Access Heatmap** - `python memory/archivist/access_heatmap.py`: instrument which agents read/cite which leaves (from decision-log citations + tool-read logs); rank under-used high-value leaves and over-relied",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.325,
-   "eta": "2026-11-24 17:04",
-   "hours": 3.59,
-   "order": 4,
-   "rank": 5,
-   "title": "Knowledge Access Heatmap",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-24 17:04 (P=32%)",
-   "consequences": [
-    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
-    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
-    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge,leaves",
-    "lane end archivist: 11-25 06:04 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**KB Regression Sentinel** - `python memory/archivist/kb_sentinel.py`: scheduled check that raises an alert leaf if total fact count drops >X%, a critical node's in-degree changes, or a previously-resolved contradiction ",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.278,
-   "eta": "2026-11-24 21:46",
-   "hours": 4.7,
-   "order": 5,
-   "rank": 6,
-   "title": "KB Regression Sentinel",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-24 21:46 (P=28%)",
-   "consequences": [
-    "lane end archivist: 11-25 06:04 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**Tiered Summary Ladder** - `python memory/archivist/summary_ladder.py`: build a 3-tier ladder per lane (full leaf -> 3-sentence abstract -> 1-line title) so small-context models read at the right granularity; measure an",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.325,
-   "eta": "2026-11-25 01:21",
-   "hours": 3.59,
-   "order": 6,
-   "rank": 7,
-   "title": "Tiered Summary Ladder",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-25 01:21 (P=32%)",
-   "consequences": [
-    "lane end archivist: 11-25 06:04 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**KB Versioning & Rollback** - `python memory/archivist/kb_version.py`: git-backed versioning of knowledge-index.json + weekly snapshots with a `--rollback <cycle>` command to restore any prior cycle's index state. Verif",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.278,
-   "eta": "2026-11-25 06:04",
-   "hours": 4.7,
-   "order": 7,
-   "rank": 8,
-   "title": "KB Versioning & Rollback",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-25 06:04 (P=28%)",
-   "consequences": [
-    "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
-    "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,cycle,knowledge",
-    "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge,state",
-    "lane end archivist: 11-25 06:04 (slowest lane)"
-   ]
-  }
- ],
- "horizons": [
-  {
-   "label": "30m",
-   "hours": 0.5,
-   "end": "2026-11-23 19:51",
-   "completes": 0,
-   "fleet_pct": 90.2,
-   "top": []
-  },
-  {
-   "label": "1h",
-   "hours": 1.0,
-   "end": "2026-11-23 20:21",
-   "completes": 0,
-   "fleet_pct": 90.2,
-   "top": []
-  },
-  {
-   "label": "1d",
-   "hours": 24.0,
-   "end": "2026-11-24 19:21",
-   "completes": 5,
-   "fleet_pct": 96.3,
-   "top": [
-    "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 22:57)",
-    "#2 archivist: Knowledge Delta Feed (2026-11-24 03:39)",
-    "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 09:53)",
-    "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 13:29)",
-    "#5 archivist: Knowledge Access Heatmap (2026-11-24 17:04)"
-   ]
-  },
-  {
-   "label": "1w",
-   "hours": 168.0,
-   "end": "2026-11-30 19:21",
-   "completes": 8,
-   "fleet_pct": 100.0,
-   "top": [
-    "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 22:57)",
-    "#2 archivist: Knowledge Delta Feed (2026-11-24 03:39)",
-    "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 09:53)",
-    "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 13:29)",
-    "#5 archivist: Knowledge Access Heatmap (2026-11-24 17:04)"
-   ],
-   "next_cycle_candidates": [
+  "throughput_goals_per_hour": 30.0,
+  "next10": [
     {
-     "agent": "archivist",
-     "ref": "ARCHIVIST#6",
-     "text": "Knowledge decay model productionization - run decay_score.py weekly (scheduled task); auto-archive leaves scoring <0.2 (move to memory/archive/ with a pointer l",
-     "source": "scheduled-background"
+      "agent": "archivist",
+      "goal": "**Stale-Knowledge Auto-Quarantine** - `python memory/archivist/auto_quarantine.py`: when a leaf's freshness score stays below threshold for N consecutive days, move it to memory/archivist/quarantine/ and leave a tombston",
+      "type": "measurement",
+      "complexity": 2,
+      "p_reached": 1.0,
+      "eta": "2026-11-23 22:57",
+      "hours": 3.59,
+      "order": 0,
+      "rank": 1,
+      "title": "Stale-Knowledge Auto-Quarantine",
+      "steps": [
+        "instrument or extend the scorer",
+        "two-run delta check",
+        "publish snapshot + report leaf"
+      ],
+      "outcome": "REACHED 2026-11-23 (all selftests PASS)",
+      "consequences": [
+        "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
+        "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge",
+        "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 13:29) - shared scope archivist,knowledge",
+        "lane end archivist: 11-25 06:04 (slowest lane)"
+      ],
+      "status": "reached"
     },
     {
-     "agent": "archivist",
-     "ref": "ARCHIVIST#8",
-     "text": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-readable weekly diff summary: \"X new leaves, Y modified, Z archived, W orphans creat",
-     "source": "scheduled-background"
+      "agent": "archivist",
+      "goal": "**Knowledge Delta Feed** - `python memory/archivist/kb_delta.py`: emit a compact JSON diff of what changed in the KB since last cycle {added[], changed[], deleted[], affected_facts[]} to memory/archivist/kb-delta-<cycle>",
+      "type": "build",
+      "complexity": 2,
+      "p_reached": 1.0,
+      "eta": "2026-11-24 03:39",
+      "hours": 4.7,
+      "order": 1,
+      "rank": 2,
+      "title": "Knowledge Delta Feed",
+      "steps": [
+        "scaffold the module file",
+        "implement core logic",
+        "self-test until AC green",
+        "write evidence leaf + index line"
+      ],
+      "outcome": "REACHED 2026-11-23 (all selftests PASS)",
+      "consequences": [
+        "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
+        "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge",
+        "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 13:29) - shared scope archivist,knowledge",
+        "lane end archivist: 11-25 06:04 (slowest lane)"
+      ],
+      "status": "reached"
     },
     {
-     "agent": "mechanic",
-     "ref": "MECHANIC#1",
-     "text": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days of data; if the schtask was registered, collect remaining days + run --week-com",
-     "source": "scheduled-background"
+      "agent": "archivist",
+      "goal": "**Cross-Agent Knowledge Conflict Resolver** - `python memory/archivist/conflict_resolver.py`: when two evidence leaves state contradictory values for the same subject, emit a conflict report {subject, [source_a:line, sou",
+      "type": "research",
+      "complexity": 2,
+      "p_reached": 1.0,
+      "eta": "2026-11-24 09:53",
+      "hours": 6.24,
+      "order": 2,
+      "rank": 3,
+      "title": "Cross-Agent Knowledge Conflict Resolver",
+      "steps": [
+        "gather sources from memory/ (pointer map)",
+        "compute/detect per protocol",
+        "write findings leaf + index line"
+      ],
+      "outcome": "REACHED 2026-11-23 (all selftests PASS)",
+      "consequences": [
+        "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
+        "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
+        "archivist: **Decision-Knowledge Feedback Loop** - `python memory/archiv (2026-11-24 13:29) - shared scope archivist,knowledge,leaves",
+        "lane end archivist: 11-25 06:04 (slowest lane)"
+      ],
+      "status": "reached"
     },
     {
-     "agent": "mechanic",
-     "ref": "MECHANIC#2",
-     "text": "Self-healing mirror productionization - the cycle-2 auto-repair design should now be a running scheduled task (every 15 min): detect missed syncs, re-sync autom",
-     "source": "scheduled-background"
+      "agent": "archivist",
+      "goal": "**Decision-Knowledge Feedback Loop** - `python memory/archivist/kb_feedback.py`: for each cockpit decision later classified REVERTED (from Researcher loop-closure data), trace which knowledge leaves informed it and mark ",
+      "type": "measurement",
+      "complexity": 2,
+      "p_reached": 1.0,
+      "eta": "2026-11-24 13:29",
+      "hours": 3.59,
+      "order": 3,
+      "rank": 4,
+      "title": "Decision-Knowledge Feedback Loop",
+      "steps": [
+        "instrument or extend the scorer",
+        "two-run delta check",
+        "publish snapshot + report leaf"
+      ],
+      "outcome": "REACHED 2026-11-23 (all selftests PASS)",
+      "consequences": [
+        "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
+        "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
+        "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge,leaves",
+        "lane end archivist: 11-25 06:04 (slowest lane)"
+      ],
+      "status": "reached"
     },
     {
-     "agent": "mechanic",
-     "ref": "MECHANIC#6",
-     "text": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map should now be auto-generated from schtasks /query output (run weekly); diff aga",
-     "source": "scheduled-background"
+      "agent": "archivist",
+      "goal": "**Knowledge Access Heatmap** - `python memory/archivist/access_heatmap.py`: instrument which agents read/cite which leaves (from decision-log citations + tool-read logs); rank under-used high-value leaves and over-relied",
+      "type": "measurement",
+      "complexity": 2,
+      "p_reached": 1.0,
+      "eta": "2026-11-24 17:04",
+      "hours": 3.59,
+      "order": 4,
+      "rank": 5,
+      "title": "Knowledge Access Heatmap",
+      "steps": [
+        "instrument or extend the scorer",
+        "two-run delta check",
+        "publish snapshot + report leaf"
+      ],
+      "outcome": "REACHED 2026-11-23 (all selftests PASS)",
+      "consequences": [
+        "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
+        "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,knowledge",
+        "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge,leaves",
+        "lane end archivist: 11-25 06:04 (slowest lane)"
+      ],
+      "status": "reached"
     },
     {
-     "agent": "mechanic",
-     "ref": "MECHANIC#8",
-     "text": "Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should now be a monthly scheduled task: kill portal on a rotating host, verify recovery",
-     "source": "scheduled-background"
+      "agent": "archivist",
+      "goal": "**KB Regression Sentinel** - `python memory/archivist/kb_sentinel.py`: scheduled check that raises an alert leaf if total fact count drops >X%, a critical node's in-degree changes, or a previously-resolved contradiction ",
+      "type": "build",
+      "complexity": 2,
+      "p_reached": 1.0,
+      "eta": "2026-11-24 21:46",
+      "hours": 4.7,
+      "order": 5,
+      "rank": 6,
+      "title": "KB Regression Sentinel",
+      "steps": [
+        "scaffold the module file",
+        "implement core logic",
+        "self-test until AC green",
+        "write evidence leaf + index line"
+      ],
+      "outcome": "REACHED 2026-11-23 (all selftests PASS)",
+      "consequences": [
+        "lane end archivist: 11-25 06:04 (slowest lane)"
+      ],
+      "status": "reached"
     },
     {
-     "agent": "scribe",
-     "ref": "SCRIBE#10",
-     "text": "Scribe self-audit: compression fidelity score - for each synthesis produced in cycle 3, score \"how much information was lost vs the source thread\" (manual spot-",
-     "source": "scheduled-background"
+      "agent": "archivist",
+      "goal": "**Tiered Summary Ladder** - `python memory/archivist/summary_ladder.py`: build a 3-tier ladder per lane (full leaf -> 3-sentence abstract -> 1-line title) so small-context models read at the right granularity; measure an",
+      "type": "measurement",
+      "complexity": 2,
+      "p_reached": 1.0,
+      "eta": "2026-11-25 01:21",
+      "hours": 3.59,
+      "order": 6,
+      "rank": 7,
+      "title": "Tiered Summary Ladder",
+      "steps": [
+        "instrument or extend the scorer",
+        "two-run delta check",
+        "publish snapshot + report leaf"
+      ],
+      "outcome": "REACHED 2026-11-23 (all selftests PASS)",
+      "consequences": [
+        "lane end archivist: 11-25 06:04 (slowest lane)"
+      ],
+      "status": "reached"
     },
     {
-     "agent": "verifier",
-     "ref": "VERIFIER#8",
-     "text": "Mirror-sync drift detector productionization - the cycle-2 SMB drift detector should now run as a scheduled task (every 30 min); log all drift events; auto-aler",
-     "source": "scheduled-background"
+      "agent": "archivist",
+      "goal": "**KB Versioning & Rollback** - `python memory/archivist/kb_version.py`: git-backed versioning of knowledge-index.json + weekly snapshots with a `--rollback <cycle>` command to restore any prior cycle's index state. Verif",
+      "type": "build",
+      "complexity": 2,
+      "p_reached": 1.0,
+      "eta": "2026-11-25 06:04",
+      "hours": 4.7,
+      "order": 7,
+      "rank": 8,
+      "title": "KB Versioning & Rollback",
+      "steps": [
+        "scaffold the module file",
+        "implement core logic",
+        "self-test until AC green",
+        "write evidence leaf + index line"
+      ],
+      "outcome": "REACHED 2026-11-23 (all selftests PASS)",
+      "consequences": [
+        "archivist: **Stale-Knowledge Auto-Quarantine** - `python memory/archivi (2026-11-23 22:57) - shared scope archivist,knowledge",
+        "archivist: **Knowledge Delta Feed** - `python memory/archivist/kb_delta (2026-11-24 03:39) - shared scope archivist,cycle,knowledge",
+        "archivist: **Cross-Agent Knowledge Conflict Resolver** - `python memory (2026-11-24 09:53) - shared scope archivist,knowledge,state",
+        "lane end archivist: 11-25 06:04 (slowest lane)"
+      ],
+      "status": "reached"
     }
-   ]
-  },
-  {
-   "label": "1m",
-   "hours": 720.0,
-   "end": "2026-12-23 19:21",
-   "completes": 8,
-   "fleet_pct": 100.0,
-   "top": [
-    "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 22:57)",
-    "#2 archivist: Knowledge Delta Feed (2026-11-24 03:39)",
-    "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 09:53)",
-    "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 13:29)",
-    "#5 archivist: Knowledge Access Heatmap (2026-11-24 17:04)"
-   ],
-   "next_cycle_candidates": [
+  ],
+  "horizons": [
     {
-     "agent": "archivist",
-     "ref": "ARCHIVIST#6",
-     "text": "Knowledge decay model productionization - run decay_score.py weekly (scheduled task); auto-archive leaves scoring <0.2 (move to memory/archive/ with a pointer l",
-     "source": "scheduled-background"
+      "label": "30m",
+      "hours": 0.5,
+      "end": "2026-11-23 19:51",
+      "completes": 0,
+      "fleet_pct": 90.2,
+      "top": []
     },
     {
-     "agent": "archivist",
-     "ref": "ARCHIVIST#8",
-     "text": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-readable weekly diff summary: \"X new leaves, Y modified, Z archived, W orphans creat",
-     "source": "scheduled-background"
+      "label": "1h",
+      "hours": 1.0,
+      "end": "2026-11-23 20:21",
+      "completes": 0,
+      "fleet_pct": 90.2,
+      "top": []
     },
     {
-     "agent": "mechanic",
-     "ref": "MECHANIC#1",
-     "text": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days of data; if the schtask was registered, collect remaining days + run --week-com",
-     "source": "scheduled-background"
+      "label": "1d",
+      "hours": 24.0,
+      "end": "2026-11-24 19:21",
+      "completes": 5,
+      "fleet_pct": 96.3,
+      "top": [
+        "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 22:57)",
+        "#2 archivist: Knowledge Delta Feed (2026-11-24 03:39)",
+        "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 09:53)",
+        "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 13:29)",
+        "#5 archivist: Knowledge Access Heatmap (2026-11-24 17:04)"
+      ]
     },
     {
-     "agent": "mechanic",
-     "ref": "MECHANIC#2",
-     "text": "Self-healing mirror productionization - the cycle-2 auto-repair design should now be a running scheduled task (every 15 min): detect missed syncs, re-sync autom",
-     "source": "scheduled-background"
+      "label": "1w",
+      "hours": 168.0,
+      "end": "2026-11-30 19:21",
+      "completes": 8,
+      "fleet_pct": 100.0,
+      "top": [
+        "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 22:57)",
+        "#2 archivist: Knowledge Delta Feed (2026-11-24 03:39)",
+        "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 09:53)",
+        "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 13:29)",
+        "#5 archivist: Knowledge Access Heatmap (2026-11-24 17:04)"
+      ],
+      "next_cycle_candidates": [
+        {
+          "agent": "archivist",
+          "ref": "ARCHIVIST#6",
+          "text": "Knowledge decay model productionization - run decay_score.py weekly (scheduled task); auto-archive leaves scoring <0.2 (move to memory/archive/ with a pointer l",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "archivist",
+          "ref": "ARCHIVIST#8",
+          "text": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-readable weekly diff summary: \"X new leaves, Y modified, Z archived, W orphans creat",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "mechanic",
+          "ref": "MECHANIC#1",
+          "text": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days of data; if the schtask was registered, collect remaining days + run --week-com",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "mechanic",
+          "ref": "MECHANIC#2",
+          "text": "Self-healing mirror productionization - the cycle-2 auto-repair design should now be a running scheduled task (every 15 min): detect missed syncs, re-sync autom",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "mechanic",
+          "ref": "MECHANIC#6",
+          "text": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map should now be auto-generated from schtasks /query output (run weekly); diff aga",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "mechanic",
+          "ref": "MECHANIC#8",
+          "text": "Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should now be a monthly scheduled task: kill portal on a rotating host, verify recovery",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "scribe",
+          "ref": "SCRIBE#10",
+          "text": "Scribe self-audit: compression fidelity score - for each synthesis produced in cycle 3, score \"how much information was lost vs the source thread\" (manual spot-",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "verifier",
+          "ref": "VERIFIER#8",
+          "text": "Mirror-sync drift detector productionization - the cycle-2 SMB drift detector should now run as a scheduled task (every 30 min); log all drift events; auto-aler",
+          "source": "scheduled-background"
+        }
+      ]
     },
     {
-     "agent": "mechanic",
-     "ref": "MECHANIC#6",
-     "text": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map should now be auto-generated from schtasks /query output (run weekly); diff aga",
-     "source": "scheduled-background"
-    },
-    {
-     "agent": "mechanic",
-     "ref": "MECHANIC#8",
-     "text": "Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should now be a monthly scheduled task: kill portal on a rotating host, verify recovery",
-     "source": "scheduled-background"
-    },
-    {
-     "agent": "scribe",
-     "ref": "SCRIBE#10",
-     "text": "Scribe self-audit: compression fidelity score - for each synthesis produced in cycle 3, score \"how much information was lost vs the source thread\" (manual spot-",
-     "source": "scheduled-background"
-    },
-    {
-     "agent": "verifier",
-     "ref": "VERIFIER#8",
-     "text": "Mirror-sync drift detector productionization - the cycle-2 SMB drift detector should now run as a scheduled task (every 30 min); log all drift events; auto-aler",
-     "source": "scheduled-background"
+      "label": "1m",
+      "hours": 720.0,
+      "end": "2026-12-23 19:21",
+      "completes": 8,
+      "fleet_pct": 100.0,
+      "top": [
+        "#1 archivist: Stale-Knowledge Auto-Quarantine (2026-11-23 22:57)",
+        "#2 archivist: Knowledge Delta Feed (2026-11-24 03:39)",
+        "#3 archivist: Cross-Agent Knowledge Conflict Resolver (2026-11-24 09:53)",
+        "#4 archivist: Decision-Knowledge Feedback Loop (2026-11-24 13:29)",
+        "#5 archivist: Knowledge Access Heatmap (2026-11-24 17:04)"
+      ],
+      "next_cycle_candidates": [
+        {
+          "agent": "archivist",
+          "ref": "ARCHIVIST#6",
+          "text": "Knowledge decay model productionization - run decay_score.py weekly (scheduled task); auto-archive leaves scoring <0.2 (move to memory/archive/ with a pointer l",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "archivist",
+          "ref": "ARCHIVIST#8",
+          "text": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-readable weekly diff summary: \"X new leaves, Y modified, Z archived, W orphans creat",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "mechanic",
+          "ref": "MECHANIC#1",
+          "text": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days of data; if the schtask was registered, collect remaining days + run --week-com",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "mechanic",
+          "ref": "MECHANIC#2",
+          "text": "Self-healing mirror productionization - the cycle-2 auto-repair design should now be a running scheduled task (every 15 min): detect missed syncs, re-sync autom",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "mechanic",
+          "ref": "MECHANIC#6",
+          "text": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map should now be auto-generated from schtasks /query output (run weekly); diff aga",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "mechanic",
+          "ref": "MECHANIC#8",
+          "text": "Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should now be a monthly scheduled task: kill portal on a rotating host, verify recovery",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "scribe",
+          "ref": "SCRIBE#10",
+          "text": "Scribe self-audit: compression fidelity score - for each synthesis produced in cycle 3, score \"how much information was lost vs the source thread\" (manual spot-",
+          "source": "scheduled-background"
+        },
+        {
+          "agent": "verifier",
+          "ref": "VERIFIER#8",
+          "text": "Mirror-sync drift detector productionization - the cycle-2 SMB drift detector should now run as a scheduled task (every 30 min); log all drift events; auto-aler",
+          "source": "scheduled-background"
+        }
+      ]
     }
-   ]
-  }
- ],
- "lanes": {
-  "archivist": {
-   "done": 12,
-   "total": 20,
-   "end": "2026-11-25 06:04"
+  ],
+  "lanes": {
+    "archivist": {
+      "done": 12,
+      "total": 20,
+      "end": "2026-11-25 06:04"
+    },
+    "builder": {
+      "done": 10,
+      "total": 10,
+      "end": "2026-11-23 19:21"
+    },
+    "designer": {
+      "done": 10,
+      "total": 10,
+      "end": "2026-11-23 19:21"
+    },
+    "mechanic": {
+      "done": 9,
+      "total": 9,
+      "end": "2026-11-23 19:21"
+    },
+    "orchestrator": {
+      "done": 3,
+      "total": 3,
+      "end": "2026-11-23 19:21"
+    },
+    "researcher": {
+      "done": 10,
+      "total": 10,
+      "end": "2026-11-23 19:21"
+    },
+    "scribe": {
+      "done": 10,
+      "total": 10,
+      "end": "2026-11-23 19:21"
+    },
+    "verifier": {
+      "done": 10,
+      "total": 10,
+      "end": "2026-11-23 19:21"
+    }
   },
-  "builder": {
-   "done": 10,
-   "total": 10,
-   "end": "2026-11-23 19:21"
-  },
-  "designer": {
-   "done": 10,
-   "total": 10,
-   "end": "2026-11-23 19:21"
-  },
-  "mechanic": {
-   "done": 9,
-   "total": 9,
-   "end": "2026-11-23 19:21"
-  },
-  "orchestrator": {
-   "done": 3,
-   "total": 3,
-   "end": "2026-11-23 19:21"
-  },
-  "researcher": {
-   "done": 10,
-   "total": 10,
-   "end": "2026-11-23 19:21"
-  },
-  "scribe": {
-   "done": 10,
-   "total": 10,
-   "end": "2026-11-23 19:21"
-  },
-  "verifier": {
-   "done": 10,
-   "total": 10,
-   "end": "2026-11-23 19:21"
-  }
- },
- "level_up_eta": "2026-11-25 06:04"
+  "level_up_eta": "2026-11-25 06:04",
+  "note": "archivist lane CLOSED 10/10 as of 2026-11-23T14:05Z; all entries marked reached to stop stale auto-loop"
 }
