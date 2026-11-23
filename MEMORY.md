@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher goal #2 (instrument_roi.py) in progress; inputs: ledger, blockers.md, instrument-health.json, auto-loop pass notes
-- Mechanic flagged disk pressure on "safe" host: 43% > 41% threshold, slope +0.5%/day — may breach soon.
-- Builder goals 6–10 are the only open work fleet-wide; topology_svg.py (goal #6) was started but incomplete due to context limit.
 - Verifier: all 10 Cycle-14 goals confirmed reached; remediation_e2e self-test 3/3 PASS (rc=0)
 - Goal #1 Adaptive Information Density verified complete: CSS+JS artifacts present, ACs pass statically, INDEX.md pointer added for ledger val
 - Goal
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 goals verified complete; auto-loop dashboard still lists them as "open" — skip re-verification,
 - Designer cycle-12: 5/10 goals done (#1-#5). Artifacts: cockpit-density.css, cockpit-provenance.html,
 - Builder cycle-14: goals 1–5 verified; now building goal #6 Cockpit Topology Visual
+- All 10 Cycle-14 Verifier goals (1–10) verified and ledger-recorded; no open Verifier goals remain.
+- Goal 10
+- Builder cycle: goals 1–7 done; #8 (post_mortem.py) selftest 5/5 PASS, 3 post-mortems generated
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

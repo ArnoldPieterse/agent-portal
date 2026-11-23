@@ -1264,5 +1264,11 @@
 "text": "**Autonomy Guardrails & Blast-Radius Registry** - `python memory/researcher/blast_radius.py`: before any self-healing action (goal #1) execu",
 "agent": "researcher",
 "at": "2026-11-23"
+},
+{
+"sig": "d2ca5f85fd8cd954",
+"text": "**Cockpit Data Golden-Fixture Regression** - `python memory/researcher/cockpit_golden.py`: Playwright end-to-end gate that renders each cock",
+"agent": "researcher",
+"at": "2026-11-23"
 }
 ]
