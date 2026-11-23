@@ -1438,5 +1438,11 @@
 "text": "**Policy Conflict Detector** - `python memory/builder/policy_conflict.py`: scan all policy files (memory/ops/*.md, runbooks) for overlapping",
 "agent": "builder",
 "at": "2026-11-24"
+},
+{
+"sig": "11bd57d78e9fd1f2",
+"text": "**Cockpit One-Click Runbook Trigger** - Add a \"Run\" button to each runbook card in cockpit's Decision Log panel: pre-flight validates (agent",
+"agent": "builder",
+"at": "2026-11-24"
 }
 ]

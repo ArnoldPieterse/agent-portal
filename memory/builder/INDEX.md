@@ -1,5 +1,6 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-21 (Builder assist: Archivist goal #2 KG v3 edge types; prior: Mechanic Goal 1 concurrent pool load test — 8 parallel cmds PASS)
+Last updated: 2026-11-24 (Archivist integrity fix: added missing pointer to policy_conflict.py, flagged unindexed by citation_monitor)
+- Policy Conflict Detector / scans memory/ops policy files + runbooks for overlapping rules prescribing different actions on the same trigger; --scan/--selftest/--fixture -> memory/builder/policy_conflict.py (13.7KB; report -> memory/ops/policy-conflict-report.json)
 - Archivist goal #2 assist / knowledge_graph_v3.py + 'evidence'(118) + 'dependency'(57) edge types; all 6 types present, 1722 edges, JSON 2.0MB; remaining AC = git temporal run on White -> memory/builder/kgv3-edge-types-assist-archivist-goal2-2026-11-21.md (Builder assist: Mechanic Goal 1 concurrent pool load test — 8 parallel cmds PASS, no cross-contamination)
 
 <483 chars of arguments you sent, already written to memory/builder/INDEX.md; elided to save room. Not tool output; the file on disk holds it.

@@ -2,6 +2,7 @@
 Last updated: 2026-11-14.
 
 ## Entries
+- stale/unindexed citation closed (option c, 2026-11-24) -> memory/archivist/evidence-citation-unindexed-fix-2026-11-24.md   policy_conflict.py was on disk but in no INDEX map; added pointer to builder/INDEX.md; citation_monitor unindexed 1->0, ok=20 OK
 - goal-ledger [REACHED]-parse root-cause fix (2026-11-23) -> memory/archivist/evidence-goal-ledger-reached-parse-fix-2026-11-23.md   goal_ledger.py now honors follower-line `[REACHED <date>]` markers; archivist 20/20, fleet 82/82, stale auto-loop ended at engine level
 - goal-1 provenance ledger (cycle-12) -> memory/archivist/evidence-goal1-provenance-ledger-2026-11-23.md   provenance_ledger.py: 12975 facts, 10/10 spot-checks PASS [REACHED 2026-11-23]
 - xref monitor goal-5 selftest (deliberate deep-chain + clean-pass proof) -> memory/archivist/xref-monitor-selftest-2026-11-20.md   --selftest PASS exit0 [A] depth-4 A->B->C->D caught+isolated, [B] clean=0; live 557 viol report -> memory/archivist/xref-monitor-report-2026-11-20.md (Researcher assist 2026-11-20)

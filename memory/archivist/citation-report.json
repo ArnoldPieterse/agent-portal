@@ -1,11 +1,17 @@
 {
- "generated": "2026-11-23 09:26:09",
- "total_pointers": 18,
- "resolved_and_indexed": 18,
+ "generated": "2026-11-24 01:56:16",
+ "total_pointers": 20,
+ "resolved_and_indexed": 20,
  "dangling": 0,
  "unindexed": 0,
  "health": "OK",
  "details": [
+  {
+   "agent": "archivist",
+   "pointer": "memory/archivist/ingest.py",
+   "exists": true,
+   "indexed": true
+  },
   {
    "agent": "archivist",
    "pointer": "memory/archivist/decay_production.py",
@@ -49,20 +55,14 @@
    "indexed": true
   },
   {
-   "agent": "designer",
-   "pointer": "memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md",
+   "agent": "builder",
+   "pointer": "memory/builder/policy_conflict.py",
    "exists": true,
    "indexed": true
   },
   {
    "agent": "designer",
-   "pointer": "memory/designer/goal1-interaction-system-live-2026-11-20.md",
-   "exists": true,
-   "indexed": true
-  },
-  {
-   "agent": "designer",
-   "pointer": "memory/designer/designer-goal-proposals-2026-11-16.md",
+   "pointer": "memory/designer/acceptance-2-5-9-10-2026-11-19.md",
    "exists": true,
    "indexed": true
   },
@@ -86,19 +86,7 @@
   },
   {
    "agent": "researcher",
-   "pointer": "memory/researcher/evidence-quality-2026-11-20.md",
-   "exists": true,
-   "indexed": true
-  },
-  {
-   "agent": "researcher",
-   "pointer": "memory/researcher/MEMORY.md",
-   "exists": true,
-   "indexed": true
-  },
-  {
-   "agent": "researcher",
-   "pointer": "memory/researcher/evidence-source-scorer-2026-11-18.md",
+   "pointer": "memory/researcher/scribe-memory-health-relanded-2026-11-17.md",
    "exists": true,
    "indexed": true
   },
@@ -111,6 +99,30 @@
   {
    "agent": "verifier",
    "pointer": "memory/verifier/MEMORY.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "verifier",
+   "pointer": "memory/verifier/cockpit-staleness-monitor-cwd-fix-2026-11-24.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "verifier",
+   "pointer": "memory/verifier/stall-detector-verified-2026-11-23.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "verifier",
+   "pointer": "memory/verifier/latency-budget-verified-2026-11-23.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "verifier",
+   "pointer": "memory/verifier/cockpit-ui-gate-verified-2026-11-23.md",
    "exists": true,
    "indexed": true
   }
