@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier: all 10 Cycle-14 goals confirmed reached; remediation_e2e self-test 3/3 PASS (rc=0)
-- Goal #1 Adaptive Information Density verified complete: CSS+JS artifacts present, ACs pass statically, INDEX.md pointer added for ledger val
-- Goal
 - Builder built ui/topology.js for goal #6 (Cockpit Topology Visualizer); Python structural selftest passes 10/10 (Playwright unavailable).
 - All 10 goals verified complete; auto-loop dashboard still lists them as "open" — skip re-verification,
 - Designer cycle-12: 5/10 goals done (#1-#5). Artifacts: cockpit-density.css, cockpit-provenance.html,
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 Cycle-14 Verifier goals (1–10) verified and ledger-recorded; no open Verifier goals remain.
 - Goal 10
 - Builder cycle: goals 1–7 done; #8 (post_mortem.py) selftest 5/5 PASS, 3 post-mortems generated
+- All 10 goals reached; Goal #10 fixed by making audit recognize `var(--token, fallback)` as state tokens.
+- Cycle-14 complete: 10/10 goals verified, no open gaps in Verifier lane; cross_loop_integration.py built (5/5 PASS).
+- Goal #9 done (5/5 ACs). Goal #10 partial: backend+frontend+API wired into agent_portal.py, selftest not yet run.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
