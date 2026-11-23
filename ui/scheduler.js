@@ -21,7 +21,11 @@
     '#schedPanel .row span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}',
     '#modeHint{white-space:nowrap}',
     '#schedPanel button{background:none;border:1px solid rgba(120,160,255,.3);border-radius:4px;color:inherit;font-size:10px;padding:1px 6px;cursor:pointer}',
-    '#schedPanel .paused{opacity:.45}'
+    '#schedPanel .paused{opacity:.45}',
+    '#schedPanel .sgrip{display:none;height:7px;margin:2px 12px 6px;border-radius:4px;background:rgba(120,160,255,.15);cursor:ns-resize;position:relative}',
+    '#schedPanel .sgrip:hover,#schedPanel .sgrip.drag{background:rgba(120,160,255,.38)}',
+    '#schedPanel .sgrip::after{content:"";position:absolute;left:50%;top:50%;width:28px;height:2px;margin:-1px 0 0 -14px;border-radius:2px;background:rgba(200,220,255,.5)}',
+    '#schedPanel.open .sgrip{display:block}'
   ].join('');
   document.head.appendChild(css);
   var box = document.createElement('div');
@@ -36,7 +40,8 @@
     '</div>' +
     '<div class="srows">' +
       '<div class="row head"><span>job</span><span>every</span><span>note</span><span class="cd">next in</span><span>last / act</span></div>' +
-    '</div>';
+    '</div>' +
+    '<div class="sgrip" id="schedGrip" title="drag up/down to resize"></div>';
   var col = document.getElementById('chatCol');
   (col || document.body).insertBefore(box, (col && col.firstChild) || null);
   try { if (localStorage.getItem('schedPanelOpen') === '1') box.classList.add('open'); } catch (e) {}
@@ -85,6 +90,27 @@
     var open = box.classList.toggle('open');
     try { localStorage.setItem('schedPanelOpen', open ? '1' : '0'); } catch (e) {}
   };
+
+  // Bottom-edge drag handle: pull down to expand the table, up to shrink.
+  var rowsEl2 = box.querySelector('.srows');
+  var HMIN = 90, HMAX = 720, curH = 320;
+  try { var hs = parseInt(localStorage.getItem('schedPanelH'), 10); if (hs >= HMIN) curH = Math.min(HMAX, hs); } catch (e) {}
+  rowsEl2.style.maxHeight = curH + 'px';
+  var grip = document.getElementById('schedGrip');
+  grip.addEventListener('mousedown', function (e) {
+    e.preventDefault();
+    var startY = e.clientY, startH = curH;
+    grip.classList.add('drag');
+    function mm(ev) { curH = Math.max(HMIN, Math.min(HMAX, startH + (ev.clientY - startY))); rowsEl2.style.maxHeight = curH + 'px'; }
+    function mu() {
+      grip.classList.remove('drag');
+      document.removeEventListener('mousemove', mm);
+      document.removeEventListener('mouseup', mu);
+      try { localStorage.setItem('schedPanelH', String(Math.round(curH))); } catch (e2) {}
+    }
+    document.addEventListener('mousemove', mm);
+    document.addEventListener('mouseup', mu);
+  });
   setInterval(function () {
     fetch('/api/scheduler').then(function (r) { return r.json(); }).then(render).catch(function () {});
   }, 2000);
