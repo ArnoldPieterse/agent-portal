@@ -1,0 +1,106 @@
+{
+  "safe_test": {
+    "state": "done",
+    "dry_run": true,
+    "started_at": "2026-11-23T15:00:11.402446+00:00",
+    "ended_at": "2026-11-23T15:00:11.555063+00:00",
+    "steps": [
+      {
+        "step": 1,
+        "status": "fail",
+        "detail": "warning: Failed to set cwd to temp dir"
+      },
+      {
+        "step": 1,
+        "status": "pass",
+        "detail": "Runbook: Safe Test Runbook"
+      },
+      {
+        "step": 1,
+        "status": "info",
+        "detail": "Steps:   3"
+      },
+      {
+        "step": 1,
+        "status": "info",
+        "detail": "Agent:   Builder"
+      },
+      {
+        "step": 1,
+        "status": "info",
+        "detail": "[DRY RUN] Steps that would execute:"
+      },
+      {
+        "step": 2,
+        "status": "info",
+        "detail": "Step 1: Echo hello"
+      },
+      {
+        "step": 2,
+        "status": "pass",
+        "detail": "cmd:      echo hello_from_runbook"
+      },
+      {
+        "step": 2,
+        "status": "pass",
+        "detail": "expected: ~hello_from_runbook"
+      },
+      {
+        "step": 2,
+        "status": "info",
+        "detail": "timeout:  10s"
+      },
+      {
+        "step": 3,
+        "status": "info",
+        "detail": "Step 2: Write marker file"
+      },
+      {
+        "step": 3,
+        "status": "pass",
+        "detail": "cmd:      python -c \"open('memory/ops/runbooks/.test_marker','w').write('ok')\""
+      },
+      {
+        "step": 3,
+        "status": "info",
+        "detail": "expected: exit_code:0"
+      },
+      {
+        "step": 3,
+        "status": "info",
+        "detail": "timeout:  15s"
+      },
+      {
+        "step": 3,
+        "status": "pass",
+        "detail": "rollback: python -c \"import os;os.path.exists('memory/ops/runbooks/.test_marker') and os.remove('memory/ops/runbooks/.test_marker')\""
+      },
+      {
+        "step": 4,
+        "status": "info",
+        "detail": "Step 3: Echo done"
+      },
+      {
+        "step": 4,
+        "status": "pass",
+        "detail": "cmd:      echo runbook_complete"
+      },
+      {
+        "step": 4,
+        "status": "pass",
+        "detail": "expected: ~runbook_complete"
+      },
+      {
+        "step": 4,
+        "status": "info",
+        "detail": "timeout:  10s"
+      },
+      {
+        "step": 4,
+        "status": "info",
+        "detail": "[DRY RUN] No commands executed."
+      }
+    ],
+    "progress": 100
+  }
+}

@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 6 done: ui/topology.js (11/11 selftest) integrated into cockpit.js via dynamic script load + topology panel section.
-- Designer closed goals #1 (Adaptive Density), #2 (Provenance Overlay), #
 - Goal 8 (Post-Remediation Auto-Report) complete 6/6 ACs; Goal 9 (Policy Conflict Detector) in progress, regex fix applied.
 - Built memory/builder/remediation_extractor.py for Builder goal #8; verified 5 cycles (2 OOM, 3 chaos) from decision-log.jsonl
 - Goal #8 (post_mortem.py) passed 6/6 ACs; output at memory/ops/post-mortems/<date>-<agent>.md with 5 markdown sections
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #10 (Cockpit One-Click Runbook Trigger) in-progress: backend trigger script + API endpoints in agent_portal.py written, not yet verifie
 - Builder mid-build on Goal #10 (One-Click Runbook Trigger): added GET/POST routes to agent_portal.py, next step is frontend Run buttons in co
 - Cycle-12: all 10 goals verified (10/10). Full closure achieved; no open goals remain.
+- policy_conflict.py same-line action regex fixed to handle colon separator (`when X: then Y`); 4/4 selftest PASS
+- All 10 goals now verified complete per Verifier; semantic_search.py built for Archivist goal #
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
