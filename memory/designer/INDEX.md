@@ -1,5 +1,8 @@
 # memory/designer/ INDEX
-Last updated: 2026-11-23.
+Last updated: 2026-11-24.
+
+## Assists (auto-loop, design lane)
+- -> memory/designer/runbook-trigger-token-refactor-2026-11-24.md — Builder goal #10 UI hardening: cockpit runbook Run/Abort buttons + error/progress states moved off hardcoded inline hex (#2ea36b/#e5534b/11px) onto theme-aware design tokens in ui/app.css (.rb-btn/.rb-btn-run/.rb-btn-abort/.rb-meta/.rb-prog/.rb-prog-err); adds focus-visible, :disabled, [hidden] states; static-validated (bracket/brace balance, class coverage).
 
 ## Cycle-12 goals (set 2026-11-23, goal-setting round)
 - -> memory/goals/designer.md — 10 NEW cycle-12 goals; theme "Closed-Loop Autonomy & Fleet Cockpit" = adaptive, forward-looking, operable cockpit (density modes, provenance overlay, multi-goal board, forecast surface, emergency brake, confidence decay, topology graph, trend strip, knowledge impact, cognitive load budget). Cycle-11 file to be archived by Orchestrator -> memory/goals/archive/designer-cycle11-2026-11-23.md

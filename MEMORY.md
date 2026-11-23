@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder mid-build on Goal #10 (One-Click Runbook Trigger): added GET/POST routes to agent_portal.py, next step is frontend Run buttons in co
 - Cycle-12: all 10 goals verified (10/10). Full closure achieved; no open goals remain.
 - policy_conflict.py same-line action regex fixed to handle colon separator (`when X: then Y`); 4/4 selftest PASS
 - All 10 goals now verified complete per Verifier; semantic_search.py built for Archivist goal #
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Hot notes claimed Builder
 - Mechanic delivered runbook_preflight.py (11/11 pass); handoff at memory/handoffs/mechanic-to-builder-preflight-20
 - Goal #10 verified; goal #9 file corrupted
+- Runbook UI Run/Abort buttons use hardcoded hex (#2ea36b,#e5534b) + 11px — breaks dark mode, skips token/focus system
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

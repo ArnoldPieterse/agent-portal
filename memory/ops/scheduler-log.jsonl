@@ -782,3 +782,9 @@
 {"t": "2026-11-24 01:52:21", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-24 01:52:26", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-24 01:56:31", "job": "cycle_30m", "event": "done", "rc": 0}
+{"t": "2026-11-24 01:57:16", "job": "cycle_5m", "event": "start", "pid": 18600}
+{"t": "2026-11-24 01:57:21", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 02:02:16", "job": "cycle_5m", "event": "start", "pid": 3908}
+{"t": "2026-11-24 02:02:16", "job": "cycle_10m", "event": "start", "pid": 18784}
+{"t": "2026-11-24 02:02:21", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 02:02:26", "job": "cycle_10m", "event": "done", "rc": 0}
