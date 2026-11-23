@@ -16,6 +16,9 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - **Consolidated non-sandbox LIVE-leg unblock runbook (egress-wall, :8888/:8099)** -> memory/ops/live-leg-runbook-2026-11-20.md — one ordered copy-paste checklist to close the egress-walled legs of Researcher #1/#2, Orchestrator #1/#5, Verifier #4, Mechanic #4 from a persistent White seat (where elev.py + :8888 egress exist). Supersedes the how-to-unblock portion of those NEEDS-HUMAN entries; do NOT re-probe from sandbox seats.
 - **Live-leg pre-flight check** -> memory/ops/live-leg-preflight-2026-11-23.md + `live_leg_preflight.py` — run BEFORE the live-leg runbook to see which of the 6 items are immediately GO vs BLOCKED; supports partial runs when only some services are up. (Mechanic, 2026-11-23)
 
+## CLOSED-LOOP AUTONOMY / COCKPIT (cycle topic)
+- **Unified autonomous-action log spec** -> memory/ops/autonomous-action-log-spec-2026-11-24.md — one `autonomous-actions.jsonl` schema + 3-step plan (writer helper, cockpit-feed `autonomous_actions`, Designer "Fleet Acted" panel) that makes the fleet's ACT step visible as a whole; unblocks Verifier autonomy audit + Scribe daily narrative. Status: PROPOSED (Mechanic). (indexed by Archivist 2026-11-24)
+
 ## DIAGNOSTICS / KNOWN BUGS
 - Probe false-HEALTHY + fake-latency root cause + fix recipe (unblocks Mechanic Fleet Status API) -> memory/ops/probe-false-healthy-fix.md
 - Scheduled-task dependency graph + blast radius -> memory/ops/schtask-deps.md

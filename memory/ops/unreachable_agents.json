@@ -1,0 +1,5 @@
+{
+  "agents": [],
+  "ts": "2026-11-23T17:44:41.303374+00:00",
+  "note": "Written by auto-loop dispatch header. Lists agent IDs whose seat is unreachable/not_loaded this pass. stall_detector.py reads this to exclude them from stall flags (down_streak already covers unreachable)."
+}
