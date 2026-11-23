@@ -1,6 +1,6 @@
 # Decay report 2026-11-23
 
-Leaves: 9391 | flagged (<0.35): 0
+Leaves: 9405 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -6042,6 +6042,8 @@ Leaves: 9391 | flagged (<0.35): 0
 | memory/archivist/dedup-apply-evidence-2026-11-20.json | 3 | 0 | n | 0.533 |
 | memory/archivist/dedup-check-2026-11-20.json | 3 | 0 | n | 0.533 |
 | memory/archivist/dedup-report-2026-11-20.json | 3 | 0 | n | 0.533 |
+| memory/archivist/dedup-report-full-2026-11-20.json | 3 | 0 | n | 0.533 |
+| memory/archivist/dedup-report.json | 3 | 0 | n | 0.533 |
 | memory/archivist/dedup-scan-2026-11-20.json | 3 | 0 | n | 0.533 |
 | memory/archivist/dedup-verify-2026-11-20.json | 3 | 0 | n | 0.533 |
 | memory/archivist/dedup.py | 3 | 0 | n | 0.533 |
@@ -6465,9 +6467,13 @@ Leaves: 9391 | flagged (<0.35): 0
 | memory/mechanic/_elev_err.txt | 3 | 0 | n | 0.533 |
 | memory/mechanic/_quick_winrm_probe.py | 3 | 0 | n | 0.533 |
 | memory/mechanic/_winrm_probe_now.py | 3 | 0 | n | 0.533 |
+| memory/mechanic/backups/fleet-backup-2026-11-19_235248.tar.gz | 3 | 0 | n | 0.533 |
 | memory/mechanic/backups/fleet-backup-2026-11-19_235248.tar.json | 3 | 0 | n | 0.533 |
+| memory/mechanic/backups/fleet-backup-2026-11-20_003708.tar.gz | 3 | 0 | n | 0.533 |
 | memory/mechanic/backups/fleet-backup-2026-11-20_003708.tar.json | 3 | 0 | n | 0.533 |
+| memory/mechanic/backups/fleet-backup-2026-11-20_004234.tar.gz | 3 | 0 | n | 0.533 |
 | memory/mechanic/backups/fleet-backup-2026-11-20_004234.tar.json | 3 | 0 | n | 0.533 |
+| memory/mechanic/backups/fleet-backup-2026-11-20_084226.tar.gz | 3 | 0 | n | 0.533 |
 | memory/mechanic/backups/fleet-backup-2026-11-20_084226.tar.json | 3 | 0 | n | 0.533 |
 | memory/mechanic/dep-snapshots/real-white-live.csv | 3 | 0 | n | 0.533 |
 | memory/mechanic/__pycache__/agent_portal_pre-decisions-v2-reland-2026-11-18.cpython-313.pyc | 3 | 0 | n | 0.533 |
@@ -8576,6 +8582,8 @@ Leaves: 9391 | flagged (<0.35): 0
 | memory/mechanic/capacity-plan-latest.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/capacity_arbiter.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/circuit_breaker.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/cockpit-feed-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/cockpit_feed.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/complete_remaining_legs.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/deploy-readiness-validation-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/deploy_all_schtasks.py | 0 | 0 | n | 0.550 |
@@ -8661,6 +8669,8 @@ Leaves: 9391 | flagged (<0.35): 0
 | memory/ops/arbitration-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop-stale-dispatch-fix-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
+| memory/ops/broken-pointer-triage-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/ops/cockpit-feed.json | 0 | 0 | n | 0.550 |
 | memory/ops/cycle-10-closeout-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/decision-log-test-pollution-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/deploy_all_schtasks_cli.bat | 0 | 0 | n | 0.550 |
@@ -8679,7 +8689,9 @@ Leaves: 9391 | flagged (<0.35): 0
 | memory/ops/guardian-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/guardian-state.json | 0 | 0 | n | 0.550 |
 | memory/ops/health-score.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/host-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/host-metrics.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/host.pid | 0 | 0 | n | 0.550 |
 | memory/ops/incident-alerts.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/incidents.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/level-speed-analysis-2026-11-23.md | 0 | 0 | n | 0.550 |
@@ -8730,6 +8742,7 @@ Leaves: 9391 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.4dc0eca68a | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.540225d8ad | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.77e4ba2208 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.7d5dac946d | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.80ed23fe7b | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.af43711497 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.b63f050f69 | 0 | 0 | n | 0.550 |
@@ -9076,6 +9089,7 @@ Leaves: 9391 | flagged (<0.35): 0
 | memory/researcher/decay-run3-assist-archivist-goal3-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/researcher/gap-fill-script-assist-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/researcher/memory-integrity-fresh-count-2026-11-23.md | 0 | 1 | Y | 0.769 |
+| memory/researcher/pointer-metric-false-positive-audit-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/researcher/schtasks-task-count-and-name-drift-corrected-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/researcher/verifier-slo-schtask-add-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/scribe/runbook_lessons.py | 0 | 1 | Y | 0.769 |

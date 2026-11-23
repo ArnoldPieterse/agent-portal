@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #4 Conflict Resolver has a bug: removal logic doesn't account for marker line offset; fix pending.
-- Broken pointers grew 157→203 (+46/day) on 2026-11-23; date
-- Designer goals 5 & 6 re-opened 2026-11-23 — evidence pointers cited unrelated artifacts; correction note at memory/orchestrator/designer-goa
 - Verified Designer goals 5&6 cite wrong artifacts; evidence at memory/mechanic/designer-goals5-6-stale-pointers-2026-11-23.md
 - Scribe verified Archivist Goal #7 (auto-linker) — selftest 11/11, evidence at memory/scribe/verify-archivist-goal7-auto-linker-2026-11-23.md
 - Builder fixed kb_sentinel.py selftest (`or 1000` fallback vs actual count 0); Archivist goals 8/9/10 all verified passing (4/4, 5/5, 6/6).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goals 5 & 6 have confirmed stale evidence pointers (Scribe-verified); need fresh cycle-10 leaves before closing out.
 - Builder assisted Archivist Goal #4 (Conflict Resolver): selftest 5/5, prod scan 2626 files→3838 facts→225 conflicts; evidence at memory/buil
 - Root cause found: stale-closure-sweep false-closes goals via positional pointer assignment without content-match; fix doc at memory/ops/poin
+- Designer wrote 6-item Fleet Cockpit UX spec at memory/ops/cockpit-ux-improvement-spec-2026-11-23.md (alert strip, panel reorder, rollback bu
+- Mechanic completed Archivist goal #2 (auto-quarantine: 1 quarantined, 4 live refs flagged); fleet now 75/82.
+- Round-topic synthesis
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

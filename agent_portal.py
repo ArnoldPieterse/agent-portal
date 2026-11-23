@@ -5344,7 +5344,7 @@ class Handler(BaseHTTPRequestHandler):
         if p == "/api/scheduler":   # IN-PROC SCHEDULER STATUS (2026-11-23)
             try:
                 import portal_scheduler
-                return self._json(200, portal_scheduler.status())
+                return self._json(200, portal_scheduler.status_from_disk())
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
         if p == "/api/agents":
@@ -5804,7 +5804,7 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/scheduler":   # IN-PROC SCHEDULER ACTIONS (2026-11-23)
             try:
                 import portal_scheduler
-                return self._json(200, portal_scheduler.action(body.get("job"), body.get("action")))
+                return self._json(200, portal_scheduler.request_action(body.get("job"), body.get("action")))
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/agents":
@@ -5958,7 +5958,6 @@ if __name__ == "__main__":
     threading.Thread(target=_level_heartbeat, daemon=True).start()   # LEVEL HEARTBEAT (2026-11-23)
     try:
         import portal_scheduler
-        threading.Thread(target=portal_scheduler.run_forever, daemon=True).start()   # IN-PROC SCHEDULER (2026-11-23)
     except Exception as _sched_e:
         print("in-proc scheduler failed to start:", _sched_e)
     print(f"Agent portal -> http://127.0.0.1:{PORT}  (backed by Studio at {STUDIO})")

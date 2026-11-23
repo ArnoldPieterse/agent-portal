@@ -366,3 +366,15 @@
 {"t": "2026-11-23 15:23:38", "job": "cycle_5m", "event": "start", "pid": 29516}
 {"t": "2026-11-23 15:26:33", "job": "cycle_10m", "event": "start", "pid": 30368}
 {"t": "2026-11-23 15:26:38", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:36:34", "job": "cycle_10m", "event": "start", "pid": 27548}
+{"t": "2026-11-23 15:36:39", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:40:14", "event": "scheduler-up", "jobs": 6}
+{"t": "2026-11-23 15:40:39", "event": "scheduler-up", "jobs": 6}
+{"t": "2026-11-23 15:43:35", "event": "scheduler-up", "jobs": 6}
+{"t": "2026-11-23 15:44:05", "job": "cycle_5m", "event": "start", "pid": 25192}
+{"t": "2026-11-23 15:44:05", "job": "cycle_10m", "event": "start", "pid": 20632}
+{"t": "2026-11-23 15:44:05", "job": "cycle_30m", "event": "start", "pid": 25436}
+{"t": "2026-11-23 15:44:05", "job": "cycle_1h", "event": "start", "pid": 20820}
+{"t": "2026-11-23 15:44:05", "job": "schtask_dep_weekly", "event": "start", "pid": 26680}
+{"t": "2026-11-23 15:44:10", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:44:10", "job": "schtask_dep_weekly", "event": "done", "rc": 0}

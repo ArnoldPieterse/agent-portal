@@ -285,3 +285,5 @@
 {"ts": "2026-11-23 15:06:01", "file": "ui/icons.js", "sha": "8d83cfedcf", "size": 12406, "snapshot": null}
 {"ts": "2026-11-23 15:06:01", "file": "ui/scheduler.js", "sha": "3aa15a9bba", "size": 5224, "snapshot": null}
 {"ts": "2026-11-23 15:08:17", "file": "ui/components.js", "sha": "06773b4737", "size": 17336, "snapshot": null}
+{"ts": "2026-11-23 15:41:17", "file": "agent_portal.py", "sha": "7d5dac946d", "size": 302829, "snapshot": "memory/ops/merge-queue/agent_portal.py.7d5dac946d"}
+{"ts": "2026-11-23 15:41:17", "file": "ui/scheduler.js", "sha": "07171e1207", "size": 7345, "snapshot": null}
