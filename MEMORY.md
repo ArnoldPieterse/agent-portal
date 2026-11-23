@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 goals reached; Goal #10 fixed by making audit recognize `var(--token, fallback)` as state tokens.
-- Cycle-14 complete: 10/10 goals verified, no open gaps in Verifier lane; cross_loop_integration.py built (5/5 PASS).
 - Goal #9 done (5/5 ACs). Goal #10 partial: backend+frontend+API wired into agent_portal.py, selftest not yet run.
 - All 5 cycle-14 Builder goals (loop_scorer, policy_tuner, alert_correlate, capacity_predict, chaos_drill) verified in memory/go
 - Cycle-12 Designer: all 10 goals verified & ledger-recorded (10/10, open=0). No remaining work.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder goals #11–15 (loop_scorer, policy_tuner, alert_correlate, capacity_predict, chaos_drill) all verified and recorded in memory/goals/b
 - Builder lane fully closed: all 25 goals verified, 0 open (last two: runbook_trigger selftest 7/7, state_snapshot 21/21 valid).
 - Cycle-12 Designer lane fully closed: 10/10 goals verified, open=0, evidence leaves exist for all.
+- state_snapshot.py fixed: reads memory/ops/fleet-metrics.jsonl (not memory/fleet/*probe*); verified real metrics flow
+- Orchestrator verified all 5 Builder cycle-14 selftests (all pass) and recorded evidence in builder.md + assist-builder-cycle14-verify-2026-1
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

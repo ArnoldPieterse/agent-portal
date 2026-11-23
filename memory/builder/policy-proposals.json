@@ -1,14 +1,30 @@
 {
-  "generated": "2026-11-24T00:14:36.037212",
+  "generated": "2026-11-23T23:54:58.404823",
   "source": "memory/builder/loop-scores.jsonl",
-  "total_proposals": 1,
+  "total_proposals": 3,
   "proposals": [
+    {
+      "type": "tighten_sla",
+      "agent": "slow_agent",
+      "current_sla_s": 300,
+      "proposed_sla_s": 60,
+      "rationale": "avg timeliness 0.20 over 3 loops",
+      "confidence": 0.6
+    },
+    {
+      "type": "add_precheck",
+      "stage": "remediate",
+      "failure_count": 2,
+      "rationale": "stage 'remediate' failed in 2 loops",
+      "suggested_check": "pre-remediate-validation",
+      "confidence": 0.5
+    },
     {
       "type": "increase_detection_frequency",
       "current_interval_s": 300,
-      "proposed_interval_s": 153,
-      "rationale": "avg loop score 0.51 < 0.6",
-      "confidence": 0.8
+      "proposed_interval_s": 120,
+      "rationale": "avg loop score 0.40 < 0.6",
+      "confidence": 1.0
     }
   ]
 }

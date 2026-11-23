@@ -753,3 +753,4 @@
 {"ts": "2026-11-23 23:33:18", "run": "g-1a2089c6ce6-2e9842", "missing": {}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-23 23:39:19", "run": "g-1a208a1edbb-ccd617", "missing": {}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-23 23:45:19", "run": "g-1a208a76d4d-e77a01", "missing": {}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
+{"ts": "2026-11-23 23:54:06", "run": "g-1a208af746a-6bc39b", "missing": {}, "relocated": {"Researcher": "black (home not_loaded)"}}

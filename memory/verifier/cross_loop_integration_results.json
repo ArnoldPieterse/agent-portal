@@ -1,0 +1,35 @@
+{
+  "ts": "2026-11-23T13:40:35.493473+00:00",
+  "tool": "cross_loop_integration.py",
+  "mode": "self-test",
+  "ac_results": [
+    {
+      "name": "AC1: healthy pipeline all-PASS <30s",
+      "pass": true,
+      "detail": "stages=5, total=797ms"
+    },
+    {
+      "name": "AC2: injected detection fault caught",
+      "pass": true,
+      "detail": "stage1=FAIL"
+    },
+    {
+      "name": "AC3: remediation timeout -> SLA breach reported",
+      "pass": true,
+      "detail": "remediate=FAIL"
+    },
+    {
+      "name": "AC4: idempotent re-run same stage pattern",
+      "pass": true,
+      "detail": "run1=5 stages, run2=5"
+    },
+    {
+      "name": "AC5: output valid JSON with required fields",
+      "pass": true,
+      "detail": "fields=ok"
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "healthy_pipeline_ms": 5640
+}

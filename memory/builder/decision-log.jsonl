@@ -1,0 +1,4 @@
+{"ts": "2026-11-23T13:41:08+00:00", "agent": "system", "type": "runbook_trigger", "event": "started", "exec_id": "6372ec4d", "runbook": "boot_recovery", "dry_run": true}
+{"ts": "2026-11-23T13:41:09+00:00", "agent": "system", "type": "runbook_trigger", "event": "failed", "exec_id": "6372ec4d", "runbook": "boot_recovery", "error": "Exit code 2"}
+{"ts": "2026-11-23T13:52:08+00:00", "agent": "system", "type": "runbook_trigger", "event": "started", "exec_id": "1a55d2a8", "runbook": "boot_recovery", "dry_run": true}
+{"ts": "2026-11-23T13:52:09+00:00", "agent": "system", "type": "runbook_trigger", "event": "failed", "exec_id": "1a55d2a8", "runbook": "boot_recovery", "error": "Exit code 2"}
