@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- auto_quarantine.py verified 7/7 PASS + clean prod run (7652 files); only remaining step: schedule via schtasks
 - Mechic marked all 10 Archivist goals [REACHED] in memory/goals/archivist.md; evidence files existed but markers were missing.
 - Mechanic Goal#3 host_probes.py verified 35/35
 - Scribe goal #1 (cycle_summary.py) built; Archivist all 10 goals REACHED, lane closed.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist lane fully closed: 20/20 goals [REACHED] (2026-11-23). Auto-loop kept firing on stale cycle-12
 - Auto-loop sends stale goal snapshots to Archivist; lane confirmed closed (20/20 reached) — repeated idle passes are a prompt-sync bug, not m
 - Auto-loop sends stale goal list to Archivist (all
+- Auto-loop prompt is stale: Archivist lane 20/20 [REACHED], no open work; repeated idle pings are false positives from outdated goal snapshot
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
