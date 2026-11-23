@@ -768,3 +768,10 @@
 {"t": "2026-11-24 01:32:15", "job": "cycle_10m", "event": "start", "pid": 13164}
 {"t": "2026-11-24 01:32:20", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-24 01:32:25", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-24 01:37:15", "job": "cycle_5m", "event": "start", "pid": 12784}
+{"t": "2026-11-24 01:37:20", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 01:42:15", "job": "cycle_5m", "event": "start", "pid": 21412}
+{"t": "2026-11-24 01:42:15", "job": "cycle_10m", "event": "start", "pid": 18652}
+{"t": "2026-11-24 01:42:15", "job": "cycle_30m", "event": "start", "pid": 8392}
+{"t": "2026-11-24 01:42:20", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 01:42:25", "job": "cycle_10m", "event": "done", "rc": 0}

@@ -327,6 +327,11 @@ def get_run_state(run_id):
     return run
 
 
+def get_state(run_id):
+    """Alias for get_run_state (used by portal)."""
+    return get_run_state(run_id)
+
+
 # --- State management ---
 
 def load_state():
