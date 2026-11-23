@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Built & ran memory/builder/feed_refresh.py — fixes cockpit-feed.json staleness (fleet_pct was None); regenerates from local sources
-- Mechic wrote unified action-log spec at memory/ops/autonomous-action-log-spec-2026-11-24.md; unblocks cockpit "Fleet Acted" panel
 - Idle-maintenance-rotation-2026-11-24.md replaces generic (a)-(d) idle menu with per-role state-driven tasks; indexed in ops/INDEX.md
 - Researcher wrote `memory/goals/mechanic-nextcycle-state-collector-forecast.md` — 7 signals, 3-cycle threshold, edge cases, restart-loop guar
 - Open: feed_refresh.py must be added to FleetStateCollector schtask chain (5-min) or cockpit-feed.json goes stale again.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Stall detector patched to exclude unreachable agents via ops/unreachable_agents.json; selftest 7/7 pass, evidence at memory/mechanic/stall-d
 - Scribe wrote `memory/ops/data-freshness-escalation-protocol-2026-11-24.md` (4-step decision tree + ownership table for fleet-metrics.jsonl s
 - Verifier goal #9 reroute_e2e.py passed 6/6; evidence recorded in ledger, report at reroute_e2e_report.json
+- Mechanic added subprocess call to feed_refresh.py at end of state_collector.py collect; cockpit-feed.json now auto-refreshes via existing 5-
+- Unified action log (Mechanic spec Steps 1+2) implemented: `memory/ops/action_log.py` live, cockpit feed now includes autonomous_actions; unb
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
