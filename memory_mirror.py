@@ -128,13 +128,14 @@ def ensure_conn(ip, user, pw):
 #   memory/designer/_*            - per-host browser profile dirs (Chromium, ~40 MB each)
 #   memory/mechanic/backups/*.tar.gz - fleet backup tarballs (host-local safety nets)
 def _excluded(rel):
-    r = rel.replace(os.sep, "/")
-    if r.startswith("memory/designer/_"):
+    """Never mirrored either direction. Profile bloat = deep content under
+    designer/_<profile>/ (parts>=4). Flat work files like memory/designer/
+    _dc_clean.css (parts==3) are legitimate and DO mirror."""
+    if rel.startswith("memory/mechanic/backups/") and rel.endswith(".tar.gz"):
         return True
-    if r.startswith("memory/mechanic/backups/") and r.endswith(".tar.gz"):
-        return True
+    if rel.startswith("memory/designer/_"):
+        return len(rel.split("/")) >= 4
     return False
-
 
 def mirror_host(h):
     name, ip, user, pw = h["name"], h["ip"], h.get("user", ""), h.get("password", "")
