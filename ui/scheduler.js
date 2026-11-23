@@ -7,6 +7,8 @@
   css.textContent = [
     '#schedPanel{border-bottom:1px solid rgba(120,160,255,.2);font-size:12px;background:rgba(120,160,255,.04)}',
     '#schedPanel .shead{display:flex;align-items:center;gap:8px;padding:5px 16px;cursor:pointer;user-select:none}',
+    '#schedPanel .chev{font-size:10px;opacity:.6;transition:transform .15s;display:inline-block}',
+    '#schedPanel.open .chev{transform:rotate(90deg)}',
     '#schedPanel .shead:hover{background:rgba(120,160,255,.07)}',
     '#schedPanel .shead b{font-size:11px;letter-spacing:.4px;text-transform:uppercase;opacity:.85}',
     '#schedPanel .smeta{margin-left:auto;font-variant-numeric:tabular-nums}',
@@ -25,7 +27,8 @@
   var box = document.createElement('div');
   box.id = 'schedPanel';
   box.innerHTML =
-    '<div class="shead" id="schedToggle">' +
+    '<div class="shead" id="schedToggle" title="click to expand / collapse">' +
+      '<span class="chev">&#9656;</span>' +
       '<span style="font-size:12px">&#9201;</span>' +
       '<b>In-process scheduler</b>' +
       '<span style="opacity:.5;font-size:11px">(1 schtask: PortalRun -&gt; guardian; rest timed in python)</span>' +
@@ -36,6 +39,7 @@
     '</div>';
   var col = document.getElementById('chatCol');
   (col || document.body).insertBefore(box, (col && col.firstChild) || null);
+  try { if (localStorage.getItem('schedPanelOpen') === '1') box.classList.add('open'); } catch (e) {}
 
   function fmt(s) {
     if (s < 0) s = 0;
@@ -73,10 +77,14 @@
       };
     });
     var meta = document.getElementById('schedMeta');
-    meta.innerHTML = '<span class="ok">' + okc + ' ok</span>' + (badc ? ' <span class="bad">' + badc + ' failing</span>' : '');
+    meta.innerHTML = '<span class="ok">' + okc + ' ok</span>' + (badc ? ' <span class="bad">' + badc + ' failing</span>' : '') +
+      ' <span style="opacity:.5">&middot; ' + data.jobs.length + ' jobs</span>';
   }
 
-  document.getElementById('schedToggle').onclick = function () { box.classList.toggle('open'); };
+  document.getElementById('schedToggle').onclick = function () {
+    var open = box.classList.toggle('open');
+    try { localStorage.setItem('schedPanelOpen', open ? '1' : '0'); } catch (e) {}
+  };
   setInterval(function () {
     fetch('/api/scheduler').then(function (r) { return r.json(); }).then(render).catch(function () {});
   }, 2000);
