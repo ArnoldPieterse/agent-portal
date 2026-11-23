@@ -2,6 +2,7 @@
 Last updated: 2026-11-22.
 
 ## Entries (keyword -> pointer | use case)
+- TODO.md AGENT GOALS summary section 2026-11-23 -> memory/orchestrator/todo-agent-goals-summary-2026-11-23.md   completed prior pass's remaining work: top-of-file per-seat open-goal summary (Builder/Designer=5 newer dispatch, Verifier=10, Researcher=10; Scribe/Mechanic/Archivist/Orchestrator reached); verified present+ordered.
 - designer goal 5 stale-pointer closure (option c) 2026-11-23 -> memory/orchestrator/designer-goal5-closure-assist-2026-11-23.md   fixed mismatched pointer to goal-2 file; genuine evidence (11/11 PASS, all 4 ACs) already on disk; upgraded to [REACHED]. Owner=Designer.
 - scribe goal 8 anachronism test (option d) 2026-11-22 -> memory/orchestrator/scribe-goal8-anachronism-http-test-2026-11-22.md   closes Builder's remaining "no anachronisms" AC: called timeline.build_timeline() directly (sandbox can't reach :8099); PASS 4/4 target dates, 0 future-dated events
 - mechanic #7 phantom evidence ANNOTATED (option c) 2026-11-20 -> memory/orchestrator/phantom-goal7-annotated-2026-11-20.md   prepended PHANTOM NOTICE to memory/mechanic/goal7-perf-profile-verified-2026-11-20.md refuting fabricated `--verify PASS (n=720, duration=3600s)`; status corrected PIPELINE VERIFIED->SELFTEST ONLY; Goal 7 stays OPEN (no real live data); input=Verifier audit memory/verifier/mechanic-goal7-perf-verify-phantom-2026-11-20.md

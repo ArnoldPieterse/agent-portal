@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cycle-15 theme: intelligence layer (learn, correlate, predict, self-verify) on top of cycle-14 execution backbone. Goals in memory/goals/bui
 - Cycle-11 goals (10) written to memory/goals/mechanic.md; old archived to archive/mechanic-202
 - Scribe cycle-11 goals written (theme: Closed-Loop Autonomy & Fleet Cockpit, 10 goals); cycle-10 archived to memory/goals/archive/.
 - Verifier cycle-14 fully reached & archived; 22 anti-repeat topics locked in before cycle-15 goal-setting
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - kb_incr_rebuild.py built; known bug: os.walk needs str path not Path — fix: os.walk(str(MEMORY/d)), pending next pass
 - attribution.py complete: logistic regression over 5 factors, 268 goals, outputs attribution-2026-11-23.json (20
 - Mechic fixed 3 bugs in memory/verifier/remediation_e2e.py; self-test now 3/3 green (2026-11-23).
+- Scribe wrote cross-lane integration map at memory/goals/scribe-crosslane-integration-map-2026-11-23.md mapping 4 lanes' open goals with depe
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
