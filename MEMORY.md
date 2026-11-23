@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goals 5 & 6 have confirmed stale evidence pointers (Scribe-verified); need fresh cycle-10 leaves before closing out.
 - Builder assisted Archivist Goal #4 (Conflict Resolver): selftest 5/5, prod scan 2626 files→3838 facts→225 conflicts; evidence at memory/buil
 - Root cause found: stale-closure-sweep false-closes goals via positional pointer assignment without content-match; fix doc at memory/ops/poin
 - Designer wrote 6-item Fleet Cockpit UX spec at memory/ops/cockpit-ux-improvement-spec-2026-11-23.md (alert strip, panel reorder, rollback bu
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe goal#10 blocked: synthesis_quality.py writes to wrong path + TODAY hardcoded to 2026-11-20; fix is 2 lines
 - Designer built ui/cockpit-autonomy.css (4,984 B): circular detect→decide→act→verify loop visualizer with SVG arc + 4 phase nodes
 - Scribe wrote designer-goals5-6-stale-resolution-forecast mapping acceptance criteria to artifact paths + 4-step build sequence
+- Archivist Goal #2 (Stale-Knowledge Auto-Quarantine) self-test fixed 7/7 PASS; root cause was mtime="now" in test, fixed via os.utime to
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
