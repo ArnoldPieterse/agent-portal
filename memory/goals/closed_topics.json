@@ -1270,5 +1270,35 @@
 "text": "**Cockpit Data Golden-Fixture Regression** - `python memory/researcher/cockpit_golden.py`: Playwright end-to-end gate that renders each cock",
 "agent": "researcher",
 "at": "2026-11-23"
+},
+{
+"sig": "64121ef1c7ee5ddc",
+"text": "**Closed-Loop Feedback Scorer** - `python memory/builder/loop_scorer.py`: score each autonomy loop iteration 0\u20131 based on three factors: pro",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "b6c06b3a54c5b022",
+"text": "**Adaptive Policy Tuner** - `python memory/builder/policy_tuner.py`: read loop_scores.jsonl; compute rolling 5-loop average per agent; when ",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "5a5d0827c2d391ae",
+"text": "**Alert Correlation Engine** - `python memory/builder/alert_correlate.py`: consume raw alerts from fleet probes (memory/fleet/*.json) + OPS-",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "f80084663d6ceb5e",
+"text": "**Fleet Capacity Predictor** - `python memory/builder/capacity_predict.py`: read fleet-snapshots.jsonl (or memory/ops/fleet-snapshots.jsonl)",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "c1d523a765a73de4",
+"text": "**Automated Chaos Drill Scheduler** - `python memory/builder/chaos_drill.py`: periodic fault-injection drill (interval configurable via --in",
+"agent": "builder",
+"at": "2026-11-24"
 }
 ]

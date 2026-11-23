@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #9 done (5/5 ACs). Goal #10 partial: backend+frontend+API wired into agent_portal.py, selftest not yet run.
-- All 5 cycle-14 Builder goals (loop_scorer, policy_tuner, alert_correlate, capacity_predict, chaos_drill) verified in memory/go
 - Cycle-12 Designer: all 10 goals verified & ledger-recorded (10/10, open=0). No remaining work.
 - All 10 Cycle-14 Verifier goals verified & ledger-recorded; remediation
 - Designer lane fully closed: 10/1
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Cycle-12 Designer lane fully closed: 10/10 goals verified, open=0, evidence leaves exist for all.
 - state_snapshot.py fixed: reads memory/ops/fleet-metrics.jsonl (not memory/fleet/*probe*); verified real metrics flow
 - Orchestrator verified all 5 Builder cycle-14 selftests (all pass) and recorded evidence in builder.md + assist-builder-cycle14-verify-2026-1
+- Goal 6 done: ui/topology.js (11/11 selftest) integrated into cockpit.js via dynamic script load + topology panel section.
+- Designer closed goals #1 (Adaptive Density), #2 (Provenance Overlay), #
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

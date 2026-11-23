@@ -700,3 +700,7 @@
 {"t": "2026-11-23 23:56:29", "job": "cycle_30m", "event": "done", "rc": 0}
 {"t": "2026-11-23 23:57:14", "job": "cycle_5m", "event": "start", "pid": 1236}
 {"t": "2026-11-23 23:57:19", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 00:02:14", "job": "cycle_5m", "event": "start", "pid": 15440}
+{"t": "2026-11-24 00:02:14", "job": "cycle_10m", "event": "start", "pid": 7788}
+{"t": "2026-11-24 00:02:19", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 00:02:24", "job": "cycle_10m", "event": "done", "rc": 0}
