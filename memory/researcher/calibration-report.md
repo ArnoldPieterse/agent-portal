@@ -1,5 +1,5 @@
 # Prediction Calibration Report
-Generated: 2026-11-23T00:27:03Z
+Generated: 2026-11-23T00:31:16Z
 
 ## Summary
 - Predictions available: **10**

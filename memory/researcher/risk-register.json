@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-23 10:29:46",
+ "generated": "2026-11-23 10:31:18",
  "total": 1464,
  "open": 614,
  "mitigated": 850,
- "build_s": 0.35,
+ "build_s": 0.36,
  "risks": [
   {
    "id": "f0b9802b52",

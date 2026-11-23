@@ -1054,5 +1054,65 @@
 "text": "**Cockpit Mobile Adaptation** - Ensure the full cockpit tab is usable at 768px: panels stack vertically, gauges scale down, agent grid becom",
 "agent": "designer",
 "at": "2026-11-23"
+},
+{
+"sig": "a77020aae9e91bf1",
+"text": "**Autonomy Loop-Closure Rate** - `python memory/researcher/loop_closure_rate.py`: parse every autonomous action in decision-log.jsonl + goal",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "914258cb72b35d94",
+"text": "**Decision Confidence Estimator** - `python memory/researcher/decision_confidence.py`: for each decision in decision-log.jsonl, score how we",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "1716150e6513718b",
+"text": "**Evidence-to-Decision Traceability** - `python memory/researcher/evidence_trace.py`: for each cockpit decision, build the provenance chain ",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "69bd8ff8b0a8579a",
+"text": "**Prediction Calibration Tracker** - `python memory/researcher/calibration_tracker.py`: read forecast-latest.md / next10.json predictions + ",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "67296b12636efb33",
+"text": "**Cockpit Decision-Feed Schema** - `memory/researcher/cockpit-decision-feed.md`: spec the JSON contract the Fleet Cockpit consumes for decis",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "779f80fc0792aa94",
+"text": "**Autonomous Action Replay** - `python memory/researcher/action_replay.py`: given a past autonomous action that failed or was reverted, reco",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "98cb567aae914067",
+"text": "**Autonomy Risk Register** - `python memory/researcher/autonomy_risk_register.py`: scan OPS-NOTE/NEEDS-HUMAN entries in memory/ops/blockers.",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "7ecee8c4d65cec46",
+"text": "**Loop-Stall Predictor** - `python memory/researcher/loop_stall_predictor.py`: from an agent's recent turn history (repeated no-file-change ",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "7c4982325d8c522c",
+"text": "**Fleet Trust Score** - `python memory/researcher/fleet_trust_score.py`: combine loop-closure rate (#1), mean decision confidence (#2), cali",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "12282aa9a7d081f3",
+"text": "**Trust-Pipeline Self-Check** - `python memory/researcher/trust_selfcheck.py`: test harness that runs #1/#2/#4/#9 against fixtures and asser",
+"agent": "researcher",
+"at": "2026-11-23"
 }
 ]

@@ -266,3 +266,4 @@
 {"ts": "2026-11-23 09:18:27", "file": "agent_portal.py", "sha": "af43711497", "size": 300354, "snapshot": "memory/ops/merge-queue/agent_portal.py.af43711497"}
 {"ts": "2026-11-23 09:18:27", "file": "recover_all.py", "sha": "2ea004d8e3", "size": 8952, "snapshot": "memory/ops/merge-queue/recover_all.py.2ea004d8e3"}
 {"ts": "2026-11-23 09:19:42", "file": "goal_ledger.py", "sha": "ff3d95dd64", "size": 9893, "snapshot": "memory/ops/merge-queue/goal_ledger.py.ff3d95dd64"}
+{"ts": "2026-11-23 10:35:58", "file": "agents.json", "sha": "209ab15642", "size": 9010, "snapshot": "memory/ops/merge-queue/agents.json.209ab15642"}

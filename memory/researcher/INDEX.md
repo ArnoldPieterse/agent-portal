@@ -149,3 +149,4 @@ Last updated: 2026-11-15 (FINAL: mirror-clobber mechanism resolved w/ config evi
 - [Stale-claim correction 2026-11-23] deploy_all_schtasks.py has 7 tasks (not 6); task name is ArchivistDecayWeekly not ArchivistDecayScore; 3 docs still use the wrong name -> memory/researcher/schtasks-task-count-and-name-drift-corrected-2026-11-23.md
 - [2026-11-23 Builder #7 theme toggle verification] All 4 ACs verified: code (core.js L569-584) + pw_test.py 66/66 Chromium pass. Leaf: memory/researcher/builder-goal7-theme-verify-2026-11-23.md
 - -> schtasks-seat-sandbox-verify-2026-11-23.md   Archivist G3 code-side ready (7 targets+decay PASS); host=White seat is sandboxed (no schtasks COM, no loopback) - not the non-sandbox unblock session
+- [researcher-stall-diagnosis-2026-11-23.md](memory/researcher/researcher-stall-diagnosis-2026-11-23.md) - 2026-11-23: why Researcher sat at 0/10 for 9h (stale self-belief + calibration assert crash + missing studio binding); assist log  
