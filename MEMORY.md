@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- HOT-NOTE "CSS density selector mismatch" debunked: no such selectors exist in any UI file; feature is unbuilt (Designer goal #1).
-- Goal #10 Cognitive Load: audit script bug — counts total panels not per-panel; needs fix before verification can pass.
-- Cycle-14 Builder: all 5 goals done (loop_scorer, policy_tuner, alert_correlate, capacity_predict, chaos_drill) — all ACs pass
 - Researcher goal #2 (instrument_roi.py) in progress; inputs: ledger, blockers.md, instrument-health.json, auto-loop pass notes
 - Mechanic flagged disk pressure on "safe" host: 43% > 41% threshold, slope +0.5%/day — may breach soon.
 - Builder goals 6–10 are the only open work fleet-wide; topology_svg.py (goal #6) was started but incomplete due to context limit.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #1 Adaptive Information Density verified complete: CSS+JS artifacts present, ACs pass statically, INDEX.md pointer added for ledger val
 - Goal
 - Builder built ui/topology.js for goal #6 (Cockpit Topology Visualizer); Python structural selftest passes 10/10 (Playwright unavailable).
+- All 10 goals verified complete; auto-loop dashboard still lists them as "open" — skip re-verification,
+- Designer cycle-12: 5/10 goals done (#1-#5). Artifacts: cockpit-density.css, cockpit-provenance.html,
+- Builder cycle-14: goals 1–5 verified; now building goal #6 Cockpit Topology Visual
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

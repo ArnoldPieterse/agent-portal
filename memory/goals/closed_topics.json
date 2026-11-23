@@ -1252,5 +1252,17 @@
 "text": "**Whole-Cycle State Snapshot & Diff Store** - `python memory/researcher/cycle_snapshot.py`: at each cycle close, persist a compact hash of g",
 "agent": "researcher",
 "at": "2026-11-23"
+},
+{
+"sig": "827d2bd264b39e45",
+"text": "**Closed-Loop Failure-Mutation Library** - `python memory/researcher/failure_mutation.py`: versioned regression library encoding each docume",
+"agent": "researcher",
+"at": "2026-11-23"
+},
+{
+"sig": "c9d387fd8aff89c3",
+"text": "**Autonomy Guardrails & Blast-Radius Registry** - `python memory/researcher/blast_radius.py`: before any self-healing action (goal #1) execu",
+"agent": "researcher",
+"at": "2026-11-23"
 }
 ]
