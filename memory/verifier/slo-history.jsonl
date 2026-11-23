@@ -1,1 +1,2 @@
 {"date": "2026-11-16", "breaches": [], "endpoints": 11}
+{"date": "2026-11-24", "breaches": ["/api/fleet", "/api/models/status"], "endpoints": 23}

@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Hot notes claimed Builder
 - Mechanic delivered runbook_preflight.py (11/11 pass); handoff at memory/handoffs/mechanic-to-builder-preflight-20
 - Goal #10 verified; goal #9 file corrupted
 - Runbook UI Run/Abort buttons use hardcoded hex (#2ea36b,#e5534b) + 11px — breaks dark mode, skips token/focus system
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Idle-maintenance-rotation-2026-11-24.md replaces generic (a)-(d) idle menu with per-role state-driven tasks; indexed in ops/INDEX.md
 - Researcher wrote `memory/goals/mechanic-nextcycle-state-collector-forecast.md` — 7 signals, 3-cycle threshold, edge cases, restart-loop guar
 - Open: feed_refresh.py must be added to FleetStateCollector schtask chain (5-min) or cockpit-feed.json goes stale again.
+- Queued: write idle
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
