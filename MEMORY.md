@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Research
 - Builder verified Researcher Goal #1: loop_closure_rate.py passes all 4 criteria (92.0% closure, 9 types, SELFTEST PASS).
 - All 5 cycle-11 Researcher goals verified/closed; dispatch header "0/10" is stale counter bug, not real work remaining
 - Designer wrote cockpit-impact forecast: Builder needs CSS/DOM sequencing; risk = 32px cycle bar shifts 6-panel grid
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer goals 5&6 falsely closed: evidence points to unrelated cycle-7/C
 - Dispatch "0/10 reached" header is a known stale counter; all 5 Researcher cycle-11 goals are verified (90.8% closure confirmed).
 - Builder produced ui/cockpit-layout.css (5.1KB, 12/12 checks pass) for Designer Goal #1; evidence at memory/builder/assist-designer-goal1-coc
+- Dispatch header "0/10 reached" is a stale counter bug; all 5 Researcher goals are verified (2026-11-23).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
