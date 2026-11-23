@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- next10.json forecast is stale: shows Archivist with open goals but all 20 are [REACHED];
-- Fixed bug in auto_linker.py: idempotency check omitted marker line from end_offset, causing stale blocks to persist on re-run.
-- Archivist lane fully closed: 20/20 goals [REACHED] (2026-11-23). Auto-loop kept firing on stale cycle-12
 - Auto-loop sends stale goal snapshots to Archivist; lane confirmed closed (20/20 reached) — repeated idle passes are a prompt-sync bug, not m
 - Auto-loop sends stale goal list to Archivist (all
 - Auto-loop prompt is stale: Archivist lane 20/20 [REACHED], no open work; repeated idle pings are false positives from outdated goal snapshot
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop fires on stale next10.json showing Archivist open goals; all 20 actually [REACHED] — known blocker, do not re-probe.
 - Archivist patched next10.json, forecast-latest.md, closed_topics.json to stop stale auto-loop passes; lane CLOSED 20/20.
 - Archivist stale auto-loop bug fixed: next10.json patched with lane_status CLOSED; 20/20 goals REACHED, lane fully closed.
+- Archivist lane permanently closed 20/20; next10.json
+- Drafted `memory/ops/kb-maintenance-schedule-proposal-2026-11-23.md` for 5 KB scripts (auto_quarantine, kb_delta
+- Prompt-sync bug: goal_ledger snapshot not refreshed post-closure causes repeated stale auto-loop passes on closed Archivist seat.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -17,7 +17,23 @@
   },
   "live_refs_to_quarantine": [
     {
+      "file": "memory/archivist/decay-report.md",
+      "references": "memory/archivist/_quarantine_test_target.md"
+    },
+    {
       "file": "memory/archivist/_quarantine_test_ref.md",
+      "references": "memory/archivist/_quarantine_test_target.md"
+    },
+    {
+      "file": "memory/builder/assist-archivist-goal2-auto-quarantine-2026-11-23.md",
+      "references": "memory/archivist/_quarantine_test_target.md"
+    },
+    {
+      "file": "memory/mechanic/assist-archivist-g2-quarantine-verify-2026-11-23.md",
+      "references": "memory/archivist/_quarantine_test_target.md"
+    },
+    {
+      "file": "memory/mechanic/evidence-archivist-goal2-quarantine.md",
       "references": "memory/archivist/_quarantine_test_target.md"
     }
   ]

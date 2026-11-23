@@ -591,3 +591,9 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
   MirrorSync, PortalDailyGitCommit, PortalDepGenCanary, PortalFleetProbe, PortalGapAlarm, PortalLoadProbe,
   PortalMemoryDecay, PortalMemorySizeGuard, PortalSchtaskDepGen, PortalSelfHeal, PortalSmbDrift,
   PortalSnapshotDiff, PortalWatchdog.
+## 2026-11-23 mirror fix + memory bloat (Studio seat)
+- memory/ tree 518MB->68.7MB: archived dedup/dated reports+stale merge-queue to mechanic/backups tarballs, removed 31 stale designer profiles (121MB), all __pycache__/.pyc; same cleanup run on Red/Pale/Black remotes
+- memory_mirror.py now hash-first with persistent cache (memory/ops/mirror_cache.json, saved every 200 hashes + per host) - steady state = stats only; pycache/pyc/cache excluded from mirroring
+- scheduler: cycle_5m = gap_alarm only; memory_mirror moved to END of cycle_30m (was rc=124 every 5 min). Detached pythonw bootstrap run warming the cache (~2h one-off); scheduled runs resume incrementally after
+- pin_guard fixed: index.html re-pinned to committed HEAD sha12 17ab95daf2d8 with matching backup (old spec was self-inconsistent: pinned sha had no backup)
+- .gitignore: portal_host.py/portal_scheduler.py/elevated_helper.py were silently untracked under root /* - now tracked; mirror_cache.json ignored

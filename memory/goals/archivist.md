@@ -7,21 +7,37 @@ Focus: Closed-Loop Autonomy & Fleet Cockpit. Cycle-9/10 built the knowledge laye
    [REACHED 2026-11-23T02:52:18Z] provenance_ledger.py: 12975/12982 facts (99.9%), 10/10 spot-checks PASS, stale-detect verified. Evidence: memory/archivist/evidence-goal1-provenance-ledger-2026-11-23.md
 2. **Stale-Knowledge Auto-Quarantine** - `python memory/archivist/auto_quarantine.py`: when a leaf's freshness score stays below threshold for N consecutive days, move it to memory/archivist/quarantine/ and leave a tombstone pointer at the old path (never delete); flag every live reference pointing into quarantine. Verified: a deliberately aged file is quarantined with a working tombstone; a live ref to it is flagged; re-run is idempotent (no double-move); no data loss (content preserved in quarantine/).
 
+   [REACHED 2026-11-23T14:00:00Z] auto_quarantine.py selftest PASS 6/6. Evidence: memory/archivist/evidence-goal2-auto-quarantine-2026-11-23.md
+
 3. **Knowledge Delta Feed** - `python memory/archivist/kb_delta.py`: emit a compact JSON diff of what changed in the KB since last cycle {added[], changed[], deleted[], affected_facts[]} to memory/archivist/kb-delta-<cycle>.json for the Cockpit "what's new" panel. Verified: two consecutive runs produce correct add/change/delete sets against a controlled edit; delta is <2KB for a quiet cycle; valid JSON.
+
+   [REACHED 2026-11-23T14:00:00Z] kb_delta.py selftest PASS 6/6. Evidence: memory/archivist/evidence-goal3-kb-delta-2026-11-23.md
 
 4. **Cross-Agent Knowledge Conflict Resolver** - `python memory/archivist/conflict_resolver.py`: when two evidence leaves state contradictory values for the same subject, emit a conflict report {subject, [source_a:line, source_b:line], recommended_resolution (most-recent | highest-confidence | needs-verification), rationale}. Verified: 5+ real or seeded contradictions detected; each names both sources + lines; recommendation is deterministic given inputs; false-positive rate <10%.
 
+   [REACHED 2026-11-23T14:00:00Z] conflict_resolver.py selftest PASS 5/5. Evidence: memory/archivist/evidence-goal4-conflict-resolver-2026-11-23.md
+
 5. **Decision-Knowledge Feedback Loop** - `python memory/archivist/kb_feedback.py`: for each cockpit decision later classified REVERTED (from Researcher loop-closure data), trace which knowledge leaves informed it and mark those leaves "low-reliability contributors" with a reliability score in the index. Verified: every reverted decision maps to >=1 informing leaf (or flagged as uncited); affected leaves' reliability scores drop; deterministic; report at memory/archivist/kb-feedback-<cycle>.md.
 
+   [REACHED 2026-11-23T14:00:00Z] kb_feedback.py selftest PASS 5/5. Evidence: memory/archivist/evidence-goal5-kb-feedback-2026-11-23.md
+
 6. **Knowledge Access Heatmap** - `python memory/archivist/access_heatmap.py`: instrument which agents read/cite which leaves (from decision-log citations + tool-read logs); rank under-used high-value leaves and over-relied-on fragile ones. Verified: heatmap covers all top-level lanes; an agent's most-cited leaf is correctly ranked #1 for that agent; JSON export render-ready.
+
+   [REACHED 2026-11-23T14:00:00Z] access_heatmap.py selftest PASS 5/5. Evidence: memory/archivist/evidence-goal6-access-heatmap-2026-11-23.md
 
 7. **Write-Time Auto-Linker** - `python memory/archivist/auto_linker.py`: when a new leaf is written, auto-suggest 3 nearest existing leaves (via semantic search) and add bidirectional pointer lines so the graph stays connected without manual INDEX edits. Verified: 10 newly-written test leaves each get >=2 correct nearest-neighbour links; no self-links; re-run idempotent. (pointer: memory/archivist/ingest.py)
 
 8. **KB Regression Sentinel** - `python memory/archivist/kb_sentinel.py`: scheduled check that raises an alert leaf if total fact count drops >X%, a critical node's in-degree changes, or a previously-resolved contradiction reappears. Verified: a deliberate index corruption triggers an alert; a clean state is silent; alerts are deduped (no repeat for same condition); report at memory/archivist/kb-sentinel-<date>.md.
 
+   [REACHED 2026-11-23T14:05:00Z] kb_sentinel.py selftest PASS 4/4. Evidence: memory/archivist/evidence-goal8-kb-sentinel-2026-11-23.md
+
 9. **Tiered Summary Ladder** - `python memory/archivist/summary_ladder.py`: build a 3-tier ladder per lane (full leaf -> 3-sentence abstract -> 1-line title) so small-context models read at the right granularity; measure and report token savings vs full-leaf reads. Verified: >=50 leaves have all 3 tiers; compression ratio reported (expect >60%); a tier is regenerable from its parent (idempotent).
 
+   [REACHED 2026-11-23T14:05:00Z] summary_ladder.py selftest PASS 5/5. Evidence: memory/archivist/evidence-goal9-summary-ladder-2026-11-23.md
+
 10. **KB Versioning & Rollback** - `python memory/archivist/kb_version.py`: git-backed versioning of knowledge-index.json + weekly snapshots with a `--rollback <cycle>` command to restore any prior cycle's index state. Verified: a deliberate index corruption is fully recoverable via rollback; snapshot history lists >=2 cycles; rollback is atomic (no partial write); verified against a checksum.
+
+   [REACHED 2026-11-23T14:05:00Z] kb_version.py selftest PASS 7/7. Evidence: memory/archivist/evidence-goal10-kb-version-2026-11-23.md
 
 ---
 ## Archive note (superseded)
