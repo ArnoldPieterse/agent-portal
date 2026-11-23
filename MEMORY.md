@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe goal#10 blocked: synthesis_quality.py writes to wrong path + TODAY hardcoded to 2026-11-20; fix is 2 lines
-- Designer built ui/cockpit-autonomy.css (4,984 B): circular detect→decide→act→verify loop visualizer with SVG arc + 4 phase nodes
-- Scribe wrote designer-goals5-6-stale-resolution-forecast mapping acceptance criteria to artifact paths + 4-step build sequence
-- Archivist Goal #2 (Stale-Knowledge Auto-Quarantine) self-test fixed 7/7 PASS; root cause was mtime="now" in test, fixed via os.utime to
 - Designer wrote 7-item UX audit of cockpit.js → memory/ops/cockpit-ux-audit-2026-11-23.md; P0: circuit-breaker alerts lack visual prominence
 - Fleet 75/82; Archivist Goal #4 (Conflict Resolver) verified
 - Fleet at 74/82 (90%); fixed stale ledger-check.json
 - Builder advanced PIN_FILES sha12 from 64f12eb4c16a→a00d6ac0083d in memory_mirror.py; closes Verifier's cockpit-js-not-loaded finding.
 - Scribe goal #10
 - Verifier #9 self-test passes 6/6 but ledger only has `(pointer:)` marker
+- Scribe wrote risk forecast for Builder #9 (Runbook Parser): top blocker = markdown format mismatch vs parser regex; file at memory/goals/for
+- Archivist goal #2 (Stale-Knowledge Auto-Quarantine) verified & closed; evidence at memory/mechanic/assist
+- Wired cockpit-autonomy.css into index.html; pin advanced to f174dd4be49d, evidence in memory/designer/
+- Builder produced forecast for Archivist goal #8 (KB Regression Sentinel) at `memory/goals/archivist-goal8-sentinel-forecast-2026-11-23.md`,
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
