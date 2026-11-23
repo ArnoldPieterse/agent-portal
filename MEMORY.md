@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher chose to adjudicate a stale ledger claim; open goals cluster
-- Builder built `memory/builder/schtasks_health_check.py` (137 lines, 4/4 selftest) verifying MirrorHeal, PortalSmbDrift, PortalLoadProbe scht
-- Cycle-13 goals written to `memory/goals/designer.md` (10 goals, "Closed-Loop Autonomy & Fleet Cockpit"); cycle-12 archived 10/10 REACHED.
-- Cycle-10 complete/archived; cycle-11 goals (10/10) set — theme shifts from primitives to intelligence, safety, observability.
 - Cycle-12 goals: close 4 loop gaps, cockpit visibility (actions/predictive risk/SLO), verification layer (integration harness, remediation sc
 - Scribe cycle-1
 - Cycle-15 Verifier goals written (10 goals: replay audit, pipeline trace, idempotency gate, mode validator, hash-chain, cadence, scope, archi
 - Archivist cycle goals (10) written to memory/goals/archivist.md, theme "Fleet Autonomy Convergence," dated
 - Designer cycle-14 theme: "Fleet Autonomy Convergence" — progressing from operable cockpit toward no-operator-needed; 10 goals written to mem
 - Mechanic cycle-11: converging individual autonomous capabilities (cycles 9-10) into one unified remediation pipeline with self-degradation d
+- Builder cycle-13 goals (10) written to `memory/goals/builder.md`; theme "Fleet Autonomy Convergence" — converge without humans, not just vis
+- Researcher
+- Scribe cycle-11 goals written for "Closed-Loop Autonomy & Fleet Cock
+- Cycle 15 topic: "Fleet Autonomy Convergence" — Mode Controller (fleet-mode.json SSOT), Dispatch Correctness, Idle Productivity; all 80 goals
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
