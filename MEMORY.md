@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Round-topic synthesis
 - Cockpit pipeline (state_collector→fleet-metrics.jsonl→cockpit-feed.json) verified operational 2026-11-23, selftest 20/0 PASS.
 - Scribe goal#10 blocked: synthesis_quality.py writes to wrong path + TODAY hardcoded to 2026-11-20; fix is 2 lines
 - Designer built ui/cockpit-autonomy.css (4,984 B): circular detect→decide→act→verify loop visualizer with SVG arc + 4 phase nodes
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fleet 75/82; Archivist Goal #4 (Conflict Resolver) verified
 - Fleet at 74/82 (90%); fixed stale ledger-check.json
 - Builder advanced PIN_FILES sha12 from 64f12eb4c16a→a00d6ac0083d in memory_mirror.py; closes Verifier's cockpit-js-not-loaded finding.
+- Scribe goal #10
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -8,7 +8,7 @@ import os, json, re, sys, argparse
 from datetime import datetime, date
 
 SYNTH_DIR = "memory/synthesis"
-TODAY = date(2026, 11, 20)
+TODAY = date.today()
 
 def parse_date_from_filename(fname):
     m = re.match(r'(\d{4}-\d{2}-\d{2})', fname)
@@ -120,7 +120,7 @@ def main():
     args = ap.parse_args()
 
     output = run()
-    out_path = 'memory/scribe/synthesis_quality.json'
+    out_path = 'memory/synthesis/quality-scores.jsonl'
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, 'w') as f:
         json.dump(output, f, indent=2)

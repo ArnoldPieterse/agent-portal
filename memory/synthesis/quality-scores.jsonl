@@ -1,0 +1,1015 @@
+{
+  "generated": "2026-11-23",
+  "file_count": 84,
+  "fleet_avg": 73.6,
+  "scores": [
+    {
+      "file": "memory/synthesis/2026-11-12-consolidated-state.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-12",
+      "days_old": 11
+    },
+    {
+      "file": "memory/synthesis/2026-11-12-upgrade-round.md",
+      "scores": {
+        "clarity": 80,
+        "completeness": 82,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.5,
+      "date": "2026-11-12",
+      "days_old": 11
+    },
+    {
+      "file": "memory/synthesis/2026-11-13-planning-meeting.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 80
+      },
+      "total": 83.8,
+      "date": "2026-11-13",
+      "days_old": 10
+    },
+    {
+      "file": "memory/synthesis/2026-11-13-r15-r16-adjudication.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-13",
+      "days_old": 10
+    },
+    {
+      "file": "memory/synthesis/2026-11-13-r16c-mechanic-bundle-landed.md",
+      "scores": {
+        "clarity": 80,
+        "completeness": 70,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 77.5,
+      "date": "2026-11-13",
+      "days_old": 10
+    },
+    {
+      "file": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-13",
+      "days_old": 10
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 78.8,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dcabots-intake-synthesis.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 85,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 77.5,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-r57-closeout.md",
+      "scores": {
+        "clarity": 80,
+        "completeness": 70,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 77.5,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-r58-final.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 50,
+        "actionability": 55,
+        "recency": 80
+      },
+      "total": 65.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-final-closeout-supersession.md",
+      "scores": {
+        "clarity": 80,
+        "completeness": 90,
+        "actionability": 70,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-final-closeout.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 65,
+        "actionability": 45,
+        "recency": 80
+      },
+      "total": 63.8,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-planning-meeting-v2.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 78.8,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-planning-meeting.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-portal-down-state-change.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 77,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 78.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-queue4-source-loss-adjudication.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 81.2,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r24-fleet-state.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r25-continuation-check.md",
+      "scores": {
+        "clarity": 80,
+        "completeness": 82,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.5,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r27-round-record.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 80
+      },
+      "total": 85.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r36-lane-closeout.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 80
+      },
+      "total": 85.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r38-round-record.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r40-round-record.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r41-closeout.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 80,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 78.8,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r42-round-record.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 80,
+        "actionability": 100,
+        "recency": 80
+      },
+      "total": 82.5,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r46-fleet-state.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 85,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 80.0,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-r56-round-record.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 90,
+        "actionability": 70,
+        "recency": 80
+      },
+      "total": 76.2,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-white-rename-closeout.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 80,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 76.2,
+      "date": "2026-11-14",
+      "days_old": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-evolution-artifact-gap.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 80
+      },
+      "total": 86.2,
+      "date": "2026-11-15",
+      "days_old": 8
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-public-repo-ip-decision.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 64,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 74.8,
+      "date": "2026-11-15",
+      "days_old": 8
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-round-continuation.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 81.2,
+      "date": "2026-11-15",
+      "days_old": 8
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-scribe-goal-proposals.md",
+      "scores": {
+        "clarity": 45,
+        "completeness": 84,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 72.2,
+      "date": "2026-11-15",
+      "days_old": 8
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-stalled-goals-diagnosis.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 85,
+        "actionability": 70,
+        "recency": 80
+      },
+      "total": 77.5,
+      "date": "2026-11-15",
+      "days_old": 8
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-status-report.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 70,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 75.0,
+      "date": "2026-11-15",
+      "days_old": 8
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-targeted-pass-round.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 70,
+        "actionability": 80,
+        "recency": 80
+      },
+      "total": 75.0,
+      "date": "2026-11-15",
+      "days_old": 8
+    },
+    {
+      "file": "memory/synthesis/2026-11-15-wedge-recovery-portal-down.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 74,
+        "actionability": 90,
+        "recency": 80
+      },
+      "total": 79.8,
+      "date": "2026-11-15",
+      "days_old": 8
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-contradiction-rulings.md",
+      "scores": {
+        "clarity": 60,
+        "completeness": 70,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 82.5,
+      "date": "2026-11-16",
+      "days_old": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-crossassist-evidence-pass.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 100
+      },
+      "total": 86.2,
+      "date": "2026-11-16",
+      "days_old": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-goal-sweep-closeout.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 70,
+        "actionability": 80,
+        "recency": 100
+      },
+      "total": 81.2,
+      "date": "2026-11-16",
+      "days_old": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-portal-status-report.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 70,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 83.8,
+      "date": "2026-11-16",
+      "days_old": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-r1-round-record-DRAFT.md",
+      "scores": {
+        "clarity": 60,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 87.5,
+      "date": "2026-11-16",
+      "days_old": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-r1-round-record.md",
+      "scores": {
+        "clarity": 60,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 87.5,
+      "date": "2026-11-16",
+      "days_old": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-status-thread-contradictions.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 85,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 90.0,
+      "date": "2026-11-16",
+      "days_old": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-17-hex-tokenization-discrepancy.md",
+      "scores": {
+        "clarity": 51,
+        "completeness": 56,
+        "actionability": 45,
+        "recency": 100
+      },
+      "total": 63.0,
+      "date": "2026-11-17",
+      "days_old": 6
+    },
+    {
+      "file": "memory/synthesis/2026-11-17-pin-consistency-check.md",
+      "scores": {
+        "clarity": 50,
+        "completeness": 38,
+        "actionability": 45,
+        "recency": 100
+      },
+      "total": 58.2,
+      "date": "2026-11-17",
+      "days_old": 6
+    },
+    {
+      "file": "memory/synthesis/2026-11-17-r1-round-record-DRAFT.md",
+      "scores": {
+        "clarity": 60,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 87.5,
+      "date": "2026-11-17",
+      "days_old": 6
+    },
+    {
+      "file": "memory/synthesis/2026-11-17-r2-round-record-DRAFT.md",
+      "scores": {
+        "clarity": 60,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 87.5,
+      "date": "2026-11-17",
+      "days_old": 6
+    },
+    {
+      "file": "memory/synthesis/2026-11-17-schtask-unblock-note.md",
+      "scores": {
+        "clarity": 45,
+        "completeness": 31,
+        "actionability": 45,
+        "recency": 100
+      },
+      "total": 55.2,
+      "date": "2026-11-17",
+      "days_old": 6
+    },
+    {
+      "file": "memory/synthesis/2026-11-18-auto-loop-round-record.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 70,
+        "actionability": 80,
+        "recency": 100
+      },
+      "total": 81.2,
+      "date": "2026-11-18",
+      "days_old": 5
+    },
+    {
+      "file": "memory/synthesis/2026-11-18-r1-round-record-DRAFT.md",
+      "scores": {
+        "clarity": 60,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 87.5,
+      "date": "2026-11-18",
+      "days_old": 5
+    },
+    {
+      "file": "memory/synthesis/2026-11-18-r2-round-record-DRAFT.md",
+      "scores": {
+        "clarity": 60,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 87.5,
+      "date": "2026-11-18",
+      "days_old": 5
+    },
+    {
+      "file": "memory/synthesis/2026-11-18-r3-round-record-DRAFT.md",
+      "scores": {
+        "clarity": 60,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 87.5,
+      "date": "2026-11-18",
+      "days_old": 5
+    },
+    {
+      "file": "memory/synthesis/2026-11-18-rest-of-goals-attempts.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 70,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 83.8,
+      "date": "2026-11-18",
+      "days_old": 5
+    },
+    {
+      "file": "memory/synthesis/2026-11-20-mechanic-open-goal-adjudication.md",
+      "scores": {
+        "clarity": 74,
+        "completeness": 47,
+        "actionability": 50,
+        "recency": 100
+      },
+      "total": 67.8,
+      "date": "2026-11-20",
+      "days_old": 3
+    },
+    {
+      "file": "memory/synthesis/2026-11-20-mechanic-winrm-closure-contradiction.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 62,
+        "actionability": 100,
+        "recency": 100
+      },
+      "total": 84.2,
+      "date": "2026-11-20",
+      "days_old": 3
+    },
+    {
+      "file": "memory/synthesis/2026-11-22-ledger-refresh-mechanic-pointer-flag.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 64,
+        "actionability": 80,
+        "recency": 100
+      },
+      "total": 77.2,
+      "date": "2026-11-22",
+      "days_old": 1
+    },
+    {
+      "file": "memory/synthesis/2026-cycle2-retrospective.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 50
+      },
+      "total": 76.2,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/INDEX.md",
+      "scores": {
+        "clarity": 55,
+        "completeness": 87,
+        "actionability": 100,
+        "recency": 50
+      },
+      "total": 73.0,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/archive-nav.md",
+      "scores": {
+        "clarity": 60,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 50
+      },
+      "total": 75.0,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/blocker-trends.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 70,
+        "actionability": 40,
+        "recency": 50
+      },
+      "total": 58.8,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/briefing-2026-11-23.md",
+      "scores": {
+        "clarity": 60,
+        "completeness": 30,
+        "actionability": 15,
+        "recency": 50
+      },
+      "total": 38.8,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/completion-patterns-2026-11-23.md",
+      "scores": {
+        "clarity": 80,
+        "completeness": 5,
+        "actionability": 0,
+        "recency": 50
+      },
+      "total": 33.8,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/completion-patterns.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 65,
+        "actionability": 30,
+        "recency": 50
+      },
+      "total": 55.0,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/cycle-narrative.md",
+      "scores": {
+        "clarity": 63,
+        "completeness": 90,
+        "actionability": 100,
+        "recency": 50
+      },
+      "total": 75.8,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/cycle-summary-2026-11-23.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 70,
+        "actionability": 65,
+        "recency": 50
+      },
+      "total": 65.0,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/decision-digest-2026-11-23.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 70,
+        "actionability": 70,
+        "recency": 50
+      },
+      "total": 66.2,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/decision-impacts.md",
+      "scores": {
+        "clarity": 50,
+        "completeness": 58,
+        "actionability": 20,
+        "recency": 50
+      },
+      "total": 44.5,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/dispatch-vs-ledger-open-count.md",
+      "scores": {
+        "clarity": 80,
+        "completeness": 58,
+        "actionability": 80,
+        "recency": 50
+      },
+      "total": 67.0,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/fleet-status-2026-11-21.md",
+      "scores": {
+        "clarity": 74,
+        "completeness": 70,
+        "actionability": 50,
+        "recency": 50
+      },
+      "total": 61.0,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/hotfile-archive-20261123.md",
+      "scores": {
+        "clarity": 30,
+        "completeness": 45,
+        "actionability": 15,
+        "recency": 50
+      },
+      "total": 35.0,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/index-pointer-addendum-r43.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 70,
+        "actionability": 80,
+        "recency": 50
+      },
+      "total": 67.5,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/index-pointer-batch-r40.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 50
+      },
+      "total": 71.2,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/index-pointer-batch-r57-consolidated.md",
+      "scores": {
+        "clarity": 55,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 50
+      },
+      "total": 68.8,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/index-pointer-batch-r58-canonical-append.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 50
+      },
+      "total": 71.2,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/index-pointer-handoff-r38.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 50
+      },
+      "total": 71.2,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/index-regen-r73-archivist-2026-11-14.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 84,
+        "actionability": 55,
+        "recency": 50
+      },
+      "total": 64.8,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/index-replay-r81-24of24-canonical.md",
+      "scores": {
+        "clarity": 40,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 50
+      },
+      "total": 65.0,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/knowledge-delta-cycle10.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 35,
+        "actionability": 60,
+        "recency": 50
+      },
+      "total": 53.8,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/mid-cycle-checkpoint-2026-11-20.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 40,
+        "actionability": 75,
+        "recency": 50
+      },
+      "total": 60.0,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/planning-meeting-minutes-v2-2026-11-14.md",
+      "scores": {
+        "clarity": 65,
+        "completeness": 90,
+        "actionability": 80,
+        "recency": 50
+      },
+      "total": 71.2,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/round-topic-closed-loop-cockpit-2026-11-23.md",
+      "scores": {
+        "clarity": 70,
+        "completeness": 50,
+        "actionability": 100,
+        "recency": 50
+      },
+      "total": 67.5,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/runbook-lessons-latest.md",
+      "scores": {
+        "clarity": 80,
+        "completeness": 15,
+        "actionability": 25,
+        "recency": 50
+      },
+      "total": 42.5,
+      "date": null,
+      "days_old": null
+    },
+    {
+      "file": "memory/synthesis/supersession-policy-baseline.md",
+      "scores": {
+        "clarity": 75,
+        "completeness": 44,
+        "actionability": 90,
+        "recency": 50
+      },
+      "total": 64.8,
+      "date": null,
+      "days_old": null
+    }
+  ]
+}
