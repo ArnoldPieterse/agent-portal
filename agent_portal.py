@@ -155,9 +155,13 @@ def _studio_recover(agent, reason):
             return False, "model mid-generation - retry next tick"
     except Exception:
         pass
-    if reason == "wedged":
+    # 'reload' must really UNLOAD+LOAD (2026-11-23): re-loading a resident model is a no-op
+    # and cannot clear a wedged engine - Archivist/Pale stayed unreachable >1h on Lv 3 because
+    # the streak>=8 branch passed reason='reload' while only 'wedged' unloaded. Tolerate an
+    # unload failure (model may be absent) - the load below decides either way.
+    if reason in ("wedged", "reload"):
         st, b = call("POST", "/api/inference/unload", {"model_path": rec["model_path"]})
-        if st not in (200, 201):
+        if reason == "wedged" and st not in (200, 201):
             return False, "unload -> %s %s" % (st, b[:80])
     body = dict(rec)
     body.update({"cache_type_kv": "q8_0", "n_parallel": 1, "tensor_parallel": False})

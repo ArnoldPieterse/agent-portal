@@ -441,3 +441,7 @@
 {"t": "2026-11-23 17:21:23", "job": "cycle_30m", "event": "done", "rc": 0}
 {"t": "2026-11-23 17:31:13", "job": "cycle_10m", "event": "start", "pid": 25484}
 {"t": "2026-11-23 17:31:18", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-23 17:36:18", "job": "cycle_5m", "event": "done", "rc": 124}
+{"t": "2026-11-23 17:36:18", "job": "cycle_5m", "event": "start", "pid": 22824}
+{"t": "2026-11-23 17:41:13", "job": "cycle_10m", "event": "start", "pid": 30240}
+{"t": "2026-11-23 17:41:18", "job": "cycle_10m", "event": "done", "rc": 0}
