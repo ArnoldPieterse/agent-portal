@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-23T18:09:41.685905+00:00",
+  "ts": "2026-11-23T18:54:33.550734+00:00",
   "health_score": 65,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -47,7 +47,7 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 48.7,
+      "vram_pct": 32.2,
       "cpu_pct": 0.0,
       "temp_c": 39.3
     },

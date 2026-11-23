@@ -2,6 +2,7 @@
 Last updated: 2026-11-24.
 
 ## 2026-11-24
+- feed-refresh-scheduling-gap-verified-2026-11-24.md — **HOT-NOTE GAP CONFIRMED + remediation framing corrected**: feed_refresh.py in NO chain (cycle_5m=gap_alarm only; collector at 30-min not 5); source fleet-metrics.jsonl ~10h stale. Live repro: ran feed_refresh -> file mtime 0.05min fresh but JSON ts still 2026-11-23T18:48Z (~10h) => feed-cadence fix != data-freshness fix. Hand-off: Builder->add feed_refresh to cycle_5m; Mechanic->fix collector cadence/portal.
 - archivist-goal10-kb-health-gap-2026-11-24.md — Gap analysis for Archivist Goal #10 (KB Health Report): 3/7 metrics present in weekly_digest.py; all 4 missing sources exist and pass self-tests. Integration spec + verification plan documented.
 - goal-lifecycle-audit-verified-2026-11-24.md — **GOAL #7 (Cycle-14) VERIFIED**: `goal_lifecycle_audit.py --self-test` 6 PASS / 0 FAIL from BOTH CWDs. Live audit: 23 files, 194 goals (115 open, 79 verified). CWD-independent.
 - fleet-health-closed-loop-verified-2026-11-24.md — **GOAL #8 (Cycle-14) VERIFIED**: `fleet_health_closed_loop.py --self-test` 6 PASS / 0 FAIL from BOTH CWDs. T1-T6: VRAM OOM, agent-down, healthy-no-fire, SLA breach, chain completeness, post-recovery.
