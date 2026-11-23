@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Stall detector must target only reachable-but-idle; down_streak already covers unreachable — avoid duplicate alerts/feedback loop
 - Built & ran memory/builder/feed_refresh.py — fixes cockpit-feed.json staleness (fleet_pct was None); regenerates from local sources
 - Mechic wrote unified action-log spec at memory/ops/autonomous-action-log-spec-2026-11-24.md; unblocks cockpit "Fleet Acted" panel
 - Idle-maintenance-rotation-2026-11-24.md replaces generic (a)-(d) idle menu with per-role state-driven tasks; indexed in ops/INDEX.md
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder owes one step: run `goal_ledger.py --record bu` to append (verified:) marker for cockpit claims; uncited dropped 16→12 after fix.
 - Stall detector patched to exclude unreachable agents via ops/unreachable_agents.json; selftest 7/7 pass, evidence at memory/mechanic/stall-d
 - Scribe wrote `memory/ops/data-freshness-escalation-protocol-2026-11-24.md` (4-step decision tree + ownership table for fleet-metrics.jsonl s
+- Verifier goal #9 reroute_e2e.py passed 6/6; evidence recorded in ledger, report at reroute_e2e_report.json
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
