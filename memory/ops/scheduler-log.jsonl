@@ -52,3 +52,17 @@
 {"t": "2026-11-23 13:02:55", "job": "mirror_heal", "event": "start", "pid": 3708}
 {"t": "2026-11-23 13:02:55", "job": "daily_git_commit", "event": "start", "pid": 19276}
 {"t": "2026-11-23 13:02:55", "job": "portal_heal_check", "event": "start", "pid": 19472}
+{"t": "2026-11-23 13:03:00", "job": "gap_alarm", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:03:00", "job": "mirror_heal", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:03:00", "job": "daily_git_commit", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:03:00", "job": "portal_heal_check", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:07:55", "job": "load_probe", "event": "start", "pid": 18964}
+{"t": "2026-11-23 13:07:55", "job": "fleet_probe", "event": "start", "pid": 20940}
+{"t": "2026-11-23 13:07:55", "job": "gap_alarm", "event": "start", "pid": 20620}
+{"t": "2026-11-23 13:07:55", "job": "mirror_heal", "event": "start", "pid": 4148}
+{"t": "2026-11-23 13:07:55", "job": "portal_heal_check", "event": "start", "pid": 8412}
+{"t": "2026-11-23 13:08:00", "job": "load_probe", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:08:00", "job": "fleet_probe", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:08:00", "job": "gap_alarm", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:08:00", "job": "mirror_heal", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:08:00", "job": "portal_heal_check", "event": "done", "rc": 0}
