@@ -497,3 +497,12 @@
 {"t": "2026-11-23 19:36:27", "job": "cycle_5m", "event": "start", "pid": 36560}
 {"t": "2026-11-23 19:41:17", "job": "cycle_10m", "event": "start", "pid": 33572}
 {"t": "2026-11-23 19:41:22", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-23 19:51:01", "event": "scheduler-up", "jobs": 6}
+{"t": "2026-11-23 19:51:31", "job": "cycle_5m", "event": "start", "pid": 28024}
+{"t": "2026-11-23 19:51:31", "job": "cycle_10m", "event": "start", "pid": 33680}
+{"t": "2026-11-23 19:51:31", "job": "cycle_30m", "event": "start", "pid": 9220}
+{"t": "2026-11-23 19:51:31", "job": "cycle_1h", "event": "start", "pid": 34952}
+{"t": "2026-11-23 19:51:31", "job": "schtask_dep_weekly", "event": "start", "pid": 36824}
+{"t": "2026-11-23 19:51:36", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-23 19:51:36", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-23 19:51:36", "job": "schtask_dep_weekly", "event": "done", "rc": 0}

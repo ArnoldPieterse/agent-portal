@@ -1,6 +1,6 @@
 # Decay report 2026-11-23
 
-Leaves: 9432 | flagged (<0.35): 0
+Leaves: 9440 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -5448,7 +5448,6 @@ Leaves: 9432 | flagged (<0.35): 0
 | memory/researcher/__pycache__/check_goal3_ready.cpython-313.pyc | 5 | 0 | n | 0.522 |
 | memory/researcher/__pycache__/fill_analysis.cpython-313.pyc | 5 | 0 | n | 0.522 |
 | memory/researcher/__pycache__/goal_ledger.cpython-313.pyc | 5 | 0 | n | 0.522 |
-| memory/researcher/__pycache__/goal_ledger.cpython-315.pyc | 5 | 0 | n | 0.522 |
 | memory/researcher/__pycache__/hot_load.cpython-313.pyc | 5 | 0 | n | 0.522 |
 | memory/researcher/__pycache__/memory_mirror.cpython-313.pyc | 5 | 0 | n | 0.522 |
 | memory/researcher/__pycache__/route.cpython-313.pyc | 5 | 0 | n | 0.522 |
@@ -6940,7 +6939,6 @@ Leaves: 9432 | flagged (<0.35): 0
 | memory/mechanic/fixtures/schtasks_week2.csv | 2 | 0 | n | 0.539 |
 | memory/mechanic/__pycache__/boot_verify.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/mechanic/__pycache__/goal4-live-integration-test.cpython-313.pyc | 2 | 0 | n | 0.539 |
-| memory/mechanic/__pycache__/goal4_live_integration_test.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/mechanic/__pycache__/restart_portal.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/mechanic/__pycache__/unblock_all_live_runs.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/ops/live-run-checklist-white-seat.md | 2 | 0 | n | 0.539 |
@@ -7224,7 +7222,6 @@ Leaves: 9432 | flagged (<0.35): 0
 | memory/mechanic/deps-history/service-deps-2026-11-22.json | 1 | 0 | n | 0.544 |
 | memory/mechanic/__pycache__/closure_check.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/mechanic/__pycache__/escalation_chain.cpython-313.pyc | 1 | 0 | n | 0.544 |
-| memory/mechanic/__pycache__/goal1_one_command_close.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/mechanic/__pycache__/goal_auto_closure.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/mechanic/__pycache__/portal_watchdog.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/mechanic/__pycache__/white_seat_closure_run.cpython-313.pyc | 1 | 0 | n | 0.544 |
@@ -8473,6 +8470,7 @@ Leaves: 9432 | flagged (<0.35): 0
 | memory/designer/fleet-topology-live-component.html | 0 | 0 | n | 0.550 |
 | memory/designer/goal5-animation-verified-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/health-score-component.html | 0 | 0 | n | 0.550 |
+| memory/designer/index_html_CANONICAL_17ab95daf2d8_2026-11-23b.html | 0 | 0 | n | 0.550 |
 | memory/designer/index_html_CANONICAL_ac83166ea935_2026-11-23a.html | 0 | 0 | n | 0.550 |
 | memory/designer/light-theme-contrast-audit-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/mechanic-goals-assist-2026-11-23.md | 0 | 0 | n | 0.550 |
@@ -8567,6 +8565,7 @@ Leaves: 9432 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261123-161510.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-172332.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-175548.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261123-192156.json | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/levels/level_1_20261123-060001.md | 0 | 0 | n | 0.550 |
@@ -8576,6 +8575,7 @@ Leaves: 9432 | flagged (<0.35): 0
 | memory/mechanic/agent-cards-assist-builder-g6-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/archivist-goal2-auto-quarantine-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-archivist-g2-quarantine-verify-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/assist-archivist-goal-closure-sweep-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-23b.md | 0 | 0 | n | 0.550 |
@@ -8644,7 +8644,11 @@ Leaves: 9432 | flagged (<0.35): 0
 | memory/mechanic/unblock-all-built-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/unblock_all.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/unblock_gap_fill.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/verify-verifier-goal9-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/backups/ARCHIVED.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/backups/archivist-dated-reports-2026-11-23.tar.gz | 0 | 0 | n | 0.550 |
+| memory/mechanic/backups/archivist-dedup-reports-2026-11-20.tar.gz | 0 | 0 | n | 0.550 |
+| memory/mechanic/backups/merge-queue-stale-2026-11-23.tar.gz | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/boot_recovery_test.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/capacity_arbiter.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/capacity_plan.cpython-313.pyc | 0 | 0 | n | 0.550 |
@@ -8656,7 +8660,9 @@ Leaves: 9432 | flagged (<0.35): 0
 | memory/mechanic/__pycache__/goal1_auto_closure.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/goal1_diagnose_fix.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/goal1_fix_task_path.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/mechanic/__pycache__/goal1_one_command_close.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/goal3_winrm_e2e_test.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/mechanic/__pycache__/goal4_live_integration_test.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/host_probes.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/host_probes.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/incident_classifier.cpython-315.pyc | 0 | 0 | n | 0.550 |
@@ -8774,6 +8780,7 @@ Leaves: 9432 | flagged (<0.35): 0
 | memory/ops/merge-queue/index.html.47a44d9499 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.7d30ea94f9 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.e0e875bb51 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/memory_mirror.py.3d9266645f | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/boot_recovery.md | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/host_down_response.md | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/scheduled_maintenance.md | 0 | 0 | n | 0.550 |
@@ -8860,6 +8867,7 @@ Leaves: 9432 | flagged (<0.35): 0
 | memory/researcher/_archive_reverify.json | 0 | 0 | n | 0.550 |
 | memory/researcher/anomaly-narratives/narratives-2026-11-23_0801.md | 0 | 0 | n | 0.550 |
 | memory/researcher/__pycache__/fleet_trust_score.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/researcher/__pycache__/goal_ledger.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/researcher/__pycache__/knowledge_decay.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/researcher/__pycache__/precedent_match.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/scribe/app-css-hex-audit-2026-11-23.md | 0 | 0 | n | 0.550 |
