@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop sends stale goal snapshots to Archivist; lane confirmed closed (20/20 reached) — repeated idle passes are a prompt-sync bug, not m
 - Auto-loop sends stale goal list to Archivist (all
 - Auto-loop prompt is stale: Archivist lane 20/20 [REACHED], no open work; repeated idle pings are false positives from outdated goal snapshot
 - next10.json forecast is stale (shows open goals but all 20 are [REACHED]); auto-loop keeps waking Archivist with no work — blocker, not a ta
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Archivist lane permanently closed 20/20; next10.json
 - Drafted `memory/ops/kb-maintenance-schedule-proposal-2026-11-23.md` for 5 KB scripts (auto_quarantine, kb_delta
 - Prompt-sync bug: goal_ledger snapshot not refreshed post-closure causes repeated stale auto-loop passes on closed Archivist seat.
+- Fixed: goal_ledger.py only scans numbered lines for (verified: markers; Archivist goal 6 had marker on continuation line, causing recurring
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
