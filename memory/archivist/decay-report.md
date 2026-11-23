@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 9876 | flagged (<0.35): 0
+Leaves: 9878 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -7449,7 +7449,6 @@ Leaves: 9876 | flagged (<0.35): 0
 | memory/archivist/retrieval_metrics_prev.json | 1 | 0 | n | 0.544 |
 | memory/archivist/search-index-refresh-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/archivist/size_guard.py | 1 | 0 | n | 0.544 |
-| memory/archivist/size_guard_report.md | 1 | 0 | n | 0.544 |
 | memory/archivist/snapshot-diff-20261123-run5.md | 1 | 0 | n | 0.544 |
 | memory/archivist/snapshot-diff-20261123.md | 1 | 0 | n | 0.544 |
 | memory/archivist/snapshot-diff-goal6-closure-2026-11-23.md | 1 | 0 | n | 0.544 |
@@ -8801,7 +8800,6 @@ Leaves: 9876 | flagged (<0.35): 0
 | memory/ops/designer-ui-change-checklist.md | 1 | 0 | n | 0.544 |
 | memory/ops/design_qa.py | 1 | 0 | n | 0.544 |
 | memory/ops/dispatch-desync-log.md | 1 | 0 | n | 0.544 |
-| memory/ops/elev-helper.log | 1 | 0 | n | 0.544 |
 | memory/ops/evidence-stale-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/ops/fleet-collector-staleness-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/ops/fleet-summary-2026-11-23.md | 1 | 0 | n | 0.544 |
@@ -8811,9 +8809,7 @@ Leaves: 9876 | flagged (<0.35): 0
 | memory/ops/guardian-log.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/guardian-state.json | 1 | 0 | n | 0.544 |
 | memory/ops/health-score.jsonl | 1 | 0 | n | 0.544 |
-| memory/ops/host-log.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/host-metrics.jsonl | 1 | 0 | n | 0.544 |
-| memory/ops/host.pid | 1 | 0 | n | 0.544 |
 | memory/ops/incident-alerts.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/incidents.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/index-check-false-positives-2026-11-23.md | 1 | 0 | n | 0.544 |
@@ -9199,6 +9195,7 @@ Leaves: 9876 | flagged (<0.35): 0
 | memory/archivist/semantic-index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic_index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic_search.py | 0 | 0 | n | 0.550 |
+| memory/archivist/size_guard_report.md | 0 | 0 | n | 0.550 |
 | memory/builder/decision-index.db | 0 | 0 | n | 0.550 |
 | memory/builder/decision_index.py | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-autonomous-actions-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9288,10 +9285,13 @@ Leaves: 9876 | flagged (<0.35): 0
 | memory/ops/dangling_pointer_fix.py | 0 | 0 | n | 0.550 |
 | memory/ops/data-freshness-escalation-protocol-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
+| memory/ops/elev-helper.log | 0 | 0 | n | 0.550 |
 | memory/ops/feed-refresh-fix-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/feed-staleness.json | 0 | 0 | n | 0.550 |
 | memory/ops/feed-staleness.log | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/host-log.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/host.pid | 0 | 0 | n | 0.550 |
 | memory/ops/idle-maintenance-rotation-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/mirror_cache.json | 0 | 0 | n | 0.550 |
@@ -9301,6 +9301,8 @@ Leaves: 9876 | flagged (<0.35): 0
 | memory/ops/runbook-status.json | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-state.json | 0 | 0 | n | 0.550 |
+| memory/ops/schtask-snapshot-2026-11-24-input.csv | 0 | 0 | n | 0.550 |
+| memory/ops/schtask-snapshot-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/ops/state-collector-staleness-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/unreachable_agents.json | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0b19c0bd68 | 0 | 0 | n | 0.550 |

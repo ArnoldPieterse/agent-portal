@@ -1,0 +1,18 @@
+{
+  "generated": "2026-11-24T08:21:56.118646",
+  "host": "WHITE",
+  "task_count": 1,
+  "tasks": [
+    {
+      "name": "\\GCC",
+      "status": "Ready",
+      "schedule_type": "At logon time",
+      "next_run": "N/A"
+    }
+  ],
+  "edges": [],
+  "diff": {
+    "added": [],
+    "removed": []
+  }
+}
