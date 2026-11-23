@@ -1,7 +1,7 @@
 {
- "generated": "2026-11-24 01:56:16",
- "total_pointers": 20,
- "resolved_and_indexed": 20,
+ "generated": "2026-11-24 04:58:38",
+ "total_pointers": 24,
+ "resolved_and_indexed": 24,
  "dangling": 0,
  "unindexed": 0,
  "health": "OK",
@@ -38,7 +38,31 @@
   },
   {
    "agent": "builder",
+   "pointer": "memory/builder/evidence-cockpit-frontend-2026-11-24.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "builder",
    "pointer": "memory/builder/MEMORY.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "builder",
+   "pointer": "memory/builder/evidence-cockpit-frontend-2026-11-24.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "builder",
+   "pointer": "memory/builder/evidence-cockpit-frontend-2026-11-24.md",
+   "exists": true,
+   "indexed": true
+  },
+  {
+   "agent": "builder",
+   "pointer": "memory/builder/evidence-cockpit-frontend-2026-11-24.md",
    "exists": true,
    "indexed": true
   },

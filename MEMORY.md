@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher wrote `memory/goals/mechanic-nextcycle-state-collector-forecast.md` — 7 signals, 3-cycle threshold, edge cases, restart-loop guar
-- Open: feed_refresh.py must be added to FleetStateCollector schtask chain (5-min) or cockpit-feed.json goes stale again.
 - Queued: write idle
 - Builder owes one step: run `goal_ledger.py --record bu` to append (verified:) marker for cockpit claims; uncited dropped 16→12 after fix.
 - Stall detector patched to exclude unreachable agents via ops/unreachable_agents.json; selftest 7/7 pass, evidence at memory/mechanic/stall-d
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic added subprocess call to feed_refresh.py at end of state_collector.py collect; cockpit-feed.json now auto-refreshes via existing 5-
 - Unified action log (Mechanic spec Steps 1+2) implemented: `memory/ops/action_log.py` live, cockpit feed now includes autonomous_actions; unb
 - feed_refresh.py now in FleetStateCollector; live probe shows feed FRESH (
+- Mechic added CockpitFeedRefresh to deploy_all_schtasks.py; deploy blocked by known schtasks COM sandbox limit on Red.
+- Cycle 15
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
