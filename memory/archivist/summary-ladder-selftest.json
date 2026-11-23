@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "test": "all_3_tiers_present",
+      "pass": true,
+      "detail": "T1=2733T, T2=13T, T3=Test Document"
+    },
+    {
+      "test": "compression_gt_60pct",
+      "pass": true,
+      "detail": "T2 savings=99.5%"
+    },
+    {
+      "test": "tier_regenerable_idempotent",
+      "pass": true,
+      "detail": "same T2+T3 on re-run"
+    },
+    {
+      "test": "t3_is_1line_title",
+      "pass": true,
+      "detail": "'Test Document'"
+    },
+    {
+      "test": "t2_is_approx_3_sentences",
+      "pass": true,
+      "detail": "1 sentences"
+    }
+  ],
+  "all_pass": true
+}

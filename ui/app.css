@@ -35,9 +35,12 @@ aside .ah{display:flex;align-items:center;padding:var(--sp-8) var(--sp-12);font-
 .acard button{background:none;border:none;color:var(--dim);cursor:pointer;font-size:var(--fs-14);padding:2px var(--sp-4);border-radius:var(--br-md)}
 .acard button:hover{color:var(--text);background:var(--hover-bg)}
 #chatCol{flex:1;display:flex;flex-direction:column;min-width:0}
-#modeBar{display:flex;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);border-bottom:1px solid var(--line);align-items:center;background:var(--panel)}
-.seg{display:flex;border:1px solid var(--line);border-radius:var(--br-md);overflow:hidden}
-.seg button{background:none;border:none;color:var(--dim);padding:var(--sp-4) var(--sp-16);cursor:pointer;font-size:var(--fs-14)}
+#modeBar{display:flex;flex-wrap:wrap;gap:var(--sp-8);row-gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);border-bottom:1px solid var(--line);align-items:center;background:var(--panel)}
+/* 2026-11-23: mode switcher was flex-shrunk to one button's width (overflow:hidden
+   clipped the Group button out of existence). seg/toggles never shrink; goalbar absorbs slack. */
+.seg{display:flex;flex:none;border:1px solid var(--line);border-radius:var(--br-md);overflow:hidden}
+.seg button{background:none;border:none;color:var(--dim);padding:var(--sp-6) var(--sp-14);cursor:pointer;font-size:var(--fs-14);white-space:nowrap;min-width:64px;text-align:center}
+#modeBar>span{flex:none;white-space:nowrap}
 .seg button.on{background:var(--seg-on);color:var(--white)}
 #modeHint{font-size:var(--fs-12);color:var(--dim)}
 #resetBtn{margin-left:auto;background:none;border:1px solid var(--line);color:var(--dim);border-radius:var(--br-md);padding:var(--sp-4) var(--sp-8);cursor:pointer;font-size:var(--fs-12)}
@@ -191,7 +194,7 @@ textarea{resize:vertical;min-height:64px}
 #modeBar button,.seg button,.btn,#send{transition:border-color .15s,color .15s,background-color .15s,opacity .15s}
 .dot{transition:background-color .2s}
 .flink{transition:color .15s,border-bottom-color .15s}
-.toggles{display:inline-flex;gap:var(--sp-8)}
+.toggles{display:inline-flex;gap:var(--sp-8);flex:none}
 .vdiv{width:1px;height:16px;background:var(--line);margin:0 var(--sp-4)}
 
 /* ---- User message queue + interrupted-run banner (2026-11-15) ---- */
@@ -287,7 +290,7 @@ code{background:var(--line);border-radius:5px;padding:1px 5px;font-size:var(--fs
 
 /* ============ 2026-11-19 White re-land: goals 3,4,5,6,9,10 ============ */
 /* Goal #3 - per-agent goal bar in header */
-.goalbar{display:flex;align-items:center;gap:var(--sp-8);margin-left:var(--sp-12);flex-wrap:wrap;}
+.goalbar{display:flex;align-items:center;gap:var(--sp-8);margin-left:var(--sp-12);flex-wrap:wrap;flex:1 1 auto;min-width:0}
 .gbar{position:relative;display:inline-flex;align-items:center;width:74px;height:16px;background:var(--panel2);border:1px solid var(--line);border-radius:var(--br-pill);overflow:hidden;}
 .gbar-fill{position:absolute;left:0;top:0;bottom:0;background:var(--acc);}
 .gbar em{position:relative;font-style:normal;font-size:var(--fs-12);line-height:var(--lh-tight);color:var(--text);padding-left:6px;z-index:1;}

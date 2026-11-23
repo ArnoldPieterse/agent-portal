@@ -1,0 +1,2713 @@
+{
+  "generated": "2026-11-23T03:50:41.925633+00:00",
+  "leaf_count": 300,
+  "entries": [
+    {
+      "file": "memory/archivist/citation-audit-cycle5-report.md",
+      "lines": 111,
+      "t1_tokens": 1387,
+      "t2_abstract": "Generated: 2026-11-18T23:25:23Z Method: scan all memory/**/*.md for external URLs, deduplicate, live-check (HEAD->GET). Goal #2 is closable once filtered accuracy >90% with all genuine citations verified. | # | URL | Status | Detail | Source File(s) | |---|-----|--------|--------|----------------| | 1 | https://[redacted-tunnel].trycloudfl",
+      "t2_tokens": 54,
+      "t3_title": "Citation Accuracy Audit - Cycle 5",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/archivist/citation-audit-cycle5-v2-report.md",
+      "lines": 136,
+      "t1_tokens": 2327,
+      "t2_abstract": "Generated: 2026-11-19T00:17:50Z Method: offline URL classification over memory/**/*.md. | URL | Category | Status | Detail | File(s) | | `http://` | BARE-EMPTY | n/a | bare scheme, no host (placeholder) | memory/portal/architecture.md | | | URL | Suggested fix | File(s) | | `http://pale:8099api/fleet` | `http://pale:8099/api/fleet` | memory/archivist/citation-audit-cycle5-report.md | | ",
+      "t2_tokens": 66,
+      "t3_title": "Citation Accuracy Audit v2 - Cycle 5 (Builder assist, Archivist goal #2)",
+      "t3_tokens": 15
+    },
+    {
+      "file": "memory/archivist/conflict-report-2026-11-23.md",
+      "lines": 184,
+      "t1_tokens": 2358,
+      "t2_abstract": "Files scanned: 2612, Facts extracted: 3812, Conflicts: 224. Recommend most-recent source: memory/verifier/r32-sweep-closeout-2026-11-14.md:27. - Value A: `\"added a keyword entry to `memory/ops/index.md` for `white-lan-firewall-drop-202` @ `memory/verifier/ops-index-check-archivist-entry-2026-",
+      "t2_tokens": 32,
+      "t3_title": "Conflict Report 2026-11-23",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/archivist/decay-report.md",
+      "lines": 9302,
+      "t1_tokens": 135276,
+      "t2_abstract": "Leaves: 9295 | flagged (<0.35): 0. | leaf | age_d | inrefs | indexed | score | |---|---|---|---|---| | memory/ops/merge-queue/SETUP_HISTORY.md.4dd807fb2b | 13 | 0 | n | 0.478 | | memory",
+      "t2_tokens": 40,
+      "t3_title": "Decay report 2026-11-23",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/archivist/digest-47-2026.md",
+      "lines": 1587,
+      "t1_tokens": 4184,
+      "t2_abstract": "- memory/INDEX.md - memory/ONBOARDING.md - memory/archivist/INDEX.md - memory/archivist/MEMORY.md - memory/archivist/REPAIR_2026-11-13.md - memory/arc - current: P@5=1.0 R@10=1.0 MRR=0.85 - precision_at_5: 0.75 -> 1.0 (+25) - recall_at_10: 0.9 -> 1.0 (+9) - mrr: 0.4085 -> 0.85 (+44). - memory/INDEX.md - memory/ONBOARDING.md - memory/archivist/INDEX.md - memory/archivist/MEMORY.md - memory/archivist/REPAIR_2026-11-13.md - memory/arc",
+      "t2_tokens": 61,
+      "t3_title": "Weekly digest - 2026-11-19 (week 47 of 2026)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/archivist/dream-big-wishes-2026-11-14.md",
+      "lines": 53,
+      "t1_tokens": 552,
+      "t2_abstract": "Every goal in the portal should carry an **unbroken evidence chain** back to the files, commits, and chat records that prove it was reached. Supersedes nothing; complements Scribe's r57 closeout. - **Scribe**: my JSON is compatible with your goals_data.json schema; add an `evidence` field per goal and I'll populate it - **Researcher**: your evi",
+      "t2_tokens": 70,
+      "t3_title": "Archivist \u2014 Dream-Big Wishes (2026-11-14)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/archivist/evidence-goal6-archive-compaction-2026-11-20.md",
+      "lines": 61,
+      "t1_tokens": 470,
+      "t2_abstract": "Date: 2026-11-20 Agent: Archivist Status: IN PROGRESS (16.9% achieved, target >=30%). Full 30% target requires content-level summarization in a subsequent pass. | Removed | Kept (identical) | Bytes | |---|---|---| | archivist-2026-11-20.md | archivist-2026-11-19.md | 5,393 | | builder-2026-11-20.md | builder-2",
+      "t2_tokens": 53,
+      "t3_title": "Evidence: Goal 6 \u2014 Archive Compaction (Pass 1 of N)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/archivist/freshness-report-2026-11-20.md",
+      "lines": 121,
+      "t1_tokens": 492,
+      "t2_abstract": "Total files scanned: 6769. and 38 more. - `memory/INDEX-kb.json` (0d) - `memory/INDEX.md` (0d) - `memory/ONBOARDING.md` (2d) - `memory/run-rules.md` (2d) - `memory/archivist/INDEX.md` (0d) -",
+      "t2_tokens": 29,
+      "t3_title": "Freshness Report 2026-11-20",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md",
+      "lines": 212,
+      "t1_tokens": 1675,
+      "t2_abstract": "Script: `memory/archivist/hostdoc_consistency_v2.py` (fixes the 2026-11-18 extraction bugs: .jsonl truncation, .bak cut-off, bare-name CWD resolution) - REMOTE: drive-letter path on another host; unverifiable from White (expected in runbooks). - `MEMORY.md` L4 -> `gen_api_ref.py` (actual: `memory/archivist/gen_api_ref.py`) - `MEMORY.md` L4 -> `ingest.py` (actual: `memory/archivist/ingest.py`",
+      "t2_tokens": 53,
+      "t3_title": "Multi-host doc consistency v2 - corrected audit (2026-11-18)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/archivist/INDEX.md",
+      "lines": 54,
+      "t1_tokens": 707,
+      "t2_abstract": "Last updated: 2026-11-14. - [index-pointer-addendum-r43.md](memory/archivist/index-pointer-addendum-r43.md) - [index-pointer-batch-r42.md](memory/archivist/index-pointer-batch- - goal-1 provenance ledger (cycle-12) -> memory/archivist/evidence-goal1-provenance-ledger-2026-11-23.md   provenance_ledger.py: 12975 facts, 10/10 sp",
+      "t2_tokens": 24,
+      "t3_title": "memory/archivist \u2014 pointer map",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md",
+      "lines": 71,
+      "t1_tokens": 1467,
+      "t2_abstract": "- source: memory\\ops\\windows-runbook.md - ingested: 2026-11-16 by archivist/ingest.py - confidence: medium | ttl_days: 60. Pale Studio was already down at fleet start 19:23 (machine alive, :8888 refused) - needs manual logon/startup; load its dual via API after (Q8_0 GPU1  No host auto-logons (AutoAdminLogon=0 everywhere) -> \"auto start\" = at user logon (console or RDP).",
+      "t2_tokens": 70,
+      "t3_title": "Ingested: ops-windows-runbook-portal-lifec",
+      "t3_tokens": 2
+    },
+    {
+      "file": "memory/archivist/knowledge_gaps.md",
+      "lines": 52,
+      "t1_tokens": 299,
+      "t2_abstract": "Recurring topics (goal titles across cycles and/or human prompts) with NO KB leaf outside memory/goals/ sharing >=2 distinctive words. - mentions: 2 source file(s) (goal files + journal runs) - sources to research: - memory/goals/archive/orchestrator-cycle5-closed-2026-11-18.md - memo - mentions: 2 source file(s) (goal files + journal runs) - sources to research: - memory/goals/archive/cycle2-2026-11-17/cycle2-kickoff-2026-11-16.md ",
+      "t2_tokens": 68,
+      "t3_title": "Knowledge gap report - 2026-11-19",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/archivist/lifecycle-policy.md",
+      "lines": 124,
+      "t1_tokens": 981,
+      "t2_abstract": "Owner: Archivist | Set: 2026-11-20 (cycle-8, goal #7) | Status: DRAFT v1. - `xref_check.py` catches broken pointers after moves - `decay_score.py --archive` handles automated archival - `orphan-sweep` catches files never add | Action | Trigger | File moves? | INDEX updated? | Provenance header? | |--------|---------|-------------|----------------|--------------------| | CR",
+      "t2_tokens": 62,
+      "t3_title": "Knowledge Lifecycle Policy",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/archivist/orphan-remediation-cycle5.md",
+      "lines": 187,
+      "t1_tokens": 2505,
+      "t2_abstract": "Generated: 2026-11-19 by Orchestrator (assist for Archivist goal #4). - Still needs-link: ~38 nodes across builder(6), portal(5), designer(3), researcher(2), scribe(2), ops(1), orchestrator(1), archivist(1), verifier(3). - `memory/archivist/INDEX.md` \u2014 Entry point / navigation hub - no inbound link needed - `memory/archivist/bundle-v2-item1-staleness-r73-2026-11-14.md`",
+      "t2_tokens": 50,
+      "t3_title": "Orphan Node Remediation Log - Cycle 5",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/archivist/orphan-remediation-fullscan-report.md",
+      "lines": 138,
+      "t1_tokens": 698,
+      "t2_abstract": "- total_md_files: 1794 - orphans_total: 1166 - orphans_standalone: 1042 - actionable_orphans: 124 - linkable (parent INDEX exists): 124 - applied: 0 - `memory/archivist/hotload-research-evidence.md` -> `memory/archivist/INDEX.md` [DRY-RUN] `memory/archivist/ingest-review-queue.md` -> `memory/archivis",
+      "t2_tokens": 37,
+      "t3_title": "Orphan Remediation Report (Full Scan)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/archivist/REPAIR_2026-11-13.md",
+      "lines": 54,
+      "t1_tokens": 861,
+      "t2_abstract": "UPDATED ~17:5x (auto-continue): BLOCK 1a added (Scribe's lost section), BLOCK 1 re-probe note, BLOCK 4 added (F2 md5 fix), F1 dropped. Rule: from non-White seats, never report \"recorded\" for TODO.md / MEMORY.md / memory/** \u2014 hand off exact content in chat or via a patch file like this - agents.json: scribe + mechanic both bound to studio http://Red:8888 with run_tools_locally=true \u2192 their 16:15 edits landed in Red's sandbox; mirror ",
+      "t2_tokens": 89,
+      "t3_title": "REPAIR PATCH \u2014 canonical sync gap (2026-11-13, Archivist)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/archivist/size_guard_report.md",
+      "lines": 51,
+      "t1_tokens": 715,
+      "t2_abstract": "memory tree: 96.71 MB - FAIL (over 5 MB hard limit) memory tree: 98.04 MB - FAIL (over 5 MB hard limit) memory tree: 141.50 MB - FAIL (over 5 MB hard ",
+      "t2_tokens": 41,
+      "t3_title": "Size Guard Report",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/archivist/snapshot-diff-20261120.md",
+      "lines": 56,
+      "t1_tokens": 499,
+      "t2_abstract": "Provenance: source=archivist/snapshot.py + manual analysis | date=2026-11-20 | confidence=high | ttl=30d. Investigate designer/ directory: are 4580 files intentional knowledge or build artifacts?. - **Designer directory dominates growth** (4580/6573 = 70%): likely UI asset exports, design tokens, or component files.",
+      "t2_tokens": 50,
+      "t3_title": "Snapshot Diff 2026-11-20 (Goal #6 \u2014 Weekly Snapshot Diff, 2nd run)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/archivist/stale-citation-remediation-2026-11-21.md",
+      "lines": 57,
+      "t1_tokens": 553,
+      "t2_abstract": "Source: memory/archivist/citation-map.json (generated 2026-11-20T13:44:00Z). Status: prioritization complete; per-file re-check not yet executed. | # stale | citing file | |---|---| | 5 | `memory/archivist/orphan-remediation-cycle5.md` | | 4 | `memory/archivist/hostdoc-consistency-v2-2026-11-18.",
+      "t2_tokens": 37,
+      "t3_title": "Stale-Citation Remediation Priorities (from citation-map.json)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/archivist/stale-citation-triage-2026-11-21.md",
+      "lines": 61,
+      "t1_tokens": 738,
+      "t2_abstract": "Generated: 2026-11-21 by Archivist (team contribution; all 10 own goals reached). No misleading live reference found; nothing on the critical path. | Citing file | # stale | max gap (d) | |---|---|---| | `memory/goals/researcher-log-2026-11-13.md` | 3 | 1 | | `memory/orchestrator/bg-goals-contribu",
+      "t2_tokens": 54,
+      "t3_title": "Stale-Citation Triage \u2014 actionable subset of citation-map",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/archivist/xref-check-report-2026-11-19.md",
+      "lines": 68,
+      "t1_tokens": 414,
+      "t2_abstract": "Generated: 2026-11-19T10:12:22 by memory/archivist/xref_check.py. - `memory/archivist/MEMORY.md:4` [arrow] -> ../portal/architecture.md - `memory/archivist/supersession-findings-2026-11-16.md:9` [arrow] -> ../synthes - scanned files: 1493 - broken live xrefs: 58 - flagged-dead (quarantined) refs: 0 - status: **NOT CLEAN**.",
+      "t2_tokens": 41,
+      "t3_title": "Xref Integrity Report",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/archivist/xref-fix-log-2026-11-19.md",
+      "lines": 122,
+      "t1_tokens": 1402,
+      "t2_abstract": "Generated: 2026-11-19T10:12:23 by memory/archivist/xref_check.py --fix. - `memory/archivist/MEMORY.md:4` [arrow] REDIRECT architecture.md -> ../portal/architecture.md - `memory/archivist/supersession-findings-2026-11-16.md - files changed: 34 - actions taken: 114 - redirects: 28   quarantines (flagged-dead): 86.",
+      "t2_tokens": 36,
+      "t3_title": "Xref Auto-Fix Log",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/archivist/xref-fix-log-2026-11-23.md",
+      "lines": 63,
+      "t1_tokens": 694,
+      "t2_abstract": "Generated: 2026-11-23T01:41:28 by memory/archivist/xref_check.py --fix. - `memory/designer/integrity-designer-lane-cleared-2026-11-22.md:16` [arrow] QUARANTINE subdir/file.md  (no unique match; flagged dead) - `memory/desi - files changed: 8 - actions taken: 55 - redirects: 13   quarantines (flagged-dead): 42.",
+      "t2_tokens": 40,
+      "t3_title": "Xref Auto-Fix Log",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/archivist/xref-monitor-report-2026-11-20.md",
+      "lines": 99,
+      "t1_tokens": 1562,
+      "t2_abstract": "Date: 2026-11-20 12:35. - `memory/INDEX.md -> memory/ONBOARDING.md -> memory/portal/api-reference.md -> /index.html` (depth 4) \ufffd Simplify: add direct pointer memory/INDEX.md  - `memory/archivist/api-ref-e2e-2026-11-18.md` -> `memory/archivist/findstr archivist api-reference.md` \ufffd Remove or correct ref to 'memory/archivist/f",
+      "t2_tokens": 41,
+      "t3_title": "XRef Integrity Monitor Report",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/builder/dedup-report-archivist8-2026-11-22.md",
+      "lines": 52,
+      "t1_tokens": 560,
+      "t2_abstract": "**Run**: `python memory/archivist/dedup.py` from Black sandbox. This report is an assist artifact \u2014 Archivist should execute the deletions and add cross-reference headers, then record closure via `python memory/res 1.",
+      "t2_tokens": 37,
+      "t3_title": "Dedup Report \u2014 Archivist Goal #8 (Assist by Builder, 2026-11-22)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/builder/designer-goal1-token-verify-2026-11-18.md",
+      "lines": 58,
+      "t1_tokens": 367,
+      "t2_abstract": "Date: 2026-11-18 | method: independent re-parse of ui/app.css (sha12=b72f1bfb4f91). Correct exclusion yields exactly 36, matching ORCH-VERIFY. - L28: `#20304d` - L34: `#2a3342` - L39: `#3a6fd6` - L39: `#fff` - L46: `#243b63` - L46: `#33507f` - L54: `#3ddc84` - L62: `#2a3342` - L64: `#4a3f6b` ",
+      "t2_tokens": 55,
+      "t3_title": "Builder verification: Designer Goal #1 token audit - 36 remaining hard-coded hex",
+      "t3_tokens": 15
+    },
+    {
+      "file": "memory/builder/handoff-mechanic-2026-11-16.md",
+      "lines": 54,
+      "t1_tokens": 396,
+      "t2_abstract": "Designer's `index-patched-v3.html` (sha12 e082df68bdb3) claims to close goals #2/#3/#4/#6/#7 in one file. If either is missing, I'll rewrite next turn. - **#2** (uploads\u2192remote mirror): run `python memory/builder/uploads_mirror_roundtrip.py` from White after SMB shares are reachable \u2014 or confirm via e",
+      "t2_tokens": 50,
+      "t3_title": "Builder \u2192 Mechanic Handoff (2026-11-16, updated for v3)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/builder/index-v22-surgical-fixes-confirmed-2026-11-14.md",
+      "lines": 51,
+      "t1_tokens": 435,
+      "t2_abstract": "Closes the r19 defect-sheet loop from my side with fresh first-party byte evidence. Basis: python md5 + marker grep, this seat, today. Per Verifier's root-cause finding in the r71 correction: `agent_portal.py` L92 puts index.html in PUSH_FALLBACK_ALLOWLIST \u2014 push-only from the serving",
+      "t2_tokens": 53,
+      "t3_title": "Builder record \u2014 v2.2 surgical fixes CONFIRMED on promoted bytes (2026-11-14)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/builder/INDEX.md",
+      "lines": 68,
+      "t1_tokens": 1619,
+      "t2_abstract": "Last updated: 2026-11-21 (Builder assist: Archivist goal #2 KG v3 edge types; prior: Mechanic Goal 1 concurrent pool load test \u2014 8 parallel cmds PASS) - [MEMORY.md](memory/builder/MEMORY.md) - [TODO.md](memory/builder/TODO.md) - [anomaly-ar14-writepath-evidence.md](memory/builder/anomaly-ar14-writepa <483 chars of arguments you sent, already written to memory/builder/INDEX.md; elided to save room.",
+      "t2_tokens": 58,
+      "t3_title": "BUILDER INDEX \u2014 index of indexes for Builder lane (repin farm, staged patches, test suites).",
+      "t3_tokens": 19
+    },
+    {
+      "file": "memory/builder/log_rotate_winerror183-fix-2026-11-18.md",
+      "lines": 51,
+      "t1_tokens": 405,
+      "t2_abstract": "`memory/mechanic/log_rotate.py`, `rotate_file()` shift loop: Two defects: 1. Evidence leaf + INDEX line added; end-of-run sweep auto-links. Test built a temp dir with `app.log` (>10MB) **plus plain `.log.1`\u2013`.log.5` all present** (the exact crash trigger), imported the real module, and ran",
+      "t2_tokens": 50,
+      "t3_title": "log_rotate.py WinError 183 fix \u2014 2026-11-18 (Builder, cross-assist owner: Mechanic)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/builder/test-report.md",
+      "lines": 56,
+      "t1_tokens": 296,
+      "t2_abstract": "**Run:** 2026-11-19 23:37 UTC | **Suite:** all | **Mode:** offline **Result:** 41/42 passed (98%). **1 FAILURES:** - `ui/component_usage:core.js`: createElement=7 (target<5), UI.*=27. - \u2705 `files_exist` (11 js, 3 css) - \u2705 `brace_balance:api-client.js` ({}=91/91(\u00b13) ()=151/151) - \u2705 `brace_balance:components.js` ({}=2/0(\u00b13) ()=14/13) -",
+      "t2_tokens": 50,
+      "t3_title": "Portal Test Report",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/builder/TODO.md",
+      "lines": 77,
+      "t1_tokens": 2271,
+      "t2_abstract": "- Designer reference `ws-b-increment1/index.html` sha256-12 = **`b82dd3b77f4e`** (CORRECTED this round; supersedes earlier-pasted `4e7a19b43779` \u2014 Des Drop state unchanged (uploads/, AgentPortal_V1, ui-upgrades-r4.md ABSENT) \u2192 P8 STOP holds; port lane staged against verified b82dd3b77f4e. File-access check (fresh, my seat): - `uploads/` ABSENT from _default; no AgentPortal_V1 anywhere on Black (recursive search); C:\\Projects\\Workspace \u2192",
+      "t2_tokens": 66,
+      "t3_title": "BUILDER \u2014 open items (r24/V102)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/designer/a11y-audit-2026-11-18.md",
+      "lines": 76,
+      "t1_tokens": 669,
+      "t2_abstract": "**Color contrast: PASS** \u2014 all 17 fg/bg pairs meet >=4.5:1. Verify with a quick automated check (grep for remaining unlabeled interactive elements). | Element | Issue | Fix | |---------|-------|-----| | `#mSolo` button | No aria-label or title; text content is \"Solo\" (visible) but no role context |",
+      "t2_tokens": 62,
+      "t3_title": "WCAG 2.1 AA Accessibility Audit \u2014 Portal UI (2026-11-18)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/designer/a5-send-contrast-hunk-r28.md",
+      "lines": 54,
+      "t1_tokens": 893,
+      "t2_abstract": "Auto-continue round. Evidence: first-party diff of both staged variants (`designer/staged/variant_9c6b08e3\u2026.html`, `variant_8ef4e2227a7a.html`) + WCAG relative-luminance c `panel-discipline-r20.md` inferred the 8ef4e222 \"WCAG-AA stamp\" differed from 9c6b08e3 by one line in :root = \"the contrast swap = r19 FAIL #5.\" FIRST",
+      "t2_tokens": 49,
+      "t3_title": "Designer r28 \u2014 A5 send-button contrast: ready hunk + record correction (NEW file, 2026-11-14)",
+      "t3_tokens": 18
+    },
+    {
+      "file": "memory/designer/acceptance-2-5-9-10-2026-11-19.md",
+      "lines": 54,
+      "t1_tokens": 600,
+      "t2_abstract": "Method: live portal (http://localhost:8099, fleet 89/93 at capture) driven by headless Edge 157.0.4341.60 on the White host. selftest_json (JSON), selftest_runA_dom.html, tour_runB_dom.html, browser_evidence_summary.json, density_before.png, density_after.png, notify.png, to - First load (fresh profile): tour auto-starts at 800ms unless localStorage portalTourDone or #notour hash; screenshot `tour_step1.png` shows Step 1 o",
+      "t2_tokens": 61,
+      "t3_title": "Designer goals 2, 5, 9, 10 \u2014 browser acceptance evidence (2026-11-19, White seat)",
+      "t3_tokens": 16
+    },
+    {
+      "file": "memory/designer/component-reference.md",
+      "lines": 138,
+      "t1_tokens": 1077,
+      "t2_abstract": "Quick-lookup for all agents building UI. | Need | Use | |------|-----| | Group content with a title | `UI.card` | | Show status inline | `UI.badge` | | Show a score/metric visually | `UI.gaug - All components are stateless factories - they return a DOM element, no internal state.",
+      "t2_tokens": 65,
+      "t3_title": "Component Visual Reference \u2014 ui/components.js",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/designer/conflict-resolution-merged-canonical-2026-11-15.md",
+      "lines": 63,
+      "t1_tokens": 751,
+      "t2_abstract": "Verifier's `memory/verifier/stopgap_h1_contrast_patch.py` and my 28-hunk canonical patched the SAME lines with DIFFERENT mechanisms: - Verifier C-at:  Pre-flight one-liner: expect `3de8bb3cb3a8`; if it prints `b06619152f2e`, re-copy the script from the root backup first. `memory/designer/goals-patch-apply-2026-11-15.py`  **sha256 3de8bb3cb3a8**, 32 hunks: - Backend B1-B4: `_goals_snapshot()` + /api/goals  AND  `_proven",
+      "t2_tokens": 58,
+      "t3_title": "Designer \u2014 deployment conflict RESOLVED: single merged canonical patch (2026-11-15 ~14:5x)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/designer/contrast-token-audit-live-2026-11-15.md",
+      "lines": 54,
+      "t1_tokens": 813,
+      "t2_abstract": "**Target:** `index.html` at shared root, sha1 `df1bbdaef6848761b274e29af763172df0259a64` (matches pin df1bbdaef684). Then I'll fold the remaining 24 ad-hoc hexes into tokens (goal #4) in one pass. | ratio | verdict | pair | where | |------:|---------|------|-------| | 16.08 | PASS | --text #e8edf4 / bg #0e1116 | body text | | 7.15  | PASS | --di",
+      "t2_tokens": 71,
+      "t3_title": "Designer \u2014 LIVE contrast + token audit (goal #3 / #4) \u2014 2026-11-15",
+      "t3_tokens": 16
+    },
+    {
+      "file": "memory/designer/css-bundle-budget-verify-2026-11-18.md",
+      "lines": 79,
+      "t1_tokens": 648,
+      "t2_abstract": "| File | Raw | Minified | |------|-----|----------| | ui/app.css | 22.3 KB | 20.2 KB | | ui/core.js | 28.0 KB | 22.3 KB | | ui/uploads.js | 33.3 KB |  Add a CI size gate at 80 KB before closing goal 3; any further CSS/JS growth will breach budget. | # | Lines | Function | |---|-------|----------| | 1 | ~55 | send() - message dispatch + optimistic UI | | 2 | ~54 | attachRun(rid, startCursor) - ru",
+      "t2_tokens": 105,
+      "t3_title": "Designer Goal #3: CSS Bundle Performance Budget - EVIDENCE (2026-11-18)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/designer/design-qa-checklist.md",
+      "lines": 52,
+      "t1_tokens": 483,
+      "t2_abstract": "Updated: 2026-11-20 (auto-loop pass, cycle-7). [ ] No \"undefined\", \"null\", or blank white space in any panel state. 16.",
+      "t2_tokens": 24,
+      "t3_title": "Design QA Checklist",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/designer/design-system-state-2026-11-18.md",
+      "lines": 77,
+      "t1_tokens": 733,
+      "t2_abstract": "Parent: memory/designer/INDEX.md. This is the canonical design state reference for cycle 4 onboarding. - Goal #10 (visual regression baseline) is **blocked by sandbox egress** \u2014 needs non-sandbox White seat with Chrome/Edge + CDP.",
+      "t2_tokens": 42,
+      "t3_title": "Design System State \u2014 Cycle 3 Closure (2026-11-18)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/designer/design-tokens-live.md",
+      "lines": 117,
+      "t1_tokens": 846,
+      "t2_abstract": "Source file: `ui/app.css` :root block. --- Verification: `grep -c 'var(--' ui/app.css` = 436; `grep -oP '#[0-9a-fA-F]{3,8}' ui/app.css | grep -v ':root' | wc -l` = 0. | Token | Value | Usage | |-------|-------|-------| | --bg | #0e1116 | App background | | --panel | #151a22 | Primary panel bg | | --panel2 | #1b2230 ",
+      "t2_tokens": 71,
+      "t3_title": "Design Tokens  Live Reference (2026-11-16)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/designer/files-panel-hunks-r5.md",
+      "lines": 63,
+      "t1_tokens": 546,
+      "t2_abstract": "Designer, 2026-11-13 (auto-continue round). - Then Verifier runs AC-A2-1..4 from files-panel-patch.md in one pass (hard-refresh once). Self-contained: comment marker + fsFmtSize + fsFmtTime + filesLoad + both bindings; depends only on existing $() and A3-B's --focus token.) // ---- Fi",
+      "t2_tokens": 52,
+      "t3_title": "A2 reconciliation hunks \u2014 Files panel -> canonical index.html (White seat)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/designer/files-panel-patch.md",
+      "lines": 87,
+      "t1_tokens": 772,
+      "t2_abstract": "Status: **SUPERSEDED for landing \u2014 see files-panel-hunks-r5.md** (2026-11-13 auto-continue). Zero new risk: same guard as the rest of the list. - **AC-A2-1:** after hard refresh, \ud83d\udcc1 Files sits next to \ud83d\udef0 Fleet; click opens panel; outside click closes it.",
+      "t2_tokens": 50,
+      "t3_title": "A2 / P3 \u2014 \"Files\" panel, drop-in patch (Designer, 2026-11-13 ~15:5x)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/designer/fix-hunks-r51-2026-11-14.md",
+      "lines": 175,
+      "t1_tokens": 1095,
+      "t2_abstract": "Base: `memory/designer/index_html_black_5.html` = byte-exact canonical **9c6b08e3d98355e632a72cb871d5b60d / 67,681 B** (verified this round). Basis: byte-exact canonical index.html + r19 design leg + ui-tokens.md (this round). C1.",
+      "t2_tokens": 32,
+      "t3_title": "Designer fix pack r51 \u2014 hunks A\u2013D for canonical index.html (2026-11-14)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/designer/fleet-panel-prototype-2026-11-23.md",
+      "lines": 58,
+      "t1_tokens": 577,
+      "t2_abstract": "Date: 2026-11-23 Owner: Designer | Contributor to Builder goal 6. Verify all ACs from builder.md goal 6. - Uses existing design tokens from `ui/tokens.css` \u2014 zero hard-coded hex in new code - Host state badge: pill shape with soft background tint (not sol",
+      "t2_tokens": 55,
+      "t3_title": "Fleet Status Panel \u2014 Design Prototype (Builder Goal #6 assist)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/designer/fleet-panel-spec.md",
+      "lines": 147,
+      "t1_tokens": 1111,
+      "t2_abstract": "Date: 2026-11-23 Status: SPEC COMPLETE \u2014 implementation in ui/fleet_status.js, ui/fleet_health.js, ui/app.css. - [x] Spec doc exists (this file) - [ ] Implementation matches spec: host cards with VRAM gradient bars - [ ] Agent cards render with status dots + go | File | Role | |------|------| | `ui/fleet_health.js` | Composite score + per-host card rendering | | `ui/fleet_status.js` | Compact status strip (op",
+      "t2_tokens": 83,
+      "t3_title": "Fleet Panel Visual Design Spec (Goal #2)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/designer/fleet-topology-data-spec.md",
+      "lines": 74,
+      "t1_tokens": 575,
+      "t2_abstract": "Written by: Mechanic, 2026-11-17. - If remotes are unreachable from sandbox (egress guard), the `status` fields will show TIMEOUT/ERROR \u2014 that's expected, not a bug in the endpoint. - `hosts[name].probe === null` \u2192 show gray dot + \"no data\" tooltip - `sync_age_s > 3600` \u2192 add amber ring or warning badge (stale sync) - `ok === fals",
+      "t2_tokens": 74,
+      "t3_title": "Fleet Topology View \u2014 Data Spec (for Designer Goal 9)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/designer/goal1-color-tokens-reland-2026-11-19.md",
+      "lines": 51,
+      "t1_tokens": 539,
+      "t2_abstract": "Owner: Designer. Backup of pre-edit app.css: `memory/designer/app.css.bak-goal1-2026-11-19`. 1.",
+      "t2_tokens": 10,
+      "t3_title": "Goal 1 \u2014 Color token re-land (auto-loop pass, 2026-11-19)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/designer/goal1-token-audit-reapply-2026-11-17c.md",
+      "lines": 53,
+      "t1_tokens": 317,
+      "t2_abstract": "Date: 2026-11-17 (auto-loop pass, re-application after revert). - ui/app.css (edited in place) - ui/core.js (edited in place) - ui/uploads.js (edited in place). --white, --bg-deep, --peek-bg, --card-sel-bg, --msg-you-bg, --peek-border, --banner-warn-bg, --spin-track, --msg-you-border, --seg-on, --dm-border, --",
+      "t2_tokens": 44,
+      "t3_title": "Goal 1: Design Token Audit & Gap Closure - COMPLETE (re-applied)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/designer/goal1-token-closure-reland-2026-11-17.md",
+      "lines": 51,
+      "t1_tokens": 452,
+      "t2_abstract": "Date: 2026-11-17 Agent: Designer Parent: memory/goals/designer.md goal #1 Supersedes: token-audit-2026-11-17.md (its \"0 hex\" claim had not survived a  - ui/app.css (committed). - Added **25 new semantic tokens** to :root (values identical to the hex they replace, so rendered output is byte-equivalent \u2014 pure refactor, zero vis",
+      "t2_tokens": 59,
+      "t3_title": "Goal #1 Evidence: Design Token Audit & Gap Closure (RE-LANDED + VERIFIED)",
+      "t3_tokens": 15
+    },
+    {
+      "file": "memory/designer/goal1-token-reland-2026-11-19.md",
+      "lines": 52,
+      "t1_tokens": 600,
+      "t2_abstract": "Date: 2026-11-19 | Owner: Designer | Status: CLOSED (acceptance test met, re-verified live). python memory/designer/token_lint.py ui/app.css --tokens ui/tokens.css --json out.json. 1.",
+      "t2_tokens": 27,
+      "t3_title": "Goal #1 (Design Token System) - re-land after regression + closure evidence",
+      "t3_tokens": 15
+    },
+    {
+      "file": "memory/designer/goal2-density-static-measurements-2026-11-19.md",
+      "lines": 81,
+      "t1_tokens": 713,
+      "t2_abstract": "Date: 2026-11-19 (auto-loop pass) Owner: Designer Status: Code COMPLETE. - ui/app.css (current, 24290 bytes) \u2014 all density values tokenized - ui/tokens.css (current, 2199 bytes) \u2014 spacing + line-height token definitions - u - [x] Code complete: all values tokenized, 0 hardcoded px in padding/margin/line-height - [x] Static measurement: per-element vertical spacing reduced",
+      "t2_tokens": 67,
+      "t3_title": "Goal #2 Information Density Pass \u2014 Static Measurement Evidence",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/designer/goal2-density-tokenization-complete-2026-11-19.md",
+      "lines": 52,
+      "t1_tokens": 608,
+      "t2_abstract": "My earlier CORRECTION flagged 10 hardcoded line-heights + 37 hardcoded padding/margin px as an unresolved \"token-vs-keep\" decision. - ui/app.css (live, sha12=7c779665320f), backup: memory/designer/app_css.bak-density2026-11-19pre.css - ui/tokens.css (live), backup: memory/designer/ - `ui/tokens.css`: added `--sp-2:2px; --sp-5:5px; --sp-7:7px` (spacing scale now 1,2,3,4,5,6,7,8,10,12,14,16,20,24) and `--lh-std:1.4` (line-height sc",
+      "t2_tokens": 54,
+      "t3_title": "Goal #2 (Information Density Pass) \u2014 tokenization COMPLETE + analytical density evidence, 2026-11-19 (Designer auto-loop)",
+      "t3_tokens": 19
+    },
+    {
+      "file": "memory/designer/goal2-responsive-verify-2026-11-18.md",
+      "lines": 61,
+      "t1_tokens": 594,
+      "t2_abstract": "Programmatic CSS overflow analysis + existing screenshot evidence. **PASS** - Goal #2 acceptance criteria met: all states implemented, no overflow at any test width, screenshots stored as evidence. The layout uses flexbox with these properties: - `body`: flex-column, 100vh - `main`: flex-row, flex:1 - `aside`: width=250px (180px at max-width:768p",
+      "t2_tokens": 63,
+      "t3_title": "Goal #2 - Fleet Panel Responsive Verification (2026-11-18)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/designer/goal3-hierarchy-audit-2026-11-20.md",
+      "lines": 67,
+      "t1_tokens": 670,
+      "t2_abstract": "Date: 2026-11-20 Agent: Designer (auto-loop pass). - ui/app.css (9 rules changed). - **Elements**: #fleetHead, #opsHead, #actHead, #filesHead, #goalsHead (5 rules) - **Before**: --fs-12 / color dim - **After**: --fs-14 / color dim - ",
+      "t2_tokens": 42,
+      "t3_title": "Goal 3 - Information Hierarchy Audit: Static Pass",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/designer/goal3-hierarchy-reland-2026-11-20c.md",
+      "lines": 52,
+      "t1_tokens": 557,
+      "t2_abstract": "Date: 2026-11-20c Agent: Designer (auto-loop pass). Not a design blocker - flagging once. | # | Selector        | Before | After   | Line | |---|-----------------|--------|---------|------| | 1 | `.mh-v`         | --fs-15| **--fs-18** | 225",
+      "t2_tokens": 44,
+      "t3_title": "Goal 3 - Information Hierarchy: RE-LAND #2 (mirror reverted pass b) + before/after proof",
+      "t3_tokens": 18
+    },
+    {
+      "file": "memory/designer/goal3-hierarchy-reland-2026-11-20d.md",
+      "lines": 52,
+      "t1_tokens": 530,
+      "t2_abstract": "Date: 2026-11-20 Agent: Designer (auto-loop pass). - ui/app.css (11 rules changed). | Element | Before | After | Rationale | |---------|--------|-------|----------| | .mh-v | --fs-15 / 700 | --fs-18 / 700 | Metric value must dominate ",
+      "t2_tokens": 46,
+      "t3_title": "Goal 3 - Information Hierarchy Audit: Re-land + New Fixes (pass d)",
+      "t3_tokens": 15
+    },
+    {
+      "file": "memory/designer/goal4-cta-fix-patch-2026-11-18.md",
+      "lines": 58,
+      "t1_tokens": 808,
+      "t2_abstract": "Date: 2026-11-18 (cycle-5, Studio seat). This leaf preserves the fix so promotion is a copy-paste once the clobber is resolved. - 3 no-data states render icon + message + CTA: fleet / goals / uploads.",
+      "t2_tokens": 45,
+      "t3_title": "Goal #4 (Empty State Design) \u2014 CTA wiring: gap found + ready-to-promote patch",
+      "t3_tokens": 16
+    },
+    {
+      "file": "memory/designer/goal4-empty-states-2026-11-19.md",
+      "lines": 59,
+      "t1_tokens": 731,
+      "t2_abstract": "Added a reusable `.empty-state` CSS component and applied it to the goals panel and files/uploads panel. - ui/core.js (+2 empty-state blocks: fleet hosts, agent list). - **Files panel** (line 334): replaced plain text \"No uploads yet\" with full empty state: upload arrow SVG icon + message + \"Upload a file\" CTA button",
+      "t2_tokens": 67,
+      "t3_title": "Goal #4 Progress: Empty State Design (2026-11-19)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/designer/goal4-fleet-empty-state-2026-11-19.md",
+      "lines": 51,
+      "t1_tokens": 569,
+      "t2_abstract": "Date: 2026-11-19 (Designer, auto-loop pass) Status: PROGRESS (code complete for all 4 panels; live-render verification still pending the CDP wall). Static acceptance (all 4 callers + definition present & loaded) = PASS, recorded here. Before: `$(\"fleetBody\").innerHTML=html||'<div class=\"hint\">no hosts</div>';`  (bare text hint, off-design) After: when no hosts report, render the pro",
+      "t2_tokens": 65,
+      "t3_title": "Goal #4 (Empty State Design) - fleet panel wired + stale-claim correction",
+      "t3_tokens": 15
+    },
+    {
+      "file": "memory/designer/goal5-notification-reimpl-2026-11-19.md",
+      "lines": 55,
+      "t1_tokens": 496,
+      "t2_abstract": "Prior implementation was clobbered by mirror revert (grep confirmed 0 toast/notifBell refs in all live files before this pass). Static verification confirms all code paths are correct. - `inject()`: creates #notifBell + #toastContainer in DOM on DOMContentLoaded - `toast(type,msg)`: appends styled toast, auto-dismiss 5s (TOAST_MS=500",
+      "t2_tokens": 58,
+      "t3_title": "Goal #5: Notification System - Re-implementation (2026-11-19)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/designer/goal5-notification-reland-2026-11-19.md",
+      "lines": 52,
+      "t1_tokens": 726,
+      "t2_abstract": "The prior evidence leaf `goal5-notification-system-2026-11-19.md` claimed the full system was wired (+30 lines app.css, onerror + fleet-offline in cor Recorded via ledger --record designer 5.). - **ui/app.css** (+18 lines): token-only notification CSS.",
+      "t2_tokens": 41,
+      "t3_title": "Goal #5 Notification System - Re-land after mirror-revert (2026-11-19, Designer)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/designer/goal5-notification-reland2-2026-11-19.md",
+      "lines": 65,
+      "t1_tokens": 685,
+      "t2_abstract": "The first re-land (goal5-notification-reland-2026-11-19.md) claimed 11/11 presence checks, but the NEXT pass's static grep of the LIVE ui/ files found Closes the gap left by the reverted first re-land.). 1.",
+      "t2_tokens": 39,
+      "t3_title": "Goal #5 Notification System - Second Re-land, Verified (2026-11-19, Designer)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/designer/goal5-notification-static-audit-2026-11-19.md",
+      "lines": 51,
+      "t1_tokens": 345,
+      "t2_abstract": "Date: 2026-11-19 Agent: Designer (auto-loop pass). - ui/notifications.js sha12=f0627790eb0d - ui/app.css (.toast-* / .notif-* blocks present) - index.html (<script src=\"ui/notifications.js\">). - [PASS] ui/notifications.js exists - [PASS] Braces balanced (20/20) - [PASS] Parens balanced (84/84) - [PASS] Loaded in index.html - [PASS] window.no",
+      "t2_tokens": 54,
+      "t3_title": "Goal 5 (Notification System)  Static Acceptance Audit",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/designer/goal6-dark-mode-sweep-2026-11-18.md",
+      "lines": 53,
+      "t1_tokens": 555,
+      "t2_abstract": "Static contrast + border visibility audit of all panels in dark theme (the only active theme). This is out of scope for goal #6 (which is dark-mode sweep) but should be tracked separately. | Context | Ratio | Verdict | |---------|-------|---------| | --line on --panel | 1.37:1 | Intentional subtlety (decorative separator) | | --line on -",
+      "t2_tokens": 74,
+      "t3_title": "Goal #6 Dark Mode Edge-Case Sweep - Progress (2026-11-18)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/designer/goal6-dark-mode-verify-2026-11-18.md",
+      "lines": 60,
+      "t1_tokens": 513,
+      "t2_abstract": "Source-level contrast computation on resolved :root token values. - ui/app.css (sha12: 813f42e3d57d). | Foreground | Background | Ratio | Status | |---|---|---|---| | --text (#e8edf4) | --bg (#0e1116) | 16.08:1 | PASS | | --text | --panel (#151a22) | 1",
+      "t2_tokens": 52,
+      "t3_title": "Goal 6 Dark Mode Edge-Case Sweep - Static Verification (2026-11-18)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/designer/goal7-typography-audit-closed-2026-11-19.md",
+      "lines": 56,
+      "t1_tokens": 588,
+      "t2_abstract": "Date: 2026-11-19 | sha12 app.css=e4e5d7eea6a5 components.js=12da9444939f core.js=fc0a166d463e uploads.js=c4b94b671944. \"computed styles audit (DevTools or script) shows 0 violations of the 5-step scale\" -> MET via script: 0 off-scale static font-sizes across all ui fil - index.html inline style font-sizes were audited separately: all on-scale (12px only).",
+      "t2_tokens": 58,
+      "t3_title": "Goal 7: Typography Hierarchy Audit - CLOSED (re-verified 2026-11-19)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/designer/goal9-theme-closure-2026-11-21.md",
+      "lines": 57,
+      "t1_tokens": 534,
+      "t2_abstract": "Owner: Designer. - ui/tokens.css: +[data-theme=high-contrast] block (51 tokens) - ui/core.js: +theme picker IIFE (cycles 3 themes, persists) - ui/app.css: 2x #fff -> v | Token | Color | vs #000000 | Pass | |-------|-------|-----------|------| | --text | #ffffff | 21.0:1 | Y | | --dim | #c0c0c0 | 11.5:1 | Y | | --fain",
+      "t2_tokens": 70,
+      "t3_title": "Goal #9 Theme System (3 themes) - CLOSURE, 2026-11-21",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/designer/goal9-typography-verify-2026-11-18.md",
+      "lines": 58,
+      "t1_tokens": 461,
+      "t2_abstract": "Automated audit of ui/app.css: extracted all font-size, line-height, letter-spacing declarations; classified as token-based (var(--fs-*)) vs hard-code PASS - zero typography violations; all font-size declarations use the token layer. 1.",
+      "t2_tokens": 37,
+      "t3_title": "Goal #9 - Typography Scale Verification (2026-11-18)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/designer/goals-1-2-3-6-10-evidence-2026-11-16.md",
+      "lines": 55,
+      "t1_tokens": 388,
+      "t2_abstract": "**Status: COMPLETE** Tokens added to :root in ui/app.css: - --r-sm:4px; --r-md:8px; --r-lg:12px (border-radius) - --shadow-1:0 2px 8px rgba(0,0,0,.3); Pin advanced: aab00389a6a8 (2026-11-16k) \u2192 memory_mirror.py PIN_FILES. **Status: COMPLETE** design_check.py rewritten for split architecture: - Reads ui/app.css (not inline <style>) for token/theme checks - Reads index.ht",
+      "t2_tokens": 57,
+      "t3_title": "Designer Cycle-2 Goals 1/2/3/6/10 \u2014 Evidence (2026-11-16k)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/designer/icon-set.md",
+      "lines": 68,
+      "t1_tokens": 661,
+      "t2_abstract": "Updated: 2026-11-20. Add row to this doc's table + inventory list. | Name | Purpose | Visual | |------|---------|--------| | agent | Agent identity / chat avatar | Head + shoulders silhouette | | host | Fleet host car",
+      "t2_tokens": 50,
+      "t3_title": "SVG Icon Set \u2014 Design Spec",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/designer/index-audit-critique-2026-11-15.md",
+      "lines": 110,
+      "t1_tokens": 1543,
+      "t2_abstract": "Scope: chat + Ops + Fleet panels of the live `index.html` (987 lines, audited line-by-line; contrast ratios computed from the actual hex values in :ro | # | severity | kind | one-liner | |---|---|---|---| | H1 | HIGH | layout | `.frow` collision renders fleet models/agents inline, stretched | | H2 |  | element | line | color stack | ratio on its bg | verdict | |---|---|---|---|---| | `.msg.silentmsg .body` | L56 | var(--dim) @ opacity .7, 10.5px | ",
+      "t2_tokens": 105,
+      "t3_title": "index.html audit \u2014 written critique (Designer goal, 2026-11-15)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/designer/INDEX.md",
+      "lines": 77,
+      "t1_tokens": 816,
+      "t2_abstract": "Last updated: 2026-11-17. Audit: memory/researcher/designer-cycle7-open-count-audit-2026-11-20.md - -> memory/designer/goal1-interaction-system-live-2026-11-20.md   goal 1 Inte - reland-2-3-4-live-2026-11-15.md \u2014 goals 2/3/4 surgically applied to live root; new sha12 9a8f98149a7b - reapply-goals-2-3-4-to-live-2026-11-15.md \u2014 ",
+      "t2_tokens": 35,
+      "t3_title": "memory/designer/ INDEX",
+      "t3_tokens": 2
+    },
+    {
+      "file": "memory/designer/live-root-not-v2-r62-2026-11-14.md",
+      "lines": 53,
+      "t1_tokens": 707,
+      "t2_abstract": "NEW file (propagates under skew). Basis: certutil + python md5 on all three files, marker grep, unified diff (LF-normalized). diff (unified, LF-normalized): 68 lines only-in-v2, 23 lines only-in-LIVE.",
+      "t2_tokens": 36,
+      "t3_title": "Designer finding \u2014 LIVE root index.html is NOT the v2 canonical (r62, 2026-11-14)",
+      "t3_tokens": 16
+    },
+    {
+      "file": "memory/designer/llm-router-architecture.md",
+      "lines": 101,
+      "t1_tokens": 938,
+      "t2_abstract": "Last updated: 2026-11-17. - Video generation agents (CogVideoX, Qwen-VL for 3D scene description) - 3D environment agents (text-to-3D pipelines, Blender MCP integration) - Mult When a task arrives for agent X: 1.",
+      "t2_tokens": 41,
+      "t3_title": "LLM Router & Hotload Architecture",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/designer/mechanic-goals-assist-2026-11-23.md",
+      "lines": 52,
+      "t1_tokens": 465,
+      "t2_abstract": "The `fleet_circuit_breaker.py` module was **missing** (mirror revert or never committed). - [x] `fleet_circuit_breaker.py` (NEW - 103 lines, the missing CB module) - [x] `agent_portal.py` (MODIFIED - CB wired into _fleet_snapshot, 3 edits)  1.",
+      "t2_tokens": 42,
+      "t3_title": "Designer Assist: Mechanic Goals - 2026-11-23",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/designer/mechanic-open-goals-solutions-2026-11-23.md",
+      "lines": 138,
+      "t1_tokens": 1032,
+      "t2_abstract": "**Prepared by Designer | 2026-11-23**. - `memory/mechanic/goal1_one_command_close.py` - `memory/mechanic/winrm_e2e_test.py` - `memory/mechanic/deploy_all_schtasks.py` - `memory/mechanic/mir | # | Goal | Status | Unblock Command | Est.",
+      "t2_tokens": 31,
+      "t3_title": "Mechanic Open Goals - Solutions Ready for Execution",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/designer/MEMORY.md",
+      "lines": 109,
+      "t1_tokens": 3836,
+      "t2_abstract": "State: 2026-11-13 r60 (auto-continue 3/3) \u2014 Executed goals #2 + #4 from this round's 10-goal list. - `git-bootstrap/README.md` \u2014 3-step human runbook + post-RESULT handoffs (O1/O2/O3, GAP 1\u20133, my pointer line). - Per-host delta CONFIRMED from Pale: my sandbox top-level = `.unsloth_sandbox, check2.py, check_state.py, git-bootstrap, memory` only \u2014 NO `AgentPort",
+      "t2_tokens": 65,
+      "t3_title": "Designer \u2014 mini memory (host: Pale)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/designer/motion-audit-goal7-2026-11-18.md",
+      "lines": 53,
+      "t1_tokens": 435,
+      "t2_abstract": "1. Record via ledger to close. | Duration | Element | Purpose | |----------|---------|---------| | .45s | .ft-sk-dot | Skeleton dot opacity pulse (infinite) | | .7s | .fleet-loading",
+      "t2_tokens": 37,
+      "t3_title": "Motion & Animation Audit - Goal #7 (2026-11-18)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/designer/panel-discipline-r20.md",
+      "lines": 61,
+      "t1_tokens": 1037,
+      "t2_abstract": "Provenance: the original `panel-discipline-r20.md` never propagated (Researcher r26 check: absent on a fourth consecutive seat; DM relay path structur This file supersedes the lost r20 original - all cross-references to \"panel-discipline-r20.md\" resolve here. 1.",
+      "t2_tokens": 44,
+      "t3_title": "Designer A4 panel-discipline spec + hunks (r21 rewrite of lost r20 leaf) - 2026-11-14 ~05:3x",
+      "t3_tokens": 19
+    },
+    {
+      "file": "memory/designer/perf-budget.md",
+      "lines": 56,
+      "t1_tokens": 513,
+      "t2_abstract": "| Metric | Budget | Measurement | |--------|--------|-------------| | Initial render (DOM ready \u2192 first paint with data) | **< 2000 ms** | `performanc The `?debug` console output makes regressions visible in dev without tooling. All three are implemented as `performance.mark`/`performance.measure` calls in: - `ui/core.js` \u2014 init start mark (line 6), init-end + interaction + fr",
+      "t2_tokens": 72,
+      "t3_title": "UI Performance Budget \u2014 Spec + Enforcement (2026-11-21)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/designer/theme-reapply-pass-g-2026-11-16.md",
+      "lines": 54,
+      "t1_tokens": 574,
+      "t2_abstract": "Mirror/sync restored ui/app.css + ui/core.js to git-canonical AGAIN (mtime rewound 08:32 -> 05:08; byte sizes back to 18,615 / 28,641). Will not re-apply an 8th time without the commit landing. - app.css: [data-theme=\"light\"] token override (full light palette) + light component overrides (#queueHead, .acard, .msg.you) + @media(prefers-color-",
+      "t2_tokens": 61,
+      "t3_title": "Evidence: cycle-2 re-application (pass g, 2026-11-16) + clobber root cause",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/designer/timeline-panel-spec-2026-11-21.md",
+      "lines": 124,
+      "t1_tokens": 884,
+      "t2_abstract": "Date: 2026-11-21 Status: DRAFT (ready for Scribe/Builder to implement once /api/timeline is live). - File: `ui/timeline-panel.js` (new) - CSS: `ui/app.css` (append `.tl-*` classes using tokens above) - Mount point: Activity tab, below existing activ | Field | Type | UI mapping | |-------|------|-----------| | `date` | string (ISO) | Header date label | | `events[]` | array (max 10) | Event list (s",
+      "t2_tokens": 81,
+      "t3_title": "Timeline Panel UI Spec \u2014 Designer contribution to Scribe Goal 1 (Temporal Query API)",
+      "t3_tokens": 18
+    },
+    {
+      "file": "memory/designer/TODO.md",
+      "lines": 64,
+      "t1_tokens": 2713,
+      "t2_abstract": "- [x] Fresh integrity pass: all four deliverables byte-intact vs hashes of record (b82dd3b77f4e / b4ede3daf6df / 694cf6e35dcd / 5278ddf4833c); no new  - [x] 2026-11-13 Mini memory + TODO created per human directive. - [x] All four deliverables byte-intact on Pale: ws-b-increment1/index.html sha256-12=**b82dd3b77f4e** (= record); designer/increment2-portal-mock.htm",
+      "t2_tokens": 59,
+      "t3_title": "Designer \u2014 TODO",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/designer/token-gap-analysis-2026-11-17.md",
+      "lines": 54,
+      "t1_tokens": 522,
+      "t2_abstract": "Parent: memory/goals/designer.md goal #1 Status: 23 tokens defined; 3 categories missing (radius, shadow, motion-duration). After step 1-5 above, remaining hard-coded hexes should be ONLY the component-specific ones listed above. | Value    | Occurrences | Suggested token  | Notes | |----------|-------------|-----------------|-------| | #fff     | 3x          | --on-accent     ",
+      "t2_tokens": 59,
+      "t3_title": "Designer Goal #1 - Token Layer Gap Analysis (Scribe audit 2026-11-17)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/designer/ui-module-test-assist-2026-11-21.md",
+      "lines": 78,
+      "t1_tokens": 951,
+      "t2_abstract": "Written: 2026-11-21 by Designer (assist; credit Builder as owner). - No external dependencies: all modules are vanilla JS, no bundler needed for the test harness (plain node + jsdom). | file | lines | global namespace | key exports / functions | |---|---|---|---| | api-client.js | 150 | window.",
+      "t2_tokens": 63,
+      "t3_title": "UI Module Test Assist \u2014 for Builder Goal \"UI Module Test Suite\"",
+      "t3_tokens": 15
+    },
+    {
+      "file": "memory/designer/v21-merge-c820e755-r64-2026-11-14.md",
+      "lines": 52,
+      "t1_tokens": 630,
+      "t2_abstract": "Date: 2026-11-14 \u00b7 Seat: Pale (designer lane) \u00b7 Status: ARTIFACT READY, root write pending Builder one-shot. Supersedes: live-root-not-v2-r62-2026-11-14.md (finding stands; re-pin target updated). Root = old r19 base (9c6b08e3 / 67,681 B) + exactly **5 hunks / 9 lines**, one feature: agent-editor Memory-cycle block.",
+      "t2_tokens": 57,
+      "t3_title": "Designer r64 \u2014 v2.1 merge pin c820e755 (supersedes re-pin target 107cbd93)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/designer/wcag-aa-audit-consolidated-2026-11-18.md",
+      "lines": 51,
+      "t1_tokens": 564,
+      "t2_abstract": "Date: 2026-11-18 | Owner: Designer | Status: IN PROGRESS (fixes landed, remaining items documented). - ui/app.css (prefers-reduced-motion block appended) - memory/designer/wcag-aa-audit-consolidated-2026-11-18.md (this file). | Criterion | Status | Evidence | |-----------|--------|----------| | Color contrast >=4.5:1 | **PASS** | 21 token pairs + 8 hardcoded pairs all pass;",
+      "t2_tokens": 61,
+      "t3_title": "Goal #4 \u2014 WCAG 2.1 AA Accessibility Audit (Consolidated)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/designer/wcag-aria-keyboard-2026-11-20.md",
+      "lines": 55,
+      "t1_tokens": 539,
+      "t2_abstract": "Owner: Designer. - Runtime CDP keyboard walkthrough to confirm tab order across all panels at runtime. - Added `for=\"<id>\"` to all 15 editor-dialog labels so each associates with its input: f_name f_emoji f_color f_blurb f_persona f_studio f_key f_ragst",
+      "t2_tokens": 49,
+      "t3_title": "Designer Goal #1 (WCAG 2.1 AA) - ARIA + keyboard legs, static verification",
+      "t3_tokens": 16
+    },
+    {
+      "file": "memory/designer/wcag-audit-2026-11-18.md",
+      "lines": 66,
+      "t1_tokens": 687,
+      "t2_abstract": "Goal: designer.md #4 Status: audit complete + ALL 8 FIXES APPLIED same turn. - Re-run contrast check after any future token changes (currently all pass) - Verify no new violations introduced by subsequent UI work. | Element | Location | Issue | Fix | |---------|----------|-------|-----| | `#input` (textarea) | index.html L84 | placeholder only, no aria-label; pl",
+      "t2_tokens": 74,
+      "t3_title": "WCAG 2.1 AA Audit \u2014 Portal UI (2026-11-18)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/designer/wcag-audit-2026-11-20.md",
+      "lines": 55,
+      "t1_tokens": 517,
+      "t2_abstract": "Owner: Designer. **Remaining**: keyboard navigation re-verification + ARIA label completeness scan. `python memory/designer/contrast_audit.py` reported **30 failing pairs** in the light theme: | Token | Old value | Min ratio | Cause | |-------|------",
+      "t2_tokens": 42,
+      "t3_title": "WCAG 2.1 AA Audit \u2014 Portal (2026-11-20)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/designer/wcag-audit-contrast-2026-11-18.md",
+      "lines": 76,
+      "t1_tokens": 845,
+      "t2_abstract": "Date: 2026-11-18 Scope: All :root token color pairs used as text-on-background in the portal UI. - [x] Check keyboard focus indicator visibility \u2014 done, 2 gaps found above - [x] Verify screen-reader labels \u2014 done, JS-created elements lack labels - | fg token | bg token | ratio | AA normal | AA large | |----------|----------|-------|-----------|----------| | --text | --bg | 16.08:1 | PASS | PASS ",
+      "t2_tokens": 85,
+      "t3_title": "Goal #4 \u2014 WCAG 2.1 AA Contrast Audit (partial)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/goals/2026-11-13-agent-goals.md",
+      "lines": 87,
+      "t1_tokens": 2255,
+      "t2_abstract": "> SUPERSEDED as complete record (2026-11-13 r9): 6/8 batch; full 8/8 verbatim = memory/goals/all-goals-2026-11-13.md (md5 f9c05bd3). Scribe verified ~17:4x: exactly 10 numbered goals, status line 5/8\u21926/8 accurate, no truncation. 1.",
+      "t2_tokens": 39,
+      "t3_title": "AGENT GOALS \u2014 2026-11-13 (10 each)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/goals/all-goals-2026-11-13.md",
+      "lines": 100,
+      "t1_tokens": 2412,
+      "t2_abstract": "Collected by Orchestrator from group thread, all eight lists verbatim (8 agents \u00d7 10 goals). End-of-day hygiene: MEMORY.md under 40 lines and TODO.md top section synced to live status. 1.",
+      "t2_tokens": 39,
+      "t3_title": "All agent goals \u2014 2026-11-13 (batch, verbatim)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/goals/archive/2026-11-13-agent-goals-SUPERSEDED-partial.md",
+      "lines": 87,
+      "t1_tokens": 2255,
+      "t2_abstract": "> SUPERSEDED as complete record (2026-11-13 r9): 6/8 batch; full 8/8 verbatim = memory/goals/all-goals-2026-11-13.md (md5 f9c05bd3). Scribe verified ~17:4x: exactly 10 numbered goals, status line 5/8\u21926/8 accurate, no truncation. 1.",
+      "t2_tokens": 39,
+      "t3_title": "AGENT GOALS \u2014 2026-11-13 (10 each)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/2026-11-13-agent-goals.md",
+      "lines": 87,
+      "t1_tokens": 2255,
+      "t2_abstract": "> SUPERSEDED as complete record (2026-11-13 r9): 6/8 batch; full 8/8 verbatim = memory/goals/all-goals-2026-11-13.md (md5 f9c05bd3). Scribe verified ~17:4x: exactly 10 numbered goals, status line 5/8\u21926/8 accurate, no truncation. 1.",
+      "t2_tokens": 39,
+      "t3_title": "AGENT GOALS \u2014 2026-11-13 (10 each)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/all-goals-2026-11-13.md",
+      "lines": 100,
+      "t1_tokens": 2412,
+      "t2_abstract": "Collected by Orchestrator from group thread, all eight lists verbatim (8 agents \u00d7 10 goals). End-of-day hygiene: MEMORY.md under 40 lines and TODO.md top section synced to live status. 1.",
+      "t2_tokens": 39,
+      "t3_title": "All agent goals \u2014 2026-11-13 (batch, verbatim)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/goals/archive/cycle2-2026-11-17/researcher-log-2026-11-13.md",
+      "lines": 91,
+      "t1_tokens": 1491,
+      "t2_abstract": "Tasked by Orchestrator in group prompt after NEW OPS announcement. _pending_. - [ ] 1.",
+      "t2_tokens": 19,
+      "t3_title": "GOALS \u2014 10 self-set goals per agent (2026-11-13)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/goals/archive/orchestrator-2026-11-13.md",
+      "lines": 119,
+      "t1_tokens": 4829,
+      "t2_abstract": "Source: Goal-setting round 2026-11-13 (earlier cycle), collected by Orchestrator. Evidence: memory/ops/orch-fleetprobe-decision-2026-11-16.md. 1.",
+      "t2_tokens": 15,
+      "t3_title": "Orchestrator \u2014 10 goals (set 2026-11-13)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/goals/archive/researcher-2026-11-13.md",
+      "lines": 91,
+      "t1_tokens": 1491,
+      "t2_abstract": "Tasked by Orchestrator in group prompt after NEW OPS announcement. _pending_. - [ ] 1.",
+      "t2_tokens": 19,
+      "t3_title": "GOALS \u2014 10 self-set goals per agent (2026-11-13)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/goals/archive/researcher-log-2026-11-13.md",
+      "lines": 91,
+      "t1_tokens": 1491,
+      "t2_abstract": "Tasked by Orchestrator in group prompt after NEW OPS announcement. _pending_. - [ ] 1.",
+      "t2_tokens": 19,
+      "t3_title": "GOALS \u2014 10 self-set goals per agent (2026-11-13)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/goals/archivist-goal1-provenance-forecast-2026-11-23.md",
+      "lines": 100,
+      "t1_tokens": 863,
+      "t2_abstract": "Author: Researcher (auto-loop assist) Date: 2026-11-23 Status: FORECAST (prediction, not implementation). - If \"fact\" interpretation doesn't match Archivist's intent (heading-as-fact may be too coarse for their use case; they may want sentence-level) - If  | Risk | Likelihood | Impact | Mitigation | |------|-----------|--------|------------| | Source files deleted/moved since index generated | MEDIUM | H",
+      "t2_tokens": 71,
+      "t3_title": "Forecast: Archivist Goal #1 - Fact-Level Provenance Ledger",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/goals/archivist-goal5-forecast-phantom-scan-2026-11-18.md",
+      "lines": 55,
+      "t1_tokens": 817,
+      "t2_abstract": "Author: Designer | Date: 2026-11-18 | Type: (a) prediction/concrete step. When your script runs, cross-check its output against this table \u2014 any discrepancy means either the file was created since my scan or the doc text cha | Phantom path | Referenced by (doc) | Likely cause | Suggested fix | |---|---|---|---| | memory/audit_index.py | researcher-log-2026-11-13.md | Scrip",
+      "t2_tokens": 75,
+      "t3_title": "Forecast: Archivist Goal 5 (Multi-host doc consistency v2) \u2014 Phantom Reference Scan",
+      "t3_tokens": 15
+    },
+    {
+      "file": "memory/goals/archivist.md",
+      "lines": 65,
+      "t1_tokens": 2035,
+      "t2_abstract": "Focus: Closed-Loop Autonomy & Fleet Cockpit. (pointer: memory/archivist/weekly_digest.py). [REACHED 2026-11-23T02:52:18Z] provenance_ledger.py: 12975/12982 facts (99.9%), 10/10 spot-checks PASS, stale-detect verified.",
+      "t2_tokens": 24,
+      "t3_title": "Archivist - 10 goals (set 2026-11-23, cycle-12)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/goals/designer-attempt-mechanic4-runbook-2026-11-18.md",
+      "lines": 68,
+      "t1_tokens": 516,
+      "t2_abstract": "Date: 2026-11-18 | Agent: Designer (assisting Mechanic) | Status: READY FOR EXECUTION. --- *This runbook makes Mechanic #4 closure a 2-command job from any White terminal.*. The `/api/health/fleet` endpoint already returns per-host status.",
+      "t2_tokens": 42,
+      "t3_title": "Designer attempt for Mechanic #4: One-command execution runbook",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/goals/designer-attempt-verifier5-security-panel-2026-11-18.md",
+      "lines": 57,
+      "t1_tokens": 466,
+      "t2_abstract": "Date: 2026-11-18 | Agent: Designer (assisting Verifier) | Status: BUILT + RENDERED. The Verifier's security_regression.py just needs to expose its results in the JSON shape above.*. - **Progress bar over number-only**: gives at-a-glance health without reading individual tests - **Detail expansion only on FAIL**: keeps the list sca",
+      "t2_tokens": 62,
+      "t3_title": "Designer attempt for Verifier #5: Security Regression Results Panel",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/goals/designer-cycle5-sequencing-forecast-2026-11-19.md",
+      "lines": 52,
+      "t1_tokens": 851,
+      "t2_abstract": "Author: Scribe | Date: 2026-11-19 | For: Designer (6 open goals) Basis: progress notes in designer.md + hot-notes + cross-agent assists observed acros Designer owns sequencing decisions.*. | # | Goal | Status | Blocker / Remaining | |---|------|--------|---------------------| | 2 | Information Density Pass | Padding done (Builder assist)",
+      "t2_tokens": 65,
+      "t3_title": "Forecast: Designer Cycle-5 Remaining Goals \u2014 Sequencing & Completion Estimate",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/goals/designer-cycle6-proposals.md",
+      "lines": 69,
+      "t1_tokens": 1120,
+      "t2_abstract": "Author: Designer | Status: PROPOSAL (for Orchestrator collection into AGENT GOALS) Focus: Motion system, component depth, performance hygiene, and doc - Goal 6 (focus-visible) may reveal missing focus management in modals/tooltips \u2014 pair with Goal 2. Audit all animations/transitions: wrap in `@media (prefers-reduced-motion: no-preference)` or add a global `@media (prefers-reduced-motion: reduce) { ",
+      "t2_tokens": 67,
+      "t3_title": "Designer \u2014 Cycle-6 Goal Proposals (drafted 2026-11-19)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/goals/designer-cycle7-sequencing-forecast-2026-11-20.md",
+      "lines": 83,
+      "t1_tokens": 969,
+      "t2_abstract": "Date: 2026-11-20 | Seat: Scribe (synthesis contribution, option a) Purpose: Recommended build order for Designer's 7 open cycle-7 goals, with dependen Based on cycle-7 goal definitions in memory/goals/designer.md.*. | Pass | Goal | Exit criterion | |------|------|----------------| | 1 | #4 Icon System | ui/icons.js exists, >=20 icons, renders at 16/24/32px | | 2 |",
+      "t2_tokens": 71,
+      "t3_title": "Designer Cycle-7 Sequencing Forecast",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/goals/designer-forecast-orchestrator-fleet-overview-2026-11-18.md",
+      "lines": 80,
+      "t1_tokens": 695,
+      "t2_abstract": "Author: Designer seat. Network tab: single /api/fleet/overview call on panel load, no N+1 per-agent calls. Each card = one agent.",
+      "t2_tokens": 26,
+      "t3_title": "Design Forecast: Agent Fleet Overview Panel (Orchestrator Cycle-4 Goal #1)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/goals/designer-open-goals-triage-2026-11-19.md",
+      "lines": 51,
+      "t1_tokens": 850,
+      "t2_abstract": "Date: 2026-11-19 | Seat: Researcher (White sandbox). No contradiction \u2014 two independent measurements corroborate the over-claim finding. | # | Goal | Measured state (2026-11-19) | Gating class | |---|------|------------------------------|--------------| | 2 | Information Density | CSS D",
+      "t2_tokens": 49,
+      "t3_title": "Designer open-goals triage + forecast (Researcher contribution, option a)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/goals/forecast-builder-g6-fleet-panel-2026-11-23.md",
+      "lines": 73,
+      "t1_tokens": 867,
+      "t2_abstract": "Author: Designer | Date: 2026-11-23 | Target: memory/goals/builder.md #6. - [ ] All new CSS uses var() tokens \u2014 grep for hex in the new markup = 0 matches. Builder can close this goal in **2 passes**: 1.",
+      "t2_tokens": 49,
+      "t3_title": "Forecast: Builder Goal #6 \u2014 Fleet Status Panel Design Brief",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/goals/forecast-latest.md",
+      "lines": 66,
+      "t1_tokens": 1131,
+      "t2_abstract": "Generated: 2026-11-23 12:47:54 | Fleet: 73/82 (89%) | throughput ~30.0 goals/h. - completes: **9** goal(s) -> fleet ~100% - #1 archivist: Fact-Level Provenance Ledger (2026-11-23 17:30) - #2 archivist: Stale-Knowledge Auto-Quarant **#1 [archivist] Fact-Level Provenance Ledger** - ETA 2026-11-23 17:30, P(reached) 28% (build, cx2) steps: scaffold the module file -> implement core ",
+      "t2_tokens": 67,
+      "t3_title": "Fleet Forecast - 10 steps ahead",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/goals/forecast-mechanic2-revert-sentinel-2026-11-19.md",
+      "lines": 58,
+      "t1_tokens": 705,
+      "t2_abstract": "Author: Scribe | Date: 2026-11-19 | Confidence: HIGH (code-read based). Everything else is implementation detail. If the mirror's LWW decision keeps writing a stale version back after the sentinel restores, you get: sync writes bad state -> sentinel detects + rest",
+      "t2_tokens": 53,
+      "t3_title": "Forecast: Mechanic Cycle-6 Goal 2 \u2014 Mirror-Revert Sentinel",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/goals/mechanic-cycle9-proposals-2026-11-23.md",
+      "lines": 65,
+      "t1_tokens": 1424,
+      "t2_abstract": "Author: Mechanic | Status: DRAFT for Orchestrator collection. M9 > M4 > M1 > M6 > M3 > M2 > M5 > M7 > M8 > M10 (M9 first because it unblocks the most other goals; M4 second because it protects against data loss). **Goal:** Write `memory/ops/elev-recovery-runbook.md`: exact steps to diagnose and recover the elev.py helper when it's down.",
+      "t2_tokens": 76,
+      "t3_title": "Mechanic - Cycle 9 Goal Proposals (2026-11-23)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/goals/mechanic-goal2-model-lifecycle-forecast-2026-11-23.md",
+      "lines": 80,
+      "t1_tokens": 1015,
+      "t2_abstract": "Date: 2026-11-23 | Author: Researcher (option a contribution) | Owner: Mechanic. - Code correctness: HIGH (selftest 17/17, all branches exercised) - Live compatibility: MEDIUM-HIGH (standard Studio API paths; minor risk of endpoint - `HOSTS_CONFIG` hardcodes vram_used_mb=0 for all hosts.",
+      "t2_tokens": 50,
+      "t3_title": "MECHANIC GOAL #2 (Model Load/Unload Automation) - FORECAST & REMAINING-GAP ANALYSIS",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/goals/researcher-attempts-cycle3-2026-11-18.md",
+      "lines": 91,
+      "t1_tokens": 1381,
+      "t2_abstract": "Parent: memory/goals/INDEX.md. (Researcher proposal only \u2014 lanes remain owned by their respective agents; nothing here self-closes a goal.). - Exists: goal6-dep-gen-built + twoweek-pipeline leaves, harness schtask_dep_twoweek_harness.py, goal6-dep-gen-twoweak-evidence.jsonl = 1 event verdic",
+      "t2_tokens": 40,
+      "t3_title": "Researcher attempts \u2014 closing the 10 background scheduled goals (2026-11-18)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/goals/researcher-cycle8-proposals.md",
+      "lines": 64,
+      "t1_tokens": 881,
+      "t2_abstract": "SUPERSEDES the earlier version of this file, whose grounding line (\"core scripts ABSENT from memory/researcher/\") was WRONG for most entries. Highest leverage: #1 (builds the missing harness) then #3 (batch-unblocks every agent's egress wall). 3.",
+      "t2_tokens": 45,
+      "t3_title": "Researcher - CYCLE-8 GOAL PROPOSALS (revised 2026-11-20, supersedes prior draft)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/goals/researcher-goal7-crosshost-reopen-forecast-2026-11-20.md",
+      "lines": 56,
+      "t1_tokens": 535,
+      "t2_abstract": "Date: 2026-11-20 | Author: Archivist | Status: FORECAST. - Script build: 1 pass (Builder or Researcher) - Live execution: 1 human command from White desk - Closure: same pass as execution (ledger record) - * - **High risk of continued stalling**: the live leg requires a non-sandbox seat that no agent currently has access to.",
+      "t2_tokens": 71,
+      "t3_title": "Forecast: Researcher Goal #7 - Cross-Host Model Comparison (re-opened 2026-11-20)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/goals/researcher-log-2026-11-13.md",
+      "lines": 91,
+      "t1_tokens": 1491,
+      "t2_abstract": "Tasked by Orchestrator in group prompt after NEW OPS announcement. _pending_. - [ ] 1.",
+      "t2_tokens": 19,
+      "t3_title": "GOALS \u2014 10 self-set goals per agent (2026-11-13)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/goals/retro-cycle-7.md",
+      "lines": 157,
+      "t1_tokens": 1376,
+      "t2_abstract": "Generated: 2026-11-20 21:51 by cycle_retro.py. - Track slip-reason categories (evidence-gap vs seat-wall vs scope) as structured tags in goal lines to make next-cycle learnings quantitative. - **#2 Citation Accuracy Verification** \u2014 evidence: `memory/archivist/citation_check.py`, `memory/archivist/citation-audit-cycle5-report.md`, `memory/",
+      "t2_tokens": 45,
+      "t3_title": "Cycle 7 Retrospective \u2014 tag `2026-11-20b`",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/goals/scheduler-cycle6.md",
+      "lines": 78,
+      "t1_tokens": 889,
+      "t2_abstract": "Supersedes cycle-5 (all closed; see memory/goals/scheduler.md). - #1,#2,#3,#4  -> Builder (code) + Mechanic (White :8888 access) ; Scribe verifies evidence - #5           -> Builder (portal) - #6,#7        -> Scrib 1.",
+      "t2_tokens": 39,
+      "t3_title": "Scribe - cycle-6 goals (set 2026-11-18; human directive: make hot LLM loading functional)",
+      "t3_tokens": 16
+    },
+    {
+      "file": "memory/goals/slip_prediction_table.md",
+      "lines": 56,
+      "t1_tokens": 504,
+      "t2_abstract": "Generated: 2026-11-20 | Model: weighted Naive Bayes v2 | CV accuracy: 71.2% Threshold: 0.5 | Training points: 80 (cycle-7 actuals) | Slip rate: 25.0%. Next retrain after cycle-8 closure.*. - **Agent is the strongest single predictor**: designer (70%) and researcher (50%) dominate slips; scribe (0%) never slipped.",
+      "t2_tokens": 61,
+      "t3_title": "Goal-Slip Prediction Table (v2 - cycle-7 retrained)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/goals.md",
+      "lines": 92,
+      "t1_tokens": 1515,
+      "t2_abstract": "> SUPERSEDED as canonical (2026-11-13 r9): goal lists are canonical in TODO.md \u00a7AGENT GOALS; retained as working record only. _pending_. - [ ] 1.",
+      "t2_tokens": 31,
+      "t3_title": "GOALS \u2014 10 self-set goals per agent (2026-11-13)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/handoffs/HO-20261116-supersession-report.md",
+      "lines": 55,
+      "t1_tokens": 458,
+      "t2_abstract": "--- id: HO-20261116-supersession-report from: archivist to: scribe date: 2026-11-16 trigger: goal-completion source_leaves: - archivist/supersession-r SENT: archivist 2026-11-16 \u2014 \"Supersession baseline + policy recs for Scribe#5\" RECEIVED: scribe 2026-11-16 \u2014 accepted (baseline ingested, policy draf 1.",
+      "t2_tokens": 45,
+      "t3_title": "Ho 20261116 Supersession Report",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/handoffs/HO-20261118-kg-orphan-detection.md",
+      "lines": 53,
+      "t1_tokens": 539,
+      "t2_abstract": "--- id: HO-20261118-kg-orphan-detection from: archivist to: mechanic date: 2026-11-18 trigger: fact-change source_leaves: - memory/archivist/knowledge SENT: archivist 2026-11-18 \u2014 \"KG orphan detection now in mirror post-sync; ops doc update needed\" RECEIVED: mechanic 2026-11-18 \u2014 accepted (ops doc no 1.",
+      "t2_tokens": 49,
+      "t3_title": "Ho 20261118 Kg Orphan Detection",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/handoffs/PROTOCOL.md",
+      "lines": 104,
+      "t1_tokens": 1028,
+      "t2_abstract": "> Owner: Archivist | Set 2026-11-16 (goal #3) | Status: ACTIVE. See `HO-20261116-supersession-report.md` \u2014 Archivist -> Scribe, delivering the supersession_check.py baseline for policy consumption (charter: Scribe# Observed across the 4 cycle-2 handoffs; each maps to a rule above: - **F1 - missing receiver sign-off**: 2 of 4 handoffs had no RECEIVED line, so \"com",
+      "t2_tokens": 70,
+      "t3_title": "Cross-Agent Knowledge Handoff Protocol",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/levels/level_1_20261123-060001.md",
+      "lines": 130,
+      "t1_tokens": 3088,
+      "t2_abstract": "Fleet: 80/80 goals reached at level-up (2026-11-23 06:00:01). Next cycle: a new goal-setting round is armed (GOAL_RESET_PENDING); the next 100% on the fresh goal set will be level 2. - **Decision Impact Tracking** - `python memory/scribe/decision_impact.py` checks every entry in memory/synthesis/decisions.jsonl that has a predicted",
+      "t2_tokens": 58,
+      "t3_title": "Level 1 - all goals 100%",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/levels/level_2_20261123-093159.md",
+      "lines": 289,
+      "t1_tokens": 3776,
+      "t2_abstract": "Fleet: 72/72 goals reached at level-up (2026-11-23 09:31:59). Next cycle: a new goal-setting round is armed (GOAL_RESET_PENDING); the next 100% on the fresh goal set will be level 3. - **Fleet State Narrative Summarizer** - `python memory/researcher/fleet_summary.py`: generate a 3-5 sentence natural-language summary of fleet state ",
+      "t2_tokens": 59,
+      "t3_title": "Level 2 - all goals 100%",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/levels/level_3_20261123-103155.md",
+      "lines": 169,
+      "t1_tokens": 2954,
+      "t2_abstract": "Fleet: 72/72 goals reached at level-up (2026-11-23 10:31:55). Next cycle: a new goal-setting round is armed (GOAL_RESET_PENDING); the next 100% on the fresh goal set will be level 4. - **Cycle Auto-Summary Generator** - `python memory/scribe/cycle_summary.py`: at end of each cycle, auto-generate a structured summary: goals complete",
+      "t2_tokens": 61,
+      "t3_title": "Level 3 - all goals 100%",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/llm/hosts.md",
+      "lines": 76,
+      "t1_tokens": 3019,
+      "t2_abstract": "Last updated: 2026-11-14 (White folder convention section; prior 2026-11-12). - Remote hosts' file links point at THEIR sandbox; White's /api/file/raw resolver only knows White roots - per-host file serving is a later phase. | Host | IPv4 (from White) | Studio :8888 | Auth | GPUs | Models/aliases | State | |------|-------------------|--------------|------|------|----------",
+      "t2_tokens": 67,
+      "t3_title": "HOSTS \u2014 multi-host LLM layout (White local + Red/Pale/Black remote)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/llm/hotload-plan.md",
+      "lines": 193,
+      "t1_tokens": 1892,
+      "t2_abstract": "Last updated: 2026-11-17 (Scribe synthesis; human directive + research pass) Owner: Scribe (plan) / Orchestrator (execution) / Mechanic (ops plumbing) - memory/llm/hotload-plan.md (this file) \u2014 design + phases - model_scheduler.py \u2014 core scheduler module (portal process) - model_registry.json \u2014 fleet | Risk | Impact | Mitigation | |------|--------|------------| | Load takes longer than expected (4+ min for Q8) | Round delayed | Pre-warm: start load",
+      "t2_tokens": 84,
+      "t3_title": "Hotload & Auto LLM Selector \u2014 Design Plan",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/llm/hotload-runbook.md",
+      "lines": 146,
+      "t1_tokens": 1237,
+      "t2_abstract": "Last updated: 2026-11-23 (Mechanic; Scribe cycle-6 goal #8) Owner: Mechanic (ops) + Scribe (review) Status: DRAFT for Scribe review. - memory/llm/backend-swap-procedure.md \u2014 full proven procedure + drill results - memory/llm/studio-api.md \u2014 endpoint reference + reload recipe - memor 1.",
+      "t2_tokens": 50,
+      "t3_title": "Hotload Ops Runbook",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/llm/hotload-selector.md",
+      "lines": 144,
+      "t1_tokens": 1342,
+      "t2_abstract": "Last updated: 2026-11-17. - SwapServeLLM: github.com/rst0git/SwapServeLLM (code + paper) - vLLM Semantic Router: vllm-sr.ai/docs/intro/ - LLMRouter paper: arxiv.org/abs/2608.06 Current procedure is MANUAL + one-shot schtask.",
+      "t2_tokens": 32,
+      "t3_title": "Auto-LLM Selector & Hotload Architecture (Research + Proposal)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/llm/overnight-unload.md",
+      "lines": 51,
+      "t1_tokens": 1731,
+      "t2_abstract": "Opened 2026-11-13 ~18:3x from fleet-panel first reveal (MEMORY.md 11-13): remotes UNLOADED overnight; White served the group all day. No change to the CLOSED verdict; per-host attribution remains MEDIUM pending Mechanic checks A/B. **Answer, with confidence:** The overnight unloads are best explained by LM Studio server-side JIT idle-TTL / auto-evict (H1) wherever a TTL is config",
+      "t2_tokens": 71,
+      "t3_title": "Overnight remote unloading \u2014 investigation (Researcher)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/mechanic/assist-scribe-goal1-decisions-v2-reland-2026-11-18.md",
+      "lines": 54,
+      "t1_tokens": 555,
+      "t2_abstract": "**Role**: option (c) - verify and close a stale evidence claim from Verifier's contradiction sweep. - Consider adding agent_portal.py to a pin/canonical guard so future base-file conflicts are caught by the end-of-run sweep instead of surfacing as st - Live `agent_portal.py` mtime 2026-11-18 15:34, 225,367 B - newer + larger than Scribe's canonical backup (`memory/scribe/agent_portal_CANONICAL_5b65",
+      "t2_tokens": 71,
+      "t3_title": "Mechanic assist: re-land Scribe goal 1 (Decision Trace API v2 filters) - 2026-11-18",
+      "t3_tokens": 16
+    },
+    {
+      "file": "memory/mechanic/bundle-review-r16-2026-11-13.md",
+      "lines": 57,
+      "t1_tokens": 845,
+      "t2_abstract": "Verdict: deployed mirror (root `memory_mirror.py`, md5 1eaaa629, 7,732 B) is unsafe under cross-host clock skew; my OPS r3 staged fix (c1f4699c LF / e Broke: cross-host mtime LWW (MTOL 0.5s) under ~35-min clock skew silently skipped fresh edits of existing files (stale c717497f stuck vs Red master 13 1.",
+      "t2_tokens": 63,
+      "t3_title": "BUNDLE REVIEW r16 - memory_mirror.py LWW guard (Mechanic, 2026-11-13)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/mechanic/capacity-report-2026-11-20.md",
+      "lines": 51,
+      "t1_tokens": 471,
+      "t2_abstract": "Generated: 2026-11-20T00:48:35.492209+00:00 Data points available: disk=2, perf=yes, probes=10. --- *Auto-generated by `memory/mechanic/capacity_report.py`  re-run weekly (Sunday).*. | Host | GPU Model | Allocated GB | Total GB | Utilization % | Trend | |------|-----------|--------------|----------|---------------|-------| | White ",
+      "t2_tokens": 45,
+      "t3_title": "Fleet Capacity Planning Report  2026-11-20",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/mechanic/capacity-report-2026-11-22.md",
+      "lines": 59,
+      "t1_tokens": 510,
+      "t2_abstract": "Generated: 2026-11-22T03:53:45.693684+00:00 Data points available: disk=3, perf=yes, probes=10. --- *Auto-generated by `memory/mechanic/capacity_report.py`  re-run weekly (Sunday).*. | Host | GPU Model | Allocated GB | Total GB | Utilization % | Trend | |------|-----------|--------------|----------|---------------|-------| | White ",
+      "t2_tokens": 45,
+      "t3_title": "Fleet Capacity Planning Report  2026-11-22",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/mechanic/escalation-chain.md",
+      "lines": 65,
+      "t1_tokens": 421,
+      "t2_abstract": "Date: 2026-11-20 (Mechanic, goal #8) Status: BUILT + SELFTEST PASS (8/8). - [x] Module built + compiles clean - [x] Selftest 8/8 PASS (all 3 levels fire correctly, state transitions verified) - [ ] Watchdog integration (code 1.",
+      "t2_tokens": 49,
+      "t3_title": "Alert Escalation Chain - Design & Implementation",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/mechanic/goal4-progress-2026-11-18.md",
+      "lines": 52,
+      "t1_tokens": 479,
+      "t2_abstract": "Seat: Red sandbox. No further probing from this seat possible. - Added `--verify-only` mode to deploy_reboot_recovery_all.py: - Checks local schtasks /query for FleetBootRecovery (works on White) - Reads reboot-re",
+      "t2_tokens": 37,
+      "t3_title": "Goal 4 Progress - 2026-11-18 ~00:17 UTC",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/mechanic/goal7-fleet-health-v2-2026-11-18.md",
+      "lines": 53,
+      "t1_tokens": 377,
+      "t2_abstract": "Date: 2026-11-18 Agent: Mechanic Seat: Red sandbox (cannot reach :8099 for live verification). Local (White) values are live. 1.",
+      "t2_tokens": 24,
+      "t3_title": "Goal #7 - Fleet health dashboard endpoint v2 (progress)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/mechanic/goal9-ops-runbook-gap-analysis-2026-11-17.md",
+      "lines": 62,
+      "t1_tokens": 1198,
+      "t2_abstract": "Date: 2026-11-17 | Agent: Mechanic | Goal #9 cycle-3. 57% automatable (with dates), 43% justified human-only. | # | Runbook | Step | Why Manual | Automatable? | Target | |---|---------|------|-----------|:---:|--------| | 1 | windows-runbook Reboot | `schtasks",
+      "t2_tokens": 49,
+      "t3_title": "Ops Runbook Automation Gap Analysis",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/mechanic/MEMORY.md",
+      "lines": 181,
+      "t1_tokens": 6774,
+      "t2_abstract": "- Code-level PASS: sandbox agent_portal.py (72,548 B @ 16:41) contains both new endpoints (/api/git \u00d73, /api/todo/prune, mingit, TODO_completed.md, to Fix: rmdir the junction; fresh dir + both seats' trivial command green.\". - r31 (auto-continue, fresh probe 02:25): inventory-only \u2014 uploads/AgentPortal_V1 still exactly 2 files, byte-identical to r10\u2013r30 (UPGRADES.md 876 B ",
+      "t2_tokens": 65,
+      "t3_title": "MECHANIC MINI-MEMORY (seat: White sandbox this round) \u2014 updated 2026-11-13 ~18:0x",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/mechanic/pending-admin-deployments.md",
+      "lines": 107,
+      "t1_tokens": 679,
+      "t2_abstract": "Date: 2026-11-18. After that, all data accumulates automatically; closure is date-gated per goal spec. | # | Task | Script ready? | Admin exec done? | Data accumulating? | |---|------|:---:|:---:|:---:| | 4 | FleetBootRecovery (x4) | YES | NO | N/A (eve",
+      "t2_tokens": 54,
+      "t3_title": "Pending Admin Deployments - Mechanic (consolidated runbook)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-2026-11-17.md",
+      "lines": 77,
+      "t1_tokens": 1101,
+      "t2_abstract": "Date: 2026-11-17 | Agent: Mechanic Status: DRAFT v1 \u2014 covers 5 core runbooks; remaining files queued for next pass. Top priority = `cycle_check.py` to make the transition checklist self-running. | Step | Class | Reason / Automation Path | |---|---|---| | Reboot auto-start (Studio, Portal via PortalRun) | AUTO | schtasks + Startup VBS | | Q8 re",
+      "t2_tokens": 75,
+      "t3_title": "Ops Runbook Automation Gap Analysis (Goal #9)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/mechanic/runbook-gap-analysis-draft-2026-11-18.md",
+      "lines": 60,
+      "t1_tokens": 1025,
+      "t2_abstract": "Parent: memory/ops/INDEX.md | Sibling: cycle-transition-checklist.md, windows-runbook.md Author: Orchestrator (cross-assist for Mechanic goal #9). --- Cross-assist credit: Orchestrator drafted this analysis from sandbox; Mechanic owns completion. | # | Manual step | Where documented | Gap | Fix path | Effort | |---|------------|-----------------|-----|----------|--------| | B1 | Model load post",
+      "t2_tokens": 62,
+      "t3_title": "Ops Runbook Automation Gap Analysis (cycle-3, 2026-11-18)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/mechanic/unblock-checklist-2026-11-18.md",
+      "lines": 59,
+      "t1_tokens": 738,
+      "t2_abstract": "**Root blocker:** All 5 remaining goals need a non-sandbox White session with working `schtasks` COM + LAN egress. One non-sandbox session can close goals #2/#4/#8 immediately and start the timers for #1/#6. - [ ] `python memory/mechanic/boot_recovery_test.py --dry-run --host Pale` (expect PASS) - [ ] `python memory/mechanic/boot_recovery_test.py --dry-run",
+      "t2_tokens": 62,
+      "t3_title": "Mechanic Unblock Checklist \u2014 all 5 open goals (2026-11-18)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/ONBOARDING.md",
+      "lines": 134,
+      "t1_tokens": 1409,
+      "t2_abstract": "> Auto-generated skeleton from memory/INDEX.md (2026-11-16). Regenerate when memory/INDEX.md changes.*. | I need...",
+      "t2_tokens": 16,
+      "t3_title": "Agent Onboarding Knowledge Pack",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/ops/anomalies-2026-11-22.md",
+      "lines": 77,
+      "t1_tokens": 1855,
+      "t2_abstract": "Generated by `memory/researcher/anomaly_detect.py` at 2026-11-22 20:18 UTC. - clobber-events: 4 records scanned. | # | Severity | Confirmed | Source | Metric | Timestamp | Value | Method | Detail | |---|----------|-----------|--------|--------|-----------|-------",
+      "t2_tokens": 41,
+      "t3_title": "Fleet Anomaly Report -- 2026-11-22",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/ops/background-goals-execution-plan-2026-11-18.md",
+      "lines": 134,
+      "t1_tokens": 1248,
+      "t2_abstract": "Author: Orchestrator seat. Goal owners: pick your item, execute per steps, record via goal_ledger.py.*. **Gate:** One real drill executed with <60s recovery.",
+      "t2_tokens": 28,
+      "t3_title": "Background Goals Execution Plan (2026-11-18)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/ops/blocker-triage-2026-11-20.md",
+      "lines": 91,
+      "t1_tokens": 839,
+      "t2_abstract": "Generated by `blocker_triage.py` at 2026-11-20T22:26:18 Source: `memory\\ops\\blockers.md`. - **Browser acceptance blocker \u2014 Chrome-headless unblock does NOT reproduce from sandbox seats** \u2014 class: browser-unavailable - **White SANDBOX seat c - Class: **new/unclassified** (no known class matched) - Agent: unknown - Suggestion: NEW BLOCKER - no known class matched.",
+      "t2_tokens": 61,
+      "t3_title": "Blocker Triage Report \u2014 2026-11-20",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/ops/blocker-triage-2026-11-22.md",
+      "lines": 91,
+      "t1_tokens": 839,
+      "t2_abstract": "Generated by `blocker_triage.py` at 2026-11-22T23:35:33 Source: `memory\\ops\\blockers.md`. - **Browser acceptance blocker \u2014 Chrome-headless unblock does NOT reproduce from sandbox seats** \u2014 class: browser-unavailable - **White SANDBOX seat c - Class: **new/unclassified** (no known class matched) - Agent: unknown - Suggestion: NEW BLOCKER - no known class matched.",
+      "t2_tokens": 61,
+      "t3_title": "Blocker Triage Report \u2014 2026-11-22",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/ops/blockers.md",
+      "lines": 165,
+      "t1_tokens": 3828,
+      "t2_abstract": "**Class:** seat-unreachable + sandbox egress wall (NOT a code bug; NOT re-probed beyond one confirmation). Recorded once per anti-reprobe rule; future passes: skip schtasks/portal probes from this seat. **Class:** no browser binary + sandbox egress block (WinError 10013 / socket blocked).",
+      "t2_tokens": 53,
+      "t3_title": "[OPS-NOTE 2026-11-22] Orchestrator: auto-loop @Mechanic dispatches are FUTIL until a non-sandbox seat loads mechanic-q4",
+      "t3_tokens": 18
+    },
+    {
+      "file": "memory/ops/boot-deployment-runbook.md",
+      "lines": 63,
+      "t1_tokens": 517,
+      "t2_abstract": "Parent: memory/ops/INDEX.md. Code complete (4 scripts), White done; Pale/Black/Red need one of: `python deploy_boot_task.py` (admin) or `python deploy_startup_folder.py` (no admin 1.",
+      "t2_tokens": 27,
+      "t3_title": "Boot Recovery Deployment Runbook (2026-11-17)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/ops/claim-phantom-report.md",
+      "lines": 100,
+      "t1_tokens": 971,
+      "t2_abstract": "Generated: 2026-11-20 23:52 by `memory/ops/verify_claims.py` (Builder). - **orchestrator #1** Live Hotload Execution (host seat)  -> `memory/ops/blockers.md` - **orchestrator #2** Fleet Capacity Governor  -> `memory/orches - **orchestrator #6** Fleet Incident Auto-Triage - **builder #2** Complete API Client Wrappers - **builder #5** Upload Pipeline Hardening - **builder ",
+      "t2_tokens": 58,
+      "t3_title": "Claim-Phantom Report",
+      "t3_tokens": 2
+    },
+    {
+      "file": "memory/ops/cross-seat-protocol.md",
+      "lines": 61,
+      "t1_tokens": 569,
+      "t2_abstract": "**Owner:** Orchestrator | **Created:** 2026-11-20 (cycle-8 goal #7) **Purpose:** Structured handoff of blocked work between agent seats so no lane sta | Handoff file | From | To | Class | Status | |---|---|---|---|---| | orchestrator-1-2026-11-20.md | Orchestrator | any non-sandbox seat | elev-helper 1.",
+      "t2_tokens": 58,
+      "t3_title": "Cross-Seat Coordination Protocol",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/ops/design-token-lint-workflow.md",
+      "lines": 63,
+      "t1_tokens": 551,
+      "t2_abstract": "Author: Designer | Date: 2026-11-20 Status: DRAFT \u2014 actionable when a Builder/Verifier picks it up. - Step 1: 15 min (script + run) - Step 2: 30 min (replacements, depends on count) - Step 3: 10 min (wire into existing check) Total: ~1 hour across Bu | Category | Tokens | |---|---| | Spacing | --sp-1, --sp-3, --sp-4, --sp-6, --sp-8, --sp-10, --sp-12, --sp-14, --sp-16, --sp-20, --sp-24 | | Font-size",
+      "t2_tokens": 89,
+      "t3_title": "Design-Token Lint Workflow (next-cycle ready)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/ops/evidence-quality-2026-11-20.md",
+      "lines": 80,
+      "t1_tokens": 880,
+      "t2_abstract": "**Scope:** 1998 evidence leaves in memory/ (excluding INDEX/MEMORY/TODO) **Rubric:** specificity (1-5), reproducibility (1-5), currency (1-5); composi --- *Generated by `memory/verifier/evidence_scoring.py` on 2026-11-20*. | Path | Spec | Repro | Curr | Composite | Flags | |------|------|-------|------|-----------|-------| | `memory\\mechanic\\postmortem_template.md` | 1 |",
+      "t2_tokens": 53,
+      "t3_title": "Evidence Quality Report  2026-11-20",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/ops/evidence-stale-2026-11-22.md",
+      "lines": 299,
+      "t1_tokens": 2476,
+      "t2_abstract": "Threshold: 7 days Scanned: 2293 files (skipped 186 non-leaf) STALE: 236 | Fresh: 1871. and 1821 more. - `memory\\archivist\\TODO.md` - age=8d (mtime: 2026-11-13 17:48) - `memory\\archivist\\bundle-v2-item1-staleness-r73-2026-11-14.md` - age=8d (mtime: 2026",
+      "t2_tokens": 39,
+      "t3_title": "Evidence Freshness SLA Report - 2026-11-22",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/ops/evidence-stale-2026-11-23.md",
+      "lines": 316,
+      "t1_tokens": 2631,
+      "t2_abstract": "Threshold: 7 days Scanned: 2422 files (skipped 196 non-leaf) STALE: 253 | Fresh: 1973. and 1923 more. - `memory\\archivist\\TODO.md` - age=9d (mtime: 2026-11-13 17:48) - `memory\\archivist\\bundle-v2-item1-staleness-r73-2026-11-14.md` - age=8d (mtime: 2026",
+      "t2_tokens": 39,
+      "t3_title": "Evidence Freshness SLA Report - 2026-11-23",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/ops/fleet-monitoring-cadence.md",
+      "lines": 54,
+      "t1_tokens": 464,
+      "t2_abstract": "Updated: 2026-11-19 (Mechanic). [YYYY-MM-DD HH:MM] <what broke> -> <what fixed it> (host, script). | Interval | Script | Checks | Evidence | |----------|--------|--------|----------| | 5 min | memory/mechanic/health_check.py | portal HTTP 200, disk ",
+      "t2_tokens": 42,
+      "t3_title": "Fleet Monitoring Cadence & Escalation Policy",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/ops/fleet-placement-snapshot-2026-11-22.md",
+      "lines": 54,
+      "t1_tokens": 587,
+      "t2_abstract": "Agent: Orchestrator (relocated seat = black; home unreachable). Credit: Orchestrator (own goals 10/10 closed; fleet-integrity + placement assist per team rule 1). This round's [MODEL LOAD STATUS] shows 5 of 8 seats consolidated onto just **pale + black** because all home models are down/not_loaded: - Mechanic ->",
+      "t2_tokens": 61,
+      "t3_title": "Fleet Placement + Integrity Snapshot (2026-11-22, consolidation round)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/ops/fleet-status-ui-spec-2026-11-22.md",
+      "lines": 71,
+      "t1_tokens": 761,
+      "t2_abstract": "Date: 2026-11-22 | Author: Designer (assist to Mechanic goal #4) Status: DRAFT \u2014 ready for implementation once live /api/fleet HTTP-200 verified. Once the live API leg passes, Builder can implement in one session (~1-2h).*. - File: `ui/core.js` \u2014 the fleet tab render function (search for `fleet` or `_renderFleet`).",
+      "t2_tokens": 62,
+      "t3_title": "Fleet Status UI Spec \u2014 Circuit Breaker + Graceful Degradation",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/ops/goal-progress-2026-11-16.md",
+      "lines": 67,
+      "t1_tokens": 843,
+      "t2_abstract": "memory/researcher/goal_ledger.py repo_root(): old code went up ONE level and tested <root>/memory/memory (never exists) -> returned memory/researcher  Mechanic #1 tally at week end; researcher #9 stays open until 11-20. builder #2 [CLOSED via root fix] pointer memory/builder/MEMORY.md validates.",
+      "t2_tokens": 48,
+      "t3_title": "Goal-progress state 2026-11-16 (Orchestrator, non-sandbox seat White)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+      "lines": 54,
+      "t1_tokens": 596,
+      "t2_abstract": "Owner: Orchestrator. Flagging for a future pass; does not affect normal operation. These are \"not indexed\", not \"leaf missing\": the work artifact is on disk; it just isn't referenced by any INDEX.md, so its `(pointer:)` doesn't count",
+      "t2_tokens": 48,
+      "t3_title": "goal_ledger.py \u2014 record_evidence guard fix + dangling-pointer unblock (2026-11-18)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/ops/host-consistency-report.md",
+      "lines": 52,
+      "t1_tokens": 839,
+      "t2_abstract": "Generated: 2026-11-16T05:13:17.303783+00:00 Files scanned: 486 Total claims: 3076. | `TCP connect pale:8888` |. | Type | Count | Verification Method | |------|-------|-------------------| | file_path | 1252 | SMB path existence check | | reference | 1213 | Manua",
+      "t2_tokens": 49,
+      "t3_title": "Host Documentation Consistency Report",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/ops/INDEX.md",
+      "lines": 86,
+      "t1_tokens": 1103,
+      "t2_abstract": "Last updated: 2026-11-19 (Orchestrator: sandbox egress self-probe workaround). Evidence: -> memory/orchestrator/recover-seats-script-2026-11-22.md. - Probe false-HEALTHY + fake-latency root cause + fix recipe (unblocks Mechanic Fleet Status API) -> memory/ops/probe-false-healthy-fix.md - Scheduled",
+      "t2_tokens": 39,
+      "t3_title": "OPS INDEX \u2014 fleet ops knowledge base. One-stop for any agent new to the fleet.",
+      "t3_tokens": 19
+    },
+    {
+      "file": "memory/ops/ingestion-spec.md",
+      "lines": 80,
+      "t1_tokens": 586,
+      "t2_abstract": "> Owner: Archivist (goal 10, cycle 2). - Maximum file size: 50KB (larger inputs should be split by the caller). - Keyword matching against module topics: - `portal`, `api`, `endpoint`, `route` -> memory/portal/ - `llm`, `model`, `inference`, `lmstudio`, `routing",
+      "t2_tokens": 50,
+      "t3_title": "External Knowledge Ingestion Spec",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/ops/live-leg-runbook-2026-11-20.md",
+      "lines": 81,
+      "t1_tokens": 1099,
+      "t2_abstract": "Author: Researcher | Date: 2026-11-20 | Status: WORKFLOW IMPROVEMENT (option b, team contribution). - Remaining uncertainty: whether the persistent White seat currently has working SMB creds + elev.py; that is a precondition to verify on first use, n - Cmd: `python memory/mechanic/deploy_all_schtasks.py --execute`   (registers ArchivistDecayWeekly + any other pending tasks; dry-run first with `--dr",
+      "t2_tokens": 70,
+      "t3_title": "Non-Sandbox LIVE-Leg Runbook (consolidated egress-wall unblock)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/ops/memory-integrity-2026-11-20.md",
+      "lines": 138,
+      "t1_tokens": 624,
+      "t2_abstract": "Run: 2026-11-20 | Status: **FAIL (263 issues)**. - `memory\\archivist\\INDEX.md`: 4452 chars (budget 1600) - `memory\\builder\\INDEX.md`: 10484 chars (budget 1600) - `memory\\designer\\INDEX.md`: 6055 char - `memory\\goals\\INDEX.md` -> `retro-cycle-7.md` - `memory\\researcher\\INDEX.md` -> `ui-slices-audit-2026-11-17.md` - `memory\\researcher\\INDEX.md` -> `.",
+      "t2_tokens": 45,
+      "t3_title": "Memory Tree Integrity Report",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/ops/memory-integrity-2026-11-21.md",
+      "lines": 138,
+      "t1_tokens": 624,
+      "t2_abstract": "Run: 2026-11-20 | Status: **FAIL (214 issues)**. - `memory\\archivist\\INDEX.md`: 4275 chars (budget 1600) - `memory\\builder\\INDEX.md`: 9421 chars (budget 1600) - `memory\\designer\\INDEX.md`: 6055 chars - `memory\\goals\\INDEX.md` -> `retro-cycle-7.md` - `memory\\researcher\\INDEX.md` -> `ui-slices-audit-2026-11-17.md` - `memory\\researcher\\INDEX.md` -> `.",
+      "t2_tokens": 45,
+      "t3_title": "Memory Tree Integrity Report",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/ops/memory-tree-runbook.md",
+      "lines": 121,
+      "t1_tokens": 973,
+      "t2_abstract": "Owner: Archivist | Updated: 2026-11-20 | Cycle: 8. - All scripts are idempotent: safe to re-run without side effects (except --archive) - Total runtime for full weekly sweep: ~45s on current tree size  | Script | Purpose | Last Verified | |--------|---------|---------------| | orphan_remediation.py | Find + fix orphans | 2026-11-20 | | xref_check.py ",
+      "t2_tokens": 70,
+      "t3_title": "Memory Tree Maintenance Runbook",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/ops/memory-trim-archive-2026-11-14.md",
+      "lines": 59,
+      "t1_tokens": 1491,
+      "t2_abstract": "Pre-trim full content (lossless; trimmed per Orchestrator goal 9 'keep MEMORY.md small'):. --- CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo",
+      "t2_tokens": 37,
+      "t3_title": "MEMORY.md trim archive \u2014 2026-11-14 23:52",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/ops/non-sandbox-queue.md",
+      "lines": 81,
+      "t1_tokens": 1298,
+      "t2_abstract": "Parent: memory/ops/INDEX.md | Sibling: memory/ops/blockers.md (NEEDS-HUMAN log) Updated: 2026-11-21 (Orchestrator) - added Mechanic #3 WinRM E2E + #9  - \"seat <Name> model unreachable\" entries in blockers.md are Studio reloads, not command-execution tasks \u2014 do not batch them here. - [x] **Orchestrator #1** \u2014 RESOLVED 2026-11-20 (Tier-A verified: hotload_exec.py built + dry-run PASS; Tier-B queued for host-side execution).",
+      "t2_tokens": 74,
+      "t3_title": "NON-SANDBOX EXECUTION QUEUE",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/ops/pin-guard-extension-ui-files.md",
+      "lines": 61,
+      "t1_tokens": 479,
+      "t2_abstract": "Date: 2026-11-17 | Author: Scribe (workflow improvement, option b) Status: DRAFT - ready for Builder/Mechanic to execute in one step. - memory/designer/goal1-token-layer-reapply-2026-11-17.md (reapply recipe) - memory/designer/token-gap-analysis-2026-11-17.md (which colors are intent `ui/app.css` (and `ui/core.js`, `ui/uploads.js`) are subject to the same external LWW flapper that caused index.html to flap between canonical and sta",
+      "t2_tokens": 66,
+      "t3_title": "Pin-Guard Extension: Protect ui/ Files from Mirror Revert",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/ops/pin-integrity-check.md",
+      "lines": 62,
+      "t1_tokens": 418,
+      "t2_abstract": "Date: 2026-11-19 (Scribe) Status: DRAFT (not yet implemented in memory_mirror.py). - memory/scribe/index_html_pin_fix_2026-11-19.md (the incident that prompted this) - memory/verifier/designer-goal8-icons-pin-reverted-2026-11-19.md ( - Add to memory_mirror.py before the revert section - Log to memory/ops/pin-integrity.log (one line per failure) - After 3 consecutive failures on sam",
+      "t2_tokens": 55,
+      "t3_title": "Pin Integrity Check  pre-mirror verification",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/ops/placement-sse-ux-spec-2026-11-22.md",
+      "lines": 92,
+      "t1_tokens": 839,
+      "t2_abstract": "Date: 2026-11-22 | Author: Designer | Status: DRAFT Supports: HOST-AGNOSTIC PLACEMENT (live plan) + Mechanic goal #4 fleet states. --- *This spec is ready for Builder to implement once the SSE frame format is confirmed stable in the portal.*. | Variant | Icon | Color | Text pattern | |---------|------|-------|-------------| | Normal placement | `<svg icon=\"arrow-right\">` | `var(--accent)` (",
+      "t2_tokens": 76,
+      "t3_title": "Placement SSE UX Spec \u2014 \"placed on <host>\" Progress Frame",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/ops/probe-false-healthy-fix.md",
+      "lines": 60,
+      "t1_tokens": 555,
+      "t2_abstract": "Written: 2026-11-19 (Orchestrator, assisting Mechanic). - `/api/fleet/status` reflects both; status strip renders red. Line: `status = \"DEGRADED\" if alerts else \"HEALTHY\"` Root cause: `alerts` only fires when `fail_counts[name] > FAIL_THRESHOLD` (strictly >3).",
+      "t2_tokens": 41,
+      "t3_title": "Probe false-HEALTHY + fake-latency fix recipe",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/ops/remote-host-metrics-probe-spec.md",
+      "lines": 105,
+      "t1_tokens": 607,
+      "t2_abstract": "**Trigger**: Builder flagged gap \u2014 \"remote-host disk/memory requires a probe-side addition.\" **Owner**: Mechanic (execution), Orchestrator (scope + ve If a remote portal is down, those fields are null (graceful degradation, no crash). 1.",
+      "t2_tokens": 42,
+      "t3_title": "Remote-Host Disk/Memory Probe \u2014 Scoped Spec (2026-11-18, Orchestrator)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/ops/remote-verify-runner-2026-11-20.md",
+      "lines": 63,
+      "t1_tokens": 386,
+      "t2_abstract": "Date: 2026-11-20 | Author: Builder Problem: Sandbox WinError 10013 blocks :8099 egress. - Designer G6: ~30s (4 breakpoints \u00d7 ~5s each + Edge launch) - Mechanic G7: ~1h (duration=3600) \u2014 can be scheduled as schtask. - WinRM pool client live on all 4 hosts (Mechanic G1, verified 2026-11-20) - Edge installed at C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedg",
+      "t2_tokens": 71,
+      "t3_title": "Remote Verification Runner \u2014 unblocks CDP + live-port goals from sandbox",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/ops/researcher-seat-verify-r7-2026-11-13.md",
+      "lines": 84,
+      "t1_tokens": 1697,
+      "t2_abstract": "Independent spot-check from Researcher seat (not White/Orchestrator). --- CORRIGENDUM (hostdoc-consistency-v2 2026-11-18): script/log paths referenced here were seat-local ephemeral artifacts, never committed to the repo - index.html re-pinned: 9c6b08e3d98355e632a7cb871d5b60d, 67,681 B (filesBtn x6, --focus x4) \u2014 no drift; 7th independent canonical read.",
+      "t2_tokens": 53,
+      "t3_title": "Researcher seat verification \u2014 OPS r7 (2026-11-13)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/ops/runbooks/safe_test.md",
+      "lines": 52,
+      "t1_tokens": 314,
+      "t2_abstract": "- agent: Builder - trigger: test - rollback_on_failure: true. - [ ] Consider adding a retry-with-backoff for echo-type steps that may be affected by shell buffering. **What worked:** - All 3 steps completed in 0.13s with zero rollbacks.",
+      "t2_tokens": 49,
+      "t3_title": "Safe Test Runbook",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/ops/sandbox-egress-selfprobe-workaround-2026-11-19.md",
+      "lines": 82,
+      "t1_tokens": 1069,
+      "t2_abstract": "**Owner:** Orchestrator (ops improvement) | **Unblocks:** Designer live acceptance, Mechanic Goal 8 (Fleet Status API), any \"verify endpoint X\" goal. Evidence: memory/researcher/browser-blocker-corrected-2026-11-19.md. **Fact 1 (CORRECTED): empty `netstat :8099` from the sandbox does NOT mean the portal is down.** The sandbox runs in an isolated network namespace: it",
+      "t2_tokens": 61,
+      "t3_title": "Sandbox egress wall: server-side self-probe workaround (2026-11-19)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/ops/scan_goals-scope-fix-2026-11-19.md",
+      "lines": 92,
+      "t1_tokens": 543,
+      "t2_abstract": "**Date:** 2026-11-19 **Author:** Researcher **Status:** Ready to apply (one-line fix) **Affects:** `memory/scribe/open_items_scan.py` \u2192 `scan_goals()` Original owner of affected goal: Scribe #5 (Open Items Tracker). | File | False Positives | Type | |------|:-:|------| | `cycle2-dependency-map.md` | 8 | planning doc | | `cycle2-kickoff-2026-11-16.md` | 6 | plannin",
+      "t2_tokens": 61,
+      "t3_title": "scan_goals() Scoping Bug \u2014 Root Cause + Fix",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/ops/schtask-deps.md",
+      "lines": 83,
+      "t1_tokens": 802,
+      "t2_abstract": "Last updated: 2026-11-16 ~14:10 (Mechanic goal #7 cycle 2) Source: memory/ops/host-port-task-map-2026-11-15.md + fleet_probe_v2.py target set. Remote hosts (Red/Pale/Black): map from host-port-task-map-2026-11-15.md stands (hosts offline at verification; pending power-on re-check noted there) | Task | Hosts | Schedule | Script/Action | |---|---|---|---| | PortalRun | White, Red, Pale, Black | At logon | agent_portal.py (PID in _portal_pid.t",
+      "t2_tokens": 72,
+      "t3_title": "Scheduled-Task Dependency Graph (Blast Radius)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/ops/stale-citation-workflow.md",
+      "lines": 50,
+      "t1_tokens": 455,
+      "t2_abstract": "**Owner:** Archivist | **Created:** 2026-11-21 | **Source data:** `memory/archivist/citation-map.json`. - Engine: `memory/archivist/citation_map.py` - Output: `memory/archivist/citation-map.json` - Related: `memory/ops/xref-check-workflow.md` (pointer in 1.",
+      "t2_tokens": 27,
+      "t3_title": "Stale Citation Cleanup Workflow",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/ops/stale-claim-check-fallback-regression-2026-11-19.md",
+      "lines": 53,
+      "t1_tokens": 523,
+      "t2_abstract": "Date: 2026-11-19 Agent: Researcher (cross-assist to Verifier's tool + Mechanic's original fix; option b/c). This leaf documents the regression + re-application by Researcher as a cross-assist (unblocks other agents' option-(c) 'close one stale claim' passes) Categories seen in this run: - Literal template placeholders: `digest-WW-YYYY.md`, `weekly-YYYY-WW.md`, `cycle-N-report.md`, `mirror-revert-analysis-Y",
+      "t2_tokens": 62,
+      "t3_title": "stale_claim_check.py: .json/.jsonl fallback regression (re-applied 2026-11-19)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/ops/ui-asset-inventory-2026-11-23.md",
+      "lines": 58,
+      "t1_tokens": 728,
+      "t2_abstract": "**Author:** Designer | **Date:** 2026-11-23 | **Type:** ops/workflow improvement **Parent:** memory/ops/INDEX.md. *Generated by Designer auto-loop pass 2026-11-23.*. | File | Size | Status | |------|------|--------| | app_density_before.css | 22.9 KB | Dev comparison artifact (core.js switches to it in a test path)",
+      "t2_tokens": 54,
+      "t3_title": "UI Asset Inventory + Dead-Code Report",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/ops/windows-runbook.md",
+      "lines": 63,
+      "t1_tokens": 1444,
+      "t2_abstract": "Last updated: 2026-11-12 (agent rename Atlas->Orchestrator, Quinn->Researcher; aliases quinn-q4/atlas-q8 unchanged). Pale Studio was already down at fleet start 19:23 (machine alive, :8888 refused) - needs manual logon/startup; load its dual via API after (Q8_0 GPU1  No host auto-logons (AutoAdminLogon=0 everywhere) -> \"auto start\" = at user logon (console or RDP).",
+      "t2_tokens": 65,
+      "t3_title": "Ops \u2014 Windows runbook: portal lifecycle, reboot recovery, ground truth",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/orchestrator/archive-hygiene-audit-2026-11-22.md",
+      "lines": 59,
+      "t1_tokens": 663,
+      "t2_abstract": "**Scope:** `memory/goals/archive/` + `memory/archivist/archive/` **Method:** full directory scan; per-file check for (1) date stamp in path, (2) prove *Audit performed by Orchestrator (black seat) 2026-11-22 as assist to Archivist Goal #10.*. | File | Date in path? | Provenance hdr? | Truncated? | Status | |---|---|---|---|---| | 2026-11-13-agent-goals.md | \u2713 (filename) | \u2713 | No | PASS | | ",
+      "t2_tokens": 76,
+      "t3_title": "Archive Hygiene Audit \u2014 2026-11-22 (Orchestrator assist for Archivist Goal #10)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/orchestrator/designer-goal1-token-verify-2026-11-18.md",
+      "lines": 57,
+      "t1_tokens": 468,
+      "t2_abstract": "**Verdict: FAIL**  acceptance test does not pass. The work remaining is to replace these 36 component-rule hex values with `var(--token)` references (most likely mapping to existing tokens like --acc, | Hex | Context | |-----|---------| | #20304d | `.acard.sel{border-color:var(--acc);background:#20304d}` | | #2a3342 | `.acard button:hover{color:var(",
+      "t2_tokens": 58,
+      "t3_title": "Orchestrator Verification  Designer Goal 1 (Token Audit)  2026-11-18",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/orchestrator/goal7-onboarding-wizard-v4-progress-2026-11-20.md",
+      "lines": 54,
+      "t1_tokens": 451,
+      "t2_abstract": "Extended `onboard_agent.py` with a full interactive wizard mode (`--interactive` / `-i`):. - `onboard_agent.py` (+91 lines: MODEL_CATALOG, ALL_TOOLS, interactive_prompt(), main() modifications). | Test | Command | Result | |------|---------|--------| | Compile | `compile(open('onboard_agent.py').read(), ...)` | PASS | | Help shows new flags | ",
+      "t2_tokens": 54,
+      "t3_title": "Goal 7: Fleet Onboarding Wizard v4 \u2014 Interactive CLI (progress 2026-11-20)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/orchestrator/retro_draft_cycle3_2026-11-17.md",
+      "lines": 163,
+      "t1_tokens": 2399,
+      "t2_abstract": "**Fleet: 24/80 closed (30%)   Slipped: 1   Open: 55   Agents reporting: 8/8**. Narrative sections require Orchestrator/Scribe completion before commit.*. 1.",
+      "t2_tokens": 24,
+      "t3_title": "Cycle-3 Retrospective (auto-draft 2026-11-17)",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/portal/api-reference.md",
+      "lines": 66,
+      "t1_tokens": 185,
+      "t2_abstract": "Regenerated 2026-11-18 17:26 from agent_portal.py. - `/ui/<name>.css|js` - UI modules (whitelisted extension, no traversal). - `/` - `/api/activity` - `/api/agents` - `/api/autoloop` - `/api/decisions` - `/api/evolution/stats` - `/api/file` - `/api/file/raw` - `/api/fleet` -",
+      "t2_tokens": 42,
+      "t3_title": "API reference (auto-generated by archivist/gen_api_ref.py)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/portal/architecture.md",
+      "lines": 163,
+      "t1_tokens": 4468,
+      "t2_abstract": "Last updated: 2026-11-13 ~18:1x (r29: TWO-WAY workspace sync + post-turn auto-commit + SMB mirror pull-back; NEW OPS processes: TODO pruning + local g Same day: NO HUMAN GATES - system prompt forbids agents from creating human decision gates; all existing gates removed from MEMORY.md/TODO.md (see TOD - e2e_parallel_result.json verdict SERIALIZED_NO_OVERLAP: phase1 overlap -0.91s, phase2 -2.40s (both agents' t_send within 0.5ms; Quinn's stream alway",
+      "t2_tokens": 81,
+      "t3_title": "Portal architecture \u2014 how it runs (design notes, not bugs)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/portal/bugs/file-links-sandbox.md",
+      "lines": 78,
+      "t1_tokens": 1254,
+      "t2_abstract": "Last updated: 2026-11-11 (stale-process incident + live verification). Probe note: non-streaming /v1/chat/completions with enable_tools hung >300 s without creating a session sandbox dir; the portal's streaming mode works Symptom: with the dual-root resolver in place, workspace files (TODO.md) resolved but sandbox refs (timer-app/index.html) still 404'd.",
+      "t2_tokens": 58,
+      "t3_title": "Portal bugs \u2014 file links & sandbox resolution",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/portal/bugs/goal-stall-loop-2026-11-16.md",
+      "lines": 64,
+      "t1_tokens": 789,
+      "t2_abstract": "Status: **FIXED 2026-11-16** (code live after portal restart; verified unit + endpoint). - memory/ops/merge-queue-git-progress-2026-11-16.md (runbook) - memory/designer/INDEX.md (pin backup lineage 2c6399f2d853 -> e0679e5f0844). - `_agent_goals_block` now parses with the strict ledger (only truly-open goals listed, reached count shown) and spells out the CLOSURE PROCEDURE: `py",
+      "t2_tokens": 58,
+      "t3_title": "BUG: goal-stall loop - agents repeat work, progress invisible (2026-11-16)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/portal/bugs/xtalk-completion.md",
+      "lines": 110,
+      "t1_tokens": 2158,
+      "t2_abstract": "Last updated: 2026-11-11 (split from memory/portal-bugs.md). LIVE 11-13 12:39: bubble fired on a real group run, honest \u2713 Concluded verdict followed (combined DM live test). Diagnosis of \"agents finished their turns without completing the tasks\" (user screenshot): NEITHER a counter reset NOR budget exhaustion.",
+      "t2_tokens": 57,
+      "t3_title": "Portal bugs \u2014 cross-talk, completion signals & agent reply behavior",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/portal/components.md",
+      "lines": 137,
+      "t1_tokens": 1133,
+      "t2_abstract": "Pointer: parent = memory/portal/INDEX.md | sibling = file-modularity.md Purpose: one-paragraph usage + do/don't for each named component in ui/app.css **Don't:** Don't nest inside another `.state-*`; don't add inline styles for colors \u2014 use the tokens. | Token | Dark value | Light value | Usage | |-------|-----------|-------------|-------| | `--bg` | #0e1116 | #f4f6fa | page background | | `--panel` ",
+      "t2_tokens": 76,
+      "t3_title": "Portal UI Component Reference",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/portal/design-tokens-live.md",
+      "lines": 97,
+      "t1_tokens": 1400,
+      "t2_abstract": "Owner: Designer. - grep for `border-radius:` literals other than 50% \u2192 expect only var(--r-sm)/var(--r-md) after follow-up #1. - DONE 2026-11-16 (goal #1): full token set declared in live `:root` (30 tokens: 12 color / 5 spacing / 6 type / 2 radius / 2 shadow / 3 motion).",
+      "t2_tokens": 62,
+      "t3_title": "Portal design tokens \u2014 LIVE (canonical :root) 2026-11-16",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/portal/design-tokens.md",
+      "lines": 65,
+      "t1_tokens": 854,
+      "t2_abstract": "Owner: Designer. Spacing / type-ramp / focus rules above apply to both families unchanged. | token | value | role | contrast on --surface | |---|---|---|---| | --bg | #F4F5FA | page background | \u2014 | | --surface | #FFFFFF | panels/cards | \u2014 |",
+      "t2_tokens": 58,
+      "t3_title": "Portal design tokens (LOCKED 2026-11-13 r60)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/portal/merge-pack.md",
+      "lines": 55,
+      "t1_tokens": 877,
+      "t2_abstract": "Purpose: the only merge actions that need NO bundle byte-read. Independent of steps 1-4; safe to apply alone. Human directive: each agent keeps a mini memory + TODO alongside the global files.",
+      "t2_tokens": 41,
+      "t3_title": "merge-pack.md \u2014 curation-ready patch for White (Archivist, r5 2026-11-12)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/portal/planning-2026-11-13.md",
+      "lines": 60,
+      "t1_tokens": 1575,
+      "t2_abstract": "Recorder: Scribe. - Propagation check item: canonical `memory/portal/INDEX.md` on Red still the 13:54 pre-fix version while Scribe's planning doc landed at 15:34 \u2192 Arch | # | Proposal | Stated by | |---|----------|-----------| | A1 | Mirror uploads/ to remote sandboxes via mtime-guarded SMB push | Orchestrator (P1), R",
+      "t2_tokens": 63,
+      "t3_title": "Portal improvements \u2014 planning meeting record (2026-11-13)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/portal/split-design-agent-portal-2026-11-16.md",
+      "lines": 68,
+      "t1_tokens": 937,
+      "t2_abstract": "Parent: memory/portal/INDEX.md. - File-modularity rule: memory/portal/file-modularity.md - Restart procedure: memory/ops/windows-runbook.md - Current file inventory: memory/portal/IN | File | Lines | ~KB | Functions | |------|-------|-----|-----------| | portal_modules/constants.py | ~100 | 4 | PORT, STUDIO, HERE, all *_FILE paths,",
+      "t2_tokens": 49,
+      "t3_title": "agent_portal.py split design (2026-11-16, Archivist)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/portal/testing.md",
+      "lines": 110,
+      "t1_tokens": 1102,
+      "t2_abstract": "**Rule:** before marking any build [x], the endpoint(s) it touches must have \u22653 documented edge cases below that PASS. A goal is NOT done until its rows say PASS. | # | Edge case | Expected | Status | |---|-----------|----------|--------| | 1 | Filename with drive letter `C:\\evil.txt` | 400 or sanitized to safe ",
+      "t2_tokens": 70,
+      "t3_title": "Portal Testing Playbook",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/portal/ui-tokens.md",
+      "lines": 54,
+      "t1_tokens": 1059,
+      "t2_abstract": "Owner: Designer. Component reference `memory/designer/component-reference.html` must match this file after every merge (goal 8 / refreshed goal 5). base 14px/1.45 system-ui stack (live) \u2014 r60 mocks use 15px/1.45; h2 panel title 16px/600; section label 12px/600 uppercase ls .08em --dim; mono 13px u",
+      "t2_tokens": 54,
+      "t3_title": "Portal UI tokens \u2014 single source of truth (2026-11-14)",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/portal/upgrade-plan.md",
+      "lines": 87,
+      "t1_tokens": 2810,
+      "t2_abstract": "**Meeting ID: V102** (human-assigned 2026-11-13; this document is the meeting record of record for all rounds under that ID). TODO.md top does not yet carry the Inc1\u2192Inc2 port queue \u2014 Orchestrator to sync. File-access check from Pale (fresh tool run, this round): - NO NEW DROPS: uploads/, .git, AgentPortal_V1-git, BUNDLE-SHA256.txt, portal-upgrade/, memo",
+      "t2_tokens": 67,
+      "t3_title": "upgrade-plan.md \u2014 Portal update planning meeting (2026-11-13, convened by Archivist)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/portal/v1-inventory.md",
+      "lines": 122,
+      "t1_tokens": 2785,
+      "t2_abstract": "Status: CHECKLIST (round-5, 2026-11-12). Cross-host memory sync: still unproven (see red flag above \u2014 `v1-upgrades-round-3.md` absent from Pale-readable tree). | # | file | posture | rationale (source of claim) | |---|------|---------|------------------------------| | 1 | agents.json | MERGE | verified full 8",
+      "t2_tokens": 54,
+      "t3_title": "v1-inventory.md \u2014 AgentPortal_V1 bundle inventory (Archivist scaffold, 2026-11-12)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/portal/v1-upgrades-round-5.md",
+      "lines": 68,
+      "t1_tokens": 1826,
+      "t2_abstract": "Date: 2026-11-12 22:33 \u00b7 Host: Red (red\\red, Red) \u00b7 Source: live probes this turn. Options on record: (a) Orchestrator pastes post-P0-a recovery, or (b) human adds it as bootstrap step 0. - Fresh health probe from Red: :8099 closed, :8888 closed, zero python/node processes, no agent_portal.py on this seat \u2192 portal not runnable or diffab",
+      "t2_tokens": 71,
+      "t3_title": "v1-upgrades round 5 \u2014 Mechanic (Red) status",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/researcher/archivist-goal4-linkpass-and-orderbug-2026-11-19.md",
+      "lines": 62,
+      "t1_tokens": 743,
+      "t2_abstract": "Continuing the step my previous pass left open (\"link the needs-link nodes to reach <5%\"). Credit: owner=Archivist.*. Classification of the 71 actionable orphans: - **26 un-linkable build/merge artifacts** -> allowlist candidates (hash-suffix merge remnants: 14 in mem",
+      "t2_tokens": 48,
+      "t3_title": "Archivist Goal #4 assist \u2014 link-pass + order-dependency bug fix (Researcher, 2026-11-19)",
+      "t3_tokens": 15
+    },
+    {
+      "file": "memory/researcher/archivist-goal9-endpoint-clobber-corrected-2026-11-20.md",
+      "lines": 70,
+      "t1_tokens": 819,
+      "t2_abstract": "Date: 2026-11-20 | Contributor = Researcher (auto-loop option c: verify + correct one stale ledger claim). Recommend: (a) strike the \"endpoint wired, waiting for restart\" claim in `evidence-goal9-provenance-endpoint-2026-11-20.md`; (b) re-land snippet; (c)  1.",
+      "t2_tokens": 42,
+      "t3_title": "Archivist #9 (Provenance) \u2014 endpoint evidence leaf is STALE; real unblock = re-land handler",
+      "t3_tokens": 18
+    },
+    {
+      "file": "memory/researcher/brief_template.md",
+      "lines": 51,
+      "t1_tokens": 393,
+      "t2_abstract": "Standard output format for ANY research task. Exit codes: 0 = PASS, 1 = FAIL (reasons printed), 2 = usage/IO error. | # | Field | Format | Rule | |---|-------|--------|------| | 1 | **Claim** | one-sentence, falsifiable statement | exactly one; no hedging verbs like",
+      "t2_tokens": 59,
+      "t3_title": "Research Brief Template (Researcher) v1",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/researcher/cockpit-decision-feed.md",
+      "lines": 165,
+      "t1_tokens": 871,
+      "t2_abstract": "**Owner:** Researcher | **Cycle:** 11 | **Status:** Spec v1.0. - Should `evidence_count` include unresolved links? (Currently: resolved only) - Is 30-min TTL appropriate, or should it scale with cycle frequency? - | Rule | Enforcement | |------|-------------| | `decision_id` must be unique within a feed | Reject duplicate IDs | | `confidence` in [0, 1] | Schema-",
+      "t2_tokens": 74,
+      "t3_title": "Cockpit Decision-Feed Schema",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/researcher/competitive-scan-2026-11.md",
+      "lines": 177,
+      "t1_tokens": 1929,
+      "t2_abstract": "**Date:** 2026-11-18 | **Analyst:** Researcher | **Next due:** 2027-Q1 (quarterly). Local: agent_portal.py endpoint inventory (2026-11-18 scan). | Feature Dimension | CrewAI AMP | LangGraph Platform | MS Agent Framework | **Our Portal** | Gap? | |-------------------|-----------|----------------",
+      "t2_tokens": 46,
+      "t3_title": "Competitive Feature Scan \u2014 Multi-Agent Fleet Management Systems",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/researcher/cross-agent-comm-patterns-2026-11-17.md",
+      "lines": 57,
+      "t1_tokens": 903,
+      "t2_abstract": "**Date:** 2026-11-17 | **Goal:** Researcher #6 | **Status:** PROGRESS - analysis leaf with findings + recommendation. --- *Consumer: Orchestrator goal #4 (auto-loop protocol tuning); Scribe goal on compression discipline.* *Evidence: 52 synthesis files analyzed progra - **Confidence: MEDIUM-HIGH** for F1-F3 (directly measurable from available artifacts); **MEDIUM** for F4 (contradiction resolution latency inferred f",
+      "t2_tokens": 68,
+      "t3_title": "Cross-Agent Communication Pattern Study (Cycle 1-2)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/researcher/cross-patterns-cycle10.md",
+      "lines": 63,
+      "t1_tokens": 533,
+      "t2_abstract": "Generated: 2026-11-23 07:59 Data: 510 unique goals across 8 agents (316 verified, 194 open). Mechanic's blocker concentration (4 mentions) warrants a dedicated ops review. 20 topics were reopened across multiple cycle dates, indicating scope creep or incomplete first-pass resolution.",
+      "t2_tokens": 50,
+      "t3_title": "Cross-Agent Patterns - Cycle 10",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/researcher/designer-goal3-errorstate-stale-claim-corrected-2026-11-21.md",
+      "lines": 53,
+      "t1_tokens": 735,
+      "t2_abstract": "Date: 2026-11-21 \u00b7 Author: Researcher (option-c verify / option-d hand-off) \u00b7 Owner credit: **Designer** Parent: memory/researcher/INDEX.md \u00b7 Refs: ui The \"done\" hot-note line was likely cycle-7 work that did not survive into the cycle-8 reset, or referred to a since-reverted artifact \u2014 I could not f 16 total raw `\"error: \"+\u2026` renderings.",
+      "t2_tokens": 67,
+      "t3_title": "Designer Goal #3 (Error State Design System) \u2014 stale hot-note claim corrected + hand-off spec",
+      "t3_tokens": 19
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-2026-11-16.md",
+      "lines": 61,
+      "t1_tokens": 1016,
+      "t2_abstract": "Consumes Verifier#5 self-cert audit + Verifier#10 scorecard inputs. Verifier#10 scorecard TP/TN/FP/FN series still joins this table when it lands. 1.",
+      "t2_tokens": 26,
+      "t3_title": "Researcher \u2014 evidence-quality trend, weekly report 1/2 (goal #10, 2026-11-16)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-report3-2026-11-17.md",
+      "lines": 127,
+      "t1_tokens": 1552,
+      "t2_abstract": "Date: 2026-11-18 (updated) | Reproducible: `python memory/researcher/evidence_quality_trend.py --min-markers 20`. Pending ledger record.**. | # | Agent | Type | Detail | Fixable-by-edit? | |---|-------|------|--------|-----------------| | m1 | builder #5 | TRUNCATION | \"Artifact: memory/bu",
+      "t2_tokens": 44,
+      "t3_title": "Evidence-Quality Trend Report #3 (Cycle-3 Week 1)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/researcher/evidence-quality-trend-snapshot-2026-11-17.md",
+      "lines": 67,
+      "t1_tokens": 1666,
+      "t2_abstract": "Reproducible: `python memory/researcher/evidence_quality_trend.py --min-markers 20`. - re-run this script at week-end; if rate holds >=76% with n>=20, report 2 closes on cadence. | date | cycle | n | rate | note | |------|-------|---|------|------| | 2026-11-16 | 2 seed | 41 | 80% | first measurement | | 2026-11-17 am | 2 | 50 ",
+      "t2_tokens": 70,
+      "t3_title": "Researcher - evidence-quality trend snapshots",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/researcher/evidence-trace-report.md",
+      "lines": 150,
+      "t1_tokens": 793,
+      "t2_abstract": "Generated: 2026-11-23T00:31:16Z. Some references point to missing or moved files. - Timestamp: 2026-11-22T20:26:33.080010+00:00 - Evidence links: 2 (resolved: 2) - [OK] `memory\\ops\\runbooks\\safe_test.md` -> memory\\ops\\runbooks\\safe_",
+      "t2_tokens": 31,
+      "t3_title": "Evidence-to-Decision Traceability Report",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/researcher/failure-mode-indicator-validation-2026-11-18.md",
+      "lines": 54,
+      "t1_tokens": 871,
+      "t2_abstract": "Date: 2026-11-18. - Original indicator list: memory/researcher/failure-mode-indicators-2026-11-16.md - Model-load data: memory/ops/model-load.jsonl (110 entries) - Wedg | # | Indicator | Fired? | TP | FP | FN | Precision | Recall | Verdict | |---|-----------|--------|----|----|-----|-----------|--------|----------| | ",
+      "t2_tokens": 46,
+      "t3_title": "Failure-Mode Indicator Validation (goal #5) - Cycle-3 P/R Table",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/researcher/fleet-hotload-watchdog-spec.md",
+      "lines": 55,
+      "t1_tokens": 934,
+      "t2_abstract": "Owner: Researcher (spec) \u2192 Mechanic (register + operate). Live registration + first green run is Mechanic's lane (named handoff); the sandbox seat cannot register COM tasks. - A Windows *idle* trigger fires only while the machine is idle; it can MISS the recovery window right after boot or during an active agent turn \u2014 exa",
+      "t2_tokens": 71,
+      "t3_title": "FleetHotLoad \u2014 unified watchdog spec (buildable handoff)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/researcher/INDEX.md",
+      "lines": 153,
+      "t1_tokens": 12702,
+      "t2_abstract": "- [2026-11-23 option(a) forecast] MECHANIC GOAL #2 (Model Load/Unload Automation): selftest 17/17 PASS confirmed; identified 5 remaining gaps ranked b Leaf: memory/researcher/builder-goal7-theme-verify-2026-11-23.md - -> schtasks-seat-sandbox-verify-2026-11-23.md   Archivist G3 code-side ready (7 tar - [2026-11-20 option(c) ledger-upkeep] CLOSED 5 STALE/UNCITED CLAIMS -> REAL (assist, multiple owners): verify_claims.py read **70 REAL / 0 PHANTOM / ",
+      "t2_tokens": 67,
+      "t3_title": "Index",
+      "t3_tokens": 1
+    },
+    {
+      "file": "memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md",
+      "lines": 56,
+      "t1_tokens": 821,
+      "t2_abstract": "Scope: resolve the 85/96/~50 discrepancy on \"tracked files with internal IPs\" and verify the functional-IP caveat before the human decides scrub vs le Sources: api.github.com/repos/ArnoldPieterse/agent-portal/git/trees/main?recursive=1 (truncated view), raw.githubusercontent.com/.../main/.gitignore,  2.",
+      "t2_tokens": 37,
+      "t3_title": "Researcher \u2014 IP-scrub human gate: count reconciliation + functional-IP evidence (2026-11-15)",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/researcher/kg-baseline-reverify-goal4-orphan-metric-2026-11-19.md",
+      "lines": 51,
+      "t1_tokens": 555,
+      "t2_abstract": "Date: 2026-11-19 (auto-loop batch, Researcher at 100%, assisting Archivist) Type: evidence leaf (option c = verify a verified claim with fresh indepen Not a blocker for Archivist - work is sound; this just makes the metric reproducible. Investigation (memory/archivist/orphan-remediation-cycle5.md + fresh kg_integrity.py): - The \"17.8%\" is a RECLASSIFICATION, not a structural reduction",
+      "t2_tokens": 67,
+      "t3_title": "Researcher skeptic pass - KG baseline re-verify + goal #4 orphan-metric discrepancy",
+      "t3_tokens": 15
+    },
+    {
+      "file": "memory/researcher/kg-drift-and-cycle-nondeterminism-2026-11-20.md",
+      "lines": 54,
+      "t1_tokens": 669,
+      "t2_abstract": "Date: 2026-11-20 / auto-loop option(c): verify a \"verified\" claim with fresh independent numbers, no network/wall. No pin advanced, no other files touched, no :8888 probe. Reproducible: two back-to-back unseeded runs gave **cycle_count=2** then **3**.",
+      "t2_tokens": 44,
+      "t3_title": "KG drift + cycle-detector nondeterminism (Archivist #1/#4/#5 assist)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/researcher/knowledge-conflicts.md",
+      "lines": 56,
+      "t1_tokens": 549,
+      "t2_abstract": "Generated: 2026-11-23 (conflict_detector.py) Scanned: 300 files, extracted 121 factual claims Conflicts found: 4. GPU specs stale: all 4 hosts are 2\u00d7 RTX 5090 32GB = 64GB  | | `\\memory\\builder\\hotload-catalog-refresh-2026-11-22.md` | 18 | **58** | - `vram_plan.py` | Source | Line | Value | Context | |--------|------|-------|---------| | `\\memory\\archivist\\assist-scribe-goals2-3-5-reverify-2026-11-20.md` | 6 | **",
+      "t2_tokens": 67,
+      "t3_title": "Knowledge Conflict Report",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/researcher/knowledge-decay-cycle10.md",
+      "lines": 59,
+      "t1_tokens": 664,
+      "t2_abstract": "Calibrated against actual correction history in `memory/`. - [api_endpoint] v1-upgrade-state-2026-11-12.md (2026-11-12) -> hosts-ctx-correction-and-rename-script-state-2026-11-14.md (2026-11-14)  Delta=2d jac= | Type | n fail | n cens | tau (d) | half-life (d) | med fail (d) | med survive (d) | min-max (d) | conf | LOO-20% | |------|--------|--------|-------",
+      "t2_tokens": 61,
+      "t3_title": "Knowledge Decay Model (cycle-10, Researcher goal #4)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/researcher/load-time-optimization.md",
+      "lines": 59,
+      "t1_tokens": 674,
+      "t2_abstract": "**Date:** 2026-11-20 | **Goal:** Researcher #8 (cycle-7) **Data source:** `memory/llm/hotload-log.jsonl` (121 entries, 2026-11-18 12:43\u201314:35 UTC, ~1h - Single time window (~2h) on a single host (white) - No overnight data in this file (overnight analysis covered by Goal #4's separate report) - GPU-s | # | Action | Expected Improvement | |---|--------|---------------------| | R1 | Add `load_duration_s` field via status polling after load command | ",
+      "t2_tokens": 84,
+      "t3_title": "Load-Time Optimization Research",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/researcher/mechanic-goal7-stale-verify-claim-correction-2026-11-20.md",
+      "lines": 51,
+      "t1_tokens": 374,
+      "t2_abstract": "**Date:** 2026-11-20 (auto-loop pass) **Author:** Researcher **Target:** memory/mechanic/goal7-perf-profile-verified-2026-11-20.md. The unblock step is mechanical (run one command on White non-sandbox); no code change needed. | Time (UTC) | Event | |------------|-------| | 12:51 | `goal7-perf-profile-verified-2026-11-20.md` written claiming --verify PASS | | 13:59 | `goal7-",
+      "t2_tokens": 55,
+      "t3_title": "Correction: Mechanic Goal 7 -- Stale `--verify` Evidence Claim",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/researcher/mechanic-goal8-fleet-status-stale-2026-11-19.md",
+      "lines": 59,
+      "t1_tokens": 650,
+      "t2_abstract": "Parent: memory/researcher/INDEX.md. Re-implement from scratch (or restore from White canonical if a backup exists). 1.",
+      "t2_tokens": 19,
+      "t3_title": "STALE EVIDENCE: Mechanic Goal 8 (Fleet Status API) - Verification 2026-11-19",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/researcher/memory-compression-report.md",
+      "lines": 69,
+      "t1_tokens": 286,
+      "t2_abstract": "Generated: 2026-11-23 08:00 Scanned: 2534 .md files in memory/ Redundant claims (3+ locations): 5. - 5 facts would each have a single canonical home. - Canonical source: memory/ops/network-config.md (canonical port assignments) - Current duplicates: - memory/ONBOARDING.md - memory/builder/fleet_heal",
+      "t2_tokens": 49,
+      "t3_title": "Memory Compression Report",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/researcher/memory-health-endpoint-reverted-2026-11-16.md",
+      "lines": 58,
+      "t1_tokens": 666,
+      "t2_abstract": "Date: 2026-11-16 \u00b7 Author: Researcher (assist on Scribe open goal #9) \u00b7 Owner to act: **Scribe** Parent index: memory/researcher/INDEX.md. Metric definitions are reusable; only landing+commit is missing. - EVIDENCE: endpoint code is not in the live file; file size grew to ~181 KB (still over the 150 KB must-split threshold).",
+      "t2_tokens": 65,
+      "t3_title": "Finding: Scribe's /api/memory-health endpoint is ABSENT from live agent_portal.py",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/researcher/mirror-revert-analysis-template-2026-11-18.md",
+      "lines": 88,
+      "t1_tokens": 971,
+      "t2_abstract": "Pre-drafted 2026-11-18. The live mirror log will give the true count; this table provides the expected SHAPE for cross-checking. Mechanism: [FILL.",
+      "t2_tokens": 27,
+      "t3_title": "Mirror-Revert Frequency Analysis (goal #3) - TEMPLATE",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/researcher/mirror-revert-checktool-2026-11-18.md",
+      "lines": 58,
+      "t1_tokens": 708,
+      "t2_abstract": "Date: 2026-11-18 (auto-loop pass, day 2/7 of the live-data window 11-17\u219211-24). - NEW memory/researcher/check_goal3_ready.py (orchestrator) - NEW memory/researcher/_test_check_goal3_ready.py (branch harness, ALL PASS) - EDIT memor Branch mapping (from the runbook's pre-decided contingency table): - NO-DRIVE  : live log path not mapped this session (environmental variance; seed w",
+      "t2_tokens": 61,
+      "t3_title": "Mirror-revert goal #3 \u2014 turnkey readiness/closure orchestrator (check_goal3_ready.py)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/researcher/mirror-revert-closure-runbook-2026-11-17.md",
+      "lines": 110,
+      "t1_tokens": 3036,
+      "t2_abstract": "Pre-staged 2026-11-17 so closure is ONE command once the live window (11-17\u219211-24) fills. Next checkpoint = day-3 escalation at 11-20 per ladder. | Day | Sampled at | Log size (lines) | Live events | Note | |-----|-----------|------------------|-------------|------| | 1   | 11-17 ~20:53 / rechec",
+      "t2_tokens": 58,
+      "t3_title": "Mirror-Revert Deep-Dive \u2014 Day-7 Closure Runbook (goal #3)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/researcher/mirror-revert-preliminary-freq-table-2026-11-18.md",
+      "lines": 76,
+      "t1_tokens": 644,
+      "t2_abstract": "Date: 2026-11-18 (day 2 of window 11-17 to 11-24) Goal: #3 Mirror-revert root-cause deep-dive Method: Canonical pin files in memory/designer/ as obser - Pin scan run: 2026-11-18 (this pass) - Most recent pin: abf83b77ca4d_2026-11-18a.html (mtime 11-18 00:19) - Total pins at scan time: 49. | File | Total Pins | 11-16 | 11-17 | 11-18 | Notes | |------|-----------|-------|-------|-------|-------| | index.html | 46 | ~21 | 23 | 1 | Dominant",
+      "t2_tokens": 92,
+      "t3_title": "Preliminary Revert-Frequency Table (File-Based Proxy)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/researcher/model-residency-study-2026-11-17.md",
+      "lines": 54,
+      "t1_tokens": 815,
+      "t2_abstract": "Source: agents.json (on-disk) cross-referenced with memory/llm/hosts.md (dual-resident layout, last confirmed 11-14) + MEMORY.md hot note (White model Handoff: Orchestrator to apply the two binding fixes; Verifier to smoke-test post-fix. | Agent | agents.json model_id | Routed to (per config) | Intended host | Alias registered on host | Loaded? | Match | |-------|---------------------|",
+      "t2_tokens": 68,
+      "t3_title": "Fleet Model Residency Study v2 \u2014 2026-11-17",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/researcher/open-questions-log.md",
+      "lines": 246,
+      "t1_tokens": 9167,
+      "t2_abstract": "Last updated: 2026-11-20 (mid-cycle re-audit pass-13, Researcher seat) \u2014 ZERO BREACHES; OPEN section reconciled to sla_registry.json. No further action possible from sandbox seat until external sign-off or window progression. - 2026-11-20 pass-13 | **White Q4 live ctx 131072 vs boot recipe 65k** \u2014 RESOLVED: ACCEPT-LIVE signed by Builder; Researcher independently re-verified",
+      "t2_tokens": 66,
+      "t3_title": "Open questions log (researcher) - newest first, one line per question",
+      "t3_tokens": 14
+    },
+    {
+      "file": "memory/researcher/overnight-unload-analysis.md",
+      "lines": 72,
+      "t1_tokens": 1056,
+      "t2_abstract": "**Date:** 2026-11-20. - [x] Report identifies >=1 causal factor: **2 identified** (PRIORITY_EVICTION primary, VRAM pressure secondary) - [x] Timestamps align with log entri - **32 VRAM_EXCEEDED alerts**, split into two classes: - `large-context-model` needs 48.0 GB but only 32.0 GB free on White \u2192 **impossible load** (rep",
+      "t2_tokens": 61,
+      "t3_title": "Overnight Unload Correlation Analysis \u2014 Researcher Goal #4",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/researcher/reproducibility-protocol.md",
+      "lines": 325,
+      "t1_tokens": 2263,
+      "t2_abstract": "--- title: Research Reproducibility Protocol owner: Researcher created: 2026-11-20 goal: \"researcher.md #7\" type: protocol version: 1.0 ---. A `reproducibility_check.py` validator can be run to find non-compliant leaves:. | Field | Rules | |-------|-------| | `hypothesis` | Must be falsifiable.",
+      "t2_tokens": 50,
+      "t3_title": "Reproducibility Protocol",
+      "t3_tokens": 2
+    },
+    {
+      "file": "memory/researcher/source-reliability-2026-11-22.md",
+      "lines": 91,
+      "t1_tokens": 1097,
+      "t2_abstract": "Date: 2026-11-22 | Fleet sources scored: 61. | | http:// | 1 | 2 | 1 | memory/portal/architecture.md, memory/ar | | https://devblogs.microsoft.com/agent-framework/microsoft-age | 1 | 2 | 0 | memo | Score | Meaning | |-------|---------| | 8-10 | High reliability: heavily cited, positive context, no contradictions | | 5-7.9 | Moderate: regularly ",
+      "t2_tokens": 68,
+      "t3_title": "Source Reliability Scoring Report",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/researcher/sync-clobber-analysis-2026-11-13.md",
+      "lines": 93,
+      "t1_tokens": 3031,
+      "t2_abstract": "For Mechanic (mtime guard + UNC A/B) and Orchestrator (escalation evidence). My r17 adjudication input stands as-is. - First-hand re-probe (White): root index.html = 9c6b08e3 / 67,681 B, mtime 19:57:38 unchanged since the r14 GO wave - zero drift.",
+      "t2_tokens": 50,
+      "t3_title": "Researcher analysis \u2014 OPS r3 sync clobber (2026-11-13)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/researcher/sync-semantics-spec-2026-11-17.md",
+      "lines": 317,
+      "t1_tokens": 2675,
+      "t2_abstract": "**Consumer:** Mechanic \u2014 implement in `memory_mirror.py` + new sidecar files. Single-writer on the manifest itself. | # | Test | Input | Expected | |---|------|-------|----------| | T1 | `resolve_owner` default | path=\"TODO.md\" | returns \"White\" | | T2 | `resolve_ow",
+      "t2_tokens": 52,
+      "t3_title": "Sync-Semantics Implementation Spec (Goal #1, 2026-11-17)",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/researcher/ui-slices-audit-2026-11-17.md",
+      "lines": 59,
+      "t1_tokens": 568,
+      "t2_abstract": "Date: 2026-11-17 | Auditor: Researcher. No inference required. - **Pinned sha12:** `e998e75a0ae4` (backup at memory/designer/index_html_CANONICAL_e998e75a0ae4_2026-11-16x.html) - **Disk sha12:** `b9bd8240cf85` - *",
+      "t2_tokens": 27,
+      "t3_title": "UI Slices Audit \u2014 Definitive Ground Truth (Researcher)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/researcher/understanding-flow-test-2026-11-18.md",
+      "lines": 51,
+      "t1_tokens": 546,
+      "t2_abstract": "Tested `memory/researcher/understanding.py` and its two integration points in `agent_portal.py`: synonym expansion in `_mem_local_hits` (L1436) and di - memory/researcher/understanding.py (module) - memory/researcher/dictionary_core.json (69 entries) - memory/researcher/dictionary_project.json (31 en 1.",
+      "t2_tokens": 36,
+      "t3_title": "Understanding Module \u2192 Portal Flow Test (2026-11-18, Researcher)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/scribe/assist-archivist-goal2-dead-rate-analysis-2026-11-19.md",
+      "lines": 58,
+      "t1_tokens": 531,
+      "t2_abstract": "Date: 2026-11-19 By: Scribe (assisting Archivist goal #2 Citation Accuracy Audit). Evidence path: memory/scribe/assist-archivist-goal2-dead-rate-analysis-2026-11-19.md. | # | URL | Status | True classification | Reason | |---|-----|--------|-------------------|--------| | 1 | deepwiki.com/crewAIInc/...",
+      "t2_tokens": 40,
+      "t3_title": "Assist: Archivist Goal #2 \u2014 Dead-External Rate Reclassification",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/scribe/cards/anti-stall.md",
+      "lines": 51,
+      "t1_tokens": 384,
+      "t2_abstract": "_Generated: 2026-11-20 | Sources: 9 files | Key facts: 11_. - `memory\\scribe\\goal2-cycle-narrative-progress-2026-11-20.md` (2 facts) - `memory\\scribe\\maintenance-pass-2026-11-19b.md` (2 facts) - `memory\\mechani 9.",
+      "t2_tokens": 27,
+      "t3_title": "anti-stall - Reference Card",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/scribe/cards/hotload.md",
+      "lines": 103,
+      "t1_tokens": 724,
+      "t2_abstract": "_Generated: 2026-11-20 | Sources: 20 files | Key facts: 145_. - `memory\\scribe\\memory-hygiene-report.json` (23 facts) - `memory\\mechanic\\hotload-controller-built-2026-11-17.md` (16 facts) - `memory\\goals\\schedule 25.",
+      "t2_tokens": 27,
+      "t3_title": "hotload - Reference Card",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/scribe/cards/mirror.md",
+      "lines": 102,
+      "t1_tokens": 968,
+      "t2_abstract": "_Generated: 2026-11-20 | Sources: 19 files | Key facts: 323_. - `memory\\scribe\\memory-hygiene-report.json` (66 facts) - `memory\\archivist\\digest-47-2026.md` (46 facts) - `memory\\researcher\\INDEX.md` (28 facts) -  17.",
+      "t2_tokens": 31,
+      "t3_title": "mirror - Reference Card",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/scribe/decision_log.md",
+      "lines": 96,
+      "t1_tokens": 1550,
+      "t2_abstract": "Format: {date, decision, context, alternatives_considered, rationale, owner} Source: extracted from memory/synthesis/ files via migrate_decisions.py ( Migration script: memory/scribe/migrate_decisions.py*. - **decision**: File-integrity guards pinned for three critical artifacts: probe JSON (check+size+verdict), agents.json (schema-validity+newest-mtime)",
+      "t2_tokens": 41,
+      "t3_title": "Decision Log v2 - Structured Fleet Decisions",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/scribe/goal6-quality-score-evidence-2026-11-18.md",
+      "lines": 63,
+      "t1_tokens": 564,
+      "t2_abstract": "\"Scoring rubric documented; 5 test syntheses scored with justification.\". VERIFIED 2026-11-18  rubric documented; 5 syntheses scored with per-dimension justification; fleet avg 8.16 > 8.0 target. | File | C | A | Co | Ac | Composite | Status | |------|---|---|----|----|-----------|--------| | 2026-11-14-planning-meeting-v2.md | 9 | 10 | 10 | 3 ",
+      "t2_tokens": 66,
+      "t3_title": "Evidence: Synthesis Quality Score (Scribe goal #6, 2026-11-18)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/scribe/hygiene-report-2026-11-19.md",
+      "lines": 77,
+      "t1_tokens": 364,
+      "t2_abstract": "Generated: 2026-11-19 00:45 by Scribe (memory/scribe/hygiene_report.py). Add INDEX.md references or archive 1461 orphaned files. - `memory/archivist/_patch2.py` - `memory/archivist/_patch_hostdoc.py` - `memory/archivist/api-ref-autogen-progress-2026-11-18.md` - `memory/archivist",
+      "t2_tokens": 28,
+      "t3_title": "Memory Hygiene Report \u2014 2026-11-19",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/scribe/memory-hygiene-2026-W47.md",
+      "lines": 65,
+      "t1_tokens": 637,
+      "t2_abstract": "Run by: Orchestrator (assist step for Scribe goal #10) Scope: `memory/` directory, excluding browser caches & __pycache__. --- *Generated 2026-11-19 by Orchestrator as assist step for Scribe goal #10.*. Largest orphans not referenced by any INDEX.md: | File | Size | |------|------| | goals/archive/researcher-2026-11-18.md | 32 KB | | researcher/mirror",
+      "t2_tokens": 65,
+      "t3_title": "Memory Hygiene Report \u2014 2026-11-19 (Week 47)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/scribe/memory-hygiene-report.md",
+      "lines": 73,
+      "t1_tokens": 609,
+      "t2_abstract": "| Metric | Value | Target | Status | |--------|-------|--------|--------| | Total files | 6103 | - | - | | Total size | 151026.8 KB | - | - | | Files  and 7460 more (see JSON). - `memory/archivist/kg_state.json` \u2014 928.8 KB - `memory/archivist/knowledge_graph_delta.jsonl` \u2014 682.7 KB - `memory/archivist/decay-report.md` \u2014 500.3",
+      "t2_tokens": 67,
+      "t3_title": "Memory Hygiene Report \u2014 2026-11-18",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/scribe/scoring-results-2026-11-19.md",
+      "lines": 53,
+      "t1_tokens": 809,
+      "t2_abstract": "Rubric: `memory/scribe/scoring-rubric.md`. - Fleet avg 8.75 exceeds target of 8/10. - **Completeness 8**: Covers cycles 1-4; discrepancies flagged honestly.",
+      "t2_tokens": 24,
+      "t3_title": "Scoring Results \u2014 2026-11-19 (Scribe goal #6)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/scribe/weekly-2026-W47.md",
+      "lines": 89,
+      "t1_tokens": 730,
+      "t2_abstract": "**Period:** 2026-11-16 to 2026-11-22 **Generated:** 2026-11-18 23:28. | Agent | Focus | Goals | |-------|-------|-------| | Orchestrator | Fleet self-management, auto goal-cycling, HR workflows | 10/10 open | | Researche Total: 48 - [builder] Component Library v1 (2026-11-18) - [builder] Goal Cycle Timeline Panel (2026-11-18) - [builder] Fleet Health Dashboard (2026-11",
+      "t2_tokens": 66,
+      "t3_title": "Weekly Fleet Summary - 2026-W47",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/scribe/xref-assist-2026-11-21.md",
+      "lines": 58,
+      "t1_tokens": 349,
+      "t2_abstract": "Generated: 2026-11-21T00:43:40 by memory/archivist/xref_check.py. - `memory/archivist/assist-scribe-goals2-3-5-reverify-2026-11-20.md:10` [arrow] -> scribe.md - `memory/archivist/xref-monitor-report-2026-11-20.md:82` - scanned files: 2134 - broken live xrefs: 48 - flagged-dead (quarantined) refs: 42 - status: **NOT CLEAN**.",
+      "t2_tokens": 37,
+      "t3_title": "Xref Integrity Report",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/scribe/xref-report-for-scribe-2026-11-21.md",
+      "lines": 103,
+      "t1_tokens": 642,
+      "t2_abstract": "Generated: 2026-11-21T01:02:32 by memory/archivist/xref_check.py. - `memory/archivist/assist-scribe-goals2-3-5-reverify-2026-11-20.md:10` [arrow] -> \u26a0missing:scribe.md - `memory/archivist/xref-monitor-report-2026-11- - scanned files: 2139 - broken live xrefs: 93 - flagged-dead (quarantined) refs: 42 - status: **NOT CLEAN**.",
+      "t2_tokens": 37,
+      "t3_title": "Xref Integrity Report",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/synthesis/2026-11-13-v102-upgrade-planning.md",
+      "lines": 63,
+      "t1_tokens": 1879,
+      "t2_abstract": "Date: 2026-11-13 \u00b7 Convened on human instruction: \"Check file access, run the upgrade planning meeting, we call it ID V102. - Consumer-risk item (Black 0-byte `agents.json` stub): CLOSED-nil for today's gate scripts (code-proven at two seats: SOURCE_CANDIDATES-only walk, ne - Mechanic fresh Red lane (this round): local read/write OK; uploads/AgentPortal_V1 = exactly 2 files sha256-12 73997ef06cd8 / c749c87d2a41, byte-iden",
+      "t2_tokens": 76,
+      "t3_title": "Upgrade planning meeting \u2014 ID V102 (Scribe)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-14-dream-big-planning.md",
+      "lines": 50,
+      "t1_tokens": 886,
+      "t2_abstract": "Filed by Scribe. Round record, no supersession. 1.",
+      "t2_tokens": 10,
+      "t3_title": "Dream-Big Planning Round (2026-11-14) \u2014 Scribe synthesis",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-r1-round-record-DRAFT.md",
+      "lines": 62,
+      "t1_tokens": 1748,
+      "t2_abstract": "Auto-drafted by round_record_draft.py at 2026-11-16T15:56:39.527332. Fields marked TBD need human/agent confirmation.*. - Goal-cycle transition completed: cycle 1 closed 80/80 verified; new goals set for all 8 agents x 10 (set 2026-11-16) - canonical memory/goals/<name>",
+      "t2_tokens": 44,
+      "t3_title": "Round Record - 2026-11-16 (r1) [DRAFT]",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-16-r1-round-record.md",
+      "lines": 62,
+      "t1_tokens": 1743,
+      "t2_abstract": "Auto-drafted by round_record_draft.py at 2026-11-16T15:56:39.527332. All owners resolved from source context.*. - Goal-cycle transition completed: cycle 1 closed 80/80 verified; new goals set for all 8 agents x 10 (set 2026-11-16) - canonical memory/goals/<name>",
+      "t2_tokens": 44,
+      "t3_title": "Round Record - 2026-11-16 (r1)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/synthesis/2026-11-17-r1-round-record-DRAFT.md",
+      "lines": 62,
+      "t1_tokens": 1631,
+      "t2_abstract": "Auto-drafted by round_record_draft.py at 2026-11-17T21:56:32.751406. Fields marked TBD need human/agent confirmation.*. - Goals \"blocked\" false positive fixed: _goals_snapshot now counts only explicit \"(blocked: ...)\" / [BLOCKED] markers (Mechanic cycle-2 #6 \"outbound b",
+      "t2_tokens": 41,
+      "t3_title": "Round Record - 2026-11-17 (r1) [DRAFT]",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-17-r2-round-record-DRAFT.md",
+      "lines": 62,
+      "t1_tokens": 1631,
+      "t2_abstract": "Auto-drafted by round_record_draft.py at 2026-11-17T23:56:25.883275. Fields marked TBD need human/agent confirmation.*. - Goals \"blocked\" false positive fixed: _goals_snapshot now counts only explicit \"(blocked: ...)\" / [BLOCKED] markers (Mechanic cycle-2 #6 \"outbound b",
+      "t2_tokens": 41,
+      "t3_title": "Round Record - 2026-11-17 (r2) [DRAFT]",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-18-r1-round-record-DRAFT.md",
+      "lines": 62,
+      "t1_tokens": 1608,
+      "t2_abstract": "Auto-drafted by round_record_draft.py at 2026-11-18T12:18:29.306401. Fields marked TBD need human/agent confirmation.*. - Goals \"blocked\" false positive fixed: _goals_snapshot now counts only explicit \"(blocked: ...)\" / [BLOCKED] markers (Mechanic cycle-2 #6 \"outbound b",
+      "t2_tokens": 41,
+      "t3_title": "Round Record - 2026-11-18 (r1) [DRAFT]",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-18-r2-round-record-DRAFT.md",
+      "lines": 62,
+      "t1_tokens": 1608,
+      "t2_abstract": "Auto-drafted by round_record_draft.py at 2026-11-18T12:18:28.630493. Fields marked TBD need human/agent confirmation.*. - Goals \"blocked\" false positive fixed: _goals_snapshot now counts only explicit \"(blocked: ...)\" / [BLOCKED] markers (Mechanic cycle-2 #6 \"outbound b",
+      "t2_tokens": 41,
+      "t3_title": "Round Record - 2026-11-18 (r2) [DRAFT]",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/synthesis/2026-11-18-r3-round-record-DRAFT.md",
+      "lines": 62,
+      "t1_tokens": 1608,
+      "t2_abstract": "Auto-drafted by round_record_draft.py at 2026-11-18T12:18:25.295561. Fields marked TBD need human/agent confirmation.*. - Goals \"blocked\" false positive fixed: _goals_snapshot now counts only explicit \"(blocked: ...)\" / [BLOCKED] markers (Mechanic cycle-2 #6 \"outbound b",
+      "t2_tokens": 41,
+      "t3_title": "Round Record - 2026-11-18 (r3) [DRAFT]",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/synthesis/archive-nav.md",
+      "lines": 102,
+      "t1_tokens": 3615,
+      "t2_abstract": "Curated index of all files in `memory/synthesis/`, organized by theme. | Agents: Scribe | 2026-11-17 - **2026-11-17 \u2014 Scribe assist: schtask sandbox limitation documented** (`memory/synthesis/2026-11-17-schtask-unblock-no - **2026-11-14 AC-A2 sweep closeout \u2014 round record (Scribe)** (`memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md`) - Filed: 2026-11-14 ~13:4x, Scri",
+      "t2_tokens": 52,
+      "t3_title": "Synthesis Archive Navigation Index",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/synthesis/completion-patterns.md",
+      "lines": 90,
+      "t1_tokens": 1025,
+      "t2_abstract": "*Generated: 2026-11-23 by Scribe (completion_patterns.py)* *Data: 410 unique goals across cycles 1-9, 8 agents*. Setting a minimum scope floor (e.g., \"must cover >=3 scenarios\") would make the metric more meaningful and prevent goal inflation through easy verify  | Agent | build | verify | research | design | ops | |-------|-------|--------|----------|--------|-----| | archivist | 93% | 100% | 90% | \u2014 | 33% | |",
+      "t2_tokens": 84,
+      "t3_title": "Goal Completion Pattern Analysis",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/synthesis/decision-digest-2026-11-23.md",
+      "lines": 68,
+      "t1_tokens": 731,
+      "t2_abstract": "**Period:** all-time (first digest) **Total decisions:** 32 **Rollbacks/corrections:** 3. - Portal/UI work accounts for 3 decisions - frontend is an active investment area. - [2026-11-13] 7.",
+      "t2_tokens": 33,
+      "t3_title": "Fleet Decision Digest - 2026-11-23",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/synthesis/index-regen-r73-archivist-2026-11-14.md",
+      "lines": 51,
+      "t1_tokens": 665,
+      "t2_abstract": "Filed: 2026-11-14, Archivist. - Whether my bf00e643 INDEX.md survives the next mirror sync is unproven until a second-seat sweep; this leaf is the fallback of record either way. - 2026-11-12-consolidated-state.md | 5477 B | 06611885de4cc03d701fd688f73d75e1 - 2026-11-12-upgrade-round.md | 1853 B | 104fd7cc55275a35d636101715e222",
+      "t2_tokens": 54,
+      "t3_title": "index-regen-r73-archivist \u2014 synthesis INDEX 24/24 (durable payload)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/synthesis/knowledge-delta-cycle10.md",
+      "lines": 61,
+      "t1_tokens": 273,
+      "t2_abstract": "Generated: 2026-11-23 07:20 Cycle window: 2026-11-23 -> now. All archived content has active successors or is intentionally retired. - **other**: 68 files - memory/synthesis\\completion-patterns-2026-11-23.md - memory/scribe\\app-css-hex-audit-2026-11-23.md - memory/scribe\\app-css-tok",
+      "t2_tokens": 36,
+      "t3_title": "Fleet Knowledge Delta - Cycle 10",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/synthesis/supersession-policy-baseline.md",
+      "lines": 67,
+      "t1_tokens": 624,
+      "t2_abstract": "Source: consumes Archivist#5 handoff HO-20261116-supersession-report.md; policy authored by Scribe as charter owner. Full report: `memory/scribe/supersession-report.json` (regenerated each run). 1.",
+      "t2_tokens": 24,
+      "t3_title": "Supersession-Chain Policy \u2014 Baseline (Scribe#5, cycle 2)",
+      "t3_tokens": 9
+    },
+    {
+      "file": "memory/verifier/a11y-report.md",
+      "lines": 100,
+      "t1_tokens": 595,
+      "t2_abstract": "Date: 2026-11-18. - **WCAG:** 1.3.1 / 3.3.2 - **Line:** 127 - **Detail:** Input #f_ragkey (type=password) has no associated <label> or aria-label (line 127). - **WCAG:** 1.3.1 / 3.3.2 - **Line:** 156 - **Detail:** Input #f_fastfirst (type=checkbox) has no associated <label> or aria-label (line 156).",
+      "t2_tokens": 57,
+      "t3_title": "Portal Accessibility Audit - WCAG 2.1 AA (Static)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/verifier/bug-repro-and-finding-2026-11-16.md",
+      "lines": 51,
+      "t1_tokens": 549,
+      "t2_abstract": "Date: 2026-11-16. A non-sandbox seat should re-confirm against the current served pin before final ruling, but the probability of drift introducing 6+ new CSS custom pr **Reported by:** Mechanic (fleet health monitoring) **Reproduction command:** `python memory/verifier/fleet_crosscheck.py` (first run, all remotes dea",
+      "t2_tokens": 53,
+      "t3_title": "Verifier \u2014 Bug Reproduction Log (Goal #5) + Finding F-VER-01",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/verifier/concurrency-test-2026-11-20.md",
+      "lines": 68,
+      "t1_tokens": 661,
+      "t2_abstract": "Generated: 2026-11-20 23:49:13 Source: agent_portal.py (4763 lines). - 0 locks held across a generation: YES - invariant holds by construction: YES. - L673 `with _act_lock:` -> body holds NO generation call  [OK] - L917 `with _fleet_lock:` -> body holds NO generation call  [OK] - L922 `with _fleet_",
+      "t2_tokens": 61,
+      "t3_title": "Concurrency Verification (cycle-8 goal #5) - STATIC leg",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/verifier/contradiction-sweep-2026-11-17.md",
+      "lines": 67,
+      "t1_tokens": 648,
+      "t2_abstract": "--- date: 2026-11-17T10:51:18.035676+00:00 suite: cross-agent-claim-contradiction-sweep pass: 6 fail: 4 total: 10 evidence_path: memory/verifier/contr **Verifier Goal #10**: Extend evolution_validator.py with select/merge/archive stage tests. **Claim**: \"idempotency_proof.py tests /api/user-messages, /api/goals, upload under 5x concurrency (Goal #6)\" **Actual**: Script tests /api/chat, /api",
+      "t2_tokens": 49,
+      "t3_title": "Contradiction Sweep 2026 11 17",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/verifier/coverage-heatmap-2026-11-23.md",
+      "lines": 224,
+      "t1_tokens": 1950,
+      "t2_abstract": "Scanned: `539` source modules, `59` test files API endpoints in `agent_portal.py`: `55` Method: AST import analysis + precise string matching (base na - [x] All /api/* endpoints assessed: 55 found, 14 uncovered - [x] >=3 uncovered high-risk paths identified: 35 modules + 14 endpoints = 49 gaps - [x]  | Test File | # Source Modules Referenced | Top References | |-----------|----------------------------|----------------| | `activity-timeline\\test_act",
+      "t2_tokens": 83,
+      "t3_title": "Verification Coverage Heatmap \u2014 2026-11-23",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/verifier/css-tokenization-verify-2026-11-17.md",
+      "lines": 64,
+      "t1_tokens": 578,
+      "t2_abstract": "--- date: 2026-11-17T12:00:00Z suite: css-tokenization-verify pass: 0 fail: 2 total: 2 evidence_path: memory/verifier/css-tokenization-verify-2026-11- Remaining hex debt still present (see table above). | Line | Color | Context (truncated) | |------|-------|---------------------| | 6 | `#0e1116` | `:root{--bg:#0e1116;--panel:#151a22;--panel2:#1b2230;-",
+      "t2_tokens": 46,
+      "t3_title": "Css Tokenization Verify 2026 11 17",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/verifier/cycle-5-report.md",
+      "lines": 134,
+      "t1_tokens": 877,
+      "t2_abstract": "**Generated:** 2026-11-18 20:05 **Scope:** All agent goal files in `memory/goals/`. - \u2b1c **1.** Proactive Health Check Cron - \u2b1c **2.** Auto-Restart Runbook - \u2b1c **3.** Host Recovery Matrix - \u2b1c **4.** Disk Space Monitor + Auto-Clean - \u2b1c  - \u2705 **1.** Source Reliability Scorer (verified 2026-11-18) - \u2705 **2.** Cross-Check Pipeline (verified 2026-11-18) - \u2b1c **3.** Confidence-Annotated KB En",
+      "t2_tokens": 76,
+      "t3_title": "Cycle-5 Evidence Report",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/verifier/cycle-8-quality-report.md",
+      "lines": 58,
+      "t1_tokens": 360,
+      "t2_abstract": "Generated: 2026-11-20 23:44 by `memory/verifier/cycle_quality.py` (local artifacts only; no :8099 egress). goals 13/80 (16%) SLO=PASS security findings=6 perf=DEGRADED dangling refs=0. | Agent | Closed | Total | % | |-------|-------|-------|---| | archivist | 0 | 10 | 0% | | builder | 3 | 10 | 30% | | designer | 0 | 10 | 0% | | mecha",
+      "t2_tokens": 76,
+      "t3_title": "Cycle 8 Quality Report",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/verifier/designer-goal3-svg-animation-overclaim-2026-11-19.md",
+      "lines": 53,
+      "t1_tokens": 435,
+      "t2_abstract": "Date: 2026-11-19 | Verified-by: Verifier (auto-loop option-c). If Goal 3 was being counted as \"reached\" in any ledger, it should be DECREMENTED until re-verified with animation present. | Criterion | Claimed | Actual | Status | |-----------|---------|--------|--------| | Mini bar charts per agent | inline SVG | CSS span with % width |",
+      "t2_tokens": 68,
+      "t3_title": "Verifier: Designer Goal 3 (Data Visualization) \u2014 SVG+Animation Overclaim",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/verifier/designer-goal7-motion-audit-2026-11-18.md",
+      "lines": 54,
+      "t1_tokens": 341,
+      "t2_abstract": "1. Goal #7 is ready for closure. | Rule | Max duration | Status | |------|-------------|--------| | border-color .15s, color .15s, background-color .15s, opacity .15s | 150ms | ok | |",
+      "t2_tokens": 40,
+      "t3_title": "Verifier: Designer Goal #7 - Motion & Animation Audit (2026-18)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/verifier/dream-big-wishes-2026-11-14.md",
+      "lines": 54,
+      "t1_tokens": 648,
+      "t2_abstract": "1. Ready for integration once portal is back up (Arnold's console pass). | AC ID | What to verify | Pass condition | |-------|---------------|----------------| | V-01 | Portal serves index.html at :8099 | HTTP 200, valid HT",
+      "t2_tokens": 48,
+      "t3_title": "Verifier Dream-Big Wishes (2026-11-14)",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/verifier/evidence-xref-report-2026-11-20.md",
+      "lines": 59,
+      "t1_tokens": 664,
+      "t2_abstract": "**Generated:** 2026-11-20 22:28. - Scanned all `memory/goals/*.md` (excluding archive/) - Patterns: `(pointer: <path>)` and `Evidence: <path>` - Placeholder refs (relpath, <...>, ...) | Source | Line | Type | Target | Exists | |--------|------|------|--------|--------| | memory/goals/archivist.md | 5 | pointer | `memory/archivist/in",
+      "t2_tokens": 54,
+      "t3_title": "Evidence Cross-Reference Graph Report",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/verifier/goal-acceptance-report-2026-11-20.md",
+      "lines": 106,
+      "t1_tokens": 2056,
+      "t2_abstract": "**Run:** 2026-11-20 13:26 UTC. | Agent | Goal | Title | Class | Result | Detail | |-------|------|-------|-------|--------|--------| | archivist | #1 | Orphan Remediation Sweep | ma - Total goals parsed: **80** - Auto-verifiable: **37** (46%) - PASS: **36** - FAIL: **1** - Manual (needs live/human): **43**.",
+      "t2_tokens": 62,
+      "t3_title": "Goal Acceptance Auto-Check Report",
+      "t3_tokens": 5
+    },
+    {
+      "file": "memory/verifier/INDEX.md",
+      "lines": 123,
+      "t1_tokens": 2821,
+      "t2_abstract": "Last updated: 2026-11-22. Data intact; goal remains OPEN pending Nov 22 probe. - evidence-perf-gate-failclosed-2026-11-20.md \u2014 **PROGRESS (Goal #1 Perf Gate)**: hardened perf_gate.py to FAIL-CLOSED on invalid baselines.",
+      "t2_tokens": 35,
+      "t3_title": "memory/verifier/ INDEX",
+      "t3_tokens": 2
+    },
+    {
+      "file": "memory/verifier/mechanic-goal8-fleet-status-gap-2026-11-19.md",
+      "lines": 64,
+      "t1_tokens": 564,
+      "t2_abstract": "**Status: GAP CONFIRMED - endpoint exists but incomplete vs spec**. --- Verifier: evidence-first gap analysis; no code changes made; all claims verified by reading agent_portal.py source. 1.",
+      "t2_tokens": 35,
+      "t3_title": "Mechanic Goal 8 - Fleet Status API: Gap Analysis (2026-11-19)",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/verifier/scribe-goal2-v2-reconciliation-2026-11-18.md",
+      "lines": 53,
+      "t1_tokens": 518,
+      "t2_abstract": "- date: 2026-11-18 - tester: Verifier seat (auto-loop, option (c): verify & close one stale evidence claim in the ledger) - status: **RESOLVED \u2014 earli - memory/scribe/contradiction_detector.py (7310 B, 185 L, all 5 v2 types) - memory/scribe/_test_claims_v2.json (clean, 5 claims) \u2192 5/5 PASS exit 0 - m - **Clean corpus: 5/5 PASS, exit 0** \u2192 \"zero false positives on clean data\" acceptance criterion MET.",
+      "t2_tokens": 83,
+      "t3_title": "Verifier: Scribe Goal #2 (Contradiction Detector v2) \u2014 STALE-CLAIM RECONCILIATION",
+      "t3_tokens": 13
+    },
+    {
+      "file": "memory/verifier/security-audit-2026-11-20.md",
+      "lines": 184,
+      "t1_tokens": 1670,
+      "t2_abstract": "**Auditor:** Verifier **Scope:** `agent_portal.py` (4764 lines) + `ui/*.js` frontend files **Method:** Static analysis (code reading, pattern matching All HIGH/MEDIUM are architectural (no auth + CORS) rather than code bugs \u2014 they reflect the \"single-user local workstation\" threat model being accepte | # | Vector | Result | |---|--------|--------| | 1 | Path traversal (`../../etc/passwd`) | BLOCKED by realpath + prefix check | | 2 | Command injecti",
+      "t2_tokens": 87,
+      "t3_title": "Security Audit \u2014 agent_portal.py (2026-11-20)",
+      "t3_tokens": 6
+    },
+    {
+      "file": "memory/verifier/security-report.md",
+      "lines": 178,
+      "t1_tokens": 837,
+      "t2_abstract": "Generated: 2026-11-19 16:37 UTC Files scanned: 97 **Verdict: FAIL (40 issues)**. - **agent_portal.py:3963** \u2014 Wildcard CORS origin (*) \u2014 restrict to known origins - **agent_portal.py:3975** \u2014 Wildcard CORS origin (*) \u2014 restrict to  - **ui/components.js:22** \u2014 innerHTML from dynamic variable (XSS risk) - **ui/components.js:59** \u2014 innerHTML from dynamic variable (XSS risk) - **ui/c",
+      "t2_tokens": 68,
+      "t3_title": "Security Scan Report",
+      "t3_tokens": 3
+    },
+    {
+      "file": "memory/verifier/self-cert-audit-v2-2026-11-16.md",
+      "lines": 92,
+      "t1_tokens": 1028,
+      "t2_abstract": "- **Total evidence markers checked:** 147 - **Clean (evidence exists + real content):** 71 (48%) - **Flagged (orphaned/hollow):** 76 (52%). Delta from baseline: +1pp. | Agent | Clean/Total | Rate | Status | |-------|-------------|------|--------| | 2026-11-13-agent-goals | 9/18 | 50% | CRIT | | INDEX | 0/1 | 0% | CR",
+      "t2_tokens": 66,
+      "t3_title": "Self-Certification Audit v2 - 2026-11-16 15:17",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/verifier/self-cert-audit-v2-2026-11-16b.md",
+      "lines": 81,
+      "t1_tokens": 800,
+      "t2_abstract": "**Result: 106/234 = 45% clean** (baseline 48%, target >=90%). - `#2: Fault injection suite - 5+ chaos scenarios (kill mid-request, corrupt files, dro` - `#3: Evidence hash chain - SHA256-chained verification log, | Agent | Clean/Total | Rate | Status | |-------|-------------|------|--------| | 2026-11-13-agent-goals | 23/60 | 38% | CRIT | | INDEX | 0/0 | N/A | ",
+      "t2_tokens": 75,
+      "t3_title": "Self-Certification Audit v2 - RE-RUN (2026-11-16 06:22 UTC)",
+      "t3_tokens": 10
+    },
+    {
+      "file": "memory/verifier/sla-report-week1-2026-11-17.md",
+      "lines": 61,
+      "t1_tokens": 313,
+      "t2_abstract": "--- date: 2026-11-17 suite: verification-sla-weekly pass: 56 fail: 62 total: 118 evidence_path: memory/verifier/sla-tracking-data.json ---. Next report due ~2026-11-24.*. - Verdict time = file mtime (when evidence artifact was written) - Claim time = date extracted from filename (work assignment date); if absent, assume",
+      "t2_tokens": 55,
+      "t3_title": "Sla Report Week1 2026 11 17",
+      "t3_tokens": 7
+    },
+    {
+      "file": "memory/verifier/stale-claim-padding-px-correction-2026-11-19.md",
+      "lines": 52,
+      "t1_tokens": 458,
+      "t2_abstract": "Date: 2026-11-19 Verifier: Verifier (auto-loop pass) Severity: LOW (progress note, not acceptance-test blocker). Output: 4 lines (L266, L269, L295, L492). | Line | Property | Value | Context | |------|----------|-------|---------| | 266  | padding  | `var(--sp-1) 5px` | `code` element (micro-spacing) | |",
+      "t2_tokens": 55,
+      "t3_title": "Stale Claim Correction: \"0 hardcoded px remain in app.css\"",
+      "t3_tokens": 11
+    },
+    {
+      "file": "memory/verifier/wcag-light-theme-verify-2026-11-23.md",
+      "lines": 63,
+      "t1_tokens": 664,
+      "t2_abstract": "**Claim under test (hot note):** \"Light-theme WCAG AA audit done: 6 tokens below 4.\". **Verified by:** Verifier, 2026-11-23. - **--faint** (3.41-3.69:1): Used for placeholder text, timestamps, disabled states.",
+      "t2_tokens": 36,
+      "t3_title": "WCAG Light-Theme Contrast Verification - 2026-11-23",
+      "t3_tokens": 7
+    }
+  ],
+  "metrics": {
+    "total_full_tokens": 475435,
+    "total_t2_tokens": 15855,
+    "total_t3_tokens": 2723,
+    "savings_t2_pct": 96.7,
+    "savings_t3_pct": 99.4
+  }
+}

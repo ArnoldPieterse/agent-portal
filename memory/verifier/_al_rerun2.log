@@ -1,0 +1,16 @@
+warning: Failed to set cwd to temp dir
+[selftest] Building corpus...
+[selftest] Corpus: 2607 existing .md files
+  [PASS] fleet-white-oom.md: 3 links, top=memory\archivist\dcabots-intake-2026-11-14.md
+  [PASS] model-loading-protocol.md: 3 links, top=memory\handoffs\INDEX.md
+  [PASS] portal-ui-css.md: 3 links, top=memory\portal\INDEX.md
+  [PASS] knowledge-index-build.md: 3 links, top=memory\INDEX.md
+  [PASS] winrm-remote-execution.md: 3 links, top=memory\archivist\dcabots-intake-2026-11-14.md
+  [PASS] goal-ledger-tracking.md: 3 links, top=memory\archivist\blocker-cleanup-2026-11-20.md
+  [PASS] freshness-decay-scoring.md: 3 links, top=memory\archivist\decay-alerts.md
+  [PASS] citation-integrity-check.md: 3 links, top=memory\archivist\citation-triage-2026-11-20.md
+  [PASS] cockpit-api-endpoints.md: 3 links, top=memory\archivist\api-ref-e2e-2026-11-18.md
+  [PASS] archive-compaction-policy.md: 3 links, top=memory\archivist\dup-detect-report-2026-11-20.md
+  [PASS] idempotency: re-run produces same result, 1 block(s)
+
+[selftest] 11/11 checks passed
