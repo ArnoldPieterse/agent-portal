@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer wrote kb-panels-design-spec-2026-11-23.md — Cockpit UI spec for Archivist's knowledge-service scripts, ready for Builder next cycle
-- Builder built host_probes.py (4 probes, 7/7 selftest) for Mechanic Goal #3; remaining: schtask reg + real-host verify.
 - Scribe cycle-11 goals set (10, Closed-Loop Autonomy & Fleet Cockpit); file at memory/goals/scribe.md
 - Cycle-15 theme: intelligence layer (learn, correlate, predict, self-verify) on top of cycle-14 execution backbone. Goals in memory/goals/bui
 - Cycle-11 goals (10) written to memory/goals/mechanic.md; old archived to archive/mechanic-202
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer cycle-12 direction: adaptive/forward-looking/operable cockpit (density modes by risk, provenance overlay, concurrency board)
 - Cycle-15 goals set; round topic: "Fleet Evolution & Continuous Self-Improvement" — fleet reconfigures own composition and identifies capabil
 - Verifier's oldest open goal: build full E2E remediation test; last attempt truncated by response length —
+- kb_incr_rebuild.py built; known bug: os.walk needs str path not Path — fix: os.walk(str(MEMORY/d)), pending next pass
+- attribution.py complete: logistic regression over 5 factors, 268 goals, outputs attribution-2026-11-23.json (20
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
