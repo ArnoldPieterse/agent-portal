@@ -195,6 +195,11 @@ textarea{resize:vertical;min-height:64px}
 .dot{transition:background-color .2s}
 .flink{transition:color .15s,border-bottom-color .15s}
 .toggles{display:inline-flex;gap:var(--sp-8);flex:none}
+/* 2026-11-23: fleet/files svgs lacked width/height attrs -> rendered 30x30, their labels
+   overflowed (overflow:visible) onto the neighbour buttons and clicks hit the wrong one.
+   Pin every toggle icon to 14px + flex layout so this class of bug can't recur. */
+.toggles button{display:inline-flex;align-items:center;gap:var(--sp-4);white-space:nowrap}
+.toggles button svg{width:14px;height:14px;flex:none;display:block}
 .vdiv{width:1px;height:16px;background:var(--line);margin:0 var(--sp-4)}
 
 /* ---- User message queue + interrupted-run banner (2026-11-15) ---- */
