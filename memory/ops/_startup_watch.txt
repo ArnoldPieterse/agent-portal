@@ -1,0 +1,1 @@
+08:42:28 desktop.ini,elev_helper_start.vbs,Ollama.lnk,portal_host.vbs,_boot_fleet.vbs,_boot_recover.vbs

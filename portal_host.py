@@ -136,27 +136,36 @@ def oom_loop():
 
 
 def _ensure_launcher():
-    """Self-heal the boot chain (2026-11-23): after a reboot the portal did NOT start
-    because the logon launcher was missing entirely (no PortalRun schtask, and the
-    Startup folder itself was gone). Every host-start re-creates the hidden-window
-    VBS launcher if it is absent, so a future cleanup can never break boot again."""
+    """Self-heal the boot chain (2026-11-23; fixed 2026-11-24): after a reboot the portal
+    did NOT start because the logon launcher was missing entirely (no PortalRun schtask,
+    and the Startup folder itself was gone). The host re-creates/repairs the hidden-window
+    VBS launcher if it is absent or stale. 2026-11-24 fix: this previously wrote to a
+    non-existent 'StartMenu' folder (created on the spot, never read by Windows), so the
+    self-heal silently never worked; it now manages the canonical portal_host.vbs in the
+    real 'Start Menu' Startup folder and is re-run every 5 min from the main loop."""
     try:
         # Do NOT trust USERPROFILE: this host's tool processes run with
         # USERPROFILE=C:\Projects\Workspace (verified 2026-11-23), which would plant the
         # launcher where Windows never looks. 'White' is the only profile on this machine.
         prof = r"C:\Users\White"
         d = os.path.join(prof, "AppData", "Roaming", "Microsoft", "Windows",
-                         "StartMenu", "Programs", "Startup")
-        f = os.path.join(d, "agent-portal-host.vbs")
-        if os.path.exists(f):
-            return
-        os.makedirs(d, exist_ok=True)
-        vbs = ('Set sh = CreateObject("WScript.Shell")\r\n'
+                         "Start Menu", "Programs", "Startup")
+        f = os.path.join(d, "portal_host.vbs")
+        vbs = ("' PortalRun logon launcher (2026-11-23). Starts the single host process windowlessly.\r\n"
+               "' pythonw.exe in this build does not execute user code -> console python, window style 0.\r\n"
+               'Set sh = CreateObject("WScript.Shell")\r\n'
                'sh.CurrentDirectory = "%s"\r\n'
                'sh.Run """%s"" ""%s""", 0, False\r\n' % (HERE, PY, os.path.join(HERE, "portal_host.py")))
+        try:
+            cur = open(f, encoding="ascii").read()
+        except Exception:
+            cur = None
+        if cur is not None and cur.rstrip("\r\n") == vbs.rstrip("\r\n"):
+            return
+        os.makedirs(d, exist_ok=True)
         with open(f, "w", encoding="ascii") as fh:
             fh.write(vbs)
-        _log("launcher-restored", path=f)
+        _log("launcher-restored", path=f, stale=cur is not None)
     except Exception as e:
         _log("launcher-restore-fail", err=str(e)[:120])
 
@@ -188,11 +197,15 @@ def main():
     threading.Thread(target=portal_loop, daemon=True).start()
     threading.Thread(target=oom_loop, daemon=True).start()
 
+    _last_heal = time.time()
     while True:
         try:
             time.sleep(30)
         except KeyboardInterrupt:   # stdin-EOF style interrupts: keep running
             continue
+        if time.time() - _last_heal > 300:   # re-check logon launcher every 5 min (self-heal)
+            _ensure_launcher()
+            _last_heal = time.time()
 
 
 if __name__ == "__main__":

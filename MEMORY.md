@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mirror cycle reverts Mechanic edits (state_collector.py + deploy_all_schtasks.py); must re-verify after each sync pass.
 - Verifier cycle-14 now 20/20 (100%) — all goals closed; evidence at memory/builder/evidence-verifier-batch-close-2026-11-24.md
 - Cockpit Fleet Mode Banner added to ui/cockpit.js; uses color-mix(in srgb) for theme tints, data-testid=cockpit-mode-banner
 - CockpitFeedRefresh added to deploy_all_schtasks.py; deploy pending non-sandbox White session (COM blocked in Red sandbox).
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - CockpitFeedRefresh added to deploy_all_schtasks.py; one deploy command still pending on target machine.
 - Cognitive-load audit trips thresholds on all 3 cockpit surfaces because it counts whole file, not just panel content — false positive.
 - Researcher chose to adjudicate a stale ledger claim; open goals cluster
+- Builder built `memory/builder/schtasks_health_check.py` (137 lines, 4/4 selftest) verifying MirrorHeal, PortalSmbDrift, PortalLoadProbe scht
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

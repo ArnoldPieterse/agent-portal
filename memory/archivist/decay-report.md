@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 9878 | flagged (<0.35): 0
+Leaves: 9880 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9249,6 +9249,7 @@ Leaves: 9878 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261124-051235.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-062139.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-072313.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-083254.json | 0 | 0 | n | 0.550 |
 | memory/handoffs/HO-20261124-fleet-state-collector-schtasks.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/mechanic-to-builder-preflight-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/scribe-to-builder-topology-visualizer-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9305,6 +9306,7 @@ Leaves: 9878 | flagged (<0.35): 0
 | memory/ops/schtask-snapshot-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/ops/state-collector-staleness-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/unreachable_agents.json | 0 | 0 | n | 0.550 |
+| memory/ops/_startup_watch.txt | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0b19c0bd68 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.dbd3a02f71 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.fdcf1f1764 | 0 | 0 | n | 0.550 |
