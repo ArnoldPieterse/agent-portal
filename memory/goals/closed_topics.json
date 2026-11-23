@@ -1204,5 +1204,17 @@
 "text": "**KB Versioning & Rollback** - `python memory/archivist/kb_version.py`: git-backed versioning of knowledge-index.json + weekly snapshots wit",
 "agent": "archivist",
 "at": "2026-11-23"
+},
+{
+"sig": "7cac8beae5883414",
+"text": "**Multi-Goal Concurrency View** - Design the view for >= 3 goals in-flight simultaneously: a compact \"fleet board\" showing each goal's loop-",
+"agent": "designer",
+"at": "2026-11-23"
+},
+{
+"sig": "141aec437db73f6f",
+"text": "**Research-Instrument Health Feed** - `python memory/researcher/instrument_health.py`: emit a cockpit data feed reporting the health of my o",
+"agent": "researcher",
+"at": "2026-11-23"
 }
 ]
