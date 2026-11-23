@@ -1,6 +1,6 @@
 # Decay report 2026-11-23
 
-Leaves: 9388 | flagged (<0.35): 0
+Leaves: 9391 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -6042,8 +6042,6 @@ Leaves: 9388 | flagged (<0.35): 0
 | memory/archivist/dedup-apply-evidence-2026-11-20.json | 3 | 0 | n | 0.533 |
 | memory/archivist/dedup-check-2026-11-20.json | 3 | 0 | n | 0.533 |
 | memory/archivist/dedup-report-2026-11-20.json | 3 | 0 | n | 0.533 |
-| memory/archivist/dedup-report-full-2026-11-20.json | 3 | 0 | n | 0.533 |
-| memory/archivist/dedup-report.json | 3 | 0 | n | 0.533 |
 | memory/archivist/dedup-scan-2026-11-20.json | 3 | 0 | n | 0.533 |
 | memory/archivist/dedup-verify-2026-11-20.json | 3 | 0 | n | 0.533 |
 | memory/archivist/dedup.py | 3 | 0 | n | 0.533 |
@@ -6467,13 +6465,9 @@ Leaves: 9388 | flagged (<0.35): 0
 | memory/mechanic/_elev_err.txt | 3 | 0 | n | 0.533 |
 | memory/mechanic/_quick_winrm_probe.py | 3 | 0 | n | 0.533 |
 | memory/mechanic/_winrm_probe_now.py | 3 | 0 | n | 0.533 |
-| memory/mechanic/backups/fleet-backup-2026-11-19_235248.tar.gz | 3 | 0 | n | 0.533 |
 | memory/mechanic/backups/fleet-backup-2026-11-19_235248.tar.json | 3 | 0 | n | 0.533 |
-| memory/mechanic/backups/fleet-backup-2026-11-20_003708.tar.gz | 3 | 0 | n | 0.533 |
 | memory/mechanic/backups/fleet-backup-2026-11-20_003708.tar.json | 3 | 0 | n | 0.533 |
-| memory/mechanic/backups/fleet-backup-2026-11-20_004234.tar.gz | 3 | 0 | n | 0.533 |
 | memory/mechanic/backups/fleet-backup-2026-11-20_004234.tar.json | 3 | 0 | n | 0.533 |
-| memory/mechanic/backups/fleet-backup-2026-11-20_084226.tar.gz | 3 | 0 | n | 0.533 |
 | memory/mechanic/backups/fleet-backup-2026-11-20_084226.tar.json | 3 | 0 | n | 0.533 |
 | memory/mechanic/dep-snapshots/real-white-live.csv | 3 | 0 | n | 0.533 |
 | memory/mechanic/__pycache__/agent_portal_pre-decisions-v2-reland-2026-11-18.cpython-313.pyc | 3 | 0 | n | 0.533 |
@@ -7396,6 +7390,7 @@ Leaves: 9388 | flagged (<0.35): 0
 | memory/archivist/access-heatmap.json | 0 | 0 | n | 0.550 |
 | memory/archivist/access_heatmap.py | 0 | 0 | n | 0.550 |
 | memory/archivist/archive-hygiene-audit-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/ARCHIVED.md | 0 | 0 | n | 0.550 |
 | memory/archivist/archive_audit.py | 0 | 0 | n | 0.550 |
 | memory/archivist/artifact-integrity-check-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/auto-linker-selftest.json | 0 | 0 | n | 0.550 |
@@ -7420,6 +7415,7 @@ Leaves: 9388 | flagged (<0.35): 0
 | memory/archivist/evidence-goal6-access-heatmap-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-goal7-auto-linker-fix-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-goal8-kb-sentinel-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-goal8-kb-sentinel-fix-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-goal9-summary-ladder-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/freshness-heatmap-history.json | 0 | 0 | n | 0.550 |
 | memory/archivist/freshness-heatmap.json | 0 | 0 | n | 0.550 |
@@ -7434,6 +7430,7 @@ Leaves: 9388 | flagged (<0.35): 0
 | memory/archivist/kb-sentinel-alert-state.json | 0 | 0 | n | 0.550 |
 | memory/archivist/kb-sentinel-selftest.json | 0 | 0 | n | 0.550 |
 | memory/archivist/kb-sentinel-snapshot.json | 0 | 0 | n | 0.550 |
+| memory/archivist/kb-version-selftest.json | 0 | 0 | n | 0.550 |
 | memory/archivist/kb_delta.py | 0 | 0 | n | 0.550 |
 | memory/archivist/kb_feedback.py | 0 | 0 | n | 0.550 |
 | memory/archivist/kb_sentinel.py | 0 | 0 | n | 0.550 |
@@ -8404,6 +8401,8 @@ Leaves: 9388 | flagged (<0.35): 0
 | memory/archivist/abstracts/memory__workspace__INDEX.md.abstract.json | 0 | 0 | n | 0.550 |
 | memory/archivist/kb-snapshots/manifest.json | 0 | 0 | n | 0.550 |
 | memory/archivist/kb_snapshots/manifest.json | 0 | 0 | n | 0.550 |
+| memory/archivist/snapshots/cycle-12-baseline.json | 0 | 0 | n | 0.550 |
+| memory/archivist/snapshots/cycle-12-baseline.sha256 | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/auto_linker.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/auto_quarantine.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/citation_audit.cpython-315.pyc | 0 | 0 | n | 0.550 |
@@ -8458,6 +8457,7 @@ Leaves: 9388 | flagged (<0.35): 0
 | memory/designer/cockpit-layout-design-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-layout-spec.html | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-responsive-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/designer/cockpit-risks-remediation-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/cycle-radar-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/designer/decision-timeline-component.html | 0 | 0 | n | 0.550 |
 | memory/designer/design-qa-tool-2026-11-23.md | 0 | 0 | n | 0.550 |
@@ -8630,6 +8630,7 @@ Leaves: 9388 | flagged (<0.35): 0
 | memory/mechanic/unblock-all-built-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/unblock_all.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/unblock_gap_fill.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/backups/ARCHIVED.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/boot_recovery_test.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/capacity_arbiter.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/capacity_plan.cpython-313.pyc | 0 | 0 | n | 0.550 |
@@ -8738,6 +8739,7 @@ Leaves: 9388 | flagged (<0.35): 0
 | memory/ops/merge-queue/goal_ledger.py.ff3d95dd64 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.47a44d9499 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.7d30ea94f9 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/index.html.e0e875bb51 | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/boot_recovery.md | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/host_down_response.md | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/scheduled_maintenance.md | 0 | 0 | n | 0.550 |
@@ -8745,6 +8747,7 @@ Leaves: 9388 | flagged (<0.35): 0
 | memory/ops/__pycache__/chaos_drill.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/__pycache__/live_leg_preflight.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/__pycache__/mirror_heal.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/ops/__pycache__/run_steps.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/__pycache__/run_steps.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/auto_cycle_planner.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/auto_cycle_planner_verify.py | 0 | 0 | n | 0.550 |

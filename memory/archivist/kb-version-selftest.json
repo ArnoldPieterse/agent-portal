@@ -1,0 +1,20 @@
+{
+  "test": "kb_version_selftest",
+  "date": "2026-11-23T04:25:23.065738+00:00",
+  "passed": 11,
+  "total": 11,
+  "all_pass": true,
+  "results": [
+    "  [PASS] snapshot A created",
+    "  [PASS] snapshot A has checksum sidecar",
+    "  [PASS] snapshot B created",
+    "  [PASS] snapshot A != snapshot B (different content)",
+    "  [PASS] history has >=2 selftest snapshots",
+    "  [PASS] all selftest snapshots verify OK",
+    "  [PASS] index is corrupted",
+    "  [PASS] rollback restores correct content",
+    "  [PASS] restored file is valid JSON",
+    "  [PASS] rollback to missing snapshot raises",
+    "  [PASS] corrupted snapshot detected by verify"
+  ]
+}

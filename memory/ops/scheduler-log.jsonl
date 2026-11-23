@@ -344,3 +344,17 @@
 {"t": "2026-11-23 15:05:35", "job": "schtask_dep_weekly", "event": "done", "rc": 0}
 {"t": "2026-11-23 15:05:40", "job": "smb_drift_detector", "event": "done", "rc": 0}
 {"t": "2026-11-23 15:05:40", "job": "memory_audit", "event": "done", "rc": 2}
+{"t": "2026-11-23 15:10:30", "job": "gap_alarm", "event": "start", "pid": 23724}
+{"t": "2026-11-23 15:10:35", "job": "gap_alarm", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:15:30", "job": "gap_alarm", "event": "start", "pid": 26908}
+{"t": "2026-11-23 15:15:30", "job": "fleet_probe", "event": "start", "pid": 20416}
+{"t": "2026-11-23 15:15:30", "job": "load_probe", "event": "start", "pid": 18956}
+{"t": "2026-11-23 15:15:35", "job": "gap_alarm", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:15:35", "job": "fleet_probe", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:15:35", "job": "load_probe", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:16:03", "event": "scheduler-up", "jobs": 6}
+{"t": "2026-11-23 15:16:28", "job": "cycle_5m", "event": "start", "pid": 25840}
+{"t": "2026-11-23 15:16:33", "job": "cycle_10m", "event": "start", "pid": 30484}
+{"t": "2026-11-23 15:16:33", "job": "cycle_30m", "event": "start", "pid": 20700}
+{"t": "2026-11-23 15:16:33", "job": "cycle_1h", "event": "start", "pid": 26104}
+{"t": "2026-11-23 15:16:33", "job": "schtask_dep_weekly", "event": "start", "pid": 29532}
