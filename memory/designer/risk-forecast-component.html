@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cockpit — Risk Forecast Panel (goal 5)</title>
+<style>
+/* inline copy of ui/cockpit-risks.css so this component is self-contained/testable */
+:root{
+  --risk-red-h:24;--risk-yellow-h:72;
+  --risk-red:#ff5a5f;--risk-yellow:#ffc24b;--risk-green:#3ddc84;
+  --risk-bg:#0e1116;--risk-panel:#151a22;--risk-row:#1b2230;
+  --risk-text:#e8edf2;--risk-faint:#9aa7b4;--risk-border:#2a3340;
+}
+.risk-panel{background:var(--risk-panel);border:1px solid var(--risk-border);border-radius:8px;padding:12px;width:360px;}
+.risk-panel__title{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--risk-faint);margin:0 0 8px 4px;font-family:system-ui,sans-serif;}
+.risk-list{display:flex;flex-direction:column;gap:6px;max-height:320px;overflow-y:auto;}
+.risk-row{display:grid;grid-template-columns:4px 1fr auto;align-items:stretch;gap:10px;background:var(--risk-row);border:1px solid var(--risk-border);border-radius:6px;padding:8px 10px 8px 0;font-family:system-ui,sans-serif;}
+.risk-row__bar{width:4px;border-radius:6px 0 0 6px;}
+.risk-row__body{min-width:0;}
+.risk-row__what{font-size:13px;color:var(--risk-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.risk-row__action{margin-top:2px;font-size:12px;color:var(--risk-faint);}
+.risk-row__meta{text-align:right;white-space:nowrap;}
+.risk-row__eta{font-size:13px;font-variant-numeric:tabular-nums;}
+.risk-row__sev{margin-top:2px;font-size:11px;color:var(--risk-faint);}
+.risk-row--red .risk-row__bar{background:var(--risk-red);}
+.risk-row--yellow .risk-row__bar{background:var(--risk-yellow);}
+.risk-row--green .risk-row__bar{background:var(--risk-green);}
+.risk-row--red .risk-row__eta{color:var(--risk-red);}
+.risk-row--yellow .risk-row__eta{color:var(--risk-yellow);}
+.risk-row--green .risk-row__eta{color:var(--risk-green);}
+.risk-empty{display:flex;align-items:center;gap:8px;padding:16px 4px;color:var(--risk-faint);font-size:13px;font-family:system-ui,sans-serif;}
+.risk-empty__icon{color:var(--risk-green);font-size:16px;}
+h2{font-family:system-ui,sans-serif;color:#e8edf2;margin:24px 0 8px;font-size:15px;}
+body{background:var(--risk-bg);margin:0;padding:20px;}
+</style>
+</head>
+<body>
+
+<!-- CASE 1: >5 risks -> list must SCROLL (max-height + overflow-y:auto) -->
+<h2>Case 1 — six risks (panel scrolls)</h2>
+<div class="risk-panel" id="case1">
+  <p class="risk-panel__title">Predicted Risks</p>
+  <div class="risk-list"></div>
+</div>
+
+<!-- CASE 2: mixed buckets -> sorted by time-to-breach, colored by urgency -->
+<h2>Case 2 — urgency coloring (unsorted input)</h2>
+<div class="risk-panel" id="case2">
+  <p class="risk-panel__title">Predicted Risks</p>
+  <div class="risk-list"></div>
+</div>
+
+<!-- CASE 3: no risks -> reassuring empty state, NOT alarming -->
+<h2>Case 3 — no predicted risks (empty state)</h2>
+<div class="risk-panel" id="case3">
+  <p class="risk-panel__title">Predicted Risks</p>
+  <div class="risk-list"></div>
+</div>
+
+<script>
+// Single source of truth: urgency bucket from hours-to-breach.
+const RED_H = 24, YELLOW_H = 72;
+function bucket(h){ return h < RED_H ? "red" : (h < YELLOW_H ? "yellow" : "green"); }
+
+function render(el, risks){
+  const list = el.querySelector(".risk-list");
+  if(!risks.length){
+    // reassuring empty state: green check + calm copy, no red/alarm
+    list.innerHTML = '<div class="risk-empty"><span class="risk-empty__icon">✓</span>' +
+                     '<span>No predicted risks. Fleet is holding steady.</span></div>';
+    return;
+  }
+  // sort ascending by hours-to-breach (most urgent first)
+  const sorted = [...risks].sort((a,b)=>a.hours-b.hours);
+  list.innerHTML = sorted.map(r=>{
+    const b = bucket(r.hours);
+    return '<div class="risk-row risk-row--'+b+'" data-hours="'+r.hours+'">' +
+      '<span class="risk-row__bar"></span>' +
+      '<div class="risk-row__body">' +
+        '<div class="risk-row__what">'+r.what+'</div>' +
+        '<div class="risk-row__action">→ '+r.action+'</div>' +
+      '</div>' +
+      '<div class="risk-row__meta">' +
+        '<div class="risk-row__eta">'+r.eta+'</div>' +
+        '<div class="risk-row__sev">P '+r.prob+' × I '+r.impact+'</div>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+}
+
+// CASE 1: six risks -> proves scroll (only ~5 fit in 320px cap)
+render(document.getElementById("case1"), [
+  {what:"white — disk pressure", action:"prune model cache", hours:18, eta:"18h", prob:.6, impact:3},
+  {what:"black — GPU OOM risk", action:"unload idle model", hours:5, eta:"5h", prob:.7, impact:4},
+  {what:"White — context ceiling", action:"rotate session", hours:90, eta:"3.8d", prob:.4, impact:2},
+  {what:"fleet — mirror drift", action:"re-sync pins", hours:60, eta:"2.5d", prob:.3, impact:3},
+  {what:"black — thermal throttle", action:"cap load", hours:30, eta:"30h", prob:.5, impact:3},
+  {what:"white — net flap", action:"failover path", hours:120, eta:"5d", prob:.2, impact:4}
+]);
+
+// CASE 2: deliberately UNsorted input -> JS must order + color correctly
+render(document.getElementById("case2"), [
+  {what:"green host A", action:"none needed", hours:96,  eta:"4d",   prob:.1, impact:2},
+  {what:"red host B",   action:"act now",     hours:10,  eta:"10h",  prob:.8, impact:5},
+  {what:"yellow host C",action:"monitor",     hours:48,  eta:"2d",   prob:.4, impact:3}
+]);
+
+// CASE 3: empty
+render(document.getElementById("case3"), []);
+</script>
+</body>
+</html>

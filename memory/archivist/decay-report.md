@@ -1,9 +1,10 @@
 # Decay report 2026-11-23
 
-Leaves: 9295 | flagged (<0.35): 0
+Leaves: 9341 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
+| memory/archivist/quarantine/archivist/_quarantine_test_target.md | 30 | 0 | n | 0.383 |
 | memory/ops/merge-queue/SETUP_HISTORY.md.4dd807fb2b | 13 | 0 | n | 0.478 |
 | memory/portal/upgrades-2026-11-12.md | 11 | 0 | n | 0.489 |
 | memory/portal/v1-upgrade-state-2026-11-12.md | 11 | 0 | n | 0.489 |
@@ -942,7 +943,6 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/archivist/kg_state.json | 5 | 0 | n | 0.522 |
 | memory/archivist/knowledge_graph_delta.jsonl | 5 | 0 | n | 0.522 |
 | memory/archivist/knowledge_graph_incremental.py | 5 | 0 | n | 0.522 |
-| memory/archivist/size_guard.py | 5 | 0 | n | 0.522 |
 | memory/archivist/supersession-audit-2026-11-18.md | 5 | 0 | n | 0.522 |
 | memory/archivist/_audit_out.txt | 5 | 0 | n | 0.522 |
 | memory/archivist/_decay_run1.txt | 5 | 0 | n | 0.522 |
@@ -7299,6 +7299,7 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/ops/merge-queue/index.html.ceecbd03f0 | 1 | 0 | n | 0.544 |
 | memory/ops/merge-queue/index.html.d390893089 | 1 | 0 | n | 0.544 |
 | memory/ops/merge-queue/index.html.d9839a0a3a | 1 | 0 | n | 0.544 |
+| memory/ops/merge-queue/memory_mirror.py.44931dd1e5 | 1 | 0 | n | 0.544 |
 | memory/ops/merge-queue/TODO_completed.md.e38923468c | 1 | 0 | n | 0.544 |
 | memory/orchestrator/capacity-governor.jsonl | 1 | 0 | n | 0.544 |
 | memory/orchestrator/capacity_governor.py | 1 | 0 | n | 0.544 |
@@ -7392,34 +7393,61 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/verifier/r38b-mechanic-rebind-crosscheck-2026-11-14.md | 1 | 0 | n | 0.544 |
 | memory/verifier/r44-closeout-2026-11-14.md | 1 | 0 | n | 0.544 |
 | memory/levels.json | 0 | 0 | n | 0.550 |
+| memory/archivist/access-heatmap.json | 0 | 0 | n | 0.550 |
+| memory/archivist/access_heatmap.py | 0 | 0 | n | 0.550 |
 | memory/archivist/archive-hygiene-audit-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/archive_audit.py | 0 | 0 | n | 0.550 |
 | memory/archivist/artifact-integrity-check-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/auto-linker-selftest.json | 0 | 0 | n | 0.550 |
+| memory/archivist/auto_linker.py | 0 | 0 | n | 0.550 |
+| memory/archivist/auto_quarantine.py | 0 | 0 | n | 0.550 |
 | memory/archivist/citation-report.json | 0 | 0 | n | 0.550 |
+| memory/archivist/conflict-report-2026-11-23.json | 0 | 0 | n | 0.550 |
+| memory/archivist/conflict-report-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/conflict-selftest-2026-11-23.json | 0 | 0 | n | 0.550 |
+| memory/archivist/conflict_resolver.py | 0 | 0 | n | 0.550 |
 | memory/archivist/decay-run3-progress-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/decay-schtask.log | 0 | 0 | n | 0.550 |
 | memory/archivist/decay-score-logic-verification-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/decay-score-production-progress-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/decay-score-tierb-queue-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-goal2-auto-quarantine-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-goal3-kb-delta-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-goal4-conflict-resolver-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-goal5-kb-feedback-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-goal6-access-heatmap-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/freshness-heatmap-history.json | 0 | 0 | n | 0.550 |
 | memory/archivist/freshness-heatmap.json | 0 | 0 | n | 0.550 |
 | memory/archivist/freshness_heatmap.py | 0 | 0 | n | 0.550 |
 | memory/archivist/goal3-deploy-ready-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/index_check.py | 0 | 0 | n | 0.550 |
+| memory/archivist/kb-delta-2026-11-23.json | 0 | 0 | n | 0.550 |
+| memory/archivist/kb-delta-selftest-2026-11-23.json | 0 | 0 | n | 0.550 |
+| memory/archivist/kb-feedback-2026-11-23.json | 0 | 0 | n | 0.550 |
+| memory/archivist/kb-feedback-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/kb_delta.py | 0 | 0 | n | 0.550 |
+| memory/archivist/kb_feedback.py | 0 | 0 | n | 0.550 |
 | memory/archivist/knowledge-index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/knowledge-report.md | 0 | 0 | n | 0.550 |
+| memory/archivist/leaf-reliability.json | 0 | 0 | n | 0.550 |
 | memory/archivist/ledger_snapshot.json | 0 | 0 | n | 0.550 |
 | memory/archivist/manifest-20261123-r5.json | 0 | 0 | n | 0.550 |
 | memory/archivist/manifest-20261123.json | 0 | 0 | n | 0.550 |
+| memory/archivist/provenance-ledger.json | 0 | 0 | n | 0.550 |
+| memory/archivist/provenance_ledger.py | 0 | 0 | n | 0.550 |
+| memory/archivist/quarantine-report-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/quarantine-state.json | 0 | 0 | n | 0.550 |
 | memory/archivist/retrieval_metrics.json | 0 | 0 | n | 0.550 |
 | memory/archivist/retrieval_metrics_prev.json | 0 | 0 | n | 0.550 |
 | memory/archivist/search-index-refresh-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/size_guard.py | 0 | 0 | n | 0.550 |
 | memory/archivist/size_guard_report.md | 0 | 0 | n | 0.550 |
 | memory/archivist/snapshot-diff-20261123-run5.md | 0 | 0 | n | 0.550 |
 | memory/archivist/snapshot-diff-20261123.md | 0 | 0 | n | 0.550 |
 | memory/archivist/snapshot-diff-goal6-closure-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/archivist/topic-heatmap.json | 0 | 0 | n | 0.550 |
 | memory/archivist/xref-fix-log-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/archivist/_quarantine_test_ref.md | 0 | 0 | n | 0.550 |
 | memory/archivist/abstracts/memory__archivist__archive-compaction-report-2026-11-20.md.abstract.json | 0 | 0 | n | 0.550 |
 | memory/archivist/abstracts/memory__archivist__archive-hygiene-audit-2026-11-20.md.abstract.json | 0 | 0 | n | 0.550 |
 | memory/archivist/abstracts/memory__archivist__archive-hygiene-audit-2026-11-21-subdir-addendum.md.abstract.json | 0 | 0 | n | 0.550 |
@@ -8360,12 +8388,14 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/archivist/abstracts/memory__verifier__wcag-contrast-verify-2026-11-21.md.abstract.json | 0 | 0 | n | 0.550 |
 | memory/archivist/abstracts/memory__verifier__wcag-light-theme-verify-2026-11-23.md.abstract.json | 0 | 0 | n | 0.550 |
 | memory/archivist/abstracts/memory__workspace__INDEX.md.abstract.json | 0 | 0 | n | 0.550 |
+| memory/archivist/__pycache__/auto_quarantine.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/citation_audit.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/citation_audit_v2.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/decay_production.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/decay_production.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/decay_score.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/decay_score.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/archivist/__pycache__/size_guard.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/archive-audit-assist-archivist-goal10-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/builder/archivist-goal3-readd-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/builder/archivist-goal3-schtasks-queue-assist-2026-11-23.md | 0 | 0 | n | 0.550 |
@@ -8500,6 +8530,7 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261123-101801.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-103456.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-124754.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261123-134541.json | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/levels/level_1_20261123-060001.md | 0 | 0 | n | 0.550 |
@@ -8521,6 +8552,7 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/mechanic/deploy-readiness-validation-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/deploy_all_schtasks.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/failover_state.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/fleet-collector-gap-fix-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/goal1-closure-meta-test-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/goal1-consolidated-status-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/goal1-deploy-hygiene-2026-11-23.md | 0 | 0 | n | 0.550 |
@@ -8606,6 +8638,7 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
 | memory/ops/elev-helper.log | 0 | 0 | n | 0.550 |
 | memory/ops/evidence-stale-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/ops/fleet-collector-staleness-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-metrics.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-summary-2026-11-23.md | 0 | 0 | n | 0.550 |
@@ -8636,10 +8669,16 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/ops/schtask-snapshot-2026-11-23.json | 0 | 0 | n | 0.550 |
 | memory/ops/schtasks-cli-fallback-workflow-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/stale-closure-sweep-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/ops/sweep_bloat_2026_11_23.py | 0 | 0 | n | 0.550 |
+| memory/ops/taskdump.csv | 0 | 0 | n | 0.550 |
 | memory/ops/ui-asset-inventory-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/watchdog.log | 0 | 0 | n | 0.550 |
 | memory/ops/wcag-aa-light-theme-fixes-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/wcag_contrast_check.py | 0 | 0 | n | 0.550 |
+| memory/ops/_chk.txt | 0 | 0 | n | 0.550 |
+| memory/ops/_chk2.txt | 0 | 0 | n | 0.550 |
+| memory/ops/_chk3.py | 0 | 0 | n | 0.550 |
+| memory/ops/_del_llama.bat | 0 | 0 | n | 0.550 |
 | memory/ops/handoffs/archivist-20261113.md | 0 | 0 | n | 0.550 |
 | memory/ops/handoffs/builder-20261113.md | 0 | 0 | n | 0.550 |
 | memory/ops/handoffs/designer-20261113.md | 0 | 0 | n | 0.550 |
@@ -8655,12 +8694,15 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.414995d489 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.4dc0eca68a | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.540225d8ad | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.77e4ba2208 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.80ed23fe7b | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.af43711497 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.b63f050f69 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.dcf82b2653 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.ed0642fe59 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.fb13076d76 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/goal_ledger.py.ff3d95dd64 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/index.html.7d30ea94f9 | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/boot_recovery.md | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/host_down_response.md | 0 | 0 | n | 0.550 |
 | memory/ops/runbooks/scheduled_maintenance.md | 0 | 0 | n | 0.550 |
@@ -8735,6 +8777,7 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/researcher/snapshot-diff-goal6-count-verify-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/researcher/trust-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/researcher/trust_selfcheck.py | 0 | 0 | n | 0.550 |
+| memory/researcher/white-specs.md | 0 | 0 | n | 0.550 |
 | memory/researcher/_archive_reverify.json | 0 | 0 | n | 0.550 |
 | memory/researcher/anomaly-narratives/narratives-2026-11-23_0801.md | 0 | 0 | n | 0.550 |
 | memory/researcher/__pycache__/fleet_trust_score.cpython-315.pyc | 0 | 0 | n | 0.550 |
@@ -8761,6 +8804,7 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/scribe/ledger.jsonl | 0 | 0 | n | 0.550 |
 | memory/scribe/mechanic-forecast-contribution-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/scribe/stakeholder_brief.py | 0 | 0 | n | 0.550 |
+| memory/scribe/verify-archivist-goal7-knowledge-graph-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/scribe/__pycache__/cockpit_narrative.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/synthesis/blocker-metrics.json | 0 | 0 | n | 0.550 |
 | memory/synthesis/blocker-trends.md | 0 | 0 | n | 0.550 |
@@ -8854,6 +8898,7 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/archivist/knowledge_index.py | 0 | 1 | n | 0.619 |
 | memory/archivist/topic-heatmap.md | 0 | 1 | n | 0.619 |
 | memory/archivist/topic_heatmap.py | 0 | 1 | n | 0.619 |
+| memory/archivist/_quarantine_test_target.md | 0 | 1 | n | 0.619 |
 | memory/builder/playbook_runner.py | 0 | 1 | n | 0.619 |
 | memory/builder/runbook_exec.py | 0 | 1 | n | 0.619 |
 | memory/mechanic/log_rotate.py | 0 | 1 | n | 0.619 |
@@ -8894,7 +8939,6 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/synthesis/2026-11-16-r1-round-record.md | 7 | 3 | n | 0.650 |
 | memory/synthesis/supersession-policy-baseline.md | 7 | 3 | n | 0.650 |
 | memory/archivist/decay_production.py | 1 | 2 | n | 0.654 |
-| memory/archivist/xref-monitor-report-2026-11-20.md | 1 | 2 | n | 0.654 |
 | memory/scribe/supersession-pointer-spec.md | 6 | 3 | n | 0.655 |
 | memory/goals/designer.md | 0 | 2 | n | 0.660 |
 | memory/goals/mechanic.md | 0 | 2 | n | 0.660 |
@@ -8925,6 +8969,7 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/researcher/residency-matrix-offline-surface-2026-11-20.md | 3 | 3 | n | 0.672 |
 | memory/scribe/goal6-synthesis-quality-verified-2026-11-20.md | 3 | 3 | n | 0.672 |
 | memory/archivist/REPAIR_2026-11-13.md | 1 | 3 | n | 0.683 |
+| memory/archivist/xref-monitor-report-2026-11-20.md | 1 | 3 | n | 0.683 |
 | memory/synthesis/2026-11-16-status-thread-contradictions.md | 1 | 3 | n | 0.683 |
 | memory/verifier/MEMORY.md | 1 | 3 | n | 0.683 |
 | memory/archivist/freshness-latest.json | 0 | 3 | n | 0.689 |
@@ -8976,6 +9021,7 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/researcher/dangling-pointer-fix-mechanic-g8-2026-11-22.md | 1 | 1 | Y | 0.764 |
 | memory/researcher/hotload-catalog-v1.1-verify-2026-11-22.md | 1 | 1 | Y | 0.764 |
 | memory/scribe/memory-integrity-reconciliation-2026-11-22.md | 1 | 1 | Y | 0.764 |
+| memory/archivist/evidence-goal1-provenance-ledger-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/goals/mechanic-goal2-model-lifecycle-forecast-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/goal2-mirror-heal-verified-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/goal7-log-rotate-verified-2026-11-23.md | 0 | 1 | Y | 0.769 |
@@ -9214,7 +9260,7 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/builder/error_boundary_increment3-2026-11-20.md | 3 | 3 | Y | 0.822 |
 | memory/goals/2026-11-13-agent-goals.md | 5 | 30 | n | 0.822 |
 | memory/goals/researcher-cycle8-proposals.md | 3 | 3 | Y | 0.822 |
-| memory/goals/scheduled-background.md | 5 | 53 | n | 0.822 |
+| memory/goals/scheduled-background.md | 5 | 54 | n | 0.822 |
 | memory/orchestrator/goal3-auto-transition-ext-2026-11-20.md | 3 | 3 | Y | 0.822 |
 | memory/portal/api-reference.md | 5 | 36 | n | 0.822 |
 | memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md | 3 | 3 | Y | 0.822 |
@@ -9244,11 +9290,11 @@ Leaves: 9295 | flagged (<0.35): 0
 | memory/ops/live-leg-runbook-2026-11-20.md | 0 | 3 | Y | 0.839 |
 | memory/ops/non-sandbox-queue.md | 0 | 3 | Y | 0.839 |
 | memory/researcher/sync-clobber-analysis-2026-11-13.md | 10 | 6 | Y | 0.839 |
-| memory/archivist/decay-report.md | 0 | 18 | n | 0.844 |
 | memory/orchestrator/goal9-cycle-cost-tracker-2026-11-20.md | 3 | 4 | Y | 0.844 |
 | memory/archivist/instances-md-pin-reconcile-2026-11-14.md | 9 | 6 | Y | 0.845 |
 | memory/archivist/llm-module-white-convention-r21.md | 9 | 6 | Y | 0.845 |
 | memory/researcher/farm-relpath-diagnosis-2026-11-14.md | 9 | 6 | Y | 0.845 |
+| memory/archivist/decay-report.md | 0 | 19 | n | 0.850 |
 | memory/llm/overnight-unload.md | 8 | 6 | Y | 0.850 |
 | memory/mechanic/fleet-probe-v2-2026-11-16.md | 7 | 6 | Y | 0.856 |
 | memory/synthesis/2026-cycle2-retrospective.md | 7 | 6 | Y | 0.856 |

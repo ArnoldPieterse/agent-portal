@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "test": "fact_drop_alert",
+      "pass": true,
+      "detail": "1 alert(s)"
+    },
+    {
+      "test": "clean_state_silent",
+      "pass": true,
+      "detail": "0 alert(s)"
+    },
+    {
+      "test": "node_in_degree_change",
+      "pass": true,
+      "detail": "1 alert(s)"
+    },
+    {
+      "test": "contradiction_reappears",
+      "pass": true,
+      "detail": "1 alert(s)"
+    },
+    {
+      "test": "alerts_deduped",
+      "pass": true,
+      "detail": "first=1, second=0"
+    }
+  ],
+  "all_pass": true
+}

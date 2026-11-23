@@ -1,20 +1,8 @@
 {
-  "generated": "2026-11-23T12:47:56.544746",
+  "generated": "2026-11-23T13:45:51.974490",
   "host": "WHITE",
-  "task_count": 22,
+  "task_count": 3,
   "tasks": [
-    {
-      "name": "\\AgentPortal",
-      "status": "Disabled",
-      "schedule_type": "One Time Only",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\AgentPortal_LoadProbe_Daily",
-      "status": "Disabled",
-      "schedule_type": "Daily",
-      "next_run": "N/A"
-    },
     {
       "name": "\\GCC",
       "status": "Ready",
@@ -28,120 +16,13 @@
       "next_run": "N/A"
     },
     {
-      "name": "\\MemoryMirrorRun",
-      "status": "Disabled",
-      "schedule_type": "One Time Only, Minute",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\MirrorHeal",
-      "status": "Disabled",
-      "schedule_type": "One Time Only, Minute",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\MirrorSync",
-      "status": "Disabled",
-      "schedule_type": "One Time Only, Minute",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalDailyGitCommit",
-      "status": "Disabled",
-      "schedule_type": "One Time Only, Minute",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalDepGenCanary",
-      "status": "Disabled",
-      "schedule_type": "Weekly",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalFleetProbe",
-      "status": "Disabled",
-      "schedule_type": "One Time Only, Minute",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalGapAlarm",
-      "status": "Disabled",
-      "schedule_type": "One Time Only, Minute",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalLoadProbe",
-      "status": "Disabled",
-      "schedule_type": "Daily",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalMemoryDecay",
-      "status": "Disabled",
-      "schedule_type": "Weekly",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalMemorySizeGuard",
-      "status": "Disabled",
-      "schedule_type": "Daily",
-      "next_run": "N/A"
-    },
-    {
       "name": "\\PortalRun",
       "status": "Running",
       "schedule_type": "One Time Only",
       "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalSchtaskDepGen",
-      "status": "Disabled",
-      "schedule_type": "Weekly",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalSelfHeal",
-      "status": "Disabled",
-      "schedule_type": "One Time Only, Minute",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalSmbDrift",
-      "status": "Disabled",
-      "schedule_type": "One Time Only, Minute",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalSnapshotDiff",
-      "status": "Disabled",
-      "schedule_type": "Weekly",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalWatchdog",
-      "status": "Disabled",
-      "schedule_type": "One Time Only, Minute",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\RecoverAll",
-      "status": "Disabled",
-      "schedule_type": "One Time Only",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\VerifierSLO",
-      "status": "Disabled",
-      "schedule_type": "Daily",
-      "next_run": "N/A"
     }
   ],
   "edges": [
-    {
-      "from": "\\MemoryMirrorRun",
-      "to": "RemoteMemoryFreshness",
-      "type": "known"
-    },
     {
       "from": "\\PortalRun",
       "to": "PortalDailyGitCommit",
@@ -159,9 +40,27 @@
     }
   ],
   "diff": {
-    "added": [
-      "\\PortalSelfHeal"
-    ],
-    "removed": []
+    "added": [],
+    "removed": [
+      "\\AgentPortal",
+      "\\AgentPortal_LoadProbe_Daily",
+      "\\MemoryMirrorRun",
+      "\\MirrorHeal",
+      "\\MirrorSync",
+      "\\PortalDailyGitCommit",
+      "\\PortalDepGenCanary",
+      "\\PortalFleetProbe",
+      "\\PortalGapAlarm",
+      "\\PortalLoadProbe",
+      "\\PortalMemoryDecay",
+      "\\PortalMemorySizeGuard",
+      "\\PortalSchtaskDepGen",
+      "\\PortalSelfHeal",
+      "\\PortalSmbDrift",
+      "\\PortalSnapshotDiff",
+      "\\PortalWatchdog",
+      "\\RecoverAll",
+      "\\VerifierSLO"
+    ]
   }
 }
