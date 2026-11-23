@@ -1,6 +1,6 @@
 # Next-cycle proposal (pre-computed by forecast engine)
 
-Generated: 2026-11-23 09:48:01. Ratify/edit when the current cycle completes - do not draft cold. Ranked by predicted value: backlog cadence goals first, then successor patterns of just-closed work.
+Generated: 2026-11-23 10:18:01. Ratify/edit when the current cycle completes - do not draft cold. Ranked by predicted value: backlog cadence goals first, then successor patterns of just-closed work.
 
 1. **[archivist] ARCHIVIST#6** - Knowledge decay model productionization - run decay_score.py weekly (scheduled task); auto-archive leaves scoring <0.2 (move to memory/archive/ with a pointer l (source: scheduled-background)
 2. **[archivist] ARCHIVIST#8** - Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-readable weekly diff summary: "X new leaves, Y modified, Z archived, W orphans creat (source: scheduled-background)

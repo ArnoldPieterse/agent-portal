@@ -71,10 +71,18 @@
    "late": 0,
    "slipped": 0,
    "total": 10
+  },
+  {
+   "at": "2026-11-23 10:18:01",
+   "scored_forecast": "2026-11-23 09:48:01",
+   "hit_on_time": 0,
+   "late": 0,
+   "slipped": 0,
+   "total": 10
   }
  ],
  "rolling": {
-  "hit_rate": 0.244,
+  "hit_rate": 0.22,
   "slip_rate": 0.0
  },
  "last_check": "2026-11-23 07:38:49 (no prior forecast to score)"
