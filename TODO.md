@@ -567,3 +567,19 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
 - New tooling at portal root: goal_cycle_check.py, sot_audit.py, evidence_spotcheck.py, todo_freshness_check.py, citation_monitor_v2.py, parity_audit.py, open_questions_flag.py, model_benchmark.py (all first-run green; sim tests pass).
 - FLEET FINDINGS for Mechanic: Black .99 :8888 DOWN (Builder+Verifier seats dark); Red :8099 filtered from White (scoped); Q4_K_S 127.7 vs Q8_0 82.3 tok/s -> memory/researcher/benchmark-summary-2026-11-16.md (never committed).
 - [ ] RESTART PORTAL to load the O2 model-governance code (agent_portal.py) - last restart predated it; do when a group run is idle.
+## 2026-11-23 — Scheduler consolidation (24 schtasks -> 1)
+- **One scheduled task left: `PortalRun`** (at startup / one-time) -> portal_guardian.vbs -> pythonw portal_guardian.py.
+- Guardian keeps agent_portal.py alive AND respawns the oom_recovery watch daemon independently.
+- All periodic jobs now run IN-PROCESS via portal_scheduler.py (threaded loop, 15 jobs):
+  memory_mirror(5m), load_probe(30m), fleet_probe(10m), gap_alarm(5m), state_collector(5m),
+  state_snapshot(30m), forecast30(30m), maintenance_window(daily 09:00), boot_recovery(daily 13:36),
+  daily_git_commit(daily 17:12), dep_gen_canary(weekly Mon 07:30), memory_decay(weekly Mon 06:00),
+  self_heal(5m), smb_drift(30m), snapshot_diff(weekly Mon 06:30).
+- Duplicates removed: MirrorSync+MemoryMirrorRun (same script) -> one job; watchdog logic now in-process.
+- Live dashboard panel: "Fleet Scheduler" (ui/scheduler.js, self-mounting, polls /api/scheduler every 2s,
+  countdown to next fire + last result + pause/resume/now buttons). API: GET /api/scheduler, POST run|pause|resume.
+- Deleted schtasks (23): AgentPortal, AgentPortal_LoadProbe_Daily, FleetBootRecovery, FleetForecast30,
+  FleetMaintenanceWindow, FleetOomWatch, FleetStateCollector, FleetStateSnapshot, MemoryMirrorRun, MirrorHeal,
+  MirrorSync, PortalDailyGitCommit, PortalDepGenCanary, PortalFleetProbe, PortalGapAlarm, PortalLoadProbe,
+  PortalMemoryDecay, PortalMemorySizeGuard, PortalSchtaskDepGen, PortalSelfHeal, PortalSmbDrift,
+  PortalSnapshotDiff, PortalWatchdog.
