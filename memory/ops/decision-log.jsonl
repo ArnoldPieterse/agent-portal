@@ -15,3 +15,5 @@
 {"ts": "2026-11-23T13:56:48.290326+00:00", "agent": "builder", "type": "chaos_drill", "drill_id": "cd-20261123-bfef691e", "fault": "vram_pressure", "recovered": true, "severity": "medium", "detail": "chaos drill vram_pressure: PASS (60.0s)", "severity_level": "INFO"}
 {"ts": "2026-11-23T13:56:49.292495+00:00", "agent": "builder", "type": "chaos_drill", "drill_id": "cd-20261123-71adc56c", "fault": "api_outage", "recovered": true, "severity": "high", "detail": "chaos drill api_outage: PASS (1.0s)", "severity_level": "INFO"}
 {"ts": "2026-11-23T13:56:49.292866+00:00", "agent": "builder", "type": "SELFTEST", "detail": "chaos_drill selftest: 3/3 pass", "severity": "INFO"}
+{"ts": "2026-11-23T15:35:01.099615+00:00", "agent": "builder", "type": "runbook_trigger", "runbook": "safe_test", "run_id": "863ca9fb47f9", "dry_run": true, "steps_total": 3, "steps_done": 3, "status": "completed", "error": null}
+{"ts": "2026-11-23T15:35:01.516232+00:00", "agent": "builder", "type": "runbook_trigger", "runbook": "safe_test", "run_id": "92f939e486d5", "dry_run": false, "steps_total": 3, "steps_done": 2, "status": "aborted", "error": "aborted_by_user"}

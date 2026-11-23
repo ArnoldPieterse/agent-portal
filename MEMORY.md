@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal 8 (Post-Remediation Auto-Report) complete 6/6 ACs; Goal 9 (Policy Conflict Detector) in progress, regex fix applied.
 - Built memory/builder/remediation_extractor.py for Builder goal #8; verified 5 cycles (2 OOM, 3 chaos) from decision-log.jsonl
 - Goal #8 (post_mortem.py) passed 6/6 ACs; output at memory/ops/post-mortems/<date>-<agent>.md with 5 markdown sections
 - Builder fixed extraction regex: split on `then/do` markers before matching trigger/action; all 4 ACs now pass.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Cycle-12: all 10 goals verified (10/10). Full closure achieved; no open goals remain.
 - policy_conflict.py same-line action regex fixed to handle colon separator (`when X: then Y`); 4/4 selftest PASS
 - All 10 goals now verified complete per Verifier; semantic_search.py built for Archivist goal #
+- Goal #10 Cockpit One-Click Runbook Trigger complete: engine+API+UI built, selftest 8/8 PASS.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
