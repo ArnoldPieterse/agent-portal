@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 goals now verified complete per Verifier; semantic_search.py built for Archivist goal #
-- Goal #10 Cockpit One-Click Runbook Trigger complete: engine+API+UI built, selftest 8/8 PASS.
 - Goal #10 Cockpit One-Click Runbook Trigger complete: 4 bugs fixed (get_state alias, dict return, _rbData, preflight endpoint), integration t
 - All 20 builder goals verified (goal #10 runbook trigger 8/8, goal #9 policy conflict detector 4/4). No open goals remain in Builder lane.
 - Hot notes claimed Builder
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Runbook UI Run/Abort buttons use hardcoded hex (#2ea36b,#e5534b) + 11px — breaks dark mode, skips token/focus system
 - Stall detector must target only reachable-but-idle; down_streak already covers unreachable — avoid duplicate alerts/feedback loop
 - Built & ran memory/builder/feed_refresh.py — fixes cockpit-feed.json staleness (fleet_pct was None); regenerates from local sources
+- Mechic wrote unified action-log spec at memory/ops/autonomous-action-log-spec-2026-11-24.md; unblocks cockpit "Fleet Acted" panel
+- Idle-maintenance-rotation-2026-11-24.md replaces generic (a)-(d) idle menu with per-role state-driven tasks; indexed in ops/INDEX.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

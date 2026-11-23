@@ -804,3 +804,9 @@
 {"t": "2026-11-24 02:22:21", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-24 02:22:26", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-24 02:22:41", "job": "cycle_30m", "event": "done", "rc": 0}
+{"t": "2026-11-24 02:27:16", "job": "cycle_5m", "event": "start", "pid": 11928}
+{"t": "2026-11-24 02:27:21", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 02:32:16", "job": "cycle_5m", "event": "start", "pid": 15804}
+{"t": "2026-11-24 02:32:16", "job": "cycle_10m", "event": "start", "pid": 20000}
+{"t": "2026-11-24 02:32:21", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 02:32:26", "job": "cycle_10m", "event": "done", "rc": 0}
