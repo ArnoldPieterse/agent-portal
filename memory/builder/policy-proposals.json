@@ -1,0 +1,14 @@
+{
+  "generated": "2026-11-24T00:14:36.037212",
+  "source": "memory/builder/loop-scores.jsonl",
+  "total_proposals": 1,
+  "proposals": [
+    {
+      "type": "increase_detection_frequency",
+      "current_interval_s": 300,
+      "proposed_interval_s": 153,
+      "rationale": "avg loop score 0.51 < 0.6",
+      "confidence": 0.8
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-23T12:02:01.420713+00:00",
+  "freshness_s": 0.0,
+  "agents": {
+    "orchestrator": {
+      "goals_total": 10,
+      "goals_reached": 0,
+      "goals_pct": 0.0
+    },
+    "researcher": {
+      "goals_total": 10,
+      "goals_reached": 0,
+      "goals_pct": 0.0
+    },
+    "verifier": {
+      "goals_total": 10,
+      "goals_reached": 1,
+      "goals_pct": 10.0
+    },
+    "scribe": {
+      "goals_total": 10,
+      "goals_reached": 0,
+      "goals_pct": 0.0
+    },
+    "designer": {
+      "goals_total": 10,
+      "goals_reached": 0,
+      "goals_pct": 0.0
+    },
+    "builder": {
+      "goals_total": 10,
+      "goals_reached": 2,
+      "goals_pct": 20.0
+    },
+    "archivist": {
+      "goals_total": 10,
+      "goals_reached": 0,
+      "goals_pct": 0.0
+    },
+    "mechanic": {
+      "goals_total": 10,
+      "goals_reached": 0,
+      "goals_pct": 0.0
+    }
+  },
+  "fleet": {
+    "hosts": [
+      {
+        "name": "white",
+        "vram_percent": 35,
+        "status": "online"
+      },
+      {
+        "name": "black",
+        "vram_percent": 42,
+        "status": "online"
+      },
+      {
+        "name": "pale",
+        "vram_percent": 28,
+        "status": "online"
+      },
+      {
+        "name": "gray",
+        "vram_percent": 51,
+        "status": "online"
+      }
+    ],
+    "hosts_online": 4,
+    "active_incidents": 0,
+    "topology_changes_pending": 0,
+    "stale_data_count": 0
+  },
+  "decisions": {
+    "total_decisions": 0,
+    "recent_decisions": []
+  },
+  "trends": {
+    "orchestrator": {
+      "goals_pct_current": 0.0,
+      "delta_7d": 0.0,
+      "rate_per_day": 0.0
+    },
+    "researcher": {
+      "goals_pct_current": 0.0,
+      "delta_7d": 0.0,
+      "rate_per_day": 0.0
+    },
+    "verifier": {
+      "goals_pct_current": 10.0,
+      "delta_7d": 0.0,
+      "rate_per_day": 0.0
+    },
+    "scribe": {
+      "goals_pct_current": 0.0,
+      "delta_7d": 0.0,
+      "rate_per_day": 0.0
+    },
+    "designer": {
+      "goals_pct_current": 0.0,
+      "delta_7d": 0.0,
+      "rate_per_day": 0.0
+    },
+    "builder": {
+      "goals_pct_current": 20.0,
+      "delta_7d": 0.0,
+      "rate_per_day": 0.0
+    },
+    "archivist": {
+      "goals_pct_current": 0.0,
+      "delta_7d": 0.0,
+      "rate_per_day": 0.0
+    },
+    "mechanic": {
+      "goals_pct_current": 0.0,
+      "delta_7d": 0.0,
+      "rate_per_day": 0.0
+    },
+    "fleet": {
+      "hosts_online_current": 4,
+      "delta_7d": 0,
+      "rate_per_day": 0.0
+    }
+  }
+}

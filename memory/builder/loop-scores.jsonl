@@ -1,0 +1,4 @@
+{"loop_id": "loop-000", "agent": "Builder", "start_ts": "2026-11-22T20:26:33.080010+00:00", "score": 0.694, "completeness": 0.25, "timeliness": 0.981, "outcome": 1.0, "stages_present": ["remediate"], "entries_count": 10, "scored": "2026-11-23"}
+{"loop_id": "loop-001", "agent": "mechanic", "start_ts": "2026-11-22T20:39:46.129680+00:00", "score": 0.45, "completeness": 0.0, "timeliness": 0.5, "outcome": 1.0, "stages_present": [], "entries_count": 1, "scored": "2026-11-23"}
+{"loop_id": "loop-002", "agent": "test_agent", "start_ts": "2026-11-22T22:17:58.698011+00:00", "score": 0.45, "completeness": 0.0, "timeliness": 0.5, "outcome": 1.0, "stages_present": [], "entries_count": 1, "scored": "2026-11-23"}
+{"loop_id": "loop-003", "agent": "test_agent", "start_ts": "2026-11-22T23:10:36.112747+00:00", "score": 0.45, "completeness": 0.0, "timeliness": 0.5, "outcome": 1.0, "stages_present": [], "entries_count": 1, "scored": "2026-11-23"}

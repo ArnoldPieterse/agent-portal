@@ -1,0 +1,29 @@
+{
+  "active": [],
+  "history": [
+    {
+      "runbook": "safe_test",
+      "started": "2026-11-23T12:39:10.027276+00:00",
+      "finished": "2026-11-23T12:39:10.027777+00:00",
+      "dry_run": true,
+      "steps_total": 3,
+      "status": "completed"
+    },
+    {
+      "runbook": "safe_test",
+      "started": "2026-11-23T12:39:29.656271+00:00",
+      "finished": "2026-11-23T12:39:29.656920+00:00",
+      "dry_run": true,
+      "steps_total": 3,
+      "status": "completed"
+    },
+    {
+      "runbook": "safe_test",
+      "started": "2026-11-23T12:50:04.690996+00:00",
+      "finished": "2026-11-23T12:50:04.691634+00:00",
+      "dry_run": true,
+      "steps_total": 3,
+      "status": "completed"
+    }
+  ]
+}

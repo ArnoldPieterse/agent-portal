@@ -1,0 +1,99 @@
+{
+  "registry_version": "v1-2026-11-23",
+  "date": "2026-11-23",
+  "action_count": 7,
+  "risk_distribution": {
+    "safe": 4,
+    "review": 2,
+    "halt": 1
+  },
+  "high_blast_gated": true,
+  "gates": [
+    {
+      "type": "clear_stale_verified_marker",
+      "blast_radius": {
+        "targets": [
+          "memory/researcher/evidence_x.md"
+        ],
+        "scope": "local",
+        "count": 1
+      },
+      "risk_class": "safe",
+      "allowed_unattended": true
+    },
+    {
+      "type": "write_correction_note",
+      "blast_radius": {
+        "targets": [
+          "memory/researcher/stale-claim-corrections.md"
+        ],
+        "scope": "local",
+        "count": 1
+      },
+      "risk_class": "safe",
+      "allowed_unattended": true
+    },
+    {
+      "type": "rebuild_reach_matrix",
+      "blast_radius": {
+        "targets": [
+          "memory/researcher/reach-matrix.json"
+        ],
+        "scope": "local",
+        "count": 1
+      },
+      "risk_class": "safe",
+      "allowed_unattended": true
+    },
+    {
+      "type": "trigger_mtime_reload",
+      "blast_radius": {
+        "targets": [
+          "portal:mtime-reload"
+        ],
+        "scope": "local",
+        "count": 1
+      },
+      "risk_class": "safe",
+      "allowed_unattended": true
+    },
+    {
+      "type": "relend_clobbered_endpoint",
+      "blast_radius": {
+        "targets": [
+          "memory/designer/index_html_CANONICAL_*.html"
+        ],
+        "scope": "shared",
+        "count": 1
+      },
+      "risk_class": "review",
+      "allowed_unattended": false
+    },
+    {
+      "type": "repin_index_html",
+      "blast_radius": {
+        "targets": [
+          "index.html",
+          "memory_mirror.py:PIN_FILES"
+        ],
+        "scope": "shared",
+        "count": 2
+      },
+      "risk_class": "review",
+      "allowed_unattended": false
+    },
+    {
+      "type": "unload_host_model",
+      "blast_radius": {
+        "targets": [
+          "/api/fleet/cockpit",
+          "host:black:/models/home"
+        ],
+        "scope": "remote",
+        "count": 2
+      },
+      "risk_class": "halt",
+      "allowed_unattended": false
+    }
+  ]
+}

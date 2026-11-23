@@ -1,0 +1,2095 @@
+{
+  "cycle": "2026-11-22",
+  "generated_by": "memory/researcher/attribution.py",
+  "n_goals_in_cycle": 72,
+  "n_reached": 72,
+  "n_open": 0,
+  "fleet_feature_means": {
+    "goal_difficulty": 1.8861,
+    "model_quality": 0.2899,
+    "host_performance": 0.6314,
+    "context_utilization": 0.2413,
+    "dependency_depth": 0.6387
+  },
+  "factor_importance_ranked": [
+    {
+      "factor": "host_performance",
+      "coef": 3.2203,
+      "ci": [
+        3.0985,
+        3.3216
+      ],
+      "abs_coef": 3.2203
+    },
+    {
+      "factor": "context_utilization",
+      "coef": -2.6034,
+      "ci": [
+        -2.7671,
+        -2.4319
+      ],
+      "abs_coef": 2.6034
+    },
+    {
+      "factor": "model_quality",
+      "coef": 1.4984,
+      "ci": [
+        1.4407,
+        1.5463
+      ],
+      "abs_coef": 1.4984
+    },
+    {
+      "factor": "goal_difficulty",
+      "coef": -0.6586,
+      "ci": [
+        -0.806,
+        -0.4948
+      ],
+      "abs_coef": 0.6586
+    },
+    {
+      "factor": "dependency_depth",
+      "coef": 0.5339,
+      "ci": [
+        0.162,
+        0.9276
+      ],
+      "abs_coef": 0.5339
+    }
+  ],
+  "top3_factors_distinct_nontrivial": true,
+  "experimental_factor_change_check": {
+    "factor": "host_performance",
+    "fleet_mean": 0.6314,
+    "reached_example": {
+      "agent": "archivist",
+      "value": 1.0,
+      "goal": "**Orphan Remediation Sweep** - Run a full scan of memory/ tr"
+    },
+    "open_example": {
+      "agent": "researcher",
+      "value": 0.5,
+      "goal": "**Fleet Performance Attribution Model** - `python memory/res"
+    },
+    "finding": "improving 'host_performance' (>0.6314 reached vs <0.6314 open) correlates with goal completion"
+  },
+  "per_goal_attribution": [
+    {
+      "agent": "archivist",
+      "sig": "4db3a2a2e400c0e6",
+      "outcome": "reached",
+      "goal": "**Orphan Remediation Sweep** - Run a full scan of memory/ tree: find all files n",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.2,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.928,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "f84a592c5304cd3e",
+      "outcome": "reached",
+      "goal": "**Knowledge Graph v3 (Temporal + Typed)** - Extend cycle-7 graph: add edge types",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.158,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.935,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "3cbe663b2bcbca5c",
+      "outcome": "reached",
+      "goal": "**Cross-Reference Integrity Check** - `python memory/archivist/xref_check.py`: v",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.95,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "f84b2d158b3171f3",
+      "outcome": "reached",
+      "goal": "**Keyword Search Index** - Build memory/archivist/search-index.json: for each le",
+      "features": {
+        "goal_difficulty": 1.65,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.956,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "c5423b2e88be1a19",
+      "outcome": "reached",
+      "goal": "**Knowledge Lifecycle Policy** - Write memory/archivist/lifecycle-policy.md: def",
+      "features": {
+        "goal_difficulty": 1.65,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.15,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.954,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2388
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "17b31fc22ab7d40a",
+      "outcome": "reached",
+      "goal": "**Citation Tracking** - Build memory/archivist/citation-map.json: for each evide",
+      "features": {
+        "goal_difficulty": 1.65,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.15,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.954,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2388
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "36bc85810f4545fc",
+      "outcome": "reached",
+      "goal": "**Build-Verify-Pin --apply (host seat)** - Execute `python memory/builder/build_",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.951,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "a6a9ab8f16c1810c",
+      "outcome": "reached",
+      "goal": "**Complete API Client Wrappers** - Wrap the remaining 6 raw fetch() calls in cor",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.15,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.936,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "2e6b0dc6318e268b",
+      "outcome": "reached",
+      "goal": "**Portal Error Boundary** - Add a global error boundary to core.js: wrap all API",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.931,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "7366c5d79e0d8502",
+      "outcome": "reached",
+      "goal": "**Component Library v2** - Add 3 new components to ui/components.js: Modal (over",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.934,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "5584032ce2b332fa",
+      "outcome": "reached",
+      "goal": "**Upload Pipeline Hardening** - Add to uploads.js: file type validation (allow:",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.934,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "a82c2b84f0a6fd12",
+      "outcome": "reached",
+      "goal": "**Fleet Status Panel** - Build the fleet tab UI: per-host VRAM bar (green<70%, a",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.192,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.929,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "f146a54a98e92280",
+      "outcome": "reached",
+      "goal": "**Dark Mode Theme** - Implement light/dark theme toggle using CSS custom propert",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.175,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.932,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "38984fbb99903247",
+      "outcome": "reached",
+      "goal": "**Portal Performance Optimization** - Lazy-load non-visible panels (only fetch d",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.934,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "93074a3ebf2e8664",
+      "outcome": "reached",
+      "goal": "**UI Module Test Suite** - Create memory/builder/ui-tests/: node-based smoke tes",
+      "features": {
+        "goal_difficulty": 1.65,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.158,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.954,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2179
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "4404ff20856876d6",
+      "outcome": "reached",
+      "goal": "**One-Command Deploy** - `python memory/builder/deploy.py [file]`: validates syn",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.158,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.947,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2179
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "1a8cba0dc36229ad",
+      "outcome": "reached",
+      "goal": "**WCAG 2.1 AA Audit** - Audit all portal panels for: color contrast (>=4.5:1 bod",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.931,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "764d201801e96c8b",
+      "outcome": "reached",
+      "goal": "**Fleet Status Panel Visual Design** - Design the fleet tab (Builder goal #6): V",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.192,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.929,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "cd2eabd4763ec48d",
+      "outcome": "reached",
+      "goal": "**Error State Design System** - Define consistent patterns for: empty states (no",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.931,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "4ec3b2c3d36e32d8",
+      "outcome": "reached",
+      "goal": "**Animation/Motion System** - Add subtle CSS transitions: panel open/close (200m",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.15,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.936,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "660a8fd295ded91f",
+      "outcome": "reached",
+      "goal": "**SVG Icon Set** - Replace all text-based indicators and emoji with a consistent",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.931,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "ed104f993de56ef5",
+      "outcome": "reached",
+      "goal": "**Accessibility Tree Verification** - Verify DOM structure matches ARIA expectat",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.15,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.936,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "a62f778806fde025",
+      "outcome": "reached",
+      "goal": "**Component Visual Reference** - Create memory/designer/component-reference.md:",
+      "features": {
+        "goal_difficulty": 1.65,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.958,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "77e5e729f3f21076",
+      "outcome": "reached",
+      "goal": "**UI Performance Budget** - Define and enforce: initial render <2s, interaction",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.934,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "112a3bc75806eed6",
+      "outcome": "reached",
+      "goal": "**Scheduled-Task Dependency Graph** - (Carried from scheduled-background MECHANI",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.125,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.94,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "43b8cee62e01b1f0",
+      "outcome": "reached",
+      "goal": "**Boot Task Verification** - After each reboot (manual or auto), verify all mode",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.175,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.932,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "ebd013c0c599b398",
+      "outcome": "reached",
+      "goal": "**Alert Escalation Chain** - Define and implement: Level 1 (auto-retry, <5 min)",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.192,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.929,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "52410cf5d677f07d",
+      "outcome": "reached",
+      "goal": "**Capacity Planning Dashboard** - Track VRAM usage per host over 7 days (from lo",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.934,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "9b99f0449a300f02",
+      "outcome": "reached",
+      "goal": "**Runbook Automation (top-5)** - Convert the 5 most-frequent manual runbook step",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.934,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "317145a5d5d4924c",
+      "outcome": "reached",
+      "goal": "**Live Hotload Execution (host seat)** - Execute a real load/unload cycle on Whi",
+      "features": {
+        "goal_difficulty": 1.55,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.922,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "b897ff543bc40f5f",
+      "outcome": "reached",
+      "goal": "**Fleet Capacity Governor** - `python memory/orchestrator/capacity_governor.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.95,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "03e2053245f5d0b4",
+      "outcome": "reached",
+      "goal": "**Goal-Cycle Full Auto-Transition** - Extend cycle-7 #3 (auto_cycle_transition.p",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.142,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.938,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "e665cdcd12a8e4eb",
+      "outcome": "reached",
+      "goal": "**Agent Performance Scoring UI** - Complete the frontend for /api/fleet/performa",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.934,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "75ff30dc721d32df",
+      "outcome": "reached",
+      "goal": "**Model Binding Governance Audit (weekly)** - `python memory/orchestrator/bindin",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.951,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "5c76390052c4fe51",
+      "outcome": "reached",
+      "goal": "**Fleet Incident Auto-Triage** - When the anti-stall watchdog fires (agent wedge",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.133,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.939,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "b2717c9ee104533d",
+      "outcome": "reached",
+      "goal": "**Cross-Seat Coordination Protocol** - Document + implement the handoff protocol",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.931,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "4ac97fdeb7c2838a",
+      "outcome": "reached",
+      "goal": "**Roster Health Check (daily)** - `python memory/orchestrator/roster_health.py`",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.175,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.945,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "08d6d2a61d228d93",
+      "outcome": "reached",
+      "goal": "**Goal Dependency Graph** - Parse all memory/goals/*.md files, extract explicit",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.934,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "91f531d04cc4df98",
+      "outcome": "reached",
+      "goal": "**Cycle Retrospective Automation** - `python memory/orchestrator/cycle_retro.py`",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.15,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.948,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2388
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "44364c2b3f0fb55f",
+      "outcome": "reached",
+      "goal": "**Unified Loader LIVE Execution** - Execute the consolidated host-aware loader a",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.934,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "412cef44e4b7e2c3",
+      "outcome": "reached",
+      "goal": "**Residency Matrix Live Refresh** - Run residency_matrix.py from a non-sandbox s",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.175,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.932,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "aaf6e041cc892b39",
+      "outcome": "reached",
+      "goal": "**Overnight Unload Root-Cause Confirmation** - Collect 3 consecutive nights of n",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.175,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.932,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "d094bdcbac975c1b",
+      "outcome": "reached",
+      "goal": "**Evidence Freshness SLA** - `python memory/researcher/evidence_sla.py`: scan al",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.949,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "faccc9663c4b2662",
+      "outcome": "reached",
+      "goal": "**Cross-Host Model Comparison Benchmark** - Run the same 5 prompts against quinn",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.175,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.932,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "b1f3cc21132da06d",
+      "outcome": "reached",
+      "goal": "**Fleet Knowledge Graph v2** - Extend the cycle-7 knowledge graph: add temporal",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.158,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.935,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "212e4318de16baf2",
+      "outcome": "reached",
+      "goal": "**Research Reproducibility Protocol** - Write memory/researcher/reproducibility-",
+      "features": {
+        "goal_difficulty": 1.65,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.108,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.959,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3486
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "8606a4071ccb4f0a",
+      "outcome": "reached",
+      "goal": "**Goal Slip Prediction v2** - Use cycle-7 actuals (which goals slipped, by how m",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.175,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.932,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "52a72d856ae18c1b",
+      "outcome": "reached",
+      "goal": "**Source Reliability Scoring** - For all external sources cited in memory/ leave",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.934,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "d040b7f95be7a587",
+      "outcome": "reached",
+      "goal": "**Blocker Triage Automation** - `python memory/researcher/blocker_triage.py`: pa",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.1,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.954,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3696
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "6d7f385f581b9581",
+      "outcome": "reached",
+      "goal": "**Decision Impact Tracking** - `python memory/scribe/decision_impact.py` checks",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.951,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "4c51e7eb185b3970",
+      "outcome": "reached",
+      "goal": "**Cycle Retrospective Automation** - Extend cycle_narrative.py with `--retro` fl",
+      "features": {
+        "goal_difficulty": 1.55,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.142,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.929,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "0fa8e432361ddaef",
+      "outcome": "reached",
+      "goal": "**Briefing Freshness Monitor** - `python memory/scribe/briefing_freshness.py` ch",
+      "features": {
+        "goal_difficulty": 2.15,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.943,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "03fb9ca393b84d07",
+      "outcome": "reached",
+      "goal": "**Handoff Quality Scoring** - `python memory/scribe/handoff_quality.py` scores e",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.95,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "43ab4923f8538f04",
+      "outcome": "reached",
+      "goal": "**Card Staleness Detection** - `python memory/scribe/card_staleness.py` checks a",
+      "features": {
+        "goal_difficulty": 2.15,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.94,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "3fe4b00cec121f26",
+      "outcome": "reached",
+      "goal": "**Synthesis Quality Trend** - Extend quality_score.py to append each run's score",
+      "features": {
+        "goal_difficulty": 1.65,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.956,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "f16e7b5066b198fe",
+      "outcome": "reached",
+      "goal": "**Temporal Query API** - Expose timeline.py as /api/timeline?date=YYYY-MM-DD ret",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.108,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.943,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "621fb4e6dd7c6f57",
+      "outcome": "reached",
+      "goal": "**Memory Search Relevance Feedback** - Add POST /api/memory/search/feedback acce",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.133,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.939,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "d03dd31fdf414297",
+      "outcome": "reached",
+      "goal": "**Performance Gate Baseline (host seat)** - Run `python memory/verifier/perf_gat",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.15,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.948,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2388
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "37931912b59f1b0f",
+      "outcome": "reached",
+      "goal": "**Evidence Quality Scoring Model** - `python memory/verifier/evidence_scoring.py",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.949,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "c7f6dfc8b6db6850",
+      "outcome": "reached",
+      "goal": "**API Contract Test Suite** - Create memory/verifier/api-contracts/: for each /a",
+      "features": {
+        "goal_difficulty": 1.65,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.955,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "85b49ce70e8e62a3",
+      "outcome": "reached",
+      "goal": "**Security Audit** - Check the portal for: path traversal in file endpoints (../",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.175,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.932,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "3a0314c86442f26e",
+      "outcome": "reached",
+      "goal": "**Concurrency Verification** - Verify parallel_slots=1 is maintained: send 3 sim",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.142,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.938,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "666ef854f38c847a",
+      "outcome": "reached",
+      "goal": "**Goal Acceptance Auto-Check** - `python memory/verifier/goal_acceptance.py`: pa",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.108,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.953,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3486
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "d6bd4cc065affeb3",
+      "outcome": "reached",
+      "goal": "**Evidence Cross-Reference Graph** - Map all \"pointer:\" and \"Evidence:\" lines in",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.175,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.932,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "793150db83716edf",
+      "outcome": "reached",
+      "goal": "**SLO Enforcement (daily)** - `python memory/verifier/slo_check.py` as daily sch",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.158,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.947,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2179
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "0740632f640e83c4",
+      "outcome": "reached",
+      "goal": "**Memory Tree Integrity** - `python memory/verifier/memory_integrity.py`: verify",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.949,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "8b58eb0749bb95df",
+      "outcome": "reached",
+      "goal": "**Cycle Quality Report** - `python memory/verifier/cycle_quality.py`: end-of-cyc",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.952,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "31406af5789101fa",
+      "outcome": "reached",
+      "goal": "**Responsive Layout (768px)** - Make the portal usable at tablet width: sidebar",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.931,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "c789930a2155ea61",
+      "outcome": "reached",
+      "goal": "**Theme System (3 themes)** - Implement light/dark/high-contrast themes using CS",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.15,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.936,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "f3c9f359ab90a188",
+      "outcome": "reached",
+      "goal": "**Auto-Updating Archive Nav** - Add a `--auto` mode to the archive-nav generatio",
+      "features": {
+        "goal_difficulty": 1.55,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.922,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "a0d81ca617063caa",
+      "outcome": "reached",
+      "goal": "**Per-Agent Weekly Digest** - Extend weekly_summary.py with `--agent <name>` fla",
+      "features": {
+        "goal_difficulty": 1.55,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.158,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.926,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "5ad627b9dc6e43d9",
+      "outcome": "reached",
+      "goal": "**Duplication Detection** - `python memory/archivist/dedup.py`: (citation correc",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.5,
+        "host_performance": 1.0,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.951,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": 1.1882
+        },
+        {
+          "factor": "model_quality",
+          "contribution": 0.315
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        }
+      ]
+    }
+  ]
+}

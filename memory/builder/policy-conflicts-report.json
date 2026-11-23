@@ -1,0 +1,20 @@
+{
+  "generated": "2026-11-23T12:37:29.519387+00:00",
+  "policy_file": "C:\\Users\\black\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\remediation-policy.json",
+  "rules_analyzed": 6,
+  "conflicts_found": 1,
+  "conflicts": [
+    {
+      "rule_a": "R001",
+      "rule_b": "R004",
+      "type": "action_conflict",
+      "severity": "medium",
+      "detail": "model_oom vs vram_pressure_sustained: overlapping conditions, actions 'model_swap' vs 'load_rebalance'",
+      "actions": [
+        "model_swap",
+        "load_rebalance"
+      ]
+    }
+  ],
+  "status": "CONFLICTS_FOUND"
+}

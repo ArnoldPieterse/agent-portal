@@ -1,0 +1,5735 @@
+{
+  "cycle": "2026-11-23",
+  "generated_by": "memory/researcher/attribution.py",
+  "n_goals_in_cycle": 202,
+  "n_reached": 124,
+  "n_open": 78,
+  "fleet_feature_means": {
+    "goal_difficulty": 1.8861,
+    "model_quality": 0.2899,
+    "host_performance": 0.6314,
+    "context_utilization": 0.2413,
+    "dependency_depth": 0.6387
+  },
+  "factor_importance_ranked": [
+    {
+      "factor": "host_performance",
+      "coef": 3.2203,
+      "ci": [
+        3.0985,
+        3.3216
+      ],
+      "abs_coef": 3.2203
+    },
+    {
+      "factor": "context_utilization",
+      "coef": -2.6034,
+      "ci": [
+        -2.7671,
+        -2.4319
+      ],
+      "abs_coef": 2.6034
+    },
+    {
+      "factor": "model_quality",
+      "coef": 1.4984,
+      "ci": [
+        1.4407,
+        1.5463
+      ],
+      "abs_coef": 1.4984
+    },
+    {
+      "factor": "goal_difficulty",
+      "coef": -0.6586,
+      "ci": [
+        -0.806,
+        -0.4948
+      ],
+      "abs_coef": 0.6586
+    },
+    {
+      "factor": "dependency_depth",
+      "coef": 0.5339,
+      "ci": [
+        0.162,
+        0.9276
+      ],
+      "abs_coef": 0.5339
+    }
+  ],
+  "top3_factors_distinct_nontrivial": true,
+  "experimental_factor_change_check": {
+    "factor": "host_performance",
+    "fleet_mean": 0.6314,
+    "reached_example": {
+      "agent": "archivist",
+      "value": 1.0,
+      "goal": "**Orphan Remediation Sweep** - Run a full scan of memory/ tr"
+    },
+    "open_example": {
+      "agent": "researcher",
+      "value": 0.5,
+      "goal": "**Fleet Performance Attribution Model** - `python memory/res"
+    },
+    "finding": "improving 'host_performance' (>0.6314 reached vs <0.6314 open) correlates with goal completion"
+  },
+  "per_goal_attribution": [
+    {
+      "agent": "archivist",
+      "sig": "219c592239ae8459",
+      "outcome": "reached",
+      "goal": "**Weekly Snapshot Diff (2nd run)** - Execute the snapshot diff report (carried f",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.647,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "4fa84d015508a1f6",
+      "outcome": "reached",
+      "goal": "**Archive Hygiene Audit** - Verify all files in memory/goals/archive/ and memory",
+      "features": {
+        "goal_difficulty": 1.65,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.736,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "f40089d7d9ce6b28",
+      "outcome": "reached",
+      "goal": "**Log Rotation + Retention** - Implement rotation for all .jsonl and .log files",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.217,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.616,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "f76ceb1a0020a6c5",
+      "outcome": "reached",
+      "goal": "**Self-Healing Mirror Production** - (Carried from scheduled-background MECHANIC",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.15,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.657,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "7b45417d6bad2764",
+      "outcome": "reached",
+      "goal": "**Fleet Status API Hardening** - Add to /api/fleet/status: per-host timeout (5s)",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.647,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "bf66a3bc3736f64b",
+      "outcome": "reached",
+      "goal": "**WinRM Remote Reboot E2E Test** - Execute the full anti-stall chain against a n",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.637,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "f4bae42485c960a6",
+      "outcome": "reached",
+      "goal": "**Portal Load Test 7-Day Completion** - (Carried from scheduled-background MECHA",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.158,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.652,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "79b4a1f318dd4bc0",
+      "outcome": "reached",
+      "goal": "**Freshness Scoring Production** - Make decay_score.py a weekly schtask (via ele",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.158,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.652,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "ce0a677c0488c176",
+      "outcome": "reached",
+      "goal": "**Semantic Search Index** - Build a lightweight TF-IDF or embedding-based search",
+      "features": {
+        "goal_difficulty": 1.65,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.736,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "c4c1e3c38878f370",
+      "outcome": "reached",
+      "goal": "**Orphan Knowledge Recovery** - Find files in memory/ not referenced by any INDE",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.192,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.631,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "7bb8c68f6d85376a",
+      "outcome": "reached",
+      "goal": "**Knowledge Dependency Graph** - Build a directed graph showing which knowledge",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.192,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.631,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "7d82c7ec36778940",
+      "outcome": "reached",
+      "goal": "**Knowledge Base Health Report** - Weekly composite report: total leaves, freshn",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.15,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.657,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "881277c7db6f1e64",
+      "outcome": "reached",
+      "goal": "**Decision Timeline Component** - Build a reusable JS component (ui/timeline.js)",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.647,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "cb7ad74a875653e1",
+      "outcome": "reached",
+      "goal": "**Cycle Comparison View** - In Goals tab, add a \"Compare\" button that shows side",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.637,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "b14afca90b597764",
+      "outcome": "reached",
+      "goal": "**Goal Quality Gate** - `python memory/orchestrator/goal_gate.py`: pre-validate",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "4df1c9e06c40c790",
+      "outcome": "reached",
+      "goal": "**Fleet Decision Log** - Create memory/ops/decision-log.jsonl: structured record",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.667,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "2443258125129ed5",
+      "outcome": "reached",
+      "goal": "**Fleet Health Composite Score** - `python memory/orchestrator/health_score.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "badba7ccfe3a0f79",
+      "outcome": "reached",
+      "goal": "**Fleet Knowledge Graph** - `python memory/researcher/knowledge_graph.py`: extra",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "43e5e871cd293a3d",
+      "outcome": "reached",
+      "goal": "**Semantic Search Index** - `python memory/researcher/semantic_index.py`: build",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.709,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "58ba6c0aaf8dcdf2",
+      "outcome": "reached",
+      "goal": "**Research Gap Analysis** - `python memory/researcher/gap_analysis.py`: scan all",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.709,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "54376fe133bbcf9e",
+      "outcome": "reached",
+      "goal": "**Evidence Source Reliability Score** - Track which evidence sources (agent name",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.647,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "3d41bca371cb04c7",
+      "outcome": "reached",
+      "goal": "**Auto-Synthesis Trigger** - `python memory/scribe/auto_synthesize.py`: detect w",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.709,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "dbf88bb2c5a0493f",
+      "outcome": "reached",
+      "goal": "**Synthesis Quality Rubric** - Define and document a rubric for evaluating synth",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.158,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.652,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "3218fd0ce8c12323",
+      "outcome": "reached",
+      "goal": "**Open Item Aging Report** - `python memory/scribe/open_item_aging.py`: track al",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.158,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.701,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2179
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "e7889b7be0b7d726",
+      "outcome": "reached",
+      "goal": "**Knowledge Gap Narrative** - `python memory/scribe/knowledge_gaps.py`: produce",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.15,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.705,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2388
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "ac951f6a5824b172",
+      "outcome": "reached",
+      "goal": "**Evidence Chain Completeness** - `python memory/verifier/evidence_chain.py`: fo",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "bb05c8c40384c5aa",
+      "outcome": "reached",
+      "goal": "**Verification Cost Analysis** - `python memory/verifier/cost_analysis.py`: meas",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "c486792ef9b1f9fc",
+      "outcome": "reached",
+      "goal": "**Auto-Remediation Playbook Runner** - `python memory/builder/playbook_runner.py",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "ed400243bce93131",
+      "outcome": "reached",
+      "goal": "**Task Re-Router** - `python memory/builder/task_rerouter.py`: when an agent is",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "78cb77b933cc6e43",
+      "outcome": "reached",
+      "goal": "**Fleet State Snapshot Scheduler** - `python memory/builder/state_snapshot.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.709,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "0544a575b868fcf1",
+      "outcome": "reached",
+      "goal": "**Risk Forecast Panel** - Design the predictive risk display: list of upcoming r",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.647,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "74d351a1c8031ccf",
+      "outcome": "reached",
+      "goal": "**Remediation Action Display** - Design how auto-remediation actions appear in t",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.175,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.642,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "72cce95d87d29207",
+      "outcome": "reached",
+      "goal": "**Cycle Progress Radar** - Design a radar/spider chart showing all agents' goal",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.192,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.631,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "6a9693d581459ef4",
+      "outcome": "reached",
+      "goal": "**Auto-Failover Execution** - `python memory/mechanic/auto_failover.py`: when a",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "86ecb477e6792a1a",
+      "outcome": "reached",
+      "goal": "**Host Health Probe Suite** - `python memory/mechanic/host_probes.py`: expand ho",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.709,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "139a573015c39c50",
+      "outcome": "reached",
+      "goal": "**Remediation Circuit Breaker** - `python memory/mechanic/circuit_breaker.py`: t",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "1fad11bd1f47ac46",
+      "outcome": "reached",
+      "goal": "**Evidence Quality Auto-Scorer** - `python memory/researcher/evidence_scorer.py`",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.108,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.727,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3486
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "9acc463a73cf0ce6",
+      "outcome": "reached",
+      "goal": "**Research Gap Detector** - `python memory/researcher/gap_detector.py`: scan all",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.158,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.701,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2179
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "b9ee1b16a549eb09",
+      "outcome": "reached",
+      "goal": "**Source Reliability Ranking** - `python memory/researcher/source_ranking.py`: m",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "44a49a85054449d3",
+      "outcome": "reached",
+      "goal": "**Blocker Resolution Tracker** - `python memory/scribe/blocker_tracker.py`: trac",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.709,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "35c9871a4e4d1f76",
+      "outcome": "reached",
+      "goal": "**Synthesis Quality Metric** - `python memory/scribe/synthesis_quality.py`: defi",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.709,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "4535fbfae4fb3850",
+      "outcome": "reached",
+      "goal": "**Auto-Remediation Safety Gate** - `python memory/verifier/remediation_gate.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.108,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.727,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3486
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "09f93cb3cef208e9",
+      "outcome": "reached",
+      "goal": "**Task Re-Routing E2E Test** - `python memory/verifier/reroute_e2e.py`: full end",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "d95fd202ed3f1564",
+      "outcome": "reached",
+      "goal": "**Cycle Auto-Summary Generator** - `python memory/scribe/cycle_summary.py`: at e",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "f164840c27314c16",
+      "outcome": "reached",
+      "goal": "**Cockpit Data Accuracy Test** - `python memory/verifier/cockpit_accuracy.py`: c",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "8eaae1367944feb3",
+      "outcome": "reached",
+      "goal": "**Runbook Parser + Executor** - `python memory/builder/runbook_exec.py`: parse m",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.108,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.727,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3486
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "8535fd3a560df676",
+      "outcome": "reached",
+      "goal": "**Fleet State Narrative Summarizer** - `python memory/researcher/fleet_summary.p",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "ae44ce778fee223f",
+      "outcome": "reached",
+      "goal": "**Fleet Decision Digest** - `python memory/scribe/decision_digest.py`: compress",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "c0108635afbaf4a5",
+      "outcome": "reached",
+      "goal": "**Fleet Cockpit API** - Add `/api/fleet/cockpit` to agent_portal.py: single endp",
+      "features": {
+        "goal_difficulty": 1.55,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.637,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "a9b36cfcb893a6b5",
+      "outcome": "reached",
+      "goal": "**Workload Rebalancer** - `python memory/orchestrator/rebalancer.py`: detect age",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.709,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "7fab4cefdcc2dd01",
+      "outcome": "reached",
+      "goal": "**Cross-Agent Handoff Summarizer** - `python memory/scribe/handoff_summary.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "a454fb0f4fbb5af6",
+      "outcome": "reached",
+      "goal": "**Cockpit Narrative Layer** - `python memory/scribe/cockpit_narrative.py`: given",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "0c2c8de2d86624b4",
+      "outcome": "reached",
+      "goal": "**Fleet State Collector Daemon** - `python memory/mechanic/state_collector.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "9a2d7ec47b283b08",
+      "outcome": "reached",
+      "goal": "**Fleet Knowledge Delta Report** - `python memory/scribe/knowledge_delta.py`: co",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.15,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.705,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2388
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "39d2901bd321dcab",
+      "outcome": "reached",
+      "goal": "**Knowledge Decay Model** - `python memory/researcher/knowledge_decay.py`: build",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "a6c32fff615b98af",
+      "outcome": "reached",
+      "goal": "**Goal Completion Pattern Analysis** - `python memory/scribe/completion_patterns",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "722b75e576947270",
+      "outcome": "reached",
+      "goal": "**Runbook Lesson Extractor** - `python memory/scribe/runbook_lessons.py`: after",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "18e0eef25232deb6",
+      "outcome": "reached",
+      "goal": "**Stakeholder Briefing Generator** - `python memory/scribe/stakeholder_brief.py`",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "d472c08f9181dbce",
+      "outcome": "reached",
+      "goal": "**Auto-Cycle Trigger** - `python memory/builder/auto_cycle_trigger.py`: monitor",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "9b328bd7d3cf62f6",
+      "outcome": "reached",
+      "goal": "**Cross-Agent Pattern Detector** - `python memory/researcher/cross_patterns.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "8e4901aeeda37429",
+      "outcome": "reached",
+      "goal": "**Fleet Memory Compression** - `python memory/researcher/memory_compress.py`: id",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.108,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.727,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3486
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "a84cf4629640f4e3",
+      "outcome": "reached",
+      "goal": "**Anomaly Narrative Generator** - `python memory/researcher/anomaly_narrative.py",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "f33fa9f8b743a5d8",
+      "outcome": "reached",
+      "goal": "**Model Swap Automation Script** - `python memory/builder/model_swap.py`: full s",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.158,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.701,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2179
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "e328a6a7a80b570c",
+      "outcome": "reached",
+      "goal": "**Historical Precedent Matcher** - `python memory/researcher/precedent_match.py`",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "3826a1857f1df437",
+      "outcome": "reached",
+      "goal": "**Knowledge Conflict Detector** - `python memory/researcher/conflict_detector.py",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "c3bb562c9217440a",
+      "outcome": "reached",
+      "goal": "**Context Budget Manager** - `python memory/orchestrator/context_budget.py`: tra",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.15,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.705,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2388
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "24612103be1082cd",
+      "outcome": "reached",
+      "goal": "**Roster Health Monitor** - `python memory/orchestrator/roster_monitor.py`: cont",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "339a2ed2397450a2",
+      "outcome": "reached",
+      "goal": "**Fleet Incident Auto-Responder** - `python memory/orchestrator/incident_respond",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "83c1e6c4ff3ea820",
+      "outcome": "reached",
+      "goal": "**Fleet Cockpit Frontend** - Add a \"Cockpit\" tab to the portal (ui/cockpit.js +",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.637,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "376903312ac4ce77",
+      "outcome": "reached",
+      "goal": "**Health Score Widget** - Add to cockpit tab: real-time health score display (0-",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.647,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "3332bf6bcfd01ec1",
+      "outcome": "reached",
+      "goal": "**Decision Log Viewer** - Add to cockpit tab: scrollable list of recent decision",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.2,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.627,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "921db6e0ed6e01cc",
+      "outcome": "reached",
+      "goal": "**Resource Monitor Panel** - Add to cockpit tab: per-host resource display (VRAM",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.2,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.627,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "1c04d9688eae16c9",
+      "outcome": "reached",
+      "goal": "**Remediation Rollback Test** - `python memory/verifier/rollback_test.py`: for e",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "391b473ee1884932",
+      "outcome": "reached",
+      "goal": "**Fleet State Consistency Check** - `python memory/verifier/state_consistency.py",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "a460cde3946b94d0",
+      "outcome": "reached",
+      "goal": "**Health Score Regression Test** - `python memory/verifier/health_regression.py`",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "8ed3b57318f9973c",
+      "outcome": "reached",
+      "goal": "**Model Load/Unload Automation** - `python memory/mechanic/model_lifecycle.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "70524ad03badc450",
+      "outcome": "reached",
+      "goal": "**Decision Policy Compliance Audit** - `python memory/verifier/policy_audit.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "0e292957d38686c0",
+      "outcome": "reached",
+      "goal": "**Auto-Cycle Trigger Validation** - `python memory/verifier/cycle_trigger_test.p",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "7a687f26025090fc",
+      "outcome": "reached",
+      "goal": "**Model Swap Verification Battery** - `python memory/verifier/model_swap_verify.",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.15,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.705,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2388
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "bf9faca36666e12a",
+      "outcome": "reached",
+      "goal": "**Cockpit Performance Benchmark** - `python memory/verifier/cockpit_perf.py`: me",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "6d718a477cfa8197",
+      "outcome": "reached",
+      "goal": "11 (verified) 2026-11-23 - selftest 20/20 PASS; per-host fleet data added (hosts",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.158,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.652,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "7a9845b167cd4b4f",
+      "outcome": "reached",
+      "goal": "12 (verified) 2026-11-23 - selftest 17/17 PASS; watch command added (detect->rec",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.158,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.652,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "926fe0ac949e9c1b",
+      "outcome": "reached",
+      "goal": "13 (verified) 2026-11-23 - selftest 9/9 PASS; idle-detection logic verified (for",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.667,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "637afd901aa87883",
+      "outcome": "reached",
+      "goal": "14 (verified) 2026-11-23 - selftest 8/8 PASS; runbook automation for top-5 manua",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.637,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "8db4de2cbb25dc33",
+      "outcome": "reached",
+      "goal": "15 (verified) 2026-11-23 - selftest 10/10 PASS; schtask PortalSelfHeal registere",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.647,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "24d4f651de6d6f65",
+      "outcome": "reached",
+      "goal": "16 (verified) 2026-11-23 - selftest 20/20 PASS; schtask FleetStateCollector live",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.661,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "6a8ff745af8e86a7",
+      "outcome": "reached",
+      "goal": "**Model OOM Auto-Recovery** - `python memory/mechanic/oom_recovery.py`: when a m",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.15,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.705,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2388
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "febe2322e916f902",
+      "outcome": "reached",
+      "goal": "**Scheduled Maintenance Window** - `python memory/mechanic/maintenance_window.py",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "187296f6565457cf",
+      "outcome": "reached",
+      "goal": "**Host Capacity Arbitration** - `python memory/mechanic/capacity_arbiter.py`: wh",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "7329749a6f036878",
+      "outcome": "reached",
+      "goal": "**Incident Auto-Classification** - `python memory/mechanic/incident_classifier.p",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.108,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.727,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3486
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "fc70d92081580f2b",
+      "outcome": "reached",
+      "goal": "**Portal Self-Healing** - `python memory/mechanic/portal_heal.py`: monitor agent",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "24e6b80ec3036bbc",
+      "outcome": "reached",
+      "goal": "**Knowledge Index Builder** - `python memory/archivist/knowledge_index.py`: scan",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.108,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.727,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3486
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "ddbdac5233a1e7d8",
+      "outcome": "reached",
+      "goal": "**Citation Integrity Monitor** - `python memory/archivist/citation_monitor.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.133,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.714,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2832
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "2c68382a9d35220c",
+      "outcome": "reached",
+      "goal": "**Retrieval Accuracy Benchmark** - Build a benchmark suite of 20 known questions",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.647,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "3bd42652589473c2",
+      "outcome": "reached",
+      "goal": "**Auto-Abstract Generation** - For each evidence leaf >200 lines, generate a 3-s",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.647,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "fcc12346a41ead3f",
+      "outcome": "reached",
+      "goal": "**Cross-Reference Consistency Check** - When the same fact appears in multiple f",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.192,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.631,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "3530db1909948ef4",
+      "outcome": "reached",
+      "goal": "**Knowledge Freshness Heatmap** - Extend freshness scoring to produce a per-dire",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.175,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.642,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "eadc6e9d2d77ad97",
+      "outcome": "reached",
+      "goal": "**Cockpit Layout Design** - Design the Fleet Cockpit tab layout: grid structure,",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.167,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.647,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "31fc98242bffc835",
+      "outcome": "reached",
+      "goal": "**Health Score Visualization** - Design the health score component: gauge type (",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.158,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.652,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "6d29583a98b54494",
+      "outcome": "reached",
+      "goal": "**Decision Timeline UX** - Design the decision log display as a vertical timelin",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.192,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.631,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "654971b692c14fc7",
+      "outcome": "reached",
+      "goal": "**Agent Status Grid** - Design the per-agent status display: card per agent show",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.15,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.657,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "a5051d1c1f45c2d0",
+      "outcome": "reached",
+      "goal": "**Fleet Topology Live Update** - Update the existing fleet topology view to show",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.637,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "26167424627541c8",
+      "outcome": "reached",
+      "goal": "**Alert Triage View** - Design a prioritized alert queue: sorted by severity x a",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.637,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "bb7d80c6590c7a8e",
+      "outcome": "reached",
+      "goal": "**Cockpit Mobile Adaptation** - Ensure the full cockpit tab is usable at 768px:",
+      "features": {
+        "goal_difficulty": 1.35,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.183,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.637,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": 0.3548
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "a77020aae9e91bf1",
+      "outcome": "reached",
+      "goal": "**Autonomy Loop-Closure Rate** - `python memory/researcher/loop_closure_rate.py`",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "914258cb72b35d94",
+      "outcome": "reached",
+      "goal": "**Decision Confidence Estimator** - `python memory/researcher/decision_confidenc",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "1716150e6513718b",
+      "outcome": "reached",
+      "goal": "**Evidence-to-Decision Traceability** - `python memory/researcher/evidence_trace",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.108,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.727,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3486
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "69bd8ff8b0a8579a",
+      "outcome": "reached",
+      "goal": "**Prediction Calibration Tracker** - `python memory/researcher/calibration_track",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.1,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.731,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3696
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "67296b12636efb33",
+      "outcome": "reached",
+      "goal": "**Cockpit Decision-Feed Schema** - `memory/researcher/cockpit-decision-feed.md`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "779f80fc0792aa94",
+      "outcome": "reached",
+      "goal": "**Autonomous Action Replay** - `python memory/researcher/action_replay.py`: give",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.709,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "98cb567aae914067",
+      "outcome": "reached",
+      "goal": "**Autonomy Risk Register** - `python memory/researcher/autonomy_risk_register.py",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.092,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.736,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3905
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "7ecee8c4d65cec46",
+      "outcome": "reached",
+      "goal": "**Loop-Stall Predictor** - `python memory/researcher/loop_stall_predictor.py`: f",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.108,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.727,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3486
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "7c4982325d8c522c",
+      "outcome": "reached",
+      "goal": "**Fleet Trust Score** - `python memory/researcher/fleet_trust_score.py`: combine",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "12282aa9a7d081f3",
+      "outcome": "reached",
+      "goal": "**Trust-Pipeline Self-Check** - `python memory/researcher/trust_selfcheck.py`: t",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "155ebd9eba059561",
+      "outcome": "reached",
+      "goal": "**Write-Time Auto-Linker** - `python memory/archivist/auto_linker.py`: when a ne",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.142,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.709,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2597
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "82902b6621c61fac",
+      "outcome": "reached",
+      "goal": "**Fact-Level Provenance Ledger** - `python memory/archivist/provenance_ledger.py",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "5ad05119d7398328",
+      "outcome": "reached",
+      "goal": "**Stale-Knowledge Auto-Quarantine** - `python memory/archivist/auto_quarantine.p",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "8e9c709a28f08022",
+      "outcome": "reached",
+      "goal": "**Knowledge Delta Feed** - `python memory/archivist/kb_delta.py`: emit a compact",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.175,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.691,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.1734
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "72257196e8a1d829",
+      "outcome": "reached",
+      "goal": "**Cross-Agent Knowledge Conflict Resolver** - `python memory/archivist/conflict_",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "1a33e1a0f1c815b9",
+      "outcome": "reached",
+      "goal": "**Decision-Knowledge Feedback Loop** - `python memory/archivist/kb_feedback.py`:",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "81c076b3e673afde",
+      "outcome": "reached",
+      "goal": "**Knowledge Access Heatmap** - `python memory/archivist/access_heatmap.py`: inst",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.117,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.723,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3251
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "f282fb2e9a46c5d9",
+      "outcome": "reached",
+      "goal": "**KB Regression Sentinel** - `python memory/archivist/kb_sentinel.py`: scheduled",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.158,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.701,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2179
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "51cdd8960fcad0d6",
+      "outcome": "reached",
+      "goal": "**Tiered Summary Ladder** - `python memory/archivist/summary_ladder.py`: build a",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.15,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.705,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.2388
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "f80aeee1a4f3f4e8",
+      "outcome": "reached",
+      "goal": "**KB Versioning & Rollback** - `python memory/archivist/kb_version.py`: git-back",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.125,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.718,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": 0.3042
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet Performance Attribution Model",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.483,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.311,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6321
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Predictive Goal Difficulty Scorer",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.5,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.302,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6766
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Model Capability Boundary Probe",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.45,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.33,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.5458
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cross-Fleet Design Pattern Survey",
+      "features": {
+        "goal_difficulty": 2.55,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.492,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.381,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6557
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.4394
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Knowledge Decay Acceleration Predictor",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.508,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.297,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6975
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Agent Interaction Quality Metric",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.483,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.311,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6321
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Goal Dependency Prediction",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.492,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.306,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6557
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet Learning Curve Analysis",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.508,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.297,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6975
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Context Window Optimization Study",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.492,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.306,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6557
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "researcher",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Decision Confidence Calibration Report",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.475,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.316,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6112
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cockpit Self-Configuration Engine",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.517,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.293,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.7211
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Auto-Generated Runbook Executor",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.533,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.326,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.7629
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet Dashboard Data Pipeline",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.583,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.258,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8937
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Incremental KB Rebuild",
+      "features": {
+        "goal_difficulty": 2.96,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.492,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.319,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7108
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6557
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Agent Sandbox Provisioner",
+      "features": {
+        "goal_difficulty": 2.66,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.5,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.359,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6766
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5122
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cockpit Decision Feed Component",
+      "features": {
+        "goal_difficulty": 2.15,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.483,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.32,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6321
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Memory Tree Auto-Pruner",
+      "features": {
+        "goal_difficulty": 2.63,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.55,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.334,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8074
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.4924
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet API Versioning Layer",
+      "features": {
+        "goal_difficulty": 2.3,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.425,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.464,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.4804
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.274
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Goal File Format Validator",
+      "features": {
+        "goal_difficulty": 2.66,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.525,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.344,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.742
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5122
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "builder",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cockpit Health Heatmap Component",
+      "features": {
+        "goal_difficulty": 2.11,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.55,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.289,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8074
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Knowledge Fact Spot-Checker",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.6,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.289,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.9381
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Goal Acceptance Fuzz Tester",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.583,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.298,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8937
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet State Consistency Checker",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.592,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.293,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.9172
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Autonomous Action Replay Validator",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.542,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.321,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.7864
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cockpit Data Accuracy Audit",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.55,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.316,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8074
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Capacity Prediction Back-Tester",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.492,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.35,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6557
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Knowledge Graph Consistency Proof",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.575,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.302,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8728
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "verifier",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cycle Closure Integrity Check",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.633,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.271,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -1.0244
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cockpit Information Architecture v2",
+      "features": {
+        "goal_difficulty": 2.55,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.517,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.365,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.7211
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.4394
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Agent Role Drift Visualization",
+      "features": {
+        "goal_difficulty": 2.18,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.558,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.275,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8283
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Decision Feed UX Pattern Spec",
+      "features": {
+        "goal_difficulty": 2.55,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.517,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.365,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.7211
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.4394
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Health Heatmap Visual Design",
+      "features": {
+        "goal_difficulty": 2.25,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.6,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.245,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.9381
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cockpit Dark Theme Audit & Fix",
+      "features": {
+        "goal_difficulty": 2.24,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.592,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.25,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.9172
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Evolution Panel Design",
+      "features": {
+        "goal_difficulty": 2.55,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.542,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.35,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.7864
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.4394
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Alert Severity Visual Language",
+      "features": {
+        "goal_difficulty": 2.25,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.542,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.274,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.7864
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cockpit Empty State & First-Run Experience",
+      "features": {
+        "goal_difficulty": 2.55,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.567,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.336,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8518
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.4394
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Mobile-Adaptive Cockpit (375px)",
+      "features": {
+        "goal_difficulty": 2.2,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.6,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.251,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.9381
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "designer",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Data Visualization Style Guide",
+      "features": {
+        "goal_difficulty": 2.55,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.6,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.317,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.9381
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.4394
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Knowledge Freshness SLA Monitor v2",
+      "features": {
+        "goal_difficulty": 2.3,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.425,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.464,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.4804
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.274
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cross-Agent Consistency Auditor",
+      "features": {
+        "goal_difficulty": 2.29,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.408,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.476,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.436
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2673
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Knowledge Impact Scoring",
+      "features": {
+        "goal_difficulty": 2.24,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.442,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.462,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.5249
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2342
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Auto-Generated Knowledge Digest",
+      "features": {
+        "goal_difficulty": 2.23,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.375,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.508,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3497
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2276
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Knowledge Provenance Chain Validator",
+      "features": {
+        "goal_difficulty": 2.28,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.417,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.472,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.4595
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2607
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Semantic Deduplication Engine",
+      "features": {
+        "goal_difficulty": 2.29,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.425,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.465,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.4804
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2673
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Load-Bearing Fact Identifier",
+      "features": {
+        "goal_difficulty": 2.24,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.4,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.49,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.4151
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2342
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "KB Self-Repair Protocol",
+      "features": {
+        "goal_difficulty": 2.26,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.45,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.454,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.5458
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2475
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Knowledge Community Detection",
+      "features": {
+        "goal_difficulty": 2.26,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.392,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.492,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3941
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2475
+        }
+      ]
+    },
+    {
+      "agent": "archivist",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cross-Cycle Knowledge Delta Report",
+      "features": {
+        "goal_difficulty": 2.32,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.408,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.471,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.436
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2872
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet Topology Auto-Rebalancer",
+      "features": {
+        "goal_difficulty": 2.18,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.358,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.527,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3052
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "One-Command Host Onboarding",
+      "features": {
+        "goal_difficulty": 2.08,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.383,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.527,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3706
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": 0.2002
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Self-Heal Verification Loop",
+      "features": {
+        "goal_difficulty": 1.86,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.392,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.42,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3941
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Model Performance Regression Alert",
+      "features": {
+        "goal_difficulty": 1.76,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.358,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.458,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3052
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Capacity Headroom Guarantee",
+      "features": {
+        "goal_difficulty": 1.8,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.375,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.441,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3497
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet Restart Coordination",
+      "features": {
+        "goal_difficulty": 2.19,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.383,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.509,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3706
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2012
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Thermal Throttling Predictor",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.383,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.427,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3706
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Network Path Optimization",
+      "features": {
+        "goal_difficulty": 1.88,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.392,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.417,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3941
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Model Integrity Checksum Monitor",
+      "features": {
+        "goal_difficulty": 1.82,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.4,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.421,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.4151
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        }
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet Energy & Cost Tracker",
+      "features": {
+        "goal_difficulty": 1.81,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.375,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.439,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3497
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet Topology Auto-Evolver",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.583,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.298,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8937
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Capability Gap Radar",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.6,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.25,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.9381
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Goal Quality Regression Detector",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.475,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.316,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6112
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Agent Role Drift Monitor",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.625,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.276,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -1.0035
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Meta-Process Efficiency Tracker",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.492,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.306,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6557
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Autonomous Roster Expansion Proposal",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.525,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.288,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.742
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cycle Goal Auto-Calibration",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.567,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.307,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8518
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet Knowledge Consolidation Trigger",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.542,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.321,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.7864
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cross-Cycle Pattern Miner",
+      "features": {
+        "goal_difficulty": 2.75,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.575,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.302,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.8728
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5718
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Autonomy Boundary Mapper",
+      "features": {
+        "goal_difficulty": 3.05,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.508,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.297,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.7704
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.6975
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cycle Narrative v2",
+      "features": {
+        "goal_difficulty": 2.42,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.375,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.476,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.3534
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3497
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Decision-to-Knowledge Distiller",
+      "features": {
+        "goal_difficulty": 2.79,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.383,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.411,
+      "top_factors": [
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.5983
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3706
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet Learning Summary (weekly)",
+      "features": {
+        "goal_difficulty": 2.38,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.358,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.494,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.3269
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3052
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Handoff Pattern Analyzer",
+      "features": {
+        "goal_difficulty": 2.38,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.367,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.488,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3288
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.3269
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Goal Wording Quality Tracker",
+      "features": {
+        "goal_difficulty": 2.38,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.367,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.488,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3288
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.3269
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cross-Agent Knowledge Gap Report",
+      "features": {
+        "goal_difficulty": 2.39,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.408,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.46,
+      "top_factors": [
+        {
+          "factor": "context_utilization",
+          "contribution": -0.436
+        },
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.3335
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Cycle Comparison Data",
+      "features": {
+        "goal_difficulty": 2.31,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.333,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.522,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2806
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.2398
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Fleet Communication Protocol Doc",
+      "features": {
+        "goal_difficulty": 2.2,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.4,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.496,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.4151
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.2078
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Knowledge Consolidation Scribe",
+      "features": {
+        "goal_difficulty": 1.85,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.342,
+        "dependency_depth": 0
+      },
+      "predicted_reach_prob": 0.454,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "dependency_depth",
+          "contribution": -0.3539
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.2634
+        }
+      ]
+    },
+    {
+      "agent": "scribe",
+      "sig": "open",
+      "outcome": "open",
+      "goal": "Autonomous Action Narrative Log",
+      "features": {
+        "goal_difficulty": 2.37,
+        "model_quality": 0.215,
+        "host_performance": 0.5,
+        "context_utilization": 0.358,
+        "dependency_depth": 1
+      },
+      "predicted_reach_prob": 0.496,
+      "top_factors": [
+        {
+          "factor": "host_performance",
+          "contribution": -0.4236
+        },
+        {
+          "factor": "goal_difficulty",
+          "contribution": -0.3203
+        },
+        {
+          "factor": "context_utilization",
+          "contribution": -0.3052
+        }
+      ]
+    }
+  ]
+}

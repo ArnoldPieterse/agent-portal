@@ -1,0 +1,72 @@
+{
+  "library_version": "v1-2026-11-23",
+  "date": "2026-11-23",
+  "classes": 7,
+  "all_intended_caught": true,
+  "rows": [
+    {
+      "class": "clobber",
+      "intended_detector": "d_clobber",
+      "caught": true,
+      "false_positives": []
+    },
+    {
+      "class": "desync",
+      "intended_detector": "d_desync",
+      "caught": true,
+      "false_positives": []
+    },
+    {
+      "class": "stale_verified",
+      "intended_detector": "d_stale_verified",
+      "caught": true,
+      "false_positives": []
+    },
+    {
+      "class": "phantom_count",
+      "intended_detector": "d_phantom_count",
+      "caught": true,
+      "false_positives": []
+    },
+    {
+      "class": "broken_pointer",
+      "intended_detector": "d_broken_pointer",
+      "caught": true,
+      "false_positives": []
+    },
+    {
+      "class": "stale_instrument",
+      "intended_detector": "d_stale_instrument",
+      "caught": true,
+      "false_positives": []
+    },
+    {
+      "class": "lossy_carryover",
+      "intended_detector": "d_lossy_carryover",
+      "caught": true,
+      "false_positives": []
+    }
+  ],
+  "coverage_gap_probe": {
+    "mutation": "future-timestamp ordering inversion (clock skew)",
+    "detector_hits": {
+      "clobber": false,
+      "desync": false,
+      "stale_verified": false,
+      "phantom_count": false,
+      "broken_pointer": false,
+      "stale_instrument": false,
+      "lossy_carryover": false
+    },
+    "is_uncovered": true
+  },
+  "per_detector_fp_rate": {
+    "clobber": 0.0,
+    "desync": 0.0,
+    "stale_verified": 0.0,
+    "phantom_count": 0.0,
+    "broken_pointer": 0.0,
+    "stale_instrument": 0.0,
+    "lossy_carryover": 0.0
+  }
+}

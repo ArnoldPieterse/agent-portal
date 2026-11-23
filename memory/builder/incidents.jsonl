@@ -1,0 +1,2 @@
+{"incident_id": "inc-1795385879-1", "severity": "info", "alert_count": 1, "types": ["oom_recovery"], "hosts": [], "agents": ["test_agent"], "first_ts": 1795385878.698011, "last_ts": 1795385878.698011, "duration_s": 0, "summary": "1 alert(s) [info] on test_agent"}
+{"incident_id": "inc-1795389036-1", "severity": "info", "alert_count": 1, "types": ["oom_recovery"], "hosts": [], "agents": ["test_agent"], "first_ts": 1795389036.112747, "last_ts": 1795389036.112747, "duration_s": 0, "summary": "1 alert(s) [info] on test_agent"}

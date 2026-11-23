@@ -1,0 +1,140 @@
+{
+  "timestamp": "2026-11-23T12:54:17.243222+00:00",
+  "checks": {
+    "panels": [
+      {
+        "panel": "modeBar",
+        "found": true
+      },
+      {
+        "panel": "goalBar",
+        "found": true
+      },
+      {
+        "panel": "fleetPanel",
+        "found": true
+      }
+    ],
+    "css": [
+      {
+        "type": "required",
+        "selector": ".seg",
+        "prop": "flex",
+        "desc": ".seg must not flex-shrink (squeeze bug guard)",
+        "found": true
+      },
+      {
+        "type": "required",
+        "selector": ".toggles",
+        "prop": "flex",
+        "desc": ".toggles must not flex-shrink",
+        "found": true
+      },
+      {
+        "type": "forbidden",
+        "pattern": "#modeBar\\s*\\{[^}]*overflow\\s*:\\s*hidden",
+        "desc": "#modeBar must not have overflow:hidden",
+        "violated": false
+      }
+    ],
+    "js_syntax": [
+      {
+        "file": "api-client.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "cockpit.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "components.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "core.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "fleet_health.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "fleet_performance.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "fleet_status.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "fleet_topology.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "icons.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "notifications.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "scheduler.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "state.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "tour.js",
+        "issues": [],
+        "ok": true
+      },
+      {
+        "file": "uploads.js",
+        "issues": [],
+        "ok": true
+      }
+    ],
+    "a11y": [
+      {
+        "check": "unlabeled_buttons",
+        "count": 0,
+        "details": []
+      },
+      {
+        "check": "focus_styles_exist",
+        "found": true
+      }
+    ],
+    "viewports": [
+      {
+        "viewport": 768,
+        "active_media_queries": 3
+      },
+      {
+        "viewport": 1024,
+        "active_media_queries": 2
+      },
+      {
+        "viewport": 1400,
+        "active_media_queries": 2
+      }
+    ]
+  },
+  "overall_pass": true,
+  "duration_ms": 7.9
+}

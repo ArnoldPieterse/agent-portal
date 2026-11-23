@@ -1,0 +1,137 @@
+{
+  "generated": "2026-11-23T12:27:25Z",
+  "cycles_analyzed": 7,
+  "scored_pairs": 931,
+  "per_agent": {
+    "verifier": {
+      "cycles": 0,
+      "reached": 122,
+      "total": 125,
+      "sum_p": 62.793,
+      "rate": 0.976,
+      "avg_p": 0.502344,
+      "under_confidence": 0.47365599999999997
+    },
+    "archivist": {
+      "cycles": 0,
+      "reached": 118,
+      "total": 120,
+      "sum_p": 60.0,
+      "rate": 0.9833333333333333,
+      "avg_p": 0.5,
+      "under_confidence": 0.4833333333333333
+    },
+    "builder": {
+      "cycles": 0,
+      "reached": 120,
+      "total": 120,
+      "sum_p": 60.0,
+      "rate": 1.0,
+      "avg_p": 0.5,
+      "under_confidence": 0.5
+    },
+    "designer": {
+      "cycles": 0,
+      "reached": 110,
+      "total": 110,
+      "sum_p": 55.0,
+      "rate": 1.0,
+      "avg_p": 0.5,
+      "under_confidence": 0.5
+    },
+    "mechanic": {
+      "cycles": 0,
+      "reached": 96,
+      "total": 99,
+      "sum_p": 49.5,
+      "rate": 0.9696969696969697,
+      "avg_p": 0.5,
+      "under_confidence": 0.4696969696969697
+    },
+    "orchestrator": {
+      "cycles": 0,
+      "reached": 113,
+      "total": 113,
+      "sum_p": 56.5,
+      "rate": 1.0,
+      "avg_p": 0.5,
+      "under_confidence": 0.5
+    },
+    "researcher": {
+      "cycles": 0,
+      "reached": 124,
+      "total": 124,
+      "sum_p": 62.0,
+      "rate": 1.0,
+      "avg_p": 0.5,
+      "under_confidence": 0.5
+    },
+    "scribe": {
+      "cycles": 0,
+      "reached": 119,
+      "total": 120,
+      "sum_p": 60.0,
+      "rate": 0.9916666666666667,
+      "avg_p": 0.5,
+      "under_confidence": 0.4916666666666667
+    }
+  },
+  "proposals": [
+    {
+      "agent": "builder",
+      "current_weight": 1.0,
+      "proposed_weight": 2.0,
+      "direction": "INCREASE",
+      "rationale": "Agent 'builder' actual completion rate 100% vs avg predicted P=50% across 120 goals in 7 cycle(s). Under-confident by 50.0%. Forecast underrates this agent's throughput; increase dispatch weight to prioritize its goals earlier."
+    },
+    {
+      "agent": "designer",
+      "current_weight": 1.0,
+      "proposed_weight": 2.0,
+      "direction": "INCREASE",
+      "rationale": "Agent 'designer' actual completion rate 100% vs avg predicted P=50% across 110 goals in 7 cycle(s). Under-confident by 50.0%. Forecast underrates this agent's throughput; increase dispatch weight to prioritize its goals earlier."
+    },
+    {
+      "agent": "orchestrator",
+      "current_weight": 1.0,
+      "proposed_weight": 2.0,
+      "direction": "INCREASE",
+      "rationale": "Agent 'orchestrator' actual completion rate 100% vs avg predicted P=50% across 113 goals in 7 cycle(s). Under-confident by 50.0%. Forecast underrates this agent's throughput; increase dispatch weight to prioritize its goals earlier."
+    },
+    {
+      "agent": "researcher",
+      "current_weight": 1.0,
+      "proposed_weight": 2.0,
+      "direction": "INCREASE",
+      "rationale": "Agent 'researcher' actual completion rate 100% vs avg predicted P=50% across 124 goals in 7 cycle(s). Under-confident by 50.0%. Forecast underrates this agent's throughput; increase dispatch weight to prioritize its goals earlier."
+    },
+    {
+      "agent": "scribe",
+      "current_weight": 1.0,
+      "proposed_weight": 1.983,
+      "direction": "INCREASE",
+      "rationale": "Agent 'scribe' actual completion rate 99% vs avg predicted P=50% across 120 goals in 7 cycle(s). Under-confident by 49.2%. Forecast underrates this agent's throughput; increase dispatch weight to prioritize its goals earlier."
+    },
+    {
+      "agent": "archivist",
+      "current_weight": 1.0,
+      "proposed_weight": 1.967,
+      "direction": "INCREASE",
+      "rationale": "Agent 'archivist' actual completion rate 98% vs avg predicted P=50% across 120 goals in 7 cycle(s). Under-confident by 48.3%. Forecast underrates this agent's throughput; increase dispatch weight to prioritize its goals earlier."
+    },
+    {
+      "agent": "verifier",
+      "current_weight": 1.0,
+      "proposed_weight": 1.947,
+      "direction": "INCREASE",
+      "rationale": "Agent 'verifier' actual completion rate 98% vs avg predicted P=50% across 125 goals in 7 cycle(s). Under-confident by 47.4%. Forecast underrates this agent's throughput; increase dispatch weight to prioritize its goals earlier."
+    },
+    {
+      "agent": "mechanic",
+      "current_weight": 1.0,
+      "proposed_weight": 1.939,
+      "direction": "INCREASE",
+      "rationale": "Agent 'mechanic' actual completion rate 97% vs avg predicted P=50% across 99 goals in 7 cycle(s). Under-confident by 47.0%. Forecast underrates this agent's throughput; increase dispatch weight to prioritize its goals earlier."
+    }
+  ]
+}

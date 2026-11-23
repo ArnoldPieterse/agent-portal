@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-23T12:01:09.772033+00:00",
+  "density_mode": "calm",
+  "fleet_summary": {
+    "hosts_online": 4,
+    "active_incidents": 0,
+    "avg_vram_percent": 39.0,
+    "goals_reached": 62
+  },
+  "panels": [
+    {
+      "panel_id": "health",
+      "title": "Fleet Health",
+      "priority": 4,
+      "density": "normal"
+    },
+    {
+      "panel_id": "goals",
+      "title": "Goal Progress",
+      "priority": 5,
+      "density": "normal"
+    },
+    {
+      "panel_id": "loop_status",
+      "title": "Autonomy Loop Status",
+      "priority": 6,
+      "density": "normal"
+    }
+  ],
+  "refresh_interval_s": 120
+}

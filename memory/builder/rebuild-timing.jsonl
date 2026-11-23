@@ -1,0 +1,2 @@
+{"ts": "2026-11-23T23:17:44.951802", "type": "selftest-ac1", "incr_s": 0.0025, "full_s": 0.44, "files": 1, "pass": true}
+{"ts": "2026-11-23T23:17:45.338226", "type": "selftest-ac3", "incr_s": 0.0037, "files": 5, "pass": true}

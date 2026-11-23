@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-11-23T12:37:22Z",
+  "threshold_cycles": 2,
+  "total_instruments": 8,
+  "healthy": 7,
+  "stale": 0,
+  "never_run": 1,
+  "instruments": [
+    {
+      "instrument": "blocker_loop_runbook",
+      "description": "Auto-maintained blocker->detector->fix->verify runbook",
+      "script": "memory/researcher/blocker_loop_runbook.py",
+      "last_run": "2026-11-23T12:28:29Z",
+      "staleness_cycles": 0.0,
+      "status": "HEALTHY",
+      "fp_rate": null,
+      "flagged": false
+    },
+    {
+      "instrument": "calib_dispatch",
+      "description": "Feeds calibration error back into dispatch weights",
+      "script": "memory/researcher/calib_dispatch.py",
+      "last_run": "2026-11-23T12:27:25Z",
+      "staleness_cycles": 0.0,
+      "status": "HEALTHY",
+      "fp_rate": null,
+      "flagged": false
+    },
+    {
+      "instrument": "clobber_manifest",
+      "description": "Detects file drift between sandbox and shared dirs",
+      "script": "memory/researcher/remediation_bus.py",
+      "last_run": "2026-11-23T12:19:43Z",
+      "staleness_cycles": 0.0,
+      "status": "HEALTHY",
+      "fp_rate": null,
+      "flagged": false
+    },
+    {
+      "instrument": "dispatch_desync",
+      "description": "Detects open-goal count mismatches in autoloop.json",
+      "script": "memory/researcher/remediation_bus.py",
+      "last_run": "2026-11-23T12:20:25Z",
+      "staleness_cycles": 0.0,
+      "status": "HEALTHY",
+      "fp_rate": 1.0,
+      "flagged": false
+    },
+    {
+      "instrument": "goal_critical_path",
+      "description": "Builds cross-agent dependency graph + critical path",
+      "script": "memory/researcher/goal_critical_path.py",
+      "last_run": "2026-11-23T12:24:09Z",
+      "staleness_cycles": 0.0,
+      "status": "HEALTHY",
+      "fp_rate": null,
+      "flagged": false
+    },
+    {
+      "instrument": "instrument_roi",
+      "description": "Attributes pass-quality changes to specific instruments",
+      "script": "memory/researcher/instrument_roi.py",
+      "last_run": null,
+      "staleness_cycles": 999,
+      "status": "NEVER_RUN",
+      "fp_rate": null,
+      "flagged": true
+    },
+    {
+      "instrument": "reach_matrix",
+      "description": "Flags model residency drift (expected model not loaded)",
+      "script": "memory/researcher/remediation_bus.py",
+      "last_run": "2026-11-23T12:19:43Z",
+      "staleness_cycles": 0.0,
+      "status": "HEALTHY",
+      "fp_rate": null,
+      "flagged": false
+    },
+    {
+      "instrument": "stale_claim_scan",
+      "description": "Scans memory/ for broken artifact citations",
+      "script": "memory/researcher/stale_check.py",
+      "last_run": "2026-11-23T12:19:43Z",
+      "staleness_cycles": 0.0,
+      "status": "HEALTHY",
+      "fp_rate": 0.965,
+      "flagged": false
+    }
+  ]
+}

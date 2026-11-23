@@ -1,0 +1,23 @@
+# Verifier - 10 goals (set 2026-11-23, cycle-15)
+
+Focus: Closed-Loop Autonomy & Fleet Cockpit. Cycle 14 proved the loop's stages fire; cycle 15 proves the loop is STABLE and TRUTHFUL - it converges (no flapping), grounds its beliefs in observed outcomes, calibrates its confidence, respects budgets, replays deterministically, escalates correctly, and the cockpit shows only what a source supports. Every goal below is new vs cycle-14 and the anti-repeat list.
+
+1. **Closed-Loop Oscillation / Flap Detector** - `python memory/verifier/loop_oscillation.py`: scan the decision history for limit-cycles where the system flaps A->B->A->B without converging; report period + window per oscillation. Verified: a synthetic flap sequence is detected with correct period; a converging sequence is NOT flagged; the real decision log is scanned and any flapping pair reported.
+
+2. **Decision Grounding / Outcome-Match Test** - `python memory/verifier/outcome_grounding.py`: for each closed-loop decision, compare the PREDICTED effect recorded at decision time vs the OBSERVED outcome post-action; flag decisions where prediction diverged from observation beyond threshold (the loop believed something false). Verified: >=5 grounded and >=3 divergent cases classified correctly; each divergence logged with predicted vs observed values.
+
+3. **Autonomy Confidence Calibration Test** - `python memory/verifier/confidence_calibration.py`: bucket closed-loop decisions by confidence score, compare predicted success rate vs actual per bucket, compute calibration slope + expected-calibration-error (ECE); alert if overconfident by >10%. Verified: a calibration curve is emitted; an overconfident fixture is flagged; ECE reported numerically.
+
+4. **Closed-Loop Deadlock & Livelock Detector** - `python memory/verifier/deadlock_detect.py`: from the concurrent task graph detect (a) deadlock (mutual-wait cycle) and (b) livelock (actions canceling each other repeatedly); assert neither exists in the running loop. Verified: a synthetic deadlock fixture AND a synthetic livelock fixture are both detected; a clean run reports zero of each.
+
+5. **Recovery Independence / No-Self-Cert Test** - `python memory/verifier/recovery_independence.py`: for every remediation, verify the component asserting "recovered" is DIFFERENT from the component that executed the action (no self-grading); flag any self-certified recovery. Verified: a fixture where actor==grader is flagged; all real recoveries in the log have an independent grader named.
+
+6. **Cockpit Truthfulness Property Test** - `python memory/verifier/cockpit_truth.py`: property-based fuzz - mutate source data adversarially (stale, partial, contradictory) and assert the cockpit NEVER renders a value no source supports; catch torn/stale reads at the display layer. Verified: >=20 mutations applied; every unsupported render is flagged with the offending panel+field; clean state renders only supported values.
+
+7. **Autonomy Budget / Runaway Guard Test** - `python memory/verifier/autonomy_budget.py`: verify the loop respects a budget (max actions per window, max cost) and HALTS + escalates when exceeded instead of running away; measure peak actions in any window. Verified: an over-budget fixture halts exactly at the cap and escalates; an under-budget scenario runs to completion; no sampled window exceeds the limit.
+
+8. **Decision Replay / Determinism Test** - `python memory/verifier/decision_replay.py`: replay N recorded decision contexts through the pipeline and verify it reproduces the SAME decision (determinism); flag non-deterministic decisions that break auditability. Verified: >=10 replays; every deterministic scenario reproduces exactly; any divergence is logged with the context id + both outputs.
+
+9. **Cockpit Snapshot Atomicity Test** - `python memory/verifier/snapshot_atomicity.py`: verify a single cockpit snapshot is internally consistent across ALL panels at one instant (goal count, fleet status, resource usage agree) - no torn reads where panel A shows t and panel B shows t+1. Verified: >=5 snapshots sampled; all cross-panel invariants hold; an injected time-skip between two panels is detected as a torn read.
+
+10. **Autonomy Escalation Path Test** - `python memory/verifier/escalation_path.py`: when the loop cannot resolve autonomously within N attempts, verify it escalates correctly - right target, right payload, no silent drop, no infinite retry; measure attempts-before-escalation. Verified: an unresolvable fixture escalates on exactly attempt N with the correct target+payload; a resolvable case does NOT escalate; no retry loop exceeds the cap.
