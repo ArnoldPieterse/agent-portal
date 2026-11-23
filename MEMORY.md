@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe wrote `memory/ops/data-freshness-escalation-protocol-2026-11-24.md` (4-step decision tree + ownership table for fleet-metrics.jsonl s
 - Verifier goal #9 reroute_e2e.py passed 6/6; evidence recorded in ledger, report at reroute_e2e_report.json
 - Mechanic added subprocess call to feed_refresh.py at end of state_collector.py collect; cockpit-feed.json now auto-refreshes via existing 5-
 - Unified action log (Mechanic spec Steps 1+2) implemented: `memory/ops/action_log.py` live, cockpit feed now includes autonomous_actions; unb
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal ledger reached 102/102 (100%) across all 8 agents as of 2026-11-24; cockpit feed loop verified end-to-end fresh.
 - Verifier #4 closed: latency_budget.py --self-test 5/5 from repo root AND memory/verifier (CWD-robust, unlike #2 false-closure).
 - Tokenized all 42 hardcoded hex colors in ui/cockpit.js → CSS vars (--ok,--warn,--err,--dim,--panel2); SVG sparkline fixed to use style="stro
+- Mirror cycle reverts Mechanic edits (state_collector.py + deploy_all_schtasks.py); must re-verify after each sync pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
