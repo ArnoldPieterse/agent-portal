@@ -18,12 +18,12 @@
   "note": "consolidated 2026-11-23: fleet_probe (was PortalFleetProbe) + load_probe (was PortalLoadProbe+AgentPortal_LoadProbe_Daily)",
   "daily": null,
   "next_run": 1795447335.4024115,
-  "last_run": 1795446145.2439575,
+  "last_run": 1795446745.4112499,
   "last_rc": 0,
   "last_err": "run_steps [1/2]: fleet_probe.py\r\nrun_steps [2/2]: memory/ops/load_probe.py",
   "runs": 19,
   "paused": false,
-  "running": true
+  "running": false
  },
  "cycle_30m": {
   "name": "cycle_30m",
@@ -44,12 +44,12 @@
   "note": "consolidated 2026-11-23: maintenance_window + memory_audit (decay+size_guard+snapshot-diff) + state_snapshot + daily_git_commit LAST so the commit captures this cycle's output",
   "daily": null,
   "next_run": 1795450335.4024115,
-  "last_run": 1795443144.4608653,
+  "last_run": 1795446745.4112499,
   "last_rc": 2,
   "last_err": "[3/6] FAIL rc=2\r\nrun_steps [4/6]: memory/archivist/snapshot.py --diff\r\nrun_steps [5/6]: memory/builder/state_snapshot.py\r\nrun_steps [6/6]: daily_git_commit.py",
   "runs": 4,
   "paused": false,
-  "running": true
+  "running": false
  },
  "cycle_daily": {
   "name": "cycle_daily",
