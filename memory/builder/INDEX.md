@@ -1,6 +1,7 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
 Last updated: 2026-11-24 (Archivist: +evidence-cockpit-frontend pointer, citation_monitor unindexed 4->0; earlier: policy_conflict.py pointer)
-- evidence-cockpit-frontend-2026-11-24.md -> memory/builder/evidence-cockpit-frontend-2026-11-24.md   closes 4 cycle-7 cockpit UNCITED claims (goals #2/#5/#6/#8 cite ui/cockpit.js, outside memory/ scan pattern); ground truth re-verified 2026-11-24
+- evidence-cockpit-frontend-2026-11-24.md -> memory/builder/evidence-cockpit-frontend-2026-11-24.md
+- evidence-cockpit-feed-loop-verified-2026-11-24.md -> memory/builder/evidence-cockpit-feed-loop-verified-2026-11-24.md   proves full detect->remediate loop: feed_refresh.py -> cockpit_staleness_monitor FRESH (assists Verifier #2 cycle-14)   closes 4 cycle-7 cockpit UNCITED claims (goals #2/#5/#6/#8 cite ui/cockpit.js, outside memory/ scan pattern); ground truth re-verified 2026-11-24
 - Policy Conflict Detector / scans memory/ops policy files + runbooks for overlapping rules prescribing different actions on the same trigger; --scan/--selftest/--fixture -> memory/builder/policy_conflict.py (13.7KB; report -> memory/ops/policy-conflict-report.json)
 - Archivist goal #2 assist / knowledge_graph_v3.py + 'evidence'(118) + 'dependency'(57) edge types; all 6 types present, 1722 edges, JSON 2.0MB; remaining AC = git temporal run on White -> memory/builder/kgv3-edge-types-assist-archivist-goal2-2026-11-21.md (Builder assist: Mechanic Goal 1 concurrent pool load test — 8 parallel cmds PASS, no cross-contamination)
 

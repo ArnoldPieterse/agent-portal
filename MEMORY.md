@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Queued: write idle
 - Builder owes one step: run `goal_ledger.py --record bu` to append (verified:) marker for cockpit claims; uncited dropped 16→12 after fix.
 - Stall detector patched to exclude unreachable agents via ops/unreachable_agents.json; selftest 7/7 pass, evidence at memory/mechanic/stall-d
 - Scribe wrote `memory/ops/data-freshness-escalation-protocol-2026-11-24.md` (4-step decision tree + ownership table for fleet-metrics.jsonl s
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - feed_refresh.py now in FleetStateCollector; live probe shows feed FRESH (
 - Mechic added CockpitFeedRefresh to deploy_all_schtasks.py; deploy blocked by known schtasks COM sandbox limit on Red.
 - Cycle 15
+- Goal ledger reached 102/102 (100%) across all 8 agents as of 2026-11-24; cockpit feed loop verified end-to-end fresh.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
