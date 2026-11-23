@@ -17,37 +17,37 @@
   "interval": 600,
   "note": "dedup: was PortalLoadProbe + AgentPortal_LoadProbe_Daily",
   "daily": null,
-  "next_run": 1795409744.6520727,
-  "last_run": 1795408549.4064906,
+  "next_run": 1795410345.051361,
+  "last_run": 1795409750.065734,
   "last_rc": 0,
   "last_err": "",
-  "runs": 7,
+  "runs": 8,
   "paused": false,
-  "running": true
+  "running": false
  },
  "fleet_probe": {
   "name": "fleet_probe",
   "interval": 600,
   "note": "was PortalFleetProbe",
   "daily": null,
-  "next_run": 1795409744.6520727,
-  "last_run": 1795408549.4064906,
+  "next_run": 1795410345.051361,
+  "last_run": 1795409750.065734,
   "last_rc": 0,
   "last_err": "",
-  "runs": 7,
+  "runs": 8,
   "paused": false,
-  "running": true
+  "running": false
  },
  "gap_alarm": {
   "name": "gap_alarm",
   "interval": 300,
   "note": "was PortalGapAlarm",
   "daily": null,
-  "next_run": 1795409444.6520727,
-  "last_run": 1795408849.5321968,
+  "next_run": 1795410345.1940033,
+  "last_run": 1795409750.065734,
   "last_rc": 0,
   "last_err": "",
-  "runs": 13,
+  "runs": 16,
   "paused": false,
   "running": true
  },
@@ -57,12 +57,12 @@
   "note": "was FleetStateCollector",
   "daily": null,
   "next_run": 1795410944.6520727,
-  "last_run": 1795407348.3788285,
+  "last_run": 1795409149.7162046,
   "last_rc": 0,
   "last_err": "",
   "runs": 3,
   "paused": false,
-  "running": true
+  "running": false
  },
  "state_snapshot": {
   "name": "state_snapshot",
@@ -70,12 +70,12 @@
   "note": "was FleetStateSnapshot",
   "daily": null,
   "next_run": 1795412744.6520727,
-  "last_run": 1795405547.0563426,
+  "last_run": 1795409149.7162046,
   "last_rc": 0,
   "last_err": "",
   "runs": 2,
   "paused": false,
-  "running": true
+  "running": false
  },
  "reboot_recover": {
   "name": "reboot_recover",
@@ -83,12 +83,12 @@
   "note": "was FleetBootRecovery (SMB path; failure-tolerant)",
   "daily": null,
   "next_run": 1795410944.6520727,
-  "last_run": 1795407348.3788285,
+  "last_run": 1795409149.7162046,
   "last_rc": 2,
   "last_err": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe: can't open file 'Z:\\\\memory\\\\mechanic\\\\reboot_recover.py': [Errno 2] No such file or directory",
   "runs": 3,
   "paused": false,
-  "running": true
+  "running": false
  },
  "maintenance_window": {
   "name": "maintenance_window",
@@ -96,12 +96,12 @@
   "note": "was FleetMaintenanceWindow",
   "daily": null,
   "next_run": 1795412744.6520727,
-  "last_run": 1795405547.0563426,
+  "last_run": 1795409149.7162046,
   "last_rc": 0,
   "last_err": "",
   "runs": 2,
   "paused": false,
-  "running": true
+  "running": false
  },
  "forecast_engine": {
   "name": "forecast_engine",
@@ -121,11 +121,11 @@
   "interval": 300,
   "note": "was MirrorHeal",
   "daily": null,
-  "next_run": 1795409444.6520727,
-  "last_run": 1795408849.5321968,
+  "next_run": 1795410345.1940033,
+  "last_run": 1795409750.065734,
   "last_rc": 0,
   "last_err": "",
-  "runs": 13,
+  "runs": 16,
   "paused": false,
   "running": true
  },
@@ -134,11 +134,11 @@
   "interval": 900,
   "note": "was PortalDailyGitCommit (15m)",
   "daily": null,
-  "next_run": 1795410044.6520727,
-  "last_run": 1795408249.243205,
+  "next_run": 1795410945.1940033,
+  "last_run": 1795409149.7162046,
   "last_rc": 0,
   "last_err": "",
-  "runs": 5,
+  "runs": 6,
   "paused": false,
   "running": true
  },
@@ -160,11 +160,11 @@
   "interval": 300,
   "note": "was PortalSelfHeal",
   "daily": null,
-  "next_run": 1795409444.6520727,
-  "last_run": 1795408849.5321968,
+  "next_run": 1795410345.1940033,
+  "last_run": 1795409750.065734,
   "last_rc": 0,
   "last_err": "",
-  "runs": 13,
+  "runs": 16,
   "paused": false,
   "running": true
  },
@@ -174,12 +174,12 @@
   "note": "was PortalSmbDrift",
   "daily": null,
   "next_run": 1795410944.6520727,
-  "last_run": 1795407353.3840933,
+  "last_run": 1795409154.723388,
   "last_rc": 0,
   "last_err": "",
   "runs": 3,
   "paused": false,
-  "running": true
+  "running": false
  },
  "decay_score": {
   "name": "decay_score",
@@ -187,12 +187,12 @@
   "note": "was PortalMemoryDecay",
   "daily": null,
   "next_run": 1795412744.6520727,
-  "last_run": 1795405557.178692,
+  "last_run": 1795409154.723388,
   "last_rc": 0,
   "last_err": "",
   "runs": 2,
   "paused": false,
-  "running": true
+  "running": false
  },
  "size_guard": {
   "name": "size_guard",
@@ -200,12 +200,12 @@
   "note": "was PortalMemorySizeGuard",
   "daily": null,
   "next_run": 1795412744.6520727,
-  "last_run": 1795405547.0563426,
+  "last_run": 1795409149.7162046,
   "last_rc": 2,
   "last_err": "",
   "runs": 2,
   "paused": false,
-  "running": true
+  "running": false
  },
  "snapshot_diff": {
   "name": "snapshot_diff",
@@ -213,12 +213,12 @@
   "note": "was PortalSnapshotDiff",
   "daily": null,
   "next_run": 1795412744.6520727,
-  "last_run": 1795405547.0563426,
+  "last_run": 1795409149.7162046,
   "last_rc": 0,
   "last_err": "",
   "runs": 2,
   "paused": false,
-  "running": true
+  "running": false
  },
  "perf_gate": {
   "name": "perf_gate",
