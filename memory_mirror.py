@@ -122,6 +122,20 @@ def ensure_conn(ip, user, pw):
             return False, "net use rc=0 but stat failed: %s" % str(e)[:80]
     return False, (r.stderr or r.stdout).strip()[:120]
 
+# 2026-11-23 (tree bloat, user cleanup): host-local artifacts that must never be mirrored in
+# EITHER direction. They are regeneratable per-host state; mirroring them multiplied the bloat
+# across all hosts and re-pulled local deletions within one cycle.
+#   memory/designer/_*            - per-host browser profile dirs (Chromium, ~40 MB each)
+#   memory/mechanic/backups/*.tar.gz - fleet backup tarballs (host-local safety nets)
+def _excluded(rel):
+    r = rel.replace(os.sep, "/")
+    if r.startswith("memory/designer/_"):
+        return True
+    if r.startswith("memory/mechanic/backups/") and r.endswith(".tar.gz"):
+        return True
+    return False
+
+
 def mirror_host(h):
     name, ip, user, pw = h["name"], h["ip"], h.get("user", ""), h.get("password", "")
     skew_tol = float(h.get("skew_tol", SKEW_TOL))
@@ -167,6 +181,8 @@ def mirror_host(h):
                     continue
                 sp = os.path.join(root, f)
                 rel = "memory/" + os.path.relpath(sp, msrc).replace(os.sep, "/")
+                if _excluded(rel):
+                    continue
                 dp = os.path.join(dst_root, "memory", os.path.relpath(sp, msrc).replace(os.sep, os.sep))
                 try:
                     action, meta = _decide(sp, dp, skew_tol)
@@ -193,6 +209,8 @@ def mirror_host(h):
                     continue
                 sp = os.path.join(root, f)
                 rel = "memory/" + os.path.relpath(sp, rm).replace(os.sep, "/")
+                if _excluded(rel):
+                    continue
                 dp = os.path.join(HERE, rel.replace("/", os.sep))
                 try:
                     action, meta = _decide(sp, dp, skew_tol)

@@ -960,7 +960,44 @@ def _merge_queue_scan():
                     pass
     except Exception:
         pass
+    try:
+        _merge_queue_prune()
+    except Exception:
+        pass
     return events
+
+
+def _merge_queue_prune(keep=10):
+    """2026-11-23 (tree bloat): keep only the newest `keep` snapshots per base file.
+    Snapshots are auto-committed to git, so pruned versions stay recoverable via
+    history; /api/merge restore uses the newest snapshot of a base, which survives.
+    Called at the end of every _merge_queue_scan so the queue self-maintains."""
+    try:
+        if not os.path.isdir(MERGE_QUEUE_DIR):
+            return 0
+        groups = {}
+        for fn in os.listdir(MERGE_QUEUE_DIR):
+            p = os.path.join(MERGE_QUEUE_DIR, fn)
+            base, dot, sha = fn.rpartition(".")
+            if not dot or len(sha) != 10:
+                continue
+            try:
+                mt = os.path.getmtime(p)
+            except OSError:
+                mt = 0.0
+            groups.setdefault(base, []).append((mt, fn))
+        removed = 0
+        for base, lst in groups.items():
+            lst.sort(reverse=True)
+            for _mt, fn in lst[keep:]:
+                try:
+                    os.remove(os.path.join(MERGE_QUEUE_DIR, fn))
+                    removed += 1
+                except OSError:
+                    pass
+        return removed
+    except Exception:
+        return 0
 
 
 def _merge_queue_status():

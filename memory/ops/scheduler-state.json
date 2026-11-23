@@ -15,49 +15,49 @@
   "name": "load_probe",
   "interval": 600,
   "note": "dedup: was PortalLoadProbe + AgentPortal_LoadProbe_Daily",
-  "next_run": 1795403875.3821948,
+  "next_run": 1795404475.6880553,
   "last_run": 1795403280.3982148,
   "last_rc": 0,
   "last_err": "",
-  "runs": 3,
+  "runs": 4,
   "paused": false,
-  "running": false
+  "running": true
  },
  "fleet_probe": {
   "name": "fleet_probe",
   "interval": 600,
   "note": "was PortalFleetProbe",
-  "next_run": 1795403875.3821948,
+  "next_run": 1795404475.6880553,
   "last_run": 1795403280.3982148,
   "last_rc": 0,
   "last_err": "",
-  "runs": 3,
+  "runs": 4,
   "paused": false,
-  "running": false
+  "running": true
  },
  "gap_alarm": {
   "name": "gap_alarm",
   "interval": 300,
   "note": "was PortalGapAlarm",
-  "next_run": 1795403575.3821948,
-  "last_run": 1795403280.3982148,
+  "next_run": 1795404175.6880553,
+  "last_run": 1795403580.5561507,
   "last_rc": 0,
   "last_err": "",
-  "runs": 5,
+  "runs": 7,
   "paused": false,
-  "running": false
+  "running": true
  },
  "state_collector": {
   "name": "state_collector",
   "interval": 1800,
   "note": "was FleetStateCollector",
-  "next_run": 1795403874.537725,
+  "next_run": 1795405675.6880553,
   "last_run": 1795402079.6344638,
   "last_rc": 0,
   "last_err": "",
-  "runs": 1,
+  "runs": 2,
   "paused": false,
-  "running": false
+  "running": true
  },
  "state_snapshot": {
   "name": "state_snapshot",
@@ -75,13 +75,13 @@
   "name": "reboot_recover",
   "interval": 1800,
   "note": "was FleetBootRecovery (SMB path; failure-tolerant)",
-  "next_run": 1795403874.537725,
+  "next_run": 1795405675.6880553,
   "last_run": 1795402079.6344638,
   "last_rc": 2,
   "last_err": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe: can't open file 'Z:\\\\memory\\\\mechanic\\\\reboot_recover.py': [Errno 2] No such file or directory",
-  "runs": 1,
+  "runs": 2,
   "paused": false,
-  "running": false
+  "running": true
  },
  "maintenance_window": {
   "name": "maintenance_window",
@@ -111,25 +111,25 @@
   "name": "mirror_heal",
   "interval": 300,
   "note": "was MirrorHeal",
-  "next_run": 1795403575.3821948,
-  "last_run": 1795403280.3982148,
+  "next_run": 1795404175.6880553,
+  "last_run": 1795403580.5561507,
   "last_rc": 0,
   "last_err": "",
-  "runs": 5,
+  "runs": 7,
   "paused": false,
-  "running": false
+  "running": true
  },
  "daily_git_commit": {
   "name": "daily_git_commit",
   "interval": 900,
   "note": "was PortalDailyGitCommit (15m)",
-  "next_run": 1795403875.2286937,
+  "next_run": 1795404775.6880553,
   "last_run": 1795402980.2437952,
   "last_rc": 0,
   "last_err": "",
-  "runs": 2,
+  "runs": 3,
   "paused": false,
-  "running": false
+  "running": true
  },
  "schtask_dep_weekly": {
   "name": "schtask_dep_weekly",
@@ -147,25 +147,25 @@
   "name": "portal_heal_check",
   "interval": 300,
   "note": "was PortalSelfHeal",
-  "next_run": 1795403575.3821948,
-  "last_run": 1795403280.3982148,
+  "next_run": 1795404175.6880553,
+  "last_run": 1795403580.5561507,
   "last_rc": 0,
   "last_err": "",
-  "runs": 5,
+  "runs": 7,
   "paused": false,
-  "running": false
+  "running": true
  },
  "smb_drift_detector": {
   "name": "smb_drift_detector",
   "interval": 1800,
   "note": "was PortalSmbDrift",
-  "next_run": 1795403874.537725,
+  "next_run": 1795405675.6880553,
   "last_run": 1795402084.641271,
   "last_rc": 0,
   "last_err": "",
-  "runs": 1,
+  "runs": 2,
   "paused": false,
-  "running": false
+  "running": true
  },
  "decay_score": {
   "name": "decay_score",
