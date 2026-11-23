@@ -16,7 +16,7 @@ out = []
 if http("http://127.0.0.1:8099/") == 200:
     out.append("portal=UP")
 else:
-    subprocess.run(["schtasks", "/run", "/tn", "PortalRun"], capture_output=True)
+    subprocess.run(["wscript.exe", r"C:\Projects\Workspace\memory\ops\launch_host.vbs"], timeout=20)  # 2026-11-23: PortalRun schtask retired; Startup-VBS launch path
     time.sleep(6)
     out.append("portal=" + ("UP" if http("http://127.0.0.1:8099/") == 200 else "STILL-DOWN"))
 # local studio

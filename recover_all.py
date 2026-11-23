@@ -164,7 +164,7 @@ log(f"functional atlas-q8: {json.dumps(fp8)[:200]}")
 # ---------- 6) portal check (start it if down - post-reboot logon trigger) ----------
 s, d, raw = jreq("GET", PORTAL + "/api/memory", t=10)
 if s != 200:
-    subprocess.run(["schtasks", "/run", "/tn", "PortalRun"], capture_output=True, text=True)
+    subprocess.run(["wscript.exe", r"C:\Projects\Workspace\memory\ops\launch_host.vbs"], timeout=20)  # 2026-11-23: PortalRun retired
     time.sleep(8)
     s, d, raw = jreq("GET", PORTAL + "/api/memory", t=10)
 result["portal_8099"] = {"status": s, "snippet": str(raw)[:150]}
