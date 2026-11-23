@@ -65,6 +65,62 @@ def _md5(path):
             h.update(chunk)
     return h.hexdigest()[:8]
 
+# 2026-11-23 incremental mirror: the hash-first design re-read EVERY file on BOTH sides
+# every cycle; at ~5.5k files / 120 MB per host that is >40 min of SMB I/O - the 900 s
+# step timeout killed every run (cycle_5m rc=124, forever red). Persistent per-file
+# (size, mtime, md5) cache: steady state = two stats per file, reads only what changed.
+# Saved after each host AND every 200 fresh hashes, so a killed run keeps its progress
+# and the cold tree warms up across cycles instead of restarting from zero.
+CACHE_F = os.path.join(HERE, "memory", "ops", "mirror_cache.json")
+_cache = {}    # host -> rel -> [lsz, lmt100, lmd5, rsz, rmt100, rmd5]
+_dirty = 0
+
+def _load_cache():
+    global _cache
+    try:
+        with open(CACHE_F, encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            _cache = data
+    except Exception:
+        pass
+
+def _save_cache(force=False):
+    """Atomic; every 200 fresh hashes and after each host (survives timeout kills)."""
+    global _dirty
+    if not force and _dirty < 200:
+        return
+    _dirty = 0
+    try:
+        os.makedirs(os.path.dirname(CACHE_F), exist_ok=True)
+        tmp = CACHE_F + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(_cache, f)
+        os.replace(tmp, CACHE_F)
+    except Exception:
+        pass
+
+def _mt100(st):
+    """mtime in 100ns units (NTFS/SMB fidelity) - exact via st_mtime_ns, no float jitter."""
+    ns = getattr(st, "st_mtime_ns", None)
+    return ns // 100 if ns is not None else int(round(st.st_mtime * 1e7))
+
+def _hash_cached(path, base, ent):
+    """md5 of path via the persistent cache: re-read ONLY when size or mtime moved."""
+    global _dirty
+    try:
+        st = os.stat(path)
+    except OSError:
+        return None
+    if ent[base + 2] is not None and st.st_size == ent[base] and _mt100(st) == ent[base + 1]:
+        return ent[base + 2]
+    h = _md5(path)
+    ent[base], ent[base + 1], ent[base + 2] = st.st_size, _mt100(st), h
+    _dirty += 1
+    if _dirty >= 200:
+        _save_cache()
+    return h
+
 def log(line):
     try:
         with open(LOG_FILE, "a", encoding="utf-8") as f:
@@ -72,14 +128,15 @@ def log(line):
     except Exception:
         pass
 
-def _decide(sp, dp, skew_tol, root_canonical=False):
+def _decide(sp, dp, skew_tol, hs, hd, root_canonical=False):
     """LWW decision for one file pair (sp=source, dp=dest). Returns (action, meta).
-    action in {copy, skip_same, skip_stale, conflict_skew}. See module docstring for the rules."""
+    action in {copy, skip_same, skip_stale, conflict_skew}. See module docstring for the rules.
+    2026-11-23: hs/hd arrive precomputed (possibly from the persistent cache) so
+    steady-state runs never re-read unchanged files."""
     ss = os.stat(sp)
     if not os.path.exists(dp):
         return "copy", {"reason": "new"}
     ds = os.stat(dp)
-    hs, hd = _md5(sp), _md5(dp)
     if hs == hd:
         return "skip_same", {}
     if root_canonical:
@@ -135,6 +192,10 @@ def _excluded(rel):
         return True
     if rel.startswith("memory/designer/_"):
         return len(rel.split("/")) >= 4
+    if "__pycache__/" in rel or rel.endswith(".pyc"):   # 2026-11-23: never mirror bytecode
+        return True
+    if rel == "memory/ops/mirror_cache.json":           # per-host mirror state, not content
+        return True
     return False
 
 def mirror_host(h):
@@ -152,6 +213,20 @@ def mirror_host(h):
         return {"host": name, "error": "sandbox dir missing: %s" % str(e)[:80]}
 
     pushed, pulled, stale, same, conflicts, errors = [], [], 0, 0, [], []
+    host_cache = _cache.setdefault(name, {})
+
+    def ent_for(rel):
+        return host_cache.setdefault(rel, [None] * 6)
+
+    def seed_both(sp, ent):
+        """After a copy: record both sides from the source (copy2 preserves mtime)."""
+        try:
+            st = os.stat(sp)
+            m100, md = _mt100(st), _md5(sp)
+            ent[0], ent[1], ent[2] = st.st_size, m100, md
+            ent[3], ent[4], ent[5] = st.st_size, m100, md
+        except OSError:
+            pass
 
     # 1) push git allowlist (root docs) - White-canonical on hash mismatch
     for rel in _allowlist():
@@ -162,10 +237,14 @@ def mirror_host(h):
             continue
         dp = os.path.join(dst_root, rel.replace("/", os.sep))
         try:
-            action, meta = _decide(sp, dp, skew_tol, root_canonical=True)
+            ent = ent_for(rel)
+            hs = _hash_cached(sp, 0, ent)
+            hd = _hash_cached(dp, 3, ent)
+            action, meta = _decide(sp, dp, skew_tol, hs, hd, root_canonical=True)
             if action == "copy":
                 os.makedirs(os.path.dirname(dp), exist_ok=True)
                 shutil.copy2(sp, dp)
+                seed_both(sp, ent)
                 pushed.append(rel)
             elif action == "skip_same":
                 same += 1
@@ -176,9 +255,9 @@ def mirror_host(h):
     msrc = os.path.join(HERE, "memory")
     if os.path.isdir(msrc):
         for root, dirs, files in os.walk(msrc):
-            dirs[:] = [d for d in dirs if not d.startswith(".")]
+            dirs[:] = [d for d in dirs if not d.startswith(".") and d != "__pycache__"]
             for f in files:
-                if f.startswith("."):
+                if f.startswith(".") or f.endswith(".pyc"):
                     continue
                 sp = os.path.join(root, f)
                 rel = "memory/" + os.path.relpath(sp, msrc).replace(os.sep, "/")
@@ -186,10 +265,14 @@ def mirror_host(h):
                     continue
                 dp = os.path.join(dst_root, "memory", os.path.relpath(sp, msrc).replace(os.sep, os.sep))
                 try:
-                    action, meta = _decide(sp, dp, skew_tol)
+                    ent = ent_for(rel)
+                    hs = _hash_cached(sp, 0, ent)
+                    hd = _hash_cached(dp, 3, ent)
+                    action, meta = _decide(sp, dp, skew_tol, hs, hd)
                     if action == "copy":
                         os.makedirs(os.path.dirname(dp), exist_ok=True)
                         shutil.copy2(sp, dp)
+                        seed_both(sp, ent)
                         pushed.append(rel)
                     elif action == "skip_same":
                         same += 1
@@ -204,9 +287,9 @@ def mirror_host(h):
     rm = os.path.join(dst_root, "memory")
     if os.path.isdir(rm):
         for root, dirs, files in os.walk(rm):
-            dirs[:] = [d for d in dirs if not d.startswith(".")]
+            dirs[:] = [d for d in dirs if not d.startswith(".") and d != "__pycache__"]
             for f in files:
-                if f.startswith("."):
+                if f.startswith(".") or f.endswith(".pyc"):
                     continue
                 sp = os.path.join(root, f)
                 rel = "memory/" + os.path.relpath(sp, rm).replace(os.sep, "/")
@@ -214,10 +297,14 @@ def mirror_host(h):
                     continue
                 dp = os.path.join(HERE, rel.replace("/", os.sep))
                 try:
-                    action, meta = _decide(sp, dp, skew_tol)
+                    ent = ent_for(rel)
+                    hs = _hash_cached(sp, 3, ent)   # pull: source is the REMOTE side
+                    hd = _hash_cached(dp, 0, ent)
+                    action, meta = _decide(sp, dp, skew_tol, hs, hd)
                     if action == "copy":
                         os.makedirs(os.path.dirname(dp), exist_ok=True)
                         shutil.copy2(sp, dp)
+                        seed_both(sp, ent)
                         pulled.append(rel)
                     elif action == "skip_same":
                         same += 1
@@ -235,6 +322,7 @@ def mirror_host(h):
            "conflicts": len(conflicts), "errors": errors}
     if conflicts:
         res["conflict_detail"] = conflicts[:8]   # SKEW_SUSPECT entries for adjudication
+    _save_cache(force=True)
     return res
 
 # 2026-11-16 PIN GUARD (goal-progress fix): C:\Projects\Workspace\index.html was observed
@@ -257,8 +345,13 @@ PIN_FILES = {
     # -> http://<host>:8888. Also reconciles pin lag: disk/HEAD had the Designer SVG-icon UI
     # (95e752e795c0, committed 2026-11-22) while the pin still said 815d64fa70b5 - that version
     # is now the protected canonical (backup _2026-11-22a.html). Supersedes 815d64fa70b5.
-    "index.html": {"sha12": "64f12eb4c16a",
-                   "backup": "memory/designer/index_html_CANONICAL_95e752e795c0_2026-11-22a.html"},
+    # 2026-11-23 pin re-advanced (Studio seat): a legitimate UI fix landed post-pin (commit
+    # 2a66afd8, Fleet/Files tab icon sizing; git-clean HEAD) while the on-disk backup had
+    # drifted off-spec (sha 95e752e795c0 vs pinned 64f12eb4c16a), so pin_guard logged
+    # 'backup missing/wrong sha' every cycle and could not restore. Re-pinned to the committed
+    # HEAD version; backup re-created from it in the same turn per the pin rule.
+    "index.html": {"sha12": "17ab95daf2d8",
+                   "backup": "memory/designer/index_html_CANONICAL_17ab95daf2d8_2026-11-23b.html"},
 }
 
 def _sha12(path):
@@ -292,6 +385,7 @@ def pin_guard():
     return out
 
 def main():
+    _load_cache()
     try:
         cfg = json.load(open(CFG_FILE, encoding="utf-8"))
     except Exception as e:

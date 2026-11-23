@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic Goal#3 host_probes.py verified 35/35
 - Scribe goal #1 (cycle_summary.py) built; Archivist all 10 goals REACHED, lane closed.
 - All 20 Archivist goals (cycle-9+12) confirmed [REACHED];
 - next10.json forecast is stale: shows Archivist with open goals but all 20 are [REACHED];
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Auto-loop sends stale goal list to Archivist (all
 - Auto-loop prompt is stale: Archivist lane 20/20 [REACHED], no open work; repeated idle pings are false positives from outdated goal snapshot
 - next10.json forecast is stale (shows open goals but all 20 are [REACHED]); auto-loop keeps waking Archivist with no work — blocker, not a ta
+- Auto-loop fires on stale next10.json showing Archivist open goals; all 20 actually [REACHED] — known blocker, do not re-probe.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
