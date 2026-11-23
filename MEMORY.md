@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fixed idempotency bug in auto_linker.py: strip AUTO-LINKS block before TF vectorization; selftest 11/11 PASS
-- Archivist Goal #2 (Stale-Knowledge Auto-Quarantine) verified & closed by Builder; evidence at memory/builder/assist-archivist-goal2-auto-qua
 - kb_sentinel.py (Goal #8) started but blocked on state-file reset fix; selftest partially passing, needs next pass
 - Goal #4 Conflict Resolver has a bug: removal logic doesn't account for marker line offset; fix pending.
 - Broken pointers grew 157→203 (+46/day) on 2026-11-23; date
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe verified Archivist Goal #7 (auto-linker) — selftest 11/11, evidence at memory/scribe/verify-archivist-goal7-auto-linker-2026-11-23.md
 - Builder fixed kb_sentinel.py selftest (`or 1000` fallback vs actual count 0); Archivist goals 8/9/10 all verified passing (4/4, 5/5, 6/6).
 - Goal #10 (kb_version.py) built and verified 3/3 this pass; Goals #8 & #9 also confirmed passing.
+- Goals 5 & 6 have confirmed stale evidence pointers (Scribe-verified); need fresh cycle-10 leaves before closing out.
+- Builder assisted Archivist Goal #4 (Conflict Resolver): selftest 5/5, prod scan 2626 files→3838 facts→225 conflicts; evidence at memory/buil
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

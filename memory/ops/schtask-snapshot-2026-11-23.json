@@ -1,18 +1,12 @@
 {
-  "generated": "2026-11-23T13:45:51.974490",
+  "generated": "2026-11-23T15:05:32.252840",
   "host": "WHITE",
-  "task_count": 3,
+  "task_count": 2,
   "tasks": [
     {
       "name": "\\GCC",
       "status": "Ready",
       "schedule_type": "At logon time",
-      "next_run": "N/A"
-    },
-    {
-      "name": "\\LlamaRPCWorker",
-      "status": "Disabled",
-      "schedule_type": "At system start up",
       "next_run": "N/A"
     },
     {
@@ -42,25 +36,7 @@
   "diff": {
     "added": [],
     "removed": [
-      "\\AgentPortal",
-      "\\AgentPortal_LoadProbe_Daily",
-      "\\MemoryMirrorRun",
-      "\\MirrorHeal",
-      "\\MirrorSync",
-      "\\PortalDailyGitCommit",
-      "\\PortalDepGenCanary",
-      "\\PortalFleetProbe",
-      "\\PortalGapAlarm",
-      "\\PortalLoadProbe",
-      "\\PortalMemoryDecay",
-      "\\PortalMemorySizeGuard",
-      "\\PortalSchtaskDepGen",
-      "\\PortalSelfHeal",
-      "\\PortalSmbDrift",
-      "\\PortalSnapshotDiff",
-      "\\PortalWatchdog",
-      "\\RecoverAll",
-      "\\VerifierSLO"
+      "\\LlamaRPCWorker"
     ]
   }
 }

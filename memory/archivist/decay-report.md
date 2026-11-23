@@ -1,6 +1,6 @@
 # Decay report 2026-11-23
 
-Leaves: 9387 | flagged (<0.35): 0
+Leaves: 9388 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -8558,6 +8558,7 @@ Leaves: 9387 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261123-140636.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-143507.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-145757.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261123-150530.json | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/levels/level_1_20261123-060001.md | 0 | 0 | n | 0.550 |

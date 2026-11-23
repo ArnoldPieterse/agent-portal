@@ -5,12 +5,12 @@
   "note": "was PortalGapAlarm",
   "daily": null,
   "next_run": 1795410630.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410335.5233934,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "memory_mirror": {
   "name": "memory_mirror",
@@ -31,12 +31,12 @@
   "note": "was PortalFleetProbe",
   "daily": null,
   "next_run": 1795410930.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410335.5233934,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "load_probe": {
   "name": "load_probe",
@@ -44,12 +44,12 @@
   "note": "dedup: was PortalLoadProbe + AgentPortal_LoadProbe_Daily",
   "daily": null,
   "next_run": 1795410930.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410335.5233934,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "reboot_recover": {
   "name": "reboot_recover",
@@ -57,12 +57,12 @@
   "note": "was FleetBootRecovery; dead Z:\\ path fixed to local 2026-11-23",
   "daily": null,
   "next_run": 1795412130.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410335.5233934,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "smb_drift_detector": {
   "name": "smb_drift_detector",
@@ -70,12 +70,12 @@
   "note": "was PortalSmbDrift",
   "daily": null,
   "next_run": 1795412130.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410340.5293777,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "state_collector": {
   "name": "state_collector",
@@ -83,12 +83,12 @@
   "note": "was FleetStateCollector",
   "daily": null,
   "next_run": 1795412130.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410335.5233934,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "daily_git_commit": {
   "name": "daily_git_commit",
@@ -96,12 +96,12 @@
   "note": "was PortalDailyGitCommit (15m); relaxed to 1h - per-turn auto-commit covers active periods",
   "daily": null,
   "next_run": 1795413930.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410335.5233934,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "maintenance_window": {
   "name": "maintenance_window",
@@ -109,12 +109,12 @@
   "note": "was FleetMaintenanceWindow",
   "daily": null,
   "next_run": 1795413930.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410335.5233934,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "memory_audit": {
   "name": "memory_audit",
@@ -122,12 +122,12 @@
   "note": "merged 2026-11-23: was decay_score + size_guard + snapshot_diff (3x full memory-tree walk/h -> 1)",
   "daily": null,
   "next_run": 1795413930.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410340.5293777,
+  "last_rc": 2,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "state_snapshot": {
   "name": "state_snapshot",
@@ -135,12 +135,12 @@
   "note": "was FleetStateSnapshot",
   "daily": null,
   "next_run": 1795413930.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410335.5233934,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "forecast_engine": {
   "name": "forecast_engine",
@@ -148,12 +148,12 @@
   "note": "was FleetForecast30 (daily)",
   "daily": null,
   "next_run": 1795496730.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410335.5233934,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "verifier_daily": {
   "name": "verifier_daily",
@@ -193,11 +193,11 @@
   "note": "was PortalSchtaskDepGen; PortalDepGenCanary dropped (cmd echo no-op)",
   "daily": null,
   "next_run": 1796015130.453239,
-  "last_run": null,
-  "last_rc": null,
+  "last_run": 1795410335.5233934,
+  "last_rc": 0,
   "last_err": "",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  }
 }

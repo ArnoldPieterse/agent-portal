@@ -332,3 +332,15 @@
 {"t": "2026-11-23 15:05:30", "job": "state_snapshot", "event": "start", "pid": 28520}
 {"t": "2026-11-23 15:05:30", "job": "forecast_engine", "event": "start", "pid": 24932}
 {"t": "2026-11-23 15:05:30", "job": "schtask_dep_weekly", "event": "start", "pid": 21072}
+{"t": "2026-11-23 15:05:35", "job": "gap_alarm", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:35", "job": "fleet_probe", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:35", "job": "load_probe", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:35", "job": "reboot_recover", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:35", "job": "state_collector", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:35", "job": "daily_git_commit", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:35", "job": "maintenance_window", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:35", "job": "state_snapshot", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:35", "job": "forecast_engine", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:35", "job": "schtask_dep_weekly", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:40", "job": "smb_drift_detector", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:05:40", "job": "memory_audit", "event": "done", "rc": 2}
