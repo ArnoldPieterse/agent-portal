@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cycle-11 complete: all 5 goals verified, loop_closure_rate.py → 90.8%, SELFTEST PASS.
-- Designer goals 5&6 falsely closed: evidence points to unrelated cycle-7/C
 - Dispatch "0/10 reached" header is a known stale counter; all 5 Researcher cycle-11 goals are verified (90.8% closure confirmed).
 - Builder produced ui/cockpit-layout.css (5.1KB, 12/12 checks pass) for Designer Goal #1; evidence at memory/builder/assist-designer-goal1-coc
 - Dispatch header "0/10 reached" is a stale counter bug; all 5 Researcher goals are verified (2026-11-23).
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder built provenance_ledger.py: 3731 facts from 300 docs, 100% resolvable chains, ≥500 criterion PASS (Archivist Goal #1 assist)
 - Designer goals 5&6 falsely closed: evidence pointers cite mismatched files (ops-panel-hierarchy & interaction-system), not their own artifac
 - Archivist goal #2 (auto_quarantine.py) has no script yet — identified as next-cycle gap after goal #1 verified 100% resolvable.
+- Mechic verified Archivist Goal 2 (Stale-Knowledge Auto-Quarantine) — all 4 criteria pass; evidence at memory/mechanic/evidence-archivist-goa
+- Goal #7 (auto_linker.py) left open: 10/11 selftest, one idempotency failure pending Archivist fix.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

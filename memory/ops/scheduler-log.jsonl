@@ -126,3 +126,27 @@
 {"t": "2026-11-23 13:38:01", "job": "gap_alarm", "event": "done", "rc": 0}
 {"t": "2026-11-23 13:38:01", "job": "mirror_heal", "event": "done", "rc": 0}
 {"t": "2026-11-23 13:38:01", "job": "portal_heal_check", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:42:56", "job": "gap_alarm", "event": "start", "pid": 544}
+{"t": "2026-11-23 13:42:56", "job": "mirror_heal", "event": "start", "pid": 23068}
+{"t": "2026-11-23 13:42:56", "job": "portal_heal_check", "event": "start", "pid": 7956}
+{"t": "2026-11-23 13:43:01", "job": "gap_alarm", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:43:01", "job": "mirror_heal", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:43:01", "job": "portal_heal_check", "event": "done", "rc": 0}
+{"t": "2026-11-23 13:45:11", "event": "scheduler-up", "jobs": 20}
+{"t": "2026-11-23 13:45:41", "job": "memory_mirror", "event": "start", "pid": 21012}
+{"t": "2026-11-23 13:45:41", "job": "load_probe", "event": "start", "pid": 4740}
+{"t": "2026-11-23 13:45:41", "job": "fleet_probe", "event": "start", "pid": 24280}
+{"t": "2026-11-23 13:45:41", "job": "gap_alarm", "event": "start", "pid": 3180}
+{"t": "2026-11-23 13:45:41", "job": "state_collector", "event": "start", "pid": 13464}
+{"t": "2026-11-23 13:45:41", "job": "state_snapshot", "event": "start", "pid": 24564}
+{"t": "2026-11-23 13:45:41", "job": "reboot_recover", "event": "start", "pid": 7756}
+{"t": "2026-11-23 13:45:41", "job": "maintenance_window", "event": "start", "pid": 24344}
+{"t": "2026-11-23 13:45:41", "job": "forecast_engine", "event": "start", "pid": 21680}
+{"t": "2026-11-23 13:45:41", "job": "mirror_heal", "event": "start", "pid": 24140}
+{"t": "2026-11-23 13:45:41", "job": "daily_git_commit", "event": "start", "pid": 14240}
+{"t": "2026-11-23 13:45:41", "job": "schtask_dep_weekly", "event": "start", "pid": 16148}
+{"t": "2026-11-23 13:45:41", "job": "portal_heal_check", "event": "start", "pid": 14256}
+{"t": "2026-11-23 13:45:41", "job": "smb_drift_detector", "event": "start", "pid": 19928}
+{"t": "2026-11-23 13:45:41", "job": "decay_score", "event": "start", "pid": 24528}
+{"t": "2026-11-23 13:45:41", "job": "size_guard", "event": "start", "pid": 16408}
+{"t": "2026-11-23 13:45:41", "job": "snapshot_diff", "event": "start", "pid": 10220}

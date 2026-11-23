@@ -166,3 +166,12 @@
 {"t": "2026-11-23 13:42:08", "event": "oom-daemon-start", "pid": 9048, "prev_rc": 0}
 {"t": "2026-11-23 13:42:28", "event": "oom-daemon-start", "pid": 15592, "prev_rc": 0}
 {"t": "2026-11-23 13:42:48", "event": "oom-daemon-start", "pid": 14808, "prev_rc": 0}
+{"t": "2026-11-23 13:43:08", "event": "oom-daemon-start", "pid": 6028, "prev_rc": 0}
+{"t": "2026-11-23 13:43:28", "event": "oom-daemon-start", "pid": 24040, "prev_rc": 0}
+{"t": "2026-11-23 13:43:48", "event": "oom-daemon-start", "pid": 16140, "prev_rc": 0}
+{"t": "2026-11-23 13:44:08", "event": "oom-daemon-start", "pid": 5152, "prev_rc": 0}
+{"t": "2026-11-23 13:44:28", "event": "oom-daemon-start", "pid": 13168, "prev_rc": 0}
+{"t": "2026-11-23 13:44:48", "event": "oom-daemon-start", "pid": 3880, "prev_rc": 0}
+{"t": "2026-11-23 13:45:10", "event": "portal-start", "pid": 7536}
+{"t": "2026-11-23 13:45:10", "event": "oom-daemon-start", "pid": 19776, "prev_rc": 0}
+{"t": "2026-11-23 13:45:31", "event": "oom-daemon-start", "pid": 24148, "prev_rc": 0}
