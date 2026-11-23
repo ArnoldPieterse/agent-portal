@@ -1162,5 +1162,47 @@
 "text": "**Stale-Knowledge Auto-Quarantine** - `python memory/archivist/auto_quarantine.py`: when a leaf's freshness score stays below threshold for ",
 "agent": "archivist",
 "at": "2026-11-23"
+},
+{
+"sig": "8e9c709a28f08022",
+"text": "**Knowledge Delta Feed** - `python memory/archivist/kb_delta.py`: emit a compact JSON diff of what changed in the KB since last cycle {added",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "72257196e8a1d829",
+"text": "**Cross-Agent Knowledge Conflict Resolver** - `python memory/archivist/conflict_resolver.py`: when two evidence leaves state contradictory v",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "1a33e1a0f1c815b9",
+"text": "**Decision-Knowledge Feedback Loop** - `python memory/archivist/kb_feedback.py`: for each cockpit decision later classified REVERTED (from R",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "81c076b3e673afde",
+"text": "**Knowledge Access Heatmap** - `python memory/archivist/access_heatmap.py`: instrument which agents read/cite which leaves (from decision-lo",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "f282fb2e9a46c5d9",
+"text": "**KB Regression Sentinel** - `python memory/archivist/kb_sentinel.py`: scheduled check that raises an alert leaf if total fact count drops >",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "51cdd8960fcad0d6",
+"text": "**Tiered Summary Ladder** - `python memory/archivist/summary_ladder.py`: build a 3-tier ladder per lane (full leaf -> 3-sentence abstract ->",
+"agent": "archivist",
+"at": "2026-11-23"
+},
+{
+"sig": "f80aeee1a4f3f4e8",
+"text": "**KB Versioning & Rollback** - `python memory/archivist/kb_version.py`: git-backed versioning of knowledge-index.json + weekly snapshots wit",
+"agent": "archivist",
+"at": "2026-11-23"
 }
 ]
