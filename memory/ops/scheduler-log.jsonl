@@ -495,3 +495,5 @@
 {"t": "2026-11-23 19:31:22", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-23 19:36:27", "job": "cycle_5m", "event": "done", "rc": 124}
 {"t": "2026-11-23 19:36:27", "job": "cycle_5m", "event": "start", "pid": 36560}
+{"t": "2026-11-23 19:41:17", "job": "cycle_10m", "event": "start", "pid": 33572}
+{"t": "2026-11-23 19:41:22", "job": "cycle_10m", "event": "done", "rc": 0}
