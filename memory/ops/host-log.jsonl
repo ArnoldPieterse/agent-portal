@@ -42,3 +42,11 @@
 {"t": "2026-11-23 22:03:03", "event": "host-start", "pid": 18784}
 {"t": "2026-11-23 22:03:04", "event": "host-up", "pid": 18784, "py": "3.15.2"}
 {"t": "2026-11-23 22:03:06", "event": "spawned", "what": "portal", "pid": 2992, "argv": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\Workspace\\agent_portal.py"}
+{"t": "2026-11-23 22:11:03", "event": "host-start", "pid": 4000}
+{"t": "2026-11-23 22:11:04", "event": "host-up", "pid": 4000, "py": "3.15.2"}
+{"t": "2026-11-23 22:11:04", "event": "launcher-restored", "path": "C:\\Projects\\Workspace\\AppData\\Roaming\\Microsoft\\Windows\\StartMenu\\Programs\\Startup\\agent-portal-host.vbs"}
+{"t": "2026-11-23 22:11:42", "event": "host-start", "pid": 16304}
+{"t": "2026-11-23 22:11:42", "event": "host-up", "pid": 16304, "py": "3.15.2"}
+{"t": "2026-11-23 22:11:42", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\StartMenu\\Programs\\Startup\\agent-portal-host.vbs"}
+{"t": "2026-11-23 22:11:52", "event": "host-start", "pid": 11656}
+{"t": "2026-11-23 22:11:52", "event": "exit-duplicate", "existing": [16304]}

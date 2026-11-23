@@ -135,6 +135,32 @@ def oom_loop():
         time.sleep(300)
 
 
+def _ensure_launcher():
+    """Self-heal the boot chain (2026-11-23): after a reboot the portal did NOT start
+    because the logon launcher was missing entirely (no PortalRun schtask, and the
+    Startup folder itself was gone). Every host-start re-creates the hidden-window
+    VBS launcher if it is absent, so a future cleanup can never break boot again."""
+    try:
+        # Do NOT trust USERPROFILE: this host's tool processes run with
+        # USERPROFILE=C:\Projects\Workspace (verified 2026-11-23), which would plant the
+        # launcher where Windows never looks. 'White' is the only profile on this machine.
+        prof = r"C:\Users\White"
+        d = os.path.join(prof, "AppData", "Roaming", "Microsoft", "Windows",
+                         "StartMenu", "Programs", "Startup")
+        f = os.path.join(d, "agent-portal-host.vbs")
+        if os.path.exists(f):
+            return
+        os.makedirs(d, exist_ok=True)
+        vbs = ('Set sh = CreateObject("WScript.Shell")\r\n'
+               'sh.CurrentDirectory = "%s"\r\n'
+               'sh.Run """%s"" ""%s""", 0, False\r\n' % (HERE, PY, os.path.join(HERE, "portal_host.py")))
+        with open(f, "w", encoding="ascii") as fh:
+            fh.write(vbs)
+        _log("launcher-restored", path=f)
+    except Exception as e:
+        _log("launcher-restore-fail", err=str(e)[:120])
+
+
 def main():
     _log("host-start", pid=os.getpid())
     if "--selftest" in sys.argv:
@@ -155,6 +181,7 @@ def main():
     except Exception:
         pass
     _log("host-up", pid=os.getpid(), py=sys.version.split()[0])
+    _ensure_launcher()   # self-heal boot chain: re-create logon launcher if missing
 
     import portal_scheduler
     threading.Thread(target=portal_scheduler.run_forever, daemon=True).start()   # all 6 jobs
