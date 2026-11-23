@@ -27,3 +27,8 @@
 {"t": "2026-11-23 18:28:44", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
 {"t": "2026-11-23 18:35:45", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
 {"t": "2026-11-23 18:42:45", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
+{"t": "2026-11-23 18:54:45", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
+{"t": "2026-11-23 19:01:45", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
+{"t": "2026-11-23 19:08:45", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
+{"t": "2026-11-23 19:15:45", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
+{"t": "2026-11-23 19:20:49", "event": "oom-watch", "rc": 1, "last": "{\"action\": \"failed\", \"agent\": \"local-model\", \"steps\": {\"detect\": {\"status\": \"oom_detected\", \"reason\": \"gpu_memory_exhausted\", \"agent\": \"local-model\", \"gpu_usage"}
