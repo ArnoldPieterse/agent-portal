@@ -9,3 +9,7 @@
 2026-11-23T15:50:09.675505 RUN ['schtasks /create /tn PortalRun /f /xml C:\\Projects\\Workspace\\memory\\ops\\portal_run.xml']
 2026-11-23T15:50:13.783263 RUN ['whoami']
 2026-11-23T15:50:18.619533 RUN ['net localgroup administrators']
+2026-11-23T16:05:51.905249 RUN schtasks /Create /TN PortalRun /TR "wscript.exe C:\Projects\Workspace\portal_host_launcher.vbs" /SC ONLOGON /F
+2026-11-23T16:06:01.872246 RUN ['schtasks', '/Create', '/TN', 'PortalRun', '/TR', 'wscript.exe C:\\Projects\\Workspace\\portal_host_launcher.vbs', '/SC', 'ONLOGON', '/F']
+2026-11-23T16:06:08.072066 RUN ['whoami', '/all']
+2026-11-23T16:06:11.760474 RUN ['whoami']
