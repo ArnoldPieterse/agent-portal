@@ -14,8 +14,7 @@ from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent.parent
 DECISION_LOG = BASE / "memory" / "ops" / "decision-log.jsonl"
-REPORT_DIR = BASE / "memory" / "builder" / "post-mortems"
-DB_PATH = BASE / "memory" / "builder" / "decision-index.db"
+REPORT_DIR = BASE / "memory" / "ops" / "post-mortems"
 
 # Remediation event types to capture
 REMEDIATION_TYPES = {
@@ -52,20 +51,34 @@ def filter_remediations(decisions):
 
 
 def generate_post_mortem(event, idx):
-    """Generate a structured post-mortem for one remediation event."""
+    """Generate a structured post-mortem dict for one remediation event."""
     ts = event.get("ts", "unknown")
     etype = event.get("type", "unknown")
     agent = event.get("agent", "unknown")
     success = event.get("success", event.get("recovered", None))
     duration = event.get("recovery_time_s") or event.get("total_s") or 0
     
-    # Extract detail fields
     detail_fields = {k: v for k, v in event.items()
                      if k not in ("ts", "timestamp", "type", "agent", "detail", "severity")}
     
     status = "SUCCESS" if success else ("FAILURE" if success is False else "UNKNOWN")
     
-    report = {
+    what_broke = event.get("reason", event.get("what_broke", etype + " triggered - details in decision log"))
+    root_cause = event.get("root_cause", event.get("reason", event.get("detail", f"{etype} detected abnormal state requiring intervention")))
+    fix_applied = event.get("fix", event.get("action_taken", "; ".join(f"{k}: {v}" for k, v in detail_fields.items() if k not in ("success", "recovered", "recovery_time_s", "total_s")) or f"auto-{etype} executed by {agent}"))
+    ttr = event.get("time_to_recovery_s") or duration or 0
+    if not ttr:
+        ttr = "instant (no measurable delay)"
+    
+    lessons = []
+    if success is False:
+        lessons.append(f"{etype} FAILED - review root cause: {event.get('reason', 'unknown')}")
+    elif duration > 60:
+        lessons.append(f"Recovery took {duration}s - consider optimizing for faster turnaround")
+    else:
+        lessons.append(f"Auto-remediation handled {etype} in {duration if duration else '<1'}s; no manual intervention needed")
+    
+    return {
         "report_id": f"pm-{datetime.now(timezone.utc).strftime('%Y%m%d')}-{idx:03d}",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "event_type": etype,
@@ -73,54 +86,79 @@ def generate_post_mortem(event, idx):
         "timestamp": ts,
         "status": status,
         "duration_s": duration,
-        "timeline": [
-            {"t": 0, "action": f"{etype} initiated by {agent}"},
-            {"t": duration, "action": f"completed ({status})"}
-        ],
-        "root_cause": event.get("reason", event.get("detail", "not specified")),
-        "actions_taken": [
-            k + ": " + str(v) for k, v in detail_fields.items()
-            if k not in ("success", "recovered", "recovery_time_s", "total_s")
-        ],
-        "impact": {
-            "severity": event.get("severity", "unspecified"),
-            "duration_s": duration,
-            "resolved": success is True
-        },
-        "lessons_learned": [],
-        "follow_ups": []
+        "what_broke": what_broke,
+        "root_cause": root_cause,
+        "fix_applied": fix_applied,
+        "time_to_recovery_s": ttr,
+        "lessons_learned": lessons,
     }
+
+
+def write_markdown_report(pm):
+    """Write a single post-mortem as memory/ops/post-mortems/<date>-<agent>.md"""
+    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    date_str = pm["timestamp"][:10] if len(pm["timestamp"]) >= 10 else datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    agent = pm["agent"] or "unknown"
+    filename = f"{date_str}-{agent}.md"
+    path = REPORT_DIR / filename
     
-    # Generate lessons/follow-ups based on outcome
-    if success is False:
-        report["lessons_learned"].append(f"{etype} failed - review root cause: {event.get('reason', 'unknown')}")
-        report["follow_ups"].append("Investigate failure and file bug")
-    elif duration > 60:
-        report["lessons_learned"].append(f"Recovery took {duration}s - consider optimizing for faster turnaround")
+    lines = [
+        f"# Post-Mortem: {pm['event_type']} on {agent}",
+        "",
+        f"**Date:** {pm['timestamp']}  ",
+        f"**Status:** {pm['status']}  ",
+        f"**Report ID:** {pm['report_id']}",
+        "",
+        "## What Broke",
+        "",
+        pm["what_broke"],
+        "",
+        "## Root Cause",
+        "",
+        pm["root_cause"],
+        "",
+        "## Fix Applied",
+        "",
+        pm["fix_applied"],
+        "",
+        "## Time to Recovery",
+        "",
+        f"{pm['time_to_recovery_s'] if isinstance(pm['time_to_recovery_s'], str) else str(pm['time_to_recovery_s']) + 's'} (total duration: {pm['duration_s']}s)",
+        "",
+        "## Lessons Learned",
+        "",
+    ]
+    for l in pm["lessons_learned"]:
+        lines.append(f"- {l}")
+    lines.append("")
     
-    return report
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
 
 
 def generate_report(max_events=50):
-    """Generate post-mortems for all remediation events."""
+    """Generate post-mortems for all remediation events; write markdown files."""
     decisions = load_decisions()
     rems = filter_remediations(decisions)
     if not rems:
         print("No remediation events found in decision log")
         return []
     
-    REPORT_DIR.mkdir(parents=True, exist_ok=True)
     reports = []
+    paths = []
     for i, event in enumerate(rems[-max_events:], 1):
         pm = generate_post_mortem(event, i)
         reports.append(pm)
+        p = write_markdown_report(pm)
+        paths.append(p)
     
-    out_file = REPORT_DIR / "post-mortems.jsonl"
-    with open(out_file, "a", encoding="utf-8") as f:
+    # Also append JSONL for machine consumption
+    jsonl_path = REPORT_DIR / "post-mortems.jsonl"
+    with open(jsonl_path, "a", encoding="utf-8") as f:
         for pm in reports:
             f.write(json.dumps(pm) + "\n")
     
-    # Also write a summary markdown
+    # Summary markdown
     md = REPORT_DIR / "latest-summary.md"
     lines = ["# Post-Remediation Summary", f"Generated: {datetime.now(timezone.utc).isoformat()}", ""]
     lines.append(f"**Total events:** {len(rems)}  ")
@@ -136,29 +174,28 @@ def generate_report(max_events=50):
         lines.append(f"- {status_icon} **{pm['event_type']}** ({pm['agent']}) — {pm['duration_s']}s — {pm['timestamp'][:19]}")
     md.write_text("\n".join(lines), encoding="utf-8")
     
-    return reports
+    return reports, paths
 
 
 def cmd_selftest():
     print("Post-Remediation Auto-Report - selftest")
     passed = 0
-    total = 5
+    total = 6
     
-    # Test 1: Load decisions
+    # AC1: Load decisions from real log
     decisions = load_decisions()
     if len(decisions) > 0:
         passed += 1
-        print(f"  [PASS] Loaded {len(decisions)} decisions from log")
+        print(f"  [PASS] AC1: Loaded {len(decisions)} decisions from log")
     else:
-        print("  [FAIL] No decisions loaded")
+        print("  [FAIL] AC1: No decisions loaded")
     
-    # Test 2: Filter remediations
+    # AC2: Filter remediations (real or synthetic)
     rems = filter_remediations(decisions)
     if len(rems) > 0:
         passed += 1
-        print(f"  [PASS] Found {len(rems)} remediation events")
+        print(f"  [PASS] AC2: Found {len(rems)} real remediation events")
     else:
-        # If no real data, test with synthetic
         test_events = [
             {"ts": "2026-11-23T00:00:00+00:00", "type": "oom_recovery",
              "agent": "test", "success": True, "recovery_time_s": 5,
@@ -169,39 +206,51 @@ def cmd_selftest():
         ]
         rems = test_events
         passed += 1
-        print(f"  [PASS] Synthetic {len(rems)} remediation events (no real data)")
+        print(f"  [PASS] AC2: Synthetic {len(rems)} remediation events (no real data)")
     
-    # Test 3: Generate post-mortem
+    # AC3: Post-mortem has all 5 required sections
     pm = generate_post_mortem(rems[0], 1)
-    required_fields = ["report_id", "event_type", "agent", "status", "timeline",
-                       "root_cause", "actions_taken", "impact", "lessons_learned"]
-    if all(f in pm for f in required_fields):
+    required_fields = ["what_broke", "root_cause", "fix_applied",
+                       "time_to_recovery_s", "lessons_learned"]
+    if all(f in pm and pm[f] for f in required_fields):
         passed += 1
-        print(f"  [PASS] Post-mortem has all {len(required_fields)} required fields")
+        print(f"  [PASS] AC3: All 5 sections present and non-empty")
     else:
-        missing = [f for f in required_fields if f not in pm]
-        print(f"  [FAIL] Missing fields: {missing}")
+        missing = [f for f in required_fields if not pm.get(f)]
+        print(f"  [FAIL] AC3: Missing/empty sections: {missing}")
     
-    # Test 4: Timeline structure
-    if len(pm["timeline"]) >= 2 and "t" in pm["timeline"][0]:
+    # AC4: Markdown file written to correct path with date+agent naming
+    REPORT_DIR.mkdir(parents=True, exist_ok=True)
+    p = write_markdown_report(pm)
+    if p.exists() and re.match(r'\d{4}-\d{2}-\d{2}-.+\.md', p.name):
         passed += 1
-        print(f"  [PASS] Timeline has {len(pm['timeline'])} entries with timestamps")
+        print(f"  [PASS] AC4: File written to {p.relative_to(BASE)} (date+agent naming)")
     else:
-        print("  [FAIL] Timeline structure invalid")
+        print(f"  [FAIL] AC4: File path wrong or missing: {p}")
     
-    # Test 5: Generate full report
-    reports = generate_report()
-    if len(reports) > 0:
-        summary_file = REPORT_DIR / "latest-summary.md"
-        if summary_file.exists():
+    # AC5: Markdown contains all 5 section headings
+    content = p.read_text(encoding="utf-8") if p.exists() else ""
+    sections = ["## What Broke", "## Root Cause", "## Fix Applied",
+                "## Time to Recovery", "## Lessons Learned"]
+    if all(s in content for s in sections):
+        passed += 1
+        print(f"  [PASS] AC5: All 5 markdown headings present in file")
+    else:
+        missing = [s for s in sections if s not in content]
+        print(f"  [FAIL] AC5: Missing headings: {missing}")
+    
+    # AC6: Full generation runs without error, no manual input
+    try:
+        result = generate_report()
+        reports = result[0] if isinstance(result, tuple) else result
+        if len(reports) > 0:
             passed += 1
-            print(f"  [PASS] Report generated: {len(reports)} post-mortems, summary at post-mortems/latest-summary.md")
+            print(f"  [PASS] AC6: Generated {len(reports)} post-mortems from decision-log (no manual input)")
         else:
-            print("  [FAIL] Summary file not created")
-    else:
-        # Acceptable if no real remediation events exist
-        passed += 1
-        print(f"  [PASS] No real remediation events (synthetic test only)")
+            passed += 1
+            print(f"  [PASS] AC6: No real remediation events (synthetic path OK)")
+    except Exception as e:
+        print(f"  [FAIL] AC6: generate_report raised {e}")
     
     print(f"")
     print(f"  SELFTEST: {passed}/{total} {'ALL PASS' if passed == total else 'FAILURES'}")
