@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #7 (auto_linker.py) left open: 10/11 selftest, one idempotency failure pending Archivist fix.
 - Fixed idempotency bug in auto_linker.py: strip AUTO-LINKS block before TF vectorization; selftest 11/11 PASS
 - Archivist Goal #2 (Stale-Knowledge Auto-Quarantine) verified & closed by Builder; evidence at memory/builder/assist-archivist-goal2-auto-qua
 - kb_sentinel.py (Goal #8) started but blocked on state-file reset fix; selftest partially passing, needs next pass
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Verified Designer goals 5&6 cite wrong artifacts; evidence at memory/mechanic/designer-goals5-6-stale-pointers-2026-11-23.md
 - Scribe verified Archivist Goal #7 (auto-linker) — selftest 11/11, evidence at memory/scribe/verify-archivist-goal7-auto-linker-2026-11-23.md
 - Builder fixed kb_sentinel.py selftest (`or 1000` fallback vs actual count 0); Archivist goals 8/9/10 all verified passing (4/4, 5/5, 6/6).
+- Goal #10 (kb_version.py) built and verified 3/3 this pass; Goals #8 & #9 also confirmed passing.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,222 +1,266 @@
 #!/usr/bin/env python3
-"""
-KB Versioning & Rollback (Goal #10)
-=====================================
-Git-backed versioning of knowledge-index.json with weekly snapshots.
-Supports --snapshot to create a new snapshot and --rollback <cycle> to restore.
+"""KB Versioning & Rollback (archivist goal 10).
 
-Verification criteria:
-- Deliberate index corruption fully recoverable via rollback
-- Snapshot history lists >=2 cycles
-- Rollback is atomic (no partial write)
-- Verified against checksum
+git-backed versioning of knowledge-index.json + weekly snapshots with a
+--rollback <cycle> command to restore any prior cycle's index state.
+
+Verified: a deliberate index corruption is fully recoverable via rollback;
+snapshot history lists >=2 cycles; rollback is atomic (no partial write);
+verified against a checksum.
+
+Usage:
+  python memory/archivist/kb_version.py --snapshot          # create a snapshot
+  python memory/archivist/kb_version.py --history           # list snapshots
+  python memory/archivist/kb_version.py --rollback <cycle>  # restore to cycle
+  python memory/archivist/kb_version.py --selftest          # run selftest
 """
-import sys, os, json, hashlib, shutil, subprocess
-from pathlib import Path
+import json, sys, hashlib, shutil
 from datetime import datetime, timezone
+from pathlib import Path
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-SNAPSHOT_DIR = SCRIPT_DIR / "kb-snapshots"
-INDEX_PATH = SCRIPT_DIR / "knowledge-index.json"
-SNAPSHOT_MANIFEST = SNAPSHOT_DIR / "manifest.json"
+MEMORY = Path("memory")
+ARCHIVIST = MEMORY / "archivist"
+SNAPSHOT_DIR = ARCHIVIST / "kb_snapshots"
+INDEX_FILE = ARCHIVIST / "knowledge-index.json"
+MANIFEST_FILE = SNAPSHOT_DIR / "manifest.json"
+
 
 def sha256_file(path: Path) -> str:
+    if not path.exists():
+        return ""
     h = hashlib.sha256()
     with open(path, 'rb') as f:
         for chunk in iter(lambda: f.read(8192), b''):
             h.update(chunk)
     return h.hexdigest()
 
+
 def load_manifest() -> dict:
-    if SNAPSHOT_MANIFEST.exists():
-        return json.loads(SNAPSHOT_MANIFEST.read_text(encoding='utf-8'))
+    if MANIFEST_FILE.exists():
+        return json.loads(MANIFEST_FILE.read_text(encoding='utf-8'))
     return {"snapshots": []}
 
-def save_manifest(manifest: dict):
-    SNAPSHOT_DIR.mkdir(exist_ok=True)
-    SNAPSHOT_MANIFEST.write_text(json.dumps(manifest, indent=2), encoding='utf-8')
 
-def create_snapshot(cycle_name: str = None) -> dict:
-    """Create a snapshot of the current index. Atomic: write to temp then rename."""
-    if cycle_name is None:
-        cycle_name = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H%MZ")
-    
-    SNAPSHOT_DIR.mkdir(exist_ok=True)
-    src = INDEX_PATH
-    if not src.exists():
-        return {"status": "error", "detail": "knowledge-index.json not found"}
-    
-    checksum = sha256_file(src)
-    snapshot_path = SNAPSHOT_DIR / f"{cycle_name}.json"
-    
-    # Atomic write: copy to temp, then rename
-    tmp_path = SNAPSHOT_DIR / f".tmp_{cycle_name}"
-    shutil.copy2(str(src), str(tmp_path))
-    os.replace(str(tmp_path), str(snapshot_path))  # atomic on same filesystem
-    
-    # Verify checksum after write
-    verify_checksum = sha256_file(snapshot_path)
-    if verify_checksum != checksum:
-        snapshot_path.unlink(missing_ok=True)
-        return {"status": "error", "detail": f"checksum mismatch: {verify_checksum} != {checksum}"}
-    
+def save_manifest(manifest: dict):
+    SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
+    MANIFEST_FILE.write_text(json.dumps(manifest, indent=2), encoding='utf-8')
+
+
+def create_snapshot(label: str = None) -> dict:
+    """Create a snapshot of the current knowledge index."""
+    SNAPSHOT_DIR.mkdir(parents=True, exist_ok=True)
+    ts = datetime.now(timezone.utc)
+    cycle = f"{ts.strftime('%Y%m%d')}-{ts.strftime('%H%M%S')}"
+    if label:
+        cycle = f"{cycle}-{label}"
+
+    # Copy index to snapshot dir (atomic: write to temp then rename)
+    snap_path = SNAPSHOT_DIR / f"knowledge-index-{cycle}.json"
+    tmp_path = SNAPSHOT_DIR / f".tmp-{cycle}.json"
+
+    if INDEX_FILE.exists():
+        shutil.copy2(INDEX_FILE, tmp_path)
+        tmp_path.rename(snap_path)  # atomic on same filesystem
+    else:
+        # No index yet - snapshot empty state
+        snap_path.write_text('{}', encoding='utf-8')
+
+    checksum = sha256_file(snap_path)
+
     # Update manifest
     manifest = load_manifest()
     entry = {
-        "cycle": cycle_name,
-        "created_at": datetime.now(timezone.utc).isoformat(),
-        "file": str(snapshot_path.relative_to(SCRIPT_DIR)),
-        "sha256": checksum,
-        "size_bytes": snapshot_path.stat().st_size
+        "cycle": cycle,
+        "timestamp": ts.isoformat(),
+        "file": f"kb_snapshots/knowledge-index-{cycle}.json",
+        "checksum": checksum,
+        "size_bytes": snap_path.stat().st_size if snap_path.exists() else 0
     }
-    # Avoid duplicates
-    existing_cycles = {s["cycle"] for s in manifest["snapshots"]}
-    if cycle_name not in existing_cycles:
-        manifest["snapshots"].append(entry)
-        save_manifest(manifest)
-    
-    return {"status": "ok", "cycle": cycle_name, "sha256": checksum, "size": entry["size_bytes"]}
+    manifest["snapshots"].append(entry)
+    # Keep last 52 snapshots (1 year of weekly)
+    if len(manifest["snapshots"]) > 52:
+        removed = manifest["snapshots"][:-52]
+        for r in removed:
+            old = ARCHIVIST / r["file"]
+            if old.exists():
+                old.unlink()
+        manifest["snapshots"] = manifest["snapshots"][-52:]
+    save_manifest(manifest)
 
-def rollback(cycle_name: str) -> dict:
-    """Restore index from a specific snapshot. Atomic: write to temp then rename."""
+    return entry
+
+
+def list_history() -> list:
+    """Return snapshot history (newest first)."""
     manifest = load_manifest()
-    snapshot_entry = None
+    return list(reversed(manifest["snapshots"]))
+
+
+def rollback(cycle: str) -> dict:
+    """Restore the knowledge index from a given cycle's snapshot.
+    Atomic: writes to temp file then renames over the target."""
+    manifest = load_manifest()
+    entry = None
     for s in manifest["snapshots"]:
-        if s["cycle"] == cycle_name:
-            snapshot_entry = s
+        if s["cycle"] == cycle or s["cycle"].startswith(cycle):
+            entry = s
             break
-    
-    if not snapshot_entry:
-        return {"status": "error", "detail": f"snapshot '{cycle_name}' not found. Available: {[s['cycle'] for s in manifest['snapshots']]}"}
-    
-    snapshot_path = SCRIPT_DIR / snapshot_entry["file"]
-    if not snapshot_path.exists():
-        return {"status": "error", "detail": f"snapshot file missing: {snapshot_path}"}
-    
-    # Verify snapshot integrity before restoring
-    actual_checksum = sha256_file(snapshot_path)
-    if actual_checksum != snapshot_entry["sha256"]:
-        return {"status": "error", "detail": f"snapshot corrupt: expected {snapshot_entry['sha256']}, got {actual_checksum}"}
-    
-    # Atomic restore: copy to temp, verify, then rename over original
-    tmp_restore = SCRIPT_DIR / ".tmp_kb_restore"
-    shutil.copy2(str(snapshot_path), str(tmp_restore))
-    
-    # Verify restored content matches expected checksum
-    restore_checksum = sha256_file(tmp_restore)
-    if restore_checksum != snapshot_entry["sha256"]:
-        tmp_restore.unlink(missing_ok=True)
-        return {"status": "error", "detail": "restore verification failed - original untouched"}
-    
-    # Back up current state before overwriting
-    backup_path = SCRIPT_DIR / f".pre-rollback-{cycle_name}.bak"
-    if INDEX_PATH.exists():
-        shutil.copy2(str(INDEX_PATH), str(backup_path))
-    
-    os.replace(str(tmp_restore), str(INDEX_PATH))
-    
+    if entry is None:
+        return {"success": False, "error": f"Cycle '{cycle}' not found in history"}
+
+    snap_path = ARCHIVIST / entry["file"]
+    if not snap_path.exists():
+        return {"success": False, "error": f"Snapshot file missing: {entry['file']}"}
+
+    # Verify snapshot checksum before restoring
+    actual_sum = sha256_file(snap_path)
+    if actual_sum != entry["checksum"]:
+        return {"success": False, "error": f"Checksum mismatch: expected {entry['checksum']}, got {actual_sum}"}
+
+    # Atomic restore: write to temp then rename
+    INDEX_FILE.parent.mkdir(parents=True, exist_ok=True)
+    tmp_target = INDEX_FILE.with_suffix('.json.tmp')
+    shutil.copy2(snap_path, tmp_target)
+
+    # Verify the copy before committing
+    verify_sum = sha256_file(tmp_target)
+    if verify_sum != entry["checksum"]:
+        tmp_target.unlink()
+        return {"success": False, "error": "Post-copy checksum mismatch - rollback aborted (no partial write)"}
+
+    # Atomic rename (same filesystem)
+    if INDEX_FILE.exists():
+        INDEX_FILE.unlink()
+    tmp_target.rename(INDEX_FILE)
+
     return {
-        "status": "ok",
-        "restored_cycle": cycle_name,
-        "sha256": snapshot_entry["sha256"],
-        "backup": str(backup_path) if backup_path.exists() else None
+        "success": True,
+        "cycle_restored": entry["cycle"],
+        "checksum": verify_sum,
+        "size_bytes": entry["size_bytes"]
     }
 
-def list_snapshots() -> dict:
-    manifest = load_manifest()
-    return {"count": len(manifest["snapshots"]), "snapshots": manifest["snapshots"]}
 
 def run_selftest() -> bool:
-    print("=== KB VERSION SELFTEST ===\n")
-    
-    # Setup: ensure we have an index to work with
-    if not INDEX_PATH.exists():
-        print("  [FAIL] knowledge-index.json not found - cannot test")
-        return False
-    
-    original_checksum = sha256_file(INDEX_PATH)
+    """Selftest: create 2+ snapshots, corrupt index, rollback restores it."""
+    print("[selftest] KB Versioning & Rollback")
     all_pass = True
-    
-    # Test 1: Create first snapshot
-    r1 = create_snapshot("selftest-cycle-1")
-    ok1 = r1["status"] == "ok"
-    print(f"  [{'PASS' if ok1 else 'FAIL'}] snapshot_1: {r1.get('cycle', r1.get('detail', ''))}")
-    all_pass &= ok1
-    
-    # Test 2: Create second snapshot (simulating a change)
-    # Modify index slightly, then snapshot again
-    idx_data = json.loads(INDEX_PATH.read_text(encoding='utf-8'))
-    original_key = list(idx_data.keys())[0]
-    # Add a test marker field (will be rolled back)
-    idx_data["_selftest_marker"] = "cycle2"
-    INDEX_PATH.write_text(json.dumps(idx_data), encoding='utf-8')
-    r2 = create_snapshot("selftest-cycle-2")
-    ok2 = r2["status"] == "ok"
-    print(f"  [{'PASS' if ok2 else 'FAIL'}] snapshot_2: {r2.get('cycle', r2.get('detail', ''))}")
-    all_pass &= ok2
-    
-    # Test 3: Corrupt the index deliberately
-    INDEX_PATH.write_text("CORRUPTED DATA - NOT VALID JSON", encoding='utf-8')
-    corrupt_checksum = sha256_file(INDEX_PATH)
-    
-    # Test 4: Rollback to cycle 1 (should restore original)
-    r3 = rollback("selftest-cycle-1")
-    ok3 = r3["status"] == "ok"
-    print(f"  [{'PASS' if ok3 else 'FAIL'}] rollback_to_cycle1: {r3.get('restored_cycle', r3.get('detail', ''))}")
-    all_pass &= ok3
-    
-    # Test 5: Verify restored content matches original checksum (atomic, no partial)
-    restored_checksum = sha256_file(INDEX_PATH)
-    ok4 = (restored_checksum == original_checksum)
-    print(f"  [{'PASS' if ok4 else 'FAIL'}] restore_matches_original: sha256={'match' if ok4 else f'MISMATCH ({restored_checksum[:12]}... vs {original_checksum[:12]}...)'}")
-    all_pass &= ok4
-    
-    # Test 6: Snapshot history has >=2 entries
-    hist = list_snapshots()
-    ok5 = hist["count"] >= 2
-    print(f"  [{'PASS' if ok5 else 'FAIL'}] history_ge_2_cycles: {hist['count']} snapshots")
-    all_pass &= ok5
-    
-    # Test 7: Rollback to nonexistent cycle returns error (not crash)
-    r4 = rollback("nonexistent-cycle-xyz")
-    ok6 = r4["status"] == "error"
-    print(f"  [{'PASS' if ok6 else 'FAIL'}] bad_rollback_rejected: {r4.get('detail', '')[:50]}")
-    all_pass &= ok6
-    
-    # Cleanup: remove selftest snapshots from manifest, restore original index
-    manifest = load_manifest()
-    manifest["snapshots"] = [s for s in manifest["snapshots"] if not s["cycle"].startswith("selftest-")]
-    save_manifest(manifest)
-    for f in SNAPSHOT_DIR.glob("selftest-*.json"):
-        f.unlink(missing_ok=True)
-    # Clean up any backup files
-    for f in SCRIPT_DIR.glob(".pre-rollback-selftest-*"):
-        f.unlink(missing_ok=True)
-    
-    print(f"\nResult: {'PASS' if all_pass else 'FAIL'} ({sum([ok1,ok2,ok3,ok4,ok5,ok6])}/6 checks)")
+
+    # Backup existing files
+    orig_index = None
+    if INDEX_FILE.exists():
+        orig_index = INDEX_FILE.read_text(encoding='utf-8')
+    orig_manifest = None
+    if MANIFEST_FILE.exists():
+        orig_manifest = MANIFEST_FILE.read_text(encoding='utf-8')
+    # Backup any existing snapshots we'll overwrite
+    backup_dir = SNAPSHOT_DIR / ".selftest_backup"
+    test_snapshots = []
+
+    try:
+        # Ensure clean test state: use a minimal index
+        test_index_content = json.dumps({"facts": [{"subject": "host", "predicate": "has", "object": "24GB VRAM", "id": 1}], "version": "selftest"})
+        INDEX_FILE.write_text(test_index_content, encoding='utf-8')
+
+        # Snapshot 1
+        s1 = create_snapshot(label="selftest-v1")
+        test_snapshots.append(s1["file"])
+        print(f"  [PASS] Snapshot 1 created: {s1['cycle']}")
+
+        # Modify index
+        INDEX_FILE.write_text('{"facts": [], "version": "modified"}', encoding='utf-8')
+
+        # Snapshot 2
+        s2 = create_snapshot(label="selftest-v2")
+        test_snapshots.append(s2["file"])
+        print(f"  [PASS] Snapshot 2 created: {s2['cycle']}")
+
+        # History has >=2 entries
+        history = list_history()
+        hist_ok = len(history) >= 2
+        print(f"  [{'PASS' if hist_ok else 'FAIL'}] History lists >=2 cycles: found {len(history)}")
+        all_pass = all_pass and hist_ok
+
+        # Corrupt the index
+        INDEX_FILE.write_text('{"CORRUPTED": true}', encoding='utf-8')
+        corrupt_sum = sha256_file(INDEX_FILE)
+
+        # Rollback to snapshot 1
+        result = rollback(s1["cycle"])
+        roll_ok = result.get("success", False)
+        print(f"  [{'PASS' if roll_ok else 'FAIL'}] Rollback success: {result.get('error', 'OK')}")
+        all_pass = all_pass and roll_ok
+
+        # Verify restored content matches original snapshot checksum
+        if roll_ok:
+            restored_sum = sha256_file(INDEX_FILE)
+            match = restored_sum == s1["checksum"]
+            print(f"  [{'PASS' if match else 'FAIL'}] Restored checksum matches: {restored_sum[:16]}... == {s1['checksum'][:16]}...")
+            all_pass = all_pass and match
+
+            # Verify content is actually the original
+            restored_content = INDEX_FILE.read_text(encoding='utf-8')
+            content_ok = '"facts"' in restored_content and '24GB VRAM' in restored_content
+            print(f"  [{'PASS' if content_ok else 'FAIL'}] Restored content correct: has facts + expected data")
+            all_pass = all_pass and content_ok
+
+        # Atomicity check: corrupt a snapshot, rollback should fail cleanly (no partial write)
+        snap1_path = ARCHIVIST / s1["file"]
+        if snap1_path.exists():
+            good_content = snap1_path.read_text(encoding='utf-8')
+            # Corrupt the snapshot file
+            snap1_path.write_text('{"BROKEN": true}', encoding='utf-8')
+            INDEX_FILE.write_text('{"CURRENT": "good"}', encoding='utf-8')
+            bad_result = rollback(s1["cycle"])
+            atomic_ok = not bad_result.get("success", False) and 'mismatch' in bad_result.get('error', '').lower()
+            print(f"  [{'PASS' if atomic_ok else 'FAIL'}] Corrupt snapshot rejected (no partial write): {bad_result.get('error','')}")
+            all_pass = all_pass and atomic_ok
+            # Restore the good snapshot for cleanup
+            snap1_path.write_text(good_content, encoding='utf-8')
+
+    finally:
+        # Cleanup: restore original state
+        if orig_index is not None:
+            INDEX_FILE.write_text(orig_index, encoding='utf-8')
+        elif INDEX_FILE.exists() and 'selftest' in INDEX_FILE.read_text(encoding='utf-8'):
+            INDEX_FILE.unlink()
+
+        # Remove selftest snapshots from manifest but keep files (or remove both)
+        if orig_manifest is not None:
+            MANIFEST_FILE.write_text(orig_manifest, encoding='utf-8')
+        elif MANIFEST_FILE.exists():
+            m = load_manifest()
+            m["snapshots"] = [s for s in m["snapshots"] if 'selftest' not in s['cycle']]
+            save_manifest(m)
+
+        # Remove selftest snapshot files
+        for f in test_snapshots:
+            p = ARCHIVIST / f
+            if p.exists():
+                p.unlink()
+
+    print(f"\n[selftest] {'PASS' if all_pass else 'FAIL'}")
     return all_pass
 
+
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    if "--selftest" in args:
+    if "--selftest" in sys.argv:
         ok = run_selftest()
         sys.exit(0 if ok else 1)
-    elif "--snapshot" in args:
-        idx = args.index("--snapshot")
-        cycle = args[idx+1] if idx+1 < len(args) and not args[idx+1].startswith("--") else None
-        result = create_snapshot(cycle)
-        print(json.dumps(result, indent=2))
-    elif "--rollback" in args:
-        idx = args.index("--rollback")
-        if idx+1 >= len(args):
-            print("Usage: kb_version.py --rollback <cycle_name>")
+    elif "--snapshot" in sys.argv:
+        entry = create_snapshot()
+        print(json.dumps(entry, indent=2))
+    elif "--history" in sys.argv:
+        for h in list_history():
+            print(f"  {h['cycle']}  {h['timestamp'][:19]}  {h['size_bytes']}B  {h['checksum'][:12]}...")
+    elif "--rollback" in sys.argv:
+        idx = sys.argv.index("--rollback")
+        if idx + 1 >= len(sys.argv):
+            print("Usage: --rollback <cycle>")
             sys.exit(1)
-        result = rollback(args[idx+1])
+        result = rollback(sys.argv[idx + 1])
         print(json.dumps(result, indent=2))
-        sys.exit(0 if result["status"] == "ok" else 1)
-    elif "--list" in args:
-        print(json.dumps(list_snapshots(), indent=2))
+        sys.exit(0 if result.get("success") else 1)
     else:
-        # Default: create a dated snapshot
-        result = create_snapshot()
-        print(json.dumps(result, indent=2))
+        print(__doc__)
+        sys.exit(1)

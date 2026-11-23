@@ -190,8 +190,10 @@ def run_selftest() -> bool:
         STATE_FILE.write_text(json.dumps(test_state), encoding='utf-8')
 
         # Test 1: Clean state (no changes) should be silent
+        # Use ACTUAL current values so no spurious alerts fire
         test_state_clean = dict(test_state)
-        test_state_clean["last_fact_count"] = get_fact_count() or 1000  # use actual count
+        test_state_clean["last_fact_count"] = get_fact_count()  # actual count (may be 0)
+        test_state_clean["critical_nodes"] = get_critical_nodes()  # actual critical nodes
         STATE_FILE.write_text(json.dumps(test_state_clean), encoding='utf-8')
         r1 = run_check()
         clean_silent = r1["status"] == "OK"

@@ -1,5 +1,13 @@
 <537 chars of arguments you sent, already written to TODO.md; elided to save room. Not tool output; the file on disk holds it.>
 
+## MODE-BUTTON SQUEEZE FIX - Solo/Group clickable again 2026-11-23
+Status: **DONE + verified live via Playwright** (real Chromium vs http://127.0.0.1:8099).
+User: "the full button is still not clickable, fix the UI and button sizing + placement" (circled Solo/Group segmented control; no other Full* button exists in ui/ - scanned).
+Root cause (proven headlessly): at narrow widths `#modeBar` flex-squeezed `.seg` to one button's width and its `overflow:hidden` clipped **Group** out of existence; computed `.toggles` flex-shrink was 1, so the toggle row could be crushed too. Previous turn's tour-overlay fix (0eb9dfec) was necessary but not sufficient.
+Fix in ui/app.css (canonical stylesheet; auto-committed by 15-min safety-net ec371d5e after sync merged the edit): `.seg{flex:none}`, `.seg button{padding:var(--sp-6) var(--sp-14);font-size:var(--fs-14);white-space:nowrap;min-width:64px;text-align:center}` (sizing), `#modeBar>span{flex:none}`, `.toggles{flex:none}`, `.goalbar{flex:1 1 auto;min-width:0}` absorbs slack + wraps.
+Playwright proof at 1024 AND 1400 px: computed flexShrink=0 on .seg/.toggles, seg width 54px (was ~30), Group fully visible (x+width <= bar right edge), both buttons `click()` succeeded with class toggle + hint swap, 0 pageerrors. Screenshots pw_modebar_1024.png / pw_modebar_1400.png.
+Note: portal sync process consolidates ui files (core.css content now lives in app.css) - edit ui/app.css going forward.
+
 ## PORTAL UI UPGRADES + FULL CLICK-BATTERY (Playwright) 2026-11-22
 Status: **DONE - 66/66 steps green in real Chromium** (pw_test.py, run pw_run5.log).
 Upgrades shipped this round: theme toggle (light/dark, persisted, icon swap), print-report button, toast click-to-dismiss + Esc on bell panel + Esc closes any open panel/editor dialog, goal bar + Lv chip render on page load.
