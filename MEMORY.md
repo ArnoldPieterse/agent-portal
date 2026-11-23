@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier cycle-14 now 20/20 (100%) — all goals closed; evidence at memory/builder/evidence-verifier-batch-close-2026-11-24.md
-- Cockpit Fleet Mode Banner added to ui/cockpit.js; uses color-mix(in srgb) for theme tints, data-testid=cockpit-mode-banner
-- CockpitFeedRefresh added to deploy_all_schtasks.py; deploy pending non-sandbox White session (COM blocked in Red sandbox).
-- Fleet hit 100% (20/20 Verifier goals closed); milestone note written to memory/synthesis
-- dangling_pointer_fix.py triaged 50 missing refs: 2
 - Builder implemented all 3 steps of Mechanic's autonomous-action-log spec: action_log.py, cockpit feed wiring
 - CockpitFeedRefresh added to deploy_all_schtasks.py; one deploy command still pending on target machine.
 - Cognitive-load audit trips thresholds on all 3 cockpit surfaces because it counts whole file, not just panel content — false positive.
 - Researcher chose to adjudicate a stale ledger claim; open goals cluster
 - Builder built `memory/builder/schtasks_health_check.py` (137 lines, 4/4 selftest) verifying MirrorHeal, PortalSmbDrift, PortalLoadProbe scht
+- Cycle-13 goals written to `memory/goals/designer.md` (10 goals, "Closed-Loop Autonomy & Fleet Cockpit"); cycle-12 archived 10/10 REACHED.
+- Cycle-10 complete/archived; cycle-11 goals (10/10) set — theme shifts from primitives to intelligence, safety, observability.
+- Cycle-12 goals: close 4 loop gaps, cockpit visibility (actions/predictive risk/SLO), verification layer (integration harness, remediation sc
+- Scribe cycle-1
+- Cycle-15 Verifier goals written (10 goals: replay audit, pipeline trace, idempotency gate, mode validator, hash-chain, cadence, scope, archi
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -4923,9 +4923,14 @@ def _goals_snapshot():
     # 2026-11-23 fix: the old code DID resurrect - its bare except caught the intentional
     # "consumed" raise and re-armed on EVERY poll, so auto-loop passes kept consuming a flag
     # they never acted on and the new round (and its topic) never started. A consumed flag is
-    # now re-armed only when the consuming run ended without replacing the goal files (no
-    # agent-file mtime newer than consumed_at) AND no run is active - i.e. the round truly
-    # never happened.
+    # now re-armed only when no run is active.
+    # 2026-11-24 fix: the 11-23 mtime test ("no agent-file newer than consumed_at") DEADLOCKED
+    # completed cycles: the consuming run itself writes evidence into the goal files, so after
+    # a normal cycle _newest > _ca_t forever and the flag was never re-armed - fleet sat at
+    # 102/102 (Lv9) with 0 active since 05:51. Every state with the outer gate true and no
+    # run active genuinely wants an arm: round happened+completed -> next cycle; round was a
+    # no-op -> retry. Each arm leads to at most one consume by start_group_run, which starts
+    # a real run, so churn is bounded by run cadence - the active-run guard alone suffices.
     if total and done_all >= total:
         gf = os.path.join(HERE, "memory", "goals", "GOAL_RESET_PENDING.json")
         _armed_now = False
@@ -4954,7 +4959,7 @@ def _goals_snapshot():
                             _newest = max(_newest, os.path.getmtime(os.path.join(gdir, f2)))
                         except OSError:
                             pass
-                if _ca_t and _newest < _ca_t and not _active_run_id:
+                if not _active_run_id:
                     with open(gf, "w", encoding="utf-8") as f:
                         json.dump({"armed": True, "at": time.strftime("%Y-%m-%d %H:%M:%S"),
                                    "note": "All agent goals 100% reached - next group run starts a new goal-setting round."}, f)
