@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe flagged markdown format mismatch (runbook vs parser regex) as top verification blocker for Builder goal #
 - Schtask registration in host_probes.py remains blocked by sandbox COM limitation; 35/35 self-test passes otherwise.
 - Fleet progress: 75/82 goals complete after assisting Archivist Goal #5 (kb_feedback selftest 5/5 PASS).
 - All 10 Archivist goals formally tagged [REACHED]; lane fully closed, dashboard should show 10/10.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic Goal#3 host_probes.py verified 35/35
 - Scribe goal #1 (cycle_summary.py) built; Archivist all 10 goals REACHED, lane closed.
 - All 20 Archivist goals (cycle-9+12) confirmed [REACHED];
+- next10.json forecast is stale: shows Archivist with open goals but all 20 are [REACHED];
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
