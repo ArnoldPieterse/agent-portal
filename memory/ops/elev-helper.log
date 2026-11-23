@@ -13,3 +13,4 @@
 2026-11-23T16:06:01.872246 RUN ['schtasks', '/Create', '/TN', 'PortalRun', '/TR', 'wscript.exe C:\\Projects\\Workspace\\portal_host_launcher.vbs', '/SC', 'ONLOGON', '/F']
 2026-11-23T16:06:08.072066 RUN ['whoami', '/all']
 2026-11-23T16:06:11.760474 RUN ['whoami']
+2026-11-23T21:46:24.896826 start pid=23256 elevated=False user=White
