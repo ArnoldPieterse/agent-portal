@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder implemented all 3 steps of Mechanic's autonomous-action-log spec: action_log.py, cockpit feed wiring
-- CockpitFeedRefresh added to deploy_all_schtasks.py; one deploy command still pending on target machine.
-- Cognitive-load audit trips thresholds on all 3 cockpit surfaces because it counts whole file, not just panel content — false positive.
 - Researcher chose to adjudicate a stale ledger claim; open goals cluster
 - Builder built `memory/builder/schtasks_health_check.py` (137 lines, 4/4 selftest) verifying MirrorHeal, PortalSmbDrift, PortalLoadProbe scht
 - Cycle-13 goals written to `memory/goals/designer.md` (10 goals, "Closed-Loop Autonomy & Fleet Cockpit"); cycle-12 archived 10/10 REACHED.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Cycle-12 goals: close 4 loop gaps, cockpit visibility (actions/predictive risk/SLO), verification layer (integration harness, remediation sc
 - Scribe cycle-1
 - Cycle-15 Verifier goals written (10 goals: replay audit, pipeline trace, idempotency gate, mode validator, hash-chain, cadence, scope, archi
+- Archivist cycle goals (10) written to memory/goals/archivist.md, theme "Fleet Autonomy Convergence," dated
+- Designer cycle-14 theme: "Fleet Autonomy Convergence" — progressing from operable cockpit toward no-operator-needed; 10 goals written to mem
+- Mechanic cycle-11: converging individual autonomous capabilities (cycles 9-10) into one unified remediation pipeline with self-degradation d
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 9880 | flagged (<0.35): 0
+Leaves: 9892 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -8562,11 +8562,9 @@ Leaves: 9880 | flagged (<0.35): 0
 | memory/goals/forecast-builder-goal9-runbook-exec.md | 1 | 0 | n | 0.544 |
 | memory/goals/forecast-mechanic-goal1-loadtest-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/goals/forecast_engine.py | 1 | 0 | n | 0.544 |
-| memory/goals/GOAL_RESET_PENDING.json | 1 | 0 | n | 0.544 |
 | memory/goals/ledger-check.json | 1 | 0 | n | 0.544 |
 | memory/goals/mechanic-cycle9-proposals-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/goals/mechanic-forecast-unblock-path-2026-11-23.md | 1 | 0 | n | 0.544 |
-| memory/goals/round_topic.json | 1 | 0 | n | 0.544 |
 | memory/goals/scribe-crosslane-integration-map-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/goals/_ledger_tmp.json | 1 | 0 | n | 0.544 |
 | memory/goals/archive/archivist-2026-11-19.md | 1 | 0 | n | 0.544 |
@@ -8606,10 +8604,12 @@ Leaves: 9880 | flagged (<0.35): 0
 | memory/goals/archive/mechanic-2026-11-23-cycle8.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/mechanic-2026-11-23-cycle9.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/mechanic-2026-11-23.md | 1 | 0 | n | 0.544 |
+| memory/goals/archive/mechanic-2026-11-24-cycle15-pre.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/orchestrator-2026-11-23-cycle12.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/orchestrator-2026-11-23-cycle13.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/orchestrator-2026-11-23-cycle9.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/orchestrator-2026-11-23.md | 1 | 0 | n | 0.544 |
+| memory/goals/archive/orchestrator-2026-11-24-cycle15-pre.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/researcher-2026-11-19.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/researcher-2026-11-20.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/researcher-2026-11-22.md | 1 | 0 | n | 0.544 |
@@ -8620,6 +8620,7 @@ Leaves: 9880 | flagged (<0.35): 0
 | memory/goals/archive/researcher-2026-11-23-cycle8.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/researcher-2026-11-23-cycle9.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/researcher-2026-11-23.md | 1 | 0 | n | 0.544 |
+| memory/goals/archive/researcher-2026-11-24-cycle15-pre.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/scribe-2026-11-19.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/scribe-2026-11-20.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/scribe-2026-11-23-cycle10.md | 1 | 0 | n | 0.544 |
@@ -8628,6 +8629,7 @@ Leaves: 9880 | flagged (<0.35): 0
 | memory/goals/archive/scribe-2026-11-23-cycle8.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/scribe-2026-11-23-cycle9.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/scribe-2026-11-23.md | 1 | 0 | n | 0.544 |
+| memory/goals/archive/scribe-2026-11-24-cycle15-pre.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier-2026-11-19.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier-2026-11-20.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier-2026-11-23-cycle12.md | 1 | 0 | n | 0.544 |
@@ -8890,6 +8892,7 @@ Leaves: 9880 | flagged (<0.35): 0
 | memory/ops/merge-queue/index.html.f10040268f | 1 | 0 | n | 0.544 |
 | memory/ops/merge-queue/memory_mirror.py.3d9266645f | 1 | 0 | n | 0.544 |
 | memory/ops/merge-queue/portal_host.py.114157f8eb | 1 | 0 | n | 0.544 |
+| memory/ops/merge-queue/portal_host.py.e3084c3f43 | 1 | 0 | n | 0.544 |
 | memory/ops/post-mortems/20261122-builder.md | 1 | 0 | n | 0.544 |
 | memory/ops/post-mortems/20261122-test_agent.md | 1 | 0 | n | 0.544 |
 | memory/ops/post-mortems/20261123-builder.md | 1 | 0 | n | 0.544 |
@@ -9241,7 +9244,13 @@ Leaves: 9880 | flagged (<0.35): 0
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-mechanic-g3-host-probes-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-verifier-cluster-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/GOAL_RESET_PENDING.json | 0 | 0 | n | 0.550 |
 | memory/goals/next10.json | 0 | 0 | n | 0.550 |
+| memory/goals/round_topic.json | 0 | 0 | n | 0.550 |
+| memory/goals/archive/archivist-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/builder-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/designer-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/verifier-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-005723.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-015929.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-030002.json | 0 | 0 | n | 0.550 |
@@ -9250,6 +9259,9 @@ Leaves: 9880 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261124-062139.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-072313.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-083254.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-085855.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-092250.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-094942.json | 0 | 0 | n | 0.550 |
 | memory/handoffs/HO-20261124-fleet-state-collector-schtasks.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/mechanic-to-builder-preflight-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/scribe-to-builder-topology-visualizer-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9491,10 +9503,10 @@ Leaves: 9880 | flagged (<0.35): 0
 | memory/verifier/slo-report-2026-11-16.md | 8 | 6 | n | 0.700 |
 | memory/archivist/knowledge-graph-v3.json | 1 | 4 | n | 0.705 |
 | memory/goals/researcher.md | 1 | 4 | n | 0.705 |
-| memory/synthesis/quality-scores.jsonl | 1 | 4 | n | 0.705 |
 | memory/goals/all-goals-2026-11-13.md | 11 | 8 | n | 0.709 |
 | memory/portal/upgrade-plan.md | 11 | 9 | n | 0.719 |
 | memory/decision-log.jsonl | 1 | 5 | n | 0.724 |
+| memory/synthesis/quality-scores.jsonl | 1 | 5 | n | 0.724 |
 | memory/goals/cycle2-dependency-map.md | 8 | 8 | n | 0.725 |
 | memory/synthesis/2026-11-14-portal-down-state-change.md | 10 | 9 | n | 0.725 |
 | memory/synthesis/index-replay-r81-24of24-canonical.md | 10 | 9 | n | 0.725 |

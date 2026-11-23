@@ -803,3 +803,4 @@
 {"ts": "2026-11-24 08:31:48", "run": "g-1a20a879fdc-d46751", "missing": {"Researcher": "not_loaded", "Mechanic": "unreachable", "Verifier": "unreachable"}, "relocated": {"Scribe": "White (local) (home unreachable)", "Builder": "White (local) (home unreachable)", "Archivist": "White (local) (home unreachable)"}}
 {"ts": "2026-11-24 08:39:20", "run": "g-1a20a90551f-386a6a", "missing": {}, "relocated": {"Researcher": "black (home not_loaded)", "Archivist": "White (local) (home unreachable)"}}
 {"ts": "2026-11-24 09:11:33", "run": "g-1a20aadd129-e4cdec", "missing": {"Orchestrator": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
+{"ts": "2026-11-24 09:49:54", "run": "g-1a20ad0eddb-4ba5a3", "missing": {"Orchestrator": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
