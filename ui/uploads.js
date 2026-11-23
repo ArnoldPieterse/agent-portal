@@ -407,7 +407,7 @@ async function goalsLoad(){
       const el=$("forecastBody"); if(!el||!fc.ok)return;
       let h='<div class="topic-card"><div class="topic-k">Forecast &middot; 10 steps ahead <span class="hint">(refreshed '+Math.round((fc.age_s||0)/60)+'m ago)</span></div>';
       const hs=fc.horizons||[];
-      if(hs.length)h+='<div class="fc-hz">'+hs.map(x=>'<span class="fc-chip" title="by '+esc(x.end)+'"><b>'+esc(x.label)+'</b> +'+x.completes.length+' &rarr; ~'+Math.round(x.fleet_pct)+'%</span>').join("")+'</div>';
+      if(hs.length)h+='<div class="fc-hz">'+hs.map(x=>'<span class="fc-chip" title="by '+esc(x.end)+'"><b>'+esc(x.label)+'</b> +'+(Array.isArray(x.completes)?x.completes.length:x.completes)+' &rarr; ~'+Math.round(x.fleet_pct)+'%</span>').join("")+'</div>';
       const its=fc.next10||[];
       if(its.length){
         h+='<table class="fc-tab"><tr><th>#</th><th>agent</th><th>goal (next step)</th><th>ETA</th><th>P</th><th>potential consequences</th></tr>';
