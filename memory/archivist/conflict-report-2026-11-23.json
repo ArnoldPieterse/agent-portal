@@ -1,0 +1,1444 @@
+{
+  "date": "2026-11-23",
+  "files_scanned": 2587,
+  "facts_extracted": 3764,
+  "conflicts_found": 222,
+  "conflicts": [
+    {
+      "subject": "acceptance",
+      "key": "value",
+      "value_a": "\"verified with a hard refresh that a test upload appears in the files panel, the",
+      "value_b": "\"steps highlight correct elements: **fleet tab, goals panel, ops tab, and upload",
+      "source_a": "memory/builder/uploads-panel-verify-2026-11-15.md:3",
+      "source_b": "memory/designer/goal9-tour-ops-step-fix-2026-11-19.md:11",
+      "all_sources": [
+        "memory/builder/uploads-panel-verify-2026-11-15.md:3",
+        "memory/designer/goal9-tour-ops-step-fix-2026-11-19.md:11"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '\"verified with a hard refresh that a test upload appears in the files panel, the' and '\"steps highlight correct elements: **fleet tab, goals panel, ops tab, and upload' conflict for subject 'acceptance'. Recommend most-recent source: memory/designer/goal9-tour-ops-step-fix-2026-11-19.md:11"
+    },
+    {
+      "subject": "acceptance_criteria_met",
+      "key": "value",
+      "value_a": "\"all 4 empty states render when api returns empty arrays; ctas are clickable.\"",
+      "value_b": "computed styles show 0 violations of the 5-step scale.",
+      "source_a": "memory/designer/goal4-empty-states-complete-2026-11-19.md:25",
+      "source_b": "memory/designer/goal7-typography-scale-2026-11-18.md:34",
+      "all_sources": [
+        "memory/designer/goal4-empty-states-complete-2026-11-19.md:25",
+        "memory/designer/goal7-typography-scale-2026-11-18.md:34"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '\"all 4 empty states render when api returns empty arrays; ctas are clickable.\"' and 'computed styles show 0 violations of the 5-step scale.' conflict for subject 'acceptance_criteria_met'. Recommend most-recent source: memory/designer/goal7-typography-scale-2026-11-18.md:34"
+    },
+    {
+      "subject": "acceptance_test",
+      "key": "value",
+      "value_a": "zero hex colors in app.css outside token-definition blocks.",
+      "value_b": "\"all 4 empty states render when api returns empty arrays; ctas clickable.\"",
+      "source_a": "memory/builder/designer-goal1-token-verify-2026-11-18.md:6",
+      "source_b": "memory/designer/goal4-empty-states-activity-wired-2026-11-19.md:38",
+      "all_sources": [
+        "memory/builder/designer-goal1-token-verify-2026-11-18.md:6",
+        "memory/designer/goal4-empty-states-activity-wired-2026-11-19.md:38"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'zero hex colors in app.css outside token-definition blocks.' and '\"all 4 empty states render when api returns empty arrays; ctas clickable.\"' conflict for subject 'acceptance_test'. Recommend most-recent source: memory/designer/goal4-empty-states-activity-wired-2026-11-19.md:38"
+    },
+    {
+      "subject": "action",
+      "key": "value",
+      "value_a": "consolidate into canonical source; replace others with pointer.",
+      "value_b": "built structured per-agent activity data for weekly digest generation.",
+      "source_a": "memory/researcher/memory-compression-report.md:22",
+      "source_b": "memory/archivist/assist-scribe-digest-data-2026-11-21.md:4",
+      "all_sources": [
+        "memory/researcher/memory-compression-report.md:22",
+        "memory/researcher/memory-compression-report.md:34",
+        "memory/researcher/memory-compression-report.md:45",
+        "memory/researcher/memory-compression-report.md:55",
+        "memory/researcher/memory-compression-report.md:64"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'consolidate into canonical source; replace others with pointer.' and 'built structured per-agent activity data for weekly digest generation.' conflict for subject 'action'. Recommend most-recent source: memory/researcher/memory-compression-report.md:64"
+    },
+    {
+      "subject": "actual",
+      "key": "value",
+      "value_a": "23 tokens in :root ok, but **36 hex values still outside :root**",
+      "value_b": "_decisions_snapshot() takes zero parameters; no query parsing in route handler.",
+      "source_a": "memory/verifier/contradiction-sweep-2026-11-17.md:17",
+      "source_b": "memory/verifier/contradiction-sweep-2026-11-17.md:22",
+      "all_sources": [
+        "memory/verifier/contradiction-sweep-2026-11-17.md:17",
+        "memory/verifier/contradiction-sweep-2026-11-17.md:22"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '23 tokens in :root ok, but **36 hex values still outside :root**' and '_decisions_snapshot() takes zero parameters; no query parsing in route handler.' conflict for subject 'actual'. Recommend most-recent source: memory/verifier/contradiction-sweep-2026-11-17.md:22"
+    },
+    {
+      "subject": "adjudication",
+      "key": "value",
+      "value_a": "orchestrator's r13 apply did execute on white (mtime 20:23 matches her claim exa",
+      "value_b": "not an integrity refutation of mechanic's red-seat stamp \u2014 but g2 is unverified",
+      "source_a": "memory/ops/researcher-seat-verify-r7-2026-11-13.md:62",
+      "source_b": "memory/verifier/g2-mirror-lag-r57-2026-11-14.md:13",
+      "all_sources": [
+        "memory/ops/researcher-seat-verify-r7-2026-11-13.md:62",
+        "memory/verifier/g2-mirror-lag-r57-2026-11-14.md:13"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'orchestrator's r13 apply did execute on white (mtime 20:23 matches her claim exa' and 'not an integrity refutation of mechanic's red-seat stamp \u2014 but g2 is unverified' conflict for subject 'adjudication'. Recommend most-recent source: memory/verifier/g2-mirror-lag-r57-2026-11-14.md:13"
+    },
+    {
+      "subject": "after",
+      "key": "value",
+      "value_a": "when no hosts report, render the proper component:",
+      "value_b": "`...evidence file: memory/designer/css-bundle-budget-verify-2026-11-18.md)`",
+      "source_a": "memory/designer/goal4-fleet-empty-state-2026-11-19.md:25",
+      "source_b": "memory/mechanic/assist-designer-goal3-marker-fix-2026-11-18.md:4",
+      "all_sources": [
+        "memory/designer/goal4-fleet-empty-state-2026-11-19.md:25",
+        "memory/mechanic/assist-designer-goal3-marker-fix-2026-11-18.md:4"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'when no hosts report, render the proper component:' and '`...evidence file: memory/designer/css-bundle-budget-verify-2026-11-18.md)`' conflict for subject 'after'. Recommend most-recent source: memory/mechanic/assist-designer-goal3-marker-fix-2026-11-18.md:4"
+    },
+    {
+      "subject": "after_fix",
+      "key": "value",
+      "value_a": "all 7 entries correctly rejected \u2192 script reports \"no successful mirror sync fou",
+      "value_b": "same window shows only 1 event (undated archive note, correctly included)",
+      "source_a": "memory/mechanic/goal2-mirror-heal-bugfix-2026-11-18.md:18",
+      "source_b": "memory/scribe/archivist-assist-cycle-narrative-datefix-2026-11-20.md:16",
+      "all_sources": [
+        "memory/mechanic/goal2-mirror-heal-bugfix-2026-11-18.md:18",
+        "memory/scribe/archivist-assist-cycle-narrative-datefix-2026-11-20.md:16"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'all 7 entries correctly rejected \u2192 script reports \"no successful mirror sync fou' and 'same window shows only 1 event (undated archive note, correctly included)' conflict for subject 'after_fix'. Recommend most-recent source: memory/scribe/archivist-assist-cycle-narrative-datefix-2026-11-20.md:16"
+    },
+    {
+      "subject": "after_registration",
+      "key": "value",
+      "value_a": "2 weekly runs accumulate automatically. closure = `python memory/researcher/goal",
+      "value_b": "data accumulates daily; closure after 7/7 days + `--week-complete`.",
+      "source_a": "memory/archivist/evidence-goal3-production-wrapper-2026-11-22.md:37",
+      "source_b": "memory/mechanic/pending-admin-deployments.md:67",
+      "all_sources": [
+        "memory/archivist/evidence-goal3-production-wrapper-2026-11-22.md:37",
+        "memory/mechanic/pending-admin-deployments.md:67"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '2 weekly runs accumulate automatically. closure = `python memory/researcher/goal' and 'data accumulates daily; closure after 7/7 days + `--week-complete`.' conflict for subject 'after_registration'. Recommend most-recent source: memory/mechanic/pending-admin-deployments.md:67"
+    },
+    {
+      "subject": "agent",
+      "key": "value",
+      "value_a": "mechanic",
+      "value_b": "archivist",
+      "source_a": "memory/mechanic/auto-loop-pass-2026-11-22d.md:3",
+      "source_b": "memory/archivist/archive-hygiene-audit-goal10-2026-11-22.md:3",
+      "all_sources": [
+        "memory/mechanic/auto-loop-pass-2026-11-22d.md:3",
+        "memory/mechanic/disk-monitor-goal4-closure-2026-11-18.md:3",
+        "memory/mechanic/fleet-status-goal8-evidence.md:3",
+        "memory/mechanic/goal1-adaptive-probe-sim-2026-11-17.md:4",
+        "memory/mechanic/goal1-load-probe-progress-2026-11-18.md:4"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'mechanic' and 'archivist' conflict for subject 'agent'. Recommend most-recent source: memory/mechanic/stale-claim-check-regex-fix-2026-11-18.md:4"
+    },
+    {
+      "subject": "agents",
+      "key": "numeric",
+      "value_a": "8 bars",
+      "value_b": "70 total",
+      "source_a": "memory/designer/goal3-dataviz-progress-2026-11-18.md:17",
+      "source_b": "memory/orchestrator/cycle10-goal-setting-2026-11-23.md:9",
+      "all_sources": [
+        "memory/designer/goal3-dataviz-progress-2026-11-18.md:17",
+        "memory/designer/goal3-fleet-bars-wired-2026-11-19.md:19",
+        "memory/orchestrator/cycle10-goal-setting-2026-11-23.md:9"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '8 bars' and '70 total' conflict for subject 'agents'. Recommend most-recent source: memory/orchestrator/cycle10-goal-setting-2026-11-23.md:9"
+    },
+    {
+      "subject": "also_tokenized",
+      "key": "value",
+      "value_a": ".sub margin-bottom 14px to var(--sp-14), .ft-tooltip padding 8px 10px to var(--s",
+      "value_b": ".qrow padding (3px\u2192var(--sp-3)), .mh-card padding+radius.",
+      "source_a": "memory/designer/goal2-density-lh-tokenized-2026-11-19.md:20",
+      "source_b": "memory/designer/goal2-density-progress-2026-11-19.md:14",
+      "all_sources": [
+        "memory/designer/goal2-density-lh-tokenized-2026-11-19.md:20",
+        "memory/designer/goal2-density-progress-2026-11-19.md:14"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '.sub margin-bottom 14px to var(--sp-14), .ft-tooltip padding 8px 10px to var(--s' and '.qrow padding (3px\u2192var(--sp-3)), .mh-card padding+radius.' conflict for subject 'also_tokenized'. Recommend most-recent source: memory/designer/goal2-density-progress-2026-11-19.md:14"
+    },
+    {
+      "subject": "archivist",
+      "key": "value",
+      "value_a": "\"added a keyword entry to `memory/ops/index.md` for `white-lan-firewall-drop-202",
+      "value_b": "implement kg_export.py with --format jsonld flag; produce kg-export.jsonld;",
+      "source_a": "memory/verifier/ops-index-check-archivist-entry-2026-11-14.md:4",
+      "source_b": "memory/verifier/stale-claim-archivist-g9-kg-export-2026-11-20.md:31",
+      "all_sources": [
+        "memory/verifier/ops-index-check-archivist-entry-2026-11-14.md:4",
+        "memory/verifier/stale-claim-archivist-g9-kg-export-2026-11-20.md:31"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '\"added a keyword entry to `memory/ops/index.md` for `white-lan-firewall-drop-202' and 'implement kg_export.py with --format jsonld flag; produce kg-export.jsonld;' conflict for subject 'archivist'. Recommend most-recent source: memory/verifier/stale-claim-archivist-g9-kg-export-2026-11-20.md:31"
+    },
+    {
+      "subject": "arnold",
+      "key": "value",
+      "value_a": "\"we have single handily reached more goals with your single llm in under a few m",
+      "value_b": "run `python agent_portal.py` on white console, then either relay pid or open the",
+      "source_a": "memory/ops/fleet-throughput-fix-2026-11-23.md:3",
+      "source_b": "memory/verifier/ac-a2-r79-sweep-2026-11-14.md:23",
+      "all_sources": [
+        "memory/ops/fleet-throughput-fix-2026-11-23.md:3",
+        "memory/verifier/ac-a2-r79-sweep-2026-11-14.md:23"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '\"we have single handily reached more goals with your single llm in under a few m' and 'run `python agent_portal.py` on white console, then either relay pid or open the' conflict for subject 'arnold'. Recommend most-recent source: memory/verifier/ac-a2-r79-sweep-2026-11-14.md:23"
+    },
+    {
+      "subject": "artifact",
+      "key": "value",
+      "value_a": "memory/archivist/retrieval_metrics.json (overwritten with post-compaction run).",
+      "value_b": "memory/llm/hotload-selector.md (144 lines, 5-phase implementation plan)",
+      "source_a": "memory/archivist/evidence-postcompaction-retrieval-2026-11-20.md:12",
+      "source_b": "memory/archivist/hotload-research-evidence.md:3",
+      "all_sources": [
+        "memory/archivist/evidence-postcompaction-retrieval-2026-11-20.md:12",
+        "memory/archivist/hotload-research-evidence.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'memory/archivist/retrieval_metrics.json (overwritten with post-compaction run).' and 'memory/llm/hotload-selector.md (144 lines, 5-phase implementation plan)' conflict for subject 'artifact'. Recommend most-recent source: memory/archivist/hotload-research-evidence.md:3"
+    },
+    {
+      "subject": "artifacts",
+      "key": "value",
+      "value_a": "ui/app.css (edited), ui/tokens.css (edited)",
+      "value_b": "memory/archivist/knowledge_graph_v3.py (edited), memory/archivist/knowledge-grap",
+      "source_a": "memory/builder/assist-designer-goal1-tokens-2026-11-19.md:29",
+      "source_b": "memory/builder/kgv3-edge-types-assist-archivist-goal2-2026-11-21.md:31",
+      "all_sources": [
+        "memory/builder/assist-designer-goal1-tokens-2026-11-19.md:29",
+        "memory/builder/kgv3-edge-types-assist-archivist-goal2-2026-11-21.md:31"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'ui/app.css (edited), ui/tokens.css (edited)' and 'memory/archivist/knowledge_graph_v3.py (edited), memory/archivist/knowledge-grap' conflict for subject 'artifacts'. Recommend most-recent source: memory/builder/kgv3-edge-types-assist-archivist-goal2-2026-11-21.md:31"
+    },
+    {
+      "subject": "assist",
+      "key": "value",
+      "value_a": "scribe (auto-loop contribution, option d)",
+      "value_b": "scribe (triage + classification; no file modifications made to other agents' lan",
+      "source_a": "memory/scribe/designer-goal1-token-assist-2026-11-17.md:4",
+      "source_b": "memory/scribe/xref-triage-2026-11-21.md:44",
+      "all_sources": [
+        "memory/scribe/designer-goal1-token-assist-2026-11-17.md:4",
+        "memory/scribe/xref-triage-2026-11-21.md:44"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'scribe (auto-loop contribution, option d)' and 'scribe (triage + classification; no file modifications made to other agents' lan' conflict for subject 'assist'. Recommend most-recent source: memory/scribe/xref-triage-2026-11-21.md:44"
+    },
+    {
+      "subject": "assisted_by",
+      "key": "value",
+      "value_a": "archivist",
+      "value_b": "orchestrator",
+      "source_a": "memory/archivist/scribe-goal2-cycle-narrative-assist-2026-11-20.md:3",
+      "source_b": "memory/orchestrator/evidence-archivist-goal6-freshness-2026-11-19.md:4",
+      "all_sources": [
+        "memory/archivist/scribe-goal2-cycle-narrative-assist-2026-11-20.md:3",
+        "memory/orchestrator/evidence-archivist-goal6-freshness-2026-11-19.md:4"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'archivist' and 'orchestrator' conflict for subject 'assisted_by'. Recommend most-recent source: memory/orchestrator/evidence-archivist-goal6-freshness-2026-11-19.md:4"
+    },
+    {
+      "subject": "assisting",
+      "key": "value",
+      "value_a": "designer goal #8 (error & empty state design system)",
+      "value_b": "archivist, goal #5 (keyword search index)",
+      "source_a": "memory/builder/designer-goal8-state-patterns-2026-11-18.md:4",
+      "source_b": "memory/scribe/search-index-assist-2026-11-21.md:3",
+      "all_sources": [
+        "memory/builder/designer-goal8-state-patterns-2026-11-18.md:4",
+        "memory/scribe/search-index-assist-2026-11-21.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'designer goal #8 (error & empty state design system)' and 'archivist, goal #5 (keyword search index)' conflict for subject 'assisting'. Recommend most-recent source: memory/scribe/search-index-assist-2026-11-21.md:3"
+    },
+    {
+      "subject": "author",
+      "key": "value",
+      "value_a": "verifier | date: 2026-11-17 | status: active forecast",
+      "value_b": "researcher | date: 2026-11-17 | status: active forecast (revisit after day 3 lan",
+      "source_a": "memory/goals/forecast-mechanic-g4.md:2",
+      "source_b": "memory/goals/mechanic-goal4-forecast-2026-11-17.md:2",
+      "all_sources": [
+        "memory/goals/forecast-mechanic-g4.md:2",
+        "memory/goals/archive/cycle2-2026-11-17/forecast-mechanic-g4.md:2",
+        "memory/goals/mechanic-goal4-forecast-2026-11-17.md:2",
+        "memory/goals/archive/cycle2-2026-11-17/mechanic-goal4-forecast-2026-11-17.md:2"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'verifier | date: 2026-11-17 | status: active forecast' and 'researcher | date: 2026-11-17 | status: active forecast (revisit after day 3 lan' conflict for subject 'author'. Recommend most-recent source: memory/goals/mechanic-goal4-forecast-2026-11-17.md:2"
+    },
+    {
+      "subject": "backup",
+      "key": "value",
+      "value_a": "memory/designer/index_html_canonical_043ff4d68827_2026-11-17b.html",
+      "value_b": "memory/designer/index_html_canonical_6f521cb54a84_2026-11-19x.html",
+      "source_a": "memory/designer/goal2-dark-mode-reland-2026-11-17b.md:16",
+      "source_b": "memory/designer/goal5-notifications-css-wiring-2026-11-19.md:10",
+      "all_sources": [
+        "memory/designer/goal2-dark-mode-reland-2026-11-17b.md:16",
+        "memory/designer/goal5-notifications-css-wiring-2026-11-19.md:10"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'memory/designer/index_html_canonical_043ff4d68827_2026-11-17b.html' and 'memory/designer/index_html_canonical_6f521cb54a84_2026-11-19x.html' conflict for subject 'backup'. Recommend most-recent source: memory/designer/goal5-notifications-css-wiring-2026-11-19.md:10"
+    },
+    {
+      "subject": "base",
+      "key": "numeric",
+      "value_a": "9c",
+      "value_b": "8ef",
+      "source_a": "memory/builder/index-repin-r25-rollback.md:20",
+      "source_b": "memory/researcher/ac-a2-r26-convergence-check-2026-11-14.md:11",
+      "all_sources": [
+        "memory/builder/index-repin-r25-rollback.md:20",
+        "memory/designer/design-sheet-rerun-45323d09-2026-11-14.md:30",
+        "memory/researcher/ac-a2-r26-convergence-check-2026-11-14.md:11"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '9c' and '8ef' conflict for subject 'base'. Recommend most-recent source: memory/researcher/ac-a2-r26-convergence-check-2026-11-14.md:11"
+    },
+    {
+      "subject": "base",
+      "key": "value",
+      "value_a": "`memory/designer/index_html_black_5.html` = byte-exact canonical **9c6b08e3d9835",
+      "value_b": "canonical `index.html` at live pin sha1 **37549a041412** (80,360 b). pristine co",
+      "source_a": "memory/designer/fix-hunks-r51-2026-11-14.md:2",
+      "source_b": "memory/designer/goals3-4-source-verified-2026-11-15.md:3",
+      "all_sources": [
+        "memory/designer/fix-hunks-r51-2026-11-14.md:2",
+        "memory/designer/goals3-4-source-verified-2026-11-15.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '`memory/designer/index_html_black_5.html` = byte-exact canonical **9c6b08e3d9835' and 'canonical `index.html` at live pin sha1 **37549a041412** (80,360 b). pristine co' conflict for subject 'base'. Recommend most-recent source: memory/designer/goals3-4-source-verified-2026-11-15.md:3"
+    },
+    {
+      "subject": "basis",
+      "key": "value",
+      "value_a": "progress notes in designer.md + hot-notes + cross-agent assists observed across",
+      "value_b": "current injected root map (verified in every group prompt) + live tree scan on p",
+      "source_a": "memory/goals/designer-cycle5-sequencing-forecast-2026-11-19.md:4",
+      "source_b": "memory/portal/merge-pack.md:6",
+      "all_sources": [
+        "memory/goals/designer-cycle5-sequencing-forecast-2026-11-19.md:4",
+        "memory/portal/merge-pack.md:6"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'progress notes in designer.md + hot-notes + cross-agent assists observed across' and 'current injected root map (verified in every group prompt) + live tree scan on p' conflict for subject 'basis'. Recommend most-recent source: memory/portal/merge-pack.md:6"
+    },
+    {
+      "subject": "before",
+      "key": "value",
+      "value_a": "`$(\"fleetbody\").innerhtml=html||'<div class=\"hint\">no hosts</div>';` (bare text",
+      "value_b": "steps = [#goalsbtn, #fleetbtn, #filesbtn, **#composer**] \u2014 step 4 highlighted th",
+      "source_a": "memory/designer/goal4-fleet-empty-state-2026-11-19.md:24",
+      "source_b": "memory/designer/goal9-tour-ops-step-fix-2026-11-19.md:12",
+      "all_sources": [
+        "memory/designer/goal4-fleet-empty-state-2026-11-19.md:24",
+        "memory/designer/goal9-tour-ops-step-fix-2026-11-19.md:12"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '`$(\"fleetbody\").innerhtml=html||'<div class=\"hint\">no hosts</div>';` (bare text' and 'steps = [#goalsbtn, #fleetbtn, #filesbtn, **#composer**] \u2014 step 4 highlighted th' conflict for subject 'before'. Recommend most-recent source: memory/designer/goal9-tour-ops-step-fix-2026-11-19.md:12"
+    },
+    {
+      "subject": "before_fix",
+      "key": "value",
+      "value_a": "20 hard-coded `font-size` px values outside the token system.",
+      "value_b": "7 entries in memory_mirror.log, 5 with errors/empty \u2192 script would use entry [5]",
+      "source_a": "memory/designer/goal9-typo-2026-11-18.md:5",
+      "source_b": "memory/mechanic/goal2-mirror-heal-bugfix-2026-11-18.md:17",
+      "all_sources": [
+        "memory/designer/goal9-typo-2026-11-18.md:5",
+        "memory/mechanic/goal2-mirror-heal-bugfix-2026-11-18.md:17"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '20 hard-coded `font-size` px values outside the token system.' and '7 entries in memory_mirror.log, 5 with errors/empty \u2192 script would use entry [5]' conflict for subject 'before_fix'. Recommend most-recent source: memory/mechanic/goal2-mirror-heal-bugfix-2026-11-18.md:17"
+    },
+    {
+      "subject": "block",
+      "key": "numeric",
+      "value_a": "748 bytes",
+      "value_b": "0 hits",
+      "source_a": "memory/designer/css-budget-report-2026-11-17.md:29",
+      "source_b": "memory/designer/goal1-token-audit-pass-2026-11-18.md:19",
+      "all_sources": [
+        "memory/designer/css-budget-report-2026-11-17.md:29",
+        "memory/designer/goal1-token-audit-pass-2026-11-18.md:19"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '748 bytes' and '0 hits' conflict for subject 'block'. Recommend most-recent source: memory/designer/goal1-token-audit-pass-2026-11-18.md:19"
+    },
+    {
+      "subject": "blocker",
+      "key": "value",
+      "value_a": "no headless browser available on this host (checked playwright/selenium/chromedr",
+      "value_b": "no headless browser available in sandbox (edge headless times out;",
+      "source_a": "memory/designer/density_pass_status_2026-11-19.md:33",
+      "source_b": "memory/designer/goal2-density-static-measurements-2026-11-19.md:74",
+      "all_sources": [
+        "memory/designer/density_pass_status_2026-11-19.md:33",
+        "memory/designer/goal2-density-static-measurements-2026-11-19.md:74"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'no headless browser available on this host (checked playwright/selenium/chromedr' and 'no headless browser available in sandbox (edge headless times out;' conflict for subject 'blocker'. Recommend most-recent source: memory/designer/goal2-density-static-measurements-2026-11-19.md:74"
+    },
+    {
+      "subject": "bottom_line",
+      "key": "value",
+      "value_a": "my r61 \"lane closed\" was scoped to the artifact and i undersold it; the live pag",
+      "value_b": "verifier lane has no further executable work; sole blockers are human (arnold) a",
+      "source_a": "memory/designer/live-root-not-v2-r62-2026-11-14.md:49",
+      "source_b": "memory/verifier/r32-sweep-closeout-2026-11-14.md:27",
+      "all_sources": [
+        "memory/designer/live-root-not-v2-r62-2026-11-14.md:49",
+        "memory/verifier/r32-sweep-closeout-2026-11-14.md:27"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'my r61 \"lane closed\" was scoped to the artifact and i undersold it; the live pag' and 'verifier lane has no further executable work; sole blockers are human (arnold) a' conflict for subject 'bottom_line'. Recommend most-recent source: memory/verifier/r32-sweep-closeout-2026-11-14.md:27"
+    },
+    {
+      "subject": "broke",
+      "key": "value",
+      "value_a": "root index.html written by an inline seat-local tool exec with no post-write pin",
+      "value_b": "scribe #1 v2 filters present in canonical backup but absent from live agent_port",
+      "source_a": "memory/mechanic/a-r14-write-path-2026-11-13.md:30",
+      "source_b": "memory/mechanic/assist-scribe-goal1-decisions-v2-reland-2026-11-18.md:43",
+      "all_sources": [
+        "memory/mechanic/a-r14-write-path-2026-11-13.md:30",
+        "memory/mechanic/assist-scribe-goal1-decisions-v2-reland-2026-11-18.md:43"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'root index.html written by an inline seat-local tool exec with no post-write pin' and 'scribe #1 v2 filters present in canonical backup but absent from live agent_port' conflict for subject 'broke'. Recommend most-recent source: memory/mechanic/assist-scribe-goal1-decisions-v2-reland-2026-11-18.md:43"
+    },
+    {
+      "subject": "builder_lane",
+      "key": "value",
+      "value_a": "[concluded].** no further agent-executable work owed; remaining gates are arnold",
+      "value_b": "done for this pass.",
+      "source_a": "memory/builder/ac-a2-1-outside-click-ratification-r82-2026-11-14.md:28",
+      "source_b": "memory/builder/builder-exec-sweep-2026-11-14.md:22",
+      "all_sources": [
+        "memory/builder/ac-a2-1-outside-click-ratification-r82-2026-11-14.md:28",
+        "memory/builder/builder-exec-sweep-2026-11-14.md:22"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '[concluded].** no further agent-executable work owed; remaining gates are arnold' and 'done for this pass.' conflict for subject 'builder_lane'. Recommend most-recent source: memory/builder/builder-exec-sweep-2026-11-14.md:22"
+    },
+    {
+      "subject": "bytes",
+      "key": "numeric",
+      "value_a": "2.098mb",
+      "value_b": "184.7 kb",
+      "source_a": "memory/researcher/knowledge-graph-v3-verify-assist-archivist-goal2-2026-11-23.md:10",
+      "source_b": "memory/verifier/agent-portal-size-verify-2026-11-16.md:9",
+      "all_sources": [
+        "memory/researcher/knowledge-graph-v3-verify-assist-archivist-goal2-2026-11-23.md:10",
+        "memory/verifier/agent-portal-size-verify-2026-11-16.md:9"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '2.098mb' and '184.7 kb' conflict for subject 'bytes'. Recommend most-recent source: memory/verifier/agent-portal-size-verify-2026-11-16.md:9"
+    },
+    {
+      "subject": "canonical",
+      "key": "numeric",
+      "value_a": "25 min",
+      "value_b": "9c",
+      "source_a": "memory/archivist/orphan-folder-audit-r42.md:9",
+      "source_b": "memory/synthesis/2026-11-14-r31-closeout-synthesis.md:21",
+      "all_sources": [
+        "memory/archivist/orphan-folder-audit-r42.md:9",
+        "memory/synthesis/2026-11-14-r31-closeout-synthesis.md:21"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '25 min' and '9c' conflict for subject 'canonical'. Recommend most-recent source: memory/synthesis/2026-11-14-r31-closeout-synthesis.md:21"
+    },
+    {
+      "subject": "caveat",
+      "key": "value",
+      "value_a": "this is the sandbox mirror seat; if designer landed interactions.css/animations.",
+      "value_b": "this seat's ui/ may be a mirror, not white-canonical \u2014 numbers are valid for thi",
+      "source_a": "memory/researcher/designer-goal1-2-false-verify-audit-2026-11-20.md:16",
+      "source_b": "memory/researcher/designer-goal7-typo-fresh-verify-2026-11-19.md:19",
+      "all_sources": [
+        "memory/researcher/designer-goal1-2-false-verify-audit-2026-11-20.md:16",
+        "memory/researcher/designer-goal7-typo-fresh-verify-2026-11-19.md:19"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'this is the sandbox mirror seat; if designer landed interactions.css/animations.' and 'this seat's ui/ may be a mirror, not white-canonical \u2014 numbers are valid for thi' conflict for subject 'caveat'. Recommend most-recent source: memory/researcher/designer-goal7-typo-fresh-verify-2026-11-19.md:19"
+    },
+    {
+      "subject": "checks",
+      "key": "value",
+      "value_a": "c0 token-def scopes (flags any competing family), c1 raw hex outside a",
+      "value_b": "typography scale, token refs, spacing scale, no ad-hoc :hover, reduced-motion pr",
+      "source_a": "memory/designer/builder-assist-designer1-token-lint-2026-11-19.md:10",
+      "source_b": "memory/designer/regression-rerun-2026-11-20.md:6",
+      "all_sources": [
+        "memory/designer/builder-assist-designer1-token-lint-2026-11-19.md:10",
+        "memory/designer/regression-rerun-2026-11-20.md:6"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'c0 token-def scopes (flags any competing family), c1 raw hex outside a' and 'typography scale, token refs, spacing scale, no ad-hoc :hover, reduced-motion pr' conflict for subject 'checks'. Recommend most-recent source: memory/designer/regression-rerun-2026-11-20.md:6"
+    },
+    {
+      "subject": "claim",
+      "key": "value",
+      "value_a": "memory/designer/designer-goal-proposals-2026-11-17.md references `memory/designe",
+      "value_b": "\"36 hardcoded hex -> 23 semantic tokens in ui/app.css, 0 remaining outside :root",
+      "source_a": "memory/designer/stale-claim-closed-asset-budget-check-2026-11-18.md:3",
+      "source_b": "memory/verifier/contradiction-sweep-2026-11-17.md:16",
+      "all_sources": [
+        "memory/designer/stale-claim-closed-asset-budget-check-2026-11-18.md:3",
+        "memory/verifier/contradiction-sweep-2026-11-17.md:16"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'memory/designer/designer-goal-proposals-2026-11-17.md references `memory/designe' and '\"36 hardcoded hex -> 23 semantic tokens in ui/app.css, 0 remaining outside :root' conflict for subject 'claim'. Recommend most-recent source: memory/verifier/contradiction-sweep-2026-11-17.md:16"
+    },
+    {
+      "subject": "claim_hash",
+      "key": "value",
+      "value_a": "`48367dbb1113`",
+      "value_b": "`9b31637fdbd2`",
+      "source_a": "memory/researcher/crosscheck-multi-agent-systems-with-shared-memory-outperform-single-age-2026-11-18.md:6",
+      "source_b": "memory/researcher/crosscheck-python-subprocess-run-with-check-true-raises-calledprocesser-2026-11-18.md:6",
+      "all_sources": [
+        "memory/researcher/crosscheck-multi-agent-systems-with-shared-memory-outperform-single-age-2026-11-18.md:6",
+        "memory/researcher/crosscheck-python-subprocess-run-with-check-true-raises-calledprocesser-2026-11-18.md:6"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '`48367dbb1113`' and '`9b31637fdbd2`' conflict for subject 'claim_hash'. Recommend most-recent source: memory/researcher/crosscheck-python-subprocess-run-with-check-true-raises-calledprocesser-2026-11-18.md:6"
+    },
+    {
+      "subject": "claim_source",
+      "key": "value",
+      "value_a": "scribe progress entry in memory/goals/designer.md goal 8",
+      "value_b": "builder 2026-11-22 \"all goal-2 acs now satisfied; pending archivist review\"",
+      "source_a": "memory/verifier/designer-goal8-icons-pin-reverted-2026-11-19.md:4",
+      "source_b": "memory/verifier/kgv3-goal2-ac-verify-2026-11-23.md:5",
+      "all_sources": [
+        "memory/verifier/designer-goal8-icons-pin-reverted-2026-11-19.md:4",
+        "memory/verifier/kgv3-goal2-ac-verify-2026-11-23.md:5"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'scribe progress entry in memory/goals/designer.md goal 8' and 'builder 2026-11-22 \"all goal-2 acs now satisfied; pending archivist review\"' conflict for subject 'claim_source'. Recommend most-recent source: memory/verifier/kgv3-goal2-ac-verify-2026-11-23.md:5"
+    },
+    {
+      "subject": "claim_under_test",
+      "key": "value",
+      "value_a": "memory/mechanic/recovery-matrix.md meets acceptance criteria.",
+      "value_b": "researcher's re-application of the `resolve()` fallback in",
+      "source_a": "memory/verifier/mechanic-goal3-recovery-matrix-e2e-2026-11-19.md:5",
+      "source_b": "memory/verifier/stale-claim-fallback-verified-2026-11-19.md:5",
+      "all_sources": [
+        "memory/verifier/mechanic-goal3-recovery-matrix-e2e-2026-11-19.md:5",
+        "memory/verifier/stale-claim-fallback-verified-2026-11-19.md:5"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'memory/mechanic/recovery-matrix.md meets acceptance criteria.' and 'researcher's re-application of the `resolve()` fallback in' conflict for subject 'claim_under_test'. Recommend most-recent source: memory/verifier/stale-claim-fallback-verified-2026-11-19.md:5"
+    },
+    {
+      "subject": "closure",
+      "key": "numeric",
+      "value_a": "7 days",
+      "value_b": "7 distinct",
+      "source_a": "memory/builder/assist-mechanic-g7-perf-profile-2026-11-20.md:18",
+      "source_b": "memory/goals/mechanic-goal1-forecast-2026-11-18.md:18",
+      "all_sources": [
+        "memory/builder/assist-mechanic-g7-perf-profile-2026-11-20.md:18",
+        "memory/goals/mechanic-goal1-forecast-2026-11-18.md:18"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '7 days' and '7 distinct' conflict for subject 'closure'. Recommend most-recent source: memory/goals/mechanic-goal1-forecast-2026-11-18.md:18"
+    },
+    {
+      "subject": "command",
+      "key": "value",
+      "value_a": "`python memory/scribe/cycle_narrative.py --cycle 6 --since 2026-11-18 --until 20",
+      "value_b": "`python memory/archivist/xref_monitor.py`",
+      "source_a": "memory/scribe/goal2-cycle-narrative-datefix-2026-11-20b.md:16",
+      "source_b": "memory/archivist/xref-postmirror-sweep-2026-11-20.md:5",
+      "all_sources": [
+        "memory/scribe/goal2-cycle-narrative-datefix-2026-11-20b.md:16",
+        "memory/scribe/goal2-cycle-narrative-progress-2026-11-20.md:10",
+        "memory/archivist/xref-postmirror-sweep-2026-11-20.md:5"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '`python memory/scribe/cycle_narrative.py --cycle 6 --since 2026-11-18 --until 20' and '`python memory/archivist/xref_monitor.py`' conflict for subject 'command'. Recommend most-recent source: memory/scribe/goal2-cycle-narrative-progress-2026-11-20.md:10"
+    },
+    {
+      "subject": "conclusion",
+      "key": "value",
+      "value_a": "all non-browser legs of goal #9 are now complete and durable. the stale-evidence",
+      "value_b": "portal design system intact, no regressions from other agents' edits this cycle.",
+      "source_a": "memory/designer/goal9-tour-css-restored-2026-11-19.md:34",
+      "source_b": "memory/designer/regression-measurement-2026-11-20.md:9",
+      "all_sources": [
+        "memory/designer/goal9-tour-css-restored-2026-11-19.md:34",
+        "memory/designer/regression-measurement-2026-11-20.md:9"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'all non-browser legs of goal #9 are now complete and durable. the stale-evidence' and 'portal design system intact, no regressions from other agents' edits this cycle.' conflict for subject 'conclusion'. Recommend most-recent source: memory/designer/regression-measurement-2026-11-20.md:9"
+    },
+    {
+      "subject": "confidence",
+      "key": "value",
+      "value_a": "high that the gate's detection + exit-code logic is correct; the only unmet half",
+      "value_b": "high (85%) that this closes within 1-2 passes after a non-sandbox white session",
+      "source_a": "memory/designer/design_check_gate_validation-2026-11-17.md:25",
+      "source_b": "memory/goals/forecast-mechanic4-reboot-recovery-2026-11-18.md:29",
+      "all_sources": [
+        "memory/designer/design_check_gate_validation-2026-11-17.md:25",
+        "memory/goals/forecast-mechanic4-reboot-recovery-2026-11-18.md:29"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'high that the gate's detection + exit-code logic is correct; the only unmet half' and 'high (85%) that this closes within 1-2 passes after a non-sandbox white session' conflict for subject 'confidence'. Recommend most-recent source: memory/goals/forecast-mechanic4-reboot-recovery-2026-11-18.md:29"
+    },
+    {
+      "subject": "confirmation_basis",
+      "key": "value",
+      "value_a": "delivery was verified in-context (repo head present); receiver confirmation reco",
+      "value_b": "status line records delivery into the live prompt; acceptance evidenced by desig",
+      "source_a": "memory/handoffs/HO-20261113-git-repo-bootstrap.md:20",
+      "source_b": "memory/handoffs/HO-20261116-file-modularity.md:17",
+      "all_sources": [
+        "memory/handoffs/HO-20261113-git-repo-bootstrap.md:20",
+        "memory/handoffs/HO-20261116-file-modularity.md:17"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'delivery was verified in-context (repo head present); receiver confirmation reco' and 'status line records delivery into the live prompt; acceptance evidenced by desig' conflict for subject 'confirmation_basis'. Recommend most-recent source: memory/handoffs/HO-20261116-file-modularity.md:17"
+    },
+    {
+      "subject": "consequence",
+      "key": "value",
+      "value_a": "todo.md next checkbox \"llm/hosts.md white line still says quant-less folders \u2192 u",
+      "value_b": "`pin_guard()` fell into its `else` branch every cycle -> logged",
+      "source_a": "memory/archivist/hosts-pin-reconciliation-2026-11-14.md:14",
+      "source_b": "memory/mechanic/pin-clobber-repair-2026-11-19.md:11",
+      "all_sources": [
+        "memory/archivist/hosts-pin-reconciliation-2026-11-14.md:14",
+        "memory/mechanic/pin-clobber-repair-2026-11-19.md:11"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'todo.md next checkbox \"llm/hosts.md white line still says quant-less folders \u2192 u' and '`pin_guard()` fell into its `else` branch every cycle -> logged' conflict for subject 'consequence'. Recommend most-recent source: memory/mechanic/pin-clobber-repair-2026-11-19.md:11"
+    },
+    {
+      "subject": "consumer",
+      "key": "value",
+      "value_a": "builder (implements the split). constraint: portalrun task runs `python agent_po",
+      "value_b": "orchestrator goal #4 (auto-loop protocol tuning); scribe goal on compression dis",
+      "source_a": "memory/portal/split-design-agent-portal-2026-11-16.md:4",
+      "source_b": "memory/researcher/cross-agent-comm-patterns-2026-11-17.md:56",
+      "all_sources": [
+        "memory/portal/split-design-agent-portal-2026-11-16.md:4",
+        "memory/researcher/cross-agent-comm-patterns-2026-11-17.md:56"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'builder (implements the split). constraint: portalrun task runs `python agent_po' and 'orchestrator goal #4 (auto-loop protocol tuning); scribe goal on compression dis' conflict for subject 'consumer'. Recommend most-recent source: memory/researcher/cross-agent-comm-patterns-2026-11-17.md:56"
+    },
+    {
+      "subject": "context",
+      "key": "value",
+      "value_a": "alias table bound builder-q8 to a dead `ref:bc7ad351\u2026` hash while the q8_0 insta",
+      "value_b": "todo pruning + local git repo went live today (~17:0x). my goals center the memo",
+      "source_a": "memory/archivist/f1-index-patch-20261113.md:22",
+      "source_b": "memory/archivist/goals-2026-11-13.md:2",
+      "all_sources": [
+        "memory/archivist/f1-index-patch-20261113.md:22",
+        "memory/archivist/goals-2026-11-13.md:2"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'alias table bound builder-q8 to a dead `ref:bc7ad351\u2026` hash while the q8_0 insta' and 'todo pruning + local git repo went live today (~17:0x). my goals center the memo' conflict for subject 'context'. Recommend most-recent source: memory/archivist/goals-2026-11-13.md:2"
+    },
+    {
+      "subject": "contributor",
+      "key": "value",
+      "value_a": "designer (assisting mechanic's lane)",
+      "value_b": "orchestrator (ops correctness pass, auto-loop contribution option d).",
+      "source_a": "memory/designer/mechanic-goal4-fleet-circuit-breaker-2026-11-22.md:3",
+      "source_b": "memory/orchestrator/kg-target-key-fix-2026-11-19.md:4",
+      "all_sources": [
+        "memory/designer/mechanic-goal4-fleet-circuit-breaker-2026-11-22.md:3",
+        "memory/orchestrator/kg-target-key-fix-2026-11-19.md:4"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'designer (assisting mechanic's lane)' and 'orchestrator (ops correctness pass, auto-loop contribution option d).' conflict for subject 'contributor'. Recommend most-recent source: memory/orchestrator/kg-target-key-fix-2026-11-19.md:4"
+    },
+    {
+      "subject": "count",
+      "key": "numeric",
+      "value_a": "2 from",
+      "value_b": "0. applying",
+      "source_a": "memory/synthesis/2026-11-14-planning-meeting-v2.md:9",
+      "source_b": "memory/designer/a4a5-repro-audit-r39b-2026-11-14.md:6",
+      "all_sources": [
+        "memory/synthesis/2026-11-14-planning-meeting-v2.md:9",
+        "memory/synthesis/2026-11-14-r56-round-record.md:13",
+        "memory/synthesis/planning-meeting-minutes-v2-2026-11-14.md:9",
+        "memory/designer/a4a5-repro-audit-r39b-2026-11-14.md:6"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '2 from' and '0. applying' conflict for subject 'count'. Recommend most-recent source: memory/synthesis/planning-meeting-minutes-v2-2026-11-14.md:9"
+    },
+    {
+      "subject": "covers",
+      "key": "value",
+      "value_a": "black text (var(--black)), transparent bg (paper shows), hides .panel-toggle/.bt",
+      "value_b": "g4 (empty-state branches), g5 (toast trigger fn emits correct element + timeout)",
+      "source_a": "memory/designer/goal10-print-static-2026-11-19.md:13",
+      "source_b": "memory/goals/designer-browser-gate-forecast-2026-11-19.md:22",
+      "all_sources": [
+        "memory/designer/goal10-print-static-2026-11-19.md:13",
+        "memory/goals/designer-browser-gate-forecast-2026-11-19.md:22"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'black text (var(--black)), transparent bg (paper shows), hides .panel-toggle/.bt' and 'g4 (empty-state branches), g5 (toast trigger fn emits correct element + timeout)' conflict for subject 'covers'. Recommend most-recent source: memory/goals/designer-browser-gate-forecast-2026-11-19.md:22"
+    },
+    {
+      "subject": "credit",
+      "key": "value",
+      "value_a": "original owner = archivist",
+      "value_b": "original owner = verifier",
+      "source_a": "memory/builder/archivist-goal3-readd-2026-11-23.md:3",
+      "source_b": "memory/builder/assist-verifier5-concurrency-script-2026-11-22.md:5",
+      "all_sources": [
+        "memory/builder/archivist-goal3-readd-2026-11-23.md:3",
+        "memory/builder/archivist-goal3-schtasks-queue-assist-2026-11-23.md:3",
+        "memory/builder/assist-verifier5-concurrency-script-2026-11-22.md:5"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'original owner = archivist' and 'original owner = verifier' conflict for subject 'credit'. Recommend most-recent source: memory/builder/assist-verifier5-concurrency-script-2026-11-22.md:5"
+    },
+    {
+      "subject": "current_state",
+      "key": "value",
+      "value_a": "<where things stand right now, 1-3 sentences>",
+      "value_b": "8/10 entries migrated; 2 have missing 'alternatives_considered' field",
+      "source_a": "memory/scribe/handoff-template.md:12",
+      "source_b": "memory/scribe/handoff-template.md:38",
+      "all_sources": [
+        "memory/scribe/handoff-template.md:12",
+        "memory/scribe/handoff-template.md:38"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '<where things stand right now, 1-3 sentences>' and '8/10 entries migrated; 2 have missing 'alternatives_considered' field' conflict for subject 'current_state'. Recommend most-recent source: memory/scribe/handoff-template.md:38"
+    },
+    {
+      "subject": "data",
+      "key": "value",
+      "value_a": "510 unique goals across 8 agents (316 verified, 194 open)",
+      "value_b": "410 unique goals across cycles 1-9, 8 agents*",
+      "source_a": "memory/researcher/cross-patterns-cycle10.md:3",
+      "source_b": "memory/synthesis/completion-patterns.md:3",
+      "all_sources": [
+        "memory/researcher/cross-patterns-cycle10.md:3",
+        "memory/synthesis/completion-patterns.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '510 unique goals across 8 agents (316 verified, 194 open)' and '410 unique goals across cycles 1-9, 8 agents*' conflict for subject 'data'. Recommend most-recent source: memory/synthesis/completion-patterns.md:3"
+    },
+    {
+      "subject": "data_source",
+      "key": "value",
+      "value_a": "/api/health/fleet (mechanic #8) - no new endpoint.",
+      "value_b": "memory/ops/load-baseline.jsonl",
+      "source_a": "memory/designer/fleet-topology-20261117.md:8",
+      "source_b": "memory/mechanic/load-test-week.md:4",
+      "all_sources": [
+        "memory/designer/fleet-topology-20261117.md:8",
+        "memory/mechanic/load-test-week.md:4"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '/api/health/fleet (mechanic #8) - no new endpoint.' and 'memory/ops/load-baseline.jsonl' conflict for subject 'data_source'. Recommend most-recent source: memory/mechanic/load-test-week.md:4"
+    },
+    {
+      "subject": "date",
+      "key": "value",
+      "value_a": "2026-11-18",
+      "value_b": "2026-11-20",
+      "source_a": "memory/archivist/doc-ref-scanner-progress-2026-11-18.md:2",
+      "source_b": "memory/archivist/evidence-assist-scribe-relevance-map-2026-11-20.md:2",
+      "all_sources": [
+        "memory/archivist/doc-ref-scanner-progress-2026-11-18.md:2",
+        "memory/archivist/evidence-goal1-scheduled-mirror-runs-2026-11-18.md:3",
+        "memory/archivist/evidence-goal2-handoff-protocol-v2-2026-11-18.md:3",
+        "memory/archivist/evidence-goal3-api-ref-progress-2026-11-18.md:3",
+        "memory/builder/crossassist-archivist5-doc-ref-scanner-2026-11-18.md:2"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '2026-11-18' and '2026-11-20' conflict for subject 'date'. Recommend most-recent source: memory/verifier/stale-claim-archivist-g9-kg-export-2026-11-20.md:3"
+    },
+    {
+      "subject": "decision_rule",
+      "key": "value",
+      "value_a": "ae20e867\u2026 \u2192 apply the append above (corrects the record). 2ba0b031\u2026 \u2192 my/black s",
+      "value_b": "round to nearest 4px multiple for rhythm; if a value is a deliberate micro-gap",
+      "source_a": "memory/archivist/fleet-md5-discrepancy-note-20261113.md:21",
+      "source_b": "memory/designer/px-scale-spec-2026-11-15.md:21",
+      "all_sources": [
+        "memory/archivist/fleet-md5-discrepancy-note-20261113.md:21",
+        "memory/designer/px-scale-spec-2026-11-15.md:21"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'ae20e867\u2026 \u2192 apply the append above (corrects the record). 2ba0b031\u2026 \u2192 my/black s' and 'round to nearest 4px multiple for rhythm; if a value is a deliberate micro-gap' conflict for subject 'decision_rule'. Recommend most-recent source: memory/designer/px-scale-spec-2026-11-15.md:21"
+    },
+    {
+      "subject": "delta",
+      "key": "numeric",
+      "value_a": "185 bytes",
+      "value_b": "7 changed",
+      "source_a": "memory/archivist/evidence-goal3-kb-delta-2026-11-23.md:26",
+      "source_b": "memory/designer/a6b-candidate-diff-r47-2026-11-14.md:11",
+      "all_sources": [
+        "memory/archivist/evidence-goal3-kb-delta-2026-11-23.md:26",
+        "memory/designer/a6b-candidate-diff-r47-2026-11-14.md:11"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '185 bytes' and '7 changed' conflict for subject 'delta'. Recommend most-recent source: memory/designer/a6b-candidate-diff-r47-2026-11-14.md:11"
+    },
+    {
+      "subject": "disk",
+      "key": "numeric",
+      "value_a": "2a",
+      "value_b": "80%",
+      "source_a": "memory/orchestrator/pin-sha-stale-ref-fix-2026-11-17.md:10",
+      "source_b": "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md:6",
+      "all_sources": [
+        "memory/orchestrator/pin-sha-stale-ref-fix-2026-11-17.md:10",
+        "memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md:6"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '2a' and '80%' conflict for subject 'disk'. Recommend most-recent source: memory/researcher/evidence-quality-trend-snapshot-2026-11-16.md:6"
+    },
+    {
+      "subject": "duration",
+      "key": "numeric",
+      "value_a": "0.45s",
+      "value_b": "350ms",
+      "source_a": "memory/designer/goal3-data-viz-bars-2026-11-18.md:10",
+      "source_b": "memory/designer/goal5-animation-verified-2026-11-23.md:10",
+      "all_sources": [
+        "memory/designer/goal3-data-viz-bars-2026-11-18.md:10",
+        "memory/designer/goal5-animation-verified-2026-11-23.md:10"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '0.45s' and '350ms' conflict for subject 'duration'. Recommend most-recent source: memory/designer/goal5-animation-verified-2026-11-23.md:10"
+    },
+    {
+      "subject": "each_card",
+      "key": "value",
+      "value_a": "big number + label + delta context. use `progressbar` only if a percentage is de",
+      "value_b": "{name, model_alias, status} where status = \"active\" if agent is in the live",
+      "source_a": "memory/designer/timeline-panel-spec.md:19",
+      "source_b": "memory/mechanic/agent-cards-assist-builder-g6-2026-11-23.md:8",
+      "all_sources": [
+        "memory/designer/timeline-panel-spec.md:19",
+        "memory/mechanic/agent-cards-assist-builder-g6-2026-11-23.md:8"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'big number + label + delta context. use `progressbar` only if a percentage is de' and '{name, model_alias, status} where status = \"active\" if agent is in the live' conflict for subject 'each_card'. Recommend most-recent source: memory/mechanic/agent-cards-assist-builder-g6-2026-11-23.md:8"
+    },
+    {
+      "subject": "each_entry",
+      "key": "value",
+      "value_a": "[title, summary_40ch, [5_keywords], agent_tag] keyed by relative path.",
+      "value_b": "file, one-line summary, key agents, date. spot-checkable.",
+      "source_a": "memory/archivist/evidence-search-index-rebuild-2026-11-21.md:20",
+      "source_b": "memory/orchestrator/assist-scribe-goal7-archive-nav-2026-11-20.md:5",
+      "all_sources": [
+        "memory/archivist/evidence-search-index-rebuild-2026-11-21.md:20",
+        "memory/orchestrator/assist-scribe-goal7-archive-nav-2026-11-20.md:5"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '[title, summary_40ch, [5_keywords], agent_tag] keyed by relative path.' and 'file, one-line summary, key agents, date. spot-checkable.' conflict for subject 'each_entry'. Recommend most-recent source: memory/orchestrator/assist-scribe-goal7-archive-nav-2026-11-20.md:5"
+    },
+    {
+      "subject": "either_way",
+      "key": "value",
+      "value_a": "agent-seat local pins are ephemeral and do not converge the fleet.",
+      "value_b": "after writing, verify with `findstr \"icon\" ui/*.js` and confirm no emoji remain",
+      "source_a": "memory/designer/regression-measurement-r69-2026-11-14.md:10",
+      "source_b": "memory/researcher/icons-js-absent-verify-2026-11-19.md:32",
+      "all_sources": [
+        "memory/designer/regression-measurement-r69-2026-11-14.md:10",
+        "memory/researcher/icons-js-absent-verify-2026-11-19.md:32"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'agent-seat local pins are ephemeral and do not converge the fleet.' and 'after writing, verify with `findstr \"icon\" ui/*.js` and confirm no emoji remain' conflict for subject 'either_way'. Recommend most-recent source: memory/researcher/icons-js-absent-verify-2026-11-19.md:32"
+    },
+    {
+      "subject": "error",
+      "key": "value",
+      "value_a": "nvidia-smi rc=255: failed to initialize nvml: unknown error",
+      "value_b": "http -1",
+      "source_a": "memory/mechanic/boot-verify-2026-11-21.md:8",
+      "source_b": "memory/mechanic/boot-verify-2026-11-21.md:11",
+      "all_sources": [
+        "memory/mechanic/boot-verify-2026-11-21.md:8",
+        "memory/mechanic/boot-verify-2026-11-21.md:11"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'nvidia-smi rc=255: failed to initialize nvml: unknown error' and 'http -1' conflict for subject 'error'. Recommend most-recent source: memory/mechanic/boot-verify-2026-11-21.md:11"
+    },
+    {
+      "subject": "evidence",
+      "key": "value",
+      "value_a": "memory/builder/e2e-truncation-integration-2026-11-15.md",
+      "value_b": "memory/portal/testing.md (4844 b)",
+      "source_a": "memory/builder/crossassist-2026-11-16.md:6",
+      "source_b": "memory/builder/crossassist-2026-11-16.md:12",
+      "all_sources": [
+        "memory/builder/crossassist-2026-11-16.md:6",
+        "memory/builder/crossassist-2026-11-16.md:12"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'memory/builder/e2e-truncation-integration-2026-11-15.md' and 'memory/portal/testing.md (4844 b)' conflict for subject 'evidence'. Recommend most-recent source: memory/builder/crossassist-2026-11-16.md:12"
+    },
+    {
+      "subject": "evidence_leaf",
+      "key": "value",
+      "value_a": "memory/designer/goal5-fixture-bugfix-2026-11-19.md",
+      "value_b": "memory/researcher/sla-clock-estimate-sensitivity-2026-11-18.md",
+      "source_a": "memory/designer/goal5-fixture-bugfix-2026-11-19.md:46",
+      "source_b": "memory/researcher/open-questions-log.md:92",
+      "all_sources": [
+        "memory/designer/goal5-fixture-bugfix-2026-11-19.md:46",
+        "memory/researcher/open-questions-log.md:92"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'memory/designer/goal5-fixture-bugfix-2026-11-19.md' and 'memory/researcher/sla-clock-estimate-sensitivity-2026-11-18.md' conflict for subject 'evidence_leaf'. Recommend most-recent source: memory/researcher/open-questions-log.md:92"
+    },
+    {
+      "subject": "evidence_path",
+      "key": "value",
+      "value_a": "this leaf. no archivist lane touched.",
+      "value_b": "memory/scribe/assist-archivist-goal2-dead-rate-analysis-2026-11-19.md",
+      "source_a": "memory/designer/cycle3-narrative-assist-2026-11-18.md:26",
+      "source_b": "memory/scribe/assist-archivist-goal2-dead-rate-analysis-2026-11-19.md:58",
+      "all_sources": [
+        "memory/designer/cycle3-narrative-assist-2026-11-18.md:26",
+        "memory/scribe/assist-archivist-goal2-dead-rate-analysis-2026-11-19.md:58"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'this leaf. no archivist lane touched.' and 'memory/scribe/assist-archivist-goal2-dead-rate-analysis-2026-11-19.md' conflict for subject 'evidence_path'. Recommend most-recent source: memory/scribe/assist-archivist-goal2-dead-rate-analysis-2026-11-19.md:58"
+    },
+    {
+      "subject": "example",
+      "key": "value",
+      "value_a": "text `memory/mechanic/chaos-drill-evidence.jsonl` was matched as",
+      "value_b": "`--record verifier 5 --note 'ran pre_commit_gate.py with bloat injection -> red",
+      "source_a": "memory/mechanic/stale-claim-check-regex-fix-2026-11-18.md:11",
+      "source_b": "memory/ops/evidence-closure-protocol.md:22",
+      "all_sources": [
+        "memory/mechanic/stale-claim-check-regex-fix-2026-11-18.md:11",
+        "memory/ops/evidence-closure-protocol.md:22"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'text `memory/mechanic/chaos-drill-evidence.jsonl` was matched as' and '`--record verifier 5 --note 'ran pre_commit_gate.py with bloat injection -> red' conflict for subject 'example'. Recommend most-recent source: memory/ops/evidence-closure-protocol.md:22"
+    },
+    {
+      "subject": "exit_codes",
+      "key": "value",
+      "value_a": "0 = healthy, 1 = cycles or broken chains found, 2 = error.",
+      "value_b": "0=pass, 1=some fail, 2=fatal.",
+      "source_a": "memory/handoffs/HO-20261116-supersession-report.md:45",
+      "source_b": "memory/mechanic/goal6-boot-verify-built-2026-11-21.md:12",
+      "all_sources": [
+        "memory/handoffs/HO-20261116-supersession-report.md:45",
+        "memory/mechanic/goal6-boot-verify-built-2026-11-21.md:12"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '0 = healthy, 1 = cycles or broken chains found, 2 = error.' and '0=pass, 1=some fail, 2=fatal.' conflict for subject 'exit_codes'. Recommend most-recent source: memory/mechanic/goal6-boot-verify-built-2026-11-21.md:12"
+    },
+    {
+      "subject": "expected",
+      "key": "value",
+      "value_a": "taskname=archivistdecayweekly, schedule type=weekly, status=ready.",
+      "value_b": "`selftest pass: 3/3` + 3 png files.",
+      "source_a": "memory/archivist/goal3-deploy-ready-2026-11-23.md:25",
+      "source_b": "memory/designer/goal5-breakpoint-gate-wiring-2026-11-17.md:29",
+      "all_sources": [
+        "memory/archivist/goal3-deploy-ready-2026-11-23.md:25",
+        "memory/designer/goal5-breakpoint-gate-wiring-2026-11-17.md:29"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'taskname=archivistdecayweekly, schedule type=weekly, status=ready.' and '`selftest pass: 3/3` + 3 png files.' conflict for subject 'expected'. Recommend most-recent source: memory/designer/goal5-breakpoint-gate-wiring-2026-11-17.md:29"
+    },
+    {
+      "subject": "expected_output",
+      "key": "value",
+      "value_a": "[pass] all assertions passed. with git log showing mirror-repair commit.",
+      "value_b": "5 file sections, summary with passed/failed/time, exit code 0.",
+      "source_a": "memory/builder/mirror-repair-api-2026-11-17.md:26",
+      "source_b": "memory/builder/ui_tests_suite_2026-11-20.md:27",
+      "all_sources": [
+        "memory/builder/mirror-repair-api-2026-11-17.md:26",
+        "memory/builder/ui_tests_suite_2026-11-20.md:27"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '[pass] all assertions passed. with git log showing mirror-repair commit.' and '5 file sections, summary with passed/failed/time, exit code 0.' conflict for subject 'expected_output'. Recommend most-recent source: memory/builder/ui_tests_suite_2026-11-20.md:27"
+    },
+    {
+      "subject": "file",
+      "key": "numeric",
+      "value_a": "0 bytes",
+      "value_b": "8fc",
+      "source_a": "memory/builder/build_verify_pin_increment1-2026-11-20.md:15",
+      "source_b": "memory/researcher/INDEX.md:81",
+      "all_sources": [
+        "memory/builder/build_verify_pin_increment1-2026-11-20.md:15",
+        "memory/mechanic/goal7-log-rotate-verified-2026-11-23.md:11",
+        "memory/orchestrator/browser-blocker-reconciliation-2026-11-19.md:13",
+        "memory/researcher/INDEX.md:81",
+        "memory/researcher/index-md5-reconciliation-r61-2026-11-14.md:5"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '0 bytes' and '8fc' conflict for subject 'file'. Recommend most-recent source: memory/researcher/index-md5-reconciliation-r61-2026-11-14.md:5"
+    },
+    {
+      "subject": "file",
+      "key": "value",
+      "value_a": "ui/app.css (19725 bytes, 231 lines)",
+      "value_b": "agent_portal.py sha12=abcaee06bc9c",
+      "source_a": "memory/builder/css-tokens-complete-2026-11-17.md:4",
+      "source_b": "memory/builder/mechanic-goal7-fleet-health-v2-2026-11-18.md:4",
+      "all_sources": [
+        "memory/builder/css-tokens-complete-2026-11-17.md:4",
+        "memory/builder/mechanic-goal7-fleet-health-v2-2026-11-18.md:4"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'ui/app.css (19725 bytes, 231 lines)' and 'agent_portal.py sha12=abcaee06bc9c' conflict for subject 'file'. Recommend most-recent source: memory/builder/mechanic-goal7-fleet-health-v2-2026-11-18.md:4"
+    },
+    {
+      "subject": "filed",
+      "key": "value",
+      "value_a": "2026-11-14 ~13:4x, scribe (red seat). every line traces to a named agent stateme",
+      "value_b": "2026-11-14, archivist. completes scribe's truncated ground-truth step and regene",
+      "source_a": "memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md:3",
+      "source_b": "memory/synthesis/index-regen-r73-archivist-2026-11-14.md:2",
+      "all_sources": [
+        "memory/synthesis/2026-11-14-ac-a2-sweep-closeout.md:3",
+        "memory/synthesis/index-regen-r73-archivist-2026-11-14.md:2"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '2026-11-14 ~13:4x, scribe (red seat). every line traces to a named agent stateme' and '2026-11-14, archivist. completes scribe's truncated ground-truth step and regene' conflict for subject 'filed'. Recommend most-recent source: memory/synthesis/index-regen-r73-archivist-2026-11-14.md:2"
+    },
+    {
+      "subject": "files",
+      "key": "value",
+      "value_a": "ui/alert-triage.js (7554b, 203 lines) + ui/alert-triage.css (3237b, 142 lines)",
+      "value_b": "ui/app.css, memory_mirror.py, memory/designer/app_css_canonical_09d067a384b0_202",
+      "source_a": "memory/designer/alert-triage-evidence-2026-11-23.md:4",
+      "source_b": "memory/designer/goal3-hierarchy-repin-durable-2026-11-20.md:43",
+      "all_sources": [
+        "memory/designer/alert-triage-evidence-2026-11-23.md:4",
+        "memory/designer/goal3-hierarchy-repin-durable-2026-11-20.md:43"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'ui/alert-triage.js (7554b, 203 lines) + ui/alert-triage.css (3237b, 142 lines)' and 'ui/app.css, memory_mirror.py, memory/designer/app_css_canonical_09d067a384b0_202' conflict for subject 'files'. Recommend most-recent source: memory/designer/goal3-hierarchy-repin-durable-2026-11-20.md:43"
+    },
+    {
+      "subject": "files_scanned",
+      "key": "value",
+      "value_a": "81 | refs checked: 1206 | annotated: 26 | documented-absent: 31 | moved: 228 | o",
+      "value_b": "486",
+      "source_a": "memory/archivist/hostdoc-consistency-v2-2026-11-18.md:6",
+      "source_b": "memory/ops/host-consistency-report.md:3",
+      "all_sources": [
+        "memory/archivist/hostdoc-consistency-v2-2026-11-18.md:6",
+        "memory/ops/host-consistency-report.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '81 | refs checked: 1206 | annotated: 26 | documented-absent: 31 | moved: 228 | o' and '486' conflict for subject 'files_scanned'. Recommend most-recent source: memory/ops/host-consistency-report.md:3"
+    },
+    {
+      "subject": "finding",
+      "key": "value",
+      "value_a": "5 dangling supersession targets** (basename-fallback applied; these files no",
+      "value_b": "ui/uploads.js is 27.3k minified vs 10k per-file budget (needs split or budget re",
+      "source_a": "memory/archivist/supersession-findings-2026-11-16.md:5",
+      "source_b": "memory/designer/stale-claim-closed-asset-budget-check-2026-11-18.md:6",
+      "all_sources": [
+        "memory/archivist/supersession-findings-2026-11-16.md:5",
+        "memory/designer/stale-claim-closed-asset-budget-check-2026-11-18.md:6"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '5 dangling supersession targets** (basename-fallback applied; these files no' and 'ui/uploads.js is 27.3k minified vs 10k per-file budget (needs split or budget re' conflict for subject 'finding'. Recommend most-recent source: memory/designer/stale-claim-closed-asset-budget-check-2026-11-18.md:6"
+    },
+    {
+      "subject": "fix",
+      "key": "value",
+      "value_a": "agent_portal.py _find_sandbox_dir now falls back to __file__ dir before scanning",
+      "value_b": "memory/researcher/goal_ledger.py - parse_agent_file now marks [bg-sched lines st",
+      "source_a": "memory/mechanic/portal-startup-fix-2026-11-17.md:20",
+      "source_b": "memory/ops/goal-ledger-bgsched-fix-2026-11-18.md:5",
+      "all_sources": [
+        "memory/mechanic/portal-startup-fix-2026-11-17.md:20",
+        "memory/ops/goal-ledger-bgsched-fix-2026-11-18.md:5"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'agent_portal.py _find_sandbox_dir now falls back to __file__ dir before scanning' and 'memory/researcher/goal_ledger.py - parse_agent_file now marks [bg-sched lines st' conflict for subject 'fix'. Recommend most-recent source: memory/ops/goal-ledger-bgsched-fix-2026-11-18.md:5"
+    },
+    {
+      "subject": "fixed",
+      "key": "value",
+      "value_a": "`winrm_pool.py` covers all 4, retries with backoff, tracks credential expiry.",
+      "value_b": "two levels up, test <root>/memory. all 5 pointer leaves now validate ok.",
+      "source_a": "memory/mechanic/goal1-winrm-pool-built-2026-11-20.md:31",
+      "source_b": "memory/ops/goal-progress-2026-11-16.md:7",
+      "all_sources": [
+        "memory/mechanic/goal1-winrm-pool-built-2026-11-20.md:31",
+        "memory/ops/goal-progress-2026-11-16.md:7"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '`winrm_pool.py` covers all 4, retries with backoff, tracks credential expiry.' and 'two levels up, test <root>/memory. all 5 pointer leaves now validate ok.' conflict for subject 'fixed'. Recommend most-recent source: memory/ops/goal-progress-2026-11-16.md:7"
+    },
+    {
+      "subject": "fleet",
+      "key": "numeric",
+      "value_a": "8 bars",
+      "value_b": "7 days",
+      "source_a": "memory/designer/goal3-bars-reapplied-2026-11-19.md:24",
+      "source_b": "memory/scribe/assist-archivist-goal1-freshness-spotcheck-2026-11-20.md:16",
+      "all_sources": [
+        "memory/designer/goal3-bars-reapplied-2026-11-19.md:24",
+        "memory/scribe/assist-archivist-goal1-freshness-spotcheck-2026-11-20.md:16"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '8 bars' and '7 days' conflict for subject 'fleet'. Recommend most-recent source: memory/scribe/assist-archivist-goal1-freshness-spotcheck-2026-11-20.md:16"
+    },
+    {
+      "subject": "fleet",
+      "key": "value",
+      "value_a": "74/80 reached (92%) source=memory/goals",
+      "value_b": "80/80 goals reached at level-up (2026-11-23 06:00:01).",
+      "source_a": "memory/designer/designer-10of10-closure-confirm-2026-11-18.md:15",
+      "source_b": "memory/levels/level_1_20261123-060001.md:3",
+      "all_sources": [
+        "memory/designer/designer-10of10-closure-confirm-2026-11-18.md:15",
+        "memory/levels/level_1_20261123-060001.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '74/80 reached (92%) source=memory/goals' and '80/80 goals reached at level-up (2026-11-23 06:00:01).' conflict for subject 'fleet'. Recommend most-recent source: memory/levels/level_1_20261123-060001.md:3"
+    },
+    {
+      "subject": "focus",
+      "key": "value",
+      "value_a": "knowledge infrastructure. cycle-8 built freshness scoring and retrieval; cycle-9",
+      "value_b": "fleet reliability + automated recovery. make the 4-host fleet self-healing: proa",
+      "source_a": "memory/goals/archivist.md:29",
+      "source_b": "memory/goals/archive/mechanic-2026-11-19.md:3",
+      "all_sources": [
+        "memory/goals/archivist.md:29",
+        "memory/goals/archive/archivist-2026-11-23-cycle9-live.md:3",
+        "memory/goals/archive/archivist-2026-11-23-cycle9.md:3",
+        "memory/goals/archive/archivist-2026-11-23.md:3",
+        "memory/goals/archive/mechanic-2026-11-19.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'knowledge infrastructure. cycle-8 built freshness scoring and retrieval; cycle-9' and 'fleet reliability + automated recovery. make the 4-host fleet self-healing: proa' conflict for subject 'focus'. Recommend most-recent source: memory/goals/archivist.md:29"
+    },
+    {
+      "subject": "focus_shift",
+      "key": "value",
+      "value_a": "cycle-7 = \"make it feel alive\" (interactions, motion, hierarchy). cycle-8 = \"mak",
+      "value_b": "from building extraction/search tools (cycle-7) to self-maintaining synthesis qu",
+      "source_a": "memory/designer/cycle8-proposals-submitted-2026-11-20.md:7",
+      "source_b": "memory/scribe/cycle8-goal-setting-2026-11-20.md:4",
+      "all_sources": [
+        "memory/designer/cycle8-proposals-submitted-2026-11-20.md:7",
+        "memory/scribe/cycle8-goal-setting-2026-11-20.md:4"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'cycle-7 = \"make it feel alive\" (interactions, motion, hierarchy). cycle-8 = \"mak' and 'from building extraction/search tools (cycle-7) to self-maintaining synthesis qu' conflict for subject 'focus_shift'. Recommend most-recent source: memory/scribe/cycle8-goal-setting-2026-11-20.md:4"
+    },
+    {
+      "subject": "format",
+      "key": "value",
+      "value_a": "[status] symptom keywords -> file | one-line use case. grep by symptom, open one",
+      "value_b": "`date | question | status/owner`. resolved items move to the bottom under resolv",
+      "source_a": "memory/portal/bugs/INDEX.md:2",
+      "source_b": "memory/researcher/open-questions-log.md:5",
+      "all_sources": [
+        "memory/portal/bugs/INDEX.md:2",
+        "memory/researcher/open-questions-log.md:5"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '[status] symptom keywords -> file | one-line use case. grep by symptom, open one' and '`date | question | status/owner`. resolved items move to the bottom under resolv' conflict for subject 'format'. Recommend most-recent source: memory/researcher/open-questions-log.md:5"
+    },
+    {
+      "subject": "full_report",
+      "key": "value",
+      "value_a": "`memory/scribe/supersession-report.json` (regenerated each run).",
+      "value_b": "`memory/ops/memory-integrity-2026-11-21.md`",
+      "source_a": "memory/synthesis/supersession-policy-baseline.md:66",
+      "source_b": "memory/verifier/evidence-integrity-stable-2026-11-21.md:15",
+      "all_sources": [
+        "memory/synthesis/supersession-policy-baseline.md:66",
+        "memory/verifier/evidence-integrity-stable-2026-11-21.md:15"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '`memory/scribe/supersession-report.json` (regenerated each run).' and '`memory/ops/memory-integrity-2026-11-21.md`' conflict for subject 'full_report'. Recommend most-recent source: memory/verifier/evidence-integrity-stable-2026-11-21.md:15"
+    },
+    {
+      "subject": "gate",
+      "key": "numeric",
+      "value_a": "1 warn",
+      "value_b": "9c",
+      "source_a": "memory/ops/blockers.md:149",
+      "source_b": "memory/builder/a4a5-lineage-and-revert-r38-2026-11-14.md:4",
+      "all_sources": [
+        "memory/ops/blockers.md:149",
+        "memory/scribe/weekly-2026-W47-verifier.md:34",
+        "memory/builder/a4a5-lineage-and-revert-r38-2026-11-14.md:4"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '1 warn' and '9c' conflict for subject 'gate'. Recommend most-recent source: memory/scribe/weekly-2026-W47-verifier.md:34"
+    },
+    {
+      "subject": "generated",
+      "key": "value",
+      "value_a": "2026-11-23t00:31:16z",
+      "value_b": "2026-11-23 07:20",
+      "source_a": "memory/researcher/calibration-report.md:2",
+      "source_b": "memory/synthesis/completion-patterns-2026-11-23.md:3",
+      "all_sources": [
+        "memory/researcher/calibration-report.md:2",
+        "memory/researcher/evidence-trace-report.md:2",
+        "memory/researcher/loop-closure-report.md:2",
+        "memory/synthesis/completion-patterns-2026-11-23.md:3",
+        "memory/synthesis/knowledge-delta-cycle10.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '2026-11-23t00:31:16z' and '2026-11-23 07:20' conflict for subject 'generated'. Recommend most-recent source: memory/synthesis/knowledge-delta-cycle10.md:3"
+    },
+    {
+      "subject": "goal",
+      "key": "value",
+      "value_a": "9 (provenance tracking) - supplementary deliverable",
+      "value_b": "pre_commit_gate.py runs all 4 suites, blocks commit on any failure.",
+      "source_a": "memory/archivist/provenance-api-endpoint-2026-11-21.md:5",
+      "source_b": "memory/builder/ci-gate-verified-2026-11-16.md:2",
+      "all_sources": [
+        "memory/archivist/provenance-api-endpoint-2026-11-21.md:5",
+        "memory/builder/ci-gate-verified-2026-11-16.md:2"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '9 (provenance tracking) - supplementary deliverable' and 'pre_commit_gate.py runs all 4 suites, blocks commit on any failure.' conflict for subject 'goal'. Recommend most-recent source: memory/builder/ci-gate-verified-2026-11-16.md:2"
+    },
+    {
+      "subject": "goal_file",
+      "key": "value",
+      "value_a": "memory/goals/archivist.md #1.",
+      "value_b": "memory/goals/archivist.md #3. tool under test: `memory/archivist/freshness_repor",
+      "source_a": "memory/researcher/archivist-goal1-orphan-remediation-verify-2026-11-20.md:3",
+      "source_b": "memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md:3",
+      "all_sources": [
+        "memory/researcher/archivist-goal1-orphan-remediation-verify-2026-11-20.md:3",
+        "memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'memory/goals/archivist.md #1.' and 'memory/goals/archivist.md #3. tool under test: `memory/archivist/freshness_repor' conflict for subject 'goal_file'. Recommend most-recent source: memory/researcher/archivist-goal3-freshness-verify-2026-11-20.md:3"
+    },
+    {
+      "subject": "goals",
+      "key": "numeric",
+      "value_a": "3 panels",
+      "value_b": "80 total",
+      "source_a": "memory/designer/errorstate-wired-2026-11-21.md:37",
+      "source_b": "memory/synthesis/2026-11-14-dream-big-r57-closeout.md:10",
+      "all_sources": [
+        "memory/designer/errorstate-wired-2026-11-21.md:37",
+        "memory/synthesis/2026-11-14-dream-big-r57-closeout.md:10"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '3 panels' and '80 total' conflict for subject 'goals'. Recommend most-recent source: memory/synthesis/2026-11-14-dream-big-r57-closeout.md:10"
+    },
+    {
+      "subject": "guard",
+      "key": "value",
+      "value_a": "`if all(lv[\"errors\"] == lv[\"n\"] for lv in out[\"levels\"]): print skipped; exit(0)",
+      "value_b": "`@media (prefers-reduced-motion: reduce){*{transition-duration:.001ms!important;",
+      "source_a": "memory/mechanic/goal4-schtask-reg-and-guard-2026-11-17.md:5",
+      "source_b": "memory/portal/design-tokens-live.md:87",
+      "all_sources": [
+        "memory/mechanic/goal4-schtask-reg-and-guard-2026-11-17.md:5",
+        "memory/portal/design-tokens-live.md:87"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '`if all(lv[\"errors\"] == lv[\"n\"] for lv in out[\"levels\"]): print skipped; exit(0)' and '`@media (prefers-reduced-motion: reduce){*{transition-duration:.001ms!important;' conflict for subject 'guard'. Recommend most-recent source: memory/portal/design-tokens-live.md:87"
+    },
+    {
+      "subject": "hot_note",
+      "key": "value",
+      "value_a": "\"designer's wcag fix + ops tiers lost to stale-mirror re-sync (sha 930e->5908);",
+      "value_b": "\"verifier found memory_integrity.py fails ~256 issues, contradicting a prior goa",
+      "source_a": "memory/goals/designer-goal2-ops-tiers.md:6",
+      "source_b": "memory/researcher/integrity-fail-adjudication-2026-11-22.md:2",
+      "all_sources": [
+        "memory/goals/designer-goal2-ops-tiers.md:6",
+        "memory/goals/archive/cycle2-2026-11-17/designer-goal2-ops-tiers.md:6",
+        "memory/researcher/integrity-fail-adjudication-2026-11-22.md:2"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '\"designer's wcag fix + ops tiers lost to stale-mirror re-sync (sha 930e->5908);' and '\"verifier found memory_integrity.py fails ~256 issues, contradicting a prior goa' conflict for subject 'hot_note'. Recommend most-recent source: memory/researcher/integrity-fail-adjudication-2026-11-22.md:2"
+    },
+    {
+      "subject": "html",
+      "key": "numeric",
+      "value_a": "9c",
+      "value_b": "94%",
+      "source_a": "memory/builder/arnold-restart-r8.md:2",
+      "source_b": "memory/researcher/mirror-revert-analysis-template-2026-11-18.md:76",
+      "all_sources": [
+        "memory/builder/arnold-restart-r8.md:2",
+        "memory/mechanic/a-r14-write-path-2026-11-13.md:27",
+        "memory/ops/researcher-seat-verify-r7-2026-11-13.md:25",
+        "memory/researcher/sync-clobber-analysis-2026-11-13.md:70",
+        "memory/verifier/ac-a2-r29-probe-restage-2026-11-14.md:6"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '9c' and '94%' conflict for subject 'html'. Recommend most-recent source: memory/verifier/ac-a2-r29-probe-restage-2026-11-14.md:6"
+    },
+    {
+      "subject": "json",
+      "key": "numeric",
+      "value_a": "0 samples",
+      "value_b": "12 entries",
+      "source_a": "memory/archivist/stale-evidence-goal7-closed-2026-11-20.md:8",
+      "source_b": "memory/designer/goal10-cdp-script-2026-11-18.md:26",
+      "all_sources": [
+        "memory/archivist/stale-evidence-goal7-closed-2026-11-20.md:8",
+        "memory/researcher/INDEX.md:16",
+        "memory/designer/goal10-cdp-script-2026-11-18.md:26"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '0 samples' and '12 entries' conflict for subject 'json'. Recommend most-recent source: memory/researcher/INDEX.md:16"
+    },
+    {
+      "subject": "jsonl",
+      "key": "numeric",
+      "value_a": "10 entries",
+      "value_b": "1 entry",
+      "source_a": "memory/goals/builder.md:5",
+      "source_b": "memory/mechanic/auto-loop-pass-2026-11-22.md:9",
+      "all_sources": [
+        "memory/goals/builder.md:5",
+        "memory/goals/archive/builder-2026-11-23.md:5",
+        "memory/mechanic/auto-loop-pass-2026-11-22d.md:13",
+        "memory/mechanic/auto-loop-pass-2026-11-22.md:9",
+        "memory/mechanic/auto-loop-pass-2026-11-22.md:12"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '10 entries' and '1 entry' conflict for subject 'jsonl'. Recommend most-recent source: memory/mechanic/auto-loop-pass-2026-11-22d.md:13"
+    },
+    {
+      "subject": "key_finding",
+      "key": "value",
+      "value_a": "index.html = 94% of all revert events; 27% burst rate (<5min intervals).",
+      "value_b": "sla_audit.py confirms pass-9 regression \u2014 the correct picture is 1 breach + 2 pr",
+      "source_a": "memory/researcher/mirror-revert-closure-runbook-2026-11-17.md:104",
+      "source_b": "memory/researcher/open-questions-log.md:80",
+      "all_sources": [
+        "memory/researcher/mirror-revert-closure-runbook-2026-11-17.md:104",
+        "memory/researcher/open-questions-log.md:80"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'index.html = 94% of all revert events; 27% burst rate (<5min intervals).' and 'sla_audit.py confirms pass-9 regression \u2014 the correct picture is 1 breach + 2 pr' conflict for subject 'key_finding'. Recommend most-recent source: memory/researcher/open-questions-log.md:80"
+    },
+    {
+      "subject": "landmarks",
+      "key": "value",
+      "value_a": "banner=y navigation=y main=y complementary=y form=n contentinfo=n",
+      "value_b": "banner=y navigation=y main=y complementary=y form=y contentinfo=n",
+      "source_a": "memory/designer/wcag-aria-keyboard-2026-11-20.md:33",
+      "source_b": "memory/designer/wcag-goal1-closure-2026-11-20.md:15",
+      "all_sources": [
+        "memory/designer/wcag-aria-keyboard-2026-11-20.md:33",
+        "memory/designer/wcag-goal1-closure-2026-11-20.md:15"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'banner=y navigation=y main=y complementary=y form=n contentinfo=n' and 'banner=y navigation=y main=y complementary=y form=y contentinfo=n' conflict for subject 'landmarks'. Recommend most-recent source: memory/designer/wcag-goal1-closure-2026-11-20.md:15"
+    },
+    {
+      "subject": "lane",
+      "key": "numeric",
+      "value_a": "0 open",
+      "value_b": "3 conflicting",
+      "source_a": "memory/synthesis/2026-11-18-rest-of-goals-attempts.md:5",
+      "source_b": "memory/verifier/ssot-reconciliation-2026-11-16.md:16",
+      "all_sources": [
+        "memory/synthesis/2026-11-18-rest-of-goals-attempts.md:5",
+        "memory/synthesis/2026-11-18-rest-of-goals-attempts.md:8",
+        "memory/verifier/ssot-reconciliation-2026-11-16.md:16"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '0 open' and '3 conflicting' conflict for subject 'lane'. Recommend most-recent source: memory/verifier/ssot-reconciliation-2026-11-16.md:16"
+    },
+    {
+      "subject": "lane",
+      "key": "value",
+      "value_a": "builder (assist/contribution; my own goals 10/10, no open lane work).",
+      "value_b": "mechanic (goal #9 capacity planning dashboard is `reached` for the data pipeline",
+      "source_a": "memory/builder/evidence-verify-claims-guard-2026-11-19.md:2",
+      "source_b": "memory/designer/mechanic-capacity-trend-assist-2026-11-21.md:3",
+      "all_sources": [
+        "memory/builder/evidence-verify-claims-guard-2026-11-19.md:2",
+        "memory/designer/mechanic-capacity-trend-assist-2026-11-21.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'builder (assist/contribution; my own goals 10/10, no open lane work).' and 'mechanic (goal #9 capacity planning dashboard is `reached` for the data pipeline' conflict for subject 'lane'. Recommend most-recent source: memory/designer/mechanic-capacity-trend-assist-2026-11-21.md:3"
+    },
+    {
+      "subject": "lane_position",
+      "key": "value",
+      "value_a": "nothing owed from researcher until the white-console run lands output in the sha",
+      "value_b": "[concluded] from this seat.",
+      "source_a": "memory/researcher/e14-r41-reverify-2026-11-14.md:9",
+      "source_b": "memory/researcher/r20-lane-status-2026-11-14.md:13",
+      "all_sources": [
+        "memory/researcher/e14-r41-reverify-2026-11-14.md:9",
+        "memory/researcher/r20-lane-status-2026-11-14.md:13"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'nothing owed from researcher until the white-console run lands output in the sha' and '[concluded] from this seat.' conflict for subject 'lane_position'. Recommend most-recent source: memory/researcher/r20-lane-status-2026-11-14.md:13"
+    },
+    {
+      "subject": "lane_state",
+      "key": "value",
+      "value_a": "design re-run complete. next designer action only if: re-pin stamp changes, #2/#",
+      "value_b": "design deliverables complete. no index.html writes owed from designer since r16.",
+      "source_a": "memory/designer/design-sheet-rerun-45323d09-2026-11-14.md:35",
+      "source_b": "memory/designer/hunk-reverify-r29.md:12",
+      "all_sources": [
+        "memory/designer/design-sheet-rerun-45323d09-2026-11-14.md:35",
+        "memory/designer/hunk-reverify-r29.md:12"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'design re-run complete. next designer action only if: re-pin stamp changes, #2/#' and 'design deliverables complete. no index.html writes owed from designer since r16.' conflict for subject 'lane_state'. Recommend most-recent source: memory/designer/hunk-reverify-r29.md:12"
+    }
+  ]
+}

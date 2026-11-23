@@ -1,0 +1,91 @@
+{
+  "conflicts": [
+    {
+      "subject": "black",
+      "key": "value",
+      "value_a": "32gb vram",
+      "value_b": "24gb vram",
+      "source_a": "memory/_conflict_test/host_specs_a.md:3",
+      "source_b": "memory/_conflict_test/host_specs_b.md:3",
+      "all_sources": [
+        "memory/_conflict_test/host_specs_a.md:3",
+        "memory/_conflict_test/host_specs_b.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '32gb vram' and '24gb vram' conflict for subject 'black'. Recommend most-recent source: memory/_conflict_test/host_specs_b.md:3"
+    },
+    {
+      "subject": "coverage",
+      "key": "value",
+      "value_a": "85% complete",
+      "value_b": "90% complete",
+      "source_a": "memory/_conflict_test/fleet_count_a.md:3",
+      "source_b": "memory/_conflict_test/fleet_count_b.md:3",
+      "all_sources": [
+        "memory/_conflict_test/fleet_count_a.md:3",
+        "memory/_conflict_test/fleet_count_b.md:3"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '85% complete' and '90% complete' conflict for subject 'coverage'. Recommend most-recent source: memory/_conflict_test/fleet_count_b.md:3"
+    },
+    {
+      "subject": "fleet",
+      "key": "numeric",
+      "value_a": "4 hosts",
+      "value_b": "5 hosts",
+      "source_a": "memory/_conflict_test/fleet_count_a.md:2",
+      "source_b": "memory/_conflict_test/fleet_count_b.md:2",
+      "all_sources": [
+        "memory/_conflict_test/fleet_count_a.md:2",
+        "memory/_conflict_test/fleet_count_b.md:2"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '4 hosts' and '5 hosts' conflict for subject 'fleet'. Recommend most-recent source: memory/_conflict_test/fleet_count_b.md:2"
+    },
+    {
+      "subject": "status",
+      "key": "state",
+      "value_a": "active",
+      "value_b": "done",
+      "source_a": "memory/_conflict_test/host_specs_a.md:4",
+      "source_b": "memory/_conflict_test/status_a.md:2",
+      "all_sources": [
+        "memory/_conflict_test/host_specs_a.md:4",
+        "memory/_conflict_test/host_specs_b.md:4",
+        "memory/_conflict_test/status_a.md:2"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'active' and 'done' conflict for subject 'status'. Recommend most-recent source: memory/_conflict_test/status_a.md:2"
+    },
+    {
+      "subject": "status",
+      "key": "value",
+      "value_a": "active",
+      "value_b": "done",
+      "source_a": "memory/_conflict_test/host_specs_a.md:4",
+      "source_b": "memory/_conflict_test/status_a.md:2",
+      "all_sources": [
+        "memory/_conflict_test/host_specs_a.md:4",
+        "memory/_conflict_test/host_specs_b.md:4",
+        "memory/_conflict_test/status_a.md:2"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values 'active' and 'done' conflict for subject 'status'. Recommend most-recent source: memory/_conflict_test/status_a.md:2"
+    },
+    {
+      "subject": "white",
+      "key": "value",
+      "value_a": "24gb vram",
+      "value_b": "32gb vram",
+      "source_a": "memory/_conflict_test/host_specs_a.md:2",
+      "source_b": "memory/_conflict_test/host_specs_b.md:2",
+      "all_sources": [
+        "memory/_conflict_test/host_specs_a.md:2",
+        "memory/_conflict_test/host_specs_b.md:2"
+      ],
+      "recommended_resolution": "most-recent",
+      "rationale": "Values '24gb vram' and '32gb vram' conflict for subject 'white'. Recommend most-recent source: memory/_conflict_test/host_specs_b.md:2"
+    }
+  ],
+  "count": 6
+}

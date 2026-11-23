@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-23",
+  "added": [
+    "memory/archivist/kb-delta-selftest-2026-11-23.json"
+  ],
+  "changed": [
+    "memory/archivist/.kb_delta_state.json"
+  ],
+  "deleted": [],
+  "affected_facts": [],
+  "summary": {
+    "total_added": 1,
+    "total_changed": 1,
+    "total_deleted": 0,
+    "total_affected_facts": 0
+  }
+}

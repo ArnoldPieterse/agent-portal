@@ -1,0 +1,86 @@
+{
+  "timestamp": "2026-11-23T03:21:09.634106+00:00",
+  "total_checks": 11,
+  "passed": 10,
+  "failed": 1,
+  "results": [
+    {
+      "file": "fleet-white-oom.md",
+      "links": 3,
+      "self_link": false,
+      "top_match": "memory\\archivist\\dcabots-intake-2026-11-14.md",
+      "status": "PASS"
+    },
+    {
+      "file": "model-loading-protocol.md",
+      "links": 3,
+      "self_link": false,
+      "top_match": "memory\\handoffs\\INDEX.md",
+      "status": "PASS"
+    },
+    {
+      "file": "portal-ui-css.md",
+      "links": 3,
+      "self_link": false,
+      "top_match": "memory\\portal\\INDEX.md",
+      "status": "PASS"
+    },
+    {
+      "file": "knowledge-index-build.md",
+      "links": 3,
+      "self_link": false,
+      "top_match": "memory\\INDEX.md",
+      "status": "PASS"
+    },
+    {
+      "file": "winrm-remote-execution.md",
+      "links": 3,
+      "self_link": false,
+      "top_match": "memory\\archivist\\dcabots-intake-2026-11-14.md",
+      "status": "PASS"
+    },
+    {
+      "file": "goal-ledger-tracking.md",
+      "links": 3,
+      "self_link": false,
+      "top_match": "memory\\archivist\\blocker-cleanup-2026-11-20.md",
+      "status": "PASS"
+    },
+    {
+      "file": "freshness-decay-scoring.md",
+      "links": 3,
+      "self_link": false,
+      "top_match": "memory\\archivist\\decay-alerts.md",
+      "status": "PASS"
+    },
+    {
+      "file": "citation-integrity-check.md",
+      "links": 3,
+      "self_link": false,
+      "top_match": "memory\\archivist\\citation-triage-2026-11-20.md",
+      "status": "PASS"
+    },
+    {
+      "file": "cockpit-api-endpoints.md",
+      "links": 3,
+      "self_link": false,
+      "top_match": "memory\\archivist\\api-ref-e2e-2026-11-18.md",
+      "status": "PASS"
+    },
+    {
+      "file": "archive-compaction-policy.md",
+      "links": 3,
+      "self_link": false,
+      "top_match": "memory\\archivist\\dup-detect-report-2026-11-20.md",
+      "status": "PASS"
+    },
+    {
+      "file": "idempotency",
+      "links": 3,
+      "self_link": false,
+      "top_match": null,
+      "status": "FAIL"
+    }
+  ],
+  "verdict": "FAIL"
+}
