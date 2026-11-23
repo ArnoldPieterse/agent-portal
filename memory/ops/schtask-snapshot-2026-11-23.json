@@ -1,40 +1,20 @@
 {
-  "generated": "2026-11-23T15:46:46.314948",
+  "generated": "2026-11-23T15:51:10.539087",
   "host": "WHITE",
-  "task_count": 2,
+  "task_count": 1,
   "tasks": [
     {
       "name": "\\GCC",
       "status": "Ready",
       "schedule_type": "At logon time",
       "next_run": "N/A"
-    },
-    {
-      "name": "\\PortalRun",
-      "status": "Ready",
-      "schedule_type": "One Time Only",
-      "next_run": "N/A"
     }
   ],
-  "edges": [
-    {
-      "from": "\\PortalRun",
-      "to": "PortalDailyGitCommit",
-      "type": "known"
-    },
-    {
-      "from": "\\PortalRun",
-      "to": "FleetProbe",
-      "type": "known"
-    },
-    {
-      "from": "\\PortalRun",
-      "to": "AgentGroupChat",
-      "type": "known"
-    }
-  ],
+  "edges": [],
   "diff": {
     "added": [],
-    "removed": []
+    "removed": [
+      "\\PortalRun"
+    ]
   }
 }
