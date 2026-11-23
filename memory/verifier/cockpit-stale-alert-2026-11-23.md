@@ -1,11 +1,11 @@
 # COCKPIT DATA STALE ALERT
 
-**Time:** 2026-11-23T14:48:03.897238+00:00
-**Age:** 580.6 min (threshold: 5.0 min)
-**Breach:** +575.6 min over limit
+**Time:** 2026-11-23T14:58:57.206049+00:00
+**Age:** 591.5 min (threshold: 5.0 min)
+**Breach:** +586.5 min over limit
 
 ## Evidence
-file_age=580.6min, ts_age=580.6min, max_age=580.6min, threshold=5.0min
+file_age=591.5min, ts_age=591.5min, max_age=591.5min, threshold=5.0min
 
 ## Action Required
 Cockpit feed (`memory/ops/cockpit-feed.json`) is stale. The fleet collector

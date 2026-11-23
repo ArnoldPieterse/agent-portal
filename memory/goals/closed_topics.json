@@ -1318,5 +1318,65 @@
 "text": "**Post-Remediation Auto-Report** - `python memory/builder/post_mortem.py`: when a remediation cycle completes (detect\u2192diagnose\u2192fix\u2192verify), ",
 "agent": "builder",
 "at": "2026-11-24"
+},
+{
+"sig": "d01d742017568cea",
+"text": "**Adaptive Information Density (Calm vs. Incident)** - Design two cockpit density modes: \"calm\" for normal operation shows only aggregate he",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "6efb866035c52daf",
+"text": "**Decision Provenance Overlay** - Design the \"where did this come from?\" overlay: clicking any cockpit data point (health score, risk item, ",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "c615dfa2ec4756fb",
+"text": "**Predictive Risk Surface (Forward-Looking)** - Design the forward-looking risk panel: renders next10.json forecast data as a horizontal tim",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "80a608c4d8c71b5f",
+"text": "**Operator Emergency Brake UX** - Design the intervention pattern for when an operator must override an autonomous action: a prominent but n",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "a9bd6a055b4fd891",
+"text": "**Autonomy Confidence Decay Indicator** - Design how an autonomous decision's confidence degrades visually over time without re-verification",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "dc64059277d7d106",
+"text": "**Fleet Topology Live Graph** - Design the 4-host fleet as a live topology graph: nodes = hosts, edges = model/agent assignments, node size ",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "3f7ac15f36cdf514",
+"text": "**Cross-Cycle Trend Strip** - Design a persistent horizontal strip showing fleet health + autonomy level across the last N cycles (from cycl",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "6c86c70de19099a5",
+"text": "**Knowledge Impact Surface** - Design the \"what knowledge did this decision use?\" panel: when a goal closes or reverts, show which memory/ l",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "df93aee7fcbb2b74",
+"text": "**Cockpit Cognitive Load Budget** - Define and enforce a cognitive load model: at any moment, the operator should identify (a) fleet health,",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "203886a4496086f8",
+"text": "**Autonomous Remediation E2E** \u2014 full closed-loop fault-injection test (detect\u2192diagnose\u2192remediate\u2192verify) with per-stage SLA (verified: 2026",
+"agent": "verifier",
+"at": "2026-11-24"
 }
 ]

@@ -33,7 +33,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
-RESULTS_FILE = "memory/verifier/cockpit_playwright_gate_results.jsonl"
+# Anchor to this file's own dir so results land in memory/verifier/ regardless of CWD
+# (a bare relative path, when run from memory/verifier/, created a stray nested
+#  memory/verifier/memory/verifier/ tree - same CWD-fragility class fixed in the staleness monitor).
+RESULTS_FILE = str(Path(__file__).resolve().parent / "cockpit_playwright_gate_results.jsonl")
 
 # Viewports to test
 VIEWPORTS = [

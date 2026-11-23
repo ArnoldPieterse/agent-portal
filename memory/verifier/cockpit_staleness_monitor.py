@@ -24,8 +24,12 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-FEED_FILE = "memory/ops/cockpit-feed.json"
-ALERT_DIR = "memory/verifier"
+# Anchor all paths to the repo root so the monitor works from ANY working directory.
+# A scheduled continuous monitor must never depend on CWD (running it from memory/verifier/
+# with a relative path silently reported "FEED FILE NOT FOUND" = false-stale).
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent   # .../memory/verifier/file.py -> repo root
+FEED_FILE = REPO_ROOT / "memory" / "ops" / "cockpit-feed.json"
+ALERT_DIR = REPO_ROOT / "memory" / "verifier"
 DEFAULT_THRESHOLD_MIN = 5.0
 
 def ts():

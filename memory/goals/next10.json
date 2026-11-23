@@ -1,154 +1,54 @@
 {
  "ok": true,
- "generated": "2026-11-23 23:47:30",
+ "generated": "2026-11-24 00:57:23",
  "fleet": {
-  "done": 73,
+  "done": 91,
   "total": 102,
-  "pct": 71.6
+  "pct": 89.2
  },
  "throughput_goals_per_hour": 22.39,
  "next10": [
-  {
-   "agent": "verifier",
-   "goal": "**Autonomous Remediation E2E** \u2014 full closed-loop fault-injection test (detect\u2192diagnose\u2192remediate\u2192verify) with per-stage SLA",
-   "type": "verify",
-   "complexity": 1,
-   "p_reached": 0.758,
-   "eta": "2026-11-24 01:34",
-   "hours": 1.78,
-   "order": 0,
-   "rank": 1,
-   "title": "Autonomous Remediation E2E",
-   "steps": [
-    "build the test battery / audit script",
-    "run against live sources",
-    "record verdict + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-24 01:34 (P=76%)",
-   "consequences": [
-    "builder: **Automated Chaos Drill Scheduler** - `python memory/builder (2026-11-24 18:23) - shared scope fault,injection",
-    "verifier: **Fleet Health Closed-Loop Test** \u2014 simulate VRAM/OOM degrad (2026-11-24 18:51) - shared scope autonomous,closed,verify",
-    "designer: **Autonomy Confidence Decay Indicator** - Design how an auto (2026-11-24 22:36) - shared scope autonomous,closed",
-    "lane end designer: 11-25 13:48 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "builder",
-   "goal": "**Closed-Loop Feedback Scorer** - `python memory/builder/loop_scorer.py`: score each autonomy loop iteration 0\u20131 based on three factors: progress (file change, measurement, or evidence produced in the pass), efficiency (",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.224,
-   "eta": "2026-11-24 03:15",
-   "hours": 3.46,
-   "order": 0,
-   "rank": 2,
-   "title": "Closed-Loop Feedback Scorer",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-24 03:15 (P=22%)",
-   "consequences": [
-    "designer: **Decision Provenance Overlay** - Design the \"where did this (2026-11-24 07:21) - shared scope autonomy,score",
-    "verifier: **Closed-Loop Latency Budget** \u2014 measure per-segment latency (2026-11-24 10:25) - shared scope autonomy,closed",
-    "designer: **Autonomy Confidence Decay Indicator** - Design how an auto (2026-11-24 22:36) - shared scope autonomy,closed",
-    "lane end designer: 11-25 13:48 (slowest lane)"
-   ]
-  },
   {
    "agent": "verifier",
    "goal": "**Cockpit Live-Staleness Monitor** \u2014 continuous check that /api/fleet/cockpit data is <5min fresh; alert leaf on breach",
    "type": "measurement",
    "complexity": 1,
    "p_reached": 0.459,
-   "eta": "2026-11-24 03:56",
+   "eta": "2026-11-24 03:19",
    "hours": 2.36,
-   "order": 1,
-   "rank": 3,
+   "order": 0,
+   "rank": 1,
    "title": "Cockpit Live-Staleness Monitor",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 03:56 (P=46%)",
+   "outcome": "reached ~2026-11-24 03:19 (P=46%)",
    "consequences": [
-    "verifier: **Cockpit A11y Gate (WCAG AA)** \u2014 automated contrast, keyboa (2026-11-24 21:56) - shared scope check,cockpit",
-    "lane end designer: 11-25 13:48 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "designer",
-   "goal": "**Adaptive Information Density (Calm vs. Incident)** - Design two cockpit density modes: \"calm\" for normal operation shows only aggregate health + active loops; \"incident\" mode auto-engages when any panel enters critical",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.037,
-   "eta": "2026-11-24 04:06",
-   "hours": 4.32,
-   "order": 0,
-   "rank": 4,
-   "title": "Adaptive Information Density (Calm vs. Incident)",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-24 04:06 (P=4%)",
-   "consequences": [
-    "designer: **Decision Provenance Overlay** - Design the \"where did this (2026-11-24 07:21) - shared scope cockpit,design,health",
-    "designer: **Predictive Risk Surface (Forward-Looking)** - Design the f (2026-11-24 11:40) - shared scope design,panel",
-    "designer: **Operator Emergency Brake UX** - Design the intervention pa (2026-11-24 17:08) - shared scope design,shows",
-    "lane end designer: 11-25 13:48 (slowest lane)"
+    "verifier: **Cockpit A11y Gate (WCAG AA)** \u2014 automated contrast, keyboa (2026-11-24 21:19) - shared scope check,cockpit",
+    "lane end verifier: 11-25 00:24 (slowest lane)"
    ]
   },
   {
    "agent": "builder",
-   "goal": "**Adaptive Policy Tuner** - `python memory/builder/policy_tuner.py`: read loop_scores.jsonl; compute rolling 5-loop average per agent; when an agent's average drops below 0.4, generate a concrete threshold-adjustment pro",
-   "type": "measurement",
+   "goal": "**Policy Conflict Detector** - `python memory/builder/policy_conflict.py`: scan all policy files (memory/ops/*.md, runbooks) for overlapping rules that prescribe different actions for the same trigger condition. Output c",
+   "type": "research",
    "complexity": 2,
-   "p_reached": 0.224,
-   "eta": "2026-11-24 06:42",
-   "hours": 3.46,
-   "order": 1,
-   "rank": 5,
-   "title": "Adaptive Policy Tuner",
+   "p_reached": 0.316,
+   "eta": "2026-11-24 06:55",
+   "hours": 5.96,
+   "order": 0,
+   "rank": 2,
+   "title": "Policy Conflict Detector",
    "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
+    "gather sources from memory/ (pointer map)",
+    "compute/detect per protocol",
+    "write findings leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 06:42 (P=22%)",
+   "outcome": "reached ~2026-11-24 06:55 (P=32%)",
    "consequences": [
-    "builder: **Fleet Capacity Predictor** - `python memory/builder/capaci (2026-11-24 15:48) - shared scope builder,compute,jsonl",
-    "builder: **Decision Audit Search Index** - SQLite FTS5 index over dec (2026-11-25 01:30) - shared scope builder,jsonl",
-    "builder: **Post-Remediation Auto-Report** - `python memory/builder/po (2026-11-25 04:05) - shared scope builder,generate",
-    "lane end designer: 11-25 13:48 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "designer",
-   "goal": "**Decision Provenance Overlay** - Design the \"where did this come from?\" overlay: clicking any cockpit data point (health score, risk item, autonomy level) opens a provenance panel showing the chain: which agent made the",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.046,
-   "eta": "2026-11-24 07:21",
-   "hours": 3.25,
-   "order": 1,
-   "rank": 6,
-   "title": "Decision Provenance Overlay",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-24 07:21 (P=5%)",
-   "consequences": [
-    "builder: **Closed-Loop Feedback Scorer** - `python memory/builder/loo (2026-11-24 03:15) - shared scope autonomy,score",
-    "designer: **Adaptive Information Density (Calm vs. Incident)** - Desig (2026-11-24 04:06) - shared scope cockpit,design,health",
-    "designer: **Predictive Risk Surface (Forward-Looking)** - Design the f (2026-11-24 11:40) - shared scope design,panel,showing",
-    "lane end designer: 11-25 13:48 (slowest lane)"
+    "lane end verifier: 11-25 00:24 (slowest lane)"
    ]
   },
   {
@@ -157,20 +57,40 @@
    "type": "research",
    "complexity": 1,
    "p_reached": 0.576,
-   "eta": "2026-11-24 08:03",
+   "eta": "2026-11-24 07:26",
    "hours": 4.13,
-   "order": 2,
-   "rank": 7,
+   "order": 1,
+   "rank": 3,
    "title": "Autonomy Stall Detector",
    "steps": [
     "gather sources from memory/ (pointer map)",
     "compute/detect per protocol",
     "write findings leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 08:03 (P=58%)",
+   "outcome": "reached ~2026-11-24 07:26 (P=58%)",
    "consequences": [
-    "designer: **Cross-Cycle Trend Strip** - Design a persistent horizontal (2026-11-25 07:14) - shared scope across,autonomy",
-    "lane end designer: 11-25 13:48 (slowest lane)"
+    "lane end verifier: 11-25 00:24 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "builder",
+   "goal": "**Cockpit One-Click Runbook Trigger** - Add a \"Run\" button to each runbook card in cockpit's Decision Log panel: pre-flight validates (agent available, host reachable, no conflicting operations), then executes via playbo",
+   "type": "ops",
+   "complexity": 2,
+   "p_reached": 0.515,
+   "eta": "2026-11-24 09:29",
+   "hours": 2.58,
+   "order": 1,
+   "rank": 4,
+   "title": "Cockpit One-Click Runbook Trigger",
+   "steps": [
+    "pre-flight checks (targets exist, idempotent)",
+    "execute from non-sandbox session",
+    "verify registration/health + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-24 09:29 (P=52%)",
+   "consequences": [
+    "lane end verifier: 11-25 00:24 (slowest lane)"
    ]
   },
   {
@@ -179,69 +99,129 @@
    "type": "measurement",
    "complexity": 1,
    "p_reached": 0.459,
-   "eta": "2026-11-24 10:25",
+   "eta": "2026-11-24 09:48",
    "hours": 2.36,
-   "order": 3,
-   "rank": 8,
+   "order": 2,
+   "rank": 5,
    "title": "Closed-Loop Latency Budget",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-24 10:25 (P=46%)",
+   "outcome": "reached ~2026-11-24 09:48 (P=46%)",
    "consequences": [
-    "builder: **Closed-Loop Feedback Scorer** - `python memory/builder/loo (2026-11-24 03:15) - shared scope autonomy,closed",
-    "designer: **Autonomy Confidence Decay Indicator** - Design how an auto (2026-11-24 22:36) - shared scope autonomy,closed",
-    "designer: **Cross-Cycle Trend Strip** - Design a persistent horizontal (2026-11-25 07:14) - shared scope autonomy,cycle",
-    "lane end designer: 11-25 13:48 (slowest lane)"
+    "lane end verifier: 11-25 00:24 (slowest lane)"
    ]
   },
   {
-   "agent": "builder",
-   "goal": "**Alert Correlation Engine** - `python memory/builder/alert_correlate.py`: consume raw alerts from fleet probes (memory/fleet/*.json) + OPS-NOTES in memory/ops/blockers.md; group temporally-close (< 5 min window) and top",
+   "agent": "verifier",
+   "goal": "**Cockpit UI Playwright Gate** \u2014 automated browser test at 3 viewports: panels render, no JS errors, interactive elements clickable",
    "type": "build",
-   "complexity": 2,
-   "p_reached": 0.188,
-   "eta": "2026-11-24 11:15",
-   "hours": 4.55,
-   "order": 2,
+   "complexity": 1,
+   "p_reached": 0.405,
+   "eta": "2026-11-24 12:53",
+   "hours": 3.08,
+   "order": 3,
+   "rank": 6,
+   "title": "Cockpit UI Playwright Gate",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-24 12:53 (P=40%)",
+   "consequences": [
+    "verifier: **Cockpit A11y Gate (WCAG AA)** \u2014 automated contrast, keyboa (2026-11-24 21:19) - shared scope automated,cockpit,panels",
+    "lane end verifier: 11-25 00:24 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "verifier",
+   "goal": "**Failure Replay Harness** \u2014 replay historical failure scenarios from decision-log; verify applied fixes prevent recurrence",
+   "type": "verify",
+   "complexity": 1,
+   "p_reached": 0.758,
+   "eta": "2026-11-24 14:40",
+   "hours": 1.78,
+   "order": 4,
+   "rank": 7,
+   "title": "Failure Replay Harness",
+   "steps": [
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-24 14:40 (P=76%)",
+   "consequences": [
+    "lane end verifier: 11-25 00:24 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "verifier",
+   "goal": "**Goal Lifecycle Audit** \u2014 trace every goal through proposed\u2192assigned\u2192worked\u2192verified\u2192closed; flag stuck >48h or missing transitions",
+   "type": "verify",
+   "complexity": 1,
+   "p_reached": 0.758,
+   "eta": "2026-11-24 16:27",
+   "hours": 1.78,
+   "order": 5,
+   "rank": 8,
+   "title": "Goal Lifecycle Audit",
+   "steps": [
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-24 16:27 (P=76%)",
+   "consequences": [
+    "lane end verifier: 11-25 00:24 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "verifier",
+   "goal": "**Fleet Health Closed-Loop Test** \u2014 simulate VRAM/OOM degradation; verify full autonomous response chain fires end-to-end",
+   "type": "verify",
+   "complexity": 1,
+   "p_reached": 0.758,
+   "eta": "2026-11-24 18:14",
+   "hours": 1.78,
+   "order": 6,
    "rank": 9,
-   "title": "Alert Correlation Engine",
+   "title": "Fleet Health Closed-Loop Test",
    "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-24 11:15 (P=19%)",
+   "outcome": "reached ~2026-11-24 18:14 (P=76%)",
    "consequences": [
-    "lane end designer: 11-25 13:48 (slowest lane)"
+    "lane end verifier: 11-25 00:24 (slowest lane)"
    ]
   },
   {
-   "agent": "designer",
-   "goal": "**Predictive Risk Surface (Forward-Looking)** - Design the forward-looking risk panel: renders next10.json forecast data as a horizontal timeline showing predicted fleet state 1-10 cycles ahead, with confidence bands (hi",
+   "agent": "verifier",
+   "goal": "**Cockpit A11y Gate (WCAG AA)** \u2014 automated contrast, keyboard-nav, ARIA-label check on all cockpit panels",
    "type": "build",
-   "complexity": 2,
-   "p_reached": 0.037,
-   "eta": "2026-11-24 11:40",
-   "hours": 4.32,
-   "order": 2,
+   "complexity": 1,
+   "p_reached": 0.405,
+   "eta": "2026-11-24 21:19",
+   "hours": 3.08,
+   "order": 7,
    "rank": 10,
-   "title": "Predictive Risk Surface (Forward-Looking)",
+   "title": "Cockpit A11y Gate (WCAG AA)",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 11:40 (P=4%)",
+   "outcome": "reached ~2026-11-24 21:19 (P=40%)",
    "consequences": [
-    "designer: **Adaptive Information Density (Calm vs. Incident)** - Desig (2026-11-24 04:06) - shared scope design,panel",
-    "designer: **Decision Provenance Overlay** - Design the \"where did this (2026-11-24 07:21) - shared scope design,panel,showing",
-    "designer: **Autonomy Confidence Decay Indicator** - Design how an auto (2026-11-24 22:36) - shared scope confidence,design",
-    "lane end designer: 11-25 13:48 (slowest lane)"
+    "verifier: **Cockpit Live-Staleness Monitor** \u2014 continuous check that / (2026-11-24 03:19) - shared scope check,cockpit",
+    "verifier: **Cockpit UI Playwright Gate** \u2014 automated browser test at 3 (2026-11-24 12:53) - shared scope automated,cockpit,panels",
+    "lane end verifier: 11-25 00:24 (slowest lane)"
    ]
   }
  ],
@@ -249,45 +229,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-24 00:17",
+   "end": "2026-11-24 01:27",
    "completes": 0,
-   "fleet_pct": 71.6,
+   "fleet_pct": 89.2,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-24 00:47",
+   "end": "2026-11-24 01:57",
    "completes": 0,
-   "fleet_pct": 71.6,
+   "fleet_pct": 89.2,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-24 23:47",
-   "completes": 20,
-   "fleet_pct": 91.2,
+   "end": "2026-11-25 00:57",
+   "completes": 11,
+   "fleet_pct": 100.0,
    "top": [
-    "#1 verifier: Autonomous Remediation E2E (2026-11-24 01:34)",
-    "#2 builder: Closed-Loop Feedback Scorer (2026-11-24 03:15)",
-    "#3 verifier: Cockpit Live-Staleness Monitor (2026-11-24 03:56)",
-    "#4 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 04:06)",
-    "#5 builder: Adaptive Policy Tuner (2026-11-24 06:42)"
+    "#1 verifier: Cockpit Live-Staleness Monitor (2026-11-24 03:19)",
+    "#2 builder: Policy Conflict Detector (2026-11-24 06:55)",
+    "#3 verifier: Autonomy Stall Detector (2026-11-24 07:26)",
+    "#4 builder: Cockpit One-Click Runbook Trigger (2026-11-24 09:29)",
+    "#5 verifier: Closed-Loop Latency Budget (2026-11-24 09:48)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-11-30 23:47",
-   "completes": 29,
+   "end": "2026-12-01 00:57",
+   "completes": 11,
    "fleet_pct": 100.0,
    "top": [
-    "#1 verifier: Autonomous Remediation E2E (2026-11-24 01:34)",
-    "#2 builder: Closed-Loop Feedback Scorer (2026-11-24 03:15)",
-    "#3 verifier: Cockpit Live-Staleness Monitor (2026-11-24 03:56)",
-    "#4 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 04:06)",
-    "#5 builder: Adaptive Policy Tuner (2026-11-24 06:42)"
+    "#1 verifier: Cockpit Live-Staleness Monitor (2026-11-24 03:19)",
+    "#2 builder: Policy Conflict Detector (2026-11-24 06:55)",
+    "#3 verifier: Autonomy Stall Detector (2026-11-24 07:26)",
+    "#4 builder: Cockpit One-Click Runbook Trigger (2026-11-24 09:29)",
+    "#5 verifier: Closed-Loop Latency Budget (2026-11-24 09:48)"
    ],
    "next_cycle_candidates": [
     {
@@ -343,15 +323,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-23 23:47",
-   "completes": 29,
+   "end": "2026-12-24 00:57",
+   "completes": 11,
    "fleet_pct": 100.0,
    "top": [
-    "#1 verifier: Autonomous Remediation E2E (2026-11-24 01:34)",
-    "#2 builder: Closed-Loop Feedback Scorer (2026-11-24 03:15)",
-    "#3 verifier: Cockpit Live-Staleness Monitor (2026-11-24 03:56)",
-    "#4 designer: Adaptive Information Density (Calm vs. Incident) (2026-11-24 04:06)",
-    "#5 builder: Adaptive Policy Tuner (2026-11-24 06:42)"
+    "#1 verifier: Cockpit Live-Staleness Monitor (2026-11-24 03:19)",
+    "#2 builder: Policy Conflict Detector (2026-11-24 06:55)",
+    "#3 verifier: Autonomy Stall Detector (2026-11-24 07:26)",
+    "#4 builder: Cockpit One-Click Runbook Trigger (2026-11-24 09:29)",
+    "#5 verifier: Closed-Loop Latency Budget (2026-11-24 09:48)"
    ],
    "next_cycle_candidates": [
     {
@@ -409,43 +389,43 @@
   "archivist": {
    "done": 20,
    "total": 20,
-   "end": "2026-11-23 23:47"
+   "end": "2026-11-24 00:57"
   },
   "builder": {
-   "done": 10,
+   "done": 18,
    "total": 20,
-   "end": "2026-11-25 12:37"
+   "end": "2026-11-24 09:29"
   },
   "designer": {
-   "done": 1,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-25 13:48"
+   "end": "2026-11-24 00:57"
   },
   "mechanic": {
    "done": 9,
    "total": 9,
-   "end": "2026-11-23 23:47"
+   "end": "2026-11-24 00:57"
   },
   "orchestrator": {
    "done": 3,
    "total": 3,
-   "end": "2026-11-23 23:47"
+   "end": "2026-11-24 00:57"
   },
   "researcher": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 23:47"
+   "end": "2026-11-24 00:57"
   },
   "scribe": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-23 23:47"
+   "end": "2026-11-24 00:57"
   },
   "verifier": {
-   "done": 10,
+   "done": 11,
    "total": 20,
-   "end": "2026-11-25 01:01"
+   "end": "2026-11-25 00:24"
   }
  },
- "level_up_eta": "2026-11-25 13:48"
+ "level_up_eta": "2026-11-25 00:24"
 }

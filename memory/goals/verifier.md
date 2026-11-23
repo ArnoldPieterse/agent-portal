@@ -25,10 +25,10 @@ Focus: Closed-Loop Autonomy & Fleet Cockpit. Cycle 10: verify the autonomous act
 ## Cycle 14 - 2026-11-23 (topic: Closed-Loop Autonomy & Fleet Cockpit)
 
 1. **Autonomous Remediation E2E** — full closed-loop fault-injection test (detect→diagnose→remediate→verify) with per-stage SLA (verified: 2026-11-24 - self-test rc=0 x2 consecutive (idempotent); R1/R2/R3 SLA-compliant; fixed undefined backup_file + missing top-level shutil import; prior leaf was false closure; artifact memory/verifier/remediation_e2)
-2. **Cockpit Live-Staleness Monitor** — continuous check that /api/fleet/cockpit data is <5min fresh; alert leaf on breach
-3. **Autonomy Stall Detector** — flag any agent with zero file changes across 3 consecutive auto-loop passes
-4. **Closed-Loop Latency Budget** — measure per-segment latency of the autonomy cycle; enforce configurable budgets
-5. **Cockpit UI Playwright Gate** — automated browser test at 3 viewports: panels render, no JS errors, interactive elements clickable
+2. **Cockpit Live-Staleness Monitor** — continuous check that /api/fleet/cockpit data is <5min fresh; alert leaf on breach (pointer: memory/verifier/cockpit-staleness-monitor-cwd-fix-2026-11-24.md)
+3. **Autonomy Stall Detector** — flag any agent with zero file changes across 3 consecutive auto-loop passes (pointer: memory/verifier/stall-detector-verified-2026-11-23.md)
+4. **Closed-Loop Latency Budget** — measure per-segment latency of the autonomy cycle; enforce configurable budgets (pointer: memory/verifier/latency-budget-verified-2026-11-23.md)
+5. **Cockpit UI Playwright Gate** — automated browser test at 3 viewports: panels render, no JS errors, interactive elements clickable (pointer: memory/verifier/cockpit-ui-gate-verified-2026-11-23.md)
 6. **Failure Replay Harness** — replay historical failure scenarios from decision-log; verify applied fixes prevent recurrence
 7. **Goal Lifecycle Audit** — trace every goal through proposed→assigned→worked→verified→closed; flag stuck >48h or missing transitions
 8. **Fleet Health Closed-Loop Test** — simulate VRAM/OOM degradation; verify full autonomous response chain fires end-to-end
