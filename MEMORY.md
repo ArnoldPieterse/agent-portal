@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #8 (post_mortem.py) passed 6/6 ACs; output at memory/ops/post-mortems/<date>-<agent>.md with 5 markdown sections
 - Builder fixed extraction regex: split on `then/do` markers before matching trigger/action; all 4 ACs now pass.
 - Cycle-12 fully closed 2026-11-24: all 10 goals rebuilt + verified, evidence at memory/designer/cycle12-full-closure-2026-11-24.md
 - Goal #10 (Cockpit One-Click Runbook Trigger) in-progress: backend trigger script + API endpoints in agent_portal.py written, not yet verifie
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - All 10 goals now verified complete per Verifier; semantic_search.py built for Archivist goal #
 - Goal #10 Cockpit One-Click Runbook Trigger complete: engine+API+UI built, selftest 8/8 PASS.
 - Goal #10 Cockpit One-Click Runbook Trigger complete: 4 bugs fixed (get_state alias, dict return, _rbData, preflight endpoint), integration t
+- All 20 builder goals verified (goal #10 runbook trigger 8/8, goal #9 policy conflict detector 4/4). No open goals remain in Builder lane.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

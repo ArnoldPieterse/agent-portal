@@ -358,6 +358,71 @@
       "error": null,
       "finished": "2026-11-23T15:44:39.576691+00:00",
       "description": "Echo done"
+    },
+    "d4305105ad6e": {
+      "run_id": "d4305105ad6e",
+      "runbook": "safe_test",
+      "status": "completed",
+      "started": "2026-11-23T15:49:19.301257+00:00",
+      "dry_run": true,
+      "steps_total": 3,
+      "steps_done": 3,
+      "current_step": 3,
+      "progress": [
+        {
+          "step": 1,
+          "description": "Echo hello",
+          "status": "would_execute",
+          "command": "echo hello_from_runbook"
+        },
+        {
+          "step": 2,
+          "description": "Write marker file",
+          "status": "would_execute",
+          "command": "python -c \"import os;os.path.exists('memory/ops/runbooks/.test_marker') and os.remove('memory/ops/runbooks/.test_marker')\""
+        },
+        {
+          "step": 3,
+          "description": "Echo done",
+          "status": "would_execute",
+          "command": "echo runbook_complete"
+        }
+      ],
+      "error": null,
+      "finished": "2026-11-23T15:49:19.339309+00:00",
+      "description": "Echo done"
+    },
+    "59fcc3c41158": {
+      "run_id": "59fcc3c41158",
+      "runbook": "safe_test",
+      "status": "aborted",
+      "started": "2026-11-23T15:49:19.616871+00:00",
+      "dry_run": false,
+      "steps_total": 3,
+      "steps_done": 2,
+      "current_step": 2,
+      "progress": [
+        {
+          "step": 1,
+          "description": "Echo hello",
+          "status": "pass",
+          "pass": true,
+          "exit_code": 0,
+          "stdout": "hello_from_runbook"
+        },
+        {
+          "step": 2,
+          "description": "Write marker file",
+          "status": "pass",
+          "pass": true,
+          "exit_code": 0,
+          "stdout": ""
+        }
+      ],
+      "error": "aborted_by_user",
+      "finished": "2026-11-23T15:49:19.752555+00:00",
+      "description": "Write marker file",
+      "aborted": true
     }
   }
 }
