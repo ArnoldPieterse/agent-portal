@@ -358,3 +358,7 @@
 {"t": "2026-11-23 15:16:33", "job": "cycle_30m", "event": "start", "pid": 20700}
 {"t": "2026-11-23 15:16:33", "job": "cycle_1h", "event": "start", "pid": 26104}
 {"t": "2026-11-23 15:16:33", "job": "schtask_dep_weekly", "event": "start", "pid": 29532}
+{"t": "2026-11-23 15:16:38", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:16:38", "job": "cycle_1h", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:16:38", "job": "schtask_dep_weekly", "event": "done", "rc": 0}
+{"t": "2026-11-23 15:16:43", "job": "cycle_30m", "event": "done", "rc": 0}

@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- kb_sentinel.py (Goal #8) started but blocked on state-file reset fix; selftest partially passing, needs next pass
 - Goal #4 Conflict Resolver has a bug: removal logic doesn't account for marker line offset; fix pending.
 - Broken pointers grew 157→203 (+46/day) on 2026-11-23; date
 - Designer goals 5 & 6 re-opened 2026-11-23 — evidence pointers cited unrelated artifacts; correction note at memory/orchestrator/designer-goa
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #10 (kb_version.py) built and verified 3/3 this pass; Goals #8 & #9 also confirmed passing.
 - Goals 5 & 6 have confirmed stale evidence pointers (Scribe-verified); need fresh cycle-10 leaves before closing out.
 - Builder assisted Archivist Goal #4 (Conflict Resolver): selftest 5/5, prod scan 2626 files→3838 facts→225 conflicts; evidence at memory/buil
+- Root cause found: stale-closure-sweep false-closes goals via positional pointer assignment without content-match; fix doc at memory/ops/poin
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
