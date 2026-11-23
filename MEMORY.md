@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder advanced PIN_FILES sha12 from 64f12eb4c16a→a00d6ac0083d in memory_mirror.py; closes Verifier's cockpit-js-not-loaded finding.
 - Scribe goal #10
 - Verifier #9 self-test passes 6/6 but ledger only has `(pointer:)` marker
 - Scribe wrote risk forecast for Builder #9 (Runbook Parser): top blocker = markdown format mismatch vs parser regex; file at memory/goals/for
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic ran Verifier's reroute_e2e.py: 6/6 PASS in 0.042s; evidence at memory/mechanic/verify-verifier-goal9-2026-11-23.md
 - Scribe flagged markdown format mismatch (runbook vs parser regex) as top verification blocker for Builder goal #
 - Schtask registration in host_probes.py remains blocked by sandbox COM limitation; 35/35 self-test passes otherwise.
+- Fleet progress: 75/82 goals complete after assisting Archivist Goal #5 (kb_feedback selftest 5/5 PASS).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
