@@ -1,0 +1,65 @@
+/* cockpit-decay.css — Autonomy Confidence Decay Indicator
+   Cycle-12 Goal 6 | Designer | 2026-11-24
+   Visual desaturation on verified-closed goals that grows with staleness.
+*/
+
+:root {
+  --decay-step-0: 1;       /* fresh: full saturation */
+  --decay-step-1: 0.75;    /* 24h-7d: mild fade */
+  --decay-step-2: 0.5;     /* 7d-30d: moderate fade */
+  --decay-step-3: 0.3;     /* >30d: heavy fade */
+  --decay-rate-hours: 168; /* configurable decay window in hours (default 7d) */
+}
+
+/* Base: verified-closed goal card with confidence ring */
+.decay-goal {
+  position: relative;
+  transition: filter 280ms ease;
+}
+
+/* Confidence ring (fades as staleness increases) */
+.decay-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  border: 2px solid var(--color-success, #4caf50);
+  opacity: var(--decay-step-0);
+  transition: opacity 280ms ease, border-color 280ms ease;
+}
+
+/* Decay stages */
+.decay-goal[data-decay="1"] { filter: saturate(var(--decay-step-1)); }
+.decay-goal[data-decay="1"] .decay-ring { opacity: var(--decay-step-1); }
+.decay-goal[data-decay="2"] { filter: saturate(var(--decay-step-2)); }
+.decay-goal[data-decay="2"] .decay-ring { opacity: var(--decay-step-2); border-color: var(--color-warn, #ff9800); }
+.decay-goal[data-decay="3"] { filter: saturate(var(--decay-step-3)); }
+.decay-goal[data-decay="3"] .decay-ring { opacity: var(--decay-step-3); border-color: var(--color-muted, #8892a4); }
+
+/* Re-verified snap back to full confidence */
+.decay-goal[data-decay="0"] { filter: saturate(1); }
+.decay-goal[data-decay="0"] .decay-ring { opacity: 1; border-color: var(--color-success, #4caf50); }
+
+/* Staleness label (subtle, bottom-right of card) */
+.decay-stale-label {
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  font-size: 10px;
+  color: var(--color-muted, #8892a4);
+  opacity: 0.7;
+}
+
+/* Light theme override */
+[data-theme="light"] .decay-ring { border-color: var(--color-success-light, #388e3c); }
+[data-theme="light"] .decay-goal[data-decay="2"] .decay-ring { border-color: var(--color-warn-light, #f57c00); }
+
+/* Reduced motion: instant swap */
+@media (prefers-reduced-motion: reduce) {
+  .decay-goal, .decay-ring { transition: none; }
+}
+
+/* Print: show full saturation always */
+@media print {
+  .decay-goal { filter: none !important; }
+  .decay-ring { opacity: 1 !important; }
+}

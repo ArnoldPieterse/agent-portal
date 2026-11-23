@@ -1,0 +1,22 @@
+warning: Failed to set cwd to temp dir
+remediation_e2e.py --self-test
+============================================================
+SLAs: detect<=5000ms, diagnose<=3000ms, remediate<=10000ms, verify<=5000ms, total<=30000ms
+
+  Running R1... PASS (1ms)
+  Running R2... PASS (0ms)
+  Running R3... Traceback (most recent call last):
+  File "Z:\memory\verifier\remediation_e2e.py", line 658, in <module>
+    main()
+    ~~~~^^
+  File "Z:\memory\verifier\remediation_e2e.py", line 645, in main
+    sys.exit(self_test())
+             ~~~~~~~~~^^
+  File "Z:\memory\verifier\remediation_e2e.py", line 599, in self_test
+    results = run_all_scenarios(slas)
+  File "Z:\memory\verifier\remediation_e2e.py", line 571, in run_all_scenarios
+    result = scenarios[name](slas)
+  File "Z:\memory\verifier\remediation_e2e.py", line 509, in run_scenario_r3
+    shutil.rmtree(tmpdir, ignore_errors=True)
+    ^^^^^^
+NameError: name 'shutil' is not defined. Did you forget to import 'shutil'?

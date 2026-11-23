@@ -24,7 +24,7 @@ Focus: Closed-Loop Autonomy & Fleet Cockpit. Cycle 10: verify the autonomous act
 
 ## Cycle 14 - 2026-11-23 (topic: Closed-Loop Autonomy & Fleet Cockpit)
 
-1. **Autonomous Remediation E2E** — full closed-loop fault-injection test (detect→diagnose→remediate→verify) with per-stage SLA
+1. **Autonomous Remediation E2E** — full closed-loop fault-injection test (detect→diagnose→remediate→verify) with per-stage SLA (verified: 2026-11-24 - self-test rc=0 x2 consecutive (idempotent); R1/R2/R3 SLA-compliant; fixed undefined backup_file + missing top-level shutil import; prior leaf was false closure; artifact memory/verifier/remediation_e2)
 2. **Cockpit Live-Staleness Monitor** — continuous check that /api/fleet/cockpit data is <5min fresh; alert leaf on breach
 3. **Autonomy Stall Detector** — flag any agent with zero file changes across 3 consecutive auto-loop passes
 4. **Closed-Loop Latency Budget** — measure per-segment latency of the autonomy cycle; enforce configurable budgets

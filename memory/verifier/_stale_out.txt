@@ -1,0 +1,19 @@
+warning: Failed to set cwd to temp dir
+=== SELF-TEST: cockpit_staleness_monitor.py ===
+
+[TEST 1] Freshness check (threshold=9999min -> should be FRESH)
+  Result: fresh=True, age=580.3min
+  Evidence: file_age=580.3min, ts_age=580.3min, max_age=580.3min, threshold=9999.0min
+
+[TEST 2] Staleness breach detection (threshold=0.001min -> should be STALE)
+  Result: fresh=False, age=580.2552min
+  Evidence: file_age=580.3min, ts_age=580.3min, max_age=580.3min, threshold=0.001min
+  Alert written to: memory\verifier\cockpit-stale-alert-2026-11-23.md
+
+[TEST 3] Missing feed file (simulated via non-existent path)
+  Code path for missing file exists: True
+
+=== SELF-TEST RESULT: ALL PASS ===
+  T1 (fresh path): PASS
+  T2 (stale detection + alert): PASS
+  T3 (missing file code path): PASS

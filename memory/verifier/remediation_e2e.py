@@ -27,6 +27,7 @@ Exit codes:
 import argparse
 import json
 import os
+import shutil
 import sys
 import tempfile
 import time
@@ -36,6 +37,10 @@ from pathlib import Path
 
 def _tmpdir():
     d = "_e2e_tmp"
+    # Idempotent: wipe any stale temp dir from a prior (possibly crashed) run
+    # before recreating. Scenarios are sequential and self-contained, so this is safe.
+    import shutil as _shutil
+    _shutil.rmtree(d, ignore_errors=True)
     os.makedirs(d, exist_ok=True)
     return d
 
@@ -377,10 +382,9 @@ def run_scenario_r1(slas):
     
     total_ms = elapsed_ms(t_detect_start)
     
-    # Cleanup
-    for f in [state_file, backup_file]:
-        if os.path.exists(f):
-            os.remove(f)
+    # Cleanup (idempotent: wipe whole temp dir, matching R3's pattern).
+    # NOTE: previous version referenced an undefined `backup_file` (NameError).
+    shutil.rmtree(tmpdir, ignore_errors=True)
     
     return {"scenario": "R1", "stages": [r.to_dict() for r in results],
             "total_ms": total_ms, "passed": ver.passed,

@@ -1,0 +1,96 @@
+/* cockpit-fleetboard.css — Multi-Goal Concurrency View
+   Cycle-12 Goal 3 | Designer | 2026-11-24
+   Compact fleet board: each goal's loop-stage as a node on shared timeline,
+   color-coded by health, spatially grouped by agent. Legible at 1024px.
+*/
+
+/* Fleet board container */
+.fleetboard {
+  position: relative;
+  min-height: 320px;
+  padding: var(--sp-16, 16px);
+}
+
+/* Timeline axis (shared horizontal line) */
+.fb-timeline {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  right: 2rem;
+  height: 2px;
+  background: var(--color-border, #333);
+}
+
+/* Goal rows grouped by agent */
+.fb-row {
+  position: relative;
+  margin-bottom: var(--sp-12, 12px);
+  padding-left: 2rem;
+}
+
+/* Agent label (grouping axis - spatial) */
+.fb-agent-label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--fs-11, 11px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted, #8892a4);
+  width: 1.5rem;
+}
+
+/* Goal nodes on timeline */
+.fb-node {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border, #333);
+  transition: transform 0.2s ease;
+}
+.fb-node:hover { transform: translate(-50%, -50%) scale(1.4); }
+
+/* Health color coding (chromatic axis - distinct from spatial grouping) */
+.fb-node--ok { background: var(--color-success, #4caf50); border-color: var(--color-success); }
+.fb-node--warn { background: var(--color-warn, #ff9800); border-color: var(--color-warn); }
+.fb-node--critical { background: var(--color-critical, #e53935); border-color: var(--color-critical); }
+
+/* Stage label - bold text on each dot for < 2s identifiability */
+.fb-stage-label {
+  position: absolute;
+  top: calc(50% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--fs-10, 10px);
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--color-text, #e0e0e0);
+}
+
+/* Staggered top offsets to prevent overlap with >= 5 concurrent goals */
+.fb-row:nth-child(1) .fb-node { top: 20%; }
+.fb-row:nth-child(2) .fb-node { top: 40%; }
+.fb-row:nth-child(3) .fb-node { top: 60%; }
+.fb-row:nth-child(4) .fb-node { top: 80%; }
+.fb-row:nth-child(5) .fb-node { top: 50%; }
+
+/* Empty state */
+.fb-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: var(--fs-14, 14px);
+  color: var(--color-muted, #8892a4);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .fb-node { transition: none; }
+  .fb-node:hover { transform: translate(-50%, -50%); }
+}

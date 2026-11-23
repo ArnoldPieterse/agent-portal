@@ -1,0 +1,76 @@
+/* cockpit-trend.css — Cross-Cycle Trend Strip
+   Cycle-12 Goal 8 | Designer | 2026-11-24
+   Persistent horizontal strip: one dot per cycle, color-coded by outcome.
+   Fits within 32px height. Works in light + dark themes.
+*/
+
+.trend-strip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 var(--sp-12, 12px);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+/* Individual cycle dot */
+.trend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  position: relative;
+}
+.trend-dot:hover { transform: scale(1.5); z-index: 1; }
+
+/* Outcome colors */
+.trend-dot--all-reached { background: var(--color-success, #4caf50); }
+.trend-dot--partial { background: var(--color-warn, #ff9800); }
+.trend-dot--missed { background: var(--color-critical, #e53935); }
+
+/* Hover tooltip (shows cycle detail) */
+.trend-dot::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-surface, #1a1a2e);
+  color: var(--color-text, #e0e0e0);
+  font-size: 10px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+.trend-dot:hover::after { opacity: 1; }
+
+/* Trend direction indicator (improving/declining/stable) */
+.trend-direction {
+  font-size: 10px;
+  margin-left: auto;
+  padding-left: 8px;
+  font-weight: 600;
+}
+.trend-direction--improving { color: var(--color-success, #4caf50); }
+.trend-direction--declining { color: var(--color-critical, #e53935); }
+.trend-direction--stable { color: var(--color-muted, #8892a4); }
+
+/* Light theme */
+[data-theme="light"] .trend-dot::after {
+  background: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .trend-dot, .trend-dot::after { transition: none; }
+  .trend-dot:hover { transform: none; }
+}

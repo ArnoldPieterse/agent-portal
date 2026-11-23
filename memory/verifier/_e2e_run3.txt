@@ -1,0 +1,16 @@
+warning: Failed to set cwd to temp dir
+remediation_e2e.py --self-test
+============================================================
+SLAs: detect<=5000ms, diagnose<=3000ms, remediate<=10000ms, verify<=5000ms, total<=30000ms
+
+  Running R1... PASS (1ms)
+  Running R2... PASS (0ms)
+  Running R3... PASS (8ms)
+
+------------------------------------------------------------
+RESULT: 3/3 scenarios passed (SLA-compliant)
+
+Negative test: valid state should NOT trigger detection...
+  [PASS] Valid state correctly NOT flagged
+
+OVERALL: ALL GREEN

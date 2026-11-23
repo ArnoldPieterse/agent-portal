@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cockpit Knowledge Impact — Cycle-12 Goal 9</title>
+<style>
+:root { --ki-surface:#16213e; --ki-border:#0f3460; --ki-text:#e0e0e0; --ki-muted:#8892a4; --ki-stale:#ff9800; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,sans-serif;background:#1a1a2e;color:var(--ki-text);padding:2rem}
+.ki-panel{background:var(--ki-surface);border:1px solid var(--ki-border);border-radius:8px;padding:1.5rem;max-width:640px;margin:0 auto}
+.ki-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.ki-toggle{background:none;border:1px solid var(--ki-border);color:var(--ki-text);padding:4px 12px;border-radius:4px;cursor:pointer;font-size:12px}
+.ki-list{list-style:none}
+.ki-item{padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center}
+.ki-item:last-child{border-bottom:none}
+.ki-path{font-family:monospace;font-size:0.8rem;color:var(--ki-text)}
+.ki-meta{font-size:0.7rem;color:var(--ki-muted);text-align:right}
+.ki-item--superseded .ki-path{color:var(--ki-stale);text-decoration:line-through}
+.ki-badge{display:inline-block;font-size:0.6rem;padding:1px 5px;background:var(--ki-stale);color:#000;border-radius:3px;margin-left:4px;font-weight:700}
+.ki-empty{text-align:center;padding:2rem;color:var(--ki-muted);font-size:0.9rem}
+</style>
+</head>
+<body>
+<div class="ki-panel" id="knowledgeImpact">
+  <div class="ki-header">
+    <h2 style="font-size:1rem">Knowledge Impact</h2>
+    <button class="ki-toggle" onclick="toggleExpand()" aria-expanded="false" aria-controls="kiList">Expand</button>
+  </div>
+  <!-- Cited leaves for a closed goal -->
+  <ul class="ki-list" id="kiList" role="list">
+    <li class="ki-item">
+      <span class="ki-path">memory/designer/density-cycle12-evidence.md</span>
+      <span class="ki-meta">verified 2026-11-24T01:02Z<br>fresh ✓</span>
+    </li>
+    <li class="ki-item ki-item--superseded">
+      <span class="ki-path">memory/designer/density-cycle12-evidence.md<span class="ki-badge">SUPERSEDED</span></span>
+      <span class="ki-meta">verified 2026-11-23T22:26Z<br>superseded by 2026-11-24 version</span>
+    </li>
+    <li class="ki-item">
+      <span class="ki-path">memory/goals/designer.md</span>
+      <span class="ki-meta">last modified 2026-11-23T20:00Z<br>fresh ✓</span>
+    </li>
+  </ul>
+  <!-- Empty state (shown when no citations) -->
+  <div class="ki-empty" id="kiEmpty" style="display:none">No citations recorded for this goal.</div>
+</div>
+<script>
+function toggleExpand() {
+  const list = document.getElementById('kiList');
+  const btn = document.querySelector('.ki-toggle');
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', String(!expanded));
+  btn.textContent = expanded ? 'Expand' : 'Collapse';
+  list.style.display = expanded ? 'none' : 'block';
+}
+// API for cockpit.js: renderKnowledgeImpact(goalId, citations[])
+window.knowledgeImpact = {
+  render(goalId, citations) {
+    const list = document.getElementById('kiList');
+    const empty = document.getElementById('kiEmpty');
+    if (!citations || citations.length === 0) {
+      list.style.display = 'none';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+    list.style.display = 'block';
+    list.innerHTML = citations.map(c => `
+      <li class="ki-item${c.superseded ? ' ki-item--superseded' : ''}">
+        <span class="ki-path">${c.path}${c.superseded ? '<span class="ki-badge">SUPERSEDED</span>' : ''}</span>
+        <span class="ki-meta">verified ${c.verifiedAt}<br>${c.fresh ? 'fresh ✓' : 'stale'}</span>
+      </li>`).join('');
+  }
+};
+</script>
+</body>
+</html>

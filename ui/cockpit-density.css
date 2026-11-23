@@ -1,0 +1,86 @@
+/* cockpit-density.css — Adaptive Information Density (Calm vs Incident)
+   Cycle-12 Goal 1 | Designer | 2026-11-24
+   Two modes: .ckp--calm (default, <=3 panels) and .ckp--incident (all panels + trigger highlight).
+   Transition <500ms; reduced-motion path is instant swap.
+*/
+
+/* --- Density tokens --- */
+:root {
+  --density-transition: 280ms ease;
+  --density-panel-gap: var(--sp-12, 12px);
+  --density-trigger-pulse: 1.2s ease-in-out infinite;
+}
+
+/* --- Calm mode (default state) --- */
+.ckp--calm .ckp__panel {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity var(--density-transition), transform var(--density-transition);
+}
+
+/* Only health + autonomy loops visible in calm mode (2 primary panels) */
+.ckp--calm .panel--health,
+.ckp--calm .panel--agents {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* Goal bar stays in header regardless of density mode */
+.ckp--calm .goalbar {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* --- Incident mode (auto-triggered on critical/degrading) --- */
+.ckp--incident .ckp__panel {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  transition: opacity var(--density-transition), transform var(--density-transition);
+}
+
+/* Triggering panel gets pulsing border to draw operator's eye */
+.ckp--incident .ckp__panel[data-health="critical"],
+.ckp--incident .ckp__panel[data-health="degrading"] {
+  outline: 2px solid var(--color-critical, #e53935);
+  outline-offset: 2px;
+  animation: cd-trigger-pulse var(--density-trigger-pulse);
+}
+
+@keyframes cd-trigger-pulse {
+  0%, 100% { outline-color: var(--color-critical, #e53935); }
+  50%      { outline-color: transparent; }
+}
+
+/* Incident mode: tighten spacing to fit more panels without scroll */
+.ckp--incident .ckp__grid {
+  gap: var(--density-panel-gap);
+}
+
+/* --- Reduced-motion: instant swap, no animation --- */
+@media (prefers-reduced-motion: reduce) {
+  .ckp--calm .ckp__panel,
+  .ckp--incident .ckp__panel {
+    transition: none;
+  }
+  :root {
+    --density-transition: 0ms;
+  }
+  .ckp--incident .ckp__panel[data-health="critical"],
+  .ckp--incident .ckp__panel[data-health="degrading"] {
+    animation: none;
+    outline-color: var(--color-critical, #e53935);
+  }
+}
+
+/* --- Mobile / narrow: calm mode shows only health (1 panel) --- */
+@media (max-width: 768px) {
+  .ckp--calm .panel--agents {
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+  }
+}

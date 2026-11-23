@@ -1,0 +1,4 @@
+warning: Failed to set cwd to temp dir
+STALE: cockpit feed is STALE (age=580.6min >= 5.0min)
+  file_age=580.6min, ts_age=580.6min, max_age=580.6min, threshold=5.0min
+  Alert written to: memory\verifier\cockpit-stale-alert-2026-11-23.md

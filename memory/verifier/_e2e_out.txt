@@ -1,0 +1,25 @@
+warning: Failed to set cwd to temp dir
+remediation_e2e.py --self-test
+============================================================
+SLAs: detect<=5000ms, diagnose<=3000ms, remediate<=10000ms, verify<=5000ms, total<=30000ms
+
+  Running R1... Traceback (most recent call last):
+  File "Z:\memory\verifier\remediation_e2e.py", line 655, in <module>
+    main()
+    ~~~~^^
+  File "Z:\memory\verifier\remediation_e2e.py", line 642, in main
+    sys.exit(self_test())
+             ~~~~~~~~~^^
+  File "Z:\memory\verifier\remediation_e2e.py", line 596, in self_test
+    results = run_all_scenarios(slas)
+  File "Z:\memory\verifier\remediation_e2e.py", line 568, in run_all_scenarios
+    result = scenarios[name](slas)
+  File "Z:\memory\verifier\remediation_e2e.py", line 322, in run_scenario_r1
+    os.makedirs(backup_dir)
+    ~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\White\.unsloth\studio\unsloth_studio\Lib\site-packages\studio\backend\core\inference\sandbox_site\sitecustomize.py", line 262, in _makedirs
+    return original_makedirs(_remap(name), *args, **kwargs)
+  File "<frozen os>", line 228, in makedirs
+  File "C:\Users\White\.unsloth\studio\unsloth_studio\Lib\site-packages\studio\backend\core\inference\sandbox_site\sitecustomize.py", line 265, in _mkdir
+    return original_mkdir(_remap(path), *args, **kwargs)
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: '_e2e_tmp\\backups'

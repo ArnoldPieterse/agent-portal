@@ -1,0 +1,126 @@
+/* cockpit-brake.css — Operator Emergency Brake UX
+   Cycle-12 Goal 5 | Designer | 2026-11-24
+   Prominent but non-accidental HOLD control. Pauses all pending autonomous actions.
+*/
+
+:root {
+  --brake-size: 56px;
+  --brake-color: #e53935;
+  --brake-glow: rgba(229, 57, 53, 0.4);
+}
+
+/* HOLD button — fixed bottom-right, always visible without scrolling */
+.brake-trigger {
+  position: fixed;
+  bottom: var(--sp-24, 24px);
+  right: var(--sp-24, 24px);
+  width: var(--brake-size);
+  height: var(--brake-size);
+  border-radius: 50%;
+  background: var(--brake-color);
+  color: #fff;
+  font-weight: 800;
+  font-size: var(--fs-12, 12px);
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  z-index: 9500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.brake-trigger:hover { transform: scale(1.08); box-shadow: 0 6px 16px var(--brake-glow); }
+.brake-trigger:focus { outline: 3px solid #fff; outline-offset: 2px; }
+
+/* HOLD active state — fleet-wide visual signal */
+body.brake-active .brake-trigger {
+  background: #fff;
+  color: var(--brake-color);
+  animation: brake-pulse 1s ease-in-out infinite;
+}
+@keyframes brake-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--brake-glow); }
+  50% { box-shadow: 0 0 0 12px transparent; }
+}
+
+/* Paused actions panel — shows exactly which actions are paused */
+.brake-paused {
+  position: fixed;
+  bottom: calc(var(--sp-24, 24px) + var(--brake-size) + var(--sp-12, 12px));
+  right: var(--sp-24, 24px);
+  width: 280px;
+  background: var(--color-surface, #1a1a2e);
+  border: 1px solid var(--brake-color);
+  border-radius: var(--radius-md, 8px);
+  padding: var(--sp-16, 16px);
+  z-index: 9400;
+  display: none;
+}
+body.brake-active .brake-paused { display: block; }
+
+.brake-paused h3 {
+  font-size: var(--fs-12, 12px);
+  text-transform: uppercase;
+  color: var(--brake-color);
+  margin-bottom: var(--sp-8, 8px);
+}
+
+/* Per-action list with stage labels */
+.brake-paused ul { list-style: none; }
+.brake-paused li {
+  font-size: var(--fs-13, 13px);
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.brake-paused li:last-child { border-bottom: none; }
+.brake-stage { font-weight: 700; color: var(--color-muted, #8892a4); margin-right: 6px; }
+
+/* Resume dialog — requires deliberate confirmation (type RESUME) */
+.brake-resume-dialog {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 9600;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+body.brake-resuming .brake-resume-dialog { display: flex; }
+
+.brake-resume-card {
+  background: var(--color-surface, #1a1a2e);
+  border: 2px solid var(--brake-color);
+  border-radius: var(--radius-lg, 12px);
+  padding: var(--sp-32, 32px);
+  text-align: center;
+  max-width: 360px;
+}
+.brake-resume-card input {
+  margin: var(--sp-16, 16px) 0;
+  padding: var(--sp-8, 8px) var(--sp-12, 12px);
+  font-size: var(--fs-14, 14px);
+  text-align: center;
+  border: 1px solid var(--color-border, #333);
+  background: transparent;
+  color: var(--color-text, #e0e0e0);
+}
+
+/* Hold-to-activate animation on brake button (prevents accidental trigger) */
+.brake-trigger .hold-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  transition: border-color 2s linear;
+}
+.brake-trigger.holding .hold-ring { border-color: var(--brake-color); }
+
+/* Autonomy indicator shows HOLD state */
+.autonomy-indicator--held {
+  color: var(--brake-color) !important;
+  font-weight: 800;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .brake-trigger, body.brake-active .brake-trigger { animation: none; transition: none; }
+}

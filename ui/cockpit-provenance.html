@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cockpit Provenance Overlay — Cycle-12 Goal 2</title>
+<style>
+/* cockpit-provenance styles (spec + demo) */
+:root {
+  --prov-panel-w: 420px;
+  --prov-bg: #1a1a2e;
+  --prov-surface: #16213e;
+  --prov-border: #0f3460;
+  --prov-text: #e0e0e0;
+  --prov-muted: #8892a4;
+  --prov-agent: #4fc3f7;
+  --prov-evidence: #81c784;
+  --prov-verify: #ffb74d;
+  --prov-stale: #ff9800;
+  --prov-radius: 8px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--prov-bg); color: var(--prov-text); min-height: 100vh; padding: 2rem; }
+h1 { font-size: 1.25rem; margin-bottom: 1rem; }
+
+/* Provenance hooks on cockpit data points */
+.prov-hook {
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px dotted var(--prov-muted);
+  transition: border-color 0.2s;
+}
+.prov-hook:hover, .prov-hook:focus { border-bottom-color: var(--prov-agent); outline: none; }
+.prov-hook::after {
+  content: 'ⓘ';
+  font-size: 0.7rem;
+  position: absolute;
+  top: -2px; right: -12px;
+  color: var(--prov-muted);
+}
+
+/* Overlay panel */
+.prov-overlay {
+  position: fixed;
+  top: 0; right: -var(--prov-panel-w);
+  width: var(--prov-panel-w);
+  max-width: 90vw;
+  height: 100vh;
+  background: var(--prov-surface);
+  border-left: 1px solid var(--prov-border);
+  z-index: 9000;
+  padding: 1.5rem;
+  overflow-y: auto;
+  transition: right 280ms ease;
+}
+.prov-overlay.open { right: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .prov-overlay { transition: none; }
+}
+
+/* Chain nodes */
+.prov-chain { list-style: none; margin-top: 1rem; }
+.prov-hop {
+  position: relative;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid var(--prov-muted);
+  background: rgba(255,255,255,0.03);
+  border-radius: 0 var(--prov-radius) var(--prov-radius) 0;
+}
+.prov-hop--agent { border-left-color: var(--prov-agent); }
+.prov-hop--evidence { border-left-color: var(--prov-evidence); }
+.prov-hop--verify { border-left-color: var(--prov-verify); }
+.prov-hop .hop-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--prov-muted); margin-bottom: 0.25rem; }
+.prov-hop .hop-actor { font-weight: 600; font-size: 0.9rem; }
+.prov-hop .hop-action { font-size: 0.8rem; color: var(--prov-text); margin-top: 0.2rem; }
+
+/* Stale flag */
+.prov-hop[data-stale="true"] {
+  border-left-color: var(--prov-stale);
+  background: rgba(255,152,0,0.06);
+}
+.stale-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  padding: 0.1rem 0.4rem;
+  background: var(--prov-stale);
+  color: #000;
+  border-radius: 3px;
+  margin-left: 0.5rem;
+  font-weight: 700;
+}
+
+/* Close button */
+.prov-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: none;
+  border: 1px solid var(--prov-border);
+  color: var(--prov-text);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.prov-close:focus { outline: 2px solid var(--prov-agent); }
+
+/* Demo cockpit grid */
+.demo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.demo-panel { background: var(--prov-surface); border: 1px solid var(--prov-border); border-radius: var(--prov-radius); padding: 1rem; }
+</style>
+</head>
+<body>
+<h1>Cockpit Provenance Overlay — Spec + Demo</h1>
+<p class="demo-grid" style="grid-column:1/-1; margin-bottom:1rem;">
+  Click any highlighted data point to open its provenance chain.
+</p>
+
+<!-- Demo cockpit data points with provenance hooks -->
+<div class="demo-grid">
+  <div class="demo-panel">
+    <span class="prov-hook" tabindex="0" role="button" data-prov="health-score"
+      aria-label="Open provenance for fleet health score" onclick="openProvenance('health-score')">
+      Fleet Health: <strong>73/102</strong>
+    </span>
+  </div>
+  <div class="demo-panel">
+    <span class="prov-hook" tabindex="0" role="button" data-prov="autonomy-level"
+      aria-label="Open provenance for autonomy level" onclick="openProvenance('autonomy-level')">
+      Autonomy: <strong>Level 4</strong>
+    </span>
+  </div>
+  <div class="demo-panel">
+    <span class="prov-hook" tabindex="0" role="button" data-prov="risk-item-1"
+      aria-label="Open provenance for risk item" onclick="openProvenance('risk-item-1')">
+      Risk: <strong>White VRAM 92%</strong>
+    </span>
+  </div>
+</div>
+
+<!-- Provenance overlay (slide-in panel) -->
+<aside class="prov-overlay" id="provOverlay" role="dialog" aria-modal="true" aria-label="Decision provenance">
+  <button class="prov-close" onclick="closeProvenance()" aria-label="Close provenance panel">✕ Close</button>
+  <h2 id="provTitle">Provenance</h2>
+  <ol class="prov-chain" id="provChain"></ol>
+</aside>
+
+<script>
+// Provenance data (in production, fetched from /api/provenance/<decision-id>)
+const provenanceData = {
+  'health-score': {
+    label: 'Fleet Health Score',
+    value: '73/102',
+    hops: [
+      { type: 'agent', actor: 'Mechanic', action: 'Computed fleet health from probe data', evidence: 'memory/fleet/probes/white.json' },
+      { type: 'evidence', actor: 'Probe: white', action: 'VRAM 92%, CPU 78%, models loaded: 3', evidence: 'probe timestamp 2026-11-24T00:45Z' },
+      { type: 'verify', actor: 'Verifier', action: 'Cross-checked with Red probe; discrepancy < 5%', evidence: 'memory/verifier/fleet-check-2026-11-24.md' }
+    ]
+  },
+  'autonomy-level': {
+    label: 'Autonomy Level',
+    value: 'Level 4 (Supervised)',
+    hops: [
+      { type: 'agent', actor: 'Orchestrator', action: 'Set autonomy to L4 after cycle-12 goal-setting', evidence: 'memory/goals/orchestrator.md' },
+      { type: 'evidence', actor: 'Cycle report', action: '9/10 goals reached in cycle 11', evidence: 'memory/levels/level_11_report.md' },
+      { type: 'verify', actor: 'Researcher', action: 'Verified goal ledger matches actual file state', evidence: 'goal_ledger.json generated 2026-11-23T22:00Z' }
+    ]
+  },
+  'risk-item-1': {
+    label: 'Risk: White VRAM 92%',
+    value: 'CRITICAL',
+    hops: [
+      { type: 'agent', actor: 'Mechanic', action: 'Flagged VRAM > 90% threshold on White host', evidence: 'memory/ops/fleet-metrics.jsonl' },
+      { type: 'evidence', actor: 'Probe: white', action: 'VRAM 92% at 2026-11-24T00:45Z (stale: 8 days since last full re-verify)', evidence: 'probe data', stale: true, daysOld: 8 },
+      { type: 'verify', actor: 'Verifier', action: 'Last full verification was 8 days ago — flagged stale', evidence: 'memory/verifier/stale-check-2026-11-16.md' }
+    ]
+  }
+};
+
+let currentHook = null;
+
+function openProvenance(id) {
+  const data = provenanceData[id];
+  if (!data) return;
+  currentHook = document.querySelector(`[data-prov="${id}"]`);
+  document.getElementById('provTitle').textContent = data.label;
+  renderChain(data.hops.slice(0, 3)); // enforce max 3 hops
+  const overlay = document.getElementById('provOverlay');
+  overlay.classList.add('open');
+  overlay.querySelector('.prov-close').focus();
+}
+
+function closeProvenance() {
+  document.getElementById('provOverlay').classList.remove('open');
+  if (currentHook) currentHook.focus();
+  currentHook = null;
+}
+
+function renderChain(hops) {
+  const chain = document.getElementById('provChain');
+  chain.innerHTML = '';
+  hops.forEach((hop, i) => {
+    const li = document.createElement('li');
+    li.className = `prov-hop prov-hop--${hop.type}`;
+    if (hop.stale) li.setAttribute('data-stale', 'true');
+    const staleBadge = hop.stale ? `<span class="stale-badge">STALE (${hop.daysOld}d)</span>` : '';
+    li.innerHTML = `
+      <div class="hop-label">Hop ${i+1}: ${hop.type}</div>
+      <div class="hop-actor">${hop.actor}${staleBadge}</div>
+      <div class="hop-action">${hop.action}</div>
+    `;
+    chain.appendChild(li);
+  });
+}
+
+// Keyboard: Escape closes overlay
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeProvenance();
+});
+
+// Expose API for cockpit.js integration
+window.provenanceOverlay = { open: openProvenance, close: closeProvenance };
+</script>
+</body>
+</html>

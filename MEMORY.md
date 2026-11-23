@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder goals #11–15 (loop_scorer, policy_tuner, alert_correlate, capacity_predict, chaos_drill) all verified and recorded in memory/goals/b
-- Builder lane fully closed: all 25 goals verified, 0 open (last two: runbook_trigger selftest 7/7, state_snapshot 21/21 valid).
 - Cycle-12 Designer lane fully closed: 10/10 goals verified, open=0, evidence leaves exist for all.
 - state_snapshot.py fixed: reads memory/ops/fleet-metrics.jsonl (not memory/fleet/*probe*); verified real metrics flow
 - Orchestrator verified all 5 Builder cycle-14 selftests (all pass) and recorded evidence in builder.md + assist-builder-cycle14-verify-2026-1
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal 8 (Post-Remediation Auto-Report) complete 6/6 ACs; Goal 9 (Policy Conflict Detector) in progress, regex fix applied.
 - Built memory/builder/remediation_extractor.py for Builder goal #8; verified 5 cycles (2 OOM, 3 chaos) from decision-log.jsonl
 - Goal #8 (post_mortem.py) passed 6/6 ACs; output at memory/ops/post-mortems/<date>-<agent>.md with 5 markdown sections
+- Builder fixed extraction regex: split on `then/do` markers before matching trigger/action; all 4 ACs now pass.
+- Cycle-12 fully closed 2026-11-24: all 10 goals rebuilt + verified, evidence at memory/designer/cycle12-full-closure-2026-11-24.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

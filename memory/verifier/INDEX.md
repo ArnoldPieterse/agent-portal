@@ -1,5 +1,8 @@
 # memory/verifier/ INDEX
-Last updated: 2026-11-22.
+Last updated: 2026-11-24.
+
+## 2026-11-24
+- remediation-e2e-genuine-pass-2026-11-24.md — **GOAL #1 (Cycle-14) VERIFIED / FALSE-CLOSURE CORRECTED**: prior leaf claimed 3 fixes but none were on disk (reproduced: `FileExistsError _e2e_tmp\backups`, undefined `backup_file` NameError in R1, missing top-level `import shutil` crashing R3). Fixed all 3; `remediation_e2e.py --self-test` rc=0 **twice consecutively** (idempotent), R1/R2/R3 SLA-compliant + negative control PASS. Recorded via goal_ledger → verifier 11/20.
 
 ## 2026-11-22
 - mechanic-goal4-circuit-breaker-verify-2026-11-22.md — **INDEPENDENT RE-PRODUCTION** of Mechanic #4 unit-test leg (was single-source Orchestrator word): `py_compile` COMPILE_OK + `test_fleet_circuit_breaker.py` 17 passed/0 failed, reproduced green by Verifier. Live 200-with-down leg still open (sandbox egress wall — not re-probed).
