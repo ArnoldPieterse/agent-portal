@@ -20,3 +20,4 @@
 {"t": "2026-11-23 15:50:53", "event": "exit-duplicate", "existing": [24732]}
 {"t": "2026-11-23 16:12:39", "event": "host-start", "pid": 4492}
 {"t": "2026-11-23 16:12:39", "event": "exit-duplicate", "existing": [24732]}
+{"t": "2026-11-23 17:46:30", "event": "spawned", "what": "portal", "pid": 20124, "argv": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\Workspace\\agent_portal.py"}

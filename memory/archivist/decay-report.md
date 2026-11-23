@@ -1,6 +1,6 @@
 # Decay report 2026-11-23
 
-Leaves: 9425 | flagged (<0.35): 0
+Leaves: 9431 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -8497,6 +8497,7 @@ Leaves: 9425 | flagged (<0.35): 0
 | memory/goals/designer-goals5-6-stale-resolution-forecast-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-archivist-g3-closure-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-builder-g6-fleet-panel-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/goals/forecast-builder-goal9-runbook-exec.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-mechanic-goal1-loadtest-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast_engine.py | 0 | 0 | n | 0.550 |
@@ -8564,6 +8565,7 @@ Leaves: 9425 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261123-145757.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-150530.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261123-161510.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261123-172332.json | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/levels/level_1_20261123-060001.md | 0 | 0 | n | 0.550 |
@@ -8572,6 +8574,7 @@ Leaves: 9425 | flagged (<0.35): 0
 | memory/llm/hotload-runbook.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/agent-cards-assist-builder-g6-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/archivist-goal2-auto-quarantine-evidence-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/assist-archivist-g2-quarantine-verify-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-23b.md | 0 | 0 | n | 0.550 |
@@ -8731,6 +8734,7 @@ Leaves: 9425 | flagged (<0.35): 0
 | memory/ops/watchdog.log | 0 | 0 | n | 0.550 |
 | memory/ops/wcag-aa-light-theme-fixes-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/wcag_contrast_check.py | 0 | 0 | n | 0.550 |
+| memory/ops/wedge-archivist-lvl3-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/_chk.txt | 0 | 0 | n | 0.550 |
 | memory/ops/_chk2.txt | 0 | 0 | n | 0.550 |
 | memory/ops/_chk3.py | 0 | 0 | n | 0.550 |
@@ -8750,6 +8754,7 @@ Leaves: 9425 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.1304d9b7a1 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.20cf91fd61 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.23001df513 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.2eb53677b0 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.39a8d6df65 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.414995d489 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.4dc0eca68a | 0 | 0 | n | 0.550 |
@@ -9106,6 +9111,7 @@ Leaves: 9425 | flagged (<0.35): 0
 | memory/goals/mechanic-goal2-model-lifecycle-forecast-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/goal2-mirror-heal-verified-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/goal7-log-rotate-verified-2026-11-23.md | 0 | 1 | Y | 0.769 |
+| memory/orchestrator/designer-goal5-closure-assist-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/researcher/decay-run3-assist-archivist-goal3-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/researcher/gap-fill-script-assist-2026-11-23.md | 0 | 1 | Y | 0.769 |
 | memory/researcher/memory-integrity-fresh-count-2026-11-23.md | 0 | 1 | Y | 0.769 |
