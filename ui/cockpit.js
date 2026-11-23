@@ -58,6 +58,11 @@
       "<div class=sec>Recent decisions</div><div id=ckpDecs></div>";
     document.body.appendChild(panel);
     btn.onclick = function () { panel.classList.toggle("open"); if (panel.classList.contains("open") && !timer) start(); };
+    document.addEventListener("click", function (e) {
+      if (!panel || !panel.classList.contains("open")) return;
+      if (panel.contains(e.target) || btn.contains(e.target)) return;
+      panel.classList.remove("open");
+    });
   }
   function bar(p, color) { return "<div class=ckbar><i style='width:" + Math.max(0, Math.min(100, p || 0)) + "%;background:" + color + "'></i></div>"; }
 
