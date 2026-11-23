@@ -1432,5 +1432,11 @@
 "text": "**Autonomy Precision/Recall Tracker** \u2014 classify each autonomous action as correct/false-positive/false-negative; weekly metric (verified: 2",
 "agent": "verifier",
 "at": "2026-11-24"
+},
+{
+"sig": "28f4db9aab48f7c7",
+"text": "**Policy Conflict Detector** - `python memory/builder/policy_conflict.py`: scan all policy files (memory/ops/*.md, runbooks) for overlapping",
+"agent": "builder",
+"at": "2026-11-24"
 }
 ]

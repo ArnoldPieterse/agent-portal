@@ -68,10 +68,20 @@ def extract_rules_from_text(text, source_file):
         if trigger and len(trigger) >= 5:
             # Look ahead for action (next 3 lines or same line after comma/then)
             action = None
-            # Same-line: "when X, then Y", "if X; do Y", or "when X, immediately Y"
-            same_line_action = re.search(r"[;,]\s*(?:then\s+|do\s+)?(?:immediately\s+|automatically\s+)?(.{3,120})$", line)
+            # Same-line: "when X, then Y", "if X; do Y", "when X: then Y", or "when X, immediately Y"
+            same_line_action = re.search(r"[;,:]\s*(?:then\s+|do\s+)?(?:immediately\s+|automatically\s+)?(.{3,120})$", line)
             if same_line_action:
                 action = same_line_action.group(1).strip().rstrip(".")
+                # Strip the action portion from trigger (e.g. "oom detected on host: then restart..." -> "oom detected on host")
+                sep_pos = max(line.rfind(":"), line.rfind(";"), line.rfind(","))
+                if sep_pos > 0:
+                    trigger_part = line[:sep_pos].strip()
+                    # Re-extract trigger from the stripped portion
+                    for pat in TRIGGER_PATTERNS:
+                        m2 = re.search(pat, trigger_part, re.IGNORECASE)
+                        if m2 and len(m2.group(1).strip()) >= 3:
+                            trigger = normalize_trigger(m2.group(1))
+                            break
             
             # Next lines
             if not action:

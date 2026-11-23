@@ -1,6 +1,18 @@
 {
-  "generated_at": "2026-11-23T14:46:31.384061+00:00",
-  "total_rules_scanned": 19,
-  "conflicts_found": 0,
-  "conflicts": []
+  "generated_at": "2026-11-23T15:25:13.296414+00:00",
+  "total_rules_scanned": 31,
+  "conflicts_found": 1,
+  "conflicts": [
+    {
+      "rule_a": "head \u2192 `c67c054 smoke test r20`",
+      "rule_b": "head \u2192 `f8d9772`",
+      "file_a": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\verifier-git-health-2026-11-15b.md",
+      "file_b": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\verifier-git-health-2026-11-15b.md",
+      "line_a": 12,
+      "line_b": 15,
+      "trigger_overlap": "head",
+      "action_divergence": "A prescribes: `c67c054 smoke test r20` | B prescribes: `f8d9772`",
+      "severity": "medium"
+    }
+  ]
 }
