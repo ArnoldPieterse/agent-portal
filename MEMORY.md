@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe wrote risk forecast for Builder #9 (Runbook Parser): top blocker = markdown format mismatch vs parser regex; file at memory/goals/for
-- Archivist goal #2 (Stale-Knowledge Auto-Quarantine) verified & closed; evidence at memory/mechanic/assist
-- Wired cockpit-autonomy.css into index.html; pin advanced to f174dd4be49d, evidence in memory/designer/
-- Builder produced forecast for Archivist goal #8 (KB Regression Sentinel) at `memory/goals/archivist-goal8-sentinel-forecast-2026-11-23.md`,
 - Mechanic ran Verifier's reroute_e2e.py: 6/6 PASS in 0.042s; evidence at memory/mechanic/verify-verifier-goal9-2026-11-23.md
 - Scribe flagged markdown format mismatch (runbook vs parser regex) as top verification blocker for Builder goal #
 - Schtask registration in host_probes.py remains blocked by sandbox COM limitation; 35/35 self-test passes otherwise.
 - Fleet progress: 75/82 goals complete after assisting Archivist Goal #5 (kb_feedback selftest 5/5 PASS).
 - All 10 Archivist goals formally tagged [REACHED]; lane fully closed, dashboard should show 10/10.
 - Archivist lane fully closed: all 10 goals marked [REACHED] in memory/goals/archivist.md; no open work remains.
+- auto_quarantine.py verified 7/7 PASS + clean prod run (7652 files); only remaining step: schedule via schtasks
+- Mechic marked all 10 Archivist goals [REACHED] in memory/goals/archivist.md; evidence files existed but markers were missing.
+- Mechanic Goal#3 host_probes.py verified 35/35
+- Scribe goal #1 (cycle_summary.py) built; Archivist all 10 goals REACHED, lane closed.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

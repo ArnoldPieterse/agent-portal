@@ -21,3 +21,9 @@
 {"t": "2026-11-23 16:12:39", "event": "host-start", "pid": 4492}
 {"t": "2026-11-23 16:12:39", "event": "exit-duplicate", "existing": [24732]}
 {"t": "2026-11-23 17:46:30", "event": "spawned", "what": "portal", "pid": 20124, "argv": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\Workspace\\agent_portal.py"}
+{"t": "2026-11-23 18:02:44", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
+{"t": "2026-11-23 18:14:44", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
+{"t": "2026-11-23 18:21:44", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
+{"t": "2026-11-23 18:28:44", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
+{"t": "2026-11-23 18:35:45", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}
+{"t": "2026-11-23 18:42:45", "event": "oom-loop-error", "err": "Command '['C:\\\\Projects\\\\Workspace\\\\Python\\\\pythoncore-3.15-64\\\\python.exe', 'C:\\\\Projects\\\\Workspace\\\\memory\\\\mechanic\\"}

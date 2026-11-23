@@ -42,3 +42,5 @@
 {"ts": "2026-11-23T06:51:09.960027+00:00", "host": "White", "type": "boot_detect", "unexpected_shutdown": false, "action": "NO-OP", "verdict": "CLEAN BOOT - no recovery needed"}
 {"ts": "2026-11-23T07:21:13.368528+00:00", "host": "White", "type": "boot_detect", "unexpected_shutdown": false, "action": "NO-OP", "verdict": "CLEAN BOOT - no recovery needed"}
 {"ts": "2026-11-23T07:51:13.909498+00:00", "host": "White", "type": "boot_detect", "unexpected_shutdown": false, "action": "NO-OP", "verdict": "CLEAN BOOT - no recovery needed"}
+{"ts": "2026-11-23T08:21:14.925442+00:00", "host": "White", "type": "boot_detect", "unexpected_shutdown": false, "action": "NO-OP", "verdict": "CLEAN BOOT - no recovery needed"}
+{"ts": "2026-11-23T08:51:16.031800+00:00", "host": "White", "type": "boot_detect", "unexpected_shutdown": false, "action": "NO-OP", "verdict": "CLEAN BOOT - no recovery needed"}
