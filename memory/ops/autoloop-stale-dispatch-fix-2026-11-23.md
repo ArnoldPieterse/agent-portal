@@ -30,3 +30,6 @@ After the fix, run one auto-loop pass and confirm:
 Not yet applied - requires access to the auto-loop scanner code (likely in the
 Studio/portal backend, not in memory/). Logged here as a spec for whoever owns
 the dispatch code. If the scanner is in this repo, the fix is a 2-line diff.
+
+## [CORRECTION 2026-11-23 - Researcher]
+The "2-line diff to the scanner regex" above targets the WRONG layer and would be a no-op. The live count is already status-filtered: `agent_portal.py:3907` `_agent_open_goal_count` -> `parse_agent_file(...)` filtered by `status != "reached"`. Fresh run of that same strict parser on current archivist.md = **20/20 reached, 0 open**, yet autoloop.json logged `archivist:7-open` at 20:31 (file was already all-reached since 20:16). So the live process is running a stale/different `goal_ledger.py` (`_GOAL_LEDGER` global loads it once at startup). Real fix = mtime-gated reload in `_goal_ledger_mod()` + portal restart. Full evidence: `memory/researcher/autoloop-open-count-rootcause-2026-11-23.md`.
