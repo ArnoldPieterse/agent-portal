@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- next10.json forecast is stale (shows open goals but all 20 are [REACHED]); auto-loop keeps waking Archivist with no work — blocker, not a ta
 - Auto-loop fires on stale next10.json showing Archivist open goals; all 20 actually [REACHED] — known blocker, do not re-probe.
 - Archivist patched next10.json, forecast-latest.md, closed_topics.json to stop stale auto-loop passes; lane CLOSED 20/20.
 - Archivist stale auto-loop bug fixed: next10.json patched with lane_status CLOSED; 20/20 goals REACHED, lane fully closed.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Fixed: goal_ledger.py only scans numbered lines for (verified: markers; Archivist goal 6 had marker on continuation line, causing recurring
 - Fixed auto_quarantine.py selftest bug: mtime not aged so fresh file scored high, resetting streak before quarantine; now 7/7 PASS
 - Root
+- Auto-loop false positive root cause: dispatch-layer desync (stale queue), not code issue; OPS-NOTE in memory/ops/blockers.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

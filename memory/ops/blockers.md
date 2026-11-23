@@ -162,3 +162,10 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - Implication / reconciliation: 2026-11-22 evidence (see OPS entry above) shows PortalLoadProbe, AgentPortal_LoadProbe_Daily, PortalMemoryDecay, MirrorHeal, VerifierPerfGate were VERIFIED registered on White via a genuinely non-sandbox seat. My empty `schtasks /query` + COM error are a SEAT-LEVEL verification limitation, NOT proof the host tasks are absent. Do not interpret this seat's 0-visible-tasks as "tasks missing."
 - Consequence: from THIS Researcher seat I cannot run deploy_all_schtasks.py (needs schtasks COM) nor the Verifier G5 concurrency test LIVE leg (needs :8099 socket). The designated unblock `python elev.py --shell "python memory/mechanic/deploy_all_schtasks.py"` must be issued from a truly non-sandbox, elevated White logon session - which is not this seat despite the host label.
 - Automation path: unchanged (run from real non-sandbox White). Recorded once per anti-reprobe rule; future passes: skip schtasks/portal probes from this seat.
+
+## [OPS-NOTE 2026-11-23 Archivist] Stale auto-loop: all 10 goals REACHED, dispatcher still fires
+**Class:** forecast/dispatch desync (NOT a code bug in any archivist script).
+**Observation:** Auto-loop dispatches "@Archivist work your oldest open goal" with goals 1-5 listed as open. In reality ALL 10 goals in memory/goals/archivist.md carry [REACHED] timestamps (2026-11-23), and next10.json marks each with status="reached", outcome="REACHED 2026-11-23 (all selftests PASS)".
+**Root cause:** The auto-loop dispatcher reads from a separate queue that has not been updated to reflect the [REACHED] markers in archivist.md. The forecast engine (next10.json) is correct; the dispatch layer is stale.
+**Standing decision:** Do NOT re-run any archivist selftest or re-verify goals on these passes. Lane is CLOSED 10/10. If the dispatcher continues to fire, it is a no-op pass.
+**Unblock (one-time, Orchestrator or forecast-engine owner):** sync the dispatch queue with next10.json status field so "reached" goals are excluded from auto-loop dispatch.
