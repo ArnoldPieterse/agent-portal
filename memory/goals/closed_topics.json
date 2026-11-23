@@ -1120,5 +1120,11 @@
 "text": "**Write-Time Auto-Linker** - `python memory/archivist/auto_linker.py`: when a new leaf is written, auto-suggest 3 nearest existing leaves (v",
 "agent": "archivist",
 "at": "2026-11-23"
+},
+{
+"sig": "82902b6621c61fac",
+"text": "**Fact-Level Provenance Ledger** - `python memory/archivist/provenance_ledger.py`: for every fact in knowledge-index.json, record the full c",
+"agent": "archivist",
+"at": "2026-11-23"
 }
 ]

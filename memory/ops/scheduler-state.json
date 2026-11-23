@@ -15,11 +15,11 @@
   "name": "load_probe",
   "interval": 600,
   "note": "dedup: was PortalLoadProbe + AgentPortal_LoadProbe_Daily",
-  "next_run": 1795402674.537725,
-  "last_run": 1795402079.6344638,
+  "next_run": 1795403275.0997765,
+  "last_run": 1795402680.1150413,
   "last_rc": 0,
   "last_err": "",
-  "runs": 1,
+  "runs": 2,
   "paused": false,
   "running": false
  },
@@ -27,11 +27,11 @@
   "name": "fleet_probe",
   "interval": 600,
   "note": "was PortalFleetProbe",
-  "next_run": 1795402674.537725,
-  "last_run": 1795402079.6344638,
+  "next_run": 1795403275.0997765,
+  "last_run": 1795402680.1150413,
   "last_rc": 0,
   "last_err": "",
-  "runs": 1,
+  "runs": 2,
   "paused": false,
   "running": false
  },
@@ -39,13 +39,13 @@
   "name": "gap_alarm",
   "interval": 300,
   "note": "was PortalGapAlarm",
-  "next_run": 1795402374.537725,
-  "last_run": 1795402079.6344638,
+  "next_run": 1795403275.2286937,
+  "last_run": 1795402680.1150413,
   "last_rc": 0,
   "last_err": "",
-  "runs": 1,
+  "runs": 4,
   "paused": false,
-  "running": false
+  "running": true
  },
  "state_collector": {
   "name": "state_collector",
@@ -111,25 +111,25 @@
   "name": "mirror_heal",
   "interval": 300,
   "note": "was MirrorHeal",
-  "next_run": 1795402374.537725,
-  "last_run": 1795402079.6344638,
+  "next_run": 1795403275.2286937,
+  "last_run": 1795402680.1150413,
   "last_rc": 0,
   "last_err": "",
-  "runs": 1,
+  "runs": 4,
   "paused": false,
-  "running": false
+  "running": true
  },
  "daily_git_commit": {
   "name": "daily_git_commit",
   "interval": 900,
   "note": "was PortalDailyGitCommit (15m)",
-  "next_run": 1795402974.537725,
+  "next_run": 1795403875.2286937,
   "last_run": 1795402079.6344638,
   "last_rc": 0,
   "last_err": "",
-  "runs": 1,
+  "runs": 2,
   "paused": false,
-  "running": false
+  "running": true
  },
  "schtask_dep_weekly": {
   "name": "schtask_dep_weekly",
@@ -147,13 +147,13 @@
   "name": "portal_heal_check",
   "interval": 300,
   "note": "was PortalSelfHeal",
-  "next_run": 1795402374.537725,
-  "last_run": 1795402079.6344638,
+  "next_run": 1795403275.2286937,
+  "last_run": 1795402680.1150413,
   "last_rc": 0,
   "last_err": "",
-  "runs": 1,
+  "runs": 4,
   "paused": false,
-  "running": false
+  "running": true
  },
  "smb_drift_detector": {
   "name": "smb_drift_detector",

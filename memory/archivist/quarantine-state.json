@@ -1,0 +1,24 @@
+{
+  "last_run": "2026-11-23",
+  "below_threshold_streak": {
+    "memory/archivist/quarantine/archivist/_quarantine_test_target.md": {
+      "count": 1,
+      "last_date": "2026-11-23",
+      "score": 0.1
+    }
+  },
+  "quarantined": {
+    "memory/archivist/_quarantine_test_target.md": {
+      "quarantined_at": "2026-11-23",
+      "location": "memory\\archivist\\quarantine\\archivist\\_quarantine_test_target.md",
+      "score_at_quarantine": 0.1,
+      "days_below": 3
+    }
+  },
+  "live_refs_to_quarantine": [
+    {
+      "file": "memory/archivist/_quarantine_test_ref.md",
+      "references": "memory/archivist/_quarantine_test_target.md"
+    }
+  ]
+}
