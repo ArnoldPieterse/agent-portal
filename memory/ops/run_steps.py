@@ -26,9 +26,12 @@ def main():
         step = " ".join(parts)
         print("run_steps [%d/%d]: %s" % (i, len(steps), step), file=sys.stderr)
         try:
+            # CREATE_NO_WINDOW: steps used to flash a console window + steal
+            # focus every cycle (the user-visible popups). 2026-11-23.
             r = subprocess.run([PY, path] + parts[1:], cwd=WS,
                                stdout=subprocess.DEVNULL, stderr=subprocess.PIPE,
-                               timeout=timeout)
+                               timeout=timeout,
+                               creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
             code = r.returncode
             err = (r.stderr or b"")[-400:].decode("utf-8", "replace").strip()
         except subprocess.TimeoutExpired:
