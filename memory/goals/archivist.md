@@ -9,7 +9,7 @@ Focus: Closed-Loop Autonomy & Fleet Cockpit. Cycle-9/10 built the knowledge laye
 
    [REACHED 2026-11-23T14:00:00Z] auto_quarantine.py selftest PASS 6/6. Evidence: memory/archivist/evidence-goal2-auto-quarantine-2026-11-23.md
 
-3. **Knowledge Delta Feed** - `python memory/archivist/kb_delta.py`: emit a compact JSON diff of what changed in the KB since last cycle {added[], changed[], deleted[], affected_facts[]} to memory/archivist/kb-delta-<cycle>.json for the Cockpit "what's new" panel. Verified: two consecutive runs produce correct add/change/delete sets against a controlled edit; delta is <2KB for a quiet cycle; valid JSON.
+3. **Knowledge Delta Feed** - `python memory/archivist/kb_delta.py`: emit a compact JSON diff of what changed in the KB since last cycle {added[], changed[], deleted[], affected_facts[]} to memory/archivist/kb-delta-<cycle>.json for the Cockpit "what's new" panel. Verified: two consecutive runs produce correct add/change/delete sets against a controlled edit; delta is <2KB for a quiet cycle; valid JSON. (verified: 2026-11-24 - kb_delta.py --selftest 6/6 PASS from CWD; artifact kb-delta-selftest-2026-11-24.json valid JSON (added/changed/deleted/affected_facts); quiet=185B<2KB; idempotent no-change run OK. Evidence: memory/ve)
 
    [REACHED 2026-11-23T14:00:00Z] kb_delta.py selftest PASS 6/6. Evidence: memory/archivist/evidence-goal3-kb-delta-2026-11-23.md
 

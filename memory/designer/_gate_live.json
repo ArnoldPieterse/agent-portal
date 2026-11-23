@@ -1,0 +1,204 @@
+warning: Failed to set cwd to temp dir
+{
+  "ts": "2026-11-23T16:44:44Z",
+  "checks": [
+    {
+      "check": "html_structure",
+      "expected_elements": 4,
+      "found": [],
+      "missing": [
+        "cockpit",
+        "fleet-panel",
+        "goals-panel",
+        "health-panel"
+      ],
+      "has_viewport_meta": true,
+      "pass": false
+    },
+    {
+      "check": "js_syntax",
+      "files_checked": 18,
+      "results": [
+        {
+          "file": "api-client.js",
+          "size_bytes": 9650,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "cockpit-decay.js",
+          "size_bytes": 2229,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "cockpit-density.js",
+          "size_bytes": 2771,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "cockpit-forecast.js",
+          "size_bytes": 2883,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "cockpit-topology.js",
+          "size_bytes": 3985,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "cockpit.js",
+          "size_bytes": 15462,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "components.js",
+          "size_bytes": 16963,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "core.js",
+          "size_bytes": 42590,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "fleet_health.js",
+          "size_bytes": 5041,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "fleet_status.js",
+          "size_bytes": 2529,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "fleet_topology.js",
+          "size_bytes": 12519,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "icons.js",
+          "size_bytes": 12321,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "notifications.js",
+          "size_bytes": 2992,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "scheduler.js",
+          "size_bytes": 7265,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "state.js",
+          "size_bytes": 1238,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "topology.js",
+          "size_bytes": 5678,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "tour.js",
+          "size_bytes": 4016,
+          "issues": [],
+          "pass": true
+        },
+        {
+          "file": "uploads.js",
+          "size_bytes": 42109,
+          "issues": [],
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "check": "css",
+      "files_checked": 9,
+      "results": [
+        {
+          "file": "app.css",
+          "size_bytes": 35512,
+          "rule_blocks": 363,
+          "pass": true
+        },
+        {
+          "file": "app_density_before.css",
+          "size_bytes": 22581,
+          "rule_blocks": 242,
+          "pass": true
+        },
+        {
+          "file": "cockpit-brake.css",
+          "size_bytes": 3653,
+          "rule_blocks": 24,
+          "pass": true
+        },
+        {
+          "file": "cockpit-decay.css",
+          "size_bytes": 2334,
+          "rule_blocks": 19,
+          "pass": true
+        },
+        {
+          "file": "cockpit-density.css",
+          "size_bytes": 2453,
+          "rule_blocks": 16,
+          "pass": true
+        },
+        {
+          "file": "cockpit-fleetboard.css",
+          "size_bytes": 2593,
+          "rule_blocks": 19,
+          "pass": true
+        },
+        {
+          "file": "cockpit-trend.css",
+          "size_bytes": 2001,
+          "rule_blocks": 16,
+          "pass": true
+        },
+        {
+          "file": "interactions.css",
+          "size_bytes": 6270,
+          "rule_blocks": 27,
+          "pass": true
+        },
+        {
+          "file": "tokens.css",
+          "size_bytes": 3430,
+          "rule_blocks": 7,
+          "pass": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "check": "interactive_elements",
+      "buttons": 24,
+      "links_with_handlers": 0,
+      "inputs": 19,
+      "total": 43,
+      "pass": true
+    }
+  ],
+  "overall_pass": false
+}

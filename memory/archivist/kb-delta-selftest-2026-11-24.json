@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-24",
+  "added": [
+    "memory/_delta_test/gamma.md"
+  ],
+  "changed": [
+    "memory/_delta_test/alpha.md",
+    "memory/archivist/.kb_delta_state.json"
+  ],
+  "deleted": [
+    "memory/_delta_test/beta.md"
+  ],
+  "affected_facts": [],
+  "summary": {
+    "total_added": 1,
+    "total_changed": 2,
+    "total_deleted": 1,
+    "total_affected_facts": 0
+  }
+}

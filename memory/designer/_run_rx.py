@@ -1,0 +1,1 @@
+import sys,pathlib;sys.path.insert(0,'memory/designer');from _js_rx import js_scan;c=pathlib.Path('ui/cockpit.js').read_text(encoding='utf-8');print(js_scan(c,_log=True))

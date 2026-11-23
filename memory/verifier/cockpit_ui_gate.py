@@ -67,50 +67,117 @@ def check_html_structure(html: str) -> dict:
     }
 
 
+def _js_scan_issues(content: str):
+    """Stateful mini-scanner that returns a list of real JS balance problems.
+
+    Unlike a naive brace counter it tracks lexical state so that the *contents*
+    of strings, comments, template literals and regex literals do not corrupt
+    bracket balance. Handles: // and /* */ comments; '...' and "..." strings with
+    backslash escapes; `...` template literals INCLUDING ${ ... } interpolation
+    (nested templates/strings inside interpolations); and /.../ regex literals
+    (character classes, quantifiers, and a division-vs-regex heuristic based on
+    the preceding significant token). A non-empty result means a genuine defect
+    (unbalanced bracket or unterminated string/template), not a false positive.
+    """
+    n = len(content); i = 0; line = 1
+    CODE = 'code'; TPL = 'template'
+    NORM = 'norm'; LC = 'lc'; BC = 'bc'; SS = 'ss'; DS = 'ds'; RX = 'rx'
+    stack = [{'kind': CODE, 'b': 0, 'p': 0, 'k': 0}]  # root code frame
+    mode = NORM; prev_sig = None; issues = []
+
+    def top(): return stack[-1]
+
+    while i < n:
+        ch = content[i]; nxt = content[i + 1] if i + 1 < n else ''
+        if ch == '\n': line += 1
+        ctx = top()
+        # -- template literal text region (skip until ` or ${ ) --
+        if ctx['kind'] == TPL:
+            if mode == NORM:
+                if ch == '\\': i += 2; continue
+                if ch == '`': stack.pop(); i += 1; continue
+                if ch == '$' and nxt == '{':
+                    stack.append({'kind': CODE, 'b': 0, 'p': 0, 'k': 0}); mode = NORM; i += 2; continue
+                i += 1; continue
+            i += 1; continue
+        # -- transient lexical modes within a code frame --
+        if mode == LC:
+            if ch == '\n': mode = NORM
+            i += 1; continue
+        if mode == BC:
+            if ch == '*' and nxt == '/': mode = NORM; i += 2; continue
+            i += 1; continue
+        if mode in (SS, DS):
+            q = "'" if mode == SS else '"'
+            if ch == '\\': i += 2; continue
+            if ch == '\n': issues.append("unterminated string at line %d" % line); mode = NORM; i += 1; continue
+            if ch == q: mode = NORM; prev_sig = 'close'
+            i += 1; continue
+        if mode == RX:
+            if ch == '\\': i += 2; continue
+            if ch == '\n': mode = NORM; prev_sig = 'other'; i += 1; continue
+            if ch == '[':  # character class: skip to unescaped ]
+                j = i + 1
+                if j < n and content[j] == '^': j += 1
+                if j < n and content[j] == ']': j += 1
+                while j < n and content[j] != ']':
+                    if content[j] == '\\': j += 1
+                    j += 1
+                i = j + 1; continue
+            if ch == '/': mode = NORM; prev_sig = 'close'; i += 1; continue
+            i += 1; continue
+        # -- normal code --
+        if ch == '/' and nxt == '/': mode = LC; i += 2; continue
+        if ch == '/' and nxt == '*': mode = BC; i += 2; continue
+        if ch == "'": mode = SS; prev_sig = 'close'; i += 1; continue
+        if ch == '"': mode = DS; prev_sig = 'close'; i += 1; continue
+        if ch == '`': stack.append({'kind': TPL}); mode = NORM; i += 1; continue
+        if ch == '/':
+            # division if the previous significant token ends a value, else regex
+            if prev_sig in ('ident', 'num', 'close'):
+                prev_sig = 'other'; i += 1; continue
+            mode = RX; prev_sig = None; i += 1; continue
+        if ch == '{': ctx['b'] += 1; prev_sig = 'other'
+        elif ch == '}':
+            if ctx['kind'] == CODE and ctx['b'] == 0 and len(stack) > 1:
+                stack.pop(); mode = NORM; i += 1; continue  # closes ${ } interpolation
+            ctx['b'] -= 1
+            if ctx['b'] < 0 and len(stack) == 1: issues.append("unbalanced braces at line %d" % line)
+            prev_sig = 'close'
+        elif ch == '(':
+            ctx['p'] += 1; prev_sig = 'other'
+        elif ch == ')':
+            ctx['p'] -= 1
+            if ctx['p'] < 0 and len(stack) == 1: issues.append("unbalanced parens at line %d" % line)
+            prev_sig = 'close'
+        elif ch == '[':
+            ctx['k'] += 1; prev_sig = 'other'
+        elif ch == ']':
+            ctx['k'] -= 1
+            if ctx['k'] < 0 and len(stack) == 1: issues.append("unbalanced brackets at line %d" % line)
+            prev_sig = 'close'
+        else:
+            if ch.isalnum() or ch == '_' or ch == '$': prev_sig = 'ident'
+            elif not ch.isspace(): prev_sig = 'other'
+        i += 1; continue
+
+    root = stack[0]
+    for key, name in (('b', 'braces'), ('p', 'parens'), ('k', 'brackets')):
+        if root[key] > 0: issues.append("unclosed %s: %d extra" % (name, root[key]))
+    if len(stack) > 1:
+        issues.append("unterminated template/string at line %d" % line)
+    return issues
+
+
 def check_js_syntax(js_path: Path) -> dict:
-    """Basic JS syntax check: balanced braces, parens, brackets; no unterminated strings."""
+    """JS syntax check via _js_scan_issues (string/comment/template/regex aware).
+    Returns {file, size_bytes, issues, pass}; issues non-empty => real defect."""
     if not js_path.exists():
         return {"file": str(js_path.name), "pass": False, "error": "file not found"}
-    
+
     content = js_path.read_text(encoding="utf-8", errors="replace")
-    issues = []
-    
-    # Balanced braces
-    for open_ch, close_ch, name in [("{", "}", "braces"), ("(", ")", "parens"), ("[", "]", "brackets")]:
-        depth = 0
-        in_string = None
-        escape = False
-        for i, ch in enumerate(content):
-            if escape:
-                escape = False
-                continue
-            if ch == "\\":
-                escape = True
-                continue
-            if in_string:
-                if ch == in_string:
-                    in_string = None
-                continue
-            if ch in ('"', "'", "`"):
-                in_string = ch
-                continue
-            if ch == open_ch:
-                depth += 1
-            elif ch == close_ch:
-                depth -= 1
-                if depth < 0:
-                    issues.append(f"unbalanced {name} at position {i}")
-                    break
-        if depth > 0 and not any(name in iss for iss in issues):
-            issues.append(f"unclosed {name}: {depth} extra")
-    
-    # Unterminated line comments (lines starting with // that have no newline after)
-    lines = content.split("\n")
-    for i, line in enumerate(lines):
-        stripped = line.strip()
-        if stripped.startswith("//") and not stripped.endswith("*/"):
-            pass  # line comments are fine
-    
+    issues = _js_scan_issues(content)
+
     return {
         "file": js_path.name,
         "size_bytes": len(content),
