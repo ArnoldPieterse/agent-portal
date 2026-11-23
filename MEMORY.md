@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop dispatches stale "2/10" for Designer; all 10
-- Auto-loop dispatch header shows stale "2/10" for Designer; all 10 goals verified with artifacts on disk — no open work remains.
 - Fleet at 71/72 (99%); Designer lane fully closed 10/10; sole remaining open goal is Archivist 9.
 - Researcher cycle-10 complete (all 10 verified); new goal-setting round in progress, archiving to researcher-2026-11-23.md
 - Designer goals 5&6 falsely closed; evidence files missing. Correct score 8/10. Evidence file mislabels goal 7 as row 5.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Research
 - Builder verified Researcher Goal #1: loop_closure_rate.py passes all 4 criteria (92.0% closure, 9 types, SELFTEST PASS).
 - All 5 cycle-11 Researcher goals verified/closed; dispatch header "0/10" is stale counter bug, not real work remaining
+- Designer wrote cockpit-impact forecast: Builder needs CSS/DOM sequencing; risk = 32px cycle bar shifts 6-panel grid
+- Designer goals 5&6 falsely closed: evidence files mismatched (cite Goal-2/#1 artifacts, not their own)
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
