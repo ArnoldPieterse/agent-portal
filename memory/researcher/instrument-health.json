@@ -1,0 +1,119 @@
+{
+  "generated": "2026-11-23T23:12:27",
+  "cycle_window_hours": 24,
+  "total_instruments": 10,
+  "healthy": 7,
+  "stale": 3,
+  "instruments": [
+    {
+      "name": "stale_claim_scan",
+      "status": "healthy",
+      "last_run": "2026-11-23T21:49:58",
+      "age_hours": 1.4,
+      "source": "artifact_mtime",
+      "coverage": "all memory/**.md claims of artifact existence",
+      "stale": false,
+      "fp_rate": null,
+      "last_alert": null
+    },
+    {
+      "name": "dispatch_desync",
+      "status": "healthy",
+      "last_run": "2026-11-23T23:07:47",
+      "age_hours": 0.1,
+      "source": "script_mtime",
+      "coverage": "autoloop.json vs actual goal-file open counts",
+      "stale": false,
+      "fp_rate": null,
+      "last_alert": null
+    },
+    {
+      "name": "reach_matrix",
+      "status": "healthy",
+      "last_run": "2026-11-23T21:49:58",
+      "age_hours": 1.4,
+      "source": "artifact_mtime",
+      "coverage": "all agent goal files (8 seats)",
+      "stale": false,
+      "fp_rate": null,
+      "last_alert": null
+    },
+    {
+      "name": "clobber_manifest",
+      "status": "stale",
+      "last_run": "2026-11-16T14:45:12",
+      "age_hours": 176.5,
+      "source": "script_mtime",
+      "coverage": "pin/sync clobber events in last 24h",
+      "stale": true,
+      "fp_rate": null,
+      "last_alert": null
+    },
+    {
+      "name": "goal_critical_path",
+      "status": "healthy",
+      "last_run": "2026-11-23T23:10:06",
+      "age_hours": 0.0,
+      "source": "artifact_mtime",
+      "coverage": "cross-lane handoffs + goal files dependency graph",
+      "stale": false,
+      "fp_rate": null,
+      "last_alert": null
+    },
+    {
+      "name": "calib_dispatch",
+      "status": "healthy",
+      "last_run": "2026-11-23T23:12:02",
+      "age_hours": 0.0,
+      "source": "artifact_mtime",
+      "coverage": "forecast accuracy vs actual goal completion",
+      "stale": false,
+      "fp_rate": null,
+      "last_alert": null
+    },
+    {
+      "name": "evidence_quality_trend",
+      "status": "stale",
+      "last_run": "2026-11-16T23:18:50",
+      "age_hours": 167.9,
+      "source": "script_mtime",
+      "coverage": "evidence leaf quality scores over time",
+      "stale": true,
+      "fp_rate": null,
+      "last_alert": null
+    },
+    {
+      "name": "knowledge_decay",
+      "status": "healthy",
+      "last_run": "2026-11-23T07:31:26",
+      "age_hours": 15.7,
+      "source": "artifact_mtime",
+      "coverage": "KB entry staleness + orphan detection",
+      "stale": false,
+      "fp_rate": null,
+      "last_alert": null
+    },
+    {
+      "name": "sla_tracker",
+      "status": "stale",
+      "last_run": "2026-11-18T23:17:51",
+      "age_hours": 119.9,
+      "source": "artifact_mtime",
+      "coverage": "per-goal SLA adherence across cycles",
+      "stale": true,
+      "fp_rate": null,
+      "last_alert": null
+    },
+    {
+      "name": "blocker_triage",
+      "status": "healthy",
+      "last_run": "2026-11-22T23:35:46",
+      "age_hours": 23.6,
+      "source": "artifact_mtime",
+      "coverage": "OPS-NOTE classification + recurrence detection",
+      "stale": false,
+      "fp_rate": null,
+      "last_alert": null
+    }
+  ]
+}

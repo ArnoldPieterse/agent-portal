@@ -1,0 +1,23 @@
+{
+  "generated": "2026-11-23T23:12:02",
+  "slip_stats": {
+    "total_runs": 22,
+    "early_rate": 0.2909090909090909,
+    "late_rate": 0.14285714285714285,
+    "trend": "degrading",
+    "mean_hit_rate": 0.21414141414141416,
+    "variance": 0.11470462197734924,
+    "min_hit_rate": 0.0,
+    "max_hit_rate": 1.0
+  },
+  "recommendations": [
+    {
+      "seat": "fleet-wide",
+      "current_weight": 1.0,
+      "proposed_weight": 0.5,
+      "reduction_pct": 50,
+      "rationale": "overall hit rate 0.21 below 0.5 threshold, trend=degrading",
+      "evidence": "22 cycles: early=0.29, late=0.14"
+    }
+  ]
+}

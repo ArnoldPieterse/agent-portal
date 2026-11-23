@@ -1,0 +1,75 @@
+{
+  "generated": "2026-11-23T23:10:06",
+  "total_open_goals": 235,
+  "total_handoffs": 5,
+  "priority_list": [
+    {
+      "agent": "studio",
+      "goal_num": -1,
+      "blocks_count": 9,
+      "blocked_goals": [
+        [
+          "designer",
+          1
+        ],
+        [
+          "designer",
+          2
+        ],
+        [
+          "designer",
+          3
+        ],
+        [
+          "designer",
+          4
+        ],
+        [
+          "designer",
+          5
+        ],
+        [
+          "designer",
+          6
+        ],
+        [
+          "designer",
+          7
+        ],
+        [
+          "designer",
+          8
+        ],
+        [
+          "designer",
+          9
+        ]
+      ],
+      "priority": "HIGH"
+    },
+    {
+      "agent": "archivist",
+      "goal_num": -1,
+      "blocks_count": 4,
+      "blocked_goals": [
+        [
+          "scribe",
+          5
+        ],
+        [
+          "scribe",
+          7
+        ],
+        [
+          "builder",
+          1
+        ],
+        [
+          "builder",
+          2
+        ]
+      ],
+      "priority": "HIGH"
+    }
+  ]
+}
