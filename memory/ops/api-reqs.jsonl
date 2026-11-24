@@ -1,2 +1,6 @@
 {"event": "created", "id": "R0001", "agent": "Tester", "kind": "change", "file": "_apiq_test_target.txt", "command": "", "ts": "2026-11-24T21:40:59Z"}
 {"event": "applied", "id": "R0001", "by": "human", "kind": "change", "file": "_apiq_test_target.txt", "detail": "_apiq_test_target.txt: replaced lines 4..6 with 2 line(s)", "ts": "2026-11-24T21:40:59Z"}
+{"event": "created", "id": "R0002", "agent": "Tester", "kind": "change", "file": "_apiq_test_target.txt", "command": "", "ts": "2026-11-24T21:41:00Z"}
+{"event": "failed", "id": "R0002", "by": "human", "kind": "change", "file": "_apiq_test_target.txt", "detail": "range [1..99] exceeds file (9 lines) - re-read with reqReadFile", "ts": "2026-11-24T21:41:00Z"}
+{"event": "created", "id": "R0003", "agent": "Tester", "kind": "change", "file": "_apiq_test_target.txt", "command": "", "ts": "2026-11-24T21:41:00Z"}
+{"event": "applied", "id": "R0003", "by": "human", "kind": "change", "file": "_apiq_test_target.txt", "detail": "_apiq_test_target.txt: replaced lines 8..8 with 1 line(s)", "ts": "2026-11-24T21:41:00Z"}
