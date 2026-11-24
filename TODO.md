@@ -600,3 +600,4 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
 - .gitignore: portal_host.py/portal_scheduler.py/elevated_helper.py were silently untracked under root /* - now tracked; mirror_cache.json ignored
 
 - [x] 2026-11-24 goal-level decision tree in forecast report: S6 lists WHICH goals land by 1w/1m; S7 = per-goal chain (sub-goals + if-reached-then-next); plan layer emits per-item then-chaining; fixed engine sys.path so portal in-process refresh includes plan.
+[DONE 2026-11-24] One-pager planning round: plan_round.py - 3 planners + judge, live model probing, JSON repair; portal serves one_pager in /api/goals/forecast; cards in cockpit-forecast.js + uploads.js. commit a21a72c3
