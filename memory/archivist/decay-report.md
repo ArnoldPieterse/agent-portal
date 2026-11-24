@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 10067 | flagged (<0.35): 0
+Leaves: 10084 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9316,12 +9316,21 @@ Leaves: 10067 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261124-134657.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-140220.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-143616.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-145201.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-archivist.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-builder.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-designer.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-latest.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-latest.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-mechanic.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-orchestrator.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-researcher.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-scribe.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-verifier.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/plan-round-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-315.pyc | 0 | 0 | n | 0.550 |
@@ -9376,6 +9385,7 @@ Leaves: 10067 | flagged (<0.35): 0
 | memory/mechanic/stall-detector-reachable-filter-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/state-collector-integrity-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/task_delivery.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/test_fleet_mode_api.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/transition_latency.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/winrm_pool.cpython-315.pyc | 0 | 0 | n | 0.550 |
@@ -9383,6 +9393,7 @@ Leaves: 10067 | flagged (<0.35): 0
 | memory/ops/anomaly-20261124T010411Z.md | 0 | 0 | n | 0.550 |
 | memory/ops/anomaly-20261124T022806Z.md | 0 | 0 | n | 0.550 |
 | memory/ops/anomaly-20261124T040450Z.md | 0 | 0 | n | 0.550 |
+| memory/ops/anomaly-20261124T043742Z.md | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autonomous-actions.jsonl | 0 | 0 | n | 0.550 |
@@ -9447,10 +9458,15 @@ Leaves: 10067 | flagged (<0.35): 0
 | memory/ops/_startup_watch.txt | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0b19c0bd68 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.314beff77f | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.5d30bcd98d | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.6ecf1e775a | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.72f7747453 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.a96bbde535 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.c1c04ceb7f | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.dbd3a02f71 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.fdcf1f1764 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/index.html.5735c6031e | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/index.html.ffc9894a9f | 0 | 0 | n | 0.550 |
 | memory/ops/post-mortems/2026-11-22-Builder.md | 0 | 0 | n | 0.550 |
 | memory/ops/post-mortems/2026-11-22-test-agent.md | 0 | 0 | n | 0.550 |
 | memory/ops/post-mortems/2026-11-22-test_agent.md | 0 | 0 | n | 0.550 |
@@ -9517,6 +9533,7 @@ Leaves: 10067 | flagged (<0.35): 0
 | memory/synthesis/closeout-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/closeout-cycle15-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/closeout-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/synthesis/closeout-cycle17-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/cycle-15-closeout.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/fleet-100-milestone-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/mode-briefs.md | 0 | 0 | n | 0.550 |

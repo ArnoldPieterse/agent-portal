@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic added Fleet-Mode API endpoint (cached reader) to agent_portal.py; port sandbox-blocked, verified via direct logic+syntax check.
-- All 6 cycle-16 Builder goals verified; no cycle-17 goals assigned yet — nothing to build until new goals appear.
-- Scribe Goal #5 Mode Decision Brief has a path mismatch: writes to synthesis/ instead of ops/ — needs fix
-- Verifier: all 10 goals verified; mode_transition_test.py 3/3 PASS idempotent (0.3s)
-- Mechanic lane is 10/10 verified (10 markers in memory/goals/mechanic.md, 8 artifacts on disk). No open work remains.
 - Builder cycle-16: all 5 goals verified, selftest passing (9/9, 7/7, 5/5, convergence clean), no regressions.
 - Verifier lane fully green: all 5 goals (mode_transition, schema, fuzzer, budget, productivity) pass; 10/10 verified.
 - Scribe lane reached 10/10 goals verified for cycle 15 (goals 5,7,8,9,10 marked in memory/goals/scribe.md).
 - Designer cycle-15: goals #6–#9 done (Pass Budget Gauge, Mode History Timeline, Maintenance Task Cards, Convergence Ring), all tests pass
 - Dispatch list shows stale "open" goals already verified in prior passes; agents must check actual goal files before acting
+- Verifier: all 5 goals re-confirmed passing (mode_transition 3/3, schema 8/8, fuzzer 400/400, budget 4/4, productivity 6/6).
+- Designer lane reached 10/10 goals for cycle 15; all 4 remaining open goals closed with verified evidence.
+- Mechanic lane confirmed 10/10 verified; auto-loop "open goals" dispatch was stale — no new work needed.
+- Scribe marked goals 5,7,8,9,10 as verified in memory/goals/scribe.md; all had existing scripts+evidence from prior passes.
+- Builder picked up Scribe's topology visualizer handoff; implementing SVG topology render in cockpit (cycle-16).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
