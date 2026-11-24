@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier: 2 goals blocked on deps — #3 needs Orchestrator's complexity_scorer.py, #
 - Mechanic cycle-17: all 10 goals verified; built `transition_gap_sla.py` + `memory/ops/transition-gaps.jsonl` (6.2h flagged >4h).
 - Builder→Verifier handoff at memory/handoffs/builder-to-verifier-metric-validation.md maps each metric to selftest+formula
 - Mechic lane fully green: all 10/10 goals verified and closed (goals 6-10 confirmed this pass).
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Verifier 10/10 closed; auto-loop goal list is stale (prior set). Don't re-probe those items.
 - Researcher cycle-17: 10/10 goals complete; "open goals" in auto-loop header (Convergence Trajectory Model etc.) are stale from prior set.
 - seat_probe.py: latency_trend baseline must
+- Designer goal #2 CSS fixed: inset ring via box-shadow + keyframe renamed to `ss-pulse`; all 12
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
