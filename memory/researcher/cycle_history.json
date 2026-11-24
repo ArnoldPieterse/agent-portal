@@ -1,0 +1,177 @@
+{
+  "_meta": {
+    "cycles_with_data": 9,
+    "cycles_full_all_fields": 0,
+    "target_for_researcher_goal1": 12,
+    "sufficient_for_R2_0.7": false,
+    "blocking_gap": "completion_pct has no per-cycle source in any lane yet; only a single fleet-level snapshot exists (goal_ledger_current.json).",
+    "unblock_step": "Add a per-cycle completion_pct writer: on each cycle close-out, append {cycle, goals_total, goals_reached, completion_pct} to memory/ops/cycle-completion.jsonl. Then re-run this consolidation.",
+    "generated_at": "2026-11-25",
+    "generated_by": "Orchestrator (auto-loop contribution, option d: unblock Researcher goal #1 input)"
+  },
+  "records": [
+    {
+      "cycle": 2,
+      "duration_hours": null,
+      "start_date": null,
+      "end_date": null,
+      "completion_pct": null,
+      "intervention_count": 1,
+      "intervention_types": {
+        "redirect": 1
+      },
+      "sources": [
+        "memory/ops/human-interventions.jsonl"
+      ],
+      "missing_fields": [
+        "duration_hours",
+        "completion_pct"
+      ]
+    },
+    {
+      "cycle": 3,
+      "duration_hours": null,
+      "start_date": null,
+      "end_date": null,
+      "completion_pct": null,
+      "intervention_count": 1,
+      "intervention_types": {
+        "unblock": 1
+      },
+      "sources": [
+        "memory/ops/human-interventions.jsonl"
+      ],
+      "missing_fields": [
+        "duration_hours",
+        "completion_pct"
+      ]
+    },
+    {
+      "cycle": 5,
+      "duration_hours": 24.0,
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-19",
+      "completion_pct": null,
+      "intervention_count": 1,
+      "intervention_types": {
+        "approve": 1
+      },
+      "sources": [
+        "memory/ops/cycle-durations.jsonl",
+        "memory/ops/human-interventions.jsonl"
+      ],
+      "missing_fields": [
+        "completion_pct"
+      ]
+    },
+    {
+      "cycle": 8,
+      "duration_hours": 72.0,
+      "start_date": "2026-11-20",
+      "end_date": "2026-11-23",
+      "completion_pct": null,
+      "intervention_count": 1,
+      "intervention_types": {
+        "unblock": 1
+      },
+      "sources": [
+        "memory/ops/cycle-durations.jsonl",
+        "memory/ops/human-interventions.jsonl"
+      ],
+      "missing_fields": [
+        "completion_pct"
+      ]
+    },
+    {
+      "cycle": 12,
+      "duration_hours": null,
+      "start_date": null,
+      "end_date": null,
+      "completion_pct": null,
+      "intervention_count": 1,
+      "intervention_types": {
+        "redirect": 1
+      },
+      "sources": [
+        "memory/ops/human-interventions.jsonl"
+      ],
+      "missing_fields": [
+        "duration_hours",
+        "completion_pct"
+      ]
+    },
+    {
+      "cycle": 14,
+      "duration_hours": 24.0,
+      "start_date": "2026-11-23",
+      "end_date": "2026-11-24",
+      "completion_pct": null,
+      "intervention_count": 1,
+      "intervention_types": {
+        "approve": 1
+      },
+      "sources": [
+        "memory/ops/cycle-durations.jsonl",
+        "memory/ops/human-interventions.jsonl"
+      ],
+      "missing_fields": [
+        "completion_pct"
+      ]
+    },
+    {
+      "cycle": 15,
+      "duration_hours": 24.0,
+      "start_date": "2026-11-23",
+      "end_date": "2026-11-24",
+      "completion_pct": null,
+      "intervention_count": 1,
+      "intervention_types": {
+        "unblock": 1
+      },
+      "sources": [
+        "memory/ops/cycle-durations.jsonl",
+        "memory/ops/human-interventions.jsonl"
+      ],
+      "missing_fields": [
+        "completion_pct"
+      ]
+    },
+    {
+      "cycle": 16,
+      "duration_hours": null,
+      "start_date": null,
+      "end_date": null,
+      "completion_pct": null,
+      "intervention_count": 2,
+      "intervention_types": {
+        "redirect": 1,
+        "approve": 1
+      },
+      "sources": [
+        "memory/ops/human-interventions.jsonl"
+      ],
+      "missing_fields": [
+        "duration_hours",
+        "completion_pct"
+      ]
+    },
+    {
+      "cycle": 17,
+      "duration_hours": null,
+      "start_date": null,
+      "end_date": null,
+      "completion_pct": null,
+      "intervention_count": 1,
+      "intervention_types": {
+        "unblock": 1
+      },
+      "sources": [
+        "memory/ops/human-interventions.jsonl"
+      ],
+      "missing_fields": [
+        "duration_hours",
+        "completion_pct"
+      ]
+    }
+  ]
+}

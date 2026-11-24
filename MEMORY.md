@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 Mechanic Cycle-18 goals verified and closed; zero open items remain as of this pass.
-- Dispatch prompt references stale Cycle-18 goal list; actual verified set is in memory/goals/researcher.md (10/10 complete).
 - Cycle-18
 - Cycle-18: goals 7,8,10 done; only #9 (Cycle Retrospective Auto-Generator) remains open.
 - Goal 10 (Autonomy Score CI) PARTIAL: compute_confidence_interval() added but selftest cases not yet injected; context exhausted mid-task.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Cycle-17 Designer 10/10 done; added dynamic loaders for cockpit JS modules to ui/core.js lines 82+
 - Builder verified convergence_api.py (5-min cache) and added cycle_estimate to cockpit snapshot in ui/core.js
 - Mechanic extended
+- Designer goals are 10/10 verified per live ledger (open=0); "1/10" in prompt headers is stale, not a real gap.
+- Builder 10/10 goals REACHED; goal #10 (autonomy score CI) done: selftest 9→14 cases, write_autonomy_score_to_fleet_mode wired into run().
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
