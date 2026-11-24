@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fleet Autonomy Convergence: 5/5 goals complete, autonomy_convergence_test.py passes 20/20 (2026-11-24).
-- Researcher built productivity_archive.py (5/5 selftest), backfilled 7d snapshots; Archivist must wire into autoloop to close goal #1
-- All 10 Verifier goals verified; goal #1 re-run PASS 3/3 (mode_transition_test.py, 0.2s). No open items remain.
 - All 10 Verifier goals confirmed verified (goal #1 re-run: 3/3 PASS, 0.13s). Lane fully closed, no open work.
 - All 5 builder goals verified, selftests passing. Lane fully closed for cycle 16. No open work remains.
 - Ledger notes for goals 2-5 were misaligned with actual goal numbers; Mechanic re-ran selftests to confirm real evidence.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechic: All 10/10 goals verified; fleet_mode_infra.py selftest 23/23 PASS (concurrent writes, lock contention, crash-safety). Lane fully clo
 - Verifier: all 10 goals verified (cycle 16 closed). Fresh runs confirmed #1,#3,#4,#5,#6 + prior 4.
 - Playwright unavailable in sandbox; Designer verifies goals via static source analysis (verify_*.py scripts) instead of browser tests.
+- Designer lane 10/10 goals verified 202
+- Mechanic lane fully concluded: 10/10 goals verified (264/264 selftests), recorded in goal_ledger.py, no open work remains.
+- Goal file resets to placeholders on cycle transition; code in agent_portal.py was reverted by memory_mirror despite evidence of completion.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
