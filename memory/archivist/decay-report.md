@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 10350 | flagged (<0.35): 0
+Leaves: 10353 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9774,6 +9774,7 @@ Leaves: 10350 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261125-021423.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-024037.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-030005.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-041338.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/cadence-adjuster-selftest-evidence.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/convergence-loadtest.md | 0 | 0 | n | 0.550 |
@@ -9790,6 +9791,7 @@ Leaves: 10350 | flagged (<0.35): 0
 | memory/mechanic/reboot-recovery.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/recovery_sla_summary.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/seat_probe_predictive_test.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/test_cycle_duration_tracker.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/transition_gap_sla.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/vram-predictor-selftest-evidence.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/vram_headroom_predictor.py | 0 | 0 | n | 0.550 |
@@ -10037,6 +10039,7 @@ Leaves: 10350 | flagged (<0.35): 0
 | memory/synthesis/retro-cycle-14.md | 1 | 1 | Y | 0.764 |
 | memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md | 6 | 11 | n | 0.765 |
 | memory/portal/file-links.md | 13 | 3 | Y | 0.766 |
+| memory/goals/researcher-g1-convergence-forecast-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/TODO.md | 12 | 3 | Y | 0.772 |
 | memory/mechanic/memory_mirror_fixed.py | 12 | 3 | Y | 0.772 |
 | memory/researcher/r18-output-verification-2026-11-13.md | 12 | 3 | Y | 0.772 |
