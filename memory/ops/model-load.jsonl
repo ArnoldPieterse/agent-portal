@@ -823,3 +823,4 @@
 {"ts": "2026-11-24 12:51:09", "run": "g-1a20b76dea0-869866", "missing": {}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-24 13:07:24", "run": "g-1a20b85bf9a-de5de6", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-24 13:12:39", "run": "g-1a20b8a8eeb-4aa9b4", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
+{"ts": "2026-11-24 13:30:09", "run": "g-1a20b9a9554-9c5b70", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}

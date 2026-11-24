@@ -1666,5 +1666,11 @@
 "text": "**Productive Pass Definition** - Write memory/researcher/productive-pass-definition.md: formal definition of \"productive pass\" per role (e.g",
 "agent": "researcher",
 "at": "2026-11-24"
+},
+{
+"sig": "ebb9760bec176d74",
+"text": "**Cycle Efficiency Digest** - Per cycle: one-paragraph summary of efficiency metrics (passes used, productive %, goals/cycle, time-to-100%, ",
+"agent": "scribe",
+"at": "2026-11-24"
 }
 ]

@@ -65,8 +65,8 @@ DEFAULTS = {"planners": ["orchestrator", "designer", "researcher"],
 RUN_STALE_S = 900        # in-progress older than this = crashed run, may re-fire
 DRAFT_TIMEOUT_S = 180    # per-planner LLM call budget
 JUDGE_TIMEOUT_S = 120
-MAX_ITEMS_PER_AGENT = 12
-MIN_ITEMS_PER_AGENT = 1
+MAX_ITEMS_PER_AGENT = 4
+MIN_ITEMS_PER_AGENT = 2
 GROUND_FLOOR = 0.5       # min grounded-item ratio for a draft to be judged
 
 _LOCK = threading.Lock()
@@ -116,7 +116,7 @@ def _append_rounds(entry):
 
 # ---- LLM calls (same contract as the portal's _aux_chat) ----------------------
 
-def llm_call(agent, system, user, max_tokens=3000, temperature=0.2, timeout=DRAFT_TIMEOUT_S, model=None):
+def llm_call(agent, system, user, max_tokens=4000, temperature=0.2, timeout=DRAFT_TIMEOUT_S, model=None):
     """One non-streaming chat completion on the agent's own studio seat.
     Raises on any failure - callers decide how to degrade."""
     base = (agent.get("studio") or "http://127.0.0.1:8888").rstrip("/")
@@ -144,12 +144,17 @@ def llm_call(agent, system, user, max_tokens=3000, temperature=0.2, timeout=DRAF
 # completion; if the configured model is down, fall back to any model actually
 # loaded on that host (Q8 preferred), so the round degrades per-seat, not fleet-wide.
 
-def _probe_model(agent, model, timeout=45):
+def _probe_model(agent, model, timeout=20, mcache=None):
     """A seat is alive if it returns HTTP 200 with content OR reasoning_content.
     (Qwen3 thinking mode can burn a tiny token budget on reasoning and return
-    empty content - that still proves the model is loaded and answering.)"""
+    empty content - that still proves the model is loaded and answering.)
+    mcache: shared {(host, model): bool} so each pair is probed once per round."""
+    base = (agent.get("studio") or "http://127.0.0.1:8888").rstrip("/")
+    k = (base, model)
+    if mcache is not None and k in mcache:
+        return model if mcache[k] else None
+    ok = False
     try:
-        base = (agent.get("studio") or "http://127.0.0.1:8888").rstrip("/")
         body = {"model": model,
                 "messages": [{"role": "user", "content": "Reply with the single word OK."}],
                 "max_tokens": 32, "temperature": 0.0, "stream": False,
@@ -163,12 +168,12 @@ def _probe_model(agent, model, timeout=45):
                 timeout=timeout) as r:
             d = json.load(r)
         m = (d.get("choices") or [{}])[0].get("message") or {}
-        if (m.get("content") or "").strip() or (m.get("reasoning_content") or "").strip():
-            return model
+        ok = bool((m.get("content") or "").strip() or (m.get("reasoning_content") or "").strip())
     except Exception:
         pass
-    return None
-
+    if mcache is not None:
+        mcache[k] = ok
+    return model if ok else None
 
 def host_models(base=None, key="", timeout=8):
     base = (base or "").rstrip("/")
@@ -181,20 +186,20 @@ def host_models(base=None, key="", timeout=8):
         return []
 
 
-def seat_model(agent, probed=None):
+def seat_model(agent, probed=None, mcache=None):
     """A model id this agent's seat answers with right now: its configured
     model_id first, then up to 3 other models listed on the same host (Q8
     preferred). None = no live model; the round must skip this planner.
     `probed` is an optional per-round cache so a seat is probed at most once."""
     if probed is not None and agent["id"] in probed:
         return probed[agent["id"]]
-    mid = _probe_model(agent, agent["model_id"])
+    mid = _probe_model(agent, agent["model_id"], mcache=mcache)
     if not mid:
         base = (agent.get("studio") or "http://127.0.0.1:8888").rstrip("/")
         key = (agent.get("api_key") or "").strip()
         cands = sorted(host_models(base, key), key=lambda m: (0 if "q8" in m.lower() else 1, m))[:3]
         for cand in cands:
-            mid = _probe_model(agent, cand)
+            mid = _probe_model(agent, cand, mcache=mcache)
             if mid:
                 break
     if probed is not None:
@@ -347,7 +352,7 @@ def select_crew(roster, cfg):
     model right now is skipped and the next one takes its place. Returns planners
     as [(agent, model_id)] and judge as (agent, model_id) or None."""
     by_id = {a["id"]: a for a in roster}
-    probed = {}
+    probed, mcache = {}, {}
     wanted = list(cfg.get("planners") or []) + [a["id"] for a in roster]
     planners = []
     for pid in wanted:
@@ -356,7 +361,7 @@ def select_crew(roster, cfg):
         a = by_id.get(pid)
         if not a or any(a["id"] == p[0]["id"] for p in planners):
             continue
-        mid = seat_model(a, probed)
+        mid = seat_model(a, probed, mcache)
         if mid:
             planners.append((a, mid))
     judge = None
@@ -365,7 +370,7 @@ def select_crew(roster, cfg):
         a = by_id.get(pid)
         if not a or any(a["id"] == p[0]["id"] for p in planners):
             continue
-        mid = probed.get(a["id"]) or seat_model(a, probed)
+        mid = probed.get(a["id"]) or seat_model(a, probed, mcache)
         judge = (a, mid) if mid else None
         break
     return planners, judge
@@ -442,6 +447,38 @@ def _strip_fences(t):
     return t.strip()
 
 
+def _close_truncated(t):
+    """If a draft was cut off mid-JSON (server token cap), close any open
+    strings/brackets so the complete prefix still parses. None if hopeless."""
+    t2 = t.rstrip()
+    if not t2:
+        return None
+    stack, in_str, esc = [], False, False
+    for ch in t2:
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+        elif ch == '"':
+            in_str = True
+        elif ch in "{[":
+            stack.append(ch)
+        elif ch in "}]":
+            if stack:
+                stack.pop()
+    if in_str:
+        t2 += '"'
+    t2 = t2.rstrip()
+    if t2.endswith(","):
+        t2 = t2[:-1]                                  # dangling comma before appended closers
+    if not stack:
+        return None                                   # balanced but internally broken
+    return t2 + "".join("}" if b == "{" else "]" for b in reversed(stack))
+
+
 def validate_draft(raw, roster_ids, refs):
     """-> (parsed|None, stats). parsed = {agents: {id: [item dicts]}} or None."""
     repaired = False
@@ -453,8 +490,15 @@ def validate_draft(raw, roster_ids, refs):
         try:
             d = json.loads(t2)
             repaired, t = True, t2
-        except Exception as e:
-            return None, {"error": "not-json: %s" % str(e)[:120]}
+        except Exception:
+            t3 = _close_truncated(t2)                     # cut off mid-JSON -> close open brackets
+            if t3 is None:
+                return None, {"error": "not-json (unrepairable)"}
+            try:
+                d = json.loads(t3)
+                repaired, t = True, t3
+            except Exception as e:
+                return None, {"error": "not-json: %s" % str(e)[:120]}
     agents = (d or {}).get("agents") if isinstance(d, dict) else None
     if not isinstance(agents, dict):
         return None, {"error": "no agents object"}
@@ -596,7 +640,7 @@ def run_round(doc=None, force=False):
         label = "ABC"[i]
         try:
             raw = llm_call(ag, DRAFT_SYSTEM % ag.get("name", ag["id"]), user_prompt,
-                           max_tokens=3000, temperature=0.2, model=mid)
+                           max_tokens=4000, temperature=0.2, model=mid)
         except Exception as e:
             drafts.append((label, ag["id"], mid, None, None,
                            {"error": "draft call failed: %s" % str(e)[:160]}))
@@ -606,13 +650,14 @@ def run_round(doc=None, force=False):
         drafts.append((label, ag["id"], mid, raw, parsed, stats))
 
     valid = [d for d in drafts if d[4] is not None]
+    labelled = [(l, p, st) for l, _aid, _mid, _raw, p, st in valid]  # (label, parsed, stats)
     verdict = None
     if len(valid) >= 2:
         if judge and judge[1]:
             jag, jmid = judge
-            verdict = judge_call(jag, valid, doc, model=jmid)
+            verdict = judge_call(jag, labelled, doc, model=jmid)
         if verdict is None:                                   # no live judge seat / judge failed -> local rubric
-            verdict = local_pick(valid)
+            verdict = local_pick(labelled)
     elif len(valid) == 1:
         verdict = {"agent": "none", "winner": valid[0][0],
                    "scores": {}, "rationale": "only valid draft (other seats failed or ungrounded)"}
