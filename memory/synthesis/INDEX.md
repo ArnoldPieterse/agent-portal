@@ -40,4 +40,4 @@ Open-item gate status: see TODO.md LIVE PLAN (do not duplicate it here).
 - [index-pointer-handoff-r38.md](memory/synthesis/index-pointer-handoff-r38.md) | Index pointer handoff r38
 - [index-replay-r81-24of24-canonical.md](memory/synthesis/index-replay-r81-24of24-canonical.md) | Index replay r81 24/24 canonical
 
-- `archive-nav.md` — theme-organized navigation index (Orchestrator assist Scribe#7, 2026-11-20)
+- `archive-nav.md` — theme-organized navigation index (Orchestrator assist Scribe#7, 2026-11-20)- -> memory/synthesis/retro-cycle-14.md   auto-retro cycle 14 (2026-11-23..2026-11-24): 52 completions, 5 blockers

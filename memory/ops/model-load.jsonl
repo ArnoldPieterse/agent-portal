@@ -866,3 +866,6 @@
 {"ts": "2026-11-24 20:34:28", "run": "g-1a20d1f0bd6-aca7ce", "missing": {"Researcher": "unreachable", "Scribe": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-24 20:44:11", "run": "g-1a20d27f2eb-2e4a6f", "missing": {"Researcher": "unreachable", "Scribe": "unreachable", "Archivist": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-24 20:50:41", "run": "g-1a20d2de6fa-48b679", "missing": {"Researcher": "unreachable", "Scribe": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
+{"ts": "2026-11-24 21:06:42", "run": "g-1a20d3c8ddf-43f72b", "missing": {"Researcher": "unreachable", "Scribe": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
+{"ts": "2026-11-24 21:08:53", "run": "g-1a20d3e8f51-ca5acd", "missing": {"Researcher": "unreachable", "Scribe": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
+{"ts": "2026-11-24 21:11:38", "run": "g-1a20d411202-7cc007", "missing": {"Scribe": "unreachable", "Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}

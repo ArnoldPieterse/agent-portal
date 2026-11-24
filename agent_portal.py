@@ -1678,6 +1678,14 @@ def _cockpit_snapshot():
             "health_trend": trend,
             "recent_decisions": decisions, "predicted_risks": risks,
             "generated": time.strftime("%Y-%m-%d %H:%M:%S")}
+    try:
+        import json as _json
+        with open(os.path.join(HERE, "memory", "ops", "fleet-mode.json"), encoding="utf-8") as _f:
+            _fm = _json.load(_f)
+        data["fleet_mode"] = _fm.get("mode")
+        data["last_activity"] = _fm.get("timestamp")
+    except Exception:
+        pass
     # Flowtrace (2026-11-24): log mode transitions + resolve mode forecasts on every poll.
     try:
         _madir = os.path.join(HERE, "memory", "archivist")
@@ -3114,6 +3122,49 @@ AUTOLOOP_TICK_S = 15       # autoloop scheduler tick
 AUTOLOOP_MAX_STREAK = 40   # consecutive auto passes without human input before the loop pauses (GPU budget)
 AUTOLOOP_MAINT_COOLDOWN_S = 1800   # min gap between maintenance passes for an agent at 100%
 
+_IDLE_ROTATION_CACHE = {"ts": 0.0, "tasks": {}}  # role -> [5 daily tasks] from the rotation table
+_FLEET_MODE_CACHE = {"ts": 0.0, "mode": None}    # memory/ops/fleet-mode.json, 60s TTL
+
+def _idle_rotation_task(agent_name):
+    """Role-specific idle maintenance task (2026-11-24 B1): parses the role row of
+    memory/ops/idle-maintenance-rotation-2026-11-24.md and picks the day-of-week task.
+    Returns "task (DayLabel)" or None."""
+    now = time.time()
+    if now - _IDLE_ROTATION_CACHE["ts"] > 3600 or not _IDLE_ROTATION_CACHE["tasks"]:
+        tasks = {}
+        try:
+            rp = os.path.join(HERE, "memory", "ops", "idle-maintenance-rotation-2026-11-24.md")
+            with open(rp, encoding="utf-8") as f:
+                for line in f:
+                    m = re.match(r"^\|\s*([A-Za-z]+)\s*\|(.+)\|\s*$", line.strip())
+                    if not m or m.group(1).lower() == "role":
+                        continue
+                    cells = [c.strip() for c in m.group(2).split("|") if c.strip()]
+                    if len(cells) >= 5:
+                        tasks[m.group(1).lower()] = cells[:5]
+            _IDLE_ROTATION_CACHE.update(ts=now, tasks=tasks)
+        except Exception:
+            return None
+    row = _IDLE_ROTATION_CACHE["tasks"].get(agent_name.lower())
+    if not row:
+        return None
+    idx = time.localtime().tm_wday % 5   # Mon=0..Sun=6; rotation wraps Sat/Sun into Tue/Wed
+    days = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+    return "%s (%s)" % (row[idx], days[idx])
+
+def _fleet_mode_now():
+    """Current fleet mode from memory/ops/fleet-mode.json (60s TTL). None on error."""
+    now = time.time()
+    if now - _FLEET_MODE_CACHE["ts"] > 60:
+        mode = None
+        try:
+            with open(os.path.join(HERE, "memory", "ops", "fleet-mode.json"), encoding="utf-8") as f:
+                mode = json.load(f).get("mode")
+        except Exception:
+            pass
+        _FLEET_MODE_CACHE.update(ts=now, mode=mode)
+    return _FLEET_MODE_CACHE["mode"]
+
 
 class _RunStopped(OSError):
     """Raised by the run sink when ■ Stop is requested. stream_chat's existing
@@ -4223,7 +4274,13 @@ def _autoloop_watchdog():
                             "(record blockers once in memory/ops/blockers.md)." % (goal_list, n.lower()))
                 elif now - la[n] >= AUTOLOOP_MAINT_COOLDOWN_S:
                     why_bits.append("%s:maint" % n.lower())
-                    body = ("your goals are 100% reached - contribute to the team while you wait - pick ONE of: (a) write a prediction/forecast for another agent's open goal into memory/goals/, (b) draft a solution or workflow improvement into memory/ops/, (c) verify and close one stale evidence claim in the ledger, (d) do one concrete step on another agent's oldest open goal. Reply [SILENT] only if you genuinely checked all four and found nothing actionable.")
+                    _generic_menu = "pick ONE of: (a) write a prediction/forecast for another agent's open goal into memory/goals/, (b) draft a solution or workflow improvement into memory/ops/, (c) verify and close one stale evidence claim in the ledger, (d) do one concrete step on another agent's oldest open goal. Reply [SILENT] only if you genuinely checked all four and found nothing actionable."
+                    rot = _idle_rotation_task(n)
+                    fm = _fleet_mode_now()
+                    if rot and fm in ("MAINTENANCE", "IDLE"):
+                        body = ("your goals are 100% reached and the fleet is in %s mode - do this ONE role-specific maintenance task (rotated daily): %s. Complete it, produce its measurable output, then record a timestamped evidence line in memory/goals/%s.md. Only if that task is already done or blocked, " % (fm, rot, n.lower())) + _generic_menu
+                    else:
+                        body = ("your goals are 100% reached - contribute to the team while you wait - " + _generic_menu)
                 else:
                     continue   # at 100% inside maintenance cooldown - no task for this seat yet
                 sections.append((n, "@%s (idle %d s): %s%s" % (

@@ -1810,5 +1810,35 @@
 "text": "**Cycle Transition Script** - `python memory/builder/cycle_transition.py`: automate the full cycle close sequence: (a) verify 100% completio",
 "agent": "builder",
 "at": "2026-11-24"
+},
+{
+"sig": "ffacde3fb2879f57",
+"text": "**Cockpit Mode Banner** - Add a top-of-page banner in cockpit showing current fleet mode (WORK=green, MAINTENANCE=amber, IDLE=grey) with tim",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "130128bd2a5cd078",
+"text": "**Idle Task Injector** - Modify agent_portal.py dispatch logic: when fleet_mode=MAINTENANCE or IDLE, inject the role-specific task from idle",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "60dcac0dc81edb64",
+"text": "**Decision-Log Compaction** - `python memory/archivist/compact_decision_log.py`: compress decision-log.jsonl entries older than 7 days into ",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "069681f6001c1dca",
+"text": "**Fleet Autonomy Metrics Glossary** - Write memory/archivist/metrics-glossary.md: formal definitions of all fleet metrics used in cycle 15 (",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "a66443fad1756880",
+"text": "**Cycle Retro Auto-Archiver** - `python memory/archivist/retro_archiver.py`: at cycle close, auto-generate retro notes from: goals completed",
+"agent": "archivist",
+"at": "2026-11-24"
 }
 ]

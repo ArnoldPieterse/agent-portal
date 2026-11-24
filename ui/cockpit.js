@@ -15,6 +15,15 @@
     s.textContent = [
       ".ckp{position:fixed;top:0;right:-640px;width:620px;max-width:100vw;height:100vh;z-index:95;background:var(--bg-1,#101318);color:var(--fg-1,#e8eaed);border-left:1px solid var(--line,#2a2f38);transition:right .25s ease;overflow-y:auto;padding:14px 16px 40px;font-size:13px}",
       ".ckp.open{right:0}",
+      ".ckp-mode-banner{display:flex;align-items:center;gap:8px;margin:0 0 12px;padding:8px 10px;border-radius:8px;font-size:12px;font-weight:600;letter-spacing:.4px;border:1px solid transparent}",
+      ".ckp-mode-banner[hidden]{display:none}",
+      ".ckp-mode-banner .ckp-mode-dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}",
+      ".ckp-mode-banner.mode-work{background:color-mix(in srgb,#2ea36b 14%,transparent);border-color:color-mix(in srgb,#2ea36b 45%,transparent);color:color-mix(in srgb,#2ea36b 80%,var(--fg-1,#e8eaed))}",
+      ".ckp-mode-banner.mode-work .ckp-mode-dot{background:#2ea36b}",
+      ".ckp-mode-banner.mode-maintenance{background:color-mix(in srgb,#d4a017 14%,transparent);border-color:color-mix(in srgb,#d4a017 45%,transparent);color:color-mix(in srgb,#d4a017 80%,var(--fg-1,#e8eaed))}",
+      ".ckp-mode-banner.mode-maintenance .ckp-mode-dot{background:#d4a017}",
+      ".ckp-mode-banner.mode-idle{background:color-mix(in srgb,#8a8f98 14%,transparent);border-color:color-mix(in srgb,#8a8f98 45%,transparent);color:color-mix(in srgb,#8a8f98 80%,var(--fg-1,#e8eaed))}",
+      ".ckp-mode-banner.mode-idle .ckp-mode-dot{background:#8a8f98}",
       "@media(max-width:768px){.ckp{width:100vw}}",
       ".ckp h2{margin:2px 0 10px;font-size:15px;display:flex;justify-content:space-between;align-items:center}",
       ".ckp .sec{margin:14px 0 6px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a8f98}",
@@ -50,6 +59,7 @@
     panel.id = "ckpPanel";
     panel.className = "ckp";
     panel.innerHTML = "<h2>Fleet Cockpit <span style='font-weight:400;font-size:11px;color:#8a8f98'><span id=ckpStamp>loading\u2026</span></span></h2>" +
+      "<div id=ckpModeBanner class=ckp-mode-banner hidden data-testid=cockpit-mode-banner></div>" +
       "<div class=sec>Agents</div><div id=ckpAgents class=ckgrid></div>" +
       "<div class=sec>Fleet goals</div><div id=ckpGoals></div>" +
       "<div class=sec>Host resources</div><div id=ckpHosts></div>" +
@@ -140,11 +150,35 @@
     document.getElementById("ckpDecList").innerHTML = out || "<i style='color:#8a8f98'>no decisions match</i>";
   }
 
+  function relTime(iso) {
+    try {
+      var ms = Date.now() - new Date(iso).getTime();
+      if (isNaN(ms)) return "";
+      var m = Math.round(ms / 60000);
+      if (m < 1) return "just now";
+      if (m < 60) return m + "m ago";
+      var h = Math.round(m / 60);
+      if (h < 24) return h + "h ago";
+      return Math.round(h / 24) + "d ago";
+    } catch (e) { return ""; }
+  }
+  function updateBanner(d) {
+    var b = document.getElementById("ckpModeBanner");
+    if (!b) return;
+    var mode = d && d.fleet_mode ? String(d.fleet_mode).toUpperCase() : "";
+    if (!mode) { b.hidden = true; return; }
+    var cls = mode === "WORK" ? "mode-work" : (mode === "MAINTENANCE" ? "mode-maintenance" : (mode === "IDLE" ? "mode-idle" : "mode-idle"));
+    var t = d.last_activity ? relTime(d.last_activity) : "";
+    b.className = "ckp-mode-banner " + cls;
+    b.hidden = false;
+    b.innerHTML = "<span class=ckp-mode-dot></span>" + esc(mode) + (t ? " <span style='opacity:.75;font-weight:400'>\u00b7 " + esc(t) + "</span>" : "");
+  }
   async function refresh() {
     try {
       var r = await fetch(API, { cache: "no-store" });
       last = await r.json();
       render(last);
+      updateBanner(last);
       document.getElementById("ckpStamp").textContent = "updated " + new Date().toLocaleTimeString();
     } catch (e) {
       document.getElementById("ckpStamp").textContent = "refresh failed";
