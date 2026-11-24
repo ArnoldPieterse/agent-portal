@@ -2011,3 +2011,4 @@
 {"t": "2026-11-25 06:27:13", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-25 06:32:08", "job": "cycle_5m", "event": "start", "pid": 15776}
 {"t": "2026-11-25 06:32:13", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-25 07:43:14", "event": "scheduler-up", "jobs": 6}

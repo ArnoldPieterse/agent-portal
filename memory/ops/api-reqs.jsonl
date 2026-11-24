@@ -1,4 +1,0 @@
-{"event": "created", "id": "R0001", "agent": "Tester", "kind": "change", "file": "_apiq_test_target.txt", "command": "", "ts": "2026-11-24T21:41:10Z"}
-{"event": "applied", "id": "R0001", "by": "human", "kind": "change", "file": "_apiq_test_target.txt", "detail": "_apiq_test_target.txt: replaced lines 9..9 with 1 line(s)", "ts": "2026-11-24T21:41:10Z"}
-{"event": "created", "id": "R0002", "agent": "Tester", "kind": "change", "file": "_apiq_test_target.txt", "command": "", "ts": "2026-11-24T21:41:11Z"}
-{"event": "applied", "id": "R0002", "by": "human", "kind": "change", "file": "_apiq_test_target.txt", "detail": "_apiq_test_target.txt: replaced lines 2..2 with 1 line(s)", "ts": "2026-11-24T21:41:11Z"}

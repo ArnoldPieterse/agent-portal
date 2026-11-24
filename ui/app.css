@@ -182,6 +182,27 @@ textarea{resize:vertical;min-height:64px}
 #goalsPanel.open{display:flex}
 #goalsHead{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);color:var(--dim);border-bottom:1px solid var(--line)}
 #goalsBody{overflow-y:auto;padding:var(--sp-6) var(--sp-16);display:flex;flex-wrap:wrap;gap:var(--sp-6)}
+/* Portal API request queue (2026-11-25): injected by ui/core.js */
+#reqPanel{display:none;border-bottom:1px solid var(--line);background:var(--panel);max-height:340px;flex-direction:column}
+#reqPanel.open{display:flex}
+#reqHead{display:flex;align-items:center;gap:var(--sp-8);padding:var(--sp-8) var(--sp-16);font-size:var(--fs-12);color:var(--dim);border-bottom:1px solid var(--line)}
+#reqBody{overflow-y:auto;padding:var(--sp-6) var(--sp-16);display:flex;flex-direction:column;gap:3px}
+.reqsec{font-size:var(--fs-12);color:var(--dim);margin-top:2px;text-transform:uppercase;letter-spacing:.04em}
+.reqrow{display:flex;align-items:center;gap:8px;font-size:var(--fs-12);padding:3px 6px;border-radius:6px;flex-wrap:wrap}
+.reqrow.pend{background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.reqid{font-family:ui-monospace,Consolas,monospace;color:var(--dim)}
+.reqkind{width:16px;text-align:center}
+.reqagent{min-width:70px;max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.reqwhat{flex:1 1 240px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.reqwhat code,.reqnote code{font-family:ui-monospace,Consolas,monospace}
+.reqnote{max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.reqres{max-width:340px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chip{font-size:10px;padding:1px 7px;border-radius:9px;border:1px solid var(--line);text-transform:uppercase;letter-spacing:.03em}
+.chip-pending{color:var(--warn,#d9a441);border-color:var(--warn,#d9a441)}
+.chip-applied{color:var(--ok,#4caf7d);border-color:var(--ok,#4caf7d)}
+.chip-rejected,.chip-failed,.chip-withdrawn{color:var(--err,#d05656);border-color:var(--err,#d05656)}
+#reqNewRow{display:flex;gap:8px;padding:6px var(--sp-16) 2px}
+#reqNewCmd{flex:1;font-size:var(--fs-12);padding:4px 8px;background:var(--bg,#111);border:1px solid var(--line);border-radius:6px;color:inherit}
 .gtile{display:flex;align-items:center;gap:var(--sp-8);background:var(--panel2);border:1px solid var(--line);border-radius:var(--br-md);padding:var(--sp-4) var(--sp-8);min-width:170px}
 .gring{position:relative;width:32px;height:32px;flex:none}
 .gring svg{width:32px;height:32px}

@@ -467,6 +467,82 @@ $("todoPrune").onclick=async()=>{
   }catch(e){ opsSay("error: "+e); }
 };
 
+// ---- Portal API request queue (2026-11-25): agents' [[PORTAL-API]] file/terminal requests.
+// Button + panel are injected here (not in the HTML shells) so all six page tabs get it
+// without touching the pinned markup files. Backend: agent_portal.py _apiq_* + /api/reqs*.
+(function(){
+  const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+  // button, right after Ops
+  const b=document.createElement("button"); b.id="reqBtn"; b.type="button";
+  b.title="Portal API requests: agents' queued file changes + terminal commands (approve/reject here); live while open";
+  b.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg> Requests';
+  const opsBtn=$("opsBtn"); if(opsBtn)opsBtn.parentNode.insertBefore(b,opsBtn.nextSibling);
+  // panel, after goalsPanel (appears above the messages when open)
+  const p=document.createElement("div"); p.id="reqPanel";
+  p.innerHTML='<div id="reqHead"><span>Portal API requests · agents\u2019 queued file + terminal calls</span><span id="reqStat" class="hint">loading…</span></div>'
+    +'<div id="reqBody"></div>'
+    +'<div id="reqNewRow"><input id="reqNewCmd" placeholder="queue a terminal command (runs after approval)\u2026" aria-label="New terminal command"><button class="btn" id="reqNewBtn">Queue command</button></div>'
+    +'<div id="reqMsg" class="hint" role="status" aria-live="polite" style="margin-top:4px;font-size:var(--fs-12)"></div>';
+  const gp=$("goalsPanel"); if(gp)gp.parentNode.insertBefore(p,gp.nextSibling);
+
+  let timer=null, lastData=null;
+  const kindIcon={change:"\u270e",create:"\u2795",delete:"\u2716",terminal:"\u2328"};
+  function row(r){
+    const pend=r.status==="pending";
+    let what="";
+    if(r.kind==="change")what=esc(r.file)+' <code>['+(r.range||[0,0])[0]+'..'+(r.range||[0,0])[1]+']</code> \u2192 '+(r.lineCount!=null?r.lineCount:"?")+" line(s)";
+    else if(r.kind==="create")what=esc(r.file)+" \u00b7 "+(r.contentChars!=null?r.contentChars+" chars");
+    else if(r.kind==="delete")what="\u2716 "+esc(r.file);
+    else what="<code>"+esc((r.command||"").slice(0,140))+"</code>";
+    const res=(r.result&&r.result.detail)?esc(r.result.detail):"";
+    return '<div class="reqrow'+(pend?" pend":"")+'"><span class="reqid">'+esc(r.id)+'</span>'
+      +'<span class="reqkind" title="'+esc(r.kind)+'">'+(kindIcon[r.kind]||"\u2022")+'</span>'
+      +'<span class="reqagent" title="requested by">'+esc(r.agent)+'</span>'
+      +'<span class="reqwhat">'+what+'</span>'
+      +(r.note?'<span class="hint reqnote" title="note">'+esc(String(r.note).slice(0,80))+'</span>':"")
+      +'<span class="chip chip-'+esc(r.status)+'">'+esc(r.status)+'</span>'
+      +(pend?'<button class="btn ok" data-apr="'+esc(r.id)+'">approve</button><button class="btn" data-rej="'+esc(r.id)+'">reject</button>':"")
+      +(!pend&&res?'<span class="hint reqres" title="result">'+res+'</span>":"")
+      +'</div>';
+  }
+  async function reqLoad(){
+    try{
+      const d=await (await fetch("/api/reqs?limit=100",{cache:"no-store"})).json();
+      if(!$("reqPanel").classList.contains("open"))return;
+      lastData=d;
+      const st=d.stats||{}; const reqs=d.requests||[];
+      $("reqStat").textContent="pending "+(st.pending_file||0)+" file / "+(st.pending_terminal||0)+" terminal \u00b7 applied "+(st.applied||0);
+      const files=reqs.filter(r=>r.kind!=="terminal");
+      const terms=reqs.filter(r=>r.kind==="terminal");
+      let h='<div class="reqsec">File requests (change / create / delete)</div>';
+      h+=files.length?files.map(row).join(""):'<div class="hint reqempty">none \u2014 agents queue changes with requestChange / reqCreateFile / reqDeleteFile</div>';
+      h+='<div class="reqsec" style="margin-top:8px">Terminal queue (runCMD)</div>';
+      h+=terms.length?terms.map(row).join(""):'<div class="hint reqempty">none \u2014 agents queue commands with runCMD</div>';
+      $("reqBody").innerHTML=h;
+      $("reqBody").querySelectorAll("[data-apr]").forEach(x=>x.onclick=()=>decide(x.dataset.apr,"/api/reqs/approve",{}));
+      $("reqBody").querySelectorAll("[data-rej]").forEach(x=>x.onclick=()=>decide(x.dataset.rej,"/api/reqs/reject",{reason:"rejected from portal UI"}));
+    }catch(e){ $("reqStat").textContent="error: "+e; }
+  }
+  async function decide(id,path,extra){
+    $("reqMsg").textContent=id+": sending\u2026";
+    try{ const r=await (await fetch(path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(Object.assign({id:id,by:"human"},extra))})).json();
+      $("reqMsg").textContent=r.ok?id+" \u2192 "+((r.request&&r.request.result&&r.request.result.detail)||r.request.status||"done"):("error: "+(r.error||"failed"));
+    }catch(e){ $("reqMsg").textContent="error: "+e; }
+    reqLoad();
+  }
+  b.onclick=()=>{ const open=p.classList.toggle("open"); b.classList.toggle("on",open);
+    if(open){ reqLoad(); timer=setInterval(reqLoad,5000); } else { clearInterval(timer); timer=null; } };
+  $("reqNewBtn").onclick=async()=>{
+    const c=$("reqNewCmd").value.trim(); if(!c){ $("reqMsg").textContent="type a command first"; return; }
+    try{ const r=await (await fetch("/api/reqs",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({call:"runCMD",agent:"human",args:{command:c}})})).json();
+      $("reqMsg").textContent=r.ok?"queued "+r.id+" (waiting for approval)":("error: "+(r.detail||"failed"));
+      if(r.ok)$("reqNewCmd").value="";
+    }catch(e){ $("reqMsg").textContent="error: "+e; }
+    reqLoad();
+  };
+  $("reqNewCmd").addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();$("reqNewBtn").click();}});
+})();
+
 // ---- Goal #4/6 helpers (2026-11-19 White re-land) ----
 window.UI=window.UI||{};
 UI.emptyState=function(o){ o=o||{}; let ic=''; try{ ic=(window.UI&&UI.icon)?UI.icon(o.icon||"info"):''; }catch(_){}
