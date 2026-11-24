@@ -1,52 +1,52 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-25 06:31:13 | Fleet: 22/80 (28%) | throughput ~20.0 goals/h
+Generated: 2026-11-25 07:33:36 | Fleet: 39/80 (49%) | throughput ~20.0 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [verifier] Convergence Metric Validation** - ETA 2026-11-25 08:18, P(reached) 76% (verify, cx1)
+**#1 [verifier] Convergence Metric Validation** - ETA 2026-11-25 09:20, P(reached) 76% (verify, cx1)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 09:00) - shared scope autonomy,convergence,metrics | scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 09:11) - shared scope autonomy,convergence,score | builder: **Convergence API Endpoint** - implement `/api/convergence`  (2026-11-25 09:58) - shared scope autonomy,convergence,efficiency
-**#2 [mechanic] Predictive Seat Health Monitor** - ETA 2026-11-25 08:52, P(reached) 46% (measurement, cx1)
+   consequences: scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 10:14) - shared scope autonomy,convergence,score | verifier: **Steady-State Transition Test** - simulate fleet entering s (2026-11-25 11:07) - shared scope cycle,verify | verifier: **Goal Complexity Scorer Regression** - test the complexity  (2026-11-25 12:54) - shared scope against,verify
+**#2 [mechanic] Predictive Seat Health Monitor** - ETA 2026-11-25 09:55, P(reached) 46% (measurement, cx1)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: mechanic: **Steady-State Ops Playbook** - memory/mechanic/steady-state (2026-11-25 10:39) - shared scope probe,state | scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 14:13) - shared scope extend,state | verifier: **Predictive Model Accuracy Tracker** - for all predictive m (2026-11-25 14:13) - shared scope predictive,track
-**#3 [archivist] Convergence Knowledge Base Entry** - ETA 2026-11-25 09:00, P(reached) 59% (measurement, cx1)
+   consequences: mechanic: **Steady-State Ops Playbook** - memory/mechanic/steady-state (2026-11-25 11:42) - shared scope probe,state | scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 15:16) - shared scope extend,state | verifier: **Predictive Model Accuracy Tracker** - for all predictive m (2026-11-25 15:16) - shared scope predictive,track
+**#3 [scribe] Convergence Narrative Generator** - ETA 2026-11-25 10:14, P(reached) 76% (measurement, cx1)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 08:18) - shared scope autonomy,convergence,metrics | scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 09:11) - shared scope autonomy,convergence,score | designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 09:16) - shared scope state,steady
-**#4 [scribe] Convergence Narrative Generator** - ETA 2026-11-25 09:11, P(reached) 76% (measurement, cx1)
-   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 08:18) - shared scope autonomy,convergence,score | archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 09:00) - shared scope autonomy,convergence,score | builder: **Convergence API Endpoint** - implement `/api/convergence`  (2026-11-25 09:58) - shared scope autonomy,convergence,score
-**#5 [designer] Steady-State Visual Indicator** - ETA 2026-11-25 09:16, P(reached) 10% (build, cx1)
+   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 09:20) - shared scope autonomy,convergence,score | scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 15:16) - shared scope autonomy,convergence,intervention | designer: **Intervention Timeline** - horizontal timeline showing huma (2026-11-25 18:57) - shared scope autonomy,intervention
+**#4 [designer] Steady-State Visual Indicator** - ETA 2026-11-25 10:19, P(reached) 10% (build, cx1)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: mode change trig)
-   consequences: archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 09:00) - shared scope state,steady | verifier: **Steady-State Transition Test** - simulate fleet entering s (2026-11-25 10:05) - shared scope change,state,steady | mechanic: **Steady-State Ops Playbook** - memory/mechanic/steady-state (2026-11-25 10:39) - shared scope reduced,state,steady
-**#6 [researcher] Goal Acceptance Rate Predictor** - ETA 2026-11-25 09:21, P(reached) 18% (build, cx1)
+   consequences: verifier: **Steady-State Transition Test** - simulate fleet entering s (2026-11-25 11:07) - shared scope change,state,steady | mechanic: **Steady-State Ops Playbook** - memory/mechanic/steady-state (2026-11-25 11:42) - shared scope reduced,state,steady | scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 15:16) - shared scope state,steady
+**#5 [researcher] Goal Acceptance Rate Predictor** - ETA 2026-11-25 10:24, P(reached) 18% (build, cx1)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: mechanic: **VRAM Headroom Predictor** - from VRAM usage history + load (2026-11-25 16:06) - shared scope predict,predictor | designer: **Goal Complexity Heatmap** - grid view of current cycle goa (2026-11-25 21:10) - shared scope complexity,cycle | researcher: **Seat Unavailability Impact Model v2** - extend cycle-16 mo (2026-11-25 21:38) - shared scope cycle,predict
-**#7 [builder] Convergence API Endpoint** - ETA 2026-11-25 09:58, P(reached) 22% (measurement, cx2)
-   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 08:18) - shared scope autonomy,convergence,efficiency | archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 09:00) - shared scope autonomy,convergence,score | scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 09:11) - shared scope autonomy,convergence,score
-**#8 [verifier] Steady-State Transition Test** - ETA 2026-11-25 10:05, P(reached) 76% (verify, cx1)
+   consequences: mechanic: **VRAM Headroom Predictor** - from VRAM usage history + load (2026-11-25 17:08) - shared scope predict,predictor | designer: **Goal Complexity Heatmap** - grid view of current cycle goa (2026-11-25 22:12) - shared scope complexity,cycle | researcher: **Seat Unavailability Impact Model v2** - extend cycle-16 mo (2026-11-25 22:40) - shared scope cycle,predict
+**#6 [verifier] Steady-State Transition Test** - ETA 2026-11-25 11:07, P(reached) 76% (verify, cx1)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 08:18) - shared scope cycle,verify | archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 09:00) - shared scope state,steady | designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 09:16) - shared scope change,state,steady
-**#9 [mechanic] Steady-State Ops Playbook** - ETA 2026-11-25 10:39, P(reached) 76% (ops, cx1)
+   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 09:20) - shared scope cycle,verify | designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 10:19) - shared scope change,state,steady | mechanic: **Steady-State Ops Playbook** - memory/mechanic/steady-state (2026-11-25 11:42) - shared scope state,steady
+**#7 [mechanic] Steady-State Ops Playbook** - ETA 2026-11-25 11:42, P(reached) 76% (ops, cx1)
    steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
-   consequences: mechanic: **Predictive Seat Health Monitor** - extend seat_probe.py: t (2026-11-25 08:52) - shared scope probe,state | archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 09:00) - shared scope state,steady | designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 09:16) - shared scope reduced,state,steady
-**#10 [verifier] Goal Complexity Scorer Regression** - ETA 2026-11-25 11:52, P(reached) 76% (verify, cx1)
+   consequences: mechanic: **Predictive Seat Health Monitor** - extend seat_probe.py: t (2026-11-25 09:55) - shared scope probe,state | designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 10:19) - shared scope reduced,state,steady | verifier: **Steady-State Transition Test** - simulate fleet entering s (2026-11-25 11:07) - shared scope state,steady
+**#8 [verifier] Goal Complexity Scorer Regression** - ETA 2026-11-25 12:54, P(reached) 76% (verify, cx1)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 08:18) - shared scope against,verify | verifier: **Fleet Recovery SLA Test** - verify recovery times (from Me (2026-11-25 16:01) - shared scope times,verify | verifier: **Seat Draft Goal Executability Check** - for goals drafted  (2026-11-25 17:48) - shared scope goals,verify
+   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 09:20) - shared scope against,verify | verifier: **Fleet Recovery SLA Test** - verify recovery times (from Me (2026-11-25 17:03) - shared scope times,verify | verifier: **Seat Draft Goal Executability Check** - for goals drafted  (2026-11-25 18:50) - shared scope goals,verify
+**#9 [researcher] Cross-Agent Dependency Graph** - ETA 2026-11-25 13:14, P(reached) 18% (build, cx1)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: verifier: **Steady-State Transition Test** - simulate fleet entering s (2026-11-25 11:07) - shared scope cycle,output | researcher: **Cycle Efficiency Index** - composite metric per cycle: (go (2026-11-25 16:32) - shared scope cycle,goals,output | researcher: **Proposal Quality Baseline** - establish baseline quality s (2026-11-25 19:50) - shared scope cycle,goals,identify
+**#10 [mechanic] Cycle Duration Ops Tracker** - ETA 2026-11-25 14:04, P(reached) 46% (measurement, cx1)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 09:20) - shared scope cycle,duration | designer: **Cycle Duration Forecast Widget** - small chart showing act (2026-11-25 14:38) - shared scope cycle,duration | verifier: **Predictive Model Accuracy Tracker** - for all predictive m (2026-11-25 15:16) - shared scope cycle,tracker
 
 ## Planned work (decision tree)
 
-- state: Fleet 22/80 (28%) | gate: all goals 100%? -> **NO - queue in flight**
+- state: Fleet 39/80 (49%) | gate: all goals 100%? -> **NO - queue in flight**
 - cycle: in flight: 10 goal(s) open
-- #1 [verifier] Convergence Metric Validation ~2026-11-25 08:18 (P~76%) - planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reache | delivers: Convergence Metric Validation
-- #2 [mechanic] Predictive Seat Health Monitor ~2026-11-25 08:52 (P~46%) - planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reac | delivers: Load-test evidence
-- #3 [archivist] Convergence Knowledge Base Entry ~2026-11-25 09:00 (P~59%) - planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(rea | delivers: Convergence Knowledge Base Entry
-- #4 [scribe] Convergence Narrative Generator ~2026-11-25 09:11 (P~76%) - planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(rea | delivers: Convergence Narrative Generator
-- #5 [designer] Steady-State Visual Indicator ~2026-11-25 09:16 (P~10%) - planned as build work (cx1); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Steady-State Visual Indicator
-- #6 [researcher] Goal Acceptance Rate Predictor ~2026-11-25 09:21 (P~18%) - planned as build work (cx1); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) | delivers: Goal Acceptance Rate Predictor
-- #7 [builder] Convergence API Endpoint ~2026-11-25 09:58 (P~22%) - planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reach | delivers: Convergence API Endpoint
-- #8 [verifier] Steady-State Transition Test ~2026-11-25 10:05 (P~76%) - planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reache | delivers: Fleet mode switching
+- #1 [verifier] Convergence Metric Validation ~2026-11-25 09:20 (P~76%) - planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reache | delivers: Convergence Metric Validation
+- #2 [mechanic] Predictive Seat Health Monitor ~2026-11-25 09:55 (P~46%) - planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reac | delivers: Load-test evidence
+- #3 [scribe] Convergence Narrative Generator ~2026-11-25 10:14 (P~76%) - planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(rea | delivers: Convergence Narrative Generator
+- #4 [designer] Steady-State Visual Indicator ~2026-11-25 10:19 (P~10%) - planned as build work (cx1); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Steady-State Visual Indicator
+- #5 [researcher] Goal Acceptance Rate Predictor ~2026-11-25 10:24 (P~18%) - planned as build work (cx1); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) | delivers: Goal Acceptance Rate Predictor
+- #6 [verifier] Steady-State Transition Test ~2026-11-25 11:07 (P~76%) - planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reache | delivers: Fleet mode switching
+- #7 [mechanic] Steady-State Ops Playbook ~2026-11-25 11:42 (P~76%) - planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Load-test evidence
+- #8 [verifier] Goal Complexity Scorer Regression ~2026-11-25 12:54 (P~76%) - planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reache | delivers: Goal Complexity Scorer Regression
 
 ## Functional capability chain (PM view)
 
@@ -147,39 +147,39 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): a4f106fb3413 @ 11-24 11:55:14, 05dcc83e6301 @ 11-24 13:46:57, a4f106fb3413 @ 11-24 23:09:16, 05dcc83e6301 @ 11-25 02:40:36
 
-## 30m ahead (by 2026-11-25 07:01)
-- completes: **0** goal(s) -> fleet ~28%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 22/80 -> 27%
+## 30m ahead (by 2026-11-25 08:03)
+- completes: **0** goal(s) -> fleet ~49%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 39/80 -> 48%
 
-## 1h ahead (by 2026-11-25 07:31)
-- completes: **0** goal(s) -> fleet ~28%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 22/80 -> 27%
+## 1h ahead (by 2026-11-25 08:33)
+- completes: **0** goal(s) -> fleet ~49%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 39/80 -> 48%
 
-## 1d ahead (by 2026-11-26 06:31)
-- completes: **47** goal(s) -> fleet ~86%
-  - #1 verifier: Convergence Metric Validation (2026-11-25 08:18)
-  - #2 mechanic: Predictive Seat Health Monitor (2026-11-25 08:52)
-  - #3 archivist: Convergence Knowledge Base Entry (2026-11-25 09:00)
-  - #4 scribe: Convergence Narrative Generator (2026-11-25 09:11)
-  - #5 designer: Steady-State Visual Indicator (2026-11-25 09:16)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 22/80 -> 40%
+## 1d ahead (by 2026-11-26 07:33)
+- completes: **34** goal(s) -> fleet ~91%
+  - #1 verifier: Convergence Metric Validation (2026-11-25 09:20)
+  - #2 mechanic: Predictive Seat Health Monitor (2026-11-25 09:55)
+  - #3 scribe: Convergence Narrative Generator (2026-11-25 10:14)
+  - #4 designer: Steady-State Visual Indicator (2026-11-25 10:19)
+  - #5 researcher: Goal Acceptance Rate Predictor (2026-11-25 10:24)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 39/80 -> 61%
 
-## 1w ahead (by 2026-12-02 06:31)
-- completes: **58** goal(s) -> fleet ~100%
-  - #1 verifier: Convergence Metric Validation (2026-11-25 08:18)
-  - #2 mechanic: Predictive Seat Health Monitor (2026-11-25 08:52)
-  - #3 archivist: Convergence Knowledge Base Entry (2026-11-25 09:00)
-  - #4 scribe: Convergence Narrative Generator (2026-11-25 09:11)
-  - #5 designer: Steady-State Visual Indicator (2026-11-25 09:16)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 22/80 -> 40%
+## 1w ahead (by 2026-12-02 07:33)
+- completes: **41** goal(s) -> fleet ~100%
+  - #1 verifier: Convergence Metric Validation (2026-11-25 09:20)
+  - #2 mechanic: Predictive Seat Health Monitor (2026-11-25 09:55)
+  - #3 scribe: Convergence Narrative Generator (2026-11-25 10:14)
+  - #4 designer: Steady-State Visual Indicator (2026-11-25 10:19)
+  - #5 researcher: Goal Acceptance Rate Predictor (2026-11-25 10:24)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 39/80 -> 61%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-25 06:31)
-- completes: **58** goal(s) -> fleet ~100%
-  - #1 verifier: Convergence Metric Validation (2026-11-25 08:18)
-  - #2 mechanic: Predictive Seat Health Monitor (2026-11-25 08:52)
-  - #3 archivist: Convergence Knowledge Base Entry (2026-11-25 09:00)
-  - #4 scribe: Convergence Narrative Generator (2026-11-25 09:11)
-  - #5 designer: Steady-State Visual Indicator (2026-11-25 09:16)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 22/80 -> 40%
+## 1m ahead (by 2026-12-25 07:33)
+- completes: **41** goal(s) -> fleet ~100%
+  - #1 verifier: Convergence Metric Validation (2026-11-25 09:20)
+  - #2 mechanic: Predictive Seat Health Monitor (2026-11-25 09:55)
+  - #3 scribe: Convergence Narrative Generator (2026-11-25 10:14)
+  - #4 designer: Steady-State Visual Indicator (2026-11-25 10:19)
+  - #5 researcher: Goal Acceptance Rate Predictor (2026-11-25 10:24)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 39/80 -> 61%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-

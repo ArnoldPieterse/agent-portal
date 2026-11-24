@@ -2284,5 +2284,41 @@
 "text": "**Intervention Logger Hook** - add hook to agent_portal.py message handler: when a human message matches unblock/redirect patterns (regex + ",
 "agent": "builder",
 "at": "2026-11-25"
+},
+{
+"sig": "098f91b514d7e903",
+"text": "**Goal Complexity Scorer Script** - `python memory/orchestrator/complexity_scorer.py`: parse goal text, count new-file references, detect cr",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "42a1fdcde12ada8c",
+"text": "**Autonomy Score Computation Script** - `python memory/orchestrator/autonomy_score.py`: read autoloop.jsonl (passes), human-interventions.js",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "7ffb3b8d768d7ec1",
+"text": "**Cross-Cycle Inheritance Generator** - `python memory/orchestrator/goal_inherit.py`: scan closed goals for v1 markers or incomplete scope n",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "3b0bd282454c0a83",
+"text": "**Convergence Panel Backend** - implement data pipeline for Designer's convergence panel: aggregate autonomy score trend (last 5 cycles), in",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "a37961287c681d74",
+"text": "**Seat Draft Validation Pipeline** - `python memory/builder/seat_draft_validate.py`: for goals in unreachable agents' files, run checks: too",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "b0e32e75d3c462b2",
+"text": "**Cycle Retrospective Generator** - `python memory/scribe/cycle_retro_gen.py`: on cycle close, gather data (goals completed/proposed, slippa",
+"agent": "builder",
+"at": "2026-11-25"
 }
 ]

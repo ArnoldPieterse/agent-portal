@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 5 Verifier goals formally reached & ledger-recorded; 3 source-data defects flagged (autonomy delta, efficiency formula, mode-hours overf
 - Mechanic reached 10/10 goal completion in cycle 17; lane fully closed, awaiting new goals.
 - Goal #2 Cycle Estimator Integration working: estimate=53.4h, confidence=0.9, backtest 3/4 within ±20%, writes cycle_estimate field
 - Designer completed all 8 widget goals (1-8
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Cycle-17 Archivist: all 10/10 goals closed with verified evidence; artifacts include convergence-kb.md, cycle-history-index.json, decision a
 - Archivist lane hit 10/10 goals verified (cycle 17); all artifacts on disk, no open work remaining.
 - seat_probe.py extended
+- Mechanic lane confirmed
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
