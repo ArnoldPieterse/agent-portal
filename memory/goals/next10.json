@@ -1,45 +1,301 @@
 {
  "ok": true,
- "generated": "2026-11-24 22:04:37",
+ "generated": "2026-11-24 23:09:16",
  "fleet": {
-  "done": 80,
+  "done": 27,
   "total": 80,
-  "pct": 100.0
+  "pct": 33.8
  },
  "throughput_goals_per_hour": 20.04,
- "next10": [],
+ "next10": [
+  {
+   "agent": "mechanic",
+   "goal": "**Auto-Recovery Playbook v2** - extend playbooks with seat-unreachable: probe confirms down, attempt restart, check host health, if host down mark cascade+notify. Verified: simulated seat-down triggers full playbook; ste",
+   "type": "ops",
+   "complexity": 1,
+   "p_reached": 0.758,
+   "eta": "2026-11-25 00:56",
+   "hours": 1.78,
+   "order": 0,
+   "rank": 1,
+   "title": "Auto-Recovery Playbook v2",
+   "steps": [
+    "pre-flight checks (targets exist, idempotent)",
+    "execute from non-sandbox session",
+    "verify registration/health + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-25 00:56 (P=76%)",
+   "consequences": [
+    "mechanic: **Fleet Recovery Time Tracker** - measure detection-to-recov (2026-11-25 06:45) - shared scope recovery,simulated",
+    "scribe: **Seat Gap Summary** - when a seat is unreachable >1h, gener (2026-11-25 09:39) - shared scope simulated,unreachable",
+    "orchestrator: **Seat Failure Cascade Handler** - When seat-matrix shows a  (2026-11-26 07:22) - shared scope cascade,unreachable",
+    "lane end researcher: 11-26 08:14 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "verifier",
+   "goal": "**Validation Coverage Report** - for each current-cycle goal, check if test script exists at implied path. Report coverage % with pass/fail/missing per goal. Verified: report lists all goals with status; coverage % accur",
+   "type": "verify",
+   "complexity": 1,
+   "p_reached": 0.758,
+   "eta": "2026-11-25 00:56",
+   "hours": 1.78,
+   "order": 0,
+   "rank": 2,
+   "title": "Validation Coverage Report",
+   "steps": [
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-25 00:56 (P=76%)",
+   "consequences": [
+    "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope current,exists,goals",
+    "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope cycle,goals,script",
+    "verifier: **Fleet Autonomy Regression Battery** - memory/verifier/auto (2026-11-25 04:01) - shared scope goals,script",
+    "lane end researcher: 11-26 08:14 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "archivist",
+   "goal": "**Knowledge Freshness Decay v2** - extend decay_score.py to score GOAL FILES (archived goals as reference). Flag stale refs when verification path no longer exists. Verified: on current archive flags >=3 stale refs; all ",
+   "type": "measurement",
+   "complexity": 1,
+   "p_reached": 0.586,
+   "eta": "2026-11-25 01:38",
+   "hours": 2.49,
+   "order": 0,
+   "rank": 3,
+   "title": "Knowledge Freshness Decay v2",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-25 01:38 (P=59%)",
+   "consequences": [
+    "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope current,exists,goals",
+    "mechanic: **Health Score Computation** - memory/mechanic/health_score. (2026-11-25 03:17) - shared scope freshness,score",
+    "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope archive,goals",
+    "lane end researcher: 11-26 08:14 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "scribe",
+   "goal": "**Autonomous Round Narrative** - `python memory/scribe/auto_round_narrative.py`: when autonomous round completes, generate 5-sentence narrative (trigger, proposals, accept/reject, themes, outlook). Write to memory/ops/ro",
+   "type": "build",
+   "complexity": 1,
+   "p_reached": 0.714,
+   "eta": "2026-11-25 02:39",
+   "hours": 3.5,
+   "order": 0,
+   "rank": 4,
+   "title": "Autonomous Round Narrative",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-25 02:39 (P=71%)",
+   "consequences": [
+    "orchestrator: **Auto-Cycle-Trigger Detector** - `python memory/orchestrato (2026-11-25 05:23) - shared scope round,trigger",
+    "scribe: **Seat Gap Summary** - when a seat is unreachable >1h, gener (2026-11-25 09:39) - shared scope generate,write",
+    "mechanic: **Autonomous Ops Decision Log** - log every autonomous ops d (2026-11-25 09:50) - shared scope autonomous,trigger",
+    "lane end researcher: 11-26 08:14 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "mechanic",
+   "goal": "**Health Score Computation** - memory/mechanic/health_score.py: 0-100 from seat availability(40%)+VRAM headroom(20%)+loop freshness(20%)+error rate(20%). Write to memory/ops/health-score.json. Verified: all-good>90; one-",
+   "type": "measurement",
+   "complexity": 1,
+   "p_reached": 0.459,
+   "eta": "2026-11-25 03:17",
+   "hours": 2.36,
+   "order": 1,
+   "rank": 5,
+   "title": "Health Score Computation",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-25 03:17 (P=46%)",
+   "consequences": [
+    "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope freshness,score",
+    "orchestrator: **Seat Availability Matrix** - Maintain memory/ops/seat-matr (2026-11-25 10:05) - shared scope availability,mechanic",
+    "builder: **Fleet Health Dashboard Endpoint** - add /api/fleet/health  (2026-11-25 23:42) - shared scope health,score",
+    "lane end researcher: 11-26 08:14 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "designer",
+   "goal": "**Cycle-Complete Celebration State** - cockpit hero when goal_pct=100: animated checkmark + cycle number + \"Transitioning...\" progress bar. Verified: renders at 1440px; animation <60fps drop; no layout shift",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.037,
+   "eta": "2026-11-25 03:28",
+   "hours": 4.32,
+   "order": 0,
+   "rank": 6,
+   "title": "Cycle-Complete Celebration State",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "evidence leaf + index line (AC: renders at 1440px; animation <60fps drop; no layout shift)"
+   ],
+   "outcome": "reached ~2026-11-25 03:28 (P=4%)",
+   "consequences": [
+    "scribe: **Cycle Midpoint Report** - at 50% completion, generate prog (2026-11-25 22:49) - shared scope cycle,progress",
+    "lane end researcher: 11-26 08:14 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "builder",
+   "goal": "**Auto-Archive Script** - `python memory/builder/auto_archive.py`: when triggered by cycle transition, move all memory/goals/<agent>.md to memory/goals/archive/<agent>-<date>-cycle<N>.md. Verified: after run, goals/ has ",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.188,
+   "eta": "2026-11-25 03:42",
+   "hours": 4.55,
+   "order": 0,
+   "rank": 7,
+   "title": "Auto-Archive Script",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "evidence leaf + index line (AC: after run, goals/ has)"
+   ],
+   "outcome": "reached ~2026-11-25 03:42 (P=19%)",
+   "consequences": [
+    "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope cycle,goals,script",
+    "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope archive,goals",
+    "verifier: **Fleet Autonomy Regression Battery** - memory/verifier/auto (2026-11-25 04:01) - shared scope goals,script",
+    "lane end researcher: 11-26 08:14 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "verifier",
+   "goal": "**Fleet Autonomy Regression Battery** - memory/verifier/autonomy_battery.py: single script running ALL checks (goals 1-9) as a suite. Exit 0 if all pass, exit 1 with specific failures. The \"regression gate\" for autonomy ",
+   "type": "build",
+   "complexity": 1,
+   "p_reached": 0.405,
+   "eta": "2026-11-25 04:01",
+   "hours": 3.08,
+   "order": 1,
+   "rank": 8,
+   "title": "Fleet Autonomy Regression Battery",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-25 04:01 (P=40%)",
+   "consequences": [
+    "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope goals,script",
+    "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope goals,script",
+    "orchestrator: **Fleet Autonomy Score** - `python memory/orchestrator/auton (2026-11-26 02:40) - shared scope autonomy,goals",
+    "lane end researcher: 11-26 08:14 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "researcher",
+   "goal": "**Goal Pattern Miner** - `python memory/researcher/pattern_miner.py`: scan all archived goal files (memory/goals/archive/), extract: which goal types recur across cycles, which verification criteria patterns work best, w",
+   "type": "research",
+   "complexity": 2,
+   "p_reached": 0.134,
+   "eta": "2026-11-25 04:44",
+   "hours": 5.58,
+   "order": 0,
+   "rank": 9,
+   "title": "Goal Pattern Miner",
+   "steps": [
+    "gather sources from memory/ (pointer map)",
+    "compute/detect per protocol",
+    "write findings leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-25 04:44 (P=13%)",
+   "consequences": [
+    "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope archive,archived,files",
+    "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope archive,goals",
+    "archivist: **Cross-Cycle Insight Extractor** - memory/archivist/insight (2026-11-25 04:52) - shared scope archived,cycles,extract",
+    "lane end researcher: 11-26 08:14 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "archivist",
+   "goal": "**Cross-Cycle Insight Extractor** - memory/archivist/insight_extractor.py: scan archived cycles for patterns, extract 3-5 insights per cycle. Write to memory/archivist/cross-cycle-insights.md. Verified: on c10-15 data ex",
+   "type": "build",
+   "complexity": 1,
+   "p_reached": 0.531,
+   "eta": "2026-11-25 04:52",
+   "hours": 3.24,
+   "order": 1,
+   "rank": 10,
+   "title": "Cross-Cycle Insight Extractor",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "evidence leaf + index line (AC: on c10-15 data ex)"
+   ],
+   "outcome": "reached ~2026-11-25 04:52 (P=53%)",
+   "consequences": [
+    "researcher: **Goal Pattern Miner** - `python memory/researcher/pattern_m (2026-11-25 04:44) - shared scope archived,cycles,extract",
+    "researcher: **Cycle Velocity Model** - `python memory/researcher/velocit (2026-11-25 09:06) - shared scope archived,cycle,cycles",
+    "archivist: **Decision Pattern Archive** - for each decision in decision (2026-11-25 12:27) - shared scope archivist,cycle,patterns",
+    "lane end researcher: 11-26 08:14 (slowest lane)"
+   ]
+  }
+ ],
  "horizons": [
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-24 22:34",
+   "end": "2026-11-24 23:39",
    "completes": 0,
-   "fleet_pct": 100.0,
+   "fleet_pct": 33.8,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-24 23:04",
+   "end": "2026-11-25 00:09",
    "completes": 0,
-   "fleet_pct": 100.0,
+   "fleet_pct": 33.8,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-25 22:04",
-   "completes": 0,
-   "fleet_pct": 100.0,
-   "top": []
+   "end": "2026-11-25 23:09",
+   "completes": 43,
+   "fleet_pct": 87.5,
+   "top": [
+    "#1 mechanic: Auto-Recovery Playbook v2 (2026-11-25 00:56)",
+    "#2 verifier: Validation Coverage Report (2026-11-25 00:56)",
+    "#3 archivist: Knowledge Freshness Decay v2 (2026-11-25 01:38)",
+    "#4 scribe: Autonomous Round Narrative (2026-11-25 02:39)",
+    "#5 mechanic: Health Score Computation (2026-11-25 03:17)"
+   ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-01 22:04",
-   "completes": 0,
+   "end": "2026-12-01 23:09",
+   "completes": 53,
    "fleet_pct": 100.0,
-   "top": [],
+   "top": [
+    "#1 mechanic: Auto-Recovery Playbook v2 (2026-11-25 00:56)",
+    "#2 verifier: Validation Coverage Report (2026-11-25 00:56)",
+    "#3 archivist: Knowledge Freshness Decay v2 (2026-11-25 01:38)",
+    "#4 scribe: Autonomous Round Narrative (2026-11-25 02:39)",
+    "#5 mechanic: Health Score Computation (2026-11-25 03:17)"
+   ],
    "next_cycle_candidates": [
     {
      "agent": "archivist",
@@ -94,10 +350,16 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-24 22:04",
-   "completes": 0,
+   "end": "2026-12-24 23:09",
+   "completes": 53,
    "fleet_pct": 100.0,
-   "top": [],
+   "top": [
+    "#1 mechanic: Auto-Recovery Playbook v2 (2026-11-25 00:56)",
+    "#2 verifier: Validation Coverage Report (2026-11-25 00:56)",
+    "#3 archivist: Knowledge Freshness Decay v2 (2026-11-25 01:38)",
+    "#4 scribe: Autonomous Round Narrative (2026-11-25 02:39)",
+    "#5 mechanic: Health Score Computation (2026-11-25 03:17)"
+   ],
    "next_cycle_candidates": [
     {
      "agent": "archivist",
@@ -152,458 +414,562 @@
  ],
  "lanes": {
   "archivist": {
-   "done": 10,
+   "done": 4,
    "total": 10,
-   "end": "2026-11-24 22:04"
+   "end": "2026-11-25 18:10"
   },
   "builder": {
-   "done": 10,
+   "done": 1,
    "total": 10,
-   "end": "2026-11-24 22:04"
+   "end": "2026-11-26 07:43"
   },
   "designer": {
-   "done": 10,
+   "done": 2,
    "total": 10,
-   "end": "2026-11-24 22:04"
+   "end": "2026-11-25 20:21"
   },
   "mechanic": {
-   "done": 10,
+   "done": 6,
    "total": 10,
-   "end": "2026-11-24 22:04"
+   "end": "2026-11-25 09:50"
   },
   "orchestrator": {
-   "done": 10,
+   "done": 3,
    "total": 10,
-   "end": "2026-11-24 22:04"
+   "end": "2026-11-26 07:22"
   },
   "researcher": {
-   "done": 10,
+   "done": 2,
    "total": 10,
-   "end": "2026-11-24 22:04"
+   "end": "2026-11-26 08:14"
   },
   "scribe": {
-   "done": 10,
+   "done": 1,
    "total": 10,
-   "end": "2026-11-24 22:04"
+   "end": "2026-11-26 05:49"
   },
   "verifier": {
-   "done": 10,
+   "done": 8,
    "total": 10,
-   "end": "2026-11-24 22:04"
+   "end": "2026-11-25 04:01"
   }
  },
- "level_up_eta": "2026-11-24 22:04",
+ "level_up_eta": "2026-11-26 08:14",
  "plan": {
-  "cycle_state": "all-clear: level-up gated, next cycle projected from ranked backlog",
-  "level_up_eta": "2026-11-24 22:04",
+  "cycle_state": "in flight: 10 goal(s) open",
+  "level_up_eta": "2026-11-26 08:14",
   "planned": [
    {
-    "rank": 1,
-    "agent": "archivist",
-    "goal": "Knowledge decay model productionization - run decay_score.py weekly (scheduled task); auto-archive leaves scoring <0.2 (move to memory/archive/ with a pointer left in place); alert on any leaf that wa",
-    "title": "Knowledge decay model productionization - run decay_score.py weekly (scheduled t",
-    "type": "measurement",
-    "complexity": 1,
-    "p_reached": 0.85,
-    "eta": "2026-11-25 01:04",
-    "hours": 3.0,
-    "ref": "ARCHIVIST#6",
-    "source": "scheduled-background.md",
-    "projected": true,
-    "why": "planned as measurement work (cx1); from ranked backlog (ARCHIVIST#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 01:04",
-    "steps": [
-     "instrument or extend scorer",
-     "two-run delta check",
-     "publish snapshot + report leaf"
-    ],
-    "outcome": "reached ~2026-11-25 01:04 (P~85%)",
-    "deliverable": {
-     "name": "Knowledge-decay scoring",
-     "stream": "Memory quality"
-    },
-    "then": "#2 [archivist] Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a ",
-    "then_eta": "2026-11-25 05:04"
-   },
-   {
-    "rank": 2,
-    "agent": "archivist",
-    "goal": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-readable weekly diff summary: \"X new leaves, Y modified, Z archived, W orphans created/resolved\"; post to group chat as a on",
-    "title": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-read",
-    "type": "build",
-    "complexity": 1,
-    "p_reached": 0.85,
-    "eta": "2026-11-25 05:04",
-    "hours": 4.0,
-    "ref": "ARCHIVIST#8",
-    "source": "scheduled-background.md",
-    "projected": true,
-    "why": "planned as build work (cx1); from ranked backlog (ARCHIVIST#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 05:04",
-    "steps": [
-     "scaffold module",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line"
-    ],
-    "outcome": "reached ~2026-11-25 05:04 (P~85%)",
-    "deliverable": {
-     "name": "Archive + evidence leaves",
-     "stream": "Memory quality"
-    },
-    "then": "lane clear - level-up gate re-check (2026-11-24 22:04)",
-    "then_eta": "2026-11-24 22:04"
-   },
-   {
-    "rank": 3,
     "agent": "mechanic",
-    "goal": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days of data; if the schtask was registered, collect remaining days + run --week-complete; if not yet registered, register i",
-    "title": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days",
+    "goal": "**Auto-Recovery Playbook v2** - extend playbooks with seat-unreachable: probe confirms down, attempt restart, check host health, if host down mark cascade+notify. Verified: simulated seat-down triggers full playbook; ste",
     "type": "ops",
     "complexity": 1,
-    "p_reached": 0.85,
-    "eta": "2026-11-25 00:04",
-    "hours": 2.0,
-    "ref": "MECHANIC#1",
-    "source": "scheduled-background.md",
-    "projected": true,
-    "why": "planned as ops work (cx1); from ranked backlog (MECHANIC#1) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 00:04",
+    "p_reached": 0.758,
+    "eta": "2026-11-25 00:56",
+    "hours": 1.78,
+    "order": 0,
+    "rank": 1,
+    "title": "Auto-Recovery Playbook v2",
     "steps": [
      "pre-flight checks (targets exist, idempotent)",
      "execute from non-sandbox session",
      "verify registration/health + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-25 00:04 (P~85%)",
+    "outcome": "reached ~2026-11-25 00:56 (P~76%)",
+    "consequences": [
+     "mechanic: **Fleet Recovery Time Tracker** - measure detection-to-recov (2026-11-25 06:45) - shared scope recovery,simulated",
+     "scribe: **Seat Gap Summary** - when a seat is unreachable >1h, gener (2026-11-25 09:39) - shared scope simulated,unreachable",
+     "orchestrator: **Seat Failure Cascade Handler** - When seat-matrix shows a  (2026-11-26 07:22) - shared scope cascade,unreachable",
+     "lane end researcher: 11-26 08:14 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 00:56",
     "deliverable": {
      "name": "Load-test evidence",
      "stream": "Reliability"
     },
-    "then": "#4 [mechanic] Self-healing mirror productionization - the cycle-2 auto-repair design",
-    "then_eta": "2026-11-25 04:04"
+    "then": "#5 [mechanic] Health Score Computation",
+    "then_eta": "2026-11-25 03:17"
    },
    {
-    "rank": 4,
-    "agent": "mechanic",
-    "goal": "Self-healing mirror productionization - the cycle-2 auto-repair design should now be a running scheduled task (every 15 min): detect missed syncs, re-sync automatically, log to memory/mechanic/mirror-",
-    "title": "Self-healing mirror productionization - the cycle-2 auto-repair design should no",
-    "type": "build",
+    "agent": "verifier",
+    "goal": "**Validation Coverage Report** - for each current-cycle goal, check if test script exists at implied path. Report coverage % with pass/fail/missing per goal. Verified: report lists all goals with status; coverage % accur",
+    "type": "verify",
     "complexity": 1,
-    "p_reached": 0.85,
-    "eta": "2026-11-25 04:04",
-    "hours": 4.0,
-    "ref": "MECHANIC#2",
-    "source": "scheduled-background.md",
-    "projected": true,
-    "why": "planned as build work (cx1); from ranked backlog (MECHANIC#2) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 04:04",
+    "p_reached": 0.758,
+    "eta": "2026-11-25 00:56",
+    "hours": 1.78,
+    "order": 0,
+    "rank": 2,
+    "title": "Validation Coverage Report",
     "steps": [
-     "scaffold module",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line"
+     "build the test battery / audit script",
+     "run against live sources",
+     "record verdict + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-25 04:04 (P~85%)",
+    "outcome": "reached ~2026-11-25 00:56 (P~76%)",
+    "consequences": [
+     "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope current,exists,goals",
+     "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope cycle,goals,script",
+     "verifier: **Fleet Autonomy Regression Battery** - memory/verifier/auto (2026-11-25 04:01) - shared scope goals,script",
+     "lane end researcher: 11-26 08:14 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 8/10 done; this goal ends its lane at 2026-11-25 00:56",
     "deliverable": {
-     "name": "Self-healing mirror productionization - the cycle-2 auto-rep",
+     "name": "Validation Coverage Report",
      "stream": "General"
     },
-    "then": "#5 [mechanic] Scheduled-task dependency graph productionization - the cycle-2 blast-",
-    "then_eta": "2026-11-25 08:04"
+    "then": "#8 [verifier] Fleet Autonomy Regression Battery",
+    "then_eta": "2026-11-25 04:01"
    },
    {
-    "rank": 5,
-    "agent": "mechanic",
-    "goal": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map should now be auto-generated from schtasks /query output (run weekly); diff against previous week; alert on new depende",
-    "title": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map",
-    "type": "build",
+    "agent": "archivist",
+    "goal": "**Knowledge Freshness Decay v2** - extend decay_score.py to score GOAL FILES (archived goals as reference). Flag stale refs when verification path no longer exists. Verified: on current archive flags >=3 stale refs; all ",
+    "type": "measurement",
     "complexity": 1,
-    "p_reached": 0.85,
-    "eta": "2026-11-25 08:04",
-    "hours": 4.0,
-    "ref": "MECHANIC#6",
-    "source": "scheduled-background.md",
-    "projected": true,
-    "why": "planned as build work (cx1); from ranked backlog (MECHANIC#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 08:04",
+    "p_reached": 0.586,
+    "eta": "2026-11-25 01:38",
+    "hours": 2.49,
+    "order": 0,
+    "rank": 3,
+    "title": "Knowledge Freshness Decay v2",
     "steps": [
-     "scaffold module",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line"
+     "instrument or extend the scorer",
+     "two-run delta check",
+     "publish snapshot + report leaf"
     ],
-    "outcome": "reached ~2026-11-25 08:04 (P~85%)",
-    "deliverable": {
-     "name": "Scheduled-task graph",
-     "stream": "Ops automation"
-    },
-    "then": "#6 [mechanic] Chaos drill productionization (monthly) - the cycle-2 weekly chaos dri",
-    "then_eta": "2026-11-25 10:04"
-   },
-   {
-    "rank": 6,
-    "agent": "mechanic",
-    "goal": "Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should now be a monthly scheduled task: kill portal on a rotating host, verify recovery <60s, log to evidence; rotate White->Pa",
-    "title": "Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should ",
-    "type": "verify",
-    "complexity": 1,
-    "p_reached": 0.85,
-    "eta": "2026-11-25 10:04",
-    "hours": 2.0,
-    "ref": "MECHANIC#8",
-    "source": "scheduled-background.md",
-    "projected": true,
-    "why": "planned as verify work (cx1); from ranked backlog (MECHANIC#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 10:04",
-    "steps": [
-     "build test battery / audit script",
-     "run against live sources",
-     "record verdict + evidence leaf"
+    "outcome": "reached ~2026-11-25 01:38 (P~59%)",
+    "consequences": [
+     "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope current,exists,goals",
+     "mechanic: **Health Score Computation** - memory/mechanic/health_score. (2026-11-25 03:17) - shared scope freshness,score",
+     "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope archive,goals",
+     "lane end researcher: 11-26 08:14 (slowest lane)"
     ],
-    "outcome": "reached ~2026-11-25 10:04 (P~85%)",
+    "projected": false,
+    "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-25 01:38",
     "deliverable": {
-     "name": "Chaos-drill runbook",
-     "stream": "Reliability"
-    },
-    "then": "lane clear - level-up gate re-check (2026-11-24 22:04)",
-    "then_eta": "2026-11-24 22:04"
-   },
-   {
-    "rank": 7,
-    "agent": "scribe",
-    "goal": "Scribe self-audit: compression fidelity score - for each synthesis produced in cycle 3, score \"how much information was lost vs the source thread\" (manual spot-check of 5 syntheses per week); target >",
-    "title": "Scribe self-audit: compression fidelity score - for each synthesis produced in c",
-    "type": "verify",
-    "complexity": 1,
-    "p_reached": 0.85,
-    "eta": "2026-11-25 00:04",
-    "hours": 2.0,
-    "ref": "SCRIBE#10",
-    "source": "scheduled-background.md",
-    "projected": true,
-    "why": "planned as verify work (cx1); from ranked backlog (SCRIBE#10) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane scribe has 10/10 done; this goal ends its lane at 2026-11-25 00:04",
-    "steps": [
-     "build test battery / audit script",
-     "run against live sources",
-     "record verdict + evidence leaf"
-    ],
-    "outcome": "reached ~2026-11-25 00:04 (P~85%)",
-    "deliverable": {
-     "name": "Synthesis self-audit",
+     "name": "Archive + evidence leaves",
      "stream": "Memory quality"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-24 22:04)",
-    "then_eta": "2026-11-24 22:04"
+    "then": "#10 [archivist] Cross-Cycle Insight Extractor",
+    "then_eta": "2026-11-25 04:52"
    },
    {
-    "rank": 8,
-    "agent": "verifier",
-    "goal": "Mirror-sync drift detector productionization - the cycle-2 SMB drift detector should now run as a scheduled task (every 30 min); log all drift events; auto-alert when a file diverges >5 min after a kn",
-    "title": "Mirror-sync drift detector productionization - the cycle-2 SMB drift detector sh",
-    "type": "research",
+    "agent": "scribe",
+    "goal": "**Autonomous Round Narrative** - `python memory/scribe/auto_round_narrative.py`: when autonomous round completes, generate 5-sentence narrative (trigger, proposals, accept/reject, themes, outlook). Write to memory/ops/ro",
+    "type": "build",
     "complexity": 1,
-    "p_reached": 0.85,
-    "eta": "2026-11-25 03:04",
-    "hours": 5.0,
-    "ref": "VERIFIER#8",
-    "source": "scheduled-background.md",
-    "projected": true,
-    "why": "planned as research work (cx1); from ranked backlog (VERIFIER#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane verifier has 10/10 done; this goal ends its lane at 2026-11-25 03:04",
+    "p_reached": 0.714,
+    "eta": "2026-11-25 02:39",
+    "hours": 3.5,
+    "order": 0,
+    "rank": 4,
+    "title": "Autonomous Round Narrative",
     "steps": [
-     "gather sources from memory/ pointer map",
-     "compute/detect per protocol",
-     "findings leaf + index line"
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-25 03:04 (P~85%)",
+    "outcome": "reached ~2026-11-25 02:39 (P~71%)",
+    "consequences": [
+     "orchestrator: **Auto-Cycle-Trigger Detector** - `python memory/orchestrato (2026-11-25 05:23) - shared scope round,trigger",
+     "scribe: **Seat Gap Summary** - when a seat is unreachable >1h, gener (2026-11-25 09:39) - shared scope generate,write",
+     "mechanic: **Autonomous Ops Decision Log** - log every autonomous ops d (2026-11-25 09:50) - shared scope autonomous,trigger",
+     "lane end researcher: 11-26 08:14 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 02:39",
     "deliverable": {
-     "name": "Mirror self-healing",
-     "stream": "Reliability"
+     "name": "Autonomous Round Narrative",
+     "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-24 22:04)",
-    "then_eta": "2026-11-24 22:04"
+    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
+    "then_eta": "2026-11-26 08:14"
+   },
+   {
+    "agent": "mechanic",
+    "goal": "**Health Score Computation** - memory/mechanic/health_score.py: 0-100 from seat availability(40%)+VRAM headroom(20%)+loop freshness(20%)+error rate(20%). Write to memory/ops/health-score.json. Verified: all-good>90; one-",
+    "type": "measurement",
+    "complexity": 1,
+    "p_reached": 0.459,
+    "eta": "2026-11-25 03:17",
+    "hours": 2.36,
+    "order": 1,
+    "rank": 5,
+    "title": "Health Score Computation",
+    "steps": [
+     "instrument or extend the scorer",
+     "two-run delta check",
+     "publish snapshot + report leaf"
+    ],
+    "outcome": "reached ~2026-11-25 03:17 (P~46%)",
+    "consequences": [
+     "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope freshness,score",
+     "orchestrator: **Seat Availability Matrix** - Maintain memory/ops/seat-matr (2026-11-25 10:05) - shared scope availability,mechanic",
+     "builder: **Fleet Health Dashboard Endpoint** - add /api/fleet/health  (2026-11-25 23:42) - shared scope health,score",
+     "lane end researcher: 11-26 08:14 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 03:17",
+    "deliverable": {
+     "name": "Health Score Computation",
+     "stream": "General"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
+    "then_eta": "2026-11-26 08:14"
+   },
+   {
+    "agent": "designer",
+    "goal": "**Cycle-Complete Celebration State** - cockpit hero when goal_pct=100: animated checkmark + cycle number + \"Transitioning...\" progress bar. Verified: renders at 1440px; animation <60fps drop; no layout shift",
+    "type": "build",
+    "complexity": 2,
+    "p_reached": 0.037,
+    "eta": "2026-11-25 03:28",
+    "hours": 4.32,
+    "order": 0,
+    "rank": 6,
+    "title": "Cycle-Complete Celebration State",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "evidence leaf + index line (AC: renders at 1440px; animation <60fps drop; no layout shift)"
+    ],
+    "outcome": "reached ~2026-11-25 03:28 (P~4%)",
+    "consequences": [
+     "scribe: **Cycle Midpoint Report** - at 50% completion, generate prog (2026-11-25 22:49) - shared scope cycle,progress",
+     "lane end researcher: 11-26 08:14 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 2/10 done; this goal ends its lane at 2026-11-25 03:28",
+    "deliverable": {
+     "name": "Cycle-Complete Celebration State",
+     "stream": "General"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
+    "then_eta": "2026-11-26 08:14"
+   },
+   {
+    "agent": "builder",
+    "goal": "**Auto-Archive Script** - `python memory/builder/auto_archive.py`: when triggered by cycle transition, move all memory/goals/<agent>.md to memory/goals/archive/<agent>-<date>-cycle<N>.md. Verified: after run, goals/ has ",
+    "type": "build",
+    "complexity": 2,
+    "p_reached": 0.188,
+    "eta": "2026-11-25 03:42",
+    "hours": 4.55,
+    "order": 0,
+    "rank": 7,
+    "title": "Auto-Archive Script",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "evidence leaf + index line (AC: after run, goals/ has)"
+    ],
+    "outcome": "reached ~2026-11-25 03:42 (P~19%)",
+    "consequences": [
+     "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope cycle,goals,script",
+     "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope archive,goals",
+     "verifier: **Fleet Autonomy Regression Battery** - memory/verifier/auto (2026-11-25 04:01) - shared scope goals,script",
+     "lane end researcher: 11-26 08:14 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-25 03:42",
+    "deliverable": {
+     "name": "Archive + evidence leaves",
+     "stream": "Memory quality"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
+    "then_eta": "2026-11-26 08:14"
+   },
+   {
+    "agent": "verifier",
+    "goal": "**Fleet Autonomy Regression Battery** - memory/verifier/autonomy_battery.py: single script running ALL checks (goals 1-9) as a suite. Exit 0 if all pass, exit 1 with specific failures. The \"regression gate\" for autonomy ",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.405,
+    "eta": "2026-11-25 04:01",
+    "hours": 3.08,
+    "order": 1,
+    "rank": 8,
+    "title": "Fleet Autonomy Regression Battery",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-25 04:01 (P~40%)",
+    "consequences": [
+     "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope goals,script",
+     "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope goals,script",
+     "orchestrator: **Fleet Autonomy Score** - `python memory/orchestrator/auton (2026-11-26 02:40) - shared scope autonomy,goals",
+     "lane end researcher: 11-26 08:14 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane verifier has 8/10 done; this goal ends its lane at 2026-11-25 04:01",
+    "deliverable": {
+     "name": "Fleet Autonomy Regression Battery",
+     "stream": "General"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
+    "then_eta": "2026-11-26 08:14"
+   },
+   {
+    "agent": "researcher",
+    "goal": "**Goal Pattern Miner** - `python memory/researcher/pattern_miner.py`: scan all archived goal files (memory/goals/archive/), extract: which goal types recur across cycles, which verification criteria patterns work best, w",
+    "type": "research",
+    "complexity": 2,
+    "p_reached": 0.134,
+    "eta": "2026-11-25 04:44",
+    "hours": 5.58,
+    "order": 0,
+    "rank": 9,
+    "title": "Goal Pattern Miner",
+    "steps": [
+     "gather sources from memory/ (pointer map)",
+     "compute/detect per protocol",
+     "write findings leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-25 04:44 (P~13%)",
+    "consequences": [
+     "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope archive,archived,files",
+     "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope archive,goals",
+     "archivist: **Cross-Cycle Insight Extractor** - memory/archivist/insight (2026-11-25 04:52) - shared scope archived,cycles,extract",
+     "lane end researcher: 11-26 08:14 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as research work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~13%): kept in plan because its scope gates later work; lane researcher has 2/10 done; this goal ends its lane at 2026-11-25 04:44",
+    "deliverable": {
+     "name": "Archive + evidence leaves",
+     "stream": "Memory quality"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
+    "then_eta": "2026-11-26 08:14"
+   },
+   {
+    "agent": "archivist",
+    "goal": "**Cross-Cycle Insight Extractor** - memory/archivist/insight_extractor.py: scan archived cycles for patterns, extract 3-5 insights per cycle. Write to memory/archivist/cross-cycle-insights.md. Verified: on c10-15 data ex",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.531,
+    "eta": "2026-11-25 04:52",
+    "hours": 3.24,
+    "order": 1,
+    "rank": 10,
+    "title": "Cross-Cycle Insight Extractor",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "evidence leaf + index line (AC: on c10-15 data ex)"
+    ],
+    "outcome": "reached ~2026-11-25 04:52 (P~53%)",
+    "consequences": [
+     "researcher: **Goal Pattern Miner** - `python memory/researcher/pattern_m (2026-11-25 04:44) - shared scope archived,cycles,extract",
+     "researcher: **Cycle Velocity Model** - `python memory/researcher/velocit (2026-11-25 09:06) - shared scope archived,cycle,cycles",
+     "archivist: **Decision Pattern Archive** - for each decision in decision (2026-11-25 12:27) - shared scope archivist,cycle,patterns",
+     "lane end researcher: 11-26 08:14 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~53%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-25 04:52",
+    "deliverable": {
+     "name": "Archive + evidence leaves",
+     "stream": "Memory quality"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
+    "then_eta": "2026-11-26 08:14"
    }
   ],
   "horizons": [
    {
     "label": "30m",
     "hours": 0.5,
-    "end": "2026-11-24 22:34",
+    "end": "2026-11-24 23:39",
     "completes": 0,
     "top": [],
-    "why_line": "no goal work planned yet - the fleet is all-clear; the only action in this window is the level-up gate + cycle proposal, so nothing completes by 2026-11-24 22:34"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 33%"
    },
    {
     "label": "1h",
     "hours": 1.0,
-    "end": "2026-11-24 23:04",
+    "end": "2026-11-25 00:09",
     "completes": 0,
     "top": [],
-    "why_line": "no goal work planned yet - the fleet is all-clear; the only action in this window is the level-up gate + cycle proposal, so nothing completes by 2026-11-24 23:04"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 33%"
    },
    {
     "label": "1d",
     "hours": 24.0,
-    "end": "2026-11-25 22:04",
-    "completes": 8,
+    "end": "2026-11-25 23:09",
+    "completes": 10,
     "top": [
      {
       "rank": 1,
-      "agent": "archivist",
-      "title": "Knowledge decay model productionization - run decay_score.py weekly (scheduled t",
-      "eta": "2026-11-25 01:04",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); from ranked backlog (ARCHIVIST#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 01:04"
+      "agent": "mechanic",
+      "title": "Auto-Recovery Playbook v2",
+      "eta": "2026-11-25 00:56",
+      "type": "ops",
+      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 00:56"
      },
      {
       "rank": 2,
-      "agent": "archivist",
-      "title": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-read",
-      "eta": "2026-11-25 05:04",
-      "type": "build",
-      "why": "planned as build work (cx1); from ranked backlog (ARCHIVIST#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 05:04"
+      "agent": "verifier",
+      "title": "Validation Coverage Report",
+      "eta": "2026-11-25 00:56",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 8/10 done; this goal ends its lane at 2026-11-25 00:56"
      },
      {
       "rank": 3,
-      "agent": "mechanic",
-      "title": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days",
-      "eta": "2026-11-25 00:04",
-      "type": "ops",
-      "why": "planned as ops work (cx1); from ranked backlog (MECHANIC#1) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 00:04"
+      "agent": "archivist",
+      "title": "Knowledge Freshness Decay v2",
+      "eta": "2026-11-25 01:38",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-25 01:38"
      },
      {
       "rank": 4,
-      "agent": "mechanic",
-      "title": "Self-healing mirror productionization - the cycle-2 auto-repair design should no",
-      "eta": "2026-11-25 04:04",
+      "agent": "scribe",
+      "title": "Autonomous Round Narrative",
+      "eta": "2026-11-25 02:39",
       "type": "build",
-      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#2) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 04:04"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 02:39"
      },
      {
       "rank": 5,
       "agent": "mechanic",
-      "title": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map",
-      "eta": "2026-11-25 08:04",
-      "type": "build",
-      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 08:04"
+      "title": "Health Score Computation",
+      "eta": "2026-11-25 03:17",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 03:17"
      }
     ],
-    "why_line": "cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-11-25 22:04 - expected outcome: fleet ~100% of the NEW cycle done"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 46%"
    },
    {
     "label": "1w",
     "hours": 168.0,
-    "end": "2026-12-01 22:04",
-    "completes": 8,
+    "end": "2026-12-01 23:09",
+    "completes": 10,
     "top": [
      {
       "rank": 1,
-      "agent": "archivist",
-      "title": "Knowledge decay model productionization - run decay_score.py weekly (scheduled t",
-      "eta": "2026-11-25 01:04",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); from ranked backlog (ARCHIVIST#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 01:04"
+      "agent": "mechanic",
+      "title": "Auto-Recovery Playbook v2",
+      "eta": "2026-11-25 00:56",
+      "type": "ops",
+      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 00:56"
      },
      {
       "rank": 2,
-      "agent": "archivist",
-      "title": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-read",
-      "eta": "2026-11-25 05:04",
-      "type": "build",
-      "why": "planned as build work (cx1); from ranked backlog (ARCHIVIST#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 05:04"
+      "agent": "verifier",
+      "title": "Validation Coverage Report",
+      "eta": "2026-11-25 00:56",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 8/10 done; this goal ends its lane at 2026-11-25 00:56"
      },
      {
       "rank": 3,
-      "agent": "mechanic",
-      "title": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days",
-      "eta": "2026-11-25 00:04",
-      "type": "ops",
-      "why": "planned as ops work (cx1); from ranked backlog (MECHANIC#1) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 00:04"
+      "agent": "archivist",
+      "title": "Knowledge Freshness Decay v2",
+      "eta": "2026-11-25 01:38",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-25 01:38"
      },
      {
       "rank": 4,
-      "agent": "mechanic",
-      "title": "Self-healing mirror productionization - the cycle-2 auto-repair design should no",
-      "eta": "2026-11-25 04:04",
+      "agent": "scribe",
+      "title": "Autonomous Round Narrative",
+      "eta": "2026-11-25 02:39",
       "type": "build",
-      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#2) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 04:04"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 02:39"
      },
      {
       "rank": 5,
       "agent": "mechanic",
-      "title": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map",
-      "eta": "2026-11-25 08:04",
-      "type": "build",
-      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 08:04"
+      "title": "Health Score Computation",
+      "eta": "2026-11-25 03:17",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 03:17"
      }
     ],
-    "why_line": "cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-12-01 22:04 - expected outcome: fleet ~100% of the NEW cycle done"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 46%"
    },
    {
     "label": "1m",
     "hours": 720.0,
-    "end": "2026-12-24 22:04",
-    "completes": 8,
+    "end": "2026-12-24 23:09",
+    "completes": 10,
     "top": [
      {
       "rank": 1,
-      "agent": "archivist",
-      "title": "Knowledge decay model productionization - run decay_score.py weekly (scheduled t",
-      "eta": "2026-11-25 01:04",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); from ranked backlog (ARCHIVIST#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 01:04"
+      "agent": "mechanic",
+      "title": "Auto-Recovery Playbook v2",
+      "eta": "2026-11-25 00:56",
+      "type": "ops",
+      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 00:56"
      },
      {
       "rank": 2,
-      "agent": "archivist",
-      "title": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-read",
-      "eta": "2026-11-25 05:04",
-      "type": "build",
-      "why": "planned as build work (cx1); from ranked backlog (ARCHIVIST#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 05:04"
+      "agent": "verifier",
+      "title": "Validation Coverage Report",
+      "eta": "2026-11-25 00:56",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 8/10 done; this goal ends its lane at 2026-11-25 00:56"
      },
      {
       "rank": 3,
-      "agent": "mechanic",
-      "title": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days",
-      "eta": "2026-11-25 00:04",
-      "type": "ops",
-      "why": "planned as ops work (cx1); from ranked backlog (MECHANIC#1) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 00:04"
+      "agent": "archivist",
+      "title": "Knowledge Freshness Decay v2",
+      "eta": "2026-11-25 01:38",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-25 01:38"
      },
      {
       "rank": 4,
-      "agent": "mechanic",
-      "title": "Self-healing mirror productionization - the cycle-2 auto-repair design should no",
-      "eta": "2026-11-25 04:04",
+      "agent": "scribe",
+      "title": "Autonomous Round Narrative",
+      "eta": "2026-11-25 02:39",
       "type": "build",
-      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#2) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 04:04"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 02:39"
      },
      {
       "rank": 5,
       "agent": "mechanic",
-      "title": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map",
-      "eta": "2026-11-25 08:04",
-      "type": "build",
-      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 08:04"
+      "title": "Health Score Computation",
+      "eta": "2026-11-25 03:17",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 03:17"
      }
     ],
-    "why_line": "cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-12-24 22:04 - expected outcome: fleet ~100% of the NEW cycle done"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 46%"
    }
   ],
   "tree": {
-   "state": "Fleet 80/80 (100%)",
+   "state": "Fleet 27/80 (34%)",
    "gate": "all goals 100%?",
-   "branch_taken": "YES - all-clear",
+   "branch_taken": "NO - queue in flight",
    "yes": {
     "action": "level-up gate fires -> Lv increments, report written",
     "then": "Orchestrator proposes cycle N+1 from ranked backlog (8 candidates)",
     "first_planned": [
-     "#1 [archivist] Knowledge decay model productionization - run decay_score.py ~2026-11-25 01:04",
-     "#2 [archivist] Snapshot diff weekly report - extend cycle-2 snapshot.py to  ~2026-11-25 05:04",
-     "#3 [mechanic] Portal load test completion (cycle-2 #4 carryover) - the loa ~2026-11-25 00:04",
-     "#4 [mechanic] Self-healing mirror productionization - the cycle-2 auto-rep ~2026-11-25 04:04"
+     "#1 [mechanic] Auto-Recovery Playbook v2 ~2026-11-25 00:56",
+     "#2 [verifier] Validation Coverage Report ~2026-11-25 00:56",
+     "#3 [archivist] Knowledge Freshness Decay v2 ~2026-11-25 01:38",
+     "#4 [scribe] Autonomous Round Narrative ~2026-11-25 02:39"
     ]
    },
    "no": {
     "action": "keep current queue; next completion gates progress",
-    "then": "when the last lane ends (2026-11-24 22:04) the gate re-checks",
+    "then": "when the last lane ends (2026-11-26 08:14) the gate re-checks",
     "first_planned": [
-     "#1 [archivist] Knowledge decay model productionization - run decay_score.py ~2026-11-25 01:04",
-     "#2 [archivist] Snapshot diff weekly report - extend cycle-2 snapshot.py to  ~2026-11-25 05:04",
-     "#3 [mechanic] Portal load test completion (cycle-2 #4 carryover) - the loa ~2026-11-25 00:04",
-     "#4 [mechanic] Self-healing mirror productionization - the cycle-2 auto-rep ~2026-11-25 04:04"
+     "#1 [mechanic] Auto-Recovery Playbook v2 ~2026-11-25 00:56",
+     "#2 [verifier] Validation Coverage Report ~2026-11-25 00:56",
+     "#3 [archivist] Knowledge Freshness Decay v2 ~2026-11-25 01:38",
+     "#4 [scribe] Autonomous Round Narrative ~2026-11-25 02:39"
     ]
    }
   },
@@ -612,8 +978,8 @@
     "step": 1,
     "name": "Keyboard navigation",
     "note": "Full keyboard control of the portal - no mouse needed to run the fleet.",
-    "status": "done",
-    "via": "builder (reached goal)",
+    "status": "not-planned",
+    "via": null,
     "eta": null,
     "p_reached": null,
     "unlocks": "Camera access"
@@ -652,15 +1018,15 @@
   "outcomes_30d": [
    {
     "name": "Generate daily social media posts",
-    "window": "day 2-4",
-    "start_day": 2,
-    "end_day": 4,
+    "window": "day 3-5",
+    "start_day": 3,
+    "end_day": 5,
     "status": "planned",
     "lane": "fleet",
     "gates": [
-     "Custom input detection (not in queue - schedulable ~day 1: seat frees + work time)"
+     "Custom input detection (not in queue - schedulable ~day 2: seat frees + work time)"
     ],
-    "via": "Custom input detection (not in queue - schedulable ~day 1: seat frees + work time)",
+    "via": "Custom input detection (not in queue - schedulable ~day 2: seat frees + work time)",
     "note": "autonomous posting loop running unattended",
     "projected_gates": [
      "Custom input detection"
@@ -668,15 +1034,15 @@
    },
    {
     "name": "Commenting on posts",
-    "window": "day 1-5",
-    "start_day": 1,
-    "end_day": 5,
+    "window": "day 2-6",
+    "start_day": 2,
+    "end_day": 6,
     "status": "planned",
     "lane": "fleet",
     "gates": [
-     "Custom input detection (not in queue - schedulable ~day 1: seat frees + work time)"
+     "Custom input detection (not in queue - schedulable ~day 2: seat frees + work time)"
     ],
-    "via": "Custom input detection (not in queue - schedulable ~day 1: seat frees + work time)",
+    "via": "Custom input detection (not in queue - schedulable ~day 2: seat frees + work time)",
     "note": "reads threads and replies in-voice",
     "projected_gates": [
      "Custom input detection"
@@ -684,15 +1050,15 @@
    },
    {
     "name": "Making phone calls",
-    "window": "day 3-10",
-    "start_day": 3,
-    "end_day": 10,
+    "window": "day 4-11",
+    "start_day": 4,
+    "end_day": 11,
     "status": "planned",
     "lane": "fleet",
     "gates": [
-     "Mic access (not in queue - schedulable ~day 1: seat frees + work time)"
+     "Mic access (not in queue - schedulable ~day 2: seat frees + work time)"
     ],
-    "via": "Mic access (not in queue - schedulable ~day 1: seat frees + work time)",
+    "via": "Mic access (not in queue - schedulable ~day 2: seat frees + work time)",
     "note": "full-duplex voice calls, not just text",
     "projected_gates": [
      "Mic access"
@@ -700,15 +1066,15 @@
    },
    {
     "name": "Writing valid tenders",
-    "window": "day 4-14",
-    "start_day": 4,
-    "end_day": 14,
+    "window": "day 5-15",
+    "start_day": 5,
+    "end_day": 15,
     "status": "planned",
     "lane": "fleet",
     "gates": [
-     "Camera access (not in queue - schedulable ~day 1: seat frees + work time)"
+     "Camera access (not in queue - schedulable ~day 2: seat frees + work time)"
     ],
-    "via": "Camera access (not in queue - schedulable ~day 1: seat frees + work time)",
+    "via": "Camera access (not in queue - schedulable ~day 2: seat frees + work time)",
     "note": "reads tender PDFs/screens and drafts compliant responses",
     "projected_gates": [
      "Camera access"
@@ -728,16 +1094,16 @@
    },
    {
     "name": "Making money (revenue channels live)",
-    "window": "day 4-12",
-    "start_day": 4,
-    "end_day": 12,
+    "window": "day 5-13",
+    "start_day": 5,
+    "end_day": 13,
     "status": "planned",
     "lane": "fleet",
     "gates": [
-     "Custom input detection (not in queue - schedulable ~day 1: seat frees + work time)",
-     "Camera access (not in queue - schedulable ~day 1: seat frees + work time)"
+     "Custom input detection (not in queue - schedulable ~day 2: seat frees + work time)",
+     "Camera access (not in queue - schedulable ~day 2: seat frees + work time)"
     ],
-    "via": "Custom input detection (not in queue - schedulable ~day 1: seat frees + work time); Camera access (not in queue - schedulable ~day 1: seat frees + work time)",
+    "via": "Custom input detection (not in queue - schedulable ~day 2: seat frees + work time); Camera access (not in queue - schedulable ~day 2: seat frees + work time)",
     "note": "at least one channel transacting autonomously",
     "projected_gates": [
      "Custom input detection",
@@ -746,15 +1112,15 @@
    },
    {
     "name": "Positive money income (net > 0)",
-    "window": "day 19-26",
-    "start_day": 19,
-    "end_day": 26,
+    "window": "day 20-27",
+    "start_day": 20,
+    "end_day": 27,
     "status": "planned",
     "lane": "fleet",
     "gates": [
-     "Making money (revenue channels live) (ends day 12)"
+     "Making money (revenue channels live) (ends day 13)"
     ],
-    "via": "Making money (revenue channels live) (ends day 12)",
+    "via": "Making money (revenue channels live) (ends day 13)",
     "note": "all revenue channels running >= 1 week with net positive",
     "projected_gates": [],
     "cycle_closing": true
@@ -764,7 +1130,28 @@
    {
     "name": "Generate daily social media posts",
     "parent": null,
-    "window": "day 2-4",
+    "window": "day 3-5",
+    "status": "lands fully inside 15d",
+    "cycle_closing": false,
+    "steps": [
+     {
+      "days": "day 0-0",
+      "text": "gates clear: Custom input detection by ~day 3 (not-planned)"
+     },
+     {
+      "days": "day 3-3",
+      "text": "setup + first runs of Generate daily social media posts"
+     },
+     {
+      "days": "day 4",
+      "text": "first real delivery (usable output)"
+     }
+    ]
+   },
+   {
+    "name": "Commenting on posts",
+    "parent": null,
+    "window": "day 2-6",
     "status": "lands fully inside 15d",
     "cycle_closing": false,
     "steps": [
@@ -774,52 +1161,31 @@
      },
      {
       "days": "day 2-2",
-      "text": "setup + first runs of Generate daily social media posts"
-     },
-     {
-      "days": "day 3",
-      "text": "first real delivery (usable output)"
-     }
-    ]
-   },
-   {
-    "name": "Commenting on posts",
-    "parent": null,
-    "window": "day 1-5",
-    "status": "lands fully inside 15d",
-    "cycle_closing": false,
-    "steps": [
-     {
-      "days": "day 0-0",
-      "text": "gates clear: Custom input detection by ~day 1 (not-planned)"
-     },
-     {
-      "days": "day 1-1",
       "text": "setup + first runs of Commenting on posts"
      },
      {
-      "days": "day 2-5",
-      "text": "stabilize - daily runs through day 5"
+      "days": "day 3-6",
+      "text": "stabilize - daily runs through day 6"
      }
     ]
    },
    {
     "name": "Making phone calls",
     "parent": null,
-    "window": "day 3-10",
+    "window": "day 4-11",
     "status": "lands fully inside 15d",
     "cycle_closing": false,
     "steps": [
      {
       "days": "day 0-0",
-      "text": "gates clear: Mic access by ~day 3 (not-planned)"
+      "text": "gates clear: Mic access by ~day 4 (not-planned)"
      },
      {
-      "days": "day 3-4",
+      "days": "day 4-5",
       "text": "setup + first runs of Making phone calls"
      },
      {
-      "days": "day 5",
+      "days": "day 6",
       "text": "first real delivery (usable output)"
      }
     ]
@@ -827,20 +1193,20 @@
    {
     "name": "Writing valid tenders",
     "parent": null,
-    "window": "day 4-14",
+    "window": "day 5-15",
     "status": "lands fully inside 15d",
     "cycle_closing": false,
     "steps": [
      {
       "days": "day 0-0",
-      "text": "gates clear: Camera access by ~day 4 (not-planned)"
+      "text": "gates clear: Camera access by ~day 5 (not-planned)"
      },
      {
-      "days": "day 4-6",
+      "days": "day 5-7",
       "text": "setup + first runs of Writing valid tenders"
      },
      {
-      "days": "day 7",
+      "days": "day 8",
       "text": "first real delivery (usable output)"
      }
     ]
@@ -869,20 +1235,20 @@
    {
     "name": "Making money (revenue channels live)",
     "parent": null,
-    "window": "day 4-12",
+    "window": "day 5-13",
     "status": "lands fully inside 15d",
     "cycle_closing": false,
     "steps": [
      {
       "days": "day 0-0",
-      "text": "gates clear: Custom input detection by ~day 4 (not-planned); Camera access by ~day 4 (not-planned)"
+      "text": "gates clear: Custom input detection by ~day 5 (not-planned); Camera access by ~day 5 (not-planned)"
      },
      {
-      "days": "day 4-6",
+      "days": "day 5-7",
       "text": "setup + first runs of Making money (revenue channels live)"
      },
      {
-      "days": "day 7",
+      "days": "day 8",
       "text": "first real delivery (usable output)"
      }
     ]
@@ -891,12 +1257,12 @@
     "name": "Positive money income (net > 0) - prep",
     "parent": "Positive money income (net > 0)",
     "window": "day 1-15",
-    "status": "prep for day 19 start",
+    "status": "prep for day 20 start",
     "cycle_closing": true,
     "steps": [
      {
-      "days": "day 0-12",
-      "text": "Making money (revenue channels live) (ends day 12) must be done by ~day 12"
+      "days": "day 0-13",
+      "text": "Making money (revenue channels live) (ends day 13) must be done by ~day 13"
      }
     ]
    }
@@ -905,7 +1271,28 @@
    {
     "name": "Generate daily social media posts",
     "parent": null,
-    "window": "day 2-4",
+    "window": "day 3-5",
+    "status": "lands fully inside 15d",
+    "cycle_closing": false,
+    "steps": [
+     {
+      "days": "day 3",
+      "text": "Custom input detection by ~day 3 (not-planned)"
+     },
+     {
+      "days": "day 3",
+      "text": "scaffold + wire up Generate daily social media posts; first automated run"
+     },
+     {
+      "days": "day 4",
+      "text": "produce first usable output + record evidence leaf"
+     }
+    ]
+   },
+   {
+    "name": "Commenting on posts",
+    "parent": null,
+    "window": "day 2-6",
     "status": "lands fully inside 15d",
     "cycle_closing": false,
     "steps": [
@@ -915,35 +1302,14 @@
      },
      {
       "days": "day 2",
-      "text": "scaffold + wire up Generate daily social media posts; first automated run"
-     },
-     {
-      "days": "day 3",
-      "text": "produce first usable output + record evidence leaf"
-     }
-    ]
-   },
-   {
-    "name": "Commenting on posts",
-    "parent": null,
-    "window": "day 1-5",
-    "status": "lands fully inside 15d",
-    "cycle_closing": false,
-    "steps": [
-     {
-      "days": "day 1",
-      "text": "Custom input detection by ~day 1 (not-planned)"
-     },
-     {
-      "days": "day 1",
       "text": "scaffold + wire up Commenting on posts; first automated run"
      },
      {
-      "days": "day 2",
+      "days": "day 3",
       "text": "daily unattended runs begin"
      },
      {
-      "days": "day 5",
+      "days": "day 6",
       "text": "monitor + regression check on the loop"
      }
     ]
@@ -951,24 +1317,24 @@
    {
     "name": "Making phone calls",
     "parent": null,
-    "window": "day 3-7 -> runs to day 10",
+    "window": "day 4-7 -> runs to day 11",
     "status": "lands fully inside 15d",
     "cycle_closing": false,
     "steps": [
      {
-      "days": "day 3",
-      "text": "Mic access by ~day 3 (not-planned)"
-     },
-     {
-      "days": "day 3",
-      "text": "scaffold + wire up Making phone calls"
+      "days": "day 4",
+      "text": "Mic access by ~day 4 (not-planned)"
      },
      {
       "days": "day 4",
-      "text": "fix issues; verify first output of Making phone calls"
+      "text": "scaffold + wire up Making phone calls"
      },
      {
       "days": "day 5",
+      "text": "fix issues; verify first output of Making phone calls"
+     },
+     {
+      "days": "day 6",
       "text": "produce first usable output + record evidence leaf"
      }
     ]
@@ -976,29 +1342,29 @@
    {
     "name": "Writing valid tenders",
     "parent": null,
-    "window": "day 4-7 -> runs to day 14",
+    "window": "day 5-7 -> runs to day 15",
     "status": "lands fully inside 15d",
     "cycle_closing": false,
     "steps": [
      {
-      "days": "day 4",
-      "text": "Camera access by ~day 4 (not-planned)"
-     },
-     {
-      "days": "day 4",
-      "text": "scaffold + wire up Writing valid tenders"
+      "days": "day 5",
+      "text": "Camera access by ~day 5 (not-planned)"
      },
      {
       "days": "day 5",
-      "text": "first automated run of Writing valid tenders"
+      "text": "scaffold + wire up Writing valid tenders"
      },
      {
       "days": "day 6",
-      "text": "fix issues; verify first output of Writing valid tenders"
+      "text": "first automated run of Writing valid tenders"
      },
      {
       "days": "day 7",
-      "text": "produce first usable output + record evidence leaf"
+      "text": "fix issues; verify first output of Writing valid tenders"
+     },
+     {
+      "days": "day 8",
+      "text": "first real delivery (usable output) (after the 7-day window - see 15-day plan)"
      }
     ]
    },
@@ -1034,33 +1400,33 @@
    {
     "name": "Making money (revenue channels live)",
     "parent": null,
-    "window": "day 4-7 -> runs to day 12",
+    "window": "day 5-7 -> runs to day 13",
     "status": "lands fully inside 15d",
     "cycle_closing": false,
     "steps": [
      {
-      "days": "day 4",
-      "text": "Custom input detection by ~day 4 (not-planned)"
-     },
-     {
-      "days": "day 4",
-      "text": "Camera access by ~day 4 (not-planned)"
-     },
-     {
-      "days": "day 4",
-      "text": "scaffold + wire up Making money (revenue channels live)"
+      "days": "day 5",
+      "text": "Custom input detection by ~day 5 (not-planned)"
      },
      {
       "days": "day 5",
-      "text": "first automated run of Making money (revenue channels live)"
+      "text": "Camera access by ~day 5 (not-planned)"
+     },
+     {
+      "days": "day 5",
+      "text": "scaffold + wire up Making money (revenue channels live)"
      },
      {
       "days": "day 6",
-      "text": "fix issues; verify first output of Making money (revenue channels live)"
+      "text": "first automated run of Making money (revenue channels live)"
      },
      {
       "days": "day 7",
-      "text": "produce first usable output + record evidence leaf"
+      "text": "fix issues; verify first output of Making money (revenue channels live)"
+     },
+     {
+      "days": "day 8",
+      "text": "first real delivery (usable output) (after the 7-day window - see 15-day plan)"
      }
     ]
    },
@@ -1068,21 +1434,28 @@
     "name": "Positive money income (net > 0) - prep",
     "parent": "Positive money income (net > 0)",
     "window": "day 1-7 -> runs to day 15",
-    "status": "prep for day 19 start",
+    "status": "prep for day 20 start",
     "cycle_closing": true,
     "steps": [
      {
       "days": "day 0-7",
-      "text": "Making money (revenue channels live) (ends day 12) must be done by ~day 12 - continues in the 15-day plan to day 12"
+      "text": "Making money (revenue channels live) (ends day 13) must be done by ~day 13 - continues in the 15-day plan to day 13"
      }
     ]
    }
   ],
   "plan_meta": {
-   "sig": "05dcc83e6301",
-   "computed_at": "2026-11-24 22:04:37",
+   "sig": "a4f106fb3413",
+   "computed_at": "2026-11-24 23:09:16",
    "basis": "live goal ledger + next-10 ETAs + fleet throughput ~20.04 goals/h; recomputed every refresh",
-   "delta": [],
+   "delta": [
+    "Generate daily social media posts: day 2-4 -> day 3-5 (planned)",
+    "Commenting on posts: day 1-5 -> day 2-6 (planned)",
+    "Making phone calls: day 3-10 -> day 4-11 (planned)",
+    "Writing valid tenders: day 4-14 -> day 5-15 (planned)",
+    "Making money (revenue channels live): day 4-12 -> day 5-13 (planned)",
+    "Positive money income (net > 0): day 19-26 -> day 20-27 (planned)"
+   ],
    "history": [
     {
      "ts": "2026-11-24 11:54:14",
@@ -1095,6 +1468,10 @@
     {
      "ts": "2026-11-24 13:46:57",
      "sig": "05dcc83e6301"
+    },
+    {
+     "ts": "2026-11-24 23:09:16",
+     "sig": "a4f106fb3413"
     }
    ]
   }

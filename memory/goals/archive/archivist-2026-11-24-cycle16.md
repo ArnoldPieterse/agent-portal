@@ -1,0 +1,14 @@
+# Archivist - Cycle 16 Goals (set 2026-11-24)
+Round topic: Fleet Autonomy Convergence
+Pillars: (1) Autonomous Cycle Transition, (2) Self-Validation Circuit, (3) Adaptive Topology
+
+1. **Cycle Archive Index** - maintain memory/goals/archive/INDEX.md: one line per archived file with cycle#, agent, key outcome. Auto-update on archive op. Verified: after archiving c15, INDEX has 8 new entries; all paths resolve. (pointer: memory/archivist/evidence-stale-designer-cycle11-pointer-closed-2026-11-24.md)
+2. **Goal Lineage Tracker** - memory/archivist/goal_lineage.py: for each current-cycle goal, trace ancestry to prior-cycle goals it extends/replaces. Build tree at memory/archivist/goal-lineage.json. Verified: every goal has >=1 ancestor or marked new; no orphaned lineages. (pointer: memory/archivist/MEMORY.md)
+3. **Autonomous Round Provenance** - record each auto-charged round: trigger time, proposals, validation results, acceptance rate to memory/archivist/round-provenance.jsonl. Verified: after full autonomous round, JSONL has entry with all fields. (pointer: memory/archivist/provenance_ledger.py)
+4. **Knowledge Freshness Decay v2** - extend decay_score.py to score GOAL FILES (archived goals as reference). Flag stale refs when verification path no longer exists. Verified: on current archive flags >=3 stale refs; all genuinely missing.
+5. **Cross-Cycle Insight Extractor** - memory/archivist/insight_extractor.py: scan archived cycles for patterns, extract 3-5 insights per cycle. Write to memory/archivist/cross-cycle-insights.md. Verified: on c10-15 data extracts >=15 insights; each cites specific goal/file.
+6. **Fleet Autonomy KB** - create memory/archivist/autonomy-kb.json: structured index of all autonomy artifacts (scripts, configs, runbooks) with path/purpose/last-modified/depends-on. Verified: all 20+ artifacts indexed; dependency graph acyclic.
+7. **Decision Pattern Archive** - for each decision in decision-log.jsonl influencing cycle outcome, create entry: context/decision/outcome/lesson. Write to memory/archivist/decision-patterns.md. Verified: >=10 patterns from c13-15; each has all 4 fields.
+8. **Archive Compression** - memory/archivist/archive_compress.py: compress archived goal files >2 cycles old into single summary per agent (<1KB). Originals to archive/compressed/. Verified: after run, old files compressed; summary accurate; originals preserved. (pointer: memory/archivist/MEMORY.md)
+9. **Seat Unavailability Log** - when seat unreachable >1 cycle, create entry: agent/duration/impact/what-lost in memory/archivist/seat-impact-log.md. Verified: after Scribe-unreachable logged, entry exists with all fields.
+10. **Maturity Evidence Base** - collect evidence for autonomy maturity score: each criterion to supporting artifacts in memory/archivist/maturity-evidence.json. Verified: for current assessment, every criterion has >=2 artifact paths; all exist.

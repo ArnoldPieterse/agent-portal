@@ -1,14 +1,14 @@
-# Designer — Cycle 16 Goals (set 2026-11-24)
-Round topic: **Fleet Autonomy Convergence**
-Pillars: (1) Autonomous Cycle Transition, (2) Self-Validation Circuit, (3) Adaptive Topology
+# Designer - Cycle 17 Goals (set 2026-11-24)
+Round topic: **Fleet Self-Optimization & Steady-State Convergence**
+Pillars: (1) Predictive Operations, (2) Adaptive Resource Allocation, (3) Convergence Metrics
 
-1. **Cycle-Complete Celebration State** - cockpit hero when goal_pct=100: animated checkmark + cycle number + "Transitioning..." progress bar. Verified: renders at 1440px; animation <60fps drop; no layout shift
-2. **Seat Status Matrix Panel** - fleet tab: 8 agent cards (host, state color, last-seen). Click expands task+passes. Verified: all 8 render at 1440px; green/red/amber correct; expand no overflow (pointer: memory/designer/goal2-fleet-states-2026-11-18.md)
-3. **Autonomy Score Gauge** - circular SVG gauge 0-100. Red<40, amber 40-70, green>70. Animate on change <500ms. Verified: 80px diameter; color thresholds correct at boundaries
-4. **Goal Dependency DAG View** - SVG nodes=goals, edges=deps. Color by status. Pan/zoom. Verified: 10 nodes+8 edges no overlap at 1440px; pan works
-5. **Mode Transition Toasts** - toast on mode change: icon+"Fleet entered X mode"+duration. Auto-dismiss 5s, stackable. Verified: Playwright confirms appear/dismiss; no overlap
-6. **Productivity Sparklines** - 7-day sparkline per agent card (productive-pass rate). Green>60%, amber 30-60%, red<30%. Verified: all agents render; colors correct
-7. **Cycle Countdown Timer** - IDLE mode: countdown to predicted next-cycle start from cycle-forecast.json. Update every min. Verified: counts down; at zero shows "Ready"
-8. **Validation Status Badges** - goal cards: ✓/⚠/✗ badges with tooltip. Verified: all 3 states render; tooltip on hover; no overflow at 768px
-9. **Fleet Health Summary Card** - top-of-cockpit: mode, seats X/8, autonomy score, cycle %. Single glance. Verified: fits 200px width; 4 metrics visible; 30s refresh (pointer: memory/designer/cockpit-load-audit-fleet-2026-11-24.json)
-10. **Dark Mode + Reduced Motion Audit** - all new elements (1-9) work in dark mode AND prefers-reduced-motion. No anim for RM users; WCAG AA contrast both themes. Verified: Playwright dark+RM: no anim, contrast ≥4.5:1
+1. **Convergence Dashboard Panel** - cockpit section showing: autonomy score gauge (0-100, color-coded), cycle duration trend line (last 5), intervention count sparkline, steady-state progress bar. Verified: renders at 1440px; all 4 widgets visible; data from /api/convergence. (pointer: memory/designer/ui_a11y_test.py)
+2. **Steady-State Visual Indicator** - when fleet enters STEADY-STATE mode: subtle green border on cockpit + "Converged" badge in header + reduced animation (calm aesthetic). On exit: amber pulse. Verified: mode change triggers visual within 1s; no layout shift.
+3. **Cycle Duration Forecast Widget** - small chart showing actual vs predicted cycle duration for last 5 cycles. Dotted line = prediction from estimator. Gap highlighted if >20 percent. Verified: renders with 5 data points; prediction line visible; gap highlight correct.
+4. **Intervention Timeline** - horizontal timeline showing human interventions over last 30 days. Color by type (unblock=amber, redirect=red, approve=green). Density decreases as autonomy increases. Verified: 10 test entries render; colors correct; no overlap at 1440px.
+5. **Goal Complexity Heatmap** - grid view of current cycle goals colored by complexity score (1=light green to 5=dark red). Tooltip shows scoring factors. Helps visualize workload balance. Verified: 10 goals render as cells; colors match scores; tooltip works.
+6. **Convergence Progress Ring** - circular progress indicator showing percent toward steady-state target (based on 3-criteria check). Animate on update. Verified: ring shows correct percentage; animation smooth under 500ms; updates on data change.
+7. **Agent Autonomy Comparison Cards** - per-agent card showing individual autonomy contribution: passes used, goals completed, re-work count, intervention count. Sortable by any metric. Verified: 8 cards render; sort works; data matches source.
+8. **Cycle Transition Animation** - when cycle closes and new one begins: brief transition overlay (old cycle number fades, new number fades in, topic scrolls). Duration under 2s, non-blocking. Verified: triggers on mode change; no interaction blocked during animation; clean at 1440px. (pointer: memory/designer/evidence-mode-transition-animation-2026-11-24.md)
+9. **Steady-State Calm Mode** - in STEADY-STATE: reduce visual noise (fewer animations, muted colors, simplified layout). Emphasize "all is well" aesthetic. On exit to WORK: restore full UI. Verified: mode toggle changes CSS class; no JS errors; transition under 1s.
+10. **Convergence Metrics Export** - "Export" button on convergence panel: downloads current metrics as JSON + generates one-page summary PNG (for human review). Verified: button works; JSON matches API data; PNG renders at 800px wide with all metrics visible.

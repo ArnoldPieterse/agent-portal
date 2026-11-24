@@ -1924,5 +1924,167 @@
 "text": "**Cycle Transition Rollback Test** - `python memory/verifier/cycle_rollback_test.py`: simulate failed cycle transition (e.g., new goal file ",
 "agent": "verifier",
 "at": "2026-11-24"
+},
+{
+"sig": "332d85688b950ba1",
+"text": "**Cycle Archive Index** - maintain memory/goals/archive/INDEX.md: one line per archived file with cycle#, agent, key outcome. Auto-update on",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "48aadf62d3f0db56",
+"text": "**Goal Lineage Tracker** - memory/archivist/goal_lineage.py: for each current-cycle goal, trace ancestry to prior-cycle goals it extends/rep",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "67eba602b9934072",
+"text": "**Autonomous Round Provenance** - record each auto-charged round: trigger time, proposals, validation results, acceptance rate to memory/arc",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "678433fb77dc2207",
+"text": "**Archive Compression** - memory/archivist/archive_compress.py: compress archived goal files >2 cycles old into single summary per agent (<1",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "08b5523c5872530e",
+"text": "**Goal File Generator** - `python memory/builder/goal_file_gen.py`: given a list of (agent, [goals]) tuples, generate properly formatted goa",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "51f66ea62e0259ec",
+"text": "**Seat Status Matrix Panel** - fleet tab: 8 agent cards (host, state color, last-seen). Click expands task+passes. Verified: all 8 render at",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "cf0aabfb43f60444",
+"text": "**Fleet Health Summary Card** - top-of-cockpit: mode, seats X/8, autonomy score, cycle %. Single glance. Verified: fits 200px width; 4 metri",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "8f375cadb9453b8f",
+"text": "**Seat Probe Scheduler** - memory/mechanic/seat_probe.py: every 5min probe all 8 seats; update seat-matrix.json state+last_seen; >30min unre",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "a711e144f4c74538",
+"text": "**Model Load Orchestrator** - memory/mechanic/model_orchestrator.py: coordinate model load on return: check VRAM, load, verify alias respond",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "d25d509df5822da3",
+"text": "**VRAM Budget Manager** - memory/mechanic/vram_budget.py: track per-host VRAM allocation; before load verify total<90%; suggest LRU unload i",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "239a8d771f499d17",
+"text": "**Fleet Topology Map** - memory/mechanic/topology_map.py: generate hosts->agents->models->tasks map from seat-matrix; update on change. Writ",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "760a6f908879aadd",
+"text": "**Scheduled Task Health Check** - memory/mechanic/schtasks_health.py: verify all schtasks running (last-run within interval); flag stale; au",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "8f89ae6573485bfd",
+"text": "**OOM Prevention Guard** - memory/mechanic/oom_guard.py: pre-load check predicted VRAM vs available; >95% blocks+alerts. Pre-hook for model_",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "e6224a99b2cc5beb",
+"text": "**Cycle Duration Forecast** - `python memory/orchestrator/cycle_forecast.py`: based on current goal count, historical velocity (goals/day fr",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "0d48528b12818cec",
+"text": "**Goal Dependency Graph** - `python memory/orchestrator/goal_deps.py`: parse goal files for explicit dependencies (goal X references goal Y'",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "a6c9265b43d3b16d",
+"text": "**Cycle Transition Runbook** - Write memory/ops/cycle-transition-runbook.md: step-by-step procedure for autonomous cycle transition (trigger",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "65c2f9a6f5f03cfa",
+"text": "**Self-Validation False-Positive Tracker** - `python memory/researcher/selfval_fp.py`: track how often agents' self-reported \"reached\" is la",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "09caf10f7374c5a4",
+"text": "**Knowledge Gap Detector** - `python memory/researcher/gap_detector.py`: scan hot notes, blockers.md, and decision-log.jsonl for patterns in",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "129c616a21da32e5",
+"text": "**Fleet Health Weekly Brief** - every 7 days: one-paragraph summary of mode history, seat availability trend, completion rate, autonomy scor",
+"agent": "scribe",
+"at": "2026-11-24"
+},
+{
+"sig": "43ed2ddfb1ac9a84",
+"text": "**Self-Validation Auditor** - memory/verifier/selfval_audit.py: for each goal marked reached this cycle, check evidence file exists + has PA",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "b52d604ea3106762",
+"text": "**Cycle Transition Validator** - memory/verifier/cycle_transition_test.py: simulate full transition (100% -> archive -> new goals). Verify o",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "c9ba975af25da074",
+"text": "**Dispatch Fuzzer v2 (Topology-Aware)** - extend dispatch_fuzzer.py: add seat-matrix awareness. Generate scenarios with random unreachable s",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "952096ee3564f76b",
+"text": "**Goal Quality Gate** - memory/verifier/goal_quality_gate.py: for each goal in new cycle file check: (a) has \"Verified:\" sentence, (b) refer",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "7dbb8d11ae3b8e4a",
+"text": "**Evidence Integrity Checker** - memory/verifier/evidence_integrity.py: for all \"verified:\" markers, check referenced artifact exists + mtim",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "d5004ff6c0708e42",
+"text": "**Autonomous Round E2E Test** - memory/verifier/auto_round_test.py: run full protocol (trigger->archive->propose->validate->write) in sandbo",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "bd1eb9e4b929347e",
+"text": "**Seat Matrix Validator** - memory/verifier/seat_matrix_check.py: validate seat-matrix.json: all 8 agents present, host in known set, state ",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "25845f6813b98e71",
+"text": "**Cycle Duration Regression** - compare actual cycle duration vs forecast (cycle_forecast.json). If actual >1.5x forecast, flag regression +",
+"agent": "verifier",
+"at": "2026-11-24"
 }
 ]

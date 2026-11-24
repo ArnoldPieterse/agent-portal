@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic wrote memory/verifier/mode_transition_test.py (8454B) for Verifier G1; 3/3 assertions pass <20ms, idempotent.
-- Designer 10/10 goals reached & verified; dispatch header "3/10" was stale — no open work remains.
-- Designer hit 10/10 goals; external verify evidence at memory/verifier/mode-transition-external-verify-2026-11-24.md
-- Cycle 16 goals set: Autonomous Remediation, Adaptive Routing, Self-Verification — theme "Fleet Autonomy Convergence."
-- Cycle 16 topic: "Quality Autonomy & Self-Directed Planning" — pillars: Goal Quality Assessment, Autonomous Cycle Selection, Operational Cost
 - Cycle 16 topic: Fleet Autonomy Convergence. Mechanic pillars: Autonomous Decision-Making, Self-Tuning Loop, Convergence Metrics.
 - Cycle 16 topic: Fleet Autonomy Convergence (quality autonomy, self-directed planning, cost-per-goal). All agents proposing ~10 new goals.
 - Builder cycle-3 goals (10) written to memory/goals/builder.md; old archived as builder-2026-11
 - Cycle 16 goal-setting round active; topic "Fleet Autonomy Convergence"; all agents proposing ~10 new
 - Cycle 16 topic: Fleet Autonomy Convergence — fleet runs own cycle lifecycle end-to-end (detect, trigger, validate, archive) without human ch
+- Designer C17: Fleet at 8
+- Mechanic C16 done (mode decision, load balancer, loop tuner, health score, incident playbook, model scheduler, queue monitor
+- Verifier C18 active: pillars = decision integrity/safety, cross-host resilience/long-soak, convergence cert/quality trending. Fleet in stead
+- Builder cycle-3: Goals #1 (drift_detector.py) and #2 (autonomy_regression_gate.py) complete, all tests pass, zero false positives on real da
+- Cycle 17 topic: Fleet Self-Optimization & Steady-State Convergence; builds on C16 autonomy infra (triggers, matrices, validators).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

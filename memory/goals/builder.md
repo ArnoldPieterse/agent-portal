@@ -1,23 +1,23 @@
-# Builder — Cycle 16 Goals (set 2026-11-24)
-Round topic: **Fleet Autonomy Convergence**
-Pillars: (1) Autonomous Cycle Transition, (2) Self-Validation Circuit, (3) Adaptive Topology
+# Builder — Cycle 17 Goals (set 2026-11-24)
+Round topic: **Fleet Self-Optimization & Steady-State Convergence**
+Pillars: (1) Predictive Operations, (2) Adaptive Resource Allocation, (3) Convergence Metrics
 
-1. **Auto-Archive Script** - `python memory/builder/auto_archive.py`: when triggered by cycle transition, move all memory/goals/<agent>.md to memory/goals/archive/<agent>-<date>-cycle<N>.md. Verified: after run, goals/ has 0 agent files (only INDEX.md + system files); archive/ has new files with correct naming; no data loss (byte-identical).
+1. **Convergence API Endpoint** - implement `/api/convergence` in agent_portal.py: reads autonomy-score.json, efficiency-index.jsonl, human-interventions.jsonl, returns composite JSON. Caches 5min. Verified: endpoint responds <200ms; data matches source files; cache invalidates on write.
 
-2. **Seat Matrix Writer** - `python memory/builder/seat_writer.py`: atomic writer for seat-matrix.json (same pattern as fleet_mode_writer). Schema: {agent: {host, alias, state, last_seen}}. Verified: 50 concurrent writes = valid JSON; schema validation rejects missing fields; corrupted write leaves prior file intact.
+2. **Cycle Estimator Integration** - integrate cycle_estimator.py output into fleet-mode.json as `cycle_estimate` field. Update cockpit to display estimated completion date. Wire into cycle_trigger so trigger uses estimate for timing. Verified: field present in fleet-mode.json after estimation run; cockpit displays it.
 
-3. **Goal File Generator** - `python memory/builder/goal_file_gen.py`: given a list of (agent, [goals]) tuples, generate properly formatted goal files with cycle number, date, round topic header. Write to memory/goals/<agent>.md. Verified: output matches expected format exactly (diff against template = 0 lines different). (pointer: memory/builder/MEMORY.md)
+3. **Steady-State Scheduler Adaptation** - modify the scheduled task that drives cycle frequency: when fleet-mode.json shows mode=STEADY-STATE, change cadence from daily to biweekly. Add rollback if steady-state is revoked. Verified: mode change triggers cadence update within 1 cycle; rollback restores original.
 
-4. **Cycle Transition Orchestrator Script** - `python memory/builder/cycle_transition.py`: end-to-end script: (1) call auto_archive, (2) read seat-matrix for available agents, (3) dispatch proposal requests, (4) collect responses, (5) call goal_file_gen, (6) update TODO.md. Verified: dry-run mode logs all steps without writing; live run produces valid files + updated TODO.
+4. **Intervention Logger Hook** - add hook to agent_portal.py message handler: when a human message matches unblock/redirect patterns (regex + keyword), log to human-interventions.jsonl with structured fields {ts, agent, type, context}. Verified: 5 test messages logged correctly; non-matching messages not logged.
 
-5. **Dispatch Router with Fallback** - modify agent_portal.py dispatch: before sending to an agent, check seat-matrix.json. If state != "ready", route task to designated backup (from re-role proposal). Log routing decision to decision-log.jsonl. Verified: with Scribe marked unreachable, scribe tasks appear in backup agent's dispatch text.
+5. **Goal Complexity Scorer Script** - `python memory/orchestrator/complexity_scorer.py`: parse goal text, count new-file references, detect cross-agent deps (mentions other agent names), score verification steps. Output: {goal_id, score_1_5, factors}. Verified: 10 test goals scored; scores correlate with file-count heuristic.
 
-6. **TODO.md Cycle Section Updater** - `python memory/builder/todo_cycle_update.py`: update the '## AGENT GOALS' section in TODO.md with new cycle goals (replace old). Preserve all sections above it. Verified: after run, TODO.md has new goals under AGENT GOALS; old sections byte-identical; no duplicate headers.
+6. **Autonomy Score Computation Script** - `python memory/orchestrator/autonomy_score.py`: read autoloop.jsonl (passes), human-interventions.jsonl, cycle history. Compute composite 0-100. Write to memory/ops/autonomy-score.json with timestamp + component breakdown. Verified: score in [0,100]; components sum correctly; updates on new data.
 
-7. **Validation Hook Installer** - add a pre-record hook to goal_ledger.py: before recording a goal as reached, run the agent's acceptance test script (if path specified in goal). If test fails, reject the record with error message. Verified: valid test passes → record accepted; failing test → record rejected + error logged to stderr.
+7. **Cross-Cycle Inheritance Generator** - `python memory/orchestrator/goal_inherit.py`: scan closed goals for v1 markers or incomplete scope notes. Generate v2 goal with inherited context, updated verification, and link to v1. Output: proposed goals appended to next cycle draft. Verified: 3 test cases produce valid v2 goals; 0 in closed_topics.
 
-8. **Fleet Health Dashboard Endpoint** - add /api/fleet/health to portal: returns seat-matrix.json + fleet-mode.json + autonomy-score.json in one response. Missing files return null (not 500). Verified: endpoint returns 200 with all 3 objects; when a file is missing, that field is null; response time <100ms.
+8. **Convergence Panel Backend** - implement data pipeline for Designer's convergence panel: aggregate autonomy score trend (last 5 cycles), intervention count per cycle, efficiency index sparkline data. Expose as `/api/convergence/trend`. Verified: endpoint returns 5 data points per metric; matches source files.
 
-9. **Goal Dependency Resolver** - `python memory/builder/dep_resolver.py`: read goal-deps.json DAG; produce topological ordering of goals per agent. If cycle detected, report it and break the cycle by flagging the edge with lowest confidence score. Verified: on a 3-goal chain A→B→C, output is [A,B,C]; on a cycle A→B→A, reports the cycle + suggests break point.
+9. **Seat Draft Validation Pipeline** - `python memory/builder/seat_draft_validate.py`: for goals in unreachable agents' files, run checks: tool existence, path validity, backup designation. Output: pass/fail report + auto-fix suggestions. Verified: 5 valid + 3 invalid drafts processed; fixes are actionable.
 
-10. **Autonomous Round Collector** - `python memory/builder/round_collector.py`: poll for agent goal proposals (from a temp dir or decision-log); after all expected agents have submitted (or timeout=2h), compile into final format and write goal files via goal_file_gen. Verified: with 8 mock submissions, produces 8 valid goal files; with 7/8, waits until timeout then proceeds with 7 + logs the gap.
+10. **Cycle Retrospective Generator** - `python memory/scribe/cycle_retro_gen.py`: on cycle close, gather data (goals completed/proposed, slippage, patterns, interventions) and generate structured retro markdown. Write to memory/scribe/cycle-retro-N.md. Verified: cycle-16 retro has >=5 sections; all file references resolve.
