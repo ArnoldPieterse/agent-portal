@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-24T13:34:30Z",
+  "ts": "2026-11-24T22:06:55Z",
   "probe_interval_min": 5,
   "stale_threshold_min": 30,
   "portal": {
@@ -9,56 +9,119 @@
   "seats": {
     "orchestrator": {
       "state": "unreachable",
-      "last_seen": null,
-      "age_minutes": null,
-      "portal_reachable": false
+      "last_seen": "2026-11-24T21:13:41.681155+00:00",
+      "age_minutes": 53.2,
+      "portal_reachable": false,
+      "latency_ms": null,
+      "latency_history": [],
+      "trend": {
+        "p95_recent": null,
+        "p95_baseline": null,
+        "delta_pct": null,
+        "degrading": false
+      }
     },
     "researcher": {
       "state": "unreachable",
-      "last_seen": null,
-      "age_minutes": null,
-      "portal_reachable": false
+      "last_seen": "2026-11-24T21:13:41.690592+00:00",
+      "age_minutes": 53.2,
+      "portal_reachable": false,
+      "latency_ms": null,
+      "latency_history": [],
+      "trend": {
+        "p95_recent": null,
+        "p95_baseline": null,
+        "delta_pct": null,
+        "degrading": false
+      }
     },
     "builder": {
       "state": "unreachable",
-      "last_seen": null,
-      "age_minutes": null,
-      "portal_reachable": false
+      "last_seen": "2026-11-24T21:29:16.518253+00:00",
+      "age_minutes": 37.7,
+      "portal_reachable": false,
+      "latency_ms": null,
+      "latency_history": [],
+      "trend": {
+        "p95_recent": null,
+        "p95_baseline": null,
+        "delta_pct": null,
+        "degrading": false
+      }
     },
     "verifier": {
       "state": "unreachable",
-      "last_seen": null,
-      "age_minutes": null,
-      "portal_reachable": false
+      "last_seen": "2026-11-24T21:13:41.707265+00:00",
+      "age_minutes": 53.2,
+      "portal_reachable": false,
+      "latency_ms": null,
+      "latency_history": [],
+      "trend": {
+        "p95_recent": null,
+        "p95_baseline": null,
+        "delta_pct": null,
+        "degrading": false
+      }
     },
     "designer": {
       "state": "unreachable",
-      "last_seen": null,
-      "age_minutes": null,
-      "portal_reachable": false
+      "last_seen": "2026-11-24T21:13:41.715618+00:00",
+      "age_minutes": 53.2,
+      "portal_reachable": false,
+      "latency_ms": null,
+      "latency_history": [],
+      "trend": {
+        "p95_recent": null,
+        "p95_baseline": null,
+        "delta_pct": null,
+        "degrading": false
+      }
     },
     "archivist": {
       "state": "unreachable",
-      "last_seen": null,
-      "age_minutes": null,
-      "portal_reachable": false
+      "last_seen": "2026-11-24T21:29:16.526871+00:00",
+      "age_minutes": 37.7,
+      "portal_reachable": false,
+      "latency_ms": null,
+      "latency_history": [],
+      "trend": {
+        "p95_recent": null,
+        "p95_baseline": null,
+        "delta_pct": null,
+        "degrading": false
+      }
     },
     "scribe": {
-      "state": "healthy",
-      "last_seen": "2026-11-24T13:34:30.407467+00:00",
-      "age_minutes": 0,
-      "portal_reachable": true,
-      "model_loaded": true,
-      "load_detail": "loaded+verified: dry_run: would load model; dry_run: would verify alias"
+      "state": "unreachable",
+      "last_seen": "2026-11-24T21:13:41.732888+00:00",
+      "age_minutes": 53.2,
+      "portal_reachable": false,
+      "latency_ms": null,
+      "latency_history": [],
+      "trend": {
+        "p95_recent": null,
+        "p95_baseline": null,
+        "delta_pct": null,
+        "degrading": false
+      }
     },
     "mechanic": {
-      "state": "unreachable",
-      "last_seen": null,
-      "age_minutes": null,
-      "portal_reachable": false
+      "state": "healthy",
+      "last_seen": "2026-11-24T22:01:36.263158+00:00",
+      "age_minutes": 5.3,
+      "portal_reachable": false,
+      "latency_ms": null,
+      "latency_history": [],
+      "trend": {
+        "p95_recent": null,
+        "p95_baseline": null,
+        "delta_pct": null,
+        "degrading": false
+      }
     }
   },
-  "healthy_count": 0,
-  "unreachable_count": 8,
+  "healthy_count": 1,
+  "degrading_count": 0,
+  "unreachable_count": 7,
   "cascade": true
 }

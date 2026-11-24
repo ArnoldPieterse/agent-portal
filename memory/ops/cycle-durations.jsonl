@@ -2,3 +2,4 @@
 {"cycle": 8, "start_date": "2026-11-20", "end_date": "2026-11-23", "duration_hours": 72.0, "source": "archive"}
 {"cycle": 14, "start_date": "2026-11-23", "end_date": "2026-11-24", "duration_hours": 24.0, "source": "archive"}
 {"cycle": 15, "start_date": "2026-11-23", "end_date": "2026-11-24", "duration_hours": 24.0, "source": "archive"}
+{"cycle": 17, "start_date": "2026-11-24", "end_date": "2026-11-25", "duration_hours": 28.0, "source": "measured"}

@@ -1,0 +1,6 @@
+{"event": "created", "id": "R0001", "agent": "Builder", "kind": "change", "file": "_apiq_e2e_target.txt", "command": "", "ts": "2026-11-24T21:47:33Z"}
+{"event": "applied", "id": "R0001", "by": "human", "kind": "change", "file": "_apiq_e2e_target.txt", "detail": "_apiq_e2e_target.txt: replaced lines 2..3 with 2 line(s)", "ts": "2026-11-24T21:47:33Z"}
+{"event": "created", "id": "R0002", "agent": "human", "kind": "terminal", "file": null, "command": "echo e2e-terminal-ok", "ts": "2026-11-24T21:47:34Z"}
+{"event": "applied", "id": "R0002", "by": "human", "kind": "terminal", "file": null, "detail": "rc=0 (17+/0 chars output)", "ts": "2026-11-24T21:47:34Z"}
+{"event": "created", "id": "R0003", "agent": "Verifier", "kind": "change", "file": "_apiq_e2e_target.txt", "command": "", "ts": "2026-11-24T21:47:34Z"}
+{"event": "rejected", "id": "R0003", "by": "human", "kind": "change", "file": "_apiq_e2e_target.txt", "reason": "e2e reject", "ts": "2026-11-24T21:47:34Z"}

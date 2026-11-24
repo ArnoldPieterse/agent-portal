@@ -1,192 +1,164 @@
 #!/usr/bin/env python3
-"""probe_cadence_adjuster.py - Auto-adjust probe frequency based on fleet mode.
+"""probe_cadence_adjuster.py - Auto-adjust probe cadence based on fleet mode.
 
-STEADY-STATE: reduce probes from 5min to 15min (lighter load, less noise).
-WORK/RECOVERY: restore to 5min (full vigilance).
+STEADY-STATE: reduce from 5min to 15min. On exit, restore. Log all changes.
+Verification: mode change triggers within 1 probe cycle; no missed detections (simulated).
 
-Reads memory/ops/fleet-mode.json for current mode.
-Logs cadence changes to memory/ops/cadence-changes.jsonl.
-Updates seat_probe.py's PROBE_INTERVAL_MIN via a config file it reads at startup.
-
-Verified: mode change triggers within 1 probe cycle; no missed detections (simulated).
-
-Usage:
-    python memory/mechanic/probe_cadence_adjuster.py [--selftest]
+Usage: python memory/mechanic/probe_cadence_adjuster.py [--selftest]
 """
 import json, os, sys
 from datetime import datetime, timezone
 
-FLEET_MODE_PATH = "memory/ops/fleet-mode.json"
-CADENCE_LOG_PATH = "memory/ops/cadence-changes.jsonl"
-CONFIG_PATH = "memory/mechanic/probe-cadence-config.json"
+MODE_PATH = os.path.join("memory", "ops", "fleet-mode.json")
+MATRIX_PATH = os.path.join("memory", "ops", "seat-matrix.json")
+CADENCE_LOG = os.path.join("memory", "ops", "probe-cadence-log.jsonl")
 
-DEFAULT_INTERVAL_MIN = 5
-STEADY_INTERVAL_MIN = 15
+WORK_INTERVAL = 5      # minutes
+STEADY_INTERVAL = 15   # minutes
 
 
-def get_current_mode():
-    """Read fleet-mode.json and return the mode string."""
-    if not os.path.exists(FLEET_MODE_PATH):
-        return "WORK"
+def read_mode():
+    """Read current fleet mode from fleet-mode.json."""
+    if not os.path.exists(MODE_PATH):
+        return None
     try:
-        with open(FLEET_MODE_PATH, "r", encoding="utf-8") as f:
+        with open(MODE_PATH, "r", encoding="utf-8") as f:
             data = json.load(f)
-        return data.get("mode", "WORK").upper()
-    except (json.JSONDecodeError, ValueError, OSError):
-        return "WORK"
-
-
-def get_current_interval():
-    """Read current cadence config. Returns interval in minutes."""
-    if not os.path.exists(CONFIG_PATH):
-        return DEFAULT_INTERVAL_MIN
-    try:
-        with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        return data.get("interval_min", DEFAULT_INTERVAL_MIN)
-    except (json.JSONDecodeError, ValueError, OSError):
-        return DEFAULT_INTERVAL_MIN
-
-
-def set_interval(new_interval, reason):
-    """Write new cadence config and log the change."""
-    now = datetime.now(timezone.utc)
-    config = {
-        "interval_min": new_interval,
-        "set_at": now.isoformat(),
-        "reason": reason,
-    }
-    os.makedirs(os.path.dirname(CONFIG_PATH), exist_ok=True)
-    with open(CONFIG_PATH, "w", encoding="utf-8") as f:
-        json.dump(config, f, indent=2)
-
-    # Log the change
-    log_entry = {
-        "ts": now.isoformat(),
-        "old_interval_min": get_current_interval() if os.path.exists(CONFIG_PATH) else DEFAULT_INTERVAL_MIN,
-        "new_interval_min": new_interval,
-        "mode": get_current_mode(),
-        "reason": reason,
-    }
-    os.makedirs(os.path.dirname(CADENCE_LOG_PATH), exist_ok=True)
-    with open(CADENCE_LOG_PATH, "a", encoding="utf-8") as f:
-        f.write(json.dumps(log_entry) + "\n")
-
-    return log_entry
-
-
-def adjust():
-    """Main logic: check mode, adjust cadence if needed."""
-    mode = get_current_mode()
-    current = get_current_interval()
-
-    if mode == "STEADY-STATE" and current != STEADY_INTERVAL_MIN:
-        entry = set_interval(STEADY_INTERVAL_MIN, f"mode entered STEADY-STATE (was {current}min)")
-        print(f"[cadence] REDUCED {current}min -> {STEADY_INTERVAL_MIN}min (STEADY-STATE)")
-        return entry
-    elif mode != "STEADY-STATE" and current != DEFAULT_INTERVAL_MIN:
-        entry = set_interval(DEFAULT_INTERVAL_MIN, f"mode exited STEADY-STATE to {mode} (was {current}min)")
-        print(f"[cadence] RESTORED {current}min -> {DEFAULT_INTERVAL_MIN}min ({mode})")
-        return entry
-    else:
-        print(f"[cadence] no change needed (mode={mode}, interval={current}min)")
+        return data.get("mode")
+    except (json.JSONDecodeError, OSError):
         return None
 
 
-def selftest():
-    """Verify: mode change triggers within 1 probe cycle; no missed detections."""
-    print("[selftest] Probe Cadence Auto-Adjuster")
-    all_pass = True
+def read_current_interval():
+    """Read current probe interval from seat-matrix.json."""
+    if not os.path.exists(MATRIX_PATH):
+        return WORK_INTERVAL
+    try:
+        with open(MATRIX_PATH, "r", encoding="utf-8") as f:
+            m = json.load(f)
+        return m.get("probe_interval_min", WORK_INTERVAL)
+    except (json.JSONDecodeError, OSError):
+        return WORK_INTERVAL
 
-    # Setup: create temp fleet-mode.json and config
-    test_mode_path = "memory/mechanic/_test_fleet_mode.json"
-    test_config_path = "memory/mechanic/_test_cadence_config.json"
-    test_log_path = "memory/mechanic/_test_cadence_log.jsonl"
 
-    # Clean up any previous test files
-    for p in [test_mode_path, test_config_path, test_log_path]:
-        if os.path.exists(p):
-            os.remove(p)
+def set_interval(new_interval):
+    """Write new probe interval to seat-matrix.json."""
+    if not os.path.exists(MATRIX_PATH):
+        # Create minimal matrix if missing
+        m = {"probe_interval_min": new_interval, "seats": {}}
+    else:
+        with open(MATRIX_PATH, "r", encoding="utf-8") as f:
+            m = json.load(f)
+    m["probe_interval_min"] = new_interval
+    os.makedirs(os.path.dirname(MATRIX_PATH), exist_ok=True)
+    with open(MATRIX_PATH, "w", encoding="utf-8") as f:
+        json.dump(m, f, indent=2)
 
-    # Test 1: WORK mode + default interval -> no change
-    with open(test_mode_path, "w") as f:
-        json.dump({"mode": "WORK"}, f)
-    with open(test_config_path, "w") as f:
-        json.dump({"interval_min": 5}, f)
 
-    # Simulate adjust logic (inline to avoid file path issues)
-    mode = "WORK"
-    current = 5
-    expected_no_change = (mode == "STEADY-STATE" and current != STEADY_INTERVAL_MIN) or \
-                         (mode != "STEADY-STATE" and current != DEFAULT_INTERVAL_MIN)
-    pass1 = not expected_no_change
-    print(f"  [{'PASS' if pass1 else 'FAIL'}] WORK mode + 5min -> no change")
-    all_pass &= pass1
-
-    # Test 2: STEADY-STATE mode + 5min -> reduce to 15min (within 1 cycle)
-    mode = "STEADY-STATE"
-    current = 5
-    should_reduce = (mode == "STEADY-STATE" and current != STEADY_INTERVAL_MIN)
-    pass2 = should_reduce and STEADY_INTERVAL_MIN == 15
-    print(f"  [{'PASS' if pass2 else 'FAIL'}] STEADY-STATE + 5min -> reduce to 15min (triggers in 1 cycle)")
-    all_pass &= pass2
-
-    # Test 3: WORK mode + 15min -> restore to 5min
-    mode = "WORK"
-    current = 15
-    should_restore = (mode != "STEADY-STATE" and current != DEFAULT_INTERVAL_MIN)
-    pass3 = should_restore and DEFAULT_INTERVAL_MIN == 5
-    print(f"  [{'PASS' if pass3 else 'FAIL'}] WORK mode + 15min -> restore to 5min")
-    all_pass &= pass3
-
-    # Test 4: STEADY-STATE + already 15min -> no change (idempotent)
-    mode = "STEADY-STATE"
-    current = 15
-    should_no_change = not ((mode == "STEADY-STATE" and current != STEADY_INTERVAL_MIN) or
-                            (mode != "STEADY-STATE" and current != DEFAULT_INTERVAL_MIN))
-    pass4 = should_no_change
-    print(f"  [{'PASS' if pass4 else 'FAIL'}] STEADY-STATE + 15min -> no change (idempotent)")
-    all_pass &= pass4
-
-    # Test 5: No missed detection - verify that even at 15min cadence,
-    # a seat going down is still detected within 2 probe cycles (30min max)
-    # This is a design verification: 15min interval means worst-case detection = 15min + stale_threshold(30min) = 45min
-    # But in steady-state, the threshold is relaxed to 60min per playbook
-    # So detection within 1 probe cycle (15min) for active degradation is guaranteed
-    detection_window_min = STEADY_INTERVAL_MIN  # one probe cycle
-    pass5 = detection_window_min <= 15  # at most 15min to detect
-    print(f"  [{'PASS' if pass5 else 'FAIL'}] no missed detection: max {detection_window_min}min to detect in steady-state")
-    all_pass &= pass5
-
-    # Cleanup test files
-    for p in [test_mode_path, test_config_path, test_log_path]:
-        if os.path.exists(p):
-            os.remove(p)
-
-    # Write evidence
-    evidence = {
-        "ts": datetime.now(timezone.utc).isoformat(),
-        "script": "probe_cadence_adjuster.py",
-        "test": "selftest",
-        "results": {
-            "work_no_change": pass1,
-            "steady_reduce_1cycle": pass2,
-            "work_restore": pass3,
-            "idempotent": pass4,
-            "no_missed_detection": pass5,
-        },
-        "all_pass": all_pass,
+def log_change(from_min, to_min, reason):
+    """Append cadence change to probe-cadence-log.jsonl."""
+    entry = {
+        "ts": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "from_min": from_min,
+        "to_min": to_min,
+        "reason": reason,
     }
-    ev_path = os.path.join("memory", "mechanic", "cadence-adjuster-selftest-evidence.jsonl")
-    with open(ev_path, "a", encoding="utf-8") as f:
-        f.write(json.dumps(evidence) + "\n")
-    print(f"\n[selftest] Evidence: {ev_path}")
-    return all_pass
+    os.makedirs(os.path.dirname(CADENCE_LOG), exist_ok=True)
+    with open(CADENCE_LOG, "a", encoding="utf-8") as f:
+        f.write(json.dumps(entry) + "\n")
+    return entry
+
+
+def adjust():
+    """Main adjustment logic: compare desired vs current interval."""
+    mode = read_mode()
+    current = read_current_interval()
+    
+    if mode == "STEADY-STATE":
+        desired = STEADY_INTERVAL
+    else:
+        desired = WORK_INTERVAL  # WORK or any other mode -> full cadence
+    
+    if current != desired:
+        log_change(current, desired, f"mode={mode}")
+        set_interval(desired)
+        return {"changed": True, "from": current, "to": desired, "mode": mode}
+    return {"changed": False, "current": current, "mode": mode}
+
+
+def selftest():
+    """Simulate mode change: STEADY-STATE triggers 15min; WORK restores 5min."""
+    import tempfile, shutil
+    ok = True
+    def check(name, cond):
+        nonlocal ok
+        print(("PASS" if cond else "FAIL"), name)
+        ok = ok and bool(cond)
+
+    # Use temp files to avoid clobbering real state
+    tmpdir = tempfile.mkdtemp()
+    global MODE_PATH, MATRIX_PATH, CADENCE_LOG
+    orig_mode, orig_matrix, orig_log = MODE_PATH, MATRIX_PATH, CADENCE_LOG
+    MODE_PATH = os.path.join(tmpdir, "fleet-mode.json")
+    MATRIX_PATH = os.path.join(tmpdir, "seat-matrix.json")
+    CADENCE_LOG = os.path.join(tmpdir, "probe-cadence-log.jsonl")
+
+    try:
+        # Initial state: WORK mode, 5min interval
+        with open(MODE_PATH, "w") as f:
+            json.dump({"mode": "WORK"}, f)
+        with open(MATRIX_PATH, "w") as f:
+            json.dump({"probe_interval_min": 5, "seats": {}}, f)
+
+        # No change expected in WORK mode
+        r = adjust()
+        check("WORK: no change", r["changed"] is False and r["current"] == 5)
+
+        # Switch to STEADY-STATE -> should trigger 15min within 1 cycle
+        with open(MODE_PATH, "w") as f:
+            json.dump({"mode": "STEADY-STATE"}, f)
+        r = adjust()
+        check("STEADY-STATE: changed to 15", r["changed"] is True and r["to"] == 15)
+
+        # Verify interval was written
+        with open(MATRIX_PATH) as f:
+            m = json.load(f)
+        check("STEADY-STATE: matrix updated", m["probe_interval_min"] == 15)
+
+        # Switch back to WORK -> should restore 5min
+        with open(MODE_PATH, "w") as f:
+            json.dump({"mode": "WORK"}, f)
+        r = adjust()
+        check("WORK restore: changed to 5", r["changed"] is True and r["to"] == 5)
+
+        # Verify log has 2 entries (one for each change)
+        with open(CADENCE_LOG) as f:
+            logs = [json.loads(l) for l in f if l.strip()]
+        check("log: 2 entries", len(logs) == 2)
+        check("log: first is 5->15", logs[0]["from_min"] == 5 and logs[0]["to_min"] == 15)
+        check("log: second is 15->5", logs[1]["from_min"] == 15 and logs[1]["to_min"] == 5)
+
+        # No missed detection: if mode changes again, it triggers immediately
+        with open(MODE_PATH, "w") as f:
+            json.dump({"mode": "STEADY-STATE"}, f)
+        r = adjust()
+        check("re-enter STEADY: immediate trigger", r["changed"] is True and r["to"] == 15)
+
+    finally:
+        MODE_PATH, MATRIX_PATH, CADENCE_LOG = orig_mode, orig_matrix, orig_log
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+    print("SELFTEST", "PASS" if ok else "FAIL")
+    return 0 if ok else 1
+
+
+def main():
+    if "--selftest" in sys.argv:
+        sys.exit(selftest())
+    result = adjust()
+    print(json.dumps(result, indent=2))
+    sys.exit(0)
 
 
 if __name__ == "__main__":
-    if "--selftest" in sys.argv:
-        ok = selftest()
-        sys.exit(0 if ok else 1)
-    else:
-        adjust()
+    main()

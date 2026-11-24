@@ -2332,5 +2332,53 @@
 "text": "**Cycle Efficiency Index** - composite metric per cycle: (goals completed / passes used) \u00d7 (1 - rework_rate) \u00d7 (1 - idle_fraction). Track tr",
 "agent": "researcher",
 "at": "2026-11-25"
+},
+{
+"sig": "fd384cb27def11d6",
+"text": "**Predictive Seat Health Monitor** - extend seat_probe.py: track response-time trend per seat; p95 latency up >50% over 3 probes = \"degradin",
+"agent": "mechanic",
+"at": "2026-11-25"
+},
+{
+"sig": "12b864137443bca8",
+"text": "**Steady-State Ops Playbook** - memory/mechanic/steady-state-playbook.md: reduced probe freq (15min), lighter recovery, escalate only on SLA",
+"agent": "mechanic",
+"at": "2026-11-25"
+},
+{
+"sig": "ce298dcb30d9834e",
+"text": "**Cycle Duration Ops Tracker** - measure wall-clock per cycle (first goal set -> last verified). Log to memory/ops/cycle-durations.jsonl. Ro",
+"agent": "mechanic",
+"at": "2026-11-25"
+},
+{
+"sig": "e2556e3efbf8a6b5",
+"text": "**VRAM Headroom Predictor** - from VRAM usage history + load patterns, predict when host will run low. Alert before OOM (not after). Output:",
+"agent": "mechanic",
+"at": "2026-11-25"
+},
+{
+"sig": "98238bc43728bb93",
+"text": "**Probe Cadence Auto-Adjuster** - STEADY-STATE mode: auto-reduce probes from 5min to 15min. On exit, restore. Log cadence changes. Verified:",
+"agent": "mechanic",
+"at": "2026-11-25"
+},
+{
+"sig": "cf8a3b29154ac4a3",
+"text": "**Recovery SLA Summary Data** - expose recovery-times.jsonl as structured JSON for panel: per-type mean, p95, trend, SLA compliance pct. Out",
+"agent": "mechanic",
+"at": "2026-11-25"
+},
+{
+"sig": "1547d6abbf96346e",
+"text": "**Transition Gap SLA** - measure time from goal_pct=100 to new cycle goals set. Target <4h. Log each transition. Flag if >4h. Output: memory",
+"agent": "mechanic",
+"at": "2026-11-25"
+},
+{
+"sig": "76d3cdb00052f8d1",
+"text": "**Convergence Pipeline Load Test** - stress test: write 100 interventions in 1min, update autonomy score 50x in 1min. Verify no corruption, ",
+"agent": "mechanic",
+"at": "2026-11-25"
 }
 ]
