@@ -1,24 +1,11 @@
 {
   "mode": "WORK",
-  "timestamp": "2026-11-24T14:17:04.873708+00:00",
-  "goal_pct": 15.0,
+  "timestamp": "2026-11-24T14:37:05.252719+00:00",
+  "goal_pct": 17.5,
   "goals_total": 80,
-  "goals_reached": 12,
-  "goals_open": 68,
+  "goals_reached": 14,
+  "goals_open": 66,
   "elapsed_since_activity_h": 0.0,
   "activity_source": "memory/ops/scheduler-log.jsonl",
-  "threshold_idle_h": 6.0,
-  "cycle_estimate": {
-    "estimate_h": 50.7,
-    "confidence": 0.9,
-    "components": {
-      "base_mean_h": 24.0,
-      "complexity_factor": 1.0,
-      "velocity_factor": 1.0,
-      "goal_factor": 2.11,
-      "avg_verification_steps": 1.0,
-      "open_goals_count": 272
-    },
-    "ts": "2026-11-24T14:24:50Z"
-  }
+  "threshold_idle_h": 6.0
 }
