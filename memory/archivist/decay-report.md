@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 10235 | flagged (<0.35): 0
+Leaves: 10255 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9277,6 +9277,7 @@ Leaves: 10235 | flagged (<0.35): 0
 | memory/designer/evidence-convergence-ring-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-cycle15-wiring-pass-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-fleet-mode-aria-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-fleet-mode-aria-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-fleet-mode-aria-integration-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-fleet-mode-aria-kbdnav-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-fleet-mode-aria-keyboard-nav-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9324,6 +9325,7 @@ Leaves: 10235 | flagged (<0.35): 0
 | memory/designer/pass-budget-gauge-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/pass-budget-gauge-verify.json | 0 | 0 | n | 0.550 |
 | memory/designer/pass_budget_gauge_verify.py | 0 | 0 | n | 0.550 |
+| memory/designer/static-verify-g8-g9-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/test_fleet_mode_aria.py | 0 | 0 | n | 0.550 |
 | memory/designer/ui_a11y_test.py | 0 | 0 | n | 0.550 |
 | memory/designer/_find.py | 0 | 0 | n | 0.550 |
@@ -9360,15 +9362,32 @@ Leaves: 10235 | flagged (<0.35): 0
 | memory/goals/round_topic.json | 0 | 0 | n | 0.550 |
 | memory/goals/archive/archivist-2026-11-23-cycle12-prev.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/archivist-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/archivist-2026-11-24-cycle16.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/archivist-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/archivist-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/builder-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/builder-2026-11-24-cycle16.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/builder-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/builder-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/designer-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/designer-2026-11-24-cycle16.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/designer-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/designer-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/mechanic-2026-11-24-cycle15.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/mechanic-2026-11-24-cycle16.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/mechanic-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/mechanic-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/orchestrator-2026-11-24-cycle16.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/orchestrator-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/researcher-2026-11-24-cycle16.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/researcher-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/scribe-2026-11-24-cycle10-retired.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/scribe-2026-11-24-cycle16.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/scribe-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/verifier-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/verifier-2026-11-24-cycle16.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/verifier-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/verifier-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast/plans-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-005723.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-015929.json | 0 | 0 | n | 0.550 |
@@ -9405,6 +9424,7 @@ Leaves: 10235 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261124-195111.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-202709.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-220438.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-230917.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
