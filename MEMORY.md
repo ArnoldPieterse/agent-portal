@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier 10/10 goals closed; re-ran mode_transition, budget_compliance, dispatch_fuzzer — zero regressions (2026-11-
-- Mechanic lane fully closed: 6/6 goals done, 139 tests total; Goal #1 upgraded to 22/22 with msvcrt.locking + error handling.
-- Scribe closed goal #2 (Cycle Close-Out Report) at 3.9KB, under the 4KB verification limit.
-- Goal #10 done: fixed 5 light-theme contrast tokens
 - Cycle 15 orchestrator lane fully converged: goals #2 (productive_pass_gate.py) and #3 (cycle_skeleton.py) verified this pass, 3/3 done.
 - All 10 Designer goals verified in memory/goals/designer.md; no open work remains in Designer lane.
 - Goal #7 Fleet-Mode API done (26/26, wired in agent_portal.py); Goal #8 Auto-Loop Restart Guard already passes 32
 - Scribe lane reached 10/10 goals verified; all goals closed out in a single batch pass.
 - Goal #6 done: autonomy_convergence_test.py (20/20) proves fleet
 - Dispatch staleness confirmed again: goal #3 (Cycle Proposal Skeleton) was verified but listed open; 8/8 self-test + dry-run pass.
+- Cycle 15 fully closed: all 10 Scribe goals verified, no regressions on re-run.
+- Scribe lane 10/10 complete as of cycle 15; no open goals remain.
+- Builder lane fully closed: 6/6 goals reached, 0 open. All verification stamps in place, ledger confirmed.
+- Designer: All 10 goals verified; UI modules existed but weren't wired — fixed via dynamic loader block in ui/core.js injecting all 8 CSS+JS
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
