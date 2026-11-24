@@ -2170,5 +2170,17 @@
 "text": "**Predictive Cycle Length Estimator** - `python memory/orchestrator/cycle_estimator.py`: from velocity_model.py output + current goal comple",
 "agent": "orchestrator",
 "at": "2026-11-25"
+},
+{
+"sig": "47f6a91c05a757ff",
+"text": "**Human-Intervention Counter** - track every human message that unblocks an agent or changes direction; log to memory/ops/human-intervention",
+"agent": "orchestrator",
+"at": "2026-11-25"
+},
+{
+"sig": "ea64fd8a44286971",
+"text": "**Goal Complexity Scorer** - `python memory/orchestrator/complexity_scorer.py`: score each proposed goal 1-5 based on (a) # of new files to ",
+"agent": "orchestrator",
+"at": "2026-11-25"
 }
 ]
