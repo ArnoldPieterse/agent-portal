@@ -8,6 +8,7 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 3. memory/ops/schtask-deps.md — full dependency graph + blast-radius scenarios for all 5 tasks
 4. memory/ops/hotline-v2.md — escalation protocol when something breaks (M1/M2/R1 triggers)
 
+- **Per-cycle close-out schema (SSOT) for all convergence consumers** -> memory/ops/cycle-closeout-contract.md — 2026-11-25 (Orchestrator): defines `cycle-closeout.jsonl` fields; backfilled real records (interventions_count populated, completion_pct honestly null). Unblock step for Researcher G1's R²>0.7 = a close-out writer that snapshots reached/goals at cycle boundary.
 - **Cockpit feed is single input to /api/fleet/cockpit and stays stale unless scheduled** -> memory/ops/cockpit-feed-refresh-loop-spec-2026-11-24.md — 2026-11-24 (Researcher): live-proved `feed_refresh.py` flips the Verifier #2 staleness monitor from STALE(~782min) to FRESH(0min); gap = no schtask. Fix = add idempotent `CockpitFeedRefresh` task (/mo 5, SYSTEM) to deploy_all_schtasks.py; hand-off to Mechanic.
 
 ## CORE RUNBOOKS

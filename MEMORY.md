@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Fixed: ckpConvRing & ckpAgentCards DOM nodes were missing from panel innerHTML (silent no-op); added both, unblocking goals #1/#6/#7.
-- All 10/10 Designer cycle-17 goals closed & verified in goal ledger; no open items remain for this cycle.
-- Designer found ckpAgent
-- Goals #4–#7 done: intervention logger (7/7 tests), complexity scorer (r=0.918), autonomy score (65.4), goal_inherit.py v1 implemented.
-- Research
-- seat_probe.py was reverted (lost trend/degrading/p95); rebuilt to pass seat_probe_predictive_test.py — 4/4 green, no regression.
 - Mechanic closed 6 goals (#4,6,7,8,9,10) in one batch pass; fleet now 9/10 complete.
 - Verifier cycle-1
 - Goal #7 done: memory/orchestrator/goal_in
 - Goal #2 (Steady-State Visual Indicator) impl was reverted; must live in app.css+core.js with `.ss
+- Cycle-17: all 10/10 goals confirmed closed
+- Builder 10/10
+- cycle-durations.jsonl has no completion_pct field — root cause of the recurring blocker
+- Convergence API open issues: stale rework_rate in ops jsonl needs regen
+- Researcher lane closed 9/10 verified; goal 8 (Cycle Topic Relevance) partial — blocked on 30-day data not yet available
+- Mechanic fleet 9/10; Goal #2 Steady-State Ops Playbook already exists with 4 procedures — ground work in it, don't reinvent.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
