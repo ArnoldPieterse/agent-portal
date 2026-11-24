@@ -5690,6 +5690,17 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/goals":
             # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
             return self._json(200, _goals_snapshot())
+        elif p == "/api/convergence":
+            # Convergence Dashboard API (Orchestrator cycle-17 goal 1, wired 2026-11-25).
+            try:
+                import importlib.util as _ilu_cv
+                _spec = _ilu_cv.spec_from_file_location("_convergence_api", os.path.join(HERE, "memory", "orchestrator", "convergence_api.py"))
+                _cv = _ilu_cv.module_from_spec(_spec)
+                _spec.loader.exec_module(_cv)
+                return self._json(200, _cv.handle_convergence())
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
+
         elif p == "/api/goals/topic":
             # Round topic + queue (P1, 2026-11-22): current round focus, queued user topics,
             # recent past topics. Mutations via POST /api/goals/topic.
