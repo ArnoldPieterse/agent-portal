@@ -887,3 +887,4 @@
 {"ts": "2026-11-25 00:27:53", "run": "g-1a20df4c189-60ea5f", "missing": {"Scribe": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-25 00:44:24", "run": "g-1a20e03df23-d6d09d", "missing": {"Scribe": "unreachable", "Archivist": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-25 00:52:39", "run": "g-1a20e0b6dcc-8df102", "missing": {"Scribe": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
+{"ts": "2026-11-25 01:09:10", "run": "g-1a20e1a8b39-cfde7e", "missing": {"Archivist": "unreachable", "Scribe": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}

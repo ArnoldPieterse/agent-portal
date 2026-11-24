@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher C17: goals 1,2,4 done (R²=0.866 convergence model); working goal 6 (
-- /api/convergence not yet wired into agent_portal.py; insert after /api/fleet/mode (line 5677) using same file-location import pattern
 - Designer recorded goals #1 (Convergence Dashboard, 4 widgets @1440px) and #2 (Steady-State Indicator) via ledger
 - Goals #4 (idle_task_lookup dynamic layer) and #6 (policy_evolver.py) both completed and verified this pass.
 - Mechanic built seat_probe.py predictive health monitor; all 7 selftests pass, live probe verified; goals #1-#2 closed.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer completed all 4 remaining cycle-17 goals (#7–#10) in a single pass: autonomy cards, transition anim, calm mode, metrics export.
 - Designer: All 10 cycle-17 goals closed (1-6 ledgered this pass, 7-10 already REACHED). Lane clean for next cycle.
 - Goals #3 (intervention_counter.py) and #4 (complexity_scorer.py, r=0.918) both reached; recorded in goal_ledger.
+- All 10 Researcher cycle-17 goals now verified; goal #10 (Autonomy Maturity Scorecard) was the last,
+- All 10 Designer
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

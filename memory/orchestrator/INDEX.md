@@ -2,6 +2,8 @@
 Last updated: 2026-11-24.
 
 ## Entries
+- 2026-11-25 (auto-loop): Goals 5+6 reached. steady_state_detector.py (selftest PASS) + auto_priority.py (selftest PASS, 154 goals ranked). Artifacts: memory/orchestrator/steady_state_detector.py, memory/orchestrator/auto_priority.py, memory/ops/priority-ranking.json.
+- 2026-11-25 (auto-loop): Goal 5 reached. steady_state_detector.py (selftest PASS: sim positive+negative; live=NOT steady CV=70%). Artifacts: memory/orchestrator/steady_state_detector.py.
 - 2026-11-25 (auto-loop): Goals 3+4 reached. intervention_counter.py (selftest PASS, 10 entries seeded, /api/convergence shows count=10) + complexity_scorer.py (selftest PASS r=0.918>0.7). Artifacts: memory/orchestrator/intervention_counter.py, memory/ops/human-interventions.jsonl, memory/orchestrator/complexity_scorer.py.
 - 2026-11-24 (auto-loop assist): Added msvcrt locking + 10-thread concurrency test to memory/mechanic/fleet_mode_infra.py (Mechanic goal 1). Selftest 22/22 PASS. Handoff: memory/handoffs/orchestrator-to-mechic-fleet-mode-locking-2026-11-24.md
 - Cycle-15 goal 10 reached 2026-11-24 (auto-loop): cycle_skeleton.py generates next-cycle proposal skeleton from completed goals + decision patterns + topic queue; verified: 10 stubs, 0 dups vs closed_topics
