@@ -1,0 +1,6 @@
+{"cycle": 10, "n_goals": 50, "n_verified": 46, "n_rework": 4, "agents_active": 4, "passes_used": 5, "goals_per_pass": 9.2, "rework_rate": 0.08, "idle_fraction": 0.5, "efficiency_index": 4.232}
+{"cycle": 12, "n_goals": 102, "n_verified": 88, "n_rework": 5, "agents_active": 8, "passes_used": 9, "goals_per_pass": 9.778, "rework_rate": 0.049, "idle_fraction": 0.0, "efficiency_index": 9.2985}
+{"cycle": 13, "n_goals": 70, "n_verified": 0, "n_rework": 0, "agents_active": 7, "passes_used": 7, "goals_per_pass": 0.0, "rework_rate": 0.0, "idle_fraction": 0.125, "efficiency_index": 0.0}
+{"cycle": 14, "n_goals": 212, "n_verified": 118, "n_rework": 8, "agents_active": 8, "passes_used": 18, "goals_per_pass": 6.556, "rework_rate": 0.038, "idle_fraction": 0.0, "efficiency_index": 6.3082}
+{"cycle": 15, "n_goals": 214, "n_verified": 174, "n_rework": 8, "agents_active": 8, "passes_used": 20, "goals_per_pass": 8.7, "rework_rate": 0.037, "idle_fraction": 0.0, "efficiency_index": 8.3748}
+{"cycle": 16, "n_goals": 90, "n_verified": 0, "n_rework": 0, "agents_active": 8, "passes_used": 9, "goals_per_pass": 0.0, "rework_rate": 0.0, "idle_fraction": 0.0, "efficiency_index": 0.0}

@@ -1,0 +1,188 @@
+{
+  "generated": "2026-11-25",
+  "cycles_analyzed": [
+    2,
+    5,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "files_tracked": 812,
+  "declining_count": 341,
+  "at_risk_count": 288,
+  "top_at_risk": [
+    {
+      "path": "memory/builder/autoloop_heal.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 2,
+      "cycles_since_last": 11
+    },
+    {
+      "path": "memory/builder/test_autonomy_stack.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 2,
+      "cycles_since_last": 11
+    },
+    {
+      "path": "memory/builder/dispatch_corrector.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 2,
+      "cycles_since_last": 11
+    },
+    {
+      "path": "memory/builder/autonomy_score.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 2,
+      "cycles_since_last": 11
+    },
+    {
+      "path": "memory/synthesis/cycle-N-summary.md",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 2,
+      "cycles_since_last": 11
+    },
+    {
+      "path": "memory/builder/handoff_injector.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 2,
+      "cycles_since_last": 11
+    },
+    {
+      "path": "memory/ops/heals.json",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 2,
+      "cycles_since_last": 11
+    },
+    {
+      "path": "memory/builder/budget_adjuster.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 2,
+      "cycles_since_last": 11
+    },
+    {
+      "path": "memory/builder/cycle_archiver.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 2,
+      "cycles_since_last": 11
+    },
+    {
+      "path": "memory/builder/mode_fsm.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 2,
+      "cycles_since_last": 11
+    },
+    {
+      "path": "memory/researcher/recovery-matrix-verify-2026-11-19.md",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 5,
+      "cycles_since_last": 10
+    },
+    {
+      "path": "memory/synthesis/cycle-narrative.md",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 5,
+      "cycles_since_last": 10
+    },
+    {
+      "path": "memory/mechanic/deploy_reboot_recovery_all.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 5,
+      "cycles_since_last": 10
+    },
+    {
+      "path": "memory/orchestrator/rerole-progress-2026-11-18.md",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 5,
+      "cycles_since_last": 10
+    },
+    {
+      "path": "memory/researcher/chain_validator.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 5,
+      "cycles_since_last": 10
+    },
+    {
+      "path": "memory/researcher/brief_template.md",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 5,
+      "cycles_since_last": 10
+    },
+    {
+      "path": "memory/mechanic/recovery-matrix.md",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 5,
+      "cycles_since_last": 10
+    },
+    {
+      "path": "memory/mechanic/auto_restart.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 5,
+      "cycles_since_last": 10
+    },
+    {
+      "path": "memory/verifier/mechanic-goal6-watchdog-verify.md",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 5,
+      "cycles_since_last": 10
+    },
+    {
+      "path": "memory/orchestrator/auto_cycle_transition.py",
+      "early_rate": 0.167,
+      "late_rate": 0.0,
+      "decline": 0.167,
+      "last_cited_cycle": 5,
+      "cycles_since_last": 10
+    }
+  ],
+  "backtest": {
+    "actually_stale": 1,
+    "overlap_top20": 0,
+    "precision": 0.0,
+    "recall": 0.0
+  }
+}

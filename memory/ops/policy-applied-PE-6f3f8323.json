@@ -1,0 +1,19 @@
+{
+  "id": "PE-6f3f8323",
+  "created": "2026-11-24T14:21:45.285737+00:00",
+  "trigger_pattern": "6f3f83234176fb71",
+  "occurrences": 3,
+  "resolution_strategy": "priority_override",
+  "description": "Add priority rule: when conditions for R001 and R004 overlap, execute 'model_swap' and suppress 'load_rebalance'.",
+  "policy_patch": {
+    "type": "add_priority_rule",
+    "rule_id": "PRIORITY-PE-6f3f8323",
+    "when_overlap": [
+      "R001",
+      "R004"
+    ],
+    "execute": "model_swap",
+    "suppress": "load_rebalance",
+    "severity_threshold": "medium"
+  }
+}

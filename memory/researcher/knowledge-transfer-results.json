@@ -1,0 +1,240 @@
+{
+  "model": "knowledge_transfer v1",
+  "goals_scored": 10,
+  "pct_prior_knowledge_cited": 0.0,
+  "knowledge_gap_rate_pct": 90.0,
+  "avg_estimated_time_saved_pct": 13.5,
+  "per_goal_scores": [
+    {
+      "num": 1,
+      "title": "(verified: 2026-11-25 - autonomy_gradient.py self-test PASS;",
+      "prior_knowledge_cited": false,
+      "prior_evidence_available": true,
+      "evidence_files_found": [
+        "memory\\researcher\\autonomy-gradient-evidence-2026-11-25.md",
+        "memory\\researcher\\autonomy-gradient-results.json",
+        "memory\\researcher\\autonomy_gradient.py"
+      ],
+      "knowledge_gap": true,
+      "estimated_time_saved_pct": 0.15
+    },
+    {
+      "num": 2,
+      "title": "Convergence Rate Model",
+      "prior_knowledge_cited": false,
+      "prior_evidence_available": true,
+      "evidence_files_found": [
+        "memory\\researcher\\convergence-rate-evidence-2026-11-25.md",
+        "memory\\researcher\\convergence-rate-results.json",
+        "memory\\researcher\\convergence-trajectory-model-2026-11-25.md"
+      ],
+      "knowledge_gap": true,
+      "estimated_time_saved_pct": 0.15
+    },
+    {
+      "num": 3,
+      "title": "(verified: 2026-11-25 - decision_quality_diff.py self-test P",
+      "prior_knowledge_cited": false,
+      "prior_evidence_available": true,
+      "evidence_files_found": [
+        "memory\\researcher\\decision-quality-results.json",
+        "memory\\researcher\\decision_quality_diff.py"
+      ],
+      "knowledge_gap": true,
+      "estimated_time_saved_pct": 0.15
+    },
+    {
+      "num": 4,
+      "title": "Self-Correction Latency & Success Tracker",
+      "prior_knowledge_cited": false,
+      "prior_evidence_available": true,
+      "evidence_files_found": [
+        "memory\\researcher\\self-correction-evidence-2026-11-25.md",
+        "memory\\researcher\\self-correction-results.json",
+        "memory\\researcher\\self_correction.py"
+      ],
+      "knowledge_gap": true,
+      "estimated_time_saved_pct": 0.15
+    },
+    {
+      "num": 5,
+      "title": "Knowledge Transfer Efficiency Metric",
+      "prior_knowledge_cited": false,
+      "prior_evidence_available": true,
+      "evidence_files_found": [
+        "memory\\researcher\\knowledge-transfer-results.json",
+        "memory\\researcher\\knowledge_transfer.py"
+      ],
+      "knowledge_gap": true,
+      "estimated_time_saved_pct": 0.15
+    },
+    {
+      "num": 6,
+      "title": "Autonomy Failure Mode Taxonomy",
+      "prior_knowledge_cited": false,
+      "prior_evidence_available": true,
+      "evidence_files_found": [
+        "memory\\researcher\\autonomy-failure-taxonomy.md",
+        "memory\\researcher\\failure-mode-data.json",
+        "memory\\researcher\\failure-mode-indicator-validation-2026-11-18.md"
+      ],
+      "knowledge_gap": true,
+      "estimated_time_saved_pct": 0.15
+    },
+    {
+      "num": 7,
+      "title": "Cross-Agent Coordination Overhead Model",
+      "prior_knowledge_cited": false,
+      "prior_evidence_available": true,
+      "evidence_files_found": [
+        "memory\\researcher\\cross-agent-comm-patterns-2026-11-17.md",
+        "memory\\researcher\\crosscheck-multi-agent-systems-with-shared-memory-outperform-single-age-2026-11-18.md"
+      ],
+      "knowledge_gap": true,
+      "estimated_time_saved_pct": 0.15
+    },
+    {
+      "num": 8,
+      "title": "Autonomy Debt Ledger",
+      "prior_knowledge_cited": false,
+      "prior_evidence_available": true,
+      "evidence_files_found": [
+        "memory\\researcher\\autonomy-debt-results.json",
+        "memory\\researcher\\autonomy_debt.py"
+      ],
+      "knowledge_gap": true,
+      "estimated_time_saved_pct": 0.15
+    },
+    {
+      "num": 9,
+      "title": "Predictive Intervention Trigger",
+      "prior_knowledge_cited": false,
+      "prior_evidence_available": false,
+      "evidence_files_found": [],
+      "knowledge_gap": 0.0,
+      "estimated_time_saved_pct": 0.0
+    },
+    {
+      "num": 10,
+      "title": "Autonomy Maturity Scorecard",
+      "prior_knowledge_cited": false,
+      "prior_evidence_available": true,
+      "evidence_files_found": [
+        "memory\\researcher\\maturity-scorecard-results.json",
+        "memory\\researcher\\maturity_scorecard.py"
+      ],
+      "knowledge_gap": true,
+      "estimated_time_saved_pct": 0.15
+    }
+  ],
+  "knowledge_gaps_identified": [
+    {
+      "goal": "(verified: 2026-11-25 - autonomy_gradient.py self-test PASS;",
+      "missing_leverage": "memory\\researcher\\autonomy-gradient-evidence-2026-11-25.md",
+      "note": "Prior evidence existed at memory\\researcher\\autonomy-gradient-evidence-2026-11-25.md but was not cited in completion note"
+    },
+    {
+      "goal": "Convergence Rate Model",
+      "missing_leverage": "memory\\researcher\\convergence-rate-evidence-2026-11-25.md",
+      "note": "Prior evidence existed at memory\\researcher\\convergence-rate-evidence-2026-11-25.md but was not cited in completion note"
+    },
+    {
+      "goal": "(verified: 2026-11-25 - decision_quality_diff.py self-test P",
+      "missing_leverage": "memory\\researcher\\decision-quality-results.json",
+      "note": "Prior evidence existed at memory\\researcher\\decision-quality-results.json but was not cited in completion note"
+    },
+    {
+      "goal": "Self-Correction Latency & Success Tracker",
+      "missing_leverage": "memory\\researcher\\self-correction-evidence-2026-11-25.md",
+      "note": "Prior evidence existed at memory\\researcher\\self-correction-evidence-2026-11-25.md but was not cited in completion note"
+    },
+    {
+      "goal": "Knowledge Transfer Efficiency Metric",
+      "missing_leverage": "memory\\researcher\\knowledge-transfer-results.json",
+      "note": "Prior evidence existed at memory\\researcher\\knowledge-transfer-results.json but was not cited in completion note"
+    }
+  ],
+  "per_agent_transfer_efficiency": {
+    "archivist": {
+      "goals": 112,
+      "cited_prior": 2,
+      "transfer_efficiency_pct": 1.8
+    },
+    "archivist_15": {
+      "goals": 3,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "builder": {
+      "goals": 122,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "builder_15": {
+      "goals": 3,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "designer": {
+      "goals": 90,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "designer_15": {
+      "goals": 3,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "mechanic": {
+      "goals": 86,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "mechanic_15": {
+      "goals": 3,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "orchestrator": {
+      "goals": 96,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "orchestrator_15": {
+      "goals": 3,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "researcher": {
+      "goals": 103,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "researcher_15": {
+      "goals": 3,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "scribe": {
+      "goals": 124,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "scribe_15": {
+      "goals": 3,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "verifier": {
+      "goals": 142,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    },
+    "verifier_15": {
+      "goals": 3,
+      "cited_prior": 0,
+      "transfer_efficiency_pct": 0.0
+    }
+  },
+  "methodology": "For each verified goal: check if prior evidence file exists (2+ key term filename match in researcher/archive); scored as cited if verification note references prior work; gap = evidence existed but not leveraged"
+}

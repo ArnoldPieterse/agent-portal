@@ -1,0 +1,259 @@
+{
+  "model": "decision_quality_diff v1",
+  "classification_method": "Temporal: date<=2026-11-16=A(human), later=B(autonomous); text markers override",
+  "total_goals": 1353,
+  "verified_goals": 884,
+  "cohort_sizes": {
+    "A_human_influenced": 83,
+    "B_autonomous": 801
+  },
+  "per_agent": {
+    "archivist": {
+      "n_a": 20,
+      "n_b": 92,
+      "first_pass_acceptance": {
+        "A": 0.95,
+        "B": 0.957,
+        "delta_B_minus_A": 0.007,
+        "t": -0.12,
+        "p": 1.0
+      },
+      "correction_count": {
+        "A_mean": 0.1,
+        "B_mean": 0.054,
+        "delta_B_minus_A": -0.046,
+        "t": 0.439,
+        "p": 1.0
+      },
+      "specificity_rate": {
+        "A": 0.45,
+        "B": 0.674,
+        "delta_B_minus_A": 0.224,
+        "t": -1.802,
+        "p": 0.3679
+      }
+    },
+    "builder": {
+      "n_a": 9,
+      "n_b": 115,
+      "first_pass_acceptance": {
+        "A": 1.0,
+        "B": 0.965,
+        "delta_B_minus_A": -0.035,
+        "t": 2.027,
+        "p": 0.0427
+      },
+      "correction_count": {
+        "A_mean": 0.0,
+        "B_mean": 0.122,
+        "delta_B_minus_A": 0.122,
+        "t": -1.858,
+        "p": 0.0632
+      },
+      "specificity_rate": {
+        "A": 0.556,
+        "B": 0.504,
+        "delta_B_minus_A": -0.051,
+        "t": 0.282,
+        "p": 1.0
+      }
+    },
+    "designer": {
+      "n_a": 15,
+      "n_b": 77,
+      "first_pass_acceptance": {
+        "A": 1.0,
+        "B": 0.844,
+        "delta_B_minus_A": -0.156,
+        "t": 3.746,
+        "p": 0.0002
+      },
+      "correction_count": {
+        "A_mean": 0.0,
+        "B_mean": 0.26,
+        "delta_B_minus_A": 0.26,
+        "t": -3.368,
+        "p": 0.0008
+      },
+      "specificity_rate": {
+        "A": 0.333,
+        "B": 0.273,
+        "delta_B_minus_A": -0.061,
+        "t": 0.446,
+        "p": 1.0
+      }
+    },
+    "mechanic": {
+      "n_a": 10,
+      "n_b": 77,
+      "first_pass_acceptance": {
+        "A": 1.0,
+        "B": 0.922,
+        "delta_B_minus_A": -0.078,
+        "t": 2.534,
+        "p": 0.0113
+      },
+      "correction_count": {
+        "A_mean": 0.0,
+        "B_mean": 0.156,
+        "delta_B_minus_A": 0.156,
+        "t": -2.248,
+        "p": 0.0246
+      },
+      "specificity_rate": {
+        "A": 0.4,
+        "B": 0.805,
+        "delta_B_minus_A": 0.405,
+        "t": -2.391,
+        "p": 0.1505
+      }
+    },
+    "orchestrator": {
+      "n_a": 11,
+      "n_b": 84,
+      "first_pass_acceptance": {
+        "A": 0.727,
+        "B": 0.929,
+        "delta_B_minus_A": 0.201,
+        "t": -1.401,
+        "p": 0.6262
+      },
+      "correction_count": {
+        "A_mean": 1.091,
+        "B_mean": 0.107,
+        "delta_B_minus_A": -0.984,
+        "t": 1.093,
+        "p": 0.8989
+      },
+      "specificity_rate": {
+        "A": 0.364,
+        "B": 0.476,
+        "delta_B_minus_A": 0.113,
+        "t": -0.696,
+        "p": 1.0
+      }
+    },
+    "scribe": {
+      "n_a": 10,
+      "n_b": 115,
+      "first_pass_acceptance": {
+        "A": 1.0,
+        "B": 0.852,
+        "delta_B_minus_A": -0.148,
+        "t": 4.447,
+        "p": 0.0
+      },
+      "correction_count": {
+        "A_mean": 0.0,
+        "B_mean": 0.165,
+        "delta_B_minus_A": 0.165,
+        "t": -4.046,
+        "p": 0.0001
+      },
+      "specificity_rate": {
+        "A": 0.1,
+        "B": 0.87,
+        "delta_B_minus_A": 0.77,
+        "t": -7.339,
+        "p": 0.0
+      }
+    },
+    "verifier": {
+      "n_a": 8,
+      "n_b": 138,
+      "first_pass_acceptance": {
+        "A": 1.0,
+        "B": 0.993,
+        "delta_B_minus_A": -0.007,
+        "t": 1.0,
+        "p": 0.3173
+      },
+      "correction_count": {
+        "A_mean": 0.0,
+        "B_mean": 0.007,
+        "delta_B_minus_A": 0.007,
+        "t": -1.0,
+        "p": 0.3173
+      },
+      "specificity_rate": {
+        "A": 0.5,
+        "B": 0.92,
+        "delta_B_minus_A": 0.42,
+        "t": -2.207,
+        "p": 0.2014
+      }
+    }
+  },
+  "agents_sufficient_n>=5_per_cohort": [
+    "archivist",
+    "builder",
+    "designer",
+    "mechanic",
+    "orchestrator",
+    "scribe",
+    "verifier"
+  ],
+  "significant_findings": [
+    {
+      "agent": "builder",
+      "metric": "first_pass_acceptance",
+      "p": 0.0427,
+      "delta": -0.035
+    },
+    {
+      "agent": "builder",
+      "metric": "correction_count",
+      "p": 0.0632,
+      "delta": 0.122
+    },
+    {
+      "agent": "designer",
+      "metric": "first_pass_acceptance",
+      "p": 0.0002,
+      "delta": -0.156
+    },
+    {
+      "agent": "designer",
+      "metric": "correction_count",
+      "p": 0.0008,
+      "delta": 0.26
+    },
+    {
+      "agent": "mechanic",
+      "metric": "first_pass_acceptance",
+      "p": 0.0113,
+      "delta": -0.078
+    },
+    {
+      "agent": "mechanic",
+      "metric": "correction_count",
+      "p": 0.0246,
+      "delta": 0.156
+    },
+    {
+      "agent": "scribe",
+      "metric": "first_pass_acceptance",
+      "p": 0.0,
+      "delta": -0.148
+    },
+    {
+      "agent": "scribe",
+      "metric": "correction_count",
+      "p": 0.0001,
+      "delta": 0.165
+    },
+    {
+      "agent": "scribe",
+      "metric": "specificity_rate",
+      "p": 0.0,
+      "delta": 0.77
+    }
+  ],
+  "caveats": [
+    "Cohort A/B split is temporal (early setup vs later auto-loop), not per-goal human attribution",
+    "Early goals were set during active human fleet construction; later goals from autonomous queue selection",
+    "First-pass acceptance proxied by absence of correction text markers (4.9% of all goals have any)",
+    "Small correction signal makes p-values sensitive to a few outlier goals",
+    "Temporal confound: early goals may differ in type/scope from later autonomous goals, not just direction"
+  ]
+}

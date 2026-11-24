@@ -1,0 +1,6 @@
+{"timestamp": "2026-11-25T03:42:35.004303", "model": "convergence_rate", "status": "ok", "r2": 0.866, "mae_pct": null, "degraded": false}
+{"timestamp": "2026-11-25T03:42:35.004303", "model": "convergence_trajectory", "status": "ok", "r2": 0.1378, "mae_pct": 21.258779038357645, "degraded": false}
+{"timestamp": "2026-11-25T03:42:35.004303", "model": "vram_forecast", "status": "no_data", "r2": null, "mae_pct": null, "degraded": false}
+{"timestamp": "2026-11-25T04:37:56.067752", "model": "convergence_rate", "status": "ok", "r2": 0.866, "mae_pct": null, "degraded": false}
+{"timestamp": "2026-11-25T04:37:56.067752", "model": "convergence_trajectory", "status": "ok", "r2": 0.1378, "mae_pct": 21.258779038357645, "degraded": false}
+{"timestamp": "2026-11-25T04:37:56.067752", "model": "vram_forecast", "status": "ok", "r2": null, "mae_pct": null, "degraded": false}

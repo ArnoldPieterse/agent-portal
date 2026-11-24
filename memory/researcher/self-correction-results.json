@@ -1,0 +1,86 @@
+{
+  "model": "self_correction v1",
+  "n_corrections": 336,
+  "per_agent_table": {
+    "archivist": {
+      "n_events": 60,
+      "n_resolved": 32,
+      "success_rate_pct": 53.3,
+      "avg_latency_passes": 1.32,
+      "same_pass_pct": 11.7
+    },
+    "builder": {
+      "n_events": 8,
+      "n_resolved": 7,
+      "success_rate_pct": 87.5,
+      "avg_latency_passes": 1.5,
+      "same_pass_pct": 0.0
+    },
+    "designer": {
+      "n_events": 35,
+      "n_resolved": 24,
+      "success_rate_pct": 68.6,
+      "avg_latency_passes": 1.5,
+      "same_pass_pct": 0.0
+    },
+    "mechanic": {
+      "n_events": 21,
+      "n_resolved": 11,
+      "success_rate_pct": 52.4,
+      "avg_latency_passes": 1.5,
+      "same_pass_pct": 0.0
+    },
+    "orchestrator": {
+      "n_events": 40,
+      "n_resolved": 21,
+      "success_rate_pct": 52.5,
+      "avg_latency_passes": 1.39,
+      "same_pass_pct": 7.5
+    },
+    "researcher": {
+      "n_events": 71,
+      "n_resolved": 45,
+      "success_rate_pct": 63.4,
+      "avg_latency_passes": 1.46,
+      "same_pass_pct": 2.8
+    },
+    "scribe": {
+      "n_events": 47,
+      "n_resolved": 34,
+      "success_rate_pct": 72.3,
+      "avg_latency_passes": 1.5,
+      "same_pass_pct": 0.0
+    },
+    "unknown": {
+      "n_events": 3,
+      "n_resolved": 0,
+      "success_rate_pct": 0.0,
+      "avg_latency_passes": 1.5,
+      "same_pass_pct": 0.0
+    },
+    "verifier": {
+      "n_events": 51,
+      "n_resolved": 42,
+      "success_rate_pct": 82.4,
+      "avg_latency_passes": 1.5,
+      "same_pass_pct": 0.0
+    }
+  },
+  "trend": {
+    "direction": "improving",
+    "early_period_rate_pct": 45.89,
+    "late_period_rate_pct": 21.9,
+    "mid_split_date": "2026-11-20",
+    "confidence": "95% CI early: [40.4%, 51.4%], late: [19.2%, 24.6%]",
+    "caveat": "Latency is a PROXY (same_pass detection + date-based estimation); true pass-level timing requires autoloop.jsonl with per-pass timestamps"
+  },
+  "correction_type_breakdown": {
+    "stale": 251,
+    "superseded": 43,
+    "corrected": 20,
+    "phantom": 17,
+    "incorrect": 4,
+    "false claim": 1
+  },
+  "escalation_rate_pct": 35.7
+}

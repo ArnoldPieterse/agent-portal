@@ -1,0 +1,93 @@
+{
+  "schema": "convergence-cert/v1",
+  "timestamp": "2026-11-24T14:48:57.070309+00:00",
+  "overall_verdict": "CERTIFIED",
+  "criteria_total": 10,
+  "criteria_passed": 10,
+  "criteria_failed": 0,
+  "pass_rate_pct": 100.0,
+  "report_hash": "ffcae15f7af1249b",
+  "criteria": [
+    {
+      "id": 1,
+      "name": "Autonomous Decision Audit Trail",
+      "status": "PASS",
+      "detail": "Explicit pass in evidence",
+      "remediation": null,
+      "owner": "Verifier"
+    },
+    {
+      "id": 2,
+      "name": "Cross-Host Failover E2E",
+      "status": "PASS",
+      "detail": "self_test=6/6",
+      "remediation": null,
+      "owner": "Verifier"
+    },
+    {
+      "id": 3,
+      "name": "Self-Heal FP Rate",
+      "status": "PASS",
+      "detail": "self_test=6/6",
+      "remediation": null,
+      "owner": "Verifier"
+    },
+    {
+      "id": 4,
+      "name": "Safety Boundary Compliance",
+      "status": "PASS",
+      "detail": "self_test=6/6",
+      "remediation": null,
+      "owner": "Verifier"
+    },
+    {
+      "id": 5,
+      "name": "Long-Soak Stability",
+      "status": "PASS",
+      "detail": "self_test=6/6",
+      "remediation": null,
+      "owner": "Verifier"
+    },
+    {
+      "id": 6,
+      "name": "State Consistency",
+      "status": "PASS",
+      "detail": "self_test_results=8, failed=0",
+      "remediation": null,
+      "owner": "Verifier"
+    },
+    {
+      "id": 7,
+      "name": "Recovery Trend",
+      "status": "PASS",
+      "detail": "Text evidence (751 chars); pass_marker=True",
+      "remediation": null,
+      "owner": "Verifier"
+    },
+    {
+      "id": 8,
+      "name": "Auto-Verdict Readiness",
+      "status": "PASS",
+      "detail": "self_test=6/6",
+      "remediation": null,
+      "owner": "Verifier"
+    },
+    {
+      "id": 9,
+      "name": "Task Load Impact",
+      "status": "PASS",
+      "detail": "self_test=6/6",
+      "remediation": null,
+      "owner": "Verifier"
+    },
+    {
+      "id": 10,
+      "name": "Convergence Oscillation",
+      "status": "PASS",
+      "detail": "Text evidence (817 chars); pass_marker=True",
+      "remediation": null,
+      "owner": "Verifier"
+    }
+  ],
+  "failing_criteria": []
+}

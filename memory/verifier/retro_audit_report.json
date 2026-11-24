@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-11-24T20:32:59.781818+00:00",
+  "mode": "real",
+  "retros_audited": 1,
+  "all_passed": false,
+  "results": [
+    {
+      "file": "memory\\goals\\retro-cycle-7.md",
+      "passed": false,
+      "checks": {
+        "sections_complete": true,
+        "missing_sections": [],
+        "paths_resolve": false,
+        "dangling_refs": [
+          "memory/builder/state_refactor_increment1-2026-11-20.m",
+          "memory/orchestrator/mechanic-goal1-stale-claim-reconciled-2026-11-20.md",
+          "memory/verifier/api_contract_test.py",
+          "memory/verifier/regression-suite-report.jso"
+        ],
+        "goal_counts_consistent": false,
+        "count_discrepancies": [
+          "total=80 vs sections count 60",
+          "slipped=20 vs section count 0"
+        ]
+      }
+    }
+  ]
+}

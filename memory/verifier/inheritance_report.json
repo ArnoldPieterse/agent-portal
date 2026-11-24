@@ -1,0 +1,199 @@
+{
+  "ts": "2026-11-24T20:32:03.763319+00:00",
+  "mode": "selftest",
+  "total": 10,
+  "correct": 10,
+  "all_pass": true,
+  "results": [
+    {
+      "expected": "valid",
+      "actual": "pass",
+      "title": "Convergence Metric Validation (v2)",
+      "checks": {
+        "not_in_closed": {
+          "pass": true,
+          "reason": "not found in closed_topics"
+        },
+        "verification_criteria": {
+          "pass": true,
+          "reason": "valid criteria (119 chars, automatable)"
+        },
+        "v1_reference": {
+          "pass": true,
+          "reason": "valid v1 ref (goal#1)"
+        }
+      }
+    },
+    {
+      "expected": "valid",
+      "actual": "pass",
+      "title": "Fleet Recovery SLA Test (v2)",
+      "checks": {
+        "not_in_closed": {
+          "pass": true,
+          "reason": "not found in closed_topics"
+        },
+        "verification_criteria": {
+          "pass": true,
+          "reason": "valid criteria (149 chars, automatable)"
+        },
+        "v1_reference": {
+          "pass": true,
+          "reason": "valid v1 ref (goal#3)"
+        }
+      }
+    },
+    {
+      "expected": "valid",
+      "actual": "pass",
+      "title": "Cycle Duration Forecast Widget (v2)",
+      "checks": {
+        "not_in_closed": {
+          "pass": true,
+          "reason": "not found in closed_topics"
+        },
+        "verification_criteria": {
+          "pass": true,
+          "reason": "valid criteria (105 chars, automatable)"
+        },
+        "v1_reference": {
+          "pass": true,
+          "reason": "valid v1 ref (goal#2)"
+        }
+      }
+    },
+    {
+      "expected": "valid",
+      "actual": "pass",
+      "title": "Seat Health Trend Monitor (v2)",
+      "checks": {
+        "not_in_closed": {
+          "pass": true,
+          "reason": "not found in closed_topics"
+        },
+        "verification_criteria": {
+          "pass": true,
+          "reason": "valid criteria (149 chars, automatable)"
+        },
+        "v1_reference": {
+          "pass": true,
+          "reason": "valid v1 ref (goal#5)"
+        }
+      }
+    },
+    {
+      "expected": "valid",
+      "actual": "pass",
+      "title": "Goal Complexity Scorer Regression (v2)",
+      "checks": {
+        "not_in_closed": {
+          "pass": true,
+          "reason": "not found in closed_topics"
+        },
+        "verification_criteria": {
+          "pass": true,
+          "reason": "valid criteria (106 chars, automatable)"
+        },
+        "v1_reference": {
+          "pass": true,
+          "reason": "valid v1 ref (goal#4)"
+        }
+      }
+    },
+    {
+      "expected": "invalid",
+      "actual": "fail",
+      "title": "Orphan Remediation Sweep",
+      "checks": {
+        "not_in_closed": {
+          "pass": false,
+          "reason": "title 'Orphan Remediation Sweep...' matches closed topic"
+        },
+        "verification_criteria": {
+          "pass": true,
+          "reason": "valid criteria (52 chars, automatable)"
+        },
+        "v1_reference": {
+          "pass": false,
+          "reason": "no v1 reference found (need source file or goal number)"
+        }
+      }
+    },
+    {
+      "expected": "invalid",
+      "actual": "fail",
+      "title": "Knowledge Graph v3 (Temporal + Typed)",
+      "checks": {
+        "not_in_closed": {
+          "pass": false,
+          "reason": "title 'Knowledge Graph v3 (Temporal + Typed)...' matches closed topic"
+        },
+        "verification_criteria": {
+          "pass": true,
+          "reason": "valid criteria (21 chars, automatable)"
+        },
+        "v1_reference": {
+          "pass": false,
+          "reason": "no v1 reference found (need source file or goal number)"
+        }
+      }
+    },
+    {
+      "expected": "invalid",
+      "actual": "fail",
+      "title": "Some New Goal (v2)",
+      "checks": {
+        "not_in_closed": {
+          "pass": true,
+          "reason": "not found in closed_topics"
+        },
+        "verification_criteria": {
+          "pass": false,
+          "reason": "verification criteria too short (9 chars): 'it works.'"
+        },
+        "v1_reference": {
+          "pass": true,
+          "reason": "valid v1 ref (goal#9)"
+        }
+      }
+    },
+    {
+      "expected": "invalid",
+      "actual": "fail",
+      "title": "Broken Reference Goal (v2)",
+      "checks": {
+        "not_in_closed": {
+          "pass": true,
+          "reason": "not found in closed_topics"
+        },
+        "verification_criteria": {
+          "pass": true,
+          "reason": "valid criteria (82 chars, automatable)"
+        },
+        "v1_reference": {
+          "pass": false,
+          "reason": "referenced source file does not exist: -xyz.md"
+        }
+      }
+    },
+    {
+      "expected": "invalid",
+      "actual": "fail",
+      "title": "No Inheritance Context (v2)",
+      "checks": {
+        "not_in_closed": {
+          "pass": true,
+          "reason": "not found in closed_topics"
+        },
+        "verification_criteria": {
+          "pass": true,
+          "reason": "valid criteria (105 chars, automatable)"
+        },
+        "v1_reference": {
+          "pass": false,
+          "reason": "no v1 reference found (need source file or goal number)"
+        }
+      }
+    }
+  ]
+}

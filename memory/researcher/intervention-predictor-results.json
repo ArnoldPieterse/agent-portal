@@ -1,0 +1,38 @@
+{
+  "model": "intervention_predictor v1 (logistic, grid-search weights)",
+  "weights": [
+    0,
+    0,
+    0,
+    3
+  ],
+  "bias": -1.0,
+  "train_auc": 1.0,
+  "test_auc_held_out": 0.9677,
+  "n_train_samples": 30,
+  "n_test_samples": 82,
+  "features_used": [
+    "error_rate",
+    "cross_talk_volume",
+    "time_since_last_success",
+    "revision_frequency"
+  ],
+  "per_agent_scores": {
+    "archivist": 0.29,
+    "builder": 0.275,
+    "designer": 0.306,
+    "mechanic": 0.276,
+    "orchestrator": 0.332,
+    "researcher": 0.332,
+    "scribe": 0.281,
+    "verifier": 0.281
+  },
+  "alerts": [],
+  "alert_format_example": "ARCHIVIST at 33% intervention risk (threshold 50%)",
+  "caveats": [
+    "Features derived from text patterns in archive files, not direct telemetry",
+    "Binary label is a proxy based on correction count and gap days",
+    "Small sample size limits generalizability; AUC may be optimistic",
+    "Model does not account for goal complexity or topic difficulty"
+  ]
+}

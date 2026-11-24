@@ -1,0 +1,802 @@
+[
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "FALSE_CLAIM",
+    "description": "Agent reported information that was factually incorrect",
+    "resolved": false,
+    "evidence_snippet": "this turn rides /api/chat); do not re-probe documented dead ends (netstat/tasklist/curl/powershell blocked in isolated c"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "# AGENT GOALS \u2014 2026-11-13 (10 each)\n> SUPERSEDED as complete record (2026-11-13 r9): 6/8 batch; full 8/8 verbatim = mem"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "owns that file).\nStatus: **6/8 recorded in this file** (Scribe + Orchestrator + Builder + Verifier + Designer + Mechanic"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": " check 2026-11-13 ~17:4x (auto-continue 3/3, programmatic recount): all six recorded blocks verified \u2014 exactly 10 number"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "llection closed at 6/8 pending the two re-posts; Scribe stewardship part [CONCLUDED].\n\n## Mechanic \ud83d\udd27 \u2014 posted 2026-11-13"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "CONCLUDED].\n\n## Mechanic \ud83d\udd27 \u2014 posted 2026-11-13 17:35 (self-appended at auto-timeout risk; Scribe to verify verbatim fide"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "f what broke / what fixed it: every fix or probe result gets a timestamped entry before my round ends.\n3. Reboot recover"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": " target alias via :8888 before dispatching any agent to a remote host; report busy/idle/unknown as facts; overnight unlo"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "remote host; report busy/idle/unknown as facts; overnight unloads are expected \u2014 reload per memory/llm recipe, never gue"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": " after each one.\n8. Keep the \ud83d\udd27 Ops endpoints healthy (GET /api/git, POST /api/todo/prune): if either errors, diagnose an"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "); unblock the moment scheduling is decided.\n10. Probe-script hygiene: prefer existing scripts (lan_probe.py, mirror_can"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "rst use \u2014 no ad-hoc machinery.\n\n## Scribe \ud83d\udcdd \u2014 submitted 2026-11-13 ~17:2x\n1. Decisions single-sourced: every group decis"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "ODO.md top or a memory/ module the same round it is made, with its one-line rationale \u2014 no chat-only decisions.\n2. Stewa"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "s-each ask; append each agent's list verbatim as it lands; hand Orchestrator a consolidated one-pager to record in TODO."
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "solidated one-pager to record in TODO.md (their open item).\n3. Keep MEMORY.md hot-file-only: state line + counter + rece"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "EMORY.md hot-file-only: state line + counter + recent notes; durable facts go to memory/ modules, and every new leaf get"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "(message = what changed + why) so history from baseline `8f5e7d5` stays a clean decision log.\n7. Per-agent module hygien"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "hat changed + why) so history from baseline `8f5e7d5` stays a clean decision log.\n7. Per-agent module hygiene (O3-ratifi"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "ODO.md pairs current; flag drift in other agents' modules rather than silently rewriting them.\n8. Round-end synthesis: f"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": " from files, not chat history.\n9. Truncation evidence log: if e2e tool-call truncations recur, append each occurrence (a"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": " design, log every one in-file.\n3. Close goal collection 8/8: verbatim transcription into goals.md within one cycle of e"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "e of each post.\n4. Ratify + police `memory/portal/upgrade-plan.md` as the only merge queue; every staged patch gets a ha"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ive is in the git allowlist).\n3. `/api/fleet` returns 200 and portal PID stays stable after the White edit session (no r"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "PID stays stable after the White edit session (no restart loop).\n4. P1 (uploads\u2192`memory_mirror.py`) flipped staged\u2192FINAL"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ross-check the `.gitignore` allowlist (~43 tracked claimed) against actual `git ls-files` output via White-side evidence"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "tly 10 numbered lines, no truncation (the Scribe e2e failure mode), all under ONE canonical file on White.\n8. Resolve th"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "on (the Scribe e2e failure mode), all under ONE canonical file on White.\n8. Resolve the dual-goals-file conflict \u2014 `memo"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ish (layout hierarchy, \u22654.5:1 contrast on all text, focus-visible on every control) as a diff-ready file under `designer"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "eachable Stop/Reset buttons; results in `designer/a11y-check.md`.\n6. Write a repeatable visual-regression checklist (360"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": ".md cdd208a015 / files-panel-patch fde097236a** (supersedes the stale values I posted last round; content verified intac"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "venance survives mirror sync.\n\n## Outstanding (2 owed)\n- [x] Orchestrator \ud83c\udf9b\ufe0f \u2014 posted this round, appended above\n- [ ] R"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "vist \u2014 no list posted yet (re-post fresh; old lists reported lost)\n- [x] Mechanic \u2699\ufe0f \u2014 posted 2026-11-13 17:35, appended"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "MISROUTED_TASK",
+    "description": "Task was sent to or handled by the wrong agent/host",
+    "resolved": false,
+    "evidence_snippet": "this turn rides /api/chat); do not re-probe documented dead ends (netstat/tasklist/curl/powershell blocked in isolated c"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "unknown",
+    "mode": "CIRCULAR_REASONING",
+    "description": "Agent referenced its own output or entered a reasoning loop",
+    "resolved": true,
+    "evidence_snippet": "ts NOTHING (pruned archive is in the git allowlist).\n3. `/api/fleet` returns 200 and portal PID stays stable after the W"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "etting thread, collected by Orchestrator; verbatim. Canonical record: TODO.md `## AGENT GOALS (set 2026-11-13)`.\n\n1. Run"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ed: 0 dangling after fixing 3 real pointers in bugs/INDEX.md; 308 orphans = organic round logs (recommendation logged); "
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "report memory/archivist/index-integrity-2026-11-15.md \u2014 recorded 2026-11-15)\n2. Ship `archivist/index_check.py` \u2014 repeat"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": ", greps INDEX files, exits non-zero on orphans); wire into the pre-prune ritual so every prune commit is index-clean. (v"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "X pointers\", reverted clean; portal restarted PID 53828/51032 to load code \u2014 recorded 2026-11-15)\n3. Verify Ops docs are"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "t endpoint contracts, file layout TODO_completed.md + todo_done_parts/NNN, allowlist description; re-read this round \u2014 r"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "it-message convention (feat/fix/docs/chore + agent name), commit-only-after-verification rule, cite-commit-hash-not-past"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ged; top 5 root fleet scripts fixed with ISO provenance headers (re-compile clean); remaining 51 listed in _provenance_m"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "; remaining 51 listed in _provenance_missing.txt for owners; report memory/archivist/provenance-audit-2026-11-15.md \u2014 re"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ot file back under ~40 lines by end of week. (verified: 2026-11-15 - post-trim hot file has no entries older than 2 days"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "k under ~40 lines by end of week. (verified: 2026-11-15 - post-trim hot file has no entries older than 2 days; all older"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "er than 2 days; all older notes migrated to memory/ops/memory-trim-archive-2026-11-14.md losslessly \u2014 recorded 2026-11-1"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "he canonical location per fact in `archivist/canonical-map.md`. (verified: 2026-11-15 - canonical-location table written"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "order + numbering, git allowlist excludes unsloth-tmp/.unsloth_sandbox/uploads/scratch, commit is add -A scoped by .giti"
+  },
+  {
+    "date": "2026-11-13",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "nsloth_sandbox/uploads/scratch, commit is add -A scoped by .gitignore only \u2014 checkbox ACs in `memory/portal/architecture"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "nt owned by Mechanic#8 (Builder#6 re-scoped to the clobber/parity failure mode instead); supersession validator: script="
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "icy=Scribe#5; memory-health engine=Archivist#2, dashboard=Scribe#9.\n\n\n1. Knowledge graph & lineage tracker - `archivist/"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": " unexplained orphans vs the index_check baseline. (verified: 2026-11-16 - knowledge_graph.py ran: 742 nodes / 159 edges "
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "y ran: 742 nodes / 159 edges / 226 supersession markers -> memory/archivist/knowledge_graph.json)\n2. Freshness SLA monit"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ess against declared TTLs (ops runbooks <=14d, architecture <=30d, goals = cycle length); auto freshness-report.md; non-"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "non-zero exit on breach; GET /api/memory/health endpoint. Verified: seeding a stale leaf -> endpoint reports it + gate f"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "dpoint reports it + gate fails. (verified: 2026-11-16 - memory_health.py ran: 726 leaves classified vs TTL classes (ops "
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "leaves classified vs TTL classes (ops 14d / arch 30d / goals 7d) -> memory/archivist/freshness-report.md)\n3. Cross-agent"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "in LOG.md. Verified: handoff complete with both parties' sign-off lines. (verified: 2026-11-16 - PROTOCOL.md + one real "
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "16-file-modularity.md logged in LOG.md)\n4. Auto-generated API reference - `archivist/gen_api_ref.py` parses route defini"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "route -> gate fails until the doc is regenerated. (verified: 2026-11-16 - gen_api_ref.py ran against live agent_portal.p"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "e run reports every chain + any broken links. (verified: 2026-11-16 - supersession_check.py ran: 57 path markers, 0 cycl"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "session-findings-2026-11-16.md (cycle-3 repoint follow-up))\n6. Multi-host documentation consistency check - extract host"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "I or direct probes; report discrepancies. Verified: first report with per-claim pass/fail. (verified: 2026-11-16 - 24 ho"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ified: first report with per-claim pass/fail. (verified: 2026-11-16 - 24 host:port claims extracted from memory/ops/*.md"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "run produces a ranked flag list. (verified: 2026-11-16 - decay_score.py ran: 732 leaves scored (recency x refs x index-l"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": " ran: 732 leaves scored (recency x refs x index-linkage), 0 below threshold -> memory/archivist/decay-report.md)\n8. Agen"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "own or URL), extracts key facts, assigns provenance headers (source, date, confidence, TTL), writes into the correct lea"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": " 3 real research outputs processed end-to-end, each spot-checked against its source. (verified: 2026-11-16 - ingest.py r"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "CIRCULAR_REASONING",
+    "description": "Agent referenced its own output or entered a reasoning loop",
+    "resolved": true,
+    "evidence_snippet": "y` walks all memory leaves, extracts cross-references (pointers, see-also, supersession markers) -> JSON dependency grap"
+  },
+  {
+    "date": "2026-11-16",
+    "agent": "archivist",
+    "mode": "NON_IDEMPOTENT",
+    "description": "Action was not safe to re-run, causing corruption on retry",
+    "resolved": false,
+    "evidence_snippet": "LO pipeline: Mechanic#4 measures -> Builder#8 visualizes -> Verifier#4 enforces; fleet-state endpoint owned by Mechanic#"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "PHANTOM_REFERENCE",
+    "description": "Agent referenced an artifact/file that does not exist on disk",
+    "resolved": true,
+    "evidence_snippet": "ript names referenced in ops docs; flag any reference to a file that doesn't exist on the host it's documented for. Veri"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "PHANTOM_REFERENCE",
+    "description": "Agent referenced an artifact/file that does not exist on disk",
+    "resolved": false,
+    "evidence_snippet": "). (pointer: memory/archivist/hostdoc-consistency-2026-11-16.md) [progress 2026-11-18 Builder: file-ref scanner built + "
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "iles); alert when new orphan nodes appear. Verified: two consecutive syncs produce updated graph with delta reported; no"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "OCOL.md and refine based on actual handoffs that occurred in cycle 2 [DONE 11-18: PROTOCOL v2 + handoff log verified]; a"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "with full provenance; protocol updated to reflect real friction points. (verified: 2026-11-18 - PROTOCOL.md + LOG.md + 4"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "o a file that doesn't exist on the host it's documented for. Verified: one full pass with zero phantom references (or al"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "y/archivist/hostdoc-consistency-2026-11-16.md) [progress 2026-11-18 Builder: file-ref scanner built + first pass run (31"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "fs.py, report at doc-file-refs-report.json; remaining = per-host cross-check needs non-sandbox]\n6. [BG-SCHED - moved to "
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "on 7 checklist + all 8 goal files listed + TODO live plan reference; fresh-context test passes)\n8. [BG-SCHED - moved to "
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "nce scoring\" step [DONE 11-18: scoring+review queue verified, exit codes tested]: before adding a new knowledge leaf, sc"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ect/flag decisions documented. (verified: 2026-11-18 - ingest.py score_relevance() + THRESH=0.7 + review queue logic ver"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ingest.py score_relevance() + THRESH=0.7 + review queue logic verified; exit codes tested)\n10. Memory tree size guard - "
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "til archive completes. Verified: guard implemented + tested with a simulated size increase triggering the alert. (verifi"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "- guard script memory/archivist/size_guard.py (warn>4MB / fail>5MB), wired into portal startup hook after _prune_run_jou"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "e_guard.py (warn>4MB / fail>5MB), wired into portal startup hook after _prune_run_journals() + daily schtask PortalMemor"
+  },
+  {
+    "date": "2026-11-18",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": " PortalMemorySizeGuard; report appends to memory/archivist/size_guard_report.md. First run caught 96.7MB bloat: headless"
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": " round 2026-11-19 (cycle-5), collected by Orchestrator. Archived as superseded.\nFocus: Knowledge graph quality + retriev"
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "rchable but trustworthy: citation accuracy, orphan detection, and automated freshness maintenance.\n\n1. **Knowledge Graph"
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "y/archivist/kg_integrity.py` produces: total nodes, edge count, orphan count (no inbound edges), dangling reference coun"
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "ection. Writes to memory/archivist/kg-report-cycle5.md. Verified: report exists with all 5 metrics; orphan count matches"
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "h all 5 metrics (286 nodes, 475 edges, 154 orphans, 0 dangling refs, 0 cycles); orphan count matches goal-4 remediation "
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "nt). Log pass/fail + confidence adjustment. Target: >90% accuracy. Verified: audit file exists with 50 entries scored; a"
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": " Suggestion Engine** - For each new KB entry, find 3 most-related existing entries (by shared terms + co-citation) and s"
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "sist: wrote orphan-remediation-cycle5.md classifying 154 orphans (103 standalone, 51 needs-link). Post-remediation rate "
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "ueries, P@5=1.0 R@10=1.0 MRR=0.85 baseline.)\n\n6. **KB Freshness Policy** - Define TTL per entry type (fact=90d, opinion="
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": false,
+    "evidence_snippet": "fact=90d, opinion=30d, procedure=180d). `python memory/archivist/freshness_sweep.py` flags expired entries for review. V"
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "pired entries for review. Verified: policy documented in memory/archivist/freshness-policy.md; script correctly flags te"
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "action 3/3 PASS, poli)\n\n7. **Cross-Reference Integrity** - Every \"see also\" or \"related to\" link in the KB must resolve "
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": " finds broken cross-refs and auto-fixes (remove or redirect). Verified: script runs; 0 broken xrefs remain after fix; lo"
+  },
+  {
+    "date": "2026-11-19",
+    "agent": "archivist",
+    "mode": "RESOURCE_EXHAUSTION",
+    "description": "Action failed due to running out of a resource",
+    "resolved": true,
+    "evidence_snippet": "fact: scanned 1493 .md, fixed 58 broken live xrefs (28 redirects + 86 quarantine-flags across 34 files), re-check clean:"
+  }
+]

@@ -1,0 +1,251 @@
+{
+  "generated": "2026-11-24T15:31:59.991477+00:00",
+  "order": [
+    "archivist",
+    "builder",
+    "designer",
+    "mechanic",
+    "orchestrator",
+    "researcher",
+    "scribe",
+    "verifier"
+  ],
+  "edges": [
+    [
+      "archivist",
+      "builder"
+    ],
+    [
+      "archivist",
+      "designer"
+    ],
+    [
+      "archivist",
+      "mechanic"
+    ],
+    [
+      "archivist",
+      "orchestrator"
+    ],
+    [
+      "archivist",
+      "researcher"
+    ],
+    [
+      "archivist",
+      "scribe"
+    ],
+    [
+      "archivist",
+      "verifier"
+    ],
+    [
+      "builder",
+      "archivist"
+    ],
+    [
+      "builder",
+      "designer"
+    ],
+    [
+      "builder",
+      "mechanic"
+    ],
+    [
+      "builder",
+      "researcher"
+    ],
+    [
+      "builder",
+      "scribe"
+    ],
+    [
+      "builder",
+      "verifier"
+    ],
+    [
+      "designer",
+      "archivist"
+    ],
+    [
+      "designer",
+      "builder"
+    ],
+    [
+      "designer",
+      "mechanic"
+    ],
+    [
+      "designer",
+      "orchestrator"
+    ],
+    [
+      "designer",
+      "researcher"
+    ],
+    [
+      "designer",
+      "scribe"
+    ],
+    [
+      "designer",
+      "verifier"
+    ],
+    [
+      "mechanic",
+      "archivist"
+    ],
+    [
+      "mechanic",
+      "builder"
+    ],
+    [
+      "mechanic",
+      "orchestrator"
+    ],
+    [
+      "mechanic",
+      "researcher"
+    ],
+    [
+      "mechanic",
+      "scribe"
+    ],
+    [
+      "mechanic",
+      "verifier"
+    ],
+    [
+      "orchestrator",
+      "archivist"
+    ],
+    [
+      "orchestrator",
+      "designer"
+    ],
+    [
+      "orchestrator",
+      "mechanic"
+    ],
+    [
+      "orchestrator",
+      "researcher"
+    ],
+    [
+      "orchestrator",
+      "scribe"
+    ],
+    [
+      "orchestrator",
+      "verifier"
+    ],
+    [
+      "researcher",
+      "archivist"
+    ],
+    [
+      "researcher",
+      "builder"
+    ],
+    [
+      "researcher",
+      "mechanic"
+    ],
+    [
+      "researcher",
+      "scribe"
+    ],
+    [
+      "researcher",
+      "verifier"
+    ],
+    [
+      "scribe",
+      "archivist"
+    ],
+    [
+      "scribe",
+      "mechanic"
+    ],
+    [
+      "scribe",
+      "orchestrator"
+    ],
+    [
+      "scribe",
+      "researcher"
+    ],
+    [
+      "scribe",
+      "verifier"
+    ],
+    [
+      "verifier",
+      "archivist"
+    ],
+    [
+      "verifier",
+      "builder"
+    ],
+    [
+      "verifier",
+      "designer"
+    ],
+    [
+      "verifier",
+      "mechanic"
+    ],
+    [
+      "verifier",
+      "researcher"
+    ],
+    [
+      "verifier",
+      "scribe"
+    ]
+  ],
+  "rationale": [
+    {
+      "position": 1,
+      "agent": "archivist",
+      "reason": "depends on: builder, designer, mechanic, orchestrator, researcher, scribe, verifier; unblocks: builder, designer, mechanic, orchestrator, researcher, scribe, verifier"
+    },
+    {
+      "position": 2,
+      "agent": "builder",
+      "reason": "depends on: archivist, designer, mechanic, researcher, verifier; unblocks: archivist, designer, mechanic, researcher, scribe, verifier"
+    },
+    {
+      "position": 3,
+      "agent": "designer",
+      "reason": "depends on: archivist, builder, orchestrator, verifier; unblocks: archivist, builder, mechanic, orchestrator, researcher, scribe, verifier"
+    },
+    {
+      "position": 4,
+      "agent": "mechanic",
+      "reason": "depends on: archivist, builder, designer, orchestrator, researcher, scribe, verifier; unblocks: archivist, builder, orchestrator, researcher, scribe, verifier"
+    },
+    {
+      "position": 5,
+      "agent": "orchestrator",
+      "reason": "depends on: archivist, designer, mechanic, scribe; unblocks: archivist, designer, mechanic, researcher, scribe, verifier"
+    },
+    {
+      "position": 6,
+      "agent": "researcher",
+      "reason": "depends on: archivist, builder, designer, mechanic, orchestrator, scribe, verifier; unblocks: archivist, builder, mechanic, scribe, verifier"
+    },
+    {
+      "position": 7,
+      "agent": "scribe",
+      "reason": "depends on: archivist, builder, designer, mechanic, orchestrator, researcher, verifier; unblocks: archivist, mechanic, orchestrator, researcher, verifier"
+    },
+    {
+      "position": 8,
+      "agent": "verifier",
+      "reason": "depends on: archivist, builder, designer, mechanic, orchestrator, researcher, scribe; unblocks: archivist, builder, designer, mechanic, researcher, scribe"
+    }
+  ],
+  "agents_count": 8,
+  "constraints_count": 48
+}

@@ -1,0 +1,18 @@
+{
+  "timestamp": "2026-11-24T14:47:20.276786+00:00",
+  "self_test": {
+    "passed": 6,
+    "total": 6
+  },
+  "thresholds": {
+    "cpu_pct": 80.0,
+    "ram_pct": 70.0
+  },
+  "live_measurement": {
+    "ts": "2026-11-24T14:47:20.274642+00:00",
+    "host": "local",
+    "cpu_pct": 0.0,
+    "ram_pct": 0.0,
+    "active_tasks": []
+  }
+}

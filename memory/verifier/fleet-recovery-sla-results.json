@@ -1,0 +1,14 @@
+{
+  "script": "fleet_recovery_sla_test.py",
+  "mode": "live",
+  "timestamp": "2026-11-24T17:38:04.237307Z",
+  "status": "PASS",
+  "breaches": [],
+  "summary": {
+    "total_incidents": 7,
+    "breach_count": 0,
+    "detection_max_s": 0,
+    "recovery_max_s": 0
+  },
+  "elapsed_s": 0.0
+}

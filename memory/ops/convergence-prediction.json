@@ -1,0 +1,62 @@
+{
+  "generated": "2026-11-24T20:09:42.742373+00:00",
+  "steady_state_criteria": {
+    "autonomy_score_min": 80.0,
+    "max_interventions_per_cycle": 1.0,
+    "max_duration_hours": 36.0
+  },
+  "cycles_analyzed": 9,
+  "cycle_numbers": [
+    2,
+    3,
+    5,
+    8,
+    12,
+    14,
+    15,
+    16,
+    17
+  ],
+  "per_metric": {
+    "duration": {
+      "current": 24.0,
+      "target": 36.0,
+      "cycles_remaining": 0,
+      "confidence": 1.0
+    },
+    "interventions": {
+      "current": 1.111,
+      "target": 1.0,
+      "cycles_remaining": 1,
+      "confidence": 0.7,
+      "method": "near-converged (within 20% of target); zero-intervention projection"
+    },
+    "autonomy": {
+      "current": 69.1,
+      "target": 80.0,
+      "cycles_remaining_range": [
+        3,
+        5
+      ],
+      "cycles_remaining": 5,
+      "confidence": 0.3,
+      "note": "single data point; range 3-5 cycles based on heuristic improvement rate"
+    }
+  },
+  "overall_prediction": {
+    "cycles_to_steady_state": 5,
+    "confidence": "HIGH",
+    "current_cycle": 17,
+    "predicted_steady_state_cycle": 22,
+    "convergence_pct": 33.3,
+    "metrics_converged": 1,
+    "metrics_total": 3,
+    "metrics_unknown": 0
+  },
+  "data_quality": {
+    "duration_points": 4,
+    "intervention_points": 9,
+    "autonomy_points": 1,
+    "sparse_data_warning": false
+  }
+}

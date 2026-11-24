@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-18",
+  "archived_at": "2026-11-24T09:07:06.138026+00:00",
+  "source_file": "memory\\ops\\productivity-baseline-2026-11-18.json",
+  "data_quality": "simple_rate_snapshot",
+  "per_agent": {
+    "orchestrator": {
+      "rate": 0.484,
+      "total_passes": null,
+      "productive_passes": null,
+      "data_source": "simulated"
+    },
+    "researcher": {
+      "rate": 0.26,
+      "total_passes": null,
+      "productive_passes": null,
+      "data_source": "simulated"
+    },
+    "verifier": {
+      "rate": 0.354,
+      "total_passes": null,
+      "productive_passes": null,
+      "data_source": "simulated"
+    },
+    "scribe": {
+      "rate": 0.36700000000000005,
+      "total_passes": null,
+      "productive_passes": null,
+      "data_source": "simulated"
+    },
+    "designer": {
+      "rate": 0.474,
+      "total_passes": null,
+      "productive_passes": null,
+      "data_source": "simulated"
+    },
+    "builder": {
+      "rate": 0.473,
+      "total_passes": null,
+      "productive_passes": null,
+      "data_source": "simulated"
+    },
+    "archivist": {
+      "rate": 0.583,
+      "total_passes": null,
+      "productive_passes": null,
+      "data_source": "simulated"
+    },
+    "mechanic": {
+      "rate": 0.331,
+      "total_passes": null,
+      "productive_passes": null,
+      "data_source": "simulated"
+    }
+  }
+}

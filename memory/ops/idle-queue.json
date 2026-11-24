@@ -1,0 +1,22 @@
+{
+  "generated": "2026-11-25T00:59:08.552002",
+  "items": [
+    {
+      "id": "auto-autonomy-diagnose",
+      "role": "researcher",
+      "description": "Diagnose autonomy score 0.62 \u2014 identify weakest component",
+      "impact": 5,
+      "effort": 3,
+      "priority_ratio": 1.667
+    },
+    {
+      "id": "auto-orphan-sweep",
+      "role": "archivist",
+      "description": "Sweep 4588 orphan files into KB index or archive",
+      "impact": 3,
+      "effort": 2,
+      "priority_ratio": 1.5
+    }
+  ],
+  "count": 2
+}

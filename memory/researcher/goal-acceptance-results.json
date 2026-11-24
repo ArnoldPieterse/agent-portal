@@ -1,0 +1,67 @@
+{
+  "model": "goal_acceptance_predictor v1 (logistic regression + L2)",
+  "train_cycles": [
+    10,
+    13
+  ],
+  "test_cycles": [
+    14,
+    15,
+    16
+  ],
+  "n_train": 122,
+  "n_test": 270,
+  "train_label_dist": {
+    "accepted": 113,
+    "revised": 9
+  },
+  "test_label_dist": {
+    "accepted": 258,
+    "revised": 12
+  },
+  "metrics_at_threshold_0.5": {
+    "accuracy": 0.9556,
+    "precision_revised": 0.5,
+    "recall_revised": 0.1667,
+    "f1_revised": 0.25,
+    "n_total": 270,
+    "n_correct": 258,
+    "confusion": {
+      "tp": 2,
+      "fp": 2,
+      "tn": 256,
+      "fn": 10
+    }
+  },
+  "best_threshold": 0.71,
+  "metrics_at_best_threshold": {
+    "accuracy": 0.963,
+    "precision_revised": 1.0,
+    "recall_revised": 0.1667,
+    "f1_revised": 0.2857,
+    "n_total": 270,
+    "n_correct": 260,
+    "confusion": {
+      "tp": 2,
+      "fp": 0,
+      "tn": 258,
+      "fn": 10
+    }
+  },
+  "baseline_accuracy": 0.9556,
+  "feature_importance": {
+    "n_words": 0.291,
+    "has_numbers": 0.0,
+    "has_file_path": 0.0353,
+    "has_command": 0.169,
+    "has_verification": 0.0,
+    "verif_criteria_count": 0.4291,
+    "cross_agent_mentions": 0.0007,
+    "has_output_spec": 0.531
+  },
+  "ac_check": {
+    "criterion": "accuracy > 0.75 on held-out cycles 14-16",
+    "achieved": 0.963,
+    "pass": true
+  }
+}

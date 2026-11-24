@@ -1,0 +1,22 @@
+{
+  "timestamp": "2026-11-24T14:46:42.654901+00:00",
+  "self_test": {
+    "passed": 6,
+    "total": 6
+  },
+  "stable_72h_simulation": {
+    "stable": true,
+    "window_hours": 72,
+    "entries_analyzed": 72,
+    "deviations": 0,
+    "goal_reopens": 0,
+    "phantom_dispatches": 0,
+    "mode_changes": 0,
+    "converged_pct": 100.0,
+    "deviation_details": []
+  },
+  "deviation_detection": {
+    "mode_departure": 1,
+    "goal_reopen": 1
+  }
+}

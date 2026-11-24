@@ -1,0 +1,176 @@
+{
+  "last_known_reached": {
+    "orchestrator": [
+      [
+        5,
+        "Auto-Loop Pass Budget"
+      ],
+      [
+        6,
+        "Goal Cycle Auto-Close"
+      ]
+    ],
+    "researcher": [
+      [
+        1,
+        "Productivity Baseline Measurement"
+      ],
+      [
+        2,
+        "Goal Proposal Auto-Generator"
+      ],
+      [
+        3,
+        "Mode Duration Tracker"
+      ],
+      [
+        4,
+        "Idle Waste Quantification"
+      ],
+      [
+        5,
+        "Convergence Velocity Metric"
+      ],
+      [
+        6,
+        "Dispatch Correctness Audit"
+      ],
+      [
+        7,
+        "Pattern Recurrence Detector"
+      ],
+      [
+        8,
+        "Mode Transition Forecast"
+      ],
+      [
+        9,
+        "Productive Pass Definition"
+      ],
+      [
+        10,
+        "Cycle Efficiency Report"
+      ]
+    ],
+    "builder": [
+      [
+        1,
+        "Idle Task Injector"
+      ],
+      [
+        3,
+        "fleet-mode.json Atomic Writer"
+      ],
+      [
+        4,
+        "Auto-Loop Pass Logger"
+      ],
+      [
+        5,
+        "Mode-Aware Dispatch Filter"
+      ],
+      [
+        6,
+        "Idle Productivity Counter"
+      ]
+    ],
+    "archivist": [
+      [
+        1,
+        "Mode Decision Provenance Log"
+      ],
+      [
+        2,
+        "Cycle Knowledge Distillation"
+      ],
+      [
+        3,
+        "Idle Task Knowledge Base"
+      ],
+      [
+        6,
+        "Cross-Cycle Pattern Index"
+      ]
+    ],
+    "scribe": [
+      [
+        1,
+        "Mode Transition Narrative"
+      ],
+      [
+        3,
+        "Idle Pass Daily Digest"
+      ],
+      [
+        4,
+        "Productivity Story (Weekly)"
+      ]
+    ],
+    "verifier": [
+      [
+        1,
+        "Mode Transition Integration Test"
+      ],
+      [
+        2,
+        "Idle Pass Auditor"
+      ],
+      [
+        3,
+        "fleet-mode.json Schema Validator"
+      ],
+      [
+        4,
+        "Dispatch Correctness Fuzzer"
+      ],
+      [
+        5,
+        "Pass Budget Compliance Test"
+      ],
+      [
+        6,
+        "Mode Race Condition Test"
+      ],
+      [
+        7,
+        "Productivity Metric Validator"
+      ],
+      [
+        8,
+        "Cycle Transition Rollback Test"
+      ],
+      [
+        9,
+        "Stale Dispatch Detector"
+      ],
+      [
+        10,
+        "End-to-End Mode Cycle Test"
+      ]
+    ],
+    "mechanic": [
+      [
+        2,
+        "Auto-Loop Health Probe"
+      ]
+    ],
+    "designer": [
+      [
+        1,
+        "Mode-Specific Cockpit Layout"
+      ],
+      [
+        4,
+        "Idle Hero State Design"
+      ],
+      [
+        5,
+        "Productivity Sparkline Panel"
+      ],
+      [
+        10,
+        "Accessibility Audit (All 3 Modes)"
+      ]
+    ]
+  }
+}

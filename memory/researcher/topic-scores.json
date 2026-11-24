@@ -1,0 +1,63 @@
+{
+  "generated": "2026-11-25T06:02:59.421284",
+  "weights": {
+    "fleet_state": 0.4,
+    "gap_coverage": 0.3,
+    "novelty": 0.3
+  },
+  "past_topics_baseline": [
+    "Fleet Autonomy Convergence",
+    "Closed-Loop Autonomy & Fleet Cockpit",
+    "Fleet Self-Optimization & Steady-State Convergence"
+  ],
+  "data_stats": {
+    "current_goal_keywords": 935,
+    "fleet_state_keywords": 171,
+    "gap_keywords": 152
+  },
+  "rankings": [
+    {
+      "topic": "Cycle Inheritance & Goal Continuity Engine",
+      "fleet_state_relevance": 0.68,
+      "gap_coverage": 0.9,
+      "novelty": 1.0,
+      "composite": 0.842
+    },
+    {
+      "topic": "Self-Healing Fleet: Predictive Recovery & Adaptive Cadence",
+      "fleet_state_relevance": 0.6857,
+      "gap_coverage": 0.5114,
+      "novelty": 0.8182,
+      "composite": 0.6732
+    },
+    {
+      "topic": "Steady-State Monitoring & Anomaly Detection",
+      "fleet_state_relevance": 0.66,
+      "gap_coverage": 0.5,
+      "novelty": 0.7778,
+      "composite": 0.6473
+    },
+    {
+      "topic": "Cross-Agent Coordination Protocol Optimization",
+      "fleet_state_relevance": 0.68,
+      "gap_coverage": 0.3,
+      "novelty": 0.9,
+      "composite": 0.632
+    },
+    {
+      "topic": "Fleet Convergence Productionization & Operations",
+      "fleet_state_relevance": 0.675,
+      "gap_coverage": 0.56,
+      "novelty": 0.6,
+      "composite": 0.618
+    },
+    {
+      "topic": "Knowledge Base Curation & Decay Management",
+      "fleet_state_relevance": 0.42,
+      "gap_coverage": 0.1,
+      "novelty": 1.0,
+      "composite": 0.498
+    }
+  ],
+  "top_pick": "Cycle Inheritance & Goal Continuity Engine"
+}

@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-11-24T19:47:52Z",
+  "tolerance": 0.011,
+  "metrics": [
+    {
+      "metric": "autonomy_score",
+      "status": "PASS",
+      "checks": [
+        {
+          "check": "component_range[pass_autonomy]",
+          "ok": true,
+          "value": 54.2
+        },
+        {
+          "check": "component_range[duration_score]",
+          "ok": true,
+          "value": 80.0
+        },
+        {
+          "check": "component_range[rework_score]",
+          "ok": true,
+          "value": 92.2
+        },
+        {
+          "check": "component_range[trend_score]",
+          "ok": true,
+          "value": 40.0
+        },
+        {
+          "check": "score_matches_formula",
+          "ok": true,
+          "stored": 65.4,
+          "recomputed": 65.41,
+          "delta": 0.01
+        }
+      ]
+    },
+    {
+      "metric": "efficiency_index",
+      "status": "PASS",
+      "rows_checked": 1,
+      "bad_rows": [],
+      "writer_scripts": [
+        "memory\\builder\\convergence_api.py",
+        "memory\\builder\\cycle_estimator.py",
+        "memory\\orchestrator\\efficiency-index-gen.py",
+        "memory\\researcher\\efficiency_index.py",
+        "memory\\researcher\\topic_scorer.py",
+        "memory\\verifier\\convergence_api_integrity.py",
+        "memory\\verifier\\convergence_metric_validation.py"
+      ]
+    },
+    {
+      "metric": "mode_durations",
+      "status": "FAIL",
+      "checks": [
+        {
+          "check": "WORK.percent",
+          "ok": true,
+          "stored": 4.1,
+          "expected": 4.1
+        },
+        {
+          "check": "MAINTENANCE.percent",
+          "ok": true,
+          "stored": 2.4,
+          "expected": 2.4
+        },
+        {
+          "check": "IDLE.percent",
+          "ok": true,
+          "stored": 99.2,
+          "expected": 99.2
+        },
+        {
+          "check": "hours_sum_equals_window",
+          "ok": false,
+          "sum_of_modes": 177.46,
+          "window_total": 168.0,
+          "excess_hours": 9.46
+        }
+      ]
+    }
+  ],
+  "overall": "FAIL",
+  "fail_count": 1
+}

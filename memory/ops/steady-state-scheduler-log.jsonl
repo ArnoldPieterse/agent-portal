@@ -1,0 +1,2 @@
+{"ts": "2026-11-24T18:16:00.527041+00:00", "event": "enter_steady_state", "detail": {"mode": "STEADY-STATE", "interval_change": "86400s -> 1209600s", "rollback_interval": 86400}}
+{"ts": "2026-11-24T18:16:00.527929+00:00", "event": "exit_steady_state", "detail": {"mode": "WORK", "interval_change": "1209600s -> 86400s", "rollback_interval": 86400}}

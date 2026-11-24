@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-11-24T02:02:21.653292+00:00",
+  "sources_scanned": {
+    "decision_log_entries": 4,
+    "blocker_sections": 16,
+    "hot_note_files": 1
+  },
+  "keyword_frequency": {
+    "sandbox-egress": 12,
+    "scheduler-gap": 10,
+    "generic-blocker": 9,
+    "seat-unreachable": 7,
+    "cycle-management": 5,
+    "memory-pressure": 4,
+    "stale-data": 4,
+    "permission-error": 4,
+    "goal-completion": 3,
+    "pin-management": 3,
+    "mirror-revert": 2,
+    "dispatch-futile": 1,
+    "timeout": 1,
+    "idle-waste": 1,
+    "cockpit-feed": 1
+  },
+  "proposals": [
+    {
+      "pattern": "sandbox-egress",
+      "occurrences": 12,
+      "proposal_title": "Document all sandbox egress limitations and create workaround catalog",
+      "proposal_description": "Create memory/ops/sandbox-limits.md with every egress-blocked path + alternative",
+      "priority": "high",
+      "suggested_agent": "researcher"
+    },
+    {
+      "pattern": "scheduler-gap",
+      "occurrences": 10,
+      "proposal_title": "Audit all schtasks for correctness and document dependency graph",
+      "proposal_description": "Generate complete schtask dependency map with health status per task",
+      "priority": "high",
+      "suggested_agent": "mechanic"
+    },
+    {
+      "pattern": "generic-blocker",
+      "occurrences": 9,
+      "proposal_title": "Triage all open blockers: resolve or mark as permanent-accepted",
+      "proposal_description": "For each blocker in memory/ops/blockers.md, assign owner + resolution ETA",
+      "priority": "high",
+      "suggested_agent": "orchestrator"
+    },
+    {
+      "pattern": "seat-unreachable",
+      "occurrences": 7,
+      "proposal_title": "Build seat health pre-check before dispatch to prevent futile passes",
+      "proposal_description": "Add gate in dispatch: check seat availability before generating @Name sections",
+      "priority": "high",
+      "suggested_agent": "orchestrator"
+    },
+    {
+      "pattern": "cycle-management",
+      "occurrences": 5,
+      "proposal_title": "Build cycle transition automation: checklist + auto-verification",
+      "proposal_description": "On cycle close, auto-generate closeout report and verify all 10/10 closed",
+      "priority": "high",
+      "suggested_agent": "orchestrator"
+    },
+    {
+      "pattern": "memory-pressure",
+      "occurrences": 4,
+      "proposal_title": "Implement VRAM headroom monitor with auto-offload threshold",
+      "proposal_description": "Track per-host VRAM usage; alert at 80%, trigger offload at 90%",
+      "priority": "medium",
+      "suggested_agent": "mechanic"
+    },
+    {
+      "pattern": "stale-data",
+      "occurrences": 4,
+      "proposal_title": "Implement staleness detection + auto-remediation for all fleet feeds",
+      "proposal_description": "Build a unified feed-freshness monitor that flags stale data >5min and triggers refresh",
+      "priority": "medium",
+      "suggested_agent": "mechanic"
+    },
+    {
+      "pattern": "permission-error",
+      "occurrences": 4,
+      "proposal_title": "Audit and fix permission issues across fleet hosts",
+      "proposal_description": "Run permission audit on all 4 hosts; document required ACLs",
+      "priority": "medium",
+      "suggested_agent": "mechanic"
+    },
+    {
+      "pattern": "goal-completion",
+      "occurrences": 3,
+      "proposal_title": "Analyze goal completion patterns to optimize goal-setting for next cycle",
+      "proposal_description": "Measure avg passes-to-complete per goal type; adjust goal granularity",
+      "priority": "medium",
+      "suggested_agent": "researcher"
+    },
+    {
+      "pattern": "pin-management",
+      "occurrences": 3,
+      "proposal_title": "Automate pin advancement workflow to eliminate manual clobber risk",
+      "proposal_description": "Build script that auto-advances pins when canonical files change",
+      "priority": "medium",
+      "suggested_agent": "builder"
+    }
+  ]
+}

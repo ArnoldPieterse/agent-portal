@@ -1,0 +1,13 @@
+{
+  "ts": "2026-11-24T14:02:34.909490+00:00",
+  "incidents_total": 5,
+  "with_recovery": 5,
+  "results": {
+    "host_down": {
+      "count": 5,
+      "current_mean_s": 6010.2,
+      "current_p95_s": 6755.0
+    }
+  },
+  "alerts": []
+}

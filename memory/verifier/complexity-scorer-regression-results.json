@@ -1,0 +1,165 @@
+{
+  "script": "complexity_scorer_regression.py",
+  "mode": "live-regression",
+  "timestamp": "2026-11-24T17:37:42.622571+00:00",
+  "scorer_source": "reference (built-in)",
+  "correlation_r": 0.8036,
+  "threshold": 0.7,
+  "corr_pass": true,
+  "anomaly_count": 0,
+  "anomalies": [],
+  "goals_tested": 20,
+  "score_distribution": {
+    "1": 3,
+    "2": 5,
+    "3": 10,
+    "4": 2,
+    "5": 0
+  },
+  "mean_score": 2.55,
+  "mean_completion_min": 199.6,
+  "detail": [
+    {
+      "id": "g01",
+      "score": 1,
+      "expected": 1,
+      "delta": 0,
+      "completion_min": 5
+    },
+    {
+      "id": "g02",
+      "score": 2,
+      "expected": 1,
+      "delta": 1,
+      "completion_min": 8
+    },
+    {
+      "id": "g03",
+      "score": 1,
+      "expected": 1,
+      "delta": 0,
+      "completion_min": 4
+    },
+    {
+      "id": "g04",
+      "score": 2,
+      "expected": 2,
+      "delta": 0,
+      "completion_min": 25
+    },
+    {
+      "id": "g05",
+      "score": 2,
+      "expected": 2,
+      "delta": 0,
+      "completion_min": 35
+    },
+    {
+      "id": "g06",
+      "score": 1,
+      "expected": 2,
+      "delta": -1,
+      "completion_min": 20
+    },
+    {
+      "id": "g07",
+      "score": 3,
+      "expected": 3,
+      "delta": 0,
+      "completion_min": 90
+    },
+    {
+      "id": "g08",
+      "score": 3,
+      "expected": 3,
+      "delta": 0,
+      "completion_min": 120
+    },
+    {
+      "id": "g09",
+      "score": 3,
+      "expected": 3,
+      "delta": 0,
+      "completion_min": 100
+    },
+    {
+      "id": "g10",
+      "score": 2,
+      "expected": 3,
+      "delta": -1,
+      "completion_min": 85
+    },
+    {
+      "id": "g11",
+      "score": 2,
+      "expected": 4,
+      "delta": -2,
+      "completion_min": 240
+    },
+    {
+      "id": "g12",
+      "score": 3,
+      "expected": 4,
+      "delta": -1,
+      "completion_min": 300
+    },
+    {
+      "id": "g13",
+      "score": 3,
+      "expected": 4,
+      "delta": -1,
+      "completion_min": 280
+    },
+    {
+      "id": "g14",
+      "score": 3,
+      "expected": 4,
+      "delta": -1,
+      "completion_min": 200
+    },
+    {
+      "id": "g15",
+      "score": 3,
+      "expected": 4,
+      "delta": -1,
+      "completion_min": 320
+    },
+    {
+      "id": "g16",
+      "score": 4,
+      "expected": 5,
+      "delta": -1,
+      "completion_min": 480
+    },
+    {
+      "id": "g17",
+      "score": 3,
+      "expected": 5,
+      "delta": -2,
+      "completion_min": 420
+    },
+    {
+      "id": "g18",
+      "score": 3,
+      "expected": 5,
+      "delta": -2,
+      "completion_min": 360
+    },
+    {
+      "id": "g19",
+      "score": 3,
+      "expected": 5,
+      "delta": -2,
+      "completion_min": 400
+    },
+    {
+      "id": "g20",
+      "score": 4,
+      "expected": 5,
+      "delta": -1,
+      "completion_min": 500
+    }
+  ],
+  "verdict": "PASS",
+  "elapsed_s": 0.01
+}

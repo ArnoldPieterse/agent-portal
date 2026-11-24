@@ -8,9 +8,9 @@ Pillars: (1) Predictive Operations, (2) Adaptive Resource Allocation, (3) Conver
 
 3. **Goal Acceptance Rate Predictor** - from goal text features (length, specificity markers, verification complexity), predict whether a goal will be accepted as-is or need revision. Train on cycle 10-16 acceptance data. Verified: accuracy >75% on held-out set from cycles 14-16.
 
-4. **Cross-Agent Dependency Graph** - build directed graph of which agents' goals depend on which other agents' deliverables (from archive). Identify critical path per cycle. Output: memory/researcher/dependency-graph.json + visualization data. Verified: graph has ≥20 edges; critical path matches actual completion order >70%.
+4. **Cross-Agent Dependency Graph** - build directed graph of which agents' goals depend on which other agents' deliverables (from archive). Identify critical path per cycle. Output: memory/researcher/dependency-graph.json + visualization data. Verified: graph has ≥20 edges; critical path matches actual completion order >70%. (pointer: memory/researcher/dependency-graph.json)
 
-5. **Cycle Efficiency Index** - composite metric per cycle: (goals completed / passes used) × (1 - rework_rate) × (1 - idle_fraction). Track trend; flag cycles where efficiency drops >20% vs 3-cycle mean. Output: memory/researcher/efficiency-index.jsonl. Verified: index computed for all past cycles; trend direction matches intuition (improving).
+5. **Cycle Efficiency Index** - composite metric per cycle: (goals completed / passes used) × (1 - rework_rate) × (1 - idle_fraction). Track trend; flag cycles where efficiency drops >20% vs 3-cycle mean. Output: memory/researcher/efficiency-index.jsonl. Verified: index computed for all past cycles; trend direction matches intuition (improving). (pointer: memory/researcher/efficiency-index.jsonl)
 
 6. **Knowledge Decay Rate Measurement** - measure how quickly KB entries lose relevance (citations per week declining). Fit decay curve; predict which entries will be stale in N weeks. Output: memory/researcher/decay-forecast.md with top-20 at-risk entries. Verified: predicted staleness matches actual within ±1 week for 70% of entries. (pointer: memory/researcher/load-probe-current-diskstate-2026-11-17.md)
 

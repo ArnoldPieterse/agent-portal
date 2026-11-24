@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-11-24T01:39:22.594764+00:00",
+  "metric_definition": "velocity = goals_closed / estimated_passes_used_per_cycle",
+  "pass_estimate_method": "4 passes/hour x 8h window (calibrate with autoloop.jsonl when available)",
+  "cycles": {
+    "10": {
+      "goals_total": 72,
+      "goals_closed": 72,
+      "completion_pct": 100.0,
+      "estimated_passes": 32,
+      "velocity": 2.25,
+      "date": "2026-11-23",
+      "note": "All lanes closed, fleet 100%"
+    },
+    "15": {
+      "goals_total": 236,
+      "goals_closed": 0,
+      "completion_pct": 0.0,
+      "estimated_passes": 32,
+      "velocity": 0.0,
+      "date": "2026-11-24",
+      "note": "In-progress (current cycle)"
+    }
+  },
+  "trend": "declining",
+  "velocities": [
+    2.25,
+    0.0
+  ],
+  "data_limitations": [
+    "Only cycle 10 has explicit closeout data with goal counts",
+    "Pass estimates are heuristics until autoloop.jsonl provides per-pass records",
+    "Cycles 1-9 lack structured closeout reports in available files"
+  ]
+}

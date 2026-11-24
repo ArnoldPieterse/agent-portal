@@ -1,0 +1,33 @@
+{
+  "ts": "2026-11-24T14:23:04.558774+00:00",
+  "playbook": "autonomy-health",
+  "overall_status": "FAIL",
+  "checks": [
+    {
+      "check": "fleet_mode_schema",
+      "status": "FAIL",
+      "detail": "Invalid mode 'INVALID_MODE' (valid: ['ACTIVE', 'DEGRADED', 'IDLE', 'STEADY-STATE', 'WORK'])"
+    },
+    {
+      "check": "convergence_health",
+      "status": "PASS",
+      "detail": "[convergence-health] HEALTHY score=60.0 (mode=WORK, passes_24h=1)"
+    },
+    {
+      "check": "drift_detector",
+      "status": "PASS",
+      "detail": "{\n  \"alerts\": [],\n  \"z_scores\": {\n    \"human_intervention_rate\": 0.0,\n    \"error_rate\": 0.0,\n    \"mode_fallback_count\": 0.0\n  },\n  \"window_size\": 1,\n  \"baseline_size\": 1,\n  \"timestamp\": \"2026-11-24T14"
+    },
+    {
+      "check": "dispatch_dry_run",
+      "status": "PASS",
+      "detail": "=== Auto-Cycle Trigger ===\nMode: DRY-RUN | Simulate: False\nALREADY FIRED at 2026-11-22T21:35:52.411005Z (cycle: 2026-11-23)\nNo action taken (double-trigger prevention)."
+    },
+    {
+      "check": "mode_fsm_consistency",
+      "status": "WARN",
+      "detail": "History last mode=WORK but current mode=INVALID_MODE (may be pending update)"
+    }
+  ],
+  "elapsed_sec": 0.35
+}

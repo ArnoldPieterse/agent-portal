@@ -1,0 +1,51 @@
+[
+  {
+    "date": "2026-11-18",
+    "n_goals": 30,
+    "completion_pct": 260.0,
+    "correction_pct": 70.0,
+    "n_agents": 8
+  },
+  {
+    "date": "2026-11-19",
+    "n_goals": 103,
+    "completion_pct": 96.1,
+    "correction_pct": 34.0,
+    "n_agents": 8
+  },
+  {
+    "date": "2026-11-20",
+    "n_goals": 183,
+    "completion_pct": 91.8,
+    "correction_pct": 33.9,
+    "n_agents": 9
+  },
+  {
+    "date": "2026-11-22",
+    "n_goals": 10,
+    "completion_pct": 70.0,
+    "correction_pct": 70.0,
+    "n_agents": 1
+  },
+  {
+    "date": "2026-11-23",
+    "n_goals": 522,
+    "completion_pct": 47.1,
+    "correction_pct": 20.5,
+    "n_agents": 8
+  },
+  {
+    "date": "2026-11-24",
+    "n_goals": 330,
+    "completion_pct": 73.6,
+    "correction_pct": 30.9,
+    "n_agents": 8
+  },
+  {
+    "date": "2026-11-25",
+    "n_goals": 10,
+    "completion_pct": 0.0,
+    "correction_pct": 20.0,
+    "n_agents": 1
+  }
+]

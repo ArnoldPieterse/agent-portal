@@ -1,0 +1,188 @@
+{
+  "model": "coord_overhead v1",
+  "total_cross_refs_found": 323,
+  "agent_pairs_measured": 27,
+  "pairwise_overhead": {
+    "designer<->orchestrator": {
+      "cross_ref_count": 186,
+      "overhead_ratio": 0.6059,
+      "sample_refs": 32
+    },
+    "orchestrator<->researcher": {
+      "cross_ref_count": 167,
+      "overhead_ratio": 0.5138,
+      "sample_refs": 30
+    },
+    "archivist<->orchestrator": {
+      "cross_ref_count": 148,
+      "overhead_ratio": 0.4265,
+      "sample_refs": 34
+    },
+    "builder<->orchestrator": {
+      "cross_ref_count": 147,
+      "overhead_ratio": 0.4298,
+      "sample_refs": 51
+    },
+    "orchestrator<->scribe": {
+      "cross_ref_count": 138,
+      "overhead_ratio": 0.422,
+      "sample_refs": 35
+    },
+    "mechanic<->orchestrator": {
+      "cross_ref_count": 121,
+      "overhead_ratio": 0.4116,
+      "sample_refs": 25
+    },
+    "mechanic<->researcher": {
+      "cross_ref_count": 103,
+      "overhead_ratio": 0.3112,
+      "sample_refs": 23
+    },
+    "orchestrator<->verifier": {
+      "cross_ref_count": 101,
+      "overhead_ratio": 0.2665,
+      "sample_refs": 14
+    },
+    "archivist<->researcher": {
+      "cross_ref_count": 97,
+      "overhead_ratio": 0.2526,
+      "sample_refs": 22
+    },
+    "builder<->designer": {
+      "cross_ref_count": 96,
+      "overhead_ratio": 0.2659,
+      "sample_refs": 31
+    },
+    "designer<->verifier": {
+      "cross_ref_count": 96,
+      "overhead_ratio": 0.2412,
+      "sample_refs": 23
+    },
+    "builder<->researcher": {
+      "cross_ref_count": 94,
+      "overhead_ratio": 0.248,
+      "sample_refs": 18
+    },
+    "researcher<->verifier": {
+      "cross_ref_count": 71,
+      "overhead_ratio": 0.1707,
+      "sample_refs": 14
+    },
+    "designer<->researcher": {
+      "cross_ref_count": 71,
+      "overhead_ratio": 0.2064,
+      "sample_refs": 9
+    },
+    "researcher<->scribe": {
+      "cross_ref_count": 54,
+      "overhead_ratio": 0.1484,
+      "sample_refs": 12
+    },
+    "archivist<->builder": {
+      "cross_ref_count": 42,
+      "overhead_ratio": 0.1047,
+      "sample_refs": 19
+    },
+    "designer<->scribe": {
+      "cross_ref_count": 36,
+      "overhead_ratio": 0.104,
+      "sample_refs": 5
+    },
+    "mechanic<->verifier": {
+      "cross_ref_count": 36,
+      "overhead_ratio": 0.0935,
+      "sample_refs": 15
+    },
+    "builder<->mechanic": {
+      "cross_ref_count": 28,
+      "overhead_ratio": 0.0805,
+      "sample_refs": 10
+    },
+    "designer<->mechanic": {
+      "cross_ref_count": 19,
+      "overhead_ratio": 0.0607,
+      "sample_refs": 5
+    },
+    "archivist<->verifier": {
+      "cross_ref_count": 18,
+      "overhead_ratio": 0.0411,
+      "sample_refs": 8
+    },
+    "archivist<->scribe": {
+      "cross_ref_count": 18,
+      "overhead_ratio": 0.0466,
+      "sample_refs": 9
+    },
+    "archivist<->mechanic": {
+      "cross_ref_count": 16,
+      "overhead_ratio": 0.0453,
+      "sample_refs": 5
+    },
+    "archivist<->designer": {
+      "cross_ref_count": 16,
+      "overhead_ratio": 0.0437,
+      "sample_refs": 7
+    },
+    "scribe<->verifier": {
+      "cross_ref_count": 14,
+      "overhead_ratio": 0.0335,
+      "sample_refs": 9
+    },
+    "builder<->verifier": {
+      "cross_ref_count": 13,
+      "overhead_ratio": 0.03,
+      "sample_refs": 8
+    },
+    "builder<->scribe": {
+      "cross_ref_count": 11,
+      "overhead_ratio": 0.0289,
+      "sample_refs": 8
+    }
+  },
+  "bottleneck_identified": {
+    "pair": "designer<->orchestrator",
+    "cross_refs": 186,
+    "overhead_ratio": 0.6059,
+    "evidence": "32 distinct goal blocks reference this pair"
+  },
+  "scaling_projection": {
+    "current_agents": 8,
+    "projected_agents": 12,
+    "scale_factor": 2.36,
+    "model": "O(N^2) all-pairs: coordination cost scales by 2.357142857142857x",
+    "projected_total_cross_refs": 4613,
+    "top_projected_bottlenecks": [
+      {
+        "pair": "designer<->orchestrator",
+        "current_overhead": 186,
+        "projected_12_agents": 438,
+        "risk": "HIGH"
+      },
+      {
+        "pair": "orchestrator<->researcher",
+        "current_overhead": 167,
+        "projected_12_agents": 394,
+        "risk": "HIGH"
+      },
+      {
+        "pair": "archivist<->orchestrator",
+        "current_overhead": 148,
+        "projected_12_agents": 349,
+        "risk": "HIGH"
+      },
+      {
+        "pair": "builder<->orchestrator",
+        "current_overhead": 147,
+        "projected_12_agents": 346,
+        "risk": "HIGH"
+      },
+      {
+        "pair": "orchestrator<->scribe",
+        "current_overhead": 138,
+        "projected_12_agents": 325,
+        "risk": "HIGH"
+      }
+    ]
+  },
+  "methodology": "Cross-agent references extracted from goal text (agent names mentioned in other agents' goals); overhead = ref_count / total_goals_of_both_agents"
+}

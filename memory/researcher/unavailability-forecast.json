@@ -1,0 +1,141 @@
+{
+  "generated": "2026-11-24T18:18:43.286047+00:00",
+  "method": "activity-frequency from archive timestamps, blended long-term + recent",
+  "period": "2026-11-13 to 2026-11-25",
+  "forecasts": {
+    "archivist": {
+      "active_days": 7,
+      "total_days": 13,
+      "long_term_unavail_prob": 0.462,
+      "recent_3d_unavail_prob": 0.333,
+      "blended_7d_forecast": 0.423,
+      "risk_level": "medium"
+    },
+    "builder": {
+      "active_days": 6,
+      "total_days": 13,
+      "long_term_unavail_prob": 0.538,
+      "recent_3d_unavail_prob": 0.333,
+      "blended_7d_forecast": 0.477,
+      "risk_level": "medium"
+    },
+    "designer": {
+      "active_days": 7,
+      "total_days": 13,
+      "long_term_unavail_prob": 0.462,
+      "recent_3d_unavail_prob": 0.333,
+      "blended_7d_forecast": 0.423,
+      "risk_level": "medium"
+    },
+    "mechanic": {
+      "active_days": 6,
+      "total_days": 13,
+      "long_term_unavail_prob": 0.538,
+      "recent_3d_unavail_prob": 0.333,
+      "blended_7d_forecast": 0.477,
+      "risk_level": "medium"
+    },
+    "orchestrator": {
+      "active_days": 6,
+      "total_days": 13,
+      "long_term_unavail_prob": 0.538,
+      "recent_3d_unavail_prob": 0.333,
+      "blended_7d_forecast": 0.477,
+      "risk_level": "medium"
+    },
+    "researcher": {
+      "active_days": 7,
+      "total_days": 13,
+      "long_term_unavail_prob": 0.462,
+      "recent_3d_unavail_prob": 0.333,
+      "blended_7d_forecast": 0.423,
+      "risk_level": "medium"
+    },
+    "rosterprobe": {
+      "active_days": 1,
+      "total_days": 13,
+      "long_term_unavail_prob": 0.923,
+      "recent_3d_unavail_prob": 1.0,
+      "blended_7d_forecast": 0.946,
+      "risk_level": "high"
+    },
+    "scribe": {
+      "active_days": 6,
+      "total_days": 13,
+      "long_term_unavail_prob": 0.538,
+      "recent_3d_unavail_prob": 0.333,
+      "blended_7d_forecast": 0.477,
+      "risk_level": "medium"
+    },
+    "verifier": {
+      "active_days": 7,
+      "total_days": 13,
+      "long_term_unavail_prob": 0.462,
+      "recent_3d_unavail_prob": 0.0,
+      "blended_7d_forecast": 0.323,
+      "risk_level": "medium"
+    }
+  },
+  "backtest": {
+    "avg_abs_error": 0.27,
+    "per_agent": [
+      {
+        "agent": "archivist",
+        "predicted": 0.571,
+        "actual": 0.429,
+        "abs_error": 0.143
+      },
+      {
+        "agent": "builder",
+        "predicted": 0.714,
+        "actual": 0.429,
+        "abs_error": 0.286
+      },
+      {
+        "agent": "designer",
+        "predicted": 0.571,
+        "actual": 0.429,
+        "abs_error": 0.143
+      },
+      {
+        "agent": "mechanic",
+        "predicted": 0.714,
+        "actual": 0.429,
+        "abs_error": 0.286
+      },
+      {
+        "agent": "orchestrator",
+        "predicted": 0.714,
+        "actual": 0.429,
+        "abs_error": 0.286
+      },
+      {
+        "agent": "researcher",
+        "predicted": 0.714,
+        "actual": 0.286,
+        "abs_error": 0.429
+      },
+      {
+        "agent": "rosterprobe",
+        "predicted": 1.0,
+        "actual": 0.857,
+        "abs_error": 0.143
+      },
+      {
+        "agent": "scribe",
+        "predicted": 0.714,
+        "actual": 0.429,
+        "abs_error": 0.286
+      },
+      {
+        "agent": "verifier",
+        "predicted": 0.714,
+        "actual": 0.286,
+        "abs_error": 0.429
+      }
+    ]
+  },
+  "high_risk_seats": [
+    "rosterprobe"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "generated": "2026-11-25",
+  "auto_goals_count": 8,
+  "refined_goals_count": 100,
+  "quality_gap": 0.635,
+  "auto_mean": 0.075,
+  "refined_mean": 0.71,
+  "top_3_auto_goals": [
+    {
+      "keyword": "human",
+      "composite": 0.075
+    },
+    {
+      "keyword": "needs",
+      "composite": 0.075
+    },
+    {
+      "keyword": "orchestrator",
+      "composite": 0.075
+    }
+  ],
+  "per_dimension_gap": {
+    "output_path": 0.8,
+    "verification": 0.99,
+    "specificity": 0.83,
+    "actionability": 0.0,
+    "scope_clarity": 0.31
+  }
+}

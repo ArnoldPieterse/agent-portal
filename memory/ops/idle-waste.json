@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-11-24T01:39:15.235511+00:00",
+  "window_hours": 24,
+  "data_source": "model-load-derived (fallback)",
+  "total_passes": 125,
+  "total_productive": 0,
+  "total_wasted": 125,
+  "waste_rate": 1.0,
+  "by_category": {
+    "idle-unreachable": {
+      "total": 125,
+      "productive": 0,
+      "rate": 0.0,
+      "wasted_passes": 125
+    }
+  },
+  "per_agent": {
+    "orchestrator": {
+      "total": 13,
+      "productive": 0,
+      "wasted": 13
+    },
+    "archivist": {
+      "total": 24,
+      "productive": 0,
+      "wasted": 24
+    },
+    "researcher": {
+      "total": 39,
+      "productive": 0,
+      "wasted": 39
+    },
+    "scribe": {
+      "total": 2,
+      "productive": 0,
+      "wasted": 2
+    },
+    "mechanic": {
+      "total": 4,
+      "productive": 0,
+      "wasted": 4
+    },
+    "builder": {
+      "total": 2,
+      "productive": 0,
+      "wasted": 2
+    },
+    "verifier": {
+      "total": 21,
+      "productive": 0,
+      "wasted": 21
+    },
+    "designer": {
+      "total": 20,
+      "productive": 0,
+      "wasted": 20
+    }
+  },
+  "estimated_wasted_time_min": 62.5
+}

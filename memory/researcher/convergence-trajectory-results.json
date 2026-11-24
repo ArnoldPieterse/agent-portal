@@ -1,0 +1,134 @@
+{
+  "model": "convergence_trajectory v2 (multi-metric steady-state gate, cross-agent archive)",
+  "data_points": 12,
+  "per_cycle": [
+    {
+      "cycle": 2,
+      "n_goals": 33,
+      "completion_pct": 100.0,
+      "error_free_rate": 81.81818181818183,
+      "intervention_rate_pct": 3.03,
+      "completion_data_quality": "ok"
+    },
+    {
+      "cycle": 5,
+      "n_goals": 30,
+      "completion_pct": 83.33333333333334,
+      "error_free_rate": 96.66666666666667,
+      "intervention_rate_pct": 3.333,
+      "completion_data_quality": "ok"
+    },
+    {
+      "cycle": 7,
+      "n_goals": 10,
+      "completion_pct": 100.0,
+      "error_free_rate": 90.0,
+      "intervention_rate_pct": 0.0,
+      "completion_data_quality": "ok"
+    },
+    {
+      "cycle": 8,
+      "n_goals": 80,
+      "completion_pct": 68.75,
+      "error_free_rate": 92.5,
+      "intervention_rate_pct": 1.25,
+      "completion_data_quality": "ok"
+    },
+    {
+      "cycle": 9,
+      "n_goals": 90,
+      "completion_pct": 6.666666666666667,
+      "error_free_rate": 100.0,
+      "intervention_rate_pct": 0.0,
+      "completion_data_quality": "ok"
+    },
+    {
+      "cycle": 10,
+      "n_goals": 60,
+      "completion_pct": 95.0,
+      "error_free_rate": 90.0,
+      "intervention_rate_pct": 0.0,
+      "completion_data_quality": "ok"
+    },
+    {
+      "cycle": 12,
+      "n_goals": 102,
+      "completion_pct": 86.27450980392157,
+      "error_free_rate": 95.09803921568627,
+      "intervention_rate_pct": 0.98,
+      "completion_data_quality": "ok"
+    },
+    {
+      "cycle": 13,
+      "n_goals": 70,
+      "completion_pct": 0.0,
+      "error_free_rate": 100.0,
+      "intervention_rate_pct": 0.0,
+      "completion_data_quality": "no_verified_markers"
+    },
+    {
+      "cycle": 14,
+      "n_goals": 212,
+      "completion_pct": 55.660377358490564,
+      "error_free_rate": 96.22641509433963,
+      "intervention_rate_pct": 0.472,
+      "completion_data_quality": "ok"
+    },
+    {
+      "cycle": 15,
+      "n_goals": 212,
+      "completion_pct": 82.0754716981132,
+      "error_free_rate": 96.22641509433963,
+      "intervention_rate_pct": 0.472,
+      "completion_data_quality": "ok"
+    },
+    {
+      "cycle": 16,
+      "n_goals": 90,
+      "completion_pct": 0.0,
+      "error_free_rate": 100.0,
+      "intervention_rate_pct": 2.222,
+      "completion_data_quality": "no_verified_markers"
+    },
+    {
+      "cycle": 17,
+      "n_goals": 10,
+      "completion_pct": 0.0,
+      "error_free_rate": 90.0,
+      "intervention_rate_pct": 10.0,
+      "completion_data_quality": "no_verified_markers"
+    }
+  ],
+  "estimate": {
+    "status": "ok",
+    "n_points": 9,
+    "n_excluded_low_quality": 3,
+    "r2_composite_index": 0.0293,
+    "intervention_fit": "exponential",
+    "quality_fit": "exponential",
+    "cycles_to_steady_state": 0,
+    "components_cycles": {
+      "intervention_below_10pct": 0,
+      "errorfree_above_90pct": 0
+    },
+    "ci_95_bootstrap": [
+      0,
+      0
+    ],
+    "composite_index_trajectory": [
+      0.831,
+      0.833,
+      1.0,
+      0.854,
+      0.689,
+      0.983,
+      0.922,
+      0.836,
+      0.925
+    ],
+    "steady_state_gate": {
+      "intervention_max_pct": 10.0,
+      "error_free_min_pct": 90.0
+    }
+  }
+}

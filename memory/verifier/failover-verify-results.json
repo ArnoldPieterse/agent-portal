@@ -1,0 +1,41 @@
+{
+  "test_ts": "2026-11-24T13:58:49.596534+00:00",
+  "self_test": {
+    "passed": 6,
+    "total": 6,
+    "details": [
+      {
+        "name": "T1_host_white_down_all_rerouted",
+        "pass": true,
+        "detail": "affected=3, planned=3, errors=[]"
+      },
+      {
+        "name": "T2_no_duplicate_dispatch",
+        "pass": true,
+        "detail": "targets=['builder', 'scribe', 'researcher'], dupes=[]"
+      },
+      {
+        "name": "T3_sla_within_5min",
+        "pass": true,
+        "detail": "plan_size=3, all_sla=True"
+      },
+      {
+        "name": "T4_state_integrity_no_data_loss",
+        "pass": true,
+        "detail": "mismatches=[]"
+      },
+      {
+        "name": "T5_cascading_two_hosts_down",
+        "pass": true,
+        "detail": "white: 3 rerouted/0 err, red: 2 rerouted/0 err"
+      },
+      {
+        "name": "T6_no_fallback_flagged_not_dropped",
+        "pass": true,
+        "detail": "errors=[\"NO_FALLBACK: seat 'Mechanic' on host 'White' has no available fallback\", \"NO_FALLBACK: seat 'Orchestrator' on host 'White' has no available fallback\"]"
+      }
+    ]
+  },
+  "sla_seconds": 300,
+  "routing_map_source": "C:\\Users\\black\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\seat-routing-map.json"
+}

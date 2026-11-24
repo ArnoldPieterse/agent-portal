@@ -1,0 +1,74 @@
+{
+  "model": "cycle_efficiency_index v1",
+  "cycles": [
+    {
+      "cycle": 10,
+      "goals": 50,
+      "verified": 46,
+      "rework_rate": 0.08,
+      "completion_pct": 0.92,
+      "efficiency_index": 0.8464
+    },
+    {
+      "cycle": 12,
+      "goals": 102,
+      "verified": 88,
+      "rework_rate": 0.0392,
+      "completion_pct": 0.8627,
+      "efficiency_index": 0.8289
+    },
+    {
+      "cycle": 13,
+      "goals": 70,
+      "verified": 0,
+      "rework_rate": 0.0,
+      "completion_pct": 0.0,
+      "efficiency_index": 0.0
+    },
+    {
+      "cycle": 14,
+      "goals": 212,
+      "verified": 118,
+      "rework_rate": 0.0236,
+      "completion_pct": 0.5566,
+      "efficiency_index": 0.5435
+    },
+    {
+      "cycle": 15,
+      "goals": 214,
+      "verified": 174,
+      "rework_rate": 0.0234,
+      "completion_pct": 0.8131,
+      "efficiency_index": 0.7941
+    },
+    {
+      "cycle": 16,
+      "goals": 90,
+      "verified": 0,
+      "rework_rate": 0.0,
+      "completion_pct": 0.0,
+      "efficiency_index": 0.0
+    }
+  ],
+  "trend": {
+    "first_half_mean": 0.8377,
+    "second_half_mean": 0.6688,
+    "last_pair_delta": 0.2506,
+    "trend": "improving",
+    "overall_direction": "declining",
+    "delta_pct": -20.2
+  },
+  "efficiency_drop_flags": [
+    {
+      "cycle": 16,
+      "efficiency": 0.0,
+      "window_mean": 0.4459,
+      "drop_pct": 100.0
+    }
+  ],
+  "ac": {
+    "all_cycles_computed": true,
+    "trend_completed_only": true,
+    "trend_direction_matches_intuition": true
+  }
+}

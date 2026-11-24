@@ -1,0 +1,347 @@
+{
+  "timestamp": "2026-11-24T14:46:04.861816+00:00",
+  "scripts_assessed": 10,
+  "ready_count": 4,
+  "not_ready_count": 6,
+  "average_score": 0.77,
+  "results": [
+    {
+      "script": "memory\\verifier\\decision_audit.py",
+      "exists": true,
+      "total_score": 0.7,
+      "components": {
+        "exit_code_mapping": {
+          "score": 0.0,
+          "max": 0.3,
+          "detail": "missing or ambiguous exit codes"
+        },
+        "unambiguous_output": {
+          "score": 0.3,
+          "max": 0.3,
+          "detail": "unambiguous PASS/FAIL output"
+        },
+        "no_manual_interpretation": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "no manual interpretation needed"
+        },
+        "self_contained": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "self-contained or graceful degradation"
+        }
+      },
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict"
+      ]
+    },
+    {
+      "script": "memory\\verifier\\failover_verify.py",
+      "exists": true,
+      "total_score": 0.8,
+      "components": {
+        "exit_code_mapping": {
+          "score": 0.15000000000000002,
+          "max": 0.3,
+          "detail": "missing or ambiguous exit codes"
+        },
+        "unambiguous_output": {
+          "score": 0.3,
+          "max": 0.3,
+          "detail": "unambiguous PASS/FAIL output"
+        },
+        "no_manual_interpretation": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "no manual interpretation needed"
+        },
+        "self_contained": {
+          "score": 0.15000000000000002,
+          "max": 0.2,
+          "detail": "self-contained or graceful degradation"
+        }
+      },
+      "gaps": []
+    },
+    {
+      "script": "memory\\verifier\\heal_fp_rate.py",
+      "exists": true,
+      "total_score": 0.7,
+      "components": {
+        "exit_code_mapping": {
+          "score": 0.0,
+          "max": 0.3,
+          "detail": "missing or ambiguous exit codes"
+        },
+        "unambiguous_output": {
+          "score": 0.3,
+          "max": 0.3,
+          "detail": "unambiguous PASS/FAIL output"
+        },
+        "no_manual_interpretation": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "no manual interpretation needed"
+        },
+        "self_contained": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "self-contained or graceful degradation"
+        }
+      },
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict"
+      ]
+    },
+    {
+      "script": "memory\\verifier\\safety_boundary.py",
+      "exists": true,
+      "total_score": 0.7,
+      "components": {
+        "exit_code_mapping": {
+          "score": 0.0,
+          "max": 0.3,
+          "detail": "missing or ambiguous exit codes"
+        },
+        "unambiguous_output": {
+          "score": 0.3,
+          "max": 0.3,
+          "detail": "unambiguous PASS/FAIL output"
+        },
+        "no_manual_interpretation": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "no manual interpretation needed"
+        },
+        "self_contained": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "self-contained or graceful degradation"
+        }
+      },
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict"
+      ]
+    },
+    {
+      "script": "memory\\verifier\\recovery_trend.py",
+      "exists": true,
+      "total_score": 0.7,
+      "components": {
+        "exit_code_mapping": {
+          "score": 0.0,
+          "max": 0.3,
+          "detail": "missing or ambiguous exit codes"
+        },
+        "unambiguous_output": {
+          "score": 0.3,
+          "max": 0.3,
+          "detail": "unambiguous PASS/FAIL output"
+        },
+        "no_manual_interpretation": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "no manual interpretation needed"
+        },
+        "self_contained": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "self-contained or graceful degradation"
+        }
+      },
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict"
+      ]
+    },
+    {
+      "script": "memory\\verifier\\state_consistency.py",
+      "exists": true,
+      "total_score": 0.95,
+      "components": {
+        "exit_code_mapping": {
+          "score": 0.25,
+          "max": 0.3,
+          "detail": "exit-code mapping present"
+        },
+        "unambiguous_output": {
+          "score": 0.3,
+          "max": 0.3,
+          "detail": "unambiguous PASS/FAIL output"
+        },
+        "no_manual_interpretation": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "no manual interpretation needed"
+        },
+        "self_contained": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "self-contained or graceful degradation"
+        }
+      },
+      "gaps": []
+    },
+    {
+      "script": "memory\\verifier\\convergence_oscillation.py",
+      "exists": true,
+      "total_score": 0.7,
+      "components": {
+        "exit_code_mapping": {
+          "score": 0.1,
+          "max": 0.3,
+          "detail": "missing or ambiguous exit codes"
+        },
+        "unambiguous_output": {
+          "score": 0.2,
+          "max": 0.3,
+          "detail": "unambiguous PASS/FAIL output"
+        },
+        "no_manual_interpretation": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "no manual interpretation needed"
+        },
+        "self_contained": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "self-contained or graceful degradation"
+        }
+      },
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict"
+      ]
+    },
+    {
+      "script": "memory\\verifier\\autonomy_pr_tracker.py",
+      "exists": true,
+      "total_score": 0.9,
+      "components": {
+        "exit_code_mapping": {
+          "score": 0.2,
+          "max": 0.3,
+          "detail": "exit-code mapping present"
+        },
+        "unambiguous_output": {
+          "score": 0.3,
+          "max": 0.3,
+          "detail": "unambiguous PASS/FAIL output"
+        },
+        "no_manual_interpretation": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "no manual interpretation needed"
+        },
+        "self_contained": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "self-contained or graceful degradation"
+        }
+      },
+      "gaps": []
+    },
+    {
+      "script": "memory\\verifier\\budget_compliance.py",
+      "exists": true,
+      "total_score": 0.9,
+      "components": {
+        "exit_code_mapping": {
+          "score": 0.3,
+          "max": 0.3,
+          "detail": "exit-code mapping present"
+        },
+        "unambiguous_output": {
+          "score": 0.25,
+          "max": 0.3,
+          "detail": "unambiguous PASS/FAIL output"
+        },
+        "no_manual_interpretation": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "no manual interpretation needed"
+        },
+        "self_contained": {
+          "score": 0.15000000000000002,
+          "max": 0.2,
+          "detail": "self-contained or graceful degradation"
+        }
+      },
+      "gaps": []
+    },
+    {
+      "script": "memory\\verifier\\cycle_quality.py",
+      "exists": true,
+      "total_score": 0.65,
+      "components": {
+        "exit_code_mapping": {
+          "score": 0.15,
+          "max": 0.3,
+          "detail": "missing or ambiguous exit codes"
+        },
+        "unambiguous_output": {
+          "score": 0.1,
+          "max": 0.3,
+          "detail": "output may require interpretation"
+        },
+        "no_manual_interpretation": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "no manual interpretation needed"
+        },
+        "self_contained": {
+          "score": 0.2,
+          "max": 0.2,
+          "detail": "self-contained or graceful degradation"
+        }
+      },
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict",
+        "Output not unambiguous - add explicit PASS/FAIL summary line"
+      ]
+    }
+  ],
+  "needs_refinement": [
+    {
+      "script": "memory\\verifier\\decision_audit.py",
+      "score": 0.7,
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict"
+      ]
+    },
+    {
+      "script": "memory\\verifier\\heal_fp_rate.py",
+      "score": 0.7,
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict"
+      ]
+    },
+    {
+      "script": "memory\\verifier\\safety_boundary.py",
+      "score": 0.7,
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict"
+      ]
+    },
+    {
+      "script": "memory\\verifier\\recovery_trend.py",
+      "score": 0.7,
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict"
+      ]
+    },
+    {
+      "script": "memory\\verifier\\convergence_oscillation.py",
+      "score": 0.7,
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict"
+      ]
+    },
+    {
+      "script": "memory\\verifier\\cycle_quality.py",
+      "score": 0.65,
+      "gaps": [
+        "Exit code mapping incomplete - add sys.exit(0)/sys.exit(1) based on verdict",
+        "Output not unambiguous - add explicit PASS/FAIL summary line"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "model": "autonomy_maturity_scorecard v1",
+  "generated": "2026-11-25T02:12:56.645167",
+  "weights": {
+    "autonomous_passes": 0.3,
+    "self_correction": 0.25,
+    "convergence_trend": 0.2,
+    "failure_recovery": 0.15,
+    "knowledge_transfer": 0.1
+  },
+  "agents": [
+    {
+      "agent": "builder",
+      "dimensions": {
+        "autonomous_passes": 100.0,
+        "self_correction": 87.5,
+        "convergence_trend": 64.22967966877316,
+        "failure_recovery": 70.0,
+        "knowledge_transfer": 26.259999999999998
+      },
+      "composite_score": 77.8,
+      "rank": 1
+    },
+    {
+      "agent": "scribe",
+      "dimensions": {
+        "autonomous_passes": 90.0,
+        "self_correction": 72.3,
+        "convergence_trend": 75.062066120848,
+        "failure_recovery": 70.0,
+        "knowledge_transfer": 26.259999999999998
+      },
+      "composite_score": 73.2,
+      "rank": 2
+    },
+    {
+      "agent": "verifier",
+      "dimensions": {
+        "autonomous_passes": 78.57142857142857,
+        "self_correction": 82.4,
+        "convergence_trend": 76.59134420819973,
+        "failure_recovery": 70.0,
+        "knowledge_transfer": 26.259999999999998
+      },
+      "composite_score": 72.6,
+      "rank": 3
+    },
+    {
+      "agent": "designer",
+      "dimensions": {
+        "autonomous_passes": 92.85714285714286,
+        "self_correction": 68.6,
+        "convergence_trend": 70.47423185879278,
+        "failure_recovery": 70.0,
+        "knowledge_transfer": 26.259999999999998
+      },
+      "composite_score": 72.2,
+      "rank": 4
+    },
+    {
+      "agent": "orchestrator",
+      "dimensions": {
+        "autonomous_passes": 100.0,
+        "self_correction": 52.5,
+        "convergence_trend": 72.38582946798245,
+        "failure_recovery": 75.5,
+        "knowledge_transfer": 26.259999999999998
+      },
+      "composite_score": 71.6,
+      "rank": 5
+    },
+    {
+      "agent": "mechanic",
+      "dimensions": {
+        "autonomous_passes": 92.3076923076923,
+        "self_correction": 52.4,
+        "convergence_trend": 65.12175855306168,
+        "failure_recovery": 70.0,
+        "knowledge_transfer": 26.259999999999998
+      },
+      "composite_score": 66.9,
+      "rank": 6
+    },
+    {
+      "agent": "archivist",
+      "dimensions": {
+        "autonomous_passes": 66.66666666666666,
+        "self_correction": 53.3,
+        "convergence_trend": 80.03221990474115,
+        "failure_recovery": 79.0,
+        "knowledge_transfer": 26.259999999999998
+      },
+      "composite_score": 63.8,
+      "rank": 7
+    },
+    {
+      "agent": "researcher",
+      "dimensions": {
+        "autonomous_passes": 23.52941176470588,
+        "self_correction": 63.4,
+        "convergence_trend": 84.23773464495845,
+        "failure_recovery": 72.0,
+        "knowledge_transfer": 26.259999999999998
+      },
+      "composite_score": 53.2,
+      "rank": 8
+    }
+  ],
+  "fleet_composite": 68.9,
+  "radar_axes": [
+    "autonomous_passes",
+    "self_correction",
+    "convergence_trend",
+    "failure_recovery",
+    "knowledge_transfer"
+  ],
+  "radar_data": {
+    "builder": {
+      "autonomous_passes": 100.0,
+      "self_correction": 87.5,
+      "convergence_trend": 64.2,
+      "failure_recovery": 70.0,
+      "knowledge_transfer": 26.3
+    },
+    "scribe": {
+      "autonomous_passes": 90.0,
+      "self_correction": 72.3,
+      "convergence_trend": 75.1,
+      "failure_recovery": 70.0,
+      "knowledge_transfer": 26.3
+    },
+    "verifier": {
+      "autonomous_passes": 78.6,
+      "self_correction": 82.4,
+      "convergence_trend": 76.6,
+      "failure_recovery": 70.0,
+      "knowledge_transfer": 26.3
+    },
+    "designer": {
+      "autonomous_passes": 92.9,
+      "self_correction": 68.6,
+      "convergence_trend": 70.5,
+      "failure_recovery": 70.0,
+      "knowledge_transfer": 26.3
+    },
+    "orchestrator": {
+      "autonomous_passes": 100.0,
+      "self_correction": 52.5,
+      "convergence_trend": 72.4,
+      "failure_recovery": 75.5,
+      "knowledge_transfer": 26.3
+    },
+    "mechanic": {
+      "autonomous_passes": 92.3,
+      "self_correction": 52.4,
+      "convergence_trend": 65.1,
+      "failure_recovery": 70.0,
+      "knowledge_transfer": 26.3
+    },
+    "archivist": {
+      "autonomous_passes": 66.7,
+      "self_correction": 53.3,
+      "convergence_trend": 80.0,
+      "failure_recovery": 79.0,
+      "knowledge_transfer": 26.3
+    },
+    "researcher": {
+      "autonomous_passes": 23.5,
+      "self_correction": 63.4,
+      "convergence_trend": 84.2,
+      "failure_recovery": 72.0,
+      "knowledge_transfer": 26.3
+    }
+  },
+  "interpretation": {
+    "score_0_20": "Critical - needs human oversight on most tasks",
+    "score_20_40": "Developing - significant human involvement required",
+    "score_40_60": "Competent - mostly autonomous with periodic check-ins",
+    "score_60_80": "Proficient - high autonomy, self-corrects well",
+    "score_80_100": "Autonomous - operates independently, converging to steady-state"
+  },
+  "n_agents": 8
+}

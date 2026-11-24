@@ -1,0 +1,12 @@
+{
+  "ts": "2026-11-24T20:32:31.784714+00:00",
+  "endpoint_status": "UNREACHABLE (URLError: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>)",
+  "checks": [
+    {
+      "name": "source_autonomy_fresh",
+      "passed": false,
+      "detail": "stale by 5.0h"
+    }
+  ],
+  "overall": "DEGRADED"
+}

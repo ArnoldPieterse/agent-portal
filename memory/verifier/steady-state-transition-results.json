@@ -1,0 +1,30 @@
+{
+  "script": "steady_state_transition_test.py",
+  "timestamp": "2026-11-24T17:37:32.639086Z",
+  "passed": 5,
+  "total": 5,
+  "elapsed_s": 0.08,
+  "results": [
+    {
+      "test": "a_clean_transition",
+      "status": "PASS"
+    },
+    {
+      "test": "b_frequency_propagation",
+      "status": "PASS"
+    },
+    {
+      "test": "c_no_orphaned_tasks",
+      "status": "PASS"
+    },
+    {
+      "test": "d_idempotent",
+      "status": "PASS"
+    },
+    {
+      "test": "e_rollback",
+      "status": "PASS"
+    }
+  ],
+  "verdict": "PASS"
+}

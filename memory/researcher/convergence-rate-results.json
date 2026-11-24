@@ -1,0 +1,36 @@
+{
+  "model": "convergence_rate v1 (exponential on error_free_rate)",
+  "n_points": 7,
+  "metric": "error_free_rate",
+  "fit": {
+    "A": "100.22988505747128",
+    "k": "0.8099999999999999",
+    "B": "-20.677747497784612",
+    "r2": "0.8660401222002408",
+    "type": "exponential"
+  },
+  "r2": 0.866,
+  "baseline_pct": 26.7,
+  "target_pct": 2.7,
+  "predicted_convergence_cycle": 0,
+  "confidence_interval_95": "('N/A', 'N/A')",
+  "all_metrics": {
+    "completion_pct": {
+      "r2": 0.7253,
+      "type": "linear"
+    },
+    "error_free_rate": {
+      "r2": 0.866,
+      "type": "exponential"
+    },
+    "correction_pct": {
+      "r2": 0.4946,
+      "type": "linear"
+    }
+  },
+  "graceful_degradation": {
+    "status": "ok",
+    "n_points": 7
+  },
+  "data_points": 7
+}

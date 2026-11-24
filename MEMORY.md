@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechic lane fully closed at 10/10 goals for cycle 17; no open work remains until new goals arrive.
 - Archivist reached 5/10 goals: convergence-kb, cycle-history-index v2, steady-state-ssot, topic-evolution, metric-lineage — all indexed in IN
 - Mechic cycle-17: all 10 goals verified and closed; no open work in lane as of this pass.
 - Cycle-17 Archivist: all 10/10 goals closed with verified evidence; artifacts include convergence-kb.md, cycle-history-index.json, decision a
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic lane confirmed 10/10 reached (2026-11-25);
 - Auto-loop dispatch is stale for Mechanic: lane closed at 10/10 (verified 2026-11-25), no open work
 - Auto-loop dispatch is stale: lists goals 1-5 as open but ledger confirms mechanic 10/10 closed, open=0.
+- Mechanic lane 10/10 goals closed; fleet-mode.json updated to cycle-17/STEADY_STATE/goal_pct=100% (2026-11-25).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

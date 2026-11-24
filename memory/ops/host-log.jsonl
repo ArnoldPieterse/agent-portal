@@ -412,3 +412,4 @@
 {"t": "2026-11-25 07:45:00", "event": "host-start", "pid": 3896}
 {"t": "2026-11-25 07:45:00", "event": "exit-duplicate", "existing": [15872]}
 {"t": "2026-11-25 07:48:14", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-25 07:53:14", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}

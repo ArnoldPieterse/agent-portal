@@ -1,0 +1,3 @@
+{"event_type": "runbook_execution", "event_time": "2026-11-23T08:18:34.537904", "ttc_seconds": null, "status": "TIMEOUT"}
+{"event_type": "runbook_execution", "event_time": "2026-11-23T08:45:37.895668", "ttc_seconds": null, "status": "INCOMPLETE"}
+{"_stats": true, "p50": null, "p95": null, "max": null, "count": 0, "recorded_at": "2026-11-24T10:58:58.964610"}

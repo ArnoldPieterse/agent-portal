@@ -1,0 +1,551 @@
+{
+  "generated": "2026-11-25T00:36:03.114910",
+  "n_records": 1341,
+  "n_types": 17,
+  "task_types": {
+    "SCRIPT": {
+      "n": 837,
+      "human_pct": 0.0,
+      "correction_pct": 14.2,
+      "verified_pct": 50.5,
+      "tier": "T1",
+      "agent_tiers": {
+        "archivist": "T1",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "scribe": "T1",
+        "verifier": "T1"
+      }
+    },
+    "AUDIT_INTEGRITY": {
+      "n": 345,
+      "human_pct": 0.0,
+      "correction_pct": 13.0,
+      "verified_pct": 45.2,
+      "tier": "T1",
+      "agent_tiers": {
+        "archivist": "T1",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T1",
+        "researcher": "T2",
+        "scribe": "T0",
+        "verifier": "T1"
+      }
+    },
+    "REPORT_TIMELINE": {
+      "n": 347,
+      "human_pct": 0.0,
+      "correction_pct": 13.3,
+      "verified_pct": 57.1,
+      "tier": "T1",
+      "agent_tiers": {
+        "archivist": "T1",
+        "builder": "T0",
+        "unknown": "T1",
+        "designer": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T1",
+        "scribe": "T1",
+        "verifier": "T1"
+      }
+    },
+    "TEST_VERIFY": {
+      "n": 545,
+      "human_pct": 0.0,
+      "correction_pct": 12.1,
+      "verified_pct": 64.8,
+      "tier": "T1",
+      "agent_tiers": {
+        "archivist": "T1",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T1",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T1",
+        "scribe": "T0",
+        "verifier": "T1"
+      }
+    },
+    "KB_DEFINITION": {
+      "n": 125,
+      "human_pct": 0.0,
+      "correction_pct": 9.6,
+      "verified_pct": 41.6,
+      "tier": "T0",
+      "agent_tiers": {
+        "archivist": "T0",
+        "unknown": "T1",
+        "designer": "T1",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T1",
+        "scribe": "T0",
+        "verifier": "T0"
+      }
+    },
+    "TRACKING_METRIC": {
+      "n": 411,
+      "human_pct": 0.0,
+      "correction_pct": 13.9,
+      "verified_pct": 53.0,
+      "tier": "T1",
+      "agent_tiers": {
+        "archivist": "T2",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T1",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "scribe": "T1",
+        "verifier": "T0"
+      }
+    },
+    "BUG_FIX": {
+      "n": 281,
+      "human_pct": 0.0,
+      "correction_pct": 10.3,
+      "verified_pct": 61.6,
+      "tier": "T1",
+      "agent_tiers": {
+        "archivist": "T1",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T1",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "scribe": "T0",
+        "verifier": "T0"
+      }
+    },
+    "API_ENDPOINT": {
+      "n": 198,
+      "human_pct": 0.0,
+      "correction_pct": 13.1,
+      "verified_pct": 69.2,
+      "tier": "T1",
+      "agent_tiers": {
+        "archivist": "T2",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T2",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "scribe": "T0",
+        "verifier": "T2"
+      }
+    },
+    "DETECTION_ALERT": {
+      "n": 266,
+      "human_pct": 0.0,
+      "correction_pct": 42.1,
+      "verified_pct": 57.5,
+      "tier": "T3",
+      "agent_tiers": {
+        "archivist": "T3",
+        "builder": "T1",
+        "unknown": "T1",
+        "designer": "T2",
+        "mechanic": "T1",
+        "orchestrator": "T1",
+        "researcher": "T3",
+        "scribe": "T3",
+        "verifier": "T2"
+      }
+    },
+    "UI_FRONTEND": {
+      "n": 290,
+      "human_pct": 0.0,
+      "correction_pct": 7.9,
+      "verified_pct": 60.3,
+      "tier": "T0",
+      "agent_tiers": {
+        "archivist": "T3",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "verifier": "T1"
+      }
+    },
+    "COORDINATION": {
+      "n": 108,
+      "human_pct": 0.0,
+      "correction_pct": 13.9,
+      "verified_pct": 44.4,
+      "tier": "T1",
+      "agent_tiers": {
+        "archivist": "T0",
+        "builder": "T1",
+        "unknown": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "scribe": "T0",
+        "verifier": "T2"
+      }
+    },
+    "GENERAL": {
+      "n": 23,
+      "human_pct": 0.0,
+      "correction_pct": 4.3,
+      "verified_pct": 56.5,
+      "tier": "T0",
+      "agent_tiers": {
+        "archivist": "T1",
+        "designer": "T0",
+        "researcher": "T0"
+      }
+    },
+    "DEPLOY_CONFIG": {
+      "n": 81,
+      "human_pct": 0.0,
+      "correction_pct": 17.3,
+      "verified_pct": 58.0,
+      "tier": "T1",
+      "agent_tiers": {
+        "builder": "T0",
+        "unknown": "T0",
+        "mechanic": "T1",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "verifier": "T0"
+      }
+    },
+    "PREDICTION_MODEL": {
+      "n": 58,
+      "human_pct": 0.0,
+      "correction_pct": 19.0,
+      "verified_pct": 55.2,
+      "tier": "T1",
+      "agent_tiers": {
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "orchestrator": "T0",
+        "researcher": "T3",
+        "verifier": "T1"
+      }
+    },
+    "PLANNING": {
+      "n": 107,
+      "human_pct": 0.0,
+      "correction_pct": 3.7,
+      "verified_pct": 53.3,
+      "tier": "T0",
+      "agent_tiers": {
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "verifier": "T0"
+      }
+    },
+    "ANALYSIS_CLASSIFY": {
+      "n": 16,
+      "human_pct": 0.0,
+      "correction_pct": 18.8,
+      "verified_pct": 31.2,
+      "tier": "T1",
+      "agent_tiers": {
+        "unknown": "T0",
+        "researcher": "T3"
+      }
+    },
+    "AUTONOMY_MEASURE": {
+      "n": 14,
+      "human_pct": 0.0,
+      "correction_pct": 28.6,
+      "verified_pct": 28.6,
+      "tier": "T2",
+      "agent_tiers": {
+        "designer": "T0",
+        "researcher": "T3"
+      }
+    }
+  },
+  "strict_stability": {
+    "SCRIPT": 100.0,
+    "AUDIT_INTEGRITY": 99.0,
+    "REPORT_TIMELINE": 100.0,
+    "TEST_VERIFY": 98.5,
+    "KB_DEFINITION": 56.5,
+    "TRACKING_METRIC": 100.0,
+    "BUG_FIX": 58.5,
+    "API_ENDPOINT": 97.5,
+    "DETECTION_ALERT": 90.0,
+    "UI_FRONTEND": 99.5,
+    "COORDINATION": 96.5,
+    "GENERAL": 99.5,
+    "DEPLOY_CONFIG": 98.5,
+    "PREDICTION_MODEL": 95.5,
+    "PLANNING": 100.0,
+    "ANALYSIS_CLASSIFY": 76.5,
+    "AUTONOMY_MEASURE": 59.0
+  },
+  "tolerant_stability": {
+    "SCRIPT": 100.0,
+    "AUDIT_INTEGRITY": 100.0,
+    "REPORT_TIMELINE": 100.0,
+    "TEST_VERIFY": 100.0,
+    "KB_DEFINITION": 100.0,
+    "TRACKING_METRIC": 100.0,
+    "BUG_FIX": 100.0,
+    "API_ENDPOINT": 100.0,
+    "DETECTION_ALERT": 100.0,
+    "UI_FRONTEND": 100.0,
+    "COORDINATION": 100.0,
+    "GENERAL": 100.0,
+    "DEPLOY_CONFIG": 100.0,
+    "PREDICTION_MODEL": 100.0,
+    "PLANNING": 100.0,
+    "ANALYSIS_CLASSIFY": 100.0,
+    "AUTONOMY_MEASURE": 99.0
+  },
+  "tier_disagreements": [
+    {
+      "task_type": "SCRIPT",
+      "agent_tiers": {
+        "archivist": "T1",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "scribe": "T1",
+        "verifier": "T1"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "AUDIT_INTEGRITY",
+      "agent_tiers": {
+        "archivist": "T1",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T1",
+        "researcher": "T2",
+        "scribe": "T0",
+        "verifier": "T1"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "REPORT_TIMELINE",
+      "agent_tiers": {
+        "archivist": "T1",
+        "builder": "T0",
+        "unknown": "T1",
+        "designer": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T1",
+        "scribe": "T1",
+        "verifier": "T1"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "TEST_VERIFY",
+      "agent_tiers": {
+        "archivist": "T1",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T1",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T1",
+        "scribe": "T0",
+        "verifier": "T1"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "KB_DEFINITION",
+      "agent_tiers": {
+        "archivist": "T0",
+        "unknown": "T1",
+        "designer": "T1",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T1",
+        "scribe": "T0",
+        "verifier": "T0"
+      },
+      "overall": "T0"
+    },
+    {
+      "task_type": "TRACKING_METRIC",
+      "agent_tiers": {
+        "archivist": "T2",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T1",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "scribe": "T1",
+        "verifier": "T0"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "BUG_FIX",
+      "agent_tiers": {
+        "archivist": "T1",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T1",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "scribe": "T0",
+        "verifier": "T0"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "API_ENDPOINT",
+      "agent_tiers": {
+        "archivist": "T2",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T2",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "scribe": "T0",
+        "verifier": "T2"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "DETECTION_ALERT",
+      "agent_tiers": {
+        "archivist": "T3",
+        "builder": "T1",
+        "unknown": "T1",
+        "designer": "T2",
+        "mechanic": "T1",
+        "orchestrator": "T1",
+        "researcher": "T3",
+        "scribe": "T3",
+        "verifier": "T2"
+      },
+      "overall": "T3"
+    },
+    {
+      "task_type": "UI_FRONTEND",
+      "agent_tiers": {
+        "archivist": "T3",
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "verifier": "T1"
+      },
+      "overall": "T0"
+    },
+    {
+      "task_type": "COORDINATION",
+      "agent_tiers": {
+        "archivist": "T0",
+        "builder": "T1",
+        "unknown": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "scribe": "T0",
+        "verifier": "T2"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "GENERAL",
+      "agent_tiers": {
+        "archivist": "T1",
+        "designer": "T0",
+        "researcher": "T0"
+      },
+      "overall": "T0"
+    },
+    {
+      "task_type": "DEPLOY_CONFIG",
+      "agent_tiers": {
+        "builder": "T0",
+        "unknown": "T0",
+        "mechanic": "T1",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "verifier": "T0"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "PREDICTION_MODEL",
+      "agent_tiers": {
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "orchestrator": "T0",
+        "researcher": "T3",
+        "verifier": "T1"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "PLANNING",
+      "agent_tiers": {
+        "builder": "T0",
+        "unknown": "T0",
+        "designer": "T0",
+        "mechanic": "T0",
+        "orchestrator": "T0",
+        "researcher": "T2",
+        "verifier": "T0"
+      },
+      "overall": "T0"
+    },
+    {
+      "task_type": "ANALYSIS_CLASSIFY",
+      "agent_tiers": {
+        "unknown": "T0",
+        "researcher": "T3"
+      },
+      "overall": "T1"
+    },
+    {
+      "task_type": "AUTONOMY_MEASURE",
+      "agent_tiers": {
+        "designer": "T0",
+        "researcher": "T3"
+      },
+      "overall": "T2"
+    }
+  ],
+  "AC": {
+    "n_types>=15": true,
+    "tolerant_stability>=70_all": true,
+    "disagreements>=3": true
+  }
+}
