@@ -1,0 +1,61 @@
+{
+  "pass": 11,
+  "fail": 0,
+  "checks": [
+    {
+      "name": "CSS: Card component styles",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Grid layout (4 per row at 1440px)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: 2 per row at 768px",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Status indicators (check/cross)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Agent name display",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Task text from rotation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Time assigned display",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Productive status (check/cross)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Text truncation for long tasks",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Integration: app.css imports maintenance-task-cards.css",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Integration: core.js loads maintenance-task-cards.js",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "pass": 18,
+  "fail": 0,
+  "checks": [
+    {
+      "name": "CSS: 400ms duration",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: ease-in-out timing",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: WORK mode bg tint (green)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: MAINTENANCE mode bg tint (amber)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: IDLE mode bg tint (grey)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: FLIP class with transform transition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: prefers-reduced-motion disables animation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: background-color transition on panels",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: FLIP technique (getBoundingClientRect)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: TRANSITION_MS = 400",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Reduced motion check",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Exposes window.fleetModeTransition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: ORDERS object with mode-specific orderings",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: transition() method exposed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Integration: app.css imports fleet-mode-transition.css",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Integration: core.js loads fleet-mode-transition.js",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Integration: ARIA module calls transition on mode change",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Batched read pattern (all getBoundingClientRect before writes)",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

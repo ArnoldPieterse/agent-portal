@@ -1,0 +1,61 @@
+{
+  "pass": 10,
+  "fail": 1,
+  "checks": [
+    {
+      "name": "CSS: Horizontal timeline container",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Colored segments (mode colors)",
+      "status": "FAIL",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Current mode glow/highlight",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Scrollable for 24h window",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Responsive at 768px (compresses)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Timeline rendering logic",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Timestamps displayed",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: 24h max window filter",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Current mode highlighted",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Integration: app.css imports mode-history-timeline.css",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Integration: core.js loads mode-history-timeline.js",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

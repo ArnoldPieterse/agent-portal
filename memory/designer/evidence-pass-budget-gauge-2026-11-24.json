@@ -1,0 +1,116 @@
+{
+  "pass": 22,
+  "fail": 0,
+  "checks": [
+    {
+      "name": "CSS: Circular gauge container",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: SVG sizing (120px)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Ring background stroke",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Ring fill with round linecap",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: 300ms animation on dashoffset",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Green level (<50%)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Amber level (50-80%)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Red level (>80%)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: prefers-reduced-motion disables transition",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Responsive at 768px (scales down)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "CSS: Center text positioning",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: SVG namespace used",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Circumference calculation (2*PI*r)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: strokeDasharray set",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: strokeDashoffset animated",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Color threshold logic (green<50, amber 50-80, red>80)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: aria-valuenow set",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: role=meter (or progressbar)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Numeric display (used/budget format)",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "JS: Exposes to window",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Integration: app.css imports pass-budget-gauge.css",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Integration: core.js loads pass-budget-gauge.js",
+      "status": "PASS",
+      "detail": ""
+    }
+  ]
+}

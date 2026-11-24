@@ -1,0 +1,39 @@
+{
+  "goal": "#6 Pass Budget Gauge",
+  "results": [
+    [
+      "svg-circle",
+      false
+    ],
+    [
+      "stroke-dashoffset",
+      true
+    ],
+    [
+      "color-green-low",
+      true
+    ],
+    [
+      "color-amber-mid",
+      true
+    ],
+    [
+      "color-red-high",
+      true
+    ],
+    [
+      "numeric-center",
+      true
+    ],
+    [
+      "aria-valuenow",
+      true
+    ],
+    [
+      "animation-fill",
+      true
+    ]
+  ],
+  "passed": 7,
+  "failed": 1
+}

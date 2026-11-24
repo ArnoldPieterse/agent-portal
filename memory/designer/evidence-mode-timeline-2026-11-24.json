@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-24",
+  "method": "static-analysis",
+  "files_checked": [
+    "ui/mode-history-timeline.js",
+    "ui/mode-history-timeline.css"
+  ],
+  "results": [
+    {
+      "name": "horizontal-layout",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "colored-segments",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "timestamps",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "24h-window",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "scrollable",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "current-mode-glow",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "responsive-768",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "icon-only-small",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "incremental-update",
+      "passed": true,
+      "detail": "poll path uses incrementalUpdate with appendChild"
+    }
+  ],
+  "summary": {
+    "passed": 9,
+    "failed": 0
+  }
+}

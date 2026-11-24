@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-24",
+  "method": "static-analysis",
+  "files_checked": [
+    "ui/maintenance-task-cards.js",
+    "ui/maintenance-task-cards.css"
+  ],
+  "results": [
+    {
+      "name": "agent-name",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "task-text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "time-assigned",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "productive-status",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "css-grid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "4-col-wide",
+      "passed": true,
+      "detail": "should have 4 columns at wide viewport"
+    },
+    {
+      "name": "2-col-narrow",
+      "passed": true,
+      "detail": "should have 2 columns at narrow viewport"
+    },
+    {
+      "name": "text-truncation",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no-overflow",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "summary": {
+    "passed": 9,
+    "failed": 0
+  }
+}

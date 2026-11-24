@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-24",
+  "method": "static-analysis (Playwright unavailable on host; test script written for future use)",
+  "files_checked": [
+    "ui/fleet-mode-aria.js",
+    "ui/fleet-mode-aria.css"
+  ],
+  "playwright_test": "memory/designer/test_fleet_mode_aria.py (written, not yet runnable)",
+  "results": [
+    {
+      "name": "aria-live-polite",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "role-status",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "aria-atomic",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "announce-text-pattern",
+      "passed": true,
+      "detail": "must concatenate 'Fleet entered ' + mode.toLowerCase() + ' mode'"
+    },
+    {
+      "name": "no-announce-initial-load",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "sr-hidden-visually",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "arrow-key-nav",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "enter-key-activates",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "escape-closes-panel",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "min-6-tabbable",
+      "passed": true,
+      "detail": "6 tabbable elements"
+    },
+    {
+      "name": "focus-moves-to-target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "prevent-default-arrows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "roving-tabindex-wraps",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "escape-exits-group",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no-negative-tabindex",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "contrast-badge-label",
+      "passed": true,
+      "detail": "ratio=14.05:1"
+    },
+    {
+      "name": "contrast-focus-ring",
+      "passed": true,
+      "detail": "ratio=4.13:1 (non-text)"
+    },
+    {
+      "name": "contrast-dot-WORK-green",
+      "passed": true,
+      "detail": "ratio=5.17:1"
+    },
+    {
+      "name": "contrast-dot-MAINT-amber",
+      "passed": true,
+      "detail": "ratio=6.96:1"
+    },
+    {
+      "name": "contrast-dot-IDLE-grey",
+      "passed": true,
+      "detail": "ratio=5.09:1"
+    },
+    {
+      "name": "reduced-motion-query",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "reduced-motion-disables-anim",
+      "passed": true,
+      "detail": "block content: .fm-badge-dot { animation: none !important;"
+    }
+  ],
+  "summary": {
+    "passed": 22,
+    "failed": 0
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "pass": 10,
+  "fail": 0,
+  "checks": [
+    {
+      "name": "CSS: MAINTENANCE mode layout rules",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: IDLE mode layout rules",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: Panel reorder (order property)",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: CSS animation for transition (<300ms)",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: No overflow at 768px",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Mode-specific panel ordering logic",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: IDLE hero state",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Applies data-fleet-mode attribute",
+      "status": "PASS"
+    },
+    {
+      "name": "Integration: app.css imports cockpit-mode-layout.css",
+      "status": "PASS"
+    },
+    {
+      "name": "Integration: core.js loads cockpit-mode-layout.js",
+      "status": "PASS"
+    }
+  ]
+}

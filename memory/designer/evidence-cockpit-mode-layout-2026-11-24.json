@@ -1,0 +1,11 @@
+{
+  "goal": "Mode-Specific Cockpit Layout (cycle-15 goal #1)",
+  "verified_at": "2026-11-24T12:07:40.610425",
+  "method": "static code analysis of cockpit-mode-layout.js + fleet-mode-transition.js + CSS",
+  "checks_passed": "9/9",
+  "files": [
+    "ui/cockpit-mode-layout.js",
+    "ui/cockpit-mode-layout.css",
+    "ui/fleet-mode-transition.js"
+  ]
+}
