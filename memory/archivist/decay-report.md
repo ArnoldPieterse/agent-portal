@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 10353 | flagged (<0.35): 0
+Leaves: 10358 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9775,6 +9775,7 @@ Leaves: 10353 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261125-024037.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-030005.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-041338.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-052455.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/cadence-adjuster-selftest-evidence.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/convergence-loadtest.md | 0 | 0 | n | 0.550 |
@@ -9800,8 +9801,10 @@ Leaves: 10353 | flagged (<0.35): 0
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autonomy-score.json | 0 | 0 | n | 0.550 |
+| memory/ops/cadence-changes.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/cadence-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-health.json | 0 | 0 | n | 0.550 |
+| memory/ops/cycle-closeout.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/cycle-duration-report.md | 0 | 0 | n | 0.550 |
 | memory/ops/cycle-duration-stats.json | 0 | 0 | n | 0.550 |
 | memory/ops/cycle-durations.jsonl | 0 | 0 | n | 0.550 |
@@ -9834,6 +9837,7 @@ Leaves: 10353 | flagged (<0.35): 0
 | memory/orchestrator/assist-researcher-cycle17-g1-cycle-history-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/autonomy_score.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/auto_priority.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/closeout-contract-evidence-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/complexity_scorer.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/cycle_estimator.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/draft-gate-results.json | 0 | 0 | n | 0.550 |
@@ -10264,6 +10268,7 @@ Leaves: 10353 | flagged (<0.35): 0
 | memory/verifier/designer-goal9-stale-claim-verification-2026-11-19.md | 6 | 3 | Y | 0.805 |
 | memory/synthesis/2026-11-14-r36-lane-closeout.md | 8 | 27 | n | 0.806 |
 | memory/ops/decision-log.jsonl | 1 | 13 | n | 0.808 |
+| memory/ops/cycle-closeout-contract.md | 0 | 2 | Y | 0.810 |
 | memory/builder/api_client_layer_increment1-2026-11-20.md | 5 | 3 | Y | 0.811 |
 | memory/builder/error_boundary_increment3-2026-11-20.md | 5 | 3 | Y | 0.811 |
 | memory/designer/goal1-interaction-system-live-2026-11-20.md | 5 | 3 | Y | 0.811 |
