@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 10 Verifier goals confirmed verified (goal #1 re-run: 3/3 PASS, 0.13s). Lane fully closed, no open work.
 - All 5 builder goals verified, selftests passing. Lane fully closed for cycle 16. No open work remains.
 - Ledger notes for goals 2-5 were misaligned with actual goal numbers; Mechanic re-ran selftests to confirm real evidence.
 - Designer completed Goal #1 (ARIA+Keyboard Nav) and Goal #2 (Mode Transition Animation with FLIP) in cockpit UI
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer lane 10/10 goals verified 202
 - Mechanic lane fully concluded: 10/10 goals verified (264/264 selftests), recorded in goal_ledger.py, no open work remains.
 - Goal file resets to placeholders on cycle transition; code in agent_portal.py was reverted by memory_mirror despite evidence of completion.
+- Verifier: all 10/10 goals verified this pass; 4 had stale markers (#2,#6,#9,#10) re-confirmed via fresh execution
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
