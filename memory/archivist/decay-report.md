@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 10314 | flagged (<0.35): 0
+Leaves: 10350 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9273,7 +9273,10 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/designer/evidence-budget-gauge-2026-11-24.json | 1 | 0 | n | 0.544 |
 | memory/designer/evidence-cockpit-mode-layout-2026-11-24.json | 1 | 0 | n | 0.544 |
 | memory/designer/evidence-cockpit-mode-layout-2026-11-24.md | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-convergence-dashboard-panel-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/designer/evidence-convergence-ring-2026-11-24.json | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-convergence-ring-widget-2026-11-24.md | 1 | 0 | n | 0.544 |
+| memory/designer/evidence-cycle-duration-forecast-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/designer/evidence-cycle15-wiring-pass-2026-11-24.json | 1 | 0 | n | 0.544 |
 | memory/designer/evidence-fleet-mode-aria-2026-11-24.json | 1 | 0 | n | 0.544 |
 | memory/designer/evidence-fleet-mode-aria-2026-11-24.md | 1 | 0 | n | 0.544 |
@@ -9337,6 +9340,7 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/designer/_read_gate.py | 1 | 0 | n | 0.544 |
 | memory/designer/_run_dbg.py | 1 | 0 | n | 0.544 |
 | memory/designer/_run_rx.py | 1 | 0 | n | 0.544 |
+| memory/designer/_ss_verify.py | 1 | 0 | n | 0.544 |
 | memory/designer/__pycache__/ui_a11y_test.cpython-315.pyc | 1 | 0 | n | 0.544 |
 | memory/designer/__pycache__/_js_dbg.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/designer/__pycache__/_js_rx.cpython-313.pyc | 1 | 0 | n | 0.544 |
@@ -9367,6 +9371,7 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/goals/archive/designer-2026-11-24-cycle16.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/designer-cycle14-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/designer-cycle15-2026-11-24.md | 1 | 0 | n | 0.544 |
+| memory/goals/archive/designer-cycle15-final-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/mechanic-2026-11-24-cycle15.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/mechanic-2026-11-24-cycle16.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/mechanic-2026-11-24.md | 1 | 0 | n | 0.544 |
@@ -9382,7 +9387,6 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/goals/archive/verifier-2026-11-24-cycle16.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier-cycle14-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier-cycle15-2026-11-24.md | 1 | 0 | n | 0.544 |
-| memory/goals/forecast/plans-history.jsonl | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261124-005723.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261124-015929.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261124-030002.json | 1 | 0 | n | 0.544 |
@@ -9506,7 +9510,6 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/mechanic/task_delivery.py | 1 | 0 | n | 0.544 |
 | memory/mechanic/test_fleet_mode_api.py | 1 | 0 | n | 0.544 |
 | memory/mechanic/transition_latency.py | 1 | 0 | n | 0.544 |
-| memory/mechanic/winrm_rotate_log.jsonl | 1 | 0 | n | 0.544 |
 | memory/mechanic/__pycache__/fleet_mode_api.cpython-315.pyc | 1 | 0 | n | 0.544 |
 | memory/mechanic/__pycache__/fleet_mode_infra.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/mechanic/__pycache__/winrm_pool.cpython-315.pyc | 1 | 0 | n | 0.544 |
@@ -9553,7 +9556,6 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/ops/mode-briefs.md | 1 | 0 | n | 0.544 |
 | memory/ops/mode-durations.json | 1 | 0 | n | 0.544 |
 | memory/ops/mode-forecast.json | 1 | 0 | n | 0.544 |
-| memory/ops/mode-forecasts.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/mode-narratives.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/mode-transitions.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/model-orchestrator-log.jsonl | 1 | 0 | n | 0.544 |
@@ -9724,13 +9726,11 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/verifier/mode-transition-external-verify-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/verifier/mode_schema_check.py | 1 | 0 | n | 0.544 |
 | memory/verifier/mode_transition_test.py | 1 | 0 | n | 0.544 |
-| memory/verifier/perf-report.md | 1 | 0 | n | 0.544 |
 | memory/verifier/productivity_validate.py | 1 | 0 | n | 0.544 |
 | memory/verifier/remediation-e2e-genuine-pass-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/verifier/remediation_e2e.py | 1 | 0 | n | 0.544 |
 | memory/verifier/remediation_e2e_results.jsonl | 1 | 0 | n | 0.544 |
 | memory/verifier/reroute_e2e_report.json | 1 | 0 | n | 0.544 |
-| memory/verifier/slo-history.jsonl | 1 | 0 | n | 0.544 |
 | memory/verifier/slo-report-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/verifier/stale-evidence-fix-runbook-trigger-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/verifier/_e2e_out.txt | 1 | 0 | n | 0.544 |
@@ -9748,13 +9748,33 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/verifier/__pycache__/fleet_health_closed_loop.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/verifier/__pycache__/goal_lifecycle_audit.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/archivist/knowledge-index.json | 0 | 0 | n | 0.550 |
+| memory/archivist/mode-anomalies.jsonl | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-autonomy-cards-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-calm-mode-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-complexity-heatmap-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-cycle-transition-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-intervention-timeline-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-metrics-export-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-steady-state-indicator-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-steady-state-indicator-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/designer/test_calm_mode.py | 0 | 0 | n | 0.550 |
+| memory/designer/test_complexity_heatmap.py | 0 | 0 | n | 0.550 |
+| memory/designer/test_convergence_ring.py | 0 | 0 | n | 0.550 |
+| memory/designer/test_cycle_forecast.py | 0 | 0 | n | 0.550 |
+| memory/designer/test_intervention_timeline.py | 0 | 0 | n | 0.550 |
+| memory/designer/test_steady_state_indicator.py | 0 | 0 | n | 0.550 |
 | memory/goals/calibration.json | 0 | 0 | n | 0.550 |
 | memory/goals/closed_topics.json | 0 | 0 | n | 0.550 |
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
 | memory/goals/next10.json | 0 | 0 | n | 0.550 |
+| memory/goals/forecast/plans-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-002119.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-013051.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-021423.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-024037.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-030005.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/auto-loop-pass-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/cadence-adjuster-selftest-evidence.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/convergence-loadtest.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/convergence_health.py | 0 | 0 | n | 0.550 |
@@ -9764,6 +9784,8 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/mechanic/decision_quality.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-predictive-seat-health-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-predictive-seat-health-cycle17.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/goal1-predictive-health-verified-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/predictive-seat-health-evidence.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/probe_cadence_adjuster.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/recovery_sla_summary.py | 0 | 0 | n | 0.550 |
@@ -9772,37 +9794,48 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/mechanic/vram-predictor-selftest-evidence.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/vram_headroom_predictor.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/vram_predictor.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autonomy-score.json | 0 | 0 | n | 0.550 |
 | memory/ops/cadence-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-health.json | 0 | 0 | n | 0.550 |
+| memory/ops/cycle-duration-report.md | 0 | 0 | n | 0.550 |
 | memory/ops/cycle-duration-stats.json | 0 | 0 | n | 0.550 |
 | memory/ops/cycle-durations.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/decision-quality.json | 0 | 0 | n | 0.550 |
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
+| memory/ops/efficiency-index.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-mode.json | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/host-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/human-interventions.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/mirror_cache.json | 0 | 0 | n | 0.550 |
+| memory/ops/mode-forecasts.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/mode-last-seen.json | 0 | 0 | n | 0.550 |
 | memory/ops/model-load.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/priority-ranking.json | 0 | 0 | n | 0.550 |
+| memory/ops/probe-cadence.json | 0 | 0 | n | 0.550 |
 | memory/ops/recovery-sla-summary.json | 0 | 0 | n | 0.550 |
 | memory/ops/recovery-times.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-state.json | 0 | 0 | n | 0.550 |
+| memory/ops/seat-latency-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/transition-gaps-summary.json | 0 | 0 | n | 0.550 |
+| memory/ops/transition-gaps.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/vram-backtest-nonlinear.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/vram-backtest-synthetic.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/vram-forecast.json | 0 | 0 | n | 0.550 |
 | memory/ops/vram-history.jsonl | 0 | 0 | n | 0.550 |
+| memory/orchestrator/assist-builder-convergence-endpoint-efficiency-index-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/assist-researcher-cycle17-g1-cycle-history-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/autonomy_score.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/auto_priority.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/complexity_scorer.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/cycle_estimator.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/draft-gate-results.json | 0 | 0 | n | 0.550 |
+| memory/orchestrator/efficiency-index-gen.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/goal_inheritance.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/inherited-goals.json | 0 | 0 | n | 0.550 |
 | memory/orchestrator/intervention_counter.py | 0 | 0 | n | 0.550 |
@@ -9811,6 +9844,9 @@ Leaves: 10314 | flagged (<0.35): 0
 | memory/orchestrator/__pycache__/auto_priority.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/__pycache__/steady_state_detector.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/researcher/cycle_history.json | 0 | 0 | n | 0.550 |
+| memory/verifier/perf-report.md | 0 | 0 | n | 0.550 |
+| memory/verifier/slo-history.jsonl | 0 | 0 | n | 0.550 |
+| memory/verifier/slo-report-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
 | memory/designer/MEMORY.md | 12 | 1 | n | 0.553 |
 | memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md | 10 | 1 | n | 0.564 |
