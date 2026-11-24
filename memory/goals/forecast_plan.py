@@ -303,6 +303,96 @@ def _why(it, lane_note):
     return "; ".join(parts)
 
 
+def _cap_done_day(e, gen):
+    """Completion day (from now) for one capability inventory entry; 0 = done."""
+    if not e or e.get("status") == "done":
+        return 0
+    m = re.search(r"~day (\d+)", e.get("desc") or "")
+    if m:
+        return max(0, int(m.group(1)))
+    eta = e.get("eta")
+    if eta:
+        try:
+            return max(0, int((datetime.strptime(eta, "%Y-%m-%d %H:%M") - gen).total_seconds() // 86400))
+        except Exception:
+            pass
+    return None
+
+
+def _derive_15d(outcomes, inv, gen):
+    """Derive the 15-day plan FROM the 30-day one: same outcomes clamped to days
+    0-15 and split into concrete steps (gates -> setup -> first delivery ->
+    stabilize). An outcome landing after day 15 appears as a 'prep' entry - the
+    gate work that must finish inside the window for the 30-day plan to hold.
+    Re-derived on every refresh from the same live inputs as the 30-day plan."""
+    H = 15
+    ramp_run = {n: (r, d) for n, _g, r, d, _l in OUTCOME_CATALOG}
+    end_by_name = {o2["name"]: o2.get("end_day") for o2 in outcomes}
+    out = []
+    for o in outcomes:
+        m = re.search(r"day (\d+)-(\d+)", o.get("window") or "")
+        cc = bool(o.get("cycle_closing"))
+        if not m:  # already done, or no window yet
+            done = o.get("status") == "done"
+            out.append({"name": o["name"], "parent": None,
+                        "window": "done" if done else "beyond 15d",
+                        "status": o.get("status", "?"), "cycle_closing": cc,
+                        "steps": ([{"days": "-", "text": "already reached - nothing to do in this window"}]
+                                  if done else [])})
+            continue
+        S, E = int(m.group(1)), int(m.group(2))
+        gnames = OUTCOME_GATES.get(o["name"], [])
+        gdescs = o.get("gates") or []
+        gi = []
+        for i, g in enumerate(gnames):
+            e = inv.get(g)
+            desc = gdescs[i] if i < len(gdescs) else None
+            if e:  # capability gate - live inventory status
+                gi.append((g, _cap_done_day(e, gen), e.get("status"), desc))
+            else:  # gate is another planned outcome - use its computed end day
+                gi.append((g, end_by_name.get(g), "planned outcome", desc))
+        mg = max([d for _g, d, _s, _v in gi if d is not None] or [0])
+        ramp, run = ramp_run.get(o["name"], (1, 3))
+        if S > H:  # lands later -> show the prep that must finish by day 15
+            st = []
+            for g, d, s, v in gi:
+                if s == "done":
+                    continue
+                when = ("by ~day %d" % min(d, H)) if d is not None else "before day %d" % H
+                st.append({"days": "day 0-%d" % min(max(d or H, 1), H),
+                           "text": "%s must be done %s" % ((v or g), when)})
+            if not st:
+                st.append({"days": "day 0-%d" % H, "text": "no gate work left - execution only (starts day %d)" % S})
+            out.append({"name": o["name"] + " - prep", "parent": o["name"], "window": "day 1-%d" % H,
+                        "status": "prep for day %d start" % S, "cycle_closing": cc, "steps": st})
+        else:
+            st = []
+            og = [(g, d, s, v) for g, d, s, v in gi if s != "done"]
+            if og:
+                st.append({"days": "day 0-%d" % min(mg, S), "text": "gates clear: " + "; ".join(
+                    (v if s == "planned outcome" else
+                     "%s by ~day %d%s" % (g, (d if d is not None else S), (" (%s)" % s) if s != "in-plan" else ""))
+                    for g, d, s, v in og)})
+            e15 = min(E, H)
+            se = min(S + max(ramp - 1, 0), e15)
+            if se >= S:
+                st.append({"days": "day %d-%d" % (S, se), "text": "setup + first runs of " + o["name"]})
+            mid = min(S + ramp, E)
+            if mid <= e15 and mid > se:
+                st.append({"days": "day %d" % mid, "text": "first real delivery (usable output)"})
+            if E > H:
+                st.append({"days": "day %d-%d" % (max(mid, S), H),
+                           "text": "stabilize - daily runs; continues to day %d of the 30-day plan" % E})
+            elif len(st) < 3:
+                st.append({"days": "day %d-%d" % (max(se + 1, S), e15),
+                           "text": "stabilize - daily runs through day %d" % e15})
+            out.append({"name": o["name"], "parent": None, "window": "day %d-%d" % (S, e15),
+                        "status": ("lands fully inside 15d" if E <= H
+                                   else "starts day %d, runs to day %d of the 30-day plan" % (S, E)),
+                        "cycle_closing": cc, "steps": st})
+    return out
+
+
 def build_plan(doc):
     """Return {cycle_state, level_up_eta, planned: [items with why], horizons: [...], tree: {...}}."""
     fleet = doc.get("fleet", {})
@@ -411,6 +501,7 @@ def build_plan(doc):
         first_free = min(datetime.strptime(e, "%Y-%m-%d %H:%M") for e in ends)
         free_day = max(0, int(math.ceil((first_free - gen).total_seconds() / 86400.0)))
     outcomes = _schedule_outcomes(inv, gen, free_day)
+    outcomes_15d = _derive_15d(outcomes, inv, gen)
     sig, delta, recent = _plan_history(outcomes, gen, pct)
     plan_meta = {"sig": sig,
                  "computed_at": gen.strftime("%Y-%m-%d %H:%M:%S"),
@@ -419,7 +510,8 @@ def build_plan(doc):
 
     return {"cycle_state": cycle_state, "level_up_eta": level_up_eta, "planned": planned,
             "horizons": horizons, "tree": tree,
-            "capability_chain": chain, "outcomes_30d": outcomes, "plan_meta": plan_meta}
+            "capability_chain": chain, "outcomes_30d": outcomes,
+            "outcomes_15d": outcomes_15d, "plan_meta": plan_meta}
 
 
 def load_plan():

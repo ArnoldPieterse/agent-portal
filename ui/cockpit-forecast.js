@@ -81,6 +81,21 @@ const ForecastPanel = (() => {
       });
       html += '</div>';
     }
+        if (plan.outcomes_15d && plan.outcomes_15d.length) {
+          html += '<div class="fc-pm fc-outcomes"><div class="fc-pm-title">15-day plan - detailed steps (derived from the 30-day plan)</div>';
+          plan.outcomes_15d.forEach(e => {
+            const parent = e.parent ? (' <span class="hint">&rarr; ' + e.parent + '</span>') : '';
+            html += '<div class="fc-outcome" title="' + (e.note || '') + '">' +
+              '<span class="fc-outcome-name">' + e.name + parent + '</span>' +
+              '<span class="fc-outcome-window">' + e.window + '</span>' +
+              '<span class="fc-outcome-status">' + e.status + '</span></div>';
+            (e.steps || []).forEach(s => {
+              html += '<div class="fc-outcome fc-step15"><span class="fc-outcome-window">' + s.days + '</span>' +
+                '<span class="fc-outcome-status">' + s.text + '</span></div>';
+            });
+          });
+          html += '</div>';
+        }
 
     container.innerHTML = html;
   }

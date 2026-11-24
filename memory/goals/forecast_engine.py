@@ -307,6 +307,15 @@ def _write_outputs(doc):
                     o["name"], close, o["window"], o["status"], o.get("lane", "?")))
                 if o.get("gates"):
                     L.append("  gates: " + "; ".join(o["gates"]))
+        o15 = plan.get("outcomes_15d")
+        if o15:
+            L += ["", "## 15-day plan - detailed steps (derived from the 30-day plan)", "",
+                  "Same outcomes clamped to days 0-15 and split into concrete steps; an outcome that lands later "
+                  "shows the prep work that must finish inside the window for the 30-day plan to hold.", ""]
+            for e in o15:
+                L.append("- **%s** - %s | %s" % (e["name"], e["window"], e["status"]))
+                for s in e.get("steps") or []:
+                    L.append("    * %s: %s" % (s["days"], s["text"]))
             if pm.get("history"):
                 L += ["", "plan history (oldest -> newest): " +
                       ", ".join("%s @ %s" % (e["sig"], e["ts"][5:]) for e in pm["history"][-4:])]

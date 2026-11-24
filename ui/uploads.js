@@ -436,6 +436,16 @@ async function goalsLoad(){
         ph+='</div>';
         h+=ph;
       }
+            if(_plan.outcomes_15d&&_plan.outcomes_15d.length){
+              let p15='<div class="fc-pm" style="margin-top:6px"><div class="topic-k">15-day plan - detailed steps (derived from 30-day)</div>';
+              p15+='<div class="fc-outc">'+_plan.outcomes_15d.map(e=>{
+                const parent=e.parent?' <span class="hint">&rarr; '+esc(e.parent)+'</span>':'';
+                let s='<div class="fc-oc"><b>'+esc(e.name)+'</b>'+parent+' <span class="hint">'+esc(e.window)+' &middot; '+esc(e.status)+'</span></div>';
+                (e.steps||[]).forEach(st=>{s+='<div class="hint" style="margin:2px 0 2px 10px">&bull; '+esc(st.days)+': '+esc(st.text)+'</div>';});
+                return s;
+              }).join("")+'</div></div>';
+              h+=p15;
+            }
       const _ends=Object.values(fc.lanes||{}).map(l=>l.end).filter(Boolean);
       if(_ends.length)h+='<div class="hint" style="margin-top:6px">level-up (all goals 100%) ETA: '+esc(_ends.sort().slice(-1)[0])+'</div>';
       h+='</div>';
