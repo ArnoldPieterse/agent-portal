@@ -1,0 +1,41 @@
+{
+ "generated": "2026-11-24T11:01:26.811099+00:00",
+ "mode": "WORK",
+ "entries": [
+  {
+   "agent": "verifier",
+   "task": "Mode Transition Integration Test",
+   "kind": "goal"
+  },
+  {
+   "agent": "builder",
+   "task": "Idle Task Injector",
+   "kind": "goal"
+  },
+  {
+   "agent": "designer",
+   "task": "Fleet Mode ARIA + Keyboard Nav",
+   "kind": "goal"
+  },
+  {
+   "agent": "archivist",
+   "task": "Mode Transition Anomaly Log",
+   "kind": "goal"
+  },
+  {
+   "agent": "designer",
+   "task": "Mode Transition Animation",
+   "kind": "goal"
+  },
+  {
+   "agent": "verifier",
+   "task": "fleet-mode.json Schema Validator",
+   "kind": "goal"
+  },
+  {
+   "agent": "builder",
+   "task": "Cockpit Mode Banner",
+   "kind": "goal"
+  }
+ ]
+}

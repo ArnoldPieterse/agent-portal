@@ -210,6 +210,19 @@ def main():
             f.write(json.dumps(transition_entry) + "\n")
         if verbose:
             print(f"  Transition: {prev_mode} -> {mode}")
+        # Mode Transition Narrative (Scribe goal 1): auto-generate on change
+        try:
+            import importlib.util as _il
+            _sp = importlib.util.spec_from_file_location(
+                "mode_narrative", str(BASE / "memory" / "scribe" / "mode_narrative.py"))
+            _mn = importlib.util.module_from_spec(_sp)
+            _sp.loader.exec_module(_mn)
+            _narr = _mn.generate_narrative(transition_entry)
+            _mn._append_jsonl(_mn.NARRATIVES, [{
+                "ts": now_iso, "from_mode": prev_mode, "to_mode": mode,
+                "narrative": _narr}])
+        except Exception:
+            pass
 
     if as_json:
         print(json.dumps(result, indent=2))

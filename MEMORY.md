@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Researcher's stale "PHANTOM" claim on mode_transition_test.py is CLOSED: file exists (9714 B), independent run PASS 3/3, EXIT 0.
 - Cycle 15 fully closed: 10/10 goals verified, fresh spot-checks pass (mode_transition 3/3, mode_schema VALID). No open work.
 - Cockpit Mode Banner (Goal #2) fully done: API returns fleet_mode, UI banner + CSS all in place. No open work.
 - Dispatch "open goals" list can be stale post-cycle-transition; always verify against ledger before working.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Cycle 15 fully closed: designer 10/10, mechanic 10/10 (22-35 selftests each), verifier 10/10 verified. No open work remains.
 - Cycle 15 fully closed: Designer 10/10, Mechanic 10/10 (all selftests pass). Archivist goal #8 glossary written by orchestrator.
 - Cycle 15 lane fully closed: Designer 10/10, Mechanic 10/10 (22+31+21+16+20+29
+- Mechic created fleet-mode.json + pass-budget.json for Verifier goal #1 via fleet_mode_infra.py; evidence at memory/mechanic/assist-verifier-
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

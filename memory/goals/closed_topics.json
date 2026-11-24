@@ -1768,5 +1768,47 @@
 "text": "**Pass Budget Enforcer** - `python memory/builder/pass_budget.py`: read pass-budget.json; increment counter on each dispatch; when counter >",
 "agent": "builder",
 "at": "2026-11-24"
+},
+{
+"sig": "61d16a7facaf8d99",
+"text": "**Cross-Agent Handoff Summary** - When goals re-route between seats (due to unavailability), generate a context summary for the receiving ag",
+"agent": "scribe",
+"at": "2026-11-24"
+},
+{
+"sig": "66f8c3a2063ff6d7",
+"text": "**Anomaly Narrative Generator** - `python memory/scribe/anomaly_narrative.py`: when any fleet metric deviates >2\u03c3 from 30-day baseline, gene",
+"agent": "scribe",
+"at": "2026-11-24"
+},
+{
+"sig": "dfaddcbc341695eb",
+"text": "**Fleet State Snapshot (Daily)** - `python memory/scribe/daily_snapshot.py`: generate a 10-line human-readable snapshot of fleet state: mode",
+"agent": "scribe",
+"at": "2026-11-24"
+},
+{
+"sig": "6449052e9d982cc8",
+"text": "**Convergence Velocity Briefing** - Per cycle: 3-sentence briefing on convergence speed: \"Cycle N reached 100% in X hours using Y passes (Z ",
+"agent": "scribe",
+"at": "2026-11-24"
+},
+{
+"sig": "63e7ca7bad8f8e18",
+"text": "**Mode-Aware Dispatch Filter** - `python memory/builder/dispatch_filter.py`: given fleet_mode + next10.json, produce the dispatch list. In W",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "bbc196b337b7e076",
+"text": "**Goal Status Propagator** - `python memory/builder/status_propagator.py`: when a goal is marked reached (detected via goal_ledger.py), prop",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "b819e2bc65c075a0",
+"text": "**Cycle Transition Script** - `python memory/builder/cycle_transition.py`: automate the full cycle close sequence: (a) verify 100% completio",
+"agent": "builder",
+"at": "2026-11-24"
 }
 ]

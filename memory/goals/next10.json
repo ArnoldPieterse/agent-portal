@@ -4,7 +4,8 @@
  "fleet": {
   "done": 38,
   "total": 80,
-  "pct": 47.5
+  "pct": 47.5,
+  "open_next10": 7
  },
  "throughput_goals_per_hour": 30.0,
  "next10": [
@@ -127,7 +128,8 @@
     "builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 06:39) - shared scope atomic,rename,write",
     "mechanic: **Cycle Transition Automation (Ops)** - `python memory/mecha (2026-11-25 13:04) - shared scope infra,mechanic",
     "lane end scribe: 11-26 09:25 (slowest lane)"
-   ]
+   ],
+   "reached": true
   },
   {
    "agent": "scribe",
@@ -152,7 +154,8 @@
     "archivist: **Cycle Retro Auto-Archiver** - `python memory/archivist/ret (2026-11-25 14:53) - shared scope blockers,close,completed",
     "verifier: **Cycle Transition Rollback Test** - `python memory/verifier (2026-11-25 15:51) - shared scope cycle,goals",
     "lane end scribe: 11-26 09:25 (slowest lane)"
-   ]
+   ],
+   "reached": true
   },
   {
    "agent": "designer",
@@ -249,7 +252,8 @@
     "scribe: **Mode Decision Brief** - For each mode transition, write a  (2026-11-25 06:31) - shared scope current,write",
     "designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 07:20) - shared scope budget,cycle",
     "lane end scribe: 11-26 09:25 (slowest lane)"
-   ]
+   ],
+   "reached": true
   }
  ],
  "horizons": [
@@ -1464,5 +1468,6 @@
     }
    ]
   }
- }
+ },
+ "propagated_at": "2026-11-24T11:01:26.803963+00:00"
 }

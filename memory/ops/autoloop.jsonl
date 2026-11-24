@@ -3,3 +3,5 @@
 {"timestamp": "2026-11-24T10:49:40.613625+00:00", "agent": "Verifier", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
 {"timestamp": "2026-11-24T10:49:40.623542+00:00", "agent": "Designer", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
 {"timestamp": "2026-11-24T10:49:40.649184+00:00", "agent": "Orchestrator", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-24T11:05:42.123710+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-24T11:05:42.133711+00:00", "agent": "Mechanic", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}

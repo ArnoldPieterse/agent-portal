@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
-"""Idle Pass Daily Digest (Scribe goal #3, cycle 15).
+"""Idle Pass Daily Digest (Scribe goal 3, cycle 15).
 
-At end of each day, summarizes idle passes:
-- Total idle passes
-- Tasks assigned (by agent)
-- Productive rate
-- Top 3 waste sources (most frequent non-productive task types)
-
-Usage: python memory/scribe/idle_digest.py [--date YYYY-MM-DD] [--simulate N]
+At end of day, summarizes idle passes from autoloop.jsonl:
+total idle passes, tasks by agent, productive rate, top-3 waste sources.
 Output: memory/ops/idle-digest-{date}.md
 """
 import json
@@ -17,150 +12,99 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent.parent.parent
-AUTOLOOP = BASE / "memory" / "ops" / "autoloop.jsonl"
-OPS_DIR = BASE / "memory" / "ops"
+LOG = BASE / "memory" / "ops" / "autoloop.jsonl"
+OUT_DIR = BASE / "memory" / "ops"
 
 
-def load_passes(date_str: str) -> list[dict]:
-    """Load passes from autoloop.jsonl for a given date."""
-    if not AUTOLOOP.exists():
-        return []
+def load_passes(log_path=None):
+    lp = Path(log_path) if log_path else LOG
     out = []
-    decoder = json.JSONDecoder()
-    for line in AUTOLOOP.read_text(encoding="utf-8").splitlines():
+    if not lp.exists():
+        return out
+    for line in lp.read_text(encoding="utf-8").splitlines():
         line = line.strip()
         if not line:
             continue
-        idx = 0
-        while idx < len(line):
-            try:
-                obj, end = decoder.raw_decode(line, idx)
-                out.append(obj)
-                idx = end
-                while idx < len(line) and line[idx] in ' \t':
-                    idx += 1
-            except json.JSONDecodeError:
-                break
-    # Filter by date
-    filtered = []
-    for p in out:
-        ts = p.get("ts", "")
-        if ts.startswith(date_str):
-            filtered.append(p)
-    return filtered
+        try:
+            out.append(json.loads(line))
+        except Exception:
+            pass
+    return out
 
 
-def generate_digest(passes: list[dict], date_str: str) -> str:
-    """Generate the idle digest markdown."""
-    total = len(passes)
-    if total == 0:
-        return f"# Idle Digest {date_str}\n\nNo idle passes recorded.\n"
+def idle_passes(passes, date_str=None):
+    ds = date_str or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    sel = []
+    for r in passes:
+        ts = r.get("ts", "")
+        if not ts.startswith(ds):
+            continue
+        if (r.get("task_type") or "").upper() == "IDLE":
+            sel.append(r)
+    return sel
 
-    # Classify passes
-    productive = [p for p in passes if p.get("productive", False)]
-    non_productive = [p for p in passes if not p.get("productive", False)]
-    rate = (len(productive) / total * 100) if total > 0 else 0
 
-    # Tasks by agent
-    by_agent = Counter(p.get("agent", "unknown") for p in passes)
-
-    # Waste sources: task types of non-productive passes
-    waste_types = Counter(p.get("task_type", "generic_menu") for p in non_productive)
-    top3_waste = waste_types.most_common(3)
-
-    lines = []
-    lines.append(f"# Idle Digest {date_str}")
-    lines.append("")
-    lines.append(f"**Total idle passes:** {total}")
-    lines.append(f"**Productive:** {len(productive)} ({rate:.0f}%)")
-    lines.append(f"**Non-productive:** {len(non_productive)}")
-    lines.append("")
-
-    lines.append("## Tasks by Agent")
-    lines.append("")
-    for agent, count in by_agent.most_common():
-        prod_count = sum(1 for p in passes if p.get("agent") == agent and p.get("productive"))
-        lines.append(f"- {agent}: {count} passes ({prod_count} productive)")
-    lines.append("")
-
-    lines.append("## Top 3 Waste Sources")
-    lines.append("")
-    if top3_waste:
-        for i, (wtype, count) in enumerate(top3_waste, 1):
-            lines.append(f"{i}. {wtype} ({count} occurrences)")
+def build_digest(passes, date_str):
+    idle = idle_passes(passes, date_str)
+    total = len(idle)
+    prod = sum(1 for r in idle if r.get("productive"))
+    rate = (prod / total * 100) if total else 0.0
+    by_agent = Counter(r.get("agent", "?") for r in idle)
+    waste = Counter((r.get("task_text") or "unknown")[:60]
+                    for r in idle if not r.get("productive"))
+    top3 = waste.most_common(3)
+    L = ["# Idle Pass Digest - %s" % date_str, ""]
+    L.append("Total idle passes: **%d** (productive: %d, rate %.0f%%)" % (total, prod, rate))
+    L.append("")
+    L.append("## Tasks by agent")
+    L.append("")
+    for ag, n in by_agent.most_common():
+        L.append("- %s: %d" % (ag, n))
+    L.append("")
+    L.append("## Top 3 waste sources (non-productive)")
+    L.append("")
+    if top3:
+        for txt, n in top3:
+            L.append("- %s x%d" % (txt, n))
     else:
-        lines.append("- No waste sources (all passes productive)")
-    lines.append("")
-
-    # Per-pass detail
-    lines.append("## All Passes")
-    lines.append("")
-    for i, p in enumerate(passes, 1):
-        agent = p.get("agent", "?")
-        task = p.get("task_type", "generic_menu")
-        prod = "Y" if p.get("productive") else "N"
-        ts = p.get("ts", "")[11:16]  # HH:MM
-        lines.append(f"{i}. {ts} {agent}: {task} [{prod}]")
-    lines.append("")
-
-    return "\n".join(lines)
-
-
-def simulate(n: int, date_str: str) -> list[dict]:
-    """Generate synthetic idle passes for testing."""
-    import random
-    agents = ["orchestrator", "researcher", "verifier", "scribe", "designer", "builder", "archivist", "mechanic"]
-    task_types = ["generic_menu", "stale_claim_scan", "file_cleanup", "kb_reindex", "log_rotation", "none"]
-    random.seed(42)
-    passes = []
-    for i in range(n):
-        hour = 8 + (i % 12)
-        minute = (i * 7) % 60
-        ts = f"{date_str}T{hour:02d}:{minute:02d}:00Z"
-        agent = random.choice(agents)
-        task = random.choice(task_types)
-        # 60% productive rate
-        prod = random.random() < 0.6
-        passes.append({
-            "ts": ts,
-            "agent": agent,
-            "task_type": task,
-            "productive": prod,
-        })
-    return passes
+        L.append("- none - all idle passes were productive")
+    L.append("")
+    return "\n".join(L), {"total": total, "prod": prod, "rate": rate,
+                           "by_agent": dict(by_agent), "top3": top3}
 
 
 def main():
-    date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    simulate_count = 0
-
+    date_str = None
     if "--date" in sys.argv:
-        idx = sys.argv.index("--date")
-        if idx + 1 < len(sys.argv):
-            date_str = sys.argv[idx + 1]
+        i = sys.argv.index("--date")
+        if i + 1 < len(sys.argv):
+            date_str = sys.argv[i + 1]
+    ds = date_str or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    report, stats = build_digest(load_passes(), ds)
+    out = OUT_DIR / ("idle-digest-%s.md" % ds)
+    out.write_text(report, encoding="utf-8")
+    print("Idle digest written to: %s (total=%d)" % (out.name, stats["total"]))
 
-    if "--simulate" in sys.argv:
-        idx = sys.argv.index("--simulate")
-        if idx + 1 < len(sys.argv):
-            simulate_count = int(sys.argv[idx + 1])
 
-    if simulate_count > 0:
-        print(f"[simulate] generating {simulate_count} synthetic idle passes...")
-        passes = simulate(simulate_count, date_str)
-    else:
-        passes = load_passes(date_str)
-
-    digest = generate_digest(passes, date_str)
-
-    OPS_DIR.mkdir(parents=True, exist_ok=True)
-    out_path = OPS_DIR / f"idle-digest-{date_str}.md"
-    out_path.write_text(digest, encoding="utf-8")
-
-    print(f"[idle_digest] wrote {out_path.relative_to(BASE)} ({len(digest)} bytes)")
-    total = len(passes)
-    prod = sum(1 for p in passes if p.get("productive"))
-    print(f"  Total: {total}, Productive: {prod} ({(prod/total*100) if total else 0:.0f}%)")
-
+def selftest():
+    d = "2099-01-05"
+    recs = []
+    for i in range(20):
+        ag = "a%d" % (i % 4)
+        prod = (i % 5 != 0)
+        task = "waste-%d" % (i % 3) if not prod else "ok-task"
+        recs.append({"ts": d + "T%02d:00:00+00:00" % i, "agent": ag,
+                     "task_type": "IDLE", "task_text": task,
+                     "productive": prod, "duration_ms": 100})
+    rep, st = build_digest(recs, d)
+    ok = (st["total"] == 20 and st["prod"] == 16 and abs(st["rate"] - 80.0) < 0.01)
+    ok &= (st["by_agent"].get("a0") == 5)
+    ok &= ("Total idle passes: **20**" in rep)
+    print("Result: %s" % ("PASS" if ok else "FAIL"))
+    return ok
 
 if __name__ == "__main__":
+    import sys as _s
+    if "--selftest" in _s.argv:
+        sys.exit(0 if selftest() else 1)
     main()
