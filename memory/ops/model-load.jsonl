@@ -855,3 +855,4 @@
 {"ts": "2026-11-24 19:03:15", "run": "g-1a20ccb8bb2-a65fa2", "missing": {"Orchestrator": "unreachable", "Scribe": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-24 19:06:02", "run": "g-1a20cce15ce-de347c", "missing": {"Scribe": "unreachable", "Archivist": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-24 19:09:17", "run": "g-1a20cd11005-27f694", "missing": {"Scribe": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
+{"ts": "2026-11-24 19:25:17", "run": "g-1a20cdfb6d0-d21608", "missing": {"Scribe": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}

@@ -15,8 +15,15 @@ import os
 import sys
 import tempfile
 import re
+import time
 from datetime import datetime, timezone
 from pathlib import Path
+
+try:
+    import msvcrt  # Windows file locking
+    _HAS_MSVCRT = True
+except ImportError:
+    _HAS_MSVCRT = False
 
 VALID_MODES = {"WORK", "MAINTENANCE", "IDLE"}
 ISO8601_RE = re.compile(
@@ -90,21 +97,59 @@ def validate_fleet_mode(data: dict) -> None:
         raise FleetModeSchemaError(f"note must be a string, got {type(data['note']).__name__}")
 
 
-def atomic_write_fleet_mode(path: str, data: dict) -> None:
+def _acquire_lock(lock_path: str, timeout: float = 5.0):
+    """Acquire an exclusive lock on lock_path using msvcrt (Windows).
+    
+    Returns the file object holding the lock (caller must close it to release).
+    Raises TimeoutError if lock cannot be acquired within timeout seconds.
+    """
+    if not _HAS_MSVCRT:
+        # Fallback: no locking on non-Windows (POSIX rename is atomic anyway)
+        return None
+    
+    lock_file = open(lock_path, 'w')
+    deadline = time.monotonic() + timeout
+    while True:
+        try:
+            msvcrt.locking(lock_file.fileno(), msvcrt.LK_NBLCK, 1)
+            return lock_file
+        except OSError:
+            if time.monotonic() >= deadline:
+                lock_file.close()
+                raise TimeoutError(f"Could not acquire lock on {lock_path} within {timeout}s")
+            time.sleep(0.01)
+
+
+def _release_lock(lock_file):
+    """Release and close a lock file acquired by _acquire_lock."""
+    if lock_file is None:
+        return
+    try:
+        msvcrt.locking(lock_file.fileno(), msvcrt.LK_UNLCK, 1)
+    except OSError:
+        pass
+    lock_file.close()
+
+
+def atomic_write_fleet_mode(path: str, data: dict, timeout: float = 5.0) -> None:
     """Atomically write fleet-mode.json using write-to-temp + os.rename.
 
     Steps:
       1. Validate schema (raises FleetModeSchemaError on failure)
-      2. Create temp file in same directory as target
-      3. Write JSON to temp file, flush + fsync
-      4. os.rename(temp, target) - atomic on POSIX and Windows (same volume)
+      2. Acquire exclusive file lock (msvcrt.locking on Windows)
+      3. Create temp file in same directory as target
+      4. Write JSON to temp file, flush + fsync
+      5. os.replace(temp, target) - atomic on POSIX and Windows (same volume)
+      6. Release lock
 
     Args:
         path: target file path for fleet-mode.json
         data: dict conforming to fleet-mode schema
+        timeout: max seconds to wait for lock (default 5.0)
 
     Raises:
         FleetModeSchemaError: if data fails validation
+        TimeoutError: if lock cannot be acquired within timeout
         OSError: if filesystem operations fail
     """
     validate_fleet_mode(data)
@@ -112,25 +157,30 @@ def atomic_write_fleet_mode(path: str, data: dict) -> None:
     target = Path(path)
     target.parent.mkdir(parents=True, exist_ok=True)
 
-    # Write to temp file in same directory (same filesystem for atomic rename)
-    fd, tmp_path = tempfile.mkstemp(
-        dir=str(target.parent), prefix=".fleet_mode_", suffix=".tmp"
-    )
+    lock_path = str(target) + ".lock"
+    lock_file = _acquire_lock(lock_path, timeout=timeout)
     try:
-        with os.fdopen(fd, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-            f.write("\n")
-            f.flush()
-            os.fsync(f.fileno())
-        # Atomic rename (same directory = same volume on all supported OSes)
-        os.replace(tmp_path, str(target))
-    except BaseException:
-        # Clean up temp file on any failure
+        # Write to temp file in same directory (same filesystem for atomic rename)
+        fd, tmp_path = tempfile.mkstemp(
+            dir=str(target.parent), prefix=".fleet_mode_", suffix=".tmp"
+        )
         try:
-            os.unlink(tmp_path)
-        except OSError:
-            pass
-        raise
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, ensure_ascii=False)
+                f.write("\n")
+                f.flush()
+                os.fsync(f.fileno())
+            # Atomic rename (same directory = same volume on all supported OSes)
+            os.replace(tmp_path, str(target))
+        except BaseException:
+            # Clean up temp file on any failure
+            try:
+                os.unlink(tmp_path)
+            except OSError:
+                pass
+            raise
+    finally:
+        _release_lock(lock_file)
 
 
 def read_fleet_mode(path: str) -> dict:
@@ -232,7 +282,29 @@ def selftest() -> bool:
         atomic_write_fleet_mode(str(target), d)
         check(f"mode {m} accepted", read_fleet_mode(str(target))["mode"] == m)
 
-    # Test 8: Overwrite works (second write replaces first)
+    # Test 8: Concurrency - 10 threads write simultaneously, file must be valid JSON at end
+    import threading
+    errors = []
+    def _worker(i):
+        try:
+            d = {"mode": "WORK", "timestamp": f"2026-11-24T10:{i:02d}:00Z", "goal_pct": float(i)}
+            atomic_write_fleet_mode(str(target), d)
+        except Exception as e:
+            errors.append(e)
+    threads = [threading.Thread(target=_worker, args=(i,)) for i in range(10)]
+    for t in threads: t.start()
+    for t in threads: t.join(timeout=30)
+    check("concurrent: no errors", len(errors) == 0)
+    # File must be valid JSON after concurrent writes
+    try:
+        final = json.loads(target.read_text(encoding='utf-8'))
+        check("concurrent: file is valid JSON", True)
+        check("concurrent: mode is valid", final["mode"] in VALID_MODES)
+    except (json.JSONDecodeError, KeyError):
+        check("concurrent: file is valid JSON", False)
+        check("concurrent: mode is valid", False)
+
+    # Test 8b: Overwrite works (second write replaces first)
     atomic_write_fleet_mode(str(target), {"mode": "MAINTENANCE", "timestamp": "2026-11-24T13:00:00Z", "goal_pct": 95.0})
     check("overwrite works", read_fleet_mode(str(target))["mode"] == "MAINTENANCE")
 

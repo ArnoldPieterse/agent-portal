@@ -2,6 +2,7 @@
 Last updated: 2026-11-24.
 
 ## Entries
+- 2026-11-24 (auto-loop assist): Added msvcrt locking + 10-thread concurrency test to memory/mechanic/fleet_mode_infra.py (Mechanic goal 1). Selftest 22/22 PASS. Handoff: memory/handoffs/orchestrator-to-mechic-fleet-mode-locking-2026-11-24.md
 - Cycle-15 goal 10 reached 2026-11-24 (auto-loop): cycle_skeleton.py generates next-cycle proposal skeleton from completed goals + decision patterns + topic queue; verified: 10 stubs, 0 dups vs closed_topics
 - Cycle-15 progress 2026-11-24 (auto-loop pass): goals 8,9 reached: _fleet_context_block() in agent_portal.py (mode+goals injected into prompts), productive_pass_gate.py (mtime-delta productivity check, 3/3 tests pass)
 - Cycle-15 progress 2026-11-24 (auto-loop) -> goals 2,3,4,7 reached: dispatch_sync.py (queue reconciler), idle-maintenance-rotation.md (8x5 verified), fleet_mode.py transition logging added, seat_router.py + seat-routing-map.json (re-route verified)
