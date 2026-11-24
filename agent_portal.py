@@ -1053,6 +1053,633 @@ def _restore_merge_queue(body):
             "committed": c["ok"] and "nothing to commit" not in combined}
 
 
+# ---------------------------------------------------------------- Portal API request queue (2026-11-25)
+# Every agent gets file/terminal API access for the files the portal lists. Agents emit
+# [[PORTAL-API]] blocks in their replies (one JSON call per line); the portal executes them
+# when the turn ends. MUTATING calls are QUEUED as pending requests and only take effect on
+# approval (human via the Requests panel, or an agent listed under "approvers" in the config).
+# READ calls run synchronously. Results ride back to the calling agent on its next turn
+# (PORTAL API RESULTS block, UMQ-style). Full reference: memory/portal/api-reqs.md.
+APIQ_FILE = os.path.join(HERE, "memory", "ops", "api-reqs.json")
+APIQ_AUDIT = os.path.join(HERE, "memory", "ops", "api-reqs.jsonl")
+APIQ_RESULTS = os.path.join(HERE, "memory", "ops", "api-results.json")
+APIQ_CONFIG = os.path.join(HERE, "memory", "ops", "api-reqs-config.json")
+APIQ_LOCK = threading.RLock()
+APIQ_MAX_PENDING_PER_AGENT = 25   # spam guard: per-agent pending cap
+APIQ_MAX_CALLS_PER_REPLY = 5      # max [[PORTAL-API]] calls executed per reply
+APIQ_CHANGE_CHARS = 200_000       # max total chars in linesToReplace
+APIQ_CREATE_CHARS = 400_000       # max content for reqCreateFile
+APIQ_CMD_CHARS = 2000             # max terminal command length
+APIQ_READ_BYTES = 16384           # sync read cap per call (use range to page)
+APIQ_TERM_TIMEOUT_S = 120         # terminal execution timeout
+APIQ_OUT_CHARS = 8000             # captured stdout/stderr cap
+APIQ_LIST_CAP = 4000              # listPortalFiles cap (matches /api/manifest)
+APIQ_BLOCK_RE = re.compile(r"\[\[PORTAL-API\]\](.*?)\[\[/PORTAL-API\]\]", re.S)
+APIQ_KINDS = ("change", "create", "delete", "terminal")
+
+
+def _apiq_load():
+    try:
+        with open(APIQ_FILE, encoding="utf-8") as fh:
+            d = json.load(fh)
+        if isinstance(d, dict) and isinstance(d.get("requests"), dict):
+            return d
+    except Exception:
+        pass
+    return {"seq": 0, "requests": {}}
+
+
+def _apiq_save(d):
+    os.makedirs(os.path.dirname(APIQ_FILE), exist_ok=True)
+    tmp = APIQ_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(d, fh, ensure_ascii=False)
+    os.replace(tmp, APIQ_FILE)
+
+
+def _apiq_audit(ev):
+    """Append-only audit trail (jsonl) - survives restarts, auto-committed with memory/."""
+    try:
+        os.makedirs(os.path.dirname(APIQ_AUDIT), exist_ok=True)
+        ev = dict(ev)
+        ev.setdefault("ts", time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()))
+        with open(APIQ_AUDIT, "a", encoding="utf-8") as fh:
+            fh.write(json.dumps(ev, ensure_ascii=False) + "\n")
+    except Exception:
+        pass
+
+
+def _apiq_config():
+    """{approvers: [agent names allowed to approveReq/rejectReq]}. Default: humans only."""
+    try:
+        with open(APIQ_CONFIG, encoding="utf-8") as fh:
+            d = json.load(fh)
+        if isinstance(d, dict) and isinstance(d.get("approvers"), list):
+            return d
+    except Exception:
+        pass
+    return {"approvers": []}
+
+
+def _apiq_now():
+    return time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+
+def _apiq_get(d, req_id):
+    r = d["requests"].get(req_id)
+    return r if isinstance(r, dict) else None
+
+
+def _apiq_add_request(agent, kind, payload, note=""):
+    """Create a PENDING request. Returns (req_dict, error_str)."""
+    with APIQ_LOCK:
+        d = _apiq_load()
+        if kind not in APIQ_KINDS:
+            return None, "unknown kind: %s" % kind
+        pending_n = sum(1 for r in d["requests"].values() if r.get("status") == "pending")
+        if pending_n >= APIQ_MAX_PENDING_PER_AGENT:
+            return None, "pending cap reached (%d) - wait for approval or cancelReq yours" % APIQ_MAX_PENDING_PER_AGENT
+        d["seq"] = int(d.get("seq", 0)) + 1
+        rid = "R%04d" % d["seq"]
+        req = {"id": rid, "ts": _apiq_now(), "agent": str(agent)[:60], "kind": kind,
+               "status": "pending", "note": str(note or "")[:500], "result": None,
+               "events": [{"ts": _apiq_now(), "event": "created", "by": str(agent)[:60]}]}
+        req.update(payload)
+        d["requests"][rid] = req
+        # keep the store bounded: drop terminal output from requests older than 200 entries
+        if len(d["requests"]) > 400:
+            for old in sorted(d["requests"], key=lambda k: int(k[1:]))[:len(d["requests"]) - 400]:
+                r = d["requests"].get(old) or {}
+                if r.get("kind") == "terminal":
+                    r.pop("stdout", None)
+                    r.pop("stderr", None)
+        _apiq_save(d)
+    _apiq_audit({"event": "created", "id": rid, "agent": req["agent"], "kind": kind,
+                 "file": req.get("file"), "command": (req.get("command") or "")[:200]})
+    return req, None
+
+
+def _apiq_apply_change(req):
+    """Splice linesToReplace into range [a..b] (1-based inclusive) of the target file."""
+    rel = str(req.get("file") or "")
+    full = _safe_workspace_file(rel)
+    if not full or os.path.isdir(full):
+        return {"ok": False, "detail": "file not found in workspace: %s" % rel}
+    rng = req.get("range")
+    new_lines = req.get("linesToReplace")
+    if isinstance(new_lines, str):
+        new_lines = [new_lines]
+    if (not isinstance(rng, (list, tuple)) or len(rng) != 2
+            or not all(isinstance(x, int) for x in rng)):
+        return {"ok": False, "detail": "range must be [start,end] integers"}
+    a, b = rng[0], rng[1]
+    if a < 1 or b < a or not isinstance(new_lines, list):
+        return {"ok": False, "detail": "bad range/linesToReplace"}
+    try:
+        raw = open(full, "rb").read()
+        text = raw.decode("utf-8")
+    except UnicodeDecodeError:
+        return {"ok": False, "detail": "file is not utf-8 text - refusing to splice"}
+    eol = "\r\n" if text.count("\r\n") >= text.count("\n") // 2 and "\r\n" in text else "\n"
+    lines = text.split(eol)
+    n = len(lines)
+    if b > n + 1 or (b == n + 1 and a != n + 1):
+        return {"ok": False, "detail": "range [%d..%d] exceeds file (%d lines) - re-read with reqReadFile" % (a, b, n)}
+    new_text = eol.join(lines[:a - 1] + [str(x) for x in new_lines] + lines[b:])
+    if len(new_text.encode("utf-8", "replace")) > 32 * 1024 * 1024:
+        return {"ok": False, "detail": "result would exceed 32MB"}
+    try:
+        with open(full, "wb") as fh:
+            fh.write(new_text.encode("utf-8"))
+    except OSError as e:
+        return {"ok": False, "detail": "write failed: %s" % e}
+    sha = hashlib.sha256(new_text.encode("utf-8")).hexdigest()[:12]
+    return {"ok": True, "sha": sha,
+            "detail": "%s: replaced lines %d..%d with %d line(s)" % (rel, a, b, len(new_lines))}
+
+
+def _apiq_apply_create(req):
+    rel = str(req.get("file") or "").replace("\\", "/").lstrip("/")
+    if not rel or "\0" in rel:
+        return {"ok": False, "detail": "bad file path"}
+    content = req.get("content")
+    if not isinstance(content, str):
+        return {"ok": False, "detail": "content must be a string"}
+    for base in (os.path.realpath(HERE), os.path.realpath(SANDBOX_DIR)):
+        if not base or not os.path.isdir(base):
+            continue
+        full = os.path.realpath(os.path.join(base, rel))
+        if full != base and not full.startswith(base + os.sep):
+            continue
+        if os.path.exists(full):
+            return {"ok": False, "detail": "file already exists - use requestChange: %s" % rel}
+        try:
+            os.makedirs(os.path.dirname(full) or base, exist_ok=True)
+            with open(full, "w", encoding="utf-8") as fh:
+                fh.write(content)
+        except OSError as e:
+            return {"ok": False, "detail": "write failed: %s" % e}
+        sha = hashlib.sha256(content.encode("utf-8")).hexdigest()[:12]
+        return {"ok": True, "sha": sha, "detail": "created %s (%d chars)" % (rel, len(content))}
+    return {"ok": False, "detail": "no writable base for path: %s" % rel}
+
+
+def _apiq_apply_delete(req):
+    rel = str(req.get("file") or "")
+    full = _safe_workspace_file(rel)
+    if not full:
+        return {"ok": False, "detail": "file not found in workspace: %s" % rel}
+    try:
+        os.remove(full)
+    except OSError as e:
+        return {"ok": False, "detail": "delete failed: %s" % e}
+    return {"ok": True, "detail": "deleted %s" % rel}
+
+
+def _apiq_apply_terminal(req):
+    cmd = str(req.get("command") or "")[:APIQ_CMD_CHARS]
+    if not cmd.strip():
+        return {"ok": False, "detail": "empty command"}
+    try:
+        p = subprocess.run(cmd, shell=True, cwd=HERE, capture_output=True,
+                           timeout=APIQ_TERM_TIMEOUT_S)
+        out = (p.stdout or b"").decode("utf-8", "replace")[:APIQ_OUT_CHARS]
+        err = (p.stderr or b"").decode("utf-8", "replace")[:APIQ_OUT_CHARS]
+        return {"ok": p.returncode == 0, "rc": p.returncode, "stdout": out,
+                "stderr": err, "detail": "rc=%d (%d+/%d chars output)" % (p.returncode, len(out), len(err))}
+    except subprocess.TimeoutExpired:
+        return {"ok": False, "detail": "timeout after %ds" % APIQ_TERM_TIMEOUT_S}
+    except Exception as e:
+        return {"ok": False, "detail": "exec failed: %s" % e}
+
+
+def _apiq_apply(req_id, by):
+    """Approve+execute a pending request. Returns (req, error)."""
+    with APIQ_LOCK:
+        d = _apiq_load()
+        req = _apiq_get(d, req_id)
+        if not req:
+            return None, "no such request: %s" % req_id
+        if req.get("status") != "pending":
+            return None, "request %s is %s, not pending" % (req_id, req.get("status"))
+        kind = req.get("kind")
+        if kind == "change":
+            res = _apiq_apply_change(req)
+        elif kind == "create":
+            res = _apiq_apply_create(req)
+        elif kind == "delete":
+            res = _apiq_apply_delete(req)
+        else:
+            res = _apiq_apply_terminal(req)
+        req["status"] = "applied" if res.get("ok") else "failed"
+        req["result"] = {k: v for k, v in res.items() if k != "stdout" and k != "stderr"}
+        req.setdefault("events", []).append({"ts": _apiq_now(), "event": req["status"], "by": str(by)[:60]})
+        _apiq_save(d)
+    _apiq_audit({"event": req["status"], "id": req_id, "by": str(by)[:60],
+                 "kind": kind, "file": req.get("file"), "detail": (res.get("detail") or "")[:300]})
+    if res.get("ok") and kind in ("change", "create", "delete"):
+        _auto_commit()   # provenance: applied agent edits land in git within the same turn
+    return req, None
+
+
+def _apiq_reject(req_id, reason, by):
+    with APIQ_LOCK:
+        d = _apiq_load()
+        req = _apiq_get(d, req_id)
+        if not req:
+            return None, "no such request: %s" % req_id
+        if req.get("status") != "pending":
+            return None, "request %s is %s, not pending" % (req_id, req.get("status"))
+        req["status"] = "rejected"
+        req["result"] = {"ok": False, "detail": "rejected: %s" % str(reason or "")[:300]}
+        req.setdefault("events", []).append({"ts": _apiq_now(), "event": "rejected",
+                                             "by": str(by)[:60], "reason": str(reason or "")[:300]})
+        _apiq_save(d)
+    _apiq_audit({"event": "rejected", "id": req_id, "by": str(by)[:60],
+                 "kind": req.get("kind"), "file": req.get("file"), "reason": str(reason or "")[:300]})
+    return req, None
+
+
+def _apiq_view(kind=None, status=None, limit=100):
+    """Queue view for REST + agent calls. Newest first."""
+    with APIQ_LOCK:
+        d = _apiq_load()
+    out = []
+    for rid in sorted(d["requests"], key=lambda k: int(k[1:]), reverse=True):
+        r = d["requests"][rid]
+        if kind and r.get("kind") != kind:
+            continue
+        if status and r.get("status") != status:
+            continue
+        slim = {k: v for k, v in r.items() if k not in ("linesToReplace", "content", "stdout", "stderr")}
+        if r.get("kind") == "change":
+            slim["lineCount"] = len(r.get("linesToReplace") or [])
+        elif r.get("kind") == "create":
+            slim["contentChars"] = len(r.get("content") or "")
+        out.append(slim)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _apiq_stats():
+    with APIQ_LOCK:
+        d = _apiq_load()
+    st = {"pending": 0, "applied": 0, "rejected": 0, "failed": 0, "withdrawn": 0,
+          "pending_file": 0, "pending_terminal": 0}
+    for r in d["requests"].values():
+        s = r.get("status") or "pending"
+        if s in st:
+            st[s] += 1
+        if s == "pending":
+            if r.get("kind") == "terminal":
+                st["pending_terminal"] += 1
+            else:
+                st["pending_file"] += 1
+    return st
+
+
+def _apiq_history(limit=50, rng=None):
+    """Processed requests (not pending), oldest first. rng = [a..b] 1-based slice or int N = last N."""
+    with APIQ_LOCK:
+        d = _apiq_load()
+    done = [d["requests"][rid] for rid in sorted(d["requests"], key=lambda k: int(k[1:]))
+            if d["requests"][rid].get("status") != "pending"]
+    if isinstance(rng, (list, tuple)) and len(rng) == 2 and all(isinstance(x, int) for x in rng):
+        a, b = max(1, rng[0]), rng[1]
+        done = done[a - 1:b]
+    else:
+        n = int(limit)
+        done = done[-n:] if n > 0 else []
+    out = [{"id": r["id"], "ts": r.get("ts"), "agent": r.get("agent"), "kind": r.get("kind"),
+            "file": r.get("file"), "command": (r.get("command") or "")[:160],
+            "status": r.get("status"), "detail": ((r.get("result") or {}).get("detail") or "")[:200]}
+           for r in done]
+    return out
+
+
+def _apiq_read_file(rel, rng=None):
+    """Synchronous read (no queue): current content or a 1-based inclusive line range."""
+    full = _safe_workspace_file(str(rel or ""))
+    if not full or os.path.isdir(full):
+        return {"ok": False, "detail": "file not found in workspace: %s" % rel}
+    try:
+        raw = open(full, "rb").read()
+    except OSError as e:
+        return {"ok": False, "detail": str(e)}
+    if b"\x00" in raw[:8192]:
+        return {"ok": False, "detail": "binary file - no text read (use runCMD to inspect)"}
+    text = raw.decode("utf-8", "replace")
+    lines = text.splitlines()
+    total = len(lines)
+    if isinstance(rng, (list, tuple)) and len(rng) == 2 and all(isinstance(x, int) for x in rng):
+        a, b = max(1, min(rng[0], total)), max(1, min(rng[1], total))
+        sel = lines[a - 1:b]
+    else:
+        a, b = 1, total
+        sel = lines[:APIQ_READ_BYTES // 40]   # rough pre-trim so huge files stay bounded
+    body = "\n".join("%5d| %s" % (a + i, l) for i, l in enumerate(sel))
+    truncated = False
+    if len(body.encode("utf-8", "replace")) > APIQ_READ_BYTES:
+        cut = []
+        size = 0
+        for i, l in enumerate(sel):
+            line = "%5d| %s\n" % (a + i, l)
+            if size + len(line) > APIQ_READ_BYTES - 60:
+                truncated = True
+                break
+            cut.append(line.rstrip("\n"))
+            size += len(line)
+        body = "\n".join(cut)
+    return {"ok": True, "file": str(rel).replace("\\", "/"), "totalLines": total,
+            "range": [a, b], "truncated": truncated, "content": body}
+
+
+def _apiq_list_files():
+    """The files the portal lists (same walk as /api/manifest)."""
+    files = {}
+    skip_dirs = {"__pycache__", ".unsloth-tmp", "unsloth-tmp", "AppData", "Microsoft", "Python"}
+    for root in (HERE, SANDBOX_DIR):
+        if not root:
+            continue
+        base = os.path.realpath(root)
+        if not os.path.isdir(base):
+            continue
+        try:
+            for dirpath, dirnames, filenames in os.walk(base):
+                dirnames[:] = [x for x in dirnames if not x.startswith(".") and x not in skip_dirs]
+                for fn in filenames:
+                    if fn.startswith("."):
+                        continue
+                    fp = os.path.join(dirpath, fn)
+                    try:
+                        mt = os.stat(fp).st_mtime
+                    except OSError:
+                        continue
+                    rel = os.path.relpath(fp, base).replace("\\", "/")
+                    if root == HERE or rel not in files:
+                        files[rel] = mt
+        except OSError:
+            continue
+    out = [{"path": k, "mtime": round(v, 1)} for k, v in sorted(files.items())][:APIQ_LIST_CAP]
+    return {"ok": True, "count": len(out), "files": out}
+
+
+def _apiq_edit(req_id, agent, fields):
+    with APIQ_LOCK:
+        d = _apiq_load()
+        req = _apiq_get(d, req_id)
+        if not req:
+            return None, "no such request: %s" % req_id
+        if req.get("status") != "pending":
+            return None, "request %s is %s - only pending requests can be edited" % (req_id, req.get("status"))
+        if req.get("agent") != agent and agent not in _apiq_config()["approvers"]:
+            return None, "not yours to edit (owner: %s)" % req.get("agent")
+        changed = []
+        for k in ("range", "linesToReplace", "content", "note", "command", "file"):
+            if k in fields and fields[k] is not None:
+                req[k] = fields[k]
+                changed.append(k)
+        if not changed:
+            return None, "nothing to edit (allowed: range, linesToReplace, content, note, command, file)"
+        req.setdefault("events", []).append({"ts": _apiq_now(), "event": "edited", "by": str(agent)[:60],
+                                             "fields": changed})
+        _apiq_save(d)
+    _apiq_audit({"event": "edited", "id": req_id, "by": str(agent)[:60], "fields": changed})
+    return req, None
+
+
+def _apiq_cancel(req_id, agent):
+    with APIQ_LOCK:
+        d = _apiq_load()
+        req = _apiq_get(d, req_id)
+        if not req:
+            return None, "no such request: %s" % req_id
+        if req.get("status") != "pending":
+            return None, "request %s is %s - only pending can be withdrawn" % (req_id, req.get("status"))
+        if req.get("agent") != agent and agent not in _apiq_config()["approvers"]:
+            return None, "not yours to withdraw (owner: %s)" % req.get("agent")
+        req["status"] = "withdrawn"
+        req.setdefault("events", []).append({"ts": _apiq_now(), "event": "withdrawn", "by": str(agent)[:60]})
+        _apiq_save(d)
+    _apiq_audit({"event": "withdrawn", "id": req_id, "by": str(agent)[:60], "kind": req.get("kind")})
+    return req, None
+
+
+def _apiq_dispatch(agent, call, args):
+    """Execute ONE Portal API call. Returns a result dict (always has ok + detail)."""
+    args = args if isinstance(args, dict) else {}
+    approvers = set(_apiq_config()["approvers"])
+    try:
+        c = str(call or "").strip()
+        if c in ("runCMD", "runTerminalReq"):
+            cmd = str(args.get("command") or "")[:APIQ_CMD_CHARS]
+            if not cmd.strip():
+                return {"ok": False, "detail": "command required"}
+            req, err = _apiq_add_request(agent, "terminal", {"command": cmd}, args.get("note"))
+            return {"ok": True, "id": req["id"], "queued": True,
+                    "detail": "terminal request queued: %s" % (err or cmd[:120])} if not err else {"ok": False, "detail": err}
+        elif c == "requestChange":
+            f = str(args.get("file") or "")
+            rng = args.get("range")
+            ltr = args.get("linesToReplace")
+            if isinstance(ltr, str):
+                ltr = [ltr]
+            if not f:
+                return {"ok": False, "detail": "file required"}
+            if (not isinstance(rng, (list, tuple)) or len(rng) != 2
+                    or not all(isinstance(x, int) for x in rng)):
+                return {"ok": False, "detail": "range [start,end] required (1-based inclusive)"}
+            if not isinstance(ltr, list) or sum(len(str(x)) for x in ltr) > APIQ_CHANGE_CHARS:
+                return {"ok": False, "detail": "linesToReplace must be a string list <= %d chars" % APIQ_CHANGE_CHARS}
+            req, err = _apiq_add_request(agent, "change",
+                                         {"file": f.replace("\\", "/"), "range": [rng[0], rng[1]],
+                                          "linesToReplace": [str(x) for x in ltr]}, args.get("note"))
+            return ({"ok": True, "id": req["id"], "queued": True,
+                     "detail": "change queued: %s [%d..%d] -> %d line(s)" % (f, rng[0], rng[1], len(ltr))}
+                    if not err else {"ok": False, "detail": err})
+        elif c == "reqCreateFile":
+            f = str(args.get("file") or "")
+            content = args.get("content")
+            if not f or not isinstance(content, str) or len(content) > APIQ_CREATE_CHARS:
+                return {"ok": False, "detail": "file + content (<= %d chars) required" % APIQ_CREATE_CHARS}
+            req, err = _apiq_add_request(agent, "create",
+                                         {"file": f.replace("\\", "/"), "content": content}, args.get("note"))
+            return ({"ok": True, "id": req["id"], "queued": True,
+                     "detail": "create queued: %s (%d chars)" % (f, len(content))}
+                    if not err else {"ok": False, "detail": err})
+        elif c == "reqDeleteFile":
+            f = str(args.get("file") or "")
+            if not f:
+                return {"ok": False, "detail": "file required"}
+            req, err = _apiq_add_request(agent, "delete", {"file": f.replace("\\", "/")}, args.get("note"))
+            return ({"ok": True, "id": req["id"], "queued": True, "detail": "delete queued: %s" % f}
+                    if not err else {"ok": False, "detail": err})
+        elif c == "reqReadFile":
+            return _apiq_read_file(str(args.get("file") or ""), args.get("range"))
+        elif c == "listPortalFiles":
+            r = _apiq_list_files()
+            # keep the reply-to-agent payload small: paths only, newest 200
+            r["files"] = [{"path": x["path"], "mtime": x["mtime"]} for x in r["files"][-200:]]
+            return r
+        elif c == "viewRequestQueue":
+            items = _apiq_view(status="pending", limit=30)
+            return {"ok": True, "count": len(items), "requests": items}
+        elif c == "viewTerminalQueue":
+            items = _apiq_view(kind="terminal", status="pending", limit=30)
+            return {"ok": True, "count": len(items), "requests": items}
+        elif c == "getReqInfo":
+            rid = str(args.get("reqID") or args.get("id") or "").upper()
+            with APIQ_LOCK:
+                d = _apiq_load()
+                r = _apiq_get(d, rid)
+                out = dict(r) if r else None
+            if not out:
+                return {"ok": False, "detail": "no such request: %s" % rid}
+            for big in ("linesToReplace", "content"):
+                if big in out:
+                    out[big + "_chars"] = len(str(out.get(big) or ""))
+                    out.pop(big)
+            return {"ok": True, "request": out}
+        elif c == "editReq":
+            rid = str(args.get("reqID") or args.get("id") or "").upper()
+            req, err = _apiq_edit(rid, agent, args)
+            return ({"ok": True, "id": rid, "detail": "edited: %s" % ", ".join(k for k in args if k in ("range", "linesToReplace", "content", "note", "command", "file"))}
+                    if not err else {"ok": False, "detail": err})
+        elif c == "cancelReq":
+            rid = str(args.get("reqID") or args.get("id") or "").upper()
+            req, err = _apiq_cancel(rid, agent)
+            return ({"ok": True, "id": rid, "detail": "withdrawn %s" % rid} if not err else {"ok": False, "detail": err})
+        elif c == "getReqHistory":
+            rng = args.get("range") or args.get("n")
+            items = _apiq_history(limit=30, rng=rng)
+            return {"ok": True, "count": len(items), "history": items}
+        elif c in ("approveReq", "rejectReq"):
+            rid = str(args.get("reqID") or args.get("id") or "").upper()
+            if agent not in approvers and agent != "human":
+                return {"ok": False, "detail": "%s is not an approver (config: memory/ops/api-reqs-config.json)" % c}
+            if c == "approveReq":
+                req, err = _apiq_apply(rid, agent)
+                return ({"ok": True, "id": rid,
+                         "detail": ((req or {}).get("result") or {}).get("detail", "applied")}
+                        if not err else {"ok": False, "detail": err})
+            req, err = _apiq_reject(rid, str(args.get("reason") or ""), agent)
+            return ({"ok": True, "id": rid, "detail": "rejected %s" % rid} if not err else {"ok": False, "detail": err})
+        elif c == "viewTerminalOutput":
+            rid = str(args.get("reqID") or args.get("id") or "").upper()
+            with APIQ_LOCK:
+                d = _apiq_load()
+                r = _apiq_get(d, rid)
+            if not r:
+                return {"ok": False, "detail": "no such request: %s" % rid}
+            return {"ok": True, "id": rid, "status": r.get("status"),
+                    "rc": (r.get("result") or {}).get("rc"),
+                    "stdout": str(r.get("stdout") or "")[:APIQ_OUT_CHARS],
+                    "stderr": str(r.get("stderr") or "")[:APIQ_OUT_CHARS]}
+        elif c == "getQueueStats":
+            return {"ok": True, **_apiq_stats()}
+        else:
+            return {"ok": False, "detail": "unknown call: %s (see memory/portal/api-reqs.md)" % c}
+    except Exception as e:
+        return {"ok": False, "detail": "error: %s" % str(e)[:200]}
+
+
+def _apiq_execute(agent, text):
+    """Parse [[PORTAL-API]] blocks out of a reply, execute the calls, queue results for the
+    agent's next turn. Returns (clean_text, n_calls). The clean text has the blocks removed
+    so chat/memory never see the raw JSON."""
+    blocks = APIQ_BLOCK_RE.findall(text or "")
+    if not blocks:
+        return text, 0
+    results = []
+    for blk in blocks:
+        for line in blk.splitlines():
+            line = line.strip().rstrip(",")
+            if not line:
+                continue
+            try:
+                obj = json.loads(line)
+            except Exception:
+                results.append({"call": "?", "result": {"ok": False, "detail": "unparseable JSON line: %s" % line[:120]}})
+                continue
+            call = str(obj.get("call") or obj.get("fn") or "")
+            args = obj.get("args") if isinstance(obj.get("args"), dict) else \
+                   ({k: v for k, v in obj.items() if k not in ("call", "fn")} if isinstance(obj, dict) else {})
+            results.append({"call": call, "result": _apiq_dispatch(agent, call, args)})
+            if len(results) >= APIQ_MAX_CALLS_PER_REPLY:
+                break
+        if len(results) >= APIQ_MAX_CALLS_PER_REPLY:
+            break
+    clean = APIQ_BLOCK_RE.sub("", text or "")
+    clean = re.sub(r"\n{3,}", "\n\n", clean).strip()
+    _apiq_queue_results(agent, results)
+    return clean, len(results)
+
+
+# ---- per-agent result delivery (UMQ-style: injected next turn, marked seen once it reaches Studio) ----
+
+def _apiq_read_results():
+    try:
+        with open(APIQ_RESULTS, encoding="utf-8") as fh:
+            d = json.load(fh)
+        if isinstance(d, dict) and isinstance(d.get("pending"), dict):
+            return d
+    except Exception:
+        pass
+    return {"pending": {}}
+
+
+def _apiq_write_results(d):
+    os.makedirs(os.path.dirname(APIQ_RESULTS), exist_ok=True)
+    tmp = APIQ_RESULTS + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(d, fh, ensure_ascii=False)
+    os.replace(tmp, APIQ_RESULTS)
+
+
+def _apiq_queue_results(agent, results):
+    if not results:
+        return
+    with APIQ_LOCK:
+        d = _apiq_read_results()
+        lst = d["pending"].setdefault(str(agent)[:60], [])
+        for r in results:
+            res = r.get("result") or {}
+            entry = {"id": "ap-%s-%s" % (time.strftime("%H%M%S"), uuid.uuid4().hex[:5]),
+                     "ts": _apiq_now(), "call": str(r.get("call") or "?")[:40],
+                     "reqID": res.get("id"), "result": res}
+            lst.append(entry)
+        d["pending"][str(agent)[:60]] = lst[-25:]
+        _apiq_write_results(d)
+
+
+def _apiq_pending_for(agent):
+    with APIQ_LOCK:
+        d = _apiq_read_results()
+    return list(d["pending"].get(str(agent)[:60]) or [])
+
+
+def _apiq_check(ids, agent):
+    """Mark result entries seen (called once the request reaches Studio - mirrors umq_check)."""
+    ids = [i for i in (ids or []) if isinstance(i, str)]
+    if not ids:
+        return 0
+    with APIQ_LOCK:
+        d = _apiq_read_results()
+        lst = d["pending"].get(str(agent)[:60])
+        if not lst:
+            return 0
+        kept = [e for e in lst if e.get("id") not in ids]
+        n = len(lst) - len(kept)
+        if kept:
+            d["pending"][str(agent)[:60]] = kept
+        else:
+            d["pending"].pop(str(agent)[:60], None)
+        if n:
+            _apiq_write_results(d)
+    return n
+
+
 def _safe_upload_path(rel):
     """Resolve an upload target inside UPLOAD_DIR. Returns (abs_path, clean_rel) or None.
     Anything is accepted as long as it stays under uploads/ - traversal, absolute paths,
@@ -2151,6 +2778,22 @@ def build_system_prompt(agent, mode, all_agents, rag_context="", shared_memory="
             " invent drive letters or absolute paths. If you ever reported an absolute path or a"
             " drive letter (e.g. Z:\\...), it was wrong: restate that file by its relative path from"
             " your working directory. PINNED FILES (2026-11-16): index.html is pinned in memory_mirror.py"            " (PIN_FILES) - edits to it are REVERTED on the next mirror cycle unless you advance the pin:"            " copy the new file to memory/designer/index_html_CANONICAL_<sha12>_YYYY-MM-DDx.html, update"            " PIN_FILES in memory_mirror.py to the new sha12 (first 12 of sha1) + backup path, and commit."            " Never re-apply reverted work without repinning - that is the clobber loop.")
+    # PORTAL FILE/TERMINAL API (2026-11-25): every agent can operate on the files the portal lists
+    # via [[PORTAL-API]] blocks in its replies. Mutating calls queue for approval; reads run sync.
+    parts.append(
+        "PORTAL FILE/TERMINAL API: you can operate on ANY file the portal lists by emitting a"
+        " [[PORTAL-API]] block in your reply - one JSON call per line, executed when your turn ends."
+        " Example: [[PORTAL-API]] {\"call\":\"requestChange\",\"args\":{\"file\":\"agent_portal.py\","
+        "\"range\":[34,502],\"linesToReplace\":[\"new line one\",\"new line two\"],\"note\":\"why\"}} [[/PORTAL-API]]"
+        " Queued (applied after approval): requestChange{file,range[a..b] 1-based inclusive,linesToReplace[],note?} ·"
+        " reqCreateFile{file,content,note?} · reqDeleteFile{file,note?} · runCMD|runTerminalReq{command,note?}."
+        " Sync reads: reqReadFile{file,range?} (16KB cap) · listPortalFiles() · viewRequestQueue() ·"
+        " viewTerminalQueue() · getReqInfo{reqID} · editReq{reqID, range?/linesToReplace?/content?/note?} ·"
+        " cancelReq{reqID} · getReqHistory[n or [a..b]] · viewTerminalOutput{reqID} · getQueueStats()."
+        " approveReq{reqID}/rejectReq{reqID,reason?} work only for configured approvers."
+        " Rules: reqReadFile FIRST so your range matches the CURRENT lines; queued calls return a reqID -"
+        " report it and do NOT re-submit; outcomes arrive as PORTAL API RESULTS on your next turn."
+        " Full reference (read with your tools if enabled): memory/portal/api-reqs.md")
     if shared_memory:
         parts.append("SHARED GROUP MEMORY (global file memory.md, visible to all agents):\n"
                      + shared_memory.strip())
@@ -2886,6 +3529,18 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
         gb = _agent_goals_block(who)   # goal-drift fix: every group turn sees this agent's open goals
         if gb:
             mem_block = (mem_block + "\n\n" if mem_block else "") + gb
+    # PORTAL API RESULTS (2026-11-25): outcomes of this agent's [[PORTAL-API]] calls from earlier
+    # turns. Injected now; marked seen once the request reaches Studio (same pattern as UMQ).
+    apiq_ids = []
+    apend = _apiq_pending_for(who)
+    if apend:
+        al = ["PORTAL API RESULTS (outcomes of your [[PORTAL-API]] calls from earlier turns - act on them, do NOT re-submit):"]
+        for r in apend[-10:]:
+            rid = (" %s" % r["reqID"]) if r.get("reqID") else ""
+            al.append("- %s%s -> %s" % (r["call"], rid, json.dumps(r.get("result") or {}, ensure_ascii=False)[:600]))
+        al.append("Use the reqIDs above with getReqInfo/editReq/cancelReq; viewRequestQueue shows what is still pending.")
+        mem_block = (mem_block + "\n\n" if mem_block else "") + "\n".join(al)
+        apiq_ids = [r["id"] for r in apend]
     # Blocked cross-talk rounds skip ReadMem entirely (checked BEFORE any aux round).
     if kind == "cross-talk" and not mem_st.get("infinite_budget", True) \
             and mem_st["inter_agent_replies"] >= XTALK_LIMIT:
@@ -2976,6 +3631,8 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
                 r = urllib.request.urlopen(req, timeout=300)
                 if umq_ids:  # request reached Studio => queued messages are now in this context
                     umq_check(umq_ids, who)
+                if apiq_ids:
+                    _apiq_check(apiq_ids, who)   # same guarantee for Portal API results
                 return r
             except Exception as e:
                 code = getattr(e, "code", None)
@@ -3060,6 +3717,15 @@ def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
         return
     finally:
         resp.close()
+    # PORTAL API CALLS (2026-11-25): [[PORTAL-API]] blocks in the reply execute against the
+    # request queue; the blocks are stripped from the stored/displayed text.
+    if full.strip():
+        try:
+            full, n_api = _apiq_execute(who, full)
+            if n_api:
+                _act_log(session, {"agent": who, "event": "portal_api", "calls": n_api})
+        except Exception as e:
+            _act_log(session, {"agent": who, "event": "portal_api_error", "error": str(e)[:200]})
     # STOREMEM (2026-11-14): cheap aux round distills at most one hot note from the reply.
     if mem_cycle and full.strip():
         _txt, is_silent, _ = _effective_reply(full)
