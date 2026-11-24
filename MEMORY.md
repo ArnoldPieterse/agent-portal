@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic closed 6 goals (#4,6,7,8,9,10) in one batch pass; fleet now 9/10 complete.
-- Verifier cycle-1
 - Goal #7 done: memory/orchestrator/goal_in
 - Goal #2 (Steady-State Visual Indicator) impl was reverted; must live in app.css+core.js with `.ss
 - Cycle-17: all 10/10 goals confirmed closed
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Convergence API open issues: stale rework_rate in ops jsonl needs regen
 - Researcher lane closed 9/10 verified; goal 8 (Cycle Topic Relevance) partial — blocked on 30-day data not yet available
 - Mechanic fleet 9/10; Goal #2 Steady-State Ops Playbook already exists with 4 procedures — ground work in it, don't reinvent.
+- Builder fixed stale rework_rate in efficiency-index.jsonl (0.064→0.078) to match autonomy-score.json; convergence API now correct.
+- seat_probe.py verified (3/3 tests pass, exit 2 = Scribe unreachable). Now building Goal #2: Steady-State Ops Playbook.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
