@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cycle 17 topic: Fleet Self-Optimization & Steady-State Convergence; builds on C16 autonomy infra (triggers, matrices, validators).
-- Mechanic C17: goals #1 seat_probe + #2 Model Load Orchestrator verified; now on #3 Auto-Recover
-- Convergence API built at memory/orchestrator/convergence_api.py; fleet_autonomy_score=62.4, steady-state needs 3 consecutive cycles to confi
 - Builder built convergence_api.py + /api/convergence route in agent_portal.py; also completed goals #3 (Mode Consensus Validator) and #5 (Vel
 - Designer C17: built Steady-State Visual Indicator, Cycle Duration Forecast Widget, Convergence Progress Ring (goals 2,3,5 done
 - Researcher C17: goals 1,2,4 done (R²=0.866 convergence model); working goal 6 (
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer recorded goals #1 (Convergence Dashboard, 4 widgets @1440px) and #2 (Steady-State Indicator) via ledger
 - Goals #4 (idle_task_lookup dynamic layer) and #6 (policy_evolver.py) both completed and verified this pass.
 - Mechanic built seat_probe.py predictive health monitor; all 7 selftests pass, live probe verified; goals #1-#2 closed.
+- Goal #7 done: playbook_runner.py extended with --playbook autonomy-health (5 checks); fleet-mode.json schema differs from initial assumption
+- Mechanic C1
+- Designer completed all 4 remaining cycle-17 goals (#7–#10) in a single pass: autonomy cards, transition anim, calm mode, metrics export.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,57 +1,57 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-24 23:09:16 | Fleet: 27/80 (34%) | throughput ~20.0 goals/h
+Generated: 2026-11-25 00:21:18 | Fleet: 12/80 (15%) | throughput ~20.0 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [mechanic] Auto-Recovery Playbook v2** - ETA 2026-11-25 00:56, P(reached) 76% (ops, cx1)
-   steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
-   consequences: mechanic: **Fleet Recovery Time Tracker** - measure detection-to-recov (2026-11-25 06:45) - shared scope recovery,simulated | scribe: **Seat Gap Summary** - when a seat is unreachable >1h, gener (2026-11-25 09:39) - shared scope simulated,unreachable | orchestrator: **Seat Failure Cascade Handler** - When seat-matrix shows a  (2026-11-26 07:22) - shared scope cascade,unreachable
-**#2 [verifier] Validation Coverage Report** - ETA 2026-11-25 00:56, P(reached) 76% (verify, cx1)
+**#1 [verifier] Convergence Metric Validation** - ETA 2026-11-25 02:08, P(reached) 76% (verify, cx1)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope current,exists,goals | builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope cycle,goals,script | verifier: **Fleet Autonomy Regression Battery** - memory/verifier/auto (2026-11-25 04:01) - shared scope goals,script
-**#3 [archivist] Knowledge Freshness Decay v2** - ETA 2026-11-25 01:38, P(reached) 59% (measurement, cx1)
+   consequences: archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,metrics | scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope autonomy,convergence,score | builder: **Convergence API Endpoint** - implement `/api/convergence`  (2026-11-25 03:48) - shared scope autonomy,convergence,efficiency
+**#2 [mechanic] Predictive Seat Health Monitor** - ETA 2026-11-25 02:43, P(reached) 46% (measurement, cx1)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope current,exists,goals | mechanic: **Health Score Computation** - memory/mechanic/health_score. (2026-11-25 03:17) - shared scope freshness,score | builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope archive,goals
-**#4 [scribe] Autonomous Round Narrative** - ETA 2026-11-25 02:39, P(reached) 71% (build, cx1)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: orchestrator: **Auto-Cycle-Trigger Detector** - `python memory/orchestrato (2026-11-25 05:23) - shared scope round,trigger | scribe: **Seat Gap Summary** - when a seat is unreachable >1h, gener (2026-11-25 09:39) - shared scope generate,write | mechanic: **Autonomous Ops Decision Log** - log every autonomous ops d (2026-11-25 09:50) - shared scope autonomous,trigger
-**#5 [mechanic] Health Score Computation** - ETA 2026-11-25 03:17, P(reached) 46% (measurement, cx1)
+   consequences: orchestrator: **Convergence Dashboard API** - `/api/convergence` endpoint  (2026-11-25 03:56) - shared scope state,trend | mechanic: **Steady-State Ops Playbook** - memory/mechanic/steady-state (2026-11-25 04:30) - shared scope probe,state | orchestrator: **Predictive Cycle Length Estimator** - `python memory/orche (2026-11-25 07:11) - shared scope before,predictive
+**#3 [archivist] Convergence Knowledge Base Entry** - ETA 2026-11-25 02:50, P(reached) 59% (measurement, cx1)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope freshness,score | orchestrator: **Seat Availability Matrix** - Maintain memory/ops/seat-matr (2026-11-25 10:05) - shared scope availability,mechanic | builder: **Fleet Health Dashboard Endpoint** - add /api/fleet/health  (2026-11-25 23:42) - shared scope health,score
-**#6 [designer] Cycle-Complete Celebration State** - ETA 2026-11-25 03:28, P(reached) 4% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: renders at 1440px; animation <60fps drop; no layout shift)
-   consequences: scribe: **Cycle Midpoint Report** - at 50% completion, generate prog (2026-11-25 22:49) - shared scope cycle,progress | lane end researcher: 11-26 08:14 (slowest lane)
-**#7 [builder] Auto-Archive Script** - ETA 2026-11-25 03:42, P(reached) 19% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: after run, goals/ has)
-   consequences: verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope cycle,goals,script | archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope archive,goals | verifier: **Fleet Autonomy Regression Battery** - memory/verifier/auto (2026-11-25 04:01) - shared scope goals,script
-**#8 [verifier] Fleet Autonomy Regression Battery** - ETA 2026-11-25 04:01, P(reached) 40% (build, cx1)
+   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,metrics | scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope autonomy,convergence,score | designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 03:06) - shared scope state,steady
+**#4 [scribe] Convergence Narrative Generator** - ETA 2026-11-25 03:01, P(reached) 76% (measurement, cx1)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,score | archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,score | builder: **Convergence API Endpoint** - implement `/api/convergence`  (2026-11-25 03:48) - shared scope autonomy,convergence,score
+**#5 [designer] Steady-State Visual Indicator** - ETA 2026-11-25 03:06, P(reached) 10% (build, cx1)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: mode change trig)
+   consequences: archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope state,steady | verifier: **Steady-State Transition Test** - simulate fleet entering s (2026-11-25 03:55) - shared scope change,state,steady | orchestrator: **Convergence Dashboard API** - `/api/convergence` endpoint  (2026-11-25 03:56) - shared scope cockpit,state,steady
+**#6 [builder] Convergence API Endpoint** - ETA 2026-11-25 03:48, P(reached) 22% (measurement, cx2)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,efficiency | archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,score | scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope autonomy,convergence,score
+**#7 [verifier] Steady-State Transition Test** - ETA 2026-11-25 03:55, P(reached) 76% (verify, cx1)
+   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
+   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope cycle,verify | archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope state,steady | designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 03:06) - shared scope change,state,steady
+**#8 [orchestrator] Convergence Dashboard API** - ETA 2026-11-25 03:56, P(reached) 32% (measurement, cx2)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,cycle | mechanic: **Predictive Seat Health Monitor** - extend seat_probe.py: t (2026-11-25 02:43) - shared scope state,trend | archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,score
+**#9 [mechanic] Steady-State Ops Playbook** - ETA 2026-11-25 04:30, P(reached) 76% (ops, cx1)
+   steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
+   consequences: mechanic: **Predictive Seat Health Monitor** - extend seat_probe.py: t (2026-11-25 02:43) - shared scope probe,state | archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope state,steady | designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 03:06) - shared scope reduced,state,steady
+**#10 [researcher] Convergence Trajectory Model** - ETA 2026-11-25 04:43, P(reached) 7% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope goals,script | builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope goals,script | orchestrator: **Fleet Autonomy Score** - `python memory/orchestrator/auton (2026-11-26 02:40) - shared scope autonomy,goals
-**#9 [researcher] Goal Pattern Miner** - ETA 2026-11-25 04:44, P(reached) 13% (research, cx2)
-   steps: gather sources from memory/ (pointer map) -> compute/detect per protocol -> write findings leaf + index line
-   consequences: archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope archive,archived,files | builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope archive,goals | archivist: **Cross-Cycle Insight Extractor** - memory/archivist/insight (2026-11-25 04:52) - shared scope archived,cycles,extract
-**#10 [archivist] Cross-Cycle Insight Extractor** - ETA 2026-11-25 04:52, P(reached) 53% (build, cx1)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: on c10-15 data ex)
-   consequences: researcher: **Goal Pattern Miner** - `python memory/researcher/pattern_m (2026-11-25 04:44) - shared scope archived,cycles,extract | researcher: **Cycle Velocity Model** - `python memory/researcher/velocit (2026-11-25 09:06) - shared scope archived,cycle,cycles | archivist: **Decision Pattern Archive** - for each decision in decision (2026-11-25 12:27) - shared scope archivist,cycle,patterns
+   consequences: verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope convergence,cycle,duration | archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope convergence,state,steady | scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope convergence,intervention
 
 ## Planned work (decision tree)
 
-- state: Fleet 27/80 (34%) | gate: all goals 100%? -> **NO - queue in flight**
+- state: Fleet 12/80 (15%) | gate: all goals 100%? -> **NO - queue in flight**
 - cycle: in flight: 10 goal(s) open
-- #1 [mechanic] Auto-Recovery Playbook v2 ~2026-11-25 00:56 (P~76%) - planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Load-test evidence
-- #2 [verifier] Validation Coverage Report ~2026-11-25 00:56 (P~76%) - planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reache | delivers: Validation Coverage Report
-- #3 [archivist] Knowledge Freshness Decay v2 ~2026-11-25 01:38 (P~59%) - planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(rea | delivers: Archive + evidence leaves
-- #4 [scribe] Autonomous Round Narrative ~2026-11-25 02:39 (P~71%) - planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Autonomous Round Narrative
-- #5 [mechanic] Health Score Computation ~2026-11-25 03:17 (P~46%) - planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reac | delivers: Health Score Computation
-- #6 [designer] Cycle-Complete Celebration State ~2026-11-25 03:28 (P~4%) - planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Cycle-Complete Celebration State
-- #7 [builder] Auto-Archive Script ~2026-11-25 03:42 (P~19%) - planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~1 | delivers: Archive + evidence leaves
-- #8 [verifier] Fleet Autonomy Regression Battery ~2026-11-25 04:01 (P~40%) - planned as build work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Fleet Autonomy Regression Battery
+- #1 [verifier] Convergence Metric Validation ~2026-11-25 02:08 (P~76%) - planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reache | delivers: Convergence Metric Validation
+- #2 [mechanic] Predictive Seat Health Monitor ~2026-11-25 02:43 (P~46%) - planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reac | delivers: Load-test evidence
+- #3 [archivist] Convergence Knowledge Base Entry ~2026-11-25 02:50 (P~59%) - planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(rea | delivers: Convergence Knowledge Base Entry
+- #4 [scribe] Convergence Narrative Generator ~2026-11-25 03:01 (P~76%) - planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(rea | delivers: Convergence Narrative Generator
+- #5 [designer] Steady-State Visual Indicator ~2026-11-25 03:06 (P~10%) - planned as build work (cx1); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Steady-State Visual Indicator
+- #6 [builder] Convergence API Endpoint ~2026-11-25 03:48 (P~22%) - planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reach | delivers: Convergence API Endpoint
+- #7 [verifier] Steady-State Transition Test ~2026-11-25 03:55 (P~76%) - planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reache | delivers: Fleet mode switching
+- #8 [orchestrator] Convergence Dashboard API ~2026-11-25 03:56 (P~32%) - planned as measurement work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P( | delivers: Convergence Dashboard API
 
 ## Functional capability chain (PM view)
 
 If each step lands it unblocks the next - this is how the fleet earns its 30-day deliverables:  
-1. **Keyboard navigation** [not-planned]  -> unlocks: Camera access
+1. **Keyboard navigation** [queued] - via orchestrator (open, outside next-10) ~-  -> unlocks: Camera access
 2. **Camera access** [not-planned]  -> unlocks: Mic access
 3. **Mic access** [not-planned]  -> unlocks: Custom input detection
 4. **Custom input detection** [not-planned]  -> unlocks: 30-day business outcomes
@@ -59,14 +59,6 @@ If each step lands it unblocks the next - this is how the fleet earns its 30-day
 ## 30-day business outcomes (computed plan)
 
 Self-computed on every refresh from live state (reached capabilities, next-10 ETAs, fleet throughput) - the portal re-plans itself continuously as goals are reached.
-
-**Changed since last plan:**
-- Generate daily social media posts: day 2-4 -> day 3-5 (planned)
-- Commenting on posts: day 1-5 -> day 2-6 (planned)
-- Making phone calls: day 3-10 -> day 4-11 (planned)
-- Writing valid tenders: day 4-14 -> day 5-15 (planned)
-- Making money (revenue channels live): day 4-12 -> day 5-13 (planned)
-- Positive money income (net > 0): day 19-26 -> day 20-27 (planned)
 
 - **Generate daily social media posts** - window day 3-5 | planned | lane: fleet
   gates: Custom input detection (not in queue - schedulable ~day 2: seat frees + work time)
@@ -155,39 +147,39 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): 05dcc83e6301 @ 11-24 11:54:14, a4f106fb3413 @ 11-24 11:55:14, 05dcc83e6301 @ 11-24 13:46:57, a4f106fb3413 @ 11-24 23:09:16
 
-## 30m ahead (by 2026-11-24 23:39)
-- completes: **0** goal(s) -> fleet ~34%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 33%
+## 30m ahead (by 2026-11-25 00:51)
+- completes: **0** goal(s) -> fleet ~15%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 12/80 -> 15%
 
-## 1h ahead (by 2026-11-25 00:09)
-- completes: **0** goal(s) -> fleet ~34%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 33%
+## 1h ahead (by 2026-11-25 01:21)
+- completes: **0** goal(s) -> fleet ~15%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 12/80 -> 15%
 
-## 1d ahead (by 2026-11-25 23:09)
-- completes: **43** goal(s) -> fleet ~88%
-  - #1 mechanic: Auto-Recovery Playbook v2 (2026-11-25 00:56)
-  - #2 verifier: Validation Coverage Report (2026-11-25 00:56)
-  - #3 archivist: Knowledge Freshness Decay v2 (2026-11-25 01:38)
-  - #4 scribe: Autonomous Round Narrative (2026-11-25 02:39)
-  - #5 mechanic: Health Score Computation (2026-11-25 03:17)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 46%
+## 1d ahead (by 2026-11-26 00:21)
+- completes: **53** goal(s) -> fleet ~81%
+  - #1 verifier: Convergence Metric Validation (2026-11-25 02:08)
+  - #2 mechanic: Predictive Seat Health Monitor (2026-11-25 02:43)
+  - #3 archivist: Convergence Knowledge Base Entry (2026-11-25 02:50)
+  - #4 scribe: Convergence Narrative Generator (2026-11-25 03:01)
+  - #5 designer: Steady-State Visual Indicator (2026-11-25 03:06)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 12/80 -> 27%
 
-## 1w ahead (by 2026-12-01 23:09)
-- completes: **53** goal(s) -> fleet ~100%
-  - #1 mechanic: Auto-Recovery Playbook v2 (2026-11-25 00:56)
-  - #2 verifier: Validation Coverage Report (2026-11-25 00:56)
-  - #3 archivist: Knowledge Freshness Decay v2 (2026-11-25 01:38)
-  - #4 scribe: Autonomous Round Narrative (2026-11-25 02:39)
-  - #5 mechanic: Health Score Computation (2026-11-25 03:17)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 46%
+## 1w ahead (by 2026-12-02 00:21)
+- completes: **68** goal(s) -> fleet ~100%
+  - #1 verifier: Convergence Metric Validation (2026-11-25 02:08)
+  - #2 mechanic: Predictive Seat Health Monitor (2026-11-25 02:43)
+  - #3 archivist: Convergence Knowledge Base Entry (2026-11-25 02:50)
+  - #4 scribe: Convergence Narrative Generator (2026-11-25 03:01)
+  - #5 designer: Steady-State Visual Indicator (2026-11-25 03:06)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 12/80 -> 27%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-24 23:09)
-- completes: **53** goal(s) -> fleet ~100%
-  - #1 mechanic: Auto-Recovery Playbook v2 (2026-11-25 00:56)
-  - #2 verifier: Validation Coverage Report (2026-11-25 00:56)
-  - #3 archivist: Knowledge Freshness Decay v2 (2026-11-25 01:38)
-  - #4 scribe: Autonomous Round Narrative (2026-11-25 02:39)
-  - #5 mechanic: Health Score Computation (2026-11-25 03:17)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 46%
+## 1m ahead (by 2026-12-25 00:21)
+- completes: **68** goal(s) -> fleet ~100%
+  - #1 verifier: Convergence Metric Validation (2026-11-25 02:08)
+  - #2 mechanic: Predictive Seat Health Monitor (2026-11-25 02:43)
+  - #3 archivist: Convergence Knowledge Base Entry (2026-11-25 02:50)
+  - #4 scribe: Convergence Narrative Generator (2026-11-25 03:01)
+  - #5 designer: Steady-State Visual Indicator (2026-11-25 03:06)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 12/80 -> 27%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-

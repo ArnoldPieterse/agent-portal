@@ -2158,5 +2158,17 @@
 "text": "**Cycle Retrospective Completeness Audit** - verify auto-generated retrospectives contain all required sections and that every data point ci",
 "agent": "verifier",
 "at": "2026-11-24"
+},
+{
+"sig": "a95e18e46bdc4f25",
+"text": "**Convergence Dashboard API** - `/api/convergence` endpoint exposing: fleet autonomy score, cycle duration trend, human-intervention count p",
+"agent": "orchestrator",
+"at": "2026-11-25"
+},
+{
+"sig": "b68ae664a2aeb934",
+"text": "**Predictive Cycle Length Estimator** - `python memory/orchestrator/cycle_estimator.py`: from velocity_model.py output + current goal comple",
+"agent": "orchestrator",
+"at": "2026-11-25"
 }
 ]

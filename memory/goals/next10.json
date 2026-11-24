@@ -1,254 +1,253 @@
 {
  "ok": true,
- "generated": "2026-11-24 23:09:16",
+ "generated": "2026-11-25 00:21:18",
  "fleet": {
-  "done": 27,
+  "done": 12,
   "total": 80,
-  "pct": 33.8
+  "pct": 15.0
  },
  "throughput_goals_per_hour": 20.04,
  "next10": [
   {
-   "agent": "mechanic",
-   "goal": "**Auto-Recovery Playbook v2** - extend playbooks with seat-unreachable: probe confirms down, attempt restart, check host health, if host down mark cascade+notify. Verified: simulated seat-down triggers full playbook; ste",
-   "type": "ops",
-   "complexity": 1,
-   "p_reached": 0.758,
-   "eta": "2026-11-25 00:56",
-   "hours": 1.78,
-   "order": 0,
-   "rank": 1,
-   "title": "Auto-Recovery Playbook v2",
-   "steps": [
-    "pre-flight checks (targets exist, idempotent)",
-    "execute from non-sandbox session",
-    "verify registration/health + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-25 00:56 (P=76%)",
-   "consequences": [
-    "mechanic: **Fleet Recovery Time Tracker** - measure detection-to-recov (2026-11-25 06:45) - shared scope recovery,simulated",
-    "scribe: **Seat Gap Summary** - when a seat is unreachable >1h, gener (2026-11-25 09:39) - shared scope simulated,unreachable",
-    "orchestrator: **Seat Failure Cascade Handler** - When seat-matrix shows a  (2026-11-26 07:22) - shared scope cascade,unreachable",
-    "lane end researcher: 11-26 08:14 (slowest lane)"
-   ]
-  },
-  {
    "agent": "verifier",
-   "goal": "**Validation Coverage Report** - for each current-cycle goal, check if test script exists at implied path. Report coverage % with pass/fail/missing per goal. Verified: report lists all goals with status; coverage % accur",
+   "goal": "**Convergence Metric Validation** - verify all convergence metrics (autonomy score, efficiency index, cycle duration) are computed correctly: check formulas against source data, boundary conditions, edge cases (empty cyc",
    "type": "verify",
    "complexity": 1,
    "p_reached": 0.758,
-   "eta": "2026-11-25 00:56",
+   "eta": "2026-11-25 02:08",
    "hours": 1.78,
    "order": 0,
-   "rank": 2,
-   "title": "Validation Coverage Report",
+   "rank": 1,
+   "title": "Convergence Metric Validation",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-25 00:56 (P=76%)",
+   "outcome": "reached ~2026-11-25 02:08 (P=76%)",
    "consequences": [
-    "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope current,exists,goals",
-    "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope cycle,goals,script",
-    "verifier: **Fleet Autonomy Regression Battery** - memory/verifier/auto (2026-11-25 04:01) - shared scope goals,script",
-    "lane end researcher: 11-26 08:14 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**Knowledge Freshness Decay v2** - extend decay_score.py to score GOAL FILES (archived goals as reference). Flag stale refs when verification path no longer exists. Verified: on current archive flags >=3 stale refs; all ",
-   "type": "measurement",
-   "complexity": 1,
-   "p_reached": 0.586,
-   "eta": "2026-11-25 01:38",
-   "hours": 2.49,
-   "order": 0,
-   "rank": 3,
-   "title": "Knowledge Freshness Decay v2",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-25 01:38 (P=59%)",
-   "consequences": [
-    "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope current,exists,goals",
-    "mechanic: **Health Score Computation** - memory/mechanic/health_score. (2026-11-25 03:17) - shared scope freshness,score",
-    "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope archive,goals",
-    "lane end researcher: 11-26 08:14 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "scribe",
-   "goal": "**Autonomous Round Narrative** - `python memory/scribe/auto_round_narrative.py`: when autonomous round completes, generate 5-sentence narrative (trigger, proposals, accept/reject, themes, outlook). Write to memory/ops/ro",
-   "type": "build",
-   "complexity": 1,
-   "p_reached": 0.714,
-   "eta": "2026-11-25 02:39",
-   "hours": 3.5,
-   "order": 0,
-   "rank": 4,
-   "title": "Autonomous Round Narrative",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-25 02:39 (P=71%)",
-   "consequences": [
-    "orchestrator: **Auto-Cycle-Trigger Detector** - `python memory/orchestrato (2026-11-25 05:23) - shared scope round,trigger",
-    "scribe: **Seat Gap Summary** - when a seat is unreachable >1h, gener (2026-11-25 09:39) - shared scope generate,write",
-    "mechanic: **Autonomous Ops Decision Log** - log every autonomous ops d (2026-11-25 09:50) - shared scope autonomous,trigger",
-    "lane end researcher: 11-26 08:14 (slowest lane)"
+    "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,metrics",
+    "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope autonomy,convergence,score",
+    "builder: **Convergence API Endpoint** - implement `/api/convergence`  (2026-11-25 03:48) - shared scope autonomy,convergence,efficiency",
+    "lane end scribe: 11-26 14:18 (slowest lane)"
    ]
   },
   {
    "agent": "mechanic",
-   "goal": "**Health Score Computation** - memory/mechanic/health_score.py: 0-100 from seat availability(40%)+VRAM headroom(20%)+loop freshness(20%)+error rate(20%). Write to memory/ops/health-score.json. Verified: all-good>90; one-",
+   "goal": "**Predictive Seat Health Monitor** - extend seat_probe.py: track response-time trend per seat; p95 latency up >50% over 3 probes = \"degrading\" state (before \"down\"). Write trend to seat-matrix.json. Verified: simulated l",
    "type": "measurement",
    "complexity": 1,
    "p_reached": 0.459,
-   "eta": "2026-11-25 03:17",
+   "eta": "2026-11-25 02:43",
    "hours": 2.36,
-   "order": 1,
-   "rank": 5,
-   "title": "Health Score Computation",
+   "order": 0,
+   "rank": 2,
+   "title": "Predictive Seat Health Monitor",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-25 03:17 (P=46%)",
+   "outcome": "reached ~2026-11-25 02:43 (P=46%)",
    "consequences": [
-    "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope freshness,score",
-    "orchestrator: **Seat Availability Matrix** - Maintain memory/ops/seat-matr (2026-11-25 10:05) - shared scope availability,mechanic",
-    "builder: **Fleet Health Dashboard Endpoint** - add /api/fleet/health  (2026-11-25 23:42) - shared scope health,score",
-    "lane end researcher: 11-26 08:14 (slowest lane)"
+    "orchestrator: **Convergence Dashboard API** - `/api/convergence` endpoint  (2026-11-25 03:56) - shared scope state,trend",
+    "mechanic: **Steady-State Ops Playbook** - memory/mechanic/steady-state (2026-11-25 04:30) - shared scope probe,state",
+    "orchestrator: **Predictive Cycle Length Estimator** - `python memory/orche (2026-11-25 07:11) - shared scope before,predictive",
+    "lane end scribe: 11-26 14:18 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "archivist",
+   "goal": "**Convergence Knowledge Base Entry** - create memory/archivist/convergence-kb.md defining steady-state criteria, autonomy score formula, convergence metrics glossary with file citations.",
+   "type": "measurement",
+   "complexity": 1,
+   "p_reached": 0.586,
+   "eta": "2026-11-25 02:50",
+   "hours": 2.49,
+   "order": 0,
+   "rank": 3,
+   "title": "Convergence Knowledge Base Entry",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-25 02:50 (P=59%)",
+   "consequences": [
+    "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,metrics",
+    "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope autonomy,convergence,score",
+    "designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 03:06) - shared scope state,steady",
+    "lane end scribe: 11-26 14:18 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "scribe",
+   "goal": "**Convergence Narrative Generator** - auto 3-paragraph narrative of fleet convergence status using real data from autonomy score + intervention log. Output: memory/ops/convergence-narrative-latest.md. Verified: all data ",
+   "type": "measurement",
+   "complexity": 1,
+   "p_reached": 0.757,
+   "eta": "2026-11-25 03:01",
+   "hours": 2.67,
+   "order": 0,
+   "rank": 4,
+   "title": "Convergence Narrative Generator",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-25 03:01 (P=76%)",
+   "consequences": [
+    "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,score",
+    "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,score",
+    "builder: **Convergence API Endpoint** - implement `/api/convergence`  (2026-11-25 03:48) - shared scope autonomy,convergence,score",
+    "lane end scribe: 11-26 14:18 (slowest lane)"
    ]
   },
   {
    "agent": "designer",
-   "goal": "**Cycle-Complete Celebration State** - cockpit hero when goal_pct=100: animated checkmark + cycle number + \"Transitioning...\" progress bar. Verified: renders at 1440px; animation <60fps drop; no layout shift",
+   "goal": "**Steady-State Visual Indicator** - when fleet enters STEADY-STATE mode: subtle green border on cockpit + \"Converged\" badge in header + reduced animation (calm aesthetic). On exit: amber pulse. Verified: mode change trig",
    "type": "build",
-   "complexity": 2,
-   "p_reached": 0.037,
-   "eta": "2026-11-25 03:28",
-   "hours": 4.32,
+   "complexity": 1,
+   "p_reached": 0.102,
+   "eta": "2026-11-25 03:06",
+   "hours": 2.76,
    "order": 0,
-   "rank": 6,
-   "title": "Cycle-Complete Celebration State",
+   "rank": 5,
+   "title": "Steady-State Visual Indicator",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
-    "evidence leaf + index line (AC: renders at 1440px; animation <60fps drop; no layout shift)"
+    "evidence leaf + index line (AC: mode change trig)"
    ],
-   "outcome": "reached ~2026-11-25 03:28 (P=4%)",
+   "outcome": "reached ~2026-11-25 03:06 (P=10%)",
    "consequences": [
-    "scribe: **Cycle Midpoint Report** - at 50% completion, generate prog (2026-11-25 22:49) - shared scope cycle,progress",
-    "lane end researcher: 11-26 08:14 (slowest lane)"
+    "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope state,steady",
+    "verifier: **Steady-State Transition Test** - simulate fleet entering s (2026-11-25 03:55) - shared scope change,state,steady",
+    "orchestrator: **Convergence Dashboard API** - `/api/convergence` endpoint  (2026-11-25 03:56) - shared scope cockpit,state,steady",
+    "lane end scribe: 11-26 14:18 (slowest lane)"
    ]
   },
   {
    "agent": "builder",
-   "goal": "**Auto-Archive Script** - `python memory/builder/auto_archive.py`: when triggered by cycle transition, move all memory/goals/<agent>.md to memory/goals/archive/<agent>-<date>-cycle<N>.md. Verified: after run, goals/ has ",
-   "type": "build",
+   "goal": "**Convergence API Endpoint** - implement `/api/convergence` in agent_portal.py: reads autonomy-score.json, efficiency-index.jsonl, human-interventions.jsonl, returns composite JSON. Caches 5min. Verified: endpoint respon",
+   "type": "measurement",
    "complexity": 2,
-   "p_reached": 0.188,
-   "eta": "2026-11-25 03:42",
-   "hours": 4.55,
+   "p_reached": 0.224,
+   "eta": "2026-11-25 03:48",
+   "hours": 3.46,
    "order": 0,
-   "rank": 7,
-   "title": "Auto-Archive Script",
+   "rank": 6,
+   "title": "Convergence API Endpoint",
    "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: after run, goals/ has)"
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-25 03:42 (P=19%)",
+   "outcome": "reached ~2026-11-25 03:48 (P=22%)",
    "consequences": [
-    "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope cycle,goals,script",
-    "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope archive,goals",
-    "verifier: **Fleet Autonomy Regression Battery** - memory/verifier/auto (2026-11-25 04:01) - shared scope goals,script",
-    "lane end researcher: 11-26 08:14 (slowest lane)"
+    "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,efficiency",
+    "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,score",
+    "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope autonomy,convergence,score",
+    "lane end scribe: 11-26 14:18 (slowest lane)"
    ]
   },
   {
    "agent": "verifier",
-   "goal": "**Fleet Autonomy Regression Battery** - memory/verifier/autonomy_battery.py: single script running ALL checks (goals 1-9) as a suite. Exit 0 if all pass, exit 1 with specific failures. The \"regression gate\" for autonomy ",
-   "type": "build",
+   "goal": "**Steady-State Transition Test** - simulate fleet entering steady-state: verify mode transition is clean, cycle frequency change propagates to scheduler, no orphaned tasks in-flight. Output: memory/verifier/steady_state_",
+   "type": "verify",
    "complexity": 1,
-   "p_reached": 0.405,
-   "eta": "2026-11-25 04:01",
-   "hours": 3.08,
+   "p_reached": 0.758,
+   "eta": "2026-11-25 03:55",
+   "hours": 1.78,
    "order": 1,
+   "rank": 7,
+   "title": "Steady-State Transition Test",
+   "steps": [
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-25 03:55 (P=76%)",
+   "consequences": [
+    "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope cycle,verify",
+    "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope state,steady",
+    "designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 03:06) - shared scope change,state,steady",
+    "lane end scribe: 11-26 14:18 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "orchestrator",
+   "goal": "**Convergence Dashboard API** - `/api/convergence` endpoint exposing: fleet autonomy score, cycle duration trend, human-intervention count per cycle, steady-state progress %. Serves the cockpit convergence panel. Verifie",
+   "type": "measurement",
+   "complexity": 2,
+   "p_reached": 0.325,
+   "eta": "2026-11-25 03:56",
+   "hours": 3.59,
+   "order": 0,
    "rank": 8,
-   "title": "Fleet Autonomy Regression Battery",
+   "title": "Convergence Dashboard API",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-25 03:56 (P=32%)",
+   "consequences": [
+    "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,cycle",
+    "mechanic: **Predictive Seat Health Monitor** - extend seat_probe.py: t (2026-11-25 02:43) - shared scope state,trend",
+    "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,score",
+    "lane end scribe: 11-26 14:18 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "mechanic",
+   "goal": "**Steady-State Ops Playbook** - memory/mechanic/steady-state-playbook.md: reduced probe freq (15min), lighter recovery, escalate only on SLA breach. >=4 procedures with trigger+steps+rollback. Verified: all 4 have comple",
+   "type": "ops",
+   "complexity": 1,
+   "p_reached": 0.758,
+   "eta": "2026-11-25 04:30",
+   "hours": 1.78,
+   "order": 1,
+   "rank": 9,
+   "title": "Steady-State Ops Playbook",
+   "steps": [
+    "pre-flight checks (targets exist, idempotent)",
+    "execute from non-sandbox session",
+    "verify registration/health + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-25 04:30 (P=76%)",
+   "consequences": [
+    "mechanic: **Predictive Seat Health Monitor** - extend seat_probe.py: t (2026-11-25 02:43) - shared scope probe,state",
+    "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope state,steady",
+    "designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 03:06) - shared scope reduced,state,steady",
+    "lane end scribe: 11-26 14:18 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "researcher",
+   "goal": "**Convergence Trajectory Model** - `python memory/researcher/convergence_model.py`: from cycle history (duration, completion %, intervention count), fit convergence curve to steady-state. Predict cycles-to-steady-state +",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.072,
+   "eta": "2026-11-25 04:43",
+   "hours": 4.37,
+   "order": 0,
+   "rank": 10,
+   "title": "Convergence Trajectory Model",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-25 04:01 (P=40%)",
+   "outcome": "reached ~2026-11-25 04:43 (P=7%)",
    "consequences": [
-    "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope goals,script",
-    "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope goals,script",
-    "orchestrator: **Fleet Autonomy Score** - `python memory/orchestrator/auton (2026-11-26 02:40) - shared scope autonomy,goals",
-    "lane end researcher: 11-26 08:14 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "researcher",
-   "goal": "**Goal Pattern Miner** - `python memory/researcher/pattern_miner.py`: scan all archived goal files (memory/goals/archive/), extract: which goal types recur across cycles, which verification criteria patterns work best, w",
-   "type": "research",
-   "complexity": 2,
-   "p_reached": 0.134,
-   "eta": "2026-11-25 04:44",
-   "hours": 5.58,
-   "order": 0,
-   "rank": 9,
-   "title": "Goal Pattern Miner",
-   "steps": [
-    "gather sources from memory/ (pointer map)",
-    "compute/detect per protocol",
-    "write findings leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-25 04:44 (P=13%)",
-   "consequences": [
-    "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope archive,archived,files",
-    "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope archive,goals",
-    "archivist: **Cross-Cycle Insight Extractor** - memory/archivist/insight (2026-11-25 04:52) - shared scope archived,cycles,extract",
-    "lane end researcher: 11-26 08:14 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**Cross-Cycle Insight Extractor** - memory/archivist/insight_extractor.py: scan archived cycles for patterns, extract 3-5 insights per cycle. Write to memory/archivist/cross-cycle-insights.md. Verified: on c10-15 data ex",
-   "type": "build",
-   "complexity": 1,
-   "p_reached": 0.531,
-   "eta": "2026-11-25 04:52",
-   "hours": 3.24,
-   "order": 1,
-   "rank": 10,
-   "title": "Cross-Cycle Insight Extractor",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: on c10-15 data ex)"
-   ],
-   "outcome": "reached ~2026-11-25 04:52 (P=53%)",
-   "consequences": [
-    "researcher: **Goal Pattern Miner** - `python memory/researcher/pattern_m (2026-11-25 04:44) - shared scope archived,cycles,extract",
-    "researcher: **Cycle Velocity Model** - `python memory/researcher/velocit (2026-11-25 09:06) - shared scope archived,cycle,cycles",
-    "archivist: **Decision Pattern Archive** - for each decision in decision (2026-11-25 12:27) - shared scope archivist,cycle,patterns",
-    "lane end researcher: 11-26 08:14 (slowest lane)"
+    "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope convergence,cycle,duration",
+    "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope convergence,state,steady",
+    "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope convergence,intervention",
+    "lane end scribe: 11-26 14:18 (slowest lane)"
    ]
   }
  ],
@@ -256,45 +255,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-24 23:39",
+   "end": "2026-11-25 00:51",
    "completes": 0,
-   "fleet_pct": 33.8,
+   "fleet_pct": 15.0,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-25 00:09",
+   "end": "2026-11-25 01:21",
    "completes": 0,
-   "fleet_pct": 33.8,
+   "fleet_pct": 15.0,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-25 23:09",
-   "completes": 43,
-   "fleet_pct": 87.5,
+   "end": "2026-11-26 00:21",
+   "completes": 53,
+   "fleet_pct": 81.2,
    "top": [
-    "#1 mechanic: Auto-Recovery Playbook v2 (2026-11-25 00:56)",
-    "#2 verifier: Validation Coverage Report (2026-11-25 00:56)",
-    "#3 archivist: Knowledge Freshness Decay v2 (2026-11-25 01:38)",
-    "#4 scribe: Autonomous Round Narrative (2026-11-25 02:39)",
-    "#5 mechanic: Health Score Computation (2026-11-25 03:17)"
+    "#1 verifier: Convergence Metric Validation (2026-11-25 02:08)",
+    "#2 mechanic: Predictive Seat Health Monitor (2026-11-25 02:43)",
+    "#3 archivist: Convergence Knowledge Base Entry (2026-11-25 02:50)",
+    "#4 scribe: Convergence Narrative Generator (2026-11-25 03:01)",
+    "#5 designer: Steady-State Visual Indicator (2026-11-25 03:06)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-01 23:09",
-   "completes": 53,
+   "end": "2026-12-02 00:21",
+   "completes": 68,
    "fleet_pct": 100.0,
    "top": [
-    "#1 mechanic: Auto-Recovery Playbook v2 (2026-11-25 00:56)",
-    "#2 verifier: Validation Coverage Report (2026-11-25 00:56)",
-    "#3 archivist: Knowledge Freshness Decay v2 (2026-11-25 01:38)",
-    "#4 scribe: Autonomous Round Narrative (2026-11-25 02:39)",
-    "#5 mechanic: Health Score Computation (2026-11-25 03:17)"
+    "#1 verifier: Convergence Metric Validation (2026-11-25 02:08)",
+    "#2 mechanic: Predictive Seat Health Monitor (2026-11-25 02:43)",
+    "#3 archivist: Convergence Knowledge Base Entry (2026-11-25 02:50)",
+    "#4 scribe: Convergence Narrative Generator (2026-11-25 03:01)",
+    "#5 designer: Steady-State Visual Indicator (2026-11-25 03:06)"
    ],
    "next_cycle_candidates": [
     {
@@ -350,15 +349,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-24 23:09",
-   "completes": 53,
+   "end": "2026-12-25 00:21",
+   "completes": 68,
    "fleet_pct": 100.0,
    "top": [
-    "#1 mechanic: Auto-Recovery Playbook v2 (2026-11-25 00:56)",
-    "#2 verifier: Validation Coverage Report (2026-11-25 00:56)",
-    "#3 archivist: Knowledge Freshness Decay v2 (2026-11-25 01:38)",
-    "#4 scribe: Autonomous Round Narrative (2026-11-25 02:39)",
-    "#5 mechanic: Health Score Computation (2026-11-25 03:17)"
+    "#1 verifier: Convergence Metric Validation (2026-11-25 02:08)",
+    "#2 mechanic: Predictive Seat Health Monitor (2026-11-25 02:43)",
+    "#3 archivist: Convergence Knowledge Base Entry (2026-11-25 02:50)",
+    "#4 scribe: Convergence Narrative Generator (2026-11-25 03:01)",
+    "#5 designer: Steady-State Visual Indicator (2026-11-25 03:06)"
    ],
    "next_cycle_candidates": [
     {
@@ -414,562 +413,561 @@
  ],
  "lanes": {
   "archivist": {
-   "done": 4,
+   "done": 3,
    "total": 10,
-   "end": "2026-11-25 18:10"
+   "end": "2026-11-25 20:08"
   },
   "builder": {
-   "done": 1,
+   "done": 0,
    "total": 10,
-   "end": "2026-11-26 07:43"
+   "end": "2026-11-26 11:06"
   },
   "designer": {
    "done": 2,
    "total": 10,
-   "end": "2026-11-25 20:21"
+   "end": "2026-11-26 08:17"
   },
   "mechanic": {
-   "done": 6,
+   "done": 0,
    "total": 10,
-   "end": "2026-11-25 09:50"
+   "end": "2026-11-26 00:59"
   },
   "orchestrator": {
-   "done": 3,
-   "total": 10,
-   "end": "2026-11-26 07:22"
-  },
-  "researcher": {
-   "done": 2,
-   "total": 10,
-   "end": "2026-11-26 08:14"
-  },
-  "scribe": {
    "done": 1,
    "total": 10,
-   "end": "2026-11-26 05:49"
+   "end": "2026-11-26 06:37"
+  },
+  "researcher": {
+   "done": 3,
+   "total": 10,
+   "end": "2026-11-26 01:25"
+  },
+  "scribe": {
+   "done": 0,
+   "total": 10,
+   "end": "2026-11-26 14:18"
   },
   "verifier": {
-   "done": 8,
+   "done": 3,
    "total": 10,
-   "end": "2026-11-25 04:01"
+   "end": "2026-11-25 14:12"
   }
  },
- "level_up_eta": "2026-11-26 08:14",
+ "level_up_eta": "2026-11-26 14:18",
  "plan": {
   "cycle_state": "in flight: 10 goal(s) open",
-  "level_up_eta": "2026-11-26 08:14",
+  "level_up_eta": "2026-11-26 14:18",
   "planned": [
    {
-    "agent": "mechanic",
-    "goal": "**Auto-Recovery Playbook v2** - extend playbooks with seat-unreachable: probe confirms down, attempt restart, check host health, if host down mark cascade+notify. Verified: simulated seat-down triggers full playbook; ste",
-    "type": "ops",
-    "complexity": 1,
-    "p_reached": 0.758,
-    "eta": "2026-11-25 00:56",
-    "hours": 1.78,
-    "order": 0,
-    "rank": 1,
-    "title": "Auto-Recovery Playbook v2",
-    "steps": [
-     "pre-flight checks (targets exist, idempotent)",
-     "execute from non-sandbox session",
-     "verify registration/health + evidence leaf"
-    ],
-    "outcome": "reached ~2026-11-25 00:56 (P~76%)",
-    "consequences": [
-     "mechanic: **Fleet Recovery Time Tracker** - measure detection-to-recov (2026-11-25 06:45) - shared scope recovery,simulated",
-     "scribe: **Seat Gap Summary** - when a seat is unreachable >1h, gener (2026-11-25 09:39) - shared scope simulated,unreachable",
-     "orchestrator: **Seat Failure Cascade Handler** - When seat-matrix shows a  (2026-11-26 07:22) - shared scope cascade,unreachable",
-     "lane end researcher: 11-26 08:14 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 00:56",
-    "deliverable": {
-     "name": "Load-test evidence",
-     "stream": "Reliability"
-    },
-    "then": "#5 [mechanic] Health Score Computation",
-    "then_eta": "2026-11-25 03:17"
-   },
-   {
     "agent": "verifier",
-    "goal": "**Validation Coverage Report** - for each current-cycle goal, check if test script exists at implied path. Report coverage % with pass/fail/missing per goal. Verified: report lists all goals with status; coverage % accur",
+    "goal": "**Convergence Metric Validation** - verify all convergence metrics (autonomy score, efficiency index, cycle duration) are computed correctly: check formulas against source data, boundary conditions, edge cases (empty cyc",
     "type": "verify",
     "complexity": 1,
     "p_reached": 0.758,
-    "eta": "2026-11-25 00:56",
+    "eta": "2026-11-25 02:08",
     "hours": 1.78,
     "order": 0,
-    "rank": 2,
-    "title": "Validation Coverage Report",
+    "rank": 1,
+    "title": "Convergence Metric Validation",
     "steps": [
      "build the test battery / audit script",
      "run against live sources",
      "record verdict + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-25 00:56 (P~76%)",
+    "outcome": "reached ~2026-11-25 02:08 (P~76%)",
     "consequences": [
-     "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope current,exists,goals",
-     "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope cycle,goals,script",
-     "verifier: **Fleet Autonomy Regression Battery** - memory/verifier/auto (2026-11-25 04:01) - shared scope goals,script",
-     "lane end researcher: 11-26 08:14 (slowest lane)"
+     "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,metrics",
+     "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope autonomy,convergence,score",
+     "builder: **Convergence API Endpoint** - implement `/api/convergence`  (2026-11-25 03:48) - shared scope autonomy,convergence,efficiency",
+     "lane end scribe: 11-26 14:18 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 8/10 done; this goal ends its lane at 2026-11-25 00:56",
+    "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 3/10 done; this goal ends its lane at 2026-11-25 02:08",
     "deliverable": {
-     "name": "Validation Coverage Report",
+     "name": "Convergence Metric Validation",
      "stream": "General"
     },
-    "then": "#8 [verifier] Fleet Autonomy Regression Battery",
-    "then_eta": "2026-11-25 04:01"
-   },
-   {
-    "agent": "archivist",
-    "goal": "**Knowledge Freshness Decay v2** - extend decay_score.py to score GOAL FILES (archived goals as reference). Flag stale refs when verification path no longer exists. Verified: on current archive flags >=3 stale refs; all ",
-    "type": "measurement",
-    "complexity": 1,
-    "p_reached": 0.586,
-    "eta": "2026-11-25 01:38",
-    "hours": 2.49,
-    "order": 0,
-    "rank": 3,
-    "title": "Knowledge Freshness Decay v2",
-    "steps": [
-     "instrument or extend the scorer",
-     "two-run delta check",
-     "publish snapshot + report leaf"
-    ],
-    "outcome": "reached ~2026-11-25 01:38 (P~59%)",
-    "consequences": [
-     "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope current,exists,goals",
-     "mechanic: **Health Score Computation** - memory/mechanic/health_score. (2026-11-25 03:17) - shared scope freshness,score",
-     "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope archive,goals",
-     "lane end researcher: 11-26 08:14 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-25 01:38",
-    "deliverable": {
-     "name": "Archive + evidence leaves",
-     "stream": "Memory quality"
-    },
-    "then": "#10 [archivist] Cross-Cycle Insight Extractor",
-    "then_eta": "2026-11-25 04:52"
-   },
-   {
-    "agent": "scribe",
-    "goal": "**Autonomous Round Narrative** - `python memory/scribe/auto_round_narrative.py`: when autonomous round completes, generate 5-sentence narrative (trigger, proposals, accept/reject, themes, outlook). Write to memory/ops/ro",
-    "type": "build",
-    "complexity": 1,
-    "p_reached": 0.714,
-    "eta": "2026-11-25 02:39",
-    "hours": 3.5,
-    "order": 0,
-    "rank": 4,
-    "title": "Autonomous Round Narrative",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "write evidence leaf + index line"
-    ],
-    "outcome": "reached ~2026-11-25 02:39 (P~71%)",
-    "consequences": [
-     "orchestrator: **Auto-Cycle-Trigger Detector** - `python memory/orchestrato (2026-11-25 05:23) - shared scope round,trigger",
-     "scribe: **Seat Gap Summary** - when a seat is unreachable >1h, gener (2026-11-25 09:39) - shared scope generate,write",
-     "mechanic: **Autonomous Ops Decision Log** - log every autonomous ops d (2026-11-25 09:50) - shared scope autonomous,trigger",
-     "lane end researcher: 11-26 08:14 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 02:39",
-    "deliverable": {
-     "name": "Autonomous Round Narrative",
-     "stream": "General"
-    },
-    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
-    "then_eta": "2026-11-26 08:14"
+    "then": "#7 [verifier] Steady-State Transition Test",
+    "then_eta": "2026-11-25 03:55"
    },
    {
     "agent": "mechanic",
-    "goal": "**Health Score Computation** - memory/mechanic/health_score.py: 0-100 from seat availability(40%)+VRAM headroom(20%)+loop freshness(20%)+error rate(20%). Write to memory/ops/health-score.json. Verified: all-good>90; one-",
+    "goal": "**Predictive Seat Health Monitor** - extend seat_probe.py: track response-time trend per seat; p95 latency up >50% over 3 probes = \"degrading\" state (before \"down\"). Write trend to seat-matrix.json. Verified: simulated l",
     "type": "measurement",
     "complexity": 1,
     "p_reached": 0.459,
-    "eta": "2026-11-25 03:17",
+    "eta": "2026-11-25 02:43",
     "hours": 2.36,
-    "order": 1,
-    "rank": 5,
-    "title": "Health Score Computation",
+    "order": 0,
+    "rank": 2,
+    "title": "Predictive Seat Health Monitor",
     "steps": [
      "instrument or extend the scorer",
      "two-run delta check",
      "publish snapshot + report leaf"
     ],
-    "outcome": "reached ~2026-11-25 03:17 (P~46%)",
+    "outcome": "reached ~2026-11-25 02:43 (P~46%)",
     "consequences": [
-     "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope freshness,score",
-     "orchestrator: **Seat Availability Matrix** - Maintain memory/ops/seat-matr (2026-11-25 10:05) - shared scope availability,mechanic",
-     "builder: **Fleet Health Dashboard Endpoint** - add /api/fleet/health  (2026-11-25 23:42) - shared scope health,score",
-     "lane end researcher: 11-26 08:14 (slowest lane)"
+     "orchestrator: **Convergence Dashboard API** - `/api/convergence` endpoint  (2026-11-25 03:56) - shared scope state,trend",
+     "mechanic: **Steady-State Ops Playbook** - memory/mechanic/steady-state (2026-11-25 04:30) - shared scope probe,state",
+     "orchestrator: **Predictive Cycle Length Estimator** - `python memory/orche (2026-11-25 07:11) - shared scope before,predictive",
+     "lane end scribe: 11-26 14:18 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 03:17",
+    "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 0/10 done; this goal ends its lane at 2026-11-25 02:43",
     "deliverable": {
-     "name": "Health Score Computation",
+     "name": "Load-test evidence",
+     "stream": "Reliability"
+    },
+    "then": "#9 [mechanic] Steady-State Ops Playbook",
+    "then_eta": "2026-11-25 04:30"
+   },
+   {
+    "agent": "archivist",
+    "goal": "**Convergence Knowledge Base Entry** - create memory/archivist/convergence-kb.md defining steady-state criteria, autonomy score formula, convergence metrics glossary with file citations.",
+    "type": "measurement",
+    "complexity": 1,
+    "p_reached": 0.586,
+    "eta": "2026-11-25 02:50",
+    "hours": 2.49,
+    "order": 0,
+    "rank": 3,
+    "title": "Convergence Knowledge Base Entry",
+    "steps": [
+     "instrument or extend the scorer",
+     "two-run delta check",
+     "publish snapshot + report leaf"
+    ],
+    "outcome": "reached ~2026-11-25 02:50 (P~59%)",
+    "consequences": [
+     "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,metrics",
+     "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope autonomy,convergence,score",
+     "designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 03:06) - shared scope state,steady",
+     "lane end scribe: 11-26 14:18 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 3/10 done; this goal ends its lane at 2026-11-25 02:50",
+    "deliverable": {
+     "name": "Convergence Knowledge Base Entry",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
-    "then_eta": "2026-11-26 08:14"
+    "then": "lane clear - level-up gate re-check (2026-11-26 14:18)",
+    "then_eta": "2026-11-26 14:18"
+   },
+   {
+    "agent": "scribe",
+    "goal": "**Convergence Narrative Generator** - auto 3-paragraph narrative of fleet convergence status using real data from autonomy score + intervention log. Output: memory/ops/convergence-narrative-latest.md. Verified: all data ",
+    "type": "measurement",
+    "complexity": 1,
+    "p_reached": 0.757,
+    "eta": "2026-11-25 03:01",
+    "hours": 2.67,
+    "order": 0,
+    "rank": 4,
+    "title": "Convergence Narrative Generator",
+    "steps": [
+     "instrument or extend the scorer",
+     "two-run delta check",
+     "publish snapshot + report leaf"
+    ],
+    "outcome": "reached ~2026-11-25 03:01 (P~76%)",
+    "consequences": [
+     "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,score",
+     "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,score",
+     "builder: **Convergence API Endpoint** - implement `/api/convergence`  (2026-11-25 03:48) - shared scope autonomy,convergence,score",
+     "lane end scribe: 11-26 14:18 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 03:01",
+    "deliverable": {
+     "name": "Convergence Narrative Generator",
+     "stream": "General"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 14:18)",
+    "then_eta": "2026-11-26 14:18"
    },
    {
     "agent": "designer",
-    "goal": "**Cycle-Complete Celebration State** - cockpit hero when goal_pct=100: animated checkmark + cycle number + \"Transitioning...\" progress bar. Verified: renders at 1440px; animation <60fps drop; no layout shift",
+    "goal": "**Steady-State Visual Indicator** - when fleet enters STEADY-STATE mode: subtle green border on cockpit + \"Converged\" badge in header + reduced animation (calm aesthetic). On exit: amber pulse. Verified: mode change trig",
     "type": "build",
-    "complexity": 2,
-    "p_reached": 0.037,
-    "eta": "2026-11-25 03:28",
-    "hours": 4.32,
+    "complexity": 1,
+    "p_reached": 0.102,
+    "eta": "2026-11-25 03:06",
+    "hours": 2.76,
     "order": 0,
-    "rank": 6,
-    "title": "Cycle-Complete Celebration State",
+    "rank": 5,
+    "title": "Steady-State Visual Indicator",
     "steps": [
      "scaffold the module file",
      "implement core logic",
      "self-test until AC green",
-     "evidence leaf + index line (AC: renders at 1440px; animation <60fps drop; no layout shift)"
+     "evidence leaf + index line (AC: mode change trig)"
     ],
-    "outcome": "reached ~2026-11-25 03:28 (P~4%)",
+    "outcome": "reached ~2026-11-25 03:06 (P~10%)",
     "consequences": [
-     "scribe: **Cycle Midpoint Report** - at 50% completion, generate prog (2026-11-25 22:49) - shared scope cycle,progress",
-     "lane end researcher: 11-26 08:14 (slowest lane)"
+     "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope state,steady",
+     "verifier: **Steady-State Transition Test** - simulate fleet entering s (2026-11-25 03:55) - shared scope change,state,steady",
+     "orchestrator: **Convergence Dashboard API** - `/api/convergence` endpoint  (2026-11-25 03:56) - shared scope cockpit,state,steady",
+     "lane end scribe: 11-26 14:18 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 2/10 done; this goal ends its lane at 2026-11-25 03:28",
+    "why": "planned as build work (cx1); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~10%): kept in plan because its scope gates later work; lane designer has 2/10 done; this goal ends its lane at 2026-11-25 03:06",
     "deliverable": {
-     "name": "Cycle-Complete Celebration State",
+     "name": "Steady-State Visual Indicator",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
-    "then_eta": "2026-11-26 08:14"
+    "then": "lane clear - level-up gate re-check (2026-11-26 14:18)",
+    "then_eta": "2026-11-26 14:18"
    },
    {
     "agent": "builder",
-    "goal": "**Auto-Archive Script** - `python memory/builder/auto_archive.py`: when triggered by cycle transition, move all memory/goals/<agent>.md to memory/goals/archive/<agent>-<date>-cycle<N>.md. Verified: after run, goals/ has ",
-    "type": "build",
+    "goal": "**Convergence API Endpoint** - implement `/api/convergence` in agent_portal.py: reads autonomy-score.json, efficiency-index.jsonl, human-interventions.jsonl, returns composite JSON. Caches 5min. Verified: endpoint respon",
+    "type": "measurement",
     "complexity": 2,
-    "p_reached": 0.188,
-    "eta": "2026-11-25 03:42",
-    "hours": 4.55,
+    "p_reached": 0.224,
+    "eta": "2026-11-25 03:48",
+    "hours": 3.46,
     "order": 0,
-    "rank": 7,
-    "title": "Auto-Archive Script",
+    "rank": 6,
+    "title": "Convergence API Endpoint",
     "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: after run, goals/ has)"
+     "instrument or extend the scorer",
+     "two-run delta check",
+     "publish snapshot + report leaf"
     ],
-    "outcome": "reached ~2026-11-25 03:42 (P~19%)",
+    "outcome": "reached ~2026-11-25 03:48 (P~22%)",
     "consequences": [
-     "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope cycle,goals,script",
-     "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope archive,goals",
-     "verifier: **Fleet Autonomy Regression Battery** - memory/verifier/auto (2026-11-25 04:01) - shared scope goals,script",
-     "lane end researcher: 11-26 08:14 (slowest lane)"
+     "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,efficiency",
+     "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,score",
+     "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope autonomy,convergence,score",
+     "lane end scribe: 11-26 14:18 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-25 03:42",
+    "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 0/10 done; this goal ends its lane at 2026-11-25 03:48",
     "deliverable": {
-     "name": "Archive + evidence leaves",
-     "stream": "Memory quality"
+     "name": "Convergence API Endpoint",
+     "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
-    "then_eta": "2026-11-26 08:14"
+    "then": "lane clear - level-up gate re-check (2026-11-26 14:18)",
+    "then_eta": "2026-11-26 14:18"
    },
    {
     "agent": "verifier",
-    "goal": "**Fleet Autonomy Regression Battery** - memory/verifier/autonomy_battery.py: single script running ALL checks (goals 1-9) as a suite. Exit 0 if all pass, exit 1 with specific failures. The \"regression gate\" for autonomy ",
-    "type": "build",
+    "goal": "**Steady-State Transition Test** - simulate fleet entering steady-state: verify mode transition is clean, cycle frequency change propagates to scheduler, no orphaned tasks in-flight. Output: memory/verifier/steady_state_",
+    "type": "verify",
     "complexity": 1,
-    "p_reached": 0.405,
-    "eta": "2026-11-25 04:01",
-    "hours": 3.08,
+    "p_reached": 0.758,
+    "eta": "2026-11-25 03:55",
+    "hours": 1.78,
     "order": 1,
+    "rank": 7,
+    "title": "Steady-State Transition Test",
+    "steps": [
+     "build the test battery / audit script",
+     "run against live sources",
+     "record verdict + evidence leaf"
+    ],
+    "outcome": "reached ~2026-11-25 03:55 (P~76%)",
+    "consequences": [
+     "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope cycle,verify",
+     "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope state,steady",
+     "designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 03:06) - shared scope change,state,steady",
+     "lane end scribe: 11-26 14:18 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 3/10 done; this goal ends its lane at 2026-11-25 03:55",
+    "deliverable": {
+     "name": "Fleet mode switching",
+     "stream": "Portal UX"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 14:18)",
+    "then_eta": "2026-11-26 14:18"
+   },
+   {
+    "agent": "orchestrator",
+    "goal": "**Convergence Dashboard API** - `/api/convergence` endpoint exposing: fleet autonomy score, cycle duration trend, human-intervention count per cycle, steady-state progress %. Serves the cockpit convergence panel. Verifie",
+    "type": "measurement",
+    "complexity": 2,
+    "p_reached": 0.325,
+    "eta": "2026-11-25 03:56",
+    "hours": 3.59,
+    "order": 0,
     "rank": 8,
-    "title": "Fleet Autonomy Regression Battery",
+    "title": "Convergence Dashboard API",
+    "steps": [
+     "instrument or extend the scorer",
+     "two-run delta check",
+     "publish snapshot + report leaf"
+    ],
+    "outcome": "reached ~2026-11-25 03:56 (P~32%)",
+    "consequences": [
+     "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope autonomy,convergence,cycle",
+     "mechanic: **Predictive Seat Health Monitor** - extend seat_probe.py: t (2026-11-25 02:43) - shared scope state,trend",
+     "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope autonomy,convergence,score",
+     "lane end scribe: 11-26 14:18 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as measurement work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~32%): kept in plan because its scope gates later work; lane orchestrator has 1/10 done; this goal ends its lane at 2026-11-25 03:56",
+    "deliverable": {
+     "name": "Convergence Dashboard API",
+     "stream": "General"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 14:18)",
+    "then_eta": "2026-11-26 14:18"
+   },
+   {
+    "agent": "mechanic",
+    "goal": "**Steady-State Ops Playbook** - memory/mechanic/steady-state-playbook.md: reduced probe freq (15min), lighter recovery, escalate only on SLA breach. >=4 procedures with trigger+steps+rollback. Verified: all 4 have comple",
+    "type": "ops",
+    "complexity": 1,
+    "p_reached": 0.758,
+    "eta": "2026-11-25 04:30",
+    "hours": 1.78,
+    "order": 1,
+    "rank": 9,
+    "title": "Steady-State Ops Playbook",
+    "steps": [
+     "pre-flight checks (targets exist, idempotent)",
+     "execute from non-sandbox session",
+     "verify registration/health + evidence leaf"
+    ],
+    "outcome": "reached ~2026-11-25 04:30 (P~76%)",
+    "consequences": [
+     "mechanic: **Predictive Seat Health Monitor** - extend seat_probe.py: t (2026-11-25 02:43) - shared scope probe,state",
+     "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope state,steady",
+     "designer: **Steady-State Visual Indicator** - when fleet enters STEADY (2026-11-25 03:06) - shared scope reduced,state,steady",
+     "lane end scribe: 11-26 14:18 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 0/10 done; this goal ends its lane at 2026-11-25 04:30",
+    "deliverable": {
+     "name": "Load-test evidence",
+     "stream": "Reliability"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 14:18)",
+    "then_eta": "2026-11-26 14:18"
+   },
+   {
+    "agent": "researcher",
+    "goal": "**Convergence Trajectory Model** - `python memory/researcher/convergence_model.py`: from cycle history (duration, completion %, intervention count), fit convergence curve to steady-state. Predict cycles-to-steady-state +",
+    "type": "build",
+    "complexity": 2,
+    "p_reached": 0.072,
+    "eta": "2026-11-25 04:43",
+    "hours": 4.37,
+    "order": 0,
+    "rank": 10,
+    "title": "Convergence Trajectory Model",
     "steps": [
      "scaffold the module file",
      "implement core logic",
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-25 04:01 (P~40%)",
+    "outcome": "reached ~2026-11-25 04:43 (P~7%)",
     "consequences": [
-     "verifier: **Validation Coverage Report** - for each current-cycle goal (2026-11-25 00:56) - shared scope goals,script",
-     "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope goals,script",
-     "orchestrator: **Fleet Autonomy Score** - `python memory/orchestrator/auton (2026-11-26 02:40) - shared scope autonomy,goals",
-     "lane end researcher: 11-26 08:14 (slowest lane)"
+     "verifier: **Convergence Metric Validation** - verify all convergence m (2026-11-25 02:08) - shared scope convergence,cycle,duration",
+     "archivist: **Convergence Knowledge Base Entry** - create memory/archivi (2026-11-25 02:50) - shared scope convergence,state,steady",
+     "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 03:01) - shared scope convergence,intervention",
+     "lane end scribe: 11-26 14:18 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane verifier has 8/10 done; this goal ends its lane at 2026-11-25 04:01",
+    "why": "planned as build work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~7%): kept in plan because its scope gates later work; lane researcher has 3/10 done; this goal ends its lane at 2026-11-25 04:43",
     "deliverable": {
-     "name": "Fleet Autonomy Regression Battery",
+     "name": "Convergence Trajectory Model",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
-    "then_eta": "2026-11-26 08:14"
-   },
-   {
-    "agent": "researcher",
-    "goal": "**Goal Pattern Miner** - `python memory/researcher/pattern_miner.py`: scan all archived goal files (memory/goals/archive/), extract: which goal types recur across cycles, which verification criteria patterns work best, w",
-    "type": "research",
-    "complexity": 2,
-    "p_reached": 0.134,
-    "eta": "2026-11-25 04:44",
-    "hours": 5.58,
-    "order": 0,
-    "rank": 9,
-    "title": "Goal Pattern Miner",
-    "steps": [
-     "gather sources from memory/ (pointer map)",
-     "compute/detect per protocol",
-     "write findings leaf + index line"
-    ],
-    "outcome": "reached ~2026-11-25 04:44 (P~13%)",
-    "consequences": [
-     "archivist: **Knowledge Freshness Decay v2** - extend decay_score.py to  (2026-11-25 01:38) - shared scope archive,archived,files",
-     "builder: **Auto-Archive Script** - `python memory/builder/auto_archiv (2026-11-25 03:42) - shared scope archive,goals",
-     "archivist: **Cross-Cycle Insight Extractor** - memory/archivist/insight (2026-11-25 04:52) - shared scope archived,cycles,extract",
-     "lane end researcher: 11-26 08:14 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as research work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~13%): kept in plan because its scope gates later work; lane researcher has 2/10 done; this goal ends its lane at 2026-11-25 04:44",
-    "deliverable": {
-     "name": "Archive + evidence leaves",
-     "stream": "Memory quality"
-    },
-    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
-    "then_eta": "2026-11-26 08:14"
-   },
-   {
-    "agent": "archivist",
-    "goal": "**Cross-Cycle Insight Extractor** - memory/archivist/insight_extractor.py: scan archived cycles for patterns, extract 3-5 insights per cycle. Write to memory/archivist/cross-cycle-insights.md. Verified: on c10-15 data ex",
-    "type": "build",
-    "complexity": 1,
-    "p_reached": 0.531,
-    "eta": "2026-11-25 04:52",
-    "hours": 3.24,
-    "order": 1,
-    "rank": 10,
-    "title": "Cross-Cycle Insight Extractor",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: on c10-15 data ex)"
-    ],
-    "outcome": "reached ~2026-11-25 04:52 (P~53%)",
-    "consequences": [
-     "researcher: **Goal Pattern Miner** - `python memory/researcher/pattern_m (2026-11-25 04:44) - shared scope archived,cycles,extract",
-     "researcher: **Cycle Velocity Model** - `python memory/researcher/velocit (2026-11-25 09:06) - shared scope archived,cycle,cycles",
-     "archivist: **Decision Pattern Archive** - for each decision in decision (2026-11-25 12:27) - shared scope archivist,cycle,patterns",
-     "lane end researcher: 11-26 08:14 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~53%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-25 04:52",
-    "deliverable": {
-     "name": "Archive + evidence leaves",
-     "stream": "Memory quality"
-    },
-    "then": "lane clear - level-up gate re-check (2026-11-26 08:14)",
-    "then_eta": "2026-11-26 08:14"
+    "then": "lane clear - level-up gate re-check (2026-11-26 14:18)",
+    "then_eta": "2026-11-26 14:18"
    }
   ],
   "horizons": [
    {
     "label": "30m",
     "hours": 0.5,
-    "end": "2026-11-24 23:39",
+    "end": "2026-11-25 00:51",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 33%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 12/80 -> 15%"
    },
    {
     "label": "1h",
     "hours": 1.0,
-    "end": "2026-11-25 00:09",
+    "end": "2026-11-25 01:21",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 33%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 12/80 -> 15%"
    },
    {
     "label": "1d",
     "hours": 24.0,
-    "end": "2026-11-25 23:09",
+    "end": "2026-11-26 00:21",
     "completes": 10,
     "top": [
      {
       "rank": 1,
-      "agent": "mechanic",
-      "title": "Auto-Recovery Playbook v2",
-      "eta": "2026-11-25 00:56",
-      "type": "ops",
-      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 00:56"
+      "agent": "verifier",
+      "title": "Convergence Metric Validation",
+      "eta": "2026-11-25 02:08",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 3/10 done; this goal ends its lane at 2026-11-25 02:08"
      },
      {
       "rank": 2,
-      "agent": "verifier",
-      "title": "Validation Coverage Report",
-      "eta": "2026-11-25 00:56",
-      "type": "verify",
-      "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 8/10 done; this goal ends its lane at 2026-11-25 00:56"
+      "agent": "mechanic",
+      "title": "Predictive Seat Health Monitor",
+      "eta": "2026-11-25 02:43",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 0/10 done; this goal ends its lane at 2026-11-25 02:43"
      },
      {
       "rank": 3,
       "agent": "archivist",
-      "title": "Knowledge Freshness Decay v2",
-      "eta": "2026-11-25 01:38",
+      "title": "Convergence Knowledge Base Entry",
+      "eta": "2026-11-25 02:50",
       "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-25 01:38"
+      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 3/10 done; this goal ends its lane at 2026-11-25 02:50"
      },
      {
       "rank": 4,
       "agent": "scribe",
-      "title": "Autonomous Round Narrative",
-      "eta": "2026-11-25 02:39",
-      "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 02:39"
+      "title": "Convergence Narrative Generator",
+      "eta": "2026-11-25 03:01",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 03:01"
      },
      {
       "rank": 5,
-      "agent": "mechanic",
-      "title": "Health Score Computation",
-      "eta": "2026-11-25 03:17",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 03:17"
+      "agent": "designer",
+      "title": "Steady-State Visual Indicator",
+      "eta": "2026-11-25 03:06",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~10%): kept in plan because its scope gates later work; lane designer has 2/10 done; this goal ends its lane at 2026-11-25 03:06"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 46%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 12/80 -> 27%"
    },
    {
     "label": "1w",
     "hours": 168.0,
-    "end": "2026-12-01 23:09",
+    "end": "2026-12-02 00:21",
     "completes": 10,
     "top": [
      {
       "rank": 1,
-      "agent": "mechanic",
-      "title": "Auto-Recovery Playbook v2",
-      "eta": "2026-11-25 00:56",
-      "type": "ops",
-      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 00:56"
+      "agent": "verifier",
+      "title": "Convergence Metric Validation",
+      "eta": "2026-11-25 02:08",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 3/10 done; this goal ends its lane at 2026-11-25 02:08"
      },
      {
       "rank": 2,
-      "agent": "verifier",
-      "title": "Validation Coverage Report",
-      "eta": "2026-11-25 00:56",
-      "type": "verify",
-      "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 8/10 done; this goal ends its lane at 2026-11-25 00:56"
+      "agent": "mechanic",
+      "title": "Predictive Seat Health Monitor",
+      "eta": "2026-11-25 02:43",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 0/10 done; this goal ends its lane at 2026-11-25 02:43"
      },
      {
       "rank": 3,
       "agent": "archivist",
-      "title": "Knowledge Freshness Decay v2",
-      "eta": "2026-11-25 01:38",
+      "title": "Convergence Knowledge Base Entry",
+      "eta": "2026-11-25 02:50",
       "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-25 01:38"
+      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 3/10 done; this goal ends its lane at 2026-11-25 02:50"
      },
      {
       "rank": 4,
       "agent": "scribe",
-      "title": "Autonomous Round Narrative",
-      "eta": "2026-11-25 02:39",
-      "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 02:39"
+      "title": "Convergence Narrative Generator",
+      "eta": "2026-11-25 03:01",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 03:01"
      },
      {
       "rank": 5,
-      "agent": "mechanic",
-      "title": "Health Score Computation",
-      "eta": "2026-11-25 03:17",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 03:17"
+      "agent": "designer",
+      "title": "Steady-State Visual Indicator",
+      "eta": "2026-11-25 03:06",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~10%): kept in plan because its scope gates later work; lane designer has 2/10 done; this goal ends its lane at 2026-11-25 03:06"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 46%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 12/80 -> 27%"
    },
    {
     "label": "1m",
     "hours": 720.0,
-    "end": "2026-12-24 23:09",
+    "end": "2026-12-25 00:21",
     "completes": 10,
     "top": [
      {
       "rank": 1,
-      "agent": "mechanic",
-      "title": "Auto-Recovery Playbook v2",
-      "eta": "2026-11-25 00:56",
-      "type": "ops",
-      "why": "planned as ops work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 00:56"
+      "agent": "verifier",
+      "title": "Convergence Metric Validation",
+      "eta": "2026-11-25 02:08",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 3/10 done; this goal ends its lane at 2026-11-25 02:08"
      },
      {
       "rank": 2,
-      "agent": "verifier",
-      "title": "Validation Coverage Report",
-      "eta": "2026-11-25 00:56",
-      "type": "verify",
-      "why": "planned as verify work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane verifier has 8/10 done; this goal ends its lane at 2026-11-25 00:56"
+      "agent": "mechanic",
+      "title": "Predictive Seat Health Monitor",
+      "eta": "2026-11-25 02:43",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 0/10 done; this goal ends its lane at 2026-11-25 02:43"
      },
      {
       "rank": 3,
       "agent": "archivist",
-      "title": "Knowledge Freshness Decay v2",
-      "eta": "2026-11-25 01:38",
+      "title": "Convergence Knowledge Base Entry",
+      "eta": "2026-11-25 02:50",
       "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-25 01:38"
+      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 3/10 done; this goal ends its lane at 2026-11-25 02:50"
      },
      {
       "rank": 4,
       "agent": "scribe",
-      "title": "Autonomous Round Narrative",
-      "eta": "2026-11-25 02:39",
-      "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 02:39"
+      "title": "Convergence Narrative Generator",
+      "eta": "2026-11-25 03:01",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 03:01"
      },
      {
       "rank": 5,
-      "agent": "mechanic",
-      "title": "Health Score Computation",
-      "eta": "2026-11-25 03:17",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane mechanic has 6/10 done; this goal ends its lane at 2026-11-25 03:17"
+      "agent": "designer",
+      "title": "Steady-State Visual Indicator",
+      "eta": "2026-11-25 03:06",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~10%): kept in plan because its scope gates later work; lane designer has 2/10 done; this goal ends its lane at 2026-11-25 03:06"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 27/80 -> 46%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 12/80 -> 27%"
    }
   ],
   "tree": {
-   "state": "Fleet 27/80 (34%)",
+   "state": "Fleet 12/80 (15%)",
    "gate": "all goals 100%?",
    "branch_taken": "NO - queue in flight",
    "yes": {
     "action": "level-up gate fires -> Lv increments, report written",
     "then": "Orchestrator proposes cycle N+1 from ranked backlog (8 candidates)",
     "first_planned": [
-     "#1 [mechanic] Auto-Recovery Playbook v2 ~2026-11-25 00:56",
-     "#2 [verifier] Validation Coverage Report ~2026-11-25 00:56",
-     "#3 [archivist] Knowledge Freshness Decay v2 ~2026-11-25 01:38",
-     "#4 [scribe] Autonomous Round Narrative ~2026-11-25 02:39"
+     "#1 [verifier] Convergence Metric Validation ~2026-11-25 02:08",
+     "#2 [mechanic] Predictive Seat Health Monitor ~2026-11-25 02:43",
+     "#3 [archivist] Convergence Knowledge Base Entry ~2026-11-25 02:50",
+     "#4 [scribe] Convergence Narrative Generator ~2026-11-25 03:01"
     ]
    },
    "no": {
     "action": "keep current queue; next completion gates progress",
-    "then": "when the last lane ends (2026-11-26 08:14) the gate re-checks",
+    "then": "when the last lane ends (2026-11-26 14:18) the gate re-checks",
     "first_planned": [
-     "#1 [mechanic] Auto-Recovery Playbook v2 ~2026-11-25 00:56",
-     "#2 [verifier] Validation Coverage Report ~2026-11-25 00:56",
-     "#3 [archivist] Knowledge Freshness Decay v2 ~2026-11-25 01:38",
-     "#4 [scribe] Autonomous Round Narrative ~2026-11-25 02:39"
+     "#1 [verifier] Convergence Metric Validation ~2026-11-25 02:08",
+     "#2 [mechanic] Predictive Seat Health Monitor ~2026-11-25 02:43",
+     "#3 [archivist] Convergence Knowledge Base Entry ~2026-11-25 02:50",
+     "#4 [scribe] Convergence Narrative Generator ~2026-11-25 03:01"
     ]
    }
   },
@@ -978,8 +976,8 @@
     "step": 1,
     "name": "Keyboard navigation",
     "note": "Full keyboard control of the portal - no mouse needed to run the fleet.",
-    "status": "not-planned",
-    "via": null,
+    "status": "queued",
+    "via": "orchestrator (open, outside next-10)",
     "eta": null,
     "p_reached": null,
     "unlocks": "Camera access"
@@ -1446,16 +1444,9 @@
   ],
   "plan_meta": {
    "sig": "a4f106fb3413",
-   "computed_at": "2026-11-24 23:09:16",
+   "computed_at": "2026-11-25 00:21:18",
    "basis": "live goal ledger + next-10 ETAs + fleet throughput ~20.04 goals/h; recomputed every refresh",
-   "delta": [
-    "Generate daily social media posts: day 2-4 -> day 3-5 (planned)",
-    "Commenting on posts: day 1-5 -> day 2-6 (planned)",
-    "Making phone calls: day 3-10 -> day 4-11 (planned)",
-    "Writing valid tenders: day 4-14 -> day 5-15 (planned)",
-    "Making money (revenue channels live): day 4-12 -> day 5-13 (planned)",
-    "Positive money income (net > 0): day 19-26 -> day 20-27 (planned)"
-   ],
+   "delta": [],
    "history": [
     {
      "ts": "2026-11-24 11:54:14",
