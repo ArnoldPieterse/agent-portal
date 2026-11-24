@@ -373,3 +373,4 @@
 {"ts": "2026-11-24 21:46:21", "file": "ui/cockpit-cycle15.js", "sha": "726670ee70", "size": 2281, "snapshot": null}
 {"ts": "2026-11-24 22:03:22", "file": "ui/cockpit-cycle15.js", "sha": "87edadfc85", "size": 8060, "snapshot": null}
 {"ts": "2026-11-24 22:20:12", "file": "index.html", "sha": "93126d24f7", "size": 14471, "snapshot": "memory/ops/merge-queue/index.html.93126d24f7"}
+{"ts": "2026-11-25 00:03:03", "file": "agent_portal.py", "sha": "9a204847df", "size": 319837, "snapshot": "memory/ops/merge-queue/agent_portal.py.9a204847df"}
