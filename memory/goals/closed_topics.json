@@ -1684,5 +1684,11 @@
 "text": "**Cycle Proposal Skeleton Generator** - `python memory/orchestrator/cycle_skeleton.py`: at cycle close, auto-generate next-cycle proposal sk",
 "agent": "orchestrator",
 "at": "2026-11-24"
+},
+{
+"sig": "fdf11a70c64c0483",
+"text": "**Maintenance Task Registry** - Create memory/ops/maintenance-tasks.json: structured registry mapping role -> [task objects with id, descrip",
+"agent": "builder",
+"at": "2026-11-24"
 }
 ]

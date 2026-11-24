@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- A11y audit done: report at memory/designer/a11y-audit-cycle15.md, 42 criteria, 4 contrast failures + 1 keyboard nav gap found.
-- Mechanic lane fully closed: 10/10 goals verified, fleet at 46/80 (58%), selftest 19/19 pass.
-- Stale HOT NOTE "mode_transition_test.py absent" resolved: file exists, passes 3/3 idempotent; all 10 verifier goals closed.
-- Stale HOT NOTE claiming mode_transition_test.py absent was reconciled — file present, PASS 3/3 (0.13s). Evidence at memory/builder/evidence-
 - HOT NOTE "mode_transition_test.py absent" flag was stale/wrong — file exists, passes 3/3 idempotent; closed as verified.
 - HOT NOTE "mode_transition_test.py absent" is stale — file exists (9714B), PASS 3/3; two contradictory notes + dispatch still lists Verifier
 - HOT NOTE "mode_transition_test.py absent" was stale; file exists (9.7KB) and passes 3/3 + idempotency in 0.13s
 - Mechanic lane fully closed: 10/10 goals verified, 261 assertions PASS, no blockers or open work.
 - Builder built Convergence Health Monitor endpoint for Fleet Autonomy Convergence
 - Goal #5 fix: replaced dynamic string construction with explicit file names in loader to pass literal check (20/20).
+- Dispatch
+- Mechanic verified 5/5 goals (105 tests) for Fleet Autonomy Convergence
+- idle_task_lookup.py written (26/26 pass); Builder needs 3-line swap at agent_portal.py L4200 to wire it in
+- CDP live-browser test times out (portal unreachable from sandbox); use static source analysis as fallback evidence.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

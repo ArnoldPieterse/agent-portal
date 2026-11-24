@@ -16,7 +16,7 @@ Pillars: (1) Mode Controller, (2) Dispatch Correctness, (3) Idle Productivity
 
 7. **Goal Status Propagator** - `python memory/builder/status_propagator.py`: when a goal is marked reached (detected via goal_ledger.py), propagate status to: (a) next10.json, (b) dispatch queue cache, (c) fleet-mode recalculation trigger. Verified: marking a goal reached updates all 3 targets within one pass; no stale "open" status persists >1 pass cycle.
 
-8. **Maintenance Task Registry** - Create memory/ops/maintenance-tasks.json: structured registry mapping role -> [task objects with id, description, command, expected_output]. Support rotation (day-of-cycle % task_count). Verified: JSON valid; all 8 roles have >=5 tasks; rotation function returns correct task for day 0-4; no duplicate task IDs.
+8. **Maintenance Task Registry** - Create memory/ops/maintenance-tasks.json: structured registry mapping role -> [task objects with id, description, command, expected_output]. Support rotation (day-of-cycle % task_count). Verified: JSON valid; all 8 roles have >=5 tasks; rotation function returns correct task for day 0-4; no duplicate task IDs. (pointer: memory/builder/idle_task_lookup.py)
 
 9. **Pass Budget Enforcer** - `python memory/builder/pass_budget.py`: read pass-budget.json; increment counter on each dispatch; when counter >= budget, return "BUDGET_EXHAUSTED" and trigger IDLE mode. Verified: at budget-1, next call increments to budget and returns exhausted flag; mode transitions to IDLE; subsequent calls return no tasks without incrementing.
 
