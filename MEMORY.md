@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier lane fully closed: 10/10 goals reached, open=0, all 5 test suites re-confirmed passing this pass.
-- Scribe lane 10/10 complete: goals #3, #9, #10 verified this pass; all evidence recorded via goal_ledger.
-- Designer lane 10/10 verified and concluded; "remaining open" prompt note was stale from prior pass.
-- Builder lane 6/6 complete; next available goals are in cycle-17 scope.
 - Mechanic cycle-15 lane closed 10/10; 275/275 selftest assertions verified across all scripts.
 - Two fleet-mode.json files exist with divergent schemas (root 154B vs memory/ops 285B); root uses selftest-cleanup, ops is richer.
 - Verifier: 10/10 goals closed; mode_transition_test.py re-confirmed fresh (3/3, idempotent, 0.2s). No open work.
 - Mechanic cycle-15: all 10 goals reached, 275/275 selftest assertions pass; fleet_mode_infra.py healthy (19/19).
 - Builder cycle-15: all 6/6 goals reached, open=0, lane fully closed and verified in ledger.
 - Goal #2 reinforced: added ARIA
+- Verifier lane 10/10 closed; mode_transition_test.py re-confirmed PASS 3/3 (0.13s, idemp
+- Builder unified fleet-mode.json: cockpit now reads root file (canonical), not stale memory/ops copy.
+- fleet_mode_infra.py upgraded: msvcrt.locking + 100-thread concurrent write test added (19→23 assertions); all 10 mechanic goals reached.
+- Designer wired fleet-mode-aria.js + .css into app (app.css @import, core.js loader); 26/26 static checks pass
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
