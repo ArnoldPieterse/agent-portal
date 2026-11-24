@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-11-24T10:16:23.427472+00:00",
+  "window_h": 24.0,
+  "agents": {
+    "test_agent": {
+      "total_passes": 1,
+      "productive_passes": 0,
+      "rate": 0.0
+    }
+  },
+  "fleet": {
+    "total_passes": 1,
+    "productive_passes": 1,
+    "rate": 1.0
+  },
+  "skipped_bad_ts": 0
+}

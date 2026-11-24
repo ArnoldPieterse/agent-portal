@@ -1,57 +1,57 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-24 19:51:10 | Fleet: 38/80 (48%) | throughput ~30.0 goals/h
+Generated: 2026-11-24 20:27:09 | Fleet: 38/80 (48%) | throughput ~30.0 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [verifier] Mode Transition Integration Test** - ETA 2026-11-24 22:25, P(reached) 52% (verify, cx2)
+**#1 [verifier] Mode Transition Integration Test** - ETA 2026-11-24 23:01, P(reached) 52% (verify, cx2)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-25 02:25) - shared scope changes,transition,verify | verifier: **Dispatch Correctness Fuzzer** - `python memory/verifier/di (2026-11-25 07:31) - shared scope dispatch,verifier | archivist: **Fleet Autonomy Metrics Glossary** - Write memory/archivist (2026-11-25 09:35) - shared scope cycle,dispatch
-**#2 [builder] Idle Task Injector** - ETA 2026-11-24 22:56, P(reached) 40% (build, cx1)
+   consequences: designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-25 03:01) - shared scope changes,transition,verify | verifier: **Dispatch Correctness Fuzzer** - `python memory/verifier/di (2026-11-25 08:07) - shared scope dispatch,verifier | archivist: **Fleet Autonomy Metrics Glossary** - Write memory/archivist (2026-11-25 10:11) - shared scope cycle,dispatch
+**#2 [builder] Idle Task Injector** - ETA 2026-11-24 23:32, P(reached) 40% (build, cx1)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: builder: **Mode-Aware Dispatch Filter** - `python memory/builder/disp (2026-11-25 10:36) - shared scope dispatch,maintenance,rotation | designer: **Maintenance Task Cards** - Design card component for each  (2026-11-25 15:22) - shared scope maintenance,rotation | builder: **Maintenance Task Registry** - Create memory/ops/maintenanc (2026-11-26 00:16) - shared scope maintenance,rotation
-**#3 [designer] Fleet Mode ARIA + Keyboard Nav** - ETA 2026-11-25 00:10, P(reached) 4% (build, cx2)
+   consequences: builder: **Mode-Aware Dispatch Filter** - `python memory/builder/disp (2026-11-25 11:12) - shared scope dispatch,maintenance,rotation | designer: **Maintenance Task Cards** - Design card component for each  (2026-11-25 15:58) - shared scope maintenance,rotation | builder: **Maintenance Task Registry** - Create memory/ops/maintenanc (2026-11-26 00:52) - shared scope maintenance,rotation
+**#3 [designer] Fleet Mode ARIA + Keyboard Nav** - ETA 2026-11-25 00:46, P(reached) 4% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-25 03:29) - shared scope cockpit,maintenance | lane end scribe: 11-26 08:49 (slowest lane)
-**#4 [archivist] Mode Transition Anomaly Log** - ETA 2026-11-25 00:11, P(reached) 69% (research, cx1)
+   consequences: builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-25 04:05) - shared scope cockpit,maintenance | lane end scribe: 11-26 09:25 (slowest lane)
+**#4 [archivist] Mode Transition Anomaly Log** - ETA 2026-11-25 00:47, P(reached) 69% (research, cx1)
    steps: gather sources from memory/ (pointer map) -> compute/detect per protocol -> write findings leaf + index line
-   consequences: archivist: **Decision-Log Compaction** - `python memory/archivist/compa (2026-11-25 04:53) - shared scope archivist,jsonl | scribe: **Mode Decision Brief** - For each mode transition, write a  (2026-11-25 05:55) - shared scope expected,transition | verifier: **Productivity Metric Validator** - `python memory/verifier/ (2026-11-25 12:41) - shared scope expected,jsonl
-**#5 [mechanic] fleet-mode.json Atomic Writer (Infra)** - ETA 2026-11-25 00:24, P(reached) 19% (build, cx2)
+   consequences: archivist: **Decision-Log Compaction** - `python memory/archivist/compa (2026-11-25 05:29) - shared scope archivist,jsonl | scribe: **Mode Decision Brief** - For each mode transition, write a  (2026-11-25 06:31) - shared scope expected,transition | verifier: **Productivity Metric Validator** - `python memory/verifier/ (2026-11-25 13:17) - shared scope expected,jsonl
+**#5 [mechanic] fleet-mode.json Atomic Writer (Infra)** - ETA 2026-11-25 01:00, P(reached) 19% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: mechanic: **Pass Budget Monitor** - `python memory/mechanic/budget_mon (2026-11-25 03:51) - shared scope mechanic,write | builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 06:03) - shared scope atomic,rename,write | mechanic: **Cycle Transition Automation (Ops)** - `python memory/mecha (2026-11-25 12:28) - shared scope infra,mechanic
-**#6 [scribe] Cycle Close-Out Report** - ETA 2026-11-25 00:53, P(reached) 46% (build, cx2)
+   consequences: mechanic: **Pass Budget Monitor** - `python memory/mechanic/budget_mon (2026-11-25 04:27) - shared scope mechanic,write | builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 06:39) - shared scope atomic,rename,write | mechanic: **Cycle Transition Automation (Ops)** - `python memory/mecha (2026-11-25 13:04) - shared scope infra,mechanic
+**#6 [scribe] Cycle Close-Out Report** - ETA 2026-11-25 01:29, P(reached) 46% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: scribe: **Cross-Agent Handoff Summary** - When goals re-route betwee (2026-11-25 10:57) - shared scope generate,goals | archivist: **Cycle Retro Auto-Archiver** - `python memory/archivist/ret (2026-11-25 14:17) - shared scope blockers,close,completed | verifier: **Cycle Transition Rollback Test** - `python memory/verifier (2026-11-25 15:15) - shared scope cycle,goals
-**#7 [designer] Mode Transition Animation** - ETA 2026-11-25 02:25, P(reached) 15% (verify, cx2)
+   consequences: scribe: **Cross-Agent Handoff Summary** - When goals re-route betwee (2026-11-25 11:33) - shared scope generate,goals | archivist: **Cycle Retro Auto-Archiver** - `python memory/archivist/ret (2026-11-25 14:53) - shared scope blockers,close,completed | verifier: **Cycle Transition Rollback Test** - `python memory/verifier (2026-11-25 15:51) - shared scope cycle,goals
+**#7 [designer] Mode Transition Animation** - ETA 2026-11-25 03:01, P(reached) 15% (verify, cx2)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: verifier: **Mode Transition Integration Test** - `python memory/verifi (2026-11-24 22:25) - shared scope changes,transition,verify | builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-25 03:29) - shared scope amber,green | designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 06:44) - shared scope amber,color,design
-**#8 [verifier] fleet-mode.json Schema Validator** - ETA 2026-11-25 02:58, P(reached) 19% (build, cx2)
+   consequences: verifier: **Mode Transition Integration Test** - `python memory/verifi (2026-11-24 23:01) - shared scope changes,transition,verify | builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-25 04:05) - shared scope amber,green | designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 07:20) - shared scope amber,color,design
+**#8 [verifier] fleet-mode.json Schema Validator** - ETA 2026-11-25 03:34, P(reached) 19% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 06:03) - shared scope float,schema,timestamp | verifier: **Productivity Metric Validator** - `python memory/verifier/ (2026-11-25 12:41) - shared scope validate,validator,verifier | lane end scribe: 11-26 08:49 (slowest lane)
-**#9 [builder] Cockpit Mode Banner** - ETA 2026-11-25 03:29, P(reached) 19% (build, cx2)
+   consequences: builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 06:39) - shared scope float,schema,timestamp | verifier: **Productivity Metric Validator** - `python memory/verifier/ (2026-11-25 13:17) - shared scope validate,validator,verifier | lane end scribe: 11-26 09:25 (slowest lane)
+**#9 [builder] Cockpit Mode Banner** - ETA 2026-11-25 04:05, P(reached) 19% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: designer: **Fleet Mode ARIA + Keyboard Nav** - Add ARIA-live region fo (2026-11-25 00:10) - shared scope cockpit,maintenance | designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-25 02:25) - shared scope amber,green | designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 06:44) - shared scope amber,green,showing
-**#10 [mechanic] Pass Budget Monitor** - ETA 2026-11-25 03:51, P(reached) 22% (measurement, cx2)
+   consequences: designer: **Fleet Mode ARIA + Keyboard Nav** - Add ARIA-live region fo (2026-11-25 00:46) - shared scope cockpit,maintenance | designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-25 03:01) - shared scope amber,green | designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 07:20) - shared scope amber,green,showing
+**#10 [mechanic] Pass Budget Monitor** - ETA 2026-11-25 04:27, P(reached) 22% (measurement, cx2)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: mechanic: **fleet-mode.json Atomic Writer (Infra)** - `python memory/m (2026-11-25 00:24) - shared scope mechanic,write | scribe: **Mode Decision Brief** - For each mode transition, write a  (2026-11-25 05:55) - shared scope current,write | designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 06:44) - shared scope budget,cycle
+   consequences: mechanic: **fleet-mode.json Atomic Writer (Infra)** - `python memory/m (2026-11-25 01:00) - shared scope mechanic,write | scribe: **Mode Decision Brief** - For each mode transition, write a  (2026-11-25 06:31) - shared scope current,write | designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 07:20) - shared scope budget,cycle
 
 ## Planned work (decision tree)
 
 - state: Fleet 38/80 (48%) | gate: all goals 100%? -> **NO - queue in flight**
 - cycle: in flight: 10 goal(s) open
-- #1 [verifier] Mode Transition Integration Test ~2026-11-24 22:25 (P~52%) - planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached)  | delivers: Fleet mode switching
-- #2 [builder] Idle Task Injector ~2026-11-24 22:56 (P~40%) - planned as build work (cx1); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4 | delivers: Idle-task injection
-- #3 [designer] Fleet Mode ARIA + Keyboard Nav ~2026-11-25 00:10 (P~4%) - planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Keyboard navigation
-- #4 [archivist] Mode Transition Anomaly Log ~2026-11-25 00:11 (P~69%) - planned as research work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reache | delivers: Fleet mode switching
-- #5 [mechanic] fleet-mode.json Atomic Writer (Infra) ~2026-11-25 00:24 (P~19%) - planned as build work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: fleet-mode.json Atomic Writer (Infra)
-- #6 [scribe] Cycle Close-Out Report ~2026-11-25 00:53 (P~46%) - planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Cycle Close-Out Report
-- #7 [designer] Mode Transition Animation ~2026-11-25 02:25 (P~15%) - planned as verify work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached)  | delivers: Fleet mode switching
-- #8 [verifier] fleet-mode.json Schema Validator ~2026-11-25 02:58 (P~19%) - planned as build work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: fleet-mode.json Schema Validator
+- #1 [verifier] Mode Transition Integration Test ~2026-11-24 23:01 (P~52%) - planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached)  | delivers: Fleet mode switching
+- #2 [builder] Idle Task Injector ~2026-11-24 23:32 (P~40%) - planned as build work (cx1); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4 | delivers: Idle-task injection
+- #3 [designer] Fleet Mode ARIA + Keyboard Nav ~2026-11-25 00:46 (P~4%) - planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Keyboard navigation
+- #4 [archivist] Mode Transition Anomaly Log ~2026-11-25 00:47 (P~69%) - planned as research work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reache | delivers: Fleet mode switching
+- #5 [mechanic] fleet-mode.json Atomic Writer (Infra) ~2026-11-25 01:00 (P~19%) - planned as build work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: fleet-mode.json Atomic Writer (Infra)
+- #6 [scribe] Cycle Close-Out Report ~2026-11-25 01:29 (P~46%) - planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Cycle Close-Out Report
+- #7 [designer] Mode Transition Animation ~2026-11-25 03:01 (P~15%) - planned as verify work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached)  | delivers: Fleet mode switching
+- #8 [verifier] fleet-mode.json Schema Validator ~2026-11-25 03:34 (P~19%) - planned as build work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: fleet-mode.json Schema Validator
 
 ## Functional capability chain (PM view)
 
 If each step lands it unblocks the next - this is how the fleet earns its 30-day deliverables:  
-1. **Keyboard navigation** [in-plan] - via #3 [designer] Fleet Mode ARIA + Keyboard Nav ~2026-11-25 00:10  -> unlocks: Camera access
+1. **Keyboard navigation** [in-plan] - via #3 [designer] Fleet Mode ARIA + Keyboard Nav ~2026-11-25 00:46  -> unlocks: Camera access
 2. **Camera access** [not-planned]  -> unlocks: Mic access
 3. **Mic access** [not-planned]  -> unlocks: Custom input detection
 4. **Custom input detection** [not-planned]  -> unlocks: 30-day business outcomes
@@ -147,39 +147,39 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): 05dcc83e6301 @ 11-24 11:54:14, a4f106fb3413 @ 11-24 11:55:14, 05dcc83e6301 @ 11-24 13:46:57
 
-## 30m ahead (by 2026-11-24 20:21)
+## 30m ahead (by 2026-11-24 20:57)
 - completes: **0** goal(s) -> fleet ~48%
 - why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 38/80 -> 47%
 
-## 1h ahead (by 2026-11-24 20:51)
+## 1h ahead (by 2026-11-24 21:27)
 - completes: **0** goal(s) -> fleet ~48%
 - why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 38/80 -> 47%
 
-## 1d ahead (by 2026-11-25 19:51)
+## 1d ahead (by 2026-11-25 20:27)
 - completes: **33** goal(s) -> fleet ~89%
-  - #1 verifier: Mode Transition Integration Test (2026-11-24 22:25)
-  - #2 builder: Idle Task Injector (2026-11-24 22:56)
-  - #3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-25 00:10)
-  - #4 archivist: Mode Transition Anomaly Log (2026-11-25 00:11)
-  - #5 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-25 00:24)
+  - #1 verifier: Mode Transition Integration Test (2026-11-24 23:01)
+  - #2 builder: Idle Task Injector (2026-11-24 23:32)
+  - #3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-25 00:46)
+  - #4 archivist: Mode Transition Anomaly Log (2026-11-25 00:47)
+  - #5 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-25 01:00)
 - why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 38/80 -> 60%
 
-## 1w ahead (by 2026-12-01 19:51)
+## 1w ahead (by 2026-12-01 20:27)
 - completes: **42** goal(s) -> fleet ~100%
-  - #1 verifier: Mode Transition Integration Test (2026-11-24 22:25)
-  - #2 builder: Idle Task Injector (2026-11-24 22:56)
-  - #3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-25 00:10)
-  - #4 archivist: Mode Transition Anomaly Log (2026-11-25 00:11)
-  - #5 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-25 00:24)
+  - #1 verifier: Mode Transition Integration Test (2026-11-24 23:01)
+  - #2 builder: Idle Task Injector (2026-11-24 23:32)
+  - #3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-25 00:46)
+  - #4 archivist: Mode Transition Anomaly Log (2026-11-25 00:47)
+  - #5 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-25 01:00)
 - why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 38/80 -> 60%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-24 19:51)
+## 1m ahead (by 2026-12-24 20:27)
 - completes: **42** goal(s) -> fleet ~100%
-  - #1 verifier: Mode Transition Integration Test (2026-11-24 22:25)
-  - #2 builder: Idle Task Injector (2026-11-24 22:56)
-  - #3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-25 00:10)
-  - #4 archivist: Mode Transition Anomaly Log (2026-11-25 00:11)
-  - #5 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-25 00:24)
+  - #1 verifier: Mode Transition Integration Test (2026-11-24 23:01)
+  - #2 builder: Idle Task Injector (2026-11-24 23:32)
+  - #3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-25 00:46)
+  - #4 archivist: Mode Transition Anomaly Log (2026-11-25 00:47)
+  - #5 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-25 01:00)
 - why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 38/80 -> 60%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-

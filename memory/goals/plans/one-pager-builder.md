@@ -1,11 +1,11 @@
 # ONE-PAGER — builder
 
-Date: 2026-11-24 | source: llm-judge-local | round: 3 planners + judge (winning plan: A)
+Date: 2026-11-24 | source: llm-judge-local | round: 3 planners + judge (winning plan: B)
 
 ## Today's todos
 
-1. [ ] **Implement Idle Task Injector logic in agent_portal.py for MAINTENANCE/IDLE modes** _(from Open Goal: builder - Idle Task Injector)_ — Enable autonomous idle work
-2. [ ] **Add top-of-page Cockpit Mode Banner showing current fleet mode status** _(from Open Goal: builder - Cockpit Mode Banner)_ — Provide visual feedback on mode state
-3. [ ] **Write memory/builder/fleet_mode_writer.py for atomic fleet-mode.json updates** _(from Open Goal: builder - fleet-mode.json Atomic Writer)_ — Ensure safe mode state persistence
+1. [ ] **Implement Idle Task Injector in agent_portal.py dispatch logic** _(from OPEN GOALS: builder - Idle Task Injector)_ — Advance open goal for idle mode handling
+2. [ ] **Add Cockpit Mode Banner to cockpit UI showing fleet mode status** _(from NEXT-10 QUEUE #9 [builder] Cockpit Mode Banner)_ — Complete queue item #9 for visibility
+3. [ ] **Implement memory/builder/fleet_mode_writer.py for atomic writes** _(from OPEN GOALS: builder - fleet-mode.json Atomic Writer)_ — Support infrastructure for mode transitions
 
-_Keep this page to one screen: max 4 items; roll the rest back into the 7-day plan._
+_Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

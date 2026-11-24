@@ -271,3 +271,15 @@
 {"t": "2026-11-24 20:04:47", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
 {"t": "2026-11-24 20:09:47", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
 {"t": "2026-11-24 20:14:48", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-24 20:19:48", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-24 20:24:44", "event": "spawned", "what": "portal", "pid": 27368, "argv": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\Workspace\\agent_portal.py"}
+{"t": "2026-11-24 20:24:48", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-24 20:29:48", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-24 20:33:27", "event": "spawned", "what": "portal", "pid": 34548, "argv": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\Workspace\\agent_portal.py"}
+{"t": "2026-11-24 20:34:48", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-24 20:35:48", "event": "host-start", "pid": 32804}
+{"t": "2026-11-24 20:35:48", "event": "host-up", "pid": 32804, "py": "3.15.2"}
+{"t": "2026-11-24 20:35:48", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-24 20:36:27", "event": "host-start", "pid": 34296}
+{"t": "2026-11-24 20:36:28", "event": "host-up", "pid": 34296, "py": "3.15.2"}
+{"t": "2026-11-24 20:36:28", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}

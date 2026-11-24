@@ -1,38 +1,38 @@
 # FLEET ONE-PAGER - 2026-11-24
 
-Source: **llm-judge-local** | planners: designer, builder, verifier | judge: local-rubric - winner A: judge seat unavailable - local rubric: grounding x4 + coverage x3 + day-fit bonus
+Source: **llm-judge-local** | planners: orchestrator, builder, verifier | judge: local-rubric - winner B: judge seat unavailable - local rubric: grounding x4 + coverage x3 + day-fit bonus
 
 ## orchestrator
-1. **Review queue #1-#3 ETAs and confirm builder/verifier/designer capacity for tonight's mode transition work** _(from: NEXT-10 QUEUE #1, #2, #3)_ - Ensure critical path items start on time
-2. **Verify fleet_mode.json is set to WORK before triggering next cycle dispatch** _(from: Open Goal: builder - Idle Task Injector)_ - Prevent idle task injection during active work
+1. **Review NEXT-10 queue and confirm dispatch order for verifier, builder, designer** _(from: NEXT-10 QUEUE #1-#3)_ - Ensure critical path items start on time
+2. **Monitor fleet progress (47.5%) against 7-day plan milestones for day 2** _(from: 7-DAY PLAN: Generate daily social media posts [day 2])_ - Verify alignment with 'scaffold + wire up' targets
 
 ## researcher
-1. **Draft data source list for 'Predicting markets' scaffold (day 5 start)** _(from: 7-Day Plan: Predicting markets [day 5-7])_ - Prepare inputs for day 5 scaffolding
-2. **Identify API endpoints for 'Writing valid tenders' camera access requirement** _(from: 7-Day Plan: Writing valid tenders [day 4-7])_ - Support day 4 camera access goal
+1. **Validate data sources for 'Predicting markets' scaffold preparation** _(from: 7-DAY PLAN: Predicting markets [day 5-7])_ - Prepare inputs for day 5 start of market prediction
+2. **Research API requirements for 'Writing valid tenders' camera access integration** _(from: 7-DAY PLAN: Writing valid tenders [day 4])_ - Support day 4 scaffold and wire-up
 
 ## builder
-1. **Implement Idle Task Injector logic in agent_portal.py for MAINTENANCE/IDLE modes** _(from: Open Goal: builder - Idle Task Injector)_ - Enable autonomous idle work
-2. **Add top-of-page Cockpit Mode Banner showing current fleet mode status** _(from: Open Goal: builder - Cockpit Mode Banner)_ - Provide visual feedback on mode state
-3. **Write memory/builder/fleet_mode_writer.py for atomic fleet-mode.json updates** _(from: Open Goal: builder - fleet-mode.json Atomic Writer)_ - Ensure safe mode state persistence
+1. **Implement Idle Task Injector in agent_portal.py dispatch logic** _(from: OPEN GOALS: builder - Idle Task Injector)_ - Advance open goal for idle mode handling
+2. **Add Cockpit Mode Banner to cockpit UI showing fleet mode status** _(from: NEXT-10 QUEUE #9 [builder] Cockpit Mode Banner)_ - Complete queue item #9 for visibility
+3. **Implement memory/builder/fleet_mode_writer.py for atomic writes** _(from: OPEN GOALS: builder - fleet-mode.json Atomic Writer)_ - Support infrastructure for mode transitions
 
 ## verifier
-1. **Run Mode Transition Integration Test simulating WORK to MAINTENANCE switch** _(from: NEXT-10 QUEUE #1)_ - Validate transition logic before deployment
-2. **Create fleet-mode.json Schema Validator script to check JSON structure** _(from: Open Goal: verifier - fleet-mode.json Schema Validator)_ - Prevent malformed mode state files
+1. **Execute Mode Transition Integration Test script** _(from: NEXT-10 QUEUE #1 [verifier] Mode Transition Integration Test)_ - Complete queue item #1 with high probability
+2. **Develop fleet-mode.json Schema Validator script** _(from: OPEN GOALS: verifier - fleet-mode.json Schema Validator)_ - Prepare for queue item #8 validation needs
 
 ## designer
-1. **Add ARIA-live region for mode changes in cockpit UI** _(from: Open Goal: designer - Fleet Mode ARIA + Keyboard Nav)_ - Ensure accessibility for screen readers
-2. **Design CSS transition for mode background color shifts (green->amber)** _(from: Open Goal: designer - Mode Transition Animation)_ - Smooth visual feedback on mode change
+1. **Implement ARIA-live region and keyboard nav for Fleet Mode UI** _(from: NEXT-10 QUEUE #3 [designer] Fleet Mode ARIA + Keyboard Nav)_ - Complete queue item #3 accessibility requirement
+2. **Design CSS transition animation for mode changes (green->amber)** _(from: NEXT-10 QUEUE #7 [designer] Mode Transition Animation)_ - Advance queue item #7 visual feedback
 
 ## archivist
-1. **Log any mode transition deviations >30min to anomaly log** _(from: Open Goal: archivist - Mode Transition Anomaly Log)_ - Track forecast accuracy for retro analysis
-2. **Draft metrics-glossary.md defining fleet autonomy KPIs** _(from: Open Goal: archivist - Fleet Autonomy Metrics Glossary)_ - Standardize reporting terminology
+1. **Implement Mode Transition Anomaly Log script** _(from: NEXT-10 QUEUE #4 [archivist] Mode Transition Anomaly Log)_ - Complete queue item #4 with high probability
+2. **Draft Fleet Autonomy Metrics Glossary definitions** _(from: OPEN GOALS: archivist - Fleet Autonomy Metrics Glossary)_ - Advance open goal for formal metric definitions
 
 ## scribe
-1. **Generate Cycle Close-Out Report for current cycle using cycle_closeout.py** _(from: NEXT-10 QUEUE #6)_ - Document cycle outcomes and efficiency
-2. **Write one-paragraph brief explaining last mode transition decision** _(from: Open Goal: scribe - Mode Decision Brief)_ - Provide context for future audits
+1. **Generate Cycle Close-Out Report using cycle_closeout.py** _(from: NEXT-10 QUEUE #6 [scribe] Cycle Close-Out Report)_ - Complete queue item #6 documentation need
+2. **Write Mode Decision Brief for current fleet state transition** _(from: OPEN GOALS: scribe - Mode Decision Brief)_ - Document decision rationale per open goal
 
 ## mechanic
-1. **Implement memory/mechanic/fleet_mode_infra.py for low-level atomic writes** _(from: NEXT-10 QUEUE #5)_ - Support builder's mode writer with infra layer
-2. **Build Pass Budget Monitor to read pass-budget.json and alert on limits** _(from: Open Goal: mechanic - Pass Budget Monitor)_ - Enforce cycle resource constraints
+1. **Implement fleet-mode.json Atomic Writer infrastructure script** _(from: NEXT-10 QUEUE #5 [mechanic] fleet-mode.json Atomic Writer (Infra))_ - Complete queue item #5 low-level infra need
+2. **Develop Pass Budget Monitor script to read pass-budget.json** _(from: NEXT-10 QUEUE #10 [mechanic] Pass Budget Monitor)_ - Advance queue item #10 monitoring capability
 
-_round stats: {"sig": "8360a2fe2964", "date": "2026-11-24", "drafts": [{"label": "A", "agent": "designer", "model": "designer-q4", "stats": {"agents": 8, "items": 17, "grounded": 16, "ratio": 0.94, "missing": [], "repaired": false, "model": null}}, {"label": "B", "agent": "builder", "model": "Qwen3.8-27B-Q8_0", "_
+_round stats: {"sig": "69cd70eae185", "date": "2026-11-24", "drafts": [{"label": "A", "agent": "orchestrator", "model": "Qwen3.8-27B-Q4_K_S", "stats": {"error": "draft call failed: timed out"}}, {"label": "B", "agent": "builder", "model": "Qwen3.8-27B-Q8_0", "stats": {"agents": 8, "items": 17, "grounded": 16, "ra_

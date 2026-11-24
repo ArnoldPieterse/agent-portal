@@ -1702,5 +1702,53 @@
 "text": "**Pass Budget Monitor** - `python memory/mechanic/budget_monitor.py`: read pass-budget.json every cycle; when consumption >80%, write warnin",
 "agent": "mechanic",
 "at": "2026-11-24"
+},
+{
+"sig": "e6d2189a6ccee251",
+"text": "**fleet-mode.json Atomic Writer (Infra)** - `python memory/mechanic/fleet_mode_infra.py`: provide the low-level atomic write primitive for f",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "8d8b7aee686c90cd",
+"text": "**Mode Transition Latency Measurer** - `python memory/mechanic/transition_latency.py`: measure wall-clock time from mode-change trigger to f",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "f89d00221f60e4e4",
+"text": "**Idle Task Delivery Verifier** - `python memory/mechanic/task_delivery.py`: after dispatching an idle task, verify it actually reached the ",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "94caa3f718f77175",
+"text": "**Cycle Transition Automation (Ops)** - `python memory/mechanic/cycle_transition_ops.py`: execute the infra side of cycle transition: verify",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "7b7484a229f13b9d",
+"text": "**Fleet-Mode API Endpoint** - Implement /api/fleet/mode endpoint in agent_portal.py: returns {mode, since, goal_pct, next_transition_forecas",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "ef744b36c6bddf30",
+"text": "**Auto-Loop Restart Guard** - `python memory/mechanic/loop_guard.py`: watchdog that checks if auto-loop produced output in last 5 min. If no",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "7ab4c9a2d21c5b92",
+"text": "**Productivity Data Pipeline Monitor** - `python memory/mechanic/productivity_pipeline.py`: verify productivity-baseline.json is written eve",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "d738110c1fe3d8d0",
+"text": "**Mode State Recovery** - `python memory/mechanic/mode_recovery.py`: on fleet restart (detected by stale fleet-mode.json mtime >30 min + sys",
+"agent": "mechanic",
+"at": "2026-11-24"
 }
 ]

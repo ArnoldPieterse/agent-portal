@@ -44,12 +44,14 @@ def trend(agent: str, days: int = 7):
     result = {"agent": agent, "window_days": len(recent), "series": []}
     for f in recent:
         data = json.loads(f.read_text(encoding="utf-8"))
-        entry = data.get(agent, {})
+        # Baseline schema nests per-agent stats under "per_agent" (productivity_counter.py);
+        # tolerate the flat layout too.
+        entry = data.get(agent, {}) if agent in data else data.get("per_agent", {}).get(agent, {})
         result["series"].append({
             "date": f.stem,
             "rate": entry.get("rate"),
-            "total_passes": entry.get("total_passes", 0),
-            "productive_passes": entry.get("productive_passes", 0),
+            "total_passes": entry.get("total_passes", entry.get("total", 0)),
+            "productive_passes": entry.get("productive_passes", entry.get("productive", 0)),
         })
 
     print(json.dumps(result, indent=2))

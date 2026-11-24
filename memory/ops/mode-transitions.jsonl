@@ -1,3 +1,4 @@
 {"ts": "2026-11-24T08:00:00Z", "from_mode": "WORK", "to_mode": "MAINTENANCE", "trigger": "cycle_closeout", "goal_pct": 95.0, "agent": "orchestrator"}
 {"ts": "2026-11-24T12:00:00Z", "from_mode": "MAINTENANCE", "to_mode": "WORK", "trigger": "new_cycle_start", "goal_pct": 0.0, "agent": "orchestrator"}
 {"ts": "2026-11-24T01:09:29.276602+00:00", "from_mode": "IDLE", "to_mode": "WORK", "trigger": "goal_pct=30.0,elapsed=0.01h", "goal_count_open": 56, "agent": "orchestrator"}
+{"ts": "2026-11-24T10:37:02.445560+00:00", "from_mode": "IDLE", "to_mode": "WORK", "trigger": "goal_pct=63.7,elapsed=0.0h", "goal_count_open": 29, "agent": "orchestrator"}

@@ -5571,6 +5571,18 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/ops":
             # Ops panel host tiles (2026-11-15): disk usage + portal uptime.
             return self._json(200, _ops_snapshot())
+        elif p == "/api/fleet/mode":
+            # Fleet-Mode API endpoint (Mechanic cycle-15 goal 6, 2026-11-24):
+            # {mode, since, goal_pct, next_transition_forecast, pass_budget:{used,total}}.
+            try:
+                import importlib.util as _ilm_fm
+                _spec = _ilm_fm.spec_from_file_location(
+                    "_fleet_mode_api", os.path.join(HERE, "memory", "mechanic", "fleet_mode_api.py"))
+                _fm_mod = _ilm_fm.module_from_spec(_spec)
+                _spec.loader.exec_module(_fm_mod)
+                return self._json(200, _fm_mod.handle_fleet_mode())
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/goals":
             # Goal Velocity dashboard (2026-11-15, Designer): per-agent goal progress.
             return self._json(200, _goals_snapshot())

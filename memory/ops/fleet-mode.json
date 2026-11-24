@@ -1,6 +1,11 @@
 {
-  "mode": "IDLE",
-  "timestamp": "2026-11-24T10:16:41.653975+00:00",
-  "trigger": "pass_budget_exhausted",
-  "goal_pct": 6.8
+  "mode": "WORK",
+  "timestamp": "2026-11-24T10:37:02.445560+00:00",
+  "goal_pct": 63.7,
+  "goals_total": 80,
+  "goals_reached": 51,
+  "goals_open": 29,
+  "elapsed_since_activity_h": 0.0,
+  "activity_source": "memory/ops/scheduler-log.jsonl",
+  "threshold_idle_h": 6.0
 }

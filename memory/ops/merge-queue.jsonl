@@ -360,3 +360,5 @@
 {"ts": "2026-11-24 19:49:25", "file": "ui/api-client.js", "sha": "4fb6da81a1", "size": 9656, "snapshot": null}
 {"ts": "2026-11-24 19:49:25", "file": "ui/fleet_health.js", "sha": "37e4143ebb", "size": 5191, "snapshot": null}
 {"ts": "2026-11-24 19:49:25", "file": "ui/fleet_status.js", "sha": "ef8b515321", "size": 2594, "snapshot": null}
+{"ts": "2026-11-24 20:25:45", "file": "agent_portal.py", "sha": "e9b32f0b1f", "size": 312894, "snapshot": "memory/ops/merge-queue/agent_portal.py.e9b32f0b1f"}
+{"ts": "2026-11-24 20:34:28", "file": "agent_portal.py", "sha": "0706b9c4b4", "size": 313262, "snapshot": "memory/ops/merge-queue/agent_portal.py.0706b9c4b4"}
