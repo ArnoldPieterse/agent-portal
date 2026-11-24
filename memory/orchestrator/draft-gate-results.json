@@ -1,0 +1,97 @@
+[
+  {
+    "agent": "archivist",
+    "goal_preview": "Create convergence-kb.md defining steady-state criteria. Read and index existing files. Output to me",
+    "checks": {
+      "executable_by_role": {
+        "pass": true,
+        "detail": "All required tools within role capabilities"
+      },
+      "duration_ok": {
+        "pass": true,
+        "detail": "No >24h continuous online requirement detected"
+      },
+      "backup_agent": {
+        "pass": true,
+        "detail": "Backup agent designated: Scribe"
+      }
+    },
+    "overall": true
+  },
+  {
+    "agent": "archivist",
+    "goal_preview": "Search the web for latest LLM benchmarks and compile into a report. Save to memory/archivist/benchma",
+    "checks": {
+      "executable_by_role": {
+        "pass": false,
+        "detail": "Requires tools not in archivist capabilities: ['test']"
+      },
+      "duration_ok": {
+        "pass": true,
+        "detail": "No >24h continuous online requirement detected"
+      },
+      "backup_agent": {
+        "pass": false,
+        "detail": "No designated backup agent found in goal text"
+      }
+    },
+    "overall": false
+  },
+  {
+    "agent": "scribe",
+    "goal_preview": "Monitor the fleet continuously for several days and log every state change. Wait for all cycles to c",
+    "checks": {
+      "executable_by_role": {
+        "pass": true,
+        "detail": "All required tools within role capabilities"
+      },
+      "duration_ok": {
+        "pass": false,
+        "detail": "Potential >24h requirement: ['several.days', 'unbounded_wait']"
+      },
+      "backup_agent": {
+        "pass": false,
+        "detail": "No designated backup agent found in goal text"
+      }
+    },
+    "overall": false
+  },
+  {
+    "agent": "scribe",
+    "goal_preview": "Synthesize the last 3 cycle retrospectives into a single decision log. Compress to <2KB. Fallback: A",
+    "checks": {
+      "executable_by_role": {
+        "pass": true,
+        "detail": "All required tools within role capabilities"
+      },
+      "duration_ok": {
+        "pass": true,
+        "detail": "No >24h continuous online requirement detected"
+      },
+      "backup_agent": {
+        "pass": true,
+        "detail": "Backup agent designated: Archivist"
+      }
+    },
+    "overall": true
+  },
+  {
+    "agent": "archivist",
+    "goal_preview": "Read all pointer maps and verify cross-references resolve. Write report to memory/archivist/xref-rep",
+    "checks": {
+      "executable_by_role": {
+        "pass": false,
+        "detail": "Requires tools not in archivist capabilities: ['test']"
+      },
+      "duration_ok": {
+        "pass": true,
+        "detail": "No >24h continuous online requirement detected"
+      },
+      "backup_agent": {
+        "pass": false,
+        "detail": "No designated backup agent found in goal text"
+      }
+    },
+    "overall": false
+  }
+]
