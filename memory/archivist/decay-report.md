@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 10310 | flagged (<0.35): 0
+Leaves: 10314 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9775,6 +9775,7 @@ Leaves: 10310 | flagged (<0.35): 0
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autonomy-score.json | 0 | 0 | n | 0.550 |
+| memory/ops/cadence-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-health.json | 0 | 0 | n | 0.550 |
 | memory/ops/cycle-duration-stats.json | 0 | 0 | n | 0.550 |
 | memory/ops/cycle-durations.jsonl | 0 | 0 | n | 0.550 |
@@ -9795,6 +9796,8 @@ Leaves: 10310 | flagged (<0.35): 0
 | memory/ops/scheduler-state.json | 0 | 0 | n | 0.550 |
 | memory/ops/transition-gaps-summary.json | 0 | 0 | n | 0.550 |
 | memory/ops/vram-forecast.json | 0 | 0 | n | 0.550 |
+| memory/ops/vram-history.jsonl | 0 | 0 | n | 0.550 |
+| memory/orchestrator/assist-researcher-cycle17-g1-cycle-history-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/autonomy_score.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/auto_priority.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/complexity_scorer.py | 0 | 0 | n | 0.550 |
@@ -9807,6 +9810,7 @@ Leaves: 10310 | flagged (<0.35): 0
 | memory/orchestrator/steady_state_detector.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/__pycache__/auto_priority.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/__pycache__/steady_state_detector.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/researcher/cycle_history.json | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
 | memory/designer/MEMORY.md | 12 | 1 | n | 0.553 |
 | memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md | 10 | 1 | n | 0.564 |
