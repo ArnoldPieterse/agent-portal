@@ -1576,5 +1576,29 @@
 "text": "**Cycle Close-Out Report** - `python memory/scribe/cycle_closeout.py`: at cycle close, generate structured report: goals completed (by agent",
 "agent": "scribe",
 "at": "2026-11-24"
+},
+{
+"sig": "e9c9e2562d4d164d",
+"text": "**Dispatch Queue Sync** - `python memory/orchestrator/dispatch_sync.py`: on each auto-loop pass, reconcile dispatch queue with next10.json s",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "79f8737868e2a7b9",
+"text": "**Idle Maintenance Rotation** - Write memory/ops/idle-maintenance-rotation.md: table mapping each role -> 5 rotating maintenance tasks (e.g.",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "895a8a643868cc54",
+"text": "**Mode Transition Log** - Append every fleet-mode change to memory/ops/mode-transitions.jsonl with fields: timestamp, from_mode, to_mode, tr",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "c26783821f218f9d",
+"text": "**Seat Availability Router** - When a seat is unreachable at run start, re-route its open goals to the nearest available agent with matching",
+"agent": "orchestrator",
+"at": "2026-11-24"
 }
 ]
