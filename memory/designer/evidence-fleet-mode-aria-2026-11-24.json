@@ -1,0 +1,19 @@
+{
+  "goal": "Fleet Mode ARIA + Keyboard Nav",
+  "date": "2026-11-24",
+  "checks_total": 33,
+  "checks_passed": 33,
+  "files": [
+    "ui/fleet-mode-aria.js",
+    "ui/fleet-mode-aria.css"
+  ],
+  "criteria_met": [
+    "ARIA live region (polite, atomic, role=status) announces mode changes",
+    "Keyboard nav: 5 panel toggles navigable via arrow keys",
+    "Escape closes all panels (no focus traps)",
+    "focus-visible styles on all interactive elements (WCAG 2.1 AA)",
+    "prefers-reduced-motion respected (animations disabled)",
+    "Visible mode badge with color-coded dot + label"
+  ],
+  "note": "Static analysis verification; aria-live attribute corrected from assertive\u2192polite per spec"
+}

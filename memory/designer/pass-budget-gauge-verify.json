@@ -1,0 +1,48 @@
+{
+  "goal": "Pass Budget Gauge (cycle-15 goal #6)",
+  "score": "10/10",
+  "checks": [
+    {
+      "name": "SVG circle elements for ring",
+      "pass": true
+    },
+    {
+      "name": "Green level <50%",
+      "pass": true
+    },
+    {
+      "name": "Amber level 50-80%",
+      "pass": true
+    },
+    {
+      "name": "Red level >80%",
+      "pass": true
+    },
+    {
+      "name": "Center text shows used/budget",
+      "pass": true
+    },
+    {
+      "name": "Animated fill (stroke-dashoffset 300ms)",
+      "pass": true
+    },
+    {
+      "name": "ARIA role=meter + aria-valuenow",
+      "pass": true
+    },
+    {
+      "name": "Reduced motion respected",
+      "pass": true
+    },
+    {
+      "name": "Public API window.passBudgetGauge",
+      "pass": true
+    },
+    {
+      "name": "CSS color thresholds via data-level",
+      "pass": true
+    }
+  ],
+  "verdict": "PASS",
+  "date": "2026-11-24"
+}

@@ -1,0 +1,87 @@
+{
+  "goal": "Mode Transition Animation (cycle-15 goal #3)",
+  "files": [
+    "ui/fleet-mode-transition.js",
+    "ui/fleet-mode-transition.css"
+  ],
+  "checks": [
+    {
+      "name": "Background 400ms ease-in-out transition in CSS",
+      "pass": true,
+      "detail": "transition: background 400ms ease-in-out"
+    },
+    {
+      "name": "WORK mode green tint",
+      "pass": true,
+      "detail": "rgba(46,163,107,.06)"
+    },
+    {
+      "name": "MAINTENANCE mode amber tint",
+      "pass": true,
+      "detail": "rgba(255,193,7,.08)"
+    },
+    {
+      "name": "IDLE mode grey tint",
+      "pass": true,
+      "detail": "rgba(158,158,158,.06)"
+    },
+    {
+      "name": "FLIP: First phase (read positions)",
+      "pass": true,
+      "detail": "firstRects Map with getBoundingClientRect"
+    },
+    {
+      "name": "FLIP: Last phase (read new positions)",
+      "pass": true,
+      "detail": "lastRects Map"
+    },
+    {
+      "name": "FLIP: Invert phase (apply inverse transform)",
+      "pass": true,
+      "detail": "translate(dx,dy) on .fmt-flip"
+    },
+    {
+      "name": "FLIP: Play phase (CSS transition animates)",
+      "pass": true,
+      "detail": "requestAnimationFrame + transitionend listener"
+    },
+    {
+      "name": "Play phase has 0 getBoundingClientRect calls",
+      "pass": true,
+      "detail": "0 calls in Play phase"
+    },
+    {
+      "name": "CSS prefers-reduced-motion media query",
+      "pass": true,
+      "detail": "@media (prefers-reduced-motion: reduce) block present"
+    },
+    {
+      "name": "JS prefers-reduced-motion check (instant switch)",
+      "pass": true,
+      "detail": "matchMedia('(prefers-reduced-motion: reduce)') with early return"
+    },
+    {
+      "name": "will-change: transform for GPU compositing",
+      "pass": true,
+      "detail": ".fmt-flip{will-change:transform}"
+    },
+    {
+      "name": "Self-contained IIFE (no global pollution)",
+      "pass": true,
+      "detail": "(/*comment*/function(){...})()"
+    },
+    {
+      "name": "Public API: window.fleetModeTransition",
+      "pass": true,
+      "detail": "{setMode, reorder, transition, ORDERS}"
+    },
+    {
+      "name": "Mode-specific panel order arrays",
+      "pass": true,
+      "detail": "ORDERS.WORK/MAINTENANCE/IDLE"
+    }
+  ],
+  "score": "15/15",
+  "verdict": "PASS",
+  "date": "2026-11-24"
+}

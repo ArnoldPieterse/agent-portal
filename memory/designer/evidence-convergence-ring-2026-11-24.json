@@ -1,0 +1,19 @@
+{
+  "goal": "Convergence Progress Ring",
+  "date": "2026-11-24",
+  "checks_total": 21,
+  "checks_passed": 21,
+  "files": [
+    "ui/convergence-ring.js",
+    "ui/convergence-ring.css"
+  ],
+  "criteria_met": [
+    "Circular SVG ring with animated stroke-dashoffset (1s ease-out cubic)",
+    "Blue (#4f8cff) during WORK, grey (#8a8f98) when complete",
+    "Center text shows percentage + reached/total",
+    "role=progressbar with aria-valuenow tracking percentage",
+    "Responsive: scales down at 768px",
+    "prefers-reduced-motion respected (instant switch)",
+    "Polls /api/fleet/cockpit every 30s"
+  ]
+}
