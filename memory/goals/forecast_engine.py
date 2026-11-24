@@ -28,6 +28,9 @@ import sys
 import time
 from datetime import datetime, timedelta
 
+_HD = os.path.dirname(os.path.abspath(__file__))          # sibling module must resolve when loaded in-process by the portal
+if _HD not in sys.path:
+    sys.path.insert(0, _HD)
 try:
     from forecast_plan import build_plan  # planned-work layer (same dir)
 except Exception:  # engine must never die because the plan layer is missing

@@ -120,6 +120,20 @@ def build_plan(doc):
         it["steps"] = it.get("steps") or _steps_for(it["type"])
         it["outcome"] = "reached ~%s (P~%.0f%%)" % (it["eta"], 100 * it["p_reached"])
 
+    # decision-tree chaining: if this goal is reached, what starts next in its lane?
+    by_agent = {}
+    for it in planned:
+        by_agent.setdefault(it["agent"], []).append(it)
+    for items in by_agent.values():
+        for j, it in enumerate(items):
+            if j + 1 < len(items):
+                nx = items[j + 1]
+                it["then"] = "#%d [%s] %s" % (nx["rank"], nx["agent"], nx["title"][:70])
+                it["then_eta"] = nx["eta"]
+            else:
+                it["then"] = "lane clear - level-up gate re-check (%s)" % (level_up_eta or "-")
+                it["then_eta"] = level_up_eta
+
     horizons = []
     for label, hrs in HORIZONS:
         end = gen + timedelta(hours=hrs)

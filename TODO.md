@@ -598,3 +598,5 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
 - scheduler: cycle_5m = gap_alarm only; memory_mirror moved to END of cycle_30m (was rc=124 every 5 min). Detached pythonw bootstrap run warming the cache (~2h one-off); scheduled runs resume incrementally after
 - pin_guard fixed: index.html re-pinned to committed HEAD sha12 17ab95daf2d8 with matching backup (old spec was self-inconsistent: pinned sha had no backup)
 - .gitignore: portal_host.py/portal_scheduler.py/elevated_helper.py were silently untracked under root /* - now tracked; mirror_cache.json ignored
+
+- [x] 2026-11-24 goal-level decision tree in forecast report: S6 lists WHICH goals land by 1w/1m; S7 = per-goal chain (sub-goals + if-reached-then-next); plan layer emits per-item then-chaining; fixed engine sys.path so portal in-process refresh includes plan.
