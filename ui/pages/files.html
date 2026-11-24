@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<base href="/"> <!-- 2026-11-24: served at /page/<n>.html; relative ui/* refs must resolve against site root -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='42' r='26' fill='%234f8cff'/%3E%3Crect x='28' y='72' width='44' height='16' rx='8' fill='%234f8cff'/%3E%3C/svg%3E">
@@ -9,7 +10,7 @@
      UI modules (edit those, not here): ui/app.css (styles) | ui/core.js (app logic)
      | ui/uploads.js (upload panel). Rule + budgets: memory/portal/file-modularity.md.
      PINNED in memory_mirror.py PIN_FILES - advance the pin in the same turn as any edit. -->
-<link rel="stylesheet" href="ui/app.css?v=20261124b">
+<link rel="stylesheet" href="/ui/app.css?v=20261124b">
 </head>
 <body data-page="files"><script>location.hash="#/files";</script>
 <header>
@@ -157,14 +158,14 @@
     <button class="btn pri" id="edSave">Save agent</button>
   </div>
 </dialog>
-<script src="ui/notifications.js"></script>
-<script src="ui/icons.js"></script>
-<script src="ui/core.js?v=20261124b"></script>
-  <script src="ui/fleet_topology.js"></script>
-  <script src="ui/cockpit.js"></script>
+<script src="/ui/"notifications.js"></script>
+<script src="/ui/"icons.js"></script>
+<script src="/ui/"core.js?v=20261124b"></script>
+  <script src="/ui/"fleet_topology.js"></script>
+  <script src="/ui/"cockpit.js"></script>
 
-<script src="ui/uploads.js"></script>
-<script src="ui/tour.js"></script>
-<script src="ui/scheduler.js"></script>
+<script src="/ui/"uploads.js"></script>
+<script src="/ui/"tour.js"></script>
+<script src="/ui/"scheduler.js"></script>
 </body>
 </html>

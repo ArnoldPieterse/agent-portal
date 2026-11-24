@@ -344,3 +344,9 @@
 {"ts": "2026-11-24 19:02:20", "file": "ui/core.js", "sha": "7da12a612f", "size": 43771, "snapshot": null}
 {"ts": "2026-11-24 19:02:20", "file": "ui/uploads.js", "sha": "b1387c0f53", "size": 48417, "snapshot": null}
 {"ts": "2026-11-24 19:24:18", "file": "index.html", "sha": "e40bd50658", "size": 14448, "snapshot": "memory/ops/merge-queue/index.html.e40bd50658"}
+{"ts": "2026-11-24 19:44:29", "file": "agent_portal.py", "sha": "8e533bfad4", "size": 312052, "snapshot": "memory/ops/merge-queue/agent_portal.py.8e533bfad4"}
+{"ts": "2026-11-24 19:44:29", "file": "ui/pages/activity.html", "sha": "64417df6b3", "size": 14525, "snapshot": null}
+{"ts": "2026-11-24 19:44:29", "file": "ui/pages/files.html", "sha": "c6194a2751", "size": 14516, "snapshot": null}
+{"ts": "2026-11-24 19:44:29", "file": "ui/pages/fleet.html", "sha": "e69e1db3ac", "size": 14516, "snapshot": null}
+{"ts": "2026-11-24 19:44:29", "file": "ui/pages/goals.html", "sha": "7faa213152", "size": 14516, "snapshot": null}
+{"ts": "2026-11-24 19:44:29", "file": "ui/pages/ops.html", "sha": "7b349f5062", "size": 14510, "snapshot": null}

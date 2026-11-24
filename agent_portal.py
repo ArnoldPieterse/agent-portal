@@ -5440,7 +5440,16 @@ class Handler(BaseHTTPRequestHandler):
             if n in ("goals", "activity", "fleet", "files", "ops"):
                 fp = os.path.join(HERE, "ui", "pages", n + ".html")
                 try:
-                    data = open(fp, "rb").read()
+                    html = open(fp, encoding="utf-8").read()
+                    # 2026-11-24: pages live under /page/ but assets are served from /ui/ -
+                    # relative refs (href="ui/app.css", src="ui/core.js") resolved to
+                    # /page/ui/* and 404'd, so CSS+JS never loaded on the tab pages.
+                    # Rewrite to absolute paths at serve time (idempotent) so regenerated
+                    # copies of index.html can't regress this again.
+                    # 2026-11-24: absolute-path rewrite for /page/* serves (relative refs would 404 from that dir).
+                    # NOTE: no trailing quote in the replacement - the first version produced src="/ui/"x.js" and broke every JS load.
+                    html = html.replace('href="ui/', 'href="/ui/').replace('src="ui/', 'src="/ui/')
+                    data = html.encode("utf-8")
                     self.send_response(200)
                     self.send_header("Content-Type", "text/html; charset=utf-8")
                     self.send_header("Cache-Control", "no-store")

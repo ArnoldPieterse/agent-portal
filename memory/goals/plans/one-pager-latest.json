@@ -1,131 +1,135 @@
 {
- "ts": 1795509903,
+ "ts": 1795512899,
  "date": "2026-11-24",
- "sig": "8c50304536d6",
- "source": "llm-single-draft",
+ "sig": "8360a2fe2964",
+ "source": "llm-judge-local",
  "winner_label": "A",
  "planners": [
-  "orchestrator",
   "designer",
-  "researcher"
+  "builder",
+  "verifier"
  ],
  "judge": {
-  "agent": "none",
+  "agent": "local-rubric",
   "winner": "A",
-  "scores": {},
-  "rationale": "only valid draft (other seats failed or ungrounded)"
+  "scores": {
+   "A": 4.76,
+   "B": 4.32,
+   "C": 4.16
+  },
+  "rationale": "judge seat unavailable - local rubric: grounding x4 + coverage x3 + day-fit bonus"
  },
  "pagers": {
   "orchestrator": [
    {
-    "item": "Review NEXT-10 queue priorities and confirm dispatch order for verifier, builder, designer",
-    "why": "Ensure critical path items are prioritized",
-    "ref": "NEXT-10 QUEUE #1-#3"
+    "item": "Review queue #1-#3 ETAs and confirm builder/verifier/designer capacity for tonight's mode transition work",
+    "why": "Ensure critical path items start on time",
+    "ref": "NEXT-10 QUEUE #1, #2, #3"
    },
    {
-    "item": "Validate fleet progress against 7-day plan milestones for day 2 tasks",
-    "why": "Confirm scaffold/wire-up steps are on track",
-    "ref": "7-DAY PLAN: Generate daily social media posts [day 2]"
+    "item": "Verify fleet_mode.json is set to WORK before triggering next cycle dispatch",
+    "why": "Prevent idle task injection during active work",
+    "ref": "Open Goal: builder - Idle Task Injector"
    }
   ],
   "researcher": [
    {
-    "item": "Gather market data sources for Predicting markets scaffold preparation",
-    "why": "Support day 5 scaffold + wire up step",
-    "ref": "7-DAY PLAN: Predicting markets [day 5]"
+    "item": "Draft data source list for 'Predicting markets' scaffold (day 5 start)",
+    "why": "Prepare inputs for day 5 scaffolding",
+    "ref": "7-Day Plan: Predicting markets [day 5-7]"
    },
    {
-    "item": "Analyze revenue channel requirements for Making money module",
-    "why": "Prepare input detection for day 4 scaffold",
-    "ref": "7-DAY PLAN: Making money (revenue channels live) [day 4]"
+    "item": "Identify API endpoints for 'Writing valid tenders' camera access requirement",
+    "why": "Support day 4 camera access goal",
+    "ref": "7-Day Plan: Writing valid tenders [day 4-7]"
    }
   ],
   "builder": [
    {
-    "item": "Implement Idle Task Injector dispatch logic in agent_portal.py",
-    "why": "Advance open goal for idle task injection",
-    "ref": "OPEN GOALS builder: Idle Task Injector"
+    "item": "Implement Idle Task Injector logic in agent_portal.py for MAINTENANCE/IDLE modes",
+    "why": "Enable autonomous idle work",
+    "ref": "Open Goal: builder - Idle Task Injector"
    },
    {
-    "item": "Scaffold and wire up Generate daily social media posts module",
-    "why": "Execute day 2 plan step for first automated run",
-    "ref": "7-DAY PLAN: Generate daily social media posts [day 2]"
+    "item": "Add top-of-page Cockpit Mode Banner showing current fleet mode status",
+    "why": "Provide visual feedback on mode state",
+    "ref": "Open Goal: builder - Cockpit Mode Banner"
    },
    {
-    "item": "Begin scaffold for Making phone calls module",
-    "why": "Prepare for day 3 wire-up and mic access",
-    "ref": "7-DAY PLAN: Making phone calls [day 3]"
+    "item": "Write memory/builder/fleet_mode_writer.py for atomic fleet-mode.json updates",
+    "why": "Ensure safe mode state persistence",
+    "ref": "Open Goal: builder - fleet-mode.json Atomic Writer"
    }
   ],
   "verifier": [
    {
-    "item": "Run Mode Transition Integration Test simulation",
-    "why": "Complete queue item #1 with high probability",
-    "ref": "NEXT-10 QUEUE #1 [verifier] Mode Transition Integration Test"
+    "item": "Run Mode Transition Integration Test simulating WORK to MAINTENANCE switch",
+    "why": "Validate transition logic before deployment",
+    "ref": "NEXT-10 QUEUE #1"
    },
    {
-    "item": "Draft fleet-mode.json Schema Validator test cases",
-    "why": "Prepare for queue item #8 validation",
-    "ref": "NEXT-10 QUEUE #8 [verifier] fleet-mode.json Schema Validator"
+    "item": "Create fleet-mode.json Schema Validator script to check JSON structure",
+    "why": "Prevent malformed mode state files",
+    "ref": "Open Goal: verifier - fleet-mode.json Schema Validator"
    }
   ],
   "designer": [
    {
-    "item": "Implement Fleet Mode ARIA + Keyboard Nav accessibility features",
-    "why": "Address low-probability queue item #3",
-    "ref": "NEXT-10 QUEUE #3 [designer] Fleet Mode ARIA + Keyboard Nav"
+    "item": "Add ARIA-live region for mode changes in cockpit UI",
+    "why": "Ensure accessibility for screen readers",
+    "ref": "Open Goal: designer - Fleet Mode ARIA + Keyboard Nav"
    },
    {
-    "item": "Design CSS transition for mode changes (green->amber)",
-    "why": "Advance open goal for Mode Transition Animation",
-    "ref": "OPEN GOALS designer: Mode Transition Animation"
+    "item": "Design CSS transition for mode background color shifts (green->amber)",
+    "why": "Smooth visual feedback on mode change",
+    "ref": "Open Goal: designer - Mode Transition Animation"
    }
   ],
   "archivist": [
    {
-    "item": "Archive daily snapshots of productivity-baseline.json",
-    "why": "Complete queue item #5 Productivity Trend Archive",
-    "ref": "NEXT-10 QUEUE #5 [archivist] Productivity Trend Archive"
+    "item": "Log any mode transition deviations >30min to anomaly log",
+    "why": "Track forecast accuracy for retro analysis",
+    "ref": "Open Goal: archivist - Mode Transition Anomaly Log"
    },
    {
-    "item": "Log mode transition anomalies if deviation >30 min",
-    "why": "Implement open goal for anomaly logging",
-    "ref": "OPEN GOALS archivist: Mode Transition Anomaly Log"
+    "item": "Draft metrics-glossary.md defining fleet autonomy KPIs",
+    "why": "Standardize reporting terminology",
+    "ref": "Open Goal: archivist - Fleet Autonomy Metrics Glossary"
    }
   ],
   "scribe": [
    {
-    "item": "Generate Cycle Close-Out Report using cycle_closeout.py",
-    "why": "Complete queue item #6 with 46% probability",
-    "ref": "NEXT-10 QUEUE #6 [scribe] Cycle Close-Out Report"
+    "item": "Generate Cycle Close-Out Report for current cycle using cycle_closeout.py",
+    "why": "Document cycle outcomes and efficiency",
+    "ref": "NEXT-10 QUEUE #6"
    },
    {
-    "item": "Write one-paragraph brief for current mode transition decision",
-    "why": "Advance open goal for Mode Decision Brief",
-    "ref": "OPEN GOALS scribe: Mode Decision Brief"
+    "item": "Write one-paragraph brief explaining last mode transition decision",
+    "why": "Provide context for future audits",
+    "ref": "Open Goal: scribe - Mode Decision Brief"
    }
   ],
   "mechanic": [
    {
-    "item": "Implement fleet-mode.json Atomic Writer in fleet_mode_infra.py",
-    "why": "Complete queue item #4 infrastructure task",
-    "ref": "NEXT-10 QUEUE #4 [mechanic] fleet-mode.json Atomic Writer (Infra)"
+    "item": "Implement memory/mechanic/fleet_mode_infra.py for low-level atomic writes",
+    "why": "Support builder's mode writer with infra layer",
+    "ref": "NEXT-10 QUEUE #5"
    },
    {
-    "item": "Read pass-budget.json and monitor cycle budget usage",
-    "why": "Advance open goal for Pass Budget Monitor",
-    "ref": "OPEN GOALS mechanic: Pass Budget Monitor"
+    "item": "Build Pass Budget Monitor to read pass-budget.json and alert on limits",
+    "why": "Enforce cycle resource constraints",
+    "ref": "Open Goal: mechanic - Pass Budget Monitor"
    }
   ]
  },
  "stats": {
-  "sig": "8c50304536d6",
+  "sig": "8360a2fe2964",
   "date": "2026-11-24",
   "drafts": [
    {
     "label": "A",
-    "agent": "orchestrator",
-    "model": "lmstudio-community/Qwen3.8-27B-Q8_0",
+    "agent": "designer",
+    "model": "designer-q4",
     "stats": {
      "agents": 8,
      "items": 17,
@@ -133,26 +137,38 @@
      "ratio": 0.94,
      "missing": [],
      "repaired": false,
-     "model": "lmstudio-community/Qwen3.8-27B-Q8_0"
+     "model": null
     }
    },
    {
     "label": "B",
-    "agent": "designer",
+    "agent": "builder",
     "model": "Qwen3.8-27B-Q8_0",
     "stats": {
-     "error": "draft call failed: timed out"
+     "agents": 8,
+     "items": 18,
+     "grounded": 15,
+     "ratio": 0.83,
+     "missing": [],
+     "repaired": false,
+     "model": null
     }
    },
    {
     "label": "C",
-    "agent": "researcher",
-    "model": "lmstudio-community/Qwen3.8-27B-Q8_0",
+    "agent": "verifier",
+    "model": "Qwen3.8-27B-Q4_K_S",
     "stats": {
-     "error": "draft call failed: timed out"
+     "agents": 8,
+     "items": 24,
+     "grounded": 19,
+     "ratio": 0.79,
+     "missing": [],
+     "repaired": false,
+     "model": null
     }
    }
   ],
-  "source": "llm-single-draft"
+  "source": "llm-judge-local"
  }
 }
