@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier lane: 10/10 goals confirmed verified, zero open. Core scripts (mode_schema_check, budget_compliance) spot-checked green.
-- Mechanic: All 10 goals closed this pass. Goal#1 fleet-mode.json atomic writer now 23/23 (msvcrt.locking+concurrency tests). Goal#3 pass budg
-- Goal #5 (mode_brief.py) built and run, but ledger recording unconfirmed — context filled mid-write; verify on next pass.
-- Designer 10/10 goals done; module loader added to ui/core.js (sequential CSS+JS injection) was the critical enabler for runtime loading.
-- INDEX claims productive_pass_gate.py built 3/3 pass but file is missing from
 - Builder lane closed 5/5: idle_rotation.py, agent_portal.py dispatch, cockpit mode banner, fleet_mode_writer.py (9/9 selftest)
 - Researcher lane fully closed at 5/5 goals, all verified 2026-11-24 in memory/goals/researcher.md
 - Verifier 10/10 closed; fresh full regression sweep green this pass — no regressions since original verification.
 - Scribe goal #2 (Cycle Close-Out Report) REACHED: compacted cycle_closeout.py output 7KB→3.3KB to meet <4KB criterion; verified on cycle-14 d
 - Mechanic closed goal #1: fleet-mode.json atomic writer upgraded with msvcrt.locking + concurrency tests (25/25 pass).
+- All 5 Researcher goals verified; productivity-baseline.json refreshed ~12:
+- Verifier 10/10 goals closed; re-ran mode_transition, budget_compliance, dispatch_fuzzer — zero regressions (2026-11-
+- Mechanic lane fully closed: 6/6 goals done, 139 tests total; Goal #1 upgraded to 22/22 with msvcrt.locking + error handling.
+- Scribe closed goal #2 (Cycle Close-Out Report) at 3.9KB, under the 4KB verification limit.
+- Goal #10 done: fixed 5 light-theme contrast tokens
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
