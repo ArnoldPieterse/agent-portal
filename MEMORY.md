@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechic created fleet-mode.json + pass-budget.json for Verifier goal #1 via fleet_mode_infra.py; evidence at memory/mechanic/assist-verifier-
-- All 10 verifier goals closed (cycle 15); spot-check `mode_schema_check.py` VALID on live fleet-mode.json, RC=0. No open work.
 - Goal #5 fix: productivity module uses `scan(autoloop=...)` not `compute_productivity`; timestamps are ISO-8601 strings, not epoch floats
 - Verifier lane fully closed: all 10 goals verified; dispatch list showing open items was stale post-cycle-transition (known hot note).
 - Designer lane: 10/10 goals verified in cycle 15; all UI artifacts exist in ui/ with paired CSS+JS, no new code needed.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic wrote memory/verifier/mode_transition_test.py (8454B) for Verifier G1; 3/3 assertions pass <20ms, idempotent.
 - Designer 10/10 goals reached & verified; dispatch header "3/10" was stale — no open work remains.
 - Designer hit 10/10 goals; external verify evidence at memory/verifier/mode-transition-external-verify-2026-11-24.md
+- Cycle 16 goals set: Autonomous Remediation, Adaptive Routing, Self-Verification — theme "Fleet Autonomy Convergence."
+- Cycle 16 topic: "Quality Autonomy & Self-Directed Planning" — pillars: Goal Quality Assessment, Autonomous Cycle Selection, Operational Cost
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
