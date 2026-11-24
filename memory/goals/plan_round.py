@@ -116,11 +116,11 @@ def _append_rounds(entry):
 
 # ---- LLM calls (same contract as the portal's _aux_chat) ----------------------
 
-def llm_call(agent, system, user, max_tokens=3000, temperature=0.2, timeout=DRAFT_TIMEOUT_S):
+def llm_call(agent, system, user, max_tokens=3000, temperature=0.2, timeout=DRAFT_TIMEOUT_S, model=None):
     """One non-streaming chat completion on the agent's own studio seat.
     Raises on any failure - callers decide how to degrade."""
     base = (agent.get("studio") or "http://127.0.0.1:8888").rstrip("/")
-    body = {"model": agent["model_id"],
+    body = {"model": model or agent["model_id"],
             "messages": [{"role": "system", "content": system},
                          {"role": "user", "content": user}],
             "max_tokens": max_tokens, "temperature": temperature, "stream": False}
@@ -133,6 +133,48 @@ def llm_call(agent, system, user, max_tokens=3000, temperature=0.2, timeout=DRAF
     with urllib.request.urlopen(req, timeout=timeout) as r:
         res = json.load(r)
     return ((res.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+
+
+# ---- seat probing (same governance as the portal's model-load check) -------------
+# A roster agent's configured model_id may be an alias or an unloaded model
+# (LM Studio 404s it). Before spending a draft budget, probe with a 1-token
+# completion; if the configured model is down, fall back to any model actually
+# loaded on that host (Q8 preferred), so the round degrades per-seat, not fleet-wide.
+
+def probe_seat(agent, model=None, timeout=20):
+    """True if this seat answers a 1-token ping right now."""
+    try:
+        c = llm_call(agent, "Reply with the single word OK.", "ping",
+                     max_tokens=8, temperature=0.0, timeout=timeout, model=model)
+        return bool(c.strip())
+    except Exception:
+        return False
+
+
+def host_models(base=None, key="", timeout=8):
+    base = (base or "").rstrip("/")
+    try:
+        req = urllib.request.Request(base + "/v1/models",
+                                     headers={"Authorization": "Bearer " + key} if key else {})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return [m.get("id") for m in json.load(r).get("data", []) if m.get("id")]
+    except Exception:
+        return []
+
+
+def seat_model(agent):
+    """A model id this agent's seat answers with right now: its configured
+    model_id first, then up to 3 loaded models on the same host (Q8 preferred).
+    None = seat is dead; the round must skip this planner."""
+    if probe_seat(agent):
+        return agent["model_id"]
+    base = (agent.get("studio") or "http://127.0.0.1:8888").rstrip("/")
+    key = (agent.get("api_key") or "").strip()
+    cands = sorted(host_models(base, key), key=lambda m: (0 if "q8" in m.lower() else 1, m))[:3]
+    for mid in cands:
+        if probe_seat(agent, model=mid):
+            return mid
+    return None
 
 
 # ---- step 1: ensure the deterministic chain (30 -> 15 -> 7) exists ------------
@@ -410,7 +452,7 @@ def validate_draft(raw, roster_ids, refs):
 
 # ---- judging ---------------------------------------------------------------------------
 
-def judge_call(judge_agent, labelled, doc):
+def judge_call(judge_agent, labelled, doc, model=None):
     """labelled = [(label, parsed, stats)] -> verdict dict or None."""
     body = []
     for label, parsed, stats in labelled:
@@ -422,7 +464,7 @@ def judge_call(judge_agent, labelled, doc):
             _plan_brief(doc)[:5000], "\n\n".join(body), JUDGE_CONTRACT)
     try:
         raw = llm_call(judge_agent, JUDGE_SYSTEM, user, max_tokens=900,
-                       temperature=0.0, timeout=JUDGE_TIMEOUT_S)
+                       temperature=0.0, timeout=JUDGE_TIMEOUT_S, model=model)
         v = json.loads(_strip_fences(raw))
     except Exception:
         return None
@@ -507,22 +549,31 @@ def run_round(doc=None, force=False):
     planners, judge = select_crew(roster, cfg)
 
     user_prompt = draft_user_prompt(doc, roster_ids)
-    drafts = []                                               # (label, agent_id, raw, parsed|None, stats)
+    drafts = []                                               # (label, agent_id, model, raw, parsed|None, stats)
     for i, ag in enumerate(planners):
         label = "ABC"[i]
+        mid = seat_model(ag)                                  # pre-flight: is this seat live?
+        if not mid:
+            drafts.append((label, ag["id"], None, None, None,
+                           {"error": "no live model on seat %s" % (ag.get("studio") or "local")}))
+            continue
         try:
             raw = llm_call(ag, DRAFT_SYSTEM % ag.get("name", ag["id"]), user_prompt,
-                           max_tokens=3000, temperature=0.2)
+                           max_tokens=3000, temperature=0.2, model=mid)
         except Exception as e:
-            drafts.append((label, ag["id"], None, None, {"error": "seat failed: %s" % str(e)[:160]}))
+            drafts.append((label, ag["id"], mid, None, None,
+                           {"error": "draft call failed: %s" % str(e)[:160]}))
             continue
         parsed, stats = validate_draft(raw, roster_ids, refs)
-        drafts.append((label, ag["id"], raw, parsed, stats))
+        stats["model"] = mid if mid != ag["model_id"] else None   # note fallback models in audit
+        drafts.append((label, ag["id"], mid, raw, parsed, stats))
 
-    valid = [d for d in drafts if d[3] is not None]
+    valid = [d for d in drafts if d[4] is not None]
     verdict = None
     if len(valid) >= 2 and judge:
-        verdict = judge_call(judge, valid, doc)
+        jmid = seat_model(judge)
+        if jmid:
+            verdict = judge_call(judge, valid, doc, model=jmid)
         if verdict is None:                                   # judge seat failed -> local rubric
             verdict = local_pick(valid)
     elif len(valid) == 1:
@@ -530,7 +581,7 @@ def run_round(doc=None, force=False):
                    "scores": {}, "rationale": "only valid draft (other seats failed or ungrounded)"}
 
     if verdict and any(d[0] == verdict["winner"] for d in valid):
-        label, agent_id, raw, parsed, stats = next(d for d in valid if d[0] == verdict["winner"])
+        label, agent_id, mid, raw, parsed, stats = next(d for d in valid if d[0] == verdict["winner"])
         source = "llm-3+1" if (verdict.get("agent") not in (None, "none", "local-rubric")) else \
                  ("llm-judge-local" if len(valid) >= 2 else "llm-single-draft")
         pagers = parsed["agents"]
@@ -543,7 +594,8 @@ def run_round(doc=None, force=False):
             pagers[aid] = det[aid]
 
     stats_out = {"sig": sig, "date": date_s,
-                 "drafts": [{"label": l, "agent": aid, "stats": st} for l, aid, _r, _p, st in drafts],
+                 "drafts": [{"label": l, "agent": aid, "model": mid, "stats": st}
+                            for l, aid, mid, _r, _p, st in drafts],
                  "source": source}
     result = {"ts": int(time.time()), "date": date_s, "sig": sig, "source": source,
               "winner_label": label, "planners": [a["id"] for a in planners],
@@ -554,8 +606,9 @@ def run_round(doc=None, force=False):
         f.write(render_md(date_s, source, [a["id"] for a in planners], verdict, pagers, stats_out))
     _append_rounds({"ts": int(time.time()), "sig": sig, "source": source,
                     "planners": [a["id"] for a in planners], "judge": verdict,
-                    "drafts": [{"label": l, "agent": aid,
-                                "raw": (r or "")[:4000], "stats": st} for l, aid, r, _p, st in drafts]})
+                    "drafts": [{"label": l, "agent": aid, "model": mid,
+                                "raw": (r or "")[:4000], "stats": st}
+                               for l, aid, mid, r, _p, st in drafts]})
     return result
 
 

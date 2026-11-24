@@ -1,0 +1,284 @@
+{
+ "ts": 1795489802,
+ "date": "2026-11-24",
+ "sig": "025b0a1a2da9",
+ "source": "deterministic-fallback",
+ "winner_label": null,
+ "planners": [
+  "orchestrator",
+  "designer",
+  "researcher"
+ ],
+ "judge": null,
+ "pagers": {
+  "orchestrator": [
+   {
+    "item": "Advance #8: Cycle Proposal Skeleton Generator",
+    "why": "next-10 queue item due within 24 h",
+    "ref": "Cycle Proposal Skeleton Generator"
+   }
+  ],
+  "researcher": [
+   {
+    "item": "Advance #3: Productivity Baseline Measurement",
+    "why": "next-10 queue item due within 24 h",
+    "ref": "Productivity Baseline Measurement"
+   }
+  ],
+  "builder": [
+   {
+    "item": "Advance #2: Idle Task Injector",
+    "why": "next-10 queue item due within 24 h",
+    "ref": "Idle Task Injector"
+   },
+   {
+    "item": "Continue open goal: Cockpit Mode Banner - Add a top-of-page banner in cockpit showing current fleet mode (WORK=green, MAINTENANCE=amber, IDLE=grey) with time-since-last-activity. F",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Cockpit Mode Banner - Add a top-of-page banner in cockpit showing current fleet mode (WORK=green, MAINTENANCE=amber, IDLE=grey) with time-since-last-activity. F"
+   },
+   {
+    "item": "Continue open goal: fleet-mode.json Atomic Writer - Implement memory/builder/fleet_mode_writer.py: write fleet-mode.json atomically (write-to-temp + os.rename) with schema validati",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "fleet-mode.json Atomic Writer - Implement memory/builder/fleet_mode_writer.py: write fleet-mode.json atomically (write-to-temp + os.rename) with schema validati"
+   },
+   {
+    "item": "Continue open goal: Mode-Aware Dispatch Filter - `python memory/builder/dispatch_filter.py`: given fleet_mode + next10.json, produce the dispatch list. In WORK: only open goals. In",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Mode-Aware Dispatch Filter - `python memory/builder/dispatch_filter.py`: given fleet_mode + next10.json, produce the dispatch list. In WORK: only open goals. In"
+   },
+   {
+    "item": "Continue open goal: Idle Productivity Counter - `python memory/builder/productivity_counter.py`: scan autoloop.jsonl for last 24h; compute per-agent {total_passes, productive_passe",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Idle Productivity Counter - `python memory/builder/productivity_counter.py`: scan autoloop.jsonl for last 24h; compute per-agent {total_passes, productive_passe"
+   },
+   {
+    "item": "Continue open goal: Goal Status Propagator - `python memory/builder/status_propagator.py`: when a goal is marked reached (detected via goal_ledger.py), propagate status to: (a) nex",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Goal Status Propagator - `python memory/builder/status_propagator.py`: when a goal is marked reached (detected via goal_ledger.py), propagate status to: (a) nex"
+   },
+   {
+    "item": "Continue open goal: Maintenance Task Registry - Create memory/ops/maintenance-tasks.json: structured registry mapping role -> [task objects with id, description, command, expected_",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Maintenance Task Registry - Create memory/ops/maintenance-tasks.json: structured registry mapping role -> [task objects with id, description, command, expected_"
+   },
+   {
+    "item": "Continue open goal: Pass Budget Enforcer - `python memory/builder/pass_budget.py`: read pass-budget.json; increment counter on each dispatch; when counter >= budget, return \"BUDGET",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Pass Budget Enforcer - `python memory/builder/pass_budget.py`: read pass-budget.json; increment counter on each dispatch; when counter >= budget, return \"BUDGET"
+   },
+   {
+    "item": "Continue open goal: Cycle Transition Script - `python memory/builder/cycle_transition.py`: automate the full cycle close sequence: (a) verify 100% completion, (b) archive old goals",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Cycle Transition Script - `python memory/builder/cycle_transition.py`: automate the full cycle close sequence: (a) verify 100% completion, (b) archive old goals"
+   }
+  ],
+  "verifier": [
+   {
+    "item": "Advance #1: Mode Transition Integration Test",
+    "why": "next-10 queue item due within 24 h",
+    "ref": "Mode Transition Integration Test"
+   },
+   {
+    "item": "Advance #10: fleet-mode.json Schema Validator",
+    "why": "next-10 queue item due within 24 h",
+    "ref": "fleet-mode.json Schema Validator"
+   },
+   {
+    "item": "Continue open goal: Dispatch Correctness Fuzzer - `python memory/verifier/dispatch_fuzzer.py`: generate 100 random goal-state configurations (mix of reached/open, various modes); f",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Dispatch Correctness Fuzzer - `python memory/verifier/dispatch_fuzzer.py`: generate 100 random goal-state configurations (mix of reached/open, various modes); f"
+   },
+   {
+    "item": "Continue open goal: Pass Budget Compliance Test - `python memory/verifier/budget_compliance.py`: simulate 250 passes (budget=200); verify: (a) counter increments correctly each pas",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Pass Budget Compliance Test - `python memory/verifier/budget_compliance.py`: simulate 250 passes (budget=200); verify: (a) counter increments correctly each pas"
+   },
+   {
+    "item": "Continue open goal: Productivity Metric Validator - `python memory/verifier/productivity_validate.py`: given autoloop.jsonl + known ground-truth file changes, verify productivity_c",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Productivity Metric Validator - `python memory/verifier/productivity_validate.py`: given autoloop.jsonl + known ground-truth file changes, verify productivity_c"
+   },
+   {
+    "item": "Continue open goal: Cycle Transition Rollback Test - `python memory/verifier/cycle_rollback_test.py`: simulate failed cycle transition (e.g., new goal file write fails mid-sequence",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Cycle Transition Rollback Test - `python memory/verifier/cycle_rollback_test.py`: simulate failed cycle transition (e.g., new goal file write fails mid-sequence"
+   }
+  ],
+  "designer": [
+   {
+    "item": "Advance #4: Fleet Mode ARIA + Keyboard Nav",
+    "why": "next-10 queue item due within 24 h",
+    "ref": "Fleet Mode ARIA + Keyboard Nav"
+   },
+   {
+    "item": "Advance #9: Mode Transition Animation",
+    "why": "next-10 queue item due within 24 h",
+    "ref": "Mode Transition Animation"
+   },
+   {
+    "item": "Continue open goal: Pass Budget Gauge - Design a circular gauge (SVG) showing passes used / budget remaining this cycle. Color transitions: green <50%, amber 50-80%, red >80%. Show",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Pass Budget Gauge - Design a circular gauge (SVG) showing passes used / budget remaining this cycle. Color transitions: green <50%, amber 50-80%, red >80%. Show"
+   },
+   {
+    "item": "Continue open goal: Mode History Timeline - Design horizontal timeline showing when fleet entered/exited each mode today (colored segments with timestamps). Max 24h window, scrolla",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Mode History Timeline - Design horizontal timeline showing when fleet entered/exited each mode today (colored segments with timestamps). Max 24h window, scrolla"
+   },
+   {
+    "item": "Continue open goal: Maintenance Task Cards - Design card component for each idle agent showing: agent name, current maintenance task (from rotation), time assigned, productive stat",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Maintenance Task Cards - Design card component for each idle agent showing: agent name, current maintenance task (from rotation), time assigned, productive stat"
+   },
+   {
+    "item": "Continue open goal: Convergence Progress Ring - Replace linear progress bar with circular ring showing % of cycle goals reached. Animate stroke-dashoffset on value change. Show \"22",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Convergence Progress Ring - Replace linear progress bar with circular ring showing % of cycle goals reached. Animate stroke-dashoffset on value change. Show \"22"
+   }
+  ],
+  "archivist": [
+   {
+    "item": "Advance #6: Productivity Trend Archive",
+    "why": "next-10 queue item due within 24 h",
+    "ref": "Productivity Trend Archive"
+   },
+   {
+    "item": "Continue open goal: Mode Transition Anomaly Log - When actual mode transition deviates from forecast (by >30 min), log to memory/archivist/mode-anomalies.jsonl: expected_time, actu",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Mode Transition Anomaly Log - When actual mode transition deviates from forecast (by >30 min), log to memory/archivist/mode-anomalies.jsonl: expected_time, actu"
+   },
+   {
+    "item": "Continue open goal: Decision-Log Compaction - `python memory/archivist/compact_decision_log.py`: compress decision-log.jsonl entries older than 7 days into weekly summary files (me",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Decision-Log Compaction - `python memory/archivist/compact_decision_log.py`: compress decision-log.jsonl entries older than 7 days into weekly summary files (me"
+   },
+   {
+    "item": "Continue open goal: Fleet Autonomy Metrics Glossary - Write memory/archivist/metrics-glossary.md: formal definitions of all fleet metrics used in cycle 15 (productive pass, converg",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Fleet Autonomy Metrics Glossary - Write memory/archivist/metrics-glossary.md: formal definitions of all fleet metrics used in cycle 15 (productive pass, converg"
+   },
+   {
+    "item": "Continue open goal: Cycle Retro Auto-Archiver - `python memory/archivist/retro_archiver.py`: at cycle close, auto-generate retro notes from: goals completed, blockers hit, time-to-",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Cycle Retro Auto-Archiver - `python memory/archivist/retro_archiver.py`: at cycle close, auto-generate retro notes from: goals completed, blockers hit, time-to-"
+   },
+   {
+    "item": "Continue open goal: Knowledge Freshness for Mode Data - Implement TTL (time-to-live) for fleet-mode.json + productivity-baseline.json: if file mtime >2h old, mark as \"stale\" in KB ",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Knowledge Freshness for Mode Data - Implement TTL (time-to-live) for fleet-mode.json + productivity-baseline.json: if file mtime >2h old, mark as \"stale\" in KB "
+   }
+  ],
+  "scribe": [
+   {
+    "item": "Advance #7: Cycle Close-Out Report",
+    "why": "next-10 queue item due within 24 h",
+    "ref": "Cycle Close-Out Report"
+   },
+   {
+    "item": "Continue open goal: Mode Decision Brief - For each mode transition, write a one-paragraph brief explaining the decision in plain English for human review. Include: current state, w",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Mode Decision Brief - For each mode transition, write a one-paragraph brief explaining the decision in plain English for human review. Include: current state, w"
+   },
+   {
+    "item": "Continue open goal: Cross-Agent Handoff Summary - When goals re-route between seats (due to unavailability), generate a context summary for the receiving agent: what the goal was, ",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Cross-Agent Handoff Summary - When goals re-route between seats (due to unavailability), generate a context summary for the receiving agent: what the goal was, "
+   },
+   {
+    "item": "Continue open goal: Cycle Efficiency Digest - Per cycle: one-paragraph summary of efficiency metrics (passes used, productive %, goals/cycle, time-to-100%, trend arrow vs prior 3 c",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Cycle Efficiency Digest - Per cycle: one-paragraph summary of efficiency metrics (passes used, productive %, goals/cycle, time-to-100%, trend arrow vs prior 3 c"
+   },
+   {
+    "item": "Continue open goal: Anomaly Narrative Generator - `python memory/scribe/anomaly_narrative.py`: when any fleet metric deviates >2\u03c3 from 30-day baseline, generate plain-English expla",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Anomaly Narrative Generator - `python memory/scribe/anomaly_narrative.py`: when any fleet metric deviates >2\u03c3 from 30-day baseline, generate plain-English expla"
+   },
+   {
+    "item": "Continue open goal: Fleet State Snapshot (Daily) - `python memory/scribe/daily_snapshot.py`: generate a 10-line human-readable snapshot of fleet state: mode, open goals count, top ",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Fleet State Snapshot (Daily) - `python memory/scribe/daily_snapshot.py`: generate a 10-line human-readable snapshot of fleet state: mode, open goals count, top "
+   },
+   {
+    "item": "Continue open goal: Convergence Velocity Briefing - Per cycle: 3-sentence briefing on convergence speed: \"Cycle N reached 100% in X hours using Y passes (Z productive%). Compared t",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Convergence Velocity Briefing - Per cycle: 3-sentence briefing on convergence speed: \"Cycle N reached 100% in X hours using Y passes (Z productive%). Compared t"
+   }
+  ],
+  "mechanic": [
+   {
+    "item": "Advance #5: fleet-mode.json Atomic Writer (Infra)",
+    "why": "next-10 queue item due within 24 h",
+    "ref": "fleet-mode.json Atomic Writer (Infra)"
+   },
+   {
+    "item": "Continue open goal: Pass Budget Monitor - `python memory/mechanic/budget_monitor.py`: read pass-budget.json every cycle; when consumption >80%, write warning to memory/ops/budget-a",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Pass Budget Monitor - `python memory/mechanic/budget_monitor.py`: read pass-budget.json every cycle; when consumption >80%, write warning to memory/ops/budget-a"
+   },
+   {
+    "item": "Continue open goal: Mode Transition Latency Measurer - `python memory/mechanic/transition_latency.py`: measure wall-clock time from mode-change trigger to fleet-mode.json mtime upd",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Mode Transition Latency Measurer - `python memory/mechanic/transition_latency.py`: measure wall-clock time from mode-change trigger to fleet-mode.json mtime upd"
+   },
+   {
+    "item": "Continue open goal: Idle Task Delivery Verifier - `python memory/mechanic/task_delivery.py`: after dispatching an idle task, verify it actually reached the agent by checking: (a) a",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Idle Task Delivery Verifier - `python memory/mechanic/task_delivery.py`: after dispatching an idle task, verify it actually reached the agent by checking: (a) a"
+   },
+   {
+    "item": "Continue open goal: Cycle Transition Automation (Ops) - `python memory/mechanic/cycle_transition_ops.py`: execute the infra side of cycle transition: verify disk space >100MB free,",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Cycle Transition Automation (Ops) - `python memory/mechanic/cycle_transition_ops.py`: execute the infra side of cycle transition: verify disk space >100MB free,"
+   },
+   {
+    "item": "Continue open goal: Fleet-Mode API Endpoint - Implement /api/fleet/mode endpoint in agent_portal.py: returns {mode, since, goal_pct, next_transition_forecast, pass_budget:{used,tot",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Fleet-Mode API Endpoint - Implement /api/fleet/mode endpoint in agent_portal.py: returns {mode, since, goal_pct, next_transition_forecast, pass_budget:{used,tot"
+   },
+   {
+    "item": "Continue open goal: Auto-Loop Restart Guard - `python memory/mechanic/loop_guard.py`: watchdog that checks if auto-loop produced output in last 5 min. If not: attempt restart (scht",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Auto-Loop Restart Guard - `python memory/mechanic/loop_guard.py`: watchdog that checks if auto-loop produced output in last 5 min. If not: attempt restart (scht"
+   },
+   {
+    "item": "Continue open goal: Productivity Data Pipeline Monitor - `python memory/mechanic/productivity_pipeline.py`: verify productivity-baseline.json is written every hour (check mtime). I",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Productivity Data Pipeline Monitor - `python memory/mechanic/productivity_pipeline.py`: verify productivity-baseline.json is written every hour (check mtime). I"
+   },
+   {
+    "item": "Continue open goal: Mode State Recovery - `python memory/mechanic/mode_recovery.py`: on fleet restart (detected by stale fleet-mode.json mtime >30 min + system uptime <5 min), reco",
+    "why": "open on the lane, outside today's queue - keep momentum",
+    "ref": "Mode State Recovery - `python memory/mechanic/mode_recovery.py`: on fleet restart (detected by stale fleet-mode.json mtime >30 min + system uptime <5 min), reco"
+   }
+  ]
+ },
+ "stats": {
+  "sig": "025b0a1a2da9",
+  "date": "2026-11-24",
+  "drafts": [
+   {
+    "label": "A",
+    "agent": "orchestrator",
+    "stats": {
+     "error": "seat failed: HTTP Error 404: Not Found"
+    }
+   },
+   {
+    "label": "B",
+    "agent": "designer",
+    "stats": {
+     "error": "not-json: Expecting value: line 1 column 1 (char 0)"
+    }
+   },
+   {
+    "label": "C",
+    "agent": "researcher",
+    "stats": {
+     "error": "seat failed: timed out"
+    }
+   }
+  ],
+  "source": "deterministic-fallback"
+ }
+}

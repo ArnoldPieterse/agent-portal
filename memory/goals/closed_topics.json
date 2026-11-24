@@ -1642,5 +1642,29 @@
 "text": "**Convergence Velocity Metric** - `python memory/researcher/convergence_velocity.py`: for each completed cycle, compute: goals_closed / tota",
 "agent": "researcher",
 "at": "2026-11-24"
+},
+{
+"sig": "02e04bd60492b5ad",
+"text": "**Dispatch Correctness Audit** - `python memory/researcher/dispatch_audit.py`: sample last 50 auto-loop passes from autoloop.jsonl; for each",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "1d0afcd6ab35d221",
+"text": "**Pattern Recurrence Detector** - `python memory/researcher/pattern_detector.py`: scan decision-log.jsonl for root-cause keywords appearing ",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "1f644456bea022ad",
+"text": "**Mode Transition Forecast** - `python memory/researcher/mode_forecast.py`: based on current goal completion rate + historical cycle duratio",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "7a5e2d427fef9a35",
+"text": "**Productive Pass Definition** - Write memory/researcher/productive-pass-definition.md: formal definition of \"productive pass\" per role (e.g",
+"agent": "researcher",
+"at": "2026-11-24"
 }
 ]
