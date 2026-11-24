@@ -291,13 +291,25 @@ def _write_outputs(doc):
                     line += " - via %s ~%s" % (c["via"], (c.get("eta") or "-")[:16])
                 L.append(line + "  -> unlocks: " + c["unlocks"])
         oc = plan.get("outcomes_30d")
+        pm = plan.get("plan_meta") or {}
         if oc:
-            L += ["", "## 30-day business outcomes (PM view)", ""]
+            L += ["", "## 30-day business outcomes (computed plan)", "",
+                  "Self-computed on every refresh from live state (reached capabilities, next-10 ETAs, fleet throughput) - "
+                  "the portal re-plans itself continuously as goals are reached.", ""]
+            if pm.get("delta"):
+                L.append("**Changed since last plan:**")
+                for d in pm["delta"]:
+                    L.append("- " + d)
+                L.append("")
             for o in oc:
-                line = "- **%s** - window %s | %s" % (o["name"], o["window"], o["status"])
-                if o.get("via"):
-                    line += " (gated by " + o["via"] + ")"
-                L.append(line)
+                close = " **[closes the cycle]**" if o.get("cycle_closing") else ""
+                L.append("- **%s**%s - window %s | %s | lane: %s" % (
+                    o["name"], close, o["window"], o["status"], o.get("lane", "?")))
+                if o.get("gates"):
+                    L.append("  gates: " + "; ".join(o["gates"]))
+            if pm.get("history"):
+                L += ["", "plan history (sig @ time): " +
+                      ", ".join("%s @ %s" % (e["sig"], e["ts"][5:]) for e in reversed(pm["history"][:4]))]
     for h in doc["horizons"]:
         L += ["", "## %s ahead (by %s)" % (h["label"], h["end"]),
               "- completes: **%d** goal(s) -> fleet ~%.0f%%" % (h["completes"], h["fleet_pct"])]

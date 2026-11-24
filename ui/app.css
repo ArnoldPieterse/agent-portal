@@ -407,3 +407,5 @@ code{background:var(--line);border-radius:5px;padding:1px 5px;font-size:var(--fs
 .fc-outc{display:flex;flex-direction:column;gap:5px;margin-top:6px}
 .fc-oc{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:5px 9px;font-size:12px}
 .fc-del{color:rgba(255,255,255,.7);max-width:200px;font-size:11px}
+.fc-delta{margin-top:6px;padding:5px 8px;border-left:2px solid var(--acc);background:var(--panel2);border-radius:0 6px 6px 0;font-size:11px;color:rgba(255,255,255,.75)}
+.fc-oc-close{border-color:var(--ok,#4caf50)}

@@ -428,7 +428,13 @@ async function goalsLoad(){
         }).join("")+'</ol></div>';
       }
       if(_plan.outcomes_30d&&_plan.outcomes_30d.length){
-        h+='<div class="fc-pm"><div class="topic-k">30-day business outcomes</div><div class="fc-outc">'+_plan.outcomes_30d.map(o=>'<div class="fc-oc" title="'+esc(o.note||'')+'"><b>'+esc(o.name)+'</b> <span class="hint">'+esc(o.window)+(o.via?' &middot; gated by '+esc(o.via):'')+'</span><div class="fc-unlocks">'+esc(o.status)+'</div></div>').join("")+'</div></div>';
+        const _pm=_plan.plan_meta||{};
+        let ph='<div class="fc-pm"><div class="topic-k">30-day business outcomes <span class="hint">(self-computed from live state &middot; re-plans as goals are reached)</span></div>';
+        if(_pm.delta&&_pm.delta.length)ph+='<div class="fc-delta"><b>changed since last plan:</b> '+_pm.delta.map(esc).join(" &middot; ")+'</div>';
+        ph+='<div class="fc-outc">'+_plan.outcomes_30d.map(o=>'<div class="fc-oc'+(o.cycle_closing?" fc-oc-close":"")+'" title="'+esc((o.gates||[]).join("; "))+'"><b>'+esc(o.name)+(o.cycle_closing?' <span class="hint">[closes cycle]</span>':'')+'</b> <span class="hint">'+esc(o.window)+' &middot; lane: '+esc(o.lane||"?")+'</span><div class="fc-unlocks">'+esc(o.status)+'</div></div>').join("")+'</div>';
+        if(_pm.history&&_pm.history.length)ph+='<div class="hint" style="margin-top:5px">plan sigs: '+_pm.history.slice().reverse().map(e=>e.sig+" @ "+String(e.ts).slice(5,16)).join(" &rarr; ")+'</div>';
+        ph+='</div>';
+        h+=ph;
       }
       const _ends=Object.values(fc.lanes||{}).map(l=>l.end).filter(Boolean);
       if(_ends.length)h+='<div class="hint" style="margin-top:6px">level-up (all goals 100%) ETA: '+esc(_ends.sort().slice(-1)[0])+'</div>';

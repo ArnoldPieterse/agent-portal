@@ -9,9 +9,12 @@ next10.json says HOW the forecast works; this module answers WHAT is planned:
 
 Stdlib only. Used by make_forecast_deck.py and forecast_engine._write_outputs.
 """
+import hashlib
 import json
+import math
 import os
 import re
+import sys
 from datetime import datetime, timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -81,19 +84,184 @@ CAPABILITY_LADDER = [
     ("Custom input detection", "Arbitrary device/input sensing - full autonomous action stack."),
 ]
 
-# 30-day business outcomes (PM view): what the fleet should be producing by day 30,
-# and which capability each one depends on. enablers = ladder names; [] = foundation only.
-BUSINESS_OUTCOMES_30D = [
-    ("Generate daily social media posts", ["Custom input detection"], "autonomous posting loop running unattended"),
-    ("Commenting on posts", ["Custom input detection"], "reads threads and replies in-voice"),
-    ("Making phone calls", ["Mic access"], "full-duplex voice calls, not just text"),
-    ("Writing valid tenders", ["Camera access"], "reads tender PDFs/screens and drafts compliant responses"),
-    ("Predicting markets", [], "model work on existing compute; gated by fleet throughput, not peripherals"),
-    ("Making money (revenue channels live)", ["Custom input detection"], "at least one channel transacting autonomously"),
-    ("Positive money income (net > 0)", ["Custom input detection"], "all revenue channels running >= 1 week with net positive"),
+# 30-day business outcomes (PM view) - OUTCOME CATALOG (data, not schedule).
+# Each row declares WHAT an outcome is and what GATES it (capability names or other
+# outcome names), plus ramp/run days. The actual day windows are COMPUTED on every
+# refresh from live state: reached capabilities = day 0, in-plan capabilities = their
+# ETA day, unqueued ones projected via fleet throughput. As goals are reached the
+# plan re-derives itself continuously (history kept in forecast/plans-history.jsonl).
+# tuple: (name, gates, ramp_days, run_days, lane_hint)
+OUTCOME_CATALOG = [
+    ("Generate daily social media posts", ["Custom input detection"], 1, 2, None),
+    ("Commenting on posts",               ["Custom input detection"], 0, 4, None),
+    ("Making phone calls",                ["Mic access"],             2, 7, None),
+    ("Writing valid tenders",             ["Camera access"],          3, 10, None),
+    ("Predicting markets",                [],                          5, 15, "researcher"),
+    ("Making money (revenue channels live)", ["Custom input detection", "Camera access"], 3, 8, None),
+    ("Positive money income (net > 0)",   ["Making money (revenue channels live)"], 7, 7, None),
 ]
+OUTCOME_NOTES = {
+    "Generate daily social media posts": "autonomous posting loop running unattended",
+    "Commenting on posts": "reads threads and replies in-voice",
+    "Making phone calls": "full-duplex voice calls, not just text",
+    "Writing valid tenders": "reads tender PDFs/screens and drafts compliant responses",
+    "Predicting markets": "model work on existing compute; gated by fleet throughput, not peripherals",
+    "Making money (revenue channels live)": "at least one channel transacting autonomously",
+    "Positive money income (net > 0)": "all revenue channels running >= 1 week with net positive",
+}
+OUTCOME_GATES = {name: gates for name, gates, _r, _d, _l in OUTCOME_CATALOG}
+CAP_EST_HOURS = 6.0   # projected effort of one unqueued capability (build, cx2)
+PLAN_HIST = os.path.join(HERE, "forecast", "plans-history.jsonl")
 
-_WINDOW_BY_DEP = {-1: "day 1-7", 0: "day 8-14", 1: "day 8-14", 2: "day 15-21", 3: "day 22-30"}
+
+def _ledger():
+    """Live goal ledger per agent: [{text, status, ...}] - single source of truth."""
+    try:
+        rd = os.path.join(os.path.dirname(HERE), "researcher")
+        if rd not in sys.path:
+            sys.path.insert(0, rd)
+        import goal_ledger as gl
+        gl.GOALS_DIR = HERE
+        led = gl.build_ledger()
+        out = {}
+        for name, a in (led.get("agents") or {}).items():
+            goals = a if isinstance(a, list) else a.get("goals", [])
+            out[name] = [g for g in goals if isinstance(g, dict)]
+        return out
+    except Exception:
+        return {}
+
+
+def _capability_inventory(planned, ledger_agents):
+    """Live capability status: done (reached goal matches) / in-plan (next-10 ETA) /
+    queued (open goal outside next-10) / not-planned (no goal anywhere yet)."""
+    inv = {}
+    for pat, name, stream in CAPABILITY_MAP:
+        rx = re.compile(pat)
+        entry = {"name": name, "stream": stream, "status": "not-planned", "via": None,
+                 "eta": None, "agent": None, "p_reached": None}
+        for agent, goals in (ledger_agents or {}).items():
+            if entry["status"] == "done":
+                break
+            for g in goals:
+                if not rx.search(g.get("text", "")):
+                    continue
+                if g.get("status") == "reached":
+                    entry.update(status="done", via="%s (reached goal)" % agent)
+                    break
+                if entry["status"] != "queued":
+                    entry.update(status="queued", via="%s (open, outside next-10)" % agent)
+        for it in planned:
+            d = it.get("deliverable") or {}
+            if d.get("name") == name and it.get("eta") and entry["status"] != "done":
+                entry.update(status="in-plan",
+                             via="#%d [%s] %s" % (it["rank"], it.get("agent", "?"), (it.get("title") or "")[:48]),
+                             eta=it.get("eta"), agent=it.get("agent"), p_reached=it.get("p_reached"))
+        inv[name] = entry
+    return inv
+
+
+def _schedule_outcomes(inv, gen, free_day):
+    """Compute the 30-day plan: every window is derived from gate completion days,
+    never hardcoded. start = max(gate days) + ramp; end = start + run.
+    free_day = when the earliest lane frees a seat (unqueued work can only be
+    scheduled once a seat is free, plus its work time)."""
+    done_map, out = {}, []
+    for name, gates, ramp, run, lane_hint in OUTCOME_CATALOG:
+        gate_days, gate_desc, projected = [], [], []
+        for gname in gates:
+            if gname in done_map:  # gated by another planned outcome
+                s = done_map[gname]
+                gd, desc = s["end_day"], "%s (ends day %d)" % (gname, s["end_day"])
+            else:
+                e = inv.get(gname)
+                if e and e["status"] == "done":
+                    gd, desc = 0, "%s (already reached)" % gname
+                elif e and e.get("eta"):
+                    gd = max(1, int(math.ceil((datetime.strptime(e["eta"], "%Y-%m-%d %H:%M") - gen).total_seconds() / 86400.0)))
+                    desc = "%s (planned ~day %d)" % (gname, gd)
+                else:
+                    gd = free_day + int(math.ceil(CAP_EST_HOURS / 24.0))
+                    desc = "%s (not in queue - schedulable ~day %d: seat frees + work time)" % (gname, gd)
+                    projected.append(gname)
+            gate_days.append(gd)
+            gate_desc.append(desc)
+        start_day = max(gate_days, default=0) + ramp
+        end_day = start_day + run
+        status = "planned" if end_day <= 30 else ("at-risk (runs past day 30)" if start_day <= 30 else "beyond 30 days")
+        lane = lane_hint or "fleet"
+        for gname in reversed(gates):
+            e = inv.get(gname)
+            if e and e.get("agent"):
+                lane = e["agent"]
+                break
+        o = {"name": name, "window": "day %d-%d" % (max(1, start_day), end_day),
+             "start_day": max(1, start_day), "end_day": end_day, "status": status,
+             "lane": lane, "gates": gate_desc, "via": "; ".join(gate_desc) or "foundation only",
+             "note": OUTCOME_NOTES.get(name, ""), "projected_gates": projected}
+        done_map[name] = o
+        out.append(o)
+
+    def depth(n, seen=()):  # transitively-gated count -> the cycle-closing outcome
+        g = [x for x in OUTCOME_GATES[n] if x in done_map and x not in seen]
+        return 1 + max((depth(x, seen + (n,)) for x in g), default=0)
+
+    closing = max(out, key=lambda o: (depth(o["name"]), o["end_day"]))
+    closing["cycle_closing"] = True
+    return out
+
+
+def _plan_history(outcomes, gen, fleet_pct):
+    """Record the plan whenever it changes; return (sig, delta-vs-previous, recent)."""
+    sig_src = json.dumps([[o["name"], o["start_day"], o["end_day"], o["status"]] for o in outcomes])
+    sig = hashlib.sha1(sig_src.encode("utf-8")).hexdigest()[:12]
+    entries = []
+    try:
+        with open(PLAN_HIST, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line:
+                    try:
+                        entries.append(json.loads(line))
+                    except Exception:
+                        pass
+    except Exception:
+        pass
+    delta = []
+    if entries and entries[-1].get("sig") == sig:
+        changed = False  # identical to what is already recorded - no new snapshot
+    else:
+        changed = True
+        prev = (entries[-1] if entries else None)
+        if prev:
+            pmap = {o["name"]: o for o in prev.get("outcomes", [])}
+            cur_names = {o["name"] for o in outcomes}
+            for o in outcomes:
+                p = pmap.get(o["name"])
+                if not p:
+                    delta.append("%s: new in plan (day %d-%d)" % (o["name"], o["start_day"], o["end_day"]))
+                elif (p.get("start_day"), p.get("end_day"), p.get("status")) != (o["start_day"], o["end_day"], o["status"]):
+                    delta.append("%s: day %s-%s -> day %d-%d (%s)" % (
+                        o["name"], p.get("start_day", "?"), p.get("end_day", "?"),
+                        o["start_day"], o["end_day"], o["status"]))
+            for n in pmap:
+                if n not in cur_names:
+                    delta.append("%s: dropped from plan" % n)
+        else:
+            delta.append("first computed 30-day plan")
+        entry = {"ts": gen.strftime("%Y-%m-%d %H:%M:%S"), "sig": sig, "fleet_pct": fleet_pct,
+                 "outcomes": [{"name": o["name"], "start_day": o["start_day"],
+                               "end_day": o["end_day"], "status": o["status"]} for o in outcomes]}
+        entries.append(entry)
+        try:
+            os.makedirs(os.path.dirname(PLAN_HIST), exist_ok=True)
+            with open(PLAN_HIST, "w", encoding="utf-8") as f:
+                for e in entries[-150:]:
+                    f.write(json.dumps(e) + "\n")
+        except Exception:
+            pass
+    recent = [{"ts": e["ts"], "sig": e["sig"]} for e in entries[-5:]]
+    return sig, delta, recent
 
 
 def _deliverable(title, goal):
@@ -222,51 +390,36 @@ def build_plan(doc):
                    "then": "when the last lane ends (%s) the gate re-checks" % (level_up_eta or "-"),
                    "first_planned": ["#%d [%s] %s ~%s" % (it["rank"], it["agent"], it["title"][:60], it["eta"]) for it in planned[:4]]}}
     # ---- capability chain + 30-day outcomes (PM view) ------------------------
+    # All computed from live state on every refresh: the ledger says which
+    # capabilities are already reached, next-10 ETAs say which land when, and fleet
+    # throughput projects what is not queued yet. As goals are reached, windows
+    # shift - the plan re-derives itself continuously (see plans-history.jsonl).
+    tpgh = float(doc.get("throughput_goals_per_hour") or 0.3)
+    inv = _capability_inventory(planned, _ledger())
     ladder_names = [c[0] for c in CAPABILITY_LADDER]
-    planned_by_name = {}
-    for it in planned:
-        d = it.get("deliverable") or {}
-        if d.get("name"):
-            planned_by_name.setdefault(d["name"], it)
     chain = []
     for i, (name, note) in enumerate(CAPABILITY_LADDER):
         nxt = ladder_names[i + 1] if i + 1 < len(ladder_names) else "30-day business outcomes"
-        gates = ladder_names[:i]
-        it = planned_by_name.get(name)
-        if it:
-            entry = {"step": i + 1, "name": name, "note": note, "status": "in-plan",
-                     "via": "#%d [%s] %s" % (it["rank"], it.get("agent", "?"), (it.get("title") or "")[:48]),
-                     "eta": it.get("eta"), "p_reached": it.get("p_reached"), "unlocks": nxt}
-        elif all(g in planned_by_name for g in gates):
-            entry = {"step": i + 1, "name": name, "note": note, "status": "projected-next",
-                     "via": None, "eta": None, "p_reached": None, "unlocks": nxt}
-        else:
-            first_open = next(g for g in gates if g not in planned_by_name)
-            entry = {"step": i + 1, "name": name, "note": note,
-                     "status": "queued behind %s" % first_open,
-                     "via": None, "eta": None, "p_reached": None, "unlocks": nxt}
-        chain.append(entry)
+        e = inv.get(name) or {"status": "not-planned", "via": None, "eta": None, "p_reached": None}
+        chain.append({"step": i + 1, "name": name, "note": note, "status": e["status"],
+                      "via": e.get("via"), "eta": e.get("eta"), "p_reached": e.get("p_reached"),
+                      "unlocks": nxt})
 
-    outcomes = []
-    for name, enablers, note in BUSINESS_OUTCOMES_30D:
-        dep_idx = max((ladder_names.index(e) for e in enablers if e in ladder_names), default=-1)
-        window = _WINDOW_BY_DEP.get(dep_idx, "day 22-30")
-        via = None
-        if dep_idx == -1:
-            status = "on-track (foundation)"
-        else:
-            ce = chain[dep_idx]
-            if ce["status"] == "in-plan":
-                status, via = "on-track", "%s ~%s" % (ce.get("via"), (ce.get("eta") or "")[:16])
-            elif ce["status"] == "projected-next":
-                status = "projected - next capability to plan: %s" % ce["name"]
-            else:
-                status = "%s (%s)" % (ce["status"], ce["name"])
-        outcomes.append({"name": name, "window": window, "status": status, "via": via, "note": note})
+    free_day = 0
+    ends = [l.get("end") for l in (doc.get("lanes") or {}).values() if l.get("end")]
+    if ends:
+        first_free = min(datetime.strptime(e, "%Y-%m-%d %H:%M") for e in ends)
+        free_day = max(0, int(math.ceil((first_free - gen).total_seconds() / 86400.0)))
+    outcomes = _schedule_outcomes(inv, gen, free_day)
+    sig, delta, recent = _plan_history(outcomes, gen, pct)
+    plan_meta = {"sig": sig,
+                 "computed_at": gen.strftime("%Y-%m-%d %H:%M:%S"),
+                 "basis": "live goal ledger + next-10 ETAs + fleet throughput ~%.2f goals/h; recomputed every refresh" % tpgh,
+                 "delta": delta, "history": recent}
 
     return {"cycle_state": cycle_state, "level_up_eta": level_up_eta, "planned": planned,
             "horizons": horizons, "tree": tree,
-            "capability_chain": chain, "outcomes_30d": outcomes}
+            "capability_chain": chain, "outcomes_30d": outcomes, "plan_meta": plan_meta}
 
 
 def load_plan():

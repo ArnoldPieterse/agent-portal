@@ -1219,3 +1219,10 @@
 {"t": "2026-11-24 11:45:21", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-24 11:45:21", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-24 11:45:21", "job": "schtask_dep_weekly", "event": "done", "rc": 0}
+{"t": "2026-11-24 11:45:56", "job": "cycle_1h", "event": "done", "rc": 2}
+{"t": "2026-11-24 11:50:16", "job": "cycle_5m", "event": "start", "pid": 23056}
+{"t": "2026-11-24 11:50:21", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 11:55:16", "job": "cycle_5m", "event": "start", "pid": 7556}
+{"t": "2026-11-24 11:55:16", "job": "cycle_10m", "event": "start", "pid": 20844}
+{"t": "2026-11-24 11:55:21", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 11:55:21", "job": "cycle_10m", "event": "done", "rc": 0}

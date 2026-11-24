@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier lane complete: 10/10 goals reached, open=0; all 5 verification scripts pass (mode_transition, schema_check, dispatch_fuzzer, budget
-- Mechanic cycle-16: all 10 goals verified, 263/263 tests pass; fleet_mode_infra.py enhanced with msvcrt.locking + error handling.
-- Builder cycle-16: goals #7,#8,#9 all REACHED (status_propagator, maintenance_registry, pass_budget_enforcer) — now at 9/10.
-- Orchestrator lane at 5/10 goals verified after cycle-16 pass; 4 new: Dispatch Queue Sync, Idle Maintenance Rotation, Mode Transition Log, Se
-- Cycle-16: All 10 Mechanic goals complete, 263/263 selftests green. No open items in lane.
-- Cycle-15: all 10 goals verified (2→10/10); only new build was idle_audit.py (goal #2), rest passed on re-run
 - Idle Task Injector implemented & verified (goal #1); now on goal #2 Cockpit Mode B. Gotcha: % in format strings needs escaping.
 - Designer: cockpit-mode-layout.js handles content (collapse/hero) only; fleet-mode-transition.js owns panel order — no overlap.
 - Goal #3 mode_duration.py has schema mismatch:
 - Scribe completed goals #2 (Cycle Close-Out Report, 3.2KB<4KB) and #3 (Idle Pass Daily Digest) this pass.
+- Researcher lane fully closed: all 5 goals verified (2026-11-24) in memory/goals/researcher.md; no open work remains.
+- Verifier lane: 10/10 goals confirmed verified, zero open. Core scripts (mode_schema_check, budget_compliance) spot-checked green.
+- Mechanic: All 10 goals closed this pass. Goal#1 fleet-mode.json atomic writer now 23/23 (msvcrt.locking+concurrency tests). Goal#3 pass budg
+- Goal #5 (mode_brief.py) built and run, but ledger recording unconfirmed — context filled mid-write; verify on next pass.
+- Designer 10/10 goals done; module loader added to ui/core.js (sequential CSS+JS injection) was the critical enabler for runtime loading.
+- INDEX claims productive_pass_gate.py built 3/3 pass but file is missing from
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
