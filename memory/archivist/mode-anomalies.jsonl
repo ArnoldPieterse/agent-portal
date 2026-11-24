@@ -1,0 +1,1 @@
+{"forecast_id": "9b4febe9", "target_mode": "recovery", "expected_time": "2026-11-24T16:25:14.971790+00:00", "actual_time": null, "kind": "pending_late", "deviation_min": 30.2, "context": "flowtrace cycle-14: next natural mode transition", "logged_at": "2026-11-24T16:55:26.621072+00:00"}
