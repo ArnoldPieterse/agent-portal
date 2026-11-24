@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder cycle-16: all 5 goals verified, selftest passing (9/9, 7/7, 5/5, convergence clean), no regressions.
 - Verifier lane fully green: all 5 goals (mode_transition, schema, fuzzer, budget, productivity) pass; 10/10 verified.
 - Scribe lane reached 10/10 goals verified for cycle 15 (goals 5,7,8,9,10 marked in memory/goals/scribe.md).
 - Designer cycle-15: goals #6–#9 done (Pass Budget Gauge, Mode History Timeline, Maintenance Task Cards, Convergence Ring), all tests pass
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic lane confirmed 10/10 verified; auto-loop "open goals" dispatch was stale — no new work needed.
 - Scribe marked goals 5,7,8,9,10 as verified in memory/goals/scribe.md; all had existing scripts+evidence from prior passes.
 - Builder picked up Scribe's topology visualizer handoff; implementing SVG topology render in cockpit (cycle-16).
+- Researcher identified 4 convergence gaps; recommended one mode_refresh.py (Mechanic atomic writer + transition log append) closes gaps 1+2
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
