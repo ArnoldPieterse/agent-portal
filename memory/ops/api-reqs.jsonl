@@ -1,0 +1,2 @@
+{"event": "created", "id": "R0001", "agent": "Builder", "kind": "change", "file": "_apiq_e2e_target.txt", "command": "", "ts": "2026-11-24T21:47:33Z"}
+{"event": "applied", "id": "R0001", "by": "human", "kind": "change", "file": "_apiq_e2e_target.txt", "detail": "_apiq_e2e_target.txt: replaced lines 2..3 with 2 line(s)", "ts": "2026-11-24T21:47:33Z"}
