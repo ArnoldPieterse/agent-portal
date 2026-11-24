@@ -5455,19 +5455,26 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(200, load_agents())
         elif p.startswith("/api/goals/onepager/"):
             # 2026-11-24: literal downloadable per-agent one-pager (real attachment download)
-            aid = urllib.parse.unquote(p[len("/api/goals/onepager/"):]).strip().lower()
-            if not _re.fullmatch(r"[a-z0-9_-]{1,40}", aid):
-                return self._json(400, {"error": "bad agent id"})
-            fp = os.path.join(HERE, "memory", "goals", "plans", "one-pager-%s.md" % aid)
-            if not os.path.isfile(fp):
-                return self._json(404, {"error": "no one-pager for %s yet (written at each planning round)" % aid})
-            data = open(fp, "rb").read()
-            self.send_response(200)
-            self.send_header("Content-Type", "text/markdown; charset=utf-8")
-            self.send_header("Content-Disposition", 'attachment; filename="onepager_%s_%s.md"' % (aid, time.strftime("%Y-%m-%d")))
-            self.send_header("Content-Length", str(len(data)))
-            self.end_headers()
-            self.wfile.write(data)
+            try:
+                aid = urllib.parse.unquote(p[len("/api/goals/onepager/"):]).strip().lower()
+                if not (1 <= len(aid) <= 40 and set(aid) <= set("abcdefghijklmnopqrstuvwxyz0123456789-_")):
+                    return self._json(400, {"error": "bad agent id"})
+                fp = os.path.join(HERE, "memory", "goals", "plans", "one-pager-%s.md" % aid)
+                if not os.path.isfile(fp):
+                    return self._json(404, {"error": "no one-pager for %s yet (written at each planning round)" % aid})
+                data = open(fp, "rb").read()
+                self.send_response(200)
+                self.send_header("Content-Type", "text/markdown; charset=utf-8")
+                self.send_header("Content-Disposition", 'attachment; filename="onepager_%s_%s.md"' % (aid, time.strftime("%Y-%m-%d")))
+                self.send_header("Content-Length", str(len(data)))
+                self.end_headers()
+                self.wfile.write(data)
+            except Exception as e:
+                try:
+                    open(os.path.join(HERE, "_onepager_dbg.txt"), "a", encoding="utf-8").write(repr(e) + "\n")
+                except Exception:
+                    pass
+                return self._json(500, {"error": str(e)[:200]})
             return
         elif p == "/api/user-messages":
             return self._json(200, {"ok": True, "messages": umq_view([a["name"] for a in load_agents()["agents"]])})

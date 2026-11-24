@@ -829,3 +829,7 @@
 {"ts": "2026-11-24 14:21:05", "run": "g-1a20bc936af-ed4394", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-24 14:36:45", "run": "g-1a20bd78bdd-e1d36b", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-24 14:53:53", "run": "g-1a20be73d81-860b64", "missing": {}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
+{"ts": "2026-11-24 15:11:09", "run": "g-1a20bf70a82-998d10", "missing": {"Orchestrator": "unreachable", "Archivist": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
+{"ts": "2026-11-24 15:11:56", "run": "g-1a20bf7c4e6-afddf0", "missing": {"Orchestrator": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
+{"ts": "2026-11-24 15:14:14", "run": "g-1a20bf9dfb7-d60908", "missing": {"Designer": "unreachable", "Scribe": "unreachable", "Archivist": "unreachable", "Orchestrator": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
+{"ts": "2026-11-24 15:17:20", "run": "g-1a20bfcb47e-0d9f7a", "missing": {"Orchestrator": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}

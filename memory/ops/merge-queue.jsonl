@@ -334,3 +334,6 @@
 {"ts": "2026-11-24 15:09:22", "file": "ui/app.css", "sha": "e8ab6cb520", "size": 36159, "snapshot": null}
 {"ts": "2026-11-24 15:09:22", "file": "ui/cockpit-forecast.js", "sha": "0b5deee25f", "size": 7301, "snapshot": null}
 {"ts": "2026-11-24 15:09:22", "file": "ui/uploads.js", "sha": "a76a332267", "size": 48199, "snapshot": null}
+{"ts": "2026-11-24 15:14:14", "file": "agent_portal.py", "sha": "72f7747453", "size": 310820, "snapshot": "memory/ops/merge-queue/agent_portal.py.72f7747453"}
+{"ts": "2026-11-24 15:17:20", "file": "agent_portal.py", "sha": "a96bbde535", "size": 311186, "snapshot": "memory/ops/merge-queue/agent_portal.py.a96bbde535"}
+{"ts": "2026-11-24 15:17:20", "file": "index.html", "sha": "ffc9894a9f", "size": 14661, "snapshot": "memory/ops/merge-queue/index.html.ffc9894a9f"}

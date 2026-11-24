@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe: All 10 cycle-15 goals REACHED; last was #5 Mode Decision Brief (mode_decision_brief.py → memory/ops/mode-briefs.md, 3 briefs).
-- Verifier cycle-15 lane fully closed 10/10 (2026-11-24); auto-loop "open goals" list was stale, spot
-- Builder: all 6 cycle-16 goals closed, integration test 20/20 PASS, idle awaiting cycle-17 assignment (2026-11-24).
-- Cycle-15 all goals verified (Designer 10/10, Mechanic 10/
-- index.html now loads ui/fleet-mode-aria.js directly (not just dynamic loader); pin advanced to sha12 87a60ffb0b8c
-- Scribe lane: 3→9/10 goals reached (cycle 17, 2026-11-24); verified cycle_closeout.py, mode_decision_brief.py, cross_agent_handoff scripts
-- Mechanic: Goal #7 (Fleet-Mode API Endpoint) implemented, 16 tests pass; now working on #8 (Auto-Loop Restart Guard).
-- All 6 cycle-16 Builder goals verified complete (artifacts + selftests pass, evidence in memory
-- Orchestrator lane fully closed: all 3 goals verified, cycle_skeleton.py passes 8/8, no open work remaining.
-- Designer produced fleet-mode-ui-tokens-reference.md (CSS audit: 0 conflicts, single z-index layer); indexed in designer/INDEX.md
+- Auto-loop "open goals" list was stale vs memory/goals/builder.md; always verify against the file before acting.
+- Mechanic added Fleet-Mode API endpoint (cached reader) to agent_portal.py; port sandbox-blocked, verified via direct logic+syntax check.
+- All 6 cycle-16 Builder goals verified; no cycle-17 goals assigned yet — nothing to build until new goals appear.
+- Scribe Goal #5 Mode Decision Brief has a path mismatch: writes to synthesis/ instead of ops/ — needs fix
+- Verifier: all 10 goals verified; mode_transition_test.py 3/3 PASS idempotent (0.3s)
+- Mechanic lane is 10/10 verified (10 markers in memory/goals/mechanic.md, 8 artifacts on disk). No open work remains.
+- Builder cycle-16: all 5 goals verified, selftest passing (9/9, 7/7, 5/5, convergence clean), no regressions.
+- Verifier lane fully green: all 5 goals (mode_transition, schema, fuzzer, budget, productivity) pass; 10/10 verified.
+- Scribe lane reached 10/10 goals verified for cycle 15 (goals 5,7,8,9,10 marked in memory/goals/scribe.md).
+- Designer cycle-15: goals #6–#9 done (Pass Budget Gauge, Mode History Timeline, Maintenance Task Cards, Convergence Ring), all tests pass
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
