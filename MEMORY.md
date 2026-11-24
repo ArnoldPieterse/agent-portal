@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cycle 16 goal-setting round active; topic "Fleet Autonomy Convergence"; all agents proposing ~10 new
-- Cycle 16 topic: Fleet Autonomy Convergence — fleet runs own cycle lifecycle end-to-end (detect, trigger, validate, archive) without human ch
 - Designer C17: Fleet at 8
 - Mechanic C16 done (mode decision, load balancer, loop tuner, health score, incident playbook, model scheduler, queue monitor
 - Verifier C18 active: pillars = decision integrity/safety, cross-host resilience/long-soak, convergence cert/quality trending. Fleet in stead
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic C17: goals #1 seat_probe + #2 Model Load Orchestrator verified; now on #3 Auto-Recover
 - Convergence API built at memory/orchestrator/convergence_api.py; fleet_autonomy_score=62.4, steady-state needs 3 consecutive cycles to confi
 - Builder built convergence_api.py + /api/convergence route in agent_portal.py; also completed goals #3 (Mode Consensus Validator) and #5 (Vel
+- Designer C17: built Steady-State Visual Indicator, Cycle Duration Forecast Widget, Convergence Progress Ring (goals 2,3,5 done
+- Researcher C17: goals 1,2,4 done (R²=0.866 convergence model); working goal 6 (
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
