@@ -1,0 +1,61 @@
+{
+  "title": "Lvl-10 data-flow checklist - every process that must kick in as the fleet hits 100%",
+  "created": "2026-11-24T20:12:38",
+  "target_level": 10,
+  "processes": [
+    {
+      "id": "P1",
+      "name": "Goal parse snapshot",
+      "what": "/api/goals poll parses all agent files; snapshot reaches 80/80 (100%)",
+      "status": "pending"
+    },
+    {
+      "id": "P2",
+      "name": "Reached ledger",
+      "what": "_record_reached_goals writes newly-reached goals to closed_topics.json",
+      "status": "pending"
+    },
+    {
+      "id": "P3",
+      "name": "Reset arm",
+      "what": "GOAL_RESET_PENDING re-armed (armed=true) by the 100% gate in /api/goals",
+      "status": "pending"
+    },
+    {
+      "id": "P4",
+      "name": "Level up -> 10",
+      "what": "_check_level_up fires: level 9->10, report memory/levels/level_10_*.md, levels.json updated",
+      "status": "pending"
+    },
+    {
+      "id": "P5",
+      "name": "Forecast refresh",
+      "what": "/api/goals/forecast recomputes on stale signature: next10.json, forecast-latest.md, history snapshot, calibration.json",
+      "status": "pending"
+    },
+    {
+      "id": "P6",
+      "name": "UI level chip",
+      "what": "Portal header Lv chip + goals banner show Level 10 (browser-verified)",
+      "status": "pending"
+    },
+    {
+      "id": "P7",
+      "name": "Auto-cycle trigger",
+      "what": "builder auto_cycle_trigger.py detects 100% -> decision-log entry",
+      "status": "pending"
+    },
+    {
+      "id": "P8",
+      "name": "Cycle transition",
+      "what": "goal_cycle_auto.py consumes armed flag: archives old goals, drafts next cycle, commits",
+      "status": "pending"
+    },
+    {
+      "id": "P9",
+      "name": "Level gate re-arm",
+      "what": "After transition, new goal set -> level counter re-gated (signature change), no double count",
+      "status": "pending"
+    }
+  ]
+}

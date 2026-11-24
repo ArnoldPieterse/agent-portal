@@ -1,0 +1,9 @@
+{"ts": "2026-11-24T10:16:23.430484+00:00", "event": "reset", "used": 0, "total": 3}
+{"ts": "2026-11-24T10:16:23.437750+00:00", "event": "increment", "used": 1, "total": 3}
+{"ts": "2026-11-24T10:16:23.443385+00:00", "event": "increment", "used": 2, "total": 3}
+{"ts": "2026-11-24T10:16:23.486600+00:00", "event": "exhausted", "idle_mode_written": true, "used": 3, "total": 3}
+{"ts": "2026-11-24T10:16:41.642610+00:00", "event": "reset", "used": 0, "total": 3}
+{"ts": "2026-11-24T10:16:41.644144+00:00", "event": "increment", "used": 1, "total": 3}
+{"ts": "2026-11-24T10:16:41.645357+00:00", "event": "increment", "used": 2, "total": 3}
+{"ts": "2026-11-24T10:16:41.690384+00:00", "event": "exhausted", "idle_mode_written": true, "used": 3, "total": 3}
+{"ts": "2026-11-24T10:16:41.695283+00:00", "event": "noop_exhausted", "used": 3, "total": 3}

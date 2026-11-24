@@ -1,0 +1,63 @@
+{
+  "schema": "maintenance-tasks/v1",
+  "updated": "2026-11-24T00:00:00Z",
+  "rotation_rule": "task_index = day_of_cycle % len(tasks)",
+  "roles": {
+    "orchestrator": [
+      {"id": "orch-roster-audit", "description": "Roster health audit: verify all 8 agents have reachable seats and valid bindings", "command": "python memory/ops/fleet_probe_v2.py", "expected_output": "all 8 agents reported with status field"},
+      {"id": "orch-model-binding", "description": "Model binding check: confirm each agent's model path resolves on its host", "command": "python memory/orchestrator/cockpit_validator.py", "expected_output": "0 discrepancies or list written to cockpit-discrepancies.jsonl"},
+      {"id": "orch-capacity-gauge", "description": "Capacity gauge refresh: recompute fleet capacity from host-metrics.jsonl", "command": "python memory/ops/fleet_stats_collect.py", "expected_output": "fleet-status-cache.json updated with fresh timestamp"},
+      {"id": "orch-dependency-graph", "description": "Dependency graph update: rebuild schtask dependency snapshot", "command": "python memory/ops/schtask_dep_gen.py", "expected_output": "schtask-snapshot-<date>.json written"},
+      {"id": "orch-fleet-report", "description": "Fleet capacity report: summarize per-host load and goal velocity", "command": "python memory/ops/load_trend.py --days 1", "expected_output": "load-trend-latest.json updated"}
+    ],
+    "researcher": [
+      {"id": "res-stale-claims", "description": "Re-run stale_claim_scan over KB and flag citations older than 30 days", "command": "python memory/ops/stale_claim_check.py", "expected_output": "stale citation list (empty or flagged entries)"},
+      {"id": "res-evidence-trend", "description": "Evidence quality trend update: append weekly evidence-quality score", "command": "python memory/researcher/evidence_quality_trend.py", "expected_output": "evidence-quality-trend.jsonl appended"},
+      {"id": "res-kb-freshness", "description": "KB index freshness check: verify index.md entry count matches file count", "command": "python memory/orchestrator/pointer_fix_demo.py --check", "expected_output": "index delta report (0 drift expected)"},
+      {"id": "res-source-crossval", "description": "Source cross-validation sample: pick 5 KB entries, verify source URLs resolve", "command": "python memory/researcher/source_cross_validation.py --sample 5", "expected_output": "per-entry pass/fail table"},
+      {"id": "res-dict-gaps", "description": "Dictionary gap scan: find terms used in goal files missing from glossary", "command": "python memory/orchestrator/glossary_check.py --scan-goals", "expected_output": "missing-terms list appended to kb-maintenance-log.jsonl"}
+    ],
+    "builder": [
+      {"id": "bld-temp-sweep", "description": "Orphaned temp file sweep: remove *.tmp and dot-prefixed files older than 24h in memory/", "command": "python memory/builder/temp_sweep.py --older-than 24", "expected_output": "swept-file count + list in maintenance-log.jsonl"},
+      {"id": "bld-artifact-audit", "description": "Build artifact size audit: flag any generated file over 500KB", "command": "python memory/builder/artifact_audit.py --max-kb 500", "expected_output": "oversized-file list (empty expected)"},
+      {"id": "bld-pin-integrity", "description": "Pin-file integrity check: verify pinned file hashes match manifest", "command": "python memory/builder/pin_integrity.py --verify", "expected_output": "0 mismatches or mismatch report"},
+      {"id": "bld-css-drift", "description": "CSS token drift scan: compare ui/*.css custom properties against design tokens", "command": "python memory/designer/token_lint.py", "expected_output": "drift report (0 unknown tokens expected)"},
+      {"id": "bld-test-delta", "description": "Test coverage delta: diff test file count vs last cycle, flag drops", "command": "python memory/verifier/test_coverage_delta.py", "expected_output": "delta line written to maintenance-log.jsonl"}
+    ],
+    "verifier": [
+      {"id": "ver-battery-rerun", "description": "Stale test battery re-run: execute all AC-0xx acceptance tests in memory/verifier/tests/", "command": "python -m pytest memory/verifier/tests/ -q --timeout 120", "expected_output": "pytest summary with 0 failures"},
+      {"id": "ver-slo-gaps", "description": "SLO history gap fill: backfill missing days in slo-alerts.jsonl from decision log", "command": "python memory/verifier/slo_gap_fill.py", "expected_output": "gap count + filled entries (0 gaps expected)"},
+      {"id": "ver-regression-daemon", "description": "Regression daemon health: confirm regression-watch task is registered and last ran <24h ago", "command": "python memory/ops/run_steps.py --check regression-watch", "expected_output": "task status line with last-run age"},
+      {"id": "ver-evidence-chain", "description": "Evidence chain audit: every 'Verified:' claim in TODO.md links to an existing file", "command": "python memory/verifier/evidence_chain_audit.py", "expected_output": "broken-link list (empty expected)"},
+      {"id": "ver-gate-compact", "description": "Gate log compaction: compress gate decisions older than 7 days into weekly summary", "command": "python memory/verifier/gate_log_compact.py --days 7", "expected_output": "entries moved count + summary file path"}
+    ],
+    "designer": [
+      {"id": "des-wcag-spot", "description": "WCAG contrast spot-check: run contrast audit on all text/background pairs in ui/*.css", "command": "python memory/ops/wcag_contrast_check.py", "expected_output": "contrast report with 0 AA failures"},
+      {"id": "des-breakpoint-scan", "description": "Breakpoint regression scan: render each page at 768px and 1440px, flag overflow", "command": "python memory/designer/breakpoint_scan.py --widths 768,1440", "expected_output": "overflow list (empty expected)"},
+      {"id": "des-icon-completeness", "description": "Icon set completeness: every data-icon attribute in HTML has a matching SVG symbol", "command": "python memory/designer/icon_audit.py", "expected_output": "missing-icons list (empty expected)"},
+      {"id": "des-type-scale", "description": "Typography scale audit: all font-sizes in ui/*.css are multiples of the 4px base", "command": "python memory/designer/type_scale_audit.py", "expected_output": "off-scale sizes list (empty expected)"},
+      {"id": "des-anim-perf", "description": "Animation perf check: no CSS animation on layout-triggering properties (width/height/top/left)", "command": "python memory/designer/animation_perf_check.py", "expected_output": "offending-rule list (empty expected)"}
+    ],
+    "archivist": [
+      {"id": "arc-kb-reindex", "description": "KB coverage re-index: rebuild KB index from memory/knowledge_base/ and diff against committed index", "command": "python memory/orchestrator/rebuild_kb_index.py --diff", "expected_output": "index diff (0 unindexed files expected)"},
+      {"id": "arc-provenance-refresh", "description": "Provenance report refresh: regenerate per-file provenance for last 7 days of commits", "command": "python memory/archivist/provenance_report.py --days 7", "expected_output": "provenance-report-<date>.md written"},
+      {"id": "arc-pointer-sweep", "description": "Dangling pointer sweep: find and fix pointers in INDEX.md that resolve to missing files", "command": "python memory/ops/dangling_pointer_fix.py --fix", "expected_output": "fixed-pointer count (0 expected when healthy)"},
+      {"id": "arc-orphan-detect", "description": "Orphan file detection: list files in memory/ not referenced by any index or pointer", "command": "python memory/archivist/orphan_scan.py", "expected_output": "orphan list appended to kb-maintenance-log.jsonl"},
+      {"id": "arc-index-staleness", "description": "Index staleness check: flag index.md entries whose target mtime is newer than the index commit", "command": "python memory/archivist/index_staleness.py --max-age 48h", "expected_output": "stale-entry list (empty expected)"}
+    ],
+    "scribe": [
+      {"id": "scr-brief-digest", "description": "Fleet brief digest: regenerate the one-screen fleet status brief from live endpoints", "command": "python memory/scribe/brief_digest.py", "expected_output": "brief-<date>.md written to memory/ops/"},
+      {"id": "scr-report-rebuild", "description": "Report rebuild: re-render latest cycle report from raw JSON (no manual edits)", "command": "python memory/scribe/report_rebuild.py --latest", "expected_output": "report file rewritten, byte-identical if data unchanged"},
+      {"id": "scr-link-check", "description": "Link check: verify all relative links in scribe-generated reports resolve", "command": "python memory/scribe/link_check.py --dir memory/ops", "expected_output": "broken-link list (empty expected)"},
+      {"id": "scr-template-lint", "description": "Template lint: validate report templates render with empty data without KeyError", "command": "python memory/scribe/template_lint.py", "expected_output": "0 template errors"},
+      {"id": "scr-archive-tidy", "description": "Archive tidy: move reports older than 30 days into memory/ops/reports/archive/", "command": "python memory/scribe/archive_tidy.py --days 30", "expected_output": "moved-file count (0 expected when tidy)"}
+    ],
+    "mechanic": [
+      {"id": "mech-latency-snapshot", "description": "Latency snapshot: append current portal endpoint latencies to transition-latency.jsonl", "command": "python memory/mechanic/latency_snapshot.py", "expected_output": "one JSONL line appended with per-endpoint ms"},
+      {"id": "mech-schtask-audit", "description": "Scheduled task audit: compare registered schtasks against schtask-snapshot, flag drift", "command": "python memory/ops/schtask_dep_capture.py --diff", "expected_output": "drift list (empty expected)"},
+      {"id": "mech-restart-guard-test", "description": "Restart guard dry-run: verify auto-loop restart guard blocks a double restart within 5 min", "command": "python memory/mechanic/auto_loop_restart_guard.py --self-test", "expected_output": "guard verdict line (blocked/allowed as expected)"},
+      {"id": "mech-egress-scan", "description": "Egress scan: diff net-egress-log against allowlist, flag new destinations", "command": "python memory/mechanic/egress_scan.py --allowlist memory/ops/egress-audit.jsonl", "expected_output": "new-destination list (empty expected)"},
+      {"id": "mech-watchdog-health", "description": "Watchdog health: confirm watchdog.log has an entry within the last 10 min", "command": "python memory/mechanic/watchdog_health.py --max-min 10", "expected_output": "watchdog age in minutes + OK/STALE"}
+    ]
+  }
+}

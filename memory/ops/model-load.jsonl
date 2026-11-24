@@ -860,3 +860,4 @@
 {"ts": "2026-11-24 19:45:33", "run": "g-1a20cf24493-72ba2b", "missing": {"Scribe": "unreachable", "Orchestrator": "unreachable", "Archivist": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-24 19:51:34", "run": "g-1a20cf7c4db-50e11b", "missing": {"Scribe": "unreachable", "Archivist": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-24 19:55:35", "run": "g-1a20cfb74e0-178c76", "missing": {"Scribe": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
+{"ts": "2026-11-24 20:13:06", "run": "g-1a20d0b7be4-61156f", "missing": {"Orchestrator": "unreachable", "Scribe": "unreachable", "Archivist": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}

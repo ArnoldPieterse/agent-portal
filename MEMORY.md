@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- All 5 builder goals verified, selftests passing. Lane fully closed for cycle 16. No open work remains.
-- Ledger notes for goals 2-5 were misaligned with actual goal numbers; Mechanic re-ran selftests to confirm real evidence.
-- Designer completed Goal #1 (ARIA+Keyboard Nav) and Goal #2 (Mode Transition Animation with FLIP) in cockpit UI
 - Mechic: All 10/10 goals verified; fleet_mode_infra.py selftest 23/23 PASS (concurrent writes, lock contention, crash-safety). Lane fully clo
 - Verifier: all 10 goals verified (cycle 16 closed). Fresh runs confirmed #1,#3,#4,#5,#6 + prior 4.
 - Playwright unavailable in sandbox; Designer verifies goals via static source analysis (verify_*.py scripts) instead of browser tests.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic lane fully concluded: 10/10 goals verified (264/264 selftests), recorded in goal_ledger.py, no open work remains.
 - Goal file resets to placeholders on cycle transition; code in agent_portal.py was reverted by memory_mirror despite evidence of completion.
 - Verifier: all 10/10 goals verified this pass; 4 had stale markers (#2,#6,#9,#10) re-confirmed via fresh execution
+- Mechanic: All 10/10 goals REACHED (cycle 15), lane fully closed, no open work remaining.
+- Python sandbox blocks subprocess; Verifier must run test scripts via terminal, not python exec.
+- Goal #2 Cockpit Mode Banner done: added fleet_mode to _cockpit_snapshot() in agent_portal.py + created fleet-mode.json
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

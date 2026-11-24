@@ -1,80 +1,17 @@
 {
-  "_meta": {
-    "generated_at": "2026-11-24T02:30:55.293562+00:00",
-    "window_hours": 24,
-    "autoloop_records_in_window": 1,
-    "note": "rate=null means no passes recorded for agent in window"
+  "generated_at": "2026-11-24T10:16:23.427472+00:00",
+  "window_h": 24.0,
+  "agents": {
+    "test_agent": {
+      "total_passes": 1,
+      "productive_passes": 0,
+      "rate": 0.0
+    }
   },
-  "orchestrator": {
-    "rate": null,
-    "total_passes": 0,
-    "productive_passes": 0,
-    "evidence_files": 0,
-    "git_commits_24h": 0,
-    "source": "no_data",
-    "flag": false
+  "fleet": {
+    "total_passes": 1,
+    "productive_passes": 1,
+    "rate": 1.0
   },
-  "researcher": {
-    "rate": null,
-    "total_passes": 0,
-    "productive_passes": 0,
-    "evidence_files": 0,
-    "git_commits_24h": 0,
-    "source": "no_data",
-    "flag": false
-  },
-  "verifier": {
-    "rate": null,
-    "total_passes": 0,
-    "productive_passes": 0,
-    "evidence_files": 0,
-    "git_commits_24h": 0,
-    "source": "no_data",
-    "flag": false
-  },
-  "scribe": {
-    "rate": null,
-    "total_passes": 0,
-    "productive_passes": 0,
-    "evidence_files": 0,
-    "git_commits_24h": 0,
-    "source": "no_data",
-    "flag": false
-  },
-  "designer": {
-    "rate": null,
-    "total_passes": 0,
-    "productive_passes": 0,
-    "evidence_files": 0,
-    "git_commits_24h": 0,
-    "source": "no_data",
-    "flag": false
-  },
-  "builder": {
-    "rate": null,
-    "total_passes": 0,
-    "productive_passes": 0,
-    "evidence_files": 0,
-    "git_commits_24h": 0,
-    "source": "no_data",
-    "flag": false
-  },
-  "archivist": {
-    "rate": null,
-    "total_passes": 0,
-    "productive_passes": 0,
-    "evidence_files": 0,
-    "git_commits_24h": 0,
-    "source": "no_data",
-    "flag": false
-  },
-  "mechanic": {
-    "rate": null,
-    "total_passes": 0,
-    "productive_passes": 0,
-    "evidence_files": 0,
-    "git_commits_24h": 0,
-    "source": "no_data",
-    "flag": false
-  }
+  "skipped_bad_ts": 0
 }

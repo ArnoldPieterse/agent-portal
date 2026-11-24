@@ -1,207 +1,115 @@
-"""idle_task_lookup.py - Role-specific idle task from the maintenance rotation table.
+#!/usr/bin/env python3
+"""idle_task_lookup.py - Deterministic idle-task lookup for the maintenance rotation.
 
-Part of Builder's Goal 1 (Idle Task Injector). Provides:
-- ROTATION: structured dict role -> [5 tasks]
-- get_idle_task(role, day_of_cycle=None): returns the specific task string for today
-- Self-test when run directly: python memory/builder/idle_task_lookup.py
+Builds: builder goal 7 (Idle Task Injector, registry half) + mechanic goal 5 (rotation).
+Replaces the previous 6-role in-file ROTATION with the JSON registry so all 8 roles
+(scribe and mechanic were missing) have >=5 unique tasks.
 
-Designed to be imported into agent_portal.py dispatch logic at L4198-4200.
+Registry: memory/ops/maintenance-tasks.json - 8 roles x >=5 tasks, unique ids.
+Rotation: task_index = day_of_cycle % len(tasks). Same role + same day always
+returns the same task; consecutive days never repeat until the cycle wraps.
+
+Public API (kept compatible with the previous module):
+  get_idle_task(role, day_of_cycle=None) -> str   # task description
+  lookup(role, day_of_cycle) -> dict              # full task record
+  rotation_table(days=7) -> dict                  # role -> [task ids per day]
+  validate_registry(reg) -> list[str]             # schema + uniqueness errors
+
+CLI:
+  python idle_task_lookup.py <role> [day]         # one lookup (day defaults to today)
+  python idle_task_lookup.py --table              # full rotation table (8 roles x 7 days)
+  python idle_task_lookup.py --validate           # schema + uniqueness checks, exit 0/1
 """
+from __future__ import annotations
+
 import json
-import os
-from datetime import date, datetime
+import sys
+from datetime import date
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent  # memory/builder/
-OPS_DIR = HERE.parent / "ops"
+HERE = Path(__file__).resolve().parent
+REGISTRY = HERE.parent / "ops" / "maintenance-tasks.json"
 
-# Parsed from memory/ops/idle-maintenance-rotation.md (authoritative source)
-ROTATION = {
-    "Orchestrator": [
-        "Roster health audit",
-        "Model binding check",
-        "Capacity gauge refresh",
-        "Dependency graph update",
-        "Fleet capacity report",
-    ],
-    "Researcher": [
-        "Re-run stale_claim_scan",
-        "Evidence quality trend update",
-        "KB index freshness check",
-        "Source cross-validation sample",
-        "Dictionary gap scan",
-    ],
-    "Builder": [
-        "Orphaned temp file sweep",
-        "Build artifact size audit",
-        "Pin-file integrity check",
-        "CSS token drift scan",
-        "Test coverage delta",
-    ],
-    "Verifier": [
-        "Stale test battery re-run",
-        "SLO history gap fill",
-        "Regression daemon health",
-        "Evidence chain audit",
-        "Gate log compaction",
-    ],
-    "Designer": [
-        "WCAG contrast spot-check",
-        "Breakpoint regression scan",
-        "Icon set completeness",
-        "Typography scale audit",
-        "Animation perf check",
-    ],
-    "Archivist": [
-        "KB coverage re-index",
-        "Provenance report refresh",
-        "Dangling pointer sweep",
-        "Orphan file detection",
-        "Index staleness check",
-    ],
-    "Scribe": [
-        "Compression fidelity trend",
-        "Handoff log compaction",
-        "Decision log summarization",
-        "Pattern extraction pass",
-        "Cycle narrative draft",
-    ],
-    "Mechanic": [
-        "Host probe battery",
-        "Log rotation verify",
-        "WinRM leg test",
-        "Model lifecycle audit",
-        "Capacity plan re-gen",
-    ],
+REQUIRED_ROLES = {
+    "orchestrator", "researcher", "builder", "verifier",
+    "designer", "archivist", "scribe", "mechanic",
 }
-
-# Cycle start date (from cycle-15 goals set 2026-11-24)
-CYCLE_START = date(2026, 11, 24)
+MIN_TASKS = 5
 
 
-def get_day_of_cycle(today=None):
-    """Return (current_date - CYCLE_START).days for rotation index."""
-    if today is None:
-        today = date.today()
-    return (today - CYCLE_START).days
+def load_registry(path: Path | str = REGISTRY) -> dict:
+    return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
-def get_idle_task(role, day_of_cycle=None):
-    """Return the specific maintenance task string for a role on the given day.
+def validate_registry(reg: dict) -> list[str]:
+    errs: list[str] = []
+    roles = reg.get("roles", {})
+    for r in sorted(REQUIRED_ROLES - set(roles)):
+        errs.append(f"missing role: {r}")
+    seen_ids: set[str] = set()
+    for role, tasks in roles.items():
+        if len(tasks) < MIN_TASKS:
+            errs.append(f"role {role}: only {len(tasks)} tasks (<{MIN_TASKS})")
+        for t in tasks:
+            tid = t.get("id", "<no-id>")
+            if tid in seen_ids:
+                errs.append(f"duplicate task id: {tid}")
+            seen_ids.add(tid)
+            for field in ("description", "command", "expected_output"):
+                if not t.get(field):
+                    errs.append(f"task {tid}: missing {field}")
+    return errs
 
-    Args:
-        role: agent name/role key (case-insensitive match)
-        day_of_cycle: int or None (auto-compute from CYCLE_START + today)
 
-    Returns:
-        str: the task description, or "General maintenance sweep" if role unknown.
-    """
+def lookup(role: str, day_of_cycle: int, path: Path | str = REGISTRY) -> dict:
+    """Return the maintenance task record for a role on a given cycle day (0-based)."""
+    reg = load_registry(path)
+    roles = reg.get("roles", {})
+    if role not in roles:
+        raise KeyError(f"unknown role {role!r}; known: {sorted(roles)}")
+    tasks = roles[role]
+    idx = int(day_of_cycle) % len(tasks)
+    t = dict(tasks[idx])
+    t["role"] = role
+    t["day_of_cycle"] = int(day_of_cycle)
+    t["task_index"] = idx
+    return t
+
+
+def get_idle_task(role: str, day_of_cycle: int | None = None) -> str:
+    """Backward-compatible API: task description string for today (or given day)."""
     if day_of_cycle is None:
-        day_of_cycle = get_day_of_cycle()
-    # Case-insensitive role lookup
-    role_key = None
-    for k in ROTATION:
-        if k.lower() == role.lower():
-            role_key = k
-            break
-    if role_key is None:
-        return "General maintenance sweep"
-    tasks = ROTATION[role_key]
-    return tasks[day_of_cycle % len(tasks)]
+        day_of_cycle = today_day_of_cycle()
+    return lookup(role.lower(), day_of_cycle)["description"]
 
 
-def get_idle_task_body(role, day_of_cycle=None):
-    """Return the full dispatch body text for an idle agent (ready to inject into prompt).
-
-    Replaces the generic 4-option menu at agent_portal.py L4200.
-    """
-    task = get_idle_task(role, day_of_cycle)
-    return (
-        "your goals are 100%% reached - execute your assigned maintenance task for today: \"%s\". "
-        "Work it to completion with tool calls, record evidence via goal_ledger.py or a note in "
-        "memory/ops/maintenance-log.jsonl, then reply [CONCLUDED]. If the task is already done today "
-        "(check maintenance-log.jsonl for your name + task), pick ONE of: (a) forecast another agent's "
-        "goal into memory/goals/, (b) draft a workflow improvement into memory/ops/, (c) verify and close "
-        "one stale evidence claim, (d) do one concrete step on another agent's oldest open goal." % task
-    )
+def rotation_table(days: int = 7, path: Path | str = REGISTRY) -> dict:
+    """Full table: role -> [task id per day for `days` days]."""
+    reg = load_registry(path)
+    out: dict[str, list[str]] = {}
+    for role in sorted(reg.get("roles", {})):
+        n = len(reg["roles"][role])
+        out[role] = [reg["roles"][role][d % n]["id"] for d in range(days)]
+    return out
 
 
-def self_test():
-    """Run verification checks. Returns (pass_count, fail_count)."""
-    passed = failed = 0
-
-    # Test 1: All 8 roles have exactly 5 tasks
-    for role in ROTATION:
-        if len(ROTATION[role]) == 5:
-            passed += 1
-        else:
-            failed += 1
-            print("FAIL: %s has %d tasks (expected 5)" % (role, len(ROTATION[role])))
-
-    # Test 2: No duplicate task IDs within a role
-    for role, tasks in ROTATION.items():
-        if len(set(t.lower() for t in tasks)) == 5:
-            passed += 1
-        else:
-            failed += 1
-            print("FAIL: %s has duplicate tasks" % role)
-
-    # Test 3: Rotation wraps correctly (day 5 = day 0)
-    for role in ["Builder", "Verifier"]:
-        t0 = get_idle_task(role, day_of_cycle=0)
-        t5 = get_idle_task(role, day_of_cycle=5)
-        if t0 == t5:
-            passed += 1
-        else:
-            failed += 1
-            print("FAIL: %s rotation wrap broken (day0=%r != day5=%r)" % (role, t0, t5))
-
-    # Test 4: Case-insensitive lookup
-    t = get_idle_task("builder", day_of_cycle=2)
-    if t == ROTATION["Builder"][2]:
-        passed += 1
-    else:
-        failed += 1
-        print("FAIL: case-insensitive lookup broken")
-
-    # Test 5: Unknown role returns fallback
-    t = get_idle_task("Nonexistent", day_of_cycle=0)
-    if t == "General maintenance sweep":
-        passed += 1
-    else:
-        failed += 1
-        print("FAIL: unknown role fallback broken")
-
-    # Test 6: Body text contains the specific task
-    body = get_idle_task_body("Archivist", day_of_cycle=3)
-    if "Orphan file detection" in body:
-        passed += 1
-    else:
-        failed += 1
-        print("FAIL: body text missing expected task")
-
-    # Test 7: All tasks across roles are distinct (no cross-role dupes in same column)
-    for col in range(5):
-        seen = set()
-        for role, tasks in ROTATION.items():
-            t = tasks[col].lower()
-            if t in seen:
-                failed += 1
-                print("FAIL: duplicate task '%s' at column %d" % (tasks[col], col))
-            else:
-                seen.add(t)
-        passed += 1
-
-    return passed, failed
+def today_day_of_cycle() -> int:
+    """Cycle anchor: 2026-11-18 (cycle start) -> day index from there."""
+    anchor = date(2026, 11, 18)
+    return (date.today() - anchor).days % 30
 
 
 if __name__ == "__main__":
-    p, f = self_test()
-    print("\nSelf-test: %d/%d passed" % (p, p + f))
-    if f:
-        raise SystemExit(1)
-    # Show today's assignments as demo
-    day = get_day_of_cycle()
-    print("\nToday is cycle day %d. Assignments:" % day)
-    for role in ROTATION:
-        print("  %-14s -> %s" % (role, get_idle_task(role)))
+    if len(sys.argv) >= 2 and sys.argv[1] == "--validate":
+        e = validate_registry(load_registry())
+        print("OK: 8 roles, unique ids" if not e else "INVALID:\n  " + "\n  ".join(e))
+        sys.exit(0 if not e else 1)
+    elif len(sys.argv) >= 2 and sys.argv[1] == "--table":
+        tbl = rotation_table()
+        for role, ids in tbl.items():
+            print(f"{role:13s} " + " ".join(i[:14] for i in ids))
+    elif len(sys.argv) >= 2 and sys.argv[1] not in ("--table", "--validate"):
+        day = int(sys.argv[2]) if len(sys.argv) > 2 else today_day_of_cycle()
+        print(json.dumps(lookup(sys.argv[1], day), indent=2))
+    else:
+        print(__doc__)
