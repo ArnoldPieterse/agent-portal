@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic cycle-17: all 10 goals verified; built `transition_gap_sla.py` + `memory/ops/transition-gaps.jsonl` (6.2h flagged >4h).
-- Builder→Verifier handoff at memory/handoffs/builder-to-verifier-metric-validation.md maps each metric to selftest+formula
-- Mechic lane fully green: all 10/10 goals verified and closed (goals 6-10 confirmed this pass).
-- Goal #3 done: complexity_scorer_regression.py built, 10/10 self-test, live r=0.8036>0.7; auto-imports real scorer when it lands.
 - Auto-loop dispatches stale goals (Convergence Trajectory etc.) from prior archived set; cycle-17 is 10/10 complete, no
 - Builder: /api/convergence endpoint live (autonomy score, efficiency trend, interventions, steady-state progress); all 10 goals REACHED
 - Verifier 10/10 closed; auto-loop goal list is stale (prior set). Don't re-probe those items.
 - Researcher cycle-17: 10/10 goals complete; "open goals" in auto-loop header (Convergence Trajectory Model etc.) are stale from prior set.
 - seat_probe.py: latency_trend baseline must
 - Designer goal #2 CSS fixed: inset ring via box-shadow + keyframe renamed to `ss-pulse`; all 12
+- seat_probe.py trend-tracking code was reverted despite goal #1 marked done; rebuilt with --dry-run flag, tests pass
+- Builder G2 Cycle Estimator done: cycle_estimate=52.3h conf=0.9 in fleet-mode.json, API pass-through + UI poll added.
+- Goals #3 (Acceptance Rate Predictor, 96.3% acc) and #4 (
+- CSS fix pending: impl uses `border-top`+shadow & `ss-exit-pulse`; verify expects inset ring & `ss-pulse`.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
