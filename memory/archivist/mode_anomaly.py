@@ -137,7 +137,9 @@ def evaluate(now=None):
             kind = "pending_late"
         if kind:
             rec = {"forecast_id": fc["id"], "target_mode": fc.get("target_mode"),
-                   "expected_time": fc["expected_time"], "kind": kind,
+                   "expected_time": fc["expected_time"],
+                   "actual_time": (hit[0].isoformat() if hit else None),   # cycle-15 archivist G5: actual transition ts
+                   "kind": kind,
                    "deviation_min": dev_min, "context": fc.get("context", ""),
                    "logged_at": _ts(now)}
             _append(ANOMALIES, rec); new_anoms.append(rec)

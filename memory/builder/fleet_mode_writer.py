@@ -79,6 +79,20 @@ def write_mode(payload: dict, path: Path | str = DEFAULT_PATH) -> bool:
     """
     path = Path(path)
     errs = validate(payload)
+    # cycle-15 verifier G3: second independent validation layer (mode_schema_check),
+    # runs on EVERY write; errors are logged to memory/ops/mode-schema-errors.log.
+    try:
+        import importlib.util as _ilu
+        _msc_path = Path(__file__).resolve().parent.parent / "verifier" / "mode_schema_check.py"
+        _spec = _ilu.spec_from_file_location("mode_schema_check", str(_msc_path))
+        _msc = _ilu.module_from_spec(_spec)
+        _spec.loader.exec_module(_msc)
+        errs2 = _msc.validate_fleet_mode(payload)
+        if errs2:
+            _msc.log_errors(errs2, source=f"write_mode:{path.name}")
+            raise ValueError("schema validation failed (mode_schema_check): " + "; ".join(errs2))
+    except ImportError:
+        pass   # validator module missing - writer's own validate() still guards
     if errs:
         raise ValueError("schema validation failed: " + "; ".join(errs))
     with _LOCK:

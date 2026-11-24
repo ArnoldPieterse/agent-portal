@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cycle 15 mechanic lane fully closed: 10/10 goals verified, all selftests passing, no open work remaining.
 - Goal 1 verified: 100-thread concurrent write test passed (0 errors, valid JSON). Evidence at memory/handoffs/orchestrator-to-mechanic-goal1-
 - Cycle 15 fully closed: designer 10/10, mechanic 10/10 (22-35 selftests each), verifier 10/10 verified. No open work remains.
 - Cycle 15 fully closed: Designer 10/10, Mechanic 10/10 (all selftests pass). Archivist goal #8 glossary written by orchestrator.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Goal #5 fix: productivity module uses `scan(autoloop=...)` not `compute_productivity`; timestamps are ISO-8601 strings, not epoch floats
 - Verifier lane fully closed: all 10 goals verified; dispatch list showing open items was stale post-cycle-transition (known hot note).
 - Designer lane: 10/10 goals verified in cycle 15; all UI artifacts exist in ui/ with paired CSS+JS, no new code needed.
+- Builder built archivist/compact_decision_log.py (6/6 PASS) and verified mode_anomaly.py this pass; both recorded in goal_ledger.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

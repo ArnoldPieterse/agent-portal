@@ -65,8 +65,8 @@ def scan(autoloop: Path | str = AUTOLOOP, window_h: float = 24.0,
             a["total_passes"] += 1
             if prod:
                 a["productive_passes"] += 1
+                fleet_p += 1   # cycle-15 verifier G7: was unconditionally incremented -> fleet rate always 1.0
             fleet_t += 1
-            fleet_p += 1
     for a in per_agent.values():
         a["rate"] = round(a["productive_passes"] / a["total_passes"], 4) if a["total_passes"] else 0.0
     return {
