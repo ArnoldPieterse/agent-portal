@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Idle Task Injector implemented & verified (goal #1); now on goal #2 Cockpit Mode B. Gotcha: % in format strings needs escaping.
-- Designer: cockpit-mode-layout.js handles content (collapse/hero) only; fleet-mode-transition.js owns panel order — no overlap.
-- Goal #3 mode_duration.py has schema mismatch:
-- Scribe completed goals #2 (Cycle Close-Out Report, 3.2KB<4KB) and #3 (Idle Pass Daily Digest) this pass.
-- Researcher lane fully closed: all 5 goals verified (2026-11-24) in memory/goals/researcher.md; no open work remains.
 - Verifier lane: 10/10 goals confirmed verified, zero open. Core scripts (mode_schema_check, budget_compliance) spot-checked green.
 - Mechanic: All 10 goals closed this pass. Goal#1 fleet-mode.json atomic writer now 23/23 (msvcrt.locking+concurrency tests). Goal#3 pass budg
 - Goal #5 (mode_brief.py) built and run, but ledger recording unconfirmed — context filled mid-write; verify on next pass.
 - Designer 10/10 goals done; module loader added to ui/core.js (sequential CSS+JS injection) was the critical enabler for runtime loading.
 - INDEX claims productive_pass_gate.py built 3/3 pass but file is missing from
+- Builder lane closed 5/5: idle_rotation.py, agent_portal.py dispatch, cockpit mode banner, fleet_mode_writer.py (9/9 selftest)
+- Researcher lane fully closed at 5/5 goals, all verified 2026-11-24 in memory/goals/researcher.md
+- Verifier 10/10 closed; fresh full regression sweep green this pass — no regressions since original verification.
+- Scribe goal #2 (Cycle Close-Out Report) REACHED: compacted cycle_closeout.py output 7KB→3.3KB to meet <4KB criterion; verified on cycle-14 d
+- Mechanic closed goal #1: fleet-mode.json atomic writer upgraded with msvcrt.locking + concurrency tests (25/25 pass).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -415,7 +415,7 @@ async function goalsLoad(){
       if(its.length){
         h+='<table class="fc-tab"><tr><th>#</th><th>agent</th><th>goal (next step)</th><th>deliverable</th><th>ETA</th><th>P</th><th>potential consequences</th></tr>';
         for(const it of its){
-          const cons=(it.consequences||[]).map(c=>esc(c.agent)+": "+esc((c.title||c.goal).slice(0,42))).join("<br>")||"&mdash;";
+          const cons=(it.consequences||[]).map(c=>typeof c==="string"?esc(c):esc(c.agent)+": "+esc((c.title||c.goal||"").slice(0,42))).join("<br>")||"&mdash;";
           h+='<tr><td>'+it.rank+'</td><td class="fc-ag">'+esc(it.agent)+'</td><td title="'+esc(it.goal)+'">'+esc((it.title||it.goal).slice(0,56))+'</td><td class="fc-del" title="'+esc(_del[it.rank]||"")+'">'+esc((_del[it.rank]||"—").slice(0,30))+'</td><td>'+esc(it.eta.slice(5,16))+'</td><td>'+(Math.round(100*it.p_reached))+'%</td><td class="fc-cons">'+cons+'</td></tr>';
         }
         h+='</table>';
@@ -432,7 +432,7 @@ async function goalsLoad(){
         let ph='<div class="fc-pm"><div class="topic-k">30-day business outcomes <span class="hint">(self-computed from live state &middot; re-plans as goals are reached)</span></div>';
         if(_pm.delta&&_pm.delta.length)ph+='<div class="fc-delta"><b>changed since last plan:</b> '+_pm.delta.map(esc).join(" &middot; ")+'</div>';
         ph+='<div class="fc-outc">'+_plan.outcomes_30d.map(o=>'<div class="fc-oc'+(o.cycle_closing?" fc-oc-close":"")+'" title="'+esc((o.gates||[]).join("; "))+'"><b>'+esc(o.name)+(o.cycle_closing?' <span class="hint">[closes cycle]</span>':'')+'</b> <span class="hint">'+esc(o.window)+' &middot; lane: '+esc(o.lane||"?")+'</span><div class="fc-unlocks">'+esc(o.status)+'</div></div>').join("")+'</div>';
-        if(_pm.history&&_pm.history.length)ph+='<div class="hint" style="margin-top:5px">plan sigs: '+_pm.history.slice().reverse().map(e=>e.sig+" @ "+String(e.ts).slice(5,16)).join(" &rarr; ")+'</div>';
+        if(_pm.history&&_pm.history.length)ph+='<div class="hint" style="margin-top:5px">plan sigs: '+_pm.history.map(e=>e.sig+" @ "+String(e.ts).slice(5,16)).join(" &rarr; ")+'</div>';
         ph+='</div>';
         h+=ph;
       }

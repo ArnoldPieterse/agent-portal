@@ -308,8 +308,8 @@ def _write_outputs(doc):
                 if o.get("gates"):
                     L.append("  gates: " + "; ".join(o["gates"]))
             if pm.get("history"):
-                L += ["", "plan history (sig @ time): " +
-                      ", ".join("%s @ %s" % (e["sig"], e["ts"][5:]) for e in reversed(pm["history"][:4]))]
+                L += ["", "plan history (oldest -> newest): " +
+                      ", ".join("%s @ %s" % (e["sig"], e["ts"][5:]) for e in pm["history"][-4:])]
     for h in doc["horizons"]:
         L += ["", "## %s ahead (by %s)" % (h["label"], h["end"]),
               "- completes: **%d** goal(s) -> fleet ~%.0f%%" % (h["completes"], h["fleet_pct"])]
