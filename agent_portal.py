@@ -5526,7 +5526,9 @@ class Handler(BaseHTTPRequestHandler):
             # snapshot is >15 min old; schtask FleetForecast30 keeps it fresh between polls.
             try:
                 payload = _forecast_snapshot()
-                payload.update(_one_pager_block())
+                opb = _one_pager_block()  # {"one_pager": {...}} or {}
+                if opb:
+                    payload.setdefault("plan", {})["one_pager"] = opb["one_pager"]
                 return self._json(200, payload)
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})

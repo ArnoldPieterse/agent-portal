@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder: All 6 Cycle-16 goals verified complete (2026-11-24); dispatch text was stale, no open work remains.
-- Dispatch staleness persists: auto-loop lists already-verified goals as "open," causing all 7 agents to re-confirm instead of progressing new
-- Mechanic's file now passes 23/23 selftests after upgrade (file locking
-- Goal #7 (efficiency_digest.py) built and passing; ledger stamp deferred to next pass — needs verification then.
-- Mechic: All 10 Cycle 15 goals complete (261/261 assertions); lane at full capacity, no new work pending
-- Verifier lane 10/10 verified, cycle 15 complete; goal #3 schema validator spot-checked 8/8 PASS
-- Builder: All 6 cycle-16 goals verified (fleet writer, dispatch filter, productivity counter, idle injector, cockpit banner, convergence test
-- Cycle 15 all
-- Fleet-mode UI modules in ui/ were unwired (no CSS import/JS loader); fixed with 2 edits, all 10 designer goals verified.
-- Scribe goal #2: closeout script output ~9KB exceeds 4KB target; fix = truncate g['evidence'] to ≤80 chars in render loop
+- Cycle 15 (2026-11-24): all 10 lane goals verified complete; no new work pending across any seat.
+- Dispatch text lists all 6 builder goals as "open" but they're verified complete; artifacts confirmed on disk — treat dispatch as stale.
+- Mechic lane fully complete: 10/10 Cycle-15 goals, 265 assertions PASS, no open work remaining as of this pass.
+- Scribe goal #2 (Cycle Close-Out Report) verified: cycle_closeout.py produced closeout-cycle15-2026-11-24.md, marker in scribe.md
+- Cycle-15 done; all modules wired via @import in app.css + MODULES loader core.js:605-632
+- Designer cycle-15: all 10 goals REACHED; five listed as "open" were stale — artifacts verified in ui/.
+- Mechic: All 10 goals complete (261/261 assertions) as of cycle 15, 2026-11-24. Lane at full capacity; no pending work.
+- Orchestrator lane fully closed (3/3 goals). Fleet bottleneck: 34/49 open goals remain in designer/scribe/mechanic lanes as of cycle 17.
+- Builder: all 6 cycle-16 goals closed with evidence on disk; idle awaiting Orchestrator to assign cycle-17 goals.
+- Scribe verified 7 goals (1,3,5,9,8,7,10) in one batch pass; goal #4 (Productivity Story Weekly) still pending.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
