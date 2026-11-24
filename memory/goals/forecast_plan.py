@@ -51,6 +51,60 @@ def _steps_for(gtype):
     return base[gtype]
 
 
+# ---- Functional deliverables layer (PM view) ---------------------------------
+# Maps goal text -> the functional capability it delivers, so the forecast can
+# speak in deliverables ("camera access") instead of raw task titles.
+CAPABILITY_MAP = [
+    (r"custom input|input detection", "Custom input detection", "Input & accessibility"),
+    (r"keyboard nav|aria", "Keyboard navigation", "Input & accessibility"),
+    (r"camera|screen capture", "Camera access", "Peripherals"),
+    (r"\bmics?\b|microphone|\bvoice\b", "Mic access", "Peripherals"),
+    (r"mode transition|fleet mode", "Fleet mode switching", "Portal UX"),
+    (r"idle task|idle-task|injector", "Idle-task injection", "Automation"),
+    (r"load test|probe", "Load-test evidence", "Reliability"),
+    (r"mirror.*drift|drift.*mirror", "Mirror self-healing", "Reliability"),
+    (r"chaos drill", "Chaos-drill runbook", "Reliability"),
+    (r"schtasks?|dependency graph", "Scheduled-task graph", "Ops automation"),
+    (r"decay model|knowledge decay", "Knowledge-decay scoring", "Memory quality"),
+    (r"compression fidelity|self-audit", "Synthesis self-audit", "Memory quality"),
+    (r"forecast|prediction|calibrat", "Forecast calibration", "Planning"),
+    (r"productivity baseline|productivity trend", "Productivity baseline", "Measurement"),
+    (r"merge queue|merge-integration", "Merge-queue integration", "Ops automation"),
+    (r"archive", "Archive + evidence leaves", "Memory quality"),
+]
+
+# The PM's functional chain: each step, once landed, unblocks the next.
+CAPABILITY_LADDER = [
+    ("Keyboard navigation", "Full keyboard control of the portal - no mouse needed to run the fleet."),
+    ("Camera access", "Vision into any screen/app - reading tenders, posts and dashboards."),
+    ("Mic access", "Hearing + speaking - phone calls and voice interaction become possible."),
+    ("Custom input detection", "Arbitrary device/input sensing - full autonomous action stack."),
+]
+
+# 30-day business outcomes (PM view): what the fleet should be producing by day 30,
+# and which capability each one depends on. enablers = ladder names; [] = foundation only.
+BUSINESS_OUTCOMES_30D = [
+    ("Generate daily social media posts", ["Custom input detection"], "autonomous posting loop running unattended"),
+    ("Commenting on posts", ["Custom input detection"], "reads threads and replies in-voice"),
+    ("Making phone calls", ["Mic access"], "full-duplex voice calls, not just text"),
+    ("Writing valid tenders", ["Camera access"], "reads tender PDFs/screens and drafts compliant responses"),
+    ("Predicting markets", [], "model work on existing compute; gated by fleet throughput, not peripherals"),
+    ("Making money (revenue channels live)", ["Custom input detection"], "at least one channel transacting autonomously"),
+    ("Positive money income (net > 0)", ["Custom input detection"], "all revenue channels running >= 1 week with net positive"),
+]
+
+_WINDOW_BY_DEP = {-1: "day 1-7", 0: "day 8-14", 1: "day 8-14", 2: "day 15-21", 3: "day 22-30"}
+
+
+def _deliverable(title, goal):
+    text = "%s %s" % (title or "", goal or "")
+    for pat, name, stream in CAPABILITY_MAP:
+        if re.search(pat, text, re.I):
+            return {"name": name, "stream": stream}
+    short = (title or "").strip()
+    return {"name": short[:60], "stream": "General"}
+
+
 def _backlog_candidates():
     cands = []
     try:
@@ -119,6 +173,7 @@ def build_plan(doc):
         it["why"] = _why(it, note)
         it["steps"] = it.get("steps") or _steps_for(it["type"])
         it["outcome"] = "reached ~%s (P~%.0f%%)" % (it["eta"], 100 * it["p_reached"])
+        it["deliverable"] = _deliverable(it.get("title"), it.get("goal"))
 
     # decision-tree chaining: if this goal is reached, what starts next in its lane?
     by_agent = {}
@@ -166,8 +221,52 @@ def build_plan(doc):
             "no": {"action": "keep current queue; next completion gates progress",
                    "then": "when the last lane ends (%s) the gate re-checks" % (level_up_eta or "-"),
                    "first_planned": ["#%d [%s] %s ~%s" % (it["rank"], it["agent"], it["title"][:60], it["eta"]) for it in planned[:4]]}}
+    # ---- capability chain + 30-day outcomes (PM view) ------------------------
+    ladder_names = [c[0] for c in CAPABILITY_LADDER]
+    planned_by_name = {}
+    for it in planned:
+        d = it.get("deliverable") or {}
+        if d.get("name"):
+            planned_by_name.setdefault(d["name"], it)
+    chain = []
+    for i, (name, note) in enumerate(CAPABILITY_LADDER):
+        nxt = ladder_names[i + 1] if i + 1 < len(ladder_names) else "30-day business outcomes"
+        gates = ladder_names[:i]
+        it = planned_by_name.get(name)
+        if it:
+            entry = {"step": i + 1, "name": name, "note": note, "status": "in-plan",
+                     "via": "#%d [%s] %s" % (it["rank"], it.get("agent", "?"), (it.get("title") or "")[:48]),
+                     "eta": it.get("eta"), "p_reached": it.get("p_reached"), "unlocks": nxt}
+        elif all(g in planned_by_name for g in gates):
+            entry = {"step": i + 1, "name": name, "note": note, "status": "projected-next",
+                     "via": None, "eta": None, "p_reached": None, "unlocks": nxt}
+        else:
+            first_open = next(g for g in gates if g not in planned_by_name)
+            entry = {"step": i + 1, "name": name, "note": note,
+                     "status": "queued behind %s" % first_open,
+                     "via": None, "eta": None, "p_reached": None, "unlocks": nxt}
+        chain.append(entry)
+
+    outcomes = []
+    for name, enablers, note in BUSINESS_OUTCOMES_30D:
+        dep_idx = max((ladder_names.index(e) for e in enablers if e in ladder_names), default=-1)
+        window = _WINDOW_BY_DEP.get(dep_idx, "day 22-30")
+        via = None
+        if dep_idx == -1:
+            status = "on-track (foundation)"
+        else:
+            ce = chain[dep_idx]
+            if ce["status"] == "in-plan":
+                status, via = "on-track", "%s ~%s" % (ce.get("via"), (ce.get("eta") or "")[:16])
+            elif ce["status"] == "projected-next":
+                status = "projected - next capability to plan: %s" % ce["name"]
+            else:
+                status = "%s (%s)" % (ce["status"], ce["name"])
+        outcomes.append({"name": name, "window": window, "status": status, "via": via, "note": note})
+
     return {"cycle_state": cycle_state, "level_up_eta": level_up_eta, "planned": planned,
-            "horizons": horizons, "tree": tree}
+            "horizons": horizons, "tree": tree,
+            "capability_chain": chain, "outcomes_30d": outcomes}
 
 
 def load_plan():

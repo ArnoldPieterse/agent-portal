@@ -277,7 +277,27 @@ def _write_outputs(doc):
               "- state: %s | gate: %s -> **%s**" % (plan["tree"]["state"], plan["tree"]["gate"], plan["tree"]["branch_taken"]),
               "- cycle: %s" % plan["cycle_state"]]
         for it in plan["planned"][:8]:
-            L.append("- #%d [%s] %s ~%s (P~%.0f%%) - %s" % (it["rank"], it["agent"], it["title"], it["eta"], 100 * it["p_reached"], it["why"][:140]))
+            d = (it.get("deliverable") or {}).get("name", "")
+            L.append("- #%d [%s] %s ~%s (P~%.0f%%) - %s%s" % (
+                it["rank"], it["agent"], it["title"], it["eta"], 100 * it["p_reached"],
+                it["why"][:140], (" | delivers: " + d) if d else ""))
+        cc = plan.get("capability_chain")
+        if cc:
+            L += ["", "## Functional capability chain (PM view)", "",
+                  "If each step lands it unblocks the next - this is how the fleet earns its 30-day deliverables:  "]
+            for c in cc:
+                line = "%d. **%s** [%s]" % (c["step"], c["name"], c["status"])
+                if c.get("via"):
+                    line += " - via %s ~%s" % (c["via"], (c.get("eta") or "-")[:16])
+                L.append(line + "  -> unlocks: " + c["unlocks"])
+        oc = plan.get("outcomes_30d")
+        if oc:
+            L += ["", "## 30-day business outcomes (PM view)", ""]
+            for o in oc:
+                line = "- **%s** - window %s | %s" % (o["name"], o["window"], o["status"])
+                if o.get("via"):
+                    line += " (gated by " + o["via"] + ")"
+                L.append(line)
     for h in doc["horizons"]:
         L += ["", "## %s ahead (by %s)" % (h["label"], h["end"]),
               "- completes: **%d** goal(s) -> fleet ~%.0f%%" % (h["completes"], h["fleet_pct"])]

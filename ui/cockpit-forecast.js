@@ -56,6 +56,32 @@ const ForecastPanel = (() => {
       <span class="fc-throughput">${data.throughput ? data.throughput + '/cycle' : ''}</span>
     </div>` + html;
 
+    // Functional capability chain + 30-day outcomes (PM view)
+    const plan = data.plan || {};
+    if (plan.capability_chain && plan.capability_chain.length) {
+      html += '<div class="fc-pm"><div class="fc-pm-title">Capability chain - each step unblocks the next</div><ol class="fc-chain">';
+      plan.capability_chain.forEach(c => {
+        const cls = c.status === 'in-plan' ? 'in-plan' : (String(c.status).indexOf('projected') === 0 ? 'projected' : 'queued');
+        const via = c.via ? (' - via ' + c.via + (c.eta ? ' ~' + String(c.eta).slice(5, 16) : '')) : '';
+        html += '<li class="fc-chain-step fc-status--' + cls + '" title="' + (c.note || '') + '">' +
+          '<span class="fc-chain-name">' + c.name + '</span>' +
+          '<span class="fc-chain-status">' + c.status + via + '</span>' +
+          '<span class="fc-chain-unlocks">unblocks: ' + c.unlocks + '</span></li>';
+      });
+      html += '</ol></div>';
+    }
+    if (plan.outcomes_30d && plan.outcomes_30d.length) {
+      html += '<div class="fc-pm fc-outcomes"><div class="fc-pm-title">30-day business outcomes</div>';
+      plan.outcomes_30d.forEach(o => {
+        const gated = o.via ? (' - gated by ' + o.via) : '';
+        html += '<div class="fc-outcome" title="' + (o.note || '') + '">' +
+          '<span class="fc-outcome-name">' + o.name + '</span>' +
+          '<span class="fc-outcome-window">' + o.window + '</span>' +
+          '<span class="fc-outcome-status">' + o.status + gated + '</span></div>';
+      });
+      html += '</div>';
+    }
+
     container.innerHTML = html;
   }
 
