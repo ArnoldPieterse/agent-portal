@@ -4741,6 +4741,30 @@ def _forecast_mod():
     _FORECAST_MOD = m
     return m
 
+_PLAN_ROUND_MOD = None
+
+
+def _one_pager_block():
+    """One-pager planning round (2026-11-24): 3 planners draft today's per-agent
+    plan, a judge seat picks the best; maybe_run() gates on goal-set signature +
+    staleness and fires LLM work in the background, so this is cheap per poll."""
+    global _PLAN_ROUND_MOD
+    try:
+        if _PLAN_ROUND_MOD is None:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location(
+                "_portal_plan_round", os.path.join(HERE, "memory", "goals", "plan_round.py"))
+            m = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(m)
+            _PLAN_ROUND_MOD = m
+        op = _PLAN_ROUND_MOD.maybe_run()
+        if isinstance(op, dict):
+            return {"one_pager": op}
+    except Exception:
+        pass
+    return {}
+
+
 def _forecast_snapshot(max_age_s=900):
     """GET /api/goals/forecast payload: next-10 queue + 5-horizon cards. Recomputes when stale."""
     nf = os.path.join(HERE, "memory", "goals", "next10.json")
@@ -5501,7 +5525,9 @@ class Handler(BaseHTTPRequestHandler):
             # forecast (30m/1h/1d/1w/1m) with outcomes & consequences. Recomputes inline if the
             # snapshot is >15 min old; schtask FleetForecast30 keeps it fresh between polls.
             try:
-                return self._json(200, _forecast_snapshot())
+                payload = _forecast_snapshot()
+                payload.update(_one_pager_block())
+                return self._json(200, payload)
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/models/status":

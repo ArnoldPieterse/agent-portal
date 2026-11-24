@@ -111,6 +111,19 @@ const ForecastPanel = (() => {
           });
           html += '</div>';
         }
+        if (plan.one_pager && plan.one_pager.pagers) {
+          const op = plan.one_pager;
+          html += '<div class="fc-pm fc-outcomes"><div class="fc-pm-title">Today\'s one-pager - per-agent plan (3 planners + judge, ' + (op.source || '') + ')</div>';
+          Object.keys(op.pagers).forEach(aid => {
+            (op.pagers[aid] || []).forEach(it => {
+              const ref = it.ref ? (' <span class="hint">&larr; ' + it.ref + '</span>') : '';
+              html += '<div class="fc-outcome" title="' + String(it.why || '').replace(/"/g, '&quot;') + '">' +
+                '<span class="fc-outcome-name">' + aid + ': ' + it.item + ref + '</span>' +
+                '<span class="fc-outcome-status"></span></div>';
+            });
+          });
+          html += '</div>';
+        }
 
     container.innerHTML = html;
   }

@@ -456,6 +456,18 @@ async function goalsLoad(){
               }).join("")+'</div></div>';
               h+=p7;
             }
+            if(_plan.one_pager&&_plan.one_pager.pagers){
+              const op=_plan.one_pager;
+              let po='<div class="fc-pm" style="margin-top:6px"><div class="topic-k">Today\'s one-pager - per-agent plan (3 planners + judge, '+esc(op.source||'')+'</div><div class="fc-outc">';
+              Object.keys(op.pagers).forEach(aid=>{
+                (op.pagers[aid]||[]).forEach(it=>{
+                  const ref=it.ref?' <span class="hint">&larr; '+esc(it.ref)+'</span>':'';
+                  po+='<div class="fc-oc" title="'+esc(it.why||'')+'"><b>'+esc(aid)+':</b> '+esc(it.item)+ref+'</div>';
+                });
+              });
+              po+='</div></div>';
+              h+=po;
+            }
       const _ends=Object.values(fc.lanes||{}).map(l=>l.end).filter(Boolean);
       if(_ends.length)h+='<div class="hint" style="margin-top:6px">level-up (all goals 100%) ETA: '+esc(_ends.sort().slice(-1)[0])+'</div>';
       h+='</div>';
