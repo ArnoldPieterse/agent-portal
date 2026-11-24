@@ -2212,5 +2212,11 @@
 "text": "**Seat Draft Goal Quality Gate** - for goals drafted on behalf of unreachable seats (Archivist, Scribe), add extra validation: (a) goal is e",
 "agent": "orchestrator",
 "at": "2026-11-25"
+},
+{
+"sig": "2815ee5db4851fb9",
+"text": "**Convergence Trajectory Model** - `python memory/researcher/convergence_model.py`: from cycle history (duration, completion %, intervention",
+"agent": "researcher",
+"at": "2026-11-25"
 }
 ]
