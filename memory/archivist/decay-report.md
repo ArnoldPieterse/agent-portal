@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 10172 | flagged (<0.35): 0
+Leaves: 10223 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -7435,7 +7435,6 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/archivist/kb_query_api.py | 1 | 0 | n | 0.544 |
 | memory/archivist/kb_sentinel.py | 1 | 0 | n | 0.544 |
 | memory/archivist/kb_version.py | 1 | 0 | n | 0.544 |
-| memory/archivist/knowledge-index.json | 1 | 0 | n | 0.544 |
 | memory/archivist/knowledge-report.md | 1 | 0 | n | 0.544 |
 | memory/archivist/leaf-reliability.json | 1 | 0 | n | 0.544 |
 | memory/archivist/ledger_snapshot.json | 1 | 0 | n | 0.544 |
@@ -9063,7 +9062,6 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/scribe/forecast-archivist-g3-assist-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/scribe/forecast-builder-goal9-contribution-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/scribe/forecast-designer-goals5-6-2026-11-23.md | 1 | 0 | n | 0.544 |
-| memory/scribe/handoff_summary.py | 1 | 0 | n | 0.544 |
 | memory/scribe/knowledge_delta.py | 1 | 0 | n | 0.544 |
 | memory/scribe/ledger-staleness-fix-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/scribe/ledger.jsonl | 1 | 0 | n | 0.544 |
@@ -9186,8 +9184,12 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/verifier/__pycache__/rollback_test.cpython-315.pyc | 1 | 0 | n | 0.544 |
 | memory/verifier/__pycache__/slo_check.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/verifier/__pycache__/state_consistency.cpython-315.pyc | 1 | 0 | n | 0.544 |
+| memory/fleet-mode.json | 0 | 0 | n | 0.550 |
+| memory/fleet-mode.json.lock | 0 | 0 | n | 0.550 |
 | memory/levels.json | 0 | 0 | n | 0.550 |
+| memory/pass-budget.json | 0 | 0 | n | 0.550 |
 | memory/archivist/citation-report.json | 0 | 0 | n | 0.550 |
+| memory/archivist/compact_decision_log.py | 0 | 0 | n | 0.550 |
 | memory/archivist/conflict-selftest-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/archivist/digest-48-2026.md | 0 | 0 | n | 0.550 |
 | memory/archivist/digest-kg-snapshot.json | 0 | 0 | n | 0.550 |
@@ -9200,7 +9202,10 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/archivist/evidence-ops-index-closed-loop-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-stale-pointer-sweep-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/archivist/kb-delta-selftest-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/archivist/knowledge-index.json | 0 | 0 | n | 0.550 |
+| memory/archivist/metrics-glossary.md | 0 | 0 | n | 0.550 |
 | memory/archivist/mode_anomaly.py | 0 | 0 | n | 0.550 |
+| memory/archivist/mode_freshness.py | 0 | 0 | n | 0.550 |
 | memory/archivist/productivity_archive.py | 0 | 0 | n | 0.550 |
 | memory/archivist/productivity_archiver.py | 0 | 0 | n | 0.550 |
 | memory/archivist/remediation-memory-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9209,6 +9214,7 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/archivist/remediation-suggest-selftest.json | 0 | 0 | n | 0.550 |
 | memory/archivist/remediation_memory.py | 0 | 0 | n | 0.550 |
 | memory/archivist/remediation_suggest.py | 0 | 0 | n | 0.550 |
+| memory/archivist/retro_archiver.py | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic-index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic_index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/semantic_search.py | 0 | 0 | n | 0.550 |
@@ -9216,8 +9222,11 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/archivist/test_remediation_suggest.py | 0 | 0 | n | 0.550 |
 | memory/archivist/productivity-history/2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/mode_anomaly.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/builder/autoloop_logger.py | 0 | 0 | n | 0.550 |
+| memory/builder/cycle_transition.py | 0 | 0 | n | 0.550 |
 | memory/builder/decision-index.db | 0 | 0 | n | 0.550 |
 | memory/builder/decision_index.py | 0 | 0 | n | 0.550 |
+| memory/builder/dispatch_filter.py | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-autonomous-actions-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-idle-maintenance-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-runbook-trigger-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9235,15 +9244,22 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/builder/remediation_extractor.py | 0 | 0 | n | 0.550 |
 | memory/builder/runbook-trigger-state.json | 0 | 0 | n | 0.550 |
 | memory/builder/runbook_trigger.py | 0 | 0 | n | 0.550 |
+| memory/builder/status_propagator.py | 0 | 0 | n | 0.550 |
 | memory/builder/topology-visualizer-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/post-mortems/latest-summary.md | 0 | 0 | n | 0.550 |
 | memory/builder/post-mortems/post-mortems.jsonl | 0 | 0 | n | 0.550 |
+| memory/builder/__pycache__/autoloop_logger.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/builder/__pycache__/cycle_transition.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/builder/__pycache__/dispatch_filter.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/builder/__pycache__/dispatch_filter.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/fleet_mode_writer.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/idle_task_lookup.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/pass_budget.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/policy_conflict.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/productivity_counter.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/builder/__pycache__/productivity_counter.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/runbook_trigger.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/builder/__pycache__/status_propagator.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/designer/a11y-audit-cycle15.md | 0 | 0 | n | 0.550 |
 | memory/designer/aria_keyboard_nav_test.py | 0 | 0 | n | 0.550 |
 | memory/designer/cdp_fleet_mode_aria.py | 0 | 0 | n | 0.550 |
@@ -9264,12 +9280,17 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/designer/evidence-fleet-mode-aria-integration-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-fleet-mode-aria-kbdnav-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-fleet-mode-aria-keyboard-nav-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-goal2-aria-kbdnav-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-idle-hero-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-maint-cards-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-maintenance-task-cards-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-maintenance-task-cards-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-maintenance-task-cards-integrated-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-banner-assist-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-banner-assist-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-mode-history-timeline-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-mode-history-timeline-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-history-timeline-integrated-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-mode-layout-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-mode-layout-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-mode-timeline-2026-11-24.json | 0 | 0 | n | 0.550 |
@@ -9280,6 +9301,7 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/designer/evidence-mode-transition-animation-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-pass-budget-gauge-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-pass-budget-gauge-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-pass-budget-gauge-integrated-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-productivity-sparklines-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-productivity-sparklines-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-sparklines-2026-11-24.json | 0 | 0 | n | 0.550 |
@@ -9416,6 +9438,7 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/levels/level_9_20261124-055112.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-builder-goal10-preflight-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-builder-goal8-extractor-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/assist-verifier-g1-prereqs-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-24b.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-24c.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/autoloop_probe.py | 0 | 0 | n | 0.550 |
@@ -9465,6 +9488,9 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/ops/anomaly-20261124T040450Z.md | 0 | 0 | n | 0.550 |
 | memory/ops/anomaly-20261124T043742Z.md | 0 | 0 | n | 0.550 |
 | memory/ops/anomaly-20261124T055856Z.md | 0 | 0 | n | 0.550 |
+| memory/ops/anomaly-20261124T103809Z.md | 0 | 0 | n | 0.550 |
+| memory/ops/anomaly-20261124T103813Z.md | 0 | 0 | n | 0.550 |
+| memory/ops/anomaly-20261124T103816Z.md | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autonomous-actions.jsonl | 0 | 0 | n | 0.550 |
@@ -9479,7 +9505,9 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/ops/cycle-efficiency.json | 0 | 0 | n | 0.550 |
 | memory/ops/dangling_pointer_fix.py | 0 | 0 | n | 0.550 |
 | memory/ops/data-freshness-escalation-protocol-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/ops/dispatch-cache.json | 0 | 0 | n | 0.550 |
 | memory/ops/dispatch-history.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/dispatch-list-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/dispatch-queue.json | 0 | 0 | n | 0.550 |
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
 | memory/ops/efficiency-digest-15.md | 0 | 0 | n | 0.550 |
@@ -9537,12 +9565,15 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/ops/_startup_watch.txt | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0706b9c4b4 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0b19c0bd68 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.10c4544d22 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.257a6e1303 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.314beff77f | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.5d30bcd98d | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.6a59ee9ced | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.6ecf1e775a | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.72f7747453 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.8e533bfad4 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.a588a562a5 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.a96bbde535 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.c1c04ceb7f | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.dbd3a02f71 | 0 | 0 | n | 0.550 |
@@ -9560,6 +9591,7 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/ops/post-mortems/post-mortems.jsonl | 0 | 0 | n | 0.550 |
 | memory/orchestrator/action-log-implemented-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/cycle_skeleton.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/dispatch_filter.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/dispatch_sync.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/evidence-assist-archivist-forecast-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/evidence-fleet-state-collector-schtasks-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9569,7 +9601,10 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/orchestrator/productive_pass_gate.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/seat_router.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/todo-sync-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/orchestrator/__pycache__/dispatch_filter.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/__pycache__/fleet_mode.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/orchestrator/__pycache__/fleet_mode.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/orchestrator/__pycache__/pass_budget.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/researcher/builder-cycle14-sweep-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/researcher/cockpit-closedloop-rootcause-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/researcher/cockpit-feed-loop-assist-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9596,6 +9631,7 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/scribe/assist-archivist-goal2-semantic-search-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-builder-goal9-policy-conflict-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/closed-loop-scorecard-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/scribe/convergence_brief.py | 0 | 0 | n | 0.550 |
 | memory/scribe/cross_agent_handoff.py | 0 | 0 | n | 0.550 |
 | memory/scribe/cycle_closeout.py | 0 | 0 | n | 0.550 |
 | memory/scribe/cycle_efficiency_digest.py | 0 | 0 | n | 0.550 |
@@ -9610,6 +9646,7 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/scribe/goal6-cross-agent-handoff-reached-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/goal7-efficiency-digest-reached-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/goal8-anomaly-narrative-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/scribe/handoff_summary.py | 0 | 0 | n | 0.550 |
 | memory/scribe/idle_digest.py | 0 | 0 | n | 0.550 |
 | memory/scribe/mode-decision-brief-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/mode_brief.py | 0 | 0 | n | 0.550 |
@@ -9618,17 +9655,24 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/scribe/productivity_story.py | 0 | 0 | n | 0.550 |
 | memory/scribe/stale-claim-mechanic-g3-closure-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/velocity_brief.py | 0 | 0 | n | 0.550 |
+| memory/scribe/__pycache__/convergence_brief.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/scribe/__pycache__/cycle_closeout.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/scribe/__pycache__/mode_narrative.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/synthesis/closeout-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/closeout-cycle15-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/closeout-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/closeout-cycle17-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/synthesis/convergence-brief-cycle15.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/cycle-15-closeout.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/fleet-100-milestone-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/synthesis/handoff-summary-15.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/mode-briefs.md | 0 | 0 | n | 0.550 |
+| memory/synthesis/mode-decision-briefs.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/productivity-week-2026-W48.md | 0 | 0 | n | 0.550 |
 | memory/verifier/archivist-goal10-kb-health-gap-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/autonomy-pr-tracker-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/autonomy_pr_tracker.py | 0 | 0 | n | 0.550 |
+| memory/verifier/budget_compliance.py | 0 | 0 | n | 0.550 |
 | memory/verifier/cockpit-a11y-gate-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/cockpit-stale-alert-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/verifier/cockpit-staleness-monitor-cwd-fix-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9638,6 +9682,8 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/verifier/cockpit_ui_gate.py | 0 | 0 | n | 0.550 |
 | memory/verifier/cycle14-all10-reverified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/cycle14-goals1-5-repro-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/verifier/cycle_rollback_test.py | 0 | 0 | n | 0.550 |
+| memory/verifier/dispatch_fuzzer.py | 0 | 0 | n | 0.550 |
 | memory/verifier/failure-replay-harness-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/failure_replay.py | 0 | 0 | n | 0.550 |
 | memory/verifier/feed-closed-loop-reverify-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9649,7 +9695,10 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/verifier/goal-lifecycle-audit-regression-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/goal-lifecycle-audit-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/kb-delta-feed-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/verifier/mode_schema_check.py | 0 | 0 | n | 0.550 |
+| memory/verifier/mode_transition_test.py | 0 | 0 | n | 0.550 |
 | memory/verifier/perf-report.md | 0 | 0 | n | 0.550 |
+| memory/verifier/productivity_validate.py | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation-e2e-genuine-pass-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation_e2e.py | 0 | 0 | n | 0.550 |
 | memory/verifier/remediation_e2e_results.jsonl | 0 | 0 | n | 0.550 |
@@ -9709,6 +9758,7 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/builder/feed_refresh.py | 0 | 1 | n | 0.619 |
 | memory/ops/cockpit-feed.json | 0 | 1 | n | 0.619 |
 | memory/ops/fleet-metrics.jsonl | 0 | 1 | n | 0.619 |
+| memory/ops/mode-freshness.json | 0 | 1 | n | 0.619 |
 | memory/archivist/kg-auto-update-progress-2026-11-17.md | 7 | 2 | n | 0.621 |
 | memory/portal/v1-inventory.md | 12 | 3 | n | 0.622 |
 | memory/portal/v1-upgrades-decisions.md | 12 | 3 | n | 0.622 |
@@ -9856,6 +9906,7 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/orchestrator/contribution-dangling-pointer-fix-2026-11-24.md | 0 | 1 | Y | 0.769 |
 | memory/portal/planning-2026-11-13.md | 2 | 9 | n | 0.769 |
 | memory/researcher/cockpit-closedloop-followup-2026-11-24.md | 0 | 1 | Y | 0.769 |
+| memory/synthesis/retro-cycle-14.md | 0 | 1 | Y | 0.769 |
 | memory/goals/builder.md | 0 | 8 | n | 0.770 |
 | memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md | 5 | 11 | n | 0.771 |
 | memory/portal/file-links.md | 12 | 3 | Y | 0.772 |
@@ -10152,8 +10203,8 @@ Leaves: 10172 | flagged (<0.35): 0
 | memory/researcher/net-capability-matrix-2026-11-16.md | 2 | 7 | Y | 0.897 |
 | memory/researcher/sla-goal8-closure-integrity-check-2026-11-18.md | 6 | 9 | Y | 0.897 |
 | memory/archivist/MEMORY.md | 5 | 9 | Y | 0.902 |
-| memory/ops/blockers.md | 1 | 7 | Y | 0.902 |
 | memory/ops/windows-runbook.md | 9 | 12 | Y | 0.906 |
+| memory/ops/blockers.md | 0 | 7 | Y | 0.908 |
 | memory/portal/mirror-clobber-pattern-2026-11-14.md | 10 | 13 | Y | 0.908 |
 | memory/archivist/ingested-2026-11-16-ops-windows-runbook-portal-lifec.md | 8 | 12 | Y | 0.912 |
 | memory/ops/git-hygiene.md | 10 | 15 | Y | 0.922 |
