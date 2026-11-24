@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 10090 | flagged (<0.35): 0
+Leaves: 10130 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9200,6 +9200,8 @@ Leaves: 10090 | flagged (<0.35): 0
 | memory/archivist/evidence-ops-index-closed-loop-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-stale-pointer-sweep-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/archivist/kb-delta-selftest-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/archivist/productivity_archive.py | 0 | 0 | n | 0.550 |
+| memory/archivist/productivity_archiver.py | 0 | 0 | n | 0.550 |
 | memory/archivist/remediation-memory-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/archivist/remediation-memory-selftest.json | 0 | 0 | n | 0.550 |
 | memory/archivist/remediation-suggest-2026-11-24.json | 0 | 0 | n | 0.550 |
@@ -9231,18 +9233,52 @@ Leaves: 10090 | flagged (<0.35): 0
 | memory/builder/post-mortems/post-mortems.jsonl | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/policy_conflict.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/runbook_trigger.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/designer/a11y-audit-cycle15.md | 0 | 0 | n | 0.550 |
+| memory/designer/aria_keyboard_nav_test.py | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-load-audit-fleet-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-load-audit-fleet-2026-11-24.py | 0 | 0 | n | 0.550 |
 | memory/designer/density-cycle12-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/dispatch-staleness-confirm-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-aria-kbd-static-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-aria-keyboard-nav-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-budget-gauge-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-cockpit-mode-layout-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-cockpit-mode-layout-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-convergence-ring-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-cycle15-wiring-pass-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-fleet-mode-aria-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-fleet-mode-aria-kbdnav-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-fleet-mode-aria-keyboard-nav-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-idle-hero-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-maint-cards-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-maintenance-task-cards-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-maintenance-task-cards-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-history-timeline-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-history-timeline-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-layout-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-layout-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-timeline-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-transition-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-transition-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-transition-anim-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-mode-transition-anim-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-mode-transition-animation-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-pass-budget-gauge-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-pass-budget-gauge-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-productivity-sparklines-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-productivity-sparklines-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-sparklines-2026-11-24.json | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-sparklines-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/fleet-mode-aria-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/fleet-mode-transition-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/fleet-mode-transition-verify.json | 0 | 0 | n | 0.550 |
+| memory/designer/fleet-mode-ui-tokens-reference.md | 0 | 0 | n | 0.550 |
 | memory/designer/fleet_mode_aria_verify.py | 0 | 0 | n | 0.550 |
 | memory/designer/fleet_mode_transition_verify.py | 0 | 0 | n | 0.550 |
 | memory/designer/forecast-cycle12-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/index_html_CANONICAL_3bcb2d3cf24b_2026-11-24x.html | 0 | 0 | n | 0.550 |
+| memory/designer/index_html_CANONICAL_87a60ffb0b8c_2026-11-24x.html | 0 | 0 | n | 0.550 |
+| memory/designer/index_html_CANONICAL_8e74b9935df1_2026-11-24y.html | 0 | 0 | n | 0.550 |
 | memory/designer/maintenance-task-cards-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/maintenance_task_cards_verify.py | 0 | 0 | n | 0.550 |
 | memory/designer/mode-history-timeline-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9250,6 +9286,7 @@ Leaves: 10090 | flagged (<0.35): 0
 | memory/designer/pass-budget-gauge-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/pass-budget-gauge-verify.json | 0 | 0 | n | 0.550 |
 | memory/designer/pass_budget_gauge_verify.py | 0 | 0 | n | 0.550 |
+| memory/designer/test_fleet_mode_aria.py | 0 | 0 | n | 0.550 |
 | memory/designer/_find.py | 0 | 0 | n | 0.550 |
 | memory/designer/_gate_live.json | 0 | 0 | n | 0.550 |
 | memory/designer/_js_dbg.py | 0 | 0 | n | 0.550 |
@@ -9320,6 +9357,7 @@ Leaves: 10090 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261124-143616.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-145201.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-155802.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-165500.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
@@ -9510,6 +9548,7 @@ Leaves: 10090 | flagged (<0.35): 0
 | memory/researcher/mode_forecast.py | 0 | 0 | n | 0.550 |
 | memory/researcher/pattern_detector.py | 0 | 0 | n | 0.550 |
 | memory/researcher/productive-pass-definition.md | 0 | 0 | n | 0.550 |
+| memory/researcher/stale-claim-verifier-mode-transition-test-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/researcher/verifier-goal2-coverage-gate-assist-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/anomaly_narrative.py | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-archivist-goal2-semantic-search-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9525,6 +9564,7 @@ Leaves: 10090 | flagged (<0.35): 0
 | memory/scribe/goal-setting-cycle11-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/goal1-mode-narrative-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/goal10-state-reconciliation-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/scribe/goal3-idle-digest-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/goal6-cross-agent-handoff-reached-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/goal7-efficiency-digest-reached-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/goal8-anomaly-narrative-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
