@@ -1,0 +1,15 @@
+{
+  "generated": "2026-11-24T02:55:38.697476+00:00",
+  "model": "linear projection from current completion % x historical closure rate",
+  "closure_rate_basis": "269 closures over 3 active days (~48h)",
+  "idle_threshold_h": 6.0,
+  "forecast": {
+    "current_pct": 30.0,
+    "remaining_goals": 56,
+    "closure_rate_per_hour": 5.6042,
+    "hours_to_100": 9.993,
+    "t_reach_100": "2026-11-24T12:55:11.717711+00:00",
+    "t_maint_to_idle": "2026-11-24T18:55:11.717711+00:00",
+    "now_iso": "2026-11-24T02:55:38.697476+00:00"
+  }
+}

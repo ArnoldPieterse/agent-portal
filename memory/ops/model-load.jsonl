@@ -820,3 +820,4 @@
 {"ts": "2026-11-24 12:23:06", "run": "g-1a20b5d3289-9caa2a", "missing": {"Researcher": "not_loaded", "Archivist": "unreachable"}, "relocated": {}}
 {"ts": "2026-11-24 12:25:37", "run": "g-1a20b5f7d89-d4b398", "missing": {"Researcher": "unreachable", "Archivist": "unreachable"}, "relocated": {}}
 {"ts": "2026-11-24 12:46:38", "run": "g-1a20b72bb91-b3226d", "missing": {"Archivist": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
+{"ts": "2026-11-24 12:51:09", "run": "g-1a20b76dea0-869866", "missing": {}, "relocated": {"Orchestrator": "black (home not_loaded)"}}

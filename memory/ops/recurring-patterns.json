@@ -1,0 +1,9 @@
+{
+  "generated": "2026-11-24T02:54:30.971080+00:00",
+  "source": "memory/ops/decision-log.jsonl",
+  "window_days": 7,
+  "threshold": ">3",
+  "entries_in_window": 35,
+  "pattern_count": 0,
+  "patterns": []
+}

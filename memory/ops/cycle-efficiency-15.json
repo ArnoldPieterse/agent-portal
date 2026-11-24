@@ -1,0 +1,20 @@
+{
+  "cycle": "15",
+  "window_hours": 24,
+  "generated": "2026-11-24T02:57:26.704266+00:00",
+  "total_passes": 1,
+  "productive_pct": 0.0,
+  "goals_closed_per_agent": {
+    "archivist": 40,
+    "builder": 33,
+    "designer": 34,
+    "mechanic": 27,
+    "orchestrator": 27,
+    "researcher": 50,
+    "scribe": 28,
+    "verifier": 36
+  },
+  "time_to_100pct_h": 6.842,
+  "avg_pass_duration_s": 0.0,
+  "wasted_pass_count": 1
+}
