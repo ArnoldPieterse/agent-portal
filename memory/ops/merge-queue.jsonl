@@ -320,3 +320,5 @@
 {"ts": "2026-11-24 12:00:33", "file": "ui/app.css", "sha": "4c6143bdad", "size": 35943, "snapshot": null}
 {"ts": "2026-11-24 12:00:33", "file": "ui/uploads.js", "sha": "f52a51b866", "size": 44278, "snapshot": null}
 {"ts": "2026-11-24 12:17:19", "file": "ui/uploads.js", "sha": "e8b0daee25", "size": 44933, "snapshot": null}
+{"ts": "2026-11-24 12:29:28", "file": "ui/cockpit-forecast.js", "sha": "e0511a4b23", "size": 4535, "snapshot": null}
+{"ts": "2026-11-24 12:29:28", "file": "ui/uploads.js", "sha": "346f3a4d74", "size": 44946, "snapshot": null}
