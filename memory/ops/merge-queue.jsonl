@@ -319,3 +319,4 @@
 {"ts": "2026-11-24 11:37:19", "file": "agent_portal.py", "sha": "314beff77f", "size": 311178, "snapshot": "memory/ops/merge-queue/agent_portal.py.314beff77f"}
 {"ts": "2026-11-24 12:00:33", "file": "ui/app.css", "sha": "4c6143bdad", "size": 35943, "snapshot": null}
 {"ts": "2026-11-24 12:00:33", "file": "ui/uploads.js", "sha": "f52a51b866", "size": 44278, "snapshot": null}
+{"ts": "2026-11-24 12:17:19", "file": "ui/uploads.js", "sha": "e8b0daee25", "size": 44933, "snapshot": null}
