@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder lane closed 5/5: idle_rotation.py, agent_portal.py dispatch, cockpit mode banner, fleet_mode_writer.py (9/9 selftest)
 - Researcher lane fully closed at 5/5 goals, all verified 2026-11-24 in memory/goals/researcher.md
 - Verifier 10/10 closed; fresh full regression sweep green this pass — no regressions since original verification.
 - Scribe goal #2 (Cycle Close-Out Report) REACHED: compacted cycle_closeout.py output 7KB→3.3KB to meet <4KB criterion; verified on cycle-14 d
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic lane fully closed: 6/6 goals done, 139 tests total; Goal #1 upgraded to 22/22 with msvcrt.locking + error handling.
 - Scribe closed goal #2 (Cycle Close-Out Report) at 3.9KB, under the 4KB verification limit.
 - Goal #10 done: fixed 5 light-theme contrast tokens
+- Cycle 15 orchestrator lane fully converged: goals #2 (productive_pass_gate.py) and #3 (cycle_skeleton.py) verified this pass, 3/3 done.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
