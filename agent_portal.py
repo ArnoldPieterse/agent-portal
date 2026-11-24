@@ -1273,6 +1273,9 @@ def _apiq_apply(req_id, by):
             res = _apiq_apply_terminal(req)
         req["status"] = "applied" if res.get("ok") else "failed"
         req["result"] = {k: v for k, v in res.items() if k != "stdout" and k != "stderr"}
+        if kind == "terminal":   # keep output on the record (capped) for viewTerminalOutput
+            req["stdout"] = str(res.get("stdout") or "")[:APIQ_OUT_CHARS]
+            req["stderr"] = str(res.get("stderr") or "")[:APIQ_OUT_CHARS]
         req.setdefault("events", []).append({"ts": _apiq_now(), "event": req["status"], "by": str(by)[:60]})
         _apiq_save(d)
     _apiq_audit({"event": req["status"], "id": req_id, "by": str(by)[:60],
@@ -1490,6 +1493,8 @@ def _apiq_dispatch(agent, call, args):
             if (not isinstance(rng, (list, tuple)) or len(rng) != 2
                     or not all(isinstance(x, int) for x in rng)):
                 return {"ok": False, "detail": "range [start,end] required (1-based inclusive)"}
+            if rng[0] < 1 or rng[1] < rng[0]:
+                return {"ok": False, "detail": "range must be 1 <= start <= end"}
             if not isinstance(ltr, list) or sum(len(str(x)) for x in ltr) > APIQ_CHANGE_CHARS:
                 return {"ok": False, "detail": "linesToReplace must be a string list <= %d chars" % APIQ_CHANGE_CHARS}
             req, err = _apiq_add_request(agent, "change",
@@ -1519,8 +1524,10 @@ def _apiq_dispatch(agent, call, args):
             return _apiq_read_file(str(args.get("file") or ""), args.get("range"))
         elif c == "listPortalFiles":
             r = _apiq_list_files()
-            # keep the reply-to-agent payload small: paths only, newest 200
-            r["files"] = [{"path": x["path"], "mtime": x["mtime"]} for x in r["files"][-200:]]
+            # keep the reply-to-agent payload small: newest 300 by mtime (path-sorted cap would
+            # hide recently added files once the workspace passes 4000 entries)
+            r["files"] = [{"path": x["path"], "mtime": x["mtime"]}
+                          for x in sorted(r["files"], key=lambda x: -x["mtime"])[:300]]
             return r
         elif c == "viewRequestQueue":
             items = _apiq_view(status="pending", limit=30)
