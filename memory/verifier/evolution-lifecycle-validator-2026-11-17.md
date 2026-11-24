@@ -1,6 +1,6 @@
-# Evolution full-lifecycle validator â€” cycle 3 (goal #10)
+# Evolution full-lifecycle validator — cycle 3 (goal #10)
 
-- timestamp: 2026-11-17T11:10:22.770342+00:00
+- timestamp: 2026-11-24T23:05:31.385173+00:00
 - mode: **model** (engine in CWD: False)
 - lifecycle: `propose -> test -> select -> merge -> archive`
 - illegal attempts: **10** | tests 12/12 pass | all_pass=True

@@ -1,4 +1,13 @@
 
+## [OPS-NOTE 2026-11-25 Researcher] Seat-Unavailability Impact Model v2 (goal #8) AC backtest NOT computable: no per-day reachability time series exists
+**Class:** data gap (NOT a code bug; proven twice, now with hard evidence - do not re-probe).
+**Goal AC:** "on backtest (last 30 days), precision>0.7 for 'unreachable' predictions."
+**Why it is uncomputable (two independent reasons, both verified this pass):**
+1. Only **14 calendar days** of any activity data exist in the repo (2026-11-12 -> 2026-11-25); fleet-metrics.jsonl spans ~3d with agents_detail mostly "unknown"; seat-matrix.json is a SINGLE snapshot (ts 2026-11-24T22:06Z, all 8 seats unreachable). No 30-day window can be formed.
+2. Even within the 14 days, the only per-day label source (archive-file filename dating) is **degenerate**: 7/8 seats show "available" on 13-14/14 days. Walk-forward backtest in `memory/researcher/seat_unavailability_v2.py` returns **tp=fp=fn=0, tn=392** => precision = 0/0 (undefined). There are literally no unreachable-day labels to score.
+**Deliverable still produced:** per-seat 7-day unavailability probability forecast IS written (all low-risk) -> `memory/researcher/unavailability-forecast.json` + script `memory/researcher/seat_unavailability_v2.py`. So the *forecast* half of goal #8 is done; only the *precision backtest* AC is blocked.
+**Exact unblock step:** make the seat-matrix probe APPEND history instead of overwriting - i.e. add a line per probe to `memory/ops/seat-reachability-history.jsonl` with `{ts, seat, state}` (the probe already computes `state`). After ~30 days accumulate, re-run `python memory/researcher/seat_unavailability_v2.py` and it will have real positive examples and can score the AC precision. Evidence: memory/researcher/seat-unavailability-v2-2026-11-25.md
+
 ## [OPS-NOTE 2026-11-22] Orchestrator: auto-loop @Mechanic dispatches are FUTIL until a non-sandbox seat loads mechanic-q4
 **Class:** seat-unreachable + sandbox egress wall (NOT a code bug; NOT re-probed beyond one confirmation).
 **Observation:** the auto-loop has dispatched "@Mechanic take ONE concrete next step" repeatedly across passes, but every [MODEL LOAD STATUS] header this cycle lists Mechanic=unreachable. A dispatch to an unloaded seat can never land.

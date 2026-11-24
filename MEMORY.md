@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Archivist lane hit 10/10 goals verified (cycle 17); all artifacts on disk, no open work remaining.
-- seat_probe.py extended
 - Mechanic lane confirmed
 - Mechanic lane confirmed 10/10 reached (2026-11-25);
 - Auto-loop dispatch is stale for Mechanic: lane closed at 10/10 (verified 2026-11-25), no open work
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic lane CLOSED 10/10 (verified 2026-11-25); auto-loop sends stale prompts, no open work remains.
 - Mechic found seat-matrix.json lives at memory/ops/ not memory/fleet/; convergence health script had wrong path
 - Mechanic confirmed all 10 goals closed (open=0); auto-loop dispatch was stale re: goals 7&8 already verified earlier today.
+- convergence_health.py paths fixed: seat-matrix in ops/ not fleet/, cycle-estimate → cycle-duration-stats.json
+- Goal #2 (Steady-State Visual Indicator) overlaps with existing `ui/cockpit-calm-mode.js` "Converged" badge — check wiring before building ne
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

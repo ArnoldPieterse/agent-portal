@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T19:47:52Z",
+  "generated_at": "2026-11-24T23:04:36Z",
   "tolerance": 0.011,
   "metrics": [
     {
@@ -9,7 +9,7 @@
         {
           "check": "component_range[pass_autonomy]",
           "ok": true,
-          "value": 54.2
+          "value": 58.3
         },
         {
           "check": "component_range[duration_score]",
@@ -19,19 +19,19 @@
         {
           "check": "component_range[rework_score]",
           "ok": true,
-          "value": 92.2
+          "value": 93.6
         },
         {
           "check": "component_range[trend_score]",
           "ok": true,
-          "value": 40.0
+          "value": 50.0
         },
         {
           "check": "score_matches_formula",
           "ok": true,
-          "stored": 65.4,
-          "recomputed": 65.41,
-          "delta": 0.01
+          "stored": 69.1,
+          "recomputed": 69.125,
+          "delta": 0.025
         }
       ]
     },
@@ -43,7 +43,11 @@
       "writer_scripts": [
         "memory\\builder\\convergence_api.py",
         "memory\\builder\\cycle_estimator.py",
+        "memory\\orchestrator\\convergence_api.py",
         "memory\\orchestrator\\efficiency-index-gen.py",
+        "memory\\researcher\\convergence_model.py",
+        "memory\\researcher\\cycle_efficiency_index.py",
+        "memory\\researcher\\dependency_graph.py",
         "memory\\researcher\\efficiency_index.py",
         "memory\\researcher\\topic_scorer.py",
         "memory\\verifier\\convergence_api_integrity.py",

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-11-25T04:37:56.067752",
+  "timestamp": "2026-11-25T09:05:04.665384",
   "models": {
     "convergence_rate": {
-      "timestamp": "2026-11-25T04:37:56.067752",
+      "timestamp": "2026-11-25T09:05:04.665384",
       "model": "convergence_rate",
       "status": "ok",
       "r2": 0.866,
@@ -10,15 +10,15 @@
       "degraded": false
     },
     "convergence_trajectory": {
-      "timestamp": "2026-11-25T04:37:56.067752",
+      "timestamp": "2026-11-25T09:05:04.665384",
       "model": "convergence_trajectory",
       "status": "ok",
-      "r2": 0.1378,
-      "mae_pct": 21.258779038357645,
+      "r2": 0.0293,
+      "mae_pct": 6.199770378874849,
       "degraded": false
     },
     "vram_forecast": {
-      "timestamp": "2026-11-25T04:37:56.067752",
+      "timestamp": "2026-11-25T09:05:04.665384",
       "model": "vram_forecast",
       "status": "ok",
       "r2": null,
@@ -27,7 +27,7 @@
     }
   },
   "flags": [
-    "convergence_trajectory: r2=0.138 below min 0.3"
+    "convergence_trajectory: r2=0.029 below min 0.3"
   ],
   "flag_count": 1
 }

@@ -1,141 +1,169 @@
 {
-  "generated": "2026-11-24T18:18:43.286047+00:00",
-  "method": "activity-frequency from archive timestamps, blended long-term + recent",
-  "period": "2026-11-13 to 2026-11-25",
+  "generated": "2026-11-25",
+  "method": "recency-weighted (half-life 3 d) unavailability probability, blended 60/40 with full-period base rate; walk-forward backtest threshold P(unavail)>0.5",
+  "data_window_days": 14,
+  "ac_target": {
+    "backtest_window_days": 30,
+    "precision_threshold": 0.7
+  },
   "forecasts": {
     "archivist": {
-      "active_days": 7,
-      "total_days": 13,
-      "long_term_unavail_prob": 0.462,
-      "recent_3d_unavail_prob": 0.333,
-      "blended_7d_forecast": 0.423,
-      "risk_level": "medium"
+      "p_unavail_7d": 0.035,
+      "base_rate_unavail": 0.071,
+      "recency_weighted_unavail": 0.011,
+      "available_days_last14": 13,
+      "risk_level": "low"
     },
     "builder": {
-      "active_days": 6,
-      "total_days": 13,
-      "long_term_unavail_prob": 0.538,
-      "recent_3d_unavail_prob": 0.333,
-      "blended_7d_forecast": 0.477,
-      "risk_level": "medium"
+      "p_unavail_7d": 0.0,
+      "base_rate_unavail": 0.0,
+      "recency_weighted_unavail": 0.0,
+      "available_days_last14": 14,
+      "risk_level": "low"
     },
     "designer": {
-      "active_days": 7,
-      "total_days": 13,
-      "long_term_unavail_prob": 0.462,
-      "recent_3d_unavail_prob": 0.333,
-      "blended_7d_forecast": 0.423,
-      "risk_level": "medium"
+      "p_unavail_7d": 0.035,
+      "base_rate_unavail": 0.071,
+      "recency_weighted_unavail": 0.011,
+      "available_days_last14": 13,
+      "risk_level": "low"
     },
     "mechanic": {
-      "active_days": 6,
-      "total_days": 13,
-      "long_term_unavail_prob": 0.538,
-      "recent_3d_unavail_prob": 0.333,
-      "blended_7d_forecast": 0.477,
-      "risk_level": "medium"
+      "p_unavail_7d": 0.0,
+      "base_rate_unavail": 0.0,
+      "recency_weighted_unavail": 0.0,
+      "available_days_last14": 14,
+      "risk_level": "low"
     },
     "orchestrator": {
-      "active_days": 6,
-      "total_days": 13,
-      "long_term_unavail_prob": 0.538,
-      "recent_3d_unavail_prob": 0.333,
-      "blended_7d_forecast": 0.477,
-      "risk_level": "medium"
+      "p_unavail_7d": 0.0,
+      "base_rate_unavail": 0.0,
+      "recency_weighted_unavail": 0.0,
+      "available_days_last14": 14,
+      "risk_level": "low"
     },
     "researcher": {
-      "active_days": 7,
-      "total_days": 13,
-      "long_term_unavail_prob": 0.462,
-      "recent_3d_unavail_prob": 0.333,
-      "blended_7d_forecast": 0.423,
-      "risk_level": "medium"
-    },
-    "rosterprobe": {
-      "active_days": 1,
-      "total_days": 13,
-      "long_term_unavail_prob": 0.923,
-      "recent_3d_unavail_prob": 1.0,
-      "blended_7d_forecast": 0.946,
-      "risk_level": "high"
+      "p_unavail_7d": 0.0,
+      "base_rate_unavail": 0.0,
+      "recency_weighted_unavail": 0.0,
+      "available_days_last14": 14,
+      "risk_level": "low"
     },
     "scribe": {
-      "active_days": 6,
-      "total_days": 13,
-      "long_term_unavail_prob": 0.538,
-      "recent_3d_unavail_prob": 0.333,
-      "blended_7d_forecast": 0.477,
-      "risk_level": "medium"
+      "p_unavail_7d": 0.0,
+      "base_rate_unavail": 0.0,
+      "recency_weighted_unavail": 0.0,
+      "available_days_last14": 14,
+      "risk_level": "low"
     },
     "verifier": {
-      "active_days": 7,
-      "total_days": 13,
-      "long_term_unavail_prob": 0.462,
-      "recent_3d_unavail_prob": 0.0,
-      "blended_7d_forecast": 0.323,
-      "risk_level": "medium"
+      "p_unavail_7d": 0.0,
+      "base_rate_unavail": 0.0,
+      "recency_weighted_unavail": 0.0,
+      "available_days_last14": 14,
+      "risk_level": "low"
     }
   },
-  "backtest": {
-    "avg_abs_error": 0.27,
-    "per_agent": [
-      {
-        "agent": "archivist",
-        "predicted": 0.571,
-        "actual": 0.429,
-        "abs_error": 0.143
+  "high_risk_seats": [],
+  "walk_forward_backtest": {
+    "window_days": 14,
+    "span": [
+      "2026-11-12",
+      "2026-11-25"
+    ],
+    "aggregate": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 392,
+      "fn": 0,
+      "precision": null,
+      "recall": null,
+      "f1": null,
+      "positive_unavail_examples": 0
+    },
+    "per_seat": {
+      "archivist": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 49,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "positive_examples": 0
       },
-      {
-        "agent": "builder",
-        "predicted": 0.714,
-        "actual": 0.429,
-        "abs_error": 0.286
+      "builder": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 49,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "positive_examples": 0
       },
-      {
-        "agent": "designer",
-        "predicted": 0.571,
-        "actual": 0.429,
-        "abs_error": 0.143
+      "designer": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 49,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "positive_examples": 0
       },
-      {
-        "agent": "mechanic",
-        "predicted": 0.714,
-        "actual": 0.429,
-        "abs_error": 0.286
+      "mechanic": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 49,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "positive_examples": 0
       },
-      {
-        "agent": "orchestrator",
-        "predicted": 0.714,
-        "actual": 0.429,
-        "abs_error": 0.286
+      "orchestrator": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 49,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "positive_examples": 0
       },
-      {
-        "agent": "researcher",
-        "predicted": 0.714,
-        "actual": 0.286,
-        "abs_error": 0.429
+      "researcher": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 49,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "positive_examples": 0
       },
-      {
-        "agent": "rosterprobe",
-        "predicted": 1.0,
-        "actual": 0.857,
-        "abs_error": 0.143
+      "scribe": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 49,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "positive_examples": 0
       },
-      {
-        "agent": "scribe",
-        "predicted": 0.714,
-        "actual": 0.429,
-        "abs_error": 0.286
-      },
-      {
-        "agent": "verifier",
-        "predicted": 0.714,
-        "actual": 0.286,
-        "abs_error": 0.429
+      "verifier": {
+        "tp": 0,
+        "fp": 0,
+        "tn": 49,
+        "fn": 0,
+        "precision": null,
+        "recall": null,
+        "f1": null,
+        "positive_examples": 0
       }
-    ]
+    }
   },
-  "high_risk_seats": [
-    "rosterprobe"
-  ]
+  "degenerate_signal": true,
+  "note": "File-activity presence is the only per-day label available; it is near-degenerate (most seat-days are \"available\"), so precision for unreachable predictions has few/no positive examples to score. A real per-day reachability time series is required for the AC 30-day test."
 }

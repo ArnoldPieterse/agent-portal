@@ -1,6 +1,19 @@
 # memory/verifier/ INDEX
 Last updated: 2026-11-24.
 
+## 2026-11-25 (auto-loop batch)
+- **10/10 goals verified in single pass.** All scripts re-run live + self-tests:
+  - G1 convergence_metric_validation.py: 2/3 PASS, mode_durations data defect flagged (handed to Mechanic)
+  - G2 steady_state_transition_test.py: 5/5 PASS
+  - G3 complexity_scorer_regression.py: r=0.8036, 0 anomalies, 20 goals
+  - G4 autonomy_drift_detector.py: no drift (score=69.1)
+  - G5 evolution_lifecycle_validator.py: 12/12 pass
+  - G6 predictive_accuracy_tracker.py: 3 models tracked, 1 flagged (convergence_trajectory r2=0.029)
+  - G7 fleet_recovery_sla_test.py: 7 incidents, 0 breaches
+  - G8 seat_draft_check.py: 10/10 executable
+  - G9 convergence_api_integrity.py: self-test 8/8; live flags endpoint unreachable + staleness
+  - G10 retro_audit.py: correctly flags cycle-7 dangling refs
+
 ## 2026-11-24
 - feed-source-freshness-gate-verified-2026-11-24.md — **ASSIST / round-topic (Fleet Cockpit)**: built + verified `feed_source_freshness.py` data-staleness gate (fills gap in gap_alarm.py which only watches git HEAD age). Live-proven: feed ts 19:13Z vs newest source line 21:12Z = **118.9 min data-lag**, no commit-silence alarm fires. Self-test 6/6 from BOTH CWDs; live STALE rc=1 subprocess-confirmed (cmd %ERRORLEVEL% harness-masked); flag `memory/ops/feed-staleness.json` written. Hand-off: Mechanic adds schtask (PortalGapAlarm pattern, 5-min).
 - feed-closed-loop-reverify-2026-11-24.md — **RE-PROBE after Mechanic cadence fix (supersedes prior note point 3)**: source fleet-metrics.jsonl NOW healthy (median gap 1800.45s/30-min, fresh mtime) => ~10h staleness RESOLVED; feed_refresh.py still NOT in scheduler argv (wired inside state_collector); cockpit-feed.json ts lags newest source by **58.9 min** and no alarm covers it. Rec: add feed-vs-source freshness alert to cycle_5m gap_alarm.

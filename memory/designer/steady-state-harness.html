@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>steady-state harness</title>
+<link rel="stylesheet" href="../../ui/app.css">
+<style>body{background:#0e1116;color:#fff;font-family:system-ui}main{min-height:320px;padding:12px;background:#151a22}</style>
+</head><body>
+<header style="padding:8px 12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+  <h1 style="font-size:14px;margin:0">Agent Portal</h1>
+  <span class="hint" style="color:#9aa7b8;font-size:12px">backed by Unsloth Studio desktop harness &middot; v3</span>
+  <div id="status" style="margin-left:auto;display:flex;align-items:center;gap:8px;color:#9aa7b8;font-size:12px"><span class="dot" id="sdot"></span><span id="stext">checking studio&hellip;</span></div>
+</header>
+<main>
+  <aside style="width:160px;background:#1b2230;min-height:280px">Agents</aside>
+  <div id="chatCol" style="flex:1;min-height:280px;display:flex;flex-direction:column"><div id="modeBar" style="background:#1b2230;padding:6px">mode bar + goalbar placeholder</div><div id="msgs" style="flex:1">messages</div></div>
+</main>
+<pre id="report" style="white-space:pre-wrap;font-size:11px;color:#3ddc84"></pre>
+<script>
+/*<<STEADY-STATE-MODULE>>*/
+/* Steady-State Visual Indicator (Designer goal #2, cycle-17)
+   On STEADY-STATE: green border on cockpit + "Converged" badge in header + reduced animation.
+   On exit: amber pulse. Self-contained; reads /api/fleet-mode with /api/convergence fallback. */
+(function(){
+  var STEADY="STEADY-STATE";
+  var root=document.documentElement;
+  var badge=null, current=null, exitTimer=null;
+  function norm(m){ return (m==null?"":String(m)).toUpperCase().trim(); }
+  function ensureBadge(){
+    if(badge && badge.parentNode) return badge;
+    var host=document.getElementById("status")||document.querySelector("header")||root;
+    badge=document.createElement("span");
+    badge.className="steady-badge";
+    badge.setAttribute("data-testid","steady-badge");
+    badge.setAttribute("role","status");
+    badge.setAttribute("aria-live","polite");
+    badge.innerHTML='<span class="steady-badge-dot" aria-hidden="true"></span>Converged';
+    host.insertBefore(badge, host.firstChild);
+    return badge;
+  }
+  function pulseExit(){ if(exitTimer)clearTimeout(exitTimer); root.classList.add("steady-exit"); exitTimer=setTimeout(function(){ root.classList.remove("steady-exit"); },1300); }
+  function apply(mode){
+    var steady=norm(mode)===STEADY;
+    var wasSteady=(current===STEADY);
+    if(steady && !wasSteady){ root.classList.add("steady-state"); var b=ensureBadge(); b.hidden=false; b.style.display=""; }
+    else if(!steady && wasSteady){ root.classList.remove("steady-state"); if(badge){ badge.hidden=true; badge.style.display="none"; } pulseExit(); }
+    current = steady ? STEADY : (norm(mode)||null);
+  }
+  window.__steadyState={ setMode:function(m){ apply(m); return window.__steadyState; }, isSteady:function(){ return root.classList.contains("steady-state"); }, hasBadge:function(){ var b=document.querySelector(".steady-badge"); return !!(b && b.style.display!=="none" && !b.hidden); }, current:function(){ return current; } };
+  function convergenceMode(){ return fetch("/api/convergence",{cache:"no-store"}).then(function(r){ if(!r.ok)throw 0; return r.json(); }).then(function(d){ if(!d)return null; if(d.steady_state_progress>=1.0)return STEADY; return d.mode||null; }).catch(function(){ return null; }); }
+  function detect(){ return fetch("/api/fleet-mode",{cache:"no-store"}).then(function(r){ if(!r.ok)throw 0; return r.json(); }).then(function(d){ return (d&&d.mode)?Promise.resolve(d.mode):convergenceMode(); }).catch(convergenceMode); }
+  function startDetect(){
+    var ov=(location.hash.match(/steady=(on|off)/i)||location.search.match(/steadystate=(on|off)/i));
+    if(ov){ apply(ov[1].toLowerCase()==="on"?STEADY:"WORK"); }
+    else { detect().then(function(m){ if(m)apply(m); }).catch(function(){}); }
+    setInterval(function(){ detect().then(function(m){ if(m)apply(m); }).catch(function(){}); },30000);
+    window.addEventListener("mode-changed",function(e){ var d=e&&e.detail; var m=(d&&(typeof d==="string"?d:d.mode)); if(typeof m==="string")apply(m); });
+  }
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",startDetect); else startDetect();
+})();
+/*<</STEADY-STATE-MODULE>>*/
+</script>
+<script>
+function rect(el){var r=el.getBoundingClientRect();return {x:Math.round(r.x),y:Math.round(r.y),w:Math.round(r.width),h:Math.round(r.height)};}
+window.addEventListener('load',function(){
+  var main=document.querySelector('main'),root=document.documentElement,rep={engine:navigator.userAgent.match(/Chrome\/\d+/)?'chromium':'?'};
+  function badgeInfo(){var b=document.querySelector('.steady-badge');return b?{text:b.textContent.trim(),visible:(b.style.display!=='none'&&!b.hidden),rect:rect(b)}:null;}
+  rep.work={main:rect(main),shadow:getComputedStyle(main).boxShadow,badge:badgeInfo()};
+  window.__steadyState.setMode('STEADY-STATE');
+  var b2=document.querySelector('.steady-badge');
+  rep.steady={classAdded:root.classList.contains('steady-state'),badge:badgeInfo(),mainShadow:getComputedStyle(main).boxShadow,busyspanAnim:(function(){var e=document.createElement('span');e.className='busyspan';document.body.appendChild(e);var v=getComputedStyle(e).animationName;e.remove();return v;})(),headerShadow:getComputedStyle(document.querySelector('header')).boxShadow,mainAfter:rect(main)};
+  window.__steadyState.setMode('WORK');
+  rep.exit={classRemoved:!root.classList.contains('steady-state'),exitPulseClass:root.classList.contains('steady-exit'),badgeHidden:(function(){var b=document.querySelector('.steady-badge');return b?(b.style.display==='none'||b.hidden):null;})()};
+  rep.noLayoutShift=JSON.stringify(rep.work.main)===JSON.stringify(rep.steady.mainAfter);
+  document.getElementById('report').textContent='REPORT:'+JSON.stringify(rep);
+});
+</script>
+</body></html>

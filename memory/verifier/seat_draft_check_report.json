@@ -1,15 +1,18 @@
 {
-  "timestamp": "2026-11-24T20:32:17.689604+00:00",
-  "mode": "selftest",
-  "total_cases": 8,
-  "passed": 8,
-  "failed": 0,
-  "verdict": "PASS",
+  "timestamp": "2026-11-24T23:05:34.516692+00:00",
+  "mode": "real",
+  "seats_checked": [
+    "archivist",
+    "scribe"
+  ],
+  "total_open_goals": 10,
+  "executable": 10,
+  "non_executable": 0,
   "results": [
     {
-      "seat": "archivist",
+      "seat": "scribe",
       "goal_num": 1,
-      "title": "Write Report",
+      "title": "Convergence Narrative Generator",
       "reached": false,
       "executable": true,
       "checks": {
@@ -20,15 +23,14 @@
         "backup_available": true,
         "available_backups": [
           "researcher",
-          "verifier"
+          "orchestrator"
         ]
-      },
-      "expected": true
+      }
     },
     {
-      "seat": "archivist",
+      "seat": "scribe",
       "goal_num": 2,
-      "title": "Index Files",
+      "title": "Cycle Closeout v3",
       "reached": false,
       "executable": true,
       "checks": {
@@ -39,15 +41,14 @@
         "backup_available": true,
         "available_backups": [
           "researcher",
-          "verifier"
+          "orchestrator"
         ]
-      },
-      "expected": true
+      }
     },
     {
-      "seat": "archivist",
+      "seat": "scribe",
       "goal_num": 3,
-      "title": "Track Metrics",
+      "title": "Steady-State Declaration Doc",
       "reached": false,
       "executable": true,
       "checks": {
@@ -58,15 +59,14 @@
         "backup_available": true,
         "available_backups": [
           "researcher",
-          "verifier"
+          "orchestrator"
         ]
-      },
-      "expected": true
+      }
     },
     {
-      "seat": "archivist",
+      "seat": "scribe",
       "goal_num": 4,
-      "title": "Validate Schema",
+      "title": "Weekly Convergence Digest",
       "reached": false,
       "executable": true,
       "checks": {
@@ -77,15 +77,14 @@
         "backup_available": true,
         "available_backups": [
           "researcher",
-          "verifier"
+          "orchestrator"
         ]
-      },
-      "expected": true
+      }
     },
     {
-      "seat": "archivist",
+      "seat": "scribe",
       "goal_num": 5,
-      "title": "Compile Patterns",
+      "title": "Intervention Reduction Story",
       "reached": false,
       "executable": true,
       "checks": {
@@ -96,69 +95,99 @@
         "backup_available": true,
         "available_backups": [
           "researcher",
-          "verifier"
+          "orchestrator"
         ]
-      },
-      "expected": true
+      }
     },
     {
-      "seat": "archivist",
+      "seat": "scribe",
       "goal_num": 6,
-      "title": "Live Query",
+      "title": "Cross-Agent Coordination Summary",
       "reached": false,
-      "executable": false,
+      "executable": true,
       "checks": {
         "paths_exist": true,
         "missing_paths": [],
-        "automatable": false,
-        "auto_reason": "requires live seat interaction",
-        "backup_available": true,
-        "available_backups": [
-          "researcher",
-          "verifier"
-        ]
-      },
-      "expected": false
-    },
-    {
-      "seat": "archivist",
-      "goal_num": 7,
-      "title": "Missing Input Dep",
-      "reached": false,
-      "executable": false,
-      "checks": {
-        "paths_exist": false,
-        "missing_paths": [
-          "memory/ghost/tool_output.json"
-        ],
         "automatable": true,
         "auto_reason": "automatable (output file + verification criteria present)",
         "backup_available": true,
         "available_backups": [
           "researcher",
-          "verifier"
+          "orchestrator"
         ]
-      },
-      "expected": false
+      }
     },
     {
-      "seat": "archivist",
-      "goal_num": 8,
-      "title": "No Verification",
+      "seat": "scribe",
+      "goal_num": 7,
+      "title": "Convergence Glossary",
       "reached": false,
-      "executable": false,
+      "executable": true,
       "checks": {
         "paths_exist": true,
         "missing_paths": [],
-        "automatable": false,
-        "auto_reason": "no clear automatable verification criteria",
+        "automatable": true,
+        "auto_reason": "automatable (output file + verification criteria present)",
         "backup_available": true,
         "available_backups": [
           "researcher",
-          "verifier"
+          "orchestrator"
         ]
-      },
-      "expected": false
+      }
+    },
+    {
+      "seat": "scribe",
+      "goal_num": 8,
+      "title": "Cycle Topic Rationale Writer",
+      "reached": false,
+      "executable": true,
+      "checks": {
+        "paths_exist": true,
+        "missing_paths": [],
+        "automatable": true,
+        "auto_reason": "automatable (output file + verification criteria present)",
+        "backup_available": true,
+        "available_backups": [
+          "researcher",
+          "orchestrator"
+        ]
+      }
+    },
+    {
+      "seat": "scribe",
+      "goal_num": 9,
+      "title": "Fleet Self-Assessment Report",
+      "reached": false,
+      "executable": true,
+      "checks": {
+        "paths_exist": true,
+        "missing_paths": [],
+        "automatable": true,
+        "auto_reason": "automatable (output file + verification criteria present)",
+        "backup_available": true,
+        "available_backups": [
+          "researcher",
+          "orchestrator"
+        ]
+      }
+    },
+    {
+      "seat": "scribe",
+      "goal_num": 10,
+      "title": "Convergence Milestone Tracker",
+      "reached": false,
+      "executable": true,
+      "checks": {
+        "paths_exist": true,
+        "missing_paths": [],
+        "automatable": true,
+        "auto_reason": "automatable (output file + verification criteria present)",
+        "backup_available": true,
+        "available_backups": [
+          "researcher",
+          "orchestrator"
+        ]
+      }
     }
   ]
 }

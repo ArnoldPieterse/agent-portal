@@ -2410,5 +2410,53 @@
 "text": "**Autonomy Score Factor Analysis** - decompose the fleet autonomy score into contributing factors; identify which factor has highest varianc",
 "agent": "researcher",
 "at": "2026-11-25"
+},
+{
+"sig": "05c39d1dfbcb24c4",
+"text": "**Seat Unavailability Impact Model v2** - extend cycle-16 model with predictive component. Given current seat-matrix + historical unavailabi",
+"agent": "researcher",
+"at": "2026-11-25"
+},
+{
+"sig": "431f377a242b1952",
+"text": "**Convergence Metric Validation** - verify all convergence metrics (autonomy score, efficiency index, cycle duration) are computed correctly",
+"agent": "verifier",
+"at": "2026-11-25"
+},
+{
+"sig": "2aca64fdafa46866",
+"text": "**Steady-State Transition Test** - simulate fleet entering steady-state: verify mode transition is clean, cycle frequency change propagates ",
+"agent": "verifier",
+"at": "2026-11-25"
+},
+{
+"sig": "352f978eb3beb28e",
+"text": "**Goal Complexity Scorer Regression** - test the complexity scorer (Orchestrator goal 4) against 20 known goals with actual completion times",
+"agent": "verifier",
+"at": "2026-11-25"
+},
+{
+"sig": "e2eff20fe6a87f4c",
+"text": "**Predictive Model Accuracy Tracker** - for all predictive models (cycle estimator, unavailability forecast, convergence model), track actua",
+"agent": "verifier",
+"at": "2026-11-25"
+},
+{
+"sig": "8e793447425f41be",
+"text": "**Fleet Recovery SLA Test** - verify recovery times (from Mechanic's tracker) stay within SLA: detection <5min, recovery <30min for single-s",
+"agent": "verifier",
+"at": "2026-11-25"
+},
+{
+"sig": "48f62315e23b153b",
+"text": "**Seat Draft Goal Executability Check** - for goals drafted for unreachable seats, verify: referenced tools/paths exist on that seat's host,",
+"agent": "verifier",
+"at": "2026-11-25"
+},
+{
+"sig": "c6cab43b2132dc88",
+"text": "**Convergence Dashboard Data Integrity** - verify /api/convergence endpoint returns values consistent with source files: autonomy-score.json",
+"agent": "verifier",
+"at": "2026-11-25"
 }
 ]
