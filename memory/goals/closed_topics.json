@@ -2392,5 +2392,23 @@
 "text": "**Decision Quality Tracker** - from auto-ops-decisions.jsonl: pct decisions with positive outcome (no follow-up <24h). Track trend. Alert if",
 "agent": "mechanic",
 "at": "2026-11-25"
+},
+{
+"sig": "694606b6c311b4e0",
+"text": "**Goal Acceptance Rate Predictor** - from goal text features (length, specificity markers, verification complexity), predict whether a goal ",
+"agent": "researcher",
+"at": "2026-11-25"
+},
+{
+"sig": "3637e01732b7dfa3",
+"text": "**Proposal Quality Baseline** - establish baseline quality score for auto-generated goal proposals (from cycle_skeleton.py) vs human-refined",
+"agent": "researcher",
+"at": "2026-11-25"
+},
+{
+"sig": "3db87772648a6246",
+"text": "**Autonomy Score Factor Analysis** - decompose the fleet autonomy score into contributing factors; identify which factor has highest varianc",
+"agent": "researcher",
+"at": "2026-11-25"
 }
 ]
