@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 10280 | flagged (<0.35): 0
+Leaves: 10310 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9541,7 +9541,6 @@ Leaves: 10280 | flagged (<0.35): 0
 | memory/ops/feed-staleness.json | 1 | 0 | n | 0.544 |
 | memory/ops/feed-staleness.log | 1 | 0 | n | 0.544 |
 | memory/ops/fleet-mode-writer.log | 1 | 0 | n | 0.544 |
-| memory/ops/fleet-snapshots.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/host.pid | 1 | 0 | n | 0.544 |
 | memory/ops/idle-digest-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/ops/idle-maintenance-rotation-2026-11-24.md | 1 | 0 | n | 0.544 |
@@ -9755,28 +9754,59 @@ Leaves: 10280 | flagged (<0.35): 0
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
 | memory/goals/next10.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-002119.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-013051.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/cadence-adjuster-selftest-evidence.jsonl | 0 | 0 | n | 0.550 |
+| memory/mechanic/convergence-loadtest.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/convergence_health.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/convergence_loadtest.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/cycle-duration-selftest-evidence.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/cycle_duration_tracker.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/decision_quality.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-predictive-seat-health-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-predictive-seat-health-cycle17.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/probe_cadence_adjuster.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 0 | n | 0.550 |
+| memory/mechanic/recovery_sla_summary.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/seat_probe_predictive_test.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/transition_gap_sla.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/vram-predictor-selftest-evidence.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/vram_headroom_predictor.py | 0 | 0 | n | 0.550 |
+| memory/mechanic/vram_predictor.py | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/autonomy-score.json | 0 | 0 | n | 0.550 |
+| memory/ops/convergence-health.json | 0 | 0 | n | 0.550 |
 | memory/ops/cycle-duration-stats.json | 0 | 0 | n | 0.550 |
 | memory/ops/cycle-durations.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/decision-quality.json | 0 | 0 | n | 0.550 |
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-mode.json | 0 | 0 | n | 0.550 |
+| memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/host-log.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/human-interventions.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/mirror_cache.json | 0 | 0 | n | 0.550 |
 | memory/ops/mode-last-seen.json | 0 | 0 | n | 0.550 |
 | memory/ops/model-load.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/priority-ranking.json | 0 | 0 | n | 0.550 |
+| memory/ops/recovery-sla-summary.json | 0 | 0 | n | 0.550 |
+| memory/ops/recovery-times.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-state.json | 0 | 0 | n | 0.550 |
+| memory/ops/transition-gaps-summary.json | 0 | 0 | n | 0.550 |
 | memory/ops/vram-forecast.json | 0 | 0 | n | 0.550 |
+| memory/orchestrator/autonomy_score.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/auto_priority.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/complexity_scorer.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/cycle_estimator.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/draft-gate-results.json | 0 | 0 | n | 0.550 |
+| memory/orchestrator/goal_inheritance.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/inherited-goals.json | 0 | 0 | n | 0.550 |
+| memory/orchestrator/intervention_counter.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/seat_draft_gate.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/steady_state_detector.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/__pycache__/auto_priority.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/orchestrator/__pycache__/steady_state_detector.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
 | memory/designer/MEMORY.md | 12 | 1 | n | 0.553 |
 | memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md | 10 | 1 | n | 0.564 |
@@ -10234,9 +10264,9 @@ Leaves: 10280 | flagged (<0.35): 0
 | memory/orchestrator/goal9-cycle-cost-tracker-2026-11-20.md | 5 | 4 | Y | 0.833 |
 | memory/researcher/farm-relpath-diagnosis-2026-11-14.md | 11 | 6 | Y | 0.833 |
 | memory/llm/overnight-unload.md | 10 | 6 | Y | 0.839 |
-| memory/archivist/decay-report.md | 1 | 19 | n | 0.844 |
 | memory/mechanic/fleet-probe-v2-2026-11-16.md | 9 | 6 | Y | 0.845 |
 | memory/synthesis/2026-cycle2-retrospective.md | 9 | 6 | Y | 0.845 |
+| memory/archivist/decay-report.md | 0 | 19 | n | 0.850 |
 | memory/builder/portal-startup-fix-2026-11-17.md | 8 | 6 | Y | 0.850 |
 | memory/designer/css-bundle-budget-2026-11-17.md | 8 | 6 | Y | 0.850 |
 | memory/mechanic/goal6-dep-gen-built-2026-11-17.md | 8 | 6 | Y | 0.850 |

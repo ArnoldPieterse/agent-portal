@@ -2194,5 +2194,23 @@
 "text": "**Auto-Prioritization Engine** - `python memory/orchestrator/auto_priority.py`: when multiple goals are ready simultaneously, rank by (conve",
 "agent": "orchestrator",
 "at": "2026-11-25"
+},
+{
+"sig": "08471bb874426095",
+"text": "**Cross-Cycle Goal Inheritance** - when a goal from cycle N is still valuable in cycle N+1 but was scoped down (e.g., \"v1\" done, \"v2\" pendin",
+"agent": "orchestrator",
+"at": "2026-11-25"
+},
+{
+"sig": "eccf4db4768b1382",
+"text": "**Fleet Autonomy Score Computation** - `python memory/orchestrator/autonomy_score.py`: composite 0-100 from (a) % passes without human input",
+"agent": "orchestrator",
+"at": "2026-11-25"
+},
+{
+"sig": "f27c47cd3b35d454",
+"text": "**Seat Draft Goal Quality Gate** - for goals drafted on behalf of unreachable seats (Archivist, Scribe), add extra validation: (a) goal is e",
+"agent": "orchestrator",
+"at": "2026-11-25"
 }
 ]
