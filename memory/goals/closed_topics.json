@@ -1672,5 +1672,11 @@
 "text": "**Cycle Efficiency Digest** - Per cycle: one-paragraph summary of efficiency metrics (passes used, productive %, goals/cycle, time-to-100%, ",
 "agent": "scribe",
 "at": "2026-11-24"
+},
+{
+"sig": "3b3119191b789128",
+"text": "**Mode Decision Brief** - For each mode transition, write a one-paragraph brief explaining the decision in plain English for human review. I",
+"agent": "scribe",
+"at": "2026-11-24"
 }
 ]

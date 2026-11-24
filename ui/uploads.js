@@ -468,7 +468,7 @@ async function goalsLoad(){
             }
             if(_plan.one_pager&&_plan.one_pager.pagers){
               const op=_plan.one_pager;
-              let po='<div class="fc-pm" style="margin-top:6px"><div class="topic-k">Today\'s one-pager - per-agent plan (3 planners + judge, '+esc(op.source||'')+'</div><div class="fc-outc">';
+              let po='<div class="fc-pm" style="margin-top:6px"><div class="topic-k">Today\'s one-pager - per-agent plan (3 planners + judge, '+esc(op.source||'')+'</div><div style="margin-bottom:4px">'+Object.keys(op.pagers).map(function(aid){return '<a href="/api/goals/onepager/'+encodeURIComponent(aid)+'" download class="dlchip">&#11015; one-pager-'+aid+'.md</a>';}).join('')+'</div><div class="fc-outc">';
               Object.keys(op.pagers).forEach(aid=>{
                 (op.pagers[aid]||[]).forEach(it=>{
                   const ref=it.ref?' <span class="hint">&larr; '+esc(it.ref)+'</span>':'';

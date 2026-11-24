@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer: all 10 goals REACHED (cycle 15, 2026-11-24), no open work in lane as of cycle 17 pass.
-- Builder: all 5 goals verified in memory
-- Mechanic added msvc
 - Scribe: All 10 cycle-15 goals REACHED; last was #5 Mode Decision Brief (mode_decision_brief.py → memory/ops/mode-briefs.md, 3 briefs).
 - Verifier cycle-15 lane fully closed 10/10 (2026-11-24); auto-loop "open goals" list was stale, spot
 - Builder: all 6 cycle-16 goals closed, integration test 20/20 PASS, idle awaiting cycle-17 assignment (2026-11-24).
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - index.html now loads ui/fleet-mode-aria.js directly (not just dynamic loader); pin advanced to sha12 87a60ffb0b8c
 - Scribe lane: 3→9/10 goals reached (cycle 17, 2026-11-24); verified cycle_closeout.py, mode_decision_brief.py, cross_agent_handoff scripts
 - Mechanic: Goal #7 (Fleet-Mode API Endpoint) implemented, 16 tests pass; now working on #8 (Auto-Loop Restart Guard).
+- All 6 cycle-16 Builder goals verified complete (artifacts + selftests pass, evidence in memory
+- Orchestrator lane fully closed: all 3 goals verified, cycle_skeleton.py passes 8/8, no open work remaining.
+- Designer produced fleet-mode-ui-tokens-reference.md (CSS audit: 0 conflicts, single z-index layer); indexed in designer/INDEX.md
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

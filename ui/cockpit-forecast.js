@@ -114,6 +114,7 @@ const ForecastPanel = (() => {
         if (plan.one_pager && plan.one_pager.pagers) {
           const op = plan.one_pager;
           html += '<div class="fc-pm fc-outcomes"><div class="fc-pm-title">Today\'s one-pager - per-agent plan (3 planners + judge, ' + (op.source || '') + ')</div>';
+          html += '<div style="margin-bottom:4px">' + Object.keys(op.pagers).map(function(aid){return '<a href="/api/goals/onepager/'+encodeURIComponent(aid)+'" download class="dlchip">&#11015; one-pager-'+aid+'.md</a>';}).join('') + '</div>';
           Object.keys(op.pagers).forEach(aid => {
             (op.pagers[aid] || []).forEach(it => {
               const ref = it.ref ? (' <span class="hint">&larr; ' + it.ref + '</span>') : '';

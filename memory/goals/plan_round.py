@@ -730,6 +730,22 @@ def run_round(doc=None, force=False):
     _save_json(LATEST_JSON, result)
     with open(LATEST_MD, "w", encoding="utf-8") as f:
         f.write(render_md(date_s, source, planner_ids, verdict, pagers, stats_out))
+    # 2026-11-24: literal per-agent one-pager .md files (downloadable from the portal UI)
+    for aid, items in pagers.items():
+        try:
+            winner = ((verdict or {}).get("winner")) or "?"
+            lines = ["# ONE-PAGER \u2014 %s" % aid, "",
+                     "Date: %s | source: %s | round: 3 planners + judge (winning plan: %s)" % (date_s, source, winner),
+                     "", "## Today's todos", ""]
+            for i, it in enumerate(items, 1):
+                ref = (" _(from %s)_" % it["ref"]) if it.get("ref") else ""
+                why = (" \u2014 " + it["why"]) if it.get("why") else ""
+                lines.append("%d. [ ] **%s**%s%s" % (i, it.get("item", ""), ref, why))
+            lines += ["", "_Keep this page to one screen: max 4 items; roll the rest back into the 7-day plan._"]
+            with open(os.path.join(os.path.dirname(LATEST_JSON), "one-pager-%s.md" % aid), "w", encoding="utf-8") as f:
+                f.write("\n".join(lines) + "\n")
+        except Exception:
+            pass
     _append_rounds({"ts": int(time.time()), "sig": sig, "source": source,
                     "planners": planner_ids, "judge": verdict,
                     "drafts": [{"label": l, "agent": aid, "model": mid,

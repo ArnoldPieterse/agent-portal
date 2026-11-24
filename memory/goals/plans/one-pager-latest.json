@@ -1,7 +1,7 @@
 {
- "ts": 1795495204,
+ "ts": 1795495986,
  "date": "2026-11-24",
- "sig": "34fe823ddde8",
+ "sig": "ce06ca822b44",
  "source": "llm-judge-local",
  "winner_label": "A",
  "planners": [
@@ -14,116 +14,116 @@
   "winner": "A",
   "scores": {
    "A": 5.0,
-   "B": 5.0,
-   "C": 5.0
+   "B": 4.28,
+   "C": 4.76
   },
   "rationale": "judge seat unavailable - local rubric: grounding x4 + coverage x3 + day-fit bonus"
  },
  "pagers": {
   "orchestrator": [
    {
-    "item": "Implement cycle_skeleton.py to auto-generate proposal JSON at close",
-    "why": "Enables automated cycle planning",
+    "item": "Implement cycle_skeleton.py to auto-generate proposal skeletons at cycle close",
+    "why": "Enables automated planning for next cycle",
     "ref": "Open Goal: Cycle Proposal Skeleton Generator"
    },
    {
-    "item": "Integrate skeleton generator into daily 14:36 plan generation hook",
-    "why": "Ensures next-day plan is drafted automatically",
-    "ref": "7-Day Plan: Generate daily social media posts [day 2-4]"
+    "item": "Integrate skeleton generator into main orchestration loop",
+    "why": "Ensures proposals are generated without manual trigger",
+    "ref": "Open Goal: Cycle Proposal Skeleton Generator"
    }
   ],
   "researcher": [
    {
-    "item": "Draft market prediction data schema for day 5 scaffold",
-    "why": "Prepares input structure for Predicting markets",
+    "item": "Validate data sources for Predicting markets scaffold",
+    "why": "Prepares input pipeline for day 5 start",
     "ref": "7-Day Plan: Predicting markets [day 5-7]"
    },
    {
-    "item": "Identify 3 open-source datasets for initial market model training",
-    "why": "Provides data source for first automated run",
-    "ref": "7-Day Plan: day 6: first automated run of Predicting markets"
+    "item": "Document market prediction baseline metrics",
+    "why": "Establishes reference for future verification",
+    "ref": "30-Day Outcomes: Predicting markets"
    }
   ],
   "builder": [
    {
-    "item": "Implement fleet_mode_writer.py for atomic JSON writes",
-    "why": "Prevents corruption during mode transitions",
-    "ref": "Queue #4: fleet-mode.json Atomic Writer (Infra)"
+    "item": "Implement Idle Task Injector in agent_portal.py dispatch logic",
+    "why": "Utilizes idle time during MAINTENANCE/IDLE modes",
+    "ref": "Queue #2: Idle Task Injector"
    },
    {
-    "item": "Add top-of-page cockpit banner showing current fleet mode",
-    "why": "Provides visual status indicator for operators",
+    "item": "Add Cockpit Mode Banner showing current fleet mode status",
+    "why": "Provides visual feedback for fleet state",
     "ref": "Queue #10: Cockpit Mode Banner"
    },
    {
-    "item": "Modify agent_portal.py to inject idle tasks in MAINTENANCE mode",
-    "why": "Utilizes downtime for productivity",
-    "ref": "Open Goal: Idle Task Injector"
+    "item": "Implement fleet-mode.json atomic writer in memory/builder/",
+    "why": "Ensures safe concurrent writes to mode config",
+    "ref": "Open Goal: fleet-mode.json Atomic Writer"
    }
   ],
   "verifier": [
    {
-    "item": "Write mode_transition_test.py simulating WORK->MAINTENANCE shift",
-    "why": "Validates state machine integrity",
+    "item": "Write mode_transition_test.py to simulate fleet mode changes",
+    "why": "Validates integrity of mode switching logic",
     "ref": "Queue #1: Mode Transition Integration Test"
    },
    {
     "item": "Create fleet-mode.json schema validator script",
-    "why": "Ensures config file validity before dispatch",
+    "why": "Prevents invalid state configurations",
     "ref": "Queue #9: fleet-mode.json Schema Validator"
    }
   ],
   "designer": [
    {
-    "item": "Add ARIA-live region for mode change announcements",
-    "why": "Improves accessibility for screen readers",
+    "item": "Add ARIA-live region for mode changes in cockpit UI",
+    "why": "Ensures accessibility for screen readers",
     "ref": "Queue #3: Fleet Mode ARIA + Keyboard Nav"
    },
    {
-    "item": "Design CSS transition for background color shift on mode change",
-    "why": "Provides clear visual feedback to users",
+    "item": "Design CSS transition for mode background color shifts",
+    "why": "Provides smooth visual feedback on state change",
     "ref": "Queue #8: Mode Transition Animation"
    }
   ],
   "archivist": [
    {
-    "item": "Archive daily snapshot of productivity-baseline.json",
-    "why": "Tracks fleet efficiency trends over time",
-    "ref": "Open Goal: Productivity Trend Archive"
+    "item": "Archive daily snapshots of productivity-baseline.json",
+    "why": "Tracks performance trends over time",
+    "ref": "Queue #5: Productivity Trend Archive"
    },
    {
-    "item": "Log mode transition anomalies exceeding 30-min deviation",
-    "why": "Flags scheduling drift for review",
+    "item": "Log mode transition anomalies to memory/archivist/",
+    "why": "Records deviations from forecast for analysis",
     "ref": "Open Goal: Mode Transition Anomaly Log"
    }
   ],
   "scribe": [
    {
-    "item": "Generate one-paragraph brief for current mode decision",
-    "why": "Documents rationale for audit trail",
-    "ref": "Open Goal: Mode Decision Brief"
+    "item": "Generate Mode Decision Brief summarizing current fleet state",
+    "why": "Provides human-readable context for decisions",
+    "ref": "Queue #6: Mode Decision Brief"
    },
    {
-    "item": "Write 10-line human-readable daily fleet state snapshot",
-    "why": "Provides quick status overview for stakeholders",
+    "item": "Create daily_snapshot.py for 10-line fleet state summary",
+    "why": "Offers quick status overview without deep dive",
     "ref": "Open Goal: Fleet State Snapshot (Daily)"
    }
   ],
   "mechanic": [
    {
-    "item": "Implement low-level atomic write utility in fleet_mode_infra.py",
-    "why": "Supports builder's atomic writer requirement",
+    "item": "Implement low-level atomic writer in memory/mechanic/fleet_mode_infra.py",
+    "why": "Provides robust infrastructure for mode updates",
     "ref": "Queue #4: fleet-mode.json Atomic Writer (Infra)"
    },
    {
-    "item": "Measure wall-clock latency for mode transition execution",
-    "why": "Identifies performance bottlenecks in state changes",
-    "ref": "Open Goal: Mode Transition Latency Measurer"
+    "item": "Build budget_monitor.py to read pass-budget.json every cycle",
+    "why": "Monitors resource usage against limits",
+    "ref": "Open Goal: Pass Budget Monitor"
    }
   ]
  },
  "stats": {
-  "sig": "34fe823ddde8",
+  "sig": "ce06ca822b44",
   "date": "2026-11-24",
   "drafts": [
    {
@@ -136,7 +136,7 @@
      "grounded": 17,
      "ratio": 1.0,
      "missing": [],
-     "repaired": false,
+     "repaired": true,
      "model": null
     }
    },
@@ -147,10 +147,10 @@
     "stats": {
      "agents": 8,
      "items": 17,
-     "grounded": 17,
-     "ratio": 1.0,
+     "grounded": 14,
+     "ratio": 0.82,
      "missing": [],
-     "repaired": false,
+     "repaired": true,
      "model": null
     }
    },
@@ -161,8 +161,8 @@
     "stats": {
      "agents": 8,
      "items": 17,
-     "grounded": 17,
-     "ratio": 1.0,
+     "grounded": 16,
+     "ratio": 0.94,
      "missing": [],
      "repaired": true,
      "model": null

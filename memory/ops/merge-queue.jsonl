@@ -329,3 +329,8 @@
 {"ts": "2026-11-24 14:03:20", "file": "agent_portal.py", "sha": "c1c04ceb7f", "size": 309518, "snapshot": "memory/ops/merge-queue/agent_portal.py.c1c04ceb7f"}
 {"ts": "2026-11-24 14:36:45", "file": "agent_portal.py", "sha": "6ecf1e775a", "size": 309647, "snapshot": "memory/ops/merge-queue/agent_portal.py.6ecf1e775a"}
 {"ts": "2026-11-24 14:36:45", "file": "ui/uploads.js", "sha": "e980c0485f", "size": 47243, "snapshot": null}
+{"ts": "2026-11-24 14:53:53", "file": "index.html", "sha": "5735c6031e", "size": 15132, "snapshot": "memory/ops/merge-queue/index.html.5735c6031e"}
+{"ts": "2026-11-24 15:09:21", "file": "agent_portal.py", "sha": "5d30bcd98d", "size": 309768, "snapshot": "memory/ops/merge-queue/agent_portal.py.5d30bcd98d"}
+{"ts": "2026-11-24 15:09:22", "file": "ui/app.css", "sha": "e8ab6cb520", "size": 36159, "snapshot": null}
+{"ts": "2026-11-24 15:09:22", "file": "ui/cockpit-forecast.js", "sha": "0b5deee25f", "size": 7301, "snapshot": null}
+{"ts": "2026-11-24 15:09:22", "file": "ui/uploads.js", "sha": "a76a332267", "size": 48199, "snapshot": null}
