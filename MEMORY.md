@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic extended
-- Designer goals are 10/10 verified per live ledger (open=0); "1/10" in prompt headers is stale, not a real gap.
-- Builder 10/10 goals REACHED; goal #10 (autonomy score CI) done: selftest 9→14 cases, write_autonomy_score_to_fleet_mode wired into run().
-- Designer: goal file shows 10/10 verified but dashboard shows 1/10 — ledger gap unresolved, needs reconciliation
 - All 10 Builder goals marked REACHED; Convergence API Endpoint done 2026-11-25T13:33Z, route wired in agent_portal.py
 - All 10/10 Mechanic goals verified; goal 9 built transition_gap_sla.py + transition-gaps.jsonl (6.2h flagged >4h SLA).
 - Researcher building `convergence_model.py` — new multi-metric steady-state trajectory model, distinct from prior convergence work; cycle-17
 - Steady-State Visual Indicator: JS already existed from prior cycle; CSS aligned to existing classes `ss-badge`, `ss-exiting`; polls `/api/fl
 - Verifier: 2 goals blocked on deps — #3 needs Orchestrator's complexity_scorer.py, #
 - Mechanic cycle-17: all 10 goals verified; built `transition_gap_sla.py` + `memory/ops/transition-gaps.jsonl` (6.2h flagged >4h).
+- Builder→Verifier handoff at memory/handoffs/builder-to-verifier-metric-validation.md maps each metric to selftest+formula
+- Mechic lane fully green: all 10/10 goals verified and closed (goals 6-10 confirmed this pass).
+- Goal #3 done: complexity_scorer_regression.py built, 10/10 self-test, live r=0.8036>0.7; auto-imports real scorer when it lands.
+- Auto-loop dispatches stale goals (Convergence Trajectory etc.) from prior archived set; cycle-17 is 10/10 complete, no
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -1,1 +1,1 @@
-{"ts": "2026-11-25T02:45:13", "seats": [{"seat": "Scribe", "status": "unreachable", "down_ticks": 56, "reload_attempts": 0, "reboots": 0}]}
+{"ts": "2026-11-25T03:00:58", "seats": [{"seat": "Researcher", "status": "not_loaded", "down_ticks": 1, "reload_attempts": 0, "reboots": 0}, {"seat": "Scribe", "status": "unreachable", "down_ticks": 57, "reload_attempts": 0, "reboots": 0}]}
