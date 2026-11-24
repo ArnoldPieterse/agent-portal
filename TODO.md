@@ -1,5 +1,7 @@
 <537 chars of arguments you sent, already written to TODO.md; elided to save room. Not tool output; the file on disk holds it.>
 
+<2859 chars of arguments you sent, already written to TODO.md; elided to save room. Not tool output; the file on disk holds it.>
+
 ## MODE-BUTTON SQUEEZE FIX - Solo/Group clickable again 2026-11-23
 Status: **DONE + verified live via Playwright** (real Chromium vs http://127.0.0.1:8099).
 User: "the full button is still not clickable, fix the UI and button sizing + placement" (circled Solo/Group segmented control; no other Full* button exists in ui/ - scanned).

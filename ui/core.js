@@ -491,7 +491,7 @@ $("todoPrune").onclick=async()=>{
     const pend=r.status==="pending";
     let what="";
     if(r.kind==="change")what=esc(r.file)+' <code>['+(r.range||[0,0])[0]+'..'+(r.range||[0,0])[1]+']</code> \u2192 '+(r.lineCount!=null?r.lineCount:"?")+" line(s)";
-    else if(r.kind==="create")what=esc(r.file)+" \u00b7 "+(r.contentChars!=null?r.contentChars+" chars");
+    else if(r.kind==="create")what=esc(r.file)+" \u00b7 "+(r.contentChars!=null?r.contentChars+" chars":"");
     else if(r.kind==="delete")what="\u2716 "+esc(r.file);
     else what="<code>"+esc((r.command||"").slice(0,140))+"</code>";
     const res=(r.result&&r.result.detail)?esc(r.result.detail):"";
