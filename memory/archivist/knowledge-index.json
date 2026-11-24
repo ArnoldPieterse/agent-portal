@@ -106450,14 +106450,14 @@
       "file": "fleet-mode",
       "path": "memory\\ops\\fleet-mode.json",
       "status": "current",
-      "age_h": 0.1,
-      "mtime": "2026-11-24T22:17:14.918668+00:00"
+      "age_h": 0.16,
+      "mtime": "2026-11-24T22:33:52.803313+00:00"
     },
     "productivity-baseline": {
       "file": "productivity-baseline",
       "path": "memory\\ops\\productivity-baseline.json",
       "status": "stale",
-      "age_h": 11.77,
+      "age_h": 12.11,
       "mtime": "2026-11-24T10:37:01.844319+00:00"
     }
   }
