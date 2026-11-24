@@ -1,0 +1,751 @@
+{
+  "generated_at": "2026-11-24T21:26:45.404555+00:00",
+  "files_checked": 8,
+  "total_goals": 80,
+  "total_passed": 77,
+  "total_failed": 3,
+  "reports": [
+    {
+      "file": "Z:\\memory\\goals\\archivist.md",
+      "agent": "archivist",
+      "total_goals": 10,
+      "passed": 10,
+      "failed": 0,
+      "results": [
+        {
+          "goal_num": 1,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 2,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 3,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 4,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 5,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 6,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 7,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 8,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 9,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 10,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        }
+      ]
+    },
+    {
+      "file": "Z:\\memory\\goals\\builder.md",
+      "agent": "builder",
+      "total_goals": 10,
+      "passed": 9,
+      "failed": 1,
+      "results": [
+        {
+          "goal_num": 1,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 2,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 3,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 4,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 5,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/orchestrator/complexity_scorer.py",
+              "pass": true,
+              "found_at": "Z:\\memory/orchestrator/complexity_scorer.py"
+            }
+          ],
+          "fixes": []
+        },
+        {
+          "goal_num": 6,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/orchestrator/autonomy_score.py",
+              "pass": true,
+              "found_at": "Z:\\memory/orchestrator/autonomy_score.py"
+            }
+          ],
+          "fixes": []
+        },
+        {
+          "goal_num": 7,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/orchestrator/goal_inherit.py",
+              "pass": true,
+              "found_at": "Z:\\memory/orchestrator/goal_inherit.py"
+            }
+          ],
+          "fixes": []
+        },
+        {
+          "goal_num": 8,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 9,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/builder/seat_draft_validate.py",
+              "pass": true,
+              "found_at": "Z:\\memory/builder/seat_draft_validate.py"
+            },
+            {
+              "type": "backup_designation",
+              "target": "Seat Draft Validation Pipeline - `python memory/builder/seat_draft_validate.py`:",
+              "pass": true,
+              "note": "No conflict detected"
+            }
+          ],
+          "fixes": []
+        },
+        {
+          "goal_num": 10,
+          "agent": "unknown",
+          "overall": "FAIL",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/scribe/cycle_retro_gen.py",
+              "pass": false,
+              "suggestion": "Create memory/scribe/cycle_retro_gen.py or fix path reference"
+            }
+          ],
+          "fixes": [
+            "Create memory/scribe/cycle_retro_gen.py or fix path reference"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Z:\\memory\\goals\\designer.md",
+      "agent": "designer",
+      "total_goals": 10,
+      "passed": 10,
+      "failed": 0,
+      "results": [
+        {
+          "goal_num": 1,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 2,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 3,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 4,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 5,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 6,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 7,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 8,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 9,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 10,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        }
+      ]
+    },
+    {
+      "file": "Z:\\memory\\goals\\mechanic.md",
+      "agent": "mechanic",
+      "total_goals": 10,
+      "passed": 10,
+      "failed": 0,
+      "results": [
+        {
+          "goal_num": 1,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 2,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 3,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 4,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 5,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 6,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 7,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 8,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 9,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 10,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        }
+      ]
+    },
+    {
+      "file": "Z:\\memory\\goals\\orchestrator.md",
+      "agent": "orchestrator",
+      "total_goals": 10,
+      "passed": 10,
+      "failed": 0,
+      "results": [
+        {
+          "goal_num": 1,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 2,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/orchestrator/cycle_estimator.py",
+              "pass": true,
+              "found_at": "Z:\\memory/orchestrator/cycle_estimator.py"
+            }
+          ],
+          "fixes": []
+        },
+        {
+          "goal_num": 3,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 4,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/orchestrator/complexity_scorer.py",
+              "pass": true,
+              "found_at": "Z:\\memory/orchestrator/complexity_scorer.py"
+            }
+          ],
+          "fixes": []
+        },
+        {
+          "goal_num": 5,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 6,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/orchestrator/auto_priority.py",
+              "pass": true,
+              "found_at": "Z:\\memory/orchestrator/auto_priority.py"
+            }
+          ],
+          "fixes": []
+        },
+        {
+          "goal_num": 7,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 8,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/orchestrator/autonomy_score.py",
+              "pass": true,
+              "found_at": "Z:\\memory/orchestrator/autonomy_score.py"
+            }
+          ],
+          "fixes": []
+        },
+        {
+          "goal_num": 9,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 10,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "backup_designation",
+              "target": "Seat Draft Goal Quality Gate - for goals drafted on behalf of unreachable seats ",
+              "pass": true,
+              "note": "No conflict detected"
+            }
+          ],
+          "fixes": []
+        }
+      ]
+    },
+    {
+      "file": "Z:\\memory\\goals\\researcher.md",
+      "agent": "researcher",
+      "total_goals": 10,
+      "passed": 8,
+      "failed": 2,
+      "results": [
+        {
+          "goal_num": 1,
+          "agent": "unknown",
+          "overall": "FAIL",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/researcher/convergence_model.py",
+              "pass": false,
+              "suggestion": "Create memory/researcher/convergence_model.py or fix path reference"
+            }
+          ],
+          "fixes": [
+            "Create memory/researcher/convergence_model.py or fix path reference"
+          ]
+        },
+        {
+          "goal_num": 2,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "backup_designation",
+              "target": "Failure Mode Taxonomy - analyze all past failures/rework from archive: classify ",
+              "pass": true,
+              "note": "No conflict detected"
+            }
+          ],
+          "fixes": []
+        },
+        {
+          "goal_num": 3,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 4,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 5,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 6,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 7,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 8,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 9,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 10,
+          "agent": "unknown",
+          "overall": "FAIL",
+          "checks": [
+            {
+              "type": "tool_existence",
+              "target": "memory/researcher/topic_scorer.py",
+              "pass": false,
+              "suggestion": "Create memory/researcher/topic_scorer.py or fix path reference"
+            }
+          ],
+          "fixes": [
+            "Create memory/researcher/topic_scorer.py or fix path reference"
+          ]
+        }
+      ]
+    },
+    {
+      "file": "Z:\\memory\\goals\\scribe.md",
+      "agent": "scribe",
+      "total_goals": 10,
+      "passed": 10,
+      "failed": 0,
+      "results": [
+        {
+          "goal_num": 1,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 2,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 3,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 4,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 5,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 6,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 7,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 8,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 9,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 10,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        }
+      ]
+    },
+    {
+      "file": "Z:\\memory\\goals\\verifier.md",
+      "agent": "verifier",
+      "total_goals": 10,
+      "passed": 10,
+      "failed": 0,
+      "results": [
+        {
+          "goal_num": 1,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 2,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 3,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 4,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 5,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 6,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 7,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 8,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [
+            {
+              "type": "backup_designation",
+              "target": "Seat Draft Goal Executability Check - for goals drafted for unreachable seats, v",
+              "pass": true,
+              "note": "No conflict detected"
+            }
+          ],
+          "fixes": []
+        },
+        {
+          "goal_num": 9,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        },
+        {
+          "goal_num": 10,
+          "agent": "unknown",
+          "overall": "PASS",
+          "checks": [],
+          "fixes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-11-24T21:24:04.307643+00:00",
+  "source_candidates": 1,
+  "proposals": [
+    {
+      "goal_id": "v2-7-9f5feafb",
+      "title": "Cross-Cycle Goal Inheritance (v2)",
+      "text": "Inherited from cycle-? goal #7 in orchestrator.md. Original scope: when a goal from cycle N is still valuable in cycle N+1 but was scoped down (e.g., \"v1\" done, \"v2\" pending), auto-generate the v2 goal with inherited context + updated verification criteria. Verified:. v1 markers detected: \\bv1\\b. Updated verification: 3 inheritance cases produce valid goals not in closed_topics. + confirm v2 scope complete. Link to v1: orchestrator.md#goal-7",
+      "v1_ref": "orchestrator.md#goal-7",
+      "v2_verification": "3 inheritance cases produce valid goals not in closed_topics. + confirm v2 scope complete",
+      "inherited_context": "when a goal from cycle N is still valuable in cycle N+1 but was scoped down (e.g., \"v1\" done, \"v2\" pending), auto-generate the v2 goal with inherited context + updated verification criteria. Verified: 3 inheritance cases produce valid goals not in closed_topics. (verified: 2026-11-25 - goal_inheritance.py selftest PASS: 3/3 synthetic cases produce valid v2 goals (title, body>50ch, verification criteria, inherited context, valid agent, not in closed_topics). Live scan: 0 scoped-down )",
+      "cycle": "2026-11-24"
+    }
+  ]
+}

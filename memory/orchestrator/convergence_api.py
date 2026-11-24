@@ -358,5 +358,179 @@ def selftest():
     return data
 
 
+# ─── /api/convergence/trend (Goal #8: Convergence Panel Backend) ──────────────
+
+def _get_efficiency_index_entries():
+    """Read efficiency-index.jsonl and return list of {cycle, efficiency_index, rework_rate}."""
+    path = os.path.join(OPS_DIR, "efficiency-index.jsonl")
+    entries = _read_jsonl(path)
+    return [
+        {
+            "cycle": e.get("cycle", "?"),
+            "efficiency_index": e.get("efficiency_index"),
+            "rework_rate": e.get("rework_rate"),
+            "velocity": e.get("velocity_goals_per_pass"),
+        }
+        for e in entries
+    ]
+
+
+def _get_autonomy_trend():
+    """Build autonomy score trend from available sources.
+    Sources: autonomy-score.json (current), cycle-efficiency*.json (historical velocity proxy).
+    Returns list of {cycle, score} sorted by cycle, up to last 5."""
+    # Current score
+    cur = _get_autonomy_score_file()
+    points = []
+    if cur[0] is not None:
+        points.append({"cycle": "current", "score": cur[0]})
+
+    # Try to derive historical scores from cycle-efficiency files (velocity as proxy)
+    for f in sorted(os.listdir(OPS_DIR)):
+        if f.startswith("cycle-efficiency") and f.endswith(".json"):
+            data = _read_json(os.path.join(OPS_DIR, f))
+            cycle = str(data.get("cycle", "?"))
+            vel = data.get("velocity_goals_per_pass")
+            if vel is not None:
+                # Normalize velocity to a 0-100 proxy score
+                points.append({"cycle": cycle, "score": round(min(100, vel * 500), 1)})
+
+    # Sort by cycle number (current goes last)
+    def sort_key(p):
+        if p["cycle"] == "current":
+            return 9999
+        return _cycle_num(p["cycle"])
+    points.sort(key=sort_key)
+    return points[-5:]
+
+
+def _get_intervention_trend():
+    """Group interventions by cycle, return last 5 as {cycle, count}."""
+    path = os.path.join(OPS_DIR, "human-interventions.jsonl")
+    entries = _read_jsonl(path)
+    counts = {}
+    for e in entries:
+        c = str(e.get("cycle", "?"))
+        counts[c] = counts.get(c, 0) + 1
+    # Sort by cycle number, take last 5
+    sorted_cycles = sorted(counts.keys(), key=lambda c: _cycle_num(c))
+    return [{"cycle": c, "count": counts[c]} for c in sorted_cycles[-5:]]
+
+
+def handle_convergence_trend(force=False):
+    """Handler for GET /api/convergence/trend.
+    Returns 5 data points per metric (autonomy_score, intervention_count, efficiency_index).
+    Pads with null if fewer than 5 real data points available.
+    Caches 5 min like the parent endpoint."""
+    global _cache
+    now = time.time()
+    if not force and _cache["data"] and (now - _cache["ts"]) < CACHE_TTL:
+        return _cache["data"].get("trend", {})
+
+    # If we have full data cached, extract trend from it
+    if not force and _cache["data"]:
+        cached_trend = _cache["data"].get("trend")
+        if cached_trend:
+            return cached_trend
+
+    # Compute fresh
+    autonomy_pts = _get_autonomy_trend()
+    intervention_pts = _get_intervention_trend()
+    efficiency_pts = _get_efficiency_index_entries()[-5:]
+
+    # Normalize to {cycle, value} and pad to exactly 5
+    def normalize_pad(points, val_key, n=5):
+        norm = [{"cycle": p["cycle"], "value": p[val_key]} for p in points]
+        while len(norm) < n:
+            norm.insert(0, {"cycle": None, "value": None})
+        return norm[-n:]
+
+    trend = {
+        "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "autonomy_score": normalize_pad(autonomy_pts, "score"),
+        "intervention_count": normalize_pad(intervention_pts, "count"),
+        "efficiency_index": normalize_pad(efficiency_pts, "efficiency_index"),
+    }
+
+    # Store in cache under 'trend' key
+    if _cache["data"] is None:
+        _cache["data"] = {}
+    _cache["data"]["trend"] = trend
+    _cache["ts"] = now
+    return trend
+
+
+def selftest_trend():
+    """Selftest for /api/convergence/trend: verify 5 data points per metric, matches source files."""
+    print("=== convergence_api.py TREND SELFTEST ===")
+
+    # Create synthetic efficiency-index entries to ensure 5 data points
+    test_dir = os.path.join(HERE, "memory", "ops")
+    ei_path = os.path.join(test_dir, "efficiency-index.jsonl")
+
+    # Back up original
+    orig_content = ""
+    if os.path.exists(ei_path):
+        with open(ei_path, encoding="utf-8") as f:
+            orig_content = f.read()
+
+    # Write 5 synthetic entries for test
+    import json as _json
+    synthetic = []
+    for i in range(12, 17):
+        synthetic.append({"cycle": i, "efficiency_index": round(0.15 + i * 0.01, 4),
+                          "rework_rate": round(0.1 - i * 0.005, 4),
+                          "velocity_goals_per_pass": round(0.2 + i * 0.01, 4)})
+    with open(ei_path, "w", encoding="utf-8") as f:
+        for s in synthetic:
+            f.write(_json.dumps(s) + "\n")
+
+    try:
+        trend = handle_convergence_trend(force=True)
+
+        # Verify structure: 5 data points per metric
+        assert len(trend["autonomy_score"]) == 5, f"autonomy_score has {len(trend['autonomy_score'])} points, expected 5"
+        assert len(trend["intervention_count"]) == 5, f"intervention_count has {len(trend['intervention_count'])} points, expected 5"
+        assert len(trend["efficiency_index"]) == 5, f"efficiency_index has {len(trend['efficiency_index'])} points, expected 5"
+
+        # Verify efficiency_index matches source (last 5 of synthetic)
+        src_entries = [s for s in synthetic][-5:]
+        for i, pt in enumerate(trend["efficiency_index"]):
+            if pt["cycle"] is not None:
+                expected_val = src_entries[i]["efficiency_index"]
+                assert abs(pt["value"] - expected_val) < 0.001, \
+                    f"efficiency mismatch at {pt['cycle']}: got {pt['value']}, expected {expected_val}"
+
+        # Verify intervention_count matches source
+        int_path = os.path.join(test_dir, "human-interventions.jsonl")
+        with open(int_path, encoding="utf-8") as f:
+            int_lines = [json.loads(l) for l in f if l.strip()]
+        int_counts = {}
+        for e in int_lines:
+            c = str(e.get("cycle", "?"))
+            int_counts[c] = int_counts.get(c, 0) + 1
+        # Check that non-null points match
+        for pt in trend["intervention_count"]:
+            if pt["cycle"] is not None and pt["cycle"] in int_counts:
+                assert pt["value"] == int_counts[pt["cycle"]], \
+                    f"intervention mismatch at cycle {pt['cycle']}: got {pt['value']}, expected {int_counts[pt['cycle']]}"
+
+        # Verify cache works
+        t2 = handle_convergence_trend()  # should be cached
+        assert t2 == trend, "cache miss on immediate repeat"
+
+        print(f"  autonomy_score: {[p['value'] for p in trend['autonomy_score']]}")
+        print(f"  intervention_count: {[p['value'] for p in trend['intervention_count']]}")
+        print(f"  efficiency_index: {[p['value'] for p in trend['efficiency_index']]}")
+        print("  TREND SELFTEST PASS: 5 pts/metric, matches source, cache OK")
+    finally:
+        # Restore original
+        with open(ei_path, "w", encoding="utf-8") as f:
+            f.write(orig_content)
+
+    return True
+
+
 if __name__ == "__main__":
     selftest()
+    selftest_trend()

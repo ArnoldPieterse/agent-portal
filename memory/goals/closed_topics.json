@@ -2266,5 +2266,23 @@
 "text": "**Cycle Estimator Integration** - integrate cycle_estimator.py output into fleet-mode.json as `cycle_estimate` field. Update cockpit to disp",
 "agent": "builder",
 "at": "2026-11-25"
+},
+{
+"sig": "b49087264c69b431",
+"text": "**Fleet Decision Archive** - compile autonomous decisions (ops + dispatch) into searchable archive with categories/outcomes. Identify good v",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "717705eb50b1c1c1",
+"text": "**Steady-State Scheduler Adaptation** - modify the scheduled task that drives cycle frequency: when fleet-mode.json shows mode=STEADY-STATE,",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "31998599fc376c26",
+"text": "**Intervention Logger Hook** - add hook to agent_portal.py message handler: when a human message matches unblock/redirect patterns (regex + ",
+"agent": "builder",
+"at": "2026-11-25"
 }
 ]

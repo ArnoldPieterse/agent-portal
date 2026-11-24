@@ -187,3 +187,6 @@
 {"timestamp": "2026-11-24T21:21:49.076531+00:00", "agent": "Mechanic", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 487334}
 {"timestamp": "2026-11-24T21:21:49.084224+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 487385}
 {"timestamp": "2026-11-24T21:21:49.093789+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 487368}
+{"timestamp": "2026-11-24T21:29:16.505568+00:00", "agent": "Mechanic", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 447428}
+{"timestamp": "2026-11-24T21:29:16.518253+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 447432}
+{"timestamp": "2026-11-24T21:29:16.526871+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 447433}

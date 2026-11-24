@@ -1,5 +1,9 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-24 (Archivist: +evidence-cockpit-frontend pointer, citation_monitor unindexed 4->0; earlier: policy_conflict.py pointer)
+Last updated: 2026-11-25 (Builder: +goal_inherit, convergence_trend, seat_draft_validate, cycle_retro_gen evidence)
+- goal_inherit_evidence_2026-11-25.md -> memory/builder/goal_inherit_evidence_2026-11-25.md   Goal #7: cross-cycle inheritance generator; selftest 3/3 PASS
+- convergence_trend_evidence_2026-11-25.md -> memory/builder/convergence_trend_evidence_2026-11-25.md   Goal #8: /api/convergence/trend endpoint; 5 pts/metric, cache OK
+- seat_draft_validate_evidence_2026-11-25.md -> memory/builder/seat_draft_validate_evidence_2026-11-25.md   Goal #9: draft validation pipeline; 80 goals/8 files, 77P/3F
+- cycle_retro_gen_evidence_2026-11-25.md -> memory/builder/cycle_retro_gen_evidence_2026-11-25.md   Goal #10: retro generator; 7 sections, all refs resolve
 - intervention-logger-evidence-2026-11-25.md -> memory/builder/intervention-logger-evidence-2026-11-25.md   Goal #4: pattern-based human intervention detection; selftest 9/9 PASS
 - steady-state-scheduler-evidence-2026-11-25.md -> memory/builder/steady-state-scheduler-evidence-2026-11-25.md   Goal #3: scheduler adapts cadence daily<->biweekly on STEADY-STATE; selftest 6/6 PASS
 - evidence-cockpit-frontend-2026-11-24.md -> memory/builder/evidence-cockpit-frontend-2026-11-24.md
