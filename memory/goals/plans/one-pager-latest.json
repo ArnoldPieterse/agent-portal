@@ -1,167 +1,175 @@
 {
- "ts": 1795516338,
- "date": "2026-11-24",
- "sig": "69cd70eae185",
- "source": "llm-judge-local",
- "winner_label": "B",
+ "ts": 1795553279,
+ "date": "2026-11-25",
+ "sig": "985baccbc839",
+ "source": "llm-single-draft",
+ "winner_label": "A",
  "planners": [
-  "orchestrator",
-  "builder",
-  "verifier"
+  "mechanic"
  ],
  "judge": {
-  "agent": "local-rubric",
-  "winner": "B",
-  "scores": {
-   "B": 4.76,
-   "C": 4.68
-  },
-  "rationale": "judge seat unavailable - local rubric: grounding x4 + coverage x3 + day-fit bonus"
+  "agent": "none",
+  "winner": "A",
+  "scores": {},
+  "rationale": "only valid draft (other seats failed or ungrounded)"
  },
  "pagers": {
   "orchestrator": [
    {
-    "item": "Review NEXT-10 queue and confirm dispatch order for verifier, builder, designer",
-    "why": "Ensure critical path items start on time",
-    "ref": "NEXT-10 QUEUE #1-#3"
+    "item": "Review convergence metrics from verifier and approve steady-state transition criteria",
+    "why": "Unblocks fleet-wide mode change",
+    "ref": "Convergence Metric Validation (eta 2026-11-25 08:18)"
    },
    {
-    "item": "Monitor fleet progress (47.5%) against 7-day plan milestones for day 2",
-    "why": "Verify alignment with 'scaffold + wire up' targets",
-    "ref": "7-DAY PLAN: Generate daily social media posts [day 2]"
+    "item": "Prioritize 'Predicting markets' scaffold for day 5 start in next cycle plan",
+    "why": "Ensures alignment with 7-day plan timeline",
+    "ref": "day 5: scaffold + wire up Predicting markets"
+   },
+   {
+    "item": "Validate dependency graph between 'Making money' and 'Positive money income' prep",
+    "why": "Confirms revenue channel readiness for day 12 deadline",
+    "ref": "Making money (revenue channels live) [day 4-7 -> runs to day 12]"
    }
   ],
   "researcher": [
    {
-    "item": "Validate data sources for 'Predicting markets' scaffold preparation",
-    "why": "Prepare inputs for day 5 start of market prediction",
-    "ref": "7-DAY PLAN: Predicting markets [day 5-7]"
+    "item": "Implement feature extraction logic for Goal Acceptance Rate Predictor",
+    "why": "Advances open goal on acceptance prediction",
+    "ref": "**Goal Acceptance Rate Predictor** - from goal text features"
    },
    {
-    "item": "Research API requirements for 'Writing valid tenders' camera access integration",
-    "why": "Support day 4 scaffold and wire-up",
-    "ref": "7-DAY PLAN: Writing valid tenders [day 4]"
+    "item": "Draft initial data schema for Cross-Agent Dependency Graph",
+    "why": "Starts construction of dependency visualization",
+    "ref": "**Cross-Agent Dependency Graph** - build directed graph"
+   },
+   {
+    "item": "Collect baseline metrics for Cycle Efficiency Index calculation",
+    "why": "Prepares composite metric computation",
+    "ref": "**Cycle Efficiency Index** - composite metric per cycle"
    }
   ],
   "builder": [
    {
-    "item": "Implement Idle Task Injector in agent_portal.py dispatch logic",
-    "why": "Advance open goal for idle mode handling",
-    "ref": "OPEN GOALS: builder - Idle Task Injector"
+    "item": "Implement /api/convergence endpoint in agent_portal.py",
+    "why": "Delivers queue item #7",
+    "ref": "#7 [builder] Convergence API Endpoint (eta 2026-11-25 09:58)"
    },
    {
-    "item": "Add Cockpit Mode Banner to cockpit UI showing fleet mode status",
-    "why": "Complete queue item #9 for visibility",
-    "ref": "NEXT-10 QUEUE #9 [builder] Cockpit Mode Banner"
+    "item": "Integrate cycle_estimator.py output into fleet-mode.json",
+    "why": "Enables dynamic scheduling adjustments",
+    "ref": "**Cycle Estimator Integration** - integrate cycle_estimator.py output"
    },
    {
-    "item": "Implement memory/builder/fleet_mode_writer.py for atomic writes",
-    "why": "Support infrastructure for mode transitions",
-    "ref": "OPEN GOALS: builder - fleet-mode.json Atomic Writer"
+    "item": "Add hook to agent_portal.py for intervention logging",
+    "why": "Captures human interaction data for analysis",
+    "ref": "**Intervention Logger Hook** - add hook to agent_portal.py"
    }
   ],
   "verifier": [
    {
-    "item": "Execute Mode Transition Integration Test script",
-    "why": "Complete queue item #1 with high probability",
-    "ref": "NEXT-10 QUEUE #1 [verifier] Mode Transition Integration Test"
+    "item": "Execute Convergence Metric Validation suite against current fleet state",
+    "why": "Completes queue item #1 with high probability",
+    "ref": "#1 [verifier] Convergence Metric Validation (eta 2026-11-25 08:18)"
    },
    {
-    "item": "Develop fleet-mode.json Schema Validator script",
-    "why": "Prepare for queue item #8 validation needs",
-    "ref": "OPEN GOALS: verifier - fleet-mode.json Schema Validator"
+    "item": "Run Steady-State Transition Test simulation",
+    "why": "Validates mode switching logic",
+    "ref": "#8 [verifier] Steady-State Transition Test (eta 2026-11-25 10:05)"
+   },
+   {
+    "item": "Test Goal Complexity Scorer against 20 known goal samples",
+    "why": "Ensures scorer accuracy before deployment",
+    "ref": "#10 [verifier] Goal Complexity Scorer Regression (eta 2026-11-25 11:52)"
    }
   ],
   "designer": [
    {
-    "item": "Implement ARIA-live region and keyboard nav for Fleet Mode UI",
-    "why": "Complete queue item #3 accessibility requirement",
-    "ref": "NEXT-10 QUEUE #3 [designer] Fleet Mode ARIA + Keyboard Nav"
+    "item": "Design UI mockup for Steady-State Visual Indicator",
+    "why": "Prepares implementation of queue item #5",
+    "ref": "#5 [designer] Steady-State Visual Indicator (eta 2026-11-25 09:16)"
    },
    {
-    "item": "Design CSS transition animation for mode changes (green->amber)",
-    "why": "Advance queue item #7 visual feedback",
-    "ref": "NEXT-10 QUEUE #7 [designer] Mode Transition Animation"
+    "item": "Sketch layout for Cycle Duration Forecast Widget",
+    "why": "Advances open goal on duration visualization",
+    "ref": "**Cycle Duration Forecast Widget** - small chart showing actual vs predicted"
+   },
+   {
+    "item": "Define color palette for Goal Complexity Heatmap",
+    "why": "Standardizes visual representation of complexity",
+    "ref": "**Goal Complexity Heatmap** - grid view of current cycle goals"
    }
   ],
   "archivist": [
    {
-    "item": "Implement Mode Transition Anomaly Log script",
-    "why": "Complete queue item #4 with high probability",
-    "ref": "NEXT-10 QUEUE #4 [archivist] Mode Transition Anomaly Log"
+    "item": "Draft memory/archivist/convergence-kb.md with steady-state criteria",
+    "why": "Completes queue item #3",
+    "ref": "#3 [archivist] Convergence Knowledge Base Entry (eta 2026-11-25 09:00)"
    },
    {
-    "item": "Draft Fleet Autonomy Metrics Glossary definitions",
-    "why": "Advance open goal for formal metric definitions",
-    "ref": "OPEN GOALS: archivist - Fleet Autonomy Metrics Glossary"
+    "item": "Extend archive INDEX.md with structured metadata for last 5 cycles",
+    "why": "Improves historical data accessibility",
+    "ref": "**Cycle History Index v2** - extend archive INDEX.md"
+   },
+   {
+    "item": "Document computation lineage for autonomy score metric",
+    "why": "Ensures transparency in convergence metrics",
+    "ref": "**Convergence Metric Lineage** - document full computation lineage"
    }
   ],
   "scribe": [
    {
-    "item": "Generate Cycle Close-Out Report using cycle_closeout.py",
-    "why": "Complete queue item #6 documentation need",
-    "ref": "NEXT-10 QUEUE #6 [scribe] Cycle Close-Out Report"
+    "item": "Generate 3-paragraph narrative on current fleet convergence status",
+    "why": "Completes queue item #4",
+    "ref": "#4 [scribe] Convergence Narrative Generator (eta 2026-11-25 09:11)"
    },
    {
-    "item": "Write Mode Decision Brief for current fleet state transition",
-    "why": "Document decision rationale per open goal",
-    "ref": "OPEN GOALS: scribe - Mode Decision Brief"
+    "item": "Draft template for Weekly Convergence Digest",
+    "why": "Prepares recurring reporting mechanism",
+    "ref": "**Weekly Convergence Digest** - every 7 days: one-paragraph summary"
+   },
+   {
+    "item": "Write initial section for Intervention Reduction Story",
+    "why": "Starts narrative on human intervention trends",
+    "ref": "**Intervention Reduction Story** - narrate reduction in human interventions"
    }
   ],
   "mechanic": [
    {
-    "item": "Implement fleet-mode.json Atomic Writer infrastructure script",
-    "why": "Complete queue item #5 low-level infra need",
-    "ref": "NEXT-10 QUEUE #5 [mechanic] fleet-mode.json Atomic Writer (Infra)"
+    "item": "Extend seat_probe.py to track response-time trend per seat",
+    "why": "Completes queue item #2",
+    "ref": "#2 [mechanic] Predictive Seat Health Monitor (eta 2026-11-25 08:52)"
    },
    {
-    "item": "Develop Pass Budget Monitor script to read pass-budget.json",
-    "why": "Advance queue item #10 monitoring capability",
-    "ref": "NEXT-10 QUEUE #10 [mechanic] Pass Budget Monitor"
+    "item": "Draft memory/mechanic/steady-state-playbook.md with reduced probe frequency",
+    "why": "Completes queue item #9",
+    "ref": "#9 [mechanic] Steady-State Ops Playbook (eta 2026-11-25 10:39)"
+   },
+   {
+    "item": "Implement wall-clock measurement for cycle duration in ops tracker",
+    "why": "Starts Cycle Duration Ops Tracker goal",
+    "ref": "**Cycle Duration Ops Tracker** - measure wall-clock per cycle"
    }
   ]
  },
  "stats": {
-  "sig": "69cd70eae185",
-  "date": "2026-11-24",
+  "sig": "985baccbc839",
+  "date": "2026-11-25",
   "drafts": [
    {
     "label": "A",
-    "agent": "orchestrator",
-    "model": "Qwen3.8-27B-Q4_K_S",
-    "stats": {
-     "error": "draft call failed: timed out"
-    }
-   },
-   {
-    "label": "B",
-    "agent": "builder",
-    "model": "Qwen3.8-27B-Q8_0",
+    "agent": "mechanic",
+    "model": "mechanic-q4",
     "stats": {
      "agents": 8,
-     "items": 17,
-     "grounded": 16,
-     "ratio": 0.94,
-     "missing": [],
-     "repaired": false,
-     "model": null
-    }
-   },
-   {
-    "label": "C",
-    "agent": "verifier",
-    "model": "Qwen3.8-27B-Q4_K_S",
-    "stats": {
-     "agents": 8,
-     "items": 25,
+     "items": 24,
      "grounded": 23,
-     "ratio": 0.92,
+     "ratio": 0.96,
      "missing": [],
      "repaired": true,
      "model": null
     }
    }
   ],
-  "source": "llm-judge-local"
+  "source": "llm-single-draft"
  }
 }

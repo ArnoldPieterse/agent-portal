@@ -1,38 +1,45 @@
-# FLEET ONE-PAGER - 2026-11-24
+# FLEET ONE-PAGER - 2026-11-25
 
-Source: **llm-judge-local** | planners: orchestrator, builder, verifier | judge: local-rubric - winner B: judge seat unavailable - local rubric: grounding x4 + coverage x3 + day-fit bonus
+Source: **llm-single-draft** | planners: mechanic | judge: none - winner A: only valid draft (other seats failed or ungrounded)
 
 ## orchestrator
-1. **Review NEXT-10 queue and confirm dispatch order for verifier, builder, designer** _(from: NEXT-10 QUEUE #1-#3)_ - Ensure critical path items start on time
-2. **Monitor fleet progress (47.5%) against 7-day plan milestones for day 2** _(from: 7-DAY PLAN: Generate daily social media posts [day 2])_ - Verify alignment with 'scaffold + wire up' targets
+1. **Review convergence metrics from verifier and approve steady-state transition criteria** _(from: Convergence Metric Validation (eta 2026-11-25 08:18))_ - Unblocks fleet-wide mode change
+2. **Prioritize 'Predicting markets' scaffold for day 5 start in next cycle plan** _(from: day 5: scaffold + wire up Predicting markets)_ - Ensures alignment with 7-day plan timeline
+3. **Validate dependency graph between 'Making money' and 'Positive money income' prep** _(from: Making money (revenue channels live) [day 4-7 -> runs to day 12])_ - Confirms revenue channel readiness for day 12 deadline
 
 ## researcher
-1. **Validate data sources for 'Predicting markets' scaffold preparation** _(from: 7-DAY PLAN: Predicting markets [day 5-7])_ - Prepare inputs for day 5 start of market prediction
-2. **Research API requirements for 'Writing valid tenders' camera access integration** _(from: 7-DAY PLAN: Writing valid tenders [day 4])_ - Support day 4 scaffold and wire-up
+1. **Implement feature extraction logic for Goal Acceptance Rate Predictor** _(from: **Goal Acceptance Rate Predictor** - from goal text features)_ - Advances open goal on acceptance prediction
+2. **Draft initial data schema for Cross-Agent Dependency Graph** _(from: **Cross-Agent Dependency Graph** - build directed graph)_ - Starts construction of dependency visualization
+3. **Collect baseline metrics for Cycle Efficiency Index calculation** _(from: **Cycle Efficiency Index** - composite metric per cycle)_ - Prepares composite metric computation
 
 ## builder
-1. **Implement Idle Task Injector in agent_portal.py dispatch logic** _(from: OPEN GOALS: builder - Idle Task Injector)_ - Advance open goal for idle mode handling
-2. **Add Cockpit Mode Banner to cockpit UI showing fleet mode status** _(from: NEXT-10 QUEUE #9 [builder] Cockpit Mode Banner)_ - Complete queue item #9 for visibility
-3. **Implement memory/builder/fleet_mode_writer.py for atomic writes** _(from: OPEN GOALS: builder - fleet-mode.json Atomic Writer)_ - Support infrastructure for mode transitions
+1. **Implement /api/convergence endpoint in agent_portal.py** _(from: #7 [builder] Convergence API Endpoint (eta 2026-11-25 09:58))_ - Delivers queue item #7
+2. **Integrate cycle_estimator.py output into fleet-mode.json** _(from: **Cycle Estimator Integration** - integrate cycle_estimator.py output)_ - Enables dynamic scheduling adjustments
+3. **Add hook to agent_portal.py for intervention logging** _(from: **Intervention Logger Hook** - add hook to agent_portal.py)_ - Captures human interaction data for analysis
 
 ## verifier
-1. **Execute Mode Transition Integration Test script** _(from: NEXT-10 QUEUE #1 [verifier] Mode Transition Integration Test)_ - Complete queue item #1 with high probability
-2. **Develop fleet-mode.json Schema Validator script** _(from: OPEN GOALS: verifier - fleet-mode.json Schema Validator)_ - Prepare for queue item #8 validation needs
+1. **Execute Convergence Metric Validation suite against current fleet state** _(from: #1 [verifier] Convergence Metric Validation (eta 2026-11-25 08:18))_ - Completes queue item #1 with high probability
+2. **Run Steady-State Transition Test simulation** _(from: #8 [verifier] Steady-State Transition Test (eta 2026-11-25 10:05))_ - Validates mode switching logic
+3. **Test Goal Complexity Scorer against 20 known goal samples** _(from: #10 [verifier] Goal Complexity Scorer Regression (eta 2026-11-25 11:52))_ - Ensures scorer accuracy before deployment
 
 ## designer
-1. **Implement ARIA-live region and keyboard nav for Fleet Mode UI** _(from: NEXT-10 QUEUE #3 [designer] Fleet Mode ARIA + Keyboard Nav)_ - Complete queue item #3 accessibility requirement
-2. **Design CSS transition animation for mode changes (green->amber)** _(from: NEXT-10 QUEUE #7 [designer] Mode Transition Animation)_ - Advance queue item #7 visual feedback
+1. **Design UI mockup for Steady-State Visual Indicator** _(from: #5 [designer] Steady-State Visual Indicator (eta 2026-11-25 09:16))_ - Prepares implementation of queue item #5
+2. **Sketch layout for Cycle Duration Forecast Widget** _(from: **Cycle Duration Forecast Widget** - small chart showing actual vs predicted)_ - Advances open goal on duration visualization
+3. **Define color palette for Goal Complexity Heatmap** _(from: **Goal Complexity Heatmap** - grid view of current cycle goals)_ - Standardizes visual representation of complexity
 
 ## archivist
-1. **Implement Mode Transition Anomaly Log script** _(from: NEXT-10 QUEUE #4 [archivist] Mode Transition Anomaly Log)_ - Complete queue item #4 with high probability
-2. **Draft Fleet Autonomy Metrics Glossary definitions** _(from: OPEN GOALS: archivist - Fleet Autonomy Metrics Glossary)_ - Advance open goal for formal metric definitions
+1. **Draft memory/archivist/convergence-kb.md with steady-state criteria** _(from: #3 [archivist] Convergence Knowledge Base Entry (eta 2026-11-25 09:00))_ - Completes queue item #3
+2. **Extend archive INDEX.md with structured metadata for last 5 cycles** _(from: **Cycle History Index v2** - extend archive INDEX.md)_ - Improves historical data accessibility
+3. **Document computation lineage for autonomy score metric** _(from: **Convergence Metric Lineage** - document full computation lineage)_ - Ensures transparency in convergence metrics
 
 ## scribe
-1. **Generate Cycle Close-Out Report using cycle_closeout.py** _(from: NEXT-10 QUEUE #6 [scribe] Cycle Close-Out Report)_ - Complete queue item #6 documentation need
-2. **Write Mode Decision Brief for current fleet state transition** _(from: OPEN GOALS: scribe - Mode Decision Brief)_ - Document decision rationale per open goal
+1. **Generate 3-paragraph narrative on current fleet convergence status** _(from: #4 [scribe] Convergence Narrative Generator (eta 2026-11-25 09:11))_ - Completes queue item #4
+2. **Draft template for Weekly Convergence Digest** _(from: **Weekly Convergence Digest** - every 7 days: one-paragraph summary)_ - Prepares recurring reporting mechanism
+3. **Write initial section for Intervention Reduction Story** _(from: **Intervention Reduction Story** - narrate reduction in human interventions)_ - Starts narrative on human intervention trends
 
 ## mechanic
-1. **Implement fleet-mode.json Atomic Writer infrastructure script** _(from: NEXT-10 QUEUE #5 [mechanic] fleet-mode.json Atomic Writer (Infra))_ - Complete queue item #5 low-level infra need
-2. **Develop Pass Budget Monitor script to read pass-budget.json** _(from: NEXT-10 QUEUE #10 [mechanic] Pass Budget Monitor)_ - Advance queue item #10 monitoring capability
+1. **Extend seat_probe.py to track response-time trend per seat** _(from: #2 [mechanic] Predictive Seat Health Monitor (eta 2026-11-25 08:52))_ - Completes queue item #2
+2. **Draft memory/mechanic/steady-state-playbook.md with reduced probe frequency** _(from: #9 [mechanic] Steady-State Ops Playbook (eta 2026-11-25 10:39))_ - Completes queue item #9
+3. **Implement wall-clock measurement for cycle duration in ops tracker** _(from: **Cycle Duration Ops Tracker** - measure wall-clock per cycle)_ - Starts Cycle Duration Ops Tracker goal
 
-_round stats: {"sig": "69cd70eae185", "date": "2026-11-24", "drafts": [{"label": "A", "agent": "orchestrator", "model": "Qwen3.8-27B-Q4_K_S", "stats": {"error": "draft call failed: timed out"}}, {"label": "B", "agent": "builder", "model": "Qwen3.8-27B-Q8_0", "stats": {"agents": 8, "items": 17, "grounded": 16, "ra_
+_round stats: {"sig": "985baccbc839", "date": "2026-11-25", "drafts": [{"label": "A", "agent": "mechanic", "model": "mechanic-q4", "stats": {"agents": 8, "items": 24, "grounded": 23, "ratio": 0.96, "missing": [], "repaired": true, "model": null}}], "source": "llm-single-draft"}_

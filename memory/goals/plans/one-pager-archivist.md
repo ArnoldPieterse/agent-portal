@@ -1,10 +1,11 @@
 # ONE-PAGER — archivist
 
-Date: 2026-11-24 | source: llm-judge-local | round: 3 planners + judge (winning plan: B)
+Date: 2026-11-25 | source: llm-single-draft | round: 3 planners + judge (winning plan: A)
 
 ## Today's todos
 
-1. [ ] **Implement Mode Transition Anomaly Log script** _(from NEXT-10 QUEUE #4 [archivist] Mode Transition Anomaly Log)_ — Complete queue item #4 with high probability
-2. [ ] **Draft Fleet Autonomy Metrics Glossary definitions** _(from OPEN GOALS: archivist - Fleet Autonomy Metrics Glossary)_ — Advance open goal for formal metric definitions
+1. [ ] **Draft memory/archivist/convergence-kb.md with steady-state criteria** _(from #3 [archivist] Convergence Knowledge Base Entry (eta 2026-11-25 09:00))_ — Completes queue item #3
+2. [ ] **Extend archive INDEX.md with structured metadata for last 5 cycles** _(from **Cycle History Index v2** - extend archive INDEX.md)_ — Improves historical data accessibility
+3. [ ] **Document computation lineage for autonomy score metric** _(from **Convergence Metric Lineage** - document full computation lineage)_ — Ensures transparency in convergence metrics
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

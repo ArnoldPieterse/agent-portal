@@ -1,10 +1,11 @@
 # ONE-PAGER — researcher
 
-Date: 2026-11-24 | source: llm-judge-local | round: 3 planners + judge (winning plan: B)
+Date: 2026-11-25 | source: llm-single-draft | round: 3 planners + judge (winning plan: A)
 
 ## Today's todos
 
-1. [ ] **Validate data sources for 'Predicting markets' scaffold preparation** _(from 7-DAY PLAN: Predicting markets [day 5-7])_ — Prepare inputs for day 5 start of market prediction
-2. [ ] **Research API requirements for 'Writing valid tenders' camera access integration** _(from 7-DAY PLAN: Writing valid tenders [day 4])_ — Support day 4 scaffold and wire-up
+1. [ ] **Implement feature extraction logic for Goal Acceptance Rate Predictor** _(from **Goal Acceptance Rate Predictor** - from goal text features)_ — Advances open goal on acceptance prediction
+2. [ ] **Draft initial data schema for Cross-Agent Dependency Graph** _(from **Cross-Agent Dependency Graph** - build directed graph)_ — Starts construction of dependency visualization
+3. [ ] **Collect baseline metrics for Cycle Efficiency Index calculation** _(from **Cycle Efficiency Index** - composite metric per cycle)_ — Prepares composite metric computation
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._
