@@ -1686,6 +1686,37 @@ def _cockpit_snapshot():
         data["last_activity"] = _fm.get("timestamp")
     except Exception:
         pass
+    # cycle-15 designer: pass budget + 24h mode transitions + idle tasks + freshness
+    try:
+        with open(os.path.join(HERE, "memory", "ops", "pass-budget.json")) as _f:
+            _pb = json.load(_f)
+        data["pass_budget"] = {"budget": int(_pb.get("total", 0)),
+                               "consumed": int(_pb.get("used", 0))}
+    except Exception:
+        pass
+    try:
+        with open(os.path.join(HERE, "memory", "ops", "mode-transitions.jsonl")) as _f:
+            _mt = [json.loads(x) for x in f.readlines()[-50:] if x.strip()]
+        def _tsec(t):
+            v = t.get("ts") or t.get("timestamp") or 0
+            return float(v) if isinstance(v, (int, float)) else _cockpit_ts(v)
+        _cut = time.time() - 24*3600
+        data["mode_transitions"] = [t for t in _mt if _tsec(t) >= _cut][-24:]
+    except Exception:
+        pass
+    try:
+        with open(os.path.join(HERE, "memory", "ops", "idle-tasks.jsonl")) as _f:
+            data["idle_tasks"] = [json.loads(x) for x in f.readlines()[-12:] if x.strip()]
+    except Exception:
+        pass
+    try:
+        import importlib.util as _ilu
+        _mf_path = os.path.join(HERE, "memory", "archivist", "mode_freshness.py")
+        _spec = _ilu.spec_from_file_location("mode_freshness", _mf_path)
+        _mf = _ilu.module_from_spec(_spec); _spec.loader.exec_module(_mf)
+        data["freshness"] = _mf.check()
+    except Exception:
+        pass
     # Flowtrace (2026-11-24): log mode transitions + resolve mode forecasts on every poll.
     try:
         _madir = os.path.join(HERE, "memory", "archivist")
