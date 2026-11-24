@@ -601,3 +601,5 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
 
 - [x] 2026-11-24 goal-level decision tree in forecast report: S6 lists WHICH goals land by 1w/1m; S7 = per-goal chain (sub-goals + if-reached-then-next); plan layer emits per-item then-chaining; fixed engine sys.path so portal in-process refresh includes plan.
 [DONE 2026-11-24] One-pager planning round: plan_round.py - 3 planners + judge, live model probing, JSON repair; portal serves one_pager in /api/goals/forecast; cards in cockpit-forecast.js + uploads.js. commit a21a72c3
+
+- [x] Archivist (2026-11-24): mode flowtrace - memory/archivist/mode_anomaly.py logs every fleet-mode transition to memory/ops/mode-transitions.jsonl, resolves mode forecasts vs actual transitions (deviation >30min = anomaly), hooked into /api/fleet/cockpit poll. Selftest 5 scenarios OK.

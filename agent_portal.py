@@ -1678,6 +1678,16 @@ def _cockpit_snapshot():
             "health_trend": trend,
             "recent_decisions": decisions, "predicted_risks": risks,
             "generated": time.strftime("%Y-%m-%d %H:%M:%S")}
+    # Flowtrace (2026-11-24): log mode transitions + resolve mode forecasts on every poll.
+    try:
+        _madir = os.path.join(HERE, "memory", "archivist")
+        if _madir not in sys.path:
+            sys.path.insert(0, _madir)
+        import mode_anomaly
+        mode_anomaly.detect()
+        mode_anomaly.evaluate()
+    except Exception:
+        pass
     _cockpit_cache.update(ts=now, data=data)
     return data
 
