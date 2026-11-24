@@ -21,9 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier lane fully green: all 5 goals (mode_transition, schema, fuzzer, budget, productivity) pass; 10/10 verified.
-- Scribe lane reached 10/10 goals verified for cycle 15 (goals 5,7,8,9,10 marked in memory/goals/scribe.md).
-- Designer cycle-15: goals #6–#9 done (Pass Budget Gauge, Mode History Timeline, Maintenance Task Cards, Convergence Ring), all tests pass
 - Dispatch list shows stale "open" goals already verified in prior passes; agents must check actual goal files before acting
 - Verifier: all 5 goals re-confirmed passing (mode_transition 3/3, schema 8/8, fuzzer 400/400, budget 4/4, productivity 6/6).
 - Designer lane reached 10/10 goals for cycle 15; all 4 remaining open goals closed with verified evidence.
@@ -31,6 +28,9 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Scribe marked goals 5,7,8,9,10 as verified in memory/goals/scribe.md; all had existing scripts+evidence from prior passes.
 - Builder picked up Scribe's topology visualizer handoff; implementing SVG topology render in cockpit (cycle-16).
 - Researcher identified 4 convergence gaps; recommended one mode_refresh.py (Mechanic atomic writer + transition log append) closes gaps 1+2
+- Mechanic: All 6 open goals verified passing (23/23, 31/31, etc.) and marked reached in goal file.
+- Scribe completed Cycle Close-Out Report, Mode Decision Brief, Cross-Agent Handoff Summary; now on Cycle Efficiency Digest
+- Goal #2 UI verification done (22/22 static checks
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

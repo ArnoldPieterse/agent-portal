@@ -1,10 +1,10 @@
 {
  "ok": true,
- "generated": "2026-11-24 14:52:01",
+ "generated": "2026-11-24 15:58:01",
  "fleet": {
-  "done": 37,
+  "done": 36,
   "total": 80,
-  "pct": 46.2
+  "pct": 45.0
  },
  "throughput_goals_per_hour": 30.0,
  "next10": [
@@ -14,7 +14,7 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-24 17:26",
+   "eta": "2026-11-24 18:32",
    "hours": 2.58,
    "order": 0,
    "rank": 1,
@@ -24,12 +24,12 @@
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-24 17:26 (P=52%)",
+   "outcome": "reached ~2026-11-24 18:32 (P=52%)",
    "consequences": [
-    "designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-24 21:26) - shared scope changes,transition,verify",
-    "verifier: **Dispatch Correctness Fuzzer** - `python memory/verifier/di (2026-11-25 02:32) - shared scope dispatch,verifier",
-    "mechanic: **Idle Task Delivery Verifier** - `python memory/mechanic/ta (2026-11-25 04:54) - shared scope verifier,verify",
-    "lane end builder: 11-26 02:24 (slowest lane)"
+    "designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-24 22:32) - shared scope changes,transition,verify",
+    "verifier: **Dispatch Correctness Fuzzer** - `python memory/verifier/di (2026-11-25 03:38) - shared scope dispatch,verifier",
+    "mechanic: **Idle Task Delivery Verifier** - `python memory/mechanic/ta (2026-11-25 06:00) - shared scope verifier,verify",
+    "lane end scribe: 11-26 04:56 (slowest lane)"
    ]
   },
   {
@@ -38,7 +38,7 @@
    "type": "build",
    "complexity": 1,
    "p_reached": 0.405,
-   "eta": "2026-11-24 17:56",
+   "eta": "2026-11-24 19:02",
    "hours": 3.08,
    "order": 0,
    "rank": 2,
@@ -49,12 +49,12 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 17:56 (P=40%)",
+   "outcome": "reached ~2026-11-24 19:02 (P=40%)",
    "consequences": [
-    "builder: **Mode-Aware Dispatch Filter** - `python memory/builder/disp (2026-11-25 05:37) - shared scope dispatch,maintenance,rotation",
-    "designer: **Maintenance Task Cards** - Design card component for each  (2026-11-25 10:23) - shared scope maintenance,rotation",
-    "builder: **Maintenance Task Registry** - Create memory/ops/maintenanc (2026-11-25 19:17) - shared scope maintenance,rotation",
-    "lane end builder: 11-26 02:24 (slowest lane)"
+    "builder: **Mode-Aware Dispatch Filter** - `python memory/builder/disp (2026-11-25 06:43) - shared scope dispatch,maintenance,rotation",
+    "designer: **Maintenance Task Cards** - Design card component for each  (2026-11-25 11:29) - shared scope maintenance,rotation",
+    "builder: **Maintenance Task Registry** - Create memory/ops/maintenanc (2026-11-25 20:23) - shared scope maintenance,rotation",
+    "lane end scribe: 11-26 04:56 (slowest lane)"
    ]
   },
   {
@@ -63,7 +63,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.037,
-   "eta": "2026-11-24 19:11",
+   "eta": "2026-11-24 20:17",
    "hours": 4.32,
    "order": 0,
    "rank": 3,
@@ -74,10 +74,10 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 19:11 (P=4%)",
+   "outcome": "reached ~2026-11-24 20:17 (P=4%)",
    "consequences": [
-    "builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-24 22:30) - shared scope cockpit,maintenance",
-    "lane end builder: 11-26 02:24 (slowest lane)"
+    "builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-24 23:36) - shared scope cockpit,maintenance",
+    "lane end scribe: 11-26 04:56 (slowest lane)"
    ]
   },
   {
@@ -86,7 +86,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.188,
-   "eta": "2026-11-24 19:25",
+   "eta": "2026-11-24 20:31",
    "hours": 4.55,
    "order": 0,
    "rank": 4,
@@ -97,12 +97,12 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 19:25 (P=19%)",
+   "outcome": "reached ~2026-11-24 20:31 (P=19%)",
    "consequences": [
-    "mechanic: **Pass Budget Monitor** - `python memory/mechanic/budget_mon (2026-11-24 22:52) - shared scope mechanic,write",
-    "builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 01:04) - shared scope atomic,rename,write",
-    "mechanic: **Cycle Transition Automation (Ops)** - `python memory/mecha (2026-11-25 07:29) - shared scope infra,mechanic",
-    "lane end builder: 11-26 02:24 (slowest lane)"
+    "mechanic: **Pass Budget Monitor** - `python memory/mechanic/budget_mon (2026-11-24 23:58) - shared scope mechanic,write",
+    "builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 02:10) - shared scope atomic,rename,write",
+    "mechanic: **Cycle Transition Automation (Ops)** - `python memory/mecha (2026-11-25 08:35) - shared scope infra,mechanic",
+    "lane end scribe: 11-26 04:56 (slowest lane)"
    ]
   },
   {
@@ -111,7 +111,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.278,
-   "eta": "2026-11-24 19:34",
+   "eta": "2026-11-24 20:40",
    "hours": 4.7,
    "order": 0,
    "rank": 5,
@@ -122,37 +122,37 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 19:34 (P=28%)",
+   "outcome": "reached ~2026-11-24 20:40 (P=28%)",
    "consequences": [
-    "archivist: **Decision-Log Compaction** - `python memory/archivist/compa (2026-11-25 04:36) - shared scope archivist,entries",
-    "builder: **Idle Productivity Counter** - `python memory/builder/produ (2026-11-25 10:10) - shared scope baseline,productivity",
-    "scribe: **Fleet State Snapshot (Daily)** - `python memory/scribe/dai (2026-11-25 17:45) - shared scope daily,productivity",
-    "lane end builder: 11-26 02:24 (slowest lane)"
+    "archivist: **Decision-Log Compaction** - `python memory/archivist/compa (2026-11-25 05:42) - shared scope archivist,entries",
+    "builder: **Idle Productivity Counter** - `python memory/builder/produ (2026-11-25 11:16) - shared scope baseline,productivity",
+    "archivist: **Knowledge Freshness for Mode Data** - Implement TTL (time- (2026-11-25 19:49) - shared scope baseline,productivity",
+    "lane end scribe: 11-26 04:56 (slowest lane)"
    ]
   },
   {
    "agent": "scribe",
-   "goal": "**Mode Decision Brief** - For each mode transition, write a one-paragraph brief explaining the decision in plain English for human review. Include: current state, what triggered change, expected duration in new mode, wha",
+   "goal": "**Cycle Close-Out Report** - `python memory/scribe/cycle_closeout.py`: at cycle close, generate structured report: goals completed (by agent, with evidence refs), blockers encountered + resolution time, key decisions mad",
    "type": "build",
    "complexity": 2,
    "p_reached": 0.459,
-   "eta": "2026-11-24 19:54",
+   "eta": "2026-11-24 21:00",
    "hours": 5.04,
    "order": 0,
    "rank": 6,
-   "title": "Mode Decision Brief",
+   "title": "Cycle Close-Out Report",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 19:54 (P=46%)",
+   "outcome": "reached ~2026-11-24 21:00 (P=46%)",
    "consequences": [
-    "mechanic: **Pass Budget Monitor** - `python memory/mechanic/budget_mon (2026-11-24 22:52) - shared scope current,write",
-    "archivist: **Mode Transition Anomaly Log** - When actual mode transitio (2026-11-24 23:54) - shared scope expected,transition",
-    "mechanic: **Mode Transition Latency Measurer** - `python memory/mechan (2026-11-25 02:20) - shared scope change,transition",
-    "lane end builder: 11-26 02:24 (slowest lane)"
+    "orchestrator: **Cycle Proposal Skeleton Generator** - `python memory/orche (2026-11-24 22:12) - shared scope close,completed,cycle",
+    "scribe: **Cross-Agent Handoff Summary** - When goals re-route betwee (2026-11-25 07:04) - shared scope generate,goals",
+    "verifier: **Cycle Transition Rollback Test** - `python memory/verifier (2026-11-25 11:22) - shared scope cycle,goals",
+    "lane end scribe: 11-26 04:56 (slowest lane)"
    ]
   },
   {
@@ -161,7 +161,7 @@
    "type": "research",
    "complexity": 2,
    "p_reached": 0.435,
-   "eta": "2026-11-24 21:06",
+   "eta": "2026-11-24 22:12",
    "hours": 6.24,
    "order": 0,
    "rank": 7,
@@ -171,12 +171,12 @@
     "compute/detect per protocol",
     "write findings leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 21:06 (P=44%)",
+   "outcome": "reached ~2026-11-24 22:12 (P=44%)",
    "consequences": [
-    "scribe: **Cross-Agent Handoff Summary** - When goals re-route betwee (2026-11-25 00:56) - shared scope generate,goals",
-    "scribe: **Cycle Efficiency Digest** - Per cycle: one-paragraph summa (2026-11-25 05:58) - shared scope cycle,goals",
-    "verifier: **Cycle Transition Rollback Test** - `python memory/verifier (2026-11-25 10:16) - shared scope cycle,goals",
-    "lane end builder: 11-26 02:24 (slowest lane)"
+    "scribe: **Cycle Close-Out Report** - `python memory/scribe/cycle_clo (2026-11-24 21:00) - shared scope close,completed,cycle",
+    "scribe: **Cross-Agent Handoff Summary** - When goals re-route betwee (2026-11-25 07:04) - shared scope generate,goals",
+    "verifier: **Cycle Transition Rollback Test** - `python memory/verifier (2026-11-25 11:22) - shared scope cycle,goals",
+    "lane end scribe: 11-26 04:56 (slowest lane)"
    ]
   },
   {
@@ -185,7 +185,7 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.151,
-   "eta": "2026-11-24 21:26",
+   "eta": "2026-11-24 22:32",
    "hours": 2.25,
    "order": 1,
    "rank": 8,
@@ -195,12 +195,12 @@
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-24 21:26 (P=15%)",
+   "outcome": "reached ~2026-11-24 22:32 (P=15%)",
    "consequences": [
-    "verifier: **Mode Transition Integration Test** - `python memory/verifi (2026-11-24 17:26) - shared scope changes,transition,verify",
-    "builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-24 22:30) - shared scope amber,green",
-    "designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 01:45) - shared scope amber,color,design",
-    "lane end builder: 11-26 02:24 (slowest lane)"
+    "verifier: **Mode Transition Integration Test** - `python memory/verifi (2026-11-24 18:32) - shared scope changes,transition,verify",
+    "builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-24 23:36) - shared scope amber,green",
+    "designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 02:51) - shared scope amber,color,design",
+    "lane end scribe: 11-26 04:56 (slowest lane)"
    ]
   },
   {
@@ -209,7 +209,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.188,
-   "eta": "2026-11-24 21:59",
+   "eta": "2026-11-24 23:05",
    "hours": 4.55,
    "order": 1,
    "rank": 9,
@@ -220,11 +220,11 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 21:59 (P=19%)",
+   "outcome": "reached ~2026-11-24 23:05 (P=19%)",
    "consequences": [
-    "builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 01:04) - shared scope float,schema,timestamp",
-    "verifier: **Productivity Metric Validator** - `python memory/verifier/ (2026-11-25 07:41) - shared scope validate,validator,verifier",
-    "lane end builder: 11-26 02:24 (slowest lane)"
+    "builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 02:10) - shared scope float,schema,timestamp",
+    "verifier: **Productivity Metric Validator** - `python memory/verifier/ (2026-11-25 08:47) - shared scope validate,validator,verifier",
+    "lane end scribe: 11-26 04:56 (slowest lane)"
    ]
   },
   {
@@ -233,7 +233,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.188,
-   "eta": "2026-11-24 22:30",
+   "eta": "2026-11-24 23:36",
    "hours": 4.55,
    "order": 1,
    "rank": 10,
@@ -244,12 +244,12 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-24 22:30 (P=19%)",
+   "outcome": "reached ~2026-11-24 23:36 (P=19%)",
    "consequences": [
-    "designer: **Fleet Mode ARIA + Keyboard Nav** - Add ARIA-live region fo (2026-11-24 19:11) - shared scope cockpit,maintenance",
-    "designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-24 21:26) - shared scope amber,green",
-    "designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 01:45) - shared scope amber,green,showing",
-    "lane end builder: 11-26 02:24 (slowest lane)"
+    "designer: **Fleet Mode ARIA + Keyboard Nav** - Add ARIA-live region fo (2026-11-24 20:17) - shared scope cockpit,maintenance",
+    "designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-24 22:32) - shared scope amber,green",
+    "designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 02:51) - shared scope amber,green,showing",
+    "lane end scribe: 11-26 04:56 (slowest lane)"
    ]
   }
  ],
@@ -257,45 +257,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-24 15:22",
+   "end": "2026-11-24 16:28",
    "completes": 0,
-   "fleet_pct": 46.2,
+   "fleet_pct": 45.0,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-24 15:52",
+   "end": "2026-11-24 16:58",
    "completes": 0,
-   "fleet_pct": 46.2,
+   "fleet_pct": 45.0,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-25 14:52",
+   "end": "2026-11-25 15:58",
    "completes": 34,
-   "fleet_pct": 88.8,
+   "fleet_pct": 87.5,
    "top": [
-    "#1 verifier: Mode Transition Integration Test (2026-11-24 17:26)",
-    "#2 builder: Idle Task Injector (2026-11-24 17:56)",
-    "#3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-24 19:11)",
-    "#4 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-24 19:25)",
-    "#5 archivist: Productivity Trend Archive (2026-11-24 19:34)"
+    "#1 verifier: Mode Transition Integration Test (2026-11-24 18:32)",
+    "#2 builder: Idle Task Injector (2026-11-24 19:02)",
+    "#3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-24 20:17)",
+    "#4 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-24 20:31)",
+    "#5 archivist: Productivity Trend Archive (2026-11-24 20:40)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-01 14:52",
-   "completes": 43,
+   "end": "2026-12-01 15:58",
+   "completes": 44,
    "fleet_pct": 100.0,
    "top": [
-    "#1 verifier: Mode Transition Integration Test (2026-11-24 17:26)",
-    "#2 builder: Idle Task Injector (2026-11-24 17:56)",
-    "#3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-24 19:11)",
-    "#4 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-24 19:25)",
-    "#5 archivist: Productivity Trend Archive (2026-11-24 19:34)"
+    "#1 verifier: Mode Transition Integration Test (2026-11-24 18:32)",
+    "#2 builder: Idle Task Injector (2026-11-24 19:02)",
+    "#3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-24 20:17)",
+    "#4 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-24 20:31)",
+    "#5 archivist: Productivity Trend Archive (2026-11-24 20:40)"
    ],
    "next_cycle_candidates": [
     {
@@ -351,15 +351,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-24 14:52",
-   "completes": 43,
+   "end": "2026-12-24 15:58",
+   "completes": 44,
    "fleet_pct": 100.0,
    "top": [
-    "#1 verifier: Mode Transition Integration Test (2026-11-24 17:26)",
-    "#2 builder: Idle Task Injector (2026-11-24 17:56)",
-    "#3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-24 19:11)",
-    "#4 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-24 19:25)",
-    "#5 archivist: Productivity Trend Archive (2026-11-24 19:34)"
+    "#1 verifier: Mode Transition Integration Test (2026-11-24 18:32)",
+    "#2 builder: Idle Task Injector (2026-11-24 19:02)",
+    "#3 designer: Fleet Mode ARIA + Keyboard Nav (2026-11-24 20:17)",
+    "#4 mechanic: fleet-mode.json Atomic Writer (Infra) (2026-11-24 20:31)",
+    "#5 archivist: Productivity Trend Archive (2026-11-24 20:40)"
    ],
    "next_cycle_candidates": [
     {
@@ -417,48 +417,48 @@
   "archivist": {
    "done": 4,
    "total": 10,
-   "end": "2026-11-25 18:43"
+   "end": "2026-11-25 19:49"
   },
   "builder": {
    "done": 1,
    "total": 10,
-   "end": "2026-11-26 02:24"
+   "end": "2026-11-26 03:30"
   },
   "designer": {
    "done": 4,
    "total": 10,
-   "end": "2026-11-25 14:42"
+   "end": "2026-11-25 15:48"
   },
   "mechanic": {
    "done": 1,
    "total": 10,
-   "end": "2026-11-25 21:44"
+   "end": "2026-11-25 22:50"
   },
   "orchestrator": {
    "done": 9,
    "total": 10,
-   "end": "2026-11-24 21:06"
+   "end": "2026-11-24 22:12"
   },
   "researcher": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-24 14:52"
+   "end": "2026-11-24 15:58"
   },
   "scribe": {
-   "done": 4,
+   "done": 3,
    "total": 10,
-   "end": "2026-11-25 22:48"
+   "end": "2026-11-26 04:56"
   },
   "verifier": {
    "done": 4,
    "total": 10,
-   "end": "2026-11-25 10:16"
+   "end": "2026-11-25 11:22"
   }
  },
- "level_up_eta": "2026-11-26 02:24",
+ "level_up_eta": "2026-11-26 04:56",
  "plan": {
   "cycle_state": "in flight: 10 goal(s) open",
-  "level_up_eta": "2026-11-26 02:24",
+  "level_up_eta": "2026-11-26 04:56",
   "planned": [
    {
     "agent": "verifier",
@@ -466,7 +466,7 @@
     "type": "verify",
     "complexity": 2,
     "p_reached": 0.515,
-    "eta": "2026-11-24 17:26",
+    "eta": "2026-11-24 18:32",
     "hours": 2.58,
     "order": 0,
     "rank": 1,
@@ -476,21 +476,21 @@
      "run against live sources",
      "record verdict + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-24 17:26 (P~52%)",
+    "outcome": "reached ~2026-11-24 18:32 (P~52%)",
     "consequences": [
-     "designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-24 21:26) - shared scope changes,transition,verify",
-     "verifier: **Dispatch Correctness Fuzzer** - `python memory/verifier/di (2026-11-25 02:32) - shared scope dispatch,verifier",
-     "mechanic: **Idle Task Delivery Verifier** - `python memory/mechanic/ta (2026-11-25 04:54) - shared scope verifier,verify",
-     "lane end builder: 11-26 02:24 (slowest lane)"
+     "designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-24 22:32) - shared scope changes,transition,verify",
+     "verifier: **Dispatch Correctness Fuzzer** - `python memory/verifier/di (2026-11-25 03:38) - shared scope dispatch,verifier",
+     "mechanic: **Idle Task Delivery Verifier** - `python memory/mechanic/ta (2026-11-25 06:00) - shared scope verifier,verify",
+     "lane end scribe: 11-26 04:56 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-24 17:26",
+    "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-24 18:32",
     "deliverable": {
      "name": "Fleet mode switching",
      "stream": "Portal UX"
     },
     "then": "#9 [verifier] fleet-mode.json Schema Validator",
-    "then_eta": "2026-11-24 21:59"
+    "then_eta": "2026-11-24 23:05"
    },
    {
     "agent": "builder",
@@ -498,7 +498,7 @@
     "type": "build",
     "complexity": 1,
     "p_reached": 0.405,
-    "eta": "2026-11-24 17:56",
+    "eta": "2026-11-24 19:02",
     "hours": 3.08,
     "order": 0,
     "rank": 2,
@@ -509,21 +509,21 @@
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-24 17:56 (P~40%)",
+    "outcome": "reached ~2026-11-24 19:02 (P~40%)",
     "consequences": [
-     "builder: **Mode-Aware Dispatch Filter** - `python memory/builder/disp (2026-11-25 05:37) - shared scope dispatch,maintenance,rotation",
-     "designer: **Maintenance Task Cards** - Design card component for each  (2026-11-25 10:23) - shared scope maintenance,rotation",
-     "builder: **Maintenance Task Registry** - Create memory/ops/maintenanc (2026-11-25 19:17) - shared scope maintenance,rotation",
-     "lane end builder: 11-26 02:24 (slowest lane)"
+     "builder: **Mode-Aware Dispatch Filter** - `python memory/builder/disp (2026-11-25 06:43) - shared scope dispatch,maintenance,rotation",
+     "designer: **Maintenance Task Cards** - Design card component for each  (2026-11-25 11:29) - shared scope maintenance,rotation",
+     "builder: **Maintenance Task Registry** - Create memory/ops/maintenanc (2026-11-25 20:23) - shared scope maintenance,rotation",
+     "lane end scribe: 11-26 04:56 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx1); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-24 17:56",
+    "why": "planned as build work (cx1); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-24 19:02",
     "deliverable": {
      "name": "Idle-task injection",
      "stream": "Automation"
     },
     "then": "#10 [builder] Cockpit Mode Banner",
-    "then_eta": "2026-11-24 22:30"
+    "then_eta": "2026-11-24 23:36"
    },
    {
     "agent": "designer",
@@ -531,7 +531,7 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.037,
-    "eta": "2026-11-24 19:11",
+    "eta": "2026-11-24 20:17",
     "hours": 4.32,
     "order": 0,
     "rank": 3,
@@ -542,19 +542,19 @@
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-24 19:11 (P~4%)",
+    "outcome": "reached ~2026-11-24 20:17 (P~4%)",
     "consequences": [
-     "builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-24 22:30) - shared scope cockpit,maintenance",
-     "lane end builder: 11-26 02:24 (slowest lane)"
+     "builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-24 23:36) - shared scope cockpit,maintenance",
+     "lane end scribe: 11-26 04:56 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 4/10 done; this goal ends its lane at 2026-11-24 19:11",
+    "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 4/10 done; this goal ends its lane at 2026-11-24 20:17",
     "deliverable": {
      "name": "Keyboard navigation",
      "stream": "Input & accessibility"
     },
     "then": "#8 [designer] Mode Transition Animation",
-    "then_eta": "2026-11-24 21:26"
+    "then_eta": "2026-11-24 22:32"
    },
    {
     "agent": "mechanic",
@@ -562,7 +562,7 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.188,
-    "eta": "2026-11-24 19:25",
+    "eta": "2026-11-24 20:31",
     "hours": 4.55,
     "order": 0,
     "rank": 4,
@@ -573,21 +573,21 @@
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-24 19:25 (P~19%)",
+    "outcome": "reached ~2026-11-24 20:31 (P~19%)",
     "consequences": [
-     "mechanic: **Pass Budget Monitor** - `python memory/mechanic/budget_mon (2026-11-24 22:52) - shared scope mechanic,write",
-     "builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 01:04) - shared scope atomic,rename,write",
-     "mechanic: **Cycle Transition Automation (Ops)** - `python memory/mecha (2026-11-25 07:29) - shared scope infra,mechanic",
-     "lane end builder: 11-26 02:24 (slowest lane)"
+     "mechanic: **Pass Budget Monitor** - `python memory/mechanic/budget_mon (2026-11-24 23:58) - shared scope mechanic,write",
+     "builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 02:10) - shared scope atomic,rename,write",
+     "mechanic: **Cycle Transition Automation (Ops)** - `python memory/mecha (2026-11-25 08:35) - shared scope infra,mechanic",
+     "lane end scribe: 11-26 04:56 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane mechanic has 1/10 done; this goal ends its lane at 2026-11-24 19:25",
+    "why": "planned as build work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane mechanic has 1/10 done; this goal ends its lane at 2026-11-24 20:31",
     "deliverable": {
      "name": "fleet-mode.json Atomic Writer (Infra)",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 02:24)",
-    "then_eta": "2026-11-26 02:24"
+    "then": "lane clear - level-up gate re-check (2026-11-26 04:56)",
+    "then_eta": "2026-11-26 04:56"
    },
    {
     "agent": "archivist",
@@ -595,7 +595,7 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.278,
-    "eta": "2026-11-24 19:34",
+    "eta": "2026-11-24 20:40",
     "hours": 4.7,
     "order": 0,
     "rank": 5,
@@ -606,54 +606,54 @@
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-24 19:34 (P~28%)",
+    "outcome": "reached ~2026-11-24 20:40 (P~28%)",
     "consequences": [
-     "archivist: **Decision-Log Compaction** - `python memory/archivist/compa (2026-11-25 04:36) - shared scope archivist,entries",
-     "builder: **Idle Productivity Counter** - `python memory/builder/produ (2026-11-25 10:10) - shared scope baseline,productivity",
-     "scribe: **Fleet State Snapshot (Daily)** - `python memory/scribe/dai (2026-11-25 17:45) - shared scope daily,productivity",
-     "lane end builder: 11-26 02:24 (slowest lane)"
+     "archivist: **Decision-Log Compaction** - `python memory/archivist/compa (2026-11-25 05:42) - shared scope archivist,entries",
+     "builder: **Idle Productivity Counter** - `python memory/builder/produ (2026-11-25 11:16) - shared scope baseline,productivity",
+     "archivist: **Knowledge Freshness for Mode Data** - Implement TTL (time- (2026-11-25 19:49) - shared scope baseline,productivity",
+     "lane end scribe: 11-26 04:56 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-24 19:34",
+    "why": "planned as build work (cx2); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-24 20:40",
     "deliverable": {
      "name": "Productivity baseline",
      "stream": "Measurement"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 02:24)",
-    "then_eta": "2026-11-26 02:24"
+    "then": "lane clear - level-up gate re-check (2026-11-26 04:56)",
+    "then_eta": "2026-11-26 04:56"
    },
    {
     "agent": "scribe",
-    "goal": "**Mode Decision Brief** - For each mode transition, write a one-paragraph brief explaining the decision in plain English for human review. Include: current state, what triggered change, expected duration in new mode, wha",
+    "goal": "**Cycle Close-Out Report** - `python memory/scribe/cycle_closeout.py`: at cycle close, generate structured report: goals completed (by agent, with evidence refs), blockers encountered + resolution time, key decisions mad",
     "type": "build",
     "complexity": 2,
     "p_reached": 0.459,
-    "eta": "2026-11-24 19:54",
+    "eta": "2026-11-24 21:00",
     "hours": 5.04,
     "order": 0,
     "rank": 6,
-    "title": "Mode Decision Brief",
+    "title": "Cycle Close-Out Report",
     "steps": [
      "scaffold the module file",
      "implement core logic",
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-24 19:54 (P~46%)",
+    "outcome": "reached ~2026-11-24 21:00 (P~46%)",
     "consequences": [
-     "mechanic: **Pass Budget Monitor** - `python memory/mechanic/budget_mon (2026-11-24 22:52) - shared scope current,write",
-     "archivist: **Mode Transition Anomaly Log** - When actual mode transitio (2026-11-24 23:54) - shared scope expected,transition",
-     "mechanic: **Mode Transition Latency Measurer** - `python memory/mechan (2026-11-25 02:20) - shared scope change,transition",
-     "lane end builder: 11-26 02:24 (slowest lane)"
+     "orchestrator: **Cycle Proposal Skeleton Generator** - `python memory/orche (2026-11-24 22:12) - shared scope close,completed,cycle",
+     "scribe: **Cross-Agent Handoff Summary** - When goals re-route betwee (2026-11-25 07:04) - shared scope generate,goals",
+     "verifier: **Cycle Transition Rollback Test** - `python memory/verifier (2026-11-25 11:22) - shared scope cycle,goals",
+     "lane end scribe: 11-26 04:56 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 4/10 done; this goal ends its lane at 2026-11-24 19:54",
+    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 3/10 done; this goal ends its lane at 2026-11-24 21:00",
     "deliverable": {
-     "name": "Fleet mode switching",
-     "stream": "Portal UX"
+     "name": "Cycle Close-Out Report",
+     "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 02:24)",
-    "then_eta": "2026-11-26 02:24"
+    "then": "lane clear - level-up gate re-check (2026-11-26 04:56)",
+    "then_eta": "2026-11-26 04:56"
    },
    {
     "agent": "orchestrator",
@@ -661,7 +661,7 @@
     "type": "research",
     "complexity": 2,
     "p_reached": 0.435,
-    "eta": "2026-11-24 21:06",
+    "eta": "2026-11-24 22:12",
     "hours": 6.24,
     "order": 0,
     "rank": 7,
@@ -671,21 +671,21 @@
      "compute/detect per protocol",
      "write findings leaf + index line"
     ],
-    "outcome": "reached ~2026-11-24 21:06 (P~44%)",
+    "outcome": "reached ~2026-11-24 22:12 (P~44%)",
     "consequences": [
-     "scribe: **Cross-Agent Handoff Summary** - When goals re-route betwee (2026-11-25 00:56) - shared scope generate,goals",
-     "scribe: **Cycle Efficiency Digest** - Per cycle: one-paragraph summa (2026-11-25 05:58) - shared scope cycle,goals",
-     "verifier: **Cycle Transition Rollback Test** - `python memory/verifier (2026-11-25 10:16) - shared scope cycle,goals",
-     "lane end builder: 11-26 02:24 (slowest lane)"
+     "scribe: **Cycle Close-Out Report** - `python memory/scribe/cycle_clo (2026-11-24 21:00) - shared scope close,completed,cycle",
+     "scribe: **Cross-Agent Handoff Summary** - When goals re-route betwee (2026-11-25 07:04) - shared scope generate,goals",
+     "verifier: **Cycle Transition Rollback Test** - `python memory/verifier (2026-11-25 11:22) - shared scope cycle,goals",
+     "lane end scribe: 11-26 04:56 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as research work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~44%): kept in plan because its scope gates later work; lane orchestrator has 9/10 done; this goal ends its lane at 2026-11-24 21:06",
+    "why": "planned as research work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~44%): kept in plan because its scope gates later work; lane orchestrator has 9/10 done; this goal ends its lane at 2026-11-24 22:12",
     "deliverable": {
      "name": "Cycle Proposal Skeleton Generator",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 02:24)",
-    "then_eta": "2026-11-26 02:24"
+    "then": "lane clear - level-up gate re-check (2026-11-26 04:56)",
+    "then_eta": "2026-11-26 04:56"
    },
    {
     "agent": "designer",
@@ -693,7 +693,7 @@
     "type": "verify",
     "complexity": 2,
     "p_reached": 0.151,
-    "eta": "2026-11-24 21:26",
+    "eta": "2026-11-24 22:32",
     "hours": 2.25,
     "order": 1,
     "rank": 8,
@@ -703,21 +703,21 @@
      "run against live sources",
      "record verdict + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-24 21:26 (P~15%)",
+    "outcome": "reached ~2026-11-24 22:32 (P~15%)",
     "consequences": [
-     "verifier: **Mode Transition Integration Test** - `python memory/verifi (2026-11-24 17:26) - shared scope changes,transition,verify",
-     "builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-24 22:30) - shared scope amber,green",
-     "designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 01:45) - shared scope amber,color,design",
-     "lane end builder: 11-26 02:24 (slowest lane)"
+     "verifier: **Mode Transition Integration Test** - `python memory/verifi (2026-11-24 18:32) - shared scope changes,transition,verify",
+     "builder: **Cockpit Mode Banner** - Add a top-of-page banner in cockpi (2026-11-24 23:36) - shared scope amber,green",
+     "designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 02:51) - shared scope amber,color,design",
+     "lane end scribe: 11-26 04:56 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as verify work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~15%): kept in plan because its scope gates later work; lane designer has 4/10 done; this goal ends its lane at 2026-11-24 21:26",
+    "why": "planned as verify work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~15%): kept in plan because its scope gates later work; lane designer has 4/10 done; this goal ends its lane at 2026-11-24 22:32",
     "deliverable": {
      "name": "Fleet mode switching",
      "stream": "Portal UX"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 02:24)",
-    "then_eta": "2026-11-26 02:24"
+    "then": "lane clear - level-up gate re-check (2026-11-26 04:56)",
+    "then_eta": "2026-11-26 04:56"
    },
    {
     "agent": "verifier",
@@ -725,7 +725,7 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.188,
-    "eta": "2026-11-24 21:59",
+    "eta": "2026-11-24 23:05",
     "hours": 4.55,
     "order": 1,
     "rank": 9,
@@ -736,20 +736,20 @@
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-24 21:59 (P~19%)",
+    "outcome": "reached ~2026-11-24 23:05 (P~19%)",
     "consequences": [
-     "builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 01:04) - shared scope float,schema,timestamp",
-     "verifier: **Productivity Metric Validator** - `python memory/verifier/ (2026-11-25 07:41) - shared scope validate,validator,verifier",
-     "lane end builder: 11-26 02:24 (slowest lane)"
+     "builder: **fleet-mode.json Atomic Writer** - Implement memory/builder (2026-11-25 02:10) - shared scope float,schema,timestamp",
+     "verifier: **Productivity Metric Validator** - `python memory/verifier/ (2026-11-25 08:47) - shared scope validate,validator,verifier",
+     "lane end scribe: 11-26 04:56 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-24 21:59",
+    "why": "planned as build work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-24 23:05",
     "deliverable": {
      "name": "fleet-mode.json Schema Validator",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 02:24)",
-    "then_eta": "2026-11-26 02:24"
+    "then": "lane clear - level-up gate re-check (2026-11-26 04:56)",
+    "then_eta": "2026-11-26 04:56"
    },
    {
     "agent": "builder",
@@ -757,7 +757,7 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.188,
-    "eta": "2026-11-24 22:30",
+    "eta": "2026-11-24 23:36",
     "hours": 4.55,
     "order": 1,
     "rank": 10,
@@ -768,210 +768,210 @@
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-24 22:30 (P~19%)",
+    "outcome": "reached ~2026-11-24 23:36 (P~19%)",
     "consequences": [
-     "designer: **Fleet Mode ARIA + Keyboard Nav** - Add ARIA-live region fo (2026-11-24 19:11) - shared scope cockpit,maintenance",
-     "designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-24 21:26) - shared scope amber,green",
-     "designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 01:45) - shared scope amber,green,showing",
-     "lane end builder: 11-26 02:24 (slowest lane)"
+     "designer: **Fleet Mode ARIA + Keyboard Nav** - Add ARIA-live region fo (2026-11-24 20:17) - shared scope cockpit,maintenance",
+     "designer: **Mode Transition Animation** - Design CSS transition for mo (2026-11-24 22:32) - shared scope amber,green",
+     "designer: **Pass Budget Gauge** - Design a circular gauge (SVG) showin (2026-11-25 02:51) - shared scope amber,green,showing",
+     "lane end scribe: 11-26 04:56 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-24 22:30",
+    "why": "planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-24 23:36",
     "deliverable": {
      "name": "Fleet mode switching",
      "stream": "Portal UX"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 02:24)",
-    "then_eta": "2026-11-26 02:24"
+    "then": "lane clear - level-up gate re-check (2026-11-26 04:56)",
+    "then_eta": "2026-11-26 04:56"
    }
   ],
   "horizons": [
    {
     "label": "30m",
     "hours": 0.5,
-    "end": "2026-11-24 15:22",
+    "end": "2026-11-24 16:28",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 37/80 -> 46%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 36/80 -> 45%"
    },
    {
     "label": "1h",
     "hours": 1.0,
-    "end": "2026-11-24 15:52",
+    "end": "2026-11-24 16:58",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 37/80 -> 46%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 36/80 -> 45%"
    },
    {
     "label": "1d",
     "hours": 24.0,
-    "end": "2026-11-25 14:52",
+    "end": "2026-11-25 15:58",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "verifier",
       "title": "Mode Transition Integration Test",
-      "eta": "2026-11-24 17:26",
+      "eta": "2026-11-24 18:32",
       "type": "verify",
-      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-24 17:26"
+      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-24 18:32"
      },
      {
       "rank": 2,
       "agent": "builder",
       "title": "Idle Task Injector",
-      "eta": "2026-11-24 17:56",
+      "eta": "2026-11-24 19:02",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-24 17:56"
+      "why": "planned as build work (cx1); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-24 19:02"
      },
      {
       "rank": 3,
       "agent": "designer",
       "title": "Fleet Mode ARIA + Keyboard Nav",
-      "eta": "2026-11-24 19:11",
+      "eta": "2026-11-24 20:17",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 4/10 done; this goal ends its lane at 2026-11-24 19:11"
+      "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 4/10 done; this goal ends its lane at 2026-11-24 20:17"
      },
      {
       "rank": 4,
       "agent": "mechanic",
       "title": "fleet-mode.json Atomic Writer (Infra)",
-      "eta": "2026-11-24 19:25",
+      "eta": "2026-11-24 20:31",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane mechanic has 1/10 done; this goal ends its lane at 2026-11-24 19:25"
+      "why": "planned as build work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane mechanic has 1/10 done; this goal ends its lane at 2026-11-24 20:31"
      },
      {
       "rank": 5,
       "agent": "archivist",
       "title": "Productivity Trend Archive",
-      "eta": "2026-11-24 19:34",
+      "eta": "2026-11-24 20:40",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-24 19:34"
+      "why": "planned as build work (cx2); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-24 20:40"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 37/80 -> 58%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 36/80 -> 57%"
    },
    {
     "label": "1w",
     "hours": 168.0,
-    "end": "2026-12-01 14:52",
+    "end": "2026-12-01 15:58",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "verifier",
       "title": "Mode Transition Integration Test",
-      "eta": "2026-11-24 17:26",
+      "eta": "2026-11-24 18:32",
       "type": "verify",
-      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-24 17:26"
+      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-24 18:32"
      },
      {
       "rank": 2,
       "agent": "builder",
       "title": "Idle Task Injector",
-      "eta": "2026-11-24 17:56",
+      "eta": "2026-11-24 19:02",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-24 17:56"
+      "why": "planned as build work (cx1); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-24 19:02"
      },
      {
       "rank": 3,
       "agent": "designer",
       "title": "Fleet Mode ARIA + Keyboard Nav",
-      "eta": "2026-11-24 19:11",
+      "eta": "2026-11-24 20:17",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 4/10 done; this goal ends its lane at 2026-11-24 19:11"
+      "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 4/10 done; this goal ends its lane at 2026-11-24 20:17"
      },
      {
       "rank": 4,
       "agent": "mechanic",
       "title": "fleet-mode.json Atomic Writer (Infra)",
-      "eta": "2026-11-24 19:25",
+      "eta": "2026-11-24 20:31",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane mechanic has 1/10 done; this goal ends its lane at 2026-11-24 19:25"
+      "why": "planned as build work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane mechanic has 1/10 done; this goal ends its lane at 2026-11-24 20:31"
      },
      {
       "rank": 5,
       "agent": "archivist",
       "title": "Productivity Trend Archive",
-      "eta": "2026-11-24 19:34",
+      "eta": "2026-11-24 20:40",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-24 19:34"
+      "why": "planned as build work (cx2); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-24 20:40"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 37/80 -> 58%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 36/80 -> 57%"
    },
    {
     "label": "1m",
     "hours": 720.0,
-    "end": "2026-12-24 14:52",
+    "end": "2026-12-24 15:58",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "verifier",
       "title": "Mode Transition Integration Test",
-      "eta": "2026-11-24 17:26",
+      "eta": "2026-11-24 18:32",
       "type": "verify",
-      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-24 17:26"
+      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 4/10 done; this goal ends its lane at 2026-11-24 18:32"
      },
      {
       "rank": 2,
       "agent": "builder",
       "title": "Idle Task Injector",
-      "eta": "2026-11-24 17:56",
+      "eta": "2026-11-24 19:02",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-24 17:56"
+      "why": "planned as build work (cx1); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane builder has 1/10 done; this goal ends its lane at 2026-11-24 19:02"
      },
      {
       "rank": 3,
       "agent": "designer",
       "title": "Fleet Mode ARIA + Keyboard Nav",
-      "eta": "2026-11-24 19:11",
+      "eta": "2026-11-24 20:17",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 4/10 done; this goal ends its lane at 2026-11-24 19:11"
+      "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 4/10 done; this goal ends its lane at 2026-11-24 20:17"
      },
      {
       "rank": 4,
       "agent": "mechanic",
       "title": "fleet-mode.json Atomic Writer (Infra)",
-      "eta": "2026-11-24 19:25",
+      "eta": "2026-11-24 20:31",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane mechanic has 1/10 done; this goal ends its lane at 2026-11-24 19:25"
+      "why": "planned as build work (cx2); already open on the mechanic lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane mechanic has 1/10 done; this goal ends its lane at 2026-11-24 20:31"
      },
      {
       "rank": 5,
       "agent": "archivist",
       "title": "Productivity Trend Archive",
-      "eta": "2026-11-24 19:34",
+      "eta": "2026-11-24 20:40",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-24 19:34"
+      "why": "planned as build work (cx2); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~28%): kept in plan because its scope gates later work; lane archivist has 4/10 done; this goal ends its lane at 2026-11-24 20:40"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 37/80 -> 58%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 36/80 -> 57%"
    }
   ],
   "tree": {
-   "state": "Fleet 37/80 (46%)",
+   "state": "Fleet 36/80 (45%)",
    "gate": "all goals 100%?",
    "branch_taken": "NO - queue in flight",
    "yes": {
     "action": "level-up gate fires -> Lv increments, report written",
     "then": "Orchestrator proposes cycle N+1 from ranked backlog (8 candidates)",
     "first_planned": [
-     "#1 [verifier] Mode Transition Integration Test ~2026-11-24 17:26",
-     "#2 [builder] Idle Task Injector ~2026-11-24 17:56",
-     "#3 [designer] Fleet Mode ARIA + Keyboard Nav ~2026-11-24 19:11",
-     "#4 [mechanic] fleet-mode.json Atomic Writer (Infra) ~2026-11-24 19:25"
+     "#1 [verifier] Mode Transition Integration Test ~2026-11-24 18:32",
+     "#2 [builder] Idle Task Injector ~2026-11-24 19:02",
+     "#3 [designer] Fleet Mode ARIA + Keyboard Nav ~2026-11-24 20:17",
+     "#4 [mechanic] fleet-mode.json Atomic Writer (Infra) ~2026-11-24 20:31"
     ]
    },
    "no": {
     "action": "keep current queue; next completion gates progress",
-    "then": "when the last lane ends (2026-11-26 02:24) the gate re-checks",
+    "then": "when the last lane ends (2026-11-26 04:56) the gate re-checks",
     "first_planned": [
-     "#1 [verifier] Mode Transition Integration Test ~2026-11-24 17:26",
-     "#2 [builder] Idle Task Injector ~2026-11-24 17:56",
-     "#3 [designer] Fleet Mode ARIA + Keyboard Nav ~2026-11-24 19:11",
-     "#4 [mechanic] fleet-mode.json Atomic Writer (Infra) ~2026-11-24 19:25"
+     "#1 [verifier] Mode Transition Integration Test ~2026-11-24 18:32",
+     "#2 [builder] Idle Task Injector ~2026-11-24 19:02",
+     "#3 [designer] Fleet Mode ARIA + Keyboard Nav ~2026-11-24 20:17",
+     "#4 [mechanic] fleet-mode.json Atomic Writer (Infra) ~2026-11-24 20:31"
     ]
    }
   },
@@ -982,7 +982,7 @@
     "note": "Full keyboard control of the portal - no mouse needed to run the fleet.",
     "status": "in-plan",
     "via": "#3 [designer] Fleet Mode ARIA + Keyboard Nav",
-    "eta": "2026-11-24 19:11",
+    "eta": "2026-11-24 20:17",
     "p_reached": 0.037,
     "unlocks": "Camera access"
    },
@@ -1448,7 +1448,7 @@
   ],
   "plan_meta": {
    "sig": "05dcc83e6301",
-   "computed_at": "2026-11-24 14:52:01",
+   "computed_at": "2026-11-24 15:58:01",
    "basis": "live goal ledger + next-10 ETAs + fleet throughput ~30.00 goals/h; recomputed every refresh",
    "delta": [],
    "history": [
