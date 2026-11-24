@@ -1543,10 +1543,12 @@ def _apiq_dispatch(agent, call, args):
                 out = dict(r) if r else None
             if not out:
                 return {"ok": False, "detail": "no such request: %s" % rid}
-            for big in ("linesToReplace", "content"):
-                if big in out:
-                    out[big + "_chars"] = len(str(out.get(big) or ""))
-                    out.pop(big)
+            if "linesToReplace" in out:   # full bodies stay in the store; agent gets a count
+                out["lineCount"] = len(out.get("linesToReplace") or [])
+                out.pop("linesToReplace")
+            if "content" in out:
+                out["contentChars"] = len(out.get("content") or "")
+                out.pop("content")
             return {"ok": True, "request": out}
         elif c == "editReq":
             rid = str(args.get("reqID") or args.get("id") or "").upper()
