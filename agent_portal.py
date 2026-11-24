@@ -6426,6 +6426,19 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, _merge_queue_status())
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
+        elif p == "/api/reqs":
+            # Portal API request queue (2026-11-25): agents' queued file/terminal requests.
+            q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+            try:
+                kind = (q.get("kind") or [""])[0] or None
+                status = (q.get("status") or [""])[0] or None
+                limit = min(int((q.get("limit") or ["100"])[0]), 200)
+                if (q.get("history") or [""])[0]:
+                    return self._json(200, {"ok": True, "history": _apiq_history(limit=limit)})
+                return self._json(200, {"ok": True, "stats": _apiq_stats(),
+                                         "requests": _apiq_view(kind=kind, status=status, limit=limit)})
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/evolution/stats":
             # Evolution layer island (CHG-0002, gen 1): population table + graveyard JSON.
             return self._json(200, _evolution_snapshot())
@@ -6761,6 +6774,31 @@ class Handler(BaseHTTPRequestHandler):
             # Sandbox merge queue (2026-11-16): restore a captured sandbox edit onto the root + commit.
             try:
                 return self._json(200, _restore_merge_queue(body))
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
+        elif p in ("/api/reqs/approve", "/api/reqs/reject"):
+            # Portal API queue (2026-11-25): human approval from the Requests panel.
+            rid = str(body.get("id") or "").upper()
+            if not rid:
+                return self._json(400, {"error": "id required"})
+            by = str(body.get("by") or "human")[:60]
+            try:
+                if p == "/api/reqs/approve":
+                    req, err = _apiq_apply(rid, by)
+                else:
+                    req, err = _apiq_reject(rid, body.get("reason"), by)
+                if err:
+                    return self._json(409, {"ok": False, "error": err})
+                slim = {k: v for k, v in (req or {}).items() if k not in ("linesToReplace", "content")}
+                return self._json(200, {"ok": True, "request": slim})
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
+        elif p == "/api/reqs":
+            # Generic submit (human from the UI): same dispatcher as agent [[PORTAL-API]] calls.
+            try:
+                res = _apiq_dispatch(str(body.get("agent") or "human")[:60],
+                                     body.get("call"), body.get("args"))
+                return self._json(200 if res.get("ok") else 400, {"ok": bool(res.get("ok")), **res})
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/scheduler":   # IN-PROC SCHEDULER ACTIONS (2026-11-23)
