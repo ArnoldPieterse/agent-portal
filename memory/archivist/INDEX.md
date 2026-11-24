@@ -57,3 +57,5 @@ Last updated: 2026-11-24.
 - [dup_detect.py](memory/archivist/dup_detect.py) - duplicate document detector  
 - [knowledge-graph-v3.json](memory/archivist/knowledge-graph-v3.json) - knowledge graph v3 data (7663 nodes, temporal edges)  
 - [weekly_digest.py](memory/archivist/weekly_digest.py) - weekly digest generator for fleet activity  
+
+- mode_freshness.py

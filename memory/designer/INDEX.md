@@ -92,3 +92,10 @@ Cycle-7 goal set (set 2026-11-20). These leaves make verified cycle-7 work visib
 - -> memory/designer/goal6-breakpoint-verify-final-2026-11-20.md   goal 6 Responsive Hardening: all 4 breakpoints, 0 overflow risks, touch targets >=44px (static cascade analysis; browser unavailable in sandbox)
 - -> memory/designer/goal8-toast-evidence-2026-11-20.md   goal 8 Toast system: 4 types, MAX=3 stack, TTL=5s auto-dismiss, 5 call sites - ALL CRITERIA PASS
 - -> memory/designer/contrast-audit-live-2026-11-20.md   goal 7 Contrast: LIVE run = FAIL (light theme 30 pairs <4.5:1) - goal NOT met, left open
+
+- ui_a11y_test.py
+- evidence-mode-transition-animation-2026-11-24.md
+- evidence-pass-budget-gauge-2026-11-24.md
+- evidence-mode-history-timeline-2026-11-24.md
+- evidence-maintenance-task-cards-2026-11-24.md
+- evidence-convergence-ring-2026-11-24.json

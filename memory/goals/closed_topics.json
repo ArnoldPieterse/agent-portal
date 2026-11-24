@@ -1840,5 +1840,89 @@
 "text": "**Cycle Retro Auto-Archiver** - `python memory/archivist/retro_archiver.py`: at cycle close, auto-generate retro notes from: goals completed",
 "agent": "archivist",
 "at": "2026-11-24"
+},
+{
+"sig": "63334a50af329d45",
+"text": "**Mode Transition Anomaly Log** - When actual mode transition deviates from forecast (by >30 min), log to memory/archivist/mode-anomalies.js",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "d9a1b1c688e83e87",
+"text": "**Knowledge Freshness for Mode Data** - Implement TTL (time-to-live) for fleet-mode.json + productivity-baseline.json: if file mtime >2h old",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "cd1d3afacc4ffb43",
+"text": "**Fleet Mode ARIA + Keyboard Nav** - Add ARIA-live region for mode changes (screen reader announces \"Fleet entered maintenance mode\"); ensur",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "796eeeb8c3383c6d",
+"text": "**Mode Transition Animation** - Design CSS transition for mode changes: background color shift (green->amber->grey) over 400ms with ease-in-",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "4b3e833b2c277576",
+"text": "**Pass Budget Gauge** - Design a circular gauge (SVG) showing passes used / budget remaining this cycle. Color transitions: green <50%, ambe",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "8aaae0bb4a668121",
+"text": "**Mode History Timeline** - Design horizontal timeline showing when fleet entered/exited each mode today (colored segments with timestamps).",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "a50b82e2cf5d5693",
+"text": "**Maintenance Task Cards** - Design card component for each idle agent showing: agent name, current maintenance task (from rotation), time a",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "4271929bc30cf3a9",
+"text": "**Convergence Progress Ring** - Replace linear progress bar with circular ring showing % of cycle goals reached. Animate stroke-dashoffset o",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "8bab15ff44e6ddaf",
+"text": "**Mode Transition Integration Test** - `python memory/verifier/mode_transition_test.py`: simulate fleet going 99%->100% and verify: (a) flee",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "c50b196658d867f9",
+"text": "**fleet-mode.json Schema Validator** - `python memory/verifier/mode_schema_check.py`: validate fleet-mode.json structure: mode is one of {WO",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "4d965ff1c228a5bb",
+"text": "**Dispatch Correctness Fuzzer** - `python memory/verifier/dispatch_fuzzer.py`: generate 100 random goal-state configurations (mix of reached",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "b53cda16496c160e",
+"text": "**Pass Budget Compliance Test** - `python memory/verifier/budget_compliance.py`: simulate 250 passes (budget=200); verify: (a) counter incre",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "b3e7aedac44b4932",
+"text": "**Productivity Metric Validator** - `python memory/verifier/productivity_validate.py`: given autoloop.jsonl + known ground-truth file change",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "15f840cfaf1e2ad2",
+"text": "**Cycle Transition Rollback Test** - `python memory/verifier/cycle_rollback_test.py`: simulate failed cycle transition (e.g., new goal file ",
+"agent": "verifier",
+"at": "2026-11-24"
 }
 ]

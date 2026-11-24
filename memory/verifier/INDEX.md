@@ -137,3 +137,8 @@ Recommendation: archive ac-a2-r19 through r84 to memory/verifier/archive-ac-a2-2
 - cross-seat-protocol-overclaim-2026-11-22.md (option c 2026-11-22): Orchestrator Goal #6 (Cross-Seat Coordination Protocol) marked reached but criterion 3 "each resolved by target seat" is UNMET - all 3 handoff files still open. Stale evidence claim: verified marker itself says "partially met". Verdict: EVIDENCE INSUFFICIENT, goal should be reopened.
 
 - mechanic-goal1-loaddata-verified-2026-11-22.md (option d 2026-11-22): Verified Mechanic Goal 1 load-baseline.jsonl: 5/7 probe dates confirmed, max p95 194.6/751.2/3527.0 exact match, zero errors. Data intact; goal remains OPEN pending Nov 22 probe.
+
+- dispatch_fuzzer.py
+- budget_compliance.py
+- productivity_validate.py
+- cycle_rollback_test.py

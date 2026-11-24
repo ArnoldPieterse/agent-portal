@@ -1,2 +1,10 @@
 {"ts": "2026-11-17T14:40:00Z", "msg": "TARGET: PID 19988 (from _portal_pid.txt)"}
 {"ts": "2026-11-17T14:40:00Z", "msg": "DRY-RUN: portal port 8099 closed; would kill PID 19988 and re-run PortalRun"}
+{"ts": "2026-11-24T11:44:56Z", "msg": "TARGET: PID 20628 (from _portal_pid.txt)"}
+{"ts": "2026-11-24T11:44:56Z", "msg": "KILL: sending termination to PID 20628"}
+{"ts": "2026-11-24T11:44:59Z", "msg": "RUN: schtasks /run /tn PortalRun"}
+{"ts": "2026-11-24T11:44:59Z", "msg": "WARN: schtasks rc=1: ERROR: The system cannot find the file specified."}
+{"ts": "2026-11-24T11:44:59Z", "msg": "FALLBACK: launching portal directly"}
+{"ts": "2026-11-24T11:44:59Z", "msg": "VERIFY: waiting up to 15s for new portal on :8099..."}
+{"ts": "2026-11-24T11:44:59Z", "msg": "WARN: same PID 20628 still listening; kill may have failed"}
+{"ts": "2026-11-24T11:44:59Z", "msg": "FAIL: restart did not complete successfully"}

@@ -1696,7 +1696,7 @@ def _cockpit_snapshot():
         pass
     try:
         with open(os.path.join(HERE, "memory", "ops", "mode-transitions.jsonl")) as _f:
-            _mt = [json.loads(x) for x in f.readlines()[-50:] if x.strip()]
+            _mt = [json.loads(x) for x in _f.readlines()[-50:] if x.strip()]
         def _tsec(t):
             v = t.get("ts") or t.get("timestamp") or 0
             return float(v) if isinstance(v, (int, float)) else _cockpit_ts(v)
@@ -1706,7 +1706,7 @@ def _cockpit_snapshot():
         pass
     try:
         with open(os.path.join(HERE, "memory", "ops", "idle-tasks.jsonl")) as _f:
-            data["idle_tasks"] = [json.loads(x) for x in f.readlines()[-12:] if x.strip()]
+            data["idle_tasks"] = [json.loads(x) for x in _f.readlines()[-12:] if x.strip()]
     except Exception:
         pass
     try:
