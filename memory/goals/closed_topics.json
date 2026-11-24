@@ -1750,5 +1750,23 @@
 "text": "**Mode State Recovery** - `python memory/mechanic/mode_recovery.py`: on fleet restart (detected by stale fleet-mode.json mtime >30 min + sys",
 "agent": "mechanic",
 "at": "2026-11-24"
+},
+{
+"sig": "70fe555aa32ad99e",
+"text": "**fleet-mode.json Atomic Writer** - Implement memory/builder/fleet_mode_writer.py: write fleet-mode.json atomically (write-to-temp + os.rena",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "3dd9c8b9b66376e5",
+"text": "**Idle Productivity Counter** - `python memory/builder/productivity_counter.py`: scan autoloop.jsonl for last 24h; compute per-agent {total_",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "c855f2dc950f8c22",
+"text": "**Pass Budget Enforcer** - `python memory/builder/pass_budget.py`: read pass-budget.json; increment counter on each dispatch; when counter >",
+"agent": "builder",
+"at": "2026-11-24"
 }
 ]

@@ -1,174 +1,151 @@
-"""Cross-Agent Handoff Summarizer (Scribe Goal #3)
+#!/usr/bin/env python3
+"""Cross-Agent Handoff Summary (Scribe goal, cycle 15).
 
-When a task is re-routed between agents, auto-generate a context handoff document:
-- Original task
-- Progress made
-- What's remaining
-- Gotchas discovered
+Detects goals that changed seats between the last close-out snapshot
+(memory/ops/goal-seat-snapshot.json, written by cycle_closeout.py) and the
+current goal files, and writes a context summary for each handoff: what moved
+from where to where, plus the goal text and evidence so the receiving agent
+has full context.
 
-Scans memory/ops/left-*.md (departed agent notes), blockers.md, and TODO.md.
-Writes to memory/ops/handoffs/.
-
-Usage: python memory/scribe/handoff_summary.py
+Usage: python memory/scribe/handoff_summary.py [--cycle N] [--selftest]
+Output: memory/synthesis/handoff-summary-<cycle>.md
 """
-import os, json, re, datetime
+import json, re, sys
+from datetime import datetime, timezone
+from pathlib import Path
 
-def get_today():
-    return datetime.date.today().isoformat()
+BASE = Path(__file__).resolve().parent.parent.parent
+GOALS_DIR = BASE / "memory" / "goals"
+SNAP = BASE / "memory" / "ops" / "goal-seat-snapshot.json"
+SYNTH = BASE / "memory" / "synthesis"
+AGENTS = ["orchestrator", "researcher", "verifier", "scribe",
+          "designer", "builder", "archivist", "mechanic"]
 
-def read_file(path):
-    if not os.path.exists(path):
-        return ""
-    with open(path, 'r', encoding='utf-8') as f:
-        return f.read()
 
-def scan_left_files():
-    """Scan memory/ops/left-*.md for departed agent handoffs."""
-    handoffs = []
-    ops_dir = "memory/ops"
-    if not os.path.isdir(ops_dir):
-        return handoffs
-    for fname in sorted(os.listdir(ops_dir)):
-        if not fname.startswith("left-") or not fname.endswith(".md"):
+def norm_title(title):
+    return re.sub(r"[^a-z0-9]+", "", title.lower())[:40]
+
+
+def current_seats():
+    """{norm_title: (agent, num, title, desc, evidence)}"""
+    seats = {}
+    for ag in AGENTS:
+        p = GOALS_DIR / (ag + ".md")
+        if not p.exists():
             continue
-        agent = fname[5:-3]
-        path = os.path.join(ops_dir, fname)
-        content = read_file(path)
-        goals = []
-        for line in content.split('\n'):
-            m = re.match(rf'^\s*{re.escape(agent)}\s*\|\s*(.+)', line)
-            if m:
-                goals.append(m.group(1).strip())
-        date_match = re.search(r'Last updated\s+([\d\-]+)', content)
-        date = date_match.group(1) if date_match else get_today()
-        handoffs.append({
-            "agent": agent,
-            "date": date,
-            "source": f"memory/ops/{fname}",
-            "goals": goals,
-            "type": "departure",
-            "context": content[:500]
-        })
-    return handoffs
+        text = p.read_text(encoding="utf-8")
+        for m in re.finditer(r"^(\d+)\.\s+\*\*(.+?)\*\*\s*-\s*(.+)$", text, re.M):
+            num, title, first = int(m.group(1)), m.group(2).strip(), m.group(3)
+            rest = text[m.end():].split("\n")
+            desc_lines = [first]
+            for line in rest:
+                if re.match(r"^\d+\.\s", line):
+                    break
+                desc_lines.append(line)
+            full = " ".join(l.strip() for l in desc_lines if l.strip())[:400]
+            ev = re.search(r"\((?:verified|evidence):\s*([^)]+)\)", full)
+            seats[norm_title(title)] = (ag, num, title, full, ev.group(1).strip() if ev else "")
+    return seats
 
-def scan_blockers_for_reassignment():
-    """Scan blockers.md for any reassignment markers."""
-    content = read_file("memory/ops/blockers.md")
-    reassignments = []
-    for line in content.split('\n'):
-        if re.search(r'(reassign|now owned|moved to|transferred)', line, re.IGNORECASE):
-            reassignments.append(line.strip())
-    return reassignments
 
-def scan_todo_for_ownership():
-    """Scan TODO.md for goal ownership annotations."""
-    content = read_file("TODO.md")
-    ownership_notes = []
-    for line in content.split('\n'):
-        if re.search(r'(owner|assigned to|now with)', line, re.IGNORECASE):
-            ownership_notes.append(line.strip())
-    return ownership_notes
+def load_snapshot():
+    if not SNAP.exists():
+        return None
+    try:
+        d = json.loads(SNAP.read_text(encoding="utf-8"))
+        # snapshot stores {agent: [nums]} - rebuild title map from current files is
+        # impossible for moved goals, so we match by goal number per agent instead.
+        return d
+    except Exception:
+        return None
 
-def generate_handoff_doc(handoff):
-    """Generate a structured handoff document from a detected re-routing event."""
-    agent = handoff["agent"]
-    date = handoff["date"]
-    goals = handoff["goals"]
-    
-    todo = read_file("TODO.md")
-    completed = []
-    remaining = []
-    for goal in goals:
-        snippet = goal[:50].lower()
-        if snippet and snippet in todo.lower():
-            idx = todo.lower().find(snippet)
-            window = todo[max(0, idx-100):idx+200]
-            if re.search(r'(verified|done|complete|closed)', window, re.IGNORECASE):
-                completed.append(goal)
-            else:
-                remaining.append(goal)
-        else:
-            remaining.append(goal)
-    
-    blockers = read_file("memory/ops/blockers.md")
-    gotchas = []
-    for line in blockers.split('\n'):
-        if agent.lower() in line.lower() and re.search(r'(block|error|fail|wall)', line, re.IGNORECASE):
-            gotchas.append(line.strip())
-    
-    doc_lines = [
-        f"# HANDOFF: {agent.capitalize()} \u2014 Open goals at departure",
-        f"**From:** {agent} (departed/unreachable)",
-        f"**To:** next available agent (Orchestrator to assign)",
-        f"**Date:** {date}",
-        f"**Source:** {handoff['source']}",
-        f"**Class:** departure-handoff",
-        "",
-        "## Original Task(s)",
-    ]
-    if goals:
-        for i, g in enumerate(goals, 1):
-            doc_lines.append(f"{i}. {g}")
-    else:
-        doc_lines.append("(No specific goals extracted \u2014 see source file)")
-    
-    doc_lines += ["", "## Progress Made"]
-    if completed:
-        for g in completed:
-            doc_lines.append(f"- [x] {g[:80]}")
-    else:
-        doc_lines.append("- No completion evidence found in TODO.md for these goals.")
-    
-    doc_lines += ["", "## Remaining Work"]
-    if remaining:
-        for g in remaining:
-            doc_lines.append(f"- [ ] {g[:100]}")
-    else:
-        doc_lines.append("- All tracked goals appear complete.")
-    
-    doc_lines += ["", "## Gotchas / Known Issues"]
-    if gotchas:
-        for g in gotchas[:5]:
-            doc_lines.append(f"- {g[:120]}")
-    else:
-        doc_lines.append("- No agent-specific blockers found in memory/ops/blockers.md.")
-    
-    doc_lines += ["", "## Status", "[OPEN \u2014 awaiting reassignment]"]
-    
-    return "\n".join(doc_lines)
 
-def main():
-    today = get_today()
-    os.makedirs("memory/ops/handoffs", exist_ok=True)
-    
-    left_handoffs = scan_left_files()
-    blocker_reassigns = scan_blockers_for_reassignment()
-    todo_ownership = scan_todo_for_ownership()
-    
-    print(f"Found {len(left_handoffs)} departure handoffs")
-    print(f"Found {len(blocker_reassigns)} blocker reassignments")
-    print(f"Found {len(todo_ownership)} TODO ownership notes")
-    
-    generated = 0
-    for h in left_handoffs:
-        safe_name = f"{h['agent']}-{h['date'].replace('-','')}.md"
-        out_path = os.path.join("memory/ops/handoffs", safe_name)
-        if os.path.exists(out_path):
-            print(f"  SKIP (exists): {safe_name}")
+def detect_handoffs(prev_seats, cur_seats):
+    """prev/cur: {agent: {norm_title: (ag,num,title,desc,evidence)}} -> list of dicts."""
+    prev_flat = {}
+    for ag, titles in prev_seats.items():
+        for title, tup in titles.items():
+            prev_flat[title] = tup
+    out = []
+    for ag, titles in cur_seats.items():
+        for title, (ag2, num, t, d, ev) in titles.items():
+            if title not in prev_flat:
+                continue  # new goal, not a handoff
+            from_ag = prev_flat[title][0]
+            if from_ag != ag:
+                out.append({"title": t, "from": from_ag, "to": ag,
+                            "num": num, "desc": d, "evidence": ev})
+    return out
+
+
+def build_maps(seats_flat):
+    """flat {norm_title:(agent,...)} -> {agent: {norm_title: tuple}}"""
+    m = {a: {} for a in AGENTS}
+    for title, tup in seats_flat.items():
+        m[tup[0]][title] = tup
+    return m
+
+
+def generate(cycle_num):
+    cur = current_seats()
+    snap = load_snapshot()
+    L = ["# Cross-Agent Handoff Summary - Cycle %d" % cycle_num, "",
+         "Generated: %s" % datetime.now(timezone.utc).isoformat(timespec="seconds"), ""]
+    if snap is None:
+        L.append("_No previous seat snapshot found (run cycle_closeout.py first)._")
+        return "\n".join(L), 0
+    prev_flat = {}
+    for ag, nums in snap.items():
+        p = GOALS_DIR / (ag + ".md")
+        if not p.exists():
             continue
-        doc = generate_handoff_doc(h)
-        with open(out_path, 'w', encoding='utf-8') as f:
-            f.write(doc)
-        generated += 1
-        print(f"  WROTE: memory/ops/handoffs/{safe_name} ({len(doc)} bytes)")
-    
-    print(f"\nGenerated {generated} new handoff documents.")
-    if blocker_reassigns:
-        print("Blocker reassignments detected:")
-        for r in blocker_reassigns[:5]:
-            print(f"  {r[:100]}")
-    
-    return generated
+        text = p.read_text(encoding="utf-8")
+        for m2 in re.finditer(r"^(\d+)\.\s+\*\*(.+?)\*\*", text, re.M):
+            if int(m2.group(1)) in nums:
+                prev_flat[norm_title(m2.group(2))] = (ag, int(m2.group(1)), m2.group(2).strip(), "", "")
+    handoffs = detect_handoffs(build_maps(prev_flat), build_maps(cur))
+    if not handoffs:
+        L.append("_No goal seat changes detected since the last close-out snapshot._")
+        return "\n".join(L), 0
+    for h in handoffs:
+        L += ["## %s: %s -> %s" % (h["to"], h["from"], h["title"]), "",
+              "Goal #%d now sits with **%s**." % (h["num"], h["to"]), "",
+              "**Context carried over:**", "", "> " + h["desc"].replace("\n", " "), ""]
+        if h["evidence"]:
+            L += ["Evidence on record: %s" % h["evidence"], ""]
+    return "\n".join(L), len(handoffs)
+
+
+def selftest():
+    ok = fail = 0
+    def check(name, cond):
+        nonlocal ok, fail
+        print(("  PASS: " if cond else "  FAIL: ") + name)
+        if cond: ok += 1
+        else: fail += 1
+    prev = build_maps({"alpha": ("builder", 3, "Alpha Goal", "d", "")})
+    cur = build_maps({"alpha": ("scribe", 7, "Alpha Goal", "d2", "ev")})
+    h = detect_handoffs(prev, cur)
+    check("detects moved goal", len(h) == 1 and h[0]["from"] == "builder" and h[0]["to"] == "scribe")
+    check("carries evidence", h[0]["evidence"] == "ev")
+    same = detect_handoffs(prev, build_maps({"alpha": ("builder", 3, "Alpha Goal", "d", "")}))
+    check("no false positive on same seat", same == [])
+    newg = detect_handoffs(prev, build_maps({"beta": ("scribe", 9, "Beta Goal", "", "")}))
+    check("new goal not a handoff", newg == [])
+    print("Result: %d/%d passed" % (ok, ok + fail))
+    return fail == 0
+
 
 if __name__ == "__main__":
-    main()
+    if "--selftest" in sys.argv:
+        sys.exit(0 if selftest() else 1)
+    cycle_num = 15
+    if "--cycle" in sys.argv:
+        i = sys.argv.index("--cycle")
+        if i + 1 < len(sys.argv):
+            cycle_num = int(sys.argv[i + 1])
+    report, n = generate(cycle_num)
+    SYNTH.mkdir(parents=True, exist_ok=True)
+    out = SYNTH / ("handoff-summary-%d.md" % cycle_num)
+    out.write_text(report, encoding="utf-8")
+    print("Handoff summary written to: %s (%d handoffs)" % (out.relative_to(BASE), n))

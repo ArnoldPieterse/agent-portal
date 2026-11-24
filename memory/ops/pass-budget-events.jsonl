@@ -7,3 +7,9 @@
 {"ts": "2026-11-24T10:16:41.645357+00:00", "event": "increment", "used": 2, "total": 3}
 {"ts": "2026-11-24T10:16:41.690384+00:00", "event": "exhausted", "idle_mode_written": true, "used": 3, "total": 3}
 {"ts": "2026-11-24T10:16:41.695283+00:00", "event": "noop_exhausted", "used": 3, "total": 3}
+{"ts": "2026-11-24T10:37:27.760417+00:00", "event": "increment", "used": 5, "total": 200}
+{"ts": "2026-11-24T10:37:27.761716+00:00", "event": "increment", "used": 6, "total": 200}
+{"ts": "2026-11-24T10:37:27.762295+00:00", "event": "reset", "used": 0, "total": 5}
+{"ts": "2026-11-24T10:37:36.705129+00:00", "event": "idle_write_failed", "error": "No module named 'fleet_mode_writer'"}
+{"ts": "2026-11-24T10:37:36.705338+00:00", "event": "exhausted", "idle_mode_written": false, "used": 5, "total": 5}
+{"ts": "2026-11-24T10:37:36.710655+00:00", "event": "noop_exhausted", "used": 5, "total": 5}

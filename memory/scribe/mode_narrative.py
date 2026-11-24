@@ -43,11 +43,18 @@ def _append_jsonl(path, records):
         for r in records:
             f.write(json.dumps(r) + "\n")
 
+def frm_of(t):
+    return t.get("from_mode") or t.get("from") or "UNKNOWN"
+
+def to_of(t):
+    return t.get("to_mode") or t.get("to") or "UNKNOWN"
+
+
 def generate_narrative(t):
     """Return a 3-sentence narrative string for transition dict t."""
     ts   = t.get("ts", "unknown time")
-    frm  = t.get("from_mode", "UNKNOWN")
-    to   = t.get("to_mode", "UNKNOWN")
+    frm  = t.get("from_mode") or t.get("from") or "UNKNOWN"
+    to   = t.get("to_mode") or t.get("to") or "UNKNOWN"
     trig = t.get("trigger", "unspecified trigger")
     pct  = t.get("goal_pct", None)
     agent= t.get("agent", "system")
@@ -112,7 +119,7 @@ def main():
     for t in transitions:
         if t["ts"] not in done_ts:
             narr = generate_narrative(t)
-            rec  = {"ts": t["ts"], "from_mode": t["from_mode"], "to_mode": t["to_mode"],
+            rec  = {"ts": t["ts"], "from_mode": frm_of(t), "to_mode": to_of(t),
                     "narrative": narr}
             new_narrs.append(rec)
 
@@ -128,5 +135,29 @@ def main():
     for n in all_n:
         print(f"  [{n['ts']}] {n['from_mode']}→{n['to_mode']}: {n['narrative'][:80]}…")
 
+def selftest():
+    cases = [
+        {"ts": "2026-11-24T01:09:29Z", "from_mode": "IDLE", "to_mode": "WORK",
+         "trigger": "goal_pct=30.0,elapsed=0.01h", "goal_pct": 30.0},
+        {"ts": "2026-11-24T02:00:00Z", "from_mode": "WORK", "to_mode": "MAINTENANCE",
+         "trigger": "goal_pct=100,elapsed=1h", "goal_pct": 100.0},
+        {"ts": "2026-11-24T03:00:00Z", "from_mode": "MAINTENANCE", "to_mode": "IDLE",
+         "trigger": "goal_pct=100,elapsed=7h"},
+    ]
+    ok = True
+    for c in cases:
+        n = generate_narrative(c)
+        sents = [s for s in n.replace(" - ", " ").split(". ") if s.strip()]
+        ok &= (len(sents) >= 3 and c["to_mode"] in n and c["from_mode"] in n)
+    # legacy keys must not crash
+    n2 = generate_narrative({"ts": "x", "from": "IDLE", "to": "WORK"})
+    ok &= ("IDLE" in n2 and "WORK" in n2)
+    print("Result: %s" % ("PASS" if ok else "FAIL"))
+    return ok
+
+
 if __name__ == "__main__":
+    import sys as _s
+    if "--selftest" in _s.argv:
+        _s.exit(0 if selftest() else 1)
     main()

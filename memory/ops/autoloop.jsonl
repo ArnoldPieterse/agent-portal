@@ -1,1 +1,5 @@
 {"timestamp": "2026-11-24T01:33:38.805885+00:00", "agent": "test_agent", "start_ts": 1795484018.8058798, "end_ts": 1795484018.8058813, "duration_s": 0.0, "productive": false, "evidence_files": []}
+{"timestamp": "2026-11-24T10:49:40.604510+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-24T10:49:40.613625+00:00", "agent": "Verifier", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-24T10:49:40.623542+00:00", "agent": "Designer", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-24T10:49:40.649184+00:00", "agent": "Orchestrator", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}

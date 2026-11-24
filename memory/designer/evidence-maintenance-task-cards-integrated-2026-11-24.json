@@ -1,0 +1,54 @@
+{
+  "goal": "Maintenance Task Cards (Designer cycle-15 goal #8)",
+  "date": "2026-11-24",
+  "pass": 11,
+  "fail": 0,
+  "checks": [
+    {
+      "name": "Grid: 4 columns at default",
+      "status": "PASS"
+    },
+    {
+      "name": "Grid: 2 columns at 768px",
+      "status": "PASS"
+    },
+    {
+      "name": "Card: name with text-overflow ellipsis",
+      "status": "PASS"
+    },
+    {
+      "name": "Card: task clamped to 2 lines",
+      "status": "PASS"
+    },
+    {
+      "name": "Card: min-width:0 for truncation",
+      "status": "PASS"
+    },
+    {
+      "name": "Status: productive=green checkmark",
+      "status": "PASS"
+    },
+    {
+      "name": "Status: not-productive=red X",
+      "status": "PASS"
+    },
+    {
+      "name": "ARIA: aria-label on status",
+      "status": "PASS"
+    },
+    {
+      "name": "Data: reads d.maintenance_tasks",
+      "status": "PASS"
+    },
+    {
+      "name": "Graceful degradation: no idle agents message",
+      "status": "PASS"
+    },
+    {
+      "name": "role=listitem on cards",
+      "status": "PASS"
+    }
+  ],
+  "artifact": "ui/cockpit.js (integrated into live panel)",
+  "notes": "Grid: 4-col @1440px, 2-col @768px. Each card: agent name (ellipsis), task (2-line clamp), meta row with time + status icon (green check / red X). ARIA listitem roles. Graceful degradation when no idle agents."
+}

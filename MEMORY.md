@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Verifier: all 10/10 goals verified this pass; 4 had stale markers (#2,#6,#9,#10) re-confirmed via fresh execution
-- Mechanic: All 10/10 goals REACHED (cycle 15), lane fully closed, no open work remaining.
-- Python sandbox blocks subprocess; Verifier must run test scripts via terminal, not python exec.
-- Goal #2 Cockpit Mode Banner done: added fleet_mode to _cockpit_snapshot() in agent_portal.py + created fleet-mode.json
 - Researcher's stale "PHANTOM" claim on mode_transition_test.py is CLOSED: file exists (9714 B), independent run PASS 3/3, EXIT 0.
 - Cycle 15 fully closed: 10/10 goals verified, fresh spot-checks pass (mode_transition 3/3, mode_schema VALID). No open work.
 - Cockpit Mode Banner (Goal #2) fully done: API returns fleet_mode, UI banner + CSS all in place. No open work.
 - Dispatch "open goals" list can be stale post-cycle-transition; always verify against ledger before working.
 - Cycle 15 verifier lane CLOSED: 10/10 goals verified via fresh test re-runs (mode_schema_check VALID, RC=0). No open work.
 - Cycle 15 mechanic lane fully closed: 10/10 goals verified, all selftests passing, no open work remaining.
+- Goal 1 verified: 100-thread concurrent write test passed (0 errors, valid JSON). Evidence at memory/handoffs/orchestrator-to-mechanic-goal1-
+- Cycle 15 fully closed: designer 10/10, mechanic 10/10 (22-35 selftests each), verifier 10/10 verified. No open work remains.
+- Cycle 15 fully closed: Designer 10/10, Mechanic 10/10 (all selftests pass). Archivist goal #8 glossary written by orchestrator.
+- Cycle 15 lane fully closed: Designer 10/10, Mechanic 10/10 (22+31+21+16+20+29
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

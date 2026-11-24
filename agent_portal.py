@@ -3895,6 +3895,7 @@ def _auto_resume_watchdog():
 # journaled, stall-guarded, evidence-swept and auto-committed. Detail: memory/ops/autoloop.md
 _agent_last_active = {}      # name -> epoch of last completed turn (in-memory truth)
 _autoloop_lock = threading.Lock()
+_ALOGGER_MOD = None
 
 
 def _autoloop_file():
@@ -3928,6 +3929,21 @@ def autoloop_touch(name, ts=None):
         d = _autoloop_load()
         d.setdefault("last_active", {})[name] = _agent_last_active[name]
         _autoloop_save(d)
+
+    # Auto-Loop Pass Logger (Builder goal 4, cycle 15): one JSONL record per pass.
+    global _ALOGGER_MOD
+    try:
+        if _ALOGGER_MOD is None:
+            import importlib.util as _ilu
+            _sp = _ilu.spec_from_file_location(
+                "autoloop_logger",
+                os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             "memory", "builder", "autoloop_logger.py"))
+            _ALOGGER_MOD = _ilu.module_from_spec(_sp)
+            _sp.loader.exec_module(_ALOGGER_MOD)
+        _ALOGGER_MOD.log_pass(name)
+    except Exception:
+        pass
 
 
 def autoloop_note_human():

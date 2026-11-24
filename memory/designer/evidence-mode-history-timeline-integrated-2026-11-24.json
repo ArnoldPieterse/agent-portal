@@ -1,0 +1,58 @@
+{
+  "goal": "Mode History Timeline (Designer cycle-15 goal #7)",
+  "date": "2026-11-24",
+  "pass": 12,
+  "fail": 0,
+  "checks": [
+    {
+      "name": "Panel section \"Mode history (24h)\" in HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: .cktimeline flex track",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: Segment min-width 3px",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: Current mode glow (box-shadow)",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: 24h window calculation",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Color map WORK/MAINTENANCE/IDLE",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Colored segments with width%",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Timestamps in title attribute",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Current mode highlighted (mht-current class)",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: aria-label on timeline container",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Graceful degradation when no data",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Reads d.mode_transitions from API",
+      "status": "PASS"
+    }
+  ],
+  "artifact": "ui/cockpit.js (integrated into live panel)",
+  "notes": "Horizontal timeline: flex track with colored segments (green=WORK, amber=MAINTENANCE, grey=IDLE). 24h window, scrollable via overflow:hidden+min-width. Current mode segment has box-shadow glow. Timestamps in title attrs. aria-label describes full history for screen readers. Graceful degradation shows 'no transitions recorded today' when d.mode_transitions is empty."
+}

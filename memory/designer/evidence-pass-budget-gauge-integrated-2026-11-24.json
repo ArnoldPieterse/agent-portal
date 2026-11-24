@@ -1,0 +1,58 @@
+{
+  "goal": "Pass Budget Gauge (Designer cycle-15 goal #6)",
+  "date": "2026-11-24",
+  "pass": 12,
+  "fail": 0,
+  "checks": [
+    {
+      "name": "Panel section 'Pass budget' in cockpit HTML",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: .ckbudget-gauge container (80px circle)",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: conic-gradient fill with --bc color + --bp percentage",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: 300ms ease transition on background",
+      "status": "PASS"
+    },
+    {
+      "name": "CSS: prefers-reduced-motion disables transition",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Color threshold green <50%",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Color threshold amber 50-80%",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Color threshold red >80%",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: role=meter with aria-valuenow/min/max",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: aria-label 'Passes used: X of Y'",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Numeric display 'used/budget' in center span",
+      "status": "PASS"
+    },
+    {
+      "name": "JS: Graceful degradation when data missing",
+      "status": "PASS"
+    }
+  ],
+  "artifact": "ui/cockpit.js (12493 bytes, integrated into live panel)",
+  "notes": "Uses conic-gradient approach (same as health gauge) for GPU-composited rendering. Data source: d.passes_used / d.pass_budget from /api/fleet/cockpit. Shows 'no budget data' when fields absent."
+}

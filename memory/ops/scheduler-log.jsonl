@@ -1595,3 +1595,10 @@
 {"t": "2026-11-24 20:37:03", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-24 20:37:03", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-24 20:37:03", "job": "schtask_dep_weekly", "event": "done", "rc": 0}
+{"t": "2026-11-24 20:37:08", "job": "cycle_1h", "event": "done", "rc": 2}
+{"t": "2026-11-24 20:41:58", "job": "cycle_5m", "event": "start", "pid": 15868}
+{"t": "2026-11-24 20:42:03", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 20:46:58", "job": "cycle_5m", "event": "start", "pid": 28536}
+{"t": "2026-11-24 20:46:58", "job": "cycle_10m", "event": "start", "pid": 28712}
+{"t": "2026-11-24 20:47:03", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 20:47:03", "job": "cycle_10m", "event": "done", "rc": 0}

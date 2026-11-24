@@ -156,6 +156,26 @@ def compute_efficiency(goals_by_agent: dict, blockers: list) -> dict:
         "blockers_resolved": sum(1 for b in blockers if b["resolved"]),
     }
 
+def efficiency_digest(goals_by_agent: dict) -> str:
+    """One-paragraph efficiency digest (Scribe goal: Cycle Efficiency Digest)."""
+    total = sum(len(g) for g in goals_by_agent.values())
+    done = sum(1 for gs in goals_by_agent.values() for g in gs if g["status"] == "completed")
+    pct = round(done / total * 100, 1) if total else 0.0
+    parts = [f"Cycle efficiency: {done}/{total} goals reached ({pct}%)."]
+    try:
+        pb = json.loads((BASE / "memory" / "ops" / "pass-budget.json").read_text(encoding="utf-8"))
+        parts.append(f"Pass budget {pb.get('used', '?')}/{pb.get('total', '?')} used.")
+    except Exception:
+        pass
+    try:
+        prod = json.loads((BASE / "memory" / "ops" / "productivity-baseline.json").read_text(encoding="utf-8"))
+        rate = prod.get("fleet", {}).get("rate")
+        if rate is not None:
+            parts.append(f"Fleet productive-pass rate (24h): {round(rate * 100)}%.")
+    except Exception:
+        pass
+    return " ".join(parts)
+
 
 def generate_report(cycle_num: int) -> str:
     """Generate the full close-out report as markdown."""
@@ -239,6 +259,11 @@ def generate_report(cycle_num: int) -> str:
     lines.append(f"| Blockers (total) | {efficiency['blockers_total']} |")
     lines.append(f"| Blockers resolved | {efficiency['blockers_resolved']} |")
     lines.append("")
+    # Section 4b: Efficiency digest paragraph (Cycle Efficiency Digest goal)
+    lines.append("## Efficiency Digest")
+    lines.append("")
+    lines.append(efficiency_digest(goals_by_agent))
+    lines.append("")
 
     # Section 5: Recommendations
     lines.append("## Recommendations for Next Cycle")
@@ -270,6 +295,15 @@ def main():
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     out_path = SYNTH_DIR / f"closeout-cycle{cycle_num}-{date_str}.md"
     out_path.write_text(report, encoding="utf-8")
+
+    # Seat snapshot for cross-agent handoff detection (Scribe goal)
+    try:
+        snap = {a2: [g["num"] for g in goals_by_agent.get(a2, [])] for a2 in AGENTS}
+        OPS_DIR.mkdir(parents=True, exist_ok=True)
+        (OPS_DIR / "goal-seat-snapshot.json").write_text(
+            json.dumps(snap, indent=1), encoding="utf-8")
+    except Exception:
+        pass
 
     print(f"Close-out report written to: {out_path.relative_to(BASE)}")
     print(f"Cycle {cycle_num}: {report.split(chr(10))[3] if len(report.split(chr(10))) > 3 else 'see file'}")

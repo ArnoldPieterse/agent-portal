@@ -169,3 +169,8 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 **Root cause:** The auto-loop dispatcher reads from a separate queue that has not been updated to reflect the [REACHED] markers in archivist.md. The forecast engine (next10.json) is correct; the dispatch layer is stale.
 **Standing decision:** Do NOT re-run any archivist selftest or re-verify goals on these passes. Lane is CLOSED 10/10. If the dispatcher continues to fire, it is a no-op pass.
 **Unblock (one-time, Orchestrator or forecast-engine owner):** sync the dispatch queue with next10.json status field so "reached" goals are excluded from auto-loop dispatch.
+
+## [2026-11-24T10:40:40.284267+00:00] NEEDS-HUMAN: autoloop_probe
+- status=stale age_s=32821.5
+- restart attempted: schtasks -> success=False
+- detail: ERROR: The system cannot find the file specified.

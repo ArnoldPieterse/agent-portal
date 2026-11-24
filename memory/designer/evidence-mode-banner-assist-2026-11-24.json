@@ -1,0 +1,62 @@
+{
+  "artifact": "ui/core.js + ui/app.css",
+  "goal": "Builder g2 Cockpit Mode Banner (assist by Designer)",
+  "checks": {
+    "banner_element_created": [
+      "PASS",
+      ""
+    ],
+    "role_presentation_no_double_announce": [
+      "PASS",
+      ""
+    ],
+    "uses_mode_color_token": [
+      "PASS",
+      ""
+    ],
+    "body_variant_WORK": [
+      "PASS",
+      ""
+    ],
+    "body_variant_MAINTENANCE": [
+      "PASS",
+      ""
+    ],
+    "body_variant_IDLE": [
+      "PASS",
+      ""
+    ],
+    "reltime_logic": [
+      "PASS",
+      ""
+    ],
+    "last_activity_captured": [
+      "PASS",
+      ""
+    ],
+    "30s_refresh_tick": [
+      "PASS",
+      ""
+    ],
+    "prefers_reduced_motion": [
+      "PASS",
+      ""
+    ],
+    "sticky_not_fixed_overlay": [
+      "PASS",
+      ""
+    ],
+    "wired_setFleetMode": [
+      "PASS",
+      ""
+    ],
+    "created_on_init": [
+      "PASS",
+      ""
+    ],
+    "test_hook_exposed": [
+      "PASS",
+      ""
+    ]
+  }
+}
