@@ -1678,5 +1678,11 @@
 "text": "**Mode Decision Brief** - For each mode transition, write a one-paragraph brief explaining the decision in plain English for human review. I",
 "agent": "scribe",
 "at": "2026-11-24"
+},
+{
+"sig": "cbeb48a2e71bf213",
+"text": "**Cycle Proposal Skeleton Generator** - `python memory/orchestrator/cycle_skeleton.py`: at cycle close, auto-generate next-cycle proposal sk",
+"agent": "orchestrator",
+"at": "2026-11-24"
 }
 ]
