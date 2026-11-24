@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Auto-loop "open goals" list was stale vs memory/goals/builder.md; always verify against the file before acting.
 - Mechanic added Fleet-Mode API endpoint (cached reader) to agent_portal.py; port sandbox-blocked, verified via direct logic+syntax check.
 - All 6 cycle-16 Builder goals verified; no cycle-17 goals assigned yet — nothing to build until new goals appear.
 - Scribe Goal #5 Mode Decision Brief has a path mismatch: writes to synthesis/ instead of ops/ — needs fix
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Verifier lane fully green: all 5 goals (mode_transition, schema, fuzzer, budget, productivity) pass; 10/10 verified.
 - Scribe lane reached 10/10 goals verified for cycle 15 (goals 5,7,8,9,10 marked in memory/goals/scribe.md).
 - Designer cycle-15: goals #6–#9 done (Pass Budget Gauge, Mode History Timeline, Maintenance Task Cards, Convergence Ring), all tests pass
+- Dispatch list shows stale "open" goals already verified in prior passes; agents must check actual goal files before acting
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
