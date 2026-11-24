@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #2 UI verification done (22/22 static checks
-- Goal #10 (Cycle Proposal Skeleton Generator) complete: cycle_skeleton.py generates cycle17-skeleton.md, 0 dupes vs closed_topics.json
-- Mechanic lane 10/10 REACHED (selftests passing, timestamps 2026-11-24T11:50–11:53Z); no open goals remain.
-- Builder lane fully closed: 6/6 goals reached, open=0; topology visualizer handoff verified 13/13 PASS
 - Verifier lane fully closed: 10/10 goals reached, open=0, all 5 test suites re-confirmed passing this pass.
 - Scribe lane 10/10 complete: goals #3, #9, #10 verified this pass; all evidence recorded via goal_ledger.
 - Designer lane 10/10 verified and concluded; "remaining open" prompt note was stale from prior pass.
 - Builder lane 6/6 complete; next available goals are in cycle-17 scope.
 - Mechanic cycle-15 lane closed 10/10; 275/275 selftest assertions verified across all scripts.
 - Two fleet-mode.json files exist with divergent schemas (root 154B vs memory/ops 285B); root uses selftest-cleanup, ops is richer.
+- Verifier: 10/10 goals closed; mode_transition_test.py re-confirmed fresh (3/3, idempotent, 0.2s). No open work.
+- Mechanic cycle-15: all 10 goals reached, 275/275 selftest assertions pass; fleet_mode_infra.py healthy (19/19).
+- Builder cycle-15: all 6/6 goals reached, open=0, lane fully closed and verified in ledger.
+- Goal #2 reinforced: added ARIA
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

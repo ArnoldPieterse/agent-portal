@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 10084 | flagged (<0.35): 0
+Leaves: 10090 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9268,6 +9268,8 @@ Leaves: 10084 | flagged (<0.35): 0
 | memory/goals/closed_topics.json | 0 | 0 | n | 0.550 |
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
 | memory/goals/cycle15-proposal-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/cycle16-skeleton.md | 0 | 0 | n | 0.550 |
+| memory/goals/cycle17-skeleton.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-archivist-cycle12-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-mechanic-g3-host-probes-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9317,6 +9319,7 @@ Leaves: 10084 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261124-140220.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-143616.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-145201.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-155802.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
@@ -9363,6 +9366,7 @@ Leaves: 10084 | flagged (<0.35): 0
 | memory/mechanic/evidence-autonomous-remediation-runbook-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-cockpit-feed-refresh-entry-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-cockpit-feed-refresh-task-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-cycle15-all-10-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-cycle15-closeout-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-cycle15-fleet-infra-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-fleet-mode-infra-goal1-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9394,6 +9398,7 @@ Leaves: 10084 | flagged (<0.35): 0
 | memory/ops/anomaly-20261124T022806Z.md | 0 | 0 | n | 0.550 |
 | memory/ops/anomaly-20261124T040450Z.md | 0 | 0 | n | 0.550 |
 | memory/ops/anomaly-20261124T043742Z.md | 0 | 0 | n | 0.550 |
+| memory/ops/anomaly-20261124T055856Z.md | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autonomous-actions.jsonl | 0 | 0 | n | 0.550 |
@@ -9474,6 +9479,7 @@ Leaves: 10084 | flagged (<0.35): 0
 | memory/ops/post-mortems/latest-summary.md | 0 | 0 | n | 0.550 |
 | memory/ops/post-mortems/post-mortems.jsonl | 0 | 0 | n | 0.550 |
 | memory/orchestrator/action-log-implemented-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/orchestrator/cycle_skeleton.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/dispatch_sync.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/evidence-assist-archivist-forecast-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/evidence-fleet-state-collector-schtasks-2026-11-24.md | 0 | 0 | n | 0.550 |
