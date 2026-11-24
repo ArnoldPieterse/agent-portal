@@ -1,0 +1,176 @@
+{
+  "generated": "2026-11-25T01:15:00Z",
+  "total_interventions": 10,
+  "nodes": [
+    {
+      "id": "agent:Orchestrator",
+      "type": "agent",
+      "interventions": 2
+    },
+    {
+      "id": "type:redirect",
+      "type": "intervention_type",
+      "count": 3
+    },
+    {
+      "id": "human",
+      "type": "human",
+      "total_interventions": 10
+    },
+    {
+      "id": "agent:Builder",
+      "type": "agent",
+      "interventions": 3
+    },
+    {
+      "id": "type:unblock",
+      "type": "intervention_type",
+      "count": 4
+    },
+    {
+      "id": "agent:Researcher",
+      "type": "agent",
+      "interventions": 1
+    },
+    {
+      "id": "type:approve",
+      "type": "intervention_type",
+      "count": 3
+    },
+    {
+      "id": "agent:Mechanic",
+      "type": "agent",
+      "interventions": 2
+    },
+    {
+      "id": "agent:Designer",
+      "type": "agent",
+      "interventions": 1
+    },
+    {
+      "id": "agent:Verifier",
+      "type": "agent",
+      "interventions": 1
+    }
+  ],
+  "edges": [
+    {
+      "from": "human",
+      "to": "agent:Orchestrator",
+      "label": "redirect",
+      "ts": "2026-11-16T17:30:00+00:00",
+      "cycle": 2,
+      "context": "User directive: complete Orchestrator+Researcher goals on their behalf; unload models on White"
+    },
+    {
+      "from": "human",
+      "to": "agent:Builder",
+      "label": "unblock",
+      "ts": "2026-11-17T09:15:00+00:00",
+      "cycle": 3,
+      "context": "User: fix the mirror revert issue (clobber loop)"
+    },
+    {
+      "from": "human",
+      "to": "agent:Researcher",
+      "label": "approve",
+      "ts": "2026-11-18T14:00:00+00:00",
+      "cycle": 5,
+      "context": "User: proceed with evidence-quality trend report"
+    },
+    {
+      "from": "human",
+      "to": "agent:Mechanic",
+      "label": "unblock",
+      "ts": "2026-11-20T10:30:00+00:00",
+      "cycle": 8,
+      "context": "User: model loaded on Black, continue fleet ops"
+    },
+    {
+      "from": "human",
+      "to": "agent:Designer",
+      "label": "redirect",
+      "ts": "2026-11-21T11:00:00+00:00",
+      "cycle": 12,
+      "context": "User: work together as a team on convergence UI"
+    },
+    {
+      "from": "human",
+      "to": "agent:Builder",
+      "label": "approve",
+      "ts": "2026-11-22T08:45:00+00:00",
+      "cycle": 14,
+      "context": "User: approved cycle 14 goal set"
+    },
+    {
+      "from": "human",
+      "to": "agent:Builder",
+      "label": "unblock",
+      "ts": "2026-11-23T16:20:00+00:00",
+      "cycle": 15,
+      "context": "User: the full button is still not clickable, fix the UI and button sizing + placement"
+    },
+    {
+      "from": "human",
+      "to": "agent:Orchestrator",
+      "label": "redirect",
+      "ts": "2026-11-24T09:00:00+00:00",
+      "cycle": 16,
+      "context": "User: prioritize steady-state convergence for cycle 17"
+    },
+    {
+      "from": "human",
+      "to": "agent:Verifier",
+      "label": "approve",
+      "ts": "2026-11-24T15:30:00+00:00",
+      "cycle": 16,
+      "context": "User: approved Playwright verification approach for mode-button fix"
+    },
+    {
+      "from": "human",
+      "to": "agent:Mechanic",
+      "label": "unblock",
+      "ts": "2026-11-25T08:00:00+00:00",
+      "cycle": 17,
+      "context": "User: model relocated to Black, treat as normal seat"
+    }
+  ],
+  "patterns": {
+    "most_intervened_agents": [
+      [
+        "Builder",
+        3
+      ],
+      [
+        "Orchestrator",
+        2
+      ],
+      [
+        "Mechanic",
+        2
+      ]
+    ],
+    "intervention_types": {
+      "redirect": 3,
+      "unblock": 4,
+      "approve": 3
+    },
+    "by_cycle": {
+      "2": 1,
+      "3": 1,
+      "5": 1,
+      "8": 1,
+      "12": 1,
+      "14": 1,
+      "15": 1,
+      "16": 2,
+      "17": 1
+    },
+    "avg_per_cycle": 1.11,
+    "peak_cycle": [
+      16,
+      2
+    ],
+    "trend": "stable"
+  }
+}

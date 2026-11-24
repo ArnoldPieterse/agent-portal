@@ -43,6 +43,10 @@ Last updated: 2026-11-24.
 - -> memory/archivist/hostdoc-consistency-2026-11-16.md   cycle-2 goal 6: live host:port claim checks
 - -> memory/handoffs/HO-20261116-file-modularity.md   real handoff instance (goal 3)
 - auto-loop stale-state fix (2026-11-23) -> memory/archivist/evidence-autoloop-stale-fix-2026-11-23.md   next10.json + closed_topics.json patched; lane CLOSED 10/10
+- fleet decision archive (goal 9, cycle-17) -> memory/archivist/decision-archive.md   56 decisions from 6 sources, 6 categories, pattern analysis [REACHED 2026-11-25]
+- provenance-convergence (goal 3, cycle-17) -> memory/archivist/provenance-convergence.jsonl   7 metrics with full chains: agent/source/transform/confidence [REACHED 2026-11-25]
+- cross-cycle patterns (goal 4, cycle-17) -> memory/archivist/cross-cycle-patterns.md   7 sections, dedup log, emerging convergence trends [REACHED 2026-11-25]
+- readiness assessment (goal 10, cycle-17) -> memory/archivist/readiness-assessment.jsonl   weekly scoring of E1/E2/E3 criteria + gaps + next actions [REACHED 2026-11-25]
 
 ## Linked content (KG orphan remediation 2026-11-19)
 - [hostdoc_consistency_v2.py](memory/archivist/hostdoc_consistency_v2.py)

@@ -2218,5 +2218,53 @@
 "text": "**Convergence Trajectory Model** - `python memory/researcher/convergence_model.py`: from cycle history (duration, completion %, intervention",
 "agent": "researcher",
 "at": "2026-11-25"
+},
+{
+"sig": "a20d9afa3c84beb3",
+"text": "**Convergence Knowledge Base Entry** - create memory/archivist/convergence-kb.md defining steady-state criteria, autonomy score formula, con",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "127102c3a835ffdc",
+"text": "**Cycle History Index v2** - extend archive INDEX.md with structured metadata per cycle: topic, duration, completion %, key outcomes, interv",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "144f4cfbc2de0791",
+"text": "**Steady-State Definition SSOT** - formal document defining steady-state: exact criteria, measurement methodology, entry/exit conditions, ex",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "5b9ba3513e31025f",
+"text": "**Cycle Topic Evolution Timeline** - document topic evolution across cycles: proposed, selected, rationale. Identify coverage gaps. Output: ",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "2a18462eac6f3f52",
+"text": "**Convergence Metric Lineage** - for each dashboard metric document full computation lineage: raw source -> transforms -> final value. Enabl",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "485a90828b9c5075",
+"text": "**Steady-State Readiness Assessment** - weekly assessment of convergence readiness: score each criterion, identify gaps, suggest next action",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "b48a88c7d0c11f43",
+"text": "**Convergence API Endpoint** - implement `/api/convergence` in agent_portal.py: reads autonomy-score.json, efficiency-index.jsonl, human-int",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "301fc2492dde03d9",
+"text": "**Cycle Estimator Integration** - integrate cycle_estimator.py output into fleet-mode.json as `cycle_estimate` field. Update cockpit to disp",
+"agent": "builder",
+"at": "2026-11-25"
 }
 ]

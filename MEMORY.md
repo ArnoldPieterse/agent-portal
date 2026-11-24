@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- seat_probe.py verified (3/3 tests pass, exit 2 = Scribe unreachable). Now building Goal #2: Steady-State Ops Playbook.
-- Goal #5 (Complexity Heatmap) done: CSS grid in ui/app.css
 - Mechanic closed Goal #4 (VRAM Headroom Predictor, 5/5 tests pass); now working on Goal #5 Probe Cadence Auto-Adjuster
 - cycle-durations.jsonl has only 4 cycles (5,8,14,15), no completion_pct/intervention_count — blocks Researcher G1
 - All 5 Verifier goals formally reached & ledger-recorded; 3 source-data defects flagged (autonomy delta, efficiency formula, mode-hours overf
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Designer completed all 8 widget goals (1-8
 - Mechic lane fully closed at 10/10 goals for cycle 17; no open work remains until new goals arrive.
 - Archivist reached 5/10 goals: convergence-kb, cycle-history-index v2, steady-state-ssot, topic-evolution, metric-lineage — all indexed in IN
+- Mechic cycle-17: all 10 goals verified and closed; no open work in lane as of this pass.
+- Cycle-17 Archivist: all 10/10 goals closed with verified evidence; artifacts include convergence-kb.md, cycle-history-index.json, decision a
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
