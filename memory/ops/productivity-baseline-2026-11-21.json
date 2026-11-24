@@ -1,0 +1,34 @@
+{
+  "orchestrator": {
+    "rate": 58.5,
+    "source": "simulated"
+  },
+  "researcher": {
+    "rate": 44.5,
+    "source": "simulated"
+  },
+  "verifier": {
+    "rate": 46.0,
+    "source": "simulated"
+  },
+  "scribe": {
+    "rate": 46.2,
+    "source": "simulated"
+  },
+  "designer": {
+    "rate": 64.4,
+    "source": "simulated"
+  },
+  "builder": {
+    "rate": 60.5,
+    "source": "simulated"
+  },
+  "archivist": {
+    "rate": 69.4,
+    "source": "simulated"
+  },
+  "mechanic": {
+    "rate": 42.4,
+    "source": "simulated"
+  }
+}
