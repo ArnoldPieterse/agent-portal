@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Scribe cycle-11 goals written for "Closed-Loop Autonomy & Fleet Cock
-- Cycle 15 topic: "Fleet Autonomy Convergence" — Mode Controller (fleet-mode.json SSOT), Dispatch Correctness, Idle Productivity; all 80 goals
-- Built `memory/scribe/cycle_closeout.py`; first run → `closeout-cycle15-2026-11-23.md` (82/92 goals, 7 agents parsed).
-- Mechanic cycle-11: 5/5 goals built (Atomic Writer, Pass Budget Monitor, Mode Transition Latency, Idle Task Delivery, Cycle Transition Automa
 - Designer c15-g1 REACHED: ui/fleet-mode-aria.js (175 LOC), ARIA live region + keyboard nav, 32/32 checks pass
 - Cycle-16: idle_rotation.py, fleet_mode_writer.py, dispatch
 - Mechanic cycle-15: all 5 scripts pass (105/105 tests); goals file still has stale cycle-10 entries needing update
 - Builder completed all 5 goals in batch pass: Idle Task Injector, fleet-mode Atomic Writer, Auto-Loop Pass Logger, Mode-Aware Dispatch
 - Scribe built cycle_closeout.py (verified) and started goal #2 Mode Decision Brief generator with graceful degradation for missing mode data
 - Designer injects all fleet-mode UI modules via core.js (not pinned index.html); goals 1-4 done, goal 5 (Maintenance Task Cards) in progress.
+- Goal #2 (Cockpit Mode Banner): agent_portal.py + app.css done; JS injection in ui/core.js still pending
+- Designer wired UI modules via core.js (not pinned index.html); ARIA module triggers mode-change animation; goals #3,#6,#7,#8 reached cycle-1
+- Verifier: all 10 cycle-15 goals verified; goals 9 (Stale Dispatch Detector) & 10 (E2E Mode Cycle Test) built this pass,
+- Mechanic completed all 10 cycle-15 goals; fleet at 30/80 (38%) with autoloop_probe, restart_guard, productivity_monitor, mode_recovery, flee
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

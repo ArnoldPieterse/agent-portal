@@ -1564,5 +1564,17 @@
 "text": "**Mode Decision Provenance Log** - For every fleet-mode.json write, append a provenance entry to memory/archivist/mode-provenance.jsonl: tim",
 "agent": "archivist",
 "at": "2026-11-24"
+},
+{
+"sig": "46bdd0f5bb6b99ae",
+"text": "**Fleet Mode Controller** - `python memory/orchestrator/fleet_mode.py`: determine current fleet mode (WORK / MAINTENANCE / IDLE) from goal c",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "2619eca96d03da96",
+"text": "**Cycle Close-Out Report** - `python memory/scribe/cycle_closeout.py`: at cycle close, generate structured report: goals completed (by agent",
+"agent": "scribe",
+"at": "2026-11-24"
 }
 ]
