@@ -28,6 +28,18 @@ PRIMARY_GOAL_FILES = [
 ]
 
 TRIGGER_MARKER = os.path.join(GOALS_DIR, '.cycle_trigger_fired')
+FLEET_MODE_PATH = os.path.join(BASE, 'memory', 'ops', 'fleet-mode.json')
+
+
+def _read_cycle_estimate():
+    """Read the cycle_estimate block from fleet-mode.json (written by
+    memory/orchestrator/cycle_estimator.py). Returns dict or None. The trigger
+    surfaces this so its timing/visibility is informed by the estimator."""
+    try:
+        with open(FLEET_MODE_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f).get('cycle_estimate')
+    except (OSError, json.JSONDecodeError):
+        return None
 
 
 def parse_goal_status(filepath):
@@ -170,9 +182,16 @@ def run(simulate=False, dry_run=False):
         print("\n[SIMULATE] Forcing 100% completion for test.")
         all_complete = True
 
+    # Surface estimator's cycle_estimate so trigger timing/visibility uses it (goal #2 wiring)
+    est = _read_cycle_estimate()
+    if est:
+        print(f"\nCycle estimate: ~{est.get('estimate_h')}h remaining, "
+              f"estimated completion {est.get('estimated_completion')} (confidence={est.get('confidence')})")
+
     if not all_complete:
         print(f"\nNOT TRIGGERED: {total_verified}/{total_goals} goals complete.")
-        return {'status': 'not_ready', 'action': None, 'progress': f'{total_verified}/{total_goals}'}
+        return {'status': 'not_ready', 'action': None, 'progress': f'{total_verified}/{total_goals}',
+                'cycle_estimate': est}
 
     # Fire the trigger
     cycle_label = datetime.now().strftime('%Y-%m-%d')
@@ -202,7 +221,8 @@ def run(simulate=False, dry_run=False):
     mark_fired(cycle_label, results)
     print(f"Trigger marker written.")
 
-    return {'status': 'triggered', 'action': 'cycle_reset', 'archived': archived, 'prompt': prompt_path}
+    return {'status': 'triggered', 'action': 'cycle_reset', 'archived': archived, 'prompt': prompt_path,
+            'cycle_estimate': est}
 
 
 def status():

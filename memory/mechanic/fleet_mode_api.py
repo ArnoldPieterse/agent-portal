@@ -95,7 +95,9 @@ def handle_fleet_mode(force_refresh=False):
             'since': since,
             'goal_pct': goal_pct,
             'next_transition_forecast': _compute_next_transition(mode, goal_pct, last_activity),
-            'pass_budget': _read_pass_budget()
+            'pass_budget': _read_pass_budget(),
+            # cycle_estimate (Builder cycle-17 goal 2): estimator's predicted duration + completion date
+            'cycle_estimate': fm.get('cycle_estimate')
         }
     
     # Update cache

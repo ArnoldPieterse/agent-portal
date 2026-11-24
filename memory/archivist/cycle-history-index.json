@@ -1,0 +1,202 @@
+[
+  {
+    "cycle": 2,
+    "topic": "unknown",
+    "pillars": "",
+    "date_start": "2026-11-18",
+    "date_end": "2026-11-18",
+    "duration_hours": null,
+    "agents_active": [
+      "archivist"
+    ],
+    "agent_count": 1,
+    "goals_total": 0,
+    "goals_reached": 0,
+    "completion_pct": null,
+    "interventions": 1
+  },
+  {
+    "cycle": 7,
+    "topic": "unknown",
+    "pillars": "",
+    "date_start": "2026-11-20",
+    "date_end": "2026-11-20",
+    "duration_hours": null,
+    "agents_active": [
+      "scribe"
+    ],
+    "agent_count": 1,
+    "goals_total": 10,
+    "goals_reached": 0,
+    "completion_pct": 0.0,
+    "interventions": 0
+  },
+  {
+    "cycle": 8,
+    "topic": "unknown",
+    "pillars": "",
+    "date_start": "2026-11-23",
+    "date_end": "2026-11-23",
+    "duration_hours": 72.0,
+    "agents_active": [
+      "archivist",
+      "builder",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "scribe",
+      "verifier"
+    ],
+    "agent_count": 8,
+    "goals_total": 80,
+    "goals_reached": 0,
+    "completion_pct": 0.0,
+    "interventions": 1
+  },
+  {
+    "cycle": 9,
+    "topic": "unknown",
+    "pillars": "",
+    "date_start": "2026-11-23",
+    "date_end": "2026-11-23",
+    "duration_hours": null,
+    "agents_active": [
+      "archivist",
+      "builder",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "scribe",
+      "verifier"
+    ],
+    "agent_count": 8,
+    "goals_total": 80,
+    "goals_reached": 0,
+    "completion_pct": 0.0,
+    "interventions": 0
+  },
+  {
+    "cycle": 10,
+    "topic": "unknown",
+    "pillars": "",
+    "date_start": "2026-11-22",
+    "date_end": "2026-11-24",
+    "duration_hours": null,
+    "agents_active": [
+      "builder",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "scribe",
+      "verifier"
+    ],
+    "agent_count": 7,
+    "goals_total": 140,
+    "goals_reached": 0,
+    "completion_pct": 0.0,
+    "interventions": 0
+  },
+  {
+    "cycle": 12,
+    "topic": "unknown",
+    "pillars": "",
+    "date_start": "2026-11-23",
+    "date_end": "2026-11-23",
+    "duration_hours": null,
+    "agents_active": [
+      "archivist",
+      "builder",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "scribe",
+      "verifier"
+    ],
+    "agent_count": 8,
+    "goals_total": 82,
+    "goals_reached": 12,
+    "completion_pct": 14.6,
+    "interventions": 1
+  },
+  {
+    "cycle": 13,
+    "topic": "unknown",
+    "pillars": "",
+    "date_start": "2026-11-23",
+    "date_end": "2026-11-23",
+    "duration_hours": null,
+    "agents_active": [
+      "builder",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "scribe",
+      "verifier"
+    ],
+    "agent_count": 7,
+    "goals_total": 70,
+    "goals_reached": 0,
+    "completion_pct": 0.0,
+    "interventions": 0
+  },
+  {
+    "cycle": 14,
+    "topic": "unknown",
+    "pillars": "",
+    "date_start": "2026-11-23",
+    "date_end": "2026-11-23",
+    "duration_hours": 24.0,
+    "agents_active": [
+      "verifier"
+    ],
+    "agent_count": 1,
+    "goals_total": 10,
+    "goals_reached": 0,
+    "completion_pct": 0.0,
+    "interventions": 1
+  },
+  {
+    "cycle": 15,
+    "topic": "Fleet Autonomy Convergence",
+    "pillars": "(1) Mode Controller, (2) Dispatch Correctness, (3) Idle Productivity",
+    "date_start": "2026-11-24",
+    "date_end": "2026-11-24",
+    "duration_hours": 24.0,
+    "agents_active": [
+      "mechanic"
+    ],
+    "agent_count": 1,
+    "goals_total": 20,
+    "goals_reached": 0,
+    "completion_pct": 0.0,
+    "interventions": 1
+  },
+  {
+    "cycle": 16,
+    "topic": "Fleet Autonomy Convergence",
+    "pillars": "(1) Autonomous Cycle Transition, (2) Self-Validation Circuit, (3) Adaptive Topology",
+    "date_start": "2026-11-24",
+    "date_end": "2026-11-24",
+    "duration_hours": null,
+    "agents_active": [
+      "archivist",
+      "builder",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "scribe",
+      "verifier"
+    ],
+    "agent_count": 8,
+    "goals_total": 80,
+    "goals_reached": 0,
+    "completion_pct": 0.0,
+    "interventions": 2
+  }
+]

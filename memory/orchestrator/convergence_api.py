@@ -84,11 +84,42 @@ def _get_interventions():
     return counts
 
 
+def _get_autonomy_score_file():
+    """Authoritative autonomy score from memory/ops/autonomy-score.json.
+    Returns (score, components) or (None, None) if unavailable."""
+    data = _read_json(os.path.join(OPS_DIR, "autonomy-score.json"))
+    score = data.get("score")
+    if score is None:
+        return None, None
+    return float(score), data.get("components", {})
+
+
+def _get_efficiency_index():
+    """Latest efficiency-index entry from memory/ops/efficiency-index.jsonl.
+    Returns dict (possibly empty)."""
+    entries = _read_jsonl(os.path.join(OPS_DIR, "efficiency-index.jsonl"))
+    if not entries:
+        return {}
+    # newest = last line (file is append-ordered by cycle)
+    return max(entries, key=lambda e: int(e.get("cycle", 0)))
+
+
 def _compute_autonomy_score():
     """Composite 0-100 autonomy score.
-    Components: (a) pass autonomy % (no human input), (b) velocity trend,
-    (c) rework rate (inverse), (d) intervention frequency (inverse).
+    PRIMARY source: memory/ops/autonomy-score.json (score) so the endpoint's
+    value matches the authoritative file. Falls back to a computed composite when
+    that file is absent, using efficiency-index.jsonl for the rework component.
+    Returns (score, components_dict).
     """
+    # Primary: authoritative file
+    file_score, file_components = _get_autonomy_score_file()
+    if file_score is not None:
+        return round(min(100.0, max(0.0, file_score)), 1), file_components
+
+    # Fallback composite (no autonomy-score.json present).
+    eff_idx = _get_efficiency_index()
+    rework_rate = float(eff_idx.get("rework_rate", 0.05) or 0.05)
+
     # (a) Pass autonomy: from cycle-efficiency
     eff = _read_json(os.path.join(OPS_DIR, "cycle-efficiency.json"))
     productive_pct = eff.get("productive_pct")
@@ -98,6 +129,7 @@ def _compute_autonomy_score():
         pu = eff.get("passes_used", 1)
         productive_pct = min(1.0, gc / max(pu, 1)) * 100 if pu > 0 else 50.0
     pass_autonomy = min(100.0, float(productive_pct))
+
 
     # (b) Velocity trend: from velocity-trend.json
     vt = _read_json(os.path.join(OPS_DIR, "velocity-trend.json"))
@@ -115,8 +147,7 @@ def _compute_autonomy_score():
     else:
         velocity_score = 50.0  # insufficient data, neutral
 
-    # (c) Rework rate: from closed topics or goal reopens (approximate as low for now)
-    rework_rate = 0.05  # ~5% default until tracking is in place
+    # (c) Rework rate: from efficiency-index.jsonl (authoritative when present)
     rework_score = (1.0 - rework_rate) * 100
 
     # (d) Intervention frequency: fewer interventions = higher score
@@ -138,7 +169,13 @@ def _compute_autonomy_score():
         rework_score * 0.2 +
         intervention_score * 0.25
     )
-    return round(min(100.0, max(0.0, score)), 1)
+    components = {
+        "pass_autonomy": round(pass_autonomy, 1),
+        "trend_score": round(velocity_score, 1),
+        "rework_score": round(rework_score, 1),
+        "intervention_score": round(intervention_score, 1),
+    }
+    return round(min(100.0, max(0.0, score)), 1), components
 
 
 def _compute_steady_state_progress():
@@ -196,13 +233,45 @@ def _compute_steady_state_progress():
     }
 
 
-def handle_convergence():
-    """Main handler for GET /api/convergence. Returns the composite JSON payload."""
+def _source_signature():
+    """Max mtime of the source files the endpoint reads. A write to any of them
+    changes this signature, so the cache invalidates on write (not just TTL)."""
+    paths = [
+        os.path.join(OPS_DIR, "autonomy-score.json"),
+        os.path.join(OPS_DIR, "efficiency-index.jsonl"),
+        os.path.join(OPS_DIR, "human-interventions.jsonl"),
+        os.path.join(OPS_DIR, "cycle-durations.jsonl"),
+    ]
+    sig = 0.0
+    for p in paths:
+        try:
+            sig = max(sig, os.path.getmtime(p))
+        except OSError:
+            pass
+    return sig
+
+
+def invalidate_cache():
+    """Force the next handle_convergence() call to recompute."""
+    _cache["ts"] = 0.0
+    _cache["data"] = None
+
+
+def handle_convergence(force=False):
+    """Main handler for GET /api/convergence. Returns the composite JSON payload.
+    Caches for CACHE_TTL (5 min) but invalidates on write to any source file."""
     now = time.time()
-    if _cache["data"] is not None and (now - _cache["ts"]) < CACHE_TTL:
+    sig = _source_signature()
+    if (
+        not force
+        and _cache["data"] is not None
+        and (now - _cache["ts"]) < CACHE_TTL
+        and _cache.get("sig") == sig   # unchanged source files => still fresh
+    ):
         return _cache["data"]
 
-    autonomy_score = _compute_autonomy_score()
+    autonomy_score, autonomy_components = _compute_autonomy_score()
+    efficiency = _get_efficiency_index()
     cycle_durations = _get_cycle_durations()
     interventions = _get_interventions()
     steady_state = _compute_steady_state_progress()
@@ -219,6 +288,14 @@ def handle_convergence():
         "ok": True,
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "fleet_autonomy_score": autonomy_score,
+        "autonomy_components": autonomy_components,
+        "efficiency_index": {
+            "cycle": efficiency.get("cycle"),
+            "efficiency_index": efficiency.get("efficiency_index"),
+            "rework_rate": efficiency.get("rework_rate"),
+            "velocity_goals_per_pass": efficiency.get("velocity_goals_per_pass"),
+            "idle_fraction": efficiency.get("idle_fraction"),
+        } if efficiency else None,
         "cycle_duration_trend": {
             "cycles": duration_trend,
             "direction": trend_direction,
@@ -232,26 +309,52 @@ def handle_convergence():
     }
 
     _cache["ts"] = now
+    _cache["sig"] = sig
     _cache["data"] = payload
     return payload
 
 
+def _count_lines(path):
+    try:
+        with open(path, encoding="utf-8") as f:
+            return sum(1 for l in f if l.strip())
+    except OSError:
+        return 0
+
+
 def selftest():
-    """Quick self-test: verify all 4 fields present and valid."""
-    data = handle_convergence()
+    """Verify: (1) fields present/valid, (2) data matches source files,
+    (3) cache hit on repeat + invalidation on write to a source file."""
+    import json as _json
+    data = handle_convergence(force=True)
     assert data.get("ok") is True, "ok flag missing"
-    assert isinstance(data.get("fleet_autonomy_score"), (int, float)), "autonomy score not numeric"
-    assert 0 <= data["fleet_autonomy_score"] <= 100, f"autonomy score out of range: {data['fleet_autonomy_score']}"
-    assert "cycle_duration_trend" in data, "cycle_duration_trend missing"
-    assert "human_intervention_count" in data, "human_intervention_count missing"
-    assert "steady_state_progress" in data, "steady_state_progress missing"
-    ss = data["steady_state_progress"]
-    assert 0 <= ss["progress_pct"] <= 100, f"steady-state progress out of range: {ss['progress_pct']}"
-    assert "criteria" in ss, "steady-state criteria missing"
-    print(f"SELFTEST PASS: autonomy={data['fleet_autonomy_score']}, "
+    # --- source-file match checks ---
+    src_score = _read_json(os.path.join(OPS_DIR, "autonomy-score.json")).get("score")
+    if src_score is not None:
+        assert abs(data["fleet_autonomy_score"] - float(src_score)) < 0.05, \
+            f"autonomy {data['fleet_autonomy_score']} != source {src_score}"
+    eff = _read_jsonl(os.path.join(OPS_DIR, "efficiency-index.jsonl"))
+    if eff:
+        latest = max(eff, key=lambda e: int(e.get("cycle", 0)))
+        assert data["efficiency_index"]["rework_rate"] == latest.get("rework_rate"), \
+            f"rework {data['efficiency_index']['rework_rate']} != source {latest.get('rework_rate')}"
+    n_interv = _count_lines(os.path.join(OPS_DIR, "human-interventions.jsonl"))
+    assert data["human_intervention_count"]["total"] == n_interv, \
+        f"interventions {data['human_intervention_count']['total']} != source lines {n_interv}"
+    # --- cache: repeat call hits cache (identical object), write busts it ---
+    hit = handle_convergence()
+    assert hit is data, "cache miss on immediate repeat call"
+    target = os.path.join(OPS_DIR, "autonomy-score.json")
+    _orig_mt = os.stat(target).st_mtime
+    _t = time.time()
+    os.utime(target, (_t + 60, _t + 60))  # simulate a write: bump mtime past any resolution
+    after = handle_convergence()
+    assert after is not data, "cache did NOT invalidate after source write"
+    os.utime(target, (_orig_mt, _orig_mt))  # restore original mtime
+    print(f"SELFTEST PASS: autonomy={data['fleet_autonomy_score']} (src {src_score}), "
+          f"rework={data['efficiency_index']['rework_rate']}, interventions={data['human_intervention_count']['total']}/{n_interv}, "
           f"trend={data['cycle_duration_trend']['direction']} ({len(data['cycle_duration_trend']['cycles'])} cycles), "
-          f"interventions={data['human_intervention_count']['total']}, "
-          f"steady_state={ss['progress_pct']}%")
+          f"steady_state={data['steady_state_progress']['progress_pct']}% | cache: hit=OK, write-invalidate=OK")
     return data
 
 

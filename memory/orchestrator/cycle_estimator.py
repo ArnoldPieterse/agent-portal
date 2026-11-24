@@ -160,8 +160,14 @@ def estimate_cycle_duration():
     n_data = len(recent)
     confidence = min(0.9, 0.3 + n_data * 0.15)
 
+    # Absolute estimated completion date (now + estimate_h)
+    from datetime import datetime, timedelta
+    eta = datetime.utcnow() + timedelta(hours=estimate_h)
+
     return {
         "estimate_h": estimate_h,
+        "estimated_completion": eta.strftime("%Y-%m-%d %H:%M UTC"),
+        "estimated_completion_iso": eta.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "confidence": round(confidence, 2),
         "components": {
             "base_mean_h": round(base_h, 1),

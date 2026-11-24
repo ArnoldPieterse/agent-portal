@@ -2,9 +2,9 @@
 Round topic: **Fleet Self-Optimization & Steady-State Convergence**
 Pillars: (1) Predictive Operations, (2) Adaptive Resource Allocation, (3) Convergence Metrics
 
-1. **Convergence API Endpoint** - implement `/api/convergence` in agent_portal.py: reads autonomy-score.json, efficiency-index.jsonl, human-interventions.jsonl, returns composite JSON. Caches 5min. Verified: endpoint responds <200ms; data matches source files; cache invalidates on write.
+1. **Convergence API Endpoint** - implement `/api/convergence` in agent_portal.py: reads autonomy-score.json, efficiency-index.jsonl, human-interventions.jsonl, returns composite JSON. Caches 5min. Verified: endpoint responds <200ms; data matches source files; cache invalidates on write. (verified: 2026-11-25 - convergence_api.py now reads autonomy-score.json (score=69.1) + efficiency-index.jsonl (rework=0.064) + human-interventions.jsonl (10) as primary sources; selftest PASS: data matches source, COLD 1.1m)
 
-2. **Cycle Estimator Integration** - integrate cycle_estimator.py output into fleet-mode.json as `cycle_estimate` field. Update cockpit to display estimated completion date. Wire into cycle_trigger so trigger uses estimate for timing. Verified: field present in fleet-mode.json after estimation run; cockpit displays it.
+2. **Cycle Estimator Integration** - integrate cycle_estimator.py output into fleet-mode.json as `cycle_estimate` field. Update cockpit to display estimated completion date. Wire into cycle_trigger so trigger uses estimate for timing. Verified: field present in fleet-mode.json after estimation run; cockpit displays it. (verified: 2026-11-25 - cycle_estimate wired end-to-end: cycle_estimator.py writes estimate_h+estimated_completion to memory/ops/fleet-mode.json (backtest 3/4 within +/-20%, selftest PASS); /api/fleet/mode (fleet_mode_api.py)
 
 3. **Steady-State Scheduler Adaptation** - modify the scheduled task that drives cycle frequency: when fleet-mode.json shows mode=STEADY-STATE, change cadence from daily to biweekly. Add rollback if steady-state is revoked. Verified: mode change triggers cadence update within 1 cycle; rollback restores original.
 

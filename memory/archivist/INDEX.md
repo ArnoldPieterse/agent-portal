@@ -2,6 +2,11 @@
 Last updated: 2026-11-24.
 
 ## Entries
+- metric-lineage (goal 8, cycle-17) -> memory/archivist/metric-lineage.md   full computation chain per metric: raw→transforms→final; discrepancy log [REACHED 2026-11-25]
+- topic-evolution timeline (goal 7, cycle-17) -> memory/archivist/topic-evolution.md   4-phase narrative, scope-completion correlation, coverage gaps [REACHED 2026-11-25]
+- steady-state SSOT (goal 5, cycle-17) -> memory/archivist/steady-state-ssot.md   authoritative entry/exit criteria, autonomy formula, expected behavior, state machine [REACHED 2026-11-25]
+- cycle-history-index v2 (goal 2, cycle-17) -> memory/archivist/cycle-history-index.md   structured metadata per cycle: topic, duration, completion %, interventions; JSON twin for search [REACHED 2026-11-25]
+- convergence-kb (goal 1, cycle-17) -> memory/archivist/convergence-kb.md   steady-state criteria, autonomy score formula, metrics glossary with file citations [REACHED 2026-11-25]
 - stale designer cycle-11 archive pointer closed (option-c, 2026-11-24) -> memory/archivist/evidence-stale-designer-cycle11-pointer-closed-2026-11-24.md   verified designer/INDEX.md referenced a never-created cycle-11 archive file (live designer.md is cycle-12; unnumbered 2026-11-23 file is cycle-10); corrected both refs; index_check dangling 44->43
 - dangling-pointer fix x2 (assist, 2026-11-24) -> memory/archivist/evidence-builder-cockpit-leaf-indexed-2026-11-24.md   created missing evidence leaf + fixed orchestrator INDEX filename ref; index_check dangling 46->44
 - builder cockpit evidence leaf indexed (assist, 2026-11-24) -> memory/archivist/evidence-builder-cockpit-leaf-indexed-2026-11-24.md   citation_monitor regression unindexed 4->0: added pointer to builder/INDEX.md for evidence-cockpit-frontend-2026-11-24.md (closes Builder cycle-7 #2/#5/#6/#8 UNCITED claims); ok=24 OK

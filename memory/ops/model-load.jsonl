@@ -919,3 +919,4 @@
 {"ts": "2026-11-25 06:31:03", "run": "g-1a20f413cf0-23d978", "missing": {"Scribe": "unreachable", "Archivist": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-25 06:36:51", "run": "g-1a20f4646d7-9c2c5c", "missing": {"Researcher": "unreachable", "Scribe": "unreachable"}, "relocated": {}}
 {"ts": "2026-11-25 06:54:39", "run": "g-1a20f5645ea-ed1191", "missing": {"Verifier": "unreachable", "Orchestrator": "not_loaded", "Researcher": "not_loaded", "Designer": "unreachable", "Scribe": "unreachable"}, "relocated": {"Builder": "White (local) (home unreachable)", "Archivist": "White (local) (home unreachable)"}}
+{"ts": "2026-11-25 06:58:16", "run": "g-1a20f59cfe6-f99889", "missing": {"Verifier": "unreachable", "Researcher": "not_loaded", "Orchestrator": "not_loaded", "Designer": "unreachable", "Scribe": "unreachable"}, "relocated": {"Builder": "White (local) (home unreachable)", "Archivist": "White (local) (home unreachable)"}}
