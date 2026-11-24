@@ -57,7 +57,7 @@
 - [ ] (blocked on human gate) Once RESULT block lands from White: verify index.html + assets at relative paths in baseline tree; add designer pointer line to root memory/INDEX.md (line already staged in my MEMORY.md).
 - [x] 2026-11-13 r21 Delivered `git-bootstrap/bootstrap.bat` + `git-bootstrap/README.md` (idempotent init+baseline for White; RESULT block for verification). Reduces human gate to copy→run→paste.
 - [ ] (blocked on O2/O3) Once git repo is initialized on White: verify index.html + any assets sit at relative paths; add designer module pointer to root memory/INDEX.md when that file is reachable from a seat with the canonical tree.
-- [ ] (owner: Orchestrator/human) Human-side gate pending: run `python portal-upgrade\verify_drop_env.py --root C:\Projects\Workspace\AgentPortal_V1 --init-git` on White and paste RESULT block. No agent seat can execute this (proven r19, all 5 hosts).
+- [ ] (owner: Orchestrator/human) Human-side gate pending: run `python portal-upgrade\verify_drop_env.py --root C:\Projects\AgentPortal\AgentPortal_V1 --init-git` on White and paste RESULT block. No agent seat can execute this (proven r19, all 5 hosts).
 - [x] 2026-11-13 r20 Re-probe after human's write-access grant: `\\white\c$` still WinError 65 (listdir) + System error 5 on `net use /user:white ""`; git still absent. Grant not effective from Pale seat.
 - [x] 2026-11-13 Pointer check on local portal subtree: 4/4 OK.
 - [x] 2026-11-13 Mini memory + TODO created per human directive.

@@ -43,7 +43,7 @@ Status: CHECKLIST (round-5, 2026-11-12). Merge posture drafted for all 15 LISTED
 1. **Missing in live:** `memory/portal/architecture.md` (bundle, 9.2 KB, parallel-vs-serialization verdict) has no counterpart in live `memory/portal/`; root index still describes the portal sub-index as "bugs + architecture" while live INDEX.md lists file-links/fleet-status/v1-inventory only → merge candidate.
 2. **Duplication risk:** live `file-links.md` (DRAFT spec, 2026-11-11) vs bundle `bugs/file-links-sandbox.md` (7.0 KB bug module) — same topic, different shape; keep/supersede decision required before merge.
 3. **Unindexed:** `DESIGN.md` (6.1 KB) appears in no memory index.
-4. **Access gap:** Archivist sandbox cannot reach `C:\Projects\Workspace\AgentPortal_V1` (uploads not mounted, network egress blocked); the 29 UNLISTED rows need a `dir /s /b` from an agent on that host to close.
+4. **Access gap:** Archivist sandbox cannot reach `C:\Projects\AgentPortal\AgentPortal_V1` (uploads not mounted, network egress blocked); the 29 UNLISTED rows need a `dir /s /b` from an agent on that host to close.
 
 ## Merge checklist — 15 LISTED files (drafted by Archivist, round-4; bundle → live)
 Basis: snapshot-in-sync ruling (Orchestrator + Researcher), so every row is **byte-verify first** via the White-host SHA-256 manifest before any overwrite. Posture key: MERGE = copy if diff clean else reconcile; ADD = new to live; KEEP-BOTH = no content merge.

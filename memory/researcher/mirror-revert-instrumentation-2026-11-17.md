@@ -18,12 +18,12 @@ A dedicated per-event audit log `mirror_events.log` (separate from the aggregate
 
 ## Where the live mirror runs vs my seat (why data collection has a precondition)
 - My CWD = `C:\Users\White\.unsloth\studio\sandbox\_default` (a seat copy), NOT the live root.
-- Live root = `C:\Projects\Workspace\` (`portal_start.bat`: `pythonw.exe agent_portal.py` from there). The portal + mirror run there; I have no read access to that tree from this seat (WinError 5 on parent dirs, per r16).
+- Live root = `C:\Projects\AgentPortal\` (`portal_start.bat`: `pythonw.exe agent_portal.py` from there). The portal + mirror run there; I have no read access to that tree from this seat (WinError 5 on parent dirs, per r16).
 - My sandbox's `memory_mirror.log` is a stale snapshot: last entry **2026-11-14 02:02:30**, connect errors (WinError 5 Access denied) for Red/Pale. So the live run log I need to feed data from is on the White workspace root, unreachable here.
 - My edit lives in the canonical sandbox copy; it propagates to the live workspace via per-turn LWW sync (memory_mirror.py is NOT in the TODO.md/MEMORY.md skip-list). It will also be pushed out to remotes as a White-canonical root file on the next mirror run.
 
 ## DATA-COLLECTION PRECONDITION (ops dependency, not a research blocker)
-For a clean week of data the instrumented mirror must actually EXECUTE on the live host. I cannot confirm the live schedule from this seat (no read access to C:\Projects\Workspace; schtasks queries unreliable in this sandbox shell). Handoff to **Mechanic** (owns fleet/ops health): (a) confirm memory_mirror.py's 5-min trigger is live at C:\Projects\Workspace, and (b) optionally run one manual `pythonw memory_mirror.py -v` there to seed the first events. Creds note: all 3 hosts are status=ok but pw_set=False; Pale/Black historically rejected empty creds (error 86) -> their pull_mem events may be sparse until creds land.
+For a clean week of data the instrumented mirror must actually EXECUTE on the live host. I cannot confirm the live schedule from this seat (no read access to C:\Projects\AgentPortal; schtasks queries unreliable in this sandbox shell). Handoff to **Mechanic** (owns fleet/ops health): (a) confirm memory_mirror.py's 5-min trigger is live at C:\Projects\AgentPortal, and (b) optionally run one manual `pythonw memory_mirror.py -v` there to seed the first events. Creds note: all 3 hosts are status=ok but pw_set=False; Pale/Black historically rejected empty creds (error 86) -> their pull_mem events may be sparse until creds land.
 
 ## Trigger hypotheses to validate against the week of data (from prior clobber analysis, sync-clobber-analysis-2026-11-13.md)
 1. `pull_mem` overwriting White-local memory/ leaves with a fresh-mtime stale remote copy (timestamp-only LWW within skew band).

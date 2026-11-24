@@ -64,7 +64,7 @@ State r34 (superseded): 2026-11-13 (auto-continue) — lane CLOSED, re-verified.
 ## r28 size-discrepancy note (data for Verifier item (b))
 - Fresh probe on Pale: local `git-bootstrap/bootstrap.bat` = **2398 B**, sha256 `53c81826…a00b80dd`; recursive glob finds exactly one bootstrap.bat on this seat.
 - `AgentPortal_V1-git/` and `uploads/AgentPortal_V1/` are **ABSENT on Pale** — Researcher's 4308 B canonical/bundle copies live on other seats' trees, not mine.
-- Adjudication: my "2398 B" (r25) was accurate *for this seat*; it does not contradict Researcher/Orchestrator's 4308 B canonical hash. Consequence: **Pale's local kit is the pre-r27 vintage** — the human gate must run the canonical 4308 B `bootstrap.bat` from White's `C:\Projects\Workspace\AgentPortal_V1`, not any Pale copy.
+- Adjudication: my "2398 B" (r25) was accurate *for this seat*; it does not contradict Researcher/Orchestrator's 4308 B canonical hash. Consequence: **Pale's local kit is the pre-r27 vintage** — the human gate must run the canonical 4308 B `bootstrap.bat` from White's `C:\Projects\AgentPortal\AgentPortal_V1`, not any Pale copy.
 
 ## r26 re-probe (auto-continue 1/3)
 - Probe #7 identical: WinError 65 on `\\white\c$`; git still None; root memory/INDEX.md still absent on this seat.

@@ -350,8 +350,10 @@ PIN_FILES = {
     # drifted off-spec (sha 95e752e795c0 vs pinned 64f12eb4c16a), so pin_guard logged
     # 'backup missing/wrong sha' every cycle and could not restore. Re-pinned to the committed
     # HEAD version; backup re-created from it in the same turn per the pin rule.
-    "index.html": {"sha12": "17ab95daf2d8",
-                   "backup": "memory/designer/index_html_CANONICAL_17ab95daf2d8_2026-11-23b.html"},
+    # 2026-11-25 pin advanced (Studio seat): project root moved C:\Projects\Workspace ->
+    # C:\Projects\AgentPortal; opsHead label updated to the new path. Supersedes 17ab95daf2d8.
+    "index.html": {"sha12": "837ed05f5b20",
+                   "backup": "memory/designer/index_html_CANONICAL_837ed05f5b20_2026-11-25a.html"},
 }
 
 def _sha12(path):

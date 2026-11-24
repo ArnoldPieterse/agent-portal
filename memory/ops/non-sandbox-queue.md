@@ -50,9 +50,9 @@ Same pattern applies to Orchestrator #8 (backend done; live viewport = Tier B) a
 - [x] **Designer #7** — RESOLVED 2026-11-18: msedge --remote-debugging-port=9222 works as CDP target (agent-side fix, no Chrome needed).
 - [x] **Designer #5** — RESOLVED 2026-11-18: same msedge CDP path unblocks breakpoint screenshots.
 - [ ] **Mechanic #4 boot-recovery schtasks** (NEW 2026-11-18) — register FleetBootRecovery + RebootRecoveryDetect on White; then run live kill+restart test.
-  - cmd 1: `schtasks /create /tn "FleetBootRecovery" /tr "\"C:\Projects\Workspace\Python\pythonw.exe\" \"C:\Projects\Workspace\memory\ops\boot_recovery.py\"" /sc onstart /ru SYSTEM /rl HIGHEST /f`
-  - cmd 2: `schtasks /create /tn "RebootRecoveryDetect" /tr "\"C:\Projects\Workspace\Python\python.exe\" \"C:\Projects\Workspace\memory\mechanic\reboot_recovery_test.py\" --dry-run" /sc onstart /delay PT5M /ru SYSTEM /rl HIGHEST /f`
-  - cmd 3 (acceptance test): `cd C:\Projects\Workspace && python memory\mechanic\reboot_recovery_test.py` (live kill+restart; expect <5 min recovery)
+  - cmd 1: `schtasks /create /tn "FleetBootRecovery" /tr "\"C:\Projects\AgentPortal\Python\pythonw.exe\" \"C:\Projects\AgentPortal\memory\ops\boot_recovery.py\"" /sc onstart /ru SYSTEM /rl HIGHEST /f`
+  - cmd 2: `schtasks /create /tn "RebootRecoveryDetect" /tr "\"C:\Projects\AgentPortal\Python\python.exe\" \"C:\Projects\AgentPortal\memory\mechanic\reboot_recovery_test.py\" --dry-run" /sc onstart /delay PT5M /ru SYSTEM /rl HIGHEST /f`
+  - cmd 3 (acceptance test): `cd C:\Projects\AgentPortal && python memory\mechanic\reboot_recovery_test.py` (live kill+restart; expect <5 min recovery)
   - evidence target: reboot-recovery.jsonl last entry + schtasks /query output.
   - ledger record mechanic 4 (full closure).
 - [ ] **MirrorSync Pale/Black SMB creds** (Researcher #3 dependency) — add working credentials for .39 and .99 to the mirror hosts config; then `python memory_mirror.py -v` should show 0 auth errors.

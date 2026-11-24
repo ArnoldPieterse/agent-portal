@@ -110,7 +110,7 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
   - `python memory_mirror.py -v` -> ALL 3 hosts: `connect: System error 5 ... Access is denied.`
   - This is an **SMB AUTH** failure, NOT the prior "egress block / WinError 10013" class. The seat CAN reach Red/.39/.99 on the LAN; `net use` with the config's empty SMB password is rejected.
   - `python elev.py` -> **helper ABSENT at this seat** (same as Verifier #2 entry); cannot escalate from here.
-- Conclusion: a one-off seed from an ephemeral sandbox session will NOT satisfy the "one-week LIVE dataset" anyway — that requires the mirror to run PERSISTENTLY on the persistent White host (C:\Projects\Workspace) where `net use` sessions + SMB creds persist, via its scheduled task / watchdog.
+- Conclusion: a one-off seed from an ephemeral sandbox session will NOT satisfy the "one-week LIVE dataset" anyway — that requires the mirror to run PERSISTENTLY on the persistent White host (C:\Projects\AgentPortal) where `net use` sessions + SMB creds persist, via its scheduled task / watchdog.
 - Unblock (persistent White host, owner = Mechanic or Orchestrator): confirm the MirrorSync schtask/watchdog is registered AND that `net use \\192.168.1.<ip>\C$` succeeds there with working creds; then it self-seeds + accumulates through 11-24. Closure = `python memory/researcher/parse_mirror_events.py <live-log>` per runbook.
 - Do NOT re-probe from a sandbox seat — auth wall confirmed, one probe spent this pass.
 - [00:11-00:12] ~~NEEDS-HUMAN: seat Designer/Archivist model unreachable~~ **RESOLVED 2026-11-19** (Designer running; Archivist STILL OPEN per current status)
@@ -140,7 +140,7 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 **Do NOT re-probe from any sandbox seat.**
 
 ## 2026-11-18 RESOLUTIONS (unsloth-assist, White seat)
-- **PortalLoadProbe schtask: RESOLVED** - registered daily 06:00 via real python (C:\Projects\Workspace\Python\pythoncore-3.15-64); first probe run OK (9 models on White; Black load-fail reconfirmed). Mechanic #4 now accumulates (2/7 days at registration).
+- **PortalLoadProbe schtask: RESOLVED** - registered daily 06:00 via real python (C:\Projects\AgentPortal\Python\pythoncore-3.15-64); first probe run OK (9 models on White; Black load-fail reconfirmed). Mechanic #4 now accumulates (2/7 days at registration).
 - **VerifierSLO schtask: RESOLVED** - registered daily 06:00, first run exit 0. Verifier #2 unblocked.
 - **MirrorSync schtask: RESOLVED** - registered every 5 min (memory_mirror.py). Mirror pipeline LIVE: 09:52 run pushed 30 files to Red. REMAINING NEEDS-HUMAN: Pale/Black SMB creds into memory_mirror_hosts.json (Arnold; Red works with empty password).
 - **Mechanic #2 Red leg: CLOSED** - TCP 445 OPEN + 8888 OPEN probed from White seat; ledger recorded mechanic.md line 7; evidence memory/ops/probe-evidence.jsonl.

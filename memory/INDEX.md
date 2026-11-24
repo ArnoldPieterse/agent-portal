@@ -1,4 +1,5 @@
 # Agent Portal - memory pointer map
+- 2026-11-25 MOVE: root is now `C:\Projects\AgentPortal` (was `C:\Projects\Workspace`); old paths in dated entries = same tree.
 Read this first, then open only the leaves you need. Keep replies short; keep files small.
 
 FILE ACCESS (python/terminal tools run in Studio's sandbox - use these paths):

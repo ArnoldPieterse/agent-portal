@@ -5,7 +5,7 @@
 **Problem:** Edits to `memory/ops/load_trend.py` (specifically adding the `--week-complete` mode) keep getting reverted by the mirror sync cycle. This is now the 3rd occurrence.
 
 ## Root Cause
-The mirror (`memory_mirror.py`) syncs from the shared root (Z:\ or C:\Projects\Workspace). When an agent edits a file in its sandbox working directory but the edit isn't committed to git AND pushed before the next mirror cycle, the mirror overwrites it with the last-known-good version from the shared root. The `--week-complete` flag was added 3 times and reverted each time because:
+The mirror (`memory_mirror.py`) syncs from the shared root (Z:\ or C:\Projects\AgentPortal). When an agent edits a file in its sandbox working directory but the edit isn't committed to git AND pushed before the next mirror cycle, the mirror overwrites it with the last-known-good version from the shared root. The `--week-complete` flag was added 3 times and reverted each time because:
 1. Agent adds the flag in sandbox
 2. Mirror cycle runs (every ~15 min or on trigger)
 3. Shared root doesn't have the change → mirror restores old version

@@ -16,8 +16,8 @@ def _resolve(base_dir, *names):
     return os.path.join(base_dir, names[0])
 Q4P   = _resolve(r"C:\Users\White\.lmstudio\models\unsloth", "Qwen3.8-27B-Q4_K_S", "Qwen3.8-27B-GGUF")
 Q8P   = _resolve(r"C:\Users\White\.lmstudio\models\lmstudio-community", "Qwen3.8-27B-Q8_0", "Qwen3.8-27B-GGUF")
-LOG   = r"C:\Projects\Workspace\recover_run.log"
-RES   = r"C:\Projects\Workspace\recover_result.json"
+LOG   = r"C:\Projects\AgentPortal\recover_run.log"
+RES   = r"C:\Projects\AgentPortal\recover_result.json"
 
 result = {"start": datetime.datetime.now().isoformat(), "steps": {}}
 
@@ -164,7 +164,7 @@ log(f"functional atlas-q8: {json.dumps(fp8)[:200]}")
 # ---------- 6) portal check (start it if down - post-reboot logon trigger) ----------
 s, d, raw = jreq("GET", PORTAL + "/api/memory", t=10)
 if s != 200:
-    subprocess.run(["wscript.exe", r"C:\Projects\Workspace\memory\ops\launch_host.vbs"], timeout=20)  # 2026-11-23: PortalRun retired
+    subprocess.run(["wscript.exe", r"C:\Projects\AgentPortal\memory\ops\launch_host.vbs"], timeout=20)  # 2026-11-23: PortalRun retired
     time.sleep(8)
     s, d, raw = jreq("GET", PORTAL + "/api/memory", t=10)
 result["portal_8099"] = {"status": s, "snippet": str(raw)[:150]}

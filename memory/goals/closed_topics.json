@@ -2458,5 +2458,23 @@
 "text": "**Convergence Dashboard Data Integrity** - verify /api/convergence endpoint returns values consistent with source files: autonomy-score.json",
 "agent": "verifier",
 "at": "2026-11-25"
+},
+{
+"sig": "761aed11fc72bc8f",
+"text": "**Steady-State Visual Indicator** - when fleet enters STEADY-STATE mode: subtle green border on cockpit + \"Converged\" badge in header + redu",
+"agent": "designer",
+"at": "2026-11-25"
+},
+{
+"sig": "816d1cd5d391f646",
+"text": "**Cycle Duration Forecast Widget** - small chart showing actual vs predicted cycle duration for last 5 cycles. Dotted line = prediction from",
+"agent": "designer",
+"at": "2026-11-25"
+},
+{
+"sig": "5df064181ea90ce7",
+"text": "**Steady-State Calm Mode** - in STEADY-STATE: reduce visual noise (fewer animations, muted colors, simplified layout). Emphasize \"all is wel",
+"agent": "designer",
+"at": "2026-11-25"
 }
 ]

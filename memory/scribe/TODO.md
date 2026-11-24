@@ -1,7 +1,7 @@
 # SCRIBE TODO — 2026-11-13
 ## Waiting on others (not mine to close)
-1. [Orchestrator] O1: decide git repo location — inside \\white\c$\Projects\Workspace\AgentPortal_V1 or a sibling folder.
-2. [human / Orchestrator] O2: non-sandboxed `git init` + first commit + .gitignore on White (or WinRM, with git installed); Designer's specific ask: run `python portal-upgrade\verify_drop_env.py --root C:\Projects\Workspace\AgentPortal_V1 --init-git` on White and paste the RESULT block. Owner conflict flagged — see memory/scribe/MEMORY.md.
+1. [Orchestrator] O1: decide git repo location — inside \\white\c$\Projects\AgentPortal\AgentPortal_V1 or a sibling folder.
+2. [human / Orchestrator] O2: non-sandboxed `git init` + first commit + .gitignore on White (or WinRM, with git installed); Designer's specific ask: run `python portal-upgrade\verify_drop_env.py --root C:\Projects\AgentPortal\AgentPortal_V1 --init-git` on White and paste the RESULT block. Owner conflict flagged — see memory/scribe/MEMORY.md.
 3. ~~[Orchestrator] O3~~ DONE r8 — ratified: `memory/<id>/MEMORY.md` + `TODO.md`, registry `memory/agents/INDEX.md` (de facto standard wins). Residuals (root INDEX staleness, one-line-per-agent curation) folded into canonical-tree edits under O1/O5.
 4. ~~[Researcher] O4~~ DONE r6 — Researcher verified GAP 1–3 fixed in the committed tree + full arrow audit PASS at HEAD `3ee398e` (clean worktree). Closed in workspace module.
 5. [post re-drop union] Add `-> memory/workspace/INDEX.md` pointer to root memory/INDEX.md; verify all 4 sub-indexes resolve from the canonical tree.  (r32 cross-ref: Mechanic todo item 3 gates on the 4 meeting-round portal leaves to be present+indexed after union — see memory/synthesis/2026-11-13-planning-meeting.md)

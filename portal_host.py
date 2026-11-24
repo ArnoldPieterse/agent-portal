@@ -16,14 +16,14 @@ Scheduler entry left is PortalRun as a LOGON-ONLY one-shot launcher for THIS
 script (no stop timer, no periodic trigger) - so reboots/logons heal with
 zero human step, and steady state has zero scheduler involvement.
 
-Launch:  pythonw.exe C:\Projects\Workspace\portal_host.py   (single-instance)
+Launch:  pythonw.exe C:\Projects\AgentPortal\portal_host.py   (single-instance)
 Log:     memory/ops/host-log.jsonl | pid file: memory/ops/host.pid
 """
 import json, os, subprocess, sys, threading, time, urllib.request, urllib.error
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-PY  = r"C:\Projects\Workspace\Python\pythoncore-3.15-64\python.exe"
-PYW = r"C:\Projects\Workspace\Python\pythoncore-3.15-64\pythonw.exe"
+PY  = r"C:\Projects\AgentPortal\Python\pythoncore-3.15-64\python.exe"
+PYW = r"C:\Projects\AgentPortal\Python\pythoncore-3.15-64\pythonw.exe"
 NO_WINDOW = 0x08000000          # CREATE_NO_WINDOW - never a console, never focus
 PORTAL_PORT = 8099
 PID_F = os.path.join(HERE, "memory", "ops", "host.pid")
@@ -145,7 +145,7 @@ def _ensure_launcher():
     real 'Start Menu' Startup folder and is re-run every 5 min from the main loop."""
     try:
         # Do NOT trust USERPROFILE: this host's tool processes run with
-        # USERPROFILE=C:\Projects\Workspace (verified 2026-11-23), which would plant the
+        # USERPROFILE=C:\Projects\AgentPortal (verified 2026-11-23), which would plant the
         # launcher where Windows never looks. 'White' is the only profile on this machine.
         prof = r"C:\Users\White"
         d = os.path.join(prof, "AppData", "Roaming", "Microsoft", "Windows",

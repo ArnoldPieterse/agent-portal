@@ -1,6 +1,6 @@
 # MECHANIC TODO — updated 2026-11-13
 ## Blocked at my seat (need White egress)
-1. [White-seat agent] Prove write access: `echo probe > \\white\c$\Projects\Workspace\AgentPortal_V1\.mech_probe`, read back, delete. Report pass/fail + who ran it.
+1. [White-seat agent] Prove write access: `echo probe > \\white\c$\Projects\AgentPortal\AgentPortal_V1\.mech_probe`, read back, delete. Report pass/fail + who ran it.
 2. [White-seat agent] Init local git repo per memory/mechanic/MEMORY.md "Git repo handoff" (3 steps; key-safety note inside).
 3. [post re-drop] Run r13 union + spot-checks on the canonical White tree — includes `memory/INDEX.md` resolvable with portal/llm/ops sub-indexes, PLUS verify the 4 meeting-round portal leaves present+indexed: upgrade-plan.md (DRAFT v2), fleet-status.md, ui-upgrades-r4.md, INDEX.md (0/4 on Red seat = expected drift; escalate before P1 deploy if missing from drop).
 4. [post re-drop] Load builder-q8 alias on Black, then flip agents.json + Builder smoke same turn (key already in bundle's agents.json).

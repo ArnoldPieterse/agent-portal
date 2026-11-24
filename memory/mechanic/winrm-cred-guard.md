@@ -8,7 +8,7 @@ If `grep -c check_winrm_credentials memory/mechanic/health_check.py` returns 0,
 the mirror has reverted it again. Re-add from this note or the .pyc cache.
 
 ## Why it reverts
-The canonical copy on White (C:\Projects\Workspace\memory\mechanic\health_check.py)
+The canonical copy on White (C:\Projects\AgentPortal\memory\mechanic\health_check.py)
 likely predates the function addition. The mirror overwrites sandbox files with
 canonical content. Fix: ensure the function is in the White canonical copy
 (via WinRM or direct edit on White), then the mirror will propagate it forward.

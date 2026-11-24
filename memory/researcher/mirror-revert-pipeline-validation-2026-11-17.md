@@ -17,7 +17,7 @@ Drove the REAL `parse_mirror_events.py` (imported module, `main()` via sys.argv 
 - Hourly buckets coherent (6/8/3/7/3/2). ✓
 
 ## Conclusion
-The analysis pipeline is **proven end-to-end** against the real log schema. Closure of goal #3 still requires the one-week LIVE dataset (window 11-17→11-24) + a live-data analysis leaf — that leg remains gated on the live mirror executing at C:\Projects\Workspace (blocker already logged in memory/ops/blockers.md, NOT re-probed per anti-loop rule).
+The analysis pipeline is **proven end-to-end** against the real log schema. Closure of goal #3 still requires the one-week LIVE dataset (window 11-17→11-24) + a live-data analysis leaf — that leg remains gated on the live mirror executing at C:\Projects\AgentPortal (blocker already logged in memory/ops/blockers.md, NOT re-probed per anti-loop rule).
 
 **Next single command when data lands:** `python memory/researcher/parse_mirror_events.py <live_mirror_events.log>` → paste output into analysis leaf + write 2-3 targeted fixes.
 

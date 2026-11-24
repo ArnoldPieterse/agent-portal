@@ -8,7 +8,7 @@ Last updated: 2026-11-12. Owner: Scribe. Supersedes uploads/AgentPortal_V1/UPGRA
 ## DECIDED (one-line rationale)
 1. Round-1 scope = Files panel UI + VERSION bump + max_tokens 16384 for scribe+archivist; edited in place on the bundle copy. Rationale: fixes mid-tool-call truncation (green e2e) and wires the existing GET /api/uploads endpoint that had no UI.
    - Owner: Orchestrator (White). Shipped + verified by reparse; portal reads per request, no restart needed.
-2. Deploy ruling = NO agent can PUSH (SMB 0/4 WinError 65 on black/red/pale/white; sockets policy-blocked incl. 127.0.0.1; powershell blocked; fetcher refuses non-public). Deploy = Arnold re-drops the upgraded bundle. Rationale: C:\Projects\Workspace exists only on Arnold's PC; no cross-host write path from any agent host.
+2. Deploy ruling = NO agent can PUSH (SMB 0/4 WinError 65 on black/red/pale/white; sockets policy-blocked incl. 127.0.0.1; powershell blocked; fetcher refuses non-public). Deploy = Arnold re-drops the upgraded bundle. Rationale: C:\Projects\AgentPortal exists only on Arnold's PC; no cross-host write path from any agent host.
    - Owner: Orchestrator (ruled) / Arnold (executes re-drop).
 3. Fleet panel (/api/fleet) = DEFER. Rationale: Scribe's original recording was truncated, so no complete spec exists; endpoint absent from code.
    - Revisit when a full spec is resubmitted.

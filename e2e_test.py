@@ -11,8 +11,8 @@ import json, time, urllib.request, datetime
 
 API    = "http://127.0.0.1:8888"
 PORTAL = "http://127.0.0.1:8099"
-LOG    = r"C:\Projects\Workspace\e2e_test.log"
-RES    = r"C:\Projects\Workspace\e2e_result.json"
+LOG    = r"C:\Projects\AgentPortal\e2e_test.log"
+RES    = r"C:\Projects\AgentPortal\e2e_result.json"
 
 def log(msg):
     line = datetime.datetime.now().strftime("%H:%M:%S") + " " + str(msg)

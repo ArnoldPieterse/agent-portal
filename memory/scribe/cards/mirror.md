@@ -28,7 +28,7 @@ _Generated: 2026-11-20 | Sources: 19 files | Key facts: 323_
 8. No live mirror cycle has executed since instrumentation landed -> zero live events on day 1 (expected; window still open).
    _Source: `memory\researcher\mirror-revert-closure-runbook-2026-11-17.md`_
 
-9. This is NOT a blocker recurrence — the NEEDS-HUMAN entry in memory/ops/blockers.md already covers seeding the live mirror at C:\Projects\Workspace. Do not re-probe.
+9. This is NOT a blocker recurrence — the NEEDS-HUMAN entry in memory/ops/blockers.md already covers seeding the live mirror at C:\Projects\AgentPortal. Do not re-probe.
    _Source: `memory\researcher\mirror-revert-closure-runbook-2026-11-17.md`_
 
 10. Concrete step on goal #8 (SLA enforcement): scanned ALL fresh 11-17 agent artifacts since pass-6 for NEW dispositions on the 3 remaining items — memory/mechanic/*.md (goal7-fleet-health-v2-extended, hotload-controller-built, goal4/3/6), memory/ops/bl

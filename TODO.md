@@ -430,7 +430,7 @@ In flight NOW: Q8_0 UNLOADED (GPU1 free) + corrupted file DELETED + robocopy PID
 - [ ] After Red agents live: full 8-agent roster smoke + group e2e; update hosts.md Red row; sync trees to AgentPortal_V1.
 
 ## Group e2e - recovery ALL_UP; serial smoke + group_e2e running DETACHED (2026-11-11 ~22:4x; superseded above)
-Status: **WAITING ON DETACHED RUN** - serial_e2e_wait.py PID 26952 (project python, cwd C:\Projects\Workspace). Self-waits for Studio idle since THIS CHAT HOLDS THE Q4 SLOT; runs after this turn ends.
+Status: **WAITING ON DETACHED RUN** - serial_e2e_wait.py PID 26952 (project python, cwd C:\Projects\AgentPortal). Self-waits for Studio idle since THIS CHAT HOLDS THE Q4 SLOT; runs after this turn ends.
 - [x] recover_result.json VERDICT **ALL_UP** (22:37-22:38): wedge_detected=false, active_generations=0 pre-state, both local models loaded (Q8_0 ctx 32768 GPU1 + UD-Q4_K_S GPU0), functional probes quinn-q4 0.3s / atlas-q8 0.2s, portal :8099 200.
 - [x] serial_e2e_wait.py launched: idle-wait (max 10 min; ABORT_STILL_BUSY if still busy - never run on a wedged stack) -> SERIAL 4-agent smoke via /api/chat solo (full streams to [DONE], NO early client aborts - that's the wedge mechanism) -> group_e2e.py as subprocess (phase-1 parallel + cross-talk rounds, mirrors frontend). Writes serial_e2e_result.json + group_e2e.log (+group_e2e_result.json).
 - [x] LAUNCH QUIRK: first launch spawned TWO runners (different pythons) - killed both, relaunched single instance; verified via Get-CimInstance CommandLine filter. Lesson in ops/windows-runbook.md.
@@ -528,7 +528,7 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
 
 ## Done: links clickable + folder refs + sandbox env fix (2026-11-11)
 - [x] 1. Root cause of remaining 404s: SANDBOX_DIR was ~-based; the portal I launched inherited my tool shell's
-      USERPROFILE=C:\Projects\Workspace -> expanduser("~") pointed at a nonexistent dir (old instance worked only
+      USERPROFILE=C:\Projects\AgentPortal -> expanduser("~") pointed at a nonexistent dir (old instance worked only
       because it ran from a session with USERPROFILE=C:\Users\White). Fix agent_portal.py: _find_sandbox_dir() -
       if the ~-based dir is missing, scan C:\Users\*\.unsloth\studio\sandbox\_default. Restart-proof from any launcher.
 - [x] 2. Links never rendered even when resolved: /api/file echoed relpath-from-HERE ('../../Users/...') which

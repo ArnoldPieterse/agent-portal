@@ -15,7 +15,7 @@ All commands below assume you're in an elevated (SYSTEM or admin) cmd session on
 
 ### Option A: One-shot from White (uses WinRM for remotes; needs pywinrm)
 ```
-cd C:\Projects\Workspace
+cd C:\Projects\AgentPortal
 python memory\mechanic\deploy_reboot_recovery_all.py
 ```
 
@@ -37,7 +37,7 @@ Expected: "PASS - task registered+verified" on each host.
 **Host:** White only (where SMB shares + portal live)
 
 ```
-cd C:\Projects\Workspace
+cd C:\Projects\AgentPortal
 python memory\ops\register_mirror_heal_task.py
 ```
 Expected: "SUCCESS: schtask 'MirrorHeal' registered (every 15 min, SYSTEM)"
@@ -48,8 +48,8 @@ Expected: "SUCCESS: schtask 'MirrorHeal' registered (every 15 min, SYSTEM)"
 **Host:** White only
 
 ```
-cd C:\Projects\Workspace
-schtasks /create /tn SchtaskDepGen /tr ""C:\Python313\python.exe" "C:\Projects\Workspace\memory\ops\schtask_dep_gen.py" --snapshot" /sc weekly /d MON /st 06:00 /ru SYSTEM /f
+cd C:\Projects\AgentPortal
+schtasks /create /tn SchtaskDepGen /tr ""C:\Python313\python.exe" "C:\Projects\AgentPortal\memory\ops\schtask_dep_gen.py" --snapshot" /sc weekly /d MON /st 06:00 /ru SYSTEM /f
 schtasks /query /tn SchtaskDepGen /fo LIST
 ```
 Note: adjust Python path to match actual installation. First run creates baseline snapshot.
@@ -60,8 +60,8 @@ Note: adjust Python path to match actual installation. First run creates baselin
 **Host:** White only
 
 ```
-cd C:\Projects\Workspace
-schtasks /create /tn PortalLoadProbe /tr ""C:\Python313\python.exe" "C:\Projects\Workspace\memory\ops\load_probe.py" --host 127.0.0.1 --port 8099" /sc daily /st 06:00 /ru SYSTEM /f
+cd C:\Projects\AgentPortal
+schtasks /create /tn PortalLoadProbe /tr ""C:\Python313\python.exe" "C:\Projects\AgentPortal\memory\ops\load_probe.py" --host 127.0.0.1 --port 8099" /sc daily /st 06:00 /ru SYSTEM /f
 schtasks /query /tn PortalLoadProbe /fo LIST
 ```
 After registration: data accumulates daily; closure after 7/7 days + `--week-complete`.
@@ -72,8 +72,8 @@ After registration: data accumulates daily; closure after 7/7 days + `--week-com
 **Host:** White only (orchestrates the drill)
 
 ```
-cd C:\Projects\Workspace
-schtasks /create /tn ChaosDrillMonthly /tr ""C:\Python313\python.exe" "C:\Projects\Workspace\memory\mechanic\test_chaos_drill_sim.py" --execute" /sc monthly /d 1 /st 04:00 /ru SYSTEM /f
+cd C:\Projects\AgentPortal
+schtasks /create /tn ChaosDrillMonthly /tr ""C:\Python313\python.exe" "C:\Projects\AgentPortal\memory\mechanic\test_chaos_drill_sim.py" --execute" /sc monthly /d 1 /st 04:00 /ru SYSTEM /f
 schtasks /query /tn ChaosDrillMonthly /fo LIST
 ```
 Note: first execution should be manual (verify it works before trusting the schedule).

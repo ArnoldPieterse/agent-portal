@@ -3,7 +3,7 @@ Date: 2026-11-12 · Host: Red (red\red) · Source: live probes this turn, not me
 
 ## Disk state (verified this turn)
 - uploads/AgentPortal_V1/ on Red sandbox contains ONLY UPGRADES.md + UPGRADES-r3.md. The 44-file bundle is NOT materialized here; prompt's "Attached in shared folder" list is context metadata, not files on disk.
-- C:\Projects\Workspace\AgentPortal_V1: absent on Red (re-checked). C:\Users listing not visible from sandbox.
+- C:\Projects\AgentPortal\AgentPortal_V1: absent on Red (re-checked). C:\Users listing not visible from sandbox.
 - No partial edits exist anywhere on Red -> nothing to roll back. Unchanged since r3.
 
 ## Egress re-probe (this turn, fresh timestamps)

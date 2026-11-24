@@ -3,4 +3,4 @@
 ' portal_host.py is self-supervising with a pid-file single-instance guard, so
 ' duplicate launches exit immediately.
 Set sh = CreateObject("WScript.Shell")
-sh.Run "C:\Projects\Workspace\Python\pythoncore-3.15-64\python.exe C:\Projects\Workspace\portal_host.py", 0, False
+sh.Run "C:\Projects\AgentPortal\Python\pythoncore-3.15-64\python.exe C:\Projects\AgentPortal\portal_host.py", 0, False

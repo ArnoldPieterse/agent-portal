@@ -21,7 +21,7 @@ State lines r7–r36 archived verbatim to memory/archivist/history-r7-r36.md (20
 - r3 re-audit (fresh tool run, 2026-11-13): count differs from r2 only by method (r2: 11 lines/6 resolved; r3 counts every `->` incl. quoted target-state block + root-relative self-ref: 14 lines/4 local resolves). Verdict unchanged: zero broken pointers on Pale; all misses = known host delta.
 
 ## Inference (flagged, not verified from this seat)
-- Canonical tree (root MEMORY.md/TODO.md/memory/INDEX.md + llm/ + ops/) lives at C:\Projects\Workspace\AgentPortal_V1 on White. Basis: Designer's r19 note + injected root map in every prompt; I cannot byte-read it from Pale.
+- Canonical tree (root MEMORY.md/TODO.md/memory/INDEX.md + llm/ + ops/) lives at C:\Projects\AgentPortal\AgentPortal_V1 on White. Basis: Designer's r19 note + injected root map in every prompt; I cannot byte-read it from Pale.
 
 ## Gaps
 - Cannot verify bundle's 1.6 KB root INDEX copy from Pale (merge-pack [VERIFY] lines stay open until White-side apply).

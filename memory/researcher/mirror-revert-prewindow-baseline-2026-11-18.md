@@ -30,7 +30,7 @@ A legitimate pin advance requires copy-new-file + recompute sha12 + edit PIN_FIL
 Earlier passes cited "49 CANONICAL pins" and my first scan this pass returned 46 (glob was `.html`-only). Reconciled: the 3 ui pins are `.css`/`.js`, not `.html`. Correct total = **49** (46 index.html + 1 css + 2 js). No change to the 94% index.html share; the template count of 49 was correct.
 
 ## Status / what is still needed for closure
-This baseline is CLOSURE-SUPPORTING, not the acceptance dataset. Acceptance (goal #3 verified clause) still requires the **one-week LIVE mirror_events.log** (window 11-17→11-24) + an analysis leaf cross-checking live events against this baseline. That live dataset remains gated on the logged NEEDS-HUMAN seed wall at C:\Projects\Workspace — NOT re-probed per anti-loop. At day-7 closure, `fill_analysis.py` output (live log) should be compared row-for-row against this table; agreement = high confidence, divergence = investigate.
+This baseline is CLOSURE-SUPPORTING, not the acceptance dataset. Acceptance (goal #3 verified clause) still requires the **one-week LIVE mirror_events.log** (window 11-17→11-24) + an analysis leaf cross-checking live events against this baseline. That live dataset remains gated on the logged NEEDS-HUMAN seed wall at C:\Projects\AgentPortal — NOT re-probed per anti-loop. At day-7 closure, `fill_analysis.py` output (live log) should be compared row-for-row against this table; agreement = high confidence, divergence = investigate.
 
 ## Cross-references
 - Template + hypotheses: memory/researcher/mirror-revert-analysis-template-2026-11-18.md

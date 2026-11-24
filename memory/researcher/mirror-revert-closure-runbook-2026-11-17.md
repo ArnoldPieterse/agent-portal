@@ -6,10 +6,10 @@ Status: pipeline proven, instrumentation live, parse validated. Only LIVE data r
 ## State at pre-stage time (measured 2026-11-17)
 - `mirror_events.log` (Z:\) contains ONLY `_test` lines from the self-test run at 20:53:18.
 - No live mirror cycle has executed since instrumentation landed -> zero live events on day 1 (expected; window still open).
-- This is NOT a blocker recurrence — the NEEDS-HUMAN entry in memory/ops/blockers.md already covers seeding the live mirror at C:\Projects\Workspace. Do not re-probe.
+- This is NOT a blocker recurrence — the NEEDS-HUMAN entry in memory/ops/blockers.md already covers seeding the live mirror at C:\Projects\AgentPortal. Do not re-probe.
 
 ## Prerequisite (one-time, Mechanic-owned)
-Live mirror must run against C:\Projects\Workspace so real push/pull/revert events append to Z:\mirror_events.log.
+Live mirror must run against C:\Projects\AgentPortal so real push/pull/revert events append to Z:\mirror_events.log.
 Blocker (already logged, do NOT re-probe): seed one manual live mirror run; confirm schedule.
 
 ## Day-7 closure commands (run ~2026-11-24)
@@ -62,7 +62,7 @@ auto-repair). See memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.
 | 11  | 11-18 (auto-loop, this pass) | Z: MAPPED; EVENT log UNCHANGED (619 B, 0 live) | **2** | NEW REAL DATA from the DISCARDED stream: memory_mirror.log holds 2 in-window FAILED pin restores (11-17 23:35/23:36, index.html, `was=fdc359022109`, error=`backup missing/wrong sha`) that log_event NEVER wrote -> invisible to the mirror_events.log frequency table. Confirms the schema-decheck undercount with live data + reveals a NEW trigger class (drift + bad backup = silent no-repair). CONCRETE STEP: evidence leaf memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.md + added DUAL-STREAM parse requirement to day-7 closure. Seed wall NOT re-probed per anti-loop. Window day 2/7; next checkpoint = 11-20 escalation. |]
 
 ## Mid-window escalation ladder (added 2026-11-18)
-The dataset accrues ONLY if the live mirror at C:\Projects\Workspace actually runs. To keep the wait NON-IDLE and pre-decide actions, sample `Z:\mirror_events.log` once per pass and apply this ladder INSTEAD of idle re-sampling:
+The dataset accrues ONLY if the live mirror at C:\Projects\AgentPortal actually runs. To keep the wait NON-IDLE and pre-decide actions, sample `Z:\mirror_events.log` once per pass and apply this ladder INSTEAD of idle re-sampling:
 
 | Checkpoint | Condition (live events still 0) | Pre-decided action |
 |-----------|--------------------------------|--------------------|

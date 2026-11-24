@@ -18,8 +18,8 @@ from disk (status_from_disk) and queues actions via request_action."""
 import json, os, subprocess, threading, time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-PY  = r"C:\Projects\Workspace\Python\pythoncore-3.15-64\python.exe"
-PYW = r"C:\Projects\Workspace\Python\pythoncore-3.15-64\pythonw.exe"
+PY  = r"C:\Projects\AgentPortal\Python\pythoncore-3.15-64\python.exe"
+PYW = r"C:\Projects\AgentPortal\Python\pythoncore-3.15-64\pythonw.exe"
 STATE_F = os.path.join(HERE, "memory", "ops", "scheduler-state.json")
 LOG_F   = os.path.join(HERE, "memory", "ops", "scheduler-log.jsonl")
 CMD_F   = os.path.join(HERE, "memory", "ops", "scheduler-cmd.json")   # portal -> host action queue

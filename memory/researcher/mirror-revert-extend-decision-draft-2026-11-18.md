@@ -9,7 +9,7 @@ Pre-drafted per escalation ladder. If live events are still 0 at the 11-22 check
 **Rationale:**
 - Minimum viable dataset requires >=3 consecutive days of live events with >=5 total events (per contingency table in closure runbook).
 - With the live mirror still not seeded by day 5, it is arithmetically impossible to accumulate the minimum viable dataset before 11-24.
-- The root cause (mirror not running at C:\Projects\Workspace) is a NEEDS-HUMAN item logged in memory/ops/blockers.md since 11-17; no agent action can unblock it from this sandbox seat.
+- The root cause (mirror not running at C:\Projects\AgentPortal) is a NEEDS-HUMAN item logged in memory/ops/blockers.md since 11-17; no agent action can unblock it from this sandbox seat.
 
 **Extension plan:**
 - Extend sampling window to **11-27** (adds one full sampling day beyond original end).
