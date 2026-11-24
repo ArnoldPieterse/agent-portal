@@ -916,3 +916,4 @@
 {"ts": "2026-11-25 05:51:47", "run": "g-1a20f1d4a7a-18724a", "missing": {"Scribe": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-25 06:08:02", "run": "g-1a20f2c2c7d-88c4a3", "missing": {"Scribe": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
 {"ts": "2026-11-25 06:14:33", "run": "g-1a20f322095-27ecbc", "missing": {"Scribe": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
+{"ts": "2026-11-25 06:31:03", "run": "g-1a20f413cf0-23d978", "missing": {"Scribe": "unreachable", "Archivist": "unreachable"}, "relocated": {"Researcher": "black (home not_loaded)"}}
