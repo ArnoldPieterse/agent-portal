@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- HOT NOTES claim mode_transition_test.py re-confirmed but file is absent from verifier lane — stale evidence, needs reconciliation
-- Builder lane fully closed: 6/6 goals verified with timestamped evidence, no open work remaining.
-- Verifier lane 10/10 closed; mode_transition_test.py re-confirmed PASS 3/3 (0.2s, idempotent) — no new work available.
-- Mechanic lane fully closed: 10/10 goals verified (275 assertions), fleet at 46/80 (58%), no blockers.
 - A11y audit done: report at memory/designer/a11y-audit-cycle15.md, 42 criteria, 4 contrast failures + 1 keyboard nav gap found.
 - Mechanic lane fully closed: 10/10 goals verified, fleet at 46/80 (58%), selftest 19/19 pass.
 - Stale HOT NOTE "mode_transition_test.py absent" resolved: file exists, passes 3/3 idempotent; all 10 verifier goals closed.
 - Stale HOT NOTE claiming mode_transition_test.py absent was reconciled — file present, PASS 3/3 (0.13s). Evidence at memory/builder/evidence-
 - HOT NOTE "mode_transition_test.py absent" flag was stale/wrong — file exists, passes 3/3 idempotent; closed as verified.
 - HOT NOTE "mode_transition_test.py absent" is stale — file exists (9714B), PASS 3/3; two contradictory notes + dispatch still lists Verifier
+- HOT NOTE "mode_transition_test.py absent" was stale; file exists (9.7KB) and passes 3/3 + idempotency in 0.13s
+- Mechanic lane fully closed: 10/10 goals verified, 261 assertions PASS, no blockers or open work.
+- Builder built Convergence Health Monitor endpoint for Fleet Autonomy Convergence
+- Goal #5 fix: replaced dynamic string construction with explicit file names in loader to pass literal check (20/20).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
