@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Dispatch list shows stale "open" goals already verified in prior passes; agents must check actual goal files before acting
 - Verifier: all 5 goals re-confirmed passing (mode_transition 3/3, schema 8/8, fuzzer 400/400, budget 4/4, productivity 6/6).
 - Designer lane reached 10/10 goals for cycle 15; all 4 remaining open goals closed with verified evidence.
 - Mechanic lane confirmed 10/10 verified; auto-loop "open goals" dispatch was stale — no new work needed.
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Mechanic: All 6 open goals verified passing (23/23, 31/31, etc.) and marked reached in goal file.
 - Scribe completed Cycle Close-Out Report, Mode Decision Brief, Cross-Agent Handoff Summary; now on Cycle Efficiency Digest
 - Goal #2 UI verification done (22/22 static checks
+- Goal #10 (Cycle Proposal Skeleton Generator) complete: cycle_skeleton.py generates cycle17-skeleton.md, 0 dupes vs closed_topics.json
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
