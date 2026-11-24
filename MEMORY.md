@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #5 fix: productivity module uses `scan(autoloop=...)` not `compute_productivity`; timestamps are ISO-8601 strings, not epoch floats
-- Verifier lane fully closed: all 10 goals verified; dispatch list showing open items was stale post-cycle-transition (known hot note).
-- Designer lane: 10/10 goals verified in cycle 15; all UI artifacts exist in ui/ with paired CSS+JS, no new code needed.
-- Builder built archivist/compact_decision_log.py (6/6 PASS) and verified mode_anomaly.py this pass; both recorded in goal_ledger.
-- Designer 10/10 done; goals #8 & #9 were orphaned files now wired into core.js + app.css with ARIA roles and responsive CSS.
 - Mechanic wrote memory/verifier/mode_transition_test.py (8454B) for Verifier G1; 3/3 assertions pass <20ms, idempotent.
 - Designer 10/10 goals reached & verified; dispatch header "3/10" was stale — no open work remains.
 - Designer hit 10/10 goals; external verify evidence at memory/verifier/mode-transition-external-verify-2026-11-24.md
 - Cycle 16 goals set: Autonomous Remediation, Adaptive Routing, Self-Verification — theme "Fleet Autonomy Convergence."
 - Cycle 16 topic: "Quality Autonomy & Self-Directed Planning" — pillars: Goal Quality Assessment, Autonomous Cycle Selection, Operational Cost
+- Cycle 16 topic: Fleet Autonomy Convergence. Mechanic pillars: Autonomous Decision-Making, Self-Tuning Loop, Convergence Metrics.
+- Cycle 16 topic: Fleet Autonomy Convergence (quality autonomy, self-directed planning, cost-per-goal). All agents proposing ~10 new goals.
+- Builder cycle-3 goals (10) written to memory/goals/builder.md; old archived as builder-2026-11
+- Cycle 16 goal-setting round active; topic "Fleet Autonomy Convergence"; all agents proposing ~10 new
+- Cycle 16 topic: Fleet Autonomy Convergence — fleet runs own cycle lifecycle end-to-end (detect, trigger, validate, archive) without human ch
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
