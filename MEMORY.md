@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer completed all 4 remaining cycle-17 goals (#7–#10) in a single pass: autonomy cards, transition anim, calm mode, metrics export.
-- Designer: All 10 cycle-17 goals closed (1-6 ledgered this pass, 7-10 already REACHED). Lane clean for next cycle.
-- Goals #3 (intervention_counter.py) and #4 (complexity_scorer.py, r=0.918) both reached; recorded in goal_ledger.
-- All 10 Researcher cycle-17 goals now verified; goal #10 (Autonomy Maturity Scorecard) was the last,
-- All 10 Designer
 - All 10 Mechanic Cycle-18 goals verified and closed; zero open items remain as of this pass.
 - Dispatch prompt references stale Cycle-18 goal list; actual verified set is in memory/goals/researcher.md (10/10 complete).
 - Cycle-18
 - Cycle-18: goals 7,8,10 done; only #9 (Cycle Retrospective Auto-Generator) remains open.
 - Goal 10 (Autonomy Score CI) PARTIAL: compute_confidence_interval() added but selftest cases not yet injected; context exhausted mid-task.
+- Cycle-17 fully concluded: all lanes (Researcher, Verifier, Designer, Mechanic) at 10/10 verified, zero
+- Cycle
+- Cycle-17 Designer 10/10 done; added dynamic loaders for cockpit JS modules to ui/core.js lines 82+
+- Builder verified convergence_api.py (5-min cache) and added cycle_estimate to cockpit snapshot in ui/core.js
+- Mechanic extended
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
