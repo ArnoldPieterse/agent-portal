@@ -93,3 +93,8 @@
 {"t": "2026-11-24 11:36:34", "event": "host-up", "pid": 1968, "py": "3.15.2"}
 {"t": "2026-11-24 11:36:34", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
 {"t": "2026-11-24 11:36:37", "event": "spawned", "what": "portal", "pid": 8284, "argv": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\Workspace\\agent_portal.py"}
+{"t": "2026-11-24 11:41:34", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-24 11:44:45", "event": "host-start", "pid": 1900}
+{"t": "2026-11-24 11:44:46", "event": "host-up", "pid": 1900, "py": "3.15.2"}
+{"t": "2026-11-24 11:44:46", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-24 11:44:48", "event": "spawned", "what": "portal", "pid": 23396, "argv": "C:\\Projects\\Workspace\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\Workspace\\agent_portal.py"}

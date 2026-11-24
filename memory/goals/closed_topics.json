@@ -1600,5 +1600,17 @@
 "text": "**Seat Availability Router** - When a seat is unreachable at run start, re-route its open goals to the nearest available agent with matching",
 "agent": "orchestrator",
 "at": "2026-11-24"
+},
+{
+"sig": "f514c71666feff47",
+"text": "**Mode-Aware Prompt Context** - Inject current fleet mode + open-goal count into each agent's system prompt context block (via agent_portal.",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "2ad5863a4977426d",
+"text": "**Productive Pass Gate** - Before marking an auto-loop pass as complete, verify the agent produced at least one file change OR measurement o",
+"agent": "orchestrator",
+"at": "2026-11-24"
 }
 ]

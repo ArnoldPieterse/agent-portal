@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 9902 | flagged (<0.35): 0
+Leaves: 9907 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9230,6 +9230,7 @@ Leaves: 9902 | flagged (<0.35): 0
 | memory/mechanic/evidence-autonomous-remediation-runbook-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-cockpit-feed-refresh-entry-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-cockpit-feed-refresh-task-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-cycle15-closeout-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-cycle15-fleet-infra-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-fleet-mode-infra-goal1-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-goal-setting-cycle11-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9254,6 +9255,7 @@ Leaves: 9902 | flagged (<0.35): 0
 | memory/ops/action_log.py | 0 | 0 | n | 0.550 |
 | memory/ops/anomaly-20261124T010411Z.md | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
+| memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autonomous-actions.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autonomous-remediation-loop-runbook-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/budget-alert.md | 0 | 0 | n | 0.550 |
@@ -9302,6 +9304,7 @@ Leaves: 9902 | flagged (<0.35): 0
 | memory/ops/seat-routing-map.json | 0 | 0 | n | 0.550 |
 | memory/ops/snapshot-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/state-collector-staleness-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/ops/transition-latency.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/unreachable_agents.json | 0 | 0 | n | 0.550 |
 | memory/ops/_startup_watch.txt | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0b19c0bd68 | 0 | 0 | n | 0.550 |
@@ -9320,6 +9323,8 @@ Leaves: 9902 | flagged (<0.35): 0
 | memory/orchestrator/evidence-fleet-state-collector-schtasks-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/fleet-mode-controller-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/fleet_mode.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/pass_budget.py | 0 | 0 | n | 0.550 |
+| memory/orchestrator/productive_pass_gate.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/seat_router.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/todo-sync-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/__pycache__/fleet_mode.cpython-313.pyc | 0 | 0 | n | 0.550 |

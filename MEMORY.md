@@ -21,8 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- aria-live set to "polite" (not "assertive") per spec for fleet-mode ARIA; Goals #2 and #9 reached this pass.
-- Fleet anomaly: 83.6% MAINTENANCE vs 0.2% WORK over last 7 days — flagged in productivity-baseline.json
 - Verifier lane complete: 10/10 goals reached, open=0; all 5 verification scripts pass (mode_transition, schema_check, dispatch_fuzzer, budget
 - Mechanic cycle-16: all 10 goals verified, 263/263 tests pass; fleet_mode_infra.py enhanced with msvcrt.locking + error handling.
 - Builder cycle-16: goals #7,#8,#9 all REACHED (status_propagator, maintenance_registry, pass_budget_enforcer) — now at 9/10.
@@ -31,6 +29,8 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Cycle-15: all 10 goals verified (2→10/10); only new build was idle_audit.py (goal #2), rest passed on re-run
 - Idle Task Injector implemented & verified (goal #1); now on goal #2 Cockpit Mode B. Gotcha: % in format strings needs escaping.
 - Designer: cockpit-mode-layout.js handles content (collapse/hero) only; fleet-mode-transition.js owns panel order — no overlap.
+- Goal #3 mode_duration.py has schema mismatch:
+- Scribe completed goals #2 (Cycle Close-Out Report, 3.2KB<4KB) and #3 (Idle Pass Daily Digest) this pass.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

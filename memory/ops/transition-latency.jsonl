@@ -1,0 +1,2 @@
+{"timestamp": "2026-11-24T01:39:33.568Z", "expected_mode": "MAINTENANCE", "latency_ms": 90000.0, "timed_out": false, "fleet_file_mtime": "2026-11-24T01:39:33.568Z"}
+{"timestamp": "2026-11-24T01:39:33.574Z", "expected_mode": "WORK", "latency_ms": 500.0, "timed_out": false, "fleet_file_mtime": "2026-11-24T01:39:33.573Z"}
