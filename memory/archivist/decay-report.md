@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 10223 | flagged (<0.35): 0
+Leaves: 10235 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -5308,7 +5308,6 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/ops/register_chaos_drill_task.py | 6 | 0 | n | 0.517 |
 | memory/ops/remote-host-metrics-probe-spec.md | 6 | 0 | n | 0.517 |
 | memory/ops/researcher-seat-verify-r7-2026-11-13.md | 6 | 0 | n | 0.517 |
-| memory/ops/restart-portal.jsonl | 6 | 0 | n | 0.517 |
 | memory/ops/restart_portal.py | 6 | 0 | n | 0.517 |
 | memory/ops/schtask-snapshot-2026-11-18-input.csv | 6 | 0 | n | 0.517 |
 | memory/ops/schtask-snapshot-2026-11-18.json | 6 | 0 | n | 0.517 |
@@ -9222,6 +9221,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/archivist/test_remediation_suggest.py | 0 | 0 | n | 0.550 |
 | memory/archivist/productivity-history/2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/mode_anomaly.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/archivist/__pycache__/mode_freshness.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/autoloop_logger.py | 0 | 0 | n | 0.550 |
 | memory/builder/cycle_transition.py | 0 | 0 | n | 0.550 |
 | memory/builder/decision-index.db | 0 | 0 | n | 0.550 |
@@ -9325,6 +9325,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/designer/pass-budget-gauge-verify.json | 0 | 0 | n | 0.550 |
 | memory/designer/pass_budget_gauge_verify.py | 0 | 0 | n | 0.550 |
 | memory/designer/test_fleet_mode_aria.py | 0 | 0 | n | 0.550 |
+| memory/designer/ui_a11y_test.py | 0 | 0 | n | 0.550 |
 | memory/designer/_find.py | 0 | 0 | n | 0.550 |
 | memory/designer/_gate_live.json | 0 | 0 | n | 0.550 |
 | memory/designer/_js_dbg.py | 0 | 0 | n | 0.550 |
@@ -9335,6 +9336,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/designer/_read_gate.py | 0 | 0 | n | 0.550 |
 | memory/designer/_run_dbg.py | 0 | 0 | n | 0.550 |
 | memory/designer/_run_rx.py | 0 | 0 | n | 0.550 |
+| memory/designer/__pycache__/ui_a11y_test.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/designer/__pycache__/_js_dbg.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/designer/__pycache__/_js_rx.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/designer/__pycache__/_js_scan_proto.cpython-313.pyc | 0 | 0 | n | 0.550 |
@@ -9363,6 +9365,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/goals/archive/builder-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/designer-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/designer-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/mechanic-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/scribe-2026-11-24-cycle10-retired.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/verifier-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/verifier-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9401,6 +9404,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261124-193331.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-195111.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-202709.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-220438.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
@@ -9431,6 +9435,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/handoffs/orch-to-builder-idle-task-lookup.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/orchestrator-to-mechic-fleet-mode-locking-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/scribe-to-builder-topology-visualizer-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/levels/level_10_20261124-215534.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_5_20261124-015216.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_6_20261124-024710.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_7_20261124-033510.md | 0 | 0 | n | 0.550 |
@@ -9438,6 +9443,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/levels/level_9_20261124-055112.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-builder-goal10-preflight-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-builder-goal8-extractor-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/assist-verifier-g1-mode-transition-test-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/assist-verifier-g1-prereqs-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-24b.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-24c.md | 0 | 0 | n | 0.550 |
@@ -9523,6 +9529,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/ops/idle-digest-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/idle-maintenance-rotation-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/idle-maintenance-rotation.md | 0 | 0 | n | 0.550 |
+| memory/ops/idle-tasks.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/incidents.md | 0 | 0 | n | 0.550 |
 | memory/ops/lvl10-checklist.json | 0 | 0 | n | 0.550 |
 | memory/ops/lvl10_trace.py | 0 | 0 | n | 0.550 |
@@ -9548,6 +9555,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/ops/productivity-baseline-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/ops/productivity-baseline.json | 0 | 0 | n | 0.550 |
 | memory/ops/recurring-patterns.json | 0 | 0 | n | 0.550 |
+| memory/ops/restart-portal.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/runbook-cockpit-feed-refresh-deploy-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/runbook-staleness-audit-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/ops/runbook-status.json | 0 | 0 | n | 0.550 |
@@ -9575,12 +9583,15 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.8e533bfad4 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.a588a562a5 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.a96bbde535 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.aafd598fac | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.c1c04ceb7f | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.ced794a305 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.dbd3a02f71 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.e9b32f0b1f | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.f195987411 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.fdcf1f1764 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.5735c6031e | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/index.html.93126d24f7 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.e40bd50658 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.ffc9894a9f | 0 | 0 | n | 0.550 |
 | memory/ops/post-mortems/2026-11-22-Builder.md | 0 | 0 | n | 0.550 |
@@ -9695,6 +9706,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/verifier/goal-lifecycle-audit-regression-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/goal-lifecycle-audit-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/kb-delta-feed-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/verifier/mode-transition-external-verify-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/verifier/mode_schema_check.py | 0 | 0 | n | 0.550 |
 | memory/verifier/mode_transition_test.py | 0 | 0 | n | 0.550 |
 | memory/verifier/perf-report.md | 0 | 0 | n | 0.550 |
@@ -9758,7 +9770,6 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/builder/feed_refresh.py | 0 | 1 | n | 0.619 |
 | memory/ops/cockpit-feed.json | 0 | 1 | n | 0.619 |
 | memory/ops/fleet-metrics.jsonl | 0 | 1 | n | 0.619 |
-| memory/ops/mode-freshness.json | 0 | 1 | n | 0.619 |
 | memory/archivist/kg-auto-update-progress-2026-11-17.md | 7 | 2 | n | 0.621 |
 | memory/portal/v1-inventory.md | 12 | 3 | n | 0.622 |
 | memory/portal/v1-upgrades-decisions.md | 12 | 3 | n | 0.622 |
@@ -9806,6 +9817,7 @@ Leaves: 10223 | flagged (<0.35): 0
 | memory/goals/orchestrator.md | 0 | 2 | n | 0.660 |
 | memory/goals/scribe.md | 0 | 2 | n | 0.660 |
 | memory/goals/verifier.md | 0 | 2 | n | 0.660 |
+| memory/ops/mode-freshness.json | 0 | 2 | n | 0.660 |
 | memory/ops/policy-conflict-report.json | 0 | 2 | n | 0.660 |
 | memory/archivist/xref-integrity-evidence-2026-11-19.md | 5 | 3 | n | 0.661 |
 | memory/ops/fleet-monitoring-cadence.md | 5 | 3 | n | 0.661 |
