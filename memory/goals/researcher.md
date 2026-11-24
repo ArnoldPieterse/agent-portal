@@ -2,7 +2,7 @@
 Round topic: **Fleet Self-Optimization & Steady-State Convergence**
 Pillars: (1) Predictive Operations, (2) Adaptive Resource Allocation, (3) Convergence Metrics
 
-1. **Convergence Trajectory Model** - `python memory/researcher/convergence_model.py`: from cycle history (duration, completion %, intervention count), fit convergence curve to steady-state. Predict cycles-to-steady-state + confidence interval. Output: memory/researcher/convergence-forecast.md. Verified: on 12+ cycles of data, R²>0.7; prediction within 2 cycles of actual.
+1. **Convergence Trajectory Model** - `python memory/researcher/convergence_model.py`: from cycle history (duration, completion %, intervention count), fit convergence curve to steady-state. Predict cycles-to-steady-state + confidence interval. Output: memory/researcher/convergence-forecast.md. Verified: on 12+ cycles of data, R²>0.7; prediction within 2 cycles of actual. (pointer: memory/researcher/convergence-input-gap-report.md)
 
 2. **Failure Mode Taxonomy** - analyze all past failures/rework from archive: classify into taxonomy (tooling, environment, scope-creep, dependency, unclear-criteria). Produce memory/researcher/failure-taxonomy.md with frequency + root-cause per class. Verified: ≥5 categories; each has ≥3 examples with file citations; total covers >80% of observed failures. (pointer: memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.md)
 
