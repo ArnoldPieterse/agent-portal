@@ -65,7 +65,7 @@ DEFAULTS = {"planners": ["orchestrator", "designer", "researcher"],
 RUN_STALE_S = 900        # in-progress older than this = crashed run, may re-fire
 DRAFT_TIMEOUT_S = 180    # per-planner LLM call budget
 JUDGE_TIMEOUT_S = 120
-MAX_ITEMS_PER_AGENT = 4
+MAX_ITEMS_PER_AGENT = 40   # per day, per agent (2026-11-24: raised from 4 - plans may carry much more detail; tune here as we benchmark performance)
 MIN_ITEMS_PER_AGENT = 2
 GROUND_FLOOR = 0.5       # min grounded-item ratio for a draft to be judged
 
@@ -412,7 +412,7 @@ DRAFT_CONTRACT = ("Respond with ONLY a JSON object - no markdown fences, no pros
                   '"why": "<one short clause>", "ref": "<quote the 7-day step / open goal / queue item this advances>"}]}}\n'
                   "Rules: include EVERY agent id listed; %d-%d items per agent; order by priority; every item must be "
                   "grounded in the provided plan or goals (quote it in \"ref\"); keep items under 200 characters."
-                  % (MIN_ITEMS_PER_AGENT, min(8, MAX_ITEMS_PER_AGENT)))
+                  % (MIN_ITEMS_PER_AGENT, MAX_ITEMS_PER_AGENT))
 
 
 def _plan_brief(doc):
@@ -683,8 +683,13 @@ def run_round(doc=None, force=False):
     for i, (ag, mid) in enumerate(planners):                  # seats already probed live in select_crew
         label = "ABC"[i]
         try:
+            # Token budget scales with the 40-item cap (~130 tokens per item:
+            # item + why + ref + JSON). A seat that can't serve it inside
+            # DRAFT_TIMEOUT_S degrades to the deterministic pager (also capped
+            # at MAX_ITEMS_PER_AGENT) - timeout/budget tuning is benchmark work.
+            draft_budget = min(16384, 500 + len(roster_ids) * MAX_ITEMS_PER_AGENT * 130)
             raw = llm_call(ag, DRAFT_SYSTEM % ag.get("name", ag["id"]), user_prompt,
-                           max_tokens=4000, temperature=0.2, model=mid)
+                           max_tokens=draft_budget, temperature=0.2, model=mid)
         except Exception as e:
             drafts.append((label, ag["id"], mid, None, None,
                            {"error": "draft call failed: %s" % str(e)[:160]}))
@@ -741,7 +746,7 @@ def run_round(doc=None, force=False):
                 ref = (" _(from %s)_" % it["ref"]) if it.get("ref") else ""
                 why = (" \u2014 " + it["why"]) if it.get("why") else ""
                 lines.append("%d. [ ] **%s**%s%s" % (i, it.get("item", ""), ref, why))
-            lines += ["", "_Keep this page to one screen: max 4 items; roll the rest back into the 7-day plan._"]
+            lines += ["", "_Max %d items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._" % MAX_ITEMS_PER_AGENT]
             with open(os.path.join(os.path.dirname(LATEST_JSON), "one-pager-%s.md" % aid), "w", encoding="utf-8") as f:
                 f.write("\n".join(lines) + "\n")
         except Exception:
