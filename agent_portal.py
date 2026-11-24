@@ -5435,6 +5435,23 @@ class Handler(BaseHTTPRequestHandler):
         p = self.path.split("?")[0]
         if p in ("/", "/index.html"):
             return self._html("index.html")
+        if p.startswith("/page/") and p.endswith(".html"):
+            n = p[len("/page/"):-len(".html")]
+            if n in ("goals", "activity", "fleet", "files", "ops"):
+                fp = os.path.join(HERE, "ui", "pages", n + ".html")
+                try:
+                    data = open(fp, "rb").read()
+                    self.send_response(200)
+                    self.send_header("Content-Type", "text/html; charset=utf-8")
+                    self.send_header("Cache-Control", "no-store")
+                    self.send_header("Content-Length", str(len(data)))
+                    self.end_headers()
+                    self.wfile.write(data)
+                    return
+                except OSError:
+                    pass
+            self.send_error(404, "Not Found")
+            return
         if p.startswith("/ui/"):
             # UI modules (2026-11-16 file-modularity split of index.html): ui/app.css,
             # ui/core.js, ui/uploads.js. Small files so small-context models can edit one

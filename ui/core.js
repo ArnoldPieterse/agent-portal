@@ -504,7 +504,7 @@ window.__selftest=async function(){ const out={};
   let viol=[]; const all=document.querySelectorAll("body *");
   for(const el of all){ const cs=getComputedStyle(el); if(cs.display==="none")continue; if(!scale.includes(cs.fontSize))viol.push((el.id?"#"+el.id:(typeof el.className==="string"&&el.className.trim()?"."+el.className.trim().split(/\s+/)[0]:el.tagName))+"="+cs.fontSize); }
   out.typography={elements_checked:all.length,violation_count:viol.length,violations:viol.slice(0,25)};
-  for(const id of ["fleetBtn","goalsBtn","filesBtn"]){ const b=$(id); if(b)b.click(); }
+  for(const id of ["fleetPanel","goalsPanel","filesPanel"]){ const p=$(id); if(p)p.classList.add("open"); }
   await wait(1500);
   const after=measure();
   const link=document.querySelector('link[rel="stylesheet"]');
@@ -535,7 +535,7 @@ window.__visual=function(mode){ // for headless screenshot variants
       const p=document.getElementById("notifPanel"); if(p)p.classList.remove("hidden"); }
     else if(mode==="tour"){ if(window.UI&&UI.tour){ UI.tour.start(); let g=0; while(g++<8){ const n=document.querySelector(".tour-next"); if(!n)break; n.click(); await wait(60);} } }
     else if(mode==="densitybefore"||mode==="densityafter"){
-      for(const id of ["fleetBtn","goalsBtn","filesBtn"]){ const b=document.getElementById(id); if(b)b.click(); }
+      for(const id of ["fleetPanel","goalsPanel","filesPanel"]){ const p=document.getElementById(id); if(p)p.classList.add("open"); }
       await wait(1500);
       if(mode==="densitybefore")document.querySelector('link[rel="stylesheet"]').href="/ui/app_density_before.css"; }
   })(); };
@@ -607,4 +607,34 @@ else if((location.hash||"").startsWith("#visual")){ window.addEventListener("loa
       const inp=$("input"); if(inp){ e.preventDefault(); inp.focus(); }
     }
   });
+})();
+
+// ---- Separate pages (2026-11-24, White: "all the highlighted can be separate pages") ----
+// Each toggle panel is now its own page (#/activity #/fleet #/ops #/files #/goals).
+// Only ONE panel may be open at a time, so panels can no longer stack over chat or each other.
+// Hash routing = deep links + browser back button; no server change needed.
+// Overrides the legacy toggle handlers (actBtn/fleetBtn/opsBtn above, filesBtn/goalsBtn in uploads.js).
+(function(){
+  const PAGES={activity:"actPanel",fleet:"fleetPanel",ops:"opsPanel",files:"filesPanel",goals:"goalsPanel"};
+  const BTN={activity:"actBtn",fleet:"fleetBtn",ops:"opsBtn",files:"filesBtn",goals:"goalsBtn"};
+  let actT=null,fleetT=null;
+  function cur(){const m=(location.hash||"").match(/^#\/(\w+)/);return (m&&PAGES[m[1]])?m[1]:null;}
+  function stopTimers(){if(actT){clearInterval(actT);actT=null;}if(fleetT){clearInterval(fleetT);fleetT=null;}}
+  function enter(n){try{
+    if(n==="activity"){if(typeof actUpdate==="function")actUpdate();actT=setInterval(()=>{if(cur()==="activity"&&typeof actUpdate==="function")actUpdate();},2000);}
+    else if(n==="fleet"){if(typeof fleetUpdate==="function")fleetUpdate();fleetT=setInterval(()=>{if(cur()==="fleet"&&typeof fleetUpdate==="function")fleetUpdate();},5000);}
+    else if(n==="ops"&&typeof opsLoad==="function")opsLoad();
+    else if(n==="files"&&typeof filesLoad==="function")filesLoad();
+    else if(n==="goals"&&typeof goalsLoad==="function")goalsLoad();
+  }catch(e){}}
+  function mount(){const n=cur();stopTimers();
+    for(const k in PAGES){const b=$(BTN[k]),p=$(PAGES[k]);if(!b||!p)continue;b.classList.toggle("on",k===n);p.classList.toggle("open",k===n);}
+    if(n)enter(n);}
+  function navigate(n){const p=n?"/page/"+n+".html":"/";if(location.pathname===p)return;location.href=p;}
+  if(/^\/page\//.test(location.pathname)){try{const tb=$("goalsBtn");if(tb){const hb=document.createElement("button");hb.id="homeBtn";hb.title="Back to chat (home)";hb.textContent="\u2302 Chat";tb.parentNode.insertBefore(hb,tb);hb.onclick=function(){location.href="/";};}}catch(e){}}
+  window.addEventListener("hashchange",mount);
+  window.addEventListener("load",mount);
+  for(const k in PAGES){const b=$(BTN[k]);if(b)b.onclick=()=>navigate(k);}
+  window.__portalNav={navigate,mount,cur};
+  mount();
 })();

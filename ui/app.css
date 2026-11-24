@@ -411,3 +411,7 @@ code{background:var(--line);border-radius:5px;padding:1px 5px;font-size:var(--fs
 .fc-oc-close{border-color:var(--ok,#4caf50)}
  
 .dlchip{display:inline-block;margin:0 6px 3px 0;padding:1px 8px;border:1px solid #3a4a5a;border-radius:10px;font-size:11px;color:#7fb3ff;text-decoration:none} 
+
+/* Separate pages (2026-11-24): /page/<name>.html = one panel full-width, no chat/sidebar */
+body[data-page] aside{display:none!important}
+body[data-page] #modeBar,body[data-page] #msgs,body[data-page] #queuePanel,body[data-page] #composer,body[data-page] #peek{display:none!important}

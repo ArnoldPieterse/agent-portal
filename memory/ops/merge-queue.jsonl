@@ -339,3 +339,7 @@
 {"ts": "2026-11-24 15:17:20", "file": "index.html", "sha": "ffc9894a9f", "size": 14661, "snapshot": "memory/ops/merge-queue/index.html.ffc9894a9f"}
 {"ts": "2026-11-24 17:17:04", "file": "ui/app.css", "sha": "bcc926243a", "size": 36323, "snapshot": null}
 {"ts": "2026-11-24 17:17:04", "file": "ui/core.js", "sha": "faf128d2cd", "size": 43242, "snapshot": null}
+{"ts": "2026-11-24 19:02:20", "file": "agent_portal.py", "sha": "6a59ee9ced", "size": 311230, "snapshot": "memory/ops/merge-queue/agent_portal.py.6a59ee9ced"}
+{"ts": "2026-11-24 19:02:20", "file": "ui/app.css", "sha": "83e9ea1145", "size": 36343, "snapshot": null}
+{"ts": "2026-11-24 19:02:20", "file": "ui/core.js", "sha": "7da12a612f", "size": 43771, "snapshot": null}
+{"ts": "2026-11-24 19:02:20", "file": "ui/uploads.js", "sha": "b1387c0f53", "size": 48417, "snapshot": null}

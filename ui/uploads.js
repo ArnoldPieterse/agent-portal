@@ -343,7 +343,7 @@ async function filesLoad(){
     if(j.count>files.length){const e=document.createElement("li");e.className="fs-empty";e.textContent="… "+(j.count-files.length)+" more (cap 2000)";list.appendChild(e);}
   }catch(err){list.innerHTML='<li class="fs-empty">/api/uploads unreachable — portal down?</li>';}
 }
-$("filesBtn").onclick=()=>{const open=$("filesPanel").classList.toggle("open");$("filesBtn").classList.toggle("on",open);if(open)filesLoad();};
+$("filesBtn").onclick=()=>{if(window.__portalNav)__portalNav.navigate("files");else filesLoad();};
 // ---- Goals panel (2026-11-15, Designer): Goal Velocity dashboard ----
 // Round-topic mount node (P1, 2026-11-22): created from JS so index.html stays untouched.
 { const _tp=$("goalsPanel"); if(_tp&&!$("topicBody")&&$("goalsGit")){ const tb=document.createElement("div"); tb.id="topicBody"; _tp.insertBefore(tb,$("goalsGit")); } }
@@ -506,7 +506,7 @@ async function goalsLoad(){
     }).catch(()=>{});
   }catch(e){ $("goalsStat").textContent="error: "+e; }
 }
-$("goalsBtn").onclick=()=>{ const open=$("goalsPanel").classList.toggle("open"); $("goalsBtn").classList.toggle("on",open); if(open)goalsLoad(); };
+$("goalsBtn").onclick=()=>{if(window.__portalNav)__portalNav.navigate("goals");else goalsLoad();};
 // Header goal bar + Lv chip must render on page load, not only after a Goals-tab click (2026-11-22, found by Playwright test):
 // 2026-11-23: poll every 30s - the one-shot fetch left the Lv chip frozen at load-time values
 // (dashboard showed "Lv 0" for hours after the backend had already leveled up).
