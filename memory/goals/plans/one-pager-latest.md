@@ -1,6 +1,6 @@
 # FLEET ONE-PAGER - 2026-11-24
 
-Source: **deterministic-fallback** | planners: orchestrator, designer, researcher | judge: -
+Source: **deterministic-fallback** | planners: designer, builder, verifier | judge: -
 
 ## orchestrator
 1. **Advance #8: Cycle Proposal Skeleton Generator** _(from: Cycle Proposal Skeleton Generator)_ - next-10 queue item due within 24 h
@@ -63,4 +63,4 @@ Source: **deterministic-fallback** | planners: orchestrator, designer, researche
 8. **Continue open goal: Productivity Data Pipeline Monitor - `python memory/mechanic/productivity_pipeline.py`: verify productivity-baseline.json is written every hour (check mtime). I** _(from: Productivity Data Pipeline Monitor - `python memory/mechanic/productivity_pipeline.py`: verify productivity-baseline.json is written every hour (check mtime). I)_ - open on the lane, outside today's queue - keep momentum
 9. **Continue open goal: Mode State Recovery - `python memory/mechanic/mode_recovery.py`: on fleet restart (detected by stale fleet-mode.json mtime >30 min + system uptime <5 min), reco** _(from: Mode State Recovery - `python memory/mechanic/mode_recovery.py`: on fleet restart (detected by stale fleet-mode.json mtime >30 min + system uptime <5 min), reco)_ - open on the lane, outside today's queue - keep momentum
 
-_round stats: {"sig": "025b0a1a2da9", "date": "2026-11-24", "drafts": [{"label": "A", "agent": "orchestrator", "stats": {"error": "seat failed: HTTP Error 404: Not Found"}}, {"label": "B", "agent": "designer", "stats": {"error": "not-json: Expecting value: line 1 column 1 (char 0)"}}, {"label": "C", "agent": "res_
+_round stats: {"sig": "025b0a1a2da9", "date": "2026-11-24", "drafts": [{"label": "A", "agent": "designer", "model": "designer-q4", "stats": {"agents": 8, "items": 17, "grounded": 16, "ratio": 0.94, "missing": [], "model": null}}, {"label": "B", "agent": "builder", "model": "Qwen3.8-27B-Q8_0", "stats": {"agents": _

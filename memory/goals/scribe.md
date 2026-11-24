@@ -14,7 +14,7 @@ Pillars: (1) Mode Controller, (2) Dispatch Correctness, (3) Idle Productivity
 
 6. **Cross-Agent Handoff Summary** - When goals re-route between seats (due to unavailability), generate a context summary for the receiving agent: what the goal was, prior progress, key files involved, suggested first step. Write to memory/handoffs/{date}-{from}-{to}.md. Verified: on simulated re-route of 2 goals, handoff notes exist; each cites correct source agent + goal text; receiving agent's dispatch includes the handoff file path.
 
-7. **Cycle Efficiency Digest** - Per cycle: one-paragraph summary of efficiency metrics (passes used, productive %, goals/cycle, time-to-100%, trend arrow vs prior 3 cycles). Write to memory/ops/efficiency-digest-{N}.md. Verified: on real data, numbers match cycle-efficiency.json; trend arrow is correct (up/down/stable); paragraph is <80 words.
+7. **Cycle Efficiency Digest** - Per cycle: one-paragraph summary of efficiency metrics (passes used, productive %, goals/cycle, time-to-100%, trend arrow vs prior 3 cycles). Write to memory/ops/efficiency-digest-{N}.md. Verified: on real data, numbers match cycle-efficiency.json; trend arrow is correct (up/down/stable); paragraph is <80 words. (pointer: memory/scribe/efficiency_digest.py)
 
 8. **Anomaly Narrative Generator** - `python memory/scribe/anomaly_narrative.py`: when any fleet metric deviates >2σ from 30-day baseline, generate plain-English explanation: what deviated, by how much, likely cause (from decision-log context), recommended action. Write to memory/ops/anomaly-{timestamp}.md. Verified: on synthetic data with 1 known anomaly, narrative identifies correct metric + direction; cause is grounded in actual log entries (not fabricated); recommendation is actionable.
 

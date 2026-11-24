@@ -1,0 +1,18 @@
+{
+  "cycle": 15,
+  "passes_used": 142,
+  "budget_total": 200,
+  "productive_pct": null,
+  "goals_completed": 28,
+  "goals_per_agent": {
+    "archivist": 1,
+    "mechanic": 9,
+    "orchestrator": 7,
+    "researcher": 5,
+    "scribe": 6
+  },
+  "time_to_100_h": null,
+  "trend": "insufficient history (no prior digests)",
+  "velocity_goals_per_pass": 0.1972,
+  "generated_at": "2026-11-24T03:15:43.484269+00:00"
+}

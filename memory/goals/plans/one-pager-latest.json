@@ -1,13 +1,13 @@
 {
- "ts": 1795489802,
+ "ts": 1795490659,
  "date": "2026-11-24",
  "sig": "025b0a1a2da9",
  "source": "deterministic-fallback",
  "winner_label": null,
  "planners": [
-  "orchestrator",
   "designer",
-  "researcher"
+  "builder",
+  "verifier"
  ],
  "judge": null,
  "pagers": {
@@ -259,23 +259,37 @@
   "drafts": [
    {
     "label": "A",
-    "agent": "orchestrator",
+    "agent": "designer",
+    "model": "designer-q4",
     "stats": {
-     "error": "seat failed: HTTP Error 404: Not Found"
+     "agents": 8,
+     "items": 17,
+     "grounded": 16,
+     "ratio": 0.94,
+     "missing": [],
+     "model": null
     }
    },
    {
     "label": "B",
-    "agent": "designer",
+    "agent": "builder",
+    "model": "Qwen3.8-27B-Q8_0",
     "stats": {
-     "error": "not-json: Expecting value: line 1 column 1 (char 0)"
+     "agents": 8,
+     "items": 18,
+     "grounded": 17,
+     "ratio": 0.94,
+     "missing": [],
+     "model": null
     }
    },
    {
     "label": "C",
-    "agent": "researcher",
+    "agent": "verifier",
+    "model": "Qwen3.8-27B-Q4_K_S",
     "stats": {
-     "error": "seat failed: timed out"
+     "error": "not-json: Expecting ',' delimiter: line 41 column 2 (char 4596)",
+     "model": null
     }
    }
   ],

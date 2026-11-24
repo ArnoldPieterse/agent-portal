@@ -822,3 +822,4 @@
 {"ts": "2026-11-24 12:46:38", "run": "g-1a20b72bb91-b3226d", "missing": {"Archivist": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-24 12:51:09", "run": "g-1a20b76dea0-869866", "missing": {}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
 {"ts": "2026-11-24 13:07:24", "run": "g-1a20b85bf9a-de5de6", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}
+{"ts": "2026-11-24 13:12:39", "run": "g-1a20b8a8eeb-4aa9b4", "missing": {"Researcher": "unreachable"}, "relocated": {"Orchestrator": "black (home not_loaded)"}}

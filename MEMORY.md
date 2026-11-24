@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Goal #6 done: autonomy_convergence_test.py (20/20) proves fleet
-- Dispatch staleness confirmed again: goal #3 (Cycle Proposal Skeleton) was verified but listed open; 8/8 self-test + dry-run pass.
-- Cycle 15 fully closed: all 10 Scribe goals verified, no regressions on re-run.
-- Scribe lane 10/10 complete as of cycle 15; no open goals remain.
-- Builder lane fully closed: 6/6 goals reached, 0 open. All verification stamps in place, ledger confirmed.
 - Designer: All 10 goals verified; UI modules existed but weren't wired — fixed via dynamic loader block in ui/core.js injecting all 8 CSS+JS
 - Cycle 15 fully closed — all lanes (Builder, Verifier, Designer, Scribe, Mechanic, Orchestrator) at 10/10 verified; no open work remains.
 - Designer cycle-1
 - Builder lane Cycle-16 complete: all 6 goals verified; created missing evidence leaf `evidence-cockpit-mode-banner-2026-11-24.md` to close go
 - Verifier built steady_state_stability.py (5/5 PASS, idempotent) proving post-100% fleet converges to MAINTENANCE attractor; lane 10/10 compl
+- Verifier lane complete: all 10 goals verified; Steady-State Stability Test passes (3/3, idempotent, CWD-independent).
+- Builder: All 6 Cycle-16 goals verified complete (2026-11-24); dispatch text was stale, no open work remains.
+- Dispatch staleness persists: auto-loop lists already-verified goals as "open," causing all 7 agents to re-confirm instead of progressing new
+- Mechanic's file now passes 23/23 selftests after upgrade (file locking
+- Goal #7 (efficiency_digest.py) built and passing; ledger stamp deferred to next pass — needs verification then.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
