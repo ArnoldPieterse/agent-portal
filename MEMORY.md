@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Mechanic cycle-15 lane closed 10/10; 275/275 selftest assertions verified across all scripts.
 - Two fleet-mode.json files exist with divergent schemas (root 154B vs memory/ops 285B); root uses selftest-cleanup, ops is richer.
 - Verifier: 10/10 goals closed; mode_transition_test.py re-confirmed fresh (3/3, idempotent, 0.2s). No open work.
 - Mechanic cycle-15: all 10 goals reached, 275/275 selftest assertions pass; fleet_mode_infra.py healthy (19/19).
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Builder unified fleet-mode.json: cockpit now reads root file (canonical), not stale memory/ops copy.
 - fleet_mode_infra.py upgraded: msvcrt.locking + 100-thread concurrent write test added (19→23 assertions); all 10 mechanic goals reached.
 - Designer wired fleet-mode-aria.js + .css into app (app.css @import, core.js loader); 26/26 static checks pass
+- HOT NOTES claim mode_transition_test.py re-confirmed but file is absent from verifier lane — stale evidence, needs reconciliation
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
