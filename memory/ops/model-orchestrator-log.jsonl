@@ -1,0 +1,18 @@
+{"ts": "2026-11-24T13:34:01.964740+00:00", "event": "orchestrate_start", "seat": "mechanic", "dry_run": true}
+{"ts": "2026-11-24T13:34:01.965314+00:00", "event": "vram_check", "seat": "mechanic", "available_pct": 80.0, "total_mb": 24576, "used_mb": 4915}
+{"ts": "2026-11-24T13:34:01.965716+00:00", "event": "load_model", "seat": "mechanic", "action": "dry_run", "ok": true}
+{"ts": "2026-11-24T13:34:01.966021+00:00", "event": "verify_alias", "seat": "mechanic", "action": "dry_run", "ok": true}
+{"ts": "2026-11-24T13:34:01.966798+00:00", "event": "orchestrate_complete", "seat": "mechanic", "state": "healthy", "total_ms": 2}
+{"ts": "2026-11-24T13:34:03.665786+00:00", "event": "orchestrate_start", "seat": "researcher", "dry_run": false}
+{"ts": "2026-11-24T13:34:03.666297+00:00", "event": "vram_check", "seat": "researcher", "available_pct": 80.0, "total_mb": 24576, "used_mb": 4915}
+{"ts": "2026-11-24T13:34:03.666648+00:00", "event": "load_model", "seat": "researcher", "action": "load", "ok": true, "ms": 0}
+{"ts": "2026-11-24T13:34:03.681441+00:00", "event": "verify_alias", "seat": "researcher", "action": "probe", "ok": false, "err": "<urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>"}
+{"ts": "2026-11-24T13:34:03.681867+00:00", "event": "orchestrate_fail", "seat": "researcher", "reason": "alias_failed", "detail": "alias verification failed: <urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions>"}
+{"ts": "2026-11-24T13:34:08.569945+00:00", "event": "orchestrate_start", "seat": "mechanic", "dry_run": true}
+{"ts": "2026-11-24T13:34:08.576524+00:00", "event": "vram_check", "seat": "mechanic", "available_pct": 2.3, "total_mb": 24576, "used_mb": 24000}
+{"ts": "2026-11-24T13:34:08.576922+00:00", "event": "orchestrate_fail", "seat": "mechanic", "reason": "vram_insufficient", "detail": "VRAM insufficient: only 2.3% available (need >10%)"}
+{"ts": "2026-11-24T13:34:30.399890+00:00", "event": "orchestrate_start", "seat": "scribe", "dry_run": true}
+{"ts": "2026-11-24T13:34:30.400330+00:00", "event": "vram_check", "seat": "scribe", "available_pct": 80.0, "total_mb": 24576, "used_mb": 4915}
+{"ts": "2026-11-24T13:34:30.400639+00:00", "event": "load_model", "seat": "scribe", "action": "dry_run", "ok": true}
+{"ts": "2026-11-24T13:34:30.400943+00:00", "event": "verify_alias", "seat": "scribe", "action": "dry_run", "ok": true}
+{"ts": "2026-11-24T13:34:30.407763+00:00", "event": "orchestrate_complete", "seat": "scribe", "state": "healthy", "total_ms": 8}

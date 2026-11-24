@@ -1,0 +1,23 @@
+{
+  "goal": "Auto-Recovery Playbook v2 (Cycle 16 #3)",
+  "verified": "2026-11-24T13:35:00Z",
+  "tests": {
+    "simulated_seat_down": {
+      "result": "PASS",
+      "detail": "Scribe at 45min => seat_probe exit=2, cascade=YES"
+    },
+    "recovery_attempt": {
+      "result": "PASS",
+      "detail": "model_orchestrator --seat scribe --dry-run: VRAM OK, load OK, alias OK, matrix updated [8ms]"
+    },
+    "steps_logged": {
+      "result": "PASS",
+      "detail": "all steps produce timestamped entries in model-orchestrator-log.jsonl"
+    }
+  },
+  "artifacts": {
+    "playbook": "memory/mechanic/auto-recovery-playbook-v2.md",
+    "probe": "memory/mechanic/seat_probe.py",
+    "orchestrator": "memory/mechanic/model_orchestrator.py"
+  }
+}

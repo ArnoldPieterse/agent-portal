@@ -1,0 +1,23 @@
+{
+  "goal": "Seat Probe Scheduler (Cycle 16 #1)",
+  "verified": "2026-11-24T13:33:31Z",
+  "tests": {
+    "all_healthy": {
+      "result": "PASS",
+      "detail": "8/8 seats healthy when last_seen<15min"
+    },
+    "killed_process_detected": {
+      "result": "PASS",
+      "detail": "Scribe at 45min => unreachable + cascade=True, exit=2"
+    },
+    "detection_latency": {
+      "result": "PASS",
+      "detail": "probe interval 5min; stale at 15min; unreachable at 30min"
+    }
+  },
+  "artifacts": {
+    "probe_script": "memory/mechanic/seat_probe.py",
+    "matrix_output": "memory/ops/seat-matrix.json",
+    "test_script": "memory/mechanic/seat_probe_test.py"
+  }
+}

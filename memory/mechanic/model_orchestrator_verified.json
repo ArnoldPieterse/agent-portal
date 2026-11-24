@@ -1,0 +1,22 @@
+{
+  "goal": "Model Load Orchestrator (Cycle 16 #2)",
+  "verified": "2026-11-24T13:35:00Z",
+  "tests": {
+    "full_sequence_dry_run": {
+      "result": "PASS",
+      "detail": "VRAM=80%% -> load OK -> alias OK -> matrix updated [2ms], exit=0"
+    },
+    "vram_block": {
+      "result": "PASS",
+      "detail": "97.7%% used => BLOCKED, exit=1, clear message"
+    },
+    "alias_failure_handling": {
+      "result": "PASS",
+      "detail": "portal down => exit=3 with error detail logged"
+    }
+  },
+  "artifacts": {
+    "script": "memory/mechanic/model_orchestrator.py",
+    "log": "memory/ops/model-orchestrator-log.jsonl"
+  }
+}

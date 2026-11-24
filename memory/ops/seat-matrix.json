@@ -1,0 +1,64 @@
+{
+  "ts": "2026-11-24T13:34:30Z",
+  "probe_interval_min": 5,
+  "stale_threshold_min": 30,
+  "portal": {
+    "ok": false,
+    "latency_ms": null
+  },
+  "seats": {
+    "orchestrator": {
+      "state": "unreachable",
+      "last_seen": null,
+      "age_minutes": null,
+      "portal_reachable": false
+    },
+    "researcher": {
+      "state": "unreachable",
+      "last_seen": null,
+      "age_minutes": null,
+      "portal_reachable": false
+    },
+    "builder": {
+      "state": "unreachable",
+      "last_seen": null,
+      "age_minutes": null,
+      "portal_reachable": false
+    },
+    "verifier": {
+      "state": "unreachable",
+      "last_seen": null,
+      "age_minutes": null,
+      "portal_reachable": false
+    },
+    "designer": {
+      "state": "unreachable",
+      "last_seen": null,
+      "age_minutes": null,
+      "portal_reachable": false
+    },
+    "archivist": {
+      "state": "unreachable",
+      "last_seen": null,
+      "age_minutes": null,
+      "portal_reachable": false
+    },
+    "scribe": {
+      "state": "healthy",
+      "last_seen": "2026-11-24T13:34:30.407467+00:00",
+      "age_minutes": 0,
+      "portal_reachable": true,
+      "model_loaded": true,
+      "load_detail": "loaded+verified: dry_run: would load model; dry_run: would verify alias"
+    },
+    "mechanic": {
+      "state": "unreachable",
+      "last_seen": null,
+      "age_minutes": null,
+      "portal_reachable": false
+    }
+  },
+  "healthy_count": 0,
+  "unreachable_count": 8,
+  "cascade": true
+}
