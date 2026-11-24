@@ -1690,5 +1690,17 @@
 "text": "**Maintenance Task Registry** - Create memory/ops/maintenance-tasks.json: structured registry mapping role -> [task objects with id, descrip",
 "agent": "builder",
 "at": "2026-11-24"
+},
+{
+"sig": "a31fff78e9b8a2c5",
+"text": "**Productivity Trend Archive** - Archive daily snapshots of productivity-baseline.json to memory/archivist/productivity-history/ (one file p",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "a3ec67cff74a8d70",
+"text": "**Pass Budget Monitor** - `python memory/mechanic/budget_monitor.py`: read pass-budget.json every cycle; when consumption >80%, write warnin",
+"agent": "mechanic",
+"at": "2026-11-24"
 }
 ]
