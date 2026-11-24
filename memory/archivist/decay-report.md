@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 9907 | flagged (<0.35): 0
+Leaves: 9912 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -8558,11 +8558,6 @@ Leaves: 9907 | flagged (<0.35): 0
 | memory/goals/archive/verifier-2026-11-23-cycle9.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier-2026-11-23-prev.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier-2026-11-23.md | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261123-073849.json | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261123-073946.json | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261123-074819.json | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261123-081801.json | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261123-084801.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261123-085159.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261123-091427.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261123-091801.json | 1 | 0 | n | 0.544 |
@@ -9189,6 +9184,7 @@ Leaves: 9907 | flagged (<0.35): 0
 | memory/goals/archive/scribe-2026-11-24-cycle10-retired.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/verifier-2026-11-24-cycle15-pre.md | 0 | 0 | n | 0.550 |
 | memory/goals/archive/verifier-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/goals/forecast/plans-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-005723.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-015929.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-030002.json | 0 | 0 | n | 0.550 |
@@ -9205,6 +9201,13 @@ Leaves: 9907 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261124-103122.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-105512.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-112401.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-115414.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-115514.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-121030.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-121211.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-122519.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-122623.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-123941.json | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_engine.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_plan.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/__pycache__/forecast_plan.cpython-315.pyc | 0 | 0 | n | 0.550 |
@@ -9352,10 +9355,12 @@ Leaves: 9907 | flagged (<0.35): 0
 | memory/scribe/goal8-anomaly-narrative-verified-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/scribe/idle_digest.py | 0 | 0 | n | 0.550 |
 | memory/scribe/mode-decision-brief-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/scribe/mode_brief.py | 0 | 0 | n | 0.550 |
 | memory/scribe/mode_decision_brief.py | 0 | 0 | n | 0.550 |
 | memory/scribe/mode_narrative.py | 0 | 0 | n | 0.550 |
 | memory/scribe/productivity_story.py | 0 | 0 | n | 0.550 |
 | memory/scribe/stale-claim-mechanic-g3-closure-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/synthesis/closeout-cycle14-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/closeout-cycle15-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/closeout-cycle15-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/fleet-100-milestone-2026-11-24.md | 0 | 0 | n | 0.550 |
