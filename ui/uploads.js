@@ -409,13 +409,26 @@ async function goalsLoad(){
       const hs=fc.horizons||[];
       if(hs.length)h+='<div class="fc-hz">'+hs.map(x=>'<span class="fc-chip" title="by '+esc(x.end)+'"><b>'+esc(x.label)+'</b> +'+(Array.isArray(x.completes)?x.completes.length:x.completes)+' &rarr; ~'+Math.round(x.fleet_pct)+'%</span>').join("")+'</div>';
       const its=fc.next10||[];
+      // PM view (2026-11-24): functional deliverables + capability chain + 30-day outcomes
+      const _plan=fc.plan||{};
+      const _del={};(_plan.planned||[]).forEach(x=>{_del[x.rank]=((x.deliverable||{}).name)||"";});
       if(its.length){
-        h+='<table class="fc-tab"><tr><th>#</th><th>agent</th><th>goal (next step)</th><th>ETA</th><th>P</th><th>potential consequences</th></tr>';
+        h+='<table class="fc-tab"><tr><th>#</th><th>agent</th><th>goal (next step)</th><th>deliverable</th><th>ETA</th><th>P</th><th>potential consequences</th></tr>';
         for(const it of its){
           const cons=(it.consequences||[]).map(c=>esc(c.agent)+": "+esc((c.title||c.goal).slice(0,42))).join("<br>")||"&mdash;";
-          h+='<tr><td>'+it.rank+'</td><td class="fc-ag">'+esc(it.agent)+'</td><td title="'+esc(it.goal)+'">'+esc((it.title||it.goal).slice(0,56))+'</td><td>'+esc(it.eta.slice(5,16))+'</td><td>'+(Math.round(100*it.p_reached))+'%</td><td class="fc-cons">'+cons+'</td></tr>';
+          h+='<tr><td>'+it.rank+'</td><td class="fc-ag">'+esc(it.agent)+'</td><td title="'+esc(it.goal)+'">'+esc((it.title||it.goal).slice(0,56))+'</td><td class="fc-del" title="'+esc(_del[it.rank]||"")+'">'+esc((_del[it.rank]||"—").slice(0,30))+'</td><td>'+esc(it.eta.slice(5,16))+'</td><td>'+(Math.round(100*it.p_reached))+'%</td><td class="fc-cons">'+cons+'</td></tr>';
         }
         h+='</table>';
+      }
+      if(_plan.capability_chain&&_plan.capability_chain.length){
+        h+='<div class="fc-pm"><div class="topic-k">Capability chain &middot; each step unblocks the next</div><ol class="fc-chain">'+_plan.capability_chain.map(c=>{
+          const via=c.via?' <span class="hint">via '+esc(c.via)+(c.eta?' ~'+esc(String(c.eta).slice(5,16)):'')+'</span>':'';
+          const cls=c.status==="in-plan"?"inplan":(String(c.status).indexOf("projected")===0?"proj":"queued");
+          return '<li class="fc-step fc-step-'+cls+'" title="'+esc(c.note||'')+'"><b>'+esc(c.name)+'</b> <span class="hint">'+esc(c.status)+via+'</span><div class="fc-unlocks">&rarr; unlocks: '+esc(c.unlocks)+'</div></li>';
+        }).join("")+'</ol></div>';
+      }
+      if(_plan.outcomes_30d&&_plan.outcomes_30d.length){
+        h+='<div class="fc-pm"><div class="topic-k">30-day business outcomes</div><div class="fc-outc">'+_plan.outcomes_30d.map(o=>'<div class="fc-oc" title="'+esc(o.note||'')+'"><b>'+esc(o.name)+'</b> <span class="hint">'+esc(o.window)+(o.via?' &middot; gated by '+esc(o.via):'')+'</span><div class="fc-unlocks">'+esc(o.status)+'</div></div>').join("")+'</div></div>';
       }
       const _ends=Object.values(fc.lanes||{}).map(l=>l.end).filter(Boolean);
       if(_ends.length)h+='<div class="hint" style="margin-top:6px">level-up (all goals 100%) ETA: '+esc(_ends.sort().slice(-1)[0])+'</div>';

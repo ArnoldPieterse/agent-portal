@@ -396,3 +396,14 @@ code{background:var(--line);border-radius:5px;padding:1px 5px;font-size:var(--fs
 .fc-tab td{border-bottom:1px solid var(--line);padding:4px 6px;vertical-align:top}
 .fc-ag{white-space:nowrap;color:var(--acc)}
 .fc-cons{color:rgba(255,255,255,.45);max-width:360px;font-size:11px}
+.fc-pm{margin-top:10px;padding-top:8px;border-top:1px dashed var(--line)}
+.fc-chain{margin:6px 0 0 18px;padding:0;list-style:none;counter-reset:fcstep}
+.fc-step{position:relative;margin:0 0 7px;font-size:12px}
+.fc-step::before{content:counter(fcstep);counter-increment:fcstep;position:absolute;left:-18px;top:0;width:14px;height:14px;border-radius:50%;background:var(--panel2);border:1px solid var(--line);color:rgba(255,255,255,.6);font-size:10px;line-height:13px;text-align:center}
+.fc-step-inplan::before{border-color:var(--ok,#4caf50);color:var(--ok,#4caf50)}
+.fc-step-proj::before{border-color:var(--acc);color:var(--acc)}
+.fc-step-queued::before{opacity:.6}
+.fc-unlocks{color:rgba(255,255,255,.5);font-size:11px;margin-top:1px}
+.fc-outc{display:flex;flex-direction:column;gap:5px;margin-top:6px}
+.fc-oc{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:5px 9px;font-size:12px}
+.fc-del{color:rgba(255,255,255,.7);max-width:200px;font-size:11px}
