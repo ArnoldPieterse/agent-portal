@@ -502,7 +502,7 @@ $("todoPrune").onclick=async()=>{
       +(r.note?'<span class="hint reqnote" title="note">'+esc(String(r.note).slice(0,80))+'</span>':"")
       +'<span class="chip chip-'+esc(r.status)+'">'+esc(r.status)+'</span>'
       +(pend?'<button class="btn ok" data-apr="'+esc(r.id)+'">approve</button><button class="btn" data-rej="'+esc(r.id)+'">reject</button>':"")
-      +(!pend&&res?'<span class="hint reqres" title="result">'+res+'</span>":"")
+      +(!pend&&res?'<span class="hint reqres" title="result">'+res+'</span>':"")
       +'</div>';
   }
   async function reqLoad(){

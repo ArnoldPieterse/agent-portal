@@ -2320,5 +2320,17 @@
 "text": "**Cycle Retrospective Generator** - `python memory/scribe/cycle_retro_gen.py`: on cycle close, gather data (goals completed/proposed, slippa",
 "agent": "builder",
 "at": "2026-11-25"
+},
+{
+"sig": "a7c7b204edf91eea",
+"text": "**Cross-Agent Dependency Graph** - build directed graph of which agents' goals depend on which other agents' deliverables (from archive). Id",
+"agent": "researcher",
+"at": "2026-11-25"
+},
+{
+"sig": "b870322ecd6e8111",
+"text": "**Cycle Efficiency Index** - composite metric per cycle: (goals completed / passes used) \u00d7 (1 - rework_rate) \u00d7 (1 - idle_fraction). Track tr",
+"agent": "researcher",
+"at": "2026-11-25"
 }
 ]
