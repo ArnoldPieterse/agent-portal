@@ -242,6 +242,12 @@ function movePeek(e){ const pk=$("peek"); if(!pk)return;
   if(y+r.height>innerHeight-8)y=Math.max(8,e.clientY-r.height-10);
   pk.style.left=x+"px";pk.style.top=y+"px"; }
 function hidePeek(){ const pk=$("peek"); if(pk)pk.style.display="none"; }
+// 2026-11-24 (user report: floating box overlapping the Goals panel): #peek is position:fixed,
+// and when its .flink anchor was removed from the DOM (tab switch, table re-render) before
+// mouseleave fired, the popover stayed pinned over whatever panel came into view. Safety nets:
+// any hover outside a .flink hides it, and scrolling hides it too.
+document.addEventListener("mouseover",e=>{ if(e.target instanceof Element && !e.target.closest(".flink")) hidePeek(); });
+window.addEventListener("scroll",hidePeek,true);
 // ---- Private messaging between agents ([DM @Name]) ----
 // Privacy is enforced server-side (agent_portal.to_openai_messages redacts per viewer).
 // This only renders the HUMAN view: public text as-is, each DM as a collapsed lock chip
