@@ -1,0 +1,49 @@
+{
+  "situation": "dangling pointer in INDEX.md causing broken cross-reference",
+  "timestamp": "2026-11-24T00:01:24.996752+00:00",
+  "suggestions": [
+    {
+      "rank": 1,
+      "fix": "Dangling Pointer Integrity Repair - 2026-11-20 (Verifier, contribution c/d)",
+      "provenance_leaf": "memory/verifier/dangling-pointer-repair-2026-11-20.md",
+      "historical_success_rate": 0.901,
+      "relevance_score": 43.3793,
+      "outcome": "unknown"
+    },
+    {
+      "rank": 2,
+      "fix": "goal_ledger.py \u2014 record_evidence guard fix + dangling-pointer unblock (2026-11-18)",
+      "provenance_leaf": "memory/ops/goal_ledger_record_fix-2026-11-18.md",
+      "historical_success_rate": 1.0,
+      "relevance_score": 35.8744,
+      "outcome": "success"
+    },
+    {
+      "rank": 3,
+      "fix": "Evidence \u2014 close stale/unindexed citation (option c, 2026-11-24)",
+      "provenance_leaf": "memory/archivist/evidence-citation-unindexed-fix-2026-11-24.md",
+      "historical_success_rate": 1.0,
+      "relevance_score": 28.8339,
+      "outcome": "success"
+    },
+    {
+      "rank": 4,
+      "fix": "Builder assist: Archivist Goal 4 (Cross-Reference Integrity) \u2014 xref auto-fix",
+      "provenance_leaf": "memory/builder/xref-autofix-archivist-goal4-2026-11-21.md",
+      "historical_success_rate": 1.0,
+      "relevance_score": 26.3814,
+      "outcome": "success"
+    },
+    {
+      "rank": 5,
+      "fix": "index_check.py False-Positive Analysis + Fix (Builder, 2026-11-23)",
+      "provenance_leaf": "memory/ops/pointer-false-positive-fix-2026-11-23.md",
+      "historical_success_rate": 0.901,
+      "relevance_score": 25.3455,
+      "outcome": "unknown"
+    }
+  ],
+  "no_prior_art": false,
+  "confidence": 1.0,
+  "corpus_size": 357
+}

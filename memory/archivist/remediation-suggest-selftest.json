@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-11-24T00:01:28.055598+00:00",
+  "total_tests": 7,
+  "all_pass": true,
+  "results": [
+    {
+      "situation": "dangling pointer in INDEX.md causing broken cross-reference",
+      "suggestions_count": 5,
+      "no_prior_art": false
+    },
+    {
+      "situation": "orphan file not referenced by any index entry",
+      "suggestions_count": 5,
+      "no_prior_art": false
+    },
+    {
+      "situation": "citation check found stale reference to deleted file",
+      "suggestions_count": 5,
+      "no_prior_art": false
+    },
+    {
+      "situation": "mirror sync reverted a pinned file change",
+      "suggestions_count": 5,
+      "no_prior_art": false
+    },
+    {
+      "situation": "goal ledger parse error on REACHED marker",
+      "suggestions_count": 5,
+      "no_prior_art": false
+    },
+    {
+      "situation": "quantum flux capacitor misalignment in dimension 7",
+      "suggestions_count": 0,
+      "no_prior_art": true
+    }
+  ]
+}

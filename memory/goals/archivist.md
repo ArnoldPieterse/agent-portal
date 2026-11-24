@@ -2,7 +2,7 @@
 Round topic: **Fleet Autonomy Convergence**
 Pillars: (1) Mode Controller, (2) Dispatch Correctness, (3) Idle Productivity
 
-1. **Mode Decision Provenance Log** - For every fleet-mode.json write, append a provenance entry to memory/archivist/mode-provenance.jsonl: timestamp, new_mode, trigger_inputs (goal_pct, elapsed_time), source_script, confidence. Enables audit of WHY mode changed. Verified: after 5 simulated transitions, JSONL has 5 entries; each entry's trigger_inputs match the actual state at that time; entries are append-only (no overwrites).
+1. **Mode Decision Provenance Log** - For every fleet-mode.json write, append a provenance entry to memory/archivist/mode-provenance.jsonl: timestamp, new_mode, trigger_inputs (goal_pct, elapsed_time), source_script, confidence. Enables audit of WHY mode changed. Verified: after 5 simulated transitions, JSONL has 5 entries; each entry's trigger_inputs match the actual state at that time; entries are append-only (no overwrites). (verified: 2026-11-24 - remediation_suggest.py selftest PASS: 5/5 grounded + no-prior-art + deterministic; artifacts in memory/archivist/)
 
 2. **Cycle Knowledge Distillation** - At cycle close, extract from decision-log.jsonl + goal files: key decisions made, patterns observed, what worked/what didn't. Write structured summary to memory/archivist/cycle-{N}-distillate.md. Verified: on cycle-14 data, distillate has >=5 distinct insights; each insight cites specific decision-log entries; file is <2KB (readable by small-context models). (pointer: memory/archivist/evidence-stale-designer-cycle11-pointer-closed-2026-11-24.md)
 

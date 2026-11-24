@@ -1130,3 +1130,16 @@
 {"t": "2026-11-24 09:51:46", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-24 09:51:46", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-24 09:51:51", "job": "cycle_1h", "event": "done", "rc": 2}
+{"t": "2026-11-24 09:56:41", "job": "cycle_5m", "event": "start", "pid": 7112}
+{"t": "2026-11-24 09:56:46", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 10:01:41", "job": "cycle_5m", "event": "start", "pid": 24892}
+{"t": "2026-11-24 10:01:41", "job": "cycle_10m", "event": "start", "pid": 4956}
+{"t": "2026-11-24 10:01:46", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 10:01:46", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-24 10:06:41", "job": "cycle_5m", "event": "start", "pid": 22540}
+{"t": "2026-11-24 10:06:46", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 10:06:56", "job": "cycle_30m", "event": "done", "rc": 124}
+{"t": "2026-11-24 10:11:41", "job": "cycle_5m", "event": "start", "pid": 24656}
+{"t": "2026-11-24 10:11:41", "job": "cycle_10m", "event": "start", "pid": 8792}
+{"t": "2026-11-24 10:11:46", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-24 10:11:46", "job": "cycle_10m", "event": "done", "rc": 0}

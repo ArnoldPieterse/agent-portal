@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cycle-12 goals: close 4 loop gaps, cockpit visibility (actions/predictive risk/SLO), verification layer (integration harness, remediation sc
-- Scribe cycle-1
-- Cycle-15 Verifier goals written (10 goals: replay audit, pipeline trace, idempotency gate, mode validator, hash-chain, cadence, scope, archi
-- Archivist cycle goals (10) written to memory/goals/archivist.md, theme "Fleet Autonomy Convergence," dated
 - Designer cycle-14 theme: "Fleet Autonomy Convergence" — progressing from operable cockpit toward no-operator-needed; 10 goals written to mem
 - Mechanic cycle-11: converging individual autonomous capabilities (cycles 9-10) into one unified remediation pipeline with self-degradation d
 - Builder cycle-13 goals (10) written to `memory/goals/builder.md`; theme "Fleet Autonomy Convergence" — converge without humans, not just vis
 - Researcher
 - Scribe cycle-11 goals written for "Closed-Loop Autonomy & Fleet Cock
 - Cycle 15 topic: "Fleet Autonomy Convergence" — Mode Controller (fleet-mode.json SSOT), Dispatch Correctness, Idle Productivity; all 80 goals
+- Built `memory/scribe/cycle_closeout.py`; first run → `closeout-cycle15-2026-11-23.md` (82/92 goals, 7 agents parsed).
+- Mechanic cycle-11: 5/5 goals built (Atomic Writer, Pass Budget Monitor, Mode Transition Latency, Idle Task Delivery, Cycle Transition Automa
+- Designer c15-g1 REACHED: ui/fleet-mode-aria.js (175 LOC), ARIA live region + keyboard nav, 32/32 checks pass
+- Cycle-16: idle_rotation.py, fleet_mode_writer.py, dispatch
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

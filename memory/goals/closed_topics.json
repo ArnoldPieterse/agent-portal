@@ -1444,5 +1444,125 @@
 "text": "**Cockpit One-Click Runbook Trigger** - Add a \"Run\" button to each runbook card in cockpit's Decision Log panel: pre-flight validates (agent",
 "agent": "builder",
 "at": "2026-11-24"
+},
+{
+"sig": "e2fb619282b32d1e",
+"text": "**Cycle Knowledge Distillation** - At cycle close, extract from decision-log.jsonl + goal files: key decisions made, patterns observed, what",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "8f961c587bdbf319",
+"text": "**Idle Task Knowledge Base** - Maintain memory/archivist/idle-task-kb.json: index of all maintenance tasks ever executed, with outcome (prod",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "8ed3e73729401723",
+"text": "**Cross-Cycle Pattern Index** - Build memory/archivist/cross-cycle-patterns.md: index of recurring patterns across cycles 10-15 (e.g., \"cock",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "3869f7863c22ce32",
+"text": "**Auto-Loop Pass Logger** - `python memory/builder/autoloop_logger.py`: log every auto-loop pass to memory/ops/autoloop.jsonl with fields: t",
+"agent": "builder",
+"at": "2026-11-24"
+},
+{
+"sig": "494efb1356daacb2",
+"text": "**Mode-Specific Cockpit Layout** - Design + implement (CSS/JS in ui/cockpit.js): in MAINTENANCE mode, panels re-prioritize \u2014 Health Score + ",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "c16a56cbb9ceb1e0",
+"text": "**Idle Hero State Design** - Design the IDLE-mode hero: centered \"All goals reached \u2713\" with cycle number, time-in-IDLE counter (live updatin",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "855db18cf1cffef5",
+"text": "**Productivity Sparkline Panel** - Design + implement per-agent mini sparklines (SVG, 7-day window) showing productive-pass rate. Color: gre",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "64c8249e815a8eac",
+"text": "**Accessibility Audit (All 3 Modes)** - Run full WCAG 2.1 AA audit on cockpit in WORK, MAINTENANCE, and IDLE modes: contrast ratios, focus o",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "e2b50fad54b122c3",
+"text": "**Auto-Loop Health Probe** - `python memory/mechanic/autoloop_probe.py`: verify auto-loop is actually running by checking autoloop.jsonl mti",
+"agent": "mechanic",
+"at": "2026-11-24"
+},
+{
+"sig": "c29112c3f0b4ca5d",
+"text": "**Auto-Loop Pass Budget** - Define per-cycle pass budget (default: 200 total agent-passes). Track consumption in memory/ops/pass-budget.json",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "2fd682b08553dab6",
+"text": "**Goal Cycle Auto-Close** - `python memory/orchestrator/cycle_auto_close.py`: when all goals reach 100%, auto-execute: (a) archive old goal ",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "2f7df8c8502ce18f",
+"text": "**Cycle Efficiency Report** - `python memory/researcher/cycle_efficiency.py`: at cycle close, compute: total_passes, productive_pct, goals_c",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "057473da40bbfe97",
+"text": "**Mode Transition Narrative** - `python memory/scribe/mode_narrative.py`: when fleet mode changes, auto-generate a 3-sentence narrative: wha",
+"agent": "scribe",
+"at": "2026-11-24"
+},
+{
+"sig": "07485d4ba3e26513",
+"text": "**Idle Pass Daily Digest** - `python memory/scribe/idle_digest.py`: at end of each day, summarize idle passes: total idle passes, tasks assi",
+"agent": "scribe",
+"at": "2026-11-24"
+},
+{
+"sig": "7e0b4358c75bd940",
+"text": "**Productivity Story (Weekly)** - `python memory/scribe/productivity_story.py`: weekly narrative (5-8 sentences) on fleet productivity evolu",
+"agent": "scribe",
+"at": "2026-11-24"
+},
+{
+"sig": "c30285f5469bf88b",
+"text": "**Idle Pass Auditor** - `python memory/verifier/idle_audit.py`: scan last 50 auto-loop passes from autoloop.jsonl. Flag any pass where: (a) ",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "2214ae66b15adaf0",
+"text": "**Mode Race Condition Test** - `python memory/verifier/mode_race_test.py`: simulate two concurrent mode-change triggers (e.g., goal reaches ",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "28d97f560c884448",
+"text": "**Stale Dispatch Detector** - `python memory/verifier/stale_dispatch.py`: scan current dispatch queue; flag any entry referencing a goal wit",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "5e7102ce83306689",
+"text": "**End-to-End Mode Cycle Test** - `python memory/verifier/e2e_mode_cycle.py`: full simulation: WORK (5 open goals) -> complete goals -> MAINT",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "e7b138ccd29c39a1",
+"text": "**Mode Decision Provenance Log** - For every fleet-mode.json write, append a provenance entry to memory/archivist/mode-provenance.jsonl: tim",
+"agent": "archivist",
+"at": "2026-11-24"
 }
 ]

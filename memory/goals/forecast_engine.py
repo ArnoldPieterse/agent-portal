@@ -28,6 +28,11 @@ import sys
 import time
 from datetime import datetime, timedelta
 
+try:
+    from forecast_plan import build_plan  # planned-work layer (same dir)
+except Exception:  # engine must never die because the plan layer is missing
+    build_plan = None
+
 HERE = os.path.dirname(os.path.abspath(__file__))          # memory/goals
 ROOT = os.path.abspath(os.path.join(HERE, "..", ".."))     # project root
 OUT = HERE                                                 # forecasts live next to goals
@@ -240,6 +245,11 @@ def refresh(now=None):
                      for a, s in sorted(lanes.items())}}
     # Fleet all-clear ETA = the last lane to finish; this is when a fresh 100% can gate a level-up.
     doc["level_up_eta"] = max((v["end"] for v in doc["lanes"].values() if v["end"]), default=None)
+    if build_plan is not None:
+        try:
+            doc["plan"] = build_plan(doc)  # WHAT is planned (deck + portal read this)
+        except Exception:
+            pass
     _write_outputs(doc)
     return doc
 
@@ -258,11 +268,22 @@ def _write_outputs(doc):
         L.append("   steps: " + " -> ".join(it["steps"]))
         if it["consequences"]:
             L.append("   consequences: " + " | ".join(it["consequences"][:3]))
+    plan = doc.get("plan")
+    if plan:
+        L += ["", "## Planned work (decision tree)", "",
+              "- state: %s | gate: %s -> **%s**" % (plan["tree"]["state"], plan["tree"]["gate"], plan["tree"]["branch_taken"]),
+              "- cycle: %s" % plan["cycle_state"]]
+        for it in plan["planned"][:8]:
+            L.append("- #%d [%s] %s ~%s (P~%.0f%%) - %s" % (it["rank"], it["agent"], it["title"], it["eta"], 100 * it["p_reached"], it["why"][:140]))
     for h in doc["horizons"]:
         L += ["", "## %s ahead (by %s)" % (h["label"], h["end"]),
               "- completes: **%d** goal(s) -> fleet ~%.0f%%" % (h["completes"], h["fleet_pct"])]
         for t in h["top"]:
             L.append("  - " + t)
+        if plan and plan["horizons"]:
+            ph = plan["horizons"][doc["horizons"].index(h)]
+            if ph.get("why_line"):
+                L.append("- why: " + ph["why_line"])
         if h.get("next_cycle_candidates"):
             L.append("- next-cycle candidates: " + "; ".join(c["ref"] + " " + c["text"][:50] for c in h["next_cycle_candidates"][:4]))
     with open(os.path.join(OUT, "forecast-latest.md"), "w", encoding="utf-8") as f:
