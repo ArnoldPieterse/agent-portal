@@ -21,7 +21,6 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Designer injects all fleet-mode UI modules via core.js (not pinned index.html); goals 1-4 done, goal 5 (Maintenance Task Cards) in progress.
 - Goal #2 (Cockpit Mode Banner): agent_portal.py + app.css done; JS injection in ui/core.js still pending
 - Designer wired UI modules via core.js (not pinned index.html); ARIA module triggers mode-change animation; goals #3,#6,#7,#8 reached cycle-1
 - Verifier: all 10 cycle-15 goals verified; goals 9 (Stale Dispatch Detector) & 10 (E2E Mode Cycle Test) built this pass,
@@ -31,6 +30,7 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 - Verifier lane complete: 10/10 goals reached, open=0; all 5 verification scripts pass (mode_transition, schema_check, dispatch_fuzzer, budget
 - Mechanic cycle-16: all 10 goals verified, 263/263 tests pass; fleet_mode_infra.py enhanced with msvcrt.locking + error handling.
 - Builder cycle-16: goals #7,#8,#9 all REACHED (status_propagator, maintenance_registry, pass_budget_enforcer) — now at 9/10.
+- Orchestrator lane at 5/10 goals verified after cycle-16 pass; 4 new: Dispatch Queue Sync, Idle Maintenance Rotation, Mode Transition Log, Se
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

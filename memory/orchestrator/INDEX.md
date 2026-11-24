@@ -1,7 +1,8 @@
 # ORCHESTRATOR INDEX â€” ops/HR + fleet onboarding (newest first).
-Last updated: 2026-11-22.
+Last updated: 2026-11-24.
 
 ## Entries
+- Cycle-15 progress 2026-11-24 (auto-loop) -> goals 2,3,4,7 reached: dispatch_sync.py (queue reconciler), idle-maintenance-rotation.md (8x5 verified), fleet_mode.py transition logging added, seat_router.py + seat-routing-map.json (re-route verified)
 - Dangling-ref SAFE-TRIAGE policy 2026-11-24 -> memory/ops/dangling-ref-safe-triage-policy-2026-11-24.md   option(b) contribution: found 3 flaws in dangling_pointer_fix.py (constant conf=0.6, no source-scope, substring replace); defined SAFE-vs-QUARANTINE decision table; today's 19 'fixable' -> quarantine, not execute.
 - Dangling-pointer auto-triage tool built 2026-11-24 -> memory/orchestrator/contribution-dangling-pointer-fix-2026-11-24.md   option(b) contribution: `dangling_pointer_fix.py` categorizes 50 missing refs (20 fixable, 11 lost); serves Closed-Loop Autonomy theme.
 # Builder Cycle 14 goal specs landed 2026-11-23 -> memory/orchestrator/builder-cycle14-goal-specs-2026-11-23.md   replaced bare-name cycle-14 section in builder.md with full specs (script paths + verification criteria) for all 10 goals; disk==dispatch achieved. - 

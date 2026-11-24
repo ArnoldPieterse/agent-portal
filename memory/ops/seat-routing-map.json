@@ -1,0 +1,106 @@
+{
+  "description": "Maps each role to fallback agents with matching capability for re-routing when a seat is unreachable.",
+  "updated": "2026-11-24",
+  "routes": {
+    "orchestrator": {
+      "primary": null,
+      "fallbacks": [
+        "scribe",
+        "archivist"
+      ],
+      "capability": [
+        "dispatch",
+        "fleet_ops",
+        "hr"
+      ]
+    },
+    "researcher": {
+      "primary": null,
+      "fallbacks": [
+        "archivist",
+        "verifier"
+      ],
+      "capability": [
+        "investigation",
+        "kb_search",
+        "evidence"
+      ]
+    },
+    "builder": {
+      "primary": null,
+      "fallbacks": [
+        "mechanic",
+        "orchestrator"
+      ],
+      "capability": [
+        "code",
+        "scripts",
+        "frontend"
+      ]
+    },
+    "verifier": {
+      "primary": null,
+      "fallbacks": [
+        "researcher",
+        "mechanic"
+      ],
+      "capability": [
+        "testing",
+        "audit",
+        "evidence"
+      ]
+    },
+    "designer": {
+      "primary": null,
+      "fallbacks": [
+        "builder",
+        "orchestrator"
+      ],
+      "capability": [
+        "ui",
+        "css",
+        "frontend"
+      ]
+    },
+    "archivist": {
+      "primary": null,
+      "fallbacks": [
+        "researcher",
+        "scribe"
+      ],
+      "capability": [
+        "kb_index",
+        "provenance",
+        "archive"
+      ]
+    },
+    "scribe": {
+      "primary": null,
+      "fallbacks": [
+        "orchestrator",
+        "archivist"
+      ],
+      "capability": [
+        "synthesis",
+        "summarization",
+        "narrative"
+      ]
+    },
+    "mechanic": {
+      "primary": null,
+      "fallbacks": [
+        "builder",
+        "verifier"
+      ],
+      "capability": [
+        "infra",
+        "model_lifecycle",
+        "hosts"
+      ]
+    }
+  },
+  "availability_check": {
+    "method": "check agent's last response timestamp in autoloop.jsonl; if >30min stale, mark unreachable",
+    "stale_threshold_min": 30
+  }
+}

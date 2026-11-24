@@ -1,0 +1,115 @@
+{
+  "timestamp": "2026-11-24T01:08:48.626622+00:00",
+  "mode": "WORK",
+  "day_of_cycle": 8,
+  "agents": {
+    "archivist": {
+      "type": "work",
+      "tasks": [
+        {
+          "title": "Productivity Trend Archive",
+          "goal": "**Productivity Trend Archive** - Archive daily snapshots of productivity-baseline.json to memory/archivist/productivity-history/ (one file per day). Enable trend queries: \"agent X's rate over last 7 d",
+          "eta": "2026-11-24 15:37",
+          "p_reached": 0.278
+        }
+      ],
+      "open_count": 6
+    },
+    "builder": {
+      "type": "work",
+      "tasks": [
+        {
+          "title": "Idle Task Injector",
+          "goal": "**Idle Task Injector** - Modify agent_portal.py dispatch logic: when fleet_mode=MAINTENANCE or IDLE, inject the role-specific task from idle-maintenance-rotation table into each agent's @Name section ",
+          "eta": "2026-11-24 14:00",
+          "p_reached": 0.405
+        }
+      ],
+      "open_count": 9
+    },
+    "designer": {
+      "type": "work",
+      "tasks": [
+        {
+          "title": "Fleet Mode ARIA + Keyboard Nav",
+          "goal": "**Fleet Mode ARIA + Keyboard Nav** - Add ARIA-live region for mode changes (screen reader announces \"Fleet entered maintenance mode\"); ensure all cockpit panels are keyboard-navigable in all three mod",
+          "eta": "2026-11-24 15:14",
+          "p_reached": 0.037
+        },
+        {
+          "title": "Mode Transition Animation",
+          "goal": "**Mode Transition Animation** - Design CSS transition for mode changes: background color shift (green->amber->grey) over 400ms with ease-in-out; panel reordering uses FLIP animation (not instant jump)",
+          "eta": "2026-11-24 17:29",
+          "p_reached": 0.151
+        }
+      ],
+      "open_count": 6
+    },
+    "mechanic": {
+      "type": "work",
+      "tasks": [
+        {
+          "title": "fleet-mode.json Atomic Writer (Infra)",
+          "goal": "**fleet-mode.json Atomic Writer (Infra)** - `python memory/mechanic/fleet_mode_infra.py`: provide the low-level atomic write primitive for fleet-mode.json: write-to-temp in same directory + os.rename ",
+          "eta": "2026-11-24 15:28",
+          "p_reached": 0.188
+        }
+      ],
+      "open_count": 9
+    },
+    "orchestrator": {
+      "type": "work",
+      "tasks": [
+        {
+          "title": "Dispatch Queue Sync",
+          "goal": "**Dispatch Queue Sync** - `python memory/orchestrator/dispatch_sync.py`: on each auto-loop pass, reconcile dispatch queue with next10.json status field. \"reached\" goals excluded from dispatch; idle ag",
+          "eta": "2026-11-24 15:37",
+          "p_reached": 0.278
+        }
+      ],
+      "open_count": 7
+    },
+    "researcher": {
+      "type": "work",
+      "tasks": [
+        {
+          "title": "Productivity Baseline Measurement",
+          "goal": "**Productivity Baseline Measurement** - `python memory/researcher/idle_productivity.py`: measure per-agent productive-pass rate over last 24h (file changes / total passes from autoloop.jsonl). Write t",
+          "eta": "2026-11-24 14:13",
+          "p_reached": 0.088
+        }
+      ],
+      "open_count": 9
+    },
+    "scribe": {
+      "type": "work",
+      "tasks": [
+        {
+          "title": "Mode Decision Brief",
+          "goal": "**Mode Decision Brief** - For each mode transition, write a one-paragraph brief explaining the decision in plain English for human review. Include: current state, what triggered change, expected durat",
+          "eta": "2026-11-24 15:57",
+          "p_reached": 0.459
+        }
+      ],
+      "open_count": 6
+    },
+    "verifier": {
+      "type": "work",
+      "tasks": [
+        {
+          "title": "Mode Transition Integration Test",
+          "goal": "**Mode Transition Integration Test** - `python memory/verifier/mode_transition_test.py`: simulate fleet going 99%->100% and verify: (a) fleet-mode.json updates within one pass cycle, (b) dispatch text",
+          "eta": "2026-11-24 13:29",
+          "p_reached": 0.515
+        },
+        {
+          "title": "fleet-mode.json Schema Validator",
+          "goal": "**fleet-mode.json Schema Validator** - `python memory/verifier/mode_schema_check.py`: validate fleet-mode.json structure: mode is one of {WORK, MAINTENANCE, IDLE}, timestamp is valid ISO-8601, goal_pc",
+          "eta": "2026-11-24 18:02",
+          "p_reached": 0.188
+        }
+      ],
+      "open_count": 6
+    }
+  }
+}

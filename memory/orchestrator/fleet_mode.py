@@ -186,7 +186,30 @@ def main():
     }
 
     # 5. Atomic write
+    prev_mode = None
+    if OUTPUT_FILE.exists():
+        try:
+            prev_mode = json.loads(OUTPUT_FILE.read_text(encoding="utf-8")).get("mode")
+        except Exception:
+            pass
     atomic_write(OUTPUT_FILE, result)
+
+    # 6. Log mode transition if changed
+    if prev_mode and prev_mode != mode:
+        TRANSITIONS_FILE = BASE / "memory" / "ops" / "mode-transitions.jsonl"
+        TRANSITIONS_FILE.parent.mkdir(parents=True, exist_ok=True)
+        transition_entry = {
+            "ts": now_iso,
+            "from_mode": prev_mode,
+            "to_mode": mode,
+            "trigger": f"goal_pct={goal_stats['pct']},elapsed={elapsed_h}h",
+            "goal_count_open": goal_stats["open"],
+            "agent": "orchestrator"
+        }
+        with open(TRANSITIONS_FILE, "a", encoding="utf-8") as f:
+            f.write(json.dumps(transition_entry) + "\n")
+        if verbose:
+            print(f"  Transition: {prev_mode} -> {mode}")
 
     if as_json:
         print(json.dumps(result, indent=2))
