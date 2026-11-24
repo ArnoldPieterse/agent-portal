@@ -1,6 +1,6 @@
 # Decay report 2026-11-24
 
-Leaves: 10130 | flagged (<0.35): 0
+Leaves: 10136 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9222,6 +9222,7 @@ Leaves: 10130 | flagged (<0.35): 0
 | memory/builder/evidence-verifier-latency-budget-close-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/feed-refresh-run-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/goal10_verification.py | 0 | 0 | n | 0.550 |
+| memory/builder/idle_task_lookup.py | 0 | 0 | n | 0.550 |
 | memory/builder/policy-conflict-detector-evidence.md | 0 | 0 | n | 0.550 |
 | memory/builder/policy-conflict-fix-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/post_mortem.py | 0 | 0 | n | 0.550 |
@@ -9231,10 +9232,12 @@ Leaves: 10130 | flagged (<0.35): 0
 | memory/builder/topology-visualizer-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/builder/post-mortems/latest-summary.md | 0 | 0 | n | 0.550 |
 | memory/builder/post-mortems/post-mortems.jsonl | 0 | 0 | n | 0.550 |
+| memory/builder/__pycache__/idle_task_lookup.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/policy_conflict.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/runbook_trigger.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/designer/a11y-audit-cycle15.md | 0 | 0 | n | 0.550 |
 | memory/designer/aria_keyboard_nav_test.py | 0 | 0 | n | 0.550 |
+| memory/designer/cdp_fleet_mode_aria.py | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-load-audit-fleet-2026-11-24.json | 0 | 0 | n | 0.550 |
 | memory/designer/cockpit-load-audit-fleet-2026-11-24.py | 0 | 0 | n | 0.550 |
 | memory/designer/density-cycle12-evidence-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -9358,6 +9361,8 @@ Leaves: 10130 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261124-145201.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-155802.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261124-165500.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-175503.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261124-183745.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
@@ -9385,6 +9390,7 @@ Leaves: 10130 | flagged (<0.35): 0
 | memory/handoffs/2026-11-24-researcher-verifier.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/HO-20261124-fleet-state-collector-schtasks.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/mechanic-to-builder-preflight-2026-11-23.md | 0 | 0 | n | 0.550 |
+| memory/handoffs/orch-to-builder-idle-task-lookup.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/scribe-to-builder-topology-visualizer-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_5_20261124-015216.md | 0 | 0 | n | 0.550 |
 | memory/levels/level_6_20261124-024710.md | 0 | 0 | n | 0.550 |
