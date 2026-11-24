@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "generated_at": "2026-11-24T02:33:51.803605+00:00",
+    "window": "last 30 days",
+    "cycles_analyzed": 3,
+    "note": "velocity = goals_closed / total_passes; null when no pass data"
+  },
+  "trend": [
+    {
+      "date": "2026-11-22",
+      "goals_closed": 72,
+      "total_passes": 0,
+      "velocity": null
+    },
+    {
+      "date": "2026-11-23",
+      "goals_closed": 135,
+      "total_passes": 0,
+      "velocity": null
+    },
+    {
+      "date": "2026-11-24",
+      "goals_closed": 57,
+      "total_passes": 1,
+      "velocity": 57.0
+    }
+  ],
+  "decline_flag": {
+    "declining": false,
+    "consecutive_declines": 0,
+    "detail": "Insufficient data (1 cycles with velocity)"
+  }
+}

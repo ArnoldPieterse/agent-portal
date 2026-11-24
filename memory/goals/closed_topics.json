@@ -1612,5 +1612,35 @@
 "text": "**Productive Pass Gate** - Before marking an auto-loop pass as complete, verify the agent produced at least one file change OR measurement o",
 "agent": "orchestrator",
 "at": "2026-11-24"
+},
+{
+"sig": "dc9384ec4c7f6d92",
+"text": "**Productivity Baseline Measurement** - `python memory/researcher/idle_productivity.py`: measure per-agent productive-pass rate over last 24",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "6dacd76b9d198461",
+"text": "**Goal Proposal Auto-Generator** - `python memory/researcher/goal_proposer.py`: scan decision-log.jsonl + blockers.md + hot notes for recurr",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "de3fae74c749f270",
+"text": "**Mode Duration Tracker** - `python memory/researcher/mode_duration.py`: read mode-transitions.jsonl; compute time spent in each mode over l",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "fdf0c265b23643f9",
+"text": "**Idle Waste Quantification** - `python memory/researcher/idle_waste.py`: from autoloop.jsonl, quantify: (a) total passes where agent receiv",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "e33f24b9e69c825b",
+"text": "**Convergence Velocity Metric** - `python memory/researcher/convergence_velocity.py`: for each completed cycle, compute: goals_closed / tota",
+"agent": "researcher",
+"at": "2026-11-24"
 }
 ]

@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "generated_at": "2026-11-24T02:30:55.293562+00:00",
+    "window_hours": 24,
+    "autoloop_records_in_window": 1,
+    "note": "rate=null means no passes recorded for agent in window"
+  },
+  "orchestrator": {
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
+  },
+  "researcher": {
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
+  },
+  "verifier": {
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
+  },
+  "scribe": {
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
+  },
+  "designer": {
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
+  },
+  "builder": {
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
+  },
+  "archivist": {
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
+  },
+  "mechanic": {
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
+  }
+}

@@ -1,34 +1,80 @@
 {
+  "_meta": {
+    "generated_at": "2026-11-24T02:30:55.293562+00:00",
+    "window_hours": 24,
+    "autoloop_records_in_window": 1,
+    "note": "rate=null means no passes recorded for agent in window"
+  },
   "orchestrator": {
-    "rate": 63.9,
-    "source": "simulated"
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
   },
   "researcher": {
-    "rate": 51.0,
-    "source": "simulated"
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
   },
   "verifier": {
-    "rate": 52.9,
-    "source": "simulated"
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
   },
   "scribe": {
-    "rate": 53.5,
-    "source": "simulated"
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
   },
   "designer": {
-    "rate": 75.0,
-    "source": "simulated"
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
   },
   "builder": {
-    "rate": 69.7,
-    "source": "simulated"
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
   },
   "archivist": {
-    "rate": 75.3,
-    "source": "simulated"
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
   },
   "mechanic": {
-    "rate": 52.5,
-    "source": "simulated"
+    "rate": null,
+    "total_passes": 0,
+    "productive_passes": 0,
+    "evidence_files": 0,
+    "git_commits_24h": 0,
+    "source": "no_data",
+    "flag": false
   }
 }

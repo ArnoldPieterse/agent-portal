@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "generated_at": "2026-11-24T02:32:31.617356+00:00",
+    "window_days": 7,
+    "transitions_in_window": 3,
+    "total_hours": 168.0
+  },
+  "WORK": {
+    "hours": 6.84,
+    "percent": 4.1
+  },
+  "MAINTENANCE": {
+    "hours": 4.0,
+    "percent": 2.4
+  },
+  "IDLE": {
+    "hours": 166.62,
+    "percent": 99.2
+  },
+  "anomalies": [
+    {
+      "type": "UNDER_UTILIZATION",
+      "detail": "IDLE mode at 99.2% (>50% threshold) - fleet is under-utilized",
+      "severity": "warning"
+    },
+    {
+      "type": "STUCK_GOALS",
+      "detail": "WORK mode at 4.1% (<20% threshold) - possible stuck goals",
+      "severity": "warning"
+    }
+  ],
+  "has_anomaly": true
+}
