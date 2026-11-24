@@ -316,6 +316,16 @@ def _write_outputs(doc):
                 L.append("- **%s** - %s | %s" % (e["name"], e["window"], e["status"]))
                 for s in e.get("steps") or []:
                     L.append("    * %s: %s" % (s["days"], s["text"]))
+        o7 = plan.get("outcomes_7d")
+        if o7:
+            L += ["", "## 7-day plan - daily detail (derived from the 15-day plan)", "",
+                  "The week ahead: every 15-day step clamped to days 0-7 and split finer - one line per gate pinned "
+                  "to its ETA day, setup windows broken into scaffold -> first run -> verify. Steps running past day 7 "
+                  "are marked as continuing in the 15-day plan.", ""]
+            for e in o7:
+                L.append("- **%s** - %s | %s" % (e["name"], e["window"], e["status"]))
+                for s in e.get("steps") or []:
+                    L.append("    * %s: %s" % (s["days"], s["text"]))
             if pm.get("history"):
                 L += ["", "plan history (oldest -> newest): " +
                       ", ".join("%s @ %s" % (e["sig"], e["ts"][5:]) for e in pm["history"][-4:])]

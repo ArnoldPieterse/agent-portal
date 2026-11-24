@@ -393,6 +393,103 @@ def _derive_15d(outcomes, inv, gen):
     return out
 
 
+def _day_spec(s):
+    """Parse 'day X' or 'day X-Y' -> (x, y); None when no day is stated."""
+    m = re.search(r"day (\d+)(?:-(\d+))?", s or "")
+    if not m:
+        return None
+    a = int(m.group(1))
+    b = int(m.group(2) or m.group(1))
+    return a, b
+
+
+def _clamp_window(win, H):
+    """Clamp a 'day X-Y' window to the [0,H] horizon; note when it runs on."""
+    spec = _day_spec(win)
+    if spec is None:
+        return win
+    a, b = spec
+    if a > H:
+        return "day %d+ (see 15-day plan)" % a
+    nb = min(H, b)
+    cont = " -> runs to day %d" % b if b > H else ""
+    return "day %d-%d%s" % (a, nb, cont)
+
+
+def _expand_step(text, a, b, H):
+    """Break one 15-day step (clamped to [a,b], both <=H) into finer sub-steps.
+    This is the extra detail the 7-day plan adds over the 15-day one: gate steps
+    are split into one line per gate pinned to its own ETA day, and setup/stabilize
+    windows are split into scaffold -> first run -> verify / monitor."""
+    t = text.lower()
+    subs = []
+    if "gates clear" in t:
+        body = text.split(":", 1)[1] if ":" in text else text
+        parts = [p.strip() for p in body.split(";") if p.strip()]
+        if parts:
+            for part in parts:
+                m = re.search(r"~day (\d+)", part)
+                d = int(m.group(1)) if m else a
+                flag = " (after the 7-day window)" if d > H else ""
+                subs.append(("day %d" % d, "%s%s" % (part, flag)))
+        else:
+            subs.append(("day %d-%d" % (a, b), text))
+    elif "setup" in t:
+        name = text.split(" of ", 1)[1] if " of " in text else ""
+        span = b - a + 1
+        if span <= 1:
+            subs.append(("day %d" % a, "scaffold + wire up %s; first automated run" % name))
+        else:
+            mid = (a + b) // 2
+            subs.append(("day %d" % a, "scaffold + wire up %s" % name))
+            if mid > a:
+                subs.append(("day %d" % mid, "first automated run of %s" % name))
+            subs.append(("day %d" % b, "fix issues; verify first output of %s" % name))
+    elif "first real delivery" in t:
+        subs.append(("day %d" % a, "produce first usable output + record evidence leaf"))
+    elif "stabilize" in t or "daily runs" in t:
+        if b - a + 1 <= 1:
+            subs.append(("day %d" % a, text))
+        else:
+            subs.append(("day %d" % a, "daily unattended runs begin"))
+            subs.append(("day %d" % b, "monitor + regression check on the loop"))
+    else:
+        subs.append(("day %d-%d" % (a, b), text))
+    return subs
+
+
+def _derive_7d(o15):
+    """Derive the 7-day plan FROM the 15-day one: every 15-day step is clamped to
+    days 0-7 and expanded into finer sub-steps (per-gate lines, scaffold -> run ->
+    verify). A step running past day 7 is cut at the edge and marked as continuing
+    in the 15-day plan; a step starting after day 7 appears as a 'watch' note.
+    Purely derived from o15, so it re-derives on every refresh with the rest."""
+    H = 7
+    out = []
+    for e in o15:
+        steps7 = []
+        for s in e.get("steps") or []:
+            spec = _day_spec(s["days"])
+            if spec is None:  # e.g. 'already reached - nothing to do'
+                steps7.append({"days": s["days"], "text": s["text"]})
+                continue
+            a, b = spec
+            if a > H:  # starts after the 7-day window -> watch note
+                steps7.append({"days": "day %d" % a,
+                               "text": "%s (after the 7-day window - see 15-day plan)" % s["text"]})
+                continue
+            na, nb = max(0, a), min(H, b)
+            cont = " - continues in the 15-day plan to day %d" % b if b > H else ""
+            subs = _expand_step(s["text"], na, nb, H)
+            for i, (dspec, txt) in enumerate(subs):
+                steps7.append({"days": dspec, "text": txt + (cont if i == len(subs) - 1 else "")})
+        out.append({"name": e["name"], "parent": e.get("parent"),
+                    "window": _clamp_window(e.get("window"), H),
+                    "status": e.get("status", ""), "cycle_closing": bool(e.get("cycle_closing")),
+                    "steps": steps7})
+    return out
+
+
 def build_plan(doc):
     """Return {cycle_state, level_up_eta, planned: [items with why], horizons: [...], tree: {...}}."""
     fleet = doc.get("fleet", {})
@@ -502,6 +599,7 @@ def build_plan(doc):
         free_day = max(0, int(math.ceil((first_free - gen).total_seconds() / 86400.0)))
     outcomes = _schedule_outcomes(inv, gen, free_day)
     outcomes_15d = _derive_15d(outcomes, inv, gen)
+    outcomes_7d = _derive_7d(outcomes_15d)
     sig, delta, recent = _plan_history(outcomes, gen, pct)
     plan_meta = {"sig": sig,
                  "computed_at": gen.strftime("%Y-%m-%d %H:%M:%S"),
@@ -511,7 +609,7 @@ def build_plan(doc):
     return {"cycle_state": cycle_state, "level_up_eta": level_up_eta, "planned": planned,
             "horizons": horizons, "tree": tree,
             "capability_chain": chain, "outcomes_30d": outcomes,
-            "outcomes_15d": outcomes_15d, "plan_meta": plan_meta}
+            "outcomes_15d": outcomes_15d, "outcomes_7d": outcomes_7d, "plan_meta": plan_meta}
 
 
 def load_plan():
