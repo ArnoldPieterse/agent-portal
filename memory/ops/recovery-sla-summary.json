@@ -1,0 +1,39 @@
+{
+  "generated": "2026-11-25T01:10:04.210285",
+  "types": {
+    "cascade": {
+      "count": 1,
+      "detection_mean_min": 8.2,
+      "detection_p95_min": 8.2,
+      "recovery_mean_min": 95.0,
+      "recovery_p95_min": 95.0,
+      "trend": "stable",
+      "sla_target_detection_min": 10,
+      "sla_target_recovery_min": 120,
+      "sla_compliance_pct": 100.0
+    },
+    "oom": {
+      "count": 2,
+      "detection_mean_min": 4.15,
+      "detection_p95_min": 4.46,
+      "recovery_mean_min": 41.5,
+      "recovery_p95_min": 47.35,
+      "trend": "stable",
+      "sla_target_detection_min": 5,
+      "sla_target_recovery_min": 60,
+      "sla_compliance_pct": 100.0
+    },
+    "single_seat": {
+      "count": 4,
+      "detection_mean_min": 3.1,
+      "detection_p95_min": 3.99,
+      "recovery_mean_min": 20.62,
+      "recovery_p95_min": 26.68,
+      "trend": "worsening",
+      "sla_target_detection_min": 5,
+      "sla_target_recovery_min": 30,
+      "sla_compliance_pct": 100.0
+    }
+  },
+  "total_incidents": 7
+}

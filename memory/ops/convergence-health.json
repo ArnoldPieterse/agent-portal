@@ -1,0 +1,26 @@
+{
+  "generated": "2026-11-25T01:10:27.526119",
+  "overall": "FAIL",
+  "checks": [
+    {
+      "check": "seat_matrix_fresh",
+      "status": "FAIL",
+      "detail": "file missing"
+    },
+    {
+      "check": "autonomy_score_updated",
+      "status": "FAIL",
+      "detail": "file missing"
+    },
+    {
+      "check": "intervention_log_growing",
+      "status": "FAIL",
+      "detail": "no entries yet"
+    },
+    {
+      "check": "cycle_estimator_running",
+      "status": "FAIL",
+      "detail": "output missing"
+    }
+  ]
+}

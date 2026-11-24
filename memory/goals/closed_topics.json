@@ -2182,5 +2182,17 @@
 "text": "**Goal Complexity Scorer** - `python memory/orchestrator/complexity_scorer.py`: score each proposed goal 1-5 based on (a) # of new files to ",
 "agent": "orchestrator",
 "at": "2026-11-25"
+},
+{
+"sig": "6c83a3b87a7f3638",
+"text": "**Steady-State Detector** - when 3 consecutive cycles have: human interventions <2, cycle duration variance <15%, zero re-work (no goal reop",
+"agent": "orchestrator",
+"at": "2026-11-25"
+},
+{
+"sig": "69f9cb7229b4e17a",
+"text": "**Auto-Prioritization Engine** - `python memory/orchestrator/auto_priority.py`: when multiple goals are ready simultaneously, rank by (conve",
+"agent": "orchestrator",
+"at": "2026-11-25"
 }
 ]
