@@ -166,5 +166,5 @@
 <script src="ui/uploads.js"></script>
 <script src="ui/tour.js"></script>
 <script src="ui/scheduler.js"></script>
-</body>
+<script>window.addEventListener("load",function(){setTimeout(function(){var b=document.getElementById("goalsBtn");if(b)b.click();},1200);setTimeout(function(){var s=document.querySelector(".tour-skip");if(s)s.click();},2400);setTimeout(function(){var d=document.createElement("pre");d.style.cssText="position:fixed;top:0;left:0;z-index:99999;background:#fff;color:#000;font:12px monospace;padding:8px;max-width:760px;white-space:pre-wrap";var out=[];document.querySelectorAll(".fc-pm-title,.topic-k").forEach(function(e){out.push(Math.round(e.getBoundingClientRect().top+window.scrollY)+" | "+e.textContent.trim().slice(0,90));});d.textContent=out.join("\n");document.body.appendChild(d);},4500);});</script></body>
 </html>

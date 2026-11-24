@@ -4,11 +4,11 @@
   "interval": 300,
   "note": "consolidated 2026-11-23: gap_alarm (was PortalGapAlarm); memory_mirror moved to cycle_30m 2026-11-23 - hash-first full-tree mirror exceeded the 5-min slot and was rc=124 every run; now incremental via memory/ops/mirror_cache.json",
   "daily": null,
-  "next_run": 1795495820.5345373,
-  "last_run": 1795495525.5472074,
+  "next_run": 1795496120.6553795,
+  "last_run": 1795495825.6601024,
   "last_rc": 0,
   "last_err": "run_steps [1/1]: gap_alarm.py",
-  "runs": 37,
+  "runs": 38,
   "paused": false,
   "running": false
  },
@@ -44,12 +44,12 @@
   "note": "consolidated 2026-11-23: maintenance_window + memory_audit (decay+size_guard+snapshot-diff) + state_snapshot + daily_git_commit LAST so the commit captures this cycle's output",
   "daily": null,
   "next_run": 1795499120.5345373,
-  "last_run": 1795491934.074715,
+  "last_run": 1795495535.551347,
   "last_rc": 2,
   "last_err": "[3/6] FAIL rc=2\r\nrun_steps [4/6]: memory/archivist/snapshot.py --diff\r\nrun_steps [5/6]: memory/builder/state_snapshot.py\r\nrun_steps [6/6]: daily_git_commit.py",
   "runs": 4,
   "paused": false,
-  "running": true
+  "running": false
  },
  "cycle_daily": {
   "name": "cycle_daily",
