@@ -1947,3 +1947,10 @@
 {"t": "2026-11-25 04:57:06", "job": "cycle_10m", "event": "start", "pid": 37224}
 {"t": "2026-11-25 04:57:11", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-25 04:57:11", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-25 05:02:06", "job": "cycle_5m", "event": "start", "pid": 37304}
+{"t": "2026-11-25 05:02:11", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-25 05:07:06", "job": "cycle_5m", "event": "start", "pid": 4676}
+{"t": "2026-11-25 05:07:06", "job": "cycle_10m", "event": "start", "pid": 540}
+{"t": "2026-11-25 05:07:06", "job": "cycle_30m", "event": "start", "pid": 35788}
+{"t": "2026-11-25 05:07:11", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-25 05:07:11", "job": "cycle_10m", "event": "done", "rc": 0}

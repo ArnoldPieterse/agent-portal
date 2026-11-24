@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Builder G2 Cycle Estimator done: cycle_estimate=52.3h conf=0.9 in fleet-mode.json, API pass-through + UI poll added.
-- Goals #3 (Acceptance Rate Predictor, 96.3% acc) and #4 (
-- CSS fix pending: impl uses `border-top`+shadow & `ss-exit-pulse`; verify expects inset ring & `ss-pulse`.
-- Cycle-17 mechanic goals 10/10 verified complete; do not
 - Fixed: ckpConvRing & ckpAgentCards DOM nodes were missing from panel innerHTML (silent no-op); added both, unblocking goals #1/#6/#7.
 - All 10/10 Designer cycle-17 goals closed & verified in goal ledger; no open items remain for this cycle.
 - Designer found ckpAgent
 - Goals #4–#7 done: intervention logger (7/7 tests), complexity scorer (r=0.918), autonomy score (65.4), goal_inherit.py v1 implemented.
 - Research
 - seat_probe.py was reverted (lost trend/degrading/p95); rebuilt to pass seat_probe_predictive_test.py — 4/4 green, no regression.
+- Mechanic closed 6 goals (#4,6,7,8,9,10) in one batch pass; fleet now 9/10 complete.
+- Verifier cycle-1
+- Goal #7 done: memory/orchestrator/goal_in
+- Goal #2 (Steady-State Visual Indicator) impl was reverted; must live in app.css+core.js with `.ss
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
