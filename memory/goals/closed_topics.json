@@ -2380,5 +2380,17 @@
 "text": "**Convergence Pipeline Load Test** - stress test: write 100 interventions in 1min, update autonomy score 50x in 1min. Verify no corruption, ",
 "agent": "mechanic",
 "at": "2026-11-25"
+},
+{
+"sig": "08a87d0458b0d40b",
+"text": "**Convergence Infra Health Check** - weekly: verify seat-matrix fresh, autonomy-score updated, intervention log growing, cycle estimator run",
+"agent": "mechanic",
+"at": "2026-11-25"
+},
+{
+"sig": "a5dec6d95b2ebce9",
+"text": "**Decision Quality Tracker** - from auto-ops-decisions.jsonl: pct decisions with positive outcome (no follow-up <24h). Track trend. Alert if",
+"agent": "mechanic",
+"at": "2026-11-25"
 }
 ]

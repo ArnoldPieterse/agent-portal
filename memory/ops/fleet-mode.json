@@ -7,5 +7,20 @@
   "goals_open": 36,
   "elapsed_since_activity_h": 0.0,
   "activity_source": "memory/ops/scheduler-log.jsonl",
-  "threshold_idle_h": 6.0
+  "threshold_idle_h": 6.0,
+  "cycle_estimate": {
+    "estimate_h": 53.5,
+    "estimated_completion": "2026-11-27 03:47 UTC",
+    "estimated_completion_iso": "2026-11-27T03:47:14Z",
+    "confidence": 0.9,
+    "components": {
+      "base_mean_h": 24.0,
+      "complexity_factor": 1.01,
+      "velocity_factor": 1.0,
+      "goal_factor": 2.21,
+      "avg_verification_steps": 1.1,
+      "open_goals_count": 291
+    },
+    "ts": "2026-11-24T22:17:14Z"
+  }
 }
