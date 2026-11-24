@@ -1,0 +1,2 @@
+{"ts": "2026-11-24T14:01:17.077834+00:00", "script": "vram_headroom_predictor.py", "test": "selftest", "results": {"backtest_7day": true, "alert_near_threshold": true, "stable_no_alert": true, "insufficient_data": true, "early_prediction_gt_30min": false}, "all_pass": false}
+{"ts": "2026-11-24T14:01:25.090116+00:00", "script": "vram_headroom_predictor.py", "test": "selftest", "results": {"backtest_7day": true, "alert_near_threshold": true, "stable_no_alert": true, "insufficient_data": true, "early_prediction_gt_30min": true}, "all_pass": true}

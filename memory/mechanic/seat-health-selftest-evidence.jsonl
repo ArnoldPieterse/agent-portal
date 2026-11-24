@@ -1,0 +1,1 @@
+{"ts": "2026-11-24T13:58:43.233853+00:00", "script": "seat_probe.py --selftest", "goal": "Predictive Seat Health Monitor (mechanic #1)", "tests_run": 7, "tests_passed": 7, "all_pass": true, "key_results": {"baseline_stable": "stable", "spike_degrading": "degrading", "degrading_ratio": 4.31, "recovery": "recovering"}}

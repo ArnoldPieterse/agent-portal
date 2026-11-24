@@ -1,0 +1,40 @@
+{
+  "ts": "2026-11-24T14:01:27.038078+00:00",
+  "low_threshold_pct": 10.0,
+  "min_points_required": 3,
+  "hosts": {
+    "black": {
+      "host": "black",
+      "status": "insufficient_data",
+      "data_points": 1,
+      "current_free_pct": 60.31,
+      "prediction": null,
+      "alert": false
+    },
+    "pale": {
+      "host": "pale",
+      "status": "insufficient_data",
+      "data_points": 1,
+      "current_free_pct": 67.08,
+      "prediction": null,
+      "alert": false
+    },
+    "red": {
+      "host": "red",
+      "status": "insufficient_data",
+      "data_points": 1,
+      "current_free_pct": 68.31,
+      "prediction": null,
+      "alert": false
+    },
+    "white": {
+      "host": "white",
+      "status": "insufficient_data",
+      "data_points": 1,
+      "current_free_pct": 43.69,
+      "prediction": null,
+      "alert": false
+    }
+  },
+  "alerts": []
+}

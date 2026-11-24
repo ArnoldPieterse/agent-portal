@@ -1,0 +1,43 @@
+{
+  "ts": "2026-11-24T14:00:23.247150+00:00",
+  "total_cycles_tracked": 4,
+  "rolling_window": 3,
+  "stats": {
+    "mean_h": 40.0,
+    "stddev_h": 22.6,
+    "threshold_h": 85.3,
+    "latest_h": 24.0,
+    "outlier_flag": false,
+    "reason": null
+  },
+  "recent_entries": [
+    {
+      "cycle": 5,
+      "start_date": "2026-11-18",
+      "end_date": "2026-11-19",
+      "duration_hours": 24.0,
+      "source": "archive"
+    },
+    {
+      "cycle": 8,
+      "start_date": "2026-11-20",
+      "end_date": "2026-11-23",
+      "duration_hours": 72.0,
+      "source": "archive"
+    },
+    {
+      "cycle": 14,
+      "start_date": "2026-11-23",
+      "end_date": "2026-11-24",
+      "duration_hours": 24.0,
+      "source": "archive"
+    },
+    {
+      "cycle": 15,
+      "start_date": "2026-11-23",
+      "end_date": "2026-11-24",
+      "duration_hours": 24.0,
+      "source": "archive"
+    }
+  ]
+}
