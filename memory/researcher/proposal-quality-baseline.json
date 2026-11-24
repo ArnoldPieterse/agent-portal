@@ -1,29 +1,34 @@
 {
-  "generated": "2026-11-25",
-  "auto_goals_count": 8,
-  "refined_goals_count": 100,
-  "quality_gap": 0.635,
-  "auto_mean": 0.075,
-  "refined_mean": 0.71,
+  "proposals_scored": 328,
+  "finals_scored": 298,
+  "proposal_mean_pct": 47.0,
+  "final_mean_pct": 50.6,
+  "gap_pp": 3.6,
   "top_3_auto_goals": [
     {
-      "keyword": "human",
-      "composite": 0.075
+      "title": "Mode Transition Integration Test",
+      "agent": "verifier",
+      "cycle": 15,
+      "score_pct": 76.0
     },
     {
-      "keyword": "needs",
-      "composite": 0.075
+      "title": "Tiered Summary Ladder",
+      "agent": "archivist",
+      "cycle": 12,
+      "score_pct": 72.0
     },
     {
-      "keyword": "orchestrator",
-      "composite": 0.075
+      "title": "Tiered Summary Ladder",
+      "agent": "archivist",
+      "cycle": 14,
+      "score_pct": 72.0
     }
   ],
-  "per_dimension_gap": {
-    "output_path": 0.8,
-    "verification": 0.99,
-    "specificity": 0.83,
-    "actionability": 0.0,
-    "scope_clarity": 0.31
+  "dimension_breakdown": {
+    "specificity": 2.12,
+    "verification": 2.73,
+    "scope": 4.32,
+    "output": 1.62,
+    "actionability": 0.98
   }
 }
