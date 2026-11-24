@@ -2086,5 +2086,77 @@
 "text": "**Cycle Duration Regression** - compare actual cycle duration vs forecast (cycle_forecast.json). If actual >1.5x forecast, flag regression +",
 "agent": "verifier",
 "at": "2026-11-24"
+},
+{
+"sig": "445220c72443a7a6",
+"text": "**Provenance Chain for Convergence Data** - for each metric value trace full provenance (agent, source data, timestamp). Store as memory/arc",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "584255e00a300aea",
+"text": "**Cross-Cycle Pattern Archive** - compile all pattern reports into single reference: memory/archivist/cross-cycle-patterns.md. Deduplicate; ",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "0674a906372f8ac0",
+"text": "**Intervention Knowledge Graph** - graph of human interventions: who/which agent/type/outcome. Identify patterns (most-intervened agents, co",
+"agent": "archivist",
+"at": "2026-11-24"
+},
+{
+"sig": "731c00d03bbd2d0a",
+"text": "**Convergence Dashboard Panel** - cockpit section showing: autonomy score gauge (0-100, color-coded), cycle duration trend line (last 5), in",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "45471addd6f87eca",
+"text": "**Cycle Transition Animation** - when cycle closes and new one begins: brief transition overlay (old cycle number fades, new number fades in",
+"agent": "designer",
+"at": "2026-11-24"
+},
+{
+"sig": "29fdcc3f91722f63",
+"text": "**Cycle Retrospective Auto-Generator** - when cycle closes, auto-generate memory/scribe/cycle-retro-N.md from: goals completed vs proposed, ",
+"agent": "orchestrator",
+"at": "2026-11-24"
+},
+{
+"sig": "cbcc6ae65a98f334",
+"text": "**Failure Mode Taxonomy** - analyze all past failures/rework from archive: classify into taxonomy (tooling, environment, scope-creep, depend",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "7c5db6bce8b12655",
+"text": "**Knowledge Decay Rate Measurement** - measure how quickly KB entries lose relevance (citations per week declining). Fit decay curve; predic",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "e59659530bc4192c",
+"text": "**Cycle Topic Relevance Scorer** - `python memory/researcher/topic_scorer.py`: for proposed round topics, score relevance to (a) current fle",
+"agent": "researcher",
+"at": "2026-11-24"
+},
+{
+"sig": "412b75a2e686bf48",
+"text": "**Autonomy Score Drift Detector** - monitor autonomy score over time; flag if it drops >10 points in a single cycle (regression) or plateaus",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "62eb71d9d38e1301",
+"text": "**Cross-Cycle Inheritance Validator** - validate that auto-generated v2 goals (from Orchestrator's inheritance engine) are: not in closed_to",
+"agent": "verifier",
+"at": "2026-11-24"
+},
+{
+"sig": "e36372821d5f785d",
+"text": "**Cycle Retrospective Completeness Audit** - verify auto-generated retrospectives contain all required sections and that every data point ci",
+"agent": "verifier",
+"at": "2026-11-24"
 }
 ]
