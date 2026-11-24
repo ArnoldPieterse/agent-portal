@@ -327,3 +327,5 @@
 {"ts": "2026-11-24 13:48:17", "file": "ui/cockpit-forecast.js", "sha": "c93381c8a8", "size": 6358, "snapshot": null}
 {"ts": "2026-11-24 13:48:17", "file": "ui/uploads.js", "sha": "485676e064", "size": 45895, "snapshot": null}
 {"ts": "2026-11-24 14:03:20", "file": "agent_portal.py", "sha": "c1c04ceb7f", "size": 309518, "snapshot": "memory/ops/merge-queue/agent_portal.py.c1c04ceb7f"}
+{"ts": "2026-11-24 14:36:45", "file": "agent_portal.py", "sha": "6ecf1e775a", "size": 309647, "snapshot": "memory/ops/merge-queue/agent_portal.py.6ecf1e775a"}
+{"ts": "2026-11-24 14:36:45", "file": "ui/uploads.js", "sha": "e980c0485f", "size": 47243, "snapshot": null}

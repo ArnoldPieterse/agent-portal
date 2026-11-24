@@ -238,6 +238,12 @@ def _ledger():
 def _day_owner(doc):
     """agent lane that owns each 7-day entry (via its parent 30-day outcome)."""
     lane_by_name = {o.get("name"): o.get("lane") for o in ((doc.get("plan") or {}).get("outcomes_30d") or [])}
+    try:  # LLM chain (2026-11-24): its 30-day names may differ from the computed ones
+        ch = _load_json(os.path.join(PLANS, "llm-chain-latest.json"))
+        for o in (ch or {}).get("plans", {}).get("30d") or []:
+            lane_by_name.setdefault(o.get("name"), o.get("lane"))
+    except Exception:
+        pass
     out = {}
     for e in (doc.get("plan") or {}).get("outcomes_7d") or []:
         base = (e.get("name") or "").replace(" - prep", "")
@@ -274,7 +280,14 @@ def _today_items(doc, agent_id, gen):
                 it.get("why") or "next-10 queue item due within 24 h",
                 it.get("title") or it.get("goal") or "")
     owner = _day_owner(doc)
-    for e in (doc.get("plan") or {}).get("outcomes_7d") or []:
+    o7 = (doc.get("plan") or {}).get("outcomes_7d") or []
+    try:  # LLM chain (2026-11-24): its 7-day steps are today's plan of record
+        ch = _load_json(os.path.join(PLANS, "llm-chain-latest.json"))
+        if ch and ch.get("plans", {}).get("7d"):
+            o7 = ch["plans"]["7d"]
+    except Exception:
+        pass
+    for e in o7:
         if owner.get(e.get("name")) != agent_id:
             continue
         for s in e.get("steps") or []:
@@ -324,6 +337,17 @@ def grounding_refs(doc):
     for goals in _ledger().values():
         for g in goals:
             refs.append(g.get("text", ""))
+    try:  # LLM planning chain (2026-11-24): selected plans are ground truth too
+        ch = _load_json(os.path.join(PLANS, "llm-chain-latest.json"))
+        for hz in ("30d", "15d", "7d"):
+            for e in (ch or {}).get("plans", {}).get(hz) or []:
+                refs.append(str(e.get("name") or ""))
+                if hz == "30d":
+                    refs.extend(str(g) for g in e.get("gates") or [])
+                else:
+                    refs.extend(str(s.get("text") or "") for s in e.get("steps") or [])
+    except Exception:
+        pass
     return [r for r in refs if _norm(r)]
 
 
@@ -600,15 +624,35 @@ def render_md(date_s, source, crew_ids, judge, pagers, stats):
 # ---- the round ---------------------------------------------------------------------------
 
 def compute_sig(doc, roster_ids):
-    plan = doc.get("plan") or {}
-    lanes = doc.get("lanes") or {}
-    lane_state = ",".join("%s:%d/%d" % (a, (lanes.get(a) or {}).get("done", 0),
-                                        (lanes.get(a) or {}).get("total", 0)) for a in sorted(lanes))
-    src = "%s|%s|%s|%s" % (str(doc.get("generated", ""))[:10],
-                           (plan.get("plan_meta") or {}).get("sig", ""),
-                           ",".join(roster_ids), lane_state)
-    return hashlib.sha1(src.encode("utf-8")).hexdigest()[:12]
+    """Signature over what a one-pager depends on: the live queue/goal texts,
+    roster and date - plus the LLM planning chain (2026-11-24), so a new
+    30/15/7-day plan re-gates the round."""
+    src = json.dumps(doc.get("next10") or [], sort_keys=True, default=str)[:20000]
+    try:
+        ch = _load_json(os.path.join(PLANS, "llm-chain-latest.json"))
+        if ch:
+            src += "|chain:" + json.dumps(ch.get("plans", {}).get("7d") or [], sort_keys=True)[:8000]
+    except Exception:
+        pass
+    return hashlib.sha1((",".join(roster_ids) + "|" + time.strftime("%Y-%m-%d") + "|" + src).encode()).hexdigest()[:12]
 
+_CHAIN_MOD = None
+
+def maybe_pipeline(doc=None):
+    """Full planning pipeline (2026-11-24): LLM 30/15/7-day chain first, then the
+    one-pager round. Each stage self-gates on signature + staleness, so a poll is
+    a file read; at most one background worker runs."""
+    global _CHAIN_MOD
+    try:
+        if _CHAIN_MOD is None:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location("_plan_chain", os.path.join(HERE, "plan_chain.py"))
+            m = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(m)
+            _CHAIN_MOD = m
+        return _CHAIN_MOD.maybe_pipeline(doc) or {}
+    except Exception:
+        return {}
 
 def run_round(doc=None, force=False):
     """Run the full 3+1 round synchronously and set the winner as THE plan."""

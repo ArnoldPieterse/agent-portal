@@ -1,0 +1,469 @@
+{
+ "ts": "2026-11-24 14:39:00",
+ "date": "2026-11-24",
+ "sig": "c10efa44851f",
+ "planners": [
+  "designer",
+  "builder",
+  "verifier"
+ ],
+ "judge": null,
+ "sources": {
+  "30d": "llm-judge-local",
+  "15d": "llm-judge-local",
+  "7d": "llm-judge-local"
+ },
+ "rounds": {
+  "30d": {
+   "judge": {
+    "agent": "local-rubric",
+    "winner": "A",
+    "scores": {
+     "A": 4.5,
+     "B": 4.5,
+     "C": 4.5
+    },
+    "rationale": "judge seat unavailable - local rubric: grounding x4 + coverage x3 + day-fit bonus"
+   },
+   "drafts": [
+    {
+     "label": "A",
+     "agent": "designer",
+     "model": "designer-q4",
+     "stats": {
+      "outcomes": 7,
+      "grounded": 7,
+      "ratio": 1.0,
+      "missing": []
+     }
+    },
+    {
+     "label": "B",
+     "agent": "builder",
+     "model": "Qwen3.8-27B-Q8_0",
+     "stats": {
+      "outcomes": 7,
+      "grounded": 7,
+      "ratio": 1.0,
+      "missing": []
+     }
+    },
+    {
+     "label": "C",
+     "agent": "verifier",
+     "model": "Qwen3.8-27B-Q4_K_S",
+     "stats": {
+      "outcomes": 7,
+      "grounded": 7,
+      "ratio": 1.0,
+      "missing": []
+     }
+    }
+   ]
+  },
+  "15d": {
+   "judge": {
+    "agent": "local-rubric",
+    "winner": "A",
+    "scores": {
+     "A": 4.5,
+     "B": 4.5,
+     "C": 4.5
+    },
+    "rationale": "judge seat unavailable - local rubric: grounding x4 + coverage x3 + day-fit bonus"
+   },
+   "drafts": [
+    {
+     "label": "A",
+     "agent": "designer",
+     "model": "designer-q4",
+     "stats": {
+      "entries": 7,
+      "grounded": 7,
+      "ratio": 1.0,
+      "missing": []
+     }
+    },
+    {
+     "label": "B",
+     "agent": "builder",
+     "model": "Qwen3.8-27B-Q8_0",
+     "stats": {
+      "entries": 7,
+      "grounded": 7,
+      "ratio": 1.0,
+      "missing": []
+     }
+    },
+    {
+     "label": "C",
+     "agent": "verifier",
+     "model": "Qwen3.8-27B-Q4_K_S",
+     "stats": {
+      "entries": 7,
+      "grounded": 7,
+      "ratio": 1.0,
+      "missing": []
+     }
+    }
+   ]
+  },
+  "7d": {
+   "judge": {
+    "agent": "local-rubric",
+    "winner": "A",
+    "scores": {
+     "A": 4.5,
+     "B": 4.5,
+     "C": 4.5
+    },
+    "rationale": "judge seat unavailable - local rubric: grounding x4 + coverage x3 + day-fit bonus"
+   },
+   "drafts": [
+    {
+     "label": "A",
+     "agent": "designer",
+     "model": "designer-q4",
+     "stats": {
+      "entries": 7,
+      "grounded": 7,
+      "ratio": 1.0,
+      "missing": []
+     }
+    },
+    {
+     "label": "B",
+     "agent": "builder",
+     "model": "Qwen3.8-27B-Q8_0",
+     "stats": {
+      "entries": 13,
+      "grounded": 13,
+      "ratio": 1.0,
+      "missing": []
+     }
+    },
+    {
+     "label": "C",
+     "agent": "verifier",
+     "model": "Qwen3.8-27B-Q4_K_S",
+     "stats": {
+      "entries": 7,
+      "grounded": 7,
+      "ratio": 1.0,
+      "missing": []
+     }
+    }
+   ]
+  }
+ },
+ "plans": {
+  "30d": [
+   {
+    "name": "Commenting on posts",
+    "window": "day 1-5",
+    "status": "planned",
+    "lane": "fleet",
+    "gates": [
+     "Custom input detection (not in queue - schedulable ~day 1: seat frees + work time)"
+    ],
+    "note": "Fleet autonomously engages with social content via custom input handling."
+   },
+   {
+    "name": "Generate daily social media posts",
+    "window": "day 2-4",
+    "status": "planned",
+    "lane": "fleet",
+    "gates": [
+     "Custom input detection (not in queue - schedulable ~day 1: seat frees + work time)"
+    ],
+    "note": "Automated generation of daily social media content begins."
+   },
+   {
+    "name": "Making phone calls",
+    "window": "day 3-10",
+    "status": "planned",
+    "lane": "fleet",
+    "gates": [
+     "Mic access (not in queue - schedulable ~day 1: seat frees + work time)"
+    ],
+    "note": "Fleet initiates and manages voice-based communications."
+   },
+   {
+    "name": "Writing valid tenders",
+    "window": "day 4-14",
+    "status": "planned",
+    "lane": "fleet",
+    "gates": [
+     "Camera access (not in queue - schedulable ~day 1: seat frees + work time)"
+    ],
+    "note": "Fleet drafts and submits compliant tender documents using visual verification."
+   },
+   {
+    "name": "Making money (revenue channels live)",
+    "window": "day 4-12",
+    "status": "planned",
+    "lane": "fleet",
+    "gates": [
+     "Custom input detection (not in queue - schedulable ~day 1: seat frees + work time)",
+     "Camera access (not in queue - schedulable ~day 1: seat frees + work time)"
+    ],
+    "note": "Revenue-generating workflows are active and processing transactions."
+   },
+   {
+    "name": "Predicting markets",
+    "window": "day 5-20",
+    "status": "planned",
+    "lane": "researcher",
+    "gates": [],
+    "note": "Research agent produces market prediction models and insights."
+   },
+   {
+    "name": "Positive money income (net > 0)",
+    "window": "day 19-26",
+    "status": "planned",
+    "lane": "fleet",
+    "gates": [
+     "Making money (revenue channels live) (ends day 12)"
+    ],
+    "note": "Fleet achieves net positive financial performance, closing the 30-day cycle.",
+    "cycle_closing": true
+   }
+  ],
+  "15d": [
+   {
+    "name": "Commenting on posts",
+    "parent": "Commenting on posts",
+    "window": "day 1-5",
+    "status": "Full execution window within the 15-day plan; dependent on Custom input detection gate.",
+    "steps": [
+     {
+      "days": "day 0-1",
+      "text": "Implement and verify 'Custom input detection' capability to satisfy the gate requirement (schedulable ~day 1)."
+     },
+     {
+      "days": "day 2-5",
+      "text": "Execute commenting workflow on social media posts using the newly enabled custom input detection."
+     }
+    ]
+   },
+   {
+    "name": "Generate daily social media posts",
+    "parent": "Generate daily social media posts",
+    "window": "day 2-4",
+    "status": "Full execution window within the 15-day plan; dependent on Custom input detection gate.",
+    "steps": [
+     {
+      "days": "day 0-1",
+      "text": "Finalize 'Custom input detection' capability to unlock post generation inputs (gate schedulable ~day 1)."
+     },
+     {
+      "days": "day 2-4",
+      "text": "Generate and publish daily social media posts leveraging the active custom input detection."
+     }
+    ]
+   },
+   {
+    "name": "Making phone calls",
+    "parent": "Making phone calls",
+    "window": "day 3-10",
+    "status": "Full execution window within the 15-day plan; dependent on Mic access gate.",
+    "steps": [
+     {
+      "days": "day 0-2",
+      "text": "Implement 'Mic access' capability to satisfy the gate requirement (schedulable ~day 1, buffer until day 2)."
+     },
+     {
+      "days": "day 3-10",
+      "text": "Execute phone call workflows using the enabled microphone access."
+     }
+    ]
+   },
+   {
+    "name": "Writing valid tenders",
+    "parent": "Writing valid tenders",
+    "window": "day 4-14",
+    "status": "Full execution window within the 15-day plan; dependent on Camera access gate.",
+    "steps": [
+     {
+      "days": "day 0-3",
+      "text": "Implement 'Camera access' capability to satisfy the gate requirement (schedulable ~day 1, buffer until day 3)."
+     },
+     {
+      "days": "day 4-14",
+      "text": "Draft and validate tender documents using camera-based document scanning/input."
+     }
+    ]
+   },
+   {
+    "name": "Making money (revenue channels live)",
+    "parent": "Making money (revenue channels live)",
+    "window": "day 4-12",
+    "status": "Full execution window within the 15-day plan; dependent on Custom input detection and Camera access gates.",
+    "steps": [
+     {
+      "days": "day 0-3",
+      "text": "Implement 'Custom input detection' and 'Camera access' capabilities to satisfy both gate requirements."
+     },
+     {
+      "days": "day 4-12",
+      "text": "Activate revenue channels and process transactions using the enabled input and camera capabilities."
+     }
+    ]
+   },
+   {
+    "name": "Predicting markets",
+    "parent": "Predicting markets",
+    "window": "day 5-15",
+    "status": "Partial execution window; starts day 5 and continues past the 15-day limit.",
+    "steps": [
+     {
+      "days": "day 5-10",
+      "text": "Initialize market prediction models and begin data ingestion on lane researcher."
+     },
+     {
+      "days": "day 11-15",
+      "text": "Refine prediction accuracy and validate outputs; continues to day 20 of the 30-day plan."
+     }
+    ]
+   },
+   {
+    "name": "Positive money income (net > 0) - prep",
+    "parent": "Positive money income (net > 0)",
+    "window": "day 0-15",
+    "status": "Preparation phase only; actual income realization starts day 19. Must ensure 'Making money' dependency completes by day 12.",
+    "steps": [
+     {
+      "days": "day 0-3",
+      "text": "Ensure 'Custom input detection' and 'Camera access' gates are cleared to support the 'Making money' prerequisite."
+     },
+     {
+      "days": "day 4-12",
+      "text": "Verify that 'Making money (revenue channels live)' executes successfully, as it is a hard gate for positive income."
+     },
+     {
+      "days": "day 13-15",
+      "text": "Audit revenue channel stability and prepare financial reporting infrastructure; actual net-positive income begins day 19 of the 30-day plan."
+     }
+    ]
+   }
+  ],
+  "7d": [
+   {
+    "name": "Commenting on posts - gate & execution",
+    "parent": "Commenting on posts",
+    "window": "day 0-7",
+    "status": "Gate implementation (Custom input detection) and initial workflow execution.",
+    "steps": [
+     {
+      "days": "day 0-1",
+      "text": "Implement 'Custom input detection' capability to satisfy the gate requirement; verify integration with social media API."
+     },
+     {
+      "days": "day 2-5",
+      "text": "Execute commenting workflow on social media posts using the newly enabled custom input detection; monitor engagement metrics."
+     },
+     {
+      "days": "day 6-7",
+      "text": "Refine comment generation logic based on day 2-5 feedback; continues in the 15-day plan for full window completion."
+     }
+    ]
+   },
+   {
+    "name": "Generate daily social media posts - gate & execution",
+    "parent": "Generate daily social media posts",
+    "window": "day 0-7",
+    "status": "Gate finalization and post generation/publishing cycle.",
+    "steps": [
+     {
+      "days": "day 0-1",
+      "text": "Finalize 'Custom input detection' capability to unlock post generation inputs; ensure stable data feed."
+     },
+     {
+      "days": "day 2-4",
+      "text": "Generate and publish daily social media posts leveraging the active custom input detection; verify content accuracy."
+     },
+     {
+      "days": "day 5-7",
+      "text": "Analyze performance of generated posts; adjust generation parameters for subsequent days; continues in the 15-day plan."
+     }
+    ]
+   },
+   {
+    "name": "Making phone calls - gate & execution",
+    "parent": "Making phone calls",
+    "window": "day 0-7",
+    "status": "Mic access implementation and initial call workflow testing.",
+    "steps": [
+     {
+      "days": "day 0-2",
+      "text": "Implement 'Mic access' capability to satisfy the gate requirement; include buffer for permission handling and hardware verification."
+     },
+     {
+      "days": "day 3-7",
+      "text": "Execute phone call workflows using the enabled microphone access; test voice recognition accuracy and latency; continues in the 15-day plan."
+     }
+    ]
+   },
+   {
+    "name": "Writing valid tenders - gate & execution",
+    "parent": "Writing valid tenders",
+    "window": "day 0-7",
+    "status": "Camera access implementation and initial document scanning setup.",
+    "steps": [
+     {
+      "days": "day 0-3",
+      "text": "Implement 'Camera access' capability to satisfy the gate requirement; include buffer for calibration and OCR pipeline setup."
+     },
+     {
+      "days": "day 4-7",
+      "text": "Draft initial tender documents using camera-based document scanning/input; validate OCR accuracy against source documents; continues in the 15-day plan."
+     }
+    ]
+   },
+   {
+    "name": "Making money (revenue channels live) - gate & execution",
+    "parent": "Making money (revenue channels live)",
+    "window": "day 0-7",
+    "status": "Dual-gate implementation and revenue channel activation.",
+    "steps": [
+     {
+      "days": "day 0-3",
+      "text": "Implement 'Custom input detection' and 'Camera access' capabilities to satisfy both gate requirements; verify concurrent operation."
+     },
+     {
+      "days": "day 4-7",
+      "text": "Activate revenue channels and process initial transactions using the enabled input and camera capabilities; monitor transaction success rates; continues in the 15-day plan."
+     }
+    ]
+   },
+   {
+    "name": "Predicting markets - prep & initialization",
+    "parent": "Predicting markets",
+    "window": "day 0-7",
+    "status": "Model initialization and data ingestion start.",
+    "steps": [
+     {
+      "days": "day 5-7",
+      "text": "Initialize market prediction models and begin data ingestion on lane researcher; establish baseline metrics for accuracy tracking; continues in the 15-day plan."
+     }
+    ]
+   },
+   {
+    "name": "Positive money income (net > 0) - prep",
+    "parent": null,
+    "window": "day 0-7",
+    "status": "Dependency verification and financial infrastructure preparation.",
+    "steps": [
+     {
+      "days": "day 0-3",
+      "text": "Ensure 'Custom input detection' and 'Camera access' gates are cleared to support the 'Making money' prerequisite; verify gate status in live state."
+     },
+     {
+      "days": "day 4-7",
+      "text": "Verify that 'Making money (revenue channels live)' executes successfully as a hard gate for positive income; begin auditing revenue channel stability; continues in the 15-day plan."
+     }
+    ]
+   }
+  ]
+ }
+}

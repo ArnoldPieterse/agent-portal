@@ -21,16 +21,16 @@ Engine update kills instances -> \RecoverAll (llm/instances.md); group turns dis
 **FLEET CYCLE 2: 22/80 (27.5%)** (11-16 ~17:xx) - Orchestrator+Researcher completed on their behalf (user directive; models unloaded on White). /api/goals = SSOT.
 
 ## Hot Notes
-- Cycle 15 (2026-11-24): all 10 lane goals verified complete; no new work pending across any seat.
-- Dispatch text lists all 6 builder goals as "open" but they're verified complete; artifacts confirmed on disk — treat dispatch as stale.
-- Mechic lane fully complete: 10/10 Cycle-15 goals, 265 assertions PASS, no open work remaining as of this pass.
-- Scribe goal #2 (Cycle Close-Out Report) verified: cycle_closeout.py produced closeout-cycle15-2026-11-24.md, marker in scribe.md
-- Cycle-15 done; all modules wired via @import in app.css + MODULES loader core.js:605-632
-- Designer cycle-15: all 10 goals REACHED; five listed as "open" were stale — artifacts verified in ui/.
-- Mechic: All 10 goals complete (261/261 assertions) as of cycle 15, 2026-11-24. Lane at full capacity; no pending work.
-- Orchestrator lane fully closed (3/3 goals). Fleet bottleneck: 34/49 open goals remain in designer/scribe/mechanic lanes as of cycle 17.
-- Builder: all 6 cycle-16 goals closed with evidence on disk; idle awaiting Orchestrator to assign cycle-17 goals.
-- Scribe verified 7 goals (1,3,5,9,8,7,10) in one batch pass; goal #4 (Productivity Story Weekly) still pending.
+- Designer: all 10 goals REACHED (cycle 15, 2026-11-24), no open work in lane as of cycle 17 pass.
+- Builder: all 5 goals verified in memory
+- Mechanic added msvc
+- Scribe: All 10 cycle-15 goals REACHED; last was #5 Mode Decision Brief (mode_decision_brief.py → memory/ops/mode-briefs.md, 3 briefs).
+- Verifier cycle-15 lane fully closed 10/10 (2026-11-24); auto-loop "open goals" list was stale, spot
+- Builder: all 6 cycle-16 goals closed, integration test 20/20 PASS, idle awaiting cycle-17 assignment (2026-11-24).
+- Cycle-15 all goals verified (Designer 10/10, Mechanic 10/
+- index.html now loads ui/fleet-mode-aria.js directly (not just dynamic loader); pin advanced to sha12 87a60ffb0b8c
+- Scribe lane: 3→9/10 goals reached (cycle 17, 2026-11-24); verified cycle_closeout.py, mode_decision_brief.py, cross_agent_handoff scripts
+- Mechanic: Goal #7 (Fleet-Mode API Endpoint) implemented, 16 tests pass; now working on #8 (Auto-Loop Restart Guard).
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

@@ -4757,9 +4757,8 @@ def _one_pager_block():
             m = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(m)
             _PLAN_ROUND_MOD = m
-        op = _PLAN_ROUND_MOD.maybe_run()
-        if isinstance(op, dict):
-            return {"one_pager": op}
+        res = _PLAN_ROUND_MOD.maybe_pipeline()
+        return res or {}
     except Exception:
         pass
     return {}
@@ -5529,6 +5528,8 @@ class Handler(BaseHTTPRequestHandler):
                 opb = _one_pager_block()  # {"one_pager": {...}} or {}
                 if opb:
                     payload.setdefault("plan", {})["one_pager"] = opb["one_pager"]
+                if opb.get("llm_chain"):  # LLM planning chain (2026-11-24)
+                    payload.setdefault("plan", {})["llm_chain"] = opb["llm_chain"]
                 return self._json(200, payload)
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})

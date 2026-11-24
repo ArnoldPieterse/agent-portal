@@ -4,35 +4,35 @@ Source: **llm-judge-local** | planners: designer, builder, verifier | judge: loc
 
 ## orchestrator
 1. **Implement cycle_skeleton.py to auto-generate proposal JSON at close** _(from: Open Goal: Cycle Proposal Skeleton Generator)_ - Enables automated cycle planning
-2. **Integrate skeleton generator into daily close-out hook** _(from: Queue #7: Cycle Proposal Skeleton Generator)_ - Ensures proposals are generated without manual trigger
+2. **Integrate skeleton generator into daily 14:36 plan generation hook** _(from: 7-Day Plan: Generate daily social media posts [day 2-4])_ - Ensures next-day plan is drafted automatically
 
 ## researcher
-1. **Draft market prediction model for day 5-20 window** _(from: 30-Day Outcome: Predicting markets [day 5-20])_ - Prepares for 'Predicting markets' outcome
-2. **Analyze current fleet data to baseline market signals** _(from: 30-Day Outcome: Predicting markets [day 5-20])_ - Provides input for prediction model
+1. **Draft market prediction data schema for day 5 scaffold** _(from: 7-Day Plan: Predicting markets [day 5-7])_ - Prepares input structure for Predicting markets
+2. **Identify 3 open-source datasets for initial market model training** _(from: 7-Day Plan: day 6: first automated run of Predicting markets)_ - Provides data source for first automated run
 
 ## builder
-1. **Modify agent_portal.py to inject tasks when mode is IDLE** _(from: Queue #2: Idle Task Injector)_ - Activates idle productivity
-2. **Add top-of-page banner in cockpit showing fleet mode color** _(from: Queue #10: Cockpit Mode Banner)_ - Provides visual status feedback
-3. **Implement atomic write logic for fleet-mode.json** _(from: Open Goal: fleet-mode.json Atomic Writer)_ - Prevents corruption during mode switches
+1. **Implement fleet_mode_writer.py for atomic JSON writes** _(from: Queue #4: fleet-mode.json Atomic Writer (Infra))_ - Prevents corruption during mode transitions
+2. **Add top-of-page cockpit banner showing current fleet mode** _(from: Queue #10: Cockpit Mode Banner)_ - Provides visual status indicator for operators
+3. **Modify agent_portal.py to inject idle tasks in MAINTENANCE mode** _(from: Open Goal: Idle Task Injector)_ - Utilizes downtime for productivity
 
 ## verifier
-1. **Write mode_transition_test.py to simulate fleet mode changes** _(from: Queue #1: Mode Transition Integration Test)_ - Validates transition integrity
-2. **Create schema validator for fleet-mode.json structure** _(from: Queue #9: fleet-mode.json Schema Validator)_ - Ensures data consistency across agents
+1. **Write mode_transition_test.py simulating WORK->MAINTENANCE shift** _(from: Queue #1: Mode Transition Integration Test)_ - Validates state machine integrity
+2. **Create fleet-mode.json schema validator script** _(from: Queue #9: fleet-mode.json Schema Validator)_ - Ensures config file validity before dispatch
 
 ## designer
-1. **Add ARIA-live region to announce mode changes to screen readers** _(from: Queue #3: Fleet Mode ARIA + Keyboard Nav)_ - Improves accessibility compliance
-2. **Design CSS transition for background color shift on mode change** _(from: Queue #8: Mode Transition Animation)_ - Enhances user experience during transitions
+1. **Add ARIA-live region for mode change announcements** _(from: Queue #3: Fleet Mode ARIA + Keyboard Nav)_ - Improves accessibility for screen readers
+2. **Design CSS transition for background color shift on mode change** _(from: Queue #8: Mode Transition Animation)_ - Provides clear visual feedback to users
 
 ## archivist
-1. **Archive daily snapshot of productivity-baseline.json** _(from: Queue #5: Productivity Trend Archive)_ - Tracks long-term productivity trends
-2. **Log mode transition anomalies exceeding 30-min deviation** _(from: Open Goal: Mode Transition Anomaly Log)_ - Identifies timing issues in fleet ops
+1. **Archive daily snapshot of productivity-baseline.json** _(from: Open Goal: Productivity Trend Archive)_ - Tracks fleet efficiency trends over time
+2. **Log mode transition anomalies exceeding 30-min deviation** _(from: Open Goal: Mode Transition Anomaly Log)_ - Flags scheduling drift for review
 
 ## scribe
-1. **Generate structured cycle close-out report via script** _(from: Queue #6: Cycle Close-Out Report)_ - Documents daily fleet performance
-2. **Write one-paragraph brief for each mode transition decision** _(from: Open Goal: Mode Decision Brief)_ - Provides human-readable context for changes
+1. **Generate one-paragraph brief for current mode decision** _(from: Open Goal: Mode Decision Brief)_ - Documents rationale for audit trail
+2. **Write 10-line human-readable daily fleet state snapshot** _(from: Open Goal: Fleet State Snapshot (Daily))_ - Provides quick status overview for stakeholders
 
 ## mechanic
-1. **Implement low-level atomic writer for fleet-mode.json** _(from: Queue #4: fleet-mode.json Atomic Writer (Infra))_ - Provides infra support for builder's writer
-2. **Measure wall-clock latency of mode transitions** _(from: Open Goal: Mode Transition Latency Measurer)_ - Identifies performance bottlenecks
+1. **Implement low-level atomic write utility in fleet_mode_infra.py** _(from: Queue #4: fleet-mode.json Atomic Writer (Infra))_ - Supports builder's atomic writer requirement
+2. **Measure wall-clock latency for mode transition execution** _(from: Open Goal: Mode Transition Latency Measurer)_ - Identifies performance bottlenecks in state changes
 
-_round stats: {"sig": "4922b78d8ad0", "date": "2026-11-24", "drafts": [{"label": "A", "agent": "designer", "model": "designer-q4", "stats": {"agents": 8, "items": 17, "grounded": 17, "ratio": 1.0, "missing": [], "repaired": true, "model": null}}, {"label": "B", "agent": "builder", "model": "Qwen3.8-27B-Q8_0", "st_
+_round stats: {"sig": "34fe823ddde8", "date": "2026-11-24", "drafts": [{"label": "A", "agent": "designer", "model": "designer-q4", "stats": {"agents": 8, "items": 17, "grounded": 17, "ratio": 1.0, "missing": [], "repaired": false, "model": null}}, {"label": "B", "agent": "builder", "model": "Qwen3.8-27B-Q8_0", "s_

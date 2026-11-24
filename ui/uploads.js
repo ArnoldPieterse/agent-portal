@@ -427,18 +427,23 @@ async function goalsLoad(){
           return '<li class="fc-step fc-step-'+cls+'" title="'+esc(c.note||'')+'"><b>'+esc(c.name)+'</b> <span class="hint">'+esc(c.status)+via+'</span><div class="fc-unlocks">&rarr; unlocks: '+esc(c.unlocks)+'</div></li>';
         }).join("")+'</ol></div>';
       }
-      if(_plan.outcomes_30d&&_plan.outcomes_30d.length){
+      const _llc=_plan.llm_chain||null;
+      if((_llc&&_llc.plans["30d"]&&_llc.plans["30d"].length)||(_plan.outcomes_30d&&_plan.outcomes_30d.length)){
         const _pm=_plan.plan_meta||{};
-        let ph='<div class="fc-pm"><div class="topic-k">30-day business outcomes <span class="hint">(self-computed from live state &middot; re-plans as goals are reached)</span></div>';
+        const _o30=(_llc&&_llc.plans["30d"]&&_llc.plans["30d"].length)?_llc.plans["30d"]:(_plan.outcomes_30d||[]);
+        const _s30=_llc&&_llc.sources?_llc.sources["30d"]:null;
+        let ph='<div class="fc-pm"><div class="topic-k">' + (_s30 ? ' <span class="hint">(LLM 3+1 &middot; ' + esc(_s30) + ')</span>' : ' <span class="hint">(self-computed from live state &middot; re-plans as goals are reached)</span>') + '';
         if(_pm.delta&&_pm.delta.length)ph+='<div class="fc-delta"><b>changed since last plan:</b> '+_pm.delta.map(esc).join(" &middot; ")+'</div>';
-        ph+='<div class="fc-outc">'+_plan.outcomes_30d.map(o=>'<div class="fc-oc'+(o.cycle_closing?" fc-oc-close":"")+'" title="'+esc((o.gates||[]).join("; "))+'"><b>'+esc(o.name)+(o.cycle_closing?' <span class="hint">[closes cycle]</span>':'')+'</b> <span class="hint">'+esc(o.window)+' &middot; lane: '+esc(o.lane||"?")+'</span><div class="fc-unlocks">'+esc(o.status)+'</div></div>').join("")+'</div>';
+        ph+='<div class="fc-outc">'+_o30.map(o=>'<div class="fc-oc'+(o.cycle_closing?" fc-oc-close":"")+'" title="'+esc((o.gates||[]).join("; "))+'"><b>'+esc(o.name)+(o.cycle_closing?' <span class="hint">[closes cycle]</span>':'')+'</b> <span class="hint">'+esc(o.window)+' &middot; lane: '+esc(o.lane||"?")+'</span><div class="fc-unlocks">'+esc(o.status)+'</div></div>').join("")+'</div>';
         if(_pm.history&&_pm.history.length)ph+='<div class="hint" style="margin-top:5px">plan sigs: '+_pm.history.map(e=>e.sig+" @ "+String(e.ts).slice(5,16)).join(" &rarr; ")+'</div>';
         ph+='</div>';
         h+=ph;
       }
-            if(_plan.outcomes_15d&&_plan.outcomes_15d.length){
-              let p15='<div class="fc-pm" style="margin-top:6px"><div class="topic-k">15-day plan - detailed steps (derived from 30-day)</div>';
-              p15+='<div class="fc-outc">'+_plan.outcomes_15d.map(e=>{
+            const _e15=(_llc&&_llc.plans["15d"]&&_llc.plans["15d"].length)?_llc.plans["15d"]:(_plan.outcomes_15d||[]);
+            const _s15=_llc&&_llc.sources?_llc.sources["15d"]:null;
+            if(_e15.length){
+              let p15='<div class="fc-pm" style="margin-top:6px"><div class="topic-k">' + (_s15 ? ' <span class="hint">(LLM 3+1 &middot; ' + esc(_s15) + ')</span>' : ' (derived from 30-day)') + '';
+              p15+='<div class="fc-outc">'+_e15.map(e=>{
                 const parent=e.parent?' <span class="hint">&rarr; '+esc(e.parent)+'</span>':'';
                 let s='<div class="fc-oc"><b>'+esc(e.name)+'</b>'+parent+' <span class="hint">'+esc(e.window)+' &middot; '+esc(e.status)+'</span></div>';
                 (e.steps||[]).forEach(st=>{s+='<div class="hint" style="margin:2px 0 2px 10px">&bull; '+esc(st.days)+': '+esc(st.text)+'</div>';});
@@ -446,15 +451,20 @@ async function goalsLoad(){
               }).join("")+'</div></div>';
               h+=p15;
             }
-            if(_plan.outcomes_7d&&_plan.outcomes_7d.length){
-              let p7='<div class="fc-pm" style="margin-top:6px"><div class="topic-k">7-day plan - daily detail (derived from 15-day)</div>';
-              p7+='<div class="fc-outc">'+_plan.outcomes_7d.map(e=>{
+            const _e7=(_llc&&_llc.plans["7d"]&&_llc.plans["7d"].length)?_llc.plans["7d"]:(_plan.outcomes_7d||[]);
+            const _s7=_llc&&_llc.sources?_llc.sources["7d"]:null;
+            if(_e7.length){
+              let p7='<div class="fc-pm" style="margin-top:6px"><div class="topic-k">' + (_s7 ? ' <span class="hint">(LLM 3+1 &middot; ' + esc(_s7) + ')</span>' : ' (derived from 15-day)') + '';
+              p7+='<div class="fc-outc">'+_e7.map(e=>{
                 const parent=e.parent?' <span class="hint">&rarr; '+esc(e.parent)+'</span>':'';
                 let s='<div class="fc-oc"><b>'+esc(e.name)+'</b>'+parent+' <span class="hint">'+esc(e.window)+' &middot; '+esc(e.status)+'</span></div>';
                 (e.steps||[]).forEach(st=>{s+='<div class="hint" style="margin:2px 0 2px 10px">&bull; '+esc(st.days)+': '+esc(st.text)+'</div>';});
                 return s;
               }).join("")+'</div></div>';
               h+=p7;
+            }
+            if((_llc&&_llc.pending)||(_plan.one_pager&&_plan.one_pager.pending)){
+              h+='<div class="hint" style="margin-top:5px">LLM planning round in flight &mdash; plans refresh when the 3+1 round finishes&hellip;</div>';
             }
             if(_plan.one_pager&&_plan.one_pager.pagers){
               const op=_plan.one_pager;

@@ -1,7 +1,7 @@
 {
- "ts": 1795492212,
+ "ts": 1795495204,
  "date": "2026-11-24",
- "sig": "4922b78d8ad0",
+ "sig": "34fe823ddde8",
  "source": "llm-judge-local",
  "winner_label": "A",
  "planners": [
@@ -27,103 +27,103 @@
     "ref": "Open Goal: Cycle Proposal Skeleton Generator"
    },
    {
-    "item": "Integrate skeleton generator into daily close-out hook",
-    "why": "Ensures proposals are generated without manual trigger",
-    "ref": "Queue #7: Cycle Proposal Skeleton Generator"
+    "item": "Integrate skeleton generator into daily 14:36 plan generation hook",
+    "why": "Ensures next-day plan is drafted automatically",
+    "ref": "7-Day Plan: Generate daily social media posts [day 2-4]"
    }
   ],
   "researcher": [
    {
-    "item": "Draft market prediction model for day 5-20 window",
-    "why": "Prepares for 'Predicting markets' outcome",
-    "ref": "30-Day Outcome: Predicting markets [day 5-20]"
+    "item": "Draft market prediction data schema for day 5 scaffold",
+    "why": "Prepares input structure for Predicting markets",
+    "ref": "7-Day Plan: Predicting markets [day 5-7]"
    },
    {
-    "item": "Analyze current fleet data to baseline market signals",
-    "why": "Provides input for prediction model",
-    "ref": "30-Day Outcome: Predicting markets [day 5-20]"
+    "item": "Identify 3 open-source datasets for initial market model training",
+    "why": "Provides data source for first automated run",
+    "ref": "7-Day Plan: day 6: first automated run of Predicting markets"
    }
   ],
   "builder": [
    {
-    "item": "Modify agent_portal.py to inject tasks when mode is IDLE",
-    "why": "Activates idle productivity",
-    "ref": "Queue #2: Idle Task Injector"
+    "item": "Implement fleet_mode_writer.py for atomic JSON writes",
+    "why": "Prevents corruption during mode transitions",
+    "ref": "Queue #4: fleet-mode.json Atomic Writer (Infra)"
    },
    {
-    "item": "Add top-of-page banner in cockpit showing fleet mode color",
-    "why": "Provides visual status feedback",
+    "item": "Add top-of-page cockpit banner showing current fleet mode",
+    "why": "Provides visual status indicator for operators",
     "ref": "Queue #10: Cockpit Mode Banner"
    },
    {
-    "item": "Implement atomic write logic for fleet-mode.json",
-    "why": "Prevents corruption during mode switches",
-    "ref": "Open Goal: fleet-mode.json Atomic Writer"
+    "item": "Modify agent_portal.py to inject idle tasks in MAINTENANCE mode",
+    "why": "Utilizes downtime for productivity",
+    "ref": "Open Goal: Idle Task Injector"
    }
   ],
   "verifier": [
    {
-    "item": "Write mode_transition_test.py to simulate fleet mode changes",
-    "why": "Validates transition integrity",
+    "item": "Write mode_transition_test.py simulating WORK->MAINTENANCE shift",
+    "why": "Validates state machine integrity",
     "ref": "Queue #1: Mode Transition Integration Test"
    },
    {
-    "item": "Create schema validator for fleet-mode.json structure",
-    "why": "Ensures data consistency across agents",
+    "item": "Create fleet-mode.json schema validator script",
+    "why": "Ensures config file validity before dispatch",
     "ref": "Queue #9: fleet-mode.json Schema Validator"
    }
   ],
   "designer": [
    {
-    "item": "Add ARIA-live region to announce mode changes to screen readers",
-    "why": "Improves accessibility compliance",
+    "item": "Add ARIA-live region for mode change announcements",
+    "why": "Improves accessibility for screen readers",
     "ref": "Queue #3: Fleet Mode ARIA + Keyboard Nav"
    },
    {
     "item": "Design CSS transition for background color shift on mode change",
-    "why": "Enhances user experience during transitions",
+    "why": "Provides clear visual feedback to users",
     "ref": "Queue #8: Mode Transition Animation"
    }
   ],
   "archivist": [
    {
     "item": "Archive daily snapshot of productivity-baseline.json",
-    "why": "Tracks long-term productivity trends",
-    "ref": "Queue #5: Productivity Trend Archive"
+    "why": "Tracks fleet efficiency trends over time",
+    "ref": "Open Goal: Productivity Trend Archive"
    },
    {
     "item": "Log mode transition anomalies exceeding 30-min deviation",
-    "why": "Identifies timing issues in fleet ops",
+    "why": "Flags scheduling drift for review",
     "ref": "Open Goal: Mode Transition Anomaly Log"
    }
   ],
   "scribe": [
    {
-    "item": "Generate structured cycle close-out report via script",
-    "why": "Documents daily fleet performance",
-    "ref": "Queue #6: Cycle Close-Out Report"
+    "item": "Generate one-paragraph brief for current mode decision",
+    "why": "Documents rationale for audit trail",
+    "ref": "Open Goal: Mode Decision Brief"
    },
    {
-    "item": "Write one-paragraph brief for each mode transition decision",
-    "why": "Provides human-readable context for changes",
-    "ref": "Open Goal: Mode Decision Brief"
+    "item": "Write 10-line human-readable daily fleet state snapshot",
+    "why": "Provides quick status overview for stakeholders",
+    "ref": "Open Goal: Fleet State Snapshot (Daily)"
    }
   ],
   "mechanic": [
    {
-    "item": "Implement low-level atomic writer for fleet-mode.json",
-    "why": "Provides infra support for builder's writer",
+    "item": "Implement low-level atomic write utility in fleet_mode_infra.py",
+    "why": "Supports builder's atomic writer requirement",
     "ref": "Queue #4: fleet-mode.json Atomic Writer (Infra)"
    },
    {
-    "item": "Measure wall-clock latency of mode transitions",
-    "why": "Identifies performance bottlenecks",
+    "item": "Measure wall-clock latency for mode transition execution",
+    "why": "Identifies performance bottlenecks in state changes",
     "ref": "Open Goal: Mode Transition Latency Measurer"
    }
   ]
  },
  "stats": {
-  "sig": "4922b78d8ad0",
+  "sig": "34fe823ddde8",
   "date": "2026-11-24",
   "drafts": [
    {
@@ -136,7 +136,7 @@
      "grounded": 17,
      "ratio": 1.0,
      "missing": [],
-     "repaired": true,
+     "repaired": false,
      "model": null
     }
    },
@@ -150,7 +150,7 @@
      "grounded": 17,
      "ratio": 1.0,
      "missing": [],
-     "repaired": true,
+     "repaired": false,
      "model": null
     }
    },
