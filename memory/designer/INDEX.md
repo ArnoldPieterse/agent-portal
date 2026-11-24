@@ -103,3 +103,7 @@ Cycle-7 goal set (set 2026-11-20). These leaves make verified cycle-7 work visib
 - evidence-mode-history-timeline-2026-11-24.md
 - evidence-maintenance-task-cards-2026-11-24.md
 - evidence-convergence-ring-2026-11-24.json
+- -> memory/designer/evidence-intervention-timeline-2026-11-25.md — Goal #4: horizontal timeline, 3 colors, 10 entries, no overlap at 1440px. ui/cockpit-intervention-timeline.js (6102B).
+- -> memory/designer/evidence-complexity-heatmap-2026-11-25.md — Goal #5: 5×2 grid heatmap, 5-color scale, tooltips + legend. ui/cockpit-complexity-heatmap.js (5448B).
+- -> memory/designer/evidence-progress-ring-2026-11-25.md — Goal #6: SVG circular progress ring, 3 criteria checklist, 450ms animation. ui/cockpit-progress-ring.js (4392B).
+- -> memory/designer/evidence-autonomy-cards-2026-11-25.md — Goal #7: 8 agent cards in 4×2 grid, sortable by 4 metrics. ui/cockpit-autonomy-cards.js (5397B).

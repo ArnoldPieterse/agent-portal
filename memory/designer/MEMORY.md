@@ -88,10 +88,10 @@ Plus stale-map note: root INDEX "Last updated: 2026-11-11" predates the per-agen
 - git-bootstrap kit intact on this seat: bootstrap.bat 2398 B, README.md 1553 B.
 
 ## r23 re-probe (auto-continue, 4th confirmation)
-- python os.listdir: PermissionError WinError 65 on `\\white\c$` AND `\\white\c$\Projects\Workspace\AgentPortal_V1`; shutil.which('git') = None. Identical to r20/r22 — grant not effective from Pale seat; White-side SMB check remains the fix path.
+- python os.listdir: PermissionError WinError 65 on `\\white\c$` AND `\\white\c$\Projects\AgentPortal\AgentPortal_V1`; shutil.which('git') = None. Identical to r20/r22 — grant not effective from Pale seat; White-side SMB check remains the fix path.
 
 ## r22 re-probe (post-grant, 3rd confirmation)
-- `\white\c$` AND `\white\c$\Projects\Workspace\AgentPortal_V1`: WinError 65 again (os.listdir); terminal `dir` = "Network access is denied". Grant still not effective from Pale; White-side SMB check stands.
+- `\white\c$` AND `\white\c$\Projects\AgentPortal\AgentPortal_V1`: WinError 65 again (os.listdir); terminal `dir` = "Network access is denied". Grant still not effective from Pale; White-side SMB check stands.
 
 ## Verdicts
 - UNC `\\white\c$` from Pale seat: BLOCKED r19 AND r20 — os.listdir WinError 65 (network access denied) on both project path and share root; r20 `net use \\white\c$ /user:white ""` (explicit creds per human grant) → System error 5 Access denied, no mapping created. Grant has not propagated to this host; needs White-side check (SMB policy/firewall/ShareAccess).

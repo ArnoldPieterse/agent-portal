@@ -18,12 +18,12 @@
   "note": "consolidated 2026-11-23: fleet_probe + load_probe; fleet_mode.py added 2026-11-24 (cycle-15 mode controller refresh so /api/fleet/mode + idle dispatch see fresh state)",
   "daily": null,
   "next_run": 1795565006.659262,
-  "last_run": null,
-  "last_rc": null,
-  "last_err": "",
+  "last_run": 1795564416.6869473,
+  "last_rc": 0,
+  "last_err": "run_steps [1/3]: fleet_probe.py\r\nrun_steps [2/3]: memory/ops/load_probe.py\r\nrun_steps [3/3]: memory/orchestrator/fleet_mode.py",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "cycle_30m": {
   "name": "cycle_30m",
@@ -44,12 +44,12 @@
   "note": "consolidated 2026-11-23: maintenance_window + memory_audit (decay+size_guard+snapshot-diff) + state_snapshot + daily_git_commit LAST so the commit captures this cycle's output",
   "daily": null,
   "next_run": 1795568006.659262,
-  "last_run": null,
-  "last_rc": null,
-  "last_err": "",
+  "last_run": 1795564421.6890078,
+  "last_rc": 2,
+  "last_err": "[3/6] FAIL rc=2\r\nrun_steps [4/6]: memory/archivist/snapshot.py --diff\r\nrun_steps [5/6]: memory/builder/state_snapshot.py\r\nrun_steps [6/6]: daily_git_commit.py",
   "runs": 1,
   "paused": false,
-  "running": true
+  "running": false
  },
  "cycle_daily": {
   "name": "cycle_daily",

@@ -37,7 +37,7 @@ relpath-from-HERE ('../../Users/...') so the frontend's exact-string match again
 no link rendered even when the file resolved; (b) _safe_workspace_file accepted files only, so folder refs
 (timer-app/) were rejected.
 Root cause of (a)-adjacent 404s: SANDBOX_DIR = expanduser("~")/... - the portal instance I launched inherited
-my tool shell's environment where USERPROFILE=C:\Projects\Workspace, so ~ resolved to a nonexistent dir. The
+my tool shell's environment where USERPROFILE=C:\Projects\AgentPortal, so ~ resolved to a nonexistent dir. The
 old instance worked only because it was launched from a session with USERPROFILE=C:\Users\White (schtasks
 interactive). Env-dependent paths must not be assumed from the launcher shell.
 Fix (agent_portal.py): _find_sandbox_dir() - if the ~-based dir is missing, scan C:\Users\*\.unsloth\studio\
@@ -49,7 +49,7 @@ timer-app/index.html, sandbox/timer-app/sw.js; URLs correctly excluded).
 Restart: schtasks /run /tn PortalRun -> PID 23544 (killed direct-launch instance 24980 first). Smoke all green:
 TODO.md 200 (workspace); timer-app/index.html 200 (sandbox, was 404); timer-app/ folder peek 200 (5 entries);
 raw folder listing 200; raw sandbox file 200; traversal ..\\..\\Windows 404; missing 404. Unit test confirmed
-SANDBOX_DIR resolves to the real sandbox even from the USERPROFILE=C:\Projects\Workspace shell.
+SANDBOX_DIR resolves to the real sandbox even from the USERPROFILE=C:\Projects\AgentPortal shell.
 
 ## [DONE] Agent files landed in Studio sandbox, not workspace (FIXED 2026-11-11)
 Symptom: user got a link to Quinn's calculator app that 404'd; the path "Z:\calculator-app\index.html" was a

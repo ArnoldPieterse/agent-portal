@@ -394,3 +394,11 @@
 {"ts": "2026-11-25 09:50:18", "file": "ui/pages/fleet.html", "sha": "fce7e4d7bc", "size": 14639, "snapshot": null}
 {"ts": "2026-11-25 09:50:18", "file": "ui/pages/goals.html", "sha": "922c45fe8f", "size": 14639, "snapshot": null}
 {"ts": "2026-11-25 09:50:18", "file": "ui/pages/ops.html", "sha": "3eac28fd50", "size": 14633, "snapshot": null}
+{"ts": "2026-11-25 09:57:50", "file": "e2e_test.py", "sha": "d868fe6588", "size": 5055, "snapshot": "memory/ops/merge-queue/e2e_test.py.d868fe6588"}
+{"ts": "2026-11-25 09:57:50", "file": "fleet_reload.bat", "sha": "543667fac8", "size": 310, "snapshot": "memory/ops/merge-queue/fleet_reload.bat.543667fac8"}
+{"ts": "2026-11-25 09:57:50", "file": "index.html", "sha": "ca21c51ab7", "size": 14755, "snapshot": "memory/ops/merge-queue/index.html.ca21c51ab7"}
+{"ts": "2026-11-25 09:57:50", "file": "memory_mirror.py", "sha": "1dbc3a3eee", "size": 20113, "snapshot": "memory/ops/merge-queue/memory_mirror.py.1dbc3a3eee"}
+{"ts": "2026-11-25 09:57:50", "file": "reboot_recover.py", "sha": "28d09be276", "size": 1351, "snapshot": "memory/ops/merge-queue/reboot_recover.py.28d09be276"}
+{"ts": "2026-11-25 09:57:50", "file": "recover_all.bat", "sha": "f2c541f637", "size": 294, "snapshot": "memory/ops/merge-queue/recover_all.bat.f2c541f637"}
+{"ts": "2026-11-25 09:57:50", "file": "recover_all.py", "sha": "41755bc466", "size": 8818, "snapshot": "memory/ops/merge-queue/recover_all.py.41755bc466"}
+{"ts": "2026-11-25 09:57:50", "file": "ui/cockpit-load-audit.py", "sha": "2986288424", "size": 3562, "snapshot": null}

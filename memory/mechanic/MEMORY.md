@@ -126,7 +126,7 @@
 - Verdict: nothing new executable from Red. Sole unblocker unchanged = human-on-White runs `git-bootstrap/bootstrap.bat` in `C:\Projects\AgentPortal\AgentPortal_V1`, pastes back the `=== RESULT ===` block. My seat's portion remains CONCLUDED (r5–r8 fresh-evidence re-checks only).
 
 ## 2026-11-13 r7 re-verification (auto-continue, grant re-sent by human)
-- Fresh UNC probe with the exact re-sent creds (`net use \\white\c$ /user:white ""`): System error 5; direct write probe to `\\white\c$\Projects\Workspace\AgentPortal_V1\.mech_probe_r7` → "Network access is denied" (WRITE_FAILED); `dir` → denied. Data point #8 from Red: re-grant does NOT reach any sandbox seat — matches Scribe r7 (byte-identical to D1/D2) and all 7 prior seat reports.
+- Fresh UNC probe with the exact re-sent creds (`net use \\white\c$ /user:white ""`): System error 5; direct write probe to `\\white\c$\Projects\AgentPortal\AgentPortal_V1\.mech_probe_r7` → "Network access is denied" (WRITE_FAILED); `dir` → denied. Data point #8 from Red: re-grant does NOT reach any sandbox seat — matches Scribe r7 (byte-identical to D1/D2) and all 7 prior seat reports.
 - Git hunt on Red tree: NO MinGit, no git.exe, no .git, no AgentPortal_V1-git/ — per-host delta stands; canonical repo + MinGit live on White only. "Local git repo" usage from my seat = impossible until a mirror lands here or egress opens.
 - Verdict: nothing new executable from Red. Sole unblocker remains human-on-White running `git-bootstrap/bootstrap.bat` in `C:\Projects\AgentPortal\AgentPortal_V1` and pasting back the `=== RESULT ===` block. I am co-owner of that gate with Researcher (named in their r24 close-out); my half = post-run verification once a seat can reach the tree.
 State line: Red sandbox has NO LAN egress to White (UNC \\white\c$ denied at sandbox level; Black not on socket allowlist). git NOT installed on Red (PATH, C:\Program Files\Git, user dir — all checked). r6: canonical repo now exists ON WHITE (AgentPortal_V1-git/ @ HEAD 3ee398e, MinGit in Mingit/) per Scribe — but none of those artifacts are on my Red tree (per-host delta).
@@ -153,7 +153,7 @@ State line: Red sandbox has NO LAN egress to White (UNC \\white\c$ denied at san
 - Verdict: my seat's portion of the human request is fully evidenced; O1–O3 stay open, owner = Orchestrator/human. Single unblocker unchanged: one non-sandboxed command on White (git init + verify_drop_env.py).
 
 ## Verdicts this round
-- Write test to \\white\c$\Projects\Workspace\AgentPortal_V1 (white / empty pw): BLOCKED from Red seat — must run from a seat with White egress.
+- Write test to \\white\c$\Projects\AgentPortal\AgentPortal_V1 (white / empty pw): BLOCKED from Red seat — must run from a seat with White egress.
 - Pointer-system check (spot-check in memory-sync-spec-r13.md): FAIL on Red, EXPECTED — memory/INDEX.md and memory/llm/* absent here (known r12/r13 delta). Canonical tree is on White; re-run spot-checks there post re-drop.
 - Red local tree: 10/10 files match r13 baseline (size + sha256[:12]) — PASS.
 
