@@ -2012,3 +2012,10 @@
 {"t": "2026-11-25 06:32:08", "job": "cycle_5m", "event": "start", "pid": 15776}
 {"t": "2026-11-25 06:32:13", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-25 07:43:14", "event": "scheduler-up", "jobs": 6}
+{"t": "2026-11-25 07:43:44", "job": "cycle_5m", "event": "start", "pid": 10948}
+{"t": "2026-11-25 07:43:44", "job": "cycle_10m", "event": "start", "pid": 35980}
+{"t": "2026-11-25 07:43:44", "job": "cycle_30m", "event": "start", "pid": 29120}
+{"t": "2026-11-25 07:43:44", "job": "cycle_1h", "event": "start", "pid": 34424}
+{"t": "2026-11-25 07:43:44", "job": "schtask_dep_weekly", "event": "start", "pid": 25776}
+{"t": "2026-11-25 07:43:49", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-25 07:43:49", "job": "schtask_dep_weekly", "event": "done", "rc": 0}
