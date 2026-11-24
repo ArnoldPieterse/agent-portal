@@ -11,6 +11,10 @@ Last updated: 2026-11-24.
 ## Cycle-12 goals (set 2026-11-23, goal-setting round)
 - -> memory/goals/designer.md — 10 NEW cycle-12 goals; theme "Closed-Loop Autonomy & Fleet Cockpit" = adaptive, forward-looking, operable cockpit (density modes, provenance overlay, multi-goal board, forecast surface, emergency brake, confidence decay, topology graph, trend strip, knowledge impact, cognitive load budget). Cycle-11 was superseded by cycle-12 in the live memory/goals/designer.md and was NEVER archived (no archive file exists at that path; prior INDEX pointer to designer-cycle11-2026-11-23.md was stale — corrected by Archivist 2026-11-24)
 
+## Cycle-17 evidence (2026-11-25)
+- -> memory/designer/evidence-convergence-dashboard-panel-2026-11-25.md — goal #1 rebuilt: ui/cockpit-convergence.js created (9.5KB), 4-widget grid wired to /api/convergence; pin advanced
+- -> memory/designer/evidence-steady-state-indicator-2026-11-25.md — goal #2: CSS+JS for steady-state border, badge, exit pulse; verified class/API alignment
+
 ## Cycle-12 closure (2026-11-24, auto-loop)
 - -> memory/designer/cycle12-full-closure-2026-11-24.md — all 10 goals rebuilt + verified; artifacts in ui/cockpit-*.css|js|html
 ## Cycle-11 goals (set 2026-11-23, goal-setting round) — SUPERSEDED (never archived)

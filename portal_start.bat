@@ -8,6 +8,6 @@ rem  Logs (append)  : portal_run.log (stdout) / portal_run_err.log (stderr)
 rem  Portal routes agent aliases quinn-q4 / atlas-q8 to Studio on :8888.
 rem =====================================================================
 
-cd /d C:\Projects\Workspace
+cd /d C:\Projects\AgentPortal
 rem pythonw = no console window (2026-11-15: visible cmd popups were critical user complaint)
-"C:\Projects\Workspace\Python\pythoncore-3.15-64\pythonw.exe" agent_portal.py >> portal_run.log 2>> portal_run_err.log
+"C:\Projects\AgentPortal\Python\pythoncore-3.15-64\pythonw.exe" agent_portal.py >> portal_run.log 2>> portal_run_err.log

@@ -1,0 +1,42 @@
+{
+  "tracker": "predictive_model_accuracy v1",
+  "generated": "2026-11-25",
+  "owner": "verifier (goal #4 Predictive Model Accuracy Tracker)",
+  "authored_by": "researcher (assist; my deliverables are the models being scored)",
+  "round_topic": "Fleet Autonomy Convergence",
+  "models": {
+    "convergence_model": {
+      "source": ["convergence-rate-results.json", "convergence-trajectory-results.json"],
+      "prediction": {"cycles_to_steady_state": 0, "predicted_convergence_cycle": 0, "r2_error_free_rate": 0.866, "r2_composite_index": 0.0293},
+      "actual": {"steady_state_reached": false, "evidence": "fleet-mode.json x3 disagree (WORK/27.5, MAINTENANCE/75/cycle-15, WORK/71.2); forecast engine next10.json=67.5%, top next goal IS 'Convergence Metric Validation'"},
+      "verdict": "OVER-STATES convergence",
+      "detail": "Model says already converged (cycles_to_steady_state=0) but composite-index fit R2=0.03 explains ~nothing; only single metric error_free_rate trends up (R2=0.87). All live state sources show fleet at 67-75%, WORK/MAINTENANCE, not STEADY_STATE.",
+      "scorable": true,
+      "flag_for": ["verifier#1 Convergence Metric Validation", "verifier#4 accuracy tracker"]
+    },
+    "cycle_efficiency_index": {
+      "source": ["efficiency-index-results.json", "efficiency-index.jsonl"],
+      "prediction": {"reported_trend": "improving", "overall_direction": "declining", "delta_pct": -20.2},
+      "actual": {"slope_all_cycles": -0.096, "slope_excl_degenerate": -0.033, "degenerate_cycles": [13, 16]},
+      "verdict": "SELF-CONTRADICTORY + BOUNDARY-CONDITION BUG",
+      "detail": "Same trend object claims 'improving' (last_pair_delta=+0.25) AND 'declining -20.2%' simultaneously -> AC 'trend_direction_matches_intuition:true' not reliably met. Cycles 13 & 16 have verified=0 -> index forced to 0.0; cycle 16 flagged as a real '100% drop' which is actually the verified=0 artifact. Fix: treat verified=0 (no completed goals) as MISSING, not zero-efficiency.",
+      "scorable": true,
+      "flag_for": ["verifier#1 boundary conditions", "verifier#4 accuracy tracker"]
+    },
+    "seat_unavailability_forecast": {
+      "source": ["unavailability-forecast.json", "seat_unavailability_v2.py"],
+      "prediction": {"method": "recency-weighted half-life 3d, blended 60/40 with base rate; all seats low-risk"},
+      "actual": {"walk_forward_backtest": "tp=fp=fn=0 -> precision undefined", "data_window_days": 14},
+      "verdict": "NOT YET SCORABLE (blocked on data, not code)",
+      "detail": "AC needs 30-day backtest precision>0.7; only 14 days exist and file-presence label is degenerate (no unreachable-day labels). Forecast half IS done. Already logged as OPS-NOTE in memory/ops/blockers.md (2026-11-25) - do NOT re-probe.",
+      "scorable": false,
+      "unblock": "seat probe appends per-day {ts,seat,state} to memory/ops/seat-reachability-history.jsonl for ~30 days, then re-run seat_unavailability_v2.py"
+    }
+  },
+  "meta_finding_data_integrity": {
+    "issue": "Convergence 'actual' ground truth is ambiguous: 3 conflicting fleet-mode.json files (memory/, memory/fleet/, memory/ops/) with modes WORK/MAINTENANCE and goal_pct 27.5/75/71.2; NONE says STEADY_STATE or 100% despite a hot-note claiming cycle-17/STEADY_STATE/100%.",
+    "impact": "Cannot score convergence actual-vs-predicted cleanly until the canonical fleet-mode source is pinned to ONE file. Recommend Orchestrator/Mechanic designate the SSOT path and deprecate the others.",
+    "confidence": "HIGH (direct file reads, 2026-11-25)"
+  },
+  "usage_for_verifier": "This JSON is the seed row for a time-series accuracy ledger. Each future pass, append actual-vs-predicted per model as new state snapshots land; flag any model whose verdict stays non-'in-tolerance' across 3+ passes (goal #4 exit condition)."
+}

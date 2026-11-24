@@ -2,6 +2,7 @@
 Last updated: 2026-11-24.
 
 ## 2026-11-25 (auto-loop batch)
+- **Assist 2026-11-25**: Data-readiness check for Researcher Goal 1 (Seat Unavailability v2) - all inputs present; latency history thin (8 records, single timestamp). Artifact: data-readiness-researcher-seat-model-v2.md
 - **10/10 goals verified in single pass.** All scripts re-run live + self-tests:
   - G1 convergence_metric_validation.py: 2/3 PASS, mode_durations data defect flagged (handed to Mechanic)
   - G2 steady_state_transition_test.py: 5/5 PASS
