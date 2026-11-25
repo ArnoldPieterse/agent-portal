@@ -402,3 +402,5 @@
 {"ts": "2026-11-25 09:57:50", "file": "recover_all.bat", "sha": "f2c541f637", "size": 294, "snapshot": "memory/ops/merge-queue/recover_all.bat.f2c541f637"}
 {"ts": "2026-11-25 09:57:50", "file": "recover_all.py", "sha": "41755bc466", "size": 8818, "snapshot": "memory/ops/merge-queue/recover_all.py.41755bc466"}
 {"ts": "2026-11-25 09:57:50", "file": "ui/cockpit-load-audit.py", "sha": "2986288424", "size": 3562, "snapshot": null}
+{"ts": "2026-11-25 10:14:13", "file": "index.html", "sha": "c2d69ce1fd", "size": 14865, "snapshot": "memory/ops/merge-queue/index.html.c2d69ce1fd"}
+{"ts": "2026-11-25 10:14:13", "file": "memory_mirror.py", "sha": "ef69113e5e", "size": 20284, "snapshot": "memory/ops/merge-queue/memory_mirror.py.ef69113e5e"}

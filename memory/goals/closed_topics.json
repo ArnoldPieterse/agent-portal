@@ -2476,5 +2476,29 @@
 "text": "**Steady-State Calm Mode** - in STEADY-STATE: reduce visual noise (fewer animations, muted colors, simplified layout). Emphasize \"all is wel",
 "agent": "designer",
 "at": "2026-11-25"
+},
+{
+"sig": "7f2c14bef770aaa1",
+"text": "**Intervention Timeline** - horizontal timeline showing human interventions over last 30 days. Color by type (unblock=amber, redirect=red, a",
+"agent": "designer",
+"at": "2026-11-25"
+},
+{
+"sig": "ac3f8e960fd2cb2b",
+"text": "**Goal Complexity Heatmap** - grid view of current cycle goals colored by complexity score (1=light green to 5=dark red). Tooltip shows scor",
+"agent": "designer",
+"at": "2026-11-25"
+},
+{
+"sig": "00608f14f2896a96",
+"text": "**Convergence Progress Ring** - circular progress indicator showing percent toward steady-state target (based on 3-criteria check). Animate ",
+"agent": "designer",
+"at": "2026-11-25"
+},
+{
+"sig": "50f76c020c9b8fa4",
+"text": "**Agent Autonomy Comparison Cards** - per-agent card showing individual autonomy contribution: passes used, goals completed, re-work count, ",
+"agent": "designer",
+"at": "2026-11-25"
 }
 ]

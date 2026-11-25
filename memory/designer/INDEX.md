@@ -14,6 +14,8 @@ Last updated: 2026-11-24.
 ## Cycle-17 evidence (2026-11-25)
 - -> memory/designer/evidence-convergence-dashboard-panel-2026-11-25.md — goal #1 rebuilt: ui/cockpit-convergence.js created (9.5KB), 4-widget grid wired to /api/convergence; pin advanced
 - -> memory/designer/evidence-steady-state-indicator-2026-11-25.md — goal #2: CSS+JS for steady-state border, badge, exit pulse; verified class/API alignment
+- -> memory/designer/evidence-cycle-transition-animation-2026-11-25.md — goal #8: cycle transition overlay (old→new fade + topic scroll), 1.8s, pointer-events:none, reduced-motion support. ui/cockpit-cycle-transition.js (3876B). Pin advanced to 96c35b6da6d5.
+- -> memory/designer/evidence-metrics-export-2026-11-25.md — goal #10: Export button (JSON + PNG), canvas 800×480 summary, fallback mock data. ui/cockpit-metrics-export.js (7773B). Pin advanced to bf88d5753d52.
 
 ## Cycle-12 closure (2026-11-24, auto-loop)
 - -> memory/designer/cycle12-full-closure-2026-11-24.md — all 10 goals rebuilt + verified; artifacts in ui/cockpit-*.css|js|html
