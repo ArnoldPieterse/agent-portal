@@ -1,0 +1,17 @@
+{
+ "id": 3,
+ "name": "gpu-fit",
+ "target": "portal/gpu_fit.py",
+ "medium": "game",
+ "palette": [
+  "#6c3ca4",
+  "#c678cc",
+  "#20b4f4"
+ ],
+ "seed": 3294751433,
+ "poem": "fit is a negotiation between hunger and headroom",
+ "lumen_prompt": "Procedural generative emblem for 'gpu-fit' (portal/gpu_fit.py): concentric arc lattice on deep charcoal, palette #6c3ca4, #c678cc, #20b4f4, subtle grain, square 1:1, tiny b03 tag bottom-left.",
+ "reel_prompt": "15s loop: the emblem of 'gpu-fit' slowly self-rebuilding - arcs dissolve into particles and reassemble, palette #6c3ca4, #c678cc, #20b4f4, dark studio, one camera push-in, no cuts.",
+ "status": "placeholder-rendered; engine-pending (Day-0 image/video goal open)",
+ "png": "memory/outlet/dna-art/b03-gpu-fit.png"
+}

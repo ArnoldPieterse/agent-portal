@@ -1,0 +1,17 @@
+{
+ "id": 5,
+ "name": "dna-rebuild",
+ "target": "memory/dna/rebuild.py",
+ "medium": "video",
+ "palette": [
+  "#11adfb",
+  "#6be923",
+  "#c5254b"
+ ],
+ "seed": 1638594160,
+ "poem": "the script that mints itself is never finished",
+ "lumen_prompt": "Procedural generative emblem for 'dna-rebuild' (memory/dna/rebuild.py): concentric arc lattice on deep charcoal, palette #11adfb, #6be923, #c5254b, subtle grain, square 1:1, tiny b05 tag bottom-left.",
+ "reel_prompt": "15s loop: the emblem of 'dna-rebuild' slowly self-rebuilding - arcs dissolve into particles and reassemble, palette #11adfb, #6be923, #c5254b, dark studio, one camera push-in, no cuts.",
+ "status": "placeholder-rendered; engine-pending (Day-0 image/video goal open)",
+ "png": "memory/outlet/dna-art/b05-dna-rebuild.png"
+}

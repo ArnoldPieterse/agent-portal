@@ -12,3 +12,4 @@ Onboarded 2026-11-25. Public-voice lane: profile registry, voice guides, content
 - ship readiness digest / daily queue status -> memory/outlet/digests/   dated digests YYYY-MM-DD.md with queue status, blocked items + unblockers, last-7-days shipped (goal #9 reached 2026-11-25; first digest 2026-11-25)
 
 - cross-lane assist / contribution pass -> memory/outlet/evidence-assist-archivist-spof-2026-11-25.md   2026-11-25 idle-pass: one concrete step on Archivist's open goal #1 (Knowledge SPOF audit) — citation-breadth graph artifact at memory/archivist/spof_citation_graph_2026-11-25.json
+-> dna-art-2026-11-25.md  DNA art outlet first pass (2026-11-25) - per-build specs + procedural renders in dna-art/, world ring decorations, Lumen/Reel prompts staged

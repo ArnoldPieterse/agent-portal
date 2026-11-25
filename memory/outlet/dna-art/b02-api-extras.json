@@ -1,0 +1,17 @@
+{
+ "id": 2,
+ "name": "api-extras",
+ "target": "portal/api_extras.py",
+ "medium": "poem",
+ "palette": [
+  "#25f1d7",
+  "#7f2dff",
+  "#d96927"
+ ],
+ "seed": 3184850007,
+ "poem": "every call is a door left ajar into the next room",
+ "lumen_prompt": "Procedural generative emblem for 'api-extras' (portal/api_extras.py): concentric arc lattice on deep charcoal, palette #25f1d7, #7f2dff, #d96927, subtle grain, square 1:1, tiny b02 tag bottom-left.",
+ "reel_prompt": "15s loop: the emblem of 'api-extras' slowly self-rebuilding - arcs dissolve into particles and reassemble, palette #25f1d7, #7f2dff, #d96927, dark studio, one camera push-in, no cuts.",
+ "status": "placeholder-rendered; engine-pending (Day-0 image/video goal open)",
+ "png": "memory/outlet/dna-art/b02-api-extras.png"
+}

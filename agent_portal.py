@@ -2850,10 +2850,29 @@ def _understanding():
     return _UNDERSTANDING or None
 
 
+_MEMFOCUS = None
+def _memfocus():
+    """Lazy-load memory/portal/memfocus.py (LOD focus cursor). False if unavailable."""
+    global _MEMFOCUS
+    if _MEMFOCUS is None:
+        try:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location(
+                "agent_memfocus", os.path.join(HERE, "memory", "portal", "memfocus.py"))
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            _MEMFOCUS = mod
+        except Exception:
+            _MEMFOCUS = False
+    return _MEMFOCUS or None
+
+
 def _mem_local_hits(messages, k=6):
-    """Look up every keyword of the latest prompt in the local index; score lines by
-    matched-term count; return a compact MEMORY INDEX HITS block (M1..Mk with file:line
-    refs) for pre-context, or '' when nothing matches. Never raises."""
+    """LOD memory recall (2026-11-25, Arnold): the index-regex hits double as a system
+    focus/cursor like Level of Detail in rendering. T2 = full lines within the host char
+    budget (what the seat's host can provide right now); T1 = pointer-only beyond it; refs
+    that fall out of the focus window are GC'd to memory/portal/memfocus-parked.jsonl
+    (parked, never deleted). Never raises - degrades to the plain hits block or ''."""
     try:
         q = ""
         for m in reversed(messages or []):
@@ -2884,16 +2903,62 @@ def _mem_local_hits(messages, k=6):
         for w in set(words):
             for key in idx.get(w, []):
                 score[key] = score.get(key, 0) + 1
-        top = sorted(score.items(), key=lambda kv: (-kv[1], kv[0]))[:k]
-        if not top:
+        if not score:
             return ""
-        out = ["MEMORY INDEX HITS (local memory files; fetch these refs with your tools when needed):"]
-        for i, ((rel, n), sc) in enumerate(top, 1):
+        ranked = sorted(score.items(), key=lambda kv: (-kv[1], kv[0]))
+        mf = _memfocus()
+        if mf is None:
+            top = ranked[:k]
+            out = ["MEMORY INDEX HITS (local memory files; fetch these refs with your tools when needed):"]
+            for i, ((rel, n), sc) in enumerate(top, 1):
+                try:
+                    txt = open(os.path.join(HERE, rel.replace("/", os.sep)), encoding="utf-8", errors="replace").read().splitlines()[n - 1].strip()[:110]
+                except Exception:
+                    txt = ""
+                out.append("M%d %s:%d (%dx) %s" % (i, rel, n, sc, txt))
+            return "\n".join(out)
+        # --- LOD path: focus window + host budget + GC park -------------------------
+        plan_topic = ""
+        try:
+            tt = open(os.path.join(HERE, "TODO.md"), encoding="utf-8").read()
+            m2 = re.search(r"^## .+?(?=^## |\Z)", tt, re.M | re.S)
+            if m2:
+                plan_topic = m2.group(0)[:400]
+        except Exception:
+            pass
+        extra = [w for w in re.findall(r"[a-z0-9_]{3,}", plan_topic.lower()) if w not in _MEM_STOP][:12]
+        sig = hashlib.sha1((q[:200] + "|" + "|".join(sorted(extra))).encode("utf-8")).hexdigest()[:8]
+        host_name = None
+        try:
+            host_name = (_seat_now() or {}).get("host")
+        except Exception:
+            pass
+        budget = mf.host_budget_chars(host_name)
+        t2, t1, _rest = mf.split_tiers(ranked, budget)
+        st = mf.load_state()
+        evicted = mf.gc_round(st.get("window") or [], ranked[:max(len(t2) + len(t1), 8)])
+        n_parked = mf.park(evicted, sig)
+        if n_parked:
+            st["parked_total"] = int(st.get("parked_total", 0)) + n_parked
+            st["last_gc_ts"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+        st["window"] = [[rel, n] for (rel, n), _s in (t2 + t1)][:12]
+        st["focus_sig"] = sig
+        st["rounds"] = int(st.get("rounds", 0)) + 1
+        mf.save_state(st)
+        out = ["MEMORY FOCUS (LOD cursor - T2 full lines within host budget %d chars; T1 pointer-only, fetch with tools):" % budget]
+        i = 0
+        for (rel, n), sc in t2:
+            i += 1
             try:
                 txt = open(os.path.join(HERE, rel.replace("/", os.sep)), encoding="utf-8", errors="replace").read().splitlines()[n - 1].strip()[:110]
             except Exception:
                 txt = ""
             out.append("M%d %s:%d (%dx) %s" % (i, rel, n, sc, txt))
+        for (rel, n), sc in t1:
+            i += 1
+            out.append("M%d %s:%d (%dx) [pointer-only]" % (i, rel, n, sc))
+        if evicted:
+            out.append("GC: %d refs parked this round (total %d); focus %s" % (n_parked, st["parked_total"], sig))
         return "\n".join(out)
     except Exception:
         return ""
@@ -6829,6 +6894,22 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/world":
             import portal.api_extras as _apiex
             return self._json(200, _apiex.world_get())
+        elif p == "/api/memfocus":
+            # 2026-11-25 (Arnold): LOD focus-cursor state for the index-regex recall.
+            mf = _memfocus()
+            if mf is None:
+                return self._json(200, {"ok": False, "error": "memfocus module missing"})
+            st = mf.load_state()
+            last_gc = None
+            try:
+                with open(mf.PARK_F, encoding="utf-8") as f:
+                    lines = [l for l in f if l.strip()]
+                last_gc = json.loads(lines[-1]) if lines else None
+            except Exception:
+                pass
+            return self._json(200, {"ok": True, "state": st,
+                                    "budget_chars": mf.host_budget_chars(),
+                                    "last_gc": last_gc})
         elif p == "/api/device":
             import portal.api_extras as _apiex
             return self._json(200, _apiex.device_snapshot())

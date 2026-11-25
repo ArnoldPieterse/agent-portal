@@ -29,3 +29,5 @@ Last updated: 2026-11-16. Grep by keyword; open ONE leaf per question. Bug entry
 - [v1-inventory.md](memory/portal/v1-inventory.md)
 - [v1-upgrades-decisions.md](memory/portal/v1-upgrades-decisions.md)
 - -> memory/portal/api-index.md  full API call index with memory-module links (72 calls) + UI function map  2026-11-25
+
+-> memfocus.py  LOD focus-cursor over index-regex recall (2026-11-25) - host-budgeted T2/T1 tiers + GC park log (memfocus-state.json / memfocus-parked.jsonl); wired into _mem_local_hits; GET /api/memfocus

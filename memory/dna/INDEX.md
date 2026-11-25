@@ -11,3 +11,4 @@ from MEMORY.md by these codes. Spec + contract: dna-spec.md. Entry point: rebuil
 - -> memory/dna/builds/b04-evolve-template.py  build 4: ui/pages/evolve.html blob (Y6)
 - -> memory/dna/builds/b05-dna-rebuild.py  build 5: rebuild.py self-blob (Y7)
 - -> memory/dna/builds/b06-world-page.py  build 6: ui/pages/world.html blob (Y8)
+-> art_outlet.py  DNA -> outlet art pipeline (2026-11-25) - per-build medium/palette/prompts + PIL placeholder renders + /api/world ring; run: python memory/dna/art_outlet.py

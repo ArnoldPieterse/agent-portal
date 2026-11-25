@@ -13,3 +13,4 @@ Last updated: 2026-11-15. Ground truth = nvidia-smi per-GPU VRAM, never /v1/mode
 ## Global pointers
 - -> agents.json   model_id alias per agent;  -> MEMORY.md hot state;  -> TODO.md plan
 - multi-machine-llm.md — cross-host LLM distribution research, UDP verdict (2026-11-25)
+- HF survey Nov-2026 / per-agent model mapping / Gemma 4 31B download -> memory/llm/hf-survey-2026-11-25.md   best fit already local (Qwen3.8-27B); Q4_K_M downloading overnight

@@ -1,0 +1,17 @@
+{
+ "id": 6,
+ "name": "world-page",
+ "target": "ui/pages/world.html",
+ "medium": "poem",
+ "palette": [
+  "#3e862a",
+  "#98c252",
+  "#f2fe7a"
+ ],
+ "seed": 1819470770,
+ "poem": "small characters walk a world that thinks in levels",
+ "lumen_prompt": "Procedural generative emblem for 'world-page' (ui/pages/world.html): concentric arc lattice on deep charcoal, palette #3e862a, #98c252, #f2fe7a, subtle grain, square 1:1, tiny b06 tag bottom-left.",
+ "reel_prompt": "15s loop: the emblem of 'world-page' slowly self-rebuilding - arcs dissolve into particles and reassemble, palette #3e862a, #98c252, #f2fe7a, dark studio, one camera push-in, no cuts.",
+ "status": "placeholder-rendered; engine-pending (Day-0 image/video goal open)",
+ "png": "memory/outlet/dna-art/b06-world-page.png"
+}

@@ -1,0 +1,17 @@
+{
+ "id": 1,
+ "name": "portal-core",
+ "target": "agent_portal.py",
+ "medium": "video",
+ "palette": [
+  "#ae36fa",
+  "#087222",
+  "#62ae4a"
+ ],
+ "seed": 3145423366,
+ "poem": "the core remembers itself by rebuilding its own name",
+ "lumen_prompt": "Procedural generative emblem for 'portal-core' (agent_portal.py): concentric arc lattice on deep charcoal, palette #ae36fa, #087222, #62ae4a, subtle grain, square 1:1, tiny b01 tag bottom-left.",
+ "reel_prompt": "15s loop: the emblem of 'portal-core' slowly self-rebuilding - arcs dissolve into particles and reassemble, palette #ae36fa, #087222, #62ae4a, dark studio, one camera push-in, no cuts.",
+ "status": "placeholder-rendered; engine-pending (Day-0 image/video goal open)",
+ "png": "memory/outlet/dna-art/b01-portal-core.png"
+}

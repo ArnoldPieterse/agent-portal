@@ -1,0 +1,17 @@
+{
+ "id": 4,
+ "name": "evolve-template",
+ "target": "ui/pages/evolve.html",
+ "medium": "image",
+ "palette": [
+  "#0d39cf",
+  "#6775f7",
+  "#c1b11f"
+ ],
+ "seed": 2628084730,
+ "poem": "a template that edits its own face each morning",
+ "lumen_prompt": "Procedural generative emblem for 'evolve-template' (ui/pages/evolve.html): concentric arc lattice on deep charcoal, palette #0d39cf, #6775f7, #c1b11f, subtle grain, square 1:1, tiny b04 tag bottom-left.",
+ "reel_prompt": "15s loop: the emblem of 'evolve-template' slowly self-rebuilding - arcs dissolve into particles and reassemble, palette #0d39cf, #6775f7, #c1b11f, dark studio, one camera push-in, no cuts.",
+ "status": "placeholder-rendered; engine-pending (Day-0 image/video goal open)",
+ "png": "memory/outlet/dna-art/b04-evolve-template.png"
+}
