@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- CSS drift: `.readable` orphan
 - Built+verified memory/forge/drift_detect.py (Forge goal #10): dep auto-fix, test flag, 0 false positives all pass.
 - Design QA gate discrepancy: HOT NOTES says 4/7, latest leaf says 6pass
 - Outlet: all 3 goals closed & verified 2026-11-26 (milestone_trigger.py, queue-check 3/3, runbook+outreach staged). Lane clean.
@@ -23,6 +22,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Splice lane tracked under designer.md (no separate goal file); confirmed 100% reached post-reboot.
 - Researcher completed Goal #11: compiled verified lead list of real businesses across niches mapped to top-3 workflows, added confidence leve
 - Goal #11 marked [verified] in goals file but ledger has no record; task-inventory.md still DRAFT v0.1 with verification unchecked.
+- Outlet hot-notes claimed goals #6/#10/#11 closed but verification found no milestone_trigger.py, runbook, or outreach entries — all three st
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
