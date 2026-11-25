@@ -132,3 +132,4 @@
 {"ts": "2026-11-26T02:53:11", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "d24dec57", "reason": "lod-evict"}
 {"ts": "2026-11-26T02:53:11", "ref": ["memory/researcher/open-questions-log.md", 148], "focus_sig": "d24dec57", "reason": "lod-evict"}
 {"ts": "2026-11-26T02:53:11", "ref": ["memory/workspace/INDEX.md", 79], "focus_sig": "d24dec57", "reason": "lod-evict"}
+{"ts": "2026-11-26T03:09:57", "ref": ["memory/goals/archive/mechanic-2026-11-23-cycle8.md", 11], "focus_sig": "d24dec57", "reason": "lod-evict"}
