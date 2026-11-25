@@ -39,6 +39,10 @@ AGENT_FILES = {
     "verifier":     "verifier.md",
     "designer":     "designer.md",
     "mechanic":     "mechanic.md",
+    # 2026-11-25: lanes onboarded mid-cycle were invisible to /api/goals + level counter
+    "outlet":       "outlet.md",
+    "pixel":        "pixel.md",
+    "forge":        "forge.md",
 }
 # Markers that count as acceptance/evidence for a goal (skeptical: requires proof).
 # TIGHTENED 2026-11-15 (Researcher): bare words like 'verified'/'evidence'/'pass'/

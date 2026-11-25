@@ -1,0 +1,54 @@
+{
+ "active": false,
+ "dry_run": true,
+ "started": "2026-11-25T17:26:56",
+ "window_min": 5,
+ "phase": "done_dry",
+ "hosts": {
+  "White": {
+   "pre": {
+    "up": true,
+    "models": false,
+    "checked": "2026-11-25T17:26:56"
+   },
+   "reboot": null,
+   "up_at": null,
+   "models_at": null,
+   "status": "ok"
+  },
+  "Red": {
+   "pre": {
+    "up": true,
+    "models": false,
+    "checked": "2026-11-25T17:26:57"
+   },
+   "reboot": null,
+   "up_at": null,
+   "models_at": null,
+   "status": "ok"
+  },
+  "Pale": {
+   "pre": {
+    "up": true,
+    "models": false,
+    "checked": "2026-11-25T17:26:57"
+   },
+   "reboot": null,
+   "up_at": null,
+   "models_at": null,
+   "status": "ok"
+  },
+  "Black": {
+   "pre": {
+    "up": true,
+    "models": false,
+    "checked": "2026-11-25T17:26:57"
+   },
+   "reboot": null,
+   "up_at": null,
+   "models_at": null,
+   "status": "ok"
+  }
+ },
+ "report": null
+}

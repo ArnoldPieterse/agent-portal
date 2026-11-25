@@ -3730,6 +3730,20 @@ def _group_round_summary(agent, messages, all_agents):
 
 
 def stream_chat(wfile, agent, messages, mode, kind="prompt", session=None):
+    # DREAM GATE (2026-11-25): during the daily 5-min fleet dream window every node
+    # does nothing - no model generation anywhere. Covers /api/chat AND captured
+    # turns (group runs / auto-loop) since both funnel through here.
+    _dm = _dream_state()
+    if _dm:
+        try:
+            wfile.write(b"data: " + json.dumps({"content":
+                "[FLEET] Dream time - all four nodes are idling for the daily 5-minute "
+                "maintenance window (reboot + stuck-node check). Resuming shortly."}).encode("utf-8") + b"\n\n")
+            wfile.write(b"data: [DONE]\n\n")
+            wfile.flush()
+        except Exception:
+            pass
+        return
     # Activity timeline: one JSONL event per phase into activity/<session>.jsonl.
     session = _safe_session(session)
     who = agent.get("name", "?")[:60]
@@ -5634,6 +5648,30 @@ def _level_report_md(level, prev_sha, snap):
     return "\n".join(lines) + "\n"
 
 
+_DREAM_CACHE = {"t": 0.0, "val": None}
+
+def _dream_state():
+    """Daily 5-min fleet dream window (2026-11-25). memory/dream/state.json is written by
+    memory/mechanic/dream_sync.py (schtasks FleetDreamWatch): quiesce flag + per-host
+    reboot/verify progress. Returns the state dict while a dream is ACTIVE and fresh
+    (< 30 min), else None. Cached ~10s so hot paths don't hit disk per frame."""
+    import time as _t
+    now = _t.time()
+    if now - _DREAM_CACHE["t"] < 10:
+        return _DREAM_CACHE["val"]
+    val = None
+    try:
+        p = os.path.join(HERE, "memory", "dream", "state.json")
+        st = json.load(open(p, encoding="utf-8"))
+        if st.get("active") and (now - st.get("started_epoch", 0)) < 1800:
+            val = {k: st.get(k) for k in ("phase", "window_min", "hosts")}
+            val["seconds_left"] = max(0, int(st.get("started_epoch", 0) + st.get("window_min", 5) * 60 - now))
+    except Exception:
+        val = None
+    _DREAM_CACHE.update(t=now, val=val)
+    return val
+
+
 def _check_level_up(snap):
     """All goals 100% for a goal set not yet leveled -> level += 1, write
     memory/levels/level_N_<ts>.md and persist memory/levels.json. Idempotent per
@@ -6083,6 +6121,7 @@ def _goals_snapshot():
     try:
         if total and done_all >= total:
             resp.update(_check_level_up(resp) or {})
+        resp["dream"] = _dream_state() or {"active": False}   # daily 5-min fleet dream window (2026-11-25)
         else:
             _lst = _load_levels()
             _lhist = _lst.get("history") or []
