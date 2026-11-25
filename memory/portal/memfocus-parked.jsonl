@@ -98,3 +98,6 @@
 {"ts": "2026-11-26T00:31:33", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "09ae6cb7", "reason": "lod-evict"}
 {"ts": "2026-11-26T00:48:19", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 22], "focus_sig": "d24dec57", "reason": "lod-evict"}
 {"ts": "2026-11-26T00:48:19", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "d24dec57", "reason": "lod-evict"}
+{"ts": "2026-11-26T00:52:24", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "3054e386", "reason": "lod-evict"}
+{"ts": "2026-11-26T00:52:24", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "3054e386", "reason": "lod-evict"}
+{"ts": "2026-11-26T00:52:24", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "3054e386", "reason": "lod-evict"}

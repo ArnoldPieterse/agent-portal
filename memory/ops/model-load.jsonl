@@ -1028,3 +1028,4 @@
 {"ts": "2026-11-26 00:29:19", "run": "g-1a2131c6b85-f2498b", "missing": {"Orchestrator": "not_loaded", "Mechanic": "not_loaded", "Archivist": "unreachable", "Splice": "unreachable", "Reel": "unreachable", "Lumen": "unreachable"}, "relocated": {"Designer": "black (home unreachable)"}}
 {"ts": "2026-11-26 00:31:22", "run": "g-1a2131e4dc8-7990ec", "missing": {"Orchestrator": "not_loaded"}, "relocated": {}}
 {"ts": "2026-11-26 00:48:08", "run": "g-1a2132da5fb-97759c", "missing": {"Orchestrator": "not_loaded", "Archivist": "unreachable", "Splice": "unreachable", "Lumen": "unreachable", "Reel": "unreachable"}, "relocated": {"Scribe": "White (local) (home not_loaded)", "Designer": "black (home unreachable)"}}
+{"ts": "2026-11-26 00:52:11", "run": "g-1a213315d00-7a9336", "missing": {"Orchestrator": "not_loaded"}, "relocated": {"Scribe": "White (local) (home not_loaded)"}}
