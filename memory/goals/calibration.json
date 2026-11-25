@@ -1,14 +1,6 @@
 {
  "runs": [
   {
-   "at": "2026-11-23 17:23:32",
-   "scored_forecast": "2026-11-23 16:15:10",
-   "hit_on_time": 0,
-   "late": 0,
-   "slipped": 0,
-   "total": 8
-  },
-  {
    "at": "2026-11-23 17:55:48",
    "scored_forecast": "2026-11-23 17:23:32",
    "hit_on_time": 0,
@@ -479,6 +471,14 @@
    "late": 0,
    "slipped": 0,
    "total": 9
+  },
+  {
+   "at": "2026-11-26 08:24:54",
+   "scored_forecast": "2026-11-26 07:20:19",
+   "hit_on_time": 0,
+   "late": 0,
+   "slipped": 0,
+   "total": 8
   }
  ],
  "rolling": {
