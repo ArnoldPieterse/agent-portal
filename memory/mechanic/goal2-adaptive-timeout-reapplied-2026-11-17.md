@@ -20,4 +20,7 @@ First boot on a fresh host uses 300s default; subsequent boots adapt to observed
 ## Remaining for Goal #2 closure
 - [ ] Deploy ONSTART task on Pale/Black/Red (admin or VBS fallback)
 - [ ] One real cold-boot per remote with timestamped evidence
-- [ ] Red .245 powered off — leg stays open until host returns
+- [x] ~~Red .245 powered off — leg stays open until host returns~~ (2026-11-25: human reports Red .245 POWERED ON; leg re-testable - see TODO.md top section)
+
+## Update 2026-11-25 - Orchestrator
+Red leg unblocked. Remaining for closure: ONSTART deploy on Red + one real cold-boot with timestamped evidence (probe confirmation pending).

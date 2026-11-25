@@ -18,3 +18,6 @@
 ## Runbook note
 What broke: deploy_boot_task.py had wrong subnet (10.0.0.x) and no remote mode, making multi-host deployment a manual RDP exercise.
 What fixed: corrected IPs + `--remote` batch mode; next admin session is one command per reachable host.
+
+## Update 2026-11-25 - Orchestrator
+Red .245 reported POWERED ON by human (see TODO.md top section). Red leg of `--remote ... Red` re-testable now. Still pending: real cold-boot on Red for full closure + probe confirmation of host status.
