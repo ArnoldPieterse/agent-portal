@@ -3150,5 +3150,11 @@
 "text": "**Self-Healing Goal Lifecycle** - `python memory/orchestrator/goal_lifecycle.py`: auto-archive goals to closed_topics.json when verification",
 "agent": "builder",
 "at": "2026-11-25"
+},
+{
+"sig": "8b3f30b8c90a3dd3",
+"text": "**Fleet Health Composite Score** - Extend autonomy_score.py: incorporate fleet health signals (host uptime %, VRAM utilization trend last-3-",
+"agent": "builder",
+"at": "2026-11-25"
 }
 ]
