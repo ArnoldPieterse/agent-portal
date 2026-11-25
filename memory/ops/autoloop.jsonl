@@ -809,3 +809,5 @@
 {"timestamp": "2026-11-25T21:07:07.714387+00:00", "agent": "Researcher", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 381865}
 {"timestamp": "2026-11-25T21:07:07.723073+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 381867}
 {"timestamp": "2026-11-25T21:07:07.728541+00:00", "agent": "Outlet", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 381835}
+{"timestamp": "2026-11-25T21:16:49.336855+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 717607}
+{"timestamp": "2026-11-25T21:16:49.347509+00:00", "agent": "Lumen", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2857998}
