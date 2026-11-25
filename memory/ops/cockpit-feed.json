@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-25T15:54:51.287528+00:00",
+  "ts": "2026-11-25T16:04:51.423569+00:00",
   "health_score": 80,
   "fleet_status": "NOMINAL",
   "agents": [
@@ -71,7 +71,7 @@
     }
   ],
   "goals": {
-    "fleet_pct": 98.4,
+    "fleet_pct": 100.0,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -134,9 +134,9 @@
         "pct": 0.0
       },
       "archivist": {
-        "total": 1,
-        "verified": 0,
-        "pct": 0.0
+        "total": 3,
+        "verified": 3,
+        "pct": 100.0
       },
       "builder-assist-mechanic2-autorestart-2026-11-19": {
         "total": 1,
@@ -569,8 +569,8 @@
         "pct": 100.0
       }
     },
-    "total_goals": 62,
-    "total_verified": 61
+    "total_goals": 64,
+    "total_verified": 64
   },
   "open_blockers": 29,
   "autonomous_actions": [

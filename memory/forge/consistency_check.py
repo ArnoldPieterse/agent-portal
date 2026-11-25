@@ -20,9 +20,9 @@ import json, hashlib, socket, sys, time, urllib.request, datetime, argparse, pat
 
 HOSTS = [
     {"name": "White", "ip": "127.0.0.1", "port": 8888},
-    {"name": "Red",   "ip": "192.168.1.245", "port": 8888},
-    {"name": "Pale",  "ip": "192.168.1.39",  "port": 8888},
-    {"name": "Black", "ip": "192.168.1.99",  "port": 8888},
+    {"name": "Red",   "ip": "IP_LAN", "port": 8888},
+    {"name": "Pale",  "ip": "IP_LAN",  "port": 8888},
+    {"name": "Black", "ip": "IP_LAN",  "port": 8888},
 ]
 
 CONFIG_FILE = pathlib.Path("agents.json")

@@ -1,6 +1,6 @@
 # Decay report 2026-11-26
 
-Leaves: 11307 | flagged (<0.35): 0
+Leaves: 11312 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9211,7 +9211,6 @@ Leaves: 11307 | flagged (<0.35): 0
 | memory/goals/archive/verifier-cycle16-2026-11-24.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier_15.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier_test-cycle.md | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261124-105512.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-112401.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-115414.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-115514.json | 2 | 0 | n | 0.539 |
@@ -9982,17 +9981,7 @@ Leaves: 11307 | flagged (<0.35): 0
 | memory/forge/red_probe.py | 1 | 0 | n | 0.544 |
 | memory/forge/red_probe_last.json | 1 | 0 | n | 0.544 |
 | memory/forge/runbook-audit.json | 1 | 0 | n | 0.544 |
-| memory/forge/runbook_audit.py | 1 | 0 | n | 0.544 |
 | memory/forge/smoke-results.jsonl | 1 | 0 | n | 0.544 |
-| memory/forge/runbooks/boot_detection_runbook.py | 1 | 0 | n | 0.544 |
-| memory/forge/runbooks/browser_gate_decision_tree.py | 1 | 0 | n | 0.544 |
-| memory/forge/runbooks/citation_phantom_triage_runbook.py | 1 | 0 | n | 0.544 |
-| memory/forge/runbooks/cycle_transition_checklist.py | 1 | 0 | n | 0.544 |
-| memory/forge/runbooks/designer_ui_change_checklist.py | 1 | 0 | n | 0.544 |
-| memory/forge/runbooks/live_leg_runbook.py | 1 | 0 | n | 0.544 |
-| memory/forge/runbooks/runbook_notes.py | 1 | 0 | n | 0.544 |
-| memory/forge/runbooks/runbook_staleness_audit.py | 1 | 0 | n | 0.544 |
-| memory/forge/runbooks/windows_runbook.py | 1 | 0 | n | 0.544 |
 | memory/forge/__pycache__/canary_deploy.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/forge/__pycache__/gate_metrics.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/forge/__pycache__/red_probe.cpython-313.pyc | 1 | 0 | n | 0.544 |
@@ -10000,7 +9989,6 @@ Leaves: 11307 | flagged (<0.35): 0
 | memory/goals/closed_topics.json | 1 | 0 | n | 0.544 |
 | memory/goals/dispatch_order.json | 1 | 0 | n | 0.544 |
 | memory/goals/forecast-researcher-task-inventory-2026-11-25.md | 1 | 0 | n | 0.544 |
-| memory/goals/forge.md | 1 | 0 | n | 0.544 |
 | memory/goals/goal_ledger.json | 1 | 0 | n | 0.544 |
 | memory/goals/GOAL_RESET_PENDING.json | 1 | 0 | n | 0.544 |
 | memory/goals/mechanic-goal1-forecast-2026-11-18.md | 1 | 0 | n | 0.544 |
@@ -10672,11 +10660,26 @@ Leaves: 11307 | flagged (<0.35): 0
 | memory/verifier/TODO.md | 1 | 0 | n | 0.544 |
 | memory/verifier/_e2e_out.txt | 1 | 0 | n | 0.544 |
 | memory/archivist/knowledge-index.json | 0 | 0 | n | 0.550 |
+| memory/forge/consistency-check-built-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/forge/consistency_check.py | 0 | 0 | n | 0.550 |
+| memory/forge/consistency_check_last.json | 0 | 0 | n | 0.550 |
+| memory/forge/runbook_audit.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/boot_detection_runbook.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/browser_gate_decision_tree.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/citation_phantom_triage_runbook.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/cycle_transition_checklist.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/designer_ui_change_checklist.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/live_leg_runbook.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/runbook_notes.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/runbook_staleness_audit.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/windows_runbook.py | 0 | 0 | n | 0.550 |
 | memory/goals/calibration.json | 0 | 0 | n | 0.550 |
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
+| memory/goals/forge.md | 0 | 0 | n | 0.550 |
 | memory/goals/next10.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-005224.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261126-020302.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook-executability-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
@@ -10700,6 +10703,8 @@ Leaves: 11307 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.134815a3c1 | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-parked.jsonl | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
+| memory/scribe/assist-forge-goal8-runbook-audit.md | 0 | 0 | n | 0.550 |
+| memory/scribe/assist-log-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
 | memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md | 11 | 1 | n | 0.558 |
 | memory/designer/designer-goal-proposals-2026-11-16.md | 10 | 1 | n | 0.564 |
@@ -11024,7 +11029,6 @@ Leaves: 11307 | flagged (<0.35): 0
 | memory/scribe/synthesis-index-canonical-r73-8e194239-2026-11-14.md | 12 | 3 | Y | 0.772 |
 | memory/scribe/synthesis-index-eef00527-superseded-2026-11-14.md | 12 | 3 | Y | 0.772 |
 | memory/ops/runbooks/safe_test.md | 3 | 10 | n | 0.773 |
-| memory/goals/archivist.md | 1 | 9 | n | 0.775 |
 | memory/orchestrator/assist-mechanic-g1-winrm-forecast-2026-11-20.md | 6 | 2 | Y | 0.777 |
 | memory/orchestrator/ledger-regen-2026-11-20.md | 6 | 2 | Y | 0.777 |
 | memory/researcher/archivist-goal7-retrieval-benchmark-verify-2026-11-20.md | 6 | 2 | Y | 0.777 |
@@ -11046,6 +11050,7 @@ Leaves: 11307 | flagged (<0.35): 0
 | memory/researcher/clobber-mechanism-and-final-ip-count-2026-11-15.md | 11 | 3 | Y | 0.778 |
 | memory/researcher/probe_api_git.py | 11 | 3 | Y | 0.778 |
 | memory/archivist/knowledge_graph.json | 2 | 10 | n | 0.779 |
+| memory/goals/archivist.md | 0 | 9 | n | 0.780 |
 | memory/archivist/xref-monitor-selftest-2026-11-20.md | 5 | 2 | Y | 0.782 |
 | memory/orchestrator/contribution-mechanic-goal1-winrm-forecast-2026-11-20.md | 5 | 2 | Y | 0.782 |
 | memory/archivist/decay_score.py | 10 | 3 | Y | 0.783 |
