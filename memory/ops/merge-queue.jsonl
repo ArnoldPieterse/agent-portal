@@ -407,3 +407,4 @@
 {"ts": "2026-11-25 11:07:30", "file": "agent_portal.py", "sha": "4456d57852", "size": 355163, "snapshot": "memory/ops/merge-queue/agent_portal.py.4456d57852"}
 {"ts": "2026-11-25 11:54:21", "file": "agent_portal.py", "sha": "4b70db6aad", "size": 357173, "snapshot": "memory/ops/merge-queue/agent_portal.py.4b70db6aad"}
 {"ts": "2026-11-25 11:54:21", "file": "agents.json", "sha": "459f27e402", "size": 9725, "snapshot": "memory/ops/merge-queue/agents.json.459f27e402"}
+{"ts": "2026-11-25 12:16:17", "file": "agents.json", "sha": "d33370d9f5", "size": 11594, "snapshot": "memory/ops/merge-queue/agents.json.d33370d9f5"}

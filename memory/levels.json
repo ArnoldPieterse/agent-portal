@@ -1,7 +1,7 @@
 {
- "level": 11,
- "last_sig": "f051bd4192c5ea48e9ebead0f713009c21c269770c73d0b5db0779b7d0476dfa",
- "last_sha": "4850618a6a5651a224eac67184cb9f1076902757",
+ "level": 12,
+ "last_sig": "6134cb779f5bda5852bb96fd97f87fe81b0fe2cfa4ffe76bdfd2c377dd3e77a9",
+ "last_sha": "896ac537a98e400f16d16ed2eca64bc82cf6d5ba",
  "history": [
   {
    "level": 1,
@@ -90,6 +90,14 @@
    "sig": "f051bd4192c5ea48",
    "fleet": "80/80",
    "report": "memory/levels/level_11_20261125-120620.md"
+  },
+  {
+   "level": 12,
+   "ts": "2026-11-25 12:16:20",
+   "sha": "896ac53",
+   "sig": "6134cb779f5bda58",
+   "fleet": "80/80",
+   "report": "memory/levels/level_12_20261125-121620.md"
   }
  ]
 }

@@ -1,10 +1,10 @@
 {
   "mode": "WORK",
-  "timestamp": "2026-11-25T02:03:31.840544+00:00",
-  "goal_pct": 91.2,
+  "timestamp": "2026-11-25T02:13:35.755644+00:00",
+  "goal_pct": 93.8,
   "goals_total": 80,
-  "goals_reached": 73,
-  "goals_open": 7,
+  "goals_reached": 75,
+  "goals_open": 5,
   "elapsed_since_activity_h": 0.0,
   "activity_source": "memory/ops/scheduler-log.jsonl",
   "threshold_idle_h": 6.0

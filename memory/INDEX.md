@@ -13,6 +13,8 @@ FILE ACCESS (python/terminal tools run in Studio's sandbox - use these paths):
 - scribe        memory/scribe/INDEX.md - runbooks, patterns, completion analysis
 - designer      memory/designer/INDEX.md - UI/layout designs (Cockpit, panels)
 - builder       memory/builder/INDEX.md - builds: frontend, scripts, model-swap automation
+- pixel         memory/pixel/INDEX.md - Builder's front-end sub: UI implementation, CSS/JS (onboarded 2026-11-25)
+- forge         memory/forge/INDEX.md - Builder's gate & deploy sub: tests, canaries, perf evidence (onboarded 2026-11-25)
 - archivist     memory/archivist/INDEX.md - knowledge index, provenance reports
 - mechanic      memory/mechanic/INDEX.md - fleet ops: model lifecycle, OOM recovery, load tests
 - outlet        memory/outlet/INDEX.md - public voice: profile registry, voice guides, content queue (onboarded 2026-11-25)
@@ -36,6 +38,6 @@ FILE ACCESS (python/terminal tools run in Studio's sandbox - use these paths):
 ## Fleet Knowledge Base Index (machine)
 - Generated 2026-11-20: **1859/1859** files indexed (100.0% coverage)
 - Machine-readable index: `memory/INDEX-kb.json`
-- Top-level sections: `INDEX-kb.json`, `INDEX.md`, `ONBOARDING.md`, plus module dirs: archivist, builder, designer, fleet, goals, handoffs, llm, mechanic, ops, orchestrator, portal, projects, researcher, scheme, scribe, sink, squire, synthesis, verifier, workspace (rosterprobe dir archived 2026-11-20).
+- Top-level sections: `INDEX-kb.json`, `INDEX.md`, `ONBOARDING.md`, plus module dirs: archivist, builder, designer, fleet, forge, goals, handoffs, llm, mechanic, ops, orchestrator, pixel, portal, projects, researcher, scheme, scribe, sink, squire, synthesis, verifier, workspace (rosterprobe dir archived 2026-11-20).
 <!-- KB-INDEX:END -->
 
