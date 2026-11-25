@@ -58,6 +58,12 @@ JOBS = [
                                    "memory/builder/state_snapshot.py",
                                    "daily_git_commit.py"],
      "consolidated 2026-11-23: maintenance_window + memory_audit (decay+size_guard+snapshot-diff) + state_snapshot + daily_git_commit LAST so the commit captures this cycle's output"),
+    # ---- every 6h: stealth workflow hosting (Mechanic goal #11, 2026-11-25) ----
+    ("stealth_workflows",    21600,  [PY, os.path.join(HERE, "memory", "ops", "run_steps.py"),
+                                   "memory/mechanic/stealth/workflow_runner.py memory/mechanic/stealth/lead_enrichment.py --budget-cpu-sec 120 --budget-mem-mb 256",
+                                   "memory/mechanic/stealth/workflow_runner.py memory/mechanic/stealth/content_repurpose.py --budget-cpu-sec 180 --budget-mem-mb 256",
+                                   "memory/mechanic/stealth/workflow_runner.py memory/mechanic/stealth/invoice_tracker.py --budget-cpu-sec 60 --budget-mem-mb 128"],
+     "added 2026-11-25 (Mechanic goal #11): resource-budgeted stealth workflows per memory/mechanic/stealth-hosting.md; user-space only, zero model-seat impact; run logs in memory/mechanic/stealth/runs/"),
     # ---- daily, pinned 03:00 (low-activity window) ----
     ("cycle_daily",        86400,  [PY, os.path.join(HERE, "memory", "ops", "run_steps.py"),
                                    "memory/mechanic/winrm_rotate.py",

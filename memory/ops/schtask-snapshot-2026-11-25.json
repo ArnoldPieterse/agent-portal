@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T16:59:55.589814",
+  "generated": "2026-11-25T22:04:45.078323",
   "host": "WHITE",
   "task_count": 2,
   "tasks": [
@@ -11,7 +11,7 @@
     },
     {
       "name": "\\PortalRun",
-      "status": "Ready",
+      "status": "Running",
       "schedule_type": "One Time Only",
       "next_run": "N/A"
     }

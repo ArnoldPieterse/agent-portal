@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 11321 | flagged (<0.35): 0
+Leaves: 11339 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -7108,7 +7108,6 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.64bad82e8d | 3 | 0 | n | 0.533 |
 | memory/ops/merge-queue/agent_portal.py.6afb6a0d77 | 3 | 0 | n | 0.533 |
 | memory/ops/merge-queue/agent_portal.py.748a909928 | 3 | 0 | n | 0.533 |
-| memory/ops/merge-queue/agent_portal.py.80c2b147cb | 3 | 0 | n | 0.533 |
 | memory/ops/merge-queue/agent_portal.py.89e3f8bc99 | 3 | 0 | n | 0.533 |
 | memory/ops/merge-queue/agent_portal.py.8a44d7260c | 3 | 0 | n | 0.533 |
 | memory/ops/merge-queue/agent_portal.py.a0b8e99b45 | 3 | 0 | n | 0.533 |
@@ -8691,8 +8690,6 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.414995d489 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/agent_portal.py.4dc0eca68a | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/agent_portal.py.540225d8ad | 2 | 0 | n | 0.539 |
-| memory/ops/merge-queue/agent_portal.py.77e4ba2208 | 2 | 0 | n | 0.539 |
-| memory/ops/merge-queue/agent_portal.py.7d5dac946d | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/gap_alarm.py.722479a2c2 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/git_run.py.0434be18f7 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/goal_ledger.py.348d6bb86e | 2 | 0 | n | 0.539 |
@@ -9453,10 +9450,6 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.10c4544d22 | 1 | 0 | n | 0.544 |
 | memory/ops/merge-queue/agent_portal.py.257a6e1303 | 1 | 0 | n | 0.544 |
 | memory/ops/merge-queue/agent_portal.py.314beff77f | 1 | 0 | n | 0.544 |
-| memory/ops/merge-queue/agent_portal.py.5d30bcd98d | 1 | 0 | n | 0.544 |
-| memory/ops/merge-queue/agent_portal.py.6a59ee9ced | 1 | 0 | n | 0.544 |
-| memory/ops/merge-queue/agent_portal.py.6ecf1e775a | 1 | 0 | n | 0.544 |
-| memory/ops/merge-queue/agent_portal.py.72f7747453 | 1 | 0 | n | 0.544 |
 | memory/ops/merge-queue/index.html.5735c6031e | 1 | 0 | n | 0.544 |
 | memory/ops/merge-queue/index.html.93126d24f7 | 1 | 0 | n | 0.544 |
 | memory/ops/merge-queue/index.html.e40bd50658 | 1 | 0 | n | 0.544 |
@@ -10111,6 +10104,7 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261125-190005.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-194602.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-205406.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-213936.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
@@ -10288,18 +10282,24 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/mechanic/stealth/output/enriched_leads_20261125_093859.csv | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/enriched_leads_20261125_093909.csv | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/enriched_leads_20261125_102235.csv | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/enriched_leads_20261125_120443.csv | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/invoice_summary_20261125_093901.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/invoice_summary_20261125_093958.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/invoice_summary_20261125_102235.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/invoice_summary_20261125_120443.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/variants_20261125_093900.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/variants_20261125_093958.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/variants_20261125_102235.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/variants_20261125_120443.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/content_repurpose_20261125_093958.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/content_repurpose_20261125_102235.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/content_repurpose_20261125_120443.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/invoice_tracker_20261125_093958.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/invoice_tracker_20261125_102235.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/invoice_tracker_20261125_120443.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/lead_enrichment_20261125_093909.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/lead_enrichment_20261125_102235.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/lead_enrichment_20261125_120443.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/circuit_breaker.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/convergence_health.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/fleet_mode_api.cpython-313.pyc | 0 | 0 | n | 0.550 |
@@ -10348,6 +10348,7 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/ops/git-access-denied-fix-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/host-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/host-power-events.md | 0 | 0 | n | 0.550 |
+| memory/ops/host-relaunch.log | 0 | 0 | n | 0.550 |
 | memory/ops/host-status-note-20261125.md | 0 | 0 | n | 0.550 |
 | memory/ops/host.pid | 0 | 0 | n | 0.550 |
 | memory/ops/human-interventions.jsonl | 0 | 0 | n | 0.550 |
@@ -10396,6 +10397,7 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/ops/taskdump.csv | 0 | 0 | n | 0.550 |
 | memory/ops/transition-gaps-summary.json | 0 | 0 | n | 0.550 |
 | memory/ops/transition-gaps.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/ui-state.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/verifier-git-health-2026-11-15b.md | 0 | 0 | n | 0.550 |
 | memory/ops/vram-backtest-nonlinear.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/vram-backtest-synthetic.jsonl | 0 | 0 | n | 0.550 |
@@ -10403,6 +10405,12 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/ops/vram-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/wedge-archivist-lvl3-2026-11-23.md | 0 | 0 | n | 0.550 |
 | memory/ops/world-state.json | 0 | 0 | n | 0.550 |
+| memory/ops/_elev_help.txt | 0 | 0 | n | 0.550 |
+| memory/ops/_fleet.txt | 0 | 0 | n | 0.550 |
+| memory/ops/_hits.txt | 0 | 0 | n | 0.550 |
+| memory/ops/_pid.txt | 0 | 0 | n | 0.550 |
+| memory/ops/_routes.txt | 0 | 0 | n | 0.550 |
+| memory/ops/_stall_probe.txt | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.1cbfc6f19c | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.209ab15642 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.459f27e402 | 0 | 0 | n | 0.550 |
@@ -10420,9 +10428,16 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.4a223417ba | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.4b70db6aad | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.555f127e8c | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.5d30bcd98d | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.5d6261d06a | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.66f94870a3 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.6a59ee9ced | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.6ecf1e775a | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.72f7747453 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.77e4ba2208 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.7d5dac946d | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.7f039fbb77 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.80c2b147cb | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.80ed23fe7b | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.86d21d06e6 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.8e533bfad4 | 0 | 0 | n | 0.550 |
@@ -10461,6 +10476,7 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/ops/merge-queue/host_api.py.6155a3cd7e | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/host_api.py.ed0972665f | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.0425c412b7 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/index.html.8d217e079d | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.c2d69ce1fd | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.ca21c51ab7 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.f3a6f4ecc6 | 0 | 0 | n | 0.550 |
@@ -10638,10 +10654,12 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/scribe/milestones_tracker.py | 0 | 0 | n | 0.550 |
 | memory/scribe/spof-audit-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/scribe/steady-state-declaration.md | 0 | 0 | n | 0.550 |
+| memory/scribe/stealth-ledger.md | 0 | 0 | n | 0.550 |
 | memory/scribe/topic-rationales.jsonl | 0 | 0 | n | 0.550 |
 | memory/scribe/_sup_err.txt | 0 | 0 | n | 0.550 |
 | memory/scribe/cards/mirror.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/2026-11-15-evolution-artifact-gap.md | 0 | 0 | n | 0.550 |
+| memory/synthesis/cycle24-pass-status-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/hotfile-archive-20261125.md | 0 | 0 | n | 0.550 |
 | memory/verifier/ac-a2-r21-sweep-2026-11-14.md | 0 | 0 | n | 0.550 |
 | memory/verifier/auto-loop-pass-2026-11-25-batch.md | 0 | 0 | n | 0.550 |

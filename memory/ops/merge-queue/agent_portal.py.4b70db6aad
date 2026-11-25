@@ -69,7 +69,7 @@ _FLEET_RECOVER_RECIPES = {
     "Designer":     {"model_path": r"C:\Users\pale\models\Qwen3.8-27B-Q4_K_S",
                      "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},
 }
-_FLEET_REBOOT_USERS = {"192.168.1.245": "Red", "192.168.1.39": "pale", "192.168.1.99": "black"}
+_FLEET_REBOOT_USERS = {"IP_LAN": "Red", "IP_LAN": "pale", "IP_LAN": "black"}
 
 def _agents_by_name():
     try:

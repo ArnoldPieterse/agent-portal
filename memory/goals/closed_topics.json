@@ -3312,5 +3312,17 @@
 "text": "**Runbook Executability Audit** - Scan all .md runbooks in memory/ops/: for each, check if a corresponding executable script exists (or can ",
 "agent": "forge",
 "at": "2026-11-25"
+},
+{
+"sig": "52d9ea5824ad948f",
+"text": "**Daily $ ledger + winner/loser scorecard** - memory/scribe/stealth-ledger.md: daily entries (date, outreach staged, replies, demos, revenue",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "51dc7dda9e46e53f",
+"text": "**Stealth workflow hosting** - stand up the packaged workflows as resident schedulable jobs on fleet hosts with zero new capital: schtask sc",
+"agent": "mechanic",
+"at": "2026-11-25"
 }
 ]
