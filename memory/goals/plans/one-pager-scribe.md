@@ -1,11 +1,12 @@
 # ONE-PAGER — scribe
 
-Date: 2026-11-25 | source: llm-single-draft | round: 3 planners + judge (winning plan: A)
+Date: 2026-11-25 | source: llm-judge-local | round: 3 planners + judge (winning plan: C)
 
 ## Today's todos
 
-1. [ ] **Generate 3-paragraph narrative on current fleet convergence status** _(from #4 [scribe] Convergence Narrative Generator (eta 2026-11-25 09:11))_ — Completes queue item #4
-2. [ ] **Draft template for Weekly Convergence Digest** _(from **Weekly Convergence Digest** - every 7 days: one-paragraph summary)_ — Prepares recurring reporting mechanism
-3. [ ] **Write initial section for Intervention Reduction Story** _(from **Intervention Reduction Story** - narrate reduction in human interventions)_ — Starts narrative on human intervention trends
+1. [ ] **Initialize daily $ ledger in memory/scribe/stealth-ledger.md** _(from Daily $ ledger + winner/loser scorecard)_ — track revenue for 'Positive money income' prep
+2. [ ] **Record first outreach stats from 'Commenting on posts' runs** _(from day 2: daily unattended runs begin)_ — populate ledger with day 2 data
+3. [ ] **Draft winner/loser scorecard template for workflow performance** _(from Day-7 checkpoint review (2026-12-02))_ — enable day 7 checkpoint analysis
+4. [ ] **Log 'Making phone calls' scaffold completion status** _(from day 2: scaffold + wire up Making phone calls)_ — track day 2 progress
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

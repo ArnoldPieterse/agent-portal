@@ -1,11 +1,11 @@
 # ONE-PAGER — orchestrator
 
-Date: 2026-11-25 | source: llm-single-draft | round: 3 planners + judge (winning plan: A)
+Date: 2026-11-25 | source: llm-judge-local | round: 3 planners + judge (winning plan: C)
 
 ## Today's todos
 
-1. [ ] **Review convergence metrics from verifier and approve steady-state transition criteria** _(from Convergence Metric Validation (eta 2026-11-25 08:18))_ — Unblocks fleet-wide mode change
-2. [ ] **Prioritize 'Predicting markets' scaffold for day 5 start in next cycle plan** _(from day 5: scaffold + wire up Predicting markets)_ — Ensures alignment with 7-day plan timeline
-3. [ ] **Validate dependency graph between 'Making money' and 'Positive money income' prep** _(from Making money (revenue channels live) [day 4-7 -> runs to day 12])_ — Confirms revenue channel readiness for day 12 deadline
+1. [ ] **Draft Day-7 checkpoint review template with ledger totals vs $3,800 target** _(from Day-7 checkpoint review (2026-12-02))_ — prep for 2026-12-02 review
+2. [ ] **Verify fleet pct (89.7%) against 15-day plan milestones for day 4-7 items** _(from Fleet: {'done': 104, 'total': 116, 'pct': 89.7})_ — ensure alignment with 'Making money' and 'Writing valid tenders' start dates
+3. [ ] **Confirm queue item #8 (Day-7 checkpoint) is scheduled for 2026-11-26** _(from #8 [orchestrator] Day-7 checkpoint review)_ — maintain schedule integrity
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

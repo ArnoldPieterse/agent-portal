@@ -1,175 +1,301 @@
 {
- "ts": 1795553279,
+ "ts": 1795600261,
  "date": "2026-11-25",
- "sig": "985baccbc839",
- "source": "llm-single-draft",
- "winner_label": "A",
+ "sig": "46d96f9c92a8",
+ "source": "llm-judge-local",
+ "winner_label": "C",
  "planners": [
+  "builder",
+  "verifier",
   "mechanic"
  ],
  "judge": {
-  "agent": "none",
-  "winner": "A",
-  "scores": {},
-  "rationale": "only valid draft (other seats failed or ungrounded)"
+  "agent": "local-rubric",
+  "winner": "C",
+  "scores": {
+   "A": 4.84,
+   "B": 4.76,
+   "C": 4.88
+  },
+  "rationale": "judge seat unavailable - local rubric: grounding x4 + coverage x3 + day-fit bonus"
  },
  "pagers": {
   "orchestrator": [
    {
-    "item": "Review convergence metrics from verifier and approve steady-state transition criteria",
-    "why": "Unblocks fleet-wide mode change",
-    "ref": "Convergence Metric Validation (eta 2026-11-25 08:18)"
+    "item": "Draft Day-7 checkpoint review template with ledger totals vs $3,800 target",
+    "why": "prep for 2026-12-02 review",
+    "ref": "Day-7 checkpoint review (2026-12-02)"
    },
    {
-    "item": "Prioritize 'Predicting markets' scaffold for day 5 start in next cycle plan",
-    "why": "Ensures alignment with 7-day plan timeline",
-    "ref": "day 5: scaffold + wire up Predicting markets"
+    "item": "Verify fleet pct (89.7%) against 15-day plan milestones for day 4-7 items",
+    "why": "ensure alignment with 'Making money' and 'Writing valid tenders' start dates",
+    "ref": "Fleet: {'done': 104, 'total': 116, 'pct': 89.7}"
    },
    {
-    "item": "Validate dependency graph between 'Making money' and 'Positive money income' prep",
-    "why": "Confirms revenue channel readiness for day 12 deadline",
-    "ref": "Making money (revenue channels live) [day 4-7 -> runs to day 12]"
+    "item": "Confirm queue item #8 (Day-7 checkpoint) is scheduled for 2026-11-26",
+    "why": "maintain schedule integrity",
+    "ref": "#8 [orchestrator] Day-7 checkpoint review"
    }
   ],
   "researcher": [
    {
-    "item": "Implement feature extraction logic for Goal Acceptance Rate Predictor",
-    "why": "Advances open goal on acceptance prediction",
-    "ref": "**Goal Acceptance Rate Predictor** - from goal text features"
+    "item": "Compile top 10 repetitive tasks into memory/researcher/stealth/task-inventory.md",
+    "why": "input for builder packaging",
+    "ref": "Repetitive-task inventory + first lead list"
    },
    {
-    "item": "Draft initial data schema for Cross-Agent Dependency Graph",
-    "why": "Starts construction of dependency visualization",
-    "ref": "**Cross-Agent Dependency Graph** - build directed graph"
+    "item": "Identify first 5 leads for 'Making phone calls' workflow from task inventory",
+    "why": "enable day 2-7 phone call runs",
+    "ref": "Making phone calls [day 2-7]"
    },
    {
-    "item": "Collect baseline metrics for Cycle Efficiency Index calculation",
-    "why": "Prepares composite metric computation",
-    "ref": "**Cycle Efficiency Index** - composite metric per cycle"
+    "item": "Research market data sources for 'Predicting markets' scaffold",
+    "why": "prep for day 5 start",
+    "ref": "Predicting markets [day 5-7]"
    }
   ],
   "builder": [
    {
-    "item": "Implement /api/convergence endpoint in agent_portal.py",
-    "why": "Delivers queue item #7",
-    "ref": "#7 [builder] Convergence API Endpoint (eta 2026-11-25 09:58)"
+    "item": "Spec top-3 workflows from researcher inventory for packaging",
+    "why": "advance queue item #3",
+    "ref": "#3 [builder] Package top-3 workflows"
    },
    {
-    "item": "Integrate cycle_estimator.py output into fleet-mode.json",
-    "why": "Enables dynamic scheduling adjustments",
-    "ref": "**Cycle Estimator Integration** - integrate cycle_estimator.py output"
+    "item": "Scaffold 'Writing valid tenders' workflow structure",
+    "why": "meet day 4 scaffold deadline",
+    "ref": "day 4: scaffold + wire up Writing valid tenders"
    },
    {
-    "item": "Add hook to agent_portal.py for intervention logging",
-    "why": "Captures human interaction data for analysis",
-    "ref": "**Intervention Logger Hook** - add hook to agent_portal.py"
+    "item": "Wire up 'Making money (revenue channels live)' automation hooks",
+    "why": "meet day 4 scaffold deadline",
+    "ref": "day 4: scaffold + wire up Making money (revenue channels live)"
+   },
+   {
+    "item": "Scaffold 'Predicting markets' pipeline components",
+    "why": "meet day 5 scaffold deadline",
+    "ref": "day 5: scaffold + wire up Predicting markets"
    }
   ],
   "verifier": [
    {
-    "item": "Execute Convergence Metric Validation suite against current fleet state",
-    "why": "Completes queue item #1 with high probability",
-    "ref": "#1 [verifier] Convergence Metric Validation (eta 2026-11-25 08:18)"
+    "item": "Verify first automated run of 'Commenting on posts' for regressions",
+    "why": "ensure day 2 unattended runs are stable",
+    "ref": "day 2: daily unattended runs begin"
    },
    {
-    "item": "Run Steady-State Transition Test simulation",
-    "why": "Validates mode switching logic",
-    "ref": "#8 [verifier] Steady-State Transition Test (eta 2026-11-25 10:05)"
+    "item": "Check output validity of 'Generate daily social media posts' first run",
+    "why": "confirm day 3 evidence leaf readiness",
+    "ref": "day 3: produce first usable output + record evidence leaf"
    },
    {
-    "item": "Test Goal Complexity Scorer against 20 known goal samples",
-    "why": "Ensures scorer accuracy before deployment",
-    "ref": "#10 [verifier] Goal Complexity Scorer Regression (eta 2026-11-25 11:52)"
+    "item": "Validate 'Making phone calls' scaffold connectivity",
+    "why": "prep for day 3 fix/verify step",
+    "ref": "day 3: fix issues; verify first output of Making phone calls"
    }
   ],
   "designer": [
    {
-    "item": "Design UI mockup for Steady-State Visual Indicator",
-    "why": "Prepares implementation of queue item #5",
-    "ref": "#5 [designer] Steady-State Visual Indicator (eta 2026-11-25 09:16)"
+    "item": "Design UI mockups for 'Writing valid tenders' user interface",
+    "why": "support day 4-7 workflow development",
+    "ref": "Writing valid tenders [day 4-7]"
    },
    {
-    "item": "Sketch layout for Cycle Duration Forecast Widget",
-    "why": "Advances open goal on duration visualization",
-    "ref": "**Cycle Duration Forecast Widget** - small chart showing actual vs predicted"
-   },
-   {
-    "item": "Define color palette for Goal Complexity Heatmap",
-    "why": "Standardizes visual representation of complexity",
-    "ref": "**Goal Complexity Heatmap** - grid view of current cycle goals"
+    "item": "Create visual templates for 'Generate daily social media posts'",
+    "why": "ensure consistent branding for day 2-4 output",
+    "ref": "Generate daily social media posts [day 2-4]"
    }
   ],
   "archivist": [
    {
-    "item": "Draft memory/archivist/convergence-kb.md with steady-state criteria",
-    "why": "Completes queue item #3",
-    "ref": "#3 [archivist] Convergence Knowledge Base Entry (eta 2026-11-25 09:00)"
+    "item": "Map knowledge dependencies to identify single points of failure",
+    "why": "advance queue item #2",
+    "ref": "#2 [archivist] Knowledge Single-Point-of-Failure Audit"
    },
    {
-    "item": "Extend archive INDEX.md with structured metadata for last 5 cycles",
-    "why": "Improves historical data accessibility",
-    "ref": "**Cycle History Index v2** - extend archive INDEX.md"
+    "item": "Archive evidence leaf for 'Generate daily social media posts' first output",
+    "why": "record day 3 milestone",
+    "ref": "day 3: produce first usable output + record evidence leaf"
    },
    {
-    "item": "Document computation lineage for autonomy score metric",
-    "why": "Ensures transparency in convergence metrics",
-    "ref": "**Convergence Metric Lineage** - document full computation lineage"
+    "item": "Document 'Commenting on posts' loop regression check results",
+    "why": "support day 5 monitor step",
+    "ref": "day 5: monitor + regression check on the loop"
    }
   ],
   "scribe": [
    {
-    "item": "Generate 3-paragraph narrative on current fleet convergence status",
-    "why": "Completes queue item #4",
-    "ref": "#4 [scribe] Convergence Narrative Generator (eta 2026-11-25 09:11)"
+    "item": "Initialize daily $ ledger in memory/scribe/stealth-ledger.md",
+    "why": "track revenue for 'Positive money income' prep",
+    "ref": "Daily $ ledger + winner/loser scorecard"
    },
    {
-    "item": "Draft template for Weekly Convergence Digest",
-    "why": "Prepares recurring reporting mechanism",
-    "ref": "**Weekly Convergence Digest** - every 7 days: one-paragraph summary"
+    "item": "Record first outreach stats from 'Commenting on posts' runs",
+    "why": "populate ledger with day 2 data",
+    "ref": "day 2: daily unattended runs begin"
    },
    {
-    "item": "Write initial section for Intervention Reduction Story",
-    "why": "Starts narrative on human intervention trends",
-    "ref": "**Intervention Reduction Story** - narrate reduction in human interventions"
+    "item": "Draft winner/loser scorecard template for workflow performance",
+    "why": "enable day 7 checkpoint analysis",
+    "ref": "Day-7 checkpoint review (2026-12-02)"
+   },
+   {
+    "item": "Log 'Making phone calls' scaffold completion status",
+    "why": "track day 2 progress",
+    "ref": "day 2: scaffold + wire up Making phone calls"
    }
   ],
   "mechanic": [
    {
-    "item": "Extend seat_probe.py to track response-time trend per seat",
-    "why": "Completes queue item #2",
-    "ref": "#2 [mechanic] Predictive Seat Health Monitor (eta 2026-11-25 08:52)"
+    "item": "Stand up resident schedulable jobs for packaged workflows on fleet hosts",
+    "why": "advance queue item #4",
+    "ref": "#4 [mechanic] Stealth workflow hosting"
    },
    {
-    "item": "Draft memory/mechanic/steady-state-playbook.md with reduced probe frequency",
-    "why": "Completes queue item #9",
-    "ref": "#9 [mechanic] Steady-State Ops Playbook (eta 2026-11-25 10:39)"
+    "item": "Configure cron jobs for 'Commenting on posts' daily unattended runs",
+    "why": "ensure day 2 automation starts",
+    "ref": "day 2: daily unattended runs begin"
    },
    {
-    "item": "Implement wall-clock measurement for cycle duration in ops tracker",
-    "why": "Starts Cycle Duration Ops Tracker goal",
-    "ref": "**Cycle Duration Ops Tracker** - measure wall-clock per cycle"
+    "item": "Set up monitoring alerts for 'Making phone calls' loop stability",
+    "why": "prep for day 7 regression check",
+    "ref": "day 7: monitor + regression check on the loop"
+   }
+  ],
+  "outlet": [
+   {
+    "item": "Implement Milestone Auto-Draft Trigger for fleet level changes",
+    "why": "advance queue item #5",
+    "ref": "#5 [outlet] Milestone Auto-Draft Trigger"
+   },
+   {
+    "item": "Draft Platform Connection Runbook for Arnold's account setup",
+    "why": "advance queue item #9",
+    "ref": "#9 [outlet] Platform Connection Runbook"
+   },
+   {
+    "item": "Stage outbound outreach pack for top 3 packaged workflows",
+    "why": "prep for 'Making money' revenue channels",
+    "ref": "Outbound outreach pack (STAGED ONLY)"
+   },
+   {
+    "item": "Verify platform auth credentials for 'Generate daily social media posts'",
+    "why": "ensure day 2-4 output delivery",
+    "ref": "Generate daily social media posts [day 2-4]"
+   }
+  ],
+  "pixel": [
+   {
+    "item": "Optimize image assets for 'Generate daily social media posts' templates",
+    "why": "improve engagement for day 2-4 content",
+    "ref": "Generate daily social media posts [day 2-4]"
+   },
+   {
+    "item": "Create visual identity for 'Writing valid tenders' documents",
+    "why": "support day 4-7 workflow output",
+    "ref": "Writing valid tenders [day 4-7]"
+   }
+  ],
+  "forge": [
+   {
+    "item": "Scan memory/ops/ runbooks for executability gaps",
+    "why": "advance queue item #1",
+    "ref": "#1 [forge] Runbook Executability Audit"
+   },
+   {
+    "item": "Run consistency_check.py to verify fleet-wide state after recent changes",
+    "why": "advance queue item #6",
+    "ref": "#6 [forge] Cross-Host Consistency Test"
+   },
+   {
+    "item": "Execute drift_detect.py to monitor gate pipeline for silent degradation",
+    "why": "ensure 'Making money' pipeline stability",
+    "ref": "Gate Pipeline Drift Detector"
+   }
+  ],
+  "lumen": [
+   {
+    "item": "Light up status dashboard for 'Commenting on posts' unattended runs",
+    "why": "visualize day 2 automation progress",
+    "ref": "day 2: daily unattended runs begin"
+   },
+   {
+    "item": "Highlight key metrics for 'Making phone calls' scaffold completion",
+    "why": "support day 3 verification step",
+    "ref": "day 3: fix issues; verify first output of Making phone calls"
+   }
+  ],
+  "reel": [
+   {
+    "item": "Record video evidence for 'Generate daily social media posts' first output",
+    "why": "support day 3 evidence leaf requirement",
+    "ref": "day 3: produce first usable output + record evidence leaf"
+   },
+   {
+    "item": "Capture screen recording of 'Commenting on posts' automated run",
+    "why": "document day 2 unattended operation",
+    "ref": "day 2: daily unattended runs begin"
+   }
+  ],
+  "splice": [
+   {
+    "item": "Merge researcher task inventory with builder workflow specs",
+    "why": "ensure alignment for top-3 packaging",
+    "ref": "#3 [builder] Package top-3 workflows"
+   },
+   {
+    "item": "Integrate 'Making money' revenue channel data into scribe ledger",
+    "why": "support day 4-7 financial tracking",
+    "ref": "day 4: scaffold + wire up Making money (revenue channels live)"
    }
   ]
  },
  "stats": {
-  "sig": "985baccbc839",
+  "sig": "46d96f9c92a8",
   "date": "2026-11-25",
   "drafts": [
    {
     "label": "A",
+    "agent": "builder",
+    "model": "Qwen3.8-27B-Q8_0",
+    "stats": {
+     "agents": 14,
+     "items": 28,
+     "grounded": 27,
+     "ratio": 0.96,
+     "missing": [],
+     "repaired": true,
+     "model": null
+    }
+   },
+   {
+    "label": "B",
+    "agent": "verifier",
+    "model": "Qwen3.8-27B-Q4_K_S",
+    "stats": {
+     "agents": 14,
+     "items": 31,
+     "grounded": 29,
+     "ratio": 0.94,
+     "missing": [],
+     "repaired": true,
+     "model": null
+    }
+   },
+   {
+    "label": "C",
     "agent": "mechanic",
     "model": "mechanic-q4",
     "stats": {
-     "agents": 8,
-     "items": 24,
-     "grounded": 23,
-     "ratio": 0.96,
+     "agents": 14,
+     "items": 40,
+     "grounded": 39,
+     "ratio": 0.97,
      "missing": [],
      "repaired": true,
      "model": null
     }
    }
   ],
-  "source": "llm-single-draft"
+  "source": "llm-judge-local"
  }
 }
