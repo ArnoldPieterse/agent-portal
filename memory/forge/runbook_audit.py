@@ -49,6 +49,9 @@ def discover_runbooks(ops=OPS):
     names = []
     for f in sorted(Path(ops).glob("*.md")):
         n = f.name.lower()
+        # Exclude audit report artifacts (meta-documents about the audit itself)
+        if "runbook-executability-audit" in n:
+            continue
         if "runbook" in n or n.endswith("checklist.md") or n.endswith("decision-tree.md"):
             names.append(f)
     return names

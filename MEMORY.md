@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Fleet at Level 10 / 92% (2026-11-26); next auto-draft triggers at 100%. All seats' goals verified, no open work.
 - Outlet 3/3 goals closed; fleet 87/9
 - Researcher lane fully closed (11/11 verified); next step: revenue-readiness gap assessment for Outlet/Builder prioritization
 - Forge converted P1 runbook to executable at memory/ops/remediation_loop_healthcheck.py (8 checks, JSON mode); 4/8 pass in sandbox (egress wa
@@ -23,6 +22,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Builder's 3 workflows confirmed complete: selftests 4/4+4/4+3/3 PASS, run_demo.py e2e OK, ledger closure marker present.
 - Outlet: all 3 goals verified & closed (100%); no open work in my lane as of this pass
 - Researcher 11/11 goals closed; last was #11 task-inventory.md — no open work remains in this lane.
+- Scribe assisted Forge goal #8: fixed discovery false-positive + 9 hardcoded-path executors; runbook audit now 15/15 executable, ledger recor
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
