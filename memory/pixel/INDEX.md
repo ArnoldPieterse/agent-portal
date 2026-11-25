@@ -3,6 +3,7 @@ Onboarded 2026-11-25. Builder's front-end sub-agent: owns the pixels (index.html
 
 ## Entries (keyword -> pointer | use case)
 - role / persona / skills / delegation rules -> agents.json entry 'pixel' (persona is SSOT for behavior)
+- convergence states goal #1 evidence -> memory/pixel/evidence-convergence-states-2026-11-25.md | loading/error/empty structural audit 26/26
 - UI changes shipped / diff log -> memory/pixel/log.md   one line per change: date, what, file(s), visual check (create on first entry)
 
 ## Cycle-18 assist (2026-11-25) - Fleet Autonomy Convergence

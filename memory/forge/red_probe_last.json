@@ -1,0 +1,25 @@
+{
+  "probed_at": "2026-11-25T05:03:56+00:00",
+  "fired_by": "Mechanic (for Forge goal #3 cross-host consistency)",
+  "targets": {
+    "Red:8888-model": {
+      "result": "CLOSED/DROP",
+      "err": "PermissionError",
+      "elapsed_ms": 5
+    },
+    "Red:445-os": {
+      "result": "CLOSED/DROP",
+      "err": "PermissionError",
+      "elapsed_ms": 24
+    },
+    "Pale:445-control": {
+      "result": "OPEN",
+      "latency_ms": 15
+    },
+    "Black:445-control": {
+      "result": "OPEN",
+      "latency_ms": 8
+    }
+  },
+  "verdict": "RED LAN-DOWN (egress fine, Red drops all ports)"
+}

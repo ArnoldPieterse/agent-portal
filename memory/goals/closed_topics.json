@@ -3156,5 +3156,23 @@
 "text": "**Fleet Health Composite Score** - Extend autonomy_score.py: incorporate fleet health signals (host uptime %, VRAM utilization trend last-3-",
 "agent": "builder",
 "at": "2026-11-25"
+},
+{
+"sig": "2d915ff4b51e8575",
+"text": "**Convergence Deceleration Alert** (verified: 2026-11-25 - convergence_alert.py built + selftest 5/5 PASS; live run on 13 cycles fired 1 val",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "3ee4c9a42510db46",
+"text": "**Cross-Agent Handoff Automation** - `python memory/orchestrator/handoff_detector.py`: scan recent agent messages for \"assist\" patterns (one",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "44a4fd94b29a873a",
+"text": "**Convergence Loading/Error/Empty States** - For each of the 4 convergence widgets add an explicit loading skeleton, error state (API down /",
+"agent": "pixel",
+"at": "2026-11-25"
 }
 ]

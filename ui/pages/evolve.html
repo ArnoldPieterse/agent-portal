@@ -1,0 +1,97 @@
+<!doctype html>
+<!-- SELF-EVOLVE TEMPLATE v1 (2026-11-25) - the fleet's UI evolution seed.
+     RULES (see memory/designer/self-evolve-ui.md):
+       1. ALL process work happens on the API host (127.0.0.1:8099). This page only fetches + renders.
+       2. No thresholds, no math, no state machines in JS - if a number is computed, an endpoint owns it.
+       3. Every section = one or more API calls + one render fn. To evolve: add a call + a render fn.
+       4. Rendering adapts to the device via GET/POST /api/device hints (layout/density/charts/theme).
+       5. Identity comes from GET /api/login (Google sign-in profile once configured).
+     Spawn a new UI: copy this file, keep the api()/getDevice()/getLogin() core, add sections. -->
+<html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AgentPortal - Self-Evolve Template</title>
+<style>
+:root{--bg:#0b0e14;--panel:#131722;--ink:#dfe6f3;--dim:#8892a4;--ok:#3ddc84;--warn:#ffb454;--err:#ff5c5c;--acc:#4fc3f7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,sans-serif;padding:16px}
+h1{font-size:18px;margin:0 0 4px}h2{font-size:13px;color:var(--dim);text-transform:uppercase;letter-spacing:.08em;margin:22px 0 8px}
+.badge{display:inline-block;padding:2px 10px;border-radius:10px;background:var(--panel);border:1px solid #232a3a;font-size:12px;margin-right:6px}
+.grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.card{background:var(--panel);border:1px solid #232a3a;border-radius:8px;padding:10px 12px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.bar{height:6px;background:#1c2333;border-radius:3px;overflow:hidden}.bar i{display:block;height:100%;background:var(--acc)}
+canvas{width:100%;height:280px;background:var(--panel);border-radius:8px}
+.dim{color:var(--dim);font-size:12px}
+</style></head><body>
+<h1>AgentPortal - self-evolve template <span class="dim">v1</span></h1>
+<div id="devbar"></div>
+<h2>Fleet status <span class="dim">(GET /api/fleet/status)</span></h2><div id="fleet" class="grid"></div>
+<h2>Topology <span class="dim">(GET /api/fleet/topology)</span></h2><canvas id="topo" width="900" height="280"></canvas>
+<h2>Next-10 forecast <span class="dim">(GET /api/goals/next10.json)</span></h2><div id="fc" class="grid"></div>
+<h2>Cockpit hosts <span class="dim">(GET /api/fleet/cockpit)</span></h2><div id="ck" class="grid"></div>
+<h2>Perf top endpoints <span class="dim">(GET /api/perf)</span></h2><div id="perf" class="card"></div>
+<script>
+const API = "";  // same-origin: the portal host IS the process layer
+async function api(path, opts){ const r = await fetch(API+path, opts); if(!r.ok) throw new Error(path+" -> "+r.status); return r.json(); }
+// getDevice(): probe THIS device, register it on the API host, receive render hints.
+const DEV_ID = "device-" + Math.random().toString(16).slice(2,10);  // per-session; server registry keeps history
+async function getDevice(){
+  const c = document.createElement("canvas"); const gl = c.getContext("webgl") || c.getContext("experimental-webgl");
+  const probe = { id: DEV_ID, width: innerWidth, height: innerHeight, dpr: devicePixelRatio||1,
+    color_gamut: (matchMedia("(color-gamut: rec2020)").matches?"rec2020":matchMedia("(color-gamut: p3)").matches?"p3":"srgb"),
+    color_scheme: matchMedia("(prefers-color-scheme: dark)") ? "dark" : "light",
+    pointer: (matchMedia("(pointer: coarse)").matches ? "touch" : "mouse"),
+    touch_points: navigator.maxTouchPoints||0, webgl: gl ? "yes" : "no",
+    max_texture_size: gl ? gl.getParameter(gl.MAX_TEXTURE_SIZE) : 0, online: navigator.onLine };
+  const d = await api("/api/device", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(probe)});
+  return d.registered;
+}
+// getLogin(): profile/sign-in state from the API host (Google flow when configured).
+async function getLogin(){ return api("/api/login"); }
+const dot = s => `<span class="dot" style="background:${s==="up"||s===true?"var(--ok)":s==="warn"?"var(--warn)":"var(--err)"}"></span>`;
+async function main(){
+  try{
+    const dev = await getDevice();
+    document.getElementById("devbar").innerHTML =
+      `<span class="badge">device: ${dev.id}</span><span class="badge">layout ${dev.render.layout} / ${dev.render.density}</span>`+
+      `<span class="badge">charts ${dev.render.charts}</span><span class="badge">control ${dev.render.control.pointer}${dev.render.control.touch?"+touch":""}</span>`;
+    if(dev.render.theme==="light") document.body.style.background = "#f2f4f8";
+  }catch(e){}
+  try{ const lg = await getLogin();
+    document.getElementById("devbar").innerHTML += lg.current
+      ? `<span class="badge">login: ${lg.current.name||lg.current.email}</span>`
+      : `<span class="badge">login: none${lg.configured?" (google ready)":" (google not configured)"}</span>`;
+  }catch(e){}
+  try{ const fs = await api("/api/fleet/status");
+    document.getElementById("fleet").innerHTML = Object.entries(fs.hosts).map(([h,i]) =>
+      `<div class="card">${dot(i.reachable)}<b>${h}</b><div class="dim">${i.reachable?"up":"down"} ${i.latency_ms!=null?i.latency_ms+"ms":""} disk ${i.disk_pct!=null?i.disk_pct+"%":"-"}</div></div>`).join("")
+      + `<div class="card">overall: <b style="color:${fs.overall==="green"?"var(--ok)":fs.overall==="amber"?"var(--warn)":"var(--err)"}">${fs.overall}</b> <span class="dim">${new Date(fs.last_check*1000).toLocaleTimeString()}</span></div>`;
+  }catch(e){}
+  try{ const tp = await api("/api/fleet/topology"); drawTopo(tp); }catch(e){}
+  try{ const fc = await api("/api/goals/next10.json");
+    document.getElementById("fc").innerHTML = (fc.next10||[]).map((it,i) =>
+      `<div class="card">cycle ${i+1}<div class="bar"><i style="width:${Math.round((it.p_reached||0)*100)}%"></i></div><div class="dim">${Math.round((it.p_reached||0)*100)}% - ${(it.title||"").slice(0,40)}</div></div>`).join("");
+  }catch(e){}
+  try{ const ck = await api("/api/fleet/cockpit");
+    document.getElementById("ck").innerHTML = (ck.hosts||[]).map(h =>
+      `<div class="card"><b>${h.name}</b><div class="bar"><i style="width:${Math.min(100,h.vram_pct||0)}%"></i></div><div class="dim">vram ${h.vram_pct!=null?h.vram_pct+"%":"-"} cpu ${h.cpu_pct!=null?h.cpu_pct+"%":"-"}</div></div>`).join("");
+  }catch(e){}
+  try{ const pf = await api("/api/perf");
+    const ep = pf.endpoints || {};
+    const rows = Object.entries(ep).sort((a,b)=>(b[1].avg_ms||0)-(a[1].avg_ms||0)).slice(0,8);
+    document.getElementById("perf").innerHTML = rows.length ? rows.map(([k,v])=>`<div>${k} <span class="dim">${v.avg_ms!=null?v.avg_ms.toFixed(1)+"ms avg":"-"} x${v.count||""}</span></div>`).join("") : "<span class='dim'>no perf data yet</span>";
+  }catch(e){}
+}
+function drawTopo(tp){ const cv = document.getElementById("topo"), ctx = cv.getContext("2d");
+  const w=cv.width, h=cv.height, cx=w/2, cy=h/2, R=Math.min(w,h)*0.36;
+  const pos = {}; (tp.hosts||[]).forEach((hh,i)=>{const a=i/(tp.hosts.length||1)*Math.PI*2-Math.PI/2; pos[hh.id]={x:cx+Math.cos(a)*R, y:cy+Math.sin(a)*R};});
+  (tp.edges||[]).forEach(e=>{ const f=pos[e.from], t=pos[e.to]; if(!f||!t) return;
+    ctx.strokeStyle="rgba(79,195,247,.45)"; ctx.lineWidth=Math.min(4,(e.volume||1)*.6+1);
+    ctx.beginPath(); ctx.moveTo(f.x,f.y); ctx.lineTo(t.x,t.y); ctx.stroke(); });
+  (tp.hosts||[]).forEach(hh=>{ const p=pos[hh.id]; if(!p) return; const s=12+(hh.vram||0)*30;
+    ctx.fillStyle = hh.status==="down" ? "rgba(136,146,164,.4)" : hh.status==="warn" ? "#ff9800" : "#4fc3f7";
+    ctx.beginPath(); ctx.arc(p.x,p.y,s,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle="#e0e0e0"; ctx.font="11px system-ui"; ctx.textAlign="center";
+    ctx.fillText(hh.id.toUpperCase(), p.x, p.y+s+14); });
+}
+main();
+</script></body></html>

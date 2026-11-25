@@ -4,7 +4,7 @@ Pillars: (1) Production-grade convergence surface, (2) Accessibility + resilienc
 
 Context: the convergence widgets (autonomy gauge, duration trend, intervention sparkline, progress ring — `ui/cockpit-convergence.js`) were built by Designer and static-verified in an egress-walled sandbox. This set hardens that surface into a production UI I own: live-data states, a11y, responsiveness, print, persistence, motion, and footprint. All implementation (HTML/CSS/JS) — not design critique (Designer) or backend scripts (Builder).
 
-1. **Convergence Loading/Error/Empty States** - For each of the 4 convergence widgets add an explicit loading skeleton, error state (API down / stale) and empty state (no cycles yet); a dead `/api/convergence` must never render NaN/blank. Verified: 3 mock conditions (loading/error/empty) render correctly per widget; 0 console errors; each dynamic state carries `aria-live="polite"` text.
+1. **Convergence Loading/Error/Empty States** - For each of the 4 convergence widgets add an explicit loading skeleton, error state (API down / stale) and empty state (no cycles yet); a dead `/api/convergence` must never render NaN/blank. Verified: 3 mock conditions (loading/error/empty) render correctly per widget; 0 console errors; each dynamic state carries `aria-live="polite"` text. (pointer: memory/pixel/evidence-convergence-states-2026-11-25.md)
 
 2. **Convergence Metric Drill-Down View** - Clicking any metric opens a focus-trapped detail overlay showing that metric's computation lineage (source → transform → value, from Archivist's metric-lineage + `/api/convergence`); closes on ESC/backdrop. Verified: all 4 metrics open the correct drill-down; Tab cycle stays trapped; ESC closes; no layout shift on open.
 

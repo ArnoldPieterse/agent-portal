@@ -6306,6 +6306,20 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(data)
 
+    def _login_resp(self, q):
+        # /api/login + /api/login/callback share this: headers must follow send_response.
+        import portal.api_extras as _apiex
+        c, b, extra = _apiex.login_handler(self, q)
+        data = json.dumps(b).encode()
+        self.send_response(c)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Access-Control-Allow-Origin", "*")
+        for h in extra:
+            self.send_header(h[0], h[1])
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
     def _html(self, path):
         try:
             data = open(os.path.join(HERE, "index.html"), "rb").read()
@@ -6450,7 +6464,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._html("index.html")
         if p.startswith("/page/") and p.endswith(".html"):
             n = p[len("/page/"):-len(".html")]
-            if n in ("goals", "activity", "fleet", "files", "ops"):
+            if n in ("goals", "activity", "fleet", "files", "ops", "evolve"):
                 fp = os.path.join(HERE, "ui", "pages", n + ".html")
                 try:
                     html = open(fp, encoding="utf-8").read()
@@ -6554,10 +6568,29 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/health":
             # 2026-11-23 (Mechanic goal 10): lightweight liveness probe for portal_heal.py
             self._json(200, {"ok": True, "service": "agent_portal", "uptime_s": round(time.time() - PORTAL_START)})
+        elif p == "/api/device":
+            import portal.api_extras as _apiex
+            return self._json(200, _apiex.device_snapshot())
+        elif p == "/api/login":
+            import portal.api_extras as _apiex
+            q = urllib.parse.parse_qs(self.path.split("?", 1)[1] if "?" in self.path else "")
+            self._login_resp(q)
+            return
+        elif p == "/api/login/callback":
+            q = urllib.parse.parse_qs(self.path.split("?", 1)[1] if "?" in self.path else "")
+            q["mode"] = ["callback"]
+            self._login_resp(q)
+            return
         elif p == "/api/fleet":
             # Fleet Status panel (2026-11-13): per-host models + busy/idle/unknown.
             # On-demand probes only (no background timer); dead host => unknown, no hang.
             return self._json(200, _fleet_snapshot())
+        elif p == "/api/fleet/status":
+            import portal.api_extras as _apiex
+            return self._json(200, _apiex.fleet_status_snapshot())
+        elif p == "/api/fleet/topology":
+            import portal.api_extras as _apiex
+            return self._json(200, _apiex.fleet_topology_snapshot())
         elif p == "/api/fleet/cockpit":
             # Fleet Cockpit API (Orchestrator cycle-10 goal 3, re-landed 2026-11-23): one call
             # = full fleet picture for the Cockpit tab. Local reads + cached nvidia-smi, <2s.
@@ -6650,6 +6683,19 @@ class Handler(BaseHTTPRequestHandler):
                     return self._json(200, {"ok": True, **json.load(f)})
             except Exception as e:
                 return self._json(200, {"ok": False, "error": str(e)})
+        elif p == "/api/goals/next10.json":
+            try:
+                raw = open(os.path.join(HERE, "memory", "goals", "next10.json"), encoding="utf-8").read()
+                json.loads(raw)
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json")
+                self.send_header("Cache-Control", "no-store")
+                self.send_header("Content-Length", str(len(raw.encode())))
+                self.end_headers()
+                self.wfile.write(raw.encode())
+                return
+            except Exception:
+                return self._json(404, {"error": "no forecast yet"})
         elif p == "/api/goals/history":
             # Git-based goal progress curve + stall detection (2026-11-16).
             try:
@@ -6917,6 +6963,17 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(404, {"error": "no such run"})
             ev.set()
             return self._json(200, {"ok": True})
+        elif p == "/api/gpu/request":
+            import portal.gpu_fit as _gfit
+            try:
+                rec = _gfit.request_dual_gpu(str(body.get("agent") or ""), str(body.get("model") or ""), body.get("host"))
+                return self._json(200, {"ok": True, "request": rec})
+            except Exception as e:
+                return self._json(400, {"error": str(e)[:160]})
+        elif p == "/api/device":
+            import portal.api_extras as _apiex
+            data = _apiex.device_snapshot(body if isinstance(body, dict) else None)
+            return self._json(200, data)
         elif p == "/api/chat":
             _sync_workspace_to_sandbox()   # two-way: push shared state, pull agent work home (LWW + new-only)
             aid = body.get("agent_id") or ""

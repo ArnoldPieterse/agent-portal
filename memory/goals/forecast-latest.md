@@ -1,52 +1,38 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-25 14:31:32 | Fleet: 68/80 (85%) | throughput ~17.7 goals/h
+Generated: 2026-11-25 15:34:22 | Fleet: 74/80 (92%) | throughput ~17.7 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [archivist] Autonomy Boundary Map** - ETA 2026-11-25 17:45, P(reached) 53% (build, cx1)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,model | lane end builder: 11-26 19:42 (slowest lane)
-**#2 [builder] Convergence-Informed Goal Prioritizer** - ETA 2026-11-25 17:59, P(reached) 22% (measurement, cx2)
-   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: archivist: **Convergence Sustainability Forecast** - Using historical c (2026-11-25 21:00) - shared scope convergence,cycle,intervention | builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,score,trend | archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,convergence,score
-**#3 [builder] Self-Healing Goal Lifecycle** - ETA 2026-11-25 20:33, P(reached) 52% (ops, cx2)
-   steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
-   consequences: lane end builder: 11-26 19:42 (slowest lane)
-**#4 [archivist] Convergence Sustainability Forecast** - ETA 2026-11-25 21:00, P(reached) 53% (build, cx1)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope convergence,cycle,intervention | builder: **Convergence Deceleration Alert** - `python memory/ops/conv (2026-11-26 04:34) - shared scope convergence,cycles,intervention | lane end builder: 11-26 19:42 (slowest lane)
-**#5 [archivist] Knowledge Single-Point-of-Failure Audit** - ETA 2026-11-25 22:51, P(reached) 84% (verify, cx1)
+**#1 [archivist] Knowledge Single-Point-of-Failure Audit** - ETA 2026-11-25 17:25, P(reached) 84% (verify, cx1)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: lane end builder: 11-26 19:42 (slowest lane)
-**#6 [builder] Fleet Health Composite Score** - ETA 2026-11-26 00:01, P(reached) 22% (measurement, cx2)
+   consequences: lane end builder: 11-26 06:42 (slowest lane)
+**#2 [archivist] Convergence Feed for Portal** - ETA 2026-11-25 19:54, P(reached) 59% (measurement, cx1)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: archivist: **Autonomy Boundary Map** - Document the exact boundary betw (2026-11-25 17:45) - shared scope autonomy,model | builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,score,trend | archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,score,trend
-**#7 [archivist] Convergence Feed for Portal** - ETA 2026-11-26 01:20, P(reached) 59% (measurement, cx1)
+   consequences: builder: **Pre-Cycle Autonomy Gate** - `python memory/ops/pre_cycle_g (2026-11-26 00:40) - shared scope autonomy,score | builder: **Autonomy Regression Test Suite** - `python memory/builder/ (2026-11-26 03:15) - shared scope autonomy,convergence,score | builder: **Fleet Autonomy Runbook** - Write memory/ops/runbook-autono (2026-11-26 06:42) - shared scope autonomy,score
+**#3 [builder] Cross-Agent Handoff Automation** - ETA 2026-11-25 20:07, P(reached) 19% (build, cx2)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: lane end builder: 11-26 06:42 (slowest lane)
+**#4 [builder] Pre-Cycle Autonomy Gate** - ETA 2026-11-26 00:40, P(reached) 19% (build, cx2)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-25 19:54) - shared scope autonomy,score | builder: **Autonomy Regression Test Suite** - `python memory/builder/ (2026-11-26 03:15) - shared scope autonomy,score | builder: **Fleet Autonomy Runbook** - Write memory/ops/runbook-autono (2026-11-26 06:42) - shared scope autonomy,score
+**#5 [builder] Autonomy Regression Test Suite** - ETA 2026-11-26 03:15, P(reached) 52% (verify, cx2)
+   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
+   consequences: archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-25 19:54) - shared scope autonomy,convergence,score | builder: **Pre-Cycle Autonomy Gate** - `python memory/ops/pre_cycle_g (2026-11-26 00:40) - shared scope autonomy,score | builder: **Fleet Autonomy Runbook** - Write memory/ops/runbook-autono (2026-11-26 06:42) - shared scope autonomy,score
+**#6 [builder] Fleet Autonomy Runbook** - ETA 2026-11-26 06:42, P(reached) 22% (measurement, cx2)
    steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,convergence,score | builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,score,trend | builder: **Convergence Deceleration Alert** - `python memory/ops/conv (2026-11-26 04:34) - shared scope autonomy,convergence
-**#8 [builder] Convergence Deceleration Alert** - ETA 2026-11-26 04:34, P(reached) 19% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,convergence,intervention | archivist: **Convergence Sustainability Forecast** - Using historical c (2026-11-25 21:00) - shared scope convergence,cycles,intervention | archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,convergence
-**#9 [builder] Cross-Agent Handoff Automation** - ETA 2026-11-26 09:07, P(reached) 19% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: lane end builder: 11-26 19:42 (slowest lane)
-**#10 [builder] Pre-Cycle Autonomy Gate** - ETA 2026-11-26 13:40, P(reached) 19% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,cycle,score | builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,score | archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,score
+   consequences: archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-25 19:54) - shared scope autonomy,score | builder: **Pre-Cycle Autonomy Gate** - `python memory/ops/pre_cycle_g (2026-11-26 00:40) - shared scope autonomy,score | builder: **Autonomy Regression Test Suite** - `python memory/builder/ (2026-11-26 03:15) - shared scope autonomy,score
 
 ## Planned work (decision tree)
 
-- state: Fleet 68/80 (85%) | gate: all goals 100%? -> **NO - queue in flight**
-- cycle: in flight: 10 goal(s) open
-- #1 [archivist] Autonomy Boundary Map ~2026-11-25 17:45 (P~53%) - planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached)  | delivers: Autonomy Boundary Map
-- #2 [builder] Convergence-Informed Goal Prioritizer ~2026-11-25 17:59 (P~22%) - planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reach | delivers: Convergence-Informed Goal Prioritizer
-- #3 [builder] Self-Healing Goal Lifecycle ~2026-11-25 20:33 (P~52%) - planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52% | delivers: Archive + evidence leaves
-- #4 [archivist] Convergence Sustainability Forecast ~2026-11-25 21:00 (P~53%) - planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached)  | delivers: Forecast calibration
-- #5 [archivist] Knowledge Single-Point-of-Failure Audit ~2026-11-25 22:51 (P~84%) - planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reach | delivers: Knowledge Single-Point-of-Failure Audit
-- #6 [builder] Fleet Health Composite Score ~2026-11-26 00:01 (P~22%) - planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reach | delivers: Fleet Health Composite Score
-- #7 [archivist] Convergence Feed for Portal ~2026-11-26 01:20 (P~59%) - planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(rea | delivers: Convergence Feed for Portal
-- #8 [builder] Convergence Deceleration Alert ~2026-11-26 04:34 (P~19%) - planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~1 | delivers: Convergence Deceleration Alert
+- state: Fleet 74/80 (92%) | gate: all goals 100%? -> **NO - queue in flight**
+- cycle: in flight: 6 goal(s) open
+- #1 [archivist] Knowledge Single-Point-of-Failure Audit ~2026-11-25 17:25 (P~84%) - planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reach | delivers: Knowledge Single-Point-of-Failure Audit
+- #2 [archivist] Convergence Feed for Portal ~2026-11-25 19:54 (P~59%) - planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(rea | delivers: Convergence Feed for Portal
+- #3 [builder] Cross-Agent Handoff Automation ~2026-11-25 20:07 (P~19%) - planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~1 | delivers: Cross-Agent Handoff Automation
+- #4 [builder] Pre-Cycle Autonomy Gate ~2026-11-26 00:40 (P~19%) - planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~1 | delivers: Pre-Cycle Autonomy Gate
+- #5 [builder] Autonomy Regression Test Suite ~2026-11-26 03:15 (P~52%) - planned as verify work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~ | delivers: Autonomy Regression Test Suite
+- #6 [builder] Fleet Autonomy Runbook ~2026-11-26 06:42 (P~22%) - planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reach | delivers: Fleet Autonomy Runbook
 
 ## Functional capability chain (PM view)
 
@@ -147,39 +133,39 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): a4f106fb3413 @ 11-24 11:55:14, 05dcc83e6301 @ 11-24 13:46:57, a4f106fb3413 @ 11-24 23:09:16, 05dcc83e6301 @ 11-25 02:40:36
 
-## 30m ahead (by 2026-11-25 15:01)
-- completes: **0** goal(s) -> fleet ~85%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 68/80 -> 85%
+## 30m ahead (by 2026-11-25 16:04)
+- completes: **0** goal(s) -> fleet ~92%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 74/80 -> 92%
 
-## 1h ahead (by 2026-11-25 15:31)
-- completes: **0** goal(s) -> fleet ~85%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 68/80 -> 85%
+## 1h ahead (by 2026-11-25 16:34)
+- completes: **0** goal(s) -> fleet ~92%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 74/80 -> 92%
 
-## 1d ahead (by 2026-11-26 14:31)
-- completes: **10** goal(s) -> fleet ~98%
-  - #1 archivist: Autonomy Boundary Map (2026-11-25 17:45)
-  - #2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 17:59)
-  - #3 builder: Self-Healing Goal Lifecycle (2026-11-25 20:33)
-  - #4 archivist: Convergence Sustainability Forecast (2026-11-25 21:00)
-  - #5 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 22:51)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 68/80 -> 97%
+## 1d ahead (by 2026-11-26 15:34)
+- completes: **6** goal(s) -> fleet ~100%
+  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 17:25)
+  - #2 archivist: Convergence Feed for Portal (2026-11-25 19:54)
+  - #3 builder: Cross-Agent Handoff Automation (2026-11-25 20:07)
+  - #4 builder: Pre-Cycle Autonomy Gate (2026-11-26 00:40)
+  - #5 builder: Autonomy Regression Test Suite (2026-11-26 03:15)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 74/80 -> 100%
 
-## 1w ahead (by 2026-12-02 14:31)
-- completes: **12** goal(s) -> fleet ~100%
-  - #1 archivist: Autonomy Boundary Map (2026-11-25 17:45)
-  - #2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 17:59)
-  - #3 builder: Self-Healing Goal Lifecycle (2026-11-25 20:33)
-  - #4 archivist: Convergence Sustainability Forecast (2026-11-25 21:00)
-  - #5 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 22:51)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 68/80 -> 97%
+## 1w ahead (by 2026-12-02 15:34)
+- completes: **6** goal(s) -> fleet ~100%
+  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 17:25)
+  - #2 archivist: Convergence Feed for Portal (2026-11-25 19:54)
+  - #3 builder: Cross-Agent Handoff Automation (2026-11-25 20:07)
+  - #4 builder: Pre-Cycle Autonomy Gate (2026-11-26 00:40)
+  - #5 builder: Autonomy Regression Test Suite (2026-11-26 03:15)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 74/80 -> 100%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-25 14:31)
-- completes: **12** goal(s) -> fleet ~100%
-  - #1 archivist: Autonomy Boundary Map (2026-11-25 17:45)
-  - #2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 17:59)
-  - #3 builder: Self-Healing Goal Lifecycle (2026-11-25 20:33)
-  - #4 archivist: Convergence Sustainability Forecast (2026-11-25 21:00)
-  - #5 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 22:51)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 68/80 -> 97%
+## 1m ahead (by 2026-12-25 15:34)
+- completes: **6** goal(s) -> fleet ~100%
+  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 17:25)
+  - #2 archivist: Convergence Feed for Portal (2026-11-25 19:54)
+  - #3 builder: Cross-Agent Handoff Automation (2026-11-25 20:07)
+  - #4 builder: Pre-Cycle Autonomy Gate (2026-11-26 00:40)
+  - #5 builder: Autonomy Regression Test Suite (2026-11-26 03:15)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 74/80 -> 100%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-

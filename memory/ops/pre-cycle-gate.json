@@ -1,0 +1,53 @@
+{
+  "ts": "2026-11-25T05:44:16.692178+00:00",
+  "overall": "FAIL",
+  "checks": {
+    "scheduled_tasks": {
+      "status": "unverifiable",
+      "detail": "fleet automation tasks not visible from this seat (registered on host)",
+      "found": [],
+      "required": [
+        "PortalLoadProbe",
+        "MirrorSync",
+        "VerifierSLO"
+      ]
+    },
+    "endpoints": {
+      "status": "fail",
+      "endpoints": [
+        {
+          "name": "portal",
+          "url": "http://127.0.0.1:8099/",
+          "ok": false,
+          "latency_ms": 14.9,
+          "detail": "URLError: <urlopen error [WinError 10013] An attempt was made to acces (14.9ms)"
+        },
+        {
+          "name": "model",
+          "url": "http://127.0.0.1:8888/",
+          "ok": false,
+          "latency_ms": 21.4,
+          "detail": "URLError: <urlopen error [WinError 10013] An attempt was made to acces (21.4ms)"
+        }
+      ],
+      "detail": "endpoint(s) down or >200ms: portal, model"
+    },
+    "score": {
+      "status": "pass",
+      "detail": "baseline established (no prior snapshot)",
+      "current": 71.3,
+      "previous": null
+    },
+    "blockers": {
+      "status": "pass",
+      "detail": "no unresolved blockers in window",
+      "unresolved": []
+    }
+  },
+  "failed_checks": [
+    "endpoints"
+  ],
+  "unverifiable_checks": [
+    "scheduled_tasks"
+  ]
+}
