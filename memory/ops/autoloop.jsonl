@@ -666,3 +666,5 @@
 {"timestamp": "2026-11-25T14:28:01.756654+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1234332}
 {"timestamp": "2026-11-25T14:28:01.763888+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2215838}
 {"timestamp": "2026-11-25T14:28:01.771117+00:00", "agent": "Outlet", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1234332}
+{"timestamp": "2026-11-25T14:30:59.164564+00:00", "agent": "Scribe", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2393233}
+{"timestamp": "2026-11-25T14:30:59.177725+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1139796}
