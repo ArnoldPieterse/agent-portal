@@ -475,3 +475,4 @@
 {"ts": "2026-11-25 21:54:37", "file": "ui/deeplink.js", "sha": "f35034a1b2", "size": 6729, "snapshot": null}
 {"ts": "2026-11-25 22:13:14", "file": "index.html", "sha": "eadafc3bf1", "size": 14295, "snapshot": "memory/ops/merge-queue/index.html.eadafc3bf1"}
 {"ts": "2026-11-25 22:13:14", "file": "portal_scheduler.py", "sha": "df76245f1a", "size": 12555, "snapshot": "memory/ops/merge-queue/portal_scheduler.py.df76245f1a"}
+{"ts": "2026-11-25 22:14:53", "file": "agent_portal.py", "sha": "551fa42abb", "size": 393613, "snapshot": "memory/ops/merge-queue/agent_portal.py.551fa42abb"}

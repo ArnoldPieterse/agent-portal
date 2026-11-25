@@ -7657,7 +7657,36 @@ class Handler(BaseHTTPRequestHandler):
         self._json(200, {"ok": True})
 
 
-<2397 chars of arguments you sent, already written to agent_portal.py; elided to save room. Not tool output; the file on disk holds it.>
+def _stale_run_watchdog():
+    """Live reaper for orphaned group runs (2026-11-25). A run whose worker dies before the
+    PASS_TIMEOUT_S cap leaves status='running' + busy=true forever: autoloop parks, queued runs
+    defer, fleet looks 'stuck'. The startup reaper only sees runs orphaned by a restart; this
+    tick sees runs orphaned while the portal stays up. Condition mirrors the pass cap itself:
+    running + age > PASS_TIMEOUT_S + grace is by definition orphaned (the worker should have
+    capped it), so marking interrupted + clearing busy just does what the cap was supposed to.
+    Same effects as _reap_stale_group_run + _clear_stale_busy, but live."""
+    GRACE = 120
+    while True:
+        time.sleep(60)
+        try:
+            run = _load_group_run()
+            if not (run.get("id") and run.get("status") == "running"):
+                continue
+            age = time.time() - float(run.get("started") or 0)
+            if age <= PASS_TIMEOUT_S + GRACE:
+                continue
+            run["status"] = "interrupted"
+            run["verdict"] = {"note": "\u26a0 Stale-run watchdog: pass cap (%ds + %ds grace) exceeded with no worker to end the run - marked interrupted. Queued messages were kept; send a follow-up to continue." % (PASS_TIMEOUT_S, GRACE)}
+            run["ended"] = time.time()
+            _save_group_run(run)
+            st = _load_run_state() or {}
+            if st.get("busy"):
+                st["busy"] = False
+                _save_run_state(st)
+            _run_event(run["id"], {"run": "end", "status": "interrupted", "verdict": run["verdict"]})
+            print("[watchdog] reaped stale group run %s (age %.0fs)" % (run["id"], age))
+        except Exception as e:
+            print("[watchdog] stale-run check failed:", repr(e)[:120])
 
 def _level_heartbeat():
     """Autonomous level check (2026-11-23). Previously _check_level_up ran ONLY when a client
