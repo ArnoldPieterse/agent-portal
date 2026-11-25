@@ -1,0 +1,9 @@
+[29460:2480:1125/164215.460:ERROR:components\device_event_log\device_event_log_impl.cc:257] [16:42:15.460] USB: usb_device_win.cc:66 Failed to open \\?\usb#root_hub30#4&3ee00f3&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}: Access is denied. (0x5)
+[29460:2480:1125/164215.462:ERROR:components\device_event_log\device_event_log_impl.cc:257] [16:42:15.462] USB: usb_device_win.cc:66 Failed to open \\?\usb#vid_1b1c&pid_0d0c#6&7b2733e&0&1#{f18a0e88-c30c-11d0-8815-00a0c906bed8}: Access is denied. (0x5)
+[29460:2480:1125/164215.462:ERROR:components\device_event_log\device_event_log_impl.cc:257] [16:42:15.462] USB: usb_device_win.cc:66 Failed to open \\?\usb#root_hub30#4&3ee00f3&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8}: Access is denied. (0x5)
+[29460:2480:1125/164215.463:ERROR:components\device_event_log\device_event_log_impl.cc:257] [16:42:15.463] USB: usb_device_win.cc:66 Failed to open \\?\usb#vid_1b1c&pid_0d0c#6&7b2733e&0&1#{f18a0e88-c30c-11d0-8815-00a0c906bed8}: Access is denied. (0x5)
+[29460:2480:1125/164215.742:ERROR:chrome\browser\edge_pinned_sites\secondary_tile_client.cc:283] OnSecondaryTileManagerDisconnected. Probing host package health before responding to callbacks
+[29460:2480:1125/164215.742:ERROR:chrome\browser\edge_pinned_sites\pinned_sites_cache.cc:284] Failed to retrieve pinned sites
+[29460:37172:1125/164309.199:ERROR:components\microsoft\hijacking_prevention\edge_hijacking_prevention_utils_win.cc:294] Failed to get public path: 115
+[29460:37172:1125/164309.201:ERROR:components\microsoft\hijacking_prevention\edge_hijacking_prevention_utils_win.cc:277] Failed to get user path: 108
+[29460:37172:1125/164309.202:ERROR:components\microsoft\hijacking_prevention\edge_hijacking_prevention_utils_win.cc:294] Failed to get public path: 107

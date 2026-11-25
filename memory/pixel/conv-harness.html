@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convergence panel — responsive render harness</title>
+<style>
+  :root{ --bg-1:#1c2128; --bg-2:#171b22; --line:#2a2f38; }
+  html,body{margin:0;padding:0;background:var(--bg-1);color:#e2e6ec;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  body{padding:10px}
+  #ckpPanel{background:var(--bg-1)}
+  .sec{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#8a8f98;margin:6px 2px}
+  .health{font-size:13px;color:#b0b7c3;padding:4px 2px;border-bottom:1px solid var(--line);margin-bottom:6px}
+</style>
+<script>
+  // Faithful /api/convergence mock (real field shape from ui/cockpit-convergence.js) so the
+  // live render shows populated gauge/trend/sparkline/progress, not skeletons.
+  window.__CONV_MOCK = {
+    fleet_autonomy_score: 86,
+    cycle_duration_trend: { cycles: [{duration_h:14},{duration_h:12},{duration_h:9},{duration_h:7}], direction: "improving" },
+    human_intervention_count: { per_cycle: { "20":2, "21":1, "22":1, "23":0 } },
+    steady_state_progress: { progress_pct: 65, steady_state_reached: false, consecutive_passes: 2,
+      criteria: { a:true,b:true,c:true,d:false,e:false,f:false } }
+  };
+  window.fetch = function (url) {
+    if (String(url).indexOf("/api/convergence") === 0) {
+      return Promise.resolve({ ok: true, status: 200,
+        json: function () { return Promise.resolve(window.__CONV_MOCK); } });
+    }
+    return Promise.reject(new Error("no route " + url));
+  };
+</script>
+</head>
+<body>
+  <div id="ckpPanel">
+    <div class="sec">Health score</div>
+    <div class="health">86 / 100 &middot; fleet healthy</div>
+  </div>
+  <script src="../../ui/cockpit-convergence.js"></script>
+</body>
+</html>
