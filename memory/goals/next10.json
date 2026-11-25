@@ -1,94 +1,23 @@
 {
  "ok": true,
- "generated": "2026-11-25 09:51:00",
+ "generated": "2026-11-25 11:08:07",
  "fleet": {
-  "done": 65,
+  "done": 71,
   "total": 80,
-  "pct": 81.2
+  "pct": 88.8
  },
  "throughput_goals_per_hour": 20.04,
  "next10": [
-  {
-   "agent": "scribe",
-   "goal": "**Convergence Narrative Generator** - auto 3-paragraph narrative of fleet convergence status using real data from autonomy score + intervention log. Output: memory/ops/convergence-narrative-latest.md. Verified: all data ",
-   "type": "measurement",
-   "complexity": 1,
-   "p_reached": 0.757,
-   "eta": "2026-11-25 12:31",
-   "hours": 2.67,
-   "order": 0,
-   "rank": 1,
-   "title": "Convergence Narrative Generator",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-25 12:31 (P=76%)",
-   "consequences": [
-    "designer: **Intervention Timeline** - horizontal timeline showing huma (2026-11-25 14:10) - shared scope autonomy,intervention",
-    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 17:33) - shared scope autonomy,convergence,intervention",
-    "designer: **Agent Autonomy Comparison Cards** - per-agent card showing (2026-11-26 02:03) - shared scope autonomy,intervention",
-    "lane end scribe: 11-26 23:48 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "designer",
-   "goal": "**Intervention Timeline** - horizontal timeline showing human interventions over last 30 days. Color by type (unblock=amber, redirect=red, approve=green). Density decreases as autonomy increases. Verified: 10 test entrie",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.037,
-   "eta": "2026-11-25 14:10",
-   "hours": 4.32,
-   "order": 0,
-   "rank": 2,
-   "title": "Intervention Timeline",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: 10 test entrie)"
-   ],
-   "outcome": "reached ~2026-11-25 14:10 (P=4%)",
-   "consequences": [
-    "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 12:31) - shared scope autonomy,intervention",
-    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 17:33) - shared scope autonomy,intervention",
-    "designer: **Agent Autonomy Comparison Cards** - per-agent card showing (2026-11-26 02:03) - shared scope autonomy,intervention,showing",
-    "lane end scribe: 11-26 23:48 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "designer",
-   "goal": "**Goal Complexity Heatmap** - grid view of current cycle goals colored by complexity score (1=light green to 5=dark red). Tooltip shows scoring factors. Helps visualize workload balance. Verified: 10 goals render as cell",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.046,
-   "eta": "2026-11-25 17:25",
-   "hours": 3.25,
-   "order": 1,
-   "rank": 3,
-   "title": "Goal Complexity Heatmap",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-25 17:25 (P=5%)",
-   "consequences": [
-    "designer: **Agent Autonomy Comparison Cards** - per-agent card showing (2026-11-26 02:03) - shared scope goals,render",
-    "lane end scribe: 11-26 23:48 (slowest lane)"
-   ]
-  },
   {
    "agent": "scribe",
    "goal": "**Cycle Closeout v3** - extend closeout with convergence section: autonomy delta, intervention count vs target, steady-state progress. Compare to prev cycle; flag regressions. Verified: cycle-16 closeout has section; val",
    "type": "build",
    "complexity": 2,
    "p_reached": 0.459,
-   "eta": "2026-11-25 17:33",
+   "eta": "2026-11-25 16:10",
    "hours": 5.04,
-   "order": 1,
-   "rank": 4,
+   "order": 0,
+   "rank": 1,
    "title": "Cycle Closeout v3",
    "steps": [
     "scaffold the module file",
@@ -96,12 +25,12 @@
     "self-test until AC green",
     "evidence leaf + index line (AC: cycle-16 closeout has section; val)"
    ],
-   "outcome": "reached ~2026-11-25 17:33 (P=46%)",
+   "outcome": "reached ~2026-11-25 16:10 (P=46%)",
    "consequences": [
-    "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 12:31) - shared scope autonomy,convergence,intervention",
-    "designer: **Intervention Timeline** - horizontal timeline showing huma (2026-11-25 14:10) - shared scope autonomy,intervention",
-    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 21:03) - shared scope state,steady",
-    "lane end scribe: 11-26 23:48 (slowest lane)"
+    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope state,steady",
+    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope count,intervention",
+    "scribe: **Convergence Milestone Tracker** - track key milestones (fi (2026-11-26 22:24) - shared scope convergence,cycle,intervention",
+    "lane end scribe: 11-26 22:24 (slowest lane)"
    ]
   },
   {
@@ -110,10 +39,10 @@
    "type": "build",
    "complexity": 1,
    "p_reached": 0.714,
-   "eta": "2026-11-25 21:03",
+   "eta": "2026-11-25 19:40",
    "hours": 3.5,
-   "order": 2,
-   "rank": 5,
+   "order": 1,
+   "rank": 2,
    "title": "Steady-State Declaration Doc",
    "steps": [
     "scaffold the module file",
@@ -121,62 +50,12 @@
     "self-test until AC green",
     "evidence leaf + index line (AC: all 4 se)"
    ],
-   "outcome": "reached ~2026-11-25 21:03 (P=71%)",
+   "outcome": "reached ~2026-11-25 19:40 (P=71%)",
    "consequences": [
-    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 17:33) - shared scope state,steady",
-    "designer: **Convergence Progress Ring** - circular progress indicator  (2026-11-25 21:44) - shared scope criteria,state,steady",
-    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 05:35) - shared scope output,scribe",
-    "lane end scribe: 11-26 23:48 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "designer",
-   "goal": "**Convergence Progress Ring** - circular progress indicator showing percent toward steady-state target (based on 3-criteria check). Animate on update. Verified: ring shows correct percentage; animation smooth under 500ms",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.037,
-   "eta": "2026-11-25 21:44",
-   "hours": 4.32,
-   "order": 2,
-   "rank": 6,
-   "title": "Convergence Progress Ring",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: ring shows correct percentage; animation smooth under 500ms)"
-   ],
-   "outcome": "reached ~2026-11-25 21:44 (P=4%)",
-   "consequences": [
-    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 17:33) - shared scope convergence,progress,state",
-    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 21:03) - shared scope criteria,state,steady",
-    "scribe: **Convergence Glossary** - plain-language glossary of fleet  (2026-11-26 12:35) - shared scope convergence,update",
-    "lane end scribe: 11-26 23:48 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "designer",
-   "goal": "**Agent Autonomy Comparison Cards** - per-agent card showing individual autonomy contribution: passes used, goals completed, re-work count, intervention count. Sortable by any metric. Verified: 8 cards render; sort works",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.037,
-   "eta": "2026-11-26 02:03",
-   "hours": 4.32,
-   "order": 3,
-   "rank": 7,
-   "title": "Agent Autonomy Comparison Cards",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: 8 cards render; sort works)"
-   ],
-   "outcome": "reached ~2026-11-26 02:03 (P=4%)",
-   "consequences": [
-    "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 12:31) - shared scope autonomy,intervention",
-    "designer: **Intervention Timeline** - horizontal timeline showing huma (2026-11-25 14:10) - shared scope autonomy,intervention,showing",
-    "designer: **Goal Complexity Heatmap** - grid view of current cycle goa (2026-11-25 17:25) - shared scope goals,render",
-    "lane end scribe: 11-26 23:48 (slowest lane)"
+    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope state,steady",
+    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
+    "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,scribe",
+    "lane end scribe: 11-26 22:24 (slowest lane)"
    ]
   },
   {
@@ -185,10 +64,10 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.459,
-   "eta": "2026-11-26 02:05",
+   "eta": "2026-11-26 00:42",
    "hours": 5.04,
-   "order": 3,
-   "rank": 8,
+   "order": 2,
+   "rank": 3,
    "title": "Weekly Convergence Digest",
    "steps": [
     "scaffold the module file",
@@ -196,12 +75,12 @@
     "self-test until AC green",
     "evidence leaf + index line (AC: 3 test digests; all metrics present; watch it)"
    ],
-   "outcome": "reached ~2026-11-26 02:05 (P=46%)",
+   "outcome": "reached ~2026-11-26 00:42 (P=46%)",
    "consequences": [
-    "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 12:31) - shared scope convergence,output,paragraph",
-    "designer: **Convergence Metrics Export** - \"Export\" button on converge (2026-11-26 06:22) - shared scope convergence,metrics,summary",
-    "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 09:05) - shared scope output,summary",
-    "lane end scribe: 11-26 23:48 (slowest lane)"
+    "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,summary",
+    "scribe: **Convergence Glossary** - plain-language glossary of fleet  (2026-11-26 11:12) - shared scope convergence,output",
+    "scribe: **Cycle Topic Rationale Writer** - 3-sentence rationale per  (2026-11-26 14:42) - shared scope jsonl,output",
+    "lane end scribe: 11-26 22:24 (slowest lane)"
    ]
   },
   {
@@ -210,10 +89,10 @@
    "type": "build",
    "complexity": 1,
    "p_reached": 0.714,
-   "eta": "2026-11-26 05:35",
+   "eta": "2026-11-26 04:12",
    "hours": 3.5,
-   "order": 4,
-   "rank": 9,
+   "order": 3,
+   "rank": 4,
    "title": "Intervention Reduction Story",
    "steps": [
     "scaffold the module file",
@@ -221,37 +100,136 @@
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-26 05:35 (P=71%)",
+   "outcome": "reached ~2026-11-26 04:12 (P=71%)",
    "consequences": [
-    "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 12:31) - shared scope intervention,narrative,output",
-    "designer: **Intervention Timeline** - horizontal timeline showing huma (2026-11-25 14:10) - shared scope human,intervention,interventions",
-    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 17:33) - shared scope count,intervention",
-    "lane end scribe: 11-26 23:48 (slowest lane)"
+    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope count,intervention",
+    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
+    "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,scribe",
+    "lane end scribe: 11-26 22:24 (slowest lane)"
    ]
   },
   {
-   "agent": "designer",
-   "goal": "**Convergence Metrics Export** - \"Export\" button on convergence panel: downloads current metrics as JSON + generates one-page summary PNG (for human review). Verified: button works; JSON matches API data; PNG renders at ",
+   "agent": "scribe",
+   "goal": "**Cross-Agent Coordination Summary** - per cycle: summarize handoffs, blocks, resolutions. Identify friction points. Output: memory/scribe/coordination-summary-N.md. Verified: cycle-16 has >=5 events; 2 friction points i",
    "type": "build",
-   "complexity": 2,
-   "p_reached": 0.037,
-   "eta": "2026-11-26 06:22",
-   "hours": 4.32,
+   "complexity": 1,
+   "p_reached": 0.714,
+   "eta": "2026-11-26 07:42",
+   "hours": 3.5,
    "order": 4,
-   "rank": 10,
-   "title": "Convergence Metrics Export",
+   "rank": 5,
+   "title": "Cross-Agent Coordination Summary",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
-    "evidence leaf + index line (AC: button works; JSON matches API data; PNG renders at)"
+    "evidence leaf + index line (AC: cycle-16 has >=5 events; 2 friction points i)"
    ],
-   "outcome": "reached ~2026-11-26 06:22 (P=4%)",
+   "outcome": "reached ~2026-11-26 07:42 (P=71%)",
    "consequences": [
-    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 02:05) - shared scope convergence,metrics,summary",
-    "scribe: **Convergence Glossary** - plain-language glossary of fleet  (2026-11-26 12:35) - shared scope convergence,human",
-    "scribe: **Convergence Milestone Tracker** - track key milestones (fi (2026-11-26 23:48) - shared scope convergence,works",
-    "lane end scribe: 11-26 23:48 (slowest lane)"
+    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
+    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope output,summary",
+    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
+    "lane end scribe: 11-26 22:24 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "scribe",
+   "goal": "**Convergence Glossary** - plain-language glossary of fleet convergence terms for human readers. Update when new terms introduced. Output: memory/scribe/convergence-glossary.md. Verified: >=15 terms; each has definition ",
+   "type": "build",
+   "complexity": 1,
+   "p_reached": 0.714,
+   "eta": "2026-11-26 11:12",
+   "hours": 3.5,
+   "order": 5,
+   "rank": 6,
+   "title": "Convergence Glossary",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "evidence leaf + index line (AC: >=15 terms; each has definition)"
+   ],
+   "outcome": "reached ~2026-11-26 11:12 (P=71%)",
+   "consequences": [
+    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
+    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope convergence,output",
+    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope human,output,scribe",
+    "lane end scribe: 11-26 22:24 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "scribe",
+   "goal": "**Cycle Topic Rationale Writer** - 3-sentence rationale per cycle topic: why now, what it builds on, what it enables. Output: memory/scribe/topic-rationales.jsonl. Verified: cycles 14-16 have rationales; each cites prev ",
+   "type": "build",
+   "complexity": 1,
+   "p_reached": 0.714,
+   "eta": "2026-11-26 14:42",
+   "hours": 3.5,
+   "order": 6,
+   "rank": 7,
+   "title": "Cycle Topic Rationale Writer",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "evidence leaf + index line (AC: cycles 14-16 have rationales; each cites prev)"
+   ],
+   "outcome": "reached ~2026-11-26 14:42 (P=71%)",
+   "consequences": [
+    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
+    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope jsonl,output",
+    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
+    "lane end scribe: 11-26 22:24 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "scribe",
+   "goal": "**Fleet Self-Assessment Report** - every 3 cycles: comprehensive assessment with grade per criterion + overall + improvement plan. Output: memory/scribe/self-assessment-N.md. Verified: first covers all criteria; grades j",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.459,
+   "eta": "2026-11-26 19:44",
+   "hours": 5.04,
+   "order": 7,
+   "rank": 8,
+   "title": "Fleet Self-Assessment Report",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "evidence leaf + index line (AC: first covers all criteria; grades j)"
+   ],
+   "outcome": "reached ~2026-11-26 19:44 (P=46%)",
+   "consequences": [
+    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope criteria,output,scribe",
+    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope every,output",
+    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
+    "lane end scribe: 11-26 22:24 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "scribe",
+   "goal": "**Convergence Milestone Tracker** - track key milestones (first cycle <48h, 0-intervention week, steady-state entry). Log with date + context. Output: memory/scribe/milestones.jsonl. Verified: >=3 defined; tracking works",
+   "type": "measurement",
+   "complexity": 1,
+   "p_reached": 0.757,
+   "eta": "2026-11-26 22:24",
+   "hours": 2.67,
+   "order": 8,
+   "rank": 9,
+   "title": "Convergence Milestone Tracker",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-26 22:24 (P=76%)",
+   "consequences": [
+    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope convergence,cycle,intervention",
+    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe,state",
+    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope convergence,jsonl,output",
+    "lane end scribe: 11-26 22:24 (slowest lane)"
    ]
   }
  ],
@@ -259,45 +237,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-25 10:21",
+   "end": "2026-11-25 11:38",
    "completes": 0,
-   "fleet_pct": 81.2,
+   "fleet_pct": 88.8,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-25 10:51",
+   "end": "2026-11-25 12:08",
    "completes": 0,
-   "fleet_pct": 81.2,
+   "fleet_pct": 88.8,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-26 09:51",
-   "completes": 11,
+   "end": "2026-11-26 11:08",
+   "completes": 5,
    "fleet_pct": 95.0,
    "top": [
-    "#1 scribe: Convergence Narrative Generator (2026-11-25 12:31)",
-    "#2 designer: Intervention Timeline (2026-11-25 14:10)",
-    "#3 designer: Goal Complexity Heatmap (2026-11-25 17:25)",
-    "#4 scribe: Cycle Closeout v3 (2026-11-25 17:33)",
-    "#5 scribe: Steady-State Declaration Doc (2026-11-25 21:03)"
+    "#1 scribe: Cycle Closeout v3 (2026-11-25 16:10)",
+    "#2 scribe: Steady-State Declaration Doc (2026-11-25 19:40)",
+    "#3 scribe: Weekly Convergence Digest (2026-11-26 00:42)",
+    "#4 scribe: Intervention Reduction Story (2026-11-26 04:12)",
+    "#5 scribe: Cross-Agent Coordination Summary (2026-11-26 07:42)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-02 09:51",
-   "completes": 15,
+   "end": "2026-12-02 11:08",
+   "completes": 9,
    "fleet_pct": 100.0,
    "top": [
-    "#1 scribe: Convergence Narrative Generator (2026-11-25 12:31)",
-    "#2 designer: Intervention Timeline (2026-11-25 14:10)",
-    "#3 designer: Goal Complexity Heatmap (2026-11-25 17:25)",
-    "#4 scribe: Cycle Closeout v3 (2026-11-25 17:33)",
-    "#5 scribe: Steady-State Declaration Doc (2026-11-25 21:03)"
+    "#1 scribe: Cycle Closeout v3 (2026-11-25 16:10)",
+    "#2 scribe: Steady-State Declaration Doc (2026-11-25 19:40)",
+    "#3 scribe: Weekly Convergence Digest (2026-11-26 00:42)",
+    "#4 scribe: Intervention Reduction Story (2026-11-26 04:12)",
+    "#5 scribe: Cross-Agent Coordination Summary (2026-11-26 07:42)"
    ],
    "next_cycle_candidates": [
     {
@@ -353,15 +331,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-25 09:51",
-   "completes": 15,
+   "end": "2026-12-25 11:08",
+   "completes": 9,
    "fleet_pct": 100.0,
    "top": [
-    "#1 scribe: Convergence Narrative Generator (2026-11-25 12:31)",
-    "#2 designer: Intervention Timeline (2026-11-25 14:10)",
-    "#3 designer: Goal Complexity Heatmap (2026-11-25 17:25)",
-    "#4 scribe: Cycle Closeout v3 (2026-11-25 17:33)",
-    "#5 scribe: Steady-State Declaration Doc (2026-11-25 21:03)"
+    "#1 scribe: Cycle Closeout v3 (2026-11-25 16:10)",
+    "#2 scribe: Steady-State Declaration Doc (2026-11-25 19:40)",
+    "#3 scribe: Weekly Convergence Digest (2026-11-26 00:42)",
+    "#4 scribe: Intervention Reduction Story (2026-11-26 04:12)",
+    "#5 scribe: Cross-Agent Coordination Summary (2026-11-26 07:42)"
    ],
    "next_cycle_candidates": [
     {
@@ -419,154 +397,59 @@
   "archivist": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 09:51"
+   "end": "2026-11-25 11:08"
   },
   "builder": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 09:51"
+   "end": "2026-11-25 11:08"
   },
   "designer": {
-   "done": 5,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-26 06:22"
+   "end": "2026-11-25 11:08"
   },
   "mechanic": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 09:51"
+   "end": "2026-11-25 11:08"
   },
   "orchestrator": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 09:51"
+   "end": "2026-11-25 11:08"
   },
   "researcher": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 09:51"
+   "end": "2026-11-25 11:08"
   },
   "scribe": {
-   "done": 0,
+   "done": 1,
    "total": 10,
-   "end": "2026-11-26 23:48"
+   "end": "2026-11-26 22:24"
   },
   "verifier": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 09:51"
+   "end": "2026-11-25 11:08"
   }
  },
- "level_up_eta": "2026-11-26 23:48",
+ "level_up_eta": "2026-11-26 22:24",
  "plan": {
-  "cycle_state": "in flight: 10 goal(s) open",
-  "level_up_eta": "2026-11-26 23:48",
+  "cycle_state": "in flight: 9 goal(s) open",
+  "level_up_eta": "2026-11-26 22:24",
   "planned": [
-   {
-    "agent": "scribe",
-    "goal": "**Convergence Narrative Generator** - auto 3-paragraph narrative of fleet convergence status using real data from autonomy score + intervention log. Output: memory/ops/convergence-narrative-latest.md. Verified: all data ",
-    "type": "measurement",
-    "complexity": 1,
-    "p_reached": 0.757,
-    "eta": "2026-11-25 12:31",
-    "hours": 2.67,
-    "order": 0,
-    "rank": 1,
-    "title": "Convergence Narrative Generator",
-    "steps": [
-     "instrument or extend the scorer",
-     "two-run delta check",
-     "publish snapshot + report leaf"
-    ],
-    "outcome": "reached ~2026-11-25 12:31 (P~76%)",
-    "consequences": [
-     "designer: **Intervention Timeline** - horizontal timeline showing huma (2026-11-25 14:10) - shared scope autonomy,intervention",
-     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 17:33) - shared scope autonomy,convergence,intervention",
-     "designer: **Agent Autonomy Comparison Cards** - per-agent card showing (2026-11-26 02:03) - shared scope autonomy,intervention",
-     "lane end scribe: 11-26 23:48 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 12:31",
-    "deliverable": {
-     "name": "Convergence Narrative Generator",
-     "stream": "General"
-    },
-    "then": "#4 [scribe] Cycle Closeout v3",
-    "then_eta": "2026-11-25 17:33"
-   },
-   {
-    "agent": "designer",
-    "goal": "**Intervention Timeline** - horizontal timeline showing human interventions over last 30 days. Color by type (unblock=amber, redirect=red, approve=green). Density decreases as autonomy increases. Verified: 10 test entrie",
-    "type": "build",
-    "complexity": 2,
-    "p_reached": 0.037,
-    "eta": "2026-11-25 14:10",
-    "hours": 4.32,
-    "order": 0,
-    "rank": 2,
-    "title": "Intervention Timeline",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: 10 test entrie)"
-    ],
-    "outcome": "reached ~2026-11-25 14:10 (P~4%)",
-    "consequences": [
-     "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 12:31) - shared scope autonomy,intervention",
-     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 17:33) - shared scope autonomy,intervention",
-     "designer: **Agent Autonomy Comparison Cards** - per-agent card showing (2026-11-26 02:03) - shared scope autonomy,intervention,showing",
-     "lane end scribe: 11-26 23:48 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-25 14:10",
-    "deliverable": {
-     "name": "Intervention Timeline",
-     "stream": "General"
-    },
-    "then": "#3 [designer] Goal Complexity Heatmap",
-    "then_eta": "2026-11-25 17:25"
-   },
-   {
-    "agent": "designer",
-    "goal": "**Goal Complexity Heatmap** - grid view of current cycle goals colored by complexity score (1=light green to 5=dark red). Tooltip shows scoring factors. Helps visualize workload balance. Verified: 10 goals render as cell",
-    "type": "measurement",
-    "complexity": 2,
-    "p_reached": 0.046,
-    "eta": "2026-11-25 17:25",
-    "hours": 3.25,
-    "order": 1,
-    "rank": 3,
-    "title": "Goal Complexity Heatmap",
-    "steps": [
-     "instrument or extend the scorer",
-     "two-run delta check",
-     "publish snapshot + report leaf"
-    ],
-    "outcome": "reached ~2026-11-25 17:25 (P~5%)",
-    "consequences": [
-     "designer: **Agent Autonomy Comparison Cards** - per-agent card showing (2026-11-26 02:03) - shared scope goals,render",
-     "lane end scribe: 11-26 23:48 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-25 17:25",
-    "deliverable": {
-     "name": "Goal Complexity Heatmap",
-     "stream": "General"
-    },
-    "then": "#6 [designer] Convergence Progress Ring",
-    "then_eta": "2026-11-25 21:44"
-   },
    {
     "agent": "scribe",
     "goal": "**Cycle Closeout v3** - extend closeout with convergence section: autonomy delta, intervention count vs target, steady-state progress. Compare to prev cycle; flag regressions. Verified: cycle-16 closeout has section; val",
     "type": "build",
     "complexity": 2,
     "p_reached": 0.459,
-    "eta": "2026-11-25 17:33",
+    "eta": "2026-11-25 16:10",
     "hours": 5.04,
-    "order": 1,
-    "rank": 4,
+    "order": 0,
+    "rank": 1,
     "title": "Cycle Closeout v3",
     "steps": [
      "scaffold the module file",
@@ -574,21 +457,21 @@
      "self-test until AC green",
      "evidence leaf + index line (AC: cycle-16 closeout has section; val)"
     ],
-    "outcome": "reached ~2026-11-25 17:33 (P~46%)",
+    "outcome": "reached ~2026-11-25 16:10 (P~46%)",
     "consequences": [
-     "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 12:31) - shared scope autonomy,convergence,intervention",
-     "designer: **Intervention Timeline** - horizontal timeline showing huma (2026-11-25 14:10) - shared scope autonomy,intervention",
-     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 21:03) - shared scope state,steady",
-     "lane end scribe: 11-26 23:48 (slowest lane)"
+     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope state,steady",
+     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope count,intervention",
+     "scribe: **Convergence Milestone Tracker** - track key milestones (fi (2026-11-26 22:24) - shared scope convergence,cycle,intervention",
+     "lane end scribe: 11-26 22:24 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 17:33",
+    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 16:10",
     "deliverable": {
      "name": "Cycle Closeout v3",
      "stream": "General"
     },
-    "then": "#5 [scribe] Steady-State Declaration Doc",
-    "then_eta": "2026-11-25 21:03"
+    "then": "#2 [scribe] Steady-State Declaration Doc",
+    "then_eta": "2026-11-25 19:40"
    },
    {
     "agent": "scribe",
@@ -596,10 +479,10 @@
     "type": "build",
     "complexity": 1,
     "p_reached": 0.714,
-    "eta": "2026-11-25 21:03",
+    "eta": "2026-11-25 19:40",
     "hours": 3.5,
-    "order": 2,
-    "rank": 5,
+    "order": 1,
+    "rank": 2,
     "title": "Steady-State Declaration Doc",
     "steps": [
      "scaffold the module file",
@@ -607,87 +490,21 @@
      "self-test until AC green",
      "evidence leaf + index line (AC: all 4 se)"
     ],
-    "outcome": "reached ~2026-11-25 21:03 (P~71%)",
+    "outcome": "reached ~2026-11-25 19:40 (P~71%)",
     "consequences": [
-     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 17:33) - shared scope state,steady",
-     "designer: **Convergence Progress Ring** - circular progress indicator  (2026-11-25 21:44) - shared scope criteria,state,steady",
-     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 05:35) - shared scope output,scribe",
-     "lane end scribe: 11-26 23:48 (slowest lane)"
+     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope state,steady",
+     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
+     "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,scribe",
+     "lane end scribe: 11-26 22:24 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 21:03",
+    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 19:40",
     "deliverable": {
      "name": "Steady-State Declaration Doc",
      "stream": "General"
     },
-    "then": "#8 [scribe] Weekly Convergence Digest",
-    "then_eta": "2026-11-26 02:05"
-   },
-   {
-    "agent": "designer",
-    "goal": "**Convergence Progress Ring** - circular progress indicator showing percent toward steady-state target (based on 3-criteria check). Animate on update. Verified: ring shows correct percentage; animation smooth under 500ms",
-    "type": "build",
-    "complexity": 2,
-    "p_reached": 0.037,
-    "eta": "2026-11-25 21:44",
-    "hours": 4.32,
-    "order": 2,
-    "rank": 6,
-    "title": "Convergence Progress Ring",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: ring shows correct percentage; animation smooth under 500ms)"
-    ],
-    "outcome": "reached ~2026-11-25 21:44 (P~4%)",
-    "consequences": [
-     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 17:33) - shared scope convergence,progress,state",
-     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 21:03) - shared scope criteria,state,steady",
-     "scribe: **Convergence Glossary** - plain-language glossary of fleet  (2026-11-26 12:35) - shared scope convergence,update",
-     "lane end scribe: 11-26 23:48 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-25 21:44",
-    "deliverable": {
-     "name": "Convergence Progress Ring",
-     "stream": "General"
-    },
-    "then": "#7 [designer] Agent Autonomy Comparison Cards",
-    "then_eta": "2026-11-26 02:03"
-   },
-   {
-    "agent": "designer",
-    "goal": "**Agent Autonomy Comparison Cards** - per-agent card showing individual autonomy contribution: passes used, goals completed, re-work count, intervention count. Sortable by any metric. Verified: 8 cards render; sort works",
-    "type": "build",
-    "complexity": 2,
-    "p_reached": 0.037,
-    "eta": "2026-11-26 02:03",
-    "hours": 4.32,
-    "order": 3,
-    "rank": 7,
-    "title": "Agent Autonomy Comparison Cards",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: 8 cards render; sort works)"
-    ],
-    "outcome": "reached ~2026-11-26 02:03 (P~4%)",
-    "consequences": [
-     "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 12:31) - shared scope autonomy,intervention",
-     "designer: **Intervention Timeline** - horizontal timeline showing huma (2026-11-25 14:10) - shared scope autonomy,intervention,showing",
-     "designer: **Goal Complexity Heatmap** - grid view of current cycle goa (2026-11-25 17:25) - shared scope goals,render",
-     "lane end scribe: 11-26 23:48 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-26 02:03",
-    "deliverable": {
-     "name": "Agent Autonomy Comparison Cards",
-     "stream": "General"
-    },
-    "then": "#10 [designer] Convergence Metrics Export",
-    "then_eta": "2026-11-26 06:22"
+    "then": "#3 [scribe] Weekly Convergence Digest",
+    "then_eta": "2026-11-26 00:42"
    },
    {
     "agent": "scribe",
@@ -695,10 +512,10 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.459,
-    "eta": "2026-11-26 02:05",
+    "eta": "2026-11-26 00:42",
     "hours": 5.04,
-    "order": 3,
-    "rank": 8,
+    "order": 2,
+    "rank": 3,
     "title": "Weekly Convergence Digest",
     "steps": [
      "scaffold the module file",
@@ -706,21 +523,21 @@
      "self-test until AC green",
      "evidence leaf + index line (AC: 3 test digests; all metrics present; watch it)"
     ],
-    "outcome": "reached ~2026-11-26 02:05 (P~46%)",
+    "outcome": "reached ~2026-11-26 00:42 (P~46%)",
     "consequences": [
-     "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 12:31) - shared scope convergence,output,paragraph",
-     "designer: **Convergence Metrics Export** - \"Export\" button on converge (2026-11-26 06:22) - shared scope convergence,metrics,summary",
-     "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 09:05) - shared scope output,summary",
-     "lane end scribe: 11-26 23:48 (slowest lane)"
+     "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,summary",
+     "scribe: **Convergence Glossary** - plain-language glossary of fleet  (2026-11-26 11:12) - shared scope convergence,output",
+     "scribe: **Cycle Topic Rationale Writer** - 3-sentence rationale per  (2026-11-26 14:42) - shared scope jsonl,output",
+     "lane end scribe: 11-26 22:24 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 0/10 done; this goal ends its lane at 2026-11-26 02:05",
+    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 00:42",
     "deliverable": {
      "name": "Weekly Convergence Digest",
      "stream": "General"
     },
-    "then": "#9 [scribe] Intervention Reduction Story",
-    "then_eta": "2026-11-26 05:35"
+    "then": "#4 [scribe] Intervention Reduction Story",
+    "then_eta": "2026-11-26 04:12"
    },
    {
     "agent": "scribe",
@@ -728,10 +545,10 @@
     "type": "build",
     "complexity": 1,
     "p_reached": 0.714,
-    "eta": "2026-11-26 05:35",
+    "eta": "2026-11-26 04:12",
     "hours": 3.5,
-    "order": 4,
-    "rank": 9,
+    "order": 3,
+    "rank": 4,
     "title": "Intervention Reduction Story",
     "steps": [
      "scaffold the module file",
@@ -739,243 +556,374 @@
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-26 05:35 (P~71%)",
+    "outcome": "reached ~2026-11-26 04:12 (P~71%)",
     "consequences": [
-     "scribe: **Convergence Narrative Generator** - auto 3-paragraph narra (2026-11-25 12:31) - shared scope intervention,narrative,output",
-     "designer: **Intervention Timeline** - horizontal timeline showing huma (2026-11-25 14:10) - shared scope human,intervention,interventions",
-     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 17:33) - shared scope count,intervention",
-     "lane end scribe: 11-26 23:48 (slowest lane)"
+     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope count,intervention",
+     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
+     "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,scribe",
+     "lane end scribe: 11-26 22:24 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-26 05:35",
+    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 04:12",
     "deliverable": {
      "name": "Intervention Reduction Story",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 23:48)",
-    "then_eta": "2026-11-26 23:48"
+    "then": "#5 [scribe] Cross-Agent Coordination Summary",
+    "then_eta": "2026-11-26 07:42"
    },
    {
-    "agent": "designer",
-    "goal": "**Convergence Metrics Export** - \"Export\" button on convergence panel: downloads current metrics as JSON + generates one-page summary PNG (for human review). Verified: button works; JSON matches API data; PNG renders at ",
+    "agent": "scribe",
+    "goal": "**Cross-Agent Coordination Summary** - per cycle: summarize handoffs, blocks, resolutions. Identify friction points. Output: memory/scribe/coordination-summary-N.md. Verified: cycle-16 has >=5 events; 2 friction points i",
     "type": "build",
-    "complexity": 2,
-    "p_reached": 0.037,
-    "eta": "2026-11-26 06:22",
-    "hours": 4.32,
+    "complexity": 1,
+    "p_reached": 0.714,
+    "eta": "2026-11-26 07:42",
+    "hours": 3.5,
     "order": 4,
-    "rank": 10,
-    "title": "Convergence Metrics Export",
+    "rank": 5,
+    "title": "Cross-Agent Coordination Summary",
     "steps": [
      "scaffold the module file",
      "implement core logic",
      "self-test until AC green",
-     "evidence leaf + index line (AC: button works; JSON matches API data; PNG renders at)"
+     "evidence leaf + index line (AC: cycle-16 has >=5 events; 2 friction points i)"
     ],
-    "outcome": "reached ~2026-11-26 06:22 (P~4%)",
+    "outcome": "reached ~2026-11-26 07:42 (P~71%)",
     "consequences": [
-     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 02:05) - shared scope convergence,metrics,summary",
-     "scribe: **Convergence Glossary** - plain-language glossary of fleet  (2026-11-26 12:35) - shared scope convergence,human",
-     "scribe: **Convergence Milestone Tracker** - track key milestones (fi (2026-11-26 23:48) - shared scope convergence,works",
-     "lane end scribe: 11-26 23:48 (slowest lane)"
+     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
+     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope output,summary",
+     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
+     "lane end scribe: 11-26 22:24 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-26 06:22",
+    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 07:42",
     "deliverable": {
-     "name": "Convergence Metrics Export",
+     "name": "Cross-Agent Coordination Summary",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 23:48)",
-    "then_eta": "2026-11-26 23:48"
+    "then": "#6 [scribe] Convergence Glossary",
+    "then_eta": "2026-11-26 11:12"
+   },
+   {
+    "agent": "scribe",
+    "goal": "**Convergence Glossary** - plain-language glossary of fleet convergence terms for human readers. Update when new terms introduced. Output: memory/scribe/convergence-glossary.md. Verified: >=15 terms; each has definition ",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.714,
+    "eta": "2026-11-26 11:12",
+    "hours": 3.5,
+    "order": 5,
+    "rank": 6,
+    "title": "Convergence Glossary",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "evidence leaf + index line (AC: >=15 terms; each has definition)"
+    ],
+    "outcome": "reached ~2026-11-26 11:12 (P~71%)",
+    "consequences": [
+     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
+     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope convergence,output",
+     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope human,output,scribe",
+     "lane end scribe: 11-26 22:24 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 11:12",
+    "deliverable": {
+     "name": "Convergence Glossary",
+     "stream": "General"
+    },
+    "then": "#7 [scribe] Cycle Topic Rationale Writer",
+    "then_eta": "2026-11-26 14:42"
+   },
+   {
+    "agent": "scribe",
+    "goal": "**Cycle Topic Rationale Writer** - 3-sentence rationale per cycle topic: why now, what it builds on, what it enables. Output: memory/scribe/topic-rationales.jsonl. Verified: cycles 14-16 have rationales; each cites prev ",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.714,
+    "eta": "2026-11-26 14:42",
+    "hours": 3.5,
+    "order": 6,
+    "rank": 7,
+    "title": "Cycle Topic Rationale Writer",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "evidence leaf + index line (AC: cycles 14-16 have rationales; each cites prev)"
+    ],
+    "outcome": "reached ~2026-11-26 14:42 (P~71%)",
+    "consequences": [
+     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
+     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope jsonl,output",
+     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
+     "lane end scribe: 11-26 22:24 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 14:42",
+    "deliverable": {
+     "name": "Cycle Topic Rationale Writer",
+     "stream": "General"
+    },
+    "then": "#8 [scribe] Fleet Self-Assessment Report",
+    "then_eta": "2026-11-26 19:44"
+   },
+   {
+    "agent": "scribe",
+    "goal": "**Fleet Self-Assessment Report** - every 3 cycles: comprehensive assessment with grade per criterion + overall + improvement plan. Output: memory/scribe/self-assessment-N.md. Verified: first covers all criteria; grades j",
+    "type": "build",
+    "complexity": 2,
+    "p_reached": 0.459,
+    "eta": "2026-11-26 19:44",
+    "hours": 5.04,
+    "order": 7,
+    "rank": 8,
+    "title": "Fleet Self-Assessment Report",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "evidence leaf + index line (AC: first covers all criteria; grades j)"
+    ],
+    "outcome": "reached ~2026-11-26 19:44 (P~46%)",
+    "consequences": [
+     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope criteria,output,scribe",
+     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope every,output",
+     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
+     "lane end scribe: 11-26 22:24 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 19:44",
+    "deliverable": {
+     "name": "Fleet Self-Assessment Report",
+     "stream": "General"
+    },
+    "then": "#9 [scribe] Convergence Milestone Tracker",
+    "then_eta": "2026-11-26 22:24"
+   },
+   {
+    "agent": "scribe",
+    "goal": "**Convergence Milestone Tracker** - track key milestones (first cycle <48h, 0-intervention week, steady-state entry). Log with date + context. Output: memory/scribe/milestones.jsonl. Verified: >=3 defined; tracking works",
+    "type": "measurement",
+    "complexity": 1,
+    "p_reached": 0.757,
+    "eta": "2026-11-26 22:24",
+    "hours": 2.67,
+    "order": 8,
+    "rank": 9,
+    "title": "Convergence Milestone Tracker",
+    "steps": [
+     "instrument or extend the scorer",
+     "two-run delta check",
+     "publish snapshot + report leaf"
+    ],
+    "outcome": "reached ~2026-11-26 22:24 (P~76%)",
+    "consequences": [
+     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope convergence,cycle,intervention",
+     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe,state",
+     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope convergence,jsonl,output",
+     "lane end scribe: 11-26 22:24 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 22:24",
+    "deliverable": {
+     "name": "Convergence Milestone Tracker",
+     "stream": "General"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 22:24)",
+    "then_eta": "2026-11-26 22:24"
    }
   ],
   "horizons": [
    {
     "label": "30m",
     "hours": 0.5,
-    "end": "2026-11-25 10:21",
+    "end": "2026-11-25 11:38",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 65/80 -> 81%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 88%"
    },
    {
     "label": "1h",
     "hours": 1.0,
-    "end": "2026-11-25 10:51",
+    "end": "2026-11-25 12:08",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 65/80 -> 81%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 88%"
    },
    {
     "label": "1d",
     "hours": 24.0,
-    "end": "2026-11-26 09:51",
-    "completes": 10,
+    "end": "2026-11-26 11:08",
+    "completes": 5,
     "top": [
      {
       "rank": 1,
       "agent": "scribe",
-      "title": "Convergence Narrative Generator",
-      "eta": "2026-11-25 12:31",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 12:31"
+      "title": "Cycle Closeout v3",
+      "eta": "2026-11-25 16:10",
+      "type": "build",
+      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 16:10"
      },
      {
       "rank": 2,
-      "agent": "designer",
-      "title": "Intervention Timeline",
-      "eta": "2026-11-25 14:10",
+      "agent": "scribe",
+      "title": "Steady-State Declaration Doc",
+      "eta": "2026-11-25 19:40",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-25 14:10"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 19:40"
      },
      {
       "rank": 3,
-      "agent": "designer",
-      "title": "Goal Complexity Heatmap",
-      "eta": "2026-11-25 17:25",
-      "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-25 17:25"
+      "agent": "scribe",
+      "title": "Weekly Convergence Digest",
+      "eta": "2026-11-26 00:42",
+      "type": "build",
+      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 00:42"
      },
      {
       "rank": 4,
       "agent": "scribe",
-      "title": "Cycle Closeout v3",
-      "eta": "2026-11-25 17:33",
+      "title": "Intervention Reduction Story",
+      "eta": "2026-11-26 04:12",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 17:33"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 04:12"
      },
      {
       "rank": 5,
       "agent": "scribe",
-      "title": "Steady-State Declaration Doc",
-      "eta": "2026-11-25 21:03",
+      "title": "Cross-Agent Coordination Summary",
+      "eta": "2026-11-26 07:42",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 21:03"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 07:42"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 65/80 -> 93%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 95%"
    },
    {
     "label": "1w",
     "hours": 168.0,
-    "end": "2026-12-02 09:51",
-    "completes": 10,
+    "end": "2026-12-02 11:08",
+    "completes": 9,
     "top": [
      {
       "rank": 1,
       "agent": "scribe",
-      "title": "Convergence Narrative Generator",
-      "eta": "2026-11-25 12:31",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 12:31"
+      "title": "Cycle Closeout v3",
+      "eta": "2026-11-25 16:10",
+      "type": "build",
+      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 16:10"
      },
      {
       "rank": 2,
-      "agent": "designer",
-      "title": "Intervention Timeline",
-      "eta": "2026-11-25 14:10",
+      "agent": "scribe",
+      "title": "Steady-State Declaration Doc",
+      "eta": "2026-11-25 19:40",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-25 14:10"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 19:40"
      },
      {
       "rank": 3,
-      "agent": "designer",
-      "title": "Goal Complexity Heatmap",
-      "eta": "2026-11-25 17:25",
-      "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-25 17:25"
+      "agent": "scribe",
+      "title": "Weekly Convergence Digest",
+      "eta": "2026-11-26 00:42",
+      "type": "build",
+      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 00:42"
      },
      {
       "rank": 4,
       "agent": "scribe",
-      "title": "Cycle Closeout v3",
-      "eta": "2026-11-25 17:33",
+      "title": "Intervention Reduction Story",
+      "eta": "2026-11-26 04:12",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 17:33"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 04:12"
      },
      {
       "rank": 5,
       "agent": "scribe",
-      "title": "Steady-State Declaration Doc",
-      "eta": "2026-11-25 21:03",
+      "title": "Cross-Agent Coordination Summary",
+      "eta": "2026-11-26 07:42",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 21:03"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 07:42"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 65/80 -> 93%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 100%"
    },
    {
     "label": "1m",
     "hours": 720.0,
-    "end": "2026-12-25 09:51",
-    "completes": 10,
+    "end": "2026-12-25 11:08",
+    "completes": 9,
     "top": [
      {
       "rank": 1,
       "agent": "scribe",
-      "title": "Convergence Narrative Generator",
-      "eta": "2026-11-25 12:31",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 12:31"
+      "title": "Cycle Closeout v3",
+      "eta": "2026-11-25 16:10",
+      "type": "build",
+      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 16:10"
      },
      {
       "rank": 2,
-      "agent": "designer",
-      "title": "Intervention Timeline",
-      "eta": "2026-11-25 14:10",
+      "agent": "scribe",
+      "title": "Steady-State Declaration Doc",
+      "eta": "2026-11-25 19:40",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-25 14:10"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 19:40"
      },
      {
       "rank": 3,
-      "agent": "designer",
-      "title": "Goal Complexity Heatmap",
-      "eta": "2026-11-25 17:25",
-      "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 5/10 done; this goal ends its lane at 2026-11-25 17:25"
+      "agent": "scribe",
+      "title": "Weekly Convergence Digest",
+      "eta": "2026-11-26 00:42",
+      "type": "build",
+      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 00:42"
      },
      {
       "rank": 4,
       "agent": "scribe",
-      "title": "Cycle Closeout v3",
-      "eta": "2026-11-25 17:33",
+      "title": "Intervention Reduction Story",
+      "eta": "2026-11-26 04:12",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 17:33"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 04:12"
      },
      {
       "rank": 5,
       "agent": "scribe",
-      "title": "Steady-State Declaration Doc",
-      "eta": "2026-11-25 21:03",
+      "title": "Cross-Agent Coordination Summary",
+      "eta": "2026-11-26 07:42",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 0/10 done; this goal ends its lane at 2026-11-25 21:03"
+      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 07:42"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 65/80 -> 93%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 100%"
    }
   ],
   "tree": {
-   "state": "Fleet 65/80 (81%)",
+   "state": "Fleet 71/80 (89%)",
    "gate": "all goals 100%?",
    "branch_taken": "NO - queue in flight",
    "yes": {
     "action": "level-up gate fires -> Lv increments, report written",
     "then": "Orchestrator proposes cycle N+1 from ranked backlog (8 candidates)",
     "first_planned": [
-     "#1 [scribe] Convergence Narrative Generator ~2026-11-25 12:31",
-     "#2 [designer] Intervention Timeline ~2026-11-25 14:10",
-     "#3 [designer] Goal Complexity Heatmap ~2026-11-25 17:25",
-     "#4 [scribe] Cycle Closeout v3 ~2026-11-25 17:33"
+     "#1 [scribe] Cycle Closeout v3 ~2026-11-25 16:10",
+     "#2 [scribe] Steady-State Declaration Doc ~2026-11-25 19:40",
+     "#3 [scribe] Weekly Convergence Digest ~2026-11-26 00:42",
+     "#4 [scribe] Intervention Reduction Story ~2026-11-26 04:12"
     ]
    },
    "no": {
     "action": "keep current queue; next completion gates progress",
-    "then": "when the last lane ends (2026-11-26 23:48) the gate re-checks",
+    "then": "when the last lane ends (2026-11-26 22:24) the gate re-checks",
     "first_planned": [
-     "#1 [scribe] Convergence Narrative Generator ~2026-11-25 12:31",
-     "#2 [designer] Intervention Timeline ~2026-11-25 14:10",
-     "#3 [designer] Goal Complexity Heatmap ~2026-11-25 17:25",
-     "#4 [scribe] Cycle Closeout v3 ~2026-11-25 17:33"
+     "#1 [scribe] Cycle Closeout v3 ~2026-11-25 16:10",
+     "#2 [scribe] Steady-State Declaration Doc ~2026-11-25 19:40",
+     "#3 [scribe] Weekly Convergence Digest ~2026-11-26 00:42",
+     "#4 [scribe] Intervention Reduction Story ~2026-11-26 04:12"
     ]
    }
   },
@@ -1452,7 +1400,7 @@
   ],
   "plan_meta": {
    "sig": "05dcc83e6301",
-   "computed_at": "2026-11-25 09:51:00",
+   "computed_at": "2026-11-25 11:08:07",
    "basis": "live goal ledger + next-10 ETAs + fleet throughput ~20.04 goals/h; recomputed every refresh",
    "delta": [],
    "history": [

@@ -4896,6 +4896,21 @@ def _autoloop_watchdog():
                             epb["reloads"] += 1
                             epb["last_reload"] = now
                             _recover_seat_async(_n, _agx, 'wedged')
+                        if now - epb.get("since", now) >= 2700 and epb.get("reboots", 0) < 1:
+                            # WEDGED-ENGINE ESCALATION (2026-11-25): Scribe/Red case - engine hung,
+                            # Studio HTTP alive, API unload+load can never clear it. Reboot the
+                            # seat host like the TCP-down path does (boot tasks reload its models).
+                            _ip = _remote_host_ip(_agx)
+                            if _ip:
+                                epb["reboots"] = 1
+
+                                def _rbw(ip=_ip, n=_n):
+                                    try:
+                                        okk, det = _winrm_reboot(ip)
+                                        print('[autoloop] reboot %s (%s): %s - %s' % (n, ip, 'OK' if okk else 'FAIL', det[:80]))
+                                    except Exception as e:
+                                        print('[autoloop] reboot %s failed: %s' % (n, str(e)[:80]))
+                                threading.Thread(target=_rbw, daemon=True).start()
                     continue
                 streaks[_n] = streaks.get(_n, 0) + 1
                 ep = episodes.setdefault(_n, {"since": now, "reloads": 0, "last_reload": 0.0})
@@ -4927,6 +4942,20 @@ def _autoloop_watchdog():
                             except Exception as e:
                                 print('[autoloop] reboot %s failed: %s' % (n, str(e)[:80]))
                         threading.Thread(target=_rb, daemon=True).start()
+                # WEDGED-ENGINE ESCALATION (2026-11-25): Studio HTTP alive but engine hung -
+                # API unload+load loops forever once reloads are spent (Scribe/Red 11-25 case).
+                if _st not in (None, 'ok') and streaks[_n] >= 180 and ep["reloads"] >= 3 and ep.get("reboots", 0) < 1:
+                    _ip = _remote_host_ip(_agx)
+                    if _ip:
+                        ep["reboots"] = 1
+
+                        def _rbw2(ip=_ip, n=_n):
+                            try:
+                                okk, det = _winrm_reboot(ip)
+                                print('[autoloop] reboot %s (%s): %s - %s' % (n, ip, 'OK' if okk else 'FAIL', det[:80]))
+                            except Exception as e:
+                                print('[autoloop] reboot %s failed: %s' % (n, str(e)[:80]))
+                        threading.Thread(target=_rbw2, daemon=True).start()
                 if streaks[_n] >= 180 and not ep.get('notified'):   # ~45 min: whole chain exhausted
                     ep['notified'] = True
                     try:

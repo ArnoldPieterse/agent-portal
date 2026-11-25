@@ -404,3 +404,4 @@
 {"ts": "2026-11-25 09:57:50", "file": "ui/cockpit-load-audit.py", "sha": "2986288424", "size": 3562, "snapshot": null}
 {"ts": "2026-11-25 10:14:13", "file": "index.html", "sha": "c2d69ce1fd", "size": 14865, "snapshot": "memory/ops/merge-queue/index.html.c2d69ce1fd"}
 {"ts": "2026-11-25 10:14:13", "file": "memory_mirror.py", "sha": "ef69113e5e", "size": 20284, "snapshot": "memory/ops/merge-queue/memory_mirror.py.ef69113e5e"}
+{"ts": "2026-11-25 11:07:30", "file": "agent_portal.py", "sha": "4456d57852", "size": 355163, "snapshot": "memory/ops/merge-queue/agent_portal.py.4456d57852"}

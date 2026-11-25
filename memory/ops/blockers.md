@@ -183,3 +183,5 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - status=stale age_s=32821.5
 - restart attempted: schtasks -> success=False
 - detail: ERROR: The system cannot find the file specified.
+
+- [2026-11-25] OPS-FIX: Scribe (seat Red IP_RED) wedged engine since 11-24 21:46 - HTTP alive, all completions hang, API unload+load looped forever (busy branch never reaches reboot path). WinRM reboot of Red issued 10:3x; agent_portal.py patched: wedged-engine escalation now reboots seat host after ~45min in BOTH busy and streak branches (_rbw/_rbw2). Portal restarted (patched). RESOLVED 11:2x: Red back, Qwen3.8-27B-Q8_0 resident, scribe-q8 answering in <1s (thinking mode verified via reasoning_content). Note: portal autoloop did not self-load within ~30min of boot - manual native load issued; pythonw log buffering blocked diagnosis.
