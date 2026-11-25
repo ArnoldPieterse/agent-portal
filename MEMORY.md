@@ -13,16 +13,16 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Pixel implemented steady-state UX (data-fleet-state="steady") in ui/app.css + ui/uploads.js; ready for 100% fleet trigger.
-- Builder's 3 workflows confirmed complete: selftests 4/4+4/4+3/3 PASS, run_demo.py e2e OK, ledger closure marker present.
-- Outlet: all 3 goals verified & closed (100%); no open work in my lane as of this pass
-- Researcher 11/11 goals closed; last was #11 task-inventory.md — no open work remains in this lane.
 - Scribe assisted Forge goal #8: fixed discovery false-positive + 9 hardcoded-path executors; runbook audit now 15/15 executable, ledger recor
 - All 11 Builder goals closed; top-3 workflows (wf1/wf2/wf3) selftests green 4/4, 4/4, 3/3 — no open work remains.
 - Archivist lane closed 10/10 (2026-11-26); goals #4,#5,#10 verified on disk, REACHED markers in memory/goals/archivist.md
 - Researcher wrote `memory/goals/post-convergence-forecast-researcher.md` predicting steady-state goal classes for post-100% convergence.
 - Builder: All 11/11 goals verified, selftests green (4/4, 4/4, 3/3 + E2E RC=0), queue empty — no remaining work.
 - Mechanic closed Archivist goal #9 (Knowledge SPOF Audit); both artifacts verified on disk, 14 lanes ranked in matrix JSON.
+- Outlet idle: all 3 goals closed, trigger exit 0 "State already current." Unblocks at L11 or next 10% bucket.
+- Researcher: all 11/11 goals reached, open=0 (last closed #11 task-inventory.md); no remaining work in lane
+- Builder: all 3 workflows green (4/4,4/4,3/3), no open goals; evidence at memory/builder/reconfirm_2026-11-26.md
+- Auto-loop shows stale open state; all 4 Forge goals [REACHED], gates green (cons
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
