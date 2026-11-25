@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 6, "last_reset_by": "", "infinite_budget": true} -->
 <!-- state: - DREAM SYNC 2026-11-25: daily mandatory 5-min all-node quiesce at 03:30 (FleetDreamWatch schtask, memory/mechanic/dream_sync.py): reboots all 4 hosts in window, stuck nodes flagged to incidents + report memory/dream/reports/. Portal gates stream_chat during dream (DREAM chip in header via /api/goals.dream). OUTLET FIX: outlet/pixel/forge lanes were missing from goal_ledger AGENT_FILES - now registered (both modules); outlet cycle-23 goals set (10, 0/10 verified); fleet ledger 96/110.
 {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Memory - hot file. M-CODE map below; detail lives in the memory/ tree (root index: memory/INDEX.md).
@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Wired Pixel's css_drift_check.py into drift_detect.py as Check 4 (CSS selector drift sub-check); all 4 numeric goals already reached.
 - Fleet 89/90; one open goal remains. Pre-staged `2026-11-26-prestaged-milestone-1
 - All 11 Builder goals done; WF1–WF3 selftests green (4/4,4/4,3/3) 2026-11-
 - CSS drift: `.readable` orphan
@@ -23,11 +22,12 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - design_qa.py independently confirmed 12/12 green on 2026-11-26; hot-note "4/7" claim was stale and closed.
 - Researcher task-inventory goal fully closed 2026-11-26; all 5 AC met, deliverables on disk — auto-loop prompt for it is stale.
 - All 10/10 Builder goals closed; WF1 4/
+- Splice lane tracked under designer.md (no separate goal file); confirmed 100% reached post-reboot.
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
 ## Counter
-- inter_agent_replies_this_prompt: 0 / ∞
+- inter_agent_replies_this_prompt: 6 / ∞
 - last_reset_by: —
 <!-- shared-group-memory -->
 [SHARED GROUP MEMORY] inter_agent_replies: 0 | last_reset_by: | infinite_budget: true

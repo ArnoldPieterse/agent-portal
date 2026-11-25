@@ -1,0 +1,456 @@
+{
+  "functional_deps": {
+    "archivist": {
+      "builder": [
+        "pointer:assist-builder-loop-scorer-contract-2026-11-23.md:3",
+        "pointer:assist-builder-loop-scorer-contract-2026-11-23.md:27",
+        "assist:citation-audit-cycle5-v2-report.md:1",
+        "pointer:citation-audit-cycle5-v2-report.md:42",
+        "pointer:citation-audit-cycle5-v2-report.md:48"
+      ],
+      "mechanic": [
+        "pointer:assist-builder-loop-scorer-contract-2026-11-23.md:16",
+        "pointer:citation-audit-cycle5-v2-report.md:39",
+        "pointer:citation-audit-cycle5-v2-report.md:46",
+        "pointer:citation-audit-cycle5-v2-report.md:51",
+        "pointer:citation-audit-cycle5-v2-report.md:59"
+      ],
+      "scribe": [
+        "assist:assist-scribe-archive-nav-auto-2026-11-21.md:4",
+        "pointer:assist-scribe-archive-nav-auto-2026-11-21.md:8",
+        "pointer:assist-scribe-archive-nav-auto-2026-11-21.md:13",
+        "pointer:assist-scribe-archive-nav-auto-2026-11-21.md:26",
+        "assist:assist-scribe-digest-data-2026-11-21.md:1"
+      ],
+      "researcher": [
+        "pointer:assist-scribe-goal5-card-staleness-2026-11-21.md:18",
+        "pointer:assist-scribe-ledger-recovery-2026-11-20.md:10",
+        "pointer:citation-audit-cycle5-v2-report.md:62",
+        "pointer:citation-audit-cycle5-v2-report.md:63",
+        "pointer:citation-audit-cycle5-v2-report.md:66"
+      ],
+      "orchestrator": [
+        "pointer:bundle-v2-item1-staleness-r73-2026-11-14.md:4",
+        "pointer:bundle-v2-item9-queue4-reword-gap-r74-2026-11-14.md:6",
+        "pointer:conflict-report-2026-11-23.md:67",
+        "pointer:conflict-report-2026-11-23.md:69",
+        "pointer:conflict-report-2026-11-23.md:109"
+      ],
+      "designer": [
+        "pointer:bundle-v2-item1-staleness-r73-2026-11-14.md:8",
+        "pointer:bundle-v2-item1-staleness-r73-2026-11-14.md:9",
+        "pointer:bundle-v2-item1-staleness-r73-2026-11-14.md:18",
+        "pointer:citation-audit-cycle5-v2-report.md:36",
+        "pointer:citation-audit-cycle5-v2-report.md:38"
+      ],
+      "verifier": [
+        "pointer:citation-audit-cycle5-v2-report.md:50",
+        "pointer:citation-audit-cycle5-v2-report.md:70",
+        "pointer:citation-audit-cycle5-v2-report.md:71",
+        "pointer:citation-check-exclude-evidence-2026-11-20.md:14",
+        "pointer:citation-triage-2026-11-20.md:31"
+      ],
+      "forge": [
+        "pointer:decay-report.md:10195",
+        "pointer:decay-report.md:10196",
+        "pointer:decay-report.md:10759",
+        "pointer:decay-report.md:10760",
+        "pointer:decay-report.md:10761"
+      ],
+      "outlet": [
+        "pointer:decay-report.md:10397",
+        "pointer:decay-report.md:10770"
+      ],
+      "pixel": [
+        "pointer:decay-report.md:10771",
+        "pointer:decay-report.md:10772"
+      ]
+    },
+    "builder": {
+      "verifier": [
+        "pointer:a11y-stack-r45-closeout-2026-11-14.md:6",
+        "pointer:a4a5-persist-rerun-verified-r41.md:6",
+        "pointer:a4a5-persist-rerun-verified-r41.md:19",
+        "pointer:a4a5-persist-rerun-verified-r41.md:21",
+        "pointer:a6b-anchor-bug-r44-closeout-2026-11-14.md:13"
+      ],
+      "archivist": [
+        "pointer:a11y-stack-r45-closeout-2026-11-14.md:15",
+        "pointer:anomaly-ar14-writepath-evidence.md:12",
+        "assist:archive-audit-assist-archivist-goal10-2026-11-23.md:1",
+        "pointer:archive-audit-assist-archivist-goal10-2026-11-23.md:5",
+        "pointer:archive-audit-assist-archivist-goal10-2026-11-23.md:11"
+      ],
+      "mechanic": [
+        "pointer:a4a5-persist-rerun-verified-r41.md:25",
+        "assist:assist-mechanic-g7-perf-profile-2026-11-20.md:1",
+        "pointer:assist-mechanic-g7-perf-profile-2026-11-20.md:6",
+        "pointer:assist-mechanic-g7-perf-profile-2026-11-20.md:7",
+        "pointer:assist-mechanic-g7-perf-profile-2026-11-20.md:16"
+      ],
+      "designer": [
+        "pointer:a6b-applyset-audit-r47-2026-11-14.md:11",
+        "pointer:arnold-restart-r8.md:2",
+        "pointer:arnold-restart-r8.md:31",
+        "assist:assist-designer-g8g9-verify-close-2026-11-20.md:1",
+        "pointer:assist-designer-g8g9-verify-close-2026-11-20.md:10"
+      ],
+      "researcher": [
+        "assist:assist-researcher-goal1-loop-closure-2026-11-22.md:1",
+        "pointer:assist-researcher-goal1-loop-closure-2026-11-22.md:6",
+        "pointer:assist-researcher-goal1-loop-closure-2026-11-22.md:22",
+        "pointer:dedup-report-archivist8-2026-11-22.md:51",
+        "pointer:dedup-verify-assist-archivist-goal8-2026-11-23.md:5"
+      ],
+      "scribe": [
+        "assist:assist-scribe-goal1-regex-fix-2026-11-20.md:1",
+        "pointer:assist-scribe-goal1-regex-fix-2026-11-20.md:3",
+        "pointer:assist-scribe-goal1-regex-fix-2026-11-20.md:7",
+        "assist:assist-scribe-goal1-regex-fix-2026-11-20.md:9",
+        "assist:assist_scribe_g4_convergence_digests_2026-11-25.md:1"
+      ],
+      "orchestrator": [
+        "pointer:contrast-fix-in-stamp-verified-r59-2026-11-14.md:18",
+        "pointer:convergence_trend_evidence_2026-11-25.md:3",
+        "assist:empty_states_wire_2026-11-19.md:15",
+        "pointer:evidence-efficiency-regen-assist-2026-11-25.md:5",
+        "pointer:evidence_goal1_prioritizer_2026-11-25.md:6"
+      ]
+    },
+    "designer": {
+      "orchestrator": [
+        "pointer:a11y-contrast-audit-2026-11-18.md:31",
+        "attribution:a4-dual-base-verify-r27.md:5",
+        "attribution:cycle12-goal-setting-2026-11-23.md:23",
+        "attribution:dispatch-staleness-confirm-2026-11-24.md:13",
+        "assist:errorstate-wired-2026-11-21.md:3"
+      ],
+      "researcher": [
+        "pointer:a11y-contrast-audit-2026-11-18.md:34",
+        "pointer:auto-loop-no-open-work-2026-11-20.md:3",
+        "pointer:closure-durability-check-2026-11-20.md:8",
+        "pointer:designer-10of10-closure-confirm-2026-11-18.md:9",
+        "assist:design_check_gate_validation-2026-11-17.md:1"
+      ],
+      "builder": [
+        "pointer:a11y-inheritance-ec095107-note-2026-11-14.md:15",
+        "pointer:a4a5-repro-audit-r39b-2026-11-14.md:20",
+        "pointer:a6b-candidate-diff-r47-2026-11-14.md:5",
+        "pointer:a6b-candidate-diff-r47-2026-11-14.md:6",
+        "pointer:a6b-recon-r46-2026-11-14.md:3"
+      ],
+      "mechanic": [
+        "pointer:a4a5-repro-audit-r39b-2026-11-14.md:20",
+        "attribution:ac-a2-2-console-clean-criteria.md:23",
+        "assist:assist-mechic-goals-solutions-2026-11-23.md:1",
+        "assist:assist-mechic-goals-solutions-2026-11-23.md:3",
+        "assist:assist-mechic-goals-solutions-2026-11-23.md:19"
+      ],
+      "verifier": [
+        "pointer:a6b-candidate-diff-r47-2026-11-14.md:5",
+        "pointer:a6b-candidate-diff-r47-2026-11-14.md:6",
+        "pointer:ac-a2-1-ruling.md:2",
+        "pointer:acceptance-2-5-9-10-2026-11-19.md:40",
+        "assist:cockpit-load-gate-spec-impl-fix-2026-11-24.md:1"
+      ],
+      "archivist": [
+        "assist:assist-archivist-goal5-phantom-scan-2026-11-18.md:1",
+        "assist:assist-archivist-goal5-phantom-scan-2026-11-18.md:16",
+        "assist:assist-archivist-goals-ledger-2026-11-23.md:1",
+        "assist:assist-archivist-goals-ledger-2026-11-23.md:4",
+        "assist:assist-archivist-goals2-6-closure-2026-11-23.md:1"
+      ],
+      "scribe": [
+        "assist:assist-scribe-goal3-briefing-ia-2026-11-20.md:1",
+        "pointer:assist-scribe-goal3-briefing-ia-2026-11-20.md:6",
+        "pointer:assist-scribe-goal3-briefing-ia-2026-11-20.md:13",
+        "pointer:assist-scribe-goal3-briefing-ia-2026-11-20.md:16",
+        "assist:cycle3-narrative-assist-2026-11-18.md:1"
+      ],
+      "outlet": [
+        "pointer:hero-fleet-autonomy-convergence-spec.md:5"
+      ]
+    },
+    "mechanic": {
+      "designer": [
+        "pointer:a-r14-write-path-2026-11-13.md:8",
+        "assist:assist-archivist-goal-closure-sweep-2026-11-23.md:25",
+        "assist:assist-designer-goal3-marker-fix-2026-11-18.md:1",
+        "pointer:assist-designer-goal3-marker-fix-2026-11-18.md:3",
+        "pointer:assist-designer-goal3-marker-fix-2026-11-18.md:4"
+      ],
+      "scribe": [
+        "assist:adaptive-probe-poller-2026-11-17.md:3",
+        "assist:assist-scribe-goal1-decisions-v2-reland-2026-11-18.md:1",
+        "pointer:assist-scribe-goal1-decisions-v2-reland-2026-11-18.md:14",
+        "attribution:assist-scribe-goal1-decisions-v2-reland-2026-11-18.md:22",
+        "pointer:assist-scribe-goal1-decisions-v2-reland-2026-11-18.md:29"
+      ],
+      "builder": [
+        "assist:agent-cards-assist-builder-g6-2026-11-23.md:1",
+        "assist:assist-archivist-goal-closure-sweep-2026-11-23.md:25",
+        "assist:assist-builder-goal10-preflight-2026-11-23.md:1",
+        "assist:assist-builder-goal10-preflight-2026-11-23.md:4",
+        "assist:assist-builder-goal10-preflight-2026-11-23.md:22"
+      ],
+      "archivist": [
+        "assist:archivist-goal2-auto-quarantine-evidence-2026-11-23.md:3",
+        "pointer:archivist-goal2-auto-quarantine-evidence-2026-11-23.md:6",
+        "assist:assist-archivist-g2-quarantine-verify-2026-11-23.md:1",
+        "pointer:assist-archivist-g2-quarantine-verify-2026-11-23.md:4",
+        "pointer:assist-archivist-g2-quarantine-verify-2026-11-23.md:8"
+      ],
+      "verifier": [
+        "attribution:assist-scribe-goal1-decisions-v2-reland-2026-11-18.md:3",
+        "pointer:assist-scribe-goal1-decisions-v2-reland-2026-11-18.md:7",
+        "assist:assist-verifier-g1-mode-transition-test-2026-11-24.md:1",
+        "pointer:assist-verifier-g1-mode-transition-test-2026-11-24.md:6",
+        "pointer:assist-verifier-g1-mode-transition-test-2026-11-24.md:14"
+      ],
+      "orchestrator": [
+        "assist:circuit-breaker-built-2026-11-22.md:1",
+        "assist:circuit-breaker-built-2026-11-22.md:4",
+        "attribution:goal7-perf-profile-verified-2026-11-20.md:1",
+        "attribution:mirror-mtime-guard-2026-11-13.md:3",
+        "assist:reboot-drill-evidence-verify-2026-11-19.md:21"
+      ],
+      "researcher": [
+        "attribution:cockpit-feed-schtasks-2026-11-24.md:2",
+        "assist:evidence-cockpit-feed-refresh-task-2026-11-24.md:2",
+        "attribution:fleet-verify-2026-11-14.md:12",
+        "pointer:goal1-consolidated-status-2026-11-23.md:29",
+        "pointer:goal1-deploy-readiness-2026-11-23.md:28"
+      ]
+    },
+    "orchestrator": {
+      "mechanic": [
+        "assist:action-log-implemented-2026-11-24.md:2",
+        "pointer:archivist-goal4-supersession-verify-2026-11-18.md:13",
+        "assist:assist-mechanic-g1-forecast-2026-11-18.md:1",
+        "assist:assist-mechanic-g1-winrm-forecast-2026-11-20.md:1",
+        "pointer:bg-goals-contribution-2026-11-18.md:10"
+      ],
+      "builder": [
+        "pointer:action-log-implemented-2026-11-24.md:14",
+        "pointer:action-log-implemented-2026-11-24.md:38",
+        "assist:assist-builder-convergence-endpoint-efficiency-index-2026-11-25.md:1",
+        "assist:assist-builder-cycle14-verify-2026-11-23.md:1",
+        "assist:assist-designer-goal1-padding-margin-2026-11-19.md:2"
+      ],
+      "designer": [
+        "assist:appcss-hardcoded-colors-verify-2026-11-17.md:1",
+        "assist:assist-designer-goal1-padding-margin-2026-11-19.md:1",
+        "assist:assist-designer-goal1-padding-margin-2026-11-19.md:2",
+        "assist:assist-designer-goal1-tokens-2026-11-19.md:1",
+        "pointer:auto-loop-pass-2026-11-18-contribution.md:16"
+      ],
+      "archivist": [
+        "assist:archive-hygiene-audit-2026-11-22.md:1",
+        "pointer:archive-hygiene-audit-2026-11-22.md:3",
+        "pointer:archive-hygiene-audit-2026-11-22.md:44",
+        "assist:archive-hygiene-audit-2026-11-22.md:58",
+        "assist:archivist-goal4-supersession-verify-2026-11-18.md:2"
+      ],
+      "verifier": [
+        "pointer:archivist-goal4-supersession-verify-2026-11-18.md:12",
+        "assist:deploy-preflight-all-targets-2026-11-23.md:3",
+        "pointer:deploy-preflight-all-targets-2026-11-23.md:16",
+        "pointer:designer-goal8-icons-stale-claim-closed-2026-11-19.md:5",
+        "pointer:INDEX.md:26"
+      ],
+      "scribe": [
+        "pointer:archivist-goal4-supersession-verify-2026-11-18.md:22",
+        "assist:assist-scribe-g1-stale-ledger-fix-2026-11-25.md:1",
+        "assist:assist-scribe-g2-closeout-v3-verify-2026-11-25.md:1",
+        "assist:assist-scribe-g2-closeout-v3-verify-2026-11-25.md:3",
+        "pointer:assist-scribe-g2-closeout-v3-verify-2026-11-25.md:9"
+      ],
+      "researcher": [
+        "pointer:archivist-goal4-supersession-verify-2026-11-18.md:33",
+        "assist:assist-researcher-cycle17-g1-cycle-history-2026-11-25.md:1",
+        "pointer:assist-researcher-cycle17-g1-cycle-history-2026-11-25.md:5",
+        "pointer:assist-researcher-cycle17-g1-cycle-history-2026-11-25.md:7",
+        "pointer:assist-researcher-cycle17-g1-cycle-history-2026-11-25.md:21"
+      ]
+    },
+    "researcher": {
+      "builder": [
+        "pointer:a4a5-crossseat-verify-r39b-2026-11-14.md:9",
+        "pointer:ac-a2-live-leg-status-final-2026-11-14.md:10",
+        "pointer:ac-a2-r24-disk-reconcile-2026-11-14.md:15",
+        "pointer:ac-a2-r26-convergence-check-2026-11-14.md:5",
+        "pointer:archivist-goal4-linkpass-and-orderbug-2026-11-19.md:15"
+      ],
+      "verifier": [
+        "pointer:a4a5-crossseat-verify-r39b-2026-11-14.md:9",
+        "pointer:ac-a2-live-leg-status-final-2026-11-14.md:8",
+        "pointer:ac-a2-r24-disk-reconcile-2026-11-14.md:12",
+        "attribution:ac-a2-r24b-adjudication-2026-11-14.md:22",
+        "pointer:ac-a2-r26-convergence-check-2026-11-14.md:12"
+      ],
+      "designer": [
+        "pointer:a4a5-crossseat-verify-r39b-2026-11-14.md:11",
+        "pointer:ac-a2-r24b-adjudication-2026-11-14.md:11",
+        "pointer:ac-a2-r25-oscillation-consolidated-2026-11-14.md:8",
+        "pointer:ac-a2-r26-convergence-check-2026-11-14.md:12",
+        "pointer:blocker-loop-runbook.md:54"
+      ],
+      "mechanic": [
+        "pointer:a4a5-crossseat-verify-r39b-2026-11-14.md:11",
+        "pointer:ac-a2-live-leg-status-final-2026-11-14.md:7",
+        "pointer:ac-a2-r24-disk-reconcile-2026-11-14.md:9",
+        "pointer:ac-a2-r24-disk-reconcile-2026-11-14.md:21",
+        "pointer:ac-a2-r24b-adjudication-2026-11-14.md:10"
+      ],
+      "archivist": [
+        "assist:archive-hygiene-assist-archivist-goal10-2026-11-22.md:3",
+        "pointer:archive-hygiene-assist-archivist-goal10-2026-11-22.md:14",
+        "assist:archive-hygiene-reverify-assist-archivist-goal10-2026-11-23.md:1",
+        "assist:archive-hygiene-reverify-assist-archivist-goal10-2026-11-23.md:41",
+        "assist:archivist-goal1-orphan-remediation-verify-2026-11-20.md:2"
+      ],
+      "orchestrator": [
+        "attribution:clobber-mechanism-and-final-ip-count-2026-11-15.md:25",
+        "assist:convergence-input-gap-report.md:2",
+        "pointer:convergence-input-gap-report.md:8",
+        "pointer:decay-forecast.md:44",
+        "pointer:decay-forecast.md:50"
+      ],
+      "scribe": [
+        "pointer:dedup-exclude-pattern-assist-2026-11-22.md:33",
+        "attribution:icons-js-absent-verify-2026-11-19.md:21",
+        "pointer:INDEX.md:1",
+        "assist:INDEX.md:18",
+        "pointer:INDEX.md:32"
+      ]
+    },
+    "scribe": {
+      "builder": [
+        "assist:app-css-hex-audit-2026-11-23.md:1",
+        "assist:app-css-hex-audit-2026-11-23.md:26",
+        "pointer:assist-archivist-goal1-freshness-spotcheck-2026-11-20.md:23",
+        "pointer:assist-archivist-goal1-freshness-spotcheck-2026-11-20.md:29",
+        "pointer:assist-archivist-goal1-freshness-verify-2026-11-20.md:21"
+      ],
+      "verifier": [
+        "assist:app-css-tokenization-verify-2026-11-23.md:1",
+        "assist:app-css-tokenization-verify-2026-11-23.md:3",
+        "pointer:compression-fidelity-audit2-2026-11-18.md:11",
+        "attribution:decision_log.md:69",
+        "pointer:designer-goal3-overclaim-verified-2026-11-19.md:11"
+      ],
+      "archivist": [
+        "assist:archive-hygiene-assist-2026-11-22.md:3",
+        "assist:archive-hygiene-assist-2026-11-22.md:13",
+        "assist:archive-hygiene-provenance-fix-2026-11-23.md:4",
+        "pointer:archive-hygiene-provenance-fix-2026-11-23.md:25",
+        "assist:archivist-assist-cycle-narrative-datefix-2026-11-20.md:1"
+      ],
+      "orchestrator": [
+        "attribution:archive-hygiene-provenance-fix-2026-11-23.md:22",
+        "assist:card-staleness-verified-2026-11-23.md:3",
+        "attribution:evidence-mode-narrative-verified-2026-11-24.md:1",
+        "pointer:goal5-distill-progress-2026-11-20.md:23",
+        "attribution:goal7-typography-stale-claim-resolved-2026-11-19.md:18"
+      ],
+      "mechanic": [
+        "pointer:archivist-g3-schtasks-assist-2026-11-23.md:6",
+        "pointer:assist-archivist-goal1-freshness-spotcheck-2026-11-20.md:25",
+        "pointer:assist-archivist-goal1-freshness-spotcheck-2026-11-20.md:30",
+        "assist:assist-mechanic1-forecast-2026-11-17.md:1",
+        "assist:assist-mechanic1-forecast-2026-11-17.md:6"
+      ],
+      "designer": [
+        "pointer:assist-archivist-goal1-freshness-spotcheck-2026-11-20.md:24",
+        "assist:assist-designer-icon-system-2026-11-19.md:1",
+        "assist:assist-designer-icon-system-2026-11-19.md:3",
+        "pointer:assist-designer-icon-system-2026-11-19.md:8",
+        "pointer:assist-designer-icon-system-2026-11-19.md:27"
+      ],
+      "researcher": [
+        "pointer:auto-loop-goal3-recorded-2026-11-18.md:13",
+        "pointer:auto-loop-pass-2026-11-20-quality-refresh.md:7",
+        "pointer:briefing-ia-spec-2026-11-20.md:11",
+        "pointer:closure-confirm-g5-g7-g8-g10-2026-11-21.md:3",
+        "assist:css-tokenization-reverify-assist-2026-11-23.md:1"
+      ]
+    },
+    "verifier": {
+      "builder": [
+        "pointer:a4a5-candidate-persisted-r40-2026-11-14.md:20",
+        "pointer:a4a5-lineage-repro-r39-2026-11-14.md:2",
+        "pointer:a4a5-verify-r38-2026-11-14.md:3",
+        "pointer:a6b-candidate-diff-and-staging-audit-2026-11-14.md:6",
+        "pointer:a6b-candidate-diff-and-staging-audit-2026-11-14.md:7"
+      ],
+      "orchestrator": [
+        "attribution:a4a5-candidate-persisted-r40-2026-11-14.md:26",
+        "attribution:ac-a2-r62-sweep-2026-11-14.md:15",
+        "attribution:ac-a2-r73-final-reconciliation-2026-11-14.md:41",
+        "pointer:ac-a2-r82-record-correction-2026-11-14.md:5",
+        "pointer:black-seat-sweep-r75-2026-11-14.md:20"
+      ],
+      "mechanic": [
+        "pointer:a4a5-candidate-persisted-r40-2026-11-14.md:31",
+        "pointer:a6b-candidate-diff-and-staging-audit-2026-11-14.md:24",
+        "pointer:a6b-candidate-diff-and-staging-audit-2026-11-14.md:25",
+        "pointer:ac-a2-2-live-leg-r82-seat-correction-2026-11-14.md:5",
+        "attribution:ac-a2-2-live-leg-r82-seat-correction-2026-11-14.md:6"
+      ],
+      "designer": [
+        "pointer:a6b-candidate-diff-and-staging-audit-2026-11-14.md:20",
+        "pointer:ac-a2-black-seat-r30.md:20",
+        "pointer:ac-a2-closure-r19.md:8",
+        "pointer:ac-a2-final-state-r20.md:16",
+        "pointer:ac-a2-r23-sweep-2026-11-14.md:16"
+      ],
+      "researcher": [
+        "pointer:ac-a2-final-state-r20.md:15",
+        "pointer:archivist-goal3-decay-two-run-verified-2026-11-23.md:27",
+        "pointer:archivist-goal8-dedup-reverified-2026-11-23.md:15",
+        "pointer:auto-loop-pass-2026-11-25-batch.md:33",
+        "pointer:citation-pilot-audit-2026-11-19.md:33"
+      ],
+      "scribe": [
+        "pointer:ac-a2-r62-sweep-2026-11-14.md:7",
+        "pointer:ac-a2-r62-sweep-2026-11-14.md:11",
+        "pointer:ac-a2-r62-sweep-2026-11-14.md:23",
+        "pointer:ac-a2-r62-sweep-2026-11-14.md:34",
+        "pointer:ac-a2-r66-correction-2026-11-14.md:20"
+      ],
+      "archivist": [
+        "pointer:ac-a2-r81-autocontinue-final-2026-11-14.md:27",
+        "pointer:archive-hygiene-audit-step-archivist-goal10-2026-11-22.md:3",
+        "pointer:archive-hygiene-audit-step-archivist-goal10-2026-11-22.md:8",
+        "pointer:archive-hygiene-audit-step-archivist-goal10-2026-11-22.md:39",
+        "assist:archivist-goal1-quarantine-verify-2026-11-23.md:3"
+      ]
+    },
+    "outlet": {
+      "designer": [
+        "pointer:2026-11-25-fleet-autonomy-convergence.md:22"
+      ]
+    },
+    "pixel": {},
+    "forge": {},
+    "lumen": {},
+    "reel": {},
+    "splice": {}
+  },
+  "in_degree": {
+    "mechanic": 1810,
+    "builder": 985,
+    "designer": 6135,
+    "archivist": 751,
+    "verifier": 1130,
+    "scribe": 1023,
+    "researcher": 928,
+    "orchestrator": 512,
+    "forge": 8,
+    "outlet": 3,
+    "pixel": 2,
+    "lumen": 0,
+    "reel": 0,
+    "splice": 0
+  }
+}
