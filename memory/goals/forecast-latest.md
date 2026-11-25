@@ -1,49 +1,49 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-26 02:03:02 | Fleet: 107/116 (92%) | throughput ~17.7 goals/h
+Generated: 2026-11-26 03:00:03 | Fleet: 107/116 (92%) | throughput ~17.7 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [archivist] Knowledge Single-Point-of-Failure Audit** - ETA 2026-11-26 03:54, P(reached) 84% (verify, cx1)
+**#1 [archivist] Knowledge Single-Point-of-Failure Audit** - ETA 2026-11-26 04:51, P(reached) 84% (verify, cx1)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: lane end outlet: 11-26 11:19 (slowest lane)
-**#2 [forge] Cross-Host Consistency Test** - ETA 2026-11-26 04:34, P(reached) 46% (verify, cx2)
+   consequences: lane end outlet: 11-26 12:16 (slowest lane)
+**#2 [forge] Cross-Host Consistency Test** - ETA 2026-11-26 05:31, P(reached) 46% (verify, cx2)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: lane end outlet: 11-26 11:19 (slowest lane)
-**#3 [builder] Package top-3 workflows** - ETA 2026-11-26 04:37, P(reached) 52% (ops, cx2)
+   consequences: lane end outlet: 11-26 12:16 (slowest lane)
+**#3 [builder] Package top-3 workflows** - ETA 2026-11-26 05:34, P(reached) 52% (ops, cx2)
    steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
-   consequences: researcher: **Repetitive-task inventory + first lead list** - memory/res (2026-11-26 06:25) - shared scope inventory,repetitive,researcher | orchestrator: **Day-7 checkpoint review (2026-12-02)** - level-report styl (2026-11-26 06:45) - shared scope output,stealth | lane end outlet: 11-26 11:19 (slowest lane)
-**#4 [outlet] Milestone Auto-Draft Trigger** - ETA 2026-11-26 05:04, P(reached) 36% (build, cx1)
+   consequences: researcher: **Repetitive-task inventory + first lead list** - memory/res (2026-11-26 07:22) - shared scope inventory,repetitive,researcher | orchestrator: **Day-7 checkpoint review (2026-12-02)** - level-report styl (2026-11-26 07:42) - shared scope output,stealth | lane end outlet: 11-26 12:16 (slowest lane)
+**#4 [outlet] Milestone Auto-Draft Trigger** - ETA 2026-11-26 06:01, P(reached) 36% (build, cx1)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: orchestrator: **Day-7 checkpoint review (2026-12-02)** - level-report styl (2026-11-26 06:45) - shared scope ledger,level,report | lane end outlet: 11-26 11:19 (slowest lane)
-**#5 [researcher] Repetitive-task inventory + first lead list** - ETA 2026-11-26 06:25, P(reached) 7% (build, cx2)
+   consequences: orchestrator: **Day-7 checkpoint review (2026-12-02)** - level-report styl (2026-11-26 07:42) - shared scope ledger,level,report | lane end outlet: 11-26 12:16 (slowest lane)
+**#5 [researcher] Repetitive-task inventory + first lead list** - ETA 2026-11-26 07:22, P(reached) 7% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: builder: **Package top-3 workflows** - from Researcher inventory (mem (2026-11-26 04:37) - shared scope inventory,repetitive,researcher | lane end outlet: 11-26 11:19 (slowest lane)
-**#6 [orchestrator] Day-7 checkpoint review (2026-12-02)** - ETA 2026-11-26 06:45, P(reached) 28% (build, cx2)
+   consequences: builder: **Package top-3 workflows** - from Researcher inventory (mem (2026-11-26 05:34) - shared scope inventory,repetitive,researcher | lane end outlet: 11-26 12:16 (slowest lane)
+**#6 [orchestrator] Day-7 checkpoint review (2026-12-02)** - ETA 2026-11-26 07:42, P(reached) 28% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: builder: **Package top-3 workflows** - from Researcher inventory (mem (2026-11-26 04:37) - shared scope output,stealth | outlet: **Milestone Auto-Draft Trigger** - when fleet level or goal  (2026-11-26 05:04) - shared scope ledger,level,report | lane end outlet: 11-26 11:19 (slowest lane)
-**#7 [outlet] Platform Connection Runbook** - ETA 2026-11-26 06:49, P(reached) 72% (verify, cx1)
+   consequences: builder: **Package top-3 workflows** - from Researcher inventory (mem (2026-11-26 05:34) - shared scope output,stealth | outlet: **Milestone Auto-Draft Trigger** - when fleet level or goal  (2026-11-26 06:01) - shared scope ledger,level,report | lane end outlet: 11-26 12:16 (slowest lane)
+**#7 [outlet] Platform Connection Runbook** - ETA 2026-11-26 07:46, P(reached) 72% (verify, cx1)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: lane end outlet: 11-26 11:19 (slowest lane)
-**#8 [forge] Gate Pipeline Drift Detector** - ETA 2026-11-26 07:05, P(reached) 46% (verify, cx2)
+   consequences: lane end outlet: 11-26 12:16 (slowest lane)
+**#8 [forge] Gate Pipeline Drift Detector** - ETA 2026-11-26 08:02, P(reached) 46% (verify, cx2)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: lane end outlet: 11-26 11:19 (slowest lane)
-**#9 [outlet] Outbound outreach pack (STAGED ONLY)** - ETA 2026-11-26 11:19, P(reached) 16% (build, cx2)
+   consequences: lane end outlet: 11-26 12:16 (slowest lane)
+**#9 [outlet] Outbound outreach pack (STAGED ONLY)** - ETA 2026-11-26 12:16, P(reached) 16% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: lane end outlet: 11-26 11:19 (slowest lane)
+   consequences: lane end outlet: 11-26 12:16 (slowest lane)
 
 ## Planned work (decision tree)
 
 - state: Fleet 107/116 (92%) | gate: all goals 100%? -> **NO - queue in flight**
 - cycle: in flight: 9 goal(s) open
-- #1 [archivist] Knowledge Single-Point-of-Failure Audit ~2026-11-26 03:54 (P~84%) - planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reach | delivers: Knowledge Single-Point-of-Failure Audit
-- #2 [forge] Cross-Host Consistency Test ~2026-11-26 04:34 (P~46%) - planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Cross-Host Consistency Test
-- #3 [builder] Package top-3 workflows ~2026-11-26 04:37 (P~52%) - planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52% | delivers: Package top-3 workflows
-- #4 [outlet] Milestone Auto-Draft Trigger ~2026-11-26 05:04 (P~36%) - planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36 | delivers: Milestone Auto-Draft Trigger
-- #5 [researcher] Repetitive-task inventory + first lead list ~2026-11-26 06:25 (P~7%) - planned as build work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) | delivers: Repetitive-task inventory + first lead list
-- #6 [orchestrator] Day-7 checkpoint review (2026-12-02) ~2026-11-26 06:45 (P~28%) - planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reache | delivers: Day-7 checkpoint review (2026-12-02)
-- #7 [outlet] Platform Connection Runbook ~2026-11-26 06:49 (P~72%) - planned as verify work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) | delivers: Platform Connection Runbook
-- #8 [forge] Gate Pipeline Drift Detector ~2026-11-26 07:05 (P~46%) - planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Gate Pipeline Drift Detector
+- #1 [archivist] Knowledge Single-Point-of-Failure Audit ~2026-11-26 04:51 (P~84%) - planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reach | delivers: Knowledge Single-Point-of-Failure Audit
+- #2 [forge] Cross-Host Consistency Test ~2026-11-26 05:31 (P~46%) - planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Cross-Host Consistency Test
+- #3 [builder] Package top-3 workflows ~2026-11-26 05:34 (P~52%) - planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52% | delivers: Package top-3 workflows
+- #4 [outlet] Milestone Auto-Draft Trigger ~2026-11-26 06:01 (P~36%) - planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36 | delivers: Milestone Auto-Draft Trigger
+- #5 [researcher] Repetitive-task inventory + first lead list ~2026-11-26 07:22 (P~7%) - planned as build work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) | delivers: Repetitive-task inventory + first lead list
+- #6 [orchestrator] Day-7 checkpoint review (2026-12-02) ~2026-11-26 07:42 (P~28%) - planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reache | delivers: Day-7 checkpoint review (2026-12-02)
+- #7 [outlet] Platform Connection Runbook ~2026-11-26 07:46 (P~72%) - planned as verify work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) | delivers: Platform Connection Runbook
+- #8 [forge] Gate Pipeline Drift Detector ~2026-11-26 08:02 (P~46%) - planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Gate Pipeline Drift Detector
 
 ## Functional capability chain (PM view)
 
@@ -145,39 +145,39 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): 05dcc83e6301 @ 11-24 13:46:57, a4f106fb3413 @ 11-24 23:09:16, 05dcc83e6301 @ 11-25 02:40:36, df19237b8736 @ 11-25 17:52:34
 
-## 30m ahead (by 2026-11-26 02:33)
+## 30m ahead (by 2026-11-26 03:30)
 - completes: **0** goal(s) -> fleet ~92%
 - why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 107/116 -> 92%
 
-## 1h ahead (by 2026-11-26 03:03)
+## 1h ahead (by 2026-11-26 04:00)
 - completes: **0** goal(s) -> fleet ~92%
 - why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 107/116 -> 92%
 
-## 1d ahead (by 2026-11-27 02:03)
+## 1d ahead (by 2026-11-27 03:00)
 - completes: **9** goal(s) -> fleet ~100%
-  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-26 03:54)
-  - #2 forge: Cross-Host Consistency Test (2026-11-26 04:34)
-  - #3 builder: Package top-3 workflows (2026-11-26 04:37)
-  - #4 outlet: Milestone Auto-Draft Trigger (2026-11-26 05:04)
-  - #5 researcher: Repetitive-task inventory + first lead list (2026-11-26 06:25)
+  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-26 04:51)
+  - #2 forge: Cross-Host Consistency Test (2026-11-26 05:31)
+  - #3 builder: Package top-3 workflows (2026-11-26 05:34)
+  - #4 outlet: Milestone Auto-Draft Trigger (2026-11-26 06:01)
+  - #5 researcher: Repetitive-task inventory + first lead list (2026-11-26 07:22)
 - why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 107/116 -> 100%
 
-## 1w ahead (by 2026-12-03 02:03)
+## 1w ahead (by 2026-12-03 03:00)
 - completes: **9** goal(s) -> fleet ~100%
-  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-26 03:54)
-  - #2 forge: Cross-Host Consistency Test (2026-11-26 04:34)
-  - #3 builder: Package top-3 workflows (2026-11-26 04:37)
-  - #4 outlet: Milestone Auto-Draft Trigger (2026-11-26 05:04)
-  - #5 researcher: Repetitive-task inventory + first lead list (2026-11-26 06:25)
+  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-26 04:51)
+  - #2 forge: Cross-Host Consistency Test (2026-11-26 05:31)
+  - #3 builder: Package top-3 workflows (2026-11-26 05:34)
+  - #4 outlet: Milestone Auto-Draft Trigger (2026-11-26 06:01)
+  - #5 researcher: Repetitive-task inventory + first lead list (2026-11-26 07:22)
 - why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 107/116 -> 100%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-26 02:03)
+## 1m ahead (by 2026-12-26 03:00)
 - completes: **9** goal(s) -> fleet ~100%
-  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-26 03:54)
-  - #2 forge: Cross-Host Consistency Test (2026-11-26 04:34)
-  - #3 builder: Package top-3 workflows (2026-11-26 04:37)
-  - #4 outlet: Milestone Auto-Draft Trigger (2026-11-26 05:04)
-  - #5 researcher: Repetitive-task inventory + first lead list (2026-11-26 06:25)
+  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-26 04:51)
+  - #2 forge: Cross-Host Consistency Test (2026-11-26 05:31)
+  - #3 builder: Package top-3 workflows (2026-11-26 05:34)
+  - #4 outlet: Milestone Auto-Draft Trigger (2026-11-26 06:01)
+  - #5 researcher: Repetitive-task inventory + first lead list (2026-11-26 07:22)
 - why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 107/116 -> 100%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-

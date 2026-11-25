@@ -1039,3 +1039,4 @@
 {"ts": "2026-11-26 02:30:39", "run": "g-1a2138b8067-f2c834", "missing": {"Orchestrator": "not_loaded"}, "relocated": {"Scribe": "White (local) (home not_loaded)"}}
 {"ts": "2026-11-26 02:47:25", "run": "g-1a2139ad962-fb2b60", "missing": {"Orchestrator": "not_loaded", "Archivist": "unreachable", "Lumen": "unreachable", "Splice": "unreachable", "Reel": "unreachable"}, "relocated": {"Scribe": "White (local) (home not_loaded)", "Designer": "black (home unreachable)"}}
 {"ts": "2026-11-26 02:50:26", "run": "g-1a2139d9be3-abc2f6", "missing": {"Orchestrator": "not_loaded", "Archivist": "unreachable", "Lumen": "unreachable", "Splice": "unreachable", "Reel": "unreachable"}, "relocated": {"Designer": "black (home unreachable)"}}
+{"ts": "2026-11-26 02:52:59", "run": "g-1a2139ff353-4d7b2d", "missing": {"Orchestrator": "not_loaded"}, "relocated": {}}

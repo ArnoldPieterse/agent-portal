@@ -1,6 +1,6 @@
 # Decay report 2026-11-26
 
-Leaves: 11312 | flagged (<0.35): 0
+Leaves: 11313 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9211,7 +9211,6 @@ Leaves: 11312 | flagged (<0.35): 0
 | memory/goals/archive/verifier-cycle16-2026-11-24.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier_15.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier_test-cycle.md | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261124-112401.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-115414.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-115514.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-121030.json | 2 | 0 | n | 0.539 |
@@ -9305,7 +9304,6 @@ Leaves: 11312 | flagged (<0.35): 0
 | memory/mechanic/transition_latency.py | 2 | 0 | n | 0.539 |
 | memory/mechanic/__pycache__/fleet_mode_api.cpython-315.pyc | 2 | 0 | n | 0.539 |
 | memory/mechanic/__pycache__/fleet_mode_infra.cpython-313.pyc | 2 | 0 | n | 0.539 |
-| memory/mechanic/__pycache__/winrm_pool.cpython-315.pyc | 2 | 0 | n | 0.539 |
 | memory/ops/action_log.py | 2 | 0 | n | 0.539 |
 | memory/ops/anomaly-20261124T010411Z.md | 2 | 0 | n | 0.539 |
 | memory/ops/anomaly-20261124T022806Z.md | 2 | 0 | n | 0.539 |
@@ -10176,7 +10174,6 @@ Leaves: 11312 | flagged (<0.35): 0
 | memory/mechanic/winrm_pool.py | 1 | 0 | n | 0.544 |
 | memory/mechanic/winrm_raw_test.py | 1 | 0 | n | 0.544 |
 | memory/mechanic/winrm_remote_exec_test.py | 1 | 0 | n | 0.544 |
-| memory/mechanic/winrm_rotate_log.jsonl | 1 | 0 | n | 0.544 |
 | memory/mechanic/winrm_sspi_client.py | 1 | 0 | n | 0.544 |
 | memory/mechanic/winrm_sspi_exec.py | 1 | 0 | n | 0.544 |
 | memory/mechanic/winrm_sspi_test_all.py | 1 | 0 | n | 0.544 |
@@ -10630,7 +10627,6 @@ Leaves: 11312 | flagged (<0.35): 0
 | memory/verifier/inheritance_report.json | 1 | 0 | n | 0.544 |
 | memory/verifier/long_soak.py | 1 | 0 | n | 0.544 |
 | memory/verifier/long_soak_results.json | 1 | 0 | n | 0.544 |
-| memory/verifier/perf-report.md | 1 | 0 | n | 0.544 |
 | memory/verifier/predictive-accuracy-history.jsonl | 1 | 0 | n | 0.544 |
 | memory/verifier/predictive-accuracy-report.json | 1 | 0 | n | 0.544 |
 | memory/verifier/predictive-accuracy-tracker-verified-2026-11-25.md | 1 | 0 | n | 0.544 |
@@ -10648,7 +10644,6 @@ Leaves: 11312 | flagged (<0.35): 0
 | memory/verifier/seat_draft_check.py | 1 | 0 | n | 0.544 |
 | memory/verifier/seat_draft_check_report.json | 1 | 0 | n | 0.544 |
 | memory/verifier/shared-tree-claim-check-2026-11-15.md | 1 | 0 | n | 0.544 |
-| memory/verifier/slo-history.jsonl | 1 | 0 | n | 0.544 |
 | memory/verifier/slo-report-2026-11-25.md | 1 | 0 | n | 0.544 |
 | memory/verifier/stale-ledger-scribe-closeout-2026-11-25.md | 1 | 0 | n | 0.544 |
 | memory/verifier/steady-state-transition-results.json | 1 | 0 | n | 0.544 |
@@ -10680,7 +10675,10 @@ Leaves: 11312 | flagged (<0.35): 0
 | memory/goals/next10.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-005224.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-020302.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261126-030003.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook-executability-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
+| memory/mechanic/__pycache__/winrm_pool.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
@@ -10705,6 +10703,9 @@ Leaves: 11312 | flagged (<0.35): 0
 | memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-forge-goal8-runbook-audit.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-log-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/verifier/perf-report.md | 0 | 0 | n | 0.550 |
+| memory/verifier/slo-history.jsonl | 0 | 0 | n | 0.550 |
+| memory/verifier/slo-report-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
 | memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md | 11 | 1 | n | 0.558 |
 | memory/designer/designer-goal-proposals-2026-11-16.md | 10 | 1 | n | 0.564 |
