@@ -658,3 +658,16 @@ Goal: 3 remote hosts x 2 LLMs each (dual-resident like White) = 6 new agents. Se
 [DONE 2026-11-24] One-pager planning round: plan_round.py - 3 planners + judge, live model probing, JSON repair; portal serves one_pager in /api/goals/forecast; cards in cockpit-forecast.js + uploads.js. commit a21a72c3
 
 - [x] Archivist (2026-11-24): mode flowtrace - memory/archivist/mode_anomaly.py logs every fleet-mode transition to memory/ops/mode-transitions.jsonl, resolves mode forecasts vs actual transitions (deviation >30min = anomaly), hooked into /api/fleet/cockpit poll. Selftest 5 scenarios OK.
+
+## 2026-11-26 Boot Recovery Pass (Scribe) — IN PROGRESS
+DONE:
+- Startup chain audited: portal_host.vbs (host, cwd C:\Projects\AgentPortal), elev_helper_start.vbs (:8098 helper), _boot_fleet.vbs (+60s and +25m cmd /c C:\Projects\Workspace\fleet_reload.bat hidden), _boot_recover.vbs (+3m schtasks /run /tn RecoverAll), Ollama.lnk
+- ROOT CAUSE this morning: elev_helper_start.vbs pointed at C:\Projects\Workspace\Python (stale path) -> logon chain failed "file not found". FIXED: rewritten to AgentPortal python + elevated_helper.py; backup elev_helper_start.vbs.bak-20261126b
+- :8098 elevated helper relaunched live; netstat LISTENING confirmed
+- Live: portal :8099 up. Goals 108/116 = 93.1%, level 12, goal_reset_pending=false
+OPEN (next turn):
+- T4 prompt drill-down: compare latest prompts actually sent through portal vs memory/llm templates (chat_history_group.json tail; template staleness check)
+- T5: 8 outstanding goals block level 13. Per-agent gaps: 10/11, 8/10, 10/11, 8/11, 10/11. /api/goals agents[] goal-text key not 'goals' - find correct schema, then push owners
+- T6 Pale hot: re-run nvidia-smi temp (last output truncated by context limit) + scan state_collector logs for >75C events today 00:00-12:00
+- T3 multi-persona boot review -> memory/ops/boot_review_20261126.md (scenarios: clean boot, partial seats up, helper fail, VBS path drift, Ollama late start)
+- Consider disabling legacy PortalRun schtask (redundant with portal_host.vbs; last run failed 0x40000004)

@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-11-25T22:38:40.042418",
+  "runtime_seconds": 0.004,
+  "cost_usd": 0.006,
+  "total_posts": 6,
+  "platforms": [
+    "linkedin"
+  ],
+  "posts": [
+    {
+      "date": "2026-12-01",
+      "platform": "linkedin",
+      "post_text": "Stop wasting hours on meetings! Here are 3 quick wins to reclaim your team's focus time. Follow for more tips! Link in bio.",
+      "hashtags": "#productivity #SMB",
+      "topic": "team productivity"
+    },
+    {
+      "date": "2026-12-04",
+      "platform": "linkedin",
+      "post_text": "Stop wasting hours on meetings! Here are 3 quick wins to reclaim your team's focus time. Follow for more tips! Link in bio.",
+      "hashtags": "#productivity #SMB",
+      "topic": "team productivity"
+    },
+    {
+      "date": "2026-12-07",
+      "platform": "linkedin",
+      "post_text": "Stop wasting hours on meetings! Here are 3 quick wins to reclaim your team's focus time. Follow for more tips! Link in bio.",
+      "hashtags": "#productivity #SMB",
+      "topic": "team productivity"
+    },
+    {
+      "date": "2026-12-01",
+      "platform": "linkedin",
+      "post_text": "Remote work isn't working for you? These 2 habits transformed our distributed team's output. Follow for more tips! Save this post.",
+      "hashtags": "#remotework #tips",
+      "topic": "remote work tips"
+    },
+    {
+      "date": "2026-12-04",
+      "platform": "linkedin",
+      "post_text": "Remote work isn't working for you? These 2 habits transformed our distributed team's output. Follow for more tips! Save this post.",
+      "hashtags": "#remotework #tips",
+      "topic": "remote work tips"
+    },
+    {
+      "date": "2026-12-07",
+      "platform": "linkedin",
+      "post_text": "Remote work isn't working for you? These 2 habits transformed our distributed team's output. Follow for more tips! Save this post.",
+      "hashtags": "#remotework #tips",
+      "topic": "remote work tips"
+    }
+  ],
+  "cost": {
+    "model": "rule-based (no LLM)",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "estimated_usd": 0.0,
+    "notes": "template generation for 6 posts"
+  }
+}

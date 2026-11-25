@@ -1,0 +1,13 @@
+warning: Failed to set cwd to temp dir
+== Convergence panel static overflow validator ==
+injected CSS rules parsed: 10 base, breakpoints: [420, 500, 768]px
+  [diag] single-col bp candidates in raw CSS: ['500']
+
+  [PASS] single-column stack covers 375px           — collapse @<=500px (need >=375)
+  [PASS] card min-width:0 (prevents grid blowout)   — on .ckconv-card
+  [PASS] svg max-width:100% + height:auto           — on .ckconv-card svg
+  [PASS] no overflow @ 375px (1-col)                — avail/col≈335px, worst fixed=140px
+  [PASS] no overflow @ 768px (2-col)                — avail/col≈360px, worst fixed=140px
+  [PASS] verify fixture wires panel + script        — fixture present
+
+RESULT: PASS (static no-overflow @375/768)

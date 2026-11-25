@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-11-25T22:38:39.914112",
+  "runtime_seconds": 0.0003,
+  "cost_usd": 0.01,
+  "total_invoices": 5,
+  "total_ledger_entries": 5,
+  "matched": [
+    {
+      "invoice_id": "INV-001",
+      "vendor": "Acme Corp",
+      "amount": 1500.0,
+      "ledger_ref": "Acme Corp",
+      "status": "matched"
+    },
+    {
+      "invoice_id": "INV-002",
+      "vendor": "Widget Inc",
+      "amount": 800.5,
+      "ledger_ref": "Widget Inc",
+      "status": "matched"
+    },
+    {
+      "invoice_id": "INV-003",
+      "vendor": "CloudHost",
+      "amount": 240.0,
+      "ledger_ref": "CloudHost",
+      "status": "matched"
+    },
+    {
+      "invoice_id": "INV-004",
+      "vendor": "Acme Corp",
+      "amount": 3200.0,
+      "ledger_ref": "Acme Corp",
+      "status": "matched"
+    }
+  ],
+  "anomalies": [],
+  "missing_invoice": [
+    {
+      "invoice_id": "INV-005",
+      "vendor": "PrintCo",
+      "amount": 75.0,
+      "status": "no_ledger_match"
+    }
+  ],
+  "missing_ledger": [
+    {
+      "account": "UnknownVendor",
+      "amount": 99.99,
+      "status": "no_invoice_match"
+    }
+  ],
+  "summary": {
+    "match_rate": 80.0,
+    "anomaly_count": 0
+  },
+  "cost": {
+    "model": "rule-based (no LLM)",
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "estimated_usd": 0.0,
+    "notes": "pure computation, zero token cost"
+  }
+}

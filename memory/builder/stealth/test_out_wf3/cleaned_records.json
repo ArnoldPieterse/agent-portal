@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-11-25T22:38:40.168450",
+  "runtime_seconds": 0.0003,
+  "total_input": 4,
+  "accepted": [
+    {},
+    {},
+    {}
+  ],
+  "rejected": [],
+  "duplicates": [
+    "jane@acme.com"
+  ],
+  "summary": {
+    "accept_rate": 75.0,
+    "reject_count": 0,
+    "dup_count": 1
+  },
+  "cost_usd": 0.024
+}
