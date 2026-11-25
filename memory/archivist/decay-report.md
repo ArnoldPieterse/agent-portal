@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 11147 | flagged (<0.35): 0
+Leaves: 11200 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -8623,6 +8623,36 @@ Leaves: 11147 | flagged (<0.35): 0
 | memory/goals/archive/verifier-2026-11-23-cycle9.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier-2026-11-23-prev.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier-2026-11-23.md | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-073849.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-073946.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-074819.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-081801.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-084801.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-085159.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-091427.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-091801.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-093841.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-094801.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-101801.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-103456.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-124754.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-134541.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-140636.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-143507.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-145757.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-150530.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-161510.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-172332.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-175548.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-192156.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-200804.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-201603.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-205539.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-205937.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-211424.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-213943.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-224540.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261123-234730.json | 2 | 0 | n | 0.539 |
 | memory/goals/__pycache__/forecast_engine.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/handoffs/HO-20261123-loop-scorer-contract.md | 2 | 0 | n | 0.539 |
 | memory/levels/level_1_20261123-060001.md | 2 | 0 | n | 0.539 |
@@ -9412,6 +9442,12 @@ Leaves: 11147 | flagged (<0.35): 0
 | memory/goals/archive/verifier-cycle16-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier_15.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier_test-cycle.md | 1 | 0 | n | 0.544 |
+| memory/goals/history/forecast-20261124-005723.json | 1 | 0 | n | 0.544 |
+| memory/goals/history/forecast-20261124-015929.json | 1 | 0 | n | 0.544 |
+| memory/goals/history/forecast-20261124-030002.json | 1 | 0 | n | 0.544 |
+| memory/goals/history/forecast-20261124-040506.json | 1 | 0 | n | 0.544 |
+| memory/goals/history/forecast-20261124-051235.json | 1 | 0 | n | 0.544 |
+| memory/goals/history/forecast-20261124-062139.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261124-072313.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261124-083254.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261124-085855.json | 1 | 0 | n | 0.544 |
@@ -9532,7 +9568,6 @@ Leaves: 11147 | flagged (<0.35): 0
 | memory/ops/closed-loop-readiness-scorecard-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/ops/cockpit-coverage-alert-2026-11-23.md | 1 | 0 | n | 0.544 |
 | memory/ops/cockpit-data-provenance-spec-2026-11-24.md | 1 | 0 | n | 0.544 |
-| memory/ops/cockpit_coverage_check.py | 1 | 0 | n | 0.544 |
 | memory/ops/convergence-ttc.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/convergence-velocity.json | 1 | 0 | n | 0.544 |
 | memory/ops/cycle-efficiency-15.json | 1 | 0 | n | 0.544 |
@@ -10172,9 +10207,22 @@ Leaves: 11147 | flagged (<0.35): 0
 | memory/forge/red-powered-on-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/forge/red_probe.py | 0 | 0 | n | 0.550 |
 | memory/forge/red_probe_last.json | 0 | 0 | n | 0.550 |
+| memory/forge/runbook-audit.json | 0 | 0 | n | 0.550 |
+| memory/forge/runbook_audit.py | 0 | 0 | n | 0.550 |
 | memory/forge/smoke-results.jsonl | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/boot_detection_runbook.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/browser_gate_decision_tree.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/citation_phantom_triage_runbook.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/cycle_transition_checklist.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/designer_ui_change_checklist.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/live_leg_runbook.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/runbook_notes.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/runbook_staleness_audit.py | 0 | 0 | n | 0.550 |
+| memory/forge/runbooks/windows_runbook.py | 0 | 0 | n | 0.550 |
 | memory/forge/__pycache__/canary_deploy.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/forge/__pycache__/gate_metrics.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/forge/__pycache__/red_probe.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/forge/__pycache__/runbook_audit.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/calibration.json | 0 | 0 | n | 0.550 |
 | memory/goals/closed_topics.json | 0 | 0 | n | 0.550 |
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
@@ -10305,6 +10353,8 @@ Leaves: 11147 | flagged (<0.35): 0
 | memory/ops/cadence-changes.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/cadence-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/canned-responses.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/cockpit-coverage-alert-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/ops/cockpit_coverage_check.py | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-digests.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-health.json | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-lock-state.json | 0 | 0 | n | 0.550 |
@@ -10322,6 +10372,7 @@ Leaves: 11147 | flagged (<0.35): 0
 | memory/ops/efficiency-index.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-mode.json | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/gate-metrics.json | 0 | 0 | n | 0.550 |
 | memory/ops/host-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/host-power-events.md | 0 | 0 | n | 0.550 |
 | memory/ops/host-status-note-20261125.md | 0 | 0 | n | 0.550 |
@@ -10378,6 +10429,7 @@ Leaves: 11147 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.9de335bef7 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.a177183feb | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.b35b55ccc3 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.bb7b5a0698 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.f1cb06e56d | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.0425c412b7 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.c2d69ce1fd | 0 | 0 | n | 0.550 |
@@ -10589,11 +10641,11 @@ Leaves: 11147 | flagged (<0.35): 0
 | memory/goals/cycle2-kickoff-2026-11-16.md | 9 | 2 | n | 0.610 |
 | memory/synthesis/2026-11-16-crossassist-evidence-pass.md | 9 | 2 | n | 0.610 |
 | memory/builder/feed_refresh.py | 1 | 1 | n | 0.614 |
-| memory/ops/cockpit-feed.json | 1 | 1 | n | 0.614 |
 | memory/archivist/kg-auto-update-progress-2026-11-17.md | 8 | 2 | n | 0.615 |
 | memory/designer/MEMORY.md | 0 | 1 | n | 0.619 |
 | memory/dna/manifest.json | 0 | 1 | n | 0.619 |
 | memory/goals/archive/builder-2026-11-24.md | 0 | 1 | n | 0.619 |
+| memory/ops/cockpit-feed.json | 0 | 1 | n | 0.619 |
 | memory/ops/fleet-metrics.jsonl | 0 | 1 | n | 0.619 |
 | memory/run-rules.md | 7 | 2 | n | 0.621 |
 | memory/goals/scheduler-cycle6.md | 7 | 2 | n | 0.621 |
@@ -10800,6 +10852,7 @@ Leaves: 11147 | flagged (<0.35): 0
 | memory/forge/canary_deploy.py | 0 | 1 | Y | 0.769 |
 | memory/forge/deploy-log.jsonl | 0 | 1 | Y | 0.769 |
 | memory/forge/gate_health.py | 0 | 1 | Y | 0.769 |
+| memory/forge/gate_metrics.py | 0 | 1 | Y | 0.769 |
 | memory/forge/log.md | 0 | 1 | Y | 0.769 |
 | memory/forge/smoke_suite.py | 0 | 1 | Y | 0.769 |
 | memory/forge/test-topology.json | 0 | 1 | Y | 0.769 |

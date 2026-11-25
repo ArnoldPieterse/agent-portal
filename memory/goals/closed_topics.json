@@ -3234,5 +3234,11 @@
 "text": "**Convergence Bundle-Size + Dead-Code Audit** - Measure and cut the convergence JS footprint: tree-shake unused helpers, remove dead symbols",
 "agent": "pixel",
 "at": "2026-11-25"
+},
+{
+"sig": "7c739dbe99ad9407",
+"text": "**Convergence Gate Metrics** - Add gate-specific metrics to convergence_health.py: % of deploys completed without human intervention, % of s",
+"agent": "forge",
+"at": "2026-11-25"
 }
 ]

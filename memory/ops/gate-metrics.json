@@ -1,0 +1,16 @@
+{
+  "deploys_total": 2,
+  "deploys_autonomous_pct": 100.0,
+  "smoke_host_checks": 12,
+  "smoke_first_try_pass_pct": 0.0,
+  "mttd_minutes": null,
+  "mttr_minutes": null,
+  "failure_events_detected": 0,
+  "failure_events_recovered": 0,
+  "computed_at": "2026-11-25T06:52:51.250680+00:00",
+  "sources": {
+    "deploy_log": "memory\\forge\\deploy-log.jsonl",
+    "smoke_log": "memory\\forge\\smoke-results.jsonl",
+    "incidents": "memory\\ops\\incidents.jsonl"
+  }
+}

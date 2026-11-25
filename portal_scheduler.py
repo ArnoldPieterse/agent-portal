@@ -39,8 +39,9 @@ JOBS = [
     ("cycle_10m",          600,    [PY, os.path.join(HERE, "memory", "ops", "run_steps.py"),
                                    "fleet_probe.py",
                                    "memory/ops/load_probe.py",
-                                   "memory/orchestrator/fleet_mode.py"],
-     "consolidated 2026-11-23: fleet_probe + load_probe; fleet_mode.py added 2026-11-24 (cycle-15 mode controller refresh so /api/fleet/mode + idle dispatch see fresh state)"),
+                                   "memory/orchestrator/fleet_mode.py",
+                                   "memory/builder/feed_refresh.py"],
+     "consolidated 2026-11-23: fleet_probe + load_probe; fleet_mode.py added 2026-11-24 (cycle-15 mode controller refresh so /api/fleet/mode + idle dispatch see fresh state); feed_refresh.py added 2026-11-25 (was never scheduled - cockpit-feed.json sat 35h stale while the coverage gate expected <=5min; it now re-renders the feed from fleet-metrics every 10min)"),
     # ---- every 30 min ----
     ("cycle_30m",          1800,   [PY, os.path.join(HERE, "memory", "ops", "run_steps.py"),
                                    "memory/mechanic/reboot_recover.py",

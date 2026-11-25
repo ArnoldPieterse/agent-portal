@@ -301,7 +301,7 @@ def compute_autonomy_score() -> dict:
     # Fleet readiness (Goal #4: Fleet Health Composite Score)
     fleet = compute_fleet_readiness()
     
-    return {
+    result = {
         "score": score,
         "fleet_readiness": fleet["fleet_readiness"],
         "components": {
@@ -320,6 +320,21 @@ def compute_autonomy_score() -> dict:
             "cycle_durations_count": len(durations),
         },
     }
+    _fold_gate_block(result)  # Forge (goal #7): gate metrics survive re-runs via SSOT file
+    return result
+
+
+def _fold_gate_block(result):
+    """Merge Forge's gate-metrics.json 'gate' block so it is not clobbered on re-run."""
+    try:
+        from pathlib import Path as _P
+        g = _P(__file__).resolve().parent.parent / "ops" / "gate-metrics.json"
+        if g.exists():
+            gate = json.loads(g.read_text(encoding="utf-8", errors="replace"))
+            if isinstance(gate, dict) and gate:
+                result["gate"] = gate
+    except (OSError, ValueError):
+        pass
 
 def selftest():
     """Verify: score in [0,100]; correlates with intervention data (r>0.8)."""

@@ -1,7 +1,7 @@
 {
-  "ts": "2026-11-23T19:13:33.596992+00:00",
-  "health_score": 65,
-  "fleet_status": "DEGRADED",
+  "ts": "2026-11-25T06:59:58.022794+00:00",
+  "health_score": 80,
+  "fleet_status": "NOMINAL",
   "agents": [
     {
       "id": "orchestrator",
@@ -47,31 +47,31 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 49.0,
-      "cpu_pct": 0.0,
-      "temp_c": 39.3
+      "vram_pct": 77.2,
+      "cpu_pct": 3.0,
+      "temp_c": 47.7
     },
     {
       "host": "Red",
-      "vram_pct": null,
-      "cpu_pct": null,
-      "temp_c": null
+      "vram_pct": 46.7,
+      "cpu_pct": 0.0,
+      "temp_c": 41.1
     },
     {
       "host": "Pale",
-      "vram_pct": null,
-      "cpu_pct": null,
-      "temp_c": null
+      "vram_pct": 46.8,
+      "cpu_pct": 42.5,
+      "temp_c": 89.8
     },
     {
       "host": "Black",
-      "vram_pct": null,
-      "cpu_pct": null,
-      "temp_c": null
+      "vram_pct": 0.6,
+      "cpu_pct": 0.0,
+      "temp_c": 43.0
     }
   ],
   "goals": {
-    "fleet_pct": 100.0,
+    "fleet_pct": 98.3,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -134,9 +134,9 @@
         "pct": 0.0
       },
       "archivist": {
-        "total": 10,
-        "verified": 10,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "builder-assist-mechanic2-autorestart-2026-11-19": {
         "total": 1,
@@ -154,8 +154,8 @@
         "pct": 0.0
       },
       "builder": {
-        "total": 20,
-        "verified": 20,
+        "total": 8,
+        "verified": 8,
         "pct": 100.0
       },
       "cross_patterns_report": {
@@ -164,6 +164,31 @@
         "pct": 0.0
       },
       "cycle-proposal": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "cycle15-proposal-2026-11-24": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "cycle16-skeleton-2026-11-24": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "cycle16-skeleton": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "cycle17-skeleton-2026-11-24": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "cycle17-skeleton": {
         "total": 1,
         "verified": 0,
         "pct": 0.0
@@ -293,6 +318,11 @@
         "verified": 0,
         "pct": 0.0
       },
+      "forecast-archivist-cycle12-2026-11-24": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
       "forecast-archivist-g3-closure-2026-11-23": {
         "total": 1,
         "verified": 0,
@@ -358,6 +388,11 @@
         "verified": 0,
         "pct": 0.0
       },
+      "forge": {
+        "total": 7,
+        "verified": 7,
+        "pct": 100.0
+      },
       "mechanic-cycle9-proposals-2026-11-23": {
         "total": 1,
         "verified": 0,
@@ -404,13 +439,28 @@
         "pct": 0.0
       },
       "mechanic": {
+        "total": 10,
+        "verified": 10,
+        "pct": 100.0
+      },
+      "mode-controller-path-divergence-forecast": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "orchestrator": {
         "total": 9,
         "verified": 9,
         "pct": 100.0
       },
-      "orchestrator": {
-        "total": 14,
-        "verified": 14,
+      "outlet": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "pixel": {
+        "total": 7,
+        "verified": 7,
         "pct": 100.0
       },
       "researcher-attempts-cycle3-2026-11-18": {
@@ -422,6 +472,11 @@
         "total": 1,
         "verified": 1,
         "pct": 100.0
+      },
+      "researcher-g1-convergence-forecast-2026-11-25": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "researcher-goal7-cross-host-forecast": {
         "total": 1,
@@ -439,8 +494,8 @@
         "pct": 0.0
       },
       "researcher": {
-        "total": 10,
-        "verified": 10,
+        "total": 2,
+        "verified": 2,
         "pct": 100.0
       },
       "retro-cycle-7": {
@@ -469,8 +524,8 @@
         "pct": 100.0
       },
       "scribe": {
-        "total": 11,
-        "verified": 11,
+        "total": 10,
+        "verified": 10,
         "pct": 100.0
       },
       "slip_prediction_table": {
@@ -483,6 +538,11 @@
         "verified": 2,
         "pct": 100.0
       },
+      "verifier-g1-reconcile-2026-11-24": {
+        "total": 4,
+        "verified": 4,
+        "pct": 100.0
+      },
       "verifier-goal1-perf-baseline-forecast-2026-11-21": {
         "total": 1,
         "verified": 0,
@@ -493,15 +553,62 @@
         "verified": 0,
         "pct": 0.0
       },
+      "verifier-goal5-playwright-gate-unblock-2026-11-24": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
       "verifier": {
-        "total": 16,
-        "verified": 16,
+        "total": 10,
+        "verified": 10,
         "pct": 100.0
       }
     },
-    "total_goals": 100,
-    "total_verified": 100
+    "total_goals": 60,
+    "total_verified": 59
   },
-  "open_blockers": 23,
+  "open_blockers": 28,
+  "autonomous_actions": [
+    {
+      "ts": "2026-11-23T20:56:44Z",
+      "host": "Red",
+      "action": "auto_clean_disk",
+      "trigger": "disk_monitor",
+      "outcome": "success",
+      "detail": "Self-test: disk cleanup 2.1GB freed",
+      "reversible": true,
+      "source_script": ""
+    },
+    {
+      "ts": "2026-11-23T20:56:44Z",
+      "host": "Black",
+      "action": "deploy_canary",
+      "trigger": "health_check",
+      "outcome": "rolled_back",
+      "detail": "Self-test: canary deploy rolled back",
+      "reversible": true,
+      "source_script": ""
+    },
+    {
+      "ts": "2026-11-23T20:56:44Z",
+      "host": "White",
+      "action": "restart_portal",
+      "trigger": "watchdog",
+      "outcome": "success",
+      "detail": "Self-test: portal restart simulated",
+      "reversible": true,
+      "source_script": ""
+    },
+    {
+      "ts": "2026-11-23T18:24:53.547687+00:00",
+      "host": "White",
+      "action": "self_test",
+      "trigger": "manual_schtasks",
+      "outcome": "success",
+      "detail": "action_log.py self-test entry (orchestrator assist)",
+      "reversible": true,
+      "source_script": "memory/ops/action_log.py"
+    }
+  ],
   "source": "feed_refresh.py (local-only, no network)"
 }

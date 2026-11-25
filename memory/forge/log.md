@@ -13,3 +13,4 @@
 | 2026-11-25 14:36:17 | canary_deploy: SUCCESS: _perf_test_file.txt deployed to all 4 hosts (canary=White) |
 | 2026-11-25 14:37:49 | gate_health: ALL GATES HEALTHY |
 | 2026-11-25 14:45:56 | smoke_suite: REMEDIATING White - TCP: PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions |
+| 2026-11-25 06:53 | gate_metrics (goal #7): SELFTEST PASS (4 metrics exact) + live merge into autonomy-score.json 'gate' key; clobber-loop check OK |

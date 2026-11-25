@@ -1,0 +1,82 @@
+{
+  "total_runbooks": 15,
+  "executable": 15,
+  "prose_only": 0,
+  "rows": [
+    {
+      "runbook": "autonomous-remediation-loop-runbook-2026-11-24.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\orchestrator\\remediation_policy.py"
+    },
+    {
+      "runbook": "boot-deployment-runbook.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\ops\\deploy_boot_task.py"
+    },
+    {
+      "runbook": "boot-detection-runbook.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\forge\\runbooks\\boot_detection_runbook.py"
+    },
+    {
+      "runbook": "browser-gate-decision-tree.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\forge\\runbooks\\browser_gate_decision_tree.py"
+    },
+    {
+      "runbook": "citation-phantom-triage-runbook.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\forge\\runbooks\\citation_phantom_triage_runbook.py"
+    },
+    {
+      "runbook": "cycle-transition-checklist.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\forge\\runbooks\\cycle_transition_checklist.py"
+    },
+    {
+      "runbook": "designer-ui-change-checklist.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\forge\\runbooks\\designer_ui_change_checklist.py"
+    },
+    {
+      "runbook": "live-leg-runbook-2026-11-20.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\forge\\runbooks\\live_leg_runbook.py"
+    },
+    {
+      "runbook": "memory-tree-runbook.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\archivist\\orphan_remediation.py"
+    },
+    {
+      "runbook": "runbook-autonomy.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\ops\\fleet_probe_v2.py"
+    },
+    {
+      "runbook": "runbook-cockpit-feed-refresh-deploy-2026-11-24.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\mechanic\\deploy_all_schtasks.py"
+    },
+    {
+      "runbook": "runbook-notes.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\forge\\runbooks\\runbook_notes.py"
+    },
+    {
+      "runbook": "runbook-staleness-audit-2026-11-24.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\forge\\runbooks\\runbook_staleness_audit.py"
+    },
+    {
+      "runbook": "ui-change-checklist.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\designer\\ui_test_harness.py"
+    },
+    {
+      "runbook": "windows-runbook.md",
+      "status": "EXECUTABLE",
+      "script": "memory\\forge\\runbooks\\windows_runbook.py"
+    }
+  ]
+}

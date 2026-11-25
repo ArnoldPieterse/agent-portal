@@ -2184,6 +2184,55 @@ def _cockpit_ts(s):
     except Exception:
         return 0.0
 
+# Remote-seat GPU metrics (2026-11-25, user report "only White shows as used"): the cockpit
+# previously ran nvidia-smi locally and emitted hardcoded nulls for Red/Pale/Black, so every
+# over-time view (fleet-metrics.jsonl via state_collector, Cockpit tab, topology) read them as
+# idle even when busy. Each host's Studio exposes the same GPU facts on /api/system; keys come
+# from agents.json seats with the host_api.py fallback for catalog-only hosts (Black). Results
+# are cached per host 20s so the 15s cockpit TTL does not hammer the LAN, and any failure
+# degrades to null exactly as before (a blind host must never break the cockpit).
+_cockpit_remote_cache = {}   # base -> (ts, {vram_pct, cpu_pct, temp_c} | None)
+_COCKPIT_REMOTE_TTL = 20
+
+def _cockpit_host_key(base):
+    """Studio API key for a fleet base: agents.json seat first, host_api.py fallback."""
+    try:
+        for a in load_agents().get("agents", []):
+            if (a.get("studio") or "").rstrip("/") == base and a.get("api_key"):
+                return str(a["api_key"])
+    except Exception:
+        pass
+    return _fleet_host_key(base)
+
+def _cockpit_remote_probe(base, timeout=4):
+    """One remote host's GPU aggregate via its Studio /api/system (same field semantics as the
+    local nvidia-smi path: vram_pct all-GPU, cpu_pct = GPU util avg, temp_c max). None on any
+    failure."""
+    b = (base or "").rstrip("/")
+    now = time.time()
+    with _fleet_lock:
+        c = _cockpit_remote_cache.get(b)
+    if c and now - c[0] < _COCKPIT_REMOTE_TTL:
+        return c[1]
+    out = None
+    try:
+        req = urllib.request.Request(b + "/api/system",
+                                     headers={"Authorization": "Bearer " + _cockpit_host_key(b)})
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            d = json.load(r)
+        devs = ((d.get("gpu") or {}).get("devices")) or []
+        if devs:
+            tv = sum(float(x.get("memory_total_gb") or 0) for x in devs)
+            uv = sum(float(x.get("vram_used_gb") or 0) for x in devs)
+            out = {"vram_pct": round(100.0 * uv / tv, 1) if tv else None,
+                   "cpu_pct": round(sum(float(x.get("gpu_utilization_pct") or 0) for x in devs) / len(devs), 1),
+                   "temp_c": round(max(float(x.get("temperature_c") or 0) for x in devs), 1)}
+    except Exception:
+        out = None
+    with _fleet_lock:
+        _cockpit_remote_cache[b] = (now, out)
+    return out
+
 
 def _cockpit_snapshot():
     """GET /api/fleet/cockpit: agents (status/current_goal/last_active), hosts (vram/cpu/temp),
@@ -2262,17 +2311,41 @@ def _cockpit_snapshot():
                         break
             except Exception:
                 continue
-    # -- hosts: local seat via nvidia-smi; remote mirror hosts from config (metrics null until probed)
+    # -- hosts: local seat via nvidia-smi; remote seats probed LIVE via their Studio /api/system
+    # (2026-11-25: were hardcoded nulls - "metrics null until probed" but nothing ever probed,
+    # so Red/Pale/Black read as idle in every over-time view even when busy). Parallel + cached;
+    # a failed probe degrades to the old null row, never breaks the cockpit.
     hosts_out = []
     local = _cockpit_gpu_local()
     if local is not None:
         hosts_out.append({"name": "White", **local})
+    remote_rows = []
     try:
         cfg = json.load(open(os.path.join(HERE, "memory_mirror_hosts.json"), encoding="utf-8"))
         for h in cfg.get("hosts", []):
-            hosts_out.append({"name": h.get("name"), "vram_pct": None, "cpu_pct": None, "temp_c": None})
+            ip = str(h.get("ip") or "")
+            remote_rows.append((h.get("name"), ("http://%s:8888" % ip) if ip else ""))
     except Exception:
         pass
+    # Catalog hosts missing from the mirror config still get probed (the catalog is the source
+    # of truth for fleet membership, same rule as the Fleet tab).
+    _seen_bases = {b.rstrip("/") for _, b in remote_rows if b}
+    for b, hn in _fleet_host_names().items():
+        if b.rstrip("/") == STUDIO.rstrip("/") or b.rstrip("/") in _seen_bases:
+            continue
+        remote_rows.append((hn, b))
+    _remote_res = {}
+    with ThreadPoolExecutor(max_workers=max(1, len(remote_rows))) as ex:
+        futs = {ex.submit(_cockpit_remote_probe, b): nm for nm, b in remote_rows if b}
+        for f in as_completed(futs):
+            try:
+                _remote_res[futs[f]] = f.result()
+            except Exception:
+                _remote_res[futs[f]] = None
+    for nm, b in remote_rows:
+        m = _remote_res.get(nm) or {}
+        hosts_out.append({"name": nm, "vram_pct": m.get("vram_pct"),
+                          "cpu_pct": m.get("cpu_pct"), "temp_c": m.get("temp_c")})
     # Circuit breaker state (Mechanic cycle-10 goal 4): MANUAL REVIEW marks surface here.
     try:
         _cbdir = os.path.join(HERE, "memory", "mechanic")

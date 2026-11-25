@@ -31,7 +31,10 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent   # .../memory/ops/fil
 FEED_FILE = REPO_ROOT / "memory" / "ops" / "cockpit-feed.json"
 ALERT_DIR = REPO_ROOT / "memory" / "ops"
 REQUIRED_FIELDS = ["vram_pct", "cpu_pct", "temp_c"]
-DEFAULT_THRESHOLD_MIN = 5.0
+# 2026-11-25: 5 -> 12 min. feed_refresh.py runs in cycle_10m (portal_scheduler.py); a 5-min
+# gate can never pass against a 10-min writer. The underlying host data itself is at most
+# one cycle_30m old - completeness (non-null per host) is the dimension this gate owns.
+DEFAULT_THRESHOLD_MIN = 12.0
 
 def _now():
     return datetime.now(timezone.utc)
