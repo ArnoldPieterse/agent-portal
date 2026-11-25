@@ -1,37 +1,71 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-25 16:44:12 | Fleet: 79/80 (99%) | throughput ~17.7 goals/h
+Generated: 2026-11-25 17:52:34 | Fleet: 101/110 (92%) | throughput ~17.7 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [archivist] Knowledge Single-Point-of-Failure Audit** - ETA 2026-11-25 18:35, P(reached) 84% (verify, cx1)
+**#1 [forge] Runbook Executability Audit** - ETA 2026-11-25 19:37, P(reached) 72% (verify, cx1)
    steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: lane end archivist: 11-25 18:35 (slowest lane)
+   consequences: outlet: **Platform Connection Runbook** - step-by-step runbook for A (2026-11-26 07:43) - shared scope audit,executability,runbook | lane end outlet: 11-26 07:43 (slowest lane)
+**#2 [archivist] Knowledge Single-Point-of-Failure Audit** - ETA 2026-11-25 19:43, P(reached) 84% (verify, cx1)
+   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
+   consequences: lane end outlet: 11-26 07:43 (slowest lane)
+**#3 [outlet] Milestone Auto-Draft Trigger** - ETA 2026-11-25 20:54, P(reached) 36% (build, cx1)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: outlet: **Ship Readiness Digest** - daily digest memory/outlet/diges (2026-11-26 05:58) - shared scope outlet,queue | lane end outlet: 11-26 07:43 (slowest lane)
+**#4 [forge] Cross-Host Consistency Test** - ETA 2026-11-25 22:09, P(reached) 46% (verify, cx2)
+   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
+   consequences: outlet: **Cross-Agent Leverage Map** - memory/outlet/leverage-map.md (2026-11-26 02:56) - shared scope check,cross | lane end outlet: 11-26 07:43 (slowest lane)
+**#5 [outlet] Reply & Repost Templates** - ETA 2026-11-25 23:55, P(reached) 36% (build, cx1)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: lane end outlet: 11-26 07:43 (slowest lane)
+**#6 [forge] Gate Pipeline Drift Detector** - ETA 2026-11-26 00:40, P(reached) 46% (verify, cx2)
+   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
+   consequences: lane end outlet: 11-26 07:43 (slowest lane)
+**#7 [outlet] Cross-Agent Leverage Map** - ETA 2026-11-26 02:56, P(reached) 36% (build, cx1)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: forge: **Cross-Host Consistency Test** - `python memory/forge/consi (2026-11-25 22:09) - shared scope check,cross | lane end outlet: 11-26 07:43 (slowest lane)
+**#8 [outlet] Ship Readiness Digest** - ETA 2026-11-26 05:58, P(reached) 36% (build, cx1)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: outlet: **Milestone Auto-Draft Trigger** - when fleet level or goal  (2026-11-25 20:54) - shared scope outlet,queue | lane end outlet: 11-26 07:43 (slowest lane)
+**#9 [outlet] Platform Connection Runbook** - ETA 2026-11-26 07:43, P(reached) 72% (verify, cx1)
+   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
+   consequences: forge: **Runbook Executability Audit** - Scan all .md runbooks in m (2026-11-25 19:37) - shared scope audit,executability,runbook | lane end outlet: 11-26 07:43 (slowest lane)
 
 ## Planned work (decision tree)
 
-- state: Fleet 79/80 (99%) | gate: all goals 100%? -> **NO - queue in flight**
-- cycle: in flight: 1 goal(s) open
-- #1 [archivist] Knowledge Single-Point-of-Failure Audit ~2026-11-25 18:35 (P~84%) - planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reach | delivers: Knowledge Single-Point-of-Failure Audit
+- state: Fleet 101/110 (92%) | gate: all goals 100%? -> **NO - queue in flight**
+- cycle: in flight: 9 goal(s) open
+- #1 [forge] Runbook Executability Audit ~2026-11-25 19:37 (P~72%) - planned as verify work (cx1); already open on the forge lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Runbook Executability Audit
+- #2 [archivist] Knowledge Single-Point-of-Failure Audit ~2026-11-25 19:43 (P~84%) - planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reach | delivers: Knowledge Single-Point-of-Failure Audit
+- #3 [outlet] Milestone Auto-Draft Trigger ~2026-11-25 20:54 (P~36%) - planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36 | delivers: Milestone Auto-Draft Trigger
+- #4 [forge] Cross-Host Consistency Test ~2026-11-25 22:09 (P~46%) - planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Cross-Host Consistency Test
+- #5 [outlet] Reply & Repost Templates ~2026-11-25 23:55 (P~36%) - planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36 | delivers: Mic access
+- #6 [forge] Gate Pipeline Drift Detector ~2026-11-26 00:40 (P~46%) - planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Gate Pipeline Drift Detector
+- #7 [outlet] Cross-Agent Leverage Map ~2026-11-26 02:56 (P~36%) - planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36 | delivers: Cross-Agent Leverage Map
+- #8 [outlet] Ship Readiness Digest ~2026-11-26 05:58 (P~36%) - planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36 | delivers: Ship Readiness Digest
 
 ## Functional capability chain (PM view)
 
 If each step lands it unblocks the next - this is how the fleet earns its 30-day deliverables:  
 1. **Keyboard navigation** [done] - via orchestrator (reached goal) ~-  -> unlocks: Camera access
 2. **Camera access** [not-planned]  -> unlocks: Mic access
-3. **Mic access** [not-planned]  -> unlocks: Custom input detection
+3. **Mic access** [done] - via outlet (reached goal) ~-  -> unlocks: Custom input detection
 4. **Custom input detection** [not-planned]  -> unlocks: 30-day business outcomes
 
 ## 30-day business outcomes (computed plan)
 
 Self-computed on every refresh from live state (reached capabilities, next-10 ETAs, fleet throughput) - the portal re-plans itself continuously as goals are reached.
 
+**Changed since last plan:**
+- Making phone calls: day 3-10 -> day 2-9 (planned)
+
 - **Generate daily social media posts** - window day 2-4 | planned | lane: fleet
   gates: Custom input detection (not in queue - schedulable ~day 1: seat frees + work time)
 - **Commenting on posts** - window day 1-5 | planned | lane: fleet
   gates: Custom input detection (not in queue - schedulable ~day 1: seat frees + work time)
-- **Making phone calls** - window day 3-10 | planned | lane: fleet
-  gates: Mic access (not in queue - schedulable ~day 1: seat frees + work time)
+- **Making phone calls** - window day 2-9 | planned | lane: fleet
+  gates: Mic access (already reached)
 - **Writing valid tenders** - window day 4-14 | planned | lane: fleet
   gates: Camera access (not in queue - schedulable ~day 1: seat frees + work time)
 - **Predicting markets** - window day 5-20 | planned | lane: researcher
@@ -52,10 +86,10 @@ Same outcomes clamped to days 0-15 and split into concrete steps; an outcome tha
     * day 0-0: gates clear: Custom input detection by ~day 1 (not-planned)
     * day 1-1: setup + first runs of Commenting on posts
     * day 2-5: stabilize - daily runs through day 5
-- **Making phone calls** - day 3-10 | lands fully inside 15d
-    * day 0-0: gates clear: Mic access by ~day 3 (not-planned)
-    * day 3-4: setup + first runs of Making phone calls
-    * day 5: first real delivery (usable output)
+- **Making phone calls** - day 2-9 | lands fully inside 15d
+    * day 2-3: setup + first runs of Making phone calls
+    * day 4: first real delivery (usable output)
+    * day 4-9: stabilize - daily runs through day 9
 - **Writing valid tenders** - day 4-14 | lands fully inside 15d
     * day 0-0: gates clear: Camera access by ~day 4 (not-planned)
     * day 4-6: setup + first runs of Writing valid tenders
@@ -84,11 +118,12 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
     * day 1: scaffold + wire up Commenting on posts; first automated run
     * day 2: daily unattended runs begin
     * day 5: monitor + regression check on the loop
-- **Making phone calls** - day 3-7 -> runs to day 10 | lands fully inside 15d
-    * day 3: Mic access by ~day 3 (not-planned)
-    * day 3: scaffold + wire up Making phone calls
-    * day 4: fix issues; verify first output of Making phone calls
-    * day 5: produce first usable output + record evidence leaf
+- **Making phone calls** - day 2-7 -> runs to day 9 | lands fully inside 15d
+    * day 2: scaffold + wire up Making phone calls
+    * day 3: fix issues; verify first output of Making phone calls
+    * day 4: produce first usable output + record evidence leaf
+    * day 4: daily unattended runs begin
+    * day 7: monitor + regression check on the loop - continues in the 15-day plan to day 9
 - **Writing valid tenders** - day 4-7 -> runs to day 14 | lands fully inside 15d
     * day 4: Camera access by ~day 4 (not-planned)
     * day 4: scaffold + wire up Writing valid tenders
@@ -111,29 +146,41 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 - **Positive money income (net > 0) - prep** - day 1-7 -> runs to day 15 | prep for day 19 start
     * day 0-7: Making money (revenue channels live) (ends day 12) must be done by ~day 12 - continues in the 15-day plan to day 12
 
-plan history (oldest -> newest): a4f106fb3413 @ 11-24 11:55:14, 05dcc83e6301 @ 11-24 13:46:57, a4f106fb3413 @ 11-24 23:09:16, 05dcc83e6301 @ 11-25 02:40:36
+plan history (oldest -> newest): 05dcc83e6301 @ 11-24 13:46:57, a4f106fb3413 @ 11-24 23:09:16, 05dcc83e6301 @ 11-25 02:40:36, df19237b8736 @ 11-25 17:52:34
 
-## 30m ahead (by 2026-11-25 17:14)
-- completes: **0** goal(s) -> fleet ~99%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 79/80 -> 98%
+## 30m ahead (by 2026-11-25 18:22)
+- completes: **0** goal(s) -> fleet ~92%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 101/110 -> 91%
 
-## 1h ahead (by 2026-11-25 17:44)
-- completes: **0** goal(s) -> fleet ~99%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 79/80 -> 98%
+## 1h ahead (by 2026-11-25 18:52)
+- completes: **0** goal(s) -> fleet ~92%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 101/110 -> 91%
 
-## 1d ahead (by 2026-11-26 16:44)
-- completes: **1** goal(s) -> fleet ~100%
-  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 18:35)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 79/80 -> 100%
+## 1d ahead (by 2026-11-26 17:52)
+- completes: **9** goal(s) -> fleet ~100%
+  - #1 forge: Runbook Executability Audit (2026-11-25 19:37)
+  - #2 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 19:43)
+  - #3 outlet: Milestone Auto-Draft Trigger (2026-11-25 20:54)
+  - #4 forge: Cross-Host Consistency Test (2026-11-25 22:09)
+  - #5 outlet: Reply & Repost Templates (2026-11-25 23:55)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 101/110 -> 100%
 
-## 1w ahead (by 2026-12-02 16:44)
-- completes: **1** goal(s) -> fleet ~100%
-  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 18:35)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 79/80 -> 100%
+## 1w ahead (by 2026-12-02 17:52)
+- completes: **9** goal(s) -> fleet ~100%
+  - #1 forge: Runbook Executability Audit (2026-11-25 19:37)
+  - #2 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 19:43)
+  - #3 outlet: Milestone Auto-Draft Trigger (2026-11-25 20:54)
+  - #4 forge: Cross-Host Consistency Test (2026-11-25 22:09)
+  - #5 outlet: Reply & Repost Templates (2026-11-25 23:55)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 101/110 -> 100%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-25 16:44)
-- completes: **1** goal(s) -> fleet ~100%
-  - #1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 18:35)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 79/80 -> 100%
+## 1m ahead (by 2026-12-25 17:52)
+- completes: **9** goal(s) -> fleet ~100%
+  - #1 forge: Runbook Executability Audit (2026-11-25 19:37)
+  - #2 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 19:43)
+  - #3 outlet: Milestone Auto-Draft Trigger (2026-11-25 20:54)
+  - #4 forge: Cross-Host Consistency Test (2026-11-25 22:09)
+  - #5 outlet: Reply & Repost Templates (2026-11-25 23:55)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 101/110 -> 100%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-

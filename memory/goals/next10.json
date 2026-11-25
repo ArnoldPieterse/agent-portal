@@ -1,32 +1,210 @@
 {
  "ok": true,
- "generated": "2026-11-25 16:44:12",
+ "generated": "2026-11-25 17:52:34",
  "fleet": {
-  "done": 79,
-  "total": 80,
-  "pct": 98.8
+  "done": 101,
+  "total": 110,
+  "pct": 91.8
  },
  "throughput_goals_per_hour": 17.69,
  "next10": [
+  {
+   "agent": "forge",
+   "goal": "**Runbook Executability Audit** - Scan all .md runbooks in memory/ops/: for each, check if a corresponding executable script exists (or can be generated). Convert non-executable runbooks into Python scripts with proper e",
+   "type": "verify",
+   "complexity": 1,
+   "p_reached": 0.717,
+   "eta": "2026-11-25 19:37",
+   "hours": 1.75,
+   "order": 0,
+   "rank": 1,
+   "title": "Runbook Executability Audit",
+   "steps": [
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-25 19:37 (P=72%)",
+   "consequences": [
+    "outlet: **Platform Connection Runbook** - step-by-step runbook for A (2026-11-26 07:43) - shared scope audit,executability,runbook",
+    "lane end outlet: 11-26 07:43 (slowest lane)"
+   ]
+  },
   {
    "agent": "archivist",
    "goal": "**Knowledge Single-Point-of-Failure Audit** - Map which agents' knowledge is most frequently cited by others (via pointer/citation lines). Identify any single agent whose absence would break >3 other agents' workflows. O",
    "type": "verify",
    "complexity": 1,
    "p_reached": 0.839,
-   "eta": "2026-11-25 18:35",
+   "eta": "2026-11-25 19:43",
    "hours": 1.85,
    "order": 0,
-   "rank": 1,
+   "rank": 2,
    "title": "Knowledge Single-Point-of-Failure Audit",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-25 18:35 (P=84%)",
+   "outcome": "reached ~2026-11-25 19:43 (P=84%)",
    "consequences": [
-    "lane end archivist: 11-25 18:35 (slowest lane)"
+    "lane end outlet: 11-26 07:43 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "outlet",
+   "goal": "**Milestone Auto-Draft Trigger** - when fleet level or goal pct crosses a threshold (new level, +10% step), Outlet auto-drafts a milestone post from the level report + live ledger data into the queue with correct numbers",
+   "type": "build",
+   "complexity": 1,
+   "p_reached": 0.355,
+   "eta": "2026-11-25 20:54",
+   "hours": 3.02,
+   "order": 0,
+   "rank": 3,
+   "title": "Milestone Auto-Draft Trigger",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-25 20:54 (P=36%)",
+   "consequences": [
+    "outlet: **Ship Readiness Digest** - daily digest memory/outlet/diges (2026-11-26 05:58) - shared scope outlet,queue",
+    "lane end outlet: 11-26 07:43 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "forge",
+   "goal": "**Cross-Host Consistency Test** - `python memory/forge/consistency_check.py`: after any fleet-wide change, verify all 4 hosts report same model version + config hash + service status. Mismatch = auto-alert to Orchestrato",
+   "type": "verify",
+   "complexity": 2,
+   "p_reached": 0.463,
+   "eta": "2026-11-25 22:09",
+   "hours": 2.52,
+   "order": 1,
+   "rank": 4,
+   "title": "Cross-Host Consistency Test",
+   "steps": [
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-25 22:09 (P=46%)",
+   "consequences": [
+    "outlet: **Cross-Agent Leverage Map** - memory/outlet/leverage-map.md (2026-11-26 02:56) - shared scope check,cross",
+    "lane end outlet: 11-26 07:43 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "outlet",
+   "goal": "**Reply & Repost Templates** - per-profile templates for replies and reposts (acknowledge, correct, amplify) written in the profile voice; >=3 template types per registered profile, each <=140 words, lint-clean.",
+   "type": "build",
+   "complexity": 1,
+   "p_reached": 0.355,
+   "eta": "2026-11-25 23:55",
+   "hours": 3.02,
+   "order": 1,
+   "rank": 5,
+   "title": "Reply & Repost Templates",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-25 23:55 (P=36%)",
+   "consequences": [
+    "lane end outlet: 11-26 07:43 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "forge",
+   "goal": "**Gate Pipeline Drift Detector** - `python memory/forge/drift_detect.py`: monitors gate pipeline for silent degradation \u2014 new deps in modified scripts not in requirements.txt, test files added but not registered in smoke",
+   "type": "verify",
+   "complexity": 2,
+   "p_reached": 0.463,
+   "eta": "2026-11-26 00:40",
+   "hours": 2.52,
+   "order": 2,
+   "rank": 6,
+   "title": "Gate Pipeline Drift Detector",
+   "steps": [
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-26 00:40 (P=46%)",
+   "consequences": [
+    "lane end outlet: 11-26 07:43 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "outlet",
+   "goal": "**Cross-Agent Leverage Map** - memory/outlet/leverage-map.md: which agent to DM for what (trends->Researcher, KB->Archivist, visuals->Designer, compression->Scribe, accuracy->Builder/Mechanic, fact-check->Verifier, prior",
+   "type": "build",
+   "complexity": 1,
+   "p_reached": 0.355,
+   "eta": "2026-11-26 02:56",
+   "hours": 3.02,
+   "order": 2,
+   "rank": 7,
+   "title": "Cross-Agent Leverage Map",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-26 02:56 (P=36%)",
+   "consequences": [
+    "forge: **Cross-Host Consistency Test** - `python memory/forge/consi (2026-11-25 22:09) - shared scope check,cross",
+    "lane end outlet: 11-26 07:43 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "outlet",
+   "goal": "**Ship Readiness Digest** - daily digest memory/outlet/digests/YYYY-MM-DD.md: queue status (ready/pending/needs-connection), blocked items with named unblockers, last-7-days shipped; >=1 digest exists matching live queue",
+   "type": "build",
+   "complexity": 1,
+   "p_reached": 0.355,
+   "eta": "2026-11-26 05:58",
+   "hours": 3.02,
+   "order": 3,
+   "rank": 8,
+   "title": "Ship Readiness Digest",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-26 05:58 (P=36%)",
+   "consequences": [
+    "outlet: **Milestone Auto-Draft Trigger** - when fleet level or goal  (2026-11-25 20:54) - shared scope outlet,queue",
+    "lane end outlet: 11-26 07:43 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "outlet",
+   "goal": "**Platform Connection Runbook** - step-by-step runbook for Arnold to connect a platform account (auth, rate limits, API/tool needed) with the fleet default profile pre-wired; passes Mechanic's executability audit (every ",
+   "type": "verify",
+   "complexity": 1,
+   "p_reached": 0.717,
+   "eta": "2026-11-26 07:43",
+   "hours": 1.75,
+   "order": 4,
+   "rank": 9,
+   "title": "Platform Connection Runbook",
+   "steps": [
+    "build the test battery / audit script",
+    "run against live sources",
+    "record verdict + evidence leaf"
+   ],
+   "outcome": "reached ~2026-11-26 07:43 (P=72%)",
+   "consequences": [
+    "forge: **Runbook Executability Audit** - Scan all .md runbooks in m (2026-11-25 19:37) - shared scope audit,executability,runbook",
+    "lane end outlet: 11-26 07:43 (slowest lane)"
    ]
   }
  ],
@@ -34,37 +212,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-25 17:14",
+   "end": "2026-11-25 18:22",
    "completes": 0,
-   "fleet_pct": 98.8,
+   "fleet_pct": 91.8,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-25 17:44",
+   "end": "2026-11-25 18:52",
    "completes": 0,
-   "fleet_pct": 98.8,
+   "fleet_pct": 91.8,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-26 16:44",
-   "completes": 1,
+   "end": "2026-11-26 17:52",
+   "completes": 9,
    "fleet_pct": 100.0,
    "top": [
-    "#1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 18:35)"
+    "#1 forge: Runbook Executability Audit (2026-11-25 19:37)",
+    "#2 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 19:43)",
+    "#3 outlet: Milestone Auto-Draft Trigger (2026-11-25 20:54)",
+    "#4 forge: Cross-Host Consistency Test (2026-11-25 22:09)",
+    "#5 outlet: Reply & Repost Templates (2026-11-25 23:55)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-02 16:44",
-   "completes": 1,
+   "end": "2026-12-02 17:52",
+   "completes": 9,
    "fleet_pct": 100.0,
    "top": [
-    "#1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 18:35)"
+    "#1 forge: Runbook Executability Audit (2026-11-25 19:37)",
+    "#2 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 19:43)",
+    "#3 outlet: Milestone Auto-Draft Trigger (2026-11-25 20:54)",
+    "#4 forge: Cross-Host Consistency Test (2026-11-25 22:09)",
+    "#5 outlet: Reply & Repost Templates (2026-11-25 23:55)"
    ],
    "next_cycle_candidates": [
     {
@@ -120,11 +306,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-25 16:44",
-   "completes": 1,
+   "end": "2026-12-25 17:52",
+   "completes": 9,
    "fleet_pct": 100.0,
    "top": [
-    "#1 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 18:35)"
+    "#1 forge: Runbook Executability Audit (2026-11-25 19:37)",
+    "#2 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 19:43)",
+    "#3 outlet: Milestone Auto-Draft Trigger (2026-11-25 20:54)",
+    "#4 forge: Cross-Host Consistency Test (2026-11-25 22:09)",
+    "#5 outlet: Reply & Repost Templates (2026-11-25 23:55)"
    ],
    "next_cycle_candidates": [
     {
@@ -182,164 +372,523 @@
   "archivist": {
    "done": 9,
    "total": 10,
-   "end": "2026-11-25 18:35"
+   "end": "2026-11-25 19:43"
   },
   "builder": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 16:44"
+   "end": "2026-11-25 17:52"
   },
   "designer": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 16:44"
+   "end": "2026-11-25 17:52"
+  },
+  "forge": {
+   "done": 7,
+   "total": 10,
+   "end": "2026-11-26 00:40"
   },
   "mechanic": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 16:44"
+   "end": "2026-11-25 17:52"
   },
   "orchestrator": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 16:44"
+   "end": "2026-11-25 17:52"
+  },
+  "outlet": {
+   "done": 5,
+   "total": 10,
+   "end": "2026-11-26 07:43"
+  },
+  "pixel": {
+   "done": 10,
+   "total": 10,
+   "end": "2026-11-25 17:52"
   },
   "researcher": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 16:44"
+   "end": "2026-11-25 17:52"
   },
   "scribe": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 16:44"
+   "end": "2026-11-25 17:52"
   },
   "verifier": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 16:44"
+   "end": "2026-11-25 17:52"
   }
  },
- "level_up_eta": "2026-11-25 18:35",
+ "level_up_eta": "2026-11-26 07:43",
  "plan": {
-  "cycle_state": "in flight: 1 goal(s) open",
-  "level_up_eta": "2026-11-25 18:35",
+  "cycle_state": "in flight: 9 goal(s) open",
+  "level_up_eta": "2026-11-26 07:43",
   "planned": [
+   {
+    "agent": "forge",
+    "goal": "**Runbook Executability Audit** - Scan all .md runbooks in memory/ops/: for each, check if a corresponding executable script exists (or can be generated). Convert non-executable runbooks into Python scripts with proper e",
+    "type": "verify",
+    "complexity": 1,
+    "p_reached": 0.717,
+    "eta": "2026-11-25 19:37",
+    "hours": 1.75,
+    "order": 0,
+    "rank": 1,
+    "title": "Runbook Executability Audit",
+    "steps": [
+     "build the test battery / audit script",
+     "run against live sources",
+     "record verdict + evidence leaf"
+    ],
+    "outcome": "reached ~2026-11-25 19:37 (P~72%)",
+    "consequences": [
+     "outlet: **Platform Connection Runbook** - step-by-step runbook for A (2026-11-26 07:43) - shared scope audit,executability,runbook",
+     "lane end outlet: 11-26 07:43 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as verify work (cx1); already open on the forge lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~72%): slip model flags some risk, ETA already inflated; lane forge has 7/10 done; this goal ends its lane at 2026-11-25 19:37",
+    "deliverable": {
+     "name": "Runbook Executability Audit",
+     "stream": "General"
+    },
+    "then": "#4 [forge] Cross-Host Consistency Test",
+    "then_eta": "2026-11-25 22:09"
+   },
    {
     "agent": "archivist",
     "goal": "**Knowledge Single-Point-of-Failure Audit** - Map which agents' knowledge is most frequently cited by others (via pointer/citation lines). Identify any single agent whose absence would break >3 other agents' workflows. O",
     "type": "verify",
     "complexity": 1,
     "p_reached": 0.839,
-    "eta": "2026-11-25 18:35",
+    "eta": "2026-11-25 19:43",
     "hours": 1.85,
     "order": 0,
-    "rank": 1,
+    "rank": 2,
     "title": "Knowledge Single-Point-of-Failure Audit",
     "steps": [
      "build the test battery / audit script",
      "run against live sources",
      "record verdict + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-25 18:35 (P~84%)",
+    "outcome": "reached ~2026-11-25 19:43 (P~84%)",
     "consequences": [
-     "lane end archivist: 11-25 18:35 (slowest lane)"
+     "lane end outlet: 11-26 07:43 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 9/10 done; this goal ends its lane at 2026-11-25 18:35",
+    "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 9/10 done; this goal ends its lane at 2026-11-25 19:43",
     "deliverable": {
      "name": "Knowledge Single-Point-of-Failure Audit",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-25 18:35)",
-    "then_eta": "2026-11-25 18:35"
+    "then": "lane clear - level-up gate re-check (2026-11-26 07:43)",
+    "then_eta": "2026-11-26 07:43"
+   },
+   {
+    "agent": "outlet",
+    "goal": "**Milestone Auto-Draft Trigger** - when fleet level or goal pct crosses a threshold (new level, +10% step), Outlet auto-drafts a milestone post from the level report + live ledger data into the queue with correct numbers",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.355,
+    "eta": "2026-11-25 20:54",
+    "hours": 3.02,
+    "order": 0,
+    "rank": 3,
+    "title": "Milestone Auto-Draft Trigger",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-25 20:54 (P~36%)",
+    "consequences": [
+     "outlet: **Ship Readiness Digest** - daily digest memory/outlet/diges (2026-11-26 05:58) - shared scope outlet,queue",
+     "lane end outlet: 11-26 07:43 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 5/10 done; this goal ends its lane at 2026-11-25 20:54",
+    "deliverable": {
+     "name": "Milestone Auto-Draft Trigger",
+     "stream": "General"
+    },
+    "then": "#5 [outlet] Reply & Repost Templates",
+    "then_eta": "2026-11-25 23:55"
+   },
+   {
+    "agent": "forge",
+    "goal": "**Cross-Host Consistency Test** - `python memory/forge/consistency_check.py`: after any fleet-wide change, verify all 4 hosts report same model version + config hash + service status. Mismatch = auto-alert to Orchestrato",
+    "type": "verify",
+    "complexity": 2,
+    "p_reached": 0.463,
+    "eta": "2026-11-25 22:09",
+    "hours": 2.52,
+    "order": 1,
+    "rank": 4,
+    "title": "Cross-Host Consistency Test",
+    "steps": [
+     "build the test battery / audit script",
+     "run against live sources",
+     "record verdict + evidence leaf"
+    ],
+    "outcome": "reached ~2026-11-25 22:09 (P~46%)",
+    "consequences": [
+     "outlet: **Cross-Agent Leverage Map** - memory/outlet/leverage-map.md (2026-11-26 02:56) - shared scope check,cross",
+     "lane end outlet: 11-26 07:43 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane forge has 7/10 done; this goal ends its lane at 2026-11-25 22:09",
+    "deliverable": {
+     "name": "Cross-Host Consistency Test",
+     "stream": "General"
+    },
+    "then": "#6 [forge] Gate Pipeline Drift Detector",
+    "then_eta": "2026-11-26 00:40"
+   },
+   {
+    "agent": "outlet",
+    "goal": "**Reply & Repost Templates** - per-profile templates for replies and reposts (acknowledge, correct, amplify) written in the profile voice; >=3 template types per registered profile, each <=140 words, lint-clean.",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.355,
+    "eta": "2026-11-25 23:55",
+    "hours": 3.02,
+    "order": 1,
+    "rank": 5,
+    "title": "Reply & Repost Templates",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-25 23:55 (P~36%)",
+    "consequences": [
+     "lane end outlet: 11-26 07:43 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 5/10 done; this goal ends its lane at 2026-11-25 23:55",
+    "deliverable": {
+     "name": "Mic access",
+     "stream": "Peripherals"
+    },
+    "then": "#7 [outlet] Cross-Agent Leverage Map",
+    "then_eta": "2026-11-26 02:56"
+   },
+   {
+    "agent": "forge",
+    "goal": "**Gate Pipeline Drift Detector** - `python memory/forge/drift_detect.py`: monitors gate pipeline for silent degradation \u2014 new deps in modified scripts not in requirements.txt, test files added but not registered in smoke",
+    "type": "verify",
+    "complexity": 2,
+    "p_reached": 0.463,
+    "eta": "2026-11-26 00:40",
+    "hours": 2.52,
+    "order": 2,
+    "rank": 6,
+    "title": "Gate Pipeline Drift Detector",
+    "steps": [
+     "build the test battery / audit script",
+     "run against live sources",
+     "record verdict + evidence leaf"
+    ],
+    "outcome": "reached ~2026-11-26 00:40 (P~46%)",
+    "consequences": [
+     "lane end outlet: 11-26 07:43 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane forge has 7/10 done; this goal ends its lane at 2026-11-26 00:40",
+    "deliverable": {
+     "name": "Gate Pipeline Drift Detector",
+     "stream": "General"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 07:43)",
+    "then_eta": "2026-11-26 07:43"
+   },
+   {
+    "agent": "outlet",
+    "goal": "**Cross-Agent Leverage Map** - memory/outlet/leverage-map.md: which agent to DM for what (trends->Researcher, KB->Archivist, visuals->Designer, compression->Scribe, accuracy->Builder/Mechanic, fact-check->Verifier, prior",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.355,
+    "eta": "2026-11-26 02:56",
+    "hours": 3.02,
+    "order": 2,
+    "rank": 7,
+    "title": "Cross-Agent Leverage Map",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-26 02:56 (P~36%)",
+    "consequences": [
+     "forge: **Cross-Host Consistency Test** - `python memory/forge/consi (2026-11-25 22:09) - shared scope check,cross",
+     "lane end outlet: 11-26 07:43 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 5/10 done; this goal ends its lane at 2026-11-26 02:56",
+    "deliverable": {
+     "name": "Cross-Agent Leverage Map",
+     "stream": "General"
+    },
+    "then": "#8 [outlet] Ship Readiness Digest",
+    "then_eta": "2026-11-26 05:58"
+   },
+   {
+    "agent": "outlet",
+    "goal": "**Ship Readiness Digest** - daily digest memory/outlet/digests/YYYY-MM-DD.md: queue status (ready/pending/needs-connection), blocked items with named unblockers, last-7-days shipped; >=1 digest exists matching live queue",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.355,
+    "eta": "2026-11-26 05:58",
+    "hours": 3.02,
+    "order": 3,
+    "rank": 8,
+    "title": "Ship Readiness Digest",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-26 05:58 (P~36%)",
+    "consequences": [
+     "outlet: **Milestone Auto-Draft Trigger** - when fleet level or goal  (2026-11-25 20:54) - shared scope outlet,queue",
+     "lane end outlet: 11-26 07:43 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 5/10 done; this goal ends its lane at 2026-11-26 05:58",
+    "deliverable": {
+     "name": "Ship Readiness Digest",
+     "stream": "General"
+    },
+    "then": "#9 [outlet] Platform Connection Runbook",
+    "then_eta": "2026-11-26 07:43"
+   },
+   {
+    "agent": "outlet",
+    "goal": "**Platform Connection Runbook** - step-by-step runbook for Arnold to connect a platform account (auth, rate limits, API/tool needed) with the fleet default profile pre-wired; passes Mechanic's executability audit (every ",
+    "type": "verify",
+    "complexity": 1,
+    "p_reached": 0.717,
+    "eta": "2026-11-26 07:43",
+    "hours": 1.75,
+    "order": 4,
+    "rank": 9,
+    "title": "Platform Connection Runbook",
+    "steps": [
+     "build the test battery / audit script",
+     "run against live sources",
+     "record verdict + evidence leaf"
+    ],
+    "outcome": "reached ~2026-11-26 07:43 (P~72%)",
+    "consequences": [
+     "forge: **Runbook Executability Audit** - Scan all .md runbooks in m (2026-11-25 19:37) - shared scope audit,executability,runbook",
+     "lane end outlet: 11-26 07:43 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as verify work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~72%): slip model flags some risk, ETA already inflated; lane outlet has 5/10 done; this goal ends its lane at 2026-11-26 07:43",
+    "deliverable": {
+     "name": "Platform Connection Runbook",
+     "stream": "General"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 07:43)",
+    "then_eta": "2026-11-26 07:43"
    }
   ],
   "horizons": [
    {
     "label": "30m",
     "hours": 0.5,
-    "end": "2026-11-25 17:14",
+    "end": "2026-11-25 18:22",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 79/80 -> 98%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 101/110 -> 91%"
    },
    {
     "label": "1h",
     "hours": 1.0,
-    "end": "2026-11-25 17:44",
+    "end": "2026-11-25 18:52",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 79/80 -> 98%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 101/110 -> 91%"
    },
    {
     "label": "1d",
     "hours": 24.0,
-    "end": "2026-11-26 16:44",
-    "completes": 1,
+    "end": "2026-11-26 17:52",
+    "completes": 9,
     "top": [
      {
       "rank": 1,
+      "agent": "forge",
+      "title": "Runbook Executability Audit",
+      "eta": "2026-11-25 19:37",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the forge lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~72%): slip model flags some risk, ETA already inflated; lane forge has 7/10 done; this goal ends its lane at 2026-11-25 19:37"
+     },
+     {
+      "rank": 2,
       "agent": "archivist",
       "title": "Knowledge Single-Point-of-Failure Audit",
-      "eta": "2026-11-25 18:35",
+      "eta": "2026-11-25 19:43",
       "type": "verify",
-      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 9/10 done; this goal ends its lane at 2026-11-25 18:35"
+      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 9/10 done; this goal ends its lane at 2026-11-25 19:43"
+     },
+     {
+      "rank": 3,
+      "agent": "outlet",
+      "title": "Milestone Auto-Draft Trigger",
+      "eta": "2026-11-25 20:54",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 5/10 done; this goal ends its lane at 2026-11-25 20:54"
+     },
+     {
+      "rank": 4,
+      "agent": "forge",
+      "title": "Cross-Host Consistency Test",
+      "eta": "2026-11-25 22:09",
+      "type": "verify",
+      "why": "planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane forge has 7/10 done; this goal ends its lane at 2026-11-25 22:09"
+     },
+     {
+      "rank": 5,
+      "agent": "outlet",
+      "title": "Reply & Repost Templates",
+      "eta": "2026-11-25 23:55",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 5/10 done; this goal ends its lane at 2026-11-25 23:55"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 79/80 -> 100%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 101/110 -> 100%"
    },
    {
     "label": "1w",
     "hours": 168.0,
-    "end": "2026-12-02 16:44",
-    "completes": 1,
+    "end": "2026-12-02 17:52",
+    "completes": 9,
     "top": [
      {
       "rank": 1,
+      "agent": "forge",
+      "title": "Runbook Executability Audit",
+      "eta": "2026-11-25 19:37",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the forge lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~72%): slip model flags some risk, ETA already inflated; lane forge has 7/10 done; this goal ends its lane at 2026-11-25 19:37"
+     },
+     {
+      "rank": 2,
       "agent": "archivist",
       "title": "Knowledge Single-Point-of-Failure Audit",
-      "eta": "2026-11-25 18:35",
+      "eta": "2026-11-25 19:43",
       "type": "verify",
-      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 9/10 done; this goal ends its lane at 2026-11-25 18:35"
+      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 9/10 done; this goal ends its lane at 2026-11-25 19:43"
+     },
+     {
+      "rank": 3,
+      "agent": "outlet",
+      "title": "Milestone Auto-Draft Trigger",
+      "eta": "2026-11-25 20:54",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 5/10 done; this goal ends its lane at 2026-11-25 20:54"
+     },
+     {
+      "rank": 4,
+      "agent": "forge",
+      "title": "Cross-Host Consistency Test",
+      "eta": "2026-11-25 22:09",
+      "type": "verify",
+      "why": "planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane forge has 7/10 done; this goal ends its lane at 2026-11-25 22:09"
+     },
+     {
+      "rank": 5,
+      "agent": "outlet",
+      "title": "Reply & Repost Templates",
+      "eta": "2026-11-25 23:55",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 5/10 done; this goal ends its lane at 2026-11-25 23:55"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 79/80 -> 100%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 101/110 -> 100%"
    },
    {
     "label": "1m",
     "hours": 720.0,
-    "end": "2026-12-25 16:44",
-    "completes": 1,
+    "end": "2026-12-25 17:52",
+    "completes": 9,
     "top": [
      {
       "rank": 1,
+      "agent": "forge",
+      "title": "Runbook Executability Audit",
+      "eta": "2026-11-25 19:37",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the forge lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~72%): slip model flags some risk, ETA already inflated; lane forge has 7/10 done; this goal ends its lane at 2026-11-25 19:37"
+     },
+     {
+      "rank": 2,
       "agent": "archivist",
       "title": "Knowledge Single-Point-of-Failure Audit",
-      "eta": "2026-11-25 18:35",
+      "eta": "2026-11-25 19:43",
       "type": "verify",
-      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 9/10 done; this goal ends its lane at 2026-11-25 18:35"
+      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 9/10 done; this goal ends its lane at 2026-11-25 19:43"
+     },
+     {
+      "rank": 3,
+      "agent": "outlet",
+      "title": "Milestone Auto-Draft Trigger",
+      "eta": "2026-11-25 20:54",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 5/10 done; this goal ends its lane at 2026-11-25 20:54"
+     },
+     {
+      "rank": 4,
+      "agent": "forge",
+      "title": "Cross-Host Consistency Test",
+      "eta": "2026-11-25 22:09",
+      "type": "verify",
+      "why": "planned as verify work (cx2); already open on the forge lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane forge has 7/10 done; this goal ends its lane at 2026-11-25 22:09"
+     },
+     {
+      "rank": 5,
+      "agent": "outlet",
+      "title": "Reply & Repost Templates",
+      "eta": "2026-11-25 23:55",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 5/10 done; this goal ends its lane at 2026-11-25 23:55"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 79/80 -> 100%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 101/110 -> 100%"
    }
   ],
   "tree": {
-   "state": "Fleet 79/80 (99%)",
+   "state": "Fleet 101/110 (92%)",
    "gate": "all goals 100%?",
    "branch_taken": "NO - queue in flight",
    "yes": {
     "action": "level-up gate fires -> Lv increments, report written",
     "then": "Orchestrator proposes cycle N+1 from ranked backlog (8 candidates)",
     "first_planned": [
-     "#1 [archivist] Knowledge Single-Point-of-Failure Audit ~2026-11-25 18:35"
+     "#1 [forge] Runbook Executability Audit ~2026-11-25 19:37",
+     "#2 [archivist] Knowledge Single-Point-of-Failure Audit ~2026-11-25 19:43",
+     "#3 [outlet] Milestone Auto-Draft Trigger ~2026-11-25 20:54",
+     "#4 [forge] Cross-Host Consistency Test ~2026-11-25 22:09"
     ]
    },
    "no": {
     "action": "keep current queue; next completion gates progress",
-    "then": "when the last lane ends (2026-11-25 18:35) the gate re-checks",
+    "then": "when the last lane ends (2026-11-26 07:43) the gate re-checks",
     "first_planned": [
-     "#1 [archivist] Knowledge Single-Point-of-Failure Audit ~2026-11-25 18:35"
+     "#1 [forge] Runbook Executability Audit ~2026-11-25 19:37",
+     "#2 [archivist] Knowledge Single-Point-of-Failure Audit ~2026-11-25 19:43",
+     "#3 [outlet] Milestone Auto-Draft Trigger ~2026-11-25 20:54",
+     "#4 [forge] Cross-Host Consistency Test ~2026-11-25 22:09"
     ]
    }
   },
@@ -368,8 +917,8 @@
     "step": 3,
     "name": "Mic access",
     "note": "Hearing + speaking - phone calls and voice interaction become possible.",
-    "status": "not-planned",
-    "via": null,
+    "status": "done",
+    "via": "outlet (reached goal)",
     "eta": null,
     "p_reached": null,
     "unlocks": "Custom input detection"
@@ -420,19 +969,17 @@
    },
    {
     "name": "Making phone calls",
-    "window": "day 3-10",
-    "start_day": 3,
-    "end_day": 10,
+    "window": "day 2-9",
+    "start_day": 2,
+    "end_day": 9,
     "status": "planned",
     "lane": "fleet",
     "gates": [
-     "Mic access (not in queue - schedulable ~day 1: seat frees + work time)"
+     "Mic access (already reached)"
     ],
-    "via": "Mic access (not in queue - schedulable ~day 1: seat frees + work time)",
+    "via": "Mic access (already reached)",
     "note": "full-duplex voice calls, not just text",
-    "projected_gates": [
-     "Mic access"
-    ]
+    "projected_gates": []
    },
    {
     "name": "Writing valid tenders",
@@ -542,21 +1089,21 @@
    {
     "name": "Making phone calls",
     "parent": null,
-    "window": "day 3-10",
+    "window": "day 2-9",
     "status": "lands fully inside 15d",
     "cycle_closing": false,
     "steps": [
      {
-      "days": "day 0-0",
-      "text": "gates clear: Mic access by ~day 3 (not-planned)"
-     },
-     {
-      "days": "day 3-4",
+      "days": "day 2-3",
       "text": "setup + first runs of Making phone calls"
      },
      {
-      "days": "day 5",
+      "days": "day 4",
       "text": "first real delivery (usable output)"
+     },
+     {
+      "days": "day 4-9",
+      "text": "stabilize - daily runs through day 9"
      }
     ]
    },
@@ -687,25 +1234,29 @@
    {
     "name": "Making phone calls",
     "parent": null,
-    "window": "day 3-7 -> runs to day 10",
+    "window": "day 2-7 -> runs to day 9",
     "status": "lands fully inside 15d",
     "cycle_closing": false,
     "steps": [
      {
-      "days": "day 3",
-      "text": "Mic access by ~day 3 (not-planned)"
-     },
-     {
-      "days": "day 3",
+      "days": "day 2",
       "text": "scaffold + wire up Making phone calls"
      },
      {
-      "days": "day 4",
+      "days": "day 3",
       "text": "fix issues; verify first output of Making phone calls"
      },
      {
-      "days": "day 5",
+      "days": "day 4",
       "text": "produce first usable output + record evidence leaf"
+     },
+     {
+      "days": "day 4",
+      "text": "daily unattended runs begin"
+     },
+     {
+      "days": "day 7",
+      "text": "monitor + regression check on the loop - continues in the 15-day plan to day 9"
      }
     ]
    },
@@ -815,15 +1366,13 @@
    }
   ],
   "plan_meta": {
-   "sig": "05dcc83e6301",
-   "computed_at": "2026-11-25 16:44:12",
+   "sig": "df19237b8736",
+   "computed_at": "2026-11-25 17:52:34",
    "basis": "live goal ledger + next-10 ETAs + fleet throughput ~17.69 goals/h; recomputed every refresh",
-   "delta": [],
+   "delta": [
+    "Making phone calls: day 3-10 -> day 2-9 (planned)"
+   ],
    "history": [
-    {
-     "ts": "2026-11-24 11:54:14",
-     "sig": "05dcc83e6301"
-    },
     {
      "ts": "2026-11-24 11:55:14",
      "sig": "a4f106fb3413"
@@ -839,6 +1388,10 @@
     {
      "ts": "2026-11-25 02:40:36",
      "sig": "05dcc83e6301"
+    },
+    {
+     "ts": "2026-11-25 17:52:34",
+     "sig": "df19237b8736"
     }
    ]
   }
