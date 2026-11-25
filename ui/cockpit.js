@@ -176,7 +176,7 @@
     if (!box) return;
     if (!p || !p.agents || !p.agents.length) { box.innerHTML = "<i style='color:#8a8f98'>no power data</i>"; return; }
     var v = p.verdict || {};
-    var vh = "<div class=\"ckpw-v " + (v.level === "revisit" ? "revisit" : "healthy") + ">" +
+    var vh = "<div class=\"ckpw-v " + (v.level === "revisit" ? "revisit" : "healthy") + "\">" +
       (v.level === "revisit" ? "\u26A0 Revisit power allocation" : "\u2713 Power allocation healthy") +
       (p.pct_used != null ? " \u00b7 " + p.pct_used + "% of fleet VRAM committed (" + p.allocated_gb + " / " + p.capacity_gb + " GB)" : "") +
       (v.reasons || []).map(function (r) { return "<span class=rsn>\u00b7 " + esc(r) + "</span>"; }).join("") +
@@ -211,7 +211,7 @@
         "<span style='flex:1'>" + bar(x.pct, pctColor(x.pct)) + " <span style='font-size:11px;color:#8a8f98'>" + x.allocated_gb + "/" + x.capacity_gb + " GB</span></span></div>";
     }).join("");
     box.innerHTML = vh + "<div class=ckpw-body><div>" + svg + "</div><div class=ckpw-legend>" + lg + hh + "</div></div>" +
-      "<div style='font-size:10.5px;color:#8a8f98;margin-top:6px'>seat VRAM from catalog approximations (ground truth = nvidia-smi); shared seats split evenly across their agents \u00b7 " + esc(p.unit || "") + "</div>";
+      "<div style='font-size:10.5px;color:#8a8f98;margin-top:6px'>power = seat VRAM, split evenly across agents sharing a seat \u00b7 " + esc(p.unit || "") + "</div>";
   }
 
   function relTime(iso) {
