@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-25T22:56:05.786162+00:00",
+  "ts": "2026-11-25T23:16:06.020113+00:00",
   "health_score": 80,
   "fleet_status": "NOMINAL",
   "agents": [
@@ -47,27 +47,27 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 47.6,
-      "cpu_pct": 1.5,
-      "temp_c": 42.8
+      "vram_pct": 47.8,
+      "cpu_pct": 45.5,
+      "temp_c": 54.8
     },
     {
       "host": "Red",
       "vram_pct": 46.5,
       "cpu_pct": 0.0,
-      "temp_c": 39.3
+      "temp_c": 36.4
     },
     {
       "host": "Pale",
-      "vram_pct": 28.1,
-      "cpu_pct": 42.5,
-      "temp_c": 54.2
+      "vram_pct": 46.5,
+      "cpu_pct": 0.0,
+      "temp_c": 52.1
     },
     {
       "host": "Black",
       "vram_pct": 0.4,
       "cpu_pct": 0.0,
-      "temp_c": 43.3
+      "temp_c": 42.0
     }
   ],
   "goals": {
@@ -154,8 +154,8 @@
         "pct": 0.0
       },
       "builder": {
-        "total": 8,
-        "verified": 8,
+        "total": 9,
+        "verified": 9,
         "pct": 100.0
       },
       "cross_patterns_report": {
@@ -398,6 +398,11 @@
         "verified": 0,
         "pct": 0.0
       },
+      "forge-consistency-forecast-2026-11-26": {
+        "total": 4,
+        "verified": 0,
+        "pct": 0.0
+      },
       "forge": {
         "total": 8,
         "verified": 8,
@@ -574,8 +579,8 @@
         "pct": 100.0
       }
     },
-    "total_goals": 65,
-    "total_verified": 65
+    "total_goals": 66,
+    "total_verified": 66
   },
   "open_blockers": 29,
   "autonomous_actions": [

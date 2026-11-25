@@ -9,7 +9,7 @@ AppData\\Local\\hermes\\tools\\git-2.53.0+3-win32-x64, where the real binary
 our own elevated icacls /grant gets silently stripped from that one file).
 Non-elevated launches therefore failed with "error launching git: Access is denied."
 
-FIX: this runner uses the clean copy at C:\\Users\\White\\git-portable (made via one
+FIX: this runner uses the clean copy at C:\\Users\\White\\mingit (made via one
 elevated robocopy, normal ACLs, White has F — see memory/ops/git-access-denied-fix-2026-11-23.md).
 If ANY launch still hits access-denied, it automatically retries ELEVATED: Windows
 shows a UAC consent popup, you click Yes, and the command's output + exit code come
@@ -23,7 +23,7 @@ Exit code = git's exit code.
 """
 import os, subprocess, sys, tempfile
 
-GIT = __import__("os").path.expanduser(r"~\git-portable\cmd\git.exe")
+GIT = __import__("os").path.expanduser(r"~\mingit\cmd\git.exe")
 
 def _denied(out, err):
     blob = ((out or "") + "\n" + (err or "")).lower()
