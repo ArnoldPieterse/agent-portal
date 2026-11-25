@@ -29,7 +29,8 @@ FILE ACCESS (python/terminal tools run in Studio's sandbox - use these paths):
 - synthesis     memory/synthesis/INDEX.md - cross-lane findings, hotfile archives
 - fleet         memory/fleet/ - fleet host state + probes (no sub-index yet)
 - levels        memory/levels/ - level-up reports (level_N_*.md) + levels.json
-- handoffs      memory/handoffs/ - lane-to-lane handoff notes
+- handoffs      memory/handoffs/ - lane-to-lane
+- dna           memory/dna/INDEX.md - self-rebuild: chained compressed build functions + scan regex (Y) handoff notes
 - portal        memory/portal/INDEX.md - portal file-modularity rules, UI notes
 
 ## Hot files

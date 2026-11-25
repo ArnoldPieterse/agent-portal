@@ -1,0 +1,52 @@
+{
+ "built": "2026-11-25T16:11:37",
+ "mode": "out",
+ "ok": true,
+ "entries": [
+  {
+   "id": 1,
+   "name": "portal-core",
+   "target": "agent_portal.py",
+   "date": "2026-11-25",
+   "sha256": "0a2912a0376d",
+   "status": "rebuilt",
+   "path": "C:\\Projects\\AgentPortal\\_dna_proof\\agent_portal.py"
+  },
+  {
+   "id": 2,
+   "name": "api-extras",
+   "target": "portal/api_extras.py",
+   "date": "2026-11-25",
+   "sha256": "565c38c7f06d",
+   "status": "rebuilt",
+   "path": "C:\\Projects\\AgentPortal\\_dna_proof\\portal\\api_extras.py"
+  },
+  {
+   "id": 3,
+   "name": "gpu-fit",
+   "target": "portal/gpu_fit.py",
+   "date": "2026-11-25",
+   "sha256": "c461eac9a8b0",
+   "status": "rebuilt",
+   "path": "C:\\Projects\\AgentPortal\\_dna_proof\\portal\\gpu_fit.py"
+  },
+  {
+   "id": 4,
+   "name": "evolve-template",
+   "target": "ui/pages/evolve.html",
+   "date": "2026-11-25",
+   "sha256": "9ca563fa5b4f",
+   "status": "rebuilt",
+   "path": "C:\\Projects\\AgentPortal\\_dna_proof\\ui\\pages\\evolve.html"
+  },
+  {
+   "id": 5,
+   "name": "dna-rebuild",
+   "target": "memory/dna/rebuild.py",
+   "date": "2026-11-25",
+   "sha256": "61aaf670bbf7",
+   "status": "rebuilt",
+   "path": "C:\\Projects\\AgentPortal\\_dna_proof\\memory\\dna\\rebuild.py"
+  }
+ ]
+}

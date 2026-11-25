@@ -195,3 +195,10 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 **Why I did NOT just fix it:** it is Researcher's owned script, and adding 6 keys changes the fleet denominator (/80 -> /90) for every agent's convergence % mid-cycle - not a safe unilateral edit.
 **Exact unblock step (owner = Researcher):** add the missing keys to AGENT_FILES, one line each: `"pixel":"pixel.md", "forge":"forge.md", "outlet":"outlet.md", "lumen":"lumen.md", "reel":"reel.md", "splice":"splice.md"`. Then `python memory/researcher/goal_ledger.py` will count all lanes.
 **Interim closure (already done, independent of the roster fix):** pixel goal #1 closed via the documented alternative path - evidence leaf memory/pixel/evidence-convergence-states-2026-11-25.md + connected pointer line in memory/pixel/INDEX.md (sweep auto-links). 26/26 structural checks pass.
+
+## OPS-NOTE: no headless browser in agent sandbox [no-headless-browser-sandbox] (2026-11-25)
+- **Symptom**: Pixel goal #5 'live CDP screenshots @375/768' cannot be captured in the local sandbox.
+- **Probed**: `node -v`, `npx --version`, `python -c import playwright`, `where msedge chrome chromium` -> all empty (no browser/runtime on this seat).
+- **Automation path used**: none available locally; goal text itself assigns the live leg to a non-sandbox seat ('Red is up; static validation now').
+- **Resolution / owner**: static overflow+visibility audit shipped & passing (memory/pixel/evidence-convergence-375-static-2026-11-25.md); real screenshots must run on a non-sandbox seat with Edge + the portal serving index.html. Do NOT re-probe for a browser in sandbox passes.
+

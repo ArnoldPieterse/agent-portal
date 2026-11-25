@@ -6568,6 +6568,16 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/health":
             # 2026-11-23 (Mechanic goal 10): lightweight liveness probe for portal_heal.py
             self._json(200, {"ok": True, "service": "agent_portal", "uptime_s": round(time.time() - PORTAL_START)})
+        elif p == "/api/canned":
+            import portal.api_extras as _apiex
+            cid = urllib.parse.unquote(p[len("/api/canned"):].lstrip("/")).strip()
+            if not cid:
+                return self._json(200, _apiex.canned_list())
+            e = _apiex.canned_get(cid)
+            return self._json(200 if e else 404, e or {"error": "no such canned response"})
+        elif p == "/api/world":
+            import portal.api_extras as _apiex
+            return self._json(200, _apiex.world_get())
         elif p == "/api/device":
             import portal.api_extras as _apiex
             return self._json(200, _apiex.device_snapshot())
@@ -6970,6 +6980,13 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, {"ok": True, "request": rec})
             except Exception as e:
                 return self._json(400, {"error": str(e)[:160]})
+        elif p == "/api/canned":
+            import portal.api_extras as _apiex
+            e, err = _apiex.canned_upsert(body if isinstance(body, dict) else None)
+            return self._json(200 if e else 400, e or {"error": err})
+        elif p == "/api/world":
+            import portal.api_extras as _apiex
+            return self._json(200, _apiex.world_set(body if isinstance(body, dict) else None))
         elif p == "/api/device":
             import portal.api_extras as _apiex
             data = _apiex.device_snapshot(body if isinstance(body, dict) else None)

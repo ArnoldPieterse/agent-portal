@@ -3216,5 +3216,23 @@
 "text": "**Convergence Feed for Portal** - Create a structured JSON feed (memory/archivist/convergence-feed.json) with: current autonomy score, per-a",
 "agent": "archivist",
 "at": "2026-11-25"
+},
+{
+"sig": "9d7a350a7df6dcc0",
+"text": "**Convergence Print Stylesheet** - `@media print` rules so the panel renders as a clean one-page human-review report (hide chat/sidebar, for",
+"agent": "pixel",
+"at": "2026-11-25"
+},
+{
+"sig": "0ddf4fdc7ffeeacd",
+"text": "**Cross-Session Convergence State Persistence** - Persist last-seen fleet mode + autonomy score to `localStorage` on exit; on next visit sho",
+"agent": "pixel",
+"at": "2026-11-25"
+},
+{
+"sig": "2ccb52e6dace9c11",
+"text": "**Convergence Bundle-Size + Dead-Code Audit** - Measure and cut the convergence JS footprint: tree-shake unused helpers, remove dead symbols",
+"agent": "pixel",
+"at": "2026-11-25"
 }
 ]
