@@ -12,6 +12,9 @@ FILE ACCESS (python/terminal tools run in Studio's sandbox - use these paths):
 - verifier      memory/verifier/INDEX.md - test batteries, audits, rollback tests
 - scribe        memory/scribe/INDEX.md - runbooks, patterns, completion analysis
 - designer      memory/designer/INDEX.md - UI/layout designs (Cockpit, panels)
+- lumen         memory/designer/lumen/INDEX.md - Designer's image-gen sub: prompt specs + renders (Ca)
+- reel          memory/designer/reel/INDEX.md - Designer's video-gen sub: storyboards + clips (Cb)
+- splice        memory/designer/splice/INDEX.md - Designer's media-tools sub: splicing + polish (Cc)
 - builder       memory/builder/INDEX.md - builds: frontend, scripts, model-swap automation
 - pixel         memory/pixel/INDEX.md - Builder's front-end sub: UI implementation, CSS/JS (onboarded 2026-11-25)
 - forge         memory/forge/INDEX.md - Builder's gate & deploy sub: tests, canaries, perf evidence (onboarded 2026-11-25)
