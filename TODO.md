@@ -1,3 +1,13 @@
+## DNA SELF-REBUILD + SIMS-LIKE WORLD - 2026-11-25
+Status: **LIVE** - User ask: "core code modulated so it can reassemble using the memory system's index regex... build functions chained and compressed with last build date... in humans we call this DNA" + continuously evolving canned responses (partial/full/tween), three.js+low-level outputs, Sims-like characters per agent that evolve their own world, device LOD, APK later.
+- [x] DNA module memory/dna/ (M-CODE Y): rebuild.py (Y1) scans one regex over chained compressed build functions; 6 builds (portal core, api_extras, gpu_fit, evolve template, self, world page); dry-run drift detection + --out reassembly PROOF PASS (byte-identical incl. self)
+- [x] Canned response engine: GET/POST /api/canned + GET /api/canned/<id>; evolving library memory/ops/canned-responses.jsonl; styles instant/typewriter/pulse/sim = out-of-the-box output methodologies
+- [x] World state API GET/POST /api/world (positions+decorations, shared human<->agent mutation)
+- [x] /page/world.html: one character per agent, host zones, goal energy auras, reply pulses (poll + SSE), LOD tiers 2/1/0 from getDevice() render hints (three.js full / low-poly / canvas2d), click=panel+announce tween, drag=world mutation
+- [ ] World v2: personality animation params per agent in agents.json; world events into agent prompts (agents notice human moves)
+- [ ] APK: Capacitor wrap of /page/world.html + API host (lower-level build target)
+- [ ] DNA growth: append b07+ as core artifacts ship (ui/core.js, ui/app.css, memory scaffolding); --mint after each change
+
 ## API HOST TAKES ALL PROCESS WORK + SELF-EVOLVE UI TEMPLATE - 2026-11-25
 Status: **LIVE** - User ask: list all API calls + html functions, move missing calculations to the API host, index each call against memory, ship a self-evolving UI template (API-only process layer), add getDevice()/getLogin(); interim test = Lumen portrait as wallpaper range.
 - [x] Full inventory: 72 routes (64 existing + 8 new) documented with per-call memory links -> memory/portal/api-index.md (M-CODE **L18**); UI function map for all ui/*.js included.

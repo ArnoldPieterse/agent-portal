@@ -10,3 +10,4 @@ from MEMORY.md by these codes. Spec + contract: dna-spec.md. Entry point: rebuil
 - -> memory/dna/builds/b03-gpu-fit.py  build 3: portal/gpu_fit.py blob (Y5)
 - -> memory/dna/builds/b04-evolve-template.py  build 4: ui/pages/evolve.html blob (Y6)
 - -> memory/dna/builds/b05-dna-rebuild.py  build 5: rebuild.py self-blob (Y7)
+- -> memory/dna/builds/b06-world-page.py  build 6: ui/pages/world.html blob (Y8)

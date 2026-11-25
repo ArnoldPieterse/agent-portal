@@ -110,3 +110,14 @@ J=ops, K=orchestrator, E=goals, A=archivist, S=synthesis, U=workspace, M=project
 - ui/fleet_health.js: health grid -> /api/health/fleet
 - ui/scheduler.js: scheduler view -> /api/scheduler GET+POST
 - ui/cockpit.js + cockpit-*.js (10 modules, ~90 fns): bars/rings/heatmaps = presentation only; data via /api/fleet/cockpit (var API) - kept client-side by design (render math, not process work)
+
+## World & canned responses (added 2026-11-25 - Sims-like world + evolving response library)
+| # | call | purpose | best fit |
+|---|------|---------|----------|
+| 73 | GET /api/canned | list of evolving canned-response library + known styles | C |
+| 74 | GET /api/canned/<id> | partial/full/tween_ms/segments/style payload for one response | C |
+| 75 | POST /api/canned | upsert a canned response - the library evolves at runtime | C |
+| 76 | GET /api/world | shared world state: character positions + decorations | D |
+| 77 | POST /api/world | merge position/decoration changes (humans drag, agents evolve) | D |
+- ui/pages/world.html (page): three.js Sims-like world - one character per agent, host zones from /api/fleet/status, goal energy from /api/goals, live pulses from /api/run-state + SSE /api/run-events, LOD tiers from getDevice() render hints (tier2 full three.js / tier1 low-poly / tier0 canvas2d), canned-response tweening via /api/canned/<id>, world mutation via /api/world
+- ui/pages/evolve.html (page): the self-evolve template this world was spawned from

@@ -6464,7 +6464,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._html("index.html")
         if p.startswith("/page/") and p.endswith(".html"):
             n = p[len("/page/"):-len(".html")]
-            if n in ("goals", "activity", "fleet", "files", "ops", "evolve"):
+            if n in ("goals", "activity", "fleet", "files", "ops", "evolve", "world"):
                 fp = os.path.join(HERE, "ui", "pages", n + ".html")
                 try:
                     html = open(fp, encoding="utf-8").read()
@@ -6568,7 +6568,7 @@ class Handler(BaseHTTPRequestHandler):
         elif p == "/api/health":
             # 2026-11-23 (Mechanic goal 10): lightweight liveness probe for portal_heal.py
             self._json(200, {"ok": True, "service": "agent_portal", "uptime_s": round(time.time() - PORTAL_START)})
-        elif p == "/api/canned":
+        elif p == "/api/canned" or p.startswith("/api/canned/"):
             import portal.api_extras as _apiex
             cid = urllib.parse.unquote(p[len("/api/canned"):].lstrip("/")).strip()
             if not cid:

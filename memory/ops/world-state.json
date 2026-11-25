@@ -1,0 +1,17 @@
+{
+ "positions": {
+  "lumen": [
+   0.4,
+   -0.3
+  ]
+ },
+ "decorations": [
+  {
+   "kind": "crystal",
+   "x": -0.5,
+   "z": 0.6,
+   "hue": "#7ed6df"
+  }
+ ],
+ "updated": 1795588109
+}
