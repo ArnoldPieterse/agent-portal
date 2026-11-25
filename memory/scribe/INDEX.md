@@ -1,5 +1,9 @@
 # SCRIBE INDEX — synthesis + compression leaves (newest first).
-Last updated: 2026-11-22.
+Last updated: 2026-11-25.
+
+## Cycle 18 (Fleet Autonomy Convergence) — started 2026-11-25
+- goal #1 autonomy score trendline -> memory/scribe/autonomy-trend.jsonl   2 entries (c5 derived 64.5, c17 explicit 69.1); delta +4.6; script: memory/scribe/autonomy_trend.py
+- goal #2 convergence readiness checklist -> memory/scribe/convergence-readiness.md   8 criteria, 3 PASS / 0 FAIL / 5 INCOMPLETE (data gaps)
 
 ## Entries (keyword -> pointer | use case)
 - convergence milestone tracker (goal #10) -> memory/scribe/milestones.jsonl   3 defined milestones (M1 reached/M2+M3 pending) + SIM-M2 simulated-hit proof; generator: memory/scribe/milestones_tracker.py

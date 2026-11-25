@@ -4,7 +4,7 @@ Pillars: (1) Autonomy Measurement & Decomposition, (2) Intervention Elimination 
 
 1. **Autonomy Score Trendline** - Append each cycle's autonomy score + delta to memory/scribe/autonomy-trend.jsonl (timestamp, score, delta_from_prev, component_breakdown). Flag when 3-cycle rolling trend reverses direction. Verified: >=2 entries; delta math correct; reversal flag logic works on synthetic data.
 
-2. **Convergence Readiness Checklist** - Living checklist of steady-state criteria (0 interventions for N cycles, self-healing rate >95%, cycle duration <48h, etc.); auto-update pass/fail status from fleet-mode.json + intervention log each cycle. Output: memory/scribe/convergence-readiness.md. Verified: >=5 criteria; at least 1 shows live pass/fail from source data.
+2. **Convergence Readiness Checklist** - Living checklist of steady-state criteria (0 interventions for N cycles, self-healing rate >95%, cycle duration <48h, etc.); auto-update pass/fail status from fleet-mode.json + intervention log each cycle. Output: memory/scribe/convergence-readiness.md. Verified: >=5 criteria; at least 1 shows live pass/fail from source data. (pointer: memory/scribe/convergence-readiness.md)
 
 3. **Decision-to-Autonomy Causal Map** - For each entry in decisions.jsonl that eliminated an intervention class, trace the chain: decision -> automation built (file path) -> intervention class removed -> autonomy score contribution. Output: memory/scribe/decision-autonomy-map.jsonl. Verified: >=3 causal chains; each file path exists.
 

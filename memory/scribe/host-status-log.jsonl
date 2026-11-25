@@ -1,0 +1,1 @@
+{"ts": "2026-11-25T02:58Z", "event": "host_powered_on", "host": "red", "seats_affected": ["scribe", "mechanic"], "status_before": "not_loaded (relocated to White)", "action_needed": "RecoverAll on Red to load Scribe + Mechanic models; then seat reassignment back home"}

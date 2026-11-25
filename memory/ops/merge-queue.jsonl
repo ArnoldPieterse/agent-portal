@@ -411,3 +411,5 @@
 {"ts": "2026-11-25 12:18:29", "file": "agent_portal.py", "sha": "267b52f8cd", "size": 357492, "snapshot": "memory/ops/merge-queue/agent_portal.py.267b52f8cd"}
 {"ts": "2026-11-25 12:27:01", "file": "agents.json", "sha": "87dbb949e5", "size": 14848, "snapshot": "memory/ops/merge-queue/agents.json.87dbb949e5"}
 {"ts": "2026-11-25 12:57:58", "file": "agents.json", "sha": "1cbfc6f19c", "size": 14860, "snapshot": "memory/ops/merge-queue/agents.json.1cbfc6f19c"}
+{"ts": "2026-11-25 13:14:10", "file": "ui/app.css", "sha": "301b8ed781", "size": 40756, "snapshot": null}
+{"ts": "2026-11-25 13:14:10", "file": "ui/fleet_status.js", "sha": "786bbe54d2", "size": 2974, "snapshot": null}

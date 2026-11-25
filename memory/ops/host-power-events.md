@@ -1,0 +1,2 @@
+- 2026-11-25 ~13:0x (Orchestrator): Red powered on (human confirmed). Affected seats: Scribe (scribe-q8 Q8_0 GPU1 ctx 16384) + Mechanic (mechanic-q4 UD-Q4_K_XL GPU0 ctx 65536). Scribe was relocated to White (home not_loaded); Mechanic status unclear (not in relocation list). Auto-recovery path: PortalFleetProbe next cycle detects Red :8888 -> watchdog load chain restores models. No manual action required unless probe still fails. Sandbox egress wall prevents direct LAN probe from White agent tools — human statement is ground truth.
+# Host power events (newest first)

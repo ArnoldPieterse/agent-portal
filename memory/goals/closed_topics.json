@@ -2566,5 +2566,29 @@
 "text": "**Convergence Milestone Tracker** - track key milestones (first cycle <48h, 0-intervention week, steady-state entry). Log with date + contex",
 "agent": "scribe",
 "at": "2026-11-25"
+},
+{
+"sig": "708f2cb995a5d28f",
+"text": "**Decision Replay Archive v2** - Extend decision-archive.md with full context snapshots: for each key autonomous decision, store the input s",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "9efd6e26c317f08a",
+"text": "**Convergence Dashboard Frontend** - Build the convergence panel UI component in ui/cockpit.js (delegated to Pixel): autonomy score sparklin",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "c7d540c2239f9c72",
+"text": "**Predictive Intervention Detector** - Extend intervention_logger.py with pre-arrival predictor: analyze agent's last N=5 messages for patte",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "9b8a1442f461011c",
+"text": "**Convergence Readiness Checklist** - Living checklist of steady-state criteria (0 interventions for N cycles, self-healing rate >95%, cycle",
+"agent": "scribe",
+"at": "2026-11-25"
 }
 ]
