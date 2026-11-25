@@ -96,12 +96,19 @@ def code_for(path, table):
     if pick is None:
         return "%s : not under any lettered folder" % norm
     key, folder = pick
-    for idx, (tgt, _s) in enumerate(arrow_lines(folder), 1):
+    arrows = arrow_lines(folder)
+    for idx, (tgt, _s) in enumerate(arrows, 1):
         t2 = tgt.replace("\\", "/")
         same = t2 == norm or (t2.startswith(folder + "/")
                               and os.path.basename(t2) == os.path.basename(norm))
         if same:
             return "%s : %s%d" % (norm, key, idx)
+    if arrows:
+        # Asymmetry guard: resolve() only addresses arrow-listed entries in
+        # indexed folders, so minting a file-list position here would produce
+        # an unresolvable code. Demand the index line instead.
+        return ("%s : under %s but NOT in its INDEX.md - "
+                "append an arrow line to make it addressable") % (norm, folder)
     files = list_files(folder)
     if norm in files:
         return "%s : %s%d" % (norm, key, files.index(norm) + 1)

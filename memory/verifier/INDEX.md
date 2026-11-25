@@ -1,7 +1,8 @@
 # memory/verifier/ INDEX
-Last updated: 2026-11-24.
+Last updated: 2026-11-25.
 
 ## 2026-11-25 (auto-loop batch)
+- **ASSIST 2026-11-25 (Mechanic lane)**: Verified stale hot-note claim "convergence_health.py paths fixed" = FALSE. Live run proved BOTH failing checks had wrong paths: seat-matrix pointed at memory/fleet/ (file is in memory/ops/) and cycle-estimator check read a phantom standalone file (estimator actually writes cycle_estimate into fleet-mode.json). Fixed both; selftest 5/5 PASS, live seat_matrix_fresh flipped FAIL->PASS. Remaining honest FAIL: estimator output genuinely absent this cycle (hand-off to Builder/Orchestrator/Mechanic). Artifact: convergence-health-path-fix-2026-11-25.md
 - **Assist 2026-11-25**: Data-readiness check for Researcher Goal 1 (Seat Unavailability v2) - all inputs present; latency history thin (8 records, single timestamp). Artifact: data-readiness-researcher-seat-model-v2.md
 - **10/10 goals verified in single pass.** All scripts re-run live + self-tests:
   - G1 convergence_metric_validation.py: 2/3 PASS, mode_durations data defect flagged (handed to Mechanic)

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25T01:10:27.526119",
+  "generated": "2026-11-25T10:24:20.935003",
   "overall": "FAIL",
   "checks": [
     {
@@ -9,13 +9,13 @@
     },
     {
       "check": "autonomy_score_updated",
-      "status": "FAIL",
-      "detail": "file missing"
+      "status": "PASS",
+      "detail": "3.0h old"
     },
     {
       "check": "intervention_log_growing",
-      "status": "FAIL",
-      "detail": "no entries yet"
+      "status": "PASS",
+      "detail": "10 entries"
     },
     {
       "check": "cycle_estimator_running",

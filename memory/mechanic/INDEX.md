@@ -25,3 +25,4 @@ Last updated: 2026-11-13.
 - [Mechanic 2026-11-23] goal 7 log rotation verified -> memory/mechanic/goal7-log-rotate-verified-2026-11-23.md   all 4 ACs PASS locally (rotation + compression + bounded disk + no data loss); remaining: schtask registration (elev.py down)
 - [Mechanic 2026-11-23] goal 2 mirror heal verified -> memory/mechanic/goal2-mirror-heal-verified-2026-11-23.md   dry-run stale detection PASS + unit test 9/9 (fixed to match current API); remaining: schtask registration (elev.py down)- [state_collector.py](memory/mechanic/state_collector.py) - fleet state collector daemon: per-host snapshot every 5 min via schtask FleetStateCollector (2026-11-23 Goal#5 verified)  
 - [test_fleet_circuit_breaker.py](memory/mechanic/test_fleet_circuit_breaker.py) - circuit breaker test suite (selftest PASS)  
+- [M-CODE 2026-11-25] reboot log -> memory/mechanic/reboot-recovery.jsonl   per-host reboot recovery event log (lane 10/10 evidence)

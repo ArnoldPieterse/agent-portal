@@ -90,4 +90,6 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 ## Linked content (KG orphan remediation 2026-11-19)
 - [fleet-monitoring-cadence.md](memory/ops/fleet-monitoring-cadence.md)
 - [pin-guard-extension-ui-files.md](memory/ops/pin-guard-extension-ui-files.md)
-- 2026-11-22 Orchestrator: `recover_seats.py` (per-seat fleet recovery, plan-by-default) built + runs clean; converts the prose-only unreachable-seat unblock into a one-command `--execute` path for a non-sandbox seat. Evidence: -> memory/orchestrator/recover-seats-script-2026-11-22.md
+- 2026-11-22 Orchestrator: `recover_seats.py` (per-seat fleet recovery, plan-by-default) built + runs clean; converts the prose-on
+- [M-CODE 2026-11-25] seat matrix -> memory/ops/seat-matrix.json   per-seat health/role matrix (SSOT for seat state)
+- [M-CODE 2026-11-25] probes -> memory/ops/probes.md   probe runbooks incl. multi-GB LAN copy full-hash verify rulely unreachable-seat unblock into a one-command `--execute` path for a non-sandbox seat. Evidence: -> memory/orchestrator/recover-seats-script-2026-11-22.md

@@ -109,3 +109,4 @@ Cycle-7 goal set (set 2026-11-20). These leaves make verified cycle-7 work visib
 - -> memory/designer/evidence-complexity-heatmap-2026-11-25.md — Goal #5: 5×2 grid heatmap, 5-color scale, tooltips + legend. ui/cockpit-complexity-heatmap.js (5448B).
 - -> memory/designer/evidence-progress-ring-2026-11-25.md — Goal #6: SVG circular progress ring, 3 criteria checklist, 450ms animation. ui/cockpit-progress-ring.js (4392B).
 - -> memory/designer/evidence-autonomy-cards-2026-11-25.md — Goal #7: 8 agent cards in 4×2 grid, sortable by 4 metrics. ui/cockpit-autonomy-cards.js (5397B).
+- -> memory/designer/deep-sweep-2026-11-19.md — design-token deep sweep: 0 hardcoded hex/glyphs/raw px across ui/*.js + index.html + app.css; all var() refs resolve to tokens (commit 85e3097).

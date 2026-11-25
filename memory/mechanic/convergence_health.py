@@ -31,13 +31,38 @@ def file_line_count(path):
     with open(p, "r", encoding="utf-8") as f:
         return sum(1 for _ in f)
 
+def cycle_estimate_age_hours():
+    """Hours since the last cycle_estimate write, or None if absent.
+
+    The estimator (builder/orchestrator) does NOT write a standalone file; it
+    merges a 'cycle_estimate' block + 'cycle_estimate_ts' into fleet-mode.json.
+    """
+    fm = BASE / "memory" / "ops" / "fleet-mode.json"
+    if not fm.exists():
+        return None
+    try:
+        data = json.loads(fm.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    ts = data.get("cycle_estimate_ts")
+    if not ts or "cycle_estimate" not in data:
+        return None
+    try:
+        dt = datetime.datetime.fromisoformat(ts)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=datetime.timezone.utc)
+        age = (datetime.datetime.now(datetime.timezone.utc) - dt).total_seconds() / 3600.0
+        return max(0.0, age)
+    except ValueError:
+        return None
+
 def run_check(overrides=None):
     """Run health checks. overrides dict can inject file paths/ages for testing."""
     ov = overrides or {}
     results = []
 
     # Check 1: seat-matrix.json fresh
-    sm_path = ov.get("seat_matrix", BASE / "memory" / "fleet" / "seat-matrix.json")
+    sm_path = ov.get("seat_matrix", BASE / "memory" / "ops" / "seat-matrix.json")
     age = ov.get("seat_matrix_age_hours", file_age_hours(sm_path))
     if age is None:
         results.append({"check": "seat_matrix_fresh", "status": "FAIL", "detail": "file missing"})
@@ -64,9 +89,8 @@ def run_check(overrides=None):
     else:
         results.append({"check": "intervention_log_growing", "status": "PASS", "detail": f"{lines} entries"})
 
-    # Check 4: cycle estimator output exists
-    ce_path = ov.get("cycle_estimator", BASE / "memory" / "ops" / "cycle-estimate.json")
-    age = ov.get("cycle_estimator_age_hours", file_age_hours(ce_path))
+    # Check 4: cycle estimator output fresh (estimator writes cycle_estimate into fleet-mode.json)
+    age = ov.get("cycle_estimator_age_hours", cycle_estimate_age_hours())
     if age is None:
         results.append({"check": "cycle_estimator_running", "status": "FAIL", "detail": "output missing"})
     elif age > STALE_HOURS * 7:  # estimator runs less frequently, allow 2 weeks
