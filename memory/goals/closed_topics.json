@@ -2500,5 +2500,11 @@
 "text": "**Agent Autonomy Comparison Cards** - per-agent card showing individual autonomy contribution: passes used, goals completed, re-work count, ",
 "agent": "designer",
 "at": "2026-11-25"
+},
+{
+"sig": "b06d8842230c88fb",
+"text": "**Convergence Metrics Export** - \"Export\" button on convergence panel: downloads current metrics as JSON + generates one-page summary PNG (f",
+"agent": "designer",
+"at": "2026-11-25"
 }
 ]
