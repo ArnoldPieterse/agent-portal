@@ -41,20 +41,23 @@ def get_agent_statuses() -> list:
 
 
 def get_host_resources() -> list:
-    """Get host resource info. Falls back to empty if no probes available."""
+    """Get host resource info. 2026-11-25: live source = /api/fleet/cockpit (which probes
+    every seat's Studio /api/system - before that this function only read stale probe files or
+    emitted a hardcoded null list with a phantom 'Blue' host, so fleet-snapshots.jsonl was 100%
+    blind). Falls back to the real fleet names with nulls when the portal is down."""
     hosts = []
-    # Try reading from probe files if they exist
-    probe_dir = Path("memory/fleet")
-    for f in probe_dir.glob("*probe*"):
-        try:
-            data = json.loads(f.read_text(encoding="utf-8"))
-            hosts.append(data)
-        except Exception:
-            pass
-    # If no probes, report known host names with unavailable status
-    if not hosts:
-        for name in ["White", "Black", "Red", "Blue"]:
-            hosts.append({"host": name, "vram_pct": None, "cpu_pct": None, "gpu_temp": None})
+    try:
+        import urllib.request
+        d = json.load(urllib.request.urlopen("http://127.0.0.1:8099/api/fleet/cockpit", timeout=10))
+        hosts = [{"host": h.get("name"), "vram_pct": h.get("vram_pct"),
+                  "cpu_pct": h.get("cpu_pct"), "gpu_temp": h.get("temp_c")}
+                 for h in d.get("hosts", [])]
+        if hosts:
+            return hosts
+    except Exception:
+        pass
+    for name in ["White", "Black", "Red", "Pale"]:
+        hosts.append({"host": name, "vram_pct": None, "cpu_pct": None, "gpu_temp": None})
     return hosts
 
 
