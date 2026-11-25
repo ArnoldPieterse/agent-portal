@@ -1,3 +1,11 @@
+## STEALTH AI REVENUE ENGINE - $3,800/7d -> $45K/mo - user directive 2026-11-25
+Status: **QUEUED** - verbatim prompt stored as recent memory at memory/projects/stealth-revenue-engine.md (**M5**). "Execution only" = artifacts, not essays.
+- [ ] Researcher: repetitive-task inventory + first lead list (SMBs paying for recurring ops)
+- [ ] Mechanic/Builder: package top 3 tasks as automated workflows running on the fleet hosts
+- [ ] Outlet: outbound outreach pack per leverage-map.md; staged in queue/ (lint-clean)
+- [ ] Scribe: daily $ ledger + winner/loser scorecard -> digests/
+- [ ] Day-7 checkpoint: $3,800 target review (level-report style)
+
 ## DNA SELF-REBUILD + SIMS-LIKE WORLD - 2026-11-25
 Status: **LIVE** - User ask: "core code modulated so it can reassemble using the memory system's index regex... build functions chained and compressed with last build date... in humans we call this DNA" + continuously evolving canned responses (partial/full/tween), three.js+low-level outputs, Sims-like characters per agent that evolve their own world, device LOD, APK later.
 - [x] DNA module memory/dna/ (M-CODE Y): rebuild.py (Y1) scans one regex over chained compressed build functions; 6 builds (portal core, api_extras, gpu_fit, evolve template, self, world page); dry-run drift detection + --out reassembly PROOF PASS (byte-identical incl. self)

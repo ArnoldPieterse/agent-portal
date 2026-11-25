@@ -9,3 +9,5 @@ Last updated: 2026-11-15.
 - -> memory/projects/dcabots-setup-2026-11-14.md   setup decision record (history; superseded by dcabots.md for current state)
 - -> memory/researcher/farm-relpath-diagnosis-2026-11-14.md   farm.py:569 cross-drive relpath root cause + 9-file call-site table + rel_display fix spec (Builder lane evidence; self-test gate = exit 0 + no post-banner traceback)
 - Project area: `projects/dcabots/` on White = canonical tree (C2 ratified); root `dcabots/` = intake tooling only
+
+- stealth revenue engine / 3800-in-7-days directive / workflow arbitrage -> memory/projects/stealth-revenue-engine.md   user directive 2026-11-25 verbatim prompt + lane assignments (QUEUED; live plan = TODO top)

@@ -1,5 +1,8 @@
 # memory/designer/ INDEX
-Last updated: 2026-11-24.
+Last updated: 2026-11-25.
+
+## Stale-claim resolutions (auto-loop)
+- -> memory/designer/stale-claim-goal9-tour-resolved-2026-11-25.md — 2026-11-25: closed the 2026-11-19 stale flag on Onboarding Tour (old-cycle goal #9). Ground-truth re-check: ui/tour.js now PRESENT (4016B/46L, 4-step + stuck-overlay hardening), 13-14 token-based .tour-* CSS rules in app.css, index.html wires the script. PASS-vs-disk; flag resolved.
 
 ## Assists (auto-loop, design lane)
 - -> memory/designer/cockpit-load-gate-spec-impl-fix-2026-11-24.md — cognitive-load QA gate (goal 10 / cycle-11 g9) was non-functional: impl constants contradicted cognitive-budget.md spec (12/8/6 vs 40/5/8) AND counted whole-file instead of above-fold. Fixed ui/cockpit-load-audit.py to match spec + added `<!-- /ABOVE-FOLD -->` sentinel scoping with honest scope field; fleet re-measure in cockpit-load-audit-fleet-2026-11-24.json. Assists Verifier cycle-14 UI gates.

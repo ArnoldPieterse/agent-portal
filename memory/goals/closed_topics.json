@@ -3306,5 +3306,11 @@
 "text": "**Ship Readiness Digest** - daily digest memory/outlet/digests/YYYY-MM-DD.md: queue status (ready/pending/needs-connection), blocked items w",
 "agent": "outlet",
 "at": "2026-11-25"
+},
+{
+"sig": "664e1737e6cb8db4",
+"text": "**Runbook Executability Audit** - Scan all .md runbooks in memory/ops/: for each, check if a corresponding executable script exists (or can ",
+"agent": "forge",
+"at": "2026-11-25"
 }
 ]
