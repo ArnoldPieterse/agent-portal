@@ -127,3 +127,5 @@
 {"ts": "2026-11-26T02:47:35", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "d24dec57", "reason": "lod-evict"}
 {"ts": "2026-11-26T02:47:35", "ref": ["memory/researcher/open-questions-log.md", 131], "focus_sig": "d24dec57", "reason": "lod-evict"}
 {"ts": "2026-11-26T02:47:35", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "d24dec57", "reason": "lod-evict"}
+{"ts": "2026-11-26T02:50:38", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "538eefb8", "reason": "lod-evict"}
+{"ts": "2026-11-26T02:50:38", "ref": ["memory/goals/archive/mechanic-2026-11-23-cycle8.md", 11], "focus_sig": "538eefb8", "reason": "lod-evict"}
