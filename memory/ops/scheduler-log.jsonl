@@ -2643,3 +2643,7 @@
 {"t": "2026-11-25 23:04:59", "job": "cycle_1h", "event": "done", "rc": 2}
 {"t": "2026-11-25 23:09:44", "job": "cycle_5m", "event": "start", "pid": 43468}
 {"t": "2026-11-25 23:09:49", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-25 23:14:44", "job": "cycle_5m", "event": "start", "pid": 35192}
+{"t": "2026-11-25 23:14:44", "job": "cycle_10m", "event": "start", "pid": 36680}
+{"t": "2026-11-25 23:14:49", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-25 23:14:49", "job": "cycle_10m", "event": "done", "rc": 0}
