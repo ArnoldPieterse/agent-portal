@@ -7657,6 +7657,8 @@ class Handler(BaseHTTPRequestHandler):
         self._json(200, {"ok": True})
 
 
+<2397 chars of arguments you sent, already written to agent_portal.py; elided to save room. Not tool output; the file on disk holds it.>
+
 def _level_heartbeat():
     """Autonomous level check (2026-11-23). Previously _check_level_up ran ONLY when a client
     polled /api/goals or a group run ended - cycle-8 sat at 80/80 from 02:28 to 06:00 (~3.5 h)
@@ -7692,6 +7694,7 @@ if __name__ == "__main__":
         pass
     threading.Thread(target=_autoloop_watchdog, daemon=True).start()   # AUTO-LOOP (2026-11-16)
     threading.Thread(target=_level_heartbeat, daemon=True).start()   # LEVEL HEARTBEAT (2026-11-23)
+    threading.Thread(target=_stale_run_watchdog, daemon=True).start()   # STALE-RUN REAPER (2026-11-25)
     try:
         import portal_scheduler
     except Exception as _sched_e:

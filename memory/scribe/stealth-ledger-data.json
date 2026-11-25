@@ -1,0 +1,24 @@
+{
+  "plan": "Stealth Revenue Engine",
+  "source": "memory/projects/stealth-revenue-engine.md (M5)",
+  "kill_threshold_dollar_per_min": 5,
+  "scale_threshold_dollar_per_min": 20,
+  "scorecard_due_day": 7,
+  "days": [
+    {
+      "date": "2026-11-25",
+      "day_number": 1,
+      "outreach_staged": 0,
+      "replies_received": 0,
+      "demos_delivered": 0,
+      "revenue_usd": 0.0,
+      "platform_connected": false,
+      "scheduler": {"mode": "once", "completed_at": "2026-11-25T10:22:35.473481", "pid": 21844},
+      "workflows": [
+        {"id": "WF1", "name": "lead_enrichment", "runs": 2, "status": "ok", "exit_code": 0, "elapsed_sec": 0.1, "output": "enriched_leads CSV (3 leads)", "revenue_usd": 0.0, "effort_agent_min": 5},
+        {"id": "WF2", "name": "invoice_tracker", "runs": 2, "status": "ok", "exit_code": 0, "elapsed_sec": 0.1, "output": "invoice_summary JSON (test total $497.99)", "revenue_usd": 0.0, "effort_agent_min": 5},
+        {"id": "WF3", "name": "content_repurpose", "runs": 2, "status": "ok", "exit_code": 0, "elapsed_sec": 0.1, "output": "variants JSON (3 from 5 sentences)", "revenue_usd": 0.0, "effort_agent_min": 5}
+      ]
+    }
+  ]
+}
