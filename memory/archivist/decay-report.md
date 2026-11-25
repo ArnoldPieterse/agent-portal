@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 11232 | flagged (<0.35): 0
+Leaves: 11267 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9016,7 +9016,6 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/researcher/snapshots/latest.json | 2 | 0 | n | 0.539 |
 | memory/researcher/snapshots/snapshot_20261123T123755.json | 2 | 0 | n | 0.539 |
 | memory/researcher/__pycache__/fleet_trust_score.cpython-315.pyc | 2 | 0 | n | 0.539 |
-| memory/researcher/__pycache__/goal_ledger.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/researcher/__pycache__/knowledge_decay.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/researcher/__pycache__/precedent_match.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/scribe/app-css-hex-audit-2026-11-23.md | 2 | 0 | n | 0.539 |
@@ -10205,7 +10204,9 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/designer/_edge_profile/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 0 | 0 | n | 0.550 |
 | memory/designer/_edge_profile/SmartScreen/RemoteData/edgeSettings | 0 | 0 | n | 0.550 |
 | memory/designer/_edge_profile/SmartScreen/RemoteData/edgeSettings_2.0-0 | 0 | 0 | n | 0.550 |
+| memory/dna/art_outlet.py | 0 | 0 | n | 0.550 |
 | memory/dna/__pycache__/rebuild.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/dna/__pycache__/rebuild.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/dream/dream.log | 0 | 0 | n | 0.550 |
 | memory/dream/latest.json | 0 | 0 | n | 0.550 |
 | memory/dream/state.json | 0 | 0 | n | 0.550 |
@@ -10305,6 +10306,8 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/llm/multi-machine-llm.md | 0 | 0 | n | 0.550 |
 | memory/llm/update_agent_models.py | 0 | 0 | n | 0.550 |
 | memory/llm/_probe.py | 0 | 0 | n | 0.550 |
+| memory/llm/downloads/gemma4-download.log | 0 | 0 | n | 0.550 |
+| memory/llm/downloads/gemma4_dl.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/boot-deploy-fix-2026-11-17.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/cadence-adjuster-selftest-evidence.jsonl | 0 | 0 | n | 0.550 |
@@ -10359,6 +10362,7 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/ops/autonomy-health-report.json | 0 | 0 | n | 0.550 |
 | memory/ops/autonomy-regression.json | 0 | 0 | n | 0.550 |
 | memory/ops/autonomy-score.json | 0 | 0 | n | 0.550 |
+| memory/ops/black-idle-fix-20261125.md | 0 | 0 | n | 0.550 |
 | memory/ops/cadence-changes.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/cadence-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/canned-responses.jsonl | 0 | 0 | n | 0.550 |
@@ -10381,6 +10385,8 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/ops/efficiency-index.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-mode.json | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/future-calls-20261125.md | 0 | 0 | n | 0.550 |
+| memory/ops/future-calls.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/gate-metrics.json | 0 | 0 | n | 0.550 |
 | memory/ops/host-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/host-power-events.md | 0 | 0 | n | 0.550 |
@@ -10389,6 +10395,7 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/ops/human-interventions.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/inheritance-proposals.json | 0 | 0 | n | 0.550 |
 | memory/ops/launch_host.vbs | 0 | 0 | n | 0.550 |
+| memory/ops/ledger-staleness-fix-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/ops/load-outage.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/long-soak-trace.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue.jsonl | 0 | 0 | n | 0.550 |
@@ -10428,7 +10435,9 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/ops/merge-queue/agents.json.79edc43fde | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.87dbb949e5 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.a092a04214 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agents.json.a2ee5c21f8 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.d33370d9f5 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.07e0d0fdbd | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0a2912a037 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.267b52f8cd | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.4456d57852 | 0 | 0 | n | 0.550 |
@@ -10438,6 +10447,7 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.5d6261d06a | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.66f94870a3 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.7f039fbb77 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.86d21d06e6 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.948e50f7dd | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.9de335bef7 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.a177183feb | 0 | 0 | n | 0.550 |
@@ -10481,22 +10491,40 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/orchestrator/__pycache__/convergence_api.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/__pycache__/convergence_api.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/__pycache__/steady_state_detector.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/outlet/evidence-auto-loop-2026-11-25.md | 0 | 0 | n | 0.550 |
-| memory/outlet/leverage-map.md | 0 | 0 | n | 0.550 |
 | memory/outlet/briefs/2026-11-25-trend-brief.md | 0 | 0 | n | 0.550 |
 | memory/outlet/briefs/protocol.md | 0 | 0 | n | 0.550 |
+| memory/outlet/digests/2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b01-portal-core.json | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b01-portal-core.png | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b02-api-extras.json | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b02-api-extras.png | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b03-gpu-fit.json | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b03-gpu-fit.png | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b04-evolve-template.json | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b04-evolve-template.png | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b05-dna-rebuild.json | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b05-dna-rebuild.png | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b06-world-page.json | 0 | 0 | n | 0.550 |
+| memory/outlet/dna-art/b06-world-page.png | 0 | 0 | n | 0.550 |
 | memory/outlet/queue/2026-11-25-fleet-autonomy-convergence.md | 0 | 0 | n | 0.550 |
-| memory/outlet/templates/reply-repost-templates.md | 0 | 0 | n | 0.550 |
 | memory/pixel/conv-harness.html | 0 | 0 | n | 0.550 |
 | memory/pixel/evidence-a11y-goal3-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/pixel/evidence-drilldown-goal2-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/pixel/evidence-stale-refresh-goal4-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/pixel/_dom.txt | 0 | 0 | n | 0.550 |
 | memory/pixel/_err.txt | 0 | 0 | n | 0.550 |
+| memory/portal/memfocus-parked.jsonl | 0 | 0 | n | 0.550 |
+| memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
+| memory/portal/memfocus.md | 0 | 0 | n | 0.550 |
+| memory/portal/memfocus.py | 0 | 0 | n | 0.550 |
 | memory/portal/v1-upgrades-round-4.md | 0 | 0 | n | 0.550 |
+| memory/portal/__pycache__/memfocus.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/researcher/autonomy-debt-results.json | 0 | 0 | n | 0.550 |
 | memory/researcher/autonomy-factors.md | 0 | 0 | n | 0.550 |
 | memory/researcher/autonomy_debt.py | 0 | 0 | n | 0.550 |
+| memory/researcher/backup_goal_ledger_STALE_2026-11-25.json | 0 | 0 | n | 0.550 |
 | memory/researcher/convergence-forecast.md | 0 | 0 | n | 0.550 |
 | memory/researcher/convergence-input-gap-report.md | 0 | 0 | n | 0.550 |
 | memory/researcher/convergence-model-goal1-evidence.md | 0 | 0 | n | 0.550 |
@@ -10518,6 +10546,7 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/researcher/efficiency-index.jsonl | 0 | 0 | n | 0.550 |
 | memory/researcher/efficiency_index.py | 0 | 0 | n | 0.550 |
 | memory/researcher/evidence-d1-autonomy-discrepancy-resolved-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/researcher/evidence-stale-goal-line-closure-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/researcher/failure-taxonomy.md | 0 | 0 | n | 0.550 |
 | memory/researcher/goal-acceptance-model.json | 0 | 0 | n | 0.550 |
 | memory/researcher/goal-acceptance-predictor-findings.md | 0 | 0 | n | 0.550 |
@@ -10549,6 +10578,7 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/researcher/topic_scorer.py | 0 | 0 | n | 0.550 |
 | memory/researcher/unavailability-forecast.json | 0 | 0 | n | 0.550 |
 | memory/researcher/unavailability-impact-v2.md | 0 | 0 | n | 0.550 |
+| memory/researcher/__pycache__/goal_ledger.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/researcher/__pycache__/goal_ledger.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/scribe/autonomy_trend.py | 0 | 0 | n | 0.550 |
 | memory/scribe/convergence-glossary.md | 0 | 0 | n | 0.550 |
@@ -10668,7 +10698,6 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/builder/feed_refresh.py | 1 | 1 | n | 0.614 |
 | memory/archivist/kg-auto-update-progress-2026-11-17.md | 8 | 2 | n | 0.615 |
 | memory/designer/MEMORY.md | 0 | 1 | n | 0.619 |
-| memory/dna/manifest.json | 0 | 1 | n | 0.619 |
 | memory/goals/archive/builder-2026-11-24.md | 0 | 1 | n | 0.619 |
 | memory/ops/cockpit-feed.json | 0 | 1 | n | 0.619 |
 | memory/ops/fleet-metrics.jsonl | 0 | 1 | n | 0.619 |
@@ -10719,6 +10748,7 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/researcher/mechanic-goal8-fleet-status-stale-2026-11-19.md | 6 | 3 | n | 0.655 |
 | memory/researcher/recovery-matrix-verify-2026-11-19.md | 6 | 3 | n | 0.655 |
 | memory/synthesis/index-pointer-batch-r58-canonical-append.md | 6 | 3 | n | 0.655 |
+| memory/dna/manifest.json | 0 | 2 | n | 0.660 |
 | memory/goals/mechanic.md | 0 | 2 | n | 0.660 |
 | memory/goals/orchestrator.md | 0 | 2 | n | 0.660 |
 | memory/goals/scribe.md | 0 | 2 | n | 0.660 |
@@ -10865,6 +10895,7 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/designer/evidence-progress-ring-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/designer/evidence-steady-state-indicator-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/designer/self-evolve-ui.md | 0 | 1 | Y | 0.769 |
+| memory/designer/stale-claim-goal9-tour-resolved-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/designer/wallpaper-range.json | 0 | 1 | Y | 0.769 |
 | memory/designer/world-sims.md | 0 | 1 | Y | 0.769 |
 | memory/designer/lumen/portraits/agentportal-state-spec-2026-11-25.md | 0 | 1 | Y | 0.769 |
@@ -10883,14 +10914,17 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/forge/smoke_suite.py | 0 | 1 | Y | 0.769 |
 | memory/forge/test-topology.json | 0 | 1 | Y | 0.769 |
 | memory/goals/researcher-g1-convergence-forecast-2026-11-25.md | 0 | 1 | Y | 0.769 |
+| memory/llm/hf-survey-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 1 | Y | 0.769 |
 | memory/ops/convergence-section-layout-spec.md | 0 | 1 | Y | 0.769 |
 | memory/ops/cycle-history-consolidated.jsonl | 0 | 1 | Y | 0.769 |
 | memory/ops/seat-matrix.json | 0 | 1 | Y | 0.769 |
 | memory/outlet/evidence-assist-archivist-spof-2026-11-25.md | 0 | 1 | Y | 0.769 |
+| memory/outlet/leverage-map.md | 0 | 1 | Y | 0.769 |
 | memory/outlet/profiles.md | 0 | 1 | Y | 0.769 |
 | memory/outlet/queue_check.py | 0 | 1 | Y | 0.769 |
 | memory/outlet/voice_lint.py | 0 | 1 | Y | 0.769 |
+| memory/outlet/templates/reply-repost-templates.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-convergence-375-static-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-convergence-bundle-audit-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-convergence-persistence-2026-11-25.md | 0 | 1 | Y | 0.769 |
@@ -10903,6 +10937,7 @@ Leaves: 11232 | flagged (<0.35): 0
 | memory/portal/api-index.md | 0 | 1 | Y | 0.769 |
 | memory/portal/api-reqs.md | 0 | 1 | Y | 0.769 |
 | memory/portal/bugs/cockpit-remote-hosts-null-metrics-2026-11-25.md | 0 | 1 | Y | 0.769 |
+| memory/projects/stealth-revenue-engine.md | 0 | 1 | Y | 0.769 |
 | memory/scribe/agent-autonomy-matrix.md | 0 | 1 | Y | 0.769 |
 | memory/scribe/autonomy-decomposition.jsonl | 0 | 1 | Y | 0.769 |
 | memory/scribe/autonomy-handoff-protocol.md | 0 | 1 | Y | 0.769 |
