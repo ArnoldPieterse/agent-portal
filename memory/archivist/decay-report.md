@@ -1,6 +1,6 @@
 # Decay report 2026-11-26
 
-Leaves: 11321 | flagged (<0.35): 0
+Leaves: 11370 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -8463,6 +8463,36 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/goals/archive/verifier-2026-11-23-cycle9.md | 3 | 0 | n | 0.533 |
 | memory/goals/archive/verifier-2026-11-23-prev.md | 3 | 0 | n | 0.533 |
 | memory/goals/archive/verifier-2026-11-23.md | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-073849.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-073946.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-074819.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-081801.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-084801.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-085159.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-091427.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-091801.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-093841.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-094801.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-101801.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-103456.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-124754.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-134541.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-140636.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-143507.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-145757.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-150530.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-161510.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-172332.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-175548.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-192156.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-200804.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-201603.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-205539.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-205937.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-211424.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-213943.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-224540.json | 3 | 0 | n | 0.533 |
+| memory/goals/history/forecast-20261123-234730.json | 3 | 0 | n | 0.533 |
 | memory/goals/__pycache__/forecast_engine.cpython-313.pyc | 3 | 0 | n | 0.533 |
 | memory/handoffs/HO-20261123-loop-scorer-contract.md | 3 | 0 | n | 0.533 |
 | memory/levels/level_1_20261123-060001.md | 3 | 0 | n | 0.533 |
@@ -9211,6 +9241,23 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/goals/archive/verifier-cycle16-2026-11-24.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier_15.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier_test-cycle.md | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-005723.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-015929.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-030002.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-040506.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-051235.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-062139.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-072313.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-083254.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-085855.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-092250.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-094942.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-100610.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-102343.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-103122.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-105512.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-112401.json | 2 | 0 | n | 0.539 |
+| memory/goals/history/forecast-20261124-115414.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-115514.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-121030.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-121211.json | 2 | 0 | n | 0.539 |
@@ -10676,6 +10723,7 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261126-020302.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-030003.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-040308.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/cockpit-feed-refresh-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook-executability-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/enriched_leads_20261125_180444.csv | 0 | 0 | n | 0.550 |
@@ -10707,6 +10755,7 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.134815a3c1 | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-parked.jsonl | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
+| memory/researcher/stealth/task-inventory.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-forge-goal8-runbook-audit.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-log-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-assist-forge-consistency-2026-11-26.md | 0 | 0 | n | 0.550 |
@@ -11270,10 +11319,10 @@ Leaves: 11321 | flagged (<0.35): 0
 | memory/researcher/ip-scrub-gate-reconcile-2026-11-15.md | 1 | 3 | Y | 0.833 |
 | memory/researcher/sandbox-host-diff-2026-11-16.md | 1 | 3 | Y | 0.833 |
 | memory/researcher/unified-loader-offline-surface-2026-11-20.md | 1 | 3 | Y | 0.833 |
-| memory/scribe/MEMORY.md | 1 | 3 | Y | 0.833 |
 | memory/scribe/owner-coverage-ledger-2026-11-16.json | 1 | 3 | Y | 0.833 |
 | memory/verifier/evolution-lifecycle-validator-2026-11-17.md | 1 | 3 | Y | 0.833 |
 | memory/mechanic/fleet-probe-v2-2026-11-16.md | 10 | 6 | Y | 0.839 |
+| memory/scribe/MEMORY.md | 0 | 3 | Y | 0.839 |
 | memory/synthesis/2026-cycle2-retrospective.md | 10 | 6 | Y | 0.839 |
 | memory/portal/api-reference.md | 1 | 37 | n | 0.844 |
 | memory/builder/portal-startup-fix-2026-11-17.md | 9 | 6 | Y | 0.845 |
