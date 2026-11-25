@@ -147,7 +147,7 @@ def _ensure_launcher():
         # Do NOT trust USERPROFILE: this host's tool processes run with
         # USERPROFILE=C:\Projects\AgentPortal (verified 2026-11-23), which would plant the
         # launcher where Windows never looks. 'White' is the only profile on this machine.
-        prof = r"C:\Users\White"
+        prof = __import__("os").path.expanduser("~")
         d = os.path.join(prof, "AppData", "Roaming", "Microsoft", "Windows",
                          "Start Menu", "Programs", "Startup")
         f = os.path.join(d, "portal_host.vbs")

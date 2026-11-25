@@ -115,8 +115,8 @@ Run: 2026-11-20 | Status: **FAIL (304 issues)**
 - ... and 150 more
 
 ## Circular References
-- C:\Users\White\.unsloth\studio\sandbox\_default\memory\archivist\INDEX.md -> C:\Users\White\.unsloth\studio\sandbox\_default\memory\archivist\INDEX.md
-- C:\Users\White\.unsloth\studio\sandbox\_default\memory\workspace\INDEX.md -> C:\Users\White\.unsloth\studio\sandbox\_default\memory\workspace\INDEX.md
+- C:\Users\<white>\.unsloth\studio\sandbox\_default\memory\archivist\INDEX.md -> C:\Users\<white>\.unsloth\studio\sandbox\_default\memory\archivist\INDEX.md
+- C:\Users\<white>\.unsloth\studio\sandbox\_default\memory\workspace\INDEX.md -> C:\Users\<white>\.unsloth\studio\sandbox\_default\memory\workspace\INDEX.md
 
 ## Oversized INDEX Files
 - `memory\archivist\INDEX.md`: 5669 chars (budget 1600)

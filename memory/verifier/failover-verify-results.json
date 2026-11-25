@@ -37,5 +37,5 @@
     ]
   },
   "sla_seconds": 300,
-  "routing_map_source": "C:\\Users\\black\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\seat-routing-map.json"
+  "routing_map_source": "C:\Users\<black>\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\seat-routing-map.json"
 }

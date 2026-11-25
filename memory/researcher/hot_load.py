@@ -93,7 +93,7 @@ def _mp(user, *parts):
 
 HOSTS = {
     "white": {
-        "ip": "[LAN-IP]", "studio": STUDIO_DEFAULT, "auth": None,
+        "ip": "IP_LAN", "studio": STUDIO_DEFAULT, "auth": None,
         "user": "White",
         "models": [
             {"name": "atlas-q8", "probe_alias": "atlas-q8",

@@ -1,6 +1,6 @@
 # Goal #4 Progress — 2026-11-17 (auto-loop, Red seat)
 
-**Seat**: Red sandbox (C:\Users\Red) — cannot reach :8099 (WinError 10013 WSAEACCES).
+**Seat**: Red sandbox (C:\Users\<red>) — cannot reach :8099 (WinError 10013 WSAEACCES).
 
 ## Current state
 - Valid baseline days: **2/7** (11-16 18:37, 11-17 14:27)

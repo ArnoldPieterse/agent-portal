@@ -17,7 +17,7 @@ A dedicated per-event audit log `mirror_events.log` (separate from the aggregate
 - Call-site grep: exactly 1 def + 4 calls; all 4 dirs (push_root/push_mem/pull_mem/pin_drift) present.
 
 ## Where the live mirror runs vs my seat (why data collection has a precondition)
-- My CWD = `C:\Users\White\.unsloth\studio\sandbox\_default` (a seat copy), NOT the live root.
+- My CWD = `C:\Users\<white>\.unsloth\studio\sandbox\_default` (a seat copy), NOT the live root.
 - Live root = `C:\Projects\AgentPortal\` (`portal_start.bat`: `pythonw.exe agent_portal.py` from there). The portal + mirror run there; I have no read access to that tree from this seat (WinError 5 on parent dirs, per r16).
 - My sandbox's `memory_mirror.log` is a stale snapshot: last entry **2026-11-14 02:02:30**, connect errors (WinError 5 Access denied) for Red/Pale. So the live run log I need to feed data from is on the White workspace root, unreachable here.
 - My edit lives in the canonical sandbox copy; it propagates to the live workspace via per-turn LWW sync (memory_mirror.py is NOT in the TODO.md/MEMORY.md skip-list). It will also be pushed out to remotes as a White-canonical root file on the next mirror run.

@@ -10,7 +10,7 @@ Auto-continue round after the 01:45 RESOLVED. Goal: no script may still hardcode
 - `white_load_q8.py` was the ONE remaining script hardcoding pre-rename `lmstudio-community\Qwen3.8-27B-GGUF` (referenced by fleet_reload.py docstring as the White Q8 recipe). Now dual-path via same `_resolve()` pattern; py_compile PASS.
 
 ## Not done here, with reason
-- Live API probe from this seat: BLOCKED (sandbox net allowlist excludes 127.0.0.1; terminal blocks curl/powershell) — and C:\Users\White\.lmstudio not visible from sandbox FS. Ground truth for post-rename state remains the 01:45 panel verification in TODO.md (Orchestrator). Dual-path code is safe in either disk state regardless.
+- Live API probe from this seat: BLOCKED (sandbox net allowlist excludes 127.0.0.1; terminal blocks curl/powershell) — and C:\Users\<white>\.lmstudio not visible from sandbox FS. Ground truth for post-rename state remains the 01:45 panel verification in TODO.md (Orchestrator). Dual-path code is safe in either disk state regardless.
 - smoke8: DEFERRED on purpose — this chat runs on quinn-q4; hosts.md durable rule = never run parallel smokes against quinn-q4 mid-turn (wedge #2). Run it from a turn that does not ride the Q4 slot, or ask Arnold to trigger detached.
 
 ## Lane status

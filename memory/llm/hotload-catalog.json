@@ -29,7 +29,7 @@
   "models": [
     {
       "id": "qwen3-27b-q8",
-      "folder": "C:\\Users\\White\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "folder": "C:\Users\<white>\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
       "gguf_variant": "Q8_0",
       "host": "white",
       "gpu_ids": [
@@ -58,7 +58,7 @@
     },
     {
       "id": "qwen3-27b-q4",
-      "folder": "C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+      "folder": "C:\Users\<white>\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
       "gguf_variant": "UD-Q4_K_S",
       "host": "white",
       "gpu_ids": [
@@ -91,7 +91,7 @@
     },
     {
       "id": "qwen3-5-4b-mtp",
-      "folder": "C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.5-4B-MTP-GGUF",
+      "folder": "C:\Users\<white>\\.lmstudio\\models\\unsloth\\Qwen3.5-4B-MTP-GGUF",
       "gguf_variant": "MTP",
       "host": "white",
       "gpu_ids": [
@@ -112,7 +112,7 @@
     },
     {
       "id": "qwen3-27b-q8",
-      "folder": "C:\\Users\\pale\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "folder": "C:\Users\<pale>\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
       "gguf_variant": "Q8_0",
       "host": "pale",
       "gpu_ids": [
@@ -139,7 +139,7 @@
     },
     {
       "id": "qwen3-27b-q4",
-      "folder": "C:\\Users\\pale\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+      "folder": "C:\Users\<pale>\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
       "gguf_variant": "UD-Q4_K_S",
       "host": "pale",
       "gpu_ids": [
@@ -168,7 +168,7 @@
     },
     {
       "id": "qwen3-27b-q8",
-      "folder": "C:\\Users\\black\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "folder": "C:\Users\<black>\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
       "gguf_variant": "Q8_0",
       "host": "black",
       "gpu_ids": [
@@ -195,7 +195,7 @@
     },
     {
       "id": "qwen3-27b-q4",
-      "folder": "C:\\Users\\black\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+      "folder": "C:\Users\<black>\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
       "gguf_variant": "UD-Q4_K_S",
       "host": "black",
       "gpu_ids": [
@@ -224,7 +224,7 @@
     },
     {
       "id": "qwen3-27b-q4xl",
-      "folder": "C:\\Users\\Red\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-GGUF",
+      "folder": "C:\Users\<red>\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-GGUF",
       "gguf_variant": "UD-Q4_K_XL",
       "host": "red",
       "gpu_ids": [
@@ -254,7 +254,7 @@
     },
     {
       "id": "qwen3-27b-q8",
-      "folder": "C:\\Users\\Red\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "folder": "C:\Users\<red>\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
       "gguf_variant": "Q8_0",
       "host": "red",
       "gpu_ids": [

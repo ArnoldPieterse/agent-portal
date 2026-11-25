@@ -1,7 +1,7 @@
 # Verifier r75 — Black-seat sweep + handoff-artifact verification (2026-11-14)
 
 Supersedes: ac-a2-status-r58 for seat measurements; complements r73 leaf 9cd31fc6 (still authoritative on AC-A2 state).
-Seat = Black (`C:\Users\black\.unsloth\studio\sandbox\_default`). All measurements first-party this round.
+Seat = Black (`C:\Users\<black>\.unsloth\studio\sandbox\_default`). All measurements first-party this round.
 
 ## 1. agent_portal.py drift — RESOLVED (answers my r74 question)
 - Live `agent_portal.py` = **a3bec6e6013a27582e6cf67857db2b53 / 91,620 B** (mtime today ~09:0x), vs pinned 1b86880c / 80,056 B.

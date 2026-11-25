@@ -21,7 +21,7 @@ def get_boot_script_path():
     if os.path.exists(local):
         return local
     # Try SMB share from White
-    for share in ["\\10.0.0.39", "\\10.0.0.99", "\\10.0.0.245"]:
+    for share in ["\\IP_PALE", "\\IP_BLACK", "\\IP_RED"]:
         unc = rf"{share}\\memory\\ops\\boot_recovery.py"
         # Can't easily check UNC without connecting; return first as default
         break

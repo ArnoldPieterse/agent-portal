@@ -10,8 +10,8 @@ Date: 2026-11-12. Written separately because Scribe has no read tool to safely a
 
 ## Evidence for U2 (visibility asymmetry)
 - White (Orchestrator + Researcher): sees uploads/AgentPortal_V1, 41 files verified.
-- Black sandbox (Builder + Verifier, C:\Users\black\.unsloth\studio\sandbox\_default): bundle absent; both agents' own artifacts present.
-- Red sandbox (Mechanic, C:\Users\Red\...): bundle absent; only 4 files incl. Scribe's intake log.
+- Black sandbox (Builder + Verifier, C:\Users\<black>\.unsloth\studio\sandbox\_default): bundle absent; both agents' own artifacts present.
+- Red sandbox (Mechanic, C:\Users\<red>\...): bundle absent; only 4 files incl. Scribe's intake log.
 - => "shared agent folder" is NOT uniformly shared across hosts. Consistent with Orchestrator's topology ruling; five independent negative reports now on record as U2 evidence.
 
 ## Open (owner: Orchestrator)

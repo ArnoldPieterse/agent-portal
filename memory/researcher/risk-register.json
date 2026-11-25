@@ -671,7 +671,7 @@
   },
   {
    "id": "f1f379a004",
-   "risk": "- Live API probe from this seat: BLOCKED (sandbox net allowlist excludes 127.0.0.1; terminal blocks curl/powershell) \u2014 and C:\\Users\\White\\.lmstudio not visible ",
+   "risk": "- Live API probe from this seat: BLOCKED (sandbox net allowlist excludes 127.0.0.1; terminal blocks curl/powershell) \u2014 and C:\Users\<white>\\.lmstudio not visible ",
    "source": "memory/builder/white-rename-consistency-r20.md",
    "line": 13,
    "mitigated": true,
@@ -10007,7 +10007,7 @@
   },
   {
    "id": "c15a748ec4",
-   "risk": "- Builder + Verifier gate BLOCKED at step 0 until re-drop lands on Black (C:\\Users\\black\\.unsloth\\studio\\sandbox\\_default). (Orchestrator/Arnold re-drop -> Buil",
+   "risk": "- Builder + Verifier gate BLOCKED at step 0 until re-drop lands on Black (C:\Users\<black>\\.unsloth\\studio\\sandbox\\_default). (Orchestrator/Arnold re-drop -> Buil",
    "source": "memory/portal/v1-upgrades-decisions.md",
    "line": 27,
    "mitigated": false,
@@ -10447,7 +10447,7 @@
   },
   {
    "id": "9f170e0f7a",
-   "risk": "`C:\\Users\\White\\elev.py` all missing) AND direct localhost :8888 is egress-blocked (WinError 10013 class,",
+   "risk": "`C:\Users\<white>\\elev.py` all missing) AND direct localhost :8888 is egress-blocked (WinError 10013 class,",
    "source": "memory/researcher/unified-loader-offline-surface-2026-11-20.md",
    "line": 23,
    "mitigated": false,

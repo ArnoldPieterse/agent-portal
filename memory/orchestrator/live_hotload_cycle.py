@@ -21,7 +21,7 @@ from datetime import datetime, timezone
 API = "http://127.0.0.1:8888"
 HOTLOAD_LOG = os.path.normpath(os.path.join("memory", "llm", "hotload-log.jsonl"))
 AGENTS_JSON = os.path.normpath("agents.json")
-MODEL_FOLDER = r"C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S"
+MODEL_FOLDER = r"C:\Users\<white>\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S"
 ALIAS = "quinn-q4"
 
 # Proven load body from model_load_params.json

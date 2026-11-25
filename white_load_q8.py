@@ -4,7 +4,7 @@ Writes white_load_q8_result.json. Run detached; poll the result file."""
 import json, time, urllib.request, urllib.error
 
 BASE = 'http://127.0.0.1:8888'
-Q8_PATH = r'C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-GGUF'
+Q8_PATH = r'C:\Users\<white>\.lmstudio\models\lmstudio-community\Qwen3.8-27B-GGUF'
 
 out = {'steps': []}
 

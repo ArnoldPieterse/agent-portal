@@ -1,6 +1,6 @@
 # Portal sandbox permission fix (2026-11-17)
 
-**Broke:** agent_portal.py `_find_sandbox_dir()` crashed with `PermissionError: [WinError 5] Access is denied: 'C:\Users'` when the watchdog tried to restart it. Root cause: in the sandbox runtime, `os.path.expanduser("~")` already resolves to the sandbox dir (`C:\Users\Red\.unsloth\studio\sandbox\_default`), but the code appended `.unsloth/studio/sandbox/_default` again (double path) then fell through to scanning C:\Users which the sandbox can't access.
+**Broke:** agent_portal.py `_find_sandbox_dir()` crashed with `PermissionError: [WinError 5] Access is denied: 'C:\Users'` when the watchdog tried to restart it. Root cause: in the sandbox runtime, `os.path.expanduser("~")` already resolves to the sandbox dir (`C:\Users\<red>\.unsloth\studio\sandbox\_default`), but the code appended `.unsloth/studio/sandbox/_default` again (double path) then fell through to scanning C:\Users which the sandbox can't access.
 
 **Fixed:** Added early-return in `_find_sandbox_dir()`: if `expanduser("~")` contains `.unsloth` and `sandbox`, return it directly. Patch at agent_portal.py L121-124.
 

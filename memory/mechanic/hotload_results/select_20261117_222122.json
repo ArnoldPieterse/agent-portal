@@ -3,7 +3,7 @@
     {
       "model": {
         "id": "qwen3-27b-q4",
-        "folder": "C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+        "folder": "C:\Users\<white>\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
         "gguf_variant": "UD-Q4_K_S",
         "host": "white",
         "gpu_ids": [

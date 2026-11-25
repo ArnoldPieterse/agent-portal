@@ -37,7 +37,7 @@ LOG_FILE = os.path.join(HERE, "memory_mirror.log")
 SYNC_FILES = ["TODO.md", "MEMORY.md", "agents.json", "agent_portal.py"]   # fallback if the git repo is missing
 # 2026-11-15: files that stay OFF the public GitHub repo (untracked, see .gitignore) but are still
 # mirrored to internal fleet remotes - they hold private LAN detail and must never be pushed publicly.
-INTERNAL_ONLY = ["memory/llm/hosts.md"]
+INTERNAL_ONLY = ["memory/llm/hosts.md", "agents.json", "memory_mirror_hosts.json"]
 GIT_EXE = os.path.join(HERE, "mingit", "cmd", "git.exe")
 CREATE_NO_WINDOW = 0x08000000  # runs under pythonw (no console): without this flag every child (net use / git) allocates a VISIBLE console window - user-critical popup complaint, fixed 2026-11-15 post-reboot
 

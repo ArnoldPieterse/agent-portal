@@ -29,9 +29,9 @@ FLEET_STATE = HERE / "fleet_state.json"
 HOSTS = ["WHITE", "PALE", "BLACK", "RED"]
 HOST_IPS = {
     "WHITE": "127.0.0.1",
-    "PALE": "[LAN-IP]02",
-    "BLACK": "[LAN-IP]03",
-    "RED": "[LAN-IP]04",
+    "PALE": "IP_LAN",
+    "BLACK": "IP_LAN",
+    "RED": "IP_LAN",
 }
 HOST_PORTS = {
     "WHITE": 8099,

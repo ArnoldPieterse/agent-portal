@@ -4,7 +4,7 @@
   "rollup_pass": false,
   "rows": [
     {
-      "file": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\index.html",
+      "file": "C:\Users\<white>\\.unsloth\\studio\\sandbox\\_default\\index.html",
       "pass": false,
       "violations": [
         "text nodes (209) > 40",
@@ -17,7 +17,7 @@
       "primary_channels": 0
     },
     {
-      "file": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\ui\\cockpit-provenance.html",
+      "file": "C:\Users\<white>\\.unsloth\\studio\\sandbox\\_default\\ui\\cockpit-provenance.html",
       "pass": false,
       "violations": [
         "text nodes (473) > 40",
@@ -30,7 +30,7 @@
       "primary_channels": 0
     },
     {
-      "file": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\ui\\cockpit-knowledge-impact.html",
+      "file": "C:\Users\<white>\\.unsloth\\studio\\sandbox\\_default\\ui\\cockpit-knowledge-impact.html",
       "pass": false,
       "violations": [
         "text nodes (119) > 40",

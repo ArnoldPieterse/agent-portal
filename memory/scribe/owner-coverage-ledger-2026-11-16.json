@@ -45,7 +45,7 @@
     },
     {
       "line": 540,
-      "text": "- [ ] PALE next: Q8 copy DONE 15:19 -> POST /api/hub/scan-folders {\"path\":\"C:\\Users\\pale\\models\\Qwen3.8-27B-Q8_0\"} (Arno"
+      "text": "- [ ] PALE next: Q8 copy DONE 15:19 -> POST /api/hub/scan-folders {\"path\":\"C:\Users\<pale>\\models\\Qwen3.8-27B-Q8_0\"} (Arno"
     },
     {
       "line": 568,

@@ -5,7 +5,7 @@ from winrm_ntlm_full import test_host
 hosts = [
     ('PALE',  'IP_PALE', 'pale',  ''),
     ('BLACK', 'IP_BLACK', 'black', ''),
-    ('RED',   '[LAN-IP]', 'red',   ''),
+    ('RED',   'IP_LAN', 'red',   ''),
 ]
 results = {}
 for name, ip, user, pw in hosts:

@@ -1,0 +1,11 @@
+{
+  "script": "content_repurpose.py",
+  "started": "2026-11-25T09:39:58.691724",
+  "budget_cpu_sec": 180,
+  "budget_mem_mb": 256,
+  "status": "ok",
+  "stdout_tail": "[content_repurpose] Generated 3 variants from 5 sentences -> variants_20261125_093958.json\n",
+  "exit_code": 0,
+  "elapsed_sec": 0.1,
+  "finished": "2026-11-25T09:39:58.786510"
+}

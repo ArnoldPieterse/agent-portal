@@ -1,5 +1,5 @@
 # Researcher - hosts.md ctx correction + rename-script state (White canonical seat)
-Date: 2026-11-14 ~04:5x | Seat: WHITE (CWD = C:\Users\White\.unsloth\studio\sandbox\_default)
+Date: 2026-11-14 ~04:5x | Seat: WHITE (CWD = C:\Users\<white>\.unsloth\studio\sandbox\_default)
 
 ## 1. hosts.md Pale archivist-q8 ctx correction (Mechanic's named ask) - DONE, verified
 - File: `memory/llm/hosts.md` (canonical; pre-edit pin 16,386 B / md5 9aef7fe139741efcaf58ddd700d02522 / mtime 02:14:04)

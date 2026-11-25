@@ -41,9 +41,9 @@ HOST_PORTS = {
 # Host IPs (from fleet config)
 HOST_IPS = {
     "WHITE": "127.0.0.1",
-    "PALE": "[LAN-IP]02",
-    "BLACK": "[LAN-IP]03",
-    "RED": "[LAN-IP]04",
+    "PALE": "IP_LAN",
+    "BLACK": "IP_LAN",
+    "RED": "IP_LAN",
 }
 
 # --- Status colors ---

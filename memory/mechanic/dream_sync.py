@@ -52,11 +52,18 @@ MODEL_WAIT_S = 600                 # max wait for boot tasks to load models
 ACTIVE_STALE_S = 30 * 60           # ACTIVE older than this with no progress -> abandon
 POLL_S = 15                        # probe poll interval
 
-HOSTS = {   # name: (ip, is_local)
+import json as _json, os as _os
+try:
+    _FL_TABLE = _json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "..", "fleet_local.json"), encoding="utf-8")).get("hosts", {})
+except Exception:
+    _FL_TABLE = {}
+def _fip(r):
+    return (_FL_TABLE.get(r) or {}).get("ip") or ("LAN_" + r.upper())
+HOSTS = {   # name: (ip, is_local) - real IPs from gitignored fleet_local.json (public-repo hygiene)
     "White": ("127.0.0.1", True),
-    "Red":   ("IP_RED", False),
-    "Pale":  ("IP_PALE", False),
-    "Black": ("IP_BLACK", False),
+    "Red":   (_fip("red"), False),
+    "Pale":  (_fip("pale"), False),
+    "Black": (_fip("black"), False),
 }
 
 # --------------------------------------------------------------------------

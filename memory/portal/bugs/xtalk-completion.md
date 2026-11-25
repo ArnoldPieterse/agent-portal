@@ -13,7 +13,7 @@ Live group test "build a calculator app" (Arnold screenshot 23:29): the new UI V
 "(no output)" bubbles, round-end verdict line ("NO conclusion: Quinn, Atlas produced no output..."),
 correct counter 2/6 (empty completions uncounted). But BOTH agents claimed completion (Atlas "Built and
 rendered above", Quinn "Built it") with ZERO tool calls -> no file on disk anywhere (host sweep of
-C:\Users\White + C:\Projects, last 2h found nothing). Model behavior, not infra: the 27B Q4/Q8 models
+C:\Users\<white> + C:\Projects, last 2h found nothing). Model behavior, not infra: the 27B Q4/Q8 models
 narrate the build instead of calling edit_file/python/render_html. Same run: Quinn emitted bare EMPTY
 completions in all cross-talk rounds (immediate EOS instead of the [SILENT] token) - now handled gracefully
 by the no-output display + verdict line; prompt rule strengthened ("an empty reply is never acceptable").

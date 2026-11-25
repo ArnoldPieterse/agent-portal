@@ -2,7 +2,7 @@
   "agent": "orchestrator",
   "model": {
     "id": "qwen3-27b-q8",
-    "folder": "C:\\Users\\White\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+    "folder": "C:\Users\<white>\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
     "gguf_variant": "Q8_0",
     "host": "white",
     "gpu_ids": [

@@ -18,7 +18,7 @@ post-turn sync / 15-min safety-net commits.
    did not help either. Root cause = the locked-down DACL on `mingw64\bin\git.exe` itself.
 
 ## Fix (deployed, verified)
-- One elevated `robocopy` of the whole tree → **`C:\Users\White\git-portable`**
+- One elevated `robocopy` of the whole tree → **`C:\Users\<white>\git-portable`**
   (384 MB, normal ACLs: White has F). Verified non-elevated:
   `git version 2.53.0.windows.3`; status/log/add/commit all work from it.
 - All git ops should use this copy. Grep verified no code hardcoded the old hermes path.

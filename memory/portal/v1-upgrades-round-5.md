@@ -7,7 +7,7 @@ Date: 2026-11-12 22:33 · Host: Red (red\red, Red) · Source: live probes this t
 - Loopback 127.0.0.1:8099: PermissionError WinError 10013 (sandbox policy, unchanged).
 - Studio auth probe (new script u2-probe/probe_studio_models.py): black /v1/models 401 + / 200; pale /v1/models 401 + / 200. Both instances auth-gated.
 - Credentials: cmdkey /list = NONE; no KEY/TOKEN/SECRET in env; findstr for load_key/sk-/builder-q8 across sandbox → only the known md notes + probe scripts. No key readable on Red.
-- Terminal (cmd) is sandbox-scoped too: dir C:\Users\Red = Access denied. Confirms r4 "not visible from sandbox".
+- Terminal (cmd) is sandbox-scoped too: dir C:\Users\<red> = Access denied. Confirms r4 "not visible from sandbox".
 
 ## Fixes applied this turn (reversible)
 - probe_egress_r4.py: port-scan results were collected into `out` but never printed — added the missing print line; re-run now yields full evidence (was invisible in r4 addendum).
@@ -62,6 +62,6 @@ What broke: probe_egress_r4.py swallowed its port-scan output (no print of `out`
 
 ## Addendum r5.1 — P0-a staged (Mechanic), 2026-11-13
 - Mechanic diagnosis (evidence-backed): MXC policy construction scans session workdir, refuses reparse points; Orchestrator + Researcher error on the IDENTICAL path → one junction, one fix, two affected seats. Known-good state = "absent or regular file" (Black: absent, tools green per Verifier; Red: fresh lstat sweep shows 0 reparse points).
-- Staged commands for human-on-White: `rmdir C:\Users\White\.unsloth\studio\sandbox\_default\agents.json` (junction only) → `dir` verify → BOTH Orchestrator and Researcher run one trivial command and post output (per-seat rule, no assuming).
+- Staged commands for human-on-White: `rmdir C:\Users\<white>\.unsloth\studio\sandbox\_default\agents.json` (junction only) → `dir` verify → BOTH Orchestrator and Researcher run one trivial command and post output (per-seat rule, no assuming).
 - **RESOLVED (amended 2026-11-13, per all six lane lines):** Orchestrator's earlier ruling ("rmdir + `copy /Y` agents.json as plain file, byte-exact hash 2454bcba53236fba") was explicitly overridden in-round by Orchestrator's later message: "**rmdir accepted, correcting my earlier instruction** ... Standalone fix = your two commands (`rmdir` + `dir` verify), Researcher's copy demoted to fallback only if `rmdir` refuses" — endorsed by Mechanic and Verifier (Bearer-key exposure argument; Black proves absence safe) and accepted by Researcher. **Canonical P0-a for human-on-White: rmdir the junction → dir verify per seat; copy is a documented fallback ONLY if rmdir refuses. Do not run both.** Scribe's original flag recorded a real in-thread fork but missed the in-round override; corrected here, no human choice needed.
 - Routing correction logged: root TODO.md ABSENT on Red seat (listing verified) → Mechanic cannot paste Orchestrator's TODO block from Red without forking a second root. Options on record: (a) Orchestrator pastes post-P0-a recovery, or (b) human adds it as bootstrap step 0.

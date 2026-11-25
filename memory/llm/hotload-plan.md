@@ -116,7 +116,7 @@ For non-chat workloads (video gen, 3D env), define "task models" separate from a
   "task_models": [
     {
       "id": "video-gen-1",
-      "path": "C:\Users\White\.lmstudio\models\stability\SDXL-video...",
+      "path": "C:\Users\<white>\.lmstudio\models\stability\SDXL-video...",
       "vram_gb": 24,
       "gpu_count": 1,
       "capabilities": ["video_gen"],

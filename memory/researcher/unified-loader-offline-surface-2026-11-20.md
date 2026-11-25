@@ -20,7 +20,7 @@ non-sandbox vantage with egress to 127.0.0.1:8888 / the elev.py SYSTEM helper.
 
 **Blocker (NOT re-probed - same class as recorded entries in memory/ops/blockers.md):**
 `elev.py` is ABSENT at this sandbox seat (`Z:\elev.py`, `C:\Projects\Workspace\elev.py`,
-`C:\Users\White\elev.py` all missing) AND direct localhost :8888 is egress-blocked (WinError 10013 class,
+`C:\Users\<white>\elev.py` all missing) AND direct localhost :8888 is egress-blocked (WinError 10013 class,
 see Orchestrator #2 entry). Per anti-loop rule I did not re-probe the wall; recorded here once.
 
 **Unblock (one-time, non-sandbox White seat / SYSTEM helper):** run

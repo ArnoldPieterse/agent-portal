@@ -80,7 +80,7 @@ def white():
         return log('WHITE', 'SKIP_dual_resident', ids=ids)  # 11-14: folders renamed to fleet convention (distinct quant-bearing ids); count check kept for pre-rename state
     st, _ = call(B, 'PUT', '/api/settings/multi-model', body={'mode': 'fit'})
     log('WHITE', 'multi_model', status=st)
-    body = {'model_path': r'C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0',
+    body = {'model_path': (__import__('fleet_local').home('white') + r'\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0'),
             'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 32768,
             'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': True}
     ok = load_with_retry(B, None, 'WHITE_q8', body)
@@ -101,7 +101,7 @@ def white():
 
 # ---------- BLACK ----------
 def black():
-    B = 'http://IP_BLACK:8888'
+    B = __import__('fleet_local').studio_url('black') or 'http://LAN_BLACK:8888'
     if not wait_up(B, 'BLACK'):
         return
     st, b = call(B, 'POST', '/api/auth/login', body={'username': 'unsloth', 'password': '[REDACTED-CREDENTIAL]'})
@@ -114,16 +114,16 @@ def black():
         return log('BLACK', 'SKIP_both_loaded', ids=ids)
     st, _ = call(B, 'PUT', '/api/settings/multi-model', body={'mode': 'fit'}, key=key)
     log('BLACK', 'multi_model', status=st)
-    for p in (r'C:\Users\black\models\Qwen3.8-27B-Q4_K_S', r'C:\Users\black\models\Qwen3.8-27B-Q8_0'):
+    for p in ((__import__('fleet_local').home('black') + r'\models\Qwen3.8-27B-Q4_K_S'), (__import__('fleet_local').home('black') + r'\models\Qwen3.8-27B-Q8_0')):
         st, b = call(B, 'POST', '/api/hub/scan-folders', body={'path': p}, key=key)
         log('BLACK', 'scan', path=p, status=st, resp=b[:200])
-    ok_s = load_with_retry(B, key, 'BLACK_q4s', {'model_path': r'C:\Users\black\models\Qwen3.8-27B-Q4_K_S',
+    ok_s = load_with_retry(B, key, 'BLACK_q4s', {'model_path': (__import__('fleet_local').home('black') + r'\models\Qwen3.8-27B-Q4_K_S'),
         'gguf_variant': 'UD-Q4_K_S', 'gpu_ids': [0], 'max_seq_length': 65536,
         'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False})
     log('BLACK', 'load_q4s_ok', ok=ok_s)
     if not ok_s:
         return
-    ok_q = load_with_retry(B, key, 'BLACK_q8', {'model_path': r'C:\Users\black\models\Qwen3.8-27B-Q8_0',
+    ok_q = load_with_retry(B, key, 'BLACK_q8', {'model_path': (__import__('fleet_local').home('black') + r'\models\Qwen3.8-27B-Q8_0'),
         'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 32768,
         'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': True})
     log('BLACK', 'load_q8_ok', ok=ok_q)
@@ -140,7 +140,7 @@ def black():
 
 # ---------- PALE ----------
 def pale():
-    B = 'http://IP_PALE:8888'
+    B = __import__('fleet_local').studio_url('pale')  or 'http://LAN_PALE:8888'
     if not wait_up(B, 'PALE'):
         return
     src = open('pale_dl.py', encoding='utf-8').read()
@@ -150,17 +150,17 @@ def pale():
         return log('PALE', 'SKIP_both_loaded', ids=ids)
     st, _ = call(B, 'PUT', '/api/settings/multi-model', body={'mode': 'fit'}, key=key)
     log('PALE', 'multi_model', status=st)
-    for p in (r'C:\Users\pale\models\Qwen3.8-27B-Q8_0', r'C:\Users\pale\models\Qwen3.8-27B-Q4_K_S'):
+    for p in ((__import__('fleet_local').home('pale') + r'\models\Qwen3.8-27B-Q8_0'), (__import__('fleet_local').home('pale') + r'\models\Qwen3.8-27B-Q4_K_S')):
         st, b = call(B, 'POST', '/api/hub/scan-folders', body={'path': p}, key=key)
         log('PALE', 'scan', path=p, status=st, resp=b[:200])
-    ok_q = load_with_retry(B, key, 'PALE_q8', {'model_path': r'C:\Users\pale\models\Qwen3.8-27B-Q8_0',
+    ok_q = load_with_retry(B, key, 'PALE_q8', {'model_path': (__import__('fleet_local').home('pale') + r'\models\Qwen3.8-27B-Q8_0'),
         'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 32768,  # was 16384; bumped 11-13 (archivist truncation)
         'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False})
     log('PALE', 'load_q8_ok', ok=ok_q)
     if not ok_q:
         return
     for ctx in (65536, 32768):
-        ok_s = load_with_retry(B, key, 'PALE_q4s_ctx%d' % ctx, {'model_path': r'C:\Users\pale\models\Qwen3.8-27B-Q4_K_S',
+        ok_s = load_with_retry(B, key, 'PALE_q4s_ctx%d' % ctx, {'model_path': (__import__('fleet_local').home('pale') + r'\models\Qwen3.8-27B-Q4_K_S'),
             'gguf_variant': 'UD-Q4_K_S', 'gpu_ids': [0], 'max_seq_length': ctx,
             'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': True}, tries=3)
         if ok_s:
@@ -178,7 +178,7 @@ def pale():
     log('PALE', 'TIMEOUT')
 # ---------- RED (added 11-12 pre-reboot: red_dual_load.py recipe, Bearer key) ----------
 def red():
-    B = 'http://IP_RED:8888'
+    B = __import__('fleet_local').studio_url('red')   or 'http://LAN_RED:8888'
     import host_api
     key = host_api.load_key('RED')
     if not wait_up(B, 'RED'):
@@ -193,16 +193,16 @@ def red():
     log('RED', 'multi_model', status=st)
     al = have_xl or have_q8  # load alongside whatever Studio auto-restored
     if not have_q8:
-        ok_q = load_with_retry(B, key, 'RED_q8', {'model_path': r'C:\Users\Red\models\Qwen3.8-27B-Q8_0',
+        ok_q = load_with_retry(B, key, 'RED_q8', {'model_path': (__import__('fleet_local').home('red') + r'\models\Qwen3.8-27B-Q8_0'),
             'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 32768,
             'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': al}, tries=4)
         if not ok_q:
-            load_with_retry(B, key, 'RED_q8_ctx16k', {'model_path': r'C:\Users\Red\models\Qwen3.8-27B-Q8_0',
+            load_with_retry(B, key, 'RED_q8_ctx16k', {'model_path': (__import__('fleet_local').home('red') + r'\models\Qwen3.8-27B-Q8_0'),
                 'gguf_variant': 'Q8_0', 'gpu_ids': [1], 'max_seq_length': 16384,
                 'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': al}, tries=4)
         log('RED', 'load_q8_ok', ok=bool(ok_q))
     if not have_xl:
-        ok_x = load_with_retry(B, key, 'RED_xl', {'model_path': r'C:\Users\Red\.cache\huggingface\hub\models--unsloth--Qwen3.8-27B-GGUF\snapshots\4ca720788d1e01f1bff70c033e0d0028fd02e502',
+        ok_x = load_with_retry(B, key, 'RED_xl', {'model_path': (__import__('fleet_local').home('red') + r'\.cache\huggingface\hub\models--unsloth--Qwen3.8-27B-GGUF\snapshots\4ca720788d1e01f1bff70c033e0d0028fd02e502'),
             'gguf_variant': 'UD-Q4_K_XL', 'gpu_ids': [0], 'max_seq_length': 65536,
             'cache_type_kv': 'q8_0', 'n_parallel': 1, 'tensor_parallel': False, 'alongside': True}, tries=4)
         log('RED', 'load_xl_ok', ok=bool(ok_x))

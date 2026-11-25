@@ -25,4 +25,4 @@ load_trend.py analysis logic executed against synthetic 4-day baseline
 4. Report output - memory/ops/load-trend-report.json [PASS]
 
 ## Schtask command (run once elevated)
-schtasks /create /tn PortalLoadProbe /tr "python C:\Users\Red\Documents\agent-folder\memory\ops\load_probe.py" /sc daily /st 06:00 /f
+schtasks /create /tn PortalLoadProbe /tr "python C:\Users\<red>\Documents\agent-folder\memory\ops\load_probe.py" /sc daily /st 06:00 /f

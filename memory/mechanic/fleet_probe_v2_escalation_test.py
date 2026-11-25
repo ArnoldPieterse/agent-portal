@@ -19,7 +19,7 @@ def test_escalation_sequence():
     Baseline stabilizes at ~10ms after first few OPEN runs.
     Latency: 10, 10, 10, 20, 35, 50 ms -> OK, OK, OK, WARN, CRIT, CRIT
     """
-    ip, port = "[LAN-IP]", 8099
+    ip, port = "IP_LAN", 8099
     latencies = [10, 10, 10, 20, 35, 50]
     expected = ["OK", "OK", "OK", "WARN", "CRIT", "CRIT"]
     

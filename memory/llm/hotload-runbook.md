@@ -37,7 +37,7 @@ Use when an agent's model is NOT resident and the controller cannot issue the lo
    # Example: load Q4_K_S on White GPU0
    curl -s -X POST http://127.0.0.1:8888/api/inference/load \
      -H "Content-Type: application/json" \
-     -d '{"model_path":"C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S","gguf_variant":"UD-Q4_K_S","gpu_ids":[0],"max_seq_length":131072,"cache_type_kv":"q8_0","n_parallel":1}'
+     -d '{"model_path":"C:\Users\<white>\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S","gguf_variant":"UD-Q4_K_S","gpu_ids":[0],"max_seq_length":131072,"cache_type_kv":"q8_0","n_parallel":1}'
    # 200 = ASYNC ACK only. Do NOT trust it.
    ```
 4. **Poll until resident** (Q8 ~4 min, Q4 ~60 s):
@@ -67,7 +67,7 @@ If it does NOT fit, you must evict first (section 2) or pick a different host.
    ```
    curl -s -X POST http://<host>:8888/api/inference/unload \
      -H "Content-Type: application/json" \
-     -d '{"model_path":"C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S"}'
+     -d '{"model_path":"C:\Users\<white>\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S"}'
    ```
 3. **Poll until gone** (loaded=false in /v1/models).
 4. **Verify aliases still intact** (path-bound; unload never breaks them, but confirm).

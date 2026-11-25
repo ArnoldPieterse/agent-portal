@@ -1,5 +1,5 @@
 warning: Failed to set cwd to temp dir
-C:\Users\pale\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\python.exe: can't open file 'Z:\\elev.py': [Errno 2] No such file or directory
+C:\Users\<pale>\AppData\Roaming\uv\python\cpython-3.13-windows-x86_64-none\python.exe: can't open file 'Z:\\elev.py': [Errno 2] No such file or directory
 [2026-11-23 00:37:15] === decay_production.py run start ===
 [2026-11-23 00:37:22] Scored 7058 content leaves
 [2026-11-23 00:37:22] Done: 7058 scored, 0 archived, 0 alerts -> memory\archivist\freshness-latest.json

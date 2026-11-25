@@ -89340,7 +89340,7 @@
       "source_file": "memory/portal/v1-upgrades-round-3.md",
       "line": 4,
       "extraction_rule": "heading_parse",
-      "value": "Fresh egress test from Red sandbox (C:\\Users\\Red\\.unsloth\\studio\\sandbox\\_default)",
+      "value": "Fresh egress test from Red sandbox (C:\Users\<red>\\.unsloth\\studio\\sandbox\\_default)",
       "confidence": 0.95,
       "last_verified": "2026-11-23T02:52:06Z",
       "status": "verified"

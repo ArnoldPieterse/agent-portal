@@ -4,7 +4,7 @@ Parent: memory/goals/designer.md #2 (Animation/Motion System). Siblings: this pa
 Also affects: goals 3/5/6/7/8/9 - every Designer goal whose acceptance requires a LIVE ui/*.css or ui/*.js edit.
 
 ## What is happening (confirmed this pass)
-Edits made by the Designer in this REMOTE sandbox seat (`C:\Users\pale\.unsloth\studio\sandbox\_default`)
+Edits made by the Designer in this REMOTE sandbox seat (`C:\Users\<pale>\.unsloth\studio\sandbox\_default`)
 to git-tracked root docs (ui/app.css, ui/components.js, ui/fleet_health.js, ...) are REVERTED on every
 mirror cycle. The mirror runs on White (`C:\Projects\Workspace`) and pushes the git allowlist of root
 docs to each remote with `root_canonical=True` (memory_mirror.py: step 1 "push git allowlist (root docs) -

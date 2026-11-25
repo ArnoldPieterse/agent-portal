@@ -12,7 +12,7 @@ Goal 1 cannot close until the schtask is registered on a **non-sandbox White ses
 ## Exact Unblock Step (one-time, ~30 seconds)
 From a non-sandbox elevated PowerShell/cmd on White:
 ```
-schtasks /create /tn FleetLoadProbe /tr \"C:\\Users\\White\\.unsloth\\studio\\unsloth_studio\\Scripts\\python.exe Z:\\memory\\mechanic\\fleet_load_probe.py\" /sc minute /mo 30 /rl highest /f
+schtasks /create /tn FleetLoadProbe /tr \"C:\Users\<white>\\.unsloth\\studio\\unsloth_studio\\Scripts\\python.exe Z:\\memory\\mechanic\\fleet_load_probe.py\" /sc minute /mo 30 /rl highest /f
 ```
 
 After registration, data auto-accumulates. Closure = 7 distinct dates in load_trend.jsonl + manual verdict.

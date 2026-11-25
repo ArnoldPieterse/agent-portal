@@ -22,9 +22,9 @@ else:
 # local studio
 out.append("studio=" + str(http("http://127.0.0.1:8888/api/health")))
 # remotes
-out.append("black=" + ("OPEN" if tcp("IP_BLACK") else "closed"))
-out.append("pale=" + ("OPEN" if tcp("IP_PALE") else "closed"))
-out.append("red=" + ("OPEN" if tcp("IP_RED") else "closed"))
+out.append("black=" + ("OPEN" if ( __import__("fleet_local").host_ip("black") or "LAN_BLACK" ) else "closed"))
+out.append("pale=" + ("OPEN" if ( __import__("fleet_local").host_ip("pale")  or "LAN_PALE" ) else "closed"))
+out.append("red=" + ("OPEN" if ( __import__("fleet_local").host_ip("red")   or "LAN_RED" ) else "closed"))
 line = "; ".join(out)
 open("reboot_status.txt", "w").write(line + "\n")
 print(line[:120])

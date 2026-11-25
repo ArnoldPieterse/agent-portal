@@ -16,4 +16,4 @@
 - Pale/Black: reachable per prior probe; deploy script ready
 - Red: powered off (last known state)
 
-Next concrete step when unblocked: winrs admin@10.0.0.39 "python C:\memory\ops\deploy_boot_task.py" (repeat for .99, .245)
+Next concrete step when unblocked: winrs admin@IP_PALE "python C:\memory\ops\deploy_boot_task.py" (repeat for .99, .245)

@@ -1,6 +1,6 @@
 # Verifier — shared-tree claim check (2026-11-15, auto-continue 3/3)
 
-Re-pinned the live shared tree from Black host sandbox (`C:\Users\black\.unsloth\studio\sandbox\_default`) and checked the three fixes claimed done this round against the actual bytes. **All three are NOT present in the shared tree.**
+Re-pinned the live shared tree from Black host sandbox (`C:\Users\<black>\.unsloth\studio\sandbox\_default`) and checked the three fixes claimed done this round against the actual bytes. **All three are NOT present in the shared tree.**
 
 ## Final pin (this round)
 - `index.html` sha256 = `2ba6e29a9d35fb3f0eecdc8e10c49df16c6a7715d670f91f18e2e72fabf3c355`

@@ -7,13 +7,13 @@ import winrm, json, sys
 
 PALE = 'http://IP_PALE:5985/wsman'
 AUTH = ('pale', '[REDACTED-CREDENTIAL]')
-WHITE_PORTAL = 'http://[LAN-IP]:8099'
+WHITE_PORTAL = 'http://IP_LAN:8099'
 
 REMOTE_SCRIPT = '''
 import urllib.request, time, json, statistics, sys
 from datetime import datetime, timezone
 
-PORTAL_URL = "http://[LAN-IP]:8099"
+PORTAL_URL = "http://IP_LAN:8099"
 DURATION = int(sys.argv[1]) if len(sys.argv) > 1 else 60
 ENDPOINTS = {
     "portal_health": PORTAL_URL + "/api/health",

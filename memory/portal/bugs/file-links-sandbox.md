@@ -38,10 +38,10 @@ no link rendered even when the file resolved; (b) _safe_workspace_file accepted 
 (timer-app/) were rejected.
 Root cause of (a)-adjacent 404s: SANDBOX_DIR = expanduser("~")/... - the portal instance I launched inherited
 my tool shell's environment where USERPROFILE=C:\Projects\AgentPortal, so ~ resolved to a nonexistent dir. The
-old instance worked only because it was launched from a session with USERPROFILE=C:\Users\White (schtasks
+old instance worked only because it was launched from a session with USERPROFILE=C:\Users\<white> (schtasks
 interactive). Env-dependent paths must not be assumed from the launcher shell.
 Fix (agent_portal.py): _find_sandbox_dir() - if the ~-based dir is missing, scan C:\Users\*\.unsloth\studio\
-sandbox\_default (found C:\Users\White\...); /api/file now echoes the REQUESTED rel path verbatim; new folder
+sandbox\_default (found C:\Users\<white>\...); /api/file now echoes the REQUESTED rel path verbatim; new folder
 branch in /api/file (directory-listing peek for hover popup) and /api/file/raw (plain-text listing on click);
 _safe_workspace_file accepts files AND directories. Fix (index.html): linkifyFiles also collects folder tokens
 via /(?<![\w./\\-])(?:[\w-]+\/)+/g - unit-tested against Quinn's actual bubble text (candidates: timer-app/,
@@ -54,7 +54,7 @@ SANDBOX_DIR resolves to the real sandbox even from the USERPROFILE=C:\Projects\A
 ## [DONE] Agent files landed in Studio sandbox, not workspace (FIXED 2026-11-11)
 Symptom: user got a link to Quinn's calculator app that 404'd; the path "Z:\calculator-app\index.html" was a
 hallucination (no Z: drive on this host - wmic verified). The real build (7,200 B, 11/11 00:02) sat in
-C:\Users\White\.unsloth\studio\sandbox\_default\calculator-app\index.html next to Atlas's calculator.html and
+C:\Users\<white>\.unsloth\studio\sandbox\_default\calculator-app\index.html next to Atlas's calculator.html and
 the two news reports.
 Mechanism: portal calls Studio /v1/chat/completions with local tool execution and passes NO session_id; per the
 OpenAPI spec session_id "scopes the tool execution sandbox" -> every agent tool writes into the "_default"

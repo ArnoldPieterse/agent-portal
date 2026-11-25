@@ -28,7 +28,7 @@
 
 ## [NEEDS-HUMAN 2026-11-20] Orchestrator #1 Live Hotload Execution: elev.py ABSENT on this seat
 **Class:** helper file-not-found (NOT exit 5) — same class as the earlier Verifier helper-absent note. The advertised escalation path `python elev.py <cmd>` does not exist at this sandbox seat.
-**Probes (fresh):** `python elev.py --shell "..."` -> `can't open file 'Z:\\elev.py': No such file or directory`; `dir /s /b C:\Users\White\\elev.py` and `C:\Users\Public\\elev.py` -> no match; `glob('Z:/elev*')` -> [].
+**Probes (fresh):** `python elev.py --shell "..."` -> `can't open file 'Z:\\elev.py': No such file or directory`; `dir /s /b C:\Users\<white>\\elev.py` and `C:\Users\Public\\elev.py` -> no match; `glob('Z:/elev*')` -> [].
 **Blocks:** the LIVE leg of goal #1 (real load/unload on White via elev.py to bypass the :8888/:8099 egress wall). All cycle-6 hotload infra is built + sandbox-verified; only the live execution step needs a seat where elev.py actually exists.
 **Unblock (one-time, non-sandbox White seat with elev.py present):** run `python elev.py --shell "curl -s http://127.0.0.1:8888/api/v0/models"` to confirm the helper + LM Studio, then execute the load/unload cycle and append LOAD_SUCCESS/UNLOAD_SUCCESS rows to hotload-log.jsonl.
 **Do NOT re-probe elev.py from this seat.**
@@ -100,7 +100,7 @@ Owner to close: Mechanic (needs the non-sandbox run); evidence target = `memory/
 - `schtasks /create /tn VerifierSLO /tr "python Z:\memory\verifier\slo_enforce.py" /sc daily /st 06:00` -> "ERROR: Class not registered"
 - `schtasks /query` (read-only, no create) -> **also** "ERROR: Class not registered" => this seat cannot register OR query tasks
 - `python memory/verifier/slo_enforce.py` -> WinError 10013 (egress block to 127.0.0.1:8099)
-- `python elev.py --shell "..."` -> **helper ABSENT**: `dir /s C:\Users\White\.unsloth` finds no elev.py; the advertised escalation path does not exist at this seat (exit = file-not-found, not exit 5). So elevation is NOT available here either.
+- `python elev.py --shell "..."` -> **helper ABSENT**: `dir /s C:\Users\<white>\.unsloth` finds no elev.py; the advertised escalation path does not exist at this seat (exit = file-not-found, not exit 5). So elevation is NOT available here either.
 **Unblock (one-time, non-sandbox White ops terminal), OWNER = Mechanic:** run `python memory/verifier/register_slo_task.py` (auto-escalates; registers schtask + fires slo_enforce.py once + writes evidence). After that SLO reports auto-accumulate; closure needs 2 consecutive days of automated PASS with no human intervention, then `python memory/researcher/goal_ledger.py --record verifier 2`.
 **Do NOT re-probe from this sandbox.**
 

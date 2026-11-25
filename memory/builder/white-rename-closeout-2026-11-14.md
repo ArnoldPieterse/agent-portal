@@ -2,7 +2,7 @@
 Built: 2026-11-14. Status: all Builder-owned build items VERIFIED consistent post-rename; remaining NEXT items are non-builder or deliberately deferred.
 
 ## Verified this sweep (from Black tool host, cwd Z:\ shared root)
-1. `fleet_reload.py` WHITE section = POST-RENAME form: load body targets `C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0` (quant-named folder), with comment "11-14: folders renamed to fleet convention (distinct quant-bearing ids); count check kept for pre-rename state". No stale `Qwen3.8-27B-GGUF` load path remains for White.
+1. `fleet_reload.py` WHITE section = POST-RENAME form: load body targets `C:\Users\<white>\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0` (quant-named folder), with comment "11-14: folders renamed to fleet convention (distinct quant-bearing ids); count check kept for pre-rename state". No stale `Qwen3.8-27B-GGUF` load path remains for White.
 2. `python -m py_compile fleet_reload.py recover_all.py reboot_launchers.py` → COMPILE_OK (all three).
 3. `memory/llm/hosts.md`: "White model folders -> fleet convention" section present with corrected quant paths (`unsloth\Qwen3.8-27B-Q4_K_S` / `lmstudio-community\Qwen3.8-27B-Q8_0`, Researcher 11-14 correction note in-line); all remaining quant-less folder mentions are the explicitly-marked historical 11-11 provenance lines ("NOT current load sources"). TODO NEXT sub-item "hosts.md White line still says quant-less folders" = DONE, no further edit needed.
 4. `white_realias_result.json` NOT in shared tree (Z:\) — written to White local disk by the v2 script; final resolution is recorded in TODO.md OPS NOTE 01:45 (Q8 re-loaded alongside Q4, atlas-q8 probe OK, /api/fleet panel shows both variants). No action needed.

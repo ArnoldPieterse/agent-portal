@@ -19,7 +19,7 @@ docstring says it exists to be robust across launch contexts - a hard crash defe
 ## Fix (applied + compiles clean)
 Wrapped the enumeration in `try/except OSError` -> on failure `entries=[]`, fall through to the existing
 `return d`. Minimal, reversible. Guard is at agent_portal.py lines ~126-132 (`# Degrade, don't crash`).
-Verified: Z:\agent_portal.py == C:\Users\Red\.unsloth\studio\sandbox\_default\agent_portal.py (same file, (other seat)
+Verified: Z:\agent_portal.py == C:\Users\<red>\.unsloth\studio\sandbox\_default\agent_portal.py (same file, (other seat)
 two views) - so the fix is in the exact copy the portal executes. `python -m py_compile` = OK.
 
 ## Current blocker for a DURABLE restart (environment, not code)

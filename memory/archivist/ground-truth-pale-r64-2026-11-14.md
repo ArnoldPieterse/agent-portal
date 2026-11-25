@@ -1,5 +1,5 @@
 # Archivist r64 — pale-seat ground-truth sweep (first-party, hashlib)
-Date: 2026-11-14. Seat: pale (C:\Users\pale\.unsloth\studio\sandbox\_default).
+Date: 2026-11-14. Seat: pale (C:\Users\<pale>\.unsloth\studio\sandbox\_default).
 Method: os.path.getsize + hashlib.md5, executed this round. No seat-narration; measured on disk.
 
 ## Disputed files — measured

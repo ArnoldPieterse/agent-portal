@@ -17,8 +17,8 @@ Purpose: free VRAM for a required model on a host, then restore the original sta
    KNOWN TRAP: an active chat round keeps its generation handle for the WHOLE turn (observed started_at persisting across tool calls) - a drill cannot pass the gate from inside the round it would disturb. Schedule it as a one-shot schtask AFTER the round ends.
 2. SNAPSHOT: GET /api/settings/model-aliases + GET /models -> save to result file (restoration proof baseline).
 3. LOAD required model alongside (multi-model fit mode; PUT /api/settings/multi-model {"enabled":true,"mode":"fit"} if not set). White proven bodies:
-   - Q8_0: {model_path: C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0, gguf_variant: "Q8_0", gpu_ids:[1], max_seq_length:32768, cache_type_kv:"q8_0", n_parallel:1}
-   - Q4_K_S: {model_path: C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S, gguf_variant: "UD-Q4_K_S", gpu_ids:[0], max_seq_length:131072, cache_type_kv:"q8_0", n_parallel:1, force_reload:true, speculative_type:"mtp", spec_draft_n_max:4}
+   - Q8_0: {model_path: C:\Users\<white>\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0, gguf_variant: "Q8_0", gpu_ids:[1], max_seq_length:32768, cache_type_kv:"q8_0", n_parallel:1}
+   - Q4_K_S: {model_path: C:\Users\<white>\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S, gguf_variant: "UD-Q4_K_S", gpu_ids:[0], max_seq_length:131072, cache_type_kv:"q8_0", n_parallel:1, force_reload:true, speculative_type:"mtp", spec_draft_n_max:4}
 4. POLL until resident (loaded=true); on failure UNLOAD whatever was loaded and restore - full rollback.
 5. VERIFY bindings mid-swap: GET /api/settings/model-aliases must equal the snapshot (aliases are path-bound; a folder rename breaks them silently - re-point via PUT /api/settings/model-aliases).
 6. When done, UNLOAD the temporary model (POST /api/inference/unload {model_path}); poll until loaded=false.

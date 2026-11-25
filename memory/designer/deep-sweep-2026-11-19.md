@@ -26,5 +26,5 @@ User directive: "complete the remaining goals". Finished the design-token / icon
 - Audit regex over ui/app.css, index.html, ui/*.js: 0 files with (hex outside var()/tokens) OR (real emoji chars U+2300-U+27BF/U+2B00-U+2BFF/U+1F000-U+1FAFF) OR (raw px font-size)
 - Every var(--x) used across UI files resolves to a token defined in tokens.css: MISSING = []
 - Every UI.icon("name") call resolves to an icon defined in ui/icons.js: 22 defs, 0 missing
-- node --check (C:\Users\White\.unsloth\node\node.exe): returncode 0 on all 9 ui/*.js files; index.html has no inline scripts (6 external script tags, order notifications -> icons -> core -> fleet_topology -> uploads -> tour)
+- node --check (C:\Users\<white>\.unsloth\node\node.exe): returncode 0 on all 9 ui/*.js files; index.html has no inline scripts (6 external script tags, order notifications -> icons -> core -> fleet_topology -> uploads -> tour)
 - Headless Edge attempts: --dump-dom hangs (live WS keeps page busy), --remote-debugging-port never binds even with fresh profile -> CDP selftest not runnable here. window.__selftest remains available for a human browser run at http://localhost:8099/.

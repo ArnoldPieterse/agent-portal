@@ -317,7 +317,7 @@ def winrm_auth(ip, user, domain, pw):
     return f'{sl2} | auth_ok={ok}'
 
 results = {'ts': datetime.now(timezone.utc).isoformat(), 'hosts': {}}
-for name, ip, user in [('PALE','IP_PALE','pale'), ('BLACK','IP_BLACK','black'), ('RED','[LAN-IP]','red')]:
+for name, ip, user in [('PALE','IP_PALE','pale'), ('BLACK','IP_BLACK','black'), ('RED','IP_LAN','red')]:
     tcp = tcp_check(ip)
     results['hosts'][name] = {'tcp_5985': tcp}
     if tcp is True:

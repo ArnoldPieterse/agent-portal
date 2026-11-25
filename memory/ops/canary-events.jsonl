@@ -1,6 +1,6 @@
 {"ts": "2026-11-16T07:32:34Z", "type": "canary-success", "detail": "all hosts green", "hosts": ["red", "black", "pale"]}
 {"ts": "2026-11-16T07:32:40Z", "type": "canary-success", "detail": "all hosts green", "hosts": ["red", "black", "pale"]}
-{"ts": "2026-11-16T07:33:04Z", "type": "canary-fail-smoke", "detail": "syntax error: warning: Failed to set cwd to temp dir\nTraceback (most recent call last):\n  File \"C:\\Users\\black\\AppData\\Roaming\\uv\\python\\cpython-3.13-windows-x86_64-none\\Lib\\py_compile.py\", line 144, in compile\n   ", "hosts": ["red"]}
+{"ts": "2026-11-16T07:33:04Z", "type": "canary-fail-smoke", "detail": "syntax error: warning: Failed to set cwd to temp dir\nTraceback (most recent call last):\n  File \"C:\Users\<black>\\AppData\\Roaming\\uv\\python\\cpython-3.13-windows-x86_64-none\\Lib\\py_compile.py\", line 144, in compile\n   ", "hosts": ["red"]}
 {"ts": "2026-11-17T10:21:51Z", "type": "canary-fail-apply", "detail": "Mismatch at line 13", "hosts": ["red"]}
 {"ts": "2026-11-17T10:21:55Z", "type": "canary-success", "detail": "all hosts green", "hosts": ["red", "black", "pale"]}
 {"ts": "2026-11-17T10:31:16Z", "type": "canary-fail-apply", "detail": "Mismatch at line 12", "hosts": ["red"]}

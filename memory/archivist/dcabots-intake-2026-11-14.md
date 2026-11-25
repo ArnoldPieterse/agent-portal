@@ -5,7 +5,7 @@ into the shared agent folder. Project area scaffolded at `projects/dcabots/` (De
 
 ## Established facts (verified this round from Pale sandbox)
 - Source path is on White (White); tools for this turn run in PALE's sandbox
-  (`C:\Users\pale\.unsloth\studio\sandbox\_default`).
+  (`C:\Users\<pale>\.unsloth\studio\sandbox\_default`).
 - Pale -> White SMB DENIED on every route tried:
   - `\\white\c$` and `\\White\C$` -> WinError 65 (probe_unc.py) / error 5 (net use)
   - ADMIN$ with `/user:White ""` -> error 5; anonymous `net view \\White` -> error 5
@@ -21,7 +21,7 @@ into the shared agent folder. Project area scaffolded at `projects/dcabots/` (De
   => Pale target = `\\White`... i.e. from White: `\\Pale\C$\Users\pale\.unsloth\studio\sandbox\_default`.
 
 ## Relay command (run ON WHITE console)
-    xcopy "C:\Users\White\WSL-Inbox\projects\dcabots" "\Pale\C$\Users\pale\.unsloth\studio\sandbox\_default\projects\dcabots\" /E /I /Y /H
+    xcopy "C:\Users\<white>\WSL-Inbox\projects\dcabots" "\Pale\C$\Users\pale\.unsloth\studio\sandbox\_default\projects\dcabots\" /E /I /Y /H
 Fallbacks: (b) White-hosted turn reads the path locally; (c) add White to memory_mirror_hosts.json
 (creds unverified - "empty pw on all hosts" note only covers Red/Pale/Black); (d) Arnold uploads a zip via portal.
 

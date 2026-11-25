@@ -6,7 +6,7 @@ restricted to read-only prefixes. Never run fleet-mutating commands by accident.
 """
 import os, re, sys
 from pathlib import Path
-SRC = Path('C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\citation-phantom-triage-runbook.md')
+SRC = Path('C:\Users\<white>\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\citation-phantom-triage-runbook.md')
 STEP_RE = re.compile(r"^(?:\s*\d+[.)]|\s*[-*]\s+(?=python|elev\.py|schtasks|git\b))", re.IGNORECASE)
 PYREF_RE = re.compile(r"(?:^|\s)(?:python[0-9.]*|py)\s+([A-Za-z0-9_./\\-]+\.py)")
 READONLY_PREFIXES = ("python", "py", "git status", "git log", "schtasks /query", "type ", "dir ")

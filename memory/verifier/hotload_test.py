@@ -23,7 +23,7 @@ RESULT_FILE = Path(__file__).parent / "hotload_result.json"
 
 # Proven load bodies from backend-swap-procedure.md (2026-11-14)
 Q8_BODY = {
-    "model_path": r"C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+    "model_path": r"C:\Users\<white>\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
     "gguf_variant": "Q8_0",
     "gpu_ids": [1],
     "max_seq_length": 32768,
@@ -31,7 +31,7 @@ Q8_BODY = {
     "n_parallel": 1,
 }
 Q4_BODY = {
-    "model_path": r"C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
+    "model_path": r"C:\Users\<white>\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
     "gguf_variant": "UD-Q4_K_S",
     "gpu_ids": [0],
     "max_seq_length": 131072,
@@ -240,8 +240,8 @@ def check_alias_preservation():
     if aliases is None:
         return False, "api_error"
 
-    expected_atlas = r"C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0"
-    expected_quinn = r"C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S"
+    expected_atlas = r"C:\Users\<white>\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0"
+    expected_quinn = r"C:\Users\<white>\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S"
 
     ok = True
     details = []

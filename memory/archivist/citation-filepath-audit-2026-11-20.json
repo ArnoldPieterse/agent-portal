@@ -4824,15 +4824,15 @@
     {
       "file": "memory\\mechanic\\MEMORY.md",
       "line": 171,
-      "cited_path": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\agents.json",
-      "normalized": "C:/Users/White/.unsloth/studio/sandbox/_default/agents.json",
+      "cited_path": "C:\Users\<white>\\.unsloth\\studio\\sandbox\\_default\\agents.json",
+      "normalized": "C:\Users\<white>/.unsloth/studio/sandbox/_default/agents.json",
       "exists": false
     },
     {
       "file": "memory\\mechanic\\MEMORY.md",
       "line": 172,
-      "cited_path": "rmdir C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\agents.json",
-      "normalized": "rmdir C:/Users/White/.unsloth/studio/sandbox/_default/agents.json",
+      "cited_path": "rmdir C:\Users\<white>\\.unsloth\\studio\\sandbox\\_default\\agents.json",
+      "normalized": "rmdir C:\Users\<white>/.unsloth/studio/sandbox/_default/agents.json",
       "exists": false
     },
     {
@@ -5167,8 +5167,8 @@
     {
       "file": "memory\\ops\\blockers.md",
       "line": 4,
-      "cited_path": "dir /s /b C:\\Users\\White\\\\elev.py",
-      "normalized": "dir /s /b C:/Users/White//elev.py",
+      "cited_path": "dir /s /b C:\Users\<white>\\\\elev.py",
+      "normalized": "dir /s /b C:\Users\<white>//elev.py",
       "exists": false
     },
     {
@@ -6462,8 +6462,8 @@
     {
       "file": "memory\\portal\\v1-upgrades-round-5.md",
       "line": 65,
-      "cited_path": "rmdir C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\agents.json",
-      "normalized": "rmdir C:/Users/White/.unsloth/studio/sandbox/_default/agents.json",
+      "cited_path": "rmdir C:\Users\<white>\\.unsloth\\studio\\sandbox\\_default\\agents.json",
+      "normalized": "rmdir C:\Users\<white>/.unsloth/studio/sandbox/_default/agents.json",
       "exists": false
     },
     {
@@ -7778,8 +7778,8 @@
     {
       "file": "memory\\researcher\\unified-loader-offline-surface-2026-11-20.md",
       "line": 23,
-      "cited_path": "C:\\Users\\White\\elev.py",
-      "normalized": "C:/Users/White/elev.py",
+      "cited_path": "C:\Users\<white>\\elev.py",
+      "normalized": "C:\Users\<white>/elev.py",
       "exists": false
     },
     {

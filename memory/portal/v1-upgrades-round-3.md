@@ -1,7 +1,7 @@
 # V1 Portal Upgrades — Round 3 ops evidence (Mechanic, Red)
 Date: 2026-11-12. Continues v1-upgrades-round-2.md. Facts only.
 
-## Fresh egress test from Red sandbox (C:\Users\Red\.unsloth\studio\sandbox\_default)
+## Fresh egress test from Red sandbox (C:\Users\<red>\.unsloth\studio\sandbox\_default)
 1. SMB re-run (u2-probe/probe_hosts.py, read-only): 0/4 hosts. FAIL black/red/pale/white all `[WinError 65] Network access is denied` (8–2124 ms), exit 2 as designed. Same as round 2.
 2. Python sockets: sandbox allowlist blocks ALL destinations before connect — tested White:8099, :8888 and 127.0.0.1:8099; every attempt rejected with "host not in sandbox allowlist". Policy-level, not a network failure.
 3. web_search fetch channel: refuses non-public addresses ("refusing to fetch non-public address White") — SSRF guard. So PULL via /api/file from Red is impossible on this channel too.
@@ -9,7 +9,7 @@ Date: 2026-11-12. Continues v1-upgrades-round-2.md. Facts only.
 
 ## Verdict
 From Red, all four egress channels are closed (SMB, python sockets, powershell, web_search). The "PULL via /api/file if egress open" branch of the U2 bootstrap ruling is DEAD from Red. Only remaining paths to materialize uploads/AgentPortal_V1/* into a Red-reachable location:
-- PUSH from White (Orchestrator/Researcher host owns the bundle, 41 files verified) into C:\Users\Red\.unsloth\studio\sandbox\_default — needs cross-host write that White can actually perform (untested; SMB from Red failed, direction untested from White), or
+- PUSH from White (Orchestrator/Researcher host owns the bundle, 41 files verified) into C:\Users\<red>\.unsloth\studio\sandbox\_default — needs cross-host write that White can actually perform (untested; SMB from Red failed, direction untested from White), or
 - human re-drops the upload so it lands in the Red sandbox.
 
 ## State of my workstream

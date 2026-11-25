@@ -1,6 +1,6 @@
 {
   "timestamp": "2026-11-19T23:52:57.389272+00:00",
-  "archive": "C:\\Users\\Red\\.unsloth\\studio\\sandbox\\_default\\memory\\mechanic\\backups\\fleet-backup-2026-11-19_235248.tar.gz",
+  "archive": "C:\Users\<red>\\.unsloth\\studio\\sandbox\\_default\\memory\\mechanic\\backups\\fleet-backup-2026-11-19_235248.tar.gz",
   "size_bytes": 24628968,
   "files_included": [
     "agents.json",
@@ -9,9 +9,9 @@
     "memory/"
   ],
   "rotation_deleted": [
-    "C:\\Users\\Red\\.unsloth\\studio\\sandbox\\_default\\memory\\mechanic\\backups\\fleet-backup-2026-11-10_060000.tar.gz",
-    "C:\\Users\\Red\\.unsloth\\studio\\sandbox\\_default\\memory\\mechanic\\backups\\fleet-backup-2026-11-11_060000.tar.gz",
-    "C:\\Users\\Red\\.unsloth\\studio\\sandbox\\_default\\memory\\mechanic\\backups\\fleet-backup-2026-11-12_060000.tar.gz",
-    "C:\\Users\\Red\\.unsloth\\studio\\sandbox\\_default\\memory\\mechanic\\backups\\fleet-backup-2026-11-13_060000.tar.gz"
+    "C:\Users\<red>\\.unsloth\\studio\\sandbox\\_default\\memory\\mechanic\\backups\\fleet-backup-2026-11-10_060000.tar.gz",
+    "C:\Users\<red>\\.unsloth\\studio\\sandbox\\_default\\memory\\mechanic\\backups\\fleet-backup-2026-11-11_060000.tar.gz",
+    "C:\Users\<red>\\.unsloth\\studio\\sandbox\\_default\\memory\\mechanic\\backups\\fleet-backup-2026-11-12_060000.tar.gz",
+    "C:\Users\<red>\\.unsloth\\studio\\sandbox\\_default\\memory\\mechanic\\backups\\fleet-backup-2026-11-13_060000.tar.gz"
   ]
 }

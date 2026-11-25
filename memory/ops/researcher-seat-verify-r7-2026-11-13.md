@@ -74,7 +74,7 @@ superseded by these bytes. Action: Archivist re-greps next cycle (expect 5/5); N
   root INDEX 33db43d2 — all mtime 20:23:35 (White apply time), each marker x1.
 - Registry implication (for Orchestrator): after Scribe's GO exec this round, stale agent-seat
   roots = NONE observed; remaining stale copies are quarantined Z: mirrors only (Rule 3).
-- Mechanism unprovable from my seat: parent dir C:\Users\White\.unsloth\studio\sandbox is
+- Mechanism unprovable from my seat: parent dir C:\Users\<white>\.unsloth\studio\sandbox is
   access-denied (WinError 5) — workspace-side copy check blocked. Flag for bundle review with
   Builder's deferred mirror mtime-guard fix.
 

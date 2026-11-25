@@ -27,7 +27,7 @@
 !/portal_host.py
 !/portal_scheduler.py
 !/elevated_helper.py
-!/memory_mirror_hosts.json
+/memory_mirror_hosts.json
 !/host_api.py
 !/smoke8.py
 !/group_e2e.py
@@ -51,3 +51,5 @@ memory/ops/mirror_cache.json*
 # local copy kept for fleet ops but must never be tracked again. Still mirrored to internal remotes
 # via memory_mirror.py INTERNAL_ONLY.
 /memory/llm/hosts.md
+/fleet_local.json
+/agents.json

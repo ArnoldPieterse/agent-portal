@@ -6,7 +6,7 @@
 - `fleet_reload.py` compiles and contains all 4 host functions (white/black/pale/red) with idempotency guards
 - White portal recovery chain proven working: PortalWatchdog schtask detects DOWN -> runs PortalRun (~3s recovery, goal 9 chaos drill evidence in watchdog.log)
 - Pale .39 + Black .99 reachable via SMB :445 (dry-run 2026-11-16)
-- Red .245: sandbox is running ON Red (path C:\Users\Red\...) confirming host is powered on; Studio :8888 not verifiable from sandbox (socket restriction)
+- Red .245: sandbox is running ON Red (path C:\Users\<red>\...) confirming host is powered on; Studio :8888 not verifiable from sandbox (socket restriction)
 
 ### What's done now:
 - **NEW** `memory/ops/boot_recovery.py` written — per-host startup trigger script. Detects boot, waits for Studio, invokes fleet_reload.py, verifies portal, logs to boot-recovery-log.jsonl.

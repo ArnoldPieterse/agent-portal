@@ -22,7 +22,7 @@ HOSTS = {
     'WHITE': {'ip': '127.0.0.1',    'user': 'white', 'pw_env': 'WHITE_PW',  'local': True},
     'PALE':  {'ip': 'IP_PALE', 'user': 'pale',  'pw_env': 'PALE_PW',   'local': False},
     'BLACK': {'ip': 'IP_BLACK', 'user': 'black', 'pw_env': 'BLACK_PW',  'local': False},
-    'RED':   {'ip': '[LAN-IP]', 'user': 'red',   'pw_env': 'RED_PW',    'local': False},
+    'RED':   {'ip': 'IP_LAN', 'user': 'red',   'pw_env': 'RED_PW',    'local': False},
 }
 
 # Fallback password (same as existing scripts; rotate via credential rotation)

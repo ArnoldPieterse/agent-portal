@@ -48,7 +48,7 @@ def p1_portal():
 def p2_winrm(host):
     """WinRM 5985 reachable to target."""
     # Resolve host name from agents.json or use IP
-    hosts = {"black": "[LAN-IP]0", "pale": "[LAN-IP]1", "red": "[LAN-IP]2"}
+    hosts = {"black": "IP_LAN", "pale": "IP_LAN", "red": "IP_LAN"}
     ip = hosts.get(host.lower(), host)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.settimeout(5)

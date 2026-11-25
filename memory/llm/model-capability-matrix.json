@@ -8,7 +8,7 @@
     {
       "id": "Q4_K_S",
       "display": "Qwen3.8-27B Q4_K_S",
-      "path": "C:\\Users\\White\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
+      "path": "C:\Users\<white>\\.lmstudio\\models\\unsloth\\Qwen3.8-27B-Q4_K_S",
       "gguf_variant": "UD-Q4_K_S",
       "vram_gb": 15.4,
       "max_context": 131072,
@@ -20,7 +20,7 @@
     {
       "id": "Q8_0",
       "display": "Qwen3.8-27B Q8_0",
-      "path": "C:\\Users\\White\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "path": "C:\Users\<white>\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
       "gguf_variant": "Q8_0",
       "vram_gb": 30.1,
       "max_context": 32768,

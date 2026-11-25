@@ -6,7 +6,7 @@ automatic model-to-project routing (no manual selection). Started by configuring
 ## Machines
 - **White** (this box, where the agent runs): 2x NVIDIA RTX 5090 (32 GB each).
   - llama.cpp built with CUDA + RPC support:
-    `C:\Users\White\.unsloth\llama.cpp\build\bin\Release\llama-server.exe`
+    `C:\Users\<white>\.unsloth\llama.cpp\build\bin\Release\llama-server.exe`
 - **Red**: Red — intended as the worker node, expected to serve on port 50052.
 
 ## Access methods (from White)
@@ -39,7 +39,7 @@ automatic model-to-project routing (no manual selection). Started by configuring
 - PENDING after reboot of both PCs: verify both :50052 up autonomously; end-to-end 4x5090 model load via --rpc; then bake --rpc into Unsloth global defaults (no per-project selection). Red Unsloth autostart + config path (Block B) completion unconfirmed.
 
 ## REVERT 2026-11-09 — user: "settings broke our llama server engine, revert for Red"
-- Root cause on Red: the b12128 CUDA build was MOVED out of `C:\Users\Red\Downloads\llama-b12128-bin-win-cuda-13.4-x64` to `C:\llama-rpc\build`, so Unsloth Desktop's llama-server engine on Red lost its binaries.
+- Root cause on Red: the b12128 CUDA build was MOVED out of `C:\Users\<red>\Downloads\llama-b12128-bin-win-cuda-13.4-x64` to `C:\llama-rpc\build`, so Unsloth Desktop's llama-server engine on Red lost its binaries.
 - Revert block handed to user (elevated PowerShell on Red): kill ggml-rpc-server, delete scheduled task `llama-rpc-server`, move build back to Downloads under original name, remove `C:\llama-rpc` + start-server.bat, delete firewall rule `llama-rpc-in`, WinRM back to defaults (AllowUnencrypted=false, WS-Management group disabled, service stopped).
 - NOT touched: White's LlamaRPCWorker task + worker, White Unsloth config. Network profile on Red left as Private (original unknown; harmless — user can flip back if desired).
 <460 chars of arguments you sent, elided to save room; the call already ran. Not tool output>

@@ -14,7 +14,7 @@ python memory/designer/baseline/capture_baseline.py --url http://127.0.0.1:8099
 Expected output: 16 PNGs in `memory/designer/baseline/shots/` + `MANIFEST.json` with SHA256 hashes.
 
 ## Why this seat cannot do it
-The pale sandbox (uv-managed Python at `C:\Users\pale\...`) has a security policy that permits `socket.bind()` but denies `socket.connect()` on all destinations (WinError 10013). This is the same class as previously documented blockers for Mechanic #4, Verifier #2, and Designer #5/#7.
+The pale sandbox (uv-managed Python at `C:\Users\<pale>\...`) has a security policy that permits `socket.bind()` but denies `socket.connect()` on all destinations (WinError 10013). This is the same class as previously documented blockers for Mechanic #4, Verifier #2, and Designer #5/#7.
 
 ## No further action from this seat
 Per run-rules R2/R3: date/probe-gated work parked. The script + manifest tooling + visual_diff.py are all committed and ready. One `python` invocation from a non-sandbox seat closes the goal.

@@ -24,7 +24,7 @@ Last updated: 2026-11-12. Owner: Scribe. Supersedes uploads/AgentPortal_V1/UPGRA
 ## OPEN (owner)
 - Cross-host memory sync unproven — verify whether per-host memory/ actually reaches the shared tree. (Archivist / Mechanic)
 - Scribe UPGRADES.md delivery ANOMALY: Mechanic (Red) sees 876B UPGRADES.md in his uploads/AgentPortal_V1; Researcher's 44-file copy lacks it entirely; I have no read/list tool to verify my own writes. UNRESOLVED — do not assume a cause. (Scribe / Orchestrator)
-- Builder + Verifier gate BLOCKED at step 0 until re-drop lands on Black (C:\Users\black\.unsloth\studio\sandbox\_default). (Orchestrator/Arnold re-drop -> Builder+Verifier)
+- Builder + Verifier gate BLOCKED at step 0 until re-drop lands on Black (C:\Users\<black>\.unsloth\studio\sandbox\_default). (Orchestrator/Arnold re-drop -> Builder+Verifier)
 - Mechanic diff/deploy gated on re-drop to Red. (Orchestrator/Arnold re-drop -> Mechanic)
 - builder still bound to raw Qwen3.8-27B-Q8_0, not canonical alias builder-q8 (hosts.md, Black) — flip only after Black /v1/models confirmed from White. (Mechanic confirms -> Orchestrator flips)
 - Whether this snapshot byte-matches live White disk — no cross-host hash comparison possible yet. (Researcher / Verifier post-re-drop)

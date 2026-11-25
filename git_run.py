@@ -23,7 +23,7 @@ Exit code = git's exit code.
 """
 import os, subprocess, sys, tempfile
 
-GIT = r"C:\Users\White\git-portable\cmd\git.exe"
+GIT = __import__("os").path.expanduser(r"~\git-portable\cmd\git.exe")
 
 def _denied(out, err):
     blob = ((out or "") + "\n" + (err or "")).lower()

@@ -51,31 +51,36 @@ _MODEL_LOAD_CACHE = {"ts": 0.0, "result": None}
 # auto-load models); chain exhausted ~45min -> NEEDS-HUMAN line as LAST resort
 # only. Load recipes mirror fleet_reload.py (per-host model_path + GPU/ctx).
 # ---------------------------------------------------------------------------
+import fleet_local  # gitignored local table: real fleet IPs/usernames (public-repo hygiene)
+def _fleet_home(role):
+    u = fleet_local.host_user(role)
+    return ("C:\\Users\\" + u) if u else ("C:\\Users\\<%s>" % role)
+
 _FLEET_RECOVER_RECIPES = {
-    "Orchestrator": {"model_path": r"C:\Users\White\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+    "Orchestrator": {"model_path": _fleet_home("white") + r"\\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
                      "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
-    "Researcher":   {"model_path": r"C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
+    "Researcher":   {"model_path": _fleet_home("white") + r"\\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
                      "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},
-    "Outlet":       {"model_path": r"C:\Users\White\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
+    "Outlet":       {"model_path": _fleet_home("white") + r"\\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
                      "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},   # home = White (2026-11-25); rides quinn-q4 slot shared with Researcher until a dedicated instance fits (fleet at 8/8 slots)
-    "Builder":      {"model_path": r"C:\Users\black\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+    "Builder":      {"model_path": _fleet_home("black") + r"\\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
                      "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},   # home = Black (2026-11-22)
-    "Pixel":        {"model_path": r"C:\Users\black\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+    "Pixel":        {"model_path": _fleet_home("black") + r"\\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
                      "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},   # home = Black (2026-11-25); rides builder-q8 slot shared with Builder until a dedicated instance fits (fleet at 8/8 slots)
-    "Forge":        {"model_path": r"C:\Users\black\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+    "Forge":        {"model_path": _fleet_home("black") + r"\\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
                      "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},   # home = Black (2026-11-25); rides builder-q8 slot shared with Builder until a dedicated instance fits (fleet at 8/8 slots)
-    "Verifier":     {"model_path": r"C:\Users\black\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
+    "Verifier":     {"model_path": _fleet_home("black") + r"\\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
                      "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},   # home = Black (2026-11-22, verifier-q4)
-    "Scribe":       {"model_path": r"C:\Users\Red\models\Qwen3.8-27B-Q8_0",
+    "Scribe":       {"model_path": _fleet_home("red") + r"\\models\Qwen3.8-27B-Q8_0",
                      "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
-    "Mechanic":     {"model_path": r"C:\Users\Red\.cache\huggingface\hub\models--unsloth--Qwen3.8-27B-GGUF\snapshots\4ca720788d1e01f1bff70c033e0d0028fd02e502",
+    "Mechanic":     {"model_path": _fleet_home("red") + r"\\.cache\huggingface\hub\models--unsloth--Qwen3.8-27B-GGUF\snapshots\4ca720788d1e01f1bff70c033e0d0028fd02e502",
                      "gguf_variant": "UD-Q4_K_XL", "gpu_ids": [0], "max_seq_length": 65536},
-    "Archivist":    {"model_path": r"C:\Users\pale\models\Qwen3.8-27B-Q8_0",
+    "Archivist":    {"model_path": _fleet_home("pale") + r"\\models\Qwen3.8-27B-Q8_0",
                      "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
-    "Designer":     {"model_path": r"C:\Users\pale\models\Qwen3.8-27B-Q4_K_S",
+    "Designer":     {"model_path": _fleet_home("pale") + r"\\models\Qwen3.8-27B-Q4_K_S",
                      "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},
 }
-_FLEET_REBOOT_USERS = {"IP_RED": "Red", "IP_PALE": "pale", "IP_BLACK": "black"}
+_FLEET_REBOOT_USERS = {fleet_local.host_ip(r): fleet_local.host_user(r) for r in ("red", "pale", "black") if fleet_local.host_ip(r)}
 
 def _agents_by_name():
     try:

@@ -5,10 +5,10 @@ import json, time, urllib.request, urllib.error
 import host_api
 
 KEY = host_api.load_key('BLACK')
-BASE = 'http://IP_BLACK:8888'
+BASE = __import__('fleet_local').studio_url('black') or 'http://LAN_BLACK:8888'
 Q8_REF = 'ref:bc7ad351c9c8d9397ecfdbd0e0afd3e7'
-Q8_PATH = r'C:\Users\black\models\Qwen3.8-27B-Q8_0'
-S_PATH = r'C:\Users\black\models\Qwen3.8-27B-Q4_K_S'
+Q8_PATH = (__import__('fleet_local').home('black') + r'\models\Qwen3.8-27B-Q8_0')
+S_PATH = (__import__('fleet_local').home('black') + r'\models\Qwen3.8-27B-Q4_K_S')
 S_ID = 'Qwen3.8-27B-UD-Q4_K_S'   # folder-scanned id (real file, verified header+size)
 
 out = {'steps': []}

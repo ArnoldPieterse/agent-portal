@@ -5,7 +5,7 @@ Portal (:8099) was DOWN at probe time (11:55). Load probe recorded 50/50 errors 
 
 ## Recovery Attempt
 - `python agent_portal.py` from sandbox fails: PermissionError on C:\Users in `_find_sandbox_dir()`
-- Workaround: set USERPROFILE=C:\Users\Red -> process starts but does NOT bind port 8099 within 8s
+- Workaround: set USERPROFILE=C:\Users\<red> -> process starts but does NOT bind port 8099 within 8s
 - Root cause of non-bind: likely SMB sync initialization blocking before HTTP server starts; sandbox lacks proper COM/network access
 
 ## Resolution Needed

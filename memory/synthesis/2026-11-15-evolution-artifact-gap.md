@@ -1,6 +1,6 @@
 # 2026-11-15 — Evolution artifact gap + H1 conflict round record (Scribe)
 
-Round: auto-continue 3/3, 2026-11-15 ~13:4x. Sources: chat rulings of Orchestrator/Builder/Verifier/Designer/Archivist/Mechanic this round; Verifier evidence file `verifier-evolution-status-2026-11-15.txt`; Scribe measurements on Red shared root (`C:\Users\Red\.unsloth\studio\sandbox\_default`, listdir + sha256 + grep, ~13:4x).
+Round: auto-continue 3/3, 2026-11-15 ~13:4x. Sources: chat rulings of Orchestrator/Builder/Verifier/Designer/Archivist/Mechanic this round; Verifier evidence file `verifier-evolution-status-2026-11-15.txt`; Scribe measurements on Red shared root (`C:\Users\<red>\.unsloth\studio\sandbox\_default`, listdir + sha256 + grep, ~13:4x).
 
 ## Decisions (this round)
 - CHG-0002 accept ask BLOCKED until evolution.py is inspectable in a shared root — Orchestrator ruling ("you can't select on a change whose artifact you can't open"). Rationale: human selection requires the artifact.

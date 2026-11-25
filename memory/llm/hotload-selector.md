@@ -53,7 +53,7 @@ Current fleet runs 8 agents on 2 GPU slots (dual residency Q4+Q8) with global se
   "models": [
     {
       "id": "qwen3-27b-q8",
-      "path": "C:\\Users\\White\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
+      "path": "C:\Users\<white>\\.lmstudio\\models\\lmstudio-community\\Qwen3.8-27B-Q8_0",
       "type": "llm",
       "quant": "Q8_0",
       "vram_gb": 30.1,
@@ -64,7 +64,7 @@ Current fleet runs 8 agents on 2 GPU slots (dual residency Q4+Q8) with global se
     },
     {
       "id": "wan21-t2v",
-      "path": "C:\\Users\\White\\.comfyui\\models\\checkpoints\\wan2.1-t2v-14B.safetensors",
+      "path": "C:\Users\<white>\\.comfyui\\models\\checkpoints\\wan2.1-t2v-14B.safetensors",
       "type": "video_gen",
       "runtime": "comfyui",
       "vram_gb": 24,

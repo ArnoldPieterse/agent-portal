@@ -5,7 +5,7 @@ Idempotent (.done marker). Log: gemma4-download.log next to this file."""
 import os, sys, time, urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DEST = r"C:\Users\White\.lmstudio\models\lmstudio-community\gemma-4-31B-it-Q4_K_M.gguf"
+DEST = r"C:\Users\<white>\.lmstudio\models\lmstudio-community\gemma-4-31B-it-Q4_K_M.gguf"
 URL = ("https://huggingface.co/lmstudio-community/gemma-4-31B-it-GGUF/"
        "resolve/main/gemma-4-31B-it-Q4_K_M.gguf")
 LOG = os.path.join(HERE, "gemma4-download.log")

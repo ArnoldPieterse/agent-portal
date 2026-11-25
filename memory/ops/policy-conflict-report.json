@@ -6,8 +6,8 @@
     {
       "rule_a": "head \u2192 `c67c054 smoke test r20`",
       "rule_b": "head \u2192 `f8d9772`",
-      "file_a": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\verifier-git-health-2026-11-15b.md",
-      "file_b": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\verifier-git-health-2026-11-15b.md",
+      "file_a": "C:\Users\<white>\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\verifier-git-health-2026-11-15b.md",
+      "file_b": "C:\Users\<white>\\.unsloth\\studio\\sandbox\\_default\\memory\\ops\\verifier-git-health-2026-11-15b.md",
       "line_a": 12,
       "line_b": 15,
       "trigger_overlap": "head",

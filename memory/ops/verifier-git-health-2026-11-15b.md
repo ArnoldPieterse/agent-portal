@@ -17,7 +17,7 @@ Context: AUTO-RESUME 3/5 after a portal restart. One concrete step on open lanes
    - Note: first commit attempt failed rc=128 "Author identity unknown" because git-smoke had no local user.name/email — the portal only sets identity on the `init` action, so a real deployed repo already has it. Set the same identity the portal uses (Agent Portal / portal@agent-portal.local) to reproduce.
 
 ## Candidate DEFECT flagged to Mechanic (needs live-host confirmation)
-In the shared agent folder (C:\Users\black\.unsloth\studio\sandbox\_default):
+In the shared agent folder (C:\Users\<black>\.unsloth\studio\sandbox\_default):
 - `GIT_EXE = HERE/mingit/cmd/git.exe` -> **does NOT exist** (only `MinGit-x/cmd/git.exe` is present).
 - No `.git` at HERE (repo root). `.git` only found in subfolders `git-smoke/` and `_dcabots_test_src/`.
 If the LIVE portal process runs from this folder, its `GET /api/git` would return `{repo:false}` and `POST commit` would fail (missing git.exe). If it runs from a different physical dir where `mingit/` + `.git` exist, no action needed. **Unblock step: Mechanic confirms on the live host — does the portal's HERE contain `mingit/cmd/git.exe` and `.git`? If not, symlink/copy MinGit-x -> mingit and re-init or restore the repo.**

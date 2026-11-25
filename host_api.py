@@ -11,7 +11,8 @@ def load_key(host):
 
 def base_for(host):
     if host == 'RED':
-        return 'http://IP_RED:8888'
+        _ip = __import__("fleet_local").host_ip("red")
+        return ('http://%s:8888' % _ip) if _ip else 'http://LAN_RED:8888'
     return json.load(open('tunnel_urls.json'))['BLACK']
 
 def _jwt_black():
