@@ -24,3 +24,5 @@
 {"ts": "2026-11-25T18:43:12", "ref": ["memory/archivist/decay-report.md", 11138], "focus_sig": "d45390c1", "reason": "lod-evict"}
 {"ts": "2026-11-25T19:00:02", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "465cc10c", "reason": "lod-evict"}
 {"ts": "2026-11-25T19:00:02", "ref": ["memory/researcher/open-questions-log.md", 131], "focus_sig": "465cc10c", "reason": "lod-evict"}
+{"ts": "2026-11-25T19:04:31", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "465cc10c", "reason": "lod-evict"}
+{"ts": "2026-11-25T19:04:31", "ref": ["memory/researcher/open-questions-log.md", 148], "focus_sig": "465cc10c", "reason": "lod-evict"}

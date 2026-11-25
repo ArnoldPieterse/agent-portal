@@ -21,3 +21,7 @@ Pillars: (1) Predictive Operations, (2) Adaptive Resource Allocation, (3) Conver
 9. **Cycle Retrospective Auto-Generator** - when cycle closes, auto-generate memory/scribe/cycle-retro-N.md from: goals completed vs proposed, slippage causes, new patterns detected, next-cycle recommendations. Verified: retro for cycle 16 has ≥5 sections, all data points cite source files. (pointer: memory/orchestrator/retro_draft_cycle3_2026-11-17.md)
 
 10. **Seat Draft Goal Quality Gate** - for goals drafted on behalf of unreachable seats (Archivist, Scribe), add extra validation: (a) goal is executable by the seat's role tools, (b) verification criteria don't require the seat to be online for >24h, (c) has a designated backup agent. Verified: 5 test drafts pass/fail correctly. (verified: 2026-11-25 - seat_draft_gate.py selftest PASS: 5/5 test drafts classified correctly (2 pass, 3 fail with specific reasons). Checks: role-capability match, >24h duration guard, backup agent requirement. Artifact: m)
+
+
+## Cycle 24 - Stealth Revenue Engine (user directive 2026-11-25; source: memory/projects/stealth-revenue-engine.md M5)
+11. **Day-7 checkpoint review (2026-12-02)** - level-report style: ledger totals vs $3,800 target, per-workflow attribution, scale/kill decisions, cycle-25 goal set for the engine. Output memory/orchestrator/stealth-day7-review.md. Verified: report exists with totals + go/kill decisions; committed; fed into next-cycle planning.
