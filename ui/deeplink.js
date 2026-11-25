@@ -6,6 +6,8 @@
 //     a     : selected agent id/name in the left list
 //     m     : solo|group composer mode
 // Also supports the /page/<name>.html path form with the same ?a=&m= query.
+// PITFALL (2026-11-25): core.js declares a top-level `let history=[]` which SHADOWS
+// window.history for every later script - always call window.history.replaceState here.
 // State changes rewrite the bar via history.replaceState (no history spam).
 // Every state transition is appended to memory/ops/ui-state.jsonl via POST /api/ui/state
 // (fire-and-forget; falls back to localStorage when the endpoint is absent) so the
@@ -40,7 +42,9 @@
   function currentAgent(){
     var c=document.querySelector("#agentList .acard.sel");
     if(!c)return null;
-    var t=(c.textContent||"").toLowerCase();
+    var da=c.getAttribute("data-agent");          // exact id (core.js renderAgents sets it)
+    if(da)return da;
+    var t=(c.textContent||"").toLowerCase();      // legacy fallback: fuzzy name match
     if(agentMap){for(var k in agentMap){if(t.indexOf(k)>=0)return agentMap[k];}}
     return null;
   }
@@ -69,10 +73,10 @@
       if(m!=="solo")q.push("m="+m);
       var qs=q.length?("?"+q.join("&")):"";
       if(/^\/page\//.test(location.pathname)){
-        history.replaceState(null,"",location.pathname+qs);
+        window.history.replaceState(null,"",location.pathname+qs);
       }else{
         var h=p?("# "+p).replace(" ","/")+qs:"";
-        history.replaceState(null,"",location.pathname+location.search+h);
+        window.history.replaceState(null,"",location.pathname+location.search+h);
       }
       logState(p,a,m);
     }catch(e){}
@@ -92,18 +96,32 @@
   }
 
   // ---- restore on load -------------------------------------------------
+  // ?a= accepts an agent id ("researcher"), a name ("Researcher") or the 3-letter
+  // chip code ("res"). Matching is EXACT - the old substring match let "arc" hit
+  // "researcher". Cards carry data-agent=<id> (core.js renderAgents).
+  function agentIdFor(want){
+    want=String(want||"").toLowerCase();
+    if(!want)return null;
+    if(agentMap&&agentMap[want])return agentMap[want];            // name -> id
+    for(var k in (agentMap||{})){                                  // chip code or raw id
+      if(want.length===3&&k.slice(0,3)===want)return agentMap[k];
+      if(String(agentMap[k]).toLowerCase()===want)return agentMap[k];
+    }
+    return want;                                                   // assume already an id
+  }
   function restore(){
     var m=qp("m"), a=qp("a");
-    if(m==="group"){var g=document.getElementById("mGroup");if(g)setTimeout(function(){try{g.click();}catch(e){}},300);}
+    if(m==="group"){var g=document.getElementById("mGroup");if(g)try{g.click();}catch(e){}}
     if(a){
       var tries=0;
       var t=setInterval(function(){
         tries++;
+        var id=agentIdFor(a); // re-resolve each tick: agentMap may still be loading
         var cards=document.querySelectorAll("#agentList .acard");
-        var hit=null, want=String(a).toLowerCase();
-        for(var i=0;i<cards.length;i++){if((cards[i].textContent||"").toLowerCase().indexOf(want)>=0){hit=cards[i];break;}}
+        var hit=null;
+        for(var i=0;i<cards.length;i++){if(cards[i].getAttribute("data-agent")===(id||"")){hit=cards[i];break;}}
         if(hit){clearInterval(t);try{hit.click();}catch(e){}}
-        else if(tries>40)clearInterval(t); // ~8s: agent list never rendered
+        else if(tries>40)clearInterval(t); // ~8s: agent list never rendered (or unknown id)
       },200);
     }
   }
@@ -130,10 +148,18 @@
     };
   }
 
+  // renderGoalBar (core.js) rewrites #goalBar innerHTML on every poll - keep Link alive
+  function watchGoalBar(){
+    var bar=document.getElementById("goalBar");
+    if(!bar||typeof MutationObserver==="undefined")return;
+    new MutationObserver(function(){ if(!document.getElementById("linkBtn"))addLinkBtn(); }).observe(bar,{childList:true});
+  }
+
   // ---- wiring ------------------------------------------------------------
   loadAgentMap();
   document.addEventListener("DOMContentLoaded",function(){
     addLinkBtn();
+    watchGoalBar();
     restore();
     setTimeout(writeURL,800); // initial bar sync after first render
     setInterval(function(){if(page())writeURL();},2500);
@@ -142,5 +168,5 @@
     if(mb)mb.addEventListener("click",function(){setTimeout(writeURL,120);});
     window.addEventListener("hashchange",function(){setTimeout(writeURL,150);});
   });
-  if(document.readyState!=="loading"){addLinkBtn();restore();}
+  if(document.readyState!=="loading"){addLinkBtn();watchGoalBar();restore();}
 })();

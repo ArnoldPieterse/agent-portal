@@ -33,6 +33,7 @@ function renderAgents(){
   for(const a of agents){
     const c=document.createElement("div");
     c.className="acard"+(a.id===selectedId?" sel":"");
+    c.setAttribute("data-agent",String(a.id)); // exact id for deeplink.js ?a= matching
     c.innerHTML=`<span class="em">${a.emoji?esc(a.emoji):UI.icon("robot")}</span>
       <span class="nm"><b>${esc(a.name)}</b><span>${esc(shortModel(a.model_id))}</span></span>`;
     const g=document.createElement("button"); g.innerHTML=UI.icon("settings"); g.title="Edit profile";
