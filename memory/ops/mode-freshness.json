@@ -1,19 +1,19 @@
 {
-  "ts": "2026-11-25T01:37:13.781102+00:00",
+  "ts": "2026-11-25T01:53:20.045300+00:00",
   "ttl_h": 2.0,
   "files": [
     {
       "file": "fleet-mode",
       "path": "memory\\ops\\fleet-mode.json",
       "status": "current",
-      "age_h": 0.06,
-      "mtime": "2026-11-25T01:33:35.020084+00:00"
+      "age_h": 0.16,
+      "mtime": "2026-11-25T01:43:30.589739+00:00"
     },
     {
       "file": "productivity-baseline",
       "path": "memory\\ops\\productivity-baseline.json",
       "status": "stale",
-      "age_h": 15.0,
+      "age_h": 15.27,
       "mtime": "2026-11-24T10:37:01.844319+00:00"
     }
   ],

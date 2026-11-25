@@ -2548,5 +2548,11 @@
 "text": "**Convergence Glossary** - plain-language glossary of fleet convergence terms for human readers. Update when new terms introduced. Output: m",
 "agent": "scribe",
 "at": "2026-11-25"
+},
+{
+"sig": "4f44019ac81a0973",
+"text": "**Cycle Topic Rationale Writer** - 3-sentence rationale per cycle topic: why now, what it builds on, what it enables. Output: memory/scribe/",
+"agent": "scribe",
+"at": "2026-11-25"
 }
 ]

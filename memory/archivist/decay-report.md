@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 10986 | flagged (<0.35): 0
+Leaves: 11001 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9902,6 +9902,7 @@ Leaves: 10986 | flagged (<0.35): 0
 | memory/builder/steady_state_scheduler.py | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-calm-mode-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-complexity-heatmap-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-convergence-section-spec-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-cycle-transition-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-cycle-transition-export-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-intervention-timeline-2026-11-24.md | 0 | 0 | n | 0.550 |
@@ -10196,6 +10197,7 @@ Leaves: 10986 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261125-073336.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-084650.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-095100.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-110807.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
@@ -10258,6 +10260,7 @@ Leaves: 10986 | flagged (<0.35): 0
 | memory/ops/autonomy-score.json | 0 | 0 | n | 0.550 |
 | memory/ops/cadence-changes.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/cadence-log.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/convergence-digests.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-health.json | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-narrative-latest.md | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-prediction.json | 0 | 0 | n | 0.550 |
@@ -10302,6 +10305,7 @@ Leaves: 10986 | flagged (<0.35): 0
 | memory/ops/vram-backtest-synthetic.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/vram-forecast.json | 0 | 0 | n | 0.550 |
 | memory/ops/vram-history.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.4456d57852 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.5d6261d06a | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.9de335bef7 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.0425c412b7 | 0 | 0 | n | 0.550 |
@@ -10314,6 +10318,7 @@ Leaves: 10986 | flagged (<0.35): 0
 | memory/orchestrator/assist-researcher-cycle17-g1-cycle-history-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/assist-researcher-g1-cycle-history-consolidation-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/assist-scribe-g1-stale-ledger-fix-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/orchestrator/assist-scribe-g2-closeout-v3-verify-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/autonomy_score.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/auto_priority.py | 0 | 0 | n | 0.550 |
 | memory/orchestrator/closeout-contract-evidence-2026-11-25.md | 0 | 0 | n | 0.550 |
@@ -10381,14 +10386,20 @@ Leaves: 10986 | flagged (<0.35): 0
 | memory/researcher/seat_unavailability_v2.py | 0 | 0 | n | 0.550 |
 | memory/researcher/steady-state-assessment-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/researcher/test_efficiency_anomaly.py | 0 | 0 | n | 0.550 |
+| memory/researcher/topic-rationales-assist-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/researcher/topic-scores.json | 0 | 0 | n | 0.550 |
 | memory/researcher/topic-scores.md | 0 | 0 | n | 0.550 |
 | memory/researcher/topic_scorer.py | 0 | 0 | n | 0.550 |
 | memory/researcher/unavailability-forecast.json | 0 | 0 | n | 0.550 |
 | memory/researcher/unavailability-impact-v2.md | 0 | 0 | n | 0.550 |
+| memory/scribe/convergence-glossary.md | 0 | 0 | n | 0.550 |
+| memory/scribe/coordination-summary-16.md | 0 | 0 | n | 0.550 |
 | memory/scribe/cycle-retro-15.md | 0 | 0 | n | 0.550 |
 | memory/scribe/cycle-retro-16.md | 0 | 0 | n | 0.550 |
 | memory/scribe/cycle_retro_gen.py | 0 | 0 | n | 0.550 |
+| memory/scribe/intervention-milestones.md | 0 | 0 | n | 0.550 |
+| memory/scribe/steady-state-declaration.md | 0 | 0 | n | 0.550 |
+| memory/scribe/topic-rationales.jsonl | 0 | 0 | n | 0.550 |
 | memory/scribe/cards/mirror.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/hotfile-archive-20261125.md | 0 | 0 | n | 0.550 |
 | memory/verifier/auto-loop-pass-2026-11-25-batch.md | 0 | 0 | n | 0.550 |
@@ -10445,6 +10456,7 @@ Leaves: 10986 | flagged (<0.35): 0
 | memory/verifier/slo-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/slo-report-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
+| memory/verifier/stale-ledger-scribe-closeout-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/verifier/steady-state-transition-results.json | 0 | 0 | n | 0.550 |
 | memory/verifier/steady-state-transition-test-verified-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/verifier/steady-state-transition-verified-2026-11-25.md | 0 | 0 | n | 0.550 |
@@ -10642,6 +10654,7 @@ Leaves: 10986 | flagged (<0.35): 0
 | memory/synthesis/retro-cycle-14.md | 1 | 1 | Y | 0.764 |
 | memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md | 6 | 11 | n | 0.765 |
 | memory/portal/file-links.md | 13 | 3 | Y | 0.766 |
+| memory/archivist/assist-scribe-goal2-convergence-section-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/convergence-kb.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/cross-cycle-patterns.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/cycle-history-index.md | 0 | 1 | Y | 0.769 |
@@ -10652,6 +10665,7 @@ Leaves: 10986 | flagged (<0.35): 0
 | memory/archivist/steady-state-ssot.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/topic-evolution.md | 0 | 1 | Y | 0.769 |
 | memory/builder/assist_mechanic_g1_seattrend_2026-11-25.md | 0 | 1 | Y | 0.769 |
+| memory/builder/assist_scribe_g4_convergence_digests_2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/builder/convergence_trend_evidence_2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/builder/cycle_retro_gen_evidence_2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/builder/goal_inherit_evidence_2026-11-25.md | 0 | 1 | Y | 0.769 |
@@ -10668,6 +10682,7 @@ Leaves: 10986 | flagged (<0.35): 0
 | memory/designer/evidence-steady-state-indicator-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/goals/researcher-g1-convergence-forecast-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 1 | Y | 0.769 |
+| memory/ops/convergence-section-layout-spec.md | 0 | 1 | Y | 0.769 |
 | memory/ops/cycle-history-consolidated.jsonl | 0 | 1 | Y | 0.769 |
 | memory/ops/seat-matrix.json | 0 | 1 | Y | 0.769 |
 | memory/portal/api-reqs.md | 0 | 1 | Y | 0.769 |
