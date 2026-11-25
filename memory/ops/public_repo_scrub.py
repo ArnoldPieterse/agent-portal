@@ -32,7 +32,7 @@ def main():
         t = re.sub(r"192\.168\.\d{1,3}\.\d{1,3}", "IP_LAN", t)
         for u, tok in USER_MAP:
             t = re.sub(r"C:[\/]+Users[\/]+%s" % re.escape(u), lambda m, tok=tok: "C:\\Users\\" + tok, t)
-        t = t.replace("10.0.0.39", "IP_PALE").replace("10.0.0.99", "IP_BLACK").replace("10.0.0.245", "IP_RED")
+        t = t.replace("IP_PALE", "IP_PALE").replace("IP_BLACK", "IP_BLACK").replace("IP_RED", "IP_RED")
         if t == orig:
             continue
         if f in LIVE_ALLOWLIST:

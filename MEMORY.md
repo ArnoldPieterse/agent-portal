@@ -13,8 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- HOT NOTE "builder 5/10" was stale; ledger confirms builder 10/10, fleet 78/80 (98%)
-- drift_detect.py is the sole remaining gating item for Forge #1 (runbook audit); consistency_check.py already passes.
 - consistency_check.py selftest 4/4 PASS; live probe degraded (White+Black unreachable) — not
 - Forge goal #2 done: drift_detect.py built, selftest 6/6, live scan + dirty-detection path verified.
 - Builder built top-3 SMB workflow package (WF1-3), all self-tests pass; goal not yet marked verified in file
@@ -23,6 +21,8 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Pixel's scribe-forecast-stealth file NOT written (context exhausted by 2 large dir listings); retry next pass with smaller probes first.
 - Builder built schedulable job wrappers for 3 stealth workflows; selftest 5/5 PASS, E2E integration PASS — assists Mechanic's Stealth hosting
 - Forge built smoke gate (runs 3 Builder workflows, validates exit codes + timing)
+- Scribe: all 11 goals verified; next actionable milestone is day-7 checkpoint gated to 2026-12-02 (stealth_checkpoint.py
+- All
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
