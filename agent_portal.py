@@ -3592,6 +3592,145 @@ def _aux_chat(agent, system, user, max_tokens):
         return ""
 
 
+# ---------------------------------------------------------------------------
+# FUTURE CALLS (2026-11-25): agents schedule N chained or unchained future LLM
+# calls to themselves or a mix of agents. A call may target an agent that does
+# not exist yet - supply it in create_agents and it is materialised first from
+# a capability spec + canned memory seed, then the call runs against its seat.
+# {prev} in a prompt = output of its chain_from call; {out.<id>} = any completed
+# call's output. State is in-memory (latest 300) + audited to ops/future-calls.jsonl.
+# ---------------------------------------------------------------------------
+_FUTURE_CALLS = {}
+_FUTURE_LOCK = threading.Lock()
+_FC_AUDIT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "memory", "ops", "future-calls.jsonl")
+
+def _fc_audit(rec):
+    try:
+        with open(_FC_AUDIT, "a", encoding="utf-8") as f:
+            f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+    except Exception:
+        pass
+
+def _fc_fill(prompt, rec):
+    out = prompt
+    dep = rec.get("chain_from")
+    if dep and dep in _FUTURE_CALLS:
+        out = out.replace("{prev}", (_FUTURE_CALLS[dep].get("output") or "")[:20000])
+    for cid, r in list(_FUTURE_CALLS.items()):
+        if r.get("state") == "done":
+            out = out.replace("{out.%s}" % cid, (r.get("output") or "")[:20000])
+    return out
+
+def _fc_run_one(rec):
+    with _FUTURE_LOCK:
+        rec["state"] = "running"
+        rec["started_ts"] = time.time()
+    try:
+        data = load_agents()
+        agent = None
+        for a in data["agents"]:
+            if (a.get("name") or "").lower() == rec["agent"].lower():
+                agent = a
+                break
+        if agent is None:
+            raise RuntimeError("agent %s not found" % rec["agent"])
+        prompt = _fc_fill(rec["prompt"], rec)
+        system = (agent.get("persona") or "You are %s." % agent.get("name", "?"))
+        budget = int(agent.get("max_tokens") or 0) or 4096
+        payload = {"model": agent.get("model_id") or "",
+                   "messages": [{"role": "system", "content": system},
+                                {"role": "user", "content": prompt}],
+                   "max_tokens": budget,
+                   "temperature": float(agent.get("temperature") or 0.7),
+                   "stream": False}
+        if str(agent.get("reasoning") or "default").lower() != "off":
+            payload["enable_thinking"] = True
+        res = studio_post("/v1/chat/completions", payload, timeout=600, agent=agent)
+        content = ((res.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
+        with _FUTURE_LOCK:
+            rec["state"] = "done"
+            rec["output"] = content
+    except Exception as e:
+        with _FUTURE_LOCK:
+            rec["state"] = "failed"
+            rec["error"] = str(e)[:300]
+    finally:
+        rec["finished_ts"] = time.time()
+        _fc_audit({k: v for k, v in rec.items() if k != "output"}
+                  | {"output": (rec.get("output") or "")[:4000]})
+
+def _fc_scheduler(calls):
+    pending = [c["id"] for c in calls]
+    def starter(cid):
+        c = next((x for x in calls if x["id"] == cid), None)
+        if c and c.get("delay_s"):
+            time.sleep(float(c["delay_s"]))
+        with _FUTURE_LOCK:
+            rec = _FUTURE_CALLS.get(cid)
+            if not rec or rec.get("state") != "pending":
+                return
+        threading.Thread(target=_fc_run_one, args=(rec,), daemon=True).start()
+    while pending:
+        progressed = False
+        for cid in list(pending):
+            c = next((x for x in calls if x["id"] == cid), None)
+            dep = (c or {}).get("chain_from")
+            if not dep or _FUTURE_CALLS.get(dep, {}).get("state") in ("done", "failed"):
+                pending.remove(cid)
+                threading.Thread(target=starter, args=(cid,), daemon=True).start()
+                progressed = True
+        if not progressed:
+            time.sleep(2)
+
+def _fc_create_agent(spec):
+    name = (spec.get("name") or "").strip()
+    if not name:
+        return None, "create_agents entry needs a name"
+    data = load_agents()
+    for a in data["agents"]:
+        if (a.get("name") or "").lower() == name.lower():
+            return a, "exists"
+    parent = None
+    reports_to = (spec.get("reports_to") or "").strip()
+    if reports_to:
+        for a in data["agents"]:
+            if (a.get("name") or "").lower() == reports_to.lower():
+                parent = a
+                break
+    agent = dict(default_agent_fields())
+    agent.update({"id": "a-" + name.lower().replace(" ", "-"),
+                  "name": name,
+                  "emoji": spec.get("emoji") or "\U0001F916",
+                  "color": spec.get("color") or "#7aa2f7",
+                  "model_id": (spec.get("model_id") or (parent or {}).get("model_id") or ""),
+                  "studio": (spec.get("studio") or (parent or {}).get("studio") or ""),
+                  "api_key": (spec.get("api_key") or (parent or {}).get("api_key") or "")})
+    caps = spec.get("capabilities") or []
+    agent["tools"] = [t for t in caps if t in ("web_search", "python", "terminal", "edit_file", "render_html")]
+    cap_txt = ", ".join(str(c) for c in caps) if caps else "general"
+    persona = (spec.get("persona") or "").strip()
+    if not persona:
+        persona = ("You are %s%s. Capability set: %s. Work autonomously on scheduled and chained "
+                   "tasks; be concrete and report results plainly." %
+                   (name, ", reporting to " + reports_to if reports_to else "", cap_txt))
+    agent["persona"] = persona
+    agent["blurb"] = (spec.get("blurb") or ("Auto-created %s agent (%s)." % (name, cap_txt)))[:200]
+    data["agents"].append(agent)
+    save_agents(data)
+    try:
+        mdir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "memory", name)
+        os.makedirs(mdir, exist_ok=True)
+        memf = os.path.join(mdir, "MEMORY.md")
+        if not os.path.exists(memf):
+            seed = (spec.get("memory_seed") or "").strip() or \
+                ("Canned seed: %s was auto-created on %s with capability set [%s]%s." %
+                 (name, time.strftime("%Y-%m-%d"), cap_txt,
+                  "; reports to " + reports_to if reports_to else ""))
+            open(memf, "w", encoding="utf-8").write("# %s memory\n\n%s\n" % (name, seed))
+    except Exception:
+        pass
+    return agent, "created"
+
 def _mem_lookup_round(agent, messages):
     """READMEM: one cheap aux round BEFORE the main reply. A router call sees the incoming
     message + memory map + current hot notes and emits ONE search query (or NONE); the fetch
@@ -6703,6 +6842,8 @@ class Handler(BaseHTTPRequestHandler):
             q["mode"] = ["callback"]
             self._login_resp(q)
             return
+        elif p == "/api/future-calls":
+            return self._future_calls_get()
         elif p == "/api/fleet":
             # Fleet Status panel (2026-11-13): per-host models + busy/idle/unknown.
             # On-demand probes only (no background timer); dead host => unknown, no hang.
@@ -7026,6 +7167,66 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(500, {"error": f"write failed: {e}"})
         return self._json(201, {"ok": True, "path": rel_clean.replace("\\", "/"), "size": written})
 
+    def _future_calls_post(self, body):
+        calls = body.get("calls") or []
+        caller = (body.get("caller") or "").strip()
+        if not isinstance(calls, list) or not calls:
+            return self._json(400, {"error": "calls[] required"})
+        created = []
+        for spec in (body.get("create_agents") or []):
+            if not isinstance(spec, dict):
+                continue
+            agent, note = _fc_create_agent(spec)
+            created.append({"name": (spec.get("name") or ""), "note": note})
+        norm = []
+        for i, c in enumerate(calls):
+            if not isinstance(c, dict) or not (c.get("prompt") or "").strip():
+                return self._json(400, {"error": "calls[%d] needs a prompt" % i})
+            ag = (c.get("agent") or "").strip()
+            if ag.lower() in ("", "self"):
+                ag = caller
+            if not ag:
+                return self._json(400, {"error": "calls[%d].agent required (or set caller for self)" % i})
+            cid = (c.get("id") or "").strip() or ("fc%d-%d" % (i, int(time.time())))
+            norm.append({"id": cid, "agent": ag, "prompt": c["prompt"],
+                         "chain_from": (c.get("chain_from") or "").strip(),
+                         "delay_s": max(0.0, float(c.get("delay_s") or 0))})
+        ids = [c["id"] for c in norm]
+        if len(set(ids)) != len(ids):
+            return self._json(400, {"error": "duplicate call ids"})
+        by_id = {c["id"]: c for c in norm}
+        for c in norm:  # cycle check over chain_from edges
+            seen = set()
+            cur = c
+            while cur and cur.get("chain_from") in by_id:
+                if cur["id"] in seen:
+                    return self._json(400, {"error": "cycle in chain_from"})
+                seen.add(cur["id"])
+                cur = by_id[cur["chain_from"]]
+        with _FUTURE_LOCK:
+            if len(_FUTURE_CALLS) > 300:  # keep the newest 300
+                for k in sorted(_FUTURE_CALLS, key=lambda x: _FUTURE_CALLS[x].get("created_ts") or 0)[:len(_FUTURE_CALLS) - 300]:
+                    _FUTURE_CALLS.pop(k, None)
+            for c in norm:
+                _FUTURE_CALLS[c["id"]] = {"id": c["id"], "agent": c["agent"],
+                                          "prompt": c["prompt"][:2000], "chain_from": c["chain_from"],
+                                          "delay_s": c["delay_s"], "caller": caller,
+                                          "state": "pending", "created_ts": time.time(),
+                                          "output": None, "error": None}
+        threading.Thread(target=_fc_scheduler, args=(norm,), daemon=True).start()
+        return self._json(202, {"ok": True, "scheduled": [c["id"] for c in norm],
+                                "created_agents": created})
+
+    def _future_calls_get(self):
+        with _FUTURE_LOCK:
+            recs = sorted(_FUTURE_CALLS.values(), key=lambda r: r.get("created_ts") or 0)[-200:]
+            out = []
+            for r in recs:
+                rr = dict(r)
+                rr["output"] = (r.get("output") or "")[:600]
+                out.append(rr)
+        return self._json(200, {"ok": True, "calls": out})
+
     def do_POST(self):
         _t0 = time.time()
         try:
@@ -7053,6 +7254,8 @@ class Handler(BaseHTTPRequestHandler):
             n = umq_check([mid] if isinstance(mid, str) and mid else [],
                           (body.get("agent") or "").strip() or "*", names)
             return self._json(200, {"ok": True, "checked": n})
+        elif p == "/api/future-calls":
+            return self._future_calls_post(body)
         elif p == "/api/history":
             m2 = (body.get("mode") or "").strip()
             if m2 not in CHAT_HISTORY_FILES:

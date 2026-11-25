@@ -445,3 +445,6 @@
 {"ts": "2026-11-25 17:26:57", "file": "goal_ledger.py", "sha": "348d6bb86e", "size": 10144, "snapshot": "memory/ops/merge-queue/goal_ledger.py.348d6bb86e"}
 {"ts": "2026-11-25 17:29:33", "file": "agent_portal.py", "sha": "948e50f7dd", "size": 378198, "snapshot": "memory/ops/merge-queue/agent_portal.py.948e50f7dd"}
 {"ts": "2026-11-25 17:29:33", "file": "ui/icons.js", "sha": "8d83cfedcf", "size": 12406, "snapshot": null}
+{"ts": "2026-11-25 18:18:46", "file": "agent_portal.py", "sha": "07e0d0fdbd", "size": 378194, "snapshot": "memory/ops/merge-queue/agent_portal.py.07e0d0fdbd"}
+{"ts": "2026-11-25 18:22:34", "file": "agents.json", "sha": "a2ee5c21f8", "size": 24689, "snapshot": "memory/ops/merge-queue/agents.json.a2ee5c21f8"}
+{"ts": "2026-11-25 18:22:34", "file": "ui/components.js", "sha": "06773b4737", "size": 17336, "snapshot": null}

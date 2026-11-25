@@ -3,7 +3,7 @@
     {
       "id": "orchestrator",
       "name": "Orchestrator",
-      "emoji": "\ud83c\udf9b\ufe0f",
+      "emoji": "🎛️",
       "color": "#4f8cff",
       "model_id": "atlas-q8",
       "temperature": 0.7,
@@ -42,7 +42,7 @@
     {
       "id": "researcher",
       "name": "Researcher",
-      "emoji": "\ud83d\udd0d",
+      "emoji": "🔍",
       "color": "#ff9f43",
       "model_id": "quinn-q4",
       "temperature": 0.8,
@@ -81,7 +81,7 @@
     {
       "id": "builder",
       "name": "Builder",
-      "emoji": "\ud83d\udee0\ufe0f",
+      "emoji": "🛠️",
       "color": "#7c4dff",
       "temperature": 0.7,
       "max_tokens": 0,
@@ -117,7 +117,7 @@
     {
       "id": "verifier",
       "name": "Verifier",
-      "emoji": "\u2705",
+      "emoji": "✅",
       "color": "#00b894",
       "temperature": 0.7,
       "max_tokens": 0,
@@ -153,7 +153,7 @@
     {
       "id": "designer",
       "name": "Designer",
-      "emoji": "\ud83c\udfa8",
+      "emoji": "🎨",
       "color": "#e84393",
       "model_id": "designer-q4",
       "temperature": 0.7,
@@ -191,7 +191,7 @@
     {
       "id": "archivist",
       "name": "Archivist",
-      "emoji": "\ud83d\udcda",
+      "emoji": "📚",
       "color": "#f1c40f",
       "model_id": "archivist-q8",
       "temperature": 0.5,
@@ -227,7 +227,7 @@
     {
       "id": "scribe",
       "name": "Scribe",
-      "emoji": "\ud83d\udcdd",
+      "emoji": "📝",
       "color": "#00cec9",
       "model_id": "scribe-q8",
       "temperature": 0.5,
@@ -265,7 +265,7 @@
     {
       "id": "mechanic",
       "name": "Mechanic",
-      "emoji": "\u2699\ufe0f",
+      "emoji": "⚙️",
       "color": "#636e72",
       "model_id": "mechanic-q4",
       "temperature": 0.6,
@@ -303,7 +303,7 @@
     {
       "id": "outlet",
       "name": "Outlet",
-      "emoji": "\ud83d\udce2",
+      "emoji": "📢",
       "color": "#ff6b6b",
       "temperature": 0.9,
       "max_tokens": 0,
@@ -343,7 +343,7 @@
     {
       "id": "pixel",
       "name": "Pixel",
-      "emoji": "\ud83d\udd8c\ufe0f",
+      "emoji": "🖌️",
       "color": "#00d2d3",
       "temperature": 0.7,
       "max_tokens": 0,
@@ -383,7 +383,7 @@
     {
       "id": "forge",
       "name": "Forge",
-      "emoji": "\ud83d\udd27",
+      "emoji": "🔧",
       "color": "#e17055",
       "temperature": 0.7,
       "max_tokens": 0,
@@ -423,7 +423,7 @@
     {
       "id": "lumen",
       "name": "Lumen",
-      "emoji": "\ud83d\uddbc\ufe0f",
+      "emoji": "🖼️",
       "color": "#ffd166",
       "temperature": 0.8,
       "max_tokens": 0,
@@ -463,7 +463,7 @@
     {
       "id": "reel",
       "name": "Reel",
-      "emoji": "\ud83c\udfac",
+      "emoji": "🎬",
       "color": "#7ed6df",
       "temperature": 0.8,
       "max_tokens": 0,
@@ -503,7 +503,7 @@
     {
       "id": "splice",
       "name": "Splice",
-      "emoji": "\u2702\ufe0f",
+      "emoji": "✂️",
       "color": "#c44569",
       "temperature": 0.4,
       "max_tokens": 0,
