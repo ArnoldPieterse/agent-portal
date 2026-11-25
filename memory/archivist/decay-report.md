@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 11267 | flagged (<0.35): 0
+Leaves: 11275 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -10266,6 +10266,8 @@ Leaves: 11267 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261125-153422.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-164412.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-175234.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-190005.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-194602.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
@@ -10273,12 +10275,18 @@ Leaves: 11267 | flagged (<0.35): 0
 | memory/goals/plans/one-pager-archivist.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-builder.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-designer.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-forge.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-latest.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-latest.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-lumen.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-mechanic.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-orchestrator.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-outlet.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-pixel.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-reel.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-researcher.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-scribe.md | 0 | 0 | n | 0.550 |
+| memory/goals/plans/one-pager-splice.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/one-pager-verifier.md | 0 | 0 | n | 0.550 |
 | memory/goals/plans/plan-round-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/rounds.jsonl | 0 | 0 | n | 0.550 |
