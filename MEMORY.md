@@ -13,11 +13,11 @@ FLEET CYCLE 23: 69/80 (86%) as of 2026-11-25. Closed lanes 10/10: orchestrator, 
 ## Hot Notes
 - Auto-loop dispatch text is stale (lists open goals already closed) - trust goal_ledger.json over dispatch text.
 - Fleet level 10 reached 2026-11-24 21:55; per-level reports in memory/levels/.
-- Seat matrix: J351. Mechanic lane 10/10 closed; reboot log I623.
-- Host/port/task map: J4. Designer deep-sweep: C134.
+- Seat matrix: J37. Mechanic lane 10/10 closed; reboot log I19.
+- Host/port/task map: J4. Designer deep-sweep: C29.
 - convergence_health.py path fix (fleet/→ops/, cycle-estimate→cycle-duration) gets reverted by mirror sync; must re-apply each pass
 ## Durable rules
-Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J290). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
+Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 ## Counter
 - inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —

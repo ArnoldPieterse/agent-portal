@@ -1,26 +1,33 @@
-import re, sys
+"""One-shot (2026-11-25): re-mint stale hot-note codes in MEMORY.md via mcode."""
+import re
+import sys
+
 sys.path.insert(0, "memory/archivist")
 import mcode
 
 tbl = mcode.load_table()
-p = "MEMORY.md"
-s = open(p, encoding="utf-8").read()
+pairs = [
+    ("J351", "memory/ops/seat-matrix.json"),
+    ("I623", "memory/mechanic/reboot-recovery.jsonl"),
+    ("J290", "memory/ops/probes.md"),
+    ("C134", "memory/designer/deep-sweep-2026-11-19.md"),
+]
+out = []
+ok = True
+for old, p in pairs:
+    r = mcode.code_for(p, tbl)
+    m = re.search(r":\s*([A-Z][a-z]?\d+)$", r)
+    if not m:
+        ok = False
+        print("FAIL", p, r[:70])
+        continue
+    out.append((old, m.group(1)))
+if not ok:
+    sys.exit(1)
+s = open("MEMORY.md", encoding="utf-8").read()
 n = 0
-for path in [
-    "memory/ops/seat-matrix.json",
-    "memory/mechanic/reboot-recovery.jsonl",
-    "memory/ops/host-port-task-map-2026-11-15.md",
-    "memory/designer/deep-sweep-2026-11-19.md",
-    "memory/llm/instances.md",
-    "memory/portal/architecture.md",
-    "memory/portal/bugs/xtalk-completion-2026-11-15.md",
-    "memory/ops/runbooks/windows-runbook.md",
-    "memory/ops/probes.md",
-]:
-    out = mcode.code_for(path, tbl)
-    c = out.split(" : ", 1)[1] if " : " in out else ""
-    if re.match(r"^[A-Z][a-z]?\d+$", c) and path in s:
-        s = s.replace(path, c)
-        n += 1
-open(p, "w", encoding="utf-8").write(s)
-print("patched", n, "of 9")
+for old, new in out:
+    s, n2 = re.subn(r"\b" + old + r"\b", new, s)
+    n += n2
+open("MEMORY.md", "w", encoding="utf-8").write(s)
+print(dict(out), "replaced", n, "size", len(s))
