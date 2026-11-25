@@ -30,3 +30,7 @@
 {"ts": "2026-11-25T19:20:32", "ref": ["memory/workspace/INDEX.md", 79], "focus_sig": "82982945", "reason": "lod-evict"}
 {"ts": "2026-11-25T19:37:56", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "99a59226", "reason": "lod-evict"}
 {"ts": "2026-11-25T19:37:56", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 22], "focus_sig": "99a59226", "reason": "lod-evict"}
+{"ts": "2026-11-25T19:54:35", "ref": ["memory/scribe/MEMORY.md", 19], "focus_sig": "4d08e7cb", "reason": "lod-evict"}
+{"ts": "2026-11-25T19:54:35", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 21], "focus_sig": "4d08e7cb", "reason": "lod-evict"}
+{"ts": "2026-11-25T19:54:35", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "4d08e7cb", "reason": "lod-evict"}
+{"ts": "2026-11-25T19:54:35", "ref": ["memory/goals/archive/mechanic-2026-11-23-cycle8.md", 11], "focus_sig": "4d08e7cb", "reason": "lod-evict"}
