@@ -1,0 +1,10 @@
+{
+  "mode": "once",
+  "completed_at": "2026-11-25T10:22:35.473481",
+  "results": {
+    "lead_enrichment": "ok",
+    "content_repurpose": "ok",
+    "invoice_tracker": "ok"
+  },
+  "pid": 21844
+}

@@ -1,0 +1,6 @@
+[2026-11-25T10:22:34Z] Starting: lead_enrichment (budget 120s CPU / 256MB)
+[2026-11-25T10:22:35Z] Finished: lead_enrichment -> ok
+[2026-11-25T10:22:35Z] Starting: content_repurpose (budget 180s CPU / 256MB)
+[2026-11-25T10:22:35Z] Finished: content_repurpose -> ok
+[2026-11-25T10:22:35Z] Starting: invoice_tracker (budget 60s CPU / 128MB)
+[2026-11-25T10:22:35Z] Finished: invoice_tracker -> ok
