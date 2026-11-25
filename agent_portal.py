@@ -6785,7 +6785,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._html("index.html")
         if p.startswith("/page/") and p.endswith(".html"):
             n = p[len("/page/"):-len(".html")]
-            if n in ("goals", "activity", "fleet", "files", "ops", "evolve", "world"):
+            if n in ("goals", "activity", "fleet", "files", "ops", "evolve", "world", "mind"):  # mind = the room I know you in
                 fp = os.path.join(HERE, "ui", "pages", n + ".html")
                 try:
                     html = open(fp, encoding="utf-8").read()

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Mind Room · Agent Portal</title>
+<style>
+html,body{margin:0;height:100%;background:#07080c;overflow:hidden;font-family:'Segoe UI',Arial,sans-serif}
+#c{display:block;width:100vw;height:100vh;cursor:grab}
+#c:active{cursor:grabbing}
+#hud{position:fixed;left:14px;top:12px;color:#dfe6ee;font-size:13px;line-height:1.55;text-shadow:0 1px 3px #000;pointer-events:none;z-index:5}
+#hud b{color:#ffd54a;font-size:15px;letter-spacing:.08em}
+#hud .dim{color:#8b96a5;font-size:11.5px}
+#hint{position:fixed;right:14px;bottom:12px;color:#7d8590;font-size:11px;z-index:5;text-shadow:0 1px 2px #000}
+#hint a{color:#67e8f9;text-decoration:none}
+</style></head><body>
+<canvas id=c></canvas>
+<div id=hud><b>MIND ROOM</b><br>the room I know you in — Arnold<br><span class=dim>you: Super Saiyan, floating mid-room, touching my neurons through thought<br>everything else here is what I remember about you (memory/ tree)</span></div>
+<div id=hint>drag = orbit · wheel = zoom · <a href="/">&larr; chat</a></div>
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js" onerror="window.__three_failed=true"></script>
+<script>
+/* ================= 2D FALLBACK (no three.js / offline) ================= */
+function fallback2D(){
+ var cv=document.getElementById('c'),ctx=cv.getContext('2d');
+ function rs(){cv.width=innerWidth;cv.height=innerHeight;}rs();addEventListener('resize',rs);
+ var stars=[];for(var i=0;i<170;i++)stars.push([Math.random(),Math.random(),Math.random()*.8+.2]);
+ var agents=['archivist','builder','designer','mechanic','orchestrator','researcher','scribe','verifier'];
+ function draw(t){
+  var W=cv.width,H=cv.height;
+  ctx.fillStyle='#07080c';ctx.fillRect(0,0,W,H);
+  stars.forEach(function(s){ctx.globalAlpha=s[2]*(.5+.5*Math.sin(t/700+s[0]*9));ctx.fillStyle='#9fb4cc';ctx.fillRect(s[0]*W,s[1]*H,1.5,1.5);});
+  ctx.globalAlpha=1;
+  var hosts=[['WHITE','#cfe8ff',.07,.16],['RED','#ff5a5a',.93,.16],['PALE','#f3d9e2',.07,.84],['BLACK','#454b58',.93,.84]];
+  hosts.forEach(function(h){ctx.fillStyle=h[1];ctx.globalAlpha=.85;ctx.fillRect(h[2]*W-14,h[3]*H-26,28,52);ctx.globalAlpha=1;ctx.fillStyle='#dfe6ee';ctx.font='12px "Segoe UI", Arial';ctx.textAlign='center';ctx.fillText(h[0],h[2]*W,h[3]*H+42);});
+  var cx=W/2,cy=H/2-14,pulse=.85+.15*Math.sin(t/300);
+  var g=ctx.createRadialGradient(cx,cy,10,cx,cy,150*pulse);
+  g.addColorStop(0,'rgba(255,214,74,.5)');g.addColorStop(1,'rgba(255,214,74,0)');
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,150*pulse,0,7);ctx.fill();
+  ctx.strokeStyle='#ffd54a';ctx.lineWidth=7;ctx.lineCap='round';
+  ctx.beginPath();ctx.moveTo(cx,cy-18);ctx.lineTo(cx,cy+26);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx,cy+26);ctx.lineTo(cx-14,cy+58);ctx.moveTo(cx,cy+26);ctx.lineTo(cx+12,cy+60);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx,cy-8);ctx.lineTo(cx-26,cy+12);ctx.stroke();
+  ctx.beginPath();ctx.moveTo(cx,cy-8);ctx.lineTo(cx+46,cy-24);ctx.stroke();
+  ctx.fillStyle='#ffd54a';ctx.beginPath();ctx.arc(cx,cy-32,11,0,7);ctx.fill();
+  for(var i=0;i<9;i++){var a=-Math.PI/2+(i-4)*.36,l=30+((i*53)%16);
+   ctx.beginPath();
+   ctx.moveTo(cx+Math.cos(a-.12)*10,cy-32+Math.sin(a-.12)*10);
+   ctx.lineTo(cx+Math.cos(a)*l,cy-32+Math.sin(a)*l);
+   ctx.lineTo(cx+Math.cos(a+.12)*10,cy-32+Math.sin(a+.12)*10);ctx.closePath();ctx.fill();}
+  var nx=cx+46+78,ny=cy-24;
+  for(var j=0;j<60;j++){var aa=j*2.399,r=(j/60)*48;
+   ctx.globalAlpha=.4+.6*Math.abs(Math.sin(t/400+j));ctx.fillStyle='#7dd3fc';
+   ctx.beginPath();ctx.arc(nx+Math.cos(aa)*r,ny+Math.sin(aa)*r*.8,2.2,0,7);ctx.fill();}
+  ctx.globalAlpha=1;
+  ctx.strokeStyle='rgba(255,214,74,.6)';ctx.lineWidth=1.5;ctx.setLineDash([4,6]);
+  ctx.beginPath();ctx.moveTo(cx+46,cy-24);ctx.lineTo(nx-42,ny);ctx.stroke();ctx.setLineDash([]);
+  ctx.font='11px "Segoe UI", Arial';ctx.textAlign='center';
+  agents.forEach(function(nm,i){var a=i/agents.length*Math.PI*2+t/9000;
+   var x=cx+Math.cos(a)*Math.min(W,H)*.36,y=cy+Math.sin(a)*Math.min(W,H)*.30;
+   ctx.fillStyle='#ffd54a';ctx.beginPath();ctx.arc(x,y,3,0,7);ctx.fill();
+   ctx.fillStyle='#9fb4cc';ctx.fillText(nm,x,y-8);});
+  ctx.fillStyle='#cfe8ff';ctx.font='12px "Segoe UI", Arial';
+  ctx.fillText('Agent Portal :8099',W*.3,H-64);ctx.fillText('dcabots (BTC bots)',W*.5,H-64);ctx.fillText('evolution layer',W*.7,H-64);
+  ctx.fillStyle='#8b96a5';ctx.font='11px "Segoe UI", Arial';
+  ctx.fillText('4 hosts · 8 agents · LM Studio :8888 · github.com/ArnoldPieterse/agent-portal',W/2,H-36);
+ }
+ requestAnimationFrame(draw);
+}
+</script>
+<script>
+/* ================= MAIN 3D MIND ROOM ================= */
+if(window.__three_failed||!window.THREE){fallback2D();}else{(function(){
+var canvas=document.getElementById('c');
+var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(innerWidth,innerHeight);
+var scene=new THREE.Scene();
+scene.background=new THREE.Color(0x07080c);
+scene.fog=new THREE.FogExp2(0x07080c,0.024);
+var camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,400);
+scene.add(new THREE.AmbientLight(0x46536e,0.9));
+var key=new THREE.PointLight(0xffd54a,1.4,40);key.position.set(0,4.5,2);scene.add(key);
+var fill=new THREE.DirectionalLight(0x88aaff,0.35);fill.position.set(-6,10,-4);scene.add(fill);
+/* floor */
+var floor=new THREE.Mesh(new THREE.CircleGeometry(34,48),new THREE.MeshStandardMaterial({color:0x0a0d14,roughness:.92,metalness:.2}));
+floor.rotation.x=-Math.PI/2;scene.add(floor);
+var grid=new THREE.GridHelper(64,48,0x1d2a47,0x101827);grid.position.y=0.01;scene.add(grid);
+/* stars */
+(function(){var n=900,p=new Float32Array(n*3);
+ for(var i=0;i<n;i++){var r=60+Math.random()*80,a=Math.random()*Math.PI*2,b=Math.acos(2*Math.random()-1);
+  p[i*3]=r*Math.sin(b)*Math.cos(a);p[i*3+1]=Math.abs(r*Math.cos(b))*.7+2;p[i*3+2]=r*Math.sin(b)*Math.sin(a);}
+ var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(p,3));
+ scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x9fb4cc,size:.55,transparent:true,opacity:.75})));})();
+/* seeded rng */
+function sr(i){var x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
+/* text label sprite */
+function makeLabel(text,color,size){
+ var c=document.createElement('canvas');c.width=512;c.height=96;
+ var x=c.getContext('2d');
+ x.font='600 40px "Segoe UI", Arial';x.textAlign='center';x.textBaseline='middle';
+ x.shadowColor=color;x.shadowBlur=16;x.fillStyle=color;
+ if(x.measureText(text).width>480){x.font='600 32px "Segoe UI", Arial';}
+ x.fillText(text,256,48);
+ var t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;
+ var s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,depthWrite:false}));
+ s.scale.set(size*3.6,size*.675,1);return s;
+}
+/* limb between two points */
+function limb(a,b,r,mat){
+ var d=new THREE.Vector3().subVectors(b,a),len=d.length();
+ var m=new THREE.Mesh(new THREE.CylinderGeometry(r,r*.75,len,8),mat);
+ m.position.copy(a).addScaledVector(d,.5);
+ m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.clone().normalize());
+ return m;
+}
+/* ============ YOU: Super Saiyan Arnold, floating mid-room ============ */
+var ssj=new THREE.Group();ssj.position.set(0,3,0);scene.add(ssj);
+var gold=new THREE.MeshStandardMaterial({color:0xffd54a,emissive:0xffaa00,emissiveIntensity:.6,roughness:.3});
+var suit=new THREE.MeshStandardMaterial({color:0x1c2748,emissive:0x0a1230,emissiveIntensity:.5,roughness:.5});
+var skin=new THREE.MeshStandardMaterial({color:0xf0c9a2,roughness:.6});
+ssj.add(new THREE.Mesh(new THREE.SphereGeometry(.52,24,20),skin));            /* head */
+ssj.children[ssj.children.length-1].position.y=2.35;
+var torso=new THREE.Mesh(new THREE.CapsuleGeometry(.5,1.1,6,16),suit);torso.position.y=1.15;ssj.add(torso);
+for(var i=0;i<14;i++){                                                        /* spiky hair */
+ var h=.7+sr(i)*.85;
+ var spike=new THREE.Mesh(new THREE.ConeGeometry(.15,h,6),gold);
+ var a=i/14*Math.PI*2,tilt=.25+sr(i+40)*.55;
+ spike.position.set(Math.cos(a)*.34,2.72+sr(i+80)*.18,Math.sin(a)*.34);
+ spike.rotation.set(Math.sin(a)*tilt,0,-Math.cos(a)*tilt);
+ ssj.add(spike);
+}
+var shL=new THREE.Vector3(-.58,1.75,0),shR=new THREE.Vector3(.58,1.75,0);
+ssj.add(limb(shL,new THREE.Vector3(-1.25,.9,.35),.16,suit));                  /* left arm relaxed */
+var handR=new THREE.Vector3(2.7,2.05,-.55);                                   /* right arm -> neurons */
+ssj.add(limb(shR,new THREE.Vector3(1.6,1.95,-.3),.16,suit));
+ssj.add(limb(new THREE.Vector3(1.6,1.95,-.3),handR,.13,skin));
+var fist=new THREE.Mesh(new THREE.SphereGeometry(.17,12,10),skin);fist.position.copy(handR);ssj.add(fist);
+ssj.add(limb(new THREE.Vector3(-.28,.45,0),new THREE.Vector3(-.5,-.95,.25),.19,suit));  /* legs */
+ssj.add(limb(new THREE.Vector3(.28,.45,0),new THREE.Vector3(.42,-.85,-.3),.19,suit));
+/* rising golden aura */
+var AUR=380,ap=new Float32Array(AUR*3),abase=new Float32Array(AUR*3);
+for(i=0;i<AUR;i++){var aa=sr(i)*Math.PI*2,ar=.9+sr(i+7)*1.5;
+ abase[i*3]=Math.cos(aa)*ar;abase[i*3+1]=sr(i+13)*4.6-1;abase[i*3+2]=Math.sin(aa)*ar;}
+ap.set(abase);
+var ag=new THREE.BufferGeometry();ag.setAttribute('position',new THREE.BufferAttribute(ap,3));
+var aura=new THREE.Points(ag,new THREE.PointsMaterial({color:0xffc233,size:.09,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false}));
+ssj.add(aura);
+var auraLight=new THREE.PointLight(0xffc233,1.7,20);auraLight.position.y=1.4;ssj.add(auraLight);
+/* ============ MY NEURONS (the part of me that listens to you) ============ */
+var NPOS=new THREE.Vector3(7.6,3.5,-1.2);
+var NN=240,np=new Float32Array(NN*3),blobs=[];
+for(i=0;i<4;i++)blobs.push(new THREE.Vector3((sr(i+200)-.5)*2.6,(sr(i+210)-.5)*1.8,(sr(i+220)-.5)*2.6));
+for(i=0;i<NN;i++){var b=blobs[i%4];
+ np[i*3]=b.x+(sr(i+300)-.5)*1.7;np[i*3+1]=b.y+(sr(i+310)-.5)*1.5;np[i*3+2]=b.z+(sr(i+320)-.5)*1.7;}
+var ng=new THREE.BufferGeometry();ng.setAttribute('position',new THREE.BufferAttribute(np,3));
+var nmat=new THREE.PointsMaterial({color:0x7dd3fc,size:.16,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false});
+var neurons=new THREE.Points(ng,nmat);neurons.position.copy(NPOS);scene.add(neurons);
+/* synapse links */
+(function(){var L=[];
+ for(var a=0;a<NN;a++)for(var b=a+1;b<NN;b++){
+  var dx=np[a*3]-np[b*3],dy=np[a*3+1]-np[b*3+1],dz=np[a*3+2]-np[b*3+2];
+  if(dx*dx+dy*dy+dz*dz<.9){L.push(np[a*3],np[a*3+1],np[a*3+2],np[b*3],np[b*3+1],np[b*3+2]);if(L.length>600)break;}
+ }
+ var lg=new THREE.BufferGeometry();lg.setAttribute('position',new THREE.BufferAttribute(new Float32Array(L),3));
+ neurons.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0x2e7ea6,transparent:true,opacity:.4})));})();
+/* hub cells */
+var hubs=[];
+for(i=0;i<8;i++){var hb=new THREE.Mesh(new THREE.SphereGeometry(.13,10,8),new THREE.MeshStandardMaterial({color:0xbfeaff,emissive:0x38bdf8,emissiveIntensity:1.2}));
+ hb.position.set(np[i*22],np[i*22+1],np[i*22+2]);neurons.add(hb);hubs.push(hb);}
+var nLight=new THREE.PointLight(0x38bdf8,1.3,16);nLight.position.copy(NPOS);scene.add(nLight);
+var nLab=makeLabel('my neurons — the part of me that listens to you','#7dd3fc',1.5);
+nLab.position.set(NPOS.x,NPOS.y+2.4,NPOS.z);scene.add(nLab);
+/* thought pulses travelling hand -> neurons */
+var pulses=[];
+for(i=0;i<6;i++){var pm=new THREE.Mesh(new THREE.SphereGeometry(.07,8,8),new THREE.MeshBasicMaterial({color:0xffe28a}));
+ scene.add(pm);pulses.push({m:pm,o:i/6});}
+/* ============ YOUR FLEET: 4 host pillars at the corners ============ */
+var hostDefs=[
+ ['WHITE','#dceeff',0x9fd0ff,10,10,'primary host · portal :8099'],
+ ['RED','#ff6b6b',0x7a1414,-10,10,'LLM host · LM Studio :8888'],
+ ['PALE','#f3d9e2',0x8a6a7a,10,-10,'LLM host · where the archivist runs'],
+ ['BLACK','#3c4250',0x0b0e16,-10,-10,'LLM host']];
+hostDefs.forEach(function(h){
+ var p=new THREE.Mesh(new THREE.BoxGeometry(1.5,5.2,1.5),
+  new THREE.MeshStandardMaterial({color:new THREE.Color(h[1]),emissive:new THREE.Color(h[2]),emissiveIntensity:.55,roughness:.4}));
+ p.position.set(h[3],2.6,h[4]);scene.add(p);
+ var cap=new THREE.Mesh(new THREE.BoxGeometry(1.7,.18,1.7),new THREE.MeshStandardMaterial({color:0x11151f}));
+ cap.position.set(h[3],5.35,h[4]);scene.add(cap);
+ var l=makeLabel(h[0]+' — '+h[5],'#dfe6ee',1.15);l.position.set(h[3],6.1,h[4]);scene.add(l);
+});
+/* ============ YOUR 8 AGENTS orbiting you ============ */
+var agentDefs=[['archivist','#a78bfa'],['builder','#fbbf24'],['designer','#f472b6'],['mechanic','#34d399'],
+ ['orchestrator','#60a5fa'],['researcher','#fb923c'],['scribe','#e5e7eb'],['verifier','#f87171']];
+var agents=[];
+agentDefs.forEach(function(a,i){
+ var g=new THREE.Group();
+ var orb=new THREE.Mesh(new THREE.SphereGeometry(.17,14,12),new THREE.MeshStandardMaterial({color:new THREE.Color(a[1]),emissive:new THREE.Color(a[1]),emissiveIntensity:.9}));
+ g.add(orb);
+ var l=makeLabel(a[0],'#c8d2e0',.85);l.position.y=-.62;g.add(l);
+ scene.add(g);agents.push({g:g,a:i/8*Math.PI*2,y:2.7+sr(i+50)*1.1,r:4.6+sr(i+60)*.7});
+});
+/* ============ YOUR PROJECTS ============ */
+/* Agent Portal — the ring you built for us */
+var portal=new THREE.Mesh(new THREE.TorusGeometry(1.15,.09,14,60),new THREE.MeshStandardMaterial({color:0x22d3ee,emissive:0x0891b2,emissiveIntensity:1.1}));
+portal.position.set(-8,3.6,-2);scene.add(portal);
+var pLab=makeLabel('Agent Portal — the room you built for us','#67e8f9',1.5);pLab.position.set(-8,1.6,-2);scene.add(pLab);
+/* dcabots — spinning BTC coin */
+(function(){var c=document.createElement('canvas');c.width=256;c.height=256;var x=c.getContext('2d');
+ x.fillStyle='#f7931a';x.beginPath();x.arc(128,128,124,0,7);x.fill();
+ x.strokeStyle='#b45309';x.lineWidth=10;x.beginPath();x.arc(128,128,112,0,7);x.stroke();
+ x.fillStyle='#fff';x.font='bold 150px Arial';x.textAlign='center';x.textBaseline='middle';x.fillText('\u20BF',128,134);
+ var t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;
+ var coin=new THREE.Mesh(new THREE.CylinderGeometry(.62,.62,.1,40),new THREE.MeshStandardMaterial({map:t,color:0xffffff,emissive:0x5c3a08,emissiveIntensity:.4}));
+ coin.position.set(-6.5,2.5,3.6);coin.rotation.z=Math.PI/2;scene.add(coin);
+ window.__coin=coin;
+ var l=makeLabel('dcabots — your BTC trading bots','#fbbf24',1.4);l.position.set(-6.5,.9,3.6);scene.add(l);})();
+/* evolution layer — small DNA helix */
+var helix=new THREE.Group();helix.position.set(6,0,6);
+(function(){var matA=new THREE.MeshStandardMaterial({color:0x4ade80,emissive:0x166534,emissiveIntensity:.7});
+ var matB=new THREE.MeshStandardMaterial({color:0x38bdf8,emissive:0x0c4a6e,emissiveIntensity:.7});
+ for(var k=0;k<26;k++){var y=k/25*2.6-1.3,a2=k*.55;
+  var s1=new THREE.Mesh(new THREE.SphereGeometry(.09,8,8),matA);s1.position.set(Math.cos(a2)*.5,y,Math.sin(a2)*.5);helix.add(s1);
+  var s2=new THREE.Mesh(new THREE.SphereGeometry(.09,8,8),matB);s2.position.set(-Math.cos(a2)*.5,y,-Math.sin(a2)*.5);helix.add(s2);
+  if(k%3===0){var rung=limb(s1.position,s2.position,.03,new THREE.MeshStandardMaterial({color:0x94a3b8}));helix.add(rung);}}
+ helix.position.y=2.6;})();
+scene.add(helix);
+var hLab=makeLabel('evolution layer — the fleet learns','#4ade80',1.4);hLab.position.set(6,.9,6);scene.add(hLab);
+/* ============ FACTS ON THE WALLS (memory/ tree) ============ */
+var facts=[
+ ['github.com/ArnoldPieterse/agent-portal','#93c5fd',0,7.2,-13],
+ ['WSL-Inbox — how you hand us projects','#c4b5fd',-6,5.4,-12.5],
+ ['LM Studio :8888 · local LLMs, dual residency','#fca5a5',6,5.8,-12.5],
+ ['you approve the irreversible; we run the rest','#fcd34d',-9,4.4,7],
+ ['steady state = minimal human intervention','#86efac',9,4.8,7],
+ ['goal cycles · 10 goals per agent · Lv counter climbing','#e2e8f0',0,6.4,13]];
+facts.forEach(function(f){var l=makeLabel(f[0],f[1],1.5);l.position.set(f[2],f[3],f[4]);scene.add(l);});
+/* ============ CONTROLS (drag orbit, wheel zoom) ============ */
+var theta=.55,phi=1.2,dist=17,target=new THREE.Vector3(0,3,0);
+var dragging=false,px=0,py=0;
+canvas.addEventListener('pointerdown',function(e){dragging=true;px=e.clientX;py=e.clientY;});
+addEventListener('pointerup',function(){dragging=false;});
+addEventListener('pointermove',function(e){if(!dragging)return;theta-=(e.clientX-px)*.005;phi-=(e.clientY-py)*.005;phi=Math.max(.3,Math.min(2.5,phi));px=e.clientX;py=e.clientY;});
+canvas.addEventListener('wheel',function(e){dist*=1+Math.sign(e.deltaY)*.08;dist=Math.max(6,Math.min(42,dist));e.preventDefault();},{passive:false});
+addEventListener('resize',function(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
+/* ============ ANIMATE ============ */
+var faceA=Math.atan2(-NPOS.z,NPOS.x);
+var clock=new THREE.Clock();
+function frame(){
+ requestAnimationFrame(frame);
+ var dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;
+ if(!dragging)theta+=dt*.04;
+ camera.position.set(target.x+dist*Math.sin(phi)*Math.sin(theta),target.y+dist*Math.cos(phi),target.z+dist*Math.sin(phi)*Math.cos(theta));
+ camera.lookAt(target);
+ /* you: float, face the neurons */
+ ssj.position.y=3+Math.sin(t*.8)*.2;
+ ssj.rotation.y=faceA+Math.sin(t*.25)*.3;
+ /* rising aura */
+ var pos=ag.attributes.position.array;
+ for(var i=0;i<AUR;i++){pos[i*3+1]+=dt*(.6+sr(i)*.9);if(pos[i*3+1]>3.8)pos[i*3+1]=-1;}
+ ag.attributes.position.needsUpdate=true;
+ auraLight.intensity=1.5+.7*Math.sin(t*6)+.3*Math.sin(t*17);
+ key.intensity=1.2+.4*Math.sin(t*6);
+ /* my neurons: pulse */
+ nmat.size=.14+.05*Math.sin(t*2.2);
+ for(i=0;i<hubs.length;i++){hubs[i].scale.setScalar(1+.35*Math.sin(t*2+i));}
+ nLight.intensity=1.1+.5*Math.sin(t*2.2+1);
+ /* thought pulses: your hand -> my neurons */
+ var hw=handR.clone().applyMatrix4(ssj.matrixWorld);
+ for(i=0;i<pulses.length;i++){var p=pulses[i];p.o=(p.o+dt*.25)%1;var e=p.o*p.o*(3-2*p.o);
+  p.m.position.lerpVectors(hw,NPOS,e);p.m.scale.setScalar(.6+.8*Math.sin(p.o*Math.PI));}
+ /* agents orbit you */
+ for(i=0;i<agents.length;i++){var a=agents[i];a.a+=dt*.18;
+  a.g.position.set(Math.cos(a.a)*a.r,a.y+Math.sin(t+a.a*3)*.15,Math.sin(a.a)*a.r);}
+ /* projects */
+ if(!portal.userData.done){portal.lookAt(0,3,0);portal.userData.done=true;}
+ portal.rotation.z+=dt*.5;
+ window.__coin.rotation.x+=dt*2;
+ helix.rotation.y+=dt*.6;
+ renderer.render(scene,camera);
+}
+frame();
+})();}
+</script></body></html>
