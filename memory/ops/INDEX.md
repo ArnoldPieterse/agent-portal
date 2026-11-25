@@ -93,3 +93,5 @@ Prior: 2026-11-16 ~16:30 (Mechanic cycle-2 consolidation, goal #10).
 - 2026-11-22 Orchestrator: `recover_seats.py` (per-seat fleet recovery, plan-by-default) built + runs clean; converts the prose-only unreachable-seat unblock into a one-command `--execute` path for a non-sandbox seat. Evidence: -> memory/orchestrator/recover-seats-script-2026-11-22.md
 - [M-CODE 2026-11-25] seat matrix -> memory/ops/seat-matrix.json   per-seat health/role matrix (SSOT for seat state)
 - [M-CODE 2026-11-25] probes -> memory/ops/probes.md   probe runbooks incl. multi-GB LAN copy full-hash verify rule
+
+- convergence-section-layout-spec.md — 2026-11-25: visual layout + JSON data-shape for convergence section in cycle closeouts (Designer)

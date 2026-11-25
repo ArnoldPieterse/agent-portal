@@ -62,3 +62,35 @@ Generated: 2026-11-24 21:27 UTC
 ### Watch Items for Cycle 17
 1. Scribe lane (0/10) is the sole blocker to 100% — if it reaches >=5/10 by mid-cycle, fleet crosses 90%.
 2. Autonomy trend component at 50.0 (neutral) — needs 2 consecutive improving cycles to flip positive.
+
+## 8. Convergence (Cycle 16 vs Cycle 15)
+
+### Autonomy Score
+- **Current:** 69.1 / 100 (computed 2026-11-24, source: `memory/ops/autonomy-score.json`)
+- **Delta vs prev cycle:** N/A — no prior-cycle autonomy score on record; this is the first computed value. Trend component = 50.0 (neutral), meaning recent cycles are holding steady rather than clearly improving.
+- **Interpretation:** Fleet is reliable and low-waste (rework 93.6, duration 80.0) but still leans on humans for a meaningful slice of each pass (pass_autonomy 58.3).
+
+### Intervention Count vs Target
+| Metric | Cycle 15 | Cycle 16 | Delta |
+|--------|----------|----------|-------|
+| Human interventions | 1 | 2 | +1 (regression) |
+| Types (C16) | — | 1 redirect, 1 approve | — |
+
+Target trajectory: declining toward 0 per round topic "Fleet Self-Optimization & Steady-State Convergence." Cycle 16 moved the wrong direction.
+
+### Steady-State Progress
+- **Fleet mode:** WORK (source: `memory/ops/fleet-mode.json`, ts 2026-11-25T01:23)
+- **Goal completion:** 66/80 (82.5%) at last measurement; cycle-16 retro reports 23/80 (29%)
+- **Steady-state criteria met:** None — fleet has not entered steady-state. All 8 lanes must show sustained 10/10 with zero interventions for a full cycle before declaration (see goal #3 Steady-State Declaration Doc).
+
+### Regressions Flagged
+1. **Completion rate collapse:** 91.1% (C15) → 5.0% per `cycle-history-consolidated.jsonl` / 29% per this retro's §1. ⚠️ Data discrepancy: the two sources disagree by ~24pp; needs reconciliation before next closeout.
+2. **Intervention count increased:** 1 (C15) → 2 (C16). Both interventions were user-initiated redirects/approvals, not system failures.
+3. **Reliability downgrade:** high (C15) → low (C16), driven by the completion drop and missing duration data.
+
+### Data Sources for This Section
+- `memory/ops/cycle-history-consolidated.jsonl` (cycles 14–17)
+- `memory/ops/human-interventions.jsonl` (10 entries total)
+- `memory/ops/autonomy-score.json` (score 69.1, computed 2026-11-24T21:23)
+- `memory/ops/fleet-mode.json` (WORK mode, 82.5%)
+- `memory/synthesis/closeout-cycle15-2026-11-24.md` (prev-cycle baseline)

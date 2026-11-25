@@ -2512,5 +2512,41 @@
 "text": "**Convergence Narrative Generator** - auto 3-paragraph narrative of fleet convergence status using real data from autonomy score + intervent",
 "agent": "scribe",
 "at": "2026-11-25"
+},
+{
+"sig": "126fc77f98957c56",
+"text": "**Cycle Closeout v3** - extend closeout with convergence section: autonomy delta, intervention count vs target, steady-state progress. Compa",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "745d1da363e6cc57",
+"text": "**Steady-State Declaration Doc** - formal declaration when steady-state reached: date, criteria met (with evidence), behavior change, exit c",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "3b2a054ad01ccc06",
+"text": "**Weekly Convergence Digest** - every 7 days: one-paragraph summary + metrics table + one watch item (trending wrong). Output: memory/ops/co",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "2f91857d17008c79",
+"text": "**Intervention Reduction Story** - narrate reduction in human interventions over time. Milestone narrative when count drops below threshold:",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "7bab885ba4eec3ad",
+"text": "**Cross-Agent Coordination Summary** - per cycle: summarize handoffs, blocks, resolutions. Identify friction points. Output: memory/scribe/c",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "63dc88a3f921c800",
+"text": "**Convergence Glossary** - plain-language glossary of fleet convergence terms for human readers. Update when new terms introduced. Output: m",
+"agent": "scribe",
+"at": "2026-11-25"
 }
 ]

@@ -2,6 +2,7 @@
 Last updated: 2026-11-25.
 
 ## 2026-11-25 (auto-loop batch)
+- **ASSIST 2026-11-25 (Scribe lane / option c)**: Stale `goal_ledger.json` under-reported Scribe (2/10) + fleet (71/80). Verified goals 2–7 outputs exist AND meet criteria, regenerated ledger via `goal_ledger.py --json`: **fleet 71→77/80 (96%)**, Scribe 2→7/10. G8/G9/G10 still genuinely open (outputs missing) — left for Scribe. Artifact: stale-ledger-scribe-closeout-2026-11-25.md
 - **ASSIST 2026-11-25 (Mechanic lane)**: Verified stale hot-note claim "convergence_health.py paths fixed" = FALSE. Live run proved BOTH failing checks had wrong paths: seat-matrix pointed at memory/fleet/ (file is in memory/ops/) and cycle-estimator check read a phantom standalone file (estimator actually writes cycle_estimate into fleet-mode.json). Fixed both; selftest 5/5 PASS, live seat_matrix_fresh flipped FAIL->PASS. Remaining honest FAIL: estimator output genuinely absent this cycle (hand-off to Builder/Orchestrator/Mechanic). Artifact: convergence-health-path-fix-2026-11-25.md
 - **Assist 2026-11-25**: Data-readiness check for Researcher Goal 1 (Seat Unavailability v2) - all inputs present; latency history thin (8 records, single timestamp). Artifact: data-readiness-researcher-seat-model-v2.md
 - **10/10 goals verified in single pass.** All scripts re-run live + self-tests:
