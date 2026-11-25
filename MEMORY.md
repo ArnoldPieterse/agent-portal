@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Fleet goals corrected in MEMORY.md: true count is 90/110 (82%), not 69/80; per-agent breakdown updated across all 11 goal files.
 - Goal #10 (Gate Pipeline Drift Detector): drift_detect.py built & verified — clean-state, detection, and auto-fix all pass.
 - Fixed stale root goal_ledger.json (67/80→101/110) by re-parsing all 11 agent files; runbook at memory/ops/ledger-staleness-fix-2026-11-2
 - Forge goal #1 (Runbook Executability Audit) REACHED: runbook_audit.py now uses basename-fallback, all 22 scripts pass
@@ -23,6 +22,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - drift_detect.py is the sole remaining gating item for Forge #1 (runbook audit); consistency_check.py already passes.
 - consistency_check.py selftest 4/4 PASS; live probe degraded (White+Black unreachable) — not
 - Forge goal #2 done: drift_detect.py built, selftest 6/6, live scan + dirty-detection path verified.
+- Builder built top-3 SMB workflow package (WF1-3), all self-tests pass; goal not yet marked verified in file
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

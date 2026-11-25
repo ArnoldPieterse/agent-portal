@@ -449,3 +449,4 @@
 {"ts": "2026-11-25 18:22:34", "file": "agents.json", "sha": "a2ee5c21f8", "size": 24689, "snapshot": "memory/ops/merge-queue/agents.json.a2ee5c21f8"}
 {"ts": "2026-11-25 18:22:34", "file": "ui/components.js", "sha": "06773b4737", "size": 17336, "snapshot": null}
 {"ts": "2026-11-25 18:41:19", "file": "agent_portal.py", "sha": "86d21d06e6", "size": 388180, "snapshot": "memory/ops/merge-queue/agent_portal.py.86d21d06e6"}
+{"ts": "2026-11-25 19:36:30", "file": "ui/core.js", "sha": "f705e3be8d", "size": 52463, "snapshot": null}
