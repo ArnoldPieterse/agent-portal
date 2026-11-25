@@ -1,6 +1,6 @@
 # Decay report 2026-11-26
 
-Leaves: 11313 | flagged (<0.35): 0
+Leaves: 11321 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9211,7 +9211,6 @@ Leaves: 11313 | flagged (<0.35): 0
 | memory/goals/archive/verifier-cycle16-2026-11-24.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier_15.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier_test-cycle.md | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261124-115414.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-115514.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-121030.json | 2 | 0 | n | 0.539 |
 | memory/goals/history/forecast-20261124-121211.json | 2 | 0 | n | 0.539 |
@@ -10676,8 +10675,15 @@ Leaves: 11313 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261126-005224.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-020302.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-030003.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261126-040308.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook-executability-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/enriched_leads_20261125_180444.csv | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/invoice_summary_20261125_180444.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/variants_20261125_180444.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/content_repurpose_20261125_180444.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/invoice_tracker_20261125_180444.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/lead_enrichment_20261125_180444.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/winrm_pool.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
@@ -10703,6 +10709,8 @@ Leaves: 11313 | flagged (<0.35): 0
 | memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-forge-goal8-runbook-audit.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-log-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/scribe/evidence-assist-forge-consistency-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/scribe/forge-consistency-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/verifier/perf-report.md | 0 | 0 | n | 0.550 |
 | memory/verifier/slo-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/slo-report-2026-11-26.md | 0 | 0 | n | 0.550 |
