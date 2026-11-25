@@ -1,6 +1,6 @@
 {
   "score": 71.3,
-  "fleet_readiness": 30.8,
+  "fleet_readiness": 35.0,
   "components": {
     "pass_autonomy": 64.3,
     "duration_score": 81.3,
@@ -9,13 +9,13 @@
   },
   "fleet_components": {
     "host_uptime_pct": 25.0,
-    "vram_stability": 83.2,
+    "vram_stability": 100,
     "model_load_rate": 0.0
   },
   "fleet_per_host": {
     "White": {
       "uptime": 1.0,
-      "vram_trend_pct": 28.4
+      "vram_trend_pct": -0.5
     },
     "Red": {
       "uptime": 0.0,
@@ -41,7 +41,7 @@
     "vram_stability": 0.25,
     "model_load": 0.35
   },
-  "computed_at": "2026-11-25T04:59:45.485086",
+  "computed_at": "2026-11-25T05:48:39.351889",
   "data_sources": {
     "interventions_count": 10,
     "cycle_durations_count": 5

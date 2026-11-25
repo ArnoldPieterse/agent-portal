@@ -1,0 +1,42 @@
+{
+  "ts": "2026-11-25T05:48:39.200212+00:00",
+  "suite": "autonomy-regression",
+  "tests": {
+    "convergence_api": {
+      "status": "pass",
+      "detail": "API returned dict with 8 keys",
+      "elapsed_s": 0.01
+    },
+    "autonomy_score": {
+      "status": "pass",
+      "detail": "score=71.3 (ran in 0.15s)",
+      "elapsed_s": 0.15
+    },
+    "intervention_logger": {
+      "status": "pass",
+      "detail": "selftest returned 0 failures",
+      "elapsed_s": 0.03
+    },
+    "goal_inherit": {
+      "status": "pass",
+      "detail": "selftest exit 0 (ran in 0.14s)",
+      "elapsed_s": 0.14
+    },
+    "steady_state_scheduler": {
+      "status": "pass",
+      "detail": "both runs exit 0; 0 cadence entries total",
+      "elapsed_s": 0.39
+    },
+    "injected_failure_detection": {
+      "status": "pass",
+      "detail": "injected failure detected=True in 0.09s (limit 30s)",
+      "elapsed_s": 0.09
+    }
+  },
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "overall": "PASS"
+  }
+}

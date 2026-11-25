@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-25T05:44:16.692178+00:00",
+  "ts": "2026-11-25T05:46:19.255459+00:00",
   "overall": "FAIL",
   "checks": {
     "scheduled_tasks": {
@@ -19,24 +19,25 @@
           "name": "portal",
           "url": "http://127.0.0.1:8099/",
           "ok": false,
-          "latency_ms": 14.9,
-          "detail": "URLError: <urlopen error [WinError 10013] An attempt was made to acces (14.9ms)"
+          "latency_ms": 15.9,
+          "detail": "URLError: <urlopen error [WinError 10013] An attempt was made to acces (15.9ms)"
         },
         {
           "name": "model",
           "url": "http://127.0.0.1:8888/",
           "ok": false,
-          "latency_ms": 21.4,
-          "detail": "URLError: <urlopen error [WinError 10013] An attempt was made to acces (21.4ms)"
+          "latency_ms": 24.0,
+          "detail": "URLError: <urlopen error [WinError 10013] An attempt was made to acces (24.0ms)"
         }
       ],
       "detail": "endpoint(s) down or >200ms: portal, model"
     },
     "score": {
       "status": "pass",
-      "detail": "baseline established (no prior snapshot)",
+      "detail": "drop +0.00 pts since last snapshot",
       "current": 71.3,
-      "previous": null
+      "previous": 71.3,
+      "drop": 0.0
     },
     "blockers": {
       "status": "pass",

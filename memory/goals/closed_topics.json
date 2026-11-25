@@ -3174,5 +3174,41 @@
 "text": "**Convergence Loading/Error/Empty States** - For each of the 4 convergence widgets add an explicit loading skeleton, error state (API down /",
 "agent": "pixel",
 "at": "2026-11-25"
+},
+{
+"sig": "f0e9daae294d560a",
+"text": "**Pre-Cycle Autonomy Gate** - `python memory/ops/pre_cycle_gate.py`: pre-flight check that runs before each cycle start. Validates: (a) all ",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "f65378354ff1ae6b",
+"text": "**Autonomy Regression Test Suite** - `python memory/builder/test_autonomy_infra.py`: test battery verifying autonomy infrastructure is intac",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "048533ced8e0786d",
+"text": "**Fleet Autonomy Runbook** - Write memory/ops/runbook-autonomy.md: operational guide for maintaining fleet autonomy at >80%. Sections: monit",
+"agent": "builder",
+"at": "2026-11-25"
+},
+{
+"sig": "68c125d38b0f405e",
+"text": "**Convergence Metric Drill-Down View** - Clicking any metric opens a focus-trapped detail overlay showing that metric's computation lineage ",
+"agent": "pixel",
+"at": "2026-11-25"
+},
+{
+"sig": "099c9c2c7a5a2a3b",
+"text": "**Convergence A11y Pass (aria-live + keyboard)** - Add live regions so screen readers announce score deltas and steady-state enter/exit with",
+"agent": "pixel",
+"at": "2026-11-25"
+},
+{
+"sig": "c66e4a6c1d839771",
+"text": "**Stale-Data Badge + Manual Refresh** - Show a \"last updated\" timestamp + stale badge when data is >5min old (matches server cache); add a m",
+"agent": "pixel",
+"at": "2026-11-25"
 }
 ]
