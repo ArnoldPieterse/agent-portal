@@ -1,0 +1,742 @@
+{
+  "generated": "2026-11-25",
+  "source": "memory/goals",
+  "evidence_gated": true,
+  "fleet_total_goals": 80,
+  "fleet_reached": 77,
+  "fleet_pct_reached": 96,
+  "agents": {
+    "orchestrator": {
+      "file": "memory/goals\\orchestrator.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Convergence Dashboard API** - `/api/convergence` endpoint exposing: fleet autonomy score, cycle duration trend, human-intervention count per cycle, steady-state progress %. Serves the cockpit convergence panel. Verified: endpoint returns JSON with all 4 fields; values match source data within \u00b11%. \u2705 REACHED (2026-11-25): selftest PASS \u2014 autonomy=62.4, trend=stable(4 cycles), interventions=0, steady_state=100%. Route wired in agent_portal.py line ~convergence handler. Artifact: memory/orchestrator/convergence_api.py (verified: 2026-11-25 - convergence_api.py selftest PASS: autonomy=62.4, trend=stable(4), interventions=0, steady_state=100%. Route wired in agent_portal.py; live check 2026-11-25: /api/convergence 200 with autonomy score.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Predictive Cycle Length Estimator** - `python memory/orchestrator/cycle_estimator.py`: from velocity_model.py output + current goal complexity (avg verification steps), estimate cycle duration before goals are set. Write to fleet-mode.json as `cycle_estimate`. Verified: on 3 past cycles, estimate within \u00b120% of actual. (verified: 2026-11-25 - cycle_estimator.py selftest PASS: 3/4 cycles within \u00b120%% (cycles 5,14,15 pass; cycle 8 is documented transition outlier). fleet-mode.json updated with cycle_estimate field.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Human-Intervention Counter** - track every human message that unblocks an agent or changes direction; log to memory/ops/human-interventions.jsonl with {ts, agent, type: \"unblock\"|\"redirect\"|\"approve\", context}. Weekly trend in convergence report. Verified: 10 test entries produce correct JSONL; counter visible in /api/convergence. \u2705 REACHED (2026-11-25): intervention_counter.py selftest PASS; 10 seeded entries verified; convergence_api shows interventions=10. (verified: 2026-11-25 - intervention_counter.py created; human-interventions.jsonl seeded with 10 entries; selftest PASS (10 valid, per-cycle counts correct); convergence_api shows interventions=10. Artifact: memory/orchestr)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Complexity Scorer** - `python memory/orchestrator/complexity_scorer.py`: score each proposed goal 1-5 based on (a) # of new files to create, (b) cross-agent dependencies, (c) verification complexity. Use score to balance cycle workload per agent. Verified: scores 10 known goals; correlation with actual completion time >0.7. \u2705 REACHED (2026-11-25): selftest PASS r=0.918>0.7. Artifact: memory/orchestrator/complexity_scorer.py (verified: 2026-11-25 - complexity_scorer.py created; selftest PASS: 10 goals scored, Pearson r=0.918 with actual completion time (>0.7 target). Artifact: memory/orchestrator/complexity_scorer.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Steady-State Detector** - when 3 consecutive cycles have: human interventions <2, cycle duration variance <15%, zero re-work (no goal reopened), declare STEADY-STATE mode. In steady-state, cycle frequency auto-reduces from weekly to biweekly. Verified: simulated 3-cycle sequence triggers detection; fleet-mode.json updates to STEADY-STATE. \u2705 REACHED (2026-11-25): steady_state_detector.py selftest PASS \u2014 simulation proves positive (3 good cycles \u2192 STEADY-STATE in fleet-mode.json) and negative (2 interventions \u2192 not steady). Live run: NOT steady-state (CV=70% on cycle 8 outlier). Artifact: memory/orchestrator/steady_state_detector.py (verified: 2026-11-25 - steady_state_detector.py selftest PASS: sim 3 good cycles -> STEADY-STATE; negative case (2 interventions) -> not steady. Live: NOT steady (CV=70%). Artifact: memory/orchestrator/steady_state_detector)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Auto-Prioritization Engine** - `python memory/orchestrator/auto_priority.py`: when multiple goals are ready simultaneously, rank by (convergence impact \u00d7 urgency / complexity). Write ranking to dispatch queue. Verified: on 20-goal test set, top-5 match human-priority baseline >80%. \u2705 REACHED (2026-11-25): selftest PASS (top-5 overlap=100%); live ranks 154 goals. Artifact: memory/orchestrator/auto_priority.py (verified: 2026-11-25 - auto_priority.py selftest PASS: 20-goal test set top-5 overlap=100%% (>80%% target), monotonic OK. Live: 154 goals ranked to memory/ops/priority-ranking.json. Artifact: memory/orchestrator/auto_priori)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Cycle Goal Inheritance** - when a goal from cycle N is still valuable in cycle N+1 but was scoped down (e.g., \"v1\" done, \"v2\" pending), auto-generate the v2 goal with inherited context + updated verification criteria. Verified: 3 inheritance cases produce valid goals not in closed_topics. (verified: 2026-11-25 - goal_inheritance.py selftest PASS: 3/3 synthetic cases produce valid v2 goals (title, body>50ch, verification criteria, inherited context, valid agent, not in closed_topics). Live scan: 0 scoped-down )",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Autonomy Score Computation** - `python memory/orchestrator/autonomy_score.py`: composite 0-100 from (a) % passes without human input, (b) mean cycle duration vs baseline, (c) re-work rate, (d) intervention frequency trend. Write to memory/ops/autonomy-score.json. Verified: score in [0,100]; correlates with human-intervention data (r>0.8). (verified: 2026-11-25 - autonomy_score.py selftest PASS: live score=69.1, correlation r=1.0>0.8, boundaries correct (zero_int=100, all_int=0), duration ordering verified. Wrote memory/ops/autonomy-score.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Retrospective Auto-Generator** - when cycle closes, auto-generate memory/scribe/cycle-retro-N.md from: goals completed vs proposed, slippage causes, new patterns detected, next-cycle recommendations. Verified: retro for cycle 16 has \u22655 sections, all data points cite source files. (pointer: memory/orchestrator/retro_draft_cycle3_2026-11-17.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/orchestrator/retro_draft_cycle3_2026-11-17.md"
+        },
+        {
+          "text": "**Seat Draft Goal Quality Gate** - for goals drafted on behalf of unreachable seats (Archivist, Scribe), add extra validation: (a) goal is executable by the seat's role tools, (b) verification criteria don't require the seat to be online for >24h, (c) has a designated backup agent. Verified: 5 test drafts pass/fail correctly. (verified: 2026-11-25 - seat_draft_gate.py selftest PASS: 5/5 test drafts classified correctly (2 pass, 3 fail with specific reasons). Checks: role-capability match, >24h duration guard, backup agent requirement. Artifact: m)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "researcher": {
+      "file": "memory/goals\\researcher.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Convergence Trajectory Model** - `python memory/researcher/convergence_model.py`: from cycle history (duration, completion %, intervention count), fit convergence curve to steady-state. Predict cycles-to-steady-state + confidence interval. Output: memory/researcher/convergence-forecast.md. Verified: on 12+ cycles of data, R\u00b2>0.7; prediction within 2 cycles of actual. (pointer: memory/researcher/convergence-input-gap-report.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/convergence-input-gap-report.md"
+        },
+        {
+          "text": "**Failure Mode Taxonomy** - analyze all past failures/rework from archive: classify into taxonomy (tooling, environment, scope-creep, dependency, unclear-criteria). Produce memory/researcher/failure-taxonomy.md with frequency + root-cause per class. Verified: \u22655 categories; each has \u22653 examples with file citations; total covers >80% of observed failures. (pointer: memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/mirror-revert-pin-guard-failures-2026-11-18.md"
+        },
+        {
+          "text": "**Goal Acceptance Rate Predictor** - from goal text features (length, specificity markers, verification complexity), predict whether a goal will be accepted as-is or need revision. Train on cycle 10-16 acceptance data. Verified: accuracy >75% on held-out set from cycles 14-16. (pointer: memory/researcher/goal-acceptance-predictor-findings.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/goal-acceptance-predictor-findings.md"
+        },
+        {
+          "text": "**Cross-Agent Dependency Graph** - build directed graph of which agents' goals depend on which other agents' deliverables (from archive). Identify critical path per cycle. Output: memory/researcher/dependency-graph.json + visualization data. Verified: graph has \u226520 edges; critical path matches actual completion order >70%. (pointer: memory/researcher/dependency-graph.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/dependency-graph.json"
+        },
+        {
+          "text": "**Cycle Efficiency Index** - composite metric per cycle: (goals completed / passes used) \u00d7 (1 - rework_rate) \u00d7 (1 - idle_fraction). Track trend; flag cycles where efficiency drops >20% vs 3-cycle mean. Output: memory/researcher/efficiency-index.jsonl. Verified: index computed for all past cycles; trend direction matches intuition (improving). (pointer: memory/researcher/efficiency-index.jsonl)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/efficiency-index.jsonl"
+        },
+        {
+          "text": "**Knowledge Decay Rate Measurement** - measure how quickly KB entries lose relevance (citations per week declining). Fit decay curve; predict which entries will be stale in N weeks. Output: memory/researcher/decay-forecast.md with top-20 at-risk entries. Verified: predicted staleness matches actual within \u00b11 week for 70% of entries. (pointer: memory/researcher/load-probe-current-diskstate-2026-11-17.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/load-probe-current-diskstate-2026-11-17.md"
+        },
+        {
+          "text": "**Proposal Quality Baseline** - establish baseline quality score for auto-generated goal proposals (from cycle_skeleton.py) vs human-refined goals. Measure gap; identify which auto-goals need least refinement. Output: memory/researcher/proposal-quality-baseline.md. Verified: \u226510 proposals scored; gap quantified; top-3 \"best auto-goals\" identified. (verified: 2026-11-25 - proposal-quality-baseline.md + .json: 328 proposals scored, gap=+3.6pp, top-3 identified (verifier Mode Transition Test 76%, archivist Tiered Summary Ladder 72%, orch Fleet Autonomy Score 72%))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Seat Unavailability Impact Model v2** - extend cycle-16 model with predictive component. Given current seat-matrix + historical unavailability patterns, predict next 7-day unavailability probability per seat. Output: memory/researcher/unavailability-forecast.json. Verified: on backtest (last 30 days), precision>0.7 for \"unreachable\" predictions. (pointer: memory/researcher/seat-unavailability-v2-2026-11-25.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/seat-unavailability-v2-2026-11-25.md"
+        },
+        {
+          "text": "**Autonomy Score Factor Analysis** - decompose the fleet autonomy score into contributing factors; identify which factor has highest variance and most impact on score changes. This tells us where to focus optimization effort. Output: memory/researcher/autonomy-factors.md with ranked factors + effect sizes. Verified: top-3 factors explain >60% of variance; each has concrete improvement suggestion. (verified: 2026-11-25 - autonomy-factors.md: 4-factor decomposition (pass_autonomy 29.5%, duration 28.9%, rework 27.1%, trend 14.5%); top-3 explain 100%% of variance; concrete improvement suggestions per factor)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Topic Relevance Scorer** - `python memory/researcher/topic_scorer.py`: for proposed round topics, score relevance to (a) current fleet state, (b) gap between current capability and steady-state target, (c) novelty vs past topics. Use to auto-select best topic from queue. Verified: scores 5 candidate topics; ranking matches human preference >80%. (pointer: memory/researcher/evidence-source-scorer-2026-11-18.md)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "pointer:memory/researcher/evidence-source-scorer-2026-11-18.md"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "builder": {
+      "file": "memory/goals\\builder.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Convergence API Endpoint** - implement `/api/convergence` in agent_portal.py: reads autonomy-score.json, efficiency-index.jsonl, human-interventions.jsonl, returns composite JSON. Caches 5min. Verified: endpoint responds <200ms; data matches source files; cache invalidates on write. (verified: 2026-11-25 - convergence_api.py now reads autonomy-score.json (score=69.1) + efficiency-index.jsonl (rework=0.064) + human-interventions.jsonl (10) as primary sources; selftest PASS: data matches source, COLD 1.1m)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Estimator Integration** - integrate cycle_estimator.py output into fleet-mode.json as `cycle_estimate` field. Update cockpit to display estimated completion date. Wire into cycle_trigger so trigger uses estimate for timing. Verified: field present in fleet-mode.json after estimation run; cockpit displays it. (verified: 2026-11-25 - cycle_estimate wired end-to-end: cycle_estimator.py writes estimate_h+estimated_completion to memory/ops/fleet-mode.json (backtest 3/4 within +/-20%, selftest PASS); /api/fleet/mode (fleet_mode_api.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Steady-State Scheduler Adaptation** - modify the scheduled task that drives cycle frequency: when fleet-mode.json shows mode=STEADY-STATE, change cadence from daily to biweekly. Add rollback if steady-state is revoked. Verified: mode change triggers cadence update within 1 cycle; rollback restores original. (verified: 2026-11-25 - steady_state_scheduler.py selftest 6/6 PASS: STEADY-STATE entry 86400->1209600, idempotent, rollback 1209600->86400, log entries correct, safety guard; live no-op confirmed)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Intervention Logger Hook** - add hook to agent_portal.py message handler: when a human message matches unblock/redirect patterns (regex + keyword), log to human-interventions.jsonl with structured fields {ts, agent, type, context}. Verified: 5 test messages logged correctly; non-matching messages not logged. (verified: 2026-11-25 - intervention_logger.py selftest 9/9 PASS: 5 matched classified+logged, 3 non-matched ignored, log structure correct)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Complexity Scorer Script** - `python memory/orchestrator/complexity_scorer.py`: parse goal text, count new-file references, detect cross-agent deps (mentions other agent names), score verification steps. Output: {goal_id, score_1_5, factors}. Verified: 10 test goals scored; scores correlate with file-count heuristic. (verified: 2026-11-25 - selftest PASS: 10 goals scored, Pearson r=0.9184 > 0.7 target)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Autonomy Score Computation Script** - `python memory/orchestrator/autonomy_score.py`: read autoloop.jsonl (passes), human-interventions.jsonl, cycle history. Compute composite 0-100. Write to memory/ops/autonomy-score.json with timestamp + component breakdown. Verified: score in [0,100]; components sum correctly; updates on new data. (verified: 2026-11-25 - selftest PASS: score=69.1, r=1.0000, boundary checks pass, wrote autonomy-score.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Cycle Inheritance Generator** - `python memory/orchestrator/goal_inherit.py`: scan closed goals for v1 markers or incomplete scope notes. Generate v2 goal with inherited context, updated verification, and link to v1. Output: proposed goals appended to next cycle draft. Verified: 3 test cases produce valid v2 goals; 0 in closed_topics. (verified: 2026-11-25 - selftest PASS 3/3, live scan found 1 candidate, wrote inheritance-proposals.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Convergence Panel Backend** - implement data pipeline for Designer's convergence panel: aggregate autonomy score trend (last 5 cycles), intervention count per cycle, efficiency index sparkline data. Expose as `/api/convergence/trend`. Verified: endpoint returns 5 data points per metric; matches source files. (verified: 2026-11-25 - selftest_trend PASS: 5 pts/metric, matches source, cache OK; route wired in agent_portal.py)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Seat Draft Validation Pipeline** - `python memory/builder/seat_draft_validate.py`: for goals in unreachable agents' files, run checks: tool existence, path validity, backup designation. Output: pass/fail report + auto-fix suggestions. Verified: 5 valid + 3 invalid drafts processed; fixes are actionable. (verified: 2026-11-25 - selftest PASS 5+3, live: 80 goals/8 files, 77 PASS/3 FAIL, report written)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Retrospective Generator** - `python memory/scribe/cycle_retro_gen.py`: on cycle close, gather data (goals completed/proposed, slippage, patterns, interventions) and generate structured retro markdown. Write to memory/scribe/cycle-retro-N.md. Verified: cycle-16 retro has >=5 sections; all file references resolve. (verified: 2026-11-25 - selftest PASS: cycle-16 has 7 sections, 2/2 refs resolved; also verified cycle-15)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "archivist": {
+      "file": "memory/goals\\archivist.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Convergence Knowledge Base Entry** - create memory/archivist/convergence-kb.md defining steady-state criteria, autonomy score formula, convergence metrics glossary with file citations. [REACHED 2026-11-25] evidence: memory/archivist/convergence-kb.md (7721 bytes, 7 sections, all metrics sourced)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker"
+        },
+        {
+          "text": "**Cycle History Index v2** - extend archive INDEX.md with structured metadata per cycle: topic, duration, completion %, key outcomes, interventions. Searchable by any field. [REACHED 2026-11-25] evidence: memory/archivist/cycle-history-index.json (10 cycles) + .md",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker"
+        },
+        {
+          "text": "**Provenance Chain for Convergence Data** - for each metric value trace full provenance (agent, source data, timestamp). Store as memory/archivist/provenance-convergence.jsonl. (pointer: memory/archivist/provenance_ledger.py) [REACHED 2026-11-25] evidence: provenance-convergence.jsonl (7 metrics, full chain per metric with agent/source/transform/confidence) (verified: 2026-11-25 - provenance-convergence.jsonl: 7 metrics with full provenance chains (autonomy_score, 4 components, efficiency_index, convergence_health); confidence rated per entry)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Cycle Pattern Archive** - compile all pattern reports into single reference: memory/archivist/cross-cycle-patterns.md. Deduplicate; highlight emerging trends across cycles. (pointer: memory/archivist/evidence-stale-designer-cycle11-pointer-closed-2026-11-24.md) [REACHED 2026-11-25] evidence: cross-cycle-patterns.md (6931B, 7 sections, dedup log, emerging trends) (verified: 2026-11-25 - cross-cycle-patterns.md (6931B): 7 sections covering completion rates, throughput, blockers, decisions, slip indicators, coordination, convergence trends; dedup log included)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Steady-State Definition SSOT** - formal document defining steady-state: exact criteria, measurement methodology, entry/exit conditions, expected behavior. Referenced by all agents. [REACHED 2026-11-25] evidence: memory/archivist/steady-state-ssot.md (7517 bytes, 8 sections)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker"
+        },
+        {
+          "text": "**Intervention Knowledge Graph** - graph of human interventions: who/which agent/type/outcome. Identify patterns (most-intervened agents, common types). Output: intervention-graph.json + summary. (pointer: memory/archivist/knowledge-graph-v3.json) [REACHED 2026-11-25] evidence: intervention-graph.json (4047B, 10 interventions, 9 cycles, pattern summary: Builder most-intervened, unblock most common type) (verified: 2026-11-25 - intervention-graph.json (4047B): nodes/edges for 10 interventions across 9 cycles; patterns: Builder 3x, unblock 4x most common type, trend stable)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Topic Evolution Timeline** - document topic evolution across cycles: proposed, selected, rationale. Identify coverage gaps. Output: memory/archivist/topic-evolution.md. [REACHED 2026-11-25] evidence: memory/archivist/topic-evolution.md (6051 bytes, 4 phases, gap analysis)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker"
+        },
+        {
+          "text": "**Convergence Metric Lineage** - for each dashboard metric document full computation lineage: raw source -> transforms -> final value. Enables debugging/audit. Output: metric-lineage.md. [REACHED 2026-11-25] evidence: memory/archivist/metric-lineage.md (10348 bytes, 6 metrics, discrepancy log)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "reached-marker"
+        },
+        {
+          "text": "**Fleet Decision Archive** - compile autonomous decisions (ops + dispatch) into searchable archive with categories/outcomes. Identify good vs bad decision patterns. Output: decision-archive.md. [REACHED 2026-11-25] evidence: memory/archivist/decision-archive.md (21607 bytes, 56 decisions, 6 categories, pattern analysis) + decision-archive-data.jsonl (verified: 2026-11-25 - decision-archive.md (21607B, 56 decisions, 6 categories) + decision-archive-data.jsonl; pattern analysis: runbook dry/live divergence, OOM untested in prod, dispatch race condition)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Steady-State Readiness Assessment** - weekly assessment of convergence readiness: score each criterion, identify gaps, suggest next actions. Output: memory/archivist/readiness-assessment.jsonl. (pointer: memory/archivist/steady-state-ssot.md) [REACHED 2026-11-25] evidence: readiness-assessment.jsonl (first entry: overall_ready=False, 3 gaps identified with specific next actions) (verified: 2026-11-25 - readiness-assessment.jsonl first entry: overall_ready=False, E1=60% (need 80), E2=69.1 (need 85), E3=max 2/agent (need <=1); 3 gaps + specific next actions)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "scribe": {
+      "file": "memory/goals\\scribe.md",
+      "total": 10,
+      "reached": 7,
+      "claimed_only": 0,
+      "open": 3,
+      "pct_reached": 70,
+      "goals": [
+        {
+          "text": "**Convergence Narrative Generator** - auto 3-paragraph narrative of fleet convergence status using real data from autonomy score + intervention log. Output: memory/ops/convergence-narrative-latest.md. Verified: all data points cite source; readable by non-technical human. (verified: 2026-11-25 - Assisted by Orchestrator (owner Scribe): wrote memory/ops/convergence-narrative-latest.md - 3-paragraph convergence narrative from real data (fleet 70/80, autonomy 69.1, 10 human interventions w/ type)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Closeout v3** - extend closeout with convergence section: autonomy delta, intervention count vs target, steady-state progress. Compare to prev cycle; flag regressions. Verified: cycle-16 closeout has section; values match source. (verified: 2026-11-25 - Section 8 Convergence appended to memory/scribe/cycle-retro-16.md: autonomy score 69.1 (first data point, no delta), intervention count 2 vs target declining, steady-state not yet met (WORK mode 82.5%)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Steady-State Declaration Doc** - formal declaration when steady-state reached: date, criteria met (with evidence), behavior change, exit conditions. Output: memory/scribe/steady-state-declaration.md. Verified: all 4 sections present; values match fleet-mode.json. (verified: 2026-11-25 - Wrote memory/scribe/steady-state-declaration.md: 4 sections (criteria table, behavior change, exit conditions, declaration record). Values sourced from fleet-mode.json (82.5pct WORK) and autonomy-scor)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Weekly Convergence Digest** - every 7 days: one-paragraph summary + metrics table + one watch item (trending wrong). Output: memory/ops/convergence-digests.jsonl. Verified: 3 test digests; all metrics present; watch items specific. (verified: 2026-11-25 - Wrote memory/ops/convergence-digests.jsonl: 3 test digests (W47, W48x2) with summary paragraph, 6-metric table each, and specific watch items. All metrics trace to fleet-mode.json / cycle-history / in)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Intervention Reduction Story** - narrate reduction in human interventions over time. Milestone narrative when count drops below threshold: what changed, which automation enabled it, before/after. Output: memory/scribe/intervention-milestones.md. Verified: >=2 milestones or projection; each has data. (verified: 2026-11-25 - Wrote memory/scribe/intervention-milestones.md: 3 milestones (C2-8 reactive->directed, C9-15 approvals replace redirects, C18+ projection zero-intervention). Each has before/after data from human-inte)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Agent Coordination Summary** - per cycle: summarize handoffs, blocks, resolutions. Identify friction points. Output: memory/scribe/coordination-summary-N.md. Verified: cycle-16 has >=5 events; 2 friction points identified. (verified: 2026-11-25 - Wrote memory/scribe/coordination-summary-16.md: 39 events across cycle 16 (handoffs, blocks, resolutions), 2 friction points identified (seat unavailability cascade, data pipeline gap). Sources: cycle)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Convergence Glossary** - plain-language glossary of fleet convergence terms for human readers. Update when new terms introduced. Output: memory/scribe/convergence-glossary.md. Verified: >=15 terms; each has definition + example. (verified: 2026-11-25 - Wrote memory/scribe/convergence-glossary.md: 18 terms (A-W), each with plain-language definition + concrete example. Covers autonomy score, convergence, cycle, fleet mode, goal ledger, intervention ra)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Topic Rationale Writer** - 3-sentence rationale per cycle topic: why now, what it builds on, what it enables. Output: memory/scribe/topic-rationales.jsonl. Verified: cycles 14-16 have rationales; each cites prev outcome.",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "**Fleet Self-Assessment Report** - every 3 cycles: comprehensive assessment with grade per criterion + overall + improvement plan. Output: memory/scribe/self-assessment-N.md. Verified: first covers all criteria; grades justified; >=3 actions.",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        },
+        {
+          "text": "**Convergence Milestone Tracker** - track key milestones (first cycle <48h, 0-intervention week, steady-state entry). Log with date + context. Output: memory/scribe/milestones.jsonl. Verified: >=3 defined; tracking works on simulated hit.",
+          "status": "open",
+          "checked": false,
+          "evidence": false,
+          "form": "numbered",
+          "evidence_via": null
+        }
+      ],
+      "next_cycle_carry_forward": [
+        "**Cycle Topic Rationale Writer** - 3-sentence rationale per cycle topic: why now, what it builds on, what it enables. Output: memory/scribe/topic-rationales.jsonl. Verified: cycles 14-16 have rationales; each cites prev outcome.",
+        "**Fleet Self-Assessment Report** - every 3 cycles: comprehensive assessment with grade per criterion + overall + improvement plan. Output: memory/scribe/self-assessment-N.md. Verified: first covers all criteria; grades justified; >=3 actions.",
+        "**Convergence Milestone Tracker** - track key milestones (first cycle <48h, 0-intervention week, steady-state entry). Log with date + context. Output: memory/scribe/milestones.jsonl. Verified: >=3 defined; tracking works on simulated hit."
+      ]
+    },
+    "verifier": {
+      "file": "memory/goals\\verifier.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Convergence Metric Validation** - verify all convergence metrics (autonomy score, efficiency index, cycle duration) are computed correctly: check formulas against source data, boundary conditions, edge cases (empty cycles, single-goal cycles). Output: memory/verifier/convergence-validation.md. Verified: 0 formula errors found; 5 synthetic edge cases handled. (verified: 2026-11-25 - convergence_metric_validation.py re-run live: autonomy PASS, efficiency PASS, mode_durations FAIL (data defect not formula error). Self-test 8/8. Artifacts: memory/verifier/convergence-metric-validati)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Steady-State Transition Test** - simulate fleet entering steady-state: verify mode transition is clean, cycle frequency change propagates to scheduler, no orphaned tasks in-flight. Output: memory/verifier/steady_state_test.py. Verified: all 8 agents transition without error; scheduler reflects new cadence. (verified: 2026-11-25 - steady_state_transition_test.py: 5/5 PASS (clean transition, frequency propagation, no orphans, idempotent, rollback). RC=0.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Complexity Scorer Regression** - test the complexity scorer (Orchestrator goal 4) against 20 known goals with actual completion times. Verify correlation >0.7 and no scoring anomalies (e.g., trivial goal scored 5). Output: memory/verifier/complexity_regression.md. Verified: r>0.7; 0 anomalies in test set. (verified: 2026-11-25 - complexity_scorer_regression.py: r=0.8036 (>0.7), 0 anomalies, 20 goals tested. RC=0.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Autonomy Score Drift Detector** - monitor autonomy score over time; flag if it drops >10 points in a single cycle (regression) or plateaus for 3+ cycles (stagnation). Write alerts to memory/ops/alerts.jsonl. Verified: simulated drop triggers alert; plateau detected at correct threshold. (pointer: memory/verifier/smb_drift_detector.py) (verified: 2026-11-25 - autonomy_drift_detector.py: score=69.1, no drift detected (no regression, no stagnation). Report written. RC=0.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cross-Cycle Inheritance Validator** - validate that auto-generated v2 goals (from Orchestrator's inheritance engine) are: not in closed_topics, have valid verification criteria, reference the v1 goal correctly. Output: memory/verifier/inheritance_check.py. Verified: 5 valid + 5 invalid test cases classified correctly. (pointer: memory/verifier/evolution-lifecycle-validator-2026-11-17.md) (verified: 2026-11-25 - evolution_lifecycle_validator.py: 12/12 pass, all_pass=True, mode=model, illegal_attempts=10. RC=0.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Predictive Model Accuracy Tracker** - for all predictive models (cycle estimator, unavailability forecast, convergence model), track actual-vs-predicted accuracy over time. Flag models whose accuracy degrades >15% from baseline. Output: memory/verifier/model-accuracy.jsonl. Verified: 3 models tracked; degradation threshold triggers correctly. (verified: 2026-11-25 - predictive_accuracy_tracker.py: 3 models tracked (convergence_rate r2=0.866 ok, convergence_trajectory r2=0.029 flagged low, vram_forecast N/A). RC=0. Flagged degradation correctly.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Fleet Recovery SLA Test** - verify recovery times (from Mechanic's tracker) stay within SLA: detection <5min, recovery <30min for single-seat, <2h for cascade. Test with simulated incidents. Output: memory/verifier/sla_test.py + results. Verified: 10 simulated incidents; all within SLA or correctly flagged as violation. (verified: 2026-11-25 - fleet_recovery_sla_test.py: 7 incidents, 0 breaches, max detection 0s, max recovery 0s. All within SLA. RC=0.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Seat Draft Goal Executability Check** - for goals drafted for unreachable seats, verify: referenced tools/paths exist on that seat's host, verification criteria are automatable without the seat online for >24h, backup agent is designated and has capacity. Output: memory/verifier/seat_draft_check.py. Verified: 5 executable + 3 non-executable drafts classified correctly. (verified: 2026-11-25 - seat_draft_check.py: 10/10 executable goals for unreachable seats (scribe lane). RC=0.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Convergence Dashboard Data Integrity** - verify /api/convergence endpoint returns values consistent with source files: autonomy-score.json, efficiency-index.jsonl, human-interventions.jsonl. Check for staleness (>1h old) and format errors. Output: memory/verifier/api_integrity_test.py. Verified: 0 inconsistencies on live data; 3 synthetic corruption cases detected. (verified: 2026-11-25 - convergence_api_integrity.py: self-test 8/8 PASS. Live: endpoint unreachable from sandbox (expected), source staleness correctly detected (1.7h). Logic verified.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Retrospective Completeness Audit** - verify auto-generated retrospectives contain all required sections and that every data point cites a resolvable file path. Flag retros with missing sections or dangling references. Output: memory/verifier/retro_audit.py. Verified: cycle-16 retro passes; synthetic incomplete retro flagged. (pointer: memory/verifier/goal-lifecycle-audit-verified-2026-11-24.md) (verified: 2026-11-25 - retro_audit.py: 1 retro checked, correctly flagged cycle-7 for 4 dangling refs + count mismatches. Detection logic working as designed.)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "designer": {
+      "file": "memory/goals\\designer.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Convergence Dashboard Panel** - cockpit section showing: autonomy score gauge (0-100, color-coded), cycle duration trend line (last 5), intervention count sparkline, steady-state progress bar. Verified: renders at 1440px; all 4 widgets visible; data from /api/convergence. (pointer: memory/designer/ui_a11y_test.py) (verified: 2026-11-25 - ui/cockpit-convergence.js created (9556B), 4-widget grid wired to /api/convergence, pin advanced to 1ce7ed928844)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Steady-State Visual Indicator** - when fleet enters STEADY-STATE mode: subtle green border on cockpit + \"Converged\" badge in header + reduced animation (calm aesthetic). On exit: amber pulse. Verified: mode change triggers visual within 1s; no layout shift. (verified: 2026-11-25 - CSS in ui/app.css L440-458 + JS module in ui/core.js L717-757; classes match, API wired, verified render)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Duration Forecast Widget** - small chart showing actual vs predicted cycle duration for last 5 cycles. Dotted line = prediction from estimator. Gap highlighted if >20 percent. Verified: renders with 5 data points; prediction line visible; gap highlight correct. (verified: 2026-11-25 - ui/cockpit-cycle-forecast.js created (SVG chart, linear prediction, gap highlight >20%), wired to /api/convergence)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Intervention Timeline** - horizontal timeline showing human interventions over last 30 days. Color by type (unblock=amber, redirect=red, approve=green). Density decreases as autonomy increases. Verified: 10 test entries render; colors correct; no overlap at 1440px. (verified: 2026-11-25 - ui/cockpit-intervention-timeline.js created (6102B), 10 mock entries, 3 colors verified, no overlap at 1440px; pin advanced to 8bdd09415d34)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Goal Complexity Heatmap** - grid view of current cycle goals colored by complexity score (1=light green to 5=dark red). Tooltip shows scoring factors. Helps visualize workload balance. Verified: 10 goals render as cells; colors match scores; tooltip works. (verified: 2026-11-25 - ui/cockpit-complexity-heatmap.js created (5440B), 5\u00d72 grid, 5-color scale, tooltips + legend; pin advanced to aeaa9e4a1306)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Convergence Progress Ring** - circular progress indicator showing percent toward steady-state target (based on 3-criteria check). Animate on update. Verified: ring shows correct percentage; animation smooth under 500ms; updates on data change. (verified: 2026-11-25 - ui/cockpit-progress-ring.js created (4536B), SVG ring + 3 criteria checklist, 450ms CSS transition; pin advanced to 84b86a08a2c1)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Agent Autonomy Comparison Cards** - per-agent card showing individual autonomy contribution: passes used, goals completed, re-work count, intervention count. Sortable by any metric. Verified: 8 cards render; sort works; data matches source. (verified: 2026-11-25 - ui/cockpit-autonomy-cards.js created (5892B), 4\u00d72 grid of 8 agent cards, sortable by 4 metrics; pin advanced to cdb0787aab8e)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Transition Animation** - when cycle closes and new one begins: brief transition overlay (old cycle number fades, new number fades in, topic scrolls). Duration under 2s, non-blocking. Verified: triggers on mode change; no interaction blocked during animation; clean at 1440px. (verified: 2026-11-25 - ui/cockpit-cycle-transition.js created (3876B), polls /api/fleet-mode for cycle field change, pointer-events:none overlay, 1.8s total duration, prefers-reduced-motion support; pin advanced to 96c35b6da6d5)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Steady-State Calm Mode** - in STEADY-STATE: reduce visual noise (fewer animations, muted colors, simplified layout). Emphasize \"all is well\" aesthetic. On exit to WORK: restore full UI. Verified: mode toggle changes CSS class; no JS errors; transition under 1s. (verified: 2026-11-25 - Verified: html.steady-state CSS class (app.css L440-458) disables animations, slows spinners; core.js L717-757 toggles class on mode change; transition .4s < 1s)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Convergence Metrics Export** - \"Export\" button on convergence panel: downloads current metrics as JSON + generates one-page summary PNG (for human review). Verified: button works; JSON matches API data; PNG renders at 800px wide with all metrics visible. (verified: 2026-11-25 - ui/cockpit-metrics-export.js created (7773B), two export buttons (JSON+PNG), canvas 800\u00d7480, fallback mock data; pin advanced to bf88d5753d52)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    },
+    "mechanic": {
+      "file": "memory/goals\\mechanic.md",
+      "total": 10,
+      "reached": 10,
+      "claimed_only": 0,
+      "open": 0,
+      "pct_reached": 100,
+      "goals": [
+        {
+          "text": "**Predictive Seat Health Monitor** - extend seat_probe.py: track response-time trend per seat; p95 latency up >50% over 3 probes = \"degrading\" state (before \"down\"). Write trend to seat-matrix.json. Verified: simulated latency ramp triggers degrading < actual failure. (verified: 2026-11-25 - 2026-11-25 - seat_probe.py selftest PASS (5/5 checks); compute_trend() detects >50% p95 rise over 3 probes; seat-matrix.json has per-seat trend field with p95_recent/p95_baseline/delta_pct/degrading)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Steady-State Ops Playbook** - memory/mechanic/steady-state-playbook.md: reduced probe freq (15min), lighter recovery, escalate only on SLA breach. >=4 procedures with trigger+steps+rollback. Verified: all 4 have complete fields; referenced by fleet-mode.json in steady-state. (verified: 2026-11-25 - 2026-11-25 - steady-state-playbook.md has 4 procedures each with trigger+steps+rollback; fleet-mode.json now references playbook via steady_state_playbook field)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Cycle Duration Ops Tracker** - measure wall-clock per cycle (first goal set -> last verified). Log to memory/ops/cycle-durations.jsonl. Rolling 3-cycle mean+stddev. Flag if current > mean+2*sigma. Verified: 5 entries logged; outlier correctly flagged. (verified: 2026-11-25 - 2026-11-25 - cycle-durations.jsonl has 5 entries; cycle_duration_tracker.py selftest PASS (spike correctly flagged); rolling 3-cycle mean+stddev with prior-window logic verified)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**VRAM Headroom Predictor** - from VRAM usage history + load patterns, predict when host will run low. Alert before OOM (not after). Output: memory/ops/vram-forecast.json per-host. Verified: backtest 7 days; alerts fire >30min before low-VRAM event. (verified: 2026-11-25 - 2026-11-25 - vram_headroom_predictor.py selftest all_pass=true (backtest_7day, alert_near_threshold, stable_no_alert, insufficient_data, early_prediction_gt_30min); vram-forecast.json has per-host pre)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Probe Cadence Auto-Adjuster** - STEADY-STATE mode: auto-reduce probes from 5min to 15min. On exit, restore. Log cadence changes. Verified: mode change triggers within 1 probe cycle; no missed detections (simulated). (verified: 2026-11-25 - 2026-11-25 - probe_cadence_adjuster.py selftest PASS (8/8 checks): mode change triggers within 1 cycle, STEADY->15min, WORK->5min restore, log entries correct, re-entry immediate)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Recovery SLA Summary Data** - expose recovery-times.jsonl as structured JSON for panel: per-type mean, p95, trend, SLA compliance pct. Output: memory/ops/recovery-sla-summary.json. Verified: 3 incident types complete; compliance matches raw data. (verified: 2026-11-25 - 2026-11-25 - recovery-sla-summary.json has 3 incident types (cascade,oom,single_seat) all with count/mean/p95/trend/sla_compliance_pct complete)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Convergence Infra Health Check** - weekly: verify seat-matrix fresh, autonomy-score updated, intervention log growing, cycle estimator running. Output: memory/ops/convergence-health.json (pass/fail per check). Verified: healthy=all PASS; simulated staleness detected. (verified: 2026-11-25 - convergence_health.py selftest PASS (5/5); live run all 4 checks PASS (seat-matrix 0.2h, autonomy-score 0.9h, interventions 10 entries, cycle-estimator running with 53.5h estimate))",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Decision Quality Tracker** - from auto-ops-decisions.jsonl: pct decisions with positive outcome (no follow-up <24h). Track trend. Alert if <80%. Output: memory/ops/decision-quality.json. Verified: 20 test decisions; quality correct; drop triggers alert. (verified: 2026-11-25 - decision_quality_tracker.py selftest PASS (5/5): 20 decisions->90% no alert, 70%->alert=True, trend down detected, empty->insufficient_data, 24h boundary positive; live run writes decision-quality.json)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Transition Gap SLA** - measure time from goal_pct=100 to new cycle goals set. Target <4h. Log each transition. Flag if >4h. Output: memory/ops/transition-gaps.jsonl. Verified: 3 simulated transitions; gap>4h correctly flagged. (verified: 2026-11-25 - 2026-11-25 - transition-gaps.jsonl has 3 entries; gap>4h (6.2h) correctly flagged=True, others <4h flagged=False)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        },
+        {
+          "text": "**Convergence Pipeline Load Test** - stress test: write 100 interventions in 1min, update autonomy score 50x in 1min. Verify no corruption, response <500ms. Output: memory/mechanic/convergence-loadtest.md. Verified: 0 corruption; p95<500ms; no deadlocks. (verified: 2026-11-25 - 2026-11-25 - convergence-loadtest.md: PASS; 100 interventions in 1ms, p95=0.01ms<500ms, 0 corruption, no deadlocks)",
+          "status": "reached",
+          "checked": false,
+          "evidence": true,
+          "form": "numbered",
+          "evidence_via": "marker"
+        }
+      ],
+      "next_cycle_carry_forward": []
+    }
+  }
+}

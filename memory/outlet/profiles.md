@@ -2,9 +2,10 @@
 Outlet owns these profiles: what we upload, what we reply to, what we repost.
 No accounts connected yet (2026-11-25) - register each here when Arnold connects one; Outlet then manages content per the voice guide below.
 
-| Profile | Platform | Handle | Voice notes | Status |
-|---------|----------|--------|-------------|--------|
-| (none registered yet) | - | - | fleet default | awaiting connection |
+| Profile | Platform | Handle | Voice notes | Cadence | Hard lines | Status |
+|---------|----------|--------|-------------|---------|------------|--------|
+| (none live yet) | - | - | fleet default | - | no IPs/paths/secrets | awaiting connection |
+| FLEET-TEMPLATE | Bluesky | @fleet.example | fleet default + lighter humor; emoji OK for milestones | 1 post/wk + replies as-needed | no internal details, no speculation about unreleased features | TEMPLATE (fill when connected) |
 
 ## Fleet default voice
 - Warm, candid, lightly witty; never corporate, zero hype.

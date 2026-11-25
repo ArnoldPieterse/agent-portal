@@ -3288,5 +3288,23 @@
 "text": "**Voice Consistency Lint** - `python memory/outlet/voice_lint.py`: checks drafts against the profile voice guide (length caps, banned corpor",
 "agent": "outlet",
 "at": "2026-11-25"
+},
+{
+"sig": "a668358a5be5a7ed",
+"text": "**Reply & Repost Templates** - per-profile templates for replies and reposts (acknowledge, correct, amplify) written in the profile voice; >",
+"agent": "outlet",
+"at": "2026-11-25"
+},
+{
+"sig": "6cd29211844c8dc6",
+"text": "**Cross-Agent Leverage Map** - memory/outlet/leverage-map.md: which agent to DM for what (trends->Researcher, KB->Archivist, visuals->Design",
+"agent": "outlet",
+"at": "2026-11-25"
+},
+{
+"sig": "f302ed8e71f2117f",
+"text": "**Ship Readiness Digest** - daily digest memory/outlet/digests/YYYY-MM-DD.md: queue status (ready/pending/needs-connection), blocked items w",
+"agent": "outlet",
+"at": "2026-11-25"
 }
 ]
