@@ -225,9 +225,9 @@ async function attachRun(rid, startCursor){
   runId=null;
 }
 
-let editingId=null;
+let editingId=null; let editingAgent=null;
 function openEditor(a){
-  editingId=a?a.id:null;
+  editingId=a?a.id:null; editingAgent=a||null;
   $("edTitle").textContent=a?("Edit "+a.name):"New agent";
   $("f_name").value=a?.name||""; $("f_emoji").value=(a?.emoji||""); $("f_color").value=a?.color||"var(--ok)";
   $("f_blurb").value=a?.blurb||""; $("f_persona").value=a?.persona||"";
@@ -237,6 +237,9 @@ function openEditor(a){
   $("f_scanstat").textContent=""; $("netFields").style.display=net?"":"none";
   if(net){ netModels=[]; populateModelSelect([],a?.model_id||""); scanModels(true); }   // live rescan of that host
   else { netModels=[]; populateModelSelect(models,a?.model_id||""); }
+  $("f_gpuaccess").checked=a?.gpu_access==="dual-request"; $("f_gpureqstat").textContent="";
+  const recs=$("f_recs"); recs.innerHTML="";
+  for(const r of (a?.recommended_models||[])){const sp=document.createElement("span");sp.textContent="\u2605 "+r.id+(r.why?" \u2013 "+r.why:"");sp.style.cssText="display:inline-block;margin:2px 6px 0 0;padding:1px 8px;border-radius:9px;font-size:11px;border:1px solid var(--line,#456);background:var(--panel,#223)";recs.appendChild(sp);}
   $("f_temp").value=a?.temperature??0.7; $("f_maxtok").value=a?.max_tokens??0;
   $("f_reasoning").value=a?.reasoning||"default"; $("f_maxtools").value=a?.max_tool_calls??0;
   const tc=$("f_tools"); tc.innerHTML="";
@@ -252,7 +255,10 @@ function openEditor(a){
 }
 function populateModelSelect(list, cur){
   const sel=$("f_model"); sel.innerHTML="";
-  for(const m of list){const o=document.createElement("option");o.value=m.id;o.textContent=m.id;if(m.id===cur)o.selected=true;sel.appendChild(o);}
+  const recIds=new Set((editingAgent?.recommended_models||[]).map(r=>r.id));
+  for(const m of list){const o=document.createElement("option");o.value=m.id;
+    o.textContent=(recIds.has(m.id)?"\u2605 ":"")+(/Q8|Q6|72B/i.test(m.id)?"\u26a1 ":"")+m.id;
+    if(m.id===cur)o.selected=true;sel.appendChild(o);}
   if(cur&&!list.find(m=>m.id===cur)){const o=document.createElement("option");o.value=cur;o.textContent=cur+" (current)";o.selected=true;sel.appendChild(o);}
 }
 async function scanModels(){
@@ -279,7 +285,7 @@ $("f_scan").onclick=()=>scanModels();
 
 $("edSave").onclick=async()=>{
   const b={name:$("f_name").value,emoji:$("f_emoji").value,color:$("f_color").value,blurb:$("f_blurb").value,
-    persona:$("f_persona").value,model_id:$("f_model").value,temperature:parseFloat($("f_temp").value)||0,
+    persona:$("f_persona").value,model_id:$("f_model").value,gpu_access:$("f_gpuaccess").checked?"dual-request":"auto",recommended_models:(editingAgent?.recommended_models||[]),temperature:parseFloat($("f_temp").value)||0,
     max_tokens:parseInt($("f_maxtok").value)||0,reasoning:$("f_reasoning").value,max_tool_calls:parseInt($("f_maxtools").value)||0,
     tools:[...document.querySelectorAll("#f_tools input:checked")].map(i=>i.value),run_tools_locally:$("f_runlocal").checked,
     rag:$("f_rag").checked,rag_kb_id:$("f_kb").value,
@@ -295,6 +301,10 @@ $("edSave").onclick=async()=>{
 };
 $("edClose").onclick=$("edCancel").onclick=()=>$("editor").close();
 $("addAgent").onclick=()=>openEditor(null);
+if($("f_gpureq"))$("f_gpureq").onclick=async()=>{const st=$("f_gpureqstat");st.textContent="\u26a1 requesting…";
+  try{const r=await fetch("/api/gpu/request",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({agent:editingId||$("f_name").value,model:$("f_model").value})});
+   const j=await r.json();st.textContent=j.ok?(j.request.plan||"logged"):("failed: "+(j.error||r.status));}
+  catch(e){st.textContent="request failed: "+e;}};
 
 function setMode(m){ if(m===mode)return; mode=m; $("mSolo").classList.toggle("on",m==="solo");$("mGroup").classList.toggle("on",m==="group");updateHint();resetChat();restoreMsgs(); } // 2026-11-23: no-op when already in this mode (old reset+restore churn made re-clicks look unclickable)
 $("mSolo").onclick=()=>setMode("solo"); $("mGroup").onclick=()=>setMode("group");

@@ -1,22 +1,52 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-25 12:19:38 | Fleet: 80/80 (100%) | throughput ~17.7 goals/h
+Generated: 2026-11-25 13:31:17 | Fleet: 54/80 (68%) | throughput ~17.7 goals/h
 
 ## Next 10 goals (queue order)
 
+**#1 [archivist] Autonomy Decay Detection** - ETA 2026-11-25 16:00, P(reached) 59% (measurement, cx1)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,cycle,intervention | scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,cycle,rolling | scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,decision,intervention
+**#2 [builder] Convergence-Informed Goal Prioritizer** - ETA 2026-11-25 16:58, P(reached) 22% (measurement, cx2)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,cycle,intervention | scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,cycle,score | scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,intervention,score
+**#3 [scribe] Autonomy Score Trendline** - ETA 2026-11-25 17:23, P(reached) 52% (measurement, cx2)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,cycle,rolling | builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,cycle,score | scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,jsonl,score
+**#4 [archivist] Convergence Lock Protocol** - ETA 2026-11-25 17:51, P(reached) 84% (verify, cx1)
+   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
+   consequences: archivist: **Convergence Regression Test Spec** - Define the automated  (2026-11-25 22:11) - shared scope blocker,convergence,cycles | archivist: **Golden Path Reference (<2KB)** - Consolidate 10+ cycles of (2026-11-26 01:26) - shared scope convergence,criteria,cycles | builder: **Convergence Deceleration Alert** - `python memory/ops/conv (2026-11-26 03:33) - shared scope consecutive,convergence,cycles
+**#5 [builder] Self-Healing Goal Lifecycle** - ETA 2026-11-25 19:33, P(reached) 52% (ops, cx2)
+   steps: pre-flight checks (targets exist, idempotent) -> execute from non-sandbox session -> verify registration/health + evidence leaf
+   consequences: lane end scribe: 11-27 05:40 (slowest lane)
+**#6 [scribe] Decision-to-Autonomy Causal Map** - ETA 2026-11-25 20:03, P(reached) 76% (measurement, cx1)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,decision,intervention | builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,intervention,score | scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,jsonl,score
+**#7 [archivist] Per-Agent Autonomy Scorecard** - ETA 2026-11-25 20:20, P(reached) 59% (measurement, cx1)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,score | scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,score | scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,score
+**#8 [archivist] Convergence Regression Test Spec** - ETA 2026-11-25 22:11, P(reached) 84% (verify, cx1)
+   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
+   consequences: archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope archivist,decision,define | archivist: **Convergence Lock Protocol** - Document the exact procedure (2026-11-25 17:51) - shared scope blocker,convergence,cycles | archivist: **Golden Path Reference (<2KB)** - Consolidate 10+ cycles of (2026-11-26 01:26) - shared scope archivist,convergence,cycles
+**#9 [builder] Fleet Health Composite Score** - ETA 2026-11-25 23:00, P(reached) 22% (measurement, cx2)
+   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
+   consequences: archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,output,signals | builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,score,trend | scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,score,trend
+**#10 [scribe] Fleet Autonomy Playbook** - ETA 2026-11-26 01:05, P(reached) 46% (build, cx2)
+   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
+   consequences: archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,cycle,human | builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,cycle,intervention | scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,cycle
 
 ## Planned work (decision tree)
 
-- state: Fleet 80/80 (100%) | gate: all goals 100%? -> **YES - all-clear**
-- cycle: all-clear: level-up gated, next cycle projected from ranked backlog
-- #1 [archivist] Knowledge decay model productionization - run decay_score.py weekly (scheduled t ~2026-11-25 15:19 (P~85%) - planned as measurement work (cx1); from ranked backlog (ARCHIVIST#6) - already triaged in a prior cycle, so no new research cost; moderate c | delivers: Knowledge-decay scoring
-- #2 [archivist] Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-read ~2026-11-25 19:19 (P~85%) - planned as build work (cx1); from ranked backlog (ARCHIVIST#8) - already triaged in a prior cycle, so no new research cost; moderate confide | delivers: Archive + evidence leaves
-- #3 [mechanic] Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days ~2026-11-25 14:19 (P~85%) - planned as ops work (cx1); from ranked backlog (MECHANIC#1) - already triaged in a prior cycle, so no new research cost; moderate confidence | delivers: Load-test evidence
-- #4 [mechanic] Self-healing mirror productionization - the cycle-2 auto-repair design should no ~2026-11-25 18:19 (P~85%) - planned as build work (cx1); from ranked backlog (MECHANIC#2) - already triaged in a prior cycle, so no new research cost; moderate confiden | delivers: Self-healing mirror productionization - the cycle-2 auto-rep
-- #5 [mechanic] Scheduled-task dependency graph productionization - the cycle-2 blast-radius map ~2026-11-25 22:19 (P~85%) - planned as build work (cx1); from ranked backlog (MECHANIC#6) - already triaged in a prior cycle, so no new research cost; moderate confiden | delivers: Scheduled-task graph
-- #6 [mechanic] Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should  ~2026-11-26 00:19 (P~85%) - planned as verify work (cx1); from ranked backlog (MECHANIC#8) - already triaged in a prior cycle, so no new research cost; moderate confide | delivers: Chaos-drill runbook
-- #7 [scribe] Scribe self-audit: compression fidelity score - for each synthesis produced in c ~2026-11-25 14:19 (P~85%) - planned as verify work (cx1); from ranked backlog (SCRIBE#10) - already triaged in a prior cycle, so no new research cost; moderate confiden | delivers: Synthesis self-audit
-- #8 [verifier] Mirror-sync drift detector productionization - the cycle-2 SMB drift detector sh ~2026-11-25 17:19 (P~85%) - planned as research work (cx1); from ranked backlog (VERIFIER#8) - already triaged in a prior cycle, so no new research cost; moderate confi | delivers: Mirror self-healing
+- state: Fleet 54/80 (68%) | gate: all goals 100%? -> **NO - queue in flight**
+- cycle: in flight: 10 goal(s) open
+- #1 [archivist] Autonomy Decay Detection ~2026-11-25 16:00 (P~59%) - planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(rea | delivers: Autonomy Decay Detection
+- #2 [builder] Convergence-Informed Goal Prioritizer ~2026-11-25 16:58 (P~22%) - planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reach | delivers: Convergence-Informed Goal Prioritizer
+- #3 [scribe] Autonomy Score Trendline ~2026-11-25 17:23 (P~52%) - planned as measurement work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reache | delivers: Autonomy Score Trendline
+- #4 [archivist] Convergence Lock Protocol ~2026-11-25 17:51 (P~84%) - planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reach | delivers: Convergence Lock Protocol
+- #5 [builder] Self-Healing Goal Lifecycle ~2026-11-25 19:33 (P~52%) - planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52% | delivers: Archive + evidence leaves
+- #6 [scribe] Decision-to-Autonomy Causal Map ~2026-11-25 20:03 (P~76%) - planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(rea | delivers: Decision-to-Autonomy Causal Map
+- #7 [archivist] Per-Agent Autonomy Scorecard ~2026-11-25 20:20 (P~59%) - planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(rea | delivers: Per-Agent Autonomy Scorecard
+- #8 [archivist] Convergence Regression Test Spec ~2026-11-25 22:11 (P~84%) - planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reach | delivers: Convergence Regression Test Spec
 
 ## Functional capability chain (PM view)
 
@@ -117,24 +147,39 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): a4f106fb3413 @ 11-24 11:55:14, 05dcc83e6301 @ 11-24 13:46:57, a4f106fb3413 @ 11-24 23:09:16, 05dcc83e6301 @ 11-25 02:40:36
 
-## 30m ahead (by 2026-11-25 12:49)
-- completes: **0** goal(s) -> fleet ~100%
-- why: no goal work planned yet - the fleet is all-clear; the only action in this window is the level-up gate + cycle proposal, so nothing completes by 2026-11-25 12:49
+## 30m ahead (by 2026-11-25 14:01)
+- completes: **0** goal(s) -> fleet ~68%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 54/80 -> 67%
 
-## 1h ahead (by 2026-11-25 13:19)
-- completes: **0** goal(s) -> fleet ~100%
-- why: no goal work planned yet - the fleet is all-clear; the only action in this window is the level-up gate + cycle proposal, so nothing completes by 2026-11-25 13:19
+## 1h ahead (by 2026-11-25 14:31)
+- completes: **0** goal(s) -> fleet ~68%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 54/80 -> 67%
 
-## 1d ahead (by 2026-11-26 12:19)
-- completes: **0** goal(s) -> fleet ~100%
-- why: cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-11-26 12:19 - expected outcome: fleet ~100% of the NEW cycle done
+## 1d ahead (by 2026-11-26 13:31)
+- completes: **20** goal(s) -> fleet ~92%
+  - #1 archivist: Autonomy Decay Detection (2026-11-25 16:00)
+  - #2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 16:58)
+  - #3 scribe: Autonomy Score Trendline (2026-11-25 17:23)
+  - #4 archivist: Convergence Lock Protocol (2026-11-25 17:51)
+  - #5 builder: Self-Healing Goal Lifecycle (2026-11-25 19:33)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 54/80 -> 80%
 
-## 1w ahead (by 2026-12-02 12:19)
-- completes: **0** goal(s) -> fleet ~100%
-- why: cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-12-02 12:19 - expected outcome: fleet ~100% of the NEW cycle done
+## 1w ahead (by 2026-12-02 13:31)
+- completes: **26** goal(s) -> fleet ~100%
+  - #1 archivist: Autonomy Decay Detection (2026-11-25 16:00)
+  - #2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 16:58)
+  - #3 scribe: Autonomy Score Trendline (2026-11-25 17:23)
+  - #4 archivist: Convergence Lock Protocol (2026-11-25 17:51)
+  - #5 builder: Self-Healing Goal Lifecycle (2026-11-25 19:33)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 54/80 -> 80%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-25 12:19)
-- completes: **0** goal(s) -> fleet ~100%
-- why: cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-12-25 12:19 - expected outcome: fleet ~100% of the NEW cycle done
+## 1m ahead (by 2026-12-25 13:31)
+- completes: **26** goal(s) -> fleet ~100%
+  - #1 archivist: Autonomy Decay Detection (2026-11-25 16:00)
+  - #2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 16:58)
+  - #3 scribe: Autonomy Score Trendline (2026-11-25 17:23)
+  - #4 archivist: Convergence Lock Protocol (2026-11-25 17:51)
+  - #5 builder: Self-Healing Goal Lifecycle (2026-11-25 19:33)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 54/80 -> 80%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
