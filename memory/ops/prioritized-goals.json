@@ -1,0 +1,138 @@
+{
+  "generated": "2026-11-25T14:12:50.969219",
+  "inputs": {
+    "autonomy_score_current": 69.1,
+    "autonomy_trend": 0.0,
+    "intervention_rate_per_cycle": 0.588,
+    "efficiency_trend": 0.0,
+    "candidates_total": 10,
+    "anti_repeat_excluded": 0
+  },
+  "ranked_goals": [
+    {
+      "agent": "archivist",
+      "title": "Autonomy Decay Detection",
+      "type": "measurement",
+      "complexity": 1,
+      "p_reached": 0.586,
+      "eta": "2026-11-25 16:00",
+      "convergence_score": 8.53,
+      "anti_repeat_excluded": false,
+      "justification": "type=measurement -> +5.0 | convergence keywords x3 -> +1.5 | targets interventions (rate=0.59/cycle) -> +0.9 | p_reached=0.59 -> +0.36 | complexity=1 -> +0.50 | autonomy_gap (score=69.1, needs 75) -> +0.30",
+      "final_rank": 1
+    },
+    {
+      "agent": "scribe",
+      "title": "Decision-to-Autonomy Causal Map",
+      "type": "measurement",
+      "complexity": 1,
+      "p_reached": 0.757,
+      "eta": "2026-11-25 20:03",
+      "convergence_score": 8.25,
+      "anti_repeat_excluded": false,
+      "justification": "type=measurement -> +5.0 | convergence keywords x2 -> +1.0 | targets interventions (rate=0.59/cycle) -> +0.9 | p_reached=0.76 -> +0.57 | complexity=1 -> +0.50 | autonomy_gap (score=69.1, needs 75) -> +0.30",
+      "final_rank": 2
+    },
+    {
+      "agent": "builder",
+      "title": "Convergence-Informed Goal Prioritizer",
+      "type": "measurement",
+      "complexity": 2,
+      "p_reached": 0.224,
+      "eta": "2026-11-25 16:58",
+      "convergence_score": 7.83,
+      "anti_repeat_excluded": false,
+      "justification": "type=measurement -> +5.0 | convergence keywords x3 -> +1.5 | targets interventions (rate=0.59/cycle) -> +0.9 | p_reached=0.22 -> -0.09 | complexity=2 -> +0.25 | autonomy_gap (score=69.1, needs 75) -> +0.30",
+      "final_rank": 3
+    },
+    {
+      "agent": "archivist",
+      "title": "Per-Agent Autonomy Scorecard",
+      "type": "measurement",
+      "complexity": 1,
+      "p_reached": 0.586,
+      "eta": "2026-11-25 20:20",
+      "convergence_score": 6.65,
+      "anti_repeat_excluded": false,
+      "justification": "type=measurement -> +5.0 | convergence keywords x1 -> +0.5 | p_reached=0.59 -> +0.36 | complexity=1 -> +0.50 | autonomy_gap (score=69.1, needs 75) -> +0.30",
+      "final_rank": 4
+    },
+    {
+      "agent": "scribe",
+      "title": "Autonomy Score Trendline",
+      "type": "measurement",
+      "complexity": 2,
+      "p_reached": 0.515,
+      "eta": "2026-11-25 17:23",
+      "convergence_score": 6.31,
+      "anti_repeat_excluded": false,
+      "justification": "type=measurement -> +5.0 | convergence keywords x1 -> +0.5 | p_reached=0.52 -> +0.27 | complexity=2 -> +0.25 | autonomy_gap (score=69.1, needs 75) -> +0.30",
+      "final_rank": 5
+    },
+    {
+      "agent": "builder",
+      "title": "Fleet Health Composite Score",
+      "type": "measurement",
+      "complexity": 2,
+      "p_reached": 0.224,
+      "eta": "2026-11-25 23:00",
+      "convergence_score": 5.95,
+      "anti_repeat_excluded": false,
+      "justification": "type=measurement -> +5.0 | convergence keywords x1 -> +0.5 | p_reached=0.22 -> -0.09 | complexity=2 -> +0.25 | autonomy_gap (score=69.1, needs 75) -> +0.30",
+      "final_rank": 6
+    },
+    {
+      "agent": "scribe",
+      "title": "Fleet Autonomy Playbook",
+      "type": "build",
+      "complexity": 2,
+      "p_reached": 0.459,
+      "eta": "2026-11-26 01:05",
+      "convergence_score": 5.83,
+      "anti_repeat_excluded": false,
+      "justification": "type=build -> +3.0 | convergence keywords x3 -> +1.5 | targets interventions (rate=0.59/cycle) -> +0.9 | p_reached=0.46 -> +0.20 | complexity=2 -> +0.25",
+      "final_rank": 7
+    },
+    {
+      "agent": "archivist",
+      "title": "Convergence Lock Protocol",
+      "type": "verify",
+      "complexity": 1,
+      "p_reached": 0.839,
+      "eta": "2026-11-25 17:51",
+      "convergence_score": 4.67,
+      "anti_repeat_excluded": false,
+      "justification": "type=verify -> +3.0 | convergence keywords x1 -> +0.5 | p_reached=0.84 -> +0.67 | complexity=1 -> +0.50",
+      "final_rank": 8
+    },
+    {
+      "agent": "archivist",
+      "title": "Convergence Regression Test Spec",
+      "type": "verify",
+      "complexity": 1,
+      "p_reached": 0.839,
+      "eta": "2026-11-25 22:11",
+      "convergence_score": 4.67,
+      "anti_repeat_excluded": false,
+      "justification": "type=verify -> +3.0 | convergence keywords x1 -> +0.5 | p_reached=0.84 -> +0.67 | complexity=1 -> +0.50",
+      "final_rank": 9
+    },
+    {
+      "agent": "builder",
+      "title": "Self-Healing Goal Lifecycle",
+      "type": "ops",
+      "complexity": 2,
+      "p_reached": 0.515,
+      "eta": "2026-11-25 19:33",
+      "convergence_score": 4.02,
+      "anti_repeat_excluded": false,
+      "justification": "type=ops -> +3.0 | convergence keywords x1 -> +0.5 | p_reached=0.52 -> +0.27 | complexity=2 -> +0.25",
+      "final_rank": 10
+    }
+  ],
+  "top3": [
+    "Autonomy Decay Detection",
+    "Decision-to-Autonomy Causal Map",
+    "Convergence-Informed Goal Prioritizer"
+  ]
+}
