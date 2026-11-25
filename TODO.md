@@ -1,3 +1,13 @@
+## API HOST TAKES ALL PROCESS WORK + SELF-EVOLVE UI TEMPLATE - 2026-11-25
+Status: **LIVE** - User ask: list all API calls + html functions, move missing calculations to the API host, index each call against memory, ship a self-evolving UI template (API-only process layer), add getDevice()/getLogin(); interim test = Lumen portrait as wallpaper range.
+- [x] Full inventory: 72 routes (64 existing + 8 new) documented with per-call memory links -> memory/portal/api-index.md (M-CODE **L18**); UI function map for all ui/*.js included.
+- [x] Missing calculations moved to API host (were client-only or dead 404s): GET /api/fleet/status, GET /api/fleet/topology, GET /api/goals/next10.json, POST /api/gpu/request (wired to existing gpu_fit.request_dual_gpu; fixed its float>list bug).
+- [x] New capability endpoints: GET+POST /api/device (device registry memory/ops/device-registry.jsonl + server-computed render/control hints; future slots limbs/fabrication(3dprint)/custom_tools in schema), GET /api/login + /api/login/callback (Google OAuth scaffold; honest {configured:false} until client_id added).
+- [x] Self-evolve template: ui/pages/evolve.html served at /page/evolve.html - fetch+render only, getDevice()/getLogin() core, capability-gated rendering. Doctrine: memory/designer/self-evolve-ui.md.
+- [x] Interim test: Lumen prompt spec (HiRes + flow control) filed in Ca lane; no image engine on any host (Day-0 goal still open) -> 3 procedural concept portraits rendered as placeholders; wallpaper range set (lead=convergence), rotator memory/designer/set_wallpaper.py, decision log entry written.
+- [ ] **OPEN unblockers:** (1) Google OAuth client_id -> memory/ops/auth-config.json to activate /api/login flow; (2) Day-0 image engine: load FLUX/SDXL on a host (or download LTX-2.5 ~14GB on White - disk at 90.7%, clear space first) then re-run the lumen spec and swap wallpaper range.
+- [ ] Pre-existing (not from this pass): index_check.py reports 45 dangling prose-arrows in builder/researcher/verifier/orchestrator INDEX files - Archivist maintenance item; blocks /api/todo/prune while present.
+
 ## DESIGNER MEDIA TRIO ONBOARDED - lumen/reel/splice 2026-11-25
 Status: **LIVE** - User ask: "add two subagents that report to designer, one uses image generation LLMs, and the other uses video generation LLMs, make it three, the third uses media tools like https://github.com/storytold to splice and improve our outlet data. collects data from all sources and follows direction on request and when given"
 - [x] Three agents registered via POST /api/agents (same path as UI "+ Add"):

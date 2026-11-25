@@ -1,0 +1,20 @@
+{
+ "created": "2026-11-25",
+ "owner": "designer (Lumen renders, team assist)",
+ "lead": "agentportal-state-1-convergence.concept.png",
+ "range": [
+  {
+   "file": "agentportal-state-1-convergence.concept.png",
+   "theme": "convergence"
+  },
+  {
+   "file": "agentportal-state-2-topology.concept.png",
+   "theme": "topology"
+  },
+  {
+   "file": "agentportal-state-3-cockpit.concept.png",
+   "theme": "cockpit"
+  }
+ ],
+ "note": "CONCEPT RENDERS - placeholders until the Day-0 image engine lands; then swap per spec at memory/designer/lumen/portraits/agentportal-state-spec-2026-11-25.md"
+}
