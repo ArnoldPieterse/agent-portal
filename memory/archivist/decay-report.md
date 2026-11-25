@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 11339 | flagged (<0.35): 0
+Leaves: 11346 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -7103,8 +7103,6 @@ Leaves: 11339 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.22ea20811b | 3 | 0 | n | 0.533 |
 | memory/ops/merge-queue/agent_portal.py.329fa81bc1 | 3 | 0 | n | 0.533 |
 | memory/ops/merge-queue/agent_portal.py.39a887a7c9 | 3 | 0 | n | 0.533 |
-| memory/ops/merge-queue/agent_portal.py.42d0c5f1bc | 3 | 0 | n | 0.533 |
-| memory/ops/merge-queue/agent_portal.py.57496aace7 | 3 | 0 | n | 0.533 |
 | memory/ops/merge-queue/agent_portal.py.64bad82e8d | 3 | 0 | n | 0.533 |
 | memory/ops/merge-queue/agent_portal.py.6afb6a0d77 | 3 | 0 | n | 0.533 |
 | memory/ops/merge-queue/agent_portal.py.748a909928 | 3 | 0 | n | 0.533 |
@@ -8686,10 +8684,6 @@ Leaves: 11339 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.23001df513 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/agent_portal.py.2eb53677b0 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/agent_portal.py.39a8d6df65 | 2 | 0 | n | 0.539 |
-| memory/ops/merge-queue/agent_portal.py.3fc33d11b7 | 2 | 0 | n | 0.539 |
-| memory/ops/merge-queue/agent_portal.py.414995d489 | 2 | 0 | n | 0.539 |
-| memory/ops/merge-queue/agent_portal.py.4dc0eca68a | 2 | 0 | n | 0.539 |
-| memory/ops/merge-queue/agent_portal.py.540225d8ad | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/gap_alarm.py.722479a2c2 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/git_run.py.0434be18f7 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/goal_ledger.py.348d6bb86e | 2 | 0 | n | 0.539 |
@@ -10068,6 +10062,7 @@ Leaves: 11339 | flagged (<0.35): 0
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
 | memory/goals/dispatch_order.json | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
+| memory/goals/forecast-researcher-task-inventory-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/goals/forge.md | 0 | 0 | n | 0.550 |
 | memory/goals/goal_ledger.json | 0 | 0 | n | 0.550 |
 | memory/goals/GOAL_RESET_PENDING.json | 0 | 0 | n | 0.550 |
@@ -10105,6 +10100,7 @@ Leaves: 11339 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261125-194602.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-205406.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-213936.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-224815.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
@@ -10424,10 +10420,16 @@ Leaves: 11339 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.07e0d0fdbd | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0a2912a037 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.267b52f8cd | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.3fc33d11b7 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.414995d489 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.42d0c5f1bc | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.4456d57852 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.4a223417ba | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.4b70db6aad | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.4dc0eca68a | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.540225d8ad | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.555f127e8c | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.57496aace7 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.5d30bcd98d | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.5d6261d06a | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.66f94870a3 | 0 | 0 | n | 0.550 |
@@ -10479,6 +10481,7 @@ Leaves: 11339 | flagged (<0.35): 0
 | memory/ops/merge-queue/index.html.8d217e079d | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.c2d69ce1fd | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.ca21c51ab7 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/index.html.eadafc3bf1 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.f3a6f4ecc6 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/memory_mirror.py.0e026c89c0 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/memory_mirror.py.1dbc3a3eee | 0 | 0 | n | 0.550 |
@@ -10503,6 +10506,7 @@ Leaves: 11339 | flagged (<0.35): 0
 | memory/ops/merge-queue/portal_host.py.a0dedce6bc | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/portal_host.py.e3084c3f43 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/portal_scheduler.py.d27e07e94e | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/portal_scheduler.py.df76245f1a | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/reboot_recover.py.28d09be276 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/reboot_recover.py.be40a958f0 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/reboot_recover.py.ed3cbc3e65 | 0 | 0 | n | 0.550 |
@@ -10654,7 +10658,9 @@ Leaves: 11339 | flagged (<0.35): 0
 | memory/scribe/milestones_tracker.py | 0 | 0 | n | 0.550 |
 | memory/scribe/spof-audit-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/scribe/steady-state-declaration.md | 0 | 0 | n | 0.550 |
+| memory/scribe/stealth-ledger-data.json | 0 | 0 | n | 0.550 |
 | memory/scribe/stealth-ledger.md | 0 | 0 | n | 0.550 |
+| memory/scribe/stealth_scorecard.py | 0 | 0 | n | 0.550 |
 | memory/scribe/topic-rationales.jsonl | 0 | 0 | n | 0.550 |
 | memory/scribe/_sup_err.txt | 0 | 0 | n | 0.550 |
 | memory/scribe/cards/mirror.md | 0 | 0 | n | 0.550 |
@@ -11010,6 +11016,7 @@ Leaves: 11339 | flagged (<0.35): 0
 | memory/portal/api-reqs.md | 0 | 1 | Y | 0.769 |
 | memory/portal/bugs/cockpit-remote-hosts-null-metrics-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/projects/stealth-revenue-engine.md | 0 | 1 | Y | 0.769 |
+| memory/researcher/chronovisor-correlation-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/scribe/agent-autonomy-matrix.md | 0 | 1 | Y | 0.769 |
 | memory/scribe/autonomy-decomposition.jsonl | 0 | 1 | Y | 0.769 |
 | memory/scribe/autonomy-handoff-protocol.md | 0 | 1 | Y | 0.769 |
