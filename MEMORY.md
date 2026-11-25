@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Forge produced `memory/forge/convergence-stability-report-20261126.md` (fleet autonomy convergence stability analysis, 19+ gate data points)
 - Assisted Forge goal #9: fixed case mismatch bug, added --test-mismatch and --simulate-mismatch HOST flags for cross-host consistency test.
 - Researcher: all 11/11 goals closed (verified 2026-11-25); auto-loop "open goal #11" prompt was stale — do not re-probe.
 - Builder lane fully closed: Goal #11 re-verified (WF1 4/4, WF2 4/4, WF3 3/3), no open goals remain.
@@ -23,6 +22,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Outlet trigger armed: fires on L10→11 or bucket 90→100; queue 2/2 pass, lane clean, no open goals.
 - Researcher's task-inventory (goal #11) verified 2026-11-25; all 11 goals reached, 0 open. Auto-loop sending stale prompts to Researcher.
 - Builder: All 11 goals REACHED & verified (WF1 4/4, WF2 4/4, WF3 3/3 selftests green; run_demo.py clean). No open work in lane.
+- Forge lane idle; blocked on White/Black host recovery needed for full-confidence 4-host verification (all 4 goals already reached).
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
