@@ -1,0 +1,128 @@
+{
+  "generated": "2026-11-25T15:40:00Z",
+  "schema_version": 1,
+  "purpose": "Convergence feed for portal cockpit panel. Every value carries provenance; discrepancies are flagged, not silently resolved.",
+  "fleet": {
+    "goals_reached": 77,
+    "goals_total": 80,
+    "pct_reached": 96,
+    "provenance": "goal_ledger.json (SSOT per PROJECT STATE). Note: forecast-latest.md snapshot shows 74/80=92% at 15:34; ledger is newer."
+  },
+  "autonomy_score": {
+    "trendline_c23": 71.3,
+    "convergence_api_selftest": 62.4,
+    "primary": 71.3,
+    "provenance": "primary = memory/scribe/autonomy-trend.jsonl c23 (explicit: memory/ops/autonomy-score.json). convergence_api.py selftest reports a DIFFERENT value (62.4) - see discrepancies.",
+    "trend": "rising",
+    "history": [
+      [
+        5,
+        64.5
+      ],
+      [
+        17,
+        69.1
+      ],
+      [
+        23,
+        71.3
+      ]
+    ],
+    "velocities_per_cycle": [
+      4.6,
+      2.2
+    ],
+    "velocity_note": "rising but decelerating (+4.6 then +2.2); Builder's Convergence Deceleration Alert goal targets exactly this."
+  },
+  "steady_state_progress_pct": {
+    "value": 100,
+    "provenance": "/api/convergence selftest (orchestrator convergence_api.py): steady_state=100%, interventions=0, trend=stable(4 cycles)."
+  },
+  "per_agent": {
+    "orchestrator": {
+      "reached": 10,
+      "total": 10,
+      "pct_reached": 100,
+      "open": 0,
+      "trend_arrow": "stable",
+      "trend_basis": "saturated(at ceiling)"
+    },
+    "researcher": {
+      "reached": 10,
+      "total": 10,
+      "pct_reached": 100,
+      "open": 0,
+      "trend_arrow": "stable",
+      "trend_basis": "saturated(at ceiling)"
+    },
+    "builder": {
+      "reached": 10,
+      "total": 10,
+      "pct_reached": 100,
+      "open": 0,
+      "trend_arrow": "stable",
+      "trend_basis": "saturated(at ceiling)"
+    },
+    "archivist": {
+      "reached": 10,
+      "total": 10,
+      "pct_reached": 100,
+      "open": 0,
+      "trend_arrow": "stable",
+      "trend_basis": "saturated(at ceiling)"
+    },
+    "scribe": {
+      "reached": 7,
+      "total": 10,
+      "pct_reached": 70,
+      "open": 3,
+      "trend_arrow": "rising",
+      "trend_basis": "below-ceiling + active cycle closures (single-snapshot; no multi-cycle per-agent history in sources)"
+    },
+    "verifier": {
+      "reached": 10,
+      "total": 10,
+      "pct_reached": 100,
+      "open": 0,
+      "trend_arrow": "stable",
+      "trend_basis": "saturated(at ceiling)"
+    },
+    "designer": {
+      "reached": 10,
+      "total": 10,
+      "pct_reached": 100,
+      "open": 0,
+      "trend_arrow": "stable",
+      "trend_basis": "saturated(at ceiling)"
+    },
+    "mechanic": {
+      "reached": 10,
+      "total": 10,
+      "pct_reached": 100,
+      "open": 0,
+      "trend_arrow": "stable",
+      "trend_basis": "saturated(at ceiling)"
+    }
+  },
+  "next_milestone": {
+    "target": "fleet 80/80 (100%)",
+    "eta": "2026-11-26T06:42",
+    "gating_lanes": [
+      "builder (3 open)",
+      "archivist (2 open)"
+    ],
+    "provenance": "memory/goals/forecast-latest.md + next10.json: slowest lane = builder ending 11-26 06:42."
+  },
+  "discrepancies": [
+    {
+      "id": "D1",
+      "topic": "autonomy score",
+      "detail": "memory/scribe/autonomy-trend.jsonl c23 = 71.3 vs /api/convergence selftest autonomy = 62.4. Two different computations (trendline component-weighted vs convergence_api.py method). Feed exposes both; primary=trendline. Owner to reconcile: Orchestrator (owns convergence_api.py) + Scribe (owns trendline)."
+    },
+    {
+      "id": "D2",
+      "topic": "scribe lane count",
+      "detail": "goal_ledger.json snapshot shows scribe 7/10 (open=3); memory/goals/scribe.md marks all 10 verified. Ledger likely stale - re-run `python memory/researcher/goal_ledger.py` to refresh. Feed uses ledger values as SSOT until refreshed."
+    }
+  ]
+}

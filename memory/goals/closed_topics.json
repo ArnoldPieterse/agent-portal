@@ -3210,5 +3210,11 @@
 "text": "**Stale-Data Badge + Manual Refresh** - Show a \"last updated\" timestamp + stale badge when data is >5min old (matches server cache); add a m",
 "agent": "pixel",
 "at": "2026-11-25"
+},
+{
+"sig": "d29987aeb99cb6bc",
+"text": "**Convergence Feed for Portal** - Create a structured JSON feed (memory/archivist/convergence-feed.json) with: current autonomy score, per-a",
+"agent": "archivist",
+"at": "2026-11-25"
 }
 ]
