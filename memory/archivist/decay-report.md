@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 11001 | flagged (<0.35): 0
+Leaves: 11029 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -644,7 +644,6 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/llm/model_load_params.json | 8 | 0 | n | 0.506 |
 | memory/mechanic/adaptive-probe-poller-2026-11-17.md | 8 | 0 | n | 0.506 |
 | memory/mechanic/auto-loop-status-2026-11-17.md | 8 | 0 | n | 0.506 |
-| memory/mechanic/boot-deploy-fix-2026-11-17.md | 8 | 0 | n | 0.506 |
 | memory/mechanic/boot-deploy-verify.jsonl | 8 | 0 | n | 0.506 |
 | memory/mechanic/designer-assist-fleet-spec-2026-11-17.md | 8 | 0 | n | 0.506 |
 | memory/mechanic/fleet-probe-v2-predictive-2026-11-17.md | 8 | 0 | n | 0.506 |
@@ -660,7 +659,6 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/mechanic/goal1-load-trend-reapply6-2026-11-17.md | 8 | 0 | n | 0.506 |
 | memory/mechanic/goal1-week-complete-flag-2026-11-17.md | 8 | 0 | n | 0.506 |
 | memory/mechanic/goal1-week-complete-flag-verified-2026-11-17.md | 8 | 0 | n | 0.506 |
-| memory/mechanic/goal2-adaptive-timeout-reapplied-2026-11-17.md | 8 | 0 | n | 0.506 |
 | memory/mechanic/goal2-boot-recovery-adaptive-wiring-2026-11-17.md | 8 | 0 | n | 0.506 |
 | memory/mechanic/goal2-boot-recovery-progress-2026-11-17.md | 8 | 0 | n | 0.506 |
 | memory/mechanic/goal2-boot-recovery-status-2026-11-17.md | 8 | 0 | n | 0.506 |
@@ -8850,6 +8848,7 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/ops/handoffs/researcher-20261113.md | 2 | 0 | n | 0.539 |
 | memory/ops/handoffs/scribe-20261113.md | 2 | 0 | n | 0.539 |
 | memory/ops/handoffs/verifier-20261113.md | 2 | 0 | n | 0.539 |
+| memory/ops/merge-queue/agents.json.459f27e402 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/agent_portal.py.1304d9b7a1 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/agent_portal.py.134815a3c1 | 2 | 0 | n | 0.539 |
 | memory/ops/merge-queue/agent_portal.py.20cf91fd61 | 2 | 0 | n | 0.539 |
@@ -9173,7 +9172,6 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/verifier/__pycache__/state_consistency.cpython-315.pyc | 2 | 0 | n | 0.539 |
 | memory/fleet-mode.json | 1 | 0 | n | 0.544 |
 | memory/fleet-mode.json.lock | 1 | 0 | n | 0.544 |
-| memory/levels.json | 1 | 0 | n | 0.544 |
 | memory/pass-budget.json | 1 | 0 | n | 0.544 |
 | memory/archivist/citation-report.json | 1 | 0 | n | 0.544 |
 | memory/archivist/compact_decision_log.py | 1 | 0 | n | 0.544 |
@@ -9379,7 +9377,6 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/goals/forecast-verifier-cluster-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/goals/forecast_engine.py | 1 | 0 | n | 0.544 |
 | memory/goals/forecast_plan.py | 1 | 0 | n | 0.544 |
-| memory/goals/GOAL_RESET_PENDING.json | 1 | 0 | n | 0.544 |
 | memory/goals/mode-controller-path-divergence-forecast.md | 1 | 0 | n | 0.544 |
 | memory/goals/plan_chain.py | 1 | 0 | n | 0.544 |
 | memory/goals/plan_round.py | 1 | 0 | n | 0.544 |
@@ -9875,6 +9872,7 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/verifier/__pycache__/failure_replay.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/verifier/__pycache__/fleet_health_closed_loop.cpython-313.pyc | 1 | 0 | n | 0.544 |
 | memory/verifier/__pycache__/goal_lifecycle_audit.cpython-313.pyc | 1 | 0 | n | 0.544 |
+| memory/levels.json | 0 | 0 | n | 0.550 |
 | memory/archivist/contribution-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/archivist/cycle-history-index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/decision-archive-data.jsonl | 0 | 0 | n | 0.550 |
@@ -9886,6 +9884,7 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/archivist/patch_hotcodes.py | 0 | 0 | n | 0.550 |
 | memory/archivist/size_guard_report.md | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/mcode.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/builder/assist_scribe_g8_rationales_2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/builder/auto_cycle_trigger.py | 0 | 0 | n | 0.550 |
 | memory/builder/convergence_health.py | 0 | 0 | n | 0.550 |
 | memory/builder/cycle_estimator.py | 0 | 0 | n | 0.550 |
@@ -9902,12 +9901,15 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/builder/steady_state_scheduler.py | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-calm-mode-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-complexity-heatmap-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-convergence-panel-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-convergence-section-spec-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-cycle-duration-widget-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-cycle-transition-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-cycle-transition-export-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-intervention-timeline-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-pass-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-steady-state-indicator-2026-11-24.md | 0 | 0 | n | 0.550 |
+| memory/designer/evidence-steady-state-reland-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/index_html_CANONICAL_1ce7ed928844_2026-11-25x.html | 0 | 0 | n | 0.550 |
 | memory/designer/index_html_CANONICAL_346652275eea_2026-11-25x.html | 0 | 0 | n | 0.550 |
 | memory/designer/index_html_CANONICAL_837ed05f5b20_2026-11-25a.html | 0 | 0 | n | 0.550 |
@@ -9927,6 +9929,7 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/designer/test_intervention_timeline.py | 0 | 0 | n | 0.550 |
 | memory/designer/test_steady_state_indicator.py | 0 | 0 | n | 0.550 |
 | memory/designer/TODO.md | 0 | 0 | n | 0.550 |
+| memory/designer/verify_convergence_panel.py | 0 | 0 | n | 0.550 |
 | memory/designer/_steady_dom.txt | 0 | 0 | n | 0.550 |
 | memory/designer/_steady_err.txt | 0 | 0 | n | 0.550 |
 | memory/designer/_edge_profile/FirstLaunchAfterInstallation | 0 | 0 | n | 0.550 |
@@ -10184,7 +10187,14 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
 | memory/goals/dispatch_order.json | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
+| memory/goals/forge.md | 0 | 0 | n | 0.550 |
+| memory/goals/GOAL_RESET_PENDING.json | 0 | 0 | n | 0.550 |
 | memory/goals/next10.json | 0 | 0 | n | 0.550 |
+| memory/goals/outlet.md | 0 | 0 | n | 0.550 |
+| memory/goals/pixel.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/designer-cycle17-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/mechanic-2026-11-25-cycle17.md | 0 | 0 | n | 0.550 |
+| memory/goals/archive/researcher-2026-11-25-cycle17.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast/plans-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-002119.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-013051.json | 0 | 0 | n | 0.550 |
@@ -10198,6 +10208,7 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261125-084650.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-095100.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-110807.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-121938.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
@@ -10216,7 +10227,11 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/goals/plans/rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/handoffs/2026-11-25-verifier-mechanic.md | 0 | 0 | n | 0.550 |
 | memory/handoffs/builder-to-verifier-metric-validation.md | 0 | 0 | n | 0.550 |
+| memory/handoffs/mechanic-to-scribe-milestones-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/levels/level_11_20261125-120620.md | 0 | 0 | n | 0.550 |
+| memory/levels/level_12_20261125-121620.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/boot-deploy-fix-2026-11-17.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/cadence-adjuster-selftest-evidence.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/convergence-health-path-fix-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/convergence-health-path-fix-APPLIED-2026-11-25.md | 0 | 0 | n | 0.550 |
@@ -10233,6 +10248,7 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/mechanic/fleet_mode_api.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/goal1-predictive-health-verified-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/goal1-predictive-health-verified.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/goal2-adaptive-timeout-reapplied-2026-11-17.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/MEMORY.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/pending-admin-deployments.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/predictive-seat-health-evidence.md | 0 | 0 | n | 0.550 |
@@ -10305,7 +10321,11 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/ops/vram-backtest-synthetic.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/vram-forecast.json | 0 | 0 | n | 0.550 |
 | memory/ops/vram-history.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agents.json.87dbb949e5 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agents.json.d33370d9f5 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.267b52f8cd | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.4456d57852 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.4b70db6aad | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.5d6261d06a | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.9de335bef7 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.0425c412b7 | 0 | 0 | n | 0.550 |
@@ -10338,6 +10358,7 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/orchestrator/__pycache__/convergence_api.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/__pycache__/convergence_api.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/__pycache__/steady_state_detector.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/outlet/queue/2026-11-25-fleet-autonomy-convergence.md | 0 | 0 | n | 0.550 |
 | memory/portal/v1-upgrades-round-4.md | 0 | 0 | n | 0.550 |
 | memory/researcher/autonomy-debt-results.json | 0 | 0 | n | 0.550 |
 | memory/researcher/autonomy-factors.md | 0 | 0 | n | 0.550 |
@@ -10398,6 +10419,7 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/scribe/cycle-retro-16.md | 0 | 0 | n | 0.550 |
 | memory/scribe/cycle_retro_gen.py | 0 | 0 | n | 0.550 |
 | memory/scribe/intervention-milestones.md | 0 | 0 | n | 0.550 |
+| memory/scribe/milestones_tracker.py | 0 | 0 | n | 0.550 |
 | memory/scribe/steady-state-declaration.md | 0 | 0 | n | 0.550 |
 | memory/scribe/topic-rationales.jsonl | 0 | 0 | n | 0.550 |
 | memory/scribe/cards/mirror.md | 0 | 0 | n | 0.550 |
@@ -10450,6 +10472,7 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/verifier/safety-boundary-compliance-verified-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/verifier/safety-boundary-results.json | 0 | 0 | n | 0.550 |
 | memory/verifier/safety_boundary.py | 0 | 0 | n | 0.550 |
+| memory/verifier/scribe-goals-9-10-closeout-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/verifier/seat-draft-check-verified-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/verifier/seat_draft_check.py | 0 | 0 | n | 0.550 |
 | memory/verifier/seat_draft_check_report.json | 0 | 0 | n | 0.550 |
@@ -10579,11 +10602,11 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/builder/TODO.md | 0 | 4 | n | 0.711 |
 | memory/goals/researcher.md | 0 | 4 | n | 0.711 |
 | memory/portal/upgrade-plan.md | 12 | 9 | n | 0.714 |
-| memory/decision-log.jsonl | 2 | 5 | n | 0.718 |
 | memory/synthesis/2026-11-14-portal-down-state-change.md | 11 | 9 | n | 0.719 |
 | memory/synthesis/index-replay-r81-24of24-canonical.md | 11 | 9 | n | 0.719 |
 | memory/goals/cycle2-dependency-map.md | 9 | 8 | n | 0.720 |
 | memory/designer/index_html_CANONICAL_d51c43756597_2026-11-19x.html | 3 | 6 | n | 0.728 |
+| memory/decision-log.jsonl | 0 | 5 | n | 0.729 |
 | memory/designer/deep-sweep-2026-11-19.md | 6 | 1 | Y | 0.736 |
 | memory/archivist/freshness-report.md | 9 | 10 | n | 0.740 |
 | memory/archivist/manifest-20261118.json | 7 | 9 | n | 0.741 |
@@ -10655,6 +10678,7 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/goals/builder-assist-mechanic2-autorestart-2026-11-19.md | 6 | 11 | n | 0.765 |
 | memory/portal/file-links.md | 13 | 3 | Y | 0.766 |
 | memory/archivist/assist-scribe-goal2-convergence-section-2026-11-25.md | 0 | 1 | Y | 0.769 |
+| memory/archivist/assist-scribe-goal9-self-assessment-rubric-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/convergence-kb.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/cross-cycle-patterns.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/cycle-history-index.md | 0 | 1 | Y | 0.769 |
@@ -10685,7 +10709,11 @@ Leaves: 11001 | flagged (<0.35): 0
 | memory/ops/convergence-section-layout-spec.md | 0 | 1 | Y | 0.769 |
 | memory/ops/cycle-history-consolidated.jsonl | 0 | 1 | Y | 0.769 |
 | memory/ops/seat-matrix.json | 0 | 1 | Y | 0.769 |
+| memory/outlet/profiles.md | 0 | 1 | Y | 0.769 |
 | memory/portal/api-reqs.md | 0 | 1 | Y | 0.769 |
+| memory/scribe/milestones.jsonl | 0 | 1 | Y | 0.769 |
+| memory/scribe/self-assessment-1.md | 0 | 1 | Y | 0.769 |
+| memory/scribe/self-assessment-rubric-baseline-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/goals/builder.md | 0 | 8 | n | 0.770 |
 | memory/mechanic/memory_mirror_fixed.py | 12 | 3 | Y | 0.772 |
 | memory/researcher/r18-output-verification-2026-11-13.md | 12 | 3 | Y | 0.772 |

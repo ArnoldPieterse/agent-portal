@@ -252,3 +252,14 @@
 {"timestamp": "2026-11-25T02:36:34.931390+00:00", "agent": "Outlet", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
 {"timestamp": "2026-11-25T02:36:34.938860+00:00", "agent": "Pixel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
 {"timestamp": "2026-11-25T02:36:34.945509+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-25T02:44:45.593198+00:00", "agent": "Orchestrator", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490721}
+{"timestamp": "2026-11-25T02:44:45.602085+00:00", "agent": "Researcher", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490720}
+{"timestamp": "2026-11-25T02:44:45.610612+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490721}
+{"timestamp": "2026-11-25T02:44:45.618755+00:00", "agent": "Verifier", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490722}
+{"timestamp": "2026-11-25T02:44:45.627912+00:00", "agent": "Designer", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490723}
+{"timestamp": "2026-11-25T02:44:45.637412+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490725}
+{"timestamp": "2026-11-25T02:44:45.645934+00:00", "agent": "Scribe", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490727}
+{"timestamp": "2026-11-25T02:44:45.656498+00:00", "agent": "Mechanic", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490728}
+{"timestamp": "2026-11-25T02:44:45.666684+00:00", "agent": "Outlet", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490732}
+{"timestamp": "2026-11-25T02:44:45.675103+00:00", "agent": "Pixel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490734}
+{"timestamp": "2026-11-25T02:44:45.681807+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 490734}
