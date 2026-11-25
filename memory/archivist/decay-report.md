@@ -1,6 +1,6 @@
 # Decay report 2026-11-25
 
-Leaves: 11146 | flagged (<0.35): 0
+Leaves: 11147 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -8623,36 +8623,6 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/goals/archive/verifier-2026-11-23-cycle9.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier-2026-11-23-prev.md | 2 | 0 | n | 0.539 |
 | memory/goals/archive/verifier-2026-11-23.md | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-073849.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-073946.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-074819.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-081801.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-084801.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-085159.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-091427.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-091801.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-093841.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-094801.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-101801.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-103456.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-124754.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-134541.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-140636.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-143507.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-145757.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-150530.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-161510.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-172332.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-175548.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-192156.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-200804.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-201603.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-205539.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-205937.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-211424.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-213943.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-224540.json | 2 | 0 | n | 0.539 |
-| memory/goals/history/forecast-20261123-234730.json | 2 | 0 | n | 0.539 |
 | memory/goals/__pycache__/forecast_engine.cpython-313.pyc | 2 | 0 | n | 0.539 |
 | memory/handoffs/HO-20261123-loop-scorer-contract.md | 2 | 0 | n | 0.539 |
 | memory/levels/level_1_20261123-060001.md | 2 | 0 | n | 0.539 |
@@ -9442,12 +9412,6 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/goals/archive/verifier-cycle16-2026-11-24.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier_15.md | 1 | 0 | n | 0.544 |
 | memory/goals/archive/verifier_test-cycle.md | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261124-005723.json | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261124-015929.json | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261124-030002.json | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261124-040506.json | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261124-051235.json | 1 | 0 | n | 0.544 |
-| memory/goals/history/forecast-20261124-062139.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261124-072313.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261124-083254.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261124-085855.json | 1 | 0 | n | 0.544 |
@@ -9876,6 +9840,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/archivist/cycle-history-index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/decay_detector.py | 0 | 0 | n | 0.550 |
 | memory/archivist/decision-archive-data.jsonl | 0 | 0 | n | 0.550 |
+| memory/archivist/evidence-assist-convergence-feed-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-goal1-autonomy-decay-detection-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-goal2-convergence-lock-protocol-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/archivist/evidence-goal3-autonomy-scorecard-2026-11-25.md | 0 | 0 | n | 0.550 |
@@ -9893,6 +9858,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/archivist/regression_check.py | 0 | 0 | n | 0.550 |
 | memory/archivist/size_guard_report.md | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/decay_detector.cpython-313.pyc | 0 | 0 | n | 0.550 |
+| memory/archivist/__pycache__/mcode.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/mcode.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/mode_anomaly.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/mode_freshness.cpython-313.pyc | 0 | 0 | n | 0.550 |
@@ -9913,6 +9879,8 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/builder/seat-draft-report.json | 0 | 0 | n | 0.550 |
 | memory/builder/seat_draft_validate.py | 0 | 0 | n | 0.550 |
 | memory/builder/steady_state_scheduler.py | 0 | 0 | n | 0.550 |
+| memory/builder/test_autonomy_infra.py | 0 | 0 | n | 0.550 |
+| memory/builder/__pycache__/intervention_logger.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-calm-mode-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-complexity-heatmap-2026-11-24.md | 0 | 0 | n | 0.550 |
 | memory/designer/evidence-convergence-panel-2026-11-25.md | 0 | 0 | n | 0.550 |
@@ -9934,6 +9902,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/designer/index_html_CANONICAL_aeaa9e4a1306_2026-11-25y.html | 0 | 0 | n | 0.550 |
 | memory/designer/index_html_CANONICAL_bf88d5753d52_2026-11-25y.html | 0 | 0 | n | 0.550 |
 | memory/designer/index_html_CANONICAL_cdb0787aab8e_2026-11-25a.html | 0 | 0 | n | 0.550 |
+| memory/designer/set_wallpaper.py | 0 | 0 | n | 0.550 |
 | memory/designer/steady-state-design-contract-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/designer/steady-state-harness.html | 0 | 0 | n | 0.550 |
 | memory/designer/test_calm_mode.py | 0 | 0 | n | 0.550 |
@@ -10199,6 +10168,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/designer/_edge_profile/SmartScreen/RemoteData/customSettings_F95BA787499AB4FA9EFFF472CE383A14 | 0 | 0 | n | 0.550 |
 | memory/designer/_edge_profile/SmartScreen/RemoteData/edgeSettings | 0 | 0 | n | 0.550 |
 | memory/designer/_edge_profile/SmartScreen/RemoteData/edgeSettings_2.0-0 | 0 | 0 | n | 0.550 |
+| memory/dna/__pycache__/rebuild.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/forge/red-powered-on-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/forge/red_probe.py | 0 | 0 | n | 0.550 |
 | memory/forge/red_probe_last.json | 0 | 0 | n | 0.550 |
@@ -10239,6 +10209,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261125-133117.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-143133.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261125-153422.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261125-164412.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-rounds.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/plans/chain-state.json | 0 | 0 | n | 0.550 |
 | memory/goals/plans/llm-chain-latest.json | 0 | 0 | n | 0.550 |
@@ -10301,6 +10272,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/mechanic/goal2-adaptive-timeout-reapplied-2026-11-17.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/MEMORY.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/pending-admin-deployments.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/pre-cycle-gate-assist-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/predictive-seat-health-evidence.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/probe_cadence_adjuster.py | 0 | 0 | n | 0.550 |
 | memory/mechanic/recovery_sla_summary.py | 0 | 0 | n | 0.550 |
@@ -10328,9 +10300,11 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/autonomy-health-report.json | 0 | 0 | n | 0.550 |
+| memory/ops/autonomy-regression.json | 0 | 0 | n | 0.550 |
 | memory/ops/autonomy-score.json | 0 | 0 | n | 0.550 |
 | memory/ops/cadence-changes.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/cadence-log.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/canned-responses.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-digests.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-health.json | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-lock-state.json | 0 | 0 | n | 0.550 |
@@ -10373,6 +10347,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/ops/recovery-sla-summary.json | 0 | 0 | n | 0.550 |
 | memory/ops/recovery-times.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/recovery-trend-results.json | 0 | 0 | n | 0.550 |
+| memory/ops/runbook-autonomy.md | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-state.json | 0 | 0 | n | 0.550 |
 | memory/ops/schtask-snapshot-2026-11-25-input.csv | 0 | 0 | n | 0.550 |
@@ -10386,11 +10361,13 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/ops/vram-backtest-synthetic.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/vram-forecast.json | 0 | 0 | n | 0.550 |
 | memory/ops/vram-history.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/world-state.json | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.1cbfc6f19c | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.79edc43fde | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.87dbb949e5 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.a092a04214 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agents.json.d33370d9f5 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.0a2912a037 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.267b52f8cd | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.4456d57852 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.4a223417ba | 0 | 0 | n | 0.550 |
@@ -10400,6 +10377,8 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.66f94870a3 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.9de335bef7 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.a177183feb | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.b35b55ccc3 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.f1cb06e56d | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.0425c412b7 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.c2d69ce1fd | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/index.html.ca21c51ab7 | 0 | 0 | n | 0.550 |
@@ -10437,6 +10416,12 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/orchestrator/__pycache__/convergence_api.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/__pycache__/steady_state_detector.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/outlet/queue/2026-11-25-fleet-autonomy-convergence.md | 0 | 0 | n | 0.550 |
+| memory/pixel/conv-harness.html | 0 | 0 | n | 0.550 |
+| memory/pixel/evidence-a11y-goal3-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/pixel/evidence-drilldown-goal2-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/pixel/evidence-stale-refresh-goal4-2026-11-25.md | 0 | 0 | n | 0.550 |
+| memory/pixel/_dom.txt | 0 | 0 | n | 0.550 |
+| memory/pixel/_err.txt | 0 | 0 | n | 0.550 |
 | memory/portal/v1-upgrades-round-4.md | 0 | 0 | n | 0.550 |
 | memory/researcher/autonomy-debt-results.json | 0 | 0 | n | 0.550 |
 | memory/researcher/autonomy-factors.md | 0 | 0 | n | 0.550 |
@@ -10607,6 +10592,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/ops/cockpit-feed.json | 1 | 1 | n | 0.614 |
 | memory/archivist/kg-auto-update-progress-2026-11-17.md | 8 | 2 | n | 0.615 |
 | memory/designer/MEMORY.md | 0 | 1 | n | 0.619 |
+| memory/dna/manifest.json | 0 | 1 | n | 0.619 |
 | memory/goals/archive/builder-2026-11-24.md | 0 | 1 | n | 0.619 |
 | memory/ops/fleet-metrics.jsonl | 0 | 1 | n | 0.619 |
 | memory/run-rules.md | 7 | 2 | n | 0.621 |
@@ -10766,6 +10752,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/archivist/autonomy-boundary-map.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/autonomy-decay-signals.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/autonomy-scorecard.json | 0 | 1 | Y | 0.769 |
+| memory/archivist/convergence-feed.json | 0 | 1 | Y | 0.769 |
 | memory/archivist/convergence-forecast.json | 0 | 1 | Y | 0.769 |
 | memory/archivist/convergence-kb.md | 0 | 1 | Y | 0.769 |
 | memory/archivist/convergence-lock-protocol.md | 0 | 1 | Y | 0.769 |
@@ -10800,7 +10787,16 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/designer/evidence-progress-ring-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/designer/evidence-steady-state-indicator-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/designer/self-evolve-ui.md | 0 | 1 | Y | 0.769 |
+| memory/designer/wallpaper-range.json | 0 | 1 | Y | 0.769 |
+| memory/designer/world-sims.md | 0 | 1 | Y | 0.769 |
 | memory/designer/lumen/portraits/agentportal-state-spec-2026-11-25.md | 0 | 1 | Y | 0.769 |
+| memory/dna/dna-spec.md | 0 | 1 | Y | 0.769 |
+| memory/dna/builds/b01-portal-core.py | 0 | 1 | Y | 0.769 |
+| memory/dna/builds/b02-api-extras.py | 0 | 1 | Y | 0.769 |
+| memory/dna/builds/b03-gpu-fit.py | 0 | 1 | Y | 0.769 |
+| memory/dna/builds/b04-evolve-template.py | 0 | 1 | Y | 0.769 |
+| memory/dna/builds/b05-dna-rebuild.py | 0 | 1 | Y | 0.769 |
+| memory/dna/builds/b06-world-page.py | 0 | 1 | Y | 0.769 |
 | memory/forge/canary_deploy.py | 0 | 1 | Y | 0.769 |
 | memory/forge/deploy-log.jsonl | 0 | 1 | Y | 0.769 |
 | memory/forge/gate_health.py | 0 | 1 | Y | 0.769 |
@@ -10813,6 +10809,10 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/ops/cycle-history-consolidated.jsonl | 0 | 1 | Y | 0.769 |
 | memory/ops/seat-matrix.json | 0 | 1 | Y | 0.769 |
 | memory/outlet/profiles.md | 0 | 1 | Y | 0.769 |
+| memory/pixel/evidence-convergence-375-static-2026-11-25.md | 0 | 1 | Y | 0.769 |
+| memory/pixel/evidence-convergence-bundle-audit-2026-11-25.md | 0 | 1 | Y | 0.769 |
+| memory/pixel/evidence-convergence-persistence-2026-11-25.md | 0 | 1 | Y | 0.769 |
+| memory/pixel/evidence-convergence-print-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-convergence-states-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-fleet-capacity-chip-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/log.md | 0 | 1 | Y | 0.769 |
@@ -11050,7 +11050,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/scribe/handoff-validation-2026-11-19.md | 6 | 3 | Y | 0.805 |
 | memory/verifier/designer-goal9-stale-claim-verification-2026-11-19.md | 6 | 3 | Y | 0.805 |
 | memory/synthesis/2026-11-14-r36-lane-closeout.md | 8 | 27 | n | 0.806 |
-| memory/ops/decision-log.jsonl | 1 | 13 | n | 0.808 |
+| memory/dna/rebuild.py | 0 | 2 | Y | 0.810 |
 | memory/ops/cycle-closeout-contract.md | 0 | 2 | Y | 0.810 |
 | memory/scribe/convergence-readiness.md | 0 | 2 | Y | 0.810 |
 | memory/builder/api_client_layer_increment1-2026-11-20.md | 5 | 3 | Y | 0.811 |
@@ -11065,6 +11065,7 @@ Leaves: 11146 | flagged (<0.35): 0
 | memory/researcher/kg-drift-and-cycle-nondeterminism-2026-11-20.md | 5 | 3 | Y | 0.811 |
 | memory/researcher/live-leg-runbook-contribution-2026-11-20.md | 5 | 3 | Y | 0.811 |
 | memory/researcher/unified-loader-offline-surface-2026-11-20.md | 5 | 3 | Y | 0.811 |
+| memory/ops/decision-log.jsonl | 0 | 13 | n | 0.814 |
 | memory/builder/component_refactor_regression_2026-11-20.md | 4 | 3 | Y | 0.816 |
 | memory/ops/autoloop.md | 8 | 4 | Y | 0.816 |
 | memory/researcher/scribe-goal10-stale-citation-close-2026-11-20.md | 4 | 3 | Y | 0.816 |
