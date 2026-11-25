@@ -19,6 +19,9 @@ INTERVENTIONS_FILE = MEM / "ops" / "human-interventions.jsonl"
 CYCLE_DURATIONS_FILE = MEM / "ops" / "cycle-durations.jsonl"
 ARCHIVE = MEM / "goals" / "archive"
 OUTPUT = MEM / "ops" / "autonomy-score.json"
+FLEET_METRICS_FILE = MEM / "ops" / "fleet-metrics.jsonl"
+FLEET_SNAPSHOTS_FILE = MEM / "ops" / "fleet-snapshots.jsonl"
+EXPECTED_HOSTS = ["White", "Red", "Pale", "Black"]
 
 # Baseline: 48h (2-day) cycle is "normal" for this fleet
 BASELINE_CYCLE_HOURS = 48.0
@@ -145,6 +148,142 @@ def compute_trend_score(interventions: list) -> float:
     else:
         return max(10, 40 - (change - 0.5) * 30)
 
+def load_fleet_metrics(last_n: int = 3) -> list:
+    """Load last N entries from fleet-metrics.jsonl that have hosts data."""
+    if not FLEET_METRICS_FILE.exists():
+        return []
+    lines = FLEET_METRICS_FILE.read_text(encoding="utf-8").strip().splitlines()
+    entries = []
+    for line in reversed(lines):
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            d = json.loads(line)
+            if d.get("hosts"):
+                entries.append(d)
+                if len(entries) >= last_n:
+                    break
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            continue
+    return list(reversed(entries))  # chronological order
+
+def load_fleet_snapshots(last_n: int = 3) -> list:
+    """Load last N entries from fleet-snapshots.jsonl."""
+    if not FLEET_SNAPSHOTS_FILE.exists():
+        return []
+    lines = FLEET_SNAPSHOTS_FILE.read_text(encoding="utf-8").strip().splitlines()
+    entries = []
+    for line in reversed(lines):
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            d = json.loads(line)
+            entries.append(d)
+            if len(entries) >= last_n:
+                break
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            continue
+    return list(reversed(entries))
+
+def compute_host_uptime(metrics: list) -> dict:
+    """Fraction of reads where each host reported data. Returns {host_name: 0-1}."""
+    if not metrics:
+        return {h: 0.0 for h in EXPECTED_HOSTS}
+    n = len(metrics)
+    uptime = {}
+    for host in EXPECTED_HOSTS:
+        up_reads = 0
+        for entry in metrics:
+            hosts_data = entry.get("hosts", [])
+            for h in hosts_data:
+                if h.get("name") == host and h.get("vram_pct") is not None:
+                    up_reads += 1
+                    break
+        uptime[host] = up_reads / n
+    return uptime
+
+def compute_vram_trend(metrics: list) -> dict:
+    """VRAM trend per host across last N reads. Returns {host_name: delta_pct}.
+    Positive = increasing (concerning if >20), Negative = decreasing, 0 = stable."""
+    if len(metrics) < 2:
+        return {h: 0.0 for h in EXPECTED_HOSTS}
+    trend = {}
+    for host in EXPECTED_HOSTS:
+        values = []
+        for entry in metrics:
+            hosts_data = entry.get("hosts", [])
+            for h in hosts_data:
+                if h.get("name") == host and h.get("vram_pct") is not None:
+                    values.append(h["vram_pct"])
+                    break
+        if len(values) >= 2:
+            trend[host] = round(values[-1] - values[0], 1)
+        else:
+            trend[host] = 0.0
+    return trend
+
+def compute_model_load_success(snapshots: list) -> float:
+    """Fraction of agent slots that have a non-'unknown' status in latest snapshot. 0-1."""
+    if not snapshots:
+        return 0.5  # neutral default
+    latest = snapshots[-1]
+    agents = latest.get("agent_statuses", [])
+    if not agents:
+        return 0.5
+    loaded = sum(1 for a in agents if a.get("status") not in ("unknown", "down", None))
+    return loaded / len(agents)
+
+def compute_fleet_readiness() -> dict:
+    """Compute fleet readiness composite 0-100.
+    
+    Components:
+      - host_uptime: % of expected hosts reporting data in last 3 reads (weight 0.40)
+      - vram_stability: penalize hosts with VRAM trend > +20% (weight 0.25)
+      - model_load: fraction of agent slots with loaded models (weight 0.35)
+    """
+    metrics = load_fleet_metrics(3)
+    snapshots = load_fleet_snapshots(3)
+    
+    uptime = compute_host_uptime(metrics)
+    vram_trend = compute_vram_trend(metrics)
+    model_load = compute_model_load_success(snapshots)
+    
+    # Host uptime score: 0-100 (all 4 up = 100, none = 0)
+    uptime_score = sum(uptime.values()) / len(EXPECTED_HOSTS) * 100
+    
+    # VRAM stability score: start at 100, penalize each host with trend > +20
+    vram_score = 100.0
+    for host, delta in vram_trend.items():
+        if delta > 20:
+            vram_score -= min(25, (delta - 20) * 2)
+    vram_score = max(0, min(100, vram_score))
+    
+    # Model load score: 0-100
+    model_score = model_load * 100
+    
+    # Composite
+    readiness = uptime_score * 0.40 + vram_score * 0.25 + model_score * 0.35
+    readiness = max(0, min(100, round(readiness, 1)))
+    
+    return {
+        "fleet_readiness": readiness,
+        "components": {
+            "host_uptime_pct": round(uptime_score, 1),
+            "vram_stability": round(vram_score, 1),
+            "model_load_rate": round(model_score, 1),
+        },
+        "per_host": {
+            h: {
+                "uptime": round(uptime.get(h, 0.0), 3),
+                "vram_trend_pct": vram_trend.get(h, 0.0),
+            }
+            for h in EXPECTED_HOSTS
+        },
+        "weights": {"host_uptime": 0.40, "vram_stability": 0.25, "model_load": 0.35},
+    }
+
 def compute_autonomy_score() -> dict:
     """Compute the composite fleet autonomy score."""
     interventions = load_interventions()
@@ -159,15 +298,22 @@ def compute_autonomy_score() -> dict:
     score = a * 0.35 + b * 0.25 + c * 0.20 + d * 0.20
     score = max(0, min(100, round(score, 1)))
     
+    # Fleet readiness (Goal #4: Fleet Health Composite Score)
+    fleet = compute_fleet_readiness()
+    
     return {
         "score": score,
+        "fleet_readiness": fleet["fleet_readiness"],
         "components": {
             "pass_autonomy": round(a, 1),
             "duration_score": round(b, 1),
             "rework_score": round(c, 1),
             "trend_score": round(d, 1),
         },
+        "fleet_components": fleet["components"],
+        "fleet_per_host": fleet["per_host"],
         "weights": {"a": 0.35, "b": 0.25, "c": 0.20, "d": 0.20},
+        "fleet_weights": fleet["weights"],
         "computed_at": datetime.utcnow().isoformat(),
         "data_sources": {
             "interventions_count": len(interventions),
