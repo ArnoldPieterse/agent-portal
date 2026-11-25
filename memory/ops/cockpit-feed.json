@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-25T08:00:03.315130+00:00",
+  "ts": "2026-11-25T08:10:02.680999+00:00",
   "health_score": 80,
   "fleet_status": "NOMINAL",
   "agents": [
@@ -47,21 +47,21 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 31.2,
-      "cpu_pct": 0.5,
-      "temp_c": 45.8
+      "vram_pct": 31.3,
+      "cpu_pct": 0.0,
+      "temp_c": 42.7
     },
     {
       "host": "Red",
-      "vram_pct": 33.0,
+      "vram_pct": 46.7,
       "cpu_pct": 0.0,
-      "temp_c": 37.0
+      "temp_c": 39.0
     },
     {
       "host": "Pale",
       "vram_pct": 46.9,
       "cpu_pct": 48.5,
-      "temp_c": 92.5
+      "temp_c": 90.2
     },
     {
       "host": "Black",
@@ -454,8 +454,8 @@
         "pct": 100.0
       },
       "outlet": {
-        "total": 4,
-        "verified": 4,
+        "total": 7,
+        "verified": 7,
         "pct": 100.0
       },
       "pixel": {

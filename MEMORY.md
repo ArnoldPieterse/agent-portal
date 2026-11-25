@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 23: 69/80 (86%) as of 2026-11-25. Closed lanes 10/10: orchestrator, researcher, builder, archivist, verifier, mechanic. Open: designer 9/10, scribe 0/10. SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Pixel closed goal #9 (Reduced-Motion System): CSS `.ckconv-no-motion` class, meta-row toggle, localStorage persistence.
 - SPO
 - Forge goal #8 (Runbook Executability Audit) completed by Mechanic → memory/
 - MEMORY.md goal line (69/80) is stale vs ledger (75/80); builder actually 5/10, not 10/10 as prompt context claims
@@ -23,6 +22,7 @@ FLEET CYCLE 23: 69/80 (86%) as of 2026-11-25. Closed lanes 10/10: orchestrator, 
 - Wrote `memory/ops/media-sublane-resilience.md` (1.6KB) defining backup/recovery for Splice/Lumen/Reel artifacts
 - Fleet goals corrected in MEMORY.md: true count is 90/110 (82%), not 69/80; per-agent breakdown updated across all 11 goal files.
 - Goal #10 (Gate Pipeline Drift Detector): drift_detect.py built & verified — clean-state, detection, and auto-fix all pass.
+- Fixed stale root goal_ledger.json (67/80→101/110) by re-parsing all 11 agent files; runbook at memory/ops/ledger-staleness-fix-2026-11-2
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
