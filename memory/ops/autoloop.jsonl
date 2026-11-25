@@ -789,3 +789,7 @@
 {"timestamp": "2026-11-25T20:13:35.873908+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1350992}
 {"timestamp": "2026-11-25T20:13:35.883217+00:00", "agent": "Designer", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2607535}
 {"timestamp": "2026-11-25T20:13:35.888438+00:00", "agent": "Scribe", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2607562}
+{"timestamp": "2026-11-25T20:29:11.322713+00:00", "agent": "Researcher", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1326054}
+{"timestamp": "2026-11-25T20:29:11.333147+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1326058}
+{"timestamp": "2026-11-25T20:29:11.338672+00:00", "agent": "Outlet", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1326041}
+{"timestamp": "2026-11-25T20:29:11.355707+00:00", "agent": "Lumen", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3979405}

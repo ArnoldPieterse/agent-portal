@@ -13,8 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Researcher: all 11 goals verified/closed (0 open); auto-loop sends stale prompts; next step = refresh convergence artifact in own domain
-- Fixed dead-code gap: added data-fleet-state="steady" trigger in renderGoalBar() core.js L562-563, activates all-clear CSS when fleet_pct>=10
 - Pixel wrote css_drift_check.py (baseline 218 classes/90 orphans); Forge can wire into drift_detect.py when ui/app.css changes.
 - Researcher: all cycle
 - Built interactive HTML demo of top-3 stealth workflows as visual asset for Outlet's goal #3 (outbound outreach pack); all
@@ -23,6 +21,8 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Convergence status file produced (memory/researcher/convergence-status-2026-11-26.md); fleet at 89/90, functionally converged
 - Design QA gate at 4/7 sampled checks PASS; 3 remaining failures are structural refactors (follow-up, not bugs).
 - Wired Pixel's css_drift_check.py into drift_detect.py as Check 4 (CSS selector drift sub-check); all 4 numeric goals already reached.
+- Fleet 89/90; one open goal remains. Pre-staged `2026-11-26-prestaged-milestone-1
+- All 11 Builder goals done; WF1–WF3 selftests green (4/4,4/4,3/3) 2026-11-
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
