@@ -801,3 +801,12 @@
 {"t": "2026-11-25 17:14:27", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
 {"t": "2026-11-25 17:19:27", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
 {"t": "2026-11-25 17:24:27", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-25 17:28:11", "event": "spawned", "what": "portal", "pid": 34752, "argv": "C:\\Projects\\AgentPortal\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\AgentPortal\\agent_portal.py"}
+{"t": "2026-11-25 17:28:14", "event": "spawned", "what": "portal", "pid": 24372, "argv": "C:\\Projects\\AgentPortal\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\AgentPortal\\agent_portal.py"}
+{"t": "2026-11-25 17:28:16", "event": "spawned", "what": "portal", "pid": 19272, "argv": "C:\\Projects\\AgentPortal\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\AgentPortal\\agent_portal.py"}
+{"t": "2026-11-25 17:28:19", "event": "spawned", "what": "portal", "pid": 10324, "argv": "C:\\Projects\\AgentPortal\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\AgentPortal\\agent_portal.py"}
+{"t": "2026-11-25 17:28:21", "event": "spawned", "what": "portal", "pid": 36352, "argv": "C:\\Projects\\AgentPortal\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\AgentPortal\\agent_portal.py"}
+{"t": "2026-11-25 17:28:24", "event": "spawned", "what": "portal", "pid": 18388, "argv": "C:\\Projects\\AgentPortal\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\AgentPortal\\agent_portal.py"}
+{"t": "2026-11-25 17:28:27", "event": "spawned", "what": "portal", "pid": 9760, "argv": "C:\\Projects\\AgentPortal\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\AgentPortal\\agent_portal.py"}
+{"t": "2026-11-25 17:28:29", "event": "spawned", "what": "portal", "pid": 9680, "argv": "C:\\Projects\\AgentPortal\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\AgentPortal\\agent_portal.py"}
+{"t": "2026-11-25 17:28:32", "event": "spawned", "what": "portal", "pid": 7128, "argv": "C:\\Projects\\AgentPortal\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\AgentPortal\\agent_portal.py"}

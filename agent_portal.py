@@ -6121,7 +6121,6 @@ def _goals_snapshot():
     try:
         if total and done_all >= total:
             resp.update(_check_level_up(resp) or {})
-        resp["dream"] = _dream_state() or {"active": False}   # daily 5-min fleet dream window (2026-11-25)
         else:
             _lst = _load_levels()
             _lhist = _lst.get("history") or []
@@ -6134,6 +6133,7 @@ def _goals_snapshot():
     resp.setdefault("level", 0)
     resp.setdefault("latest_level_report", None)
     resp.setdefault("level_cycles", 0)
+    resp["dream"] = _dream_state() or {"active": False}   # daily 5-min fleet dream window (2026-11-25)
     return resp
 
 
