@@ -1,0 +1,14 @@
+# Fleet Convergence Narrative — 2026-11-25
+_Auto-generated narrative of fleet convergence status. Every figure cites its source file._
+
+## Where the fleet is today
+The fleet has reached **70 of 80 goals (88%)** this cycle, with seven of eight lanes fully closed at 10/10 — Orchestrator, Researcher, Builder, Archivist, Verifier, Designer and Mechanic all show every goal backed by a verified evidence marker. The single remaining lane is **Scribe at 0/10**, which accounts for the entire 10-goal gap between the current 88% and a full 100%. In plain terms: the fleet is doing nearly all of its planned work on its own, and one seat — the synthesizer that compresses threads into decisions — is the only part still waiting. *(Source: goal_ledger.json, regenerated 2026-11-25 from memory/goals/*.md; per-lane counts 7×10/10 + scribe 0/10.)*
+
+## How autonomous the work has been
+The fleet's overall autonomy score is **69.1 out of 100**, computed on 2026-11-24 from four weighted components. The strongest signal is rework quality at **93.6** (the fleet rarely redoes its own work), followed by cycle-duration health at **80.0**. The two softer areas are pass-autonomy at **58.3** — the share of work completed without any human touch — and trend at a neutral **50.0**, meaning recent cycles are holding steady rather than clearly improving. Read together: the fleet is reliable and low-waste, but it still leans on humans for a meaningful slice of each pass, which is exactly the gap convergence is meant to close. *(Source: memory/ops/autonomy-score.json — score 69.1; components rework 93.6, duration 80.0, pass_autonomy 58.3, trend 50.0; weights a=0.35/b=0.25/c=0.2/d=0.2.)*
+
+## Is human involvement trending down?
+Across the tracked record there are **10 logged human interventions**, and they split into four unblocks, three redirects and three approvals. Their spread across cycles — one each in cycles 2, 3, 5, 8, 12 and 14–17, with only cycle 16 carrying two — shows a roughly steady-to-declining density rather than an accelerating need: the fleet is not demanding more help as it scales. The most recent intervention (2026-11-25, cycle 17) was a routine seat-relocation unblock, not a course correction. The fleet is currently in **WORK** mode, not yet declared steady-state; with one lane open and pass-autonomy still at 58.3, the honest read is "close but not converged" — closing Scribe's ten goals and lifting pass-autonomy are the two concrete moves that would tip it into steady-state. *(Sources: memory/ops/human-interventions.jsonl — 10 entries, unblock×4 / redirect×3 / approve×3; memory/ops/fleet-mode.json — mode=WORK.)*
+
+---
+_Freshness note: fleet-mode.json still caches goal_pct=81.2%, which lags the freshly regenerated ledger (88%); this narrative uses the regenerated goal_ledger.json as source of truth. Data sources for autonomy score: interventions_count=10, cycle_durations_count=4._
