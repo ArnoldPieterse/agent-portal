@@ -60,6 +60,10 @@ _FLEET_RECOVER_RECIPES = {
                      "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},   # home = White (2026-11-25); rides quinn-q4 slot shared with Researcher until a dedicated instance fits (fleet at 8/8 slots)
     "Builder":      {"model_path": r"C:\Users\black\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
                      "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},   # home = Black (2026-11-22)
+    "Pixel":        {"model_path": r"C:\Users\black\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+                     "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},   # home = Black (2026-11-25); rides builder-q8 slot shared with Builder until a dedicated instance fits (fleet at 8/8 slots)
+    "Forge":        {"model_path": r"C:\Users\black\.lmstudio\models\lmstudio-community\Qwen3.8-27B-Q8_0",
+                     "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},   # home = Black (2026-11-25); rides builder-q8 slot shared with Builder until a dedicated instance fits (fleet at 8/8 slots)
     "Verifier":     {"model_path": r"C:\Users\black\.lmstudio\models\unsloth\Qwen3.8-27B-Q4_K_S",
                      "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},   # home = Black (2026-11-22, verifier-q4)
     "Scribe":       {"model_path": r"C:\Users\Red\models\Qwen3.8-27B-Q8_0",

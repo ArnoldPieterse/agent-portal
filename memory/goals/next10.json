@@ -1,282 +1,45 @@
 {
  "ok": true,
- "generated": "2026-11-25 11:08:07",
+ "generated": "2026-11-25 12:19:38",
  "fleet": {
-  "done": 71,
+  "done": 80,
   "total": 80,
-  "pct": 88.8
+  "pct": 100.0
  },
- "throughput_goals_per_hour": 20.04,
- "next10": [
-  {
-   "agent": "scribe",
-   "goal": "**Cycle Closeout v3** - extend closeout with convergence section: autonomy delta, intervention count vs target, steady-state progress. Compare to prev cycle; flag regressions. Verified: cycle-16 closeout has section; val",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.459,
-   "eta": "2026-11-25 16:10",
-   "hours": 5.04,
-   "order": 0,
-   "rank": 1,
-   "title": "Cycle Closeout v3",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: cycle-16 closeout has section; val)"
-   ],
-   "outcome": "reached ~2026-11-25 16:10 (P=46%)",
-   "consequences": [
-    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope state,steady",
-    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope count,intervention",
-    "scribe: **Convergence Milestone Tracker** - track key milestones (fi (2026-11-26 22:24) - shared scope convergence,cycle,intervention",
-    "lane end scribe: 11-26 22:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "scribe",
-   "goal": "**Steady-State Declaration Doc** - formal declaration when steady-state reached: date, criteria met (with evidence), behavior change, exit conditions. Output: memory/scribe/steady-state-declaration.md. Verified: all 4 se",
-   "type": "build",
-   "complexity": 1,
-   "p_reached": 0.714,
-   "eta": "2026-11-25 19:40",
-   "hours": 3.5,
-   "order": 1,
-   "rank": 2,
-   "title": "Steady-State Declaration Doc",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: all 4 se)"
-   ],
-   "outcome": "reached ~2026-11-25 19:40 (P=71%)",
-   "consequences": [
-    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope state,steady",
-    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
-    "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,scribe",
-    "lane end scribe: 11-26 22:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "scribe",
-   "goal": "**Weekly Convergence Digest** - every 7 days: one-paragraph summary + metrics table + one watch item (trending wrong). Output: memory/ops/convergence-digests.jsonl. Verified: 3 test digests; all metrics present; watch it",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.459,
-   "eta": "2026-11-26 00:42",
-   "hours": 5.04,
-   "order": 2,
-   "rank": 3,
-   "title": "Weekly Convergence Digest",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: 3 test digests; all metrics present; watch it)"
-   ],
-   "outcome": "reached ~2026-11-26 00:42 (P=46%)",
-   "consequences": [
-    "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,summary",
-    "scribe: **Convergence Glossary** - plain-language glossary of fleet  (2026-11-26 11:12) - shared scope convergence,output",
-    "scribe: **Cycle Topic Rationale Writer** - 3-sentence rationale per  (2026-11-26 14:42) - shared scope jsonl,output",
-    "lane end scribe: 11-26 22:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "scribe",
-   "goal": "**Intervention Reduction Story** - narrate reduction in human interventions over time. Milestone narrative when count drops below threshold: what changed, which automation enabled it, before/after. Output: memory/scribe/",
-   "type": "build",
-   "complexity": 1,
-   "p_reached": 0.714,
-   "eta": "2026-11-26 04:12",
-   "hours": 3.5,
-   "order": 3,
-   "rank": 4,
-   "title": "Intervention Reduction Story",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "write evidence leaf + index line"
-   ],
-   "outcome": "reached ~2026-11-26 04:12 (P=71%)",
-   "consequences": [
-    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope count,intervention",
-    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
-    "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,scribe",
-    "lane end scribe: 11-26 22:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "scribe",
-   "goal": "**Cross-Agent Coordination Summary** - per cycle: summarize handoffs, blocks, resolutions. Identify friction points. Output: memory/scribe/coordination-summary-N.md. Verified: cycle-16 has >=5 events; 2 friction points i",
-   "type": "build",
-   "complexity": 1,
-   "p_reached": 0.714,
-   "eta": "2026-11-26 07:42",
-   "hours": 3.5,
-   "order": 4,
-   "rank": 5,
-   "title": "Cross-Agent Coordination Summary",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: cycle-16 has >=5 events; 2 friction points i)"
-   ],
-   "outcome": "reached ~2026-11-26 07:42 (P=71%)",
-   "consequences": [
-    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
-    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope output,summary",
-    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
-    "lane end scribe: 11-26 22:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "scribe",
-   "goal": "**Convergence Glossary** - plain-language glossary of fleet convergence terms for human readers. Update when new terms introduced. Output: memory/scribe/convergence-glossary.md. Verified: >=15 terms; each has definition ",
-   "type": "build",
-   "complexity": 1,
-   "p_reached": 0.714,
-   "eta": "2026-11-26 11:12",
-   "hours": 3.5,
-   "order": 5,
-   "rank": 6,
-   "title": "Convergence Glossary",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: >=15 terms; each has definition)"
-   ],
-   "outcome": "reached ~2026-11-26 11:12 (P=71%)",
-   "consequences": [
-    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
-    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope convergence,output",
-    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope human,output,scribe",
-    "lane end scribe: 11-26 22:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "scribe",
-   "goal": "**Cycle Topic Rationale Writer** - 3-sentence rationale per cycle topic: why now, what it builds on, what it enables. Output: memory/scribe/topic-rationales.jsonl. Verified: cycles 14-16 have rationales; each cites prev ",
-   "type": "build",
-   "complexity": 1,
-   "p_reached": 0.714,
-   "eta": "2026-11-26 14:42",
-   "hours": 3.5,
-   "order": 6,
-   "rank": 7,
-   "title": "Cycle Topic Rationale Writer",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: cycles 14-16 have rationales; each cites prev)"
-   ],
-   "outcome": "reached ~2026-11-26 14:42 (P=71%)",
-   "consequences": [
-    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
-    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope jsonl,output",
-    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
-    "lane end scribe: 11-26 22:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "scribe",
-   "goal": "**Fleet Self-Assessment Report** - every 3 cycles: comprehensive assessment with grade per criterion + overall + improvement plan. Output: memory/scribe/self-assessment-N.md. Verified: first covers all criteria; grades j",
-   "type": "build",
-   "complexity": 2,
-   "p_reached": 0.459,
-   "eta": "2026-11-26 19:44",
-   "hours": 5.04,
-   "order": 7,
-   "rank": 8,
-   "title": "Fleet Self-Assessment Report",
-   "steps": [
-    "scaffold the module file",
-    "implement core logic",
-    "self-test until AC green",
-    "evidence leaf + index line (AC: first covers all criteria; grades j)"
-   ],
-   "outcome": "reached ~2026-11-26 19:44 (P=46%)",
-   "consequences": [
-    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope criteria,output,scribe",
-    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope every,output",
-    "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
-    "lane end scribe: 11-26 22:24 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "scribe",
-   "goal": "**Convergence Milestone Tracker** - track key milestones (first cycle <48h, 0-intervention week, steady-state entry). Log with date + context. Output: memory/scribe/milestones.jsonl. Verified: >=3 defined; tracking works",
-   "type": "measurement",
-   "complexity": 1,
-   "p_reached": 0.757,
-   "eta": "2026-11-26 22:24",
-   "hours": 2.67,
-   "order": 8,
-   "rank": 9,
-   "title": "Convergence Milestone Tracker",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-26 22:24 (P=76%)",
-   "consequences": [
-    "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope convergence,cycle,intervention",
-    "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe,state",
-    "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope convergence,jsonl,output",
-    "lane end scribe: 11-26 22:24 (slowest lane)"
-   ]
-  }
- ],
+ "throughput_goals_per_hour": 17.69,
+ "next10": [],
  "horizons": [
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-25 11:38",
+   "end": "2026-11-25 12:49",
    "completes": 0,
-   "fleet_pct": 88.8,
+   "fleet_pct": 100.0,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-25 12:08",
+   "end": "2026-11-25 13:19",
    "completes": 0,
-   "fleet_pct": 88.8,
+   "fleet_pct": 100.0,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-26 11:08",
-   "completes": 5,
-   "fleet_pct": 95.0,
-   "top": [
-    "#1 scribe: Cycle Closeout v3 (2026-11-25 16:10)",
-    "#2 scribe: Steady-State Declaration Doc (2026-11-25 19:40)",
-    "#3 scribe: Weekly Convergence Digest (2026-11-26 00:42)",
-    "#4 scribe: Intervention Reduction Story (2026-11-26 04:12)",
-    "#5 scribe: Cross-Agent Coordination Summary (2026-11-26 07:42)"
-   ]
+   "end": "2026-11-26 12:19",
+   "completes": 0,
+   "fleet_pct": 100.0,
+   "top": []
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-02 11:08",
-   "completes": 9,
+   "end": "2026-12-02 12:19",
+   "completes": 0,
    "fleet_pct": 100.0,
-   "top": [
-    "#1 scribe: Cycle Closeout v3 (2026-11-25 16:10)",
-    "#2 scribe: Steady-State Declaration Doc (2026-11-25 19:40)",
-    "#3 scribe: Weekly Convergence Digest (2026-11-26 00:42)",
-    "#4 scribe: Intervention Reduction Story (2026-11-26 04:12)",
-    "#5 scribe: Cross-Agent Coordination Summary (2026-11-26 07:42)"
-   ],
+   "top": [],
    "next_cycle_candidates": [
     {
      "agent": "archivist",
@@ -331,16 +94,10 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-25 11:08",
-   "completes": 9,
+   "end": "2026-12-25 12:19",
+   "completes": 0,
    "fleet_pct": 100.0,
-   "top": [
-    "#1 scribe: Cycle Closeout v3 (2026-11-25 16:10)",
-    "#2 scribe: Steady-State Declaration Doc (2026-11-25 19:40)",
-    "#3 scribe: Weekly Convergence Digest (2026-11-26 00:42)",
-    "#4 scribe: Intervention Reduction Story (2026-11-26 04:12)",
-    "#5 scribe: Cross-Agent Coordination Summary (2026-11-26 07:42)"
-   ],
+   "top": [],
    "next_cycle_candidates": [
     {
      "agent": "archivist",
@@ -397,533 +154,456 @@
   "archivist": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 11:08"
+   "end": "2026-11-25 12:19"
   },
   "builder": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 11:08"
+   "end": "2026-11-25 12:19"
   },
   "designer": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 11:08"
+   "end": "2026-11-25 12:19"
   },
   "mechanic": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 11:08"
+   "end": "2026-11-25 12:19"
   },
   "orchestrator": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 11:08"
+   "end": "2026-11-25 12:19"
   },
   "researcher": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 11:08"
+   "end": "2026-11-25 12:19"
   },
   "scribe": {
-   "done": 1,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-26 22:24"
+   "end": "2026-11-25 12:19"
   },
   "verifier": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 11:08"
+   "end": "2026-11-25 12:19"
   }
  },
- "level_up_eta": "2026-11-26 22:24",
+ "level_up_eta": "2026-11-25 12:19",
  "plan": {
-  "cycle_state": "in flight: 9 goal(s) open",
-  "level_up_eta": "2026-11-26 22:24",
+  "cycle_state": "all-clear: level-up gated, next cycle projected from ranked backlog",
+  "level_up_eta": "2026-11-25 12:19",
   "planned": [
    {
-    "agent": "scribe",
-    "goal": "**Cycle Closeout v3** - extend closeout with convergence section: autonomy delta, intervention count vs target, steady-state progress. Compare to prev cycle; flag regressions. Verified: cycle-16 closeout has section; val",
-    "type": "build",
-    "complexity": 2,
-    "p_reached": 0.459,
-    "eta": "2026-11-25 16:10",
-    "hours": 5.04,
-    "order": 0,
     "rank": 1,
-    "title": "Cycle Closeout v3",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: cycle-16 closeout has section; val)"
-    ],
-    "outcome": "reached ~2026-11-25 16:10 (P~46%)",
-    "consequences": [
-     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope state,steady",
-     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope count,intervention",
-     "scribe: **Convergence Milestone Tracker** - track key milestones (fi (2026-11-26 22:24) - shared scope convergence,cycle,intervention",
-     "lane end scribe: 11-26 22:24 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 16:10",
-    "deliverable": {
-     "name": "Cycle Closeout v3",
-     "stream": "General"
-    },
-    "then": "#2 [scribe] Steady-State Declaration Doc",
-    "then_eta": "2026-11-25 19:40"
-   },
-   {
-    "agent": "scribe",
-    "goal": "**Steady-State Declaration Doc** - formal declaration when steady-state reached: date, criteria met (with evidence), behavior change, exit conditions. Output: memory/scribe/steady-state-declaration.md. Verified: all 4 se",
-    "type": "build",
-    "complexity": 1,
-    "p_reached": 0.714,
-    "eta": "2026-11-25 19:40",
-    "hours": 3.5,
-    "order": 1,
-    "rank": 2,
-    "title": "Steady-State Declaration Doc",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: all 4 se)"
-    ],
-    "outcome": "reached ~2026-11-25 19:40 (P~71%)",
-    "consequences": [
-     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope state,steady",
-     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
-     "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,scribe",
-     "lane end scribe: 11-26 22:24 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 19:40",
-    "deliverable": {
-     "name": "Steady-State Declaration Doc",
-     "stream": "General"
-    },
-    "then": "#3 [scribe] Weekly Convergence Digest",
-    "then_eta": "2026-11-26 00:42"
-   },
-   {
-    "agent": "scribe",
-    "goal": "**Weekly Convergence Digest** - every 7 days: one-paragraph summary + metrics table + one watch item (trending wrong). Output: memory/ops/convergence-digests.jsonl. Verified: 3 test digests; all metrics present; watch it",
-    "type": "build",
-    "complexity": 2,
-    "p_reached": 0.459,
-    "eta": "2026-11-26 00:42",
-    "hours": 5.04,
-    "order": 2,
-    "rank": 3,
-    "title": "Weekly Convergence Digest",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: 3 test digests; all metrics present; watch it)"
-    ],
-    "outcome": "reached ~2026-11-26 00:42 (P~46%)",
-    "consequences": [
-     "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,summary",
-     "scribe: **Convergence Glossary** - plain-language glossary of fleet  (2026-11-26 11:12) - shared scope convergence,output",
-     "scribe: **Cycle Topic Rationale Writer** - 3-sentence rationale per  (2026-11-26 14:42) - shared scope jsonl,output",
-     "lane end scribe: 11-26 22:24 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 00:42",
-    "deliverable": {
-     "name": "Weekly Convergence Digest",
-     "stream": "General"
-    },
-    "then": "#4 [scribe] Intervention Reduction Story",
-    "then_eta": "2026-11-26 04:12"
-   },
-   {
-    "agent": "scribe",
-    "goal": "**Intervention Reduction Story** - narrate reduction in human interventions over time. Milestone narrative when count drops below threshold: what changed, which automation enabled it, before/after. Output: memory/scribe/",
-    "type": "build",
-    "complexity": 1,
-    "p_reached": 0.714,
-    "eta": "2026-11-26 04:12",
-    "hours": 3.5,
-    "order": 3,
-    "rank": 4,
-    "title": "Intervention Reduction Story",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "write evidence leaf + index line"
-    ],
-    "outcome": "reached ~2026-11-26 04:12 (P~71%)",
-    "consequences": [
-     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope count,intervention",
-     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
-     "scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,scribe",
-     "lane end scribe: 11-26 22:24 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 04:12",
-    "deliverable": {
-     "name": "Intervention Reduction Story",
-     "stream": "General"
-    },
-    "then": "#5 [scribe] Cross-Agent Coordination Summary",
-    "then_eta": "2026-11-26 07:42"
-   },
-   {
-    "agent": "scribe",
-    "goal": "**Cross-Agent Coordination Summary** - per cycle: summarize handoffs, blocks, resolutions. Identify friction points. Output: memory/scribe/coordination-summary-N.md. Verified: cycle-16 has >=5 events; 2 friction points i",
-    "type": "build",
-    "complexity": 1,
-    "p_reached": 0.714,
-    "eta": "2026-11-26 07:42",
-    "hours": 3.5,
-    "order": 4,
-    "rank": 5,
-    "title": "Cross-Agent Coordination Summary",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: cycle-16 has >=5 events; 2 friction points i)"
-    ],
-    "outcome": "reached ~2026-11-26 07:42 (P~71%)",
-    "consequences": [
-     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
-     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope output,summary",
-     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
-     "lane end scribe: 11-26 22:24 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 07:42",
-    "deliverable": {
-     "name": "Cross-Agent Coordination Summary",
-     "stream": "General"
-    },
-    "then": "#6 [scribe] Convergence Glossary",
-    "then_eta": "2026-11-26 11:12"
-   },
-   {
-    "agent": "scribe",
-    "goal": "**Convergence Glossary** - plain-language glossary of fleet convergence terms for human readers. Update when new terms introduced. Output: memory/scribe/convergence-glossary.md. Verified: >=15 terms; each has definition ",
-    "type": "build",
-    "complexity": 1,
-    "p_reached": 0.714,
-    "eta": "2026-11-26 11:12",
-    "hours": 3.5,
-    "order": 5,
-    "rank": 6,
-    "title": "Convergence Glossary",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: >=15 terms; each has definition)"
-    ],
-    "outcome": "reached ~2026-11-26 11:12 (P~71%)",
-    "consequences": [
-     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
-     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope convergence,output",
-     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope human,output,scribe",
-     "lane end scribe: 11-26 22:24 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 11:12",
-    "deliverable": {
-     "name": "Convergence Glossary",
-     "stream": "General"
-    },
-    "then": "#7 [scribe] Cycle Topic Rationale Writer",
-    "then_eta": "2026-11-26 14:42"
-   },
-   {
-    "agent": "scribe",
-    "goal": "**Cycle Topic Rationale Writer** - 3-sentence rationale per cycle topic: why now, what it builds on, what it enables. Output: memory/scribe/topic-rationales.jsonl. Verified: cycles 14-16 have rationales; each cites prev ",
-    "type": "build",
-    "complexity": 1,
-    "p_reached": 0.714,
-    "eta": "2026-11-26 14:42",
-    "hours": 3.5,
-    "order": 6,
-    "rank": 7,
-    "title": "Cycle Topic Rationale Writer",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: cycles 14-16 have rationales; each cites prev)"
-    ],
-    "outcome": "reached ~2026-11-26 14:42 (P~71%)",
-    "consequences": [
-     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe",
-     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope jsonl,output",
-     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
-     "lane end scribe: 11-26 22:24 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 14:42",
-    "deliverable": {
-     "name": "Cycle Topic Rationale Writer",
-     "stream": "General"
-    },
-    "then": "#8 [scribe] Fleet Self-Assessment Report",
-    "then_eta": "2026-11-26 19:44"
-   },
-   {
-    "agent": "scribe",
-    "goal": "**Fleet Self-Assessment Report** - every 3 cycles: comprehensive assessment with grade per criterion + overall + improvement plan. Output: memory/scribe/self-assessment-N.md. Verified: first covers all criteria; grades j",
-    "type": "build",
-    "complexity": 2,
-    "p_reached": 0.459,
-    "eta": "2026-11-26 19:44",
-    "hours": 5.04,
-    "order": 7,
-    "rank": 8,
-    "title": "Fleet Self-Assessment Report",
-    "steps": [
-     "scaffold the module file",
-     "implement core logic",
-     "self-test until AC green",
-     "evidence leaf + index line (AC: first covers all criteria; grades j)"
-    ],
-    "outcome": "reached ~2026-11-26 19:44 (P~46%)",
-    "consequences": [
-     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope criteria,output,scribe",
-     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope every,output",
-     "scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe",
-     "lane end scribe: 11-26 22:24 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 19:44",
-    "deliverable": {
-     "name": "Fleet Self-Assessment Report",
-     "stream": "General"
-    },
-    "then": "#9 [scribe] Convergence Milestone Tracker",
-    "then_eta": "2026-11-26 22:24"
-   },
-   {
-    "agent": "scribe",
-    "goal": "**Convergence Milestone Tracker** - track key milestones (first cycle <48h, 0-intervention week, steady-state entry). Log with date + context. Output: memory/scribe/milestones.jsonl. Verified: >=3 defined; tracking works",
+    "agent": "archivist",
+    "goal": "Knowledge decay model productionization - run decay_score.py weekly (scheduled task); auto-archive leaves scoring <0.2 (move to memory/archive/ with a pointer left in place); alert on any leaf that wa",
+    "title": "Knowledge decay model productionization - run decay_score.py weekly (scheduled t",
     "type": "measurement",
     "complexity": 1,
-    "p_reached": 0.757,
-    "eta": "2026-11-26 22:24",
-    "hours": 2.67,
-    "order": 8,
-    "rank": 9,
-    "title": "Convergence Milestone Tracker",
+    "p_reached": 0.85,
+    "eta": "2026-11-25 15:19",
+    "hours": 3.0,
+    "ref": "ARCHIVIST#6",
+    "source": "scheduled-background.md",
+    "projected": true,
+    "why": "planned as measurement work (cx1); from ranked backlog (ARCHIVIST#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 15:19",
     "steps": [
-     "instrument or extend the scorer",
+     "instrument or extend scorer",
      "two-run delta check",
      "publish snapshot + report leaf"
     ],
-    "outcome": "reached ~2026-11-26 22:24 (P~76%)",
-    "consequences": [
-     "scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope convergence,cycle,intervention",
-     "scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe,state",
-     "scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope convergence,jsonl,output",
-     "lane end scribe: 11-26 22:24 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 22:24",
+    "outcome": "reached ~2026-11-25 15:19 (P~85%)",
     "deliverable": {
-     "name": "Convergence Milestone Tracker",
+     "name": "Knowledge-decay scoring",
+     "stream": "Memory quality"
+    },
+    "then": "#2 [archivist] Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a ",
+    "then_eta": "2026-11-25 19:19"
+   },
+   {
+    "rank": 2,
+    "agent": "archivist",
+    "goal": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-readable weekly diff summary: \"X new leaves, Y modified, Z archived, W orphans created/resolved\"; post to group chat as a on",
+    "title": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-read",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.85,
+    "eta": "2026-11-25 19:19",
+    "hours": 4.0,
+    "ref": "ARCHIVIST#8",
+    "source": "scheduled-background.md",
+    "projected": true,
+    "why": "planned as build work (cx1); from ranked backlog (ARCHIVIST#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 19:19",
+    "steps": [
+     "scaffold module",
+     "implement core logic",
+     "self-test until AC green",
+     "evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-25 19:19 (P~85%)",
+    "deliverable": {
+     "name": "Archive + evidence leaves",
+     "stream": "Memory quality"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-25 12:19)",
+    "then_eta": "2026-11-25 12:19"
+   },
+   {
+    "rank": 3,
+    "agent": "mechanic",
+    "goal": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days of data; if the schtask was registered, collect remaining days + run --week-complete; if not yet registered, register i",
+    "title": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days",
+    "type": "ops",
+    "complexity": 1,
+    "p_reached": 0.85,
+    "eta": "2026-11-25 14:19",
+    "hours": 2.0,
+    "ref": "MECHANIC#1",
+    "source": "scheduled-background.md",
+    "projected": true,
+    "why": "planned as ops work (cx1); from ranked backlog (MECHANIC#1) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 14:19",
+    "steps": [
+     "pre-flight checks (targets exist, idempotent)",
+     "execute from non-sandbox session",
+     "verify registration/health + evidence leaf"
+    ],
+    "outcome": "reached ~2026-11-25 14:19 (P~85%)",
+    "deliverable": {
+     "name": "Load-test evidence",
+     "stream": "Reliability"
+    },
+    "then": "#4 [mechanic] Self-healing mirror productionization - the cycle-2 auto-repair design",
+    "then_eta": "2026-11-25 18:19"
+   },
+   {
+    "rank": 4,
+    "agent": "mechanic",
+    "goal": "Self-healing mirror productionization - the cycle-2 auto-repair design should now be a running scheduled task (every 15 min): detect missed syncs, re-sync automatically, log to memory/mechanic/mirror-",
+    "title": "Self-healing mirror productionization - the cycle-2 auto-repair design should no",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.85,
+    "eta": "2026-11-25 18:19",
+    "hours": 4.0,
+    "ref": "MECHANIC#2",
+    "source": "scheduled-background.md",
+    "projected": true,
+    "why": "planned as build work (cx1); from ranked backlog (MECHANIC#2) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 18:19",
+    "steps": [
+     "scaffold module",
+     "implement core logic",
+     "self-test until AC green",
+     "evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-25 18:19 (P~85%)",
+    "deliverable": {
+     "name": "Self-healing mirror productionization - the cycle-2 auto-rep",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-26 22:24)",
-    "then_eta": "2026-11-26 22:24"
+    "then": "#5 [mechanic] Scheduled-task dependency graph productionization - the cycle-2 blast-",
+    "then_eta": "2026-11-25 22:19"
+   },
+   {
+    "rank": 5,
+    "agent": "mechanic",
+    "goal": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map should now be auto-generated from schtasks /query output (run weekly); diff against previous week; alert on new depende",
+    "title": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map",
+    "type": "build",
+    "complexity": 1,
+    "p_reached": 0.85,
+    "eta": "2026-11-25 22:19",
+    "hours": 4.0,
+    "ref": "MECHANIC#6",
+    "source": "scheduled-background.md",
+    "projected": true,
+    "why": "planned as build work (cx1); from ranked backlog (MECHANIC#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 22:19",
+    "steps": [
+     "scaffold module",
+     "implement core logic",
+     "self-test until AC green",
+     "evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-25 22:19 (P~85%)",
+    "deliverable": {
+     "name": "Scheduled-task graph",
+     "stream": "Ops automation"
+    },
+    "then": "#6 [mechanic] Chaos drill productionization (monthly) - the cycle-2 weekly chaos dri",
+    "then_eta": "2026-11-26 00:19"
+   },
+   {
+    "rank": 6,
+    "agent": "mechanic",
+    "goal": "Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should now be a monthly scheduled task: kill portal on a rotating host, verify recovery <60s, log to evidence; rotate White->Pa",
+    "title": "Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should ",
+    "type": "verify",
+    "complexity": 1,
+    "p_reached": 0.85,
+    "eta": "2026-11-26 00:19",
+    "hours": 2.0,
+    "ref": "MECHANIC#8",
+    "source": "scheduled-background.md",
+    "projected": true,
+    "why": "planned as verify work (cx1); from ranked backlog (MECHANIC#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-26 00:19",
+    "steps": [
+     "build test battery / audit script",
+     "run against live sources",
+     "record verdict + evidence leaf"
+    ],
+    "outcome": "reached ~2026-11-26 00:19 (P~85%)",
+    "deliverable": {
+     "name": "Chaos-drill runbook",
+     "stream": "Reliability"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-25 12:19)",
+    "then_eta": "2026-11-25 12:19"
+   },
+   {
+    "rank": 7,
+    "agent": "scribe",
+    "goal": "Scribe self-audit: compression fidelity score - for each synthesis produced in cycle 3, score \"how much information was lost vs the source thread\" (manual spot-check of 5 syntheses per week); target >",
+    "title": "Scribe self-audit: compression fidelity score - for each synthesis produced in c",
+    "type": "verify",
+    "complexity": 1,
+    "p_reached": 0.85,
+    "eta": "2026-11-25 14:19",
+    "hours": 2.0,
+    "ref": "SCRIBE#10",
+    "source": "scheduled-background.md",
+    "projected": true,
+    "why": "planned as verify work (cx1); from ranked backlog (SCRIBE#10) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane scribe has 10/10 done; this goal ends its lane at 2026-11-25 14:19",
+    "steps": [
+     "build test battery / audit script",
+     "run against live sources",
+     "record verdict + evidence leaf"
+    ],
+    "outcome": "reached ~2026-11-25 14:19 (P~85%)",
+    "deliverable": {
+     "name": "Synthesis self-audit",
+     "stream": "Memory quality"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-25 12:19)",
+    "then_eta": "2026-11-25 12:19"
+   },
+   {
+    "rank": 8,
+    "agent": "verifier",
+    "goal": "Mirror-sync drift detector productionization - the cycle-2 SMB drift detector should now run as a scheduled task (every 30 min); log all drift events; auto-alert when a file diverges >5 min after a kn",
+    "title": "Mirror-sync drift detector productionization - the cycle-2 SMB drift detector sh",
+    "type": "research",
+    "complexity": 1,
+    "p_reached": 0.85,
+    "eta": "2026-11-25 17:19",
+    "hours": 5.0,
+    "ref": "VERIFIER#8",
+    "source": "scheduled-background.md",
+    "projected": true,
+    "why": "planned as research work (cx1); from ranked backlog (VERIFIER#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane verifier has 10/10 done; this goal ends its lane at 2026-11-25 17:19",
+    "steps": [
+     "gather sources from memory/ pointer map",
+     "compute/detect per protocol",
+     "findings leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-25 17:19 (P~85%)",
+    "deliverable": {
+     "name": "Mirror self-healing",
+     "stream": "Reliability"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-25 12:19)",
+    "then_eta": "2026-11-25 12:19"
    }
   ],
   "horizons": [
    {
     "label": "30m",
     "hours": 0.5,
-    "end": "2026-11-25 11:38",
+    "end": "2026-11-25 12:49",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 88%"
+    "why_line": "no goal work planned yet - the fleet is all-clear; the only action in this window is the level-up gate + cycle proposal, so nothing completes by 2026-11-25 12:49"
    },
    {
     "label": "1h",
     "hours": 1.0,
-    "end": "2026-11-25 12:08",
+    "end": "2026-11-25 13:19",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 88%"
+    "why_line": "no goal work planned yet - the fleet is all-clear; the only action in this window is the level-up gate + cycle proposal, so nothing completes by 2026-11-25 13:19"
    },
    {
     "label": "1d",
     "hours": 24.0,
-    "end": "2026-11-26 11:08",
-    "completes": 5,
+    "end": "2026-11-26 12:19",
+    "completes": 8,
     "top": [
      {
       "rank": 1,
-      "agent": "scribe",
-      "title": "Cycle Closeout v3",
-      "eta": "2026-11-25 16:10",
-      "type": "build",
-      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 16:10"
+      "agent": "archivist",
+      "title": "Knowledge decay model productionization - run decay_score.py weekly (scheduled t",
+      "eta": "2026-11-25 15:19",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); from ranked backlog (ARCHIVIST#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 15:19"
      },
      {
       "rank": 2,
-      "agent": "scribe",
-      "title": "Steady-State Declaration Doc",
-      "eta": "2026-11-25 19:40",
+      "agent": "archivist",
+      "title": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-read",
+      "eta": "2026-11-25 19:19",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 19:40"
+      "why": "planned as build work (cx1); from ranked backlog (ARCHIVIST#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 19:19"
      },
      {
       "rank": 3,
-      "agent": "scribe",
-      "title": "Weekly Convergence Digest",
-      "eta": "2026-11-26 00:42",
-      "type": "build",
-      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 00:42"
+      "agent": "mechanic",
+      "title": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days",
+      "eta": "2026-11-25 14:19",
+      "type": "ops",
+      "why": "planned as ops work (cx1); from ranked backlog (MECHANIC#1) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 14:19"
      },
      {
       "rank": 4,
-      "agent": "scribe",
-      "title": "Intervention Reduction Story",
-      "eta": "2026-11-26 04:12",
+      "agent": "mechanic",
+      "title": "Self-healing mirror productionization - the cycle-2 auto-repair design should no",
+      "eta": "2026-11-25 18:19",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 04:12"
+      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#2) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 18:19"
      },
      {
       "rank": 5,
-      "agent": "scribe",
-      "title": "Cross-Agent Coordination Summary",
-      "eta": "2026-11-26 07:42",
+      "agent": "mechanic",
+      "title": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map",
+      "eta": "2026-11-25 22:19",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 07:42"
+      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 22:19"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 95%"
+    "why_line": "cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-11-26 12:19 - expected outcome: fleet ~100% of the NEW cycle done"
    },
    {
     "label": "1w",
     "hours": 168.0,
-    "end": "2026-12-02 11:08",
-    "completes": 9,
+    "end": "2026-12-02 12:19",
+    "completes": 8,
     "top": [
      {
       "rank": 1,
-      "agent": "scribe",
-      "title": "Cycle Closeout v3",
-      "eta": "2026-11-25 16:10",
-      "type": "build",
-      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 16:10"
+      "agent": "archivist",
+      "title": "Knowledge decay model productionization - run decay_score.py weekly (scheduled t",
+      "eta": "2026-11-25 15:19",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); from ranked backlog (ARCHIVIST#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 15:19"
      },
      {
       "rank": 2,
-      "agent": "scribe",
-      "title": "Steady-State Declaration Doc",
-      "eta": "2026-11-25 19:40",
+      "agent": "archivist",
+      "title": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-read",
+      "eta": "2026-11-25 19:19",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 19:40"
+      "why": "planned as build work (cx1); from ranked backlog (ARCHIVIST#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 19:19"
      },
      {
       "rank": 3,
-      "agent": "scribe",
-      "title": "Weekly Convergence Digest",
-      "eta": "2026-11-26 00:42",
-      "type": "build",
-      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 00:42"
+      "agent": "mechanic",
+      "title": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days",
+      "eta": "2026-11-25 14:19",
+      "type": "ops",
+      "why": "planned as ops work (cx1); from ranked backlog (MECHANIC#1) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 14:19"
      },
      {
       "rank": 4,
-      "agent": "scribe",
-      "title": "Intervention Reduction Story",
-      "eta": "2026-11-26 04:12",
+      "agent": "mechanic",
+      "title": "Self-healing mirror productionization - the cycle-2 auto-repair design should no",
+      "eta": "2026-11-25 18:19",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 04:12"
+      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#2) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 18:19"
      },
      {
       "rank": 5,
-      "agent": "scribe",
-      "title": "Cross-Agent Coordination Summary",
-      "eta": "2026-11-26 07:42",
+      "agent": "mechanic",
+      "title": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map",
+      "eta": "2026-11-25 22:19",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 07:42"
+      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 22:19"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 100%"
+    "why_line": "cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-12-02 12:19 - expected outcome: fleet ~100% of the NEW cycle done"
    },
    {
     "label": "1m",
     "hours": 720.0,
-    "end": "2026-12-25 11:08",
-    "completes": 9,
+    "end": "2026-12-25 12:19",
+    "completes": 8,
     "top": [
      {
       "rank": 1,
-      "agent": "scribe",
-      "title": "Cycle Closeout v3",
-      "eta": "2026-11-25 16:10",
-      "type": "build",
-      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 16:10"
+      "agent": "archivist",
+      "title": "Knowledge decay model productionization - run decay_score.py weekly (scheduled t",
+      "eta": "2026-11-25 15:19",
+      "type": "measurement",
+      "why": "planned as measurement work (cx1); from ranked backlog (ARCHIVIST#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 15:19"
      },
      {
       "rank": 2,
-      "agent": "scribe",
-      "title": "Steady-State Declaration Doc",
-      "eta": "2026-11-25 19:40",
+      "agent": "archivist",
+      "title": "Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-read",
+      "eta": "2026-11-25 19:19",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 19:40"
+      "why": "planned as build work (cx1); from ranked backlog (ARCHIVIST#8) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane archivist has 10/10 done; this goal ends its lane at 2026-11-25 19:19"
      },
      {
       "rank": 3,
-      "agent": "scribe",
-      "title": "Weekly Convergence Digest",
-      "eta": "2026-11-26 00:42",
-      "type": "build",
-      "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 00:42"
+      "agent": "mechanic",
+      "title": "Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days",
+      "eta": "2026-11-25 14:19",
+      "type": "ops",
+      "why": "planned as ops work (cx1); from ranked backlog (MECHANIC#1) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 14:19"
      },
      {
       "rank": 4,
-      "agent": "scribe",
-      "title": "Intervention Reduction Story",
-      "eta": "2026-11-26 04:12",
+      "agent": "mechanic",
+      "title": "Self-healing mirror productionization - the cycle-2 auto-repair design should no",
+      "eta": "2026-11-25 18:19",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 04:12"
+      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#2) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 18:19"
      },
      {
       "rank": 5,
-      "agent": "scribe",
-      "title": "Cross-Agent Coordination Summary",
-      "eta": "2026-11-26 07:42",
+      "agent": "mechanic",
+      "title": "Scheduled-task dependency graph productionization - the cycle-2 blast-radius map",
+      "eta": "2026-11-25 22:19",
       "type": "build",
-      "why": "planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~71%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 07:42"
+      "why": "planned as build work (cx1); from ranked backlog (MECHANIC#6) - already triaged in a prior cycle, so no new research cost; moderate confidence (P(reached) ~85%): slip model flags some risk, ETA already inflated; lane mechanic has 10/10 done; this goal ends its lane at 2026-11-25 22:19"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 100%"
+    "why_line": "cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-12-25 12:19 - expected outcome: fleet ~100% of the NEW cycle done"
    }
   ],
   "tree": {
-   "state": "Fleet 71/80 (89%)",
+   "state": "Fleet 80/80 (100%)",
    "gate": "all goals 100%?",
-   "branch_taken": "NO - queue in flight",
+   "branch_taken": "YES - all-clear",
    "yes": {
     "action": "level-up gate fires -> Lv increments, report written",
     "then": "Orchestrator proposes cycle N+1 from ranked backlog (8 candidates)",
     "first_planned": [
-     "#1 [scribe] Cycle Closeout v3 ~2026-11-25 16:10",
-     "#2 [scribe] Steady-State Declaration Doc ~2026-11-25 19:40",
-     "#3 [scribe] Weekly Convergence Digest ~2026-11-26 00:42",
-     "#4 [scribe] Intervention Reduction Story ~2026-11-26 04:12"
+     "#1 [archivist] Knowledge decay model productionization - run decay_score.py ~2026-11-25 15:19",
+     "#2 [archivist] Snapshot diff weekly report - extend cycle-2 snapshot.py to  ~2026-11-25 19:19",
+     "#3 [mechanic] Portal load test completion (cycle-2 #4 carryover) - the loa ~2026-11-25 14:19",
+     "#4 [mechanic] Self-healing mirror productionization - the cycle-2 auto-rep ~2026-11-25 18:19"
     ]
    },
    "no": {
     "action": "keep current queue; next completion gates progress",
-    "then": "when the last lane ends (2026-11-26 22:24) the gate re-checks",
+    "then": "when the last lane ends (2026-11-25 12:19) the gate re-checks",
     "first_planned": [
-     "#1 [scribe] Cycle Closeout v3 ~2026-11-25 16:10",
-     "#2 [scribe] Steady-State Declaration Doc ~2026-11-25 19:40",
-     "#3 [scribe] Weekly Convergence Digest ~2026-11-26 00:42",
-     "#4 [scribe] Intervention Reduction Story ~2026-11-26 04:12"
+     "#1 [archivist] Knowledge decay model productionization - run decay_score.py ~2026-11-25 15:19",
+     "#2 [archivist] Snapshot diff weekly report - extend cycle-2 snapshot.py to  ~2026-11-25 19:19",
+     "#3 [mechanic] Portal load test completion (cycle-2 #4 carryover) - the loa ~2026-11-25 14:19",
+     "#4 [mechanic] Self-healing mirror productionization - the cycle-2 auto-rep ~2026-11-25 18:19"
     ]
    }
   },
@@ -1400,8 +1080,8 @@
   ],
   "plan_meta": {
    "sig": "05dcc83e6301",
-   "computed_at": "2026-11-25 11:08:07",
-   "basis": "live goal ledger + next-10 ETAs + fleet throughput ~20.04 goals/h; recomputed every refresh",
+   "computed_at": "2026-11-25 12:19:38",
+   "basis": "live goal ledger + next-10 ETAs + fleet throughput ~17.69 goals/h; recomputed every refresh",
    "delta": [],
    "history": [
     {

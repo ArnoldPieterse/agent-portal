@@ -1,49 +1,22 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-25 11:08:07 | Fleet: 71/80 (89%) | throughput ~20.0 goals/h
+Generated: 2026-11-25 12:19:38 | Fleet: 80/80 (100%) | throughput ~17.7 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [scribe] Cycle Closeout v3** - ETA 2026-11-25 16:10, P(reached) 46% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: cycle-16 closeout has section; val)
-   consequences: scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope state,steady | scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope count,intervention | scribe: **Convergence Milestone Tracker** - track key milestones (fi (2026-11-26 22:24) - shared scope convergence,cycle,intervention
-**#2 [scribe] Steady-State Declaration Doc** - ETA 2026-11-25 19:40, P(reached) 71% (build, cx1)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: all 4 se)
-   consequences: scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope state,steady | scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe | scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,scribe
-**#3 [scribe] Weekly Convergence Digest** - ETA 2026-11-26 00:42, P(reached) 46% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: 3 test digests; all metrics present; watch it)
-   consequences: scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,summary | scribe: **Convergence Glossary** - plain-language glossary of fleet  (2026-11-26 11:12) - shared scope convergence,output | scribe: **Cycle Topic Rationale Writer** - 3-sentence rationale per  (2026-11-26 14:42) - shared scope jsonl,output
-**#4 [scribe] Intervention Reduction Story** - ETA 2026-11-26 04:12, P(reached) 71% (build, cx1)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope count,intervention | scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe | scribe: **Cross-Agent Coordination Summary** - per cycle: summarize  (2026-11-26 07:42) - shared scope output,scribe
-**#5 [scribe] Cross-Agent Coordination Summary** - ETA 2026-11-26 07:42, P(reached) 71% (build, cx1)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: cycle-16 has >=5 events; 2 friction points i)
-   consequences: scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe | scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope output,summary | scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe
-**#6 [scribe] Convergence Glossary** - ETA 2026-11-26 11:12, P(reached) 71% (build, cx1)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: >=15 terms; each has definition)
-   consequences: scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe | scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope convergence,output | scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope human,output,scribe
-**#7 [scribe] Cycle Topic Rationale Writer** - ETA 2026-11-26 14:42, P(reached) 71% (build, cx1)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: cycles 14-16 have rationales; each cites prev)
-   consequences: scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe | scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope jsonl,output | scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe
-**#8 [scribe] Fleet Self-Assessment Report** - ETA 2026-11-26 19:44, P(reached) 46% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> evidence leaf + index line (AC: first covers all criteria; grades j)
-   consequences: scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope criteria,output,scribe | scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope every,output | scribe: **Intervention Reduction Story** - narrate reduction in huma (2026-11-26 04:12) - shared scope output,scribe
-**#9 [scribe] Convergence Milestone Tracker** - ETA 2026-11-26 22:24, P(reached) 76% (measurement, cx1)
-   steps: instrument or extend the scorer -> two-run delta check -> publish snapshot + report leaf
-   consequences: scribe: **Cycle Closeout v3** - extend closeout with convergence sec (2026-11-25 16:10) - shared scope convergence,cycle,intervention | scribe: **Steady-State Declaration Doc** - formal declaration when s (2026-11-25 19:40) - shared scope output,scribe,state | scribe: **Weekly Convergence Digest** - every 7 days: one-paragraph  (2026-11-26 00:42) - shared scope convergence,jsonl,output
 
 ## Planned work (decision tree)
 
-- state: Fleet 71/80 (89%) | gate: all goals 100%? -> **NO - queue in flight**
-- cycle: in flight: 9 goal(s) open
-- #1 [scribe] Cycle Closeout v3 ~2026-11-25 16:10 (P~46%) - planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Cycle Closeout v3
-- #2 [scribe] Steady-State Declaration Doc ~2026-11-25 19:40 (P~71%) - planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Steady-State Declaration Doc
-- #3 [scribe] Weekly Convergence Digest ~2026-11-26 00:42 (P~46%) - planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Weekly Convergence Digest
-- #4 [scribe] Intervention Reduction Story ~2026-11-26 04:12 (P~71%) - planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Intervention Reduction Story
-- #5 [scribe] Cross-Agent Coordination Summary ~2026-11-26 07:42 (P~71%) - planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Cross-Agent Coordination Summary
-- #6 [scribe] Convergence Glossary ~2026-11-26 11:12 (P~71%) - planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Convergence Glossary
-- #7 [scribe] Cycle Topic Rationale Writer ~2026-11-26 14:42 (P~71%) - planned as build work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached)  | delivers: Cycle Topic Rationale Writer
-- #8 [scribe] Fleet Self-Assessment Report ~2026-11-26 19:44 (P~46%) - planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46 | delivers: Fleet Self-Assessment Report
+- state: Fleet 80/80 (100%) | gate: all goals 100%? -> **YES - all-clear**
+- cycle: all-clear: level-up gated, next cycle projected from ranked backlog
+- #1 [archivist] Knowledge decay model productionization - run decay_score.py weekly (scheduled t ~2026-11-25 15:19 (P~85%) - planned as measurement work (cx1); from ranked backlog (ARCHIVIST#6) - already triaged in a prior cycle, so no new research cost; moderate c | delivers: Knowledge-decay scoring
+- #2 [archivist] Snapshot diff weekly report - extend cycle-2 snapshot.py to produce a human-read ~2026-11-25 19:19 (P~85%) - planned as build work (cx1); from ranked backlog (ARCHIVIST#8) - already triaged in a prior cycle, so no new research cost; moderate confide | delivers: Archive + evidence leaves
+- #3 [mechanic] Portal load test completion (cycle-2 #4 carryover) - the load probe needs 7 days ~2026-11-25 14:19 (P~85%) - planned as ops work (cx1); from ranked backlog (MECHANIC#1) - already triaged in a prior cycle, so no new research cost; moderate confidence | delivers: Load-test evidence
+- #4 [mechanic] Self-healing mirror productionization - the cycle-2 auto-repair design should no ~2026-11-25 18:19 (P~85%) - planned as build work (cx1); from ranked backlog (MECHANIC#2) - already triaged in a prior cycle, so no new research cost; moderate confiden | delivers: Self-healing mirror productionization - the cycle-2 auto-rep
+- #5 [mechanic] Scheduled-task dependency graph productionization - the cycle-2 blast-radius map ~2026-11-25 22:19 (P~85%) - planned as build work (cx1); from ranked backlog (MECHANIC#6) - already triaged in a prior cycle, so no new research cost; moderate confiden | delivers: Scheduled-task graph
+- #6 [mechanic] Chaos drill productionization (monthly) - the cycle-2 weekly chaos drill should  ~2026-11-26 00:19 (P~85%) - planned as verify work (cx1); from ranked backlog (MECHANIC#8) - already triaged in a prior cycle, so no new research cost; moderate confide | delivers: Chaos-drill runbook
+- #7 [scribe] Scribe self-audit: compression fidelity score - for each synthesis produced in c ~2026-11-25 14:19 (P~85%) - planned as verify work (cx1); from ranked backlog (SCRIBE#10) - already triaged in a prior cycle, so no new research cost; moderate confiden | delivers: Synthesis self-audit
+- #8 [verifier] Mirror-sync drift detector productionization - the cycle-2 SMB drift detector sh ~2026-11-25 17:19 (P~85%) - planned as research work (cx1); from ranked backlog (VERIFIER#8) - already triaged in a prior cycle, so no new research cost; moderate confi | delivers: Mirror self-healing
 
 ## Functional capability chain (PM view)
 
@@ -144,39 +117,24 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): a4f106fb3413 @ 11-24 11:55:14, 05dcc83e6301 @ 11-24 13:46:57, a4f106fb3413 @ 11-24 23:09:16, 05dcc83e6301 @ 11-25 02:40:36
 
-## 30m ahead (by 2026-11-25 11:38)
-- completes: **0** goal(s) -> fleet ~89%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 88%
+## 30m ahead (by 2026-11-25 12:49)
+- completes: **0** goal(s) -> fleet ~100%
+- why: no goal work planned yet - the fleet is all-clear; the only action in this window is the level-up gate + cycle proposal, so nothing completes by 2026-11-25 12:49
 
-## 1h ahead (by 2026-11-25 12:08)
-- completes: **0** goal(s) -> fleet ~89%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 88%
+## 1h ahead (by 2026-11-25 13:19)
+- completes: **0** goal(s) -> fleet ~100%
+- why: no goal work planned yet - the fleet is all-clear; the only action in this window is the level-up gate + cycle proposal, so nothing completes by 2026-11-25 13:19
 
-## 1d ahead (by 2026-11-26 11:08)
-- completes: **5** goal(s) -> fleet ~95%
-  - #1 scribe: Cycle Closeout v3 (2026-11-25 16:10)
-  - #2 scribe: Steady-State Declaration Doc (2026-11-25 19:40)
-  - #3 scribe: Weekly Convergence Digest (2026-11-26 00:42)
-  - #4 scribe: Intervention Reduction Story (2026-11-26 04:12)
-  - #5 scribe: Cross-Agent Coordination Summary (2026-11-26 07:42)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 95%
+## 1d ahead (by 2026-11-26 12:19)
+- completes: **0** goal(s) -> fleet ~100%
+- why: cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-11-26 12:19 - expected outcome: fleet ~100% of the NEW cycle done
 
-## 1w ahead (by 2026-12-02 11:08)
-- completes: **9** goal(s) -> fleet ~100%
-  - #1 scribe: Cycle Closeout v3 (2026-11-25 16:10)
-  - #2 scribe: Steady-State Declaration Doc (2026-11-25 19:40)
-  - #3 scribe: Weekly Convergence Digest (2026-11-26 00:42)
-  - #4 scribe: Intervention Reduction Story (2026-11-26 04:12)
-  - #5 scribe: Cross-Agent Coordination Summary (2026-11-26 07:42)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 100%
+## 1w ahead (by 2026-12-02 12:19)
+- completes: **0** goal(s) -> fleet ~100%
+- why: cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-12-02 12:19 - expected outcome: fleet ~100% of the NEW cycle done
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-25 11:08)
-- completes: **9** goal(s) -> fleet ~100%
-  - #1 scribe: Cycle Closeout v3 (2026-11-25 16:10)
-  - #2 scribe: Steady-State Declaration Doc (2026-11-25 19:40)
-  - #3 scribe: Weekly Convergence Digest (2026-11-26 00:42)
-  - #4 scribe: Intervention Reduction Story (2026-11-26 04:12)
-  - #5 scribe: Cross-Agent Coordination Summary (2026-11-26 07:42)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 71/80 -> 100%
+## 1m ahead (by 2026-12-25 12:19)
+- completes: **0** goal(s) -> fleet ~100%
+- why: cycle N+1 kicks off after the level-up gate; these are the first 8 planned goal(s) to land by 2026-12-25 12:19 - expected outcome: fleet ~100% of the NEW cycle done
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
