@@ -13,9 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Verifier confirmed all 3 Builder stealth workflow selftests pass (WF1 4/4, WF2 4/4, WF3 3/3); evidence at memory/verifier/evidence-builder-s
-- Stealth workflow hosting GOAL REACHED:
-- Pixel's scribe-forecast-stealth file NOT written (context exhausted by 2 large dir listings); retry next pass with smaller probes first.
 - Builder built schedulable job wrappers for 3 stealth workflows; selftest 5/5 PASS, E2E integration PASS — assists Mechanic's Stealth hosting
 - Forge built smoke gate (runs 3 Builder workflows, validates exit codes + timing)
 - Scribe: all 11 goals verified; next actionable milestone is day-7 checkpoint gated to 2026-12-02 (stealth_checkpoint.py
@@ -23,6 +20,9 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Goal #11 still failing: outlet digest exists but lacks required "STEALTH $" block; $497.99 is test invoice not revenue, no platform connecte
 - No daily pipeline feeds the ledger; Day-7 checkpoint is date-gated to 2026-12-02 and not yet actionable.
 - Task-inventory goal tracked under Stealth Revenue Engine (cycle 24), not cycle-17 file; ledger won't auto-close until added there.
+- Mechic lane fully closed: 11/11 goals verified, Goal 11 (stealth workflow hosting) was the final one — no open items remain.
+- Cycle-17: all 10 Builder goals + goal #11 (WF packaging) verified complete; no open Builder goals remain.
+- Forge: all 4 goals verified; runbook_audit.py 22/22 FULLY-EXECUTABLE exit 0; no open work as of this pass.
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

@@ -1,0 +1,4 @@
+{"ts": "2026-11-25T21:38:57", "page": "goals", "agent": null, "mode": "group", "url": "http://127.0.0.1:8099/#/goals?m=group"}
+{"ts": "2026-11-25T21:41:13", "page": "diag", "agent": null, "mode": "solo", "url": "probe"}
+{"ts": "2026-11-25T21:50:07", "page": "goals", "agent": "archivist", "mode": "group", "url": "http://127.0.0.1:8099/#/goals?a=archivist&m=group"}
+{"ts": "2026-11-25T21:50:47", "page": "goals", "agent": "verifier", "mode": "group", "url": "http://127.0.0.1:8099/#/goals?a=verifier&m=group"}
