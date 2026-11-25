@@ -4,14 +4,14 @@
       "file": "fleet-mode",
       "path": "memory\\ops\\fleet-mode.json",
       "status": "current",
-      "age_h": 0.0,
+      "age_h": 0.03,
       "mtime": "2026-11-25T16:04:51.372778+00:00"
     },
     "productivity-baseline": {
       "file": "productivity-baseline",
       "path": "memory\\ops\\productivity-baseline.json",
       "status": "stale",
-      "age_h": 29.46,
+      "age_h": 29.49,
       "mtime": "2026-11-24T10:37:01.844319+00:00"
     }
   }

@@ -700,3 +700,7 @@
 {"timestamp": "2026-11-25T16:02:17.523492+00:00", "agent": "Reel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3217512}
 {"timestamp": "2026-11-25T16:02:17.531735+00:00", "agent": "Splice", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3217515}
 {"timestamp": "2026-11-25T16:02:17.537484+00:00", "agent": "Scribe", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2953452}
+{"timestamp": "2026-11-25T16:06:14.379448+00:00", "agent": "Researcher", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2235606}
+{"timestamp": "2026-11-25T16:06:14.388927+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2235609}
+{"timestamp": "2026-11-25T16:06:14.393663+00:00", "agent": "Outlet", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2235598}
+{"timestamp": "2026-11-25T16:06:14.402324+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1209954}
