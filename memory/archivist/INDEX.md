@@ -1,7 +1,8 @@
 # memory/archivist — pointer map
-Last updated: 2026-11-24.
+Last updated: 2026-11-25.
 
 ## Entries
+- assist Scribe goal #9 self-assessment rubric baseline (2026-11-25) -> memory/archivist/assist-scribe-goal9-self-assessment-rubric-2026-11-25.md   grounded A/B/C/D grades + provenance for E1/E2/E3; artifact in memory/scribe/
 - metric-lineage (goal 8, cycle-17) -> memory/archivist/metric-lineage.md   full computation chain per metric: raw→transforms→final; discrepancy log [REACHED 2026-11-25]
 - topic-evolution timeline (goal 7, cycle-17) -> memory/archivist/topic-evolution.md   4-phase narrative, scope-completion correlation, coverage gaps [REACHED 2026-11-25]
 - steady-state SSOT (goal 5, cycle-17) -> memory/archivist/steady-state-ssot.md   authoritative entry/exit criteria, autonomy formula, expected behavior, state machine [REACHED 2026-11-25]

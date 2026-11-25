@@ -2554,5 +2554,17 @@
 "text": "**Cycle Topic Rationale Writer** - 3-sentence rationale per cycle topic: why now, what it builds on, what it enables. Output: memory/scribe/",
 "agent": "scribe",
 "at": "2026-11-25"
+},
+{
+"sig": "63bff696625ea1cf",
+"text": "**Fleet Self-Assessment Report** - every 3 cycles: comprehensive assessment with grade per criterion + overall + improvement plan. Output: m",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "c11121bf39d7c5d5",
+"text": "**Convergence Milestone Tracker** - track key milestones (first cycle <48h, 0-intervention week, steady-state entry). Log with date + contex",
+"agent": "scribe",
+"at": "2026-11-25"
 }
 ]

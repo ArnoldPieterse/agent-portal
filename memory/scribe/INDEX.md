@@ -2,6 +2,9 @@
 Last updated: 2026-11-22.
 
 ## Entries (keyword -> pointer | use case)
+- convergence milestone tracker (goal #10) -> memory/scribe/milestones.jsonl   3 defined milestones (M1 reached/M2+M3 pending) + SIM-M2 simulated-hit proof; generator: memory/scribe/milestones_tracker.py
+- fleet self-assessment #1 (goal #9, every-3-cycles) -> memory/scribe/self-assessment-1.md   first report: E1=A/E2=C/E3=D + overall C, 4 actions, data gaps; values re-verified live
+- self-assessment rubric + provenance baseline (goal #9 assist by Archivist) -> memory/scribe/self-assessment-rubric-baseline-2026-11-25.md   grounded A/B/C/D grades for E1/E2/E3 + >=3 actions; consume to author self-assessment-1.md
 - memory-integrity 256-issue reconciliation (128 genuine / 128 false-positive; resolve_target bug) -> memory/scribe/memory-integrity-reconciliation-2026-11-22.md   resolves hot-note contradiction vs Archivist #1/#7 closures
 - runbook lesson extractor + stakeholder brief (goals 8+9 verified) -> memory/scribe/runbook_lessons.py, memory/scribe/stakeholder_brief.py
 - goal-setting round compression (3-5 bullets, 8 agents) -> memory/scribe/goal-setting-round-compression-2026-11-13.md   Scribe goal #1 output; cites agent+message per bullet
