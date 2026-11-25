@@ -968,3 +968,7 @@
 {"t": "2026-11-26 07:09:13", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
 {"t": "2026-11-26 07:14:13", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
 {"t": "2026-11-26 07:19:13", "event": "launcher-restored", "path": "C:\\Projects\\AgentPortal\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-26 07:25:28", "event": "host-start", "pid": 8996}
+{"t": "2026-11-26 07:25:29", "event": "host-up", "pid": 8996, "py": "3.15.2"}
+{"t": "2026-11-26 07:25:29", "event": "launcher-restored", "path": "C:\\Users\\White\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\portal_host.vbs", "stale": true}
+{"t": "2026-11-26 07:25:31", "event": "spawned", "what": "portal", "pid": 15836, "argv": "C:\\Projects\\AgentPortal\\Python\\pythoncore-3.15-64\\python.exe C:\\Projects\\AgentPortal\\agent_portal.py"}

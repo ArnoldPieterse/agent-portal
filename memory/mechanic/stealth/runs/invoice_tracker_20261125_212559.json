@@ -1,0 +1,11 @@
+{
+  "script": "invoice_tracker.py",
+  "started": "2026-11-25T21:25:59.728087",
+  "budget_cpu_sec": 60,
+  "budget_mem_mb": 128,
+  "status": "ok",
+  "stdout_tail": "[invoice_tracker] Processed 3 invoices ($497.99 total) -> invoice_summary_20261125_212559.json\n",
+  "exit_code": 0,
+  "elapsed_sec": 0.05,
+  "finished": "2026-11-25T21:25:59.774885"
+}
