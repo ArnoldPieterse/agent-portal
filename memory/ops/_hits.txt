@@ -1,0 +1,6 @@
+--- sel @ 1759
+ry{ kbs=(await api("/api/knowledge-bases")).knowledgeBases||[]; }catch(e){ kbs=[]; }   localTools=((await api("/api/tools").catch(()=>({}))).local_tools)||[];   if(!agents.find(a=>a.id===selectedId)) selectedId=agents[0]?.id||null;   try{ const mem=await api("/api/memory"); setXtalk(mem.inter_agent_replies, mem.limit); }catch(e){}   renderAgents(); }  functi
+--- sel @ 2739
+  x.onclick=async e=>{e.stopPropagation();       if(!confirm(`Delete ${a.name}?`))return;       await fetch("/api/agents/"+a.id,{method:"DELETE"}); refresh();};     c.append(g,x);     c.onclick=()=>{ selectedId=a.id; renderAgents(); updateHint(); if(mode==="solo") resetChat(); };     el.appendChild(c);   }   $("modeHint").textContent=""; }  let xtalkMax=0; /
+--- mode @ 667
+ction")window.notify("err","JS error: "+String(m).slice(0,120));}catch(_){}}; $("stext").textContent="js running…"; let agents=[], models=[], netModels=[], kbs=[], localTools=[]; let selectedId=null, mode="solo", busy=false; let sessionId=null; // current run's activity-timeline session (one per human prompt) let history=[]; // {speaker, content}  async func

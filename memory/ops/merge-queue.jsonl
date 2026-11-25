@@ -469,3 +469,5 @@
 {"ts": "2026-11-25 20:36:31", "file": "host_api.py", "sha": "ed0972665f", "size": 1996, "snapshot": "memory/ops/merge-queue/host_api.py.ed0972665f"}
 {"ts": "2026-11-25 20:36:31", "file": "memory_mirror.py", "sha": "25b3c7dde3", "size": 20148, "snapshot": "memory/ops/merge-queue/memory_mirror.py.25b3c7dde3"}
 {"ts": "2026-11-25 20:36:31", "file": "todo_done_parts/TODO_done_part_001.md", "sha": "09646a4a7b", "size": 41257, "snapshot": null}
+{"ts": "2026-11-25 21:25:23", "file": "agent_portal.py", "sha": "6660196d64", "size": 392392, "snapshot": "memory/ops/merge-queue/agent_portal.py.6660196d64"}
+{"ts": "2026-11-25 21:25:23", "file": "index.html", "sha": "8d217e079d", "size": 14256, "snapshot": "memory/ops/merge-queue/index.html.8d217e079d"}

@@ -595,3 +595,8 @@
 {"timestamp": "2026-11-25T11:09:32.347327+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1980969}
 {"timestamp": "2026-11-25T11:09:32.354850+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1980961}
 {"timestamp": "2026-11-25T11:09:32.362450+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1980956}
+{"timestamp": "2026-11-25T11:25:23.725283+00:00", "agent": "Designer", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-25T11:25:23.735937+00:00", "agent": "Lumen", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-25T11:25:23.741174+00:00", "agent": "Reel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-25T11:25:23.749741+00:00", "agent": "Splice", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-25T11:25:23.755328+00:00", "agent": "Orchestrator", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2021518}

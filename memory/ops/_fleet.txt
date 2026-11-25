@@ -1,0 +1,1 @@
+{"overall": "amber", "hosts": {"white": {"reachable": true, "latency_ms": 0, "disk_pct": 91.1, "mem_pct": null}}, "last_check": 1795605710}

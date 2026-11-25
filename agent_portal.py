@@ -7328,6 +7328,28 @@ class Handler(BaseHTTPRequestHandler):
             body = self._body()
         except Exception as e:
             return self._json(400, {"error": f"bad json: {e}"})
+        if p == "/api/ui/state":
+            # RECONSTRUCTABLE URL (2026-11-25): UI view-state log -> memory index.
+            # Appends {ts,page,agent,mode,url} to memory/ops/ui-state.jsonl (capped 500).
+            try:
+                import json as _json_ui
+                rec = body if isinstance(body, dict) else {}
+                rec["ts"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+                _f = os.path.join(HERE, "memory/ops/ui-state.jsonl")
+                os.makedirs(os.path.dirname(_f), exist_ok=True)
+                lines = []
+                if os.path.exists(_f):
+                    with open(_f, encoding="utf-8", errors="replace") as _fh:
+                        lines = _fh.read().strip().splitlines()
+                lines.append(_json_ui.dumps(rec, ensure_ascii=False)[:400])
+                if len(lines) > 500:
+                    lines = lines[-500:]
+                with open(_f + ".tmp", "w", encoding="utf-8") as _fh:
+                    _fh.write("\n".join(lines) + "\n")
+                os.replace(_f + ".tmp", _f)
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:120]})
+            return self._json(200, {"ok": True})
         if p == "/api/user-messages":
             autoloop_note_human()   # AUTO-LOOP: a queued human message resets the streak budget
             entry = umq_add(body.get("text"), body.get("mentions"))
