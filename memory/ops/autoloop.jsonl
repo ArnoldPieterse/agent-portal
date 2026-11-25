@@ -228,3 +228,5 @@
 {"timestamp": "2026-11-25T00:42:14.365180+00:00", "agent": "Researcher", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3301573}
 {"timestamp": "2026-11-25T00:51:02.290169+00:00", "agent": "Orchestrator", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2209025}
 {"timestamp": "2026-11-25T01:20:04.096100+00:00", "agent": "Scribe", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-25T01:24:39.930046+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-25T01:24:39.937964+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}

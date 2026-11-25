@@ -68,3 +68,4 @@ Last updated: 2026-11-24.
 - [weekly_digest.py](memory/archivist/weekly_digest.py) - weekly digest generator for fleet activity  
 
 - mode_freshness.py
+- assist-scribe-goal2 (cycle-17) -> memory/archivist/assist-scribe-goal2-convergence-section-2026-11-25.md   convergence section added to cycle-retro-16.md [ASSIST 2026-11-25]

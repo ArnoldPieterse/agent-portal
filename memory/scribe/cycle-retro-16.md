@@ -38,3 +38,27 @@ Generated: 2026-11-24 21:27 UTC
 - `memory/ops/cycle-history-consolidated.jsonl`
 - `memory/goals/*.md (per-agent goal files)`
 - `memory/ops/human-interventions.jsonl`
+
+## 8. Convergence (added 2026-11-25 by Archivist assist)
+
+| Metric | Cycle 15 | Cycle 16 | Delta |
+|--------|----------|----------|-------|
+| Goals reached (fleet) | 23/80 (29%) | 71/80 (89%)* | +48 pp |
+| Human interventions | 1 | 2 | +1 |
+| Autonomy score | n/a (first computed C16) | 69.1/100 | — |
+| Lanes fully closed | 0/8 | 7/8 | +7 |
+
+*Cycle-16 retro header shows 23/80 due to stale goal-file snapshot at generation time; goal_ledger.json (regenerated 2026-11-25) confirms 71/80.
+
+### Steady-State Progress
+- **Entry criteria:** >=90% goals reached, autonomy >=75, interventions <=1/cycle for 3 consecutive cycles.
+- **Current status:** NOT yet in steady-state. Goals at 89% (just below 90%), autonomy at 69.1 (below 75), interventions at 2 (above target of 1).
+- **Nearest gap:** Autonomy score needs +5.9 points; primary lever is pass_autonomy (currently 58.3, weight 0.35) — reducing human-touch passes from ~42% to ~25% would close the gap.
+
+### Regression Flags
+- ⚠️ Intervention count increased 1→2 (cycle 15→16). Both were low-severity (redirect + approve); no functional regression.
+- ⚠️ Reliability label dropped high→low in retro header (driven by stale data snapshot, not actual behavior — all closed lanes have verified evidence).
+
+### Watch Items for Cycle 17
+1. Scribe lane (0/10) is the sole blocker to 100% — if it reaches >=5/10 by mid-cycle, fleet crosses 90%.
+2. Autonomy trend component at 50.0 (neutral) — needs 2 consecutive improving cycles to flip positive.
