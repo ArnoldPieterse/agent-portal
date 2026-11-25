@@ -42,3 +42,50 @@ Criteria: highest margin (human cost vs automation cost), simplest input->output
 - GetAccountingHelp "Bookkeeping Cost" - https://getaccountinghelp.com.au/help-centre/how-much-does-bookkeeping-cost/
 - Hirebasis 2025 "How Much Should You Pay a VA in 2025" - https://www.hirebasis.com/blog/how-much-should-you-pay-a-virtual-assistant-2025
 - Airtasker AU "Virtual Assistant Cost" - https://www.airtasker.com/au/costs/virtual-assistant/virtual-assistant-cost/
+
+## SaaS Overlap + Margin Analysis (Scribe 2026-11-26)
+Purpose: Answer open question #4 (SaaS kill-margin check) and #5 (pricing floor). This unblocks Builder's packaging spec.
+
+### 1. Bookkeeping + Invoice Reconciliation
+- **Incumbent SaaS:** QuickBooks Online $38-$140/mo (Simple Start to Plus); Xero from ~$29/mo
+- **What they DON'T do:** Cross-statement reconciliation, anomaly flagging, narrative summaries, multi-entity rollups. QBO is a ledger, not an analyst.
+- **Automation wedge:** "The last mile" — parse bank feeds + invoices → categorize → reconcile → flag anomalies → weekly narrative. Sits ON TOP of their existing QBO/Xero.
+- **Cost per client (LLM API):** ~150-300 txns/mo × $0.01-0.03 = **$2-9/mo**
+- **Pricing floor:** $99/mo (still 90%+ margin)
+- **Suggested price:** $249-499/mo (undercuts human bookkeeper by 60-85%)
+- **Margin at $300/mo:** ~97%
+- **Verdict:** ✅ SAFE — SaaS doesn't kill the margin; it's a complement, not a competitor.
+
+### 2. Social Media Content Scheduling + Engagement
+- **Incumbent SaaS:** Buffer $5-10/channel/mo (free tier: 3 ch, 10 posts); Hootsuite from $99/mo; Later from $25/mo
+- **What they DON'T do:** Content creation from briefs, voice-matched copywriting, contextual engagement replies, trend-aware topic selection. Buffer schedules; it doesn't THINK.
+- **Automation wedge:** Topic brief → AI drafts 3-5 posts/wk in brand voice → auto-schedules via API → basic comment replies. The SaaS is the delivery pipe; we're the brain.
+- **Cost per client (LLM API):** ~20-60 posts/mo × $0.10-0.30 = **$2-18/mo**
+- **Pricing floor:** $49/mo (still 85%+ margin)
+- **Suggested price:** $199-499/mo (undercuts agency retainer by 60-80%)
+- **Margin at $300/mo:** ~94%
+- **Verdict:** ✅ SAFE — Buffer/Hootsuite are delivery tools, not content strategists. We complement, not compete.
+
+### 3. Data Entry / CRM Updates
+- **Incumbent SaaS:** HubSpot Free (1M contacts), Pipedrive $14/user/mo, Salesforce $25/user/mo
+- **What they DON'T do:** Extract structured data from unstructured sources (emails, PDFs, voice notes, forms) and populate CRM fields. They STORE; they don't FILL.
+- **Automation wedge:** Ingest unstructured input → extract entities → map to CRM schema → write via API → flag confidence <90% for human review.
+- **Cost per client (LLM API):** ~200-500 records/mo × $0.02-0.05 = **$4-25/mo**
+- **Pricing floor:** $79/mo (still 85%+ margin)
+- **Suggested price:** $199-399/mo (undercuts VA at $760-1400/mo by 75-85%)
+- **Margin at $250/mo:** ~90%
+- **Verdict:** ✅ SAFE — CRMs are databases, not data-entry clerks. Zero overlap with the actual labor being automated.
+
+### Summary for Builder
+| Workflow | Human cost/mo | Suggested price | LLM cost/mo | Margin | SaaS risk |
+|----------|--------------|-----------------|-------------|--------|-----------|
+| Bookkeeping recon | $800-3,500 | $249-499 | $2-9 | 95-97% | Low (complement) |
+| Social content | $500-2,500 | $199-499 | $2-18 | 90-94% | Low (complement) |
+| CRM data entry | $760-1,400 | $199-399 | $4-25 | 85-90% | Low (complement) |
+
+**Key insight for Outlet's outreach:** The pitch is NOT "replace your software" — it's "your software does X, we do the thinking part on top." This reframes the SaaS from competitor to enabler.
+
+### Sources (SaaS pricing verified 2026-11-26)
+- QuickBooks Online: $38/$85/$140/$340 per plan (tech.co, fitsmallbusiness.com, 2025-2026)
+- Buffer: Free / $5/ch/mo / $10/ch/mo (buffer.com/pricing, fetched live 2026-11-26)
+- HubSpot Free tier: 1M contacts free (well-known, stable since 2023)

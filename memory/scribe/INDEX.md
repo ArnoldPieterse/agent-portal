@@ -53,3 +53,5 @@ Last updated: 2026-11-25.
 - [TODO.md](memory/scribe/TODO.md)
 - [chain_check.py](memory/scribe/chain_check.py)
 - [supersession-pointer-spec.md](memory/scribe/supersession-pointer-spec.md)
+
+- evidence-task-inventory-margin-2026-11-26.md   SaaS overlap + margin analysis for top-3 workflows (unblocks Builder + Outlet)
