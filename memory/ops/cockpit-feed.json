@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-25T15:04:50.847059+00:00",
+  "ts": "2026-11-25T15:24:50.754400+00:00",
   "health_score": 80,
   "fleet_status": "NOMINAL",
   "agents": [
@@ -49,13 +49,13 @@
       "host": "White",
       "vram_pct": 76.7,
       "cpu_pct": 0.0,
-      "temp_c": 40.3
+      "temp_c": 40.1
     },
     {
       "host": "Red",
       "vram_pct": 33.0,
       "cpu_pct": 0.0,
-      "temp_c": 38.7
+      "temp_c": 40.2
     },
     {
       "host": "Pale",
@@ -67,7 +67,7 @@
       "host": "Black",
       "vram_pct": 92.0,
       "cpu_pct": 0.0,
-      "temp_c": 39.9
+      "temp_c": 41.7
     }
   ],
   "goals": {
@@ -394,8 +394,8 @@
         "pct": 0.0
       },
       "forge": {
-        "total": 7,
-        "verified": 7,
+        "total": 8,
+        "verified": 8,
         "pct": 100.0
       },
       "mechanic-cycle9-proposals-2026-11-23": {
