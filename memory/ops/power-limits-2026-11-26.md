@@ -6,7 +6,7 @@
 
 ## Fleet state + action
 - White (local): 2x RTX 5090 already at 600W = max. No change needed.
-- Pale (192.168.1.39): 2x RTX 5090. GPU1 was capped 450W this morning (heat mitigation, temps were ~89-92C under load). Current probe: [('0', '43.02', '27.37 W'), ('1', '60.90', '429.74 W')]; caps_before: [('27', '600'), ('429', '450')]. Decision: **restore-600**.
+- Pale (IP_LAN): 2x RTX 5090. GPU1 was capped 450W this morning (heat mitigation, temps were ~89-92C under load). Current probe: [('0', '43.02', '27.37 W'), ('1', '60.90', '429.74 W')]; caps_before: [('27', '600'), ('429', '450')]. Decision: **restore-600**.
 - Applied on Pale: n/a
 
 ## Follow-ups (open)

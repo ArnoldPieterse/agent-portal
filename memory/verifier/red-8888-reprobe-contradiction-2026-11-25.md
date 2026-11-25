@@ -1,7 +1,7 @@
 # Red :8888 contradiction — re-probe attempt + measurement retraction (2026-11-25T15:18:24)
 
 ## The conflict (this round)
-| Source | Claim on Red 192.168.1.245 :8888 |
+| Source | Claim on Red IP_LAN :8888 |
 |--------|----------------------------------|
 | Verifier (earlier today, hot note) | **UP — 15.9ms** |
 | Mechanic (re-probe this round) | **DOWN — WSAEACCES 10013 (active deny), 15ms** |
