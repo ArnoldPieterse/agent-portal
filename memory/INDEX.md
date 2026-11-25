@@ -15,6 +15,7 @@ FILE ACCESS (python/terminal tools run in Studio's sandbox - use these paths):
 - builder       memory/builder/INDEX.md - builds: frontend, scripts, model-swap automation
 - archivist     memory/archivist/INDEX.md - knowledge index, provenance reports
 - mechanic      memory/mechanic/INDEX.md - fleet ops: model lifecycle, OOM recovery, load tests
+- outlet        memory/outlet/INDEX.md - public voice: profile registry, voice guides, content queue (onboarded 2026-11-25)
 
 ## Shared modules
 - goals         memory/goals/ - per-lane goal files + forecast engine (next10.json, forecast-latest.md, cycle-proposal.md, calibration.json)

@@ -405,3 +405,5 @@
 {"ts": "2026-11-25 10:14:13", "file": "index.html", "sha": "c2d69ce1fd", "size": 14865, "snapshot": "memory/ops/merge-queue/index.html.c2d69ce1fd"}
 {"ts": "2026-11-25 10:14:13", "file": "memory_mirror.py", "sha": "ef69113e5e", "size": 20284, "snapshot": "memory/ops/merge-queue/memory_mirror.py.ef69113e5e"}
 {"ts": "2026-11-25 11:07:30", "file": "agent_portal.py", "sha": "4456d57852", "size": 355163, "snapshot": "memory/ops/merge-queue/agent_portal.py.4456d57852"}
+{"ts": "2026-11-25 11:54:21", "file": "agent_portal.py", "sha": "4b70db6aad", "size": 357173, "snapshot": "memory/ops/merge-queue/agent_portal.py.4b70db6aad"}
+{"ts": "2026-11-25 11:54:21", "file": "agents.json", "sha": "459f27e402", "size": 9725, "snapshot": "memory/ops/merge-queue/agents.json.459f27e402"}

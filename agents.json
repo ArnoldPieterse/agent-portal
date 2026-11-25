@@ -3,7 +3,7 @@
     {
       "id": "orchestrator",
       "name": "Orchestrator",
-      "emoji": "\ud83c\udf9b\ufe0f",
+      "emoji": "🎛️",
       "color": "#4f8cff",
       "model_id": "atlas-q8",
       "temperature": 0.7,
@@ -27,7 +27,7 @@
     {
       "id": "researcher",
       "name": "Researcher",
-      "emoji": "\ud83d\udd0d",
+      "emoji": "🔍",
       "color": "#ff9f43",
       "model_id": "quinn-q4",
       "temperature": 0.8,
@@ -51,7 +51,7 @@
     {
       "id": "builder",
       "name": "Builder",
-      "emoji": "\ud83d\udee0\ufe0f",
+      "emoji": "🛠️",
       "color": "#7c4dff",
       "temperature": 0.7,
       "max_tokens": 0,
@@ -76,7 +76,7 @@
     {
       "id": "verifier",
       "name": "Verifier",
-      "emoji": "\u2705",
+      "emoji": "✅",
       "color": "#00b894",
       "temperature": 0.7,
       "max_tokens": 0,
@@ -101,7 +101,7 @@
     {
       "id": "designer",
       "name": "Designer",
-      "emoji": "\ud83c\udfa8",
+      "emoji": "🎨",
       "color": "#e84393",
       "model_id": "designer-q4",
       "temperature": 0.7,
@@ -128,7 +128,7 @@
     {
       "id": "archivist",
       "name": "Archivist",
-      "emoji": "\ud83d\udcda",
+      "emoji": "📚",
       "color": "#f1c40f",
       "model_id": "archivist-q8",
       "temperature": 0.5,
@@ -153,7 +153,7 @@
     {
       "id": "scribe",
       "name": "Scribe",
-      "emoji": "\ud83d\udcdd",
+      "emoji": "📝",
       "color": "#00cec9",
       "model_id": "scribe-q8",
       "temperature": 0.5,
@@ -180,7 +180,7 @@
     {
       "id": "mechanic",
       "name": "Mechanic",
-      "emoji": "\u2699\ufe0f",
+      "emoji": "⚙️",
       "color": "#636e72",
       "model_id": "mechanic-q4",
       "temperature": 0.6,
@@ -203,6 +203,35 @@
       "api_key": "sk-unsloth-a8b6573db2959db2ea4358293938532f",
       "rag_studio": "",
       "rag_api_key": ""
+    },
+    {
+      "id": "outlet",
+      "name": "Outlet",
+      "emoji": "📢",
+      "color": "#ff6b6b",
+      "temperature": 0.9,
+      "max_tokens": 0,
+      "reasoning": "default",
+      "tools": [
+        "web_search",
+        "python",
+        "terminal",
+        "edit_file",
+        "render_html"
+      ],
+      "run_tools_locally": true,
+      "max_tool_calls": 99,
+      "rag": true,
+      "rag_kb_id": "",
+      "studio": "http://127.0.0.1:8888",
+      "api_key": "",
+      "rag_studio": "",
+      "rag_api_key": "",
+      "mem_cycle": true,
+      "fast_first_reply": true,
+      "persona": "You are Outlet, the fleet public voice. You own our public profiles - what we upload, what we reply to, and what we repost - with a distinct personality: warm, candid, lightly witty, never corporate; short posts, one concrete claim each, zero hype. You never invent facts or trends for content: you leverage every other agent strengths. DM Researcher for the latest trends and verified data points, Archivist for canonical knowledge-base references, Designer for visuals and wording polish, Scribe to compress long threads into post-sized summaries, Builder/Mechanic for technical accuracy on fleet topics, Verifier to fact-check any claim before it goes out, Orchestrator for what matters most right now. Workflow: pick a topic (trend or fleet milestone) -> gather via DMs and tools -> draft in voice -> stage the upload/reply/repost with rationale into memory/outlet/queue/ -> mark ready-for-human. Nothing is published without human approval of the queue entry; you prepare, the human ships. Keep per-profile voice guides in memory/outlet/profiles.md and respect each platform conventions. Never post internal IPs, paths, keys or secrets.",
+      "blurb": "public voice; drafts uploads, replies and reposts with personality, leveraging every other agent strengths",
+      "model_id": "quinn-q4"
     }
   ]
 }

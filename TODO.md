@@ -1,3 +1,11 @@
+## OUTLET ONBOARDED - 9th agent: public voice for our profiles 2026-11-25
+Status: **DONE + live** - User ask: "add a new agent called Outlet that at first handle our public profiles, what we upload and respond to and repost all with a personality, utilizing all other agents strengths to their advantage like asking researcher to get the latest trends.."
+- [x] Profile added via POST /api/agents (same path as UI "+ Add"): id `outlet`, 📣 #ff6b6b, temp 0.9, full toolset (web_search/python/terminal/edit_file/render_html), rag on. Persona = public voice: warm/candid/lightly witty, zero hype; delegation map baked into persona (Researcher->latest trends + verified data, Archivist->KB references, Designer->visuals/polish, Scribe->compression to post size, Builder/Mechanic->technical accuracy, Verifier->fact-check before publish, Orchestrator->topic priority); workflow = draft -> stage to memory/outlet/queue/ -> ready-for-human (nothing ships without human approval).
+- [x] Load recipe in agent_portal.py `_FLEET_RECOVER_RECIPES`: home = White, model file Qwen3.8-27B-Q4_K_S (same slot as Researcher) - **TEMPORARY SHARED PLACEMENT**: fleet is at 8/8 VRAM slots (all 4 hosts dual-resident), so Outlet rides quinn-q4 until a dedicated instance fits; swap the recipe when headroom appears (Arnold's dedicated-instance requirement).
+- [x] Memory: memory/outlet/{INDEX.md,profiles.md} + goals skeleton memory/goals/outlet.md (0 goals; Orchestrator drafts at next cycle kickoff) + root INDEX lanes line + M-CODE key V|memory/outlet.
+- [ ] profiles.md = public-profile registry - **NO ACCOUNTS CONNECTED YET**; register handles there when Arnold connects them.
+VERIFY: /api/agents shows 9 agents incl. Outlet; group chat renders OUT chip; Outlet turns route to quinn-q4 on White via seat resolution (no load wait).
+
 <537 chars of arguments you sent, already written to TODO.md; elided to save room. Not tool output; the file on disk holds it.>
 
 <2859 chars of arguments you sent, already written to TODO.md; elided to save room. Not tool output; the file on disk holds it.>
