@@ -40,7 +40,17 @@
       ".ckfilters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}",
       ".ckgauge{width:92px;height:92px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;background:conic-gradient(var(--gc,#2ea36b) calc(var(--p,0)*1%),#232833 0)}",
       ".ckgauge span{width:74px;height:74px;border-radius:50%;background:#171b22;display:flex;align-items:center;justify-content:center}",
-      ".ckhealth{display:flex;gap:14px;align-items:center}"
+      ".ckhealth{display:flex;gap:14px;align-items:center}",
+      /* Power allocation (pie) */
+      ".ckpw-v{border-radius:8px;padding:7px 10px;font-size:12px;margin-bottom:8px;border:1px solid transparent}",
+      ".ckpw-v.healthy{background:color-mix(in srgb,#2ea36b 14%,transparent);border-color:color-mix(in srgb,#2ea36b 45%,transparent);color:color-mix(in srgb,#2ea36b 85%,var(--fg-1,#e8eaed))}",
+      ".ckpw-v.revisit{background:color-mix(in srgb,#d4a017 14%,transparent);border-color:color-mix(in srgb,#d4a017 45%,transparent);color:color-mix(in srgb,#d4a017 85%,var(--fg-1,#e8eaed))}",
+      ".ckpw-v .rsn{display:block;font-weight:400;margin-top:3px;opacity:.92}",
+      ".ckpw-body{display:flex;gap:14px;align-items:center;flex-wrap:wrap}",
+      ".ckpw-legend{flex:1;min-width:220px}",
+      ".ckpw-lrow{display:flex;align-items:center;gap:7px;padding:3px 0;border-bottom:1px solid #1d222b;font-size:12px}",
+      ".ckpw-dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}",
+      ".ckpw-share{font-size:10px;color:#8a8f98;border:1px solid #2a2f38;border-radius:4px;padding:0 4px;white-space:nowrap}"
     ].join("\n");
     document.head.appendChild(s);
   }
@@ -63,6 +73,7 @@
       "<div class=sec>Agents</div><div id=ckpAgents class=ckgrid></div>" +
       "<div class=sec>Fleet goals</div><div id=ckpGoals></div>" +
       "<div class=sec>Host resources</div><div id=ckpHosts></div>" +
+      "<div class=sec>Power allocation <span style='text-transform:none;letter-spacing:0'>(VRAM by agent)</span></div><div id=ckpPower></div>" +
       "<div class=sec>Health score</div><div id=ckpHealth class=ckhealth></div>" +
       "<div class=sec>Predicted risks</div><div id=ckpRisks></div>" +
       "<div class=sec>Recent decisions</div><div id=ckpDecs></div>";
@@ -95,6 +106,7 @@
         "<span>" + (x.temp_c == null ? "" : x.temp_c + "\u00B0C ") + bar(x.temp_c, tempColor(x.temp_c)) + "</span></div>";
     });
     document.getElementById("ckpHosts").innerHTML = h || "<i>no hosts reported</i>";
+    renderPower(d.power);
 
     var s = d.health_score, tr = d.health_trend || [];
     var prev = tr.length > 1 ? tr[tr.length - 2].score : null;
@@ -148,6 +160,58 @@
       out += "<div class=ckdec id=ckd" + i + "><div class=hd onclick=document.getElementById('ckd" + i + "').classList.toggle('open')><span>" + head + "</span></div><div class=bd>" + esc(JSON.stringify(x, null, 1)) + "</div></div>";
     });
     document.getElementById("ckpDecList").innerHTML = out || "<i style='color:#8a8f98'>no decisions match</i>";
+  }
+
+  /* ---- Power allocation pie (VRAM committed to each agent's model seat) ---- */
+  var PW_FALLBACK = ["#4f8cff", "#ff6b6b", "#2ea36b", "#d4a017", "#9b59b6", "#16a085",
+                     "#e17055", "#00d2d3", "#c44569", "#f1c40f", "#7ed6df", "#636e72"];
+  function pwArc(cx, cy, r0, r1, a0, a1) {
+    var large = (a1 - a0) > Math.PI ? 1 : 0;
+    function pt(r, a) { return (cx + r * Math.cos(a)).toFixed(2) + " " + (cy + r * Math.sin(a)).toFixed(2); }
+    return "M" + pt(r1, a0) + " A" + r1 + " " + r1 + " 0 " + large + " 1 " + pt(r1, a1) +
+           " L" + pt(r0, a1) + " A" + r0 + " " + r0 + " 0 " + large + " 0 " + pt(r0, a0) + " Z";
+  }
+  function renderPower(p) {
+    var box = document.getElementById("ckpPower");
+    if (!box) return;
+    if (!p || !p.agents || !p.agents.length) { box.innerHTML = "<i style='color:#8a8f98'>no power data</i>"; return; }
+    var v = p.verdict || {};
+    var vh = "<div class=\"ckpw-v " + (v.level === "revisit" ? "revisit" : "healthy") + \">" +
+      (v.level === "revisit" ? "\u26A0 Revisit power allocation" : "\u2713 Power allocation healthy") +
+      (p.pct_used != null ? " \u00b7 " + p.pct_used + "% of fleet VRAM committed (" + p.allocated_gb + " / " + p.capacity_gb + " GB)" : "") +
+      (v.reasons || []).map(function (r) { return "<span class=rsn>\u00b7 " + esc(r) + "</span>"; }).join("") +
+      "</div>";
+    var slices = p.agents.filter(function (x) { return x.power_gb > 0; });
+    var total = slices.reduce(function (s, x) { return s + x.power_gb; }, 0);
+    var svg = "", a = -Math.PI / 2, cx = 85, cy = 85, R1 = 78, R0 = 47;
+    if (slices.length === 1) {
+      svg += "<circle cx=" + cx + " cy=" + cy + " r=" + R1 + " fill='" + (slices[0].color || PW_FALLBACK[0]) + "'/>" +
+             "<circle cx=" + cx + " cy=" + cy + " r=" + R0 + " fill='#171b22'/>";
+    } else {
+      slices.forEach(function (x, i) {
+        var a1 = a + (x.power_gb / total) * Math.PI * 2;
+        svg += "<path d='" + pwArc(cx, cy, R0, R1, a, a1 - 0.004) + "' fill='" + (x.color || PW_FALLBACK[i % PW_FALLBACK.length]) +
+               "'><title>" + esc(x.name) + ": " + x.power_gb + " GB (" + x.pct + "%) on " + esc(x.host) + "</title></path>";
+        a = a1;
+      });
+    }
+    svg = "<svg width=170 height=170 viewBox='0 0 170 170'>" + svg +
+      "<text x=" + cx + " y=" + (cy - 3) + " text-anchor=middle fill=#e8eaed font-size=20 font-weight=700>" +
+      (p.pct_used != null ? p.pct_used : "\u2014") + "%</text>" +
+      "<text x=" + cx + " y=" + (cy + 15) + " text-anchor=middle fill=#8a8f98 font-size=9.5>of " + p.capacity_gb + " GB VRAM</text></svg>";
+    var lg = slices.map(function (x, i) {
+      var shared = x.shared_with && x.shared_with.length ?
+        "<span class=ckpw-share title='shared seat: " + esc(x.shared_with.join(", ")) + "'>&#247;" + (x.shared_with.length + 1) + "</span>" : "";
+      return "<div class=ckpw-lrow><span class=ckpw-dot style='background:" + (x.color || PW_FALLBACK[i % PW_FALLBACK.length]) + "'></span>" +
+        "<span style='flex:1;min-width:0'><b>" + esc(x.name) + "</b> <span style='color:#8a8f98'>" + esc(x.model) + " \u00b7 " + esc(x.host) + (x.gpu_ids && x.gpu_ids.length ? " GPU" + x.gpu_ids.join(",") : "") + "</span></span>" +
+        shared + "<b style='white-space:nowrap'>" + x.power_gb + " GB</b><span style='color:#8a8f98;white-space:nowrap;width:42px;text-align:right'>" + x.pct + "%</span></div>";
+    }).join("");
+    var hh = (p.hosts || []).map(function (x) {
+      return "<div class=ckrow><span style='min-width:56px'><b>" + esc(x.name) + "</b></span>" +
+        "<span style='flex:1'>" + bar(x.pct, pctColor(x.pct)) + " <span style='font-size:11px;color:#8a8f98'>" + x.allocated_gb + "/" + x.capacity_gb + " GB</span></span></div>";
+    }).join("");
+    box.innerHTML = vh + "<div class=ckpw-body><div>" + svg + "</div><div class=ckpw-legend>" + lg + hh + "</div></div>" +
+      "<div style='font-size:10.5px;color:#8a8f98;margin-top:6px'>seat VRAM from catalog approximations (ground truth = nvidia-smi); shared seats split evenly across their agents \u00b7 " + esc(p.unit || "") + "</div>";
   }
 
   function relTime(iso) {

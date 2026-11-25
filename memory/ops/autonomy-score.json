@@ -1,9 +1,9 @@
 {
-  "score": 69.1,
+  "score": 71.3,
   "components": {
-    "pass_autonomy": 58.3,
-    "duration_score": 80.0,
-    "rework_score": 93.6,
+    "pass_autonomy": 64.3,
+    "duration_score": 81.3,
+    "rework_score": 92.5,
     "trend_score": 50.0
   },
   "weights": {
@@ -12,9 +12,9 @@
     "c": 0.2,
     "d": 0.2
   },
-  "computed_at": "2026-11-24T21:23:12.655059",
+  "computed_at": "2026-11-25T04:16:55.480543",
   "data_sources": {
     "interventions_count": 10,
-    "cycle_durations_count": 4
+    "cycle_durations_count": 5
   }
 }

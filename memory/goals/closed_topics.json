@@ -2590,5 +2590,59 @@
 "text": "**Convergence Readiness Checklist** - Living checklist of steady-state criteria (0 interventions for N cycles, self-healing rate >95%, cycle",
 "agent": "scribe",
 "at": "2026-11-25"
+},
+{
+"sig": "44c1234eb2d7c940",
+"text": "**Autonomy Decay Detection** - Define decay signals for autonomous decision quality: track per-agent escalation rate, rework rate, and human",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "92fb6be683ce1985",
+"text": "**Convergence Lock Protocol** - Document the exact procedure to declare convergence \"locked\" (not just achieved): minimum N consecutive cycl",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "47dde59712ac600e",
+"text": "**Per-Agent Autonomy Scorecard** - For each of the 10 agents, score autonomy across 5 domains (ops, dispatch, goal-setting, model mgmt, know",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "f7083aeff46aea7d",
+"text": "**Canary Deploy Pipeline** - `python memory/forge/canary_deploy.py <file> [host]`: deploys to one host first, runs smoke suite against that ",
+"agent": "forge",
+"at": "2026-11-25"
+},
+{
+"sig": "d2f11f8ece42006f",
+"text": "**Fleet-Wide Smoke Test Topology** - Define test matrix in memory/forge/test-topology.json: per-host test list, pass/fail criteria, cascade ",
+"agent": "forge",
+"at": "2026-11-25"
+},
+{
+"sig": "91a11ad17bb58ccf",
+"text": "**Autonomy Score Trendline** - Append each cycle's autonomy score + delta to memory/scribe/autonomy-trend.jsonl (timestamp, score, delta_fro",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "ad416f3de8cd079c",
+"text": "**Decision-to-Autonomy Causal Map** - For each entry in decisions.jsonl that eliminated an intervention class, trace the chain: decision -> ",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "7d71df83e07037af",
+"text": "**Fleet Autonomy Playbook** - Condensed two-page doc for the human: \"what the fleet does autonomously now\" (list) vs \"where human input is s",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "f3a6f3099cde3ba8",
+"text": "**Intervention Pattern Classifier** - Auto-classify each human intervention into a pattern (misdiagnosis, preference override, new requireme",
+"agent": "scribe",
+"at": "2026-11-25"
 }
 ]

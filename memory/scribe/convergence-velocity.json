@@ -1,0 +1,33 @@
+{
+  "computed_at": "2026-11-25T04:20:18.076334+00:00",
+  "metrics": {
+    "interventions_per_cycle": 0.62,
+    "new_automations_total": 271,
+    "autonomy_score_delta_per_cycle": 0.379
+  },
+  "score_history": [
+    {
+      "cycle": 5,
+      "score": 64.5
+    },
+    {
+      "cycle": 17,
+      "score": 69.1
+    },
+    {
+      "cycle": 23,
+      "score": 71.3
+    }
+  ],
+  "linear_regression": {
+    "slope": 0.3786,
+    "intercept": 62.62,
+    "r_squared": 0.9999
+  },
+  "eta_to_steady_state": {
+    "target_score": 90,
+    "projected_cycle": 72.3,
+    "note": "At current rate (+0.38/cycle), steady-state (>=90) projected at cycle 72.0"
+  },
+  "convergence_assessment": "POSITIVE - score increasing, interventions/cycle low and stable"
+}

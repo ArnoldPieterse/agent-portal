@@ -2,8 +2,17 @@
 Last updated: 2026-11-25.
 
 ## Cycle 18 (Fleet Autonomy Convergence) — started 2026-11-25
-- goal #1 autonomy score trendline -> memory/scribe/autonomy-trend.jsonl   2 entries (c5 derived 64.5, c17 explicit 69.1); delta +4.6; script: memory/scribe/autonomy_trend.py
-- goal #2 convergence readiness checklist -> memory/scribe/convergence-readiness.md   8 criteria, 3 PASS / 0 FAIL / 5 INCOMPLETE (data gaps)
+- goal #1 autonomy score trendline -> memory/scribe/autonomy-trend.jsonl   **REACHED** 3 entries (c5=64.5, c17=69.1, c23=71.3); delta +2.2; reversal logic active; script: memory/scribe/autonomy_trend.py
+- goal #2 decision-to-autonomy causal map -> memory/scribe/decision-autonomy-map.jsonl   **REACHED** 3 chains traced; all file paths verified
+- goal #3 fleet autonomy playbook -> memory/scribe/fleet-autonomy-playbook.md   **REACHED** 12 autonomous capabilities + 3 intervention gaps + score trajectory
+- goal #4 intervention pattern classifier -> memory/scribe/intervention-patterns.jsonl + intervention-pattern-summary.json   **REACHED** 10 classified, 4 patterns, trends computed; script: memory/scribe/intervention_classifier.py
+- goal #5 convergence velocity report -> memory/scribe/convergence-velocity.json   **REACHED** +0.38/cycle R²=0.9999, ETA c72 for score>=90
+- goal #6 (prior) convergence readiness checklist -> memory/scribe/convergence-readiness.md   8 criteria, 3 PASS / 0 FAIL / 5 INCOMPLETE
+- goal #7 agent autonomy contribution matrix -> memory/scribe/agent-autonomy-matrix.md   **REACHED** 10 agents ranked; top-3: Researcher(9.1), Mechanic(8.9), Orchestrator(8.2)
+- goal #8 convergence anomaly detector -> memory/scribe/convergence_anomaly.py   **REACHED** runs on real data; detected intervention_count drop -100%; alerts to memory/ops/anomalies.jsonl
+- goal #9 autonomy handoff protocol -> memory/scribe/autonomy-handoff-protocol.md   **REACHED** 3 sections (evidence/recording/verification) + N=3 cycle rule + regression protocol
+- goal #10 autonomy score decomposition -> memory/scribe/autonomy-decomposition.jsonl   **REACHED** 4 components × 3 cycles; bottleneck=pass_autonomy (gap narrowing: 50→36.7→30.7)
+- (prior) convergence readiness checklist -> memory/scribe/convergence-readiness.md   8 criteria, 3 PASS / 0 FAIL / 5 INCOMPLETE (data gaps)
 
 ## Entries (keyword -> pointer | use case)
 - convergence milestone tracker (goal #10) -> memory/scribe/milestones.jsonl   3 defined milestones (M1 reached/M2+M3 pending) + SIM-M2 simulated-hit proof; generator: memory/scribe/milestones_tracker.py

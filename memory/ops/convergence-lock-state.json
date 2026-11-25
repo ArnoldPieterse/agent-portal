@@ -1,0 +1,27 @@
+{
+  "lock_counter": 0,
+  "locked_cycles": [],
+  "last_evaluation": {
+    "cycle": 17,
+    "ts": "2026-11-25T14:20:00Z",
+    "results": {
+      "steady_state_conditions_met": false,
+      "regression_tests_passed": null,
+      "autonomy_score": 69.1,
+      "score_above_85": false,
+      "new_blocker_classes": 0
+    }
+  },
+  "history": [
+    {
+      "cycle": 17,
+      "ts": "2026-11-25T14:20:00Z",
+      "all_pass": false,
+      "failed_criteria": [
+        "autonomy_score 69.1 < 85.0"
+      ]
+    }
+  ],
+  "is_locked": false,
+  "locked_since": null
+}

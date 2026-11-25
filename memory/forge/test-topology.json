@@ -1,0 +1,138 @@
+{
+  "version": "1.0",
+  "updated": "2026-11-25T14:16:00",
+  "description": "Fleet-wide smoke test topology: per-host test list, pass/fail criteria, cascade rules.",
+  "hosts": {
+    "White": {
+      "ip": "127.0.0.1",
+      "port": 8888,
+      "tests": [
+        {
+          "id": "tcp-connect",
+          "type": "tcp",
+          "timeout_ms": 5000,
+          "criteria": "connect succeeds"
+        },
+        {
+          "id": "api-models",
+          "type": "http-get",
+          "path": "/v1/models",
+          "timeout_ms": 5000,
+          "criteria": "HTTP 200 + JSON with data[] non-empty"
+        },
+        {
+          "id": "latency-total",
+          "type": "composite",
+          "criteria": "tcp_ms + api_ms < 500"
+        }
+      ],
+      "pass_criteria": "ALL tests green (status=OK)",
+      "fail_action": "run recover_all.py locally; re-probe after 30s"
+    },
+    "Red": {
+      "ip": "IP_RED",
+      "port": 8888,
+      "tests": [
+        {
+          "id": "tcp-connect",
+          "type": "tcp",
+          "timeout_ms": 5000,
+          "criteria": "connect succeeds"
+        },
+        {
+          "id": "api-models",
+          "type": "http-get",
+          "path": "/v1/models",
+          "timeout_ms": 5000,
+          "criteria": "HTTP 200 + JSON with data[] non-empty"
+        },
+        {
+          "id": "latency-total",
+          "type": "composite",
+          "criteria": "tcp_ms + api_ms < 500"
+        }
+      ],
+      "pass_criteria": "ALL tests green (status=OK)",
+      "fail_action": "WinRM: Invoke-Command recover_all.py; re-probe after 30s"
+    },
+    "Pale": {
+      "ip": "IP_PALE",
+      "port": 8888,
+      "tests": [
+        {
+          "id": "tcp-connect",
+          "type": "tcp",
+          "timeout_ms": 5000,
+          "criteria": "connect succeeds"
+        },
+        {
+          "id": "api-models",
+          "type": "http-get",
+          "path": "/v1/models",
+          "timeout_ms": 5000,
+          "criteria": "HTTP 200 + JSON with data[] non-empty"
+        },
+        {
+          "id": "latency-total",
+          "type": "composite",
+          "criteria": "tcp_ms + api_ms < 500"
+        }
+      ],
+      "pass_criteria": "ALL tests green (status=OK)",
+      "fail_action": "WinRM: Invoke-Command recover_all.py; re-probe after 30s"
+    },
+    "Black": {
+      "ip": "IP_BLACK",
+      "port": 8888,
+      "tests": [
+        {
+          "id": "tcp-connect",
+          "type": "tcp",
+          "timeout_ms": 5000,
+          "criteria": "connect succeeds"
+        },
+        {
+          "id": "api-models",
+          "type": "http-get",
+          "path": "/v1/models",
+          "timeout_ms": 5000,
+          "criteria": "HTTP 200 + JSON with data[] non-empty"
+        },
+        {
+          "id": "latency-total",
+          "type": "composite",
+          "criteria": "tcp_ms + api_ms < 500"
+        }
+      ],
+      "pass_criteria": "ALL tests green (status=OK)",
+      "fail_action": "WinRM: Invoke-Command recover_all.py; re-probe after 30s"
+    }
+  },
+  "cascade_rules": {
+    "description": "Host A failure does NOT block host B tests. All hosts are probed independently in parallel.",
+    "rules": [
+      {
+        "id": "no-cascade",
+        "rule": "Each host is tested independently; a CRIT on one host does not skip or abort tests for other hosts."
+      },
+      {
+        "id": "white-down-escalation",
+        "rule": "If White (local) is CRIT for >2 consecutive runs, escalate: write incident to memory/ops/incidents.jsonl and flag in next cycle report."
+      },
+      {
+        "id": "all-hosts-crit",
+        "rule": "If ALL 4 hosts are CRIT simultaneously, classify as FLEET-DOWN; skip remediation (likely network-level issue); write incident immediately."
+      }
+    ]
+  },
+  "schedule": {
+    "frequency": "every 15 minutes",
+    "method": "schtasks ForgeSmokeSuite on White (SYSTEM context)",
+    "command": "python C:\\Projects\\AgentPortal\\memory\\forge\\smoke_suite.py --no-remediate",
+    "status": "PENDING_SCHEDULING (elev.py down; register when helper restored)"
+  },
+  "output": {
+    "results_jsonl": "memory/forge/smoke-results.jsonl",
+    "log_md": "memory/forge/log.md"
+  }
+}

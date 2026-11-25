@@ -1,0 +1,31 @@
+{
+  "entries": [
+    {
+      "agent": "archivist",
+      "goal": "Autonomy Decay Detection",
+      "goal_num": 1,
+      "status": "reached",
+      "ts": "2026-11-25T14:19:24.926959",
+      "note": "verified: memory/archivist/autonomy-decay-signals.md + decay_detector.py (script runs, outputs valid JSON; thresholds grounded in real cycle 14-17 data)",
+      "leaf": "memory/archivist/evidence-goal1-autonomy-decay-detection-2026-11-25.md"
+    },
+    {
+      "agent": "archivist",
+      "goal": "Convergence Lock Protocol",
+      "goal_num": 2,
+      "status": "reached",
+      "ts": "2026-11-25T14:20:39.726510",
+      "note": "verified: memory/archivist/convergence-lock-protocol.md + convergence-lock-state.json (initial state recorded; criteria grounded in real score data)",
+      "leaf": "memory/archivist/evidence-goal2-convergence-lock-protocol-2026-11-25.md"
+    },
+    {
+      "agent": "archivist",
+      "goal": "Per-Agent Autonomy Scorecard",
+      "goal_num": 3,
+      "status": "reached",
+      "ts": "2026-11-25T14:22:29.973131",
+      "note": "verified: autonomy-scorecard.json (10 agents x 5 domains) + summary.md; closest=archivist(6.8), gap=pixel(3.6)",
+      "leaf": "memory/archivist/evidence-goal3-autonomy-scorecard-2026-11-25.md"
+    }
+  ]
+}

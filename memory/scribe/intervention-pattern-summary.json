@@ -1,0 +1,33 @@
+{
+  "computed_at": "2026-11-25T04:19:53.768436+00:00",
+  "total_interventions": 10,
+  "pattern_counts": {
+    "new_requirement": 5,
+    "tool_gap": 1,
+    "edge_case": 2,
+    "preference_override": 2
+  },
+  "trends": {
+    "tool_gap": {
+      "first_half_rate": 0.2,
+      "second_half_rate": 0.0,
+      "direction": "decreasing"
+    },
+    "preference_override": {
+      "first_half_rate": 0.0,
+      "second_half_rate": 0.4,
+      "direction": "increasing"
+    },
+    "edge_case": {
+      "first_half_rate": 0.2,
+      "second_half_rate": 0.2,
+      "direction": "stable"
+    },
+    "new_requirement": {
+      "first_half_rate": 0.6,
+      "second_half_rate": 0.4,
+      "direction": "decreasing"
+    }
+  },
+  "classification_rules": "keyword-based heuristics on context + type; see classify() in script"
+}

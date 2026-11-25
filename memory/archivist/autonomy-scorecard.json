@@ -1,0 +1,305 @@
+{
+  "generated": "2026-11-25T14:25:00Z",
+  "methodology": "Scored 0-10 per domain based on: intervention counts (human-interventions.jsonl), goal completion rates, knowledge contributions (INDEX.md entries), and observed autonomous behavior in cycle logs. Confidence noted per score.",
+  "domains": [
+    "ops",
+    "dispatch",
+    "goal_setting",
+    "model_mgmt",
+    "knowledge"
+  ],
+  "agents": {
+    "orchestrator": {
+      "ops": {
+        "score": 7,
+        "evidence": "Manages cycle plans, model router, fleet coordination. 2 interventions (both redirect - human setting direction, not ops failure). High autonomy in routine dispatch.",
+        "confidence": "medium"
+      },
+      "dispatch": {
+        "score": 8,
+        "evidence": "Owns TODO.md, matches backends to agents, onboards new ones. Assisted multiple agents this cycle (Scribe G1, Researcher G1).",
+        "confidence": "high"
+      },
+      "goal_setting": {
+        "score": 6,
+        "evidence": "Drafts cycle proposals but 0/10 reached in current file. Goals are well-structured but completion lags.",
+        "confidence": "medium"
+      },
+      "model_mgmt": {
+        "score": 5,
+        "evidence": "Model router exists but seat load issues (Orchestrator=unreachable at run start). Relocation handled by Mechanic.",
+        "confidence": "low"
+      },
+      "knowledge": {
+        "score": 7,
+        "evidence": "Maintains orchestrator INDEX.md with detailed entries; cycle closeout contract authored here.",
+        "confidence": "medium"
+      }
+    },
+    "researcher": {
+      "ops": {
+        "score": 6,
+        "evidence": "Evidence quality tracking runs autonomously. 1 intervention (approve - not a failure).",
+        "confidence": "medium"
+      },
+      "dispatch": {
+        "score": 5,
+        "evidence": "Not primary dispatcher but cross-checks sources for others. goal_ledger.py is shared infrastructure.",
+        "confidence": "low"
+      },
+      "goal_setting": {
+        "score": 7,
+        "evidence": "Well-scoped goals with clear acceptance criteria. Evidence-quality trend reports are reproducible.",
+        "confidence": "medium"
+      },
+      "model_mgmt": {
+        "score": 3,
+        "evidence": "No model management responsibility. Score reflects non-applicability (low exposure).",
+        "confidence": "high"
+      },
+      "knowledge": {
+        "score": 9,
+        "evidence": "Owns KB infrastructure (kb_index.py), dictionary, evidence quality metrics. Most-cited lane for provenance.",
+        "confidence": "high"
+      }
+    },
+    "builder": {
+      "ops": {
+        "score": 5,
+        "evidence": "3 interventions (most of any agent): unblock x2 + approve x1. Clobber loop was a systemic issue but required human nudge.",
+        "confidence": "medium"
+      },
+      "dispatch": {
+        "score": 4,
+        "evidence": "Not a dispatcher; focuses on implementation. Handoff patterns present but not formalized.",
+        "confidence": "low"
+      },
+      "goal_setting": {
+        "score": 5,
+        "evidence": "Goals are well-defined (code deliverables) but 0/10 reached in current cycle. Complex multi-step goals may be over-scoped.",
+        "confidence": "medium"
+      },
+      "model_mgmt": {
+        "score": 3,
+        "evidence": "No direct model management. Builds automation that touches models indirectly.",
+        "confidence": "high"
+      },
+      "knowledge": {
+        "score": 6,
+        "evidence": "Builds scripts/tools that become knowledge artifacts (goal_prioritizer, handoff_detector specs). Frontend work well-documented.",
+        "confidence": "medium"
+      }
+    },
+    "archivist": {
+      "ops": {
+        "score": 7,
+        "evidence": "Zero interventions in intervention log. Decay detection, freshness sweeps, citation audits all run autonomously.",
+        "confidence": "high"
+      },
+      "dispatch": {
+        "score": 5,
+        "evidence": "Not a dispatcher but provides knowledge routing (INDEX.md pointer maps). Assists other agents with provenance questions.",
+        "confidence": "medium"
+      },
+      "goal_setting": {
+        "score": 8,
+        "evidence": "2/10 reached this cycle (fastest of any agent). Goals are well-scoped for solo execution. Clear acceptance criteria.",
+        "confidence": "high"
+      },
+      "model_mgmt": {
+        "score": 3,
+        "evidence": "No model management responsibility.",
+        "confidence": "high"
+      },
+      "knowledge": {
+        "score": 10,
+        "evidence": "Primary knowledge curator. Owns KB, citation maps, decay detection, provenance tracking. Most files in memory/ are archivist-authored or -maintained.",
+        "confidence": "high"
+      }
+    },
+    "verifier": {
+      "ops": {
+        "score": 6,
+        "evidence": "1 intervention (approve - Playwright approach). Test batteries run autonomously.",
+        "confidence": "medium"
+      },
+      "dispatch": {
+        "score": 4,
+        "evidence": "Not a dispatcher. Gate function only (pass/fail with proof).",
+        "confidence": "high"
+      },
+      "goal_setting": {
+        "score": 6,
+        "evidence": "Goals are verification-focused, clear pass/fail criteria. 0/10 reached current cycle but goals are inherently dependent on Builder output.",
+        "confidence": "medium"
+      },
+      "model_mgmt": {
+        "score": 3,
+        "evidence": "No model management responsibility.",
+        "confidence": "high"
+      },
+      "knowledge": {
+        "score": 7,
+        "evidence": "Test batteries and audit reports become reusable knowledge. Rollback tests are well-documented.",
+        "confidence": "medium"
+      }
+    },
+    "mechanic": {
+      "ops": {
+        "score": 8,
+        "evidence": "Primary ops agent. Fleet health monitoring, OOM recovery, load tests. 2 interventions (both unblock - model relocation, which is expected).",
+        "confidence": "high"
+      },
+      "dispatch": {
+        "score": 4,
+        "evidence": "Not a dispatcher but routes ops tasks between hosts.",
+        "confidence": "medium"
+      },
+      "goal_setting": {
+        "score": 6,
+        "evidence": "Well-scoped ops goals. 0/10 reached current cycle but many are infrastructure-dependent (need specific host states).",
+        "confidence": "medium"
+      },
+      "model_mgmt": {
+        "score": 9,
+        "evidence": "Owns model lifecycle: load/unload/relocate across 4 hosts. WinRM chain for remote management. Most autonomous in this domain.",
+        "confidence": "high"
+      },
+      "knowledge": {
+        "score": 7,
+        "evidence": "Fleet ops runbooks, host-port-task maps, incident notes. Critical operational knowledge.",
+        "confidence": "medium"
+      }
+    },
+    "scribe": {
+      "ops": {
+        "score": 5,
+        "evidence": "No direct ops responsibility. 0 interventions but also 0/10 goals reached (slowest lane).",
+        "confidence": "medium"
+      },
+      "dispatch": {
+        "score": 6,
+        "evidence": "Synthesizer role - compresses threads into decisions. Not a dispatcher but routes information.",
+        "confidence": "low"
+      },
+      "goal_setting": {
+        "score": 5,
+        "evidence": "Goals are synthesis-focused (trendlines, causal maps). 0/10 reached. May be over-dependent on other agents' data.",
+        "confidence": "medium"
+      },
+      "model_mgmt": {
+        "score": 2,
+        "evidence": "No model management responsibility.",
+        "confidence": "high"
+      },
+      "knowledge": {
+        "score": 8,
+        "evidence": "Decision logs, autonomy trend tracking, convergence narratives. Cross-lane synthesis is unique value.",
+        "confidence": "medium"
+      }
+    },
+    "designer": {
+      "ops": {
+        "score": 5,
+        "evidence": "1 intervention (redirect - team work on convergence UI). UI builds are autonomous once spec'd.",
+        "confidence": "medium"
+      },
+      "dispatch": {
+        "score": 5,
+        "evidence": "Manages sub-agents (Lumen, Reel, Splice, Pixel). Routes creative tasks.",
+        "confidence": "medium"
+      },
+      "goal_setting": {
+        "score": 6,
+        "evidence": "9/10 reached per live plan (best completion rate). Goals are well-scoped for UI work.",
+        "confidence": "high"
+      },
+      "model_mgmt": {
+        "score": 3,
+        "evidence": "No model management. Image/video gen LLMs managed by subs.",
+        "confidence": "high"
+      },
+      "knowledge": {
+        "score": 7,
+        "evidence": "UI designs, CSS/JS patterns, panel specs. Cockpit design is well-documented.",
+        "confidence": "medium"
+      }
+    },
+    "pixel": {
+      "ops": {
+        "score": 4,
+        "evidence": "Newly onboarded (2026-11-25). Limited history. Frontend implementation is autonomous within scope.",
+        "confidence": "low"
+      },
+      "dispatch": {
+        "score": 3,
+        "evidence": "Sub-agent - receives tasks from Builder/Designer. No independent dispatch.",
+        "confidence": "high"
+      },
+      "goal_setting": {
+        "score": 4,
+        "evidence": "No goals file yet (0 total). Goals will be assigned by parent agents.",
+        "confidence": "high"
+      },
+      "model_mgmt": {
+        "score": 2,
+        "evidence": "No model management responsibility.",
+        "confidence": "high"
+      },
+      "knowledge": {
+        "score": 5,
+        "evidence": "New lane. UI implementation patterns will accumulate over time.",
+        "confidence": "low"
+      }
+    },
+    "forge": {
+      "ops": {
+        "score": 5,
+        "evidence": "Newly onboarded (2026-11-25). Gate/deploy focus. Limited history but test infrastructure is sound.",
+        "confidence": "low"
+      },
+      "dispatch": {
+        "score": 3,
+        "evidence": "Sub-agent - gate function for Builder. Routes pass/fail decisions.",
+        "confidence": "high"
+      },
+      "goal_setting": {
+        "score": 5,
+        "evidence": "10 goals defined (smoke suite, canary deploy, perf rollback). Well-scoped but not yet started.",
+        "confidence": "medium"
+      },
+      "model_mgmt": {
+        "score": 3,
+        "evidence": "No direct model management. Tests model health indirectly via smoke probes.",
+        "confidence": "high"
+      },
+      "knowledge": {
+        "score": 6,
+        "evidence": "Test topology, canary pipeline specs, perf baselines will become critical ops knowledge.",
+        "confidence": "medium"
+      }
+    }
+  },
+  "composite_scores": {
+    "orchestrator": 6.6,
+    "researcher": 6.0,
+    "builder": 4.6,
+    "archivist": 6.6,
+    "verifier": 5.2,
+    "mechanic": 6.8,
+    "scribe": 5.2,
+    "designer": 5.2,
+    "pixel": 3.6,
+    "forge": 4.4
+  },
+  "closest_to_full_autonomy": {
+    "agent": "mechanic",
+    "score": 6.8,
+    "note": "Strongest in: ['model_mgmt']"
+  },
+  "largest_gap": {
+    "agent": "pixel",
+    "score": 3.6,
+    "note": "Weakest domains: ['model_mgmt']"
+  }
+}

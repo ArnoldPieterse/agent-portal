@@ -2369,7 +2369,196 @@ def _cockpit_snapshot():
         mode_anomaly.evaluate()
     except Exception:
         pass
+    # Power allocation by agent over fleet resources (2026-11-25): one more key in the
+    # same payload so the Cockpit tab still needs exactly one call for its full picture.
+    try:
+        data["power"] = _power_snapshot({a.get("name"): a.get("status") for a in agents_out})
+    except Exception:
+        pass
     _cockpit_cache.update(ts=now, data=data)
+    return data
+
+
+# ---------------------------------------------------------------------------
+# Power allocation by agent over fleet resources (Cockpit pie chart, 2026-11-25).
+# "Power" = VRAM committed to the model seat each agent runs on. Seat VRAM is the
+# documented approximation from the hotload catalog / llm_selector registry (ground
+# truth stays nvidia-smi). Sub-agents riding a parent's model share that seat, so the
+# seat VRAM splits evenly across its riders - the chart then shows who the fleet's
+# power actually goes to. The verdict flags when allocation should be revisited:
+# stretched shared seats, oversized single slices, idle agents hogging big shares.
+_power_cache = {"ts": 0.0, "data": None}
+_POWER_TTL = 60   # config-driven (agents.json + catalog); minute freshness is plenty
+
+def _studio_host_key(base):
+    """Studio API base -> catalog host key (white/pale/black/red). Local seat = white.
+    Uses the process-cached catalog host map (_fleet_host_names), never re-reads the file."""
+    b = (base or "").strip().rstrip("/")
+    if not b or b == STUDIO.rstrip("/"):
+        return "white"
+    nm = _fleet_host_names().get(b)
+    if nm:
+        return str(nm).lower()
+    m = re.search(r"//([\d.]+)", b)
+    if m:
+        for api, name in _fleet_host_names().items():
+            if m.group(1) in api:
+                return str(name).lower()
+    return None
+
+def _power_catalog():
+    """hotload-catalog.json -> (models[], hosts{}); models carry folder base name."""
+    try:
+        cat = json.load(open(os.path.join(HERE, "memory", "llm", "hotload-catalog.json"), encoding="utf-8"))
+        models = []
+        for m in cat.get("models") or []:
+            folder = str(m.get("folder") or "")
+            base = (folder.replace("\\", "/").rstrip("/").split("/") or [""])[-1]
+            models.append({"host": str(m.get("host") or "").lower(), "base": base,
+                           "vram_gb": m.get("vram_gb"), "gpu_ids": m.get("gpu_ids") or []})
+        return models, (cat.get("_meta") or {}).get("hosts") or {}
+    except Exception:
+        return [], {}
+
+def _power_selector():
+    """llm_selector.MODELS (alias registry) - fallback resolver for alias model ids."""
+    try:
+        import llm_selector
+        return list(llm_selector.MODELS)
+    except Exception:
+        return []
+
+def _power_snapshot(status_by_name=None):
+    """GET payload: per-agent power share (VRAM GB) over fleet seats + revisit verdict."""
+    status_by_name = status_by_name or {}
+    now = time.time()
+    if _power_cache["data"] is not None and now - _power_cache["ts"] < _POWER_TTL:
+        return _power_cache["data"]
+    catalog, hosts_meta = _power_catalog()
+    selector = _power_selector()
+    capacity_gb = 0.0
+    for hv in (hosts_meta or {}).values():
+        try:
+            capacity_gb += float(hv.get("vram_total_gb") or 0)
+        except Exception:
+            pass
+    agents_in = []
+    try:
+        agents_in = load_agents().get("agents", [])
+    except Exception:
+        pass
+    # -- resolve each agent to a physical seat (host + GPU set) and its VRAM footprint.
+    # Seat identity is host+GPUs, NOT the model label: an alias (designer-q4) and the raw
+    # folder name of the same model (Qwen3.8-27B-Q4_K_S) are ONE seat - sub-agents ride
+    # their parent's loaded model, so keying on labels would double-count the VRAM.
+    seats = {}   # (host_key, tuple(gpu_ids)) -> {"vram_gb":..,"gpu_ids":..,"label":..,"agents":[...]}
+    unresolved = []
+    for a in agents_in:
+        name = a.get("name") or a.get("id") or "?"
+        mid = str(a.get("model_id") or "").strip()
+        host_key = _studio_host_key(a.get("studio"))
+        vram, gpus = None, []
+        sel = next((m for m in selector if m.get("id") == mid), None)
+        if sel is not None:
+            vram, gpus = sel.get("vram_gb"), (sel.get("gpu_ids") or [])
+        if vram is None:
+            cands = [c for c in catalog if c["base"] and c["base"].lower() == mid.lower()
+                     and (host_key is None or c["host"] == host_key)]
+            if cands:
+                cands.sort(key=lambda c: 0 if c["host"] == host_key else 1)
+                vram, gpus = cands[0]["vram_gb"], (cands[0]["gpu_ids"] or [])
+        if vram is None or not host_key:
+            unresolved.append({"name": name, "model_id": mid,
+                               "reason": "no catalog seat for this model/host"})
+            continue
+        try:
+            vram = float(vram)
+        except Exception:
+            unresolved.append({"name": name, "model_id": mid, "reason": "bad vram value"})
+            continue
+        gk = tuple(sorted(set(gpus))) if gpus else (None,)
+        sk = (host_key, gk)
+        s = seats.get(sk)
+        if s is None:
+            seats[sk] = {"vram_gb": vram, "gpu_ids": list(gk), "label": mid, "agents": [name]}
+        else:
+            s["vram_gb"] = max(s["vram_gb"], vram)   # conservative: documented catalog value wins
+            s["agents"].append(name)
+            if any(c["base"] and c["base"].lower() == mid.lower() for c in catalog):
+                s["label"] = mid   # raw folder name is the more descriptive label
+    # -- per-agent power: seat VRAM split evenly across its riders
+    agents_out = []
+    for sk, s in seats.items():
+        n = len(s["agents"])
+        host_name = str(sk[0]).capitalize()
+        for nm in s["agents"]:
+            agents_out.append({"name": nm,
+                               "model": next((str(a.get("model_id") or "") for a in agents_in
+                                              if (a.get("name") or a.get("id")) == nm), ""),
+                               "color": next((a.get("color") for a in agents_in
+                                              if (a.get("name") or a.get("id")) == nm and a.get("color")), None),
+                               "host": host_name, "seat": s["label"], "gpu_ids": s["gpu_ids"],
+                               "vram_gb": round(s["vram_gb"], 1),
+                               "power_gb": round(s["vram_gb"] / n, 2),
+                               "shared_with": [x for x in s["agents"] if x != nm],
+                               "status": status_by_name.get(nm) or "unknown"})
+    total_alloc = sum(s["vram_gb"] for s in seats.values())
+    for x in agents_out:
+        x["pct"] = round(100.0 * x["power_gb"] / total_alloc, 1) if total_alloc else 0
+    agents_out.sort(key=lambda x: (-x["power_gb"], x["name"]))
+    # -- per-host rollup (capacity vs allocated seats)
+    hosts_out = []
+    for hn, hv in (hosts_meta or {}).items():
+        try:
+            cap = float(hv.get("vram_total_gb") or 0)
+        except Exception:
+            cap = 0.0
+        alloc = sum(s["vram_gb"] for k, s in seats.items() if k[0] == hn)
+        hosts_out.append({"name": str(hn).capitalize(), "capacity_gb": cap,
+                          "allocated_gb": round(alloc, 1),
+                          "pct": round(100.0 * alloc / cap, 1) if cap else None})
+    # -- per-GPU overcommit check (one seat set must fit a single 32GB card)
+    gpu_load = {}   # (host_key, gpu_id) -> GB
+    for k, s in seats.items():
+        for g in (s["gpu_ids"] or [None]):
+            gpu_load[(k[0], g)] = gpu_load.get((k[0], g), 0.0) + s["vram_gb"] / max(len(s["gpu_ids"] or [None]), 1)
+    overcommit = []
+    for (hk, g), gb in sorted(gpu_load.items()):
+        if gb > 32.0:
+            overcommit.append("%s GPU%s: %.1f GB of seats on one 32 GB card" % (str(hk).capitalize(), g or "?", round(gb, 1)))
+    # -- revisit verdict (deduped: one note per stretched seat)
+    seen = set()
+    reasons = []
+    for x in agents_out:
+        if x["shared_with"] and x["power_gb"] < 8.0:
+            key = (x["host"], x["seat"])
+            if key in seen: continue
+            seen.add(key)
+            reasons.append("%d agents share one %.1f GB seat on %s (%.1f GB each) - consider a dedicated model or rebalancing"
+                           % (len(x["shared_with"]) + 1, x["vram_gb"], x["host"] or "?", x["power_gb"]))
+    for x in agents_out:
+        if total_alloc and x["pct"] > 15.0:
+            reasons.append("%s alone holds %.1f%% of fleet power (%.1f GB)"
+                           % (x["name"], x["pct"], x["power_gb"]))
+    idle_big = [x for x in agents_out if x["status"] in ("idle", "unresponsive") and total_alloc and x["pct"] >= 12.0]
+    active_small = [x for x in agents_out if x["status"] == "active" and total_alloc and x["pct"] < 6.0]
+    if idle_big and active_small:
+        reasons.append("idle %s holds %.1f%% while active %s has only %.1f%% - rebalance candidate"
+                       % (", ".join(x["name"] for x in idle_big[:2]),
+                          max(x["pct"] for x in idle_big),
+                          ", ".join(x["name"] for x in active_small[:2]),
+                          min(x["pct"] for x in active_small)))
+    reasons.extend(overcommit)
+    level = "revisit" if reasons else "healthy"
+    free_gb = max(capacity_gb - total_alloc, 0.0)
+    data = {"unit": "GB VRAM (catalog approximations; ground truth = nvidia-smi)",
+            "capacity_gb": round(capacity_gb, 1), "allocated_gb": round(total_alloc, 1),
+            "free_gb": round(free_gb, 1),
+            "pct_used": round(100.0 * total_alloc / capacity_gb, 1) if capacity_gb else None,
+            "agents": agents_out, "hosts": hosts_out, "unresolved": unresolved,
+            "verdict": {"level": level, "reasons": reasons},
+            "generated": time.strftime("%Y-%m-%d %H:%M:%S")}
+    _power_cache.update(ts=now, data=data)
     return data
 
 

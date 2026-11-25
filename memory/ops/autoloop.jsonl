@@ -359,3 +359,7 @@
 {"timestamp": "2026-11-25T04:14:03.505338+00:00", "agent": "Lumen", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 554394}
 {"timestamp": "2026-11-25T04:14:03.511231+00:00", "agent": "Reel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 554395}
 {"timestamp": "2026-11-25T04:14:03.520441+00:00", "agent": "Splice", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 554396}
+{"timestamp": "2026-11-25T04:31:02.920358+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-25T04:31:02.929790+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-25T04:31:02.935734+00:00", "agent": "Scribe", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-25T04:31:02.945912+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
