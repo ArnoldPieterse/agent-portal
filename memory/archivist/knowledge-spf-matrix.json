@@ -1,0 +1,276 @@
+{
+  "generated": "2026-11-25",
+  "assisted_by": "scribe",
+  "owner": "archivist",
+  "method": "cross-lane scan; concrete-file pointers (memory/<lane>/<file>.ext, excl INDEX) + explicit owner/ASSIST attributions; weighted score=2*attr_count+concrete_srcs",
+  "caveat": "shared pointer map (memory/INDEX.md + shared modules) couples every lane to every other -> naive citation count is non-discriminating; use concrete-file + attribution signals instead",
+  "ranking": [
+    {
+      "lane": "builder",
+      "score": 47,
+      "concrete_sources": [
+        "archivist",
+        "designer",
+        "mechanic",
+        "orchestrator",
+        "researcher",
+        "scribe",
+        "verifier"
+      ],
+      "attr_sources": [
+        "archivist",
+        "researcher",
+        "scribe",
+        "verifier"
+      ],
+      "attr_count": 20
+    },
+    {
+      "lane": "mechanic",
+      "score": 27,
+      "concrete_sources": [
+        "archivist",
+        "builder",
+        "designer",
+        "orchestrator",
+        "researcher",
+        "scribe",
+        "verifier"
+      ],
+      "attr_sources": [
+        "archivist",
+        "builder",
+        "designer",
+        "researcher",
+        "scribe",
+        "verifier"
+      ],
+      "attr_count": 10
+    },
+    {
+      "lane": "scribe",
+      "score": 15,
+      "concrete_sources": [
+        "archivist",
+        "builder",
+        "designer",
+        "mechanic",
+        "orchestrator",
+        "researcher",
+        "verifier"
+      ],
+      "attr_sources": [
+        "archivist",
+        "builder",
+        "designer"
+      ],
+      "attr_count": 4
+    },
+    {
+      "lane": "orchestrator",
+      "score": 13,
+      "concrete_sources": [
+        "archivist",
+        "builder",
+        "designer",
+        "mechanic",
+        "researcher",
+        "scribe",
+        "verifier"
+      ],
+      "attr_sources": [
+        "researcher"
+      ],
+      "attr_count": 3
+    },
+    {
+      "lane": "researcher",
+      "score": 9,
+      "concrete_sources": [
+        "archivist",
+        "builder",
+        "designer",
+        "mechanic",
+        "orchestrator",
+        "scribe",
+        "verifier"
+      ],
+      "attr_sources": [
+        "scribe"
+      ],
+      "attr_count": 1
+    },
+    {
+      "lane": "designer",
+      "score": 9,
+      "concrete_sources": [
+        "archivist",
+        "builder",
+        "mechanic",
+        "orchestrator",
+        "researcher",
+        "scribe",
+        "verifier"
+      ],
+      "attr_sources": [
+        "archivist"
+      ],
+      "attr_count": 1
+    },
+    {
+      "lane": "archivist",
+      "score": 9,
+      "concrete_sources": [
+        "builder",
+        "designer",
+        "mechanic",
+        "orchestrator",
+        "researcher",
+        "scribe",
+        "verifier"
+      ],
+      "attr_sources": [
+        "scribe"
+      ],
+      "attr_count": 1
+    },
+    {
+      "lane": "verifier",
+      "score": 7,
+      "concrete_sources": [
+        "archivist",
+        "builder",
+        "designer",
+        "mechanic",
+        "orchestrator",
+        "researcher",
+        "scribe"
+      ],
+      "attr_sources": [],
+      "attr_count": 0
+    },
+    {
+      "lane": "outlet",
+      "score": 2,
+      "concrete_sources": [
+        "archivist",
+        "scribe"
+      ],
+      "attr_sources": [],
+      "attr_count": 0
+    },
+    {
+      "lane": "pixel",
+      "score": 1,
+      "concrete_sources": [
+        "archivist"
+      ],
+      "attr_sources": [],
+      "attr_count": 0
+    },
+    {
+      "lane": "forge",
+      "score": 1,
+      "concrete_sources": [
+        "archivist"
+      ],
+      "attr_sources": [],
+      "attr_count": 0
+    },
+    {
+      "lane": "splice",
+      "score": 0,
+      "concrete_sources": [],
+      "attr_sources": [],
+      "attr_count": 0
+    },
+    {
+      "lane": "reel",
+      "score": 0,
+      "concrete_sources": [],
+      "attr_sources": [],
+      "attr_count": 0
+    },
+    {
+      "lane": "lumen",
+      "score": 0,
+      "concrete_sources": [],
+      "attr_sources": [],
+      "attr_count": 0
+    }
+  ],
+  "spf_gt3_dependents": {
+    "orchestrator": [
+      "archivist",
+      "builder",
+      "designer",
+      "mechanic",
+      "researcher",
+      "scribe",
+      "verifier"
+    ],
+    "researcher": [
+      "archivist",
+      "builder",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "scribe",
+      "verifier"
+    ],
+    "verifier": [
+      "archivist",
+      "builder",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "scribe"
+    ],
+    "scribe": [
+      "archivist",
+      "builder",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "verifier"
+    ],
+    "designer": [
+      "archivist",
+      "builder",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "scribe",
+      "verifier"
+    ],
+    "builder": [
+      "archivist",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "scribe",
+      "verifier"
+    ],
+    "archivist": [
+      "builder",
+      "designer",
+      "mechanic",
+      "orchestrator",
+      "researcher",
+      "scribe",
+      "verifier"
+    ],
+    "mechanic": [
+      "archivist",
+      "builder",
+      "designer",
+      "orchestrator",
+      "researcher",
+      "scribe",
+      "verifier"
+    ]
+  }
+}

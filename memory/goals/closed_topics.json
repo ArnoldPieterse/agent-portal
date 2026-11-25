@@ -3240,5 +3240,23 @@
 "text": "**Convergence Gate Metrics** - Add gate-specific metrics to convergence_health.py: % of deploys completed without human intervention, % of s",
 "agent": "forge",
 "at": "2026-11-25"
+},
+{
+"sig": "4fac93c2ca1b6d4c",
+"text": "**Convergence Panel @375px Responsive (live-verified)** - Phone-width pass: widgets stack single-column, gauge scales without clipping, ring",
+"agent": "pixel",
+"at": "2026-11-25"
+},
+{
+"sig": "4886000f4ded5cb6",
+"text": "**Convergence Reduced-Motion System** - Global `prefers-reduced-motion` + manual toggle that disables gauge/ring animation and pulse across ",
+"agent": "pixel",
+"at": "2026-11-25"
+},
+{
+"sig": "864ea6e2d8254278",
+"text": "**Convergence Metric Info Tooltips** - Consistent \u24d8 affordance on each metric showing a plain-language definition + current value + trend ar",
+"agent": "pixel",
+"at": "2026-11-25"
 }
 ]
