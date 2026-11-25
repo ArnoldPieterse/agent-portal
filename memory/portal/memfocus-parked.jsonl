@@ -70,3 +70,6 @@
 {"ts": "2026-11-25T22:15:05", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "ae284cd0", "reason": "lod-evict"}
 {"ts": "2026-11-25T22:30:40", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 22], "focus_sig": "d24dec57", "reason": "lod-evict"}
 {"ts": "2026-11-25T22:30:40", "ref": ["memory/workspace/INDEX.md", 79], "focus_sig": "d24dec57", "reason": "lod-evict"}
+{"ts": "2026-11-25T22:48:15", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "09ae6cb7", "reason": "lod-evict"}
+{"ts": "2026-11-25T22:48:15", "ref": ["memory/goals/archive/mechanic-2026-11-23-cycle8.md", 11], "focus_sig": "09ae6cb7", "reason": "lod-evict"}
+{"ts": "2026-11-25T22:48:15", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "09ae6cb7", "reason": "lod-evict"}

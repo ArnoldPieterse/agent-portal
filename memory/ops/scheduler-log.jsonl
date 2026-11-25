@@ -2625,3 +2625,10 @@
 {"t": "2026-11-25 22:44:44", "job": "cycle_10m", "event": "start", "pid": 28292}
 {"t": "2026-11-25 22:44:49", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-25 22:44:49", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-25 22:49:44", "job": "cycle_5m", "event": "start", "pid": 35892}
+{"t": "2026-11-25 22:49:49", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-25 22:49:54", "job": "cycle_30m", "event": "done", "rc": 124}
+{"t": "2026-11-25 22:54:44", "job": "cycle_5m", "event": "start", "pid": 25760}
+{"t": "2026-11-25 22:54:44", "job": "cycle_10m", "event": "start", "pid": 44316}
+{"t": "2026-11-25 22:54:49", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-25 22:54:49", "job": "cycle_10m", "event": "done", "rc": 0}

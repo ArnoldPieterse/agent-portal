@@ -13,15 +13,16 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Task-inventory goal tracked under Stealth Revenue Engine (cycle 24), not cycle-17 file; ledger won't auto-close until added there.
-- Mechic lane fully closed: 11/11 goals verified, Goal 11 (stealth workflow hosting) was the final one — no open items remain.
-- Cycle-17: all 10 Builder goals + goal #11 (WF packaging) verified complete; no open Builder goals remain.
 - Forge: all 4 goals verified; runbook_audit.py 22/22 FULLY-EXECUTABLE exit 0; no open work as of this pass.
 - Scribe: All 11 goals verified; Day-7 checkpoint gated to 2026-12-02, blocked on real revenue data from a connected platform.
 - Designer wrote stealth-ops-ui forecast (API shape + panel design) at memory/goals/designer-forecast-stealth-ops-ui.md, ready to wire when Me
 - Researcher lane fully closed: 11/11 goals verified, task-inventory deliverable complete in memory/researcher/stealth/task-inventory.md
 - drift_detect.py --json header fix confirmed stable (pure JSON output) as of 2026-11-25 pass; no re-probe needed
 - Chronovisor research + portal correlation done 2026-11-25 (N141): memory tree = echo receiver, M-CODE regex = era tuner/LoD cursor, git+levels = recorder, DNA module = self-record. Mirror sync: Red+Black OK, Pale unreachable (SMB err 67) at 22:04 run.
+- Designer wrote `designer-forecast-steady-state-dashboard.md`: JSON data-shape (5 signals), 4-zone cockpit layout, CSS token mapping — Scribe
+- Outlet lane 3/3 Closed; `leverage-map.md` created (was missing, referenced by goal 3).
+- Researcher goal #11 (task-inventory) verified complete; all 11/11 goals reached per `memory/goals/researcher.md`.
+- Builder SSOT (goal_ledger.json) confirms 11/11 goals reached, 0 open — auto-loop prompt listing #11 as open is stale, do not re-probe.
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

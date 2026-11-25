@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-25T12:44:48.039206+00:00",
+  "ts": "2026-11-25T12:54:48.237903+00:00",
   "health_score": 80,
   "fleet_status": "NOMINAL",
   "agents": [
@@ -379,6 +379,11 @@
         "pct": 0.0
       },
       "forecast-mechanic4-reboot-recovery-2026-11-18": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "forecast-researcher-task-inventory-2026-11-25": {
         "total": 1,
         "verified": 0,
         "pct": 0.0
