@@ -2647,3 +2647,12 @@
 {"t": "2026-11-25 23:14:44", "job": "cycle_10m", "event": "start", "pid": 36680}
 {"t": "2026-11-25 23:14:49", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-25 23:14:49", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-25 23:19:44", "job": "cycle_5m", "event": "start", "pid": 34544}
+{"t": "2026-11-25 23:19:49", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-25 23:19:54", "job": "cycle_30m", "event": "done", "rc": 124}
+{"t": "2026-11-25 23:24:44", "job": "cycle_5m", "event": "start", "pid": 28088}
+{"t": "2026-11-25 23:24:44", "job": "cycle_10m", "event": "start", "pid": 18892}
+{"t": "2026-11-25 23:24:49", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-25 23:24:49", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-25 23:29:44", "job": "cycle_5m", "event": "start", "pid": 32052}
+{"t": "2026-11-25 23:29:49", "job": "cycle_5m", "event": "done", "rc": 0}
