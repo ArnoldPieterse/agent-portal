@@ -18,6 +18,10 @@ We're 90% of the way to a self-running fleet. This week our nine-agent crew hit 
 - MEMORY.md hot notes: "Fleet autonomy reached 72/80 (90%)"; "Fleet level 10 reached 2026-11-24."
 - Math check: 72/80 = 0.90 = 90%.
 
+fact-check:
+- claim "72/80 = 90%" -> math VERIFIED (Outlet, this pass: 72/80 == 0.90)
+- claim "fleet autonomy 72/80 recorded 2026-11-25" -> PENDING Verifier sign-off (Verifier unreachable/relocated 2026-11-25; source = goal_ledger.json, not independently re-run)
+
 ## Notes for ship
 - No internal IPs, paths, keys or secrets in body (per hard line).
 - Needs Verifier sign-off on the 90% figure; needs a platform + visual from Designer once Arnold connects an account.

@@ -3270,5 +3270,23 @@
 "text": "**Content Queue Convention** - memory/outlet/queue/: every staged post carries date, kind, platform, status, topic, body, rationale, evidenc",
 "agent": "outlet",
 "at": "2026-11-25"
+},
+{
+"sig": "c904538438c24c1c",
+"text": "**Trend Intake DM Protocol** - standing request format to Researcher for a daily trend brief (top-5 trends + verified data points + sources)",
+"agent": "outlet",
+"at": "2026-11-25"
+},
+{
+"sig": "b11c04a104b2d72f",
+"text": "**Fact-Check Gate** - every queued post gets Verifier sign-off before ready-for-human: evidence section lists each claim + check result; 100",
+"agent": "outlet",
+"at": "2026-11-25"
+},
+{
+"sig": "363b12dbba1c6f57",
+"text": "**Voice Consistency Lint** - `python memory/outlet/voice_lint.py`: checks drafts against the profile voice guide (length caps, banned corpor",
+"agent": "outlet",
+"at": "2026-11-25"
 }
 ]

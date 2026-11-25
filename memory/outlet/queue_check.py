@@ -3,7 +3,7 @@
 
 Contract for every staged post (memory/outlet/queue/<date>-<slug>.md):
   Top key lines (before first '##'): date, kind, platform, status, topic
-  Required sections ('##' headers):  Body, Rationale, Evidence, Notes for ship
+  Required sections ('##' headers):  Body, Rationale, Evidence (must contain a 'fact-check:' line), Notes for ship
 
 Running this script:
   1. validates every entry -> prints violations, exit 1 if any else 0
@@ -80,6 +80,10 @@ def validate(path):
     for kw, label in REQUIRED_SECTIONS:
         if not has_section(kw):
             v.append(f"missing/empty section: {label}")
+    # Fact-Check Gate (goal #3): the Evidence section must carry a 'fact-check:' line
+    ev = next((c for t, c in headers if "evidence" in t.lower()), "")
+    if not re.search(r"fact-check\s*:", ev, re.I):
+        v.append("Evidence section missing 'fact-check:' line (claim -> check result / status)")
     return keys, v
 
 
