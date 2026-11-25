@@ -3258,5 +3258,17 @@
 "text": "**Convergence Metric Info Tooltips** - Consistent \u24d8 affordance on each metric showing a plain-language definition + current value + trend ar",
 "agent": "pixel",
 "at": "2026-11-25"
+},
+{
+"sig": "40905c5e4caea3d5",
+"text": "**Profile Registry v1** - memory/outlet/profiles.md: schema for every profile (handle, platform, voice guide, cadence, hard lines); register",
+"agent": "outlet",
+"at": "2026-11-25"
+},
+{
+"sig": "7ad184dce19f546e",
+"text": "**Content Queue Convention** - memory/outlet/queue/: every staged post carries date, kind, platform, status, topic, body, rationale, evidenc",
+"agent": "outlet",
+"at": "2026-11-25"
 }
 ]
