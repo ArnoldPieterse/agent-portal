@@ -1,3 +1,4 @@
 {"ts": 1795584852, "width": 2560.0, "height": 1440.0, "dpr": 1.5, "touch_points": 0, "max_texture_size": 16384, "id": "white-desktop", "color_gamut": "srgb", "pointer": "mouse", "webgl": "ANGLE (NVIDIA)"}
 {"ts": 1795588413, "width": 1280.0, "height": 891.0, "dpr": 1.0, "touch_points": 0, "id": "device-eaf8dd1a", "pointer": "mouse", "webgl": "yes", "color_scheme": "dark"}
 {"ts": 1795588735, "width": 1024.0, "height": 819.0, "dpr": 1.0, "touch_points": 0, "id": "device-36177d99", "pointer": "mouse", "webgl": "yes", "color_scheme": "dark"}
+{"ts": 1795590570, "width": 638.0, "height": 890.0, "dpr": 1.0, "touch_points": 0, "id": "device-410853d4", "pointer": "mouse", "webgl": "yes", "color_scheme": "dark"}

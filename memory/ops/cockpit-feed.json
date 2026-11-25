@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-25T06:59:58.022794+00:00",
+  "ts": "2026-11-25T07:10:02.262726+00:00",
   "health_score": 80,
   "fleet_status": "NOMINAL",
   "agents": [
@@ -47,27 +47,27 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 77.2,
-      "cpu_pct": 3.0,
-      "temp_c": 47.7
+      "vram_pct": 77.1,
+      "cpu_pct": 39.0,
+      "temp_c": 51.2
     },
     {
       "host": "Red",
       "vram_pct": 46.7,
       "cpu_pct": 0.0,
-      "temp_c": 41.1
+      "temp_c": 38.9
     },
     {
       "host": "Pale",
       "vram_pct": 46.8,
-      "cpu_pct": 42.5,
-      "temp_c": 89.8
+      "cpu_pct": 44.0,
+      "temp_c": 89.5
     },
     {
       "host": "Black",
       "vram_pct": 0.6,
       "cpu_pct": 0.0,
-      "temp_c": 43.0
+      "temp_c": 43.1
     }
   ],
   "goals": {
@@ -459,8 +459,8 @@
         "pct": 0.0
       },
       "pixel": {
-        "total": 7,
-        "verified": 7,
+        "total": 10,
+        "verified": 10,
         "pct": 100.0
       },
       "researcher-attempts-cycle3-2026-11-18": {
