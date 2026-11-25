@@ -1,0 +1,17 @@
+{
+  "fields": [
+    "name",
+    "email",
+    "phone",
+    "company",
+    "role"
+  ],
+  "required": [
+    "name",
+    "email"
+  ],
+  "validation": {
+    "email": "^[\\w.+-]+@[\\w-]+\\.[\\w.-]+$",
+    "phone": "^\\d{3}-\\d{4}$"
+  }
+}

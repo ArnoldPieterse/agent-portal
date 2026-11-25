@@ -1,0 +1,6 @@
+invoice_id,vendor,amount,date,category
+INV-001,Acme Corp,1500.00,2026-11-01,supplies
+INV-002,Widget Inc,800.50,2026-11-03,software
+INV-003,CloudHost,240.00,2026-11-05,infrastructure
+INV-004,Acme Corp,3200.00,2026-11-10,supplies
+INV-005,PrintCo,75.00,2026-11-12,marketing

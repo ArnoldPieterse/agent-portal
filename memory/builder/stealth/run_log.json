@@ -1,0 +1,25 @@
+{
+  "run_date": "2026-11-26",
+  "workflows": [
+    {
+      "name": "WF1 Invoice Recon",
+      "runtime_s": 0.0003,
+      "cost_usd": 0.01,
+      "status": "PASS"
+    },
+    {
+      "name": "WF2 Content Scheduler",
+      "runtime_s": 0.0036,
+      "cost_usd": 0.006,
+      "status": "PASS"
+    },
+    {
+      "name": "WF3 CRM Data Entry",
+      "runtime_s": 0.0002,
+      "cost_usd": 0.024,
+      "status": "PASS"
+    }
+  ],
+  "total_pass": 3,
+  "total_fail": 0
+}

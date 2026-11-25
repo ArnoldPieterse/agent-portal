@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Jane Smith",
+    "email": "jane@acme.com",
+    "phone": "555-0101",
+    "company": "Acme Corp",
+    "role": "CTO"
+  },
+  {
+    "name": "Bob Jones",
+    "email": "bob@widget.io",
+    "phone": "555-0102",
+    "company": "Widget Inc",
+    "role": "CEO"
+  },
+  {
+    "name": "Alice Wong",
+    "email": "",
+    "phone": "555-0103",
+    "company": "CloudHost",
+    "role": "VP Eng"
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane@acme.com",
+    "phone": "555-0101",
+    "company": "Acme Corp",
+    "role": "CTO"
+  }
+]

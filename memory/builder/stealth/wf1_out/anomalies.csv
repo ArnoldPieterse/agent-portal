@@ -1,0 +1,2 @@
+invoice_id,vendor,invoice_amount,ledger_amount,diff_pct,status
+INV-001,Acme Corp,1500.0,3100.0,106.67,anomaly

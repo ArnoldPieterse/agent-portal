@@ -1,0 +1,6 @@
+account,description,amount,date
+Acme Corp,Payment to Acme Corp Nov,1500.00,2026-11-01
+Widget Inc,Widget software license,800.50,2026-11-03
+CloudHost,Cloud hosting fee,240.00,2026-11-05
+Acme Corp,Acme bulk order,3100.00,2026-11-10
+UnknownVendor,Mystery charge,99.99,2026-11-15

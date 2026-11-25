@@ -1,0 +1,29 @@
+{
+  "brand_voice": "friendly_expert",
+  "tone": "friendly_expert",
+  "start_date": "2026-12-01",
+  "days_per_week": 3,
+  "platforms": [
+    "linkedin"
+  ],
+  "topics": [
+    {
+      "name": "team productivity",
+      "hook": "Stop wasting hours on meetings!",
+      "body": "Here are 3 quick wins to reclaim your team's focus time.",
+      "hashtags": [
+        "productivity",
+        "SMB"
+      ]
+    },
+    {
+      "name": "remote work tips",
+      "hook": "Remote work isn't working for you?",
+      "body": "These 2 habits transformed our distributed team's output.",
+      "hashtags": [
+        "remotework",
+        "tips"
+      ]
+    }
+  ]
+}
