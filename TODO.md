@@ -671,3 +671,9 @@ OPEN (next turn):
 - T6 Pale hot: re-run nvidia-smi temp (last output truncated by context limit) + scan state_collector logs for >75C events today 00:00-12:00
 - T3 multi-persona boot review -> memory/ops/boot_review_20261126.md (scenarios: clean boot, partial seats up, helper fail, VBS path drift, Ollama late start)
 - Consider disabling legacy PortalRun schtask (redundant with portal_host.vbs; last run failed 0x40000004)
+
+## 2026-11-26 post-reboot follow-ups (studio pass)
+- [ ] T4 prompt drill-down: compare latest prompts sent through portal (activity/) with agents.json template sections; flag stale/missing logic (M-CODE, run-rules, level context).
+- [ ] Push 7 open goal owners to closure (109/116 -> next level): builder 1, forge 2, orchestrator 1, outlet 2, researcher 1. Find queue API contract in agent_portal.py, send close-out prompts.
+- [ ] Verify PortalWatchdog: `schtasks /query /tn PortalWatchdog` + first lines of _portal_boot.log; then DELETE dead one-shot task PortalRun (confirm nothing references it first).
+- [ ] Confirm Pale cap state from _pale_cap_out.txt / next probe; if temps >80C under load persist, escalate to fan curve.

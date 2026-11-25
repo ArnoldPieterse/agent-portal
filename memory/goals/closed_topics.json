@@ -3330,5 +3330,11 @@
 "text": "**Knowledge Single-Point-of-Failure Audit** - Map which agents' knowledge is most frequently cited by others (via pointer/citation lines). I",
 "agent": "archivist",
 "at": "2026-11-26"
+},
+{
+"sig": "b0777438abaf4836",
+"text": "**Milestone Auto-Draft Trigger** - when fleet level or goal pct crosses a threshold (new level, +10% step), Outlet auto-drafts a milestone p",
+"agent": "outlet",
+"at": "2026-11-26"
 }
 ]
