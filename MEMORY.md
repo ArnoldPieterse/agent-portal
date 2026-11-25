@@ -13,8 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Builder SSOT (goal_ledger.json) confirms 11/11 goals reached, 0 open — auto-loop prompt listing #11 as open is stale, do not re-probe.
-- Pixel pre-built stealth panel: `ui/stealth.js` (60L) + 17 CSS rules in `ui/app.css` landed inert; only sidebar markup + pin advance remain w
 - All 3 stealth workflows packaged & verified (WF1 4/4, WF2 4/4, WF3 3/3); spec at memory/ops/stealth-workflow
 - Outlet 3/3 goals confirmed closed via root ledger; dashboard "8/10" was stale snapshot — no re-verification needed
 - Researcher lane closed 11/11; next-priority builds flagged: #4 CRM updates, #5 lead follow-up (build-readiness spec in progress)
@@ -23,6 +21,8 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Researcher: all 11/11 goals closed (100%), task-inventory verified 2026-11-25, no open work remains.
 - Builder goal #11: all 3 workflow scripts confirmed end-to-end; sample input/output files added to make spec concrete.
 - Archivist goal #9 (Knowledge SPOF Audit) verified & closed via ledger this pass; fleet count +1.
+- All 8 core agents are SPOFs; Archivist's xref reports are the hub (70-80
+- Outlet idle: 3/3 goals reached, milestone_trigger at level=10 pct=97% bucket=90, fleet=116 goals, no new post due until next threshold cross
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
