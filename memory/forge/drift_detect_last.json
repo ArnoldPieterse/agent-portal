@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T06:47:05",
+  "ts": "2026-11-26T09:19:32",
   "mode": "detect",
   "checks": {
     "dependencies": {
@@ -8,25 +8,15 @@
       "all_in_requirements": true
     },
     "test_registration": {
-      "registered": [
-        "api-models",
-        "latency-total",
-        "tcp-connect"
-      ],
-      "test_files": [
-        "test_fake_example.py"
-      ],
-      "unregistered": [
-        "test_fake_example.py"
-      ]
+      "status": "OK",
+      "registered_tests": 3,
+      "test_files_found": 0
     },
     "config_schema": {
       "status": "OK"
     }
   },
-  "drift_found": true,
+  "drift_found": false,
   "items_fixed": [],
-  "items_flagged": [
-    "unregistered test file: test_fake_example.py"
-  ]
+  "items_flagged": []
 }

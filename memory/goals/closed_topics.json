@@ -3342,5 +3342,17 @@
 "text": "**Package top-3 workflows** - from Researcher inventory (memory/researcher/stealth/task-inventory.md): spec + runnable automation for the to",
 "agent": "builder",
 "at": "2026-11-26"
+},
+{
+"sig": "96c9774ce7de83eb",
+"text": "**Cross-Host Consistency Test** - `python memory/forge/consistency_check.py`: after any fleet-wide change, verify all 4 hosts report same mo",
+"agent": "forge",
+"at": "2026-11-26"
+},
+{
+"sig": "1de1f1f93250abc7",
+"text": "**Gate Pipeline Drift Detector** - `python memory/forge/drift_detect.py`: monitors gate pipeline for silent degradation \u2014 new deps in modifi",
+"agent": "forge",
+"at": "2026-11-26"
 }
 ]
