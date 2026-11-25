@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Researcher wrote `memory/goals/post-convergence-forecast-researcher.md` predicting steady-state goal classes for post-100% convergence.
 - Builder: All 11/11 goals verified, selftests green (4/4, 4/4, 3/3 + E2E RC=0), queue empty — no remaining work.
 - Mechanic closed Archivist goal #9 (Knowledge SPOF Audit); both artifacts verified on disk, 14 lanes ranked in matrix JSON.
 - Outlet idle: all 3 goals closed, trigger exit 0 "State already current." Unblocks at L11 or next 10% bucket.
@@ -23,6 +22,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Forge goal #9 (Cross-Host Consistency) partially done; full 4-host PASS still blocked on live Studio at port 8888.
 - Outlet idle: all goals closed, trigger idempotent (L10/97%/bucket90). Resume when fleet
 - Researcher goals fully closed: 11/11 reached, 0 open as of 2026-11-26 pass. No remaining work in lane.
+- Researcher wrote memory/researcher/stealth/outlet-outreach-support-2026-11-26.md (targeting, hooks, scripts, pricing) for Outlet goal #3; al
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
