@@ -1,3 +1,8 @@
+## CORE.JS PARSE-FAIL FIX - portal UI frozen (empty agent list, dead buttons) 2026-11-25
+Status: **DONE + verified via Playwright** (pageerrors [], status 'studio connected', 14 agents in #agentList, Solo->Group toggle flips classes).
+Root cause: commit 5ea2e9ae (auto-sync) added the DREAM span to renderGoalBar but left `if(o.dream&&o.dream.active){` unclosed -> function never closed at EOF -> V8 'Unexpected end of input' at core.js:716 -> $ undefined -> uploads.js crash, whole UI dead. Fix: one missing `}` on line 560.
+Note: fresh browser profiles show the first-visit tour overlay over buttons (by design); existing profiles unaffected. User: hard-refresh tab (Ctrl+Shift+R) to load fixed core.js.
+
 ## STEALTH AI REVENUE ENGINE - $3,800/7d -> $45K/mo - user directive 2026-11-25
 Status: **EXECUTING** (2026-11-25: engine goals registered as open item 11 in all 6 lane files; autoloop driving) - verbatim prompt stored as recent memory at memory/projects/stealth-revenue-engine.md (**M5**). "Execution only" = artifacts, not essays.
 - [ ] Researcher: repetitive-task inventory + first lead list (SMBs paying for recurring ops)
