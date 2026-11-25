@@ -1047,3 +1047,4 @@
 {"ts": "2026-11-26 03:52:39", "run": "g-1a213d69298-2c95ee", "missing": {"Orchestrator": "not_loaded", "Splice": "unreachable", "Archivist": "unreachable", "Lumen": "unreachable", "Reel": "unreachable"}, "relocated": {"Scribe": "White (local) (home not_loaded)", "Designer": "black (home unreachable)"}}
 {"ts": "2026-11-26 04:02:57", "run": "g-1a213e00338-1e4dba", "missing": {"Orchestrator": "not_loaded"}, "relocated": {"Scribe": "White (local) (home not_loaded)"}}
 {"ts": "2026-11-26 04:18:31", "run": "g-1a213ee4136-1d6a39", "missing": {"Orchestrator": "not_loaded"}, "relocated": {"Scribe": "White (local) (home not_loaded)"}}
+{"ts": "2026-11-26 04:35:46", "run": "g-1a213fe0e66-f3cb46", "missing": {"Orchestrator": "not_loaded", "Archivist": "unreachable", "Lumen": "unreachable", "Splice": "unreachable", "Reel": "unreachable"}, "relocated": {"Scribe": "White (local) (home not_loaded)", "Designer": "black (home unreachable)"}}
