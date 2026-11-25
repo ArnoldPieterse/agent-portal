@@ -415,3 +415,6 @@
 {"ts": "2026-11-25 13:14:10", "file": "ui/fleet_status.js", "sha": "786bbe54d2", "size": 2974, "snapshot": null}
 {"ts": "2026-11-25 13:30:37", "file": "agents.json", "sha": "79edc43fde", "size": 20264, "snapshot": "memory/ops/merge-queue/agents.json.79edc43fde"}
 {"ts": "2026-11-25 13:30:38", "file": "ui/uploads.js", "sha": "6b83b406ad", "size": 48323, "snapshot": null}
+{"ts": "2026-11-25 13:56:04", "file": "agent_portal.py", "sha": "4a223417ba", "size": 358136, "snapshot": "memory/ops/merge-queue/agent_portal.py.4a223417ba"}
+{"ts": "2026-11-25 13:56:04", "file": "agents.json", "sha": "a092a04214", "size": 24574, "snapshot": "memory/ops/merge-queue/agents.json.a092a04214"}
+{"ts": "2026-11-25 13:56:04", "file": "index.html", "sha": "f3a6f4ecc6", "size": 14774, "snapshot": "memory/ops/merge-queue/index.html.f3a6f4ecc6"}

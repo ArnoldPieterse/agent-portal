@@ -6353,6 +6353,9 @@ class Handler(BaseHTTPRequestHandler):
                                  "status": run["status"], "verdict": run.get("verdict"),
                                  "hist_start": run.get("hist_start")})
             return self._json(200, base)
+        elif p == "/api/gpu/requests":
+            import portal.gpu_fit as _gfit
+            return self._json(200, {"pending": _gfit.pending_requests(), "all": _gfit._read_requests()[-30:]})
         elif p == "/api/run-events":
             return self._stream_run_events()
         elif p == "/api/models":
@@ -6932,26 +6935,29 @@ class Handler(BaseHTTPRequestHandler):
             self._json(404, {"error": "not found"})
 
     def do_PUT(self):
-        p = self.path.split("?")[0]
-        m = re.match(r"^/api/agents/(.+)$", p)
+        import json as _j, re as _r
+        def R(c, b):
+            self.send_response(c); self.send_header('Content-Type', 'application/json'); self.end_headers(); self.wfile.write(_j.dumps(b).encode())
+        m = _r.match(r'^/api/agents/(.+)$', self.path)
         if not m:
-            return self._json(404, {"error": "not found"})
-        aid = m.group(1)
+            R(404, dict(error='not found')); return
         try:
-            data = self._body()
+            body = _j.loads(self.rfile.read(int(self.headers.get('Content-Length') or 0)) or b'{}')
+        except Exception:
+            R(400, dict(error='bad json')); return
+        try:
+            p = os.path.join(HERE, 'agents.json')
+            data = _j.load(open(p, encoding='utf-8'))
+            a = next((x for x in data.get('agents', []) if x.get('id') == m.group(1)), None)
+            if not a:
+                R(404, dict(error='unknown agent')); return
+            for k, v in body.items():
+                if k != 'id':
+                    a[k] = v
+            _j.dump(data, open(p, 'w', encoding='utf-8'), indent=2)
+            R(200, dict(ok=True))
         except Exception as e:
-            return self._json(400, {"error": f"bad json: {e}"})
-        agents = load_agents()["agents"]
-        hit = False
-        for a in agents:
-            if a["id"] == aid:
-                apply_agent_fields(a, data)
-                hit = True
-        if not hit:
-            return self._json(404, {"error": "unknown agent"})
-        save_agents({"agents": agents})
-        self._json(200, {"ok": True})
-
+            R(500, dict(error=str(e)[:120]))
     def do_DELETE(self):
         m = re.match(r"^/api/agents/(.+)$", self.path.split("?")[0])
         if not m:
