@@ -1,0 +1,1 @@
+{"ts": "2026-11-26T09:05:29.759226", "run_by": "Mechanic (assist)", "script": "memory/forge/drift_detect.py", "verdict": "CLEAN", "details": "3 checks passed: imports OK, test registration OK, agents.json schema valid. 0 false positives on clean state.", "notes": "Positive-detection test (fake import) not yet run - requires write access to gate scripts."}
