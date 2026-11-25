@@ -1,0 +1,25 @@
+{
+  "ts": "2026-11-26T01:31:11.751295",
+  "verdict": "FAIL",
+  "detail": "White model=None",
+  "config_hash": "4712c65dc06fa094",
+  "hosts_probed": 1,
+  "hosts_reachable": 0,
+  "models_seen": [],
+  "unreachable": [
+    "White"
+  ],
+  "results": [
+    {
+      "host": "White",
+      "ip": "127.0.0.1",
+      "port": 8888,
+      "ts": "2026-11-26T01:31:11.746872",
+      "tcp_ms": null,
+      "tcp_err": "PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions",
+      "status": "UNREACHABLE",
+      "model_id": null,
+      "config_hash": "4712c65dc06fa094"
+    }
+  ]
+}
