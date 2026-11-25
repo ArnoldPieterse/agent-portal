@@ -439,3 +439,5 @@
 {"ts": "2026-11-25 17:03:48", "file": "portal_scheduler.py", "sha": "d27e07e94e", "size": 12297, "snapshot": "memory/ops/merge-queue/portal_scheduler.py.d27e07e94e"}
 {"ts": "2026-11-25 17:03:48", "file": "ui/cockpit-convergence.js", "sha": "de08843671", "size": 31720, "snapshot": null}
 {"ts": "2026-11-25 17:03:48", "file": "ui/tokens.css", "sha": "2b480c05c7", "size": 3468, "snapshot": null}
+{"ts": "2026-11-25 17:04:16", "file": "ui/api-client.js", "sha": "4fb6da81a1", "size": 9656, "snapshot": null}
+{"ts": "2026-11-25 17:04:16", "file": "ui/fleet_health.js", "sha": "37e4143ebb", "size": 5191, "snapshot": null}
