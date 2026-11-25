@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24T20:09:42.742373+00:00",
+  "generated": "2026-11-25T23:38:55.625051+00:00",
   "steady_state_criteria": {
     "autonomy_score_min": 80.0,
     "max_interventions_per_cycle": 1.0,
@@ -19,7 +19,7 @@
   ],
   "per_metric": {
     "duration": {
-      "current": 24.0,
+      "current": 28.0,
       "target": 36.0,
       "cycles_remaining": 0,
       "confidence": 1.0
@@ -32,29 +32,29 @@
       "method": "near-converged (within 20% of target); zero-intervention projection"
     },
     "autonomy": {
-      "current": 69.1,
+      "current": 71.3,
       "target": 80.0,
       "cycles_remaining_range": [
-        3,
-        5
+        2,
+        4
       ],
-      "cycles_remaining": 5,
+      "cycles_remaining": 4,
       "confidence": 0.3,
-      "note": "single data point; range 3-5 cycles based on heuristic improvement rate"
+      "note": "single data point; range 2-4 cycles based on heuristic improvement rate"
     }
   },
   "overall_prediction": {
-    "cycles_to_steady_state": 5,
+    "cycles_to_steady_state": 4,
     "confidence": "HIGH",
     "current_cycle": 17,
-    "predicted_steady_state_cycle": 22,
+    "predicted_steady_state_cycle": 21,
     "convergence_pct": 33.3,
     "metrics_converged": 1,
     "metrics_total": 3,
     "metrics_unknown": 0
   },
   "data_quality": {
-    "duration_points": 4,
+    "duration_points": 5,
     "intervention_points": 9,
     "autonomy_points": 1,
     "sparse_data_warning": false
