@@ -1,6 +1,6 @@
 # Decay report 2026-11-26
 
-Leaves: 11370 | flagged (<0.35): 0
+Leaves: 11371 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -10723,6 +10723,7 @@ Leaves: 11370 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261126-020302.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-030003.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-040308.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261126-050735.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/cockpit-feed-refresh-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook-executability-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
