@@ -2644,5 +2644,83 @@
 "text": "**Intervention Pattern Classifier** - Auto-classify each human intervention into a pattern (misdiagnosis, preference override, new requireme",
 "agent": "scribe",
 "at": "2026-11-25"
+},
+{
+"sig": "73ef7b5d747cda19",
+"text": "**Convergence Regression Test Spec** - Define the automated checks that verify convergence hasn't regressed between cycles: metric delta thr",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "7d04cab6cbf5f028",
+"text": "**Golden Path Reference (<2KB)** - Consolidate 10+ cycles of knowledge into a single <2KB document any agent can read to understand current ",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "14bf4799c1759c85",
+"text": "**Convergence Velocity Report** - Measure convergence rate: interventions/cycle, new automations/cycle, autonomy score delta/cycle. Linear-r",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "c2386c1884f1491e",
+"text": "**Agent Autonomy Contribution Matrix** - Per agent: count of interventions their automation eliminated (from decision-autonomy-map), total a",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "d877139b7c0a4d18",
+"text": "**Convergence Anomaly Detector** - `python memory/scribe/convergence_anomaly.py`: compare current cycle metrics (autonomy score, interventio",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "4a2e42274d130c84",
+"text": "**Autonomy Handoff Protocol** - Document the protocol for when an agent's automation replaces a human step: required evidence (before/after ",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "a52e3daa14618a7a",
+"text": "**Autonomy Score Decomposition** - Break the autonomy score into sub-components (self-healing rate, intervention ratio, cycle completion rat",
+"agent": "scribe",
+"at": "2026-11-25"
+},
+{
+"sig": "b72795755d04eca2",
+"text": "**Autonomy Boundary Map** - Document the exact boundary between autonomous and human-in-the-loop decisions per domain (ops, dispatch, goal-s",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "7c31ac58a2e60f56",
+"text": "**Convergence Sustainability Forecast** - Using historical cycle data (completion rates, intervention frequency, blocker recurrence), build ",
+"agent": "archivist",
+"at": "2026-11-25"
+},
+{
+"sig": "e900ecf1ab4de22b",
+"text": "**Autonomous Smoke Test Suite** - `python memory/forge/smoke_suite.py`: scheduled test that probes all 4 hosts (model loaded? API responding",
+"agent": "forge",
+"at": "2026-11-25"
+},
+{
+"sig": "81db05834f8fc7a7",
+"text": "**Perf Regression Auto-Rollback** - Extend canary pipeline with perf gate: record p50/p95 response times before deploy; if post-deploy p95 >",
+"agent": "forge",
+"at": "2026-11-25"
+},
+{
+"sig": "a2344b09c5673db1",
+"text": "**Gate Pipeline Self-Monitoring** - `python memory/forge/gate_health.py`: checks that all scheduled gate tasks (smoke suite, drift detector)",
+"agent": "forge",
+"at": "2026-11-25"
+},
+{
+"sig": "32e07e4cab9bfe24",
+"text": "**Deploy Evidence Auto-Recorder** - Every deploy (canary or full) automatically appends to memory/forge/deploy-log.jsonl: timestamp, files c",
+"agent": "forge",
+"at": "2026-11-25"
 }
 ]

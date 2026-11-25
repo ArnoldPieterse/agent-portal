@@ -1,35 +1,34 @@
 {
  "ok": true,
- "generated": "2026-11-25 13:31:17",
+ "generated": "2026-11-25 14:31:32",
  "fleet": {
-  "done": 54,
+  "done": 68,
   "total": 80,
-  "pct": 67.5
+  "pct": 85.0
  },
  "throughput_goals_per_hour": 17.69,
  "next10": [
   {
    "agent": "archivist",
-   "goal": "**Autonomy Decay Detection** - Define decay signals for autonomous decision quality: track per-agent escalation rate, rework rate, and human-intervention frequency over rolling 3-cycle window. Output: memory/archivist/au",
-   "type": "measurement",
+   "goal": "**Autonomy Boundary Map** - Document the exact boundary between autonomous and human-in-the-loop decisions per domain (ops, dispatch, goal-setting, model management, publishing). Mark each boundary with confidence level ",
+   "type": "build",
    "complexity": 1,
-   "p_reached": 0.586,
-   "eta": "2026-11-25 16:00",
-   "hours": 2.49,
+   "p_reached": 0.531,
+   "eta": "2026-11-25 17:45",
+   "hours": 3.24,
    "order": 0,
    "rank": 1,
-   "title": "Autonomy Decay Detection",
+   "title": "Autonomy Boundary Map",
    "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-25 16:00 (P=59%)",
+   "outcome": "reached ~2026-11-25 17:45 (P=53%)",
    "consequences": [
-    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,cycle,intervention",
-    "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,cycle,rolling",
-    "scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,decision,intervention",
-    "lane end scribe: 11-27 05:40 (slowest lane)"
+    "builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,model",
+    "lane end builder: 11-26 19:42 (slowest lane)"
    ]
   },
   {
@@ -38,7 +37,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.224,
-   "eta": "2026-11-25 16:58",
+   "eta": "2026-11-25 17:59",
    "hours": 3.46,
    "order": 0,
    "rank": 2,
@@ -48,60 +47,12 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-25 16:58 (P=22%)",
+   "outcome": "reached ~2026-11-25 17:59 (P=22%)",
    "consequences": [
-    "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,cycle,intervention",
-    "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,cycle,score",
-    "scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,intervention,score",
-    "lane end scribe: 11-27 05:40 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "scribe",
-   "goal": "**Autonomy Score Trendline** - Append each cycle's autonomy score + delta to memory/scribe/autonomy-trend.jsonl (timestamp, score, delta_from_prev, component_breakdown). Flag when 3-cycle rolling trend reverses direction",
-   "type": "measurement",
-   "complexity": 2,
-   "p_reached": 0.515,
-   "eta": "2026-11-25 17:23",
-   "hours": 3.86,
-   "order": 0,
-   "rank": 3,
-   "title": "Autonomy Score Trendline",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-25 17:23 (P=52%)",
-   "consequences": [
-    "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,cycle,rolling",
-    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,cycle,score",
-    "scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,jsonl,score",
-    "lane end scribe: 11-27 05:40 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**Convergence Lock Protocol** - Document the exact procedure to declare convergence \"locked\" (not just achieved): minimum N consecutive cycles meeting all criteria, regression test pass rate, zero new blocker classes. Ou",
-   "type": "verify",
-   "complexity": 1,
-   "p_reached": 0.839,
-   "eta": "2026-11-25 17:51",
-   "hours": 1.85,
-   "order": 1,
-   "rank": 4,
-   "title": "Convergence Lock Protocol",
-   "steps": [
-    "build the test battery / audit script",
-    "run against live sources",
-    "record verdict + evidence leaf"
-   ],
-   "outcome": "reached ~2026-11-25 17:51 (P=84%)",
-   "consequences": [
-    "archivist: **Convergence Regression Test Spec** - Define the automated  (2026-11-25 22:11) - shared scope blocker,convergence,cycles",
-    "archivist: **Golden Path Reference (<2KB)** - Consolidate 10+ cycles of (2026-11-26 01:26) - shared scope convergence,criteria,cycles",
-    "builder: **Convergence Deceleration Alert** - `python memory/ops/conv (2026-11-26 03:33) - shared scope consecutive,convergence,cycles",
-    "lane end scribe: 11-27 05:40 (slowest lane)"
+    "archivist: **Convergence Sustainability Forecast** - Using historical c (2026-11-25 21:00) - shared scope convergence,cycle,intervention",
+    "builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,score,trend",
+    "archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,convergence,score",
+    "lane end builder: 11-26 19:42 (slowest lane)"
    ]
   },
   {
@@ -110,91 +61,64 @@
    "type": "ops",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-25 19:33",
+   "eta": "2026-11-25 20:33",
    "hours": 2.58,
    "order": 1,
-   "rank": 5,
+   "rank": 3,
    "title": "Self-Healing Goal Lifecycle",
    "steps": [
     "pre-flight checks (targets exist, idempotent)",
     "execute from non-sandbox session",
     "verify registration/health + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-25 19:33 (P=52%)",
+   "outcome": "reached ~2026-11-25 20:33 (P=52%)",
    "consequences": [
-    "lane end scribe: 11-27 05:40 (slowest lane)"
+    "lane end builder: 11-26 19:42 (slowest lane)"
    ]
   },
   {
-   "agent": "scribe",
-   "goal": "**Decision-to-Autonomy Causal Map** - For each entry in decisions.jsonl that eliminated an intervention class, trace the chain: decision -> automation built (file path) -> intervention class removed -> autonomy score con",
-   "type": "measurement",
+   "agent": "archivist",
+   "goal": "**Convergence Sustainability Forecast** - Using historical cycle data (completion rates, intervention frequency, blocker recurrence), build a simple predictive model: will convergence hold for N more cycles? What's the h",
+   "type": "build",
    "complexity": 1,
-   "p_reached": 0.757,
-   "eta": "2026-11-25 20:03",
-   "hours": 2.67,
+   "p_reached": 0.531,
+   "eta": "2026-11-25 21:00",
+   "hours": 3.24,
    "order": 1,
-   "rank": 6,
-   "title": "Decision-to-Autonomy Causal Map",
+   "rank": 4,
+   "title": "Convergence Sustainability Forecast",
    "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-25 20:03 (P=76%)",
+   "outcome": "reached ~2026-11-25 21:00 (P=53%)",
    "consequences": [
-    "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,decision,intervention",
-    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,intervention,score",
-    "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,jsonl,score",
-    "lane end scribe: 11-27 05:40 (slowest lane)"
+    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope convergence,cycle,intervention",
+    "builder: **Convergence Deceleration Alert** - `python memory/ops/conv (2026-11-26 04:34) - shared scope convergence,cycles,intervention",
+    "lane end builder: 11-26 19:42 (slowest lane)"
    ]
   },
   {
    "agent": "archivist",
-   "goal": "**Per-Agent Autonomy Scorecard** - For each of the 10 agents, score autonomy across 5 domains (ops, dispatch, goal-setting, model mgmt, knowledge). Identify which agent is closest to full autonomy and which has the large",
-   "type": "measurement",
-   "complexity": 1,
-   "p_reached": 0.586,
-   "eta": "2026-11-25 20:20",
-   "hours": 2.49,
-   "order": 2,
-   "rank": 7,
-   "title": "Per-Agent Autonomy Scorecard",
-   "steps": [
-    "instrument or extend the scorer",
-    "two-run delta check",
-    "publish snapshot + report leaf"
-   ],
-   "outcome": "reached ~2026-11-25 20:20 (P=59%)",
-   "consequences": [
-    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,score",
-    "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,score",
-    "scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,score",
-    "lane end scribe: 11-27 05:40 (slowest lane)"
-   ]
-  },
-  {
-   "agent": "archivist",
-   "goal": "**Convergence Regression Test Spec** - Define the automated checks that verify convergence hasn't regressed between cycles: metric delta thresholds, new-blocker detection, decision-quality floor. Output: memory/archivist",
+   "goal": "**Knowledge Single-Point-of-Failure Audit** - Map which agents' knowledge is most frequently cited by others (via pointer/citation lines). Identify any single agent whose absence would break >3 other agents' workflows. O",
    "type": "verify",
    "complexity": 1,
    "p_reached": 0.839,
-   "eta": "2026-11-25 22:11",
+   "eta": "2026-11-25 22:51",
    "hours": 1.85,
-   "order": 3,
-   "rank": 8,
-   "title": "Convergence Regression Test Spec",
+   "order": 2,
+   "rank": 5,
+   "title": "Knowledge Single-Point-of-Failure Audit",
    "steps": [
     "build the test battery / audit script",
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-25 22:11 (P=84%)",
+   "outcome": "reached ~2026-11-25 22:51 (P=84%)",
    "consequences": [
-    "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope archivist,decision,define",
-    "archivist: **Convergence Lock Protocol** - Document the exact procedure (2026-11-25 17:51) - shared scope blocker,convergence,cycles",
-    "archivist: **Golden Path Reference (<2KB)** - Consolidate 10+ cycles of (2026-11-26 01:26) - shared scope archivist,convergence,cycles",
-    "lane end scribe: 11-27 05:40 (slowest lane)"
+    "lane end builder: 11-26 19:42 (slowest lane)"
    ]
   },
   {
@@ -203,47 +127,118 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.224,
-   "eta": "2026-11-25 23:00",
+   "eta": "2026-11-26 00:01",
    "hours": 3.46,
    "order": 2,
-   "rank": 9,
+   "rank": 6,
    "title": "Fleet Health Composite Score",
    "steps": [
     "instrument or extend the scorer",
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-25 23:00 (P=22%)",
+   "outcome": "reached ~2026-11-26 00:01 (P=22%)",
    "consequences": [
-    "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,output,signals",
-    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,score,trend",
-    "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,score,trend",
-    "lane end scribe: 11-27 05:40 (slowest lane)"
+    "archivist: **Autonomy Boundary Map** - Document the exact boundary betw (2026-11-25 17:45) - shared scope autonomy,model",
+    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,score,trend",
+    "archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,score,trend",
+    "lane end builder: 11-26 19:42 (slowest lane)"
    ]
   },
   {
-   "agent": "scribe",
-   "goal": "**Fleet Autonomy Playbook** - Condensed two-page doc for the human: \"what the fleet does autonomously now\" (list) vs \"where human input is still needed\" (list with reason). Updated each cycle from intervention log + auto",
+   "agent": "archivist",
+   "goal": "**Convergence Feed for Portal** - Create a structured JSON feed (memory/archivist/convergence-feed.json) with: current autonomy score, per-agent scores, trend arrows (rising/falling/stable), next-milestone ETA, regressio",
+   "type": "measurement",
+   "complexity": 1,
+   "p_reached": 0.586,
+   "eta": "2026-11-26 01:20",
+   "hours": 2.49,
+   "order": 3,
+   "rank": 7,
+   "title": "Convergence Feed for Portal",
+   "steps": [
+    "instrument or extend the scorer",
+    "two-run delta check",
+    "publish snapshot + report leaf"
+   ],
+   "outcome": "reached ~2026-11-26 01:20 (P=59%)",
+   "consequences": [
+    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,convergence,score",
+    "builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,score,trend",
+    "builder: **Convergence Deceleration Alert** - `python memory/ops/conv (2026-11-26 04:34) - shared scope autonomy,convergence",
+    "lane end builder: 11-26 19:42 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "builder",
+   "goal": "**Convergence Deceleration Alert** - `python memory/ops/convergence_alert.py`: compute velocity per metric (autonomy, efficiency, intervention) across last 3 cycles. If any metric decelerates for 2+ consecutive cycles, w",
    "type": "build",
    "complexity": 2,
-   "p_reached": 0.459,
-   "eta": "2026-11-26 01:05",
-   "hours": 5.04,
-   "order": 2,
-   "rank": 10,
-   "title": "Fleet Autonomy Playbook",
+   "p_reached": 0.188,
+   "eta": "2026-11-26 04:34",
+   "hours": 4.55,
+   "order": 3,
+   "rank": 8,
+   "title": "Convergence Deceleration Alert",
    "steps": [
     "scaffold the module file",
     "implement core logic",
     "self-test until AC green",
     "write evidence leaf + index line"
    ],
-   "outcome": "reached ~2026-11-26 01:05 (P=46%)",
+   "outcome": "reached ~2026-11-26 04:34 (P=19%)",
    "consequences": [
-    "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,cycle,human",
-    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,cycle,intervention",
-    "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,cycle",
-    "lane end scribe: 11-27 05:40 (slowest lane)"
+    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,convergence,intervention",
+    "archivist: **Convergence Sustainability Forecast** - Using historical c (2026-11-25 21:00) - shared scope convergence,cycles,intervention",
+    "archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,convergence",
+    "lane end builder: 11-26 19:42 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "builder",
+   "goal": "**Cross-Agent Handoff Automation** - `python memory/orchestrator/handoff_detector.py`: scan recent agent messages for \"assist\" patterns (one agent working another's goal). Auto-generate handoff note in memory/handoffs/ w",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.188,
+   "eta": "2026-11-26 09:07",
+   "hours": 4.55,
+   "order": 4,
+   "rank": 9,
+   "title": "Cross-Agent Handoff Automation",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-26 09:07 (P=19%)",
+   "consequences": [
+    "lane end builder: 11-26 19:42 (slowest lane)"
+   ]
+  },
+  {
+   "agent": "builder",
+   "goal": "**Pre-Cycle Autonomy Gate** - `python memory/ops/pre_cycle_gate.py`: pre-flight check that runs before each cycle start. Validates: (a) all scheduled tasks running, (b) API endpoints respond <200ms, (c) autonomy_score dr",
+   "type": "build",
+   "complexity": 2,
+   "p_reached": 0.188,
+   "eta": "2026-11-26 13:40",
+   "hours": 4.55,
+   "order": 5,
+   "rank": 10,
+   "title": "Pre-Cycle Autonomy Gate",
+   "steps": [
+    "scaffold the module file",
+    "implement core logic",
+    "self-test until AC green",
+    "write evidence leaf + index line"
+   ],
+   "outcome": "reached ~2026-11-26 13:40 (P=19%)",
+   "consequences": [
+    "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,cycle,score",
+    "builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,score",
+    "archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,score",
+    "lane end builder: 11-26 19:42 (slowest lane)"
    ]
   }
  ],
@@ -251,45 +246,45 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-25 14:01",
+   "end": "2026-11-25 15:01",
    "completes": 0,
-   "fleet_pct": 67.5,
+   "fleet_pct": 85.0,
    "top": []
   },
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-25 14:31",
+   "end": "2026-11-25 15:31",
    "completes": 0,
-   "fleet_pct": 67.5,
+   "fleet_pct": 85.0,
    "top": []
   },
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-26 13:31",
-   "completes": 20,
-   "fleet_pct": 92.5,
+   "end": "2026-11-26 14:31",
+   "completes": 10,
+   "fleet_pct": 97.5,
    "top": [
-    "#1 archivist: Autonomy Decay Detection (2026-11-25 16:00)",
-    "#2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 16:58)",
-    "#3 scribe: Autonomy Score Trendline (2026-11-25 17:23)",
-    "#4 archivist: Convergence Lock Protocol (2026-11-25 17:51)",
-    "#5 builder: Self-Healing Goal Lifecycle (2026-11-25 19:33)"
+    "#1 archivist: Autonomy Boundary Map (2026-11-25 17:45)",
+    "#2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 17:59)",
+    "#3 builder: Self-Healing Goal Lifecycle (2026-11-25 20:33)",
+    "#4 archivist: Convergence Sustainability Forecast (2026-11-25 21:00)",
+    "#5 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 22:51)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-02 13:31",
-   "completes": 26,
+   "end": "2026-12-02 14:31",
+   "completes": 12,
    "fleet_pct": 100.0,
    "top": [
-    "#1 archivist: Autonomy Decay Detection (2026-11-25 16:00)",
-    "#2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 16:58)",
-    "#3 scribe: Autonomy Score Trendline (2026-11-25 17:23)",
-    "#4 archivist: Convergence Lock Protocol (2026-11-25 17:51)",
-    "#5 builder: Self-Healing Goal Lifecycle (2026-11-25 19:33)"
+    "#1 archivist: Autonomy Boundary Map (2026-11-25 17:45)",
+    "#2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 17:59)",
+    "#3 builder: Self-Healing Goal Lifecycle (2026-11-25 20:33)",
+    "#4 archivist: Convergence Sustainability Forecast (2026-11-25 21:00)",
+    "#5 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 22:51)"
    ],
    "next_cycle_candidates": [
     {
@@ -345,15 +340,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-25 13:31",
-   "completes": 26,
+   "end": "2026-12-25 14:31",
+   "completes": 12,
    "fleet_pct": 100.0,
    "top": [
-    "#1 archivist: Autonomy Decay Detection (2026-11-25 16:00)",
-    "#2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 16:58)",
-    "#3 scribe: Autonomy Score Trendline (2026-11-25 17:23)",
-    "#4 archivist: Convergence Lock Protocol (2026-11-25 17:51)",
-    "#5 builder: Self-Healing Goal Lifecycle (2026-11-25 19:33)"
+    "#1 archivist: Autonomy Boundary Map (2026-11-25 17:45)",
+    "#2 builder: Convergence-Informed Goal Prioritizer (2026-11-25 17:59)",
+    "#3 builder: Self-Healing Goal Lifecycle (2026-11-25 20:33)",
+    "#4 archivist: Convergence Sustainability Forecast (2026-11-25 21:00)",
+    "#5 archivist: Knowledge Single-Point-of-Failure Audit (2026-11-25 22:51)"
    ],
    "next_cycle_candidates": [
     {
@@ -409,82 +404,81 @@
  ],
  "lanes": {
   "archivist": {
-   "done": 1,
+   "done": 6,
    "total": 10,
-   "end": "2026-11-26 12:15"
+   "end": "2026-11-26 01:20"
   },
   "builder": {
    "done": 2,
    "total": 10,
-   "end": "2026-11-26 18:42"
+   "end": "2026-11-26 19:42"
   },
   "designer": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 13:31"
+   "end": "2026-11-25 14:31"
   },
   "mechanic": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 13:31"
+   "end": "2026-11-25 14:31"
   },
   "orchestrator": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 13:31"
+   "end": "2026-11-25 14:31"
   },
   "researcher": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 13:31"
+   "end": "2026-11-25 14:31"
   },
   "scribe": {
-   "done": 1,
+   "done": 10,
    "total": 10,
-   "end": "2026-11-27 05:40"
+   "end": "2026-11-25 14:31"
   },
   "verifier": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-25 13:31"
+   "end": "2026-11-25 14:31"
   }
  },
- "level_up_eta": "2026-11-27 05:40",
+ "level_up_eta": "2026-11-26 19:42",
  "plan": {
   "cycle_state": "in flight: 10 goal(s) open",
-  "level_up_eta": "2026-11-27 05:40",
+  "level_up_eta": "2026-11-26 19:42",
   "planned": [
    {
     "agent": "archivist",
-    "goal": "**Autonomy Decay Detection** - Define decay signals for autonomous decision quality: track per-agent escalation rate, rework rate, and human-intervention frequency over rolling 3-cycle window. Output: memory/archivist/au",
-    "type": "measurement",
+    "goal": "**Autonomy Boundary Map** - Document the exact boundary between autonomous and human-in-the-loop decisions per domain (ops, dispatch, goal-setting, model management, publishing). Mark each boundary with confidence level ",
+    "type": "build",
     "complexity": 1,
-    "p_reached": 0.586,
-    "eta": "2026-11-25 16:00",
-    "hours": 2.49,
+    "p_reached": 0.531,
+    "eta": "2026-11-25 17:45",
+    "hours": 3.24,
     "order": 0,
     "rank": 1,
-    "title": "Autonomy Decay Detection",
+    "title": "Autonomy Boundary Map",
     "steps": [
-     "instrument or extend the scorer",
-     "two-run delta check",
-     "publish snapshot + report leaf"
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-25 16:00 (P~59%)",
+    "outcome": "reached ~2026-11-25 17:45 (P~53%)",
     "consequences": [
-     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,cycle,intervention",
-     "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,cycle,rolling",
-     "scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,decision,intervention",
-     "lane end scribe: 11-27 05:40 (slowest lane)"
+     "builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,model",
+     "lane end builder: 11-26 19:42 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 1/10 done; this goal ends its lane at 2026-11-25 16:00",
+    "why": "planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~53%): kept in plan because its scope gates later work; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 17:45",
     "deliverable": {
-     "name": "Autonomy Decay Detection",
+     "name": "Autonomy Boundary Map",
      "stream": "General"
     },
-    "then": "#4 [archivist] Convergence Lock Protocol",
-    "then_eta": "2026-11-25 17:51"
+    "then": "#4 [archivist] Convergence Sustainability Forecast",
+    "then_eta": "2026-11-25 21:00"
    },
    {
     "agent": "builder",
@@ -492,7 +486,7 @@
     "type": "measurement",
     "complexity": 2,
     "p_reached": 0.224,
-    "eta": "2026-11-25 16:58",
+    "eta": "2026-11-25 17:59",
     "hours": 3.46,
     "order": 0,
     "rank": 2,
@@ -502,85 +496,21 @@
      "two-run delta check",
      "publish snapshot + report leaf"
     ],
-    "outcome": "reached ~2026-11-25 16:58 (P~22%)",
+    "outcome": "reached ~2026-11-25 17:59 (P~22%)",
     "consequences": [
-     "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,cycle,intervention",
-     "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,cycle,score",
-     "scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,intervention,score",
-     "lane end scribe: 11-27 05:40 (slowest lane)"
+     "archivist: **Convergence Sustainability Forecast** - Using historical c (2026-11-25 21:00) - shared scope convergence,cycle,intervention",
+     "builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,score,trend",
+     "archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,convergence,score",
+     "lane end builder: 11-26 19:42 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 16:58",
+    "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 17:59",
     "deliverable": {
      "name": "Convergence-Informed Goal Prioritizer",
      "stream": "General"
     },
-    "then": "#5 [builder] Self-Healing Goal Lifecycle",
-    "then_eta": "2026-11-25 19:33"
-   },
-   {
-    "agent": "scribe",
-    "goal": "**Autonomy Score Trendline** - Append each cycle's autonomy score + delta to memory/scribe/autonomy-trend.jsonl (timestamp, score, delta_from_prev, component_breakdown). Flag when 3-cycle rolling trend reverses direction",
-    "type": "measurement",
-    "complexity": 2,
-    "p_reached": 0.515,
-    "eta": "2026-11-25 17:23",
-    "hours": 3.86,
-    "order": 0,
-    "rank": 3,
-    "title": "Autonomy Score Trendline",
-    "steps": [
-     "instrument or extend the scorer",
-     "two-run delta check",
-     "publish snapshot + report leaf"
-    ],
-    "outcome": "reached ~2026-11-25 17:23 (P~52%)",
-    "consequences": [
-     "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,cycle,rolling",
-     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,cycle,score",
-     "scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,jsonl,score",
-     "lane end scribe: 11-27 05:40 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as measurement work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 17:23",
-    "deliverable": {
-     "name": "Autonomy Score Trendline",
-     "stream": "General"
-    },
-    "then": "#6 [scribe] Decision-to-Autonomy Causal Map",
-    "then_eta": "2026-11-25 20:03"
-   },
-   {
-    "agent": "archivist",
-    "goal": "**Convergence Lock Protocol** - Document the exact procedure to declare convergence \"locked\" (not just achieved): minimum N consecutive cycles meeting all criteria, regression test pass rate, zero new blocker classes. Ou",
-    "type": "verify",
-    "complexity": 1,
-    "p_reached": 0.839,
-    "eta": "2026-11-25 17:51",
-    "hours": 1.85,
-    "order": 1,
-    "rank": 4,
-    "title": "Convergence Lock Protocol",
-    "steps": [
-     "build the test battery / audit script",
-     "run against live sources",
-     "record verdict + evidence leaf"
-    ],
-    "outcome": "reached ~2026-11-25 17:51 (P~84%)",
-    "consequences": [
-     "archivist: **Convergence Regression Test Spec** - Define the automated  (2026-11-25 22:11) - shared scope blocker,convergence,cycles",
-     "archivist: **Golden Path Reference (<2KB)** - Consolidate 10+ cycles of (2026-11-26 01:26) - shared scope convergence,criteria,cycles",
-     "builder: **Convergence Deceleration Alert** - `python memory/ops/conv (2026-11-26 03:33) - shared scope consecutive,convergence,cycles",
-     "lane end scribe: 11-27 05:40 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 1/10 done; this goal ends its lane at 2026-11-25 17:51",
-    "deliverable": {
-     "name": "Convergence Lock Protocol",
-     "stream": "General"
-    },
-    "then": "#7 [archivist] Per-Agent Autonomy Scorecard",
-    "then_eta": "2026-11-25 20:20"
+    "then": "#3 [builder] Self-Healing Goal Lifecycle",
+    "then_eta": "2026-11-25 20:33"
    },
    {
     "agent": "builder",
@@ -588,124 +518,89 @@
     "type": "ops",
     "complexity": 2,
     "p_reached": 0.515,
-    "eta": "2026-11-25 19:33",
+    "eta": "2026-11-25 20:33",
     "hours": 2.58,
     "order": 1,
-    "rank": 5,
+    "rank": 3,
     "title": "Self-Healing Goal Lifecycle",
     "steps": [
      "pre-flight checks (targets exist, idempotent)",
      "execute from non-sandbox session",
      "verify registration/health + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-25 19:33 (P~52%)",
+    "outcome": "reached ~2026-11-25 20:33 (P~52%)",
     "consequences": [
-     "lane end scribe: 11-27 05:40 (slowest lane)"
+     "lane end builder: 11-26 19:42 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 19:33",
+    "why": "planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 20:33",
     "deliverable": {
      "name": "Archive + evidence leaves",
      "stream": "Memory quality"
     },
-    "then": "#9 [builder] Fleet Health Composite Score",
-    "then_eta": "2026-11-25 23:00"
+    "then": "#6 [builder] Fleet Health Composite Score",
+    "then_eta": "2026-11-26 00:01"
    },
    {
-    "agent": "scribe",
-    "goal": "**Decision-to-Autonomy Causal Map** - For each entry in decisions.jsonl that eliminated an intervention class, trace the chain: decision -> automation built (file path) -> intervention class removed -> autonomy score con",
-    "type": "measurement",
+    "agent": "archivist",
+    "goal": "**Convergence Sustainability Forecast** - Using historical cycle data (completion rates, intervention frequency, blocker recurrence), build a simple predictive model: will convergence hold for N more cycles? What's the h",
+    "type": "build",
     "complexity": 1,
-    "p_reached": 0.757,
-    "eta": "2026-11-25 20:03",
-    "hours": 2.67,
+    "p_reached": 0.531,
+    "eta": "2026-11-25 21:00",
+    "hours": 3.24,
     "order": 1,
-    "rank": 6,
-    "title": "Decision-to-Autonomy Causal Map",
+    "rank": 4,
+    "title": "Convergence Sustainability Forecast",
     "steps": [
-     "instrument or extend the scorer",
-     "two-run delta check",
-     "publish snapshot + report leaf"
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-25 20:03 (P~76%)",
+    "outcome": "reached ~2026-11-25 21:00 (P~53%)",
     "consequences": [
-     "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,decision,intervention",
-     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,intervention,score",
-     "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,jsonl,score",
-     "lane end scribe: 11-27 05:40 (slowest lane)"
+     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope convergence,cycle,intervention",
+     "builder: **Convergence Deceleration Alert** - `python memory/ops/conv (2026-11-26 04:34) - shared scope convergence,cycles,intervention",
+     "lane end builder: 11-26 19:42 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as measurement work (cx1); already open on the scribe lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~76%): slip model flags some risk, ETA already inflated; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 20:03",
+    "why": "planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~53%): kept in plan because its scope gates later work; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 21:00",
     "deliverable": {
-     "name": "Decision-to-Autonomy Causal Map",
-     "stream": "General"
+     "name": "Forecast calibration",
+     "stream": "Planning"
     },
-    "then": "#10 [scribe] Fleet Autonomy Playbook",
-    "then_eta": "2026-11-26 01:05"
+    "then": "#5 [archivist] Knowledge Single-Point-of-Failure Audit",
+    "then_eta": "2026-11-25 22:51"
    },
    {
     "agent": "archivist",
-    "goal": "**Per-Agent Autonomy Scorecard** - For each of the 10 agents, score autonomy across 5 domains (ops, dispatch, goal-setting, model mgmt, knowledge). Identify which agent is closest to full autonomy and which has the large",
-    "type": "measurement",
-    "complexity": 1,
-    "p_reached": 0.586,
-    "eta": "2026-11-25 20:20",
-    "hours": 2.49,
-    "order": 2,
-    "rank": 7,
-    "title": "Per-Agent Autonomy Scorecard",
-    "steps": [
-     "instrument or extend the scorer",
-     "two-run delta check",
-     "publish snapshot + report leaf"
-    ],
-    "outcome": "reached ~2026-11-25 20:20 (P~59%)",
-    "consequences": [
-     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,score",
-     "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,score",
-     "scribe: **Decision-to-Autonomy Causal Map** - For each entry in deci (2026-11-25 20:03) - shared scope autonomy,score",
-     "lane end scribe: 11-27 05:40 (slowest lane)"
-    ],
-    "projected": false,
-    "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 1/10 done; this goal ends its lane at 2026-11-25 20:20",
-    "deliverable": {
-     "name": "Per-Agent Autonomy Scorecard",
-     "stream": "General"
-    },
-    "then": "#8 [archivist] Convergence Regression Test Spec",
-    "then_eta": "2026-11-25 22:11"
-   },
-   {
-    "agent": "archivist",
-    "goal": "**Convergence Regression Test Spec** - Define the automated checks that verify convergence hasn't regressed between cycles: metric delta thresholds, new-blocker detection, decision-quality floor. Output: memory/archivist",
+    "goal": "**Knowledge Single-Point-of-Failure Audit** - Map which agents' knowledge is most frequently cited by others (via pointer/citation lines). Identify any single agent whose absence would break >3 other agents' workflows. O",
     "type": "verify",
     "complexity": 1,
     "p_reached": 0.839,
-    "eta": "2026-11-25 22:11",
+    "eta": "2026-11-25 22:51",
     "hours": 1.85,
-    "order": 3,
-    "rank": 8,
-    "title": "Convergence Regression Test Spec",
+    "order": 2,
+    "rank": 5,
+    "title": "Knowledge Single-Point-of-Failure Audit",
     "steps": [
      "build the test battery / audit script",
      "run against live sources",
      "record verdict + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-25 22:11 (P~84%)",
+    "outcome": "reached ~2026-11-25 22:51 (P~84%)",
     "consequences": [
-     "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope archivist,decision,define",
-     "archivist: **Convergence Lock Protocol** - Document the exact procedure (2026-11-25 17:51) - shared scope blocker,convergence,cycles",
-     "archivist: **Golden Path Reference (<2KB)** - Consolidate 10+ cycles of (2026-11-26 01:26) - shared scope archivist,convergence,cycles",
-     "lane end scribe: 11-27 05:40 (slowest lane)"
+     "lane end builder: 11-26 19:42 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 1/10 done; this goal ends its lane at 2026-11-25 22:11",
+    "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 22:51",
     "deliverable": {
-     "name": "Convergence Regression Test Spec",
+     "name": "Knowledge Single-Point-of-Failure Audit",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-27 05:40)",
-    "then_eta": "2026-11-27 05:40"
+    "then": "#7 [archivist] Convergence Feed for Portal",
+    "then_eta": "2026-11-26 01:20"
    },
    {
     "agent": "builder",
@@ -713,253 +608,348 @@
     "type": "measurement",
     "complexity": 2,
     "p_reached": 0.224,
-    "eta": "2026-11-25 23:00",
+    "eta": "2026-11-26 00:01",
     "hours": 3.46,
     "order": 2,
-    "rank": 9,
+    "rank": 6,
     "title": "Fleet Health Composite Score",
     "steps": [
      "instrument or extend the scorer",
      "two-run delta check",
      "publish snapshot + report leaf"
     ],
-    "outcome": "reached ~2026-11-25 23:00 (P~22%)",
+    "outcome": "reached ~2026-11-26 00:01 (P~22%)",
     "consequences": [
-     "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,output,signals",
-     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,score,trend",
-     "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,score,trend",
-     "lane end scribe: 11-27 05:40 (slowest lane)"
+     "archivist: **Autonomy Boundary Map** - Document the exact boundary betw (2026-11-25 17:45) - shared scope autonomy,model",
+     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,score,trend",
+     "archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,score,trend",
+     "lane end builder: 11-26 19:42 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 23:00",
+    "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-26 00:01",
     "deliverable": {
      "name": "Fleet Health Composite Score",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-27 05:40)",
-    "then_eta": "2026-11-27 05:40"
+    "then": "#8 [builder] Convergence Deceleration Alert",
+    "then_eta": "2026-11-26 04:34"
    },
    {
-    "agent": "scribe",
-    "goal": "**Fleet Autonomy Playbook** - Condensed two-page doc for the human: \"what the fleet does autonomously now\" (list) vs \"where human input is still needed\" (list with reason). Updated each cycle from intervention log + auto",
+    "agent": "archivist",
+    "goal": "**Convergence Feed for Portal** - Create a structured JSON feed (memory/archivist/convergence-feed.json) with: current autonomy score, per-agent scores, trend arrows (rising/falling/stable), next-milestone ETA, regressio",
+    "type": "measurement",
+    "complexity": 1,
+    "p_reached": 0.586,
+    "eta": "2026-11-26 01:20",
+    "hours": 2.49,
+    "order": 3,
+    "rank": 7,
+    "title": "Convergence Feed for Portal",
+    "steps": [
+     "instrument or extend the scorer",
+     "two-run delta check",
+     "publish snapshot + report leaf"
+    ],
+    "outcome": "reached ~2026-11-26 01:20 (P~59%)",
+    "consequences": [
+     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,convergence,score",
+     "builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,score,trend",
+     "builder: **Convergence Deceleration Alert** - `python memory/ops/conv (2026-11-26 04:34) - shared scope autonomy,convergence",
+     "lane end builder: 11-26 19:42 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 6/10 done; this goal ends its lane at 2026-11-26 01:20",
+    "deliverable": {
+     "name": "Convergence Feed for Portal",
+     "stream": "General"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 19:42)",
+    "then_eta": "2026-11-26 19:42"
+   },
+   {
+    "agent": "builder",
+    "goal": "**Convergence Deceleration Alert** - `python memory/ops/convergence_alert.py`: compute velocity per metric (autonomy, efficiency, intervention) across last 3 cycles. If any metric decelerates for 2+ consecutive cycles, w",
     "type": "build",
     "complexity": 2,
-    "p_reached": 0.459,
-    "eta": "2026-11-26 01:05",
-    "hours": 5.04,
-    "order": 2,
-    "rank": 10,
-    "title": "Fleet Autonomy Playbook",
+    "p_reached": 0.188,
+    "eta": "2026-11-26 04:34",
+    "hours": 4.55,
+    "order": 3,
+    "rank": 8,
+    "title": "Convergence Deceleration Alert",
     "steps": [
      "scaffold the module file",
      "implement core logic",
      "self-test until AC green",
      "write evidence leaf + index line"
     ],
-    "outcome": "reached ~2026-11-26 01:05 (P~46%)",
+    "outcome": "reached ~2026-11-26 04:34 (P~19%)",
     "consequences": [
-     "archivist: **Autonomy Decay Detection** - Define decay signals for auto (2026-11-25 16:00) - shared scope autonomy,cycle,human",
-     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 16:58) - shared scope autonomy,cycle,intervention",
-     "scribe: **Autonomy Score Trendline** - Append each cycle's autonomy  (2026-11-25 17:23) - shared scope autonomy,cycle",
-     "lane end scribe: 11-27 05:40 (slowest lane)"
+     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,convergence,intervention",
+     "archivist: **Convergence Sustainability Forecast** - Using historical c (2026-11-25 21:00) - shared scope convergence,cycles,intervention",
+     "archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,convergence",
+     "lane end builder: 11-26 19:42 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~46%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-26 01:05",
+    "why": "planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-26 04:34",
     "deliverable": {
-     "name": "Fleet Autonomy Playbook",
+     "name": "Convergence Deceleration Alert",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-27 05:40)",
-    "then_eta": "2026-11-27 05:40"
+    "then": "#9 [builder] Cross-Agent Handoff Automation",
+    "then_eta": "2026-11-26 09:07"
+   },
+   {
+    "agent": "builder",
+    "goal": "**Cross-Agent Handoff Automation** - `python memory/orchestrator/handoff_detector.py`: scan recent agent messages for \"assist\" patterns (one agent working another's goal). Auto-generate handoff note in memory/handoffs/ w",
+    "type": "build",
+    "complexity": 2,
+    "p_reached": 0.188,
+    "eta": "2026-11-26 09:07",
+    "hours": 4.55,
+    "order": 4,
+    "rank": 9,
+    "title": "Cross-Agent Handoff Automation",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-26 09:07 (P~19%)",
+    "consequences": [
+     "lane end builder: 11-26 19:42 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-26 09:07",
+    "deliverable": {
+     "name": "Cross-Agent Handoff Automation",
+     "stream": "General"
+    },
+    "then": "#10 [builder] Pre-Cycle Autonomy Gate",
+    "then_eta": "2026-11-26 13:40"
+   },
+   {
+    "agent": "builder",
+    "goal": "**Pre-Cycle Autonomy Gate** - `python memory/ops/pre_cycle_gate.py`: pre-flight check that runs before each cycle start. Validates: (a) all scheduled tasks running, (b) API endpoints respond <200ms, (c) autonomy_score dr",
+    "type": "build",
+    "complexity": 2,
+    "p_reached": 0.188,
+    "eta": "2026-11-26 13:40",
+    "hours": 4.55,
+    "order": 5,
+    "rank": 10,
+    "title": "Pre-Cycle Autonomy Gate",
+    "steps": [
+     "scaffold the module file",
+     "implement core logic",
+     "self-test until AC green",
+     "write evidence leaf + index line"
+    ],
+    "outcome": "reached ~2026-11-26 13:40 (P~19%)",
+    "consequences": [
+     "builder: **Convergence-Informed Goal Prioritizer** - `python memory/o (2026-11-25 17:59) - shared scope autonomy,cycle,score",
+     "builder: **Fleet Health Composite Score** - Extend autonomy_score.py: (2026-11-26 00:01) - shared scope autonomy,score",
+     "archivist: **Convergence Feed for Portal** - Create a structured JSON f (2026-11-26 01:20) - shared scope autonomy,score",
+     "lane end builder: 11-26 19:42 (slowest lane)"
+    ],
+    "projected": false,
+    "why": "planned as build work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~19%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-26 13:40",
+    "deliverable": {
+     "name": "Pre-Cycle Autonomy Gate",
+     "stream": "General"
+    },
+    "then": "lane clear - level-up gate re-check (2026-11-26 19:42)",
+    "then_eta": "2026-11-26 19:42"
    }
   ],
   "horizons": [
    {
     "label": "30m",
     "hours": 0.5,
-    "end": "2026-11-25 14:01",
+    "end": "2026-11-25 15:01",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 54/80 -> 67%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 68/80 -> 85%"
    },
    {
     "label": "1h",
     "hours": 1.0,
-    "end": "2026-11-25 14:31",
+    "end": "2026-11-25 15:31",
     "completes": 0,
     "top": [],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 54/80 -> 67%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 68/80 -> 85%"
    },
    {
     "label": "1d",
     "hours": 24.0,
-    "end": "2026-11-26 13:31",
+    "end": "2026-11-26 14:31",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "archivist",
-      "title": "Autonomy Decay Detection",
-      "eta": "2026-11-25 16:00",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 1/10 done; this goal ends its lane at 2026-11-25 16:00"
+      "title": "Autonomy Boundary Map",
+      "eta": "2026-11-25 17:45",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~53%): kept in plan because its scope gates later work; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 17:45"
      },
      {
       "rank": 2,
       "agent": "builder",
       "title": "Convergence-Informed Goal Prioritizer",
-      "eta": "2026-11-25 16:58",
+      "eta": "2026-11-25 17:59",
       "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 16:58"
+      "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 17:59"
      },
      {
       "rank": 3,
-      "agent": "scribe",
-      "title": "Autonomy Score Trendline",
-      "eta": "2026-11-25 17:23",
-      "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 17:23"
+      "agent": "builder",
+      "title": "Self-Healing Goal Lifecycle",
+      "eta": "2026-11-25 20:33",
+      "type": "ops",
+      "why": "planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 20:33"
      },
      {
       "rank": 4,
       "agent": "archivist",
-      "title": "Convergence Lock Protocol",
-      "eta": "2026-11-25 17:51",
-      "type": "verify",
-      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 1/10 done; this goal ends its lane at 2026-11-25 17:51"
+      "title": "Convergence Sustainability Forecast",
+      "eta": "2026-11-25 21:00",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~53%): kept in plan because its scope gates later work; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 21:00"
      },
      {
       "rank": 5,
-      "agent": "builder",
-      "title": "Self-Healing Goal Lifecycle",
-      "eta": "2026-11-25 19:33",
-      "type": "ops",
-      "why": "planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 19:33"
+      "agent": "archivist",
+      "title": "Knowledge Single-Point-of-Failure Audit",
+      "eta": "2026-11-25 22:51",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 22:51"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 54/80 -> 80%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 68/80 -> 97%"
    },
    {
     "label": "1w",
     "hours": 168.0,
-    "end": "2026-12-02 13:31",
+    "end": "2026-12-02 14:31",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "archivist",
-      "title": "Autonomy Decay Detection",
-      "eta": "2026-11-25 16:00",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 1/10 done; this goal ends its lane at 2026-11-25 16:00"
+      "title": "Autonomy Boundary Map",
+      "eta": "2026-11-25 17:45",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~53%): kept in plan because its scope gates later work; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 17:45"
      },
      {
       "rank": 2,
       "agent": "builder",
       "title": "Convergence-Informed Goal Prioritizer",
-      "eta": "2026-11-25 16:58",
+      "eta": "2026-11-25 17:59",
       "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 16:58"
+      "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 17:59"
      },
      {
       "rank": 3,
-      "agent": "scribe",
-      "title": "Autonomy Score Trendline",
-      "eta": "2026-11-25 17:23",
-      "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 17:23"
+      "agent": "builder",
+      "title": "Self-Healing Goal Lifecycle",
+      "eta": "2026-11-25 20:33",
+      "type": "ops",
+      "why": "planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 20:33"
      },
      {
       "rank": 4,
       "agent": "archivist",
-      "title": "Convergence Lock Protocol",
-      "eta": "2026-11-25 17:51",
-      "type": "verify",
-      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 1/10 done; this goal ends its lane at 2026-11-25 17:51"
+      "title": "Convergence Sustainability Forecast",
+      "eta": "2026-11-25 21:00",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~53%): kept in plan because its scope gates later work; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 21:00"
      },
      {
       "rank": 5,
-      "agent": "builder",
-      "title": "Self-Healing Goal Lifecycle",
-      "eta": "2026-11-25 19:33",
-      "type": "ops",
-      "why": "planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 19:33"
+      "agent": "archivist",
+      "title": "Knowledge Single-Point-of-Failure Audit",
+      "eta": "2026-11-25 22:51",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 22:51"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 54/80 -> 80%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 68/80 -> 97%"
    },
    {
     "label": "1m",
     "hours": 720.0,
-    "end": "2026-12-25 13:31",
+    "end": "2026-12-25 14:31",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "archivist",
-      "title": "Autonomy Decay Detection",
-      "eta": "2026-11-25 16:00",
-      "type": "measurement",
-      "why": "planned as measurement work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~59%): kept in plan because its scope gates later work; lane archivist has 1/10 done; this goal ends its lane at 2026-11-25 16:00"
+      "title": "Autonomy Boundary Map",
+      "eta": "2026-11-25 17:45",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~53%): kept in plan because its scope gates later work; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 17:45"
      },
      {
       "rank": 2,
       "agent": "builder",
       "title": "Convergence-Informed Goal Prioritizer",
-      "eta": "2026-11-25 16:58",
+      "eta": "2026-11-25 17:59",
       "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 16:58"
+      "why": "planned as measurement work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~22%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 17:59"
      },
      {
       "rank": 3,
-      "agent": "scribe",
-      "title": "Autonomy Score Trendline",
-      "eta": "2026-11-25 17:23",
-      "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the scribe lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane scribe has 1/10 done; this goal ends its lane at 2026-11-25 17:23"
+      "agent": "builder",
+      "title": "Self-Healing Goal Lifecycle",
+      "eta": "2026-11-25 20:33",
+      "type": "ops",
+      "why": "planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 20:33"
      },
      {
       "rank": 4,
       "agent": "archivist",
-      "title": "Convergence Lock Protocol",
-      "eta": "2026-11-25 17:51",
-      "type": "verify",
-      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 1/10 done; this goal ends its lane at 2026-11-25 17:51"
+      "title": "Convergence Sustainability Forecast",
+      "eta": "2026-11-25 21:00",
+      "type": "build",
+      "why": "planned as build work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~53%): kept in plan because its scope gates later work; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 21:00"
      },
      {
       "rank": 5,
-      "agent": "builder",
-      "title": "Self-Healing Goal Lifecycle",
-      "eta": "2026-11-25 19:33",
-      "type": "ops",
-      "why": "planned as ops work (cx2); already open on the builder lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane builder has 2/10 done; this goal ends its lane at 2026-11-25 19:33"
+      "agent": "archivist",
+      "title": "Knowledge Single-Point-of-Failure Audit",
+      "eta": "2026-11-25 22:51",
+      "type": "verify",
+      "why": "planned as verify work (cx1); already open on the archivist lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) ~84%): slip model flags some risk, ETA already inflated; lane archivist has 6/10 done; this goal ends its lane at 2026-11-25 22:51"
      }
     ],
-    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 54/80 -> 80%"
+    "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 68/80 -> 97%"
    }
   ],
   "tree": {
-   "state": "Fleet 54/80 (68%)",
+   "state": "Fleet 68/80 (85%)",
    "gate": "all goals 100%?",
    "branch_taken": "NO - queue in flight",
    "yes": {
     "action": "level-up gate fires -> Lv increments, report written",
     "then": "Orchestrator proposes cycle N+1 from ranked backlog (8 candidates)",
     "first_planned": [
-     "#1 [archivist] Autonomy Decay Detection ~2026-11-25 16:00",
-     "#2 [builder] Convergence-Informed Goal Prioritizer ~2026-11-25 16:58",
-     "#3 [scribe] Autonomy Score Trendline ~2026-11-25 17:23",
-     "#4 [archivist] Convergence Lock Protocol ~2026-11-25 17:51"
+     "#1 [archivist] Autonomy Boundary Map ~2026-11-25 17:45",
+     "#2 [builder] Convergence-Informed Goal Prioritizer ~2026-11-25 17:59",
+     "#3 [builder] Self-Healing Goal Lifecycle ~2026-11-25 20:33",
+     "#4 [archivist] Convergence Sustainability Forecast ~2026-11-25 21:00"
     ]
    },
    "no": {
     "action": "keep current queue; next completion gates progress",
-    "then": "when the last lane ends (2026-11-27 05:40) the gate re-checks",
+    "then": "when the last lane ends (2026-11-26 19:42) the gate re-checks",
     "first_planned": [
-     "#1 [archivist] Autonomy Decay Detection ~2026-11-25 16:00",
-     "#2 [builder] Convergence-Informed Goal Prioritizer ~2026-11-25 16:58",
-     "#3 [scribe] Autonomy Score Trendline ~2026-11-25 17:23",
-     "#4 [archivist] Convergence Lock Protocol ~2026-11-25 17:51"
+     "#1 [archivist] Autonomy Boundary Map ~2026-11-25 17:45",
+     "#2 [builder] Convergence-Informed Goal Prioritizer ~2026-11-25 17:59",
+     "#3 [builder] Self-Healing Goal Lifecycle ~2026-11-25 20:33",
+     "#4 [archivist] Convergence Sustainability Forecast ~2026-11-25 21:00"
     ]
    }
   },
@@ -1436,7 +1426,7 @@
   ],
   "plan_meta": {
    "sig": "05dcc83e6301",
-   "computed_at": "2026-11-25 13:31:17",
+   "computed_at": "2026-11-25 14:31:32",
    "basis": "live goal ledger + next-10 ETAs + fleet throughput ~17.69 goals/h; recomputed every refresh",
    "delta": [],
    "history": [

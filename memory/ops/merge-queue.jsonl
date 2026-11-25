@@ -421,3 +421,5 @@
 {"ts": "2026-11-25 14:23:04", "file": "agent_portal.py", "sha": "a177183feb", "size": 358747, "snapshot": "memory/ops/merge-queue/agent_portal.py.a177183feb"}
 {"ts": "2026-11-25 14:23:04", "file": "ui/cockpit.js", "sha": "db9bb49c2c", "size": 13497, "snapshot": null}
 {"ts": "2026-11-25 14:31:03", "file": "ui/cockpit.js", "sha": "b07b37ab71", "size": 18901, "snapshot": null}
+{"ts": "2026-11-25 14:31:23", "file": "ui/cockpit.js", "sha": "0913adecf6", "size": 18904, "snapshot": null}
+{"ts": "2026-11-25 14:45:06", "file": "ui/cockpit.js", "sha": "d213511bb4", "size": 18644, "snapshot": null}

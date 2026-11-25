@@ -176,7 +176,7 @@
     if (!box) return;
     if (!p || !p.agents || !p.agents.length) { box.innerHTML = "<i style='color:#8a8f98'>no power data</i>"; return; }
     var v = p.verdict || {};
-    var vh = "<div class=\"ckpw-v " + (v.level === "revisit" ? "revisit" : "healthy") + \">" +
+    var vh = "<div class=\"ckpw-v " + (v.level === "revisit" ? "revisit" : "healthy") + ">" +
       (v.level === "revisit" ? "\u26A0 Revisit power allocation" : "\u2713 Power allocation healthy") +
       (p.pct_used != null ? " \u00b7 " + p.pct_used + "% of fleet VRAM committed (" + p.allocated_gb + " / " + p.capacity_gb + " GB)" : "") +
       (v.reasons || []).map(function (r) { return "<span class=rsn>\u00b7 " + esc(r) + "</span>"; }).join("") +
@@ -245,6 +245,8 @@
       updateBanner(last);
       document.getElementById("ckpStamp").textContent = "updated " + new Date().toLocaleTimeString();
     } catch (e) {
+      window.__CKP_ERR = e;   // debug hook: surface swallowed render errors to the console
+      if (window.console && console.error) console.error("[cockpit]", e);
       document.getElementById("ckpStamp").textContent = "refresh failed";
     }
   }

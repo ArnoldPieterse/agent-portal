@@ -9,6 +9,8 @@ Last updated: 2026-11-25.
 - evidence goal4 convergence-regression-spec -> memory/archivist/evidence-goal4-convergence-regression-spec-2026-11-25.md   runner verified on live data; RC3 FAIL confirmed true positive via manual blockers.md grep [REACHED 2026-11-25]
 - golden-path (goal 5, cycle-18) -> memory/archivist/golden-path.md   <2KB (1873B) first-read reference: fleet state + convergence bar + closeout loop + pointer map; 0 dangling refs [REACHED 2026-11-25]
 - evidence goal5 golden-path -> memory/archivist/evidence-goal5-golden-path-2026-11-25.md   size 1873B<2048 verified, all 11 cited refs resolve (dangling=0), facts grounded in live data [REACHED 2026-11-25]
+- autonomy-boundary-map (goal 6, cycle-18) -> memory/archivist/autonomy-boundary-map.md   5 domains x 30 boundary rows; A/H classification with confidence + dates; escalation rules; 3 documented H->A shifts [REACHED 2026-11-25]
+- convergence-forecast (goal 7, cycle-18) -> memory/archivist/convergence-forecast.json   sustainability: hold >=3 cycles (conf 0.72); top risk=Designer stagnation(0.7); ETA steady-state 4-6 cycles [REACHED 2026-11-25]
 - assist Scribe goal #9 self-assessment rubric baseline (2026-11-25) -> memory/archivist/assist-scribe-goal9-self-assessment-rubric-2026-11-25.md   grounded A/B/C/D grades + provenance for E1/E2/E3; artifact in memory/scribe/
 - metric-lineage (goal 8, cycle-17) -> memory/archivist/metric-lineage.md   full computation chain per metric: raw→transforms→final; discrepancy log [REACHED 2026-11-25]
 - topic-evolution timeline (goal 7, cycle-17) -> memory/archivist/topic-evolution.md   4-phase narrative, scope-completion correlation, coverage gaps [REACHED 2026-11-25]

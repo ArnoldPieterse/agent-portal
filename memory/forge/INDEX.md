@@ -3,6 +3,9 @@ Onboarded 2026-11-25. Builder's gate & deploy sub-agent: owns Python tooling, CI
 
 ## Entries (keyword -> pointer | use case)
 - role / persona / skills / delegation rules -> agents.json entry 'forge' (persona is SSOT for behavior)
-- canary_deploy.py / deploy pipeline -> memory/forge/canary_deploy.py | 3-phase: deploy->smoke-gate->promote/rollback (goal #2)
-- test-topology.json / fleet test matrix -> memory/forge/test-topology.json | per-host tests, cascade rules, schedule spec (goal #5)
-- gates / tests / deploys run / perf numbers -> memory/forge/log.md   one line per run: date, command, result, evidence path (create on first entry)
+- smoke_suite.py / fleet probe / auto-remediate -> memory/forge/smoke_suite.py | 4-host TCP+API+latency probe, classify OK/WARN/CRIT, remediate via recover_all.py (goal #1 verified)
+- canary_deploy.py / deploy pipeline / perf gate -> memory/forge/canary_deploy.py | 4-phase: baseline-perf->deploy->smoke-gate->perf-gate->promote/rollback; FORGE_PERF_THRESHOLD env (goals #2+#3 verified)
+- gate_health.py / self-monitoring -> memory/forge/gate_health.py | checks scheduled tasks ran within interval, auto-restart, incident log (goal #4 verified)
+- test-topology.json / fleet test matrix -> memory/forge/test-topology.json | per-host tests, cascade rules, schedule spec (goal #5 verified)
+- deploy-log.jsonl / deploy evidence -> memory/forge/deploy-log.jsonl | append-only: ts, file, sha, status, perf before/after
+- gates / tests / deploys run / perf numbers -> memory/forge/log.md   one line per run: date, command, result, evidence path

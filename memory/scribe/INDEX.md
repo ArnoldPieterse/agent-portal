@@ -2,6 +2,7 @@
 Last updated: 2026-11-25.
 
 ## Cycle 18 (Fleet Autonomy Convergence) — started 2026-11-25
+- fleet-state-snapshot-2026-11-25.md   mid-pass: Red host UP/model DOWN, Forge 2→6, Archivist +2, cross-lane deps
 - goal #1 autonomy score trendline -> memory/scribe/autonomy-trend.jsonl   **REACHED** 3 entries (c5=64.5, c17=69.1, c23=71.3); delta +2.2; reversal logic active; script: memory/scribe/autonomy_trend.py
 - goal #2 decision-to-autonomy causal map -> memory/scribe/decision-autonomy-map.jsonl   **REACHED** 3 chains traced; all file paths verified
 - goal #3 fleet autonomy playbook -> memory/scribe/fleet-autonomy-playbook.md   **REACHED** 12 autonomous capabilities + 3 intervention gaps + score trajectory

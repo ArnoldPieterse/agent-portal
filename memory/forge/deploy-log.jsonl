@@ -1,1 +1,2 @@
 {"ts": "2026-11-25 14:18:23", "file": "_canary_test.txt", "sha": "1c7de0d250b63b2c", "canary": "White", "status": "success", "promoted": ["Red", "Pale", "Black"]}
+{"ts": "2026-11-25 14:36:15", "file": "_perf_test_file.txt", "sha": "2bb644d7127d0892", "canary": "White", "status": "success", "promoted": ["Red", "Pale", "Black"]}
