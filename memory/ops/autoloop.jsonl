@@ -793,3 +793,6 @@
 {"timestamp": "2026-11-25T20:29:11.333147+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1326058}
 {"timestamp": "2026-11-25T20:29:11.338672+00:00", "agent": "Outlet", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1326041}
 {"timestamp": "2026-11-25T20:29:11.355707+00:00", "agent": "Lumen", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3979405}
+{"timestamp": "2026-11-25T20:44:44.639188+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1868763}
+{"timestamp": "2026-11-25T20:44:44.646236+00:00", "agent": "Reel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3473578}
+{"timestamp": "2026-11-25T20:44:44.652290+00:00", "agent": "Splice", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3473579}

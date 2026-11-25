@@ -170,3 +170,4 @@
 {"ts": "2026-11-26T06:08:33", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "09ae6cb7", "reason": "lod-evict"}
 {"ts": "2026-11-26T06:14:22", "ref": ["memory/researcher/INDEX.md", 20], "focus_sig": "d24dec57", "reason": "lod-evict"}
 {"ts": "2026-11-26T06:14:22", "ref": ["memory/researcher/open-questions-log.md", 148], "focus_sig": "d24dec57", "reason": "lod-evict"}
+{"ts": "2026-11-26T06:29:59", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "f32ae250", "reason": "lod-evict"}
