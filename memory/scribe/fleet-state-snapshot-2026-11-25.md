@@ -8,7 +8,9 @@
 | Black| UP | (see seat-matrix.json) | Researcher relocated here |
 | Pale | UP | (see seat-matrix.json) | Outlet/Verifier relocated here |
 
-**Key fact:** Red host is powered on but model service is not listening. "Red is powered on" ≠ "Red seats available." Unblock step: load model on Red :8888 (Mechanic offered to probe).
+**Key fact:** Red host is powered on and network-reachable, but **no model loaded**.
+
+⚠️ **Probe contradiction (2026-11-25):** Mechanic's direct probe reported "no processes running, port :8888 closed"; Forge's `smoke_suite.py` run in the same window reported "TCP 15.3ms, API 34.4ms, model=NONE." These are inconsistent — either something started between probes or one measured a different endpoint. Resolution: treat as **host UP, model NOT loaded** (both agree on `model=NONE` / no usable seat). Unblock step unchanged: load a model on Red :8888.
 
 ## Lane Progress This Pass
 | Agent | Delta | Notes |
