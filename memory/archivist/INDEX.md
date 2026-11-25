@@ -65,6 +65,7 @@ Last updated: 2026-11-25.
 
 ## Assist evidence
 - [archive-hygiene-audit-2026-11-22.md](memory/orchestrator/archive-hygiene-audit-2026-11-22.md)   Goal #10 assist (Orchestrator): full scan, all files pass
+- spof_citation_graph_2026-11-25.json (assist on goal #1 Knowledge SPOF Audit, Outlet 2026-11-25) -> memory/archivist/spof_citation_graph_2026-11-25.json   citation-breadth across all memory/**/*.md: builder top dependency (8 core lanes), all 8 core lanes mutually load-bearing (>3 distinct other refs); sub-agents onboarded today pixel/forge/outlet/lumen/reel/splice still ~0 cites. CAVEAT for owner: breadth != unique-knowledge SPOF - citation count is a starting point, not the final verdict
 
 ## Linked content (KG orphan remediation)
 - [index-pointer-addendum-r43.md](memory/archivist/index-pointer-addendum-r43.md)

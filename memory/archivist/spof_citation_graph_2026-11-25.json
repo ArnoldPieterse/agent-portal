@@ -1,0 +1,134 @@
+{
+  "generated_by": "Outlet (assist on archivist goal #1, Knowledge SPOF Audit)",
+  "date": "2026-11-25",
+  "method": "scan memory/**/*.md; count distinct other lanes referencing each agent via pointer/citation lines (@Name, Name's, /name/ path, 'name lane|goal|memory'). Two metrics: incl. archivist-index cites, and excl. archivist (indexing noise).",
+  "spoif_threshold": ">3 distinct non-archivist source lanes = single-point-of-failure risk",
+  "rankings": [
+    {
+      "agent": "builder",
+      "distinct_sources_incl_archivist": 9,
+      "distinct_sources_excl_archivist": 8,
+      "is_spoif": true
+    },
+    {
+      "agent": "mechanic",
+      "distinct_sources_incl_archivist": 8,
+      "distinct_sources_excl_archivist": 7,
+      "is_spoif": true
+    },
+    {
+      "agent": "archivist",
+      "distinct_sources_incl_archivist": 7,
+      "distinct_sources_excl_archivist": 7,
+      "is_spoif": true
+    },
+    {
+      "agent": "verifier",
+      "distinct_sources_incl_archivist": 7,
+      "distinct_sources_excl_archivist": 6,
+      "is_spoif": true
+    },
+    {
+      "agent": "scribe",
+      "distinct_sources_incl_archivist": 7,
+      "distinct_sources_excl_archivist": 6,
+      "is_spoif": true
+    },
+    {
+      "agent": "researcher",
+      "distinct_sources_incl_archivist": 7,
+      "distinct_sources_excl_archivist": 6,
+      "is_spoif": true
+    },
+    {
+      "agent": "orchestrator",
+      "distinct_sources_incl_archivist": 7,
+      "distinct_sources_excl_archivist": 6,
+      "is_spoif": true
+    },
+    {
+      "agent": "designer",
+      "distinct_sources_incl_archivist": 7,
+      "distinct_sources_excl_archivist": 6,
+      "is_spoif": true
+    },
+    {
+      "agent": "pixel",
+      "distinct_sources_incl_archivist": 2,
+      "distinct_sources_excl_archivist": 1,
+      "is_spoif": false
+    },
+    {
+      "agent": "outlet",
+      "distinct_sources_incl_archivist": 2,
+      "distinct_sources_excl_archivist": 1,
+      "is_spoif": false
+    },
+    {
+      "agent": "lumen",
+      "distinct_sources_incl_archivist": 2,
+      "distinct_sources_excl_archivist": 1,
+      "is_spoif": false
+    },
+    {
+      "agent": "forge",
+      "distinct_sources_incl_archivist": 2,
+      "distinct_sources_excl_archivist": 1,
+      "is_spoif": false
+    },
+    {
+      "agent": "splice",
+      "distinct_sources_incl_archivist": 1,
+      "distinct_sources_excl_archivist": 0,
+      "is_spoif": false
+    },
+    {
+      "agent": "reel",
+      "distinct_sources_incl_archivist": 1,
+      "distinct_sources_excl_archivist": 0,
+      "is_spoif": false
+    }
+  ],
+  "edges_src_tgt_filecount": {
+    "verifier->designer": 83,
+    "archivist->scribe": 63,
+    "verifier->mechanic": 61,
+    "builder->designer": 54,
+    "verifier->archivist": 54,
+    "researcher->designer": 53,
+    "researcher->archivist": 53,
+    "verifier->builder": 51,
+    "researcher->verifier": 50,
+    "researcher->mechanic": 49,
+    "verifier->scribe": 44,
+    "researcher->builder": 42,
+    "scribe->researcher": 42,
+    "designer->verifier": 41,
+    "scribe->archivist": 39,
+    "verifier->orchestrator": 39,
+    "archivist->mechanic": 37,
+    "researcher->orchestrator": 37,
+    "designer->builder": 36,
+    "archivist->builder": 35,
+    "scribe->designer": 34,
+    "archivist->designer": 32,
+    "mechanic->researcher": 32,
+    "scribe->mechanic": 32,
+    "verifier->researcher": 32,
+    "researcher->scribe": 31,
+    "archivist->researcher": 29,
+    "archivist->verifier": 29,
+    "archivist->orchestrator": 28,
+    "builder->archivist": 28,
+    "orchestrator->designer": 28,
+    "designer->researcher": 27,
+    "builder->mechanic": 24,
+    "scribe->builder": 24,
+    "scribe->verifier": 24,
+    "designer->mechanic": 23,
+    "orchestrator->mechanic": 23,
+    "mechanic->verifier": 22,
+    "orchestrator->archivist": 22,
+    "builder->verifier": 21
+  }
+}
