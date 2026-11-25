@@ -94,3 +94,5 @@
 {"ts": "2026-11-26T00:12:45", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "d24dec57", "reason": "lod-evict"}
 {"ts": "2026-11-26T00:29:28", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "4d08e7cb", "reason": "lod-evict"}
 {"ts": "2026-11-26T00:29:28", "ref": ["memory/goals/archive/mechanic-2026-11-23-cycle8.md", 11], "focus_sig": "4d08e7cb", "reason": "lod-evict"}
+{"ts": "2026-11-26T00:31:33", "ref": ["memory/workspace/INDEX.md", 68], "focus_sig": "09ae6cb7", "reason": "lod-evict"}
+{"ts": "2026-11-26T00:31:33", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "09ae6cb7", "reason": "lod-evict"}
