@@ -77,3 +77,4 @@ Last updated: 2026-11-25 (Builder: Cycle 18 goals proposed - Fleet Autonomy Conv
 - [runbook_exec.py](memory/builder/runbook_exec.py) - runbook parser + executor: parses memory/ops/runbooks/*.md into steps (command/expected_output/timeout/rollback), --dry-run, --simulate-failure N triggers rollback of prior steps; 2026-11-23 Goal#9 verified (safe_test.md: 3 steps parsed; failure@2 -> rollback + full report)
 - assist_scribe_g4_convergence_digests_2026-11-25.md -> memory/builder/assist_scribe_g4_convergence_digests_2026-11-25.md   Assist (owner Scribe): convergence-digests.jsonl 3 entries, all metrics + watch items verified
 - evidence_goal1_prioritizer_2026-11-25.md -> memory/builder/evidence_goal1_prioritizer_2026-11-25.md   Goal #1 (verified): goal_prioritizer.py convergence-informed ranking; selftest 5/5 PASS
+- evidence-stealth-workflows-2026-11-26.md -> memory/builder/evidence-stealth-workflows-2026-11-26.md   Goal #11: top-3 workflows packaged, 21/21 tests PASS

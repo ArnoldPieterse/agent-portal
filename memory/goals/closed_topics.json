@@ -3336,5 +3336,11 @@
 "text": "**Milestone Auto-Draft Trigger** - when fleet level or goal pct crosses a threshold (new level, +10% step), Outlet auto-drafts a milestone p",
 "agent": "outlet",
 "at": "2026-11-26"
+},
+{
+"sig": "4c1ec94dfa9edbab",
+"text": "**Package top-3 workflows** - from Researcher inventory (memory/researcher/stealth/task-inventory.md): spec + runnable automation for the to",
+"agent": "builder",
+"at": "2026-11-26"
 }
 ]

@@ -3,8 +3,11 @@
   "tone": "friendly_expert",
   "start_date": "2026-12-01",
   "days_per_week": 3,
+  "weeks": 4,
   "platforms": [
-    "linkedin"
+    "linkedin",
+    "twitter",
+    "instagram"
   ],
   "topics": [
     {

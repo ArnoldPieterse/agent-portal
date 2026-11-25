@@ -55,7 +55,7 @@ def main():
     cost = {"model": "rule-based (no LLM)", "input_tokens": 0, "output_tokens": 0,
             "estimated_usd": 0.0, "notes": "pure computation, zero token cost"}
     cost_usd = round(len(invoices) * 0.002, 4)
-    report = {"generated_at": datetime.utcnow().isoformat(), "runtime_seconds": runtime, "cost_usd": cost_usd,
+    report = {"generated_at": datetime.utcnow().isoformat(), "cost_usd": cost_usd,
               "total_invoices": len(invoices), "total_ledger_entries": len(ledger),
               "matched": matched, "anomalies": anomalies,
               "missing_invoice": missing_inv, "missing_ledger": missing_led,
@@ -64,6 +64,25 @@ def main():
               "cost": cost}
     with open(os.path.join(args.output, 'reconciliation_report.json'), 'w', encoding='utf-8') as f:
         json.dump(report, f, indent=2)
+    # Write anomalies.csv
+    with open(os.path.join(args.output, 'anomalies.csv'), 'w', newline='', encoding='utf-8') as f:
+        if anomalies:
+            w = csv.DictWriter(f, fieldnames=['invoice_id','vendor','invoice_amount','ledger_amount','diff_pct','status'])
+            w.writeheader()
+            w.writerows(anomalies)
+        else:
+            f.write('invoice_id,vendor,invoice_amount,ledger_amount,diff_pct,status\n')
+    # Write summary.md
+    with open(os.path.join(args.output, 'summary.md'), 'w', encoding='utf-8') as f:
+        f.write(f"# Invoice Reconciliation Summary\n")
+        f.write(f"- Generated: {report['generated_at']}\n")
+        f.write(f"- Runtime: {runtime}s\n")
+        f.write(f"- Total invoices: {len(invoices)}\n")
+        f.write(f"- Matched: {len(matched)} ({report['summary']['match_rate']}%)\n")
+        f.write(f"- Anomalies: {len(anomalies)}\n")
+        f.write(f"- Missing ledger match: {len(missing_inv)}\n")
+        f.write(f"- Missing invoice match: {len(missing_led)}\n")
+        f.write(f"- Cost: ${cost_usd}\n")
     print(f"WF1 complete: {len(matched)} matched, {len(anomalies)} anomalies, {runtime}s")
     return 0
 

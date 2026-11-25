@@ -13,21 +13,32 @@ def generate_posts(brief):
     posts = []
     start_date = datetime.strptime(brief.get("start_date", "2026-12-01"), "%Y-%m-%d")
     days_per_week = brief.get("days_per_week", 3)
+    weeks = brief.get("weeks", 4)
     platforms = brief.get("platforms", ["instagram"])
     tone = brief.get("tone", "friendly_expert")
     template = TONE_TEMPLATES.get(tone, TONE_TEMPLATES["friendly_expert"])
     day_offsets = [0, 1, 2, 3, 4, 5, 6][:days_per_week]
-    for topic in brief.get("topics", []):
-        hook = topic.get("hook", topic["name"].upper() + "!")
-        body = topic.get("body", f"Here's what you need to know about {topic['name'].lower()}.")
-        cta = CTAS[hash(topic["name"]) % len(CTAS)]
+    topics = brief.get("topics", [])
+    topic_idx = 0
+    for week in range(weeks):
         for i, day_off in enumerate(day_offsets):
-            post_date = start_date + timedelta(days=i * (7 // max(days_per_week, 1)) + day_off)
-            for plat in platforms:
-                text = template.format(hook=hook, body=body, cta=cta)
+            post_date = start_date + timedelta(days=week * 7 + day_off)
+            # Cycle through topics
+            topic = topics[topic_idx % len(topics)]
+            topic_idx += 1
+            hook = topic.get("hook", topic["name"].upper() + "!")
+            body = topic.get("body", f"Here's what you need to know about {topic['name'].lower()}.")
+            cta_idx = (week * days_per_week + i) % len(CTAS)
+            cta = CTAS[cta_idx]
+            # Add week-specific variation for uniqueness
+            week_tag = f"Week {week+1} edition: " if weeks > 1 else ""
+            for j, plat in enumerate(platforms):
+                plat_mod = "" if j == 0 else f" [{plat.title()}]"
+                text = template.format(hook=hook, body=body + plat_mod, cta=cta)
+                text = (week_tag + text)[:280]
                 tags = " ".join(f"#{t}" for t in topic.get("hashtags", [topic["name"].lower().replace(" ", "")]))
                 posts.append({"date": post_date.strftime("%Y-%m-%d"), "platform": plat,
-                             "post_text": text[:280], "hashtags": tags,
+                             "post_text": text, "hashtags": tags,
                              "topic": topic["name"]})
     return posts
 
@@ -50,6 +61,12 @@ def main():
               "posts": posts, "cost": cost}
     with open(os.path.join(args.output, 'scheduled_posts.json'), 'w', encoding='utf-8') as f:
         json.dump(result, f, indent=2)
+    # Write calendar.csv
+    with open(os.path.join(args.output, 'calendar.csv'), 'w', newline='', encoding='utf-8') as f:
+        w = csv.DictWriter(f, fieldnames=['date','platform','post_text','hashtags','topic'])
+        w.writeheader()
+        for p in posts:
+            w.writerow({k: p.get(k,'') for k in ['date','platform','post_text','hashtags','topic']})
     print(f"WF2 complete: {len(posts)} posts scheduled, {runtime}s")
     return 0
 

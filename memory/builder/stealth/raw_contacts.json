@@ -1,28 +1,28 @@
 [
   {
-    "name": "Jane Smith",
-    "email": "jane@acme.com",
+    "name": "John Smith",
+    "email": "JOHN@ACME.com",
     "phone": "555-0101",
     "company": "Acme Corp",
     "role": "CTO"
   },
   {
     "name": "Bob Jones",
-    "email": "bob@widget.io",
+    "email": "",
     "phone": "555-0102",
     "company": "Widget Inc",
     "role": "CEO"
   },
   {
     "name": "Alice Wong",
-    "email": "",
+    "email": "alice@cloud.io",
     "phone": "555-0103",
     "company": "CloudHost",
     "role": "VP Eng"
   },
   {
-    "name": "Jane Smith",
-    "email": "jane@acme.com",
+    "name": "John Smith",
+    "email": "john@acme.com",
     "phone": "555-0101",
     "company": "Acme Corp",
     "role": "CTO"
