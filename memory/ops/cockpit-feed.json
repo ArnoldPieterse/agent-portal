@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T10:44:48.923394+00:00",
+  "ts": "2026-11-26T11:04:49.750782+00:00",
   "health_score": 75,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -489,9 +489,9 @@
         "pct": 0.0
       },
       "pixel": {
-        "total": 1,
-        "verified": 0,
-        "pct": 0.0
+        "total": 3,
+        "verified": 3,
+        "pct": 100.0
       },
       "researcher-attempts-cycle3-2026-11-18": {
         "total": 1,

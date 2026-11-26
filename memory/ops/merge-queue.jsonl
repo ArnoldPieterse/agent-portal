@@ -513,3 +513,4 @@
 {"ts": "2026-11-26 20:53:57", "file": "ui/cockpit-metrics-export.js", "sha": "f8235d605c", "size": 12854, "snapshot": null}
 {"ts": "2026-11-26 20:53:57", "file": "ui/fleet_topology.js", "sha": "a6735ba503", "size": 14961, "snapshot": null}
 {"ts": "2026-11-26 20:53:57", "file": "ui/pages/mind.html", "sha": "58e230a0f3", "size": 6251, "snapshot": null}
+{"ts": "2026-11-26 20:54:38", "file": "ui/app.css", "sha": "00259d52c0", "size": 40773, "snapshot": null}

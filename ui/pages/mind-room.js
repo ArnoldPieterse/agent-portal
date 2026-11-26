@@ -309,7 +309,7 @@ var SEATS={researcher:[-4.5,-4.5],scribe:[-1.5,-4.5],verifier:[4.5,-4.5],
 var EXTRA_SEATS={outlet:[-9.5,5.5]};
 var SUBS={pixel:[7.0,3.2,'builder'],forge:[7.0,5.8,'builder'],lumen:[-0.9,7.4,'designer'],
  reel:[1.5,7.9,'designer'],splice:[3.9,7.4,'designer']};
-var HOST_OF={'127.0.0.1':'WHITE','192.168.1.179':'WHITE','192.168.1.39':'PALE','192.168.1.245':'RED','192.168.1.99':'BLACK'};
+var HOST_OF={'127.0.0.1':'WHITE','IP_LAN':'WHITE','IP_LAN':'PALE','IP_LAN':'RED','IP_LAN':'BLACK'};
 var podsGroup=new THREE.Group();scene.add(podsGroup);
 var agents=[];                 /* {id,name,color,g,orb,pos:Vector3,pill,pillTex,pillCtx,pillS,lightMat,desk} */
 var agentHome={};              /* id -> 'V(x,y,z)' for registered seats, null otherwise */

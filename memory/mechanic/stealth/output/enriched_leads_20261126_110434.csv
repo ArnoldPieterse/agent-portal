@@ -1,0 +1,4 @@
+company,website,domain,email_patterns,enriched_at
+Acme Logistics,acmelogistics.com,acmelogistics.com,info@acmelogistics.com|hello@acmelogistics.com|contact@acmelogistics.com,2026-11-26T11:04:34.656035
+BrightPath Marketing,brightpath.io,brightpath.io,info@brightpath.io|hello@brightpath.io|contact@brightpath.io,2026-11-26T11:04:34.656051
+CoreStack Analytics,corestack.dev,corestack.dev,info@corestack.dev|hello@corestack.dev|contact@corestack.dev,2026-11-26T11:04:34.656057
