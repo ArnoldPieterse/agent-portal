@@ -14,8 +14,10 @@ html,body{margin:0;height:100%;background:#07080c;overflow:hidden;font-family:'S
 #plbtn{position:fixed;right:14px;top:12px;z-index:6;background:rgba(8,10,18,.85);border:1px solid #2dd4bf;color:#7fd4ff;border-radius:6px;padding:4px 10px;font:12px ui-monospace,monospace;cursor:pointer}
 #plbtn:hover{background:#12203a}
 #acard{display:none;position:fixed;left:14px;bottom:14px;width:340px;max-height:58vh;overflow:auto;background:rgba(8,10,18,.94);border:1px solid #2dd4bf;border-radius:8px;padding:12px;color:#e2e8f0;font:12.5px/1.5 'Segoe UI',Arial,sans-serif;z-index:9;box-shadow:0 4px 24px rgba(0,0,0,.6)}
+#vpanel{display:none;position:fixed;right:12px;top:12px;width:300px;max-height:62vh;overflow:auto;background:rgba(8,10,18,.93);border:1px solid #e3344f;border-radius:8px;padding:10px;color:#e2e8f0;font:12px/1.5 ui-monospace,monospace;z-index:9}
 </style></head><body>
 <canvas id=c></canvas>
+<div id=vpanel></div>
 <div id=hud><b>MIND ROOM · THE LAB</b><br>the room I know you in — Arnold · a real office floor plan<br><span class=dim>you: Super Saiyan over the central table, touching my neurons (brain-in-a-jar beside it)<br>W door → reception (WSL-Inbox) → dispatch seat · N bench: research+record by memory/ shelves<br>S bench: build line to the windows · E wall: archive shelves · NE corner: 4 host racks · SE window: dcabots desk<br>click an agent = capability card · click anything = its memory cell</span></div>
 <button id=plbtn title="P">[ floor plan ]</button>
 <div id=acard></div>
@@ -26,6 +28,7 @@ html,body{margin:0;height:100%;background:#07080c;overflow:hidden;font-family:'S
 <script>
 /* ================= 2D FALLBACK (no three.js / offline): TOP-DOWN FLOOR PLAN ============ */
 function fallback2D(){
+ if(window.__mind2d)return;window.__mind2d=true;
  var cv=document.getElementById('c'),ctx=cv.getContext('2d');
  function rs(){cv.width=innerWidth;cv.height=innerHeight;}rs();addEventListener('resize',rs);
  /* same layout as the 3D room: x -17..17, z -13..13 */
@@ -74,6 +77,8 @@ function fallback2D(){
  }
  requestAnimationFrame(draw);
 }
+/* defined AFTER mind-room.js: self-invoke if three.js failed (mind-room.js may have called us already - flag guards) */
+if(window.__three_failed||!window.THREE)fallback2D();
 </script>
 <script src="/ui/pages/voxel-ui.js"></script>
 </body></html>

@@ -117,3 +117,4 @@ Cycle-7 goal set (set 2026-11-20). These leaves make verified cycle-7 work visib
 - -> memory/designer/self-evolve-ui.md  UI evolution template doctrine + /page/evolve seed (Ca-assisted) 2026-11-25
 - -> memory/designer/wallpaper-range.json  wallpaper photo range (3 concept portraits, lead=convergence) + set_wallpaper.py rotator 2026-11-25
 - -> memory/designer/world-sims.md  Sims-like world design: LOD tiers, canned tweening, evolution targets  2026-11-25
+- -> memory/designer/mind-room-the-lab-2026-11-26.md  Mind room v3 THE LAB: real-office floor plan (door->reception->dispatch, N research bench, S build bench, E archive shelves, NE server racks, SE trading desk), live /api/agents+/api/goals wiring, Hermes plugins-info capability cards + memory-wiki shelf spines  2026-11-26
