@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-11-19T14:51:57.537045+00:00",
+  "timestamp": "2026-11-26T17:15:27.412698+00:00",
   "mode": "static",
   "overall": "FAIL",
-  "total_duration_s": 0.16,
+  "total_duration_s": 0.19,
   "summary": {
     "pass": 0,
     "fail": 1,
@@ -13,8 +13,8 @@
       "id": "smoke8",
       "status": "FAIL",
       "exit_code": 1,
-      "duration_s": 0.16,
-      "stdout_tail": "====================================================\nSMOKE8 RESULTS: 7 pass / 1 fail / 8 total (0.0s)\n  [FAIL] agents.json parses -- Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\n  [PASS] memory/goals/ exists\n  [PASS] goal files present (>=5)\n  [PASS] all goal files have H1 header\n  [PASS] index.html exists and non-empty\n  [PASS] core DOM elements present (composer,msgs,status,send)\n  [PASS] ui/ directory with non-empty assets\n  [PASS] JS files have balanced braces\n",
+      "duration_s": 0.19,
+      "stdout_tail": "==========================================\nSMOKE8 RESULTS: 7 pass / 1 fail / 8 total (0.0s)\n  [FAIL] agents.json parses -- 'charmap' codec can't decode byte 0x8f in position 107: character maps to <undefined>\n  [PASS] memory/goals/ exists\n  [PASS] goal files present (>=5)\n  [PASS] all goal files have H1 header\n  [PASS] index.html exists and non-empty\n  [PASS] core DOM elements present (composer,msgs,status,send)\n  [PASS] ui/ directory with non-empty assets\n  [PASS] JS files have balanced braces\n",
       "stderr_tail": "warning: Failed to set cwd to temp dir\n"
     }
   ]

@@ -1,0 +1,9 @@
+{
+  "last_hashes": {
+    "ui/core.js": "6565ee80d73df7e51d1ff6e3f757eee6d1e3b3908acbadc394a9bcd25fedc3a6",
+    "memory_mirror.py": "9fb2bce726c4bc3972902edd154bb7d35b34f8b7d06c108ea39eda8bf20ab726",
+    "goal_ledger.json": "2b53fbce19276ff11abf02d20c34f9103eeb481b781b6fb996309d59e3a15971"
+  },
+  "last_run": "2026-11-26T17:17:08.569298+00:00",
+  "trigger_count": 0
+}

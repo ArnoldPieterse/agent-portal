@@ -13,9 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Fleet ledger at 79/111 (71%) after Scribe closed Outlet goal #2 and synced 3 other agents' unrecorded markers into root JSON.
-- Mirror reverts oom_recovery.py fixes (MODEL_LOAD_JSONL, detect_from_jsonl, MTTR_TARGET_S, INCIDENTS_DIR) — expect recurrence each pass
-- Pixel at 9/10 goals; only #6 (CDP live screenshots) open, blocked on sandbox egress, unblock artifact handed to Designer.
 - Mechanic's marker-guard script has a bug: line-matching too strict (ledger lacks number prefix), only 1/10 verified markers re-inserted; fix
 - RECALL: - **M6** (`memory/goals/archive/mechanic-2026-11-23-cycle8.md:11`): Fleet Status
 - Mechic: fleet-heartbeat.json stale (406min, all 4 seats stale=true); goal #2 AC requires update within 1 probe interval — active blocker
@@ -23,6 +20,9 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Cycle 18 CONVERGED (all 4 invariants pass). Status brief at
 - post_mirror_goal_repair.py created & run: 14 verified markers restored; recurring mirror-strip blocker now auto-healed
 - RECALL: - **M6** (`memory/goals/pixel.md:2
+- Mechic delivered ops spec for Verifier goal #1 (auto-trigger regression battery) at memory/ops/auto-trigger-regression-battery-spec-2026-11-
+- Regression trigger extended to watch core.js, memory_mirror.py, goal_ledger.py; 15/15 pass (core.js uses fetch+ReadableStream, not EventSour
+- Verifier goal #1: auto_trigger_regression.py written+hashed, pending live e2e run and schtask registration via elev.py.
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

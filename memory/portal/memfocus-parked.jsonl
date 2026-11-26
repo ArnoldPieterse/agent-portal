@@ -328,3 +328,6 @@
 {"ts": "2026-11-27T03:01:30", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "538eefb8", "reason": "lod-evict"}
 {"ts": "2026-11-27T03:01:30", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "538eefb8", "reason": "lod-evict"}
 {"ts": "2026-11-27T03:01:30", "ref": ["memory/workspace/INDEX.md", 79], "focus_sig": "538eefb8", "reason": "lod-evict"}
+{"ts": "2026-11-27T03:12:24", "ref": ["memory/goals/pixel.md", 20], "focus_sig": "a43e28d1", "reason": "lod-evict"}
+{"ts": "2026-11-27T03:12:24", "ref": ["memory/goals/archive/researcher-2026-11-20b.md", 5], "focus_sig": "a43e28d1", "reason": "lod-evict"}
+{"ts": "2026-11-27T03:12:24", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "a43e28d1", "reason": "lod-evict"}

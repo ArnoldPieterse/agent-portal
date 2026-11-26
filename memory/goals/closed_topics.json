@@ -3870,5 +3870,11 @@
 "text": "**Runbook Coverage Audit (100% or justified gap per incident type)** - enumerate all incident types observed in last 6 cycles; verify each h",
 "agent": "mechanic",
 "at": "2026-11-27"
+},
+{
+"sig": "8c813fe4bfb7f64c",
+"text": "**Auto-trigger regression battery** - hook into commit events; run the full verifier suite without human prompt when any agent lands a chang",
+"agent": "verifier",
+"at": "2026-11-27"
 }
 ]

@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T17:04:53.127615+00:00",
+  "ts": "2026-11-26T17:24:53.549922+00:00",
   "health_score": 50,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -47,9 +47,9 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 76.9,
+      "vram_pct": 77.0,
       "cpu_pct": 0.0,
-      "temp_c": 41.0
+      "temp_c": 43.2
     },
     {
       "host": "Red",
@@ -630,7 +630,7 @@
     "total_goals": 50,
     "total_verified": 48
   },
-  "open_blockers": 30,
+  "open_blockers": 31,
   "autonomous_actions": [
     {
       "ts": "2026-11-23T20:56:44Z",
