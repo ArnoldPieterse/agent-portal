@@ -291,6 +291,65 @@ function frame(){
 }
 window.__mind={scene:scene,camera:camera,canvas:renderer.domElement,agents:agents,agentDefs:agentDefs,agentHome:agentHome,rigids:{ssj:ssj,neurons:neurons,portal:portal,helix:helix,coin:window.__coin}};
 var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display:none;position:fixed;right:12px;top:12px;width:300px;max-height:62vh;overflow:auto;background:rgba(8,10,18,.93);border:1px solid #e3344f;border-radius:8px;padding:10px;color:#e2e8f0;font:12px/1.5 ui-monospace,monospace;z-index:9';document.body.appendChild(_vp);
+/* ============ LIVE VOXEL SUBDIVISION LAYER (2026-11-26) ============
+   Draws the live subdivision data from /api/voxel/all: each memory object's top-level
+   voxel as a faint wireframe cell, its drill-chain tip (pulsing dot + depth label for
+   the hero objects), and ghost octants where detail grows next. Polls every 2 s. */
+(function(){
+ var group=new THREE.Group(); scene.add(group);
+ var ghosts=[],tips=[];
+ function wireBox(p,s,color,op){
+  var g=new THREE.EdgesGeometry(new THREE.BoxGeometry(s,s,s));
+  var m=new THREE.LineBasicMaterial({color:color,transparent:true,opacity:op});
+  var l=new THREE.LineSegments(g,m);
+  l.position.set(p[0]+s/2,p[1]+s/2,p[2]+s/2);
+  group.add(l); return m;
+ }
+ function clearLayer(){
+  while(group.children.length){var c=group.children.pop(); if(c.geometry)c.geometry.dispose(); if(c.material)c.material.dispose();}
+  ghosts.length=0; tips.length=0;
+ }
+ function build(cells){
+  clearLayer();
+  var byBase={};
+  cells.forEach(function(c){var b=c.a.split('/')[0];(byBase[b]=byBase[b]||[]).push(c);});
+  Object.keys(byBase).forEach(function(base){
+   var list=byBase[base],top=null;
+   list.forEach(function(c){if(c.d===0&&(c.l||c.r))top=c;});
+   if(!top)return;
+   var col=(top.k==='rigid')?0x2dd4bf:0xfbbf24;
+   wireBox(top.p,top.s,col,.16); /* the object's 3 m cell */
+   var tip=top; list.forEach(function(c){if(c.d>tip.d)tip=c;});
+   if(tip.d>0){
+    var ts=3/Math.pow(2,tip.d); /* tip size in metres */
+    var cx=[tip.p[0]+ts/2,tip.p[1]+ts/2,tip.p[2]+ts/2];
+    var sm=new THREE.MeshBasicMaterial({color:0x7fd4ff,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false});
+    var dot=new THREE.Mesh(new THREE.SphereGeometry(.16,10,10),sm);
+    dot.position.set(cx[0],cx[1],cx[2]); group.add(dot); tips.push(dot);
+    if(top.rigid==='ssj'||top.rigid==='neurons'||top.rigid==='portal'){
+     var lab=makeLabel('d'+tip.d+' \u00b7 '+(ts*1000).toFixed(1)+'mm','#7fd4ff',.55);
+     lab.position.set(cx[0],cx[1]+.5,cx[2]); group.add(lab);
+    }
+   }
+   var have={}; list.forEach(function(c){if(c.d===1)have[c.a]=1;});
+   for(var i=0;i<8;i++){ /* ghost frontier: missing level-1 octants */
+    var x=i&1,y=(i>>1)&1,z=(i>>2)&1;
+    if(have[base+'/'+x+'/'+y+'/'+z])continue;
+    ghosts.push(wireBox([top.p[0]+x*top.s/2,top.p[1]+y*top.s/2,top.p[2]+z*top.s/2],top.s/2,0x22d3ee,.09));
+   }
+  });
+ }
+ function load(){ if(document.hidden)return;
+  fetch('/api/voxel/all').then(function(r){return r.json();}).then(function(d){build(d.cells||[]);}).catch(function(){});
+ }
+ load(); setInterval(load,2000);
+ var t0=performance.now();
+ (function anim(){ requestAnimationFrame(anim);
+  var ph=.5+.5*Math.sin((performance.now()-t0)/350);
+  ghosts.forEach(function(m){m.opacity=.05+.11*ph;});
+  tips.forEach(function(d){d.scale.setScalar(.7+.6*ph);});
+ })();
+})();
 frame();
 })();}
 </script><script src="/ui/pages/voxel-ui.js"></script>
