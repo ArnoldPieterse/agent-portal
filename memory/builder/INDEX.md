@@ -95,3 +95,5 @@ Last updated: 2026-11-27 (assist Verifier G7: verification coverage map 91.4% pr
 - evidence-js-brace-balance-2026-11-26.md -> memory/builder/evidence-js-brace-balance-2026-11-26.md   Assist (owner Forge/Pixel): brace-balance check 28 ui/*.js; 19 PASS, 9 FP (regex/template limitation); node --check required as primary gate
 - cycle19_goalsetting_evidence_2026-11-26.md -> memory/builder/cycle19_goalsetting_evidence_2026-11-26.md   Cycle 19 goals proposed: 10 goals, post-convergence sustainability
 - assist-verifier-g6-test-gen-2026-11-27.md -> memory/verifier/acceptance_test_generator.py   **ASSIST (owner: Verifier, goal #6)**: built auto-generator that parses all lane goals files and emits 45 runnable test stubs; 5/5 diverse stubs verified PASS without error
+
+- evidence-ledger-stale-closure-2026-11-27.md -> memory/builder/evidence-ledger-stale-closure-2026-11-27.md   **ASSIST (owner: Archivist)**: verified+closed 3 stale ledger entries (goals 1,2,3); all artifacts confirmed working

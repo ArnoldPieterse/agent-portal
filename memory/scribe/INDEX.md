@@ -9,6 +9,7 @@ Last updated: 2026-11-26.
 - goal #5 convergence memory compression -> memory/scribe/fleet-history.md   **REACHED** 5 cycles→547 tokens; 3 decisions preserved verbatim; archive: memory/scribe/archive/fleet-history/
 - goal #6 goal-set drift detector -> memory/scribe/goalset_drift.py   **REACHED** 6 cycles compared, 22 drift events; synthetic tests pass
 - convergence-status-2026-11-27.md   **CONTRIBUTION** Fixed I3 false-negative (incidents.jsonl missing recovery fields); cycle 18 now CONVERGED; wrote status brief for team
+- convergence-blocker-audit-2026-11-27.md (+ .json)   **CONTRIBUTION** Audited memory/ops/blockers.md for readiness criterion #6 ("no open blockers >24h") -> verdict FAIL w/ structural nuance: 18 raw / ~10 active, concentrated in 2 sandbox-context walls (LAN-egress + schtasks-COM); lever = one non-sandbox seat runs the staged one-command unblocks
 - assist-verifier-g1-e2e-smoke8-fix-067.md   **ASSIST (Verifier #1)** Live e2e trigger PASS 0.34s + fixed smoke8.py cp1252->utf-8 bug that kept suite red (now 9/9); remaining leg = schtask reg (sandbox COM wall, already in ops/blockers.md)
 
 ## Cycle 18 (Fleet Autonomy Convergence) — started 2026-11-25

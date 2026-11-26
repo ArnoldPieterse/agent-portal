@@ -1,0 +1,87 @@
+{
+  "anchor": "2026-11-27T05:05 (forecast-latest.md fleet clock)",
+  "source": "memory/ops/blockers.md",
+  "total_sections": 25,
+  "open_over_24h_raw": 18,
+  "by_class": {
+    "data-gap": 1,
+    "lan-egress-wall": 8,
+    "sandbox-schtasks-COM-wall": 4,
+    "other": 3,
+    "no-headless-browser": 2
+  },
+  "appears_superseded_in_file": 8,
+  "still_active": 10,
+  "active_items": [
+    {
+      "date": "2026-11-18",
+      "age_h": 221.1,
+      "class": "no-headless-browser",
+      "owner": "-",
+      "header": "## 2026-11-18 RESOLUTIONS (unsloth-assist, White seat)"
+    },
+    {
+      "date": "2026-11-20",
+      "age_h": 173.1,
+      "class": "lan-egress-wall",
+      "owner": "Orchestrator",
+      "header": "## [NEEDS-HUMAN 2026-11-20] Orchestrator #1 Live Hotload Execution: elev.py ABSE"
+    },
+    {
+      "date": "2026-11-20",
+      "age_h": 173.1,
+      "class": "lan-egress-wall",
+      "owner": "Verifier",
+      "header": "## [NEEDS-HUMAN 2026-11-20] Verifier #4 Performance Regression Gate: live-measur"
+    },
+    {
+      "date": "2026-11-20",
+      "age_h": 173.1,
+      "class": "other",
+      "owner": "Builder",
+      "header": "## [NEEDS-HUMAN 2026-11-20 Builder] #3 Build-Verify-Pin: memory_mirror.py is 0 b"
+    },
+    {
+      "date": "2026-11-22",
+      "age_h": 125.1,
+      "class": "lan-egress-wall",
+      "owner": "Orchestrator",
+      "header": "## [OPS-NOTE 2026-11-22] Orchestrator: auto-loop @Mechanic dispatches are FUTIL "
+    },
+    {
+      "date": "2026-11-23",
+      "age_h": 101.1,
+      "class": "other",
+      "owner": "Archivist",
+      "header": "## [OPS-NOTE 2026-11-23 Archivist] Stale auto-loop: all 10 goals REACHED, dispat"
+    },
+    {
+      "date": "2026-11-25",
+      "age_h": 53.1,
+      "class": "data-gap",
+      "owner": "Researcher",
+      "header": "## [OPS-NOTE 2026-11-25 Researcher] Seat-Unavailability Impact Model v2 (goal #8"
+    },
+    {
+      "date": "2026-11-25",
+      "age_h": 53.1,
+      "class": "other",
+      "owner": "Pixel",
+      "header": "## [OPS-NOTE 2026-11-25 Pixel] goal_ledger.py AGENT_FILES roster is missing the "
+    },
+    {
+      "date": "2026-11-25",
+      "age_h": 53.1,
+      "class": "no-headless-browser",
+      "owner": "-",
+      "header": "## OPS-NOTE: no headless browser in agent sandbox [no-headless-browser-sandbox] "
+    },
+    {
+      "date": "2026-11-25",
+      "age_h": 53.1,
+      "class": "lan-egress-wall",
+      "owner": "-",
+      "header": "## OPS-NOTE: goal stall 104/116 root causes - seat starvation + dead scheduler h"
+    }
+  ]
+}
