@@ -1108,3 +1108,4 @@
 {"ts": "2026-11-26 21:21:34", "run": "g-1a21796e38d-526ff9", "missing": {"Designer": "unreachable", "Lumen": "unreachable", "Archivist": "unreachable", "Splice": "unreachable", "Reel": "unreachable", "Verifier": "unreachable", "Researcher": "unreachable", "Outlet": "unreachable"}, "relocated": {}}
 {"ts": "2026-11-26 21:37:11", "run": "g-1a217a52fad-1a7757", "missing": {"Archivist": "not_loaded"}, "relocated": {}}
 {"ts": "2026-11-26 21:39:55", "run": "g-1a217a7b145-d8985c", "missing": {}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}
+{"ts": "2026-11-26 21:51:41", "run": "g-1a217b275be-a7774b", "missing": {}, "relocated": {"Archivist": "White (local) (home not_loaded)"}}

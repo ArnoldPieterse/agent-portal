@@ -54,10 +54,10 @@ HOST_MODELS = {
 
 # Host reachability (for backup routing)
 HOST_REACHABILITY = {
-    "white": "192.168.1.179:8888",
-    "red": "192.168.1.245:8888",
-    "pale": "192.168.1.39:8888",
-    "black": "192.168.1.99:8888",
+    "white": "IP_LAN:8888",
+    "red": "IP_LAN:8888",
+    "pale": "IP_LAN:8888",
+    "black": "IP_LAN:8888",
 }
 
 

@@ -3660,5 +3660,11 @@
 "text": "**Cross-Lane Assist Attribution** - `python memory/scribe/assist_attribution.py`: parse cross-talk DMs + goal evidence notes to attribute ea",
 "agent": "scribe",
 "at": "2026-11-26"
+},
+{
+"sig": "4b5cf3bfcb4953d1",
+"text": "**Elevated Command Audit Trail (elev-audit.jsonl + weekly summary)** - every `python elev.py` call logs to memory/ops/elev-audit.jsonl (time",
+"agent": "mechanic",
+"at": "2026-11-26"
 }
 ]
