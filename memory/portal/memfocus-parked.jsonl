@@ -294,3 +294,8 @@
 {"ts": "2026-11-27T00:47:14", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "538eefb8", "reason": "lod-evict"}
 {"ts": "2026-11-27T00:47:14", "ref": ["memory/workspace/INDEX.md", 79], "focus_sig": "538eefb8", "reason": "lod-evict"}
 {"ts": "2026-11-27T00:47:14", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 22], "focus_sig": "538eefb8", "reason": "lod-evict"}
+{"ts": "2026-11-27T00:56:04", "ref": ["memory/goals/archive/pixel-2026-11-26.md", 25], "focus_sig": "62c612f2", "reason": "lod-evict"}
+{"ts": "2026-11-27T00:56:04", "ref": ["memory/goals/archive/pixel-2026-11-26.md", 26], "focus_sig": "62c612f2", "reason": "lod-evict"}
+{"ts": "2026-11-27T00:56:04", "ref": ["memory/goals/pixel.md", 25], "focus_sig": "62c612f2", "reason": "lod-evict"}
+{"ts": "2026-11-27T00:56:04", "ref": ["memory/goals/pixel.md", 26], "focus_sig": "62c612f2", "reason": "lod-evict"}
+{"ts": "2026-11-27T00:56:04", "ref": ["memory/researcher/open-questions-log.md", 131], "focus_sig": "62c612f2", "reason": "lod-evict"}
