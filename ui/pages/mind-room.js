@@ -200,13 +200,12 @@ function bookSpine(text,colorHex,w){
  return new THREE.Mesh(new THREE.BoxGeometry(w,.62,.3),new THREE.MeshStandardMaterial({map:t,color:0xffffff,roughness:.7}));}
 var books=[];
 function fillShelves(lanes){
- var all=lanes.slice(0,14).concat(lanes.slice(14));
- var place=function(list,unit,ry){list.forEach(function(L,bi){
+ var place=function(list,unit){list.forEach(function(L,bi){
   var b=bookSpine(L.name,L.color,.3);
   var row=Math.floor(bi/7),col=bi%7;
-  var x=(col-3)*.42+(sr(bi+row*99)-.5)*.08;
-  if(unit===shelfN){b.position.set(x,.35+row*.8+.31,-RD+.35);}
-  else{b.position.set(RW-.35,.35+row*.8+.31,(col-3)*.42+(sr(bi+row*99)-.5)*.08);b.rotation.y=-Math.PI/2;}
+  var off=(col-3)*.42+(sr(bi+row*99)-.5)*.08;
+  if(unit===shelfN){b.position.set(-5.5+off,.35+row*.8+.31,-RD+.35);}
+  else{b.position.set(RW-.35,.35+row*.8+.31,1.0+off);b.rotation.y=-Math.PI/2;}
   b.userData.lane=L.id;scene.add(b);books.push(b);});};
  place(lanes.slice(0,14),shelfN);place(lanes.slice(14),shelfE);}
 var archLab=makeLabel('ARCHIVE — memory/ tree (spines = live lanes)','#a78bfa',1.0);
@@ -343,7 +342,8 @@ function drawPill(p,txt,color){
  x.fillText(txt,64,33);p.t.needsUpdate=true;}
 function buildPods(roster){
  while(podsGroup.children.length){var c=podsGroup.children.pop();c.traverse&&c.traverse(function(o){if(o.geometry)o.geometry.dispose();});}
- agents=[];agentHome={};
+ /* mutate in place: window.__mind (and voxel-ui.js) hold references to these exact objects */
+ agents.length=0;for(var k0 in agentHome)delete agentHome[k0];
  roster.forEach(function(a,ai){
   var id=a.id,x,z,sub=null;
   if(SEATS[id]){x=SEATS[id][0];z=SEATS[id][1];}
@@ -355,7 +355,8 @@ function buildPods(roster){
   var dir=new THREE.Vector3(-x,-(z-.3),0).normalize();           /* face the table */
   desk.position.set(x,0,z);desk.rotation.y=Math.atan2(dir.x,dir.z);
   podsGroup.add(desk);
-  var g=new THREE.Group();g.position.set(x,0,z);podsGroup.add(g);
+  var g=new THREE.Group();g.position.set(x,0,z);g.userData.podId=id;podsGroup.add(g);
+  desk.userData.podId=id;
   var orbM=new THREE.MeshStandardMaterial({color:new THREE.Color(color),emissive:new THREE.Color(color),emissiveIntensity:.9});
   var orb=new THREE.Mesh(new THREE.SphereGeometry(sub?.11:.17,14,12),orbM);orb.position.y=sub?1.75:2.5;orb.userData.podId=id;g.add(orb);
   var lightMat=new THREE.MeshStandardMaterial({color:0x334155,emissive:0x475569,emissiveIntensity:.8});
@@ -427,10 +428,15 @@ canvas.addEventListener('click',function(ev){
  vv2.set((ev.clientX-r.left)/r.width*2-1,-(ev.clientY-r.top)/r.height*2+1);
  rc2.setFromCamera(vv2,camera);var hits=rc2.intersectObjects(scene.children,true);
  if(!hits.length)return;
- var o=hits[0].object,found=null;
- while(o){if(o.userData&&o.userData.podId)found=o.userData.podId;
-  if(o.userData&&o.userData.lane)found='book:'+o.userData.lane;
-  if(found)break;o=o.parent;}
+ /* scan hits in distance order for the first interactive object (pod or book);
+    particles and stray lines never steal a click */
+ var found=null;
+ for(var hi=0;hi<hits.length&&!found;hi++){
+  if(hits[hi].object.isPoints)continue;
+  var o=hits[hi].object;
+  while(o){if(o.userData&&o.userData.podId){found=o.userData.podId;break;}
+   if(o.userData&&o.userData.lane){found='book:'+o.userData.lane;break;}
+   o=o.parent;}}
  if(!found){acard.style.display='none';return;}
  if(found.indexOf('book:')===0){ev.stopImmediatePropagation();showAgentCard(found.slice(5));return;}
  var reg=!!agentHome[found];
@@ -648,4 +654,3 @@ if(THREE.GLTFLoader){
 })();
 frame();
 })();
-</script>
