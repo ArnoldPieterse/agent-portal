@@ -1,0 +1,2 @@
+{"ts": "2026-11-26T11:03:34.323440+00:00", "action": "selftest", "result": "pass", "live_conformance_pct": 60.0, "live_violations": 4}
+{"ts": "2026-11-26T11:07:53.546963+00:00", "action": "selftest", "result": "pass", "live_conformance_pct": 60.0, "live_violations": 4}

@@ -1,12 +1,11 @@
 # ONE-PAGER — scribe
 
-Date: 2026-11-25 | source: llm-judge-local | round: 3 planners + judge (winning plan: C)
+Date: 2026-11-26 | source: llm-single-draft | round: 3 planners + judge (winning plan: A)
 
 ## Today's todos
 
-1. [ ] **Initialize daily $ ledger in memory/scribe/stealth-ledger.md** _(from Daily $ ledger + winner/loser scorecard)_ — track revenue for 'Positive money income' prep
-2. [ ] **Record first outreach stats from 'Commenting on posts' runs** _(from day 2: daily unattended runs begin)_ — populate ledger with day 2 data
-3. [ ] **Draft winner/loser scorecard template for workflow performance** _(from Day-7 checkpoint review (2026-12-02))_ — enable day 7 checkpoint analysis
-4. [ ] **Log 'Making phone calls' scaffold completion status** _(from day 2: scaffold + wire up Making phone calls)_ — track day 2 progress
+1. [ ] **Consolidate scattered convergence metrics into single KPI rollup** _(from Convergence KPI Rollup (single source of truth))_ — Queue #9 requires single source of truth
+2. [ ] **Parse cross-talk DMs to attribute assists across lanes** _(from Cross-Lane Assist Attribution)_ — Quantifies collaborative value per agent
+3. [ ] **Monitor conditions for convergence exit triggers** _(from Convergence Exit-Trigger Monitor)_ — Identifies when fleet can reduce oversight
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

@@ -1,11 +1,11 @@
 # ONE-PAGER — archivist
 
-Date: 2026-11-25 | source: llm-judge-local | round: 3 planners + judge (winning plan: C)
+Date: 2026-11-26 | source: llm-single-draft | round: 3 planners + judge (winning plan: A)
 
 ## Today's todos
 
-1. [ ] **Map knowledge dependencies to identify single points of failure** _(from #2 [archivist] Knowledge Single-Point-of-Failure Audit)_ — advance queue item #2
-2. [ ] **Archive evidence leaf for 'Generate daily social media posts' first output** _(from day 3: produce first usable output + record evidence leaf)_ — record day 3 milestone
-3. [ ] **Document 'Commenting on posts' loop regression check results** _(from day 5: monitor + regression check on the loop)_ — support day 5 monitor step
+1. [ ] **Analyze 6-cycle trend in decision-quality.jsonl** _(from Decision Quality Longitudinal Analysis)_ — Tracks long-term decision quality improvement
+2. [ ] **Design 3-tier knowledge system (T0/T1/T2) for small models** _(from Knowledge Tiering for Small-Context Models)_ — Optimizes context usage for constrained agents
+3. [ ] **Compile anomaly baseline library from OOM/timeout logs** _(from Anomaly Baseline Library)_ — Establishes reference for future anomaly detection
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

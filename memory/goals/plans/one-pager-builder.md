@@ -1,12 +1,11 @@
 # ONE-PAGER — builder
 
-Date: 2026-11-25 | source: llm-judge-local | round: 3 planners + judge (winning plan: C)
+Date: 2026-11-26 | source: llm-single-draft | round: 3 planners + judge (winning plan: A)
 
 ## Today's todos
 
-1. [ ] **Spec top-3 workflows from researcher inventory for packaging** _(from #3 [builder] Package top-3 workflows)_ — advance queue item #3
-2. [ ] **Scaffold 'Writing valid tenders' workflow structure** _(from day 4: scaffold + wire up Writing valid tenders)_ — meet day 4 scaffold deadline
-3. [ ] **Wire up 'Making money (revenue channels live)' automation hooks** _(from day 4: scaffold + wire up Making money (revenue channels live))_ — meet day 4 scaffold deadline
-4. [ ] **Scaffold 'Predicting markets' pipeline components** _(from day 5: scaffold + wire up Predicting markets)_ — meet day 5 scaffold deadline
+1. [ ] **Implement cycle_closeout.py to automate unattended cycle end** _(from Zero-Touch Cycle Closeout Orchestrator)_ — Queue #3 requires zero-touch closeout
+2. [ ] **Run infra_health.py liveness probe on Builder's infrastructure** _(from Autonomy-Infra Self-Health Probe)_ — Ensures stability for upcoming scaffolds
+3. [ ] **Lint cross-lane JSON contracts in contracts.py registry** _(from Data-Contract Registry + Lint)_ — Prevents schema mismatches in new lanes
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

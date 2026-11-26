@@ -514,3 +514,5 @@
 {"ts": "2026-11-26 20:53:57", "file": "ui/fleet_topology.js", "sha": "a6735ba503", "size": 14961, "snapshot": null}
 {"ts": "2026-11-26 20:53:57", "file": "ui/pages/mind.html", "sha": "58e230a0f3", "size": 6251, "snapshot": null}
 {"ts": "2026-11-26 20:54:38", "file": "ui/app.css", "sha": "00259d52c0", "size": 40773, "snapshot": null}
+{"ts": "2026-11-26 21:09:59", "file": "ui/cockpit-convergence.js", "sha": "873ff0cc4c", "size": 40013, "snapshot": null}
+{"ts": "2026-11-26 21:09:59", "file": "ui/pages/mind-room.js", "sha": "9b8709c0ef", "size": 46979, "snapshot": null}

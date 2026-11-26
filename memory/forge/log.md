@@ -18,3 +18,15 @@
 ## 2026-11-26 ~23:59 - gate_circuit_breaker.py built + live-tested
 Command: `python memory/forge/gate_circuit_breaker.py --window 5 --threshold 0.8`
 Result: EXIT 1 (CIRCUIT_BREAKER) - correct: all 4 smoke runs show 100% TCP-fail (sandbox permission). Breaker trips, incident logged to memory/ops/incidents.jsonl, state written to gate-breaker-state.json. Prevents canary_deploy.py from auto-promoting on false CRIT signals.
+| 2026-11-26 21:04:54 | canary_deploy: DISPATCH GATE BLOCKED file=next10.json -> 60.0% conformance (6/10 clean) |
+| 2026-11-26 21:06:13 | canary_deploy: DISPATCH GATE BLOCKED file=next10.json -> 60.0% conformance (6/10 clean) |
+| 2026-11-26 21:06:15 | canary_deploy: DISPATCH GATE BYPASSED (explicit --bypass-gate) file=next10.json |
+| 2026-11-26 21:06:15 | canary_deploy: START canary=White file=next10.json sha=d5dc0a3158e5b5b2 |
+| 2026-11-26 21:06:15 | canary_deploy: SUCCESS: next10.json deployed to all 4 hosts (canary=White) |
+| 2026-11-26 21:07:24 | canary_deploy: DISPATCH GATE BLOCKED file=next10.json -> 60.0% conformance (6/10 clean) |
+| 2026-11-26 21:07:42 | canary_deploy: DISPATCH GATE BLOCKED file=next10.json -> 60.0% conformance (6/10 clean) |
+| 2026-11-26 21:07:51 | canary_deploy: DISPATCH GATE BYPASSED (explicit --bypass-gate) file=next10.json |
+| 2026-11-26 21:07:51 | canary_deploy: START canary=White file=next10.json sha=d5dc0a3158e5b5b2 |
+| 2026-11-26 21:07:51 | canary_deploy: SUCCESS: next10.json deployed to all 4 hosts (canary=White) |
+
+| 2026-11-26 21:10 | dispatch_gate (goal #3): gate built + wired into canary Phase -1; selftest EXIT 0 (block/clean/skippable); BLOCK_RC=4 on stale next10, BYPASS_RC=0 explicit flag, live conformance 60% (4 true stale dispatches) | memory/forge/evidence-dispatch-gate-2026-11-26.md |

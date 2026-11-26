@@ -1,0 +1,6 @@
+{"ts": "2026-11-26T10:58:47+00:00", "script": "fleet_mode_writer", "ok": true, "exists": true, "compiles": true, "last_run": "2026-11-26T10:54:48+00:00", "age_hours": 0.066, "latency_ms": 5.37, "error": null, "flag": null, "marker_source": "artifact"}
+{"ts": "2026-11-26T10:58:47+00:00", "script": "convergence_fsm", "ok": true, "exists": true, "compiles": true, "last_run": "2026-11-26T10:54:48+00:00", "age_hours": 0.066, "latency_ms": 3.65, "error": null, "flag": null, "marker_source": "artifact"}
+{"ts": "2026-11-26T10:58:47+00:00", "script": "dispatch_filter", "ok": true, "exists": true, "compiles": true, "last_run": "2026-11-24T11:01:26+00:00", "age_hours": 47.956, "latency_ms": 3.05, "error": null, "flag": null, "marker_source": "artifact"}
+{"ts": "2026-11-26T10:58:47+00:00", "script": "status_propagator", "ok": true, "exists": true, "compiles": true, "last_run": "2026-11-26T10:54:28+00:00", "age_hours": 0.072, "latency_ms": 2.66, "error": null, "flag": null, "marker_source": "artifact"}
+{"ts": "2026-11-26T10:58:47+00:00", "script": "cycle_closeout", "ok": true, "exists": true, "compiles": true, "last_run": "2026-11-24T19:26:01+00:00", "age_hours": 39.546, "latency_ms": 4.17, "error": null, "flag": null, "marker_source": "artifact"}
+{"type": "summary", "ts": "2026-11-26T10:58:47+00:00", "all_healthy": true, "flagged": [], "max_age_hours": 48.0}

@@ -1,11 +1,11 @@
 # ONE-PAGER — orchestrator
 
-Date: 2026-11-25 | source: llm-judge-local | round: 3 planners + judge (winning plan: C)
+Date: 2026-11-26 | source: llm-single-draft | round: 3 planners + judge (winning plan: A)
 
 ## Today's todos
 
-1. [ ] **Draft Day-7 checkpoint review template with ledger totals vs $3,800 target** _(from Day-7 checkpoint review (2026-12-02))_ — prep for 2026-12-02 review
-2. [ ] **Verify fleet pct (89.7%) against 15-day plan milestones for day 4-7 items** _(from Fleet: {'done': 104, 'total': 116, 'pct': 89.7})_ — ensure alignment with 'Making money' and 'Writing valid tenders' start dates
-3. [ ] **Confirm queue item #8 (Day-7 checkpoint) is scheduled for 2026-11-26** _(from #8 [orchestrator] Day-7 checkpoint review)_ — maintain schedule integrity
+1. [ ] **Run dispatch_audit.py to replay last N dispatches for stale conformance** _(from Dispatch Anti-Stale Conformance Audit)_ — Detects routing drift before next cycle
+2. [ ] **Execute convergence_coupling.py to map cross-lane dependencies** _(from Cross-Lane Convergence Coupling Map)_ — Identifies bottlenecks in lane handoffs
+3. [ ] **Trigger convergence_sentinel.py to monitor autonomy scope creep** _(from Convergence Regression Sentinel)_ — Prevents uncontrolled agent behavior expansion
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

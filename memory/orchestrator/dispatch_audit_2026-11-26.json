@@ -1,10 +1,67 @@
 {
   "audit": "dispatch-anti-stale-conformance",
-  "run_ts": "2026-11-26T10:33:33.212410+00:00",
+  "run_ts": "2026-11-26T11:00:28.727871+00:00",
   "window_n": 200,
-  "work_passes_total": 1041,
+  "work_passes_total": 1053,
   "work_passes_window": 200,
-  "passes_examined": 154,
+  "passes_examined": 157,
+  "true_stale_dispatches": 10,
+  "per_agent_true_stale": {
+    "researcher": 10
+  },
+  "stale_samples": [
+    {
+      "agent": "researcher",
+      "ts": "2026-11-26T00:04:03.691956+00:00",
+      "all_goals_reached_before_pass": true
+    },
+    {
+      "agent": "researcher",
+      "ts": "2026-11-26T00:10:24.044545+00:00",
+      "all_goals_reached_before_pass": true
+    },
+    {
+      "agent": "researcher",
+      "ts": "2026-11-26T01:53:52.073165+00:00",
+      "all_goals_reached_before_pass": true
+    },
+    {
+      "agent": "researcher",
+      "ts": "2026-11-26T02:00:45.058639+00:00",
+      "all_goals_reached_before_pass": true
+    },
+    {
+      "agent": "researcher",
+      "ts": "2026-11-26T03:07:08.670726+00:00",
+      "all_goals_reached_before_pass": true
+    },
+    {
+      "agent": "researcher",
+      "ts": "2026-11-26T09:10:21.724791+00:00",
+      "all_goals_reached_before_pass": true
+    },
+    {
+      "agent": "researcher",
+      "ts": "2026-11-26T09:17:09.620577+00:00",
+      "all_goals_reached_before_pass": true
+    },
+    {
+      "agent": "researcher",
+      "ts": "2026-11-26T09:26:02.191134+00:00",
+      "all_goals_reached_before_pass": true
+    },
+    {
+      "agent": "researcher",
+      "ts": "2026-11-26T09:54:18.624505+00:00",
+      "all_goals_reached_before_pass": true
+    },
+    {
+      "agent": "researcher",
+      "ts": "2026-11-26T10:03:36.554075+00:00",
+      "all_goals_reached_before_pass": true
+    }
+  ],
+  "conformance_pct": 93.63,
   "dispatch_history_records": 3,
   "ssot_drift_rows": [
     {
@@ -32,8 +89,8 @@
     {
       "agent": "builder",
       "live_total": 10,
-      "live_open": 9,
-      "live_reached": 1,
+      "live_open": 8,
+      "live_reached": 2,
       "ssot_total": 10,
       "ssot_open": 7,
       "ssot_reached": 3,
@@ -109,8 +166,8 @@
     {
       "agent": "pixel",
       "live_total": 10,
-      "live_open": 10,
-      "live_reached": 0,
+      "live_open": 7,
+      "live_reached": 3,
       "ssot_total": 10,
       "ssot_open": 9,
       "ssot_reached": 1,
@@ -133,10 +190,6 @@
     "researcher"
   ],
   "stale_ssot_count": 1,
-  "idle_contribution_passes": 0,
-  "true_stale_dispatches": 0,
-  "per_agent_true_stale": {},
-  "stale_samples": [],
   "ssot_fresh": false,
   "conformance_pass": false,
   "ssot_ledger_generated": "2026-11-26"

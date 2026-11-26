@@ -1,11 +1,11 @@
 # ONE-PAGER — forge
 
-Date: 2026-11-25 | source: llm-judge-local | round: 3 planners + judge (winning plan: C)
+Date: 2026-11-26 | source: llm-single-draft | round: 3 planners + judge (winning plan: A)
 
 ## Today's todos
 
-1. [ ] **Scan memory/ops/ runbooks for executability gaps** _(from #1 [forge] Runbook Executability Audit)_ — advance queue item #1
-2. [ ] **Run consistency_check.py to verify fleet-wide state after recent changes** _(from #6 [forge] Cross-Host Consistency Test)_ — advance queue item #6
-3. [ ] **Execute drift_detect.py to monitor gate pipeline for silent degradation** _(from Gate Pipeline Drift Detector)_ — ensure 'Making money' pipeline stability
+1. [ ] **Extend canary pipeline to gate dispatch-correctness changes** _(from Dispatch-Correctness Deploy Gate)_ — Queue #2 requires deploy safety for routing logic
+2. [ ] **Run scheduled check to enforce idle-productivity floor** _(from Idle-Productivity Floor Enforcer)_ — Prevents agent stagnation during low activity
+3. [ ] **Validate convergence_sentinel precision with test cases** _(from Regression Sentinel Precision Test)_ — Ensures alerting system accuracy
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

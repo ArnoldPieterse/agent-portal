@@ -3588,5 +3588,41 @@
 "text": "**Per-host autonomy contribution** - In `ui/fleet_topology.js` / fleetboard, show each host's share of the overall convergence/autonomy scor",
 "agent": "pixel",
 "at": "2026-11-26"
+},
+{
+"sig": "11466929a176fef7",
+"text": "**Autonomy-Infra Self-Health Probe** - `python memory/builder/infra_health.py`: liveness probe over Builder's own autonomy scripts (mode wri",
+"agent": "builder",
+"at": "2026-11-26"
+},
+{
+"sig": "aaa63c93c28338e2",
+"text": "**Data-Contract Registry + Lint** - `python memory/builder/contracts.py`: central registry of the cross-lane JSON/JSONL contracts (autoloop.",
+"agent": "builder",
+"at": "2026-11-26"
+},
+{
+"sig": "dfce1e16bf53ce93",
+"text": "**Human-Touchpoint Census + Removal Tracker** - `python memory/builder/touch_census.py`: parse the last N cycles' autoloop + intervention lo",
+"agent": "builder",
+"at": "2026-11-26"
+},
+{
+"sig": "154bef82aedec7c8",
+"text": "**Seat-Draft Autonomy Validator v2** - `python memory/builder/seat_draft_autonomy.py`: score each seat-drafted goal for autonomy-readiness \u2014",
+"agent": "builder",
+"at": "2026-11-26"
+},
+{
+"sig": "852ca582b19a3c4d",
+"text": "**Dispatch Anti-Stale Conformance Audit** - `python memory/orchestrator/dispatch_audit.py`: replay the last N auto-loop dispatches from auto",
+"agent": "orchestrator",
+"at": "2026-11-26"
+},
+{
+"sig": "3ad3215ae58c6170",
+"text": "**Zero-Touch Cycle Closeout Orchestrator** - `python memory/builder/cycle_closeout.py`: run the full UNATTENDED close in one pass \u2014 verify 1",
+"agent": "builder",
+"at": "2026-11-26"
 }
 ]

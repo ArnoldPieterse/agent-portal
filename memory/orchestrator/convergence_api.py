@@ -84,6 +84,57 @@ def _get_interventions():
     return counts
 
 
+def _short_ts(ts):
+    """'2026-11-25T05:48:39...' -> '11-25 05:48'. '' if unparseable."""
+    import re
+    m = re.search(r"(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})", str(ts or ""))
+    if not m:
+        return ""
+    y, mo, d, h, mi = m.groups()
+    return "%s-%s %s:%s" % (mo, d, h, mi)
+
+
+def _get_score_history(max_pts=8):
+    """Real per-sample autonomy score history for the cross-cycle trend chart.
+    Source: memory/ops/autonomy-score-history.jsonl (timestamped real samples), with
+    the current authoritative score appended. Returns [{label, score, mode}] in
+    time-ascending order (last = now). Empty list if no usable sample.
+    Pixel cycle-24 goal #1 assist (UI consumes this; honest real samples, not proxies).
+    """
+    import re
+    path = os.path.join(OPS_DIR, "autonomy-score-history.jsonl")
+    pts = []
+    for e in _read_jsonl(path):
+        sc = e.get("score")
+        if sc is None:
+            continue
+        try:
+            sc = float(sc)
+        except (TypeError, ValueError):
+            continue
+        ts = str(e.get("timestamp") or e.get("computed_at") or "")
+        pts.append({"ts": ts, "score": round(sc, 1)})
+    # Append the current authoritative score (dedupe by timestamp).
+    cur_score, _ = _get_autonomy_score_file()
+    if cur_score is not None:
+        cur_ts = str(_read_json(os.path.join(OPS_DIR, "autonomy-score.json")).get("computed_at") or "")
+        if not pts or cur_ts != pts[-1].get("ts"):
+            pts.append({"ts": cur_ts, "score": round(float(cur_score), 1)})
+    if not pts:
+        return []
+
+    def _key(p):
+        m = re.search(r"(\d{4}-\d{2}-\d{2}[ T]\d{2}:\d{2})", p["ts"] or "")
+        return (m.group(1).replace(" ", "T") if m else "") + (p["ts"] or "")
+    pts.sort(key=_key)
+    pts = pts[-max_pts:]
+    out = []
+    for p in pts:
+        label = _short_ts(p["ts"]) or ("sample-%d" % len(out))
+        out.append({"label": label, "score": p["score"], "mode": "converging"})
+    return out
+
+
 def _get_autonomy_score_file():
     """Authoritative autonomy score from memory/ops/autonomy-score.json.
     Returns (score, components) or (None, None) if unavailable."""
@@ -241,6 +292,7 @@ def _source_signature():
         os.path.join(OPS_DIR, "efficiency-index.jsonl"),
         os.path.join(OPS_DIR, "human-interventions.jsonl"),
         os.path.join(OPS_DIR, "cycle-durations.jsonl"),
+        os.path.join(OPS_DIR, "autonomy-score-history.jsonl"),
     ]
     sig = 0.0
     for p in paths:
@@ -276,6 +328,11 @@ def handle_convergence(force=False):
     interventions = _get_interventions()
     steady_state = _compute_steady_state_progress()
 
+    # Cross-cycle score history (Pixel cycle-24 goal #1): real samples + current.
+    score_history = _get_score_history()
+    if score_history:
+        score_history[-1]["mode"] = "steady-state" if steady_state.get("steady_state_reached") else "converging"
+
     # Cycle duration trend (last 5)
     duration_trend = cycle_durations[-5:]
     if len(duration_trend) >= 2:
@@ -306,6 +363,7 @@ def handle_convergence(force=False):
             "total": sum(interventions.values()),
         },
         "steady_state_progress": steady_state,
+        "score_history": score_history,
     }
 
     _cache["ts"] = now

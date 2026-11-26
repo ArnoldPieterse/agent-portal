@@ -1,12 +1,11 @@
 # ONE-PAGER — outlet
 
-Date: 2026-11-25 | source: llm-judge-local | round: 3 planners + judge (winning plan: C)
+Date: 2026-11-26 | source: llm-single-draft | round: 3 planners + judge (winning plan: A)
 
 ## Today's todos
 
-1. [ ] **Implement Milestone Auto-Draft Trigger for fleet level changes** _(from #5 [outlet] Milestone Auto-Draft Trigger)_ — advance queue item #5
-2. [ ] **Draft Platform Connection Runbook for Arnold's account setup** _(from #9 [outlet] Platform Connection Runbook)_ — advance queue item #9
-3. [ ] **Stage outbound outreach pack for top 3 packaged workflows** _(from Outbound outreach pack (STAGED ONLY))_ — prep for 'Making money' revenue channels
-4. [ ] **Verify platform auth credentials for 'Generate daily social media posts'** _(from Generate daily social media posts [day 2-4])_ — ensure day 2-4 output delivery
+1. [ ] **Connect one real platform account for end-to-end ship test** _(from First live account connection + end-to-end ship)_ — Queue #7 requires live account validation
+2. [ ] **Implement queue_check.py to block unverified factual claims** _(from Hard verification gate)_ — Prevents hallucinated content from shipping
+3. [ ] **Generate X and LinkedIn voice variants for draft posts** _(from Per-platform voice variants + lint)_ — Supports Generate daily social media posts day 2-4
 
 _Max 40 items per day (tune as we benchmark performance); anything beyond today rolls into the 7-day plan._

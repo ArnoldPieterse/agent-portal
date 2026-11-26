@@ -1,3 +1,4 @@
 {"ts": "2026-11-24 14:39:00", "sig": "c10efa44851f", "sources": {"30d": "llm-judge-local", "15d": "llm-judge-local", "7d": "llm-judge-local"}, "winners": {"30d": "A", "15d": "A", "7d": "A"}}
 {"ts": "2026-11-25 06:45:26", "sig": "d7416e786ecc", "sources": {"30d": "llm-single-draft", "15d": "llm-single-draft", "7d": "llm-single-draft"}, "winners": {"30d": "A", "15d": "A", "7d": "A"}}
 {"ts": "2026-11-25 19:48:40", "sig": "1b3960ae0e7c", "sources": {"30d": "llm-judge-local", "15d": "llm-judge-local", "7d": "llm-judge-local"}, "winners": {"30d": "A", "15d": "A", "7d": "A"}}
+{"ts": "2026-11-26 21:05:42", "sig": "3d18bc7ec56b", "sources": {"30d": "llm-single-draft", "15d": "llm-single-draft", "7d": "llm-single-draft"}, "winners": {"30d": "A", "15d": "A", "7d": "A"}}

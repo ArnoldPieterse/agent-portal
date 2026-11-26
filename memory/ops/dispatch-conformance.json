@@ -1,0 +1,13 @@
+{
+  "audit": "dispatch-anti-stale-conformance",
+  "run_ts": "2026-11-26T11:00:28.727871+00:00",
+  "window_n": 200,
+  "passes_examined": 157,
+  "violations": 10,
+  "conformance_pct": 93.63,
+  "ssot_fresh": false,
+  "stale_ssot_agents": [
+    "researcher"
+  ],
+  "conformance_pass": false
+}

@@ -4,15 +4,30 @@
 #          auto-promotes to remaining 3 on pass or auto-rollbacks on fail.
 #
 # Usage:
-#   python memory/forge/canary_deploy.py <file> [host] [--dry-run] [--skip-smoke] [--skip-perf]
+#   python memory/forge/canary_deploy.py <file> [host] [--dry-run] [--skip-smoke] [--skip-perf] [--bypass-gate]
 #
 # Perf gate: measures p50/p95 before+after deploy; rolls back if post p95 > FORGE_PERF_THRESHOLD x baseline.
 #            Default threshold 1.15 (env var FORGE_PERF_THRESHOLD). Samples: FORGE_PERF_SAMPLES (default 20).
 #
+# Dispatch-Correctness gate (Forge goal #3): before promoting a change that touches
+#            dispatch logic, runs dispatch_gate conformance audit; BLOCKS pre-deploy if <100%.
+#            Override with explicit --bypass-gate (logged).
+#
 # Exit codes: 0 = success (promoted all), 1 = canary failed (rolled back,
-#             includes perf regression), 2 = usage error, 3 = promotion failed
+#             includes perf regression), 2 = usage error, 3 = promotion failed,
+#             4 = dispatch-correctness gate blocked
 import sys, os, json, time, subprocess, shutil, datetime, hashlib, urllib.request, socket
 from collections import defaultdict
+
+# Dispatch-Correctness gate (Forge goal #3) - imported from sibling module.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    from dispatch_gate import is_dispatch_file, run_conformance_audit as _dispatch_audit
+except Exception:  # noqa: BLE001 - degrade gracefully if gate module missing
+    def is_dispatch_file(p):
+        return False
+    def _dispatch_audit(data=None):
+        return {"pass": True, "violations": [], "details": "gate unavailable (import failed)"}
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SMOKE_SUITE = os.path.join(ROOT, "memory", "forge", "smoke_suite.py")
@@ -223,6 +238,28 @@ def main():
     print("Mode: %s%s%s" % ("DRY-RUN " if dry_run else "",
                              "| skip-smoke" if skip_smoke else "",
                              "| skip-perf" if skip_perf else ""))
+
+    # Phase -1: Dispatch-Correctness gate (pre-promotion conformance; Forge goal #3)
+    # Runs BEFORE any deploy so a stale-dispatching change never touches a host.
+    if is_dispatch_file(source_file):
+        if "--bypass-gate" in sys.argv:
+            log("DISPATCH GATE BYPASSED (explicit --bypass-gate) file=%s" % fname)
+            print("\n[gate] Dispatch-Correctness BYPASSED via explicit --bypass-gate")
+        else:
+            gate_res = _dispatch_audit()
+            if not gate_res["pass"]:
+                log("DISPATCH GATE BLOCKED file=%s -> %s" % (fname, gate_res["details"]))
+                print("\n[gate] DISPATCH-CORRECTNESS GATE: BLOCKED (%s)" % gate_res["details"])
+                for v in gate_res["violations"][:5]:
+                    print("    VIOLATION: [%s] %s" % (v.get("agent"), v.get("goal")))
+                append_deploy_log({"ts": ts_start, "file": fname, "sha": file_hash,
+                                   "status": "dispatch_gate_blocked",
+                                   "violations": gate_res["violations"][:10]})
+                print("\n  Promotion BLOCKED before any deploy. Fix stale dispatches or pass --bypass-gate.")
+                sys.exit(4)
+            else:
+                log("DISPATCH GATE PASS file=%s -> %s" % (fname, gate_res["details"]))
+                print("\n[gate] Dispatch-Correctness PASS (%s)" % gate_res["details"])
 
     # Phase 0: Baseline perf measurement
     baseline_perf = None

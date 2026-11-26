@@ -1,0 +1,11 @@
+{"key": "2:Orchestrator:redirect:2026-11-16T17:30:00+00:00", "cycle": 2, "ts": "2026-11-16T17:30:00+00:00", "agent": "Orchestrator", "type": "redirect", "classification": "removable-now", "removed": false}
+{"key": "3:Builder:unblock:2026-11-17T09:15:00+00:00", "cycle": 3, "ts": "2026-11-17T09:15:00+00:00", "agent": "Builder", "type": "unblock", "classification": "removable-now", "removed": false}
+{"key": "5:Researcher:ratify:2026-11-18T14:00:00+00:00", "cycle": 5, "ts": "2026-11-18T14:00:00+00:00", "agent": "Researcher", "type": "ratify", "classification": "removable-later", "removed": false}
+{"key": "8:Mechanic:unblock:2026-11-20T10:30:00+00:00", "cycle": 8, "ts": "2026-11-20T10:30:00+00:00", "agent": "Mechanic", "type": "unblock", "classification": "removable-now", "removed": false}
+{"key": "12:Designer:redirect:2026-11-21T11:00:00+00:00", "cycle": 12, "ts": "2026-11-21T11:00:00+00:00", "agent": "Designer", "type": "redirect", "classification": "removable-now", "removed": false}
+{"key": "14:Builder:ratify:2026-11-22T08:45:00+00:00", "cycle": 14, "ts": "2026-11-22T08:45:00+00:00", "agent": "Builder", "type": "ratify", "classification": "removable-later", "removed": false}
+{"key": "15:Builder:unblock:2026-11-23T16:20:00+00:00", "cycle": 15, "ts": "2026-11-23T16:20:00+00:00", "agent": "Builder", "type": "unblock", "classification": "removable-now", "removed": false}
+{"key": "16:Orchestrator:redirect:2026-11-24T09:00:00+00:00", "cycle": 16, "ts": "2026-11-24T09:00:00+00:00", "agent": "Orchestrator", "type": "redirect", "classification": "removable-now", "removed": false}
+{"key": "16:Verifier:ratify:2026-11-24T15:30:00+00:00", "cycle": 16, "ts": "2026-11-24T15:30:00+00:00", "agent": "Verifier", "type": "ratify", "classification": "removable-later", "removed": false}
+{"key": "17:Mechanic:unblock:2026-11-25T08:00:00+00:00", "cycle": 17, "ts": "2026-11-25T08:00:00+00:00", "agent": "Mechanic", "type": "unblock", "classification": "removable-now", "removed": false}
+{"type": "census", "ts": "2026-11-26T11:06:24+00:00", "total": 10, "active": 10, "removed": 0, "by_classification": {"removable-now": 7, "removable-later": 3, "required": 0}, "by_cycle": {"2": 1, "3": 1, "5": 1, "8": 1, "12": 1, "14": 1, "15": 1, "16": 2, "17": 1}, "removal_rate": 0.0}
