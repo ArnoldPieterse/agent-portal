@@ -17,3 +17,9 @@ Only 2 of 4 hosts usable: White busy (VRAM 77.8%, this chat on quinn-q4), Red wo
 - Add Lumen/Reel/Splice recipes (pale, UD-Q4_K_S, gpu 0) to _FLEET_RECOVER_RECIPES.
 - Seat probe: on timeout, follow up with GET /api/inference/loaded-models to distinguish 'loading' vs 'unreachable' (cleaner recovery classification).
 - Watch White disk 94.3% (cleanup before dream-sync window).
+
+## Applied this turn (2026-11-26 ~21:50)
+- Catalog JSON fixed (parses); _fleet_host_names() now remaps IP_* placeholder bases to real LAN IPs via fleet_local.host_ip; verified Black key resolves.
+- Lumen/Reel/Splice recipes added to _FLEET_RECOVER_RECIPES (pale, UD-Q4_K_S).
+- Portal restarted (kill PID + schtask PortalRun): live /api/models/status down_seats 8 -> 1 (Archivist settling); topology now lists white/pale/red.
+- NOTE: Black Studio currently has ZERO loaded models (loaded-models []) - hosts.md 'verifier-q4/builder-q8 resident' is stale; Black idle is real, not a probe gap. Loading its two models would add 2 usable seats.
