@@ -2,3 +2,4 @@
 {"date": "2026-11-24", "breaches": ["/api/fleet", "/api/models/status"], "endpoints": 23}
 {"date": "2026-11-25", "breaches": ["/api/fleet", "/api/models", "/api/models/status"], "endpoints": 27}
 {"date": "2026-11-26", "breaches": ["/api/fleet", "/api/goals", "/api/models", "/api/activity"], "endpoints": 27}
+{"date": "2026-11-27", "breaches": ["/api/goals", "/api/fleet", "/api/models", "/api/fleet/cockpit", "/api/models/status", "/api/activity"], "endpoints": 28}

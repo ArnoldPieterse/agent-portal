@@ -1,6 +1,6 @@
 {
  "ok": true,
- "generated": "2026-11-27 02:36:45",
+ "generated": "2026-11-27 03:00:02",
  "fleet": {
   "done": 89,
   "total": 111,
@@ -14,7 +14,7 @@
    "type": "verify",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-27 05:11",
+   "eta": "2026-11-27 05:34",
    "hours": 2.58,
    "order": 0,
    "rank": 1,
@@ -24,11 +24,11 @@
     "run against live sources",
     "record verdict + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-27 05:11 (P=52%)",
+   "outcome": "reached ~2026-11-27 05:34 (P=52%)",
    "consequences": [
-    "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 05:51) - shared scope regression,trigger",
-    "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 14:38) - shared scope human,without",
-    "lane end outlet: 11-28 12:25 (slowest lane)"
+    "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 06:15) - shared scope regression,trigger",
+    "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 15:01) - shared scope human,without",
+    "lane end outlet: 11-28 12:48 (slowest lane)"
    ]
   },
   {
@@ -37,7 +37,7 @@
    "type": "measurement",
    "complexity": 2,
    "p_reached": 0.046,
-   "eta": "2026-11-27 05:51",
+   "eta": "2026-11-27 06:15",
    "hours": 3.25,
    "order": 0,
    "rank": 2,
@@ -47,10 +47,10 @@
     "two-run delta check",
     "publish snapshot + report leaf"
    ],
-   "outcome": "reached ~2026-11-27 05:51 (P=5%)",
+   "outcome": "reached ~2026-11-27 06:15 (P=5%)",
    "consequences": [
-    "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 05:11) - shared scope regression,trigger",
-    "lane end outlet: 11-28 12:25 (slowest lane)"
+    "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 05:34) - shared scope regression,trigger",
+    "lane end outlet: 11-28 12:48 (slowest lane)"
    ]
   },
   {
@@ -59,7 +59,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.158,
-   "eta": "2026-11-27 07:06",
+   "eta": "2026-11-27 07:30",
    "hours": 4.5,
    "order": 0,
    "rank": 3,
@@ -70,10 +70,10 @@
     "self-test until AC green",
     "evidence leaf + index line (AC: one post shipped on a real platform with zero manual edits after staging; tim)"
    ],
-   "outcome": "reached ~2026-11-27 07:06 (P=16%)",
+   "outcome": "reached ~2026-11-27 07:30 (P=16%)",
    "consequences": [
-    "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 18:03) - shared scope draft,platform",
-    "lane end outlet: 11-28 12:25 (slowest lane)"
+    "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 18:26) - shared scope draft,platform",
+    "lane end outlet: 11-28 12:48 (slowest lane)"
    ]
   },
   {
@@ -82,7 +82,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.158,
-   "eta": "2026-11-27 07:06",
+   "eta": "2026-11-27 07:30",
    "hours": 4.5,
    "order": 0,
    "rank": 4,
@@ -93,9 +93,9 @@
     "self-test until AC green",
     "evidence leaf + index line (AC: 2 screenshots archived; no horizontal overflow; a)"
    ],
-   "outcome": "reached ~2026-11-27 07:06 (P=16%)",
+   "outcome": "reached ~2026-11-27 07:30 (P=16%)",
    "consequences": [
-    "lane end outlet: 11-28 12:25 (slowest lane)"
+    "lane end outlet: 11-28 12:48 (slowest lane)"
    ]
   },
   {
@@ -104,7 +104,7 @@
    "type": "ops",
    "complexity": 2,
    "p_reached": 0.515,
-   "eta": "2026-11-27 07:45",
+   "eta": "2026-11-27 08:09",
    "hours": 2.58,
    "order": 1,
    "rank": 5,
@@ -114,9 +114,9 @@
     "execute from non-sandbox session",
     "verify registration/health + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-27 07:45 (P=52%)",
+   "outcome": "reached ~2026-11-27 08:09 (P=52%)",
    "consequences": [
-    "lane end outlet: 11-28 12:25 (slowest lane)"
+    "lane end outlet: 11-28 12:48 (slowest lane)"
    ]
   },
   {
@@ -125,7 +125,7 @@
    "type": "build",
    "complexity": 1,
    "p_reached": 0.355,
-   "eta": "2026-11-27 10:08",
+   "eta": "2026-11-27 10:31",
    "hours": 3.02,
    "order": 1,
    "rank": 6,
@@ -136,12 +136,12 @@
     "self-test until AC green",
     "evidence leaf + index line (AC: 5 real briefs \u2192 5 skeletons \u2192 5 lints, all <5 min each; output quality passes human review)"
    ],
-   "outcome": "reached ~2026-11-27 10:08 (P=36%)",
+   "outcome": "reached ~2026-11-27 10:31 (P=36%)",
    "consequences": [
-    "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 14:38) - shared scope human,posts",
-    "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 18:03) - shared scope draft,voice",
-    "outlet: **Content fitness score** - per-post composite (engagement m (2026-11-28 09:53) - shared scope output,trend",
-    "lane end outlet: 11-28 12:25 (slowest lane)"
+    "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 15:01) - shared scope human,posts",
+    "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 18:26) - shared scope draft,voice",
+    "outlet: **Content fitness score** - per-post composite (engagement m (2026-11-28 10:17) - shared scope output,trend",
+    "lane end outlet: 11-28 12:48 (slowest lane)"
    ]
   },
   {
@@ -150,7 +150,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.037,
-   "eta": "2026-11-27 10:10",
+   "eta": "2026-11-27 10:34",
    "hours": 4.32,
    "order": 1,
    "rank": 7,
@@ -161,10 +161,10 @@
     "self-test until AC green",
     "evidence leaf + index line (AC: renders from real assist-log data; all agents with >=1 assist appear; edge widths scale co)"
    ],
-   "outcome": "reached ~2026-11-27 10:10 (P=4%)",
+   "outcome": "reached ~2026-11-27 10:34 (P=4%)",
    "consequences": [
-    "designer: **Agent Utilization Timeline** - 14-row stacked bar, 24h win (2026-11-28 01:23) - shared scope agents,appear,legend",
-    "lane end outlet: 11-28 12:25 (slowest lane)"
+    "designer: **Agent Utilization Timeline** - 14-row stacked bar, 24h win (2026-11-28 01:46) - shared scope agents,appear,legend",
+    "lane end outlet: 11-28 12:48 (slowest lane)"
    ]
   },
   {
@@ -173,7 +173,7 @@
    "type": "build",
    "complexity": 1,
    "p_reached": 0.405,
-   "eta": "2026-11-27 10:50",
+   "eta": "2026-11-27 11:14",
    "hours": 3.08,
    "order": 2,
    "rank": 8,
@@ -184,10 +184,10 @@
     "self-test until AC green",
     "evidence leaf + index line (AC: 5 real goal lines produce valid)"
    ],
-   "outcome": "reached ~2026-11-27 10:50 (P=40%)",
+   "outcome": "reached ~2026-11-27 11:14 (P=40%)",
    "consequences": [
-    "designer: **Goal Pipeline Flow** - Proposed\u2192Active\u2192Verified\u2192Closed wit (2026-11-27 16:44) - shared scope appears,goals",
-    "lane end outlet: 11-28 12:25 (slowest lane)"
+    "designer: **Goal Pipeline Flow** - Proposed\u2192Active\u2192Verified\u2192Closed wit (2026-11-27 17:08) - shared scope appears,goals",
+    "lane end outlet: 11-28 12:48 (slowest lane)"
    ]
   },
   {
@@ -196,7 +196,7 @@
    "type": "ops",
    "complexity": 2,
    "p_reached": 0.151,
-   "eta": "2026-11-27 12:25",
+   "eta": "2026-11-27 12:48",
    "hours": 2.25,
    "order": 2,
    "rank": 9,
@@ -206,9 +206,9 @@
     "execute from non-sandbox session",
     "verify registration/health + evidence leaf"
    ],
-   "outcome": "reached ~2026-11-27 12:25 (P=15%)",
+   "outcome": "reached ~2026-11-27 12:48 (P=15%)",
    "consequences": [
-    "lane end outlet: 11-28 12:25 (slowest lane)"
+    "lane end outlet: 11-28 12:48 (slowest lane)"
    ]
   },
   {
@@ -217,7 +217,7 @@
    "type": "build",
    "complexity": 2,
    "p_reached": 0.158,
-   "eta": "2026-11-27 14:38",
+   "eta": "2026-11-27 15:01",
    "hours": 4.5,
    "order": 2,
    "rank": 10,
@@ -228,12 +228,12 @@
     "self-test until AC green",
     "evidence leaf + index line (AC: injected false claim blocked at gate; 10 real posts pass without blocking; gate log shows )"
    ],
-   "outcome": "reached ~2026-11-27 14:38 (P=16%)",
+   "outcome": "reached ~2026-11-27 15:01 (P=16%)",
    "consequences": [
-    "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 05:11) - shared scope human,without",
-    "outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 10:08) - shared scope human,posts",
-    "verifier: **Verification coverage map** - enumerate all files in the p (2026-11-27 15:23) - shared scope unverified,verification",
-    "lane end outlet: 11-28 12:25 (slowest lane)"
+    "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 05:34) - shared scope human,without",
+    "outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 10:31) - shared scope human,posts",
+    "verifier: **Verification coverage map** - enumerate all files in the p (2026-11-27 15:47) - shared scope unverified,verification",
+    "lane end outlet: 11-28 12:48 (slowest lane)"
    ]
   }
  ],
@@ -241,7 +241,7 @@
   {
    "label": "30m",
    "hours": 0.5,
-   "end": "2026-11-27 03:06",
+   "end": "2026-11-27 03:30",
    "completes": 0,
    "fleet_pct": 80.2,
    "top": []
@@ -249,7 +249,7 @@
   {
    "label": "1h",
    "hours": 1.0,
-   "end": "2026-11-27 03:36",
+   "end": "2026-11-27 04:00",
    "completes": 0,
    "fleet_pct": 80.2,
    "top": []
@@ -257,29 +257,29 @@
   {
    "label": "1d",
    "hours": 24.0,
-   "end": "2026-11-28 02:36",
+   "end": "2026-11-28 03:00",
    "completes": 18,
    "fleet_pct": 96.4,
    "top": [
-    "#1 verifier: Auto-trigger regression battery (2026-11-27 05:11)",
-    "#2 designer: Regression Alert Banner (2026-11-27 05:51)",
-    "#3 outlet: First live account connection + end-to-end ship (2026-11-27 07:06)",
-    "#4 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 07:06)",
-    "#5 verifier: Chaos-recovery verification (2026-11-27 07:45)"
+    "#1 verifier: Auto-trigger regression battery (2026-11-27 05:34)",
+    "#2 designer: Regression Alert Banner (2026-11-27 06:15)",
+    "#3 outlet: First live account connection + end-to-end ship (2026-11-27 07:30)",
+    "#4 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 07:30)",
+    "#5 verifier: Chaos-recovery verification (2026-11-27 08:09)"
    ]
   },
   {
    "label": "1w",
    "hours": 168.0,
-   "end": "2026-12-04 02:36",
+   "end": "2026-12-04 03:00",
    "completes": 22,
    "fleet_pct": 100.0,
    "top": [
-    "#1 verifier: Auto-trigger regression battery (2026-11-27 05:11)",
-    "#2 designer: Regression Alert Banner (2026-11-27 05:51)",
-    "#3 outlet: First live account connection + end-to-end ship (2026-11-27 07:06)",
-    "#4 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 07:06)",
-    "#5 verifier: Chaos-recovery verification (2026-11-27 07:45)"
+    "#1 verifier: Auto-trigger regression battery (2026-11-27 05:34)",
+    "#2 designer: Regression Alert Banner (2026-11-27 06:15)",
+    "#3 outlet: First live account connection + end-to-end ship (2026-11-27 07:30)",
+    "#4 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 07:30)",
+    "#5 verifier: Chaos-recovery verification (2026-11-27 08:09)"
    ],
    "next_cycle_candidates": [
     {
@@ -335,15 +335,15 @@
   {
    "label": "1m",
    "hours": 720.0,
-   "end": "2026-12-27 02:36",
+   "end": "2026-12-27 03:00",
    "completes": 22,
    "fleet_pct": 100.0,
    "top": [
-    "#1 verifier: Auto-trigger regression battery (2026-11-27 05:11)",
-    "#2 designer: Regression Alert Banner (2026-11-27 05:51)",
-    "#3 outlet: First live account connection + end-to-end ship (2026-11-27 07:06)",
-    "#4 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 07:06)",
-    "#5 verifier: Chaos-recovery verification (2026-11-27 07:45)"
+    "#1 verifier: Auto-trigger regression battery (2026-11-27 05:34)",
+    "#2 designer: Regression Alert Banner (2026-11-27 06:15)",
+    "#3 outlet: First live account connection + end-to-end ship (2026-11-27 07:30)",
+    "#4 pixel: Close the live CDP screenshot leg (goal #5 carry-over) (2026-11-27 07:30)",
+    "#5 verifier: Chaos-recovery verification (2026-11-27 08:09)"
    ],
    "next_cycle_candidates": [
     {
@@ -401,63 +401,63 @@
   "archivist": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-27 02:36"
+   "end": "2026-11-27 03:00"
   },
   "builder": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-27 02:36"
+   "end": "2026-11-27 03:00"
   },
   "designer": {
    "done": 3,
    "total": 10,
-   "end": "2026-11-28 06:51"
+   "end": "2026-11-28 07:14"
   },
   "forge": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-27 02:36"
+   "end": "2026-11-27 03:00"
   },
   "mechanic": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-27 02:36"
+   "end": "2026-11-27 03:00"
   },
   "orchestrator": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-27 02:36"
+   "end": "2026-11-27 03:00"
   },
   "outlet": {
    "done": 1,
    "total": 10,
-   "end": "2026-11-28 12:25"
+   "end": "2026-11-28 12:48"
   },
   "pixel": {
    "done": 9,
    "total": 10,
-   "end": "2026-11-27 07:06"
+   "end": "2026-11-27 07:30"
   },
   "researcher": {
    "done": 11,
    "total": 11,
-   "end": "2026-11-27 02:36"
+   "end": "2026-11-27 03:00"
   },
   "scribe": {
    "done": 10,
    "total": 10,
-   "end": "2026-11-27 02:36"
+   "end": "2026-11-27 03:00"
   },
   "verifier": {
    "done": 5,
    "total": 10,
-   "end": "2026-11-27 17:10"
+   "end": "2026-11-27 17:34"
   }
  },
- "level_up_eta": "2026-11-28 12:25",
+ "level_up_eta": "2026-11-28 12:48",
  "plan": {
   "cycle_state": "in flight: 10 goal(s) open",
-  "level_up_eta": "2026-11-28 12:25",
+  "level_up_eta": "2026-11-28 12:48",
   "planned": [
    {
     "agent": "verifier",
@@ -465,7 +465,7 @@
     "type": "verify",
     "complexity": 2,
     "p_reached": 0.515,
-    "eta": "2026-11-27 05:11",
+    "eta": "2026-11-27 05:34",
     "hours": 2.58,
     "order": 0,
     "rank": 1,
@@ -475,20 +475,20 @@
      "run against live sources",
      "record verdict + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-27 05:11 (P~52%)",
+    "outcome": "reached ~2026-11-27 05:34 (P~52%)",
     "consequences": [
-     "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 05:51) - shared scope regression,trigger",
-     "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 14:38) - shared scope human,without",
-     "lane end outlet: 11-28 12:25 (slowest lane)"
+     "designer: **Regression Alert Banner** - red slide-in when autonomy sco (2026-11-27 06:15) - shared scope regression,trigger",
+     "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 15:01) - shared scope human,without",
+     "lane end outlet: 11-28 12:48 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 05:11",
+    "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 05:34",
     "deliverable": {
      "name": "Auto-trigger regression battery",
      "stream": "General"
     },
     "then": "#5 [verifier] Chaos-recovery verification",
-    "then_eta": "2026-11-27 07:45"
+    "then_eta": "2026-11-27 08:09"
    },
    {
     "agent": "designer",
@@ -496,7 +496,7 @@
     "type": "measurement",
     "complexity": 2,
     "p_reached": 0.046,
-    "eta": "2026-11-27 05:51",
+    "eta": "2026-11-27 06:15",
     "hours": 3.25,
     "order": 0,
     "rank": 2,
@@ -506,19 +506,19 @@
      "two-run delta check",
      "publish snapshot + report leaf"
     ],
-    "outcome": "reached ~2026-11-27 05:51 (P~5%)",
+    "outcome": "reached ~2026-11-27 06:15 (P~5%)",
     "consequences": [
-     "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 05:11) - shared scope regression,trigger",
-     "lane end outlet: 11-28 12:25 (slowest lane)"
+     "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 05:34) - shared scope regression,trigger",
+     "lane end outlet: 11-28 12:48 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 05:51",
+    "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 06:15",
     "deliverable": {
      "name": "Regression Alert Banner",
      "stream": "General"
     },
     "then": "#7 [designer] Cross-Lane Assist Graph",
-    "then_eta": "2026-11-27 10:10"
+    "then_eta": "2026-11-27 10:34"
    },
    {
     "agent": "outlet",
@@ -526,7 +526,7 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.158,
-    "eta": "2026-11-27 07:06",
+    "eta": "2026-11-27 07:30",
     "hours": 4.5,
     "order": 0,
     "rank": 3,
@@ -537,19 +537,19 @@
      "self-test until AC green",
      "evidence leaf + index line (AC: one post shipped on a real platform with zero manual edits after staging; tim)"
     ],
-    "outcome": "reached ~2026-11-27 07:06 (P~16%)",
+    "outcome": "reached ~2026-11-27 07:30 (P~16%)",
     "consequences": [
-     "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 18:03) - shared scope draft,platform",
-     "lane end outlet: 11-28 12:25 (slowest lane)"
+     "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 18:26) - shared scope draft,platform",
+     "lane end outlet: 11-28 12:48 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 07:06",
+    "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 07:30",
     "deliverable": {
      "name": "First live account connection + end-to-end ship",
      "stream": "General"
     },
     "then": "#6 [outlet] Trend-to-draft pipeline",
-    "then_eta": "2026-11-27 10:08"
+    "then_eta": "2026-11-27 10:31"
    },
    {
     "agent": "pixel",
@@ -557,7 +557,7 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.158,
-    "eta": "2026-11-27 07:06",
+    "eta": "2026-11-27 07:30",
     "hours": 4.5,
     "order": 0,
     "rank": 4,
@@ -568,18 +568,18 @@
      "self-test until AC green",
      "evidence leaf + index line (AC: 2 screenshots archived; no horizontal overflow; a)"
     ],
-    "outcome": "reached ~2026-11-27 07:06 (P~16%)",
+    "outcome": "reached ~2026-11-27 07:30 (P~16%)",
     "consequences": [
-     "lane end outlet: 11-28 12:25 (slowest lane)"
+     "lane end outlet: 11-28 12:48 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane pixel has 9/10 done; this goal ends its lane at 2026-11-27 07:06",
+    "why": "planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane pixel has 9/10 done; this goal ends its lane at 2026-11-27 07:30",
     "deliverable": {
      "name": "Archive + evidence leaves",
      "stream": "Memory quality"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:25)",
-    "then_eta": "2026-11-28 12:25"
+    "then": "lane clear - level-up gate re-check (2026-11-28 12:48)",
+    "then_eta": "2026-11-28 12:48"
    },
    {
     "agent": "verifier",
@@ -587,7 +587,7 @@
     "type": "ops",
     "complexity": 2,
     "p_reached": 0.515,
-    "eta": "2026-11-27 07:45",
+    "eta": "2026-11-27 08:09",
     "hours": 2.58,
     "order": 1,
     "rank": 5,
@@ -597,18 +597,18 @@
      "execute from non-sandbox session",
      "verify registration/health + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-27 07:45 (P~52%)",
+    "outcome": "reached ~2026-11-27 08:09 (P~52%)",
     "consequences": [
-     "lane end outlet: 11-28 12:25 (slowest lane)"
+     "lane end outlet: 11-28 12:48 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 07:45",
+    "why": "planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 08:09",
     "deliverable": {
      "name": "Chaos-recovery verification",
      "stream": "General"
     },
     "then": "#8 [verifier] Acceptance-test auto-generation",
-    "then_eta": "2026-11-27 10:50"
+    "then_eta": "2026-11-27 11:14"
    },
    {
     "agent": "outlet",
@@ -616,7 +616,7 @@
     "type": "build",
     "complexity": 1,
     "p_reached": 0.355,
-    "eta": "2026-11-27 10:08",
+    "eta": "2026-11-27 10:31",
     "hours": 3.02,
     "order": 1,
     "rank": 6,
@@ -627,21 +627,21 @@
      "self-test until AC green",
      "evidence leaf + index line (AC: 5 real briefs \u2192 5 skeletons \u2192 5 lints, all <5 min each; output quality passes human review)"
     ],
-    "outcome": "reached ~2026-11-27 10:08 (P~36%)",
+    "outcome": "reached ~2026-11-27 10:31 (P~36%)",
     "consequences": [
-     "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 14:38) - shared scope human,posts",
-     "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 18:03) - shared scope draft,voice",
-     "outlet: **Content fitness score** - per-post composite (engagement m (2026-11-28 09:53) - shared scope output,trend",
-     "lane end outlet: 11-28 12:25 (slowest lane)"
+     "outlet: **Hard verification gate** - `queue_check.py` blocks unverif (2026-11-27 15:01) - shared scope human,posts",
+     "outlet: **Per-platform voice variants + lint** - X (\u2264280 chars, punc (2026-11-27 18:26) - shared scope draft,voice",
+     "outlet: **Content fitness score** - per-post composite (engagement m (2026-11-28 10:17) - shared scope output,trend",
+     "lane end outlet: 11-28 12:48 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 10:08",
+    "why": "planned as build work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~36%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 10:31",
     "deliverable": {
      "name": "Mic access",
      "stream": "Peripherals"
     },
     "then": "#10 [outlet] Hard verification gate",
-    "then_eta": "2026-11-27 14:38"
+    "then_eta": "2026-11-27 15:01"
    },
    {
     "agent": "designer",
@@ -649,7 +649,7 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.037,
-    "eta": "2026-11-27 10:10",
+    "eta": "2026-11-27 10:34",
     "hours": 4.32,
     "order": 1,
     "rank": 7,
@@ -660,19 +660,19 @@
      "self-test until AC green",
      "evidence leaf + index line (AC: renders from real assist-log data; all agents with >=1 assist appear; edge widths scale co)"
     ],
-    "outcome": "reached ~2026-11-27 10:10 (P~4%)",
+    "outcome": "reached ~2026-11-27 10:34 (P~4%)",
     "consequences": [
-     "designer: **Agent Utilization Timeline** - 14-row stacked bar, 24h win (2026-11-28 01:23) - shared scope agents,appear,legend",
-     "lane end outlet: 11-28 12:25 (slowest lane)"
+     "designer: **Agent Utilization Timeline** - 14-row stacked bar, 24h win (2026-11-28 01:46) - shared scope agents,appear,legend",
+     "lane end outlet: 11-28 12:48 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 10:10",
+    "why": "planned as build work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~4%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 10:34",
     "deliverable": {
      "name": "Cross-Lane Assist Graph",
      "stream": "General"
     },
     "then": "#9 [designer] Fleet Health Composite Gauge",
-    "then_eta": "2026-11-27 12:25"
+    "then_eta": "2026-11-27 12:48"
    },
    {
     "agent": "verifier",
@@ -680,7 +680,7 @@
     "type": "build",
     "complexity": 1,
     "p_reached": 0.405,
-    "eta": "2026-11-27 10:50",
+    "eta": "2026-11-27 11:14",
     "hours": 3.08,
     "order": 2,
     "rank": 8,
@@ -691,19 +691,19 @@
      "self-test until AC green",
      "evidence leaf + index line (AC: 5 real goal lines produce valid)"
     ],
-    "outcome": "reached ~2026-11-27 10:50 (P~40%)",
+    "outcome": "reached ~2026-11-27 11:14 (P~40%)",
     "consequences": [
-     "designer: **Goal Pipeline Flow** - Proposed\u2192Active\u2192Verified\u2192Closed wit (2026-11-27 16:44) - shared scope appears,goals",
-     "lane end outlet: 11-28 12:25 (slowest lane)"
+     "designer: **Goal Pipeline Flow** - Proposed\u2192Active\u2192Verified\u2192Closed wit (2026-11-27 17:08) - shared scope appears,goals",
+     "lane end outlet: 11-28 12:48 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 10:50",
+    "why": "planned as build work (cx1); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~40%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 11:14",
     "deliverable": {
      "name": "Acceptance-test auto-generation",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:25)",
-    "then_eta": "2026-11-28 12:25"
+    "then": "lane clear - level-up gate re-check (2026-11-28 12:48)",
+    "then_eta": "2026-11-28 12:48"
    },
    {
     "agent": "designer",
@@ -711,7 +711,7 @@
     "type": "ops",
     "complexity": 2,
     "p_reached": 0.151,
-    "eta": "2026-11-27 12:25",
+    "eta": "2026-11-27 12:48",
     "hours": 2.25,
     "order": 2,
     "rank": 9,
@@ -721,18 +721,18 @@
      "execute from non-sandbox session",
      "verify registration/health + evidence leaf"
     ],
-    "outcome": "reached ~2026-11-27 12:25 (P~15%)",
+    "outcome": "reached ~2026-11-27 12:48 (P~15%)",
     "consequences": [
-     "lane end outlet: 11-28 12:25 (slowest lane)"
+     "lane end outlet: 11-28 12:48 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as ops work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~15%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 12:25",
+    "why": "planned as ops work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~15%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 12:48",
     "deliverable": {
      "name": "Fleet Health Composite Gauge",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:25)",
-    "then_eta": "2026-11-28 12:25"
+    "then": "lane clear - level-up gate re-check (2026-11-28 12:48)",
+    "then_eta": "2026-11-28 12:48"
    },
    {
     "agent": "outlet",
@@ -740,7 +740,7 @@
     "type": "build",
     "complexity": 2,
     "p_reached": 0.158,
-    "eta": "2026-11-27 14:38",
+    "eta": "2026-11-27 15:01",
     "hours": 4.5,
     "order": 2,
     "rank": 10,
@@ -751,28 +751,28 @@
      "self-test until AC green",
      "evidence leaf + index line (AC: injected false claim blocked at gate; 10 real posts pass without blocking; gate log shows )"
     ],
-    "outcome": "reached ~2026-11-27 14:38 (P~16%)",
+    "outcome": "reached ~2026-11-27 15:01 (P~16%)",
     "consequences": [
-     "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 05:11) - shared scope human,without",
-     "outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 10:08) - shared scope human,posts",
-     "verifier: **Verification coverage map** - enumerate all files in the p (2026-11-27 15:23) - shared scope unverified,verification",
-     "lane end outlet: 11-28 12:25 (slowest lane)"
+     "verifier: **Auto-trigger regression battery** - hook into commit event (2026-11-27 05:34) - shared scope human,without",
+     "outlet: **Trend-to-draft pipeline** - Researcher briefs auto-generat (2026-11-27 10:31) - shared scope human,posts",
+     "verifier: **Verification coverage map** - enumerate all files in the p (2026-11-27 15:47) - shared scope unverified,verification",
+     "lane end outlet: 11-28 12:48 (slowest lane)"
     ],
     "projected": false,
-    "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 14:38",
+    "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 15:01",
     "deliverable": {
      "name": "Hard verification gate",
      "stream": "General"
     },
-    "then": "lane clear - level-up gate re-check (2026-11-28 12:25)",
-    "then_eta": "2026-11-28 12:25"
+    "then": "lane clear - level-up gate re-check (2026-11-28 12:48)",
+    "then_eta": "2026-11-28 12:48"
    }
   ],
   "horizons": [
    {
     "label": "30m",
     "hours": 0.5,
-    "end": "2026-11-27 03:06",
+    "end": "2026-11-27 03:30",
     "completes": 0,
     "top": [],
     "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 89/111 -> 80%"
@@ -780,7 +780,7 @@
    {
     "label": "1h",
     "hours": 1.0,
-    "end": "2026-11-27 03:36",
+    "end": "2026-11-27 04:00",
     "completes": 0,
     "top": [],
     "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 89/111 -> 80%"
@@ -788,48 +788,48 @@
    {
     "label": "1d",
     "hours": 24.0,
-    "end": "2026-11-28 02:36",
+    "end": "2026-11-28 03:00",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "verifier",
       "title": "Auto-trigger regression battery",
-      "eta": "2026-11-27 05:11",
+      "eta": "2026-11-27 05:34",
       "type": "verify",
-      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 05:11"
+      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 05:34"
      },
      {
       "rank": 2,
       "agent": "designer",
       "title": "Regression Alert Banner",
-      "eta": "2026-11-27 05:51",
+      "eta": "2026-11-27 06:15",
       "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 05:51"
+      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 06:15"
      },
      {
       "rank": 3,
       "agent": "outlet",
       "title": "First live account connection + end-to-end ship",
-      "eta": "2026-11-27 07:06",
+      "eta": "2026-11-27 07:30",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 07:06"
+      "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 07:30"
      },
      {
       "rank": 4,
       "agent": "pixel",
       "title": "Close the live CDP screenshot leg (goal #5 carry-over)",
-      "eta": "2026-11-27 07:06",
+      "eta": "2026-11-27 07:30",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane pixel has 9/10 done; this goal ends its lane at 2026-11-27 07:06"
+      "why": "planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane pixel has 9/10 done; this goal ends its lane at 2026-11-27 07:30"
      },
      {
       "rank": 5,
       "agent": "verifier",
       "title": "Chaos-recovery verification",
-      "eta": "2026-11-27 07:45",
+      "eta": "2026-11-27 08:09",
       "type": "ops",
-      "why": "planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 07:45"
+      "why": "planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 08:09"
      }
     ],
     "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 89/111 -> 89%"
@@ -837,48 +837,48 @@
    {
     "label": "1w",
     "hours": 168.0,
-    "end": "2026-12-04 02:36",
+    "end": "2026-12-04 03:00",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "verifier",
       "title": "Auto-trigger regression battery",
-      "eta": "2026-11-27 05:11",
+      "eta": "2026-11-27 05:34",
       "type": "verify",
-      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 05:11"
+      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 05:34"
      },
      {
       "rank": 2,
       "agent": "designer",
       "title": "Regression Alert Banner",
-      "eta": "2026-11-27 05:51",
+      "eta": "2026-11-27 06:15",
       "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 05:51"
+      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 06:15"
      },
      {
       "rank": 3,
       "agent": "outlet",
       "title": "First live account connection + end-to-end ship",
-      "eta": "2026-11-27 07:06",
+      "eta": "2026-11-27 07:30",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 07:06"
+      "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 07:30"
      },
      {
       "rank": 4,
       "agent": "pixel",
       "title": "Close the live CDP screenshot leg (goal #5 carry-over)",
-      "eta": "2026-11-27 07:06",
+      "eta": "2026-11-27 07:30",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane pixel has 9/10 done; this goal ends its lane at 2026-11-27 07:06"
+      "why": "planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane pixel has 9/10 done; this goal ends its lane at 2026-11-27 07:30"
      },
      {
       "rank": 5,
       "agent": "verifier",
       "title": "Chaos-recovery verification",
-      "eta": "2026-11-27 07:45",
+      "eta": "2026-11-27 08:09",
       "type": "ops",
-      "why": "planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 07:45"
+      "why": "planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 08:09"
      }
     ],
     "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 89/111 -> 89%"
@@ -886,48 +886,48 @@
    {
     "label": "1m",
     "hours": 720.0,
-    "end": "2026-12-27 02:36",
+    "end": "2026-12-27 03:00",
     "completes": 10,
     "top": [
      {
       "rank": 1,
       "agent": "verifier",
       "title": "Auto-trigger regression battery",
-      "eta": "2026-11-27 05:11",
+      "eta": "2026-11-27 05:34",
       "type": "verify",
-      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 05:11"
+      "why": "planned as verify work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 05:34"
      },
      {
       "rank": 2,
       "agent": "designer",
       "title": "Regression Alert Banner",
-      "eta": "2026-11-27 05:51",
+      "eta": "2026-11-27 06:15",
       "type": "measurement",
-      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 05:51"
+      "why": "planned as measurement work (cx2); already open on the designer lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~5%): kept in plan because its scope gates later work; lane designer has 3/10 done; this goal ends its lane at 2026-11-27 06:15"
      },
      {
       "rank": 3,
       "agent": "outlet",
       "title": "First live account connection + end-to-end ship",
-      "eta": "2026-11-27 07:06",
+      "eta": "2026-11-27 07:30",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 07:06"
+      "why": "planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane outlet has 1/10 done; this goal ends its lane at 2026-11-27 07:30"
      },
      {
       "rank": 4,
       "agent": "pixel",
       "title": "Close the live CDP screenshot leg (goal #5 carry-over)",
-      "eta": "2026-11-27 07:06",
+      "eta": "2026-11-27 07:30",
       "type": "build",
-      "why": "planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane pixel has 9/10 done; this goal ends its lane at 2026-11-27 07:06"
+      "why": "planned as build work (cx2); already open on the pixel lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16%): kept in plan because its scope gates later work; lane pixel has 9/10 done; this goal ends its lane at 2026-11-27 07:30"
      },
      {
       "rank": 5,
       "agent": "verifier",
       "title": "Chaos-recovery verification",
-      "eta": "2026-11-27 07:45",
+      "eta": "2026-11-27 08:09",
       "type": "ops",
-      "why": "planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 07:45"
+      "why": "planned as ops work (cx2); already open on the verifier lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~52%): kept in plan because its scope gates later work; lane verifier has 5/10 done; this goal ends its lane at 2026-11-27 08:09"
      }
     ],
     "why_line": "queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 89/111 -> 89%"
@@ -941,20 +941,20 @@
     "action": "level-up gate fires -> Lv increments, report written",
     "then": "Orchestrator proposes cycle N+1 from ranked backlog (8 candidates)",
     "first_planned": [
-     "#1 [verifier] Auto-trigger regression battery ~2026-11-27 05:11",
-     "#2 [designer] Regression Alert Banner ~2026-11-27 05:51",
-     "#3 [outlet] First live account connection + end-to-end ship ~2026-11-27 07:06",
-     "#4 [pixel] Close the live CDP screenshot leg (goal #5 carry-over) ~2026-11-27 07:06"
+     "#1 [verifier] Auto-trigger regression battery ~2026-11-27 05:34",
+     "#2 [designer] Regression Alert Banner ~2026-11-27 06:15",
+     "#3 [outlet] First live account connection + end-to-end ship ~2026-11-27 07:30",
+     "#4 [pixel] Close the live CDP screenshot leg (goal #5 carry-over) ~2026-11-27 07:30"
     ]
    },
    "no": {
     "action": "keep current queue; next completion gates progress",
-    "then": "when the last lane ends (2026-11-28 12:25) the gate re-checks",
+    "then": "when the last lane ends (2026-11-28 12:48) the gate re-checks",
     "first_planned": [
-     "#1 [verifier] Auto-trigger regression battery ~2026-11-27 05:11",
-     "#2 [designer] Regression Alert Banner ~2026-11-27 05:51",
-     "#3 [outlet] First live account connection + end-to-end ship ~2026-11-27 07:06",
-     "#4 [pixel] Close the live CDP screenshot leg (goal #5 carry-over) ~2026-11-27 07:06"
+     "#1 [verifier] Auto-trigger regression battery ~2026-11-27 05:34",
+     "#2 [designer] Regression Alert Banner ~2026-11-27 06:15",
+     "#3 [outlet] First live account connection + end-to-end ship ~2026-11-27 07:30",
+     "#4 [pixel] Close the live CDP screenshot leg (goal #5 carry-over) ~2026-11-27 07:30"
     ]
    }
   },
@@ -1433,7 +1433,7 @@
   ],
   "plan_meta": {
    "sig": "df19237b8736",
-   "computed_at": "2026-11-27 02:36:45",
+   "computed_at": "2026-11-27 03:00:02",
    "basis": "live goal ledger + next-10 ETAs + fleet throughput ~12.96 goals/h; recomputed every refresh",
    "delta": [],
    "history": [
