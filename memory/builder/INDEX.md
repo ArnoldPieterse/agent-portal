@@ -1,5 +1,6 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
-Last updated: 2026-11-25 (Builder: Cycle 18 goals proposed - Fleet Autonomy Convergence)
+Last updated: 2026-11-26 (Builder: Cycle 20 goals proposed - Fleet Autonomy Convergence; Cycle 19 set archived)
+- cycle20_goalsetting_evidence_2026-11-26.md -> memory/builder/cycle20_goalsetting_evidence_2026-11-26.md   Cycle 20 goals proposed: 10 goals (autonomous closeout + self-healing infra + steady-state contracts); all new vs closed_topics.json
 - cycle18_goalsetting_evidence_2026-11-25.md -> memory/builder/cycle18_goalsetting_evidence_2026-11-25.md   Cycle 18 goals proposed: 10 goals, Fleet Autonomy Convergence
 - assist_mechanic_g1_seattrend_2026-11-25.md -> memory/builder/assist_mechanic_g1_seattrend_2026-11-25.md   Assist (owner Mechanic): seat_probe.py latency-trend->degrading; selftest 5/5 PASS
 - goal_inherit_evidence_2026-11-25.md -> memory/builder/goal_inherit_evidence_2026-11-25.md   Goal #7: cross-cycle inheritance generator; selftest 3/3 PASS

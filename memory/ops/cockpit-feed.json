@@ -1,7 +1,7 @@
 {
-  "ts": "2026-11-26T09:04:42.930640+00:00",
-  "health_score": 80,
-  "fleet_status": "NOMINAL",
+  "ts": "2026-11-26T09:24:43.997258+00:00",
+  "health_score": 75,
+  "fleet_status": "DEGRADED",
   "agents": [
     {
       "id": "orchestrator",
@@ -46,14 +46,32 @@
   ],
   "hosts": [
     {
-      "host": "WHITE",
-      "vram_pct": 3.0,
-      "cpu_pct": 100.0,
-      "temp_c": 42.64
+      "host": "White",
+      "vram_pct": 77.2,
+      "cpu_pct": 38.0,
+      "temp_c": 50.0
+    },
+    {
+      "host": "Red",
+      "vram_pct": 33.1,
+      "cpu_pct": 0.0,
+      "temp_c": 36.7
+    },
+    {
+      "host": "Pale",
+      "vram_pct": 46.6,
+      "cpu_pct": 0.0,
+      "temp_c": 81.1
+    },
+    {
+      "host": "Black",
+      "vram_pct": null,
+      "cpu_pct": null,
+      "temp_c": null
     }
   ],
   "goals": {
-    "fleet_pct": 100.0,
+    "fleet_pct": 92.7,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -136,9 +154,9 @@
         "pct": 0.0
       },
       "builder": {
-        "total": 10,
-        "verified": 10,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "cross_patterns_report": {
         "total": 1,
@@ -396,9 +414,9 @@
         "pct": 0.0
       },
       "forge": {
-        "total": 10,
-        "verified": 10,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "mechanic-cycle9-proposals-2026-11-23": {
         "total": 1,
@@ -461,9 +479,9 @@
         "pct": 0.0
       },
       "orchestrator": {
-        "total": 9,
-        "verified": 9,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "outlet": {
         "total": 8,
@@ -546,9 +564,9 @@
         "pct": 100.0
       },
       "scribe": {
-        "total": 11,
-        "verified": 11,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "slip_prediction_table": {
         "total": 1,
@@ -586,8 +604,8 @@
         "pct": 100.0
       }
     },
-    "total_goals": 68,
-    "total_verified": 68
+    "total_goals": 41,
+    "total_verified": 38
   },
   "open_blockers": 29,
   "autonomous_actions": [

@@ -12,6 +12,10 @@ Onboarded 2026-11-25. Builder's front-end sub-agent: owns the pixels (index.html
 - convergence tooltips goal #10 evidence -> memory/pixel/evidence-tooltips-2026-11-25.md | 18/18 structural: 4/4 metrics, hover+focus, ESC close, contrast 12.9:1
 - UI changes shipped / diff log -> memory/pixel/log.md   one line per change: date, what, file(s), visual check (create on first entry)
 
+## Next-cycle goal set (proposed 2026-11-26, Lv13 reset)
+- -> memory/goals/pixel.md | 10 fresh open goals: navigate/share converged state, fleet-wide autonomy attribution, close @375/768 live-screenshot leg, per-widget error-boundary, token gate, debug-PNG purge
+- finding: ui/ carries ~15MB stray debug PNGs (band_*, dash_*, segA-D, plan_*); goal #9 purges + adds pre-pin asset gate
+
 ## Cycle-18 assist (2026-11-25) - Fleet Autonomy Convergence
 - -> memory/pixel/evidence-fleet-capacity-chip-2026-11-25.md — fleet capacity chip "N/M up" in ops-panel status strip; ui/fleet_status.js + ui/app.css (.fs-cap); tokens only, static-validated
 - js syntax gate spec (ops) -> memory/ops/js-syntax-gate-spec-2026-11-26.md | pre-pin node --check to prevent parse-fail UI freezes; evidence: memory/pixel/evidence-js-syntax-gate-2026-11-26.md
