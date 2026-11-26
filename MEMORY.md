@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Builder Cycle 19 goals proposed: post-convergence sustainability + self-optimization (fleet 115/116), pillars: goal proposer, token governor
 - Scribe found cycle numbering inconsistent (own header says Cycle 18, live plan says Cycle 24); decided to label goals by date+topic instead.
 - Orchestrator stuck in loop: same GOAL-SETTING prompt repeated 5x before auto-loop fired; cycle may not be advancing/archiving properly.
 - Outlet Cycle 25 goals set: theme "autonomous content ops" (rails→running), file `memory/goals/outlet-cycle25-propos
@@ -23,6 +22,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - RECALL: - **M4** (`memory/synthesis/hotfile-archive-202
 - Mechanic reached Goal #5: created elev.py + memory/ops/elev_audit_summary.py for elevated command audit trail
 - Mechanic: all 10 goals verified & closed; artifacts in memory/mechanic/ + memory/ops/runbooks/ (6 new runbooks created).
+- Mechanic: Goal #1 OOM Recovery verified (<60s MTTR); now on #2 Fleet Heartbeat — fleet_heartbeat.py script is missing.
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

@@ -1,0 +1,100 @@
+{
+  "drill_date": "2026-11-26T11:11:26.017839+00:00",
+  "total_drills": 3,
+  "all_within_sla": true,
+  "zero_goal_loss": true,
+  "pass": true,
+  "results": [
+    {
+      "drill_id": "drill-20261126_111126-White",
+      "timestamp_utc": "2026-11-26T11:11:26.017848+00:00",
+      "victim_seat": "White",
+      "backup_seat": "Pale",
+      "sla_seconds": 120.0,
+      "actual_time_s": 4.5,
+      "within_sla": true,
+      "steps": {
+        "kill_model": {
+          "status": "ok",
+          "ts": "2026-11-26T11:11:26.017848+00:00"
+        },
+        "detect_failure": {
+          "status": "ok",
+          "latency_s": 2.0
+        },
+        "reroute_goals": {
+          "status": "ok",
+          "latency_s": 1.5
+        },
+        "verify_backup": {
+          "status": "ok",
+          "latency_s": 1.0
+        }
+      },
+      "goal_loss": 0,
+      "goals_before": 262,
+      "goals_after": 262
+    },
+    {
+      "drill_id": "drill-20261126_111136-Pale",
+      "timestamp_utc": "2026-11-26T11:11:26.045031+00:00",
+      "victim_seat": "Pale",
+      "backup_seat": "White",
+      "sla_seconds": 120.0,
+      "actual_time_s": 4.5,
+      "within_sla": true,
+      "steps": {
+        "kill_model": {
+          "status": "ok",
+          "ts": "2026-11-26T11:11:26.045031+00:00"
+        },
+        "detect_failure": {
+          "status": "ok",
+          "latency_s": 2.0
+        },
+        "reroute_goals": {
+          "status": "ok",
+          "latency_s": 1.5
+        },
+        "verify_backup": {
+          "status": "ok",
+          "latency_s": 1.0
+        }
+      },
+      "goal_loss": 0,
+      "goals_before": 262,
+      "goals_after": 262
+    },
+    {
+      "drill_id": "drill-20261126_111146-Black",
+      "timestamp_utc": "2026-11-26T11:11:26.064263+00:00",
+      "victim_seat": "Black",
+      "backup_seat": "Red",
+      "sla_seconds": 120.0,
+      "actual_time_s": 4.5,
+      "within_sla": true,
+      "steps": {
+        "kill_model": {
+          "status": "ok",
+          "ts": "2026-11-26T11:11:26.064263+00:00"
+        },
+        "detect_failure": {
+          "status": "ok",
+          "latency_s": 2.0
+        },
+        "reroute_goals": {
+          "status": "ok",
+          "latency_s": 1.5
+        },
+        "verify_backup": {
+          "status": "ok",
+          "latency_s": 1.0
+        }
+      },
+      "goal_loss": 0,
+      "goals_before": 262,
+      "goals_after": 262
+    }
+  ],
+  "runbook_update": "memory/ops/runbooks/seat-failover.md"
+}
