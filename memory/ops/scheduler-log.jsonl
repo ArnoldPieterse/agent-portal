@@ -3500,3 +3500,10 @@
 {"t": "2026-11-26 20:34:48", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-26 20:39:39", "job": "cycle_5m", "event": "start", "pid": 30128}
 {"t": "2026-11-26 20:39:44", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-26 20:44:39", "job": "cycle_5m", "event": "start", "pid": 20948}
+{"t": "2026-11-26 20:44:39", "job": "cycle_10m", "event": "start", "pid": 25184}
+{"t": "2026-11-26 20:44:44", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-26 20:44:49", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-26 20:49:39", "job": "cycle_5m", "event": "start", "pid": 19808}
+{"t": "2026-11-26 20:49:44", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-26 20:49:49", "job": "cycle_30m", "event": "done", "rc": 124}

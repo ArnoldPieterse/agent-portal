@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T10:34:48.520666+00:00",
+  "ts": "2026-11-26T10:44:48.923394+00:00",
   "health_score": 75,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -47,21 +47,21 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 77.4,
-      "cpu_pct": 0.5,
-      "temp_c": 40.8
+      "vram_pct": 77.5,
+      "cpu_pct": 40.0,
+      "temp_c": 49.4
     },
     {
       "host": "Red",
       "vram_pct": 33.1,
       "cpu_pct": 0.0,
-      "temp_c": 37.1
+      "temp_c": 36.0
     },
     {
       "host": "Pale",
       "vram_pct": 1.4,
       "cpu_pct": 0.0,
-      "temp_c": 48.9
+      "temp_c": 47.3
     },
     {
       "host": "Black",
@@ -71,7 +71,7 @@
     }
   ],
   "goals": {
-    "fleet_pct": 63.6,
+    "fleet_pct": 69.2,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -564,8 +564,8 @@
         "pct": 100.0
       },
       "scribe": {
-        "total": 1,
-        "verified": 1,
+        "total": 3,
+        "verified": 3,
         "pct": 100.0
       },
       "slip_prediction_table": {
@@ -604,8 +604,8 @@
         "pct": 0.0
       }
     },
-    "total_goals": 11,
-    "total_verified": 7
+    "total_goals": 13,
+    "total_verified": 9
   },
   "open_blockers": 29,
   "autonomous_actions": [

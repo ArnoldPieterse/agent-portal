@@ -3570,5 +3570,23 @@
 "text": "**Residual Human-Role Spec** - inventory what the human MUST still do at steady state (from touchpoint-roadmap.md + human-interventions.json",
 "agent": "scribe",
 "at": "2026-11-26"
+},
+{
+"sig": "6c196c5da366d389",
+"text": "**Intervention spike -> timeline linkage** - Clicking a point on the intervention sparkline scrolls + highlights the matching entry in `ui/c",
+"agent": "pixel",
+"at": "2026-11-26"
+},
+{
+"sig": "d0aa68e9a375b9f6",
+"text": "**Convergence snapshot export / share link** - Add \"Copy JSON\" + a deep-link that encodes {mode, lastUpdated, 4 metric values} into query pa",
+"agent": "pixel",
+"at": "2026-11-26"
+},
+{
+"sig": "f4c8e7bcbb90d36f",
+"text": "**Per-host autonomy contribution** - In `ui/fleet_topology.js` / fleetboard, show each host's share of the overall convergence/autonomy scor",
+"agent": "pixel",
+"at": "2026-11-26"
 }
 ]

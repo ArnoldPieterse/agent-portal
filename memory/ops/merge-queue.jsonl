@@ -508,3 +508,8 @@
 {"ts": "2026-11-26 20:41:25", "file": "ui/pages/mind-room.js", "sha": "82522e1012", "size": 45953, "snapshot": null}
 {"ts": "2026-11-26 20:43:58", "file": "ui/pages/mind-room.js", "sha": "b2c87d7940", "size": 46352, "snapshot": null}
 {"ts": "2026-11-26 20:43:58", "file": "ui/pages/voxel-ui.js", "sha": "fda9d87920", "size": 6370, "snapshot": null}
+{"ts": "2026-11-26 20:53:57", "file": "ui/cockpit-convergence.js", "sha": "4da8597237", "size": 33775, "snapshot": null}
+{"ts": "2026-11-26 20:53:57", "file": "ui/cockpit-intervention-timeline.js", "sha": "947f0d2f2c", "size": 8889, "snapshot": null}
+{"ts": "2026-11-26 20:53:57", "file": "ui/cockpit-metrics-export.js", "sha": "f8235d605c", "size": 12854, "snapshot": null}
+{"ts": "2026-11-26 20:53:57", "file": "ui/fleet_topology.js", "sha": "a6735ba503", "size": 14961, "snapshot": null}
+{"ts": "2026-11-26 20:53:57", "file": "ui/pages/mind.html", "sha": "58e230a0f3", "size": 6251, "snapshot": null}

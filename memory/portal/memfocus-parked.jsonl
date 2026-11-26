@@ -225,3 +225,5 @@
 {"ts": "2026-11-26T20:36:18", "ref": ["memory/workspace/INDEX.md", 73], "focus_sig": "538eefb8", "reason": "lod-evict"}
 {"ts": "2026-11-26T20:36:18", "ref": ["memory/researcher/open-questions-log.md", 131], "focus_sig": "538eefb8", "reason": "lod-evict"}
 {"ts": "2026-11-26T20:36:18", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "538eefb8", "reason": "lod-evict"}
+{"ts": "2026-11-26T20:45:08", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "09ae6cb7", "reason": "lod-evict"}
+{"ts": "2026-11-26T20:45:08", "ref": ["memory/goals/archive/researcher-2026-11-20b.md", 5], "focus_sig": "09ae6cb7", "reason": "lod-evict"}

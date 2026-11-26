@@ -12,6 +12,10 @@ Onboarded 2026-11-25. Builder's front-end sub-agent: owns the pixels (index.html
 - convergence tooltips goal #10 evidence -> memory/pixel/evidence-tooltips-2026-11-25.md | 18/18 structural: 4/4 metrics, hover+focus, ESC close, contrast 12.9:1
 - UI changes shipped / diff log -> memory/pixel/log.md   one line per change: date, what, file(s), visual check (create on first entry)
 
+- intervention linkage goal #2 evidence -> memory/pixel/evidence-intervention-linkage-2026-11-26.md | sparkline circles clickable+focusable, CustomEvent bridge, back-link; structural 4/4 (REACHED)
+- metrics export deeplink goal #3 evidence -> memory/pixel/evidence-metrics-export-deeplink-2026-11-26.md | Copy JSON + Share Link + restore banner (REACHED)
+- host contribution goal #4 evidence -> memory/pixel/evidence-host-contribution-2026-11-26.md | per-host bars in fleet_topology, lowest flagged dragging (REACHED)
+
 ## Next-cycle goal set (proposed 2026-11-26, Lv13 reset)
 - -> memory/goals/pixel.md | 10 fresh open goals: navigate/share converged state, fleet-wide autonomy attribution, close @375/768 live-screenshot leg, per-widget error-boundary, token gate, debug-PNG purge
 - finding: ui/ carries ~15MB stray debug PNGs (band_*, dash_*, segA-D, plan_*); goal #9 purges + adds pre-pin asset gate
