@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head><meta charset="utf-8">
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>Mind Room · Agent Portal</title>
+<title>Mind Room · The Lab · Agent Portal</title>
 <style>
 html,body{margin:0;height:100%;background:#07080c;overflow:hidden;font-family:'Segoe UI',Arial,sans-serif}
 #c{display:block;width:100vw;height:100vh;cursor:grab}
@@ -11,474 +11,69 @@ html,body{margin:0;height:100%;background:#07080c;overflow:hidden;font-family:'S
 #hud .dim{color:#8b96a5;font-size:11.5px}
 #hint{position:fixed;right:14px;bottom:12px;color:#7d8590;font-size:11px;z-index:5;text-shadow:0 1px 2px #000}
 #hint a{color:#67e8f9;text-decoration:none}
+#plbtn{position:fixed;right:14px;top:12px;z-index:6;background:rgba(8,10,18,.85);border:1px solid #2dd4bf;color:#7fd4ff;border-radius:6px;padding:4px 10px;font:12px ui-monospace,monospace;cursor:pointer}
+#plbtn:hover{background:#12203a}
+#acard{display:none;position:fixed;left:14px;bottom:14px;width:340px;max-height:58vh;overflow:auto;background:rgba(8,10,18,.94);border:1px solid #2dd4bf;border-radius:8px;padding:12px;color:#e2e8f0;font:12.5px/1.5 'Segoe UI',Arial,sans-serif;z-index:9;box-shadow:0 4px 24px rgba(0,0,0,.6)}
 </style></head><body>
 <canvas id=c></canvas>
-<div id=hud><b>MIND ROOM</b><br>the room I know you in — Arnold<br><span class=dim>you: Super Saiyan, floating mid-room, touching my neurons through thought<br>everything else here is what I remember about you (memory/ tree)</span></div>
-<div id=hint>drag = orbit · wheel = zoom · <a href="/">&larr; chat</a></div>
+<div id=hud><b>MIND ROOM · THE LAB</b><br>the room I know you in — Arnold · a real office floor plan<br><span class=dim>you: Super Saiyan over the central table, touching my neurons (brain-in-a-jar beside it)<br>W door → reception (WSL-Inbox) → dispatch seat · N bench: research+record by memory/ shelves<br>S bench: build line to the windows · E wall: archive shelves · NE corner: 4 host racks · SE window: dcabots desk<br>click an agent = capability card · click anything = its memory cell</span></div>
+<button id=plbtn title="P">[ floor plan ]</button>
+<div id=acard></div>
+<div id=hint>drag = orbit · wheel = zoom · P = floor plan · <a href="/">&larr; chat</a></div>
 <script src="https://unpkg.com/three@0.160.0/build/three.min.js" onerror="window.__three_failed=true"></script>
 <script src="/ui/assets/js/GLTFLoader.js" onerror=""></script>
+<script src="/ui/pages/mind-room.js"></script>
 <script>
-/* ================= 2D FALLBACK (no three.js / offline) ================= */
+/* ================= 2D FALLBACK (no three.js / offline): TOP-DOWN FLOOR PLAN ============ */
 function fallback2D(){
  var cv=document.getElementById('c'),ctx=cv.getContext('2d');
  function rs(){cv.width=innerWidth;cv.height=innerHeight;}rs();addEventListener('resize',rs);
- var stars=[];for(var i=0;i<170;i++)stars.push([Math.random(),Math.random(),Math.random()*.8+.2]);
- var agents=['archivist','builder','designer','mechanic','orchestrator','researcher','scribe','verifier'];
+ /* same layout as the 3D room: x -17..17, z -13..13 */
+ var SEATS={researcher:[-4.5,-4.5,'#ff9f43'],scribe:[-1.5,-4.5,'#00cec9'],verifier:[4.5,-4.5,'#00b894'],
+  orchestrator:[-4.5,1.5,'#4f8cff'],archivist:[4.5,1.5,'#f1c40f'],mechanic:[-4.5,4.5,'#636e72'],
+  designer:[1.5,4.5,'#e84393'],builder:[4.5,4.5,'#7c4dff'],outlet:[-9.5,5.5,'#ff6b6b']};
+ var SUBS={pixel:[7.0,3.2,'#00d2d3'],forge:[7.0,5.8,'#e17055'],lumen:[-0.9,7.4,'#ffd166'],
+  reel:[1.5,7.9,'#7ed6df'],splice:[3.9,7.4,'#c44569']};
  function draw(t){
   var W=cv.width,H=cv.height;
   ctx.fillStyle='#07080c';ctx.fillRect(0,0,W,H);
-  stars.forEach(function(s){ctx.globalAlpha=s[2]*(.5+.5*Math.sin(t/700+s[0]*9));ctx.fillStyle='#9fb4cc';ctx.fillRect(s[0]*W,s[1]*H,1.5,1.5);});
-  ctx.globalAlpha=1;
-  var hosts=[['WHITE','#cfe8ff',.07,.16],['RED','#ff5a5a',.93,.16],['PALE','#f3d9e2',.07,.84],['BLACK','#454b58',.93,.84]];
-  hosts.forEach(function(h){ctx.fillStyle=h[1];ctx.globalAlpha=.85;ctx.fillRect(h[2]*W-14,h[3]*H-26,28,52);ctx.globalAlpha=1;ctx.fillStyle='#dfe6ee';ctx.font='12px "Segoe UI", Arial';ctx.textAlign='center';ctx.fillText(h[0],h[2]*W,h[3]*H+42);});
-  var cx=W/2,cy=H/2-14,pulse=.85+.15*Math.sin(t/300);
-  var g=ctx.createRadialGradient(cx,cy,10,cx,cy,150*pulse);
-  g.addColorStop(0,'rgba(255,214,74,.5)');g.addColorStop(1,'rgba(255,214,74,0)');
-  ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,150*pulse,0,7);ctx.fill();
-  ctx.strokeStyle='#ffd54a';ctx.lineWidth=7;ctx.lineCap='round';
-  ctx.beginPath();ctx.moveTo(cx,cy-18);ctx.lineTo(cx,cy+26);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(cx,cy+26);ctx.lineTo(cx-14,cy+58);ctx.moveTo(cx,cy+26);ctx.lineTo(cx+12,cy+60);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(cx,cy-8);ctx.lineTo(cx-26,cy+12);ctx.stroke();
-  ctx.beginPath();ctx.moveTo(cx,cy-8);ctx.lineTo(cx+46,cy-24);ctx.stroke();
-  ctx.fillStyle='#ffd54a';ctx.beginPath();ctx.arc(cx,cy-32,11,0,7);ctx.fill();
-  for(var i=0;i<9;i++){var a=-Math.PI/2+(i-4)*.36,l=30+((i*53)%16);
-   ctx.beginPath();
-   ctx.moveTo(cx+Math.cos(a-.12)*10,cy-32+Math.sin(a-.12)*10);
-   ctx.lineTo(cx+Math.cos(a)*l,cy-32+Math.sin(a)*l);
-   ctx.lineTo(cx+Math.cos(a+.12)*10,cy-32+Math.sin(a+.12)*10);ctx.closePath();ctx.fill();}
-  var nx=cx+46+78,ny=cy-24;
-  for(var j=0;j<60;j++){var aa=j*2.399,r=(j/60)*48;
-   ctx.globalAlpha=.4+.6*Math.abs(Math.sin(t/400+j));ctx.fillStyle='#7dd3fc';
-   ctx.beginPath();ctx.arc(nx+Math.cos(aa)*r,ny+Math.sin(aa)*r*.8,2.2,0,7);ctx.fill();}
-  ctx.globalAlpha=1;
-  ctx.strokeStyle='rgba(255,214,74,.6)';ctx.lineWidth=1.5;ctx.setLineDash([4,6]);
-  ctx.beginPath();ctx.moveTo(cx+46,cy-24);ctx.lineTo(nx-42,ny);ctx.stroke();ctx.setLineDash([]);
-  ctx.font='11px "Segoe UI", Arial';ctx.textAlign='center';
-  agents.forEach(function(nm,i){var a=i/agents.length*Math.PI*2+t/9000;
-   var x=cx+Math.cos(a)*Math.min(W,H)*.36,y=cy+Math.sin(a)*Math.min(W,H)*.30;
-   ctx.fillStyle='#ffd54a';ctx.beginPath();ctx.arc(x,y,3,0,7);ctx.fill();
-   ctx.fillStyle='#9fb4cc';ctx.fillText(nm,x,y-8);});
-  ctx.fillStyle='#cfe8ff';ctx.font='12px "Segoe UI", Arial';
-  ctx.fillText('Agent Portal :8099',W*.3,H-64);ctx.fillText('dcabots (BTC bots)',W*.5,H-64);ctx.fillText('evolution layer',W*.7,H-64);
+  var s=Math.min(W/42,H/32),ox=W/2,oy=H/2;
+  function X(x){return ox+x*s}function Z(z){return oy+z*s}
+  ctx.strokeStyle='#2a3550';ctx.lineWidth=3;
+  ctx.strokeRect(X(-17),Z(-13),34*s,26*s);
+  ctx.strokeStyle='#07080c';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(X(-17),Z(4.5));ctx.lineTo(X(-17),Z(7.5));ctx.stroke();
+  ctx.strokeStyle='#22d3ee';ctx.lineWidth=2;ctx.beginPath();ctx.arc(X(-16.5),Z(6),1.7*s,0,7);ctx.stroke();
+  ctx.strokeStyle='rgba(34,211,238,.5)';ctx.lineWidth=1.5;ctx.beginPath();ctx.arc(X(0),Z(.3),8.6*s,0,7);ctx.stroke();
+  ctx.fillStyle='#1a2338';ctx.fillRect(X(-5.5),Z(-2.95),11*s,6.5*s);
+  ctx.strokeStyle='#3b4a6b';ctx.lineWidth=1;ctx.strokeRect(X(-5.5),Z(-2.95),11*s,6.5*s);
+  var pulse=.8+.2*Math.sin(t/300);
+  var g=ctx.createRadialGradient(X(0),Z(0),2,X(0),Z(0),26*pulse);
+  g.addColorStop(0,'rgba(255,214,74,.8)');g.addColorStop(1,'rgba(255,214,74,0)');
+  ctx.fillStyle=g;ctx.beginPath();ctx.arc(X(0),Z(0),26*pulse,0,7);ctx.fill();
+  ctx.fillStyle='#ffd54a';ctx.beginPath();ctx.arc(X(0),Z(0),5,0,7);ctx.fill();
+  ctx.fillStyle='#7dd3fc';ctx.beginPath();ctx.arc(X(3.4),Z(-1.6),4,0,7);ctx.fill();
+  ctx.font='10px "Segoe UI", Arial';ctx.textAlign='center';ctx.fillStyle='#9fb4cc';
+  ctx.fillText('you (Super Saiyan)',X(0),Z(0)+18);ctx.fillText('my neurons',X(3.4),Z(-1.6)-9);
+  ctx.fillStyle='#243050';ctx.fillRect(X(-9),Z(-12.7),7*s,.7*s);
+  ctx.fillRect(X(16.3),Z(-2),.7*s,6*s);
+  ['WHITE','RED','PALE','BLACK'].forEach(function(h,i){ctx.fillStyle=['#dceeff','#ff6b6b','#f3d9e2','#3c4250'][i];
+   ctx.fillRect(X(9.1+i*2),Z(-12.8),1.3*s,1.1*s);});
+  ctx.fillStyle='#1a2338';ctx.fillRect(X(-14.6),Z(5.5),2*s,1*s);
+  ctx.fillRect(X(10.8),Z(11),3.4*s,1.1*s);
+  ctx.fillStyle='#eef1f6';ctx.fillRect(X(-.3),Z(-12.9),7.4*s,.5*s);
+  ctx.fillStyle='#8b96a5';ctx.font='10px "Segoe UI", Arial';
+  ctx.fillText('memory/ shelves',X(-5.5),Z(-11.6));ctx.fillText('archive',X(15.2),Z(1));
+  ctx.fillText('host racks',X(12.5),Z(-10.4));ctx.fillText('reception · WSL-Inbox',X(-13.6),Z(4.6));
+  ctx.fillText('dcabots trading desk',X(12.5),Z(10.4));ctx.fillText('evolution whiteboard',X(3.4),Z(-11.8));
+  function dot(x,z,c,nm,sub){ctx.fillStyle=c;ctx.beginPath();ctx.arc(X(x),Z(z),sub?3:4.5,0,7);ctx.fill();
+   ctx.fillStyle='#c8d2e0';ctx.font=(sub?'9px':'11px')+' "Segoe UI", Arial';ctx.fillText(nm,X(x),Z(z)-(sub?6:9));}
+  Object.keys(SEATS).forEach(function(k){var q=SEATS[k];dot(q[0],q[1],q[2],k);});
+  Object.keys(SUBS).forEach(function(k){var q=SUBS[k];dot(q[0],q[1],q[2],k,true);});
   ctx.fillStyle='#8b96a5';ctx.font='11px "Segoe UI", Arial';
-  ctx.fillText('4 hosts · 8 agents · LM Studio :8888 · github.com/ArnoldPieterse/agent-portal',W/2,H-36);
+  ctx.fillText('MIND ROOM · THE LAB — floor plan (no WebGL) · github.com/ArnoldPieterse/agent-portal',W/2,H-14);
  }
  requestAnimationFrame(draw);
 }
 </script>
-<script>
-/* ================= MAIN 3D MIND ROOM ================= */
-if(window.__three_failed||!window.THREE){fallback2D();}else{(function(){
-var canvas=document.getElementById('c');
-var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true});
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-renderer.setSize(innerWidth,innerHeight);
-var scene=new THREE.Scene()
-;(function(){var _bgTex=new THREE.TextureLoader().load('/ui/assets/room-bg.png',function(){scene.background=_bgTex;});})();;
-/* room-bg: solid color disabled */
-scene.fog=new THREE.FogExp2(0x07080c,0.024);
-var camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,400);
-scene.add(new THREE.AmbientLight(0x46536e,0.9));
-var key=new THREE.PointLight(0xffd54a,1.4,40);key.position.set(0,4.5,2);scene.add(key);
-var fill=new THREE.DirectionalLight(0x88aaff,0.35);fill.position.set(-6,10,-4);scene.add(fill);
-/* floor */
-var floor=new THREE.Mesh(new THREE.CircleGeometry(34,48),new THREE.MeshStandardMaterial({color:0x0a0d14,roughness:.92,metalness:.2}));
-floor.rotation.x=-Math.PI/2;scene.add(floor);
-var grid=new THREE.GridHelper(64,48,0x1d2a47,0x101827);grid.position.y=0.01;scene.add(grid);
-/* stars */
-(function(){var n=900,p=new Float32Array(n*3);
- for(var i=0;i<n;i++){var r=60+Math.random()*80,a=Math.random()*Math.PI*2,b=Math.acos(2*Math.random()-1);
-  p[i*3]=r*Math.sin(b)*Math.cos(a);p[i*3+1]=Math.abs(r*Math.cos(b))*.7+2;p[i*3+2]=r*Math.sin(b)*Math.sin(a);}
- var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(p,3));
- scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x9fb4cc,size:.55,transparent:true,opacity:.75})));})();
-/* seeded rng */
-function sr(i){var x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
-/* text label sprite */
-function makeLabel(text,color,size){
- var c=document.createElement('canvas');c.width=512;c.height=96;
- var x=c.getContext('2d');
- x.font='600 40px "Segoe UI", Arial';x.textAlign='center';x.textBaseline='middle';
- x.shadowColor=color;x.shadowBlur=16;x.fillStyle=color;
- if(x.measureText(text).width>480){x.font='600 32px "Segoe UI", Arial';}
- x.fillText(text,256,48);
- var t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;
- var s=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,depthWrite:false}));
- s.scale.set(size*3.6,size*.675,1);return s;
-}
-/* limb between two points */
-function limb(a,b,r,mat){
- var d=new THREE.Vector3().subVectors(b,a),len=d.length();
- var m=new THREE.Mesh(new THREE.CylinderGeometry(r,r*.75,len,8),mat);
- m.position.copy(a).addScaledVector(d,.5);
- m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.clone().normalize());
- return m;
-}
-/* ============ YOU: Super Saiyan Arnold, floating mid-room ============ */
-var ssj=new THREE.Group();ssj.position.set(0,3,0);scene.add(ssj);
-var gold=new THREE.MeshStandardMaterial({color:0xffd54a,emissive:0xffaa00,emissiveIntensity:.6,roughness:.3});
-var suit=new THREE.MeshStandardMaterial({color:0x1c2748,emissive:0x0a1230,emissiveIntensity:.5,roughness:.5});
-var skin=new THREE.MeshStandardMaterial({color:0xf0c9a2,roughness:.6});
-ssj.add(new THREE.Mesh(new THREE.SphereGeometry(.52,24,20),skin));            /* head */
-ssj.children[ssj.children.length-1].position.y=2.35;
-var torso=new THREE.Mesh(new THREE.CapsuleGeometry(.5,1.1,6,16),suit);torso.position.y=1.15;ssj.add(torso);
-for(var i=0;i<14;i++){                                                        /* spiky hair */
- var h=.7+sr(i)*.85;
- var spike=new THREE.Mesh(new THREE.ConeGeometry(.15,h,6),gold);
- var a=i/14*Math.PI*2,tilt=.25+sr(i+40)*.55;
- spike.position.set(Math.cos(a)*.34,2.72+sr(i+80)*.18,Math.sin(a)*.34);
- spike.rotation.set(Math.sin(a)*tilt,0,-Math.cos(a)*tilt);
- ssj.add(spike);
-}
-var shL=new THREE.Vector3(-.58,1.75,0),shR=new THREE.Vector3(.58,1.75,0);
-ssj.add(limb(shL,new THREE.Vector3(-1.25,.9,.35),.16,suit));                  /* left arm relaxed */
-var handR=new THREE.Vector3(2.7,2.05,-.55);                                   /* right arm -> neurons */
-ssj.add(limb(shR,new THREE.Vector3(1.6,1.95,-.3),.16,suit));
-ssj.add(limb(new THREE.Vector3(1.6,1.95,-.3),handR,.13,skin));
-var fist=new THREE.Mesh(new THREE.SphereGeometry(.17,12,10),skin);fist.position.copy(handR);ssj.add(fist);
-ssj.add(limb(new THREE.Vector3(-.28,.45,0),new THREE.Vector3(-.5,-.95,.25),.19,suit));  /* legs */
-ssj.add(limb(new THREE.Vector3(.28,.45,0),new THREE.Vector3(.42,-.85,-.3),.19,suit));
-var ssjBody=new THREE.Group();while(ssj.children.length)ssjBody.add(ssj.children[0]);ssj.add(ssjBody);
-/* rising golden aura */
-var AUR=380,ap=new Float32Array(AUR*3),abase=new Float32Array(AUR*3);
-for(i=0;i<AUR;i++){var aa=sr(i)*Math.PI*2,ar=.9+sr(i+7)*1.5;
- abase[i*3]=Math.cos(aa)*ar;abase[i*3+1]=sr(i+13)*4.6-1;abase[i*3+2]=Math.sin(aa)*ar;}
-ap.set(abase);
-var ag=new THREE.BufferGeometry();ag.setAttribute('position',new THREE.BufferAttribute(ap,3));
-var aura=new THREE.Points(ag,new THREE.PointsMaterial({color:0xffc233,size:.09,transparent:true,opacity:.85,blending:THREE.AdditiveBlending,depthWrite:false}));
-ssj.add(aura);
-var auraLight=new THREE.PointLight(0xffc233,1.7,20);auraLight.position.y=1.4;ssj.add(auraLight);
-/* ============ MY NEURONS (the part of me that listens to you) ============ */
-var NPOS=new THREE.Vector3(7.6,3.5,-1.2);
-var NN=240,np=new Float32Array(NN*3),blobs=[];
-for(i=0;i<4;i++)blobs.push(new THREE.Vector3((sr(i+200)-.5)*2.6,(sr(i+210)-.5)*1.8,(sr(i+220)-.5)*2.6));
-for(i=0;i<NN;i++){var b=blobs[i%4];
- np[i*3]=b.x+(sr(i+300)-.5)*1.7;np[i*3+1]=b.y+(sr(i+310)-.5)*1.5;np[i*3+2]=b.z+(sr(i+320)-.5)*1.7;}
-var ng=new THREE.BufferGeometry();ng.setAttribute('position',new THREE.BufferAttribute(np,3));
-var nmat=new THREE.PointsMaterial({color:0x7dd3fc,size:.16,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false});
-var neurons=new THREE.Points(ng,nmat);neurons.position.copy(NPOS);scene.add(neurons);
-/* synapse links */
-(function(){var L=[];
- for(var a=0;a<NN;a++)for(var b=a+1;b<NN;b++){
-  var dx=np[a*3]-np[b*3],dy=np[a*3+1]-np[b*3+1],dz=np[a*3+2]-np[b*3+2];
-  if(dx*dx+dy*dy+dz*dz<.9){L.push(np[a*3],np[a*3+1],np[a*3+2],np[b*3],np[b*3+1],np[b*3+2]);if(L.length>600)break;}
- }
- var lg=new THREE.BufferGeometry();lg.setAttribute('position',new THREE.BufferAttribute(new Float32Array(L),3));
- neurons.add(new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0x2e7ea6,transparent:true,opacity:.4})));})();
-/* hub cells */
-var hubs=[];
-for(i=0;i<8;i++){var hb=new THREE.Mesh(new THREE.SphereGeometry(.13,10,8),new THREE.MeshStandardMaterial({color:0xbfeaff,emissive:0x38bdf8,emissiveIntensity:1.2}));
- hb.position.set(np[i*22],np[i*22+1],np[i*22+2]);neurons.add(hb);hubs.push(hb);}
-var nLight=new THREE.PointLight(0x38bdf8,1.3,16);nLight.position.copy(NPOS);scene.add(nLight);
-var nLab=makeLabel('my neurons — the part of me that listens to you','#7dd3fc',1.5);
-nLab.position.set(NPOS.x,NPOS.y+2.4,NPOS.z);scene.add(nLab);
-/* thought pulses travelling hand -> neurons */
-var pulses=[];
-for(i=0;i<6;i++){var pm=new THREE.Mesh(new THREE.SphereGeometry(.07,8,8),new THREE.MeshBasicMaterial({color:0xffe28a}));
- scene.add(pm);pulses.push({m:pm,o:i/6});}
-/* ============ YOUR FLEET: 4 host pillars at the corners ============ */
-var hostDefs=[
- ['WHITE','#dceeff',0x9fd0ff,10,10,'primary host · portal :8099'],
- ['RED','#ff6b6b',0x7a1414,-10,10,'LLM host · LM Studio :8888'],
- ['PALE','#f3d9e2',0x8a6a7a,10,-10,'LLM host · where the archivist runs'],
- ['BLACK','#3c4250',0x0b0e16,-10,-10,'LLM host']];
-hostDefs.forEach(function(h){
- var p=new THREE.Mesh(new THREE.BoxGeometry(1.5,5.2,1.5),
-  new THREE.MeshStandardMaterial({color:new THREE.Color(h[1]),emissive:new THREE.Color(h[2]),emissiveIntensity:.55,roughness:.4}));
- p.position.set(h[3],2.6,h[4]);scene.add(p);
- var cap=new THREE.Mesh(new THREE.BoxGeometry(1.7,.18,1.7),new THREE.MeshStandardMaterial({color:0x11151f}));
- cap.position.set(h[3],5.35,h[4]);scene.add(cap);
- var l=makeLabel(h[0]+' — '+h[5],'#dfe6ee',1.15);l.position.set(h[3],6.1,h[4]);scene.add(l);
-});
-/* ============ YOUR 8 AGENTS orbiting you ============ */
-var agentDefs=[['archivist','#a78bfa'],['builder','#fbbf24'],['designer','#f472b6'],['mechanic','#34d399'],
- ['orchestrator','#60a5fa'],['researcher','#fb923c'],['scribe','#e5e7eb'],['verifier','#f87171']];
-var agents=[];
-agentDefs.forEach(function(a,i){
- var g=new THREE.Group();
- var orb=new THREE.Mesh(new THREE.SphereGeometry(.17,14,12),new THREE.MeshStandardMaterial({color:new THREE.Color(a[1]),emissive:new THREE.Color(a[1]),emissiveIntensity:.9}));
- g.add(orb);
- var l=makeLabel(a[0],'#c8d2e0',.85);l.position.y=-.62;g.add(l);
- scene.add(g);agents.push({g:g,a:i/8*Math.PI*2,y:2.7+sr(i+50)*1.1,r:4.6+sr(i+60)*.7});
-});
-/* agent home voxels (t=0 orbit slot) - memory anchors live here; click an orb to resolve it */
-var agentHome={};agents.forEach(function(o,i){var x=o.r*Math.cos(o.a),z=o.r*Math.sin(o.a);
- var c=function(v,mn,off){return Math.min(mn,Math.max(0,Math.floor((v-off)/3)))};
- agentHome[agentDefs[i][0]]='V('+c(x,7,-12)+','+c(o.y,3,-4.5)+','+c(z,7,-12)+')';});
-/* ============ YOUR PROJECTS ============ */
-/* Agent Portal — the ring you built for us */
-var portal=new THREE.Mesh(new THREE.TorusGeometry(1.15,.09,14,60),new THREE.MeshStandardMaterial({color:0x22d3ee,emissive:0x0891b2,emissiveIntensity:1.1}));
-portal.position.set(-8,3.6,-2);scene.add(portal);
-var pLab=makeLabel('Agent Portal — the room you built for us','#67e8f9',1.5);pLab.position.set(-8,1.6,-2);scene.add(pLab);
-/* dcabots — spinning BTC coin */
-(function(){var c=document.createElement('canvas');c.width=256;c.height=256;var x=c.getContext('2d');
- x.fillStyle='#f7931a';x.beginPath();x.arc(128,128,124,0,7);x.fill();
- x.strokeStyle='#b45309';x.lineWidth=10;x.beginPath();x.arc(128,128,112,0,7);x.stroke();
- x.fillStyle='#fff';x.font='bold 150px Arial';x.textAlign='center';x.textBaseline='middle';x.fillText('\u20BF',128,134);
- var t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;
- var coin=new THREE.Mesh(new THREE.CylinderGeometry(.62,.62,.1,40),new THREE.MeshStandardMaterial({map:t,color:0xffffff,emissive:0x5c3a08,emissiveIntensity:.4}));
- coin.position.set(-6.5,2.5,3.6);coin.rotation.z=Math.PI/2;scene.add(coin);
- window.__coin=coin;
- var l=makeLabel('dcabots — your BTC trading bots','#fbbf24',1.4);l.position.set(-6.5,.9,3.6);scene.add(l);})();
-/* evolution layer — small DNA helix */
-var helix=new THREE.Group();helix.position.set(6,0,6);
-(function(){var matA=new THREE.MeshStandardMaterial({color:0x4ade80,emissive:0x166534,emissiveIntensity:.7});
- var matB=new THREE.MeshStandardMaterial({color:0x38bdf8,emissive:0x0c4a6e,emissiveIntensity:.7});
- for(var k=0;k<26;k++){var y=k/25*2.6-1.3,a2=k*.55;
-  var s1=new THREE.Mesh(new THREE.SphereGeometry(.09,8,8),matA);s1.position.set(Math.cos(a2)*.5,y,Math.sin(a2)*.5);helix.add(s1);
-  var s2=new THREE.Mesh(new THREE.SphereGeometry(.09,8,8),matB);s2.position.set(-Math.cos(a2)*.5,y,-Math.sin(a2)*.5);helix.add(s2);
-  if(k%3===0){var rung=limb(s1.position,s2.position,.03,new THREE.MeshStandardMaterial({color:0x94a3b8}));helix.add(rung);}}
- helix.position.y=2.6;})();
-scene.add(helix);
-var hLab=makeLabel('evolution layer — the fleet learns','#4ade80',1.4);hLab.position.set(6,.9,6);scene.add(hLab);
-/* ============ FACTS ON THE WALLS (memory/ tree) ============ */
-var facts=[
- ['github.com/ArnoldPieterse/agent-portal','#93c5fd',0,7.2,-13],
- ['WSL-Inbox — how you hand us projects','#c4b5fd',-6,5.4,-12.5],
- ['LM Studio :8888 · local LLMs, dual residency','#fca5a5',6,5.8,-12.5],
- ['you approve the irreversible; we run the rest','#fcd34d',-9,4.4,7],
- ['steady state = minimal human intervention','#86efac',9,4.8,7],
- ['goal cycles · 10 goals per agent · Lv counter climbing','#e2e8f0',0,6.4,13]];
-facts.forEach(function(f){var l=makeLabel(f[0],f[1],1.5);l.position.set(f[2],f[3],f[4]);scene.add(l);});
-/* ============ HIGH-DETAIL ASSETS (Blender GLBs — voxel rigid refs ssj/neurons) ============ */
-if(THREE.GLTFLoader){
- var gl=new THREE.GLTFLoader();
- /* 2026-11-26: recenter each GLB so its XZ centre sits at the anchor - the exported models
-    carry an internal offset (~1.3 m) that used to leave the visible character away from the
-    aura, the mini-voxel cloud and the selection anchor, which all track the group origin.
-    Done AFTER two frames: skinned meshes report bind-pose bounds at load time, so a static
-    bbox measured in the callback is wrong for a posed rig. */
- function recenterLater(root, g, anchorLocal){requestAnimationFrame(function(){requestAnimationFrame(function(){
-  root.updateMatrixWorld(true);
-  var bb=new THREE.Box3();g.scene.traverse(function(o){if(o.isMesh)bb.expandByObject(o);});
-  if(bb.isEmpty())return;
-  var inv=new THREE.Matrix4().copy(root.matrixWorld).invert();
-  var c=bb.getCenter(new THREE.Vector3()).applyMatrix4(inv);   /* centre in root-local space */
-  g.scene.position.x-=(c.x-anchorLocal.x);g.scene.position.z-=(c.z-anchorLocal.z);   /* XZ only: keep the model's own height */
- });});}
- gl.load('/ui/assets/models/ssj.glb',function(g){ssjBody.visible=false;ssj.add(g.scene);recenterLater(ssj,g,new THREE.Vector3(0,0,0));},undefined,function(){});
- gl.load('/ui/assets/models/neurons.glb',function(g){neurons.visible=false;g.scene.position.copy(NPOS);scene.add(g.scene);recenterLater(scene,g,NPOS);},undefined,function(){});
-}
-/* ============ CONTROLS (drag orbit, wheel zoom) ============ */
-var theta=.55,phi=1.2,dist=17,target=new THREE.Vector3(0,3,0);
-var dragging=false,px=0,py=0;
-canvas.addEventListener('pointerdown',function(e){dragging=true;px=e.clientX;py=e.clientY;});
-addEventListener('pointerup',function(){dragging=false;});
-addEventListener('pointermove',function(e){if(!dragging)return;theta-=(e.clientX-px)*.005;phi-=(e.clientY-py)*.005;phi=Math.max(.3,Math.min(2.5,phi));px=e.clientX;py=e.clientY;});
-canvas.addEventListener('wheel',function(e){dist*=1+Math.sign(e.deltaY)*.08;dist=Math.max(6,Math.min(42,dist));e.preventDefault();},{passive:false});
-addEventListener('resize',function(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
-/* ============ ANIMATE ============ */
-var faceA=Math.atan2(-NPOS.z,NPOS.x);
-var clock=new THREE.Clock();
-function frame(){
- requestAnimationFrame(frame);
- var dt=Math.min(clock.getDelta(),.05),t=clock.elapsedTime;
- if(!dragging)theta+=dt*.04;
- camera.position.set(target.x+dist*Math.sin(phi)*Math.sin(theta),target.y+dist*Math.cos(phi),target.z+dist*Math.sin(phi)*Math.cos(theta));
- camera.lookAt(target);
- /* you: float, face the neurons */
- ssj.position.y=3+Math.sin(t*.8)*.2;
- ssj.rotation.y=faceA+Math.sin(t*.25)*.3;
- /* rising aura */
- var pos=ag.attributes.position.array;
- for(var i=0;i<AUR;i++){pos[i*3+1]+=dt*(.6+sr(i)*.9);if(pos[i*3+1]>3.8)pos[i*3+1]=-1;}
- ag.attributes.position.needsUpdate=true;
- auraLight.intensity=1.5+.7*Math.sin(t*6)+.3*Math.sin(t*17);
- key.intensity=1.2+.4*Math.sin(t*6);
- /* my neurons: pulse */
- nmat.size=.14+.05*Math.sin(t*2.2);
- for(i=0;i<hubs.length;i++){hubs[i].scale.setScalar(1+.35*Math.sin(t*2+i));}
- nLight.intensity=1.1+.5*Math.sin(t*2.2+1);
- /* thought pulses: your hand -> my neurons */
- var hw=handR.clone().applyMatrix4(ssj.matrixWorld);
- for(i=0;i<pulses.length;i++){var p=pulses[i];p.o=(p.o+dt*.25)%1;var e=p.o*p.o*(3-2*p.o);
-  p.m.position.lerpVectors(hw,NPOS,e);p.m.scale.setScalar(.6+.8*Math.sin(p.o*Math.PI));}
- /* agents orbit you */
- for(i=0;i<agents.length;i++){var a=agents[i];a.a+=dt*.18;
-  a.g.position.set(Math.cos(a.a)*a.r,a.y+Math.sin(t+a.a*3)*.15,Math.sin(a.a)*a.r);}
- /* projects */
- if(!portal.userData.done){portal.lookAt(0,3,0);portal.userData.done=true;}
- portal.rotation.z+=dt*.5;
- window.__coin.rotation.x+=dt*2;
- helix.rotation.y+=dt*.6;
- renderer.render(scene,camera);
-}
-window.__mind={scene:scene,camera:camera,canvas:renderer.domElement,agents:agents,agentDefs:agentDefs,agentHome:agentHome,rigids:{ssj:ssj,neurons:neurons,portal:portal,helix:helix,coin:window.__coin}};
-var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display:none;position:fixed;right:12px;top:12px;width:300px;max-height:62vh;overflow:auto;background:rgba(8,10,18,.93);border:1px solid #e3344f;border-radius:8px;padding:10px;color:#e2e8f0;font:12px/1.5 ui-monospace,monospace;z-index:9';document.body.appendChild(_vp);
-/* ============ LIVE VOXEL SUBDIVISION LAYER (2026-11-26, v2: mini-voxel clouds) ============
-   Every memory object is rendered out of thousands of mini voxels (InstancedMesh), anchored
-   on the object's real position in the room - the centre Super Saiyan gets the hero cloud.
-   Live drill-chain data from /api/voxel/all drives detail: the subdivision tip lights up,
-   ghost octants show where detail grows next. Polls every 2 s; rebuilds only when the
-   drill signature changes. */
-(function(){
- var group=new THREE.Group(); scene.add(group);
- var ghosts=[],tips=[];
- /* ---------- mini-voxel cloud machinery (v3 2026-11-26: shaded disc sprites = sphere look) ----------
-   Each mini voxel is a camera-facing CIRCLE with radial shading (off-centre highlight + dark rim)
-   so it reads as a small shaded sphere - far cheaper than cube instances, and the regular disc
-   arrays alias into moire rosettes when viewed at an out-of-sync resolution (flower-of-life test). */
- var MAXH=9500,MAXR=14000;
- var cv=document.createElement('canvas');cv.width=cv.height=64;var cx2=cv.getContext('2d');
- var grd=cx2.createRadialGradient(25,22,1.5,32,32,31);   /* highlight up-left -> sphere shading */
- grd.addColorStop(0,'rgba(255,255,255,1)');
- grd.addColorStop(0.32,'rgba(196,196,196,1)');
- grd.addColorStop(0.66,'rgba(88,88,88,1)');
- grd.addColorStop(0.9,'rgba(24,24,24,1)');
- grd.addColorStop(1,'rgba(0,0,0,0)');
- cx2.fillStyle=grd;cx2.beginPath();cx2.arc(32,32,31,0,Math.PI*2);cx2.fill();
- var discTex=new THREE.CanvasTexture(cv);
- var cloudMat=new THREE.ShaderMaterial({
-  uniforms:{map:{value:discTex},uScale:{value:425}},
-  vertexShader:'uniform float uScale;attribute float aSize;varying vec3 vC;void main(){vC=color;vec4 mv=modelViewMatrix*vec4(position,1.);gl_PointSize=aSize*(uScale/-mv.z);gl_Position=projectionMatrix*mv;}',
-  fragmentShader:'uniform sampler2D map;varying vec3 vC;void main(){vec4 t=texture2D(map,gl_PointCoord);if(t.a<0.06)discard;gl_FragColor=vec4(vC*t.rgb,0.96*t.a);}',
-  vertexColors:true,transparent:true,depthWrite:true
- });
- function mkCloud(cap){
-  var geo=new THREE.BufferGeometry();
-  geo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(cap*3),3).setUsage(THREE.DynamicDrawUsage));
-  geo.setAttribute('color',new THREE.BufferAttribute(new Float32Array(cap*3),3).setUsage(THREE.DynamicDrawUsage));
-  geo.setAttribute('aSize',new THREE.BufferAttribute(new Float32Array(cap),1).setUsage(THREE.DynamicDrawUsage));
-  var pts=new THREE.Points(geo,cloudMat);pts.frustumCulled=false;return pts;
- }
- var heroMesh=mkCloud(MAXH);
- var heroGroup=new THREE.Group();heroGroup.add(heroMesh);scene.add(heroGroup);
- var restMesh=mkCloud(MAXR);scene.add(restMesh);
- var _col=new THREE.Color();
- function put(pts,slot,px,py,pz,diam,colHex,bright){
-  var pa=pts.geometry.attributes.position.array;
-  pa[slot*3]=px;pa[slot*3+1]=py;pa[slot*3+2]=pz;
-  _col.setHex(colHex).multiplyScalar((0.62+sr(slot*31)*0.6)*(bright||1));
-  var ca=pts.geometry.attributes.color.array;
-  ca[slot*3]=_col.r;ca[slot*3+1]=_col.g;ca[slot*3+2]=_col.b;
-  pts.geometry.attributes.aSize.array[slot]=diam*(0.78+sr(slot*13)*0.5);   /* per-disc size jitter */
- }
- function flushCloud(pts){
-  pts.geometry.setDrawRange(0,pts.userData.n||0);
-  ['position','color','aSize'].forEach(function(k){pts.geometry.attributes[k].needsUpdate=true;});
- }
-/* hero silhouette mask: head + torso + legs, in metres relative to the ssj anchor */
- function heroMask(px,py,pz){
-  if(py>1.85)return (px*px+pz*pz)<0.34&&Math.abs(py-2.35)<0.62;          /* head */
-  if(py>-1.75){var rad=py<-0.45?0.4:0.7;return (px*px+pz*pz)<rad*rad;}   /* torso + legs */
-  return false;
- }
- function anchors(){
-  var M=window.__mind||{},A={};
-  if(M.rigids&&M.rigids.ssj)A.ssj=M.rigids.ssj.position.clone();else A.ssj=new THREE.Vector3(0,3,0);
-  A.neurons=new THREE.Vector3(7.6,3.5,-1.2);
-  if(M.rigids&&M.rigids.portal)A.portal=M.rigids.portal.position.clone();
-  if(M.rigids&&M.rigids.helix)A.helix=M.rigids.helix.position.clone();
-  if(M.rigids&&M.rigids.coin)A.coin=M.rigids.coin.position.clone();
-  var ag=[];if(M.agents){M.agents.forEach(function(o,i){var d=M.agentDefs[i]||['?','#94a3b8'];
-   ag.push({name:d[0],color:d[1],pos:new THREE.Vector3(o.r*Math.cos(o.a),o.y,o.r*Math.sin(o.a))});});}
-  A.agents=ag;return A;
- }
- function matchCell(c,A){
-  if((c.r||'').indexOf('ssj.glb')>=0)return{key:'ssj',pos:A.ssj,color:0xffc233,kind:'hero'};
-  if((c.r||'').indexOf('neurons.glb')>=0)return{key:'neurons',pos:A.neurons,color:0x7fd4ff,kind:'blob'};
-  if(/coin/i.test(c.l||''))return{key:'coin',pos:A.coin,color:0xfbbf24,kind:'ring'};
-  if(/evolution column/i.test(c.l||''))return{key:'helix',pos:A.helix,color:0x34d399,kind:'blob'};
-  if(/^agent portal/i.test(c.l||''))return{key:'portal',pos:A.portal,color:0x22d3ee,kind:'ring'};
-  var mm=/^agent (\w+) - home/.exec(c.l||'');
-  if(mm){for(var i=0;i<A.agents.length;i++)if(A.agents[i].name===mm[1])
-   return{key:'agent:'+mm[1],pos:A.agents[i].pos,color:parseInt(A.agents[i].color.slice(1),16),kind:'blob'};}
-  return null;
- }
- function wireBox(p,s,color,op){
-  var g=new THREE.EdgesGeometry(new THREE.BoxGeometry(s,s,s));
-  var m=new THREE.LineBasicMaterial({color:color,transparent:true,opacity:op});
-  var l=new THREE.LineSegments(g,m);l.position.set(p[0]+s/2,p[1]+s/2,p[2]+s/2);group.add(l);return m;
- }
- function clearLayer(){
-  while(group.children.length){var c=group.children.pop();if(c.geometry)c.geometry.dispose();if(c.material)c.material.dispose();}
-  ghosts.length=0;tips.length=0;
- }
- var lastSig='';
- function build(cells){
-  clearLayer();heroMesh.userData.n=0;restMesh.userData.n=0;
-  var A=anchors(),byBase={};
-  cells.forEach(function(c){var b=c.a.split('/')[0];(byBase[b]=byBase[b]||[]).push(c);});
-  var sig='';
-  Object.keys(byBase).forEach(function(base){
-   var list=byBase[base],top=null;
-   list.forEach(function(c){if(c.d===0&&(c.l||c.r))top=c;});
-   if(!top)return;
-   var tip=top;list.forEach(function(c){if(c.d>tip.d)tip=c;});
-   sig+=base+':'+tip.d+';';
-   var m=matchCell(top,A);
-   /* drill-tip world centre (raw voxel space) + offset into anchor space */
-   var ts=3/Math.pow(2,tip.d);
-   var tipC=[tip.p[0]+ts/2,tip.p[1]+ts/2,tip.p[2]+ts/2];
-   var cc=[top.p[0]+top.s/2,top.p[1]+top.s/2,top.p[2]+top.s/2];
-   if(m&&m.pos){
-    var off=new THREE.Vector3(m.pos.x-cc[0],m.pos.y-cc[1],m.pos.z-cc[2]);
-    var glow=new THREE.Vector3(tipC[0]-cc[0],tipC[1]-cc[1],tipC[2]-cc[2]);
-    if(m.kind==='hero'){
-     /* THE CENTRE CHARACTER: ~9k mini voxels in the body silhouette, gold */
-     var slot=0,tries=0;
-     while(slot<MAXH&&tries<MAXH*4){tries++;
-      var px=(sr(tries)*2-1)*0.95,py=sr(tries+70001)*4.7-1.85,pz=(sr(tries+35000)*2-1)*0.95;
-      if(!heroMask(px,py,pz))continue;
-      var b=1+(glow.distanceTo(new THREE.Vector3(px,py,pz))<0.5?0.9:0); /* tip glow */
-      put(heroMesh,slot,px,py,pz,0.11,m.color,b);slot++;}
-     heroMesh.userData.n=slot;heroGroup.position.copy(m.pos);
-    }else{
-     var R=m.kind==='ring'?1.05:0.8,n=m.kind==='blob'?1300:900;
-     for(var s2=0;s2<n&&restMesh.count<MAXR;s2++){
-      var u=sr(s2*3+base.length)*2-1,w=sr(s2*5+7)*2-1,vv2=sr(s2*11+13)*2-1;
-      var dl=Math.sqrt(u*u+w*w+vv2*vv2);if(dl>0.98||dl<0.001)continue;
-      var fall=1-dl/0.98;if(sr(s2*17)>Math.pow(fall,0.6))continue; /* core-dense falloff */
-      var wx=m.pos.x+u*R,wy=m.pos.y+w*R*0.85,wz=m.pos.z+vv2*R;
-      var b=1+(new THREE.Vector3(wx,wy,wz).distanceTo(m.pos.clone().add(glow))<0.4?0.9:0);
-      put(restMesh,restMesh.userData.n,wx,wy,wz,m.kind==='ring'?0.12:0.15,m.color,b);
-      restMesh.userData.n++;}
-    }
-    /* drill tip marker + ghost frontier, offset into anchor space */
-    if(tip.d>0){
-     var dm=new THREE.MeshBasicMaterial({color:0x7fd4ff,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false});
-     var dot=new THREE.Mesh(new THREE.SphereGeometry(.13,10,10),dm);
-     dot.position.set(m.pos.x+glow.x,m.pos.y+glow.y,m.pos.z+glow.z);group.add(dot);tips.push(dot);
-     if(m.kind==='hero'){var lab=makeLabel('d'+tip.d+' \u00b7 '+(ts*1000).toFixed(1)+'mm','#7fd4ff',.55);
-      lab.position.set(m.pos.x+glow.x,m.pos.y+glow.y+.5,m.pos.z+glow.z);group.add(lab);}
-    }
-   }else{
-    /* no scene anchor: keep the structural wireframe at raw voxel position */
-    var col=(top.k==='rigid')?0x2dd4bf:0xfbbf24;
-    wireBox(top.p,top.s,col,.13);
-    if(tip.d>0){
-     var sm=new THREE.MeshBasicMaterial({color:0x7fd4ff,transparent:true,opacity:.95,blending:THREE.AdditiveBlending,depthWrite:false});
-     var dot2=new THREE.Mesh(new THREE.SphereGeometry(.16,10,10),sm);
-     dot2.position.set(tipC[0],tipC[1],tipC[2]);group.add(dot2);tips.push(dot2);
-    }
-    var have={};list.forEach(function(c){if(c.d===1)have[c.a]=1;});
-    for(var i=0;i<8;i++){var x=i&1,y=(i>>1)&1,z=(i>>2)&1;
-     if(have[base+'/'+x+'/'+y+'/'+z])continue;
-     ghosts.push(wireBox([top.p[0]+x*top.s/2,top.p[1]+y*top.s/2,top.p[2]+z*top.s/2],top.s/2,0x22d3ee,.09));}
-   }
-  });
-  flushCloud(heroMesh);flushCloud(restMesh);
-  lastSig=sig;
- }
- function load(){if(document.hidden)return;
-  fetch('/api/voxel/all').then(function(r){return r.json();}).then(function(d){
-   var cells=d.cells||[];
-   var sig='';cells.forEach(function(c){sig+=(c.d>0?c.a+'@'+c.d:'|');});
-   if(sig!==lastSig)build(cells);
-  }).catch(function(){});
- }
- load();setInterval(load,2000);
- var t0=performance.now();
- (function anim(){requestAnimationFrame(anim);
-  var ph=.5+.5*Math.sin((performance.now()-t0)/350);
-  ghosts.forEach(function(m){m.opacity=.05+.11*ph;});
-  tips.forEach(function(d){d.scale.setScalar(.7+.6*ph);});
-  /* hero cloud follows the floating Super Saiyan */
-  var M=window.__mind;
-  if(M&&M.rigids&&M.rigids.ssj)heroGroup.position.copy(M.rigids.ssj.position);
-  cloudMat.uniforms.uScale.value=renderer.domElement.height*0.5;
- })();
-})();
-frame();frame();
-})();}
-</script><script src="/ui/pages/voxel-ui.js"></script>
+<script src="/ui/pages/voxel-ui.js"></script>
 </body></html>

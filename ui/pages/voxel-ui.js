@@ -21,9 +21,9 @@ var box=null;
    Super Saiyan floats at (0,3,0), not in his raw voxel cell) - the selection highlight
    must follow the object, or it looks like a stray box in a random spot. */
 function anchorNear(p){var m=window.__mind;if(!m||!THREE)return null;var c=[];
- if(m.rigids){c.push([m.rigids.ssj.position,2.8]);c.push([new THREE.Vector3(7.6,3.5,-1.2),1.7]);
+ if(m.rigids){c.push([m.rigids.ssj.position,2.8]);if(m.neuronsPos)c.push([m.neuronsPos,1.8]);
   ['portal','helix','coin'].forEach(function(k){if(m.rigids[k])c.push([m.rigids[k].position,1.5]);});}
- if(m.agents)m.agents.forEach(function(o){c.push([new THREE.Vector3(o.r*Math.cos(o.a),o.y,o.r*Math.sin(o.a)),1.3]);});
+ if(m.agents)m.agents.forEach(function(o){if(o.pos)c.push([o.pos,1.6]);});
  for(var i=0;i<c.length;i++)if(p.distanceTo(c[i][0])<c[i][1])return c[i][0];return null;}
 function markPoint(p){var m=window.__mind;if(!m||!THREE)return;if(box)m.scene.remove(box);
  var o=[-12,-4.5,-12],f=function(v,i){return Math.min(i===1?3:7,Math.max(0,Math.floor((v-o[i])/3)))};
@@ -51,8 +51,8 @@ function init(){var m=window.__mind;if(!m||!THREE)return;
   var o=h0.object,ag=-1;
   while(o){for(var j=0;j<(m.agents?m.agents.length:0);j++){if(m.agents[j].g===o)ag=j;}
    if(ag>=0)break;o=o.parent;}
-  if(ag>=0&&m.agentHome&&m.agentDefs){var nm=m.agentDefs[ag][0];
-   if(m.agentHome[nm]){show(m.agentHome[nm]);markPoint(h0.point);return;}}
+  if(ag>=0&&m.agentHome){var nm=(m.agents[ag]||{}).id;
+   if(nm&&m.agentHome[nm]){show(m.agentHome[nm]);markPoint(h0.point);return;}}
   show(cellOf(h0.point));markPoint(h0.point);});}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 

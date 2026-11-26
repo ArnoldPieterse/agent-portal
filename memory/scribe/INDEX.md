@@ -1,5 +1,13 @@
 # SCRIBE INDEX — synthesis + compression leaves (newest first).
-Last updated: 2026-11-25.
+Last updated: 2026-11-26.
+
+## Cycle 26 (Fleet Autonomy Convergence) — started 2026-11-26
+- goal #1 autonomous goal-set synthesizer -> memory/scribe/goal_synth.py   **REACHED** 5 lanes drafted, 7 goals, 0 collisions
+- goal #2 convergence invariant contract -> memory/scribe/convergence_contract.py   **REACHED** 4 invariants (I1-I4); cycle 18: NOT CONVERGED (I3 failing)
+- goal #3 steady-state re-certification loop -> memory/scribe/steady_state_cert.py   **REACHED** 4 criteria; level system L1@2/L2@5
+- goal #4 residual human-role spec -> memory/scribe/human-operating-manual.md   **REACHED** 4 actions (A1-A4) w/ trigger+SLA+skip-consequence
+- goal #5 convergence memory compression -> memory/scribe/fleet-history.md   **REACHED** 5 cycles→547 tokens; 3 decisions preserved verbatim; archive: memory/scribe/archive/fleet-history/
+- goal #6 goal-set drift detector -> memory/scribe/goalset_drift.py   **REACHED** 6 cycles compared, 22 drift events; synthetic tests pass
 
 ## Cycle 18 (Fleet Autonomy Convergence) — started 2026-11-25
 - fleet-state-snapshot-2026-11-25.md   mid-pass: Red host UP/model DOWN, Forge 2→6, Archivist +2, cross-lane deps

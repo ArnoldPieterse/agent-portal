@@ -1,0 +1,143 @@
+{
+  "audit": "dispatch-anti-stale-conformance",
+  "run_ts": "2026-11-26T10:33:33.212410+00:00",
+  "window_n": 200,
+  "work_passes_total": 1041,
+  "work_passes_window": 200,
+  "passes_examined": 154,
+  "dispatch_history_records": 3,
+  "ssot_drift_rows": [
+    {
+      "agent": "orchestrator",
+      "live_total": 10,
+      "live_open": 8,
+      "live_reached": 2,
+      "ssot_total": 10,
+      "ssot_open": 6,
+      "ssot_reached": 4,
+      "matches": false,
+      "stale_ssot": false
+    },
+    {
+      "agent": "researcher",
+      "live_total": 11,
+      "live_open": 8,
+      "live_reached": 3,
+      "ssot_total": 11,
+      "ssot_open": 0,
+      "ssot_reached": 11,
+      "matches": false,
+      "stale_ssot": true
+    },
+    {
+      "agent": "builder",
+      "live_total": 10,
+      "live_open": 9,
+      "live_reached": 1,
+      "ssot_total": 10,
+      "ssot_open": 7,
+      "ssot_reached": 3,
+      "matches": false,
+      "stale_ssot": false
+    },
+    {
+      "agent": "archivist",
+      "live_total": 10,
+      "live_open": 10,
+      "live_reached": 0,
+      "ssot_total": 10,
+      "ssot_open": 6,
+      "ssot_reached": 4,
+      "matches": false,
+      "stale_ssot": false
+    },
+    {
+      "agent": "scribe",
+      "live_total": 10,
+      "live_open": 7,
+      "live_reached": 3,
+      "ssot_total": 10,
+      "ssot_open": 4,
+      "ssot_reached": 6,
+      "matches": false,
+      "stale_ssot": false
+    },
+    {
+      "agent": "verifier",
+      "live_total": 10,
+      "live_open": 10,
+      "live_reached": 0,
+      "ssot_total": 10,
+      "ssot_open": 6,
+      "ssot_reached": 4,
+      "matches": false,
+      "stale_ssot": false
+    },
+    {
+      "agent": "designer",
+      "live_total": 10,
+      "live_open": 10,
+      "live_reached": 0,
+      "ssot_total": 10,
+      "ssot_open": 7,
+      "ssot_reached": 3,
+      "matches": false,
+      "stale_ssot": false
+    },
+    {
+      "agent": "mechanic",
+      "live_total": 10,
+      "live_open": 10,
+      "live_reached": 0,
+      "ssot_total": 10,
+      "ssot_open": 9,
+      "ssot_reached": 1,
+      "matches": false,
+      "stale_ssot": false
+    },
+    {
+      "agent": "outlet",
+      "live_total": 10,
+      "live_open": 10,
+      "live_reached": 0,
+      "ssot_total": 10,
+      "ssot_open": 9,
+      "ssot_reached": 1,
+      "matches": false,
+      "stale_ssot": false
+    },
+    {
+      "agent": "pixel",
+      "live_total": 10,
+      "live_open": 10,
+      "live_reached": 0,
+      "ssot_total": 10,
+      "ssot_open": 9,
+      "ssot_reached": 1,
+      "matches": false,
+      "stale_ssot": false
+    },
+    {
+      "agent": "forge",
+      "live_total": 10,
+      "live_open": 8,
+      "live_reached": 2,
+      "ssot_total": 10,
+      "ssot_open": 8,
+      "ssot_reached": 2,
+      "matches": true,
+      "stale_ssot": false
+    }
+  ],
+  "stale_ssot_agents": [
+    "researcher"
+  ],
+  "stale_ssot_count": 1,
+  "idle_contribution_passes": 0,
+  "true_stale_dispatches": 0,
+  "per_agent_true_stale": {},
+  "stale_samples": [],
+  "ssot_fresh": false,
+  "conformance_pass": false,
+  "ssot_ledger_generated": "2026-11-26"
+}
