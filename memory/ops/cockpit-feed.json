@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T12:44:50.162662+00:00",
+  "ts": "2026-11-26T12:54:52.633891+00:00",
   "health_score": 50,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -89,7 +89,7 @@
     }
   ],
   "goals": {
-    "fleet_pct": 85.7,
+    "fleet_pct": 89.7,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -152,9 +152,9 @@
         "pct": 0.0
       },
       "archivist": {
-        "total": 1,
-        "verified": 0,
-        "pct": 0.0
+        "total": 2,
+        "verified": 2,
+        "pct": 100.0
       },
       "builder-assist-mechanic2-autorestart-2026-11-19": {
         "total": 1,
@@ -432,8 +432,8 @@
         "pct": 0.0
       },
       "forge": {
-        "total": 2,
-        "verified": 2,
+        "total": 5,
+        "verified": 5,
         "pct": 100.0
       },
       "mechanic-cycle9-proposals-2026-11-23": {
@@ -507,8 +507,8 @@
         "pct": 0.0
       },
       "pixel": {
-        "total": 3,
-        "verified": 3,
+        "total": 6,
+        "verified": 6,
         "pct": 100.0
       },
       "researcher-attempts-cycle3-2026-11-18": {
@@ -622,8 +622,8 @@
         "pct": 0.0
       }
     },
-    "total_goals": 28,
-    "total_verified": 24
+    "total_goals": 29,
+    "total_verified": 26
   },
   "open_blockers": 29,
   "autonomous_actions": [
