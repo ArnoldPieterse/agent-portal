@@ -1,0 +1,1 @@
+{"timestamp": "2026-11-25T05:48:39.351889", "score": 71.3, "fleet_readiness": 35.0, "components": {"pass_autonomy": 64.3, "duration_score": 81.3, "rework_score": 92.5, "trend_score": 50.0}, "fleet_components": {"host_uptime_pct": 25.0, "vram_stability": 100, "model_load_rate": 0.0}, "source": "backfill-2026-11-26"}

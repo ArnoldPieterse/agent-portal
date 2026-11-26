@@ -1,11 +1,13 @@
 {
   "mode": "WORK",
-  "timestamp": "2026-11-26T09:34:46.124842+00:00",
-  "goal_pct": 37.0,
+  "timestamp": "2026-11-26T09:54:48.008416+00:00",
+  "goal_pct": 43.2,
   "goals_total": 81,
-  "goals_reached": 30,
-  "goals_open": 51,
+  "goals_reached": 35,
+  "goals_open": 46,
   "elapsed_since_activity_h": 0.0,
   "activity_source": "memory/ops/scheduler-log.jsonl",
-  "threshold_idle_h": 6.0
+  "threshold_idle_h": 6.0,
+  "fsm_state": "CONVERGING",
+  "fsm_validated": true
 }

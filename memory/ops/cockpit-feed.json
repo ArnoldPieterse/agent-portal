@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T09:34:46.180783+00:00",
+  "ts": "2026-11-26T09:54:48.087152+00:00",
   "health_score": 75,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -47,21 +47,21 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 77.2,
-      "cpu_pct": 38.0,
-      "temp_c": 50.0
+      "vram_pct": 77.4,
+      "cpu_pct": 45.0,
+      "temp_c": 52.2
     },
     {
       "host": "Red",
       "vram_pct": 33.1,
       "cpu_pct": 0.0,
-      "temp_c": 36.7
+      "temp_c": 38.2
     },
     {
       "host": "Pale",
       "vram_pct": 46.6,
       "cpu_pct": 0.0,
-      "temp_c": 81.1
+      "temp_c": 82.4
     },
     {
       "host": "Black",
@@ -71,7 +71,7 @@
     }
   ],
   "goals": {
-    "fleet_pct": 30.0,
+    "fleet_pct": 54.5,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -155,8 +155,8 @@
       },
       "builder": {
         "total": 1,
-        "verified": 0,
-        "pct": 0.0
+        "verified": 1,
+        "pct": 100.0
       },
       "cross_patterns_report": {
         "total": 1,
@@ -479,9 +479,9 @@
         "pct": 0.0
       },
       "orchestrator": {
-        "total": 1,
-        "verified": 0,
-        "pct": 0.0
+        "total": 2,
+        "verified": 2,
+        "pct": 100.0
       },
       "outlet": {
         "total": 1,
@@ -604,8 +604,8 @@
         "pct": 0.0
       }
     },
-    "total_goals": 10,
-    "total_verified": 3
+    "total_goals": 11,
+    "total_verified": 6
   },
   "open_blockers": 29,
   "autonomous_actions": [

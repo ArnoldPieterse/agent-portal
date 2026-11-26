@@ -1,0 +1,59 @@
+{
+  "ts": "2026-11-26T09:29:13.622073+00:00",
+  "generated_by": "fleet_heartbeat.py",
+  "staleness_threshold_s": 5,
+  "fleet_score": 71.3,
+  "fleet_readiness": 35.0,
+  "seats": {
+    "White": {
+      "state": "unreachable",
+      "last_seen": "2026-11-24T21:13:41.681155+00:00",
+      "latency_ms": null,
+      "uptime_pct": 100.0,
+      "vram_trend_pct": -0.5,
+      "stale": true,
+      "last_cycle_ts": null,
+      "age_s": 130531.9
+    },
+    "Red": {
+      "state": "unreachable",
+      "last_seen": "2026-11-24T21:13:41.690592+00:00",
+      "latency_ms": null,
+      "uptime_pct": 0.0,
+      "vram_trend_pct": 0.0,
+      "stale": true,
+      "last_cycle_ts": null,
+      "age_s": 130531.9
+    },
+    "Pale": {
+      "state": "unreachable",
+      "last_seen": "2026-11-24T21:13:41.707265+00:00",
+      "latency_ms": null,
+      "uptime_pct": 0.0,
+      "vram_trend_pct": 0.0,
+      "stale": true,
+      "last_cycle_ts": null,
+      "age_s": 130531.9
+    },
+    "Black": {
+      "state": "unreachable",
+      "last_seen": "2026-11-24T21:29:16.518253+00:00",
+      "latency_ms": null,
+      "uptime_pct": 0.0,
+      "vram_trend_pct": 0.0,
+      "stale": true,
+      "last_cycle_ts": null,
+      "age_s": 129597.1
+    }
+  },
+  "seats_stale_count": 4,
+  "recovery_sla_compliance_pct": {
+    "cascade": 100.0,
+    "oom": 100.0,
+    "single_seat": 100.0
+  },
+  "portal": {
+    "ok": false,
+    "latency_ms": null
+  }
+}

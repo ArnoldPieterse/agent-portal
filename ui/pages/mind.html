@@ -313,35 +313,50 @@ var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display
 (function(){
  var group=new THREE.Group(); scene.add(group);
  var ghosts=[],tips=[];
- /* ---------- mini-voxel cloud machinery ---------- */
+ /* ---------- mini-voxel cloud machinery (v3 2026-11-26: shaded disc sprites = sphere look) ----------
+   Each mini voxel is a camera-facing CIRCLE with radial shading (off-centre highlight + dark rim)
+   so it reads as a small shaded sphere - far cheaper than cube instances, and the regular disc
+   arrays alias into moire rosettes when viewed at an out-of-sync resolution (flower-of-life test). */
  var MAXH=9500,MAXR=14000;
- var boxGeo=new THREE.BoxGeometry(1,1,1);
  var cv=document.createElement('canvas');cv.width=cv.height=64;var cx2=cv.getContext('2d');
- cx2.fillStyle='#777';cx2.fillRect(0,0,64,64);
- for(var ti=0;ti<900;ti++){var vv=110+(sr(ti*7)*145|0);cx2.fillStyle='rgb('+vv+','+vv+','+vv+')';cx2.fillRect((sr(ti)*64)|0,(sr(ti+400)*64)|0,2,2);}
- var tex=new THREE.CanvasTexture(cv);tex.magFilter=THREE.NearestFilter;
+ var grd=cx2.createRadialGradient(25,22,1.5,32,32,31);   /* highlight up-left -> sphere shading */
+ grd.addColorStop(0,'rgba(255,255,255,1)');
+ grd.addColorStop(0.32,'rgba(196,196,196,1)');
+ grd.addColorStop(0.66,'rgba(88,88,88,1)');
+ grd.addColorStop(0.9,'rgba(24,24,24,1)');
+ grd.addColorStop(1,'rgba(0,0,0,0)');
+ cx2.fillStyle=grd;cx2.beginPath();cx2.arc(32,32,31,0,Math.PI*2);cx2.fill();
+ var discTex=new THREE.CanvasTexture(cv);
+ var cloudMat=new THREE.ShaderMaterial({
+  uniforms:{map:{value:discTex},uScale:{value:425}},
+  vertexShader:'uniform float uScale;attribute float aSize;varying vec3 vC;void main(){vC=color;vec4 mv=modelViewMatrix*vec4(position,1.);gl_PointSize=aSize*(uScale/-mv.z);gl_Position=projectionMatrix*mv;}',
+  fragmentShader:'uniform sampler2D map;varying vec3 vC;void main(){vec4 t=texture2D(map,gl_PointCoord);if(t.a<0.06)discard;gl_FragColor=vec4(vC*t.rgb,0.96*t.a);}',
+  vertexColors:true,transparent:true,depthWrite:true
+ });
  function mkCloud(cap){
-  var mat=new THREE.MeshStandardMaterial({map:tex,color:0xffffff,roughness:.5,metalness:.3,transparent:true,opacity:.95});
-  var msh=new THREE.InstancedMesh(boxGeo,mat,cap);
-  msh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
-  /* pre-allocate instanceColor at FULL capacity: r128 sizes it from mesh.count when null,
-     and count starts at 0 -> empty buffer -> all-black fragments (the voxray killer) */
-  msh.geometry.setAttribute('instanceColor',new THREE.InstancedBufferAttribute(new Float32Array(cap*3),3));
-  msh.count=0;return msh;
+  var geo=new THREE.BufferGeometry();
+  geo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(cap*3),3).setUsage(THREE.DynamicDrawUsage));
+  geo.setAttribute('color',new THREE.BufferAttribute(new Float32Array(cap*3),3).setUsage(THREE.DynamicDrawUsage));
+  geo.setAttribute('aSize',new THREE.BufferAttribute(new Float32Array(cap),1).setUsage(THREE.DynamicDrawUsage));
+  var pts=new THREE.Points(geo,cloudMat);pts.frustumCulled=false;return pts;
  }
  var heroMesh=mkCloud(MAXH);
  var heroGroup=new THREE.Group();heroGroup.add(heroMesh);scene.add(heroGroup);
  var restMesh=mkCloud(MAXR);scene.add(restMesh);
- var _m4=new THREE.Matrix4(),_q=new THREE.Quaternion(),_eul=new THREE.Euler(),_pv=new THREE.Vector3(),_sv=new THREE.Vector3(),_col=new THREE.Color();
- function put(mesh,slot,px,py,pz,scale,colHex,bright){
-  _pv.set(px,py,pz);
-  _sv.setScalar(scale*(0.72+sr(slot*13)*0.56));
-  _eul.set(sr(slot)-0.5, sr(slot+9)-0.5, sr(slot+17)-0.5);
-  _q.setFromEuler(_eul);_m4.compose(_pv,_q,_sv);mesh.setMatrixAt(slot,_m4);
+ var _col=new THREE.Color();
+ function put(pts,slot,px,py,pz,diam,colHex,bright){
+  var pa=pts.geometry.attributes.position.array;
+  pa[slot*3]=px;pa[slot*3+1]=py;pa[slot*3+2]=pz;
   _col.setHex(colHex).multiplyScalar((0.62+sr(slot*31)*0.6)*(bright||1));
-  mesh.setColorAt(slot,_col);
+  var ca=pts.geometry.attributes.color.array;
+  ca[slot*3]=_col.r;ca[slot*3+1]=_col.g;ca[slot*3+2]=_col.b;
+  pts.geometry.attributes.aSize.array[slot]=diam*(0.78+sr(slot*13)*0.5);   /* per-disc size jitter */
  }
- /* hero silhouette mask: head + torso + legs, in metres relative to the ssj anchor */
+ function flushCloud(pts){
+  pts.geometry.setDrawRange(0,pts.userData.n||0);
+  ['position','color','aSize'].forEach(function(k){pts.geometry.attributes[k].needsUpdate=true;});
+ }
+/* hero silhouette mask: head + torso + legs, in metres relative to the ssj anchor */
  function heroMask(px,py,pz){
   if(py>1.85)return (px*px+pz*pz)<0.34&&Math.abs(py-2.35)<0.62;          /* head */
   if(py>-1.75){var rad=py<-0.45?0.4:0.7;return (px*px+pz*pz)<rad*rad;}   /* torso + legs */
@@ -380,7 +395,7 @@ var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display
  }
  var lastSig='';
  function build(cells){
-  clearLayer();heroMesh.count=0;restMesh.count=0;
+  clearLayer();heroMesh.userData.n=0;restMesh.userData.n=0;
   var A=anchors(),byBase={};
   cells.forEach(function(c){var b=c.a.split('/')[0];(byBase[b]=byBase[b]||[]).push(c);});
   var sig='';
@@ -405,8 +420,8 @@ var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display
       var px=(sr(tries)*2-1)*0.95,py=sr(tries+70001)*4.7-1.85,pz=(sr(tries+35000)*2-1)*0.95;
       if(!heroMask(px,py,pz))continue;
       var b=1+(glow.distanceTo(new THREE.Vector3(px,py,pz))<0.5?0.9:0); /* tip glow */
-      put(heroMesh,slot,px,py,pz,0.052,m.color,b);slot++;}
-     heroMesh.count=slot;heroGroup.position.copy(m.pos);
+      put(heroMesh,slot,px,py,pz,0.11,m.color,b);slot++;}
+     heroMesh.userData.n=slot;heroGroup.position.copy(m.pos);
     }else{
      var R=m.kind==='ring'?1.05:0.8,n=m.kind==='blob'?1300:900;
      for(var s2=0;s2<n&&restMesh.count<MAXR;s2++){
@@ -415,8 +430,8 @@ var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display
       var fall=1-dl/0.98;if(sr(s2*17)>Math.pow(fall,0.6))continue; /* core-dense falloff */
       var wx=m.pos.x+u*R,wy=m.pos.y+w*R*0.85,wz=m.pos.z+vv2*R;
       var b=1+(new THREE.Vector3(wx,wy,wz).distanceTo(m.pos.clone().add(glow))<0.4?0.9:0);
-      put(restMesh,restMesh.count,wx,wy,wz,m.kind==='ring'?0.05:0.062,m.color,b);
-      restMesh.count++;}
+      put(restMesh,restMesh.userData.n,wx,wy,wz,m.kind==='ring'?0.12:0.15,m.color,b);
+      restMesh.userData.n++;}
     }
     /* drill tip marker + ghost frontier, offset into anchor space */
     if(tip.d>0){
@@ -441,9 +456,7 @@ var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display
      ghosts.push(wireBox([top.p[0]+x*top.s/2,top.p[1]+y*top.s/2,top.p[2]+z*top.s/2],top.s/2,0x22d3ee,.09));}
    }
   });
-  heroMesh.instanceMatrix.needsUpdate=true;restMesh.instanceMatrix.needsUpdate=true;
-  if(heroMesh.instanceColor)heroMesh.instanceColor.needsUpdate=true;
-  if(restMesh.instanceColor)restMesh.instanceColor.needsUpdate=true;
+  flushCloud(heroMesh);flushCloud(restMesh);
   lastSig=sig;
  }
  function load(){if(document.hidden)return;
@@ -462,6 +475,7 @@ var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display
   /* hero cloud follows the floating Super Saiyan */
   var M=window.__mind;
   if(M&&M.rigids&&M.rigids.ssj)heroGroup.position.copy(M.rigids.ssj.position);
+  cloudMat.uniforms.uScale.value=renderer.domElement.height*0.5;
  })();
 })();
 frame();frame();

@@ -3540,5 +3540,17 @@
 "text": "**fleet-mode.json Drift Reconciler** - `python memory/orchestrator/mode_reconcile.py`: each pass, recompute ground-truth mode from (open-goa",
 "agent": "orchestrator",
 "at": "2026-11-26"
+},
+{
+"sig": "ab61ceaa5b0cfda5",
+"text": "**Convergence Invariant Contract** - define \"converged\" as machine-checkable invariants and write `python memory/scribe/convergence_contract",
+"agent": "scribe",
+"at": "2026-11-26"
+},
+{
+"sig": "6d5bcaba0f2486b6",
+"text": "**Steady-State Re-Certification Loop** - extend my one-shot \"Steady-State Declaration Doc\" (closed) into continuous re-certification: each c",
+"agent": "scribe",
+"at": "2026-11-26"
 }
 ]
