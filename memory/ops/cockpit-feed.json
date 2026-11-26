@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T15:24:53.699105+00:00",
+  "ts": "2026-11-26T15:34:52.863786+00:00",
   "health_score": 50,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -508,8 +508,8 @@
       },
       "outlet": {
         "total": 1,
-        "verified": 0,
-        "pct": 0.0
+        "verified": 1,
+        "pct": 100.0
       },
       "pixel": {
         "total": 7,

@@ -3703,3 +3703,10 @@
 {"t": "2026-11-27 01:24:45", "job": "cycle_10m", "event": "start", "pid": 1900}
 {"t": "2026-11-27 01:24:50", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-27 01:24:55", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-27 01:29:45", "job": "cycle_5m", "event": "start", "pid": 31024}
+{"t": "2026-11-27 01:29:50", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 01:34:45", "job": "cycle_5m", "event": "start", "pid": 31980}
+{"t": "2026-11-27 01:34:45", "job": "cycle_10m", "event": "start", "pid": 31632}
+{"t": "2026-11-27 01:34:45", "job": "cycle_30m", "event": "start", "pid": 8144}
+{"t": "2026-11-27 01:34:50", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 01:34:55", "job": "cycle_10m", "event": "done", "rc": 0}

@@ -3828,5 +3828,11 @@
 "text": "**Cross-lane contract tests** - define 5 inter-agent API contracts (e.g., goal_ledger schema, convergence_api response shape) and assert the",
 "agent": "verifier",
 "at": "2026-11-27"
+},
+{
+"sig": "2440265fa5adffc2",
+"text": "**\"Since last cycle\" at-a-glance delta strip** - A compact always-visible strip in the cockpit header/goal bar showing \u0394convergence vs previ",
+"agent": "pixel",
+"at": "2026-11-27"
 }
 ]
