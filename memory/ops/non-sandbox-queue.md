@@ -1,6 +1,6 @@
 # NON-SANDBOX EXECUTION QUEUE
 Parent: memory/ops/INDEX.md | Sibling: memory/ops/blockers.md (NEEDS-HUMAN log)
-Updated: 2026-11-21 (Orchestrator) - added Mechanic #3 WinRM E2E + #9 Capacity Planning (both mock/dry-run validated, live leg only). Pruned nothing new yet. Small file — one batch list, read whole.
+Updated: 2026-11-27 (Orchestrator) - reconciled to current open-goal set (fleet 94/111, all-clear ETA 2026-11-28). Added Phase-7 browser live-leg for Pixel #6 (CDP @375/768 carry-over) = the LAST open live leg; clearing it + remaining Tier-B items = convergence all-clear. Small file — one batch list, read whole.
 
 ## WHAT THIS IS
 A sandbox seat CANNOT do network egress to the fleet/LAN, drive a browser, or elevate
@@ -19,6 +19,14 @@ python Z:\memory\mechanic\unblock_gap_fill.py   # Phase 4-6: boot-detect + SMB c
 - `unblock_gap_fill.py` covers: RebootRecoveryDetect schtask (Mechanic #4), SMB creds dry-run (Researcher #3 dep), Capacity Planning 7-day live run (Mechanic #9).
 - Both are idempotent; use `--dry-run` / `--skip-*` flags as needed.
 - After the batch: check each artifact path, run ledger records for any goals whose acceptance is now met, and tick the lines below.
+
+## PHASE 7 — BROWSER LIVE-LEG (Pixel #6 CDP carry-over) [ADDED 2026-11-27]
+Last open live leg per 2026-11-27 convergence state. From a non-sandbox seat with Edge/Chrome + portal up on :8099:
+```
+python -m pip install websockets   # one-time prereq on that seat
+python memory/pixel/cdp_375_dom_check.py
+```
+Exit 0 = all AC pass @375+@768; writes screenshot-{375,768}.png + cdp_375_dom_check.report.json. Then `python memory/researcher/goal_ledger.py --record pixel 6 --note '<report path>'`. Do NOT mark reached from static pixels alone (static leg already 11/11). Source: memory/ops/blockers.md [OPS-NOTE 2026-11-27 Pixel].
 
 ## HOW TO CLOSE AN ENTRY (manual, per-item)
 1. Run the exact command from a non-sandbox seat with LAN egress + Chrome (where noted).

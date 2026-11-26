@@ -1,5 +1,7 @@
 # Forge run log
 
+
+| 2026-11-27 ~now | nonsandbox_seat_gate.py built + run on pale: exit1 INELIGIBLE (bounded 7.5s); measured missing prereq = portal :8099 down; CDP egress blocked + elev dead confirmed; ASSIST Pixel #6 convergence gate | PASS(bounded) | evidence-nonsandbox-seat-gate-2026-11-27.md |
 | 2026-11-27 04:23 | verify_token() wired into canary_deploy.py Phase 3.5 (ASSIST Verifier #8); 3 scenarios verified: no-token=BLOCK(5), fresh=VALID, stale=BLOCK(5) | PASS | evidence-verify-token-wired-081-27.md |
 
 | date | event | result | evidence |

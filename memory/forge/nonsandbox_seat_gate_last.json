@@ -1,0 +1,33 @@
+{
+  "ts": "2026-11-27T08:57:52",
+  "seat": "?",
+  "verdict": "INELIGIBLE",
+  "missing_required": [
+    "portal_up_8099"
+  ],
+  "checks": {
+    "edge_present": {
+      "ok": true,
+      "detail": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+    },
+    "websockets_ok": {
+      "ok": true,
+      "detail": "imported"
+    },
+    "portal_up_8099": {
+      "ok": false,
+      "detail": "URLError(PermissionError(13, 'An attempt was made to access a socket in a way forbidden by its access permissions', None, 10013, None))"
+    },
+    "cdp_endpoint_advisory": {
+      "ok": false,
+      "detail": "PermissionError(13, 'An attempt was made to access a socket in a way forbidden by its access permissions', None, 10013, None)"
+    },
+    "elev_alive_advisory": {
+      "ok": false,
+      "detail": "exit 5"
+    }
+  },
+  "elapsed_s": 7.48,
+  "unblock_command": "python memory\\pixel\\cdp_375_dom_check.py",
+  "cdp_script_present": true
+}

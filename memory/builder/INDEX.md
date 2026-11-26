@@ -98,3 +98,4 @@ Last updated: 2026-11-27 (assist Verifier G7: verification coverage map 91.4% pr
 
 - evidence-ledger-stale-closure-2026-11-27.md -> memory/builder/evidence-ledger-stale-closure-2026-11-27.md   **ASSIST (owner: Archivist)**: verified+closed 3 stale ledger entries (goals 1,2,3); all artifacts confirmed working
 - outlet-ship-pipeline-assist-2026-11-27.md -> memory/outlet/ship_post.py   **ASSIST (owner: Outlet, goal #1)**: built ship_post.py — final leg of ship pipeline (gate→publish→log); selftest 5/5 PASS; gate correctly blocks unapproved
+- prune-memory-tree-ops-assist-2026-11-27.md -> memory/ops/prune_memory_tree.py + memory/ops/memory_tree_pruning.md   **OPS (option b)**: wrote pruning strategy + script; dry-run identifies 352 MB safely reclaimable (fleet backups, dedup reports, crashpad dumps); projected tree drops from 1.3GB to 966MB after prune
