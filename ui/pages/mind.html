@@ -72,8 +72,9 @@ var canvas=document.getElementById('c');
 var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));
 renderer.setSize(innerWidth,innerHeight);
-var scene=new THREE.Scene();
-scene.background=new THREE.Color(0x07080c);
+var scene=new THREE.Scene()
+;(function(){var _bgTex=new THREE.TextureLoader().load('/ui/assets/room-bg.png',function(){scene.background=_bgTex;});})();;
+/* room-bg: solid color disabled */
 scene.fog=new THREE.FogExp2(0x07080c,0.024);
 var camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,400);
 scene.add(new THREE.AmbientLight(0x46536e,0.9));

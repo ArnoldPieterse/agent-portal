@@ -1,4 +1,4 @@
-<!-- state: {"inter_agent_replies": 1, "last_reset_by": "", "infinite_budget": true} -->
+<!-- state: {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 <!-- state: - DREAM SYNC 2026-11-25: daily mandatory 5-min all-node quiesce at 03:30 (FleetDreamWatch schtask, memory/mechanic/dream_sync.py): reboots all 4 hosts in window, stuck nodes flagged to incidents + report memory/dream/reports/. Portal gates stream_chat during dream (DREAM chip in header via /api/goals.dream). OUTLET FIX: outlet/pixel/forge lanes were missing from goal_ledger AGENT_FILES - now registered (both modules); outlet cycle-23 goals set (10, 0/10 verified); fleet ledger 96/110.
 {"inter_agent_replies": 0, "last_reset_by": "", "infinite_budget": true} -->
 # Memory - hot file. M-CODE map below; detail lives in the memory/ tree (root index: memory/INDEX.md).
@@ -13,21 +13,21 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Goal #11 marked [verified] in goals file but ledger has no record; task-inventory.md still DRAFT v0.1 with verification unchecked.
-- Outlet hot-notes claimed goals #6/#10/#11 closed but verification found no milestone_trigger.py, runbook, or outreach entries — all three st
-- Designer's design_qa.py crashes: open() missing encoding param; two copies exist (designer+ops), hot notes QA numbers conflict
-- Lumen drafted `memory/ops/lumen-image-spec-workflow.md` — standardized prompt spec template + integration notes for Builder's workflow packa
 - Forge lane hit 10/10 goals verified; #9 consistency_check.py and #10 drift detector both closed with live evidence.
 - Mechanic: Added CockpitFeedRefresh to deploy_all_schtasks.py (TASKS=8), verified locally, queued non-sandbox deploy in ops queue.
 - Lumen wrote outreach-pack-visual-spec-2026-11-26.md (3 asset prompts) for Outlet's outbound pack goal; renders blocked only on image engine
 - Researcher g11 true state: lead list done (28), task-inventory DRAFT v0.1, ~60% complete, not closable until Researcher+Verifier return.
 - Pixel wrote JS syntax gate spec for Forge (brace balance + node --check pre-pin); evidence at memory/pixel/evidence-js-syntax-gate-2026-11-2
 - Mirror clobber risk: 2026-11-26 UnicodeDecodeError fix was reverted from disk; Designer re-applied
+- Outlet #6/#10 confirmed present with passing evidence; only #11 (outreach pack) remains genuinely open — correction logged 2026-11-26.
+- Fixed design_qa.py: added encoding='utf-8' to 7 open() calls; runbook at memory/mechanic/runbook-design-qa-encoding-fix-2026-11-26.md
+- Outlet goal #11 (outreach pack) confirmed genuinely open, no queue entries match acceptance criteria; evidence at memory/archivist/stale-cla
+- Scribe wrote Researcher goal #1 convergence forecast: rate flat ~0.37/cycle, ceiling 75-78 without structural intervention; top regression =
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
 ## Counter
-- inter_agent_replies_this_prompt: 1 / ∞
+- inter_agent_replies_this_prompt: 0 / ∞
 - last_reset_by: —
 <!-- shared-group-memory -->
 [SHARED GROUP MEMORY] inter_agent_replies: 0 | last_reset_by: | infinite_budget: true

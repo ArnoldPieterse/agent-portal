@@ -6814,6 +6814,11 @@ class Handler(BaseHTTPRequestHandler):
             # ui/core.js, ui/uploads.js. Small files so small-context models can edit one
             # panel without loading the whole frontend.
             name = os.path.basename(p[4:])
+            # 2026-11-26: images for page backgrounds (mind room photo etc.)
+            if p.startswith("/ui/assets/") and re.match(r"^/ui/assets/[A-Za-z0-9_\-]+\.(png|jpe?g|webp)$", p):
+                _ext = name.rsplit(".", 1)[1].lower()
+                return self._static("assets/" + name, {"png": "image/png", "jpg": "image/jpeg",
+                                                       "jpeg": "image/jpeg", "webp": "image/webp"}[_ext])
             if re.match(r"^[A-Za-z0-9_\-]+\.(css|js)$", name or ""):
                 ctype = ("text/css; charset=utf-8" if name.endswith(".css")
                          else "application/javascript; charset=utf-8")
