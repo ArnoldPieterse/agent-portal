@@ -1,0 +1,436 @@
+{
+  "timestamp": "2026-11-26T13:19:06.372222+00:00",
+  "sizing_ts": "2026-11-26T12:19:47.835997+00:00",
+  "results": [
+    {
+      "agent": "archivist",
+      "action": "SCALE",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 98.3,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 9,
+        "current_total": 10,
+        "archived_cycles": [
+          {
+            "file": "archivist-cycle15-2026-11-24.md",
+            "reached": 8,
+            "total": 10
+          },
+          {
+            "file": "archivist-cycle14-2026-11-24.md",
+            "reached": 14,
+            "total": 20
+          },
+          {
+            "file": "archivist-2026-11-26.md",
+            "reached": 5,
+            "total": 10
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (no regression after scaling)"
+      ]
+    },
+    {
+      "agent": "builder",
+      "action": "MAINTAIN",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 98.3,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 10,
+        "current_total": 10,
+        "archived_cycles": [
+          {
+            "file": "builder-cycle19-2026-11-26.md",
+            "reached": 1,
+            "total": 10
+          },
+          {
+            "file": "builder-cycle15-2026-11-24.md",
+            "reached": 10,
+            "total": 10
+          },
+          {
+            "file": "builder-cycle14-2026-11-24.md",
+            "reached": 20,
+            "total": 20
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (as expected for MAINTAIN)"
+      ]
+    },
+    {
+      "agent": "designer",
+      "action": "SCALE",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 98.0,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 3,
+        "current_total": 10,
+        "archived_cycles": [
+          {
+            "file": "designer-cycle17-2026-11-25.md",
+            "reached": 10,
+            "total": 10
+          },
+          {
+            "file": "designer-cycle15-final-2026-11-24.md",
+            "reached": 4,
+            "total": 10
+          },
+          {
+            "file": "designer-cycle15-2026-11-24.md",
+            "reached": 4,
+            "total": 10
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (no regression after scaling)"
+      ]
+    },
+    {
+      "agent": "forge",
+      "action": "SCALE",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 97.4,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 6,
+        "current_total": 10,
+        "archived_cycles": [
+          {
+            "file": "forge-2026-11-26.md",
+            "reached": 0,
+            "total": 10
+          },
+          {
+            "file": "forge-2026-11-26-cycle18.md",
+            "reached": 10,
+            "total": 10
+          },
+          {
+            "file": "forge-2026-11-25.md",
+            "reached": 0,
+            "total": 0
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (no regression after scaling)"
+      ]
+    },
+    {
+      "agent": "lumen",
+      "action": "MAINTAIN",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 96.2,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 0,
+        "current_total": 0,
+        "archived_cycles": []
+      },
+      "reasoning": [
+        "pass rate stable (as expected for MAINTAIN)"
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "action": "SCALE",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 98.1,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 4,
+        "current_total": 10,
+        "archived_cycles": [
+          {
+            "file": "mechanic-cycle5-closed-2026-11-19.md",
+            "reached": 10,
+            "total": 10
+          },
+          {
+            "file": "mechanic-cycle15-2026-11-24.md",
+            "reached": 10,
+            "total": 10
+          },
+          {
+            "file": "mechanic-cycle14-2026-11-24.md",
+            "reached": 9,
+            "total": 9
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (no regression after scaling)"
+      ]
+    },
+    {
+      "agent": "orchestrator",
+      "action": "MAINTAIN",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 97.1,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 10,
+        "current_total": 10,
+        "archived_cycles": [
+          {
+            "file": "orchestrator-cycle5-closed-2026-11-18.md",
+            "reached": 10,
+            "total": 10
+          },
+          {
+            "file": "orchestrator-cycle15-2026-11-24.md",
+            "reached": 10,
+            "total": 10
+          },
+          {
+            "file": "orchestrator-cycle14-2026-11-24.md",
+            "reached": 3,
+            "total": 3
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (as expected for MAINTAIN)"
+      ]
+    },
+    {
+      "agent": "outlet",
+      "action": "SCALE",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 96.9,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 1,
+        "current_total": 10,
+        "archived_cycles": [
+          {
+            "file": "outlet-2026-11-26.md",
+            "reached": 11,
+            "total": 11
+          },
+          {
+            "file": "outlet-2026-11-25.md",
+            "reached": 0,
+            "total": 0
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (no regression after scaling)"
+      ]
+    },
+    {
+      "agent": "pixel",
+      "action": "SCALE",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 96.8,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 7,
+        "current_total": 10,
+        "archived_cycles": [
+          {
+            "file": "pixel-2026-11-26.md",
+            "reached": 0,
+            "total": 10
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (no regression after scaling)"
+      ]
+    },
+    {
+      "agent": "reel",
+      "action": "MAINTAIN",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 96.2,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 0,
+        "current_total": 0,
+        "archived_cycles": []
+      },
+      "reasoning": [
+        "pass rate stable (as expected for MAINTAIN)"
+      ]
+    },
+    {
+      "agent": "researcher",
+      "action": "SCALE",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 97.9,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 11,
+        "current_total": 11,
+        "archived_cycles": [
+          {
+            "file": "researcher-log-2026-11-13.md",
+            "reached": 0,
+            "total": 0
+          },
+          {
+            "file": "researcher-cycle5-2026-11-18.md",
+            "reached": 10,
+            "total": 10
+          },
+          {
+            "file": "researcher-cycle15-2026-11-24.md",
+            "reached": 10,
+            "total": 10
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (no regression after scaling)"
+      ]
+    },
+    {
+      "agent": "scribe",
+      "action": "MAINTAIN",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 97.4,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 9,
+        "current_total": 10,
+        "archived_cycles": [
+          {
+            "file": "scribe-cycle15-2026-11-24.md",
+            "reached": 10,
+            "total": 10
+          },
+          {
+            "file": "scribe-cycle14-2026-11-24.md",
+            "reached": 10,
+            "total": 10
+          },
+          {
+            "file": "scribe-2026-11-26.md",
+            "reached": 3,
+            "total": 10
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (as expected for MAINTAIN)"
+      ]
+    },
+    {
+      "agent": "splice",
+      "action": "MAINTAIN",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 95.8,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 0,
+        "current_total": 0,
+        "archived_cycles": []
+      },
+      "reasoning": [
+        "pass rate stable (as expected for MAINTAIN)"
+      ]
+    },
+    {
+      "agent": "verifier",
+      "action": "SCALE",
+      "correct": true,
+      "pass_rate_trend": {
+        "recent": 100.0,
+        "historical": 97.8,
+        "trend": "stable"
+      },
+      "goal_outcome": {
+        "current_reached": 4,
+        "current_total": 10,
+        "archived_cycles": [
+          {
+            "file": "verifier-cycle16-2026-11-24.md",
+            "reached": 0,
+            "total": 10
+          },
+          {
+            "file": "verifier-cycle15-2026-11-24.md",
+            "reached": 4,
+            "total": 10
+          },
+          {
+            "file": "verifier-cycle14-2026-11-24.md",
+            "reached": 20,
+            "total": 20
+          }
+        ]
+      },
+      "reasoning": [
+        "pass rate stable (no regression after scaling)"
+      ]
+    }
+  ],
+  "summary_by_action": {
+    "SCALE": {
+      "total": 8,
+      "correct": 8,
+      "incorrect": 0,
+      "insufficient": 0
+    },
+    "MAINTAIN": {
+      "total": 6,
+      "correct": 6,
+      "incorrect": 0,
+      "insufficient": 0
+    }
+  },
+  "overall_correctness_pct": 100.0,
+  "total_agents": 14,
+  "decidable": 14
+}

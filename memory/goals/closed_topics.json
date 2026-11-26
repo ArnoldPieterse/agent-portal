@@ -3768,5 +3768,17 @@
 "text": "**Anomaly Baseline Library** - compile all observed anomaly types (OOM, timeout, mirror-revert, model-load-fail) with baseline signatures + ",
 "agent": "archivist",
 "at": "2026-11-26"
+},
+{
+"sig": "522b8b1da2e3ece4",
+"text": "**Autonomous Chair Idempotency Test** - `python memory/forge/chair_idempotency.py`: run auto_chair twice on the same closed cycle; assert no",
+"agent": "forge",
+"at": "2026-11-26"
+},
+{
+"sig": "7d6fdd0cd1b252ee",
+"text": "**Seat-Sizing Decision Audit** - `python memory/forge/seat_sizing_audit.py`: replay last K cycles' sizing recommendations vs outcomes; measu",
+"agent": "forge",
+"at": "2026-11-26"
 }
 ]

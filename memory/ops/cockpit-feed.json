@@ -1,6 +1,6 @@
 {
-  "ts": "2026-11-26T13:04:51.240522+00:00",
-  "health_score": 50,
+  "ts": "2026-11-26T13:14:50.914968+00:00",
+  "health_score": 60,
   "fleet_status": "DEGRADED",
   "agents": [
     {
@@ -47,9 +47,9 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 77.0,
-      "cpu_pct": 44.0,
-      "temp_c": 50.0
+      "vram_pct": 77.1,
+      "cpu_pct": 37.0,
+      "temp_c": 53.6
     },
     {
       "host": "Red",
@@ -59,9 +59,9 @@
     },
     {
       "host": "Pale",
-      "vram_pct": null,
-      "cpu_pct": null,
-      "temp_c": null
+      "vram_pct": 56.6,
+      "cpu_pct": 0.0,
+      "temp_c": 50.8
     },
     {
       "host": "Black",
@@ -71,9 +71,9 @@
     },
     {
       "host": "Pale",
-      "vram_pct": null,
-      "cpu_pct": null,
-      "temp_c": null
+      "vram_pct": 56.6,
+      "cpu_pct": 0.0,
+      "temp_c": 50.8
     },
     {
       "host": "Black",
@@ -89,7 +89,7 @@
     }
   ],
   "goals": {
-    "fleet_pct": 89.7,
+    "fleet_pct": 90.3,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -152,8 +152,8 @@
         "pct": 0.0
       },
       "archivist": {
-        "total": 2,
-        "verified": 2,
+        "total": 4,
+        "verified": 4,
         "pct": 100.0
       },
       "builder-assist-mechanic2-autorestart-2026-11-19": {
@@ -622,8 +622,8 @@
         "pct": 0.0
       }
     },
-    "total_goals": 29,
-    "total_verified": 26
+    "total_goals": 31,
+    "total_verified": 28
   },
   "open_blockers": 29,
   "autonomous_actions": [

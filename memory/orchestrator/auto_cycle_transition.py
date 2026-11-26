@@ -369,6 +369,14 @@ def main():
     print(f"Current cycle: {cycle}")
     print()
     
+    # Idempotency guard: if a kickoff file for the next cycle already exists,
+    # this transition has already been executed. Exit cleanly (no-op).
+    gdir = os.path.join(root, GOALS_DIR)
+    kickoff_files = [f for f in os.listdir(gdir) if f.startswith(f"cycle{cycle+1}-kickoff-")] if os.path.isdir(gdir) else []
+    if kickoff_files and not force:
+        print(f"IDEMPOTENT NO-OP: kickoff for cycle {cycle+1} already exists ({kickoff_files[0]}). Transition already completed.")
+        return 0
+    
     # Step 1: Check if all closed
     all_closed, agents, msg = check_all_closed()
     print(f"Status: {msg}")

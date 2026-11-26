@@ -1,0 +1,54 @@
+{
+  "test": "chair_idempotency",
+  "timestamp": "2026-11-26T13:14:09.144641+00:00",
+  "result": "PASS",
+  "failures": [],
+  "archive_run1": {
+    "orchestrator": 1,
+    "builder": 1,
+    "forge": 1
+  },
+  "archive_run2": {
+    "orchestrator": 1,
+    "builder": 1,
+    "forge": 1
+  },
+  "goals_run1": {
+    "orchestrator": 10,
+    "builder": 10,
+    "forge": 10
+  },
+  "goals_run2": {
+    "orchestrator": 10,
+    "builder": 10,
+    "forge": 10
+  },
+  "ledger_run1": {
+    "orchestrator": {
+      "total": 10,
+      "reached": 0
+    },
+    "builder": {
+      "total": 10,
+      "reached": 0
+    },
+    "forge": {
+      "total": 10,
+      "reached": 0
+    }
+  },
+  "ledger_run2": {
+    "orchestrator": {
+      "total": 10,
+      "reached": 0
+    },
+    "builder": {
+      "total": 10,
+      "reached": 0
+    },
+    "forge": {
+      "total": 10,
+      "reached": 0
+    }
+  }
+}

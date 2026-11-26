@@ -3,6 +3,8 @@ Onboarded 2026-11-25. Builder's gate & deploy sub-agent: owns Python tooling, CI
 
 ## Entries (keyword -> pointer | use case)
 - role / persona / skills / delegation rules -> agents.json entry 'forge' (persona is SSOT for behavior)
+- chair_idempotency.py / idempotency guard / double-archive -> memory/forge/chair_idempotency.py | runs auto_cycle_transition twice in sandbox; asserts no double-archive/no-dup-goals/ledger-stable; PASS. Bug fix: kickoff-file guard in auto_cycle_transition.py (goal #6 verified 2026-11-26)
+- seat_sizing_audit.py / sizing correctness / replay -> memory/forge/seat_sizing_audit.py | replays seat-sizing recs vs autoloop pass-rate trends; 14/14 decidable, 100% correct on real data (goal #7 verified 2026-11-26)
 - smoke_suite.py / fleet probe / auto-remediate -> memory/forge/smoke_suite.py | 4-host TCP+API+latency probe, classify OK/WARN/CRIT, remediate via recover_all.py (goal #1 verified)
 - canary_deploy.py / deploy pipeline / perf gate -> memory/forge/canary_deploy.py | 4-phase: baseline-perf->deploy->smoke-gate->perf-gate->promote/rollback; FORGE_PERF_THRESHOLD env (goals #2+#3 verified)
 - gate_health.py / self-monitoring -> memory/forge/gate_health.py | checks scheduled tasks ran within interval, auto-restart, incident log (goal #4 verified)

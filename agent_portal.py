@@ -4908,8 +4908,9 @@ def _ml_write(w):
 
 
 def _ml_vein(x, y, seed):
-    h = (x * 73856093) ^ (y * 19349663) ^ (seed * 83492791)
-    return (h & 0xFFFFF) % 23 == 0
+    # 32-bit-wrapped so the JS client's ToInt32 XOR matches bit-for-bit (any |x|,|y|)
+    h = ((x * 73856093) ^ (y * 19349663) ^ (seed * 83492791)) & 0xFFFFFFFF
+    return h % 23 == 0
 
 
 def _ml_unlocks_for(w):

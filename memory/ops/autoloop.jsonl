@@ -1117,3 +1117,12 @@
 {"timestamp": "2026-11-26T13:10:10.602515+00:00", "agent": "Scribe", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1334307}
 {"timestamp": "2026-11-26T13:10:10.609763+00:00", "agent": "Mechanic", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1334305}
 {"timestamp": "2026-11-26T13:10:10.617098+00:00", "agent": "Outlet", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1334286}
+{"timestamp": "2026-11-26T13:21:01.738786+00:00", "agent": "Orchestrator", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-26T13:21:01.747696+00:00", "agent": "Builder", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3600000}
+{"timestamp": "2026-11-26T13:21:01.761930+00:00", "agent": "Scribe", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1809028}
+{"timestamp": "2026-11-26T13:21:01.766543+00:00", "agent": "Pixel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1809014}
+{"timestamp": "2026-11-26T13:21:01.781046+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1809015}
+{"timestamp": "2026-11-26T13:21:01.853832+00:00", "agent": "Researcher", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2933421}
+{"timestamp": "2026-11-26T13:21:01.865396+00:00", "agent": "Pixel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1985523}
+{"timestamp": "2026-11-26T13:21:01.875883+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 4393202}
+{"timestamp": "2026-11-26T13:21:01.886080+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1206183}
