@@ -491,3 +491,6 @@
 {"ts": "2026-11-26 12:00:45", "file": "ui/pages/voxel-ui.js", "sha": "1adc8cf60d", "size": 1169, "snapshot": null}
 {"ts": "2026-11-26 12:30:51", "file": "ui/pages/mind.html", "sha": "82e9343ac9", "size": 19906, "snapshot": null}
 {"ts": "2026-11-26 12:30:51", "file": "ui/pages/voxel-ui.js", "sha": "222444c4bc", "size": 3342, "snapshot": null}
+{"ts": "2026-11-26 12:51:32", "file": "agent_portal.py", "sha": "1a1b31ffe1", "size": 397661, "snapshot": "memory/ops/merge-queue/agent_portal.py.1a1b31ffe1"}
+{"ts": "2026-11-26 12:51:34", "file": "ui/pages/voxel-ui.js", "sha": "81b12eacf0", "size": 3750, "snapshot": null}
+{"ts": "2026-11-26 13:07:09", "file": "ui/fleet_status.js", "sha": "786bbe54d2", "size": 2974, "snapshot": null}

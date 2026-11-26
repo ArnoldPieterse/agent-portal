@@ -7016,6 +7016,33 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(200, _vx.resolve_payload(_addr))
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
+        elif p == "/api/voxel/pulse":
+            # Voxel pulse engine (2026-11-26): 10 ms wavefront from each object's
+            # top-level voxel - updates surrounding cells, follows jump-links
+            # between voxels, runs code attached to voxels, drills sub-voxels
+            # down to the 2 mm detail floor. Module is cached so every request
+            # (and the boot thread) shares ONE engine singleton.
+            try:
+                _vp = globals().get("_VP_MOD")
+                if _vp is None:
+                    import importlib.util as _ilu_vp
+                    _spec = _ilu_vp.spec_from_file_location(
+                        "_voxel_pulse_api", os.path.join(HERE, "memory/archivist/voxel_pulse.py"))
+                    _vp = _ilu_vp.module_from_spec(_spec)
+                    _spec.loader.exec_module(_vp)
+                    globals()["_VP_MOD"] = _vp
+                import urllib.parse as _up_vp
+                _q = _up_vp.parse_qs(_up_vp.urlsplit(self.path).query)
+                _cmd = (_q.get("cmd") or ["status"])[0]
+                _e = _vp.engine()
+                if _cmd == "start":
+                    _vp.default_seeds()
+                    return self._json(200, {"msg": _e.start(), **_e.status()})
+                if _cmd == "stop":
+                    return self._json(200, {"msg": _e.stop(), **_e.status()})
+                return self._json(200, _e.status())
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/goals/topic":
             # Round topic + queue (P1, 2026-11-22): current round focus, queued user topics,
             # recent past topics. Mutations via POST /api/goals/topic.
@@ -7755,6 +7782,16 @@ if __name__ == "__main__":
     threading.Thread(target=_autoloop_watchdog, daemon=True).start()   # AUTO-LOOP (2026-11-16)
     threading.Thread(target=_level_heartbeat, daemon=True).start()   # LEVEL HEARTBEAT (2026-11-23)
     threading.Thread(target=_stale_run_watchdog, daemon=True).start()   # STALE-RUN REAPER (2026-11-25)
+    try:
+        import importlib.util as _ilu_vps
+        _spec_vps = _ilu_vps.spec_from_file_location("_voxel_pulse_boot", os.path.join(HERE, "memory/archivist/voxel_pulse.py"))
+        _vps = _ilu_vps.module_from_spec(_spec_vps)
+        _spec_vps.loader.exec_module(_vps)
+        globals()["_VP_MOD"] = _vps   # share the singleton with /api/voxel/pulse
+        _vps.default_seeds()
+        print("voxel pulse:", _vps.engine().start())
+    except Exception as _vp_e:
+        print("voxel pulse failed to start:", _vp_e)
     try:
         import portal_scheduler
     except Exception as _sched_e:

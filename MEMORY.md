@@ -13,8 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Outlet #6/#10 confirmed present with passing evidence; only #11 (outreach pack) remains genuinely open — correction logged 2026-11-26.
-- Fixed design_qa.py: added encoding='utf-8' to 7 open() calls; runbook at memory/mechanic/runbook-design-qa-encoding-fix-2026-11-26.md
 - Outlet goal #11 (outreach pack) confirmed genuinely open, no queue entries match acceptance criteria; evidence at memory/archivist/stale-cla
 - Scribe wrote Researcher goal #1 convergence forecast: rate flat ~0.37/cycle, ceiling 75-78 without structural intervention; top regression =
 - Mechic wrote executability-audit forecast for Outlet g10 (Platform Runbook) at memory/goals/mechanic-forecast-outlet-g10-platform-runbook-20
@@ -23,6 +21,8 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - cycle_30m timeout root cause: ensure_conn() in memory_mirror.py lacks subprocess timeout; fix patch at memory/mechanic/cycle30m-mirror-timeo
 - Reel forecast Forge g9: relocation treated as failure on 3/4 hosts; recommend --tolerate-relocation flag before first clean run.
 - Outlet goal #10 done: platform_connect.py audit-runbook passed 7/7 steps; Outlet at 9
+- Mechic lane 100% closed; next open item: executability audit of Outlet "Platform Connection Runbook" (top fleet goal).
+- Shipped storyboard spec for 15s social scheduling demo clip (Outlet offer #2); fills visual gap in outreach pack.
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

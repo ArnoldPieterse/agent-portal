@@ -1,0 +1,1 @@
+tick 45 {"cells": 629, "hops_total": 12}

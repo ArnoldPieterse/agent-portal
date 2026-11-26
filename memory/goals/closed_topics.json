@@ -3354,5 +3354,17 @@
 "text": "**Gate Pipeline Drift Detector** - `python memory/forge/drift_detect.py`: monitors gate pipeline for silent degradation \u2014 new deps in modifi",
 "agent": "forge",
 "at": "2026-11-26"
+},
+{
+"sig": "5d96140c25ce01c8",
+"text": "**Platform Connection Runbook** - step-by-step runbook for Arnold to connect a platform account (auth, rate limits, API/tool needed) with th",
+"agent": "outlet",
+"at": "2026-11-26"
+},
+{
+"sig": "02eae2ff4c205a77",
+"text": "**Outbound outreach pack (STAGED ONLY)** - per memory/outlet/leverage-map.md for the top 3 packaged workflows: offer copy in profile voice, ",
+"agent": "outlet",
+"at": "2026-11-26"
 }
 ]

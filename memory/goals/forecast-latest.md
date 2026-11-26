@@ -1,30 +1,22 @@
 # Fleet Forecast - 10 steps ahead
 
-Generated: 2026-11-26 11:43:23 | Fleet: 112/116 (97%) | throughput ~17.7 goals/h
+Generated: 2026-11-26 12:53:54 | Fleet: 114/116 (98%) | throughput ~17.7 goals/h
 
 ## Next 10 goals (queue order)
 
-**#1 [outlet] Platform Connection Runbook** - ETA 2026-11-26 13:28, P(reached) 72% (verify, cx1)
-   steps: build the test battery / audit script -> run against live sources -> record verdict + evidence leaf
-   consequences: lane end outlet: 11-26 17:58 (slowest lane)
-**#2 [researcher] Repetitive-task inventory + first lead list** - ETA 2026-11-26 16:05, P(reached) 7% (build, cx2)
+**#1 [researcher] Repetitive-task inventory + first lead list** - ETA 2026-11-26 17:16, P(reached) 7% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: lane end outlet: 11-26 17:58 (slowest lane)
-**#3 [orchestrator] Day-7 checkpoint review (2026-12-02)** - ETA 2026-11-26 16:25, P(reached) 28% (build, cx2)
+   consequences: lane end orchestrator: 11-26 17:36 (slowest lane)
+**#2 [orchestrator] Day-7 checkpoint review (2026-12-02)** - ETA 2026-11-26 17:36, P(reached) 28% (build, cx2)
    steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: lane end outlet: 11-26 17:58 (slowest lane)
-**#4 [outlet] Outbound outreach pack (STAGED ONLY)** - ETA 2026-11-26 17:58, P(reached) 16% (build, cx2)
-   steps: scaffold the module file -> implement core logic -> self-test until AC green -> write evidence leaf + index line
-   consequences: lane end outlet: 11-26 17:58 (slowest lane)
+   consequences: lane end orchestrator: 11-26 17:36 (slowest lane)
 
 ## Planned work (decision tree)
 
-- state: Fleet 112/116 (97%) | gate: all goals 100%? -> **NO - queue in flight**
-- cycle: in flight: 4 goal(s) open
-- #1 [outlet] Platform Connection Runbook ~2026-11-26 13:28 (P~72%) - planned as verify work (cx1); already open on the outlet lane - FIFO order keeps evidence leaves consistent; moderate confidence (P(reached) | delivers: Platform Connection Runbook
-- #2 [researcher] Repetitive-task inventory + first lead list ~2026-11-26 16:05 (P~7%) - planned as build work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) | delivers: Repetitive-task inventory + first lead list
-- #3 [orchestrator] Day-7 checkpoint review (2026-12-02) ~2026-11-26 16:25 (P~28%) - planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reache | delivers: Day-7 checkpoint review (2026-12-02)
-- #4 [outlet] Outbound outreach pack (STAGED ONLY) ~2026-11-26 17:58 (P~16%) - planned as build work (cx2); already open on the outlet lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) ~16 | delivers: Mic access
+- state: Fleet 114/116 (98%) | gate: all goals 100%? -> **NO - queue in flight**
+- cycle: in flight: 2 goal(s) open
+- #1 [researcher] Repetitive-task inventory + first lead list ~2026-11-26 17:16 (P~7%) - planned as build work (cx2); already open on the researcher lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reached) | delivers: Repetitive-task inventory + first lead list
+- #2 [orchestrator] Day-7 checkpoint review (2026-12-02) ~2026-11-26 17:36 (P~28%) - planned as build work (cx2); already open on the orchestrator lane - FIFO order keeps evidence leaves consistent; lower confidence (P(reache | delivers: Day-7 checkpoint review (2026-12-02)
 
 ## Functional capability chain (PM view)
 
@@ -126,36 +118,30 @@ The week ahead: every 15-day step clamped to days 0-7 and split finer - one line
 
 plan history (oldest -> newest): 05dcc83e6301 @ 11-24 13:46:57, a4f106fb3413 @ 11-24 23:09:16, 05dcc83e6301 @ 11-25 02:40:36, df19237b8736 @ 11-25 17:52:34
 
-## 30m ahead (by 2026-11-26 12:13)
-- completes: **0** goal(s) -> fleet ~97%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 112/116 -> 96%
+## 30m ahead (by 2026-11-26 13:23)
+- completes: **0** goal(s) -> fleet ~98%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 98%
 
-## 1h ahead (by 2026-11-26 12:43)
-- completes: **0** goal(s) -> fleet ~97%
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 112/116 -> 96%
+## 1h ahead (by 2026-11-26 13:53)
+- completes: **0** goal(s) -> fleet ~98%
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 98%
 
-## 1d ahead (by 2026-11-27 11:43)
-- completes: **4** goal(s) -> fleet ~100%
-  - #1 outlet: Platform Connection Runbook (2026-11-26 13:28)
-  - #2 researcher: Repetitive-task inventory + first lead list (2026-11-26 16:05)
-  - #3 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 16:25)
-  - #4 outlet: Outbound outreach pack (STAGED ONLY) (2026-11-26 17:58)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 112/116 -> 100%
+## 1d ahead (by 2026-11-27 12:53)
+- completes: **2** goal(s) -> fleet ~100%
+  - #1 researcher: Repetitive-task inventory + first lead list (2026-11-26 17:16)
+  - #2 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 17:36)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 100%
 
-## 1w ahead (by 2026-12-03 11:43)
-- completes: **4** goal(s) -> fleet ~100%
-  - #1 outlet: Platform Connection Runbook (2026-11-26 13:28)
-  - #2 researcher: Repetitive-task inventory + first lead list (2026-11-26 16:05)
-  - #3 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 16:25)
-  - #4 outlet: Outbound outreach pack (STAGED ONLY) (2026-11-26 17:58)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 112/116 -> 100%
+## 1w ahead (by 2026-12-03 12:53)
+- completes: **2** goal(s) -> fleet ~100%
+  - #1 researcher: Repetitive-task inventory + first lead list (2026-11-26 17:16)
+  - #2 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 17:36)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 100%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-
 
-## 1m ahead (by 2026-12-26 11:43)
-- completes: **4** goal(s) -> fleet ~100%
-  - #1 outlet: Platform Connection Runbook (2026-11-26 13:28)
-  - #2 researcher: Repetitive-task inventory + first lead list (2026-11-26 16:05)
-  - #3 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 16:25)
-  - #4 outlet: Outbound outreach pack (STAGED ONLY) (2026-11-26 17:58)
-- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 112/116 -> 100%
+## 1m ahead (by 2026-12-26 12:53)
+- completes: **2** goal(s) -> fleet ~100%
+  - #1 researcher: Repetitive-task inventory + first lead list (2026-11-26 17:16)
+  - #2 orchestrator: Day-7 checkpoint review (2026-12-02) (2026-11-26 17:36)
+- why: queue order from the auto-loop: these complete first because their lanes are shortest; expected outcome: fleet 114/116 -> 100%
 - next-cycle candidates: ARCHIVIST#6 Knowledge decay model productionization - run deca; ARCHIVIST#8 Snapshot diff weekly report - extend cycle-2 snaps; MECHANIC#1 Portal load test completion (cycle-2 #4 carryover); MECHANIC#2 Self-healing mirror productionization - the cycle-

@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T02:36:10.861489+00:00",
+  "ts": "2026-11-26T03:06:22.520076+00:00",
   "health_score": 80,
   "fleet_status": "NOMINAL",
   "agents": [
@@ -47,27 +47,27 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 48.0,
-      "cpu_pct": 40.5,
-      "temp_c": 51.1
+      "vram_pct": 48.1,
+      "cpu_pct": 45.5,
+      "temp_c": 53.3
     },
     {
       "host": "Red",
       "vram_pct": 32.8,
       "cpu_pct": 0.0,
-      "temp_c": 37.2
+      "temp_c": 39.6
     },
     {
       "host": "Pale",
       "vram_pct": 46.6,
       "cpu_pct": 0.0,
-      "temp_c": 49.7
+      "temp_c": 61.4
     },
     {
       "host": "Black",
       "vram_pct": 0.4,
       "cpu_pct": 0.0,
-      "temp_c": 43.2
+      "temp_c": 43.4
     }
   ],
   "goals": {
@@ -154,8 +154,8 @@
         "pct": 0.0
       },
       "builder": {
-        "total": 9,
-        "verified": 9,
+        "total": 10,
+        "verified": 10,
         "pct": 100.0
       },
       "cross_patterns_report": {
@@ -553,6 +553,11 @@
         "verified": 0,
         "pct": 0.0
       },
+      "scribe-forecast-archivist7-sustainability-2026-11-26": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
       "scribe-goal9-temporal-api-forecast-2026-11-21": {
         "total": 1,
         "verified": 1,
@@ -599,8 +604,8 @@
         "pct": 100.0
       }
     },
-    "total_goals": 66,
-    "total_verified": 66
+    "total_goals": 67,
+    "total_verified": 67
   },
   "open_blockers": 29,
   "autonomous_actions": [
