@@ -9,4 +9,5 @@ Onboarded 2026-11-25. Builder's gate & deploy sub-agent: owns Python tooling, CI
 - test-topology.json / fleet test matrix -> memory/forge/test-topology.json | per-host tests, cascade rules, schedule spec (goal #5 verified)
 - deploy-log.jsonl / deploy evidence -> memory/forge/deploy-log.jsonl | append-only: ts, file, sha, status, perf before/after
 - gate_metrics.py / convergence gate metrics -> memory/forge/gate_metrics.py | 4 gate metrics (autonomous%/first-try%/MTTD/MTTR) from forge logs; merges 'gate' key into autonomy-score.json + SSOT memory/ops/gate-metrics.json; --selftest proves math (goal #7 verified)
+- gate_circuit_breaker.py / cascade protection -> memory/forge/gate_circuit_breaker.py | trips when smoke/deploy failure rate >80% in window; state file + incident log; exit 0/1/2 (contribution 2026-11-26)
 - gates / tests / deploys run / perf numbers -> memory/forge/log.md   one line per run: date, command, result, evidence path

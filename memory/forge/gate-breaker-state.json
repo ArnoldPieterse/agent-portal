@@ -1,0 +1,11 @@
+{
+  "state": "NORMAL",
+  "reason": "all rates within threshold",
+  "smoke_rate": 1.0,
+  "deploy_rollback_rate": 0.0,
+  "window": 1,
+  "threshold": 1.01,
+  "green_streak": 0,
+  "recovery_greens_needed": 3,
+  "updated_at": "2026-11-25T23:59:24.450604+00:00"
+}
