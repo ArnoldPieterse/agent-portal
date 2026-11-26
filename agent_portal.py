@@ -79,6 +79,14 @@ _FLEET_RECOVER_RECIPES = {
                      "gguf_variant": "Q8_0", "gpu_ids": [1], "max_seq_length": 32768},
     "Designer":     {"model_path": _fleet_home("pale") + r"\\models\Qwen3.8-27B-Q4_K_S",
                      "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},
+    # Designer's subs ride the same Q4_K_S on Pale - recipes added 2026-11-26 so the
+    # recovery chain can reload them (down_episode showed reloads=0 since Nov 23).
+    "Lumen":        {"model_path": _fleet_home("pale") + r"\\models\Qwen3.8-27B-Q4_K_S",
+                     "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},
+    "Reel":         {"model_path": _fleet_home("pale") + r"\\models\Qwen3.8-27B-Q4_K_S",
+                     "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536},
+    "Splice":       {"model_path": _fleet_home("pale") + r"\\models\Qwen3.8-27B-Q4_K_S",
+                     "gguf_variant": "UD-Q4_K_S", "gpu_ids": [0], "max_seq_length": 65536}
 }
 _FLEET_REBOOT_USERS = {fleet_local.host_ip(r): fleet_local.host_user(r) for r in ("red", "pale", "black") if fleet_local.host_ip(r)}
 
@@ -273,6 +281,22 @@ def _fleet_host_names():
             api = str(hv.get("api") or "").strip().rstrip("/")
             if api:
                 names[api] = str(hn).capitalize()
+    except Exception:
+        pass
+    # 2026-11-26: the catalog stores placeholder bases (http://IP_PALE:8888 etc.) for
+    # repo hygiene - remap them to real LAN IPs or seat resolution never matches a live
+    # base and hosts like Black stay invisible (host-idle-investigation-2026-11-26.md).
+    try:
+        import fleet_local
+        extra = {}
+        for hn, nm in list(names.items()):
+            low = hn.lower()
+            if "ip_" in low:
+                role = low.split("ip_")[1].split(":")[0]
+                ip = fleet_local.host_ip(role)
+                if ip:
+                    extra["http://%s:8888" % ip] = nm
+        names.update(extra)
     except Exception:
         pass
     _HOST_NAME_CACHE = names
