@@ -30,3 +30,6 @@ Result: EXIT 1 (CIRCUIT_BREAKER) - correct: all 4 smoke runs show 100% TCP-fail 
 | 2026-11-26 21:07:51 | canary_deploy: SUCCESS: next10.json deployed to all 4 hosts (canary=White) |
 
 | 2026-11-26 21:10 | dispatch_gate (goal #3): gate built + wired into canary Phase -1; selftest EXIT 0 (block/clean/skippable); BLOCK_RC=4 on stale next10, BYPASS_RC=0 explicit flag, live conformance 60% (4 true stale dispatches) | memory/forge/evidence-dispatch-gate-2026-11-26.md |
+| 2026-11-26 ~23:xx | goal #3 closed out (was in-flight prev pass): marker added to forge.md + ledger; evidence already present | memory/forge/evidence-dispatch-gate-2026-11-26.md |
+| 2026-11-26 ~23:xx | idle_floor_enforce.py (goal #4): built; --selftest EXIT 0 ALL PASS (breach-escalates/flip-confirms/no-breach/idempotent/scan-all); live scan of all 15 agents on real autoloop.jsonl EXIT 0 no false positives; pairs with orchestrator idle_rebalance via fleet-mode.json idle_floor_flip stamp | memory/forge/evidence-idle-floor-2026-11-26.md |
+| 2026-11-26 ~23:xx | sentinel_precision.py (goal #5): built; drives REAL convergence_sentinel.run(); seeds 42/7/123 @20&30 cycles all EXIT 0 -> TP-only FP=0 FN=0, precision=recall=1.0 FPR=0.0; boundary 4.9/5.0/5.1 correct | memory/forge/evidence-sentinel-precision-2026-11-26.md |

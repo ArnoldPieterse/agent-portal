@@ -1,0 +1,516 @@
+{
+  "generated": "2026-11-26",
+  "source_files": [
+    "memory/archivist/decision-archive-data.jsonl",
+    "memory/ops/decision-log.jsonl",
+    "memory/builder/decision-log.jsonl",
+    "memory/synthesis/decisions.jsonl"
+  ],
+  "total_decisions": 108,
+  "methodology": {
+    "quality_score": "0.6 * outcome_score + 0.4 * confidence (outcome mapped to 0-1 scale)",
+    "cycle_definition": "Fixed date windows: C1=11/13-14, C2=11/15-16, C3=11/17-18, C4=11/19-21, C5=11/22-23, C6=11/24-26",
+    "regression_threshold": "Drop > 0.15 in composite quality between consecutive cycles (min n=2 per cycle)"
+  },
+  "per_cycle": {
+    "C1": {
+      "date_range": "2026-11-13..2026-11-14",
+      "decisions": 14,
+      "avg_quality": 0.923,
+      "agents_active": [
+        "archivist",
+        "mechanic",
+        "orchestrator",
+        "researcher",
+        "unattributed"
+      ],
+      "domains_touched": [
+        "governance"
+      ]
+    },
+    "C2": {
+      "date_range": "2026-11-15..2026-11-16",
+      "decisions": 4,
+      "avg_quality": 0.94,
+      "agents_active": [
+        "builder",
+        "orchestrator"
+      ],
+      "domains_touched": [
+        "governance"
+      ]
+    },
+    "C3": {
+      "date_range": "2026-11-17..2026-11-18",
+      "decisions": 8,
+      "avg_quality": 0.602,
+      "agents_active": [
+        "archivist",
+        "orchestrator"
+      ],
+      "domains_touched": [
+        "governance",
+        "knowledge-management"
+      ]
+    },
+    "C4": {
+      "date_range": "2026-11-19..2026-11-21",
+      "decisions": 0,
+      "avg_quality": null,
+      "agents_active": [],
+      "domains_touched": []
+    },
+    "C5": {
+      "date_range": "2026-11-22..2026-11-23",
+      "decisions": 68,
+      "avg_quality": 0.572,
+      "agents_active": [
+        "builder",
+        "fleet-policy",
+        "mechanic",
+        "system",
+        "test_agent"
+      ],
+      "domains_touched": [
+        "operational-resilience",
+        "operational-runbook",
+        "policy"
+      ]
+    },
+    "C6": {
+      "date_range": "2026-11-24..2026-11-26",
+      "decisions": 4,
+      "avg_quality": 0.785,
+      "agents_active": [
+        "unattributed"
+      ],
+      "domains_touched": [
+        "dispatch"
+      ]
+    }
+  },
+  "per_agent_cycle": {
+    "archivist": {
+      "C1": {
+        "n": 2,
+        "avg": 0.96
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 6,
+        "avg": 0.482
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 0,
+        "avg": null
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "builder": {
+      "C1": {
+        "n": 0,
+        "avg": null
+      },
+      "C2": {
+        "n": 2,
+        "avg": 0.94
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 50,
+        "avg": 0.544
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "fleet-policy": {
+      "C1": {
+        "n": 0,
+        "avg": null
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 6,
+        "avg": 0.7
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "mechanic": {
+      "C1": {
+        "n": 2,
+        "avg": 0.7
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 2,
+        "avg": 0.65
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "orchestrator": {
+      "C1": {
+        "n": 6,
+        "avg": 0.96
+      },
+      "C2": {
+        "n": 2,
+        "avg": 0.94
+      },
+      "C3": {
+        "n": 2,
+        "avg": 0.96
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 0,
+        "avg": null
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "researcher": {
+      "C1": {
+        "n": 2,
+        "avg": 0.96
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 0,
+        "avg": null
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "system": {
+      "C1": {
+        "n": 0,
+        "avg": null
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 8,
+        "avg": 0.575
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "test_agent": {
+      "C1": {
+        "n": 0,
+        "avg": null
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 2,
+        "avg": 0.8
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "unattributed": {
+      "C1": {
+        "n": 2,
+        "avg": 0.96
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 0,
+        "avg": null
+      },
+      "C6": {
+        "n": 4,
+        "avg": 0.785
+      }
+    }
+  },
+  "per_domain_cycle": {
+    "dispatch": {
+      "C1": {
+        "n": 0,
+        "avg": null
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 0,
+        "avg": null
+      },
+      "C6": {
+        "n": 4,
+        "avg": 0.785
+      }
+    },
+    "governance": {
+      "C1": {
+        "n": 14,
+        "avg": 0.923
+      },
+      "C2": {
+        "n": 4,
+        "avg": 0.94
+      },
+      "C3": {
+        "n": 2,
+        "avg": 0.96
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 0,
+        "avg": null
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "knowledge-management": {
+      "C1": {
+        "n": 0,
+        "avg": null
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 6,
+        "avg": 0.482
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 0,
+        "avg": null
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "operational-resilience": {
+      "C1": {
+        "n": 0,
+        "avg": null
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 7,
+        "avg": 0.8
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "operational-runbook": {
+      "C1": {
+        "n": 0,
+        "avg": null
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 55,
+        "avg": 0.529
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    },
+    "policy": {
+      "C1": {
+        "n": 0,
+        "avg": null
+      },
+      "C2": {
+        "n": 0,
+        "avg": null
+      },
+      "C3": {
+        "n": 0,
+        "avg": null
+      },
+      "C4": {
+        "n": 0,
+        "avg": null
+      },
+      "C5": {
+        "n": 6,
+        "avg": 0.7
+      },
+      "C6": {
+        "n": 0,
+        "avg": null
+      }
+    }
+  },
+  "agent_regressions": [],
+  "domain_regressions": [],
+  "top_improver": null,
+  "top_regressor": {
+    "agent": "archivist",
+    "from": "C1",
+    "to": "C3",
+    "delta": -0.478
+  },
+  "all_improvements": [],
+  "all_regressions_detailed": [
+    {
+      "agent": "archivist",
+      "from": "C1",
+      "to": "C3",
+      "delta": -0.478
+    },
+    {
+      "agent": "builder",
+      "from": "C2",
+      "to": "C5",
+      "delta": -0.396
+    },
+    {
+      "agent": "unattributed",
+      "from": "C1",
+      "to": "C6",
+      "delta": -0.175
+    }
+  ]
+}

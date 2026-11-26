@@ -1,0 +1,265 @@
+{
+  "ts": "2026-11-26T12:46:16.048583+00:00",
+  "sentinel": "memory/orchestrator/convergence_sentinel.py",
+  "threshold": 5.0,
+  "seed": 42,
+  "cycles": 20,
+  "confusion": {
+    "tp": 10,
+    "fp": 0,
+    "fn": 0,
+    "tn": 10
+  },
+  "precision": 1.0,
+  "recall": 1.0,
+  "fpr": 0.0,
+  "accuracy": 1.0,
+  "boundary": [
+    {
+      "drop": 4.9,
+      "fired": false,
+      "ground_truth_fire": false,
+      "correct": true
+    },
+    {
+      "drop": 5.0,
+      "fired": false,
+      "ground_truth_fire": false,
+      "correct": true
+    },
+    {
+      "drop": 5.1,
+      "fired": true,
+      "ground_truth_fire": true,
+      "correct": true
+    }
+  ],
+  "boundary_ok": true,
+  "acceptance": {
+    "recall_eq_1.0": true,
+    "fpr_lt_0.1": true,
+    "pass": true
+  },
+  "rows": [
+    {
+      "idx": 0,
+      "kind": "noise",
+      "prev": 69.03,
+      "curr": 65.87,
+      "drop_pts": 3.16,
+      "label_regression": false,
+      "fired": false,
+      "status": "ok",
+      "attributed_lane": null
+    },
+    {
+      "idx": 1,
+      "kind": "regression",
+      "prev": 60.38,
+      "curr": 48.27,
+      "drop_pts": 12.11,
+      "label_regression": true,
+      "fired": true,
+      "status": "regression_detected",
+      "attributed_lane": "orchestrator"
+    },
+    {
+      "idx": 2,
+      "kind": "noise",
+      "prev": 64.46,
+      "curr": 60.73,
+      "drop_pts": 3.73,
+      "label_regression": false,
+      "fired": false,
+      "status": "ok",
+      "attributed_lane": null
+    },
+    {
+      "idx": 3,
+      "kind": "regression",
+      "prev": 60.82,
+      "curr": 54.01,
+      "drop_pts": 6.81,
+      "label_regression": true,
+      "fired": true,
+      "status": "regression_detected",
+      "attributed_lane": "builder"
+    },
+    {
+      "idx": 4,
+      "kind": "regression",
+      "prev": 70.87,
+      "curr": 60.6,
+      "drop_pts": 10.27,
+      "label_regression": true,
+      "fired": true,
+      "status": "regression_detected",
+      "attributed_lane": "mechanic"
+    },
+    {
+      "idx": 5,
+      "kind": "noise",
+      "prev": 60.73,
+      "curr": 63.25,
+      "drop_pts": -2.52,
+      "label_regression": false,
+      "fired": false,
+      "status": "ok",
+      "attributed_lane": null
+    },
+    {
+      "idx": 6,
+      "kind": "noise",
+      "prev": 66.47,
+      "curr": 68.44,
+      "drop_pts": -1.97,
+      "label_regression": false,
+      "fired": false,
+      "status": "ok",
+      "attributed_lane": null
+    },
+    {
+      "idx": 7,
+      "kind": "noise",
+      "prev": 57.27,
+      "curr": 58.15,
+      "drop_pts": -0.88,
+      "label_regression": false,
+      "fired": false,
+      "status": "ok",
+      "attributed_lane": null
+    },
+    {
+      "idx": 8,
+      "kind": "regression",
+      "prev": 76.52,
+      "curr": 70.43,
+      "drop_pts": 6.09,
+      "label_regression": true,
+      "fired": true,
+      "status": "regression_detected",
+      "attributed_lane": "orchestrator"
+    },
+    {
+      "idx": 9,
+      "kind": "noise",
+      "prev": 76.9,
+      "curr": 80.9,
+      "drop_pts": -4.0,
+      "label_regression": false,
+      "fired": false,
+      "status": "ok",
+      "attributed_lane": null
+    },
+    {
+      "idx": 10,
+      "kind": "noise",
+      "prev": 68.48,
+      "curr": 66.09,
+      "drop_pts": 2.39,
+      "label_regression": false,
+      "fired": false,
+      "status": "ok",
+      "attributed_lane": null
+    },
+    {
+      "idx": 11,
+      "kind": "noise",
+      "prev": 76.95,
+      "curr": 76.56,
+      "drop_pts": 0.39,
+      "label_regression": false,
+      "fired": false,
+      "status": "ok",
+      "attributed_lane": null
+    },
+    {
+      "idx": 12,
+      "kind": "regression",
+      "prev": 76.81,
+      "curr": 67.42,
+      "drop_pts": 9.39,
+      "label_regression": true,
+      "fired": true,
+      "status": "regression_detected",
+      "attributed_lane": "mechanic"
+    },
+    {
+      "idx": 13,
+      "kind": "noise",
+      "prev": 66.29,
+      "curr": 66.8,
+      "drop_pts": -0.51,
+      "label_regression": false,
+      "fired": false,
+      "status": "ok",
+      "attributed_lane": null
+    },
+    {
+      "idx": 14,
+      "kind": "regression",
+      "prev": 63.26,
+      "curr": 53.15,
+      "drop_pts": 10.11,
+      "label_regression": true,
+      "fired": true,
+      "status": "regression_detected",
+      "attributed_lane": "builder"
+    },
+    {
+      "idx": 15,
+      "kind": "noise",
+      "prev": 59.76,
+      "curr": 63.21,
+      "drop_pts": -3.45,
+      "label_regression": false,
+      "fired": false,
+      "status": "ok",
+      "attributed_lane": null
+    },
+    {
+      "idx": 16,
+      "kind": "regression",
+      "prev": 76.54,
+      "curr": 68.55,
+      "drop_pts": 7.99,
+      "label_regression": true,
+      "fired": true,
+      "status": "regression_detected",
+      "attributed_lane": "mechanic"
+    },
+    {
+      "idx": 17,
+      "kind": "regression",
+      "prev": 57.45,
+      "curr": 46.23,
+      "drop_pts": 11.22,
+      "label_regression": true,
+      "fired": true,
+      "status": "regression_detected",
+      "attributed_lane": "orchestrator"
+    },
+    {
+      "idx": 18,
+      "kind": "regression",
+      "prev": 64.47,
+      "curr": 50.59,
+      "drop_pts": 13.88,
+      "label_regression": true,
+      "fired": true,
+      "status": "regression_detected",
+      "attributed_lane": "builder"
+    },
+    {
+      "idx": 19,
+      "kind": "regression",
+      "prev": 59.75,
+      "curr": 52.01,
+      "drop_pts": 7.74,
+      "label_regression": true,
+      "fired": true,
+      "status": "regression_detected",
+      "attributed_lane": "orchestrator"
+    }
+  ]
+}

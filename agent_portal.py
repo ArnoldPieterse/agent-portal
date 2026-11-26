@@ -5248,6 +5248,50 @@ def _agent_open_goal_count(name):
         return 0
 
 
+def _agent_recent_memories(name, limit=3):
+    """Compact per-seat 'recent memory' block for pass sections (2026-11-26).
+    Same load/parse/recover discipline as load_memory(): regex-extract the summary,
+    fall back per-field on any failure, and NEVER raise into the dispatcher.
+    Sources: newest lane evidence .md files by mtime + latest INDEX.md pointer."""
+    try:
+        lane = os.path.join(HERE, "memory", name.lower())
+        items = []
+        if os.path.isdir(lane):
+            cands = []
+            for f in os.listdir(lane):
+                if not f.lower().endswith(".md") or f == "INDEX.md":
+                    continue
+                p = os.path.join(lane, f)
+                try:
+                    cands.append((os.path.getmtime(p), f, p))
+                except Exception:
+                    pass
+            cands.sort(reverse=True)
+            for mt, f, p in cands[:limit]:
+                try:
+                    txt = open(p, encoding="utf-8", errors="replace").read()
+                except Exception:
+                    continue   # unreadable file - skip (recovery: never break dispatch)
+                m = re.search(r"^#{1,3}\s+(.+)$", txt, re.M)
+                summary = (m.group(1) if m else (txt.strip().splitlines() or [""])[0]).strip()
+                summary = re.sub(r"\s+", " ", summary)[:90]
+                age_h = max(0, int((time.time() - mt) // 3600))
+                items.append("%s (%dh) \u2014 %s" % (f, age_h, summary or "(empty)"))
+        idx = os.path.join(lane, "INDEX.md")
+        if os.path.isfile(idx):
+            try:
+                for line in open(idx, encoding="utf-8", errors="replace").read().splitlines():
+                    s = line.strip()
+                    if s.startswith(("-", "*")) and len(s) > 3:
+                        items.append("INDEX: " + re.sub(r"\s+", " ", s)[:90])
+                        break
+            except Exception:
+                pass
+        return ("[recent memory: " + " | ".join(items[:limit + 1]) + "]") if items else ""
+    except Exception:
+        return ""
+
+
 def _autoloop_behaviour_hint(name):
     """Behaviour analysis (2026-11-17): read this agent's LAST substantive group-chat reply and
     derive a one-line context for its next auto-loop task, so the batch pass continues where the
@@ -5533,8 +5577,9 @@ def _autoloop_watchdog():
                         body = ("your goals are 100% reached - contribute to the team while you wait - " + _generic_menu)
                 else:
                     continue   # at 100% inside maintenance cooldown - no task for this seat yet
-                sections.append((n, "@%s (idle %d s): %s%s" % (
-                    n, idle_s, body, (" " + hint) if hint else "")))
+                mem = _agent_recent_memories(n)
+                sections.append((n, "@%s (idle %d s): %s%s%s" % (
+                    n, idle_s, body, (" " + hint) if hint else "", (" " + mem) if mem else "")))
             if not sections:
                 continue   # all at 100% inside cooldown - genuinely nothing to do yet
             # 2026-11-17 budget fix: AUTOLOOP_MAX_STREAK exists to stop pointless maintenance

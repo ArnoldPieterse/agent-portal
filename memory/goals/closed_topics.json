@@ -3702,5 +3702,53 @@
 "text": "**Decision Replay & Counterfactual Log** - `python memory/scribe/decision_replay.py`: for each decision that eliminated an intervention clas",
 "agent": "scribe",
 "at": "2026-11-26"
+},
+{
+"sig": "10edba245c12c61b",
+"text": "**Decision Quality Longitudinal Analysis** - 6-cycle trend of decision quality (from decision-quality.jsonl): per-agent, per-domain, with re",
+"agent": "archivist",
+"at": "2026-11-26"
+},
+{
+"sig": "1bb32414095ecdfc",
+"text": "**Knowledge Tiering for Small-Context Models** - design a 3-tier knowledge system (T0 pointer / T1 summary / T2 full) that fits within 8K to",
+"agent": "archivist",
+"at": "2026-11-26"
+},
+{
+"sig": "2e00fc2c4b088963",
+"text": "**Dispatch-Correctness Deploy Gate** - extend the canary pipeline: before promoting any change that touches dispatch logic, run dispatch_aud",
+"agent": "forge",
+"at": "2026-11-26"
+},
+{
+"sig": "5917f687c8de1887",
+"text": "**Idle-Productivity Floor Enforcer** - `python memory/forge/idle_floor_enforce.py`: scheduled check that a role's productive-pass rate < flo",
+"agent": "forge",
+"at": "2026-11-26"
+},
+{
+"sig": "20b56974a7cca47a",
+"text": "**Regression Sentinel Precision Test** - `python memory/forge/sentinel_precision.py`: validate convergence_sentinel fires on injected regres",
+"agent": "forge",
+"at": "2026-11-26"
+},
+{
+"sig": "786da475c8b71189",
+"text": "**Per-host 24h health sparkline** - Compact reduced-motion-safe trend per host card in `ui/fleet_health.js`. (verified: 2026-11-26 - 56x16 S",
+"agent": "pixel",
+"at": "2026-11-26"
+},
+{
+"sig": "f755168fa82984a9",
+"text": "**Per-widget render error-boundary** - A JS exception in any `ui/cockpit-*.js` renders an inline \"failed to render\" card with a Retry button",
+"agent": "pixel",
+"at": "2026-11-26"
+},
+{
+"sig": "f8aa48ebea051671",
+"text": "**Model-Swap Knowledge Transfer Protocol** - document what knowledge must transfer when a seat's model changes (context, persona, open goals",
+"agent": "archivist",
+"at": "2026-11-26"
 }
 ]

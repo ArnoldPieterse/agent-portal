@@ -1,0 +1,11 @@
+{
+  "t0_entries": 59,
+  "t0_tokens": 1386,
+  "t1_summaries": 20,
+  "t1_tokens": 711,
+  "system_prompt_tokens": 2000,
+  "total_tokens": 4097,
+  "max_context": 8000,
+  "fits_in_budget": true,
+  "working_space_tokens": 3903
+}
