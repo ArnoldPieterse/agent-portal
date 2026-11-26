@@ -1,6 +1,6 @@
 # Decay report 2026-11-26
 
-Leaves: 11421 | flagged (<0.35): 0
+Leaves: 11420 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -10741,7 +10741,6 @@ Leaves: 11421 | flagged (<0.35): 0
 | memory/ops/boot-review-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/ops/build_seat_reachability_history.py | 0 | 0 | n | 0.550 |
 | memory/ops/convergence-prediction.json | 0 | 0 | n | 0.550 |
-| memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
 | memory/ops/elev-helper.log | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-mode.json | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
