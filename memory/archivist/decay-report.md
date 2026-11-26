@@ -1,6 +1,6 @@
 # Decay report 2026-11-27
 
-Leaves: 12046 | flagged (<0.35): 0
+Leaves: 12049 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -11205,6 +11205,7 @@ Leaves: 12046 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261127-050515.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-061039.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-071732.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261127-081949.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27b.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27c.md | 0 | 0 | n | 0.550 |
@@ -11212,6 +11213,7 @@ Leaves: 12046 | flagged (<0.35): 0
 | memory/mechanic/evidence-heartbeat-pass-hook-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-oom-recovery-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-prestage-audit-assist-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-prestage-remediation-script-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-verify-g1-e2e-trigger-081-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/fleet-heartbeat-refresh-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/fleet-heartbeat-reremediation-2026-11-27.md | 0 | 0 | n | 0.550 |
@@ -11258,6 +11260,7 @@ Leaves: 12046 | flagged (<0.35): 0
 | memory/ops/mode-last-seen.json | 0 | 0 | n | 0.550 |
 | memory/ops/model-load.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/post_mirror_goal_repair.py | 0 | 0 | n | 0.550 |
+| memory/ops/prestage_remediate.py | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-state.json | 0 | 0 | n | 0.550 |
 | memory/ops/schtask-snapshot-2026-11-27-input.csv | 0 | 0 | n | 0.550 |
