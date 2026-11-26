@@ -185,14 +185,39 @@ def main():
         "threshold_idle_h": IDLE_THRESHOLD_HOURS,
     }
 
-    # 5. Atomic write
+    # 5. Atomic write (preserve the convergence FSM state so it persists across runs)
     prev_mode = None
+    prev_fsm_state = None
     if OUTPUT_FILE.exists():
         try:
-            prev_mode = json.loads(OUTPUT_FILE.read_text(encoding="utf-8")).get("mode")
+            _prev = json.loads(OUTPUT_FILE.read_text(encoding="utf-8"))
+            prev_mode = _prev.get("mode")
+            prev_fsm_state = _prev.get("fsm_state")
         except Exception:
             pass
+    if prev_fsm_state:
+        result["fsm_state"] = prev_fsm_state
     atomic_write(OUTPUT_FILE, result)
+
+    # 5b. Convergence FSM (Builder goal 1): derive lifecycle state from goal_pct/mode
+    #     and emit through convergence_fsm. Illegal transitions are rejected+logged,
+    #     so this never breaks the operational-mode write above.
+    try:
+        import importlib.util as _il_fsm
+        _fsm_spec = _il_fsm.spec_from_file_location(
+            "convergence_fsm", str(BASE / "memory" / "builder" / "convergence_fsm.py"))
+        _fsm_mod = _il_fsm.module_from_spec(_fsm_spec)
+        _fsm_spec.loader.exec_module(_fsm_mod)
+        _fsm = _fsm_mod.ConvergenceFSM(OUTPUT_FILE, BASE / "memory" / "ops" / "fsm-events.jsonl")
+        if goal_stats["pct"] >= 100.0:
+            _target = "STEADY_STATE"
+        else:
+            _target = "CONVERGING"
+        _fsm.transition(_target, reason=f"goal_pct={goal_stats['pct']},mode={mode}",
+                        source="orchestrator.fleet_mode")
+    except Exception as _e:  # FSM is advisory here; never break mode write
+        if verbose:
+            print(f"  [fsm] skipped: {_e}")
 
     # 6. Log mode transition if changed
     if prev_mode and prev_mode != mode:

@@ -205,3 +205,9 @@
 {"ts": "2026-11-26T19:11:03", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 21], "focus_sig": "ae5a7979", "reason": "lod-evict"}
 {"ts": "2026-11-26T19:11:03", "ref": ["memory/scribe/MEMORY.md", 19], "focus_sig": "ae5a7979", "reason": "lod-evict"}
 {"ts": "2026-11-26T19:11:03", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 22], "focus_sig": "ae5a7979", "reason": "lod-evict"}
+{"ts": "2026-11-26T19:27:29", "ref": ["memory/goals/mechanic-goal1-winrm-forecast-2026-11-20.md", 18], "focus_sig": "3054e386", "reason": "lod-evict"}
+{"ts": "2026-11-26T19:27:29", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "3054e386", "reason": "lod-evict"}
+{"ts": "2026-11-26T19:27:29", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "3054e386", "reason": "lod-evict"}
+{"ts": "2026-11-26T19:27:29", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 39], "focus_sig": "3054e386", "reason": "lod-evict"}
+{"ts": "2026-11-26T19:27:29", "ref": ["memory/synthesis/2026-11-18-rest-of-goals-attempts.md", 25], "focus_sig": "3054e386", "reason": "lod-evict"}
+{"ts": "2026-11-26T19:27:29", "ref": ["memory/verifier/MEMORY.md", 5], "focus_sig": "3054e386", "reason": "lod-evict"}

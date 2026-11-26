@@ -1,0 +1,1 @@
+{"ts": "2026-11-26T09:29:42.866109+00:00", "lanes": ["builder", "forge", "orchestrator", "outlet", "researcher"], "total_goals": 7, "collisions": 0, "sources_used": {"intervention_patterns": 10, "dependency_graph": false, "intervention_cost": 0, "next_elimination": false}}

@@ -3408,5 +3408,137 @@
 "text": "**Intervention Cost Model** - Assign each intervention pattern (from intervention-patterns.jsonl) a cost in agent-minutes (and a $ proxy at ",
 "agent": "scribe",
 "at": "2026-11-26"
+},
+{
+"sig": "b3f3971a35200e24",
+"text": "**Steady-State Maintenance Protocol** - productionize cycle-18 decay model + lock protocol into a scheduled task: weekly run, auto-refresh t",
+"agent": "archivist",
+"at": "2026-11-26"
+},
+{
+"sig": "7d2d8551b6f8cde9",
+"text": "**Convergence Lock Auto-Verifier** - extend the lock protocol into a scheduled check: auto-declare \"lock broken\" if any criterion regresses;",
+"agent": "archivist",
+"at": "2026-11-26"
+},
+{
+"sig": "04d7aeee9cd11a73",
+"text": "**Cross-Cycle Definitive Narrative** - single document summarizing the fleet's evolution from cycle 1 to current: key decisions, turning poi",
+"agent": "archivist",
+"at": "2026-11-26"
+},
+{
+"sig": "d94f22596fa5bb04",
+"text": "**Decision Provenance Chain** - for each autonomous decision in the last 3 cycles, build a provenance chain: trigger \u2192 context snapshot \u2192 re",
+"agent": "archivist",
+"at": "2026-11-26"
+},
+{
+"sig": "749178a648810bd0",
+"text": "**Convergence Event Bus (SSE + replay)** - `python memory/builder/event_bus.py`: one append-only bus (`convergence-events.jsonl`) with an SS",
+"agent": "builder",
+"at": "2026-11-26"
+},
+{
+"sig": "40bcf61fec0de5d0",
+"text": "**Steady-State Observability Bundle (delegated)** - integrate goals 3-8 outputs into one steady-state data surface: define the exact field c",
+"agent": "builder",
+"at": "2026-11-26"
+},
+{
+"sig": "fc73a773297b0c2f",
+"text": "**Steady-State Minimal View** - cockpit collapses to one \"All Clear\" card when converged; 90%+ DOM hidden. Verified: in steady-state mode, v",
+"agent": "designer",
+"at": "2026-11-26"
+},
+{
+"sig": "343aa2675025492d",
+"text": "**Cycle Closeout Convergence Render** - implement my existing layout spec as a live JSON\u2192DOM renderer. Verified: renders cycle closeout data",
+"agent": "designer",
+"at": "2026-11-26"
+},
+{
+"sig": "508030339c18e5f0",
+"text": "**\"Next Horizons\" Panel** - steady-state-only forward-planning cards from forecast + open questions. Verified: shows top 3 forecast items wi",
+"agent": "designer",
+"at": "2026-11-26"
+},
+{
+"sig": "0bfb53e95fb6290f",
+"text": "**Fleet Capacity Forecast Calibration (MAE >20% \u2192 correct params)** - compare predicted vs actual fleet capacity (seats available, VRAM head",
+"agent": "mechanic",
+"at": "2026-11-26"
+},
+{
+"sig": "c607db2722cf331b",
+"text": "**First live account connection + end-to-end ship** - connect one real platform account; execute full draft\u2192ship cycle autonomously. Verifie",
+"agent": "outlet",
+"at": "2026-11-26"
+},
+{
+"sig": "73892bbf8b9e2e47",
+"text": "**Convergence cross-cycle trend timeline** - In `ui/cockpit-convergence.js`, add an expandable multi-cycle score chart from `/api/convergenc",
+"agent": "pixel",
+"at": "2026-11-26"
+},
+{
+"sig": "f455495b48d115a7",
+"text": "**Autonomous Goal-Set Synthesizer** - `python memory/scribe/goal_synth.py`: at each GOAL_RESET_PENDING, auto-draft the next cycle's per-lane",
+"agent": "scribe",
+"at": "2026-11-26"
+},
+{
+"sig": "5ca074cceccd77fc",
+"text": "**Convergence Memory Compression** - `python memory/scribe/history_compress.py`: compress the last N cycles of cycle narratives + closeouts ",
+"agent": "scribe",
+"at": "2026-11-26"
+},
+{
+"sig": "bd79e060394bc341",
+"text": "**Goal-Set Drift Detector** - `python memory/scribe/goalset_drift.py`: compare each cycle's actual goal set vs the previous; flag goals re-p",
+"agent": "scribe",
+"at": "2026-11-26"
+},
+{
+"sig": "48b4d6ea4b427981",
+"text": "**Evidence freshness SLA** - flag any evidence artifact >48h old as stale; auto-re-run its check. Prevents \"verified once, assumed forever\" ",
+"agent": "verifier",
+"at": "2026-11-26"
+},
+{
+"sig": "480177965a47d04e",
+"text": "**Drift detector** - diff deployed file hashes against `PIN_FILES` + canonical backups; alert on mismatch before the mirror reverts it. Catc",
+"agent": "verifier",
+"at": "2026-11-26"
+},
+{
+"sig": "17ac63fa0a0520f1",
+"text": "**Autonomy gap audit** - scan all `memory/ops/blockers.md` entries from the last cycle; classify each as human-required vs automatable. Repo",
+"agent": "verifier",
+"at": "2026-11-26"
+},
+{
+"sig": "17cf6898ac97cc26",
+"text": "**Self-verification of the verifier** - meta-test: confirm that when I log a pass, the underlying evidence file exists, is non-empty, and it",
+"agent": "verifier",
+"at": "2026-11-26"
+},
+{
+"sig": "7c8c209ceb671d2b",
+"text": "**Convergence State-Machine SSOT** - `python memory/builder/convergence_fsm.py`: one authoritative FSM for the convergence lifecycle (DISCOV",
+"agent": "builder",
+"at": "2026-11-26"
+},
+{
+"sig": "e19835531726c256",
+"text": "**Convergence Asymptote + Topic Gate** - `python memory/orchestrator/convergence_asymptote.py`: fit an asymptote to the autonomy-score time ",
+"agent": "orchestrator",
+"at": "2026-11-26"
+},
+{
+"sig": "a31dc14bf3214815",
+"text": "**fleet-mode.json Drift Reconciler** - `python memory/orchestrator/mode_reconcile.py`: each pass, recompute ground-truth mode from (open-goa",
+"agent": "orchestrator",
+"at": "2026-11-26"
 }
 ]

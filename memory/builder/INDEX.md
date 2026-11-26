@@ -1,5 +1,6 @@
 # BUILDER INDEX — index of indexes for Builder lane (repin farm, staged patches, test suites).
 Last updated: 2026-11-26 (Builder: Cycle 20 goals proposed - Fleet Autonomy Convergence; Cycle 19 set archived)
+- convergence_fsm_evidence_2026-11-26.md -> memory/builder/convergence_fsm_evidence_2026-11-26.md   **Goal 1 REACHED**: Convergence State-Machine SSOT (convergence_fsm.py); selftest PASS 15 legal accepted + illegal rejected/logged; fleet-mode.json stamped fsm_state+fsm_validated; writer+controller+sentinel all emit through FSM
 - cycle20_goalsetting_evidence_2026-11-26.md -> memory/builder/cycle20_goalsetting_evidence_2026-11-26.md   Cycle 20 goals proposed: 10 goals (autonomous closeout + self-healing infra + steady-state contracts); all new vs closed_topics.json
 - cycle18_goalsetting_evidence_2026-11-25.md -> memory/builder/cycle18_goalsetting_evidence_2026-11-25.md   Cycle 18 goals proposed: 10 goals, Fleet Autonomy Convergence
 - assist_mechanic_g1_seattrend_2026-11-25.md -> memory/builder/assist_mechanic_g1_seattrend_2026-11-25.md   Assist (owner Mechanic): seat_probe.py latency-trend->degrading; selftest 5/5 PASS

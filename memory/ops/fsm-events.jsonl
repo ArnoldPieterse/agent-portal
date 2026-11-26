@@ -1,0 +1,5 @@
+{"ts": "2026-11-26T09:30:19.868062+00:00", "from": "DISCOVERING", "to": "CONVERGING", "legal": true, "reason": "fleet actively working cycle-20 goals", "source": "fsm-init"}
+{"ts": "2026-11-26T09:30:20.004492+00:00", "from": "CONVERGING", "to": "STEADY_STATE", "legal": true, "reason": "fleet at 115/115 steady-state plateau", "source": "fsm-init"}
+{"ts": "2026-11-26T09:32:45.982494+00:00", "from": "DISCOVERING", "to": "CONVERGING", "legal": true, "reason": "goal_pct=38.3,mode=WORK", "source": "orchestrator.fleet_mode"}
+{"ts": "2026-11-26T09:33:32.831491+00:00", "from": "CONVERGING", "to": "CONVERGING", "legal": true, "reason": "goal_pct=39.5,mode=WORK", "source": "orchestrator.fleet_mode"}
+{"ts": "2026-11-26T09:33:32.976835+00:00", "from": "CONVERGING", "to": "CONVERGING", "legal": true, "reason": "goal_pct=39.5,mode=WORK", "source": "orchestrator.fleet_mode"}

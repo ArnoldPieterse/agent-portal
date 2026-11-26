@@ -242,6 +242,24 @@ def log_regression(result, proposed_data):
     except OSError:
         pass
 
+    # Convergence FSM (Builder goal 1): a detected regression emits a REGRESSING
+    # transition through the SSOT state machine. Illegal moves are rejected+logged,
+    # so this is advisory and never breaks the gate.
+    try:
+        import importlib.util as _ilu_fsm
+        _spec = _ilu_fsm.spec_from_file_location(
+            "convergence_fsm", str(ROOT / "memory" / "builder" / "convergence_fsm.py"))
+        _mod = _ilu_fsm.module_from_spec(_spec)
+        _spec.loader.exec_module(_mod)
+        # NOTE: use the canonical ops path (the module-level FLEET_MODE is a
+        # pre-existing off-by-one pointing at <root>/fleet-mode.json).
+        _fsm = _mod.ConvergenceFSM(ROOT / "memory" / "ops" / "fleet-mode.json",
+                                   ROOT / "memory" / "ops" / "fsm-events.jsonl")
+        _fsm.transition("REGRESSING", reason=result.get("reason", "regression detected"),
+                        source="autonomy_regression_gate")
+    except Exception:
+        pass
+
 
 def selftest():
     """Self-test: verify block-on-drop, pass-on-neutral, pass-on-improve paths."""

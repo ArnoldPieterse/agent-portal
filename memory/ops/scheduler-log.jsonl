@@ -3449,3 +3449,10 @@
 {"t": "2026-11-26 19:24:37", "job": "cycle_10m", "event": "start", "pid": 27664}
 {"t": "2026-11-26 19:24:42", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-26 19:24:47", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-26 19:29:37", "job": "cycle_5m", "event": "start", "pid": 23220}
+{"t": "2026-11-26 19:29:42", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-26 19:34:37", "job": "cycle_5m", "event": "start", "pid": 6152}
+{"t": "2026-11-26 19:34:37", "job": "cycle_10m", "event": "start", "pid": 3556}
+{"t": "2026-11-26 19:34:37", "job": "cycle_30m", "event": "start", "pid": 21520}
+{"t": "2026-11-26 19:34:42", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-26 19:34:47", "job": "cycle_10m", "event": "done", "rc": 0}

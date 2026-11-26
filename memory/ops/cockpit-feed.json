@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T09:24:43.997258+00:00",
+  "ts": "2026-11-26T09:34:46.180783+00:00",
   "health_score": 75,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -71,7 +71,7 @@
     }
   ],
   "goals": {
-    "fleet_pct": 92.7,
+    "fleet_pct": 30.0,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -134,9 +134,9 @@
         "pct": 0.0
       },
       "archivist": {
-        "total": 4,
-        "verified": 4,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "builder-assist-mechanic2-autorestart-2026-11-19": {
         "total": 1,
@@ -309,9 +309,9 @@
         "pct": 0.0
       },
       "designer": {
-        "total": 10,
-        "verified": 10,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "final13-sequencing-forecast-2026-11-21": {
         "total": 1,
@@ -469,9 +469,9 @@
         "pct": 0.0
       },
       "mechanic": {
-        "total": 11,
-        "verified": 11,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "mode-controller-path-divergence-forecast": {
         "total": 1,
@@ -484,14 +484,14 @@
         "pct": 0.0
       },
       "outlet": {
-        "total": 8,
-        "verified": 8,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "pixel": {
-        "total": 10,
-        "verified": 10,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       },
       "researcher-attempts-cycle3-2026-11-18": {
         "total": 1,
@@ -599,13 +599,13 @@
         "pct": 0.0
       },
       "verifier": {
-        "total": 10,
-        "verified": 10,
-        "pct": 100.0
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
       }
     },
-    "total_goals": 41,
-    "total_verified": 38
+    "total_goals": 10,
+    "total_verified": 3
   },
   "open_blockers": 29,
   "autonomous_actions": [

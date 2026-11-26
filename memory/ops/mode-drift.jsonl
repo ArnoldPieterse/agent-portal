@@ -1,0 +1,4 @@
+{"ts": "2026-11-26T09:32:16.308694+00:00", "field": "goal_pct", "was": 64.6, "now": 3.6, "cause": "recomputed from goal files"}
+{"ts": "2026-11-26T09:32:16.308712+00:00", "field": "goals_total", "was": 82, "now": 111, "cause": "recomputed from goal files"}
+{"ts": "2026-11-26T09:32:16.308720+00:00", "field": "goals_reached", "was": 53, "now": 4, "cause": "recomputed from goal files"}
+{"ts": "2026-11-26T09:32:16.308725+00:00", "field": "goals_open", "was": 29, "now": 107, "cause": "recomputed from goal files"}

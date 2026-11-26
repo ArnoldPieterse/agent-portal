@@ -1,0 +1,25 @@
+{
+  "computed_at": "2026-11-26T09:30:28.759334+00:00",
+  "n_points": 4,
+  "latest_cycle": 24,
+  "latest_score": 71.3,
+  "fit": {
+    "plateau_value": 78.42,
+    "amplitude_B": 16.6,
+    "rate_k": 0.0352,
+    "cycles_to_plateau": 130.87,
+    "r_squared": 0.9964,
+    "n_points": 4
+  },
+  "convergence_state": "CLIMBING",
+  "topic_gate": {
+    "state": "CLIMBING",
+    "topic_type": "capability_expansion",
+    "suggested_focus": [
+      "new capability development",
+      "cross-lane integration",
+      "autonomy expansion",
+      "infrastructure scaling"
+    ]
+  }
+}

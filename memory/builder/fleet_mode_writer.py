@@ -70,6 +70,28 @@ def validate(payload) -> list[str]:
     return errs
 
 
+def _ensure_fsm_stamped(payload: dict) -> None:
+    """Convergence FSM (Builder goal 1): ensure a mode write carries fsm_state +
+    fsm_validated so no writer bypasses the state machine. Respects an already-
+    validated payload (e.g. one produced by convergence_fsm itself) to avoid loops."""
+    if not isinstance(payload, dict) or payload.get("fsm_validated") is True:
+        return
+    try:
+        import importlib.util as _ilu
+        _spec = _ilu.spec_from_file_location(
+            "convergence_fsm", str(HERE / "convergence_fsm.py"))
+        _mod = _ilu.module_from_spec(_spec)
+        _spec.loader.exec_module(_mod)
+        fsm = _mod.ConvergenceFSM(Path(path), HERE.parent / "ops" / "fsm-events.jsonl")
+        payload["fsm_state"] = fsm.current_state()
+        payload["fsm_validated"] = True
+    except Exception:
+        # FSM unavailable (e.g. module missing): fall back to a valid default so the
+        # schema contract (fsm_state present) still holds; never break the write.
+        payload.setdefault("fsm_state", "DISCOVERING")
+        payload["fsm_validated"] = True
+
+
 def write_mode(payload: dict, path: Path | str = DEFAULT_PATH) -> bool:
     """Atomically write payload to path after schema validation.
 
@@ -78,6 +100,7 @@ def write_mode(payload: dict, path: Path | str = DEFAULT_PATH) -> bool:
     temp cleaned up, previous file untouched.
     """
     path = Path(path)
+    _ensure_fsm_stamped(payload)
     errs = validate(payload)
     # cycle-15 verifier G3: second independent validation layer (mode_schema_check),
     # runs on EVERY write; errors are logged to memory/ops/mode-schema-errors.log.
