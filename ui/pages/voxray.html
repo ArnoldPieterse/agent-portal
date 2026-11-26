@@ -1,167 +1,245 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><title>Voxel Ray View - AgentPortal</title>
+<html><head><meta charset="utf-8"><title>Voxel Mini-Voxel View - AgentPortal</title>
 <style>
 html,body{margin:0;height:100%;background:#05070d;overflow:hidden;font-family:ui-monospace,Consolas,monospace}
 #c{display:block;width:100vw;height:100vh}
 #hud{position:fixed;top:10px;left:12px;color:#9fd8ff;font-size:12px;line-height:1.5;text-shadow:0 1px 2px #000;pointer-events:none}
 #hud b{color:#fff}
-#bar{position:fixed;top:10px;right:12px;display:flex;gap:8px}
+#bar{position:fixed;top:10px;right:12px;display:flex;gap:8px;z-index:5}
 button{background:#101a30;color:#7fd4ff;border:1px solid #2a4a7a;border-radius:6px;padding:5px 10px;cursor:pointer;font-family:inherit;font-size:12px}
 a{color:#7fd4ff}
+#sel{position:fixed;bottom:10px;left:12px;color:#ffd76a;font-size:12px;text-shadow:0 1px 2px #000;pointer-events:none}
 </style></head><body>
 <canvas id="c"></canvas>
-<div id="hud"><b>VOXEL RAY VIEW</b> - per-pixel raymarch of the memory voxel world<br>
-idle... drag to orbit, wheel to zoom</div>
-<div id="bar"><button id="bg">ghosts: on</button><a href="/ui/pages/mind.html" style="align-self:center">mind room &larr;</a></div>
+<div id="hud"><b>VOXEL MINI-VOXEL VIEW</b> - every object rendered from thousands of mini voxels<br>idle... drag orbit · wheel zoom · click a cluster to select+focus it</div>
+<div id="bar"><button id="bg">ghosts: on</button><button id="clr">clear selection</button><a href="/ui/pages/mind.html" style="align-self:center">mind room &larr;</a></div>
+<div id="sel"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-const MAXC=512, MAXG=512;
+/* 2026-11-26: mini-voxel upgrade. Each memory object's top-level voxel is expanded into a
+   G^3 grid of GPU-instanced mini voxels (default G=13 -> ~2.2k per object). Mini-voxel size
+   follows the live subdivision data: dense fine detail along each object's drill-chain path
+   (the 2mm focus line), coarser away from it. Click a cluster -> selects the grouped voxels,
+   highlights them and focuses the camera on the group. */
+const G=Math.max(4,Math.min(20,parseInt(new URLSearchParams(location.search).get('g'))||13));
+function makeVert(kind){return `
+precision highp float;
+varying vec3 vCol; varying float vKind; varying float vSeed; varying vec3 vNrm; varying vec3 vWorld;
+float h3(vec3 p){p=fract(p*0.3183099+0.1);p*=17.0;return fract(p.x*p.y*p.z*(p.x+p.y+p.z));}
+void main(){
+ float sc=length(instanceMatrix[0].xyz);             // per-instance scale (auto-declared for InstancedMesh)
+ vec4 wp=instanceMatrix*vec4(position,1.0);
+ vec3 nrm=normalize((instanceMatrix*vec4(normal,0.0)).xyz);
+ float sd=h3(floor(wp.xyz*7.0))*97.0;                // stable per-mini-voxel seed from world cell
+ float n=h3(normal*4.0+sd)-0.5;                      // per-corner chunk displacement (heightmap feel)
+ wp.xyz+=nrm*n*sc*0.22;
+ vWorld=wp.xyz; vNrm=nrm; vCol=instanceColor; vKind=${kind}.0; vSeed=sd;
+ gl_Position=projectionMatrix*modelViewMatrix*wp;
+}`;}
 const FRAG=`
 precision highp float;
-uniform vec2 uRes; uniform vec3 uCamPos; uniform mat3 uCamMat;
-uniform int uNC; uniform vec4 uCell[${MAXC}];
-uniform vec3 uCol[${MAXC}]; uniform float uType[${MAXC}]; uniform float uSeed[${MAXC}];
-uniform int uNG; uniform vec4 uGhost[${MAXG}];
-uniform float uTime; uniform float uShowGhosts;
+varying vec3 vCol; varying float vKind; varying float vSeed; varying vec3 vNrm; varying vec3 vWorld;
+uniform vec3 uCamPos;
 float h3(vec3 p){p=fract(p*0.3183099+0.1);p*=17.0;return fract(p.x*p.y*p.z*(p.x+p.y+p.z));}
 float vnoise(vec3 p){vec3 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
  float a=h3(i),b=h3(i+vec3(1,0,0)),c=h3(i+vec3(0,1,0)),d=h3(i+vec3(1,1,0));
  float e=h3(i+vec3(0,0,1)),g2=h3(i+vec3(1,0,1)),k=h3(i+vec3(0,1,1)),l=h3(i+vec3(1,1,1));
  return mix(mix(mix(a,b,f.x),mix(c,d,f.x),f.y),mix(mix(e,g2,f.x),mix(k,l,f.x),f.y),f.z);}
-float fbm(vec3 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*vnoise(p);p*=2.13;a*=.5;}return v;}
-float iAABB(vec3 ro,vec3 rd,vec3 mn,vec3 mx){
- vec3 t0=(mn-ro)/rd,t1=(mx-ro)/rd;
- vec3 tmn=min(t0,t1),tmx=max(t0,t1);
- float tn=max(max(tmn.x,tmn.y),tmn.z),tf=min(min(tmx.x,tmx.y),tmx.z);
- return (tf>max(tn,0.))?tn:-1.;}
 void main(){
- vec2 uv=(gl_FragCoord.xy-.5*uRes)/uRes.y;
- vec3 ro=uCamPos, rd=normalize(uCamMat*vec3(uv,-1.6)); // lookAt basis: +Z points back at eye
- float best=1e9; int bi=-1;
- for(int i=0;i<${MAXC};i++){ if(i>=uNC)break;
-  vec4 C=uCell[i]; if(C.w<=0.)continue;
-  float t=iAABB(ro,rd,C.xyz,C.xyz+C.w);
-  if(t>0.&&t<best){best=t;bi=i;}}
- vec3 col;
- if(bi>=0){
-  vec4 C=uCell[bi]; vec3 mn=C.xyz; float sz=C.w;
-  vec3 p=ro+rd*best;
-  vec3 loc=(p-mn)/sz; float sd=uSeed[bi];
-  // heightmap detail: displace along face normal + perturb shading normal
-  vec3 nrm=abs(rd); nrm/= (nrm.x+nrm.y+nrm.z);
-  float amp=sz*0.10;
-  float h=fbm(loc*6.+sd*7.3);
-  p+=nrm*h*amp;
-  float e=sz*0.02;
-  float hx=fbm((loc+vec3(e,0,0))*6.+sd*7.3), hy=fbm((loc+vec3(0,e,0))*6.+sd*7.3);
-  vec3 bn=nrm*(h-hx)/e*amp*2. - vec3(0.,0.,0.); // cheap slope hint
-  vec3 N=normalize(mix(nrm, nrm+bn*0.4, step(0.5,h)));
-  vec3 base=uCol[bi];
-  float ty=uType[bi];
-  if(ty<0.5){ // rigid: brushed metal + rim
-   float st=sin(loc.y*46.+sd*9.)*.5+.5;
-   base=mix(base,base*1.7,st*.25);
-  } else {    // leaf: paper grid
-   vec3 g=abs(fract(loc*8.)-.5);
-   float ln=min(g.x,g.y); ln=min(ln,g.z);
-   base=mix(base,base*0.55,smoothstep(.46,.5,ln)*.5);
-  }
-  vec3 L=normalize(vec3(.5,1.,.3));
-  float dif=max(dot(N,L),0.); float spe=pow(max(dot(reflect(-L,N),-rd),0.),42.);
-  float fr=pow(1.-max(dot(N,-rd),0.),3.);
-  col=base*(.22+dif*.85)+vec3(1.,.95,.85)*spe*(ty<0.5?.8:.15)+uCol[bi]*fr*.6;
-  col=mix(col,vec3(.02,.04,.08),smoothstep(24.,60.,best)); // fog (band widened for orbit distance)
- } else {
-  col=vec3(.015,.03,.06)+vec3(.02,.05,.1)*uv.y;
-  if(uShowGhosts>.5){ // future pathways: next subdivision level, faint additive
-   float gb=1e9; vec4 GC=vec4(0.);
-   for(int j=0;j<${MAXG};j++){ if(j>=uNG)break;
-    vec4 G=uGhost[j]; if(G.w<=0.)continue;
-    float t=iAABB(ro,rd,G.xyz,G.xyz+G.w);
-    if(t>0.&&t<gb){gb=t;GC=G;}}
-   if(gb<1e9){
-    vec3 gp=ro+rd*gb; vec3 gl=(gp-GC.xyz)/GC.w;
-    float pw=.5+.5*sin(uTime*2.+gl.x*9.+gl.y*7.+gl.z*5.);
-    col+=vec3(.1,.6,1.)*pw*.28*(1.-smoothstep(0.,40.,gb));
-   }
-  }
+ vec3 N=normalize(vNrm); vec3 base=vCol;
+ if(vKind<0.5){ // rigid: brushed metal + rim
+  float st=sin(vWorld.y*46.0+vSeed*9.0)*.5+.5;
+  base=mix(base,base*1.7,st*.25);
+ } else {       // leaf: paper grid
+  vec3 g=abs(fract(vWorld*8.)-.5);
+  float ln=min(min(g.x,g.y),g.z);
+  base=mix(base,base*0.55,smoothstep(.46,.5,ln)*.5);
  }
+ // micro heightmap shading
+ float h=vnoise(vWorld*7.+vSeed*3.1);
+ vec3 Vd=normalize(uCamPos-vWorld);
+ vec3 L=normalize(vec3(.5,1.,.3));
+ float dif=max(dot(N,L),0.)*(.8+.4*h);
+ float spe=pow(max(dot(reflect(-L,N),Vd),0.),42.);
+ float fr=pow(1.-max(dot(N,Vd),0.),3.);
+ vec3 col=base*(.22+dif*.85)+vec3(1.,.95,.85)*spe*(vKind<0.5?.7:.12)+base*fr*.5;
+ col=mix(col,vec3(.02,.04,.08),smoothstep(24.,60.,length(uCamPos-vWorld))); // fog
  gl_FragColor=vec4(col,1.);
 }`;
 const canvas=document.getElementById('c');
-const renderer=new THREE.WebGLRenderer({canvas,antialias:false});
-const scene=new THREE.Scene(); const cam=new THREE.PerspectiveCamera(60,1,0.01,200);
-const geo=new THREE.PlaneGeometry(2,2);
-const uni={uRes:{value:new THREE.Vector2()},uCamPos:{value:new THREE.Vector3()},uCamMat:{value:new THREE.Matrix3()},
- uNC:{value:0},uCell:{value:Array.from({length:MAXC},()=>new THREE.Vector4(0,0,0,0))},
- uCol:{value:Array.from({length:MAXC},()=>new THREE.Vector3())},uType:{value:new Float32Array(MAXC)},uSeed:{value:new Float32Array(MAXC)},
- uNG:{value:0},uGhost:{value:Array.from({length:MAXG},()=>new THREE.Vector4(0,0,0,0))},
- uTime:{value:0},uShowGhosts:{value:1}};
-const mat=new THREE.ShaderMaterial({fragmentShader:FRAG,vertexShader:'void main(){gl_Position=vec4(position.xy,0.,1.);}',uniforms:uni});
-scene.add(new THREE.Mesh(geo,mat));
-let yaw=0.0,pitch=.05,dist=26,tgt=new THREE.Vector3(0,0,0),showG=true; // head-on into the central object cluster (room is sparse off-axis)
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true});
+const scene=new THREE.Scene(); const cam=new THREE.PerspectiveCamera(60,1,0.05,300);
+let yaw=0.0,pitch=.05,dist=26,tgt=new THREE.Vector3(0,0,0),showG=true;
+let tgtGoal=tgt.clone(),distGoal=dist;      // focus tween targets
 function camUpdate(){const cp=Math.cos(pitch);
- uni.uCamPos.value.set(tgt.x+dist*cp*Math.sin(yaw),tgt.y+dist*Math.sin(pitch),tgt.z+dist*cp*Math.cos(yaw));
- const m=new THREE.Matrix4().lookAt(uni.uCamPos.value,tgt,new THREE.Vector3(0,1,0));
- uni.uCamMat.value.set(m.elements[0],m.elements[1],m.elements[2],m.elements[4],m.elements[5],m.elements[6],m.elements[8],m.elements[9],m.elements[10]);}
-function resize(){const w=innerWidth,h=innerHeight;renderer.setSize(w,h,false);uni.uRes.value.set(w*devicePixelRatio,h*devicePixelRatio);renderer.setPixelRatio(devicePixelRatio);cam.aspect=w/h;cam.updateProjectionMatrix();}
+ cam.position.set(tgt.x+dist*cp*Math.sin(yaw),tgt.y+dist*Math.sin(pitch),tgt.z+dist*cp*Math.cos(yaw));
+ cam.lookAt(tgt);}
+function resize(){renderer.setSize(innerWidth,innerHeight,false);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();}
 addEventListener('resize',resize);resize();
+/* ---------- instanced mini-voxel meshes (r128 blessed path: InstancedMesh + instanceMatrix/instanceColor) ---------- */
+const box=new THREE.BoxGeometry(1,1,1);
+const CAP=90000;
+const uni={uCamPos:{value:new THREE.Vector3()}};
+function makeMesh(kind){
+ const m=new THREE.InstancedMesh(box,new THREE.ShaderMaterial({vertexShader:makeVert(kind),fragmentShader:FRAG,uniforms:uni}),CAP);
+ m.count=0; m.frustumCulled=false; scene.add(m); return m;}
+const meshR=makeMesh(0),meshL=makeMesh(1);          // rigid / leaf
+/* r128 setColorAt sizes the buffer from mesh.count (0 at build time) -> pre-allocate full capacity */
+meshR.instanceColor=new THREE.InstancedBufferAttribute(new Float32Array(CAP*3),3);
+meshL.instanceColor=new THREE.InstancedBufferAttribute(new Float32Array(CAP*3),3);
+let iPos=null,iColor=null,iKind=null,iLocal=null,count=0,origColor=null,ready=false,selGrp=null;
+const _M=new THREE.Matrix4(),_C=new THREE.Color();
+/* ---------- ghost frontier (where detail grows next) ---------- */
+const ghostGroup=new THREE.Group(); scene.add(ghostGroup); let ghostMats=[];
+function clearGhosts(){while(ghostGroup.children.length){const c=ghostGroup.children.pop();if(c.geometry)c.geometry.dispose();if(c.material)c.material.dispose();}ghostMats=[];}
+/* ---------- data ---------- */
+let objs=[],lastSig='';
+function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0)/4294967295;}
+function hueCol(h,s,l){const a=s*Math.min(l,1-l);const f=n=>{const k=(n+h*12)%12;return l-a*Math.max(-1,Math.min(k-3,Math.min(9-k,1)));};return [f(0),f(8),f(4)];}
+function build(cells){
+ objs=[]; const byBase={};
+ cells.forEach(c=>{const b=c.a.split('/')[0];(byBase[b]=byBase[b]||[]).push(c);});
+ Object.keys(byBase).forEach(base=>{
+  const list=byBase[base]; let top=null;
+  list.forEach(c=>{if(c.d===0&&(c.l||c.r))top=c;});
+  if(!top)return;
+  let tip=top; list.forEach(c=>{if(c.d>tip.d)tip=c;});
+  const path=[]; let p=top.p.slice(),s=3.0;
+  {const segs=tip.a.split('/').slice(1).map(Number);   // x,y,z triplets, one per subdivision level
+   for(let k=0;k+2<segs.length;k+=3){p=[p[0]+segs[k]*s/2,p[1]+segs[k+1]*s/2,p[2]+segs[k+2]*s/2];s/=2;path.push([p[0]+s/2,p[1]+s/2,p[2]+s/2]);}}
+  objs.push({base,top,tip,path});
+ });
+ const total=objs.length*G*G*G;
+ iPos=new Float32Array(total*3); iColor=new Float32Array(total*3);
+ iKind=new Float32Array(total); iLocal=new Int32Array(total); origColor=new Float32Array(total*3);
+ count=total; ready=true; selGrp=null;
+ let n=0,nR=0,nL=0;
+ for(const o of objs){
+  const p0=o.top.p,S=o.top.s,m=S/G,kind=(o.top.k==='rigid')?0:1;
+  const h0=hash(o.base);
+  const baseCol=(kind===0)?hueCol(.58+h0*.06,.62,.42):hueCol(.13+h0*.07,.42,.62);
+  for(let ix=0;ix<G;ix++)for(let iy=0;iy<G;iy++)for(let iz=0;iz<G;iz++){
+   const cx=p0[0]+(ix+.5)*m,cy=p0[1]+(iy+.5)*m,cz=p0[2]+(iz+.5)*m;
+   let dmin=1e9; for(const q of o.path){const dx=cx-q[0],dy=cy-q[1],dz=cz-q[2];dmin=Math.min(dmin,Math.sqrt(dx*dx+dy*dy+dz*dz));}
+   const near=Math.exp(-dmin/(S*.35));                       // 1 on the drill focus line
+   const j=.55+.45*hash(o.base+ix+'_'+iy+'_'+iz);
+   const px=cx+(hash(o.base+'x'+ix)-.5)*m*.5;
+   const py=cy+(hash(o.base+'y'+iy)-.5)*m*.5;
+   const pz=cz+(hash(o.base+'z'+iz)-.5)*m*.5;
+   let sc=Math.max(m*(.3+.7*j)*(1-.6*near),.015); if(!isFinite(sc))sc=m*.4;  // fine detail along the chain
+   iPos[n*3]=px; iPos[n*3+1]=py; iPos[n*3+2]=pz;
+   const glow=.35*near;                                        // cyan tint = live subdivision depth
+   const r=baseCol[0]*(1-glow)+.2*glow,g=baseCol[1]*(1-glow)+.85*glow,b=baseCol[2]*(1-glow)+1.*glow;
+   iColor[n*3]=r; iColor[n*3+1]=g; iColor[n*3+2]=b;
+   iKind[n]=kind;
+   const mesh=(kind===0)?meshR:meshL, li=(kind===0)?nR++:nL++;
+   iLocal[n]=li;
+   _M.makeScale(sc,sc,sc); _M.setPosition(px,py,pz); mesh.setMatrixAt(li,_M);
+   _C.setRGB(r,g,b); mesh.setColorAt(li,_C);
+   n++;
+  }
+ }
+ origColor.set(iColor);
+ meshR.count=nR; meshL.count=nL;
+ if(meshR.instanceColor)meshR.instanceColor.needsUpdate=true;
+ if(meshL.instanceColor)meshL.instanceColor.needsUpdate=true;
+ meshR.instanceMatrix.needsUpdate=true; meshL.instanceMatrix.needsUpdate=true;
+ /* ghost frontier: missing level-1 octants around each object */
+ clearGhosts();
+ const have=new Set(cells.map(c=>c.a));
+ for(const o of objs){
+  for(let i=0;i<8;i++){const x=i&1,y=(i>>1)&1,z=(i>>2)&1;
+   if(have.has(o.base+'/'+x+'/'+y+'/'+z))continue;
+   const S2=o.top.s/2;
+   const g=new THREE.EdgesGeometry(new THREE.BoxGeometry(S2,S2,S2));
+   const mm=new THREE.LineBasicMaterial({color:0x22d3ee,transparent:true,opacity:.1});
+   const l=new THREE.LineSegments(g,mm);
+   l.position.set(o.top.p[0]+x*o.top.s/2+S2/2,o.top.p[1]+y*o.top.s/2+S2/2,o.top.p[2]+z*o.top.s/2+S2/2);
+   ghostGroup.add(l); ghostMats.push(mm);
+  }
+ }
+}
+/* ---------- selection: click a cluster -> select grouped voxels + focus ---------- */
+let selBox=null;
+function clearSel(){
+ if(origColor&&selGrp){for(const i of selGrp){const mesh=(iKind[i]===0)?meshR:meshL;_C.setRGB(origColor[i*3],origColor[i*3+1],origColor[i*3+2]);mesh.setColorAt(iLocal[i],_C);}
+  if(meshR.instanceColor)meshR.instanceColor.needsUpdate=true;if(meshL.instanceColor)meshL.instanceColor.needsUpdate=true;selGrp=null;}
+ if(selBox){scene.remove(selBox);selBox.geometry.dispose();selBox.material.dispose();selBox=null;}
+ document.getElementById('sel').textContent='';
+}
+function pick(sx,sy){
+ const v=new THREE.Vector3(),hits=[];
+ for(let i=0;i<count;i++){
+  v.set(iPos[i*3],iPos[i*3+1],iPos[i*3+2]).project(cam);
+  if(v.z>1)continue;
+  const x=(v.x*.5+.5)*innerWidth,y=(-v.y*.5+.5)*innerHeight;
+  const d=(x-sx)*(x-sx)+(y-sy)*(y-sy);
+  if(d<36*36)hits.push([i,d]);
+ }
+ if(!hits.length){clearSel();return;}
+ hits.sort((a,b)=>a[1]-b[1]);
+ const h0=hits[0][0];
+ const R=Math.max(.5,3.0/G*2.2);                              // group radius: a few mini voxels
+ const grp=[]; let cx=0,cy=0,cz=0,mn=[1e9,1e9,1e9],mx=[-1e9,-1e9,-1e9];
+ for(let i=0;i<count;i++){
+  const dx=iPos[i*3]-iPos[h0*3],dy=iPos[i*3+1]-iPos[h0*3+1],dz=iPos[i*3+2]-iPos[h0*3+2];
+  if(dx*dx+dy*dy+dz*dz<R*R){grp.push(i);cx+=iPos[i*3];cy+=iPos[i*3+1];cz+=iPos[i*3+2];
+   for(let k=0;k<3;k++){mn[k]=Math.min(mn[k],iPos[i*3+k]);mx[k]=Math.max(mx[k],iPos[i*3+k]);}}
+ }
+ cx/=grp.length;cy/=grp.length;cz/=grp.length;
+ clearSel(); selGrp=grp;
+ for(const i of grp){const mesh=(iKind[i]===0)?meshR:meshL;_C.setRGB(1.,.85,.4);mesh.setColorAt(iLocal[i],_C);}   // gold highlight
+ if(meshR.instanceColor)meshR.instanceColor.needsUpdate=true;if(meshL.instanceColor)meshL.instanceColor.needsUpdate=true;
+ const g=new THREE.BoxGeometry(mx[0]-mn[0]+.1,mx[1]-mn[1]+.1,mx[2]-mn[2]+.1);
+ selBox=new THREE.LineSegments(new THREE.EdgesGeometry(g),new THREE.LineBasicMaterial({color:0xffd76a}));
+ selBox.position.set((mn[0]+mx[0])/2,(mn[1]+mx[1])/2,(mn[2]+mx[2])/2);scene.add(selBox);
+ tgtGoal.set(cx,cy,cz); distGoal=Math.max(4,Math.min(30,R*9));
+ const o=objs.find(o=>o.base===iBaseOf(h0))||objs[0];
+ document.getElementById('sel').textContent='selected '+grp.length+' mini voxels · group of '+(o?o.top.l||o.base:'?')+' · Esc to clear';
+}
+let iBaseMap=null;
+function iBaseOf(i){return iBaseMap[i];}
+/* rebuild base map after build() */
+const _build=build;
+build=function(cells){_build(cells);iBaseMap=new Array(count);let n=0;for(const o of objs){for(let k=0;k<G*G*G;k++)iBaseMap[n++]=o.base;}};
+addEventListener('keydown',e=>{if(e.key==='Escape')clearSel();});
+document.getElementById('clr').onclick=clearSel;
+let down=null;
+canvas.addEventListener('pointerdown',e=>down=[e.clientX,e.clientY,performance.now()]);
+addEventListener('pointerup',e=>{
+ if(!down)return;const dx=e.clientX-down[0],dy=e.clientY-down[1],dt=performance.now()-down[2];down=null;
+ if(dx*dx+dy*dy<36&&dt<350)pick(e.clientX,e.clientY);
+});
 let drag=null;
 canvas.addEventListener('mousedown',e=>drag=[e.clientX,e.clientY]);
 addEventListener('mouseup',()=>drag=null);
 addEventListener('mousemove',e=>{if(!drag)return;yaw-=(e.clientX-drag[0])*.005;pitch=Math.max(-1.4,Math.min(1.4,pitch+(e.clientY-drag[1])*.005));drag=[e.clientX,e.clientY];});
-canvas.addEventListener('wheel',e=>{dist=Math.max(3,Math.min(60,dist+e.deltaY*.02));},{passive:true});
-function hash(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0)/4294967295;}
-function hueCol(h,s,l){const a=s*Math.min(l,1-l);const f=n=>{const k=(n+h*12)%12;return l-a*Math.max(-1,Math.min(k-3,Math.min(9-k,1)));};return [f(0),f(8),f(4)];}
-let lastSig='';
+canvas.addEventListener('wheel',e=>{distGoal=Math.max(3,Math.min(60,distGoal+e.deltaY*.02));},{passive:true});
+/* ---------- live data (10ms pulse engine) ---------- */
 function load(){
- if(document.hidden)return; // pause polling on hidden tabs
+ if(document.hidden)return;
  Promise.all([fetch('/api/voxel/all').then(r=>r.json()),
               fetch('/api/voxel/pulse').then(r=>r.json()).catch(()=>null)]).then(([d,p])=>{
-  const all=d.cells||[];
-  const cells=all.filter(c=>c.l||c.r); // only voxels that actually hold memory
-  let n=0;
-  for(const c of cells){ if(n>=MAXC)break;
-   const h=hash(c.a);
-   uni.uCell.value[n].set(c.p[0],c.p[1],c.p[2],c.s);
-   const col=(c.k==='rigid')?hueCol(.55+h*.1,.65,.5):hueCol(.12+h*.08,.35,.72);
-   uni.uCol.value[n].set(col[0],col[1],col[2]);
-   uni.uType.value[n]=(c.k==='rigid')?0:1;
-   uni.uSeed.value[n]=h*100;
-   n++; }
-  uni.uNC.value=n;
-  // ---- future pathways: where subdivision grows next ----
-  const have=new Set(all.map(c=>c.a)); // materialized, incl. empty space cells
-  let g=0; const put=(x,y,z,s)=>{ if(g<MAXG){uni.uGhost.value[g].set(x,y,z,s);g++;} };
-  // a) drill tips still below the floor: their next focus octant (0/0/0)
-  for(const c of cells){ if(c.d>=2&&c.d<11){ const s2=c.s/2;
-   if(!have.has(c.a+'/0/0/0')) put(c.p[0],c.p[1],c.p[2],s2); } }
-  // b) objects with materialized children: ghost their missing level-1 octants
-  for(const c of all){ if(c.d!==0)continue;
-   let any=false; const s2=c.s/2;
-   for(let i=0;i<8;i++){const na=c.a+'/'+(i&1)+'/'+((i>>1)&1)+'/'+((i>>2)&1); if(have.has(na)){any=true;break;}}
-   if(!any)continue;
-   for(let i=0;i<8&&g<MAXG;i++){const x=i&1,y=(i>>1)&1,z=(i>>2)&1;
-    const na=c.a+'/'+x+'/'+y+'/'+z; if(!have.has(na)) put(c.p[0]+x*s2,c.p[1]+y*s2,c.p[2]+z*s2,s2);}}
-  // c) level-1 space cells under those objects: ghost missing level-2 octants
-  for(const c of all){ if(c.d!==1)continue;
-   const s2=c.s/2;
-   for(let i=0;i<8&&g<MAXG;i++){const x=i&1,y=(i>>1)&1,z=(i>>2)&1;
-    const na=c.a+'/'+x+'/'+y+'/'+z; if(!have.has(na)) put(c.p[0]+x*s2,c.p[1]+y*s2,c.p[2]+z*s2,s2);}}
-  uni.uNG.value=g;
-  const sig=d.n+':'+(cells[n-1]?cells[n-1].a:'')+':'+g; // cheap change detector
+  const sig=d.n+':'+((d.cells||[])[(d.cells||[]).length-1]||{}).a+':'+G;
+  if(sig!==lastSig){build(d.cells||[]);lastSig=sig;}
   const live=p&&p.running?'<span style="color:#5dff9d">\u25cf LIVE</span> tick '+p.tick:'<span style="opacity:.5">feed static</span>';
-  document.getElementById('hud').innerHTML='<b>VOXEL RAY VIEW</b> - per-pixel raymarch of the memory voxel world<br>'+
-   'solid voxels: <b>'+n+'</b> (of '+d.n+' materialized) \u00b7 future pathways: <b>'+g+'</b><br>'+
-   'detail floor 1.46mm (depth 11) \u00b7 '+live+(sig!==lastSig?' \u00b7 <span style="color:#ffd76a">data updated</span>':'')+'<br>'+
-   'drag orbit \u00b7 wheel zoom';
-  lastSig=sig;
+  document.getElementById('hud').innerHTML='<b>VOXEL MINI-VOXEL VIEW</b> - every object from thousands of mini voxels<br>'+
+   'objects: <b>'+(objs.length||'?')+'</b> \u00b7 mini voxels: <b>'+(count||'...')+'</b> (G='+G+'/axis) \u00b7 detail floor 1.46mm<br>'+
+   live+' \u00b7 drag orbit \u00b7 wheel zoom \u00b7 click a cluster to select+focus';
  }).catch(e=>{document.getElementById('hud').innerHTML='load error: '+e;});
 }
-load(); setInterval(load,2000); // subdivision data refreshes live (10ms pulse engine)
-document.getElementById('bg').onclick=function(){showG=!showG;uni.uShowGhosts.value=showG?1:0;this.textContent='ghosts: '+(showG?'on':'off');};
-let t0=performance.now(),frames=0,fpsT=t0;
+load(); setInterval(load,2000);
+document.getElementById('bg').onclick=function(){showG=!showG;ghostGroup.visible=showG;this.textContent='ghosts: '+(showG?'on':'off');};
+/* ---------- render loop ---------- */
+let t0=performance.now();
 (function loop(){requestAnimationFrame(loop);
- uni.uTime.value=(performance.now()-t0)/1000; camUpdate(); renderer.render(scene,cam);
- frames++; const now=performance.now(); if(now-fpsT>1000){fpsT=now;} })();
+ const now=performance.now();
+ if(tgtGoal.distanceToSquared(tgt)>1e-6||Math.abs(distGoal-dist)>.01){ // focus tween
+  tgt.lerp(tgtGoal,.08); dist+=(distGoal-dist)*.08;
+ }
+ uni.uCamPos.value.copy(cam.position); camUpdate();
+ const ph=.5+.5*Math.sin(now/350);
+ ghostMats.forEach(m=>m.opacity=showG?.05+.11*ph:0);
+ if(ready)renderer.render(scene,cam);
+})();
 </script></body></html>

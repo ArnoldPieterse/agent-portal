@@ -11,7 +11,9 @@ State: memory/archivist/voxels.json
 CLI:
   python voxel.py list [--depth N]
   python voxel.py get V(3,3,3)/0/1/1
-  python voxel.py set V(3,3,3) --label L --ref PATH_OR_MCODE [--kind leaf|rigid|anim|space] [--rigid ssj]
+  python voxel.py set V(3,3,3) --label L --ref PATH_OR_MCODE [--kind leaf|rigid|anim|space|splat] [--rigid ssj]
+    (kind=splat: object detected from video/scan via Gaussian Splatting; ref = .ply/.splat path,
+     manifest in memory/archivist/splats.json)
   python voxel.py subdivide V(3,3,3)
   python voxel.py resolve V(3,3,3)/0/1/1
 """

@@ -1,0 +1,4 @@
+{
+ "_doc": "Splat asset manifest (2026-11-26). One entry per trained 3D Gaussian Splat scene from video/scan data. Objects detected on a splat are registered in voxels.json with kind=splat, ref=<file>, and listed under objects[]. See memory/researcher/gaussian-splatting-object-detection-2026-11-26.md for the pipeline.",
+ "scenes": []
+}
