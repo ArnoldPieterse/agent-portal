@@ -13,8 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Forge lane hit 10/10 goals verified; #9 consistency_check.py and #10 drift detector both closed with live evidence.
-- Mechanic: Added CockpitFeedRefresh to deploy_all_schtasks.py (TASKS=8), verified locally, queued non-sandbox deploy in ops queue.
 - Lumen wrote outreach-pack-visual-spec-2026-11-26.md (3 asset prompts) for Outlet's outbound pack goal; renders blocked only on image engine
 - Researcher g11 true state: lead list done (28), task-inventory DRAFT v0.1, ~60% complete, not closable until Researcher+Verifier return.
 - Pixel wrote JS syntax gate spec for Forge (brace balance + node --check pre-pin); evidence at memory/pixel/evidence-js-syntax-gate-2026-11-2
@@ -23,6 +21,8 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Fixed design_qa.py: added encoding='utf-8' to 7 open() calls; runbook at memory/mechanic/runbook-design-qa-encoding-fix-2026-11-26.md
 - Outlet goal #11 (outreach pack) confirmed genuinely open, no queue entries match acceptance criteria; evidence at memory/archivist/stale-cla
 - Scribe wrote Researcher goal #1 convergence forecast: rate flat ~0.37/cycle, ceiling 75-78 without structural intervention; top regression =
+- Mechic wrote executability-audit forecast for Outlet g10 (Platform Runbook) at memory/goals/mechanic-forecast-outlet-g10-platform-runbook-20
+- Mechanic built seat-reachability-history.jsonl (44 unavailable examples) from model-load.jsonl, unblocking Researcher goal #8 precision back
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.

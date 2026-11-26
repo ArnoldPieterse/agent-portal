@@ -1,6 +1,6 @@
 # Decay report 2026-11-26
 
-Leaves: 11497 | flagged (<0.35): 0
+Leaves: 11515 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -10732,7 +10732,11 @@ Leaves: 11497 | flagged (<0.35): 0
 | memory/archivist/knowledge-index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/ledger-staleness-researcher-11-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/archivist/size_guard_report.md | 0 | 0 | n | 0.550 |
+| memory/archivist/stale-claim-outlet-g6-g10-g11-resolution.md | 0 | 0 | n | 0.550 |
 | memory/archivist/stale-claim-researcher-goal11-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/archivist/voxel.py | 0 | 0 | n | 0.550 |
+| memory/archivist/voxels.json | 0 | 0 | n | 0.550 |
+| memory/archivist/__pycache__/voxel.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/crm_schema.json | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/raw_contacts.json | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/run_log.json | 0 | 0 | n | 0.550 |
@@ -10762,14 +10766,20 @@ Leaves: 11497 | flagged (<0.35): 0
 | memory/builder/stealth/wf3_out/rejected.csv | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/wf3_out/stats.md | 0 | 0 | n | 0.550 |
 | memory/designer/convergence-panel-spec-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/designer/design-qa-encoding-fix-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/designer/design-qa-encoding-fix-reapplied-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/designer/design-qa-gate-ground-truth-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/designer/stale-verify-pixel-convergence-states-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/designer/lumen/outreach-pack-visual-spec-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/designer/lumen/stale-claim-outlet-6-10-resolution.md | 0 | 0 | n | 0.550 |
 | memory/designer/lumen/stealth/workflow-visual-specs-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/designer/reel/assist-forge9-consistency-20261126.md | 0 | 0 | n | 0.550 |
+| memory/designer/reel/evidence-outlet-g11-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/designer/reel/evidence-task-inventory-verify-20261126.md | 0 | 0 | n | 0.550 |
+| memory/designer/reel/sb_demo_template_stealth-engine-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/designer/splice/evidence-stale-claim-outlet-g6-g10-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/designer/splice/evidence-verifier-g1-convergence-stale-claim-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/designer/splice/stale-evidence-design_qa-crash-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/forge/consistency-check-built-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/forge/consistency_check.py | 0 | 0 | n | 0.550 |
 | memory/forge/consistency_check_last.json | 0 | 0 | n | 0.550 |
@@ -10779,6 +10789,7 @@ Leaves: 11497 | flagged (<0.35): 0
 | memory/forge/drift_detect_last.json | 0 | 0 | n | 0.550 |
 | memory/forge/evidence-2026-11-26-goals9-10.md | 0 | 0 | n | 0.550 |
 | memory/forge/gate-breaker-state.json | 0 | 0 | n | 0.550 |
+| memory/forge/js_syntax_gate.py | 0 | 0 | n | 0.550 |
 | memory/forge/runbook_audit.py | 0 | 0 | n | 0.550 |
 | memory/forge/runbooks/boot_detection_runbook.py | 0 | 0 | n | 0.550 |
 | memory/forge/runbooks/browser_gate_decision_tree.py | 0 | 0 | n | 0.550 |
@@ -10789,6 +10800,7 @@ Leaves: 11497 | flagged (<0.35): 0
 | memory/forge/runbooks/runbook_notes.py | 0 | 0 | n | 0.550 |
 | memory/forge/runbooks/runbook_staleness_audit.py | 0 | 0 | n | 0.550 |
 | memory/forge/runbooks/windows_runbook.py | 0 | 0 | n | 0.550 |
+| memory/forge/__pycache__/js_syntax_gate.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/calibration.json | 0 | 0 | n | 0.550 |
 | memory/goals/closed_topics.json | 0 | 0 | n | 0.550 |
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
@@ -10806,8 +10818,11 @@ Leaves: 11497 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261126-072019.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-082454.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-092836.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261126-104044.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/cockpit-feed-refresh-added-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/cockpit-feed-refresh-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-stale-hotnote-correction-outlet-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/runbook-design-qa-encoding-fix-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook-executability-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/enriched_leads_20261125_180444.csv | 0 | 0 | n | 0.550 |
@@ -10854,12 +10869,14 @@ Leaves: 11497 | flagged (<0.35): 0
 | memory/ops/_report_prompts.md | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0706b9c4b4 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.07e0d0fdbd | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.087f1c13fa | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0a2912a037 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.0b19c0bd68 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.10c4544d22 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.1304d9b7a1 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.1347452ec4 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.134815a3c1 | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.1924e64acb | 0 | 0 | n | 0.550 |
 | memory/outlet/evidence-milestone-trigger-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/outlet/evidence-platform-runbook-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/outlet/milestone_trigger_state.json | 0 | 0 | n | 0.550 |
@@ -11180,6 +11197,7 @@ Leaves: 11497 | flagged (<0.35): 0
 | memory/builder/evidence-stealth-workflows-2026-11-26.md | 0 | 1 | Y | 0.769 |
 | memory/forge/gate_circuit_breaker.py | 0 | 1 | Y | 0.769 |
 | memory/forge/log.md | 0 | 1 | Y | 0.769 |
+| memory/goals/researcher-goal1-convergence-forecast-2026-11-26.md | 0 | 1 | Y | 0.769 |
 | memory/llm/hf-survey-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 1 | Y | 0.769 |
 | memory/ops/js-syntax-gate-spec-2026-11-26.md | 0 | 1 | Y | 0.769 |
