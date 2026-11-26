@@ -334,3 +334,9 @@
 {"ts": "2026-11-27T03:27:58", "ref": ["memory/workspace/INDEX.md", 79], "focus_sig": "158916ed", "reason": "lod-evict"}
 {"ts": "2026-11-27T03:27:58", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "158916ed", "reason": "lod-evict"}
 {"ts": "2026-11-27T03:27:58", "ref": ["memory/scribe/MEMORY.md", 12], "focus_sig": "158916ed", "reason": "lod-evict"}
+{"ts": "2026-11-27T03:44:23", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "b3cd46c1", "reason": "lod-evict"}
+{"ts": "2026-11-27T03:44:23", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 22], "focus_sig": "b3cd46c1", "reason": "lod-evict"}
+{"ts": "2026-11-27T03:44:23", "ref": ["memory/researcher/INDEX.md", 20], "focus_sig": "b3cd46c1", "reason": "lod-evict"}
+{"ts": "2026-11-27T03:44:23", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "b3cd46c1", "reason": "lod-evict"}
+{"ts": "2026-11-27T03:44:23", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 22], "focus_sig": "b3cd46c1", "reason": "lod-evict"}
+{"ts": "2026-11-27T03:44:23", "ref": ["memory/researcher/INDEX.md", 20], "focus_sig": "b3cd46c1", "reason": "lod-evict"}
