@@ -29,7 +29,14 @@ function init(){var m=window.__mind;if(!m||!THREE)return;
  m.canvas.addEventListener('click',function(ev){var r=m.canvas.getBoundingClientRect();
   vv.set((ev.clientX-r.left)/r.width*2-1,-(ev.clientY-r.top)/r.height*2+1);
   rc.setFromCamera(vv,m.camera);var hits=rc.intersectObjects(m.scene.children,true);
-  if(!hits.length)return;show(cellOf(hits[0].point));markPoint(hits[0].point);});}
+  if(!hits.length)return;
+  /* agent orb? -> resolve its home voxel, where its memory is anchored (orbits drift, anchors don't) */
+  var o=hits[0].object,ag=-1;
+  while(o){for(var j=0;j<(m.agents?m.agents.length:0);j++){if(m.agents[j].g===o)ag=j;}
+   if(ag>=0)break;o=o.parent;}
+  if(ag>=0&&m.agentHome&&m.agentDefs){var nm=m.agentDefs[ag][0];
+   if(m.agentHome[nm]){show(m.agentHome[nm]);markPoint(hits[0].point);return;}}
+  show(cellOf(hits[0].point));markPoint(hits[0].point);});}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 
 })();

@@ -284,6 +284,62 @@
    "label": "LM Studio :8888 - local LLMs, dual residency",
    "kind": "leaf",
    "ref": "agent_portal.py"
+  },
+  "5,2,4": {
+   "sub": {},
+   "label": "agent archivist - home",
+   "kind": "rigid",
+   "ref": "memory/archivist/MEMORY.md",
+   "rigid": "agent-archivist"
+  },
+  "5,2,5": {
+   "sub": {},
+   "label": "agent builder - home",
+   "kind": "rigid",
+   "ref": "memory/builder/MEMORY.md",
+   "rigid": "agent-builder"
+  },
+  "4,2,5": {
+   "sub": {},
+   "label": "agent designer - home",
+   "kind": "rigid",
+   "ref": "memory/designer/MEMORY.md",
+   "rigid": "agent-designer"
+  },
+  "2,2,5": {
+   "sub": {},
+   "label": "agent mechanic - home",
+   "kind": "rigid",
+   "ref": "memory/mechanic/MEMORY.md",
+   "rigid": "agent-mechanic"
+  },
+  "2,2,4": {
+   "sub": {},
+   "label": "agent orchestrator - home",
+   "kind": "rigid",
+   "ref": "memory/orchestrator/MEMORY.md",
+   "rigid": "agent-orchestrator"
+  },
+  "2,2,2": {
+   "sub": {},
+   "label": "agent researcher - home",
+   "kind": "rigid",
+   "ref": "memory/researcher/MEMORY.md",
+   "rigid": "agent-researcher"
+  },
+  "3,2,2": {
+   "sub": {},
+   "label": "agent scribe - home",
+   "kind": "rigid",
+   "ref": "memory/scribe/MEMORY.md",
+   "rigid": "agent-scribe"
+  },
+  "5,2,2": {
+   "sub": {},
+   "label": "agent verifier - home",
+   "kind": "rigid",
+   "ref": "memory/verifier/MEMORY.md",
+   "rigid": "agent-verifier"
   }
  }
 }

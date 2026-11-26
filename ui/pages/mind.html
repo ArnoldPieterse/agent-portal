@@ -200,6 +200,10 @@ agentDefs.forEach(function(a,i){
  var l=makeLabel(a[0],'#c8d2e0',.85);l.position.y=-.62;g.add(l);
  scene.add(g);agents.push({g:g,a:i/8*Math.PI*2,y:2.7+sr(i+50)*1.1,r:4.6+sr(i+60)*.7});
 });
+/* agent home voxels (t=0 orbit slot) - memory anchors live here; click an orb to resolve it */
+var agentHome={};agents.forEach(function(o,i){var x=o.r*Math.cos(o.a),z=o.r*Math.sin(o.a);
+ var c=function(v,mn,off){return Math.min(mn,Math.max(0,Math.floor((v-off)/3)))};
+ agentHome[agentDefs[i][0]]='V('+c(x,7,-12)+','+c(o.y,3,-4.5)+','+c(z,7,-12)+')';});
 /* ============ YOUR PROJECTS ============ */
 /* Agent Portal — the ring you built for us */
 var portal=new THREE.Mesh(new THREE.TorusGeometry(1.15,.09,14,60),new THREE.MeshStandardMaterial({color:0x22d3ee,emissive:0x0891b2,emissiveIntensity:1.1}));
@@ -285,7 +289,7 @@ function frame(){
  helix.rotation.y+=dt*.6;
  renderer.render(scene,camera);
 }
-window.__mind={scene:scene,camera:camera,canvas:renderer.domElement,rigids:{ssj:ssj,neurons:neurons,portal:portal,helix:helix,coin:window.__coin}};
+window.__mind={scene:scene,camera:camera,canvas:renderer.domElement,agents:agents,agentDefs:agentDefs,agentHome:agentHome,rigids:{ssj:ssj,neurons:neurons,portal:portal,helix:helix,coin:window.__coin}};
 var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display:none;position:fixed;right:12px;top:12px;width:300px;max-height:62vh;overflow:auto;background:rgba(8,10,18,.93);border:1px solid #e3344f;border-radius:8px;padding:10px;color:#e2e8f0;font:12px/1.5 ui-monospace,monospace;z-index:9';document.body.appendChild(_vp);
 frame();
 })();}
