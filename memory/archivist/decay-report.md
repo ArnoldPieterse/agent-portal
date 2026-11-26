@@ -1,6 +1,6 @@
 # Decay report 2026-11-27
 
-Leaves: 11882 | flagged (<0.35): 0
+Leaves: 11907 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -10856,7 +10856,6 @@ Leaves: 11882 | flagged (<0.35): 0
 | memory/goals/forge-consistency-forecast-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/goals/GOAL_RESET_PENDING.json | 1 | 0 | n | 0.544 |
 | memory/goals/mechanic-forecast-outlet-g10-platform-runbook-2026-11-26.md | 1 | 0 | n | 0.544 |
-| memory/goals/outlet.md | 1 | 0 | n | 0.544 |
 | memory/goals/scribe-forecast-archivist7-sustainability-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/goals/scribe-forecast-archivist7-sustainability.json | 1 | 0 | n | 0.544 |
 | memory/goals/archive/archivist-2026-11-26.md | 1 | 0 | n | 0.544 |
@@ -10877,7 +10876,6 @@ Leaves: 11882 | flagged (<0.35): 0
 | memory/goals/drafts/orchestrator.md | 1 | 0 | n | 0.544 |
 | memory/goals/drafts/outlet.md | 1 | 0 | n | 0.544 |
 | memory/goals/drafts/researcher.md | 1 | 0 | n | 0.544 |
-| memory/goals/forecast/plans-history.jsonl | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261126-005224.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261126-020302.json | 1 | 0 | n | 0.544 |
 | memory/goals/history/forecast-20261126-030003.json | 1 | 0 | n | 0.544 |
@@ -11026,7 +11024,6 @@ Leaves: 11882 | flagged (<0.35): 0
 | memory/ops/cycle-timeout-diag-20261126T111832Z.json | 1 | 0 | n | 0.544 |
 | memory/ops/cycle-timeout-diag-20261126T111839Z.json | 1 | 0 | n | 0.544 |
 | memory/ops/dispatch-conformance.json | 1 | 0 | n | 0.544 |
-| memory/ops/down-seats.json | 1 | 0 | n | 0.544 |
 | memory/ops/elev-audit-summary-latest.json | 1 | 0 | n | 0.544 |
 | memory/ops/elev-audit-summary.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/elev-audit.jsonl | 1 | 0 | n | 0.544 |
@@ -11187,6 +11184,7 @@ Leaves: 11882 | flagged (<0.35): 0
 | memory/archivist/voxels.json | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/autonomy_progression.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/builder/assist-archivist-goal1-autonomy-progression-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/builder/__pycache__/convergence_api.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/forge/convergence-drill.jsonl | 0 | 0 | n | 0.550 |
 | memory/forge/convergence-e2e-drill-report.md | 0 | 0 | n | 0.550 |
 | memory/forge/convergence_e2e_drill_last.json | 0 | 0 | n | 0.550 |
@@ -11197,21 +11195,35 @@ Leaves: 11882 | flagged (<0.35): 0
 | memory/goals/forecast-archivist-autonomy-progression-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
 | memory/goals/forge.md | 0 | 0 | n | 0.550 |
+| memory/goals/outlet.md | 0 | 0 | n | 0.550 |
+| memory/goals/forecast/plans-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-003057.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261127-013149.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/auto-loop-pass-2026-11-27b.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/auto-loop-pass-2026-11-27c.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-fleet-heartbeat-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-oom-recovery-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-mode.json | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/fsm-events.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/host-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/ledger-regen-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/ops/memory-tree-trim-runbook-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/mirror_cache.json | 0 | 0 | n | 0.550 |
 | memory/ops/mode-last-seen.json | 0 | 0 | n | 0.550 |
 | memory/ops/model-load.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/scheduler-state.json | 0 | 0 | n | 0.550 |
+| memory/ops/ssot-convergence-gate-report.json | 0 | 0 | n | 0.550 |
+| memory/ops/ssot-convergence-gate.md | 0 | 0 | n | 0.550 |
+| memory/ops/incidents/oom-recovery-20261126T153339Z-Mechanic.md | 0 | 0 | n | 0.550 |
+| memory/ops/incidents/oom-recovery-20261126T153343Z-Mechanic.md | 0 | 0 | n | 0.550 |
+| memory/orchestrator/memory-tree-trim-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/pixel/conv-shot.html | 0 | 0 | n | 0.550 |
 | memory/pixel/prepin_asset_gate.py | 0 | 0 | n | 0.550 |
 | memory/pixel/_dom_smoke.html | 0 | 0 | n | 0.550 |
@@ -11221,7 +11233,17 @@ Leaves: 11882 | flagged (<0.35): 0
 | memory/pixel/_term_marker.txt | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-parked.jsonl | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
+| memory/scribe/auto-loop-contribution-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/verifier/cross-lane-contract-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/verifier/cross_lane_contract_results.json | 0 | 0 | n | 0.550 |
+| memory/verifier/cross_lane_contract_tests.py | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
+| memory/verifier/api-contracts/_golden_convergence.json | 0 | 0 | n | 0.550 |
+| memory/verifier/api-contracts/golden/C1_agents_roster.json | 0 | 0 | n | 0.550 |
+| memory/verifier/api-contracts/golden/C2_goal_ledger_ssot.json | 0 | 0 | n | 0.550 |
+| memory/verifier/api-contracts/golden/C3_next10_forecast_queue.json | 0 | 0 | n | 0.550 |
+| memory/verifier/api-contracts/golden/C4_convergence_api_response.json | 0 | 0 | n | 0.550 |
+| memory/verifier/api-contracts/golden/C5_fleet_mode_state.json | 0 | 0 | n | 0.550 |
 | memory/designer/ops-panel-hierarchy-evidence-2026-11-15b.md | 12 | 1 | n | 0.553 |
 | memory/designer/designer-goal-proposals-2026-11-16.md | 11 | 1 | n | 0.558 |
 | memory/mechanic/boot_recovery_test.py | 10 | 1 | n | 0.564 |
@@ -11263,7 +11285,6 @@ Leaves: 11882 | flagged (<0.35): 0
 | memory/goals/scheduler-cycle6.md | 9 | 2 | n | 0.610 |
 | memory/scribe/compression-fidelity-trend.json | 9 | 2 | n | 0.610 |
 | memory/builder/anomaly-ar14-writepath-evidence.md | 14 | 3 | n | 0.611 |
-| memory/builder/infra-health.jsonl | 1 | 1 | n | 0.614 |
 | memory/ops/convergence-coupling.json | 1 | 1 | n | 0.614 |
 | memory/outlet/milestone_trigger.py | 1 | 1 | n | 0.614 |
 | memory/goals/researcher-attempts-cycle3-2026-11-18.md | 8 | 2 | n | 0.615 |
@@ -11316,12 +11337,13 @@ Leaves: 11882 | flagged (<0.35): 0
 | memory/researcher/residency-matrix-offline-surface-2026-11-20.md | 7 | 3 | n | 0.650 |
 | memory/scribe/goal6-synthesis-quality-verified-2026-11-20.md | 7 | 3 | n | 0.650 |
 | memory/levels.json | 1 | 2 | n | 0.654 |
+| memory/builder/infra-health.jsonl | 1 | 2 | n | 0.654 |
 | memory/goals/mechanic.md | 1 | 2 | n | 0.654 |
 | memory/goals/orchestrator.md | 1 | 2 | n | 0.654 |
 | memory/goals/scribe.md | 1 | 2 | n | 0.654 |
-| memory/goals/verifier.md | 1 | 2 | n | 0.654 |
 | memory/goals/closed_topics.json | 0 | 2 | n | 0.660 |
 | memory/goals/next10.json | 0 | 2 | n | 0.660 |
+| memory/goals/verifier.md | 0 | 2 | n | 0.660 |
 | memory/ONBOARDING.md | 9 | 4 | n | 0.661 |
 | memory/archivist/REPAIR_2026-11-13.md | 5 | 3 | n | 0.661 |
 | memory/archivist/xref-monitor-report-2026-11-20.md | 5 | 3 | n | 0.661 |
@@ -11539,7 +11561,6 @@ Leaves: 11882 | flagged (<0.35): 0
 | memory/forge/forecast_backtest.py | 1 | 1 | Y | 0.764 |
 | memory/forge/gate_circuit_breaker.py | 1 | 1 | Y | 0.764 |
 | memory/forge/idle_floor_enforce.py | 1 | 1 | Y | 0.764 |
-| memory/forge/log.md | 1 | 1 | Y | 0.764 |
 | memory/forge/plateau_gate.py | 1 | 1 | Y | 0.764 |
 | memory/forge/seat_sizing_audit.py | 1 | 1 | Y | 0.764 |
 | memory/forge/sentinel_precision.py | 1 | 1 | Y | 0.764 |
@@ -11590,9 +11611,13 @@ Leaves: 11882 | flagged (<0.35): 0
 | memory/ops/runbooks/safe_test.md | 4 | 10 | n | 0.768 |
 | memory/archivist/autonomy_progression.py | 0 | 1 | Y | 0.769 |
 | memory/forge/convergence_e2e_drill.py | 0 | 1 | Y | 0.769 |
+| memory/forge/log.md | 0 | 1 | Y | 0.769 |
+| memory/forge/ssot_convergence_gate.py | 0 | 1 | Y | 0.769 |
 | memory/goals/pixel.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 1 | Y | 0.769 |
+| memory/pixel/cdp_375_dom_check.py | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-convergence-375-live-verify-2026-11-27.md | 0 | 1 | Y | 0.769 |
+| memory/pixel/evidence-cycle-delta-strip-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-debug-purge-asset-gate-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/log.md | 0 | 1 | Y | 0.769 |
 | memory/orchestrator/assist-mechanic-g1-winrm-forecast-2026-11-20.md | 7 | 2 | Y | 0.771 |
