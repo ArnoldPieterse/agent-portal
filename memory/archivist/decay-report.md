@@ -1,6 +1,6 @@
 # Decay report 2026-11-26
 
-Leaves: 11477 | flagged (<0.35): 0
+Leaves: 11497 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -8628,7 +8628,6 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/ops/health-score.jsonl | 3 | 0 | n | 0.533 |
 | memory/ops/host-metrics.jsonl | 3 | 0 | n | 0.533 |
 | memory/ops/incident-alerts.jsonl | 3 | 0 | n | 0.533 |
-| memory/ops/incidents.jsonl | 3 | 0 | n | 0.533 |
 | memory/ops/index-check-false-positives-2026-11-23.md | 3 | 0 | n | 0.533 |
 | memory/ops/kb-maintenance-schedule-proposal-2026-11-23.md | 3 | 0 | n | 0.533 |
 | memory/ops/level-speed-analysis-2026-11-23.md | 3 | 0 | n | 0.533 |
@@ -10311,7 +10310,6 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/ops/convergence-health.json | 1 | 0 | n | 0.544 |
 | memory/ops/convergence-lock-state.json | 1 | 0 | n | 0.544 |
 | memory/ops/convergence-narrative-latest.md | 1 | 0 | n | 0.544 |
-| memory/ops/convergence-prediction.json | 1 | 0 | n | 0.544 |
 | memory/ops/convergence_alert.py | 1 | 0 | n | 0.544 |
 | memory/ops/cycle-closeout.jsonl | 1 | 0 | n | 0.544 |
 | memory/ops/cycle-duration-report.md | 1 | 0 | n | 0.544 |
@@ -10710,7 +10708,6 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/verifier/predictive_accuracy_tracker.py | 1 | 0 | n | 0.544 |
 | memory/verifier/recovery-trend-verified-2026-11-25.md | 1 | 0 | n | 0.544 |
 | memory/verifier/recovery_trend.py | 1 | 0 | n | 0.544 |
-| memory/verifier/red-8888-reprobe-contradiction-2026-11-25.md | 1 | 0 | n | 0.544 |
 | memory/verifier/retro-audit-verified-2026-11-25.md | 1 | 0 | n | 0.544 |
 | memory/verifier/retro_audit.py | 1 | 0 | n | 0.544 |
 | memory/verifier/retro_audit_report.json | 1 | 0 | n | 0.544 |
@@ -10733,7 +10730,9 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/verifier/TODO.md | 1 | 0 | n | 0.544 |
 | memory/verifier/_e2e_out.txt | 1 | 0 | n | 0.544 |
 | memory/archivist/knowledge-index.json | 0 | 0 | n | 0.550 |
+| memory/archivist/ledger-staleness-researcher-11-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/archivist/size_guard_report.md | 0 | 0 | n | 0.550 |
+| memory/archivist/stale-claim-researcher-goal11-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/crm_schema.json | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/raw_contacts.json | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/run_log.json | 0 | 0 | n | 0.550 |
@@ -10762,16 +10761,24 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/builder/stealth/wf3_out/cleaned_records.json | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/wf3_out/rejected.csv | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/wf3_out/stats.md | 0 | 0 | n | 0.550 |
+| memory/designer/convergence-panel-spec-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/designer/design-qa-encoding-fix-reapplied-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/designer/design-qa-gate-ground-truth-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/designer/stale-verify-pixel-convergence-states-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/designer/lumen/outreach-pack-visual-spec-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/designer/lumen/stealth/workflow-visual-specs-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/designer/reel/assist-forge9-consistency-20261126.md | 0 | 0 | n | 0.550 |
+| memory/designer/reel/evidence-task-inventory-verify-20261126.md | 0 | 0 | n | 0.550 |
 | memory/designer/splice/evidence-verifier-g1-convergence-stale-claim-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/forge/consistency-check-built-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/forge/consistency_check.py | 0 | 0 | n | 0.550 |
 | memory/forge/consistency_check_last.json | 0 | 0 | n | 0.550 |
 | memory/forge/drift-detect-built-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/forge/drift-results.jsonl | 0 | 0 | n | 0.550 |
 | memory/forge/drift_detect.py | 0 | 0 | n | 0.550 |
 | memory/forge/drift_detect_last.json | 0 | 0 | n | 0.550 |
 | memory/forge/evidence-2026-11-26-goals9-10.md | 0 | 0 | n | 0.550 |
+| memory/forge/gate-breaker-state.json | 0 | 0 | n | 0.550 |
 | memory/forge/runbook_audit.py | 0 | 0 | n | 0.550 |
 | memory/forge/runbooks/boot_detection_runbook.py | 0 | 0 | n | 0.550 |
 | memory/forge/runbooks/browser_gate_decision_tree.py | 0 | 0 | n | 0.550 |
@@ -10786,6 +10793,7 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/goals/closed_topics.json | 0 | 0 | n | 0.550 |
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
+| memory/goals/forecast-orchestrator-g1-convergence-api-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/goals/forge-consistency-forecast-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/goals/forge.md | 0 | 0 | n | 0.550 |
 | memory/goals/outlet.md | 0 | 0 | n | 0.550 |
@@ -10797,6 +10805,8 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261126-060833.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-072019.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-082454.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261126-092836.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/cockpit-feed-refresh-added-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/cockpit-feed-refresh-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook-executability-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
@@ -10816,12 +10826,16 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/boot-review-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/ops/convergence-prediction.json | 0 | 0 | n | 0.550 |
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
 | memory/ops/elev-helper.log | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-mode.json | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/host-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/host.pid | 0 | 0 | n | 0.550 |
+| memory/ops/incidents.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/lumen-image-spec-workflow.md | 0 | 0 | n | 0.550 |
+| memory/ops/media-format-ladder-spec-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/mirror_cache.json | 0 | 0 | n | 0.550 |
 | memory/ops/mirror_cache.json.tmp | 0 | 0 | n | 0.550 |
@@ -10848,12 +10862,12 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.134815a3c1 | 0 | 0 | n | 0.550 |
 | memory/outlet/evidence-milestone-trigger-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/outlet/evidence-platform-runbook-2026-11-26.md | 0 | 0 | n | 0.550 |
-| memory/outlet/milestone_trigger.py | 0 | 0 | n | 0.550 |
 | memory/outlet/milestone_trigger_state.json | 0 | 0 | n | 0.550 |
 | memory/outlet/platform-connection-runbook.md | 0 | 0 | n | 0.550 |
 | memory/outlet/platform_connect.py | 0 | 0 | n | 0.550 |
 | memory/outlet/queue/2026-11-25-red-host-restored.md | 0 | 0 | n | 0.550 |
 | memory/outlet/queue/2026-11-26-milestone-level-12-90pct.md | 0 | 0 | n | 0.550 |
+| memory/pixel/evidence-js-syntax-gate-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-parked.jsonl | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
 | memory/researcher/stealth/lead-list-01.md | 0 | 0 | n | 0.550 |
@@ -10861,10 +10875,13 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/scribe/assist-forge-goal8-runbook-audit.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-log-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-assist-forge-consistency-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/scribe/evidence-researcher-g11-state-resolution-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-task-inventory-margin-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/scribe/forge-consistency-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/synthesis/researcher-goal11-state-reconciliation-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/synthesis/stale-claim-researcher-task-inventory-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/verifier/perf-report.md | 0 | 0 | n | 0.550 |
+| memory/verifier/red-8888-reprobe-contradiction-2026-11-25.md | 0 | 0 | n | 0.550 |
 | memory/verifier/slo-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/slo-report-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/verifier/smb-drift-2026-11-16.json | 0 | 0 | n | 0.550 |
@@ -10911,6 +10928,7 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/builder/anomaly-ar14-writepath-evidence.md | 13 | 3 | n | 0.616 |
 | memory/ops/cockpit-feed.json | 0 | 1 | n | 0.619 |
 | memory/ops/fleet-metrics.jsonl | 0 | 1 | n | 0.619 |
+| memory/outlet/milestone_trigger.py | 0 | 1 | n | 0.619 |
 | memory/goals/researcher-attempts-cycle3-2026-11-18.md | 7 | 2 | n | 0.621 |
 | memory/archivist/f1-index-patch-20261113.md | 12 | 3 | n | 0.622 |
 | memory/archivist/fleet-md5-discrepancy-note-20261113.md | 12 | 3 | n | 0.622 |
@@ -11118,11 +11136,9 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/forge/deploy-log.jsonl | 1 | 1 | Y | 0.764 |
 | memory/forge/gate_health.py | 1 | 1 | Y | 0.764 |
 | memory/forge/gate_metrics.py | 1 | 1 | Y | 0.764 |
-| memory/forge/log.md | 1 | 1 | Y | 0.764 |
 | memory/forge/smoke_suite.py | 1 | 1 | Y | 0.764 |
 | memory/forge/test-topology.json | 1 | 1 | Y | 0.764 |
 | memory/goals/researcher-g1-convergence-forecast-2026-11-25.md | 1 | 1 | Y | 0.764 |
-| memory/llm/hf-survey-2026-11-25.md | 1 | 1 | Y | 0.764 |
 | memory/ops/convergence-section-layout-spec.md | 1 | 1 | Y | 0.764 |
 | memory/ops/cycle-history-consolidated.jsonl | 1 | 1 | Y | 0.764 |
 | memory/ops/seat-matrix.json | 1 | 1 | Y | 0.764 |
@@ -11162,7 +11178,11 @@ Leaves: 11477 | flagged (<0.35): 0
 | memory/scribe/goal-setting-round-compression-2026-11-13.md | 13 | 3 | Y | 0.766 |
 | memory/synthesis/index-pointer-batch-r57-consolidated.md | 7 | 12 | n | 0.768 |
 | memory/builder/evidence-stealth-workflows-2026-11-26.md | 0 | 1 | Y | 0.769 |
+| memory/forge/gate_circuit_breaker.py | 0 | 1 | Y | 0.769 |
+| memory/forge/log.md | 0 | 1 | Y | 0.769 |
+| memory/llm/hf-survey-2026-11-25.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 1 | Y | 0.769 |
+| memory/ops/js-syntax-gate-spec-2026-11-26.md | 0 | 1 | Y | 0.769 |
 | memory/goals/builder.md | 0 | 8 | n | 0.770 |
 | memory/builder/a11y-repin-farm569-closeout-2026-11-14.md | 12 | 3 | Y | 0.772 |
 | memory/builder/index-repin-r24-2026-11-14.md | 12 | 3 | Y | 0.772 |
