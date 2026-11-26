@@ -59,3 +59,32 @@ overlapping circles. A regular array of shaded discs sampled below its Nyquist f
 aliases; the beat (moire) pattern of two near-commensurate lattices is itself a lattice — and
 for hex/square circle arrays the interference rosettes are hexagonal, i.e. flower-of-life-like.
 Tested empirically with downsampled screenshots + synthetic disc-lattice renders (same date).
+
+## Flower-of-life hypothesis — EMPIRICAL RESULT (same day)
+
+Tested with controlled renders + live screenshots:
+
+**Setup**: hex-packed lattice of shaded discs (identical shading to the mind-room mini voxels),
+two layers 10% out of frequency sync (spacing 16.0 vs 17.6 px, no rotation), then sampled at
+60% / 45% / 30% resolution with nearest-neighbour (i.e. deliberately OUT-OF-SYNC sampling).
+
+**Result: CONFIRMED in controlled form.** At every out-of-sync sample rate the beat pattern
+resolves into large **6-fold symmetric hexagonal rosettes** — dark flower-of-life-shaped stars
+emerging from the disc field (see flol_hex_rosette_sheet.png, panels 2-4). The geometry is
+exactly the flower of life: a hex lattice of overlapping circles IS the moire beat pattern of
+two near-commensurate hex lattices.
+
+Mechanism: when a periodic signal is sampled below its Nyquist rate (or two periods slightly
+mismatch), the alias/beat frequency forms a new, coarser lattice. For hex symmetry that
+super-lattice has 6-fold rotational symmetry -> rosettes. A single in-sync lattice just
+pixelates (flol_synthetic_sheet.png); you need the *frequency mismatch* for the rosette.
+
+Live evidence: flol_live_moire.png shows the actual mind-room hero cloud at 100/50/33/25%
+resolution - the disc field breaks into speckle/banding as it goes out of sync (weaker than
+the synthetic case because the live cloud is jittered, not a perfect lattice - real jitter
+smears the beat pattern, which is why perfect lattices are needed for crisp rosettes).
+
+**Implication for our voxel worlds**: at far LOD (cells < 1-2 px) the rendered image is
+dominated by this aliasing geometry, not by the objects. Options: (a) embrace it - render
+far LOD as pure point sprites so the moire IS the aesthetic (cheap + beautiful); (b) suppress
+it with per-point jitter/POA dithering; (c) mip-blend to a density field below ~1 px/cell.
