@@ -26,9 +26,10 @@ var scene=new THREE.Scene();
 scene.background=new THREE.Color(0x07080c);
 scene.fog=new THREE.FogExp2(0x07080c,0.011);
 var camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,500);
-scene.add(new THREE.AmbientLight(0x46536e,0.95));
-var key=new THREE.PointLight(0xffd54a,1.2,50);key.position.set(0,7,2);scene.add(key);
-var fill=new THREE.DirectionalLight(0x88aaff,0.35);fill.position.set(-6,12,-4);scene.add(fill);
+scene.add(new THREE.AmbientLight(0x5a6b8f,1.3));
+var key=new THREE.PointLight(0xffd54a,1.7,55);key.position.set(0,7,2);scene.add(key);
+var fill=new THREE.DirectionalLight(0x88aaff,0.5);fill.position.set(-6,12,-4);scene.add(fill);
+var ceil=new THREE.PointLight(0xcfe0ff,0.9,30);ceil.position.set(0,5.5,.3);scene.add(ceil);
 var srvL=new THREE.PointLight(0x22d3ee,0.7,14);srvL.position.set(12.5,3.4,-10);scene.add(srvL);
 /* seeded rng */
 function sr(i){var x=Math.sin(i*127.1+311.7)*43758.5453;return x-Math.floor(x);}
@@ -52,15 +53,15 @@ function limb(a,b,r,mat){
  return m;}
 /* ============ ROOM SHELL (dollhouse: walls face inward, invisible from outside) ============ */
 var RW=17,RD=13,WH=4.5;                       /* half extents x/z, wall height */
-var floor=new THREE.Mesh(new THREE.CircleGeometry(32,56),new THREE.MeshStandardMaterial({color:0x0a0d14,roughness:.92,metalness:.2}));
+var floor=new THREE.Mesh(new THREE.CircleGeometry(32,56),new THREE.MeshStandardMaterial({color:0x0f1626,roughness:.9,metalness:.2}));
 floor.rotation.x=-Math.PI/2;scene.add(floor);
-var grid=new THREE.GridHelper(64,48,0x1d2a47,0x101827);grid.position.y=0.01;scene.add(grid);
+var grid=new THREE.GridHelper(64,48,0x27395e,0x15203a);grid.position.y=0.01;scene.add(grid);
 (function(){var n=900,p=new Float32Array(n*3);
  for(var i=0;i<n;i++){var r=60+Math.random()*80,a=Math.random()*Math.PI*2,b=Math.acos(2*Math.random()-1);
   p[i*3]=r*Math.sin(b)*Math.cos(a);p[i*3+1]=Math.abs(r*Math.cos(b))*.7+2;p[i*3+2]=r*Math.sin(b)*Math.sin(a);}
  var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(p,3));
  scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x9fb4cc,size:.55,transparent:true,opacity:.75})));})();
-var wallMat=new THREE.MeshStandardMaterial({color:0x0d1220,roughness:.95,metalness:.05,side:THREE.FrontSide});
+var wallMat=new THREE.MeshStandardMaterial({color:0x161f38,roughness:.9,metalness:.05,side:THREE.FrontSide});
 function wall(w,h,x,y,z,ry){var m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),wallMat);
 m.position.set(x,y,z);m.rotation.y=ry;scene.add(m);return m;}
 wall(RW*2,WH,0,WH/2,-RD,0);                    /* north */
@@ -68,6 +69,12 @@ wall(RW*2-7.5,WH,-RW,WH/2,(-RD+4.5)/2,Math.PI/2);   /* west, z -13..4.5 */
 wall(5.5,WH,-RW,WH/2,(7.5+RD)/2,Math.PI/2);        /* west, z 7.5..13 */
 wall(3,1.5,-RW,WH-.75,6,Math.PI/2);               /* door header y 3..4.5 */
 wall(RW*2,WH,RW,WH/2,0,-Math.PI/2);              /* east */
+/* cove light strips along the wall tops (office ceiling glow) */
+var coveMat=new THREE.MeshStandardMaterial({color:0x0a0f1c,emissive:0x3b82f6,emissiveIntensity:.9});
+function cove(w,x,z,ry){var m=new THREE.Mesh(new THREE.BoxGeometry(w,.07,.07),coveMat);m.position.set(x,WH-.06,z);m.rotation.y=ry;scene.add(m);}
+cove(RW*2-.4,0,-RD+.08,0);cove(RW*2-.4,0,RD-.16,0);
+cove(RD*2-3.4,-RW+.08,(-RD+4.5)/2,Math.PI/2);cove(5.1,-RW+.08,(7.5+RD)/2,Math.PI/2);
+cove(RD*2-.4,RW-.08,0,Math.PI/2);
 /* south = window wall: solid sill + glass above (inward-facing) */
 var sill=new THREE.Mesh(new THREE.BoxGeometry(RW*2,1.2,.35),new THREE.MeshStandardMaterial({color:0x11182a,roughness:.8}));
 sill.position.set(0,.6,RD-.1);scene.add(sill);
@@ -197,7 +204,8 @@ function bookSpine(text,colorHex,w){
  if(x.measureText(text).width>110)x.font='700 19px "Segoe UI", Arial';
  x.fillText(text,0,0);x.restore();
  var t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;
- return new THREE.Mesh(new THREE.BoxGeometry(w,.62,.3),new THREE.MeshStandardMaterial({map:t,color:0xffffff,roughness:.7}));}
+ return new THREE.Mesh(new THREE.BoxGeometry(w,.62,.3),
+  new THREE.MeshStandardMaterial({map:t,emissiveMap:t,emissive:0xffffff,emissiveIntensity:.4,color:0x8899bb,roughness:.7}));}
 var books=[];
 function fillShelves(lanes){
  var place=function(list,unit){list.forEach(function(L,bi){
@@ -472,7 +480,7 @@ function frame(){
  for(var i=0;i<AUR;i++){pos[i*3+1]+=dt*(.6+sr(i)*.9);if(pos[i*3+1]>3.8)pos[i*3+1]=-1;}
  ag.attributes.position.needsUpdate=true;
  auraLight.intensity=1.4+.7*Math.sin(t*6)+.3*Math.sin(t*17);
- key.intensity=1.1+.4*Math.sin(t*6);
+ key.intensity=1.5+.4*Math.sin(t*6);
  nmat.size=.12+.05*Math.sin(t*2.2);
  for(i=0;i<hubs.length;i++)hubs[i].scale.setScalar(1+.35*Math.sin(t*2+i));
  nLight.intensity=1+.5*Math.sin(t*2.2+1);

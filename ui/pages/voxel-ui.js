@@ -47,12 +47,18 @@ function init(){var m=window.__mind;if(!m||!THREE)return;
      so a click on the centre character resolves the character, not a stray voxel at the cloud edge */
   var solid=hits.filter(function(h){return !h.object.isInstancedMesh&&!h.object.isPoints;});
   var h0=(solid.length?solid[0]:hits[0]);
-  /* agent orb? -> resolve its home voxel, where its memory is anchored (orbits drift, anchors don't) */
-  var o=h0.object,ag=-1;
-  while(o){for(var j=0;j<(m.agents?m.agents.length:0);j++){if(m.agents[j].g===o)ag=j;}
-   if(ag>=0)break;o=o.parent;}
+  /* agent pod? -> resolve its home voxel, where its memory is anchored (desks are fixed, anchors don't drift).
+     Scan all hits for the first pod-tagged object: dense particles/lines sit between camera and orb. */
+  var ag=-1,ap=null;
+  for(var hi2=0;hi2<hits.length&&ag<0;hi2++){
+   if(hits[hi2].object.isPoints)continue;
+   var o2=hits[hi2].object;
+   while(o2){if(o2.userData&&o2.userData.podId){
+     for(var j=0;j<(m.agents?m.agents.length:0);j++)if(m.agents[j].id===o2.userData.podId)ag=j;
+     break;}o2=o2.parent;}
+   if(ag>=0)ap=hits[hi2];}
   if(ag>=0&&m.agentHome){var nm=(m.agents[ag]||{}).id;
-   if(nm&&m.agentHome[nm]){show(m.agentHome[nm]);markPoint(h0.point);return;}}
+   if(nm&&m.agentHome[nm]){show(m.agentHome[nm]);markPoint(ap?ap.point:h0.point);return;}}
   show(cellOf(h0.point));markPoint(h0.point);});}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 
