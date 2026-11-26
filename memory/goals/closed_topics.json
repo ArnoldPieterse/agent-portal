@@ -3756,5 +3756,17 @@
 "text": "**High-contrast / token-enforcement audit** - Zero hardcoded hex outside `ui/tokens.css` across convergence + fleet surfaces; add a pre-pin ",
 "agent": "pixel",
 "at": "2026-11-26"
+},
+{
+"sig": "3d8c13c4191d55d4",
+"text": "**Onboarding Pack Generator** - auto-generate a new-agent onboarding pack from existing knowledge: role description, key files to read first",
+"agent": "archivist",
+"at": "2026-11-26"
+},
+{
+"sig": "f2e3ca8da5c6df9e",
+"text": "**Anomaly Baseline Library** - compile all observed anomaly types (OOM, timeout, mirror-revert, model-load-fail) with baseline signatures + ",
+"agent": "archivist",
+"at": "2026-11-26"
 }
 ]

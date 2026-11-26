@@ -4844,6 +4844,10 @@ def _aq_pump(advance=True):
         print("[run-queue] pump error: %s" % e, flush=True)
 
 
+_LAST_SHELL_NOTE = None   # 2026-11-26 (prompt audit P0): hash-gate static status blocks
+_LAST_MLS_NOTE = None     # so unchanged text is not re-injected on every pass
+
+
 def start_group_run(text, extra=None):
     """Create + launch a backend-owned group run. Returns (run, error).
     `extra` is merged into the run record BEFORE the first save (e.g. the auto-resume budget)."""
@@ -4951,10 +4955,15 @@ def start_group_run(text, extra=None):
         # 127.0.0.1:8098, SYSTEM) instead of telling agents to give up.
         try:
             if not _shell_elevated():
-                full_text += ("\n\n[SHELL] Shell is not elevated, but admin commands DO work via the helper: run "
-                              "`python elev.py <cmd...>` or `python elev.py --shell \"cmd string\"` (auto-escalates to SYSTEM). "
-                              "Admin is the default for all agents - never treat elevation as a blocker. "
-                              "Only if elev.py exits 5 (helper down) log NEEDS-HUMAN in memory/ops/blockers.md once, then move on.")
+                _sn = ("\n\n[SHELL] Shell is not elevated, but admin commands DO work via the helper: run "
+                       "`python elev.py <cmd...>` or `python elev.py --shell \"cmd string\"` (auto-escalates to SYSTEM). "
+                       "Admin is the default for all agents - never treat elevation as a blocker. "
+                       "Only if elev.py exits 5 (helper down) log NEEDS-HUMAN in memory/ops/blockers.md once, then move on.")
+                # 2026-11-26 (prompt audit P0): identical on ~every pass (~780 B x 69 in one
+                # transcript). Inject only when the note itself changed.
+                if _sn != _LAST_SHELL_NOTE:
+                    full_text += _sn
+                    globals()["_LAST_SHELL_NOTE"] = _sn
         except Exception:
             pass
         # Model-load governance: flag seats whose model is not loaded BEFORE the run
@@ -4989,7 +4998,11 @@ def start_group_run(text, extra=None):
                               ", ".join("%s=%s" % (n, s["status"]) for n, s in sorted(_missing.items())) +
                               ". Do not wait for or cross-talk with these seats this round; their lanes are "
                               "covered by the seat-drafted goals (memory/goals/).")
-                full_text += _note
+                # 2026-11-26 (prompt audit P0): seat status is static across most passes
+                # (~1.4 KB x 52 in one transcript) - inject only on change.
+                if _note != _LAST_MLS_NOTE:
+                    full_text += _note
+                    globals()["_LAST_MLS_NOTE"] = _note
                 try:
                     with open(os.path.join(HERE, "memory", "ops", "model-load.jsonl"), "a", encoding="utf-8") as _f:
                         _f.write(json.dumps({"ts": time.strftime("%Y-%m-%d %H:%M:%S"), "run": rid,
@@ -5235,7 +5248,14 @@ def _agent_open_goals(name, limit=5):
     try:
         path = os.path.join(HERE, "memory", "goals", name.lower() + ".md")
         items = [g for g in _goal_ledger_mod().parse_agent_file(path) if g["status"] != "reached"]
-        return [("%d. %s" % (i + 1, str(g.get("text") or "").strip()[:200])) for i, g in enumerate(items[:limit])]
+        def _clip(t):
+            # 2026-11-26 (prompt audit P0): the old [:200] cut acceptance criteria
+            # mid-sentence; clip at a word boundary with a pointer instead.
+            t = str(t or "").strip()
+            if len(t) <= 400:
+                return t
+            return t[:400].rsplit(" ", 1)[0].rstrip(",;:") + " …(full AC in memory/goals/%s.md)" % name.lower()
+        return [("%d. %s" % (i + 1, _clip(g.get("text")))) for i, g in enumerate(items[:limit])]
     except Exception:
         return []
 
@@ -6389,10 +6409,27 @@ def _goals_snapshot():
                         except OSError:
                             pass
                 if not _active_run_id:
-                    with open(gf, "w", encoding="utf-8") as f:
-                        json.dump({"armed": True, "at": time.strftime("%Y-%m-%d %H:%M:%S"),
-                                   "note": "All agent goals 100% reached - next group run starts a new goal-setting round."}, f)
-                    _armed_now = True
+                    # 2026-11-26 (prompt audit P0): no-op rounds re-armed on EVERY poll - ~16x in
+                    # one transcript while seats were down, each costing a full batch pass. Cap: max
+                    # 3 re-arms per 24h AND >=6h since the last re-arm; corrupt backoff state falls
+                    # through to arm (recovery discipline: never deadlock a completed cycle).
+                    _ok, _lc = True, 0
+                    try:
+                        _lr = str(d.get("last_rearm_at") or "")
+                        _lrt = time.mktime(time.strptime(_lr, "%Y-%m-%d %H:%M:%S")) if _lr else 0.0
+                        _now_t = time.time()
+                        _lc = int(d.get("rearm_count_24h", 0)) if (_lrt and _now_t - _lrt <= 24 * 3600) else 0
+                        if (_lrt and _now_t - _lrt < 6 * 3600) or _lc >= 3:
+                            _ok = False
+                    except Exception:
+                        pass
+                    if _ok:
+                        with open(gf, "w", encoding="utf-8") as f:
+                            json.dump({"armed": True, "at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                       "last_rearm_at": str(d.get("consumed_at") or ""),
+                                       "rearm_count_24h": _lc + 1,
+                                       "note": "All agent goals 100% reached - next group run starts a new goal-setting round."}, f)
+                        _armed_now = True
         except Exception:
             pass
         resp["goal_reset_pending"] = _armed_now

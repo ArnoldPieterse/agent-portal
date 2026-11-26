@@ -1,6 +1,8 @@
 # memory/archivist — pointer map
 Last updated: 2026-11-25.
 
+- onboarding-pack (goal 5, cycle-20) -> memory/archivist/onboarding_pack.py   auto-generates new-agent onboarding pack: role, key files, pitfalls, cycle context; selftest PASS [REACHED 2026-11-26]
+- anomaly-baselines (goal 6, cycle-20) -> memory/archivist/anomaly-baselines.json   5 anomaly types with signatures + thresholds + last-observed; feeds Mechanic heartbeat [REACHED 2026-11-26]
 ## Entries
 - autonomy-decay-signals (goal 1, cycle-18) -> memory/archivist/autonomy-decay-signals.md   3-signal decay detection: escalation rate, rework rate, intervention freq; thresholds + working script [REACHED 2026-11-25]
 - convergence-lock-protocol (goal 2, cycle-18) -> memory/archivist/convergence-lock-protocol.md   lock criteria (N=3 cycles, regression 100%, zero new blockers, score>=85); state file at memory/ops/convergence-lock-state.json [REACHED 2026-11-25]

@@ -1,0 +1,77 @@
+{
+  "generated": "2026-11-26",
+  "source": "memory/archivist/anomaly-baseline-library.md + ops evidence",
+  "anomalies": [
+    {
+      "type": "oom",
+      "name": "VRAM Exhaustion (OOM)",
+      "signature": "model process killed; seat status=down reason=oom in fleet-heartbeat.json",
+      "threshold": "VRAM usage >95% on target GPU; nvidia-smi OOM kill in dmesg",
+      "sla_seconds": 60,
+      "last_observed": "2026-11-26T11:15:37Z",
+      "frequency": "~1/3 cycles",
+      "auto_recovery": true,
+      "recovery_script": "memory/mechanic/oom_recovery.py",
+      "evidence_file": "memory/mechanic/oom-recovery-evidence.jsonl",
+      "event_count": 8
+    },
+    {
+      "type": "cycle_timeout",
+      "name": "Cycle Duration Breach",
+      "signature": "cycle elapsed > SLA; auto-diagnostic captures stack+model+passes",
+      "threshold": "elapsed > 1800s from cycle start",
+      "sla_seconds": 300,
+      "last_observed": "2026-11-26T11:18:45Z",
+      "frequency": "~1-2/cycle",
+      "auto_recovery": false,
+      "recovery_script": "memory/mechanic/cycle_timeout_diag.py (capture only)",
+      "evidence_file": "memory/mechanic/cycle-timeout-diag-evidence.jsonl",
+      "event_count": 4
+    },
+    {
+      "type": "mirror_revert",
+      "name": "Mirror Sync Revert (Pin Clobber)",
+      "signature": "file content reverts to pre-edit state after mirror sync; md5 mismatch",
+      "threshold": "md5 mismatch between local edit and post-sync state; >1 revert in 10min window",
+      "sla_seconds": 300,
+      "last_observed": "2026-11-20T07:30:13Z",
+      "frequency": "~12 incidents (Nov 17-20 cluster); guard since deployed",
+      "auto_recovery": true,
+      "recovery_script": "pin-guard Option B (memory/ops/mirror-revert-prevention-2026-11-18.md)",
+      "evidence_file": "memory/mechanic/mirror-revert-guard-executed.jsonl",
+      "event_count": 13
+    },
+    {
+      "type": "model_load_fail",
+      "name": "Model Load Failure",
+      "signature": "model fails to load on seat (timeout, missing file, VRAM insufficient)",
+      "threshold": "load attempt >30s without ready signal; reason field in model-load.jsonl",
+      "sla_seconds": 90,
+      "last_observed": "2026-11-26T00:00:00Z",
+      "frequency": "~2-3/cycle across 4 hosts",
+      "auto_recovery": true,
+      "recovery_script": "retry with quant downgrade; after 3 fails: mark degraded + route to backup",
+      "evidence_file": "model-load.jsonl (shared)",
+      "event_count": 12
+    },
+    {
+      "type": "seat_unreachable",
+      "name": "Seat Unreachable (Full Offline)",
+      "signature": "seat probe returns connection refused/timeout; all model endpoints dead",
+      "threshold": "3 consecutive probes fail (>90s); seat absent from fleet-heartbeat.json or status=unreachable",
+      "sla_seconds": 600,
+      "last_observed": "2026-11-26T00:00:00Z",
+      "frequency": "5 seats unreachable at last run start (Builder, Forge, Orchestrator, Pixel, Scribe)",
+      "auto_recovery": false,
+      "recovery_script": "Mechanic diagnostics; WinRM chain for remote hosts; elev.py for local",
+      "evidence_file": "memory/ops/incidents.jsonl + fleet-heartbeat.json",
+      "event_count": 5
+    }
+  ],
+  "heartbeat_integration": {
+    "target": "memory/ops/fleet-heartbeat.json",
+    "field": "anomalies.active[]",
+    "schema": "{type, ts, severity, auto_recovered, seat}",
+    "note": "Mechanic's heartbeat consolidation goal (#2) will consume this file"
+  }
+}
