@@ -1,6 +1,6 @@
 # Decay report 2026-11-27
 
-Leaves: 12010 | flagged (<0.35): 0
+Leaves: 12021 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -10044,7 +10044,6 @@ Leaves: 12010 | flagged (<0.35): 0
 | memory/goals/designer-pixel-g1-spec-2026-11-25.md | 2 | 0 | n | 0.539 |
 | memory/goals/dispatch_order.json | 2 | 0 | n | 0.539 |
 | memory/goals/forecast-researcher-task-inventory-2026-11-25.md | 2 | 0 | n | 0.539 |
-| memory/goals/goal_ledger.json | 2 | 0 | n | 0.539 |
 | memory/goals/mechanic-goal1-forecast-2026-11-18.md | 2 | 0 | n | 0.539 |
 | memory/goals/transitions.jsonl | 2 | 0 | n | 0.539 |
 | memory/goals/archive/archivist-2026-11-25-cycle17.md | 2 | 0 | n | 0.539 |
@@ -11015,7 +11014,6 @@ Leaves: 12010 | flagged (<0.35): 0
 | memory/ops/builder-prompt-audit-2026-11-26.md | 1 | 0 | n | 0.544 |
 | memory/ops/build_seat_reachability_history.py | 1 | 0 | n | 0.544 |
 | memory/ops/convergence-events.jsonl | 1 | 0 | n | 0.544 |
-| memory/ops/convergence-prediction.json | 1 | 0 | n | 0.544 |
 | memory/ops/cycle-timeout-diag-20261126T111757Z.json | 1 | 0 | n | 0.544 |
 | memory/ops/cycle-timeout-diag-20261126T111812Z.json | 1 | 0 | n | 0.544 |
 | memory/ops/cycle-timeout-diag-20261126T111832Z.json | 1 | 0 | n | 0.544 |
@@ -11195,6 +11193,7 @@ Leaves: 12010 | flagged (<0.35): 0
 | memory/goals/forecast-archivist-autonomy-progression-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
 | memory/goals/forge.md | 0 | 0 | n | 0.550 |
+| memory/goals/goal_ledger.json | 0 | 0 | n | 0.550 |
 | memory/goals/outlet.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast/plans-history.jsonl | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-003057.json | 0 | 0 | n | 0.550 |
@@ -11202,11 +11201,14 @@ Leaves: 12010 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261127-023645.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-030002.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-040013.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261127-050515.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27b.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27c.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-fleet-heartbeat-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-heartbeat-pass-hook-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/evidence-oom-recovery-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/evidence-verify-g1-e2e-trigger-081-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/fleet-heartbeat-refresh-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/fleet-heartbeat-reremediation-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/marker_guard.py | 0 | 0 | n | 0.550 |
@@ -11221,10 +11223,13 @@ Leaves: 12010 | flagged (<0.35): 0
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/canary-gate-token.json | 0 | 0 | n | 0.550 |
+| memory/ops/convergence-prediction.json | 0 | 0 | n | 0.550 |
 | memory/ops/down-seats.json | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-mode.json | 0 | 0 | n | 0.550 |
 | memory/ops/fleet-snapshots.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/fsm-events.jsonl | 0 | 0 | n | 0.550 |
+| memory/ops/heartbeat-pass-hook-improvement-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/ops/heartbeat_pass_hook.py | 0 | 0 | n | 0.550 |
 | memory/ops/host-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/incidents.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/ledger-regen-2026-11-27.md | 0 | 0 | n | 0.550 |
@@ -11247,6 +11252,7 @@ Leaves: 12010 | flagged (<0.35): 0
 | memory/orchestrator/post-mirror-goal-repair-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/pixel/cdp_probe_bounded.py | 0 | 0 | n | 0.550 |
 | memory/pixel/conv-shot.html | 0 | 0 | n | 0.550 |
+| memory/pixel/evidence-convergence-velocity-assist-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/pixel/prepin_asset_gate.py | 0 | 0 | n | 0.550 |
 | memory/pixel/_dom_smoke.html | 0 | 0 | n | 0.550 |
 | memory/pixel/_edge_log.txt | 0 | 0 | n | 0.550 |
@@ -11259,6 +11265,8 @@ Leaves: 12010 | flagged (<0.35): 0
 | memory/scribe/assist-verifier-g1-commit-trigger-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-verifier-g1-e2e-smoke8-fix-067.md | 0 | 0 | n | 0.550 |
 | memory/scribe/auto-loop-contribution-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/scribe/convergence-blocker-audit-2026-11-27.json | 0 | 0 | n | 0.550 |
+| memory/scribe/convergence-blocker-audit-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/convergence-contract.jsonl | 0 | 0 | n | 0.550 |
 | memory/scribe/convergence-status-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-convergence-i3-fix-2026-11-27.md | 0 | 0 | n | 0.550 |
@@ -11703,9 +11711,11 @@ Leaves: 12010 | flagged (<0.35): 0
 | memory/portal/merge-pack.md | 14 | 18 | n | 0.767 |
 | memory/ops/runbooks/safe_test.md | 4 | 10 | n | 0.768 |
 | memory/archivist/autonomy_progression.py | 0 | 1 | Y | 0.769 |
+| memory/builder/evidence-ledger-stale-closure-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/forge/canary_gate_token.py | 0 | 1 | Y | 0.769 |
 | memory/forge/convergence_e2e_drill.py | 0 | 1 | Y | 0.769 |
 | memory/forge/deploy-log.jsonl | 0 | 1 | Y | 0.769 |
+| memory/forge/evidence-chaos-drill-assist-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/forge/log.md | 0 | 1 | Y | 0.769 |
 | memory/forge/ssot_convergence_gate.py | 0 | 1 | Y | 0.769 |
 | memory/goals/pixel.md | 0 | 1 | Y | 0.769 |
@@ -11719,6 +11729,7 @@ Leaves: 12010 | flagged (<0.35): 0
 | memory/pixel/evidence-debug-purge-asset-gate-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-regression-banner-assist-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/pixel/log.md | 0 | 1 | Y | 0.769 |
+| memory/pixel/ui-assist-convergence-velocity.js | 0 | 1 | Y | 0.769 |
 | memory/verifier/acceptance_test_generator.py | 0 | 1 | Y | 0.769 |
 | memory/verifier/multi_file_regression_trigger.py | 0 | 1 | Y | 0.769 |
 | memory/verifier/verification_coverage_map.json | 0 | 1 | Y | 0.769 |

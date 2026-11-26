@@ -13,8 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Goal #6 hard-blocked: elev.py SYSTEM dead + loopback egress-blocked; unblock cmd in memory/ops/blockers.md; anti-loop rule active (no re-pro
-- Goal #1 assist: code verified working; remaining blocker = schtask registration from non-sandbox White + 3-cycle obs (in blockers.md)
 - Scribe G1 deploy script ready at memory/verifier/deploy_commit_trigger.py; blocked on COM task-scheduler (sandbox lacks it)
 - Built memory/verifier/acceptance
 - G1 simulate PASS; final schtask reg blocked: sandbox COM "Class not registered" + elev.py port 8098 WinError 10013
@@ -23,6 +21,8 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - Pixel Goal #6 hard-blocked: no non-sandbox seat, Playwright absent; blocker logged in memory/ops/blockers.md this cycle.
 - Mechanic wrote `heartbeat_pass_hook.py` (stdlib-only, idempotent) to auto-refresh stale fleet heartbeats; verified working at 10.2h stalenes
 - Builder closed 3 stale Archivist ledger entries (goals 1–3, cycle 20) as verified on 2026-11-27; evidence at memory/builder/evidence-ledger-
+- Built memory/ops/nonsandbox_unblock_batch.py — consolidates 3 blocked non-sandbox items (Pixel CDP, Verifier chaos-live, Scribe)
+- Pixel added `window.__ckconvSelfTest()` to `ui/cockpit-convergence.js` (+38 lines) as CDP self-test helper for blocked Goal #6; evidence in
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
