@@ -374,3 +374,6 @@
 {"ts": "2026-11-27T09:29:35", "ref": ["memory/goals/pixel.md", 20], "focus_sig": "538eefb8", "reason": "lod-evict"}
 {"ts": "2026-11-27T09:29:35", "ref": ["memory/goals/archive/mechanic-2026-11-23-cycle8.md", 11], "focus_sig": "538eefb8", "reason": "lod-evict"}
 {"ts": "2026-11-27T09:29:35", "ref": ["memory/goals/archive/researcher-2026-11-20b.md", 5], "focus_sig": "538eefb8", "reason": "lod-evict"}
+{"ts": "2026-11-27T09:35:55", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "c4d1950b", "reason": "lod-evict"}
+{"ts": "2026-11-27T09:35:55", "ref": ["memory/workspace/INDEX.md", 68], "focus_sig": "c4d1950b", "reason": "lod-evict"}
+{"ts": "2026-11-27T09:35:55", "ref": ["memory/workspace/INDEX.md", 79], "focus_sig": "c4d1950b", "reason": "lod-evict"}
