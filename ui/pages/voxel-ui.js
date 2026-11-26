@@ -6,9 +6,10 @@ el.style.display='block';el.innerHTML='<b>'+addr+'</b><br><span style="opacity:.
 fetch('/api/voxel?addr='+encodeURIComponent(addr)).then(function(r){return r.json()}).then(function(d){
 if(!d.found){el.innerHTML='<b>'+addr+'</b><br><span style="opacity:.6">no memory here yet</span>';return;}
 var h='<b>'+addr+'</b>'+(d.at&&d.at!==addr?' <span style="opacity:.5">-> '+d.at+'</span>':'')+'<br>';
-(d.chain||[]).forEach(function(e){h+='<div style="margin:6px 0;padding:4px 8px;border-left:2px solid #e3344f"><i>'+e.addr+'</i><br>'+(e.label?'<b>'+e.label+'</b><br>':'')+'<span style="opacity:.7">'+(e.kind||'space')+'</span>'+(e.resolved&&e.resolved.path?'<br>-> '+e.resolved.path:'')+(e.rigid?'<br><button data-r="'+e.rigid+'" style="margin-top:4px;background:#1a2035;color:#ffd76a;border:1px solid #ffd76a;border-radius:4px;cursor:pointer">animate rigid body</button>':'')+'</div>';
+(d.chain||[]).forEach(function(e){h+='<div style="margin:6px 0;padding:4px 8px;border-left:2px solid #e3344f"><i>'+e.addr+'</i><br>'+(e.label?'<b>'+e.label+'</b><br>':'')+'<span style="opacity:.7">'+(e.kind||'space')+'</span>'+(e.resolved&&e.resolved.path?'<br>-> '+e.resolved.path:'')+(e.pos?'<br><span style="opacity:.5">pos ['+e.pos.map(function(v){return v.toFixed(2)}).join(', ')+'] '+e.cell_size_mm+'mm d'+e.depth+'</span>':'')+(e.rigid?'<br><button data-r="'+e.rigid+'" style="margin-top:4px;background:#1a2035;color:#ffd76a;border:1px solid #ffd76a;border-radius:4px;cursor:pointer">animate rigid body</button>':'')+(e.depth===0?'<br><button id="vpulse" data-a="'+e.addr+'" style="margin-top:4px;background:#1a2035;color:#7fd4ff;border:1px solid #7fd4ff;border-radius:4px;cursor:pointer">\u26a1 pulse 10ms \u2192 2mm</button>':'')+'</div>';
  if(e.children&&e.children.length){h+='<div style="margin:2px 0 2px 10px;font-size:11px">'+e.children.map(function(c){return '<a href="#" data-v="'+c+'" style="color:#7fd4ff;margin-right:8px">sub '+c.replace(/^V\([^)]+\)/,'')+'</a>'}).join('')+'</div>';}});
 el.innerHTML=h;}).catch(function(e){el.innerHTML='<b>'+addr+'</b><br>err '+e;});}
+function armPulse(a){fetch('/api/voxel?pulse=1&addr='+encodeURIComponent(a)+'&speed=8&every_ms=10').then(function(r){return r.json()}).catch(function(){});}
 /* rigid-body pulse (2026-11-26) */
 function pulseRigid(name){var m=window.__mind;if(!m||!m.rigids)return;var o=m.rigids[name];if(!o||!o.scale)return;
  if(!o.userData.__s0)o.userData.__s0=o.scale.clone();
@@ -24,7 +25,8 @@ function init(){var m=window.__mind;if(!m||!THREE)return;
  var pel=document.getElementById('vpanel');
  if(pel)pel.addEventListener('click',function(ev){var t=ev.target;
   if(t.dataset&&t.dataset.v){ev.preventDefault();show(t.dataset.v);}
-  if(t.dataset&&t.dataset.r){pulseRigid(t.dataset.r);}});
+  if(t.dataset&&t.dataset.r){pulseRigid(t.dataset.r);}
+  if(t.id==='vpulse'){armPulse(t.dataset.a);}});
  var rc=new THREE.Raycaster(),vv=new THREE.Vector2();
  m.canvas.addEventListener('click',function(ev){var r=m.canvas.getBoundingClientRect();
   vv.set((ev.clientX-r.left)/r.width*2-1,-(ev.clientY-r.top)/r.height*2+1);

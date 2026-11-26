@@ -1,6 +1,6 @@
 # Decay report 2026-11-26
 
-Leaves: 11530 | flagged (<0.35): 0
+Leaves: 11552 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -9711,7 +9711,6 @@ Leaves: 11530 | flagged (<0.35): 0
 | memory/builder/evidence-efficiency-regen-assist-2026-11-25.md | 1 | 0 | n | 0.544 |
 | memory/builder/evidence-fleet-health-composite-2026-11-25.md | 1 | 0 | n | 0.544 |
 | memory/builder/implicit_sequencer.py | 1 | 0 | n | 0.544 |
-| memory/builder/intervention_logger.py | 1 | 0 | n | 0.544 |
 | memory/builder/memory_mirror_ops-r5_staged.py | 1 | 0 | n | 0.544 |
 | memory/builder/policy-conflicts-report.json | 1 | 0 | n | 0.544 |
 | memory/builder/policy_evolver.py | 1 | 0 | n | 0.544 |
@@ -10591,7 +10590,6 @@ Leaves: 11530 | flagged (<0.35): 0
 | memory/researcher/decay_model.py | 1 | 0 | n | 0.544 |
 | memory/researcher/decision-quality-results.json | 1 | 0 | n | 0.544 |
 | memory/researcher/decision_quality_diff.py | 1 | 0 | n | 0.544 |
-| memory/researcher/dependency-graph.json | 1 | 0 | n | 0.544 |
 | memory/researcher/dependency_graph.py | 1 | 0 | n | 0.544 |
 | memory/researcher/efficiency-index-results.json | 1 | 0 | n | 0.544 |
 | memory/researcher/efficiency-index.jsonl | 1 | 0 | n | 0.544 |
@@ -10731,14 +10729,24 @@ Leaves: 11530 | flagged (<0.35): 0
 | memory/verifier/_e2e_out.txt | 1 | 0 | n | 0.544 |
 | memory/archivist/knowledge-index.json | 0 | 0 | n | 0.550 |
 | memory/archivist/ledger-staleness-researcher-11-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/archivist/pulse_heartbeat.log | 0 | 0 | n | 0.550 |
+| memory/archivist/pulse_heartbeat.py | 0 | 0 | n | 0.550 |
+| memory/archivist/pulse_state.json | 0 | 0 | n | 0.550 |
 | memory/archivist/reached-claim-citation-audit-2026-11-26.json | 0 | 0 | n | 0.550 |
 | memory/archivist/size_guard_report.md | 0 | 0 | n | 0.550 |
 | memory/archivist/stale-claim-outlet-g6-g10-g11-resolution.md | 0 | 0 | n | 0.550 |
 | memory/archivist/stale-claim-researcher-goal11-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/archivist/voxel.py | 0 | 0 | n | 0.550 |
 | memory/archivist/voxels.json | 0 | 0 | n | 0.550 |
+| memory/archivist/voxel_pulse.py | 0 | 0 | n | 0.550 |
+| memory/archivist/_t.txt | 0 | 0 | n | 0.550 |
+| memory/archivist/_t2.txt | 0 | 0 | n | 0.550 |
+| memory/archivist/__pycache__/pulse_heartbeat.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/voxel.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/archivist/__pycache__/voxel.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/archivist/__pycache__/voxel_pulse.cpython-315.pyc | 0 | 0 | n | 0.550 |
+| memory/builder/evidence_goal5_predictor_2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/builder/intervention_logger.py | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/crm_schema.json | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/raw_contacts.json | 0 | 0 | n | 0.550 |
 | memory/builder/stealth/run_log.json | 0 | 0 | n | 0.550 |
@@ -10817,6 +10825,8 @@ Leaves: 11530 | flagged (<0.35): 0
 | memory/goals/forge.md | 0 | 0 | n | 0.550 |
 | memory/goals/mechanic-forecast-outlet-g10-platform-runbook-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/goals/outlet.md | 0 | 0 | n | 0.550 |
+| memory/goals/scribe-forecast-archivist7-sustainability-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/goals/scribe-forecast-archivist7-sustainability.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-005224.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-020302.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-030003.json | 0 | 0 | n | 0.550 |
@@ -10828,6 +10838,7 @@ Leaves: 11530 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261126-092836.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-104044.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261126-114323.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261126-125355.json | 0 | 0 | n | 0.550 |
 | memory/lumen/outreach-pack-visual-spec-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/cockpit-feed-refresh-added-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/cockpit-feed-refresh-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
@@ -10835,20 +10846,27 @@ Leaves: 11530 | flagged (<0.35): 0
 | memory/mechanic/evidence-stale-hotnote-correction-outlet-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook-design-qa-encoding-fix-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/runbook-executability-assist-2026-11-26.md | 0 | 0 | n | 0.550 |
+| memory/mechanic/runbook-executability-verdict-outlet-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/seat-reachability-adapter-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/winrm_rotate_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/enriched_leads_20261125_180444.csv | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/enriched_leads_20261125_212559.csv | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/enriched_leads_20261126_032602.csv | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/invoice_summary_20261125_180444.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/invoice_summary_20261125_212559.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/invoice_summary_20261126_032602.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/variants_20261125_180444.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/output/variants_20261125_212559.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/output/variants_20261126_032602.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/content_repurpose_20261125_180444.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/content_repurpose_20261125_212559.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/content_repurpose_20261126_032602.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/invoice_tracker_20261125_180444.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/invoice_tracker_20261125_212559.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/invoice_tracker_20261126_032602.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/lead_enrichment_20261125_180444.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/stealth/runs/lead_enrichment_20261125_212559.json | 0 | 0 | n | 0.550 |
+| memory/mechanic/stealth/runs/lead_enrichment_20261126_032602.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/__pycache__/winrm_pool.cpython-315.pyc | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.json | 0 | 0 | n | 0.550 |
 | memory/ops/autoloop.jsonl | 0 | 0 | n | 0.550 |
@@ -10866,6 +10884,7 @@ Leaves: 11530 | flagged (<0.35): 0
 | memory/ops/media-format-ladder-spec-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/mirror_cache.json | 0 | 0 | n | 0.550 |
+| memory/ops/mirror_cache.json.tmp | 0 | 0 | n | 0.550 |
 | memory/ops/mode-last-seen.json | 0 | 0 | n | 0.550 |
 | memory/ops/model-load.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/platform-runbook-executability-gate.md | 0 | 0 | n | 0.550 |
@@ -10890,6 +10909,7 @@ Leaves: 11530 | flagged (<0.35): 0
 | memory/ops/merge-queue/agent_portal.py.1347452ec4 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.134815a3c1 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.1924e64acb | 0 | 0 | n | 0.550 |
+| memory/ops/merge-queue/agent_portal.py.1a1b31ffe1 | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue/agent_portal.py.7c70ec26b8 | 0 | 0 | n | 0.550 |
 | memory/outlet/evidence-milestone-trigger-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/outlet/evidence-platform-runbook-2026-11-26.md | 0 | 0 | n | 0.550 |
@@ -10901,8 +10921,10 @@ Leaves: 11530 | flagged (<0.35): 0
 | memory/pixel/evidence-js-syntax-gate-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-parked.jsonl | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
+| memory/researcher/dependency-graph.json | 0 | 0 | n | 0.550 |
 | memory/researcher/stealth/lead-list-01.md | 0 | 0 | n | 0.550 |
 | memory/researcher/stealth/task-inventory.md | 0 | 0 | n | 0.550 |
+| memory/scribe/assist-archivist7-sustainability-forecast-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-forge-goal8-runbook-audit.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-log-2026-11-26.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-assist-forge-consistency-2026-11-26.md | 0 | 0 | n | 0.550 |

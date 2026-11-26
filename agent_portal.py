@@ -7000,19 +7000,60 @@ class Handler(BaseHTTPRequestHandler):
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})
 
+        elif p == "/api/voxel/pulse":
+            # Pulse engine readout (2026-11-26): status for the mind-room monitor block.
+            try:
+                _g = globals()
+                _vx = _g.get("_VXMOD")
+                if _vx is None:
+                    import importlib.util as _ilu_vx
+                    _spec = _ilu_vx.spec_from_file_location(
+                        "_voxel_api", os.path.join(HERE, "memory/archivist/voxel.py"))
+                    _vx = _ilu_vx.module_from_spec(_spec)
+                    _spec.loader.exec_module(_vx)
+                    _g["_VXMOD"] = _vx
+                _s = _vx.pulse_status()
+                _db = _vx.load()
+                return self._json(200, {"tick": _s["ticks"], "status": {
+                    "running": _s["running"],
+                    "last_hops": [{"from": j["id"].split("->")[0], "to": j["id"].split("->")[1]}
+                                  for j in _s["jumps"] if j.get("hops") and "->" in j["id"]]},
+                    "stats": {"cells": (_db.get("meta") or {}).get("cell_count", _vx.count_cells(_db)),
+                              "hops_total": sum(j["hops"] for j in _s["jumps"])}})
+            except Exception as e:
+                return self._json(500, {"error": str(e)[:200]})
         elif p == "/api/voxel":
             # Voxel memory API (2026-11-26): 3D world cell -> memory chain resolution.
+            # pulse=1 arms the 10ms sub-voxel wavefront (speed/depth/every_ms/to params);
+            # pulse=stop / pulse=status. Module is cached so the PulseEngine thread
+            # persists across requests.
             try:
-                import importlib.util as _ilu_vx
                 import urllib.parse as _up_vx
-                _spec = _ilu_vx.spec_from_file_location(
-                    "_voxel_api", os.path.join(HERE, "memory/archivist/voxel.py"))
-                _vx = _ilu_vx.module_from_spec(_spec)
-                _spec.loader.exec_module(_vx)
+                _g = globals()
+                _vx = _g.get("_VXMOD")
+                if _vx is None:
+                    import importlib.util as _ilu_vx
+                    _spec = _ilu_vx.spec_from_file_location(
+                        "_voxel_api", os.path.join(HERE, "memory/archivist/voxel.py"))
+                    _vx = _ilu_vx.module_from_spec(_spec)
+                    _spec.loader.exec_module(_vx)
+                    _g["_VXMOD"] = _vx
                 _q = _up_vx.parse_qs(_up_vx.urlsplit(self.path).query)
                 _addr = (_q.get("addr") or [""])[0]
+                _pu = (_q.get("pulse") or [""])[0]
+                if _pu == "stop":
+                    return self._json(200, _vx.pulse_stop())
+                if _pu == "status":
+                    return self._json(200, _vx.pulse_status())
                 if not _addr:
                     return self._json(400, {"error": "addr required, e.g. V(4,2,4)"})
+                if _pu:
+                    return self._json(200, {"armed": _vx.pulse_arm(
+                        _addr,
+                        speed=int((_q.get("speed") or ["8"])[0]),
+                        max_depth=int((_q.get("depth") or [str(_vx.MAX_DEPTH)])[0]),
+                        every_ms=int((_q.get("every_ms") or ["10"])[0]),
+                        to=(_q.get("to") or [None])[0])})
                 return self._json(200, _vx.resolve_payload(_addr))
             except Exception as e:
                 return self._json(500, {"error": str(e)[:200]})

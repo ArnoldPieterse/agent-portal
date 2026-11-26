@@ -15,13 +15,16 @@ CLI:
   python voxel.py subdivide V(3,3,3)
   python voxel.py resolve V(3,3,3)/0/1/1
 """
-import json, os, re, sys
+import json, os, re, sys, threading, time
 HERE = os.path.dirname(os.path.abspath(__file__))          # memory/archivist
 ROOT = os.path.dirname(os.path.dirname(HERE))              # project root
 DB = os.path.join(HERE, "voxels.json")
 GRID = {"x": [0, 7], "y": [0, 3], "z": [0, 7]}
 ORIGIN = (-12.0, -4.5, -12.0)
 SIZE = (3.0, 3.0, 3.0)
+MAX_DEPTH = 11            # 3m / 2^11 = 1.46mm <= 2mm detail floor
+MIN_SIZE_M = 0.002        # finest voxel we keep: 2mm
+CELL_CAP = 150000         # hard cap on materialized cells (JSON sanity)
 MRE = re.compile(r"^[A-Z][a-z]?\d+$")
 ARE = re.compile(r"^V\((\d+),(\d+),(\d+)\)(?:/([01])(?:,([01]),?)+)*$", re.S)
 
@@ -49,8 +52,18 @@ def load():
 
 
 def save(db):
-    db["meta"] = {"grid": GRID, "origin": ORIGIN, "size": SIZE}
-    json.dump(db, open(DB, "w", encoding="utf-8"), indent=1)
+    m = db.get("meta") or {}
+    m.update({"grid": GRID, "origin": ORIGIN, "size": SIZE})
+    db["meta"] = m
+    tmp = DB + ".tmp"
+    for attempt in range(5):  # Windows can briefly lock the file (AV/indexer)
+        try:
+            json.dump(db, open(tmp, "w", encoding="utf-8"), indent=1)
+            os.replace(tmp, DB)  # atomic: readers never see a half-write
+            return
+        except PermissionError:
+            time.sleep(0.05 * (attempt + 1))
+    raise RuntimeError("save blocked after retries")
 
 
 def node_at(db, addr):
@@ -98,21 +111,70 @@ def set_node(db, addr, **fields):
     return node
 
 
-def subdivide(db, addr):
-    chain = node_at(db, addr)
-    if not chain:
+def cell_world(addr):
+    """Exact world geometry of any address: (px, py, pz, size_m)."""
+    p = _parse(addr)
+    if not p:
+        return None
+    base, segs = p
+    x, y, z = (int(v) for v in base.split(","))
+    px, py, pz = ORIGIN[0] + x * SIZE[0], ORIGIN[1] + y * SIZE[1], ORIGIN[2] + z * SIZE[2]
+    s = SIZE[0]
+    for (i, j, k) in segs:
+        px += i * s / 2.0; py += j * s / 2.0; pz += k * s / 2.0
+        s /= 2.0
+    return (px, py, pz, s)
+
+def count_cells(db):
+    n = 0
+    def walk(node):
+        nonlocal n
+        n += 1
+        for ch in (node.get("sub") or {}).values():
+            walk(ch)
+    for c in db["cells"].values():
+        walk(c)
+    return n
+
+def stamp_all(db):
+    """Write exact pos/size onto every materialized node (correct locations)."""
+    n = 0
+    def walk(node, addr):
+        nonlocal n
+        w = cell_world(addr)
+        if not w:
+            return
+        node["pos"] = [round(w[0], 5), round(w[1], 5), round(w[2], 5)]
+        node["size_m"] = round(w[3], 6)
+        n += 1
+        for k, ch in (node.get("sub") or {}).items():
+            walk(ch, addr + "/" + "/".join(k.split(",")))
+    for b, c in db["cells"].items():
+        walk(c, "V(" + b + ")")
+    return n
+
+def subdivide(db, addr, pulse=None):
+    """Split one voxel into 8 octant children with exact world pos/size."""
+    res = node_at(db, addr)
+    if not res:
         raise SystemExit("no such voxel: " + str(addr))
-    node = chain[1]
+    a, _k, node = res[0][-1]
     subs = node.setdefault("sub", {})
+    w = cell_world(a)
+    s2 = w[3] / 2.0
     made = 0
-    for i in ("0", "1"):
-        for j in ("0", "1"):
-            for k in ("0", "1"):
-                key = i + "," + j + "," + k
+    for i in (0, 1):
+        for j in (0, 1):
+            for k in (0, 1):
+                key = str(i) + "," + str(j) + "," + str(k)
                 if key not in subs:
-                    subs[key] = {"sub": {}}
+                    ch = {"sub": {},
+                          "pos": [round(w[0] + i * s2, 5), round(w[1] + j * s2, 5), round(w[2] + k * s2, 5)],
+                          "size_m": round(s2, 6)}
+                    if pulse:
+                        ch["pulse"] = pulse
+                    subs[key] = ch
                     made += 1
-    save(db)
     return made
 
 
@@ -186,8 +248,14 @@ def resolve_payload(addr):
     chain = res[0]
     out = []
     for a, _k, n in chain:
+        w = cell_world(a)
         e = {"addr": a, "label": n.get("label", ""), "kind": n.get("kind", "space"),
-             "rigid": n.get("rigid"), "has_sub": bool(n.get("sub"))}
+             "rigid": n.get("rigid"), "has_sub": bool(n.get("sub")),
+             "depth": len(_parse(a)[1]) if _parse(a) else 0}
+        if w:
+            e["pos"] = [round(w[0], 3), round(w[1], 3), round(w[2], 3)]
+            e["size_m"] = round(w[3], 4)
+            e["cell_size_mm"] = round(w[3] * 1000, 2)
         if e["has_sub"]:
             e["children"] = [a + "/" + k.replace(",", "/") for k in n["sub"].keys()]
         if n.get("ref"):
@@ -227,11 +295,165 @@ def main(argv):
         n = set_node(db, argv[2], **kw)
         print("set", argv[2], "->", json.dumps(n)[:300])
     elif cmd == "subdivide":
-        print("made", subdivide(db, argv[2]), "octants under", argv[2])
+        made = subdivide(db, argv[2])
+        db.setdefault("meta", {})["cell_count"] = count_cells(db)
+        save(db)
+        print("made", made, "octants under", argv[2])
     elif cmd == "resolve":
         print(json.dumps(resolve_payload(argv[2]), indent=1)[:4000])
+    elif cmd == "stamp":
+        n = stamp_all(db)
+        db.setdefault("meta", {})["cell_count"] = count_cells(db)
+        save(db)
+        print("stamped", n, "nodes with exact pos/size")
+    elif cmd == "pulse":
+        sub = argv[2] if len(argv) > 2 else "status"
+        if sub == "arm":
+            kw = {}
+            for f in ("speed", "max_depth", "every_ms"):
+                if "--" + f in argv:
+                    kw[f] = int(argv[argv.index("--" + f) + 1])
+            if "--to" in argv:
+                kw["to"] = argv[argv.index("--to") + 1]
+            print("armed", pulse_arm(argv[3], **kw))
+        elif sub == "stop":
+            print(pulse_stop())
+        else:
+            print(json.dumps(pulse_status(), indent=1))
     else:
         raise SystemExit(__doc__)
+
+
+class PulseEngine:
+    """10ms voxel pulse (2026-11-26): code that jumps between voxels.
+    From an object's top-level voxel a wavefront expands every `every_ms`
+    (default 10), visiting each neighbour and generating sub-voxels one level
+    deeper per pass, down to the 2mm floor (MAX_DEPTH). A jump target (`to`)
+    teleports the wavefront when its region is exhausted."""
+
+    def __init__(self):
+        self.lock = threading.Lock()
+        self.jumps = {}
+        self.ticks = 0
+        self.running = False
+
+    def _ensure(self):
+        if not self.running:
+            self.running = True
+            threading.Thread(target=self._loop, daemon=True).start()
+
+    def arm(self, addr, speed=8, max_depth=MAX_DEPTH, every_ms=10, to=None):
+        with self.lock:
+            jid = addr + ("->" + to if to else "")
+            self.jumps[jid] = {"addr": addr, "to": to, "speed": int(speed),
+                               "max_depth": min(int(max_depth), MAX_DEPTH),
+                               "every_ms": max(1, int(every_ms)),
+                               "frontier": [addr], "ring": 0, "ticks": 0,
+                               "made": 0, "hops": 0, "done": False, "next_at": 0.0}
+            self._ensure()
+        return jid
+
+    def stop(self):
+        with self.lock:
+            self.jumps = {}
+            self.running = False
+        return {"stopped": True}
+
+    def status(self):
+        with self.lock:
+            out = {"running": any(not j["done"] for j in self.jumps.values()),
+                   "ticks": self.ticks, "jumps": []}
+            for jid, j in self.jumps.items():
+                out["jumps"].append({"id": jid, "addr": j["addr"], "to": j["to"],
+                                     "every_ms": j["every_ms"], "max_depth": j["max_depth"],
+                                     "ring": j["ring"], "ticks": j["ticks"], "made": j["made"],
+                                     "hops": j["hops"], "frontier": len(j["frontier"]),
+                                     "done": j["done"]})
+        return out
+
+    def _loop(self):
+        last_flush = 0.0
+        db = None  # persistent across ticks: a failed flush must not lose progress
+        try:
+            while True:
+                time.sleep(0.01)  # base tick: 10ms
+                now = time.time()
+                with self.lock:
+                    if not self.jumps:
+                        db = None
+                        continue
+                    if db is None:
+                        db = load()
+                    self.ticks += 1
+                    changed = False
+                    for j in self.jumps.values():
+                        if j["done"] or now < j["next_at"]:
+                            continue
+                        j["next_at"] = now + j["every_ms"] / 1000.0
+                        j["ticks"] += 1
+                        total = db.get("meta", {}).get("cell_count")
+                        if total is None:
+                            total = count_cells(db)
+                            db.setdefault("meta", {})["cell_count"] = total
+                        before = total
+                        steps = 0
+                        while j["frontier"] and steps < j["speed"]:
+                            a = j["frontier"].pop(0)
+                            parsed = _parse(a)
+                            if not parsed or len(parsed[1]) >= j["max_depth"]:
+                                continue
+                            if total >= CELL_CAP:
+                                break
+                            made = subdivide(db, a, pulse={"ring": j["ring"], "tick": self.ticks})
+                            steps += 1
+                            if made:
+                                total += made
+                                db["meta"]["cell_count"] = total
+                                changed = True
+                                for c in ("0", "1"):
+                                    for d2 in ("0", "1"):
+                                        for e2 in ("0", "1"):
+                                            j["frontier"].append(a + "/" + c + "/" + d2 + "/" + e2)
+                        j["made"] += total - before
+                        if not j["frontier"] and j.get("to"):
+                            j["hops"] += 1
+                            j["addr"], j["to"] = j["to"], None
+                            j["frontier"] = [j["addr"]]
+                            j["ring"] = 0
+                        elif not j["frontier"]:
+                            j["done"] = True
+                    all_done = all(j["done"] for j in self.jumps.values())
+                    if changed and (now - last_flush >= 0.5 or all_done):
+                        try:
+                            save(db)
+                            last_flush = now
+                        except Exception:
+                            pass  # transient lock; state kept in memory, retried next window
+                    if all_done:
+                        try:
+                            save(db)
+                        except Exception:
+                            pass
+                        self.running = False
+                        db = None
+                        break
+        except Exception:
+            self.running = False
+
+
+ENGINE = PulseEngine()
+
+
+def pulse_arm(addr, **kw):
+    return ENGINE.arm(addr, **kw)
+
+
+def pulse_stop():
+    return ENGINE.stop()
+
+
+def pulse_status():
+    return ENGINE.status()
 
 
 if __name__ == "__main__":
