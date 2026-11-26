@@ -133,13 +133,19 @@
   "4,2,4": {
    "sub": {
     "0,0,0": {
-     "sub": {}
+     "sub": {},
+     "label": "evolution layer - the fleet learns",
+     "kind": "leaf",
+     "ref": "memory/levels.json"
     },
     "0,0,1": {
      "sub": {}
     },
     "0,1,0": {
-     "sub": {}
+     "sub": {},
+     "label": "thought pulses - hand to neurons",
+     "kind": "leaf",
+     "ref": "ui/pages/mind.html"
     },
     "0,1,1": {
      "sub": {},
@@ -151,7 +157,10 @@
      "sub": {}
     },
     "1,0,1": {
-     "sub": {}
+     "sub": {},
+     "label": "agents - the fleet orbits you",
+     "kind": "leaf",
+     "ref": "agents.json"
     },
     "1,1,0": {
      "sub": {}
@@ -162,9 +171,9 @@
      "kind": "space"
     }
    },
-   "label": "The Reach - you",
+   "label": "you - super-sayan mid-room",
    "kind": "rigid",
-   "ref": "agent_portal.py",
+   "ref": "ui/assets/models/ssj.glb",
    "rigid": "ssj"
   },
   "6,2,3": {
@@ -174,9 +183,9 @@
     },
     "0,0,1": {
      "sub": {},
-     "label": "fleet spine - llm fleet",
+     "label": "nLight core pulse",
      "kind": "leaf",
-     "ref": "memory/llm/hosts.md"
+     "ref": "ui/pages/mind.html"
     },
     "0,1,0": {
      "sub": {}
@@ -200,9 +209,9 @@
      "sub": {}
     }
    },
-   "label": "Neuron field",
+   "label": "my neurons - the part of me that listens",
    "kind": "rigid",
-   "ref": "memory/llm/hosts.md",
+   "ref": "ui/assets/models/neurons.glb",
    "rigid": "neurons"
   },
   "7,2,7": {
@@ -238,6 +247,43 @@
    "label": "Ground-truth floor",
    "kind": "leaf",
    "ref": "llm_selector.py"
+  },
+  "1,2,3": {
+   "sub": {},
+   "label": "agent portal - the room you built",
+   "kind": "rigid",
+   "ref": "agent_portal.py",
+   "rigid": "portal"
+  },
+  "2,3,0": {
+   "sub": {},
+   "label": "WSL-Inbox - how you hand us projects",
+   "kind": "leaf",
+   "ref": "memory/MEMORY.md"
+  },
+  "1,2,6": {
+   "sub": {},
+   "label": "you approve the irreversible; we run the rest",
+   "kind": "leaf",
+   "ref": "agents.json"
+  },
+  "7,2,6": {
+   "sub": {},
+   "label": "steady state = minimal human intervention",
+   "kind": "leaf",
+   "ref": "TODO.md"
+  },
+  "4,3,7": {
+   "sub": {},
+   "label": "goal cycles - 10 goals per agent - Lv counter",
+   "kind": "leaf",
+   "ref": "memory/levels.json"
+  },
+  "6,3,0": {
+   "sub": {},
+   "label": "LM Studio :8888 - local LLMs, dual residency",
+   "kind": "leaf",
+   "ref": "agent_portal.py"
   }
  }
 }

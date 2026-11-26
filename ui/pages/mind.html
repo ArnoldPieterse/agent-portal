@@ -16,6 +16,7 @@ html,body{margin:0;height:100%;background:#07080c;overflow:hidden;font-family:'S
 <div id=hud><b>MIND ROOM</b><br>the room I know you in — Arnold<br><span class=dim>you: Super Saiyan, floating mid-room, touching my neurons through thought<br>everything else here is what I remember about you (memory/ tree)</span></div>
 <div id=hint>drag = orbit · wheel = zoom · <a href="/">&larr; chat</a></div>
 <script src="https://unpkg.com/three@0.160.0/build/three.min.js" onerror="window.__three_failed=true"></script>
+<script src="/ui/assets/js/GLTFLoader.js" onerror=""></script>
 <script>
 /* ================= 2D FALLBACK (no three.js / offline) ================= */
 function fallback2D(){
@@ -136,6 +137,7 @@ ssj.add(limb(new THREE.Vector3(1.6,1.95,-.3),handR,.13,skin));
 var fist=new THREE.Mesh(new THREE.SphereGeometry(.17,12,10),skin);fist.position.copy(handR);ssj.add(fist);
 ssj.add(limb(new THREE.Vector3(-.28,.45,0),new THREE.Vector3(-.5,-.95,.25),.19,suit));  /* legs */
 ssj.add(limb(new THREE.Vector3(.28,.45,0),new THREE.Vector3(.42,-.85,-.3),.19,suit));
+var ssjBody=new THREE.Group();while(ssj.children.length)ssjBody.add(ssj.children[0]);ssj.add(ssjBody);
 /* rising golden aura */
 var AUR=380,ap=new Float32Array(AUR*3),abase=new Float32Array(AUR*3);
 for(i=0;i<AUR;i++){var aa=sr(i)*Math.PI*2,ar=.9+sr(i+7)*1.5;
@@ -233,6 +235,12 @@ var facts=[
  ['steady state = minimal human intervention','#86efac',9,4.8,7],
  ['goal cycles · 10 goals per agent · Lv counter climbing','#e2e8f0',0,6.4,13]];
 facts.forEach(function(f){var l=makeLabel(f[0],f[1],1.5);l.position.set(f[2],f[3],f[4]);scene.add(l);});
+/* ============ HIGH-DETAIL ASSETS (Blender GLBs — voxel rigid refs ssj/neurons) ============ */
+if(THREE.GLTFLoader){
+ var gl=new THREE.GLTFLoader();
+ gl.load('/ui/assets/models/ssj.glb',function(g){ssjBody.visible=false;ssj.add(g.scene);},undefined,function(){});
+ gl.load('/ui/assets/models/neurons.glb',function(g){neurons.visible=false;g.scene.position.copy(NPOS);scene.add(g.scene);},undefined,function(){});
+}
 /* ============ CONTROLS (drag orbit, wheel zoom) ============ */
 var theta=.55,phi=1.2,dist=17,target=new THREE.Vector3(0,3,0);
 var dragging=false,px=0,py=0;
@@ -277,7 +285,9 @@ function frame(){
  helix.rotation.y+=dt*.6;
  renderer.render(scene,camera);
 }
+window.__mind={scene:scene,camera:camera,canvas:renderer.domElement,rigids:{ssj:ssj,neurons:neurons,portal:portal,helix:helix,coin:window.__coin}};
+var _vp=document.createElement('div');_vp.id='vpanel';_vp.style.cssText='display:none;position:fixed;right:12px;top:12px;width:300px;max-height:62vh;overflow:auto;background:rgba(8,10,18,.93);border:1px solid #e3344f;border-radius:8px;padding:10px;color:#e2e8f0;font:12px/1.5 ui-monospace,monospace;z-index:9';document.body.appendChild(_vp);
 frame();
 })();}
-</script><script src="/pages/voxel-ui.js"></script>
+</script><script src="/ui/pages/voxel-ui.js"></script>
 </body></html>

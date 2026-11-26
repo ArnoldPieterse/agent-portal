@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T01:26:09.217720+00:00",
+  "ts": "2026-11-26T01:56:09.550414+00:00",
   "health_score": 80,
   "fleet_status": "NOMINAL",
   "agents": [
@@ -48,26 +48,26 @@
     {
       "host": "White",
       "vram_pct": 48.1,
-      "cpu_pct": 0.5,
-      "temp_c": 42.3
+      "cpu_pct": 1.5,
+      "temp_c": 44.5
     },
     {
       "host": "Red",
       "vram_pct": 32.8,
       "cpu_pct": 0.0,
-      "temp_c": 37.5
+      "temp_c": 38.4
     },
     {
       "host": "Pale",
       "vram_pct": 46.6,
-      "cpu_pct": 0.0,
-      "temp_c": 58.0
+      "cpu_pct": 49.5,
+      "temp_c": 89.1
     },
     {
       "host": "Black",
       "vram_pct": 0.4,
       "cpu_pct": 0.0,
-      "temp_c": 42.6
+      "temp_c": 43.1
     }
   ],
   "goals": {
@@ -419,6 +419,11 @@
         "pct": 0.0
       },
       "mechanic-forecast-2026-11-22": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "mechanic-forecast-outlet-g10-platform-runbook-2026-11-26": {
         "total": 1,
         "verified": 0,
         "pct": 0.0

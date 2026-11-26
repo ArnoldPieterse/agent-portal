@@ -6819,6 +6819,16 @@ class Handler(BaseHTTPRequestHandler):
                 _ext = name.rsplit(".", 1)[1].lower()
                 return self._static("assets/" + name, {"png": "image/png", "jpg": "image/jpeg",
                                                        "jpeg": "image/jpeg", "webp": "image/webp"}[_ext])
+            # 2026-11-26: mind room GLB assets (Blender pipeline output, ui/assets/models/)
+            if re.match(r"^/ui/assets/models/[A-Za-z0-9_\-]+\.glb$", p):
+                return self._static(p[4:], "model/gltf-binary")
+            # 2026-11-26: up to two subdirectory levels for css/js (e.g. ui/assets/js/
+            # GLTFLoader.js, ui/pages/voxel-ui.js). Regex keeps the no-traversal guarantee.
+            _rel = p[4:].lstrip("/")
+            if re.match(r"^[A-Za-z0-9_\-]+(?:/[A-Za-z0-9_\-]+){1,2}\.(css|js)$", _rel):
+                ctype = ("text/css; charset=utf-8" if name.endswith(".css")
+                         else "application/javascript; charset=utf-8")
+                return self._static(_rel, ctype)
             if re.match(r"^[A-Za-z0-9_\-]+\.(css|js)$", name or ""):
                 ctype = ("text/css; charset=utf-8" if name.endswith(".css")
                          else "application/javascript; charset=utf-8")

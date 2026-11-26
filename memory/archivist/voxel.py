@@ -188,6 +188,8 @@ def resolve_payload(addr):
     for a, _k, n in chain:
         e = {"addr": a, "label": n.get("label", ""), "kind": n.get("kind", "space"),
              "rigid": n.get("rigid"), "has_sub": bool(n.get("sub"))}
+        if e["has_sub"]:
+            e["children"] = [a + "/" + k.replace(",", "/") for k in n["sub"].keys()]
         if n.get("ref"):
             e["resolved"] = _resolve_ref(n["ref"])
         out.append(e)

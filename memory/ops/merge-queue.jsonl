@@ -483,3 +483,9 @@
 {"ts": "2026-11-26 11:20:25", "file": "agent_portal.py", "sha": "087f1c13fa", "size": 396030, "snapshot": "memory/ops/merge-queue/agent_portal.py.087f1c13fa"}
 {"ts": "2026-11-26 11:20:25", "file": "ui/pages/mind.html", "sha": "8d39f6e865", "size": 18774, "snapshot": null}
 {"ts": "2026-11-26 11:28:56", "file": "ui/cockpit-load-audit.py", "sha": "2986288424", "size": 3562, "snapshot": null}
+{"ts": "2026-11-26 11:43:13", "file": "agent_portal.py", "sha": "7c70ec26b8", "size": 396922, "snapshot": "memory/ops/merge-queue/agent_portal.py.7c70ec26b8"}
+{"ts": "2026-11-26 11:43:13", "file": "ui/assets/models/neurons.glb", "sha": "afbb12164d", "size": 1540364, "snapshot": null}
+{"ts": "2026-11-26 11:43:13", "file": "ui/assets/models/ssj.glb", "sha": "4df26a9ffe", "size": 1015508, "snapshot": null}
+{"ts": "2026-11-26 11:43:13", "file": "ui/pages/mind.html", "sha": "8dcae01e79", "size": 18818, "snapshot": null}
+{"ts": "2026-11-26 12:00:45", "file": "ui/pages/mind.html", "sha": "b918569987", "size": 19413, "snapshot": null}
+{"ts": "2026-11-26 12:00:45", "file": "ui/pages/voxel-ui.js", "sha": "1adc8cf60d", "size": 1169, "snapshot": null}

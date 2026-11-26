@@ -1,0 +1,127 @@
+{
+  "generated": "2026-11-26",
+  "source": "memory/goals/ledger-check.json (generated 2026-11-23)",
+  "method": "extract cited memory/*.ext paths from status=reached claims; check disk existence; classify placeholder vs concrete; near-miss rename detection",
+  "concrete_missing": [
+    {
+      "agent": "researcher",
+      "goal_num": 2,
+      "path": "memory/researcher/evidence_scorer.py",
+      "claim": "**Evidence Quality Auto-Scorer** - `python memory/researcher/evidence_scorer.py`: score al",
+      "near_miss": []
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 5,
+      "path": "memory/researcher/gap_detector.py",
+      "claim": "**Research Gap Detector** - `python memory/researcher/gap_detector.py`: scan all memory/ l",
+      "near_miss": []
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 5,
+      "path": "memory/researcher/knowledge-gaps.md",
+      "claim": "**Research Gap Detector** - `python memory/researcher/gap_detector.py`: scan all memory/ l",
+      "near_miss": []
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 6,
+      "path": "memory/researcher/source-ranks.json",
+      "claim": "**Source Reliability Ranking** - `python memory/researcher/source_ranking.py`: maintain a ",
+      "near_miss": []
+    },
+    {
+      "agent": "researcher",
+      "goal_num": 6,
+      "path": "memory/researcher/source_ranking.py",
+      "claim": "**Source Reliability Ranking** - `python memory/researcher/source_ranking.py`: maintain a ",
+      "near_miss": []
+    },
+    {
+      "agent": "builder",
+      "goal_num": 10,
+      "path": "memory/ops/fleet-snapshots.json",
+      "claim": "**Fleet State Snapshot Scheduler** - `python memory/builder/state_snapshot.py`: every 30 m",
+      "near_miss": [
+        "_fleet.txt",
+        "fleet-snapshots.jsonl"
+      ]
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 7,
+      "path": "memory/archivist/knowledge-deps.json",
+      "claim": "**Knowledge Dependency Graph** - Build a directed graph showing which knowledge leaves dep",
+      "near_miss": []
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 10,
+      "path": "memory/synthesis/quality-scores.json",
+      "claim": "**Synthesis Quality Metric** - `python memory/scribe/synthesis_quality.py`: define and com",
+      "near_miss": [
+        "quality-scores.jsonl"
+      ]
+    },
+    {
+      "agent": "mechanic",
+      "goal_num": 4,
+      "path": "memory/ops/fleet-metrics.json",
+      "claim": "**Fleet State Collector Daemon** - `python memory/mechanic/state_collector.py`: background",
+      "near_miss": [
+        "_fleet.txt",
+        "fleet-metrics.jsonl"
+      ]
+    }
+  ],
+  "placeholder_templated": [
+    {
+      "agent": "researcher",
+      "goal_num": 1,
+      "path": "memory/ops/fleet-summary-YYYY-MM-DD.md",
+      "claim": "**Fleet State Narrative Summarizer** - `python memory/researcher/fleet_summary.py`: genera"
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 3,
+      "path": "memory/archivist/citation-integrity-YYYY-MM-DD.md",
+      "claim": "**Citation Integrity Monitor** - `python memory/archivist/citation_monitor.py`: scan all g"
+    },
+    {
+      "agent": "archivist",
+      "goal_num": 10,
+      "path": "memory/archivist/kb-health-YYYY-MM-DD.md",
+      "claim": "**Knowledge Base Health Report** - Weekly composite report: total leaves, freshness score,"
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 1,
+      "path": "memory/synthesis/cycle-summary-YYYY-MM-DD.md",
+      "claim": "**Cycle Auto-Summary Generator** - `python memory/scribe/cycle_summary.py`: at end of each"
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 2,
+      "path": "memory/synthesis/decision-digest-YYYY-MM-DD.md",
+      "claim": "**Fleet Decision Digest** - `python memory/scribe/decision_digest.py`: compress all decisi"
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 7,
+      "path": "memory/synthesis/knowledge-delta-cycleN.md",
+      "claim": "**Fleet Knowledge Delta Report** - `python memory/scribe/knowledge_delta.py`: compare flee"
+    },
+    {
+      "agent": "scribe",
+      "goal_num": 9,
+      "path": "memory/synthesis/briefing-YYYY-MM-DD.md",
+      "claim": "**Stakeholder Briefing Generator** - `python memory/scribe/stakeholder_brief.py`: produce "
+    }
+  ],
+  "summary": {
+    "concrete_missing_count": 9,
+    "placeholder_count": 7,
+    "note": "Concrete missing = reached claims citing a specific artifact path absent from disk (phantom-citation risk to convergence lock). Placeholder = templated output name (YYYY-MM-DD/cycleN) that instantiates per-run; not a gap."
+  }
+}
