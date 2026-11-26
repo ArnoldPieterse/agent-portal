@@ -1,6 +1,6 @@
 # Decay report 2026-11-27
 
-Leaves: 12049 | flagged (<0.35): 0
+Leaves: 12060 | flagged (<0.35): 0
 
 | leaf | age_d | inrefs | indexed | score |
 |---|---|---|---|---|
@@ -7142,7 +7142,6 @@ Leaves: 12049 | flagged (<0.35): 0
 | memory/researcher/blocker-triage-fresh-run-2026-11-22.md | 5 | 0 | n | 0.522 |
 | memory/researcher/dedup-exclude-pattern-assist-2026-11-22.md | 5 | 0 | n | 0.522 |
 | memory/researcher/evidence_sla.py | 5 | 0 | n | 0.522 |
-| memory/researcher/goal_ledger_current.json | 5 | 0 | n | 0.522 |
 | memory/researcher/integrity-fail-adjudication-2026-11-22.md | 5 | 0 | n | 0.522 |
 | memory/researcher/knowledge-graph-v2.json | 5 | 0 | n | 0.522 |
 | memory/researcher/ledger_current.json | 5 | 0 | n | 0.522 |
@@ -11179,20 +11178,24 @@ Leaves: 12049 | flagged (<0.35): 0
 | memory/builder/assist-verifier-g7-coverage-map-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-ledger-regen-mechanic-closeout-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/builder/evidence-outlet-ship-pipeline-assist-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/builder/evidence-prune-memory-tree-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/builder/__pycache__/convergence_api.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/forge/convergence-drill.jsonl | 0 | 0 | n | 0.550 |
 | memory/forge/convergence-e2e-drill-report.md | 0 | 0 | n | 0.550 |
 | memory/forge/convergence_e2e_drill_last.json | 0 | 0 | n | 0.550 |
 | memory/forge/evidence-canary-gate-token-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/forge/evidence-convergence-e2e-drill-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/forge/evidence-nonsandbox-seat-gate-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/forge/evidence-nonsandbox-unlock-batch-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/forge/evidence-verify-token-wired-081-27.md | 0 | 0 | n | 0.550 |
+| memory/forge/nonsandbox_seat_gate_last.json | 0 | 0 | n | 0.550 |
 | memory/forge/__pycache__/canary_gate_token.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/forge/__pycache__/convergence_e2e_drill.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/goals/calibration.json | 0 | 0 | n | 0.550 |
 | memory/goals/cycle-proposal.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-archivist-autonomy-progression-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/goals/forecast-latest.md | 0 | 0 | n | 0.550 |
+| memory/goals/forecast-pixel-g1-cdp-unblock-from-pale-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/goals/forge.md | 0 | 0 | n | 0.550 |
 | memory/goals/goal_ledger.json | 0 | 0 | n | 0.550 |
 | memory/goals/outlet.md | 0 | 0 | n | 0.550 |
@@ -11206,6 +11209,7 @@ Leaves: 12049 | flagged (<0.35): 0
 | memory/goals/history/forecast-20261127-061039.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-071732.json | 0 | 0 | n | 0.550 |
 | memory/goals/history/forecast-20261127-081949.json | 0 | 0 | n | 0.550 |
+| memory/goals/history/forecast-20261127-092935.json | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27b.md | 0 | 0 | n | 0.550 |
 | memory/mechanic/auto-loop-pass-2026-11-27c.md | 0 | 0 | n | 0.550 |
@@ -11255,6 +11259,7 @@ Leaves: 12049 | flagged (<0.35): 0
 | memory/ops/marker-guard-log.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/memory-tree-size-remediation-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/ops/memory-tree-trim-runbook-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/ops/memory_tree_pruning.md | 0 | 0 | n | 0.550 |
 | memory/ops/merge-queue.jsonl | 0 | 0 | n | 0.550 |
 | memory/ops/mirror_cache.json | 0 | 0 | n | 0.550 |
 | memory/ops/mode-last-seen.json | 0 | 0 | n | 0.550 |
@@ -11272,6 +11277,7 @@ Leaves: 12049 | flagged (<0.35): 0
 | memory/ops/__pycache__/nonsandbox_unblock_batch.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/orchestrator/assist-verifier-goal1-auto-trigger-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/assist-verifier-goal2-chaos-recovery-drill-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/orchestrator/liveleg-queue-refresh-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/memory-tree-trim-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/orchestrator/post-mirror-goal-repair-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/outlet/ship_log.jsonl | 0 | 0 | n | 0.550 |
@@ -11287,6 +11293,7 @@ Leaves: 12049 | flagged (<0.35): 0
 | memory/pixel/__pycache__/cdp_375_dom_check.cpython-313.pyc | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-parked.jsonl | 0 | 0 | n | 0.550 |
 | memory/portal/memfocus-state.json | 0 | 0 | n | 0.550 |
+| memory/researcher/goal_ledger_current.json | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-verifier-g1-commit-trigger-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/assist-verifier-g1-e2e-smoke8-fix-067.md | 0 | 0 | n | 0.550 |
 | memory/scribe/auto-loop-contribution-2026-11-27.md | 0 | 0 | n | 0.550 |
@@ -11296,6 +11303,7 @@ Leaves: 12049 | flagged (<0.35): 0
 | memory/scribe/convergence-status-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-convergence-i3-fix-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/scribe/evidence-verifier-g1-deploy-2026-11-27.md | 0 | 0 | n | 0.550 |
+| memory/scribe/ledger-regen-discrepancy-flag-2026-11-27.md | 0 | 0 | n | 0.550 |
 | memory/verifier/auto_trigger_log.jsonl | 0 | 0 | n | 0.550 |
 | memory/verifier/auto_trigger_poll.bat | 0 | 0 | n | 0.550 |
 | memory/verifier/auto_trigger_regression.py | 0 | 0 | n | 0.550 |
@@ -11736,15 +11744,18 @@ Leaves: 12049 | flagged (<0.35): 0
 | memory/portal/merge-pack.md | 14 | 18 | n | 0.767 |
 | memory/ops/runbooks/safe_test.md | 4 | 10 | n | 0.768 |
 | memory/archivist/autonomy_progression.py | 0 | 1 | Y | 0.769 |
+| memory/archivist/evidence-stale-goal-ledger-regen-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/builder/evidence-ledger-stale-closure-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/forge/canary_gate_token.py | 0 | 1 | Y | 0.769 |
 | memory/forge/convergence_e2e_drill.py | 0 | 1 | Y | 0.769 |
 | memory/forge/deploy-log.jsonl | 0 | 1 | Y | 0.769 |
 | memory/forge/evidence-chaos-drill-assist-2026-11-27.md | 0 | 1 | Y | 0.769 |
 | memory/forge/log.md | 0 | 1 | Y | 0.769 |
+| memory/forge/nonsandbox_seat_gate.py | 0 | 1 | Y | 0.769 |
 | memory/forge/ssot_convergence_gate.py | 0 | 1 | Y | 0.769 |
 | memory/goals/pixel.md | 0 | 1 | Y | 0.769 |
 | memory/mechanic/reboot-recovery.jsonl | 0 | 1 | Y | 0.769 |
+| memory/ops/prune_memory_tree.py | 0 | 1 | Y | 0.769 |
 | memory/outlet/ship_post.py | 0 | 1 | Y | 0.769 |
 | memory/pixel/cdp_375_dom_check.py | 0 | 1 | Y | 0.769 |
 | memory/pixel/evidence-cdp-artifact-fix-2026-11-27.md | 0 | 1 | Y | 0.769 |
@@ -11990,7 +12001,6 @@ Leaves: 12049 | flagged (<0.35): 0
 | memory/mechanic/memory_mirror_fixed.py | 2 | 3 | Y | 0.828 |
 | memory/ops/host-port-task-map-2026-11-15.md | 2 | 3 | Y | 0.828 |
 | memory/ops/mirror-revert-prevention-2026-11-18.md | 2 | 3 | Y | 0.828 |
-| memory/ops/non-sandbox-queue.md | 2 | 3 | Y | 0.828 |
 | memory/ops/runbook-notes.md | 2 | 3 | Y | 0.828 |
 | memory/researcher/citation-audit-2026-11-15.md | 2 | 3 | Y | 0.828 |
 | memory/researcher/hosts-ctx-correction-and-rename-script-state-2026-11-14.md | 2 | 3 | Y | 0.828 |
@@ -12007,6 +12017,7 @@ Leaves: 12049 | flagged (<0.35): 0
 | memory/designer/css-bundle-budget-2026-11-17.md | 10 | 6 | Y | 0.839 |
 | memory/mechanic/goal6-dep-gen-built-2026-11-17.md | 10 | 6 | Y | 0.839 |
 | memory/mechanic/runbook-gap-analysis-2026-11-17.md | 10 | 6 | Y | 0.839 |
+| memory/ops/non-sandbox-queue.md | 0 | 3 | Y | 0.839 |
 | memory/portal/api-reference.md | 2 | 37 | n | 0.839 |
 | memory/portal/bugs/ui-frontend.md | 16 | 9 | Y | 0.841 |
 | memory/archivist/ingest.py | 9 | 6 | Y | 0.845 |
