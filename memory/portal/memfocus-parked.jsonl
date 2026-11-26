@@ -321,3 +321,7 @@
 {"ts": "2026-11-27T02:36:45", "ref": ["memory/workspace/INDEX.md", 3], "focus_sig": "538eefb8", "reason": "lod-evict"}
 {"ts": "2026-11-27T02:36:45", "ref": ["memory/researcher/INDEX.md", 20], "focus_sig": "538eefb8", "reason": "lod-evict"}
 {"ts": "2026-11-27T02:36:45", "ref": ["memory/goals/archive/researcher-2026-11-18.md", 13], "focus_sig": "538eefb8", "reason": "lod-evict"}
+{"ts": "2026-11-27T02:43:12", "ref": ["memory/goals/pixel.md", 20], "focus_sig": "5a093f11", "reason": "lod-evict"}
+{"ts": "2026-11-27T02:43:12", "ref": ["memory/goals/archive/researcher-2026-11-20b.md", 5], "focus_sig": "5a093f11", "reason": "lod-evict"}
+{"ts": "2026-11-27T02:43:12", "ref": ["memory/synthesis/hotfile-archive-20261125.md", 38], "focus_sig": "5a093f11", "reason": "lod-evict"}
+{"ts": "2026-11-27T02:43:12", "ref": ["memory/synthesis/cycle-narrative.md", 12], "focus_sig": "5a093f11", "reason": "lod-evict"}
