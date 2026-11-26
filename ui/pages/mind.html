@@ -242,8 +242,21 @@ facts.forEach(function(f){var l=makeLabel(f[0],f[1],1.5);l.position.set(f[2],f[3
 /* ============ HIGH-DETAIL ASSETS (Blender GLBs — voxel rigid refs ssj/neurons) ============ */
 if(THREE.GLTFLoader){
  var gl=new THREE.GLTFLoader();
- gl.load('/ui/assets/models/ssj.glb',function(g){ssjBody.visible=false;ssj.add(g.scene);},undefined,function(){});
- gl.load('/ui/assets/models/neurons.glb',function(g){neurons.visible=false;g.scene.position.copy(NPOS);scene.add(g.scene);},undefined,function(){});
+ /* 2026-11-26: recenter each GLB so its XZ centre sits at the anchor - the exported models
+    carry an internal offset (~1.3 m) that used to leave the visible character away from the
+    aura, the mini-voxel cloud and the selection anchor, which all track the group origin.
+    Done AFTER two frames: skinned meshes report bind-pose bounds at load time, so a static
+    bbox measured in the callback is wrong for a posed rig. */
+ function recenterLater(root, g, anchorLocal){requestAnimationFrame(function(){requestAnimationFrame(function(){
+  root.updateMatrixWorld(true);
+  var bb=new THREE.Box3();g.scene.traverse(function(o){if(o.isMesh)bb.expandByObject(o);});
+  if(bb.isEmpty())return;
+  var inv=new THREE.Matrix4().copy(root.matrixWorld).invert();
+  var c=bb.getCenter(new THREE.Vector3()).applyMatrix4(inv);   /* centre in root-local space */
+  g.scene.position.x-=(c.x-anchorLocal.x);g.scene.position.z-=(c.z-anchorLocal.z);   /* XZ only: keep the model's own height */
+ });});}
+ gl.load('/ui/assets/models/ssj.glb',function(g){ssjBody.visible=false;ssj.add(g.scene);recenterLater(ssj,g,new THREE.Vector3(0,0,0));},undefined,function(){});
+ gl.load('/ui/assets/models/neurons.glb',function(g){neurons.visible=false;g.scene.position.copy(NPOS);scene.add(g.scene);recenterLater(scene,g,NPOS);},undefined,function(){});
 }
 /* ============ CONTROLS (drag orbit, wheel zoom) ============ */
 var theta=.55,phi=1.2,dist=17,target=new THREE.Vector3(0,3,0);

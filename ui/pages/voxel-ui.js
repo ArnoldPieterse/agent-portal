@@ -21,7 +21,7 @@ var box=null;
    Super Saiyan floats at (0,3,0), not in his raw voxel cell) - the selection highlight
    must follow the object, or it looks like a stray box in a random spot. */
 function anchorNear(p){var m=window.__mind;if(!m||!THREE)return null;var c=[];
- if(m.rigids){c.push([m.rigids.ssj.position,2.1]);c.push([new THREE.Vector3(7.6,3.5,-1.2),1.7]);
+ if(m.rigids){c.push([m.rigids.ssj.position,2.8]);c.push([new THREE.Vector3(7.6,3.5,-1.2),1.7]);
   ['portal','helix','coin'].forEach(function(k){if(m.rigids[k])c.push([m.rigids[k].position,1.5]);});}
  if(m.agents)m.agents.forEach(function(o){c.push([new THREE.Vector3(o.r*Math.cos(o.a),o.y,o.r*Math.sin(o.a)),1.3]);});
  for(var i=0;i<c.length;i++)if(p.distanceTo(c[i][0])<c[i][1])return c[i][0];return null;}
@@ -45,7 +45,7 @@ function init(){var m=window.__mind;if(!m||!THREE)return;
   if(!hits.length)return;
   /* 2026-11-26: mini-voxel clouds are decorative - clicks pass through them to the object behind,
      so a click on the centre character resolves the character, not a stray voxel at the cloud edge */
-  var solid=hits.filter(function(h){return !h.object.isInstancedMesh;});
+  var solid=hits.filter(function(h){return !h.object.isInstancedMesh&&!h.object.isPoints;});
   var h0=(solid.length?solid[0]:hits[0]);
   /* agent orb? -> resolve its home voxel, where its memory is anchored (orbits drift, anchors don't) */
   var o=h0.object,ag=-1;
