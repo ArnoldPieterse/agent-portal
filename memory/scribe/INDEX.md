@@ -76,4 +76,5 @@ Last updated: 2026-11-26.
 - goal #4 Residual Human-Role Spec -> memory/scribe/human-operating-manual.md   **REACHED** 2026-11-26 (4 residual actions A1-A4, each trigger+SLA+skip-consequence; <=5 cap; cross-check vs dependency-graph.json + playbook, all 7 cited automation paths exist). NOTE: c25 sources touchpoint-roadmap.md/autonomy-dependency-graph.json never persisted - reconstructed from playbook human-input list + ops/human-interventions.jsonl.
 - goal #7 convergence KPI rollup -> memory/scribe/convergence_kpi.py   **REACHED** 3 cycles emitted, all fields source-traced
 - goal #8 cross-lane assist attribution -> memory/scribe/assist_attribution.py   **REACHED** 34 credits, 29 entries, no invented
+- evidence-verifier-g1-deploy-2026-11-27.md — Verifier G1 deploy script + trigger verify (Scribe, 2026-11-27)
 - assist-verifier-g1-commit-trigger-2026-11-27.md   ASSIST: Verifier #1 auto-trigger — commit_trigger.py written + tested (trigger fires, suite <5min)

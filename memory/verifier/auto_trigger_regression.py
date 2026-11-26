@@ -94,8 +94,8 @@ def run_regression_suite() -> tuple[int, str]:
     try:
         result = subprocess.run(
             [sys.executable, str(REGRESSION_SUITE), "--full"],
-            capture_output=True, text=True, timeout=300,
-            cwd=str(ROOT)
+            capture_output=True, text=True, encoding='utf-8', errors='replace',
+            timeout=300, cwd=str(ROOT)
         )
         summary = (result.stdout or "")[:500]
         return result.returncode, summary

@@ -1,1 +1,6 @@
 {"ts": "2026-11-26T17:17:08.569708+00:00", "event": "baseline", "hashes": {"ui/core.js": "6565ee80d73d", "memory_mirror.py": "9fb2bce726c4", "goal_ledger.json": "2b53fbce1927"}}
+{"event": "register_prepped", "task": "VerifierAutoTrigger", "bat": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\verifier\\auto_trigger_poll.bat", "ts": "2026-11-26T18:01:02.017178+00:00"}
+{"event": "simulate_start", "file": "ui/core.js", "ts": "2026-11-26T18:02:00.872385+00:00"}
+{"event": "simulate_result", "status": "FAIL", "exit_code": 1, "ts": "2026-11-26T18:02:01.265561+00:00"}
+{"event": "simulate_start", "file": "ui/core.js", "ts": "2026-11-26T18:02:28.964787+00:00"}
+{"event": "simulate_result", "status": "FAIL", "exit_code": 1, "ts": "2026-11-26T18:02:29.344539+00:00"}

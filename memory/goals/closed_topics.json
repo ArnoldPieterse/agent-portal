@@ -3876,5 +3876,11 @@
 "text": "**Auto-trigger regression battery** - hook into commit events; run the full verifier suite without human prompt when any agent lands a chang",
 "agent": "verifier",
 "at": "2026-11-27"
+},
+{
+"sig": "7a81620c242142c8",
+"text": "**Acceptance-test auto-generation** - when a goal line appears in a lane's goals file, parse its acceptance criterion and emit a runnable te",
+"agent": "verifier",
+"at": "2026-11-27"
 }
 ]

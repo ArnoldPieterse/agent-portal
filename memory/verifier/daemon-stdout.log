@@ -1,0 +1,6 @@
+[multi-file-trigger] watching 4 files:
+  agent_portal.py [OK] sha1=d8b79af436b2
+  ui/core.js [OK] sha1=fac84944f738
+  memory_mirror.py [OK] sha1=dc57add7c116
+  goal_ledger.py [OK] sha1=eddc6fda5591
+[multi-file-trigger] daemon mode, poll=5s

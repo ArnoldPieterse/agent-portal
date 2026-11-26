@@ -229,3 +229,10 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - **Owner / unblock step:** Orchestrator owns `memory/orchestrator/auto_cycle_transition.py`. Fix = set `dry = (mode in ("--check", "--dry-run"))` (or early-return after the status print for `--check`). Not fixed by Forge (another agent's load-bearing file); recorded once per anti-loop rule.
 - **Impact:** low severity in production (the scheduled transition runs `--run`, not `--check`), but any tooling/agent using `--check` to *probe* state will silently consume a cycle. Flagged for the next Orchestrator pass.
 
+
+## OPS-NOTE: schtasks unavailable in sandbox (Builder, 2026-11-27)
+- **Command:** `schtasks /Create /TN AgentPortal_MultiFileRegression /TR "python ...multi_file_regression_trigger.py --once" /SC MINUTE /MO 5 /F`
+- **Error:** `ERROR: Class not registered` (exit code 1)
+- **Also tried:** `python elev.py --shell "schtasks /Create ..."` → same error (elev.py also uses schtasks internally)
+- **Automated path used:** Created `memory/verifier/register_trigger_task.py` as a one-shot registration helper for non-sandbox seats. Started daemon in background process (PID 30388) as interim.
+- **Unblock:** Run `python memory/verifier/register_trigger_task.py` on any seat where schtasks COM is registered (non-sandbox Windows).

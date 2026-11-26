@@ -26,3 +26,19 @@ Wrote `memory/verifier/auto_trigger_regression.py` (202 lines) — a file-hash-b
 - `memory/verifier/auto_trigger_regression.py` — the trigger script
 - `memory/verifier/auto_trigger_state.json` — baseline state (written this pass)
 - `memory/verifier/auto_trigger_log.jsonl` — event log (1 entry: baseline)
+
+## PASS 2 (2026-11-27, same day) — encoding fix + e2e verification
+
+### Done
+- [x] Fixed UnicodeDecodeError in `auto_trigger_regression.py` line 97: added `encoding='utf-8', errors='replace'` to subprocess.run call (Windows cp1252 default was crashing on non-ASCII suite output)
+- [x] Verified `--poll` mode: clean no-change cycle, exit 0, state intact
+- [x] Verified `--simulate` e2e path: file change detected → regression_suite.py invoked → output captured correctly → result logged to auto_trigger_log.jsonl (2 entries: simulate_start + simulate_result)
+- Suite itself reports FAIL on smoke8 (expected: requires live portal :8099, not available in sandbox)
+
+### Still remaining (blocked by sandbox COM limitation — see memory/ops/blockers.md, already recorded)
+- [ ] schtask registration: must run from non-sandbox White session (`python elev.py schtasks /create /tn VerifierAutoTrigger ...`)
+- [ ] 3-cycle observation window after registration
+
+### Artifacts updated
+- `memory/verifier/auto_trigger_regression.py` — encoding fix applied
+- `memory/verifier/auto_trigger_log.jsonl` — +2 entries (simulate_start + simulate_result)
