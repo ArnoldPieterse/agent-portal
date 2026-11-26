@@ -23,3 +23,5 @@ Onboarded 2026-11-25. Builder's front-end sub-agent: owns the pixels (index.html
 ## Cycle-18 assist (2026-11-25) - Fleet Autonomy Convergence
 - -> memory/pixel/evidence-fleet-capacity-chip-2026-11-25.md — fleet capacity chip "N/M up" in ops-panel status strip; ui/fleet_status.js + ui/app.css (.fs-cap); tokens only, static-validated
 - js syntax gate spec (ops) -> memory/ops/js-syntax-gate-spec-2026-11-26.md | pre-pin node --check to prevent parse-fail UI freezes; evidence: memory/pixel/evidence-js-syntax-gate-2026-11-26.md
+- debug purge + asset gate goal #9 evidence -> memory/pixel/evidence-debug-purge-asset-gate-2026-11-27.md | 18 PNGs/17.4MB purged (0 refs, 0 visual regression); prepin_asset_gate.py rejects raster/binary>64KB (selftest PASS; exit1 on test png) (REACHED)
+- live CDP leg goal #6 verification -> memory/pixel/evidence-convergence-375-live-verify-2026-11-27.md | 2 live shots archived + measured (@768 clean gutter); @375 overflow + 4-widget legibility need a CDP DOM check (PENDING non-sandbox seat)

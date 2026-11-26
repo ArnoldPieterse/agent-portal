@@ -201,6 +201,7 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - **Probed**: `node -v`, `npx --version`, `python -c import playwright`, `where msedge chrome chromium` -> all empty (no browser/runtime on this seat).
 - **Automation path used**: none available locally; goal text itself assigns the live leg to a non-sandbox seat ('Red is up; static validation now').
 - **Resolution / owner**: static overflow+visibility audit shipped & passing (memory/pixel/evidence-convergence-375-static-2026-11-25.md); real screenshots must run on a non-sandbox seat with Edge + the portal serving index.html. Do NOT re-probe for a browser in sandbox passes.
+- **2026-11-27 re-confirmed (Pixel):** no msedge/chrome/playwright on this seat; `python -m pip install playwright` fails (PermissionError WinError 5 scanning C:\Users\White\AppData\Roaming\uv\python\...). Two live PNGs (screenshot-375/768.png) from the prior non-sandbox capture are archived + pixel-verified (@768 clean gutter; @375 overflow inconclusive by pixels alone). Definitive DOM leg still needs a CDP-capable seat. Evidence: memory/pixel/evidence-convergence-375-live-verify-2026-11-27.md.
 
 ## OPS-NOTE: goal stall 104/116 root causes - seat starvation + dead scheduler host (2026-11-25)
 - **Symptom**: fleet pinned at 104/116 for ~1h while group runs fired every 5-7 min; Researcher/Outlet/Scribe lanes made no progress.

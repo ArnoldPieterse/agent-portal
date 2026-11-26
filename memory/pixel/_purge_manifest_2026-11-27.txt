@@ -1,0 +1,22 @@
+Purged 18 debug PNGs from ui/ on 2026-11-27 (pixel goal #9). Freed 17791.4 KB.
+Reference-check: 0 refs across ui/*.js, ui/*.css, index.html (38 files) -> 0 visual regression.
+
+name	KB
+band_0.png	430.4
+band_1.png	287.9
+band_2.png	321.5
+band_3.png	315.4
+chk.png	38.1
+crop_top.png	302.9
+dash_dbg.png	1792.1
+dash_final.png	660.1
+dash_goals.png	1793.9
+dbg_overlay.png	1100.2
+plan_15d.png	942.3
+plan_30d.png	277.7
+plan_7d.png	994.7
+plan_pager.png	698.2
+segA.png	2346.3
+segB.png	2053.4
+segC.png	1733.0
+segD.png	1703.5
