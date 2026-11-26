@@ -51,7 +51,7 @@ def wait_devtools(port, tries=30):
 JS_CHECK = r'''
 (function(){
   function lum(rgb){
-    var a=rgb.match(/\\d+/g)||[0,0,0]; var c=[a[0],a[1],a[2]].map(function(v){v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);});
+    var a=rgb.match(/\d+/g)||[0,0,0]; var c=[a[0],a[1],a[2]].map(function(v){v/=255;return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);});
     return 0.2126*c[0]+0.7152*c[1]+0.0722*c[2];
   }
   function ratio(fg,bg){var a=lum(fg),b=lum(bg),hi=Math.max(a,b),lo=Math.min(a,b);return (hi+0.05)/(lo+0.05);}
@@ -104,7 +104,7 @@ async def main():
                     await asyncio.sleep(1)
                 # ensure convergence widgets are present: open the dashboard panel via DOM click if needed
                 await cmd("Runtime.evaluate", {"expression":(
-                    "(function(){try{var b=document.querySelector('[data-panel=\\"convergence\\"],#dashConvBtn,button[title*=Convergence]');if(b){b.click();return 'opened';}return 'nopanel';}catch(e){return 'err:'+e.message;}})()"
+                    "(function(){try{var b=document.querySelector('[data-panel=\"convergence\"],#dashConvBtn,button[title*=Convergence]');if(b){b.click();return 'opened';}return 'nopanel';}catch(e){return 'err:'+e.message;}})()"
                 ), "returnByValue":True})
                 await asyncio.sleep(1.5)
                 r=await cmd("Runtime.evaluate", {"expression":JS_CHECK.replace("__WIDGETS__", json.dumps(WIDGETS)),"returnByValue":True})

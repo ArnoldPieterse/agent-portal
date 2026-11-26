@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T16:24:54.675019+00:00",
+  "ts": "2026-11-26T16:34:52.727348+00:00",
   "health_score": 50,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -89,7 +89,7 @@
     }
   ],
   "goals": {
-    "fleet_pct": 91.4,
+    "fleet_pct": 96.0,
     "lanes": {
       "2026-11-13-agent-goals": {
         "total": 2,
@@ -492,9 +492,9 @@
         "pct": 0.0
       },
       "mechanic": {
-        "total": 1,
-        "verified": 0,
-        "pct": 0.0
+        "total": 10,
+        "verified": 10,
+        "pct": 100.0
       },
       "mode-controller-path-divergence-forecast": {
         "total": 1,
@@ -552,8 +552,8 @@
         "pct": 0.0
       },
       "researcher": {
-        "total": 3,
-        "verified": 3,
+        "total": 8,
+        "verified": 8,
         "pct": 100.0
       },
       "retro-cycle-7": {
@@ -587,8 +587,8 @@
         "pct": 100.0
       },
       "scribe": {
-        "total": 7,
-        "verified": 7,
+        "total": 8,
+        "verified": 8,
         "pct": 100.0
       },
       "slip_prediction_table": {
@@ -627,8 +627,8 @@
         "pct": 0.0
       }
     },
-    "total_goals": 35,
-    "total_verified": 32
+    "total_goals": 50,
+    "total_verified": 48
   },
   "open_blockers": 30,
   "autonomous_actions": [

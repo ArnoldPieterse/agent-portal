@@ -24,3 +24,5 @@ One line per change: date | what | file(s) | visual check
 - 2026-11-27 | Pre-pin asset gate (goal #9) | memory/pixel/prepin_asset_gate.py | rejects raster image or binary>64KB in ui/; selftest PASS + exit1 on injected test .png, exit0 clean (43 files). Run before advancing index.html pin.
 
 - 2026-11-27 | Delta strip ledger recording (goal #10) | ran goal_ledger.py --record pixel 10; (verified:) marker added to memory/goals/pixel.md line 26. Now 9/10 reached (sole open: #6 CDP screenshot leg, blocked on non-sandbox seat per cdp_375_dom_check.py handoff).
+
+- 2026-11-27 | Goal #6 unblock artifact FIX (cdp_375_dom_check.py) | found 2 bugs: (1) SyntaxError line 107 `\\"` in normal string -> won't run; (2) raw-string regex `/\\d+/g` made all colors read black -> contrast ~1.0 -> 'legible' always FAIL. Fixed both; py_compile PASS; runtime JS + WCAG contrast math verified without a browser (21:1 white/black). Goal #6 still OPEN — one non-sandbox run of the now-working script closes it. OPS-NOTE in ops/blockers.md [pixel-cdp-goal6]. Evidence: evidence-cdp-artifact-fix-2026-11-27.md

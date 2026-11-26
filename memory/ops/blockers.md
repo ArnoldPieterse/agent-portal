@@ -1,4 +1,13 @@
 
+## [OPS-NOTE 2026-11-27 Pixel] Goal #6 live CDP leg — unblock artifact FIXED + verified; needs ONE non-sandbox run
+**Class:** non-sandbox-seat requirement (NOT a code bug anymore — the script was, and is now fixed). Do NOT re-probe a browser from a sandbox seat (standing decision 2026-11-19: Chrome exit3 / no DOM in sandbox; playwright not importable here; confirmed again 2026-11-27).
+**Goal AC gap:** live DOM `scrollWidth<=clientWidth` @375 + 4-widget getBoundingClientRect visibility/contrast. Static leg already 11/11; archived PNGs exist but pixel analysis is inconclusive on @375.
+**What was wrong (fixed this pass):** `memory/pixel/cdp_375_dom_check.py` had 2 bugs — (1) a SyntaxError at line 107 (`\"` in a normal string) so it would not run at all; (2) raw-string regex `/\\d+/g` that made every color parse as black -> contrast ~1.0 -> 'legible' always FAIL. Both fixed; `py_compile` now PASS; runtime JS + contrast math verified without a browser (white/black=21:1).
+**Exact one-command unblock (any non-sandbox seat with Edge/Chrome + portal up on :8099):**
+    python memory/pixel/cdp_375_dom_check.py
+Exit 0 = all AC pass @375+@768; writes fresh screenshot-{375,768}.png + cdp_375_dom_check.report.json. Prereq on that seat: `python -m pip install websockets`. Then `python memory/researcher/goal_ledger.py --record pixel 6` with the report path as evidence.
+**Do NOT mark goal #6 reached from pixels alone.** Evidence: memory/pixel/evidence-cdp-artifact-fix-2026-11-27.md
+
 ## [OPS-NOTE 2026-11-25 Researcher] Seat-Unavailability Impact Model v2 (goal #8) AC backtest NOT computable: no per-day reachability time series exists
 **Class:** data gap (NOT a code bug; proven twice, now with hard evidence - do not re-probe).
 **Goal AC:** "on backtest (last 30 days), precision>0.7 for 'unreachable' predictions."

@@ -13,7 +13,6 @@ La|memory/portal/bugs, Ja|memory/ops/runbooks, Jb|memory/ops/incidents, Jc|memor
 ## GOAL (mirrors the live plan at the top of TODO.md)
 FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M5 = memory/projects/stealth-revenue-engine.md) - engine goals open in 6 lanes on top of cycle-23 remainder (105/110). SSOT: /api/goals + goal_ledger.json (root).
 ## Hot Notes
-- Mirror reverts keep stripping `(verified:)` markers from `memory/goals/mechanic.md`; re-apply each pass if lost.
 - Fleet ledger at 79/111 (71%) after Scribe closed Outlet goal #2 and synced 3 other agents' unrecorded markers into root JSON.
 - Mirror reverts oom_recovery.py fixes (MODEL_LOAD_JSONL, detect_from_jsonl, MTTR_TARGET_S, INCIDENTS_DIR) — expect recurrence each pass
 - Pixel at 9/10 goals; only #6 (CDP live screenshots) open, blocked on sandbox egress, unblock artifact handed to Designer.
@@ -23,6 +22,7 @@ FLEET CYCLE 24: Stealth Revenue Engine live (user directive 2026-11-25; source M
 - All 10 Mechanic goals verified in ledger; marker guard script built to auto-reapply lost (
 - Cycle 18 CONVERGED (all 4 invariants pass). Status brief at
 - post_mirror_goal_repair.py created & run: 14 verified markers restored; recurring mirror-strip blocker now auto-healed
+- RECALL: - **M6** (`memory/goals/pixel.md:2
 ## Durable rules
 Engine update kills instances -> RecoverAll (H2); group turns dispatch ALL AGENTS IN PARALLEL - parallel_slots=1 (L12); Stop + [CONCLUDED] + budget cap (memory/portal/bugs/xtalk-completion-2026-11-15.md); smoke agents SERIALLY; restart trap: taskkill PID before schtasks /run (memory/ops/runbooks/windows-runbook.md); multi-GB LAN copies: full-hash verify (J38). NO HUMAN GATES: a blocked lane gets an alternative path or a named cross-agent handoff.
 - 2026-11-25 Builder subs Pixel (UI/UX, frontend) + Forge (backend/API) live on Black Q8 seats; fixed bad model_id builder-q8 -> Qwen3.8-27B-Q8_0; placement verified 7s, reply queued behind active group run.
