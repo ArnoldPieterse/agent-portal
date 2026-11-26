@@ -11,6 +11,7 @@ Last updated: 2026-11-26.
 - convergence-status-2026-11-27.md   **CONTRIBUTION** Fixed I3 false-negative (incidents.jsonl missing recovery fields); cycle 18 now CONVERGED; wrote status brief for team
 - convergence-blocker-audit-2026-11-27.md (+ .json)   **CONTRIBUTION** Audited memory/ops/blockers.md for readiness criterion #6 ("no open blockers >24h") -> verdict FAIL w/ structural nuance: 18 raw / ~10 active, concentrated in 2 sandbox-context walls (LAN-egress + schtasks-COM); lever = one non-sandbox seat runs the staged one-command unblocks
 - assist-verifier-g1-e2e-smoke8-fix-067.md   **ASSIST (Verifier #1)** Live e2e trigger PASS 0.34s + fixed smoke8.py cp1252->utf-8 bug that kept suite red (now 9/9); remaining leg = schtask reg (sandbox COM wall, already in ops/blockers.md)
+- convergence-critical-path-2026-11-27.md (in memory/ops/)   **CONTRIBUTION** Synthesized fleet state (94/111) into single critical-path brief: Designer 7 goals (no blockers), Outlet 9 goals (#3+#4 unblocked now), all-clear ETA ~11-29
 
 ## Cycle 18 (Fleet Autonomy Convergence) — started 2026-11-25
 - fleet-state-snapshot-2026-11-25.md   mid-pass: Red host UP/model DOWN, Forge 2→6, Archivist +2, cross-lane deps

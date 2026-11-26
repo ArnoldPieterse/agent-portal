@@ -1,6 +1,6 @@
 {
-  "generated": "2026-11-26T19:40:57.585775+00:00",
-  "generated_by": "Orchestrator (auto-loop assist, option a)",
+  "generated": "2026-11-27T06:31:44.615792",
+  "generated_by": "Orchestrator (auto-loop, option b: freshness guard workflow)",
   "steady_state_criteria": {
     "autonomy_score_min": 80.0,
     "max_interventions_per_cycle": 1.0,
@@ -27,11 +27,12 @@
     "autonomy": {
       "current": 71.3,
       "target": 80.0,
-      "status": "STALLED",
+      "status": "STALE-DATA",
       "cycles_remaining": null,
       "confidence": 0.9,
       "bottleneck": "fleet_readiness=35% (only White host up; Red/Pale/Black down)",
-      "note": "Score is structurally capped while 3/4 hosts are offline. If all 4 hosts recover with stable VRAM, fleet_readiness -> ~100%, autonomy score projects to ~85-88 within 1 cycle. This is a CAPACITY blocker, not a TRENDS problem."
+      "note": "fleet_readiness=35% is a data-freshness artifact: heartbeat stale >36h, but mechanic 2026-11-26 confirms Red+Black healthy. Fix: refresh heartbeat + portal restart \u2192 recompute. See autonomy-score-freshness-guard-2026-11-27.md.",
+      "stall_cause": "data-freshness (heartbeat >36h stale), not structural"
     }
   },
   "overall_prediction": {
@@ -55,19 +56,20 @@
   "action_items": [
     {
       "owner": "Mechanic",
-      "action": "Restore Red/Pale/Black hosts or document why they are decommissioned",
-      "impact": "Unblocks autonomy score convergence"
+      "action": "Run fleet_heartbeat.py to refresh host states; restart portal to activate Black catalog fix",
+      "impact": "Unblocks autonomy score from stale 35% \u2192 expected 75-100%"
     },
     {
       "owner": "Orchestrator",
-      "action": "If hosts are intentionally decommissioned, update fleet_readiness formula to use active-host denominator (1/1 instead of 1/4)",
-      "impact": "Removes structural cap on autonomy score"
+      "action": "Recompute convergence-prediction.json with fresh data after heartbeat refresh",
+      "impact": "Confirms steady-state or identifies true remaining gap"
     },
     {
       "owner": "Verifier",
-      "action": "Re-run convergence gate after host status resolved; record result in ledger",
-      "impact": "Confirms steady-state declaration"
+      "action": "Re-run convergence gate after score recomputation; record in ledger",
+      "impact": "Declares steady-state if autonomy >= 80"
     }
   ],
-  "supersedes": "2026-11-25T23:38:55 prediction (cycle 17, predicted steady state by cycle 21 - now stale)"
+  "supersedes": "2026-11-25T23:38:55 prediction (cycle 17, predicted steady state by cycle 21 - now stale)",
+  "supersedes_note": "Corrected stall_cause from 'structural' to 'data-freshness' based on mechanic 2026-11-26 investigation"
 }

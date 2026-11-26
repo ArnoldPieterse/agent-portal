@@ -1,0 +1,11 @@
+{
+  "script": "lead_enrichment.py",
+  "started": "2026-11-26T20:33:56.970124",
+  "budget_cpu_sec": 120,
+  "budget_mem_mb": 256,
+  "status": "ok",
+  "stdout_tail": "[lead_enrichment] Enriched 3 leads -> enriched_leads_20261126_203357.csv\n",
+  "exit_code": 0,
+  "elapsed_sec": 0.05,
+  "finished": "2026-11-26T20:33:57.020702"
+}
