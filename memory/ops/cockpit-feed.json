@@ -1,7 +1,7 @@
 {
-  "ts": "2026-11-26T11:14:48.937254+00:00",
-  "health_score": 75,
-  "fleet_status": "DEGRADED",
+  "ts": "2026-11-26T11:34:59.923128+00:00",
+  "health_score": 80,
+  "fleet_status": "NOMINAL",
   "agents": [
     {
       "id": "orchestrator",
@@ -46,28 +46,10 @@
   ],
   "hosts": [
     {
-      "host": "White",
-      "vram_pct": 77.0,
-      "cpu_pct": 38.5,
-      "temp_c": 49.8
-    },
-    {
-      "host": "Red",
-      "vram_pct": 33.1,
-      "cpu_pct": 0.0,
-      "temp_c": 36.6
-    },
-    {
-      "host": "Pale",
-      "vram_pct": 1.4,
-      "cpu_pct": 0.0,
-      "temp_c": 46.3
-    },
-    {
-      "host": "Black",
-      "vram_pct": null,
-      "cpu_pct": null,
-      "temp_c": null
+      "host": "WHITE",
+      "vram_pct": 0.0,
+      "cpu_pct": 100.0,
+      "temp_c": 45.47
     }
   ],
   "goals": {

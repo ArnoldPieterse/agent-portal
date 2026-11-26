@@ -3,6 +3,8 @@ Format: [status] symptom keywords -> file | one-line use case. Grep by symptom, 
 Last updated: 2026-11-15 (pointer paths normalized to root-relative; index_check sweep).
 
 ## Entries
+- [FIXED] hotload-catalog.json invalid JSON (54 bad escapes) -> Black invisible to seat resolution / _fleet_host_key 401 -> memory/mechanic/host-idle-investigation-2026-11-26.md   fixed 2026-11-26, portal restart pending
+
 - [FIXED] only White shows as used / Red-Pale-Black idle or "—" in cockpit+over-time views / cockpit-feed stale / phantom Blue host -> memory/portal/bugs/cockpit-remote-hosts-null-metrics-2026-11-25.md   remote seats hardcoded null (never probed) + feed_refresh unscheduled; now live /api/system probe per seat, feed in cycle_10m, gate 12min
 - [FIXED] goal-stall loop / agents re-verifying closed work / dashboard 0% despite artifacts / index.html reverting to canonical / sandbox code edits vanishing -> memory/portal/bugs/goal-stall-loop-2026-11-16.md   prompt listed closed goals as open + push-only clobber + unregistered evidence; strict-ledger prompt block w/ closure procedure, merge queue, sweep counts artifacts, /api/goals/history
 - [FIXED] terminal popups after reboot / visible cmd or net windows / pythonw child console -> memory/portal/bugs/popup-pythonw-children-recoverall-2026-11-15.md   CREATE_NO_WINDOW on all pythonw children + RecoverAll task via recover_hidden.vbs; verify by forcing the trigger path while polling EnumWindows

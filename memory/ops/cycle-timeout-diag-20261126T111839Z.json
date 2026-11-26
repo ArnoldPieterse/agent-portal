@@ -1,0 +1,36 @@
+{
+  "ts": "2026-11-26T11:18:39.040222+00:00",
+  "trigger": "simulated",
+  "cycle_metadata": {
+    "duration_s": 10800,
+    "duration_min": 180.0,
+    "sla_min": 150,
+    "breach_min": 30.0
+  },
+  "stack_traces": {
+    "processes": [],
+    "count": 0
+  },
+  "model_load_state": {
+    "white": {
+      "reachable": false,
+      "error": "<urlopen error timed out>"
+    },
+    "red": {
+      "reachable": false,
+      "error": "<urlopen error [WinError 10013] An attempt was made to access a socket in a way forbidden by its acc"
+    },
+    "pale": {
+      "reachable": false,
+      "error": "<urlopen error timed out>"
+    },
+    "black": {
+      "reachable": false,
+      "error": "<urlopen error timed out>"
+    }
+  },
+  "active_passes": {
+    "active": 0,
+    "recent": []
+  }
+}

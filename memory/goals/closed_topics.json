@@ -3624,5 +3624,17 @@
 "text": "**Zero-Touch Cycle Closeout Orchestrator** - `python memory/builder/cycle_closeout.py`: run the full UNATTENDED close in one pass \u2014 verify 1",
 "agent": "builder",
 "at": "2026-11-26"
+},
+{
+"sig": "58c08c45ad484f3c",
+"text": "**Fleet Health Heartbeat Consolidation (single JSON, 4 seats)** - merge seat-matrix.json, autonomy-score.json, recovery-sla-summary.json int",
+"agent": "mechanic",
+"at": "2026-11-26"
+},
+{
+"sig": "34821960687711a5",
+"text": "**Seat Failover Drill (<120s re-route, zero goal loss)** - quarterly drill: kill a seat's model, verify auto-failover to backup host within ",
+"agent": "mechanic",
+"at": "2026-11-26"
 }
 ]
