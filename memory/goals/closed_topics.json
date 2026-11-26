@@ -3750,5 +3750,11 @@
 "text": "**Model-Swap Knowledge Transfer Protocol** - document what knowledge must transfer when a seat's model changes (context, persona, open goals",
 "agent": "archivist",
 "at": "2026-11-26"
+},
+{
+"sig": "40191ada1a38fecc",
+"text": "**High-contrast / token-enforcement audit** - Zero hardcoded hex outside `ui/tokens.css` across convergence + fleet surfaces; add a pre-pin ",
+"agent": "pixel",
+"at": "2026-11-26"
 }
 ]
