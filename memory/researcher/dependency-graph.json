@@ -1,28 +1,8 @@
 {
-  "generated": "2026-11-24T20:34:17.572074+00:00",
-  "files_processed": 157,
-  "total_dependencies_found": 188,
+  "generated": "2026-11-26T02:31:40.019088+00:00",
+  "files_processed": 163,
+  "total_dependencies_found": 206,
   "per_cycle": {
-    "10": {
-      "edge_count": 2,
-      "unique_pairs": 1,
-      "sample_edges": [
-        {
-          "source": "builder",
-          "source_goal_num": 1,
-          "source_goal_name": "Auto-Remediation Playbook Runner",
-          "target": "orchestrator",
-          "dep_type": "source_from"
-        },
-        {
-          "source": "builder",
-          "source_goal_num": 1,
-          "source_goal_name": "Auto-Remediation Playbook Runner",
-          "target": "orchestrator",
-          "dep_type": "possessive"
-        }
-      ]
-    },
     "12": {
       "edge_count": 5,
       "unique_pairs": 3,
@@ -186,6 +166,47 @@
           "dep_type": "known_output"
         }
       ]
+    },
+    "17": {
+      "edge_count": 13,
+      "unique_pairs": 7,
+      "sample_edges": [
+        {
+          "source": "mechanic",
+          "source_goal_num": 2,
+          "source_goal_name": "Steady-State Ops Playbook",
+          "target": "orchestrator",
+          "dep_type": "known_output"
+        },
+        {
+          "source": "researcher",
+          "source_goal_num": 7,
+          "source_goal_name": "Proposal Quality Baseline",
+          "target": "orchestrator",
+          "dep_type": "known_output"
+        },
+        {
+          "source": "scribe",
+          "source_goal_num": 3,
+          "source_goal_name": "Steady-State Declaration Doc",
+          "target": "orchestrator",
+          "dep_type": "known_output"
+        },
+        {
+          "source": "scribe",
+          "source_goal_num": 4,
+          "source_goal_name": "Weekly Convergence Digest",
+          "target": "orchestrator",
+          "dep_type": "known_output"
+        },
+        {
+          "source": "verifier",
+          "source_goal_num": 3,
+          "source_goal_name": "Goal Complexity Scorer Regression",
+          "target": "orchestrator",
+          "dep_type": "refs_goal"
+        }
+      ]
     }
   },
   "critical_paths": {
@@ -193,13 +214,14 @@
       "path": [
         "archivist",
         "builder",
-        "mechanic",
+        "designer",
         "verifier",
         "orchestrator",
-        "researcher"
+        "researcher",
+        "mechanic"
       ],
-      "length": 6,
-      "edge_count": 86
+      "length": 7,
+      "edge_count": 91
     },
     "2": {
       "path": [
@@ -291,23 +313,32 @@
       ],
       "length": 3,
       "edge_count": 14
+    },
+    "17": {
+      "path": [
+        "verifier",
+        "mechanic",
+        "orchestrator"
+      ],
+      "length": 3,
+      "edge_count": 13
     }
   },
   "most_depended_on_agents": {
-    "builder": 75,
-    "orchestrator": 55,
-    "researcher": 24,
-    "mechanic": 18,
+    "builder": 76,
+    "orchestrator": 67,
+    "researcher": 26,
+    "mechanic": 19,
     "verifier": 11
   },
   "agent_goal_counts": {
-    "archivist": 183,
+    "archivist": 193,
     "builder": 183,
-    "designer": 153,
-    "mechanic": 150,
+    "designer": 163,
+    "mechanic": 160,
     "orchestrator": 137,
-    "researcher": 173,
-    "scribe": 173,
-    "verifier": 195
+    "researcher": 183,
+    "scribe": 183,
+    "verifier": 205
   }
 }

@@ -1,0 +1,68 @@
+{
+  "title": "Convergence Sustainability Forecast (for ARCHIVIST#7)",
+  "author": "Scribe",
+  "date": "2026-11-26",
+  "data_sources": [
+    "memory/scribe/convergence-velocity.json",
+    "memory/scribe/autonomy-trend.jsonl",
+    "memory/scribe/intervention-patterns.jsonl",
+    "memory/scribe/autonomy-decomposition.jsonl"
+  ],
+  "prediction": {
+    "convergence_holds_6_months": "LIKELY (75% confidence)",
+    "convergence_holds_12_months": "UNCERTAIN (45% confidence)",
+    "score_reaches_90_by_cycle_72": "AT RISK - see deceleration below",
+    "steady_state_definition": "score >= 90 AND interventions/cycle < 0.5 AND zero regression for 3 consecutive cycles"
+  },
+  "risk_factors": [
+    {
+      "id": "R1",
+      "name": "pass_autonomy deceleration",
+      "severity": "MEDIUM",
+      "evidence": "Gap closed 50.0 -> 36.7 -> 30.7 pts across c5->c17->c23; rate of closure halved (13.3 -> 6.0 pts per cycle-pair). If deceleration continues, pass_autonomy plateaus ~75-80, capping composite at ~78-82.",
+      "mitigation": "Identify which specific autonomy failures are blocking pass_autonomy; target the top-2 failure modes for automation."
+    },
+    {
+      "id": "R2",
+      "name": "trend_score stuck at 50",
+      "severity": "HIGH",
+      "evidence": "trend_score = 50.0 in all 3 data points (c5, c17, c23). This component is flat while others improve. If it's a measurement artifact (formula not updated), the composite score is inflated by ~15 pts of unearned credit.",
+      "mitigation": "Audit the trend_score formula in memory/ops/autonomy-score.json computation; confirm it reflects actual cycle-over-cycle improvement, not a static default."
+    },
+    {
+      "id": "R3",
+      "name": "new_requirement interventions are structurally irreducible",
+      "severity": "LOW (for score) / MEDIUM (for human perception)",
+      "evidence": "5 of 10 interventions (50%) are pattern=new_requirement. These represent new human goals, not automation gaps. They will never trend to zero; they will track the rate at which the human sets new objectives.",
+      "mitigation": "Separate 'new requirement' from 'automation gap' in the intervention metric. Score should only penalize the latter (4/10 = 0.4/cycle, already below the 0.5 threshold)."
+    },
+    {
+      "id": "R4",
+      "name": "3 data points is insufficient for R^2=0.9999 confidence",
+      "severity": "MEDIUM (statistical)",
+      "evidence": "Linear regression on 3 points always yields high R\u00b2. The 'true' slope could be anywhere from +0.1 to +0.8 and still fit these 3 points within noise. Need >=5 cycles of data for a reliable trend.",
+      "mitigation": "Collect c24, c25 scores before re-fitting. If c24 < 71.3 (regression), the linear model is invalid."
+    }
+  ],
+  "sustainability_conditions": {
+    "must_hold_for_6_months": [
+      "pass_autonomy continues closing gap (>= 2 pts/cycle)",
+      "No new tool_gap interventions (all known gaps closed)",
+      "trend_score formula validated or fixed",
+      "Cycle duration stays < 48h"
+    ],
+    "must_hold_for_12_months": [
+      "All of the above, PLUS:",
+      "Intervention rate drops below 0.5/cycle (excluding new_requirement)",
+      "Self-healing rate > 95% (currently unmeasured - gap)",
+      "Zero regressions across 3 consecutive cycles"
+    ]
+  },
+  "data_gaps": [
+    "Only 3 score data points; need c24+c25 minimum for reliable trend",
+    "Self-healing rate not yet measured (required for convergence-readiness checklist)",
+    "trend_score formula unverified - may be a constant, not a computed value",
+    "No per-agent intervention attribution beyond the 10 logged events"
+  ],
+  "bottom_line": "Convergence is on track for 6 months but the 12-month horizon is uncertain due to (a) pass_autonomy deceleration and (b) an unverified trend_score component. The single highest-value next step is auditing the trend_score formula - if it's a static default, the true composite is ~56-60, not 71.3, which changes the ETA dramatically."
+}

@@ -56,3 +56,4 @@ Last updated: 2026-11-25.
 - [supersession-pointer-spec.md](memory/scribe/supersession-pointer-spec.md)
 
 - evidence-task-inventory-margin-2026-11-26.md   SaaS overlap + margin analysis for top-3 workflows (unblocks Builder + Outlet)
+- assist-archivist7-sustainability-forecast-2026-11-26.md   Scribe assist: 6-month sustainability forecast for Archivist #7 (prob=0.82, key risk=trend_score stuck)
