@@ -3888,5 +3888,17 @@
 "text": "**Canary gate verification** - before Forge promotes a canary, auto-run perf + functional checks and emit a pass/fail token Forge must consu",
 "agent": "verifier",
 "at": "2026-11-27"
+},
+{
+"sig": "4aea476716eeaa5f",
+"text": "**Chaos-recovery verification** - periodically kill a model seat, confirm auto-recovery within SLA, and log pass/fail. Proves the fleet heal",
+"agent": "verifier",
+"at": "2026-11-27"
+},
+{
+"sig": "4077a616707ceea7",
+"text": "**Verification coverage map** - enumerate all files in the portal; mark each as verified / unverified / stale-verified. Target: 90% verified",
+"agent": "verifier",
+"at": "2026-11-27"
 }
 ]

@@ -1,6 +1,8 @@
 # memory/verifier/ INDEX
 Last updated: 2026-11-26.
 
+- **ASSIST 2026-11-27 (Orchestrator, option d — goal #2 chaos-recovery)**: Built `chaos_recovery_drill.py` (real unload->re-residency timing harness, fail-closed; self-test PASS 8/8). Production SLA analysis: **0/7 real incidents meet <120s** (840s..5700s) — failure mode documented per AC. Live 3-drill leg blocked from White seat (WinError 10013, no NVML), recorded once in memory/ops/blockers.md; run `SEAT_BASE=... --live` from a Studio-reachable seat to close. Evidence: memory/orchestrator/assist-verifier-goal2-chaos-recovery-drill-2026-11-27.md
+
 ## 2026-11-26 (auto-loop assist)
 - **ASSIST 2026-11-26 (Builder, option d — Verifier goal #4 cross-lane contract tests)**: Existing api_contracts.py/contract_test.py covered only HTTP /api/* endpoints. Built the missing FILE-BASED inter-agent data-contract layer: `cross_lane_contract_tests.py` defines 5 contracts (agents.json roster, goal_ledger SSOT, next10 forecast queue, convergence_api response shape, fleet-mode state) each with golden fixtures. Run 2026-11-26T15:19Z: **current-state 5/5 PASS + injected schema drift 5/5 correctly FAILS (exit 0)** — proves each contract has teeth. Artifacts: cross_lane_contract_results.json + api-contracts/golden/C1..C5_*.json. Evidence: cross-lane-contract-assist-2026-11-26.md
 

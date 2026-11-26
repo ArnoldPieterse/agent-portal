@@ -24,7 +24,7 @@ def check_agents_json():
         results.append(("agents.json exists", False, "not found"))
         return results
     try:
-        d = json.load(open(p))
+        d = json.load(open(p, encoding="utf-8"))
         ok = isinstance(d, dict) and "agents" in d
         results.append(("agents.json valid JSON with agents key", ok, "" if ok else str(type(d))))
         agents = d.get("agents", [])

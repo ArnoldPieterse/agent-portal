@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-11-26T18:02:29.333678+00:00",
+  "timestamp": "2026-11-26T18:53:13.120704+00:00",
   "mode": "live",
-  "overall": "FAIL",
-  "total_duration_s": 0.25,
+  "overall": "PASS",
+  "total_duration_s": 0.22,
   "summary": {
-    "pass": 0,
-    "fail": 1,
+    "pass": 1,
+    "fail": 0,
     "skip": 4
   },
   "suites": [
     {
       "id": "smoke8",
-      "status": "FAIL",
-      "exit_code": 1,
-      "duration_s": 0.19,
-      "stdout_tail": "==========================================\nSMOKE8 RESULTS: 7 pass / 1 fail / 8 total (0.0s)\n  [FAIL] agents.json parses -- 'charmap' codec can't decode byte 0x8f in position 107: character maps to <undefined>\n  [PASS] memory/goals/ exists\n  [PASS] goal files present (>=5)\n  [PASS] all goal files have H1 header\n  [PASS] index.html exists and non-empty\n  [PASS] core DOM elements present (composer,msgs,status,send)\n  [PASS] ui/ directory with non-empty assets\n  [PASS] JS files have balanced braces\n",
-      "stderr_tail": "warning: Failed to set cwd to temp dir\n"
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_s": 0.18,
+      "stdout_tail": "atic mode)\n\n============================================================\nSMOKE8 RESULTS: 9 pass / 0 fail / 9 total (0.0s)\n  [PASS] agents.json valid JSON with agents key\n  [PASS] agents.json has agent entries\n  [PASS] memory/goals/ exists\n  [PASS] goal files present (>=5)\n  [PASS] all goal files have H1 header\n  [PASS] index.html exists and non-empty\n  [PASS] core DOM elements present (composer,msgs,status,send)\n  [PASS] ui/ directory with non-empty assets\n  [PASS] JS files have balanced braces\n",
+      "stderr_tail": ""
     },
     {
       "id": "contract_test",

@@ -236,3 +236,10 @@ python memory/orchestrator/model_scheduler.py --execute agents=researcher reside
 - **Also tried:** `python elev.py --shell "schtasks /Create ..."` → same error (elev.py also uses schtasks internally)
 - **Automated path used:** Created `memory/verifier/register_trigger_task.py` as a one-shot registration helper for non-sandbox seats. Started daemon in background process (PID 30388) as interim.
 - **Unblock:** Run `python memory/verifier/register_trigger_task.py` on any seat where schtasks COM is registered (non-sandbox Windows).
+- **Unblock:** Run "SEAT_BASE=^<studio^> python memory/verifier/chaos_recovery_drill.py --live" from a seat that reaches a Studio (White local host) to log the 3 real drills.) 
+
+## OPS-NOTE: live chaos-recovery drill unreachable from White seat (Orchestrator, 2026-11-27)
+- **Command:** `python -c "urllib.request.urlopen('http://127.0.0.1:8098/api/fleet/status')"` and `nvidia-smi`
+- **Error:** `PermissionError [WinError 10013]` (port firewalled from this seat); NVML init failed; no static Studio base_url in agents.json.
+- **Automated path used:** Built `memory/verifier/chaos_recovery_drill.py` — self-test leg PASS 8/8 (SLA engine proven), live leg fails closed by design. Production SLA analysis from `recovery-times.jsonl`: 0/7 incidents meet <120s (range 840s..5700s).
+- **Unblock:** From a seat that reaches a Studio (White local host): `SEAT_BASE=<studio_url> SEAT_MODEL_PATH=<path> python memory/verifier/chaos_recovery_drill.py --live` to log the 3 real drills. Record once; not re-probed.

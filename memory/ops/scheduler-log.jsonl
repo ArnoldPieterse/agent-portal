@@ -3846,3 +3846,12 @@
 {"t": "2026-11-27 04:44:49", "job": "cycle_10m", "event": "start", "pid": 15312}
 {"t": "2026-11-27 04:44:54", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-27 04:44:54", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-27 04:49:49", "job": "cycle_5m", "event": "start", "pid": 31104}
+{"t": "2026-11-27 04:49:54", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 04:49:59", "job": "cycle_30m", "event": "done", "rc": 124}
+{"t": "2026-11-27 04:54:49", "job": "cycle_5m", "event": "start", "pid": 32440}
+{"t": "2026-11-27 04:54:49", "job": "cycle_10m", "event": "start", "pid": 11292}
+{"t": "2026-11-27 04:54:54", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 04:54:59", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-27 04:59:49", "job": "cycle_5m", "event": "start", "pid": 24212}
+{"t": "2026-11-27 04:59:54", "job": "cycle_5m", "event": "done", "rc": 0}
