@@ -4015,3 +4015,12 @@
 {"t": "2026-11-27 08:34:04", "job": "cycle_5m", "event": "done", "rc": 0}
 {"t": "2026-11-27 08:34:09", "job": "cycle_10m", "event": "done", "rc": 0}
 {"t": "2026-11-27 08:34:19", "job": "cycle_1h", "event": "done", "rc": 2}
+{"t": "2026-11-27 08:38:59", "job": "cycle_5m", "event": "start", "pid": 2884}
+{"t": "2026-11-27 08:39:04", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 08:43:59", "job": "cycle_5m", "event": "start", "pid": 20632}
+{"t": "2026-11-27 08:43:59", "job": "cycle_10m", "event": "start", "pid": 9832}
+{"t": "2026-11-27 08:44:04", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 08:44:09", "job": "cycle_10m", "event": "done", "rc": 0}
+{"t": "2026-11-27 08:48:59", "job": "cycle_5m", "event": "start", "pid": 13032}
+{"t": "2026-11-27 08:49:04", "job": "cycle_5m", "event": "done", "rc": 0}
+{"t": "2026-11-27 08:49:14", "job": "cycle_30m", "event": "done", "rc": 124}

@@ -1285,3 +1285,5 @@
 {"timestamp": "2026-11-26T22:15:37.332944+00:00", "agent": "Forge", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3858816}
 {"timestamp": "2026-11-26T22:20:57.958700+00:00", "agent": "Mechanic", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 2574964}
 {"timestamp": "2026-11-26T22:37:38.472913+00:00", "agent": "Pixel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 1321149}
+{"timestamp": "2026-11-26T22:50:36.033378+00:00", "agent": "Pixel", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 777558}
+{"timestamp": "2026-11-26T22:50:36.043927+00:00", "agent": "Archivist", "task_type": "WORK", "task_text": "", "productive": true, "duration_ms": 3250771}
