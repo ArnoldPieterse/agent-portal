@@ -8,3 +8,11 @@
 {"ts": "2026-11-26 21:07:51", "file": "next10.json", "sha": "d5dc0a3158e5b5b2", "canary": "White", "status": "success", "promoted": ["Red", "Pale", "Black"]}
 {"ts": "2026-11-27T03:36:15.599882", "event": "gate_token_issued", "target": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\forge\\smoke_suite.py", "pass": true}
 {"ts": "2026-11-27T03:38:33.297390", "event": "gate_token_issued", "target": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\forge\\smoke_suite.py", "pass": true}
+{"ts": "2026-11-27 04:18:23", "file": "_gate_token_selftest.txt", "sha": "2aca61a96a7e8102", "canary": "White", "status": "canary_deploy_failed"}
+{"ts": "2026-11-27 04:18:42", "file": "_gate_token_selftest.txt", "sha": "2aca61a96a7e8102", "canary": "White", "status": "success", "promoted": ["Red", "Pale", "Black"]}
+{"ts": "2026-11-27 04:18:46", "file": "_gate_token_selftest.txt", "sha": "2aca61a96a7e8102", "canary": "White", "status": "success", "promoted": ["Red", "Pale", "Black"]}
+{"ts": "2026-11-27 04:18:57", "file": "_deploy_test.txt", "sha": "70044f8a3946563b", "status": "gate_token_blocked", "reason": "no token file found (run canary_gate_token.py first)"}
+{"ts": "2026-11-27T04:21:01.952186", "event": "gate_token_denied", "target": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\forge\\_deploy_test.txt", "checks": [{"name": "smoke_suite", "pass": true, "skipped": true, "detail": "skipped (env): Command '['C:\\\\Users\\\\White\\\\.unsloth\\\\studio\\\\unsloth_studio\\\\Scripts\\\\python.exe', 'C:\\\\Users\\\\White\\\\.unsloth\\\\studio"}, {"name": "perf_parse", "pass": false, "p50_ms": -1, "threshold_ms": "perf check error: invalid syntax (<unknown>, line 1)"}]}
+{"ts": "2026-11-27T04:23:11.454679", "event": "gate_token_issued", "target": "C:\\Users\\White\\.unsloth\\studio\\sandbox\\_default\\memory\\forge\\_deploy_test.txt", "pass": true}
+{"ts": "2026-11-27 04:23:15", "file": "_deploy_test.txt", "sha": "70044f8a3946563b", "canary": "White", "status": "promotion_partial_rollback", "promoted": [], "failed": ["Red", "Pale", "Black"]}
+{"ts": "2026-11-27 04:23:22", "file": "_deploy_test.txt", "sha": "70044f8a3946563b", "status": "gate_token_blocked", "reason": "token stale (400s old, TTL 300s)"}

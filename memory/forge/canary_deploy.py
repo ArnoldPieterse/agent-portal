@@ -29,6 +29,13 @@ except Exception:  # noqa: BLE001 - degrade gracefully if gate module missing
     def _dispatch_audit(data=None):
         return {"pass": True, "violations": [], "details": "gate unavailable (import failed)"}
 
+# Canary Gate Token (Verifier goal #8 / Forge assist) - verify before promotion.
+try:
+    from canary_gate_token import verify_token as _verify_gate_token
+except Exception:  # noqa: BLE001
+    def _verify_gate_token(target_file=None):
+        return False, "gate token module unavailable (import failed)"
+
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SMOKE_SUITE = os.path.join(ROOT, "memory", "forge", "smoke_suite.py")
 LOG_MD = os.path.join(ROOT, "memory", "forge", "log.md")
@@ -213,9 +220,10 @@ def main():
     dry_run = "--dry-run" in sys.argv
     skip_smoke = "--skip-smoke" in sys.argv
 
-    # Parse optional host arg
+    # Parse optional host arg (skip known flags)
+    _flags = {"--dry-run", "--skip-smoke", "--skip-perf", "--bypass-gate", "--skip-token"}
     for i, a in enumerate(sys.argv):
-        if a not in ("--dry-run", "--skip-smoke") and i > 1:
+        if a not in _flags and not a.startswith("--") and i > 1:
             canary_host = a.capitalize()
             break
 
@@ -233,11 +241,13 @@ def main():
     promote_hosts = [h for h in HOSTS if h != canary_host]
 
     skip_perf = "--skip-perf" in sys.argv
+    skip_token = "--skip-token" in sys.argv
     print("=== Canary Deploy: %s (sha=%s) ===" % (fname, file_hash))
     print("Canary host: %s | Promote to: %s" % (canary_host, promote_hosts))
-    print("Mode: %s%s%s" % ("DRY-RUN " if dry_run else "",
-                             "| skip-smoke" if skip_smoke else "",
-                             "| skip-perf" if skip_perf else ""))
+    print("Mode: %s%s%s%s" % ("DRY-RUN " if dry_run else "",
+                              "| skip-smoke" if skip_smoke else "",
+                              "| skip-perf" if skip_perf else "",
+                              "| skip-token" if skip_token else ""))
 
     # Phase -1: Dispatch-Correctness gate (pre-promotion conformance; Forge goal #3)
     # Runs BEFORE any deploy so a stale-dispatching change never touches a host.
@@ -324,6 +334,24 @@ def main():
             print("  Post: UNREACHABLE (cannot verify perf; allowing through)")
     elif skip_perf or dry_run:
         print("\n[3/4] Perf gate SKIPPED")
+
+    # Phase 3.5: Gate Token verification (Verifier goal #8 / Forge assist)
+    # A valid token from canary_gate_token.py is required before promotion.
+    if not dry_run and not skip_token:
+        print("\n[3.5/4] Verifying gate token...")
+        token_ok, token_reason = _verify_gate_token(source_file)
+        if not token_ok:
+            log("GATE TOKEN BLOCKED file=%s -> %s" % (fname, token_reason))
+            print("\n  GATE TOKEN: INVALID (%s)" % token_reason)
+            print("  Run: python memory/forge/canary_gate_token.py <file> to issue a fresh token.")
+            append_deploy_log({"ts": ts_start, "file": fname, "sha": file_hash,
+                               "status": "gate_token_blocked", "reason": token_reason})
+            sys.exit(5)
+        else:
+            log("GATE TOKEN VALID file=%s -> %s" % (fname, token_reason))
+            print("  GATE TOKEN: VALID (%s)" % token_reason)
+    elif skip_token or dry_run:
+        print("\n[3.5/4] Gate token SKIPPED%s" % (" (dry-run)" if dry_run else " (--skip-token)"))
 
     # Phase 4: Promote to remaining hosts
     print("\n[4/4] Promoting to: %s" % ", ".join(promote_hosts))

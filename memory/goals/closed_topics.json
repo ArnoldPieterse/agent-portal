@@ -3882,5 +3882,11 @@
 "text": "**Acceptance-test auto-generation** - when a goal line appears in a lane's goals file, parse its acceptance criterion and emit a runnable te",
 "agent": "verifier",
 "at": "2026-11-27"
+},
+{
+"sig": "6cc9ff7ea85cbdac",
+"text": "**Canary gate verification** - before Forge promotes a canary, auto-run perf + functional checks and emit a pass/fail token Forge must consu",
+"agent": "verifier",
+"at": "2026-11-27"
 }
 ]

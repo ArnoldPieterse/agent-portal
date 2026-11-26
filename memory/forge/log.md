@@ -1,5 +1,7 @@
 # Forge run log
 
+| 2026-11-27 04:23 | verify_token() wired into canary_deploy.py Phase 3.5 (ASSIST Verifier #8); 3 scenarios verified: no-token=BLOCK(5), fresh=VALID, stale=BLOCK(5) | PASS | evidence-verify-token-wired-081-27.md |
+
 | date | event | result | evidence |
 |------|-------|--------|----------|
 | 2026-11-25 | Red host powered on (human broadcast) | ACK - red reachable; unblocks Scribe+Mechanic home seats, restores 4-host probe coverage for smoke suite | user message um-20261125-125759 |
@@ -54,3 +56,30 @@ Result: EXIT 1 (CIRCUIT_BREAKER) - correct: all 4 smoke runs show 100% TCP-fail 
 | 2026-11-27 03:37:56 | smoke_suite: White REMEDIATION FAILED (status=CRIT) |
 | 2026-11-27 03:37:56 | smoke_suite: REMEDIATING Red - TCP: gaierror: [Errno 11001] getaddrinfo failed |
 | 2026-11-27 03:38 | canary_gate_token.py built + verified (ASSIST Verifier #5): 3 scenarios pass (valid/missing/stale). Evidence: evidence-canary-gate-token-2026-11-27.md |
+| 2026-11-27 04:18:23 | canary_deploy: START canary=White file=_gate_token_selftest.txt sha=2aca61a96a7e8102 |
+| 2026-11-27 04:18:23 | canary_deploy: DEPLOY FAIL to White: [WinError 32] The process cannot access the file because it is being used by another process |
+| 2026-11-27 04:18:23 | canary_deploy: FAIL canary deploy to White (no rollback needed) |
+| 2026-11-27 04:18:42 | canary_deploy: START canary=White file=_gate_token_selftest.txt sha=2aca61a96a7e8102 |
+| 2026-11-27 04:18:42 | canary_deploy: SUCCESS: _gate_token_selftest.txt deployed to all 4 hosts (canary=White) |
+| 2026-11-27 04:18:46 | canary_deploy: START canary=White file=_gate_token_selftest.txt sha=2aca61a96a7e8102 |
+| 2026-11-27 04:18:46 | canary_deploy: SUCCESS: _gate_token_selftest.txt deployed to all 4 hosts (canary=White) |
+| 2026-11-27 04:18:57 | canary_deploy: START canary=White file=_deploy_test.txt sha=70044f8a3946563b |
+| 2026-11-27 04:18:57 | canary_deploy: GATE TOKEN BLOCKED file=_deploy_test.txt -> no token file found (run canary_gate_token.py first) |
+| 2026-11-27 04:19:10 | smoke_suite: REMEDIATING White - TCP: PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions |
+| 2026-11-27 04:20:25 | smoke_suite: White REMEDIATION FAILED (status=CRIT) |
+| 2026-11-27 04:20:25 | smoke_suite: REMEDIATING Red - TCP: gaierror: [Errno 11001] getaddrinfo failed |
+| 2026-11-27 04:20:59 | smoke_suite: Red REMEDIATION FAILED (status=CRIT) |
+| 2026-11-27 04:20:59 | smoke_suite: REMEDIATING Pale - TCP: gaierror: [Errno 11001] getaddrinfo failed |
+| 2026-11-27 04:21:19 | smoke_suite: REMEDIATING White - TCP: PermissionError: [WinError 10013] An attempt was made to access a socket in a way forbidden by its access permissions |
+| 2026-11-27 04:22:34 | smoke_suite: White REMEDIATION FAILED (status=CRIT) |
+| 2026-11-27 04:22:34 | smoke_suite: REMEDIATING Red - TCP: gaierror: [Errno 11001] getaddrinfo failed |
+| 2026-11-27 04:23:08 | smoke_suite: Red REMEDIATION FAILED (status=CRIT) |
+| 2026-11-27 04:23:08 | smoke_suite: REMEDIATING Pale - TCP: gaierror: [Errno 11001] getaddrinfo failed |
+| 2026-11-27 04:23:15 | canary_deploy: START canary=White file=_deploy_test.txt sha=70044f8a3946563b |
+| 2026-11-27 04:23:15 | canary_deploy: GATE TOKEN VALID file=_deploy_test.txt -> valid (age 4s, signer=forge) |
+| 2026-11-27 04:23:15 | canary_deploy: DEPLOY FAIL to Red: [Errno 13] Permission denied: 'C:\\Projects\\AgentPortal\\\\_deploy_test.txt' |
+| 2026-11-27 04:23:15 | canary_deploy: DEPLOY FAIL to Pale: [Errno 13] Permission denied: 'C:\\Projects\\AgentPortal\\\\_deploy_test.txt' |
+| 2026-11-27 04:23:15 | canary_deploy: DEPLOY FAIL to Black: [Errno 13] Permission denied: 'C:\\Projects\\AgentPortal\\\\_deploy_test.txt' |
+| 2026-11-27 04:23:15 | canary_deploy: PROMOTION PARTIAL: ok=[] fail=['Red', 'Pale', 'Black'] -> rolling back promoted hosts |
+| 2026-11-27 04:23:22 | canary_deploy: START canary=White file=_deploy_test.txt sha=70044f8a3946563b |
+| 2026-11-27 04:23:22 | canary_deploy: GATE TOKEN BLOCKED file=_deploy_test.txt -> token stale (400s old, TTL 300s) |

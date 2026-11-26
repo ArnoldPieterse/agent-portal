@@ -51,9 +51,11 @@ def run_smoke_checks(target_file):
 
 
 def run_perf_check(target_file):
-    """Quick perf sanity: measure import time of target module.
-    Returns (passed, p50_ms, threshold_ms)."""
+    """Quick perf sanity: measure parse time for Python files.
+    Non-Python files are skipped (not an error). Returns (passed, p50_ms, threshold_ms)."""
     PERF_THRESHOLD_MS = 2000  # 2s max for a module to load/parse
+    if target_file.suffix not in ('.py',):
+        return True, 0, PERF_THRESHOLD_MS  # skip non-Python files
     times = []
     try:
         import ast

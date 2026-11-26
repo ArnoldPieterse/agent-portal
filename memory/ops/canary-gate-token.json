@@ -1,7 +1,7 @@
 {
   "pass": true,
-  "ts": "2026-11-27T03:38:33.297390",
-  "target_sha256": "46f00d24234ac38d0eaacb5ec232cfa2fbc88b76ab0b1a9c918c526249f21017",
+  "ts": "2026-11-27T04:16:41.973855",
+  "target_sha256": "70044f8a3946563bbb11bcbd4048681d49caa5981e7b88a6606f6dba9973bd40",
   "checks": [
     {
       "name": "smoke_suite",
@@ -12,7 +12,7 @@
     {
       "name": "perf_parse",
       "pass": true,
-      "p50_ms": 1.28,
+      "p50_ms": 0,
       "threshold_ms": 2000
     }
   ],
