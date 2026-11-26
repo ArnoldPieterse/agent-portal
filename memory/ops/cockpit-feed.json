@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-26T23:04:08.494438+00:00",
+  "ts": "2026-11-26T23:24:08.732130+00:00",
   "health_score": 50,
   "fleet_status": "DEGRADED",
   "agents": [
@@ -47,9 +47,9 @@
   "hosts": [
     {
       "host": "White",
-      "vram_pct": 1.2,
+      "vram_pct": 77.7,
       "cpu_pct": 0.0,
-      "temp_c": 42.5
+      "temp_c": 44.3
     },
     {
       "host": "Red",
@@ -417,6 +417,11 @@
         "pct": 0.0
       },
       "forecast-orchestrator-g1-convergence-api-2026-11-26": {
+        "total": 1,
+        "verified": 0,
+        "pct": 0.0
+      },
+      "forecast-pixel-g1-cdp-unblock-from-pale-2026-11-27": {
         "total": 1,
         "verified": 0,
         "pct": 0.0
